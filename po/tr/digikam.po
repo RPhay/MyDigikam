@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-28 01:38+0000\n"
-"PO-Revision-Date: 2024-01-26 14:57+0300\n"
+"POT-Creation-Date: 2024-01-29 01:34+0000\n"
+"PO-Revision-Date: 2024-01-28 20:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.01.95\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -309,17 +309,17 @@ msgstr "Buraya Grupla ve Albüme Taşı"
 #: core/app/dragdrop/itemdragdrop.cpp:192
 #, kde-format
 msgid "Assign Tag to Dropped Items"
-msgstr "Bırakılan Ögelere Etiket Ata"
+msgstr "Bırakılan Ögelere Künye Ata"
 
 #: core/app/dragdrop/itemdragdrop.cpp:643
 #, kde-format
 msgid "Change Face Tags"
-msgstr "Yüz Etiketlerini Değiştir"
+msgstr "Yüz Künyelerini Değiştir"
 
 #: core/app/dragdrop/itemdragdrop.cpp:647
 #, kde-format
 msgid "Change Face Tag"
-msgstr "Yüz Etiketini Değiştir"
+msgstr "Yüz Künyesini Değiştir"
 
 #: core/app/dragdrop/itemdragdrop.cpp:651
 #: core/app/dragdrop/itemdragdrop.cpp:705
@@ -331,18 +331,18 @@ msgstr "İ&ptal"
 #: core/app/dragdrop/itemdragdrop.cpp:690
 #, kde-format
 msgid "Assign Tags to &Selected Items"
-msgstr "&Seçili Ögelere Etiket Ata"
+msgstr "&Seçili Ögelere Künyeler Ata"
 
 #: core/app/dragdrop/itemdragdrop.cpp:698
 #: core/app/views/preview/itempreviewview.cpp:718
 #, kde-format
 msgid "Assign Tags to &This Item"
-msgstr "Bu Ögeye &Etiket Ata"
+msgstr "Bu Ögeye &Künyeler Ata"
 
 #: core/app/dragdrop/itemdragdrop.cpp:702
 #, kde-format
 msgid "Assign Tags to &All Items"
-msgstr "&Tüm Ögelere Etiket Ata"
+msgstr "&Tüm Ögelere Künyeler Ata"
 
 #: core/app/dragdrop/itemdragdrop.cpp:760
 #, kde-format
@@ -357,7 +357,7 @@ msgstr "Buraya &Birleştir"
 #: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:392
 #, kde-format
 msgid "Set as Tag Thumbnail"
-msgstr "Etiket Küçük Görseli Olarak Ayarla"
+msgstr "Künye Küçük Görseli Olarak Ayarla"
 
 #: core/app/dragdrop/tagdragdrop.cpp:276
 #, kde-format
@@ -369,7 +369,7 @@ msgstr[1] "'%2' olan yüz adlarını '%3' olarak değiştir"
 #: core/app/dragdrop/tagdragdrop.cpp:387
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
-msgstr "Ögelere '%1' Etiketlerini Ata"
+msgstr "Ögelere '%1' Künyelerini Ata"
 
 #: core/app/filters/filtersidebarwidget.cpp:143
 #, kde-format
@@ -389,17 +389,17 @@ msgstr "Coğrafi Konum Süzgeci"
 #: core/app/filters/filtersidebarwidget.cpp:172
 #, kde-format
 msgid "Images Without Tags"
-msgstr "Etiketsiz Görseller"
+msgstr "Künyesiz Görseller"
 
 #: core/app/filters/filtersidebarwidget.cpp:174
 #, kde-format
 msgid "Show images without a tag."
-msgstr "Etiketsiz görselleri gösterin."
+msgstr "Künyesiz görselleri gösterin."
 
 #: core/app/filters/filtersidebarwidget.cpp:177
 #, kde-format
 msgid "Tags Matching Condition"
-msgstr "Koşulla Eşleşen Etiketler"
+msgstr "Koşulla Eşleşen Künyeler"
 
 #: core/app/filters/filtersidebarwidget.cpp:180
 #: core/app/filters/filtersidebarwidget.cpp:230
@@ -408,7 +408,7 @@ msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
 "This also includes the '%1' check box."
 msgstr ""
-"Seçili etiketlerin görselleri süzmek için nice birleştirileceğini tanımlar. "
+"Seçili künyelerin görselleri süzmek için nice birleştirileceğini tanımlar. "
 "Bu, aynı zamanda '%1' onay kutusunu da içerir."
 
 #: core/app/filters/filtersidebarwidget.cpp:187
@@ -426,27 +426,27 @@ msgstr "VE"
 #: core/app/filters/filtersidebarwidget.cpp:205
 #, kde-format
 msgid "Tags Filter"
-msgstr "Etiketler Süzgeci"
+msgstr "Künyeler Süzgeci"
 
 #: core/app/filters/filtersidebarwidget.cpp:222
 #, kde-format
 msgid "Images Without Face tags"
-msgstr "Yüz Etiketi Olmayan Görseller"
+msgstr "Yüz Künyesi Olmayan Görseller"
 
 #: core/app/filters/filtersidebarwidget.cpp:224
 #, kde-format
 msgid "Show images without a face tag."
-msgstr "Yüz etiketi olmayan görselleri gösterin."
+msgstr "Yüz künyesi olmayan görselleri gösterin."
 
 #: core/app/filters/filtersidebarwidget.cpp:227
 #, kde-format
 msgid "Face tags Matching Condition"
-msgstr "Koşulla Eşleşen Yüz Etiketleri"
+msgstr "Koşulla Eşleşen Yüz Künyeleri"
 
 #: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid "Face Tags Filter"
-msgstr "Yüz Etiketleri Süzgeci"
+msgstr "Yüz Künyeleri Süzgeci"
 
 #: core/app/filters/filtersidebarwidget.cpp:267
 #, kde-format
@@ -457,7 +457,7 @@ msgstr "Etiketler Süzgeci"
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
-msgstr "Etiket Süzgeçlerini Geri Yükle"
+msgstr "Künye Süzgeçlerini Geri Yükle"
 
 #: core/app/filters/tagfilterview.cpp:73
 #, kde-format
@@ -475,25 +475,25 @@ msgstr "Kapalı"
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
-msgstr "Etiket Süzgeci Kipi"
+msgstr "Künye Süzgeci Kipi"
 
 #: core/app/filters/tagfilterview.cpp:77
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
-msgstr "Bu Etiketi Yok Say"
+msgstr "Bu Künyeyi Yok Say"
 
 #: core/app/filters/tagfilterview.cpp:78
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
-msgstr "Bu Etiketten Olmalı"
+msgstr "Bu Künyeden Olmalı"
 
 #: core/app/filters/tagfilterview.cpp:79
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
-msgstr "Bu Etiketten Olmamalı"
+msgstr "Bu Künyeden Olmamalı"
 
 #: core/app/items/delegate/itemdelegate.cpp:362
 #, kde-format
@@ -578,7 +578,7 @@ msgstr "Albüm Küçük Görseli Olarak Ayarla"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
-msgstr "Etiket Küçük Görseli Olarak Ayarla"
+msgstr "Künye Küçük Görseli Olarak Ayarla"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:183
 #, kde-format
@@ -612,7 +612,7 @@ msgstr "Tüm Albümler"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "All Tags"
-msgstr "Tüm Etiketler"
+msgstr "Tüm Künyeler"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:100
 #, kde-format
@@ -750,31 +750,31 @@ msgstr "Birlikte Aç..."
 #, kde-format
 msgctxt "@action: context menu"
 msgid "New Tag..."
-msgstr "Yeni Etiket..."
+msgstr "Yeni Künye..."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:35
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Delete Tag"
-msgstr "Etiketi Sil"
+msgstr "Künyeyi Sil"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:46
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Delete Tags"
-msgstr "Etiketleri Sil"
+msgstr "Künyeleri Sil"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:57
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tag"
-msgstr "Yüz Etiketi Olarak İmle"
+msgstr "Yüz Künyesi Olarak İmle"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:68
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tags"
-msgstr "Yüz Etiketi Olarak İmle"
+msgstr "Yüz Künyesi Olarak İmle"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:79
 #, kde-format
@@ -786,7 +786,7 @@ msgstr "Özellikler..."
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tag As Face"
-msgstr "Yüz Etiketi İmini Kaldır"
+msgstr "Yüz Künyesi İmini Kaldır"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:95
 #, kde-format
@@ -795,14 +795,14 @@ msgid ""
 "Removes the face property from the selected tag and the face region from the "
 "contained images. Can also untag the images if wished."
 msgstr ""
-"Seçili etiketlerin yüz özelliğini ve kapsanılan görsellerden yüz bölgesini "
-"kaldırır. İstenirse görsellerin etiketlerini de kaldırabilir."
+"Seçili künyelerin yüz özelliğini ve kapsanılan görsellerden yüz bölgesini "
+"kaldırır. İstenirse görsellerin künyelerini de kaldırabilir."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:108
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tags As Face"
-msgstr "Yüz Etiketi Olarak İmini Kaldır"
+msgstr "Yüz Künyesi Olarak İmini Kaldır"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:109
 #, kde-format
@@ -811,26 +811,26 @@ msgid ""
 "Removes the face property from the selected tags and the face region from "
 "the contained images. Can also untag the images if wished."
 msgstr ""
-"Seçili etiketlerin yüz özelliğini ve kapsanılan görsellerden yüz bölgesini "
-"kaldırır. İstenirse görsellerin etiketlerini de kaldırabilir."
+"Seçili künyelerin yüz özelliğini ve kapsanılan görsellerden yüz bölgesini "
+"kaldırır. İstenirse görsellerin künyelerini de kaldırabilir."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:124
 #, kde-format
 msgctxt "@action: context menu"
 msgid "A&ssign Tag"
-msgstr "Etiket A&ta"
+msgstr "Künye A&ta"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:140
 #, kde-format
 msgctxt "@action: context menu"
 msgid "R&emove Tag"
-msgstr "Etiketi K&aldır"
+msgstr "Künyeyi K&aldır"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Tüm Etiketleri Kaldır"
+msgstr "Tüm Künyeleri Kaldır"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -854,7 +854,7 @@ msgstr "Tarih"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Tag"
-msgstr "Etiket"
+msgstr "Künye"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:303
 #, kde-format
@@ -941,8 +941,8 @@ msgstr[1] "Albüm Tarihi: %2 %3 %4 - %1 Öge"
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
 msgid_plural "%2 including %1 subtags"
-msgstr[0] "1 alt etiket içeren %2"
-msgstr[1] "%1 alt etiket içeren %2"
+msgstr[0] "1 alt künye içeren %2"
+msgstr[1] "%1 alt künye içeren %2"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:334
 #, kde-format
@@ -1244,7 +1244,7 @@ msgstr "Alt yazı:"
 #: core/app/items/utils/tooltipfiller.cpp:494
 #, kde-format
 msgid "Tags:"
-msgstr "Etiketler:"
+msgstr "Künye:"
 
 #: core/app/items/utils/tooltipfiller.cpp:543
 #, kde-format
@@ -1347,7 +1347,7 @@ msgstr "İlklendiriliyor..."
 #: core/app/main/digikamapp.cpp:146 core/showfoto/main/showfoto.cpp:106
 #, kde-format
 msgid "Load Plugins..."
-msgstr "Eklentileri Yükle..."
+msgstr "Eklentiler yükleniyor..."
 
 #: core/app/main/digikamapp.cpp:171 core/showfoto/main/showfoto.cpp:88
 #, kde-format
@@ -1357,7 +1357,7 @@ msgstr "ICC deposu denetleniyor..."
 #: core/app/main/digikamapp.cpp:183
 #, kde-format
 msgid "Clean up Database..."
-msgstr "Veritabanını Temizle..."
+msgstr "Veritabanı temizleniyor..."
 
 #: core/app/main/digikamapp.cpp:205
 #, kde-format
@@ -1458,8 +1458,8 @@ msgstr[1] "%1 öge gizli"
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
-msgstr[0] "Dosyaya Üst Veriyi Yaz"
-msgstr[1] "Seçili Dosyalara Üst Veriyi Yaz"
+msgstr[0] "Dosyaya Üst Veri Yaz"
+msgstr[1] "Seçili Dosyalara Üst Veri Yaz"
 
 #: core/app/main/digikamapp.cpp:851
 #, kde-format
@@ -1571,7 +1571,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: setup"
 msgid "Initializing Main View..."
-msgstr "Ana Görünüm Başlatılıyor..."
+msgstr "Ana görünüm başlatılıyor..."
 
 #: core/app/main/digikamapp_setup.cpp:135
 #, kde-format
@@ -1663,7 +1663,7 @@ msgstr "Albüm özelliklerini ve koleksiyon bilgisini düzenleyin."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
-msgstr "Dosyalara Üst Veriyi Yaz"
+msgstr "Dosyalara Üst Veri Yaz"
 
 #: core/app/main/digikamapp_setup.cpp:259
 #: core/app/main/digikamapp_setup.cpp:435
@@ -1705,7 +1705,7 @@ msgstr "Dosya Yöneticisinde Aç"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
-msgstr "Etiket Yöneticisi"
+msgstr "Künye Yöneticisi"
 
 #: core/app/main/digikamapp_setup.cpp:294
 #, kde-format
@@ -1723,7 +1723,7 @@ msgstr "Sil"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
-msgstr "Etiket Ata"
+msgstr "Künye Ata"
 
 #: core/app/main/digikamapp_setup.cpp:323
 #, kde-format
@@ -1862,7 +1862,7 @@ msgstr "İçe Aktar"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
-msgstr "Seçili Dosyalara Üst Veriyi Yaz"
+msgstr "Seçili Dosyalara Üst Veri Yaz"
 
 #: core/app/main/digikamapp_setup.cpp:445
 #, kde-format
@@ -1979,7 +1979,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
-msgstr "Etiket Alt Ağacını İçer"
+msgstr "Künye Alt Ağacını İçer"
 
 #: core/app/main/digikamapp_setup.cpp:568
 #, kde-format
@@ -1988,7 +1988,7 @@ msgid ""
 "Activate this option to show all images marked by the given tag and all its "
 "sub-tags."
 msgstr ""
-"Verilen etiket ve onun tüm alt etiketleri ile imlenen görselleri göstermek "
+"Verilen künye ve onun tüm alt künyeleri ile imlenen görselleri göstermek "
 "için bu seçeneği etkinleştirin."
 
 #: core/app/main/digikamapp_setup.cpp:573
@@ -2179,7 +2179,7 @@ msgstr "Tümünü Seç"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
-msgstr "Hiçbirini Seçme"
+msgstr "Tümünün Seçimini Kaldır"
 
 #: core/app/main/digikamapp_setup.cpp:734
 #, kde-format
@@ -2317,13 +2317,13 @@ msgstr "Yorumları Düzenle"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
-msgstr "Atanmış Etiketleri Göster"
+msgstr "Atanmış Künyeleri Göster"
 
 #: core/app/main/digikamapp_setup.cpp:972
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
-msgstr "Exif Yönlendirme Etiketini Ayarla"
+msgstr "Exif Yönelim Künyesini Ayarla"
 
 #: core/app/main/digikamapp_setup.cpp:975
 #, kde-format
@@ -2556,7 +2556,7 @@ msgstr "&Albüm"
 #: core/app/main/digikamui5.rc:38
 #, kde-format
 msgid "T&ag"
-msgstr "&Etiket"
+msgstr "&Künye"
 
 #. i18n: ectx: Menu (Image)
 #: core/app/main/digikamui5.rc:47 core/utilities/import/main/importui5.rc:24
@@ -2597,7 +2597,7 @@ msgstr "&Araçlar"
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
 #, kde-format
 msgid "I&mport"
-msgstr "İçe A&ktar"
+msgstr "İçe A&ktarım"
 
 #. i18n: ectx: Menu (Export)
 #: core/app/main/digikamui5.rc:149 core/showfoto/main/showfotoui5.rc:108
@@ -2605,7 +2605,7 @@ msgstr "İçe A&ktar"
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
 #, kde-format
 msgid "&Export"
-msgstr "&Dışa Aktar"
+msgstr "&Dışa Aktarım"
 
 #. i18n: ectx: Menu (settings)
 #: core/app/main/digikamui5.rc:155 core/showfoto/main/showfotoui5.rc:114
@@ -2826,7 +2826,7 @@ msgstr "İleri"
 #: core/app/views/preview/itempreviewview.cpp:198
 #, kde-format
 msgid "Add a Face Tag"
-msgstr "Yüz Etiketi Ekle"
+msgstr "Yüz Künyesi Ekle"
 
 #: core/app/views/preview/itempreviewview.cpp:203
 #, kde-format
@@ -2841,7 +2841,7 @@ msgstr "Doğrulanmamış Tüm Yüzleri Yok Sayıldı Olarak İmle"
 #: core/app/views/preview/itempreviewview.cpp:213
 #, kde-format
 msgid "Show Face Tags"
-msgstr "Yüz Etiketlerini Göster"
+msgstr "Yüz Künyelerini Göster"
 
 #: core/app/views/preview/itempreviewview.cpp:218
 #, kde-format
@@ -2940,22 +2940,22 @@ msgstr "Ara"
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
 #, kde-format
 msgid "Open Tag Manager"
-msgstr "Etiket Yöneticisini Aç"
+msgstr "Künye Yöneticisini Aç"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
 #, kde-format
 msgid "No Tags"
-msgstr "Etiket Yok"
+msgstr "Künye Yok"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
 #, kde-format
 msgid "Existing Tags"
-msgstr "Var Olan Etiketler"
+msgstr "Var Olan Künyeler"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:261
 #, kde-format
 msgid "No Tags Album"
-msgstr "Etiket Albümü Yok"
+msgstr "Künye Albümü Yok"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:558
@@ -2969,7 +2969,7 @@ msgstr "Etiket Albümü Yok"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
 #, kde-format
 msgid "Tags"
-msgstr "Etiketler"
+msgstr "Künyeler"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:140
 #, kde-format
@@ -3759,7 +3759,7 @@ msgstr "Alt Yazı"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Tags"
-msgstr "Etiketler"
+msgstr "Künyeler"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, kde-format
@@ -3795,7 +3795,7 @@ msgstr "Alt Yazı"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Tags"
-msgstr "Etiketler"
+msgstr "Künyeler"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:338
 #: core/app/views/tableview/tableview_column_digikam.cpp:378
@@ -3939,7 +3939,7 @@ msgstr "Coğrafi özellikler"
 #: core/app/views/tableview/tableview_column_geo.cpp:101
 #, kde-format
 msgid "Geotagged"
-msgstr "Coğrafi etiketlenmiş"
+msgstr "Coğrafi künyeli"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:89
 #: core/app/views/tableview/tableview_column_geo.cpp:106
@@ -4578,7 +4578,7 @@ msgstr "Renk derinliğini 16 bit'ten 8 bit'e dönüştürün."
 #, kde-format
 msgctxt "@info"
 msgid "Convert to 8 bits"
-msgstr "8 bit'e dönüştür"
+msgstr "8 Bit'e Dönüştür"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:61
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:60
@@ -5073,7 +5073,7 @@ msgid ""
 "para>"
 msgstr ""
 "<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini TIFF biçimine "
-"dönüştürebilir.</para> <para>Etiketli Görsel Dosyası Biçimi; fotoğrafçılar, "
+"dönüştürebilir.</para> <para>Künyeli Görsel Dosyası Biçimi; fotoğrafçılar, "
 "grafik sanatçıları, yayıncılık endüstrisi ve yayıncılık endüstrisi arasında "
 "popüler olan, raster grafik görsellerini depolamak için kullanılan bir "
 "bilgisayar dosyası biçimidir.</para> <para>Ayrıntılar için <a href='https://"
@@ -6002,7 +6002,7 @@ msgstr "Başlıklar:"
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
-msgstr "Buraya başlık metnini girin."
+msgstr "Başlık metnini buraya gir…"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #, kde-format
@@ -6014,7 +6014,7 @@ msgstr "Alt yazılar:"
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
-msgstr "Alt yazı metninizi buraya girin."
+msgstr "Alt yazı metnini buraya gir…"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
 #, kde-format
@@ -6104,10 +6104,10 @@ msgid ""
 "contents and store the results in the database.</p>"
 msgstr ""
 "<p><b>Bu araç, derin öğrenme sinir ağını kullanarak içerik çözümlemesi "
-"yoluyla görsellere kendiliğinden etiket atamanıza olanak tanır.</b></"
+"yoluyla görsellere kendiliğinden künye atamanıza olanak tanır.</b></"
 "p><p>Aşağıdaki ayarlar, fotoğrafın konularını belirlemek için görselin "
 "içeriğini ayrıştırırken kullanılacak derin öğrenme modelini belirler. Arka "
-"planda kullanılan sinir ağı, kendiliğinden içeriği açıklayan bir dizi etiket "
+"planda kullanılan sinir ağı, kendiliğinden içeriği açıklayan bir dizi künye "
 "oluşturacak ve sonuçları veritabanında saklayacaktır.</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
@@ -6180,13 +6180,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
-msgstr "Etiketler Ata"
+msgstr "Künyeler Ata"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:62
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign tags automatically to images"
-msgstr "Görsellere kendiliğinden etiketler atamak için bir araç"
+msgstr "Görsellere kendiliğinden künyeler atamak için bir araç"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:67
 #, kde-kuit-format
@@ -6572,8 +6572,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can run user shell script as workflow "
 "stage.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, bir iş akışı etabı olarak kullanıcı "
-"betiklerini çalıştırabilir.</para>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, bir iş akışı aşaması olarak "
+"kullanıcı betiklerini çalıştırabilir.</para>"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:150
 #, kde-format
@@ -7494,21 +7494,21 @@ msgid ""
 msgstr ""
 "<para>Bu eklenti, kullanıcıların Libtiff kodlayıcısı bileşenini kullanarak "
 "görsel yüklemesine ve kaydetmesine olanak tanır.</para> <para>TIFF veya TIF "
-"olarak kısaltılan Etiketli Görsel Dosyası Biçimi, grafik sanatçıları, "
+"olarak kısaltılan Künyeli Görsel Dosyası Biçimi, grafik sanatçıları, "
 "yayımcılık endüstrisi ve fotoğrafçılar arasında popüler olan, raster grafik "
 "görsellerini depolamak için kullanılan bir bilgisayar dosyası biçimidir. "
 "TIFF; tarama, fakslama, sözcük işleme, optik karakter tanıma, görüsel "
 "işleme, masaüstü yayımcılık ve sayfa yerleşimi uygulamaları tarafından geniş "
 "çapta desteklenir.</para> <para>Ayrıntılar için <a href='https://en."
-"wikipedia.org/wiki/TIFF'>Etiketli Görsel Dosyası Biçimi belgelendirmesine</"
-"a> bakın.</para>"
+"wikipedia.org/wiki/TIFF'>Künyeli Görsel Dosyası Biçimi belgelendirmesine</a> "
+"bakın.</para>"
 
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:123
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:127
 #, kde-format
 msgctxt "@title"
 msgid "Tagged Image Format"
-msgstr "Etiketli Görsel Biçimi"
+msgstr "Künyeli Görsel Biçimi"
 
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:256
 #, kde-format
@@ -12607,7 +12607,7 @@ msgid ""
 "wikipedia.org/wiki/Ascii'>ASCII</a></b> characters."
 msgstr ""
 "<b>Not:</b> (*) ile imlenmiş <b><a href='https://en.wikipedia.org/wiki/"
-"EXIF'>Exif</a></b> metin etiketleri yalnzıca yazdırılabilir <b><a "
+"EXIF'>Exif</a></b> metin künyeleri yalnzıca yazdırılabilir <b><a "
 "href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> karakterlerini "
 "destekler."
 
@@ -13689,8 +13689,8 @@ msgid ""
 "wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"
 msgstr ""
 "<b>Not: <a href='https://en.wikipedia.org/wiki/"
-"IPTC_Information_Interchange_Model'>IPTC</a> metin etiketleri sınırlı "
-"boyutlu dizilerdir. Bunun yerine <a href='https://en.wikipedia.org/wiki/"
+"IPTC_Information_Interchange_Model'>IPTC</a> metin künyeleri sınırlı boyutlu "
+"dizilerdir. Bunun yerine <a href='https://en.wikipedia.org/wiki/"
 "Extensible_Metadata_Platform'>XMP</a> kullanmayı düşünün.</b>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
@@ -14049,12 +14049,12 @@ msgstr "IPTC7901 Önerilen İleti Biçimi"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
 #, kde-format
 msgid "Tagged Image File Format (version 5.0)"
-msgstr "Etiketli Görsel Dosyası Biçimi (sürüm 5.0)"
+msgstr "Künyeli Görsel Dosyası Biçimi (sürüm 5.0)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
 #, kde-format
 msgid "Tagged Image File Format (version 6.0)"
-msgstr "Etiketli Görsel Dosyası Biçimi (sürüm 6.0)"
+msgstr "Künyeli Görsel Dosyası Biçimi (sürüm 6.0)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
 #, kde-format
@@ -14895,7 +14895,7 @@ msgstr ""
 "Bu araç, kullanıcıların ögelerdeki birçok üst veriyi değiştirmesine olanak "
 "tanır.\n"
 "\n"
-"Fotoğrafçılıkta kullanılan en yaygın Exif, Iptc ve Xmp etiketleri "
+"Fotoğrafçılıkta kullanılan en yaygın Exif, Iptc ve Xmp künyeleris "
 "standartlaştırılmış değerlerle düzenleme için listelenmiştir.\n"
 "\n"
 "Fotoğraf ajansları için önceden yapılandırılmış konular, ögelerin içeriğini "
@@ -20097,7 +20097,7 @@ msgstr "Yorumlar: %1\n"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:285
 #, kde-format
 msgid "Tags: %1\n"
-msgstr "Etiketler: %1\n"
+msgstr "Künyeler: %1\n"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:287
 #, kde-format
@@ -20348,8 +20348,8 @@ msgid ""
 "If you enable this option, all item properties as Comments, Rating, or Tags, "
 "will be added as an attached file."
 msgstr ""
-"Bu seçeneği etkinleştirirseniz Yorum, Derecelendirme ve Etiket gibi tüm öge "
-"özellikleri, ek dosya olarak eklenecektir."
+"Bu seçeneği etkinleştirirseniz Yorum, Derecelendirme ve Künyeler gibi tüm "
+"öge özellikleri, ek dosya olarak eklenecektir."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
@@ -21970,12 +21970,12 @@ msgstr "Başlık yoksa ekranın alt kısmında görsel alt yazısını gösterin
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:166
 #, kde-format
 msgid "Show image tags"
-msgstr "Görsel etiketlerini göster"
+msgstr "Görsel künyelerini göster"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:167
 #, kde-format
 msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr "Ekranın alt kısmında digiKam görsel etiketi adlarını gösterin."
+msgstr "Ekranın alt kısmında digiKam görsel künyesi adlarını gösterin."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:169
 #, kde-format
@@ -22104,7 +22104,7 @@ msgstr ""
 "düğmesi</td></tr><tr><td>Kaplamaları göster/gizle:</td><td><i>F4</i> "
 "düğmesi</td></tr><tr><td>Çık:</td><td><i>Vazgeç</i> düğmesi</td></tr><tr><td "
 "colspan=\"2\"><nobr><center><b><h1>Öge Özellikleri</h1></b></center></nobr></"
-"td></tr><tr><td>Etiketleri değiştir:</td><td>Etiketler klavye kısayollarını "
+"td></tr><tr><td>Künyeleri değiştir:</td><td>Künyeler klavye kısayollarını "
 "kullanın</td></tr><tr><td>Derecelendirmeyi değiştir:</td><td>Derecelendirme "
 "klavye kısayollarını kullanın</td></tr><tr><td>Renk etiketini değiştir:</"
 "td><td>Renk etiketi klavye kısayollarını kullanın</td></tr><tr><td>Seçim "
@@ -23020,13 +23020,13 @@ msgstr ""
 msgid ""
 "Add extra tags per image or use Upload Options tab to add tags for all images"
 msgstr ""
-"Görsel başına ek etiketler ekleyin veya tüm görsellere etiketler eklemek "
-"üzere Karşıya Yükleme Seçenekleri sekmesini kullanın."
+"Görsel başına ek künyeler ekleyin veya tüm görsellere künyeler eklemek üzere "
+"Karşıya Yükleme Seçenekleri sekmesini kullanın."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:547
 #, kde-format
 msgid "Enter extra tags, separated by commas."
-msgstr "Virgülle ayrılmış biçimde ek etiketler girin."
+msgstr "Virgülle ayrılmış biçimde ek künyeler girin."
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:48
 #, kde-format
@@ -23226,7 +23226,7 @@ msgstr "Bu, Flickr hesabınıza karşıya yüklenecek görsellerin listesidir."
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:56
 #, kde-format
 msgid "Extra tags"
-msgstr "Ek etiketler"
+msgstr "Ek künyeler"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:60
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:71
@@ -23294,45 +23294,45 @@ msgstr "Diğer"
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:105
 #, kde-format
 msgid "Tag options"
-msgstr "Etiket seçenekleri"
+msgstr "Künye seçenekleri"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:109
 #, kde-format
 msgid "Use Host Application Tags"
-msgstr "Makinenin Uygulama Etiketlerini Kullan"
+msgstr "Makinenin Uygulama Künyelerini Kullan"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:111
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:472
 #, kde-format
 msgid "More tag options"
-msgstr "Daha fazla etiket seçeneği"
+msgstr "Daha fazla künye seçeneği"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:127
 #, kde-format
 msgid "Added Tags: "
-msgstr "Eklenen etiketler: "
+msgstr "Eklenen künyeler: "
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:130
 #, kde-format
 msgid "Enter new tags here, separated by commas."
-msgstr "Yeni etiketleri virgülle ayrılmış olarak buraya girin."
+msgstr "Yeni künyeleri virgülle ayrılmış olarak buraya girin."
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:132
 #, kde-format
 msgid "Add tags per image"
-msgstr "Görsel başına etiketler ekle"
+msgstr "Görsel başına künyeler ekle"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:133
 #, kde-format
 msgid "If checked, you can set extra tags for each image in the File List tab"
 msgstr ""
-"İşaretlenmişse Dosya Listesi sekmesindeki her bir görsel için ek etiketler "
+"İşaretlenmişse Dosya Listesi sekmesindeki her bir görsel için ek künyeler "
 "ayarlayabilirsiniz"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:137
 #, kde-format
 msgid "Strip Spaces From Tags"
-msgstr "Etiketlerden Boşlukları Çıkar"
+msgstr "Künyelerden Boşlukları Çıkar"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:150
 #, kde-format
@@ -23403,7 +23403,7 @@ msgstr "Daha az yayın seçeneği"
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:477
 #, kde-format
 msgid "Fewer tag options"
-msgstr "Daha az etiket seçeneği"
+msgstr "Daha az künye seçeneği"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:148
 #, kde-format
@@ -23647,27 +23647,27 @@ msgstr "Kaynak"
 #: core/dplugins/generic/webservices/google/gswidget.cpp:55
 #, kde-format
 msgid "Tag path behavior :"
-msgstr "Etiket yolu davranışı:"
+msgstr "Künye yolu davranışı:"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:57
 #, kde-format
 msgid "Leaf tags only"
-msgstr "Yalnızca yaprak etiketler"
+msgstr "Yalnızca yaprak künyeler"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:58
 #, kde-format
 msgid "Export only the leaf tags of tag hierarchies"
-msgstr "Yalnızca etiket hiyerarşilerinin yaprak etiketlerini dışa aktar"
+msgstr "Yalnızca künye hiyerarşilerinin yaprak künyelerini dışa aktar"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:59
 #, kde-format
 msgid "Split tags"
-msgstr "Etiketleri böl"
+msgstr "Künyeleri böl"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:60
 #, kde-format
 msgid "Export the leaf tag and all ancestors as single tags."
-msgstr "Yaprak etiketi ve tüm atalarını tek etiketler olarak dışa aktarın."
+msgstr "Yaprak künyesi ve tüm atalarını tek künyeler olarak dışa aktarın."
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:61
 #, kde-format
@@ -23677,7 +23677,7 @@ msgstr "Birleştirilmiş Dizi"
 #: core/dplugins/generic/webservices/google/gswidget.cpp:62
 #, kde-format
 msgid "Build a combined tag string."
-msgstr "Birleştirilmiş bir etiket dizisi yapın."
+msgstr "Birleştirilmiş bir künye dizisi yapın."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:137
 #, kde-format
@@ -23889,7 +23889,7 @@ msgstr "Özel yap"
 #, kde-format
 msgctxt "@label"
 msgid "Tags (optional):"
-msgstr "Etiketler (isteğe bağlı):"
+msgstr "Künyeler (isteğe bağlı):"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:52
 #, kde-format
@@ -26685,72 +26685,65 @@ msgid "Searches"
 msgstr "Aramalar"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, kde-format
-msgid ""
-"The MySQL database directory was not found, please set the correct location "
-"in the next dialog."
+#, fuzzy, kde-format
+#| msgid ""
+#| "The MySQL database directory was not found, please set the correct "
+#| "location in the next dialog."
+msgid "The MySQL database directory was not found."
 msgstr ""
 "MySQL veritabanı dizini bulunamadı; lütfen bir sonraki iletişim kutusunda "
 "doğru konumu ayarlayın."
 
-#: core/libs/album/manager/albummanager_database.cpp:122
+#: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
-msgid ""
-"The MySQL binary tools was not found, please set the correct location in the "
-"next dialog."
+msgid "The MySQL binary tools was not found."
 msgstr ""
-"MySQL ikilisi araçları bulunamadı; lütfen bir sonraki iletişim kutusunda "
-"doğru konumu ayarlayın."
 
-#: core/libs/album/manager/albummanager_database.cpp:130
-#, kde-format
-msgid ""
-"The SQLite core database was not found, please set the correct location in "
-"the next dialog."
-msgstr ""
-"SQLite çekirdek veritabanı bulunamadı; lütfen bir sonraki iletişim kutusunda "
-"doğru konumu ayarlayın."
+#: core/libs/album/manager/albummanager_database.cpp:128
+#, fuzzy, kde-format
+#| msgid "The core database name is empty"
+msgid "The SQLite core database was not found."
+msgstr "Çekirdek veritabanı adı boş"
 
-#: core/libs/album/manager/albummanager_database.cpp:140
-#, kde-format
+#: core/libs/album/manager/albummanager_database.cpp:137
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "\n"
+#| "If you want to start with a new configuration and with a first run "
+#| "wizard, delete the file %1"
 msgid ""
-"\n"
-"\n"
-"If you want to start with a new configuration and with a first run wizard, "
-"delete the file %1"
+"<p>If you want to start with a new configuration and with a first run "
+"wizard, delete the file:<br>%1</p>"
 msgstr ""
 "\n"
 "\n"
 "İlk kullanım sihirbazı ile yeni bir yapılandırma başlatmak istiyorsanız %1 "
 "dosyasını silin"
 
-#: core/libs/album/manager/albummanager_database.cpp:153
-#, kde-format
+#: core/libs/album/manager/albummanager_database.cpp:150
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred during the internal server start.\n"
+#| "\n"
+#| "Details:\n"
+#| "%1"
 msgid ""
-"An error occurred during the internal server start.\n"
-"\n"
-"Details:\n"
-"%1"
+"An error occurred during the internal server start.<p>Details:\n"
+"%1</p>"
 msgstr ""
 "İçsel sunucu başlatılırken bir hata oluştu.\n"
 "\n"
 "Ayrıntılar:\n"
 "%1"
 
-#: core/libs/album/manager/albummanager_database.cpp:169
-#, kde-format
-msgid ""
-"Failed to open the database.\n"
-"\n"
-"You cannot use digiKam without a working database.\n"
-"Please check the database settings in the next dialog."
-msgstr ""
-"Veritabanı açılamadı.\n"
-"\n"
-"Çalışan bir veritabanı olmadan digiKam'i kullanamazsınız.\n"
-"Lütfen bir sonraki iletişim kutusunda veritabanı ayarlarını denetleyin."
+#: core/libs/album/manager/albummanager_database.cpp:166
+#, fuzzy, kde-format
+#| msgid "Failed to add tag to database"
+msgid "Failed to open the database."
+msgstr "Künye veritabanına eklenemedi"
 
-#: core/libs/album/manager/albummanager_database.cpp:178
+#: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
@@ -26759,7 +26752,7 @@ msgstr ""
 "<p>digiKam şimdi başlatılmaya çalışılacak; ancak işlevsel durumda "
 "<b>olmayacak</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:214
+#: core/libs/album/manager/albummanager_database.cpp:209
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -26772,7 +26765,7 @@ msgstr ""
 "durumda <b>olmayacak</b>. Lütfen <b>yapılandırma menüsünde</b> veritabanı "
 "ayarlarını denetleyin.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:223
+#: core/libs/album/manager/albummanager_database.cpp:218
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26785,7 +26778,14 @@ msgstr ""
 "çalışılacak; ancak işlevsel durumda <b>olmayacak</b>. Lütfen <b>yapılandırma "
 "menüsünde</b> veritabanı ayarlarını denetleyin.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:256
+#: core/libs/album/manager/albummanager_database.cpp:231
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Failed to Initialize Thumbnails Database"
+msgid "Failed to initialize the database."
+msgstr "Küçük Görsel Veritabanı İlklendirilemedi"
+
+#: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26807,7 +26807,7 @@ msgstr ""
 "'Evet'e tıklayın. Aksi takdirde, 'Hayır'a tıklayın ve digiKam'i yeniden "
 "başlatmadan önce veritabanı karakter kümesi ayarlarınızı düzeltin."
 
-#: core/libs/album/manager/albummanager_database.cpp:299
+#: core/libs/album/manager/albummanager_database.cpp:296
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -26818,7 +26818,7 @@ msgstr ""
 "bulunamadı.<br/>Lütfen bu durumla başa çıkmak için en uygun seçeneği seçin:</"
 "p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:318
+#: core/libs/album/manager/albummanager_database.cpp:315
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26830,7 +26830,7 @@ msgstr ""
 "sistemi ayarlarının değiştirilmesinden kaynaklanabilir.<br/>Koleksiyon şu "
 "anda şu konumda bulunuyor: </p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:337
+#: core/libs/album/manager/albummanager_database.cpp:334
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26839,7 +26839,7 @@ msgstr ""
 "Koleksiyon, her zaman bağlı olmayan bir depolama aygıtında bulunuyor. "
 "Koleksiyonu kaldırılabilir koleksiyon olarak imleyin."
 
-#: core/libs/album/manager/albummanager_database.cpp:344
+#: core/libs/album/manager/albummanager_database.cpp:341
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26848,19 +26848,19 @@ msgstr ""
 "Şimdi hiçbir işlem yapmayın. Sorunu daha sonra kurulum iletişim kutusunu "
 "kullanarak çözmek istiyorum."
 
-#: core/libs/album/manager/albummanager_database.cpp:358
+#: core/libs/album/manager/albummanager_database.cpp:355
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Koleksiyon Bulunamadı"
 
-#: core/libs/album/manager/albummanager_database.cpp:464
+#: core/libs/album/manager/albummanager_database.cpp:461
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Veritabanı Klasörü"
 
-#: core/libs/album/manager/albummanager_database.cpp:465
+#: core/libs/album/manager/albummanager_database.cpp:462
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -26876,33 +26876,33 @@ msgstr ""
 "onaylayın - yoksa eski dosyayı yok sayıp yeni bir veritabanıyla mı "
 "başlarsınız?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:475
-#: core/libs/album/manager/albummanager_database.cpp:543
-#: core/libs/album/manager/albummanager_database.cpp:565
+#: core/libs/album/manager/albummanager_database.cpp:472
+#: core/libs/album/manager/albummanager_database.cpp:540
+#: core/libs/album/manager/albummanager_database.cpp:562
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Veritabanını Yükselt"
 
-#: core/libs/album/manager/albummanager_database.cpp:477
-#: core/libs/album/manager/albummanager_database.cpp:545
-#: core/libs/album/manager/albummanager_database.cpp:567
-#: core/libs/album/manager/albummanager_database.cpp:615
+#: core/libs/album/manager/albummanager_database.cpp:474
+#: core/libs/album/manager/albummanager_database.cpp:542
+#: core/libs/album/manager/albummanager_database.cpp:564
+#: core/libs/album/manager/albummanager_database.cpp:612
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Yeni Veritabanı Oluştur"
 
-#: core/libs/album/manager/albummanager_database.cpp:534
-#: core/libs/album/manager/albummanager_database.cpp:557
-#: core/libs/album/manager/albummanager_database.cpp:607
-#: core/libs/album/manager/albummanager_database.cpp:639
+#: core/libs/album/manager/albummanager_database.cpp:531
+#: core/libs/album/manager/albummanager_database.cpp:554
+#: core/libs/album/manager/albummanager_database.cpp:604
+#: core/libs/album/manager/albummanager_database.cpp:636
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Yeni Veritabanı Klasörü"
 
-#: core/libs/album/manager/albummanager_database.cpp:535
+#: core/libs/album/manager/albummanager_database.cpp:532
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26917,15 +26917,15 @@ msgstr ""
 "veya geçerli veritabanını bu konuma kopyalayıp kullanmayı sürdürmek mi "
 "istiyorsunuz?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:547
-#: core/libs/album/manager/albummanager_database.cpp:617
-#: core/libs/album/manager/albummanager_database.cpp:648
+#: core/libs/album/manager/albummanager_database.cpp:544
+#: core/libs/album/manager/albummanager_database.cpp:614
+#: core/libs/album/manager/albummanager_database.cpp:645
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Geçerli Veritabanını Kopyala"
 
-#: core/libs/album/manager/albummanager_database.cpp:558
+#: core/libs/album/manager/albummanager_database.cpp:555
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26938,7 +26938,7 @@ msgstr ""
 "p><p>Eski veritabanı dosyasını yükseltmek mi yoksa yeni bir veritabanıyla mı "
 "başlamak istiyorsunuz?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:593
+#: core/libs/album/manager/albummanager_database.cpp:590
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26947,7 +26947,7 @@ msgstr ""
 "Eski veritabanı dosyası (\"%1\") yeni konumuna (\"%2\") kopyalanamadı. Eski "
 "veritabanları yükseltmeye çalışılıyor."
 
-#: core/libs/album/manager/albummanager_database.cpp:608
+#: core/libs/album/manager/albummanager_database.cpp:605
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -26959,7 +26959,7 @@ msgstr ""
 "p><p>Geçerli veritabanını bu konuma kopyalayıp kullanmayı sürdürmek mi yoksa "
 "yeni bir veritabanıyla mı başlamak istersiniz?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:640
+#: core/libs/album/manager/albummanager_database.cpp:637
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26972,13 +26972,13 @@ msgstr ""
 "yeni veritabanı olarak kullanmak mı yoksa onu kaldırıp geçerli veritabanını "
 "bu konuma kopyalamak mı istiyorsunuz?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:650
+#: core/libs/album/manager/albummanager_database.cpp:647
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Var Olan Dosyayı Kullan"
 
-#: core/libs/album/manager/albummanager_database.cpp:705
+#: core/libs/album/manager/albummanager_database.cpp:702
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -26987,7 +26987,7 @@ msgstr ""
 "Var olan veritabanı dosyası (\"%1\") yedeklenemedi. Var olan dosyayı "
 "kullanarak yedekleme olmadan dosyayı değiştirme reddediliyor."
 
-#: core/libs/album/manager/albummanager_database.cpp:723
+#: core/libs/album/manager/albummanager_database.cpp:720
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26996,7 +26996,12 @@ msgstr ""
 "Eski veritabanı dosyası (\"%1\") yeni yerine (\"%2\") kopyalanamadı. Boş bir "
 "veritabanıyla başlanıyor."
 
-#: core/libs/album/manager/albummanager_database.cpp:756
+#: core/libs/album/manager/albummanager_database.cpp:742
+#, kde-format
+msgid "<p><b>Please check the database settings in this dialog.</b></p>"
+msgstr ""
+
+#: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -27094,45 +27099,45 @@ msgstr "Kök albüm düzenlenemez"
 #: core/libs/album/manager/albummanager_talbum.cpp:291
 #, kde-format
 msgid "No parent found for tag"
-msgstr "Etiket için bir üst öge bulunamadı"
+msgstr "Künye için bir üst öge bulunamadı"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:299
 #, kde-format
 msgid "Tag name cannot be empty"
-msgstr "Etiket adı boş bırakılamaz"
+msgstr "Künye adı boş bırakılamaz"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:305
 #: core/libs/album/manager/albummanager_talbum.cpp:471
 #, kde-format
 msgid "Tag name cannot contain '/'"
-msgstr "Etiket adı '/' içeremez"
+msgstr "Künye adı '/' içeremez"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:313
 #: core/libs/tags/widgets/tageditdlg.cpp:476
 #, kde-format
 msgid "Tag name already exists"
-msgstr "Etiket adı halihazırda var"
+msgstr "Künye adı halihazırda var"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:322
 #, kde-format
 msgid "Failed to add tag to database"
-msgstr "Etiket veritabanına eklenemedi"
+msgstr "Künye veritabanına eklenemedi"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:373
 #, kde-format
 msgid "Cannot delete root tag"
-msgstr "Kök etiket silinemiyor"
+msgstr "Kök künye silinemiyor"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:379
 #, kde-format
 msgid "Cannot delete required face tag"
-msgstr "Gerekli yüz etiketi silinemiyor"
+msgstr "Gerekli yüz künyesi silinemiyor"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:465
 #: core/libs/album/manager/albummanager_talbum.cpp:702
 #, kde-format
 msgid "Cannot edit root tag"
-msgstr "Kök etiket düzenlenemez"
+msgstr "Kök künye düzenlenemez"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:479
 #, kde-format
@@ -27140,7 +27145,7 @@ msgid ""
 "Another tag with the same name already exists.\n"
 "Please choose another name."
 msgstr ""
-"Aynı ada sahip başka bir etiket halihazırda var.\n"
+"Aynı ada sahip başka bir künye halihazırda var.\n"
 "Lütfen başka bir ad seçin."
 
 #: core/libs/album/manager/albummanager_talbum.cpp:504
@@ -27151,7 +27156,7 @@ msgstr "TAlbum olmayan bir yere taşınmaya çalışıldı"
 #: core/libs/album/manager/albummanager_talbum.cpp:510
 #, kde-format
 msgid "Cannot move root tag"
-msgstr "Kök etiket taşınamıyor"
+msgstr "Kök künye taşınamıyor"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:518
 #, kde-format
@@ -27159,28 +27164,28 @@ msgid ""
 "Another tag with the same name already exists.\n"
 "Do you want to merge the tags?"
 msgstr ""
-"Aynı ada sahip başka bir etiket halihazırda var.\n"
-"Etiketleri birleştirmek istiyor musunuz?"
+"Aynı ada sahip başka bir künye halihazırda var.\n"
+"Künyeleri birleştirmek istiyor musunuz?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:592
 #, kde-format
 msgid "Cannot merge root tag"
-msgstr "Kök etiket birleştirilemiyor"
+msgstr "Kök künye birleştirilemiyor"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:598
 #, kde-format
 msgid "Cannot merge required face tag"
-msgstr "Gerekli yüz etiketi birleştirilemiyor"
+msgstr "Gerekli yüz künyesi birleştirilemiyor"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:604
 #, kde-format
 msgid "Only a tag without children can be merged!"
-msgstr "Yalnızca bir alt ögesi olmayan etiket birleştirilebilir!"
+msgstr "Yalnızca bir alt ögesi olmayan künye birleştirilebilir!"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:616
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
-msgstr "'%1' etiketini '%2' içine birleştirmek istiyor musunuz?"
+msgstr "'%1' künyesini '%2' içine birleştirmek istiyor musunuz?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:620
 #: core/libs/album/manager/albummanager_talbum.cpp:1127
@@ -27191,7 +27196,7 @@ msgstr "Bu oturumda bir daha sorma"
 #: core/libs/album/manager/albummanager_talbum.cpp:696
 #, kde-format
 msgid "No such tag"
-msgstr "Böyle bir etiket yok"
+msgstr "Böyle bir künye yok"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:1122
 #, kde-format
@@ -27676,14 +27681,14 @@ msgstr "Seçili albüm yok"
 #: core/libs/album/widgets/albumselectcombobox.cpp:97
 #, kde-format
 msgid "No Tag Selected"
-msgstr "Seçili etiket yok"
+msgstr "Seçili künye yok"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
-msgstr[0] "1 etiket seçili"
-msgstr[1] "%1 etiket seçili"
+msgstr[0] "1 künye seçili"
+msgstr[1] "%1 künye seçili"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:278
 #, kde-format
@@ -27696,15 +27701,15 @@ msgstr[1] "%1 albüm seçili"
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
-msgstr[0] "1 etiket dışarıda tutuldu"
-msgstr[1] "%1 etiket dışarıda tutuldu"
+msgstr[0] "1 künye dışlandı"
+msgstr[1] "%1 künye dışlandı"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:291
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
-msgstr[0] "1 albüm dışarıda tutuldu"
-msgstr[1] "%1 albüm dışarıda tutuldu"
+msgstr[0] "1 albüm dışlandı"
+msgstr[1] "%1 albüm dışlandı"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:80
 #, kde-format
@@ -27723,7 +27728,7 @@ msgstr "Albümler (Tümü)"
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
-msgstr "Etiketler (0)"
+msgstr "Künyeler (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
 #, kde-format
@@ -27767,25 +27772,25 @@ msgstr "Seçili albümleri sıfırla"
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
-msgstr "Tüm etiketler"
+msgstr "Tüm künyeler"
 
 #: core/libs/album/widgets/albumselectors.cpp:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
-msgstr "İşlenmesi gereken tüm etiketleri seçin."
+msgstr "İşlenmesi gereken tüm künyeleri seçin."
 
 #: core/libs/album/widgets/albumselectors.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
-msgstr "Seçili etiket yok"
+msgstr "Seçili künye yok"
 
 #: core/libs/album/widgets/albumselectors.cpp:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
-msgstr "Seçili etiketleri sıfırla"
+msgstr "Seçili künyeleri sıfırla"
 
 #: core/libs/album/widgets/albumselectors.cpp:549
 #, kde-format
@@ -27797,13 +27802,13 @@ msgstr "Albümler (%1)"
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
-msgstr "Etiketler (Tümü)"
+msgstr "Künyeler (Tümü)"
 
 #: core/libs/album/widgets/albumselectors.cpp:553
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
-msgstr "Etiketler (%1)"
+msgstr "Künyeler (%1)"
 
 #: core/libs/album/widgets/albumselectwidget.cpp:69
 #, kde-format
@@ -28873,8 +28878,8 @@ msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
 "supported systems."
 msgstr ""
-"WAL (Önden Yazılan Günlük) kipi, desteklenen sistemlerde önemli ölçüde "
-"hızlıdır."
+"WAL (Write-Ahead-Log, Önden Yazılan Günlük) kipi, desteklenen sistemlerde "
+"önemli ölçüde hızlıdır."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
 #, kde-format
@@ -28886,12 +28891,13 @@ msgid ""
 "before the changes are written to the database. This made database requests "
 "atomic and robust in extensive and critical use cases."
 msgstr ""
-"Önden Yazılan Günlük, işlenen ancak henüz veritabanlarına uygulanmamış "
-"işlemleri kaydeden bir ileri sarma günlüğü kullanma kipidir. Bir çökme "
-"sırasında kurtarma işlemlerine yönelik yapıları barındırmak için "
-"günlükleştirilmiş yardımcı bir dosya kullanır. Değişiklikler veritabanına "
-"yazılmadan önce ilk olarak günlüğe kaydedilir. Bu, veritabanı isteklerinin "
-"kapsamlı ve kritik kullanım durumlarında atomik ve sağlam olmasını sağlar."
+"WAL (Write-Ahead-Log, Önden Yazılan Günlük), işlenen ancak henüz "
+"veritabanlarına uygulanmamış işlemleri kaydeden bir ileri sarma günlüğü "
+"kullanma kipidir. Bir çökme sırasında kurtarma işlemlerine yönelik yapıları "
+"barındırmak için günlükleştirilmiş yardımcı bir dosya kullanır. "
+"Değişiklikler veritabanına yazılmadan önce ilk olarak günlüğe kaydedilir. "
+"Bu, veritabanı isteklerinin kapsamlı ve kritik kullanım durumlarında atomik "
+"ve sağlam olmasını sağlar."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
 #, kde-format
@@ -29082,7 +29088,7 @@ msgid ""
 msgstr ""
 "Yüz veritabanı, digiKam tarafından yüz tanıma sürecine ayrılmış\n"
 "görsel histogramlarını barındırmak için kullanılır. Bu, özellikle\n"
-"insan yüzlerinin algılandığı ve etiketlendiği çok sayıda görsel\n"
+"insan yüzlerinin algılandığı ve künyelendiği çok sayıda görsel\n"
 "varsa birdenbire çok fazla alan kullanabilir."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
@@ -34425,7 +34431,7 @@ msgstr "Dosya üst verisi yazılıyor…"
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:316
 #, kde-format
 msgid "Revising Exif Orientation tags"
-msgstr "Exif yönlendirmesi etiketleri revize ediliyor…"
+msgstr "Exif yönelimi künyeleri revize ediliyor…"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:81
 #, kde-format
@@ -34436,12 +34442,12 @@ msgstr "Görevler bitiriliyor…"
 #: core/libs/fileactionmanager/fileactionmngr.cpp:130
 #, kde-format
 msgid "Assigning image tags"
-msgstr "Görsel etiketleri atanıyor…"
+msgstr "Görsel künyeleri atanıyor…"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:152
 #, kde-format
 msgid "Removing image tags"
-msgstr "Görsel etiketleri kaldırılıyor…"
+msgstr "Görsel künyeleri kaldırılıyor…"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:169
 #, kde-format
@@ -34604,7 +34610,7 @@ msgstr "<br/><nobr><i>Renk Etiketleri</i></nobr>"
 #: core/libs/filters/filterstatusbar.cpp:154
 #, kde-format
 msgid "<br/><nobr><i>Tags</i></nobr>"
-msgstr "<br/><nobr><i>Etiketler</i></nobr>"
+msgstr "<br/><nobr><i>Künyeler</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:159
 #, kde-format
@@ -34815,7 +34821,7 @@ msgstr "Küçüklük veya Eşitlik Koşulu"
 #: core/libs/filters/ratingfilter.cpp:260
 #, kde-format
 msgid "Exclude Items Without Rating"
-msgstr "Derecelendirmesiz Ögeleri Dışarıda Tut"
+msgstr "Derecelendirmesiz Ögeleri Dışla"
 
 #: core/libs/filters/textfilter.cpp:72
 #, kde-format
@@ -34828,7 +34834,7 @@ msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
 msgstr ""
-"Bu görünümü öge adlarına, görsel yazılarına (yorumlara) ve etiketlere göre "
+"Bu görünümü öge adlarına, görsel yazılarına (yorumlara) ve künyelere göre "
 "tez süzmek için arama dizgileri girin"
 
 #: core/libs/filters/textfilter.cpp:77
@@ -34859,7 +34865,7 @@ msgstr "Öge Yorumu"
 #: core/libs/filters/textfilter.cpp:89
 #, kde-format
 msgid "Tag Name"
-msgstr "Etiket Adı"
+msgstr "Künye Adı"
 
 #: core/libs/filters/textfilter.cpp:91
 #, kde-format
@@ -35035,7 +35041,7 @@ msgstr "Tüm resimlere 'Kabul Edildi' etiketi atanması için gereken eşik"
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
-msgstr "Bulanıklaşmayı Algıla"
+msgstr "Bulanıklaşmayı algıla"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:205
 #, kde-format
@@ -35061,7 +35067,7 @@ msgstr "Bulanıklık algoritmasına atamak için ağırlık"
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
-msgstr "Gürültü Algıla"
+msgstr "Gürültüyü algıla"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:215
 #, kde-format
@@ -35079,7 +35085,7 @@ msgstr "Gürültü algoritmasına atanacak ağırlık"
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
-msgstr "Sıkıştırmayı Algıla"
+msgstr "Sıkıştırmayı algıla"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:225
 #, kde-format
@@ -36312,7 +36318,7 @@ msgstr "Zuluca"
 #, kde-format
 msgctxt "@title: xmp namespace for tags container"
 msgid "Tags"
-msgstr "Etiketler"
+msgstr "Künyeler"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:56
 #, kde-format
@@ -36394,7 +36400,7 @@ msgstr "Etkin Değil"
 #, kde-format
 msgctxt "@title"
 msgid "Tags"
-msgstr "Etiketler"
+msgstr "Künyeler"
 
 #: core/libs/models/albummodel_tag.cpp:52
 #, kde-format
@@ -36833,7 +36839,7 @@ msgstr "Alt yazılar: "
 #: core/libs/properties/captions/captionedit.cpp:58
 #, kde-format
 msgid "Enter caption author name here."
-msgstr "Yazar adı alt yazısını buraya girin."
+msgstr "Yazar adı alt yazısını buraya gir…"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:275
 #, kde-format
@@ -36888,8 +36894,8 @@ msgstr[1] "%1 görselin derecelendirmesini düzenlediniz. "
 msgctxt "@info"
 msgid "You have edited the tags of the image. "
 msgid_plural "You have edited the tags of %1 images. "
-msgstr[0] "Görselin etiketlerini düzenlediniz. "
-msgstr[1] "%1 görselin etiketileri düzenlediniz. "
+msgstr[0] "Görselin künyelerini düzenlediniz. "
+msgstr[1] "%1 görselin künyelerini düzenlediniz. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:316
 #, kde-format
@@ -36945,7 +36951,7 @@ msgstr "<li>derecelendirme</li>"
 #, kde-format
 msgctxt "@info"
 msgid "<li>tags</li>"
-msgstr "<li>etiketler</li>"
+msgstr "<li>künyeler</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:363
 #, kde-format
@@ -37006,7 +37012,7 @@ msgstr "Her dosyadan veritabanına üst veri oku"
 #, kde-format
 msgctxt "@action"
 msgid "Unify tags of selected items"
-msgstr "Seçili ögelerin etiketlerini birleştir"
+msgstr "Seçili ögelerin künyelerini birleştir"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:36
 #, kde-format
@@ -37098,14 +37104,14 @@ msgstr "Burada seçili ögelerde farklı metinler var."
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
-msgstr "Etiket Yöneticisini Aç"
+msgstr "Künye Yöneticisini Aç"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
 #: core/libs/properties/captions/tagsedit.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
-msgstr "Buraya etiketi girin."
+msgstr "Buraya künyeyi girin."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
 #: core/libs/properties/captions/tagsedit.cpp:111
@@ -37116,7 +37122,7 @@ msgid ""
 "hierarchy of tags. ',' can be used to create more than one hierarchy at the "
 "same time."
 msgstr ""
-"Etiketleri oluşturmak için kullanılan metni buraya girin. '/' etiketlerin "
+"Künyeleri oluşturmak için kullanılan metni buraya girin. '/' künyelerin "
 "hiyerarşisini oluşturmak için; ',' ise aynı anda birden fazla hiyerarşi "
 "oluşturmak için kullanılabilir."
 
@@ -37125,21 +37131,21 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
-msgstr "Halihazırda atanmış etiketler"
+msgstr "Halihazırda atanmış künyeler"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
 #: core/libs/properties/captions/tagsedit.cpp:134
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
-msgstr "Son kullanılan etiketler"
+msgstr "Son kullanılan künyeler"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
 #: core/libs/properties/captions/tagsedit.cpp:292
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
-msgstr "Yeni Atanmış Etiket Yok"
+msgstr "Yeni Atanmış Künye Yok"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
 #, kde-format
@@ -37928,7 +37934,7 @@ msgstr "Kişiler: "
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
-msgstr "Etiketler"
+msgstr "Künyeler"
 
 #: core/libs/properties/itempropertiestab.cpp:323
 #, kde-format
@@ -38389,7 +38395,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Exposure Correction (E.V)"
-msgstr "Pozlama Düzeltmesi (E.V)"
+msgstr "Pozlama düzeltmesi (E.V)"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:436
 #, kde-kuit-format
@@ -38976,8 +38982,8 @@ msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
-"Üst veri, yazılar, derecelendirmeler, etiketler, coğrafi konum ve döndürme "
-"ile ilgili işlemler"
+"Üst veri, yazılar, derecelendirmeler, etiketler, künyeler, coğrafi konum ve "
+"döndürme ile ilgili işlemler"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:464
 #, kde-format
@@ -39087,11 +39093,11 @@ msgid_plural ""
 "Tag '%2' has %1 subtags. Deleting this will also delete the subtags.\n"
 "Do you want to continue?"
 msgstr[0] ""
-"'%2' etiketinin 1 alt etiketi var. Bunun silinmesi alt etiketi de "
+"'%2' künyesinin 1 alt künyesi var. Bunun silinmesi alt künyeyi de "
 "silecektir.\n"
 "Sürdürmek istiyor musunuz?"
 msgstr[1] ""
-"'%2' etiketinin %1 alt etiketi var. Bunun silinmesi alt etiketi de "
+"'%2' künyesinin %1 alt künyesi var. Bunun silinmesi alt künyeyi de "
 "silecektir.\n"
 "Sürdürmek istiyor musunuz?"
 
@@ -39099,20 +39105,20 @@ msgstr[1] ""
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
-msgstr[0] "'%2' etiketi 1 ögeye atanmış. Sürdürmek istiyor musunuz?"
-msgstr[1] "'%2' etiketi %1 ögeye atanmış. Sürdürmek istiyor muzunuz?"
+msgstr[0] "'%2' künyesi 1 ögeye atanmış. Sürdürmek istiyor musunuz?"
+msgstr[1] "'%2' künyesi %1 ögeye atanmış. Sürdürmek istiyor muzunuz?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:291
 #, kde-format
 msgid "Delete '%1' tag?"
-msgstr "'%1' Etiketi Silinsin mi?"
+msgstr "'%1' künye silinsin mi?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
 #: core/libs/tags/engine/tagmodificationhelper.cpp:413
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
-msgstr "Etiketi Sil"
+msgstr "Künyeyi Sil"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:387
 #, kde-format
@@ -39121,20 +39127,20 @@ msgid ""
 "subtags.\n"
 "Do you want to continue?"
 msgstr ""
-"'%1' etiketlerinin bir veya daha çok alt etiketi var. Bunların silinmesi alt "
-"etiketleri de silecektir.\n"
+"'%1' künyelerinin bir veya daha çok alt künyeleri var. Bunların silinmesi "
+"alt künyelerini de silecektir.\n"
 "Sürdürmek istiyor musunuz?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:404
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
-"'%1' etiketleri bir veya daha çok ögeye atanmış. Sürdürmek istiyor musunuz?"
+"'%1' künyeleri bir veya daha çok ögeye atanmış. Sürdürmek istiyor musunuz?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:410
 #, kde-format
 msgid "Delete '%1' tag(s)?"
-msgstr "'%1' Etiketleri Silinsin mi?"
+msgstr "'%1' künye silinsin mi?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:574
 #, kde-format
@@ -39147,12 +39153,12 @@ msgid_plural ""
 "remove the children.\n"
 "Do you want to continue?"
 msgstr[0] ""
-"'%2' yüz etiketlerinin en az 1 alt yüz etiketi var. Bunların kaldırılması "
-"alt etiketlerleri de kaldırır.\n"
+"'%2' yüz künyesinin en az 1 alt yüz künyesi var. Bunların kaldırılması alt "
+"künyeleri de kaldırır.\n"
 "Sürdürmek istiyor musunuz?"
 msgstr[1] ""
-"'%2' yüz etiketinin en az 1 alt yüz etiketi var. Bunun kaldırılması alt "
-"etiketleri de kaldırır.\n"
+"'%2' yüz künyesinin en az 1 alt yüz künyesi var. Bunun kaldırılması alt "
+"künyeleri de kaldırır.\n"
 "Sürdürmek istiyor musunuz?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:596
@@ -39161,25 +39167,24 @@ msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
 msgid_plural ""
 "Face tags '%2' are assigned to at least one item. Do you want to continue?"
-msgstr[0] "'%2' yüz etiketi en az 1 ögeye atanmış. Sürdürmek istiyor musunuz?"
-msgstr[1] ""
-"'%2' yüz etiketleri en az 1 ögeye atanmış. Sürdürmek istiyor musunuz?"
+msgstr[0] "'%2' yüz künyesi en az 1 ögeye atanmış. Sürdürmek istiyor musunuz?"
+msgstr[1] "'%2' yüz künyesi en az 1 ögeye atanmış. Sürdürmek istiyor musunuz?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:604
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
-msgstr[0] "Yüz etiketi kaldırılsın mı?"
-msgstr[1] "Yüz etiketleri kaldırılsın mı?"
+msgstr[0] "Yüz künyesi kaldırılsın mı?"
+msgstr[1] "Yüz künyeleri kaldırılsın mı?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:615
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
-msgstr[0] "Bu yüz etiketine karşılık gelen etiket görsellerden kaldırılsın mı?"
+msgstr[0] "Bu yüz künyesine karşılık gelen künye görsellerden kaldırılsın mı?"
 msgstr[1] ""
-"Bu yüz etiketine karşılık gelen %1 etiket görsellerden kaldırılsın mı?"
+"Bu yüz künyesine karşılık gelen %1 künye görsellerden kaldırılsın mı?"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:217
 #, kde-format
@@ -39199,13 +39204,13 @@ msgstr "\"%1\" Renk Etiketi Ata"
 #: core/libs/tags/engine/tagsactionmngr.cpp:303
 #, kde-format
 msgid "Assign Tag \"%1\""
-msgstr "\"%1\" Etiketi Ata"
+msgstr "\"%1\" Künyesini Ata"
 
 #: core/libs/tags/manager/models/tagmngrlistitem.cpp:155
 #, kde-format
 msgctxt "@info"
 msgid "All Tags"
-msgstr "Tüm Etiketler"
+msgstr "Tüm Künyeler"
 
 #: core/libs/tags/manager/models/tagmngrlistmodel.cpp:287
 #, kde-format
@@ -39227,25 +39232,25 @@ msgstr "Listeye Ekle"
 #: core/libs/tags/manager/taglist.cpp:68
 #, kde-format
 msgid "Add selected tags to Quick Access List"
-msgstr "Seçili etiketleri Hızlı Erişim Listesi'ne ekle"
+msgstr "Seçili künyeleri Hızlı Erişim Listesi'ne ekle"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:138
 #, kde-format
 msgid "Delete Tags"
-msgstr "Etiketleri Sil"
+msgstr "Künyeleri Sil"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
 #: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Edit Tag Title"
-msgstr "Etiket Başlığını Düzenle"
+msgstr "Künye Başlığını Düzenle"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
 #: core/libs/tags/manager/tagsmanager.cpp:720
 #: core/libs/tags/widgets/tagfolderview.cpp:69
 #, kde-format
 msgid "Reset Tag Icon"
-msgstr "Etiket Simgesini Sıfırla"
+msgstr "Künye Simgesini Sıfırla"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:729
@@ -39257,25 +39262,25 @@ msgstr "Seçimi Tersine Çevir"
 #: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Expand Tag Tree"
-msgstr "Etiket Ağacını Genişlet"
+msgstr "Künye Ağacını Genişlet"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
 #: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Collapse Tag Tree"
-msgstr "Etiket Ağacını Daralt"
+msgstr "Künye Ağacını Daralt"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
 #: core/libs/tags/manager/tagsmanager.cpp:741
 #, kde-format
 msgid "Remove Tag from Images"
-msgstr "Görsellerden Etiket Kaldır"
+msgstr "Görsellerden Künyeleri Kaldır"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:98
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
-msgstr "Etiket Özellikleri"
+msgstr "Künye Özellikleri"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:107
 #: core/libs/tags/widgets/tageditdlg.cpp:139
@@ -39288,7 +39293,7 @@ msgstr "&Başlık:"
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
-msgstr "Etiket adını buraya girin"
+msgstr "Künye adını buraya girin"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:125
 #, kde-format
@@ -39319,8 +39324,7 @@ msgstr "Not"
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
-"Bu kısayol ögelere etiket atamak veya etiket atamasını kaldırmak için "
-"kullanılabilir."
+"Bu kısayol ögelere künye atamak veya künyeleri kaldırmak için kullanılabilir."
 
 #: core/libs/tags/manager/tagpropwidget.cpp:166
 #, kde-format
@@ -39338,13 +39342,13 @@ msgstr "At"
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
-msgstr "Önceki etiketler değiştirildi. Değişiklikler kaydedilsin mi? "
+msgstr "Önceki künyeler değiştirildi. Değişiklikler kaydedilsin mi? "
 
 #: core/libs/tags/manager/tagsmanager.cpp:180
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
-msgstr "Etiketler Yöneticisi"
+msgstr "Künyeler Yöneticisi"
 
 #: core/libs/tags/manager/tagsmanager.cpp:339
 #, kde-format
@@ -39356,11 +39360,11 @@ msgid_plural ""
 "Tags %2 have one or more subtags. Deleting them will also delete the "
 "subtags. Do you want to continue?"
 msgstr[0] ""
-"'%2' etiketinin bir veya daha çok alt etiketi var. Bunların silinmesi alt "
-"etiketleri de silecektir. Sürdürmek istiyor musunuz?"
+"'%2' künyesinin bir veya daha çok alt künyesi var. Bunların silinmesi alt "
+"künyeleri de silecektir. Sürdürmek istiyor musunuz?"
 msgstr[1] ""
-"'%2' etiketlerinin bir veya daha çok alt etiketi var. Bunların silinmesi alt "
-"etiketleri de silecektir. Sürdürmek istiyor musunuz?"
+"'%2' küryelerinin bir veya daha çok alt künyesi var. Bunların silinmesi alt "
+"künyeleri de silecektir. Sürdürmek istiyor musunuz?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:362
 #, kde-format
@@ -39369,10 +39373,9 @@ msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
 msgid_plural ""
 "Tags %2 are assigned to one or more items. Do you want to delete them?"
 msgstr[0] ""
-"'%2' etiketleri bir veya daha çok ögeye atanmış. Onları silmek istiyor "
-"musunuz?"
+"'%2' künyesi bir veya daha çok ögeye atanmış. Onları silmek istiyor musunuz?"
 msgstr[1] ""
-"'%2' etiketleri bir veya daha çok ögeye atanmış. Onları silmek istiyor "
+"'%2' künyeleri bir veya daha çok ögeye atanmış. Onları silmek istiyor "
 "musunuz?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:372
@@ -39380,16 +39383,16 @@ msgstr[1] ""
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
-msgstr[0] "%2 etiketi silinsin mi?"
-msgstr[1] "%2 etiketleri silinsin mi?"
+msgstr[0] "%2 künyesi silinsin mi?"
+msgstr[1] "%2 künyeleri silinsin mi?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:378
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
-msgstr[0] "Etiketi Sil"
-msgstr[1] "Etiketleri Sil"
+msgstr[0] "Künyeyi Sil"
+msgstr[1] "Künyeleri Sil"
 
 #: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
@@ -39398,9 +39401,9 @@ msgid ""
 "> You may <b>lose tags</b> if you did not read tags before (by calling Read "
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
-"<qt>digiKam, etiketleri veritabanından ayarlamadan önce etiket üst verisini "
-"temizleyecektir.<br/> Etiketleri daha önceden okumadıysanız (Görselden "
-"Etiketleri Oku'yu çağırarak) etiketleri <b>kaybedebilirsiniz</b>.<br/"
+"<qt>digiKam, künyeleri veritabanından koymadan önce künye üst verisini "
+"temizleyecektir.<br/> Künyeleri daha önceden okumadıysanız (Görselden "
+"Künyeleri Oku'yu çağırarak) künyeleri <b>kaybedebilirsiniz</b>.<br/"
 ">Sürdürmek istiyor musunuz?</qt>"
 
 #: core/libs/tags/manager/tagsmanager.cpp:516
@@ -39420,7 +39423,7 @@ msgid ""
 "To apply changes to files, you must choose write metadata to file later.\n"
 "Do you want to continue?"
 msgstr ""
-"Bu işlem yalnızca veritabanındaki tüm etiketleri silecektir.\n"
+"Bu işlem tüm künyeleri yalnızca veritabanından silecektir.\n"
 "Değişiklikleri dosyalara uygulamak için üst veriyi dosyaya daha sonra "
 "yazmayı seçmelisiniz.\n"
 "Sürdürmek istiyor musunuz?"
@@ -39430,9 +39433,9 @@ msgstr ""
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] ""
-"Seçili etiketi tüm görsellerden kaldırmayı gerçekten istiyor musunuz?"
+"Seçili künyeyi tüm görsellerden kaldırmayı gerçekten istiyor musunuz?"
 msgstr[1] ""
-"Seçili etiketleri tüm görsellerden kaldırmayı gerçekten istiyor musunuz?"
+"Seçili künyeleri tüm görsellerden kaldırmayı gerçekten istiyor musunuz?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:703
 #, kde-format
@@ -39449,18 +39452,18 @@ msgstr "Eşzamanla"
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Create Tag from Address Book"
-msgstr "Adres Defterinden Etiket Oluştur"
+msgstr "Adres Defterinden Künye Oluştur"
 
 #: core/libs/tags/manager/tagsmanager.cpp:726
 #, kde-format
 msgid "Mark Unassigned Tags"
-msgstr "Atanmamış Etiketleri İmle"
+msgstr "Atanmamış Künyeleri İmle"
 
 #: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
-"Geçerli etikete yeni etiket ekleyin. Geçerli etiket son tıklanan etikettir."
+"Geçerli künyeye yeni künye ekleyin. Geçerli künye, son tıklanan künyedir."
 
 #: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
@@ -39468,23 +39471,23 @@ msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
-"Seçili ögeleri silin. Ayrıca birden fazla ögeyle çalışır; ancak kök etiketi "
+"Seçili ögeleri silin. Ayrıca birden fazla ögeyle çalışır; ancak kök künye "
 "silinmez."
 
 #: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Edit title from selected tag."
-msgstr "Seçili etiketteki başlığı düzenleyin."
+msgstr "Seçili künyedeki başlığı düzenleyin."
 
 #: core/libs/tags/manager/tagsmanager.cpp:755
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
-msgstr "Simgeyi seçili etiketlere sıfırlayın. Çoklu seçim ile çalışır."
+msgstr "Simgeyi seçili künyelere sıfırlayın. Çoklu seçim ile çalışır."
 
 #: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
-msgstr "Görsellere atanmamış tüm etiketleri imleyin."
+msgstr "Görsellere atanmamış tüm künyeleri imleyin."
 
 #: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
@@ -39499,43 +39502,43 @@ msgstr "Seçili ögeler genişletilir"
 #: core/libs/tags/manager/tagsmanager.cpp:765
 #, kde-format
 msgid "Expand tag tree completely"
-msgstr "Etiket ağacını tümüyle genişletin"
+msgstr "Künye ağacını tümüyle genişlet"
 
 #: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Collapse tag tree completely"
-msgstr "Etiket ağacını tümüyle daraltın"
+msgstr "Künye ağacını tümüyle daralt"
 
 #: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
-msgstr "Görsellerden seçili etiket(ler)i silin. Çoklu seçim ile çalışır."
+msgstr "Görsellerden seçili künye(ler)i silin. Çoklu seçim ile çalışır."
 
 #: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Write Tags from Database to Image"
-msgstr "Etiketleri Veritabanından Görsellere Yaz"
+msgstr "Künyeleri Veritabanından Görsellere Yaz"
 
 #: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
-msgstr "Görselden Etiketleri Oku"
+msgstr "Görselden Künyeleri Oku"
 
 #: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid "Wipe all tags from Database only"
-msgstr "Yalnızca Veritabanından Tüm Etiketleri Sil"
+msgstr "Tüm Künyeleri Yalnızca Veritabanından Sil"
 
 #: core/libs/tags/manager/tagsmanager.cpp:825
 #, kde-format
 msgid "Write Tags Metadata to Image."
-msgstr "Üst Veriden Görsele Etiketler Yaz"
+msgstr "Künyeler Üst Verisini Görsele Yaz"
 
 #: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
-"Etiketleri görsellerden veritabanına okuyun. Var olan etiketler etkilenmez"
+"Künyeleri görsellerden veritabanına okuyun. Var olan künyeler etkilenmez"
 
 #: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
@@ -39543,14 +39546,14 @@ msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
-"Yalnızca veritabanından tüm etiketleri silin. Dosyalarla eşzamanlanmaz. "
+"Tüm künyeleri yalnızca veritabanından silin. Dosyalarla eşzamanlanmaz. "
 "Dikkatli yapın."
 
 #: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr "Etiket yönetimi üzerine çevrimiçi yardım"
+msgstr "Künye yönetimi üzerine çevrimiçi yardım"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -39585,18 +39588,18 @@ msgstr "Her İkisi"
 #, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
-msgstr "Yeni Etiket"
+msgstr "Yeni Künye"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:117
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
-msgstr "Etiketi Düzenle"
+msgstr "Künyeyi Düzenle"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:141
 #, kde-format
 msgid "Enter tag name here..."
-msgstr "Etiket adını buraya gir..."
+msgstr "Künye adını buraya gir..."
 
 #: core/libs/tags/widgets/tageditdlg.cpp:148
 #, kde-format
@@ -39608,12 +39611,12 @@ msgid ""
 "tag hierarchy starts with '/', root tag album is used as parent.</li></ul></"
 "p>"
 msgstr ""
-"<p>Yeni etiketler oluşturmak için aşağıdaki kuralları kullanabilirsiniz:</"
-"p><p><ul><li>'/', etiket hiyerarşisi oluşturmak için kullanılabilir.<br/"
-">Örneğin: <i>\"Ülke/Kent/Paris\"</i></li><li>',', aynı anda birden fazla "
-"etiket hiyerarşisi oluşturmak için kullanılabilir.<br/>Örneğin: <i>\"Kent/"
-"Paris, Anıt/Notre-Dame\"</i></li><li>Bir etiket hiyerarşisi '/' ile "
-"başlıyorsa kök etiket albümü üst öge olarak kullanılır.</li></ul></p>"
+"<p>Yeni künyeler oluşturmak için aşağıdaki kuralları kullanabilirsiniz:</"
+"p><p><ul><li>'/', künye hiyerarşisi oluşturmak için kullanılabilir.<br/"
+">Örneğin: <i>\"Ülke/Kent/Artvin\"</i></li><li>',', aynı anda birden fazla "
+"künye hiyerarşisi oluşturmak için kullanılabilir.<br/>Örneğin: <i>\"Kent/"
+"Samsun, Anıt/Atatürk\"</i></li><li>Bir künye hiyerarşisi '/' ile başlıyorsa "
+"kök künye albümü üst öge olarak kullanılır.</li></ul></p>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:182
 #, kde-format
@@ -39631,49 +39634,49 @@ msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
 "</p>"
 msgstr ""
-"<p><b>Not</b>: Bu kısayol ögelere etiket atamak veya etiket atamasını "
+"<p><b>Not</b>: Bu kısayol ögelere künye atamak veya künye atamasını "
 "kaldırmak için kullanılabilir.</p>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:347
 #, kde-format
 msgid "<b>Create New Tag</b>"
-msgstr "<b>Yeni Etiket Oluştur</b>"
+msgstr "<b>Yeni Künye Oluştur</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:351
 #, kde-format
 msgid "<b>Create New Tag in<br/>\"%1\"</b>"
-msgstr "<b>\"%1\"<br/>İçinde Yeni Etiket Oluştur</b>"
+msgstr "<b>\"%1\"<br/>İçinde Yeni Künye Oluştur</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:357
 #, kde-format
 msgid "<b>Properties of Tag<br/>\"%1\"</b>"
-msgstr "<b>\"%1\"<br/>Etiketinin Özellikleri</b>"
+msgstr "<b>\"%1\"<br/>Künyesinin Özellikleri</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:529
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
-msgstr "Etiket Oluşturma Hatası"
+msgstr "Künye Oluşturma Hatası"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:544
 #, kde-format
 msgid "An error occurred during tag creation:"
-msgstr "Etiket oluşturulurken bir hata oluştu:"
+msgstr "Künye oluşturulurken bir hata oluştu:"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:546
 #, kde-format
 msgid "Tag Path"
-msgstr "Etiket Yolu"
+msgstr "Künye Yolu"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:144
 #, kde-format
 msgid "Expand all Tags"
-msgstr "Tüm Etiketleri Genişlet"
+msgstr "Tüm Künyeleri Genişlet"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:149
 #, kde-format
 msgid "Collapse all Tags"
-msgstr "Tüm Etiketleri Daralt"
+msgstr "Tüm Künyeleri Daralt"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:237
 #, kde-format
@@ -39683,38 +39686,38 @@ msgstr "Seçiliyi Özyineli Genişlet"
 #: core/libs/tags/widgets/tagspopupmenu.cpp:553
 #, kde-format
 msgid "No Recently Assigned Tags"
-msgstr "Son Zamanda Atanmış Etiket Yok"
+msgstr "Son Zamanda Atanmış Künye Yok"
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:557
 #, kde-format
 msgid "Recently Assigned Tags"
-msgstr "Son Zamanda Atanan Etiketler"
+msgstr "Son Zamanda Atanan Künyeler"
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:614
 #: core/libs/tags/widgets/tagspopupmenu.cpp:754
 #, kde-format
 msgid "Add New Tag..."
-msgstr "Yeni Etiket Ekle..."
+msgstr "Yeni Künye Ekle..."
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:620
 #, kde-format
 msgid "More Tags..."
-msgstr "Daha Fazla Etiket..."
+msgstr "Daha Fazla Künye..."
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:720
 #, kde-format
 msgid "Assign this Tag"
-msgstr "Bu Etiketi Ata"
+msgstr "Bu Künyeyi Ata"
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:729
 #, kde-format
 msgid "Remove this Tag"
-msgstr "Bu Etiketi Kaldır"
+msgstr "Bu Künyeyi Kaldır"
 
 #: core/libs/tags/widgets/tagspopupmenu.cpp:739
 #, kde-format
 msgid "Go to this Tag"
-msgstr "Bu Etikete Git"
+msgstr "Bu Künyeye Git"
 
 #: core/libs/template/subjectedit.cpp:47
 #, kde-format
@@ -39838,7 +39841,7 @@ msgstr "Fotoğrafçıların unvanları:"
 #: core/libs/template/templatepanel.cpp:127
 #, kde-format
 msgid "Enter the job titles of the authors here."
-msgstr "Buraya fotoğrafçıların iş ünvanlarını girin."
+msgstr "Buraya fotoğrafçıların iş ünvanlarını gir…"
 
 #: core/libs/template/templatepanel.cpp:129
 #, kde-format
@@ -39858,7 +39861,7 @@ msgstr ""
 #: core/libs/template/templatepanel.cpp:139
 #, kde-format
 msgid "Enter the photograph credit here."
-msgstr "Buraya fotoğrafta emeği geçenler bilgisini girin."
+msgstr "Buraya fotoğrafta emeği geçenler bilgisini gir…"
 
 #: core/libs/template/templatepanel.cpp:141
 #, kde-format
@@ -39886,7 +39889,7 @@ msgid ""
 "here."
 msgstr ""
 "Buraya telif hakkının şu anki sahibini/sahiplerini belirlemek için telif "
-"hakkı bildirimini girin."
+"hakkı bildirimini gir…"
 
 #: core/libs/template/templatepanel.cpp:154
 #, kde-format
@@ -39942,7 +39945,7 @@ msgid ""
 "Enter the list of instructions on how a resource can be legally used here."
 msgstr ""
 "Buraya bir kaynağın yasal olarak nasıl kullanılabileceğine ilişkin "
-"yönergelerin listesini girin."
+"yönergelerin listesini gir…"
 
 #: core/libs/template/templatepanel.cpp:177
 #, kde-format
@@ -39967,7 +39970,7 @@ msgstr "Kaynak:"
 #: core/libs/template/templatepanel.cpp:187
 #, kde-format
 msgid "Enter the original owner of the photograph here."
-msgstr "Buraya fotoğrafın özgün sahibini girin."
+msgstr "Buraya fotoğrafın özgün sahibini gir…"
 
 #: core/libs/template/templatepanel.cpp:189
 #, kde-format
@@ -40003,7 +40006,7 @@ msgstr "Yönergeler:"
 #: core/libs/template/templatepanel.cpp:203
 #, kde-format
 msgid "Enter the editorial notice here."
-msgstr "Buraya editöryal bildirimi girin."
+msgstr "Buraya editöryal bildirimi gir…"
 
 #: core/libs/template/templatepanel.cpp:205
 #, kde-format
@@ -40066,7 +40069,7 @@ msgstr "<p>Fotoğrafın çekildiği ülkeyi seçin.</p>"
 #: core/libs/template/templatepanel.cpp:306
 #, kde-format
 msgid "Enter the city name of the lead author here."
-msgstr "Buraya baş fotoğrafçının kentinin adını girin."
+msgstr "Buraya baş fotoğrafçının kentinin adını gir…"
 
 #: core/libs/template/templatepanel.cpp:308
 #, kde-format
@@ -40077,7 +40080,7 @@ msgstr "<p>Bu alan, baş fotoğrafçının yaşadığı kentin adını içermeli
 #: core/libs/template/templatepanel.cpp:316
 #, kde-format
 msgid "Enter the country name of the lead author here."
-msgstr "Buraya baş fotoğrafçının ülkesinin adını girin."
+msgstr "Buraya baş fotoğrafçının ülkesinin adını gir…"
 
 #: core/libs/template/templatepanel.cpp:318
 #, kde-format
@@ -40096,7 +40099,7 @@ msgstr "Adres:"
 #: core/libs/template/templatepanel.cpp:326
 #, kde-format
 msgid "Enter the address of the lead author here."
-msgstr "Buraya baş fotoğrafçının adresini girin."
+msgstr "Buraya baş fotoğrafçının adresini gir…"
 
 #: core/libs/template/templatepanel.cpp:328
 #, kde-format
@@ -40113,7 +40116,7 @@ msgstr "Posta kodu:"
 #: core/libs/template/templatepanel.cpp:336
 #, kde-format
 msgid "Enter the postal code of the lead author here."
-msgstr "Buraya baş fotoğrafçının posta kodunu girin."
+msgstr "Buraya baş fotoğrafçının posta kodunu gir…"
 
 #: core/libs/template/templatepanel.cpp:338
 #, kde-format
@@ -40130,7 +40133,7 @@ msgstr "İl:"
 #: core/libs/template/templatepanel.cpp:346
 #, kde-format
 msgid "Enter the province of the lead author here."
-msgstr "Buraya baş fotoğrafçının ilini girin."
+msgstr "Buraya baş fotoğrafçının ilini gir…"
 
 #: core/libs/template/templatepanel.cpp:348
 #, kde-format
@@ -40148,7 +40151,7 @@ msgstr "E-posta:"
 #: core/libs/template/templatepanel.cpp:356
 #, kde-format
 msgid "Enter the email of the lead author here."
-msgstr "Buraya baş fotoğrafçının e-posta adresini girin."
+msgstr "Buraya baş fotoğrafçının e-posta adresini gir…"
 
 #: core/libs/template/templatepanel.cpp:358
 #, kde-format
@@ -40158,7 +40161,7 @@ msgstr "<p>Bu alan, baş fotoğrafçının e-posta adresini içermelidir.</p>"
 #: core/libs/template/templatepanel.cpp:366
 #, kde-format
 msgid "Enter the phone number of the lead author here."
-msgstr "Buraya baş fotoğrafçının telefon numarasını girin."
+msgstr "Buraya baş fotoğrafçının telefon numarasını gir…"
 
 #: core/libs/template/templatepanel.cpp:368
 #, kde-format
@@ -40168,7 +40171,7 @@ msgstr "<p>Bu alan, baş fotoğrafçının telefon numarasını içermelidir.</p
 #: core/libs/template/templatepanel.cpp:376
 #, kde-format
 msgid "Enter the web site URL of the lead author here."
-msgstr "Buraya baş fotoğrafçının web sitesi URL'sini girin."
+msgstr "Buraya baş fotoğrafçının web sitesi URL'sini gir…"
 
 #: core/libs/template/templatepanel.cpp:378
 #, kde-format
@@ -41295,13 +41298,13 @@ msgstr "digiKam görsel derecelendirmesini ekranın alt kısmında gösterin."
 #, kde-format
 msgctxt "@option:check"
 msgid "Show image tags"
-msgstr "Görsel etiketlerini göster"
+msgstr "Görsel künyelerini göster"
 
 #: core/libs/video/osd/frameosdwidget.cpp:89
 #, kde-format
 msgctxt "@info"
 msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr "digiKam görsel etiketi adlarını ekranın alt kısmında gösterin."
+msgstr "digiKam görsel künyesi adlarını ekranın alt kısmında gösterin."
 
 #: core/libs/video/osd/frameosdwidget.cpp:91
 #, kde-format
@@ -42356,7 +42359,7 @@ msgid ""
 "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr ""
 "MJPEGStream eklentisi, OCR metin dönüştürücüsü eklentisi, kendiliğinden "
-"etiket atama işletkesi"
+"künye atama işletkesi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
 #, kde-format
@@ -42401,7 +42404,7 @@ msgstr "Veaceslav Munteanu"
 #: core/libs/widgets/mainview/daboutdata.cpp:190
 #, kde-format
 msgid "Tags Manager"
-msgstr "Etiketler Yöneticisi"
+msgstr "Künyeler Yöneticisi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:195
 #, kde-format
@@ -43177,7 +43180,7 @@ msgstr "Canon Tarif Verisi Bilgisi"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:119
 #, kde-format
 msgid "Derived Convenience Tags"
-msgstr "Türetilmiş Kolaylık Etiketleri"
+msgstr "Türetilmiş Kolaylık Künyeleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:123
 #, kde-format
@@ -43247,7 +43250,7 @@ msgstr "FlashPix Bilgisi"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:175
 #, kde-format
 msgid "Font Name Tags"
-msgstr "Yazıtipi Adı Etiketleri"
+msgstr "Yazıtipi Adı Künyeleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:179
 #, kde-format
@@ -43267,12 +43270,12 @@ msgstr "GNU Görüntü İşleme Programı"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:191
 #, kde-format
 msgid "Geolocated Tagged Image File Format"
-msgstr "Coğrafi Konumu Belirli Etiketli Görüntü Dosyası Biçimi"
+msgstr "Coğrafi Konumu Belirli Künyeli Görüntü Dosyası Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:195
 #, kde-format
 msgid "GoPro Tags"
-msgstr "GoPro Etiketleri"
+msgstr "GoPro Künyeleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:199
 #, kde-format
@@ -43613,14 +43616,14 @@ msgstr "Yükleme sürüyor"
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
-msgstr "Etiketler süzgeci seçenekleri"
+msgstr "Künyeler süzgeci seçenekleri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:153
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
-msgstr "Üst veri üzerinden etiketler süzgecini uygulayın."
+msgstr "Üst veri üzerinden künyeler süzgecini uygulayın."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:158
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:133
@@ -43662,7 +43665,7 @@ msgstr "Araçlar"
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Run tool over metadata tags."
-msgstr "Üst veri etiketleri üzerinden aracı çalıştırın."
+msgstr "Üst veri künyeleri üzerinden aracı çalıştırın."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:188
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:158
@@ -43716,7 +43719,7 @@ msgstr "ExifTool Bilgisini Kaydet"
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:72
 #, kde-format
 msgid "Standard Exif Tags"
-msgstr "Standart Exif Etiketleri"
+msgstr "Standart Exif Künyeleri"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:166
 #: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:155
@@ -43756,7 +43759,7 @@ msgstr "IPTC İkili Dosyaları (*.iptc)"
 #: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:69
 #, kde-format
 msgid "MakerNote Exif Tags"
-msgstr "MakerNote Exif Etiketleri"
+msgstr "MakerNote Exif Künyeleri"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:47
 #, kde-format
@@ -49250,14 +49253,13 @@ msgstr "Eylemleri döndür"
 #, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
-msgstr ""
-"Yönlendirme etiketine göre &döndürülmüş görselleri/küçük görselleri göster"
+msgstr "Yönelim künyesine göre &döndürülmüş görselleri/küçük görselleri göster"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:98
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
-msgstr "Döndürdükten/çevirdikten sonra yönlendirme etiketini normale getir"
+msgstr "Döndürdükten/çevirdikten sonra yönelim künyesini normale getir"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:119
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
@@ -50889,12 +50891,12 @@ msgstr "Görselin başlığı"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:68
 #, kde-format
 msgid "A comma separated list of all tags"
-msgstr "Tüm etiketlerin virgülle ayrılmış listesi"
+msgstr "Tüm künyelerin virgülle ayrılan listesi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:69
 #, kde-format
 msgid "A comma separated list of all tags with path"
-msgstr "Tüm etiketlerin yol ile virgülle ayrılmış listesi"
+msgstr "Tüm künyelerin yol ile virgülle ayrılan listesi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:58
 #, kde-format
@@ -51391,7 +51393,7 @@ msgstr "Rastgele metne ve uzantılara duyarlı numaralandırma"
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:68
 #, kde-format
 msgid "Create Tag From Address Book"
-msgstr "Adres Defterinden Etiket Oluştur"
+msgstr "Adres Defterinden Künye Oluştur"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:71
 #, kde-format
@@ -51604,7 +51606,7 @@ msgid ""
 msgstr ""
 "Duyarlılığa karşı özgüllüğü ayarlayın: Değer ne kadar yüksek olursa yüzler\n"
 "o kadar doğru olarak tanınır; ancak toplam tanınan yüz sayısı daha az olur\n"
-"(yalnızca önceden etiketlenmiş yüzlere çok benzeyen yüzler tanınır)."
+"(yalnızca önceden künye eklenen yüzlere çok benzeyen yüzler tanınır)."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
@@ -51751,12 +51753,12 @@ msgstr ""
 #: core/utilities/firstrun/metadatapage.cpp:74
 #, kde-format
 msgid "Do nothing"
-msgstr "Hiçbir Şey Yapma"
+msgstr "Hiçbir şey yapma"
 
 #: core/utilities/firstrun/metadatapage.cpp:79
 #, kde-format
 msgid "Add information to files"
-msgstr "Dosyalara Bilgi Ekle"
+msgstr "Dosyalara bilgi ekle"
 
 #: core/utilities/firstrun/metadatapage.cpp:89
 #, kde-format
@@ -51791,7 +51793,7 @@ msgstr ""
 "dikkat edin:</p><p>Göç işlemi tümüyle <b>sizin kendi riskinize tabidir</b>. "
 "digiKam geliştiricileri bunu tavsiye etmez ve desteklemez. Öte yandan, yeni "
 "bir yapılandırma oluşturmak, görsellerin içine gömülü olmayan ve yalnızca "
-"digiKam 4'ün veritabanında var olan etiketlerin ve diğer üst verinin "
+"digiKam 4'ün veritabanında var olan künyelerin ve diğer üst verinin "
 "kaybolmasıyla sonuçlanabilir.</p><p>Her iki durumda da sürdürmeden önce "
 "yapılandırma dosyalarını ve veritabanlarını yedeklemeniz önerilir.</p></qt>"
 
@@ -51816,8 +51818,8 @@ msgid ""
 "<qt><p>Specify how images should be opened when left-clicked on in the icon "
 "view:</p></qt>"
 msgstr ""
-"<qt><p>Simge görünümünde sol tıklandığında görsellerin nasıl açılacağını "
-"seçin:</p></qt>"
+"<qt><p>Simge görünümünde sol fare düğmesi ile tıklandığında görsellerin "
+"nasıl açılacağını seçin:</p></qt>"
 
 #: core/utilities/firstrun/openfilepage.cpp:75
 #, kde-format
@@ -51900,7 +51902,7 @@ msgstr ""
 #: core/utilities/firstrun/rawpage.cpp:74
 #, kde-format
 msgid "Open directly, with adjustments made automatically"
-msgstr "Ayarlamaları yapılmış halde doğrudan aç"
+msgstr "Ayarları yapılmış olarak doğrudan aç"
 
 #: core/utilities/firstrun/rawpage.cpp:79
 #, kde-format
@@ -51981,7 +51983,7 @@ msgstr "Araç ipuçlarını gösterme"
 #: core/utilities/firstrun/tooltipspage.cpp:79
 #, kde-format
 msgid "Use Tooltips"
-msgstr "İpuçlarını kullan"
+msgstr "Araç ipuçlarını kullan"
 
 #: core/utilities/firstrun/tooltipspage.cpp:89
 #, kde-format
@@ -52167,13 +52169,13 @@ msgstr "Her ikisi"
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
-msgstr "Albümler; ancak etiketler değil"
+msgstr "Albümler; ancak künyeler değil"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:204
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
-msgstr "Etiketler; ancak albümler değil"
+msgstr "Künyeler; ancak albümler değil"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:211
 #, kde-format
@@ -52237,15 +52239,15 @@ msgid ""
 "not albums.\n"
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
-"Seçili albümlerin ve etiketlerin ilişkisine karar vermek için bu seçeneği "
+"Seçili albümlerin ve künyelerin ilişkisine karar vermek için bu seçeneği "
 "kullanın.\n"
-"\"Biri\", görsellerin seçilen albümlerde veya etiketlerde olduğu anlamına "
+"\"Biri\", görsellerin seçilen albümlerde veya künyelerde olduğu anlamına "
 "gelir.\n"
-"\"Her ikisi\", görsellerin hem seçili albümlerde hem de etiketlerde olduğu "
+"\"Her ikisi\", görsellerin hem seçili albümlerde hem de künyelerde olduğu "
 "anlamına gelir.\n"
-"\"Albümler; ancak etiketler değil\", görsellerin seçili albümlerde olması; "
-"ancak etiketlerin olmaması gerektiği anlamına gelir.\n"
-"\"Etiketler; ancak albümler değil\", görsellerin seçili etiketlerde olması; "
+"\"Albümler; ancak künyeler değil\", görsellerin seçili albümlerde olması; "
+"ancak künyelerin olmaması gerektiği anlamına gelir.\n"
+"\"Künyeler; ancak albümler değil\", görsellerin seçili künyelerde olması; "
 "ancak albümlerde olmaması gerektiği anlamına gelir.\n"
 "\"Yalnızca seçili sekme\" yalnızca seçilen sekmenin kullanıldığı anlamına "
 "gelir."
@@ -53040,7 +53042,7 @@ msgstr "Görselden GPS bilgisi kaldırılamadı."
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
 #, kde-format
 msgid "Failed to save tags to file."
-msgstr "Dosyaya etiketler kaydedilemedi."
+msgstr "Dosyaya künyeler kaydedilemedi."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1008
 #, kde-format
@@ -53226,52 +53228,52 @@ msgstr "{Yerel yönetim alanı 2}"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:221
 #, kde-format
 msgid "Add country tag"
-msgstr "Ülke Etiketi Ekle"
+msgstr "Ülke Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:223
 #, kde-format
 msgid "Add state tag"
-msgstr "Eyalet Etiketi Ekle"
+msgstr "Eyalet Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:225
 #, kde-format
 msgid "Add state district tag"
-msgstr "Eyalet Bölgesi Etiketi Ekle"
+msgstr "Eyalet Bölgesi Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:227
 #, kde-format
 msgid "Add county tag"
-msgstr "İlçe Etiketi Ekle"
+msgstr "İlçe Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:229
 #, kde-format
 msgid "Add city tag"
-msgstr "Şehir Etiketi Ekle"
+msgstr "Şehir Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:231
 #, kde-format
 msgid "Add city district tag"
-msgstr "Şehir Bölgesi Etiketi Ekle"
+msgstr "Şehir Bölgesi Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:233
 #, kde-format
 msgid "Add suburb tag"
-msgstr "Banliyö Etiketi Ekle"
+msgstr "Banliyö Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:235
 #, kde-format
 msgid "Add town tag"
-msgstr "Kasaba Etiketi Ekle"
+msgstr "Kasaba Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:237
 #, kde-format
 msgid "Add village tag"
-msgstr "Köy Etiketi Ekle"
+msgstr "Köy Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:239
 #, kde-format
 msgid "Add hamlet tag"
-msgstr "Mezra Etiketi Ekle"
+msgstr "Mezra Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:241
 #, kde-format
@@ -53281,7 +53283,7 @@ msgstr "Sokak Ekle"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:243
 #, kde-format
 msgid "Add house number tag"
-msgstr "Ev Numarası Etiketi Ekle"
+msgstr "Ev Numarası Künyesi Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:245
 #, kde-format
@@ -53301,17 +53303,17 @@ msgstr "Yerel Yönetim Bölgesi 1 Ekle"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:251
 #, kde-format
 msgid "Add new tag"
-msgstr "Yeni Etiket Ekle"
+msgstr "Yeni Künye Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Remove selected tag"
-msgstr "Seçili Etiketleri Kaldır"
+msgstr "Seçili Künyeleri Kaldır"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
 #, kde-format
 msgid "Remove all control tags below this tag"
-msgstr "Bu Etiket Altındaki Tüm Denetim Etiketlerini Kaldır"
+msgstr "Bu Künye Altındaki Tüm Denetim Künyelerini Kaldır"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
 #, kde-format
@@ -53352,7 +53354,7 @@ msgstr "Daha Az Seçenek"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:293
 #, kde-format
 msgid "Write locations as tags"
-msgstr "Konumları etiketler olarak yaz"
+msgstr "Konumları künyeler olarak yaz"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
 #, kde-format
@@ -53367,7 +53369,7 @@ msgstr "Ters Konumlamayı İşle"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:429
 #, kde-format
 msgid "Image tags are changed."
-msgstr "Görsel etiketleri değiştirildi."
+msgstr "Görsel künyeleri değiştirildi."
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:465
 #, kde-format
@@ -53384,12 +53386,12 @@ msgstr "Ters Konumlama Hatası"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
-msgstr "Yeni Etiket Ekle"
+msgstr "Yeni Künye Ekle"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:843
 #, kde-format
 msgid "Select a name for the new tag:"
-msgstr "Yeni etiket için bir ad seç:"
+msgstr "Yeni künye için bir ad seç:"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:986
 #, kde-format
@@ -53397,7 +53399,7 @@ msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
 "tags which were already obtained?"
 msgstr ""
-"%1/%2 görsel tersine coğrafi konumlandı. Halihazırda elde edilmiş etiketleri "
+"%1/%2 görsel tersine coğrafi konumlandı. Halihazırda elde edilmiş künyeleri "
 "tutmak ister miydiniz?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:993
@@ -53406,7 +53408,7 @@ msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
 "were already obtained?"
 msgstr ""
-"1 görsel tersine coğrafi konumlandı. Halihazırda elde edilmiş etiketleri "
+"1 görsel tersine coğrafi konumlandı. Halihazırda elde edilmiş künyeleri "
 "tutmak ister miydiniz?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:999
@@ -53456,7 +53458,7 @@ msgstr "Uzaklaştır"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:482
 #, kde-format
 msgid "Switch between markers and thumbnails."
-msgstr "İmleyiciler ve küçük görseller arasında geçiş yapın."
+msgstr "İmleyiciler ve küçük görseller arasında geçiş yap"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:500
 #, kde-format
@@ -55605,7 +55607,7 @@ msgstr "<en küçük> alt metin içeriği tamsayıya dönüştürülemedi. Şu i
 msgid "Parsing failed line %1. Still %2 unclosed tag(s) after document end. "
 msgstr ""
 "%1. satırda ayrıştırma başarısız oldu. Belge sonu sonrası hâlâ %2 "
-"kapatılmamış etiket var. "
+"kapatılmamış künye var. "
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:125
 #, kde-format
@@ -55655,12 +55657,12 @@ msgstr "Bu ilişki için lütfen bir ad belirtin."
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:89
 #, kde-format
 msgid "No type tag specified"
-msgstr "Belirtilen tür etiketi yok"
+msgstr "Belirtilen tür künyesi yok"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationEditorDialog.cpp:90
 #, kde-format
 msgid "Please add a type tag for this relation."
-msgstr "Bu ilişki için lütfen bir tür etiketi belirtin."
+msgstr "Bu ilişki için lütfen bir tür künyesi belirtin."
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:69
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget_p.cpp:80
@@ -55705,7 +55707,7 @@ msgstr "değer"
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:25
 #, kde-format
 msgid "Current Tags"
-msgstr "Geçerli Etiketler"
+msgstr "Geçerli Künyeler"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentTagsList)
 #. i18n: ectx: property (text), widget (QTreeWidget, m_recommendedTagsList)
@@ -55731,12 +55733,12 @@ msgstr ">>"
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:80
 #, kde-format
 msgid "Related Tags"
-msgstr "İlişkili Etiketler"
+msgstr "İlgili Künyeler"
 
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget_p.cpp:34
 #, kde-format
 msgid "Add custom tag..."
-msgstr "Özel Etiket Ekle..."
+msgstr "Özel Künye Ekle..."
 
 #: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:365
 #, kde-format
@@ -56679,7 +56681,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:134
 #, kde-format
 msgid "Map Quality"
-msgstr "Harita kalitesi:"
+msgstr "Harita Kalitesi"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:136
 #, kde-format
@@ -57328,7 +57330,7 @@ msgstr "Ata ve renk profilini tut"
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:428
 #, kde-format
 msgid "Leave the file untagged, do not color manage"
-msgstr "Dosyayı etiketsiz bırak, renk yönetimi yapma"
+msgstr "Dosyayı künyesiz bırak, renk yönetimi yapma"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:475
 #, kde-format
@@ -58249,17 +58251,17 @@ msgstr "Yorumları Düzenle"
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:76
 #, kde-format
 msgid "Show Assigned Tags"
-msgstr "Atanan Etiketleri Göster"
+msgstr "Atanan Künyeleri Göster"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:244
 #, kde-format
 msgid "Assign Tag"
-msgstr "Etiket Ata"
+msgstr "Künye Ata"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:245
 #, kde-format
 msgid "Remove Tag"
-msgstr "Etiketi Kaldır"
+msgstr "Künyeyi Kaldır"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:270
 #, kde-format
@@ -59597,10 +59599,10 @@ msgid ""
 "values will be saved in the DateTimeDigitized and DateTimeCreated EXIF, XMP, "
 "and IPTC tags."
 msgstr ""
-"Fotoğraf çekerken kameranız bu etiketleri doğru şekilde ayarlamazsa tarih ve "
-"saat üst veri etiketlerini doğru değerlere ayarlamak için bu seçeneği "
+"Fotoğraf çekerken kameranız bu künyeleri doğru şekilde ayarlamazsa tarih ve "
+"saat üst veri künyelerini doğru değerlere ayarlamak için bu seçeneği "
 "etkinleştirin. Değerler; DateTimeDigitized ve DateTimeCreated EXIF, XMP ve "
-"IPTC etiketlerine kaydedilecektir."
+"IPTC künyelerine kaydedilecektir."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:152
 #, kde-format
@@ -60156,7 +60158,7 @@ msgstr "Sağdaki Yorumları Düzenle"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
-msgstr "Atanmış Etiketleri Sağda Göster"
+msgstr "Atanmış Künyeleri Sağda Göster"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
@@ -60171,7 +60173,7 @@ msgstr "Soldaki Yorumları Düzenle"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
-msgstr "Atanmış Etiketleri Solda Göster"
+msgstr "Atanmış Künyeleri Solda Göster"
 
 #. i18n: ectx: Menu (LeftPanel)
 #: core/utilities/lighttable/lighttablewindowui5.rc:35
@@ -60188,7 +60190,7 @@ msgstr "&Sağ Panel"
 #: core/utilities/maintenance/autotagsassignment.cpp:99
 #, kde-format
 msgid "Autotags Assignment"
-msgstr "Otomatik Etiket Ataması"
+msgstr "Kendiliğinden Künye Ataması"
 
 #: core/utilities/maintenance/dbcleaner.cpp:130
 #: core/utilities/maintenance/dbcleaner.cpp:230
@@ -60480,16 +60482,16 @@ msgid ""
 "contents and store the results in the database.</p>"
 msgstr ""
 "<p><b>Bu araç, derin öğrenme sinir ağını kullanarak içerik çözümlemesi "
-"yoluyla görsellere kendiliğinden etiket atamanıza olanak tanır.</b></"
+"yoluyla görsellere kendiliğinden künye atamanıza olanak tanır.</b></"
 "p><p>Aşağıdaki ayarlar, fotoğrafın konularını belirlemek için görsel "
 "içeriğini ayrıştırırken kullanılacak derin öğrenme modelini belirler. Arka "
-"planda kullanılan sinir ağı, kendiliğinden içeriği açıklayan bir dizi etiket "
+"planda kullanılan sinir ağı, kendiliğinden içeriği açıklayan bir dizi künye "
 "oluşturacak ve sonuçları veritabanında saklayacaktır.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:179
 #, kde-format
 msgid "Auto-tagging mode: "
-msgstr "Kendiliğinden etiketleme kipi: "
+msgstr "Kendiliğinden künye ekleme kipi: "
 
 #: core/utilities/maintenance/maintenancedlg.cpp:184
 #, kde-format
@@ -60510,9 +60512,9 @@ msgid ""
 "scan all items from scratch.</p><p><b>Scan non-assigned only</b>: scan only "
 "the items with no assigned tag.</p>"
 msgstr ""
-"<p><b>Tümünü temizle ve yeniden ata</b>: Önceden atanmış olan tüm etiketleri "
+"<p><b>Tümünü temizle ve yeniden ata</b>: Önceden atanmış olan tüm künyeleri "
 "temizleyin ve tüm ögeleri sıfırdan yeniden tarayın.</p><p><b>Yalnızca "
-"atanmamışları tara</b> : Yalnızca atanmış etiketi olmayan ögeleri tarayın.</"
+"atanmamışları tara</b> : Yalnızca atanmış künyesi olmayan ögeleri tarayın.</"
 "p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
@@ -60560,7 +60562,7 @@ msgstr ""
 #: core/utilities/maintenance/maintenancedlg.cpp:212
 #, kde-format
 msgid "Auto-tags Assignment"
-msgstr "Kendiliğinden Etiket Atama"
+msgstr "Kendiliğinden Künye Atama"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
@@ -60629,7 +60631,7 @@ msgstr "Görselden tüm yüzleri kaldır"
 #: core/utilities/maintenance/metadataremover.cpp:194
 #, kde-format
 msgid "Remove all tags from image"
-msgstr "Görselden tüm etiketleri kaldır"
+msgstr "Görselden tüm künyeleri kaldır"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
 #, kde-format
@@ -60646,7 +60648,7 @@ msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"%1 seçili görselden tüm etiketler kaldırılacak.\n"
+"%1 seçili görselden tüm künyeler kaldırılacak.\n"
 "Sürdürmek istiyor musunuz?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
@@ -61374,7 +61376,7 @@ msgstr "Ağaçta"
 #, kde-format
 msgctxt "@item"
 msgid "Any Tag"
-msgstr "Herhangi bir etiket"
+msgstr "Herhangi bir künye"
 
 #: core/utilities/searchwindow/searchfields_choice.cpp:37
 #, kde-format
@@ -61426,22 +61428,22 @@ msgstr "Albüm kategorisi şudur"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #, kde-format
 msgid "Return items with tag"
-msgstr "Etiketli ögeleri döndür"
+msgstr "Künyeli ögeleri döndür"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #, kde-format
 msgid "A tag of the item contains"
-msgstr "Ögenin etiketi şunu içerir"
+msgstr "Ögenin künyesi şunu içerir"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
 #, kde-format
 msgid "Return items without tags"
-msgstr "Etiketi olmayan ögeleri döndür"
+msgstr "Künyesi olmayan ögeleri döndür"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:96
 #, kde-format
 msgid "Not Tagged"
-msgstr "Etiketlenmemiş"
+msgstr "Künyesiz"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:104
 #, kde-format
@@ -62182,7 +62184,7 @@ msgstr "Düzenle..."
 #: core/utilities/searchwindow/searchgroup.cpp:66
 #, kde-format
 msgid "File, Album, Tags"
-msgstr "Dosya, Albüm, Etiketler"
+msgstr "Dosya, Albüm, Künyeler"
 
 #: core/utilities/searchwindow/searchgroup.cpp:86
 #, kde-format
@@ -62474,14 +62476,14 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:491
 #, kde-format
 msgid "Show digiKam &tags"
-msgstr "digiKam &etiketlerini göster"
+msgstr "digiKam &künyelerini göster"
 
 #: core/utilities/setup/album/setupalbumview.cpp:190
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
 msgstr ""
-"digiKam etiketlerini küçük görselin altında göstermek için bu seçeneği "
+"digiKam künyelerini küçük görselin altında göstermek için bu seçeneği "
 "işaretleyin."
 
 #: core/utilities/setup/album/setupalbumview.cpp:193
@@ -62836,7 +62838,7 @@ msgstr ""
 #: core/utilities/setup/album/setupcategory.cpp:89
 #, kde-format
 msgid "Set here the new category"
-msgstr "Yeni kategoriyi burada ayarla"
+msgstr "Buraya yeni kategori adını yaz…"
 
 #: core/utilities/setup/album/setupcategory.cpp:92
 #, kde-format
@@ -62903,13 +62905,13 @@ msgstr ""
 "biçimlerini de kaldırabilirsiniz: Örneğin, \"-gif\", tüm GIF dosyalarını "
 "Albüm görünümünüzden ve veritabanınızdaki tüm izlerini kaldırır. "
 "Silinmezler, sadece digiKam'da gösterilmezler.</p><p><b>Uyarı:</b> Dosyaları "
-"veritabanından kaldırmak, tüm etiketlerini ve derecelendirmelerini kaybetmek "
+"veritabanından kaldırmak, tüm künyelerini ve derecelendirmelerini kaybetmek "
 "anlamına gelir.</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:117
 #, kde-format
 msgid "Enter additional image file extensions."
-msgstr "Ek görsel dosyası uzantıları girin."
+msgstr "Ek görsel dosyası uzantıları gir…"
 
 #: core/utilities/setup/album/setupmime.cpp:136
 #, kde-format
@@ -62941,12 +62943,12 @@ msgstr ""
 "Örneğin, \"-avi\", tüm AVI dosyalarını Albüm görünümünüzden ve "
 "veritabanınızdaki tüm izlerini kaldırır. Silinmezler, sadece digiKam'da "
 "gösterilmezler.</p><p><b>Uyarı:</b> Dosyaları veritabanından kaldırmak, tüm "
-"etiketlerini ve derecelendirmelerini kaybetmek anlamına gelir.</p>"
+"künyelerini ve derecelendirmelerini kaybetmek anlamına gelir.</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:152
 #, kde-format
 msgid "Enter additional video file extensions."
-msgstr "Ek video dosyası uzantıları girin."
+msgstr "Ek video dosyası uzantıları gir…"
 
 #: core/utilities/setup/album/setupmime.cpp:171
 #, kde-format
@@ -62976,13 +62978,13 @@ msgstr ""
 "öntanımlı olarak gösterilen dosya biçimlerini de kaldırabilirsiniz: Örneğin, "
 "\"-ogg\", tüm OGG dosyalarını Albüm görünümünüzden ve veritabanınızdaki tüm "
 "izlerini kaldırır. Silinmezler, sadece digiKam'da gösterilmezler.</"
-"p><p><b>Uyarı:</b> Dosyaları veritabanından kaldırmak, tüm etiketlerini ve "
+"p><p><b>Uyarı:</b> Dosyaları veritabanından kaldırmak, tüm künyelerini ve "
 "derecelendirmelerini kaybetmek anlamına gelir.</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:187
 #, kde-format
 msgid "Enter additional audio file extensions."
-msgstr "Ek ses dosyası uzantıları girin."
+msgstr "Ek ses dosyası uzantıları gir…"
 
 #: core/utilities/setup/album/setupmime.cpp:251
 #, kde-format
@@ -62997,7 +62999,7 @@ msgstr ""
 "<p>Aşağıdaki görsel biçimlerini desteklenen biçimler listesinden kaldırmayı "
 "seçtiniz: <b>%1</b>.</p><p>Bunlar çok yaygın biçimlerdir. Koleksiyonunuzda "
 "bu biçimlerde görseller varsa bunlar veritabanından kaldırılacaktır ve "
-"derecelendirme ve etiketler de dahil olmak üzere bunlarla ilgili tüm "
+"derecelendirme ve künyeler de dahil olmak üzere bunlarla ilgili tüm "
 "bilgileri kaybedeceksiniz.</p><p>Değişikliklerinizi uygulayıp bu biçimlere "
 "yönelik desteği kaybetmek istediğinizden emin misiniz?</p>"
 
@@ -63347,7 +63349,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:436
 #, kde-format
 msgid "Always ignore"
-msgstr "Her zaman yok say"
+msgstr "Her Zaman Yok Say"
 
 #: core/utilities/setup/camera/setupcamera.cpp:437
 #, kde-format
@@ -63382,7 +63384,7 @@ msgstr "Görsel biçimini göster"
 #, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgstr ""
-"digiKam etiketlerini küçük görselin altında göstermek için bu seçeneği "
+"digiKam künyelerini küçük görselin altında göstermek için bu seçeneği "
 "işaretleyin."
 
 #: core/utilities/setup/camera/setupcamera.cpp:495
@@ -63835,7 +63837,7 @@ msgstr "Estetik algılama özelliğini kullan"
 #: core/utilities/setup/downloader/filesdownloader.cpp:171
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
-msgstr "Kendiliğinden etiket atama özelliğini kullan"
+msgstr "Kendiliğinden künye atama özelliğini kullan"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:243
 #, kde-format
@@ -63908,7 +63910,7 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 "<p>Yüz algılaması, kırmızı göz giderme aracı, görsellerin estetiğe göre "
-"sınıflandırılması veya etiketlerin görsellere kendiliğinden atanması için "
+"sınıflandırılması veya künyelerin görsellere kendiliğinden atanması için "
 "digiKam bazı büyük ikili dosyalara gereksinim duyar. Hangi özelliği "
 "kullanmak istediğinizi seçebilirsiniz.</p><p>Bu dosyalardan bazıları "
 "bulunamadı. Gereksiniminiz olan dosyaları indirmeye başlamak için “İndir”e "
@@ -64157,7 +64159,7 @@ msgstr "RAW Öntanımlı Ayarları"
 #, kde-format
 msgctxt "@title"
 msgid "Enable Non-Destructive Editing and Versioning"
-msgstr "Yıkıcı Olmayan Düzenleme ve Sürümlendirmeyi Etkinleştir"
+msgstr "Yıkıcı olmayan düzenleme ve sürümlendirmeyi etkinleştir"
 
 #: core/utilities/setup/editor/setupversioning.cpp:117
 #, kde-format
@@ -64482,7 +64484,7 @@ msgid ""
 "digiKam to store and retrieve tags, rating and comments.<br/><b>Note: </"
 "b>Order is important when reading metadata"
 msgstr ""
-"Gelişmiş yapılandırma menüsü, etiketleri, derecelendirmeleri ve yorumları "
+"Gelişmiş yapılandırma menüsü; künyeleri, derecelendirmeleri ve yorumları "
 "depolamak ve almak için digiKam tarafından kullanılan üst veri ad alanlarını "
 "yönetmenize olanak tanır.<br/><b>Not: </b>Üst veri okunurken sıra önemlidir"
 
@@ -64504,7 +64506,7 @@ msgstr "Okumayı ve yazmayı birleştir"
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
 #, kde-format
 msgid "Read all metadata for tags"
-msgstr "Etiketlerin tüm üst verisini oku"
+msgstr "Künyelerin tüm üst verisini oku"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, kde-format
@@ -64579,8 +64581,8 @@ msgid ""
 "written.</li></ul></p>"
 msgstr ""
 "<p>Yeni ad alanları oluşturmak için parametreler belirtmelisiniz:</"
-"p><p><ul><li>Noktalı ad alanı.<br/>Örneğin: <i>\"Xmp.digiKam.EtiketlerListesi"
-"\"</i></li><li>Etiket yolları tarafından kullanılan ayırıcı parametre.<br/"
+"p><p><ul><li>Noktalı ad alanı.<br/>Örneğin: <i>\"Xmp.digiKam.KünyelerListesi"
+"\"</i></li><li>Künye yolları tarafından kullanılan ayırıcı parametre.<br/"
 ">Örneğin: \"Kent/Bilecik\" veya \"Kent|Uşak\"</li><li>Yalnızca anahtar "
 "sözcüğün mü yoksa tüm yolun mu yazılması gerektiğini belirtin.</li></ul></p>"
 
@@ -64633,7 +64635,7 @@ msgstr "Ayırıcı:"
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:360
 #, kde-format
 msgid "Set Tags Path:"
-msgstr "Etiketler yolunu ayarla:"
+msgstr "Künyeler yolunu ayarla:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:380
 #, kde-format
@@ -64685,12 +64687,12 @@ msgstr "XMP alternatif ad alanı adı \"Xmp\" ile başlamalıdır."
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:637
 #, kde-format
 msgid "Tag Path separator is required"
-msgstr "Etiket yolu ayırıcısı gerekiyor"
+msgstr "Künye yolu ayırıcısı gerekiyor"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:643
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
-msgstr "Etiket yolu ayırıcısı olarak yalnızca bir karakter desteklenir"
+msgstr "Künye yolu ayırıcısı olarak yalnızca bir karakter desteklenir"
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:59
 #, kde-format
@@ -64775,7 +64777,7 @@ msgid ""
 "Turn on this option to push rating, comments and tags from digiKam into the "
 "Baloo storage"
 msgstr ""
-"Derecelendirmeleri, yorumları ve etiketleri digiKam'dan Baloo depolama "
+"Derecelendirmeleri, yorumları ve künyeleri digiKam'dan Baloo depolama "
 "alanına aktarmak için bu seçeneği açın"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:40
@@ -64792,7 +64794,7 @@ msgid ""
 "tags made in Baloo to digiKam's metadata storage. Please note that image "
 "metadata will not be edited automatically."
 msgstr ""
-"Baloo'da yapılan derecelendirme, yorum ve etiketlerde yapılan değişiklikleri "
+"Baloo'da yapılan derecelendirme, yorum ve künyelerde yapılan değişiklikleri "
 "digiKam'ın üst veri deposuna uygulamak istiyorsanız bu seçeneği açın. Görsel "
 "üst verisinin kendiliğinden düzenlenmeyeceğine lütfen dikkat edin."
 
@@ -64806,7 +64808,7 @@ msgid ""
 "metadata stored by digiKam desktop-wide with the Baloo Desktop Search."
 msgstr ""
 "KDE masaüstündeki her türlü üst veriyi genel bir şekilde işlemenin temelini "
-"sağlar. Dolphin gibi KDE uygulamalarında dosyalarınızı etiketlemenize, "
+"sağlar. Dolphin gibi KDE uygulamalarında dosyalarınızı künyelemenize, "
 "derecelendirmenize ve yorum yapmanıza olanak tanır. digiKam tarafından "
 "masaüstü çapında saklanan üst veriyi Baloo Masaüstü Araması ile eşzamanlamak "
 "istiyorsanız lütfen burayı ayarlayın."
@@ -64843,14 +64845,14 @@ msgstr "Bu bilgiyi üst veriye yaz"
 #, kde-format
 msgctxt "@option:check"
 msgid "Image tags"
-msgstr "Görsel etiketleri"
+msgstr "Görsel künyeleri"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item tags in the XMP and IPTC tags."
 msgstr ""
-"Öge etiketlerini XMP ve IPTC etiketlerinde saklamak için bu seçeneği açın."
+"Öge künyelerini XMP ve IPTC künyelerinde depolamak için bu seçeneği açın."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:55
 #, kde-format
@@ -64865,8 +64867,8 @@ msgid ""
 "Turn on this option to store item caption and title in the JFIF Comment "
 "section, the Exif tag, the XMP tag, and the IPTC tag."
 msgstr ""
-"Öge alt yazısını ve başlığını JFIF yorum bölümünde, Exif etiketinde, XMP "
-"etiketinde ve IPTC etiketinde saklamak için bu seçeneği açın."
+"Öge alt yazısını ve başlığını JFIF yorum bölümünde, Exif, XMP ve IPTC "
+"künyelerinde depolamak için bu seçeneği açın."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, kde-format
@@ -64881,8 +64883,8 @@ msgid ""
 "Turn on this option to store the item rating in the Exif tag and the XMP "
 "tags."
 msgstr ""
-"Öge derecelendirmesini Exif etiketinde ve XMP etiketlerinde saklamak için bu "
-"seçeneği açın."
+"Öge derecelendirmesini Exif ve XMP künyelerinde depolamak için bu seçeneği "
+"açın."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
@@ -64894,7 +64896,7 @@ msgstr "Seçim etiketi"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
-msgstr "Öge seçim etiketini XMP etiketlerinde depolamak için bu seçeneği açın."
+msgstr "Öge seçim etiketini XMP künyelerinde depolamak için bu seçeneği açın."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, kde-format
@@ -64906,7 +64908,7 @@ msgstr "Renk etiketi"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
-msgstr "Öge renk etiketini XMP etiketlerinde saklamak için bu seçeneği açın."
+msgstr "Öge renk etiketini XMP künyelerinde saklamak için bu seçeneği açın."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
 #, kde-format
@@ -64921,7 +64923,7 @@ msgid ""
 "Turn on this option to store the item date and time in the EXIF, XMP, and "
 "IPTC tags."
 msgstr ""
-"Öge tarihini ve saatini EXIF, XMP ve IPTC etiketlerinde saklamak için bu "
+"Öge tarihini ve saatini EXIF, XMP ve IPTC künyelerinde depolamak için bu "
 "seçeneği açın."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
@@ -64937,14 +64939,14 @@ msgid ""
 "Turn on this option to store the metadata template in the XMP and the IPTC "
 "tags. You can set template values to Template setup page."
 msgstr ""
-"Üst veri şablonunu XMP ve IPTC etiketlerinde saklamak için bu seçeneği açın. "
+"Üst veri şablonunu XMP ve IPTC künyelerinde depolamak için bu seçeneği açın. "
 "Şablon ayar sayfasında şablon değerleri ayarlayabilirsiniz."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
-msgstr "Yüz etiketleri (yüz alanları dahil)"
+msgstr "Yüz künyeleri (yüz alanları dahil)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, kde-format
@@ -64952,7 +64954,7 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store face tags with face rectangles in the XMP tags."
 msgstr ""
-"Yüz etiketlerini, yüz dikdörtgenleri ile XMP etiketlerinde saklamak için bu "
+"Yüz künyelerini, yüz dikdörtgenleri ile XMP künyelerinde depolamak için bu "
 "seçeneği açın."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:91
@@ -64968,8 +64970,8 @@ msgid ""
 "Turn on this option to store Geolocation information in the Exif tag and the "
 "XMP tags."
 msgstr ""
-"Coğrafi konum bilgisini Exif etiketinde ve XMP etiketlerinde depolamak için "
-"bu seçeneği açın."
+"Coğrafi konum bilgisini Exif ve XMP künyelerinde depolamak için bu seçeneği "
+"açın."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, kde-format
@@ -65258,15 +65260,14 @@ msgstr ""
 msgctxt "@option"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr ""
-"Görselleri/küçük görselleri yönelim etiketine göre &döndürülmüş olarak "
+"Görselleri/küçük görselleri yönelim künyesine göre &döndürülmüş olarak "
 "gösterin."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:109
 #, kde-format
 msgctxt "@option"
 msgid "Set orientation tag to normal after rotate/flip."
-msgstr ""
-"Yönlendirme etiketini döndürme/çevirme işleminden sonra normale ayarlayın."
+msgstr "Yönelim künyesini döndürme/çevirme işleminden sonra normale ayarlayın."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:120
 #, kde-format
@@ -65408,7 +65409,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
-msgstr "Ek sepet dosyası uzantılarını gizle"
+msgstr "Ek sepet dosyası uzantıları gir…"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
@@ -65686,7 +65687,7 @@ msgstr "Geçerli ağacı tek bir fare tıklamasıyla genişlet"
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
-"Kişilerin kenar çubuğunda ad atamak için yalnızca yüz etiketlerini göster"
+"Kişilerin kenar çubuğunda ad atamak için yalnızca yüz künyelerini göster"
 
 #: core/utilities/setup/misc/setupmisc.cpp:100
 #, kde-format
@@ -65796,7 +65797,7 @@ msgstr "İçsel hata ayıklama günlüklemesini etkinleştir"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:87
 #, kde-format
 msgid "Download required binary data..."
-msgstr "Gereken ikili verisi indiriliyor..."
+msgstr "Gerekli İkili Veriyi İndir…"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
 #, kde-format
@@ -66608,8 +66609,8 @@ msgid ""
 msgstr ""
 "<b>Not: Bu bilgiler, <b><a href='https://en.wikipedia.org/wiki/"
 "Extensible_Metadata_Platform'>XMP</a></b> ve <b><a href='https://en."
-"wikipedia.org/wiki/IPTC'>IPTC</a></b> etiketleri içeriğini ayarlamak için "
-"kullanılır. XMP için bir sınırlama yoktur; ancak IPTC metin etiketi "
+"wikipedia.org/wiki/IPTC'>IPTC</a></b> künyeleri içeriğini ayarlamak için "
+"kullanılır. XMP için bir sınırlama yoktur; ancak IPTC metin künyesi "
 "boyutları sınırlıdır. Ayrıntılar için bağlamsal yardımı kullanın.</b>"
 
 #: core/utilities/setup/setuptemplate.cpp:118
@@ -66773,12 +66774,12 @@ msgstr "Görsel alt yazılarını görüntülemek için bu seçeneği ayarlayın
 #: core/utilities/setup/setuptooltip.cpp:291
 #, kde-format
 msgid "Image tags"
-msgstr "Görsel etiketleri"
+msgstr "Görsel künyeleri"
 
 #: core/utilities/setup/setuptooltip.cpp:292
 #, kde-format
 msgid "Set this option to display the image tags."
-msgstr "Görsel etiketlerini görüntülemek için bu seçeneği ayarlayın."
+msgstr "Görsel künyelerini görüntülemek için bu seçeneği ayarlayın."
 
 #: core/utilities/setup/setuptooltip.cpp:294
 #, kde-format
@@ -66996,6 +66997,31 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~ msgid ""
+#~ "The MySQL binary tools was not found, please set the correct location in "
+#~ "the next dialog."
+#~ msgstr ""
+#~ "MySQL ikilisi araçları bulunamadı; lütfen bir sonraki iletişim kutusunda "
+#~ "doğru konumu ayarlayın."
+
+#~ msgid ""
+#~ "The SQLite core database was not found, please set the correct location "
+#~ "in the next dialog."
+#~ msgstr ""
+#~ "SQLite çekirdek veritabanı bulunamadı; lütfen bir sonraki iletişim "
+#~ "kutusunda doğru konumu ayarlayın."
+
+#~ msgid ""
+#~ "Failed to open the database.\n"
+#~ "\n"
+#~ "You cannot use digiKam without a working database.\n"
+#~ "Please check the database settings in the next dialog."
+#~ msgstr ""
+#~ "Veritabanı açılamadı.\n"
+#~ "\n"
+#~ "Çalışan bir veritabanı olmadan digiKam'i kullanamazsınız.\n"
+#~ "Lütfen bir sonraki iletişim kutusunda veritabanı ayarlarını denetleyin."
 
 #~ msgid "No codec could be found for: "
 #~ msgstr "Şunun için bir kodlayıcı bulunamadı: "

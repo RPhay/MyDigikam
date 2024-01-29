@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-28 01:38+0000\n"
-"PO-Revision-Date: 2024-01-26 11:37+0100\n"
+"POT-Creation-Date: 2024-01-29 01:34+0000\n"
+"PO-Revision-Date: 2024-01-28 19:01+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -109,13 +109,13 @@ msgstr "De&mà"
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Next &Week"
-msgstr "Propera &setmana"
+msgstr "&Setmana següent"
 
 #: core/app/date/ddatepickerpopup.cpp:131
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Next M&onth"
-msgstr "Proper &mes"
+msgstr "&Mes següent"
 
 #: core/app/date/ddatepickerpopup.cpp:132
 #, kde-format
@@ -3287,7 +3287,7 @@ msgstr ""
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
-"Afegir el convertidors JPEG-XL, WEBP i AVIF al gestor de la cua per lots."
+"Afegir els convertidors JPEG-XL, WEBP i AVIF al gestor de la cua per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
@@ -3444,8 +3444,8 @@ msgstr ""
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
-"Afegir la configuració de la vista d'icones per personalitzar la visibilitat "
-"de les etiquetes sobre les miniatures."
+"Afegir la configuració de la vista d'icones per a personalitzar la "
+"visibilitat de les etiquetes sobre les miniatures."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -4982,11 +4982,11 @@ msgid ""
 msgstr ""
 "<para>Aquesta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges al format JPEG-XL.</para><para>El JPEG-XL és un format de fitxer "
-"de gràfics ràster lliure de cànons que permet compressió amb i sense pèrdua. "
-"Està dissenyat per superar els formats ràster existents i així convertir-se "
-"en la seva substitució universal.</para><para>Vegeu els detalls sobre aquest "
-"format en <a href='https://en.wikipedia.org/wiki/JPEG_XL'>aquesta pàgina</a>."
-"</para>"
+"de gràfics ràster lliure de cànons que permet compressió amb pèrdua i sense. "
+"Està dissenyat per a superar els formats ràster existents i així convertir-"
+"se en la seva substitució universal.</para><para>Vegeu els detalls sobre "
+"aquest format en <a href='https://en.wikipedia.org/wiki/JPEG_XL'>aquesta "
+"pàgina</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:46
 #, kde-format
@@ -6129,7 +6129,7 @@ msgstr ""
 "mitjançant l'anàlisi del contingut mitjançant una xarxa neuronal "
 "d'aprenentatge profund.</b></p><p>Els paràmetres de sota determinen el model "
 "d'aprenentatge profund a utilitzar mentre s'analitza el contingut de la "
-"imatge per determinar els subjectes de la fotografia. La xarxa neuronal "
+"imatge per a determinar els subjectes de la fotografia. La xarxa neuronal "
 "utilitzada en segon pla generarà automàticament una sèrie d'etiquetes que "
 "descriuen el contingut i emmagatzemaran els resultats a la base de dades.</p>"
 
@@ -18497,7 +18497,7 @@ msgid ""
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
-"Aquesta eina utilitza el motor %1 de codi obert per realitzar el "
+"Aquesta eina utilitza el motor %1 de codi obert per a realitzar el "
 "reconeixement òptic de caràcters. Cal instal·lar al vostre sistema el "
 "programa Tesseract i els mòduls d'idiomes desitjats."
 
@@ -20765,8 +20765,8 @@ msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
-"Aquest control permet triar el format del contenidor multimèdia per allotjar "
-"el flux de vídeo i la pista d'àudio."
+"Aquest control permet triar el format del contenidor multimèdia per a "
+"allotjar el flux de vídeo i la pista d'àudio."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
 #, kde-format
@@ -26915,72 +26915,65 @@ msgid "Searches"
 msgstr "Cerques"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, kde-format
-msgid ""
-"The MySQL database directory was not found, please set the correct location "
-"in the next dialog."
+#, fuzzy, kde-format
+#| msgid ""
+#| "The MySQL database directory was not found, please set the correct "
+#| "location in the next dialog."
+msgid "The MySQL database directory was not found."
 msgstr ""
 "No s'ha trobat el directori de la base de dades MySQL, establiu la ubicació "
 "correcta en el diàleg següent."
 
-#: core/libs/album/manager/albummanager_database.cpp:122
+#: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
-msgid ""
-"The MySQL binary tools was not found, please set the correct location in the "
-"next dialog."
+msgid "The MySQL binary tools was not found."
 msgstr ""
-"No es troben les eines executables del MySQL, establiu la ubicació correcta "
-"en el diàleg següent."
 
-#: core/libs/album/manager/albummanager_database.cpp:130
-#, kde-format
-msgid ""
-"The SQLite core database was not found, please set the correct location in "
-"the next dialog."
-msgstr ""
-"No s'ha trobat la base de dades del nucli de SQLite, establiu la ubicació "
-"correcta en el diàleg següent."
+#: core/libs/album/manager/albummanager_database.cpp:128
+#, fuzzy, kde-format
+#| msgid "The core database name is empty"
+msgid "The SQLite core database was not found."
+msgstr "El nom de la base de dades del nucli està buit"
 
-#: core/libs/album/manager/albummanager_database.cpp:140
-#, kde-format
+#: core/libs/album/manager/albummanager_database.cpp:137
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "\n"
+#| "If you want to start with a new configuration and with a first run "
+#| "wizard, delete the file %1"
 msgid ""
-"\n"
-"\n"
-"If you want to start with a new configuration and with a first run wizard, "
-"delete the file %1"
+"<p>If you want to start with a new configuration and with a first run "
+"wizard, delete the file:<br>%1</p>"
 msgstr ""
 "\n"
 "\n"
 "Si voleu començar amb una configuració nova i amb un assistent de primera "
 "execució, suprimiu el fitxer %1"
 
-#: core/libs/album/manager/albummanager_database.cpp:153
-#, kde-format
+#: core/libs/album/manager/albummanager_database.cpp:150
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred during the internal server start.\n"
+#| "\n"
+#| "Details:\n"
+#| "%1"
 msgid ""
-"An error occurred during the internal server start.\n"
-"\n"
-"Details:\n"
-"%1"
+"An error occurred during the internal server start.<p>Details:\n"
+"%1</p>"
 msgstr ""
 "Hi ha hagut un error durant l'inici del servidor intern.\n"
 "\n"
 "Detalls:\n"
 "%1"
 
-#: core/libs/album/manager/albummanager_database.cpp:169
-#, kde-format
-msgid ""
-"Failed to open the database.\n"
-"\n"
-"You cannot use digiKam without a working database.\n"
-"Please check the database settings in the next dialog."
-msgstr ""
-"Ha fallat en obrir la base de dades.\n"
-"\n"
-"No podeu usar el digiKam sense una base de dades operativa.\n"
-"Comproveu la configuració de la base de dades en el diàleg següent."
+#: core/libs/album/manager/albummanager_database.cpp:166
+#, fuzzy, kde-format
+#| msgid "Failed to add tag to database"
+msgid "Failed to open the database."
+msgstr "No s'ha pogut afegir l'etiqueta a la base de dades"
 
-#: core/libs/album/manager/albummanager_database.cpp:178
+#: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
@@ -26988,7 +26981,7 @@ msgid ""
 msgstr ""
 "<p>El digiKam ara intentarà iniciar-se, però <b>no</b> serà funcional.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:214
+#: core/libs/album/manager/albummanager_database.cpp:209
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -27001,7 +26994,7 @@ msgstr ""
 "<b>no</b> serà funcional. Comproveu la configuració de la base de dades en "
 "el <b>menú de configuració</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:223
+#: core/libs/album/manager/albummanager_database.cpp:218
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -27015,7 +27008,14 @@ msgstr ""
 "funcional. Comproveu la configuració de la base de dades en el <b>menú de "
 "configuració</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:256
+#: core/libs/album/manager/albummanager_database.cpp:231
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Failed to Initialize Thumbnails Database"
+msgid "Failed to initialize the database."
+msgstr "Ha fallat en inicialitzar la base de dades de miniatures"
+
+#: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -27039,7 +27039,7 @@ msgstr ""
 "voleu continuar, cliqueu «Sí». Altrament, cliqueu «No» i corregiu el joc de "
 "caràcters de la base de dades abans de reiniciar el digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:299
+#: core/libs/album/manager/albummanager_database.cpp:296
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -27050,7 +27050,7 @@ msgstr ""
 "el sistema.<br/> Escolliu l'opció més apropiada per a gestionar aquesta "
 "situació:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:318
+#: core/libs/album/manager/albummanager_database.cpp:315
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -27062,7 +27062,7 @@ msgstr ""
 "canvis a la disposició de la partició o a la configuració del sistema de "
 "fitxers.<br/>Ara la col·lecció es troba a aquest lloc:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:337
+#: core/libs/album/manager/albummanager_database.cpp:334
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27071,7 +27071,7 @@ msgstr ""
 "La col·lecció es troba a un dispositiu d'emmagatzematge que no sempre està "
 "connectat. Marqueu la col·lecció com a col·lecció extraïble."
 
-#: core/libs/album/manager/albummanager_database.cpp:344
+#: core/libs/album/manager/albummanager_database.cpp:341
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -27080,19 +27080,19 @@ msgstr ""
 "De moment no facis res. Voldria solucionar el problema més tard usant el "
 "diàleg de configuració"
 
-#: core/libs/album/manager/albummanager_database.cpp:358
+#: core/libs/album/manager/albummanager_database.cpp:355
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "No s'ha trobat la col·lecció"
 
-#: core/libs/album/manager/albummanager_database.cpp:464
+#: core/libs/album/manager/albummanager_database.cpp:461
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Carpeta de la base de dades"
 
-#: core/libs/album/manager/albummanager_database.cpp:465
+#: core/libs/album/manager/albummanager_database.cpp:462
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -27108,33 +27108,33 @@ msgstr ""
 "carpeta «%2»- o ignorar el fitxer antic i començar amb una base de dades "
 "nova?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:475
-#: core/libs/album/manager/albummanager_database.cpp:543
-#: core/libs/album/manager/albummanager_database.cpp:565
+#: core/libs/album/manager/albummanager_database.cpp:472
+#: core/libs/album/manager/albummanager_database.cpp:540
+#: core/libs/album/manager/albummanager_database.cpp:562
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Actualitza la base de dades"
 
-#: core/libs/album/manager/albummanager_database.cpp:477
-#: core/libs/album/manager/albummanager_database.cpp:545
-#: core/libs/album/manager/albummanager_database.cpp:567
-#: core/libs/album/manager/albummanager_database.cpp:615
+#: core/libs/album/manager/albummanager_database.cpp:474
+#: core/libs/album/manager/albummanager_database.cpp:542
+#: core/libs/album/manager/albummanager_database.cpp:564
+#: core/libs/album/manager/albummanager_database.cpp:612
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Crea una base de dades nova"
 
-#: core/libs/album/manager/albummanager_database.cpp:534
-#: core/libs/album/manager/albummanager_database.cpp:557
-#: core/libs/album/manager/albummanager_database.cpp:607
-#: core/libs/album/manager/albummanager_database.cpp:639
+#: core/libs/album/manager/albummanager_database.cpp:531
+#: core/libs/album/manager/albummanager_database.cpp:554
+#: core/libs/album/manager/albummanager_database.cpp:604
+#: core/libs/album/manager/albummanager_database.cpp:636
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Carpeta nova de base de dades"
 
-#: core/libs/album/manager/albummanager_database.cpp:535
+#: core/libs/album/manager/albummanager_database.cpp:532
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27149,15 +27149,15 @@ msgstr ""
 "antic de la base de dades, començar amb una base de dades nova o copiar la "
 "base de dades actual en aquest lloc i continuar usant-la?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:547
-#: core/libs/album/manager/albummanager_database.cpp:617
-#: core/libs/album/manager/albummanager_database.cpp:648
+#: core/libs/album/manager/albummanager_database.cpp:544
+#: core/libs/album/manager/albummanager_database.cpp:614
+#: core/libs/album/manager/albummanager_database.cpp:645
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Copia la base de dades actual"
 
-#: core/libs/album/manager/albummanager_database.cpp:558
+#: core/libs/album/manager/albummanager_database.cpp:555
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27170,7 +27170,7 @@ msgstr ""
 "digiKam en aquesta carpeta.</p> <p>Voleu actualitzar la versió del fitxer "
 "antic de la base de dades o començar amb una base de dades nova?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:593
+#: core/libs/album/manager/albummanager_database.cpp:590
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27179,7 +27179,7 @@ msgstr ""
 "Ha fallat en copiar el fitxer de la base de dades antiga («%1») a la seva "
 "nova ubicació («%2»). S'està intentat actualitzar la base de dades antiga."
 
-#: core/libs/album/manager/albummanager_database.cpp:608
+#: core/libs/album/manager/albummanager_database.cpp:605
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -27190,7 +27190,7 @@ msgstr ""
 "de dades.</p><p>Voleu copiar la base de dades actual a aquesta ubicació i "
 "continuar usant-la, o començo amb una base de dades nova?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:640
+#: core/libs/album/manager/albummanager_database.cpp:637
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27203,13 +27203,13 @@ msgstr ""
 "<p>Voleu usar el fitxer existent com a la base de dades nova, o l'elimino i "
 "copio la base de dades actual en aquest lloc?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:650
+#: core/libs/album/manager/albummanager_database.cpp:647
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Usa el fitxer existent"
 
-#: core/libs/album/manager/albummanager_database.cpp:705
+#: core/libs/album/manager/albummanager_database.cpp:702
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -27219,7 +27219,7 @@ msgstr ""
 "S'ha rebutjat substituir el fitxer sense una còpia de seguretat, i s'usa el "
 "fitxer existent."
 
-#: core/libs/album/manager/albummanager_database.cpp:723
+#: core/libs/album/manager/albummanager_database.cpp:720
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27228,7 +27228,12 @@ msgstr ""
 "Ha fallat en copiar el fitxer de la base de dades antiga («%1») a la seva "
 "nova ubicació («%2»). Es comença amb una base de dades buida."
 
-#: core/libs/album/manager/albummanager_database.cpp:756
+#: core/libs/album/manager/albummanager_database.cpp:742
+#, kde-format
+msgid "<p><b>Please check the database settings in this dialog.</b></p>"
+msgstr ""
+
+#: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -33372,7 +33377,7 @@ msgid ""
 "effect of the tool."
 msgstr ""
 "Incrementant la correlació pot ajudar a reduir els defectes. La correlació "
-"pot abastar de 0 a 1. Els valor útils són 0,5 i valors propers a 1, p. ex. "
+"pot abastar de 0 a 1. Els valors útils són 0,5 i valors propers a 1, p. ex. "
 "0,95 o 0,99. L'ús d'un valor alt a la correlació reduirà l'efecte "
 "d'agudització de l'eina."
 
@@ -35287,8 +35292,8 @@ msgstr "Usa una configuració personalitzada"
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr ""
-"Usa paràmetres personalitzats per realitzar l'ordenació de qualitat en lloc "
-"dels predeterminats."
+"Usa paràmetres personalitzats per a realitzar l'ordenació de qualitat en "
+"lloc dels predeterminats."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:123
 #, kde-format
@@ -42798,8 +42803,8 @@ msgid ""
 msgstr ""
 "Reescriu els algoritmes d'ordenació per la qualitat de la imatge, "
 "l'extracció de la informació d'enfocament de la fotografia, detecció "
-"estètica per classificar les imatges usant un model d'aprenentatge profund, "
-"millora la presentació de diapositives i eines de presentació"
+"estètica per a classificar les imatges usant un model d'aprenentatge "
+"profund, millora la presentació de diapositives i eines de presentació"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:164
 #, kde-format
@@ -45568,7 +45573,7 @@ msgstr "Haussa (Txad)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:257
 msgctxt "@info: country code"
 msgid "Hawaiian (US state of Hawaii)"
-msgstr "Hawaià (Estat d'EUA de Hawaii)"
+msgstr "Hawaià (Estat dels EUA de Hawaii)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
 msgctxt "@info: country code"
@@ -47900,7 +47905,7 @@ msgstr "L'idioma de traducció seleccionat %1 no està implementat a %2"
 #: core/libs/widgets/text/donlinetranslator.cpp:81
 #, kde-format
 msgid "Selected ui language %1 is not supported for %2"
-msgstr "L'idioma de la IU seleccionat %1 no està implementat a %2"
+msgstr "L'idioma seleccionat de la IU %1 no està implementat a %2"
 
 #: core/libs/widgets/text/donlinetranslator.cpp:115
 #: core/libs/widgets/text/donlinetranslator.cpp:132
@@ -48809,13 +48814,14 @@ msgid ""
 "translator engine depending of desired target language, as not all world-"
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
-"<para>El motor de traducció és un servei web en línia utilitzat per traduir "
-"text d'un idioma a un altre. Aquesta característica està disponible a "
-"l'opció de metadades on s'admet un idioma alternatiu, com a títol, llegenda, "
-"etc. El procés de traducció està totalment automatitzat, però requereix una "
-"connexió a Internet per funcionar.</para><para>L'usuari pot seleccionar el "
-"motor de traducció més apropiat depenent de l'idioma desitjat, ja que no "
-"tots els idiomes del món són compatibles amb els serveis web en línia.</para>"
+"<para>El motor de traducció és un servei web en línia utilitzat per a "
+"traduir text d'un idioma a un altre. Aquesta característica està disponible "
+"a l'opció de metadades on s'admet un idioma alternatiu, com a títol, "
+"llegenda, etc. El procés de traducció està totalment automatitzat, però "
+"requereix una connexió a Internet per a funcionar.</para><para>L'usuari pot "
+"seleccionar el motor de traducció més apropiat depenent de l'idioma "
+"desitjat, ja que no tots els idiomes del món són compatibles amb els serveis "
+"web en línia.</para>"
 
 #: core/libs/widgets/text/localizeconfig.cpp:329
 #, kde-format
@@ -48883,15 +48889,15 @@ msgid ""
 "depends of open-source backends, including necessary dictionaries, to "
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
-"<para>Establiu aquesta opció per activar la característica de verificació "
+"<para>Establiu aquesta opció per a activar la característica de verificació "
 "ortogràfica en segon pla en les llegendes, títols i altres ginys d'edició de "
 "text. La verificació ortogràfica és capaç de detectar automàticament "
 "l'idioma actual utilitzat en el text i proposarà una alternativa a les "
 "paraules mal escrites.</para><para>Amb entrades on es pot especificar un "
-"idioma alternatiu, s'utilitzarà l'idioma del context per analitzar el text. "
-"La verificació ortogràfica depèn de dorsals de codi obert, inclosos els "
-"diccionaris necessaris, per a fer funcionar l'anàlisi de les frases en els "
-"idiomes desitjats.</para>"
+"idioma alternatiu, s'utilitzarà l'idioma del context per a analitzar el "
+"text. La verificació ortogràfica depèn de dorsals de codi obert, inclosos "
+"els diccionaris necessaris, per a fer funcionar l'anàlisi de les frases en "
+"els idiomes desitjats.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
 #, kde-format
@@ -51259,8 +51265,8 @@ msgid ""
 "digits"
 msgstr ""
 "Afegeix un número de sufix, ||n|| especifica el nombre de dígits a usar, ||"
-"c|| especifica el caràcter separador abans del números, ||a|| opcional per a "
-"incloure totes les opcions per a la unicitat, ||0|| opcional per a farcir "
+"c|| especifica el caràcter separador abans dels números, ||a|| opcional per "
+"a incloure totes les opcions per a la unicitat, ||0|| opcional per a farcir "
 "sempre amb ||n|| dígits zero"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
@@ -52460,8 +52466,8 @@ msgstr ""
 "la vostra col·lecció per a registrar tots els elements a la base de dades. "
 "Els elements inclosos als àlbums es recolliran durant l'inici en segon pla.</"
 "p><p><i>Nota:</i> Depenent de la mida de la col·lecció, aquesta operació pot "
-"trigar una estona. Si cancel·leu l'exploració, es durà a terme en la propera "
-"sessió del digiKam.</p><p>Quan s'hagi fet l'exploració inicial, la propera "
+"trigar una estona. Si cancel·leu l'exploració, es durà a terme en la pròxima "
+"sessió del digiKam.</p><p>Quan s'hagi fet l'exploració inicial, la pròxima "
 "vegada que l'inicieu, el digiKam només comprovarà la col·lecció per a veure "
 "si hi ha àlbums nous -la qual cosa serà molt més ràpida-. Podeu forçar al "
 "digiKam a explorar elements nous manualment usant l'entrada de menú <b>Eines "
@@ -61056,7 +61062,7 @@ msgstr ""
 "mitjançant l'anàlisi del contingut mitjançant una xarxa neuronal "
 "d'aprenentatge profund.</b></p><p>Els paràmetres de sota determinen el model "
 "d'aprenentatge profund a utilitzar mentre s'analitza el contingut de la "
-"imatge per determinar els subjectes de la fotografia. La xarxa neuronal "
+"imatge per a determinar els subjectes de la fotografia. La xarxa neuronal "
 "utilitzada en segon pla generarà automàticament una sèrie d'etiquetes que "
 "descriuen el contingut i emmagatzemaran els resultats a la base de dades.</p>"
 
@@ -63356,7 +63362,7 @@ msgstr ""
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr ""
-"La vista prèvia d'imatges sempre es canvia d'escala per ajustar-la a la "
+"La vista prèvia d'imatges sempre es canvia d'escala per a ajustar-la a la "
 "finestra"
 
 #: core/utilities/setup/album/setupalbumview.cpp:334
@@ -64514,8 +64520,8 @@ msgstr ""
 "classificació d'imatges segons l'estètica o l'assignació automàtica "
 "d'etiquetes a les imatges, el digiKam necessita alguns fitxers binaris "
 "grans. Podeu triar quina característica voleu emprar.</p><p>No s'han trobat "
-"alguns d'aquests fitxers. Feu clic a «Baixa» per començar a baixar els "
-"fitxers necessaris. Podeu tancar aquest diàleg, la propera vegada que "
+"alguns d'aquests fitxers. Feu clic a «Baixa» per a començar a baixar els "
+"fitxers necessaris. Podeu tancar aquest diàleg, la pròxima vegada que "
 "s'iniciï el digiKam es tornarà a demanar. La detecció de cares no funcionarà "
 "sense aquests fitxers.</p><p>Els fitxers es descarregaran a %1.</p><p><b>Una "
 "vegada finalitzada la baixada, caldrà reiniciar el digiKam.</b></p>"
@@ -65006,7 +65012,7 @@ msgid ""
 "quality JPEG. </item>"
 msgstr ""
 "<item><emphasis strong='true'>HEIF</emphasis>: «High Efficiency Image File "
-"Format» és un format contenidor per emmagatzemar imatges individuals. Una "
+"Format» és un format contenidor per a emmagatzemar imatges individuals. Una "
 "imatge HEIF que utilitza el còdec HEVC (H.265) requereix menys espai "
 "d'emmagatzematge que el JPEG de qualitat equivalent. </item>"
 
@@ -65021,8 +65027,8 @@ msgid ""
 msgstr ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: És un format de fitxer de "
 "gràfics ràster lliure de cànons que permet compressió amb i sense pèrdua "
-"Està dissenyat per superar els formats ràster existents i així convertir-se "
-"en la seva substitució universal. </item>"
+"Està dissenyat per a superar els formats ràster existents i així convertir-"
+"se en la seva substitució universal. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:546
 #, kde-kuit-format
@@ -66596,7 +66602,7 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr ""
 "Configuració de l'ordenador d'imatges segons la qualitat\n"
-"Personalitza la configuració predeterminada per realitzar el triatge "
+"Personalitza la configuració predeterminada per a realitzar el triatge "
 "d'imatges segons la qualitat"
 
 #: core/utilities/setup/setup.cpp:228
@@ -66718,10 +66724,10 @@ msgid ""
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
-"Per a que funcioni de manera fàcil, el Google Maps necessita una clau d´API "
-"que els usuaris finals poden comprar en línia per a aconseguir les "
-"credencials. Sense aquesta clau, el Google Maps encara és usable però amb un "
-"marc superposat que té l'anotació «Només per a desenvolupament». Per a més "
+"Perquè funcioni de manera fàcil, el Google Maps necessita una clau d´API que "
+"els usuaris finals poden comprar en línia per a aconseguir les credencials. "
+"Sense aquesta clau, el Google Maps encara és usable però amb un marc "
+"superposat que té l'anotació «Només per a desenvolupament». Per a més "
 "informació, vegeu aquesta <a href='https://mapsplatform.google.com/"
 "pricing/'>pàgina de Google</a> quant a l'ús, pràctiques i preus."
 
@@ -67646,6 +67652,31 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
+
+#~ msgid ""
+#~ "The MySQL binary tools was not found, please set the correct location in "
+#~ "the next dialog."
+#~ msgstr ""
+#~ "No es troben les eines executables del MySQL, establiu la ubicació "
+#~ "correcta en el diàleg següent."
+
+#~ msgid ""
+#~ "The SQLite core database was not found, please set the correct location "
+#~ "in the next dialog."
+#~ msgstr ""
+#~ "No s'ha trobat la base de dades del nucli de SQLite, establiu la ubicació "
+#~ "correcta en el diàleg següent."
+
+#~ msgid ""
+#~ "Failed to open the database.\n"
+#~ "\n"
+#~ "You cannot use digiKam without a working database.\n"
+#~ "Please check the database settings in the next dialog."
+#~ msgstr ""
+#~ "Ha fallat en obrir la base de dades.\n"
+#~ "\n"
+#~ "No podeu usar el digiKam sense una base de dades operativa.\n"
+#~ "Comproveu la configuració de la base de dades en el diàleg següent."
 
 #~ msgid "No codec could be found for: "
 #~ msgstr "No s'ha pogut trobar cap connector per: "

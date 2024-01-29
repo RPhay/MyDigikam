@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-28 01:38+0000\n"
+"POT-Creation-Date: 2024-01-29 01:34+0000\n"
 "PO-Revision-Date: 2024-01-25 02:14+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -26957,72 +26957,65 @@ msgid "Searches"
 msgstr "Búsquedas"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, kde-format
-msgid ""
-"The MySQL database directory was not found, please set the correct location "
-"in the next dialog."
+#, fuzzy, kde-format
+#| msgid ""
+#| "The MySQL database directory was not found, please set the correct "
+#| "location in the next dialog."
+msgid "The MySQL database directory was not found."
 msgstr ""
 "No se ha encontrado el directorio de la base de datos de MySQL. Defina su "
 "ubicación correcta en el siguiente diálogo."
 
-#: core/libs/album/manager/albummanager_database.cpp:122
+#: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
-msgid ""
-"The MySQL binary tools was not found, please set the correct location in the "
-"next dialog."
+msgid "The MySQL binary tools was not found."
 msgstr ""
-"No se han encontrado las herramientas binarias de MySQL. Defina su ubicación "
-"correcta en el siguiente diálogo."
 
-#: core/libs/album/manager/albummanager_database.cpp:130
-#, kde-format
-msgid ""
-"The SQLite core database was not found, please set the correct location in "
-"the next dialog."
-msgstr ""
-"No se ha encontrado la base de datos principal de SQLite. Defina su "
-"ubicación correcta en el siguiente diálogo."
+#: core/libs/album/manager/albummanager_database.cpp:128
+#, fuzzy, kde-format
+#| msgid "The core database name is empty"
+msgid "The SQLite core database was not found."
+msgstr "El nombre de la base de datos principal está vacío"
 
-#: core/libs/album/manager/albummanager_database.cpp:140
-#, kde-format
+#: core/libs/album/manager/albummanager_database.cpp:137
+#, fuzzy, kde-format
+#| msgid ""
+#| "\n"
+#| "\n"
+#| "If you want to start with a new configuration and with a first run "
+#| "wizard, delete the file %1"
 msgid ""
-"\n"
-"\n"
-"If you want to start with a new configuration and with a first run wizard, "
-"delete the file %1"
+"<p>If you want to start with a new configuration and with a first run "
+"wizard, delete the file:<br>%1</p>"
 msgstr ""
 "\n"
 "\n"
 "Si quiere empezar con una configuración nueva y con el asistente de la "
 "primera ejecución, borre el archivo %1."
 
-#: core/libs/album/manager/albummanager_database.cpp:153
-#, kde-format
+#: core/libs/album/manager/albummanager_database.cpp:150
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred during the internal server start.\n"
+#| "\n"
+#| "Details:\n"
+#| "%1"
 msgid ""
-"An error occurred during the internal server start.\n"
-"\n"
-"Details:\n"
-"%1"
+"An error occurred during the internal server start.<p>Details:\n"
+"%1</p>"
 msgstr ""
 "Ha ocurrido un error durante el arranque del servidor interno.\n"
 "\n"
 "Detalles:\n"
 "%1"
 
-#: core/libs/album/manager/albummanager_database.cpp:169
-#, kde-format
-msgid ""
-"Failed to open the database.\n"
-"\n"
-"You cannot use digiKam without a working database.\n"
-"Please check the database settings in the next dialog."
-msgstr ""
-"No se ha podido abrir la base de datos.\n"
-"\n"
-"No puede usar digiKam sin una base de datos operativa.\n"
-"Compruebe las preferencias de la base de datos en el siguiente diálogo."
+#: core/libs/album/manager/albummanager_database.cpp:166
+#, fuzzy, kde-format
+#| msgid "Failed to add tag to database"
+msgid "Failed to open the database."
+msgstr "No ha sido posible añadir etiqueta a la base de datos"
 
-#: core/libs/album/manager/albummanager_database.cpp:178
+#: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
@@ -27030,7 +27023,7 @@ msgid ""
 msgstr ""
 "<p>digiKam intentará arrancar ahora, pero <b>no</b> será funcional.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:214
+#: core/libs/album/manager/albummanager_database.cpp:209
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -27043,7 +27036,7 @@ msgstr ""
 "<b>no</b> será funcional. Compruebe las preferencias de la base de datos en "
 "el <b>menú de configuración</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:223
+#: core/libs/album/manager/albummanager_database.cpp:218
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -27057,7 +27050,14 @@ msgstr ""
 "Compruebe las preferencias de la base de datos en el <b>menú de "
 "configuración</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:256
+#: core/libs/album/manager/albummanager_database.cpp:231
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Failed to Initialize Thumbnails Database"
+msgid "Failed to initialize the database."
+msgstr "Ha fallado la inicialización de la base de datos de miniaturas"
+
+#: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -27082,7 +27082,7 @@ msgstr ""
 "caso contrario, pulse «No» y corrija el conjunto de caracteres de su base de "
 "datos antes de reiniciar digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:299
+#: core/libs/album/manager/albummanager_database.cpp:296
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -27093,7 +27093,7 @@ msgstr ""
 "sistema.<br/> Seleccione la opción más adecuada para manejar la situación:</"
 "p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:318
+#: core/libs/album/manager/albummanager_database.cpp:315
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -27105,7 +27105,7 @@ msgstr ""
 "en el esquema de particiones o en las preferencias del sistema.<br/>Ahora, "
 "la colección está ubicada en:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:337
+#: core/libs/album/manager/albummanager_database.cpp:334
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27114,7 +27114,7 @@ msgstr ""
 "La colección está ubicada en un dispositivo de almacenamiento que no está "
 "siempre conectado. Marque la colección como extraíble."
 
-#: core/libs/album/manager/albummanager_database.cpp:344
+#: core/libs/album/manager/albummanager_database.cpp:341
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -27123,19 +27123,19 @@ msgstr ""
 "No hacer nada, resolveré el problema después mediante el diálogo de "
 "configuración"
 
-#: core/libs/album/manager/albummanager_database.cpp:358
+#: core/libs/album/manager/albummanager_database.cpp:355
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Colección no encontrada"
 
-#: core/libs/album/manager/albummanager_database.cpp:464
+#: core/libs/album/manager/albummanager_database.cpp:461
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Carpeta de la base de datos"
 
-#: core/libs/album/manager/albummanager_database.cpp:465
+#: core/libs/album/manager/albummanager_database.cpp:462
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -27151,33 +27151,33 @@ msgstr ""
 "las imágenes existentes en la carpeta «%2») o ignorar el archivo antiguo y "
 "comenzar con una base de datos nueva?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:475
-#: core/libs/album/manager/albummanager_database.cpp:543
-#: core/libs/album/manager/albummanager_database.cpp:565
+#: core/libs/album/manager/albummanager_database.cpp:472
+#: core/libs/album/manager/albummanager_database.cpp:540
+#: core/libs/album/manager/albummanager_database.cpp:562
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Actualizar base de datos"
 
-#: core/libs/album/manager/albummanager_database.cpp:477
-#: core/libs/album/manager/albummanager_database.cpp:545
-#: core/libs/album/manager/albummanager_database.cpp:567
-#: core/libs/album/manager/albummanager_database.cpp:615
+#: core/libs/album/manager/albummanager_database.cpp:474
+#: core/libs/album/manager/albummanager_database.cpp:542
+#: core/libs/album/manager/albummanager_database.cpp:564
+#: core/libs/album/manager/albummanager_database.cpp:612
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Crear nueva base de datos"
 
-#: core/libs/album/manager/albummanager_database.cpp:534
-#: core/libs/album/manager/albummanager_database.cpp:557
-#: core/libs/album/manager/albummanager_database.cpp:607
-#: core/libs/album/manager/albummanager_database.cpp:639
+#: core/libs/album/manager/albummanager_database.cpp:531
+#: core/libs/album/manager/albummanager_database.cpp:554
+#: core/libs/album/manager/albummanager_database.cpp:604
+#: core/libs/album/manager/albummanager_database.cpp:636
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Nueva carpeta de base de datos"
 
-#: core/libs/album/manager/albummanager_database.cpp:535
+#: core/libs/album/manager/albummanager_database.cpp:532
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27192,15 +27192,15 @@ msgstr ""
 "datos antiguo, comenzar con una base de datos nueva o copiar la base de "
 "datos actual a esta ubicación para continuar usándola?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:547
-#: core/libs/album/manager/albummanager_database.cpp:617
-#: core/libs/album/manager/albummanager_database.cpp:648
+#: core/libs/album/manager/albummanager_database.cpp:544
+#: core/libs/album/manager/albummanager_database.cpp:614
+#: core/libs/album/manager/albummanager_database.cpp:645
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Copiar base de datos actual"
 
-#: core/libs/album/manager/albummanager_database.cpp:558
+#: core/libs/album/manager/albummanager_database.cpp:555
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27213,7 +27213,7 @@ msgstr ""
 "digiKam en esta carpeta.</p> <p>¿Desea actualizar el archivo de base de "
 "datos antiguo o comenzar con una base de datos nueva?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:593
+#: core/libs/album/manager/albummanager_database.cpp:590
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27222,7 +27222,7 @@ msgstr ""
 "No se ha podido copiar el archivo de base de datos antiguo («%1») a su nueva "
 "ubicación («%2»). Intentando actualizar las bases de datos antiguas."
 
-#: core/libs/album/manager/albummanager_database.cpp:608
+#: core/libs/album/manager/albummanager_database.cpp:605
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -27233,7 +27233,7 @@ msgstr ""
 "</p><p>¿Desea copiar la base de datos actual a esta ubicación y continuar "
 "usándola, o desea empezar con una base de datos nueva?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:640
+#: core/libs/album/manager/albummanager_database.cpp:637
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27246,13 +27246,13 @@ msgstr ""
 "<p>¿Desea usar este archivo existente como la nueva base de datos, o desea "
 "eliminarlo y copiar la base de datos actual a esta ubicación?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:650
+#: core/libs/album/manager/albummanager_database.cpp:647
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Usar archivo existente"
 
-#: core/libs/album/manager/albummanager_database.cpp:705
+#: core/libs/album/manager/albummanager_database.cpp:702
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -27262,7 +27262,7 @@ msgstr ""
 "(«%1»). Rechazando su reemplazo sin una copia de seguridad, usando el "
 "archivo ya existente."
 
-#: core/libs/album/manager/albummanager_database.cpp:723
+#: core/libs/album/manager/albummanager_database.cpp:720
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27271,7 +27271,12 @@ msgstr ""
 "No se ha podido copiar el archivo de base de datos antiguo («%1») a su nueva "
 "ubicación («%2»). Arrancando con una base de datos vacía."
 
-#: core/libs/album/manager/albummanager_database.cpp:756
+#: core/libs/album/manager/albummanager_database.cpp:742
+#, kde-format
+msgid "<p><b>Please check the database settings in this dialog.</b></p>"
+msgstr ""
+
+#: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -67679,6 +67684,31 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
+
+#~ msgid ""
+#~ "The MySQL binary tools was not found, please set the correct location in "
+#~ "the next dialog."
+#~ msgstr ""
+#~ "No se han encontrado las herramientas binarias de MySQL. Defina su "
+#~ "ubicación correcta en el siguiente diálogo."
+
+#~ msgid ""
+#~ "The SQLite core database was not found, please set the correct location "
+#~ "in the next dialog."
+#~ msgstr ""
+#~ "No se ha encontrado la base de datos principal de SQLite. Defina su "
+#~ "ubicación correcta en el siguiente diálogo."
+
+#~ msgid ""
+#~ "Failed to open the database.\n"
+#~ "\n"
+#~ "You cannot use digiKam without a working database.\n"
+#~ "Please check the database settings in the next dialog."
+#~ msgstr ""
+#~ "No se ha podido abrir la base de datos.\n"
+#~ "\n"
+#~ "No puede usar digiKam sin una base de datos operativa.\n"
+#~ "Compruebe las preferencias de la base de datos en el siguiente diálogo."
 
 #~ msgid "No codec could be found for: "
 #~ msgstr "No se ha podido encontrar ningún códec para: "

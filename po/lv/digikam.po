@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-28 01:38+0000\n"
+"POT-Creation-Date: 2024-01-29 01:34+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -26181,70 +26181,49 @@ msgstr "Meklēšanas"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
 #, kde-format
-msgid ""
-"The MySQL database directory was not found, please set the correct location "
-"in the next dialog."
+msgid "The MySQL database directory was not found."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:122
+#: core/libs/album/manager/albummanager_database.cpp:121
+#, kde-format
+msgid "The MySQL binary tools was not found."
+msgstr ""
+
+#: core/libs/album/manager/albummanager_database.cpp:128
+#, fuzzy, kde-format
+msgid "The SQLite core database was not found."
+msgstr "Šeit var norādīt teksta krāsu."
+
+#: core/libs/album/manager/albummanager_database.cpp:137
 #, kde-format
 msgid ""
-"The MySQL binary tools was not found, please set the correct location in the "
-"next dialog."
+"<p>If you want to start with a new configuration and with a first run "
+"wizard, delete the file:<br>%1</p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:130
-#, kde-format
-msgid ""
-"The SQLite core database was not found, please set the correct location in "
-"the next dialog."
-msgstr ""
-
-#: core/libs/album/manager/albummanager_database.cpp:140
-#, kde-format
-msgid ""
-"\n"
-"\n"
-"If you want to start with a new configuration and with a first run wizard, "
-"delete the file %1"
-msgstr ""
-
-#: core/libs/album/manager/albummanager_database.cpp:153
+#: core/libs/album/manager/albummanager_database.cpp:150
 #, fuzzy, kde-format
 msgid ""
-"An error occurred during the internal server start.\n"
-"\n"
-"Details:\n"
-"%1"
+"An error occurred during the internal server start.<p>Details:\n"
+"%1</p>"
 msgstr ""
 "Kļūda atverot datubāzes aizmuguri.\n"
 " "
 
-#: core/libs/album/manager/albummanager_database.cpp:169
+#: core/libs/album/manager/albummanager_database.cpp:166
 #, fuzzy, kde-format
-#| msgid ""
-#| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
-#| "working database. digiKam will attempt to start now, but it will <b>not</"
-#| "b> be functional. Please check the database settings in the "
-#| "<b>configuration menu</b>.</p>"
-msgid ""
-"Failed to open the database.\n"
-"\n"
-"You cannot use digiKam without a working database.\n"
-"Please check the database settings in the next dialog."
-msgstr ""
-"<p>Neizdevās atvērt datubāzi. </p><p>DigiKam nespēj strādāt bez datubāzes. "
-"digiKam tagad mēģinās sākt darbu, bet programma <b>nedarbosies</b> korekti. "
-"Lūdzu, pārbaudiet datubāzes iestatījumus <b>konfigurācijas izvēlnē</b>.</p>"
+#| msgid "Failed to add tag to database"
+msgid "Failed to open the database."
+msgstr "Neizdevās pievienot tagu datubāzei"
 
-#: core/libs/album/manager/albummanager_database.cpp:178
+#: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:214
+#: core/libs/album/manager/albummanager_database.cpp:209
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -26261,7 +26240,7 @@ msgstr ""
 "digiKam tagad mēģinās sākt darbu, bet programma <b>nedarbosies</b> korekti. "
 "Lūdzu, pārbaudiet datubāzes iestatījumus <b>konfigurācijas izvēlnē</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:223
+#: core/libs/album/manager/albummanager_database.cpp:218
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26279,7 +26258,12 @@ msgstr ""
 "digiKam mēģinās sākt darbu, bet programma <b>nebūs</b> funkcionējoša. Lūdzu, "
 "pārbaudiet datubāzes iestatījumus <b>konfigurācijas izvēlnē</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:256
+#: core/libs/album/manager/albummanager_database.cpp:231
+#, fuzzy, kde-format
+msgid "Failed to initialize the database."
+msgstr "Neizdevās pievienot tagu datubāzei"
+
+#: core/libs/album/manager/albummanager_database.cpp:253
 #, fuzzy, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26301,7 +26285,7 @@ msgstr ""
 "spiediet 'Nē' un izlabojiet jūsu lokāles iestatījumu, tad pārstartējiet "
 "digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:299
+#: core/libs/album/manager/albummanager_database.cpp:296
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -26315,7 +26299,7 @@ msgstr ""
 "<p>Kolekcija</p><p><b>%1</b><br/>(%2)</p><p> jūsu datorā nav atrasta. <br/> "
 "Lūdzu, izvēlieties piemērotāko opciju, kā rīkoties šajā situācijā:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:318
+#: core/libs/album/manager/albummanager_database.cpp:315
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26327,7 +26311,7 @@ msgstr ""
 "izvietojuma maiņa vai arī failu sistēmas iestatījumi.<br/> Kolekcija pašreiz "
 "atrodas šajā vietā:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:337
+#: core/libs/album/manager/albummanager_database.cpp:334
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26336,7 +26320,7 @@ msgstr ""
 "Kolekcija atrodas glabāšanas ierīcē, kura ne vienmēr ir pievienota. "
 "Atzīmējiet kolekciju kā noņemamo."
 
-#: core/libs/album/manager/albummanager_database.cpp:344
+#: core/libs/album/manager/albummanager_database.cpp:341
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26345,21 +26329,21 @@ msgstr ""
 "Pašreiz nesākt nekādu darbību. Es vēlētos problēmu risināt vēlāk, izmantojot "
 "iestatīšanas dialoglogu"
 
-#: core/libs/album/manager/albummanager_database.cpp:358
+#: core/libs/album/manager/albummanager_database.cpp:355
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Kolekcija nav atrasta"
 
-#: core/libs/album/manager/albummanager_database.cpp:464
+#: core/libs/album/manager/albummanager_database.cpp:461
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Datubāzes mape"
 
-#: core/libs/album/manager/albummanager_database.cpp:465
+#: core/libs/album/manager/albummanager_database.cpp:462
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -26374,36 +26358,36 @@ msgstr ""
 "attēliem, kuri atrodas mapē \"%2\"), vai arī ignorēt veco failu un sākt ar "
 "jaunu datubāzi?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:475
-#: core/libs/album/manager/albummanager_database.cpp:543
-#: core/libs/album/manager/albummanager_database.cpp:565
+#: core/libs/album/manager/albummanager_database.cpp:472
+#: core/libs/album/manager/albummanager_database.cpp:540
+#: core/libs/album/manager/albummanager_database.cpp:562
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Modernizēt datubāzi"
 
-#: core/libs/album/manager/albummanager_database.cpp:477
-#: core/libs/album/manager/albummanager_database.cpp:545
-#: core/libs/album/manager/albummanager_database.cpp:567
-#: core/libs/album/manager/albummanager_database.cpp:615
+#: core/libs/album/manager/albummanager_database.cpp:474
+#: core/libs/album/manager/albummanager_database.cpp:542
+#: core/libs/album/manager/albummanager_database.cpp:564
+#: core/libs/album/manager/albummanager_database.cpp:612
 #, fuzzy, kde-format
 #| msgid "Create New Database"
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Izveidot jaunu datubāzi"
 
-#: core/libs/album/manager/albummanager_database.cpp:534
-#: core/libs/album/manager/albummanager_database.cpp:557
-#: core/libs/album/manager/albummanager_database.cpp:607
-#: core/libs/album/manager/albummanager_database.cpp:639
+#: core/libs/album/manager/albummanager_database.cpp:531
+#: core/libs/album/manager/albummanager_database.cpp:554
+#: core/libs/album/manager/albummanager_database.cpp:604
+#: core/libs/album/manager/albummanager_database.cpp:636
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Jauna datubāzes mape"
 
-#: core/libs/album/manager/albummanager_database.cpp:535
+#: core/libs/album/manager/albummanager_database.cpp:532
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26417,16 +26401,16 @@ msgstr ""
 "veco datubāzes failu, vai sākt ar jaunu datubāzi, vai arī pārkopēt esošo "
 "datubāzi uz šo vietu un turpināt lietot to?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:547
-#: core/libs/album/manager/albummanager_database.cpp:617
-#: core/libs/album/manager/albummanager_database.cpp:648
+#: core/libs/album/manager/albummanager_database.cpp:544
+#: core/libs/album/manager/albummanager_database.cpp:614
+#: core/libs/album/manager/albummanager_database.cpp:645
 #, fuzzy, kde-format
 #| msgid "Copy Current Database"
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopēt esošo datubāzi"
 
-#: core/libs/album/manager/albummanager_database.cpp:558
+#: core/libs/album/manager/albummanager_database.cpp:555
 #, fuzzy, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26439,7 +26423,7 @@ msgstr ""
 "veco datubāzes failu, vai sākt ar jaunu datubāzi, vai arī pārkopēt esošo "
 "datubāzi uz šo vietu un turpināt lietot to?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:593
+#: core/libs/album/manager/albummanager_database.cpp:590
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26448,7 +26432,7 @@ msgstr ""
 "Neizdevās nokopēt veco datubāzes failu (\"%1\") uz jauno vietu (\"%2\")."
 "Mēģina modernizēt veco datubāzi."
 
-#: core/libs/album/manager/albummanager_database.cpp:608
+#: core/libs/album/manager/albummanager_database.cpp:605
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -26459,7 +26443,7 @@ msgstr ""
 "vēlaties pārkopēt esošo datubāzi uz šo vietu un turpināt lietot to vai sākt "
 "ar jaunu datubāzi?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:640
+#: core/libs/album/manager/albummanager_database.cpp:637
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26472,14 +26456,14 @@ msgstr ""
 "vai sākt ar jaunu datubāzi, vai izdzēst to un pārkopēt pašreizējo datubāzi "
 "uz šo vietu?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:650
+#: core/libs/album/manager/albummanager_database.cpp:647
 #, fuzzy, kde-format
 #| msgid "Use Existing File"
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Lietot esošo failu"
 
-#: core/libs/album/manager/albummanager_database.cpp:705
+#: core/libs/album/manager/albummanager_database.cpp:702
 #, fuzzy, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -26489,7 +26473,7 @@ msgstr ""
 "Aizvietošana netiks veikta, pirms nav izveidota rezerves kopija, tiks "
 "lietots esošais fails."
 
-#: core/libs/album/manager/albummanager_database.cpp:723
+#: core/libs/album/manager/albummanager_database.cpp:720
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26498,7 +26482,12 @@ msgstr ""
 "Neizdevās nokopēt veco datubāzes failu (\"%1\") uz jauno vietu (\"%2\"). Sāk "
 "ar tukšu datubāzi."
 
-#: core/libs/album/manager/albummanager_database.cpp:756
+#: core/libs/album/manager/albummanager_database.cpp:742
+#, kde-format
+msgid "<p><b>Please check the database settings in this dialog.</b></p>"
+msgstr ""
+
+#: core/libs/album/manager/albummanager_database.cpp:758
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@action:button"
@@ -67178,6 +67167,23 @@ msgstr "Albumu vienības"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
+#~| "working database. digiKam will attempt to start now, but it will <b>not</"
+#~| "b> be functional. Please check the database settings in the "
+#~| "<b>configuration menu</b>.</p>"
+#~ msgid ""
+#~ "Failed to open the database.\n"
+#~ "\n"
+#~ "You cannot use digiKam without a working database.\n"
+#~ "Please check the database settings in the next dialog."
+#~ msgstr ""
+#~ "<p>Neizdevās atvērt datubāzi. </p><p>DigiKam nespēj strādāt bez "
+#~ "datubāzes. digiKam tagad mēģinās sākt darbu, bet programma "
+#~ "<b>nedarbosies</b> korekti. Lūdzu, pārbaudiet datubāzes iestatījumus "
+#~ "<b>konfigurācijas izvēlnē</b>.</p>"
 
 #, fuzzy
 #~| msgctxt "@option:radio"
