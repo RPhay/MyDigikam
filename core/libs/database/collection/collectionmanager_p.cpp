@@ -629,10 +629,24 @@ bool CollectionManager::Private::checkCollectionUUID(AlbumRootLocation* const lo
 
     if (QFileInfo::exists(uuidFile))
     {
-        if (!QUrlQuery(url).queryItemValue(uuidQuery).isNull())
+        QUrlQuery q(url);
+
+        if (q.queryItemValue(uuidQuery).isNull())
         {
-            return false;
+            QString uuid = getCollectionUUID(path);
+
+            if (!uuid.isNull())
+            {
+                q.addQueryItem(uuidQuery, uuid);
+                url.setQuery(q);
+
+                location->identifier = url.url();
+
+                return true;
+            }
         }
+
+        return false;
     }
 
     if (!QFileInfo::exists(uuidPath))
