@@ -212,7 +212,7 @@ BUGFIXES:
 190 ==> 480505 - Compilation error.
 191 ==> 480521 - digiKam has started to crash when I manually want to assign a name to a marked face.
 192 ==> 480551 - In face recognition "who is this" within an image - starting to type crashes application.
-193 ==> 
+193 ==> 480528 - 'Remove Duplicates' Button Disabled When Focus Moves Away From Duplicates Tab.
 194 ==> 
 195 ==> 
 196 ==> 
