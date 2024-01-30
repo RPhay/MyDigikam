@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 01:34+0000\n"
-"PO-Revision-Date: 2024-01-25 16:23+0200\n"
+"PO-Revision-Date: 2024-01-29 15:41+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -27040,63 +27040,42 @@ msgid "Searches"
 msgstr "Результати пошуку"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory was not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid "The MySQL database directory was not found."
-msgstr ""
-"Не знайдено каталог бази даних MySQL. Будь ласка, вкажіть адресу каталогу у "
-"наступному діалоговому вікні."
+msgstr "Не знайдено каталог бази даних MySQL."
 
 #: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "Не знайдено двійкових інструментів MySQL."
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "Назва основної бази даних є порожньою"
+msgstr "Не знайдено основної бази даних SQLite."
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"Якщо ви хочете запустити програму з новими налаштуваннями і з майстром "
-"першого запуску, вилучіть файл %1"
+"<p>Якщо ви хочете запустити програму з новими налаштуваннями і з майстром "
+"першого запуску, вилучіть файл<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.\n"
-#| "\n"
-#| "Details:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
 msgstr ""
-"Під час запуску будованого сервера сталася помилка.\n"
-"\n"
-"Подробиці:\n"
-"%1"
+"Під час запуску вбудованого сервера сталася помилка.<p>Подробиці:\n"
+" %1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "Не вдалося додати мітку до бази даних"
+msgstr "Не вдалося відкрити базу даних."
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -27135,11 +27114,9 @@ msgstr ""
 "бази даних у <b>меню налаштування</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "Не вдалося ініціалізувати базу даних мініатюр"
+msgstr "Не вдалося ініціалізувати базу даних."
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -27353,6 +27330,7 @@ msgstr ""
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
+"<p><b>Будь ласка, перевірте параметри бази даних у цьому вікні.</b></p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format

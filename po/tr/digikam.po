@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 01:34+0000\n"
-"PO-Revision-Date: 2024-01-28 20:30+0300\n"
+"PO-Revision-Date: 2024-01-29 18:55+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -389,7 +389,7 @@ msgstr "Coğrafi Konum Süzgeci"
 #: core/app/filters/filtersidebarwidget.cpp:172
 #, kde-format
 msgid "Images Without Tags"
-msgstr "Künyesiz Görseller"
+msgstr "Künyesiz örseller"
 
 #: core/app/filters/filtersidebarwidget.cpp:174
 #, kde-format
@@ -431,7 +431,7 @@ msgstr "Künyeler Süzgeci"
 #: core/app/filters/filtersidebarwidget.cpp:222
 #, kde-format
 msgid "Images Without Face tags"
-msgstr "Yüz Künyesi Olmayan Görseller"
+msgstr "Yüz künyesi olmayan görseller"
 
 #: core/app/filters/filtersidebarwidget.cpp:224
 #, kde-format
@@ -2597,7 +2597,7 @@ msgstr "&Araçlar"
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
 #, kde-format
 msgid "I&mport"
-msgstr "İçe A&ktarım"
+msgstr "İçe A&ktar"
 
 #. i18n: ectx: Menu (Export)
 #: core/app/main/digikamui5.rc:149 core/showfoto/main/showfotoui5.rc:108
@@ -2605,7 +2605,7 @@ msgstr "İçe A&ktarım"
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
 #, kde-format
 msgid "&Export"
-msgstr "&Dışa Aktarım"
+msgstr "&Dışa Aktar"
 
 #. i18n: ectx: Menu (settings)
 #: core/app/main/digikamui5.rc:155 core/showfoto/main/showfotoui5.rc:114
@@ -2950,7 +2950,7 @@ msgstr "Künye Yok"
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
 #, kde-format
 msgid "Existing Tags"
-msgstr "Var Olan Künyeler"
+msgstr "Var olan künyeler"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:261
 #, kde-format
@@ -3673,19 +3673,19 @@ msgstr "Ağaç içinde gruplamayı göster"
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:67
 #, kde-format
 msgid "Audio/video properties"
-msgstr "Ses/video özellikleri"
+msgstr "Ses/Video Özellikleri"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:70
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:86
 #, kde-format
 msgid "Audio bitrate"
-msgstr "Ses bit hızı"
+msgstr "Ses Bit Hızı"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:71
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:91
 #, kde-format
 msgid "Audio channel type"
-msgstr "Ses kanalı türü"
+msgstr "Ses Kanalı Türü"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
@@ -3706,13 +3706,13 @@ msgstr "Süre"
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:106
 #, kde-format
 msgid "Frame rate"
-msgstr "Kare hızı"
+msgstr "Kare Hızı"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:75
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:111
 #, kde-format
 msgid "Video codec"
-msgstr "Video kodlayıcısı"
+msgstr "Video Kodlayıcısı"
 
 #: core/app/views/tableview/tableview_column_configuration_dialog.cpp:74
 #, kde-format
@@ -3735,7 +3735,7 @@ msgstr "Derecelendirme"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
-msgstr "Etiket Seç"
+msgstr "Seçim Etiketi"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:73
 #, kde-format
@@ -3771,7 +3771,7 @@ msgstr "Derecelendirme"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
-msgstr "Etiket Seç"
+msgstr "Seçim Etiketi"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:104
 #, kde-format
@@ -3879,7 +3879,7 @@ msgstr "Beyaz"
 #: core/app/views/tableview/tableview_column_file.cpp:52
 #, kde-format
 msgid "File properties"
-msgstr "Dosya özellikleri"
+msgstr "Dosya Özellikleri"
 
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/app/views/tableview/tableview_column_file.cpp:55
@@ -3889,7 +3889,7 @@ msgstr "Dosya özellikleri"
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
-msgstr "Dosya adı"
+msgstr "Dosya Adı"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
@@ -3910,7 +3910,7 @@ msgstr "Boyut"
 #: core/app/views/tableview/tableview_column_file.cpp:95
 #, kde-format
 msgid "Last modified"
-msgstr "Son düzenleme"
+msgstr "Son Değişiklik"
 
 #: core/app/views/tableview/tableview_column_file.cpp:236
 #, kde-format
@@ -3933,13 +3933,13 @@ msgstr "Görüntüleme biçimi"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #, kde-format
 msgid "Geo properties"
-msgstr "Coğrafi özellikler"
+msgstr "Coğrafi Özellikler"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:88
 #: core/app/views/tableview/tableview_column_geo.cpp:101
 #, kde-format
 msgid "Geotagged"
-msgstr "Coğrafi künyeli"
+msgstr "Coğrafi Künyeli"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:89
 #: core/app/views/tableview/tableview_column_geo.cpp:106
@@ -3981,7 +3981,7 @@ msgstr "İmparatorluk ölçü birimleri"
 #: core/app/views/tableview/tableview_column_item.cpp:72
 #, kde-format
 msgid "Item properties"
-msgstr "Öge özellikleri"
+msgstr "Öge Özellikleri"
 
 #: core/app/views/tableview/tableview_column_item.cpp:75
 #: core/app/views/tableview/tableview_column_item.cpp:96
@@ -4007,19 +4007,19 @@ msgstr "Boyutlar"
 #: core/app/views/tableview/tableview_column_item.cpp:111
 #, kde-format
 msgid "Pixel count"
-msgstr "Piksel sayısı"
+msgstr "Piksel Sayısı"
 
 #: core/app/views/tableview/tableview_column_item.cpp:79
 #: core/app/views/tableview/tableview_column_item.cpp:116
 #, kde-format
 msgid "Bit depth"
-msgstr "Bit derinliği"
+msgstr "Bit Derinliği"
 
 #: core/app/views/tableview/tableview_column_item.cpp:80
 #: core/app/views/tableview/tableview_column_item.cpp:121
 #, kde-format
 msgid "Color mode"
-msgstr "Renk kipi"
+msgstr "Renk Kipi"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:81
@@ -4034,19 +4034,19 @@ msgstr "Tür"
 #: core/app/views/tableview/tableview_column_item.cpp:131
 #, kde-format
 msgid "Creation date/time"
-msgstr "Oluşturulma tarihi/zamanı"
+msgstr "Oluşturulma Tarihi/Zamanı"
 
 #: core/app/views/tableview/tableview_column_item.cpp:83
 #: core/app/views/tableview/tableview_column_item.cpp:136
 #, kde-format
 msgid "Digitization date/time"
-msgstr "Sayısallaştırma tarihi/zamanı"
+msgstr "Sayısallaştırma Tarihi/Zamanı"
 
 #: core/app/views/tableview/tableview_column_item.cpp:84
 #: core/app/views/tableview/tableview_column_item.cpp:141
 #, kde-format
 msgid "Aspect ratio"
-msgstr "En-boy oranı"
+msgstr "En-Boy Oranı"
 
 #: core/app/views/tableview/tableview_column_item.cpp:85
 #: core/app/views/tableview/tableview_column_item.cpp:146
@@ -4058,7 +4058,7 @@ msgstr "Benzerlik"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Photo properties"
-msgstr "Fotoğraf özellikleri"
+msgstr "Fotoğraf Özellikleri"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:77
 #: core/app/views/tableview/tableview_column_photo.cpp:97
@@ -4215,12 +4215,12 @@ msgstr "Küçük Görsel"
 #: core/app/views/tableview/tableview_treeview.cpp:85
 #, kde-format
 msgid "Remove this column"
-msgstr "Bu sütunu kaldır"
+msgstr "Bu Sütunu Kaldır"
 
 #: core/app/views/tableview/tableview_treeview.cpp:90
 #, kde-format
 msgid "Configure this column"
-msgstr "Bu sütunu yapılandır"
+msgstr "Bu Sütunu Yapılandır"
 
 #: core/app/views/utils/componentsinfodlg.cpp:79
 #, kde-format
@@ -26685,63 +26685,42 @@ msgid "Searches"
 msgstr "Aramalar"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory was not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid "The MySQL database directory was not found."
-msgstr ""
-"MySQL veritabanı dizini bulunamadı; lütfen bir sonraki iletişim kutusunda "
-"doğru konumu ayarlayın."
+msgstr "MySQL veritabanı dizini bulunamadı."
 
 #: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "MySQL ikili araçları bulunamadı."
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "Çekirdek veritabanı adı boş"
+msgstr "SQLite çekirdek veritabanı bulunamadı."
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"İlk kullanım sihirbazı ile yeni bir yapılandırma başlatmak istiyorsanız %1 "
-"dosyasını silin"
+"<p>İlk kullanım sihirbazı ile yeni bir yapılandırma başlatmak istiyorsanız "
+"şu dosyayı silin:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.\n"
-#| "\n"
-#| "Details:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
 msgstr ""
-"İçsel sunucu başlatılırken bir hata oluştu.\n"
-"\n"
-"Ayrıntılar:\n"
-"%1"
+"İçsel sunucu başlatılırken bir hata oluştu.<p>Ayrıntılar:\n"
+"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "Künye veritabanına eklenemedi"
+msgstr "Veritabanı açılamadı."
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -26779,11 +26758,9 @@ msgstr ""
 "menüsünde</b> veritabanı ayarlarını denetleyin.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "Küçük Görsel Veritabanı İlklendirilemedi"
+msgstr "Veritabanı ilklendirilemedi."
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -27000,6 +26977,8 @@ msgstr ""
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
+"<p><b>Lütfen bu iletişim kutusundaki veritabanı ayarlarını denetleyin.</b></"
+"p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
