@@ -237,7 +237,7 @@ public:
     SolidVolumeInfo findVolumeForUrl(const QUrl& fileUrl, const QList<SolidVolumeInfo>& volumes);
 
     /// Create the volume identifier for the given volume info
-    static QString volumeIdentifier(const SolidVolumeInfo& info);
+    QString volumeIdentifier(const SolidVolumeInfo& info);
 
     /// Create a volume identifier based on the path only
     QString volumeIdentifier(const QString& path);

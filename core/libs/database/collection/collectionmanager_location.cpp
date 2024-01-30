@@ -825,7 +825,7 @@ void CollectionManager::updateLocations()
                 {
                     available = true;
                 }
-                else if (uuidValue.isNull() || queryItem.isNull())
+                else if (queryItem.isNull())
                 {
                     QFileInfo fileInfo(path);
                     available = (fileInfo.isReadable() &&
