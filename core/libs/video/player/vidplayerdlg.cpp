@@ -31,14 +31,11 @@ class Q_DECL_HIDDEN VidPlayerDlg::Private
 {
 public:
 
-    explicit Private()
-      : player(nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    MediaPlayerView* player;
+    MediaPlayerView* player = nullptr;
 };
 
 VidPlayerDlg::VidPlayerDlg(const QString& file, QWidget* const parent)
