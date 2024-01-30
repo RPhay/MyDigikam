@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2017-05-25
- * Description : a tool to generate video slideshow from images.
+ * Description : a dialog to play video.
  *
  * SPDX-FileCopyrightText: 2017-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
