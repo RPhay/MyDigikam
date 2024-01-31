@@ -52,6 +52,7 @@ public:
         COMMENT,
         DIGIKAM,
         HISTORY,
+        PREVIEW,
         XPKEYWORDS
 
     };
@@ -111,9 +112,10 @@ void RemoveMetadata::registerSettingsWidget()
 
     d->removeIptc            = new QCheckBox(i18nc("@title", "Iptc:"), panel);
     d->iptcComboBox          = new QComboBox(panel);
-    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Completely"), Private::ALL);
-    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Date"),       Private::DATE);
-    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Caption"),    Private::COMMENT);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Completely"),    Private::ALL);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Date"),          Private::DATE);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Caption"),       Private::COMMENT);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Preview image"), Private::PREVIEW);
 
     d->removeXmp             = new QCheckBox(i18nc("@title", "Xmp:"), panel);
     d->xmpComboBox           = new QComboBox(panel);
@@ -293,6 +295,12 @@ bool RemoveMetadata::toolOperations()
         {
             meta->removeIptcTag("Iptc.Application2.Caption");
             meta->clearComments();
+        }
+        else if (iptcData == Private::PREVIEW)
+        {
+            meta->removeIptcTag("Iptc.Application2.Preview");
+            meta->removeIptcTag("Iptc.Application2.PreviewFormat");
+            meta->removeIptcTag("Iptc.Application2.PreviewVersion");
         }
     }
 
