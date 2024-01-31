@@ -23,7 +23,6 @@
 #include <QUrl>
 #include <QList>
 #include <QString>
-#include <QVector>
 #include <QObject>
 #include <QMetaType>
 #include <QReadWriteLock>
@@ -332,7 +331,7 @@ private:
 
     QMap<const void*, void*> m_extraMap;
 
-    QVector<Album*>          m_childCache;
+    QList<Album*>            m_childCache;
     mutable QReadWriteLock   m_cacheLock;
 
     Type                     m_type;
