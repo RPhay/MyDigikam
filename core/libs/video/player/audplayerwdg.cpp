@@ -107,23 +107,23 @@ AudPlayerWdg::AudPlayerWdg(QWidget* const parent)
 
 #endif
 
-    d->playButton->setText(QString());
-    d->stopButton->setText(QString());
+    d->playButton = new QPushButton(QIcon::fromTheme(QLatin1String("media-playback-start")), QString(), this);
+    d->stopButton = new QPushButton(QIcon::fromTheme(QLatin1String("media-playback-stop")),  QString(), this);
 
-    d->playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
-    d->stopButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
-
+    d->elapsedTimeLabel          = new QLabel(this);
     DLineWidget* const separator = new DLineWidget(Qt::Vertical, this);
+    d->totalTimeLabel            = new QLabel(this);
     setZeroTime();
 
     QLabel* const soundLabel     = new QLabel(this);
     soundLabel->setPixmap(QIcon::fromTheme(QLatin1String("speaker")).pixmap(22, 22));
 
-    d->volumeWidget              = new QSlider(this);
+    d->volumeWidget              = new QSlider(Qt::Horizontal, this);
 
     // ----------------------
 
     QGridLayout* const grid      = new QGridLayout(this);
+    grid->setContentsMargins(QMargins(0, 0, 0, 0));
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                           QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(d->playButton,       0, 0, 1, 1);
@@ -131,9 +131,8 @@ AudPlayerWdg::AudPlayerWdg(QWidget* const parent)
     grid->addWidget(d->elapsedTimeLabel, 0, 2, 1, 1);
     grid->addWidget(separator,           0, 3, 1, 1);
     grid->addWidget(d->totalTimeLabel,   0, 4, 1, 1);
-    grid->addWidget(soundLabel,          0, 3, 1, 1);
-    grid->addWidget(d->volumeWidget,     0, 4, 1, 1);
-    setLayout(grid);
+    grid->addWidget(soundLabel,          0, 5, 1, 1);
+    grid->addWidget(d->volumeWidget,     0, 6, 1, 1);
 
     // ----------------------
 
