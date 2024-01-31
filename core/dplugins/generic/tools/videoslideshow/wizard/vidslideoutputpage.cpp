@@ -401,6 +401,8 @@ bool VidSlideOutputPage::isComplete() const
 #ifdef HAVE_MEDIAPLAYER
 
     d->audioPlayer->setAudioFile(apath);
+    d->audioPlayer->setDisabled(apath.isEmpty());
+    
 
 #endif
 
