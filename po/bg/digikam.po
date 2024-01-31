@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 01:34+0000\n"
-"PO-Revision-Date: 2024-01-11 23:13+0100\n"
+"PO-Revision-Date: 2024-01-30 12:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -20790,6 +20790,8 @@ msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
+"Този контрол позволява да се избере форматът на мултимедийния контейнер за "
+"хостване на видеопотока и саундтрака."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
 #, kde-format
@@ -20797,21 +20799,19 @@ msgid "Open in Player:"
 msgstr "Отваряне в плейър:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@title:column Output file name"
-#| msgid "Output"
+#, kde-format
 msgid "Output"
 msgstr "Изход"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
 #, kde-format
 msgid "Equalize Video Luminosity"
-msgstr ""
+msgstr "Изравняване на осветеността на видеото"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, kde-format
 msgid "Equalization Strength:"
-msgstr ""
+msgstr "Сила на изравняването:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
 #, kde-format
@@ -20819,6 +20819,8 @@ msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
+"Чрез него се контролира силата на изравняване. При задаване на нулева "
+"стойност на тази опция на практика не се прави нищо."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
 #, kde-format
@@ -20828,12 +20830,16 @@ msgid ""
 "same histograms, while maintaining their dynamics as much as possible. It’s "
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
+"<i>Тези настройки прилагат времевия ефект на изравняване на видеото по "
+"средата, докато кодира кадри като видео. Това настройва серията от кадри да "
+"има същите хистограми, като същевременно поддържа динамиката колкото е "
+"възможно повече. Полезно е например за съвпадение на експозиции от серийни "
+"кадри за таймлапс.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
-#, fuzzy, kde-format
-#| msgid "Trailer Information"
+#, kde-format
 msgid "Frames Normalization"
-msgstr "Информация за трейлър"
+msgstr "Нормализация на кадрите"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
 #, kde-format
@@ -20852,11 +20858,7 @@ msgid "Soundtrack Duration:"
 msgstr "Продължителност на саундтрак:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-#| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed.</i>"
+#, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
@@ -20868,18 +20870,14 @@ msgstr ""
 "голяма от тази на видеото, то ще бъде изрязано.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Audio Track"
+#, kde-format
 msgid "Audio Track"
-msgstr "Избор на аудио запис"
+msgstr "Аудио запис"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "On Screen Display Font:"
+#, kde-format
 msgid "On Screen Display"
-msgstr "Шрифт на екранния дисплей:"
+msgstr "Екранния надпис:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:244
 #, kde-format
@@ -20901,6 +20899,12 @@ msgid ""
 "The result will depend of the number of frames\n"
 "per second used to encode the media."
 msgstr ""
+"Тази стойност повтаря едно изображение в поредицата.\n"
+"При създаване на таймлапс; обикновено се използва 1.\n"
+"Обикновено броят на кадрите определя\n"
+"времето за показване на един и същ кадър във видеото.\n"
+"Резултатът ще зависи от броя на кадрите\n"
+"в секунда, използвани за кодиране на медията."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:96
 #, kde-format
@@ -20923,11 +20927,7 @@ msgid "Effect While Displaying Images"
 msgstr "Ефект при показване на изображения"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>An effect is an visual panning or zooming applied while an image is "
-#| "displayed. The effect duration will follow the number of frames used to "
-#| "render the image on video stream.</i>"
+#, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
@@ -20944,18 +20944,14 @@ msgid "Transition Between Images"
 msgstr "Преход между изображенията"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>A transition is an visual effect applied between two images. For some "
-#| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
 "slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 "<i>Преходът е визуален ефект, приложен между две изображения. За някои "
-"ефекти продължителносттаможе да зависи от случайни стойности и може да се "
+"ефекти продължителността може да зависи от случайни стойности и може да се "
 "променя по време на слайдшоуто.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
@@ -26941,63 +26937,43 @@ msgid "Searches"
 msgstr "Търсения"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory was not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid "The MySQL database directory was not found."
-msgstr ""
-"Директорията на базата данни MySQL не беше намерена, моля, задайте "
-"правилното местоположение в следващия диалогов прозорец."
+msgstr "Директорията на базата данни MySQL не беше намерена."
 
 #: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "Двоичният инструмент на базата данни MySQL не беше намерена"
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "Името на основната база данни е празно"
+msgstr "Базата данни SQLite не беше намерена."
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"Ако искате да започнете с нова конфигурация и с първо стартиране на "
-"съветника, изтрийте файла %1"
+"<p>Ако искате да започнете с нова конфигурация и с първо стартиране на "
+"съветника, изтрийте файла:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.\n"
-#| "\n"
-#| "Details:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
 msgstr ""
-"По време на стартирането на вътрешния сървър възникна грешка.\n"
-"\n"
-"Подробности:\n"
-"%1"
+"По време на стартирането на вътрешния сървър възникна грешка."
+"<p>Подробности:\n"
+"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "Неуспешно добавяне на етикета към базата от данни"
+msgstr "Неуспешно отваряне на базата от данни"
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -27035,11 +27011,9 @@ msgstr ""
 "настройките</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "Не успя да се инициализира базата данни с миниатюри"
+msgstr "Не успя да се инициализира базата данни."
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -27258,6 +27232,8 @@ msgstr ""
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
+"<p><b>Моля, проверете настройките на базата данни в този диалогов прозорец.</"
+"b></p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format

@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 01:34+0000\n"
-"PO-Revision-Date: 2024-01-25 02:14+0100\n"
+"PO-Revision-Date: 2024-01-30 22:15+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -20819,6 +20819,8 @@ msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
+"Este control permite elegir el formato del contenedor multimedia para "
+"contener la emisión de vídeo y la banda sonora."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
 #, kde-format
@@ -20857,12 +20859,16 @@ msgid ""
 "same histograms, while maintaining their dynamics as much as possible. It’s "
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
+"<i>Estos ajustes aplican un efecto de ecualización de vídeo temporal a mitad "
+"de camino mientras codifican fotogramas como vídeo. Esto ajusta la secuencia "
+"de fotogramas para que tengan los mismos histogramas, manteniendo su "
+"dinámica tanto como sea posible. Es útil, por ejemplo, para exposiciones "
+"coincidentes de una secuencia de cámara rápida.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
-#, fuzzy, kde-format
-#| msgid "Trailer Information"
+#, kde-format
 msgid "Frames Normalization"
-msgstr "Información de tráiler"
+msgstr "Normalización de fotogramas"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
 #, kde-format
@@ -20881,11 +20887,7 @@ msgid "Soundtrack Duration:"
 msgstr "Duración de la banda sonora:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
-#| "will be played in loop. If the audio length is largest than video, it "
-#| "will be trimmed.</i>"
+#, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
 "will be played in loop. If the audio length is largest than video, it will "
@@ -20894,7 +20896,8 @@ msgid ""
 msgstr ""
 "<i>Notas sobre la banda sonora: Si la duración del sonido es menor que la "
 "del vídeo, se reproducirá en bucle. Si la duración del sonido es mayor que "
-"la del vídeo, se truncará.</i>"
+"la del vídeo, se truncará. Deje este ajuste en blanco si no desea añadir una "
+"banda sonora al medio.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
 #, kde-format
@@ -20926,6 +20929,13 @@ msgid ""
 "The result will depend of the number of frames\n"
 "per second used to encode the media."
 msgstr ""
+"Este valor repite una imagen en la secuencia.\n"
+"Cuando cree una secuencia de cámara rápida,\n"
+"se suele usar 1. Por lo general, el número de\n"
+"fotogramas determinará el tiempo para mostrar\n"
+"el mismo fotograma en el vídeo. El resultado\n"
+"depende del número de fotogramas por segundo\n"
+"que se use para codificar el medio."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:96
 #, kde-format
@@ -20948,11 +20958,7 @@ msgid "Effect While Displaying Images"
 msgstr "Efecto para mostrar imágenes"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:184
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>An effect is an visual panning or zooming applied while an image is "
-#| "displayed. The effect duration will follow the number of frames used to "
-#| "render the image on video stream.</i>"
+#, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
 "displayed. The effect duration will follow the number of frames used to "
@@ -20961,7 +20967,8 @@ msgid ""
 msgstr ""
 "<i>Un efecto es un barrido o ampliación visual aplicado cuando se muestra "
 "una imagen. La duración del efecto seguirá al número de fotogramas usando "
-"para reproducir la imagen en la emisión de vídeo.</i>"
+"para reproducir la imagen en la emisión de vídeo. Para una secuencia de "
+"cámara rápida, deje este ajuste a «Ninguno».</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:201
 #, kde-format
@@ -20969,11 +20976,7 @@ msgid "Transition Between Images"
 msgstr "Transición entre imágenes"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:221
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>A transition is an visual effect applied between two images. For some "
-#| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
@@ -20981,7 +20984,8 @@ msgid ""
 msgstr ""
 "<i>Una transición es un efecto visual aplicado entre dos imágenes. Para "
 "algunos efectos, la duración puede depender de valores aleatorios y se puede "
-"modificar durante la presentación.</i>"
+"modificar durante la presentación. Para una secuencia de cámara rápida, deje "
+"este ajuste a «Ninguna».</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:302
 #, kde-format
@@ -26957,63 +26961,42 @@ msgid "Searches"
 msgstr "Búsquedas"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory was not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid "The MySQL database directory was not found."
-msgstr ""
-"No se ha encontrado el directorio de la base de datos de MySQL. Defina su "
-"ubicación correcta en el siguiente diálogo."
+msgstr "No se ha encontrado el directorio de la base de datos de MySQL."
 
 #: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "No se han encontrado las herramientas binarias de MySQL."
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "El nombre de la base de datos principal está vacío"
+msgstr "No se ha encontrado la base de datos principal de SQLite."
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"Si quiere empezar con una configuración nueva y con el asistente de la "
-"primera ejecución, borre el archivo %1."
+"<p>Si quiere empezar con una configuración nueva y con el asistente de la "
+"primera ejecución, borre el archivo:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.\n"
-#| "\n"
-#| "Details:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
 msgstr ""
-"Ha ocurrido un error durante el arranque del servidor interno.\n"
-"\n"
-"Detalles:\n"
-"%1"
+"Ha ocurrido un error durante el arranque del servidor interno.<p>Detalles:\n"
+"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "No ha sido posible añadir etiqueta a la base de datos"
+msgstr "No se ha podido abrir la base de datos."
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -27051,11 +27034,9 @@ msgstr ""
 "configuración</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "Ha fallado la inicialización de la base de datos de miniaturas"
+msgstr "No se ha podido inicializar la base de datos."
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -27275,6 +27256,7 @@ msgstr ""
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
+"<p><b>Compruebe los ajustes de la base de datos en este diálogo.</b></p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
@@ -54327,7 +54309,7 @@ msgstr "Copiar coordenadas"
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:109
 #, kde-format
 msgid "Copy geo: URL"
-msgstr ""
+msgstr "Copiar geo.: URL"
 
 #: core/utilities/geolocation/marble/core/MarbleWidgetPopupMenu.cpp:126
 #, kde-format
@@ -56151,16 +56133,22 @@ msgstr "Pista de trineos"
 #, kde-format
 msgid "Could not convert <maximum> child text content to integer. Was: '%1'"
 msgstr ""
+"No se ha podido convertir el contenido del texto hijo <maximum> en un número "
+"entero. Era: «%1»"
 
 #: core/utilities/geolocation/marble/geodata/handlers/dgml/DgmlMinimumTagHandler.cpp:37
 #, kde-format
 msgid "Could not convert <minimum> child text content to integer. Was: '%1'"
 msgstr ""
+"No se ha podido convertir el contenido del texto hijo <minimum> en un número "
+"entero. Era: «%1»"
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:89
 #, kde-format
 msgid "Parsing failed line %1. Still %2 unclosed tag(s) after document end. "
 msgstr ""
+"El análisis ha fallado en la línea %1. Hay %2 etiquetas sin cerrar al final "
+"del documento. "
 
 #: core/utilities/geolocation/marble/geodata/parser/GeoParser.cpp:125
 #, kde-format
@@ -56187,12 +56175,10 @@ msgid "Popularity"
 msgstr "Popularidad"
 
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "Color Model: Indexed"
-#| msgid "Indexed"
+#, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
-msgstr "Indexado"
+msgstr "Índice de popularidad"
 
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:246
 #, kde-format
@@ -56565,7 +56551,7 @@ msgstr "Configurar el complemento de barra de escala"
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:20
 #, kde-format
 msgid "Show Ratio Scale"
-msgstr ""
+msgstr "Mostrar escala proporcional"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleConfigWidget.ui:30
@@ -56618,11 +56604,9 @@ msgid "nm"
 msgstr "nm"
 
 #: core/utilities/geolocation/marble/plugins/render/mapscale/MapScaleFloatItem.cpp:384
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "&Ratio Scale"
-msgstr "Racional"
+msgstr "Escala p&roporcional"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, MeasureConfigDialog)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:14
@@ -56666,19 +56650,15 @@ msgstr "Distancia "
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelsCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:70
-#, fuzzy, kde-format
-#| msgctxt "@info: media loading"
-#| msgid "Buffering..."
+#, kde-format
 msgid "Bearing"
-msgstr "Almacenando temporalmente..."
+msgstr "Rumbo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showBearingLabelChangeCheckBox)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:80
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Saving changes -"
+#, kde-format
 msgid "Bearing Change"
-msgstr "Guardando cambios -"
+msgstr "Cambio de rumbo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showPerimeter)
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:90
@@ -57299,10 +57279,9 @@ msgstr ""
 "no es preocupante."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:146
-#, fuzzy, kde-format
-#| msgid "Duration:"
+#, kde-format
 msgid "During Animations:"
-msgstr "Duración:"
+msgstr "Durante las animaciones:"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:153
 #, kde-format
@@ -57312,6 +57291,9 @@ msgid ""
 "advisable to set this option to \"low quality\" as this will give better "
 "speed."
 msgstr ""
+"Indica la calidad del mapa que se muestra durante las animaciones\n"
+"(por ejemplo, al arrastrar el globo). Especialmente en máquinas lentas,\n"
+"se recomienda usar la opción «baja calidad» para obtener una mejor velocidad."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:164
 #, kde-format
@@ -57319,21 +57301,19 @@ msgid "Mouse Behavior"
 msgstr "Comportamiento del ratón"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:166
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
+#, kde-format
 msgid "Inertial Globe Rotation"
-msgstr "Invertir la selección"
+msgstr "Rotación inercial del globo"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:167
 #, kde-format
 msgid "Use kinetic spinning when dragging the map"
-msgstr ""
+msgstr "Usar un giro cinético al arrastrar el mapa."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:168
-#, fuzzy, kde-format
-#| msgid "&Choose operation:"
+#, kde-format
 msgid "Mouse View Rotation"
-msgstr "Es&coja operación:"
+msgstr "Rotación de la vista con el ratón"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:169
 #, kde-format
@@ -57346,24 +57326,7 @@ msgid "Cache"
 msgstr "Caché"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:177
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#| "TR/REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
-#| "a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
+#, kde-format
 msgid ""
 "There are two caches being used:\n"
 "The \"physical memory\" which is needed to keep map data in the computer's "
@@ -57374,22 +57337,14 @@ msgid ""
 "Decrease this value if you want to save space on the hard disc\n"
 "and if high usage of the Internet is not an issue."
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Podrá obtener un "
-"calendario para su país a partir de <a href=\"www.icalshare.com\"><span "
-"style=\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-"span></a> o desde otros enlaces.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Esto es completamente "
-"opcional. Todos los eventos de este calendario se imprimirán en rojo.</p></"
-"body></html>"
+"Se usan dos cachés:\n"
+"La «memoria física», que se necesita para mantener los datos del mapa en la "
+"memoria del equipo.\n"
+"Si se aumenta este valor, la aplicación será más ágil.\n"
+"La caché de la «memoria del disco duro» se usa para descargar datos del mapa "
+"de internet.\n"
+"Disminuya este valor si quiere ahorrar espacio en el disco duro\n"
+"y si el uso elevado de la conexión a internet no es un problema."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:184
 #, kde-format
@@ -57424,6 +57379,9 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"El tipo de letra predeterminado que se usa en el mapa.\n"
+"Este ajuste solo tiene efecto en los mapas de atlas y de satélite,\n"
+"no en OpenStreetMap."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:215
 #, kde-format
@@ -57437,12 +57395,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Mostrar la capa de la cuadrícula de coordenadas en\n"
+"el mapa. Este ajuste tiene efecto solo en los mapas de\n"
+"atlas, de satélite y de OpenStreetMap."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:220
-#, fuzzy, kde-format
-#| msgid "Crosswalk"
+#, kde-format
 msgid "Show Cross-Hair"
-msgstr "Paso de cebra"
+msgstr "Mostrar punto de mira"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:221
 #, kde-format
@@ -57451,6 +57411,9 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Mostrar el punto de mira en el centro del mapa.\n"
+"Este ajuste tiene efecto solo en los mapas de\n"
+"atlas, de satélite y de OpenStreetMap."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:225
 #, kde-format
@@ -57464,6 +57427,9 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Mostrar la capa del resplandor atmosférico en el mapa.\n"
+"Este ajuste tiene efecto solo en los mapas de atlas, de\n"
+"satélite y de OpenStreetMap."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:230
 #, kde-format
@@ -57477,12 +57443,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Mostrar la capa de sombra nocturna en el mapa.\n"
+"Este ajuste solo tiene efecto en los mapas de\n"
+"atlas, de satélite y de OpenStreetMap."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:235
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgid "Show City Place Mark"
-msgstr "Mostrar etiquetas de caras"
+msgstr "Mostrar marca de lugar de ciudad"
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:236
 #, kde-format
@@ -57491,6 +57459,9 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Mostrar la capa de marca de lugar de ciudad en el mapa.\n"
+"Este ajuste solo tiene efecto en los mapas de atlas y de satélite,\n"
+"no en OpenStreetMap."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:240
 #, kde-format
@@ -57504,6 +57475,9 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Mostrar la capa de relieve en el mapa.\n"
+"Este ajuste solo tiene efecto en los mapas de atlas y de satélite,\n"
+"no en OpenStreetMap."
 
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:275
 #, kde-format
@@ -57595,7 +57569,7 @@ msgstr ""
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:513
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
-msgstr ""
+msgstr "Existe un límite de %1 cuadrículas para descargar."
 
 #: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
 #, kde-format
@@ -57686,24 +57660,7 @@ msgstr "Creando mapa"
 
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
 #: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:507
-#, fuzzy, kde-format
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/"
-#| "TR/REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; "
-#| "font-weight:400; font-style:italic;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">You can download a "
-#| "calendar for your country from <a href=\"www.icalshare.com\"><span style="
-#| "\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</span></"
-#| "a> or other sites.</p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">This is fully optional. "
-#| "All the events from this calendar will be printed in red.</p></body></"
-#| "html>"
+#, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
 "white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-"
@@ -57715,22 +57672,16 @@ msgid ""
 "seen from Space. The map is based on NASA's beautiful \"Blue Marble Next "
 "Generation\" pictures. Credits: NASA's Earth Observatory</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"https://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Podrá obtener un "
-"calendario para su país a partir de <a href=\"www.icalshare.com\"><span "
-"style=\" text-decoration: underline; color:#0057ae;\">www.icalshare.com</"
-"span></a> o desde otros enlaces.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Esto es completamente "
-"opcional. Todos los eventos de este calendario se imprimirán en rojo.</p></"
-"body></html>"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
+"white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-"
+"weight:400; font-style:normal; text-decoration:none;\"><p style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Vista de "
+"satélite</span></p><p style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">La Tierra "
+"vista desde el espacio. Este mapa está basado en las bellas imágenes «Blue "
+"Marble Next Generation» de la NASA. Créditos: Observatorio terrestre de la "
+"NASA.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, messageLabel)
 #: core/utilities/geolocation/marble/tile/TileCreatorDialog.ui:517
@@ -57750,10 +57701,9 @@ msgstr "Ampliación"
 
 #. i18n: ectx: property (text), widget (QLabel, tileLevelLabel)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:37
-#, fuzzy, kde-format
-#| msgid "Title Change"
+#, kde-format
 msgid "&Tile level range:"
-msgstr "Cambio de título"
+msgstr "In&tervalo de nivel de cuadrícula:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, topSpinBox)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:47
@@ -57763,10 +57713,9 @@ msgstr "Tamaño de cuadrícula mínimo"
 
 #. i18n: ectx: property (text), widget (QLabel, toLabel)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:63
-#, fuzzy, kde-format
-#| msgid "Auto"
+#, kde-format
 msgid "to"
-msgstr "Auto"
+msgstr "hasta"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, bottomSpinBox)
 #: core/utilities/geolocation/marble/tile/TileLevelRangeWidget.ui:70
@@ -66769,6 +66718,12 @@ msgid ""
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
+"Para trabajar amigablemente, Google Maps necesita una clave de API que el "
+"usuario final debe comprar en línea para obtener credenciales. Se puede usar "
+"Google Maps sin esta clave, aunque con una capa superpuesta que contiene la "
+"leyenda «Solo para desarrollo». Para más información, consulte esta <a "
+"href='https://mapsplatform.google.com/pricing/'>página de Google</a> sobre "
+"usos, prácticas y precios."
 
 #: core/utilities/setup/setupicc.cpp:178
 #, kde-format
