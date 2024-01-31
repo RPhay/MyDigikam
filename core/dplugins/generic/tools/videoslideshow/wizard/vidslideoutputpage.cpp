@@ -44,7 +44,12 @@
 #include "filesaveconflictbox.h"
 #include "ffmpeglauncher.h"
 #include "dexpanderbox.h"
-#include "audplayerwdg.h"
+
+#ifdef HAVE_MEDIAPLAYER
+
+#   include "audplayerwdg.h"
+
+#endif
 
 namespace DigikamGenericVideoSlideShowPlugin
 {
@@ -71,12 +76,18 @@ public:
     VidSlideWizard*      wizard      = nullptr;
     VidSlideSettings*    settings    = nullptr;
     QLabel*              duration    = nullptr;
-    AudPlayerWdg*        audioPlayer = nullptr;
     QTimer*              trigUpdate  = nullptr;
     QCheckBox*           equalize    = nullptr;
     QSpinBox*            strength    = nullptr;
     FrameOsdWidget*      frameOsd    = nullptr;
     DExpanderBox*        expanderBox = nullptr;
+
+#ifdef HAVE_MEDIAPLAYER
+
+    AudPlayerWdg*        audioPlayer = nullptr;
+
+#endif
+
 };
 
 VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& title)
@@ -201,8 +212,12 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     d->duration                 = new QLabel(QLatin1String("---"), audioBox);
     d->duration->setAlignment(Qt::AlignRight);
 
+#ifdef HAVE_MEDIAPLAYER
+
     QLabel* const previewLabel = new QLabel(i18n("Soundtrack Preview:"), audioBox);
     d->audioPlayer             = new AudPlayerWdg(audioBox);
+
+#endif
 
     QLabel* const audioNote     = new QLabel(audioBox);
     audioNote->setWordWrap(true);
@@ -214,8 +229,14 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     audioGrid->addWidget(d->audioUrl,     0, 1, 1, 2);
     audioGrid->addWidget(durationLabel,   1, 0, 1, 1);
     audioGrid->addWidget(d->duration,     1, 2, 1, 1);
+
+#ifdef HAVE_MEDIAPLAYER
+
     audioGrid->addWidget(previewLabel,    2, 0, 1, 1);
     audioGrid->addWidget(d->audioPlayer,  2, 2, 1, 1);
+
+#endif
+
     audioGrid->addWidget(audioNote,       3, 0, 1, 3);
     audioGrid->setColumnStretch(1, 10);
 
@@ -330,7 +351,13 @@ void VidSlideOutputPage::initializePage()
     }
 
     d->audioUrl->setFileDlgPath(d->settings->audioTrack);
+
+#ifdef HAVE_MEDIAPLAYER
+
     d->audioPlayer->setAudioFile(d->settings->audioTrack);
+
+#endif
+
     d->destUrl->setFileDlgPath(d->settings->outputDir);
     d->conflictBox->setConflictRule(d->settings->conflictRule);
     d->playerVal->setCurrentIndex(d->settings->outputPlayer);
@@ -371,7 +398,11 @@ bool VidSlideOutputPage::isComplete() const
 
     QString apath = d->audioUrl->fileDlgPath();
 
+#ifdef HAVE_MEDIAPLAYER
+
     d->audioPlayer->setAudioFile(apath);
+
+#endif
 
     if (!apath.isEmpty())
     {

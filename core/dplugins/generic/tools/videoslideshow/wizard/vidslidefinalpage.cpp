@@ -39,7 +39,12 @@
 #include "dprogresswdg.h"
 #include "dhistoryview.h"
 #include "vidslidethread.h"
-#include "vidplayerdlg.h"
+
+#ifdef HAVE_MEDIAPLAYER
+
+#   include "vidplayerdlg.h"
+
+#endif
 
 namespace DigikamGenericVideoSlideShowPlugin
 {
