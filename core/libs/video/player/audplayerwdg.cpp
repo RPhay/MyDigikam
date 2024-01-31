@@ -119,6 +119,8 @@ AudPlayerWdg::AudPlayerWdg(QWidget* const parent)
     soundLabel->setPixmap(QIcon::fromTheme(QLatin1String("speaker")).pixmap(22, 22));
 
     d->volumeWidget              = new QSlider(Qt::Horizontal, this);
+    d->volumeWidget->setRange(0, 100);
+    d->volumeWidget->setValue(100);
 
     // ----------------------
 
@@ -136,8 +138,16 @@ AudPlayerWdg::AudPlayerWdg(QWidget* const parent)
 
     // ----------------------
 
+    connect(d->playButton, SIGNAL(clicked()),
+            this, SLOT(slotPlay()));
+
+    connect(d->stopButton, SIGNAL(clicked()),
+            this, SLOT(slotStop()));
+
     connect(d->volumeWidget, SIGNAL(valueChanged(int)),
             this, SLOT(slotSetVolume(int)));
+
+    slotSetVolume(d->volumeWidget->value());
 }
 
 AudPlayerWdg::~AudPlayerWdg()

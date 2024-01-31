@@ -44,6 +44,7 @@
 #include "filesaveconflictbox.h"
 #include "ffmpeglauncher.h"
 #include "dexpanderbox.h"
+#include "audplayerwdg.h"
 
 namespace DigikamGenericVideoSlideShowPlugin
 {
@@ -70,6 +71,7 @@ public:
     VidSlideWizard*      wizard      = nullptr;
     VidSlideSettings*    settings    = nullptr;
     QLabel*              duration    = nullptr;
+    AudPlayerWdg*        audioPlayer = nullptr;
     QTimer*              trigUpdate  = nullptr;
     QCheckBox*           equalize    = nullptr;
     QSpinBox*            strength    = nullptr;
@@ -197,6 +199,10 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 
     QLabel* const durationLabel = new QLabel(i18n("Soundtrack Duration:"), audioBox);
     d->duration                 = new QLabel(QLatin1String("---"), audioBox);
+    d->duration->setAlignment(Qt::AlignRight);
+
+    QLabel* const previewLabel = new QLabel(i18n("Soundtrack Preview:"), audioBox);
+    d->audioPlayer             = new AudPlayerWdg(audioBox);
 
     QLabel* const audioNote     = new QLabel(audioBox);
     audioNote->setWordWrap(true);
@@ -205,10 +211,13 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
                             "Leave this setting empty if you don't want a soundtrack to the media.</i>"));
 
     audioGrid->addWidget(audioLabel,      0, 0, 1, 1);
-    audioGrid->addWidget(d->audioUrl,     0, 1, 1, 1);
+    audioGrid->addWidget(d->audioUrl,     0, 1, 1, 2);
     audioGrid->addWidget(durationLabel,   1, 0, 1, 1);
-    audioGrid->addWidget(d->duration,     1, 1, 1, 1);
-    audioGrid->addWidget(audioNote,       2, 0, 1, 2);
+    audioGrid->addWidget(d->duration,     1, 2, 1, 1);
+    audioGrid->addWidget(previewLabel,    2, 0, 1, 1);
+    audioGrid->addWidget(d->audioPlayer,  2, 2, 1, 1);
+    audioGrid->addWidget(audioNote,       3, 0, 1, 3);
+    audioGrid->setColumnStretch(1, 10);
 
     d->expanderBox->addItem(audioBox,
                             QIcon::fromTheme(QLatin1String("audio-mp3")),
@@ -321,6 +330,7 @@ void VidSlideOutputPage::initializePage()
     }
 
     d->audioUrl->setFileDlgPath(d->settings->audioTrack);
+    d->audioPlayer->setAudioFile(d->settings->audioTrack);
     d->destUrl->setFileDlgPath(d->settings->outputDir);
     d->conflictBox->setConflictRule(d->settings->conflictRule);
     d->playerVal->setCurrentIndex(d->settings->outputPlayer);
@@ -360,6 +370,8 @@ bool VidSlideOutputPage::isComplete() const
     d->duration->setText(QLatin1String("---"));
 
     QString apath = d->audioUrl->fileDlgPath();
+
+    d->audioPlayer->setAudioFile(apath);
 
     if (!apath.isEmpty())
     {
