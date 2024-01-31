@@ -254,7 +254,7 @@ public:
 
     QMap<QString, QString>            ffmpegCodecs;     ///< Map of FFmpeg codec names and features.
     QMap<QString, QString>            ffmpegFormats;    ///< Map of FFmpeg format names and features.
-    QTime                             soundtrackLength; ///< Duration of a soundtrack.
+    QTime                             soundtrackLength; ///< Duration of the soundtrack.
 
     FrameOsdSettings                  osdSettings;      ///< On Screen Display parameters.
     DInfoInterface*                   iface;            ///< Plugin host interface to handle item properties.

@@ -33,6 +33,7 @@ if(ENABLE_MEDIAPLAYER)
         ${libvideotoolscommon_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/ffmpegconfighelper.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/player/audplayerwdg.cpp
     )
 
 endif()
