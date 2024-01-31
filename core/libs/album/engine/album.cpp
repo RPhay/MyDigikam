@@ -149,7 +149,7 @@ AlbumList Album::childAlbums(bool recursive)
 
     QReadLocker locker(&m_cacheLock);
 
-    QVector<Album*>::const_iterator it = m_childCache.constBegin();
+    QList<Album*>::const_iterator it = m_childCache.constBegin();
 
     while (it != m_childCache.constEnd())
     {
