@@ -38,6 +38,7 @@ Album::Album(Album::Type type, int id, bool root)
     : m_root            (root),
       m_usedByLabelsTree(false),
       m_id              (id),
+      m_cacheLock       (QReadWriteLock::Recursive),
       m_type            (type),
       m_parent          (nullptr)
 {
