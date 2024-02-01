@@ -216,7 +216,7 @@ BUGFIXES:
 194 ==> 480606 - digiKam git doesn't display thumbnails from tif images cropped with Rawtherapee.
 195 ==> 480651 - Exporting to JXL lowers the colour depth to 8 bpp.
 196 ==> 480532 - 'All albums' Checkbox Doesn't Update 'X Albums Selected' Text.
-197 ==> 
+197 ==> 479307 - digiKam: no pictures to pick after application starts.
 198 ==> 
 199 ==> 
 200 ==> 
