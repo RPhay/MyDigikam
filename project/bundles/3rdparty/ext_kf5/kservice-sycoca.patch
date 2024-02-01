@@ -1,11 +1,12 @@
 diff --git a/src/sycoca/ksycoca.cpp b/src/sycoca/ksycoca.cpp
-index 05cb32c1..b6b3da78 100644
+index 02ed7bb4..7d9285e6 100644
 --- a/src/sycoca/ksycoca.cpp
 +++ b/src/sycoca/ksycoca.cpp
-@@ -683,22 +683,9 @@ bool KSycocaPrivate::buildSycoca()
+@@ -734,23 +734,9 @@ quint32 KSycoca::updateSignature()
  
- QString KSycoca::absoluteFilePath()
+ QString KSycoca::absoluteFilePath(DatabaseType type)
  {
+-    Q_UNUSED(type); // GlobalDatabase concept removed in 5.61
 -    const QStringList paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
 -    QString suffix = QLatin1Char('_') + QLocale().bcp47Name();
 -
@@ -17,7 +18,7 @@ index 05cb32c1..b6b3da78 100644
 -#ifdef Q_OS_WIN
 -        suffix.replace(QLatin1Char(':'), QLatin1Char('_'));
 -#endif
--        const QString fileName = QLatin1String("ksycoca6") + suffix;
+-        const QString fileName = QLatin1String("ksycoca5") + suffix;
 -        return QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + QLatin1Char('/') + fileName;
 -    } else {
 -        return QFile::decodeName(ksycoca_env);
@@ -27,4 +28,4 @@ index 05cb32c1..b6b3da78 100644
 +                                            QLatin1String("ksycoca_digikam");
  }
  
- QStringList KSycoca::allResourceDirs()
+ #if KSERVICE_BUILD_DEPRECATED_SINCE(5, 15)
