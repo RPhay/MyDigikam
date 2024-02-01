@@ -6,11 +6,6 @@
 
 APPLY_COMMON_POLICIES()
 
-# The QtAVPlayer library does not adhere to the flags we use
-remove_definitions(
-    -DQT_NO_KEYWORDS
-)
-
 # QtAVPlater depencency rules are managed from top level by core/cmake/rules/RulesMediaPlayer.cmake
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
