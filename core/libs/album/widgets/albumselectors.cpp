@@ -294,6 +294,7 @@ void AlbumSelectors::slotWholeAlbums(bool b)
     {
         d->albumSelectCB->setEnabled(!b);
         d->albumClearButton->setEnabled(!b);
+        d->albumSelectCB->setAllSelectedText(b);
     }
 
     updateTabText();
@@ -305,6 +306,7 @@ void AlbumSelectors::slotWholeTags(bool b)
     {
         d->tagSelectCB->setEnabled(!b);
         d->tagClearButton->setEnabled(!b);
+        d->tagSelectCB->setAllSelectedText(b);
     }
 
     updateTabText();

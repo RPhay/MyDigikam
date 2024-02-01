@@ -46,6 +46,7 @@ public:
         recursive               (false),
         isCheckable             (true),
         closeOnActivate         (false),
+        allSelectedText         (false),
         showCheckStateSummary   (true),
         q                       (q)
     {
@@ -62,6 +63,7 @@ public:
     bool                         recursive;
     bool                         isCheckable;
     bool                         closeOnActivate;
+    bool                         allSelectedText;
     bool                         showCheckStateSummary;
 
     AlbumSelectComboBox* const   q;
@@ -225,6 +227,12 @@ void AlbumSelectComboBox::setNoSelectionText(const QString& text)
     updateText();
 }
 
+void AlbumSelectComboBox::setAllSelectedText(bool all)
+{
+    d->allSelectedText = all;
+    updateText();
+}
+
 void AlbumSelectComboBox::setShowCheckStateSummary(bool show)
 {
     d->showCheckStateSummary = show;
@@ -256,7 +264,24 @@ void AlbumSelectComboBox::updateText()
         return;
     }
 
-    QList<Album*> checkedAlbums          = d->model->checkedAlbums();
+    QList<Album*> checkedAlbums;
+
+    if (!d->allSelectedText)
+    {
+        checkedAlbums = d->model->checkedAlbums();
+    }
+    else
+    {
+        if (d->model->albumType() == Album::TAG)
+        {
+            checkedAlbums = AlbumManager::instance()->allTAlbums();
+        }
+        else
+        {
+            checkedAlbums = AlbumManager::instance()->allPAlbums();
+        }
+    }
+
     QList<Album*> partiallyCheckedAlbums = d->model->partiallyCheckedAlbums();
     QString newIncludeText;
     QString newExcludeText;
@@ -271,24 +296,28 @@ void AlbumSelectComboBox::updateText()
         {
             if (d->model->albumType() == Album::TAG)
             {
-                newIncludeText = i18np("1 Tag selected", "%1 Tags selected", checkedAlbums.count());
+                newIncludeText = i18np("1 Tag selected", "%1 Tags selected",
+                                       checkedAlbums.count());
             }
             else
             {
-                newIncludeText = i18np("1 Album selected", "%1 Albums selected", checkedAlbums.count());
+                newIncludeText = i18np("1 Album selected", "%1 Albums selected",
+                                       checkedAlbums.count());
             }
         }
     }
 
-    if (!partiallyCheckedAlbums.isEmpty())
+    if (!partiallyCheckedAlbums.isEmpty() && !d->allSelectedText)
     {
         if (d->model->albumType() == Album::TAG)
         {
-            newExcludeText = i18np("1 Tag excluded", "%1 Tags excluded", partiallyCheckedAlbums.count());
+            newExcludeText = i18np("1 Tag excluded", "%1 Tags excluded",
+                                   partiallyCheckedAlbums.count());
         }
         else
         {
-            newExcludeText = i18np("1 Album excluded", "%1 Albums excluded", partiallyCheckedAlbums.count());
+            newExcludeText = i18np("1 Album excluded", "%1 Albums excluded",
+                                   partiallyCheckedAlbums.count());
         }
     }
 

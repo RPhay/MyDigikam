@@ -80,6 +80,11 @@ public:
     void setNoSelectionText(const QString& text);
 
     /**
+     * Enable or disable the text used to describe the status when all album is selected.
+     */
+    void setAllSelectedText(bool all);
+
+    /**
      * Returns the source model. Retrieve selection information from here.
      */
     AbstractCheckableAlbumModel* model() const;
