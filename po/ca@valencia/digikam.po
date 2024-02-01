@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-29 01:34+0000\n"
-"PO-Revision-Date: 2024-01-18 13:01+0100\n"
+"POT-Creation-Date: 2024-02-01 01:35+0000\n"
+"PO-Revision-Date: 2024-01-29 12:41+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -109,13 +109,13 @@ msgstr "De&mà"
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Next &Week"
-msgstr "Propera &setmana"
+msgstr "&Setmana següent"
 
 #: core/app/date/ddatepickerpopup.cpp:131
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Next M&onth"
-msgstr "Proper &mes"
+msgstr "&Mes següent"
 
 #: core/app/date/ddatepickerpopup.cpp:132
 #, kde-format
@@ -2843,7 +2843,7 @@ msgstr "Mostra a pantalla completa"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:486
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2938,7 +2938,7 @@ msgid "No Tags Album"
 msgstr "Sense etiquetes d'àlbum"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:558
+#: core/libs/album/engine/album.cpp:559
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3287,7 +3287,7 @@ msgstr ""
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
-"Afegir el convertidors JPEG-XL, WEBP i AVIF al gestor de la cua per lots."
+"Afegir els convertidors JPEG-XL, WEBP i AVIF al gestor de la cua per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
@@ -4981,11 +4981,11 @@ msgid ""
 msgstr ""
 "<para>Esta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges al format JPEG-XL.</para><para>JPEG-XL és un format de fitxer de "
-"gràfics ràster lliure de cànons que permet compressió amb i sense pèrdua. "
-"Està dissenyat per superar els formats ràster existents i així convertir-se "
-"en la seua substitució universal.</para><para>Vegeu els detalls sobre este "
-"format en <a href='https://en.wikipedia.org/wiki/JPEG_XL'>esta pàgina</a>.</"
-"para>"
+"gràfics ràster lliure de cànons que permet compressió amb pèrdua i sense. "
+"Està dissenyat per a superar els formats ràster existents i així convertir-"
+"se en la seua substitució universal.</para><para>Vegeu els detalls sobre "
+"este format en <a href='https://en.wikipedia.org/wiki/JPEG_XL'>esta pàgina</"
+"a>.</para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:46
 #, kde-format
@@ -6271,121 +6271,128 @@ msgstr ""
 "de rètols de selecció analitzant la imatge i estimant la seua qualitat.</"
 "para>"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:105
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr "Exif:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "Completament"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "Data"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr "GPS"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "XPKeywords"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "Comentari i descripció"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:112
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr "IPTC:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "Completament"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "Data"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "Llegenda"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#, fuzzy, kde-format
+#| msgid "Preview target image"
+msgctxt "@item: iptc namespace"
+msgid "Preview image"
+msgstr "Vista prèvia de la imatge final"
+
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr "XMP:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "Completament"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "Data"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "DigiKam"
 msgstr "digiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "DigiKam image history"
 msgstr "Historial de la imatge de digiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Nucli Dublin"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Vídeo"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, Comment and Description"
 msgstr "Llegenda, comentari i descripció"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:220
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:222
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -16426,7 +16433,7 @@ msgstr "Fitxer RAW"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:284
 #, kde-format
 msgid "Target File"
 msgstr "Fitxer de destinació"
@@ -17474,7 +17481,7 @@ msgstr "Crea una galeria HTML..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -17615,7 +17622,7 @@ msgstr "Carpeta de destinació:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -20046,13 +20053,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "Seleccioneu el format preferit en exportar la impressió com a imatge."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:264
 #, kde-format
 msgid "Destination folder:"
 msgstr "Carpeta de destinació:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:240
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20667,33 +20674,33 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Crea un vídeo de presentació de diapositives..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:128
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr ""
 "S'està començant a generar el vídeo de la presentació de diapositives..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:131
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 imatges d'entrada que s'han de processar"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "El vídeo de la presentació de diapositives no està complet"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr "Vegeu la traça de codificació de vídeo davall"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "El vídeo de la presentació de diapositives està complet."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:194
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "S'està obrint el flux de vídeo en el reproductor..."
@@ -20737,12 +20744,12 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "Executable de FFmpeg"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Format del contenidor multimèdia:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:102
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
@@ -20751,29 +20758,27 @@ msgstr ""
 "Este control permet triar el format del contenidor multimèdia per a allotjar "
 "el flux de vídeo i la pista d'àudio."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
 #, kde-format
 msgid "Open in Player:"
 msgstr "Obri al reproductor:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@title:column Output file name"
-#| msgid "Output"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
+#, kde-format
 msgid "Output"
 msgstr "Eixida"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:166
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Equalitza la lluminositat del vídeo"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:171
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "Intensitat de l'equalització:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:175
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
@@ -20781,7 +20786,7 @@ msgid ""
 msgstr ""
 "Controla la intensitat de l'equalització. Posant esta opció a zero no fa res."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:180
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20796,29 +20801,35 @@ msgstr ""
 "coincidir les exposicions a partir d'una seqüència de filmació a intervals.</"
 "i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
-#, fuzzy, kde-format
-#| msgid "Trailer Information"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
+#, kde-format
 msgid "Frames Normalization"
-msgstr "Informació del tràiler"
+msgstr "Normalització de fotogrames"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:202
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "Fitxer de la pista de so:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:208
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Seleccioneu la pista d'àudio"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:198
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Duració de la pista de so:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Soundtrack Preview"
+msgid "Soundtrack Preview:"
+msgstr "Vista prèvia de la pista de so"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -20831,21 +20842,17 @@ msgstr ""
 "vídeo, es retallarà. Deixeu buit este paràmetre ai no voleu cap pista "
 "d'àudio a l'element multimèdia.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Audio Track"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:245
+#, kde-format
 msgid "Audio Track"
-msgstr "Seleccioneu la pista d'àudio"
+msgstr "Pista d'àudio"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "On Screen Display Font:"
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
+#, kde-format
 msgid "On Screen Display"
-msgstr "Tipus de lletra a la pantalla:"
+msgstr "Visualització en pantalla"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:244
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:274
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "El nom del fitxer d'eixida de vídeo es generarà automàticament."
@@ -20856,12 +20863,7 @@ msgid "Number of Frames by Image:"
 msgstr "Nombre de fotogrames per imatge:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value repeat one image in the sequence. While creating timelapse; "
-#| "it's usual to use 1. Typically, the number of frames will determine the "
-#| "time to show the same frame in the video. The result will depend of the "
-#| "number of frames per second used to encode the media."
+#, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
 "While creating timelapse; it's usual to use 1.\n"
@@ -20870,11 +20872,12 @@ msgid ""
 "The result will depend of the number of frames\n"
 "per second used to encode the media."
 msgstr ""
-"Este valor repetix una imatge en la seqüència. En crear la filmació a "
-"intervals és habitual utilitzar 1. Normalment, el nombre de fotogrames "
-"determinarà el temps a mostrar el mateix fotograma en el vídeo. El resultat "
-"dependrà del nombre de fotogrames per segon utilitzats per a codificar els "
-"elements multimèdia."
+"Este valor repetix una imatge en la seqüència.\n"
+"En crear la filmació a intervals és habitual utilitzar 1.\n"
+"Normalment, el nombre de fotogrames determinarà\n"
+"el temps a mostrar el mateix fotograma en el vídeo.\n"
+"El resultat dependrà del nombre de fotogrames per\n"
+"segon utilitzats per a codificar els elements multimèdia."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:96
 #, kde-format
@@ -26829,38 +26832,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Conversió RAW d'UFRaw"
 
-#: core/libs/album/engine/album.cpp:406
+#: core/libs/album/engine/album.cpp:407
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Paperera"
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:758
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Busca actual de la línia de temps"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:764
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Busca actual aproximada d'imatge"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Busca actual aproximada de croquis"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Map Search"
 msgstr "Busca actual per mapa"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Search"
 msgstr "Busca actual"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Busca actual dels duplicats"
@@ -26914,63 +26917,42 @@ msgid "Searches"
 msgstr "Busques"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory was not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid "The MySQL database directory was not found."
-msgstr ""
-"No s'ha trobat el directori de la base de dades MySQL, establiu la ubicació "
-"correcta en el diàleg següent."
+msgstr "No s'ha trobat el directori de la base de dades MySQL."
 
 #: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "No s'han trobat les eines executables de MySQL."
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "El nom de la base de dades del nucli està buit"
+msgstr "No s'ha trobat la base de dades del nucli de SQLite."
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"Si voleu començar amb una configuració nova i amb un assistent de primera "
-"execució, suprimiu el fitxer %1"
+"<p>Si voleu començar amb una configuració nova i amb un assistent de primera "
+"execució, suprimiu el fitxer:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.\n"
-#| "\n"
-#| "Details:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
 msgstr ""
-"S'ha produït un error durant l'inici del servidor intern.\n"
-"\n"
-"Detalls:\n"
-"%1"
+"S'ha produït un error durant l'inici del servidor intern.<p>Detalls:\n"
+"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "No s'ha pogut afegir l'etiqueta a la base de dades"
+msgstr "No s'ha pogut obrir la base de dades."
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -27008,11 +26990,9 @@ msgstr ""
 "configuració</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "No s'ha pogut restablir la base de dades de miniatures"
+msgstr "No s'ha pogut restablir la base de dades."
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -27230,6 +27210,7 @@ msgstr ""
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
+"<p><b>Comproveu la configuració de la base de dades en este diàleg.</b></p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
@@ -33385,7 +33366,7 @@ msgid ""
 "effect of the tool."
 msgstr ""
 "Incrementant la correlació pot ajudar a reduir els defectes. La correlació "
-"pot abastar de 0 a 1. Els valor útils són 0,5 i valors propers a 1, p. ex., "
+"pot abastar de 0 a 1. Els valors útils són 0,5 i valors propers a 1, p. ex., "
 "0,95 o 0,99. L'ús d'un valor alt a la correlació reduirà l'efecte "
 "d'agudització de l'eina."
 
@@ -41777,6 +41758,23 @@ msgid "Select here the font used to display text in the MJPEG."
 msgstr ""
 "Seleccioneu ací el tipus de lletra emprada per a mostrar el text en el MJPEG."
 
+#: core/libs/video/player/audplayerwdg.cpp:259
+#, fuzzy, kde-format
+#| msgid "An error has occurred with the media player..."
+msgid "An error as occurred while playing: the media is not valid"
+msgstr "S'ha produït un error amb el reproductor multimèdia..."
+
+#: core/libs/video/player/audplayerwdg.cpp:288
+#: core/libs/video/player/audplayerwdg.cpp:323
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error has occurred to show item\n"
+#| "%1"
+msgid "An error as occurred while playing: %1"
+msgstr ""
+"S'ha produït un error en mostrar l'element\n"
+"%1"
+
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
@@ -45581,7 +45579,7 @@ msgstr "Haussa (Txad)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:257
 msgctxt "@info: country code"
 msgid "Hawaiian (US state of Hawaii)"
-msgstr "Hawaià (Estat d'EUA de Hawaii)"
+msgstr "Hawaià (Estat dels EUA de Hawaii)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
 msgctxt "@info: country code"
@@ -47913,7 +47911,7 @@ msgstr "L'idioma de traducció seleccionat %1 no està implementat a %2"
 #: core/libs/widgets/text/donlinetranslator.cpp:81
 #, kde-format
 msgid "Selected ui language %1 is not supported for %2"
-msgstr "L'idioma de la IU seleccionat %1 no està implementat a %2"
+msgstr "L'idioma seleccionat de la IU %1 no està implementat a %2"
 
 #: core/libs/widgets/text/donlinetranslator.cpp:115
 #: core/libs/widgets/text/donlinetranslator.cpp:132
@@ -48913,10 +48911,10 @@ msgstr ""
 "text. La verificació ortogràfica és capaç de detectar automàticament "
 "l'idioma actual utilitzat en el text i proposarà una alternativa a les "
 "paraules mal escrites.</para><para>Amb entrades on es pot especificar un "
-"idioma alternatiu, s'utilitzarà l'idioma del context per analitzar el text. "
-"La verificació ortogràfica depén de dorsals de codi obert, inclosos els "
-"diccionaris necessaris, per a fer funcionar l'anàlisi de les frases en els "
-"idiomes desitjats.</para>"
+"idioma alternatiu, s'utilitzarà l'idioma del context per a analitzar el "
+"text. La verificació ortogràfica depén de dorsals de codi obert, inclosos "
+"els diccionaris necessaris, per a fer funcionar l'anàlisi de les frases en "
+"els idiomes desitjats.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
 #, kde-format
@@ -51285,9 +51283,9 @@ msgid ""
 "digits"
 msgstr ""
 "Afig un número de sufix, ||n|| especifica el nombre de dígits que s'ha "
-"d'utilitzar, ||c|| especifica el caràcter separador abans del números, ||a|| "
-"opcional per a incloure totes les opcions per a la unicitat, ||0|| opcional "
-"per a farcir sempre amb ||n|| dígits zero"
+"d'utilitzar, ||c|| especifica el caràcter separador abans dels números, ||"
+"a|| opcional per a incloure totes les opcions per a la unicitat, ||0|| "
+"opcional per a farcir sempre amb ||n|| dígits zero"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
@@ -52488,8 +52486,8 @@ msgstr ""
 "vostra col·lecció per a registrar tots els elements en la base de dades. Els "
 "elements inclosos en els àlbums s'arreplegaran durant l'inici en segon pla.</"
 "p><p><i>Nota:</i> Depenent de la mida de la col·lecció, esta operació pot "
-"tardar una estona. Si cancel·leu l'exploració, es durà a terme en la propera "
-"sessió de digiKam.</p><p>Quan s'haja fet l'exploració inicial, la propera "
+"tardar una estona. Si cancel·leu l'exploració, es durà a terme en la pròxima "
+"sessió de digiKam.</p><p>Quan s'haja fet l'exploració inicial, la pròxima "
 "vegada que l'inicieu, digiKam només comprovarà la col·lecció per a veure si "
 "hi ha àlbums nous -la qual cosa serà molt més ràpida-. Podeu forçar a "
 "digiKam a que explore elements nous manualment utilitzant l'entrada de menú "
@@ -61142,7 +61140,7 @@ msgstr ""
 "objectes en una imatge. La limitació del nombre d'objectes reconeixibles "
 "s'establix a 80.</p><p><b>YOLOv5 XLarge</b>: com l'anterior, este model és "
 "una xarxa neuronal dedicada a requisits de detecció d'objectes més complexos "
-"i mostra capacitats notables. Malgrat la complexitat addicional que "
+"i presenta capacitats notables. Malgrat la complexitat addicional que "
 "introduïx més latència de temps i recursos informàtics, s'ha d'utilitzar per "
 "a escenaris de detecció d'objectes a gran escala, ja que proporciona "
 "prediccions més precises a costa de la velocitat.</p><p><b>ResNet50</b>: "
@@ -64538,7 +64536,7 @@ msgstr ""
 "d'etiquetes a les imatges, digiKam necessita alguns fitxers binaris grans. "
 "Podeu triar quina característica voleu emprar.</p><p>No s'han trobat alguns "
 "d'estos fitxers. Feu clic en «Baixa» per a començar a baixar els fitxers "
-"necessaris. Podeu tancar este diàleg, la propera vegada que s'inicie digiKam "
+"necessaris. Podeu tancar este diàleg, la pròxima vegada que s'inicie digiKam "
 "es tornarà a demanar. La detecció de cares no funcionarà sense estos fitxers."
 "</p><p>Els fitxers es descarregaran a %1.</p><p><b>Una vegada finalitzada la "
 "baixada, caldrà reiniciar digiKam.</b></p>"
@@ -65030,7 +65028,7 @@ msgid ""
 "quality JPEG. </item>"
 msgstr ""
 "<item><emphasis strong='true'>HEIF</emphasis>: «High Efficiency Image File "
-"Format» és un format contenidor per emmagatzemar imatges individuals. Una "
+"Format» és un format contenidor per a emmagatzemar imatges individuals. Una "
 "imatge HEIF que utilitza el còdec HEVC (H.265) requerix menys espai "
 "d'emmagatzematge que JPEG de qualitat equivalent. </item>"
 
@@ -65045,8 +65043,8 @@ msgid ""
 msgstr ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: És un format de fitxer de "
 "gràfics ràster lliure de cànons que permet compressió amb i sense pèrdua "
-"Està dissenyat per superar els formats ràster existents i així convertir-se "
-"en la seua substitució universal. </item>"
+"Està dissenyat per a superar els formats ràster existents i així convertir-"
+"se en la seua substitució universal. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:546
 #, kde-kuit-format
@@ -66742,7 +66740,7 @@ msgid ""
 "information, see this <a href='https://mapsplatform.google.com/"
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
-"Per a que funcione de manera fàcil, Google Maps necessita una clau d´API que "
+"Perquè funcione de manera fàcil, Google Maps necessita una clau d´API que "
 "els usuaris finals poden comprar en línia per a aconseguir les credencials. "
 "Sense esta clau, Google Maps encara és utilitzable però amb un marc "
 "superposat que té l'anotació «Només per a desenvolupament». Per a més "
@@ -67668,451 +67666,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgid ""
-#~ "The MySQL binary tools was not found, please set the correct location in "
-#~ "the next dialog."
-#~ msgstr ""
-#~ "No es troben les eines executables de MySQL, establiu la ubicació "
-#~ "correcta en el diàleg següent."
-
-#~ msgid ""
-#~ "The SQLite core database was not found, please set the correct location "
-#~ "in the next dialog."
-#~ msgstr ""
-#~ "No s'ha trobat la base de dades del nucli de SQLite, establiu la ubicació "
-#~ "correcta en el diàleg següent."
-
-#~ msgid ""
-#~ "Failed to open the database.\n"
-#~ "\n"
-#~ "You cannot use digiKam without a working database.\n"
-#~ "Please check the database settings in the next dialog."
-#~ msgstr ""
-#~ "No s'ha pogut obrir la base de dades.\n"
-#~ "\n"
-#~ "No podeu utilitzar digiKam sense una base de dades operativa.\n"
-#~ "Comproveu la configuració de la base de dades en el diàleg següent."
-
-#~ msgid "No codec could be found for: "
-#~ msgstr "No s'ha trobat cap connector per a: "
-
-#~ msgid "Decoding surfaces"
-#~ msgstr "Descodificació de les superfícies"
-
-#~ msgid "Decoder flags"
-#~ msgstr "Indicadors del descodificador"
-
-#~ msgid "Performance: ZeroCopy > DirectCopy > GenericCopy"
-#~ msgstr "Rendiment: Còpia zero > Còpia directa > Còpia genèrica"
-
-#~ msgid ""
-#~ "ZeroCopy: no copy back from GPU to System memory. Directly render the "
-#~ "decoded data on GPU"
-#~ msgstr ""
-#~ "Còpia zero: no es fa la còpia inversa des de la GPU a la memòria del "
-#~ "sistema. Renderitza directament les dades descodificades a la GPU"
-
-#~ msgid ""
-#~ "DirectCopy: copy back to host memory but video frames and map to GL "
-#~ "texture"
-#~ msgstr ""
-#~ "Còpia directa: es fa la còpia inversa a la memòria de l'amfitrió excepte "
-#~ "els fotogrames de vídeo i el mapatge a la textura GL"
-
-#~ msgid "GenericCopy: copy back to host memory and each video frame"
-#~ msgstr ""
-#~ "Còpia genèrica: es fa la còpia inversa a la memòria de l'amfitrió i de "
-#~ "cada fotograma de vídeo"
-
-#~ msgid "Codec %1 is not supported by CUDA"
-#~ msgstr "El còdec %1 no està implementat per CUDA"
-
-#~ msgid "0: auto"
-#~ msgstr "0: automàtica"
-
-#~ msgid ""
-#~ "Skipping the loop filter (aka deblocking) usually has determinal effect "
-#~ "on quality. However it provides a big speedup for hi definition streams"
-#~ msgstr ""
-#~ "L'omissió dels filtre de bucle (anomenat «deblocking») normalment té un "
-#~ "efecte determinant en la qualitat. Tanmateix, proporciona una gran "
-#~ "acceleració per als fluxos d'alta definició"
-
-#~ msgid ""
-#~ "Force skipping of idct to speed up decoding for frame types (-1=None, "
-#~ "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
-#~ msgstr ""
-#~ "Força l'omissió de l'IDCT per a accelerar la descodificació per als tipus "
-#~ "de fotogrames (-1=Sense, 0=Predeterminat, 1=Fotogrames-B, 2=Fotogrames-P, "
-#~ "3=Fotogrames-B+P frames, 4=Tots els fotogrames)"
-
-#~ msgid "Force skipping frames for speed up decoding."
-#~ msgstr "Força l'omissió de fotogrames per a accelerar la descodificació."
-
-#~ msgid ""
-#~ "Number of decoding threads. Set before open. Maybe no effect for some "
-#~ "decoders"
-#~ msgstr ""
-#~ "Nombre de fils de descodificació. Establir abans d'obrir. Potser no té "
-#~ "efecte per alguns descodificadors"
-
-#~ msgid "1: single thread decoding"
-#~ msgstr "1: fil únic de descodificació"
-
-#~ msgid ""
-#~ "ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
-#~ msgstr ""
-#~ "Còpia zero: la més ràpida. Renderització directa sense copiar dades entre "
-#~ "la CPU i la GPU"
-
-#~ msgid "Not implemented for all codecs"
-#~ msgstr "No s'ha implementat en tots els còdecs"
-
-#~ msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
-#~ msgstr ""
-#~ "Còpia optimitzada: còpia des de la memòria USWC optimitzada per SSE4.1"
-
-#~ msgid "GenericCopy: slowest. Generic cpu copy"
-#~ msgstr "Còpia genèrica: la més lenta. Còpia genèrica de la CPU"
-
-#~ msgid "Multithread decoding may crash"
-#~ msgstr "La descodificació multifil pot fallar"
-
-#~ msgid "Decoding surfaces 0: auto"
-#~ msgstr "Descodificació de les superfícies 0: auto"
-
-#~ msgid "Maybe faster"
-#~ msgstr "Potser més ràpida"
-
-#~ msgid "VA API version %1.%2; Vendor: %3;"
-#~ msgstr "Versió de l'API VA %1.%2; proveïdor: %3;"
-
-#~ msgid ""
-#~ "Output pixel format from decoder. Performance (better first): NV12 ; "
-#~ "UYVY ; BGRA ; YUV420P ; YUYV. OSX superior to 10.7 only supports UYVY, "
-#~ "BGRA and YUV420p"
-#~ msgstr ""
-#~ "Format dels píxels d'eixida del descodificador. Rendiment (de millor a "
-#~ "pitjor): NV12; UYVY; BGRA; YUV420P; YUYV. OSX superior a 10.7 només "
-#~ "permet UYVY, BGRA i YUV420p"
-
-#~ msgid "Interop with OpenGL"
-#~ msgstr "Interoperabilitat amb OpenGL"
-
-#~ msgid "CVPixelBuffer: macOS+iOS"
-#~ msgstr "CVPixelBuffer: macOS+iOS"
-
-#~ msgid "CVOpenGLES: iOS, no copy, fast"
-#~ msgstr "CVOpenGLES: iOS, sense còpia, ràpid"
-
-#~ msgid "IOSurface: macOS, no copy, fast"
-#~ msgstr "IOSurface: macOS, sense còpia, ràpid"
-
-#~ msgid "Auto: choose the fastest"
-#~ msgstr "Automàtic: tria el més ràpid"
-
-#~ msgctxt "@option: video filter"
-#~ msgid "Video"
-#~ msgstr "Vídeo"
-
-#~ msgctxt "@option: audio filter"
-#~ msgid "Audio"
-#~ msgstr "Àudio"
-
-#~ msgctxt "@option: enable filter"
-#~ msgid "Enable %1"
-#~ msgstr "Activa %1"
-
-#~ msgctxt "@info"
-#~ msgid "Registered %1 filters"
-#~ msgstr "%1 filtres registrats"
-
-#~ msgctxt "@label"
-#~ msgid "Parameters"
-#~ msgstr "Paràmetres"
-
-#~ msgid "Enable"
-#~ msgstr "Activa"
-
-#~ msgid "options"
-#~ msgstr "opcions"
-
-#~ msgid "Reduce buffering"
-#~ msgstr "Reduïx l'ús de la memòria intermèdia"
-
-#~ msgid "Probe size"
-#~ msgstr "Mida de la prova"
-
-#~ msgid "Max analyze duration"
-#~ msgstr "Duració màxima de l'anàlisi"
-
-#~ msgid "0: auto. how many microseconds are analyzed to probe the input"
-#~ msgstr ""
-#~ "0: automàtica. Nombre de microsegons que s'analitzen per a provar "
-#~ "l'entrada"
-
-#~ msgid "Extra"
-#~ msgstr "Addicional"
-
-#~ msgid "AVFormat"
-#~ msgstr "AVFormat"
-
-#~ msgid "Browse"
-#~ msgstr "Navega"
-
-#~ msgid "Save dir"
-#~ msgstr "Directori de guardada"
-
-#~ msgid "Save format"
-#~ msgstr "Format de guardada"
-
-#~ msgid "Quality"
-#~ msgstr "Qualitat"
-
-#~ msgid "Capture"
-#~ msgstr "Captura"
-
-#~ msgctxt "@title:window"
-#~ msgid "Video Decoder Config Page"
-#~ msgstr "Pàgina de configuració del descodificador de vídeo"
-
-#~ msgctxt "@label"
-#~ msgid "Decoder Priorities (reopen is required)"
-#~ msgstr "Prioritats del descodificador (cal tornar a obrir)"
-
-#~ msgctxt "@action: go up in the list"
-#~ msgid "Up"
-#~ msgstr "Amunt"
-
-#~ msgctxt "@action: go down in the list"
-#~ msgid "Down"
-#~ msgstr "Avall"
-
-#~ msgctxt "@title"
-#~ msgid "Decoder"
-#~ msgstr "Descodificador"
-
-#~ msgid "Preview Over Time-Slider"
-#~ msgstr "Vista prèvia del control lliscant del temps"
-
-#~ msgid "size"
-#~ msgstr "mida"
-
-#~ msgid "Force fps"
-#~ msgstr "Força els fps"
-
-#~ msgid "Ignore"
-#~ msgstr "Ignora"
-
-#~ msgid "Progress update interval"
-#~ msgstr "Interval d'actualització del progrés"
-
-#~ msgid "Buffer frames"
-#~ msgstr "Memòria intermèdia dels fotogrames"
-
-#~ msgid "Timeout"
-#~ msgstr "Temps d'espera"
-
-#~ msgid "s"
-#~ msgstr "s"
-
-#~ msgid "OpenGL type"
-#~ msgstr "Tipus d'OpenGL"
-
-#~ msgid "Windows only"
-#~ msgstr "Només a Windows"
-
-#~ msgid "OpenGLES is Used by DXVA Zero Copy"
-#~ msgstr "OpenGLES és utilitzat per la Còpia zero DXVA"
-
-#~ msgid ""
-#~ "D3D9 has performance if ZeroCopy is disabled or for software decoders"
-#~ msgstr ""
-#~ "D3D9 té rendiment si s'ha desactivat la Còpia zero o per als "
-#~ "descodificadors per programari"
-
-#~ msgid "RESTART REQUIRED"
-#~ msgstr "Cal reiniciar"
-
-#~ msgid "Currently only works for Qt>=5.5 XCB build"
-#~ msgstr "Actualment només funciona amb la construcció XCB de les Qt>=5.5"
-
-#~ msgid "Misc"
-#~ msgstr "Miscel·lània"
-
-#~ msgctxt "@option: enable shader"
-#~ msgid "Enable"
-#~ msgstr "Activa"
-
-#~ msgctxt "@option"
-#~ msgid "Intermediate FBO"
-#~ msgstr "FBO intermedi"
-
-#~ msgctxt "@label"
-#~ msgid "Fragment shader header"
-#~ msgstr "Fragment de capçalera de «shader»"
-
-#~ msgctxt "@info"
-#~ msgid "Additional header code"
-#~ msgstr "Codi de capçalera addicional"
-
-#~ msgctxt "@label"
-#~ msgid "Fragment shader texel sample function"
-#~ msgstr "Fragment de funció de mostreig de texel de «shader»"
-
-#~ msgctxt "@label"
-#~ msgid "Fragment shader RGB post process code"
-#~ msgstr "Fragment de codi de postprocessament RGB de «shader»"
-
-#~ msgctxt "@title"
-#~ msgid "Shader"
-#~ msgstr "Shader"
-
-#~ msgctxt "@label"
-#~ msgid "Engine"
-#~ msgstr "Motor"
-
-#~ msgctxt "@option"
-#~ msgid "Brightness"
-#~ msgstr "Brillantor"
-
-#~ msgctxt "@option"
-#~ msgid "Contrast"
-#~ msgstr "Contrast"
-
-#~ msgctxt "@option"
-#~ msgid "Hue"
-#~ msgstr "To"
-
-#~ msgctxt "@option"
-#~ msgid "Saturation"
-#~ msgstr "Saturació"
-
-#~ msgctxt "@option: global settings"
-#~ msgid "Global"
-#~ msgstr "Global"
-
-#~ msgid "error reading stream data"
-#~ msgstr "error en llegir les dades del flux"
-
-#~ msgid "seek error"
-#~ msgstr "error en buscar"
-
-#~ msgid "failed to open media"
-#~ msgstr "ha fallat en obrir el fitxer multimèdia"
-
-#~ msgid "failed to find stream info"
-#~ msgstr "ha fallat en trobar la informació del flux"
-
-#~ msgid "interrupted by user"
-#~ msgstr "interromput per l'usuari"
-
-#~ msgid "timeout"
-#~ msgstr "ha excedit el temps d'espera"
-
-#~ msgid "No error"
-#~ msgstr "Sense errors"
-
-#~ msgid "Open error"
-#~ msgstr "S'ha produït un error en obrir"
-
-#~ msgid "Open timed out"
-#~ msgstr "Ha excedit el temps en obrir"
-
-#~ msgid "Parse stream timed out"
-#~ msgstr "Ha excedit el temps en l'anàlisi sintàctica del flux"
-
-#~ msgid "Parse stream error"
-#~ msgstr "S'ha produït un error en l'anàlisi sintàctica del flux"
-
-#~ msgid "Stream not found"
-#~ msgstr "No s'ha trobat el flux"
-
-#~ msgid "Read packet timed out"
-#~ msgstr "Ha excedit el temps de lectura de paquet"
-
-#~ msgid "Read error"
-#~ msgstr "S'ha produït un error de lectura"
-
-#~ msgid "Seek error"
-#~ msgstr "S'ha produït un error en buscar"
-
-#~ msgid "Resource error"
-#~ msgstr "S'ha produït un error de recurs"
-
-#~ msgid "Open codec error"
-#~ msgstr "S'ha produït un error en obrir el còdec"
-
-#~ msgid "Close codec error"
-#~ msgstr "S'ha produït un error en tancar el còdec"
-
-#~ msgid "Video codec not found"
-#~ msgstr "No s'ha trobat el còdec de vídeo"
-
-#~ msgid "Audio codec not found"
-#~ msgstr "No s'ha trobat el còdec d'àudio"
-
-#~ msgid "Subtitle codec not found"
-#~ msgstr "No s'ha trobat el còdec dels subtítols"
-
-#~ msgid "Codec error"
-#~ msgstr "S'ha produït un error del còdec"
-
-#~ msgid "Format error"
-#~ msgstr "S'ha produït un error de format"
-
-#~ msgid "Network error"
-#~ msgstr "S'ha produït un error de la xarxa"
-
-#~ msgid "Access denied"
-#~ msgstr "S'ha denegat l'accés"
-
-#~ msgid "Options:"
-#~ msgstr "Opcions:"
-
-#~ msgid "Build version"
-#~ msgstr "Versió de la construcció"
-
-#~ msgid "Runtime version"
-#~ msgstr "Versió en temps d'execució"
-
-#~ msgid "Multimedia framework based on Qt and FFmpeg.\n"
-#~ msgstr "Framework Multimedia basat en les Qt i FFmpeg.\n"
-
-#~ msgid "About Qt"
-#~ msgstr "Quant a les Qt"
-
-#~ msgid "Ok"
-#~ msgstr "D'acord"
-
-#~ msgctxt "@title:window"
-#~ msgid "About QtAV"
-#~ msgstr "Quant a QtAV"
-
-#~ msgctxt "@title:window"
-#~ msgid "About FFmpeg"
-#~ msgstr "Quant a FFmpeg"
-
-#~ msgctxt "@title: settings section"
-#~ msgid "Video"
-#~ msgstr "Vídeo"
-
-#~ msgctxt "@title"
-#~ msgid ""
-#~ "Video Preview Settings\n"
-#~ "Customize settings to play video media"
-#~ msgstr ""
-#~ "Configureu la vista prèvia de vídeo\n"
-#~ "Personalitza la configuració per a reproduir fitxers multimèdia de vídeo"
-
-#~ msgctxt "@info"
-#~ msgid "Press this button to reset all video settings to the default values."
-#~ msgstr ""
-#~ "Premeu este botó per a restablir tota la configuració de vídeo als seus "
-#~ "valors predeterminats."
-
-#~ msgctxt "@info"
-#~ msgid "Do you want to reset all video settings to the default value?"
-#~ msgstr ""
-#~ "Voleu restablir tota la configuració als seus valors predeterminats?"

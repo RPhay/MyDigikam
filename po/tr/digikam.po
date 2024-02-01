@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-29 01:34+0000\n"
-"PO-Revision-Date: 2024-01-29 18:55+0300\n"
+"POT-Creation-Date: 2024-02-01 01:35+0000\n"
+"PO-Revision-Date: 2024-01-31 16:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2864,7 +2864,7 @@ msgstr "Tam Ekran Göster"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:486
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2958,7 +2958,7 @@ msgid "No Tags Album"
 msgstr "Künye Albümü Yok"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:558
+#: core/libs/album/engine/album.cpp:559
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -5392,7 +5392,7 @@ msgstr "Metin ayarları"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:279
 #, kde-format
 msgid "Enter your watermark string here."
-msgstr "Buraya filigran dizisini girin."
+msgstr "Buraya filigran dizisi gir…"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
 #, kde-format
@@ -6243,121 +6243,128 @@ msgstr ""
 "<para>Bu Toplu Kuyruk Yöneticisi aracı, görseli ayrıştırarak bir etiket üst "
 "veri etiketi değeri atayacaktır.</para>"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:105
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr "Exif:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "Tümü"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "Tarih"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr "GPS"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "XPKeywords"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "Yorum ve açıklama"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:112
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr "Iptc:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "Tümü"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "Tarih"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "Alt yazı"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#, fuzzy, kde-format
+#| msgid "Preview target image"
+msgctxt "@item: iptc namespace"
+msgid "Preview image"
+msgstr "Hedef görseli önizle"
+
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr "Xmp:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "Tümü"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "Tarih"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "DigiKam"
 msgstr "digiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "DigiKam image history"
 msgstr "DigiKam görsel geçmişi"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Video"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, Comment and Description"
 msgstr "Alt yazı, yorum, açıklama"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:220
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:222
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -16310,7 +16317,7 @@ msgstr "RAW Dosyası"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:284
 #, kde-format
 msgid "Target File"
 msgstr "Hedef Dosya"
@@ -17352,7 +17359,7 @@ msgstr "HTML Galerisi Oluştur..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -17491,7 +17498,7 @@ msgstr "Hedef klasör:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
@@ -19899,13 +19906,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "VBaskıyı olarak dışa aktarmak için tercih ettiğiniz biçimi seçin."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:264
 #, kde-format
 msgid "Destination folder:"
 msgstr "Hedef klasör:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:240
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -20512,32 +20519,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Video Slayt Gösterisi Oluştur..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:128
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Video slayt gösterisi üretilmeye başlanıyor..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:131
 #, kde-format
 msgid "%1 input images to process"
 msgstr "İşlenecek %1 görsel girdisi"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Video Slayt Gösterisi tamamlanmadı"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr "Aşağıdaki video kodlama izine bakın"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Video Slayt Gösterisi tamamlandı."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:194
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Video akışı oynatıcıda açılıyor..."
@@ -20581,12 +20588,12 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "FFmpeg İkilisi"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Ortam kapsayıcısı biçimi:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:102
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
@@ -20595,27 +20602,27 @@ msgstr ""
 "Bu denetim, video akışı ve fon müziğini barındıracak ortam kapsayıcısınn "
 "biçimini seçmenize olanak tanır."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
 #, kde-format
 msgid "Open in Player:"
 msgstr "Oynatıcıda aç:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:145
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, kde-format
 msgid "Output"
 msgstr "Çıktı"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:166
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Video Parlaklığını Eşitle"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:171
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "Eşitleme gücü:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:175
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
@@ -20624,7 +20631,7 @@ msgstr ""
 "Bu, eşitlemenin gücünü denetler. Bu seçeneği sıfır olarak ayarlamanın bir "
 "etkisi olmaz."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:180
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20637,28 +20644,35 @@ msgstr ""
 "karelerin sırasını aynı histogramlara sahip olacak şekilde ayarlar. Örneğin; "
 "hızlandırılmış bir diziden eşleşen pozlar.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
 #, kde-format
 msgid "Frames Normalization"
 msgstr "Kareler Normalleştirmesi"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:202
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "Fon müziği dosyası:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:208
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Ses İzi Seç"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:198
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Fon müziği süresi:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Soundtrack Preview"
+msgid "Soundtrack Preview:"
+msgstr "Film Müziği Önizlemesi"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -20670,17 +20684,17 @@ msgstr ""
 "çalınacaktır. Ses uzunluğu videodan daha uzunsa kırpılacaktır. Ortama ses "
 "verilmesini istemiyorsanız bu ayarı boş bırakın.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:245
 #, kde-format
 msgid "Audio Track"
 msgstr "Ses İzi"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
 #, kde-format
 msgid "On Screen Display"
 msgstr "Ekran Üzeri Görüntü"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:244
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:274
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Video çıktı dosyasının adı kendiliğinden oluşturulur."
@@ -26599,38 +26613,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW Dönüştürme"
 
-#: core/libs/album/engine/album.cpp:406
+#: core/libs/album/engine/album.cpp:407
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Çöp Kutusu"
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:758
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Geçerli Zaman Akışı Araması"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:764
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Geçerli Bulanık Görsel Araması"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Geçerli Bulanık Taslak Araması"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Map Search"
 msgstr "Geçerli Harita Araması"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Search"
 msgstr "Geçerli Arama"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Geçerli Yinelenenler Araması"
@@ -37090,7 +37104,7 @@ msgstr "Künye Yöneticisini Aç"
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
-msgstr "Buraya künyeyi girin."
+msgstr "Buraya künyeyi gir…"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
 #: core/libs/properties/captions/tagsedit.cpp:111
@@ -40007,7 +40021,7 @@ msgstr "Haklar"
 #: core/libs/template/templatepanel.cpp:242
 #, kde-format
 msgid "Enter the city of contents here."
-msgstr "Buraya içeriğin kentini girin."
+msgstr "Buraya içeriğin kentini gir…"
 
 #: core/libs/template/templatepanel.cpp:244
 #, kde-format
@@ -40019,7 +40033,7 @@ msgstr "<p>Bu alan, fotoğrafın çekildiği kentin adını içermelidir.</p>"
 #: core/libs/template/templatepanel.cpp:252
 #, kde-format
 msgid "Enter the city sublocation of contents here."
-msgstr "Buraya içeriğin kent alt konumunu girin."
+msgstr "Buraya içeriğin kent alt konumunu gir…"
 
 #: core/libs/template/templatepanel.cpp:254
 #, kde-format
@@ -40031,7 +40045,7 @@ msgstr "<p>Bu alan, fotoğrafın çekildiği kentin alt konumunu içermelidir.</
 #: core/libs/template/templatepanel.cpp:262
 #, kde-format
 msgid "Enter the province or state of contents here."
-msgstr "Buraya içeriğin ilini veya eyaletini girin."
+msgstr "Buraya içeriğin ilini veya eyaletini gir…"
 
 #: core/libs/template/templatepanel.cpp:264
 #, kde-format
@@ -41297,6 +41311,23 @@ msgctxt "@info"
 msgid "Select here the font used to display text in the MJPEG."
 msgstr "MJPEG'de metin görüntülemek için kullanılacak yazıtipini burada seçin."
 
+#: core/libs/video/player/audplayerwdg.cpp:259
+#, fuzzy, kde-format
+#| msgid "An error has occurred with the media player..."
+msgid "An error as occurred while playing: the media is not valid"
+msgstr "Ortam oynatıcısında bir hata oluştu."
+
+#: core/libs/video/player/audplayerwdg.cpp:288
+#: core/libs/video/player/audplayerwdg.cpp:323
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error has occurred to show item\n"
+#| "%1"
+msgid "An error as occurred while playing: %1"
+msgstr ""
+"%1\n"
+"ögesi gösterilirken hata oluştu"
+
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
@@ -41698,7 +41729,7 @@ msgstr "Kalibre edilmemiş renk uzayı"
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:816
 #, kde-format
 msgid "No profile available..."
-msgstr "Kullanılabilir profil yok..."
+msgstr "Kullanılabilir profil yok"
 
 #: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:59
 #, kde-format
@@ -49905,7 +49936,7 @@ msgstr "&Ad:"
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
-msgstr "Buraya sık kullanılan girdisi adını girin..."
+msgstr "Buraya sık kullanılan girdisi adını gir…"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:152
 #, kde-format
@@ -49966,7 +49997,7 @@ msgstr "&Açıklama:"
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
-msgstr "Buraya sık kullanılan öge açıklamasını girin..."
+msgstr "Buraya sık kullanılan öge açıklamasını gir…"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:190
 #, kde-format
@@ -62268,7 +62299,7 @@ msgstr "Ara:"
 #: core/utilities/searchwindow/searchtabheader.cpp:267
 #, kde-format
 msgid "Enter keywords here..."
-msgstr "Buraya anahtar sözcükler gir..."
+msgstr "Buraya anahtar sözcükler gir…"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:269
 #, kde-format
@@ -62817,7 +62848,7 @@ msgstr ""
 #: core/utilities/setup/album/setupcategory.cpp:89
 #, kde-format
 msgid "Set here the new category"
-msgstr "Buraya yeni kategori adını yaz…"
+msgstr "Yeni kategori adını burada ayarla"
 
 #: core/utilities/setup/album/setupcategory.cpp:92
 #, kde-format

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-29 01:34+0000\n"
+"POT-Creation-Date: 2024-02-01 01:35+0000\n"
 "PO-Revision-Date: 2024-01-18 22:17-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2843,7 +2843,7 @@ msgstr "フルスクリーンで表示"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:486
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2937,7 +2937,7 @@ msgid "No Tags Album"
 msgstr "タグのないアルバム"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:558
+#: core/libs/album/engine/album.cpp:559
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -6179,124 +6179,131 @@ msgid ""
 "by parsing image and estimate the quality.</para>"
 msgstr "この画像はカラーマネージメントされていません。"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:105
 #, kde-format
 msgctxt "@title"
 msgid "Exif:"
 msgstr "Exif:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
 #, fuzzy, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "コンポーネント"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "日付"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr "GPS"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "キーワード"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, fuzzy, kde-format
 #| msgid "Russian Federation"
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "ロシア"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:112
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, kde-format
 msgctxt "@title"
 msgid "Iptc:"
 msgstr "Iptc:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, fuzzy, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "コンポーネント"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "日付"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
 msgstr "キャプション"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
+#, fuzzy, kde-format
+#| msgid "Preview target image"
+msgctxt "@item: iptc namespace"
+msgid "Preview image"
+msgstr "処理後の画像をプレビュー"
+
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
 msgctxt "@title"
 msgid "Xmp:"
 msgstr "Xmp:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
 #, fuzzy, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "コンポーネント"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "日付"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "DigiKam"
 msgstr "DigiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "DigiKam image history"
 msgstr "DigiKam 画像履歴"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "動画"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
 #, fuzzy, kde-format
 #| msgid "Caption, Comment, Title"
 msgctxt "@item: xmp namespace"
 msgid "Caption, Comment and Description"
 msgstr "キャプション、コメント、タイトル"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:220
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:222
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -16501,7 +16508,7 @@ msgstr "RAW ファイル"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:284
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "Target File"
@@ -17554,7 +17561,7 @@ msgstr "スキーマを作成..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -17703,7 +17710,7 @@ msgstr "送り先:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, fuzzy, kde-format
 #| msgid "Destination:"
@@ -20123,14 +20130,14 @@ msgid "Select your preferred format to export printing as image."
 msgstr "変換先カラースペースのプロファイルを選択します。"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:264
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Destination folder:"
 msgstr "送り先:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:240
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, fuzzy, kde-format
 #| msgid "Output device"
@@ -20748,34 +20755,34 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "このタグを付ける"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:128
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgid "Starting to generate video slideshow..."
 msgstr "スキーマを作成..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:131
 #, fuzzy, kde-format
 #| msgid "Custom process"
 msgid "%1 input images to process"
 msgstr "カスタム処理"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
 #, fuzzy, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "スライドショー"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
 #, fuzzy, kde-format
 msgid "Video Slideshow completed."
 msgstr "スライドショー"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:194
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgid "Opening video stream in player..."
@@ -20809,13 +20816,13 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "MacBinary II"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
 #, fuzzy, kde-format
 #| msgid "Baloo support"
 msgid "Media Container Format:"
 msgstr "Baloo サポート"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:102
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
@@ -20823,36 +20830,36 @@ msgid ""
 msgstr ""
 
 # ACCELERATOR added by translator
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgid "Open in Player:"
 msgstr "ファイルマネージャで開く(&M)"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:145
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgid "Output"
 msgstr "出力デバイス"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:166
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:171
 #, kde-format
 msgid "Equalization Strength:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:175
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:180
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20861,32 +20868,38 @@ msgid ""
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Frames Normalization"
 msgstr "画像の情報"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:202
 #, fuzzy, kde-format
 #| msgid "Soundtrack :"
 msgid "Soundtrack File:"
 msgstr "音声トラック:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:208
 #, fuzzy, kde-format
 #| msgid "Select Images"
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "画像を選択"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:198
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
 #, fuzzy, kde-format
 #| msgid "Soundtrack :"
 msgid "Soundtrack Duration:"
 msgstr "音声トラック:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
+#, fuzzy, kde-format
+#| msgid "Open a preview"
+msgid "Soundtrack Preview:"
+msgstr "プレビューを開く"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -20895,18 +20908,18 @@ msgid ""
 "media.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:245
 #, fuzzy, kde-format
 #| msgid "Select Images"
 msgid "Audio Track"
 msgstr "画像を選択"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
 #, fuzzy, kde-format
 msgid "On Screen Display"
 msgstr "パーセント:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:244
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:274
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
@@ -26963,38 +26976,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "カラースペースの変換"
 
-#: core/libs/album/engine/album.cpp:406
+#: core/libs/album/engine/album.cpp:407
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:758
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "現在の時間軸検索"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:764
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "現在の画像によるファジー検索"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "現在のスケッチによるファジー検索"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Map Search"
 msgstr "現在の地図検索"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Search"
 msgstr "現在の検索"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "現在の重複アイテム検索"
@@ -41988,6 +42001,18 @@ msgstr "パーセント:"
 msgctxt "@info"
 msgid "Select here the font used to display text in the MJPEG."
 msgstr "ツリー表示のテキストに使うフォントを選択します。"
+
+#: core/libs/video/player/audplayerwdg.cpp:259
+#, fuzzy, kde-format
+#| msgid "An error has occurred with the media player...."
+msgid "An error as occurred while playing: the media is not valid"
+msgstr "メディアプレーヤーにエラーが発生しました..."
+
+#: core/libs/video/player/audplayerwdg.cpp:288
+#: core/libs/video/player/audplayerwdg.cpp:323
+#, fuzzy, kde-format
+msgid "An error as occurred while playing: %1"
+msgstr "メディアプレーヤーにエラーが発生しました..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264

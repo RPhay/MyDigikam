@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-29 01:34+0000\n"
+"POT-Creation-Date: 2024-02-01 01:35+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3110,7 +3110,7 @@ msgstr "Täisekraanirežiim"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:485
+#: core/libs/album/engine/album.cpp:486
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -3202,7 +3202,7 @@ msgid "No Tags Album"
 msgstr "Siltide albumit pole"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:558
+#: core/libs/album/engine/album.cpp:559
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -6756,70 +6756,70 @@ msgid ""
 msgstr ""
 "<p>See hulgijärjekorrahaldur võib rakendada piltidele metaandmete malli.</p>"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:105
 #, fuzzy, kde-format
 #| msgid "Exif:"
 msgctxt "@title"
 msgid "Exif:"
 msgstr "Exif:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
 #, fuzzy, kde-format
 #| msgid "Completely"
 msgctxt "@item: exif namespace"
 msgid "Completely"
 msgstr "Täielikult"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@item: exif namespace"
 msgid "Date"
 msgstr "Kuupäev"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, fuzzy, kde-format
 #| msgid "GPS"
 msgctxt "@item: exif namespace"
 msgid "GPS"
 msgstr "GPS"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
 #, fuzzy, kde-format
 #| msgid "XPKeywords"
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
 msgstr "XPVõtmesõnad"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:111
 #, fuzzy, kde-format
 #| msgid "Screenshot description:"
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
 msgstr "Ekraanipildi kirjeldus:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:112
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:113
 #, fuzzy, kde-format
 #| msgid "Iptc:"
 msgctxt "@title"
 msgid "Iptc:"
 msgstr "Iptc:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, fuzzy, kde-format
 #| msgid "Completely"
 msgctxt "@item: iptc namespace"
 msgid "Completely"
 msgstr "Täielikult"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@item: iptc namespace"
 msgid "Date"
 msgstr "Kuupäev"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:117
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@item: iptc namespace"
@@ -6828,68 +6828,76 @@ msgstr "Allkiri"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, fuzzy, kde-format
+#| msgctxt "View the selected image"
+#| msgid "Preview Image"
+msgctxt "@item: iptc namespace"
+msgid "Preview image"
+msgstr "Pildi eelvaatlus"
+
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#, fuzzy, kde-format
 #| msgid "Xmp:"
 msgctxt "@title"
 msgid "Xmp:"
 msgstr "Xmp:"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
 #, fuzzy, kde-format
 #| msgid "Completely"
 msgctxt "@item: xmp namespace"
 msgid "Completely"
 msgstr "Täielikult"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@item: xmp namespace"
 msgid "Date"
 msgstr "Kuupäev"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:122
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
 #, fuzzy, kde-format
 #| msgid "DigiKam"
 msgctxt "@item: xmp namespace"
 msgid "DigiKam"
 msgstr "DigiKam"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
 #, fuzzy, kde-format
 #| msgid "DigiKam image history"
 msgctxt "@item: xmp namespace"
 msgid "DigiKam image history"
 msgstr "DigiKami pildiajalugu"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
 #, fuzzy, kde-format
 #| msgid "Dublin Core"
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, fuzzy, kde-format
 #| msgid "Exif"
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
 #, fuzzy, kde-format
 #| msgid "Video"
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Video"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
 #, fuzzy, kde-format
 #| msgid "Caption, Comment, Title"
 msgctxt "@item: xmp namespace"
 msgid "Caption, Comment and Description"
 msgstr "Allkiri, kommentaar, pealkiri"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:220
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:222
 #, fuzzy, kde-format
 #| msgid "Remove Metadata: Not the last tool in the list."
 msgctxt "@info"
@@ -17523,7 +17531,7 @@ msgstr "Toorfailid"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:284
 #, fuzzy, kde-format
 #| msgid "Target Folder"
 msgid "Target File"
@@ -18654,7 +18662,7 @@ msgstr "Loo HTML-galerii ..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:135
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:120
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:115
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:120
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:128
 #, kde-format
 msgid "Internal Error"
@@ -18796,7 +18804,7 @@ msgstr "Sihtkataloog:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:239
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, fuzzy, kde-format
 #| msgid "Destination Folder"
@@ -21371,14 +21379,14 @@ msgid "Select your preferred format to export printing as image."
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:234
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:264
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgid "Destination folder:"
 msgstr "Sihtkataloog:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:240
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
@@ -21998,32 +22006,32 @@ msgctxt "@action"
 msgid "Create video slideshow..."
 msgstr "Loo video-slaidiseanss ..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:128
 #, kde-format
 msgid "Starting to generate video slideshow..."
 msgstr "Video-slaidiseansi genereerimise alustamine ..."
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:131
 #, kde-format
 msgid "%1 input images to process"
 msgstr "%1 sisendpilti töödelda"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:174
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
 #, kde-format
 msgid "Video Slideshow is not completed"
 msgstr "Video-slaidiseanss pole valmis"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
 #, kde-format
 msgid "See the video encoding trace below"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:184
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
 #, kde-format
 msgid "Video Slideshow completed."
 msgstr "Video-slaidiseanss on valmis"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:194
 #, kde-format
 msgid "Opening video stream in player..."
 msgstr "Videovoo avamine mängijas ..."
@@ -22059,48 +22067,48 @@ msgctxt "@title:group"
 msgid "FFmpeg Binary"
 msgstr "Binaarfail"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:99
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:112
 #, kde-format
 msgid "Media Container Format:"
 msgstr "Meediakonteineri vorming:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:102
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:107
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
 #, kde-format
 msgid "Open in Player:"
 msgstr "Avamine mängijas:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:145
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "@title:column Output file name"
 #| msgid "Output"
 msgid "Output"
 msgstr "Väljund"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:153
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:166
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:171
 #, kde-format
 msgid "Equalization Strength:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:162
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:175
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:167
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:180
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -22109,32 +22117,38 @@ msgid ""
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:179
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Frames Normalization"
 msgstr "Pildi info"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:189
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:202
 #, fuzzy, kde-format
 #| msgid "Soundtrack:"
 msgid "Soundtrack File:"
 msgstr "Heliriba:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:195
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:208
 #, fuzzy, kde-format
 #| msgid "Audio bitrate"
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Heli bitikiirus"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:198
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
 #, fuzzy, kde-format
 #| msgid "Soundtrack:"
 msgid "Soundtrack Duration:"
 msgstr "Heliriba:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:203
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
+#, fuzzy, kde-format
+#| msgid "Soundtrack preview"
+msgid "Soundtrack Preview:"
+msgstr "Heliriba eelvaatlus"
+
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -22143,19 +22157,19 @@ msgid ""
 "media.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:215
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:245
 #, fuzzy, kde-format
 #| msgid "Audio bitrate"
 msgid "Audio Track"
 msgstr "Heli bitikiirus"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
 #, fuzzy, kde-format
 #| msgid "Screen placement:"
 msgid "On Screen Display"
 msgstr "Asetus ekraanil:"
 
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:244
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:274
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Video väljundfaili nimi luuakse automaatselt."
@@ -28377,38 +28391,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Toorpildi teisendus"
 
-#: core/libs/album/engine/album.cpp:406
+#: core/libs/album/engine/album.cpp:407
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Prügikast"
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:758
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Aktiivne ajateljeotsing"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:764
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Aktiivne pildi sarnasusotsing"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Aktiivne visandiga sarnasusotsing"
 
-#: core/libs/album/engine/album.cpp:774
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Map Search"
 msgstr "Aktiivne kaardiotsing"
 
-#: core/libs/album/engine/album.cpp:779
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Search"
 msgstr "Aktiivne otsing"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Aktiivne topeltpiltide otsing"
@@ -43912,6 +43926,23 @@ msgstr "Asetus ekraanil:"
 msgctxt "@info"
 msgid "Select here the font used to display text in the MJPEG."
 msgstr "Siin saab valida slaidiseansis näidatava teksti fondi."
+
+#: core/libs/video/player/audplayerwdg.cpp:259
+#, fuzzy, kde-format
+#| msgid "An error has occurred with the media player..."
+msgid "An error as occurred while playing: the media is not valid"
+msgstr "Tõrge meediamängijaga ..."
+
+#: core/libs/video/player/audplayerwdg.cpp:288
+#: core/libs/video/player/audplayerwdg.cpp:323
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error has occurred to show item\n"
+#| "%1"
+msgid "An error as occurred while playing: %1"
+msgstr ""
+"Elemendi näitamisel tekkis tõrge\n"
+"%1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -78807,10 +78838,6 @@ msgstr "Impordi elemendid"
 #~| msgid "Content"
 #~ msgid "Contents..."
 #~ msgstr "Sisu"
-
-#~ msgctxt "View the selected image"
-#~ msgid "Preview Image"
-#~ msgstr "Pildi eelvaatlus"
 
 #~ msgid "No batch process plugins available"
 #~ msgstr "Hulgitöötluspluginaid pole saadaval"
