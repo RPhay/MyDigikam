@@ -214,7 +214,7 @@ BUGFIXES:
 192 ==> 480551 - In face recognition "who is this" within an image - starting to type crashes application.
 193 ==> 480528 - 'Remove Duplicates' Button Disabled When Focus Moves Away From Duplicates Tab.
 194 ==> 480606 - digiKam git doesn't display thumbnails from tif images cropped with Rawtherapee.
-195 ==> 
+195 ==> 480651 - Exporting to JXL lowers the colour depth to 8 bpp.
 196 ==> 
 197 ==> 
 198 ==> 
