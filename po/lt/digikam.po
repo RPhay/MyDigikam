@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-01 01:35+0000\n"
+"POT-Creation-Date: 2024-02-02 01:34+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -28084,18 +28084,18 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "Nepavyko suskaičiuoti vidurkio"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:74
-#: core/libs/album/widgets/albumselectcombobox.cpp:90
+#: core/libs/album/widgets/albumselectcombobox.cpp:76
+#: core/libs/album/widgets/albumselectcombobox.cpp:92
 #, kde-format
 msgid "No Album Selected"
 msgstr "Nepažymėtas nė vienas albumas"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:97
+#: core/libs/album/widgets/albumselectcombobox.cpp:99
 #, kde-format
 msgid "No Tag Selected"
 msgstr "Nepažymėta jokia žyma"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:299
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
@@ -28104,7 +28104,7 @@ msgstr[1] "Pasirinktos %1 žymos"
 msgstr[2] "Pasirinkta %1 žymų"
 msgstr[3] "Pasirinkta %1 žyma"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:278
+#: core/libs/album/widgets/albumselectcombobox.cpp:304
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
@@ -28113,7 +28113,7 @@ msgstr[1] "Pažymėti <b>%1</b> albumai"
 msgstr[2] "Pažymėta <b>%1</b> albumų"
 msgstr[3] "Pažymėtas <b>%1</b> albumas"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:287
+#: core/libs/album/widgets/albumselectcombobox.cpp:314
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
@@ -28122,7 +28122,7 @@ msgstr[1] "Neįtrauktos %1 žymos"
 msgstr[2] "Neįtraukta %1 žymų"
 msgstr[3] "Neįtraukta %1 žyma"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:291
+#: core/libs/album/widgets/albumselectcombobox.cpp:319
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -28139,7 +28139,7 @@ msgid "Select Album"
 msgstr "Pažymėti albumą"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:548
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
@@ -28221,21 +28221,21 @@ msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Pašalinti žymės ženkliuką"
 
-#: core/libs/album/widgets/albumselectors.cpp:549
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albumai"
 
-#: core/libs/album/widgets/albumselectors.cpp:552
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Žymos: "
 
-#: core/libs/album/widgets/albumselectors.cpp:553
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"

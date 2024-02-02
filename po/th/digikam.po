@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-01 01:35+0000\n"
+"POT-Creation-Date: 2024-02-02 01:34+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -27870,36 +27870,36 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "ไม่สามารถคำนวณหาช่วงเฉลี่ยได้"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:74
-#: core/libs/album/widgets/albumselectcombobox.cpp:90
+#: core/libs/album/widgets/albumselectcombobox.cpp:76
+#: core/libs/album/widgets/albumselectcombobox.cpp:92
 #, kde-format
 msgid "No Album Selected"
 msgstr "ยังไม่มีการเลือกอัลบั้มใด ๆ"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:97
+#: core/libs/album/widgets/albumselectcombobox.cpp:99
 #, kde-format
 msgid "No Tag Selected"
 msgstr "ยังไม่มีการเลือกป้ายกำกับใด ๆ"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:299
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "เลือกป้ายกำกับไว้ %1 ป้าย"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:278
+#: core/libs/album/widgets/albumselectcombobox.cpp:304
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "เลือกอัลบั้มไว้ %1 อัลบั้ม"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:287
+#: core/libs/album/widgets/albumselectcombobox.cpp:314
 #, fuzzy, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "เลือกป้ายกำกับไว้ %1 ป้าย"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:291
+#: core/libs/album/widgets/albumselectcombobox.cpp:319
 #, fuzzy, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -27913,7 +27913,7 @@ msgid "Select Album"
 msgstr "เลือกอัลบั้ม"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:548
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
@@ -27993,20 +27993,20 @@ msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "ตั้งค่าเนื้อหาใหม่"
 
-#: core/libs/album/widgets/albumselectors.cpp:549
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "อัลบั้ม"
 
-#: core/libs/album/widgets/albumselectors.cpp:552
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "ป้ายกำกับ:"
 
-#: core/libs/album/widgets/albumselectors.cpp:553
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"

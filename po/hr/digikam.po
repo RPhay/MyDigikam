@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-01 01:35+0000\n"
+"POT-Creation-Date: 2024-02-02 01:34+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -26011,32 +26011,32 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:74
-#: core/libs/album/widgets/albumselectcombobox.cpp:90
+#: core/libs/album/widgets/albumselectcombobox.cpp:76
+#: core/libs/album/widgets/albumselectcombobox.cpp:92
 #, kde-format
 msgid "No Album Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:97
+#: core/libs/album/widgets/albumselectcombobox.cpp:99
 #, kde-format
 msgid "No Tag Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:299
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:278
+#: core/libs/album/widgets/albumselectcombobox.cpp:304
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:287
+#: core/libs/album/widgets/albumselectcombobox.cpp:314
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
@@ -26044,7 +26044,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:291
+#: core/libs/album/widgets/albumselectcombobox.cpp:319
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -26059,7 +26059,7 @@ msgid "Select Album"
 msgstr "Izbrisano"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:548
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -26133,19 +26133,19 @@ msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:549
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Veličina slike:"
 
-#: core/libs/album/widgets/albumselectors.cpp:552
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Datoteka: "
 
-#: core/libs/album/widgets/albumselectors.cpp:553
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"

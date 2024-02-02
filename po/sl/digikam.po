@@ -37,16 +37,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-01 01:35+0000\n"
-"PO-Revision-Date: 2024-01-29 09:48+0100\n"
+"POT-Creation-Date: 2024-02-02 01:34+0000\n"
+"PO-Revision-Date: 2024-02-01 09:24+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.4.2\n"
 
 #: core/app/date/ddateedit.cpp:497
@@ -6340,11 +6340,10 @@ msgid "Caption"
 msgstr "Napis"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
-#, fuzzy, kde-format
-#| msgid "Preview target image"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
-msgstr "Predogled ciljne slike"
+msgstr "Predogled slike"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
@@ -20650,11 +20649,9 @@ msgid "Soundtrack Duration:"
 msgstr "Trajanje zvočnega posnetka:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Soundtrack Preview"
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "Predogled zvočnega posnetka"
+msgstr "Predogled zvočnega posnetka:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
@@ -27618,18 +27615,18 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "Za ta album ni bilo mogoče izračunati povprečnega datuma."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:74
-#: core/libs/album/widgets/albumselectcombobox.cpp:90
+#: core/libs/album/widgets/albumselectcombobox.cpp:76
+#: core/libs/album/widgets/albumselectcombobox.cpp:92
 #, kde-format
 msgid "No Album Selected"
 msgstr "Ni izbranega albuma"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:97
+#: core/libs/album/widgets/albumselectcombobox.cpp:99
 #, kde-format
 msgid "No Tag Selected"
 msgstr "Ni izbrane značke"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:299
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
@@ -27638,7 +27635,7 @@ msgstr[1] "%1 izbrani znački"
 msgstr[2] "%1 izbrane značke"
 msgstr[3] "%1 izbranih značk"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:278
+#: core/libs/album/widgets/albumselectcombobox.cpp:304
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
@@ -27647,7 +27644,7 @@ msgstr[1] "%1 izbran album"
 msgstr[2] "%1 izbrana albuma"
 msgstr[3] "%1 izbrani albumi"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:287
+#: core/libs/album/widgets/albumselectcombobox.cpp:314
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
@@ -27656,7 +27653,7 @@ msgstr[1] "%1 izločeni znački"
 msgstr[2] "%1 izločene značke"
 msgstr[3] "%1 izločenih značk"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:291
+#: core/libs/album/widgets/albumselectcombobox.cpp:319
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -27672,7 +27669,7 @@ msgid "Select Album"
 msgstr "Izberite album"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:548
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -27746,19 +27743,19 @@ msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Ponastavi izbrane značke"
 
-#: core/libs/album/widgets/albumselectors.cpp:549
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albumi (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:552
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Značke (Vse)"
 
-#: core/libs/album/widgets/albumselectors.cpp:553
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -41386,21 +41383,15 @@ msgid "Select here the font used to display text in the MJPEG."
 msgstr "Tukaj izberite pisavo za prikaz besedila v MJPEG."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
+#, kde-format
 msgid "An error as occurred while playing: the media is not valid"
-msgstr "Prišlo je do napake pri predstavnostnem predvajalniku..."
+msgstr "Med predvajanjem je prišlo do napake: medij ni veljaven"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error has occurred to show item\n"
-#| "%1"
+#, kde-format
 msgid "An error as occurred while playing: %1"
-msgstr ""
-"Med prikazovanjem predmeta je prišlo do napake\n"
-"%1"
+msgstr "Med predvajanjem je prišlo do napake: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264

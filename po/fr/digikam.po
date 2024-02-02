@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-01 01:35+0000\n"
-"PO-Revision-Date: 2024-01-26 09:49+0100\n"
+"POT-Creation-Date: 2024-02-02 01:34+0000\n"
+"PO-Revision-Date: 2024-01-31 21:32+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -27134,63 +27134,43 @@ msgid "Searches"
 msgstr "Recherches"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory was not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid "The MySQL database directory was not found."
-msgstr ""
-"Il a été impossible de trouver le dossier pour la base de données MySQL. "
-"Veuillez définir l'emplacement correct dans la boîte de dialogue suivante."
+msgstr "Il a été impossible de trouver le dossier de la base de données MySQL."
 
 #: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "Il a été impossible de trouver les outils binaires pour MySQL."
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "Le nom de la base de données est vide"
+msgstr "Il a été impossible de trouver la base de données du cœur de SQLite."
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"Si vous voulez démarrer avec une nouvelle configuration et avec un assistant "
-"à la première exécution, veuillez supprimer le fichier %1."
+"<p>Si vous voulez démarrer avec une nouvelle configuration et avec un "
+"assistant à la première exécution, veuillez supprimer le fichier : <br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.\n"
-#| "\n"
-#| "Details:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
 msgstr ""
-"Une erreur est survenue pendant le démarrage du serveur interne.\n"
-"\n"
-"Détails :\n"
-" %1"
+"Une erreur est survenue pendant le démarrage du serveur interne."
+"<p>Détails : \n"
+" %1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "Impossible d'ajouter l'étiquette à la base de données"
+msgstr "Impossible d'ouvrir la base de données."
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -27229,11 +27209,9 @@ msgstr ""
 "de la base de données dans le <b>menu de configuration</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "Impossible d'initialiser la base de données de vignettes"
+msgstr "Impossible d'initialiser la base de données."
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -27459,6 +27437,8 @@ msgstr ""
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
+"<p><b>Veuillez vérifier la configuration de la base de données grâce à cette "
+"boîte de dialogue.</b></p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
@@ -28139,39 +28119,39 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "Impossible de calculer la date moyenne pour cet album."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:74
-#: core/libs/album/widgets/albumselectcombobox.cpp:90
+#: core/libs/album/widgets/albumselectcombobox.cpp:76
+#: core/libs/album/widgets/albumselectcombobox.cpp:92
 #, kde-format
 msgid "No Album Selected"
 msgstr "Pas d'album sélectionné"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:97
+#: core/libs/album/widgets/albumselectcombobox.cpp:99
 #, kde-format
 msgid "No Tag Selected"
 msgstr "Pas d'étiquette sélectionnée"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:299
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "Une étiquette sélectionnée"
 msgstr[1] "%1 étiquettes sélectionnées"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:278
+#: core/libs/album/widgets/albumselectcombobox.cpp:304
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "Un album sélectionné"
 msgstr[1] "%1 albums sélectionnés"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:287
+#: core/libs/album/widgets/albumselectcombobox.cpp:314
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "Une étiquette exclue"
 msgstr[1] "%1 étiquettes exclues"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:291
+#: core/libs/album/widgets/albumselectcombobox.cpp:319
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -28185,7 +28165,7 @@ msgid "Select Album"
 msgstr "Sélectionner un album"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:548
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -28259,19 +28239,19 @@ msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Réinitialiser les étiquettes sélectionnées"
 
-#: core/libs/album/widgets/albumselectors.cpp:549
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albums (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:552
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Étiquettes (Toutes)"
 
-#: core/libs/album/widgets/albumselectors.cpp:553
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"

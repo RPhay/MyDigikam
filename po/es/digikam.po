@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-01 01:35+0000\n"
-"PO-Revision-Date: 2024-01-30 22:15+0100\n"
+"POT-Creation-Date: 2024-02-02 01:34+0000\n"
+"PO-Revision-Date: 2024-02-01 11:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -6392,11 +6392,10 @@ msgid "Caption"
 msgstr "Pie de foto"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
-#, fuzzy, kde-format
-#| msgid "Preview target image"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
-msgstr "Vista previa de la imagen de destino"
+msgstr "Vista previa de la imagen"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
@@ -20894,11 +20893,9 @@ msgid "Soundtrack Duration:"
 msgstr "Duración de la banda sonora:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Soundtrack Preview"
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "Vista previa de la banda sonora"
+msgstr "Prueba de la banda sonora:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
@@ -27943,39 +27940,39 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "No ha sido posible calcular la fecha media de este álbum."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:74
-#: core/libs/album/widgets/albumselectcombobox.cpp:90
+#: core/libs/album/widgets/albumselectcombobox.cpp:76
+#: core/libs/album/widgets/albumselectcombobox.cpp:92
 #, kde-format
 msgid "No Album Selected"
 msgstr "Ningún álbum seleccionado"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:97
+#: core/libs/album/widgets/albumselectcombobox.cpp:99
 #, kde-format
 msgid "No Tag Selected"
 msgstr "Ninguna etiqueta seleccionada"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:299
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "1 etiqueta seleccionada"
 msgstr[1] "%1 etiquetas seleccionadas"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:278
+#: core/libs/album/widgets/albumselectcombobox.cpp:304
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "1 álbum seleccionado"
 msgstr[1] "%1 álbumes seleccionados"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:287
+#: core/libs/album/widgets/albumselectcombobox.cpp:314
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "1 etiqueta excluida"
 msgstr[1] "%1 etiquetas seleccionadas"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:291
+#: core/libs/album/widgets/albumselectcombobox.cpp:319
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -27989,7 +27986,7 @@ msgid "Select Album"
 msgstr "Seleccionar álbum"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:548
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
@@ -28063,19 +28060,19 @@ msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Restablecer etiquetas seleccionadas"
 
-#: core/libs/album/widgets/albumselectors.cpp:549
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Álbumes (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:552
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Etiquetas (todas)"
 
-#: core/libs/album/widgets/albumselectors.cpp:553
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -41795,21 +41792,15 @@ msgid "Select here the font used to display text in the MJPEG."
 msgstr "Seleccione la letra a usar para mostrar texto en el MJPEG."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
+#, kde-format
 msgid "An error as occurred while playing: the media is not valid"
-msgstr "Ha ocurrido un error en el reproductor multimedia..."
+msgstr "Ha ocurrido un error durante la reproducción: el medio no es válido"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error has occurred to show item\n"
-#| "%1"
+#, kde-format
 msgid "An error as occurred while playing: %1"
-msgstr ""
-"Ha ocurrido un error al mostrar el elemento\n"
-"%1"
+msgstr "Ha ocurrido un error durante la reproducción: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-01 01:35+0000\n"
+"POT-Creation-Date: 2024-02-02 01:34+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -27511,18 +27511,18 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "تعذّر حساب متوسّط التّاريخ لهذا الألبوم."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:74
-#: core/libs/album/widgets/albumselectcombobox.cpp:90
+#: core/libs/album/widgets/albumselectcombobox.cpp:76
+#: core/libs/album/widgets/albumselectcombobox.cpp:92
 #, kde-format
 msgid "No Album Selected"
 msgstr "لا ألبومات محدّدة"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:97
+#: core/libs/album/widgets/albumselectcombobox.cpp:99
 #, kde-format
 msgid "No Tag Selected"
 msgstr "لا وسوم محدّدة"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:299
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
@@ -27533,7 +27533,7 @@ msgstr[3] "%1 وسوم محدّدة"
 msgstr[4] "%1 وسمًا محدّدًا"
 msgstr[5] "%1 وسم محدّد"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:278
+#: core/libs/album/widgets/albumselectcombobox.cpp:304
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
@@ -27544,7 +27544,7 @@ msgstr[3] "%1 ألبومات محدّدة"
 msgstr[4] "%1 ألبومًا محدّدًا"
 msgstr[5] "%1 ألبوم محدّد"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:287
+#: core/libs/album/widgets/albumselectcombobox.cpp:314
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
@@ -27555,7 +27555,7 @@ msgstr[3] "%1 وسوم مستثناة"
 msgstr[4] "%1 وسمًا مستثنًى"
 msgstr[5] "%1 وسم مستثنى"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:291
+#: core/libs/album/widgets/albumselectcombobox.cpp:319
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -27574,7 +27574,7 @@ msgid "Select Album"
 msgstr "اختر الألبوم"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:548
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
@@ -27655,20 +27655,20 @@ msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "صفّر الوسوم المحدّدة"
 
-#: core/libs/album/widgets/albumselectors.cpp:549
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "الألبومات (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:552
+#: core/libs/album/widgets/albumselectors.cpp:554
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "الوسوم: "
 
-#: core/libs/album/widgets/albumselectors.cpp:553
+#: core/libs/album/widgets/albumselectors.cpp:555
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
