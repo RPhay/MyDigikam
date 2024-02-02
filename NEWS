@@ -217,8 +217,8 @@ BUGFIXES:
 195 ==> 480651 - Exporting to JXL lowers the colour depth to 8 bpp.
 196 ==> 480532 - 'All albums' Checkbox Doesn't Update 'X Albums Selected' Text.
 197 ==> 479307 - digiKam: no pictures to pick after application starts.
-198 ==> 
-199 ==> 
+198 ==> 480732 - Edit of Face Tags not possible - digiKam will simply exit.
+199 ==> 480746 - digiKam 8.2.0 crashes if adding ? to face tag.
 200 ==> 
 201 ==> 
 202 ==> 
