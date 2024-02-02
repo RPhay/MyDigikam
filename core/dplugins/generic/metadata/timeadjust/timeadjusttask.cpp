@@ -212,9 +212,9 @@ void TimeAdjustTask::run()
         }
     }
 
-    if (writeToSidecar && DMetadata::hasSidecar(d->url.toLocalFile()))
+    if (d->settings.updFileModDate && writeToSidecar && DMetadata::hasSidecar(d->url.toLocalFile()))
     {
-        if (!DFileOperations::copyModificationTime(d->url.toLocalFile(), DMetadata::sidecarPath(d->url.toLocalFile())))
+        if (!DFileOperations::setModificationTime(DMetadata::sidecarPath(d->url.toLocalFile()), adj))
         {
             status |= TimeAdjustList::FILE_TIME_ERROR;
         }
