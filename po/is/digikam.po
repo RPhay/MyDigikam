@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-02 01:34+0000\n"
-"PO-Revision-Date: 2024-01-26 14:40+0000\n"
+"PO-Revision-Date: 2024-02-01 08:28+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -6281,12 +6281,10 @@ msgid "Caption"
 msgstr "Skýringatexti"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "View the selected image"
-#| msgid "Preview Image"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
-msgstr "Fyrri mynd"
+msgstr "Forskoðun myndar"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
@@ -20576,11 +20574,9 @@ msgid "Soundtrack Duration:"
 msgstr "Tímalengd hljóðrásar:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Soundtrack Preview"
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "Sýnishorn af hljóðrás"
+msgstr "Sýnishorn af hljóðrás:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
@@ -26579,63 +26575,42 @@ msgid "Searches"
 msgstr "Leitir"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory was not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid "The MySQL database directory was not found."
-msgstr ""
-"Mappa MySQL gagnagrunnsins fannst ekki, stilltu rétta staðsetningu í næsta "
-"glugga."
+msgstr "Mappa MySQL gagnagrunnsins fannst ekki."
 
 #: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "Tvíundarkerfistól MySQL gagnagrunnsins fundust ekki."
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "Aðalgagnagrunnurinn er tómur"
+msgstr "SQLite-kjarnagagnagrunnurinn fannst ekki."
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"Ef þú vilt byrja aftur með nýja uppsetningu og keyra fyrsta-skiptis "
-"leiðarvísinn, skaltu eyða skránni %1"
+"<p>Ef þú vilt byrja aftur með nýja uppsetningu og keyra fyrsta-skiptis "
+"leiðarvísinn, skaltu eyða skránni:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.\n"
-#| "\n"
-#| "Details:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
 msgstr ""
-"Villa kom upp við ræsingu á innri þjóni.\n"
-"\n"
-"Nánar:\n"
-"%1"
+"Villa kom upp við ræsingu á innri þjóni.<p>Nánar:\n"
+"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "Mistókst að bæta merki í gagnagrunn"
+msgstr "Mistókst að opna gagnagrunninn."
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -26672,11 +26647,9 @@ msgstr ""
 "gagnagrunnsstillingar í <b>stillingavalmyndinni</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "Mistókst að ræsa gagnagrunn smámynda"
+msgstr "Mistókst að frumstilla gagnagrunninn."
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -26889,7 +26862,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:742
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
-msgstr ""
+msgstr "<p><b>Athugaðu stillingar gagnagrunnsins í þessum glugga.</b></p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
@@ -41240,21 +41213,15 @@ msgid "Select here the font used to display text in the MJPEG."
 msgstr "Veldu hér letur fyrir texta sem birtist í MJPEG-streymi."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
+#, kde-format
 msgid "An error as occurred while playing: the media is not valid"
-msgstr "Villa kom upp með margmiðlunarspilarann..."
+msgstr "Villa kom upp við að spila: margmiðlunargögnin eru ekki gild"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error has occurred to show item\n"
-#| "%1"
+#, kde-format
 msgid "An error as occurred while playing: %1"
-msgstr ""
-"Villa kom upp við birtingu atriðisins\n"
-"%1"
+msgstr "Villa kom upp við að spila: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
