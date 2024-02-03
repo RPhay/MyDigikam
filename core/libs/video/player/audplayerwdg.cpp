@@ -256,7 +256,7 @@ void AudPlayerWdg::slotTimeUpdaterTimeout(qint64 current)
 
     {
         QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
-                             i18n("An error as occurred while playing: the media is not valid"));
+                             i18n("An error has occurred while playing: the media is not valid"));
         return;
     }
 
@@ -285,7 +285,7 @@ void AudPlayerWdg::slotPlayerError(QMediaPlayer::Error err, const QString& messa
     if (err != QMediaPlayer::NoError)
     {
         QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
-                             i18n("An error as occurred while playing: %1", message));
+                             i18n("An error has occurred while playing: %1", message));
     }
 }
 
@@ -320,7 +320,7 @@ void AudPlayerWdg::slotPlayerError(QAVPlayer::Error err, const QString& message)
     if (err != QAVPlayer::NoError)
     {
         QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
-                             i18n("An error as occurred while playing: %1", message));
+                             i18n("An error has occurred while playing: %1", message));
     }
 }
 
