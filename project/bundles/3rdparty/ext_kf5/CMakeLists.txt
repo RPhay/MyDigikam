@@ -204,7 +204,7 @@ InstallKDEComponent(ki18n               ${KDE_VERSION} "${Qt6CommonOptions}"    
 InstallKDEComponent(kcrash              ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(kcodecs             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(kauth               ${KDE_VERSION} "${Qt6CommonOptions};${MacosKauthBackend}"  "")
-InstallKDEComponent(kguiaddons          ${KDE_VERSION} "${Qt6CommonOptions}"                       "kguiaddons-mingw.patch")
+InstallKDEComponent(kguiaddons          ${KDE_VERSION} "${Qt6CommonOptions};-DWITH_WAYLAND=OFF"    "kguiaddons-mingw.patch")
 InstallKDEComponent(kwidgetsaddons      ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(kitemviews          ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(kcompletion         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")

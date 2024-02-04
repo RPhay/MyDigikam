@@ -58,7 +58,6 @@ cmake $ORIG_WD/../3rdparty \
 
 # core KF5 frameworks dependencies
 cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules        -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_plasma-wayland-protocols   -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kconfig                    -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_breeze-icons               -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kcoreaddons                -- -j$CPU_CORES
