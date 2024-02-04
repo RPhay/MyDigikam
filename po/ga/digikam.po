@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 01:34+0000\n"
+"POT-Creation-Date: 2024-02-04 01:36+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -41686,15 +41686,16 @@ msgid "Select here the font used to display text in the MJPEG."
 msgstr "Roghnaigh cineál eagarthóireachta an ábhair anseo."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, kde-format
-msgid "An error as occurred while playing: the media is not valid"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "An error occurred during tag creation:"
+msgid "An error has occurred while playing: the media is not valid"
+msgstr "Tharla earráid agus clib á cruthú:"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
 #, fuzzy, kde-format
 #| msgid "An error occurred during tag creation:"
-msgid "An error as occurred while playing: %1"
+msgid "An error has occurred while playing: %1"
 msgstr "Tharla earráid agus clib á cruthú:"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184

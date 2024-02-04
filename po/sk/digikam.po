@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 01:34+0000\n"
+"POT-Creation-Date: 2024-02-04 01:36+0000\n"
 "PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -41675,7 +41675,7 @@ msgstr "<p>Tu nastavte farbu, ktorou budú vykreslené čiarkované čiary vodí
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player..."
-msgid "An error as occurred while playing: the media is not valid"
+msgid "An error has occurred while playing: the media is not valid"
 msgstr "Vyskytla se chyba s prehrávačom médií..."
 
 #: core/libs/video/player/audplayerwdg.cpp:288
@@ -41684,7 +41684,7 @@ msgstr "Vyskytla se chyba s prehrávačom médií..."
 #| msgid ""
 #| "An error has occurred to show item\n"
 #| "%1"
-msgid "An error as occurred while playing: %1"
+msgid "An error has occurred while playing: %1"
 msgstr ""
 "Pri spracovaní položky nastala chyba\n"
 "%1"

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 01:34+0000\n"
+"POT-Creation-Date: 2024-02-04 01:36+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -42034,13 +42034,13 @@ msgstr "ツリー表示のテキストに使うフォントを選択します。
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
-msgid "An error as occurred while playing: the media is not valid"
+msgid "An error has occurred while playing: the media is not valid"
 msgstr "メディアプレーヤーにエラーが発生しました..."
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
 #, fuzzy, kde-format
-msgid "An error as occurred while playing: %1"
+msgid "An error has occurred while playing: %1"
 msgstr "メディアプレーヤーにエラーが発生しました..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184

@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 01:34+0000\n"
-"PO-Revision-Date: 2024-01-28 20:02+0100\n"
+"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"PO-Revision-Date: 2024-02-03 20:30+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -6273,11 +6273,10 @@ msgid "Caption"
 msgstr "Titolo"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
-#, fuzzy, kde-format
-#| msgid "Preview target image"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
-msgstr "Antaŭrigardi celbildon"
+msgstr "Antaŭrigardi bildon"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
@@ -10101,7 +10100,7 @@ msgstr "Nova larĝo:"
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
 msgid " px"
-msgstr " rm"
+msgstr " px"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:119
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:125
@@ -10774,7 +10773,7 @@ msgstr "Larĝeco:"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:365
 #, kde-format
 msgid "px"
-msgstr "rm"
+msgstr "px"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:362
 #, kde-format
@@ -10835,7 +10834,7 @@ msgstr ""
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
-msgstr "rm"
+msgstr "px"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
 #, kde-format
@@ -20546,11 +20545,9 @@ msgid "Soundtrack Duration:"
 msgstr "Daŭro de Sontrako:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Soundtrack Preview"
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "Antaŭrigardo de voĉa bando"
+msgstr "Antaŭrigardo de Sontrako:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
@@ -26543,63 +26540,42 @@ msgid "Searches"
 msgstr "Serĉoj"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory was not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid "The MySQL database directory was not found."
-msgstr ""
-"La dosierujo de MySQL-datumbazo ne estis trovita, bonvolu agordi la ĝustan "
-"lokon en la sekva dialogo."
+msgstr "La dosierujo de MySQL-datumbazo ne estis trovita."
 
 #: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "La binarprogramiloj de MySQL ne estis trovitaj."
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "La kerna datumbaza nomo estas malplena"
+msgstr "La kerna datumbazo de SQLite ne estis trovita."
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"Se vi volas komenci per nova agordo kaj per unua rula asistanto, forigu la "
-"dosieron %1"
+"<p>Se vi volas komenci kun nova agordo kaj per unua rulasistanto, forigu la "
+"dosieron:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.\n"
-#| "\n"
-#| "Details:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
 msgstr ""
-"Eraro okazis dum la interna servilo starto.\n"
-"\n"
-"Detaloj:\n"
-"%1"
+"Eraro okazis dum la interna servilostarto.<p>Detaloj:\n"
+"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "Malsukcesis aldoni etikedon al datumbazo"
+msgstr "Malsukcesis malfermi la datumbazon."
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -26635,11 +26611,9 @@ msgstr ""
 "agordojn en la <b>agorda menuo</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "Malsukcesis Pravalorizi Datumbazon de Bildetoj"
+msgstr "Malsukcesis pravalorizi la datumbazon."
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -26853,7 +26827,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:742
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
-msgstr ""
+msgstr "<p><b>Bonvolu kontroli la datumbazan agordon en ĉi dialogo.</b></p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
@@ -41163,20 +41137,16 @@ msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en la MJPEG."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
-msgid "An error as occurred while playing: the media is not valid"
-msgstr "Okazis eraro ĉe la plurmedia ludilo..."
+#| msgid "An error as occurred while playing: the media is not valid"
+msgid "An error has occurred while playing: the media is not valid"
+msgstr "Okazis eraro dum ludado: la aŭdvidaĵo ne estas valida"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
 #, fuzzy, kde-format
-#| msgid ""
-#| "An error has occurred to show item\n"
-#| "%1"
-msgid "An error as occurred while playing: %1"
-msgstr ""
-"Okazis eraro por montri eron\n"
-"%1"
+#| msgid "An error as occurred while playing: %1"
+msgid "An error has occurred while playing: %1"
+msgstr "Okazis eraro ludante: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -66776,28 +66746,3 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
-
-#~ msgid ""
-#~ "The MySQL binary tools was not found, please set the correct location in "
-#~ "the next dialog."
-#~ msgstr ""
-#~ "La MySQL-binaraj iloj ne estis trovitaj, bonvolu agordi la ĝustan lokon "
-#~ "en la sekva dialogo."
-
-#~ msgid ""
-#~ "The SQLite core database was not found, please set the correct location "
-#~ "in the next dialog."
-#~ msgstr ""
-#~ "La SQLite-kerna datumbazo ne estis trovita, bonvolu agordi la ĝustan "
-#~ "lokon en la sekva dialogo."
-
-#~ msgid ""
-#~ "Failed to open the database.\n"
-#~ "\n"
-#~ "You cannot use digiKam without a working database.\n"
-#~ "Please check the database settings in the next dialog."
-#~ msgstr ""
-#~ "Malsukcesis malfermi la datumbazon.\n"
-#~ "\n"
-#~ "Vi ne povas uzi digiKam sen funkcianta datumbazo.\n"
-#~ "Bonvolu kontroli la datumbazajn agordojn en la sekva dialogo."

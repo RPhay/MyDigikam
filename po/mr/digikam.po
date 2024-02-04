@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 01:34+0000\n"
+"POT-Creation-Date: 2024-02-04 01:36+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -39632,13 +39632,13 @@ msgstr ""
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, kde-format
-msgid "An error as occurred while playing: the media is not valid"
+msgid "An error has occurred while playing: the media is not valid"
 msgstr ""
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
 #, kde-format
-msgid "An error as occurred while playing: %1"
+msgid "An error has occurred while playing: %1"
 msgstr ""
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184

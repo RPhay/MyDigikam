@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 01:34+0000\n"
+"POT-Creation-Date: 2024-02-04 01:36+0000\n"
 "PO-Revision-Date: 2024-02-01 09:24+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -41383,14 +41383,16 @@ msgid "Select here the font used to display text in the MJPEG."
 msgstr "Tukaj izberite pisavo za prikaz besedila v MJPEG."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, kde-format
-msgid "An error as occurred while playing: the media is not valid"
+#, fuzzy, kde-format
+#| msgid "An error as occurred while playing: the media is not valid"
+msgid "An error has occurred while playing: the media is not valid"
 msgstr "Med predvajanjem je prišlo do napake: medij ni veljaven"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, kde-format
-msgid "An error as occurred while playing: %1"
+#, fuzzy, kde-format
+#| msgid "An error as occurred while playing: %1"
+msgid "An error has occurred while playing: %1"
 msgstr "Med predvajanjem je prišlo do napake: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184

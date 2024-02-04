@@ -52,17 +52,17 @@
 # Jurriaan Pruis <email@jurriaanpruis.nl>, 2006.
 # Freek de Kruijf <f.de.kruijf@hetnet.nl>, 2006, 2008, 2009.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012.
-# Freek de Kruijf <f.de.kruijf@gmail.com>, 2011, 2013, 2014, 2015.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2011, 2013, 2014, 2015.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012, 2013, 2014.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2011, 2014, 2017.
 # Rinse de Vries <RinseDeVries@home.nl>, 2005, 2006.
 # Rinse de Vries <rinsedevries@home.nl>, 2007.
-# Freek de Kruijf <f.de.kruijf@gmail.com>, 2011, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2011, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 01:34+0000\n"
+"POT-Creation-Date: 2024-02-04 01:36+0000\n"
 "PO-Revision-Date: 2024-02-01 10:34+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -41694,14 +41694,16 @@ msgstr ""
 "Hier het lettertype selecteren dat wordt gebruikt voor tekst in de MJPEG."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, kde-format
-msgid "An error as occurred while playing: the media is not valid"
+#, fuzzy, kde-format
+#| msgid "An error as occurred while playing: the media is not valid"
+msgid "An error has occurred while playing: the media is not valid"
 msgstr "Er deed zich een fout tijdens afspelen: het medium is niet geldig"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, kde-format
-msgid "An error as occurred while playing: %1"
+#, fuzzy, kde-format
+#| msgid "An error as occurred while playing: %1"
+msgid "An error has occurred while playing: %1"
 msgstr "Er deed zich een fout voor bij het afspelen van: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184

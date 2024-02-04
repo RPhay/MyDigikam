@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 01:34+0000\n"
+"POT-Creation-Date: 2024-02-04 01:36+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -41724,14 +41724,14 @@ msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player..."
-msgid "An error as occurred while playing: the media is not valid"
+msgid "An error has occurred while playing: the media is not valid"
 msgstr "미디어 재생기 오류 발생..."
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player..."
-msgid "An error as occurred while playing: %1"
+msgid "An error has occurred while playing: %1"
 msgstr "미디어 재생기 오류 발생..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184

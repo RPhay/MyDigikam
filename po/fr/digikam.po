@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-02 01:34+0000\n"
-"PO-Revision-Date: 2024-01-31 21:32+0100\n"
+"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"PO-Revision-Date: 2024-02-02 08:52+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -6436,12 +6436,10 @@ msgid "Caption"
 msgstr "Légende"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "View the selected image"
-#| msgid "Preview Image"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
-msgstr "Aperçu de l'image"
+msgstr "Faire un aperçu d'image"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
@@ -21028,11 +21026,9 @@ msgid "Soundtrack Duration:"
 msgstr "Durée de la bande sonore :"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Soundtrack Preview"
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "Aperçu de la piste audio"
+msgstr "Aperçu de la piste audio :"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
@@ -42045,20 +42041,16 @@ msgstr ""
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
-msgid "An error as occurred while playing: the media is not valid"
-msgstr "Une erreur est survenue avec le lecteur multimédia…"
+#| msgid "An error as occurred while playing: the media is not valid"
+msgid "An error has occurred while playing: the media is not valid"
+msgstr "Une erreur est survenue durant la lecture : le média est non valable"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
 #, fuzzy, kde-format
-#| msgid ""
-#| "An error has occurred to show item\n"
-#| "%1"
-msgid "An error as occurred while playing: %1"
-msgstr ""
-"Une erreur est survenue pour afficher l'élément\n"
-"%1"
+#| msgid "An error as occurred while playing: %1"
+msgid "An error has occurred while playing: %1"
+msgstr "Un erreur est survenue lors de la lecture : %1 "
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
