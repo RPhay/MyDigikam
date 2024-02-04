@@ -65,8 +65,8 @@ public:
 
 #endif
 
-    QPushButton* playButton   = nullptr;
-    QPushButton* stopButton   = nullptr;
+    QPushButton* playPauseBtn = nullptr;
+    QPushButton* stopBtn      = nullptr;
 
     QLabel* elapsedTimeLabel  = nullptr;
     QLabel* totalTimeLabel    = nullptr;
@@ -107,8 +107,8 @@ AudPlayerWdg::AudPlayerWdg(QWidget* const parent)
 
 #endif
 
-    d->playButton = new QPushButton(QIcon::fromTheme(QLatin1String("media-playback-start")), QString(), this);
-    d->stopButton = new QPushButton(QIcon::fromTheme(QLatin1String("media-playback-stop")),  QString(), this);
+    d->playPauseBtn = new QPushButton(QIcon::fromTheme(QLatin1String("media-playback-start")), QString(), this);
+    d->stopBtn      = new QPushButton(QIcon::fromTheme(QLatin1String("media-playback-stop")),  QString(), this);
 
     d->elapsedTimeLabel          = new QLabel(this);
     DLineWidget* const separator = new DLineWidget(Qt::Vertical, this);
@@ -128,8 +128,8 @@ AudPlayerWdg::AudPlayerWdg(QWidget* const parent)
     grid->setContentsMargins(QMargins(0, 0, 0, 0));
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                           QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
-    grid->addWidget(d->playButton,       0, 0, 1, 1);
-    grid->addWidget(d->stopButton,       0, 1, 1, 1);
+    grid->addWidget(d->playPauseBtn,     0, 0, 1, 1);
+    grid->addWidget(d->stopBtn,          0, 1, 1, 1);
     grid->addWidget(d->elapsedTimeLabel, 0, 2, 1, 1);
     grid->addWidget(separator,           0, 3, 1, 1);
     grid->addWidget(d->totalTimeLabel,   0, 4, 1, 1);
@@ -138,10 +138,10 @@ AudPlayerWdg::AudPlayerWdg(QWidget* const parent)
 
     // ----------------------
 
-    connect(d->playButton, SIGNAL(clicked()),
+    connect(d->playPauseBtn, SIGNAL(clicked()),
             this, SLOT(slotPlay()));
 
-    connect(d->stopButton, SIGNAL(clicked()),
+    connect(d->stopBtn, SIGNAL(clicked()),
             this, SLOT(slotStop()));
 
     connect(d->volumeWidget, SIGNAL(valueChanged(int)),
@@ -296,13 +296,13 @@ void AudPlayerWdg::slotPlayerStateChanged(QMediaPlayer::PlaybackState state)
         case QMediaPlayer::PausedState:
         case QMediaPlayer::StoppedState:
         {
-            d->playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
+            d->playPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
             break;
         }
 
         case QMediaPlayer::PlayingState:
         {
-            d->playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
+            d->playPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
             break;
         }
 
@@ -331,13 +331,13 @@ void AudPlayerWdg::slotPlayerStateChanged(QAVPlayer::State state)
         case QAVPlayer::PausedState:
         case QAVPlayer::StoppedState:
         {
-            d->playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
+            d->playPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
             break;
         }
 
         case QAVPlayer::PlayingState:
         {
-            d->playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
+            d->playPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
             break;
         }
 
