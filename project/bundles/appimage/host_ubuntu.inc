@@ -169,7 +169,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libltdl-dev"
                    "libglib2.0-dev"
                    "libusb-1.0-0-dev"
-                   "libwayland-dev"
                    "libclang-dev"
                    "libsm-dev"
                    "freeglut3-dev"
@@ -202,7 +201,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libxshmfence-dev"
                    "libcanberra-dev"
                    "libgcrypt11-dev"
-                   "wayland-protocols"
                    "libasound2-dev"
                   )
 

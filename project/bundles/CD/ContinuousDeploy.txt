@@ -101,11 +101,11 @@ Architecture and configuration to setup a continuous deployment computer.
   * From local digiKam git repository, run project/bundles/macports/makeall.sh.
   * To update Macports PKG all the days at 13h00, run "macports_update.sh" script in background with screen CLI tool.
 
-- XBuntu 18.04: system is installed using MXE procedure.
+- XUBuntu 18.04: system is installed using MXE procedure.
   * @IP: 192.168.56.102
   * To update Windows installer all the days at 15h00, run "mxe_update.sh" script in background with screen CLI tool.
 
-- XBuntu 18.04: system is installed using AppImage procedure.
+- XUBuntu 18.04: system is installed using AppImage procedure.
   * @IP: 192.168.56.103
   * To update Linux bundle all the days at 11h00, run "appimage_update.sh" script in background with screen CLI tool.
 
