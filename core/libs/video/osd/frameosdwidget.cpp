@@ -89,7 +89,7 @@ FrameOsdWidget::FrameOsdWidget(QWidget* const parent)
     d->showTags->setWhatsThis(i18nc("@info", "Show the digiKam image tag names at the bottom of the screen."));
 
     d->osdFont                 = new DFontSelect(i18nc("@option", "On Screen Display Font:"), this);
-    d->osdFont->setToolTip(i18nc("@info", "Select here the font used to display text in the MJPEG."));
+    d->osdFont->setToolTip(i18nc("@info", "Select here the font used to display text on the screen display ."));
 
     QGridLayout* const grid    = new QGridLayout(this);
     grid->addWidget(d->showName,             1, 0, 1, 1);

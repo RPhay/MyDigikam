@@ -438,4 +438,4 @@ void FrameOsd::insertMessageOsdToFrame(QImage& frm,
     p.drawText(bgErreurRect, messAlign, mess);
 }
 
-} // namespace DigikamGenericMjpegStreamPlugin
+} // namespace Digikam

@@ -37,34 +37,34 @@ FrameOsdSettings::~FrameOsdSettings()
 
 void FrameOsdSettings::readSettings(KConfigGroup& group)
 {
-    printName            = group.readEntry("MJPEGStreamPrintNameEntry",                        true);
-    printDate            = group.readEntry("MJPEGStreamPrintDateEntry",                        true);
-    printApertureFocal   = group.readEntry("MJPEGStreamPrintApertureFocalEntry",               false);
-    printExpoSensitivity = group.readEntry("MJPEGStreamPrintExpoSensitivityEntry",             false);
-    printMakeModel       = group.readEntry("MJPEGStreamPrintMakeModelEntry",                   false);
-    printLensModel       = group.readEntry("MJPEGStreamPrintLensModelEntry",                   false);
-    printComment         = group.readEntry("MJPEGStreamPrintCommentEntry",                     false);
-    printTitle           = group.readEntry("MJPEGStreamPrintTitleEntry",                       false);
-    printCapIfNoTitle    = group.readEntry("MJPEGStreamPrintCapIfNoTitleEntry",                false);
-    printTags            = group.readEntry("MJPEGStreamPrintTagsEntry",                        false);
-    printRating          = group.readEntry("MJPEGStreamPrintRatingEntry",                      false);
-    osdFont              = group.readEntry("MJPEGStreamCaptionFontEntry",                      QFontDatabase::systemFont(QFontDatabase::GeneralFont));
+    printName            = group.readEntry("FrameOsdPrintNameEntry",                        true);
+    printDate            = group.readEntry("FrameOsdPrintDateEntry",                        true);
+    printApertureFocal   = group.readEntry("FrameOsdPrintApertureFocalEntry",               false);
+    printExpoSensitivity = group.readEntry("FrameOsdPrintExpoSensitivityEntry",             false);
+    printMakeModel       = group.readEntry("FrameOsdPrintMakeModelEntry",                   false);
+    printLensModel       = group.readEntry("FrameOsdPrintLensModelEntry",                   false);
+    printComment         = group.readEntry("FrameOsdPrintCommentEntry",                     false);
+    printTitle           = group.readEntry("FrameOsdPrintTitleEntry",                       false);
+    printCapIfNoTitle    = group.readEntry("FrameOsdPrintCapIfNoTitleEntry",                false);
+    printTags            = group.readEntry("FrameOsdPrintTagsEntry",                        false);
+    printRating          = group.readEntry("FrameOsdPrintRatingEntry",                      false);
+    osdFont              = group.readEntry("FrameOsdCaptionFontEntry",                      QFontDatabase::systemFont(QFontDatabase::GeneralFont));
 }
 
 void FrameOsdSettings::writeSettings(KConfigGroup& group)
 {
-    group.writeEntry("MJPEGStreamPrintNameEntry",            printName);
-    group.writeEntry("MJPEGStreamPrintDateEntry",            printDate);
-    group.writeEntry("MJPEGStreamPrintApertureFocalEntry",   printApertureFocal);
-    group.writeEntry("MJPEGStreamPrintExpoSensitivityEntry", printExpoSensitivity);
-    group.writeEntry("MJPEGStreamPrintMakeModelEntry",       printMakeModel);
-    group.writeEntry("MJPEGStreamPrintLensModelEntry",       printLensModel);
-    group.writeEntry("MJPEGStreamPrintCommentEntry",         printComment);
-    group.writeEntry("MJPEGStreamPrintTitleEntry",           printTitle);
-    group.writeEntry("MJPEGStreamPrintCapIfNoTitleEntry",    printCapIfNoTitle);
-    group.writeEntry("MJPEGStreamPrintTagsEntry",            printTags);
-    group.writeEntry("MJPEGStreamPrintRatingEntry",          printRating);
-    group.writeEntry("MJPEGStreamCaptionFontEntry",          osdFont);
+    group.writeEntry("FrameOsdPrintNameEntry",            printName);
+    group.writeEntry("FrameOsdPrintDateEntry",            printDate);
+    group.writeEntry("FrameOsdPrintApertureFocalEntry",   printApertureFocal);
+    group.writeEntry("FrameOsdPrintExpoSensitivityEntry", printExpoSensitivity);
+    group.writeEntry("FrameOsdPrintMakeModelEntry",       printMakeModel);
+    group.writeEntry("FrameOsdPrintLensModelEntry",       printLensModel);
+    group.writeEntry("FrameOsdPrintCommentEntry",         printComment);
+    group.writeEntry("FrameOsdPrintTitleEntry",           printTitle);
+    group.writeEntry("FrameOsdPrintCapIfNoTitleEntry",    printCapIfNoTitle);
+    group.writeEntry("FrameOsdPrintTagsEntry",            printTags);
+    group.writeEntry("FrameOsdPrintRatingEntry",          printRating);
+    group.writeEntry("FrameOsdCaptionFontEntry",          osdFont);
 }
 
 } // namespace Digikam
