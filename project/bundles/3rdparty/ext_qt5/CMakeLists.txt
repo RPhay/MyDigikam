@@ -82,6 +82,7 @@ ExternalProject_Add(ext_qt5
                   -skip qtserialbus                 # No need serial bus support
                   -skip qtserialport                # No need serial port support
                   -skip qtvirtualkeyboard           # No need virtual keyboard support
+                  -skip qtwayland                     # No support of Wayland in AppImage with Qt5
                   -skip qtwebglplugin               # No need browser OpenGL extension support
                   -skip qtwebsockets                # No need websocket support
                   -skip qtwebview                   # QML extension for QWebEngine
