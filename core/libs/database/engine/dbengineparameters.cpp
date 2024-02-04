@@ -382,7 +382,7 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
         databaseNameThumbnails    = group.readPathEntry(configDatabaseNameThumbnails,            QString());
         databaseNameFace          = group.readPathEntry(configDatabaseNameFace,                  QString());
         databaseNameSimilarity    = group.readPathEntry(configDatabaseNameSimilarity,            QString());
-        walMode                   = group.readEntry(configDatabaseWALMode,                       false);
+        walMode                   = group.readEntry(configDatabaseWALMode,                       true);
     }
     else
     {
