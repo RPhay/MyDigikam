@@ -54,7 +54,7 @@ void TwoProgressItemsContainer::scheduleOnProgressItem(QAtomicPointer<ProgressIt
 
 void TwoProgressItemsContainer::advance(QAtomicPointer<ProgressItem>& ptr, int n)
 {
-    if (ptr.loadRelaxed()->advance(n))
+    if (ptr && ptr.loadRelaxed()->advance(n))
     {
         ProgressItem* const item = ptr;
 
@@ -94,8 +94,11 @@ void FileActionProgressItemContainer::schedulingForWrite(int numberOfInfos,
 {
     scheduleOnProgressItem(secondItem, numberOfInfos, action, creator);
 
-    connect(secondItem, SIGNAL(progressItemCompleted(ProgressItem*)),
-            this, SIGNAL(signalWrittingDone()));
+    if (secondItem)
+    {
+        connect(secondItem, SIGNAL(progressItemCompleted(ProgressItem*)),
+                this, SIGNAL(signalWrittingDone()));
+    }
 }
 
 void FileActionProgressItemContainer::written(int numberOfInfos)
