@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -40632,7 +40632,7 @@ msgstr "&جادهی:‌"
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "<p>در اینجا رنگ استفاده‌شده برای ترسیم خط‌چینهای راهنما را تنظیم کنید."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -66056,6 +66056,12 @@ msgstr "آلبومها"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&مرتب‌سازی تصاویر‌"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr ""
+#~ "<p>در اینجا رنگ استفاده‌شده برای ترسیم خط‌چینهای راهنما را تنظیم کنید."
 
 #, fuzzy
 #~ msgid "No codec could be found for: "

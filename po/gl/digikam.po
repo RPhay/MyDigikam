@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2023-09-03 12:57+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -44882,11 +44882,11 @@ msgstr "Situación na pantalla:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
+#| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr ""
-"Indique aquí o tipo de letra empregado para mostrar o texto da presentación."
+"Escolla aquí o tipo de letra empregado nos textos das vistas en árbore."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, fuzzy, kde-format
@@ -73114,6 +73114,14 @@ msgstr "Elementos do álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os elementos"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in the slideshow."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr ""
+#~ "Indique aquí o tipo de letra empregado para mostrar o texto da "
+#~ "presentación."
 
 #, fuzzy
 #~| msgid ""

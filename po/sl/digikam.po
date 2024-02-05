@@ -37,16 +37,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
-"PO-Revision-Date: 2024-02-01 09:24+0100\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
+"PO-Revision-Date: 2024-02-04 08:28+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.4.2\n"
 
 #: core/app/date/ddateedit.cpp:497
@@ -41377,21 +41377,20 @@ msgid "On Screen Display Font:"
 msgstr "Pisava prikaza na zaslonu:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
-msgstr "Tukaj izberite pisavo za prikaz besedila v MJPEG."
+msgid "Select here the font used to display text on the screen display ."
+msgstr "Tukaj izberite pisavo za prikaz besedila v drevesnem pogledu."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error as occurred while playing: the media is not valid"
+#, kde-format
 msgid "An error has occurred while playing: the media is not valid"
 msgstr "Med predvajanjem je prišlo do napake: medij ni veljaven"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid "An error as occurred while playing: %1"
+#, kde-format
 msgid "An error has occurred while playing: %1"
 msgstr "Med predvajanjem je prišlo do napake: %1"
 
@@ -67039,6 +67038,10 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Predmeti uvoza"
+
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Tukaj izberite pisavo za prikaz besedila v MJPEG."
 
 #~ msgid ""
 #~ "The MySQL binary tools was not found, please set the correct location in "

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -39387,7 +39387,7 @@ msgstr "אחוז:"
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -64358,6 +64358,11 @@ msgstr "פריטי אוסף-התמונות"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "סידור תמונות"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
 
 #, fuzzy
 #~ msgid "No codec could be found for: "

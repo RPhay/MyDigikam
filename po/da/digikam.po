@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -43564,7 +43564,7 @@ msgstr "Placering:"
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "Vælg skrifttype til tekst i trævisninger her."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -71753,6 +71753,12 @@ msgstr "Album-elementer"
 #, kde-format
 msgid "Import Items"
 msgstr "Importér elementer"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in Tree Views."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Vælg skrifttype til tekst i trævisninger her."
 
 #, fuzzy
 #~| msgid ""

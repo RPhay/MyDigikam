@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2024-01-21 14:14\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -39966,10 +39966,11 @@ msgid "On Screen Display Font:"
 msgstr "屏幕显示字体："
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
-msgstr "选择在 MJPEG 流中用于显示文字的字体。"
+msgid "Select here the font used to display text on the screen display ."
+msgstr "选择在树形视图中用于显示文字的字体。"
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, fuzzy, kde-format
@@ -64943,6 +64944,10 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
+
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "选择在 MJPEG 流中用于显示文字的字体。"
 
 #~ msgid ""
 #~ "The MySQL binary tools was not found, please set the correct location in "

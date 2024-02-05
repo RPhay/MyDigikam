@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2024-02-01 08:28+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -41207,10 +41207,11 @@ msgid "On Screen Display Font:"
 msgstr "Letur skjábirtingar (OSD):"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
-msgstr "Veldu hér letur fyrir texta sem birtist í MJPEG-streymi."
+msgid "Select here the font used to display text on the screen display ."
+msgstr "Veldu hér letur fyrir texta sem birtist í greinasýnum."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, fuzzy, kde-format
@@ -66824,6 +66825,10 @@ msgstr "Albúmahlutir"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn hluti"
+
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Veldu hér letur fyrir texta sem birtist í MJPEG-streymi."
 
 #~ msgid ""
 #~ "The MySQL binary tools was not found, please set the correct location in "

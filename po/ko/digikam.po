@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -41718,7 +41718,7 @@ msgstr "화면 배치:"
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -67928,6 +67928,11 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "최근 태그"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
 #, fuzzy
 #~| msgid "Video codec"

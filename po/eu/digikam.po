@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -42668,7 +42668,7 @@ msgstr "Kokalekua:"
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr ""
 "Hautatu erabiliko den letra-tipoa testua zuhaitz-ikuspegian bistaratzeko."
 
@@ -69746,6 +69746,13 @@ msgstr "Album elementuak"
 #, kde-format
 msgid "Import Items"
 msgstr "Inportatu elementuak"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in Tree Views."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr ""
+#~ "Hautatu erabiliko den letra-tipoa testua zuhaitz-ikuspegian bistaratzeko."
 
 #, fuzzy
 #~| msgid ""

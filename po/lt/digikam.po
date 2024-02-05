@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -41679,7 +41679,7 @@ msgstr "Padėtis:"
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "Čia parinkite šriftą, kuriuo rodomas medžio turinys."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -68546,6 +68546,12 @@ msgstr "Albumo objektai"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Rikiuoti paveikslėlius"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in Tree Views."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Čia parinkite šriftą, kuriuo rodomas medžio turinys."
 
 #, fuzzy
 #~| msgid "Video codec"

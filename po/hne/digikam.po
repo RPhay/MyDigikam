@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -40080,7 +40080,7 @@ msgstr "प्रतिसत:"
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "गाइड डैस लाइन ड्रा करे मं उपयोग होए वाले रंग ल इहां सेट करव."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -65805,6 +65805,11 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "फोटू छांटव (&S)"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "गाइड डैस लाइन ड्रा करे मं उपयोग होए वाले रंग ल इहां सेट करव."
 
 #, fuzzy
 #~ msgid "No codec could be found for: "

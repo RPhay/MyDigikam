@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
-"PO-Revision-Date: 2024-02-03 20:30+0100\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
+"PO-Revision-Date: 2024-02-04 17:21+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -6920,7 +6920,7 @@ msgid ""
 "JPEG always uses lossy compression.</b></p>"
 msgstr ""
 "<p>Kroma subspecimenado reduktas dosiergrandecon profitante la malpli "
-"grandan sentemon de la okulo al kolorrezolucio. Kiom perceptebla estas la "
+"grandan sentemon de la okulo al kolordistingivo. Kiom perceptebla estas la "
 "diferenco dependas de la bildo - grandaj fotoj ĝenerale montros neniun "
 "diferencon, dum akraj, malgrandigitaj pikselaj grafikaĵoj povas perdi bonan "
 "kolordetalon.</p><p><b>4:4:4</b> - Neniu kroma subspecimeno, plej altkvalita "
@@ -10641,7 +10641,7 @@ msgstr "Nova Grandeco"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:305
 #, kde-format
 msgid "Preset Resolutions:"
-msgstr "Antaŭfiksitaj Rezolucioj:"
+msgstr "Antaŭfiksitaj Distingivoj:"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:307
 #, kde-format
@@ -10803,7 +10803,7 @@ msgstr "Pikselo/Colo"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:393
 #, kde-format
 msgid "New image resolution in pixels/inch."
-msgstr "Nova bilda rezolucio en pikseloj/colo."
+msgstr "Nova bilda distingivo en rastrumeroj/colo."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:400
 #, kde-format
@@ -17126,19 +17126,19 @@ msgstr "Bilda Orientiĝo"
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
-msgstr "Bildo X Rezolucio"
+msgstr "Bilda X-Distingivo"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
-msgstr "Bildo Y Rezolucio"
+msgstr "Bilda Y-Distingivo"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
-msgstr "Bilda Rezolucia Unuo"
+msgstr "Bilda Distingiva Unuo"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
@@ -17939,7 +17939,7 @@ msgid ""
 "The JPEG image size in pixels, using standard screen resolutions. Warning: "
 "larger size require more network bandwidth"
 msgstr ""
-"La JPEG-bildgrandeco en pikseloj, uzante normajn ekranrezoluciojn. Averto: "
+"La JPEG-bildgrandeco en pikseloj, uzante normajn ekrandistingivojn. Averto: "
 "pli granda grandeco postulas pli da reta bendolarĝo"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:160
@@ -18469,7 +18469,7 @@ msgstr "Specifi OCR-motorreĝimon."
 #, kde-format
 msgctxt "@label"
 msgid "Resolution Dpi:"
-msgstr "Rezolucio Dpi:"
+msgstr "Distingiva Dpi:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
 #, kde-format
@@ -19364,7 +19364,7 @@ msgid ""
 "print focal length from camera\n"
 "add a new line"
 msgstr ""
-"presi fotilan sensilrezolucion\n"
+"presi fotilan sensildistingivon\n"
 "presu fotilan aperturon\n"
 "presu fokusan distancon de fotilo\n"
 "aldonu novan linion"
@@ -21217,7 +21217,7 @@ msgstr "OpenGL-efikoj"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:82
 #, kde-format
 msgid "Use full screen resolution (slower)"
-msgstr "Uzi plenekranan rezolucion (pli malrapide)"
+msgstr "Uzi plenekranan distingivon (pli malrapide)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:98
@@ -41130,21 +41130,20 @@ msgid "On Screen Display Font:"
 msgstr "Surekrana ekrantiparo:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
-msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en la MJPEG."
+msgid "Select here the font used to display text on the screen display ."
+msgstr "Elekti ĉi tie la tiparon uzatan por montri tekston en Arbaj Vidoj."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error as occurred while playing: the media is not valid"
+#, kde-format
 msgid "An error has occurred while playing: the media is not valid"
 msgstr "Okazis eraro dum ludado: la aŭdvidaĵo ne estas valida"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid "An error as occurred while playing: %1"
+#, kde-format
 msgid "An error has occurred while playing: %1"
 msgstr "Okazis eraro ludante: %1"
 
@@ -62392,7 +62391,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:227
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
-msgstr "Uzi grandan bildeton por alta ekrana rezolucio"
+msgstr "Uzi grandan bildeton por alta ekrana distingivo"
 
 #: core/utilities/setup/album/setupalbumview.cpp:228
 #, kde-format
@@ -65479,7 +65478,7 @@ msgid ""
 msgstr ""
 "Agordu ĉi tiun opcion por agordi, kiel la flankaj klapetaj titoloj estas "
 "videblaj. Uzu la opcion \"Nur Por Aktiva Tab\" se vi uzas malgrandan "
-"ekranrezolucion kiel kun tekkomputilo."
+"ekrandistingivon kiel kun tekkomputilo."
 
 #: core/utilities/setup/misc/setupmisc.cpp:299
 #, kde-format
@@ -65531,7 +65530,7 @@ msgstr "Uzi altan DPI-skalon de la ekranfaktoro"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:79
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
-msgstr "Uzi bildmapojn kun alta DPI-rezolucio"
+msgstr "Uzi bildmapojn kun alta DPI-distingivo"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:83
 #, kde-format
@@ -66746,3 +66745,7 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
+
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en la MJPEG."

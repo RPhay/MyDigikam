@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2024-01-27 19:59+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -41794,10 +41794,12 @@ msgid "On Screen Display Font:"
 msgstr "Carattere vista a schermo:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
-msgstr "Seleziona qui il carattere usato per il testo nel MJPEG."
+msgid "Select here the font used to display text on the screen display ."
+msgstr ""
+"Seleziona qui il carattere usato per il testo in tutte le viste ad albero."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, fuzzy, kde-format
@@ -67688,6 +67690,10 @@ msgstr "Elementi dell'album"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa elementi"
+
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Seleziona qui il carattere usato per il testo nel MJPEG."
 
 #~ msgid ""
 #~ "The MySQL binary tools was not found, please set the correct location in "

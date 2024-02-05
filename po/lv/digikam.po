@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -40772,7 +40772,7 @@ msgstr "Procenti:"
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "Šeit varat norādīt koku skatu fontu."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -67191,6 +67191,12 @@ msgstr "Albumu vienības"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in Tree Views."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Šeit varat norādīt koku skatu fontu."
 
 #, fuzzy
 #~| msgid ""

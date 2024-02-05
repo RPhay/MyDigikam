@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2024-01-05 21:39+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -41786,7 +41786,7 @@ msgstr "位置："
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "在這裡選擇樹狀檢視中顯示文字的字型。"
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -68630,6 +68630,12 @@ msgstr "相簿項目"
 #, kde-format
 msgid "Import Items"
 msgstr "匯入項目"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in Tree Views."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "在這裡選擇樹狀檢視中顯示文字的字型。"
 
 #, fuzzy
 #~| msgid ""

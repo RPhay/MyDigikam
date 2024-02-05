@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -39669,7 +39669,7 @@ msgstr "प्रतिशत:"
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "<p>मार्गदर्शन ड्यास-रेखा कोर्न प्रयोग गरिने रङ यहाँ सेट गर्नुहोस् ।"
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -64728,6 +64728,11 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "<p>मार्गदर्शन ड्यास-रेखा कोर्न प्रयोग गरिने रङ यहाँ सेट गर्नुहोस् ।"
 
 #, fuzzy
 #~ msgid "No codec could be found for: "

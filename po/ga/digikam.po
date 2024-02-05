@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -41682,7 +41682,7 @@ msgstr "Ionadú:"
 #, fuzzy, kde-format
 #| msgid "Select here the editorial type of content."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "Roghnaigh cineál eagarthóireachta an ábhair anseo."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -68753,6 +68753,12 @@ msgstr "Míreanna Albaim"
 #, kde-format
 msgid "Import Items"
 msgstr "Iompórtáil Íomhánna"
+
+#, fuzzy
+#~| msgid "Select here the editorial type of content."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Roghnaigh cineál eagarthóireachta an ábhair anseo."
 
 #, fuzzy
 #~ msgid "No codec could be found for: "

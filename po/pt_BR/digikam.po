@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -44220,7 +44220,7 @@ msgstr "Posicionamento da tela:"
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr ""
 "Selecione aqui a fonte usada para exibir o texto nas visualizações em árvore."
 
@@ -72726,6 +72726,14 @@ msgstr "Itens do álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar itens"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in Tree Views."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr ""
+#~ "Selecione aqui a fonte usada para exibir o texto nas visualizações em "
+#~ "árvore."
 
 #, fuzzy
 #~| msgid ""

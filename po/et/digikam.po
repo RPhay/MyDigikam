@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -43922,10 +43922,10 @@ msgstr "Asetus ekraanil:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
+#| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
-msgstr "Siin saab valida slaidiseansis näidatava teksti fondi."
+msgid "Select here the font used to display text on the screen display ."
+msgstr "Siin saab valida puuvaates näidatava teksti fondi."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, fuzzy, kde-format
@@ -71780,6 +71780,12 @@ msgstr "Albumielemendid"
 #, kde-format
 msgid "Import Items"
 msgstr "Impordi elemendid"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in the slideshow."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Siin saab valida slaidiseansis näidatava teksti fondi."
 
 #, fuzzy
 #~| msgid ""

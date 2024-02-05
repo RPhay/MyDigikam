@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -40075,7 +40075,7 @@ msgstr "Phần trăm:"
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "<p>Ở đây đặt màu dùng để vẽ đường gạch gạch dẫn."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -65285,6 +65285,11 @@ msgstr "Tập"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Sắp xếp ảnh"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "<p>Ở đây đặt màu dùng để vẽ đường gạch gạch dẫn."
 
 #, fuzzy
 #~ msgid ""

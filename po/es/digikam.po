@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
-"PO-Revision-Date: 2024-02-01 11:59+0100\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
+"PO-Revision-Date: 2024-02-04 20:34+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -41786,21 +41786,21 @@ msgid "On Screen Display Font:"
 msgstr "Tipo de letra para visualización en pantalla:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
-msgstr "Seleccione la letra a usar para mostrar texto en el MJPEG."
+msgid "Select here the font used to display text on the screen display ."
+msgstr ""
+"Seleccione la letra con la que se mostrará el texto en las vistas en árbol."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error as occurred while playing: the media is not valid"
+#, kde-format
 msgid "An error has occurred while playing: the media is not valid"
 msgstr "Ha ocurrido un error durante la reproducción: el medio no es válido"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid "An error as occurred while playing: %1"
+#, kde-format
 msgid "An error has occurred while playing: %1"
 msgstr "Ha ocurrido un error durante la reproducción: %1"
 
@@ -67663,6 +67663,10 @@ msgstr "Elementos del álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Elementos importados"
+
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Seleccione la letra a usar para mostrar texto en el MJPEG."
 
 #~ msgid ""
 #~ "The MySQL binary tools was not found, please set the correct location in "

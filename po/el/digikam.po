@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -43791,7 +43791,7 @@ msgstr "Τοποθέτηση:"
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr ""
 "Επιλέξτε εδώ την γραμματοσειρά που θα χρησιμοποιηθεί για την εμφάνιση του "
 "κειμένου στην προβολή δέντρου."
@@ -71783,6 +71783,14 @@ msgstr "Αντικείμενα λευκώματος"
 #, kde-format
 msgid "Import Items"
 msgstr "Εισαγωγή αντικειμένων"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in Tree Views."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr ""
+#~ "Επιλέξτε εδώ την γραμματοσειρά που θα χρησιμοποιηθεί για την εμφάνιση του "
+#~ "κειμένου στην προβολή δέντρου."
 
 #, fuzzy
 #~| msgid ""

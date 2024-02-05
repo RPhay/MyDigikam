@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -41494,7 +41494,7 @@ msgstr "ร้อยละ: "
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Tree Views."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "ตั้งค่าแบบอักษรที่จะใช้ในการแสดงข้อความทั้งหมดในมุมมองผังต้นไม้"
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -68371,6 +68371,12 @@ msgstr "รายการอัลบั้มต่าง ๆ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "จัดเ&รียงรูปภาพ"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in Tree Views."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "ตั้งค่าแบบอักษรที่จะใช้ในการแสดงข้อความทั้งหมดในมุมมองผังต้นไม้"
 
 #, fuzzy
 #~| msgid ""

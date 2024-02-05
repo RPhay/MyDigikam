@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -41511,7 +41511,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Set here the color used to draw composition guides."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "កំណត់​ពណ៌​ដែល​បាន​ប្រើ​នៅ​ទីនេះ ដើម្បី​អូស​មគ្គុទ្ទេសក៍សមាសភាគ ។"
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -67846,6 +67846,12 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "តម្រៀប​រូបភាព"
+
+#, fuzzy
+#~| msgid "Set here the color used to draw composition guides."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "កំណត់​ពណ៌​ដែល​បាន​ប្រើ​នៅ​ទីនេះ ដើម្បី​អូស​មគ្គុទ្ទេសក៍សមាសភាគ ។"
 
 #, fuzzy
 #~| msgid ""

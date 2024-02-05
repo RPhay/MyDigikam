@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -41669,7 +41669,7 @@ msgstr "Umiestnenie obrazovky:"
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, fuzzy, kde-format
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "<p>Tu nastavte farbu, ktorou budú vykreslené čiarkované čiary vodítok."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -68708,6 +68708,12 @@ msgstr "Nastavenie albumu spracovaných položiek"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovať položky"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr ""
+#~ "<p>Tu nastavte farbu, ktorou budú vykreslené čiarkované čiary vodítok."
 
 #, fuzzy
 #~| msgid ""

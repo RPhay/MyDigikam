@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 01:36+0000\n"
+"POT-Creation-Date: 2024-02-05 01:52+0000\n"
 "PO-Revision-Date: 2024-01-29 22:07+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -41543,7 +41543,7 @@ msgstr "Kuvaruutunäyttöfontti:"
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in tooltips."
 msgctxt "@info"
-msgid "Select here the font used to display text in the MJPEG."
+msgid "Select here the font used to display text on the screen display ."
 msgstr "Valitse kuvan tiedot näyttävässä avusteessa käytettävä fontti."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
@@ -67195,6 +67195,12 @@ msgstr "Albumit"
 #, kde-format
 msgid "Import Items"
 msgstr "Tuo kohteet"
+
+#, fuzzy
+#~| msgid "Select here the font used to display text in tooltips."
+#~ msgctxt "@info"
+#~ msgid "Select here the font used to display text in the MJPEG."
+#~ msgstr "Valitse kuvan tiedot näyttävässä avusteessa käytettävä fontti."
 
 #~ msgid ""
 #~ "Failed to open the database.\n"
