@@ -13,7 +13,7 @@ if (NOT MINGW AND NOT APPLE)
     ExternalProject_Add(ext_openssl
 
         GIT_REPOSITORY https://github.com/janbar/openssl-cmake
-        GIT_TAG 1.1.1t-20230216
+        GIT_TAG 1.1.1w-20231130
 
         INSTALL_DIR ${EXTPREFIX_openssl}
 
