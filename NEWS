@@ -222,7 +222,7 @@ BUGFIXES:
 200 ==> 480764 - For some time now, digikam always takes about 1 minute to start. During work it very often hangs for about 1-2 minutes.
 201 ==> 480810 - Metadata are missing in database with some files after importing in collection.
 202 ==> 480896 - If I try to assign the faces manually, the program constantly crashes.
-203 ==> 
+203 ==> 480934 - Add crashes when entering name on photo view screen.
 204 ==> 
 205 ==> 
 206 ==> 
