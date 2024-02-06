@@ -323,6 +323,7 @@ private:
 
     bool                     m_root;
     bool                     m_usedByLabelsTree;
+    volatile bool            m_albumInDeletion;
 
     int                      m_id;
 

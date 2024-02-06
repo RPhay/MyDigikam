@@ -37,8 +37,8 @@ namespace Digikam
 Album::Album(Album::Type type, int id, bool root)
     : m_root            (root),
       m_usedByLabelsTree(false),
+      m_albumInDeletion (false),
       m_id              (id),
-      m_cacheLock       (QReadWriteLock::Recursive),
       m_type            (type),
       m_parent          (nullptr)
 {
@@ -46,6 +46,8 @@ Album::Album(Album::Type type, int id, bool root)
 
 Album::~Album()
 {
+    m_albumInDeletion = true;
+
     if (m_parent)
     {
         m_parent->removeChild(this);
@@ -100,7 +102,7 @@ Album* Album::next() const
         return nullptr;
     }
 
-    QReadLocker locker(&m_parent->m_cacheLock);
+    QReadLocker parentLocker(&m_parent->m_cacheLock);
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
@@ -119,7 +121,7 @@ Album* Album::prev() const
         return nullptr;
     }
 
-    QReadLocker locker(&m_parent->m_cacheLock);
+    QReadLocker parentLocker(&m_parent->m_cacheLock);
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
@@ -133,9 +135,14 @@ Album* Album::prev() const
 
 Album* Album::childAtRow(int row) const
 {
+    if (m_albumInDeletion)
+    {
+        return nullptr;
+    }
+
     QReadLocker locker(&m_cacheLock);
 
-    if ((row < 0) || (row >= m_childCache.size()))
+    if (m_albumInDeletion || (row < 0) || (row >= m_childCache.size()))
     {
         return nullptr;
     }
@@ -208,20 +215,14 @@ void Album::removeChild(Album* const child)
 
 void Album::clear()
 {
-    QList<Album*> albumsToDelete;
+    QWriteLocker locker(&m_cacheLock);
 
+    while (!m_childCache.isEmpty())
     {
-        QWriteLocker locker(&m_cacheLock);
+        Album* const child = m_childCache.takeLast();
+        child->m_parent    = nullptr;
 
-        while (!m_childCache.isEmpty())
-        {
-            albumsToDelete << m_childCache.takeFirst();
-        }
-    }
-
-    while (!albumsToDelete.isEmpty())
-    {
-        delete albumsToDelete.takeFirst();
+        delete child;
     }
 }
 
@@ -275,7 +276,7 @@ int Album::rowFromAlbum() const
         return 0;
     }
 
-    QReadLocker locker(&m_parent->m_cacheLock);
+    QReadLocker parentLocker(&m_parent->m_cacheLock);
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
