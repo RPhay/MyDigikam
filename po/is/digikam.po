@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-05 01:52+0000\n"
-"PO-Revision-Date: 2024-02-01 08:28+0000\n"
+"PO-Revision-Date: 2024-02-05 11:46+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -18050,7 +18050,7 @@ msgstr "Sjónhverfing"
 #, kde-format
 msgctxt "@title: On Screen Display"
 msgid "OSD"
-msgstr "OSD-skjábirting"
+msgstr "OSD-stjórntexti"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:55
 #, kde-format
@@ -18131,7 +18131,7 @@ msgctxt "@info:tooltip"
 msgid "Automatic page segmentation, but no OSD, or OCR. (not implemented)"
 msgstr ""
 "Sjálfvirk uppskipting á síðum, án greiningar á stefnu og stafrófi eða OCR "
-"(ekki útfært ennþá)"
+"(ekki útfært ennþá)."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
 #, kde-format
@@ -41204,25 +41204,22 @@ msgstr "Birta heiti digiKam myndamerkja neðst á skjánum."
 #, kde-format
 msgctxt "@option"
 msgid "On Screen Display Font:"
-msgstr "Letur skjábirtingar (OSD):"
+msgstr "Letur stjórntexta (OSD):"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
-msgstr "Veldu hér letur fyrir texta sem birtist í greinasýnum."
+msgstr "Veldu hér letur fyrir texta sem birtist í stjórntextum á skjánum."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error as occurred while playing: the media is not valid"
+#, kde-format
 msgid "An error has occurred while playing: the media is not valid"
 msgstr "Villa kom upp við að spila: margmiðlunargögnin eru ekki gild"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid "An error as occurred while playing: %1"
+#, kde-format
 msgid "An error has occurred while playing: %1"
 msgstr "Villa kom upp við að spila: %1"
 

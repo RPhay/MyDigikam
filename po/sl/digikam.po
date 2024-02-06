@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-05 01:52+0000\n"
-"PO-Revision-Date: 2024-02-04 08:28+0100\n"
+"PO-Revision-Date: 2024-02-05 11:43+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -41377,11 +41377,10 @@ msgid "On Screen Display Font:"
 msgstr "Pisava prikaza na zaslonu:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
-msgstr "Tukaj izberite pisavo za prikaz besedila v drevesnem pogledu."
+msgstr "Tukaj izberite pisavo za prikaz besedila na zaslonu."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, kde-format

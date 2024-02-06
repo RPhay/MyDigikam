@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-05 01:52+0000\n"
-"PO-Revision-Date: 2024-02-01 16:41+0100\n"
+"PO-Revision-Date: 2024-02-05 09:36+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -41749,24 +41749,21 @@ msgid "On Screen Display Font:"
 msgstr "Tipus de lletra a la pantalla:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
 msgstr ""
-"Seleccioneu ací el tipus de lletra emprada per a mostrar el text en les "
-"vistes en arbre."
+"Seleccioneu ací el tipus de lletra emprada per a mostrar el text a la "
+"visualització en pantalla."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error as occurred while playing: the media is not valid"
+#, kde-format
 msgid "An error has occurred while playing: the media is not valid"
 msgstr "S'ha produït un error en reproduir: l'element multimèdia no és vàlid"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid "An error as occurred while playing: %1"
+#, kde-format
 msgid "An error has occurred while playing: %1"
 msgstr "S'ha produït un error en reproduir: %1"
 
@@ -67661,9 +67658,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@info"
-#~ msgid "Select here the font used to display text in the MJPEG."
-#~ msgstr ""
-#~ "Seleccioneu ací el tipus de lletra emprada per a mostrar el text en el "
-#~ "MJPEG."

@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-05 01:52+0000\n"
-"PO-Revision-Date: 2024-02-04 14:43+0100\n"
+"PO-Revision-Date: 2024-02-05 10:48+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -41687,13 +41687,11 @@ msgid "On Screen Display Font:"
 msgstr "Lettertype voor op het scherm:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
 msgstr ""
-"Stel hier het lettertype in die u wilt gebruiken voor tekst in de "
-"boomstructuurweergave."
+"Selecteer hier het lettertype dat u wilt gebruiken voor tekst op het scherm."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, kde-format

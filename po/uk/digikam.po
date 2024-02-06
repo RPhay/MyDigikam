@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-05 01:52+0000\n"
-"PO-Revision-Date: 2024-02-04 09:10+0200\n"
+"PO-Revision-Date: 2024-02-05 08:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -41908,13 +41908,12 @@ msgid "On Screen Display Font:"
 msgstr "Шрифт екранної панелі:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
 msgstr ""
-"Тут ви можете встановити шрифт, який буде використано для показу тексту у "
-"ієрархічному перегляді."
+"Тут ви можете встановити шрифт, який буде використано для показу тексту на "
+"екрані."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, kde-format

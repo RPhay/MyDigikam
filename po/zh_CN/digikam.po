@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-05 01:52+0000\n"
-"PO-Revision-Date: 2024-01-21 14:14\n"
+"PO-Revision-Date: 2024-02-05 11:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -6069,11 +6069,10 @@ msgid "Caption"
 msgstr "说明"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
-#, fuzzy, kde-format
-#| msgid "Preview target image"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
-msgstr "预览目标效果"
+msgstr "预览图像"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
@@ -19824,9 +19823,7 @@ msgid "Open in Player:"
 msgstr "在播放器中打开："
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@title:column Output file name"
-#| msgid "Output"
+#, kde-format
 msgid "Output"
 msgstr "输出"
 
@@ -19860,10 +19857,9 @@ msgstr ""
 "用法是在时延序列中保持曝光水平。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
-#, fuzzy, kde-format
-#| msgid "Trailer Information"
+#, kde-format
 msgid "Frames Normalization"
-msgstr "预告片信息"
+msgstr "帧标准化"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:202
 #, kde-format
@@ -19882,11 +19878,9 @@ msgid "Soundtrack Duration:"
 msgstr "音轨持续时间："
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Soundtrack Preview"
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "音轨预览"
+msgstr "音轨预览："
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
@@ -19900,18 +19894,14 @@ msgstr ""
 "于视频长度，则音频将被截断。如果您不想在视频中包含音轨，请将此选项留空。</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Audio Track"
+#, kde-format
 msgid "Audio Track"
-msgstr "选择音轨"
+msgstr "音轨"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "On Screen Display Font:"
+#, kde-format
 msgid "On Screen Display"
-msgstr "屏幕显示字体："
+msgstr "屏幕显示"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:274
 #, kde-format
@@ -19924,12 +19914,7 @@ msgid "Number of Frames by Image:"
 msgstr "图像停留帧数："
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "This value repeat one image in the sequence. While creating timelapse; "
-#| "it's usual to use 1. Typically, the number of frames will determine the "
-#| "time to show the same frame in the video. The result will depend of the "
-#| "number of frames per second used to encode the media."
+#, kde-format
 msgid ""
 "This value repeat one image in the sequence.\n"
 "While creating timelapse; it's usual to use 1.\n"
@@ -19938,9 +19923,10 @@ msgid ""
 "The result will depend of the number of frames\n"
 "per second used to encode the media."
 msgstr ""
-"此值用于控制图像在帧序列中停留的帧数。在创建延时序列时通常将它设置为 1。 在典"
-"型情况下，此帧数将决定某一帧在视频中显示的时间。最终效果取决于编码媒体时使用"
-"的每秒帧数。"
+"此值用于控制图像在帧序列中停留的帧数。\n"
+"创建延时序列时一般设置为 1。典型情况下，\n"
+"此帧数将决定某一帧在视频中显示的时间。\n"
+"最终效果取决于编码媒体时使用的每秒帧数。"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:96
 #, kde-format
@@ -25800,60 +25786,42 @@ msgid "Searches"
 msgstr "搜索记录"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory was not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid "The MySQL database directory was not found."
-msgstr "无法找到 MySQL 数据库的目录，请在下一个对话框中设置正确的位置。"
+msgstr "找不到 MySQL 数据库目录。"
 
 #: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "找不到 MySQL 二进制工具。"
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "核心数据库名称为空"
+msgstr "找不到 SQLite 核心数据库。"
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"如果您想要使用全新的配置文件启动并进行首次运行配置向导，请删除文件 %1"
+"<p>如果您想要使用全新的配置文件启动并打开首次运行配置向导，请删除文件：<br>"
+"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.\n"
-#| "\n"
-#| "Details:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
 msgstr ""
-"内建服务器启动时发生错误。\n"
-"\n"
-"详细信息：\n"
-"%1"
+"内建服务器启动时发生错误。<p>详细信息：\n"
+"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "无法添加标签到数据库"
+msgstr "打开数据库失败。"
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -25887,11 +25855,9 @@ msgstr ""
 "作。请在设置菜单的<b>配置</b>对话框中检查数据库设置。</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "初始化缩略图数据库失败"
+msgstr "初始化数据库失败。"
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -26085,7 +26051,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:742
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
-msgstr ""
+msgstr "<p><b>请在此对话框中检查数据库设置。</b></p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
@@ -39973,21 +39939,15 @@ msgid "Select here the font used to display text on the screen display ."
 msgstr "选择在树形视图中用于显示文字的字体。"
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
+#, kde-format
 msgid "An error has occurred while playing: the media is not valid"
-msgstr "媒体播放器发生错误..."
+msgstr "播放时发生错误：媒体无效"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error has occurred to show item\n"
-#| "%1"
+#, kde-format
 msgid "An error has occurred while playing: %1"
-msgstr ""
-"显示以下项目时发生错误\n"
-"%1"
+msgstr "播放时发生错误：%1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -64948,424 +64908,3 @@ msgstr "导入视图项目"
 #~ msgctxt "@info"
 #~ msgid "Select here the font used to display text in the MJPEG."
 #~ msgstr "选择在 MJPEG 流中用于显示文字的字体。"
-
-#~ msgid ""
-#~ "The MySQL binary tools was not found, please set the correct location in "
-#~ "the next dialog."
-#~ msgstr "无法找到 MySQL 工具的可执行文件，请在下一个对话框中设置正确的位置。"
-
-#~ msgid ""
-#~ "The SQLite core database was not found, please set the correct location "
-#~ "in the next dialog."
-#~ msgstr "无法找到 SQLite 核心数据库，请在下一个对话框中设置正确的位置。"
-
-#~ msgid ""
-#~ "Failed to open the database.\n"
-#~ "\n"
-#~ "You cannot use digiKam without a working database.\n"
-#~ "Please check the database settings in the next dialog."
-#~ msgstr ""
-#~ "无法打开数据库。\n"
-#~ "\n"
-#~ "您无法在缺少数据库的情况下使用 digiKam。\n"
-#~ "请在下一个对话框中检查数据库设置。"
-
-#~ msgid "No codec could be found for: "
-#~ msgstr "找不到编解码器："
-
-#~ msgid "Decoding surfaces"
-#~ msgstr "解码表面"
-
-#~ msgid "Decoder flags"
-#~ msgstr "解码器标志"
-
-#~ msgid "Performance: ZeroCopy > DirectCopy > GenericCopy"
-#~ msgstr "性能：零复制 > 直接复制 > 全面复制"
-
-#~ msgid ""
-#~ "ZeroCopy: no copy back from GPU to System memory. Directly render the "
-#~ "decoded data on GPU"
-#~ msgstr "零复制：不从 GPU 复制数据回系统内存。在 GPU 上直接渲染解码后的数据"
-
-#~ msgid ""
-#~ "DirectCopy: copy back to host memory but video frames and map to GL "
-#~ "texture"
-#~ msgstr "直接复制：将 GPU 数据复制回宿主内存，但将视频帧和贴图复制到 GL 纹理"
-
-#~ msgid "GenericCopy: copy back to host memory and each video frame"
-#~ msgstr "全面复制：将 GPU 数据复制回宿主内存和每个视频帧"
-
-#~ msgid "Codec %1 is not supported by CUDA"
-#~ msgstr "编解码器 %1 不支持 CUDA"
-
-#~ msgid "0: auto"
-#~ msgstr "0：自动"
-
-#~ msgid ""
-#~ "Skipping the loop filter (aka deblocking) usually has determinal effect "
-#~ "on quality. However it provides a big speedup for hi definition streams"
-#~ msgstr ""
-#~ "跳过循环滤镜 (去块滤镜) 通常会对解码画质带来不利影响，但这可以在高分辨率流"
-#~ "条件下带来明显速度提升。"
-
-#~ msgid ""
-#~ "Force skipping of idct to speed up decoding for frame types (-1=None, "
-#~ "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
-#~ msgstr ""
-#~ "强制跳过 idct 以加速帧类型的解码 (-1=无，0=默认值，1=B-帧，2=P-帧，3=B+P "
-#~ "帧，4=所有帧)"
-
-#~ msgid "Force skipping frames for speed up decoding."
-#~ msgstr "强制跳过帧以加快解码。"
-
-#~ msgid ""
-#~ "Number of decoding threads. Set before open. Maybe no effect for some "
-#~ "decoders"
-#~ msgstr "解码线程数。应在打开解码器前设置。对某些解码器可能没有效果"
-
-#~ msgid "1: single thread decoding"
-#~ msgstr "1：单线程解码"
-
-#~ msgid ""
-#~ "ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
-#~ msgstr "零复制：处理速度最快。直接渲染，CPU 和 GPU 之间没有数据复制行为。"
-
-#~ msgid "Not implemented for all codecs"
-#~ msgstr "尚未在所有编解码器上实现"
-
-#~ msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
-#~ msgstr "优化复制：从 SSE 4.1 优化的 USWC 内存进行复制"
-
-#~ msgid "GenericCopy: slowest. Generic cpu copy"
-#~ msgstr "全面复制：处理速度最慢，全面 CPU 数据复制"
-
-#~ msgid "Multithread decoding may crash"
-#~ msgstr "多线程解码可能崩溃。"
-
-#~ msgid "Decoding surfaces 0: auto"
-#~ msgstr "解码表面 0：自动"
-
-#~ msgid "Maybe faster"
-#~ msgstr "速度可能更快"
-
-#~ msgid "VA API version %1.%2; Vendor: %3;"
-#~ msgstr "VA API 版本 %1.%2；厂商：%3；"
-
-#~ msgid ""
-#~ "Output pixel format from decoder. Performance (better first): NV12 ; "
-#~ "UYVY ; BGRA ; YUV420P ; YUYV. OSX superior to 10.7 only supports UYVY, "
-#~ "BGRA and YUV420p"
-#~ msgstr ""
-#~ "解码器输出像素格式。性能从快到慢排列：NV12、UYVY、BGRA、YUV420P、YUYV。\n"
-#~ "版本高于 10.7 的 OSX 只支持 UYVY、BGRA 和 YUV420p"
-
-#~ msgid "Interop with OpenGL"
-#~ msgstr "OpenGL 交互"
-
-#~ msgid "CVPixelBuffer: macOS+iOS"
-#~ msgstr "CVPixelBuffer：macOS+iOS"
-
-#~ msgid "CVOpenGLES: iOS, no copy, fast"
-#~ msgstr "CVOpenGLES：iOS，不复制，快速"
-
-#~ msgid "IOSurface: macOS, no copy, fast"
-#~ msgstr "IOSurface：macOS，无复制，快速"
-
-#~ msgid "Auto: choose the fastest"
-#~ msgstr "自动：选择最快方案"
-
-#~ msgctxt "@option: video filter"
-#~ msgid "Video"
-#~ msgstr "视频"
-
-#~ msgctxt "@option: audio filter"
-#~ msgid "Audio"
-#~ msgstr "音频"
-
-#~ msgctxt "@option: enable filter"
-#~ msgid "Enable %1"
-#~ msgstr "启用 %1"
-
-#~ msgctxt "@info"
-#~ msgid "Registered %1 filters"
-#~ msgstr "已注册 %1 种滤镜"
-
-#~ msgctxt "@label"
-#~ msgid "Parameters"
-#~ msgstr "参数"
-
-#~ msgid "Enable"
-#~ msgstr "启用"
-
-#~ msgid "options"
-#~ msgstr "选项"
-
-#~ msgid "Reduce buffering"
-#~ msgstr "减小缓冲区"
-
-#~ msgid "Probe size"
-#~ msgstr "探测大小"
-
-#~ msgid "Max analyze duration"
-#~ msgstr "最大分析持续时间"
-
-#~ msgid "0: auto. how many microseconds are analyzed to probe the input"
-#~ msgstr "0：自动。分析多少微秒来探测输入"
-
-#~ msgid "Extra"
-#~ msgstr "额外"
-
-#~ msgid "AVFormat"
-#~ msgstr "AVFormat"
-
-#~ msgid "Browse"
-#~ msgstr "浏览"
-
-#~ msgid "Save dir"
-#~ msgstr "保存目录"
-
-#~ msgid "Save format"
-#~ msgstr "保存格式"
-
-#~ msgid "Quality"
-#~ msgstr "画质"
-
-#~ msgid "Capture"
-#~ msgstr "捕获"
-
-#~ msgctxt "@title:window"
-#~ msgid "Video Decoder Config Page"
-#~ msgstr "视频解码器配置页面"
-
-#~ msgctxt "@label"
-#~ msgid "Decoder Priorities (reopen is required)"
-#~ msgstr "解码器优先级 (需要重新打开)"
-
-#~ msgctxt "@action: go up in the list"
-#~ msgid "Up"
-#~ msgstr "上移"
-
-#~ msgctxt "@action: go down in the list"
-#~ msgid "Down"
-#~ msgstr "下移"
-
-#~ msgctxt "@title"
-#~ msgid "Decoder"
-#~ msgstr "解码器"
-
-#~ msgid "Preview Over Time-Slider"
-#~ msgstr "时间滑块预览"
-
-#~ msgid "size"
-#~ msgstr "大小"
-
-#~ msgid "Force fps"
-#~ msgstr "强制帧速率"
-
-#~ msgid "Ignore"
-#~ msgstr "忽略"
-
-#~ msgid "Progress update interval"
-#~ msgstr "进度更新间隔"
-
-#~ msgid "Buffer frames"
-#~ msgstr "缓冲帧"
-
-#~ msgid "Timeout"
-#~ msgstr "超时"
-
-#~ msgid "s"
-#~ msgstr "秒"
-
-#~ msgid "OpenGL type"
-#~ msgstr "OpenGL 类型"
-
-#~ msgid "Windows only"
-#~ msgstr "仅限 Windows"
-
-#~ msgid "OpenGLES is Used by DXVA Zero Copy"
-#~ msgstr "OpenGLES 用于 DXVA 零复制"
-
-#~ msgid ""
-#~ "D3D9 has performance if ZeroCopy is disabled or for software decoders"
-#~ msgstr "D3D9 在软件解码器禁用零复制时性能更好"
-
-#~ msgid "RESTART REQUIRED"
-#~ msgstr "需要重启"
-
-#~ msgid "Currently only works for Qt>=5.5 XCB build"
-#~ msgstr "目前仅适用于 Qt>=5.5 XCB 构建的版本"
-
-#~ msgid "Misc"
-#~ msgstr "其他​​"
-
-#~ msgctxt "@option: enable shader"
-#~ msgid "Enable"
-#~ msgstr "启用"
-
-#~ msgctxt "@option"
-#~ msgid "Intermediate FBO"
-#~ msgstr "中间 FBO"
-
-#~ msgctxt "@label"
-#~ msgid "Fragment shader header"
-#~ msgstr "片段着色器头"
-
-#~ msgctxt "@info"
-#~ msgid "Additional header code"
-#~ msgstr "额外头代码"
-
-#~ msgctxt "@label"
-#~ msgid "Fragment shader texel sample function"
-#~ msgstr "片段着色器纹素样本函数"
-
-#~ msgctxt "@label"
-#~ msgid "Fragment shader RGB post process code"
-#~ msgstr "片段着色器 RGB 后处理代码"
-
-#~ msgctxt "@title"
-#~ msgid "Shader"
-#~ msgstr "着色器"
-
-#~ msgctxt "@label"
-#~ msgid "Engine"
-#~ msgstr "引擎"
-
-#~ msgctxt "@option"
-#~ msgid "Brightness"
-#~ msgstr "亮度"
-
-#~ msgctxt "@option"
-#~ msgid "Contrast"
-#~ msgstr "对比度"
-
-#~ msgctxt "@option"
-#~ msgid "Hue"
-#~ msgstr "色相"
-
-#~ msgctxt "@option"
-#~ msgid "Saturation"
-#~ msgstr "饱和度"
-
-#~ msgctxt "@option: global settings"
-#~ msgid "Global"
-#~ msgstr "全局"
-
-#~ msgid "error reading stream data"
-#~ msgstr "流数据读取错误"
-
-#~ msgid "seek error"
-#~ msgstr "定位错误"
-
-#~ msgid "failed to open media"
-#~ msgstr "打开媒体失败"
-
-#~ msgid "failed to find stream info"
-#~ msgstr "查找流信息失败"
-
-#~ msgid "interrupted by user"
-#~ msgstr "用户中断操作"
-
-#~ msgid "timeout"
-#~ msgstr "超时"
-
-#~ msgid "No error"
-#~ msgstr "无错误"
-
-#~ msgid "Open error"
-#~ msgstr "打开错误"
-
-#~ msgid "Open timed out"
-#~ msgstr "打开超时"
-
-#~ msgid "Parse stream timed out"
-#~ msgstr "解析流超时"
-
-#~ msgid "Parse stream error"
-#~ msgstr "解析流错误"
-
-#~ msgid "Stream not found"
-#~ msgstr "找不到流"
-
-#~ msgid "Read packet timed out"
-#~ msgstr "读取数据包超时"
-
-#~ msgid "Read error"
-#~ msgstr "读取错误"
-
-#~ msgid "Seek error"
-#~ msgstr "定位错误"
-
-#~ msgid "Resource error"
-#~ msgstr "资源错误"
-
-#~ msgid "Open codec error"
-#~ msgstr "打开编解码器错误"
-
-#~ msgid "Close codec error"
-#~ msgstr "关闭编解码器错误"
-
-#~ msgid "Video codec not found"
-#~ msgstr "找不到视频编解码器"
-
-#~ msgid "Audio codec not found"
-#~ msgstr "找不到音频编解码器"
-
-#~ msgid "Subtitle codec not found"
-#~ msgstr "找不到字幕编解码器"
-
-#~ msgid "Codec error"
-#~ msgstr "编解码器错误"
-
-#~ msgid "Format error"
-#~ msgstr "格式错误"
-
-#~ msgid "Network error"
-#~ msgstr "网络错误"
-
-#~ msgid "Access denied"
-#~ msgstr "拒绝访问"
-
-#~ msgid "Options:"
-#~ msgstr "选项："
-
-#~ msgid "Build version"
-#~ msgstr "构建版本"
-
-#~ msgid "Runtime version"
-#~ msgstr "运行时版本"
-
-#~ msgid "Multimedia framework based on Qt and FFmpeg.\n"
-#~ msgstr "基于 Qt 和 FFmpeg 的多媒体框架。\n"
-
-#~ msgid "About Qt"
-#~ msgstr "关于 Qt"
-
-#~ msgid "Ok"
-#~ msgstr "确定"
-
-#~ msgctxt "@title:window"
-#~ msgid "About QtAV"
-#~ msgstr "关于 QtAV"
-
-#~ msgctxt "@title:window"
-#~ msgid "About FFmpeg"
-#~ msgstr "关于 FFmpeg"
-
-#~ msgctxt "@title: settings section"
-#~ msgid "Video"
-#~ msgstr "视频"
-
-#~ msgctxt "@title"
-#~ msgid ""
-#~ "Video Preview Settings\n"
-#~ "Customize settings to play video media"
-#~ msgstr "视频预览设置"
-
-#~ msgctxt "@info"
-#~ msgid "Press this button to reset all video settings to the default values."
-#~ msgstr "点击此按钮将所有视频设置重置为默认值。"
-
-#~ msgctxt "@info"
-#~ msgid "Do you want to reset all video settings to the default value?"
-#~ msgstr "您想要重置所有视频设置为默认值吗？"
