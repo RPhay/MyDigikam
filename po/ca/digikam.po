@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-05 01:52+0000\n"
+"POT-Creation-Date: 2024-02-07 01:33+0000\n"
 "PO-Revision-Date: 2024-02-05 09:36+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2844,7 +2844,7 @@ msgstr "Mostra a pantalla completa"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:486
+#: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2939,7 +2939,7 @@ msgid "No Tags Album"
 msgstr "Sense etiquetes d'àlbum"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:559
+#: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -26840,38 +26840,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Conversió RAW de l'UFRaw"
 
-#: core/libs/album/engine/album.cpp:407
+#: core/libs/album/engine/album.cpp:408
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Paperera"
 
-#: core/libs/album/engine/album.cpp:758
+#: core/libs/album/engine/album.cpp:759
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Cerca actual de la línia de temps"
 
-#: core/libs/album/engine/album.cpp:764
+#: core/libs/album/engine/album.cpp:765
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Cerca actual aproximada d'imatge"
 
-#: core/libs/album/engine/album.cpp:768
+#: core/libs/album/engine/album.cpp:769
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Cerca actual aproximada de croquis"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:776
 #, kde-format
 msgid "Current Map Search"
 msgstr "Cerca actual per mapa"
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:781
 #, kde-format
 msgid "Current Search"
 msgstr "Cerca actual"
 
-#: core/libs/album/engine/album.cpp:783
+#: core/libs/album/engine/album.cpp:784
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Cerca actual dels duplicats"

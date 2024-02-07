@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-05 01:52+0000\n"
+"POT-Creation-Date: 2024-02-07 01:33+0000\n"
 "PO-Revision-Date: 2024-02-05 11:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2785,7 +2785,7 @@ msgstr "全屏显示"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:486
+#: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2877,7 +2877,7 @@ msgid "No Tags Album"
 msgstr "无标签相册"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:559
+#: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -25701,38 +25701,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
 
-#: core/libs/album/engine/album.cpp:407
+#: core/libs/album/engine/album.cpp:408
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "回收站"
 
-#: core/libs/album/engine/album.cpp:758
+#: core/libs/album/engine/album.cpp:759
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "当前时间轴搜索结果"
 
-#: core/libs/album/engine/album.cpp:764
+#: core/libs/album/engine/album.cpp:765
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "当前模糊图像搜索结果"
 
-#: core/libs/album/engine/album.cpp:768
+#: core/libs/album/engine/album.cpp:769
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "当前模糊画图搜索结果"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:776
 #, kde-format
 msgid "Current Map Search"
 msgstr "当前地图搜索结果"
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:781
 #, kde-format
 msgid "Current Search"
 msgstr "当前搜索结果"
 
-#: core/libs/album/engine/album.cpp:783
+#: core/libs/album/engine/album.cpp:784
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "当前重复项搜索结果"

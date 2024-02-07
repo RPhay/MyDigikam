@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-05 01:52+0000\n"
+"POT-Creation-Date: 2024-02-07 01:33+0000\n"
 "PO-Revision-Date: 2024-02-05 11:43+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -45,8 +45,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.4.2\n"
 
 #: core/app/date/ddateedit.cpp:497
@@ -2894,7 +2894,7 @@ msgstr "Prikaži celozaslonsko"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:486
+#: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2988,7 +2988,7 @@ msgid "No Tags Album"
 msgstr "Album brez značk"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:559
+#: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -26566,38 +26566,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw pretvorba surove"
 
-#: core/libs/album/engine/album.cpp:407
+#: core/libs/album/engine/album.cpp:408
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Smeti"
 
-#: core/libs/album/engine/album.cpp:758
+#: core/libs/album/engine/album.cpp:759
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Trenutno iskanje po časovnici"
 
-#: core/libs/album/engine/album.cpp:764
+#: core/libs/album/engine/album.cpp:765
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Trenutno megleno iskanje slik"
 
-#: core/libs/album/engine/album.cpp:768
+#: core/libs/album/engine/album.cpp:769
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Trenutno megleno iskanje s skico"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:776
 #, kde-format
 msgid "Current Map Search"
 msgstr "Trenutno iskanje po zemljevidu"
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:781
 #, kde-format
 msgid "Current Search"
 msgstr "Trenutno iskanje"
 
-#: core/libs/album/engine/album.cpp:783
+#: core/libs/album/engine/album.cpp:784
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Trenutno iskanje dvojnikov"

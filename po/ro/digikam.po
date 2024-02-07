@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-05 01:52+0000\n"
+"POT-Creation-Date: 2024-02-07 01:33+0000\n"
 "PO-Revision-Date: 2023-04-10 18:05+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -3037,7 +3037,7 @@ msgstr "Arată pe tot ecranul"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:486
+#: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -3127,7 +3127,7 @@ msgid "No Tags Album"
 msgstr "Albumele mele"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:559
+#: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -26547,38 +26547,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Conversia spațiului colorimetric"
 
-#: core/libs/album/engine/album.cpp:407
+#: core/libs/album/engine/album.cpp:408
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:758
+#: core/libs/album/engine/album.cpp:759
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Căutare în cronologia curentă"
 
-#: core/libs/album/engine/album.cpp:764
+#: core/libs/album/engine/album.cpp:765
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Căutarea aproximativă curentă de imagini"
 
-#: core/libs/album/engine/album.cpp:768
+#: core/libs/album/engine/album.cpp:769
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Căutarea aproximativă curentă de schițe"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:776
 #, kde-format
 msgid "Current Map Search"
 msgstr "Planul căutării curente"
 
-#: core/libs/album/engine/album.cpp:780
+#: core/libs/album/engine/album.cpp:781
 #, kde-format
 msgid "Current Search"
 msgstr "Căutarea curentă"
 
-#: core/libs/album/engine/album.cpp:783
+#: core/libs/album/engine/album.cpp:784
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Căutare în duplicatele curente"
