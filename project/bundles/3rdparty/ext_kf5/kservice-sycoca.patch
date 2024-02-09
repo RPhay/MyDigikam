@@ -1,31 +1,13 @@
 diff --git a/src/sycoca/ksycoca.cpp b/src/sycoca/ksycoca.cpp
-index 02ed7bb4..7d9285e6 100644
+index 02ed7bb4..aadc3ce1 100644
 --- a/src/sycoca/ksycoca.cpp
 +++ b/src/sycoca/ksycoca.cpp
-@@ -734,23 +734,9 @@ quint32 KSycoca::updateSignature()
- 
- QString KSycoca::absoluteFilePath(DatabaseType type)
- {
--    Q_UNUSED(type); // GlobalDatabase concept removed in 5.61
--    const QStringList paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
--    QString suffix = QLatin1Char('_') + QLocale().bcp47Name();
--
--    const QByteArray ksycoca_env = qgetenv("KDESYCOCA");
--    if (ksycoca_env.isEmpty()) {
--        const QByteArray pathHash = QCryptographicHash::hash(paths.join(QLatin1Char(':')).toUtf8(), QCryptographicHash::Sha1);
--        suffix += QLatin1Char('_') + QString::fromLatin1(pathHash.toBase64());
--        suffix.replace(QLatin1Char('/'), QLatin1Char('_'));
--#ifdef Q_OS_WIN
--        suffix.replace(QLatin1Char(':'), QLatin1Char('_'));
--#endif
--        const QString fileName = QLatin1String("ksycoca5") + suffix;
--        return QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + QLatin1Char('/') + fileName;
--    } else {
--        return QFile::decodeName(ksycoca_env);
--    }
-+    return QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) +
-+                                            QLatin1Char('/')                      +
-+                                            QLatin1String("ksycoca_digikam");
- }
- 
- #if KSERVICE_BUILD_DEPRECATED_SINCE(5, 15)
+@@ -240,7 +240,7 @@ bool KSycocaPrivate::openDatabase()
+         static bool firstTime = true;
+         if (firstTime) {
+             firstTime = false;
+-            if (KSandbox::isFlatpak()) {
++            /*if (KSandbox::isFlatpak())*/ {
+                 // We're running inside flatpak, which sets all times to 1970
+                 // So the first very time, don't use an existing database, recreate it
+                 qCDebug(SYCOCA) << "flatpak detected, ignoring" << m_databasePath;
