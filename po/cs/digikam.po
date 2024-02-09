@@ -6036,11 +6036,10 @@ msgid "Caption"
 msgstr "Titulek"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
-#, fuzzy, kde-format
-#| msgid "Preview target image"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
-msgstr "Náhled cílového obrázku"
+msgstr ""
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
@@ -19769,9 +19768,7 @@ msgid "Open in Player:"
 msgstr "Otevřít v přehrávači:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:158
-#, fuzzy, kde-format
-#| msgctxt "@title:column Output file name"
-#| msgid "Output"
+#, kde-format
 msgid "Output"
 msgstr "Výstup"
 
@@ -19802,36 +19799,30 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:192
-#, fuzzy, kde-format
-#| msgid "Free Rotation"
+#, kde-format
 msgid "Frames Normalization"
-msgstr "Libovolné otočení"
+msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:202
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack File:"
-msgstr "Hudební doprovod:"
+msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:208
-#, fuzzy, kde-format
-#| msgid "Select audio files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
-msgstr "Výběr hudebních souborů"
+msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:211
-#, fuzzy, kde-format
-#| msgid "Soundtrack:"
+#, kde-format
 msgid "Soundtrack Duration:"
-msgstr "Hudební doprovod:"
+msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Soundtrack Preview"
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "Vyzkoušet hudbu"
+msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
@@ -19843,17 +19834,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:245
-#, fuzzy, kde-format
-#| msgid "Select audio files"
+#, kde-format
 msgid "Audio Track"
-msgstr "Výběr hudebních souborů"
+msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "On Screen Display Font:"
+#, kde-format
 msgid "On Screen Display"
-msgstr "Písmo pro On Screen Display:"
+msgstr "On Screen Display"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:274
 #, kde-format
@@ -25638,40 +25626,28 @@ msgid "The MySQL binary tools was not found."
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "Nebyl zadán název základní databáze"
+msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"Pokud chcete začít s novým nastavením a průvodcem prvního spuštění, smažte "
-"soubor %1"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid "An error occurred during tag creation:"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
-msgstr "Během vytváření značky nastala chyba:"
+msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "Přidání značky do databáze selhalo"
+msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -25706,11 +25682,9 @@ msgstr ""
 "<b>nabídce nastavení</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "Selhala inicializace databáze náhledů"
+msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -39843,11 +39817,9 @@ msgid "Default from Desktop"
 msgstr "Výchozí z pracovního prostředí"
 
 #: core/libs/video/manager/vidslidetask.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Generating files for \"%1\""
+#, kde-format
 msgid "Generating frames from %1 Done"
-msgstr "Vytváří se soubory pro \"%1\""
+msgstr ""
 
 #: core/libs/video/manager/vidslidethread.cpp:63
 #, kde-format
@@ -40011,28 +39983,21 @@ msgid "On Screen Display Font:"
 msgstr "Písmo pro On Screen Display:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
-msgstr "Zde zvolte písmo použité pro vypisování textu ve stromovém pohledu."
+msgstr ""
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
+#, kde-format
 msgid "An error has occurred while playing: the media is not valid"
-msgstr "Vyskytla se chyba s přehrávačem médií..."
+msgstr ""
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error has occurred to show item\n"
-#| "%1"
+#, kde-format
 msgid "An error has occurred while playing: %1"
 msgstr ""
-"Vyskytla se chyba při zobrazování položky\n"
-"%1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
@@ -65206,212 +65171,3 @@ msgstr "Alba"
 #, kde-format
 msgid "Import Items"
 msgstr "Importovat položky"
-
-#~ msgctxt "@info"
-#~ msgid "Select here the font used to display text in the MJPEG."
-#~ msgstr "Zde zvolte písmo použité pro vypisování textu v MJPEG."
-
-#~ msgid ""
-#~ "The SQLite core database was not found, please set the correct location "
-#~ "in the next dialog."
-#~ msgstr ""
-#~ "Jádro databáze SQLite nebylo nalezeno. Prosím, nastavte správné místo v "
-#~ "následujícím okně nastavení."
-
-#~ msgid "0: auto"
-#~ msgstr "0: automaticky"
-
-#~ msgid "Not implemented for all codecs"
-#~ msgstr "Neimplementováno pro všechny kodeky"
-
-#~ msgid "Maybe faster"
-#~ msgstr "Možná rychlejší"
-
-#~ msgid "Auto: choose the fastest"
-#~ msgstr "Automaticky: zvolí nejrychlejší"
-
-#~ msgctxt "@option: video filter"
-#~ msgid "Video"
-#~ msgstr "Video"
-
-#~ msgctxt "@option: audio filter"
-#~ msgid "Audio"
-#~ msgstr "Audio"
-
-#~ msgctxt "@option: enable filter"
-#~ msgid "Enable %1"
-#~ msgstr "Povolit %1"
-
-#~ msgctxt "@label"
-#~ msgid "Parameters"
-#~ msgstr "Parametry"
-
-#~ msgid "Enable"
-#~ msgstr "Povolit"
-
-#~ msgid "options"
-#~ msgstr "možnosti"
-
-#~ msgid "Reduce buffering"
-#~ msgstr "Redukovat ukládání do mezipaměti"
-
-#~ msgid "Probe size"
-#~ msgstr "Velikost sondy"
-
-#~ msgid "0: auto. how many microseconds are analyzed to probe the input"
-#~ msgstr ""
-#~ "0: automaticky. kolik mikrosekund je analyzováno pro sondování vstupu"
-
-#~ msgid "Extra"
-#~ msgstr "Navíc"
-
-#~ msgid "AVFormat"
-#~ msgstr "AVFormat"
-
-#~ msgid "Browse"
-#~ msgstr "Procházet"
-
-#~ msgid "Save format"
-#~ msgstr "Uložit formát"
-
-#~ msgid "Quality"
-#~ msgstr "Kvalita"
-
-#~ msgid "Capture"
-#~ msgstr "Zachytávat"
-
-#~ msgctxt "@label"
-#~ msgid "Decoder Priorities (reopen is required)"
-#~ msgstr "Priority dekodéru (je potřeba restart aplikace)"
-
-#~ msgctxt "@action: go up in the list"
-#~ msgid "Up"
-#~ msgstr "Nahoru"
-
-#~ msgctxt "@action: go down in the list"
-#~ msgid "Down"
-#~ msgstr "Dolů"
-
-#~ msgctxt "@title"
-#~ msgid "Decoder"
-#~ msgstr "Dekodér"
-
-#~ msgid "size"
-#~ msgstr "velikost"
-
-#~ msgid "Force fps"
-#~ msgstr "Vynutit FPS"
-
-#~ msgid "Ignore"
-#~ msgstr "Ignorovat"
-
-#~ msgid "Timeout"
-#~ msgstr "Vypršení časového limitu"
-
-#~ msgid "s"
-#~ msgstr "s"
-
-#~ msgid "OpenGL type"
-#~ msgstr "Typ OpenGL"
-
-#~ msgid "Windows only"
-#~ msgstr "Pouze Windows"
-
-#~ msgid "Misc"
-#~ msgstr "Různé"
-
-#~ msgctxt "@option: enable shader"
-#~ msgid "Enable"
-#~ msgstr "Povolit"
-
-#~ msgctxt "@label"
-#~ msgid "Engine"
-#~ msgstr "Databáze"
-
-#~ msgctxt "@option"
-#~ msgid "Brightness"
-#~ msgstr "Jas"
-
-#~ msgctxt "@option"
-#~ msgid "Contrast"
-#~ msgstr "Kontrast"
-
-#~ msgctxt "@option"
-#~ msgid "Hue"
-#~ msgstr "Tón"
-
-#~ msgctxt "@option"
-#~ msgid "Saturation"
-#~ msgstr "Sytost"
-
-#~ msgctxt "@option: global settings"
-#~ msgid "Global"
-#~ msgstr "Globální"
-
-#~ msgid "timeout"
-#~ msgstr "vypršení časového limitu"
-
-#~ msgid "No error"
-#~ msgstr "Žádná chyba"
-
-#~ msgid "Open error"
-#~ msgstr "Chyba otevírání"
-
-#~ msgid "Stream not found"
-#~ msgstr "Proud nenalezen"
-
-#~ msgid "Read error"
-#~ msgstr "Chyba při čtení"
-
-#~ msgid "Video codec not found"
-#~ msgstr "Kodek videa nebyl nalezen"
-
-#~ msgid "Audio codec not found"
-#~ msgstr "Kodek audio nebyl nalezen"
-
-#~ msgid "Subtitle codec not found"
-#~ msgstr "Kodek titulků nebyl nalezen"
-
-#~ msgid "Codec error"
-#~ msgstr "Chyba kodeku"
-
-#~ msgid "Format error"
-#~ msgstr "Chyba ve formátu"
-
-#~ msgid "Network error"
-#~ msgstr "Chyba sítě"
-
-#~ msgid "Access denied"
-#~ msgstr "Odmítnut přístup"
-
-#~ msgid "Options:"
-#~ msgstr "Volby:"
-
-#~ msgid "Build version"
-#~ msgstr "Verze sestavení"
-
-#~ msgid "About Qt"
-#~ msgstr "O Qt"
-
-#~ msgid "Ok"
-#~ msgstr "OK"
-
-#~ msgctxt "@title:window"
-#~ msgid "About QtAV"
-#~ msgstr "O QtAV"
-
-#~ msgctxt "@title:window"
-#~ msgid "About FFmpeg"
-#~ msgstr "O FFmpeg"
-
-#~ msgctxt "@title: settings section"
-#~ msgid "Video"
-#~ msgstr "Video"
-
-#~ msgctxt "@title"
-#~ msgid ""
-#~ "Video Preview Settings\n"
-#~ "Customize settings to play video media"
-#~ msgstr ""
-#~ "Nastavení náhledu videa\n"
-#~ "Přizpůsobení nastavení přehrávání videa"
