@@ -52,6 +52,7 @@ DFileSelector::DFileSelector(QWidget* const parent)
     d->edit->setClearButtonEnabled(true);
     d->btn     = new QPushButton(i18n("Browse..."), this);
     setStretchFactor(d->edit, 10);
+    setContentsMargins(0, 0, 0, 0);
 
     connect(d->btn, SIGNAL(clicked()),
             this, SLOT(slotBtnClicked()));
