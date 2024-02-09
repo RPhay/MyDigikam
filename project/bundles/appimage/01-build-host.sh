@@ -66,7 +66,7 @@ fi
 if [ ! -d $DOWNLOAD_DIR ] ; then
     mkdir -p $DOWNLOAD_DIR
 fi
-
+if [ ] ; then
 #################################################################################################
 
 cd $BUILDING_DIR
@@ -93,7 +93,7 @@ cmake --build . --config RelWithDebInfo --target ext_libjxl          -- -j$CPU_C
 cmake --build . --config RelWithDebInfo --target ext_libaom          -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_libavif         -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_ffmpeg          -- -j$CPU_CORES
-
+fi
 #################################################################################################
 
 cd $BUILDING_DIR

@@ -148,12 +148,14 @@ optional_packages=("ruby"                               # For i18n extraction
                    "patchelf"
                    "dpkg"
                    "clang"
+                   "python2"
                    "python3"
+                   "python3-lxml"
+                   "python-is-python2"
                    "libboost-all-dev"
                    "libgphoto2-dev"
                    "libsane-dev"
                    "libssl-dev"
-                   "python3-lxml"
                    "appstream"
                    "libnss3-dev"
                    "libxkbcommon-dev"
@@ -166,6 +168,8 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libxcursor-dev"
                    "libxcomposite-dev"
                    "libxrender-dev"
+                   "libxdamage-dev"
+                   "libx11-xcb-dev"
                    "libltdl-dev"
                    "libglib2.0-dev"
                    "libusb-1.0-0-dev"
@@ -213,7 +217,7 @@ done
 # Install more recent version of NodeJs for QtWebEngine.
 # https://learnubuntu.com/update-node-js/
 
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt-get install nodejs
 
 echo -e "---------- Clean-up Old Packages\n"
