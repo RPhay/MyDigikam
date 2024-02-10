@@ -45,7 +45,7 @@
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # Alexander Potashev <aspotashev@gmail.com>, 2010, 2011, 2016, 2017, 2018, 2019.
 # Yuri Efremov <yur.arh@gmail.com>, 2012.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2019, 2020, 2022, 2023.
+# SPDX-FileCopyrightText: 2018, 2019, 2020, 2022, 2023, 2024 Alexander Yavorsky <kekcuha@gmail.com>
 # Мария Шикунова <trasnslation-team@basealt.ru>, 2020, 2022.
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
 # Алевтина  <karashokovaaa@basealt.ru>, 2023.
@@ -54,14 +54,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-07 01:33+0000\n"
-"PO-Revision-Date: 2023-11-13 16:53+0300\n"
-"Last-Translator: Алевтина  <karashokovaaa@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2024-02-09 23:16+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 24.01.95\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -3348,10 +3348,9 @@ msgid "%1/%2 items selected"
 msgstr "Выбрано объектов: %1 из %2"
 
 #: core/app/views/stack/welcomepageview.cpp:138
-#, fuzzy, kde-format
-#| msgid "More than 400 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 650 user-reports closed on bugzilla."
-msgstr "В Bugzilla закрыто более 400 отчётов об ошибках;"
+msgstr "В Bugzilla закрыто более 650 отчётов об ошибках;"
 
 #: core/app/views/stack/welcomepageview.cpp:139
 #, kde-format
@@ -3616,12 +3615,11 @@ msgstr ""
 "MacOS и улучшение стабильности модуля."
 
 #: core/app/views/stack/welcomepageview.cpp:172
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgstr ""
-"Внутренний движок для обработки RAW-изображений обновлён до последней "
-"резервной копии Libraw 20230403;"
+"Внутренний движок для обработки RAW-изображений обновлён до последней версии "
+"Libraw от 21.22.2023;"
 
 #: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
@@ -9110,11 +9108,10 @@ msgid "Sharpen..."
 msgstr "Резкость..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:177
-#, fuzzy, kde-format
-#| msgid "No Profile Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
-msgstr "Нет доступных профилей"
+msgstr "Отсутствуют доступные принтеры"
 
 #: core/dplugins/editor/file/print/printhelper.cpp:178
 #, kde-format
@@ -66424,54 +66421,47 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
 #: core/utilities/setup/misc/proxysettingswidget.ui:60
-#, fuzzy, kde-format
-#| msgid "Host Port:"
+#, kde-format
 msgid "P&ort:"
-msgstr "Порт:"
+msgstr "По&рт:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:116
-#, fuzzy, kde-format
-#| msgid "Fix type"
+#, kde-format
 msgid "Proxy type:"
-msgstr "Тип фиксации:"
+msgstr "Тип прокси:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:124
 #, kde-format
 msgid "Http"
-msgstr ""
+msgstr "Http"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:129
 #, kde-format
 msgid "Socks5"
-msgstr ""
+msgstr "Socks5"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
 #. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
 #: core/utilities/setup/misc/proxysettingswidget.ui:168
 #: core/utilities/setup/misc/proxysettingswidget.ui:180
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Presentation"
+#, kde-format
 msgid "Requires authentication"
-msgstr "Презентация"
+msgstr "Требуется проверка подлинности"
 
 #. i18n: ectx: property (text), widget (QLabel, label_username)
 #: core/utilities/setup/misc/proxysettingswidget.ui:186
-#, fuzzy, kde-format
-#| msgctxt "piwigo login settings"
-#| msgid "Username:"
+#, kde-format
 msgid "U&sername:"
-msgstr "Имя пользователя:"
+msgstr "&Имя пользователя:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_password)
 #: core/utilities/setup/misc/proxysettingswidget.ui:196
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "&Password:"
-msgstr "Пароль:"
+msgstr "&Пароль:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format

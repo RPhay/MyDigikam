@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-07 01:33+0000\n"
-"PO-Revision-Date: 2024-02-04 17:21+0100\n"
+"PO-Revision-Date: 2024-02-09 21:14+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -41130,11 +41130,10 @@ msgid "On Screen Display Font:"
 msgstr "Surekrana ekrantiparo:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
-msgstr "Elekti ĉi tie la tiparon uzatan por montri tekston en Arbaj Vidoj."
+msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en la ekrano."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, kde-format
@@ -66745,7 +66744,3 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
-
-#~ msgctxt "@info"
-#~ msgid "Select here the font used to display text in the MJPEG."
-#~ msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en la MJPEG."
