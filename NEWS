@@ -224,7 +224,7 @@ BUGFIXES:
 202 ==> 480896 - If I try to assign the faces manually, the program constantly crashes.
 203 ==> 480934 - Add crashes when entering name on photo view screen.
 204 ==> 481123 - GPS data from linked XML files ignored.
-205 ==> 
+205 ==> 481159 - Crash when manually adding Face Tag.
 206 ==> 
 207 ==> 
 208 ==> 
