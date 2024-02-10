@@ -225,7 +225,7 @@ BUGFIXES:
 203 ==> 480934 - Add crashes when entering name on photo view screen.
 204 ==> 481123 - GPS data from linked XML files ignored.
 205 ==> 481159 - Crash when manually adding Face Tag.
-206 ==> 
+206 ==> 481158 - MariadDB as MySQL binaries ???
 207 ==> 
 208 ==> 
 209 ==> 
