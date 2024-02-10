@@ -210,7 +210,7 @@ InstallKDEComponent(kitemviews          ${KDE_VERSION} "${Qt6CommonOptions}"    
 InstallKDEComponent(kcompletion         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(kconfigwidgets      ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(kiconthemes         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKDEComponent(kservice            ${KDE_VERSION} "${Qt6CommonOptions}"                       "${AppImageServicePatch}")
+InstallKDEComponent(kservice            ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(kglobalaccel        ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(kcalendarcore       ${KDE_VERSION} "${Qt6CommonOptions}"                       "${KCalendarCorePatch}")
 InstallKDEComponent(kxmlgui             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")

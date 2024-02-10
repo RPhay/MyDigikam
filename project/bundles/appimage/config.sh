@@ -78,7 +78,7 @@ DK_UPLOADURL="digikam@tinami.kde.org"
 
 if [[ $DK_QTVERSION == 5 ]] ; then
 
-    DK_KDE_VERSION="5.114"
+    DK_KDE_VERSION="5.110"                                  # See bug #480134
     DK_UPLOADDIR="/srv/archives/files/digikam/"
 
 else
