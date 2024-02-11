@@ -141,7 +141,7 @@ bool ApplyMetadata::toolOperations()
 
     if (!ret || !metaInfo.exists())
     {
-        setErrorDescription(i18nc("@info", "Apply Metadata: No image or metadata file selected."));
+        setErrorDescription(i18nc("@info", "Apply Metadata: No image or JSON file selected."));
         return false;
     }
 
