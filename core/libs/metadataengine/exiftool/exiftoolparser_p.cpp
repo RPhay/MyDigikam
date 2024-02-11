@@ -159,6 +159,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Apply Changes EXV");
         }
 
+        case ExifToolProcess::APPLY_METADATA_FILE:
+        {
+            return QLatin1String("Apply Metadata File");
+        }
+
         case ExifToolProcess::READ_FORMATS:
         {
             return QLatin1String("Readable Formats");

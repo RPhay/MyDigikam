@@ -148,6 +148,13 @@ public:
                       bool hasExif = true, bool hasXmp = true, bool hasCSet = false);
 
     /**
+     * Apply a file with metadata to the target file.
+     * @param path is the target file to change.
+     * @param meta is the metadata file.
+     */
+    bool applyMetadataFile(const QString& path, const QString& meta);
+
+    /**
      * Return a list of readable file format extensions.
      * Use currentData() to get the container as QStringList.
      */

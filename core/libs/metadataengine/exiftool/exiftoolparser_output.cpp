@@ -192,6 +192,12 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
             break;
         }
 
+        case ExifToolProcess::APPLY_METADATA_FILE:
+        {
+            printExifToolOutput(result.output);
+            break;
+        }
+
         case ExifToolProcess::COPY_TAGS:
         {
             printExifToolOutput(result.output);

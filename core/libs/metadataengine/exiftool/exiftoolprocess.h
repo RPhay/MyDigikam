@@ -47,6 +47,7 @@ public:
         LOAD_CHUNKS,                                ///< Load Exif, Iptc, and Xmp chunks from a file as byte-array for MetaEngine.
         APPLY_CHANGES,                              ///< Apply tag changes in a file with ExifTool.
         APPLY_CHANGES_EXV,                          ///< Apply tag changes in a file with ExifTool using an EXV container.
+        APPLY_METADATA_FILE,                        ///< Apply a metadata file to a file with ExifTool.
         READ_FORMATS,                               ///< Return the list of readable ExifTool file formats.
         WRITE_FORMATS,                              ///< Return the list of writable ExifTool file formats.
         TRANSLATIONS_LIST,                          ///< List of ExifTool languages available for translations.

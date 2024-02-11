@@ -227,7 +227,7 @@ BUGFIXES:
 205 ==> 481159 - Crash when manually adding Face Tag.
 206 ==> 481158 - MariadDB as MySQL binaries ???
 207 ==> 481180 - digiKam incorrectly reads metadata field "Subject" when "HierarchicalSubject" is also present.
-208 ==> 
+208 ==> 481112 - Metadata Tools: Import metadata settings per image from a JSON file.
 209 ==> 
 210 ==> 
 211 ==> 

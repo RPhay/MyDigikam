@@ -66,7 +66,7 @@ bool ExifToolParser::load(const QString& path)
 */
 
     cmdArgs << d->filePathEncoding(fileInfo);
-    d->currentPath  = fileInfo.filePath();
+    d->currentPath = fileInfo.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_METADATA));
 }
@@ -245,6 +245,45 @@ bool ExifToolParser::applyChanges(const QString& path,
     d->currentPath = fileInfo.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_CHANGES_EXV));
+}
+
+bool ExifToolParser::applyMetadataFile(const QString& path, const QString& meta)
+{
+    QFileInfo metaInfo(meta);
+
+    if (!metaInfo.exists())
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "Metadata file to apply with ExifTool not exists";
+        return false;
+    }
+
+    QFileInfo fileInfo(path);
+
+    if (!fileInfo.exists())
+    {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open source file to process with ExifTool...";
+        return false;
+    }
+
+    d->prepareProcess();
+
+    QByteArrayList cmdArgs;
+
+    if (metaInfo.suffix().toUpper() == QLatin1String("JSON"))
+    {
+        cmdArgs << (QByteArray("-json=") + d->filePathEncoding(metaInfo));
+    }
+    else
+    {
+        cmdArgs << QByteArray("-TagsFromFile");
+        cmdArgs << d->filePathEncoding(metaInfo);
+        cmdArgs << QByteArray("-all:all");
+    }
+
+    cmdArgs << QByteArray("-overwrite_original");
+    cmdArgs << d->filePathEncoding(fileInfo);
+
+    return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_METADATA_FILE));
 }
 
 bool ExifToolParser::readableFormats()
