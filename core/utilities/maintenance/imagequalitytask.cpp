@@ -19,12 +19,14 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "dimg.h"
-#include "previewloadthread.h"
 #include "imagequalitycontainer.h"
 #include "imagequalityparser.h"
-#include "iteminfo.h"
+#include "previewloadthread.h"
 #include "maintenancedata.h"
+#include "scancontroller.h"
+#include "metadatahub.h"
+#include "iteminfo.h"
+#include "dimg.h"
 
 namespace Digikam
 {
@@ -117,8 +119,17 @@ void ImageQualityTask::run()
             d->imgqsort = new ImageQualityParser(dimg, d->quality, &pick);
             d->imgqsort->startAnalyse();
 
-            ItemInfo info = ItemInfo::fromLocalFile(path);
-            info.setPickLabel(pick);
+            if (pick > NoPickLabel)
+            {
+                ItemInfo info = ItemInfo::fromLocalFile(path);
+                info.setPickLabel(pick);
+
+                MetadataHub hub;
+                hub.load(info);
+
+                ScanController::FileMetadataWrite writeScope(info);
+                writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_PICKLABEL));
+            }
 
             // delete image data after to set label
 
