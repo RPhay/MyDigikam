@@ -226,7 +226,7 @@ BUGFIXES:
 204 ==> 481123 - GPS data from linked XML files ignored.
 205 ==> 481159 - Crash when manually adding Face Tag.
 206 ==> 481158 - MariadDB as MySQL binaries ???
-207 ==> 
+207 ==> 481180 - digiKam incorrectly reads metadata field "Subject" when "HierarchicalSubject" is also present.
 208 ==> 
 209 ==> 
 210 ==> 
