@@ -145,17 +145,24 @@ bool ApplyMetadata::toolOperations()
         return false;
     }
 
-    QString dirTemplate = QDir::tempPath() + QLatin1String("/bqm-apply-metadata-XXXXXX");
-    QString metaFile    = metaInfo.filePath();
-    QTemporaryDir tempDir(dirTemplate);
+    QScopedPointer<ExifToolParser> const parser(new ExifToolParser(this));
 
-    if (!tempDir.isValid())
+    if (!parser->exifToolAvailable())
     {
+        setErrorDescription(i18nc("@info", "Apply Metadata: ExifTool is not available."));
         return false;
     }
 
     if (metaInfo.suffix().toUpper() == QLatin1String("JSON"))
     {
+        QString dirTemplate = QDir::tempPath() + QLatin1String("/bqm-apply-metadata-XXXXXX");
+        QTemporaryDir tempDir(dirTemplate);
+
+        if (!tempDir.isValid())
+        {
+            return false;
+        }
+
         QFile jsonFileRead(metaInfo.filePath());
 
         if (!jsonFileRead.open(QIODevice::ReadOnly))
@@ -163,7 +170,7 @@ bool ApplyMetadata::toolOperations()
             return false;
         }
 
-        metaFile           = tempDir.path() + QLatin1Char('/') + metaInfo.fileName();
+        QString metaFile   = tempDir.path() + QLatin1Char('/') + metaInfo.fileName();
         QString jsonSource = QString::fromUtf8("\"SourceFile\": \"%1\",");
         QString jsonString = QString::fromUtf8(jsonFileRead.readAll());
         jsonFileRead.close();
@@ -185,17 +192,15 @@ bool ApplyMetadata::toolOperations()
 
         jsonFileWrite.write(jsonString.toUtf8());
         jsonFileWrite.close();
+
+        ret = parser->applyMetadataFile(outputUrl().toLocalFile(), metaFile);
     }
-
-    QScopedPointer<ExifToolParser> const parser(new ExifToolParser(this));
-
-    if (!parser->exifToolAvailable())
+    else
     {
-        setErrorDescription(i18nc("@info", "Apply Metadata: ExifTool is not available."));
-        return false;
+        ret = parser->applyMetadataFile(outputUrl().toLocalFile(), metaInfo.filePath());
     }
 
-    if (!parser->applyMetadataFile(outputUrl().toLocalFile(), metaFile))
+    if (!ret)
     {
         setErrorDescription(i18nc("@info", "Apply Metadata: ExifTool reported an error."));
         return false;
