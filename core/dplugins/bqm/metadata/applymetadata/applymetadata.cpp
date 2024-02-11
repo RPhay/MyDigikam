@@ -159,7 +159,7 @@ bool ApplyMetadata::toolOperations()
 
     if (metaInfo.suffix().toUpper() == QLatin1String("JSON"))
     {
-        QString dirTemplate = QDir::tempPath() + QLatin1String("/bqm-apply-metadata-XXXXXX");
+        QString dirTemplate = QDir::tempPath() + QLatin1String("/ApplyMetadata-XXXXXX");
         QTemporaryDir tempDir(dirTemplate);
 
         if (!tempDir.isValid())
