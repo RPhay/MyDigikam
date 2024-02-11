@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-07 01:33+0000\n"
-"PO-Revision-Date: 2024-01-27 05:13+0100\n"
+"PO-Revision-Date: 2024-02-11 02:08+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -5922,11 +5922,10 @@ msgid "Caption"
 msgstr "წარწერა"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
-#, fuzzy, kde-format
-#| msgid "Previous Image"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
-msgstr "წინა გამოსახულება"
+msgstr "გამოსახულების მინიატურა"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
@@ -19270,11 +19269,9 @@ msgid "Soundtrack Duration:"
 msgstr "საუნდტრეკის ხანგრძლივობა:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Soundtrack Preview"
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "საუნდტრეკიის გადახედვა"
+msgstr "საუნდტრეკის მინიატურა:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
@@ -25050,10 +25047,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to open album"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "ალბომის გახსნის შეცდომა"
+msgstr "მონაცემთა ბაზის გახსნა ჩავარდა."
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -25081,11 +25077,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Initializing database..."
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "ბაზის ინიციალიზაცია..."
+msgstr "მონაცემთა ბაზის ინიციალიზაცია ჩავარდა."
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
