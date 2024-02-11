@@ -175,13 +175,14 @@ bool ApplyMetadata::toolOperations()
         QString jsonString = QString::fromUtf8(jsonFileRead.readAll());
         jsonFileRead.close();
 
-        if (!jsonString.contains(jsonSource.arg(imageInfo().name())))
+        if (!jsonString.contains(jsonSource.arg(imageInfo().name(), Qt::CaseInsensitive)))
         {
             setErrorDescription(i18nc("@info", "Apply Metadata: File name not exist in JSON file."));
             return false;
         }
 
-        jsonString.replace(jsonSource.arg(imageInfo().name()), jsonSource.arg(outputUrl().toLocalFile()));
+        jsonString.replace(jsonSource.arg(imageInfo().name()),
+                           jsonSource.arg(outputUrl().toLocalFile(), Qt::CaseInsensitive));
 
         QFile jsonFileWrite(metaFile);
 
