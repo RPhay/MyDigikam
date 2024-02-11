@@ -40,9 +40,6 @@ TimeAdjust::TimeAdjust(QObject* const parent)
       m_taWidget      (nullptr),
       m_changeSettings(true)
 {
-    setToolTitle(i18n("Time Adjust"));
-    setToolDescription(i18n("Adjust Date Time Stamp of Image"));
-    setToolIconName(QLatin1String("appointment-new"));
 }
 
 TimeAdjust::~TimeAdjust()
