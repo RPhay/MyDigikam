@@ -19,9 +19,9 @@
 #include <QDir>
 #include <QFile>
 #include <QLabel>
-#include <QWidget>
+#include <QStyle>
 #include <QFileInfo>
-#include <QGridLayout>
+#include <QApplication>
 #include <QTemporaryDir>
 #include <QScopedPointer>
 
@@ -33,6 +33,7 @@
 
 #include "dimg.h"
 #include "dmetadata.h"
+#include "dlayoutbox.h"
 #include "dfileselector.h"
 #include "exiftoolparser.h"
 #include "dfileoperations.h"
@@ -72,20 +73,23 @@ BatchTool* ApplyMetadata::clone(QObject* const parent) const
 
 void ApplyMetadata::registerSettingsWidget()
 {
-    QWidget* const panel    = new QWidget;
-    QGridLayout* const grid = new QGridLayout(panel);
+    const int spacing    = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
-    d->descFileLabel        = new QLabel(i18n("Select an image or JSON file supported by ExifTool "
-                                              "to apply the file metadata to the images."), panel);
+    DVBox* const vbox    = new DVBox;
+
+    d->descFileLabel     = new QLabel(vbox);
+    d->descFileLabel->setText(i18nc("@label", "Select an image or JSON file supported by ExifTool "
+                                              "to apply the file metadata to the images."));
     d->descFileLabel->setWordWrap(true);
-    d->fileSelector         = new DFileSelector(panel);
+    d->fileSelector      = new DFileSelector(vbox);
     d->fileSelector->setFileDlgMode(QFileDialog::ExistingFile);
 
-    grid->addWidget(d->descFileLabel, 0, 0, 1, 1);
-    grid->addWidget(d->fileSelector,  1, 0, 1, 1);
-    grid->setRowStretch(2, 10);
+    QWidget* const space = new QWidget(vbox);
+    vbox->setStretchFactor(space, 10);
+    vbox->setContentsMargins(spacing, spacing, spacing, spacing);
 
-    m_settingsWidget = panel;
+    m_settingsWidget     = vbox;
 
     connect(d->fileSelector, SIGNAL(signalUrlSelected(QUrl)),
             this, SLOT(slotSettingsChanged()));
