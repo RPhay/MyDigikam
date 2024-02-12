@@ -119,17 +119,14 @@ void ImageQualityTask::run()
             d->imgqsort = new ImageQualityParser(dimg, d->quality, &pick);
             d->imgqsort->startAnalyse();
 
-            if (pick > NoPickLabel)
-            {
-                ItemInfo info = ItemInfo::fromLocalFile(path);
-                info.setPickLabel(pick);
+            ItemInfo info = ItemInfo::fromLocalFile(path);
+            info.setPickLabel(pick);
 
-                MetadataHub hub;
-                hub.load(info);
+            MetadataHub hub;
+            hub.load(info);
 
-                ScanController::FileMetadataWrite writeScope(info);
-                writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_PICKLABEL));
-            }
+            ScanController::FileMetadataWrite writeScope(info);
+            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_PICKLABEL));
 
             // delete image data after to set label
 

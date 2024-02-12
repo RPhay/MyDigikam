@@ -250,9 +250,16 @@ bool DMetadata::setItemPickLabel(int pickId) const
 */
     if (supportXmp())
     {
-        if (!setXmpTagString("Xmp.digiKam.PickLabel", QString::number(pickId)))
+        if (pickId > NoPickLabel)
         {
-            return false;
+            if (!setXmpTagString("Xmp.digiKam.PickLabel", QString::number(pickId)))
+            {
+                return false;
+            }
+        }
+        else
+        {
+            removeXmpTag("Xmp.digiKam.PickLabel");
         }
     }
 
