@@ -230,7 +230,7 @@ BUGFIXES:
 207 ==> 481180 - digiKam incorrectly reads metadata field "Subject" when "HierarchicalSubject" is also present.
 208 ==> 481112 - Metadata Tools: Import metadata settings per image from a JSON file.
 209 ==> 481240 - Pick label from Image Quality Sort is not automatically written to the file.
-210 ==> 481252 - digiKam crashes when selecting tags in the advanced search.
+210 ==> 
 211 ==> 
 212 ==> 
 213 ==> 
