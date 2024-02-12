@@ -235,7 +235,7 @@ BUGFIXES:
 212 ==> 481259 - Problem with Tag when Advanced Metadata panel set two different metadatas for Tags as input.
 213 ==> 481273 - Remove any existing Place tree before to write a new one with Reverse Geolocation tool (if 'Write to tags' is set).
 214 ==> 481268 - digiKam fails (silently) to write any XMP metadatas to file if the file contains a "XMP GCamera.HdrPlusMakernote" (from Pixel5 camera).
-215 ==> 
+215 ==> 481257 - Metadata side viewer is not updated when Item/Re-read metadata from file which has been modified externally after Digikam startup.
 216 ==> 
 217 ==> 
 218 ==> 

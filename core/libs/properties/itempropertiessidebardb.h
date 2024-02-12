@@ -50,9 +50,9 @@ public:
 
     explicit ItemPropertiesSideBarDB(QWidget* const parent,
                                       SidebarSplitter* const splitter,
-                                      Qt::Edge side=Qt::LeftEdge,
-                                      bool mimimizedDefault=false);
-    ~ItemPropertiesSideBarDB() override;
+                                      Qt::Edge side = Qt::LeftEdge,
+                                      bool mimimizedDefault = false);
+    ~ItemPropertiesSideBarDB()                          override;
 
     void populateTags();
     void refreshTagsView();
@@ -61,7 +61,9 @@ public:
     ItemPropertiesVersionsTab* getFiltersHistoryTab() const;
     ItemDescEditTab*           imageDescEditTab()     const;
 
-    void itemChanged(const QUrl& url, const QRect& rect = QRect(), DImg* const img = nullptr) override;
+    void itemChanged(const QUrl& url,
+                     const QRect& rect = QRect(),
+                     DImg* const img = nullptr)         override;
 
     virtual void itemChanged(const ItemInfo& info, const QRect& rect = QRect(),
                              DImg* const img = nullptr, const DImageHistory& history = DImageHistory());
@@ -94,11 +96,12 @@ public Q_SLOTS:
 
     void slotPopupTagsView();
 
-    void slotNoCurrentItem() override;
+    void slotNoCurrentItem()                            override;
 
 private Q_SLOTS:
 
-    void slotChangedTab(QWidget* tab) override;
+    void slotChangedTab(QWidget* tab)                   override;
+    void slotRelaxedChangedMetadataTab();
     void slotFileMetadataChanged(const QUrl& url);
     void slotImageChangeDatabase(const ImageChangeset& changeset);
     void slotImageTagChanged(const ImageTagChangeset& changeset);
@@ -119,12 +122,12 @@ protected:
     /**
      * load the last view state from disk - called by StateSavingObject#loadState()
      */
-    void doLoadState() override;
+    void doLoadState()                                  override;
 
     /**
      * save the view state to disk - called by StateSavingObject#saveState()
      */
-    void doSaveState() override;
+    void doSaveState()                                  override;
 
 private:
 
