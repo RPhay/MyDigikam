@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-07 01:33+0000\n"
+"POT-Creation-Date: 2024-02-12 01:36+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -6162,6 +6162,69 @@ msgstr ""
 "<para>Esta ferramenta do Gestor da Fila do Lote poderá adicionar grão de "
 "filme sobre as imagens.</para>"
 
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:82
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Select an image or JSON file supported by ExifTool to apply the file "
+"metadata to the images."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
+#, kde-format
+msgctxt "@info"
+msgid "Apply Metadata: No image or JSON file selected."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:156
+#, kde-format
+msgctxt "@info"
+msgid "Apply Metadata: ExifTool is not available."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:184
+#, kde-format
+msgctxt "@info"
+msgid "Apply Metadata: File name not exist in JSON file."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:210
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Apply Metadata Template"
+msgctxt "@info"
+msgid "Apply Metadata: ExifTool reported an error."
+msgstr "Aplicar o Modelo de Meta-Dados"
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
+#, fuzzy, kde-format
+#| msgid "Applying metadata"
+msgctxt "@title"
+msgid "Apply Metadata"
+msgstr "A aplicar os meta-dados"
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to apply metadata template to images"
+msgctxt "@info"
+msgid "A tool to apply metadata from a image or JSON file with ExifTool"
+msgstr "Uma ferramenta para aplicar o modelo de meta-dados às imagens"
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>This Batch Queue Manager tool can apply metadata template over "
+#| "images.</para>"
+msgctxt "@info"
+msgid ""
+"<para>This Batch Queue Manager tool can apply metadata from a image or JSON "
+"file with ExifTool.</para>"
+msgstr ""
+"<para>Esta ferramenta do Gestor da Fila do Lote poderá aplicar um modelo de "
+"meta-dados sobre as imagens.</para>"
+
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format
 msgid "Titles:"
@@ -6550,16 +6613,6 @@ msgid ""
 msgstr ""
 "<para>Esta ferramenta do Gestor da Fila do Lote poderá remover os meta-dados "
 "como o EXIF, o IPTC ou o XMP das imagens.</para>"
-
-#: core/dplugins/bqm/metadata/timeadjust/timeadjust.cpp:43
-#, kde-format
-msgid "Time Adjust"
-msgstr "Ajuste de Hora"
-
-#: core/dplugins/bqm/metadata/timeadjust/timeadjust.cpp:44
-#, kde-format
-msgid "Adjust Date Time Stamp of Image"
-msgstr "Ajustar a Data/Hora da Imagem"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:43
@@ -61855,33 +61908,33 @@ msgstr "Nenhuma configuração disponível"
 msgid "Failed to find tool..."
 msgstr "Não foi possível encontrar a ferramenta..."
 
-#: core/utilities/queuemanager/manager/task.cpp:254
+#: core/utilities/queuemanager/manager/task.cpp:255
 #, kde-format
 msgid "(overwritten)"
 msgstr "(sobreposto)"
 
-#: core/utilities/queuemanager/manager/task.cpp:259
+#: core/utilities/queuemanager/manager/task.cpp:260
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(nome mudado para %1)"
 
-#: core/utilities/queuemanager/manager/task.cpp:264
+#: core/utilities/queuemanager/manager/task.cpp:265
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "O item existe e foi ignorado"
 
-#: core/utilities/queuemanager/manager/task.cpp:289
+#: core/utilities/queuemanager/manager/task.cpp:290
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Não foi possível criar o ficheiro acessório..."
 
-#: core/utilities/queuemanager/manager/task.cpp:298
+#: core/utilities/queuemanager/manager/task.cpp:299
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "O item foi processado com sucesso %1"
 
-#: core/utilities/queuemanager/manager/task.cpp:303
-#: core/utilities/queuemanager/manager/task.cpp:308
+#: core/utilities/queuemanager/manager/task.cpp:304
+#: core/utilities/queuemanager/manager/task.cpp:309
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Não foi possível criar o ficheiro..."
@@ -67997,6 +68050,12 @@ msgstr "Itens do Álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os Itens"
+
+#~ msgid "Time Adjust"
+#~ msgstr "Ajuste de Hora"
+
+#~ msgid "Adjust Date Time Stamp of Image"
+#~ msgstr "Ajustar a Data/Hora da Imagem"
 
 #~ msgctxt "@info"
 #~ msgid "Select here the font used to display text in the MJPEG."

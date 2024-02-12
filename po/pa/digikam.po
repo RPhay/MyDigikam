@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-07 01:33+0000\n"
+"POT-Creation-Date: 2024-02-12 01:36+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -6095,6 +6095,61 @@ msgid ""
 "<para>This Batch Queue Manager tool can add film grain over images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
 
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:82
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Select an image or JSON file supported by ExifTool to apply the file "
+"metadata to the images."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
+#, kde-format
+msgctxt "@info"
+msgid "Apply Metadata: No image or JSON file selected."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:156
+#, kde-format
+msgctxt "@info"
+msgid "Apply Metadata: ExifTool is not available."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:184
+#, kde-format
+msgctxt "@info"
+msgid "Apply Metadata: File name not exist in JSON file."
+msgstr ""
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:210
+#, fuzzy, kde-format
+msgctxt "@info"
+msgid "Apply Metadata: ExifTool reported an error."
+msgstr "ਫਾਇਲ %1 ਲਈ ਮੈਟਾਡਾਟਾ ਟੈਗ ਦਿੱਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
+#, fuzzy, kde-format
+#| msgid "Applying metadata"
+msgctxt "@title"
+msgid "Apply Metadata"
+msgstr "ਮੇਟਾਡਾਟਾ ਲਾਗੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
+#, fuzzy, kde-format
+#| msgid "Setting Metadata tags to file %1..."
+msgctxt "@info"
+msgid "A tool to apply metadata from a image or JSON file with ExifTool"
+msgstr "ਫਾਇਲ %1 ਲਈ ਮੈਟਾਡਾਟਾ ਟੈਗ ਦਿੱਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
+
+#: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
+#, fuzzy, kde-kuit-format
+#| msgid "Color Space"
+msgctxt "@info"
+msgid ""
+"<para>This Batch Queue Manager tool can apply metadata from a image or JSON "
+"file with ExifTool.</para>"
+msgstr "ਰੰਗ ਥਾਂ"
+
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, fuzzy, kde-format
 #| msgctxt "title of the file"
@@ -6482,18 +6537,6 @@ msgid ""
 "<para>This Batch Queue Manager tool can remove metadata as Exif, Iptc, or "
 "Xmp from images.</para>"
 msgstr "ਰੰਗ ਥਾਂ"
-
-#: core/dplugins/bqm/metadata/timeadjust/timeadjust.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "Automatic Adjustment"
-#| msgid "Adjust"
-msgid "Time Adjust"
-msgstr "ਅਡਜੱਸਟ"
-
-#: core/dplugins/bqm/metadata/timeadjust/timeadjust.cpp:44
-#, kde-format
-msgid "Adjust Date Time Stamp of Image"
-msgstr ""
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:43
@@ -61663,33 +61706,33 @@ msgstr "ਕੋਈ ਸੈਟਿੰਗ ਉਪਲੱਬਧ ਨਹੀਂ"
 msgid "Failed to find tool..."
 msgstr "ਆਈਟਮ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ..."
 
-#: core/utilities/queuemanager/manager/task.cpp:254
+#: core/utilities/queuemanager/manager/task.cpp:255
 #, fuzzy, kde-format
 msgid "(overwritten)"
 msgstr "ਉੱਤੇ ਲਿਖੋ"
 
-#: core/utilities/queuemanager/manager/task.cpp:259
+#: core/utilities/queuemanager/manager/task.cpp:260
 #, fuzzy, kde-format
 msgid "(renamed to %1)"
 msgstr "ਆਈਟਮ ਦਾ ਨਾਂ %1 ਬਦਲਿਆ..."
 
-#: core/utilities/queuemanager/manager/task.cpp:264
+#: core/utilities/queuemanager/manager/task.cpp:265
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/task.cpp:289
+#: core/utilities/queuemanager/manager/task.cpp:290
 #, fuzzy, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "ਆਈਟਮ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ..."
 
-#: core/utilities/queuemanager/manager/task.cpp:298
+#: core/utilities/queuemanager/manager/task.cpp:299
 #, fuzzy, kde-format
 msgid "Item processed successfully %1"
 msgstr "ਆਈਟਮ ਉੱਤੇ ਕਾਰਵਾਈ ਸਫ਼ਲ ਰਹੀ..."
 
-#: core/utilities/queuemanager/manager/task.cpp:303
-#: core/utilities/queuemanager/manager/task.cpp:308
+#: core/utilities/queuemanager/manager/task.cpp:304
+#: core/utilities/queuemanager/manager/task.cpp:309
 #, fuzzy, kde-format
 msgid "Failed to create file..."
 msgstr "ਆਈਟਮ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ..."
@@ -67342,6 +67385,12 @@ msgstr "ਐਲਬਮ ਆਈਟਮਾਂ"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "ਚਿੱਤਰ ਲੜੀਬੱਧ(&S)"
+
+#, fuzzy
+#~| msgctxt "Automatic Adjustment"
+#~| msgid "Adjust"
+#~ msgid "Time Adjust"
+#~ msgstr "ਅਡਜੱਸਟ"
 
 #, fuzzy
 #~ msgctxt "@info"
