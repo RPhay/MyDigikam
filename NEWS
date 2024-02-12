@@ -230,10 +230,10 @@ BUGFIXES:
 207 ==> 481180 - digiKam incorrectly reads metadata field "Subject" when "HierarchicalSubject" is also present.
 208 ==> 481112 - Metadata Tools: Import metadata settings per image from a JSON file.
 209 ==> 481240 - Pick label from Image Quality Sort is not automatically written to the file.
-210 ==> 
-211 ==> 
-212 ==> 
-213 ==> 
+210 ==> 481253 - Wrong schema and description of Rating into the XMP Viewer configuration panel.
+211 ==> 481255 - Process reverse geocoding writes locations metadata even if 'Write locations metadata" is unset.
+212 ==> 481259 - Problem with Tag when Advanced Metadata panel set two different metadatas for Tags as input.
+213 ==> 481273 - Remove any existing Place tree before to write a new one with Reverse Geolocation tool (if 'Write to tags' is set).
 214 ==> 
 215 ==> 
 216 ==> 
