@@ -40,27 +40,19 @@ class Q_DECL_HIDDEN DFontSelect::Private
 {
 public:
 
-    explicit Private()
-      : space           (nullptr),
-        label           (nullptr),
-        desc            (nullptr),
-        chooseFontButton(nullptr),
-        modeCombo       (nullptr),
-        mode            (DFontSelect::SystemFont)
-    {
-    }
+    Private() = default;
 
-    QWidget*              space;
-    QLabel*               label;
-    DAdjustableLabel*     desc;
+    QWidget*              space             = nullptr;
+    QLabel*               label             = nullptr;
+    DAdjustableLabel*     desc              = nullptr;
 
     QFont                 font;
 
-    QPushButton*          chooseFontButton;
+    QPushButton*          chooseFontButton  = nullptr;
 
-    QComboBox*            modeCombo;
+    QComboBox*            modeCombo         = nullptr;
 
-    DFontSelect::FontMode mode;
+    DFontSelect::FontMode mode              = DFontSelect::SystemFont;
 };
 
 DFontSelect::DFontSelect(const QString& text, QWidget* const parent)
@@ -86,7 +78,7 @@ DFontSelect::DFontSelect(const QString& text, QWidget* const parent)
 
     setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
-    setContentsMargins(QMargins());
+    setContentsMargins(0, 0, 0, 0);
     setStretchFactor(d->space, 10);
 
     connect(d->modeCombo, SIGNAL(activated(int)),
@@ -154,6 +146,7 @@ void DFontSelect::slotOpenFontDialog()
     if (ok)
     {
         setFont(f);
+
         Q_EMIT signalFontChanged();
     }
 }
@@ -161,6 +154,7 @@ void DFontSelect::slotOpenFontDialog()
 void DFontSelect::slotChangeMode(int index)
 {
     setMode((index == CustomFont) ? CustomFont : SystemFont);
+
     Q_EMIT signalFontChanged();
 }
 

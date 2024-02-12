@@ -35,7 +35,7 @@ public:
 
     enum FontMode
     {
-        SystemFont=0,
+        SystemFont = 0,
         CustomFont
     };
 
