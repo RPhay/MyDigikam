@@ -21,7 +21,6 @@
 
 #include <QDir>
 #include <QColor>
-#include <QTimer>
 #include <QLocale>
 #include <QSplitter>
 #include <QFileInfo>
@@ -68,7 +67,6 @@ public:
         hasPrevious         (false),
         hasNext             (false),
         hasItemInfoOwnership(false),
-        metadataTimer       (nullptr),
         desceditTab         (nullptr),
         versionsHistoryTab  (nullptr)
     {
@@ -78,8 +76,6 @@ public:
     bool                       hasPrevious;
     bool                       hasNext;
     bool                       hasItemInfoOwnership;
-
-    QTimer*                    metadataTimer;
 
     ItemInfoList               currentInfos;
     ItemInfoList               allInfos;
@@ -95,10 +91,6 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 {
     d->desceditTab        = new ItemDescEditTab(parent);
     d->versionsHistoryTab = new ItemPropertiesVersionsTab(parent);
-
-    d->metadataTimer      = new QTimer(this);
-    d->metadataTimer->setSingleShot(true);
-    d->metadataTimer->setInterval(1000);
 
     appendTab(d->desceditTab,        QIcon::fromTheme(QLatin1String("edit-text-frame-update")), i18nc("@title: database properties", "Captions"));
     appendTab(d->versionsHistoryTab, QIcon::fromTheme(QLatin1String("view-catalog")),           i18nc("@title: database properties", "Versions"));
@@ -140,9 +132,6 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotLoadMetadataFilters()));
-
-    connect(d->metadataTimer, SIGNAL(timeout()),
-            this, SLOT(slotRelaxedChangedMetadataTab()));
 }
 
 ItemPropertiesSideBarDB::~ItemPropertiesSideBarDB()
@@ -267,16 +256,6 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
     d->dirtyDesceditTab  = false;
 
     changedTab(tab);
-}
-
-void ItemPropertiesSideBarDB::slotRelaxedChangedMetadataTab()
-{
-    if (getActiveTab() == m_metadataTab)
-    {
-        m_dirtyMetadataTab = false;
-
-        changedTab(m_metadataTab);
-    }
 }
 
 void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
@@ -451,11 +430,13 @@ void ItemPropertiesSideBarDB::slotFileMetadataChanged(const QUrl& url)
     {
         // trigger an update
 
+        m_dirtyMetadataTab = false;
+
         if (getActiveTab() == m_metadataTab)
         {
             // update now - reuse code form changedTab
 
-            d->metadataTimer->start();
+            changedTab(getActiveTab());
         }
     }
 }
@@ -538,9 +519,18 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
 
             if (changeset.ids().contains(info.id()))
             {
-                // update now - reuse code form changedTab
+                // trigger an update, if changes touch creation date
 
-                d->metadataTimer->start();
+                DatabaseFields::Set set = changeset.changes();
+
+                if (set & DatabaseFields::CreationDate)
+                {
+                    // update now - reuse code form changedTab
+
+                    m_dirtyMetadataTab = false;
+
+                    changedTab(tab);
+                }
             }
         }
     }

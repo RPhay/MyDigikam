@@ -101,7 +101,6 @@ public Q_SLOTS:
 private Q_SLOTS:
 
     void slotChangedTab(QWidget* tab)                   override;
-    void slotRelaxedChangedMetadataTab();
     void slotFileMetadataChanged(const QUrl& url);
     void slotImageChangeDatabase(const ImageChangeset& changeset);
     void slotImageTagChanged(const ImageTagChangeset& changeset);
