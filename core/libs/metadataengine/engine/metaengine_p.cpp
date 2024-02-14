@@ -530,6 +530,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo,
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "Exiv2 error exception for" << finfo.fileName()
                                           << "Writing of metadata aborted!";
+        QFile::remove(exvPath);
 
         return false;
     }
