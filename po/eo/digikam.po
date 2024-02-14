@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-13 01:39+0000\n"
-"PO-Revision-Date: 2024-02-09 21:14+0100\n"
+"POT-Creation-Date: 2024-02-14 01:38+0000\n"
+"PO-Revision-Date: 2024-02-13 22:38+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -5989,41 +5989,32 @@ msgid "Apply Metadata: File name not exist in JSON file."
 msgstr ""
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
-msgstr "Apliki Metadatuman Ŝablonon"
+msgstr "Apliki Metadatumojn: ExifTool raportis eraron."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Applying metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Metadata"
-msgstr "Aplikante metadatenojn"
+msgstr "Apliki Metadatumojn"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to apply metadata template to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
-msgstr "Ilo por apliki metadatuman ŝablonon al bildoj"
+msgstr "Ilo por apliki metadatumojn el bild- aŭ JSON-dosiero per ExifTool"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can apply metadata template over "
-#| "images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply metadata from a image or JSON "
 "file with ExifTool.</para>"
 msgstr ""
-"<para>Ĉi tiu ilo de Batch Queue Manager povas apliki metadatuman ŝablonon "
-"super bildoj.</para>"
+"<para>Ĉi tiu Staplovica Administrilo povas apliki metadatumojn el bild- aŭ "
+"JSON-dosiero per ExifTool.</para>"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format
@@ -37360,7 +37351,7 @@ msgstr "senŝanĝe"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:651
+#: core/libs/properties/itempropertiessidebardb.cpp:641
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37371,10 +37362,10 @@ msgstr "neatingebla"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:279
 #: core/libs/properties/itempropertiessidebar.cpp:282
-#: core/libs/properties/itempropertiessidebardb.cpp:709
-#: core/libs/properties/itempropertiessidebardb.cpp:711
-#: core/libs/properties/itempropertiessidebardb.cpp:814
-#: core/libs/properties/itempropertiessidebardb.cpp:816
+#: core/libs/properties/itempropertiessidebardb.cpp:699
+#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:804
+#: core/libs/properties/itempropertiessidebardb.cpp:806
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
@@ -37386,10 +37377,10 @@ msgstr "Ne"
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:708
-#: core/libs/properties/itempropertiessidebardb.cpp:710
-#: core/libs/properties/itempropertiessidebardb.cpp:813
-#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:698
+#: core/libs/properties/itempropertiessidebardb.cpp:700
+#: core/libs/properties/itempropertiessidebardb.cpp:803
+#: core/libs/properties/itempropertiessidebardb.cpp:805
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37622,8 +37613,8 @@ msgstr "Nekalibrita"
 
 #: core/libs/properties/itempropertiessidebar.cpp:261
 #: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebardb.cpp:685
-#: core/libs/properties/itempropertiessidebardb.cpp:698
+#: core/libs/properties/itempropertiessidebardb.cpp:675
+#: core/libs/properties/itempropertiessidebardb.cpp:688
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37636,39 +37627,39 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebardb.cpp:707
+#: core/libs/properties/itempropertiessidebardb.cpp:697
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:313
-#: core/libs/properties/itempropertiessidebardb.cpp:741
+#: core/libs/properties/itempropertiessidebardb.cpp:731
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:318
-#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:736
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:103
+#: core/libs/properties/itempropertiessidebardb.cpp:95
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Subtitoloj"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:104
+#: core/libs/properties/itempropertiessidebardb.cpp:96
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Versioj"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:680
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -41528,17 +41519,17 @@ msgctxt "@info: font style"
 msgid "Oblique"
 msgstr "Oblikva"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:81
+#: core/libs/widgets/fonts/dfontselect.cpp:73
 #, kde-format
 msgid "System Font"
 msgstr "Sistema Tiparo"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:82
+#: core/libs/widgets/fonts/dfontselect.cpp:74
 #, kde-format
 msgid "Custom Font"
 msgstr "Propra Tiparo"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:84
+#: core/libs/widgets/fonts/dfontselect.cpp:76
 #, kde-format
 msgid "Choose..."
 msgstr "Elekti..."
@@ -66797,9 +66788,3 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
-
-#~ msgid "Time Adjust"
-#~ msgstr "Tempo Alĝustigi"
-
-#~ msgid "Adjust Date Time Stamp of Image"
-#~ msgstr "Alĝustigi Daton Tempo Stampilon de Bildo"

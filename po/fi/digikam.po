@@ -45,8 +45,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-13 01:39+0000\n"
-"PO-Revision-Date: 2024-01-29 22:07+0200\n"
+"POT-Creation-Date: 2024-02-14 01:38+0000\n"
+"PO-Revision-Date: 2024-02-08 09:59+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -3245,7 +3245,7 @@ msgstr "Ohje"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Roskakorin verkko-ohje"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3360,6 +3360,8 @@ msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
+"Windows-asennin koostetaan nyt natiivisti Microsoftin VCPKG-työkaluketjulla, "
+"ja se käyttää Qt6- ja KF6-ohjelmointikehyksiä."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3430,6 +3432,8 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Metatiedot: lisää uudet valinnat asetusprofiilien tallentamiseen ja "
+"lataamiseen metatietojen lisäasetuspaneeliin."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, fuzzy, kde-format
@@ -3459,6 +3463,8 @@ msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
+"Edistynyt nimen muuttaminen: lisää mukautettava ensimmäinen kirjain unique-"
+"määritteelle: {unique:n,m}."
 
 #: core/app/views/stack/welcomepageview.cpp:153
 #, fuzzy, kde-format
@@ -3475,19 +3481,19 @@ msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr ""
+msgstr "Kokoelmat: lisää tuki monialustaisille verkkosijainneille."
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr ""
+msgstr "Tietokanta: lisää tuki SQLiten WAL-tilalle (Write-Ahead-Logging)."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
-msgstr ""
+msgstr "Lisää oikolukutuki KF5::Sonnet-osaa käyttävään kuvatekstisovelmaan."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3495,12 +3501,14 @@ msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
+"Lisää digiKamiin ja Showfotoon oikoluvun asetuspaneeli asetusten kohtaan "
+"Sekalaista."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
-msgstr ""
+msgstr "Lisää verkkokäännöstuki vaihtoehtoisen kielen tekstimuokkainsovelmaan."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
@@ -6433,19 +6441,19 @@ msgstr "Kohdekansio:"
 #: core/utilities/maintenance/maintenancedlg.cpp:196
 #, kde-format
 msgid "YOLOv5 Nano"
-msgstr ""
+msgstr "YOLOv5 Nano"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
 #: core/utilities/maintenance/maintenancedlg.cpp:197
 #, kde-format
 msgid "YOLOv5 XLarge"
-msgstr ""
+msgstr "YOLOv5 XLarge"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
 #: core/utilities/maintenance/maintenancedlg.cpp:198
 #, kde-format
 msgid "ResNet50"
-msgstr ""
+msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
 #, kde-format
@@ -9368,7 +9376,7 @@ msgstr "Profiilia ei ole saatavilla"
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
-msgstr ""
+msgstr "Järjestelmään ei ole asennettu tulostinta. Asenna vähintään yksi."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:188
 #, fuzzy, kde-format
@@ -13321,7 +13329,7 @@ msgstr "Aseta tässä kuvan ottaneen kameran ISO-nopeus."
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:280
 #, kde-format
 msgid "Sensing method:"
-msgstr ""
+msgstr "Tunnistusmenetelmä:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:282
 #, kde-format
@@ -17367,7 +17375,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
-msgstr ""
+msgstr "Pinoon pitää lisätä vähintään kaksi samanaiheista kuvaa."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
@@ -37818,7 +37826,7 @@ msgstr "ei muutettu"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:651
+#: core/libs/properties/itempropertiessidebardb.cpp:641
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37829,10 +37837,10 @@ msgstr "ei saatavilla"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:279
 #: core/libs/properties/itempropertiessidebar.cpp:282
-#: core/libs/properties/itempropertiessidebardb.cpp:709
-#: core/libs/properties/itempropertiessidebardb.cpp:711
-#: core/libs/properties/itempropertiessidebardb.cpp:814
-#: core/libs/properties/itempropertiessidebardb.cpp:816
+#: core/libs/properties/itempropertiessidebardb.cpp:699
+#: core/libs/properties/itempropertiessidebardb.cpp:701
+#: core/libs/properties/itempropertiessidebardb.cpp:804
+#: core/libs/properties/itempropertiessidebardb.cpp:806
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
@@ -37844,10 +37852,10 @@ msgstr "Ei"
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:708
-#: core/libs/properties/itempropertiessidebardb.cpp:710
-#: core/libs/properties/itempropertiessidebardb.cpp:813
-#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:698
+#: core/libs/properties/itempropertiessidebardb.cpp:700
+#: core/libs/properties/itempropertiessidebardb.cpp:803
+#: core/libs/properties/itempropertiessidebardb.cpp:805
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -38087,8 +38095,8 @@ msgstr "Kalibroimaton"
 
 #: core/libs/properties/itempropertiessidebar.cpp:261
 #: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebardb.cpp:685
-#: core/libs/properties/itempropertiessidebardb.cpp:698
+#: core/libs/properties/itempropertiessidebardb.cpp:675
+#: core/libs/properties/itempropertiessidebardb.cpp:688
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38101,39 +38109,39 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3 Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebardb.cpp:707
+#: core/libs/properties/itempropertiessidebardb.cpp:697
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:313
-#: core/libs/properties/itempropertiessidebardb.cpp:741
+#: core/libs/properties/itempropertiessidebardb.cpp:731
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:318
-#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:736
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:103
+#: core/libs/properties/itempropertiessidebardb.cpp:95
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Kuvatekstit"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:104
+#: core/libs/properties/itempropertiessidebardb.cpp:96
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Versiot"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:680
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -41940,17 +41948,17 @@ msgctxt "@info: font style"
 msgid "Oblique"
 msgstr "Kalteva"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:81
+#: core/libs/widgets/fonts/dfontselect.cpp:73
 #, kde-format
 msgid "System Font"
 msgstr "Järjestelmän fontti"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:82
+#: core/libs/widgets/fonts/dfontselect.cpp:74
 #, kde-format
 msgid "Custom Font"
 msgstr "Itse määritetty"
 
-#: core/libs/widgets/fonts/dfontselect.cpp:84
+#: core/libs/widgets/fonts/dfontselect.cpp:76
 #, kde-format
 msgid "Choose..."
 msgstr "Valitse…"
@@ -64139,10 +64147,9 @@ msgid "Your new collection will be created with this name:"
 msgstr "Uusi kokoelma luodaan nimellä:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1609
-#, fuzzy, kde-format
-#| msgid "Your new collection will be created with this name:"
+#, kde-format
 msgid "Your collection will be updated to this name:"
-msgstr "Uusi kokoelma luodaan nimellä:"
+msgstr "Kokoelman nimeksi päivitetään:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1692
 #, kde-format
@@ -64162,10 +64169,9 @@ msgid "Download Required Files"
 msgstr "Lataa vaaditut tiedostot"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:169
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "Use Face Detection feature"
-msgstr "Kasvontunnistus"
+msgstr "Käytä kasvontunnistusominaisuutta"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:170
 #, kde-format
@@ -64639,32 +64645,7 @@ msgid "Always show intermediate snapshots"
 msgstr "Näytä aina välivaiheen otokset"
 
 #: core/utilities/setup/editor/setupversioning.cpp:480
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<title>Default File Format for Saving</title><para>Select the file format "
-#| "in which edited images are saved automatically. Format-specific options, "
-#| "like compression settings, can be configured on the <interface>Format "
-#| "Options</interface> tab.</para><para><list><item><emphasis "
-#| "strong='true'>JPEG</emphasis>: JPEG is the most commonly used file "
-#| "format, but it employs lossy compression, which means that with each "
-#| "saving operation some image information will be irreversibly lost. JPEG "
-#| "offers a good compression rate, resulting in smaller files. </"
-#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
-#| "employing lossless compression. The files, though, will be larger because "
-#| "PNG does not achieve very good compression rates.</item><item><emphasis "
-#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
-#| "uncompressed or with modest lossless compression. Resulting files will be "
-#| "large, but without quality loss due to compression. </"
-#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
-#| "superior file format offering good compression rates with either lossy or "
-#| "lossless compression. But it is not yet widely used and supported, so "
-#| "your friends may not directly be able to open these files, and you may "
-#| "not be able to directly publish them on the web. </item><item><emphasis "
-#| "strong='true'>JPEG 2000</emphasis>: JPEG 2000 is similar to PGF. Loading "
-#| "or saving is slower, the compression rate is better, and the format more "
-#| "widely supported, though still not comparable to the tradition formats "
-#| "JPEG, PNG or TIFF. </item></list></para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly used "
@@ -64683,27 +64664,20 @@ msgid ""
 "directly be able to open these files, and you may not be able to directly "
 "publish them on the web. </item>"
 msgstr ""
-"<title>Oletustallennusmuoto</title><para>Valitse tiedostomuoto, johon "
-"muokatut kuvat automaattisesti tallennetaan. Muotokohtaiset asetukset kuten "
-"pakkausvalinnat voi tehdä <interface>Tiedostomuodon valinnat</interface> -"
-"välilehdellä.</para><para><list><item><emphasis strong='true'>JPEG</"
-"emphasis>: JPEG on yleisimmin käytetty tiedostomuoto, mutta se käyttää "
-"häviöllistä pakkausta, mikä tarkoittaa, että jokaisessa tallennuksessa kuvan "
-"tietoa peruuttamattomasti katoaa. JPEG tarjoaa hyvän pakkaustason eli "
-"pienemmän tiedostokoon.</item><item><emphasis strong='true'>PNG</emphasis>: "
-"Yleisesti käytetty häviötöntä pakkausta käyttävä muoto. Tiedostot ovat "
-"kuitenkin aika isoja, koska PNG ei käytä kovin hyviä pakkaustasoja.</"
-"item><item><emphasis strong='true'>TIFF</emphasis>: Yleisesti "
-"pakkaamattomana tai väljästi pakattuna käytetty muoto. Tuloksena "
-"tiedostokoko on yleensä iso, mutta toisaalta laatu ei heikkene.</"
+"<item><emphasis strong='true'>JPEG</emphasis>: Yleisimmin käytetty "
+"tiedostomuoto, mutta se käyttää häviöllistä pakkausta, mikä tarkoittaa, että "
+"kullakin tallennuskerralla kuvatietoa peruuttamattomasti katoaa. JPEG "
+"tarjoaa hyvän pakkaustason eli pienemmän tiedostokoon.</item><item><emphasis "
+"strong='true'>PNG</emphasis>: Yleisimmin käytetty häviötöntä pakkausta "
+"käyttävä muoto. Tiedostot ovat kuitenkin isohkoja, koska PNG ei saavuta "
+"kovin hyviä pakkaustasoja.</item><item><emphasis strong='true'>TIFF</"
+"emphasis>: Yleisesti pakkaamattomana tai heikohkosti pakattuna käytetty "
+"muoto. Tulostiedostokoko on yleensä iso, mutta toisaalta laatu ei heikkene.</"
 "item><item><emphasis strong='true'>PGF</emphasis>: Teknisesti ylivertainen "
 "tiedostomuoto, joka tarjoaa hyvän pakkaustason sekä häviöttömästi että "
 "häviöllisenä. Muotoa ei kuitenkaan yleisesti vielä käytetä tai tueta, joten "
 "ystäväsi eivät välttämättä pysty avaamaan tiedostoja eikä niitä voi "
-"julkaista suoraan verkkoon.</item><item><emphasis strong='true'>JPEG2000</"
-"emphasis>: JPEG2000 on samankaltainen kuin PGF. Lataaminen ja tallentaminen "
-"on hitaahkoa, pakkaustaso on hyvä mutta muoto on paremmin tuettu, joskaan ei "
-"niin hyvin kuin perinteiset JPEG, PNG ja TIFF.</item></list></para>"
+"julkaista suoraan verkkoon.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:513
 #, kde-kuit-format
@@ -64726,13 +64700,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/editor/setupversioning.cpp:536
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images data to PNG format.</"
-#| "p><p>The Portable Network Graphics is a raster-graphics file-format that "
-#| "supports lossless data compression.</p><p>See details about this format "
-#| "from <a href='https://en.wikipedia.org/wiki/"
-#| "Portable_Network_Graphics'>this page</a>.</p>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free raster-"
@@ -64740,11 +64708,10 @@ msgid ""
 "outperform existing raster formats and thus to become their universal "
 "replacement. </item>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi muuntaa kuvia PNG-muotoon.</p><p>PNG (Portable "
-"Network Graphics) on rasterigrafiikkamuoto, joka tukee häviötöntä tiedon "
-"pakkausta.</p><p>Lisätietoa tiedostomuodosta löytyy englanninkielisestä <a "
-"href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>Wikipediasta</"
-"a>.</p>"
+"<item><emphasis strong='true'>JPEG-XL</emphasis>: Tämä on häviötöntä "
+"pakkausta tukeva lisenssimaksuton bittikarttagrafiikkamuoto, joka on "
+"suunniteltu aiempia bittikarttamuotoja tehokkaammaksi ja siten lopulta "
+"korvaamaan ne.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:546
 #, kde-kuit-format
@@ -65382,11 +65349,10 @@ msgid "Note: see %1 of ExifTool backend."
 msgstr "Huom! Katso ExifTool-taustajärjestelmästä %1"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:230
-#, fuzzy, kde-format
-#| msgid "Write Options"
+#, kde-format
 msgctxt "@label"
 msgid "write limitations"
-msgstr "Kirjoitusvalinnat"
+msgstr "kirjoitusrajoitukset"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:237
 #, kde-format
@@ -65647,18 +65613,7 @@ msgstr ""
 "DarkTablelle."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Add file types to be recognised as sidecars.\n"
-#| "digiKam (optionally) writes metadata to *.xmp sidecar\n"
-#| "files. Other programs might use different types, which\n"
-#| "can be specified below. digiKam will neither display these\n"
-#| "nor read from or write to them. But whenever a matching album\n"
-#| "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-#| "moved, copied or deleted, the same operation will be done\n"
-#| "on these sidecar files.\n"
-#| "Multiple extensions must be separated by a semicolon or a space."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Add file types to be recognised as sidecars.\n"
@@ -65670,13 +65625,13 @@ msgid ""
 "files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
-"Lisää oheistiedostoiksi tunnistettavia tiedostonimipäätteitä.\n"
-"digiKam kirjoittaa metatiedot valinnaisesti *.xmp-\n"
-"oheistiedostoihin. Muut ohjelmat voivat käyttää eri päätteitä,\n"
-"jotka voi asettaa alla. digiKam ei näytä, lue tai kirjoita\n"
-"näitä tiedostoja, mutta aina kun albumin kohteen nimeä\n"
-"muutetaan tai kohde siirretään, kopioidaan tai poistetaan,\n"
-"sama tehdään näille oheistiedostoille.\n"
+"Lisää oheistiedostoiksi tunnistettavia tiedostotyyppejä.\n"
+"digiKam kirjoittaa (valinnaisesti) metatiedot *.xmp-oheistiedostoihin. "
+"Toiset ohjelmat voivat käyttää muita tyyppejä, jotka voi asettaa alla. "
+"digiKam ei näytä, lue tai kirjoita näitä tiedostoja, mutta aina kun albumin "
+"kohteen nimeä (esim. ”kuva.dng”, joka vastaa tiedostoa ”kuva.dng.pp3”) "
+"muutetaan tai kohde siirretään, kopioidaan tai poistetaan, sama tehdään "
+"oheistiedostoille.\n"
 "Päätteitä voi antaa useita puolipistein tai välilyönnein erotettuna."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
@@ -65749,10 +65704,9 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:35
-#, fuzzy, kde-format
-#| msgid "Remote Server Settings"
+#, kde-format
 msgid "&Network Proxy Server Settings"
-msgstr "Etäpalvelimen asetukset"
+msgstr "&Verkon välityspalvelimen asetukset"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
 #: core/utilities/setup/misc/proxysettingswidget.ui:43
@@ -65762,17 +65716,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
 #: core/utilities/setup/misc/proxysettingswidget.ui:60
-#, fuzzy, kde-format
-#| msgid "Host Port:"
+#, kde-format
 msgid "P&ort:"
-msgstr "Koneen portti:"
+msgstr "Po&rtti:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:116
-#, fuzzy, kde-format
-#| msgid "Fix type"
+#, kde-format
 msgid "Proxy type:"
-msgstr "Korjaa tyyppi"
+msgstr "Välityspalvelimen tyyppi:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:124
@@ -65790,26 +65742,21 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
 #: core/utilities/setup/misc/proxysettingswidget.ui:168
 #: core/utilities/setup/misc/proxysettingswidget.ui:180
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Presentation"
+#, kde-format
 msgid "Requires authentication"
-msgstr "Esitys"
+msgstr "Vaatii todentamisen"
 
 #. i18n: ectx: property (text), widget (QLabel, label_username)
 #: core/utilities/setup/misc/proxysettingswidget.ui:186
-#, fuzzy, kde-format
-#| msgctxt "piwigo login settings"
-#| msgid "Username:"
+#, kde-format
 msgid "U&sername:"
-msgstr "Käyttäjätunnus:"
+msgstr "Kä&yttäjätunnus:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_password)
 #: core/utilities/setup/misc/proxysettingswidget.ui:196
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "&Password:"
-msgstr "Salasana:"
+msgstr "&Salasana:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
@@ -66072,11 +66019,9 @@ msgid "Enable internal debug logging"
 msgstr ""
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgid "Download required binary data..."
-msgstr "Lataa vaaditut tiedostot"
+msgstr "Ladataan vaadittua binaaridataa…"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:102
 #, kde-format
@@ -66159,17 +66104,14 @@ msgid "Metadata"
 msgstr "Metatiedot"
 
 #: core/utilities/setup/setup.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
-#| "images and metadata</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Embedded Image Information Management\n"
 "Setup relations between images and metadata"
 msgstr ""
-"<qt>Metatietojen asetukset<br/><i>Valokuviin talletettujen metatietojen "
-"käsittely</i></qt>"
+"Upotettujen kuvatietojen hallinta\n"
+"Aseta kuvan ja metatiedon suhteet"
 
 #: core/utilities/setup/setup.cpp:194
 #, kde-format
@@ -66226,18 +66168,14 @@ msgid "Light Table"
 msgstr "Valopöytä"
 
 #: core/utilities/setup/setup.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare images"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare items"
 msgstr ""
 "Valopöydän asetukset\n"
-"Muuta valokuvien vertailuun käytettyä työkalua"
+"Mukauta kohteiden vertailuun käytettyä työkalua"
 
 #: core/utilities/setup/setup.cpp:223
 #, kde-format
