@@ -22,7 +22,7 @@
 #include <QStyle>
 #include <QFileInfo>
 #include <QApplication>
-#include <QTemporaryDir>
+#include <QTemporaryFile>
 #include <QScopedPointer>
 
 // KDE includes
@@ -159,10 +159,10 @@ bool ApplyMetadata::toolOperations()
 
     if (metaInfo.suffix().toUpper() == QLatin1String("JSON"))
     {
-        QString dirTemplate = QDir::tempPath() + QLatin1String("/ApplyMetadata-XXXXXX");
-        QTemporaryDir tempDir(dirTemplate);
+        QString fileTemplate = QDir::tempPath() + QLatin1String("/ApplyMetadata-XXXXXX.json");
+        QTemporaryFile tempFile(fileTemplate);
 
-        if (!tempDir.isValid())
+        if (!tempFile.open())
         {
             return false;
         }
@@ -174,7 +174,6 @@ bool ApplyMetadata::toolOperations()
             return false;
         }
 
-        QString metaFile   = tempDir.path() + QLatin1Char('/') + metaInfo.fileName();
         QString jsonSource = QString::fromUtf8("\"SourceFile\": \"%1\",");
         QString jsonString = QString::fromUtf8(jsonFileRead.readAll());
         jsonFileRead.close();
@@ -188,7 +187,7 @@ bool ApplyMetadata::toolOperations()
         jsonString.replace(jsonSource.arg(imageInfo().name()),
                            jsonSource.arg(outputUrl().toLocalFile(), Qt::CaseInsensitive));
 
-        QFile jsonFileWrite(metaFile);
+        QFile jsonFileWrite(tempFile.fileName());
 
         if (!jsonFileWrite.open(QIODevice::WriteOnly))
         {
@@ -198,7 +197,7 @@ bool ApplyMetadata::toolOperations()
         jsonFileWrite.write(jsonString.toUtf8());
         jsonFileWrite.close();
 
-        ret = parser->applyMetadataFile(outputUrl().toLocalFile(), metaFile);
+        ret = parser->applyMetadataFile(outputUrl().toLocalFile(), tempFile.fileName());
     }
     else
     {
