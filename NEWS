@@ -239,7 +239,7 @@ BUGFIXES:
 216 ==> 481289 - Problem with Reverse Geocoding writing Xmp.lr.hierarchicalSubject.
 217 ==> 476092 - Wayland support: right-mouse on tags pops-up empty (UI) frame.
 218 ==> 481358 - Album name does not appear in file properties.
-219 ==> 
+219 ==> 481366 - Group by file name stacks all the selected pictures into a single group, regardless of the file name.
 220 ==> 
 221 ==> 
 222 ==> 
