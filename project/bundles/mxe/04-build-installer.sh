@@ -162,9 +162,6 @@ cp -r $MXE_INSTALL_PREFIX/qt5/plugins                                   $BUNDLED
 echo -e "\n---------- digiKam and KF5 plugins"
 cp -r $MXE_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                     2>/dev/null
 
-echo -e "\n---------- OpenAL for QtAV"
-cp -r $MXE_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                     2>/dev/null
-
 echo -e "\n---------- DrMinGw run-time"
 cp -r $MXE_INSTALL_PREFIX/bin/exchndl.dll                               $BUNDLEDIR/                     2>/dev/null
 cp -r $MXE_INSTALL_PREFIX/bin/mgwhelp.dll                               $BUNDLEDIR/                     2>/dev/null
@@ -206,7 +203,6 @@ DLL_FILES="\
 `find  $MXE_INSTALL_PREFIX/plugins             -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/plugins/||'`            \
 `find  $MXE_INSTALL_PREFIX/lib/libgphoto2      -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/lib/libgphoto2||'`      \
 `find  $MXE_INSTALL_PREFIX/lib/libgphoto2_port -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/lib/libgphoto2_port||'` \
-$MXE_INSTALL_PREFIX/bin/OpenAL32.dll \
 $MXE_INSTALL_PREFIX/bin/exchndl.dll  \
 $MXE_INSTALL_PREFIX/bin/mgwhelp.dll  \
 "
@@ -216,6 +212,9 @@ for app in $DLL_FILES ; do
     $ORIG_WD/rll.py --copy --installprefix $MXE_INSTALL_PREFIX --odir $BUNDLEDIR --efile $app
 
 done
+
+# See bug #476290
+rm -fr $MXE_INSTALL_PREFIX/lib/plugins/imageformats/kimg_jp2.dll
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.
