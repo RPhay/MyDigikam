@@ -240,7 +240,7 @@ BUGFIXES:
 217 ==> 476092 - Wayland support: right-mouse on tags pops-up empty (UI) frame.
 218 ==> 481358 - Album name does not appear in file properties.
 219 ==> 481366 - Group by file name stacks all the selected pictures into a single group, regardless of the file name.
-220 ==> 
+220 ==> 469423 - digiKam creates duplicate files when local directory is a onedrive folder.
 221 ==> 
 222 ==> 
 223 ==> 
