@@ -340,6 +340,9 @@ cd "$ORIG_WD"
 cp -a $TEMPROOT/lib/plugins $TEMPROOT/libexec/qt5/
 rm -rf $TEMPROOT/lib/plugins
 
+# See bug #476290
+rm -fr $TEMPROOT/libexec/qt5/plugins/imageformats/libqjp2.dylib
+
 #################################################################################################
 # Merge Manifest files
 
