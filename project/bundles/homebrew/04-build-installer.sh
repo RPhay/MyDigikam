@@ -269,6 +269,8 @@ for path in $OTHER_DIRS ; do
     cp -aHL "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
+# See bug #476290
+rm -fr $TEMPROOT/libexec/qt6/plugins/imageformats/libqjp2.dylib
 
 echo "---------- Copying data files..."
 
