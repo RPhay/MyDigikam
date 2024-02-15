@@ -238,7 +238,7 @@ BUGFIXES:
 215 ==> 481257 - Metadata side viewer is not updated when Item/Re-read metadata from file which has been modified externally after Digikam startup.
 216 ==> 481289 - Problem with Reverse Geocoding writing Xmp.lr.hierarchicalSubject.
 217 ==> 476092 - Wayland support: right-mouse on tags pops-up empty (UI) frame.
-218 ==> 
+218 ==> 481358 - Album name does not appear in file properties.
 219 ==> 
 220 ==> 
 221 ==> 

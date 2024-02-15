@@ -454,7 +454,10 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
             if (album)
             {
-                tip += cnt.cellSpecBeg + i18n("Album:") + cnt.cellSpecMid + album->albumPath().remove(0, 1) + cnt.cellSpecEnd;
+                str = album->isAlbumRoot() ? album->title()
+                                           : album->albumPath().remove(0, 1);
+
+                tip += cnt.cellSpecBeg + i18n("Album:") + cnt.cellSpecMid + str + cnt.cellSpecEnd;
             }
         }
 
