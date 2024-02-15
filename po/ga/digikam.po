@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 01:38+0000\n"
+"POT-Creation-Date: 2024-02-15 01:34+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -6206,13 +6206,13 @@ msgctxt "@info"
 msgid "Apply Metadata: ExifTool is not available."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:184
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:210
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
 #, fuzzy, kde-format
 #| msgid "Applying metadata"
 msgctxt "@info"

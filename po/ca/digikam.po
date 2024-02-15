@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 01:38+0000\n"
+"POT-Creation-Date: 2024-02-15 01:34+0000\n"
 "PO-Revision-Date: 2024-02-12 09:10+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -6036,13 +6036,13 @@ msgctxt "@info"
 msgid "Apply Metadata: ExifTool is not available."
 msgstr "Aplica metadades: L'ExifTool no és disponible."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:184
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
 msgstr "Aplica metadades: El nom de fitxer no existeix en el fitxer JSON."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:210
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."

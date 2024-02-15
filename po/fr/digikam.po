@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 01:38+0000\n"
-"PO-Revision-Date: 2024-02-06 13:47+0100\n"
+"POT-Creation-Date: 2024-02-15 01:34+0000\n"
+"PO-Revision-Date: 2024-02-13 11:52+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -6125,61 +6125,59 @@ msgid ""
 "Select an image or JSON file supported by ExifTool to apply the file "
 "metadata to the images."
 msgstr ""
+"Sélectionnez une image ou un fichier « JSON » pris en charge par l'outil "
+"« Exiftool » pour appliquer les métadonnées de fichier aux images."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: No image or JSON file selected."
 msgstr ""
+"Appliquer les métadonnées : aucune image ou fichier « JSON » sélectionné."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool is not available."
-msgstr ""
+msgstr "Appliquer les métadonnées : l'outil « exiftool » est indisponible."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:184
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
 msgstr ""
+"Appliquer les métadonnées : le nom du fichier n'existe pas dans le fichier "
+"« JSON »."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
+#, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
-msgstr "Appliquer un modèle de métadonnées"
+msgstr "Appliquer les métadonnées : l'outil « ExifTool » a signalé un erreur."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Applying metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Metadata"
-msgstr "Application des métadonnées"
+msgstr "Appliquer les métadonnées"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to apply metadata template to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
-msgstr "Un outil pour appliquer un modèle de métadonnées aux images."
+msgstr ""
+"Un outil pour appliquer des métadonnées à partir d'une image ou d'un fichier "
+"« JSON » avec l'outil « ExifTool »."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can apply metadata template over "
-#| "images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply metadata from a image or JSON "
 "file with ExifTool.</para>"
 msgstr ""
-"<p>Ce gestionnaire de traitement par lots peut appliquer un modèle de "
-"métadonnées aux images.</p>"
+"<p>Ce gestionnaire de traitement par lots peut appliquer des métadonnées  à "
+"partir d'une image ou d'un fichier « JSON » avec l'outil « ExifTool ».</p>"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format

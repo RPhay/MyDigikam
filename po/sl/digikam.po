@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 01:38+0000\n"
+"POT-Creation-Date: 2024-02-15 01:34+0000\n"
 "PO-Revision-Date: 2024-02-12 07:32+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -6050,13 +6050,13 @@ msgctxt "@info"
 msgid "Apply Metadata: ExifTool is not available."
 msgstr "Uporabi metapodatke: ExifTool ni na voljo."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:184
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
 msgstr "Uporabi metapodatke: Ime datoteke ne obstaja v datoteki JSON."
 
-#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:210
+#: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
