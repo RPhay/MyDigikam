@@ -212,8 +212,8 @@ for coder in $IM_CODERS_BL ; do
 done
 
 # See bug #476290
-rm -fr $VCPKG_INSTALL_PREFIX/Qt6/plugins/imageformats/qjp2.dll
-rm -fr $VCPKG_INSTALL_PREFIX/Qt6/plugins/imageformats/qjp2.pdb
+rm -fr $BUNDLEDIR/plugins/imageformats/qjp2.dll
+rm -fr $BUNDLEDIR/plugins/imageformats/qjp2.pdb
 
 #################################################################################################
 # Add debug symbols for few binary files to optimize space.
