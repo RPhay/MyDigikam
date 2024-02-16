@@ -214,7 +214,7 @@ for app in $DLL_FILES ; do
 done
 
 # See bug #476290
-rm -fr $MXE_INSTALL_PREFIX/qt5/plugins/imageformats/qjp2.dll
+rm -fr $BUNDLEDIR/plugins/imageformats/qjp2.dll
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.
