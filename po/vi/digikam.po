@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-15 01:34+0000\n"
+"POT-Creation-Date: 2024-02-16 01:38+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -989,7 +989,7 @@ msgid "Name:"
 msgstr "Tên:"
 
 #: core/app/items/utils/tooltipfiller.cpp:83
-#: core/app/items/utils/tooltipfiller.cpp:595
+#: core/app/items/utils/tooltipfiller.cpp:598
 #: core/app/views/stack/welcomepageview.cpp:273
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
@@ -1192,119 +1192,119 @@ msgstr "Tệp âm thanh"
 msgid "digiKam Properties"
 msgstr "Thuộc tính digiKam"
 
-#: core/app/items/utils/tooltipfiller.cpp:457
+#: core/app/items/utils/tooltipfiller.cpp:460
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:228
 #, kde-format
 msgid "Album:"
 msgstr "Tập:"
 
-#: core/app/items/utils/tooltipfiller.cpp:471
+#: core/app/items/utils/tooltipfiller.cpp:474
 #, fuzzy, kde-format
 msgctxt "title of the file"
 msgid "Title:"
 msgstr "&Tựa:"
 
-#: core/app/items/utils/tooltipfiller.cpp:485
+#: core/app/items/utils/tooltipfiller.cpp:488
 #, fuzzy, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
 msgstr "Độ xoay:"
 
-#: core/app/items/utils/tooltipfiller.cpp:494
+#: core/app/items/utils/tooltipfiller.cpp:497
 #, kde-format
 msgid "Tags:"
 msgstr "Thẻ:"
 
-#: core/app/items/utils/tooltipfiller.cpp:543
+#: core/app/items/utils/tooltipfiller.cpp:546
 #, fuzzy, kde-format
 msgid "Labels:"
 msgstr "Mật độ :"
 
-#: core/app/items/utils/tooltipfiller.cpp:570
+#: core/app/items/utils/tooltipfiller.cpp:573
 #, fuzzy, kde-format
 msgid "Album Properties"
 msgstr "Sửa thuộc tính tập ảnh..."
 
-#: core/app/items/utils/tooltipfiller.cpp:574
-#: core/app/items/utils/tooltipfiller.cpp:653
+#: core/app/items/utils/tooltipfiller.cpp:577
+#: core/app/items/utils/tooltipfiller.cpp:656
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "Tên:"
 
-#: core/app/items/utils/tooltipfiller.cpp:580
+#: core/app/items/utils/tooltipfiller.cpp:583
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:72
 #, kde-format
 msgid "Items:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:586
+#: core/app/items/utils/tooltipfiller.cpp:589
 #, fuzzy, kde-format
 msgid "Collection:"
 msgstr "Tập &hợp:"
 
-#: core/app/items/utils/tooltipfiller.cpp:607
+#: core/app/items/utils/tooltipfiller.cpp:610
 #, kde-format
 msgid "Category:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:620
+#: core/app/items/utils/tooltipfiller.cpp:623
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Caption:"
 msgstr "Độ xoay:"
 
-#: core/app/items/utils/tooltipfiller.cpp:626
+#: core/app/items/utils/tooltipfiller.cpp:629
 #, fuzzy, kde-format
 msgid "Preview:"
 msgstr "Xem thử"
 
-#: core/app/items/utils/tooltipfiller.cpp:649
+#: core/app/items/utils/tooltipfiller.cpp:652
 #, fuzzy, kde-format
 msgid "Filter"
 msgstr "Lọc:"
 
-#: core/app/items/utils/tooltipfiller.cpp:664
+#: core/app/items/utils/tooltipfiller.cpp:667
 #, fuzzy, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "Có"
 
-#: core/app/items/utils/tooltipfiller.cpp:670
+#: core/app/items/utils/tooltipfiller.cpp:673
 #, fuzzy, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
 msgstr "Tiệc"
 
-#: core/app/items/utils/tooltipfiller.cpp:676
+#: core/app/items/utils/tooltipfiller.cpp:679
 #, fuzzy, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "Không"
 
-#: core/app/items/utils/tooltipfiller.cpp:686
+#: core/app/items/utils/tooltipfiller.cpp:689
 #, fuzzy, kde-format
 msgid "Reproducible:"
 msgstr "<b>Đọc được</b>:"
 
-#: core/app/items/utils/tooltipfiller.cpp:698
+#: core/app/items/utils/tooltipfiller.cpp:701
 #, fuzzy, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
 msgstr "Mô tả"
 
-#: core/app/items/utils/tooltipfiller.cpp:703
+#: core/app/items/utils/tooltipfiller.cpp:706
 #, fuzzy, kde-format
 msgid "Identifier:"
 msgstr "Giống hệt"
 
-#: core/app/items/utils/tooltipfiller.cpp:708
+#: core/app/items/utils/tooltipfiller.cpp:711
 #, kde-format
 msgid "Technical Parameters"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:727
+#: core/app/items/utils/tooltipfiller.cpp:730
 #, fuzzy, kde-format
 msgid "<i>Binary Data</i>"
 msgstr "<i>không sẵn sàng</i>"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-15 01:34+0000\n"
+"POT-Creation-Date: 2024-02-16 01:38+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -987,7 +987,7 @@ msgid "Name:"
 msgstr "Name:"
 
 #: core/app/items/utils/tooltipfiller.cpp:83
-#: core/app/items/utils/tooltipfiller.cpp:595
+#: core/app/items/utils/tooltipfiller.cpp:598
 #: core/app/views/stack/welcomepageview.cpp:273
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
@@ -1190,118 +1190,118 @@ msgstr "Audio-Codec:"
 msgid "digiKam Properties"
 msgstr "digiKam-Einstellungen"
 
-#: core/app/items/utils/tooltipfiller.cpp:457
+#: core/app/items/utils/tooltipfiller.cpp:460
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:228
 #, kde-format
 msgid "Album:"
 msgstr "Album:"
 
-#: core/app/items/utils/tooltipfiller.cpp:471
+#: core/app/items/utils/tooltipfiller.cpp:474
 #, kde-format
 msgctxt "title of the file"
 msgid "Title:"
 msgstr "Titel:"
 
-#: core/app/items/utils/tooltipfiller.cpp:485
+#: core/app/items/utils/tooltipfiller.cpp:488
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
 msgstr "Beschriftung:"
 
-#: core/app/items/utils/tooltipfiller.cpp:494
+#: core/app/items/utils/tooltipfiller.cpp:497
 #, kde-format
 msgid "Tags:"
 msgstr "Stichwörter:"
 
-#: core/app/items/utils/tooltipfiller.cpp:543
+#: core/app/items/utils/tooltipfiller.cpp:546
 #, kde-format
 msgid "Labels:"
 msgstr "Markierungen:"
 
-#: core/app/items/utils/tooltipfiller.cpp:570
+#: core/app/items/utils/tooltipfiller.cpp:573
 #, kde-format
 msgid "Album Properties"
 msgstr "Albumeigenschaften"
 
-#: core/app/items/utils/tooltipfiller.cpp:574
-#: core/app/items/utils/tooltipfiller.cpp:653
+#: core/app/items/utils/tooltipfiller.cpp:577
+#: core/app/items/utils/tooltipfiller.cpp:656
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "Name:"
 
-#: core/app/items/utils/tooltipfiller.cpp:580
+#: core/app/items/utils/tooltipfiller.cpp:583
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:72
 #, kde-format
 msgid "Items:"
 msgstr "Anzahl Einträge:"
 
-#: core/app/items/utils/tooltipfiller.cpp:586
+#: core/app/items/utils/tooltipfiller.cpp:589
 #, kde-format
 msgid "Collection:"
 msgstr "Sammlung:"
 
-#: core/app/items/utils/tooltipfiller.cpp:607
+#: core/app/items/utils/tooltipfiller.cpp:610
 #, kde-format
 msgid "Category:"
 msgstr "Kategorie:"
 
-#: core/app/items/utils/tooltipfiller.cpp:620
+#: core/app/items/utils/tooltipfiller.cpp:623
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Caption:"
 msgstr "Beschriftung:"
 
-#: core/app/items/utils/tooltipfiller.cpp:626
+#: core/app/items/utils/tooltipfiller.cpp:629
 #, kde-format
 msgid "Preview:"
 msgstr "Vorschau:"
 
-#: core/app/items/utils/tooltipfiller.cpp:649
+#: core/app/items/utils/tooltipfiller.cpp:652
 #, kde-format
 msgid "Filter"
 msgstr "Filter"
 
-#: core/app/items/utils/tooltipfiller.cpp:664
+#: core/app/items/utils/tooltipfiller.cpp:667
 #, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "Ja"
 
-#: core/app/items/utils/tooltipfiller.cpp:670
+#: core/app/items/utils/tooltipfiller.cpp:673
 #, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
 msgstr "Teilweise"
 
-#: core/app/items/utils/tooltipfiller.cpp:676
+#: core/app/items/utils/tooltipfiller.cpp:679
 #, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "Nein"
 
-#: core/app/items/utils/tooltipfiller.cpp:686
+#: core/app/items/utils/tooltipfiller.cpp:689
 #, kde-format
 msgid "Reproducible:"
 msgstr "Nachvollziehbar: "
 
-#: core/app/items/utils/tooltipfiller.cpp:698
+#: core/app/items/utils/tooltipfiller.cpp:701
 #, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
 msgstr "Beschreibung:"
 
-#: core/app/items/utils/tooltipfiller.cpp:703
+#: core/app/items/utils/tooltipfiller.cpp:706
 #, kde-format
 msgid "Identifier:"
 msgstr "Bezeichner:"
 
-#: core/app/items/utils/tooltipfiller.cpp:708
+#: core/app/items/utils/tooltipfiller.cpp:711
 #, kde-format
 msgid "Technical Parameters"
 msgstr "Technische Parameter"
 
-#: core/app/items/utils/tooltipfiller.cpp:727
+#: core/app/items/utils/tooltipfiller.cpp:730
 #, kde-format
 msgid "<i>Binary Data</i>"
 msgstr "<i>Binärdaten</i>"
