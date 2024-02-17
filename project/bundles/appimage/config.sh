@@ -55,7 +55,7 @@ DK_KP_VERSION="5.27.10"
 
 # KDE Application version.
 # See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="23.08.4"
+DK_KA_VERSION="23.08.5"
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
@@ -78,7 +78,7 @@ DK_UPLOADURL="digikam@tinami.kde.org"
 
 if [[ $DK_QTVERSION == 5 ]] ; then
 
-    DK_KDE_VERSION="5.110"                                  # See bug #480134
+    DK_KDE_VERSION="5.115"
     DK_UPLOADDIR="/srv/archives/files/digikam/"
 
 else
