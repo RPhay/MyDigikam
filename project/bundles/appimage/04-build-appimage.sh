@@ -482,11 +482,17 @@ rm -rf usr/share/pkgconfig || true
 echo -e "------------- Strip Symbols in Binaries Files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
-    FILES=$(find . -type f  -exec file {} \; | grep ELF | grep -Ev '(digikam|showfoto)' | cut -d':' -f1)
+
+    # Note: do not remove kService debug symbols until bug #480134 is not resolved.
+
+    FILES=$(find . -type f  -exec file {} \; | grep ELF | grep -Ev '(digikam|showfoto|libKF5Service.so.5)' | cut -d':' -f1)
 #    FILES=$(find . -type f -executable | grep -Ev '(digikam|showfoto)')
+
 else
+
     FILES=$(find . -type f  -exec file {} \; | grep ELF | cut -d':' -f1)
 #    FILES=$(find . -type f -executable)
+
 fi
 
 for FILE in $FILES ; do
