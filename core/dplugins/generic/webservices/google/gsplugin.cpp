@@ -128,7 +128,7 @@ void GSPlugin::setup(QObject* const parent)
     addAction(ac2);
 
     DPluginAction* const ac3 = new DPluginAction(parent);
-    ac3->setIcon(icon());
+    ac3->setIcon(QIcon::fromTheme(QLatin1String("dk-googledrive")));
     ac3->setText(i18nc("@action", "Export to &Google Drive..."));
     ac3->setObjectName(QLatin1String("export_googledrive"));
     ac3->setActionCategory(DPluginAction::GenericExport);
