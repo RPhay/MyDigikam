@@ -138,6 +138,10 @@ cp -r /usr/share/solid                                    ./usr/share
 cp -r /usr/share/icu                                      ./usr/share
 cp -r /usr/share/mime                                     ./usr/share
 
+# See bug #480134: an up-to-date and clean freedesktop.org database is requires
+cp $ORIG_WD/data/freedesktop.org.xml                      ./usr/share/mime/packages
+rm -rf ./usr/share/mime/mime.cache
+
 # depending of OpenCV version installed, data directory is not the same.
 cp -r /usr/share/OpenCV                                   ./usr/share  || true
 cp -r /usr/share/opencv4                                  ./usr/share  || true
