@@ -211,7 +211,7 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
 
     QLabel* const userNameLbl = new QLabel(i18nc("account settings","Name:"), d->accountBox);
     d->changeUserBtn->setText(i18n("Change Account"));
-    d->changeUserBtn->setIcon(QIcon::fromTheme(QLatin1String("system-switch-user")).pixmap(16));
+    d->changeUserBtn->setIcon(QIcon::fromTheme(QLatin1String("system-switch-user")));
     d->changeUserBtn->setToolTip(i18n("Change %1 account for transfer", d->toolName));
 
     d->accountBoxLayout->addWidget(userNameLbl,           0, 0, 1, 2);
