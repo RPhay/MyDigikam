@@ -241,7 +241,7 @@ BUGFIXES:
 218 ==> 481358 - Album name does not appear in file properties.
 219 ==> 481366 - Group by file name stacks all the selected pictures into a single group, regardless of the file name.
 220 ==> 469423 - digiKam creates duplicate files when local directory is a onedrive folder.
-221 ==> 
+221 ==> 481345 - Crash in libJasper in Jas_global.initialized function.
 222 ==> 
 223 ==> 
 224 ==> 
