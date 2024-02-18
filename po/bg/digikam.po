@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-16 01:38+0000\n"
-"PO-Revision-Date: 2024-02-06 19:13+0100\n"
+"PO-Revision-Date: 2024-02-17 06:48+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -6028,61 +6028,55 @@ msgid ""
 "Select an image or JSON file supported by ExifTool to apply the file "
 "metadata to the images."
 msgstr ""
+"Изберете изображение или JSON файл, поддържан от ExifTool, за да приложите "
+"файла с метаданни към изображенията."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: No image or JSON file selected."
-msgstr ""
+msgstr "Прилагане на метаданни: Не е избрано изображение или JSON файл"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool is not available."
-msgstr ""
+msgstr "Прилагане на метаданни: ExifTool не е наличен"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
-msgstr ""
+msgstr "Прилагане на метаданни: Файлът не съществува или не е JSON файл"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
-msgstr "Прилагане на шаблона за метаданни"
+msgstr "Прилагане на метаданни: ExifTool съобщи за грешка"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Applying metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Metadata"
 msgstr "Прилагане на метаданните"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to apply metadata template to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
-msgstr "Инструмент за прилагане на шаблон за метаданни към изображения"
+msgstr ""
+"Инструмент за прилагане на метаданни от изображения или JSON файл с ExifTool"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can apply metadata template over "
-#| "images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply metadata from a image or JSON "
 "file with ExifTool.</para>"
 msgstr ""
 "<para>Този инструмент на мениджъра за пакетна обработка може да приложи "
-"шаблон от метаданни към изображения .</para>"
+"метаданни от изображение или JSON файл с ExifTool.</para>"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format
