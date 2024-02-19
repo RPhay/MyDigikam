@@ -1601,11 +1601,10 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 QString dateStr         = rmeta.value(QLatin1String("com.apple.quicktime.creationdate"));
                 QDateTime creationdDate = QDateTime::fromString(dateStr, Qt::ISODate);
 
-                if (creationdDate.isValid())
+                if (creationdDate.isValid() && (creationdDate.timeSpec() == Qt::OffsetFromUTC))
                 {
-                    creationdDate.setTimeZone(QTimeZone(0));
+                    creationdDate.setTimeSpec(Qt::LocalTime);
                     dateStr = creationdDate.toString(Qt::ISODate);
-                    dateStr.chop(6);
                     rmeta.insert(QLatin1String("com.apple.quicktime.creationdate"), dateStr);
                 }
             }
@@ -1613,14 +1612,16 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             videoDateTimeOriginal.prepend(videoDateTimeOriginal.takeLast());
         }
         else if (
-                 !((rmeta.contains(QLatin1String("com.android.model")))                                ||
-                   (rmeta.contains(QLatin1String("com.android.version")))                              ||
-                   (rmeta.contains(QLatin1String("com.android.capture.fps")))                          ||
-                   (rmeta.contains(QLatin1String("com.android.manufacturer")))                         ||
-                   (rmeta.value(QLatin1String("encoder")) == QLatin1String("DJI OsmoPocket3"))         ||
-                   (rmeta.value(QLatin1String("com.apple.quicktime.make")) == QLatin1String("Canon"))) &&
-                 !(rmeta.value(QLatin1String("compatible_brands")) == QLatin1String("mp42avc1niko"))
-                )
+                 !((rmeta.contains(QLatin1String("com.android.model")))                                        ||
+                   (rmeta.contains(QLatin1String("com.android.version")))                                      ||
+                   (rmeta.contains(QLatin1String("com.android.capture.fps")))                                  ||
+                   (rmeta.contains(QLatin1String("com.android.manufacturer")))                                 ||
+                   (rmeta.value(QLatin1String("com.apple.quicktime.make")) == QLatin1String("Canon"))          ||
+                   (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("isom3gp4"))       ||
+                   (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("mp42avc1niko"))   ||
+                   (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("isomiso2mp41"))   ||
+                   (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("XAVCmp42nrasiso6")))
+                 )
         {
             if (rmeta[QLatin1String("creation_time")].endsWith(QLatin1Char('Z')))
             {
