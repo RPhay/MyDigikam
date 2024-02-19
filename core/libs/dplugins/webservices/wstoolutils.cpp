@@ -33,9 +33,8 @@ QString WSToolUtils::decodeKey(const QString& key)
 
     for (int i = 0 ; i < keyArray.size() ; ++i)
     {
-        keyArray[i] ^= possibleCharacters()[pos].toLatin1();
-
-        pos = (++pos == possibleCharacters().length()) ? 0 : pos;
+        keyArray[i] = (keyArray[i] ^ possibleCharacters()[pos].toLatin1());
+        pos         = (++pos == possibleCharacters().length()) ? 0 : pos;
     }
 
     return QString::fromLatin1(keyArray);
