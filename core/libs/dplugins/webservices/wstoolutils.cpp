@@ -26,6 +26,38 @@
 namespace Digikam
 {
 
+QString WSToolUtils::decodeKey(const QString& key)
+{
+    QByteArray keyArray = QByteArray::fromBase64(key.toLatin1());
+    int pos             = 0;
+
+    for (int i = 0 ; i < keyArray.size() ; ++i)
+    {
+        keyArray[i] ^= possibleCharacters()[pos].toLatin1();
+
+        pos = (++pos == possibleCharacters().length()) ? 0 : pos;
+    }
+
+    return QString::fromLatin1(keyArray);
+}
+
+QString WSToolUtils::randomString(const int& length)
+{
+    QString randomString;
+    QRandomGenerator* const generator = QRandomGenerator::global();
+
+    for (int i = 0 ; i < length ; ++i)
+    {
+        const int index = generator->bounded(possibleCharacters().length());
+        QChar nextChar  = possibleCharacters().at(index);
+        randomString.append(nextChar);
+    }
+
+    return randomString;
+}
+
+// ------------------------------------------------------------------------------------
+
 QDir WSToolUtils::makeTemporaryDir(const char* prefix)
 {
     QString subDir = QString::fromLatin1("digikam-%1-%2").arg(QString::fromUtf8(prefix)).arg(qApp->applicationPid());
@@ -54,31 +86,14 @@ void WSToolUtils::removeTemporaryDir(const char* prefix)
 
 // ------------------------------------------------------------------------------------
 
-QString WSToolUtils::randomString(const int& length)
-{
-    const QString possibleCharacters(QLatin1String("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"));
-
-    QString randomString;
-    QRandomGenerator* const generator = QRandomGenerator::global();
-
-    for (int i = 0 ; i < length ; ++i)
-    {
-        const int index = generator->bounded(possibleCharacters.length());
-        QChar nextChar  = possibleCharacters.at(index);
-        randomString.append(nextChar);
-    }
-
-    return randomString;
-}
-
-// ------------------------------------------------------------------------------------
-
 QSettings* WSToolUtils::getOauthSettings(QObject* const parent)
 {
     QString dkoauth = oauthConfigFile();
 
     return (new QSettings(dkoauth, QSettings::IniFormat, parent));
 }
+
+// ------------------------------------------------------------------------------------
 
 void WSToolUtils::saveToken(const QString& name, const QString& token)
 {
@@ -116,12 +131,21 @@ void WSToolUtils::clearToken(const QString& name)
     settings.endGroup();
 }
 
+// ------------------------------------------------------------------------------------
+
 QString WSToolUtils::oauthConfigFile()
 {
     QString dkoauth = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
                       QLatin1String("/digikam_oauthrc");
 
     return dkoauth;
+}
+
+// ------------------------------------------------------------------------------------
+
+QString WSToolUtils::possibleCharacters()
+{
+    return QLatin1String("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
 }
 
 } // namespace Digikam

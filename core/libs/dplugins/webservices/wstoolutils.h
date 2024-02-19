@@ -35,6 +35,8 @@ public:
     explicit WSToolUtils() {};
     ~WSToolUtils()         {};
 
+    static QString decodeKey(const QString& key);
+
     /**
      * Generates random string.
      */
@@ -54,6 +56,7 @@ public:
 private:
 
     static QString oauthConfigFile();
+    static QString possibleCharacters();
 };
 
 } // namespace Digikam

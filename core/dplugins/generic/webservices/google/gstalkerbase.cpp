@@ -43,8 +43,9 @@ public:
       : linked    (false),
         authUrl   (QLatin1String("https://accounts.google.com/o/oauth2/auth")),
         tokenUrl  (QLatin1String("https://accounts.google.com/o/oauth2/token")),
-        identity  (QLatin1String("258540448336-hgdegpohibcjasvk1p595fpvjor15pbc.apps.googleusercontent.com")),
-        sharedKey (QLatin1String("iiIKTNM4ggBXiTdquAzbs2xw")),
+        identity  (QLatin1String("c3d7cXF2c3xxeXh6YCYoNDQ1Izs9PzU7MzsSFAhVFVNeXQ8a"
+                                 "HQYCHF5FARAQWhQGBwtXHV9eVV9RQEVSSlouLDchKzJpKyYn")),
+        sharedKey (QLatin1String("KCsKDxEICnwuLQkUJBorISQTKTYmZC8v")),
         netMngr   (nullptr)
     {
     }
@@ -70,12 +71,12 @@ GSTalkerBase::GSTalkerBase(QObject* const parent, const QStringList& scope, cons
     d->netMngr = NetworkManager::instance()->getNetworkManager(this);
     m_service  = new QOAuth2AuthorizationCodeFlow(d->netMngr, this);
 
+    m_service->setClientIdentifierSharedKey(WSToolUtils::decodeKey(d->sharedKey));
+    m_service->setClientIdentifier(WSToolUtils::decodeKey(d->identity));
     m_service->setContentType(QAbstractOAuth::ContentType::Json);
-    m_service->setClientIdentifierSharedKey(d->sharedKey);
     m_service->setScope(m_scope.join(QLatin1String(" ")));
     m_service->setAuthorizationUrl(QUrl(d->authUrl));
     m_service->setAccessTokenUrl(QUrl(d->tokenUrl));
-    m_service->setClientIdentifier(d->identity);
 
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)
 
