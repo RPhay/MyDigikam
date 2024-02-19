@@ -243,7 +243,7 @@ BUGFIXES:
 220 ==> 469423 - digiKam creates duplicate files when local directory is a onedrive folder.
 221 ==> 481345 - Crash in libJasper in Jas_global.initialized function.
 222 ==> 481537 - digiKam crashes when using face assignment dialog in image preview window.
-223 ==> 
+223 ==> 481545 - By assign name to face application will close.
 224 ==> 
 225 ==> 
 226 ==> 
