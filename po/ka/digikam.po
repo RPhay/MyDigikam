@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-16 01:38+0000\n"
-"PO-Revision-Date: 2024-02-11 02:08+0100\n"
+"PO-Revision-Date: 2024-02-19 05:37+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -5681,11 +5681,10 @@ msgid "Apply Metadata: ExifTool reported an error."
 msgstr ""
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Metadata"
-msgstr "მეტამონაცემები"
+msgstr "მეტამონაცემების გადატარება"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
 #, kde-format
