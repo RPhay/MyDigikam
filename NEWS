@@ -245,7 +245,7 @@ BUGFIXES:
 222 ==> 481537 - digiKam crashes when using face assignment dialog in image preview window.
 223 ==> 481545 - By assign name to face application will close.
 224 ==> 481484 - HECI Preview extreme slow.
-225 ==> 
+225 ==> 481603 - digiKam crashes when attempting to add a new Face tag.
 226 ==> 
 227 ==> 
 228 ==> 
