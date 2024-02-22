@@ -248,7 +248,7 @@ BUGFIXES:
 225 ==> 481603 - digiKam crashes when attempting to add a new Face tag.
 226 ==> 481630 - Adding/deleting tags on multiple images will erase face rectangles/other tags randomly.
 227 ==> 479900 - Strongly request a message about switching to Maria DB at 50K files.
-228 ==> 
+228 ==> 479473 - Information Lost in Captions tab from Left sidebar.
 229 ==> 
 230 ==> 
 231 ==> 
