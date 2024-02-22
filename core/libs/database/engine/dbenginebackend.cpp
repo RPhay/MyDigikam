@@ -196,9 +196,13 @@ QSqlDatabase BdEngineBackendPrivate::createDatabaseConnection()
     {
         QStringList toAdd;
 
-        // enable shared cache, especially useful with SQLite >= 3.5.0
+        if (!parameters.walMode)
+        {
+            // Enable shared cache, especially useful
+            // with SQLite >= 3.5.0 and WAL mode is disabled.
 
-        toAdd << QLatin1String("QSQLITE_ENABLE_SHARED_CACHE");
+            toAdd << QLatin1String("QSQLITE_ENABLE_SHARED_CACHE");
+        }
 
         // We do our own waiting.
 
@@ -291,6 +295,7 @@ bool BdEngineBackendPrivate::isSQLiteLockError(const DbEngineSqlQuery& query) co
             parameters.isSQLite() &&
             ((query.lastError().nativeErrorCode() == QLatin1String("5"))   /*SQLITE_BUSY*/             ||
              (query.lastError().nativeErrorCode() == QLatin1String("6"))   /*SQLITE_LOCKED*/           ||
+             (query.lastError().nativeErrorCode() == QLatin1String("517")) /*SQLITE_BUSY_SNAPSHOT*/    ||
              (query.lastError().nativeErrorCode() == QLatin1String("262")) /*SQLITE_LOCKED_SHAREDCACHE*/)
            );
 }
