@@ -287,9 +287,12 @@ bool BdEngineBackendPrivate::reconnectOnError() const
 
 bool BdEngineBackendPrivate::isSQLiteLockError(const DbEngineSqlQuery& query) const
 {
-    return parameters.isSQLite() &&
-           ((query.lastError().nativeErrorCode() == QLatin1String("5")) /*SQLITE_BUSY*/  ||
-            (query.lastError().nativeErrorCode() == QLatin1String("6")) /*SQLITE_LOCKED*/);
+    return (
+            parameters.isSQLite() &&
+            ((query.lastError().nativeErrorCode() == QLatin1String("5"))   /*SQLITE_BUSY*/             ||
+             (query.lastError().nativeErrorCode() == QLatin1String("6"))   /*SQLITE_LOCKED*/           ||
+             (query.lastError().nativeErrorCode() == QLatin1String("262")) /*SQLITE_LOCKED_SHAREDCACHE*/)
+           );
 }
 
 bool BdEngineBackendPrivate::isSQLiteLockTransactionError(const QSqlError& lastError) const
