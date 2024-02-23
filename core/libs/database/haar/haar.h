@@ -199,15 +199,26 @@ public:
 
     unsigned char bin(int index)    const
     {
-        return m_bin[index];
+        if ((index >= 0) && (index < 16384))
+        {
+            return m_bin[index];
+        }
+
+        return 0;
     }
 
     unsigned char binAbs(int index) const
     {
-        return (
-                (index > 0) ? m_bin[index]
-                            : m_bin[-index]
-               );
+        if      ((index > 0) && (index < 16384))
+        {
+           return m_bin[index];
+        }
+        else if ((index > -16384) && (index <= 0))
+        {
+           return m_bin[-index];
+        }
+
+        return 0;
     }
 
 public:
