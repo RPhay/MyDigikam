@@ -248,23 +248,27 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
 
         // Image comments ---------------------------------
 
-        d->itemComments() = image->comment();
+        d->itemComments()   = image->comment();
 
         // Exif metadata ----------------------------------
 
-        d->exifMetadata() = image->exifData();
+        d->exifMetadata()   = image->exifData();
 
         // Iptc metadata ----------------------------------
 
-        d->iptcMetadata() = image->iptcData();
+        d->iptcMetadata()  = image->iptcData();
 
 #ifdef _XMP_SUPPORT_
 
         // Xmp metadata -----------------------------------
 
-        d->xmpMetadata() = image->xmpData();
+        d->xmpMetadata()   = image->xmpData();
 
 #endif // _XMP_SUPPORT_
+
+        // Exif byte order  -------------------------------
+
+        d->exifByteOrder() = image->byteOrder();
 
         return true;
     }
