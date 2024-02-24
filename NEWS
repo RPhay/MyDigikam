@@ -250,7 +250,7 @@ BUGFIXES:
 227 ==> 479900 - Strongly request a message about switching to Maria DB at 50K files.
 228 ==> 479473 - Information Lost in Captions tab from Left sidebar.
 229 ==> 481484 - HECI Preview extreme slow.
-230 ==> 
+230 ==> 481762 - Can't write XMP tags: to file Unknown namespace prefix for qualified name.
 231 ==> 
 232 ==> 
 233 ==> 
