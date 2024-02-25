@@ -76,16 +76,16 @@ private Q_SLOTS:
 
 private:
 
-    QLabel*             m_fullImage       = nullptr;;
-    QListWidget*        m_imageListView   = nullptr;;
-    DNNYoloDetector*    m_yoloDetector    = nullptr;;
+    QLabel*             m_fullImage       = nullptr;
+    QListWidget*        m_imageListView   = nullptr;
+    DNNYoloDetector*    m_yoloDetector    = nullptr;
     YoloVersions        m_modelType;
     QList<QString>      m_objectSelected;
 
     // control pann
 
-    QPushButton*        m_applyButton     = nullptr;;
-    DComboBox*          m_modelOptionsBox = nullptr;;
+    QPushButton*        m_applyButton     = nullptr;
+    DComboBox*          m_modelOptionsBox = nullptr;
     QList<QCheckBox*>   m_objectOptions;
 
 Q_SIGNALS:
@@ -146,7 +146,6 @@ MainWindow::~MainWindow()
     delete m_imageListView;
     delete m_applyButton;
     delete m_yoloDetector;
-    delete m_applyButton;
     delete m_modelOptionsBox;
 }
 
