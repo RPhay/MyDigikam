@@ -30,18 +30,19 @@ public:
 
 public:
 
-    std::string     imageComments;
+    std::string      imageComments;
 
-    Exiv2::ExifData exifMetadata;
+    Exiv2::ExifData  exifMetadata;
 
-    Exiv2::IptcData iptcMetadata;
+    Exiv2::IptcData  iptcMetadata;
 
 #ifdef _XMP_SUPPORT_
 
-    Exiv2::XmpData  xmpMetadata;
+    Exiv2::XmpData   xmpMetadata;
 
 #endif
 
+    Exiv2::ByteOrder exifByteOrder = Exiv2::invalidByteOrder;
 };
 
 } // namespace Digikam

@@ -100,6 +100,11 @@ const std::string& MetaEngine::Private::itemComments() const
     return data.constData()->imageComments;
 }
 
+const Exiv2::ByteOrder& MetaEngine::Private::exifByteOrder() const
+{
+    return data.constData()->exifByteOrder;
+}
+
 Exiv2::ExifData& MetaEngine::Private::exifMetadata()
 {
     return data.data()->exifMetadata;
@@ -113,6 +118,11 @@ Exiv2::IptcData& MetaEngine::Private::iptcMetadata()
 std::string& MetaEngine::Private::itemComments()
 {
     return data.data()->imageComments;
+}
+
+Exiv2::ByteOrder& MetaEngine::Private::exifByteOrder()
+{
+    return data.data()->exifByteOrder;
 }
 
 #ifdef _XMP_SUPPORT_
@@ -135,12 +145,16 @@ void MetaEngine::Private::copyPrivateData(const Private* const other)
 
     data                  = other->data;
     filePath              = other->filePath;
+    mimeType              = other->mimeType;
+    pixelSize             = other->pixelSize;
     writeRawFiles         = other->writeRawFiles;
     writeDngFiles         = other->writeDngFiles;
+    writeWithExifTool     = other->writeWithExifTool;
+    loadedFromSidecar     = other->loadedFromSidecar;
     updateFileTimeStamp   = other->updateFileTimeStamp;
+    metadataWritingMode   = other->metadataWritingMode;
     useXMPSidecar4Reading = other->useXMPSidecar4Reading;
     useCompatibleFileName = other->useCompatibleFileName;
-    metadataWritingMode   = other->metadataWritingMode;
 }
 
 bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
@@ -586,6 +600,37 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 
     try
     {
+        QByteArray rawComment(exifDatum.size(), '\0');
+        exifDatum.copy((Exiv2::byte*)rawComment.data(), Exiv2::littleEndian);
+
+        if ((rawComment.size() > 8) && rawComment.startsWith("UNICODE\0"))
+        {
+            rawComment = rawComment.mid(8);
+
+            if ((rawComment.size() % 2) != 0)
+            {
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Comment not properly 16 bit encoded";
+
+                return QString();
+            }
+
+            // change the byte order if we have a big-endian
+            // image or encounter a possible incorrect byte order
+
+            if ((exifByteOrder() == Exiv2::bigEndian) || (rawComment.at(0) == '\0'))
+            {
+                const QByteArray tmpComment(rawComment);
+
+                for (int i = 0 ; i < rawComment.size() ; i += 2)
+                {
+                    rawComment[i]     = tmpComment.at(i + 1);
+                    rawComment[i + 1] = tmpComment.at(i);
+                }
+            }
+
+            return QString::fromUtf16((char16_t*)rawComment.data(), rawComment.size() / 2);
+        }
+
         std::string comment;
         std::string charset;
 
@@ -612,33 +657,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             }
         }
 
-        if      (charset == "Unicode")
-        {
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
-
-            QByteArray rawComment(exifDatum.size(), '\0');
-            exifDatum.copy((Exiv2::byte*)rawComment.data(), Exiv2::bigEndian);
-
-            // remove "UNICODE\0"
-
-            rawComment = rawComment.mid(8);
-
-            if ((rawComment.size() > 1) && (rawComment.at(1) == '\0'))
-            {
-                QString utf16String = QString::fromUtf16((ushort*)rawComment.data());
-
-                if (utf16String.isValidUtf16())
-                {
-                    return QString::fromUtf8(utf16String.toUtf8());
-                }
-            }
-
-#endif
-
-            return QString::fromUtf8(comment.data());
-        }
-        else if (charset == "Jis")
+        if      (charset == "Jis")
         {
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))

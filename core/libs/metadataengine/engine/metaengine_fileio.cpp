@@ -166,22 +166,27 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
         // Image comments ---------------------------------
 
-        d->itemComments() = image->comment();
+        d->itemComments()   = image->comment();
 
         // Exif metadata ----------------------------------
 
-        d->exifMetadata() = image->exifData();
+        d->exifMetadata()   = image->exifData();
 
         // Iptc metadata ----------------------------------
 
-        d->iptcMetadata() = image->iptcData();
+        d->iptcMetadata()   = image->iptcData();
 
 #ifdef _XMP_SUPPORT_
 
         // Xmp metadata -----------------------------------
-        d->xmpMetadata() = image->xmpData();
+
+        d->xmpMetadata()   = image->xmpData();
 
 #endif // _XMP_SUPPORT_
+
+        // Exif byte order  -------------------------------
+
+        d->exifByteOrder() = image->byteOrder();
 
         if (s_metaEngineWarnOrError)
         {

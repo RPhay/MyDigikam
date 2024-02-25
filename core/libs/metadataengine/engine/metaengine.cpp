@@ -84,14 +84,22 @@ bool MetaEngine::initializeExiv2()
         return false;
     }
 
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container1/"),
+                         QLatin1String("GContainer"));        // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item1/"),
+                         QLatin1String("GContainerItem"));    // krazy:exclude=insecurenet
+
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/"),
+                         QLatin1String("Container"));        // krazy:exclude=insecurenet
     registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item_1_/"),
-                         QLatin1String("Item_1_"));     // krazy:exclude=insecurenet
+                         QLatin1String("Item_1_"));           // krazy:exclude=insecurenet
     registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item/"),
-                         QLatin1String("Item"));        // krazy:exclude=insecurenet
+                         QLatin1String("Item"));              // krazy:exclude=insecurenet
+
     registerXmpNameSpace(QLatin1String("http://ns.apple.com/faceinfo/1.0/"),
-                         QLatin1String("apple-fi"));    // krazy:exclude=insecurenet
+                         QLatin1String("apple-fi"));          // krazy:exclude=insecurenet
     registerXmpNameSpace(QLatin1String("http://ns.excire.com/foto/1.0/"),
-                         QLatin1String("excire"));      // krazy:exclude=insecurenet
+                         QLatin1String("excire"));            // krazy:exclude=insecurenet
 
     /**
      * It cleans up memory used by Adobe XMP SDK automatically at application exit.
@@ -240,23 +248,27 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
 
         // Image comments ---------------------------------
 
-        d->itemComments() = image->comment();
+        d->itemComments()   = image->comment();
 
         // Exif metadata ----------------------------------
 
-        d->exifMetadata() = image->exifData();
+        d->exifMetadata()   = image->exifData();
 
         // Iptc metadata ----------------------------------
 
-        d->iptcMetadata() = image->iptcData();
+        d->iptcMetadata()  = image->iptcData();
 
 #ifdef _XMP_SUPPORT_
 
         // Xmp metadata -----------------------------------
 
-        d->xmpMetadata() = image->xmpData();
+        d->xmpMetadata()   = image->xmpData();
 
 #endif // _XMP_SUPPORT_
+
+        // Exif byte order  -------------------------------
+
+        d->exifByteOrder() = image->byteOrder();
 
         return true;
     }

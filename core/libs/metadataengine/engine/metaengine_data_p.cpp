@@ -39,6 +39,8 @@ void MetaEngineData::Private::clear()
 
 #endif
 
+        exifByteOrder = Exiv2::invalidByteOrder;
+
     }
     catch (Exiv2::AnyError& e)
     {

@@ -250,10 +250,10 @@ BUGFIXES:
 227 ==> 479900 - Strongly request a message about switching to Maria DB at 50K files.
 228 ==> 479473 - Information Lost in Captions tab from Left sidebar.
 229 ==> 481484 - HECI Preview extreme slow.
-230 ==> 
-231 ==> 
-232 ==> 
-233 ==> 
+230 ==> 481762 - Can't write XMP tags: to file Unknown namespace prefix for qualified name.
+231 ==> 481766 - digiKam crashes on startup during "find new items".
+232 ==> 480345 - Crash when reading Exif.Photo.UserComment containing emoji.
+233 ==> 481735 - Program crashes when trying to open an image with parameter luminosity in metadata.
 234 ==> 
 235 ==> 
 236 ==> 

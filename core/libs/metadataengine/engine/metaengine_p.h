@@ -161,13 +161,15 @@ public:
 
     int getXMPTagsListFromPrefix(const QString& pf, MetaEngine::TagsMap& tagsMap) const;
 
-    const Exiv2::ExifData& exifMetadata()                                         const;
-    const Exiv2::IptcData& iptcMetadata()                                         const;
-    const std::string&     itemComments()                                         const;
+    const Exiv2::ExifData&  exifMetadata()                                        const;
+    const Exiv2::IptcData&  iptcMetadata()                                        const;
+    const std::string&      itemComments()                                        const;
+    const Exiv2::ByteOrder& exifByteOrder()                                       const;
 
-    Exiv2::ExifData&       exifMetadata();
-    Exiv2::IptcData&       iptcMetadata();
-    std::string&           itemComments();
+    Exiv2::ExifData&        exifMetadata();
+    Exiv2::IptcData&        iptcMetadata();
+    std::string&            itemComments();
+    Exiv2::ByteOrder&       exifByteOrder();
 
 public:
 
