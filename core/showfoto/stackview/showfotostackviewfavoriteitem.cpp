@@ -100,6 +100,7 @@ void ShowfotoStackViewFavoriteItem::setFavoriteType(int favoriteType)
             setDescription(QString());
             setDate(QDate());
             setUrls(QList<QUrl>());
+
             break;
         }
 
@@ -109,12 +110,14 @@ void ShowfotoStackViewFavoriteItem::setFavoriteType(int favoriteType)
             setDescription(QString());
             setDate(QDate());
             setUrls(QList<QUrl>());
+
             break;
         }
 
         default:    // FavoriteItem
         {
             setIcon(0, QIcon::fromTheme(QLatin1String("folder-favorites")));
+
             break;
         }
     }
@@ -170,7 +173,7 @@ QUrl ShowfotoStackViewFavoriteItem::currentUrl() const
 {
     if (!m_current.isValid() && !urls().isEmpty())
     {
-        urls().first();
+        return urls().first();
     }
 
     return m_current;
@@ -218,6 +221,7 @@ void ShowfotoStackViewFavoriteItem::updateToolTip()
             tip += cnt.tipFooter;
 
             setToolTip(0, tip);
+
             break;
         }
 
@@ -247,6 +251,7 @@ void ShowfotoStackViewFavoriteItem::updateToolTip()
             tip += cnt.tipFooter;
 
             setToolTip(0, tip);
+
             break;
         }
     }

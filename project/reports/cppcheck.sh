@@ -59,7 +59,6 @@ cppcheck -j$CPU_CORES \
          --xml-version=2 \
          --platform=unix64 \
          --enable=all \
-         --max-ctu-depth=4 \
          --report-progress \
          --suppress=*:*cimg*.h \
          --suppress=*:*libraw*.h \
@@ -71,6 +70,8 @@ cppcheck -j$CPU_CORES \
          --suppress=*:*libjpeg*.h \
          --suppress=*:*dng_sdk*.h \
          --suppress=*:*xmp_sdk*.h \
+         --suppress=missingIncludeSystem \
+         --suppress=missingInclude \
          --suppress=variableScope \
          --suppress=purgedConfiguration \
          --suppress=toomanyconfigs \
@@ -92,7 +93,7 @@ cppcheck-htmlreport --file=report.cppcheck.xml \
                     --source-dir=. \
                     --title=$TITLE
 
-if [[ $1 != "--nowebupdate" ]] ; then
+if [[ $1 == "--webupdate" ]] ; then
 
     # update www.digikam.org report section.
     updateReportToWebsite "cppcheck" $REPORT_DIR $TITLE $(parseGitBranch)
