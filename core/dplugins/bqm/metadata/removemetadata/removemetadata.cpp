@@ -121,12 +121,14 @@ void RemoveMetadata::registerSettingsWidget()
     d->xmpComboBox           = new QComboBox(panel);
     d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Completely"),                       Private::ALL);
     d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Date"),                             Private::DATE);
-    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "DigiKam"),                          Private::DIGIKAM);
-    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "DigiKam image history"),            Private::HISTORY);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "digiKam completely"),               Private::DIGIKAM);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "digiKam image history"),            Private::HISTORY);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "digiKam preview image"),            Private::PREVIEW);
     d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Dublin Core"),                      Private::DUBLIN);
     d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Exif"),                             Private::EXIF);
     d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Video"),                            Private::VIDEO);
-    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Caption, Comment and Description"), Private::COMMENT);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Caption, comment and description"), Private::COMMENT);
+
 
     grid->addWidget(d->removeExif,   0, 0, 1, 1);
     grid->addWidget(d->exifComboBox, 0, 1, 1, 2);
@@ -323,13 +325,17 @@ bool RemoveMetadata::toolOperations()
             meta->removeXmpTag("Xmp.video.ModificationDate");
             meta->removeXmpTag("Xmp.video.DateUTC");
         }
+        else if (xmpData == Private::DIGIKAM)
+        {
+            meta->removeXmpTags(QStringList() << QLatin1String("digiKam"));
+        }
         else if (xmpData == Private::HISTORY)
         {
             meta->removeXmpTag("Xmp.digiKam.ImageHistory");
         }
-        else if (xmpData == Private::DIGIKAM)
+        else if (xmpData == Private::PREVIEW)
         {
-            meta->removeXmpTags(QStringList() << QLatin1String("digiKam"));
+            meta->removeXmpTag("Xmp.digiKam.Preview");
         }
         else if (xmpData == Private::DUBLIN)
         {
