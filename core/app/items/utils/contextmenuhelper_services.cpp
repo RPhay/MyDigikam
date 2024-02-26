@@ -97,6 +97,10 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         connect(serviceAction, SIGNAL(triggered()),
                 this, SLOT(slotOpenWith()));
 
+#   else
+
+        addAction(serviceAction);
+
 #   endif // HAVE_KIO
 
     }
