@@ -90,11 +90,14 @@ bool MetaEngine::initializeExiv2()
                          QLatin1String("GContainerItem"));    // krazy:exclude=insecurenet
 
     registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/"),
-                         QLatin1String("Container"));        // krazy:exclude=insecurenet
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item_1_/"),
-                         QLatin1String("Item_1_"));           // krazy:exclude=insecurenet
+                         QLatin1String("Container"));         // krazy:exclude=insecurenet
     registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item/"),
                          QLatin1String("Item"));              // krazy:exclude=insecurenet
+
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container_1_/"),
+                         QLatin1String("Container_1_"));      // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item_1_/"),
+                         QLatin1String("Item_1_"));           // krazy:exclude=insecurenet
 
     registerXmpNameSpace(QLatin1String("http://ns.apple.com/faceinfo/1.0/"),
                          QLatin1String("apple-fi"));          // krazy:exclude=insecurenet
