@@ -17,6 +17,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QProcess>
 #include <QMimeType>
 #include <QMimeDatabase>
@@ -25,6 +26,8 @@
 
 // KDE includes
 
+#include <kconfig.h>
+#include <kconfiggroup.h>
 #include <kservice_version.h>
 
 #if KSERVICE_VERSION > QT_VERSION_CHECK(5, 81, 0)
@@ -272,6 +275,111 @@ KService::List DServiceMenu::servicesForOpenWith(const QList<QUrl>& urls)
     }
 
     return offers;
+}
+
+QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
+{
+    QList<QStringList> mimeTypes;
+    QList<QString> programms;
+    QList<QString> names;
+    QList<QString> icons;
+
+    QStringList appFolders = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
+                                                       QLatin1String("applications"), QStandardPaths::LocateDirectory);
+
+    Q_FOREACH (const QString& path, appFolders)
+    {
+        QDir appDir(path, QLatin1String("*.desktop"), QDir::NoSort, QDir::Files | QDir::NoDotAndDotDot);
+
+        Q_FOREACH (const QString& file, appDir.entryList())
+        {
+            KConfig config(path + QLatin1Char('/') + file);
+            KConfigGroup group = config.group(QLatin1String("Desktop Entry"));
+
+            if (group.readEntry(QLatin1String("Type"), QString()) != QLatin1String("Application"))
+            {
+                continue;
+            }
+
+            QStringList mimes = group.readEntry(QLatin1String("MimeType"), QString()).split(QLatin1Char(';'),
+                                                                                            QT_SKIP_EMPTY_PARTS);
+            QString exec      = group.readEntry(QLatin1String("Exec"), QString());
+            QString name      = group.readEntry(QLatin1String("Name"), QString());
+            QString icon      = group.readEntry(QLatin1String("Icon"), QString());
+
+            if (mimes.isEmpty() || name.isEmpty() || exec.isEmpty())
+            {
+                continue;
+            }
+
+            mimeTypes.append(mimes);
+            programms.append(exec);
+            names.append(name);
+            icons.append(icon);
+        }
+    }
+
+    QMap<QString, DServiceInfo> serviceMap;
+
+    Q_FOREACH (const QUrl& item, urls)
+    {
+        QString mimeType = QMimeDatabase().mimeTypeForFile(item.toLocalFile(),
+                                                           QMimeDatabase::MatchExtension).name();
+        mimeType         = mimeType.left(mimeType.indexOf(QLatin1Char('/')));
+
+        for (int i = 0 ; i < mimeTypes.size() ; ++i)
+        {
+            for (int j = 0 ; j < mimeTypes.at(i).size() ; ++j)
+            {
+                if (mimeTypes.at(i).at(j).startsWith(mimeType))
+                {
+                    if (!serviceMap.contains(names.at(i)))
+                    {
+                        DServiceInfo sinfo(names.at(i), programms.at(i), icons.at(i));
+                        serviceMap.insert(names.at(i), sinfo);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    return serviceMap.values();
+}
+
+//-----------------------------------------------------------------------------
+
+DServiceInfo::DServiceInfo()
+{
+}
+
+DServiceInfo::DServiceInfo(const QString& _name,
+                           const QString& _exec,
+                           const QString& _icon)
+    : name(_name),
+      exec(_exec),
+      icon(_icon)
+{
+}
+
+DServiceInfo::DServiceInfo(const DServiceInfo& other)
+    : name(other.name),
+      exec(other.exec),
+      icon(other.icon)
+{
+}
+
+DServiceInfo::~DServiceInfo()
+{
+}
+
+DServiceInfo& DServiceInfo::operator=(const DServiceInfo& other)
+{
+    name = other.name;
+    exec = other.exec;
+    icon = other.icon;
+
+    return *this;
 }
 
 } // namespace Digikam

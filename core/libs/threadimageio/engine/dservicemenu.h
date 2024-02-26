@@ -53,6 +53,30 @@
 namespace Digikam
 {
 
+// ----------------------------------------------------------------------------
+
+class DIGIKAM_EXPORT DServiceInfo
+{
+public:
+
+    DServiceInfo();
+    DServiceInfo(const QString& _name,
+                 const QString& _exec,
+                 const QString& _icon);
+    DServiceInfo(const DServiceInfo& other);
+    ~DServiceInfo();
+
+    DServiceInfo& operator=(const DServiceInfo& other);
+
+public:
+
+    QString name;
+    QString exec;
+    QString icon;
+};
+
+// ----------------------------------------------------------------------------
+
 class DIGIKAM_EXPORT DServiceMenu
 {
 public:
@@ -77,6 +101,8 @@ public:
      * Linux only: return list of service available on desktop to open files.
      */
     static KService::List servicesForOpenWith(const QList<QUrl>& urls);
+
+    static QList<DServiceInfo> servicesForOpen(const QList<QUrl>& urls);
 
 //@}
 
