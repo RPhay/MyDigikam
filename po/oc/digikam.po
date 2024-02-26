@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-16 01:38+0000\n"
+"POT-Creation-Date: 2024-02-26 01:37+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -6278,43 +6278,52 @@ msgid "Date"
 msgstr "Yannig Marchegay (Kokoyaya)"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "images"
 msgctxt "@item: xmp namespace"
-msgid "DigiKam"
-msgstr ""
+msgid "digiKam completely"
+msgstr "imatges"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
 #, kde-format
 msgctxt "@item: xmp namespace"
-msgid "DigiKam image history"
+msgid "digiKam image history"
 msgstr ""
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#, fuzzy, kde-format
+#| msgid "Interface"
+msgctxt "@item: xmp namespace"
+msgid "digiKam preview image"
+msgstr "Interfaç"
+
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
 #, fuzzy, kde-format
 #| msgid "Slide"
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Diàpo"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
-#, kde-format
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
+#, fuzzy, kde-format
+#| msgid "Rotate"
 msgctxt "@item: xmp namespace"
-msgid "Caption, Comment and Description"
-msgstr ""
+msgid "Caption, comment and description"
+msgstr "እንደገና አስጀምሩ"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:222
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -48322,60 +48331,60 @@ msgctxt "@title"
 msgid "My Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:210
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:213
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "imatges"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:212
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:218
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Diaporamà"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "imatges"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:238
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:242
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Diaporamà"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:241
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:245
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "imatges"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:244
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:248
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "@info: favorite item caption property"

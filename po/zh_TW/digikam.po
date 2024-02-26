@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-16 01:38+0000\n"
+"POT-Creation-Date: 2024-02-26 01:37+0000\n"
 "PO-Revision-Date: 2024-01-05 21:39+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -6435,45 +6435,53 @@ msgstr "日期"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
 #, fuzzy, kde-format
-#| msgid "digiKam"
+#| msgid "digiKam Properties"
 msgctxt "@item: xmp namespace"
-msgid "DigiKam"
-msgstr "digiKam"
+msgid "digiKam completely"
+msgstr "digiKam 屬性"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Image History"
 msgctxt "@item: xmp namespace"
-msgid "DigiKam image history"
+msgid "digiKam image history"
 msgstr "影像歷史紀錄"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#, fuzzy, kde-format
+msgctxt "@item: xmp namespace"
+msgid "digiKam preview image"
+msgstr "預覽群組影像"
+
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, fuzzy, kde-format
 #| msgid "Dublin Core"
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "都柏林核心集"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "影片"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
-#, kde-format
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
+#, fuzzy, kde-format
+#| msgctxt "@item: xmp namespace"
+#| msgid "Caption, Comment and Description"
 msgctxt "@item: xmp namespace"
-msgid "Caption, Comment and Description"
+msgid "Caption, comment and description"
 msgstr "標題描述、註解、與描述"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:222
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -51569,55 +51577,55 @@ msgctxt "@title"
 msgid "My Favorites"
 msgstr "我的最愛"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:210
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "最愛資料夾屬性"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:212
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "名稱："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:218
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "階層："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "最愛項目屬性"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "名稱："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "建立時間："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:238
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:242
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "階層："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:241
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:245
 #, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "項目："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:244
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:248
 #, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
@@ -68675,6 +68683,12 @@ msgstr "相簿項目"
 #, kde-format
 msgid "Import Items"
 msgstr "匯入項目"
+
+#, fuzzy
+#~| msgid "digiKam"
+#~ msgctxt "@item: xmp namespace"
+#~ msgid "DigiKam"
+#~ msgstr "digiKam"
 
 #, fuzzy
 #~| msgctxt "Automatic Adjustment"

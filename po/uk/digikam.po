@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-16 01:38+0000\n"
+"POT-Creation-Date: 2024-02-26 01:37+0000\n"
 "PO-Revision-Date: 2024-02-12 13:24+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -6454,42 +6454,55 @@ msgid "Date"
 msgstr "Дата"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "digiKam Properties"
 msgctxt "@item: xmp namespace"
-msgid "DigiKam"
-msgstr "DigiKam"
+msgid "digiKam completely"
+msgstr "Властивості digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@item: xmp namespace"
+#| msgid "DigiKam image history"
 msgctxt "@item: xmp namespace"
-msgid "DigiKam image history"
+msgid "digiKam image history"
 msgstr "Журнал зображень digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#, fuzzy, kde-format
+#| msgctxt "@item: iptc namespace"
+#| msgid "Preview image"
+msgctxt "@item: xmp namespace"
+msgid "digiKam preview image"
+msgstr "Попередній перегляд зображення"
+
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Ядро Dublin"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "Exif"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Відео"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
-#, kde-format
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
+#, fuzzy, kde-format
+#| msgctxt "@item: xmp namespace"
+#| msgid "Caption, Comment and Description"
 msgctxt "@item: xmp namespace"
-msgid "Caption, Comment and Description"
+msgid "Caption, comment and description"
 msgstr "Підпис, Коментар і Опис"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:222
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -50547,55 +50560,55 @@ msgctxt "@title"
 msgid "My Favorites"
 msgstr "Мої улюблені"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:210
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "Властивості теки улюбленого"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:212
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Назва:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:218
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Ієрархія:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "Властивості улюбленого запису"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Назва:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Створено:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:238
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:242
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Ієрархія:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:241
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:245
 #, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Записів:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:244
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:248
 #, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
@@ -67897,6 +67910,10 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgctxt "@item: xmp namespace"
+#~ msgid "DigiKam"
+#~ msgstr "DigiKam"
 
 #~ msgid "Time Adjust"
 #~ msgstr "Налаштування часу"

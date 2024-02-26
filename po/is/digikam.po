@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-16 01:38+0000\n"
+"POT-Creation-Date: 2024-02-26 01:37+0000\n"
 "PO-Revision-Date: 2024-02-05 11:46+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -6368,42 +6368,55 @@ msgid "Date"
 msgstr "Dagsetning"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "digiKam Properties"
 msgctxt "@item: xmp namespace"
-msgid "DigiKam"
-msgstr "DigiKam"
+msgid "digiKam completely"
+msgstr "digiKam eiginleikar"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@item: xmp namespace"
+#| msgid "DigiKam image history"
 msgctxt "@item: xmp namespace"
-msgid "DigiKam image history"
+msgid "digiKam image history"
 msgstr "Ferill myndar í DigiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#, fuzzy, kde-format
+#| msgctxt "@item: iptc namespace"
+#| msgid "Preview image"
+msgctxt "@item: xmp namespace"
+msgid "digiKam preview image"
+msgstr "Forskoðun myndar"
+
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Dublin Core"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr "EXIF"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Myndskeið"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
-#, kde-format
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
+#, fuzzy, kde-format
+#| msgctxt "@item: xmp namespace"
+#| msgid "Caption, Comment and Description"
 msgctxt "@item: xmp namespace"
-msgid "Caption, Comment and Description"
+msgid "Caption, comment and description"
 msgstr "Skýringatexti, athugasemd og lýsing"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:222
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -49796,55 +49809,55 @@ msgctxt "@title"
 msgid "My Favorites"
 msgstr "Eftirlætin mín"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:210
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "Eiginleikar eftirlætismöppu"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:212
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Heiti:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:218
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Stigskipan:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "Eiginleikar eftirlætisatriðis"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Heiti:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Búið til:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:238
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:242
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Stigskipan:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:241
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:245
 #, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Atriði:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:244
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:248
 #, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
@@ -66875,6 +66888,10 @@ msgstr "Albúmahlutir"
 #, kde-format
 msgid "Import Items"
 msgstr "Flytja inn hluti"
+
+#~ msgctxt "@item: xmp namespace"
+#~ msgid "DigiKam"
+#~ msgstr "DigiKam"
 
 #~ msgid "Time Adjust"
 #~ msgstr "Breyta tíma"

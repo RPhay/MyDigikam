@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-16 01:38+0000\n"
+"POT-Creation-Date: 2024-02-26 01:37+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -5995,40 +5995,46 @@ msgstr "Tarikh"
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
 #, fuzzy, kde-format
 msgctxt "@item: xmp namespace"
-msgid "DigiKam"
-msgstr "digiKam"
+msgid "digiKam completely"
+msgstr "Ciri Imej"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
 #, fuzzy, kde-format
 msgctxt "@item: xmp namespace"
-msgid "DigiKam image history"
+msgid "digiKam image history"
 msgstr "Sejarah"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
+#, fuzzy, kde-format
+msgctxt "@item: xmp namespace"
+msgid "digiKam preview image"
+msgstr "Saiz Semula Imej"
+
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:128
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
 #, fuzzy, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Video"
 msgstr "Paparkan"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
-#, kde-format
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
+#, fuzzy, kde-format
 msgctxt "@item: xmp namespace"
-msgid "Caption, Comment and Description"
-msgstr ""
+msgid "Caption, comment and description"
+msgstr "Huraian"
 
-#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:222
+#: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
@@ -46938,55 +46944,55 @@ msgctxt "@title"
 msgid "My Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:210
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:213
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "Ciri-ciri"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:212
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
 #, fuzzy, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Nama:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:218
 #, fuzzy, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Cari:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "Ciri-ciri"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
 #, fuzzy, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Nama:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
 #, fuzzy, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Dicipta:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:238
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:242
 #, fuzzy, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Cari:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:241
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:245
 #, fuzzy, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Sharuzzaman Ahmat Raslan"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:244
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:248
 #, fuzzy, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
@@ -62815,6 +62821,11 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "Sharuzzaman Ahmat Raslan"
+
+#, fuzzy
+#~ msgctxt "@item: xmp namespace"
+#~ msgid "DigiKam"
+#~ msgstr "digiKam"
 
 #, fuzzy
 #~ msgid "Time Adjust"
