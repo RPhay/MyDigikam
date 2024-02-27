@@ -235,7 +235,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
         return;
     }
 
-    DServiceMenu::runFiles(d->newServicesMap[name].exec, list);
+    DServiceMenu::runFiles(d->newServicesMap[name], list);
 
 #   endif // HAVE_KIO
 

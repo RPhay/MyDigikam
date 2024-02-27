@@ -2925,7 +2925,7 @@ void EditorWindow::openWith(const QUrl& url, QAction* action)
         return;
     }
 
-    DServiceMenu::runFiles(d->newServicesMap[name].exec, QList<QUrl>() << url);
+    DServiceMenu::runFiles(d->newServicesMap[name], QList<QUrl>() << url);
 
 #endif // HAVE_KIO
 

@@ -48,12 +48,19 @@ namespace Digikam
 bool DServiceMenu::runFiles(const KService::Ptr& service,
                             const QList<QUrl>& urls)
 {
-    return (runFiles(service->exec(), urls, service));
+    return (runFiles(service->exec(), urls, service, nullptr));
+}
+
+bool DServiceMenu::runFiles(const DServiceInfo& serviceInfo,
+                            const QList<QUrl>& urls)
+{
+    return (runFiles(serviceInfo.exec, urls, KService::Ptr(), &serviceInfo));
 }
 
 bool DServiceMenu::runFiles(const QString& appCmd,
                             const QList<QUrl>& urls,
-                            const KService::Ptr& service)
+                            const KService::Ptr& service,
+                            const DServiceInfo* const serviceInfo)
 {
     QRegularExpression split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
     QStringList cmdList = appCmd.split(split, QT_SKIP_EMPTY_PARTS);
@@ -84,31 +91,40 @@ bool DServiceMenu::runFiles(const QString& appCmd,
     bool useTerminal = false;
     bool openNewRun  = false;
 
-    if (service)
+    if       (service)
     {
-        name = service->desktopEntryName();
-        icon = service->icon();
+        icon        = service->icon();
+        name        = service->desktopEntryName();
+
+        useTerminal = service->terminal();
+        termOpts    = service->terminalOptions().split(split, QT_SKIP_EMPTY_PARTS);
+    }
+    else if (serviceInfo)
+    {
+        icon        = serviceInfo->icon;
+        name        = serviceInfo->name;
+
+        useTerminal = serviceInfo->term;
+        termOpts    = serviceInfo->topt.split(split, QT_SKIP_EMPTY_PARTS);
+    }
 
 #ifdef Q_OS_LINUX
 
-        if (service->terminal())
+    if (useTerminal)
+    {
+        term = QStandardPaths::findExecutable(QLatin1String("konsole"));
+
+        if (term.isEmpty())
         {
-            termOpts = service->terminalOptions().split(split, QT_SKIP_EMPTY_PARTS);
-            term     = QStandardPaths::findExecutable(QLatin1String("konsole"));
-
-            if (term.isEmpty())
-            {
-                term = QStandardPaths::findExecutable(QLatin1String("xterm"));
-                termOpts.replaceInStrings(QLatin1String("--noclose"),
-                                          QLatin1String("-hold"));
-            }
-
-            useTerminal = !term.isEmpty();
+            term = QStandardPaths::findExecutable(QLatin1String("xterm"));
+            termOpts.replaceInStrings(QLatin1String("--noclose"),
+                                      QLatin1String("-hold"));
         }
 
-#endif // Q_OS_LINUX
-
+        useTerminal = !term.isEmpty();
     }
+
+#endif // Q_OS_LINUX
 
     QProcess* const process = new QProcess();
     QProcessEnvironment env = adjustedEnvironmentForAppImage();
@@ -207,7 +223,7 @@ bool DServiceMenu::runFiles(const QString& appCmd,
 
         if (!urlList.isEmpty())
         {
-            ret &= runFiles(appCmd, urlList, service);
+            ret &= runFiles(appCmd, urlList, service, serviceInfo);
         }
     }
 
