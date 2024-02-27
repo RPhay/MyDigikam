@@ -6,7 +6,7 @@
 # https://github.com/KDE/clazy
 # Dependencies : Python BeautifulSoup and SoupSieve at run-time.
 #
-# If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
+# If '--webupdate' is passed as argument, static analyzer results are just created locally.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -126,7 +126,7 @@ python3 ./clazy_visualizer.py $REPORT_DIR/trace.log
 rm -f $REPORT_DIR/trace.log
 mv clazy.html $REPORT_DIR/index.html
 
-if [[ $1 != "--nowebupdate" ]] ; then
+if [[ $1 == "--webupdate" ]] ; then
 
     # update www.digikam.org report section.
     updateReportToWebsite "clazy" $REPORT_DIR $TITLE $(parseGitBranch)
