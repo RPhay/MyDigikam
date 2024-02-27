@@ -62,7 +62,8 @@ public:
     DServiceInfo();
     DServiceInfo(const QString& _name,
                  const QString& _exec,
-                 const QString& _icon);
+                 const QString& _icon,
+                 bool           _term);
     DServiceInfo(const DServiceInfo& other);
     ~DServiceInfo();
 
@@ -73,6 +74,7 @@ public:
     QString name;
     QString exec;
     QString icon;
+    bool    term = false;
 };
 
 // ----------------------------------------------------------------------------

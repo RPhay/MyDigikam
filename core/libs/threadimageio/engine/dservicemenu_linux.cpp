@@ -279,10 +279,21 @@ KService::List DServiceMenu::servicesForOpenWith(const QList<QUrl>& urls)
 
 QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
 {
-    QList<QStringList> mimeTypes;
-    QList<QString> programms;
-    QList<QString> names;
-    QList<QString> icons;
+    QStringList neededMimeTypes;
+
+    Q_FOREACH (const QUrl& item, urls)
+    {
+        QString mimeType = QMimeDatabase().mimeTypeForFile(item.toLocalFile(),
+                                                           QMimeDatabase::MatchExtension).name();
+        mimeType         = mimeType.left(mimeType.indexOf(QLatin1Char('/')));
+
+        if (!neededMimeTypes.contains(mimeType))
+        {
+            neededMimeTypes << mimeType;
+        }
+    }
+
+    QMap<QString, DServiceInfo> serviceMap;
 
     QStringList appFolders = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
                                                        QLatin1String("applications"), QStandardPaths::LocateDirectory);
@@ -301,44 +312,42 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
                 continue;
             }
 
-            QStringList mimes = group.readEntry(QLatin1String("MimeType"), QString()).split(QLatin1Char(';'),
-                                                                                            QT_SKIP_EMPTY_PARTS);
-            QString exec      = group.readEntry(QLatin1String("Exec"), QString());
-            QString name      = group.readEntry(QLatin1String("Name"), QString());
-            QString icon      = group.readEntry(QLatin1String("Icon"), QString());
+            QString name      = group.readEntry(QLatin1String("Name"),     QString());
 
-            if (mimes.isEmpty() || name.isEmpty() || exec.isEmpty())
+            if (name.isEmpty() || serviceMap.contains(name))
             {
                 continue;
             }
 
-            mimeTypes.append(mimes);
-            programms.append(exec);
-            names.append(name);
-            icons.append(icon);
-        }
-    }
+            QStringList mimes = group.readEntry(QLatin1String("MimeType"), QString()).split(QLatin1Char(';'),
+                                                                                            QT_SKIP_EMPTY_PARTS);
+            QString exec      = group.readEntry(QLatin1String("Exec"),     QString());
+            QString icon      = group.readEntry(QLatin1String("Icon"),     QString());
+            bool    term      = group.readEntry(QLatin1String("Terminal"), false);
 
-    QMap<QString, DServiceInfo> serviceMap;
-
-    Q_FOREACH (const QUrl& item, urls)
-    {
-        QString mimeType = QMimeDatabase().mimeTypeForFile(item.toLocalFile(),
-                                                           QMimeDatabase::MatchExtension).name();
-        mimeType         = mimeType.left(mimeType.indexOf(QLatin1Char('/')));
-
-        for (int i = 0 ; i < mimeTypes.size() ; ++i)
-        {
-            for (int j = 0 ; j < mimeTypes.at(i).size() ; ++j)
+            if (mimes.isEmpty() || exec.isEmpty())
             {
-                if (mimeTypes.at(i).at(j).startsWith(mimeType))
+                continue;
+            }
+
+            bool typeFound = false;
+
+            for (int i = 0 ; i < mimes.size() ; ++i)
+            {
+                for (int j = 0 ; j < neededMimeTypes.size() ; ++j)
                 {
-                    if (!serviceMap.contains(names.at(i)))
+                    if (mimes.at(i).startsWith(neededMimeTypes.at(j)))
                     {
-                        DServiceInfo sinfo(names.at(i), programms.at(i), icons.at(i));
-                        serviceMap.insert(names.at(i), sinfo);
+                        DServiceInfo sinfo(name, exec, icon, term);
+                        serviceMap.insert(name, sinfo);
+                        typeFound = true;
                         break;
                     }
+                }
+
+                if (typeFound)
+                {
+                    break;
                 }
             }
         }
@@ -355,17 +364,20 @@ DServiceInfo::DServiceInfo()
 
 DServiceInfo::DServiceInfo(const QString& _name,
                            const QString& _exec,
-                           const QString& _icon)
+                           const QString& _icon,
+                           bool           _term)
     : name(_name),
       exec(_exec),
-      icon(_icon)
+      icon(_icon),
+      term(_term)
 {
 }
 
 DServiceInfo::DServiceInfo(const DServiceInfo& other)
     : name(other.name),
       exec(other.exec),
-      icon(other.icon)
+      icon(other.icon),
+      term(other.term)
 {
 }
 
@@ -378,6 +390,7 @@ DServiceInfo& DServiceInfo::operator=(const DServiceInfo& other)
     name = other.name;
     exec = other.exec;
     icon = other.icon;
+    term = other.term;
 
     return *this;
 }
