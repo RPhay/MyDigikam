@@ -2866,9 +2866,6 @@ void EditorWindow::addServicesMenuForUrl(const QUrl& url)
             d->newServicesMap[sinfo.name] = sinfo;
         }
 
-        m_servicesMenu->addSeparator();
-        m_servicesMenu->addAction(i18nc("@action: open with other application", "Other..."));
-
         m_contextMenu->addAction(serviceAction);
 
         connect(m_servicesMenu, SIGNAL(triggered(QAction*)),
