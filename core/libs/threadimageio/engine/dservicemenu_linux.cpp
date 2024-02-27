@@ -263,11 +263,15 @@ KService::List DServiceMenu::servicesForOpenWith(const QList<QUrl>& urls)
         }
 
 #if KSERVICE_VERSION > QT_VERSION_CHECK(5, 81, 0)
+
         offers = KApplicationTrader::queryByMimeType(firstMimeType);
+
 #else
+
         offers = KMimeTypeTrader::self()->query(firstMimeType,
                                                 QLatin1String("Application"),
                                                 constraints.join(QLatin1String(" and ")));
+
 #endif
 
         // remove duplicate service entries
@@ -309,7 +313,7 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
         }
     }
 
-    QMap<QString, DServiceInfo> serviceMap;
+    QMap<QString, DServiceInfo> servicesMap;
 
     QStringList appFolders = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
                                                        QLatin1String("applications"), QStandardPaths::LocateDirectory);
@@ -330,7 +334,7 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
 
             QString name      = group.readEntry(QLatin1String("Name"),            QString());
 
-            if (name.isEmpty() || serviceMap.contains(name))
+            if (name.isEmpty() || servicesMap.contains(name))
             {
                 continue;
             }
@@ -356,7 +360,7 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
                     if (mimes.at(i).startsWith(neededMimeTypes.at(j)))
                     {
                         DServiceInfo sinfo(name, exec, icon, topt, term);
-                        serviceMap.insert(name, sinfo);
+                        servicesMap.insert(name, sinfo);
                         typeFound = true;
                         break;
                     }
@@ -370,7 +374,7 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
         }
     }
 
-    return serviceMap.values();
+    return servicesMap.values();
 }
 
 //-----------------------------------------------------------------------------
