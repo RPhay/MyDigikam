@@ -60,9 +60,9 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 
 #else // LINUX
 
-    //KService::List offers = DServiceMenu::servicesForOpenWith(selectedItems);
+#   ifdef HAVE_KIO
 
-    QList<DServiceInfo> offers = DServiceMenu::servicesForOpen(selectedItems);
+    KService::List offers = DServiceMenu::servicesForOpenWith(selectedItems);
 
     if (!offers.isEmpty())
     {
@@ -71,7 +71,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 
         QAction* const serviceAction = servicesMenu->menuAction();
         serviceAction->setText(i18nc("@action: context menu", "Open With"));
-/*
+
         Q_FOREACH (const KService::Ptr& service, offers)
         {
             QString name          = service->name().replace(QLatin1Char('&'), QLatin1String("&&"));
@@ -80,16 +80,6 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
             action->setData(service->name());
             d->servicesMap[name]  = service;
         }
-*/
-        Q_FOREACH (const DServiceInfo& sinfo, offers)
-        {
-            QAction* const action = servicesMenu->addAction(sinfo.name);
-            action->setIcon(QIcon::fromTheme(sinfo.icon));
-            action->setData(sinfo.name);
-            d->newServiceMap[sinfo.name] = sinfo;
-        }
-
-#   ifdef HAVE_KIO
 
         servicesMenu->addSeparator();
         servicesMenu->addAction(i18nc("@action: open item with other application", "Other..."));
@@ -106,17 +96,35 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 
         connect(serviceAction, SIGNAL(triggered()),
                 this, SLOT(slotOpenWith()));
+    }
 
 #   else
+
+    QList<DServiceInfo> offers = DServiceMenu::servicesForOpen(selectedItems);
+
+    if (!offers.isEmpty())
+    {
+        QMenu* const servicesMenu    = new QMenu(d->parent);
+        qDeleteAll(servicesMenu->actions());
+
+        QAction* const serviceAction = servicesMenu->menuAction();
+        serviceAction->setText(i18nc("@action: context menu", "Open With"));
+
+        Q_FOREACH (const DServiceInfo& sinfo, offers)
+        {
+            QAction* const action = servicesMenu->addAction(sinfo.name);
+            action->setIcon(QIcon::fromTheme(sinfo.icon));
+            action->setData(sinfo.name);
+            d->newServicesMap[sinfo.name] = sinfo;
+        }
 
         addAction(serviceAction);
 
         connect(servicesMenu, SIGNAL(triggered(QAction*)),
                 this, SLOT(slotOpenWith(QAction*)));
+    }
 
 #   endif // HAVE_KIO
-
-    }
 
 #endif // Q_OS_WIN
 
@@ -163,11 +171,12 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
 
 #else // LINUX
 
-    KService::Ptr service;
     QList<QUrl> list = d->selectedItems;
     QString name     = action ? action->data().toString() : QString();
 
 #   ifdef HAVE_KIO
+
+    KService::Ptr service;
 
     if (name.isEmpty())
     {
@@ -197,14 +206,22 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
         delete dlg;
     }
     else
-
-#   endif // HAVE_KIO
-
     {
         service = d->servicesMap[name];
     }
 
-    DServiceMenu::runFiles(d->newServiceMap[name].exec, list);
+    DServiceMenu::runFiles(service, list);
+
+#   else
+
+    if (name.isEmpty())
+    {
+        return;
+    }
+
+    DServiceMenu::runFiles(d->newServicesMap[name].exec, list);
+
+#   endif // HAVE_KIO
 
 #endif // Q_OS_WIN
 

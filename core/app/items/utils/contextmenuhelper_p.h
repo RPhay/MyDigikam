@@ -128,7 +128,7 @@ public:
 
     QMap<int, QAction*>          queueActions;
     QMap<QString, KService::Ptr> servicesMap;
-    QMap<QString, DServiceInfo>  newServiceMap;
+    QMap<QString, DServiceInfo>  newServicesMap;
 
     ItemFilterModel*             imageFilterModel;
     AbstractCheckableAlbumModel* albumModel;

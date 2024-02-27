@@ -274,6 +274,7 @@ public:
     QList<int>                   fullscreenSizeBackup;
 
     QMap<QString, KService::Ptr> servicesMap;
+    QMap<QString, DServiceInfo>  newServicesMap;
 };
 
 const QString EditorWindow::Private::configAutoZoomEntry(QLatin1String("AutoZoom"));

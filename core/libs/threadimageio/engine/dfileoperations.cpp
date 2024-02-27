@@ -142,6 +142,8 @@ void DFileOperations::openFilesWithDefaultApplication(const QList<QUrl>& urls)
 
 #ifdef Q_OS_LINUX
 
+#   ifdef HAVE_KIO
+
     KService::List offers = DServiceMenu::servicesForOpenWith(urls);
 
     if (!offers.isEmpty())
@@ -151,6 +153,8 @@ void DFileOperations::openFilesWithDefaultApplication(const QList<QUrl>& urls)
 
         return;
     }
+
+#   endif // HAVE_KIO
 
 #endif
 

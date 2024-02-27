@@ -2781,6 +2781,9 @@ void EditorWindow::customizedFullScreenMode(bool set)
 
 void EditorWindow::addServicesMenuForUrl(const QUrl& url)
 {
+
+#ifdef HAVE_KIO
+
     KService::List offers = DServiceMenu::servicesForOpenWith(QList<QUrl>() << url);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << offers.count() << " services found to open " << url;
@@ -2813,8 +2816,6 @@ void EditorWindow::addServicesMenuForUrl(const QUrl& url)
             d->servicesMap[name]  = service;
         }
 
-#ifdef HAVE_KIO
-
         m_servicesMenu->addSeparator();
         m_servicesMenu->addAction(i18nc("@action: open with other application", "Other..."));
 
@@ -2830,18 +2831,61 @@ void EditorWindow::addServicesMenuForUrl(const QUrl& url)
 
         connect(m_servicesMenu, SIGNAL(triggered()),
                 this, SLOT(slotOpenWith()));
+    }
+
+#else
+
+    QList<DServiceInfo> offers = DServiceMenu::servicesForOpen(QList<QUrl>() << url);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << offers.count() << " services found to open " << url;
+
+    if (m_servicesMenu)
+    {
+        delete m_servicesMenu;
+        m_servicesMenu = nullptr;
+    }
+
+    if (m_serviceAction)
+    {
+        delete m_serviceAction;
+        m_serviceAction = nullptr;
+    }
+
+    if (!offers.isEmpty())
+    {
+        m_servicesMenu = new QMenu(this);
+
+        QAction* const serviceAction = m_servicesMenu->menuAction();
+        serviceAction->setText(i18nc("@action", "Open With"));
+
+        Q_FOREACH (const DServiceInfo& sinfo, offers)
+        {
+            QAction* const action = m_servicesMenu->addAction(sinfo.name);
+            action->setIcon(QIcon::fromTheme(sinfo.icon));
+            action->setData(sinfo.name);
+            d->newServicesMap[sinfo.name] = sinfo;
+        }
+
+        m_servicesMenu->addSeparator();
+        m_servicesMenu->addAction(i18nc("@action: open with other application", "Other..."));
+
+        m_contextMenu->addAction(serviceAction);
+
+        connect(m_servicesMenu, SIGNAL(triggered(QAction*)),
+                this, SLOT(slotOpenWith(QAction*)));
+    }
 
 #endif // HAVE_KIO
 
-    }
 }
 
 void EditorWindow::openWith(const QUrl& url, QAction* action)
 {
-    KService::Ptr service;
     QString name = action ? action->data().toString() : QString();
 
 #ifdef HAVE_KIO
+
+    KService::Ptr service;
 
     if (name.isEmpty())
     {
@@ -2871,14 +2915,23 @@ void EditorWindow::openWith(const QUrl& url, QAction* action)
         delete dlg;
     }
     else
-
-#endif // HAVE_KIO
-
     {
         service = d->servicesMap[name];
     }
 
     DServiceMenu::runFiles(service, QList<QUrl>() << url);
+
+#else
+
+    if (name.isEmpty())
+    {
+        return;
+    }
+
+    DServiceMenu::runFiles(d->newServicesMap[name].exec, QList<QUrl>() << url);
+
+#endif // HAVE_KIO
+
 }
 
 void EditorWindow::loadTool(EditorTool* const tool)
