@@ -14,7 +14,7 @@
 #  - Saxon 9HE java xml parser (saxon.jar) to export report as HTML [https://www.saxonica.com/download/java.xml].
 #    Production files: saxon9he.jar  saxon9-test.jar  saxon9-xqj.jar
 #
-# If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
+# If '--webupdate' is passed as argument, static analyzer results are just created locally.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -109,7 +109,7 @@ java -jar /opt/saxon/saxon9he.jar \
 
 cp ./krazy/style.css $REPORT_DIR/
 
-if [[ $1 != "--nowebupdate" ]] ; then
+if [[ $1 == "--webupdate" ]] ; then
 
     # update www.digikam.org report section.
     updateReportToWebsite "krazy" $REPORT_DIR $TITLE $(parseGitBranch)
