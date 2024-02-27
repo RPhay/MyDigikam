@@ -312,18 +312,19 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
                 continue;
             }
 
-            QString name      = group.readEntry(QLatin1String("Name"),     QString());
+            QString name      = group.readEntry(QLatin1String("Name"),            QString());
 
             if (name.isEmpty() || serviceMap.contains(name))
             {
                 continue;
             }
 
-            QStringList mimes = group.readEntry(QLatin1String("MimeType"), QString()).split(QLatin1Char(';'),
-                                                                                            QT_SKIP_EMPTY_PARTS);
-            QString exec      = group.readEntry(QLatin1String("Exec"),     QString());
-            QString icon      = group.readEntry(QLatin1String("Icon"),     QString());
-            bool    term      = group.readEntry(QLatin1String("Terminal"), false);
+            QStringList mimes = group.readEntry(QLatin1String("MimeType"),        QString()).split(QLatin1Char(';'),
+                                                                                                   QT_SKIP_EMPTY_PARTS);
+            QString exec      = group.readEntry(QLatin1String("Exec"),            QString());
+            QString icon      = group.readEntry(QLatin1String("Icon"),            QString());
+            QString topt      = group.readEntry(QLatin1String("TerminalOptions"), QString());
+            bool    term      = group.readEntry(QLatin1String("Terminal"),        false);
 
             if (mimes.isEmpty() || exec.isEmpty())
             {
@@ -338,7 +339,7 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
                 {
                     if (mimes.at(i).startsWith(neededMimeTypes.at(j)))
                     {
-                        DServiceInfo sinfo(name, exec, icon, term);
+                        DServiceInfo sinfo(name, exec, icon, topt, term);
                         serviceMap.insert(name, sinfo);
                         typeFound = true;
                         break;
@@ -365,10 +366,12 @@ DServiceInfo::DServiceInfo()
 DServiceInfo::DServiceInfo(const QString& _name,
                            const QString& _exec,
                            const QString& _icon,
+                           const QString& _topt,
                            bool           _term)
     : name(_name),
       exec(_exec),
       icon(_icon),
+      topt(_topt),
       term(_term)
 {
 }
@@ -377,6 +380,7 @@ DServiceInfo::DServiceInfo(const DServiceInfo& other)
     : name(other.name),
       exec(other.exec),
       icon(other.icon),
+      topt(other.topt),
       term(other.term)
 {
 }
@@ -390,6 +394,7 @@ DServiceInfo& DServiceInfo::operator=(const DServiceInfo& other)
     name = other.name;
     exec = other.exec;
     icon = other.icon;
+    topt = other.topt;
     term = other.term;
 
     return *this;
