@@ -557,7 +557,7 @@ static void ItemFilterFx(const quint16* lutrgb, int lutTableSize,
     int STEP      = 4;
     const int RED = 2, GREEN = 1, BLUE = 0;
 
-    int off[8]    =
+    const int off[8] =
     {
             0,
             STEP*1,
