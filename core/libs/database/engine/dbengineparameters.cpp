@@ -951,7 +951,7 @@ QDebug operator<<(QDebug dbg, const DbEngineParameters& p)
     dbg.nospace() << "   Internal Server Path:        " << p.internalServerDBPath                              << QT_ENDL;
     dbg.nospace() << "   Internal Server Init Cmd:    " << p.internalServerMysqlInitCmd                        << QT_ENDL;
     dbg.nospace() << "   Internal Server Admin Cmd:   " << p.internalServerMysqlAdminCmd                       << QT_ENDL;
-    dbg.nospace() << "   Internal Server Server Cmd:  " << p.internalServerMysqlServerCmd                      << QT_ENDL;
+    dbg.nospace() << "   Internal Server Program Cmd: " << p.internalServerMysqlServerCmd                      << QT_ENDL;
     dbg.nospace() << "   Internal Server Upgrade Cmd: " << p.internalServerMysqlUpgradeCmd                     << QT_ENDL;
     dbg.nospace() << "   Username:                    " << p.userName                                          << QT_ENDL;
     dbg.nospace() << "   Password:                    " << QString().fill(QLatin1Char('X'), p.password.size()) << QT_ENDL;
