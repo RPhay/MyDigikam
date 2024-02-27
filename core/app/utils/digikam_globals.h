@@ -248,11 +248,6 @@ DIGIKAM_EXPORT void installQtTranslationFiles(QApplication& app);
 DIGIKAM_EXPORT QDateTime startOfDay(const QDate&);
 
 /**
- * For bundles only, find or set KSycoca database file in the cache directory.
- */
-DIGIKAM_EXPORT void setupKSycocaDatabaseFile();
-
-/**
  * Open online handbook at the section/chapter/reference page.
  *
  * if section and chapter and reference are empty, fromt page is open.  (https://en.wikipedia.org/wiki/Matrix_(protocol)#Bridges)
