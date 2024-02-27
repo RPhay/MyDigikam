@@ -309,7 +309,7 @@ void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates()
 
 /*!
  * \brief HaarIfaceTest::testPreferFolderSelectpotentialDuplicates
- * The selected folder is prefered as reference
+ * The selected folder is preferred as reference
  */
 void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates()
 {
