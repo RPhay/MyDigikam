@@ -120,7 +120,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget* const parent)
 
     setCentralWidget(mainWidget);
 
-    // set up connnection
+    // set up connection
 
     connect(m_modelOptionsBox, SIGNAL(activated(int)),
             this, SLOT(slotSettingsChanged(int)));
