@@ -22,18 +22,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 {
     setSelectedItems(selectedItems);
 
-#ifdef Q_OS_WIN
-
-    if (selectedItems.length() == 1)
-    {
-        QAction* const openWith = new QAction(i18nc("@action: context menu", "Open With"), this);
-        addAction(openWith);
-
-        connect(openWith, SIGNAL(triggered()),
-                this, SLOT(slotOpenWith()));
-    }
-
-#elif defined Q_OS_MAC
+#ifdef Q_OS_MAC
 
     QList<QUrl> appUrls = DServiceMenu::MacApplicationsForFiles(selectedItems);
 
@@ -58,7 +47,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
                 this, SLOT(slotOpenWith(QAction*)));
     }
 
-#else // LINUX
+#else // LINUX and WINDOWS
 
 #   ifdef HAVE_KIO
 
@@ -118,15 +107,41 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
             d->newServicesMap[sinfo.name] = sinfo;
         }
 
+#   ifdef Q_OS_WIN
+
+        if (selectedItems.size() == 1)
+        {
+            servicesMenu->addSeparator();
+            servicesMenu->addAction(i18nc("@action: open item with other application", "Other..."));
+        }
+
+#   endif // Q_OS_WIN
+
         addAction(serviceAction);
 
         connect(servicesMenu, SIGNAL(triggered(QAction*)),
                 this, SLOT(slotOpenWith(QAction*)));
     }
 
+#   ifdef Q_OS_WIN
+
+    else
+    {
+        if (selectedItems.size() == 1)
+        {
+            QAction* const serviceAction = new QAction(i18nc("@action: context menu", "Open With..."), this);
+            addAction(serviceAction);
+
+            connect(serviceAction, SIGNAL(triggered()),
+                    this, SLOT(slotOpenWith()));
+        }
+    }
+
+#   endif // Q_OS_WIN
+
 #   endif // HAVE_KIO
 
-#endif // Q_OS_WIN
+#endif // Q_OS_MAC
 
 }
 
@@ -140,26 +155,7 @@ void ContextMenuHelper::slotOpenWith()
 void ContextMenuHelper::slotOpenWith(QAction* action)
 {
 
-#ifdef Q_OS_WIN
-
-    Q_UNUSED(action);
-
-    // See Bug #380065 for details.
-
-    if (d->selectedItems.length() == 1)
-    {
-        SHELLEXECUTEINFO sei = {};
-        sei.cbSize           = sizeof(sei);
-        sei.fMask            = SEE_MASK_INVOKEIDLIST | SEE_MASK_NOASYNC;
-        sei.nShow            = SW_SHOWNORMAL;
-        sei.lpVerb           = (LPCWSTR)QString::fromLatin1("openas").utf16();
-        sei.lpFile           = (LPCWSTR)QDir::toNativeSeparators(d->selectedItems.first().toLocalFile()).utf16();
-        ShellExecuteEx(&sei);
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "ShellExecuteEx::openas return code:" << GetLastError();
-    }
-
-#elif defined Q_OS_MAC
+#ifdef Q_OS_MAC
 
     QList<QUrl> list = d->selectedItems;
     QUrl aurl        = action ? action->data().toUrl() : QUrl();
@@ -169,7 +165,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
         DServiceMenu::MacOpenFilesWithApplication(list, aurl);
     }
 
-#else // LINUX
+#else // LINUX and WINDOWS
 
     QList<QUrl> list = d->selectedItems;
     QString name     = action ? action->data().toString() : QString();
@@ -216,6 +212,26 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
 
     if (name.isEmpty())
     {
+
+#   ifdef Q_OS_WIN
+
+        // See Bug #380065 for details.
+
+        if (list.size() == 1)
+        {
+            SHELLEXECUTEINFO sei = {};
+            sei.cbSize           = sizeof(sei);
+            sei.fMask            = SEE_MASK_INVOKEIDLIST | SEE_MASK_NOASYNC;
+            sei.nShow            = SW_SHOWNORMAL;
+            sei.lpVerb           = (LPCWSTR)QString::fromLatin1("openas").utf16();
+            sei.lpFile           = (LPCWSTR)QDir::toNativeSeparators(list.first().toLocalFile()).utf16();
+            ShellExecuteEx(&sei);
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "ShellExecuteEx::openas return code:" << GetLastError();
+        }
+
+#   endif // Q_OS_WIN
+
         return;
     }
 
@@ -223,7 +239,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
 
 #   endif // HAVE_KIO
 
-#endif // Q_OS_WIN
+#endif // Q_OS_MAC
 
 }
 
