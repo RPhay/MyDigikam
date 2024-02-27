@@ -145,7 +145,7 @@ void PresentationAudioListItem::slotPlayerError(QMediaPlayer::Error err)
 {
     if (err != QMediaPlayer::NoError)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "An error as occured while playing (" << err << ")";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "An error as occurred while playing (" << err << ")";
         showErrorDialog(d->mediaObject->errorString());
     }
 }
