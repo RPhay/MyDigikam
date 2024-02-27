@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-26 01:37+0000\n"
+"POT-Creation-Date: 2024-02-27 01:35+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -680,19 +680,19 @@ msgstr ""
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:29
 #: core/app/items/utils/contextmenuhelper_services.cpp:46
-#: core/app/items/utils/contextmenuhelper_services.cpp:71
+#: core/app/items/utils/contextmenuhelper_services.cpp:73
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
 msgstr "Buka Dengan"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:85
+#: core/app/items/utils/contextmenuhelper_services.cpp:95
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
 msgstr ""
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:94
+#: core/app/items/utils/contextmenuhelper_services.cpp:104
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."

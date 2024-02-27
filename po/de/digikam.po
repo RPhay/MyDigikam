@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-26 01:37+0000\n"
+"POT-Creation-Date: 2024-02-27 01:35+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -692,19 +692,19 @@ msgstr "Ausgewählte Gruppe auflösen"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:29
 #: core/app/items/utils/contextmenuhelper_services.cpp:46
-#: core/app/items/utils/contextmenuhelper_services.cpp:71
+#: core/app/items/utils/contextmenuhelper_services.cpp:73
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
 msgstr "Öffnen mit"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:85
+#: core/app/items/utils/contextmenuhelper_services.cpp:95
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
 msgstr "Weitere ..."
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:94
+#: core/app/items/utils/contextmenuhelper_services.cpp:104
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."

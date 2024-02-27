@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-26 01:37+0000\n"
+"POT-Creation-Date: 2024-02-27 01:35+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -702,20 +702,20 @@ msgstr ""
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:29
 #: core/app/items/utils/contextmenuhelper_services.cpp:46
-#: core/app/items/utils/contextmenuhelper_services.cpp:71
+#: core/app/items/utils/contextmenuhelper_services.cpp:73
 #, fuzzy, kde-format
 #| msgid "Video"
 msgctxt "@action: context menu"
 msgid "Open With"
 msgstr "वीडियो"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:85
+#: core/app/items/utils/contextmenuhelper_services.cpp:95
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
 msgstr ""
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:94
+#: core/app/items/utils/contextmenuhelper_services.cpp:104
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."

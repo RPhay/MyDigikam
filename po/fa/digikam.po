@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-26 01:37+0000\n"
+"POT-Creation-Date: 2024-02-27 01:35+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -1080,20 +1080,20 @@ msgstr "%1 فقره برگزیده شد"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:29
 #: core/app/items/utils/contextmenuhelper_services.cpp:46
-#: core/app/items/utils/contextmenuhelper_services.cpp:71
+#: core/app/items/utils/contextmenuhelper_services.cpp:73
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action: context menu"
 msgid "Open With"
 msgstr "باز کردن با"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:85
+#: core/app/items/utils/contextmenuhelper_services.cpp:95
 #, fuzzy, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
 msgstr "غیره"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:94
+#: core/app/items/utils/contextmenuhelper_services.cpp:104
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: context menu"

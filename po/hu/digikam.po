@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-26 01:37+0000\n"
+"POT-Creation-Date: 2024-02-27 01:35+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -715,19 +715,19 @@ msgstr "Kijelöltek csoportosításának megszüntetése"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:29
 #: core/app/items/utils/contextmenuhelper_services.cpp:46
-#: core/app/items/utils/contextmenuhelper_services.cpp:71
+#: core/app/items/utils/contextmenuhelper_services.cpp:73
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
 msgstr "Megnyitás ezzel..."
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:85
+#: core/app/items/utils/contextmenuhelper_services.cpp:95
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
 msgstr "Egyéb..."
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:94
+#: core/app/items/utils/contextmenuhelper_services.cpp:104
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."

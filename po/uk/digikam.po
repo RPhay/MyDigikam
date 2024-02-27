@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-26 01:37+0000\n"
-"PO-Revision-Date: 2024-02-12 13:24+0200\n"
+"POT-Creation-Date: 2024-02-27 01:35+0000\n"
+"PO-Revision-Date: 2024-02-26 15:12+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -696,19 +696,19 @@ msgstr "Розгрупувати позначені"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:29
 #: core/app/items/utils/contextmenuhelper_services.cpp:46
-#: core/app/items/utils/contextmenuhelper_services.cpp:71
+#: core/app/items/utils/contextmenuhelper_services.cpp:73
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
 msgstr "Відкрити за допомогою"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:85
+#: core/app/items/utils/contextmenuhelper_services.cpp:95
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
 msgstr "Інше…"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:94
+#: core/app/items/utils/contextmenuhelper_services.cpp:104
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."
@@ -6454,27 +6454,22 @@ msgid "Date"
 msgstr "Дата"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
-#, fuzzy, kde-format
-#| msgid "digiKam Properties"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
-msgstr "Властивості digiKam"
+msgstr "digiKam повністю"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "DigiKam image history"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "Журнал зображень digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc namespace"
-#| msgid "Preview image"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
-msgstr "Попередній перегляд зображення"
+msgstr "Зображення перегляду digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
@@ -6495,12 +6490,10 @@ msgid "Video"
 msgstr "Відео"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Caption, Comment and Description"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
-msgstr "Підпис, Коментар і Опис"
+msgstr "Підпис, коментар і опис"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
 #, kde-format
