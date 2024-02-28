@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-27 01:35+0000\n"
+"POT-Creation-Date: 2024-02-28 01:34+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -775,23 +775,25 @@ msgctxt "@action:inmenu"
 msgid "Ungroup Selected"
 msgstr "Díghrúpáil na hÍomhánna Roghnaithe"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:29
-#: core/app/items/utils/contextmenuhelper_services.cpp:46
-#: core/app/items/utils/contextmenuhelper_services.cpp:73
+#: core/app/items/utils/contextmenuhelper_services.cpp:35
+#: core/app/items/utils/contextmenuhelper_services.cpp:62
+#: core/app/items/utils/contextmenuhelper_services.cpp:100
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action: context menu"
 msgid "Open With"
 msgstr "Oscail Le"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:95
+#: core/app/items/utils/contextmenuhelper_services.cpp:74
+#: core/app/items/utils/contextmenuhelper_services.cpp:115
 #, fuzzy, kde-format
 #| msgid "Other..."
 msgctxt "@action: open item with other application"
 msgid "Other..."
 msgstr "Eile..."
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:104
+#: core/app/items/utils/contextmenuhelper_services.cpp:83
+#: core/app/items/utils/contextmenuhelper_services.cpp:132
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: context menu"
@@ -2933,7 +2935,7 @@ msgstr ""
 msgid "Start digikam with the configuration file \"config\""
 msgstr ""
 
-#: core/app/main/main.cpp:253
+#: core/app/main/main.cpp:251
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2941,7 +2943,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:295
+#: core/app/main/main.cpp:293
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2949,7 +2951,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:304
+#: core/app/main/main.cpp:302
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2957,7 +2959,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:344
+#: core/app/main/main.cpp:342
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -51046,7 +51048,7 @@ msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Comha(i)d nó fillteá(i)n le hoscailt"
 
-#: core/showfoto/main/main.cpp:227
+#: core/showfoto/main/main.cpp:225
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -60347,21 +60349,22 @@ msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Feabhsaigh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2805
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2808
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2859
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "Oscail Le"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2819
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
 #, fuzzy, kde-format
 #| msgid "Other..."
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Eile..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2828
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2829
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: open with desktop application"

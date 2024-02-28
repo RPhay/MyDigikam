@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-27 01:35+0000\n"
+"POT-Creation-Date: 2024-02-28 01:34+0000\n"
 "PO-Revision-Date: 2024-02-26 07:03+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -721,21 +721,23 @@ msgctxt "@action:inmenu"
 msgid "Ungroup Selected"
 msgstr "Razdruži izbrane"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:29
-#: core/app/items/utils/contextmenuhelper_services.cpp:46
-#: core/app/items/utils/contextmenuhelper_services.cpp:73
+#: core/app/items/utils/contextmenuhelper_services.cpp:35
+#: core/app/items/utils/contextmenuhelper_services.cpp:62
+#: core/app/items/utils/contextmenuhelper_services.cpp:100
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
 msgstr "Odpri z"
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:95
+#: core/app/items/utils/contextmenuhelper_services.cpp:74
+#: core/app/items/utils/contextmenuhelper_services.cpp:115
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
 msgstr "Drugo..."
 
-#: core/app/items/utils/contextmenuhelper_services.cpp:104
+#: core/app/items/utils/contextmenuhelper_services.cpp:83
+#: core/app/items/utils/contextmenuhelper_services.cpp:132
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."
@@ -2716,7 +2718,7 @@ msgstr ""
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Zaženi digikam z nastavitveno datoteko \"config\""
 
-#: core/app/main/main.cpp:253
+#: core/app/main/main.cpp:251
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2726,7 +2728,7 @@ msgstr ""
 "<p>Uporabljate 32-bitno različico digiKama v 64-bitnem sistemu Windows.</"
 "p><p>Prosimo, namestite 64-bitno različico digiKama za boljšo izkušnjo.</p>"
 
-#: core/app/main/main.cpp:295
+#: core/app/main/main.cpp:293
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2737,7 +2739,7 @@ msgstr ""
 "namestite ga.\n"
 "Na vašem računalniku ni nameščen noben vstavek za podatkovne zbirke."
 
-#: core/app/main/main.cpp:304
+#: core/app/main/main.cpp:302
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2748,7 +2750,7 @@ msgstr ""
 "Prosim namestite ga.\n"
 "Nameščeni vstavki so na spodnjem seznamu."
 
-#: core/app/main/main.cpp:344
+#: core/app/main/main.cpp:342
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -49084,7 +49086,7 @@ msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Datoteke ali mape za odprtje"
 
-#: core/showfoto/main/main.cpp:227
+#: core/showfoto/main/main.cpp:225
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -58280,19 +58282,20 @@ msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Izboljšaj"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2805
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2808
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2859
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Odpri z"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2819
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Drugo..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2828
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2829
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
