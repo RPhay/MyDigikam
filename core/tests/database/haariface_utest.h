@@ -34,7 +34,7 @@ class HaarIfaceTest : public QObject
 
 public:
 
-    HaarIfaceTest(QObject* const parent = nullptr);
+    explicit HaarIfaceTest(QObject* const parent = nullptr);
     ~HaarIfaceTest() override;
 
 private Q_SLOTS:

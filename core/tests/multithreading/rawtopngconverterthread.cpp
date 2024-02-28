@@ -32,7 +32,7 @@ class Q_DECL_HIDDEN Mytask : public ActionJob
 
 public:
 
-    Mytask(QObject* const parent = nullptr)
+    explicit Mytask(QObject* const parent = nullptr)
         : ActionJob(parent)
     {
     }

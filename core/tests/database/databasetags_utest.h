@@ -34,7 +34,7 @@ class DatabaseTagsTest: public QObject
 
 public:
 
-    DatabaseTagsTest(QObject* const parent = nullptr);
+    explicit DatabaseTagsTest(QObject* const parent = nullptr);
     ~DatabaseTagsTest() override;
 
 private Q_SLOTS:

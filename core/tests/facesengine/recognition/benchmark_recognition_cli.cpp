@@ -47,7 +47,7 @@ class Benchmark : public QObject
 
 public:
 
-    Benchmark(QObject* const parent = nullptr);
+    explicit Benchmark(QObject* const parent = nullptr);
     ~Benchmark() override;
 
 public:

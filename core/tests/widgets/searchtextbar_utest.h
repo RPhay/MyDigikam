@@ -32,7 +32,7 @@ class SearchTextBarTest : public QObject
 
 public:
 
-    SearchTextBarTest(QObject* const parent = nullptr);
+    explicit SearchTextBarTest(QObject* const parent = nullptr);
 
 private Q_SLOTS:
 

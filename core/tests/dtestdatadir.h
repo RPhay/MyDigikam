@@ -137,7 +137,7 @@ protected:
         initialize();
     }
 
-    DTestDataDir(const QString& subdirPath)
+    explicit DTestDataDir(const QString& subdirPath)
     {
         initialize();
 

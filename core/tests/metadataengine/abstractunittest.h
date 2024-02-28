@@ -68,7 +68,7 @@ class AbstractUnitTest : public QObject
 
 public:
 
-    AbstractUnitTest(QObject* const parent = nullptr)
+    explicit AbstractUnitTest(QObject* const parent = nullptr)
         : QObject      (parent),
           m_hasExifTool(false)
     {

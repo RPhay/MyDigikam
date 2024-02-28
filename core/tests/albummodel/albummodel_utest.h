@@ -34,7 +34,7 @@ class AlbumModelTest: public QObject
 
 public:
 
-    AlbumModelTest(QObject* const parent = nullptr);
+    explicit AlbumModelTest(QObject* const parent = nullptr);
     ~AlbumModelTest() override;
 
 private Q_SLOTS:

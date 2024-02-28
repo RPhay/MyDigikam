@@ -63,7 +63,7 @@ class InatBrowserCookieJar : public QNetworkCookieJar
 {
 public:
 
-    InatBrowserCookieJar(QObject* const parent = nullptr)
+    explicit InatBrowserCookieJar(QObject* const parent = nullptr)
         : QNetworkCookieJar(parent)
     {
     }

@@ -39,7 +39,7 @@ class TagsCacheTest : public QObject
 
 public:
 
-    TagsCacheTest(QObject* const parent = nullptr);
+    explicit TagsCacheTest(QObject* const parent = nullptr);
     ~TagsCacheTest() override;
 
 private Q_SLOTS:

@@ -335,7 +335,7 @@ public:
 
     // Needed to make viewportEvent() public
 
-    TreeViewComboBoxTreeView(QWidget* const parent = nullptr)
+    explicit TreeViewComboBoxTreeView(QWidget* const parent = nullptr)
         : QTreeView(parent)
     {
     }
@@ -386,7 +386,7 @@ public:
 
     // Needed to make viewportEvent() public
 
-    ListViewComboBoxListView(QWidget* const parent = nullptr)
+    explicit ListViewComboBoxListView(QWidget* const parent = nullptr)
         : QListView(parent)
     {
     }

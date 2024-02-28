@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN Task : public ActionJob
 
 public:
 
-    Task(QObject* const parent = nullptr)
+    explicit Task(QObject* const parent = nullptr)
         : ActionJob(parent)
     {
     }
