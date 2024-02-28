@@ -225,7 +225,7 @@ public:
      * tag which is a color label tag.
      * Returns -1 if no tag in the list is a color label tag.
      */
-    int colorLabelFromTags(QList<int> tagIds);
+    int colorLabelFromTags(const QList<int>& tagIds);
 
     /**
      * Return internal tags ID corresponding of pick label id. see PickLabel values from globals.h.
@@ -249,7 +249,7 @@ public:
      * tag which is a pick label tag.
      * Returns -1 if no tag in the list is a pick label tag.
      */
-    int pickLabelFromTags(QList<int> tagIds);
+    int pickLabelFromTags(const QList<int>& tagIds);
 
     /**
      * Returns a list of tag ids whose tag name (not path) starts with /  contains the given fragment

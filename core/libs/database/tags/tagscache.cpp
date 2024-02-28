@@ -1092,7 +1092,7 @@ int TagsCache::colorLabelForTag(int tagId)
     return d->colorLabelsTags.indexOf(tagId);
 }
 
-int TagsCache::colorLabelFromTags(QList<int> tagIds)
+int TagsCache::colorLabelFromTags(const QList<int>& tagIds)
 {
     d->checkLabelTags();
     QReadLocker locker(&d->lock);
@@ -1140,7 +1140,7 @@ int TagsCache::pickLabelForTag(int tagId)
     return d->pickLabelsTags.indexOf(tagId);
 }
 
-int TagsCache::pickLabelFromTags(QList<int> tagIds)
+int TagsCache::pickLabelFromTags(const QList<int>& tagIds)
 {
     d->checkLabelTags();
     QReadLocker locker(&d->lock);
