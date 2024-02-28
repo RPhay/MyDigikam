@@ -68,6 +68,8 @@ public:
     DServiceInfo(const DServiceInfo& other);
     ~DServiceInfo();
 
+    bool isEmpty() const;
+
     DServiceInfo& operator=(const DServiceInfo& other);
 
 public:
@@ -102,7 +104,7 @@ public:
     static bool runFiles(const QString& appCmd,
                          const QList<QUrl>& urls,
                          const KService::Ptr& service = KService::Ptr(),
-                         const DServiceInfo* const serviceInfo = nullptr);
+                         const DServiceInfo& serviceInfo = DServiceInfo());
 
     /**
      * Linux only: return list of service available on desktop to open files.

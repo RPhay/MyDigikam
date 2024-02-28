@@ -48,19 +48,19 @@ namespace Digikam
 bool DServiceMenu::runFiles(const KService::Ptr& service,
                             const QList<QUrl>& urls)
 {
-    return (runFiles(service->exec(), urls, service, nullptr));
+    return (runFiles(service->exec(), urls, service, DServiceInfo()));
 }
 
 bool DServiceMenu::runFiles(const DServiceInfo& serviceInfo,
                             const QList<QUrl>& urls)
 {
-    return (runFiles(serviceInfo.exec, urls, KService::Ptr(), &serviceInfo));
+    return (runFiles(serviceInfo.exec, urls, KService::Ptr(), serviceInfo));
 }
 
 bool DServiceMenu::runFiles(const QString& appCmd,
                             const QList<QUrl>& urls,
                             const KService::Ptr& service,
-                            const DServiceInfo* const serviceInfo)
+                            const DServiceInfo& serviceInfo)
 {
     QRegularExpression split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
     QStringList cmdList = appCmd.split(split, QT_SKIP_EMPTY_PARTS);
@@ -99,13 +99,13 @@ bool DServiceMenu::runFiles(const QString& appCmd,
         useTerminal = service->terminal();
         termOpts    = service->terminalOptions().split(split, QT_SKIP_EMPTY_PARTS);
     }
-    else if (serviceInfo)
+    else if (!serviceInfo.isEmpty())
     {
-        icon        = serviceInfo->icon;
-        name        = serviceInfo->name;
+        icon        = serviceInfo.icon;
+        name        = serviceInfo.name;
 
-        useTerminal = serviceInfo->term;
-        termOpts    = serviceInfo->topt.split(split, QT_SKIP_EMPTY_PARTS);
+        useTerminal = serviceInfo.term;
+        termOpts    = serviceInfo.topt.split(split, QT_SKIP_EMPTY_PARTS);
     }
 
 #ifdef Q_OS_LINUX
@@ -407,6 +407,11 @@ DServiceInfo::DServiceInfo(const DServiceInfo& other)
 
 DServiceInfo::~DServiceInfo()
 {
+}
+
+bool DServiceInfo::isEmpty() const
+{
+    return (name.isEmpty() || exec.isEmpty());
 }
 
 DServiceInfo& DServiceInfo::operator=(const DServiceInfo& other)
