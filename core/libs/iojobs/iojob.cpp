@@ -252,7 +252,10 @@ void CopyOrMoveJob::run()
         Q_EMIT signalOneProccessed(srcUrl);
     }
 
-    m_data->setErrorOrCancel(m_cancel);
+    if (m_data)
+    {
+        m_data->setErrorOrCancel(m_cancel);
+    }
 
     Q_EMIT signalDone();
 }
