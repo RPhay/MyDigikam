@@ -444,8 +444,9 @@ There are two configuration sections : the top level and the core.
   - \b ENABLE_DBUS                           : Build digiKam with DBUS support (default=ON).
   - \b ENABLE_APPSTYLES                      : Build digiKam with support for changing the widget application style (default=OFF).
   - \b ENABLE_QWEBENGINE                     : Build digiKam with QWebEngine instead of QWebKit (default=ON).
+  - \b ENABLE_KIO                            : Build digiKam with KIO support (default=ON).
 
- - Experimental support options
+ - Database options
 
   - \b ENABLE_MYSQLSUPPORT                   : Build digiKam with MySQL dabatase support (default=ON).
   - \b ENABLE_INTERNALMYSQL                  : Build digiKam with internal MySQL server executable (default=ON).

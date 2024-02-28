@@ -11,8 +11,9 @@ option(ENABLE_MEDIAPLAYER                "Build digiKam with Media Player suppor
 option(ENABLE_DBUS                       "Build digiKam with DBUS support (default=ON)"                                       ON)
 option(ENABLE_APPSTYLES                  "Build digiKam with support for changing the widget application style (default=OFF)" OFF)
 option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default=ON)"                                         ON)
+option(ENABLE_KIO                        "Build digiKam with KIO support (default=ON)"                                        ON)
 
-# Mysql support options (experimental):
+# Database options:
 option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase support (default=ON)"                             ON)
 option(ENABLE_INTERNALMYSQL              "Build digiKam with internal MySQL server executable (default=ON)"                   ON)
 

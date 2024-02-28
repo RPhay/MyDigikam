@@ -86,17 +86,24 @@ endif()
 
 # Check if KIO have been compiled with KIOWidgets. digiKam only needs this one.
 
-if(KF${QT_VERSION_MAJOR}KIO_FOUND)
+if(ENABLE_KIO)
 
-    get_target_property(KIOWidgets_INCLUDE_DIRS KF${QT_VERSION_MAJOR}::KIOWidgets
-                        INTERFACE_INCLUDE_DIRECTORIES)
-    message(STATUS "KF${QT_VERSION_MAJOR}::KIOWidgets include dirs: ${KIOWidgets_INCLUDE_DIRS}")
+    if(KF${QT_VERSION_MAJOR}KIO_FOUND)
 
-    if(NOT KIOWidgets_INCLUDE_DIRS)
+        get_target_property(KIOWidgets_INCLUDE_DIRS KF${QT_VERSION_MAJOR}::KIOWidgets
+                            INTERFACE_INCLUDE_DIRECTORIES)
+        message(STATUS "KF${QT_VERSION_MAJOR}::KIOWidgets include dirs: ${KIOWidgets_INCLUDE_DIRS}")
 
-        message(STATUS "KF${QT_VERSION_MAJOR}::KIOWidgets not available in shared KIO library. KIO support disabled.")
-        set(KF${QT_VERSION_MAJOR}KIO_FOUND FALSE)
+        if(NOT KIOWidgets_INCLUDE_DIRS)
 
-    endif()
+            message(STATUS "KF${QT_VERSION_MAJOR}::KIOWidgets not available in shared KIO library. KIO support disabled.")
+            set(KF${QT_VERSION_MAJOR}KIO_FOUND FALSE)
+
+        endif()
+
+else()
+
+    message(STATUS "KF${QT_VERSION_MAJOR}::KIO support is explicitly disabled.")
+    set(KF${QT_VERSION_MAJOR}KIO_FOUND FALSE)
 
 endif()
