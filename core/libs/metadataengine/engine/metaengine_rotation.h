@@ -86,7 +86,7 @@ public:
     /**
      * Applies the given transform actions to this matrix
      */
-    MetaEngineRotation& operator*=(QList<TransformationAction> actions);
+    MetaEngineRotation& operator*=(const QList<TransformationAction>& actions);
 
     /**
      * Applies the given Exif orientation flag to this matrix
