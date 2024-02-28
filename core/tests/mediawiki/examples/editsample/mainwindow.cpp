@@ -20,8 +20,7 @@
 
 MainWindow::MainWindow(QWidget* const parent)
     : QMainWindow(parent),
-      ui         (new Ui::MainWindow),
-      MediaWiki  (nullptr)
+      ui         (new Ui::MainWindow)
 {
     ui->setupUi(this);
 }
@@ -34,8 +33,8 @@ MainWindow::~MainWindow()
 //Load page
 void MainWindow::slot_pushButton2_clicked()
 {
-    MediaWiki = new Iface(QUrl(this->ui->mWikiEdit->text()));
-    QueryRevision* const queryrevision(new QueryRevision(*MediaWiki));
+    mwIface = new Iface(QUrl(this->ui->mWikiEdit->text()));
+    QueryRevision* const queryrevision(new QueryRevision(*mwIface));
     queryrevision->setPageName(this->ui->mPageEdit->text());
     queryrevision->setProperties(QueryRevision::Content);
     queryrevision->setExpandTemplates(true);
@@ -67,7 +66,7 @@ void MainWindow::revisionHandle(const QList<Revision>& revisions)
 
 void MainWindow::slot_pushButton1_clicked()
 {
-    Login* const login = new Login(*MediaWiki, this->ui->mLoginEdit->text(), this->ui->mMdpEdit->text());
+    Login* const login = new Login(*mwIface, this->ui->mLoginEdit->text(), this->ui->mMdpEdit->text());
 
     connect(login, SIGNAL(result(KJob*)),
             this, SLOT(loginHandle(KJob*)));
@@ -85,7 +84,7 @@ void MainWindow::loginHandle(KJob* login)
     }
     else
     {
-        Edit* const job = new Edit(*MediaWiki, nullptr);
+        Edit* const job = new Edit(*mwIface, nullptr);
         job->setPageName(this->ui->mPageEdit->text());
         job->setText(this->ui->plainTextEdit->toPlainText());
 

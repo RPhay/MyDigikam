@@ -61,8 +61,8 @@ private Q_SLOTS:
 
 private:
 
-    Ui::MainWindow* ui;
-    Iface*          MediaWiki;
+    Ui::MainWindow* ui      = nullptr;
+    Iface*          mwIface = nullptr;
 };
 
 #endif // MAINWINDOW_H
