@@ -567,7 +567,7 @@ public:
      * @param albumIDs this parameter is purely informational.
      *                 it shall contain the albums that the items are removed from.
      */
-    void removeItems(QList<qlonglong> itemIDs, const QList<int>& albumIDs = QList<int>());
+    void removeItems(const QList<qlonglong>& itemIDs, const QList<int>& albumIDs = QList<int>());
 
     /**
      * Marks all items in the list as obsolete,
@@ -577,7 +577,7 @@ public:
      * @param albumIDs this parameter is purely informational.
      *                 it shall contain the albums that the items are removed from.
      */
-    void removeItemsPermanently(QList<qlonglong> itemIDs, const QList<int>& albumIDs = QList<int>());
+    void removeItemsPermanently(const QList<qlonglong>& itemIDs, const QList<int>& albumIDs = QList<int>());
 
     /**
      * Delete all items from the database that are marked as removed.
@@ -966,7 +966,7 @@ public:
     QVariantList getItemPosition(qlonglong imageID,
                                  DatabaseFields::ItemPositions positionFields = DatabaseFields::ItemPositionsAll)   const;
 
-    QVariantList getItemPositions(QList<qlonglong> imageIDs, DatabaseFields::ItemPositions fields)                  const;
+    QVariantList getItemPositions(const QList<qlonglong>& imageIDs, DatabaseFields::ItemPositions fields)                  const;
 
     /**
      * Remove the entry in ItemPositions for the given image
@@ -1225,7 +1225,7 @@ public:
      * Add each tag of a list of tags
      * to each member of a list of items.
      */
-    void addTagsToItems(QList<qlonglong> imageIDs, QList<int> tagIDs);
+    void addTagsToItems(const QList<qlonglong>& imageIDs, const QList<int>& tagIDs);
 
     /**
      * Remove a specific tag for the item
@@ -1245,7 +1245,7 @@ public:
      * Remove each tag from a list of tags
      * from a each member of a list of items.
      */
-    void removeTagsFromItems(QList<qlonglong> imageIDs, const QList<int>& tagIDs);
+    void removeTagsFromItems(const QList<qlonglong>& imageIDs, const QList<int>& tagIDs);
 
     /**
      * Get a list of names of all the tags for the item

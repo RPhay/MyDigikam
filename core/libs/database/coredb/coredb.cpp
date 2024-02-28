@@ -1643,7 +1643,7 @@ QVariantList CoreDB::getItemPosition(qlonglong imageID, DatabaseFields::ItemPosi
     return values;
 }
 
-QVariantList CoreDB::getItemPositions(QList<qlonglong> imageIDs, DatabaseFields::ItemPositions fields) const
+QVariantList CoreDB::getItemPositions(const QList<qlonglong>& imageIDs, DatabaseFields::ItemPositions fields) const
 {
     QVariantList values;
 
@@ -3192,7 +3192,7 @@ void CoreDB::addItemTag(int albumID, const QString& name, int tagID)
     addItemTag(getImageId(albumID, name), tagID);
 }
 
-void CoreDB::addTagsToItems(QList<qlonglong> imageIDs, QList<int> tagIDs)
+void CoreDB::addTagsToItems(const QList<qlonglong>& imageIDs, const QList<int>& tagIDs)
 {
     if (imageIDs.isEmpty() || tagIDs.isEmpty())
     {
@@ -3242,7 +3242,7 @@ void CoreDB::removeItemAllTags(qlonglong imageID, const QList<int>& currentTagId
     d->db->recordChangeset(ImageTagChangeset(imageID, currentTagIds, ImageTagChangeset::RemovedAll));
 }
 
-void CoreDB::removeTagsFromItems(QList<qlonglong> imageIDs, const QList<int>& tagIDs)
+void CoreDB::removeTagsFromItems(const QList<qlonglong>& imageIDs, const QList<int>& tagIDs)
 {
     if (imageIDs.isEmpty() || tagIDs.isEmpty())
     {
@@ -4352,7 +4352,7 @@ void CoreDB::removeItemsFromAlbum(int albumID, const QList<qlonglong>& ids_forIn
     d->db->recordChangeset(CollectionImageChangeset(ids_forInformation, albumID, CollectionImageChangeset::RemovedAll));
 }
 
-void CoreDB::removeItems(QList<qlonglong> itemIDs, const QList<int>& albumIDs)
+void CoreDB::removeItems(const QList<qlonglong>& itemIDs, const QList<int>& albumIDs)
 {
     DbEngineSqlQuery query = d->db->prepareQuery(QString::fromUtf8("UPDATE Images SET status=?, album=NULL WHERE id=?;"));
 
@@ -4372,7 +4372,7 @@ void CoreDB::removeItems(QList<qlonglong> itemIDs, const QList<int>& albumIDs)
     d->db->recordChangeset(CollectionImageChangeset(itemIDs, albumIDs, CollectionImageChangeset::Removed));
 }
 
-void CoreDB::removeItemsPermanently(QList<qlonglong> itemIDs, const QList<int>& albumIDs)
+void CoreDB::removeItemsPermanently(const QList<qlonglong>& itemIDs, const QList<int>& albumIDs)
 {
     DbEngineSqlQuery query = d->db->prepareQuery(QString::fromUtf8("UPDATE Images SET status=?, album=NULL WHERE id=?;"));
 
