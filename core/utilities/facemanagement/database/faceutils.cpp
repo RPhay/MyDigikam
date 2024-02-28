@@ -214,7 +214,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
 
                 for (int j = 0 ; j < overlappingEntries.size() ; ++j)
                 {
-                    FaceTagsIface& oldFace = overlappingEntries[j];
+                    const FaceTagsIface& oldFace = overlappingEntries[j];
 
                     if      (oldFace.isUnknownName())
                     {
