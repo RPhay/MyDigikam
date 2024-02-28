@@ -101,6 +101,8 @@ if(ENABLE_KIO)
 
         endif()
 
+    endif()
+
 else()
 
     message(STATUS "KF${QT_VERSION_MAJOR}::KIO support is explicitly disabled.")
