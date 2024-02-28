@@ -58,9 +58,9 @@ public:
     /**
      * Calculate different between 2 vectors
      */
-    static double cosineDistance(std::vector<float> v1, std::vector<float> v2);
-    static double L2squareDistance(std::vector<float> v1, std::vector<float> v2);
-    static double L2squareNormDistance(std::vector<float> v1, std::vector<float> v2);
+    static double cosineDistance(const std::vector<float>& v1, const std::vector<float>& v2);
+    static double L2squareDistance(const std::vector<float>& v1, const std::vector<float>& v2);
+    static double L2squareNormDistance(const std::vector<float>& v1, const std::vector<float>& v2);
 
     /**
      * Convert face embedding between different formats

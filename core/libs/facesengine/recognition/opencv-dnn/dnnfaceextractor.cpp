@@ -173,8 +173,8 @@ bool DNNFaceExtractor::loadModels()
     return true;
 }
 
-double DNNFaceExtractor::cosineDistance(std::vector<float> v1,
-                                        std::vector<float> v2)
+double DNNFaceExtractor::cosineDistance(const std::vector<float>& v1,
+                                        const std::vector<float>& v2)
 {
     Q_ASSERT(v1.size() == v2.size());
 
@@ -185,8 +185,8 @@ double DNNFaceExtractor::cosineDistance(std::vector<float> v1,
     return (scalarProduct / (normV1 * normV2));
 }
 
-double DNNFaceExtractor::L2squareDistance(std::vector<float> v1,
-                                          std::vector<float> v2)
+double DNNFaceExtractor::L2squareDistance(const std::vector<float>& v1,
+                                          const std::vector<float>& v2)
 {
     Q_ASSERT(v1.size() == v2.size());
 
@@ -200,7 +200,8 @@ double DNNFaceExtractor::L2squareDistance(std::vector<float> v1,
     return sqrDistance;
 }
 
-double DNNFaceExtractor::L2squareNormDistance(std::vector<float> v1, std::vector<float> v2)
+double DNNFaceExtractor::L2squareNormDistance(const std::vector<float>& v1,
+                                              const std::vector<float>& v2)
 {
     Q_ASSERT(v1.size() == v2.size());
 
