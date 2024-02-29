@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 01:34+0000\n"
+"POT-Creation-Date: 2024-02-29 01:36+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -35582,12 +35582,12 @@ msgstr "Не удалось скопировать файл «%1» в папку
 msgid "Could not copy file %1 to album %2"
 msgstr "Не удалось скопировать файл «%1» в альбом «%2»"
 
-#: core/libs/iojobs/iojob.cpp:287
+#: core/libs/iojobs/iojob.cpp:290
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Файл или папка «%1» не существует"
 
-#: core/libs/iojobs/iojob.cpp:299
+#: core/libs/iojobs/iojob.cpp:302
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35597,7 +35597,7 @@ msgstr ""
 "Не удалось переместить папку %1 в корзину коллекции.\n"
 "Проверьте права доступа к папке корзины «.dtrash» в коллекции изображений."
 
-#: core/libs/iojobs/iojob.cpp:311
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35608,33 +35608,33 @@ msgstr ""
 "Проверьте права доступа к папке корзины «.dtrash» в коллекции изображений."
 
 # BUGME: please change to "failed to ..." because the problem is not permanent. --aspotashev
-#: core/libs/iojobs/iojob.cpp:328
+#: core/libs/iojobs/iojob.cpp:331
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "При удалении альбома «%1» произошла ошибка"
 
 # BUGME: please change to "failed to ..." because the problem is not permanent. --aspotashev
-#: core/libs/iojobs/iojob.cpp:340
+#: core/libs/iojobs/iojob.cpp:343
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "При удалении изображения «%1» произошла ошибка"
 
-#: core/libs/iojobs/iojob.cpp:386
+#: core/libs/iojobs/iojob.cpp:389
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Не удалось переместить изображение «%1» в корзину"
 
-#: core/libs/iojobs/iojob.cpp:396
+#: core/libs/iojobs/iojob.cpp:399
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Изображение с таким именем («%1») уже присутствует"
 
-#: core/libs/iojobs/iojob.cpp:411
+#: core/libs/iojobs/iojob.cpp:414
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Не удалось переименовать изображение «%1»"
 
-#: core/libs/iojobs/iojob.cpp:489
+#: core/libs/iojobs/iojob.cpp:492
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Не удалось восстановить из корзины файл «%1»"

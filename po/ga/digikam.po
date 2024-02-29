@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 01:34+0000\n"
+"POT-Creation-Date: 2024-02-29 01:36+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -35439,12 +35439,12 @@ msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 msgid "Could not copy file %1 to album %2"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:287
+#: core/libs/iojobs/iojob.cpp:290
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Níl an comhad ann"
 
-#: core/libs/iojobs/iojob.cpp:299
+#: core/libs/iojobs/iojob.cpp:302
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35452,7 +35452,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:311
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35460,34 +35460,34 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:328
+#: core/libs/iojobs/iojob.cpp:331
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Ní cheadaítear ainm folamh ar an albam."
 
-#: core/libs/iojobs/iojob.cpp:340
+#: core/libs/iojobs/iojob.cpp:343
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:386
+#: core/libs/iojobs/iojob.cpp:389
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"
 
-#: core/libs/iojobs/iojob.cpp:396
+#: core/libs/iojobs/iojob.cpp:399
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "Tá clib eile leis an ainm céanna ann.\n"
 "Roghnaigh ainm eile."
 
-#: core/libs/iojobs/iojob.cpp:411
+#: core/libs/iojobs/iojob.cpp:414
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:489
+#: core/libs/iojobs/iojob.cpp:492
 #, fuzzy, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Níorbh fhéidir íomhá '%1' a shábháil i '%2'"

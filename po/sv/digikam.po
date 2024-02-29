@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 01:34+0000\n"
+"POT-Creation-Date: 2024-02-29 01:36+0000\n"
 "PO-Revision-Date: 2023-11-22 21:14+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -35217,12 +35217,12 @@ msgstr "Kunde inte kopiera filen %1 till katalogen %2"
 msgid "Could not copy file %1 to album %2"
 msgstr "Kunde inte kopiera filen %1 till albumet %2"
 
-#: core/libs/iojobs/iojob.cpp:287
+#: core/libs/iojobs/iojob.cpp:290
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Filen eller katalogen %1 finns inte"
 
-#: core/libs/iojobs/iojob.cpp:299
+#: core/libs/iojobs/iojob.cpp:302
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35233,7 +35233,7 @@ msgstr ""
 "Kontrollera filrättigheterna för papperskorgens katalog \".dtrash\" i "
 "bildsamlingen."
 
-#: core/libs/iojobs/iojob.cpp:311
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35244,32 +35244,32 @@ msgstr ""
 "Kontrollera filrättigheterna för papperskorgens katalog \".dtrash\" i "
 "bildsamlingen."
 
-#: core/libs/iojobs/iojob.cpp:328
+#: core/libs/iojobs/iojob.cpp:331
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Albumet %1 kunde inte tas bort"
 
-#: core/libs/iojobs/iojob.cpp:340
+#: core/libs/iojobs/iojob.cpp:343
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Bilden %1 kunde inte tas bort"
 
-#: core/libs/iojobs/iojob.cpp:386
+#: core/libs/iojobs/iojob.cpp:389
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Kunde inte flytta bilden %1 till samlingens papperskorg"
 
-#: core/libs/iojobs/iojob.cpp:396
+#: core/libs/iojobs/iojob.cpp:399
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "En bild med samma namn %1 finns redan där"
 
-#: core/libs/iojobs/iojob.cpp:411
+#: core/libs/iojobs/iojob.cpp:414
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Namnet på bilden %1 kunde inte bytas"
 
-#: core/libs/iojobs/iojob.cpp:489
+#: core/libs/iojobs/iojob.cpp:492
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Kunde inte återställa filen '%1' från papperskorgen"

@@ -7,13 +7,13 @@
 # Joan Sanz i Rabadan <joansanzrab@gmail.com>, 2005, 2006.
 # Joan Maspons <joanmaspons@gmail.com>, 2009, 2010.
 # Orestes Mas <orestes@tsc.upc.edu>, 2014.
-# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 01:34+0000\n"
-"PO-Revision-Date: 2024-02-12 09:10+0100\n"
+"POT-Creation-Date: 2024-02-29 01:36+0000\n"
+"PO-Revision-Date: 2024-02-26 17:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -6415,27 +6415,22 @@ msgid "Date"
 msgstr "Data"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
-#, fuzzy, kde-format
-#| msgid "digiKam Properties"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
-msgstr "Propietats de digiKam"
+msgstr "Completament de digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "DigiKam image history"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "Historial de la imatge de digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc namespace"
-#| msgid "Preview image"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
-msgstr "Previsualitza la imatge"
+msgstr "Previsualització d'imatges de digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
@@ -6456,9 +6451,7 @@ msgid "Video"
 msgstr "Vídeo"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Caption, Comment and Description"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "Llegenda, comentari i descripció"
@@ -35610,12 +35603,12 @@ msgstr "No s'ha pogut copiar el fitxer %1 a la carpeta %2"
 msgid "Could not copy file %1 to album %2"
 msgstr "No s'ha pogut copiar el fitxer %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:287
+#: core/libs/iojobs/iojob.cpp:290
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "El fitxer o carpeta %1 no existix"
 
-#: core/libs/iojobs/iojob.cpp:299
+#: core/libs/iojobs/iojob.cpp:302
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35627,7 +35620,7 @@ msgstr ""
 "Verifiqueu els permisos del fitxer en la carpeta de paperera «.dtrash» en la "
 "col·lecció d'imatges."
 
-#: core/libs/iojobs/iojob.cpp:311
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35638,33 +35631,33 @@ msgstr ""
 "Verifiqueu els permisos del fitxer en la carpeta de paperera «.dtrash» en la "
 "col·lecció d'imatges."
 
-#: core/libs/iojobs/iojob.cpp:328
+#: core/libs/iojobs/iojob.cpp:331
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "No s'ha pogut eliminar l'àlbum %1"
 
-#: core/libs/iojobs/iojob.cpp:340
+#: core/libs/iojobs/iojob.cpp:343
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "No s'ha pogut eliminar la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:386
+#: core/libs/iojobs/iojob.cpp:389
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr ""
 "No s'ha pogut moure la imatge %1 cap a dins de la paperera de col·leccions"
 
-#: core/libs/iojobs/iojob.cpp:396
+#: core/libs/iojobs/iojob.cpp:399
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Ja hi ha una imatge amb el mateix nom %1"
 
-#: core/libs/iojobs/iojob.cpp:411
+#: core/libs/iojobs/iojob.cpp:414
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "No s'ha pogut canviar de nom la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:489
+#: core/libs/iojobs/iojob.cpp:492
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "No s'ha pogut restaurar el fitxer %1 des de la paperera"
@@ -67721,7 +67714,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@item: xmp namespace"
-#~ msgid "DigiKam"
-#~ msgstr "digiKam"
