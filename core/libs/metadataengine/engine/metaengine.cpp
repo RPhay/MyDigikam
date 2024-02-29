@@ -84,25 +84,29 @@ bool MetaEngine::initializeExiv2()
         return false;
     }
 
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container1/"),
-                         QLatin1String("GContainer"));        // krazy:exclude=insecurenet
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item1/"),
-                         QLatin1String("GContainerItem"));    // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container1/"),          // krazy:exclude=insecurenet
+                         QLatin1String("GContainer"));
 
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/"),
-                         QLatin1String("Container"));         // krazy:exclude=insecurenet
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item/"),
-                         QLatin1String("Item"));              // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item1/"),     // krazy:exclude=insecurenet
+                         QLatin1String("GContainerItem"));
 
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container_1_/"),
-                         QLatin1String("Container_1_"));      // krazy:exclude=insecurenet
-    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item_1_/"),
-                         QLatin1String("Item_1_"));           // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/"),           // krazy:exclude=insecurenet
+                         QLatin1String("Container"));
 
-    registerXmpNameSpace(QLatin1String("http://ns.apple.com/faceinfo/1.0/"),
-                         QLatin1String("apple-fi"));          // krazy:exclude=insecurenet
-    registerXmpNameSpace(QLatin1String("http://ns.excire.com/foto/1.0/"),
-                         QLatin1String("excire"));            // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item/"),      // krazy:exclude=insecurenet
+                         QLatin1String("Item"));
+
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container_1_/"),        // krazy:exclude=insecurenet
+                         QLatin1String("Container_1_"));
+
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item_1_/"),   // krazy:exclude=insecurenet
+                         QLatin1String("Item_1_"));
+
+    registerXmpNameSpace(QLatin1String("http://ns.apple.com/faceinfo/1.0/"),                    // krazy:exclude=insecurenet
+                         QLatin1String("apple-fi"));
+
+    registerXmpNameSpace(QLatin1String("http://ns.excire.com/foto/1.0/"),                       // krazy:exclude=insecurenet
+                         QLatin1String("excire"));
 
     /**
      * It cleans up memory used by Adobe XMP SDK automatically at application exit.
