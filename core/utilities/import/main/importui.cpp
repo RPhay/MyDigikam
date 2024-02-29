@@ -1961,7 +1961,7 @@ bool ImportUI::checkDiskSpace(PAlbum *pAlbum)
     QString albumRootPath = pAlbum->albumRootPath();
     qint64 bytesAvail     = d->albumLibraryFreeSpace->bytesAvail(albumRootPath);
 
-    if (dSizeBytes >= bytesAvail)
+    if ((bytesAvail != -1) && (dSizeBytes >= bytesAvail))
     {
         int result = QMessageBox::warning(this, i18nc("@title:window", "Insufficient Disk Space"),
                                           i18nc("@info", "There is not enough free space on the disk of the album you selected "
