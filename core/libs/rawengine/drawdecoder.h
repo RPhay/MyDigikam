@@ -234,7 +234,7 @@ protected:
      * Used internally to cancel RAW decoding operation. Normally, you don't need to use it
      * directly, excepted if you derivated this class. Usual way is to use cancel() method
      */
-    bool                m_cancel;
+    bool                m_cancel = false;
 
     /**
      * The settings container used to perform RAW pictures decoding. See 'drawdecodingsetting.h'

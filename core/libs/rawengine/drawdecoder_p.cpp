@@ -56,8 +56,7 @@ void s_exifParserCallbackForLibRaw(void* context, int tag, int type, int len, un
 // --------------------------------------------------------------------------------------------------
 
 DRawDecoder::Private::Private(DRawDecoder* const p)
-    : m_progress(0.0),
-      m_parent  (p)
+    : m_parent(p)
 {
 }
 

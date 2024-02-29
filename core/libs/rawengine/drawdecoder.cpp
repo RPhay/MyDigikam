@@ -20,8 +20,7 @@ namespace Digikam
 {
 
 DRawDecoder::DRawDecoder()
-    : m_cancel(false),
-      d       (new Private(this))
+    : d(new Private(this))
 {
 }
 

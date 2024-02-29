@@ -29,7 +29,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_config.h"
 #include "drawinfo.h"
 #include "drawdecoder.h"
 #include "drawfiles.h"
@@ -107,9 +106,9 @@ public:
 
 private:
 
-    double       m_progress;
+    double       m_progress = 0.0;
 
-    DRawDecoder* m_parent;
+    DRawDecoder* m_parent   = nullptr;
 
     friend class DRawDecoder;
 };
