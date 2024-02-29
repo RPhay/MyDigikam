@@ -70,7 +70,6 @@ public:
 
     SearchTextFilterSettings()
     {
-        textFields = None;
     }
 
     explicit SearchTextFilterSettings(const SearchTextSettings& settings)
@@ -80,7 +79,7 @@ public:
         textFields    = None;
     }
 
-    TextFilterFields textFields;
+    TextFilterFields textFields = None;
 };
 
 // ---------------------------------------------------------------------------------------
@@ -219,17 +218,17 @@ private:
 private:
 
     /// --- Tags filter ---
-    bool                              m_untaggedFilter;
+    bool                              m_untaggedFilter       = false;
     QList<int>                        m_includeTagFilter;
     QList<int>                        m_excludeTagFilter;
-    MatchingCondition                 m_matchingCond;
+    MatchingCondition                 m_matchingCond         = OrCondition;
     QList<int>                        m_colorLabelTagFilter;
     QList<int>                        m_pickLabelTagFilter;
 
     /// --- Rating filter ---
-    int                               m_ratingFilter;
-    RatingCondition                   m_ratingCond;
-    bool                              m_isUnratedExcluded;
+    int                               m_ratingFilter         = 0;
+    RatingCondition                   m_ratingCond           = GreaterEqualCondition;
+    bool                              m_isUnratedExcluded    = false;
 
     /// --- Date filter ---
     QHash<QDateTime, bool>            m_dayFilter;
@@ -242,13 +241,13 @@ private:
     QHash<int, QString>               m_albumNameHash;
 
     /// --- Mime filter ---
-    MimeFilter::TypeMimeFilter        m_mimeTypeFilter;
+    MimeFilter::TypeMimeFilter        m_mimeTypeFilter       = MimeFilter::AllFiles;
 
     /// --- Geolocation filter
-    GeolocationCondition              m_geolocationCondition;
+    GeolocationCondition              m_geolocationCondition = GeolocationNoFilter;
 
     /// --- URL whitelist filter
-    QHash<QString,QList<QUrl>>        m_urlWhitelists;
+    QHash<QString, QList<QUrl> >      m_urlWhitelists;
 
     /// --- ID whitelist filter
     QHash<QString, QList<qlonglong> > m_idWhitelists;
@@ -293,8 +292,8 @@ public:
 protected:
 
     QList<int>                        m_excludeTagFilter;
-    int                               m_includeTagFilter;
-    int                               m_exceptionTagFilter;
+    int                               m_includeTagFilter    = 0;
+    int                               m_exceptionTagFilter  = 0;
     QHash<QString, QList<qlonglong> > m_exceptionLists;
 };
 
@@ -332,7 +331,7 @@ public:
 
 protected:
 
-    bool            m_allOpen;
+    bool            m_allOpen       = false;
     QSet<qlonglong> m_openGroups;
 };
 

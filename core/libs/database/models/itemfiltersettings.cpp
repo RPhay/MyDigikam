@@ -39,13 +39,6 @@ namespace Digikam
 {
 
 ItemFilterSettings::ItemFilterSettings()
-    : m_untaggedFilter      (false),
-      m_matchingCond        (OrCondition),
-      m_ratingFilter        (0),
-      m_ratingCond          (GreaterEqualCondition),
-      m_isUnratedExcluded   (false),
-      m_mimeTypeFilter      (MimeFilter::AllFiles),
-      m_geolocationCondition(GeolocationNoFilter)
 {
 }
 
@@ -308,7 +301,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
     bool match = false;
 
-    if (!m_includeTagFilter.isEmpty() || !m_excludeTagFilter.isEmpty())
+    if      (!m_includeTagFilter.isEmpty() || !m_excludeTagFilter.isEmpty())
     {
         QList<int>                 tagIds = info.tagIds();
         QList<int>::const_iterator it;
@@ -331,6 +324,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         else // AND matching condition...
         {
             // m_untaggedFilter and non-empty tag filter, combined with AND, is logically no match
+
             if (!m_untaggedFilter)
             {
                 for (it = m_includeTagFilter.begin() ; it != m_includeTagFilter.end() ; ++it)
@@ -412,6 +406,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             {
                 // Searching for "has no ColorLabel" requires special handling:
                 // Scan that the tag ids contains none of the ColorLabel tags, except maybe the NoColorLabel tag
+
                 matchCL = containsNoneOfExcept(tagIds, TagsCache::instance()->colorLabelTags(), noColorLabelTagId);
             }
         }
@@ -439,13 +434,13 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             rating = 0;
         }
 
-        if (m_isUnratedExcluded && rating == 0)
+        if (m_isUnratedExcluded && (rating == 0))
         {
             match = false;
         }
         else
         {
-            if (m_ratingCond == GreaterEqualCondition)
+            if      (m_ratingCond == GreaterEqualCondition)
             {
                 // If the rating is not >=, i.e it is <, then it does not match.
 
@@ -658,7 +653,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
     if (m_geolocationCondition != GeolocationNoFilter)
     {
-        if (m_geolocationCondition == GeolocationNoCoordinates)
+        if      (m_geolocationCondition == GeolocationNoCoordinates)
         {
             if (info.hasCoordinates())
             {
@@ -742,7 +737,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             QRegularExpression expRatio (QLatin1String("^\\d+:\\d+$"));
             QRegularExpression expFloat (QLatin1String("^\\d+(.\\d+)?$"));
 
-            if (m_textFilterSettings.text.contains(expRatio) && m_textFilterSettings.text.contains(QRegularExpression(QLatin1String(":\\d+"))))
+            if      (m_textFilterSettings.text.contains(expRatio) && m_textFilterSettings.text.contains(QRegularExpression(QLatin1String(":\\d+"))))
             {
                 QString trimmedTextFilterSettingsText = m_textFilterSettings.text;
                 QStringList numberStringList          = trimmedTextFilterSettingsText.split(QLatin1Char(':'), QT_SKIP_EMPTY_PARTS);
@@ -854,8 +849,6 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 // -------------------------------------------------------------------------------------------------
 
 VersionItemFilterSettings::VersionItemFilterSettings()
-    : m_includeTagFilter  (0),
-      m_exceptionTagFilter(0)
 {
 }
 
@@ -983,7 +976,6 @@ bool VersionItemFilterSettings::isFilteringByTags() const
 // -------------------------------------------------------------------------------------------------
 
 GroupItemFilterSettings::GroupItemFilterSettings()
-    : m_allOpen(false)
 {
 }
 
