@@ -18,6 +18,7 @@
 // Qt includes
 
 #include <QUrl>
+#include <QIcon>
 #include <QString>
 #include <QStringList>
 
@@ -112,6 +113,11 @@ public:
     static KService::List servicesForOpenWith(const QList<QUrl>& urls);
 
     static QList<DServiceInfo> servicesForOpen(const QList<QUrl>& urls);
+
+    /**
+     * Return the QIcon depending on the operating system.
+     */
+    static QIcon getIconFromService(const DServiceInfo& sinfo);
 
 //@}
 

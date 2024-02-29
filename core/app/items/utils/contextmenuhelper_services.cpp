@@ -102,7 +102,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         Q_FOREACH (const DServiceInfo& sinfo, offers)
         {
             QAction* const action = servicesMenu->addAction(sinfo.name);
-            action->setIcon(QIcon::fromTheme(sinfo.icon));
+            action->setIcon(DServiceMenu::getIconFromService(sinfo));
             action->setData(sinfo.name);
             d->newServicesMap[sinfo.name] = sinfo;
         }

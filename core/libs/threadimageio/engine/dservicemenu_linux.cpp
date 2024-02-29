@@ -18,6 +18,8 @@
 // Qt includes
 
 #include <QDir>
+#include <QImage>
+#include <QPixmap>
 #include <QProcess>
 #include <QMimeType>
 #include <QMimeDatabase>
@@ -41,6 +43,11 @@
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "digikam_globals.h"
+#include "dfileoperations.h"
+
+#ifdef Q_OS_WIN
+#   include <windows.h>
+#endif
 
 namespace Digikam
 {
@@ -359,6 +366,13 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
                 {
                     if (mimes.at(i).startsWith(neededMimeTypes.at(j)))
                     {
+
+#ifdef Q_OS_WIN
+
+                        exec = DFileOperations::findExecutable(exec);
+
+#endif
+
                         DServiceInfo sinfo(name, exec, icon, topt, term);
                         servicesMap.insert(name, sinfo);
                         typeFound = true;
@@ -375,6 +389,27 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
     }
 
     return servicesMap.values();
+}
+
+QIcon DServiceMenu::getIconFromService(const DServiceInfo& sinfo)
+{
+    QIcon icon(QIcon::fromTheme(sinfo.icon));
+
+#if defined Q_OS_WIN && (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    if (icon.isNull())
+    {
+        QString execPath    = QDir::toNativeSeparators(DFileOperations::findExecutable(sinfo.exec));
+        HINSTANCE hInstance = ::GetModuleHandle(NULL);
+        HICON hicon         = ::ExtractIcon(hInstance, (const wchar_t*)execPath.utf16(), 0);
+        QPixmap exePixmap   = QPixmap::fromImage(QImage::fromHICON(hicon));
+
+        return QIcon(exePixmap);
+    }
+
+#endif
+
+    return icon;
 }
 
 //-----------------------------------------------------------------------------
