@@ -78,7 +78,7 @@ void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>&
     painter.setPen(paintPen);
 
     for (QHash<QString, QVector<QRect> >::const_iterator it = detectedBoxes.constBegin() ;
-        it != detectedBoxes.constEnd() ; it++)
+        it != detectedBoxes.constEnd() ; ++it)
     {
         for (auto rectDraw : it.value())
         {
@@ -142,8 +142,9 @@ int main(int argc, char** argv)
         int elapsed = timer.elapsed();
 
         qCDebug(DIGIKAM_TESTS_LOG) << "detected took:" << elapsed << " ms";
-        // qCDebug(DIGIKAM_TESTS_LOG) << yoloDetector->showInferenceTime();
-
+/*
+        qCDebug(DIGIKAM_TESTS_LOG) << yoloDetector->showInferenceTime();
+*/
         results += resBatch;
     }
 

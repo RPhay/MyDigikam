@@ -74,7 +74,7 @@ int main(int argc, char** argv)
     painter.setPen(paintPen);
 
     for (QHash<QString, QVector<QRect> >::const_iterator it = detectedBoxes.constBegin() ;
-        it != detectedBoxes.constEnd() ; it++)
+        it != detectedBoxes.constEnd() ; ++it)
     {
         for (auto rectDraw : it.value())
         {

@@ -78,7 +78,7 @@ void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>&
     painter.setPen(paintPen);
 
     for (QHash<QString, QVector<QRect> >::const_iterator it = detectedBoxes.constBegin() ;
-        it != detectedBoxes.constEnd() ; it++)
+        it != detectedBoxes.constEnd() ; ++it)
     {
         painter.drawText(QPoint(20, 30), it.key());
     }
