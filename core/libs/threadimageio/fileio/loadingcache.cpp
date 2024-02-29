@@ -281,7 +281,7 @@ void LoadingCache::setCacheSize(int megabytes)
 
 quint64 LoadingCache::getCacheSize() const
 {
-    return (d->imageCache.maxCost() * 1024);
+    return ((quint64)(d->imageCache.maxCost()) * 1024);
 }
 
 // --- Thumbnails ----
