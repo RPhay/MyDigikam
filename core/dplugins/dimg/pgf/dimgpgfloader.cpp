@@ -44,7 +44,7 @@ extern "C"
 
 // Windows includes
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN32           // krazy:exclude=cpp
 #   include <windows.h>
 #endif
 

@@ -64,15 +64,10 @@ class ExpoBlendingActionData
 {
 public:
 
-    explicit ExpoBlendingActionData()
-        : starting(false),
-          success (false),
-          action  (EXPOBLENDING_NONE)
-    {
-    }
+    ExpoBlendingActionData() = default;
 
-    bool                    starting;
-    bool                    success;
+    bool                    starting    = false;
+    bool                    success     = false;
 
     QString                 message;
 
@@ -85,7 +80,7 @@ public:
 
     ExpoBlendingItemUrlsMap preProcessedUrlsMap;
 
-    ExpoBlendingAction      action;
+    ExpoBlendingAction      action      = EXPOBLENDING_NONE;
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin

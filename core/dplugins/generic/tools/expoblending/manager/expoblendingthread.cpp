@@ -21,7 +21,8 @@
 #include <cmath>
 
 // Under Win32, log2f is not defined...
-#ifdef Q_OS_WIN32
+
+#ifdef Q_OS_WIN32       // krazy:exclude=cpp
 #   define log2f(x) (logf(x)*1.4426950408889634f)
 #endif
 
@@ -72,14 +73,6 @@ class Q_DECL_HIDDEN ExpoBlendingThread::Private
 {
 public:
 
-    explicit Private()
-      : cancel          (false),
-        align           (false),
-        enfuseVersion4x (true),
-        rawObserver     (nullptr)
-    {
-    }
-
     struct Task
     {
         bool                        align;
@@ -90,9 +83,15 @@ public:
         EnfuseSettings              enfuseSettings;
     };
 
-    volatile bool                   cancel;
-    bool                            align;
-    bool                            enfuseVersion4x;
+public:
+
+    Private() = default;
+
+public:
+
+    volatile bool                   cancel          = false;
+    bool                            align           = false;
+    bool                            enfuseVersion4x = true;
 
     QMutex                          mutex;
     QMutex                          lock;
@@ -105,7 +104,7 @@ public:
     QSharedPointer<QProcess>        enfuseProcess;
     QSharedPointer<QProcess>        alignProcess;
 
-    RawObserver*                    rawObserver;
+    RawObserver*                    rawObserver     = nullptr;
 
     /**
      * List of results files produced by enfuse that may need cleaning.
@@ -965,7 +964,7 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
     float    fnum = -1.0;
     QVariant rationals;
 
-    if (d->meta.getExifTagRational("Exif.Photo.ExposureTime", num, den))
+    if      (d->meta.getExifTagRational("Exif.Photo.ExposureTime", num, den))
     {
         if (den)
         {
@@ -1030,7 +1029,7 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << url.fileName() << ": expo =" << expo;
 
-    if (d->meta.getExifTagRational("Exif.Photo.FNumber", num, den))
+    if      (d->meta.getExifTagRational("Exif.Photo.FNumber", num, den))
     {
         if (den)
         {
@@ -1071,7 +1070,7 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
 
     // If iso is found use that value, otherwise assume a value of iso=100. (again, some cameras do not print iso in exif).
 
-    if (d->meta.getExifTagRational("Exif.Photo.ISOSpeedRatings", num, den))
+    if      (d->meta.getExifTagRational("Exif.Photo.ISOSpeedRatings", num, den))
     {
         if (den)
         {
@@ -1094,7 +1093,7 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
 
     // At this point the three variables have to be != -1
 
-    if (expo != -1.0 && iso != -1.0 && fnum != -1.0)
+    if ((expo != -1.0) && (iso != -1.0) && (fnum != -1.0))
     {
         float asl = (expo * iso) / (fnum * fnum * 12.07488f);
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << url.fileName() << ": ASL ==>" << asl;

@@ -30,27 +30,21 @@ class Q_DECL_HIDDEN ExpoBlendingManager::Private
 {
 public:
 
-    explicit Private()
-      : thread(nullptr),
-        plugin(nullptr),
-        wizard(nullptr),
-        dlg(nullptr)
-    {
-    }
+    Private() = default;
 
     QList<QUrl>             inputUrls;
 
     ExpoBlendingItemUrlsMap preProcessedUrlsMap;
 
-    ExpoBlendingThread*     thread;
+    ExpoBlendingThread*     thread      = nullptr;
 
-    DPlugin*                plugin;
+    DPlugin*                plugin      = nullptr;
 
     AlignBinary             alignBinary;
     EnfuseBinary            enfuseBinary;
 
-    ExpoBlendingWizard*     wizard;
-    ExpoBlendingDlg*        dlg;
+    ExpoBlendingWizard*     wizard      = nullptr;
+    ExpoBlendingDlg*        dlg         = nullptr;
 };
 
 QPointer<ExpoBlendingManager> ExpoBlendingManager::internalPtr = QPointer<ExpoBlendingManager>();

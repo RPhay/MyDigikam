@@ -38,7 +38,7 @@ extern "C"
 #include <sys/stat.h>
 #include <sys/types.h>
 
-#ifndef Q_OS_WIN32
+#ifndef Q_OS_WIN32          // krazy:exclude=cpp
 #   include <sys/ipc.h>
 #   include <sys/shm.h>
 #endif
