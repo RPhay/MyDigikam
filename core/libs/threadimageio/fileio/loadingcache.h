@@ -132,7 +132,7 @@ public:
 
     private:
 
-        LoadingCache* m_cache;
+        LoadingCache* m_cache = nullptr;
     };
 
 public:

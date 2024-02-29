@@ -57,9 +57,8 @@ class Q_DECL_HIDDEN LoadingCache::Private
 {
 public:
 
-    explicit Private(LoadingCache* const q)
-      : watch(nullptr),
-        q    (q)
+    explicit Private(LoadingCache* const qq)
+        : q(qq)
     {
     }
 
@@ -83,8 +82,8 @@ public:
 
     QWaitCondition                  condVar;
 
-    LoadingCacheFileWatch*          watch;
-    LoadingCache*                   q;
+    LoadingCacheFileWatch*          watch = nullptr;
+    LoadingCache*                   q     = nullptr;
 };
 
 LoadingCacheFileWatch* LoadingCache::Private::fileWatch() const
@@ -183,7 +182,7 @@ LoadingCache::LoadingCache()
     : d(new Private(this))
 {
     KMemoryInfo memInfo;
-    setCacheSize(qBound(100, int(memInfo.totalPhysical() / 1024 / 1024 * 0.06), 1024));
+    setCacheSize(qBound(100, (int)(memInfo.totalPhysical() / 1024.0 / 1024.0 * 0.06), 1024));
 
     // the pixmap number should not be based on system memory, it's graphics memory
 
