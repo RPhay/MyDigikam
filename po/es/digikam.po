@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 01:34+0000\n"
+"POT-Creation-Date: 2024-02-29 01:36+0000\n"
 "PO-Revision-Date: 2024-02-27 00:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -35638,12 +35638,12 @@ msgstr "No se ha podido copiar el archivo %1 en la carpeta %2"
 msgid "Could not copy file %1 to album %2"
 msgstr "No se ha podido copiar el archivo %1 en el álbum %2"
 
-#: core/libs/iojobs/iojob.cpp:287
+#: core/libs/iojobs/iojob.cpp:290
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "El archivo o carpeta %1 no existe"
 
-#: core/libs/iojobs/iojob.cpp:299
+#: core/libs/iojobs/iojob.cpp:302
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35654,7 +35654,7 @@ msgstr ""
 "Compruebe los permisos de archivos en la carpeta de papelera «.dtrash» en la "
 "colección de imágenes."
 
-#: core/libs/iojobs/iojob.cpp:311
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35665,32 +35665,32 @@ msgstr ""
 "Compruebe los permisos de archivos en la carpeta de papelera «.dtrash» en la "
 "colección de imágenes."
 
-#: core/libs/iojobs/iojob.cpp:328
+#: core/libs/iojobs/iojob.cpp:331
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "No se ha podido eliminar el álbum %1"
 
-#: core/libs/iojobs/iojob.cpp:340
+#: core/libs/iojobs/iojob.cpp:343
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "No se ha podido eliminar la imagen %1"
 
-#: core/libs/iojobs/iojob.cpp:386
+#: core/libs/iojobs/iojob.cpp:389
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "No se ha podido mover la imagen %1 a la papelera de la colección"
 
-#: core/libs/iojobs/iojob.cpp:396
+#: core/libs/iojobs/iojob.cpp:399
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Ya existe allí una imagen con el mismo nombre %1"
 
-#: core/libs/iojobs/iojob.cpp:411
+#: core/libs/iojobs/iojob.cpp:414
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "No se ha podido cambiar el nombre de la imagen %1"
 
-#: core/libs/iojobs/iojob.cpp:489
+#: core/libs/iojobs/iojob.cpp:492
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "No se ha podido restaurar el archivo «%1» de la papelera"
