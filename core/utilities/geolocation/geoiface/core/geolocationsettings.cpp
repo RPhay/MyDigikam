@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2023-12-21
- * Description : Marble Settings Container.
+ * Description : Geolocation Settings.
  *
  * SPDX-FileCopyrightText: 2022-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

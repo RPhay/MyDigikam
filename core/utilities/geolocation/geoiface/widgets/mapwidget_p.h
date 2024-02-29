@@ -14,6 +14,9 @@
  *
  * ============================================================ */
 
+#ifndef DIGIKAM_MAP_WIDGET_P_H
+#define DIGIKAM_MAP_WIDGET_P_H
+
 #include "mapwidget.h"
 
 // C++ includes
@@ -144,3 +147,5 @@ public:
 };
 
 } // namespace Digikam
+
+#endif // DIGIKAM_MAP_WIDGET_P_H

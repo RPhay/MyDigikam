@@ -12,8 +12,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DRAW_DECODER_PRIVATE_H
-#define DIGIKAM_DRAW_DECODER_PRIVATE_H
+#ifndef DIGIKAM_DRAW_DECODER_P_H
+#define DIGIKAM_DRAW_DECODER_P_H
 
 #include "digikam_config.h"
 
@@ -116,4 +116,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_DRAW_DECODER_PRIVATE_H
+#endif // DIGIKAM_DRAW_DECODER_P_H

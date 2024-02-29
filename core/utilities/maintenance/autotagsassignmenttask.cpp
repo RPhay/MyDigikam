@@ -12,7 +12,7 @@
  *
  * ============================================================ */
 
-#include "autotagsassignmentask.h"
+#include "autotagsassignmenttask.h"
 
 // Local includes
 
@@ -162,4 +162,4 @@ void AutotagsAssignmentTask::run()
 
 } // namespace Digikam
 
-#include "moc_autotagsassignmentask.cpp"
+#include "moc_autotagsassignmenttask.cpp"

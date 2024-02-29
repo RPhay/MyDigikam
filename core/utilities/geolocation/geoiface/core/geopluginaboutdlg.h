@@ -12,8 +12,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_GEOLOCATION_PLUGIN_ABOUT_DLG_H
-#define DIGIKAM_GEOLOCATION_PLUGIN_ABOUT_DLG_H
+#ifndef DIGIKAM_GEO_PLUGIN_ABOUT_DLG_H
+#define DIGIKAM_GEO_PLUGIN_ABOUT_DLG_H
 
 // Qt includes
 
@@ -53,4 +53,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_GEOLOCATION_PLUGIN_ABOUT_DLG_H
+#endif // DIGIKAM_GEO_PLUGIN_ABOUT_DLG_H

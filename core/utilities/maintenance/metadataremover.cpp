@@ -30,7 +30,6 @@
 // Local includes
 
 #include "albummanager.h"
-#include "albummanager.h"
 #include "iteminfojob.h"
 #include "maintenancethread.h"
 
@@ -41,28 +40,23 @@ class Q_DECL_HIDDEN MetadataRemover::Private
 {
 public:
 
-    explicit Private()
-      : imageInfoJob (nullptr),
-        thread       (nullptr),
-        removeAction (MetadataRemover::None)
-    {
-    }
+    Private() = default;
 
     AlbumList                     palbumList;
     AlbumList::Iterator           albumsIt;
 
-    ItemInfoJob*                  imageInfoJob;
+    ItemInfoJob*                  imageInfoJob  = nullptr;
 
     ItemInfoList                  imageInfoList;
 
-    MaintenanceThread*            thread;
+    MaintenanceThread*            thread        = nullptr;
 
-    MetadataRemover::RemoveAction removeAction;
+    MetadataRemover::RemoveAction removeAction  = MetadataRemover::None;
 };
 
 MetadataRemover::MetadataRemover(const AlbumList& list, RemoveAction action, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("MetadataRemover"), parent),
-      d(new Private)
+      d              (new Private)
 {
     if (list.isEmpty())
     {

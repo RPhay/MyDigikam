@@ -12,7 +12,6 @@
  *
  * ============================================================ */
 
-#include "digikam_config.h"
 #include "pgfutils.h"
 
 // C Ansi includes

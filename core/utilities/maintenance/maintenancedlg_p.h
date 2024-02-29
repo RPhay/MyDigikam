@@ -12,6 +12,9 @@
  *
  * ============================================================ */
 
+#ifndef DIGIKAM_MAINTENANCE_DLG_P_H
+#define DIGIKAM_MAINTENANCE_DLG_P_H
+
 #include "maintenancedlg.h"
 
 // Qt includes
@@ -144,3 +147,5 @@ public:
 };
 
 } // namespace Digikam
+
+#endif // DIGIKAM_MAINTENANCE_DLG_P_H

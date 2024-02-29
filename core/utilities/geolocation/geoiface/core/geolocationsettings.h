@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2023-12-21
- * Description : Marble Settings.
+ * Description : Geolocation Settings.
  *
  * SPDX-FileCopyrightText: 2022-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -12,8 +12,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MARBLE_SETTINGS_H
-#define DIGIKAM_MARBLE_SETTINGS_H
+#ifndef DIGIKAM_GEOLOCATION_SETTINGS_H
+#define DIGIKAM_GEOLOCATION_SETTINGS_H
 
 // Qt includes
 
@@ -108,4 +108,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_MARBLE_SETTINGS_H
+#endif // DIGIKAM_GEOLOCATION_SETTINGS_H

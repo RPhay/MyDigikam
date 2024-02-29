@@ -26,7 +26,7 @@
 #include "thumbstask.h"
 #include "metadatasynctask.h"
 #include "fingerprintstask.h"
-#include "autotagsassignmentask.h"
+#include "autotagsassignmenttask.h"
 #include "imagequalitytask.h"
 #include "imagequalitycontainer.h"
 #include "databasetask.h"
@@ -39,7 +39,7 @@ namespace Digikam
 
 MaintenanceThread::MaintenanceThread(QObject* const parent)
     : ActionThreadBase(parent),
-      data(new MaintenanceData)
+      data            (new MaintenanceData)
 {
     setObjectName(QLatin1String("MaintenanceThread"));
 
