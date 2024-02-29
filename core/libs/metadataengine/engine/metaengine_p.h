@@ -205,25 +205,25 @@ public:
 
 public:
 
-    bool                                                  writeWithExifTool;
-    bool                                                  writeRawFiles;
-    bool                                                  writeDngFiles;
-    bool                                                  updateFileTimeStamp;
+    bool                                                  writeWithExifTool         = false;
+    bool                                                  writeRawFiles             = false;
+    bool                                                  writeDngFiles             = false;
+    bool                                                  updateFileTimeStamp       = false;
 
-    bool                                                  useXMPSidecar4Reading;
-    bool                                                  useCompatibleFileName;
+    bool                                                  useXMPSidecar4Reading     = false;
+    bool                                                  useCompatibleFileName     = false;
 
     /// A mode from #MetadataWritingMode enum.
-    int                                                   metadataWritingMode;
+    int                                                   metadataWritingMode       = WRITE_TO_FILE_ONLY;
 
     /// XMP, and parts of EXIF/IPTC, were loaded from an XMP sidecar file
-    bool                                                  loadedFromSidecar;
+    bool                                                  loadedFromSidecar         = false;
 
     QString                                               filePath;
     QSize                                                 pixelSize;
     QString                                               mimeType;
 
-    MetaEngine*                                           parent;
+    MetaEngine*                                           parent                    = nullptr;
 
     QExplicitlySharedDataPointer<MetaEngineData::Private> data;
 };

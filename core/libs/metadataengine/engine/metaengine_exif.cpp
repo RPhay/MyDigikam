@@ -1484,6 +1484,10 @@ MetaEngine::TagsMap MetaEngine::getStdExifTagsList() const
                     values << QLatin1String(ti->name_) << QLatin1String(ti->title_) << QLatin1String(ti->desc_);
                     tagsMap.insert(key, values);
                 }
+                else
+                {
+                    break;
+                }
 
                 ++(*it);
             }
@@ -1544,6 +1548,10 @@ MetaEngine::TagsMap MetaEngine::getMakernoteTagsList() const
                     QStringList values;
                     values << QLatin1String(ti->name_) << QLatin1String(ti->title_) << QLatin1String(ti->desc_);
                     tagsMap.insert(key, values);
+                }
+                else
+                {
+                    break;
                 }
 
                 ++(*it);

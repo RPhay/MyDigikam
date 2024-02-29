@@ -66,15 +66,7 @@ bool s_metaEngineSupportBmff = false;
 bool s_metaEngineWarnOrError = false;
 
 MetaEngine::Private::Private(MetaEngine* const q)
-    : writeWithExifTool     (false),
-      writeRawFiles         (false),
-      writeDngFiles         (false),
-      updateFileTimeStamp   (false),
-      useXMPSidecar4Reading (false),
-      useCompatibleFileName (false),
-      metadataWritingMode   (WRITE_TO_FILE_ONLY),
-      loadedFromSidecar     (false),
-      parent                (q),
+    : parent                (q),
       data                  (new MetaEngineData::Private)
 {
     QMutexLocker lock(&s_metaEngineMutex);
