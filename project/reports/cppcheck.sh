@@ -62,6 +62,7 @@ cppcheck -j$CPU_CORES \
          --platform=unix64 \
          --enable=all \
          --report-progress \
+         --check-level=exhaustive \
          --suppress=*:*cimg*.h \
          --suppress=*:*libraw*.h \
          --suppress=*:*libpgf*.h \
