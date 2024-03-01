@@ -46,32 +46,22 @@ class Q_DECL_HIDDEN AlbumCustomizer::Private
 {
 public:
 
-    explicit Private()
-        : autoAlbumDateCheck (nullptr),
-          autoAlbumExtCheck  (nullptr),
-          folderDateLabel    (nullptr),
-          customizer         (nullptr),
-          tooltipToggleButton(nullptr),
-          customExample      (nullptr),
-          folderDateFormat   (nullptr),
-          tooltipDialog      (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*          autoAlbumDateCheck;
-    QCheckBox*          autoAlbumExtCheck;
+    QCheckBox*          autoAlbumDateCheck  = nullptr;
+    QCheckBox*          autoAlbumExtCheck   = nullptr;
 
-    QLabel*             folderDateLabel;
+    QLabel*             folderDateLabel     = nullptr;
 
-    QLineEdit*          customizer;
+    QLineEdit*          customizer          = nullptr;
 
-    QToolButton*        tooltipToggleButton;
+    QToolButton*        tooltipToggleButton = nullptr;
 
-    DAdjustableLabel*   customExample;
+    DAdjustableLabel*   customExample       = nullptr;
 
-    QComboBox*          folderDateFormat;
+    QComboBox*          folderDateFormat    = nullptr;
 
-    TooltipDialog*      tooltipDialog;
+    TooltipDialog*      tooltipDialog       = nullptr;
 };
 
 AlbumCustomizer::AlbumCustomizer(QWidget* const parent)

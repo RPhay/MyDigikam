@@ -51,19 +51,15 @@ class Q_DECL_HIDDEN MountPointInfo
 {
 public:
 
-    MountPointInfo()
-      : isValid    (false),
-        bytesSize  (0),
-        bytesUsed  (0),
-        bytesAvail (0)
-    {
-    }
+    MountPointInfo() = default;
 
-    bool    isValid;
+public:
 
-    qint64  bytesSize;
-    qint64  bytesUsed;
-    qint64  bytesAvail;
+    bool    isValid     = false;
+
+    qint64  bytesSize   = 0;
+    qint64  bytesUsed   = 0;
+    qint64  bytesAvail  = 0;
 
     QString mountPoint;
 };
@@ -74,38 +70,27 @@ class Q_DECL_HIDDEN FreeSpaceWidget::Private
 {
 public:
 
-    explicit Private()
-      : isValid     (false),
-        percentUsed (-1),
-        dSizeBytes  (0),
-        bytesSize   (0),
-        bytesUsed   (0),
-        bytesAvail  (0),
-        timer       (nullptr),
-        toolTip     (nullptr),
-        mode        (FreeSpaceWidget::AlbumLibrary)
-    {
-    }
+    Private() = default;
 
-    bool                            isValid;
+    bool                            isValid     = false;
 
-    int                             percentUsed;
+    int                             percentUsed = -1;
 
-    qint64                          dSizeBytes;
-    qint64                          bytesSize;
-    qint64                          bytesUsed;
-    qint64                          bytesAvail;
+    qint64                          dSizeBytes  = 0;
+    qint64                          bytesSize   = 0;
+    qint64                          bytesUsed   = 0;
+    qint64                          bytesAvail  = 0;
 
     QStringList                     paths;
     QHash<QString, MountPointInfo>  infos;
 
-    QTimer*                         timer;
+    QTimer*                         timer       = nullptr;
 
     QPixmap                         iconPix;
 
-    FreeSpaceToolTip*               toolTip;
+    FreeSpaceToolTip*               toolTip     = nullptr;
 
-    FreeSpaceWidget::FreeSpaceMode  mode;
+    FreeSpaceWidget::FreeSpaceMode  mode        = FreeSpaceWidget::AlbumLibrary;
 };
 
 FreeSpaceWidget::FreeSpaceWidget(QWidget* const parent, int width)
@@ -125,6 +110,7 @@ FreeSpaceWidget::FreeSpaceWidget(QWidget* const parent, int width)
 FreeSpaceWidget::~FreeSpaceWidget()
 {
     d->timer->stop();
+
     delete d->timer;
     delete d->toolTip;
     delete d;

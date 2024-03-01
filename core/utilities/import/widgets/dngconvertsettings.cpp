@@ -41,16 +41,11 @@ class Q_DECL_HIDDEN DNGConvertSettings::Private
 {
 public:
 
-    explicit Private()
-        : convertDng  (nullptr),
-          dngLink     (nullptr),
-          dngSettings (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*   convertDng;
-    QLabel*      dngLink;
-    DNGSettings* dngSettings;
+    QCheckBox*   convertDng  = nullptr;
+    QLabel*      dngLink     = nullptr;
+    DNGSettings* dngSettings = nullptr;
 };
 
 DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
