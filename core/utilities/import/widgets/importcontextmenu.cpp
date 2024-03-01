@@ -78,12 +78,8 @@ class Q_DECL_HIDDEN ImportContextMenuHelper::Private
 {
 public:
 
-    explicit Private(ImportContextMenuHelper* const q)
-      : importFilterModel  (nullptr),
-        parent             (nullptr),
-        ABCmenu            (nullptr),
-        stdActionCollection(nullptr),
-        q                  (q)
+    explicit Private(ImportContextMenuHelper* const qq)
+        : q         (qq)
     {
     }
 
@@ -93,14 +89,14 @@ public:
     QMap<int, QAction*>          queueActions;
     QMap<QString, KService::Ptr> servicesMap;
 
-    ImportFilterModel*           importFilterModel;
+    ImportFilterModel*           importFilterModel   = nullptr;
 
-    QMenu*                       parent;
-    QMenu*                       ABCmenu;
+    QMenu*                       parent              = nullptr;
+    QMenu*                       ABCmenu             = nullptr;
 
-    KActionCollection*           stdActionCollection;
+    KActionCollection*           stdActionCollection = nullptr;
 
-    ImportContextMenuHelper*     q;
+    ImportContextMenuHelper*     q                   = nullptr;
 
 public:
 
@@ -218,11 +214,15 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         }
 
 #if KSERVICE_VERSION > QT_VERSION_CHECK(5, 81, 0)
+
         offers = KApplicationTrader::queryByMimeType(firstMimeType);
+
 #else
+
         offers = KMimeTypeTrader::self()->query(firstMimeType,
                                                 QLatin1String("Application"),
                                                 constraints.join(QLatin1String(" and ")));
+
 #endif
 
         // remove duplicate service entries
@@ -350,15 +350,19 @@ void ImportContextMenuHelper::addRotateMenu(itemIds& /*ids*/)
     QAction* const left = new QAction(this);
     left->setObjectName(QLatin1String("rotate_ccw"));
     left->setText(i18nc("rotate image left", "Left"));
+
     connect(left, SIGNAL(triggered(bool)),
             this, SLOT(slotRotate()));
+
     imageRotateMenu->addAction(left);
 
     QAction* const right = new QAction(this);
     right->setObjectName(QLatin1String("rotate_cw");
     right->setText(i18nc("rotate image right", "Right")));
+
     connect(right, SIGNAL(triggered(bool)),
             this, SLOT(slotRotate()));
+
     imageRotateMenu->addAction(right);
 
     d->parent->addMenu(imageRotateMenu);
@@ -438,6 +442,7 @@ void ImportContextMenuHelper::addLabelsAction()
 void ImportContextMenuHelper::slotABCMenuTriggered(QAction* action)
 {
     QString name = action->iconText();
+
     Q_EMIT signalAddNewTagFromABCMenu(name);
 }
 

@@ -29,7 +29,6 @@ namespace Digikam
 {
 
 Filter::Filter()
-    : onlyNew(false)
 {
 }
 

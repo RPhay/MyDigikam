@@ -41,6 +41,8 @@ public:
     void saveSettings();
     void updateFilter();
 
+public:
+
     static void  defaultFilters(FilterList* const filters);
     static const QString defaultIgnoreNames;
     static const QString defaultIgnoreExtensions;

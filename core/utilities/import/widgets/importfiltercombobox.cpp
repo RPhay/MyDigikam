@@ -46,7 +46,6 @@ class Q_DECL_HIDDEN ImportFilterComboBox::Private
 public:
 
     explicit Private()
-      : currentFilter(0)
     {
         createFilters();
     }
@@ -86,7 +85,9 @@ public:
         qDeleteAll(filters);
     }
 
-    int            currentFilter;
+public:
+
+    int            currentFilter = 0;
     QList<Filter*> filters;
 };
 
@@ -130,11 +131,11 @@ void ImportFilterComboBox::defaultFilters(FilterList* const filters)
         f               = new Filter;
         f->name         = i18nc("@item:inlistbox", "Raw Files");
         f->mimeFilter   = QLatin1String("image/x-nikon-nef;image/x-fuji-raf;image/x-adobe-dng;"
-                          "image/x-panasonic-raw;image/x-olympus-orf;image/x-kodak-dcr;"
-                          "image/x-kodak-k25;image/x-sony-arw;image/x-minolta-mrw;"
-                          "image/x-kodak-kdc;image/x-sigma-x3f;image/x-sony-srf;"
-                          "image/x-pentax-pef;image/x-panasonic-raw2;image/x-canon-crw;"
-                          "image/x-sony-sr2;image/x-canon-cr2");
+                                        "image/x-panasonic-raw;image/x-olympus-orf;image/x-kodak-dcr;"
+                                        "image/x-kodak-k25;image/x-sony-arw;image/x-minolta-mrw;"
+                                        "image/x-kodak-kdc;image/x-sigma-x3f;image/x-sony-srf;"
+                                        "image/x-pentax-pef;image/x-panasonic-raw2;image/x-canon-crw;"
+                                        "image/x-sony-sr2;image/x-canon-cr2");
         filters->append(f);
 
         f               = new Filter;
@@ -167,6 +168,7 @@ void ImportFilterComboBox::indexChanged(int index)
     {
         d->currentFilter     = index;
         Filter* const filter = d->filters.value(d->currentFilter);
+
         Q_EMIT signalFilterChanged(filter);
     }
 }

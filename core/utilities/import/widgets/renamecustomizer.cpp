@@ -87,7 +87,7 @@ RenameCustomizer::RenameCustomizer(QWidget* const parent, const QString& cameraT
 
     setAttribute(Qt::WA_DeleteOnClose);
 
-    QGridLayout* mainLayout  = new QGridLayout(this);
+    QGridLayout* const mainLayout  = new QGridLayout(this);
 
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
@@ -177,6 +177,7 @@ RenameCustomizer::RenameCustomizer(QWidget* const parent, const QString& cameraT
 RenameCustomizer::~RenameCustomizer()
 {
     saveSettings();
+
     delete d->advancedRenameManager;
     delete d;
 }
@@ -230,13 +231,11 @@ QString RenameCustomizer::newName(const QString& fileName) const
             case UPPER:
             {
                 return result.toUpper();
-                break;
             }
 
             case LOWER:
             {
                 return result.toLower();
-                break;
             }
 
             default:

@@ -48,7 +48,7 @@ public:
 public:
 
     QString                            name;
-    bool                               onlyNew;
+    bool                               onlyNew  = false;
     QStringList                        fileFilter;
     QStringList                        pathFilter;
     QStringList                        ignoreNames;
