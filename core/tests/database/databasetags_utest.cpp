@@ -53,10 +53,10 @@ DatabaseTagsTest::DatabaseTagsTest(QObject* const parent)
       talbumChild0Root0      (nullptr),
       talbumChild1Root0      (nullptr),
       talbumChild0Child1Root0(nullptr),
-      talbumChild0Root1      (nullptr)
+      talbumChild0Root1      (nullptr),
+      filesPath              (DTestDataDir::TestData(QString::fromUtf8("core/tests/database"))
+                             .root().path() + QLatin1Char('/'))
 {
-        filesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/database"))
-                       .root().path() + QLatin1Char('/');
         qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
 }
 
