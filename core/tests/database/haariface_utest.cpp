@@ -64,7 +64,7 @@ do                                                                              
                         50, 100,                                                                            \
                         HaarIface::DuplicatesSearchRestrictions::None,                                      \
                         refImageSelMethod, referenceAlbums);                                                \
-    bool complete = false;                                                                                  \
+    bool complete            = false;                                                                       \
                                                                                                             \
     connect(finder, &DuplicatesFinder::signalComplete,                                                      \
             [&complete]()                                                                                   \
@@ -125,10 +125,10 @@ do                                                                              
 } while (false);
 
 HaarIfaceTest::HaarIfaceTest(QObject* const parent)
-    : QObject(parent)
+    : QObject  (parent),
+      filesPath(DTestDataDir::TestData(QString::fromUtf8("core/tests/database/duplicates"))
+                .root().path() + QLatin1Char('/'))
 {
-    filesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/database/duplicates"))
-                   .root().path() + QLatin1Char('/');
     qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
 }
 
