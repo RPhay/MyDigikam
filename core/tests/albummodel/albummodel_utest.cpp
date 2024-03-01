@@ -41,26 +41,26 @@ using namespace Digikam;
 QTEST_MAIN(AlbumModelTest)
 
 AlbumModelTest::AlbumModelTest(QObject* const parent)
-    : QObject(parent),
-      albumCategory(QLatin1String("DummyCategory")),
-      palbumRoot0(nullptr),
-      palbumRoot1(nullptr),
-      palbumRoot2(nullptr),
-      palbumChild0Root0(nullptr),
-      palbumChild1Root0(nullptr),
-      palbumChild2Root0(nullptr),
-      palbumChild0Root1(nullptr),
-      rootTag(nullptr),
-      talbumRoot0(nullptr),
-      talbumRoot1(nullptr),
-      talbumChild0Root0(nullptr),
-      talbumChild1Root0(nullptr),
+    : QObject                (parent),
+      albumCategory          (QLatin1String("DummyCategory")),
+      palbumRoot0            (nullptr),
+      palbumRoot1            (nullptr),
+      palbumRoot2            (nullptr),
+      palbumChild0Root0      (nullptr),
+      palbumChild1Root0      (nullptr),
+      palbumChild2Root0      (nullptr),
+      palbumChild0Root1      (nullptr),
+      rootTag                (nullptr),
+      talbumRoot0            (nullptr),
+      talbumRoot1            (nullptr),
+      talbumChild0Root0      (nullptr),
+      talbumChild1Root0      (nullptr),
       talbumChild0Child1Root0(nullptr),
-      talbumChild0Root1(nullptr),
-      startModel(nullptr)
+      talbumChild0Root1      (nullptr),
+      startModel             (nullptr),
+      imagesPath             (DTestDataDir::TestData(QString::fromUtf8("core/tests/albummodel"))
+                              .root().path() + QLatin1Char('/'))
 {
-        imagesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/albummodel"))
-                         .root().path() + QLatin1Char('/');
         qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << imagesPath;
 }
 
@@ -250,7 +250,7 @@ void AlbumModelTest::init()
     QStringList imageFiles = imageDir.entryList();
 
     qCDebug(DIGIKAM_TESTS_LOG) << "copying images " << imageFiles << " to "
-             << palbumChild0Root0->fileUrl();
+                               << palbumChild0Root0->fileUrl();
 
     Q_FOREACH (const QString& imageFile, imageFiles)
     {
@@ -361,8 +361,8 @@ void AlbumModelTest::slotStartModelRowsInserted(const QModelIndex& parent, int s
         const int id      = child.data(AbstractAlbumModel::AlbumIdRole).toInt();
         QVERIFY(album);
         qCDebug(DIGIKAM_TESTS_LOG) << "added album with id"
-                 << id
-                 << "and name" << album->title();
+                                   << id
+                                   << "and name" << album->title();
         addedIds << id;
     }
 }
@@ -484,13 +484,13 @@ void AlbumModelTest::testDisablePAlbumCount()
     QString rootTitle     = albumModel.data(rootIndex, Qt::DisplayRole).toString();
     QVERIFY(!countRegEx.match(rootTitle).hasMatch());
 
-    for (int collectionRow = 0; collectionRow < albumModel.rowCount(rootIndex); ++collectionRow)
+    for (int collectionRow = 0 ; collectionRow < albumModel.rowCount(rootIndex) ; ++collectionRow)
     {
         QModelIndex collectionIndex = albumModel.index(collectionRow, 0, rootIndex);
         QString collectionTitle = albumModel.data(collectionIndex, Qt::DisplayRole).toString();
         QVERIFY2(countRegEx.match(collectionTitle).hasMatch(), QString::fromUtf8("%1 matching error").arg(collectionTitle).toLatin1().constData());
 
-        for (int albumRow = 0; albumRow < albumModel.rowCount(collectionIndex); ++albumRow)
+        for (int albumRow = 0 ; albumRow < albumModel.rowCount(collectionIndex) ; ++albumRow)
         {
             QModelIndex albumIndex = albumModel.index(albumRow, 0, collectionIndex);
             QString albumTitle     = albumModel.data(albumIndex, Qt::DisplayRole).toString();
@@ -508,13 +508,13 @@ void AlbumModelTest::testDisablePAlbumCount()
     rootTitle = albumModel.data(rootIndex, Qt::DisplayRole).toString();
     QVERIFY(!countRegEx.match(rootTitle).hasMatch());
 
-    for (int collectionRow = 0; collectionRow < albumModel.rowCount(rootIndex); ++collectionRow)
+    for (int collectionRow = 0 ; collectionRow < albumModel.rowCount(rootIndex) ; ++collectionRow)
     {
         QModelIndex collectionIndex = albumModel.index(collectionRow, 0, rootIndex);
         QString collectionTitle     = albumModel.data(collectionIndex, Qt::DisplayRole).toString();
         QVERIFY2(!countRegEx.match(collectionTitle).hasMatch(), QString::fromUtf8("%1 matching error").arg(collectionTitle).toLatin1().constData());
 
-        for (int albumRow = 0; albumRow < albumModel.rowCount(collectionIndex); ++albumRow)
+        for (int albumRow = 0 ; albumRow < albumModel.rowCount(collectionIndex) ; ++albumRow)
         {
             QModelIndex albumIndex = albumModel.index(albumRow, 0, collectionIndex);
             QString albumTitle     = albumModel.data(albumIndex, Qt::DisplayRole).toString();
@@ -557,7 +557,7 @@ void AlbumModelTest::testDAlbumContainsAlbums()
             QVERIFY(index.isValid());
         }
 
-        if (dAlbum->isRoot())
+        if      (dAlbum->isRoot())
         {
             // root album
 
@@ -620,7 +620,7 @@ void AlbumModelTest::testDAlbumSorting()
     albumModel.sort(0, Qt::AscendingOrder);
     int previousYear = 0;
 
-    for (int yearRow = 0; yearRow < albumModel.rowCount(); ++yearRow)
+    for (int yearRow = 0 ; yearRow < albumModel.rowCount() ; ++yearRow)
     {
         QModelIndex yearIndex   = albumModel.index(yearRow, 0);
         DAlbum* const yearAlbum = dynamic_cast<DAlbum*> (albumModel.albumForIndex(yearIndex));
@@ -631,7 +631,7 @@ void AlbumModelTest::testDAlbumSorting()
 
         int previousMonth = 0;
 
-        for (int monthRow = 0; monthRow < albumModel.rowCount(yearIndex); ++monthRow)
+        for (int monthRow = 0 ; monthRow < albumModel.rowCount(yearIndex) ; ++monthRow)
         {
             QModelIndex monthIndex   = albumModel.index(monthRow, 0, yearIndex);
             DAlbum* const monthAlbum = dynamic_cast<DAlbum*> (albumModel.albumForIndex(monthIndex));
@@ -647,7 +647,7 @@ void AlbumModelTest::testDAlbumSorting()
     albumModel.sort(0, Qt::DescendingOrder);
     previousYear = 1000000;
 
-    for (int yearRow = 0; yearRow < albumModel.rowCount(); ++yearRow)
+    for (int yearRow = 0 ; yearRow < albumModel.rowCount() ; ++yearRow)
     {
         QModelIndex yearIndex   = albumModel.index(yearRow, 0);
         DAlbum* const yearAlbum = dynamic_cast<DAlbum*> (albumModel.albumForIndex(yearIndex));
@@ -658,7 +658,7 @@ void AlbumModelTest::testDAlbumSorting()
 
         int previousMonth     = 13;
 
-        for (int monthRow = 0; monthRow < albumModel.rowCount(yearIndex); ++monthRow)
+        for (int monthRow = 0 ; monthRow < albumModel.rowCount(yearIndex) ; ++monthRow)
         {
             QModelIndex monthIndex   = albumModel.index(monthRow, 0, yearIndex);
             DAlbum* const monthAlbum = dynamic_cast<DAlbum*> (albumModel.albumForIndex(monthIndex));
@@ -682,7 +682,7 @@ void AlbumModelTest::testDAlbumCount()
 
     // check year albums
 
-    for (int yearRow = 0; yearRow < albumModel->rowCount(albumModel->rootAlbumIndex()); ++yearRow)
+    for (int yearRow = 0 ; yearRow < albumModel->rowCount(albumModel->rootAlbumIndex()) ; ++yearRow)
     {
         QModelIndex yearIndex    = albumModel->index(yearRow, 0);
         DAlbum* const yearDAlbum = albumModel->albumForIndex(yearIndex);
@@ -690,7 +690,7 @@ void AlbumModelTest::testDAlbumCount()
 
         QVERIFY(yearDAlbum->range() == DAlbum::Year);
 
-        if (yearDAlbum->date().year() == 2007)
+        if      (yearDAlbum->date().year() == 2007)
         {
             const int imagesInYear = 7;
             albumModel->includeChildrenCount(yearIndex);
@@ -700,7 +700,7 @@ void AlbumModelTest::testDAlbumCount()
             albumModel->includeChildrenCount(yearIndex);
             QCOMPARE(albumModel->albumCount(yearDAlbum), imagesInYear);
 
-            for (int monthRow = 0; monthRow < albumModel->rowCount(yearIndex); ++monthRow)
+            for (int monthRow = 0 ; monthRow < albumModel->rowCount(yearIndex) ; ++monthRow)
             {
                 QModelIndex monthIndex = albumModel->index(monthRow, 0, yearIndex);
                 DAlbum* monthDAlbum    = albumModel->albumForIndex(monthIndex);
@@ -709,7 +709,7 @@ void AlbumModelTest::testDAlbumCount()
                 QVERIFY(monthDAlbum->range() == DAlbum::Month);
                 QVERIFY(monthDAlbum->date().year() == 2007);
 
-                if (monthDAlbum->date().month() == 3)
+                if      (monthDAlbum->date().month() == 3)
                 {
                     const int imagesInMonth = 3;
                     albumModel->includeChildrenCount(monthIndex);
@@ -745,7 +745,7 @@ void AlbumModelTest::testDAlbumCount()
             albumModel->includeChildrenCount(yearIndex);
             QCOMPARE(albumModel->albumCount(yearDAlbum), imagesInYear);
 
-            for (int monthRow = 0; monthRow < albumModel->rowCount(yearIndex); ++monthRow)
+            for (int monthRow = 0 ; monthRow < albumModel->rowCount(yearIndex) ; ++monthRow)
             {
                 QModelIndex monthIndex = albumModel->index(monthRow, 0, yearIndex);
                 DAlbum* monthDAlbum    = albumModel->albumForIndex(monthIndex);
@@ -754,7 +754,7 @@ void AlbumModelTest::testDAlbumCount()
                 QVERIFY(monthDAlbum->range() == DAlbum::Month);
                 QVERIFY(monthDAlbum->date().year() == 2009);
 
-                if (monthDAlbum->date().month() == 3)
+                if      (monthDAlbum->date().month() == 3)
                 {
                     const int imagesInMonth = 2;
                     albumModel->includeChildrenCount(monthIndex);
