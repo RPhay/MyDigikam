@@ -39,7 +39,7 @@ public:
     explicit ScriptingSettings(QWidget* const parent = nullptr);
     ~ScriptingSettings() override;
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void saveSettings(KConfigGroup& group);
 
     void settings(DownloadSettings* const settings) const;

@@ -42,18 +42,12 @@ class Q_DECL_HIDDEN ScriptingSettings::Private
 {
 public:
 
-    explicit Private()
-        : scriptLabel        (nullptr),
-          script             (nullptr),
-          tooltipDialog      (nullptr),
-          tooltipToggleButton(nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*        scriptLabel;
-    DFileSelector* script;
-    TooltipDialog* tooltipDialog;
-    QToolButton*   tooltipToggleButton;
+    QLabel*        scriptLabel          = nullptr;
+    DFileSelector* script               = nullptr;
+    TooltipDialog* tooltipDialog        = nullptr;
+    QToolButton*   tooltipToggleButton  = nullptr;
 };
 
 ScriptingSettings::ScriptingSettings(QWidget* const parent)
@@ -103,7 +97,7 @@ ScriptingSettings::~ScriptingSettings()
     delete d;
 }
 
-void ScriptingSettings::readSettings(KConfigGroup& group)
+void ScriptingSettings::readSettings(const KConfigGroup& group)
 {
     d->script->setFileDlgPath(group.readEntry("Script", QString()));
 }
