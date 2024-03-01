@@ -255,7 +255,7 @@ BUGFIXES:
 232 ==> 480345 - Crash when reading Exif.Photo.UserComment containing emoji.
 233 ==> 481735 - Program crashes when trying to open an image with parameter luminosity in metadata.
 234 ==> 481830 - digiKam does not read collection in SMB share mounted with smb4k.
-235 ==> 
+235 ==> 480134 - Freeze (loop ?) when right click on an image.
 236 ==> 
 237 ==> 
 238 ==> 
