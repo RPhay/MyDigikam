@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Darktable
+Exec=darktable.exe %f
+Icon=darktable.exe
+MimeType=image/jpg;image/raw

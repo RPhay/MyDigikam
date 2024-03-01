@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=RawTherapee
+Exec=rawtherapee.exe %f
+Icon=rawtherapee.exe
+MimeType=image/jpg;image/raw
