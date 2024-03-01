@@ -39,26 +39,18 @@ class Q_DECL_HIDDEN OnlineVersionChecker::Private
 {
 public:
 
-    explicit Private()
-      : preRelease  (false),
-        redirects   (0),
-        curVersion  (QLatin1String(digikam_version_short)),
-        curBuildDt  (digiKamBuildDate()),
-        reply       (nullptr),
-        manager     (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                   preRelease;          ///< Flag to check pre-releases
-    int                    redirects;           ///< Count of redirected url
+    bool                   preRelease         = false;                                  ///< Flag to check pre-releases
+    int                    redirects          = 0;                                      ///< Count of redirected url
 
-    QString                curVersion;          ///< Current application version string
-    QString                preReleaseFileName;  ///< Pre-release file name get from remote server
+    QString                curVersion         = QLatin1String(digikam_version_short);   ///< Current application version string
+    QString                preReleaseFileName;                                          ///< Pre-release file name get from remote server
 
-    QDateTime              curBuildDt;          ///< Current application build date
+    QDateTime              curBuildDt         = digiKamBuildDate();                     ///< Current application build date
 
-    QNetworkReply*         reply;               ///< Current network request reply
-    QNetworkAccessManager* manager;             ///< Network manager instance
+    QNetworkReply*         reply              = nullptr;                                ///< Current network request reply
+    QNetworkAccessManager* manager            = nullptr;                                ///< Network manager instance
 };
 
 OnlineVersionChecker::OnlineVersionChecker(QObject* const parent, bool checkPreRelease)

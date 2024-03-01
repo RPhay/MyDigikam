@@ -48,28 +48,21 @@ class Q_DECL_HIDDEN OnlineVersionDwnl::Private
 {
 public:
 
-    explicit Private()
-      : preRelease      (false),
-        updateWithDebug (false),
-        redirects       (0),
-        reply           (nullptr),
-        manager         (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                   preRelease;      ///< Flag to check pre-releases
-    bool                   updateWithDebug; ///< Flag to use version with debug symbols
-    int                    redirects;       ///< Count of redirected url
+    bool                   preRelease       = false;    ///< Flag to check pre-releases
+    bool                   updateWithDebug  = false;    ///< Flag to use version with debug symbols
+    int                    redirects        = 0;        ///< Count of redirected url
 
-    QString                downloadUrl;     ///< Root url for current download
-    QString                checksums;       ///< Current download sha256 sums
-    QString                currentUrl;      ///< Full url of current file to download
-    QString                error;           ///< Error string about current download
-    QString                file;            ///< Info about file to download (version string, or filename)
-    QString                downloaded;      ///< Local file path to downloaded data
+    QString                downloadUrl;                 ///< Root url for current download
+    QString                checksums;                   ///< Current download sha256 sums
+    QString                currentUrl;                  ///< Full url of current file to download
+    QString                error;                       ///< Error string about current download
+    QString                file;                        ///< Info about file to download (version string, or filename)
+    QString                downloaded;                  ///< Local file path to downloaded data
 
-    QNetworkReply*         reply;           ///< Current network request reply
-    QNetworkAccessManager* manager;         ///< Network manager instance
+    QNetworkReply*         reply            = nullptr;  ///< Current network request reply
+    QNetworkAccessManager* manager          = nullptr;  ///< Network manager instance
 };
 
 OnlineVersionDwnl::OnlineVersionDwnl(QObject* const parent,
