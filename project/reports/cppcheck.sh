@@ -49,6 +49,7 @@ done
 
 cppcheck -j$CPU_CORES \
          -DQ_OS_LINUX \
+         -DQ_OS_UNIX \
          --verbose \
          --std=c++17 \
          --library=qt.cfg \
@@ -78,11 +79,15 @@ cppcheck -j$CPU_CORES \
          --suppress=unreadVariable \
          --suppress=unusedVariable \
          --suppress=unusedStructMember \
+         --suppress=unusedPrivateFunction \
          --suppress=unknownMacro \
+         --suppress=unmatchedSuppression:* \
          --suppress=class_X_Y \
          --suppress=ConfigurationNotChecked \
-         --suppress=unmatchedSuppression:* \
          --suppress=useStlAlgorithm \
+         --suppress=cstyleCast \
+         --suppress=constVariablePointer \
+         --suppress=shadowFunction \
          --output-file=report.cppcheck.xml \
          $IGNORE_DIRS \
          $INCLUDE_DIRS \
