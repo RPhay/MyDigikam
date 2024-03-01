@@ -24,8 +24,6 @@ namespace Digikam
 {
 
 TextureContainer::TextureContainer()
-    : blendGain  (200),
-      textureType(MarbleTexture)
 {
 }
 
@@ -40,68 +38,100 @@ QString TextureContainer::getTexturePath(int texture)
     switch (texture)
     {
         case PaperTexture:
+        {
             pattern = QLatin1String("paper-texture");
             break;
+        }
 
         case Paper2Texture:
+        {
             pattern = QLatin1String("paper2-texture");
             break;
+        }
 
         case FabricTexture:
+        {
             pattern = QLatin1String("fabric-texture");
             break;
+        }
 
         case BurlapTexture:
+        {
             pattern = QLatin1String("burlap-texture");
             break;
+        }
 
         case BricksTexture:
+        {
             pattern = QLatin1String("bricks-texture");
             break;
+        }
 
         case Bricks2Texture:
+        {
             pattern = QLatin1String("bricks2-texture");
             break;
+        }
 
         case CanvasTexture:
+        {
             pattern = QLatin1String("canvas-texture");
             break;
+        }
 
         case MarbleTexture:
+        {
             pattern = QLatin1String("marble-texture");
             break;
+        }
 
         case Marble2Texture:
+        {
             pattern = QLatin1String("marble2-texture");
             break;
+        }
 
         case BlueJeanTexture:
+        {
             pattern = QLatin1String("bluejean-texture");
             break;
+        }
 
         case CellWoodTexture:
+        {
             pattern = QLatin1String("cellwood-texture");
             break;
+        }
 
         case MetalWireTexture:
+        {
             pattern = QLatin1String("metalwire-texture");
             break;
+        }
 
         case ModernTexture:
+        {
             pattern = QLatin1String("modern-texture");
             break;
+        }
 
         case WallTexture:
+        {
             pattern = QLatin1String("wall-texture");
             break;
+        }
 
         case MossTexture:
+        {
             pattern = QLatin1String("moss-texture");
             break;
+        }
 
         case StoneTexture:
+        {
             pattern = QLatin1String("stone-texture");
             break;
+        }
     }
 
     return (QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/") + pattern + QLatin1String(".png")));

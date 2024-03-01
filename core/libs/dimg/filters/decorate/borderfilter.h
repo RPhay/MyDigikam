@@ -76,23 +76,23 @@ private:
     /**
      * Methods to preserve aspect ratio of image.
      */
-    void solid(DImg& src, DImg& dest, const DColor& fg, int borderWidth);
-    void niepce(DImg& src, DImg& dest, const DColor& fg, int borderWidth,
+    void solid(const DImg& src, DImg& dest, const DColor& fg, int borderWidth);
+    void niepce(const DImg& src, DImg& dest, const DColor& fg, int borderWidth,
                 const DColor& bg, int lineWidth);
-    void bevel(DImg& src, DImg& dest, const DColor& topColor,
+    void bevel(const DImg& src, DImg& dest, const DColor& topColor,
                const DColor& btmColor, int borderWidth);
-    void pattern(DImg& src, DImg& dest, int borderWidth, const DColor& firstColor,
+    void pattern(const DImg& src, DImg& dest, int borderWidth, const DColor& firstColor,
                  const DColor& secondColor, int firstWidth, int secondWidth);
 
     /**
      * Methods to not-preserve aspect ratio of image.
      */
-    void solid2(DImg& src, DImg& dest, const DColor& fg, int borderWidth);
-    void niepce2(DImg& src, DImg& dest, const DColor& fg, int borderWidth,
+    void solid2(const DImg& src, DImg& dest, const DColor& fg, int borderWidth);
+    void niepce2(const DImg& src, DImg& dest, const DColor& fg, int borderWidth,
                  const DColor& bg, int lineWidth);
-    void bevel2(DImg& src, DImg& dest, const DColor& topColor,
+    void bevel2(const DImg& src, DImg& dest, const DColor& topColor,
                 const DColor& btmColor, int borderWidth);
-    void pattern2(DImg& src, DImg& dest, int borderWidth, const DColor& firstColor,
+    void pattern2(const DImg& src, DImg& dest, int borderWidth, const DColor& firstColor,
                   const DColor& secondColor, int firstWidth, int secondWidth);
 
 private:

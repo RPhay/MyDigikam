@@ -35,7 +35,7 @@ public:
 
     enum TextureTypes
     {
-        PaperTexture=0,
+        PaperTexture = 0,
         Paper2Texture,
         FabricTexture,
         BurlapTexture,
@@ -62,8 +62,8 @@ public:
 
 public:
 
-    int blendGain;
-    int textureType;
+    int blendGain       = 200;
+    int textureType     = MarbleTexture;
 };
 
 } // namespace Digikam

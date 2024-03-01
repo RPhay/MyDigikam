@@ -47,17 +47,13 @@ class Q_DECL_HIDDEN TextureSettings::Private
 {
 public:
 
-    explicit Private()
-      : textureType(nullptr),
-        blendGain  (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configTextureTypeEntry;
     static const QString configBlendGainEntry;
 
-    DComboBox*           textureType;
-    DIntNumInput*        blendGain;
+    DComboBox*           textureType = nullptr;
+    DIntNumInput*        blendGain   = nullptr;
 };
 
 const QString TextureSettings::Private::configTextureTypeEntry(QLatin1String("TextureType"));

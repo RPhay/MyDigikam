@@ -47,19 +47,7 @@ class Q_DECL_HIDDEN BorderSettings::Private
 {
 public:
 
-    explicit Private()
-      : preserveAspectRatio (nullptr),
-        labelBackground     (nullptr),
-        labelBorderPercent  (nullptr),
-        labelBorderWidth    (nullptr),
-        labelForeground     (nullptr),
-        firstColorButton    (nullptr),
-        secondColorButton   (nullptr),
-        borderType          (nullptr),
-        borderPercent       (nullptr),
-        borderWidth         (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configBorderTypeEntry;
     static const QString configBorderPercentEntry;
@@ -73,12 +61,12 @@ public:
     static const QString configDecorativeFirstColorEntry;
     static const QString configDecorativeSecondColorEntry;
 
-    QCheckBox*           preserveAspectRatio;
+    QCheckBox*           preserveAspectRatio    = nullptr;
 
-    QLabel*              labelBackground;
-    QLabel*              labelBorderPercent;
-    QLabel*              labelBorderWidth;
-    QLabel*              labelForeground;
+    QLabel*              labelBackground        = nullptr;
+    QLabel*              labelBorderPercent     = nullptr;
+    QLabel*              labelBorderWidth       = nullptr;
+    QLabel*              labelForeground        = nullptr;
 
     QColor               bevelLowerRightColor;
     QColor               bevelUpperLeftColor;
@@ -88,12 +76,12 @@ public:
     QColor               niepceLineColor;
     QColor               solidColor;
 
-    DColorSelector*      firstColorButton;
-    DColorSelector*      secondColorButton;
+    DColorSelector*      firstColorButton       = nullptr;
+    DColorSelector*      secondColorButton      = nullptr;
 
-    DComboBox*           borderType;
-    DIntNumInput*        borderPercent;
-    DIntNumInput*        borderWidth;
+    DComboBox*           borderType             = nullptr;
+    DIntNumInput*        borderPercent          = nullptr;
+    DIntNumInput*        borderWidth            = nullptr;
 };
 
 const QString BorderSettings::Private::configBorderTypeEntry(QLatin1String("Border Type"));
@@ -323,16 +311,22 @@ void BorderSettings::slotColorForegroundChanged(const QColor& color)
     switch (d->borderType->currentIndex())
     {
         case BorderContainer::SolidBorder:
+        {
             d->solidColor = color;
             break;
+        }
 
         case BorderContainer::NiepceBorder:
+        {
             d->niepceBorderColor = color;
             break;
+        }
 
         case BorderContainer::BeveledBorder:
+        {
             d->bevelUpperLeftColor = color;
             break;
+        }
 
         case BorderContainer::PineBorder:
         case BorderContainer::WoodBorder:
@@ -350,8 +344,10 @@ void BorderSettings::slotColorForegroundChanged(const QColor& color)
         case BorderContainer::GraniteBorder:
         case BorderContainer::RockBorder:
         case BorderContainer::WallBorder:
+        {
             d->decorativeFirstColor = color;
             break;
+        }
     }
 
     Q_EMIT signalSettingsChanged();
@@ -362,16 +358,22 @@ void BorderSettings::slotColorBackgroundChanged(const QColor& color)
     switch (d->borderType->currentIndex())
     {
         case BorderContainer::SolidBorder:
+        {
             d->solidColor = color;
             break;
+        }
 
         case BorderContainer::NiepceBorder:
+        {
             d->niepceLineColor = color;
             break;
+        }
 
         case BorderContainer::BeveledBorder:
+        {
             d->bevelLowerRightColor = color;
             break;
+        }
 
         case BorderContainer::PineBorder:
         case BorderContainer::WoodBorder:
@@ -389,8 +391,10 @@ void BorderSettings::slotColorBackgroundChanged(const QColor& color)
         case BorderContainer::GraniteBorder:
         case BorderContainer::RockBorder:
         case BorderContainer::WallBorder:
+        {
             d->decorativeSecondColor = color;
             break;
+        }
     }
 
     Q_EMIT signalSettingsChanged();
@@ -411,24 +415,30 @@ void BorderSettings::slotBorderTypeChanged(int borderType)
     switch (borderType)
     {
         case BorderContainer::SolidBorder:
+        {
             d->firstColorButton->setColor(d->solidColor);
             d->secondColorButton->setEnabled(false);
             d->labelBackground->setEnabled(false);
             break;
+        }
 
         case BorderContainer::NiepceBorder:
+        {
             d->firstColorButton->setWhatsThis(i18n("Set here the color of the main border."));
             d->secondColorButton->setWhatsThis(i18n("Set here the color of the line."));
             d->firstColorButton->setColor(d->niepceBorderColor);
             d->secondColorButton->setColor(d->niepceLineColor);
             break;
+        }
 
         case BorderContainer::BeveledBorder:
+        {
             d->firstColorButton->setWhatsThis(i18n("Set here the color of the upper left area."));
             d->secondColorButton->setWhatsThis(i18n("Set here the color of the lower right area."));
             d->firstColorButton->setColor(d->bevelUpperLeftColor);
             d->secondColorButton->setColor(d->bevelLowerRightColor);
             break;
+        }
 
         case BorderContainer::PineBorder:
         case BorderContainer::WoodBorder:
@@ -446,11 +456,13 @@ void BorderSettings::slotBorderTypeChanged(int borderType)
         case BorderContainer::GraniteBorder:
         case BorderContainer::RockBorder:
         case BorderContainer::WallBorder:
+        {
             d->firstColorButton->setWhatsThis(i18n("Set here the color of the first line."));
             d->secondColorButton->setWhatsThis(i18n("Set here the color of the second line."));
             d->firstColorButton->setColor(d->decorativeFirstColor);
             d->secondColorButton->setColor(d->decorativeSecondColor);
             break;
+        }
     }
 
     Q_EMIT signalSettingsChanged();
