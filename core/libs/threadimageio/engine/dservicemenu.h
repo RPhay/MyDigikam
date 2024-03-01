@@ -119,6 +119,10 @@ public:
      */
     static QIcon getIconFromService(const DServiceInfo& sinfo);
 
+private:
+
+    static QStringList splitStringAtSpaces(const QString& string);
+
 //@}
 
 //@{

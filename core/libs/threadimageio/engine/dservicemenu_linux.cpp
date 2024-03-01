@@ -70,8 +70,7 @@ bool DServiceMenu::runFiles(const QString& appCmd,
                             const KService::Ptr& service,
                             const DServiceInfo& serviceInfo)
 {
-    QRegularExpression split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
-    QStringList cmdList = appCmd.split(split, QT_SKIP_EMPTY_PARTS);
+    QStringList cmdList = splitStringAtSpaces(appCmd);
     QList<QUrl> urlList = urls;
 
     if (cmdList.isEmpty() || urlList.isEmpty())
@@ -105,7 +104,7 @@ bool DServiceMenu::runFiles(const QString& appCmd,
         name        = service->desktopEntryName();
 
         useTerminal = service->terminal();
-        termOpts    = service->terminalOptions().split(split, QT_SKIP_EMPTY_PARTS);
+        termOpts    = splitStringAtSpaces(service->terminalOptions());
     }
     else if (!serviceInfo.isEmpty())
     {
@@ -113,7 +112,7 @@ bool DServiceMenu::runFiles(const QString& appCmd,
         name        = serviceInfo.name;
 
         useTerminal = serviceInfo.term;
-        termOpts    = serviceInfo.topt.split(split, QT_SKIP_EMPTY_PARTS);
+        termOpts    = splitStringAtSpaces(serviceInfo.topt);
     }
 
 #ifdef Q_OS_LINUX
@@ -380,8 +379,7 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
 
 #ifdef Q_OS_WIN
 
-                        QRegularExpression split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
-                        QStringList cmdList = exec.split(split, QT_SKIP_EMPTY_PARTS);
+                        QStringList cmdList = splitStringAtSpaces(exec);
 
                         if (cmdList.isEmpty() || DFileOperations::findExecutable(cmdList.constFirst()).isEmpty())
                         {
@@ -427,6 +425,13 @@ QIcon DServiceMenu::getIconFromService(const DServiceInfo& sinfo)
 #endif
 
     return icon;
+}
+
+QStringList DServiceMenu::splitStringAtSpaces(const QString& string)
+{
+    QRegularExpression split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
+
+    return (string.split(split, QT_SKIP_EMPTY_PARTS));
 }
 
 //-----------------------------------------------------------------------------
