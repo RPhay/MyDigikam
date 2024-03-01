@@ -219,7 +219,17 @@ bool DServiceMenu::runFiles(const QString& appCmd,
     }
     else
     {
+
+#ifdef Q_OS_WIN
+
+        process->start(DFileOperations::findExecutable(exec), cmdArgs);
+
+#else
+
         process->start(exec, cmdArgs);
+
+#endif
+
     }
 
     bool ret = true;
@@ -370,7 +380,13 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
 
 #ifdef Q_OS_WIN
 
-                        exec = DFileOperations::findExecutable(exec);
+                        QRegularExpression split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
+                        QStringList cmdList = exec.split(split, QT_SKIP_EMPTY_PARTS);
+
+                        if (cmdList.isEmpty() || DFileOperations::findExecutable(cmdList.constFirst()).isEmpty())
+                        {
+                            break;
+                        }
 
 #endif
 

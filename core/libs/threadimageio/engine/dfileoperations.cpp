@@ -664,7 +664,10 @@ QString DFileOperations::findExecutable(const QString& name)
 
 #ifdef Q_OS_WIN
 
-    program.append(QLatin1String(".exe"));
+    if (!program.endsWith(QLatin1String(".exe"), Qt::CaseInsensitive))
+    {
+        program.append(QLatin1String(".exe"));
+    }
 
     QSettings settings(QString::fromUtf8("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
                                          "CurrentVersion\\App Paths\\%1").arg(program),
