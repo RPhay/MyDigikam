@@ -139,8 +139,8 @@ bool DServiceMenu::runFiles(const QString& appCmd,
 
     Q_FOREACH (const QUrl& url, urlList)
     {
-        dirs  << url.adjusted(QUrl::RemoveFilename).toLocalFile();
-        files << url.toLocalFile();
+        dirs  << QDir::toNativeSeparators(url.adjusted(QUrl::RemoveFilename).toLocalFile());
+        files << QDir::toNativeSeparators(url.toLocalFile());
     }
 
     Q_FOREACH (const QString& cmdString, cmdList)
