@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-29 01:36+0000\n"
+"POT-Creation-Date: 2024-03-01 01:59+0000\n"
 "PO-Revision-Date: 2024-02-05 11:46+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -16786,13 +16786,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Blanda stöfluðum myndum..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:327
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:326
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "óþekkt"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:921
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -60564,17 +60564,17 @@ msgstr ""
 "Ferli er lokið.\n"
 "Tímalengd: %1"
 
-#: core/utilities/maintenance/metadataremover.cpp:189
+#: core/utilities/maintenance/metadataremover.cpp:183
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "Fjarlægja öll andlitsmerki af mynd"
 
-#: core/utilities/maintenance/metadataremover.cpp:194
+#: core/utilities/maintenance/metadataremover.cpp:188
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "Fjarlægja öll merki af mynd"
 
-#: core/utilities/maintenance/metadataremover.cpp:210
+#: core/utilities/maintenance/metadataremover.cpp:204
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -60583,7 +60583,7 @@ msgstr ""
 "Öll andlitsmerki verða fjarlægð af %1 völdum myndum.\n"
 "Viltu halda áfram?"
 
-#: core/utilities/maintenance/metadataremover.cpp:215
+#: core/utilities/maintenance/metadataremover.cpp:209
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"

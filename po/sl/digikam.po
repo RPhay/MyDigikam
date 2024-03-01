@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-29 01:36+0000\n"
+"POT-Creation-Date: 2024-03-01 01:59+0000\n"
 "PO-Revision-Date: 2024-02-26 07:03+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -16844,13 +16844,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Zmešaj zložene slike..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:327
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:326
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "neznano"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:921
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -60753,17 +60753,17 @@ msgstr ""
 "Opravilo je končano.\n"
 "Trajanje: %1"
 
-#: core/utilities/maintenance/metadataremover.cpp:189
+#: core/utilities/maintenance/metadataremover.cpp:183
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "Odstrani vse obraze s slike"
 
-#: core/utilities/maintenance/metadataremover.cpp:194
+#: core/utilities/maintenance/metadataremover.cpp:188
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "Odstrani vse značke iz slike"
 
-#: core/utilities/maintenance/metadataremover.cpp:210
+#: core/utilities/maintenance/metadataremover.cpp:204
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -60772,7 +60772,7 @@ msgstr ""
 "Vsi obrazi so bili odstranjeni iz %1 izbranih slik.\n"
 "Ali želite nadaljevati?"
 
-#: core/utilities/maintenance/metadataremover.cpp:215
+#: core/utilities/maintenance/metadataremover.cpp:209
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"

@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-29 01:36+0000\n"
+"POT-Creation-Date: 2024-03-01 01:59+0000\n"
 "PO-Revision-Date: 2024-02-26 13:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -16864,13 +16864,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Yığılmış Görselleri Harmanla..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:327
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:326
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "bilinmiyor"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:921
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -60682,17 +60682,17 @@ msgstr ""
 "Süreç tamamlandı.\n"
 "Süre: %1"
 
-#: core/utilities/maintenance/metadataremover.cpp:189
+#: core/utilities/maintenance/metadataremover.cpp:183
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "Görselden tüm yüzleri kaldır"
 
-#: core/utilities/maintenance/metadataremover.cpp:194
+#: core/utilities/maintenance/metadataremover.cpp:188
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "Görselden tüm künyeleri kaldır"
 
-#: core/utilities/maintenance/metadataremover.cpp:210
+#: core/utilities/maintenance/metadataremover.cpp:204
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -60701,7 +60701,7 @@ msgstr ""
 "%1 seçili görselden tüm yüzler kaldırılacak.\n"
 "Sürdürmek istiyor musunuz?"
 
-#: core/utilities/maintenance/metadataremover.cpp:215
+#: core/utilities/maintenance/metadataremover.cpp:209
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"

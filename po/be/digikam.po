@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-29 01:36+0000\n"
+"POT-Creation-Date: 2024-03-01 01:59+0000\n"
 "PO-Revision-Date: 2022-09-09 12:18\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -15907,13 +15907,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:327
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:326
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "невядома"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:921
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -58289,27 +58289,27 @@ msgid ""
 "Duration: %1"
 msgstr ""
 
-#: core/utilities/maintenance/metadataremover.cpp:189
+#: core/utilities/maintenance/metadataremover.cpp:183
 #, fuzzy, kde-format
 #| msgid "Clear all faces on this image"
 msgid "Remove all faces from image"
 msgstr "Прыбраць усе твары з гэтай выявы"
 
-#: core/utilities/maintenance/metadataremover.cpp:194
+#: core/utilities/maintenance/metadataremover.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Add to Light Table"
 msgid "Remove all tags from image"
 msgstr "Дадаць на праявачны стол"
 
-#: core/utilities/maintenance/metadataremover.cpp:210
+#: core/utilities/maintenance/metadataremover.cpp:204
 #, fuzzy, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr "Звесткі аб імпартаваных відарысах"
 
-#: core/utilities/maintenance/metadataremover.cpp:215
+#: core/utilities/maintenance/metadataremover.cpp:209
 #, fuzzy, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"

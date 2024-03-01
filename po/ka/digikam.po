@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-29 01:36+0000\n"
-"PO-Revision-Date: 2024-02-19 05:37+0100\n"
+"POT-Creation-Date: 2024-03-01 01:59+0000\n"
+"PO-Revision-Date: 2024-02-29 03:06+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -6000,27 +6000,22 @@ msgid "Date"
 msgstr "თარიღი"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
-#, fuzzy, kde-format
-#| msgid "digiKam Properties"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
-msgstr "digiKam-ის ფუნქციები"
+msgstr "digiKam სრულად"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "DigiKam image history"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
-msgstr "DigiKam -ის გამოსახულებების ისტორია"
+msgstr "digiKam -ის გამოსახულებების ისტორია"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc namespace"
-#| msgid "Preview image"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
-msgstr "გამოსახულების მინიატურა"
+msgstr "digiKam-ის გამოსახულების მინიატურა"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
@@ -6041,9 +6036,7 @@ msgid "Video"
 msgstr "ვიდეო"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Caption, Comment and Description"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "წარწერა, კომენტარი და აღწერა"
@@ -15714,13 +15707,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:327
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:326
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "უცნობი"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:921
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -57203,17 +57196,17 @@ msgid ""
 "Duration: %1"
 msgstr ""
 
-#: core/utilities/maintenance/metadataremover.cpp:189
+#: core/utilities/maintenance/metadataremover.cpp:183
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "გამოსახულებიდან ყველა სახის წაშლა"
 
-#: core/utilities/maintenance/metadataremover.cpp:194
+#: core/utilities/maintenance/metadataremover.cpp:188
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "გამოსახულებიდან ყველა ჭდის წაშლა"
 
-#: core/utilities/maintenance/metadataremover.cpp:210
+#: core/utilities/maintenance/metadataremover.cpp:204
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -57222,7 +57215,7 @@ msgstr ""
 "%1 მონიშნული გამოსახულებიდან ყველა სახე წაიშლება.\n"
 "გნებავთ, გააგრძელოთ?"
 
-#: core/utilities/maintenance/metadataremover.cpp:215
+#: core/utilities/maintenance/metadataremover.cpp:209
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"

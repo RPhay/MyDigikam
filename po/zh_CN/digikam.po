@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-29 01:36+0000\n"
-"PO-Revision-Date: 2024-02-05 11:40\n"
+"POT-Creation-Date: 2024-03-01 01:59+0000\n"
+"PO-Revision-Date: 2024-02-29 12:56\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -5781,60 +5781,53 @@ msgctxt "@label"
 msgid ""
 "Select an image or JSON file supported by ExifTool to apply the file "
 "metadata to the images."
-msgstr ""
+msgstr "选择 ExifTool 支持的图像或者 JSON 文件以将它的文件元数据应用到图像。"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: No image or JSON file selected."
-msgstr ""
+msgstr "应用元数据：没有选择图像或者 JSON 文件。"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool is not available."
-msgstr ""
+msgstr "应用元数据：ExifTool 不可用。"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
-msgstr ""
+msgstr "应用元数据：JSON 文件中不存在文件名。"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
-msgstr "应用元数据模板"
+msgstr "应用元数据：ExifTool 报告了一个错误。"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Applying metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Metadata"
-msgstr "正在应用元数据"
+msgstr "应用元数据"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to apply metadata template to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
-msgstr "将元数据模板应用到图像"
+msgstr "通过 ExifTool 应用来自图像或者 JSON 文件的元数据"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can apply metadata template over "
-#| "images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply metadata from a image or JSON "
 "file with ExifTool.</para>"
-msgstr "<para>用于应用元数据模板到图像的批处理工具。</para>"
+msgstr ""
+"<para>用于通过 ExifTool 应用来自图像或者 JSON 文件的元数据的批处理工具。</"
+"para>"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format
@@ -6156,27 +6149,22 @@ msgid "Date"
 msgstr "日期"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
-#, fuzzy, kde-format
-#| msgid "digiKam Properties"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
-msgstr "digiKam 属性"
+msgstr "digiKam 全部"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "DigiKam image history"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "digiKam 图像历史"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc namespace"
-#| msgid "Preview image"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
-msgstr "预览图像"
+msgstr "digiKam 预览图像"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
@@ -6197,9 +6185,7 @@ msgid "Video"
 msgstr "视频"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Caption, Comment and Description"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "说明、注释和描述"
@@ -16228,13 +16214,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "混合多张图像..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:327
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:326
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "未知"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:921
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -21271,7 +21257,7 @@ msgstr "图像说明字体："
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:176
 #, kde-format
 msgid "Select here the font used to display text in the slideshow."
-msgstr "选择在幻灯片中用于显示文字的字体。"
+msgstr "选择幻灯片的文字信息使用的字体。"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
 #, kde-format
@@ -39998,11 +39984,10 @@ msgid "On Screen Display Font:"
 msgstr "屏幕显示字体："
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
-msgstr "选择在树形视图中用于显示文字的字体。"
+msgstr "选择屏幕显示的文字信息使用的字体。"
 
 #: core/libs/video/player/audplayerwdg.cpp:259
 #, kde-format
@@ -48203,7 +48188,7 @@ msgstr "界面字体："
 #: core/utilities/setup/misc/setupmisc.cpp:277
 #, kde-format
 msgid "Select here the font used to display text in whole application."
-msgstr "选择在整个应用程序中用于显示文字的字体。"
+msgstr "选择整个应用程序的文字信息使用的字体。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
 #: core/utilities/setup/misc/setupmisc.cpp:292
@@ -48283,7 +48268,7 @@ msgstr "勾选此项后，鼠标悬停于缩略图栏或文件夹视图项目时
 #: core/showfoto/setup/showfotosetuptooltip.cpp:107
 #, kde-format
 msgid "Select here the font used to display text in tooltips."
-msgstr "选择悬停信息框所用字体。"
+msgstr "选择悬停信息框的文字信息使用的字体。"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:111
 #, kde-format
@@ -56495,7 +56480,7 @@ msgctxt "@info"
 msgid ""
 "Color Management is not configured, so the Color-Managed View is not "
 "available."
-msgstr "色彩管理功能尚未配置，色彩管理显示暂不可用。"
+msgstr "尚未配置色彩管理功能，色彩管理显示因此不可用。"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2500
 #, kde-format
@@ -58690,9 +58675,9 @@ msgid ""
 "below, the process may take much time and can freeze digiKam temporarily<br/"
 "> in order to make sure that no database corruption occurs.</i></qt>"
 msgstr ""
-"<qt><b>提示：</b>激活此工具后，核心数据库一定会被清理。您还可以选择清理其他数"
-"据库。<br/>如果选择了下面的任一选项，清理时间将耗时更长，<br/>为保护数据库不"
-"发生损坏，digiKam 将暂时失去响应。</qt>"
+"<qt><b>提示：</b>选择此项后，digiKam 将对它的核心数据库进行清理。您还可以额外"
+"选择要清理的其他数据库。<br/>如果选择了下面的任意一项，清理将需要更长时间才能"
+"完成，<br/>digiKam 可能会暂时停止响应以防止数据库在清理过程中损坏。</qt>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:69
 #, kde-format
@@ -58939,17 +58924,17 @@ msgstr ""
 "进程已完成。\n"
 "耗时：%1"
 
-#: core/utilities/maintenance/metadataremover.cpp:189
+#: core/utilities/maintenance/metadataremover.cpp:183
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "移除图像中的所有人脸"
 
-#: core/utilities/maintenance/metadataremover.cpp:194
+#: core/utilities/maintenance/metadataremover.cpp:188
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "移除图像中的所有标签"
 
-#: core/utilities/maintenance/metadataremover.cpp:210
+#: core/utilities/maintenance/metadataremover.cpp:204
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -58958,7 +58943,7 @@ msgstr ""
 "将要移除 %1 张图像中的所有人脸。\n"
 "您想要继续吗？"
 
-#: core/utilities/maintenance/metadataremover.cpp:215
+#: core/utilities/maintenance/metadataremover.cpp:209
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
@@ -60871,7 +60856,7 @@ msgstr "图标视图字体："
 #: core/utilities/setup/album/setupalbumview.cpp:225
 #, kde-format
 msgid "Select here the font used to display text in icon views."
-msgstr "选择在图标视图中用于显示文字的字体。"
+msgstr "选择图标视图的文字信息使用的字体。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:227
 #, kde-format
@@ -60934,7 +60919,7 @@ msgstr "树形视图字体："
 #: core/utilities/setup/album/setupalbumview.cpp:292
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
-msgstr "选择在树形视图中用于显示文字的字体。"
+msgstr "选择树形视图的文字信息使用的字体。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:294
 #, kde-format
@@ -61606,7 +61591,7 @@ msgstr "使用图像编辑器打开"
 #: core/utilities/setup/camera/setupcamera.cpp:511
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
-msgstr "选择在图标视图中用于显示文字的字体。"
+msgstr "选择图标视图的文字信息使用的字体。"
 
 #: core/utilities/setup/camera/setupcamera.cpp:533
 #, kde-format
@@ -64619,7 +64604,7 @@ msgstr "悬停信息框字体："
 #: core/utilities/setup/setuptooltip.cpp:188
 #, kde-format
 msgid "Select here the font used to display text in tool-tips."
-msgstr "选择在悬停信息框中用于显示文字的字体。"
+msgstr "选择悬停信息框的文字信息使用的字体。"
 
 #: core/utilities/setup/setuptooltip.cpp:196
 #, kde-format
@@ -64971,17 +64956,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#~ msgctxt "@item: xmp namespace"
-#~ msgid "DigiKam"
-#~ msgstr "digiKam"
-
-#~ msgid "Time Adjust"
-#~ msgstr "时间调整"
-
-#~ msgid "Adjust Date Time Stamp of Image"
-#~ msgstr "调整图像的日期和时间标记"
-
-#~ msgctxt "@info"
-#~ msgid "Select here the font used to display text in the MJPEG."
-#~ msgstr "选择在 MJPEG 流中用于显示文字的字体。"

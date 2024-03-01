@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-29 01:36+0000\n"
+"POT-Creation-Date: 2024-03-01 01:59+0000\n"
 "PO-Revision-Date: 2023-12-13 03:27-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: sq\n"
@@ -16169,14 +16169,14 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Kalendari"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:327
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:326
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "I Panjohur"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:921
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -59286,17 +59286,17 @@ msgid ""
 "Duration: %1"
 msgstr ""
 
-#: core/utilities/maintenance/metadataremover.cpp:189
+#: core/utilities/maintenance/metadataremover.cpp:183
 #, fuzzy, kde-format
 msgid "Remove all faces from image"
 msgstr "Zhduke Etiketën"
 
-#: core/utilities/maintenance/metadataremover.cpp:194
+#: core/utilities/maintenance/metadataremover.cpp:188
 #, fuzzy, kde-format
 msgid "Remove all tags from image"
 msgstr "Zhduke Etiketën"
 
-#: core/utilities/maintenance/metadataremover.cpp:210
+#: core/utilities/maintenance/metadataremover.cpp:204
 #, fuzzy, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -59306,7 +59306,7 @@ msgstr ""
 "\"%1\" to\n"
 "\"%2\"."
 
-#: core/utilities/maintenance/metadataremover.cpp:215
+#: core/utilities/maintenance/metadataremover.cpp:209
 #, fuzzy, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"

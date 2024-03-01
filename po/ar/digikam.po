@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-29 01:36+0000\n"
+"POT-Creation-Date: 2024-03-01 01:59+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -16552,13 +16552,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "ينشئ المخطّط..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:327
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:326
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "مجهول"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:921
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -61015,19 +61015,19 @@ msgstr ""
 "تمّت العمليّة.\n"
 "المدّة: %1"
 
-#: core/utilities/maintenance/metadataremover.cpp:189
+#: core/utilities/maintenance/metadataremover.cpp:183
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Remove all faces from image"
 msgstr "أزل الوسم من الصّور"
 
-#: core/utilities/maintenance/metadataremover.cpp:194
+#: core/utilities/maintenance/metadataremover.cpp:188
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Remove all tags from image"
 msgstr "أزل الوسم من الصّور"
 
-#: core/utilities/maintenance/metadataremover.cpp:210
+#: core/utilities/maintenance/metadataremover.cpp:204
 #, fuzzy, kde-format
 #| msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgid ""
@@ -61035,7 +61035,7 @@ msgid ""
 "Do you want to continue?"
 msgstr "فشل رفع الملفّ <b>%1</b>. أتريد المتابعة؟"
 
-#: core/utilities/maintenance/metadataremover.cpp:215
+#: core/utilities/maintenance/metadataremover.cpp:209
 #, fuzzy, kde-format
 #| msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgid ""
