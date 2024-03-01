@@ -44,14 +44,6 @@ public:
 
 public:
 
-    QString       m_desc;
-    QPoint        m_descPos;
-    QFont         m_descFnt;
-    Qt::Alignment m_descAlign;
-    QColor        m_descBg;
-
-public:
-
     /**
      * Insert OSD on frame.
      */
@@ -83,6 +75,14 @@ public:
     void insertMessageOsdToFrame(QImage &frame,
                                  const QSize& JPEGsize,
                                  const QString& mess);
+
+public:
+
+    QString       m_desc        = QLatin1String("");
+    QPoint        m_descPos     = QPoint(10, 10);
+    QFont         m_descFnt     = QFont(QLatin1String("Monospace"));
+    Qt::Alignment m_descAlign   = Qt::AlignLeft;
+    QColor        m_descBg      = Qt::darkGray;
 };
 
 } // namespace Digikam

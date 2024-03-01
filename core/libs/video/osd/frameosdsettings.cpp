@@ -35,7 +35,7 @@ FrameOsdSettings::~FrameOsdSettings()
 {
 }
 
-void FrameOsdSettings::readSettings(KConfigGroup& group)
+void FrameOsdSettings::readSettings(const KConfigGroup& group)
 {
     printName            = group.readEntry("FrameOsdPrintNameEntry",                        true);
     printDate            = group.readEntry("FrameOsdPrintDateEntry",                        true);

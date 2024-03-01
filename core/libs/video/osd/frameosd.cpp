@@ -36,11 +36,6 @@ namespace Digikam
 {
 
 FrameOsd::FrameOsd()
-  : m_desc     (QLatin1String("")),
-    m_descPos  (QPoint(10, 10)),
-    m_descFnt  (QFont(QLatin1String("Monospace"))),
-    m_descAlign(Qt::AlignLeft),
-    m_descBg   (Qt::darkGray)
 {
     m_descFnt.setStyleHint(QFont::Monospace);
     m_descFnt.setPixelSize(8);
