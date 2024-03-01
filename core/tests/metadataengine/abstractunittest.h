@@ -69,11 +69,10 @@ class AbstractUnitTest : public QObject
 public:
 
     explicit AbstractUnitTest(QObject* const parent = nullptr)
-        : QObject      (parent),
-          m_hasExifTool(false)
+        : QObject              (parent),
+          m_originalImageFolder(DTestDataDir::TestData(QString::fromUtf8("core/tests/metadataengine"))
+                                .root().path() + QLatin1Char('/'))
     {
-        m_originalImageFolder = DTestDataDir::TestData(QString::fromUtf8("core/tests/metadataengine"))
-                                    .root().path() + QLatin1Char('/');
         qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << m_originalImageFolder;
     }
 
@@ -93,7 +92,7 @@ protected Q_SLOTS:
 
         MetaEngine::initializeExiv2();
         qCDebug(DIGIKAM_TESTS_LOG) << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
-        m_tempPath = QString::fromLatin1(QTest::currentAppName());
+        m_tempPath    = QString::fromLatin1(QTest::currentAppName());
         m_tempPath.replace(QLatin1String("./"), QString());
 
         QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
@@ -114,12 +113,14 @@ protected Q_SLOTS:
         WSToolUtils::removeTemporaryDir(m_tempPath.toLatin1().data());
 
 #ifdef HAVE_IMAGE_MAGICK
+
 #   if MagickLibVersion >= 0x693
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Terminate ImageMagick";
         TerminateMagick();
 
 #   endif
+
 #endif
 
     }
@@ -134,7 +135,7 @@ protected:
 
     QString m_tempPath;               ///< The temporary path to store file to process unit test.
     QDir    m_tempDir;                ///< Same that previous as QDir object.
-    bool    m_hasExifTool;            ///< ExifTool is available in unit test.
+    bool    m_hasExifTool = false;    ///< ExifTool is available in unit test.
     QString m_originalImageFolder;    ///< The path to original files to process by unit test, and copied to the temporary directory. Original files still in read only.
 };
 
