@@ -50,6 +50,7 @@ done
 cppcheck -j$CPU_CORES \
          -DQ_OS_LINUX \
          -DQ_OS_UNIX \
+         -DQ_PROCESSOR_X86_64 \
          --verbose \
          --std=c++17 \
          --library=qt.cfg \
