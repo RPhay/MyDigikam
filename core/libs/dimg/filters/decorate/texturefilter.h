@@ -41,7 +41,7 @@ public:
                            QObject* const parent = nullptr,
                            const TextureContainer& settings = TextureContainer());
 
-    ~TextureFilter() override;
+    ~TextureFilter()                                                          override;
 
     static QString          FilterIdentifier()
     {
@@ -60,12 +60,12 @@ public:
         return 2;
     }
 
-    QString         filterIdentifier()                          const override
+    QString                 filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction            filterAction()                                    override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

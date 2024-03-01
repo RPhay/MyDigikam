@@ -42,17 +42,12 @@ class Q_DECL_HIDDEN BorderFilter::Private
 {
 public:
 
-    explicit Private()
-      : borderMainWidth(0),
-        border2ndWidth (0),
-        orgRatio       (0.0f)
-    {
-    }
+    Private() = default;
 
-    int             borderMainWidth;
-    int             border2ndWidth;
+    int             borderMainWidth = 0;
+    int             border2ndWidth  = 0;
 
-    float           orgRatio;
+    float           orgRatio        = 0.0F;
 
     DColor          solidColor;
     DColor          niepceBorderColor;
@@ -211,7 +206,7 @@ void BorderFilter::filterImage()
 
 // -- Methods to preserve aspect ratio of image ------------------------------------------
 
-void BorderFilter::solid(DImg& src, DImg& dest, const DColor& fg, int borderWidth)
+void BorderFilter::solid(const DImg& src, DImg& dest, const DColor& fg, int borderWidth)
 {
     if (d->settings.orgWidth > d->settings.orgHeight)
     {
@@ -229,7 +224,7 @@ void BorderFilter::solid(DImg& src, DImg& dest, const DColor& fg, int borderWidt
     }
 }
 
-void BorderFilter::niepce(DImg& src, DImg& dest, const DColor& fg,
+void BorderFilter::niepce(const DImg& src, DImg& dest, const DColor& fg,
                           int borderWidth, const DColor& bg, int lineWidth)
 {
     DImg tmp;
@@ -237,7 +232,7 @@ void BorderFilter::niepce(DImg& src, DImg& dest, const DColor& fg,
     solid(tmp, dest, fg, borderWidth);
 }
 
-void BorderFilter::bevel(DImg& src, DImg& dest, const DColor& topColor,
+void BorderFilter::bevel(const DImg& src, DImg& dest, const DColor& topColor,
                          const DColor& btmColor, int borderWidth)
 {
     int width, height;
@@ -324,7 +319,7 @@ void BorderFilter::bevel(DImg& src, DImg& dest, const DColor& topColor,
     }
 }
 
-void BorderFilter::pattern(DImg& src, DImg& dest, int borderWidth,
+void BorderFilter::pattern(const DImg& src, DImg& dest, int borderWidth,
                            const DColor& firstColor, const DColor& secondColor,
                            int firstWidth, int secondWidth)
 {
@@ -391,7 +386,7 @@ void BorderFilter::pattern(DImg& src, DImg& dest, int borderWidth,
 
 // -- Methods to not-preserve aspect ratio of image ------------------------------------------
 
-void BorderFilter::solid2(DImg& src, DImg& dest, const DColor& fg, int borderWidth)
+void BorderFilter::solid2(const DImg& src, DImg& dest, const DColor& fg, int borderWidth)
 {
     dest = DImg(src.width() + borderWidth * 2, src.height() + borderWidth * 2,
                 src.sixteenBit(), src.hasAlpha());
@@ -399,7 +394,7 @@ void BorderFilter::solid2(DImg& src, DImg& dest, const DColor& fg, int borderWid
     dest.bitBltImage(&src, borderWidth, borderWidth);
 }
 
-void BorderFilter::niepce2(DImg& src, DImg& dest, const DColor& fg, int borderWidth,
+void BorderFilter::niepce2(const DImg& src, DImg& dest, const DColor& fg, int borderWidth,
                            const DColor& bg, int lineWidth)
 {
     DImg tmp;
@@ -407,7 +402,7 @@ void BorderFilter::niepce2(DImg& src, DImg& dest, const DColor& fg, int borderWi
     solid2(tmp, dest, fg, borderWidth);
 }
 
-void BorderFilter::bevel2(DImg& src, DImg& dest, const DColor& topColor,
+void BorderFilter::bevel2(const DImg& src, DImg& dest, const DColor& topColor,
                           const DColor& btmColor, int borderWidth)
 {
     int x, y;
@@ -465,7 +460,7 @@ void BorderFilter::bevel2(DImg& src, DImg& dest, const DColor& topColor,
     dest.bitBltImage(&src, borderWidth, borderWidth);
 }
 
-void BorderFilter::pattern2(DImg& src, DImg& dest, int borderWidth,
+void BorderFilter::pattern2(const DImg& src, DImg& dest, int borderWidth,
                             const DColor& firstColor, const DColor& secondColor,
                             int firstWidth, int secondWidth)
 {

@@ -52,8 +52,6 @@ Q_SIGNALS:
 
     void signalSettingsChanged();
 
-private Q_SLOTS:
-
 private:
 
     class Private;

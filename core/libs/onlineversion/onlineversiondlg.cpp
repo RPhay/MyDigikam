@@ -63,45 +63,29 @@ class Q_DECL_HIDDEN OnlineVersionDlg::Private
 {
 public:
 
-    explicit Private()
-      : preRelease     (false),
-        updateWithDebug(false),
-        bar            (nullptr),
-        label          (nullptr),
-        stats          (nullptr),
-        received       (nullptr),
-        total          (nullptr),
-        rate           (nullptr),
-        remain         (nullptr),
-        logo           (nullptr),
-        buttons        (nullptr),
-        speedTimer     (nullptr),
-        checker        (nullptr),
-        dwnloader      (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                   preRelease;
-    bool                   updateWithDebug;
+    bool                   preRelease       = false;
+    bool                   updateWithDebug  = false;
 
     QString                curVersion;
     QDateTime              curBuildDt;
     QDateTime              onlineDt;         ///< Build date for pre-release only.
     QString                newVersion;       ///< For stable => version IDs ; for pre-release => build ISO date.
-    QProgressBar*          bar;
-    QLabel*                label;
-    QWidget*               stats;
-    QLabel*                received;
-    QLabel*                total;
-    QLabel*                rate;
-    QLabel*                remain;
-    QLabel*                logo;
-    QDialogButtonBox*      buttons;
-    QTimer*                speedTimer;
+    QProgressBar*          bar              = nullptr;
+    QLabel*                label            = nullptr;
+    QWidget*               stats            = nullptr;
+    QLabel*                received         = nullptr;
+    QLabel*                total            = nullptr;
+    QLabel*                rate             = nullptr;
+    QLabel*                remain           = nullptr;
+    QLabel*                logo             = nullptr;
+    QDialogButtonBox*      buttons          = nullptr;
+    QTimer*                speedTimer       = nullptr;
     QDateTime              dwnlStart;
 
-    OnlineVersionChecker*  checker;
-    OnlineVersionDwnl*     dwnloader;
+    OnlineVersionChecker*  checker          = nullptr;
+    OnlineVersionDwnl*     dwnloader        = nullptr;
 };
 
 OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
