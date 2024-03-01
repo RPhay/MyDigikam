@@ -32,9 +32,7 @@ class Q_DECL_HIDDEN CaptureWidget::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QPixmap pixmap;
     QImage  preview;

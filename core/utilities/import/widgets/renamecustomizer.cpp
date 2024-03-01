@@ -51,42 +51,29 @@ class Q_DECL_HIDDEN RenameCustomizer::Private
 {
 public:
 
-    explicit Private()
-      : startIndex           (1),
-        buttonGroup          (nullptr),
-        renameDefaultCase    (nullptr),
-        renameDefault        (nullptr),
-        renameCustom         (nullptr),
-        changedTimer         (nullptr),
-        renameDefaultBox     (nullptr),
-        renameDefaultCaseType(nullptr),
-        previewRenameLabel   (nullptr),
-        advancedRenameWidget (nullptr),
-        advancedRenameManager(nullptr)
-    {
-    }
+    Private() = default;
 
-    int                    startIndex;
+    int                    startIndex               = 1;
 
-    QButtonGroup*          buttonGroup;
+    QButtonGroup*          buttonGroup              = nullptr;
 
-    QLabel*                renameDefaultCase;
+    QLabel*                renameDefaultCase        = nullptr;
 
-    QRadioButton*          renameDefault;
-    QRadioButton*          renameCustom;
+    QRadioButton*          renameDefault            = nullptr;
+    QRadioButton*          renameCustom             = nullptr;
 
     QString                cameraTitle;
 
-    QTimer*                changedTimer;
+    QTimer*                changedTimer             = nullptr;
 
-    QWidget*               renameDefaultBox;
+    QWidget*               renameDefaultBox         = nullptr;
 
-    QComboBox*             renameDefaultCaseType;
+    QComboBox*             renameDefaultCaseType    = nullptr;
 
-    QLabel*                previewRenameLabel;
+    QLabel*                previewRenameLabel       = nullptr;
 
-    AdvancedRenameWidget*  advancedRenameWidget;
-    AdvancedRenameManager* advancedRenameManager;
+    AdvancedRenameWidget*  advancedRenameWidget     = nullptr;
+    AdvancedRenameManager* advancedRenameManager    = nullptr;
 };
 
 RenameCustomizer::RenameCustomizer(QWidget* const parent, const QString& cameraTitle)
@@ -241,15 +228,21 @@ QString RenameCustomizer::newName(const QString& fileName) const
         switch (changeCase())
         {
             case UPPER:
+            {
                 return result.toUpper();
                 break;
+            }
 
             case LOWER:
+            {
                 return result.toLower();
                 break;
+            }
 
             default:
+            {
                 return result;
+            }
         }
     }
 
@@ -268,7 +261,7 @@ void RenameCustomizer::setChangeCase(RenameCustomizer::Case val)
 
 void RenameCustomizer::slotRadioButtonClicked(int id)
 {
-    QRadioButton* btn = dynamic_cast<QRadioButton*>(d->buttonGroup->button(id));
+    QRadioButton* const btn = dynamic_cast<QRadioButton*>(d->buttonGroup->button(id));
 
     if (!btn)
     {

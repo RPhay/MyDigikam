@@ -38,7 +38,7 @@ public:
     explicit AdvancedSettings(QWidget* const parent = nullptr);
     ~AdvancedSettings() override;
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void saveSettings(KConfigGroup& group);
 
     DownloadSettings settings() const;

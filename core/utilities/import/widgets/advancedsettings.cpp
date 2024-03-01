@@ -46,30 +46,20 @@ class Q_DECL_HIDDEN AdvancedSettings::Private
 {
 public:
 
-    explicit Private()
-        : formatLabel       (nullptr),
-          autoRotateCheck   (nullptr),
-          convertJpegCheck  (nullptr),
-          fixDateTimeCheck  (nullptr),
-          documentNameCheck (nullptr),
-          losslessFormat    (nullptr),
-          dateTimeEdit      (nullptr),
-          templateSelector  (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*           formatLabel;
+    QLabel*           formatLabel       = nullptr;
 
-    QCheckBox*        autoRotateCheck;
-    QCheckBox*        convertJpegCheck;
-    QCheckBox*        fixDateTimeCheck;
-    QCheckBox*        documentNameCheck;
+    QCheckBox*        autoRotateCheck   = nullptr;
+    QCheckBox*        convertJpegCheck  = nullptr;
+    QCheckBox*        fixDateTimeCheck  = nullptr;
+    QCheckBox*        documentNameCheck = nullptr;
 
-    QComboBox*        losslessFormat;
+    QComboBox*        losslessFormat    = nullptr;
 
-    DDateTimeEdit*    dateTimeEdit;
+    DDateTimeEdit*    dateTimeEdit      = nullptr;
 
-    TemplateSelector* templateSelector;
+    TemplateSelector* templateSelector  = nullptr;
 };
 
 AdvancedSettings::AdvancedSettings(QWidget* const parent)
@@ -184,7 +174,7 @@ AdvancedSettings::~AdvancedSettings()
     delete d;
 }
 
-void AdvancedSettings::readSettings(KConfigGroup& group)
+void AdvancedSettings::readSettings(const KConfigGroup& group)
 {
     d->autoRotateCheck->setChecked(group.readEntry(QLatin1String("AutoRotate"),         true));
     d->fixDateTimeCheck->setChecked(group.readEntry(QLatin1String("FixDateTime"),       false));
