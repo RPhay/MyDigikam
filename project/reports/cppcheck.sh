@@ -83,6 +83,7 @@ cppcheck -j$CPU_CORES \
          --suppress=unusedPrivateFunction \
          --suppress=unknownMacro \
          --suppress=unmatchedSuppression:* \
+         --suppress=unassignedVariable \
          --suppress=class_X_Y \
          --suppress=ConfigurationNotChecked \
          --suppress=useStlAlgorithm \
