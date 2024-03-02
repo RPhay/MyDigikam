@@ -43,29 +43,10 @@ void ItemIconView::slotAllAlbumsLoaded()
 void ItemIconView::slotSortAlbums(int role)
 {
     ApplicationSettings* const settings = ApplicationSettings::instance();
-
-    if (!settings)
-    {
-        return;
-    }
-
     settings->setAlbumSortRole((ApplicationSettings::AlbumSortRole) role);
     settings->saveSettings();
 
-    // A dummy way to force the tree view to resort if the album sort role changed
-
-    PAlbum* const albumBeforeSorting = d->albumFolderSideBar->currentAlbum();
-    settings->setAlbumSortChanged(true);
-    d->albumFolderSideBar->doSaveState();
-    d->albumFolderSideBar->doLoadState();
-    d->albumFolderSideBar->doSaveState();
-    d->albumFolderSideBar->doLoadState();
-    settings->setAlbumSortChanged(false);
-
-    if (d->leftSideBar->getActiveTab() == d->albumFolderSideBar)
-    {
-        d->albumFolderSideBar->setCurrentAlbum(albumBeforeSorting);
-    }
+    d->albumFolderSideBar->applyResorting();
 }
 
 void ItemIconView::slotNewAlbum()

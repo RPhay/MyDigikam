@@ -49,6 +49,8 @@ public:
     const QIcon   getIcon()                                          override;
     const QString getCaption()                                       override;
 
+    void          applyResorting();
+
     AlbumPointer<PAlbum> currentAlbum() const;
 
 public Q_SLOTS:

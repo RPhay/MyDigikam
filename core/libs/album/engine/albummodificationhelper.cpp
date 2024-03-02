@@ -327,6 +327,10 @@ void AlbumModificationHelper::slotAlbumRename(PAlbum* album)
                 QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
             }
         }
+
+        // Resorting the tree View after changing metadata
+
+        DigikamApp::instance()->view()->slotSortAlbums(ApplicationSettings::instance()->getAlbumSortRole());
     }
 }
 

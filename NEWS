@@ -256,7 +256,7 @@ BUGFIXES:
 233 ==> 481735 - Program crashes when trying to open an image with parameter luminosity in metadata.
 234 ==> 481830 - digiKam does not read collection in SMB share mounted with smb4k.
 235 ==> 480134 - Freeze (loop ?) when right click on an image.
-236 ==> 
+236 ==> 482132 - When renaming an album, all collections' trees are expanded (windows and kde neon).
 237 ==> 
 238 ==> 
 239 ==> 
