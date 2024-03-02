@@ -63,24 +63,17 @@ class Q_DECL_HIDDEN PrintOptionsPage::Private : public Ui_PrintOptionsPage
 {
 public:
 
-    explicit Private()
-      : parent              (nullptr),
-        configDialogManager (nullptr),
-        colorManaged        (nullptr),
-        cmPreferences       (nullptr),
-        cmEnabled           (false)
-    {
-    }
+    Private() = default;
 
-    QWidget*        parent;
+    QWidget*        parent              = nullptr;
     QSize           imageSize;
     QButtonGroup    scaleGroup;
     QButtonGroup    positionGroup;
-    DConfigDlgMngr* configDialogManager;
+    DConfigDlgMngr* configDialogManager = nullptr;
     IccProfile      outputProfile;
-    QCheckBox*      colorManaged;
-    QPushButton*    cmPreferences;
-    bool            cmEnabled;
+    QCheckBox*      colorManaged        = nullptr;
+    QPushButton*    cmPreferences       = nullptr;
+    bool            cmEnabled           = false;
 
 public:
 

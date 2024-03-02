@@ -27,17 +27,14 @@ class Q_DECL_HIDDEN PrintConfigHelper
 {
     public:
 
-        PrintConfigHelper()
-            : q(nullptr)
-        {
-        }
+        PrintConfigHelper() = default;
 
         ~PrintConfigHelper()
         {
             delete q;
         }
 
-        PrintConfig* q;
+        PrintConfig* q = nullptr;
 };
 
 Q_GLOBAL_STATIC(PrintConfigHelper, s_globalPrintConfig)
