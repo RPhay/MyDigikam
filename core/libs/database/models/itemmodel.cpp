@@ -36,16 +36,7 @@ class Q_DECL_HIDDEN ItemModel::Private
 {
 public:
 
-    explicit Private()
-      : keepFilePathCache          (false),
-        sendRemovalSignals         (false),
-        preprocessor               (nullptr),
-        refreshing                 (false),
-        reAdding                   (false),
-        incrementalRefreshRequested(false),
-        incrementalUpdater         (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
@@ -55,19 +46,19 @@ public:
     QList<QVariant>                    extraValues;
     QMultiHash<qlonglong, int>         idHash;
 
-    bool                               keepFilePathCache;
+    bool                               keepFilePathCache            = false;
     QHash<QString, qlonglong>          filePathHash;
 
-    bool                               sendRemovalSignals;
+    bool                               sendRemovalSignals           = false;
 
-    QObject*                           preprocessor;
-    bool                               refreshing;
-    bool                               reAdding;
-    bool                               incrementalRefreshRequested;
+    QObject*                           preprocessor                 = nullptr;
+    bool                               refreshing                   = false;
+    bool                               reAdding                     = false;
+    bool                               incrementalRefreshRequested  = false;
 
     DatabaseFields::Set                watchFlags;
 
-    class ItemModelIncrementalUpdater* incrementalUpdater;
+    class ItemModelIncrementalUpdater* incrementalUpdater           = nullptr;
 
     ItemInfoList                       pendingInfos;
     QList<QVariant>                    pendingExtraValues;
@@ -84,6 +75,7 @@ public:
         if ((index.row() < 0) || (index.row() >= infos.size()))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Invalid index" << index;
+
             return false;
         }
 
@@ -110,14 +102,14 @@ public:
 
 // -------------------------------------------------------------------------------------
 
-typedef QPair<int, int> IntPair; // to make foreach macro happy
+typedef QPair<int, int> IntPair;        // to make foreach macro happy
 typedef QList<IntPair>  IntPairList;
 
 class Q_DECL_HIDDEN ItemModelIncrementalUpdater
 {
 public:
 
-    explicit ItemModelIncrementalUpdater(ItemModel::Private* d);
+    explicit ItemModelIncrementalUpdater(const ItemModel::Private* const d);
 
     void                  appendInfos(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues);
     void                  aboutToBeRemovedInModel(const IntPairList& aboutToBeRemoved);
@@ -826,12 +818,14 @@ void ItemModel::cleanSituationChecks()
         d->pendingInfos.clear();
         d->pendingExtraValues.clear();
         cleanSituationChecks();
+
         return;
     }
 
     if (d->incrementalRefreshRequested)
     {
         d->incrementalRefreshRequested = false;
+
         Q_EMIT readyForIncrementalRefresh();
     }
     else
@@ -853,6 +847,7 @@ void ItemModel::publiciseInfos(const QList<ItemInfo>& infos, const QList<QVarian
             );
 
     Q_EMIT imageInfosAboutToBeAdded(infos);
+
     const int firstNewIndex = d->infos.size();
     const int lastNewIndex  = d->infos.size() + infos.size() - 1;
     beginInsertRows(QModelIndex(), firstNewIndex, lastNewIndex);
@@ -872,6 +867,7 @@ void ItemModel::publiciseInfos(const QList<ItemInfo>& infos, const QList<QVarian
     }
 
     endInsertRows();
+
     Q_EMIT imageInfosAdded(infos);
 }
 
@@ -1052,7 +1048,6 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     QList<qlonglong>        removeFilePaths;
     typedef QPair<int, int> IntPair;            // to make foreach macro happy
 
-
     Q_FOREACH (const IntPair& pair, toRemove)
     {
         const int begin = pair.first  - offset;
@@ -1069,6 +1064,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         {
             // cppcheck-suppress knownEmptyContainer
             std::copy(d->infos.begin() + begin, d->infos.begin() + end, removedInfos.begin());
+
             Q_EMIT imageInfosAboutToBeRemoved(removedInfos);
         }
 
@@ -1095,6 +1091,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
                     removeFilePaths << it.key();
                     it = d->idHash.erase(it);
+
                     continue;
                 }
             }
@@ -1141,7 +1138,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
 // ---------------------------------------------------------------------------------
 
-ItemModelIncrementalUpdater::ItemModelIncrementalUpdater(ItemModel::Private* d)
+ItemModelIncrementalUpdater::ItemModelIncrementalUpdater(const ItemModel::Private* const d)
     : oldIds        (d->idHash),
       oldExtraValues(d->extraValues)
 {
@@ -1483,6 +1480,7 @@ void ItemModel::slotImageTagChange(const ImageTagChangeset& changeset)
     if (!items.isEmpty())
     {
         emitDataChangedForSelection(items);
+
         Q_EMIT imageTagChange(changeset, items);
     }
 }
