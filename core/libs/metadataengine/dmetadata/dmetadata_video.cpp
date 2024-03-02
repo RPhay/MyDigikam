@@ -83,7 +83,7 @@ namespace Digikam
  * Return the string match.
  * If 'xmpTags' is not empty, register XMP tags value with string.
  */
-QString s_setXmpTagStringFromEntry(DMetadata* const meta,
+QString s_setXmpTagStringFromEntry(const DMetadata* const meta,
                                    const QStringList& lst,
                                    const DMetadata::MetaDataMap& map,
                                    const QStringList& xmpTags = QStringList())

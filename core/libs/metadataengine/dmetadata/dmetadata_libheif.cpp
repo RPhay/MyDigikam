@@ -76,7 +76,7 @@ static heif_reader_grow_status heifQIODeviceMetaWait(int64_t target_size, void* 
     return heif_reader_grow_status_size_reached;
 }
 
-bool s_isHeifSuccess(struct heif_error* const error)
+bool s_isHeifSuccess(const struct heif_error* const error)
 {
     if (error->code == 0)
     {
