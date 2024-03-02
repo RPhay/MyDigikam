@@ -46,16 +46,13 @@ class Q_DECL_HIDDEN PrintHelper::Private
 
 public:
 
-    explicit Private()
-      : parent(nullptr)
-    {
-    }
+    Private() = default;
 
-    QWidget* parent;
+    QWidget* parent = nullptr;
 
 public:
 
-    QSize adjustSize(PrintOptionsPage* const optionsPage,
+    QSize adjustSize(const PrintOptionsPage* const optionsPage,
                      const DImg& doc,
                      int printerResolution,
                      const QSize& viewportSize)
@@ -102,7 +99,7 @@ public:
         return size;
     }
 
-    QPoint adjustPosition(PrintOptionsPage* const optionsPage,
+    QPoint adjustPosition(const PrintOptionsPage* const optionsPage,
                           const QSize& imageSize,
                           const QSize& viewportSize)
     {
@@ -139,7 +136,7 @@ public:
         return QPoint(posX, posY);
     }
 
-    void adjustImage(PrintOptionsPage* const optionsPage,
+    void adjustImage(const PrintOptionsPage* const optionsPage,
                      const DImg& img)
     {
         if (optionsPage->colorManaged())
