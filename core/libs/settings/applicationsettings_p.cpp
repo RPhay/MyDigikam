@@ -232,7 +232,6 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       updateWithDebug                                   (false),
       sidebarTitleStyle                                 (DMultiTabBar::AllIconsText),
       albumSortRole                                     (ApplicationSettings::ByFolder),
-      albumSortChanged                                  (false),
       imageSortOrder                                    (0),
       imageSorting                                      (0),
       imageSeparationMode                               (0),
@@ -374,7 +373,6 @@ void ApplicationSettings::Private::init()
 
     syncToDigikam                                     = false;
     syncToBaloo                                       = false;
-    albumSortChanged                                  = false;
 
     faceDetectionAccuracy                             = 0.7;
     faceDetectionYoloV3                               = false;

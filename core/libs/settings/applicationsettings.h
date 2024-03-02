@@ -165,9 +165,6 @@ public:
     void setAlbumSortRole(const AlbumSortRole role);
     AlbumSortRole getAlbumSortRole() const;
 
-    void setAlbumSortChanged(bool val);
-    bool getAlbumSortChanged() const;
-
     void setShowFolderTreeViewItemsCount(bool val);
     bool getShowFolderTreeViewItemsCount() const;
 

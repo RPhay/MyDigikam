@@ -315,7 +315,6 @@ public:
 
     /// album view settings
     ApplicationSettings::AlbumSortRole           albumSortRole;
-    bool                                         albumSortChanged;
 
     /// icon view settings
     int                                          imageSortOrder;

@@ -115,16 +115,6 @@ bool ApplicationSettings::getShowFolderTreeViewItemsCount() const
     return d->showFolderTreeViewItemsCount;
 }
 
-void ApplicationSettings::setAlbumSortChanged(bool val)
-{
-    d->albumSortChanged = val;
-}
-
-bool ApplicationSettings::getAlbumSortChanged() const
-{
-    return d->albumSortChanged;
-}
-
 void ApplicationSettings::setAlbumCategoryNames(const QStringList& list)
 {
     d->albumCategoryNames = list;
