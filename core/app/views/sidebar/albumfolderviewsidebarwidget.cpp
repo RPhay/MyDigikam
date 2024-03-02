@@ -119,6 +119,12 @@ void AlbumFolderViewSideBarWidget::applySettings()
     d->albumFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
 
+void AlbumFolderViewSideBarWidget::applyResorting()
+{
+    d->albumFolderView->setSortingEnabled(false);
+    d->albumFolderView->setSortingEnabled(true);
+}
+
 void AlbumFolderViewSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)
 {
     d->albumFolderView->setCurrentAlbums(album);
