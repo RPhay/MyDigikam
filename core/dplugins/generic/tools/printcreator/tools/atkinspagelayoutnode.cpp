@@ -31,11 +31,7 @@ AtkinsPageLayoutNode::AtkinsPageLayoutNode(double aspectRatio,
                                            int    index)
     : m_a(aspectRatio),
       m_e(relativeArea),
-      m_division(0),
-      m_type(TerminalNode),
-      m_index(index),
-      m_leftChild(nullptr),
-      m_rightChild(nullptr)
+      m_index(index)
 {
 }
 
@@ -43,10 +39,7 @@ AtkinsPageLayoutNode::AtkinsPageLayoutNode(AtkinsPageLayoutNode* const subtree,
                                            AtkinsPageLayoutNode* const terminalChild,
                                            bool horizontal,
                                            int  index)
-    : m_a(0),
-      m_e(0),
-      m_division(0),
-      m_type(horizontal ? HorizontalDivision : VerticalDivision),
+    : m_type(horizontal ? HorizontalDivision : VerticalDivision),
       m_index(index),
       m_leftChild(subtree),
       m_rightChild(terminalChild)
@@ -174,7 +167,7 @@ void AtkinsPageLayoutNode::computeDivisions()
     m_leftChild->computeDivisions();
     m_rightChild->computeDivisions();
 
-    if (m_type == VerticalDivision)        // side by side
+    if      (m_type == VerticalDivision)        // side by side
     {
         double leftDivisionRoot  = std::sqrt(m_leftChild->m_e  / m_leftChild->m_a);
         double rightDivisionRoot = std::sqrt(m_rightChild->m_e / m_rightChild->m_a);

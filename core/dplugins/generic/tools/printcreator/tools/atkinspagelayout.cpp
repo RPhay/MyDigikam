@@ -34,13 +34,10 @@ class Q_DECL_HIDDEN AtkinsPageLayout::Private
 {
 public:
 
-    explicit Private()
-      : tree(nullptr)
-    {
-    }
+    Private() = default;
 
     QMap<int, int>        indexMap;
-    AtkinsPageLayoutTree* tree;
+    AtkinsPageLayoutTree* tree = nullptr;
     QRectF                pageRect;
 };
 

@@ -68,7 +68,7 @@ public:
 
 private:
 
-    double absoluteArea(AtkinsPageLayoutNode* const node);
+    double absoluteArea(const AtkinsPageLayoutNode* const node);
 
     /**
      * Lays out a rectangle with given aspect ratio and absolute area inside the given
@@ -80,11 +80,11 @@ private:
 
 private:
 
-    AtkinsPageLayoutNode* m_root;
-    int                   m_count;
+    AtkinsPageLayoutNode* m_root              = nullptr;
+    int                   m_count             = 0;
 
-    double                m_aspectRatioPage;
-    double                m_absoluteAreaPage;
+    double                m_aspectRatioPage   = 0.0;
+    double                m_absoluteAreaPage  = 0.0;
 };
 
 } // Namespace Digikam

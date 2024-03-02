@@ -29,28 +29,19 @@ class Q_DECL_HIDDEN TemplateIcon::Private
 {
 public:
 
-    explicit Private()
-      : iconMargin(2),
-        scaleWidth(0.0),
-        scaleHeight(0.0),
-        rotate(false),
-        pixmap(nullptr),
-        painter(nullptr),
-        icon(nullptr)
-    {
-    }
+    Private() = default;
 
     QSize     paperSize;
     QSize     iconSize;
-    int       iconMargin;
+    int       iconMargin    = 2;
 
-    float     scaleWidth;
-    float     scaleHeight;
-    bool      rotate;
+    float     scaleWidth    = 0.0;
+    float     scaleHeight   = 0.0;
+    bool      rotate        = false;
 
-    QPixmap*  pixmap;
-    QPainter* painter;
-    QIcon*    icon;
+    QPixmap*  pixmap        = nullptr;
+    QPainter* painter       = nullptr;
+    QIcon*    icon          = nullptr;
 };
 
 TemplateIcon::TemplateIcon(int height, const QSize& template_size)

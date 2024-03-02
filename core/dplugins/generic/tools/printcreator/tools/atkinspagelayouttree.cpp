@@ -32,15 +32,12 @@ namespace DigikamGenericPrintCreatorPlugin
 
 AtkinsPageLayoutTree::AtkinsPageLayoutTree(double aspectRatioPage,
                                            double absoluteAreaPage)
-    : m_root(nullptr),
-      m_count(0),
-      m_aspectRatioPage(aspectRatioPage),
+    : m_aspectRatioPage(aspectRatioPage),
       m_absoluteAreaPage(absoluteAreaPage)
 {
 }
 
 AtkinsPageLayoutTree::AtkinsPageLayoutTree(const AtkinsPageLayoutTree& other)
-    : m_root(nullptr)
 {
     (*this) = other;
 }
@@ -75,6 +72,7 @@ int AtkinsPageLayoutTree::addImage(double aspectRatio,
                                           relativeArea,
                                           index);
         m_count++;
+
         return index;
     }
 
@@ -185,17 +183,17 @@ double AtkinsPageLayoutTree::score(AtkinsPageLayoutNode* const root,
     double maxRatioPage = root->aspectRatio() > m_aspectRatioPage ? root->aspectRatio()
                                                                   : m_aspectRatioPage;
 
-    return G() * (areaSum / root->relativeArea()) * (minRatioPage / maxRatioPage);
+    return (G() * (areaSum / root->relativeArea()) * (minRatioPage / maxRatioPage));
 }
 
 /// Section 2.2.2
 double AtkinsPageLayoutTree::G() const
 {
-    return 0.95 * 0.95;
+    return (0.95 * 0.95);
 }
 
 /// Section 2.2.2
-double AtkinsPageLayoutTree::absoluteArea(AtkinsPageLayoutNode* const node)
+double AtkinsPageLayoutTree::absoluteArea(const AtkinsPageLayoutNode* const node)
 {
     // min(a_pbb, a_page), max(a_pbb, a_page)
 

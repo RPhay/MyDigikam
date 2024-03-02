@@ -106,16 +106,16 @@ public:
 
 private:
 
-    double                m_a;        ///< aspect ratio
-    double                m_e;        ///< relative size
-    double                m_division;
+    double                m_a           = 0.0;        ///< aspect ratio
+    double                m_e           = 0.0;        ///< relative size
+    double                m_division    = 0.0;
 
-    Type                  m_type;
+    Type                  m_type        = TerminalNode;
 
-    int                   m_index;
+    int                   m_index       = 0;
 
-    AtkinsPageLayoutNode* m_leftChild;
-    AtkinsPageLayoutNode* m_rightChild;
+    AtkinsPageLayoutNode* m_leftChild   = nullptr;
+    AtkinsPageLayoutNode* m_rightChild  = nullptr;
 };
 
 } // Namespace Digikam
