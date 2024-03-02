@@ -36,6 +36,7 @@
 #include <QStandardPaths>
 #include <qplatformdefs.h>
 #include <QRegularExpression>
+#include <QProcessEnvironment>
 
 #ifdef HAVE_DBUS
 #   include <QDBusInterface>
@@ -674,6 +675,25 @@ QString DFileOperations::findExecutable(const QString& name)
                                          QSettings::NativeFormat);
 
     path = settings.value(QLatin1String("Default"), QString()).toString();
+
+    if (!path.isEmpty())
+    {
+        QStringList variables({ QLatin1String("SystemRoot"),
+                                QLatin1String("ProgramFiles"),
+                                QLatin1String("ProgramFiles(x86)") });
+        QProcessEnvironment env(QProcessEnvironment::systemEnvironment());
+
+        for (int i = 0 ; i < variables.size() ; ++i)
+        {
+            if (path.contains(QString::fromLatin1("%%1%").arg(variables.at(i))))
+            {
+                path.replace(QString::fromLatin1("%%1%").arg(variables.at(i)),
+                             env.value(variables.at(i)));
+            }
+        }
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found executable:" << path;
+    }
 
 #endif
 
