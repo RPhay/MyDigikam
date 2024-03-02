@@ -44,12 +44,11 @@ class Q_DECL_HIDDEN PTOFile::Private
 public:
 
     explicit Private(const QString& huginVersion)
-      : script(nullptr),
-        huginVersion(huginVersion)
+        : huginVersion(huginVersion)
     {
     }
 
-    pt_script*     script;
+    pt_script*     script       = nullptr;
     const QString& huginVersion;
 };
 

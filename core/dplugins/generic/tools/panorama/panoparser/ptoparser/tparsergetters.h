@@ -21,149 +21,149 @@
  * NOTE: any function name ending with "Ref" returns -1 if there are no such reference
  */
 
-int     panoScriptGetImagesCount(pt_script* script);
-int     panoScriptGetImagePrevCommentsCount(pt_script* script, int i);
-char*   panoScriptGetImageComment(pt_script* script, int i, int c);
+int     panoScriptGetImagesCount(const pt_script* const script);
+int     panoScriptGetImagePrevCommentsCount(const pt_script* const script, int i);
+char*   panoScriptGetImageComment(const pt_script* const script, int i, int c);
 
 /**
  * 0: Rectilinear, 1: Panoramic, 2: Circular fisheye, 3: FF fisheye, 4: equirectangular
  */
-int     panoScriptGetImageProjection(pt_script* script, int i);
-int     panoScriptGetImageWidth(pt_script* script, int i);
-int     panoScriptGetImageHeight(pt_script* script, int i);
-double  panoScriptGetImageHFOV(pt_script* script, int i);
-int     panoScriptGetImageHFOVRef(pt_script* script, int i);
-double  panoScriptGetImageYaw(pt_script* script, int i);
-double  panoScriptGetImagePitch(pt_script* script, int i);
-double  panoScriptGetImageRoll(pt_script* script, int i);
-double  panoScriptGetImageCoefA(pt_script* script, int i);
-int     panoScriptGetImageCoefARef(pt_script* script, int i);
-double  panoScriptGetImageCoefB(pt_script* script, int i);
-int     panoScriptGetImageCoefBRef(pt_script* script, int i);
-double  panoScriptGetImageCoefC(pt_script* script, int i);
-int     panoScriptGetImageCoefCRef(pt_script* script, int i);
-double  panoScriptGetImageCoefD(pt_script* script, int i);
-int     panoScriptGetImageCoefDRef(pt_script* script, int i);
-double  panoScriptGetImageCoefE(pt_script* script, int i);
-int     panoScriptGetImageCoefERef(pt_script* script, int i);
-double  panoScriptGetImageSheerX(pt_script* script, int i);
-int     panoScriptGetImageSheerXRef(pt_script* script, int i);
-double  panoScriptGetImageSheerY(pt_script* script, int i);
-int     panoScriptGetImageSheerYRef(pt_script* script, int i);
-double  panoScriptGetImageExposure(pt_script* script, int i);
-int     panoScriptGetImageExposureRef(pt_script* script, int i);
-double  panoScriptGetImageWBRed(pt_script* script, int i);
-int     panoScriptGetImageWBRedRef(pt_script* script, int i);
-double  panoScriptGetImageWBBlue(pt_script* script, int i);
-int     panoScriptGetImageWBBlueRef(pt_script* script, int i);
-double  panoScriptGetImagePhotometricCoeffA(pt_script* script, int i);
-int     panoScriptGetImagePhotometricCoeffARef(pt_script* script, int i);
-double  panoScriptGetImagePhotometricCoeffB(pt_script* script, int i);
-int     panoScriptGetImagePhotometricCoeffBRef(pt_script* script, int i);
-double  panoScriptGetImagePhotometricCoeffC(pt_script* script, int i);
-int     panoScriptGetImagePhotometricCoeffCRef(pt_script* script, int i);
-double  panoScriptGetImagePhotometricCoeffD(pt_script* script, int i);
-int     panoScriptGetImagePhotometricCoeffDRef(pt_script* script, int i);
-double  panoScriptGetImagePhotometricCoeffE(pt_script* script, int i);
-int     panoScriptGetImagePhotometricCoeffERef(pt_script* script, int i);
+int     panoScriptGetImageProjection(const pt_script* const script, int i);
+int     panoScriptGetImageWidth(const pt_script* const script, int i);
+int     panoScriptGetImageHeight(const pt_script* const script, int i);
+double  panoScriptGetImageHFOV(const pt_script* const script, int i);
+int     panoScriptGetImageHFOVRef(const pt_script* const script, int i);
+double  panoScriptGetImageYaw(const pt_script* const script, int i);
+double  panoScriptGetImagePitch(const pt_script* const script, int i);
+double  panoScriptGetImageRoll(const pt_script* const script, int i);
+double  panoScriptGetImageCoefA(const pt_script* const script, int i);
+int     panoScriptGetImageCoefARef(const pt_script* const script, int i);
+double  panoScriptGetImageCoefB(const pt_script* const script, int i);
+int     panoScriptGetImageCoefBRef(const pt_script* const script, int i);
+double  panoScriptGetImageCoefC(const pt_script* const script, int i);
+int     panoScriptGetImageCoefCRef(const pt_script* const script, int i);
+double  panoScriptGetImageCoefD(const pt_script* const script, int i);
+int     panoScriptGetImageCoefDRef(const pt_script* const script, int i);
+double  panoScriptGetImageCoefE(const pt_script* const script, int i);
+int     panoScriptGetImageCoefERef(const pt_script* const script, int i);
+double  panoScriptGetImageSheerX(const pt_script* const script, int i);
+int     panoScriptGetImageSheerXRef(const pt_script* const script, int i);
+double  panoScriptGetImageSheerY(const pt_script* const script, int i);
+int     panoScriptGetImageSheerYRef(const pt_script* const script, int i);
+double  panoScriptGetImageExposure(const pt_script* const script, int i);
+int     panoScriptGetImageExposureRef(const pt_script* const script, int i);
+double  panoScriptGetImageWBRed(const pt_script* const script, int i);
+int     panoScriptGetImageWBRedRef(const pt_script* const script, int i);
+double  panoScriptGetImageWBBlue(const pt_script* const script, int i);
+int     panoScriptGetImageWBBlueRef(const pt_script* const script, int i);
+double  panoScriptGetImagePhotometricCoeffA(const pt_script* const script, int i);
+int     panoScriptGetImagePhotometricCoeffARef(const pt_script* const script, int i);
+double  panoScriptGetImagePhotometricCoeffB(const pt_script* const script, int i);
+int     panoScriptGetImagePhotometricCoeffBRef(const pt_script* const script, int i);
+double  panoScriptGetImagePhotometricCoeffC(const pt_script* const script, int i);
+int     panoScriptGetImagePhotometricCoeffCRef(const pt_script* const script, int i);
+double  panoScriptGetImagePhotometricCoeffD(const pt_script* const script, int i);
+int     panoScriptGetImagePhotometricCoeffDRef(const pt_script* const script, int i);
+double  panoScriptGetImagePhotometricCoeffE(const pt_script* const script, int i);
+int     panoScriptGetImagePhotometricCoeffERef(const pt_script* const script, int i);
 
 /**
  * Bit0: radial, Bit1: flatfield, Bit2: proportional
  */
-int     panoScriptGetImageVignettingMode(pt_script* script, int i);
-int     panoScriptGetImageVignettingModeRef(pt_script* script, int i);
-double  panoScriptGetImageVignettingCoeffA(pt_script* script, int i);
-int     panoScriptGetImageVignettingCoeffARef(pt_script* script, int i);
-double  panoScriptGetImageVignettingCoeffB(pt_script* script, int i);
-int     panoScriptGetImageVignettingCoeffBRef(pt_script* script, int i);
-double  panoScriptGetImageVignettingCoeffC(pt_script* script, int i);
-int     panoScriptGetImageVignettingCoeffCRef(pt_script* script, int i);
-double  panoScriptGetImageVignettingCoeffD(pt_script* script, int i);
-int     panoScriptGetImageVignettingCoeffDRef(pt_script* script, int i);
-double  panoScriptGetImageVignettingCoeffX(pt_script* script, int i);
-int     panoScriptGetImageVignettingCoeffXRef(pt_script* script, int i);
-double  panoScriptGetImageVignettingCoeffY(pt_script* script, int i);
-int     panoScriptGetImageVignettingCoeffYRef(pt_script* script, int i);
-char*   panoScriptGetImageVignettingFlatField(pt_script* script, int i);
-double  panoScriptGetImageCameraTranslationX(pt_script* script, int i);
-double  panoScriptGetImageCameraTranslationY(pt_script* script, int i);
-double  panoScriptGetImageCameraTranslationZ(pt_script* script, int i);
-double  panoScriptGetImageProjectionPlaneYaw(pt_script* script, int i);
-double  panoScriptGetImageProjectionPlanePitch(pt_script* script, int i);
-char*   panoScriptGetImageName(pt_script* script, int i);
-int     panoScriptGetImageCropLeft(pt_script* script, int i);
-int     panoScriptGetImageCropRight(pt_script* script, int i);
-int     panoScriptGetImageCropTop(pt_script* script, int i);
-int     panoScriptGetImageCropBottom(pt_script* script, int i);
-int     panoScriptGetImageStack(pt_script* script, int i);
-int     panoScriptGetImageStackRef(pt_script* script, int i);
+int     panoScriptGetImageVignettingMode(const pt_script* const script, int i);
+int     panoScriptGetImageVignettingModeRef(const pt_script* const script, int i);
+double  panoScriptGetImageVignettingCoeffA(const pt_script* const script, int i);
+int     panoScriptGetImageVignettingCoeffARef(const pt_script* const script, int i);
+double  panoScriptGetImageVignettingCoeffB(const pt_script* const script, int i);
+int     panoScriptGetImageVignettingCoeffBRef(const pt_script* const script, int i);
+double  panoScriptGetImageVignettingCoeffC(const pt_script* const script, int i);
+int     panoScriptGetImageVignettingCoeffCRef(const pt_script* const script, int i);
+double  panoScriptGetImageVignettingCoeffD(const pt_script* const script, int i);
+int     panoScriptGetImageVignettingCoeffDRef(const pt_script* const script, int i);
+double  panoScriptGetImageVignettingCoeffX(const pt_script* const script, int i);
+int     panoScriptGetImageVignettingCoeffXRef(const pt_script* const script, int i);
+double  panoScriptGetImageVignettingCoeffY(const pt_script* const script, int i);
+int     panoScriptGetImageVignettingCoeffYRef(const pt_script* const script, int i);
+char*   panoScriptGetImageVignettingFlatField(const pt_script* const script, int i);
+double  panoScriptGetImageCameraTranslationX(const pt_script* const script, int i);
+double  panoScriptGetImageCameraTranslationY(const pt_script* const script, int i);
+double  panoScriptGetImageCameraTranslationZ(const pt_script* const script, int i);
+double  panoScriptGetImageProjectionPlaneYaw(const pt_script* const script, int i);
+double  panoScriptGetImageProjectionPlanePitch(const pt_script* const script, int i);
+char*   panoScriptGetImageName(const pt_script* const script, int i);
+int     panoScriptGetImageCropLeft(const pt_script* const script, int i);
+int     panoScriptGetImageCropRight(const pt_script* const script, int i);
+int     panoScriptGetImageCropTop(const pt_script* const script, int i);
+int     panoScriptGetImageCropBottom(const pt_script* const script, int i);
+int     panoScriptGetImageStack(const pt_script* const script, int i);
+int     panoScriptGetImageStackRef(const pt_script* const script, int i);
 
-int     panoScriptGetPanoPrevCommentsCount(pt_script* script);
-char*   panoScriptGetPanoComment(pt_script* script, int c);
-int     panoScriptGetPanoWidth(pt_script* script);
-int     panoScriptGetPanoHeight(pt_script* script);
-int     panoScriptGetPanoCropLeft(pt_script* script);
-int     panoScriptGetPanoCropRight(pt_script* script);
-int     panoScriptGetPanoCropTop(pt_script* script);
-int     panoScriptGetPanoCropBottom(pt_script* script);
-int     panoScriptGetPanoProjection(pt_script* script);
-double  panoScriptGetPanoProjectionParmsCount(pt_script* script);
-double  panoScriptGetPanoProjectionParm(pt_script* script, int index);
-double  panoScriptGetPanoHFOV(pt_script* script);
-int     panoScriptGetPanoOutputFormat(pt_script* script);           /* 0: PNG, 1: TIFF, 2: TIFF_m, 3: TIFF_multilayer, 4: JPEG */
-int     panoScriptGetPanoOutputCompression(pt_script* script);      /* 0: PANO_NONE, 1: LZW, 2: DEFLATE */
-int     panoScriptGetPanoOutputCropped(pt_script* script);
-int     panoScriptGetPanoOutputSaveCoordinates(pt_script* script);
-int     panoScriptGetPanoOutputQuality(pt_script* script);
-int     panoScriptGetPanoIsHDR(pt_script* script);
-int     panoScriptGetPanoBitDepth(pt_script* script);               /* 0: 8bit, 1: 16bits,2: float */
-double  panoScriptGetPanoExposure(pt_script* script);
-int     panoScriptGetPanoImageReference(pt_script* script);
+int     panoScriptGetPanoPrevCommentsCount(const pt_script* const script);
+char*   panoScriptGetPanoComment(const pt_script* const script, int c);
+int     panoScriptGetPanoWidth(const pt_script* const script);
+int     panoScriptGetPanoHeight(const pt_script* const script);
+int     panoScriptGetPanoCropLeft(const pt_script* const script);
+int     panoScriptGetPanoCropRight(const pt_script* const script);
+int     panoScriptGetPanoCropTop(const pt_script* const script);
+int     panoScriptGetPanoCropBottom(const pt_script* const script);
+int     panoScriptGetPanoProjection(const pt_script* const script);
+double  panoScriptGetPanoProjectionParmsCount(const pt_script* const script);
+double  panoScriptGetPanoProjectionParm(const pt_script* const script, int index);
+double  panoScriptGetPanoHFOV(const pt_script* const script);
+int     panoScriptGetPanoOutputFormat(const pt_script* const script);           /* 0: PNG, 1: TIFF, 2: TIFF_m, 3: TIFF_multilayer, 4: JPEG */
+int     panoScriptGetPanoOutputCompression(const pt_script* const script);      /* 0: PANO_NONE, 1: LZW, 2: DEFLATE */
+int     panoScriptGetPanoOutputCropped(const pt_script* const script);
+int     panoScriptGetPanoOutputSaveCoordinates(const pt_script* const script);
+int     panoScriptGetPanoOutputQuality(const pt_script* const script);
+int     panoScriptGetPanoIsHDR(const pt_script* const script);
+int     panoScriptGetPanoBitDepth(const pt_script* const script);               /* 0: 8bit, 1: 16bits,2: float */
+double  panoScriptGetPanoExposure(const pt_script* const script);
+int     panoScriptGetPanoImageReference(const pt_script* const script);
 
-int     panoScriptGetOptimizePrevCommentsCount(pt_script* script);
-char*   panoScriptGetOptimizeComment(pt_script* script, int c);
-double  panoScriptGetOptimizeGamma(pt_script* script);
+int     panoScriptGetOptimizePrevCommentsCount(const pt_script* const script);
+char*   panoScriptGetOptimizeComment(const pt_script* const script, int c);
+double  panoScriptGetOptimizeGamma(const pt_script* const script);
 
 /**
  * 0: poly3, 1: spline16, 2: spline36, 3: sinc256, 4: spline64, 5: bilinear, 6: nearest neighbor, 7: sinc1024
  */
-int     panoScriptGetOptimizeInterpolator(pt_script* script);
-int     panoScriptGetOptimizeSpeedUp(pt_script* script);            /* 0: no speedup, 1: medium speedup, 2: maximum speedup */
-double  panoScriptGetOptimizeHuberSigma(pt_script* script);
-double  panoScriptGetOptimizePhotometricHuberSigma(pt_script* script);
+int     panoScriptGetOptimizeInterpolator(const pt_script* const script);
+int     panoScriptGetOptimizeSpeedUp(const pt_script* const script);            /* 0: no speedup, 1: medium speedup, 2: maximum speedup */
+double  panoScriptGetOptimizeHuberSigma(const pt_script* const script);
+double  panoScriptGetOptimizePhotometricHuberSigma(const pt_script* const script);
 
-int     panoScriptGetVarsToOptimizeCount(pt_script* script);
-int     panoScriptGetVarsToOptimizePrevCommentCount(pt_script* script, int v);
-char*   panoScriptGetVarsToOptimizeComment(pt_script* script, int v, int c);
-int     panoScriptGetVarsToOptimizeImageId(pt_script* script, int v);
+int     panoScriptGetVarsToOptimizeCount(const pt_script* const script);
+int     panoScriptGetVarsToOptimizePrevCommentCount(const pt_script* const script, int v);
+char*   panoScriptGetVarsToOptimizeComment(const pt_script* const script, int v, int c);
+int     panoScriptGetVarsToOptimizeImageId(const pt_script* const script, int v);
 
 /**
  * 0-4: Lens A-E, 5: hfov, 6-8: yaw / pitch / roll, 9: exposure, 10-11: WB (red / blue)
  * 12-15: Vignetting A-D, 16-17: Vignetting X-Y, 18-22: photometric A-E, 23: unknown
  */
-int     panoScriptGetVarsToOptimizeName(pt_script* script, int v);
+int     panoScriptGetVarsToOptimizeName(const pt_script* const script, int v);
 
-int     panoScriptGetCtrlPointCount(pt_script* script);
-int     panoScriptGetCtrlPointPrevCommentCount(pt_script* script, int cp);
-char*   panoScriptGetCtrlPointComment(pt_script* script, int cp, int c);
-int     panoScriptGetCtrlPointImage1(pt_script* script, int cp);
-int     panoScriptGetCtrlPointImage2(pt_script* script, int cp);
-double  panoScriptGetCtrlPointX1(pt_script* script, int cp);
-double  panoScriptGetCtrlPointX2(pt_script* script, int cp);
-double  panoScriptGetCtrlPointY1(pt_script* script, int cp);
-double  panoScriptGetCtrlPointY2(pt_script* script, int cp);
-int     panoScriptGetCtrlPointType(pt_script* script, int cp);
+int     panoScriptGetCtrlPointCount(const pt_script* const script);
+int     panoScriptGetCtrlPointPrevCommentCount(const pt_script* const script, int cp);
+char*   panoScriptGetCtrlPointComment(const pt_script* const script, int cp, int c);
+int     panoScriptGetCtrlPointImage1(const pt_script* const script, int cp);
+int     panoScriptGetCtrlPointImage2(const pt_script* const script, int cp);
+double  panoScriptGetCtrlPointX1(const pt_script* const script, int cp);
+double  panoScriptGetCtrlPointX2(const pt_script* const script, int cp);
+double  panoScriptGetCtrlPointY1(const pt_script* const script, int cp);
+double  panoScriptGetCtrlPointY2(const pt_script* const script, int cp);
+int     panoScriptGetCtrlPointType(const pt_script* const script, int cp);
 
-int     panoScriptGetMaskCount(pt_script* script);
-int     panoScriptGetMaskPrevCommentCount(pt_script* script, int m);
-char*   panoScriptGetMaskComment(pt_script* script, int m, int c);
-int     panoScriptGetMaskImage(pt_script* script, int m);
-int     panoScriptGetMaskType(pt_script* script, int m);            /* bit0: positive, bit1: stackaware, bit2(only): negativelens */
-int     panoScriptGetMaskPointCount(pt_script* script, int m);
-int     panoScriptGetMaskPointX(pt_script* script, int m, int p);
-int     panoScriptGetMaskPointY(pt_script* script, int m, int p);
+int     panoScriptGetMaskCount(const pt_script* const script);
+int     panoScriptGetMaskPrevCommentCount(const pt_script* const script, int m);
+char*   panoScriptGetMaskComment(const pt_script* const script, int m, int c);
+int     panoScriptGetMaskImage(const pt_script* const script, int m);
+int     panoScriptGetMaskType(const pt_script* const script, int m);            /* bit0: positive, bit1: stackaware, bit2(only): negativelens */
+int     panoScriptGetMaskPointCount(const pt_script* const script, int m);
+int     panoScriptGetMaskPointX(const pt_script* const script, int m, int p);
+int     panoScriptGetMaskPointY(const pt_script* const script, int m, int p);
 
-int     panoScriptGetEndingCommentCount(pt_script* script);
-char*   panoScriptGetEndingComment(pt_script* script, int c);
+int     panoScriptGetEndingCommentCount(const pt_script* const script);
+char*   panoScriptGetEndingComment(const pt_script* const script, int c);
 
 #endif /* DIGIKAM_T_PARSER_GETTERS_H */
