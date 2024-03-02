@@ -33,17 +33,12 @@ class Q_DECL_HIDDEN SyncJob::Private
 {
 public:
 
-    explicit Private()
-      : waitingLoop(nullptr),
-        thumbnail  (nullptr),
-        album      (nullptr)
-    {
-    }
+    Private() = default;
 
-    QEventLoop* waitingLoop;
-    QPixmap*    thumbnail;
+    QEventLoop* waitingLoop = nullptr;
+    QPixmap*    thumbnail   = nullptr;
 
-    Album*      album;
+    Album*      album       = nullptr;
 };
 
 SyncJob::SyncJob()

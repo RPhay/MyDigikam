@@ -84,7 +84,7 @@ QString ItemGPS::saveChanges()
         }
     }
 
-    if (p.shouldRemoveCoordinates)
+    if      (p.shouldRemoveCoordinates)
     {
         pos.remove();
     }

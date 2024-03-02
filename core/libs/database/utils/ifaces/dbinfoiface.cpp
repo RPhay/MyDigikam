@@ -65,32 +65,24 @@ class Q_DECL_HIDDEN DBInfoIface::Private
 {
 public:
 
-    explicit Private()
-      : albumManager    (AlbumManager::instance()),
-        albumsChooser   (nullptr),
-        albumSelector   (nullptr),
-        operationType   (ApplicationSettings::Unspecified),
-        withGroupedIsSet(false),
-        withGrouped     (false)
-    {
-    }
+    Private() = default;
 
-    AlbumManager*                      albumManager;
-    AlbumSelectTabs*                   albumsChooser;
-    AlbumSelectWidget*                 albumSelector;
+    AlbumManager*                      albumManager     = AlbumManager::instance();
+    AlbumSelectTabs*                   albumsChooser    = nullptr;
+    AlbumSelectWidget*                 albumSelector    = nullptr;
 
     QList<QUrl>                        itemUrls;
 
-    ApplicationSettings::OperationType operationType;
-    bool                               withGroupedIsSet;
-    bool                               withGrouped;
+    ApplicationSettings::OperationType operationType    = ApplicationSettings::Unspecified;
+    bool                               withGroupedIsSet = false;
+    bool                               withGrouped      = false;
 
 public:
 
     /**
      * get the images from the Physical album in database and return the items found.
      */
-    QList<QUrl> imagesFromPAlbum(PAlbum* const album) const
+    QList<QUrl> imagesFromPAlbum(const PAlbum* const album) const
     {
         // get the images from the database and return the items found
 
@@ -144,7 +136,7 @@ public:
     /**
      * get the images from the Tags album in database and return the items found.
      */
-    QList<QUrl> imagesFromTAlbum(TAlbum* const album) const
+    QList<QUrl> imagesFromTAlbum(const TAlbum* const album) const
     {
         QStringList list = CoreDbAccess().db()->getItemURLsInTag(album->id());
         QList<QUrl> urlList;
@@ -164,7 +156,7 @@ public:
     /**
      * get the images from the search album in database and return the items found.
      */
-    QList<QUrl> imagesFromSAlbum(SAlbum* const album) const
+    QList<QUrl> imagesFromSAlbum(const SAlbum* const album) const
     {
         QList<QUrl> urlList;
         CoreDbNameFilter nameFilter(ApplicationSettings::instance()->getAllFileFilter());
