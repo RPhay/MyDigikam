@@ -103,7 +103,7 @@
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_GEOLOCATION
-#include "gpssearchsidebarwidget.h"
+#   include "gpssearchsidebarwidget.h"
 #   include "mapwidgetview.h"
 #endif // HAVE_GEOLOCATION
 
@@ -114,51 +114,7 @@ class Q_DECL_HIDDEN ItemIconView::Private
 {
 public:
 
-    explicit Private()
-      : useAlbumHistory         (false),
-        initialAlbumID          (0),
-        thumbSize               (ThumbnailSize::Medium),
-        dockArea                (nullptr),
-        splitter                (nullptr),
-        selectionTimer          (nullptr),
-        thumbSizeTimer          (nullptr),
-        msgNotifyTimer          (nullptr),
-        albumFolderSideBar      (nullptr),
-        tagViewSideBar          (nullptr),
-        labelsSideBar           (nullptr),
-        dateViewSideBar         (nullptr),
-        timelineSideBar         (nullptr),
-        searchSideBar           (nullptr),
-        fuzzySearchSideBar      (nullptr),
-
-#ifdef HAVE_GEOLOCATION
-
-        gpsSearchSideBar        (nullptr),
-        mapView                 (nullptr),
-
-#endif // HAVE_GEOLOCATION
-
-        peopleSideBar           (nullptr),
-        parent                  (nullptr),
-        iconView                (nullptr),
-        tableView               (nullptr),
-        trashView               (nullptr),
-        utilities               (nullptr),
-        albumManager            (nullptr),
-        albumHistory            (nullptr),
-        stackedView             (nullptr),
-        lastViewMode            (StackedView::IconViewMode),
-        albumModificationHelper (nullptr),
-        tagModificationHelper   (nullptr),
-        searchModificationHelper(nullptr),
-        leftSideBar             (nullptr),
-        rightSideBar            (nullptr),
-        filterWidget            (nullptr),
-        modelCollection         (nullptr),
-        labelsSearchHandler     (nullptr),
-        errorWidget             (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
@@ -189,7 +145,7 @@ public:
         return title;
     }
 
-    void addPageUpDownActions(ItemIconView* const q, QWidget* const w)
+    void addPageUpDownActions(const ItemIconView* const q, QWidget* const w)
     {
         defineShortcut(w, Qt::Key_PageDown, q, SLOT(slotNextItem()));
         defineShortcut(w, Qt::Key_Down,     q, SLOT(slotNextItem()));
@@ -202,61 +158,61 @@ public:
 
 public:
 
-    bool                          useAlbumHistory;
+    bool                          useAlbumHistory           = false;
 
-    int                           initialAlbumID;
-    int                           thumbSize;
+    int                           initialAlbumID            = 0;
+    int                           thumbSize                 = ThumbnailSize::Medium;
 
-    QMainWindow*                  dockArea;
+    QMainWindow*                  dockArea                  = nullptr;
 
-    SidebarSplitter*              splitter;
+    SidebarSplitter*              splitter                  = nullptr;
 
-    QTimer*                       selectionTimer;
-    QTimer*                       thumbSizeTimer;
-    QTimer*                       msgNotifyTimer;
+    QTimer*                       selectionTimer            = nullptr;
+    QTimer*                       thumbSizeTimer            = nullptr;
+    QTimer*                       msgNotifyTimer            = nullptr;
 
     // left side bar
 
-    AlbumFolderViewSideBarWidget* albumFolderSideBar;
-    TagViewSideBarWidget*         tagViewSideBar;
-    LabelsSideBarWidget*          labelsSideBar;
-    DateFolderViewSideBarWidget*  dateViewSideBar;
-    TimelineSideBarWidget*        timelineSideBar;
-    SearchSideBarWidget*          searchSideBar;
-    FuzzySearchSideBarWidget*     fuzzySearchSideBar;
+    AlbumFolderViewSideBarWidget* albumFolderSideBar        = nullptr;
+    TagViewSideBarWidget*         tagViewSideBar            = nullptr;
+    LabelsSideBarWidget*          labelsSideBar             = nullptr;
+    DateFolderViewSideBarWidget*  dateViewSideBar           = nullptr;
+    TimelineSideBarWidget*        timelineSideBar           = nullptr;
+    SearchSideBarWidget*          searchSideBar             = nullptr;
+    FuzzySearchSideBarWidget*     fuzzySearchSideBar        = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
-    GPSSearchSideBarWidget*       gpsSearchSideBar;
-    MapWidgetView*                mapView;
+    GPSSearchSideBarWidget*       gpsSearchSideBar          = nullptr;
+    MapWidgetView*                mapView                   = nullptr;
 
 #endif // HAVE_GEOLOCATION
 
-    PeopleSideBarWidget*          peopleSideBar;
-    DigikamApp*                   parent;
-    DigikamItemView*              iconView;
-    TableView*                    tableView;
-    TrashView*                    trashView;
-    ItemViewUtilities*            utilities;
-    AlbumManager*                 albumManager;
-    AlbumHistory*                 albumHistory;
-    StackedView*                  stackedView;
-    StackedView::StackedViewMode  lastViewMode;
+    PeopleSideBarWidget*          peopleSideBar             = nullptr;
+    DigikamApp*                   parent                    = nullptr;
+    DigikamItemView*              iconView                  = nullptr;
+    TableView*                    tableView                 = nullptr;
+    TrashView*                    trashView                 = nullptr;
+    ItemViewUtilities*            utilities                 = nullptr;
+    AlbumManager*                 albumManager              = nullptr;
+    AlbumHistory*                 albumHistory              = nullptr;
+    StackedView*                  stackedView               = nullptr;
+    StackedView::StackedViewMode  lastViewMode              = StackedView::IconViewMode;
 
-    AlbumModificationHelper*      albumModificationHelper;
-    TagModificationHelper*        tagModificationHelper;
-    SearchModificationHelper*     searchModificationHelper;
+    AlbumModificationHelper*      albumModificationHelper   = nullptr;
+    TagModificationHelper*        tagModificationHelper     = nullptr;
+    SearchModificationHelper*     searchModificationHelper  = nullptr;
 
-    Sidebar*                      leftSideBar;
-    ItemPropertiesSideBarDB*      rightSideBar;
+    Sidebar*                      leftSideBar               = nullptr;
+    ItemPropertiesSideBarDB*      rightSideBar              = nullptr;
 
-    FilterSideBarWidget*          filterWidget;
+    FilterSideBarWidget*          filterWidget              = nullptr;
 
     QList<SidebarWidget*>         leftSideBarWidgets;
 
-    DModelFactory*                modelCollection;
-    AlbumLabelsSearchHandler*     labelsSearchHandler;
-    DNotificationWidget*          errorWidget;
+    DModelFactory*                modelCollection           = nullptr;
+    AlbumLabelsSearchHandler*     labelsSearchHandler       = nullptr;
+    DNotificationWidget*          errorWidget               = nullptr;
 };
 
 } // namespace Digikam
