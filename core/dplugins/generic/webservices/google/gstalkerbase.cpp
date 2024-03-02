@@ -45,7 +45,7 @@ public:
         tokenUrl  (QLatin1String("https://accounts.google.com/o/oauth2/token")),
         identity  (QLatin1String("c3d7cXF2c3xxeXh6YCYoNDQ1Izs9PzU7MzsSFAhVFVNeXQ8a"
                                  "HQYCHF5FARAQWhQGBwtXHV9eVV9RQEVSSlouLDchKzJpKyYn")),
-        sharedKey (QLatin1String("KCsKDxEICnwuLQkUJBorISQTKTYmZC8v")),
+        sharedKey (QLatin1String("Bg0AFxUean8WJi8UOAN9MWMwFAJnBxwvEHcVGBE+DggwPQs=")),
         netMngr   (nullptr)
     {
     }
