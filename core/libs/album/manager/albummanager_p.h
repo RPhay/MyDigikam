@@ -125,7 +125,7 @@ public:
 
 public:
 
-    int     albumRootId;
+    int     albumRootId = -1;
     QString albumPath;
 };
 
@@ -142,33 +142,37 @@ class Q_DECL_HIDDEN AlbumManager::Private
 {
 public:
 
-    explicit Private();
+    Private() = default;
 
-    bool                        changed;
-    bool                        hasPriorizedDbPath;
+    QString labelForAlbumRootAlbum(const CollectionLocation& location);
 
-    bool                        showOnlyAvailableAlbums;
+public:
 
-    int                         longTimeMessageBoxResult;
-    int                         askMergeMessageBoxResult;
+    bool                        changed                     = false;
+    bool                        hasPriorizedDbPath          = false;
 
-    AlbumsDBJobsThread*         albumListJob;
-    DatesDBJobsThread*          dateListJob;
-    TagsDBJobsThread*           tagListJob;
-    TagsDBJobsThread*           personListJob;
+    bool                        showOnlyAvailableAlbums     = false;
+
+    int                         longTimeMessageBoxResult    = -1;
+    int                         askMergeMessageBoxResult    = -1;
+
+    AlbumsDBJobsThread*         albumListJob                = nullptr;
+    DatesDBJobsThread*          dateListJob                 = nullptr;
+    TagsDBJobsThread*           tagListJob                  = nullptr;
+    TagsDBJobsThread*           personListJob               = nullptr;
 
 
-    AlbumWatch*                 albumWatch;
+    AlbumWatch*                 albumWatch                  = nullptr;
 
-    PAlbum*                     rootPAlbum;
-    TAlbum*                     rootTAlbum;
-    DAlbum*                     rootDAlbum;
-    SAlbum*                     rootSAlbum;
+    PAlbum*                     rootPAlbum                  = nullptr;
+    TAlbum*                     rootTAlbum                  = nullptr;
+    DAlbum*                     rootDAlbum                  = nullptr;
+    SAlbum*                     rootSAlbum                  = nullptr;
 
     QHash<int, Album*>          allAlbumsIdHash;
     QHash<PAlbumPath, PAlbum*>  albumPathHash;
     QHash<int, PAlbum*>         albumRootAlbumHash;
-    Album*                      currentlyMovingAlbum;
+    Album*                      currentlyMovingAlbum        = nullptr;
 
     QMultiHash<Album*, Album**> guardedPointers;
 
@@ -177,14 +181,14 @@ public:
      */
     QList<Album*>               currentAlbums;
 
-    bool                        changingDB;
-    QTimer*                     scanPAlbumsTimer;
-    QTimer*                     scanTAlbumsTimer;
-    QTimer*                     scanSAlbumsTimer;
-    QTimer*                     scanDAlbumsTimer;
-    QTimer*                     updatePAlbumsTimer;
-    QTimer*                     albumItemCountTimer;
-    QTimer*                     tagItemCountTimer;
+    bool                        changingDB                  = false;
+    QTimer*                     scanPAlbumsTimer            = nullptr;
+    QTimer*                     scanTAlbumsTimer            = nullptr;
+    QTimer*                     scanSAlbumsTimer            = nullptr;
+    QTimer*                     scanDAlbumsTimer            = nullptr;
+    QTimer*                     updatePAlbumsTimer          = nullptr;
+    QTimer*                     albumItemCountTimer         = nullptr;
+    QTimer*                     tagItemCountTimer           = nullptr;
     QSet<int>                   changedPAlbums;
 
     QHash<int, int>             pAlbumsCount;
@@ -194,10 +198,6 @@ public:
     /// Unconfirmed face counts
     QHash<int, int>             uAlbumsCount;
     QList<int>                  toUpdatedFaces;
-
-public:
-
-    QString labelForAlbumRootAlbum(const CollectionLocation& location);
 };
 
 // -----------------------------------------------------------------------------------

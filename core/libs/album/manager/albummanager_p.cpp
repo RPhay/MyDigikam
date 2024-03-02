@@ -20,7 +20,6 @@ namespace Digikam
 {
 
 PAlbumPath::PAlbumPath()
-    : albumRootId(-1)
 {
 }
 
@@ -52,33 +51,6 @@ bool PAlbumPath::operator==(const PAlbumPath& other) const
 }
 
 // -----------------------------------------------------------------------------------
-
-AlbumManager::Private::Private()
-    : changed                 (false),
-      hasPriorizedDbPath      (false),
-      showOnlyAvailableAlbums (false),
-      longTimeMessageBoxResult(-1),
-      askMergeMessageBoxResult(-1),
-      albumListJob            (nullptr),
-      dateListJob             (nullptr),
-      tagListJob              (nullptr),
-      personListJob           (nullptr),
-      albumWatch              (nullptr),
-      rootPAlbum              (nullptr),
-      rootTAlbum              (nullptr),
-      rootDAlbum              (nullptr),
-      rootSAlbum              (nullptr),
-      currentlyMovingAlbum    (nullptr),
-      changingDB              (false),
-      scanPAlbumsTimer        (nullptr),
-      scanTAlbumsTimer        (nullptr),
-      scanSAlbumsTimer        (nullptr),
-      scanDAlbumsTimer        (nullptr),
-      updatePAlbumsTimer      (nullptr),
-      albumItemCountTimer     (nullptr),
-      tagItemCountTimer       (nullptr)
-{
-}
 
 QString AlbumManager::Private::labelForAlbumRootAlbum(const CollectionLocation& location)
 {
