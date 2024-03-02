@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-01 01:59+0000\n"
+"POT-Creation-Date: 2024-03-02 01:35+0000\n"
 "PO-Revision-Date: 2023-05-21 15:02+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1043,7 +1043,7 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:167
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:122
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:110
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
 #: core/utilities/import/items/importtooltipfiller.cpp:81
 #, kde-format
@@ -1128,7 +1128,7 @@ msgstr "Aperture/Focal:"
 #: core/app/items/utils/tooltipfiller.cpp:234
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
-#: core/libs/video/osd/frameosd.cpp:212
+#: core/libs/video/osd/frameosd.cpp:207
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
 #, kde-format
@@ -9784,7 +9784,7 @@ msgstr "Set here the new image height in pixels."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:211
 #: core/dplugins/editor/transform/resize/resizetool.cpp:371
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:161
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:149
 #, kde-format
 msgid "Width (%):"
 msgstr "Width (%):"
@@ -17999,7 +17999,7 @@ msgstr "Stream"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:215
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:261
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:79
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:75
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:117
 #, kde-format
 msgctxt "@label"
@@ -30879,114 +30879,114 @@ msgstr ""
 "x:%1\n"
 "y:%2"
 
-#: core/libs/dimg/filters/decorate/borderfilter.cpp:122
+#: core/libs/dimg/filters/decorate/borderfilter.cpp:117
 #, kde-format
 msgid "Border Tool"
 msgstr "Border Tool"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:124
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:112
 #, kde-format
 msgctxt "solid border type"
 msgid "Solid"
 msgstr "Solid"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:130
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:118
 #, kde-format
 msgctxt "beveled border type"
 msgid "Beveled"
 msgstr "Beveled"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:131
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:119
 #, kde-format
 msgid "Decorative Pine"
 msgstr "Decorative Pine"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:132
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:120
 #, kde-format
 msgid "Decorative Wood"
 msgstr "Decorative Wood"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:133
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:121
 #, kde-format
 msgid "Decorative Paper"
 msgstr "Decorative Paper"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:134
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #, kde-format
 msgid "Decorative Parquet"
 msgstr "Decorative Parquet"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:135
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:123
 #, kde-format
 msgid "Decorative Ice"
 msgstr "Decorative Ice"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:136
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:124
 #, kde-format
 msgid "Decorative Leaf"
 msgstr "Decorative Leaf"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:137
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:125
 #, kde-format
 msgid "Decorative Marble"
 msgstr "Decorative Marble"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:138
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:126
 #, kde-format
 msgid "Decorative Rain"
 msgstr "Decorative Rain"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:139
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:127
 #, kde-format
 msgid "Decorative Craters"
 msgstr "Decorative Craters"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:140
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:128
 #, kde-format
 msgid "Decorative Dried"
 msgstr "Decorative Dried"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:141
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:129
 #, kde-format
 msgid "Decorative Pink"
 msgstr "Decorative Pink"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:142
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:130
 #, kde-format
 msgid "Decorative Stone"
 msgstr "Decorative Stone"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:143
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:131
 #, kde-format
 msgid "Decorative Chalk"
 msgstr "Decorative Chalk"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:144
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:132
 #, kde-format
 msgid "Decorative Granite"
 msgstr "Decorative Granite"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:145
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:133
 #, kde-format
 msgid "Decorative Rock"
 msgstr "Decorative Rock"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:146
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:134
 #, kde-format
 msgid "Decorative Wall"
 msgstr "Decorative Wall"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:148
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:136
 #, kde-format
 msgid "Select the border type to add around the image here."
 msgstr "Select the border type to add around the image here."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:155
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:143
 #, kde-format
 msgid "Preserve Aspect Ratio"
 msgstr "Preserve Aspect Ratio"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:156
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:144
 #, kde-format
 msgid ""
 "Enable this option if you want to preserve the aspect ratio of image. If "
@@ -30997,69 +30997,69 @@ msgstr ""
 "enabled, the border width will be a percentage of the image size, else the "
 "border width will be in pixels."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:165
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:153
 #, kde-format
 msgid "Set here the border width as a percentage of the image size."
 msgstr "Set here the border width as a percentage of the image size."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:167
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:155
 #, kde-format
 msgid "Width (pixels):"
 msgstr "Width (pixels):"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:171
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:159
 #, kde-format
 msgid "Set here the border width in pixels to add around the image."
 msgstr "Set here the border width in pixels to add around the image."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:401
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:405
 #, kde-format
 msgctxt "first color for border effect"
 msgid "First:"
 msgstr "First:"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:402
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:406
 #, kde-format
 msgctxt "second color for border effect"
 msgid "Second:"
 msgstr "Second:"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:403
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:407
 #, kde-format
 msgid "Set here the foreground color of the border."
 msgstr "Set here the foreground colour of the border."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:404
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:408
 #, kde-format
 msgid "Set here the Background color of the border."
 msgstr "Set here the Background colour of the border."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:420
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:427
 #, kde-format
 msgid "Set here the color of the main border."
 msgstr "Set here the colour of the main border."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:421
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:428
 #, kde-format
 msgid "Set here the color of the line."
 msgstr "Set here the colour of the line."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:427
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:436
 #, kde-format
 msgid "Set here the color of the upper left area."
 msgstr "Set here the colour of the upper left area."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:428
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:437
 #, kde-format
 msgid "Set here the color of the lower right area."
 msgstr "Set here the colour of the lower right area."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:449
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:460
 #, kde-format
 msgid "Set here the color of the first line."
 msgstr "Set here the colour of the first line."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:450
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:461
 #, kde-format
 msgid "Set here the color of the second line."
 msgstr "Set here the colour of the second line."
@@ -31069,115 +31069,115 @@ msgstr "Set here the colour of the second line."
 msgid "Texture Filter"
 msgstr "Texture Filter"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:81
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:77
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Paper"
 msgstr "Paper"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:82
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:78
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Paper 2"
 msgstr "Paper 2"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:83
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:79
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Fabric"
 msgstr "Fabric"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:84
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:80
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Burlap"
 msgstr "Burlap"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:85
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:81
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Bricks"
 msgstr "Bricks"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:86
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:82
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Bricks 2"
 msgstr "Bricks 2"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:87
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:83
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Canvas"
 msgstr "Canvas"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:88
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:84
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Marble"
 msgstr "Marble"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:89
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:85
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Marble 2"
 msgstr "Marble 2"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:90
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:86
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Blue Jean"
 msgstr "Blue Jean"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:91
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:87
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Cell Wood"
 msgstr "Cell Wood"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:92
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:88
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Metal Wire"
 msgstr "Metal Wire"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:93
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:89
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Modern"
 msgstr "Modern"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:94
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:90
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Wall"
 msgstr "Wall"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:95
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:91
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Moss"
 msgstr "Moss"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:96
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:92
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Stone"
 msgstr "Stone"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:98
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Set here the texture type to apply to image."
 msgstr "Set here the texture type to apply to image."
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:102
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:98
 #, kde-format
 msgctxt "@label"
 msgid "Relief:"
 msgstr "Relief:"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:106
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Set here the relief gain used to merge texture and image."
@@ -34055,8 +34055,8 @@ msgid "&Start"
 msgstr "&Start"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:103
-#: core/libs/onlineversion/onlineversiondlg.cpp:321
-#: core/libs/onlineversion/onlineversiondlg.cpp:498
+#: core/libs/onlineversion/onlineversiondlg.cpp:305
+#: core/libs/onlineversion/onlineversiondlg.cpp:482
 #, kde-format
 msgid "Close"
 msgstr "Close"
@@ -36314,101 +36314,101 @@ msgstr "&Close"
 msgid "Close message"
 msgstr "Close message"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:112
+#: core/libs/onlineversion/onlineversionchecker.cpp:104
 #, kde-format
 msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr "never"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:190
+#: core/libs/onlineversion/onlineversionchecker.cpp:182
 #, kde-format
 msgid "No data returned from the remote connection."
 msgstr "No data returned from the remote connection."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:205
-#: core/libs/onlineversion/onlineversiondwnl.cpp:148
+#: core/libs/onlineversion/onlineversionchecker.cpp:197
+#: core/libs/onlineversion/onlineversiondwnl.cpp:141
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Unsupported Architecture: %1"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:232
+#: core/libs/onlineversion/onlineversionchecker.cpp:224
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr "Invalid file name format returned from the remote connection."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:257
+#: core/libs/onlineversion/onlineversionchecker.cpp:249
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr "Invalid pre-release date from the remote list."
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:289
+#: core/libs/onlineversion/onlineversionchecker.cpp:281
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr "Invalid format returned from the remote connection."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:171
+#: core/libs/onlineversion/onlineversiondlg.cpp:155
 #, kde-format
 msgctxt "@info: download status"
 msgid "Received:"
 msgstr "Received:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:172
+#: core/libs/onlineversion/onlineversiondlg.cpp:156
 #, kde-format
 msgctxt "@info: download status"
 msgid "Total:"
 msgstr "Total:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:173
+#: core/libs/onlineversion/onlineversiondlg.cpp:157
 #, kde-format
 msgctxt "@info: download status"
 msgid "Rate:"
 msgstr "Rate:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:174
+#: core/libs/onlineversion/onlineversiondlg.cpp:158
 #, kde-format
 msgctxt "@info: download status"
 msgid "ETA:"
 msgstr "ETA:"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:185
+#: core/libs/onlineversion/onlineversiondlg.cpp:169
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr "Online Version Checker - Pre-Release"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:186
+#: core/libs/onlineversion/onlineversiondlg.cpp:170
 #, kde-format
 msgid "Check for new pre-release version available, please wait..."
 msgstr "Check for new pre-release version available, please wait..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:190
+#: core/libs/onlineversion/onlineversiondlg.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr "Online Version Checker - Stable Version"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:191
+#: core/libs/onlineversion/onlineversiondlg.cpp:175
 #, kde-format
 msgid "Check for new stable version available, please wait..."
 msgstr "Check for new stable version available, please wait..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:244
+#: core/libs/onlineversion/onlineversiondlg.cpp:228
 #, kde-format
 msgid "Configure..."
 msgstr "Configure..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:245
+#: core/libs/onlineversion/onlineversiondlg.cpp:229
 #, kde-format
 msgid "Open setup dialog page to configure updates."
 msgstr "Open setup dialogue page to configure updates."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:273
+#: core/libs/onlineversion/onlineversiondlg.cpp:257
 #: core/utilities/setup/downloader/filesdownloader.cpp:161
 #, kde-format
 msgid "Download"
 msgstr "Download"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:287
+#: core/libs/onlineversion/onlineversiondlg.cpp:271
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -36425,7 +36425,7 @@ msgstr ""
 "are safe to use in production.</p><p>Press <b>Configure</b> if you want to "
 "customise update options from setup dialog.</p>"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:300
+#: core/libs/onlineversion/onlineversiondlg.cpp:284
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
@@ -36446,7 +36446,7 @@ msgstr ""
 "doing.</p><p>Press <b>Configure</b> if you want to customise update options "
 "from setup dialog.</p>"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:328
+#: core/libs/onlineversion/onlineversiondlg.cpp:312
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
@@ -36455,7 +36455,7 @@ msgstr ""
 "Your software is up-to-date.\n"
 "%1 pre-release built on %2 is the most recent version available."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:335
+#: core/libs/onlineversion/onlineversiondlg.cpp:319
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
@@ -36464,7 +36464,7 @@ msgstr ""
 "Your software is up-to-date.\n"
 "%1 stable version %2 is the most recent version available."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:343
+#: core/libs/onlineversion/onlineversiondlg.cpp:327
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
@@ -36473,19 +36473,19 @@ msgstr ""
 "Error while trying to check for new %1 version:\n"
 "\"%2\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:353
-#: core/libs/onlineversion/onlineversiondlg.cpp:395
+#: core/libs/onlineversion/onlineversiondlg.cpp:337
+#: core/libs/onlineversion/onlineversiondlg.cpp:379
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr "built on %1 with debug symbols"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:354
-#: core/libs/onlineversion/onlineversiondlg.cpp:396
+#: core/libs/onlineversion/onlineversiondlg.cpp:338
+#: core/libs/onlineversion/onlineversiondlg.cpp:380
 #, kde-format
 msgid "built on %1"
 msgstr "built on %1"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:356
+#: core/libs/onlineversion/onlineversiondlg.cpp:340
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -36496,19 +36496,19 @@ msgstr ""
 "%2\n"
 "in progress, please wait..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:362
-#: core/libs/onlineversion/onlineversiondlg.cpp:404
+#: core/libs/onlineversion/onlineversiondlg.cpp:346
+#: core/libs/onlineversion/onlineversiondlg.cpp:388
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr "version %1 with debug symbols"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:363
-#: core/libs/onlineversion/onlineversiondlg.cpp:405
+#: core/libs/onlineversion/onlineversiondlg.cpp:347
+#: core/libs/onlineversion/onlineversiondlg.cpp:389
 #, kde-format
 msgid "version %1"
 msgstr "version %1"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:365
+#: core/libs/onlineversion/onlineversiondlg.cpp:349
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -36519,7 +36519,7 @@ msgstr ""
 "version %2\n"
 "in progress, please wait..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:398
+#: core/libs/onlineversion/onlineversiondlg.cpp:382
 #, kde-format
 msgid ""
 "Verify Checksum for new %1\n"
@@ -36530,7 +36530,7 @@ msgstr ""
 "%2\n"
 "in progress, please wait..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:407
+#: core/libs/onlineversion/onlineversiondlg.cpp:391
 #, kde-format
 msgid ""
 "Verify checksum for %1\n"
@@ -36541,13 +36541,13 @@ msgstr ""
 "version %2\n"
 "in progress, please wait..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:434
+#: core/libs/onlineversion/onlineversiondlg.cpp:418
 #, kde-format
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr "Open..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:445
+#: core/libs/onlineversion/onlineversiondlg.cpp:429
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -36566,7 +36566,7 @@ msgstr ""
 "\n"
 "Press \"Open\" to show the bundle in file-manager..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:454
+#: core/libs/onlineversion/onlineversiondlg.cpp:438
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -36585,12 +36585,12 @@ msgstr ""
 "\n"
 "Press \"Open\" to show the bundle in file-manager..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:465
+#: core/libs/onlineversion/onlineversiondlg.cpp:449
 #, kde-format
 msgid "Install..."
 msgstr "Install..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:470
+#: core/libs/onlineversion/onlineversiondlg.cpp:454
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -36609,7 +36609,7 @@ msgstr ""
 "\n"
 "Press \"Install\" to close current session and upgrade..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:479
+#: core/libs/onlineversion/onlineversiondlg.cpp:463
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -36628,7 +36628,7 @@ msgstr ""
 "\n"
 "Press \"Install\" to close current session and upgrade..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:503
+#: core/libs/onlineversion/onlineversiondlg.cpp:487
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -36641,7 +36641,7 @@ msgstr ""
 "\n"
 "\"%3\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:510
+#: core/libs/onlineversion/onlineversiondlg.cpp:494
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -36654,7 +36654,7 @@ msgstr ""
 "\n"
 "\"%3\""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:602
+#: core/libs/onlineversion/onlineversiondlg.cpp:586
 #, kde-format
 msgid ""
 "Cannot start installer:\n"
@@ -36663,27 +36663,27 @@ msgstr ""
 "Cannot start installer:\n"
 "%1"
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:237
+#: core/libs/onlineversion/onlineversiondwnl.cpp:230
 #, kde-format
 msgid "Checksum file is empty."
 msgstr "Checksum file is empty."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:249
+#: core/libs/onlineversion/onlineversiondwnl.cpp:242
 #, kde-format
 msgid "Checksum is invalid."
 msgstr "Checksum is invalid."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:270
+#: core/libs/onlineversion/onlineversiondwnl.cpp:263
 #, kde-format
 msgid "Downloaded file is empty."
 msgstr "Downloaded file is empty."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:302
+#: core/libs/onlineversion/onlineversiondwnl.cpp:295
 #, kde-format
 msgid "Checksums error."
 msgstr "Checksums error."
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:329
+#: core/libs/onlineversion/onlineversiondwnl.cpp:322
 #, kde-format
 msgid "Cannot open target file."
 msgstr "Cannot open target file."
@@ -50346,7 +50346,7 @@ msgstr ""
 "button.</p>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:349
-#: core/utilities/import/widgets/scriptingsettings.cpp:85
+#: core/utilities/import/widgets/scriptingsettings.cpp:79
 #, kde-format
 msgid "Show a list of all available options"
 msgstr "Show a list of all available options"
@@ -59709,93 +59709,93 @@ msgctxt "@action: go to next image"
 msgid "Forward"
 msgstr "Forward"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:84
+#: core/utilities/import/widgets/advancedsettings.cpp:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Write the document name to EXIF"
 msgstr "Write the document name to EXIF"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:85
+#: core/utilities/import/widgets/advancedsettings.cpp:75
 #, kde-format
 msgctxt "@option:check"
 msgid "Fix internal date && time"
 msgstr "Fix internal date && time"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:87
+#: core/utilities/import/widgets/advancedsettings.cpp:77
 #, kde-format
 msgctxt "@option:check"
 msgid "Auto-rotate/flip image"
 msgstr "Auto-rotate/flip image"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:88
+#: core/utilities/import/widgets/advancedsettings.cpp:78
 #, kde-format
 msgctxt "@option:check"
 msgid "Convert to lossless file format"
 msgstr "Convert to lossless file format"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:90
+#: core/utilities/import/widgets/advancedsettings.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "New image format:"
 msgstr "New image format:"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:92
+#: core/utilities/import/widgets/advancedsettings.cpp:82
 #: core/utilities/setup/editor/setupversioning.cpp:150
 #, kde-format
 msgctxt "@label:listbox"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:93
+#: core/utilities/import/widgets/advancedsettings.cpp:83
 #: core/utilities/setup/editor/setupversioning.cpp:149
 #, kde-format
 msgctxt "@label:listbox"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:94
+#: core/utilities/import/widgets/advancedsettings.cpp:84
 #: core/utilities/setup/editor/setupversioning.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "PGF"
 msgstr "PGF"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:98
+#: core/utilities/import/widgets/advancedsettings.cpp:88
 #: core/utilities/setup/editor/setupversioning.cpp:155
 #, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG-2000"
 msgstr "JPEG-2000"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:104
+#: core/utilities/import/widgets/advancedsettings.cpp:94
 #: core/utilities/setup/editor/setupversioning.cpp:161
 #, kde-format
 msgctxt "@label:listbox"
 msgid "HEIF"
 msgstr "HEIF"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:112
+#: core/utilities/import/widgets/advancedsettings.cpp:102
 #: core/utilities/setup/editor/setupversioning.cpp:169
 #, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG-XL"
 msgstr "JPEG-XL"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:119
+#: core/utilities/import/widgets/advancedsettings.cpp:109
 #: core/utilities/setup/editor/setupversioning.cpp:176
 #, kde-format
 msgctxt "@label:listbox"
 msgid "WEBP"
 msgstr "WEBP"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:126
+#: core/utilities/import/widgets/advancedsettings.cpp:116
 #: core/utilities/setup/editor/setupversioning.cpp:183
 #, kde-format
 msgctxt "@label:listbox"
 msgid "AVIF"
 msgstr "AVIF"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:140
+#: core/utilities/import/widgets/advancedsettings.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59805,7 +59805,7 @@ msgstr ""
 "Set here all options to fix/transform JPEG files automatically as they are "
 "downloaded."
 
-#: core/utilities/import/widgets/advancedsettings.cpp:142
+#: core/utilities/import/widgets/advancedsettings.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59815,13 +59815,13 @@ msgstr ""
 "Enable this option if you want images automatically rotated or flipped using "
 "Exif information provided by the camera."
 
-#: core/utilities/import/widgets/advancedsettings.cpp:144
+#: core/utilities/import/widgets/advancedsettings.cpp:134
 #, kde-format
 msgctxt "@info"
 msgid "Select here which metadata template you want to apply to images."
 msgstr "Select here which metadata template you want to apply to images."
 
-#: core/utilities/import/widgets/advancedsettings.cpp:146
+#: core/utilities/import/widgets/advancedsettings.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59831,7 +59831,7 @@ msgstr ""
 "Enable this option to write the document name to the Exif metadata. The "
 "document name is the original file name of the imported file."
 
-#: core/utilities/import/widgets/advancedsettings.cpp:148
+#: core/utilities/import/widgets/advancedsettings.cpp:138
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59845,7 +59845,7 @@ msgstr ""
 "values will be saved in the DateTimeDigitized and DateTimeCreated EXIF, XMP, "
 "and IPTC tags."
 
-#: core/utilities/import/widgets/advancedsettings.cpp:152
+#: core/utilities/import/widgets/advancedsettings.cpp:142
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59855,7 +59855,7 @@ msgstr ""
 "Enable this option to automatically convert all JPEG files to a lossless "
 "image format. Note: Image conversion can take a while on a slow computer."
 
-#: core/utilities/import/widgets/advancedsettings.cpp:157
+#: core/utilities/import/widgets/advancedsettings.cpp:147
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -59867,7 +59867,7 @@ msgstr ""
 "format in which JPEG image will be converted to a lossless container with "
 "metadata support.</para>"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:86
+#: core/utilities/import/widgets/albumcustomizer.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59905,61 +59905,61 @@ msgstr ""
 "MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</b> : Photo "
 "shot on Sunday</p>"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:107
+#: core/utilities/import/widgets/albumcustomizer.cpp:97
 #, kde-format
 msgctxt "@option:check"
 msgid "Extension-based sub-albums"
 msgstr "Extension-based sub-albums"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:108
+#: core/utilities/import/widgets/albumcustomizer.cpp:98
 #, kde-format
 msgctxt "@option:check"
 msgid "Date-based sub-albums"
 msgstr "Date-based sub-albums"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:110
+#: core/utilities/import/widgets/albumcustomizer.cpp:100
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Date format:"
 msgstr "Date format:"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:112
+#: core/utilities/import/widgets/albumcustomizer.cpp:102
 #, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "ISO"
 msgstr "ISO"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:113
+#: core/utilities/import/widgets/albumcustomizer.cpp:103
 #, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Full Text"
 msgstr "Full Text"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:114
+#: core/utilities/import/widgets/albumcustomizer.cpp:104
 #, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Local Settings"
 msgstr "Local Settings"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:115
+#: core/utilities/import/widgets/albumcustomizer.cpp:105
 #, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Custom"
 msgstr "Custom"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:121
+#: core/utilities/import/widgets/albumcustomizer.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Show a list of all available options"
 msgstr "Show a list of all available options"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:134
+#: core/utilities/import/widgets/albumcustomizer.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Set how digiKam creates albums automatically when downloading."
 msgstr "Set how digiKam creates albums automatically when downloading."
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:135
+#: core/utilities/import/widgets/albumcustomizer.cpp:125
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59971,7 +59971,7 @@ msgstr ""
 "created file extension-based sub-albums of the destination album. This way, "
 "you can separate JPEG and RAW files as they are downloaded from your camera."
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:138
+#: core/utilities/import/widgets/albumcustomizer.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59981,7 +59981,7 @@ msgstr ""
 "Enable this option if you want to download your pictures into automatically "
 "created file date-based sub-albums of the destination album."
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:141
+#: core/utilities/import/widgets/albumcustomizer.cpp:131
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60005,7 +60005,7 @@ msgstr ""
 "settings.\n"
 "\"Custom\": use a customised format for date."
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:149
+#: core/utilities/import/widgets/albumcustomizer.cpp:139
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60013,36 +60013,36 @@ msgid ""
 msgstr ""
 "Show the result of converted date 1968-12-26 using your customised format."
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:248
+#: core/utilities/import/widgets/albumcustomizer.cpp:238
 #, kde-format
 msgctxt "@info Example of custom date format for album naming"
 msgid "Ex.: %1"
 msgstr "Ex.: %1"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:252
+#: core/utilities/import/widgets/albumcustomizer.cpp:242
 #, kde-format
 msgctxt "@info Custom date format"
 msgid "Format is not valid..."
 msgstr "Format is not valid..."
 
-#: core/utilities/import/widgets/capturewidget.cpp:83
+#: core/utilities/import/widgets/capturewidget.cpp:81
 #, kde-format
 msgid "Cannot display camera preview"
 msgstr "Cannot display camera preview"
 
-#: core/utilities/import/widgets/dngconvertsettings.cpp:66
+#: core/utilities/import/widgets/dngconvertsettings.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Convert RAW images to"
 msgstr "Convert RAW images to"
 
-#: core/utilities/import/widgets/dngconvertsettings.cpp:74
+#: core/utilities/import/widgets/dngconvertsettings.cpp:69
 #, kde-format
 msgctxt "@label"
 msgid "DNG container"
 msgstr "DNG container"
 
-#: core/utilities/import/widgets/dngconvertsettings.cpp:87
+#: core/utilities/import/widgets/dngconvertsettings.cpp:82
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60052,7 +60052,7 @@ msgstr ""
 "Set here all options to convert RAW images to DNG container automatically as "
 "they are downloaded."
 
-#: core/utilities/import/widgets/dngconvertsettings.cpp:89
+#: core/utilities/import/widgets/dngconvertsettings.cpp:84
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60060,33 +60060,33 @@ msgid ""
 msgstr ""
 "Enable this option to convert RAW images to DNG container automatically."
 
-#: core/utilities/import/widgets/freespacewidget.cpp:331
+#: core/utilities/import/widgets/freespacewidget.cpp:317
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "Camera Media"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:335
+#: core/utilities/import/widgets/freespacewidget.cpp:321
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "Album Library"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:345
-#: core/utilities/import/widgets/freespacewidget.cpp:356
+#: core/utilities/import/widgets/freespacewidget.cpp:331
+#: core/utilities/import/widgets/freespacewidget.cpp:342
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "Capacity:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:348
-#: core/utilities/import/widgets/freespacewidget.cpp:359
+#: core/utilities/import/widgets/freespacewidget.cpp:334
+#: core/utilities/import/widgets/freespacewidget.cpp:345
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "Available:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:351
+#: core/utilities/import/widgets/freespacewidget.cpp:337
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
@@ -60110,48 +60110,48 @@ msgctxt "@title:menu"
 msgid "Open With..."
 msgstr "Open With..."
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:419
+#: core/utilities/import/widgets/importcontextmenu.cpp:423
 #, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"
 msgstr "Assign Labels"
 
-#: core/utilities/import/widgets/importfiltercombobox.cpp:122
+#: core/utilities/import/widgets/importfiltercombobox.cpp:123
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Files"
 msgstr "All Files"
 
-#: core/utilities/import/widgets/importfiltercombobox.cpp:126
+#: core/utilities/import/widgets/importfiltercombobox.cpp:127
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Only New Files"
 msgstr "Only New Files"
 
-#: core/utilities/import/widgets/importfiltercombobox.cpp:131
+#: core/utilities/import/widgets/importfiltercombobox.cpp:132
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Raw Files"
 msgstr "Raw Files"
 
-#: core/utilities/import/widgets/importfiltercombobox.cpp:141
+#: core/utilities/import/widgets/importfiltercombobox.cpp:142
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "JPG/TIFF Files"
 msgstr "JPG/TIFF Files"
 
-#: core/utilities/import/widgets/importfiltercombobox.cpp:146
+#: core/utilities/import/widgets/importfiltercombobox.cpp:147
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Video Files"
 msgstr "Video Files"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:110
+#: core/utilities/import/widgets/renamecustomizer.cpp:97
 #, kde-format
 msgid "Camera filenames"
 msgstr "Camera filenames"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:112
+#: core/utilities/import/widgets/renamecustomizer.cpp:99
 #, kde-format
 msgid ""
 "Turn on this option to use the camera provided image filenames without "
@@ -60160,41 +60160,41 @@ msgstr ""
 "Turn on this option to use the camera provided image filenames without "
 "modifications."
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:118
+#: core/utilities/import/widgets/renamecustomizer.cpp:105
 #, kde-format
 msgid "Change case to:"
 msgstr "Change case to:"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:122
+#: core/utilities/import/widgets/renamecustomizer.cpp:109
 #, kde-format
 msgctxt "Leave filename as it is"
 msgid "Leave as-is"
 msgstr "Leave as-is"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:123
+#: core/utilities/import/widgets/renamecustomizer.cpp:110
 #, kde-format
 msgctxt "Filename to uppercase"
 msgid "Upper"
 msgstr "Upper"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:124
+#: core/utilities/import/widgets/renamecustomizer.cpp:111
 #, kde-format
 msgctxt "Filename to lowercase"
 msgid "Lower"
 msgstr "Lower"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:126
+#: core/utilities/import/widgets/renamecustomizer.cpp:113
 #, kde-format
 msgid "Set the method to use to change the case of the image filenames."
 msgstr "Set the method to use to change the case of the image filenames."
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:137
+#: core/utilities/import/widgets/renamecustomizer.cpp:124
 #, kde-format
 msgctxt "Custom Image Renaming"
 msgid "Customize"
 msgstr "Customise"
 
-#: core/utilities/import/widgets/scriptingsettings.cpp:67
+#: core/utilities/import/widgets/scriptingsettings.cpp:61
 #, kde-format
 msgid ""
 "<p>These expressions may be used to customize the command line:</p><p><b>"
@@ -60209,17 +60209,17 @@ msgstr ""
 "%orgfilename</b>: original file name</p><p><b>%orgpath</b>: original path</"
 "p><p>If there are no expressions full path is added to the command.</p>"
 
-#: core/utilities/import/widgets/scriptingsettings.cpp:78
+#: core/utilities/import/widgets/scriptingsettings.cpp:72
 #, kde-format
 msgid "Execute script for image:"
 msgstr "Execute script for image:"
 
-#: core/utilities/import/widgets/scriptingsettings.cpp:82
+#: core/utilities/import/widgets/scriptingsettings.cpp:76
 #, kde-format
 msgid "No script selected"
 msgstr "No script selected"
 
-#: core/utilities/import/widgets/scriptingsettings.cpp:93
+#: core/utilities/import/widgets/scriptingsettings.cpp:87
 #, kde-format
 msgid "Set here the script that is executed for every imported image."
 msgstr "Set here the script that is executed for every imported image."
