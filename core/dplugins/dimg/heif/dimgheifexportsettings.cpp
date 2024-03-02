@@ -40,21 +40,15 @@ class Q_DECL_HIDDEN DImgHEIFExportSettings::Private
 
 public:
 
-    explicit Private()
-      : HEIFGrid            (nullptr),
-        labelHEIFcompression(nullptr),
-        HEIFLossLess        (nullptr),
-        HEIFcompression     (nullptr)
-    {
-    }
+    Private() = default;
 
-    QGridLayout*  HEIFGrid;
+    QGridLayout*  HEIFGrid              = nullptr;
 
-    QLabel*       labelHEIFcompression;
+    QLabel*       labelHEIFcompression  = nullptr;
 
-    QCheckBox*    HEIFLossLess;
+    QCheckBox*    HEIFLossLess          = nullptr;
 
-    DIntNumInput* HEIFcompression;
+    DIntNumInput* HEIFcompression       = nullptr;
 };
 
 DImgHEIFExportSettings::DImgHEIFExportSettings(QWidget* const parent)
