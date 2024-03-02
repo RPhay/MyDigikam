@@ -91,6 +91,7 @@ void print_refocus_matrix(Mat* const matrix)
         qCDebug(DIGIKAM_DIMG_LOG) << output;
     }
 }
+
 #endif // RF_DEBUG
 
 // ---------------------------------------------------------------------------
@@ -119,7 +120,7 @@ void RefocusMatrix::finish_and_free_matrix(Mat* const mat)
     delete mat;
 }
 
-double* RefocusMatrix::mat_eltptr(Mat* const mat, const int r, const int c)
+double* RefocusMatrix::mat_eltptr(const Mat* const mat, const int r, const int c)
 {
     Q_ASSERT((r >= 0) && (r < mat->rows));
     Q_ASSERT((c >= 0) && (c < mat->rows));
@@ -159,7 +160,7 @@ void RefocusMatrix::finish_c_mat(CMat* const mat)
     mat->data = nullptr;
 }
 
-inline double* RefocusMatrix::c_mat_eltptr(CMat* const mat, const int col, const int row)
+inline double* RefocusMatrix::c_mat_eltptr(const CMat* const mat, const int col, const int row)
 {
     Q_ASSERT((qAbs(row) <= mat->radius) && (qAbs(col) <= mat->radius));
 
@@ -241,7 +242,7 @@ int RefocusMatrix::as_cidx(const int k, const int l)
     return ((a * (a + 1)) / 2 + b);
 }
 
-Mat* RefocusMatrix::make_s_matrix(CMat* const mat, int m, double noise_factor)
+Mat* RefocusMatrix::make_s_matrix(const CMat* const mat, int m, double noise_factor)
 {
     const int mat_size = SQR(2 * m + 1);
     Mat* const result  = allocate_matrix(mat_size, mat_size);
@@ -269,7 +270,7 @@ Mat* RefocusMatrix::make_s_matrix(CMat* const mat, int m, double noise_factor)
     return (result);
 }
 
-Mat* RefocusMatrix::make_s_cmatrix(CMat* const mat, int m, double noise_factor)
+Mat* RefocusMatrix::make_s_cmatrix(const CMat* const mat, int m, double noise_factor)
 {
     const int mat_size = as_cidx(m + 1, 0);
     Mat* const result  = allocate_matrix(mat_size, mat_size);
@@ -399,12 +400,14 @@ CMat* RefocusMatrix::compute_g(const CMat* const convolution, const int m, const
     }
 
 #ifdef RF_DEBUG
+
     qCDebug(DIGIKAM_DIMG_LOG) << "Convolution:";
     print_refocus_c_mat(convolution);
     qCDebug(DIGIKAM_DIMG_LOG) << "h_conv_ruv:";
     print_refocus_c_mat(&h_conv_ruv);
     qCDebug(DIGIKAM_DIMG_LOG) << "Value of s:";
     print_refocus_matrix(s);
+
 #endif // RF_DEBUG
 
     Q_ASSERT(s->cols == s->rows);
@@ -437,8 +440,10 @@ CMat* RefocusMatrix::compute_g(const CMat* const convolution, const int m, const
     }
 
 #ifdef RF_DEBUG
+
     qCDebug(DIGIKAM_DIMG_LOG) << "Deconvolution:";
     print_refocus_c_mat(result);
+
 #endif // RF_DEBUG
 
     finish_c_mat(&a);
@@ -455,9 +460,11 @@ CMat* RefocusMatrix::compute_g_matrix(const CMat* const convolution, const int m
                                       const double musq, const bool symmetric)
 {
 #ifdef RF_DEBUG
+
     qCDebug(DIGIKAM_DIMG_LOG) << "matrix size: " << m;
     qCDebug(DIGIKAM_DIMG_LOG) << "correlation: " << gamma;
     qCDebug(DIGIKAM_DIMG_LOG) << "noise: "       << noise_factor;
+
 #endif // RF_DEBUG
 
     CMat* const g = compute_g(convolution, m, gamma, noise_factor, musq, symmetric);
@@ -522,7 +529,9 @@ void RefocusMatrix::make_gaussian_convolution(const double gradius, CMat* const 
    int x, y;
 
 #ifdef RF_DEBUG
+
     qCDebug(DIGIKAM_DIMG_LOG) << "gauss: " << gradius;
+
 #endif // RF_DEBUG
 
     init_c_mat(convolution, m);
@@ -561,6 +570,7 @@ double RefocusMatrix::circle_integral(const double x, const double radius)
     if (radius == 0)
     {
         // Perhaps some epsilon must be added here.
+
         return (0);
     }
     else
@@ -652,7 +662,9 @@ double RefocusMatrix::circle_intensity(const int x, const int y, const double ra
 void RefocusMatrix::make_circle_convolution(const double radius, CMat* const convolution, const int m)
 {
 #ifdef RF_DEBUG
+
     qCDebug(DIGIKAM_DIMG_LOG) << "radius: " << radius;
+
 #endif // RF_DEBUG
 
     fill_matrix(convolution, m, circle_intensity, radius);

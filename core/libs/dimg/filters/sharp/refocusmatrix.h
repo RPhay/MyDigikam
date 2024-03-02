@@ -115,17 +115,17 @@ private:
     static Mat*  allocate_matrix(int nrows, int ncols);
     static CMat* allocate_c_mat(const int radius);
 
-    static double* mat_eltptr(Mat* const mat, const int r, const int c);
+    static double* mat_eltptr(const Mat* const mat, const int r, const int c);
 
-    static inline double* c_mat_eltptr(CMat* const mat, const int col, const int row);
+    static inline double* c_mat_eltptr(const CMat* const mat, const int col, const int row);
 
     static void convolve_mat(CMat* const result, const CMat* const mata, const CMat* const matb);
 
     static int as_idx(const int k, const int l, const int m);
     static int as_cidx(const int k, const int l);
 
-    static Mat* make_s_matrix(CMat* const mat, int m, double noise_factor);
-    static Mat* make_s_cmatrix(CMat* const mat, int m, double noise_factor);
+    static Mat* make_s_matrix(const CMat* const mat, int m, double noise_factor);
+    static Mat* make_s_cmatrix(const CMat* const mat, int m, double noise_factor);
 
     static double correlation(const int x, const int y, const double gamma, const double musq);
 
