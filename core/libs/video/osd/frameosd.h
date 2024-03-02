@@ -50,14 +50,14 @@ public:
     void insertOsdToFrame(QImage& frame,
                           const QUrl& url,
                           const FrameOsdSettings& settings,
-                          DInfoInterface* const info);
+                          const DInfoInterface* const info);
 
     /**
      * Populate OSD items properties base on Url
      */
     void populateOSD(const QUrl& url,
                      const FrameOsdSettings& settings,
-                     DInfoInterface* const info);
+                     const DInfoInterface* const info);
 
     /**
      * print comments
@@ -72,7 +72,7 @@ public:
     /**
      * Insert message OSD on broken frame or end frame
      */
-    void insertMessageOsdToFrame(QImage &frame,
+    void insertMessageOsdToFrame(QImage& frame,
                                  const QSize& JPEGsize,
                                  const QString& mess);
 

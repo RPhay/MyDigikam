@@ -48,7 +48,7 @@ FrameOsd::~FrameOsd()
 
 void FrameOsd::populateOSD(const QUrl& url,
                            const FrameOsdSettings& settings,
-                           DInfoInterface* const iface)
+                           const DInfoInterface* const iface)
 {
     // First stage is to get the information map from host application.
 
@@ -364,7 +364,7 @@ void FrameOsd::printComments(const QString& comments)
 void FrameOsd::insertOsdToFrame(QImage& frm,
                                 const QUrl& url,
                                 const FrameOsdSettings& settings,
-                                DInfoInterface* const iface)
+                                const DInfoInterface* const iface)
 {
     // Populate items properties based on url,
     // eg. album name, rating, tags, labels, date, etc.

@@ -99,7 +99,7 @@ public:
     {
     }
 
-    void enumerate(QWidget* const w)
+    void enumerate(const QWidget* const w)
     {
         // recurse
 
