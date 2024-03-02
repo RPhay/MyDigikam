@@ -24,12 +24,6 @@ namespace Digikam
 AbstractAlbumTreeView::AbstractAlbumTreeView(QWidget* const parent, Flags flags)
     : QTreeView             (parent),
       StateSavingObject     (this),
-      m_albumModel          (nullptr),
-      m_albumFilterModel    (nullptr),
-      m_dragDropHandler     (nullptr),
-      m_lastScrollBarValue  (0),
-      m_checkOnMiddleClick  (false),
-      m_restoreCheckState   (false),
       m_flags               (flags),
       d                     (new Private)
 {

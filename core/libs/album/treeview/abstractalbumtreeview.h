@@ -392,14 +392,14 @@ protected:
 
 protected:
 
-    AbstractSpecificAlbumModel* m_albumModel;
-    AlbumFilterModel*           m_albumFilterModel;
-    AlbumModelDragDropHandler*  m_dragDropHandler;
+    AbstractSpecificAlbumModel* m_albumModel            = nullptr;
+    AlbumFilterModel*           m_albumFilterModel      = nullptr;
+    AlbumModelDragDropHandler*  m_dragDropHandler       = nullptr;
 
-    int                         m_lastScrollBarValue;
-    bool                        m_checkOnMiddleClick;
-    bool                        m_restoreCheckState;
-    Flags                       m_flags;
+    int                         m_lastScrollBarValue    = 0;
+    bool                        m_checkOnMiddleClick    = false;
+    bool                        m_restoreCheckState     = false;
+    Flags                       m_flags                 = DefaultFlags;
 
 private:
 
