@@ -120,6 +120,7 @@ cp -r $VCPKG_INSTALL_PREFIX/share/showfoto                                $BUNDL
 cp -r $VCPKG_INSTALL_PREFIX/share/solid                                   $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/share/kxmlgui5                                $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/share/knotifications6                         $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/applications                            $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data                       2>/dev/null
 cp -r $VCPKG_INSTALL_PREFIX/resources                                     $BUNDLEDIR/                           2>/dev/null
 
