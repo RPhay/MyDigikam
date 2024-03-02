@@ -97,7 +97,7 @@ public:
 
 CurvesBox::CurvesBox(int w, int h, QWidget* const parent, bool readOnly)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->curvesWidget = new CurvesWidget(w, h, this, readOnly);
     setup();
@@ -105,7 +105,7 @@ CurvesBox::CurvesBox(int w, int h, QWidget* const parent, bool readOnly)
 
 CurvesBox::CurvesBox(int w, int h, const DImg& img, QWidget* const parent, bool readOnly)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->sixteenBit   = img.sixteenBit();
     d->curvesWidget = new CurvesWidget(w, h, this, readOnly);
@@ -360,24 +360,32 @@ void CurvesBox::setChannel(ChannelType channel)
     switch (channel)
     {
         case RedChannel:
+        {
             d->hGradient->setColors(QColor("black"), QColor("red"));
             d->vGradient->setColors(QColor("red"),   QColor("black"));
             break;
+        }
 
         case GreenChannel:
+        {
             d->hGradient->setColors(QColor("black"), QColor("green"));
             d->vGradient->setColors(QColor("green"), QColor("black"));
             break;
+        }
 
         case BlueChannel:
+        {
             d->hGradient->setColors(QColor("black"), QColor("blue"));
             d->vGradient->setColors(QColor("blue"),  QColor("black"));
             break;
+        }
 
         default:
+        {
             d->hGradient->setColors(QColor("black"), QColor("white"));
             d->vGradient->setColors(QColor("white"), QColor("black"));
             break;
+        }
     }
 
     d->curveType->button(d->curvesWidget->curves()->getCurveType(channel))->setChecked(true);
@@ -461,6 +469,7 @@ void CurvesBox::setCurveGuide(const DColor& color)
 int CurvesBox::curvesLeftOffset() const
 {
     // width of spacer column between gradient and curves
+
     int offset = 2;
 
     if (!d->vGradient->isHidden())

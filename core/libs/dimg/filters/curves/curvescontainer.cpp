@@ -23,12 +23,14 @@ namespace Digikam
 {
 
 CurvesContainer::CurvesContainer()
-    : curvesType(ImageCurves::CURVE_SMOOTH), sixteenBit(false)
+    : curvesType(ImageCurves::CURVE_SMOOTH),
+      sixteenBit(false)
 {
 }
 
 CurvesContainer::CurvesContainer(int type, bool sixteenBit)
-    : curvesType((ImageCurves::CurveType)type), sixteenBit(sixteenBit)
+    : curvesType((ImageCurves::CurveType)type),
+      sixteenBit(sixteenBit)
 {
 }
 

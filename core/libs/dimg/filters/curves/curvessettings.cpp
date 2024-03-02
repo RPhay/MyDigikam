@@ -55,16 +55,12 @@ class Q_DECL_HIDDEN CurvesSettings::Private
 
 public:
 
-    explicit Private()
-      : histoSegments(0),
-        curvesBox(nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configCurveEntry;
 
-    int                  histoSegments;
-    CurvesBox*           curvesBox;
+    int                  histoSegments = 0;
+    CurvesBox*           curvesBox     = nullptr;
 };
 
 const QString CurvesSettings::Private::configCurveEntry(QLatin1String("AdjustCurves"));
@@ -73,7 +69,7 @@ const QString CurvesSettings::Private::configCurveEntry(QLatin1String("AdjustCur
 
 CurvesSettings::CurvesSettings(QWidget* const parent, DImg* const img)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->histoSegments        = img->sixteenBit() ? 65535 : 255;
     QGridLayout* const grid = new QGridLayout(this);
@@ -99,7 +95,7 @@ CurvesSettings::CurvesSettings(QWidget* const parent, DImg* const img)
     grid->setRowStretch(1, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // -------------------------------------------------------------
 

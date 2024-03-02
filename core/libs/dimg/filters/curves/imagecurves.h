@@ -75,7 +75,7 @@ public:
      *
      * @param otherCurves other curves object to adapt config from
      */
-    void fillFromOtherCurves(ImageCurves* const otherCurves);
+    void fillFromOtherCurves(const ImageCurves* const otherCurves);
 
 
     /// Methods to manipulate the curves data.

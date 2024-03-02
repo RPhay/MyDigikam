@@ -67,13 +67,7 @@ public:
 
 public:
 
-    explicit Private()
-      : curves      (nullptr),
-        lut         (nullptr),
-        segmentMax  (0),
-        dirty       (false)
-    {
-    }
+    Private() = default;
 
     ~Private()
     {
@@ -116,14 +110,14 @@ public:
     }
 
     /// Curves data.
-    struct _Curves* curves;
+    struct _Curves* curves      = nullptr;
 
     /// Lut data.
-    struct _Lut*    lut;
+    struct _Lut*    lut         = nullptr;
 
-    int             segmentMax;
+    int             segmentMax  = 0;
 
-    bool            dirty;
+    bool            dirty       = false;
 };
 
 ImageCurves::CRMatrix CR_basis =
@@ -164,7 +158,7 @@ ImageCurves& ImageCurves::operator=(const ImageCurves& other)
     return *this;
 }
 
-void ImageCurves::fillFromOtherCurves(ImageCurves* const otherCurves)
+void ImageCurves::fillFromOtherCurves(const ImageCurves* const otherCurves)
 {
     //qCDebug(DIGIKAM_DIMG_LOG) << "Filling this curve from other curve " << otherCurves;
 
