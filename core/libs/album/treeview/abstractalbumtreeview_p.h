@@ -56,8 +56,8 @@ namespace Digikam
 {
 
 template <class A>
-static QList<A*> selectedAlbums(QItemSelectionModel* const selModel,
-                                AlbumFilterModel* const filterModel)
+static QList<A*> selectedAlbums(const QItemSelectionModel* const selModel,
+                                const AlbumFilterModel* const filterModel)
 {
     const QList<QModelIndex> indexes = selModel->selectedIndexes();
     QList<A*> albums;
@@ -74,16 +74,11 @@ static QList<A*> selectedAlbums(QItemSelectionModel* const selModel,
 
 struct State
 {
-    State()
-        : selected    (false),
-          expanded    (false),
-          currentIndex(false)
-    {
-    }
+    State() = default;
 
-    bool selected;
-    bool expanded;
-    bool currentIndex;
+    bool selected       = false;
+    bool expanded       = false;
+    bool currentIndex   = false;
 };
 
 // -------------------------------------------------------------------------------
@@ -96,8 +91,7 @@ public:
 
     explicit AlbumTreeViewDelegate(AbstractAlbumTreeView* const treeView = nullptr)
         : QStyledItemDelegate(treeView),
-          m_treeView         (treeView),
-          m_height           (0)
+          m_treeView         (treeView)
     {
         updateHeight();
     }
@@ -138,8 +132,8 @@ public:
 
 protected:
 
-    AbstractAlbumTreeView* m_treeView;
-    int                    m_height;
+    AbstractAlbumTreeView* m_treeView = nullptr;
+    int                    m_height   = 0;
 };
 
 // -------------------------------------------------------------------------------
@@ -148,36 +142,21 @@ class Q_DECL_HIDDEN AbstractAlbumTreeView::Private
 {
 public:
 
-    explicit Private()
-      : delegate                (nullptr),
-        expandOnSingleClick     (false),
-        expandNewCurrent        (false),
-        selectAlbumOnClick      (false),
-        selectOnContextMenu     (true),
-        enableContextMenu       (false),
-        setInAlbumManager       (false),
-        resizeColumnsTimer      (nullptr),
-        configSelectionEntry    (QLatin1String("Selection")),
-        configExpansionEntry    (QLatin1String("Expansion")),
-        configCurrentIndexEntry (QLatin1String("CurrentIndex")),
-        configSortColumnEntry   (QLatin1String("SortColumn")),
-        configSortOrderEntry    (QLatin1String("SortOrder"))
-    {
-    }
+    Private() = default;
 
-    AlbumTreeViewDelegate*     delegate;
+    AlbumTreeViewDelegate*     delegate                 = nullptr;
 
-    bool                       expandOnSingleClick;
-    bool                       expandNewCurrent;
-    bool                       selectAlbumOnClick;
-    bool                       selectOnContextMenu;
-    bool                       enableContextMenu;
-    bool                       setInAlbumManager;
+    bool                       expandOnSingleClick      = false;
+    bool                       expandNewCurrent         = false;
+    bool                       selectAlbumOnClick       = false;
+    bool                       selectOnContextMenu      = true;
+    bool                       enableContextMenu        = false;
+    bool                       setInAlbumManager        = false;
 
     QMap<int, Digikam::State>  statesByAlbumId;
     QMap<int, Digikam::State>  searchBackup;
 
-    QTimer*                    resizeColumnsTimer;
+    QTimer*                    resizeColumnsTimer       = nullptr;
 
     AlbumPointer<Album>        lastSelectedAlbum;
 
@@ -186,11 +165,11 @@ public:
     QPixmap                    contextMenuIcon;
     QString                    contextMenuTitle;
 
-    const QString              configSelectionEntry;
-    const QString              configExpansionEntry;
-    const QString              configCurrentIndexEntry;
-    const QString              configSortColumnEntry;
-    const QString              configSortOrderEntry;
+    const QString              configSelectionEntry     = QLatin1String("Selection");
+    const QString              configExpansionEntry     = QLatin1String("Expansion");
+    const QString              configCurrentIndexEntry  = QLatin1String("CurrentIndex");
+    const QString              configSortColumnEntry    = QLatin1String("SortColumn");
+    const QString              configSortOrderEntry     = QLatin1String("SortOrder");
 };
 
 } // namespace Digikam
