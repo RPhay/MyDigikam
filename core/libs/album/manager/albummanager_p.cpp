@@ -30,7 +30,7 @@ PAlbumPath::PAlbumPath(int albumRootId, const QString& albumPath)
 {
 }
 
-PAlbumPath::PAlbumPath(PAlbum* const album)
+PAlbumPath::PAlbumPath(const PAlbum* const album)
 {
     if (album->isRoot())
     {
@@ -45,8 +45,10 @@ PAlbumPath::PAlbumPath(PAlbum* const album)
 
 bool PAlbumPath::operator==(const PAlbumPath& other) const
 {
-    return ((other.albumRootId == albumRootId) &&
-            (other.albumPath   == albumPath));
+    return (
+            (other.albumRootId == albumRootId) &&
+            (other.albumPath   == albumPath)
+           );
 }
 
 // -----------------------------------------------------------------------------------

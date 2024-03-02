@@ -49,9 +49,6 @@ extern "C"
 #include <QList>
 #include <QMultiHash>
 #include <QRadioButton>
-#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
-#include <QTextCodec>
-#endif
 #include <QTimer>
 #include <QComboBox>
 #include <QIcon>
@@ -62,6 +59,10 @@ extern "C"
 #include <QMessageBox>
 #include <QCheckBox>
 #include <QSet>
+
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+#   include <QTextCodec>
+#endif
 
 // KDE includes
 
@@ -118,7 +119,7 @@ public:
 
     PAlbumPath();
     PAlbumPath(int albumRootId, const QString& albumPath);
-    explicit PAlbumPath(PAlbum* const album);
+    explicit PAlbumPath(const PAlbum* const album);
 
     bool operator==(const PAlbumPath& other) const;
 
