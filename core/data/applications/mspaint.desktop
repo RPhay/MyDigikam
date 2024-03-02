@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft Paint
+Exec=mspaint.exe %f
+Icon=mspaint.exe
+MimeType=image/jpg;image/bmp;image/png
