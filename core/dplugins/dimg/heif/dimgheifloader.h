@@ -60,7 +60,7 @@ public:
 
 private:
 
-    bool isHeifSuccess(struct heif_error* const error);
+    bool isHeifSuccess(const struct heif_error* const error);
 
     /// Read operations
 
@@ -80,10 +80,10 @@ private:
 
 private:
 
-    bool                m_sixteenBit;
-    bool                m_hasAlpha;
+    bool                m_sixteenBit = false;
+    bool                m_hasAlpha   = false;
 
-    DImgLoaderObserver* m_observer;
+    DImgLoaderObserver* m_observer   = nullptr;
 };
 
 } // namespace Digikam

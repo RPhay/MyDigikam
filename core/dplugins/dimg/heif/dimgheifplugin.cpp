@@ -116,7 +116,7 @@ QList<DPluginAuthor> DImgHEIFPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2022"))
+                             QString::fromUtf8("(C) 2019-2024"))
             ;
 }
 
@@ -131,21 +131,33 @@ QMap<QString, QStringList> DImgHEIFPlugin::extraAboutData() const
     map.insert(QLatin1String("HEIC"),
                QStringList() << i18nc("@title", "High efficiency image coding")
                              << i18nc("@info: can read file format", "yes")
+
 #ifdef HAVE_X265
+
                              << i18nc("@info: can write file format", "yes")
+
 #else
+
                              << i18nc("@info: cannot write file format", "no")
+
 #endif
+
     );
 
     map.insert(QLatin1String("HEIF"),
                QStringList() << i18nc("@title", "High efficiency image coding")
                              << i18nc("@info: can read file format", "yes")
+
 #ifdef HAVE_X265
+
                              << i18nc("@info: can write file format", "yes")
+
 #else
+
                              << i18nc("@info: cannot write file format", "no")
+
 #endif
+
     );
 
     return map;
@@ -217,7 +229,7 @@ int DImgHEIFPlugin::canWrite(const QString& format) const
 
 #ifdef HAVE_X265
 
-    return typeMimes().contains(format.toUpper()) ? 10 : 0;
+    return (typeMimes().contains(format.toUpper()) ? 10 : 0);
 
 #else
 
@@ -226,6 +238,7 @@ int DImgHEIFPlugin::canWrite(const QString& format) const
     return 0;
 
 #endif
+
 }
 
 DImgLoader* DImgHEIFPlugin::loader(DImg* const image, const DRawDecoding&) const

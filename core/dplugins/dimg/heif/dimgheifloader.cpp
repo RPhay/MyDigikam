@@ -26,9 +26,6 @@ namespace Digikam
 DImgHEIFLoader::DImgHEIFLoader(DImg* const image)
     : DImgLoader(image)
 {
-    m_hasAlpha   = false;
-    m_sixteenBit = false;
-    m_observer   = nullptr;
 }
 
 DImgHEIFLoader::~DImgHEIFLoader()
@@ -60,7 +57,7 @@ bool DImgHEIFLoader::isReadOnly() const
 
 }
 
-bool DImgHEIFLoader::isHeifSuccess(struct heif_error* const error)
+bool DImgHEIFLoader::isHeifSuccess(const struct heif_error* const error)
 {
     if (error->code == 0)
     {
