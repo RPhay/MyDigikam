@@ -32,49 +32,32 @@ class Q_DECL_HIDDEN BlurDetector::Private
 
 public:
 
-    explicit Private()
-      : min_abs                 (1.0F),
-        ordre_log_filter        (30.0F),
-        sigma_smooth_image      (5.0F),
-        filter_defocus          (115.0F),
-        part_size_motion_blur   (40),
-        edges_filter            (8.0F),
-        theta_resolution        (CV_PI / 900.0),
-        min_line_length         (30),
-        threshold_hough         (15.0F),
-        min_nb_lines            (3),
-        max_stddev              (0.65F),
-        part_size_mono_color    (40),
-        mono_color_threshold    (10.0F),
-        have_focus_region       (false),
-        ratio_expand_af_point   (2)
-    {
-    }
+    Private() = default;
 
-    float                               min_abs;
-    float                               ordre_log_filter;
-    float                               sigma_smooth_image;
-    float                               filter_defocus;
+    float                               min_abs                 = 1.0F;
+    float                               ordre_log_filter        = 30.0F;
+    float                               sigma_smooth_image      = 5.0F;
+    float                               filter_defocus          = 115.0F;
 
-    int                                 part_size_motion_blur;
-    float                               edges_filter;
-    double                              theta_resolution;
-    double                              min_line_length;
-    float                               threshold_hough;
-    int                                 min_nb_lines;
-    float                               max_stddev;
+    int                                 part_size_motion_blur   = 40;
+    float                               edges_filter            = 8.0F;
+    double                              theta_resolution        = CV_PI / 900.0;
+    double                              min_line_length         = 30;
+    float                               threshold_hough         = 15.0F;
+    int                                 min_nb_lines            = 3;
+    float                               max_stddev              = 0.65F;
 
-    int                                 part_size_mono_color;
-    float                               mono_color_threshold;
+    int                                 part_size_mono_color    = 40;
+    float                               mono_color_threshold    = 10.0F;
 
-    bool                                have_focus_region;
-    int                                 ratio_expand_af_point;
+    bool                                have_focus_region       = false;
+    int                                 ratio_expand_af_point   = 2;
     FocusPointsExtractor::ListAFPoints  af_points;
 };
 
 BlurDetector::BlurDetector(const DImg& image)
     : AbstractDetector(),
-      d                 (new Private)
+      d               (new Private)
 {
     QScopedPointer<FocusPointsExtractor> const extractor (new FocusPointsExtractor(nullptr, image.originalFilePath()));
 

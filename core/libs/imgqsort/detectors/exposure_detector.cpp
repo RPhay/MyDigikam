@@ -33,33 +33,23 @@ class Q_DECL_HIDDEN ExposureDetector::Private
 
 public:
 
-    explicit Private()
-      : threshold_overexposed       (245),
-        threshold_demi_overexposed  (235),
-        threshold_underexposed      (15),
-        threshold_demi_underexposed (30),
-        weight_over_exposure        (15),
-        weight_demi_over_exposure   (1),
-        weight_under_exposure       (15),
-        weight_demi_under_exposure  (6)
-    {
-    }
+    Private() = default;
 
-    int threshold_overexposed;
-    int threshold_demi_overexposed;
-    int threshold_underexposed;
-    int threshold_demi_underexposed;
+    int threshold_overexposed       = 245;
+    int threshold_demi_overexposed  = 235;
+    int threshold_underexposed      = 15;
+    int threshold_demi_underexposed = 30;
 
-    int weight_over_exposure;
-    int weight_demi_over_exposure;
+    int weight_over_exposure        = 15;
+    int weight_demi_over_exposure   = 1;
 
-    int weight_under_exposure;
-    int weight_demi_under_exposure;
+    int weight_under_exposure       = 15;
+    int weight_demi_under_exposure  = 6;
 };
 
 ExposureDetector::ExposureDetector()
     :  AbstractDetector(),
-       d                 (new Private)
+       d               (new Private)
 {
 }
 

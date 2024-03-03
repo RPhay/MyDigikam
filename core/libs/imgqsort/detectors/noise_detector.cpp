@@ -77,23 +77,18 @@ class Q_DECL_HIDDEN NoiseDetector::Private
 
 public:
 
-    explicit Private()
-      : size_filter (4),
-        alpha       (18.0F),
-        beta        (7.0F)
-    {
-    }
+    Private() = default;
 
-    int   size_filter;
+    int   size_filter = 4;
 
-    float alpha;
-    float beta;
+    float alpha       = 18.0F;
+    float beta        = 7.0F;
 };
 
 // Main noise detection
 NoiseDetector::NoiseDetector()
     :  AbstractDetector(),
-       d                 (new Private)
+       d               (new Private)
 {
 }
 
@@ -206,17 +201,17 @@ float NoiseDetector::noise_variance(const cv::Mat& variance, const cv::Mat& kurt
 
         cv::sqrt(kurtosis, sqrt_kurtosis);
 
-        float a     = mean_mat(sqrt_kurtosis);
+        float aa    = mean_mat(sqrt_kurtosis);
 
-        float b     = mean_mat(pow_mat(variance, -1));
+        float bb    = mean_mat(pow_mat(variance, -1));
 
-        float c     = mean_mat(pow_mat(variance, -2));
+        float cc    = mean_mat(pow_mat(variance, -2));
 
-        float d     = mean_mat(sqrt_kurtosis.mul(pow_mat(variance, -1)));
+        float dd    = mean_mat(sqrt_kurtosis.mul(pow_mat(variance, -1)));
 
-        float sqrtK = (a*c - b*d) / (c-b * b);
+        float sqrtK = (aa*cc - bb*dd) / (cc-bb * bb);
 
-        return ((1.0F - a / sqrtK) / b);
+        return ((1.0F - aa / sqrtK) / bb);
     }
     catch (cv::Exception& e)
     {

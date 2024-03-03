@@ -32,29 +32,21 @@ class Q_DECL_HIDDEN CompressionDetector::Private
 {
 public:
 
-    explicit Private()
-      : threshold_edges_block   (2),
-        weight_edges_block      (120.0F),
-        weight_mono_color       (10.0F),
-        threshold_mono_color    (0.1F),
-        alpha                   (0.026F),
-        beta                    (-0.002F)
-    {
-    }
+    Private() = default;
 
-    int   threshold_edges_block;
-    float weight_edges_block;
+    int   threshold_edges_block = 2;
+    float weight_edges_block    = 120.0F;
 
-    float weight_mono_color;
-    float threshold_mono_color;
+    float weight_mono_color     = 10.0F;
+    float threshold_mono_color  = 0.1F;
 
-    float alpha;
-    float beta;
+    float alpha                 = 0.026F;
+    float beta                  = -0.002F;
 };
 
 CompressionDetector::CompressionDetector()
     :  AbstractDetector(),
-       d                 (new Private)
+       d               (new Private)
 {
 }
 
