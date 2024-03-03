@@ -45,7 +45,7 @@ public:
      * Methods to manipulate the levels data.
      */
     void   levelsChannelReset(int channel);
-    void   levelsAuto(ImageHistogram* const hist);
+    void   levelsAuto(const ImageHistogram* const hist);
     void   levelsChannelAuto(const ImageHistogram* const hist, int channel);
     int    levelsInputFromColor(int channel, const DColor& color);
     void   levelsBlackToneAdjustByColors(int channel, const DColor& color);

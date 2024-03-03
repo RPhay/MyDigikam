@@ -160,7 +160,7 @@ void ImageLevels::levelsChannelReset(int channel)
     d->dirty = false;
 }
 
-void ImageLevels::levelsAuto(ImageHistogram* const hist)
+void ImageLevels::levelsAuto(const ImageHistogram* const hist)
 {
     if (!d->levels || !hist)
     {
