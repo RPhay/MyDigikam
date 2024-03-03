@@ -114,7 +114,7 @@ private:
 
     QString  m_id;
     QString  m_description;
-    QAction* m_action;
+    QAction* m_action       = nullptr;
 };
 
 typedef QList<Token*> TokenList;

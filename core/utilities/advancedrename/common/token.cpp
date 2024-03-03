@@ -22,15 +22,16 @@ namespace Digikam
 {
 
 Token::Token(const QString& id, const QString& description)
-    : QObject(nullptr),
-      m_id(id),
+    : QObject      (nullptr),
+      m_id         (id),
       m_description(description)
 {
     m_action = new QAction(this);
     m_action->setText(id);
     m_action->setToolTip(description);
 
-    connect(m_action, SIGNAL(triggered()), this, SLOT(slotTriggered()));
+    connect(m_action, SIGNAL(triggered()),
+            this, SLOT(slotTriggered()));
 }
 
 Token::~Token()

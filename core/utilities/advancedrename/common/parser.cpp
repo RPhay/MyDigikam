@@ -43,9 +43,7 @@ class Q_DECL_HIDDEN Parser::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     RulesList options;
     RulesList modifiers;
@@ -102,6 +100,7 @@ void Parser::reset()
 bool Parser::parseStringIsValid(const QString& str)
 {
     QRegularExpression invalidString(QRegularExpression::anchoredPattern(QLatin1String("^\\s*$")));
+
     return (!str.isEmpty() && !invalidString.match(str).hasMatch());
 }
 
@@ -250,6 +249,7 @@ bool Parser::tokenAtPosition(ParseSettings& settings, int pos)
 {
     int start;
     int length;
+
     return tokenAtPosition(settings, pos, start, length);
 }
 

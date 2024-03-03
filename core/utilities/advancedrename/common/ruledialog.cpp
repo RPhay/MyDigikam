@@ -39,34 +39,29 @@ class Q_DECL_HIDDEN RuleDialog::Private
 {
 public:
 
-    explicit Private()
-      : buttons(nullptr),
-        container(nullptr),
-        dialogTitle(nullptr),
-        dialogDescription(nullptr),
-        dialogIcon(nullptr),
-        settingsWidget(nullptr)
-    {
-    }
+    Private() = default;
 
-    QDialogButtonBox* buttons;
-    QWidget*          container;
-    QLabel*           dialogTitle;
-    QLabel*           dialogDescription;
-    QLabel*           dialogIcon;
-    QWidget*          settingsWidget;
+    QDialogButtonBox* buttons           = nullptr;
+    QWidget*          container         = nullptr;
+    QLabel*           dialogTitle       = nullptr;
+    QLabel*           dialogDescription = nullptr;
+    QLabel*           dialogIcon        = nullptr;
+    QWidget*          settingsWidget    = nullptr;
 };
 
 RuleDialog::RuleDialog(Rule* const parent)
     : QDialog(nullptr),
-      d(new Private)
+      d      (new Private)
 {
-    d->buttons           = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help, this);
+    d->buttons                = new QDialogButtonBox(QDialogButtonBox::Ok     |
+                                                     QDialogButtonBox::Cancel |
+                                                     QDialogButtonBox::Help,
+                                                     this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
-    d->dialogTitle       = new QLabel(this);
-    d->dialogDescription = new QLabel(this);
-    d->dialogIcon        = new QLabel(this);
+    d->dialogTitle            = new QLabel(this);
+    d->dialogDescription      = new QLabel(this);
+    d->dialogIcon             = new QLabel(this);
 
     setDialogTitle(parent->objectName());
     setDialogDescription(parent->description());
@@ -76,7 +71,7 @@ RuleDialog::RuleDialog(Rule* const parent)
     d->dialogDescription->setAlignment(Qt::AlignHCenter);
     d->dialogDescription->setWordWrap(true);
 
-    QFrame* const line = new QFrame(this);
+    QFrame* const line        = new QFrame(this);
     line->setFrameShape(QFrame::HLine);
     line->setFrameShadow(QFrame::Sunken);
 
@@ -96,7 +91,7 @@ RuleDialog::RuleDialog(Rule* const parent)
     containerLayout->setRowStretch(1, 10);
     d->container->setLayout(containerLayout);
 
-    QVBoxLayout* const vbx = new QVBoxLayout(this);
+    QVBoxLayout* const vbx             = new QVBoxLayout(this);
     vbx->addWidget(d->container);
     vbx->addWidget(d->buttons);
     setLayout(vbx);
@@ -123,7 +118,9 @@ void RuleDialog::setDialogTitle(const QString& title)
     // remove ellipsis and "&&" from the string
 
     QString _title = title;
-    _title.remove(QRegularExpression(QLatin1String("\\.{3,}"))).replace(QLatin1String("&&"), QLatin1String("&"));
+    _title.remove(QRegularExpression(QLatin1String("\\.{3,}")))
+                  .replace(QLatin1String("&&"),
+                  QLatin1String("&"));
 
     d->dialogTitle->setText(QString::fromUtf8("<b>%1</b>").arg(_title));
     setWindowTitle(_title);
@@ -154,7 +151,9 @@ void RuleDialog::setSettingsWidget(QWidget* const settingsWidget)
 
 void RuleDialog::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
+    openOnlineDocumentation(QLatin1String("main_window"),
+                            QLatin1String("image_view"),
+                            QLatin1String("renaming-photograph"));
 }
 
 } // namespace Digikam

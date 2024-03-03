@@ -21,23 +21,21 @@ class Q_DECL_HIDDEN Option::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     ParseResults parsedResults;
 };
 
 Option::Option(const QString& name, const QString& description)
     : Rule(name),
-      d(new Private)
+      d   (new Private)
 {
     setDescription(description);
 }
 
 Option::Option(const QString& name, const QString& description, const QString& icon)
     : Rule(name, icon),
-      d(new Private)
+      d   (new Private)
 {
     setDescription(description);
 }

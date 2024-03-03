@@ -85,15 +85,16 @@ QString TooltipCreator::getInfoIconBase64() const
     QBuffer    buffer(&byteArray);
     img.save(&buffer, "PNG");
 
-    return (QString::fromLatin1("<img src=\"data:image/png;base64,%1\">").arg(QString::fromLatin1(byteArray.toBase64().data())));
+    return (QString::fromLatin1("<img src=\"data:image/png;base64,%1\">")
+            .arg(QString::fromLatin1(byteArray.toBase64().data())));
 }
 
 QIcon TooltipCreator::getInfoIcon() const
 {
-    return QIcon::fromTheme(QLatin1String("dialog-information")); // image-stack-open
+    return QIcon::fromTheme(QLatin1String("dialog-information"));
 }
 
-QString TooltipCreator::tooltip(Parser* parser)
+QString TooltipCreator::tooltip(const Parser* const parser)
 {
     if (!parser)
     {

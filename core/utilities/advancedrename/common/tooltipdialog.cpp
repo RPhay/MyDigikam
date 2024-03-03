@@ -37,26 +37,22 @@ class Q_DECL_HIDDEN TooltipDialog::Private
 {
 public:
 
-    explicit Private()
-      : buttons(nullptr),
-        textBrowser(nullptr)
-    {
-    }
+    Private() = default;
 
-    QDialogButtonBox* buttons;
-    QTextBrowser*     textBrowser;
+    QDialogButtonBox* buttons     = nullptr;
+    QTextBrowser*     textBrowser = nullptr;
 };
 
 TooltipDialog::TooltipDialog(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setWindowTitle(i18nc("@title:window", "Information"));
 
-    d->buttons     = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Help, this);
+    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Help, this);
     d->buttons->button(QDialogButtonBox::Close)->setDefault(true);
 
-    d->textBrowser = new QTextBrowser(this);
+    d->textBrowser         = new QTextBrowser(this);
     d->textBrowser->setFrameStyle(QFrame::NoFrame);
     d->textBrowser->setOpenLinks(true);
     d->textBrowser->setOpenExternalLinks(true);
@@ -92,7 +88,9 @@ void TooltipDialog::clearTooltip()
 
 void TooltipDialog::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
+    openOnlineDocumentation(QLatin1String("main_window"),
+                            QLatin1String("image_view"),
+                            QLatin1String("renaming-photograph"));
 }
 
 } // namespace Digikam

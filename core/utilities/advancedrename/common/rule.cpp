@@ -32,12 +32,9 @@ class Q_DECL_HIDDEN Rule::Private
 {
 public:
 
-    explicit Private()
-        : useTokenMenu(false)
-    {
-    }
+    Private() = default;
 
-    bool                    useTokenMenu;
+    bool                    useTokenMenu = false;
 
     QString                 description;
     QString                 iconName;
@@ -48,14 +45,14 @@ public:
 
 Rule::Rule(const QString& name)
     : QObject(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     setObjectName(name);
 }
 
 Rule::Rule(const QString& name, const QString& icon)
     : QObject(nullptr),
-      d(new Private)
+      d      (new Private)
 {
     setObjectName(name);
     setIcon(icon);
@@ -81,12 +78,16 @@ QPixmap Rule::icon(Rule::IconType type) const
     switch (type)
     {
         case Dialog:
+        {
             icon = QIcon::fromTheme(d->iconName).pixmap(48);
             break;
+        }
 
         default:
+        {
             icon = QIcon::fromTheme(d->iconName).pixmap(QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize));
             break;
+        }
     }
 
     return icon;
@@ -126,11 +127,11 @@ QPushButton* Rule::createButton(const QString& name, const QIcon& icon)
 
 QPushButton* Rule::registerButton(QWidget* parent)
 {
-    QPushButton* button = createButton(objectName(), icon());
+    QPushButton* const button = createButton(objectName(), icon());
 
     QList<QAction*> actions;
 
-    if (d->tokens.count() > 1 && d->useTokenMenu)
+    if      (d->tokens.count() > 1 && d->useTokenMenu)
     {
         QMenu* const menu = new QMenu(button);
 
@@ -159,7 +160,7 @@ QAction* Rule::registerMenu(QMenu* parent)
 {
     QAction* action = nullptr;
 
-    if (d->tokens.count() > 1 && d->useTokenMenu)
+    if      (d->tokens.count() > 1 && d->useTokenMenu)
     {
         QMenu* const menu = new QMenu(parent);
         QList<QAction*> actions;
@@ -231,7 +232,9 @@ void Rule::slotTokenTriggered(const QString& token)
 
 bool Rule::isValid() const
 {
-    return (!d->tokens.isEmpty() && !d->regExp.pattern().isEmpty() && d->regExp.isValid());
+    return (!d->tokens.isEmpty()           &&
+            !d->regExp.pattern().isEmpty() &&
+            d->regExp.isValid());
 }
 
 void Rule::reset()

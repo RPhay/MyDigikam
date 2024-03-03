@@ -32,13 +32,11 @@ class TooltipCreator
 {
 public:
 
-    ~TooltipCreator()
-    {
-    };
+    ~TooltipCreator() = default;
 
     static TooltipCreator& getInstance();
 
-    QString tooltip(Parser* parser);
+    QString tooltip(const Parser* const parser);
 
 private:
 
@@ -63,7 +61,7 @@ private:
 private:
 
     // Disable
-    explicit TooltipCreator()                        = default;
+    TooltipCreator()                                 = default;
     TooltipCreator(const TooltipCreator&)            = delete;
     TooltipCreator& operator=(const TooltipCreator&) = delete;
 

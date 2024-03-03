@@ -21,23 +21,21 @@ class Q_DECL_HIDDEN Modifier::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     ParseResults parsedResults;
 };
 
 Modifier::Modifier(const QString& name, const QString& description)
     : Rule(name),
-      d(new Private)
+      d   (new Private)
 {
     setDescription(description);
 }
 
 Modifier::Modifier(const QString& name, const QString& description, const QString& icon)
     : Rule(name, icon),
-      d(new Private)
+      d   (new Private)
 {
     setDescription(description);
 }

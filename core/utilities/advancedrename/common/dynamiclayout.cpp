@@ -28,20 +28,16 @@ public:
 
     explicit Private(int hSpacing, int vSpacing)
       : hSpace      (hSpacing),
-        vSpace      (vSpacing),
-        spaceX      (0),
-        spaceY      (0),
-        minItemWidth(0),
-        minColumns  (2)
+        vSpace      (vSpacing)
     {
     }
 
-    int                 hSpace;
-    int                 vSpace;
-    int                 spaceX;
-    int                 spaceY;
-    int                 minItemWidth;
-    const int           minColumns;
+    int                 hSpace       = 0;
+    int                 vSpace       = 0;
+    int                 spaceX       = 0;
+    int                 spaceY       = 0;
+    int                 minItemWidth = 0;
+    const int           minColumns   = 2;
 
     QList<QLayoutItem*> itemList;
 };

@@ -76,10 +76,10 @@ public:
     ParseResults             invalidModifiers;
     ParseResults::ResultsKey currentResultsKey;
 
-    int                      startIndex;
-    int                      cutFileName;
-    bool                     useOriginalFileExtension;
-    AdvancedRenameManager*   manager;
+    int                      startIndex                 = 1;
+    int                      cutFileName                = 0;
+    bool                     useOriginalFileExtension   = true;
+    AdvancedRenameManager*   manager                    = nullptr;
 
 private:
 
