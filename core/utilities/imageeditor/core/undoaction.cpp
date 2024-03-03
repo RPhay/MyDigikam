@@ -54,9 +54,7 @@ class Q_DECL_HIDDEN UndoAction::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QString               title;
     QVariant              fileOrigin;
@@ -65,7 +63,7 @@ public:
     DImageHistory         fileOriginResolvedHistory;
 };
 
-UndoAction::UndoAction(EditorCore* const core)
+UndoAction::UndoAction(const EditorCore* const core)
     : d(new Private)
 {
     d->container = UndoMetadataContainer::fromImage(*core->getImg());
@@ -120,7 +118,7 @@ DImageHistory UndoAction::fileOriginResolvedHistory() const
 
 // ---------------------------------------------------------------------------------------------
 
-UndoActionReversible::UndoActionReversible(EditorCore* const core,
+UndoActionReversible::UndoActionReversible(const EditorCore* const core,
                                            const DImgBuiltinFilter& reversibleFilter)
     : UndoAction(core),
       m_filter  (reversibleFilter)
@@ -140,11 +138,12 @@ DImgBuiltinFilter UndoActionReversible::getReverseFilter() const
 
 // ---------------------------------------------------------------------------------------------
 
-UndoActionIrreversible::UndoActionIrreversible(EditorCore* const core,
+UndoActionIrreversible::UndoActionIrreversible(const EditorCore* const core,
                                                const QString& title)
     : UndoAction(core)
 {
-    setTitle(title.isNull() ? i18nc("@title: menu entry to undo unknown previous action", "Unknown") : title);
+    setTitle(title.isNull() ? i18nc("@title: menu entry to undo unknown previous action", "Unknown")
+                            : title);
 }
 
 UndoActionIrreversible::~UndoActionIrreversible()

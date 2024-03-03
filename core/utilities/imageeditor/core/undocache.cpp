@@ -43,21 +43,20 @@ class Q_DECL_HIDDEN UndoCache::Private
 {
 public:
 
-    explicit Private()
-      : cacheError(false)
-    {
-    }
+    Private() = default;
 
     QString cacheFile(int level) const
     {
         return QString::fromUtf8("%1-%2.bin").arg(cachePrefix).arg(level);
     }
 
+public:
+
     QString   cacheDir;
     QString   cachePrefix;
     QSet<int> cachedLevels;
 
-    bool      cacheError;
+    bool      cacheError = false;
 };
 
 UndoCache::UndoCache()

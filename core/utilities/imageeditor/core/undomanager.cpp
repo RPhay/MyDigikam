@@ -39,20 +39,15 @@ class Q_DECL_HIDDEN UndoManager::Private
 {
 public:
 
-    explicit Private()
-      : origin   (0),
-        undoCache(nullptr),
-        core     (nullptr)
-    {
-    }
+    Private() = default;
 
     QList<UndoAction*> undoActions;
     QList<UndoAction*> redoActions;
-    int                origin;
+    int                origin       = 0;
 
-    UndoCache*         undoCache;
+    UndoCache*         undoCache    = nullptr;
 
-    EditorCore*        core;
+    EditorCore*        core         = nullptr;
 };
 
 UndoManager::UndoManager(EditorCore* const core)

@@ -22,24 +22,15 @@ class UndoState
 {
 public:
 
-    explicit UndoState()
-      : hasUndo           (false),
-        hasRedo           (false),
-        hasChanges        (false),
-        hasUndoableChanges(false)
-    {
-    }
-
-    ~UndoState()
-    {
-    }
+    UndoState()  = default;
+    ~UndoState() = default;
 
 public:
 
-    bool hasUndo;
-    bool hasRedo;
-    bool hasChanges;
-    bool hasUndoableChanges;
+    bool hasUndo            = false;
+    bool hasRedo            = false;
+    bool hasChanges         = false;
+    bool hasUndoableChanges = false;
 };
 
 } // namespace Digikam

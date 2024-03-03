@@ -58,7 +58,7 @@ class DIGIKAM_EXPORT UndoAction
 
 public:
 
-    explicit UndoAction(EditorCore* const core);
+    explicit UndoAction(const EditorCore* const core);
     virtual ~UndoAction();
 
     void                  setTitle(const QString& title);
@@ -92,7 +92,7 @@ class DIGIKAM_EXPORT UndoActionReversible : public UndoAction
 
 public:
 
-    explicit UndoActionReversible(EditorCore* const core,
+    explicit UndoActionReversible(const EditorCore* const core,
                                   const DImgBuiltinFilter& reversibleFilter);
 
     DImgBuiltinFilter getFilter()        const;
@@ -110,7 +110,7 @@ class DIGIKAM_EXPORT UndoActionIrreversible : public UndoAction
 
 public:
 
-    explicit UndoActionIrreversible(EditorCore* const core,
+    explicit UndoActionIrreversible(const EditorCore* const core,
                                     const QString& title = QString());
     ~UndoActionIrreversible() override;
 };
