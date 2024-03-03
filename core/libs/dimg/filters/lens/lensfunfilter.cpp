@@ -45,20 +45,15 @@ class Q_DECL_HIDDEN LensFunFilter::Private
 {
 public:
 
-    explicit Private()
-      : iface   (nullptr),
-        modifier(nullptr),
-        loop    (0)
-    {
-    }
+    Private() = default;
 
     DImg          tempImage;
 
-    LensFunIface* iface;
+    LensFunIface* iface    = nullptr;
 
-    lfModifier*   modifier;
+    lfModifier*   modifier = nullptr;
 
-    int           loop;
+    int           loop     = 0;
 };
 
 LensFunFilter::LensFunFilter(QObject* const parent)

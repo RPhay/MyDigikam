@@ -92,7 +92,7 @@ public:
     DevicePtr findCamera(const QString& make, const QString& model) const;
     LensPtr   findLens(const QString& model)                        const;
 
-    MetadataMatch findFromMetadata(DMetadata* const meta);
+    MetadataMatch findFromMetadata(const DMetadata* const meta);
 
     bool supportsDistortion()                                       const;
     bool supportsCCA()                                              const;

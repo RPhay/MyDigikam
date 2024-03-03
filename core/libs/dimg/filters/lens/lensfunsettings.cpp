@@ -37,23 +37,17 @@ class Q_DECL_HIDDEN LensFunSettings::Private
 {
 public:
 
-    explicit Private()
-      : filterCCA(nullptr),
-        filterVIG(nullptr),
-        filterDST(nullptr),
-        filterGEO(nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configCCAEntry;
     static const QString configVignettingEntry;
     static const QString configDistortionEntry;
     static const QString configGeometryEntry;
 
-    QCheckBox*           filterCCA;
-    QCheckBox*           filterVIG;
-    QCheckBox*           filterDST;
-    QCheckBox*           filterGEO;
+    QCheckBox*           filterCCA = nullptr;
+    QCheckBox*           filterVIG = nullptr;
+    QCheckBox*           filterDST = nullptr;
+    QCheckBox*           filterGEO = nullptr;
 };
 
 const QString LensFunSettings::Private::configCCAEntry(QLatin1String("CCA"));

@@ -41,27 +41,21 @@ class Q_DECL_HIDDEN LensFunIface::Private
 {
 public:
 
-    explicit Private()
-      : lfDb      (nullptr),
-        lfCameras (nullptr),
-        usedLens  (nullptr),
-        usedCamera(nullptr)
-    {
-    }
+    Private() = default;
 
     // To be used for modification
     LensFunContainer       settings;
 
     // Database items
-    lfDatabase*            lfDb;
-    const lfCamera* const* lfCameras;
+    lfDatabase*            lfDb         = nullptr;
+    const lfCamera* const* lfCameras    = nullptr;
 
     QString                makeDescription;
     QString                modelDescription;
     QString                lensDescription;
 
-    LensPtr                usedLens;
-    DevicePtr              usedCamera;
+    LensPtr                usedLens     = nullptr;
+    DevicePtr              usedCamera   = nullptr;
 };
 
 LensFunIface::LensFunIface()
@@ -249,7 +243,7 @@ LensFunIface::LensList LensFunIface::findLenses(const lfCamera* const lfCamera,
     return lensList;
 }
 
-LensFunIface::MetadataMatch LensFunIface::findFromMetadata(DMetadata* const meta)
+LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata* const meta)
 {
     MetadataMatch ret  = MetadataNoMatch;
     d->settings        = LensFunContainer();
@@ -260,6 +254,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(DMetadata* const meta
     if (!meta || meta->isEmpty())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "No metadata available";
+
         return LensFunIface::MetadataUnavailable;
     }
 
@@ -339,7 +334,9 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(DMetadata* const meta
                 // STAGE 1, search in LensFun database as well.
 
                 lensList = findLenses(d->usedCamera, d->lensDescription);
-                qCDebug(DIGIKAM_DIMG_LOG) << "* Check for lens by direct query (" << d->lensDescription << " : " << lensList.count() << ")";
+                qCDebug(DIGIKAM_DIMG_LOG) << "* Check for lens by direct query ("
+                                          << d->lensDescription << " : "
+                                          << lensList.count() << ")";
                 lensMatches.append(lensList);
 
                 // STAGE 2, Adapt exiv2 strings to lensfun strings for Nikon.
@@ -352,7 +349,9 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(DMetadata* const meta
                     lensCutted.remove(QLatin1String("Zoom-"));
                     lensCutted.replace(QLatin1String("IF-ID"), QLatin1String("ED-IF"));
                     lensList = findLenses(d->usedCamera, lensCutted);
-                    qCDebug(DIGIKAM_DIMG_LOG) << "* Check for Nikon lens (" << lensCutted << " : " << lensList.count() << ")";
+                    qCDebug(DIGIKAM_DIMG_LOG) << "* Check for Nikon lens ("
+                                              << lensCutted << " : "
+                                              << lensList.count() << ")";
                     lensMatches.append(lensList);
                 }
 
@@ -366,7 +365,9 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(DMetadata* const meta
                 lensCutted.replace(QLatin1String(" - "), QLatin1String("-"));
                 lensCutted.replace(QLatin1String(" mm"), QLatin1String("mn"));
                 lensList   = findLenses(d->usedCamera, lensCutted);
-                qCDebug(DIGIKAM_DIMG_LOG) << "* Check for no maker lens (" << lensCutted << " : " << lensList.count() << ")";
+                qCDebug(DIGIKAM_DIMG_LOG) << "* Check for no maker lens ("
+                                          << lensCutted << " : "
+                                          << lensList.count() << ")";
                 lensMatches.append(lensList);
 
                 // Remove all duplicate lenses in the list by using QSet.
@@ -552,16 +553,22 @@ QString LensFunIface::metadataMatchDebugStr(MetadataMatch val) const
     switch (val)
     {
         case MetadataNoMatch:
+        {
             ret = QLatin1String("No Match");
             break;
+        }
 
         case MetadataPartialMatch:
+        {
             ret = QLatin1String("Partial Match");
             break;
+        }
 
         default:
+        {
             ret = QLatin1String("Exact Match");
             break;
+        }
     }
 
     return ret;

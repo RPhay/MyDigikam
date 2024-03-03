@@ -27,36 +27,20 @@ class DIGIKAM_EXPORT LensFunContainer
 
 public:
 
-    explicit LensFunContainer()
-      : filterCCA       (true),
-        filterVIG       (true),
-        filterDST       (true),
-        filterGEO       (true),
-        cropFactor      (-1.0),
-        focalLength     (-1.0),
-        aperture        (-1.0),
-        subjectDistance (-1.0),
-        cameraMake      (QString()),
-        cameraModel     (QString()),
-        lensModel       (QString())
-    {
-    };
-
-    ~LensFunContainer()
-    {
-    };
+    LensFunContainer()  = default;
+    ~LensFunContainer() = default;
 
 public:
 
-    bool      filterCCA;       ///< Chromatic Aberration Corrections
-    bool      filterVIG;       ///< Vignetting Corrections
-    bool      filterDST;       ///< Distortion Corrections
-    bool      filterGEO;       ///< Geometry Corrections
+    bool      filterCCA         = true;       ///< Chromatic Aberration Corrections
+    bool      filterVIG         = true;       ///< Vignetting Corrections
+    bool      filterDST         = true;       ///< Distortion Corrections
+    bool      filterGEO         = true;       ///< Geometry Corrections
 
-    double    cropFactor;
-    double    focalLength;
-    double    aperture;
-    double    subjectDistance;
+    double    cropFactor        = -1.0;
+    double    focalLength       = -1.0;
+    double    aperture          = -1.0;
+    double    subjectDistance   = -1.0;
 
     QString   cameraMake;
     QString   cameraModel;
