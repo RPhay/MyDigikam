@@ -43,11 +43,11 @@ GeodeticCalculator::GeodeticCalculator(const Ellipsoid& e)
 
     // constants
 
-    TOLERANCE_0           = 5.0e-15,
-    TOLERANCE_1           = 5.0e-14,
-    TOLERANCE_2           = 5.0e-13,
-    TOLERANCE_3           = 7.0e-3;
-    TOLERANCE_CHECK       = 1E-8;
+    m_TOLERANCE_0         = 5.0e-15,
+    m_TOLERANCE_1         = 5.0e-14,
+    m_TOLERANCE_2         = 5.0e-13,
+    m_TOLERANCE_3         = 7.0e-3;
+    m_TOLERANCE_CHECK     = 1E-8;
 
     // calculation of GPNHRI parameters
 
@@ -66,14 +66,14 @@ GeodeticCalculator::GeodeticCalculator(const Ellipsoid& e)
     const double E8       = E6*E2;
     const double EX       = E8*E2;
 
-    A =  1.0+0.75*E2+0.703125*E4+0.68359375 *E6+0.67291259765625*E8+0.6661834716796875 *EX;
-    B =      0.75*E2+0.9375  *E4+1.025390625*E6+1.07666015625   *E8+1.1103057861328125 *EX;
-    C =              0.234375*E4+0.41015625 *E6+0.538330078125  *E8+0.63446044921875   *EX;
-    D =                          0.068359375*E6+0.15380859375   *E8+0.23792266845703125*EX;
-    E =                                         0.01922607421875*E8+0.0528717041015625 *EX;
-    F =                                                             0.00528717041015625*EX;
+    m_A =  1.0+0.75*E2+0.703125*E4+0.68359375 *E6+0.67291259765625*E8+0.6661834716796875 *EX;
+    m_B =      0.75*E2+0.9375  *E4+1.025390625*E6+1.07666015625   *E8+1.1103057861328125 *EX;
+    m_C =              0.234375*E4+0.41015625 *E6+0.538330078125  *E8+0.63446044921875   *EX;
+    m_D =                          0.068359375*E6+0.15380859375   *E8+0.23792266845703125*EX;
+    m_E =                                         0.01922607421875*E8+0.0528717041015625 *EX;
+    m_F =                                                             0.00528717041015625*EX;
 
-    m_maxOrthodromicDistance = m_semiMajorAxis * (1.0-E2) * M_PI * A - 1.0;
+    m_maxOrthodromicDistance = m_semiMajorAxis * (1.0-E2) * M_PI * m_A - 1.0;
 
     T1 = 1.0;
     T2 = -0.25*f*(1.0 + f + f2);
@@ -251,7 +251,7 @@ bool GeodeticCalculator::checkOrthodromicDistance()
                                                    toDegrees(m_long2), toDegrees(m_lat2));
     check = fabs(m_distance - check);
 
-    return (check <= (m_distance+1) * TOLERANCE_CHECK);
+    return (check <= (m_distance+1) * m_TOLERANCE_CHECK);
 }
 
 bool GeodeticCalculator::computeDestinationPoint()
@@ -283,45 +283,45 @@ bool GeodeticCalculator::computeDestinationPoint()
      * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/forward.for
      *         subroutine DIRECT1
      */
-    double TU  = fo*sin(lat1) / cos(lat1);
+    double TU  = fo * sin(lat1) / cos(lat1);
     double SF  = sin(azimuth);
     double CF  = cos(azimuth);
-    double BAZ = (CF!=0) ? atan2(TU,CF)*2.0 : 0;
-    double CU  = 1/sqrt(TU*TU + 1.0);
-    double SU  = TU*CU;
-    double SA  = CU*SF;
-    double C2A = 1.0 - SA*SA;
-    double X   = sqrt((1.0/fo/fo-1)*C2A+1.0) + 1.0;
-    X          = (X-2.0)/X;
-    double C   = 1.0-X;
-    C          = (X*X/4.0+1.0)/C;
-    double D   = (0.375*X*X-1.0)*X;
-    TU         = distance / fo / m_semiMajorAxis / C;
+    double BAZ = (CF != 0) ? atan2(TU, CF) * 2.0 : 0;
+    double CU  = 1 / sqrt(TU * TU + 1.0);
+    double SU  = TU * CU;
+    double SA  = CU * SF;
+    double C2A = 1.0 - SA * SA;
+    double X   = sqrt((1.0 / fo / fo - 1) * C2A + 1.0) + 1.0;
+    X          = (X - 2.0) / X;
+    double CC  = 1.0 - X;
+    CC         = (X * X / 4.0 + 1.0) / CC;
+    double DD  = (0.375 * X * X - 1.0) * X;
+    TU         = distance / fo / m_semiMajorAxis / CC;
     double Y   = TU;
-    double SY, CY, CZ, E;
+    double SY, CY, CZ, EE;
 
     do
     {
         SY = sin(Y);
         CY = cos(Y);
-        CZ = cos(BAZ+Y);
-        E  = CZ*CZ*2.0-1.0;
-        C  = Y;
-        X  = E*CY;
-        Y  = E+E-1.0;
-        Y  = (((SY*SY*4.0-3.0)*Y*CZ*D/6.0+X)*D/4.0-CZ)*SY*D+TU;
+        CZ = cos(BAZ + Y);
+        EE = CZ * CZ * 2.0 - 1.0;
+        CC = Y;
+        X  = EE * CY;
+        Y  = EE + EE - 1.0;
+        Y  = (((SY * SY * 4.0 - 3.0) * Y * CZ * DD / 6.0 + X) * DD / 4.0 - CZ) * SY * DD + TU;
     }
-    while (fabs(Y-C) > TOLERANCE_1);
+    while (fabs(Y - CC) > m_TOLERANCE_1);
 
-    BAZ                = CU*CY*CF - SU*SY;
-    C                  = fo*sqrt(SA*SA+BAZ*BAZ);
-    D                  = SU*CY + CU*SY*CF;
-    m_lat2             = atan2(D,C);
-    C                  = CU*CY-SU*SY*CF;
-    X                  = atan2(SY*SF,C);
-    C                  = ((-3.0*C2A+4.0)*f+4.0)*C2A*f/16.0;
-    D                  = ((E*CY*C+CZ)*SY*C+Y)*SA;
-    m_long2            = long1+X - (1.0-C)*D*f;
+    BAZ                = CU * CY * CF - SU * SY;
+    CC                 = fo * sqrt(SA * SA + BAZ * BAZ);
+    DD                 = SU * CY + CU * SY * CF;
+    m_lat2             = atan2(DD, CC);
+    CC                 = CU * CY - SU * SY * CF;
+    X                  = atan2(SY * SF, CC);
+    CC                 = ((-3.0 * C2A + 4.0) * f + 4.0) * C2A * f / 16.0;
+    DD                 = ((EE * CY * CC + CZ) * SY * CC + Y) * SA;
+    m_long2            = long1 + X - (1.0 - CC) * DD * f;
     m_long2            = castToAngleRange(m_long2);
     m_destinationValid = true;
 
@@ -357,7 +357,7 @@ double GeodeticCalculator::meridianArcLengthRadians(double P1, double P2)
 
     // Check for a 90 degree lookup
 
-    if ((S1 > TOLERANCE_0) || (S2 <= (M_PI/2-TOLERANCE_0)) || (S2 >= (M_PI/2+TOLERANCE_0)))
+    if ((S1 > m_TOLERANCE_0) || (S2 <= (M_PI/2-m_TOLERANCE_0)) || (S2 >= (M_PI/2+m_TOLERANCE_0)))
     {
         const double DB = sin(P2* 2.0) - sin(P1* 2.0);
         const double DC = sin(P2* 4.0) - sin(P1* 4.0);
@@ -367,12 +367,12 @@ double GeodeticCalculator::meridianArcLengthRadians(double P1, double P2)
 
         // Compute the S2 part of the series expansion
 
-        S2              = -DB*B/2.0 + DC*C/4.0 - DD*D/6.0 + DE*E/8.0 - DF*F/10.0;
+        S2              = -DB * m_B / 2.0 + DC * m_C / 4.0 - DD * m_D / 6.0 + DE * m_E / 8.0 - DF * m_F / 10.0;
     }
 
     // Compute the S1 part of the series expansion
 
-    S1        = DA*A;
+    S1        = DA * m_A;
 
     // Compute the arc length
 
@@ -418,7 +418,7 @@ bool GeodeticCalculator::computeDirection()
     const double dlon = castToAngleRange(long2-long1);
     const double ss   = fabs(dlon);
 
-    if (ss < TOLERANCE_1)
+    if (ss < m_TOLERANCE_1)
     {
         m_distance       = meridianArcLengthRadians(lat1, lat2);
         m_azimuth        = (lat2>lat1) ? 0.0 : M_PI;
@@ -439,10 +439,10 @@ bool GeodeticCalculator::computeDirection()
     const double alimit = M_PI*fo;
 
     if ((ss >= alimit)        &&
-        (lat1 < TOLERANCE_3)  &&
-        (lat1 > -TOLERANCE_3) &&
-        (lat2 < TOLERANCE_3)  &&
-        (lat2 > -TOLERANCE_3))
+        (lat1 < m_TOLERANCE_3)  &&
+        (lat1 > -m_TOLERANCE_3) &&
+        (lat2 < m_TOLERANCE_3)  &&
+        (lat2 > -m_TOLERANCE_3))
     {
         // Computes an approximate AZ
 
@@ -471,7 +471,7 @@ bool GeodeticCalculator::computeDirection()
             AZ_TEMP           = AZ;
             AZ                = S;
         }
-        while (fabs(S-AZ_TEMP) >= TOLERANCE_2);
+        while (fabs(S-AZ_TEMP) >= m_TOLERANCE_2);
 
         const double AZ1 = (dlon < 0.0) ? 2.0*M_PI - S : S;
         m_azimuth        = castToAngleRange(AZ1);
@@ -540,7 +540,7 @@ bool GeodeticCalculator::computeDirection()
 
         double qo         = 0.0;
 
-        if (w > TOLERANCE_0)
+        if (w > m_TOLERANCE_0)
         {
             qo = -2.0*su1*su2/w;
         }
@@ -558,7 +558,7 @@ bool GeodeticCalculator::computeDirection()
         xy             = fabs(xz-ab);
         ab             = dlon+s;
     }
-    while (xy >= TOLERANCE_1);
+    while (xy >= m_TOLERANCE_1);
 
     const double z  = ESQP*w;
     const double bo = 1.0 + z*( 1.0/4.0 + z*(-3.0/  64.0 + z*(  5.0/256.0 - z*(175.0/16384.0))));
@@ -573,7 +573,7 @@ bool GeodeticCalculator::computeDirection()
 
     // now compute the az1 & az2 for latitudes not on the equator
 
-    if ((fabs(su1) >= TOLERANCE_0) || (fabs(su2) >= TOLERANCE_0))
+    if ((fabs(su1) >= m_TOLERANCE_0) || (fabs(su2) >= m_TOLERANCE_0))
     {
         const double tana1 = slon*cu2 / (su2*cu1 - clon*su1*cu2);
         const double sina1 = sinalf/cu1;

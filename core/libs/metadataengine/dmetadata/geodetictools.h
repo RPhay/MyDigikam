@@ -452,16 +452,18 @@ protected:
      */
     bool checkOrthodromicDistance(const double distance);
 
+protected:
+
     /**
      * Tolerance factors from the strictest (<code>TOLERANCE_0</CODE>)
      * to the most relax one (<code>TOLERANCE_3</CODE>).
      */
-    double TOLERANCE_0, TOLERANCE_1, TOLERANCE_2, TOLERANCE_3;
+    double m_TOLERANCE_0, m_TOLERANCE_1, m_TOLERANCE_2, m_TOLERANCE_3;
 
     /**
      * Tolerance factor for assertions. It has no impact on computed values.
      */
-    double TOLERANCE_CHECK;
+    double m_TOLERANCE_CHECK;
 
     /**
      * The encapsulated ellipsoid.
@@ -491,7 +493,7 @@ protected:
     /**
      * GPNARC parameters computed from the ellipsoid.
      */
-    double A, B, C, D, E, F;
+    double m_A, m_B, m_C, m_D, m_E, m_F;
 
     /**
      * GPNHRI parameters computed from the ellipsoid.
