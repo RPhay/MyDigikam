@@ -670,11 +670,16 @@ QString DFileOperations::findExecutable(const QString& name)
         program.append(QLatin1String(".exe"));
     }
 
-    QSettings settings(QString::fromUtf8("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
-                                         "CurrentVersion\\App Paths\\%1").arg(program),
-                                         QSettings::NativeFormat);
+    // We will use Unix file path separators.
 
-    path = settings.value(QLatin1String("Default"), QString()).toString();
+    if (!program.contains(QLatin1Char('/')))
+    {
+        QSettings settings(QString::fromUtf8("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
+                                             "CurrentVersion\\App Paths\\%1").arg(program),
+                                             QSettings::NativeFormat);
+
+        path = settings.value(QLatin1String("Default"), QString()).toString();
+    }
 
     if (!path.isEmpty())
     {
@@ -692,7 +697,10 @@ QString DFileOperations::findExecutable(const QString& name)
             }
         }
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found executable:" << path;
+        if (!QFileInfo::exists(path))
+        {
+            path.clear();
+        }
     }
 
 #endif
@@ -701,6 +709,8 @@ QString DFileOperations::findExecutable(const QString& name)
     {
         path = QStandardPaths::findExecutable(program);
     }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Resolved file path:" << path;
 
     return path;
 }
