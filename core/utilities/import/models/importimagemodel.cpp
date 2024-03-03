@@ -31,16 +31,7 @@ class Q_DECL_HIDDEN ImportItemModel::Private
 {
 public:
 
-    explicit Private()
-      : controller                  (nullptr),
-        keepFileUrlCache            (false),
-        refreshing                  (false),
-        reAdding                    (false),
-        incrementalRefreshRequested (false),
-        sendRemovalSignals          (false),
-        incrementalUpdater          (nullptr)
-    {
-    }
+    Private() = default;
 
     inline bool isValid(const QModelIndex& index)
     {
@@ -53,22 +44,22 @@ public:
 
 public:
 
-    CameraController*                        controller;
+    CameraController*                        controller                     = nullptr;
     CamItemInfoList                          infos;
     CamItemInfo                              camItemInfo;
 
     QMultiHash<qlonglong, int>               idHash;
     QHash<QString, qlonglong>                fileUrlHash;
 
-    bool                                     keepFileUrlCache;
+    bool                                     keepFileUrlCache               = false;
 
-    bool                                     refreshing;
-    bool                                     reAdding;
-    bool                                     incrementalRefreshRequested;
+    bool                                     refreshing                     = false;
+    bool                                     reAdding                       = false;
+    bool                                     incrementalRefreshRequested    = false;
 
-    bool                                     sendRemovalSignals;
+    bool                                     sendRemovalSignals             = false;
 
-    class ImportItemModelIncrementalUpdater* incrementalUpdater;
+    class ImportItemModelIncrementalUpdater* incrementalUpdater             = nullptr;
 };
 
 // ----------------------------------------------------------------------------------------------------
@@ -80,7 +71,7 @@ class Q_DECL_HIDDEN ImportItemModelIncrementalUpdater
 {
 public:
 
-    explicit ImportItemModelIncrementalUpdater(ImportItemModel::Private* const d);
+    explicit ImportItemModelIncrementalUpdater(const ImportItemModel::Private* const d);
 
     void            appendInfos(const QList<CamItemInfo>& infos);
     void            aboutToBeRemovedInModel(const IntPairList& aboutToBeRemoved);
@@ -453,6 +444,7 @@ void ImportItemModel::addCamItemInfosSynchronously(const CamItemInfoList& infos)
     }
 
     publiciseInfos(infos);
+
     Q_EMIT processAdded(infos);
 }
 
@@ -610,6 +602,7 @@ void ImportItemModel::cleanSituationChecks()
     if (d->incrementalRefreshRequested)
     {
         d->incrementalRefreshRequested = false;
+
         Q_EMIT readyForIncrementalRefresh();
     }
     else
@@ -655,6 +648,7 @@ void ImportItemModel::publiciseInfos(const CamItemInfoList& infos)
     }
 
     endInsertRows();
+
     Q_EMIT processAdded(infos);
     Q_EMIT itemInfosAdded(infos);
 }
@@ -894,7 +888,7 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
 // ------------ ImportItemModelIncrementalUpdater ------------
 
-ImportItemModelIncrementalUpdater::ImportItemModelIncrementalUpdater(ImportItemModel::Private* const d)
+ImportItemModelIncrementalUpdater::ImportItemModelIncrementalUpdater(const ImportItemModel::Private* const d)
     : oldIds(d->idHash)
 {
 }

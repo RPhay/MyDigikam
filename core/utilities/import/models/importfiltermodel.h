@@ -83,7 +83,7 @@ protected:
 
 protected:
 
-    ImportSortFilterModel* m_chainedModel;
+    ImportSortFilterModel* m_chainedModel = nullptr;
 };
 
 // ------------------------------------------------------------------------------------------

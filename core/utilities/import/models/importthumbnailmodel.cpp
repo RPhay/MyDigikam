@@ -31,19 +31,13 @@ class Q_DECL_HIDDEN ImportThumbnailModel::Private
 {
 public:
 
-    explicit Private()
-      : thumbsCtrl         (nullptr),
-        thumbSize          (0),
-        lastGlobalThumbSize(0),
-        emitDataChanged    (true)
-    {
-    }
+    Private() = default;
 
-    CameraThumbsCtrl* thumbsCtrl;
+    CameraThumbsCtrl* thumbsCtrl            = nullptr;
 
-    ThumbnailSize     thumbSize;
-    ThumbnailSize     lastGlobalThumbSize;
-    bool              emitDataChanged;
+    ThumbnailSize     thumbSize             = ThumbnailSize(0);
+    ThumbnailSize     lastGlobalThumbSize   = ThumbnailSize(0);
+    bool              emitDataChanged       = true;
 };
 
 ImportThumbnailModel::ImportThumbnailModel(QObject* const parent)
@@ -80,7 +74,7 @@ void ImportThumbnailModel::setEmitDataChanged(bool emitSignal)
 
 QVariant ImportThumbnailModel::data(const QModelIndex& index, int role) const
 {
-    if (role == ThumbnailRole && d->thumbsCtrl && index.isValid())
+    if ((role == ThumbnailRole) && d->thumbsCtrl && index.isValid())
     {
         CamItemInfo info = camItemInfo(index);
         QString     path = info.url().toLocalFile();

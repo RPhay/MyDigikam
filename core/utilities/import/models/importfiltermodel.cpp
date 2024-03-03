@@ -236,12 +236,7 @@ class Q_DECL_HIDDEN ImportFilterModel::ImportFilterModelPrivate : public QObject
 
 public:
 
-    ImportFilterModelPrivate()
-      : q              (nullptr),
-        importItemModel(nullptr),
-        filter         (nullptr)
-    {
-    }
+    ImportFilterModelPrivate() = default;
 
     void init(ImportFilterModel* const _q);
 
@@ -252,10 +247,10 @@ Q_SIGNALS:
 
 public:
 
-    ImportFilterModel*  q;
-    ImportItemModel*    importItemModel;
+    ImportFilterModel*  q               = nullptr;
+    ImportItemModel*    importItemModel = nullptr;
     CamItemSortSettings sorter;
-    Filter*             filter;
+    Filter*             filter          = nullptr;
 
 private:
 
@@ -270,7 +265,7 @@ void ImportFilterModel::ImportFilterModelPrivate::init(ImportFilterModel* const 
 
 ImportFilterModel::ImportFilterModel(QObject* const parent)
     : ImportSortFilterModel(parent),
-      d_ptr(new ImportFilterModelPrivate)
+      d_ptr                (new ImportFilterModelPrivate)
 {
     d_ptr->init(this);
 }
@@ -278,6 +273,7 @@ ImportFilterModel::ImportFilterModel(QObject* const parent)
 ImportFilterModel::~ImportFilterModel()
 {
     Q_D(ImportFilterModel);
+
     delete d;
 }
 
@@ -293,22 +289,34 @@ QVariant ImportFilterModel::data(const QModelIndex& index, int role) const
     switch (role)
     {
         case DCategorizedSortFilterProxyModel::CategoryDisplayRole:
+        {
             return categoryIdentifier(d->importItemModel->camItemInfoRef(mapToSource(index)));
+        }
 
         case CategorizationModeRole:
+        {
             return d->sorter.categorizationMode;
+        }
 
         case SortOrderRole:
+        {
             return d->sorter.sortRole;
+        }
 
         case CategoryFormatRole:
+        {
             return d->importItemModel->camItemInfoRef(mapToSource(index)).mime;
+        }
 
         case CategoryDateRole:
+        {
             return d->importItemModel->camItemInfoRef(mapToSource(index)).ctime;
+        }
 
         case ImportFilterModelPointerRole:
+        {
             return QVariant::fromValue(const_cast<ImportFilterModel*>(this));
+        }
     }
 
     return DCategorizedSortFilterProxyModel::data(index, role);
@@ -324,6 +332,7 @@ ImportFilterModel* ImportFilterModel::importFilterModel() const
 void ImportFilterModel::setCamItemSortSettings(const CamItemSortSettings& sorter)
 {
     Q_D(ImportFilterModel);
+
     d->sorter = sorter;
     setCategorizedModel(d->sorter.categorizationMode != CamItemSortSettings::NoCategories);
     invalidate();
@@ -332,6 +341,7 @@ void ImportFilterModel::setCamItemSortSettings(const CamItemSortSettings& sorter
 void ImportFilterModel::setCategorizationMode(CamItemSortSettings::CategorizationMode mode)
 {
     Q_D(ImportFilterModel);
+
     d->sorter.setCategorizationMode(mode);
     setCamItemSortSettings(d->sorter);
 }
@@ -339,6 +349,7 @@ void ImportFilterModel::setCategorizationMode(CamItemSortSettings::Categorizatio
 void ImportFilterModel::setSortRole(CamItemSortSettings::SortRole role)
 {
     Q_D(ImportFilterModel);
+
     d->sorter.setSortRole(role);
     setCamItemSortSettings(d->sorter);
 }
@@ -346,6 +357,7 @@ void ImportFilterModel::setSortRole(CamItemSortSettings::SortRole role)
 void ImportFilterModel::setSortOrder(CamItemSortSettings::SortOrder order)
 {
     Q_D(ImportFilterModel);
+
     d->sorter.setSortOrder(order);
     setCamItemSortSettings(d->sorter);
 }
@@ -353,6 +365,7 @@ void ImportFilterModel::setSortOrder(CamItemSortSettings::SortOrder order)
 void ImportFilterModel::setStringTypeNatural(bool natural)
 {
     Q_D(ImportFilterModel);
+
     d->sorter.setStringTypeNatural(natural);
     setCamItemSortSettings(d->sorter);
 }
@@ -360,6 +373,7 @@ void ImportFilterModel::setStringTypeNatural(bool natural)
 void ImportFilterModel::setFilter(Digikam::Filter* filter)
 {
     Q_D(ImportFilterModel);
+
     d->filter = filter;
     invalidateFilter();
 }
@@ -367,6 +381,7 @@ void ImportFilterModel::setFilter(Digikam::Filter* filter)
 void ImportFilterModel::setCameraThumbsController(CameraThumbsCtrl* const thumbsCtrl)
 {
     Q_D(ImportFilterModel);
+
     d->importItemModel->setCameraThumbsController(thumbsCtrl);
 }
 
@@ -521,19 +536,29 @@ QString ImportFilterModel::categoryIdentifier(const CamItemInfo& info) const
     switch (d->sorter.categorizationMode)
     {
         case CamItemSortSettings::NoCategories:
+        {
             return QString();
+        }
 
         case CamItemSortSettings::CategoryByFolder:
+        {
             return info.folder;
+        }
 
         case CamItemSortSettings::CategoryByFormat:
+        {
             return info.mime;
+        }
 
         case CamItemSortSettings::CategoryByDate:
+        {
             return info.ctime.date().toString(Qt::ISODate);
+        }
 
         default:
+        {
             return QString();
+        }
     }
 }
 
