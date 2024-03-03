@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-02 01:35+0000\n"
-"PO-Revision-Date: 2024-01-27 19:59+0100\n"
+"POT-Creation-Date: 2024-03-03 01:42+0000\n"
+"PO-Revision-Date: 2024-03-02 20:31+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -2854,7 +2854,7 @@ msgstr "Mostra i punti focali"
 msgid "Show Fullscreen"
 msgstr "Mostra a schermo intero"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:145
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -3065,7 +3065,7 @@ msgstr ""
 "impostato a sinistra."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:186
+#: core/app/views/stack/itemiconview_p.h:142
 #, kde-format
 msgid "Timeline"
 msgstr "Linea temporale"
@@ -3090,7 +3090,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Filtri"
 
-#: core/app/views/stack/itemiconview_albums.cpp:318
+#: core/app/views/stack/itemiconview_albums.cpp:299
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Impossibile aprire la radice dell'album. Non è una posizione fisica."
@@ -3104,22 +3104,22 @@ msgstr ""
 "L'attuale ricerca dalla banca dati non ha restituito risultati. Modifica le "
 "impostazioni della ricerca o seleziona un album con contenuto."
 
-#: core/app/views/stack/itemiconview_p.h:169
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Ricerca approssimata da schizzo"
 
-#: core/app/views/stack/itemiconview_p.h:173
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Ricerca approssimata da immagine"
 
-#: core/app/views/stack/itemiconview_p.h:177
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Ricerca su mappa"
 
-#: core/app/views/stack/itemiconview_p.h:182
+#: core/app/views/stack/itemiconview_p.h:138
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1166
 #, kde-format
 msgid "Last Search"
@@ -6047,61 +6047,55 @@ msgid ""
 "Select an image or JSON file supported by ExifTool to apply the file "
 "metadata to the images."
 msgstr ""
+"Seleziona un'immagine o un file JSON supportato da ExifTool per applicare i "
+"metadati del file alle immagini."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: No image or JSON file selected."
-msgstr ""
+msgstr "Applica i metadati: nessuna immagine o file JSON selezionato."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool is not available."
-msgstr ""
+msgstr "Applica i metadati: ExifTool non è disponibile."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: File name not exist in JSON file."
-msgstr ""
+msgstr "Applica i metadati: il nome file non esiste nel file JSON."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@info"
 msgid "Apply Metadata: ExifTool reported an error."
-msgstr "Applica il modello di metadati"
+msgstr "Applica i metadati: ExifTool ha segnalato un errore."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Applying metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Metadata"
-msgstr "Applicazione dei metadati"
+msgstr "Applica i metadati"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to apply metadata template to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
-msgstr "Strumento per applicare un modello di metadati alle immagini"
+msgstr ""
+"Strumento per applicare i metadati da un'immagine o un file JSON con ExifTool"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can apply metadata template over "
-#| "images.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply metadata from a image or JSON "
 "file with ExifTool.</para>"
 msgstr ""
-"<para>Questo strumento del gestore elaborazione in serie può applicare un "
-"modello di metadati sulle immagini.</para>"
+"<para>Questo strumento del gestore elaborazione in serie è in grado di "
+"applicare metadati da un'immagine o un file JSON con ExifTool.</para>"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format
@@ -6425,9 +6419,7 @@ msgid "Caption"
 msgstr "Didascalia"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "View the selected image"
-#| msgid "Preview Image"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Preview image"
 msgstr "Anteprima immagine"
@@ -6451,27 +6443,22 @@ msgid "Date"
 msgstr "Data"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
-#, fuzzy, kde-format
-#| msgid "digiKam Properties"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
-msgstr "Proprietà di digiKam"
+msgstr "digiKam completamente"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "DigiKam image history"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "Cronologia immagini digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "View the selected image"
-#| msgid "Preview Image"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
-msgstr "Anteprima immagine"
+msgstr "Anteprima immagine digikam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
@@ -6492,9 +6479,7 @@ msgid "Video"
 msgstr "Filmato"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Caption, Comment and Description"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
 msgstr "Didascalia, commento e descrizione"
@@ -6854,12 +6839,12 @@ msgstr ""
 "<para>Questo strumento del gestore elaborazione in serie può ruotare le "
 "immagini.</para>"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:68
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
 #, kde-format
 msgid "Lossless HEIF files"
 msgstr "File HEIF senza perdita"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:70
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for HEIF images.</p><p>If this option is "
@@ -6869,12 +6854,12 @@ msgstr ""
 "abiliti questa opzione, userai un metodo senza perdita per comprimere le "
 "immagini HEIF.</p>"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:77
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
 #, kde-format
 msgid "HEIF quality:"
 msgstr "Qualità HEIF:"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:79
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
@@ -6960,14 +6945,14 @@ msgstr ""
 "para>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "High efficiency image coding"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6989,8 +6974,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "sì"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:153
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -7011,8 +6996,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "sì"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:141
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:157
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -9166,31 +9151,31 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Aumenta la nitidezza..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:177
+#: core/dplugins/editor/file/print/printhelper.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
 msgstr "Nessuna stampante disponibile"
 
-#: core/dplugins/editor/file/print/printhelper.cpp:178
+#: core/dplugins/editor/file/print/printhelper.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
 "Non è installata alcuna stampante nel tuo sistema. Installane almeno una."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:188
+#: core/dplugins/editor/file/print/printhelper.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr "Stampa immagine"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:90
+#: core/dplugins/editor/file/print/printoptionspage.cpp:83
 #, kde-format
 msgid "Use Color Management for Printing"
 msgstr "Usa la gestione dei colori per la stampa"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:92
+#: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
@@ -9198,7 +9183,7 @@ msgstr "Usa la gestione dei colori per la stampa"
 msgid "Settings..."
 msgstr "Impostazioni..."
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:339
+#: core/dplugins/editor/file/print/printoptionspage.cpp:332
 #, kde-format
 msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
@@ -20976,11 +20961,9 @@ msgid "Soundtrack Duration:"
 msgstr "Durata della traccia audio:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Soundtrack Preview"
+#, kde-format
 msgid "Soundtrack Preview:"
-msgstr "Anteprima della traccia audio"
+msgstr "Anteprima della traccia audio:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:224
 #, kde-format
@@ -23196,7 +23179,7 @@ msgstr "<i>non selezionato</i>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
-msgstr "Esporta in un server remoto"
+msgstr "Esporta in un supporto di memorizzazione remoto"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
 #, kde-format
@@ -23293,7 +23276,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to remote storage..."
-msgstr "Esporta su un supporto di memorizzazione remoto..."
+msgstr "Esporta in un supporto di memorizzazione remoto..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:115
 #, kde-format
@@ -27037,63 +27020,42 @@ msgid "Searches"
 msgstr "Ricerche"
 
 #: core/libs/album/manager/albummanager_database.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory was not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid "The MySQL database directory was not found."
-msgstr ""
-"La cartella della banca dati MySQL non è stata trovata: indica la posizione "
-"corretta nella prossima finestra di dialogo."
+msgstr "La cartella della banca dati MySQL non è stata trovata."
 
 #: core/libs/album/manager/albummanager_database.cpp:121
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "Lo strumento dell'eseguibile MySQL non è stato trovato."
 
 #: core/libs/album/manager/albummanager_database.cpp:128
-#, fuzzy, kde-format
-#| msgid "The core database name is empty"
+#, kde-format
 msgid "The SQLite core database was not found."
-msgstr "Il nome della banca dati principale è vuoto"
+msgstr "La banca dati di SQLite non è stata trovata."
 
 #: core/libs/album/manager/albummanager_database.cpp:137
-#, fuzzy, kde-format
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "If you want to start with a new configuration and with a first run "
-#| "wizard, delete the file %1"
+#, kde-format
 msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
-"\n"
-"\n"
-"Se vuoi desideri iniziare una nuova configurazione con una nuova procedura "
-"guidata, elimina il file %1"
+"<p>Se vuoi iniziare una nuova configurazione con una nuova procedura "
+"guidata, elimina il file:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the internal server start.\n"
-#| "\n"
-#| "Details:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.<p>Details:\n"
 "%1</p>"
 msgstr ""
-"Si è verificato un errore durante l'avvio del server interno.\n"
-" \n"
-"Dettagli:\n"
-" %1"
+"Si è verificato un errore durante l'avvio del server interno.<p>Dettagli:\n"
+"%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to add tag to database"
+#, kde-format
 msgid "Failed to open the database."
-msgstr "Impossibile aggiungere tag alla banca dati"
+msgstr "Impossibile aprire la banca dati"
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -27130,11 +27092,9 @@ msgstr ""
 "configurazione</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Failed to Initialize Thumbnails Database"
+#, kde-format
 msgid "Failed to initialize the database."
-msgstr "Impossibile inizializzare la banca dati delle miniature"
+msgstr "Impossibile inizializzare la banca dati."
 
 #: core/libs/album/manager/albummanager_database.cpp:253
 #, kde-format
@@ -27352,6 +27312,8 @@ msgstr ""
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
+"<p><b>Verifica le impostazioni della banca dati in questa finestra di "
+"dialogo.</b></p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
@@ -27562,12 +27524,12 @@ msgstr ""
 "Questa operazione potrebbe richiedere molto tempo di elaborazione.\n"
 "Vuoi scrivere i metadati nei %1 file ora?"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:48
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:42
 #, kde-format
 msgid "Context menu"
 msgstr "Menu contestuale"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
@@ -31347,24 +31309,24 @@ msgstr "Reimposta &tutto"
 msgid "Adjust Curves"
 msgstr "Regola curve"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:242
+#: core/libs/dimg/filters/curves/curvessettings.cpp:238
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "Seleziona i file delle curve di Gimp da caricare"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:254
+#: core/libs/dimg/filters/curves/curvessettings.cpp:250
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "Impossibile caricare il file delle curve di Gimp."
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:263
+#: core/libs/dimg/filters/curves/curvessettings.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "File delle curve di Gimp da salvare"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:275
+#: core/libs/dimg/filters/curves/curvessettings.cpp:271
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "Impossibile salvare sul file delle curve di Gimp."
@@ -34505,7 +34467,7 @@ msgstr "Google Drive"
 #, kde-format
 msgctxt "Web Service: GPHOTO"
 msgid "Google Photo"
-msgstr "Google Photo"
+msgstr "Google Foto"
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:149
 #, kde-format
@@ -39542,49 +39504,49 @@ msgstr ""
 "Diversi strumenti, incluso editor, panorama, fusione di sovrapposizioni, "
 "calendario, galleria HTML e apertura con programmi esterni"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Categoria"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Viaggi"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Vacanze"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Amici"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Natura"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Feste"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Da fare"
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -41862,29 +41824,25 @@ msgid "On Screen Display Font:"
 msgstr "Carattere vista a schermo:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
 msgstr ""
-"Seleziona qui il carattere usato per il testo in tutte le viste ad albero."
+"Seleziona qui il tipo di carattere usato per visualizzare il testo sullo "
+"schermo."
 
 #: core/libs/video/player/audplayerwdg.cpp:259
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
+#, kde-format
 msgid "An error has occurred while playing: the media is not valid"
-msgstr "Si è verificato un errore con il lettore multimediale..."
+msgstr ""
+"Si è verificato un errore durante la riproduzione: il file multimediale non "
+"è valido"
 
 #: core/libs/video/player/audplayerwdg.cpp:288
 #: core/libs/video/player/audplayerwdg.cpp:323
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error has occurred to show item\n"
-#| "%1"
+#, kde-format
 msgid "An error has occurred while playing: %1"
-msgstr ""
-"Si è verificato un errore al mostrare l'elemento\n"
-"%1"
+msgstr "Si è verificato un errore durante la riproduzione: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264

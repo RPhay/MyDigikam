@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-02 01:35+0000\n"
+"POT-Creation-Date: 2024-03-03 01:42+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -2934,7 +2934,7 @@ msgstr "Показывать точки фокуса"
 msgid "Show Fullscreen"
 msgstr "Полноэкранный режим"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:145
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -3142,7 +3142,7 @@ msgstr ""
 "виртуальный альбом, с указанным слева именем."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:186
+#: core/app/views/stack/itemiconview_p.h:142
 #, kde-format
 msgid "Timeline"
 msgstr "Календарный график"
@@ -3169,7 +3169,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Фильтры"
 
-#: core/app/views/stack/itemiconview_albums.cpp:318
+#: core/app/views/stack/itemiconview_albums.cpp:299
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
@@ -3184,22 +3184,22 @@ msgstr ""
 "По текущему запросу в базе данных ничего не найдено. Измените параметры "
 "поиска или выберите альбом с содержимым."
 
-#: core/app/views/stack/itemiconview_p.h:169
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Нечёткий поиск по наброску"
 
-#: core/app/views/stack/itemiconview_p.h:173
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Нечёткий поиск изображения"
 
-#: core/app/views/stack/itemiconview_p.h:177
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Поиск по карте"
 
-#: core/app/views/stack/itemiconview_p.h:182
+#: core/app/views/stack/itemiconview_p.h:138
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1166
 #, kde-format
 msgid "Last Search"
@@ -6903,12 +6903,12 @@ msgstr ""
 "<para>Этот инструмент очереди пакетной обработки служит для поворота "
 "изображений.</para>"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:68
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
 #, kde-format
 msgid "Lossless HEIF files"
 msgstr "Файлы HEIF (сжатие без потерь)"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:70
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for HEIF images.</p><p>If this option is "
@@ -6918,12 +6918,12 @@ msgstr ""
 "сжатия изображений в формате HEIF будет использоваться метод сжатия без "
 "потерь.</p>"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:77
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
 #, kde-format
 msgid "HEIF quality:"
 msgstr "Качество HEIF:"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:79
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
@@ -7007,14 +7007,14 @@ msgstr ""
 "wikipedia.org/wiki/HEIF'>High Efficiency Image File</a>.</para>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "Высокоэффективное кодирование изображений"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -7036,8 +7036,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "да"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:153
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -7058,8 +7058,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "да"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:141
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:157
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -9174,30 +9174,30 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Резкость..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:177
+#: core/dplugins/editor/file/print/printhelper.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
 msgstr "Отсутствуют доступные принтеры"
 
-#: core/dplugins/editor/file/print/printhelper.cpp:178
+#: core/dplugins/editor/file/print/printhelper.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
 
-#: core/dplugins/editor/file/print/printhelper.cpp:188
+#: core/dplugins/editor/file/print/printhelper.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr "Печать изображения"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:90
+#: core/dplugins/editor/file/print/printoptionspage.cpp:83
 #, kde-format
 msgid "Use Color Management for Printing"
 msgstr "Использовать управление цветом при печати"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:92
+#: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
@@ -9205,7 +9205,7 @@ msgstr "Использовать управление цветом при печ
 msgid "Settings..."
 msgstr "Параметры..."
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:339
+#: core/dplugins/editor/file/print/printoptionspage.cpp:332
 #, kde-format
 msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
@@ -27518,12 +27518,12 @@ msgstr ""
 "Этот процесс может идти долгое время в фоновом режиме.\n"
 "Записать метаданные в %1 файл(а) сейчас?"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:48
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:42
 #, kde-format
 msgid "Context menu"
 msgstr "Контекстное меню"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
@@ -31291,24 +31291,24 @@ msgstr "Сбросить &все"
 msgid "Adjust Curves"
 msgstr "Регулировка кривых"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:242
+#: core/libs/dimg/filters/curves/curvessettings.cpp:238
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "Выбор файла формата кривых GIMP для загрузки"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:254
+#: core/libs/dimg/filters/curves/curvessettings.cpp:250
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "Невозможно загрузить данные из текстового файла формата кривых GIMP."
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:263
+#: core/libs/dimg/filters/curves/curvessettings.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "Сохранение файла формата кривых GIMP"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:275
+#: core/libs/dimg/filters/curves/curvessettings.cpp:271
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "Невозможно сохранить данные в файл (формат кривых GIMP)"
@@ -39453,49 +39453,49 @@ msgstr ""
 "изображений с брекетингом, создание календарей, создание галерей в формате "
 "HTML и открытие во внешних программах"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Рубрика"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Путешествия"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Праздники"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Друзья"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Природа"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Развлечения"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "На обработку и сортировку"
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"

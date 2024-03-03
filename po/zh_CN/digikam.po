@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-02 01:35+0000\n"
+"POT-Creation-Date: 2024-03-03 01:42+0000\n"
 "PO-Revision-Date: 2024-02-29 12:56\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2781,7 +2781,7 @@ msgstr "显示焦点"
 msgid "Show Fullscreen"
 msgstr "全屏显示"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:145
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -2980,7 +2980,7 @@ msgstr ""
 "按下此按钮后，当前时间轴的所选日期将以左侧输入的名称保存到一个新的虚拟相册。"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:186
+#: core/app/views/stack/itemiconview_p.h:142
 #, kde-format
 msgid "Timeline"
 msgstr "时间轴"
@@ -3004,7 +3004,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "过滤"
 
-#: core/app/views/stack/itemiconview_albums.cpp:318
+#: core/app/views/stack/itemiconview_albums.cpp:299
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "无法打开根相册。因为它不是物理位置。"
@@ -3018,22 +3018,22 @@ msgstr ""
 "当前查询没有从数据库返回任何结果。请更改搜索设置，或者选择一个包含内容的相"
 "册。"
 
-#: core/app/views/stack/itemiconview_p.h:169
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "模糊画图搜索"
 
-#: core/app/views/stack/itemiconview_p.h:173
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "模糊图像搜索"
 
-#: core/app/views/stack/itemiconview_p.h:177
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "地图搜索"
 
-#: core/app/views/stack/itemiconview_p.h:182
+#: core/app/views/stack/itemiconview_p.h:138
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1166
 #, kde-format
 msgid "Last Search"
@@ -6520,12 +6520,12 @@ msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
 msgstr "<para>用于对图像进行旋转的批处理工具。</para>"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:68
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
 #, kde-format
 msgid "Lossless HEIF files"
 msgstr "无损 HEIF 文件"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:70
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for HEIF images.</p><p>If this option is "
@@ -6534,12 +6534,12 @@ msgstr ""
 "<p>启用/禁用 HEIF 图像的无损压缩。</p><p>勾选此项后，HEIF 图像将使用无损方式"
 "进行压缩。</p>"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:77
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
 #, kde-format
 msgid "HEIF quality:"
 msgstr "HEIF 画质："
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:79
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
@@ -6614,14 +6614,14 @@ msgstr ""
 "High_Efficiency_Image_File_Format'>HEIF 格式介绍页面</a>。</para>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "HEIC 高效率图像编码"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6643,8 +6643,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "是"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:153
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6665,8 +6665,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "是"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:141
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:157
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -8646,30 +8646,30 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "锐化..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:177
+#: core/dplugins/editor/file/print/printhelper.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
 msgstr "没有可用的打印机"
 
-#: core/dplugins/editor/file/print/printhelper.cpp:178
+#: core/dplugins/editor/file/print/printhelper.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr "本机系统并未安装打印机。请安装至少一台打印机。"
 
-#: core/dplugins/editor/file/print/printhelper.cpp:188
+#: core/dplugins/editor/file/print/printhelper.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr "打印图像"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:90
+#: core/dplugins/editor/file/print/printoptionspage.cpp:83
 #, kde-format
 msgid "Use Color Management for Printing"
 msgstr "对打印流程进行色彩管理"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:92
+#: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
@@ -8677,7 +8677,7 @@ msgstr "对打印流程进行色彩管理"
 msgid "Settings..."
 msgstr "设置..."
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:339
+#: core/dplugins/editor/file/print/printoptionspage.cpp:332
 #, kde-format
 msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
@@ -26311,12 +26311,12 @@ msgstr ""
 "此操作如果在后台处理可能耗时较长。\n"
 "您想要立即写入元数据到 %1 文件吗？"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:48
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:42
 #, kde-format
 msgid "Context menu"
 msgstr "右键菜单"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
@@ -29874,24 +29874,24 @@ msgstr "重置所有 (&A)"
 msgid "Adjust Curves"
 msgstr "曲线调整"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:242
+#: core/libs/dimg/filters/curves/curvessettings.cpp:238
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "选择要加载的 GIMP 曲线文件"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:254
+#: core/libs/dimg/filters/curves/curvessettings.cpp:250
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "无法加载 GIMP 曲线文本文件。"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:263
+#: core/libs/dimg/filters/curves/curvessettings.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "要保存的 GIMP 曲线文件"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:275
+#: core/libs/dimg/filters/curves/curvessettings.cpp:271
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "无法保存 GIMP 曲线文本文件。"
@@ -37782,49 +37782,49 @@ msgstr ""
 "各种工具，包括图像编辑器、全景、图层混合、日历、HTML 相册和使用外部程序打开项"
 "目"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "分类"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "旅行"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "假日"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "朋友"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "自然"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "聚会"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "待办"
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"

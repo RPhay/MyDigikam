@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-02 01:35+0000\n"
-"PO-Revision-Date: 2024-02-17 11:46+0100\n"
+"POT-Creation-Date: 2024-03-03 01:42+0000\n"
+"PO-Revision-Date: 2024-03-02 16:58+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2836,7 +2836,7 @@ msgstr "Montri fokuspunktojn"
 msgid "Show Fullscreen"
 msgstr "Montri Plenekranon"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:145
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -3046,7 +3046,7 @@ msgstr ""
 "maldekstre."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:186
+#: core/app/views/stack/itemiconview_p.h:142
 #, kde-format
 msgid "Timeline"
 msgstr "Kronologio"
@@ -3071,7 +3071,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Filtriloj"
 
-#: core/app/views/stack/itemiconview_albums.cpp:318
+#: core/app/views/stack/itemiconview_albums.cpp:299
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Ne povas malfermi la radikan albumon. Ĝi ne estas fizika loko."
@@ -3085,22 +3085,22 @@ msgstr ""
 "La nuna demando de la datumbazo ne donis rezultojn. Ŝanĝu serĉajn agordojn "
 "aŭ elektu albumon kun enhavo."
 
-#: core/app/views/stack/itemiconview_p.h:169
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Fuzzy Sketch Serĉo"
 
-#: core/app/views/stack/itemiconview_p.h:173
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Neklara Bildo Serĉo"
 
-#: core/app/views/stack/itemiconview_p.h:177
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Mapo Serĉo"
 
-#: core/app/views/stack/itemiconview_p.h:182
+#: core/app/views/stack/itemiconview_p.h:138
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1166
 #, kde-format
 msgid "Last Search"
@@ -6355,27 +6355,22 @@ msgid "Date"
 msgstr "Dato"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
-#, fuzzy, kde-format
-#| msgid "digiKam Properties"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam completely"
-msgstr "digiKam Propraĵoj"
+msgstr "digiKam komplete"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "DigiKam image history"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
 msgstr "Bildhistorio de DigiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc namespace"
-#| msgid "Preview image"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
-msgstr "Antaŭrigardi bildon"
+msgstr "Antaŭrigarda bildo de DigiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
 #, kde-format
@@ -6387,7 +6382,7 @@ msgstr "Dublina Kerno"
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Exif"
-msgstr "Eksif"
+msgstr "Exif"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:129
 #, kde-format
@@ -6396,12 +6391,10 @@ msgid "Video"
 msgstr "Video"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Caption, Comment and Description"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, comment and description"
-msgstr "Titolo, Komento kaj Priskribo"
+msgstr "Titolo, komento kaj priskribo"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:224
 #, kde-format
@@ -6750,12 +6743,12 @@ msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
 msgstr "<para>Ĉi tiu ilo de Batch Queue Manager povas turni bildojn.</para>"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:68
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
 #, kde-format
 msgid "Lossless HEIF files"
 msgstr "Senperdaj HEIF-dosieroj"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:70
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for HEIF images.</p><p>If this option is "
@@ -6764,12 +6757,12 @@ msgstr ""
 "<p>Ŝangi senperdan kunpremadon por HEIF-bildoj.</p><p>Se ĉi tiu opcio estas "
 "ebligita, senperda metodo estos uzata por kunpremi HEIF-bildojn.</p>"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:77
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
 #, kde-format
 msgid "HEIF quality:"
 msgstr "Kvalito HEIF:"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:79
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
@@ -6852,14 +6845,14 @@ msgstr ""
 "por detaloj.</para>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "Alta efikeco bilda kodigo"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6881,8 +6874,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "jes"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:153
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6903,8 +6896,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "jes"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:141
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:157
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -8972,31 +8965,31 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Akrigi..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:177
+#: core/dplugins/editor/file/print/printhelper.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
 msgstr "Neniu Presilo Disponebla"
 
-#: core/dplugins/editor/file/print/printhelper.cpp:178
+#: core/dplugins/editor/file/print/printhelper.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
 "Neniu presilo estas instalita en via sistemo. Bonvolu instali almenaŭ unu."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:188
+#: core/dplugins/editor/file/print/printhelper.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr "Printi bildon"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:90
+#: core/dplugins/editor/file/print/printoptionspage.cpp:83
 #, kde-format
 msgid "Use Color Management for Printing"
 msgstr "Uzi Koloran Administradon por Presado"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:92
+#: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
@@ -9004,7 +8997,7 @@ msgstr "Uzi Koloran Administradon por Presado"
 msgid "Settings..."
 msgstr "Agordoj..."
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:339
+#: core/dplugins/editor/file/print/printoptionspage.cpp:332
 #, kde-format
 msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
@@ -27096,12 +27089,12 @@ msgstr ""
 "Ĉi tiu operacio povas daŭri longan tempon en la fono.\n"
 "Ĉu vi volas skribi la metadatumojn al %1 dosieroj nun?"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:48
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:42
 #, kde-format
 msgid "Context menu"
 msgstr "Kunteksta menuo"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
@@ -30803,24 +30796,24 @@ msgstr "Restarigi &Ĉion"
 msgid "Adjust Curves"
 msgstr "Alĝustigi Kurbojn"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:242
+#: core/libs/dimg/filters/curves/curvessettings.cpp:238
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "Elekti Gimp-Kurbajn dosieron ŝargendan"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:254
+#: core/libs/dimg/filters/curves/curvessettings.cpp:250
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "Ne povas ŝargi el la tekstdosiero de Gimp-kurboj."
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:263
+#: core/libs/dimg/filters/curves/curvessettings.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "Gimp-Kurba Dosiero por Konservi"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:275
+#: core/libs/dimg/filters/curves/curvessettings.cpp:271
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "Ne povas konservi en la tekstdosiero de Gimp-kurboj."
@@ -38889,49 +38882,49 @@ msgstr ""
 "Pluraj iloj inkluzive de la redaktilo, panoramo, stakmiksado, kalendaro, "
 "html-galerio kaj malfermo kun eksteraj programoj"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Kategorio"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Vojaĝoj"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Ferioj"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Amikoj"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Naturo"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Festo"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Fari"
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -66806,7 +66799,3 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
-
-#~ msgctxt "@item: xmp namespace"
-#~ msgid "DigiKam"
-#~ msgstr "DigiKam"

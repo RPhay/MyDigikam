@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-02 01:35+0000\n"
+"POT-Creation-Date: 2024-03-03 01:42+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -2911,7 +2911,7 @@ msgstr "फोटू दरजा देखाव"
 msgid "Show Fullscreen"
 msgstr "पूरा स्क्रीन मोड से बाहिर हों"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:145
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -3106,7 +3106,7 @@ msgid ""
 msgstr ""
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:186
+#: core/app/views/stack/itemiconview_p.h:142
 #, kde-format
 msgid "Timeline"
 msgstr "टाइम-लाइन"
@@ -3131,7 +3131,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "फिल्टर (&i)"
 
-#: core/app/views/stack/itemiconview_albums.cpp:318
+#: core/app/views/stack/itemiconview_albums.cpp:299
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
@@ -3143,22 +3143,22 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:169
+#: core/app/views/stack/itemiconview_p.h:125
 #, fuzzy, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "अभी हाल के फजी स्केच खोज"
 
-#: core/app/views/stack/itemiconview_p.h:173
+#: core/app/views/stack/itemiconview_p.h:129
 #, fuzzy, kde-format
 msgid "Fuzzy Image Search"
 msgstr "अभी हाल के फजी फोटू खोज"
 
-#: core/app/views/stack/itemiconview_p.h:177
+#: core/app/views/stack/itemiconview_p.h:133
 #, fuzzy, kde-format
 msgid "Map Search"
 msgstr "मैप खोज"
 
-#: core/app/views/stack/itemiconview_p.h:182
+#: core/app/views/stack/itemiconview_p.h:138
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1166
 #, kde-format
 msgid "Last Search"
@@ -6658,24 +6658,24 @@ msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
 msgstr "रंग जगह"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:68
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
 #, fuzzy, kde-format
 msgid "Lossless HEIF files"
 msgstr "नुकसान बगैर जेपीईजी 2000 फाइल मन ल"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:70
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for HEIF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress HEIF pictures.</p>"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:77
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
 #, fuzzy, kde-format
 msgid "HEIF quality:"
 msgstr "जेपीईजी गुन:"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:79
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
@@ -6737,14 +6737,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "फोटू दरजा देखाव"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6767,8 +6767,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "हाँ"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:153
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6790,8 +6790,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "हाँ"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:141
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:157
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -8696,30 +8696,30 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "सुस्पस्ट करव..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:177
+#: core/dplugins/editor/file/print/printhelper.cpp:174
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
 msgstr "कोई प्रोफाइल नइ मिलत..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:178
+#: core/dplugins/editor/file/print/printhelper.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
 
-#: core/dplugins/editor/file/print/printhelper.cpp:188
+#: core/dplugins/editor/file/print/printhelper.cpp:185
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr "फोटू छापव..."
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:90
+#: core/dplugins/editor/file/print/printoptionspage.cpp:83
 #, fuzzy, kde-format
 msgid "Use Color Management for Printing"
 msgstr "रंग प्रबंधन सेटिंग"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:92
+#: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
@@ -8727,7 +8727,7 @@ msgstr "रंग प्रबंधन सेटिंग"
 msgid "Settings..."
 msgstr "सेटिंग"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:339
+#: core/dplugins/editor/file/print/printoptionspage.cpp:332
 #, kde-format
 msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
@@ -26419,12 +26419,12 @@ msgid ""
 "Do you want to write the metadata to %1 files now?"
 msgstr ""
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:48
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:42
 #, kde-format
 msgid "Context menu"
 msgstr ""
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
@@ -29921,26 +29921,26 @@ msgstr "रीसेट"
 msgid "Adjust Curves"
 msgstr "वक्र एडजस्ट करव"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:242
+#: core/libs/dimg/filters/curves/curvessettings.cpp:238
 #, fuzzy, kde-format
 #| msgid "Select Gimp Curves File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "लोड करे बर गिम्प कर्व्स फाइल चुनव"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:254
+#: core/libs/dimg/filters/curves/curvessettings.cpp:250
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "गिम्प कर्व्स पाठ फाइल से लोड नइ कर सकिस."
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:263
+#: core/libs/dimg/filters/curves/curvessettings.cpp:259
 #, fuzzy, kde-format
 #| msgid "Gimp Curves File to Save"
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "सहेजे बर गिम्प कर्व्स फाइल"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:275
+#: core/libs/dimg/filters/curves/curvessettings.cpp:271
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "गिम्प कर्व्स पाठ फाइल मं सहेज नइ सकिस."
@@ -37917,55 +37917,55 @@ msgid ""
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, fuzzy, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "तारीक से"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "यात्रा"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "अवकास"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, fuzzy, kde-format
 #| msgid "Friends"
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "मित्र"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "प्रकृति"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, fuzzy, kde-format
 #| msgid "Party"
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "पार्टी"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "काम-सूची"
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@item: album categories"

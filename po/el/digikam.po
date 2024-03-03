@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-02 01:35+0000\n"
+"POT-Creation-Date: 2024-03-03 01:42+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -2901,7 +2901,7 @@ msgstr "Εμφάνιση σημείων εστίασης"
 msgid "Show Fullscreen"
 msgstr "Έμφάνιση πλήρους οθόνης"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:145
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -3114,7 +3114,7 @@ msgstr ""
 "στην αριστερή πλευρά."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:186
+#: core/app/views/stack/itemiconview_p.h:142
 #, kde-format
 msgid "Timeline"
 msgstr "Χρονοδιάγραμμα"
@@ -3139,7 +3139,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Φίλτρα"
 
-#: core/app/views/stack/itemiconview_albums.cpp:318
+#: core/app/views/stack/itemiconview_albums.cpp:299
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Αδυναμία ανοίγματος του λευκώματος ρίζας. Δεν είναι φυσική θέση."
@@ -3153,22 +3153,22 @@ msgstr ""
 "Το τρέχον ερώτημα από τη βάση δεδομένων δεν επέστρεψε αποτελέσματα. Αλλάξτε "
 "τις ρυθμίσεις αναζήτησης ή επιλέξτε ένα άλμπουμ με περιεχόμενο."
 
-#: core/app/views/stack/itemiconview_p.h:169
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Ασαφής αναζήτηση σκίτσου"
 
-#: core/app/views/stack/itemiconview_p.h:173
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Ασαφής αναζήτηση εικόνας"
 
-#: core/app/views/stack/itemiconview_p.h:177
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Αναζήτηση χάρτη"
 
-#: core/app/views/stack/itemiconview_p.h:182
+#: core/app/views/stack/itemiconview_p.h:138
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1166
 #, kde-format
 msgid "Last Search"
@@ -6993,13 +6993,13 @@ msgstr ""
 "Προσθήκη νέου εργαλείου διαχείρισης ουράς για προσαρμογή μεταδεδομένων ώρας "
 "και ημερομηνίας;"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:68
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
 #, fuzzy, kde-format
 #| msgid "Lossless PGF files"
 msgid "Lossless HEIF files"
 msgstr "Αρχεία PGF χωρίς απώλειες"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:70
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:64
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
@@ -7012,13 +7012,13 @@ msgstr ""
 "επιλογή ενεργοποιηθεί, θα χρησιμοποιηθεί μία χωρίς απώλειες μέθοδος "
 "συμπίεσης φωτογραφιών PGF.</p>"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:77
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
 #, fuzzy, kde-format
 #| msgid "PGF quality:"
 msgid "HEIF quality:"
 msgstr "Ποιότητα PGF:"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:79
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
@@ -7094,7 +7094,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:148
 #, fuzzy, kde-format
 #| msgid "Show image Format"
 msgctxt "@title"
@@ -7102,7 +7102,7 @@ msgid "High efficiency image coding"
 msgstr "Εμφάνιση τύπου αρχειοθέτησης εικόνας"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -7125,8 +7125,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "ναι"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:153
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -7148,8 +7148,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "ναι"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:141
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:157
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -9306,32 +9306,32 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Όξυνση..."
 
-#: core/dplugins/editor/file/print/printhelper.cpp:177
+#: core/dplugins/editor/file/print/printhelper.cpp:174
 #, fuzzy, kde-format
 #| msgid "No Profile Available"
 msgctxt "@title:window"
 msgid "No Printer Available"
 msgstr "Δεν υπάρχει διαθέσιμο προφίλ"
 
-#: core/dplugins/editor/file/print/printhelper.cpp:178
+#: core/dplugins/editor/file/print/printhelper.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
 
-#: core/dplugins/editor/file/print/printhelper.cpp:188
+#: core/dplugins/editor/file/print/printhelper.cpp:185
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr "Εκτύπωση εικόνας"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:90
+#: core/dplugins/editor/file/print/printoptionspage.cpp:83
 #, kde-format
 msgid "Use Color Management for Printing"
 msgstr "Χρήση διαχείρισης χρωμάτων στην εκτύπωση"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:92
+#: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
@@ -9339,7 +9339,7 @@ msgstr "Χρήση διαχείρισης χρωμάτων στην εκτύπω
 msgid "Settings..."
 msgstr "Ρυθμίσεις..."
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:339
+#: core/dplugins/editor/file/print/printoptionspage.cpp:332
 #, kde-format
 msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
@@ -28685,12 +28685,12 @@ msgstr ""
 "συλλογής.\n"
 "Θέλετε να συνεχίσετε;"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:48
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:42
 #, kde-format
 msgid "Context menu"
 msgstr "Μενού πλαισίου"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, fuzzy, kde-format
 #| msgid "Trash"
@@ -32741,26 +32741,26 @@ msgstr "Επαναφορά"
 msgid "Adjust Curves"
 msgstr "Προσαρμογή καμπυλών"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:242
+#: core/libs/dimg/filters/curves/curvessettings.cpp:238
 #, fuzzy, kde-format
 #| msgid "Select Gimp Curves File to Load"
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "Επιλέξτε αρχείο καμπυλών του Gimp για φόρτωση"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:254
+#: core/libs/dimg/filters/curves/curvessettings.cpp:250
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "Αδυναμία φόρτωσης αρχείου καμπυλών του Gimp."
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:263
+#: core/libs/dimg/filters/curves/curvessettings.cpp:259
 #, fuzzy, kde-format
 #| msgid "Gimp Curves File to Save"
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "Αρχείο καμπυλών Gimp για αποθήκευση"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:275
+#: core/libs/dimg/filters/curves/curvessettings.cpp:271
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "Αδυναμία αποθήκευσης στο αρχείο καμπυλών Gimp."
@@ -41324,56 +41324,56 @@ msgstr ""
 "Πολλά εργαλεία όπως επεξεργαστής, πανόραμα, stack blending, ημερολόγιο, "
 "συλλογή html και άνοιγμα με εξωτερικά προγράμματα"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, fuzzy, kde-format
 #| msgid "Category"
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Κατηγορία"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Ταξίδι"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Διακοπές"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, fuzzy, kde-format
 #| msgid "Friends"
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Φίλοι"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Φύση"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, fuzzy, kde-format
 #| msgid "Party"
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Πάρτι"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Προς υλοποίηση"
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@item: album categories"
