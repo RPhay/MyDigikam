@@ -66,29 +66,21 @@ public:
 
 public:
 
-    explicit Private()
-      : that    (nullptr),
-        info    (nullptr),
-        warnings(false),
-        cancel  (false),
-        pview   (nullptr),
-        pbar    (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    GalleryGenerator*           that;
-    GalleryInfo*                info;
+    GalleryGenerator*           that        = nullptr;
+    GalleryInfo*                info        = nullptr;
     GalleryTheme::Ptr           theme;
 
     // State info
-    bool                        warnings;
+    bool                        warnings    = false;
     QString                     xmlFileName;
 
-    bool                        cancel;
-    DHistoryView*               pview;
-    DProgressWdg*               pbar;
+    bool                        cancel      = false;
+    DHistoryView*               pview       = nullptr;
+    DProgressWdg*               pbar        = nullptr;
 
     QSharedPointer<const char*> params;
 
@@ -349,7 +341,8 @@ public:
         addI18nParameters(map);
         addThemeParameters(map);
 
-        params                         = QSharedPointer<const char*>(new const char*[map.size()*2+1]);
+        const char** data              = new const char*[map.size() * 2 + 1];
+        params                         = QSharedPointer<const char*>(data);
         XsltParameterMap::Iterator it  = map.begin();
         XsltParameterMap::Iterator end = map.end();
         const char** ptr               = params.data();
@@ -523,7 +516,7 @@ public:
         static const char apos  = '\'';
         static const char quote = '"';
 
-        if (txt.indexOf(QLatin1Char(apos)) == -1)
+        if      (txt.indexOf(QLatin1Char(apos)) == -1)
         {
             // First or second case: no apos
             param = QLatin1Char(apos) + txt + QLatin1Char(apos);

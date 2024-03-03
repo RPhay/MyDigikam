@@ -63,12 +63,9 @@ class Q_DECL_HIDDEN GalleryTheme::Private
 {
 public:
 
-    explicit Private()
-        : desktopFile(nullptr)
-    {
-    }
+    Private() = default;
 
-    KDesktopFile* desktopFile;
+    KDesktopFile* desktopFile = nullptr;
     QUrl          url;
     ParameterList parameterList;
 
@@ -124,6 +121,7 @@ public:
         }
 
         file.close();
+
         return list;
     }
 

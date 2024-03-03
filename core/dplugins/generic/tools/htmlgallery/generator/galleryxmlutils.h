@@ -38,10 +38,7 @@ class CWrapper
 {
 public:
 
-    CWrapper()
-        : m_ptr(nullptr)
-    {
-    }
+    CWrapper() = default;
 
     // cppcheck-suppress noExplicitConstructor
     CWrapper(Ptr ptr)        // krazy:exclude=explicit
@@ -76,7 +73,7 @@ public:
 
 private:
 
-    Ptr m_ptr;
+    Ptr m_ptr = nullptr;
 };
 
 // --------------------------------------------------------------------------

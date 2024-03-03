@@ -25,9 +25,9 @@ namespace DigikamGenericHtmlGalleryPlugin
 static const char* THEME_GROUP_PREFIX = "Theme ";
 
 GalleryInfo::GalleryInfo(DInfoInterface* const iface)
+    : m_iface    (iface),
+      m_getOption(IMAGES)
 {
-    m_iface     = iface;
-    m_getOption = IMAGES;
 }
 
 GalleryInfo::~GalleryInfo()
@@ -75,7 +75,9 @@ QString GalleryInfo::getEnumString(const QString& itemName) const
     Q_ASSERT(item);
 
     if (!item)
+    {
         return QString();
+    }
 
     int value                                                   = item->value();
     QList<KConfigSkeleton::ItemEnum::Choice> lst                = item->choices();
