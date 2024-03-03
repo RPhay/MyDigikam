@@ -1432,6 +1432,11 @@ QList<QModelIndex> SetupCollectionModel::categoryIndexes() const
 
 QModelIndex SetupCollectionModel::indexForId(int id, int column) const
 {
+    if (id >= m_collections.size())
+    {
+        return QModelIndex();
+    }
+
     int   row             = 0;
     const Item& indexItem = m_collections.at(id);
 
