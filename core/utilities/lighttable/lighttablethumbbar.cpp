@@ -154,19 +154,13 @@ class Q_DECL_HIDDEN LightTableThumbBar::Private
 
 public:
 
-    explicit Private()
-      : navigateByPair  (false),
-        imageInfoModel  (nullptr),
-        imageFilterModel(nullptr),
-        dragDropHandler (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                     navigateByPair;
+    bool                     navigateByPair     = false;
 
-    LightTableItemListModel* imageInfoModel;
-    ItemFilterModel*         imageFilterModel;
-    ItemDragDropHandler*     dragDropHandler;
+    LightTableItemListModel* imageInfoModel     = nullptr;
+    ItemFilterModel*         imageFilterModel   = nullptr;
+    ItemDragDropHandler*     dragDropHandler    = nullptr;
 };
 
 LightTableThumbBar::LightTableThumbBar(QWidget* const parent)
@@ -247,6 +241,7 @@ void LightTableThumbBar::slotDockLocationChanged(Qt::DockWidgetArea area)
 void LightTableThumbBar::clear()
 {
     d->imageInfoModel->clearItemInfos();
+
     Q_EMIT signalContentChanged();
 }
 

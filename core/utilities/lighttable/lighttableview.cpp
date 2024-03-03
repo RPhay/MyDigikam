@@ -38,26 +38,18 @@ class Q_DECL_HIDDEN LightTableView::Private
 {
 public:
 
-    explicit Private()
-      : syncPreview (false),
-        grid        (nullptr),
-        leftFrame   (nullptr),
-        rightFrame  (nullptr),
-        leftPreview (nullptr),
-        rightPreview(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool               syncPreview;
+    bool               syncPreview  = false;
 
-    QGridLayout*       grid;
+    QGridLayout*       grid         = nullptr;
 
     /// These labels are used to draw a frame around preview views to identify easily which item has the focus.
-    QLabel*            leftFrame;
-    QLabel*            rightFrame;
+    QLabel*            leftFrame    = nullptr;
+    QLabel*            rightFrame   = nullptr;
 
-    LightTablePreview* leftPreview;
-    LightTablePreview* rightPreview;
+    LightTablePreview* leftPreview  = nullptr;
+    LightTablePreview* rightPreview = nullptr;
 };
 
 LightTableView::LightTableView(QWidget* const parent)

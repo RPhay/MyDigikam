@@ -147,7 +147,7 @@ public:
     {
     }
 
-    void addPageUpDownActions(LightTableWindow* const q, QWidget* const w)
+    void addPageUpDownActions(const LightTableWindow* const q, QWidget* const w)
     {
         defineShortcut(w, Qt::Key_Down,  q, SLOT(slotForward()));
         defineShortcut(w, Qt::Key_Right, q, SLOT(slotForward()));
