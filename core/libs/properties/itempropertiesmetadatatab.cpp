@@ -56,20 +56,15 @@ public:
         EXIFTOOL
     };
 
-    explicit Private()
-      : exifWidget     (nullptr),
-        makernoteWidget(nullptr),
-        iptcWidget     (nullptr),
-        xmpWidget      (nullptr),
-        exifToolWidget (nullptr)
-    {
-    }
+public:
 
-    ExifWidget*      exifWidget;
-    MakerNoteWidget* makernoteWidget;
-    IptcWidget*      iptcWidget;
-    XmpWidget*       xmpWidget;
-    ExifToolWidget*  exifToolWidget;
+    Private() = default;
+
+    ExifWidget*      exifWidget         = nullptr;
+    MakerNoteWidget* makernoteWidget    = nullptr;
+    IptcWidget*      iptcWidget         = nullptr;
+    XmpWidget*       xmpWidget          = nullptr;
+    ExifToolWidget*  exifToolWidget     = nullptr;
 };
 
 ItemPropertiesMetadataTab::ItemPropertiesMetadataTab(QWidget* const parent)

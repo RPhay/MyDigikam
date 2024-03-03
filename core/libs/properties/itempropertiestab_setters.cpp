@@ -334,18 +334,18 @@ void ItemPropertiesTab::setVideoDuration(const QString& str)
 
     if (ok)
     {
-        unsigned int r, d, h, m, s, f;
-        r = qAbs(durationVal);
-        d = r / 86400000;
-        r = r % 86400000;
-        h = r / 3600000;
-        r = r % 3600000;
-        m = r / 60000;
-        r = r % 60000;
-        s = r / 1000;
-        f = r % 1000;
+        unsigned int rr, dd, hh, mm, ss, ff;
+        rr = qAbs(durationVal);
+        dd = rr / 86400000;
+        rr = rr % 86400000;
+        hh = rr / 3600000;
+        rr = rr % 3600000;
+        mm = rr / 60000;
+        rr = rr % 60000;
+        ss = rr / 1000;
+        ff = rr % 1000;
 
-        durationString = QString().asprintf("%d.%02d:%02d:%02d.%03d", d, h, m, s, f);
+        durationString = QString().asprintf("%d.%02d:%02d:%02d.%03d", dd, hh, mm, ss, ff);
     }
 
     d->labelVideoDuration->setAdjustedText(durationString);

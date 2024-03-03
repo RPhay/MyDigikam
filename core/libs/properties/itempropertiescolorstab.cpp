@@ -61,47 +61,28 @@ public:
 
     enum MetadataTab
     {
-        HISTOGRAM=0,
+        HISTOGRAM = 0,
         ICCPROFILE
     };
 
 public:
 
-    explicit Private()
-      : minInterv           (nullptr),
-        maxInterv           (nullptr),
-        labelMeanValue      (nullptr),
-        labelPixelsValue    (nullptr),
-        labelStdDevValue    (nullptr),
-        labelCountValue     (nullptr),
-        labelMedianValue    (nullptr),
-        labelPercentileValue(nullptr),
-        labelColorDepth     (nullptr),
-        labelAlphaChannel   (nullptr),
-        labelImageRegion    (nullptr),
-        iccProfileWidget    (nullptr),
-        imageLoaderThread   (nullptr),
-        histogramBox        (nullptr),
-        redHistogram        (nullptr),
-        greenHistogram      (nullptr),
-        blueHistogram       (nullptr)
-    {
-    }
+    explicit Private() = default;
 
 public:
 
-    QSpinBox*             minInterv;
-    QSpinBox*             maxInterv;
+    QSpinBox*             minInterv             = nullptr;
+    QSpinBox*             maxInterv             = nullptr;
 
-    DTextLabelValue*      labelMeanValue;
-    DTextLabelValue*      labelPixelsValue;
-    DTextLabelValue*      labelStdDevValue;
-    DTextLabelValue*      labelCountValue;
-    DTextLabelValue*      labelMedianValue;
-    DTextLabelValue*      labelPercentileValue;
-    DTextLabelValue*      labelColorDepth;
-    DTextLabelValue*      labelAlphaChannel;
-    DTextLabelValue*      labelImageRegion;
+    DTextLabelValue*      labelMeanValue        = nullptr;
+    DTextLabelValue*      labelPixelsValue      = nullptr;
+    DTextLabelValue*      labelStdDevValue      = nullptr;
+    DTextLabelValue*      labelCountValue       = nullptr;
+    DTextLabelValue*      labelMedianValue      = nullptr;
+    DTextLabelValue*      labelPercentileValue  = nullptr;
+    DTextLabelValue*      labelColorDepth       = nullptr;
+    DTextLabelValue*      labelAlphaChannel     = nullptr;
+    DTextLabelValue*      labelImageRegion      = nullptr;
 
     QString               currentFilePath;
     LoadingDescription    currentLoadingDescription;
@@ -113,13 +94,13 @@ public:
     DImg                  image;
     DImg                  imageSelection;
 
-    ICCProfileWidget*     iccProfileWidget;
-    SharedLoadSaveThread* imageLoaderThread;
+    ICCProfileWidget*     iccProfileWidget      = nullptr;
+    SharedLoadSaveThread* imageLoaderThread     = nullptr;
 
-    HistogramBox*         histogramBox;
-    HistogramWidget*      redHistogram;
-    HistogramWidget*      greenHistogram;
-    HistogramWidget*      blueHistogram;
+    HistogramBox*         histogramBox          = nullptr;
+    HistogramWidget*      redHistogram          = nullptr;
+    HistogramWidget*      greenHistogram        = nullptr;
+    HistogramWidget*      blueHistogram         = nullptr;
 };
 
 ItemPropertiesColorsTab::ItemPropertiesColorsTab(QWidget* const parent)

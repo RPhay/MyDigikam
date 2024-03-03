@@ -62,26 +62,18 @@ class Q_DECL_HIDDEN ItemPropertiesSideBarDB::Private
 {
 public:
 
-    explicit Private()
-      : dirtyDesceditTab    (false),
-        hasPrevious         (false),
-        hasNext             (false),
-        hasItemInfoOwnership(false),
-        desceditTab         (nullptr),
-        versionsHistoryTab  (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                       dirtyDesceditTab;
-    bool                       hasPrevious;
-    bool                       hasNext;
-    bool                       hasItemInfoOwnership;
+    bool                       dirtyDesceditTab     = false;
+    bool                       hasPrevious          = false;
+    bool                       hasNext              = false;
+    bool                       hasItemInfoOwnership = false;
 
     ItemInfoList               currentInfos;
     ItemInfoList               allInfos;
     DImageHistory              currentHistory;
-    ItemDescEditTab*           desceditTab;
-    ItemPropertiesVersionsTab* versionsHistoryTab;
+    ItemDescEditTab*           desceditTab          = nullptr;
+    ItemPropertiesVersionsTab* versionsHistoryTab   = nullptr;
 };
 
 ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarSplitter* const splitter,

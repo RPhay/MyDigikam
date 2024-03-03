@@ -44,18 +44,12 @@ public:
 
 public:
 
-    explicit Private()
-      : labelSelectionCount(nullptr),
-        labelSelectionSize (nullptr),
-        labelTotalCount    (nullptr),
-        labelTotalSize     (nullptr)
-    {
-    }
+    Private() = default;
 
-    DTextLabelValue* labelSelectionCount;
-    DTextLabelValue* labelSelectionSize;
-    DTextLabelValue* labelTotalCount;
-    DTextLabelValue* labelTotalSize;
+    DTextLabelValue* labelSelectionCount = nullptr;
+    DTextLabelValue* labelSelectionSize  = nullptr;
+    DTextLabelValue* labelTotalCount     = nullptr;
+    DTextLabelValue* labelTotalSize      = nullptr;
 };
 
 ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
