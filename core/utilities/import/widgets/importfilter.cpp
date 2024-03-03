@@ -150,11 +150,11 @@ bool Filter::matchesCurrentFilter(const CamItemInfo& item)
     }
 
     QString folder = item.folder.toLower();
-    QString name   = item.name.toLower();
+    QString fname  = item.name.toLower();
 
     if (!fileFilter.isEmpty())
     {
-        if (!match(fileFilter, name))
+        if (!match(fileFilter, fname))
         {
             return false;
         }
@@ -176,7 +176,7 @@ bool Filter::matchesCurrentFilter(const CamItemInfo& item)
 
     if (!mimeFilter.isEmpty())
     {
-        if (!match(mimeWildcards(mimeFilter), name))
+        if (!match(mimeWildcards(mimeFilter), fname))
         {
             return false;
         }
@@ -184,7 +184,7 @@ bool Filter::matchesCurrentFilter(const CamItemInfo& item)
 
     if (!ignoreNames.isEmpty())
     {
-        if (match(ignoreNames, name))
+        if (match(ignoreNames, fname))
         {
             return false;
         }
@@ -194,7 +194,7 @@ bool Filter::matchesCurrentFilter(const CamItemInfo& item)
     {
         Q_FOREACH (const QString& ext, ignoreExtensions)
         {
-            if (name.endsWith(QLatin1Char('.') + ext))
+            if (fname.endsWith(QLatin1Char('.') + ext))
             {
                 return false;
             }
