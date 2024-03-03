@@ -1,6 +1,16 @@
 [Desktop Entry]
 Type=Application
 Name=RawTherapee
+Name[ca]=RawTherapee
+Name[ca@valencia]=RawTherapee
+Name[eo]=RawTherapee
+Name[es]=RawTherapee
+Name[it]=RawTherapee
+Name[nl]=RawTherapee
+Name[sl]=RawTherapee
+Name[tr]=RawTherapee
+Name[uk]=RawTherapee
+Name[x-test]=xxRawTherapeexx
 Exec=rawtherapee.exe %f
 Icon=rawtherapee.exe
 MimeType=image/jpg;image/raw
