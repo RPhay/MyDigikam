@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Windows Media Player
+Exec=wmplayer.exe %f
+Icon=wmplayer.exe
+MimeType=video/mp4;video/mov;video/mpg;video/wmv

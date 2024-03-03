@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=ART (Another RAW Therapee)
+Exec=ART.exe %f
+Icon=ART.exe
+MimeType=image/jpg;image/raw
