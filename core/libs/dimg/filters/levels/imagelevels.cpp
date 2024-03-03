@@ -78,22 +78,16 @@ public:
 
 public:
 
-    explicit Private()
-      : levels      (nullptr),
-        lut         (nullptr),
-        sixteenBit  (false),
-        dirty       (false)
-    {
-    }
+    Private() = default;
 
     /// Levels data.
-    _Levels* levels;
+    _Levels* levels     = nullptr;
 
     /// Lut data.
-    _Lut*    lut;
+    _Lut*    lut        = nullptr;
 
-    bool     sixteenBit;
-    bool     dirty;
+    bool     sixteenBit = false;
+    bool     dirty      = false;
 };
 
 ImageLevels::ImageLevels(bool sixteenBit)
@@ -183,7 +177,7 @@ void ImageLevels::levelsAuto(ImageHistogram* const hist)
     d->dirty = true;
 }
 
-void ImageLevels::levelsChannelAuto(ImageHistogram* const hist, int channel)
+void ImageLevels::levelsChannelAuto(const ImageHistogram* const hist, int channel)
 {
     if (!d->levels || !hist)
     {
@@ -248,16 +242,24 @@ int ImageLevels::levelsInputFromColor(int channel, const DColor& color)
     switch (channel)
     {
         case LuminosityChannel:
+        {
             return qMax(qMax(color.red(), color.green()), color.blue());
+        }
 
         case RedChannel:
+        {
             return color.red();
+        }
 
         case GreenChannel:
+        {
             return color.green();
+        }
 
         case BlueChannel:
+        {
             return color.blue();
+        }
     }
 
     return 0;  // just to please the compiler.
@@ -777,6 +779,7 @@ bool ImageLevels::loadLevelsFromGimpLevelsFile(const QUrl& fileUrl)
     }
 
     fclose(file);
+
     return true;
 }
 

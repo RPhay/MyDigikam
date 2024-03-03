@@ -46,27 +46,18 @@ class Q_DECL_HIDDEN HistogramBox::Private
 {
 public:
 
-    explicit Private()
-      : scaleBG         (nullptr),
-        linHistoButton  (nullptr),
-        logHistoButton  (nullptr),
-        histoBox        (nullptr),
-        channelCB       (nullptr),
-        hGradient       (nullptr),
-        histogramWidget (nullptr)
-    {
-    }
+    Private() = default;
 
-    QButtonGroup*        scaleBG;
+    QButtonGroup*        scaleBG         = nullptr;
 
-    QToolButton*         linHistoButton;
-    QToolButton*         logHistoButton;
+    QToolButton*         linHistoButton  = nullptr;
+    QToolButton*         logHistoButton  = nullptr;
 
-    QWidget*             histoBox;
-    QComboBox*           channelCB;
+    QWidget*             histoBox        = nullptr;
+    QComboBox*           channelCB       = nullptr;
 
-    ColorGradientWidget* hGradient;
-    HistogramWidget*     histogramWidget;
+    ColorGradientWidget* hGradient       = nullptr;
+    HistogramWidget*     histogramWidget = nullptr;
 };
 
 HistogramBox::HistogramBox(QWidget* const parent, HistogramBoxType type, bool selectMode)
@@ -226,28 +217,40 @@ void HistogramBox::slotChannelChanged()
     switch (channel())
     {
         case LuminosityChannel:
+        {
             setGradientColors(QColor("black"), QColor("white"));
             break;
+        }
 
         case RedChannel:
+        {
             setGradientColors(QColor("black"), QColor("red"));
             break;
+        }
 
         case GreenChannel:
+        {
             setGradientColors(QColor("black"), QColor("green"));
             break;
+        }
 
         case BlueChannel:
+        {
             setGradientColors(QColor("black"), QColor("blue"));
             break;
+        }
 
         case AlphaChannel:
+        {
             setGradientColors(QColor("black"), QColor("white"));
             break;
+        }
 
         case ColorChannels:
+        {
             setGradientColors(QColor("black"), QColor("white"));
             break;
+        }
     }
 
     Q_EMIT signalChannelChanged(channel());
@@ -302,6 +305,7 @@ void HistogramBox::setHistogramType(HistogramBoxType type)
     switch (type)
     {
         case RGB:
+        {
             d->channelCB->clear();
             d->channelCB->addItem(channelDescMap[RedChannel].first, QVariant(RedChannel));
             d->channelCB->addItem(channelDescMap[GreenChannel].first, QVariant(GreenChannel));
@@ -312,8 +316,10 @@ void HistogramBox::setHistogramType(HistogramBoxType type)
             channelCBDescr.append(channelDescMap[BlueChannel].second);
             channelCBDescr.append(QLatin1String("</p>"));
             break;
+        }
 
         case RGBA:
+        {
             d->channelCB->clear();
             d->channelCB->addItem(channelDescMap[RedChannel].first, QVariant(RedChannel));
             d->channelCB->addItem(channelDescMap[GreenChannel].first, QVariant(GreenChannel));
@@ -326,8 +332,10 @@ void HistogramBox::setHistogramType(HistogramBoxType type)
             channelCBDescr.append(channelDescMap[AlphaChannel].second);
             channelCBDescr.append(QLatin1String("</p>"));
             break;
+        }
 
         case LRGB:
+        {
             d->channelCB->clear();
             d->channelCB->addItem(channelDescMap[LuminosityChannel].first, QVariant(LuminosityChannel));
             d->channelCB->addItem(channelDescMap[RedChannel].first, QVariant(RedChannel));
@@ -340,8 +348,10 @@ void HistogramBox::setHistogramType(HistogramBoxType type)
             channelCBDescr.append(channelDescMap[BlueChannel].second);
             channelCBDescr.append(QLatin1String("</p>"));
             break;
+        }
 
         case LRGBA:
+        {
             d->channelCB->clear();
             d->channelCB->addItem(channelDescMap[LuminosityChannel].first, QVariant(LuminosityChannel));
             d->channelCB->addItem(channelDescMap[RedChannel].first, QVariant(RedChannel));
@@ -356,8 +366,10 @@ void HistogramBox::setHistogramType(HistogramBoxType type)
             channelCBDescr.append(channelDescMap[AlphaChannel].second);
             channelCBDescr.append(QLatin1String("</p>"));
             break;
+        }
 
         case LRGBC:
+        {
             d->channelCB->clear();
             d->channelCB->addItem(channelDescMap[LuminosityChannel].first, QVariant(LuminosityChannel));
             d->channelCB->addItem(channelDescMap[RedChannel].first, QVariant(RedChannel));
@@ -372,8 +384,10 @@ void HistogramBox::setHistogramType(HistogramBoxType type)
             channelCBDescr.append(channelDescMap[ColorChannels].second);
             channelCBDescr.append(QLatin1String("</p>"));
             break;
+        }
 
         case LRGBAC:
+        {
             d->channelCB->clear();
             d->channelCB->addItem(channelDescMap[LuminosityChannel].first, QVariant(LuminosityChannel));
             d->channelCB->addItem(channelDescMap[RedChannel].first, QVariant(RedChannel));
@@ -390,9 +404,12 @@ void HistogramBox::setHistogramType(HistogramBoxType type)
             channelCBDescr.append(channelDescMap[ColorChannels].second);
             channelCBDescr.append(QLatin1String("</p>"));
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     d->channelCB->setWhatsThis(channelCBDescr);

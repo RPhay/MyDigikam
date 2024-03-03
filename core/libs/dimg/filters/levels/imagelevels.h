@@ -46,7 +46,7 @@ public:
      */
     void   levelsChannelReset(int channel);
     void   levelsAuto(ImageHistogram* const hist);
-    void   levelsChannelAuto(ImageHistogram* const hist, int channel);
+    void   levelsChannelAuto(const ImageHistogram* const hist, int channel);
     int    levelsInputFromColor(int channel, const DColor& color);
     void   levelsBlackToneAdjustByColors(int channel, const DColor& color);
     void   levelsGrayToneAdjustByColors(int channel, const DColor& color);

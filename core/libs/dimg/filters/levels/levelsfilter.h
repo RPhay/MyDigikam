@@ -44,9 +44,7 @@ public:
         }
     };
 
-    ~LevelsContainer()
-    {
-    };
+    ~LevelsContainer() = default;
 
 public:
 
