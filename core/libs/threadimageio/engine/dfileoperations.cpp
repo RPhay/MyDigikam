@@ -697,10 +697,7 @@ QString DFileOperations::findExecutable(const QString& name)
             }
         }
 
-        if (!QFileInfo::exists(path))
-        {
-            path.clear();
-        }
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Resolved file path:" << path;
     }
 
 #endif
@@ -710,7 +707,12 @@ QString DFileOperations::findExecutable(const QString& name)
         path = QStandardPaths::findExecutable(program);
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Resolved file path:" << path;
+    path = QDir::toNativeSeparators(path);
+
+    if (!path.isEmpty() && !QFileInfo::exists(path))
+    {
+        path.clear();
+    }
 
     return path;
 }
