@@ -532,17 +532,17 @@ void OnlineVersionDlg::slotUpdateStats()
 
     if (remain)
     {
-        unsigned int r, d, h, m, s;
-        r = qAbs(remain * 1000);
-        d = r / 86400000;
-        r = r % 86400000;
-        h = r / 3600000;
-        r = r % 3600000;
-        m = r / 60000;
-        r = r % 60000;
-        s = r / 1000;
+        unsigned int rr, dd, hh, mm, ss;
+        rr = qAbs(remain * 1000);
+        dd = rr / 86400000;
+        rr = rr % 86400000;
+        hh = rr / 3600000;
+        rr = rr % 3600000;
+        mm = rr / 60000;
+        rr = rr % 60000;
+        ss = rr / 1000;
 
-        durationString = QString().asprintf("%d.%02d:%02d:%02d", d, h, m, s);
+        durationString = QString().asprintf("%d.%02d:%02d:%02d", dd, hh, mm, ss);
     }
 
     d->received->setText(ItemPropertiesTab::humanReadableBytesCount(d->bar->value()));
@@ -617,6 +617,7 @@ void OnlineVersionDlg::slotHelp()
 void OnlineVersionDlg::slotSetupUpdate()
 {
     close();
+
     Q_EMIT signalSetupUpdate();
 }
 
