@@ -36,11 +36,11 @@ QTEST_MAIN(AdvancedRenameTest)
 
 QString createFilePath(const QString& file)
 {
-    const QString filePath = DTestDataDir::TestData(QString::fromUtf8("core/tests/advancerename"))
-                                   .root().path() + QLatin1Char('/') + file;
-    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data File:" << filePath;
+    const QString path = DTestDataDir::TestData(QString::fromUtf8("core/tests/advancerename"))
+                         .root().path() + QLatin1Char('/') + file;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data File:" << path;
 
-    return filePath;
+    return path;
 }
 
 Q_DECLARE_METATYPE(QList<int>)
