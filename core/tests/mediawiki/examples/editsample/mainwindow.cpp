@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget* const parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete mwIface;
 }
 
 //Load page
@@ -56,6 +57,7 @@ void MainWindow::revisionHandle(const QList<Revision>& revisions)
         QMessageBox popup;
         popup.setText(QLatin1String("This page doesn't exist."));
         popup.exec();
+
         return;
     }
 
