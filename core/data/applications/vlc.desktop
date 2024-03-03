@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=VLC media player
+Exec=vlc.exe %f
+Icon=vlc.exe
+MimeType=video/mp4;video/mov;video/mpg;video/wmv
