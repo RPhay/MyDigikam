@@ -96,7 +96,7 @@ public:
 
     static void make_gaussian_convolution(const double alpha, CMat* const convolution, const int m);
 
-    static void convolve_star_mat(CMat* const result, const CMat* const mata, const CMat* const matb);
+    static void convolve_star_mat(const CMat* const result, const CMat* const mata, const CMat* const matb);
 
     static CMat* compute_g_matrix(const CMat* const convolution, const int m,
                                   const double gamma, const double noise_factor,
@@ -119,7 +119,7 @@ private:
 
     static inline double* c_mat_eltptr(const CMat* const mat, const int col, const int row);
 
-    static void convolve_mat(CMat* const result, const CMat* const mata, const CMat* const matb);
+    static void convolve_mat(const CMat* const result, const CMat* const mata, const CMat* const matb);
 
     static int as_idx(const int k, const int l, const int m);
     static int as_cidx(const int k, const int l);

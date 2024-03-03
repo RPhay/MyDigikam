@@ -41,28 +41,21 @@ class Q_DECL_HIDDEN RefocusFilter::Private
 {
 public:
 
-    explicit Private()
-      : matrixSize(5),
-        radius(0.9),
-        gauss(0.0),
-        correlation(0.5),
-        noise(0.01)
-    {
-    }
+    Private() = default;
 
     DImg      preImage;
 
-    int       matrixSize;
+    int       matrixSize    = 5;
 
-    double    radius;
-    double    gauss;
-    double    correlation;
-    double    noise;
+    double    radius        = 0.9;
+    double    gauss         = 0.0;
+    double    correlation   = 0.5;
+    double    noise         = 0.01;
 };
 
 RefocusFilter::RefocusFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
@@ -70,7 +63,7 @@ RefocusFilter::RefocusFilter(QObject* const parent)
 RefocusFilter::RefocusFilter(DImg* const orgImage, QObject* const parent, int matrixSize, double radius,
                              double gauss, double correlation, double noise)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("Refocus")),
-      d(new Private)
+      d                 (new Private)
 {
     d->matrixSize  = matrixSize;
     d->radius      = radius;

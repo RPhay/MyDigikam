@@ -34,31 +34,24 @@ private:
 
     struct Q_DECL_HIDDEN Args
     {
-        explicit Args()
-          : orgData(nullptr),
-            destData(nullptr),
-            width(0),
-            height(0),
-            sixteenBit(false),
-            matrix(nullptr),
-            mat_size(0)
-        {
-        }
+        Args() = default;
 
-        uchar*  orgData;
-        uchar*  destData;
-        int     width;
-        int     height;
-        bool    sixteenBit;
-        double* matrix;
-        uint    mat_size;
+        uchar*  orgData     = nullptr;
+        uchar*  destData    = nullptr;
+        int     width       = 0;
+        int     height      = 0;
+        bool    sixteenBit  = false;
+        double* matrix      = nullptr;
+        uint    mat_size    = 0;
     };
 
 public:
 
     explicit RefocusFilter(QObject* const parent = nullptr);
-    explicit RefocusFilter(DImg* const orgImage, QObject* const parent = nullptr, int matrixSize=5, double radius=0.9,
-                           double gauss=0.0, double correlation=0.5, double noise=0.01);
+    explicit RefocusFilter(DImg* const orgImage, QObject* const parent = nullptr,
+                           int matrixSize = 5, double radius = 0.9,
+                           double gauss = 0.0, double correlation = 0.5,
+                           double noise = 0.01);
 
     ~RefocusFilter() override;
 
@@ -87,12 +80,12 @@ public:
     }
 
     FilterAction    filterAction()                                    override;
-    void                    readParameters(const FilterAction& action)        override;
+    void            readParameters(const FilterAction& action)        override;
 
 
 private:
 
-    void filterImage()                                                        override;
+    void filterImage()                                                override;
 
     void refocusImage(uchar* const data, int width, int height, bool sixteenBit,
                       int matrixSize, double radius, double gauss,

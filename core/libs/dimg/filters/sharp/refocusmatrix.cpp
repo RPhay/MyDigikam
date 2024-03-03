@@ -174,7 +174,7 @@ inline double RefocusMatrix::c_mat_elt(const CMat* const mat, const int col, con
     return (mat->center[mat->row_stride * row + col]);
 }
 
-void RefocusMatrix::convolve_mat(CMat* const result, const CMat* const mata, const CMat* const matb)
+void RefocusMatrix::convolve_mat(const CMat* const result, const CMat* const mata, const CMat* const matb)
 {
    int xr, yr, xa, ya;
 
@@ -202,7 +202,7 @@ void RefocusMatrix::convolve_mat(CMat* const result, const CMat* const mata, con
     }
 }
 
-void RefocusMatrix::convolve_star_mat(CMat* const result, const CMat* const mata, const CMat* const matb)
+void RefocusMatrix::convolve_star_mat(const CMat* const result, const CMat* const mata, const CMat* const matb)
 {
    int xr, yr, xa, ya;
 
