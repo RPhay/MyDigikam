@@ -150,7 +150,10 @@ int main(int argc, char** argv)
 
     for (int i = 0 ; i < s ; i++)
     {
-        showObjects(filesInfo[i].absoluteFilePath(), results[i]);
+        if ((i < filesInfo.size()) && (i < results.size()))
+        {
+            showObjects(filesInfo[i].absoluteFilePath(), results[i]);
+        }
     }
 
     return app.exec();
