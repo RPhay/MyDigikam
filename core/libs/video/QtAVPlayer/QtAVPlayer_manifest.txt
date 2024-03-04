@@ -1,2 +1,2 @@
-+QTAVPLAYER Snapshoot 2024-02-24
-QtAVPlayer:3afdbfc27230cf5ff21c2ffafb576c20b7125112
++QTAVPLAYER Snapshoot 2024-03-04
+QtAVPlayer:8fcf628f1cac032a8cb26f8ed94a852d750fb5c8
