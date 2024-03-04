@@ -675,7 +675,7 @@ void ItemHistoryGraph::reduceEdges()
         return;    // reduction failed, not a DAG
     }
 
-    Q_FOREACH (const HistoryGraph::Edge& e, removedEgdes)
+    Q_FOREACH (const HistoryGraph::Edge& e, removedEgdes)   // cppcheck-suppress knownEmptyContainer
     {
         if (!d->properties(e).actions.isEmpty())
         {

@@ -90,9 +90,7 @@ class Q_DECL_HIDDEN VertexItem : public HistoryTreeItem
 {
 public:
 
-    VertexItem()
-    {
-    }
+    VertexItem() = default;
 
     explicit VertexItem(const HistoryGraph::Vertex& v)
         : vertex  (v),
@@ -122,9 +120,7 @@ class Q_DECL_HIDDEN FilterActionItem : public HistoryTreeItem
 {
 public:
 
-    FilterActionItem()
-    {
-    }
+    FilterActionItem() = default;
 
     explicit FilterActionItem(const FilterAction& action)
         : action(action)
@@ -151,8 +147,8 @@ class Q_DECL_HIDDEN HeaderItem : public HistoryTreeItem
 {
 public:
 
-    explicit HeaderItem(const QString& title)
-        : title(title)
+    explicit HeaderItem(const QString& tt)
+        : title(tt)
     {
     }
 
@@ -176,8 +172,8 @@ class Q_DECL_HIDDEN CategoryItem : public HistoryTreeItem
 {
 public:
 
-    explicit CategoryItem(const QString& title)
-        : title(title)
+    explicit CategoryItem(const QString& tt)
+        : title(tt)
     {
     }
 
@@ -290,21 +286,16 @@ class Q_DECL_HIDDEN ItemHistoryGraphModel::Private
 {
 public:
 
-    explicit Private()
-        : mode      (ItemHistoryGraphModel::CombinedTreeMode),
-          rootItem  (nullptr),
-          imageModel(nullptr)
-    {
-    }
+    Private() = default;
 
-    ItemHistoryGraphModel::Mode                        mode;
+    ItemHistoryGraphModel::Mode                        mode         = ItemHistoryGraphModel::CombinedTreeMode;
 
     ItemHistoryGraph                                   historyGraph;
     ItemInfo                                           info;
 
-    HistoryTreeItem*                                   rootItem;
+    HistoryTreeItem*                                   rootItem     = nullptr;
     QList<VertexItem*>                                 vertexItems;
-    ItemListModel*                                     imageModel;
+    ItemListModel*                                     imageModel   = nullptr;
     QList<HistoryGraph::Vertex>                        path;
     QHash<HistoryGraph::Vertex, HistoryImageId::Types> categories;
 
@@ -906,14 +897,17 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
         switch (role)
         {
             case IsHeaderItemRole:
+            {
                 return true;
+            }
 
             case Qt::DisplayRole:
 /*
             case Qt::ToolTipRole:
 */
+            {
                 return headerItem->title;
-                break;
+            }
         }
     }
     else if_isItem(CategoryItem, categoryItem, item)
@@ -921,14 +915,18 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
         switch (role)
         {
             case IsCategoryItemRole:
+            {
                 return true;
+            }
 
             case Qt::DisplayRole:
             case DCategorizedSortFilterProxyModel::CategoryDisplayRole:
 /*
             case Qt::ToolTipRole:
 */
+            {
                 return categoryItem->title;
+            }
         }
     }
     else if_isItem(SeparatorItem, separatorItem, item)
@@ -936,7 +934,9 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
         switch (role)
         {
             case IsSeparatorItemRole:
+            {
                 return true;
+            }
         }
     }
 
@@ -947,10 +947,14 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
         case IsHeaderItemRole:
         case IsCategoryItemRole:
         case IsSubjectImageRole:
+        {
             return false;
+        }
 
         default:
+        {
             return QVariant();
+        }
     }
 }
 
@@ -1024,13 +1028,17 @@ Qt::ItemFlags ItemHistoryGraphModel::flags(const QModelIndex& index) const
         switch (item->type())
         {
             case HistoryTreeItem::FilterActionItemType:
+            {
                 return (Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+            }
 
             case HistoryTreeItem::HeaderItemType:
             case HistoryTreeItem::CategoryItemType:
             case HistoryTreeItem::SeparatorItemType:
             default:
+            {
                 return Qt::ItemIsEnabled;
+            }
         }
     }
 
