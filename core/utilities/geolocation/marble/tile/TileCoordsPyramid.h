@@ -30,7 +30,7 @@ class DIGIKAM_EXPORT TileCoordsPyramid
     void setBottomLevelCoords( QRect const & coords );
     QRect coords( int const level ) const;
 
-    void setValidTileLevels( const QVector<int> validLevels );
+    void setValidTileLevels( const QVector<int>& validLevels );
     QVector<int> validTileLevels();
 
     /**

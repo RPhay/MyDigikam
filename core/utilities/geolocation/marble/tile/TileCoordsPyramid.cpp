@@ -93,7 +93,7 @@ QRect TileCoordsPyramid::coords( int const level ) const
     return result;
 }
 
-void TileCoordsPyramid::setValidTileLevels(const QVector<int> validLevels)
+void TileCoordsPyramid::setValidTileLevels(const QVector<int>& validLevels)
 {
     d->m_validLevels = validLevels;
 }
