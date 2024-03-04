@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-03 01:42+0000\n"
+"POT-Creation-Date: 2024-03-04 01:34+0000\n"
 "PO-Revision-Date: 2024-03-01 14:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -9008,7 +9008,7 @@ msgid "Unsharp Mask"
 msgstr "Yumuşatma Maskesi"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:284
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:100
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:145
 #, kde-format
 msgid "Refocus"
@@ -17141,235 +17141,235 @@ msgstr "'%1' dosyası yazmak için açılamıyor"
 msgid "Could not save image to file '%1'"
 msgstr "Görsel '%1' dosyasına kaydedilemedi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:104
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
 msgstr "'%1' içinde tema bulunamadı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Create directories"
 msgstr "Dizinler oluştur"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr "'%1' klasörü oluşturulamadı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:129
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "Copying theme"
 msgstr "Tema kopyalanıyor"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid "Could not copy theme"
 msgstr "Tema kopyalanamadı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:153
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
 msgstr "Görsel ve XML dosyaları üret"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:166
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "gallery.xml oluşturulamadı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:290
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "\"%1\" için dosyalar üretiliyor"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:317
 #, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "HTML dosyaları üretiliyor"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "XSL dosyası '%1' yüklenemedi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:342
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:334
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "XML dosyası '%1' yüklenemedi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:378
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:371
 #, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "XML dosyasının işlenmesinde hata"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:387
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:380
 #, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "'%1' yazmak için açılamadı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:414
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
 #, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "\"%1\" için uzak dosyalar indiriliyor"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:431
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "Geçici dosya açılamadı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:446
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
 #, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "%1 indirilemedi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Önceki"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "Sonraki"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Albüm Listesi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "Özgün Görsel"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr "Yukarı Git"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Yapımcı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Model"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Görsel Yönelimi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Görsel X Çözünürlüğü"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Görsel Y Çözünürlüğü"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Görsel Çözünürlüğü Birimi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Görsel Tarihi ve Zamanı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "YCBCR Konumlaması"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Pozlama Süresi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "F Sayısı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Pozlama İndeksi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "ISO Hızı Oranları"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr "Deklanşör Hızı Değeri"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Diyafram Açıklığı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Odak Uzaklığı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "GPS Rakımı"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "GPS Enlemi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
@@ -21220,7 +21220,7 @@ msgstr "Önizle..."
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:155
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -32504,101 +32504,101 @@ msgstr "(kısımsal eşleşme bulundu)"
 msgid "(exact match found)"
 msgstr "(tam eşleşme bulundu)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:115
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:110
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Mercek Kendiliğinden Düzeltme Aracı"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Kamera: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:417
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Mercek: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:419
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:414
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Özne uzaklığı: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:421
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Diyafram açıklığı: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Odak uzaklığı: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:420
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Kırpma çarpanı: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:427
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:430
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:433
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:436
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "etkin"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:427
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "CCA düzeltmesi: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:434
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:437
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:426
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:429
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:432
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "devre dışı"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:430
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "VIG düzeltmesi: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:433
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "DST düzeltmesi: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:436
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
 msgstr "GEO düzeltmesi: %1"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:69
 #, kde-format
 msgid "Lens Corrections to Apply:"
 msgstr "Uygulanacak mercek düzeltmeleri:"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:76
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:70
 #, kde-format
 msgid "Chromatic Aberration"
 msgstr "Renk Sapması"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:77
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:71
 #, kde-format
 msgid ""
 "Chromatic aberration is easily recognized as color fringes towards the image "
@@ -32608,12 +32608,12 @@ msgstr ""
 "edilir. Renk sapması, farklı renkler için değişen mercek odağından "
 "kaynaklanmaktadır."
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:80
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:74
 #, kde-format
 msgid "Vignetting"
 msgstr "Vinyetleme"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:81
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
 #, kde-format
 msgid ""
 "Vignetting refers to an image darkening, mostly in the corners. Optical and "
@@ -32624,12 +32624,12 @@ msgstr ""
 "ifade eder. Bu seçenekle optik ve doğal kenar ayrıntısı etkisi iptal "
 "edilebilir; ancak mekanik kenar ayrıntısı etkisi düzeltilemez."
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:84
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:78
 #, kde-format
 msgid "Distortion"
 msgstr "Bozunum"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:79
 #, kde-format
 msgid ""
 "Distortion refers to an image deformation, which is most pronounced towards "
@@ -32639,12 +32639,12 @@ msgstr ""
 "Bozunum, en çok köşelere doğru belirgin olan görsel deformasyonunu ifade "
 "eder. Bu Seidel sapmaları, iğne yastığı ve namlu bozunumları olarak bilinir."
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:88
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:82
 #, kde-format
 msgid "Geometry"
 msgstr "Geometri"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:89
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:83
 #, kde-format
 msgid ""
 "Four geometries are handled here: Rectilinear (99 percent of all lenses), "
@@ -32653,7 +32653,7 @@ msgstr ""
 "Burada dört geometri ele alınmaktadır: Dikdörtgen (tüm merceklerin yüzde "
 "99'u), Balıkgözü, Silindirik, Eşkenar Dörtgen."
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:91
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
 #, kde-format
 msgid ""
 "<b>Note: lens correction options depend of filters available in LensFun "
@@ -32664,12 +32664,12 @@ msgstr ""
 "bağlıdır. Daha fazla bilgi için <a href='http://lensfun.sourceforge."
 "net'>LensFun projesi web sitesine</a> bakın.</b>"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:77
+#: core/libs/dimg/filters/levels/histogrambox.cpp:68
 #, kde-format
 msgid "Channel:"
 msgstr "Kanal:"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:83
+#: core/libs/dimg/filters/levels/histogrambox.cpp:74
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the image's maximal counts are "
@@ -32682,19 +32682,19 @@ msgstr ""
 "büyük sayımlar büyük olduğunda kullanılabilir; kullanılması durumunda tüm "
 "değerler (küçük ve büyük) grafikte görünecektir.</p>"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:89
+#: core/libs/dimg/filters/levels/histogrambox.cpp:80
 #, kde-format
 msgctxt "linear histogram scaling mode"
 msgid "Linear"
 msgstr "Doğrusal"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:95
+#: core/libs/dimg/filters/levels/histogrambox.cpp:86
 #, kde-format
 msgctxt "logarithmic histogram scaling mode"
 msgid "Logarithmic"
 msgstr "Logaritmik"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:112
+#: core/libs/dimg/filters/levels/histogrambox.cpp:103
 #, kde-format
 msgid ""
 "Here you can see the target preview image histogram drawing of the selected "
@@ -32703,73 +32703,73 @@ msgstr ""
 "Burada seçili görsel kanalının hedef önizleme görseli histogram çizimini "
 "görebilirsiniz. Bu, herhangi bir ayar değişikliğinde yeniden hesaplanır."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:269
+#: core/libs/dimg/filters/levels/histogrambox.cpp:272
 #, kde-format
 msgid "<p>Select the histogram channel to display:</p>"
 msgstr "<p>Görüntülenecek histogram kanalını seçin:</p>"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:275
+#: core/libs/dimg/filters/levels/histogrambox.cpp:278
 #, kde-format
 msgctxt "The luminosity channel"
 msgid "Luminosity"
 msgstr "Parlaklık"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:276
+#: core/libs/dimg/filters/levels/histogrambox.cpp:279
 #, kde-format
 msgid "<b>Luminosity</b>: display the image's luminosity values."
 msgstr "<b>Parlaklık</b>: Görselin parlaklık değerlerini görüntüleyin."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:278
+#: core/libs/dimg/filters/levels/histogrambox.cpp:281
 #, kde-format
 msgctxt "The red channel"
 msgid "Red"
 msgstr "Kırmızı"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:279
+#: core/libs/dimg/filters/levels/histogrambox.cpp:282
 #, kde-format
 msgid "<b>Red</b>: display the red image-channel values."
 msgstr "<b>Kırmızı</b>: Kırmızı görsel kanalı değerlerini görüntüleyin."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:281
+#: core/libs/dimg/filters/levels/histogrambox.cpp:284
 #, kde-format
 msgctxt "The green channel"
 msgid "Green"
 msgstr "Yeşil"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:282
+#: core/libs/dimg/filters/levels/histogrambox.cpp:285
 #, kde-format
 msgid "<b>Green</b>: display the green image-channel values."
 msgstr "<b>Yeşil</b>: Yeşil görsel kanalı değerlerini görüntüleyin."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:284
+#: core/libs/dimg/filters/levels/histogrambox.cpp:287
 #, kde-format
 msgctxt "The blue channel"
 msgid "Blue"
 msgstr "Mavi"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:285
+#: core/libs/dimg/filters/levels/histogrambox.cpp:288
 #, kde-format
 msgid "<b>Blue</b>: display the blue image-channel values."
 msgstr "<b>Mavi</b>: Mavi görsel kanalı değerlerini görüntüleyin."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:287
+#: core/libs/dimg/filters/levels/histogrambox.cpp:290
 #, kde-format
 msgctxt "The colors channel"
 msgid "Colors"
 msgstr "Renkler"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:288
+#: core/libs/dimg/filters/levels/histogrambox.cpp:291
 #, kde-format
 msgid "<b>Colors</b>: Display all color channel values at the same time."
 msgstr "<b>Renkler</b>: Tüm renk kanalı değerlerini aynı anda görüntüleyin."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:290
+#: core/libs/dimg/filters/levels/histogrambox.cpp:293
 #, kde-format
 msgctxt "The alpha channel"
 msgid "Alpha"
 msgstr "Alfa"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:291
+#: core/libs/dimg/filters/levels/histogrambox.cpp:294
 #, kde-format
 msgid ""
 "<b>Alpha</b>: display the alpha image-channel values. This channel "
@@ -37535,7 +37535,7 @@ msgstr "değiştirilmemiş"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:641
+#: core/libs/properties/itempropertiessidebardb.cpp:633
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37546,10 +37546,10 @@ msgstr "kullanılamıyor"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:279
 #: core/libs/properties/itempropertiessidebar.cpp:282
-#: core/libs/properties/itempropertiessidebardb.cpp:699
-#: core/libs/properties/itempropertiessidebardb.cpp:701
-#: core/libs/properties/itempropertiessidebardb.cpp:804
-#: core/libs/properties/itempropertiessidebardb.cpp:806
+#: core/libs/properties/itempropertiessidebardb.cpp:691
+#: core/libs/properties/itempropertiessidebardb.cpp:693
+#: core/libs/properties/itempropertiessidebardb.cpp:796
+#: core/libs/properties/itempropertiessidebardb.cpp:798
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
@@ -37561,10 +37561,10 @@ msgstr "Hayır"
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:698
-#: core/libs/properties/itempropertiessidebardb.cpp:700
-#: core/libs/properties/itempropertiessidebardb.cpp:803
-#: core/libs/properties/itempropertiessidebardb.cpp:805
+#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:692
+#: core/libs/properties/itempropertiessidebardb.cpp:795
+#: core/libs/properties/itempropertiessidebardb.cpp:797
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37600,31 +37600,31 @@ msgctxt "@label"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:151
+#: core/libs/properties/itempropertiescolorstab.cpp:132
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Range:"
 msgstr "Erim:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:158
+#: core/libs/properties/itempropertiescolorstab.cpp:139
 #, kde-format
 msgctxt "@info: color properties"
 msgid "Select the minimal intensity value of the histogram selection here."
 msgstr "Burada histogram seçiminin en düşük yoğunluk değerini seçin."
 
-#: core/libs/properties/itempropertiescolorstab.cpp:164
+#: core/libs/properties/itempropertiescolorstab.cpp:145
 #, kde-format
 msgctxt "@info: color properties"
 msgid "Select the maximal intensity value of the histogram selection here."
 msgstr "Burada histogram seçiminin en yüksek yoğunluk değerini seçin."
 
-#: core/libs/properties/itempropertiescolorstab.cpp:172
+#: core/libs/properties/itempropertiescolorstab.cpp:153
 #, kde-format
 msgctxt "@title: color properties"
 msgid "Statistics"
 msgstr "İstatistikler"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:173
+#: core/libs/properties/itempropertiescolorstab.cpp:154
 #, kde-format
 msgctxt "@info: color properties"
 msgid ""
@@ -37634,124 +37634,124 @@ msgstr ""
 "Burada seçilen histogram kısmından hesaplanan istatistiksel sonuçları "
 "görebilirsiniz. Bu değerler tüm kanallar için vardır."
 
-#: core/libs/properties/itempropertiescolorstab.cpp:178
+#: core/libs/properties/itempropertiescolorstab.cpp:159
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Pixels: "
 msgstr "Pikseller: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:181
+#: core/libs/properties/itempropertiescolorstab.cpp:162
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Count: "
 msgstr "Sayı: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:184
+#: core/libs/properties/itempropertiescolorstab.cpp:165
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Mean: "
 msgstr "Ortalama: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:187
+#: core/libs/properties/itempropertiescolorstab.cpp:168
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Std. deviation: "
 msgstr "Standart sapma: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:190
+#: core/libs/properties/itempropertiescolorstab.cpp:171
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Median: "
 msgstr "Ortanca: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:193
+#: core/libs/properties/itempropertiescolorstab.cpp:174
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Percentile: "
 msgstr "Yüzdebirlik: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:196
+#: core/libs/properties/itempropertiescolorstab.cpp:177
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Color depth: "
 msgstr "Renk derinliği: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:199
+#: core/libs/properties/itempropertiescolorstab.cpp:180
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Alpha Channel: "
 msgstr "Alfa kanalı: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:202
+#: core/libs/properties/itempropertiescolorstab.cpp:183
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Source: "
 msgstr "Kaynak: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:257
+#: core/libs/properties/itempropertiescolorstab.cpp:238
 #, kde-format
 msgctxt "@title: color properties"
 msgid "Histogram"
 msgstr "Histogram"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:267
+#: core/libs/properties/itempropertiescolorstab.cpp:248
 #, kde-format
 msgctxt "@title: color properties"
 msgid "ICC profile"
 msgstr "ICC profili"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:686
+#: core/libs/properties/itempropertiescolorstab.cpp:667
 #, kde-format
 msgctxt "@label: color properties"
 msgid "16 bits"
 msgstr "16 bit"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:687
+#: core/libs/properties/itempropertiescolorstab.cpp:668
 #, kde-format
 msgctxt "@label: color properties"
 msgid "8 bits"
 msgstr "8 bit"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:688
+#: core/libs/properties/itempropertiescolorstab.cpp:669
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:689
+#: core/libs/properties/itempropertiescolorstab.cpp:670
 #, kde-format
 msgctxt "@label: color properties"
 msgid "No"
 msgstr "Hayır"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:730
+#: core/libs/properties/itempropertiescolorstab.cpp:711
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Full Image"
 msgstr "Tüm Görsel"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:731
+#: core/libs/properties/itempropertiescolorstab.cpp:712
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Image Region"
 msgstr "Görsel Alanı"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:82
+#: core/libs/properties/itempropertiesmetadatatab.cpp:77
 #, kde-format
 msgid "EXIF"
 msgstr "EXIF"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:87
+#: core/libs/properties/itempropertiesmetadatatab.cpp:82
 #, kde-format
 msgid "Makernote"
 msgstr "Yapımcı Notu"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:92
+#: core/libs/properties/itempropertiesmetadatatab.cpp:87
 #, kde-format
 msgid "IPTC"
 msgstr "IPTC"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:100
+#: core/libs/properties/itempropertiesmetadatatab.cpp:95
 #: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "XMP"
@@ -37797,8 +37797,8 @@ msgstr "Kalibre edilmemiş"
 
 #: core/libs/properties/itempropertiessidebar.cpp:261
 #: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebardb.cpp:675
-#: core/libs/properties/itempropertiessidebardb.cpp:688
+#: core/libs/properties/itempropertiessidebardb.cpp:667
+#: core/libs/properties/itempropertiessidebardb.cpp:680
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37811,39 +37811,39 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1 × %2 (%3 Mpks)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebardb.cpp:697
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:313
-#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:723
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:318
-#: core/libs/properties/itempropertiessidebardb.cpp:736
+#: core/libs/properties/itempropertiessidebardb.cpp:728
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:87
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Alt Yazılar"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:88
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Sürümler"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:680
+#: core/libs/properties/itempropertiessidebardb.cpp:672
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -38011,27 +38011,27 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:76
+#: core/libs/properties/itemselectionpropertiestab.cpp:70
 #, kde-format
 msgid "Count: "
 msgstr "Sayı: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:77
+#: core/libs/properties/itemselectionpropertiestab.cpp:71
 #, kde-format
 msgid "Size: "
 msgstr "Boyut: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:78
+#: core/libs/properties/itemselectionpropertiestab.cpp:72
 #, kde-format
 msgid "Total Count: "
 msgstr "Toplam sayı: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:79
+#: core/libs/properties/itemselectionpropertiestab.cpp:73
 #, kde-format
 msgid "Total Size: "
 msgstr "Toplam boyut: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:104
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
 #, kde-format
 msgid "Selection Properties"
 msgstr "Seçim Özellikleri"
@@ -50535,7 +50535,7 @@ msgid "Show a list of all available options"
 msgstr "Tüm kullanılabilir seçeneklerin listesini göster"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:110
 #, kde-format
 msgid "Modifiers"
 msgstr "Niteleyiciler"
@@ -50599,7 +50599,7 @@ msgstr ""
 "Dosya listesi sıralanabilir; sıralama kriterlerini görmek için üzerine sağ "
 "tıklamanız yeterlidir(yalnızca albüm kullanıcı arayüzünde)."
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:50
 #, kde-format
 msgctxt "@title:window"
 msgid "Information"
@@ -55730,7 +55730,7 @@ msgstr "Yeni İlişki"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:259
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
@@ -57229,13 +57229,13 @@ msgstr "-"
 msgid "Maximum Tile Level"
 msgstr "En yüksek karo düzeyi"
 
-#: core/utilities/imageeditor/core/undoaction.cpp:147
+#: core/utilities/imageeditor/core/undoaction.cpp:145
 #, kde-format
 msgctxt "@title: menu entry to undo unknown previous action"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: core/utilities/imageeditor/core/undocache.cpp:132
+#: core/utilities/imageeditor/core/undocache.cpp:131
 #, kde-format
 msgid ""
 "The free disk space in the path \"%1\" for the undo cache file is less than "
@@ -60051,27 +60051,27 @@ msgstr "Her içe aktarılan görsel için yürütülecek betiği burada seçin."
 msgid "Drag and drop an image here"
 msgstr "Buraya bir görsel sürükleyip bırakın"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:257
 #, kde-format
 msgid "Show on left panel"
 msgstr "Sol Panelde Göster"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:258
 #, kde-format
 msgid "Show on right panel"
 msgstr "Sağ Panelde Göster"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:260
 #, kde-format
 msgid "Remove item"
 msgstr "Ögeyi Kaldır"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:261
 #, kde-format
 msgid "Clear all"
 msgstr "Tümünü Temizle"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:464
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Buraya görseller sürükleyip bırakın"
@@ -63708,7 +63708,7 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr "Aşağıdaki yollar için koleksiyon eklenemedi:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
-#: core/utilities/setup/collections/setupcollectionview.cpp:1488
+#: core/utilities/setup/collections/setupcollectionview.cpp:1493
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
@@ -63752,19 +63752,19 @@ msgstr ""
 "\"%1\" koleksiyonunu koleksiyonlar listenizden kaldırmak istiyor musunuz?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1702
+#: core/utilities/setup/collections/setupcollectionview.cpp:1707
 #, kde-format
 msgid "Local Collections"
 msgstr "Yerel Koleksiyonlar"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1703
+#: core/utilities/setup/collections/setupcollectionview.cpp:1708
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Kaldırılabilir Ortamdaki Koleksiyonlar"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1704
+#: core/utilities/setup/collections/setupcollectionview.cpp:1709
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Ağ Paylaşımlarındaki Koleksiyonlar"
@@ -63827,52 +63827,52 @@ msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Durum"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1536
+#: core/utilities/setup/collections/setupcollectionview.cpp:1541
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Daha önce \"%1\" yolunu içeren bir koleksiyon eklediniz."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1571
+#: core/utilities/setup/collections/setupcollectionview.cpp:1576
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Koleksiyon Eklemede Sorun"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1581
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "Koleksiyonu Güncellemede Sorun"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1593
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Koleksiyon Ekleniyor"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1597
+#: core/utilities/setup/collections/setupcollectionview.cpp:1602
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Koleksiyonu Güncelle"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1605
+#: core/utilities/setup/collections/setupcollectionview.cpp:1610
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Yeni koleksiyonunuz, şu adla oluşturulacak:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1609
+#: core/utilities/setup/collections/setupcollectionview.cpp:1614
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr "Koleksiyonunuzun adı şuna güncellenecek:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1692
+#: core/utilities/setup/collections/setupcollectionview.cpp:1697
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Kategori Seç"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1696
+#: core/utilities/setup/collections/setupcollectionview.cpp:1701
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "Yeni koleksiyonunuz şu kategoriyi kullanacak:"

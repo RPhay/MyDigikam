@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-03 01:42+0000\n"
+"POT-Creation-Date: 2024-03-04 01:34+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -8907,7 +8907,7 @@ msgid "Unsharp Mask"
 msgstr "アンシャープマスク"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:284
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:100
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:145
 #, kde-format
 msgid "Refocus"
@@ -17345,32 +17345,32 @@ msgstr ""
 msgid "Could not save image to file '%1'"
 msgstr "タグをファイルに保存できませんでした。"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:104
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:96
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
 msgstr "画像 “%1” の読み込みに失敗しました"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:108
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Create directories"
 msgstr "このタグを付ける"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:112
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr "画像 “%1” の読み込みに失敗しました"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:129
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:121
 #, fuzzy, kde-format
 #| msgid "Loading themes..."
 msgctxt "@info"
 msgid "Copying theme"
 msgstr "テーマを読み込み中..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:136
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
@@ -17378,7 +17378,7 @@ msgid "Could not copy theme"
 msgstr ""
 "フォルダ <filename>%1</filename> の一時ファイルを開けませんでした: %2 (%3)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:153
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -17386,14 +17386,14 @@ msgctxt "@info"
 msgid "Generate images and XML files"
 msgstr "ファイルを回転させるとき"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:166
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:158
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "データベースサーバを開始できませんでした。"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:290
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:282
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -17401,7 +17401,7 @@ msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "ファイルを回転させるとき"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:317
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -17409,27 +17409,27 @@ msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "ファイルを回転させるとき"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "タグをファイルに保存できませんでした。"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:342
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:334
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "タグをファイルに保存できませんでした。"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:378
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:371
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "画像 <filename>%1</filename> の読み込みエラー"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:387
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:380
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
@@ -17437,14 +17437,14 @@ msgid "Could not open '%1' for writing"
 msgstr ""
 "フォルダ <filename>%1</filename> の一時ファイルを開けませんでした: %2 (%3)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:414
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
 #, fuzzy, kde-format
 #| msgid "Downloaded: "
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "ダウンロード: "
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:431
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
@@ -17452,44 +17452,44 @@ msgid "Could not open temporary file"
 msgstr ""
 "フォルダ <filename>%1</filename> の一時ファイルを開けませんでした: %2 (%3)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:446
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "画像 “%1” の読み込みに失敗しました"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "前へ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "次へ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "アルバム"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "オリジナル"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, fuzzy, kde-format
 #| msgctxt "camera make"
 #| msgid "Make:"
@@ -17497,115 +17497,115 @@ msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "メーカー:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "モデル"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, fuzzy, kde-format
 #| msgid "Image orientation"
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "画像の向き"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "画像のピクセル寸法 (画素数) を表示"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "画像のピクセル寸法 (画素数) を表示"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "画像のピクセル寸法 (画素数) を表示"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, fuzzy, kde-format
 #| msgid "Date & Time"
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "日付と時間"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "位置:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "露出時間"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "数:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, fuzzy, kde-format
 #| msgid "Exposure mode"
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "露出モード"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, fuzzy, kde-format
 #| msgid "Imported ratings"
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "評価をインポートしました"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "絞り: "
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, fuzzy, kde-format
 #| msgid "Focal length"
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "焦点距離"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, fuzzy, kde-format
 #| msgid "Altitude"
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "高度"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, fuzzy, kde-format
 #| msgid "Latitude"
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "緯度"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, fuzzy, kde-format
 #| msgid "Longitude"
 msgctxt "@info: xslt param"
@@ -21462,7 +21462,7 @@ msgstr "プレビュー"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:155
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -33005,108 +33005,108 @@ msgstr "(部分的に一致しました)"
 msgid "(exact match found)"
 msgstr "(完全に一致しました)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:115
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:110
 #, fuzzy, kde-format
 #| msgid "Lens Auto-Correction Tool"
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "レンズ自動補正ツール"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
 #, fuzzy, kde-format
 #| msgid "Camera: %1-%2"
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "カメラ: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:417
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
 #, fuzzy, kde-format
 #| msgid "Lens: %1"
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "レンズ: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:419
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:414
 #, fuzzy, kde-format
 #| msgid "Subject Distance: %1"
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "被写体距離: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:421
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
 #, fuzzy, kde-format
 #| msgid "Aperture: %1"
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "絞り: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, fuzzy, kde-format
 #| msgid "Focal Length: %1"
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "焦点距離: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:420
 #, fuzzy, kde-format
 #| msgid "Contrast:"
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "コントラスト:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:427
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:430
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:433
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:436
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "大理石"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:427
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "カラー補正"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:434
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:437
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:426
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:429
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:432
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "大理石"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:430
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "カラー補正"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:433
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "レンズ補正"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:436
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
 msgstr "カラー補正"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:69
 #, kde-format
 msgid "Lens Corrections to Apply:"
 msgstr "適用するレンズ補正:"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:76
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:70
 #, kde-format
 msgid "Chromatic Aberration"
 msgstr "色収差"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:77
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:71
 #, kde-format
 msgid ""
 "Chromatic aberration is easily recognized as color fringes towards the image "
@@ -33115,12 +33115,12 @@ msgstr ""
 "色収差は画像の周辺部の色づきによって簡単に見分けられます。これは色によって焦"
 "点距離が異なるために起こります。"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:80
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:74
 #, kde-format
 msgid "Vignetting"
 msgstr "口径食"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:81
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
 #, kde-format
 msgid ""
 "Vignetting refers to an image darkening, mostly in the corners. Optical and "
@@ -33130,12 +33130,12 @@ msgstr ""
 "口径食は主に画像の四隅が暗くなる現象です。光学的要因と自然要因による口径食は"
 "このオプションで修正できますが、メカニカルな要因によるものはできません。"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:84
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:78
 #, kde-format
 msgid "Distortion"
 msgstr "ゆがみ"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:79
 #, kde-format
 msgid ""
 "Distortion refers to an image deformation, which is most pronounced towards "
@@ -33145,19 +33145,19 @@ msgstr ""
 "ゆがみは画像の周辺部に最も顕著に現れます。これらのザイデル収差は、ピンクッ"
 "ション (糸巻き型) ゆがみやたる型ゆがみとして知られています。"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:88
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:82
 #, kde-format
 msgid "Geometry"
 msgstr "ジオメトリ"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:89
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:83
 #, kde-format
 msgid ""
 "Four geometries are handled here: Rectilinear (99 percent of all lenses), "
 "Fisheye, Cylindrical, Equirectangular."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:91
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
 #, kde-format
 msgid ""
 "<b>Note: lens correction options depend of filters available in LensFun "
@@ -33168,12 +33168,12 @@ msgstr ""
 "います。詳しくは、<a href='http://lensfun.sourceforge.net'>LensFun プロジェク"
 "トウェブサイト</a>をご覧ください。</b>"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:77
+#: core/libs/dimg/filters/levels/histogrambox.cpp:68
 #, kde-format
 msgid "Channel:"
 msgstr "チャンネル:"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:83
+#: core/libs/dimg/filters/levels/histogrambox.cpp:74
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the image's maximal counts are "
@@ -33185,19 +33185,19 @@ msgstr ""
 "きは「線形」が使えます。</p><p>最大カウント値が大きいときは、「対数」を使うと"
 "小さい値から大きい値までのすべてがグラフで見えるようになります。</p>"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:89
+#: core/libs/dimg/filters/levels/histogrambox.cpp:80
 #, kde-format
 msgctxt "linear histogram scaling mode"
 msgid "Linear"
 msgstr "線形"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:95
+#: core/libs/dimg/filters/levels/histogrambox.cpp:86
 #, kde-format
 msgctxt "logarithmic histogram scaling mode"
 msgid "Logarithmic"
 msgstr "対数"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:112
+#: core/libs/dimg/filters/levels/histogrambox.cpp:103
 #, kde-format
 msgid ""
 "Here you can see the target preview image histogram drawing of the selected "
@@ -33206,73 +33206,73 @@ msgstr ""
 "処理後のプレビュー画像の選択されたチャンネルのヒストグラムです。これは設定を"
 "変更するたびに再計算されます。"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:269
+#: core/libs/dimg/filters/levels/histogrambox.cpp:272
 #, kde-format
 msgid "<p>Select the histogram channel to display:</p>"
 msgstr "<p>表示するヒストグラムのチャンネルを選択:</p>"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:275
+#: core/libs/dimg/filters/levels/histogrambox.cpp:278
 #, kde-format
 msgctxt "The luminosity channel"
 msgid "Luminosity"
 msgstr "明度"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:276
+#: core/libs/dimg/filters/levels/histogrambox.cpp:279
 #, kde-format
 msgid "<b>Luminosity</b>: display the image's luminosity values."
 msgstr "明度: 画像の明度値を表示します。"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:278
+#: core/libs/dimg/filters/levels/histogrambox.cpp:281
 #, kde-format
 msgctxt "The red channel"
 msgid "Red"
 msgstr "赤"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:279
+#: core/libs/dimg/filters/levels/histogrambox.cpp:282
 #, kde-format
 msgid "<b>Red</b>: display the red image-channel values."
 msgstr "赤: 赤チャンネルの値を表示します。"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:281
+#: core/libs/dimg/filters/levels/histogrambox.cpp:284
 #, kde-format
 msgctxt "The green channel"
 msgid "Green"
 msgstr "緑"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:282
+#: core/libs/dimg/filters/levels/histogrambox.cpp:285
 #, kde-format
 msgid "<b>Green</b>: display the green image-channel values."
 msgstr "緑: 緑チャンネルの値を表示します。"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:284
+#: core/libs/dimg/filters/levels/histogrambox.cpp:287
 #, kde-format
 msgctxt "The blue channel"
 msgid "Blue"
 msgstr "青"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:285
+#: core/libs/dimg/filters/levels/histogrambox.cpp:288
 #, kde-format
 msgid "<b>Blue</b>: display the blue image-channel values."
 msgstr "青: 青チャンネルの値を表示します。"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:287
+#: core/libs/dimg/filters/levels/histogrambox.cpp:290
 #, kde-format
 msgctxt "The colors channel"
 msgid "Colors"
 msgstr "カラー"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:288
+#: core/libs/dimg/filters/levels/histogrambox.cpp:291
 #, kde-format
 msgid "<b>Colors</b>: Display all color channel values at the same time."
 msgstr "カラー: 赤、青、緑チャンネルの値を同時に表示します。"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:290
+#: core/libs/dimg/filters/levels/histogrambox.cpp:293
 #, kde-format
 msgctxt "The alpha channel"
 msgid "Alpha"
 msgstr "アルファ"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:291
+#: core/libs/dimg/filters/levels/histogrambox.cpp:294
 #, kde-format
 msgid ""
 "<b>Alpha</b>: display the alpha image-channel values. This channel "
@@ -38307,7 +38307,7 @@ msgstr "変更なし"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:641
+#: core/libs/properties/itempropertiessidebardb.cpp:633
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -38319,10 +38319,10 @@ msgstr "情報なし"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:279
 #: core/libs/properties/itempropertiessidebar.cpp:282
-#: core/libs/properties/itempropertiessidebardb.cpp:699
-#: core/libs/properties/itempropertiessidebardb.cpp:701
-#: core/libs/properties/itempropertiessidebardb.cpp:804
-#: core/libs/properties/itempropertiessidebardb.cpp:806
+#: core/libs/properties/itempropertiessidebardb.cpp:691
+#: core/libs/properties/itempropertiessidebardb.cpp:693
+#: core/libs/properties/itempropertiessidebardb.cpp:796
+#: core/libs/properties/itempropertiessidebardb.cpp:798
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, fuzzy, kde-format
 #| msgid "No"
@@ -38335,10 +38335,10 @@ msgstr "いいえ"
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:698
-#: core/libs/properties/itempropertiessidebardb.cpp:700
-#: core/libs/properties/itempropertiessidebardb.cpp:803
-#: core/libs/properties/itempropertiessidebardb.cpp:805
+#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:692
+#: core/libs/properties/itempropertiessidebardb.cpp:795
+#: core/libs/properties/itempropertiessidebardb.cpp:797
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -38380,35 +38380,35 @@ msgctxt "@label"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:151
+#: core/libs/properties/itempropertiescolorstab.cpp:132
 #, fuzzy, kde-format
 #| msgid "Range:"
 msgctxt "@label: color properties"
 msgid "Range:"
 msgstr "レンジ:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:158
+#: core/libs/properties/itempropertiescolorstab.cpp:139
 #, fuzzy, kde-format
 #| msgid "Select the minimal intensity value of the histogram selection here."
 msgctxt "@info: color properties"
 msgid "Select the minimal intensity value of the histogram selection here."
 msgstr "ヒストグラムの範囲の最小値を設定します。"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:164
+#: core/libs/properties/itempropertiescolorstab.cpp:145
 #, fuzzy, kde-format
 #| msgid "Select the maximal intensity value of the histogram selection here."
 msgctxt "@info: color properties"
 msgid "Select the maximal intensity value of the histogram selection here."
 msgstr "ヒストグラムの範囲の最大値を設定します。"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:172
+#: core/libs/properties/itempropertiescolorstab.cpp:153
 #, fuzzy, kde-format
 #| msgid "Statistics"
 msgctxt "@title: color properties"
 msgid "Statistics"
 msgstr "統計値"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:173
+#: core/libs/properties/itempropertiescolorstab.cpp:154
 #, fuzzy, kde-format
 #| msgid ""
 #| "Here you can see the statistical results calculated from the selected "
@@ -38421,35 +38421,35 @@ msgstr ""
 "選択したヒストグラムの部分から計算された統計値です。これらの値は他のチャンネ"
 "ルについても計算されています。"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:178
+#: core/libs/properties/itempropertiescolorstab.cpp:159
 #, fuzzy, kde-format
 #| msgid "Pixels: "
 msgctxt "@label: color properties"
 msgid "Pixels: "
 msgstr "ピクセル数: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:181
+#: core/libs/properties/itempropertiescolorstab.cpp:162
 #, fuzzy, kde-format
 #| msgid "Count: "
 msgctxt "@label: color properties"
 msgid "Count: "
 msgstr "カウント値: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:184
+#: core/libs/properties/itempropertiescolorstab.cpp:165
 #, fuzzy, kde-format
 #| msgid "Mean: "
 msgctxt "@label: color properties"
 msgid "Mean: "
 msgstr "平均値: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:187
+#: core/libs/properties/itempropertiescolorstab.cpp:168
 #, fuzzy, kde-format
 #| msgid "Std. deviation: "
 msgctxt "@label: color properties"
 msgid "Std. deviation: "
 msgstr "標準偏差: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:190
+#: core/libs/properties/itempropertiescolorstab.cpp:171
 #, fuzzy, kde-format
 #| msgid "Median: "
 msgctxt "@label: color properties"
@@ -38457,105 +38457,105 @@ msgid "Median: "
 msgstr "中央値: "
 
 # |,no-bad-patterns
-#: core/libs/properties/itempropertiescolorstab.cpp:193
+#: core/libs/properties/itempropertiescolorstab.cpp:174
 #, fuzzy, kde-format
 #| msgid "Percentile: "
 msgctxt "@label: color properties"
 msgid "Percentile: "
 msgstr "パーセンタイル値: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:196
+#: core/libs/properties/itempropertiescolorstab.cpp:177
 #, fuzzy, kde-format
 #| msgid "Color depth: "
 msgctxt "@label: color properties"
 msgid "Color depth: "
 msgstr "色数: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:199
+#: core/libs/properties/itempropertiescolorstab.cpp:180
 #, fuzzy, kde-format
 #| msgid "Alpha Channel: "
 msgctxt "@label: color properties"
 msgid "Alpha Channel: "
 msgstr "アルファチャンネル: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:202
+#: core/libs/properties/itempropertiescolorstab.cpp:183
 #, fuzzy, kde-format
 #| msgid "Source: "
 msgctxt "@label: color properties"
 msgid "Source: "
 msgstr "ソース: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:257
+#: core/libs/properties/itempropertiescolorstab.cpp:238
 #, fuzzy, kde-format
 #| msgid "Histogram"
 msgctxt "@title: color properties"
 msgid "Histogram"
 msgstr "ヒストグラム"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:267
+#: core/libs/properties/itempropertiescolorstab.cpp:248
 #, fuzzy, kde-format
 #| msgid "ICC profile"
 msgctxt "@title: color properties"
 msgid "ICC profile"
 msgstr "ICC プロファイル"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:686
+#: core/libs/properties/itempropertiescolorstab.cpp:667
 #, fuzzy, kde-format
 #| msgid "16 bits"
 msgctxt "@label: color properties"
 msgid "16 bits"
 msgstr "16 ビット"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:687
+#: core/libs/properties/itempropertiescolorstab.cpp:668
 #, fuzzy, kde-format
 #| msgid "8 bits"
 msgctxt "@label: color properties"
 msgid "8 bits"
 msgstr "8 ビット"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:688
+#: core/libs/properties/itempropertiescolorstab.cpp:669
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@label: color properties"
 msgid "Yes"
 msgstr "はい"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:689
+#: core/libs/properties/itempropertiescolorstab.cpp:670
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@label: color properties"
 msgid "No"
 msgstr "いいえ"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:730
+#: core/libs/properties/itempropertiescolorstab.cpp:711
 #, fuzzy, kde-format
 #| msgid "Full Image"
 msgctxt "@label: color properties"
 msgid "Full Image"
 msgstr "画像全体"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:731
+#: core/libs/properties/itempropertiescolorstab.cpp:712
 #, fuzzy, kde-format
 msgctxt "@label: color properties"
 msgid "Image Region"
 msgstr "画像のピクセル寸法 (画素数) を表示"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:82
+#: core/libs/properties/itempropertiesmetadatatab.cpp:77
 #, kde-format
 msgid "EXIF"
 msgstr "Exif"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:87
+#: core/libs/properties/itempropertiesmetadatatab.cpp:82
 #, kde-format
 msgid "Makernote"
 msgstr "メーカーノート"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:92
+#: core/libs/properties/itempropertiesmetadatatab.cpp:87
 #, kde-format
 msgid "IPTC"
 msgstr "IPTC"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:100
+#: core/libs/properties/itempropertiesmetadatatab.cpp:95
 #: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "XMP"
@@ -38608,8 +38608,8 @@ msgstr "キャリブレーションなし"
 
 #: core/libs/properties/itempropertiessidebar.cpp:261
 #: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebardb.cpp:675
-#: core/libs/properties/itempropertiessidebardb.cpp:688
+#: core/libs/properties/itempropertiessidebardb.cpp:667
+#: core/libs/properties/itempropertiessidebardb.cpp:680
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -38624,7 +38624,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebardb.cpp:697
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -38632,7 +38632,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:313
-#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:723
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -38640,28 +38640,28 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:318
-#: core/libs/properties/itempropertiessidebardb.cpp:736
+#: core/libs/properties/itempropertiessidebardb.cpp:728
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:87
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "キャプション"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:88
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "バージョン"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:680
+#: core/libs/properties/itempropertiessidebardb.cpp:672
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
@@ -38854,28 +38854,28 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:76
+#: core/libs/properties/itemselectionpropertiestab.cpp:70
 #, kde-format
 msgid "Count: "
 msgstr "カウント値: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:77
+#: core/libs/properties/itemselectionpropertiestab.cpp:71
 #, kde-format
 msgid "Size: "
 msgstr "サイズ: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:78
+#: core/libs/properties/itemselectionpropertiestab.cpp:72
 #, fuzzy, kde-format
 #| msgid "Count: "
 msgid "Total Count: "
 msgstr "カウント値: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:79
+#: core/libs/properties/itemselectionpropertiestab.cpp:73
 #, fuzzy, kde-format
 msgid "Total Size: "
 msgstr "%1 (%2)"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:104
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Selection Properties"
@@ -52502,7 +52502,7 @@ msgid "Show a list of all available options"
 msgstr "利用可能なオプションの一覧を表示"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:110
 #, fuzzy, kde-format
 msgid "Modifiers"
 msgstr "モダン"
@@ -52556,7 +52556,7 @@ msgid ""
 "(album UI only)."
 msgstr ""
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:50
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title:window"
@@ -57771,7 +57771,7 @@ msgstr "ニュージーランド"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:259
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
@@ -59332,14 +59332,14 @@ msgstr "自動"
 msgid "Maximum Tile Level"
 msgstr "マトリックスのサイズ:"
 
-#: core/utilities/imageeditor/core/undoaction.cpp:147
+#: core/utilities/imageeditor/core/undoaction.cpp:145
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: menu entry to undo unknown previous action"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/utilities/imageeditor/core/undocache.cpp:132
+#: core/utilities/imageeditor/core/undocache.cpp:131
 #, kde-format
 msgid ""
 "The free disk space in the path \"%1\" for the undo cache file is less than "
@@ -62225,27 +62225,27 @@ msgstr "テクスチャと画像を統合するために使用する浮き彫り
 msgid "Drag and drop an image here"
 msgstr "ここに画像をドラッグ＆ドロップ"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:257
 #, kde-format
 msgid "Show on left panel"
 msgstr "左パネルに表示"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:258
 #, kde-format
 msgid "Show on right panel"
 msgstr "右パネルに表示"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:260
 #, kde-format
 msgid "Remove item"
 msgstr "アイテムを取り除く"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:261
 #, kde-format
 msgid "Clear all"
 msgstr "すべてクリア"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:464
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "ここに画像をドラッグ＆ドロップ"
@@ -66006,7 +66006,7 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr "以下のパスにコレクションを追加できませんでした:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
-#: core/utilities/setup/collections/setupcollectionview.cpp:1488
+#: core/utilities/setup/collections/setupcollectionview.cpp:1493
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
@@ -66048,19 +66048,19 @@ msgid ""
 msgstr "コレクション “%1” をコレクションのリストから削除しますか？"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1702
+#: core/utilities/setup/collections/setupcollectionview.cpp:1707
 #, kde-format
 msgid "Local Collections"
 msgstr "ローカルコレクション"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1703
+#: core/utilities/setup/collections/setupcollectionview.cpp:1708
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "リムーバブルメディアのコレクション"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1704
+#: core/utilities/setup/collections/setupcollectionview.cpp:1709
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "ネットワーク共有のコレクション"
@@ -66123,52 +66123,52 @@ msgctxt "#title: collection status"
 msgid "Status"
 msgstr "状態"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1536
+#: core/utilities/setup/collections/setupcollectionview.cpp:1541
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "パス ‘%1’ を含むコレクションを以前に追加しています。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1571
+#: core/utilities/setup/collections/setupcollectionview.cpp:1576
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "コレクション追加の問題"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1581
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "コレクション更新の問題"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1593
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "コレクションを追加"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1597
+#: core/utilities/setup/collections/setupcollectionview.cpp:1602
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "コレクションを更新"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1605
+#: core/utilities/setup/collections/setupcollectionview.cpp:1610
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "この名前で新しいコレクションを作成します:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1609
+#: core/utilities/setup/collections/setupcollectionview.cpp:1614
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr "この名前でコレクションを更新します:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1692
+#: core/utilities/setup/collections/setupcollectionview.cpp:1697
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "カテゴリを選択"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1696
+#: core/utilities/setup/collections/setupcollectionview.cpp:1701
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "このカテゴリをコレクションに使用します:"

@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-03 01:42+0000\n"
+"POT-Creation-Date: 2024-03-04 01:34+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -9461,7 +9461,7 @@ msgid "Unsharp Mask"
 msgstr "Ublaži masku"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:284
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:100
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:145
 #, kde-format
 msgid "Refocus"
@@ -18221,41 +18221,41 @@ msgstr "Ne mogu otvoriti: %1"
 msgid "Could not save image to file '%1'"
 msgstr "Neuspjelo snimanje oznaka na dokumentu."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:104
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:96
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:108
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
 msgctxt "@info"
 msgid "Create directories"
 msgstr "Zanemari grupiranje"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:112
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:129
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:121
 #, fuzzy, kde-format
 #| msgid "Loading themes..."
 msgctxt "@info"
 msgid "Copying theme"
 msgstr "Učitavanje tema..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:136
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not copy theme"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:153
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -18263,14 +18263,14 @@ msgctxt "@info"
 msgid "Generate images and XML files"
 msgstr "Kada rotirate datoteku"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:166
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:158
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "Server baze podataka nije moguće pokrenuti."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:290
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:282
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -18278,7 +18278,7 @@ msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "Kada rotirate datoteku"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:317
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -18286,21 +18286,21 @@ msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "Kada rotirate datoteku"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:342
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:334
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:378
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:371
 #, fuzzy, kde-format
 #| msgid "Error loading GPX file"
 #| msgid_plural "Error loading GPX files"
@@ -18308,66 +18308,66 @@ msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "Greška prilikom učitanja GPX dokumenta"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:387
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:380
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:414
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
 #, fuzzy, kde-format
 #| msgid "Downloaded: "
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "Preuzeto: "
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:431
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "Nije moguće otvoriti privremenu datoteku u mapi \"%1\":%2 (%3)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:446
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Prethodno"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "Sljedeće"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Albumi"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "%1<nl/>(Original slike)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, fuzzy, kde-format
 #| msgctxt "camera make"
 #| msgid "Make:"
@@ -18375,118 +18375,118 @@ msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Napravite:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Model"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, fuzzy, kde-format
 #| msgid "Image orientation"
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Orijentacija slike"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, fuzzy, kde-format
 #| msgid "Image Region"
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Oblast Slike"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, fuzzy, kde-format
 #| msgid "Image Region"
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Oblast Slike"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, fuzzy, kde-format
 #| msgid "Image Region"
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Oblast Slike"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, fuzzy, kde-format
 #| msgid "Date & Time"
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Datum i vrijeme"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "Položaj:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Vrijeme eksponiranja"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "Broj:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, fuzzy, kde-format
 #| msgid "Exposure mode"
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Način ekspozicije"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, fuzzy, kde-format
 #| msgid "Imported ratings"
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "Ubačene ocjene"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Blenda: "
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, fuzzy, kde-format
 #| msgid "Focal length"
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Žižna daljina"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, fuzzy, kde-format
 #| msgid "Altitude"
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "Nadmorska visina"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, fuzzy, kde-format
 #| msgid "Latitude"
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "Geografska širina"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, fuzzy, kde-format
 #| msgid "Longitude"
 msgctxt "@info: xslt param"
@@ -22510,7 +22510,7 @@ msgstr "Pregled"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:155
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -34522,114 +34522,114 @@ msgstr "(djelomično pronađeno)"
 msgid "(exact match found)"
 msgstr "(tačno pronađeno)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:115
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:110
 #, fuzzy, kde-format
 #| msgid "Lens Auto-Correction Tool"
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Alat Auto-korekcije Objektiva"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
 #, fuzzy, kde-format
 #| msgid "Camera: %1-%2"
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Kamera: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:417
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
 #, fuzzy, kde-format
 #| msgid "Lens: %1"
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Leće: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:419
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:414
 #, fuzzy, kde-format
 #| msgid "Subject Distance: %1"
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Rastojanje Predmeta: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:421
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
 #, fuzzy, kde-format
 #| msgid "Aperture: %1"
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Blenda: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, fuzzy, kde-format
 #| msgid "Focal Length: %1"
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Dužina fokusa: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:420
 #, fuzzy, kde-format
 #| msgid "Crop Factor: %1"
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Faktor iskruživanja:%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:427
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:430
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:433
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:436
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
 #, fuzzy, kde-format
 #| msgid "enabled"
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "omogućeno"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:427
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
 #, fuzzy, kde-format
 #| msgid "CCA Correction: %1"
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "CCA Korekcija: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:434
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:437
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:426
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:429
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:432
 #, fuzzy, kde-format
 #| msgid "disabled"
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "onemogućeno"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:430
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
 #, fuzzy, kde-format
 #| msgid "VIG Correction: %1"
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "VIG Korekcija: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:433
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
 #, fuzzy, kde-format
 #| msgid "DST Correction: %1"
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "DST Korekcija: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:436
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
 #, fuzzy, kde-format
 #| msgid "GEO Correction: %1"
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
 msgstr "GEO Korekcija: %1"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:69
 #, kde-format
 msgid "Lens Corrections to Apply:"
 msgstr "Primjeniti korekcije objektiva:"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:76
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:70
 #, kde-format
 msgid "Chromatic Aberration"
 msgstr "Kromatsko Odstupanje:"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:77
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:71
 #, kde-format
 msgid ""
 "Chromatic aberration is easily recognized as color fringes towards the image "
@@ -34639,12 +34639,12 @@ msgstr ""
 "uglovima slike. Uzrokovano je različitim fokusima objektiva za različite "
 "boje."
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:80
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:74
 #, kde-format
 msgid "Vignetting"
 msgstr "Vinjetiranje"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:81
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
 #, kde-format
 msgid ""
 "Vignetting refers to an image darkening, mostly in the corners. Optical and "
@@ -34655,12 +34655,12 @@ msgstr ""
 "neutralno vinjetiranje može biti otkazano ovom opcijom, s obzirom da "
 "mehaničko vinjetiranje neće biti sačuvano."
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:84
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:78
 #, kde-format
 msgid "Distortion"
 msgstr "Distorzija:"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:79
 #, kde-format
 msgid ""
 "Distortion refers to an image deformation, which is most pronounced towards "
@@ -34671,12 +34671,12 @@ msgstr ""
 "uglovima. Ova Seidel odstupanja su poznata kao \"jastučići za čiode\" i "
 "iskrivljenja bureta."
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:88
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:82
 #, kde-format
 msgid "Geometry"
 msgstr "Geometrija"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:89
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:83
 #, kde-format
 msgid ""
 "Four geometries are handled here: Rectilinear (99 percent of all lenses), "
@@ -34685,7 +34685,7 @@ msgstr ""
 "Rukovanje sa četiri geometrije: pravolinijska (99 posto svih objektiva), "
 "riblje oko, cilindrična, ekvipravougaona."
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:91
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
 #, kde-format
 msgid ""
 "<b>Note: lens correction options depend of filters available in LensFun "
@@ -34696,12 +34696,12 @@ msgstr ""
 "LensFun biblioteci. Pogledajte <a href='http://lensfun.sourceforge.net'>web "
 "stranicu LensFun pojekta</a> za više informacija.</b>"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:77
+#: core/libs/dimg/filters/levels/histogrambox.cpp:68
 #, kde-format
 msgid "Channel:"
 msgstr "Kanal:"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:83
+#: core/libs/dimg/filters/levels/histogrambox.cpp:74
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the image's maximal counts are "
@@ -34714,19 +34714,19 @@ msgstr ""
 "biti korištena kad su maksimalne brojke velike;ako je ona korištena,sve "
 "vrijednosti (male i velike) će biti vidljive na grafu.</p>"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:89
+#: core/libs/dimg/filters/levels/histogrambox.cpp:80
 #, kde-format
 msgctxt "linear histogram scaling mode"
 msgid "Linear"
 msgstr "Linearno"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:95
+#: core/libs/dimg/filters/levels/histogrambox.cpp:86
 #, kde-format
 msgctxt "logarithmic histogram scaling mode"
 msgid "Logarithmic"
 msgstr "Logaritamska"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:112
+#: core/libs/dimg/filters/levels/histogrambox.cpp:103
 #, kde-format
 msgid ""
 "Here you can see the target preview image histogram drawing of the selected "
@@ -34735,73 +34735,73 @@ msgstr ""
 "Ovdje možete pogledati crtež histograma željene slike za odabrani kanal "
 "slike. Nakon bilo koje promjene postavki, dolazi do ponovnog proračuna."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:269
+#: core/libs/dimg/filters/levels/histogrambox.cpp:272
 #, kde-format
 msgid "<p>Select the histogram channel to display:</p>"
 msgstr "<p>Odaberite histogram kanal za prikaz:</p>"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:275
+#: core/libs/dimg/filters/levels/histogrambox.cpp:278
 #, kde-format
 msgctxt "The luminosity channel"
 msgid "Luminosity"
 msgstr "Osvjetljenje"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:276
+#: core/libs/dimg/filters/levels/histogrambox.cpp:279
 #, kde-format
 msgid "<b>Luminosity</b>: display the image's luminosity values."
 msgstr "<b>Osvjetljenje</b>: prikazati vrijednosti osvjetljenja slike."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:278
+#: core/libs/dimg/filters/levels/histogrambox.cpp:281
 #, kde-format
 msgctxt "The red channel"
 msgid "Red"
 msgstr "Crveno"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:279
+#: core/libs/dimg/filters/levels/histogrambox.cpp:282
 #, kde-format
 msgid "<b>Red</b>: display the red image-channel values."
 msgstr "<b>Crvena</b> prikazati vrijednosti kanala crvene slike."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:281
+#: core/libs/dimg/filters/levels/histogrambox.cpp:284
 #, kde-format
 msgctxt "The green channel"
 msgid "Green"
 msgstr "Zelena"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:282
+#: core/libs/dimg/filters/levels/histogrambox.cpp:285
 #, kde-format
 msgid "<b>Green</b>: display the green image-channel values."
 msgstr "<b>Zelena</b>: prikazati zelenu vrijednost kanala slike."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:284
+#: core/libs/dimg/filters/levels/histogrambox.cpp:287
 #, kde-format
 msgctxt "The blue channel"
 msgid "Blue"
 msgstr "Plava"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:285
+#: core/libs/dimg/filters/levels/histogrambox.cpp:288
 #, kde-format
 msgid "<b>Blue</b>: display the blue image-channel values."
 msgstr "<b>Plava</b>: prikazati plavu vrijednost kanala slike."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:287
+#: core/libs/dimg/filters/levels/histogrambox.cpp:290
 #, kde-format
 msgctxt "The colors channel"
 msgid "Colors"
 msgstr "Boje"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:288
+#: core/libs/dimg/filters/levels/histogrambox.cpp:291
 #, kde-format
 msgid "<b>Colors</b>: Display all color channel values at the same time."
 msgstr "<b>Boje</b>: Prikazati sve vrijednosti kanala boja u isto vrijeme."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:290
+#: core/libs/dimg/filters/levels/histogrambox.cpp:293
 #, kde-format
 msgctxt "The alpha channel"
 msgid "Alpha"
 msgstr "Alfa"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:291
+#: core/libs/dimg/filters/levels/histogrambox.cpp:294
 #, kde-format
 msgid ""
 "<b>Alpha</b>: display the alpha image-channel values. This channel "
@@ -39936,7 +39936,7 @@ msgstr "<i>neizmenjen</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:641
+#: core/libs/properties/itempropertiessidebardb.cpp:633
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -39948,10 +39948,10 @@ msgstr "nedostupno"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:279
 #: core/libs/properties/itempropertiessidebar.cpp:282
-#: core/libs/properties/itempropertiessidebardb.cpp:699
-#: core/libs/properties/itempropertiessidebardb.cpp:701
-#: core/libs/properties/itempropertiessidebardb.cpp:804
-#: core/libs/properties/itempropertiessidebardb.cpp:806
+#: core/libs/properties/itempropertiessidebardb.cpp:691
+#: core/libs/properties/itempropertiessidebardb.cpp:693
+#: core/libs/properties/itempropertiessidebardb.cpp:796
+#: core/libs/properties/itempropertiessidebardb.cpp:798
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, fuzzy, kde-format
 #| msgid "No"
@@ -39964,10 +39964,10 @@ msgstr "Ne"
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:698
-#: core/libs/properties/itempropertiessidebardb.cpp:700
-#: core/libs/properties/itempropertiessidebardb.cpp:803
-#: core/libs/properties/itempropertiessidebardb.cpp:805
+#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:692
+#: core/libs/properties/itempropertiessidebardb.cpp:795
+#: core/libs/properties/itempropertiessidebardb.cpp:797
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -40009,35 +40009,35 @@ msgctxt "@label"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:151
+#: core/libs/properties/itempropertiescolorstab.cpp:132
 #, fuzzy, kde-format
 #| msgid "Range:"
 msgctxt "@label: color properties"
 msgid "Range:"
 msgstr "Opseg:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:158
+#: core/libs/properties/itempropertiescolorstab.cpp:139
 #, fuzzy, kde-format
 #| msgid "Select the minimal intensity value of the histogram selection here."
 msgctxt "@info: color properties"
 msgid "Select the minimal intensity value of the histogram selection here."
 msgstr "Odaberite minimalnu vrijednost intenziteta selekcije histograma."
 
-#: core/libs/properties/itempropertiescolorstab.cpp:164
+#: core/libs/properties/itempropertiescolorstab.cpp:145
 #, fuzzy, kde-format
 #| msgid "Select the maximal intensity value of the histogram selection here."
 msgctxt "@info: color properties"
 msgid "Select the maximal intensity value of the histogram selection here."
 msgstr "Odaberite maksimalnu vrijednost intenziteta selekcije histograma."
 
-#: core/libs/properties/itempropertiescolorstab.cpp:172
+#: core/libs/properties/itempropertiescolorstab.cpp:153
 #, fuzzy, kde-format
 #| msgid "Statistics"
 msgctxt "@title: color properties"
 msgid "Statistics"
 msgstr "Statistika"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:173
+#: core/libs/properties/itempropertiescolorstab.cpp:154
 #, fuzzy, kde-format
 #| msgid ""
 #| "Here you can see the statistical results calculated from the selected "
@@ -40050,141 +40050,141 @@ msgstr ""
 "Ovdje vidite statističke rezultate izračunate iz selekcije histograma. Ove "
 "vrijednosti su dostupne za sve kanale."
 
-#: core/libs/properties/itempropertiescolorstab.cpp:178
+#: core/libs/properties/itempropertiescolorstab.cpp:159
 #, fuzzy, kde-format
 #| msgid "Pixels: "
 msgctxt "@label: color properties"
 msgid "Pixels: "
 msgstr "Piksela: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:181
+#: core/libs/properties/itempropertiescolorstab.cpp:162
 #, fuzzy, kde-format
 #| msgid "Count: "
 msgctxt "@label: color properties"
 msgid "Count: "
 msgstr "Broj: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:184
+#: core/libs/properties/itempropertiescolorstab.cpp:165
 #, fuzzy, kde-format
 #| msgid "Mean: "
 msgctxt "@label: color properties"
 msgid "Mean: "
 msgstr "Srednje: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:187
+#: core/libs/properties/itempropertiescolorstab.cpp:168
 #, fuzzy, kde-format
 #| msgid "Std. deviation: "
 msgctxt "@label: color properties"
 msgid "Std. deviation: "
 msgstr "Std. devijacija: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:190
+#: core/libs/properties/itempropertiescolorstab.cpp:171
 #, fuzzy, kde-format
 #| msgid "Median: "
 msgctxt "@label: color properties"
 msgid "Median: "
 msgstr "Median: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:193
+#: core/libs/properties/itempropertiescolorstab.cpp:174
 #, fuzzy, kde-format
 #| msgid "Percentile: "
 msgctxt "@label: color properties"
 msgid "Percentile: "
 msgstr "Percentil: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:196
+#: core/libs/properties/itempropertiescolorstab.cpp:177
 #, fuzzy, kde-format
 #| msgid "Color depth: "
 msgctxt "@label: color properties"
 msgid "Color depth: "
 msgstr "Dubina boje: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:199
+#: core/libs/properties/itempropertiescolorstab.cpp:180
 #, fuzzy, kde-format
 #| msgid "Alpha Channel: "
 msgctxt "@label: color properties"
 msgid "Alpha Channel: "
 msgstr "Alfa Kanal: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:202
+#: core/libs/properties/itempropertiescolorstab.cpp:183
 #, fuzzy, kde-format
 #| msgid "Source: "
 msgctxt "@label: color properties"
 msgid "Source: "
 msgstr "Izvor: "
 
-#: core/libs/properties/itempropertiescolorstab.cpp:257
+#: core/libs/properties/itempropertiescolorstab.cpp:238
 #, fuzzy, kde-format
 #| msgid "Histogram"
 msgctxt "@title: color properties"
 msgid "Histogram"
 msgstr "Histogram"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:267
+#: core/libs/properties/itempropertiescolorstab.cpp:248
 #, fuzzy, kde-format
 #| msgid "ICC profile"
 msgctxt "@title: color properties"
 msgid "ICC profile"
 msgstr "ICC profil"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:686
+#: core/libs/properties/itempropertiescolorstab.cpp:667
 #, fuzzy, kde-format
 #| msgid "16 bits"
 msgctxt "@label: color properties"
 msgid "16 bits"
 msgstr "16 bita"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:687
+#: core/libs/properties/itempropertiescolorstab.cpp:668
 #, fuzzy, kde-format
 #| msgid "8 bits"
 msgctxt "@label: color properties"
 msgid "8 bits"
 msgstr "8 bita"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:688
+#: core/libs/properties/itempropertiescolorstab.cpp:669
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@label: color properties"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:689
+#: core/libs/properties/itempropertiescolorstab.cpp:670
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@label: color properties"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:730
+#: core/libs/properties/itempropertiescolorstab.cpp:711
 #, fuzzy, kde-format
 #| msgid "Full Image"
 msgctxt "@label: color properties"
 msgid "Full Image"
 msgstr "Puna slika"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:731
+#: core/libs/properties/itempropertiescolorstab.cpp:712
 #, fuzzy, kde-format
 #| msgid "Image Region"
 msgctxt "@label: color properties"
 msgid "Image Region"
 msgstr "Oblast Slike"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:82
+#: core/libs/properties/itempropertiesmetadatatab.cpp:77
 #, kde-format
 msgid "EXIF"
 msgstr "EXIF"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:87
+#: core/libs/properties/itempropertiesmetadatatab.cpp:82
 #, kde-format
 msgid "Makernote"
 msgstr "Napomena"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:92
+#: core/libs/properties/itempropertiesmetadatatab.cpp:87
 #, kde-format
 msgid "IPTC"
 msgstr "IPTC"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:100
+#: core/libs/properties/itempropertiesmetadatatab.cpp:95
 #: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "XMP"
@@ -40237,8 +40237,8 @@ msgstr "Nekalibriran"
 
 #: core/libs/properties/itempropertiessidebar.cpp:261
 #: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebardb.cpp:675
-#: core/libs/properties/itempropertiessidebardb.cpp:688
+#: core/libs/properties/itempropertiessidebardb.cpp:667
+#: core/libs/properties/itempropertiessidebardb.cpp:680
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -40253,7 +40253,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebardb.cpp:697
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -40261,7 +40261,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:313
-#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:723
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -40269,28 +40269,28 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:318
-#: core/libs/properties/itempropertiessidebardb.cpp:736
+#: core/libs/properties/itempropertiessidebardb.cpp:728
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:87
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Naslov"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:88
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Verzije"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:680
+#: core/libs/properties/itempropertiessidebardb.cpp:672
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
@@ -40483,28 +40483,28 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:76
+#: core/libs/properties/itemselectionpropertiestab.cpp:70
 #, kde-format
 msgid "Count: "
 msgstr "Broj: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:77
+#: core/libs/properties/itemselectionpropertiestab.cpp:71
 #, kde-format
 msgid "Size: "
 msgstr "Veličina: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:78
+#: core/libs/properties/itemselectionpropertiestab.cpp:72
 #, fuzzy, kde-format
 #| msgid "Count: "
 msgid "Total Count: "
 msgstr "Broj: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:79
+#: core/libs/properties/itemselectionpropertiestab.cpp:73
 #, fuzzy, kde-format
 msgid "Total Size: "
 msgstr "Totalno: %1 (%)"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:104
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Selection Properties"
@@ -54474,7 +54474,7 @@ msgid "Show a list of all available options"
 msgstr "Prikažite listu svih dostupnih opcija"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:110
 #, kde-format
 msgid "Modifiers"
 msgstr "Modifikatori"
@@ -54537,7 +54537,7 @@ msgstr ""
 "Lista datoteka može biti sortirana, samo kliknite desnim klikom na njega da "
 "biste vidjeli kriterij sortiranja (samo UI album)."
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:50
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title:window"
@@ -60003,7 +60003,7 @@ msgstr "Novi Zeland"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:259
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
@@ -61621,14 +61621,14 @@ msgstr "Automatski"
 msgid "Maximum Tile Level"
 msgstr "Veličina matrice:"
 
-#: core/utilities/imageeditor/core/undoaction.cpp:147
+#: core/utilities/imageeditor/core/undoaction.cpp:145
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: menu entry to undo unknown previous action"
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: core/utilities/imageeditor/core/undocache.cpp:132
+#: core/utilities/imageeditor/core/undocache.cpp:131
 #, kde-format
 msgid ""
 "The free disk space in the path \"%1\" for the undo cache file is less than "
@@ -64673,27 +64673,27 @@ msgstr "Postavite ovdje skriptu koja se provodi za sve dolazne slike."
 msgid "Drag and drop an image here"
 msgstr "Ovdje privuci i pusti sliku"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:257
 #, kde-format
 msgid "Show on left panel"
 msgstr "Prikaži u lijevom panelu"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:258
 #, kde-format
 msgid "Show on right panel"
 msgstr "Prikaži u desnom panelu"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:260
 #, kde-format
 msgid "Remove item"
 msgstr "Ukloni stavku"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:261
 #, kde-format
 msgid "Clear all"
 msgstr "Očisti sve"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:464
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Ovdje privuci i pusti slike"
@@ -68591,7 +68591,7 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr "Nije moguće dodati kolekciju za sljedeće staze:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
-#: core/utilities/setup/collections/setupcollectionview.cpp:1488
+#: core/utilities/setup/collections/setupcollectionview.cpp:1493
 #, fuzzy, kde-format
 #| msgid "Choose the folder containing your collection"
 msgctxt "@title:window"
@@ -68641,19 +68641,19 @@ msgid ""
 msgstr "Želite li ukloniti kolekciju \"%1\" sa vašeg popisa kolekcija?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1702
+#: core/utilities/setup/collections/setupcollectionview.cpp:1707
 #, kde-format
 msgid "Local Collections"
 msgstr "Lokalna kolekcija"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1703
+#: core/utilities/setup/collections/setupcollectionview.cpp:1708
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Kolekcije na prijenosnim medijima"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1704
+#: core/utilities/setup/collections/setupcollectionview.cpp:1709
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Kolekcije na dijeljenjima u mreži"
@@ -68720,57 +68720,57 @@ msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Status"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1536
+#: core/utilities/setup/collections/setupcollectionview.cpp:1541
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Prethodno ste dodali kolekciju koja sadrži put \"%1\"."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1571
+#: core/utilities/setup/collections/setupcollectionview.cpp:1576
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Problem dodavanja kolekcije"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1581
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "Problem dodavanja kolekcije"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1593
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
 #, fuzzy, kde-format
 #| msgid "Adding Collection"
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Dodavanje kolekcije"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1597
+#: core/utilities/setup/collections/setupcollectionview.cpp:1602
 #, fuzzy, kde-format
 #| msgid "Add Collection"
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Dodajte kolekciju"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1605
+#: core/utilities/setup/collections/setupcollectionview.cpp:1610
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Vaša nova kolekcija biti će kreirana sa ovim imenom:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1609
+#: core/utilities/setup/collections/setupcollectionview.cpp:1614
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will be updated to this name:"
 msgstr "Vaša nova kolekcija biti će kreirana sa ovim imenom:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1692
+#: core/utilities/setup/collections/setupcollectionview.cpp:1697
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Odaberi stavku"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1696
+#: core/utilities/setup/collections/setupcollectionview.cpp:1701
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will use this category:"
