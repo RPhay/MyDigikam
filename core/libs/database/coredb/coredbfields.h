@@ -534,37 +534,37 @@ public:
 
     static inline unsigned int uniqueKey(ItemInformation f)
     {
-        return (unsigned int)f | (1 << 26);
+        return (unsigned int)f | (unsigned int)(1 << 26);
     }
 
     static inline unsigned int uniqueKey(ImageMetadata f)
     {
-        return (unsigned int)f | (2 << 26);
+        return (unsigned int)f | (unsigned int)(2 << 26);
     }
 
     static inline unsigned int uniqueKey(ItemComments f)
     {
-        return (unsigned int)f | (3 << 26);
+        return (unsigned int)f | (unsigned int)(3 << 26);
     }
 
     static inline unsigned int uniqueKey(ItemPositions f)
     {
-        return (unsigned int)f | (4 << 26);
+        return (unsigned int)f | (unsigned int)(4 << 26);
     }
 
     static inline unsigned int uniqueKey(ImageHistoryInfo f)
     {
-        return (unsigned int)f | (5 << 26);
+        return (unsigned int)f | (unsigned int)(5 << 26);
     }
 
     static inline unsigned int uniqueKey(VideoMetadata f)
     {
-        return (unsigned int)f | (6 << 26);
+        return (unsigned int)f | (unsigned int)(6 << 26);
     }
 
     static inline unsigned int uniqueKey(CustomEnum f)
     {
-        return (unsigned int)f | (63 << 26);
+        return (unsigned int)f | (unsigned int)(63 << 26);
     }
 
     // override relevant methods from QHash
