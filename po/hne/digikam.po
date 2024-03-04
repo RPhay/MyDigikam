@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-03 01:42+0000\n"
+"POT-Creation-Date: 2024-03-04 01:34+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -8663,7 +8663,7 @@ msgid "Unsharp Mask"
 msgstr "अनसार्प मास्क"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:284
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:100
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:145
 #, kde-format
 msgid "Refocus"
@@ -16617,248 +16617,248 @@ msgstr "फाइल ल लिखे बर खोले मं फेल"
 msgid "Could not save image to file '%1'"
 msgstr "%1 मं फाइल सूची बनाना फेल"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:104
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:96
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
 msgstr "'%1' नइ बना सकिस"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:108
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Create directories"
 msgstr "ये टैग आबंटित करव"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:112
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr "फोटू '%1' ल '%2' मं सहेज नइ सकिस"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:129
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:121
 #, fuzzy, kde-format
 #| msgid "Loading themes"
 msgctxt "@info"
 msgid "Copying theme"
 msgstr "प्रसंग लोड करत हे"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:136
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not copy theme"
 msgstr "'%1' नइ बना सकिस"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:153
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:145
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
 msgstr "एक्जइफ रोटेटिंग फाइल %1..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:166
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:158
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "औसत के गनना नइ कर सकिस."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:290
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:282
 #, fuzzy, kde-format
 #| msgid "Deleting file %1..."
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "फाइल %1 मिटात हे..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:317
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "एक्जइफ रोटेटिंग फाइल %1..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "'%1' नइ बना सकिस"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:342
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:334
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "'%1' नइ बना सकिस"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:378
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:371
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "फोटू '%1' ल लोड करे मं गलती होइस"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:387
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:380
 #, fuzzy, kde-format
 #| msgid "Failed to open file for writing"
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "फाइल ल लिखे बर खोले मं फेल"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:414
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "फाइल %1 डाउनलोड करत हे..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:431
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
 #, fuzzy, kde-format
 #| msgid "Failed to delete file \"%1\"."
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "फाइल \"%1\" मेटाय मं फेल."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:446
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "'%1' नइ बना सकिस"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "पिछला"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "अगला"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "एल्बम"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "असली फोटू:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "मेक:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "माडल"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "फोटू सीर्सक"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "फोटू आयाम देखाव"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "फोटू आयाम देखाव"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "फोटू आयाम देखाव"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, fuzzy, kde-format
 #| msgid "Date & Time"
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "तारीक अउ समय"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "इरोजन:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "एक्सपोजर समय"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "संख्या:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "एक्सपोजर समय"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, fuzzy, kde-format
 #| msgid "Imported ratings"
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "दरजा आयातित"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "एपर्चरः"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "फोकल लंबाई:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "<b>ऊँचाई</b>:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, fuzzy, kde-format
 #| msgid "Latitude"
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "अच्छांस"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, fuzzy, kde-format
 #| msgid "Longitude"
 msgctxt "@info: xslt param"
@@ -20545,7 +20545,7 @@ msgstr "प्रिव्यू"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:155
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, fuzzy, kde-format
@@ -31422,114 +31422,114 @@ msgstr ""
 msgid "(exact match found)"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:115
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:110
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "लेंस अपने-अपन-सुधार"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "कैमरा \"%1\""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:417
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "लेंस:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:419
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:414
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "विसय दूरीः"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:421
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "एपर्चरः"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "फोकल लंबाई:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:420
 #, fuzzy, kde-format
 #| msgid "Contrast:"
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "कंट्रास्टः"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:427
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:430
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:433
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:436
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "संगमरमर"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:427
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "रंग संसोधन"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:434
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:437
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:426
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:429
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:432
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "संगमरमर"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:430
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "रंग संसोधन"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:433
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "लेंस सुधार..."
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:436
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
 msgstr "रंग संसोधन"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:69
 #, fuzzy, kde-format
 msgid "Lens Corrections to Apply:"
 msgstr "लेंस सुधार..."
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:76
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:70
 #, kde-format
 msgid "Chromatic Aberration"
 msgstr "क्रोमेटिक एबेरेसन"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:77
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:71
 #, kde-format
 msgid ""
 "Chromatic aberration is easily recognized as color fringes towards the image "
 "corners. CA is due to a varying lens focus for different colors."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:80
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:74
 #, kde-format
 msgid "Vignetting"
 msgstr "विगनेटिंग"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:81
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
 #, kde-format
 msgid ""
 "Vignetting refers to an image darkening, mostly in the corners. Optical and "
@@ -31537,12 +31537,12 @@ msgid ""
 "vignetting will not be cured."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:84
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:78
 #, kde-format
 msgid "Distortion"
 msgstr "डिस्टार्सन"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:79
 #, kde-format
 msgid ""
 "Distortion refers to an image deformation, which is most pronounced towards "
@@ -31550,19 +31550,19 @@ msgid ""
 "distortions."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:88
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:82
 #, kde-format
 msgid "Geometry"
 msgstr "ज्यामिति"
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:89
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:83
 #, kde-format
 msgid ""
 "Four geometries are handled here: Rectilinear (99 percent of all lenses), "
 "Fisheye, Cylindrical, Equirectangular."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:91
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
 #, kde-format
 msgid ""
 "<b>Note: lens correction options depend of filters available in LensFun "
@@ -31570,12 +31570,12 @@ msgid ""
 "site</a> for more information.</b>"
 msgstr ""
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:77
+#: core/libs/dimg/filters/levels/histogrambox.cpp:68
 #, kde-format
 msgid "Channel:"
 msgstr "चैनल:"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:83
+#: core/libs/dimg/filters/levels/histogrambox.cpp:74
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the image's maximal counts are "
@@ -31584,92 +31584,92 @@ msgid ""
 "(small and large) will be visible on the graph.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:89
+#: core/libs/dimg/filters/levels/histogrambox.cpp:80
 #, kde-format
 msgctxt "linear histogram scaling mode"
 msgid "Linear"
 msgstr "लीनियर"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:95
+#: core/libs/dimg/filters/levels/histogrambox.cpp:86
 #, kde-format
 msgctxt "logarithmic histogram scaling mode"
 msgid "Logarithmic"
 msgstr "लागरिदमिक"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:112
+#: core/libs/dimg/filters/levels/histogrambox.cpp:103
 #, kde-format
 msgid ""
 "Here you can see the target preview image histogram drawing of the selected "
 "image channel. This one is re-computed at any settings changes."
 msgstr ""
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:269
+#: core/libs/dimg/filters/levels/histogrambox.cpp:272
 #, kde-format
 msgid "<p>Select the histogram channel to display:</p>"
 msgstr "<p>देखाय बर हिस्टोग्राम चैनल चुनव:</p>"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:275
+#: core/libs/dimg/filters/levels/histogrambox.cpp:278
 #, kde-format
 msgctxt "The luminosity channel"
 msgid "Luminosity"
 msgstr "दीप्ति"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:276
+#: core/libs/dimg/filters/levels/histogrambox.cpp:279
 #, kde-format
 msgid "<b>Luminosity</b>: display the image's luminosity values."
 msgstr "<b>दीप्ति</b>: फोटू के दीप्ति मूल्य ल देखाव."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:278
+#: core/libs/dimg/filters/levels/histogrambox.cpp:281
 #, kde-format
 msgctxt "The red channel"
 msgid "Red"
 msgstr "लाल"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:279
+#: core/libs/dimg/filters/levels/histogrambox.cpp:282
 #, kde-format
 msgid "<b>Red</b>: display the red image-channel values."
 msgstr "<b>लाल</b>: लाल फोटू-चैनल मूल्य देखाव."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:281
+#: core/libs/dimg/filters/levels/histogrambox.cpp:284
 #, kde-format
 msgctxt "The green channel"
 msgid "Green"
 msgstr "हरियर"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:282
+#: core/libs/dimg/filters/levels/histogrambox.cpp:285
 #, kde-format
 msgid "<b>Green</b>: display the green image-channel values."
 msgstr "<b>हरियर</b>: हरियर फोटू-चैनल मूल्य देखाव."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:284
+#: core/libs/dimg/filters/levels/histogrambox.cpp:287
 #, kde-format
 msgctxt "The blue channel"
 msgid "Blue"
 msgstr "नीला"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:285
+#: core/libs/dimg/filters/levels/histogrambox.cpp:288
 #, kde-format
 msgid "<b>Blue</b>: display the blue image-channel values."
 msgstr "<b>नीला</b>: नीला फोटू-चैनल मूल्य देखाव."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:287
+#: core/libs/dimg/filters/levels/histogrambox.cpp:290
 #, kde-format
 msgctxt "The colors channel"
 msgid "Colors"
 msgstr "रंग"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:288
+#: core/libs/dimg/filters/levels/histogrambox.cpp:291
 #, kde-format
 msgid "<b>Colors</b>: Display all color channel values at the same time."
 msgstr "<b>रंग</b>: सब्बो रंग चैनल मूल्य ल एके समय मं देखाव."
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:290
+#: core/libs/dimg/filters/levels/histogrambox.cpp:293
 #, kde-format
 msgctxt "The alpha channel"
 msgid "Alpha"
 msgstr "अल्फा"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:291
+#: core/libs/dimg/filters/levels/histogrambox.cpp:294
 #, kde-format
 msgid ""
 "<b>Alpha</b>: display the alpha image-channel values. This channel "
@@ -36481,7 +36481,7 @@ msgstr "<i>बिन बदले</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:641
+#: core/libs/properties/itempropertiessidebardb.cpp:633
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -36493,10 +36493,10 @@ msgstr "नइ मिलत "
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:279
 #: core/libs/properties/itempropertiessidebar.cpp:282
-#: core/libs/properties/itempropertiessidebardb.cpp:699
-#: core/libs/properties/itempropertiessidebardb.cpp:701
-#: core/libs/properties/itempropertiessidebardb.cpp:804
-#: core/libs/properties/itempropertiessidebardb.cpp:806
+#: core/libs/properties/itempropertiessidebardb.cpp:691
+#: core/libs/properties/itempropertiessidebardb.cpp:693
+#: core/libs/properties/itempropertiessidebardb.cpp:796
+#: core/libs/properties/itempropertiessidebardb.cpp:798
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, fuzzy, kde-format
 #| msgid "No"
@@ -36509,10 +36509,10 @@ msgstr "नइ"
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:698
-#: core/libs/properties/itempropertiessidebardb.cpp:700
-#: core/libs/properties/itempropertiessidebardb.cpp:803
-#: core/libs/properties/itempropertiessidebardb.cpp:805
+#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:692
+#: core/libs/properties/itempropertiessidebardb.cpp:795
+#: core/libs/properties/itempropertiessidebardb.cpp:797
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -36554,35 +36554,35 @@ msgctxt "@label"
 msgid "%1 ISO"
 msgstr "%1 आईएसओ"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:151
+#: core/libs/properties/itempropertiescolorstab.cpp:132
 #, fuzzy, kde-format
 #| msgid "Range:"
 msgctxt "@label: color properties"
 msgid "Range:"
 msgstr "सीमा:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:158
+#: core/libs/properties/itempropertiescolorstab.cpp:139
 #, fuzzy, kde-format
 #| msgid "Select the minimal intensity value of the histogram selection here."
 msgctxt "@info: color properties"
 msgid "Select the minimal intensity value of the histogram selection here."
 msgstr "इहां हिस्टोग्राम चयन के सबसे कम तीव्रता चुनव"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:164
+#: core/libs/properties/itempropertiescolorstab.cpp:145
 #, fuzzy, kde-format
 #| msgid "Select the maximal intensity value of the histogram selection here."
 msgctxt "@info: color properties"
 msgid "Select the maximal intensity value of the histogram selection here."
 msgstr "इहां हिस्टोग्राम चयन के सबसे अधिक तीव्रता चुनव"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:172
+#: core/libs/properties/itempropertiescolorstab.cpp:153
 #, fuzzy, kde-format
 #| msgid "Statistics"
 msgctxt "@title: color properties"
 msgid "Statistics"
 msgstr "आंकड़ा"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:173
+#: core/libs/properties/itempropertiescolorstab.cpp:154
 #, kde-format
 msgctxt "@info: color properties"
 msgid ""
@@ -36590,139 +36590,139 @@ msgid ""
 "histogram part. These values are available for all channels."
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:178
+#: core/libs/properties/itempropertiescolorstab.cpp:159
 #, fuzzy, kde-format
 #| msgid "Pixels: "
 msgctxt "@label: color properties"
 msgid "Pixels: "
 msgstr "पिक्सेल्स:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:181
+#: core/libs/properties/itempropertiescolorstab.cpp:162
 #, fuzzy, kde-format
 #| msgid "Count: "
 msgctxt "@label: color properties"
 msgid "Count: "
 msgstr "गननाः"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:184
+#: core/libs/properties/itempropertiescolorstab.cpp:165
 #, fuzzy, kde-format
 #| msgid "Mean: "
 msgctxt "@label: color properties"
 msgid "Mean: "
 msgstr "मीन:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:187
+#: core/libs/properties/itempropertiescolorstab.cpp:168
 #, fuzzy, kde-format
 #| msgid "Std. deviation: "
 msgctxt "@label: color properties"
 msgid "Std. deviation: "
 msgstr "मानक विचलन:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:190
+#: core/libs/properties/itempropertiescolorstab.cpp:171
 #, fuzzy, kde-format
 #| msgid "Median: "
 msgctxt "@label: color properties"
 msgid "Median: "
 msgstr "मेडियन:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:193
+#: core/libs/properties/itempropertiescolorstab.cpp:174
 #, fuzzy, kde-format
 #| msgid "Percentile: "
 msgctxt "@label: color properties"
 msgid "Percentile: "
 msgstr "प्रतिसतता:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:196
+#: core/libs/properties/itempropertiescolorstab.cpp:177
 #, fuzzy, kde-format
 #| msgid "Color depth: "
 msgctxt "@label: color properties"
 msgid "Color depth: "
 msgstr "रंग गहराईः"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:199
+#: core/libs/properties/itempropertiescolorstab.cpp:180
 #, fuzzy, kde-format
 #| msgid "Alpha Channel: "
 msgctxt "@label: color properties"
 msgid "Alpha Channel: "
 msgstr "अल्फा चैनल:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:202
+#: core/libs/properties/itempropertiescolorstab.cpp:183
 #, fuzzy, kde-format
 msgctxt "@label: color properties"
 msgid "Source: "
 msgstr "स्रोत:"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:257
+#: core/libs/properties/itempropertiescolorstab.cpp:238
 #, fuzzy, kde-format
 #| msgid "Histogram"
 msgctxt "@title: color properties"
 msgid "Histogram"
 msgstr "हिस्टोग्राम"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:267
+#: core/libs/properties/itempropertiescolorstab.cpp:248
 #, fuzzy, kde-format
 #| msgid "ICC profile"
 msgctxt "@title: color properties"
 msgid "ICC profile"
 msgstr "आईसीसी प्रोफाइल"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:686
+#: core/libs/properties/itempropertiescolorstab.cpp:667
 #, fuzzy, kde-format
 #| msgid "16 bits"
 msgctxt "@label: color properties"
 msgid "16 bits"
 msgstr "16 बिट्स"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:687
+#: core/libs/properties/itempropertiescolorstab.cpp:668
 #, fuzzy, kde-format
 #| msgid "8 bits"
 msgctxt "@label: color properties"
 msgid "8 bits"
 msgstr "8 बिट्स"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:688
+#: core/libs/properties/itempropertiescolorstab.cpp:669
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@label: color properties"
 msgid "Yes"
 msgstr "हाँ"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:689
+#: core/libs/properties/itempropertiescolorstab.cpp:670
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@label: color properties"
 msgid "No"
 msgstr "नइ"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:730
+#: core/libs/properties/itempropertiescolorstab.cpp:711
 #, fuzzy, kde-format
 #| msgid "Full Image"
 msgctxt "@label: color properties"
 msgid "Full Image"
 msgstr "पूरा फोटू"
 
-#: core/libs/properties/itempropertiescolorstab.cpp:731
+#: core/libs/properties/itempropertiescolorstab.cpp:712
 #, fuzzy, kde-format
 msgctxt "@label: color properties"
 msgid "Image Region"
 msgstr "फोटू आयाम देखाव"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:82
+#: core/libs/properties/itempropertiesmetadatatab.cpp:77
 #, kde-format
 msgid "EXIF"
 msgstr "एक्सइफ"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:87
+#: core/libs/properties/itempropertiesmetadatatab.cpp:82
 #, kde-format
 msgid "Makernote"
 msgstr "मेकरनोट"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:92
+#: core/libs/properties/itempropertiesmetadatatab.cpp:87
 #, kde-format
 msgid "IPTC"
 msgstr "आईपीटीसी"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:100
+#: core/libs/properties/itempropertiesmetadatatab.cpp:95
 #: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "XMP"
@@ -36773,8 +36773,8 @@ msgstr "अनकेलिब्रेटेड"
 
 #: core/libs/properties/itempropertiessidebar.cpp:261
 #: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebardb.cpp:675
-#: core/libs/properties/itempropertiessidebardb.cpp:688
+#: core/libs/properties/itempropertiessidebardb.cpp:667
+#: core/libs/properties/itempropertiessidebardb.cpp:680
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -36789,7 +36789,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebardb.cpp:697
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -36797,7 +36797,7 @@ msgid "%1 bpp"
 msgstr " %1 बीपीपी"
 
 #: core/libs/properties/itempropertiessidebar.cpp:313
-#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:723
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -36805,27 +36805,27 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:318
-#: core/libs/properties/itempropertiessidebardb.cpp:736
+#: core/libs/properties/itempropertiessidebardb.cpp:728
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 आईएसओ"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:87
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "सीर्सक"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:88
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "अनुमति:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:680
+#: core/libs/properties/itempropertiessidebardb.cpp:672
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
@@ -37003,28 +37003,28 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:76
+#: core/libs/properties/itemselectionpropertiestab.cpp:70
 #, kde-format
 msgid "Count: "
 msgstr "गननाः"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:77
+#: core/libs/properties/itemselectionpropertiestab.cpp:71
 #, kde-format
 msgid "Size: "
 msgstr "आकारः"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:78
+#: core/libs/properties/itemselectionpropertiestab.cpp:72
 #, fuzzy, kde-format
 #| msgid "Count: "
 msgid "Total Count: "
 msgstr "गननाः"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:79
+#: core/libs/properties/itemselectionpropertiestab.cpp:73
 #, fuzzy, kde-format
 msgid "Total Size: "
 msgstr "%1 (%2)"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:104
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Selection Properties"
@@ -50151,7 +50151,7 @@ msgid "Show a list of all available options"
 msgstr ""
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:110
 #, fuzzy, kde-format
 msgid "Modifiers"
 msgstr "परिवर्धितः"
@@ -50205,7 +50205,7 @@ msgid ""
 "(album UI only)."
 msgstr ""
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:50
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title:window"
@@ -55255,7 +55255,7 @@ msgstr "न्यूजीलैंड"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:259
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
@@ -56700,14 +56700,14 @@ msgstr "अपन आप"
 msgid "Maximum Tile Level"
 msgstr "माट्रिक्स आकार:"
 
-#: core/utilities/imageeditor/core/undoaction.cpp:147
+#: core/utilities/imageeditor/core/undoaction.cpp:145
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: menu entry to undo unknown previous action"
 msgid "Unknown"
 msgstr "अग्यात"
 
-#: core/utilities/imageeditor/core/undocache.cpp:132
+#: core/utilities/imageeditor/core/undocache.cpp:131
 #, kde-format
 msgid ""
 "The free disk space in the path \"%1\" for the undo cache file is less than "
@@ -59428,27 +59428,27 @@ msgstr "इहां फोटू के संतृप्ति समाय�
 msgid "Drag and drop an image here"
 msgstr "फोटू इहां खींचव अउ छोड़व"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:257
 #, kde-format
 msgid "Show on left panel"
 msgstr "डेरी पेनल मं देखाव"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:258
 #, kde-format
 msgid "Show on right panel"
 msgstr "जेवनी पेनल मं देखाव"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:260
 #, kde-format
 msgid "Remove item"
 msgstr "चीज मेटारव"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:261
 #, kde-format
 msgid "Clear all"
 msgstr "सब्बो साफ करव"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:464
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "फोटू इहां खींचव अउ छोड़व"
@@ -62888,7 +62888,7 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
-#: core/utilities/setup/collections/setupcollectionview.cpp:1488
+#: core/utilities/setup/collections/setupcollectionview.cpp:1493
 #, fuzzy, kde-format
 #| msgid "Choose the folder containing your collection"
 msgctxt "@title:window"
@@ -62936,19 +62936,19 @@ msgid ""
 msgstr "का आप मन संग्रह \"%1\" ल अपन संग्रह सूची से मिटाना चाहथो ?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1702
+#: core/utilities/setup/collections/setupcollectionview.cpp:1707
 #, kde-format
 msgid "Local Collections"
 msgstr "लोकर संग्रह"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1703
+#: core/utilities/setup/collections/setupcollectionview.cpp:1708
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "हटाय जा सके वाले मीडिया मं संग्रह"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1704
+#: core/utilities/setup/collections/setupcollectionview.cpp:1709
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "नेटवक्र साझा मं संग्रह"
@@ -63015,55 +63015,55 @@ msgctxt "#title: collection status"
 msgid "Status"
 msgstr "स्थिति"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1536
+#: core/utilities/setup/collections/setupcollectionview.cpp:1541
 #, fuzzy, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "फोल्डर \"%1\" के साथ एक कलेक्सन पहिली से हावे"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1571
+#: core/utilities/setup/collections/setupcollectionview.cpp:1576
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "संग्रह जोड़व मं समस्या"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1581
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "संग्रह जोड़व मं समस्या"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1593
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "संग्रह जोड़व"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1597
+#: core/utilities/setup/collections/setupcollectionview.cpp:1602
 #, fuzzy, kde-format
 #| msgid "Add Collection"
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "संग्रह जोड़व"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1605
+#: core/utilities/setup/collections/setupcollectionview.cpp:1610
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1609
+#: core/utilities/setup/collections/setupcollectionview.cpp:1614
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1692
+#: core/utilities/setup/collections/setupcollectionview.cpp:1697
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "फोटू चुनव"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1696
+#: core/utilities/setup/collections/setupcollectionview.cpp:1701
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr ""
