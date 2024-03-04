@@ -259,7 +259,7 @@ BUGFIXES:
 236 ==> 482132 - When renaming an album, all collections' trees are expanded (windows and kde neon).
 237 ==> 482139 - Flip tool: option horizontal and vertical are inverted.
 238 ==> 482250 - Pressing [command] + i while editing image captions in preview mode replaces all other captions in album.
-239 ==> 
+239 ==> 482353 - Using "t" in File Rename Dialog Always Results in UTC.
 240 ==> 
 241 ==> 
 242 ==> 

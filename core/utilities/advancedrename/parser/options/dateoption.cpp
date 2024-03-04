@@ -313,6 +313,8 @@ QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpres
         }
     }
 
+    dateTime.setTimeSpec(Qt::LocalTime);
+
     // do we have a valid date?
 
     if (dateTime.isNull())
