@@ -245,10 +245,10 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
 
                     if ((index1 >= 0) && (index1 < imageSize))
                     {
-                        ptr                      =  &prm.orgData[index1 * 4];
+                        ptr                      =  &prm.orgData[index1 * 4];   // cppcheck-suppress objectIndex
                         blue                     =  ptr[0];
-                        green                    =  ptr[1];
-                        red                      =  ptr[2];
+                        green                    =  ptr[1];                     // cppcheck-suppress objectIndex
+                        red                      =  ptr[2];                     // cppcheck-suppress objectIndex
                         const double matrixValue =  prm.matrix[y2_matsize + x2];
                         valRed                   += matrixValue * red;
                         valGreen                 += matrixValue * green;
@@ -264,13 +264,13 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
                 // To get Alpha channel value from original (unchanged)
 
                 memcpy(&prm.destData[index2 * 4], &prm.orgData[index2 * 4], 4);
-                ptr = &prm.destData[index2 * 4];
+                ptr = &prm.destData[index2 * 4];                                // cppcheck-suppress objectIndex
 
                 // Overwrite RGB values to destination.
 
                 ptr[0] = (uchar) CLAMP(valBlue,  0.0, 255.0);
-                ptr[1] = (uchar) CLAMP(valGreen, 0.0, 255.0);
-                ptr[2] = (uchar) CLAMP(valRed,   0.0, 255.0);
+                ptr[1] = (uchar) CLAMP(valGreen, 0.0, 255.0);                   // cppcheck-suppress objectIndex
+                ptr[2] = (uchar) CLAMP(valRed,   0.0, 255.0);                   // cppcheck-suppress objectIndex
             }
         }
         else                 // 16 bits image.
