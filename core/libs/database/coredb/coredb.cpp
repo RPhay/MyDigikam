@@ -39,19 +39,15 @@ class Q_DECL_HIDDEN CoreDB::Private
 
 public:
 
-    explicit Private()
-      : db               (nullptr),
-        uniqueHashVersion(-1)
-    {
-    }
+    Private() = default;
 
     static const QString configGroupName;
     static const QString configRecentlyUsedTags;
 
-    CoreDbBackend*       db;
+    CoreDbBackend*       db                 = nullptr;
     QList<int>           recentlyAssignedTags;
 
-    int                  uniqueHashVersion;
+    int                  uniqueHashVersion  = -1;
 
 public:
 

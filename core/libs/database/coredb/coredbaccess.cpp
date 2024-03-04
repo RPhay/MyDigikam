@@ -48,31 +48,24 @@ class Q_DECL_HIDDEN CoreDbAccessStaticPriv
 {
 public:
 
-    CoreDbAccessStaticPriv()
-        : backend              (nullptr),
-          db                   (nullptr),
-          databaseWatch        (nullptr),
-          // Create a unique identifier for this application (as an application accessing a database
-          applicationIdentifier(QUuid::createUuid()),
-          initializing         (false)
-    {
-    };
-
-    ~CoreDbAccessStaticPriv()
-    {
-    };
+    CoreDbAccessStaticPriv()  = default;
+    ~CoreDbAccessStaticPriv() = default;
 
 public:
 
-    CoreDbBackend*      backend;
-    CoreDB*             db;
-    CoreDbWatch*        databaseWatch;
+    CoreDbBackend*      backend               = nullptr;
+    CoreDB*             db                    = nullptr;
+    CoreDbWatch*        databaseWatch         = nullptr;
     DbEngineParameters  parameters;
     DbEngineLocking     lock;
     QString             lastError;
-    QUuid               applicationIdentifier;
 
-    bool                initializing;
+    /**
+     * Create a unique identifier for this application (as an application accessing a database.
+     */
+    QUuid               applicationIdentifier = QUuid::createUuid();
+
+    bool                initializing          = false;
 };
 
 CoreDbAccessStaticPriv* CoreDbAccess::d = nullptr;

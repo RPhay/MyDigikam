@@ -32,7 +32,6 @@ public:
 
     explicit CoreDbBackendPrivate(CoreDbBackend* const backend)
         : BdEngineBackendPrivate            (backend),
-          watch                             (nullptr),
           imageChangesetContainer           (this),
           imageTagChangesetContainer        (this),
           collectionImageChangesetContainer (this),
@@ -45,7 +44,7 @@ public:
 
 public:
 
-    CoreDbWatch* watch;
+    CoreDbWatch* watch = nullptr;
 
 public:
 
@@ -87,6 +86,7 @@ public:
     template <class T>
     class Q_DECL_HIDDEN ChangesetContainer
     {
+
     public:
 
         explicit ChangesetContainer(CoreDbBackendPrivate* const dd)

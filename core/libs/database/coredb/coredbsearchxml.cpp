@@ -256,9 +256,11 @@ QList<int> SearchXmlReader::valueToIntOrIntList()
     QList<int> list;
 
     // poke at next token
+
     QXmlStreamReader::TokenType token = QXmlStreamReader::readNext();
 
     // Found text? Treat text as with valueToInt(), return single element list
+
     if (token == QXmlStreamReader::Characters)
     {
         list << text().toString().toInt();
@@ -268,6 +270,7 @@ QList<int> SearchXmlReader::valueToIntOrIntList()
     }
 
     // treat as with valueToIntList()
+
     while (!atEnd())
     {
         if (token != QXmlStreamReader::StartElement || name() != QLatin1String("listitem"))
@@ -288,9 +291,11 @@ QList<double> SearchXmlReader::valueToDoubleOrDoubleList()
     QList<double> list;
 
     // poke at next token
+
     QXmlStreamReader::TokenType token = QXmlStreamReader::readNext();
 
     // Found text? Treat text as with valueToInt(), return single element list
+
     if (token == QXmlStreamReader::Characters)
     {
         list << text().toString().toDouble();
@@ -300,6 +305,7 @@ QList<double> SearchXmlReader::valueToDoubleOrDoubleList()
     }
 
     // treat as with valueToIntList()
+
     while (!atEnd())
     {
         if (token != QXmlStreamReader::StartElement || name() != QLatin1String("listitem"))
@@ -320,9 +326,11 @@ QList<QString> SearchXmlReader::valueToStringOrStringList()
     QList<QString> list;
 
     // poke at next token
+
     QXmlStreamReader::TokenType token = QXmlStreamReader::readNext();
 
     // Found text? Treat text as with valueToString(), return single element list
+
     if (token == QXmlStreamReader::Characters)
     {
         list << text().toString();
@@ -332,6 +340,7 @@ QList<QString> SearchXmlReader::valueToStringOrStringList()
     }
 
     // treat as with valueToStringList()
+
     while (!atEnd())
     {
         if (token != QXmlStreamReader::StartElement || name() != QLatin1String("listitem"))
@@ -466,10 +475,12 @@ bool SearchXmlReader::readToStartOfElement(const QString& elementName)
                 (void)atStart;  // Remove clang warning.
                 break;
             }
+
             case EndDocument:
             {
                 return false;
             }
+
             default:
             {
                 break;
@@ -493,6 +504,7 @@ bool SearchXmlReader::readToStartOfElement(const QString& elementName)
                 ++stack;
                 break;
             }
+
             case EndElement:
             {
                 if (!--stack)
@@ -502,10 +514,12 @@ bool SearchXmlReader::readToStartOfElement(const QString& elementName)
 
                 break;
             }
+
             case EndDocument:
             {
                 return false;
             }
+
             default:
             {
                 break;
@@ -531,6 +545,7 @@ void SearchXmlReader::readToEndOfElement()
                     ++stack;
                     break;
                 }
+
                 case EndElement:
                 {
                     if (!--stack)
@@ -540,10 +555,12 @@ void SearchXmlReader::readToEndOfElement()
 
                     break;
                 }
+
                 case EndDocument:
                 {
                     return;
                 }
+
                 default:
                 {
                     break;
@@ -739,17 +756,28 @@ void SearchXmlWriter::writeOperator(const QString& attributeName, SearchXml::Ope
     {
         default:
         case SearchXml::And:
+        {
             writeAttribute(attributeName, QLatin1String("and"));
             break;
+        }
+
         case SearchXml::Or:
+        {
             writeAttribute(attributeName, QLatin1String("or"));
             break;
+        }
+
         case SearchXml::AndNot:
+        {
             writeAttribute(attributeName, QLatin1String("andnot"));
             break;
+        }
+
         case SearchXml::OrNot:
+        {
             writeAttribute(attributeName, QLatin1String("ornot"));
             break;
+        }
     }
 }
 
@@ -759,53 +787,100 @@ void SearchXmlWriter::writeRelation(const QString& attributeName, SearchXml::Rel
     {
         default:
         case SearchXml::Equal:
+        {
             writeAttribute(attributeName, QLatin1String("equal"));
             break;
+        }
+
         case SearchXml::Unequal:
+        {
             writeAttribute(attributeName, QLatin1String("unequal"));
             break;
+        }
+
         case SearchXml::Like:
+        {
             writeAttribute(attributeName, QLatin1String("like"));
             break;
+        }
+
         case SearchXml::NotLike:
+        {
             writeAttribute(attributeName, QLatin1String("notlike"));
             break;
+        }
+
         case SearchXml::LessThan:
+        {
             writeAttribute(attributeName, QLatin1String("lessthan"));
             break;
+        }
+
         case SearchXml::GreaterThan:
+        {
             writeAttribute(attributeName, QLatin1String("greaterthan"));
             break;
+        }
+
         case SearchXml::LessThanOrEqual:
+        {
             writeAttribute(attributeName, QLatin1String("lessthanequal"));
             break;
+        }
+
         case SearchXml::GreaterThanOrEqual:
+        {
             writeAttribute(attributeName, QLatin1String("greaterthanequal"));
             break;
+        }
+
         case SearchXml::Interval:
+        {
             writeAttribute(attributeName, QLatin1String("interval"));
             break;
+        }
+
         case SearchXml::IntervalOpen:
+        {
             writeAttribute(attributeName, QLatin1String("intervalopen"));
             break;
+        }
+
         case SearchXml::OneOf:
+        {
             writeAttribute(attributeName, QLatin1String("oneof"));
             break;
+        }
+
         case SearchXml::AllOf:
+        {
             writeAttribute(attributeName, QLatin1String("allof"));
             break;
+        }
+
         case SearchXml::InTree:
+        {
             writeAttribute(attributeName, QLatin1String("intree"));
             break;
+        }
+
         case SearchXml::NotInTree:
+        {
             writeAttribute(attributeName, QLatin1String("notintree"));
             break;
+        }
+
         case SearchXml::Near:
+        {
             writeAttribute(attributeName, QLatin1String("near"));
             break;
+        }
+
         case SearchXml::Inside:
+        {
             writeAttribute(attributeName, QLatin1String("inside"));
             break;
+        }
     }
 }
 
@@ -827,9 +902,11 @@ QString SearchXmlWriter::keywordSearch(const QString& keyword)
 QStringList KeywordSearch::split(const QString& keywords)
 {
     // get groups with quotation marks
+
     QStringList quotationMarkList = keywords.split(QLatin1Char('"'), QT_KEEP_EMPTY_PARTS);
 
     // split down to single words
+
     QStringList keywordList;
     int quotationMarkCount = (keywords.startsWith(QLatin1Char('"')) ? 1 : 0);
 
@@ -838,6 +915,7 @@ QStringList KeywordSearch::split(const QString& keywords)
         if (quotationMarkCount % 2)
         {
             // inside marks: leave as is
+
             if (!group.isEmpty())
             {
                 keywordList << group;
@@ -846,6 +924,7 @@ QStringList KeywordSearch::split(const QString& keywords)
         else
         {
             // not in quotation marks: split by whitespace
+
             keywordList << group.split(QRegularExpression(QLatin1String("\\s+")), QT_SKIP_EMPTY_PARTS);
         }
 
@@ -860,6 +939,7 @@ QString KeywordSearch::merge(const QStringList& keywordList)
     QStringList list(keywordList);
 
     // group keyword with spaces in quotation marks
+
     for (QStringList::iterator it = list.begin() ; it != list.end() ; ++it)
     {
         if ((*it).contains(QLatin1Char(' ')))
@@ -869,6 +949,7 @@ QString KeywordSearch::merge(const QStringList& keywordList)
     }
 
     // join in a string
+
     return list.join(QLatin1Char(' '));
 }
 
@@ -950,6 +1031,7 @@ bool KeywordSearchReader::isSimpleKeywordSearch()
 {
     // Find out if this XML conforms to a simple keyword search,
     // as created with KeywordSearchWriter
+
     SearchXml::Element element;
     int groupCount = 0;
 
@@ -960,6 +1042,7 @@ bool KeywordSearchReader::isSimpleKeywordSearch()
         if (element == SearchXml::Group)
         {
             // only one group please
+
             if (++groupCount > 1)
             {
                 return false;
@@ -997,12 +1080,14 @@ bool KeywordSearchReader::isSimpleKeywordSearchGroup()
         element = readNext();
 
         // subgroups not allowed
+
         if (element == SearchXml::Group)
         {
             return false;
         }
 
         // only "keyword" fields allowed
+
         if (element == SearchXml::Field)
         {
             if (fieldName() != QLatin1String("keyword"))
@@ -1069,7 +1154,7 @@ SearchXml::Element SearchXmlCachingReader::readNext()
 {
     SearchXml::Element element = SearchXmlReader::readNext();
 
-    if (element == SearchXml::Group)
+    if      (element == SearchXml::Group)
     {
         m_groupOperator = SearchXmlReader::groupOperator();
         m_groupCaption  = SearchXmlReader::groupCaption();
@@ -1169,6 +1254,7 @@ QList<int> SearchXmlCachingReader::valueToIntList()
 {
     // with no QVariant support for QList<int>,
     // we convert here from string list (equivalent result)
+
     QStringList list = valueToStringList();
     QList<int> intList;
 
@@ -1185,6 +1271,7 @@ QList<qlonglong> SearchXmlCachingReader::valueToLongLongList()
 {
     // with no QVariant support for QList<qlonglong>,
     // we convert here from string list (equivalent result)
+
     QStringList list = valueToStringList();
     QList<qlonglong> qlonglongList;
 
@@ -1201,6 +1288,7 @@ QList<double> SearchXmlCachingReader::valueToDoubleList()
 {
     // with no QVariant support for QList<double>,
     // we convert here from string list (equivalent result)
+
     QStringList list = valueToStringList();
     QList<double> doubleList;
 
@@ -1216,6 +1304,7 @@ QList<QDateTime> SearchXmlCachingReader::valueToDateTimeList()
 {
     // with no QVariant support for QList<QDateTime>,
     // we convert here from string list (equivalent result)
+
     QStringList list = valueToStringList();
     QList<QDateTime> doubleList;
 
@@ -1310,6 +1399,7 @@ QList<QString> SearchXmlCachingReader::valueToStringOrStringList()
 
         m_value     = varList;
         m_readValue = true;
+
         return QStringList;
     }
 

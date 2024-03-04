@@ -250,7 +250,7 @@ CoreDbUrl& CoreDbUrl::operator=(const CoreDbUrl& url)
 
 bool CoreDbUrl::operator==(const QUrl& digikamalbumsUrl) const
 {
-    return ( QUrl::operator==(digikamalbumsUrl) );
+    return (QUrl::operator==(digikamalbumsUrl));
 }
 
 /*

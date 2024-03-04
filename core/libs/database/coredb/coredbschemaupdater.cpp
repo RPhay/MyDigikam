@@ -73,29 +73,22 @@ class Q_DECL_HIDDEN CoreDbSchemaUpdater::Private
 
 public:
 
-    explicit Private()
-      : setError(false),
-        backend (nullptr),
-        albumDB (nullptr),
-        dbAccess(nullptr),
-        observer(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                    setError;
+    bool                    setError                = false;
 
     QVariant                currentVersion;
     QVariant                currentRequiredVersion;
 
-    CoreDbBackend*          backend;
-    CoreDB*                 albumDB;
+    CoreDbBackend*          backend                 = nullptr;
+    CoreDB*                 albumDB                 = nullptr;
     DbEngineParameters      parameters;
 
     // legacy
-    CoreDbAccess*           dbAccess;
+    CoreDbAccess*           dbAccess                = nullptr;
 
     QString                 lastErrorMessage;
-    InitializationObserver* observer;
+    InitializationObserver* observer                = nullptr;
 };
 
 CoreDbSchemaUpdater::CoreDbSchemaUpdater(CoreDB* const albumDB,
@@ -658,6 +651,7 @@ bool CoreDbSchemaUpdater::updateUniqueHash()
             setVersionSettings();
         }
     }
+
     return true;
 }
 
@@ -819,6 +813,7 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
         default:
         {
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: unsupported update to version" << targetVersion;
+
             return false;
         }
     }
@@ -1376,7 +1371,7 @@ void CoreDbSchemaUpdater::preAlpha010Update1()
         return;
     }
 
-    if ( !d->backend->execSql(
+    if (!d->backend->execSql(
              QString::fromUtf8( "CREATE TABLE IF NOT EXISTS Searches  \n"
                                 " (id INTEGER PRIMARY KEY, \n"
                                 "  type INTEGER, \n"

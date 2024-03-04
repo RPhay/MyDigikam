@@ -27,27 +27,20 @@ class ImageCommonContainer
 {
 public:
 
-    explicit ImageCommonContainer()
-      : fileSize  (0),
-        rating    (-1),
-        width     (0),
-        height    (0),
-        colorDepth(0)
-    {
-    }
+    ImageCommonContainer() = default;
 
     QString   fileName;
     QDateTime fileModificationDate;
-    qint64    fileSize;
+    qint64    fileSize      = 0;
 
-    int       rating;
+    int       rating        = -1;
     QDateTime creationDate;
     QDateTime digitizationDate;
     QString   orientation;
-    int       width;
-    int       height;
+    int       width         = 0;
+    int       height        = 0;
     QString   format;
-    int       colorDepth; // bits per channel, 8/16
+    int       colorDepth    = 0; ///< bits per channel, 8/16
     QString   colorModel;
 };
 
@@ -57,12 +50,9 @@ class ImageMetadataContainer
 {
 public:
 
-    explicit ImageMetadataContainer()
-      : allFieldsNull(true)
-    {
-    }
+    ImageMetadataContainer() = default;
 
-    bool allFieldsNull;
+    bool allFieldsNull = true;
 
     QString make;
     QString model;
@@ -88,12 +78,9 @@ class VideoMetadataContainer
 {
 public:
 
-    explicit VideoMetadataContainer()
-      : allFieldsNull(true)
-    {
-    }
+    VideoMetadataContainer() = default;
 
-    bool    allFieldsNull;
+    bool    allFieldsNull = true;
 
     QString aspectRatio;
     QString audioBitRate;

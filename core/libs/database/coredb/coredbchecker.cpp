@@ -50,9 +50,10 @@ bool CoreDbPrivilegesChecker::checkPrivileges(QStringList& insufficientRights)
     // to check the rights remains. Because the next time the start of the
     // rights check is constantly failing, we remove the table before
     // every start and do not check for errors.
+
     checkPriv(fromDBbackend, QLatin1String("CheckPriv_Cleanup"));
 
-    if (!checkPriv(fromDBbackend, QLatin1String("CheckPriv_CREATE_TABLE")))
+    if      (!checkPriv(fromDBbackend, QLatin1String("CheckPriv_CREATE_TABLE")))
     {
         insufficientRights.append(QLatin1String("CREATE TABLE"));
         result = false;

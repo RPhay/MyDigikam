@@ -39,23 +39,17 @@ class AlbumRootInfo
 {
 public:
 
-    explicit AlbumRootInfo()
-      : id             (0),
-        status         (0),
-        type           (0),
-        caseSensitivity(0)
-    {
-    };
+    AlbumRootInfo() = default;
 
 public:
 
-    int     id;
+    int     id                  = 0;
     QString label;
-    int     status;
-    int     type;
+    int     status              = 0;
+    int     type                = 0;
     QString identifier;
     QString specificPath;
-    int     caseSensitivity;
+    int     caseSensitivity     = 0;
 };
 
 // --------------------------------------------------------------------------
@@ -73,12 +67,7 @@ public:
 
 public:
 
-    explicit AlbumInfo()
-      : id         (0),
-        albumRootId(0),
-        iconId     (0)
-    {
-    };
+    AlbumInfo() = default;
 
     bool isNull() const
     {
@@ -97,13 +86,13 @@ public:
 
 public:
 
-    int       id;
-    int       albumRootId;
+    int       id            = 0;
+    int       albumRootId   = 0;
     QString   relativePath;
     QString   caption;
     QString   category;
     QDate     date;
-    qlonglong iconId;
+    qlonglong iconId        = 0;
 };
 
 // --------------------------------------------------------------------------
@@ -121,12 +110,7 @@ public:
 
 public:
 
-    explicit TagInfo()
-      : id    (0),
-        pid   (0),
-        iconId(0)
-    {
-    };
+    TagInfo() = default;
 
     bool isNull() const
     {
@@ -140,11 +124,11 @@ public:
 
 public:
 
-    int       id;
-    int       pid;
+    int       id        = 0;
+    int       pid       = 0;
     QString   name;
     QString   icon;
-    qlonglong iconId;
+    qlonglong iconId    = 0;
 };
 
 // --------------------------------------------------------------------------
@@ -162,11 +146,7 @@ public:
 
 public:
 
-    explicit SearchInfo()
-      : id  (0),
-        type(DatabaseSearch::UndefinedType)
-    {
-    };
+    SearchInfo() = default;
 
     bool isNull() const
     {
@@ -183,9 +163,9 @@ public:
 
 public:
 
-    int                  id;
+    int                  id     = 0;
     QString              name;
-    DatabaseSearch::Type type;
+    DatabaseSearch::Type type   = DatabaseSearch::UndefinedType;
     QString              query;
 };
 
@@ -195,11 +175,7 @@ class AlbumShortInfo
 {
 public:
 
-    explicit AlbumShortInfo()
-      : id         (0),
-        albumRootId(0)
-    {
-    };
+    AlbumShortInfo() = default;
 
     bool isNull() const
     {
@@ -208,9 +184,9 @@ public:
 
 public:
 
-    int     id;
+    int     id          = 0;
     QString relativePath;
-    int     albumRootId;
+    int     albumRootId = 0;
 };
 
 // --------------------------------------------------------------------------
@@ -219,11 +195,7 @@ class TagShortInfo
 {
 public:
 
-    explicit TagShortInfo()
-      : id (0),
-        pid(0)
-    {
-    };
+    TagShortInfo() = default;
 
     bool isNull() const
     {
@@ -232,8 +204,8 @@ public:
 
 public:
 
-    int     id;
-    int     pid;
+    int     id      = 0;
+    int     pid     = 0;
     QString name;
 };
 
@@ -243,12 +215,7 @@ class ItemShortInfo
 {
 public:
 
-    explicit ItemShortInfo()
-      : id         (0),
-        albumID    (0),
-        albumRootID(0)
-    {
-    };
+    ItemShortInfo() = default;
 
     bool isNull() const
     {
@@ -257,10 +224,10 @@ public:
 
 public:
 
-    qlonglong id;
+    qlonglong id            = 0;
     QString   itemName;
-    int       albumID;
-    int       albumRootID;
+    int       albumID       = 0;
+    int       albumRootID   = 0;
     QString   album;
 };
 
@@ -270,14 +237,7 @@ class ItemScanInfo
 {
 public:
 
-    explicit ItemScanInfo()
-      : id      (0),
-        albumID (0),
-        status  (DatabaseItem::UndefinedStatus),
-        category(DatabaseItem::UndefinedCategory),
-        fileSize(0)
-    {
-    };
+    ItemScanInfo() = default;
 
     bool isNull() const
     {
@@ -286,13 +246,13 @@ public:
 
 public:
 
-    qlonglong              id;
-    int                    albumID;
+    qlonglong              id               = 0;
+    int                    albumID          = 0;
     QString                itemName;
-    DatabaseItem::Status   status;
-    DatabaseItem::Category category;
+    DatabaseItem::Status   status           = DatabaseItem::UndefinedStatus;
+    DatabaseItem::Category category         = DatabaseItem::UndefinedCategory;
     QDateTime              modificationDate;
-    qlonglong              fileSize;
+    qlonglong              fileSize         = 0;
     QString                uniqueHash;
 };
 
@@ -302,12 +262,7 @@ class CommentInfo
 {
 public:
 
-    explicit CommentInfo()
-      : id     (-1),
-        imageId(-1),
-        type   (DatabaseComment::UndefinedType)
-    {
-    };
+    CommentInfo() = default;
 
     bool isNull() const
     {
@@ -316,9 +271,9 @@ public:
 
 public:
 
-    int                   id;
-    qlonglong             imageId;
-    DatabaseComment::Type type;
+    int                   id        = -1;
+    qlonglong             imageId   = -1;
+    DatabaseComment::Type type      = DatabaseComment::UndefinedType;
     QString               author;
     QString               language;
     QDateTime             date;
@@ -331,10 +286,7 @@ class CopyrightInfo
 {
 public:
 
-    explicit CopyrightInfo()
-      : id(-1)
-    {
-    };
+    CopyrightInfo() = default;
 
     bool isNull() const
     {
@@ -343,7 +295,7 @@ public:
 
 public:
 
-    qlonglong id;
+    qlonglong id        = -1;
     QString   property;
     QString   value;
     QString   extraValue;
@@ -355,10 +307,7 @@ class ImageHistoryEntry
 {
 public:
 
-    explicit ImageHistoryEntry()
-      : imageId(0)
-    {
-    };
+    ImageHistoryEntry() = default;
 
     bool isNull() const
     {
@@ -367,7 +316,7 @@ public:
 
 public:
 
-    qlonglong imageId;
+    qlonglong imageId   = 0;
     QString   uuid;
     QString   history;
 };
@@ -378,18 +327,13 @@ class ImageRelation
 {
 public:
 
-    explicit ImageRelation()
-      : subjectId(0),
-        objectId (0),
-        type     (DatabaseRelation::UndefinedType)
-    {
-    }
+    ImageRelation() = default;
 
 public:
 
-    qlonglong              subjectId;
-    qlonglong              objectId;
-    DatabaseRelation::Type type;
+    qlonglong              subjectId = 0;
+    qlonglong              objectId  = 0;
+    DatabaseRelation::Type type      = DatabaseRelation::UndefinedType;
 };
 
 // --------------------------------------------------------------------------
@@ -398,10 +342,7 @@ class TagProperty
 {
 public:
 
-    explicit TagProperty()
-      : tagId(-1)
-    {
-    };
+    TagProperty() = default;
 
     bool isNull() const
     {
@@ -410,7 +351,7 @@ public:
 
 public:
 
-    int     tagId;
+    int     tagId   = -1;
     QString property;
     QString value;
 };
@@ -421,11 +362,7 @@ class ImageTagProperty
 {
 public:
 
-    explicit ImageTagProperty()
-      : imageId(-1),
-        tagId  (-1)
-    {
-    };
+    ImageTagProperty() = default;
 
     bool isNull() const
     {
@@ -434,8 +371,8 @@ public:
 
 public:
 
-    qlonglong imageId;
-    int       tagId;
+    qlonglong imageId   = -1;
+    int       tagId     = -1;
     QString   property;
     QString   value;
 };

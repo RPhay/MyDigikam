@@ -55,6 +55,7 @@ bool CoreDbBackend::initSchema(CoreDbSchemaUpdater* updater)
     if (updater->update())
     {
         d->status = OpenSchemaChecked;
+
         return true;
     }
 

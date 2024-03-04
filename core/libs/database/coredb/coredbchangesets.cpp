@@ -118,6 +118,7 @@ ImageTagChangeset& ImageTagChangeset::operator<<(const QDBusArgument& argument)
     argument >> m_ids >> m_tags >> intValue;
     m_operation = (Operation)intValue;
     argument.endStructure();
+
     return *this;
 }
 
@@ -126,6 +127,7 @@ const ImageTagChangeset& ImageTagChangeset::operator>>(QDBusArgument& argument) 
     argument.beginStructure();
     argument << m_ids << m_tags << (int)m_operation;
     argument.endStructure();
+
     return *this;
 }
 
@@ -206,6 +208,7 @@ CollectionImageChangeset& CollectionImageChangeset::operator<<(const QDBusArgume
     argument >> m_ids >> m_albums >> intValue;
     m_operation = (Operation)intValue;
     argument.endStructure();
+
     return *this;
 }
 
@@ -214,6 +217,7 @@ const CollectionImageChangeset& CollectionImageChangeset::operator>>(QDBusArgume
     argument.beginStructure();
     argument << m_ids << m_albums << (int)m_operation;
     argument.endStructure();
+
     return *this;
 }
 
@@ -277,6 +281,7 @@ AlbumChangeset& AlbumChangeset::operator<<(const QDBusArgument& argument)
     argument >> m_id >> intValue;
     m_operation = (Operation)intValue;
     argument.endStructure();
+
     return *this;
 }
 
@@ -285,6 +290,7 @@ const AlbumChangeset& AlbumChangeset::operator>>(QDBusArgument& argument) const
     argument.beginStructure();
     argument << m_id << (int)m_operation;
     argument.endStructure();
+
     return *this;
 }
 
@@ -323,6 +329,7 @@ TagChangeset& TagChangeset::operator<<(const QDBusArgument& argument)
     argument >> m_id >> intValue;
     m_operation = (Operation)intValue;
     argument.endStructure();
+
     return *this;
 }
 
@@ -331,6 +338,7 @@ const TagChangeset& TagChangeset::operator>>(QDBusArgument& argument) const
     argument.beginStructure();
     argument << m_id << (int)m_operation;
     argument.endStructure();
+
     return *this;
 }
 
@@ -369,6 +377,7 @@ AlbumRootChangeset& AlbumRootChangeset::operator<<(const QDBusArgument& argument
     argument >> m_id >> intValue;
     m_operation = (Operation)intValue;
     argument.endStructure();
+
     return *this;
 }
 
@@ -377,6 +386,7 @@ const AlbumRootChangeset& AlbumRootChangeset::operator>>(QDBusArgument& argument
     argument.beginStructure();
     argument << m_id << (int)m_operation;
     argument.endStructure();
+
     return *this;
 }
 
@@ -415,6 +425,7 @@ SearchChangeset& SearchChangeset::operator<<(const QDBusArgument& argument)
     argument >> m_id >> intValue;
     m_operation = (Operation)intValue;
     argument.endStructure();
+
     return *this;
 }
 
@@ -423,6 +434,7 @@ const SearchChangeset& SearchChangeset::operator>>(QDBusArgument& argument) cons
     argument.beginStructure();
     argument << m_id << (int)m_operation;
     argument.endStructure();
+
     return *this;
 }
 
@@ -455,6 +467,7 @@ DatabaseFields::Set& DatabaseFields::Set::operator<<(const QDBusArgument& argume
     videoMetadata    = (DatabaseFields::VideoMetadata)videoMetadataInt;
 
     argument.endStructure();
+
     return *this;
 }
 
@@ -469,6 +482,7 @@ const DatabaseFields::Set& DatabaseFields::Set::operator>>(QDBusArgument& argume
              << (int) customEnum
              << (int) videoMetadata;
     argument.endStructure();
+
     return *this;
 }
 

@@ -71,17 +71,17 @@ typedef uint8_t ImagesMinSizeType;
 enum ItemInformationField
 {
     ItemInformationNone  = 0,
-    Rating                = 1 << 0,
-    CreationDate          = 1 << 1,
-    DigitizationDate      = 1 << 2,
-    Orientation           = 1 << 3,
-    Width                 = 1 << 4,
-    Height                = 1 << 5,
-    Format                = 1 << 6,
-    ColorDepth            = 1 << 7,
-    ColorModel            = 1 << 8,
-    ColorLabel            = 1 << 9,
-    PickLabel             = 1 << 10,
+    Rating               = 1 << 0,
+    CreationDate         = 1 << 1,
+    DigitizationDate     = 1 << 2,
+    Orientation          = 1 << 3,
+    Width                = 1 << 4,
+    Height               = 1 << 5,
+    Format               = 1 << 6,
+    ColorDepth           = 1 << 7,
+    ColorModel           = 1 << 8,
+    ColorLabel           = 1 << 9,
+    PickLabel            = 1 << 10,
     ItemInformationAll   = Rating           |
                            CreationDate     |
                            DigitizationDate |
@@ -267,14 +267,11 @@ template<typename FieldName> class DatabaseFieldsEnumIterator
 
 public:
 
-    DatabaseFieldsEnumIterator()
-      : i(FieldMetaInfo<FieldName>::First)
-    {
-    }
+    DatabaseFieldsEnumIterator() = default;
 
     bool atEnd() const
     {
-        return i > FieldMetaInfo<FieldName>::Last;
+        return (i > FieldMetaInfo<FieldName>::Last);
     }
 
     void operator++()
@@ -289,7 +286,7 @@ public:
 
 private:
 
-    int i;
+    int i = FieldMetaInfo<FieldName>::First;
 };
 
 /**
@@ -564,7 +561,7 @@ public:
 
     static inline unsigned int uniqueKey(CustomEnum f)
     {
-        return (unsigned int)f | (unsigned int)(63 << 26);
+        return (unsigned int)f | ((unsigned int)(63) << 26);
     }
 
     // override relevant methods from QHash
