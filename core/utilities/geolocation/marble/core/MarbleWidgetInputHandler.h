@@ -46,7 +46,7 @@ private:
     void handlePinchGesture(QPinchGesture *pinch);
 
     using MarbleWidgetInputHandlerPrivatePtr = QSharedPointer<MarbleWidgetInputHandlerPrivate>;
-    MarbleWidgetInputHandlerPrivatePtr d;
+    MarbleWidgetInputHandlerPrivatePtr d;      // cppcheck-suppress duplInheritedMember
     friend class MarbleWidgetInputHandlerPrivate;
 
     Q_DISABLE_COPY(MarbleWidgetInputHandler)

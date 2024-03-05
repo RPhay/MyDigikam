@@ -62,7 +62,7 @@ public:
     bool containsAnyOf(const QSet<qint64> &memberIds) const;
 
 private:
-    GeoDataRelationPrivate* d_ptr;
+    GeoDataRelationPrivate* d_ptr;      // cppcheck-suppress duplInheritedMember
     Q_DECLARE_PRIVATE(GeoDataRelation)
 
 };
