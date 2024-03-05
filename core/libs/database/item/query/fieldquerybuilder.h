@@ -45,8 +45,8 @@ public:
     QString&                sql;
     SearchXmlCachingReader& reader;
     QList<QVariant>*        boundValues;
-    ItemQueryPostHooks*     hooks;
-    SearchXml::Relation     relation;
+    ItemQueryPostHooks*     hooks       = nullptr;
+    SearchXml::Relation     relation    = SearchXml::Equal;
 
 public:
 

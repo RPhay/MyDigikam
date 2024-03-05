@@ -154,7 +154,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     }
     else if (name == QLatin1String("albumid"))
     {
-        if ((relation == SearchXml::Equal) || (relation == SearchXml::Unequal))
+        if      ((relation == SearchXml::Equal) || (relation == SearchXml::Unequal))
         {
             fieldQuery.addIntField(QLatin1String("Images.album"));
         }
@@ -1040,11 +1040,11 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     }
     else if (name == QLatin1String("imagetagproperty"))
     {
-        if (relation == SearchXml::Equal || relation == SearchXml::InTree)
+        if ((relation == SearchXml::Equal) || (relation == SearchXml::InTree))
         {
             // First, read attributes
             QStringView tagAttribute = reader.attributes().value(QLatin1String("tagid"));
-            int tagId               = 0;
+            int tagId                = 0;
 
             if (!tagAttribute.isEmpty())
             {
@@ -1061,7 +1061,9 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             }
 
             QString selectQuery;
+
             // %1 is resolved to either "ImageTagProperties." or the empty string
+
             if (tagId)
             {
                 if (relation == SearchXml::Equal)
@@ -1076,7 +1078,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                 }
             }
 
-            if (values.size() == 1)
+            if      (values.size() == 1)
             {
                 selectQuery += QString::fromUtf8("%1property=? ");
                 *boundValues << values.first();
@@ -1091,6 +1093,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
             // This indicates that the ImageTagProperties is joined in the SELECT query,
             // so one entry is listed for each property entry (not for each image id)
+
             if (m_imageTagPropertiesJoined)
             {
                 sql += QString::fromUtf8(" ( ");
@@ -1184,6 +1187,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     else
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Search field" << name << "not known by this version of ItemQueryBuilder";
+
         return false;
     }
 
@@ -1205,17 +1209,25 @@ void ItemQueryBuilder::addSqlOperator(QString& sql, SearchXml::Operator op, bool
     switch (op)
     {
         case SearchXml::And:
+        {
             sql += QLatin1String("AND");
             break;
+        }
         case SearchXml::Or:
+        {
             sql += QLatin1String("OR");
             break;
+        }
         case SearchXml::AndNot:
+        {
             sql += QLatin1String("AND NOT");
             break;
+        }
         case SearchXml::OrNot:
+        {
             sql += QLatin1String("OR NOT");
             break;
+        }
     }
 }
 
@@ -1225,48 +1237,71 @@ void ItemQueryBuilder::addSqlRelation(QString& sql, SearchXml::Relation rel)
     {
         default:
         case SearchXml::Equal:
+        {
             sql += QLatin1Char('=');
             break;
+        }
         case SearchXml::Unequal:
+        {
             sql += QLatin1String("<>");
             break;
+        }
         case SearchXml::Like:
+        {
             sql += QLatin1String("LIKE");
             break;
+        }
         case SearchXml::NotLike:
+        {
             sql += QLatin1String("NOT LIKE");
             break;
+        }
         case SearchXml::LessThan:
+        {
             sql += QLatin1Char('<');
             break;
+        }
         case SearchXml::GreaterThan:
+        {
             sql += QLatin1Char('>');
             break;
+        }
         case SearchXml::LessThanOrEqual:
+        {
             sql += QLatin1String("<=");
             break;
+        }
         case SearchXml::GreaterThanOrEqual:
+        {
             sql += QLatin1String(">=");
             break;
+        }
         case SearchXml::OneOf:
+        {
             sql += QLatin1String("IN");
             break;
+        }
     }
 }
 
 void ItemQueryBuilder::addNoEffectContent(QString& sql, SearchXml::Operator op)
 {
     // add a condition statement with no effect
+
     switch (op)
     {
         case SearchXml::And:
         case SearchXml::Or:
+        {
             sql += QLatin1String(" 1 ");
             break;
+        }
         case SearchXml::AndNot:
         case SearchXml::OrNot:
+        {
             sql += QLatin1String(" 0 ");
             break;
+        }
     }
 }
 
@@ -1312,6 +1347,7 @@ QString ItemQueryBuilder::convertFromUrlToXml(const QUrl& url) const
         {
             // other field names did not change:
             // albumname, albumcaption, albumcollection, tagname, keyword, rating
+
             rule.key = key;
         }
 
@@ -1370,6 +1406,7 @@ QString ItemQueryBuilder::convertFromUrlToXml(const QUrl& url) const
     SearchXmlWriter writer;
 
     // set an attribute marking this search as converted from 0.9 style search
+
     writer.writeAttribute(QLatin1String("convertedFrom09Url"), QLatin1String("true"));
     writer.writeGroup();
 
@@ -1398,6 +1435,7 @@ QString ItemQueryBuilder::convertFromUrlToXml(const QUrl& url) const
             else if (expr == QLatin1String("OR"))
             {
                 // open a new group
+
                 writer.finishGroup();
                 writer.writeGroup();
                 writer.setGroupOperator(SearchXml::Or);
@@ -1405,6 +1443,7 @@ QString ItemQueryBuilder::convertFromUrlToXml(const QUrl& url) const
             else if (expr == QLatin1String("("))
             {
                 // open a subgroup
+
                 writer.writeGroup();
             }
             else if (expr == QLatin1String(")"))
@@ -1624,15 +1663,18 @@ QString ItemQueryBuilder::possibleDate(const QString& str, bool& exact) const
     if (ok)
     {
         // ok. its an int, does it look like a year?
+
         if ((1970 <= num) && (num <= QDate::currentDate().year()))
         {
             // very sure its a year
+
             return QString::fromUtf8("%1-%-%").arg(num);
         }
     }
     else
     {
         // hmm... not a year. is it a particular month?
+
         for (int i = 1 ; i <= 12 ; ++i)
         {
             if ((str.toLower() == m_shortMonths[i-1]) ||

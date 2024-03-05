@@ -45,11 +45,11 @@ FieldQueryBuilder::FieldQueryBuilder(QString& sql,
                                      QList<QVariant>* boundValues,
                                      ItemQueryPostHooks* const hooks,
                                      SearchXml::Relation relation)
-    : sql(sql),
-      reader(reader),
+    : sql        (sql),
+      reader     (reader),
       boundValues(boundValues),
-      hooks(hooks),
-      relation(relation)
+      hooks      (hooks),
+      relation   (relation)
 {
 }
 
@@ -140,6 +140,7 @@ void FieldQueryBuilder::addDoubleField(const QString& name)
         if (values.size() != 2)
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "Relation Interval requires a list of two values";
+
             return;
         }
 
@@ -194,6 +195,7 @@ void FieldQueryBuilder::addDateField(const QString& name)
         if (!date.isValid())
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "Date" << reader.value() << "is invalid";
+
             return;
         }
 
@@ -214,7 +216,7 @@ void FieldQueryBuilder::addDateField(const QString& name)
             QDateTime startDate, endDate;
             int diff;
 
-            if (date.time().hour() == 0)
+            if      (date.time().hour() == 0)
             {
                 diff = 3600;
             }
@@ -248,6 +250,7 @@ void FieldQueryBuilder::addDateField(const QString& name)
         if (values.size() != 2)
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "Relation Interval requires a list of two values";
+
             return;
         }
 
@@ -514,16 +517,24 @@ void FieldQueryBuilder::addPosition()
         QRectF rect;
         GeodeticCalculator calc;
         calc.setStartingGeographicPoint(lon, lat);
+
         // go west
+
         calc.setDirection(-90, distance);
         rect.setLeft(calc.destinationGeographicPoint().x());
+
         // go north (from first starting point!)
+
         calc.setDirection(0, distance);
         rect.setTop(calc.destinationGeographicPoint().y());
+
         // go east
+
         calc.setDirection(90, distance);
         rect.setRight(calc.destinationGeographicPoint().x());
+
         // go south
+
         calc.setDirection(180, distance);
         rect.setBottom(calc.destinationGeographicPoint().y());
 
@@ -575,9 +586,10 @@ void FieldQueryBuilder::addPosition()
                     return (c < distanceInRadians);
                 }
 
-                double lat1, lon1;
-                double distanceInRadians;
-                double cosLat1;
+                double lat1                 = 0.0;
+                double lon1                 = 0.0;
+                double distanceInRadians    = 0.0;
+                double cosLat1              = 0.0;
             };
 
             // get radius (of the ellipsoid) in dependence of the latitude.
