@@ -662,6 +662,7 @@ QString DFileOperations::findExecutable(const QString& name)
 {
     QString path;
     QString program = name;
+    program.remove(QLatin1Char('"'));
 
 #ifdef Q_OS_WIN
 
