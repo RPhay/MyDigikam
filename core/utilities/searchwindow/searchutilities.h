@@ -73,9 +73,13 @@ public Q_SLOTS:
     /// Set visible without animation
     void setDirectlyVisible(bool visible);
 
+    /// Set enabled state for drawing the pixmap
+    void slotPixmapEnabled(bool b);
+
 Q_SIGNALS:
 
     void clicked();
+    void visibleChanged(bool v);
 
 protected:
 

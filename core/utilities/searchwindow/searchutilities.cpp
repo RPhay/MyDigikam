@@ -60,11 +60,13 @@ public:
 
     explicit Private(QObject* const parent)
         : AnimatedVisibility(parent),
-          stayAlwaysVisible (false)
+          stayAlwaysVisible (false),
+          pixmapEnabled     (true)
     {
     }
 
     bool    stayAlwaysVisible;
+    bool    pixmapEnabled;
     QPixmap pixmap;
 };
 
@@ -128,6 +130,11 @@ QPixmap AnimatedClearButton::pixmap() const
     return d->pixmap;
 }
 
+void AnimatedClearButton::slotPixmapEnabled(bool b)
+{
+    d->pixmapEnabled = b;
+}
+
 void AnimatedClearButton::updateAnimationSettings()
 {
 }
@@ -137,11 +144,22 @@ void AnimatedClearButton::paintEvent(QPaintEvent* event)
     Q_UNUSED(event)
 
     QPainter p(this);
-    p.setOpacity(1); // make sure
-    qreal dpr = devicePixelRatio();
-    p.drawPixmap((width()  * dpr - d->pixmap.width())  / 2,
-                 (height() * dpr - d->pixmap.height()) / 2,
-                 d->pixmap);
+
+    if (d->pixmapEnabled)
+    {
+        p.setOpacity(1); // make sure
+        qreal dpr = devicePixelRatio();
+        p.drawPixmap((width()  * dpr - d->pixmap.width())  / 2,
+                     (height() * dpr - d->pixmap.height()) / 2,
+                     d->pixmap);
+    }
+    else
+    {
+        p.fillRect(0, 0,
+                   d->pixmap.width(),
+                   d->pixmap.height(),
+                   QBrush(QColor(Qt::transparent)));
+    }
 }
 
 void AnimatedClearButton::visibleChanged()
@@ -154,6 +172,8 @@ void AnimatedClearButton::visibleChanged()
     {
         hide();
     }
+
+    Q_EMIT visibleChanged(d->isVisible());
 }
 
 void AnimatedClearButton::mouseReleaseEvent(QMouseEvent* event)

@@ -78,6 +78,9 @@ void SearchField::setup(QGridLayout* const layout, int line)
     connect(m_clearButton, SIGNAL(clicked()),
             this, SLOT(clearButtonClicked()));
 
+    connect(m_clearButton, SIGNAL(visibleChanged(bool)),
+            m_clearButton, SLOT(slotPixmapEnabled(bool)));
+
     layout->addWidget(m_clearButton, line, 7);
 }
 
