@@ -164,6 +164,8 @@ void AnimatedClearButton::paintEvent(QPaintEvent* event)
 
 void AnimatedClearButton::visibleChanged()
 {
+    Q_EMIT visibleChanged(d->isVisible());
+
     if      (d->isVisible())
     {
         show();
@@ -172,8 +174,6 @@ void AnimatedClearButton::visibleChanged()
     {
         hide();
     }
-
-    Q_EMIT visibleChanged(d->isVisible());
 }
 
 void AnimatedClearButton::mouseReleaseEvent(QMouseEvent* event)
