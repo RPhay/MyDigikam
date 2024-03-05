@@ -77,10 +77,7 @@ QString ItemQueryBuilder::buildQueryFromXml(const QString& xml, QList<QVariant> 
         {
             addSqlOperator(sql, reader.groupOperator(), firstGroup);
 
-            if (firstGroup)
-            {
-                firstGroup = false;
-            }
+            firstGroup = false;
 
             buildGroup(sql, reader, boundValues, hooks);
         }
@@ -116,10 +113,7 @@ void ItemQueryBuilder::buildGroup(QString& sql, SearchXmlCachingReader& reader,
             hasContent = true;
             addSqlOperator(sql, reader.groupOperator(), firstField);
 
-            if (firstField)
-            {
-                firstField = false;
-            }
+            firstField = false;
 
             buildGroup(sql, reader, boundValues, hooks);
         }
@@ -130,10 +124,7 @@ void ItemQueryBuilder::buildGroup(QString& sql, SearchXmlCachingReader& reader,
             SearchXml::Operator fieldOperator = reader.fieldOperator();
             addSqlOperator(sql, fieldOperator, firstField);
 
-            if (firstField)
-            {
-                firstField = false;
-            }
+            firstField = false;
 
             if (!buildField(sql, reader, reader.fieldName(), boundValues, hooks))
             {
