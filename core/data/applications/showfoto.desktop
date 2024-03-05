@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=showFoto
+Exec=%ProgramFiles%/digiKam/showfoto.exe %f
+Icon=%ProgramFiles%/digiKam/showfoto.exe
+MimeType=image/jpg;image/bmp;image/png
