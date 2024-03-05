@@ -261,8 +261,8 @@ BUGFIXES:
 238 ==> 482250 - Pressing [command] + i while editing image captions in preview mode replaces all other captions in album.
 239 ==> 482353 - Using "t" in File Rename Dialog Always Results in UTC.
 240 ==> 481753 - digiKam 8.3 crashes on Fedora 38 / Thumbnail view.
-241 ==> 
-242 ==> 
+241 ==> 415845 - Configurable "open with" menu under Windows.
+242 ==> 467805 - Improvement proposal: image thumbnail: right clic open with in context menu.
 243 ==> 
 244 ==> 
 245 ==> 
