@@ -571,14 +571,10 @@ QList<int> TagsCache::parentTags(int id) const
     QReadLocker locker(&d->lock);
     QList<TagShortInfo>::const_iterator it;
 
-    for (it = d->find(id);
-         (it != d->infos.constEnd()) && it->pid;
+    for (it = d->find(id) ; (it != d->infos.constEnd()) && (it->pid != 0) ;
          it = d->find(it->pid))
     {
-        if ((it->pid) != 0)
-        {
-            ids.prepend(it->pid);
-        }
+        ids.prepend(it->pid);
     }
 
     return ids;
