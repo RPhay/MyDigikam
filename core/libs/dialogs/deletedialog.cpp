@@ -55,12 +55,9 @@ class Q_DECL_HIDDEN DeleteItem::Private
 
 public:
 
-    explicit Private()
-      : hasThumb(false)
-    {
-    }
+    Private() = default;
 
-    bool hasThumb;
+    bool hasThumb = false;
 
     QUrl url;
 };
@@ -150,15 +147,11 @@ class Q_DECL_HIDDEN DeleteItemList::Private
 
 public:
 
-    explicit Private()
-        : iconSize       (64),
-          thumbLoadThread(nullptr)
-    {
-    }
+    Private() = default;
 
-    const int            iconSize;
+    const int            iconSize        = 64;
 
-    ThumbnailLoadThread* thumbLoadThread;
+    ThumbnailLoadThread* thumbLoadThread = nullptr;
 };
 
 DeleteItemList::DeleteItemList(QWidget* const parent)
@@ -229,32 +222,21 @@ class Q_DECL_HIDDEN DeleteWidget::Private
 {
 public:
 
-    explicit Private()
-      : checkBoxStack (nullptr),
-        warningIcon   (nullptr),
-        deleteText    (nullptr),
-        numFiles      (nullptr),
-        shouldDelete  (nullptr),
-        doNotShowAgain(nullptr),
-        fileList      (nullptr),
-        listMode      (DeleteDialogMode::Files),
-        deleteMode    (DeleteDialogMode::UseTrash)
-    {
-    }
+    Private() = default;
 
-    QStackedWidget*              checkBoxStack;
+    QStackedWidget*              checkBoxStack      = nullptr;
 
-    QLabel*                      warningIcon;
-    QLabel*                      deleteText;
-    QLabel*                      numFiles;
+    QLabel*                      warningIcon        = nullptr;
+    QLabel*                      deleteText         = nullptr;
+    QLabel*                      numFiles           = nullptr;
 
-    QCheckBox*                   shouldDelete;
-    QCheckBox*                   doNotShowAgain;
+    QCheckBox*                   shouldDelete       = nullptr;
+    QCheckBox*                   doNotShowAgain     = nullptr;
 
-    QTreeWidget*                 fileList;
+    QTreeWidget*                 fileList           = nullptr;
 
-    DeleteDialogMode::ListMode   listMode;
-    DeleteDialogMode::DeleteMode deleteMode;
+    DeleteDialogMode::ListMode   listMode           = DeleteDialogMode::Files;
+    DeleteDialogMode::DeleteMode deleteMode         = DeleteDialogMode::UseTrash;
 };
 
 DeleteWidget::DeleteWidget(QWidget* const parent)
@@ -466,22 +448,15 @@ class Q_DECL_HIDDEN DeleteDialog::Private
 {
 public:
 
-    explicit Private()
-      : saveShouldDeleteUserPreference(true),
-        saveDoNotShowAgainTrash       (false),
-        saveDoNotShowAgainPermanent   (false),
-        page                          (nullptr),
-        buttons                       (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool              saveShouldDeleteUserPreference;
-    bool              saveDoNotShowAgainTrash;
-    bool              saveDoNotShowAgainPermanent;
+    bool              saveShouldDeleteUserPreference = true;
+    bool              saveDoNotShowAgainTrash        = false;
+    bool              saveDoNotShowAgainPermanent    = false;
 
-    DeleteWidget*     page;
+    DeleteWidget*     page                           = nullptr;
 
-    QDialogButtonBox* buttons;
+    QDialogButtonBox* buttons                        = nullptr;
 };
 
 DeleteDialog::DeleteDialog(QWidget* const parent)

@@ -571,7 +571,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
             if (enabled)
             {
                 count++;
-                new QTreeWidgetItem(ocvhdw, QStringList() << name << (enabled ? SUPPORTED_YES : SUPPORTED_NO));
+                new QTreeWidgetItem(ocvhdw, QStringList() << name << SUPPORTED_YES);
             }
         }
     }

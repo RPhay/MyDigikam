@@ -17,34 +17,8 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN ImageDialog::Private
-{
-
-public:
-
-    explicit Private()
-        : dlg         (nullptr),
-          provider    (nullptr),
-          showToolTips(true),
-          toolTipTimer(nullptr),
-          toolTip     (nullptr),
-          toolTipView (nullptr)
-    {
-    }
-
-    QStringList               fileFormats;
-    QList<QUrl>               urls;
-    DFileDialog*              dlg;
-    ImageDialogIconProvider*  provider;
-    bool                      showToolTips;
-    QTimer*                   toolTipTimer;
-    ImageDialogToolTip*       toolTip;
-    QAbstractItemView*        toolTipView;
-    QModelIndex               toolTipIndex;
-    QUrl                      toolTipUrl;
-};
-
-ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url, bool singleSelect, const QString& caption)
+ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url,
+                         bool singleSelect, const QString& caption)
     : QObject(parent),
       d      (new Private)
 {

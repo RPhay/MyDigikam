@@ -42,17 +42,14 @@ class Q_DECL_HIDDEN DBusyDlg::Private
 {
 public:
 
-    explicit Private() :
-        thread(nullptr)
-    {
-    }
+    Private() = default;
 
-    DBusyThread* thread;
+    DBusyThread* thread = nullptr;
 };
 
 DBusyDlg::DBusyDlg(const QString& txt, QWidget* const parent)
     : QProgressDialog(parent, Qt::FramelessWindowHint),
-      d(new Private)
+      d              (new Private)
 {
     setLabelText(txt);
     setCancelButton(nullptr);

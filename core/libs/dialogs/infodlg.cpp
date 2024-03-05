@@ -46,18 +46,12 @@ class Q_DECL_HIDDEN InfoDlg::Private
 {
 public:
 
-    explicit Private()
-      : listView(nullptr),
-        page    (nullptr),
-        buttons (nullptr),
-        tabView (nullptr)
-    {
-    }
+    Private() = default;
 
-    QTreeWidget*      listView;
-    QWidget*          page;
-    QDialogButtonBox* buttons;
-    QTabWidget*       tabView;
+    QTreeWidget*      listView  = nullptr;
+    QWidget*          page      = nullptr;
+    QDialogButtonBox* buttons   = nullptr;
+    QTabWidget*       tabView   = nullptr;
 };
 
 InfoDlg::InfoDlg(QWidget* const parent)

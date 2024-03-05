@@ -55,13 +55,7 @@ class Q_DECL_HIDDEN WebBrowserDlg::Private
 {
 public:
 
-    explicit Private()
-      : browser    (nullptr),
-        toolbar    (nullptr),
-        progressbar(nullptr),
-        searchbar  (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
@@ -69,17 +63,17 @@ public:
 
 #ifdef HAVE_QWEBENGINE
 
-    QWebEngineView*    browser;
+    QWebEngineView*    browser      = nullptr;
 
 #else
 
-    QWebView*          browser;
+    QWebView*          browser      = nullptr;
 
 #endif
 
-    QToolBar*          toolbar;
-    StatusProgressBar* progressbar;
-    SearchTextBar*     searchbar;
+    QToolBar*          toolbar      = nullptr;
+    StatusProgressBar* progressbar  = nullptr;
+    SearchTextBar*     searchbar    = nullptr;
 };
 
 WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDeskBrowser)

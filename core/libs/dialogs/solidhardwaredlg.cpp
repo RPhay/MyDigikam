@@ -64,16 +64,11 @@ class Q_DECL_HIDDEN SolidHardwareDlg::Private
 {
 public:
 
-    explicit Private()
-      : header    (nullptr),
-        searchBar (nullptr),
-        eventsList(nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*        header;
-    SearchTextBar* searchBar;
-    QTreeWidget*   eventsList;
+    QLabel*        header       = nullptr;
+    SearchTextBar* searchBar    = nullptr;
+    QTreeWidget*   eventsList   = nullptr;
 };
 
 SolidHardwareDlg::SolidHardwareDlg(QWidget* const parent)
@@ -248,6 +243,7 @@ void SolidHardwareDlg::slotPopulateDevices()
 
 #endif
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (title.isEmpty())
             {
                 if (!device.vendor().isEmpty())

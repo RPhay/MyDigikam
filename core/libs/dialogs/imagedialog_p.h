@@ -51,4 +51,28 @@
 #include "thumbnailsize.h"
 #include "dfiledialog.h"
 
+namespace Digikam
+{
+
+class Q_DECL_HIDDEN ImageDialog::Private
+{
+
+public:
+
+    explicit Private() = default;
+
+    QStringList               fileFormats;
+    QList<QUrl>               urls;
+    DFileDialog*              dlg           = nullptr;
+    ImageDialogIconProvider*  provider      = nullptr;
+    bool                      showToolTips  = true;;
+    QTimer*                   toolTipTimer  = nullptr;
+    ImageDialogToolTip*       toolTip       = nullptr;
+    QAbstractItemView*        toolTipView   = nullptr;
+    QModelIndex               toolTipIndex;
+    QUrl                      toolTipUrl;
+};
+
+} // namespace Digikam
+
 #endif // DIGIKAM_IMAGE_DIALOG_P_H

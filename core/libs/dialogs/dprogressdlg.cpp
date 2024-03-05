@@ -39,27 +39,18 @@ class Q_DECL_HIDDEN DProgressDlg::Private
 {
 public:
 
-    explicit Private()
-      : logo       (nullptr),
-        title      (nullptr),
-        label      (nullptr),
-        actionPix  (nullptr),
-        actionLabel(nullptr),
-        progress   (nullptr),
-        buttons    (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*           logo;
-    QLabel*           title;
-    QLabel*           label;
+    QLabel*           logo          = nullptr;
+    QLabel*           title         = nullptr;
+    QLabel*           label         = nullptr;
 
-    QLabel*           actionPix;
-    DAdjustableLabel* actionLabel;
+    QLabel*           actionPix     = nullptr;
+    DAdjustableLabel* actionLabel   = nullptr;
 
-    QProgressBar*     progress;
+    QProgressBar*     progress      = nullptr;
 
-    QDialogButtonBox* buttons;
+    QDialogButtonBox* buttons       = nullptr;
 };
 
 DProgressDlg::DProgressDlg(QWidget* const parent, const QString& caption)

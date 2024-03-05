@@ -39,19 +39,15 @@ class Q_DECL_HIDDEN RawCameraDlg::Private
 {
 public:
 
-    explicit Private()
-      : header(nullptr),
-        searchBar(nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*        header;
-    SearchTextBar* searchBar;
+    QLabel*        header    = nullptr;
+    SearchTextBar* searchBar = nullptr;
 };
 
 RawCameraDlg::RawCameraDlg(QWidget* const parent)
     : InfoDlg(parent),
-      d(new Private)
+      d      (new Private)
 {
     setWindowTitle(i18nc("@title:window", "List of Supported RAW Cameras"));
 

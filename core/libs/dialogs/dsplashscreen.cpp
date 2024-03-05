@@ -41,29 +41,20 @@ class Q_DECL_HIDDEN DSplashScreen::Private
 
 public:
 
-    explicit Private()
-      : state               (0),
-        progressBarSize     (3),
-        timer               (nullptr),
-        version             (QLatin1String(digikam_version_short)),
-        messageColor        (Qt::white),
-        versionColor        (Qt::white),
-        lastStateUpdateTime (QTime::currentTime())
-    {
-    }
+    Private() = default;
 
-    int     state;
-    int     progressBarSize;
+    int     state               = 0;
+    int     progressBarSize     = 3;
 
-    QTimer* timer;
+    QTimer* timer               = nullptr;
 
     QString message;
-    QString version;
+    QString version             = QLatin1String(digikam_version_short);
 
-    QColor  messageColor;
-    QColor  versionColor;
+    QColor  messageColor        = Qt::white;
+    QColor  versionColor        = Qt::white;
 
-    QTime   lastStateUpdateTime;
+    QTime   lastStateUpdateTime = QTime::currentTime();
 };
 
 DSplashScreen::DSplashScreen()
