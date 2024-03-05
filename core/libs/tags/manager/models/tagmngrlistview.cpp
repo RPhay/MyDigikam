@@ -56,6 +56,7 @@ void TagMngrListView::startDrag(Qt::DropActions supportedActions)
     if (!tagmodel)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error! no model available!";
+
         return;
     }
 
@@ -64,6 +65,7 @@ void TagMngrListView::startDrag(Qt::DropActions supportedActions)
     if (!data)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error! no data obtained!";
+
         return;
     }
 
@@ -95,6 +97,7 @@ void TagMngrListView::dropEvent(QDropEvent* e)
     if (!tagmodel)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error! no model available!";
+
         return;
     }
 
@@ -111,9 +114,9 @@ void TagMngrListView::dropEvent(QDropEvent* e)
     QItemSelectionModel* const model = selectionModel();
 
     model->clearSelection();
-    setCurrentIndex(tagmodel->index(toSel.first()+1, 0));
+    setCurrentIndex(tagmodel->index(toSel.first() + 1, 0));
 
-    for (int it = toSel.first()+1 ; it <= toSel.last() ; ++it)
+    for (int it = toSel.first() + 1 ; it <= toSel.last() ; ++it)
     {
         model->select(tagmodel->index(it, 0), model->Select);
     }
@@ -176,6 +179,7 @@ void TagMngrListView::slotDeleteSelected()
     if (!tagmodel)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error! no model available!";
+
         return;
     }
 
