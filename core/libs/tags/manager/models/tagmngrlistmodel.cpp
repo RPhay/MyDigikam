@@ -38,12 +38,9 @@ class Q_DECL_HIDDEN TagMngrListModel::Private
 {
 public:
 
-    explicit Private()
-      : rootItem(nullptr)
-    {
-    }
+    Private() = default;
 
-    ListItem*  rootItem;
+    ListItem*  rootItem         = nullptr;
     QList<int> dragNewSelection;
 };
 
@@ -65,6 +62,7 @@ TagMngrListModel::~TagMngrListModel()
 ListItem* TagMngrListModel::addItem(QList<QVariant> values)
 {
     Q_EMIT layoutAboutToBeChanged();
+
     ListItem* const item = new ListItem(values, d->rootItem);
 
     /**
@@ -76,6 +74,7 @@ ListItem* TagMngrListModel::addItem(QList<QVariant> values)
     if (!existingItem)
     {
         d->rootItem->appendChild(item);
+
         Q_EMIT layoutChanged();
 
         return item;
@@ -106,7 +105,9 @@ void TagMngrListModel::deleteItem(ListItem* const item)
     }
 
     Q_EMIT layoutAboutToBeChanged();
+
     d->rootItem->deleteChild(item);
+
     Q_EMIT layoutChanged();
 
 }
@@ -139,6 +140,7 @@ bool TagMngrListModel::setData(const QModelIndex& index, const QVariant& value, 
     if (!parent)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "No node found";
+
         return false;
     }
 
@@ -208,9 +210,10 @@ bool TagMngrListModel::dropMimeData(const QMimeData* data, Qt::DropAction action
     }
 
     row -= temp;
+
     Q_EMIT layoutAboutToBeChanged();
 
-    for (QList<int>::iterator itr = toRemove.end() -1 ; itr != toRemove.begin() -1 ; --itr)
+    for (QList<int>::iterator itr = toRemove.end() -1 ; itr > toRemove.begin() -1 ; --itr)
     {
         d->rootItem->deleteChild(*itr);
     }

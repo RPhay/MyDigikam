@@ -31,16 +31,13 @@ class Q_DECL_HIDDEN ListItem::Private
 {
 public:
 
-    explicit Private()
-      : parentItem(nullptr)
-    {
-    }
+    Private() = default;
 
     QList<ListItem*> childItems;
     QList<ListItem*> toDelItems;
     QList<QVariant>  itemData;
     QList<int>       tagIds;
-    ListItem*        parentItem;
+    ListItem*        parentItem = nullptr;
 };
 
 ListItem::ListItem(QList<QVariant>& data, ListItem* const parent)
@@ -147,7 +144,9 @@ QVariant ListItem::data(int role) const
                 display.append(album->title()+ QLatin1String(", "));
 
                 if (role == Qt::DisplayRole && display.size() > 30)
+                {
                     break;
+                }
             }
 
             if (display.isEmpty())
