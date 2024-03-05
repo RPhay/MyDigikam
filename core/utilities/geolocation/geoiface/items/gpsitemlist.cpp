@@ -200,18 +200,19 @@ void GPSItemList::slotThumbnailFromModel(const QPersistentModelIndex& index, con
 void GPSItemList::saveSettingsToGroup(KConfigGroup* const group)
 {
     group->writeEntry("Image List Thumbnail Size", d->itemDelegate->getThumbnailSize());
-    group->writeEntry("Header State",              header()->saveState());
+    group->writeEntry("Header State",              header()->saveState().toBase64());
 }
 
 void GPSItemList::readSettingsFromGroup(const KConfigGroup* const group)
 {
     setThumbnailSize(group->readEntry("Image List Thumbnail Size", 60));
 
-    const QByteArray headerState = group->readEntry("Header State", QByteArray());
+    QByteArray headerState;
+    headerState = group->readEntry("Header State", headerState);
 
     if (!headerState.isEmpty())
     {
-        header()->restoreState(headerState);
+        header()->restoreState(QByteArray::fromBase64(headerState));
     }
     else
     {

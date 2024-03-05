@@ -221,6 +221,7 @@ void TableViewColumnProfile::loadSettings(const KConfigGroup& configGroup)
 {
     name               = configGroup.readEntry("Profile Name", QString());
     headerState        = configGroup.readEntry("Header State", QByteArray());
+    headerState        = QByteArray::fromBase64(headerState);
     const int nColumns = configGroup.readEntry("Column Count", int(0));
 
     for (int i = 0 ; i < nColumns ; ++i)
@@ -285,7 +286,7 @@ void TableViewColumnProfile::saveSettings(KConfigGroup& configGroup)
     configGroup.writeEntry(QLatin1String("Profile Name"), name);
     const int nColumns = columnConfigurationList.count();
     configGroup.writeEntry(QLatin1String("Column Count"), nColumns);
-    configGroup.writeEntry(QLatin1String("Header State"), headerState);
+    configGroup.writeEntry(QLatin1String("Header State"), headerState.toBase64());
 
     for (int i = 0 ; i < nColumns ; ++i)
     {

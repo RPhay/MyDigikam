@@ -707,21 +707,23 @@ void GeolocationEdit::readSettings()
 
     if (group.hasKey("SplitterState V1"))
     {
-        const QByteArray splitterState = QByteArray::fromBase64(group.readEntry("SplitterState V1", QByteArray()));
+        QByteArray splitterState;
+        splitterState = group.readEntry("SplitterState V1", splitterState);
 
         if (!splitterState.isEmpty())
         {
-            d->VSplitter->restoreState(splitterState);
+            d->VSplitter->restoreState(QByteArray::fromBase64(splitterState));
         }
     }
 
     if (group.hasKey("SplitterState H1"))
     {
-        const QByteArray splitterState = QByteArray::fromBase64(group.readEntry("SplitterState H1", QByteArray()));
+        QByteArray splitterState;
+        splitterState = group.readEntry("SplitterState H1", splitterState);
 
         if (!splitterState.isEmpty())
         {
-            d->HSplitter->restoreState(splitterState);
+            d->HSplitter->restoreState(QByteArray::fromBase64(splitterState));
         }
     }
 
