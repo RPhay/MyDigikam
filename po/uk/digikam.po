@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-04 01:34+0000\n"
+"POT-Creation-Date: 2024-03-05 01:33+0000\n"
 "PO-Revision-Date: 2024-02-26 15:12+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -3142,7 +3142,7 @@ msgid "Map Search"
 msgstr "Пошук за картою"
 
 #: core/app/views/stack/itemiconview_p.h:138
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1166
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
 msgstr "Останній пошук"
@@ -28378,7 +28378,7 @@ msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
 msgstr "Каталог спільного доступу змонтовано до «%1»"
 
-#: core/libs/database/coredb/coredbaccess.cpp:310
+#: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
 #: core/libs/facesengine/facedb/facedbaccess.cpp:238
@@ -28429,7 +28429,7 @@ msgstr ""
 "Помилка під час спроби перетворення бази даних.\n"
 " Подробиці: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:206
+#: core/libs/database/coredb/coredbschemaupdater.cpp:199
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -28443,7 +28443,7 @@ msgstr ""
 "Змініть права доступу до бази даних відповідним чином і перезапустіть "
 "digiKam."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:240
+#: core/libs/database/coredb/coredbschemaupdater.cpp:233
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -28454,7 +28454,7 @@ msgstr ""
 "поточної бази даних неможливо перевірити. Спробуйте почати з порожньої бази "
 "даних. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:263
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28468,7 +28468,7 @@ msgstr ""
 "формат бази даних є занадто новим) Будь ласка, використовуйте новішу версію "
 "digiKam, якою ви користувалися раніше. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:332
+#: core/libs/database/coredb/coredbschemaupdater.cpp:325
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
 #, kde-format
@@ -28479,7 +28479,7 @@ msgstr ""
 "У базі даних не вдалося створити таблиці.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:346
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -28495,7 +28495,7 @@ msgstr ""
 "support). Крім того, будь ласка, перегляньте повідомлення, які digiKam "
 "виводить до консолі. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:414
+#: core/libs/database/coredb/coredbschemaupdater.cpp:407
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -28513,7 +28513,7 @@ msgstr ""
 "digikam.org/support). Крім того, будь ласка, перегляньте інформацію, яку "
 "digiKam виводить до термінала. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:452
+#: core/libs/database/coredb/coredbschemaupdater.cpp:445
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28525,7 +28525,7 @@ msgstr ""
 "Можливою причиною є пропущене оновлення бази даних до поточної версії на "
 "сервері. Перезапустіть digiKam, що виконати потрібне оновлення бази даних."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:461
+#: core/libs/database/coredb/coredbschemaupdater.cpp:454
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28536,7 +28536,7 @@ msgstr ""
 "Будь ласка, ознайомтеся з повідомленнями про помилки, які виведено до "
 "консолі, і повідомте про цю ваду за допомогою сторінки bugs.kde.org."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:680
+#: core/libs/database/coredb/coredbschemaupdater.cpp:674
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28546,12 +28546,12 @@ msgstr ""
 "Не вдалося виявити схеми оновлення бази даних. Будь ласка, переконайтеся, що "
 "файл dbconfig.xml поточної версії digiKam встановлено за належною адресою. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:701
+#: core/libs/database/coredb/coredbschemaupdater.cpp:695
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Схему бази даних оновлено до версії %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:847
+#: core/libs/database/coredb/coredbschemaupdater.cpp:842
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28562,12 +28562,12 @@ msgstr ""
 "(«%2»). Повідомлення про помилку: «%3». Будь ласка, переконайтеся, що цей "
 "файл можна скопіювати, або вилучіть його."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:864
 #, kde-format
 msgid "Copied database file"
 msgstr "Скопійовано файл бази даних"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:874
+#: core/libs/database/coredb/coredbschemaupdater.cpp:869
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28578,22 +28578,22 @@ msgstr ""
 "але цей файл неможливо відкрити. Будь ласка, вилучіть обидва цих файли і "
 "спробуйте знову, почавши роботу з порожньої бази даних. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:895
+#: core/libs/database/coredb/coredbschemaupdater.cpp:890
 #, kde-format
 msgid "Opened new database file"
 msgstr "Відкрито новий файл бази даних"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:994
+#: core/libs/database/coredb/coredbschemaupdater.cpp:989
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Підготовлено створення таблиці"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1013
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
 #, kde-format
 msgid "Created tables"
 msgstr "Створені таблиці"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1026
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28604,7 +28604,7 @@ msgstr ""
 "оновлення схеми відкладено. Будь ласка, спробуйте почати роботу з порожньої "
 "бази даних, або виправте ваші налаштування."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1048
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28624,52 +28624,52 @@ msgstr ""
 "створювати нову базу даних на основі неправильних припущень, пов'язаних з "
 "некоректним встановленням програми."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1075
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
 #, kde-format
 msgid "Configured one album root"
 msgstr "Налаштовано кореневу теку одного альбому"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1101
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
 #, kde-format
 msgid "Imported albums"
 msgstr "Імпортовані альбоми"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1138
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
 #, kde-format
 msgid "Imported images information"
 msgstr "Імпортована інформація щодо зображень"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1168
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Попередній пошук (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1229
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Ініціалізовано і імпортовано фільтр суфіксів файлів"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1251
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Виконано початкове повне сканування"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1275
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Імпортовано дати створення"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1306
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
 #, kde-format
 msgid "Imported comments"
 msgstr "Імпортовано коментарі"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1333
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
 #, kde-format
 msgid "Imported ratings"
 msgstr "Імпортовано оцінки"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1344
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Відкинуті таблиці версії 3"
@@ -28763,43 +28763,43 @@ msgstr ""
 "<p><b>Сталася помилка під час роботи з базою даних.</b></p>Подробиці:\n"
 "%1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:457
+#: core/libs/database/history/itemhistorygraphmodel.cpp:448
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "Початкові зображення"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:486
+#: core/libs/database/history/itemhistorygraphmodel.cpp:477
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "Журнал змін зображення"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:569
+#: core/libs/database/history/itemhistorygraphmodel.cpp:560
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Похідні зображення"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:579
+#: core/libs/database/history/itemhistorygraphmodel.cpp:570
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Пов'язані зображення"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:586
+#: core/libs/database/history/itemhistorygraphmodel.cpp:577
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Тотожні зображення"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:642
+#: core/libs/database/history/itemhistorygraphmodel.cpp:633
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Проміжні кроки:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:856
+#: core/libs/database/history/itemhistorygraphmodel.cpp:847
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28809,7 +28809,7 @@ msgstr ""
 "%1\n"
 "(Початкове зображення)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:861
+#: core/libs/database/history/itemhistorygraphmodel.cpp:852
 #, kde-format
 msgctxt "@item filename"
 msgid ""

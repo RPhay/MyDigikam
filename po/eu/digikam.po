@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-04 01:34+0000\n"
+"POT-Creation-Date: 2024-03-05 01:33+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3138,7 +3138,7 @@ msgid "Map Search"
 msgstr "Mapa bilaketa"
 
 #: core/app/views/stack/itemiconview_p.h:138
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1166
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
 msgstr "Azken bilaketa"
@@ -28695,7 +28695,7 @@ msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
 msgstr "Partekatutako direktorioa <b>%1</b>(e)an muntatu da"
 
-#: core/libs/database/coredb/coredbaccess.cpp:310
+#: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
 #: core/libs/facesengine/facedb/facedbaccess.cpp:238
@@ -28746,7 +28746,7 @@ msgstr ""
 "Errorea datu-basea bihurtzean.\n"
 " Xehetasunak: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:206
+#: core/libs/database/coredb/coredbschemaupdater.cpp:199
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -28759,7 +28759,7 @@ msgstr ""
 " %1\n"
 "Egiaztatu zure pribilegioak datu-basean eta berrabiatu digiKam."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:240
+#: core/libs/database/coredb/coredbschemaupdater.cpp:233
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -28770,7 +28770,7 @@ msgstr ""
 "datu-basearen eskemaren bertsioa ezin da egiaztatu. Saiatu datu-base huts "
 "batekin hasten. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:263
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28783,7 +28783,7 @@ msgstr ""
 "adierazten du digiKamen bertsio hau zaharregia dela, edo datu-basearen "
 "formatua berriegia) Erabili lehen erabilia duzun digiKamen bertsio berriagoa."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:332
+#: core/libs/database/coredb/coredbschemaupdater.cpp:325
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
 #, kde-format
@@ -28794,7 +28794,7 @@ msgstr ""
 "Huts egin du datu-basean taulak sortzea\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:346
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -28810,7 +28810,7 @@ msgstr ""
 "digikam.org/support). Gainera, begiratu digiKamek kontsolan inprimatzen "
 "duena."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:414
+#: core/libs/database/coredb/coredbschemaupdater.cpp:407
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -28827,7 +28827,7 @@ msgstr ""
 "garatzaileen posta zerrendan (begiratu www.digikam.org/support). Horrezaz "
 "gain, begiratu digiKamek kontsolan inprimatzen duena."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:452
+#: core/libs/database/coredb/coredbschemaupdater.cpp:445
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -28843,7 +28843,7 @@ msgstr ""
 "kontsolan inprimatutako errore mezuak eta eman honen berri akats gisa «bugs."
 "kde.org»  helbidean."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:461
+#: core/libs/database/coredb/coredbschemaupdater.cpp:454
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -28858,7 +28858,7 @@ msgstr ""
 "kontsolan inprimatutako errore mezuak eta eman honen berri akats gisa «bugs."
 "kde.org»  helbidean."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:680
+#: core/libs/database/coredb/coredbschemaupdater.cpp:674
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28868,12 +28868,12 @@ msgstr ""
 "Datu-basea eguneratu ekintza ezin da aurkitu. Ziurtatu digKamen bertsio "
 "honen dbconfig.xml fitxategia dagokion lekuan instalatua dagoela."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:701
+#: core/libs/database/coredb/coredbschemaupdater.cpp:695
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Eskema %1 bertsiora eguneratu da."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:847
+#: core/libs/database/coredb/coredbschemaupdater.cpp:842
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28884,12 +28884,12 @@ msgstr ""
 "kopiatzea. Errore-mezua: \"%3\". Ziurtatu fitxategiak kopia daitekeela, edo "
 "ezabatu ezazu."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:864
 #, kde-format
 msgid "Copied database file"
 msgstr "Datu-base fitxategia kopiatu da"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:874
+#: core/libs/database/coredb/coredbschemaupdater.cpp:869
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28900,22 +28900,22 @@ msgstr ""
 "da, baina ezin da ireki. Ezabatu fitxategiak biak eta saiatu berriz, datu-"
 "base huts batekin hasiz."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:895
+#: core/libs/database/coredb/coredbschemaupdater.cpp:890
 #, kde-format
 msgid "Opened new database file"
 msgstr "Datu-base fitxategi berria ireki da"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:994
+#: core/libs/database/coredb/coredbschemaupdater.cpp:989
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Taula sorrera prestatu da"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1013
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
 #, kde-format
 msgid "Created tables"
 msgstr "Taulak sortu dira"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1026
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28926,7 +28926,7 @@ msgstr ""
 "behera utzi eskemaren eguneraketaren prozesua. Saiatu datu-base huts "
 "batekin, edo konpondu konfigurazioa."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1048
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28946,52 +28946,52 @@ msgstr ""
 "dugulako hondatutako instalazio baten uste faltsuetan oinarritutako datu-"
 "base berri bat sortu nahi."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1075
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
 #, kde-format
 msgid "Configured one album root"
 msgstr "Album erro bat konfiguratu da"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1101
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
 #, kde-format
 msgid "Imported albums"
 msgstr "Inportatutako albumak"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1138
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
 #, kde-format
 msgid "Imported images information"
 msgstr "Inportatutako irudien informazioa"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1168
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Azken bilaketa (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1229
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Fitxategi atzizki iragazkia hasieratu eta inportatu da"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1251
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Hasierako azterketa osoa egina"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1275
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Sortze datak inportatu dira"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1306
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
 #, kde-format
 msgid "Imported comments"
 msgstr "Iruzkinak inportatu dira"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1333
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
 #, kde-format
 msgid "Imported ratings"
 msgstr "Balioztatzeak inportatu dira"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1344
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "v3 taulak laga dira"
@@ -29083,43 +29083,43 @@ msgstr ""
 "<p><b>Datu-base errore bat gertatu da.</b></p>Zehaztasunak:\n"
 " %1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:457
+#: core/libs/database/history/itemhistorygraphmodel.cpp:448
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "Sorburu irudiak"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:486
+#: core/libs/database/history/itemhistorygraphmodel.cpp:477
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "Irudi historia"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:569
+#: core/libs/database/history/itemhistorygraphmodel.cpp:560
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Eratorritako irudiak"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:579
+#: core/libs/database/history/itemhistorygraphmodel.cpp:570
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Zerikusia duten irudiak"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:586
+#: core/libs/database/history/itemhistorygraphmodel.cpp:577
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Irudi berberak"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:642
+#: core/libs/database/history/itemhistorygraphmodel.cpp:633
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Bitarteko urratsak:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:856
+#: core/libs/database/history/itemhistorygraphmodel.cpp:847
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -29129,7 +29129,7 @@ msgstr ""
 "%1\n"
 "(jatorrizko irudia)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:861
+#: core/libs/database/history/itemhistorygraphmodel.cpp:852
 #, kde-format
 msgctxt "@item filename"
 msgid ""

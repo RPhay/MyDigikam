@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-04 01:34+0000\n"
+"POT-Creation-Date: 2024-03-05 01:33+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -3159,7 +3159,7 @@ msgid "Map Search"
 msgstr "मैप खोज"
 
 #: core/app/views/stack/itemiconview_p.h:138
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1166
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
 msgstr "पिछला खोज"
@@ -27183,7 +27183,7 @@ msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
 msgstr ""
 
-#: core/libs/database/coredb/coredbaccess.cpp:310
+#: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
 #: core/libs/facesengine/facedb/facedbaccess.cpp:238
@@ -27245,7 +27245,7 @@ msgstr ""
 "डाटाबेस बैकएन्ड खोले मं गलती.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:206
+#: core/libs/database/coredb/coredbschemaupdater.cpp:199
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -27254,7 +27254,7 @@ msgid ""
 "Check your privileges on the database and restart digiKam."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:240
+#: core/libs/database/coredb/coredbschemaupdater.cpp:233
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -27262,7 +27262,7 @@ msgid ""
 "empty database. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:263
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -27271,7 +27271,7 @@ msgid ""
 "recent.) Please use the more recent version of digiKam that you used before. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:332
+#: core/libs/database/coredb/coredbschemaupdater.cpp:325
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
 #, kde-format
@@ -27282,7 +27282,7 @@ msgstr ""
 "डाटाबेस मं टेबल बनाए मं फेल.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:346
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -27292,7 +27292,7 @@ msgid ""
 "please have a look at what digiKam prints on the console. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:414
+#: core/libs/database/coredb/coredbschemaupdater.cpp:407
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -27303,7 +27303,7 @@ msgid ""
 "support). As well, please have a look at what digiKam prints on the console. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:452
+#: core/libs/database/coredb/coredbschemaupdater.cpp:445
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -27312,7 +27312,7 @@ msgid ""
 "database."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:461
+#: core/libs/database/coredb/coredbschemaupdater.cpp:454
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -27320,7 +27320,7 @@ msgid ""
 "as a bug at bugs.kde.org."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:680
+#: core/libs/database/coredb/coredbschemaupdater.cpp:674
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -27328,12 +27328,12 @@ msgid ""
 "place. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:701
+#: core/libs/database/coredb/coredbschemaupdater.cpp:695
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:847
+#: core/libs/database/coredb/coredbschemaupdater.cpp:842
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27341,12 +27341,12 @@ msgid ""
 "delete it."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:864
 #, kde-format
 msgid "Copied database file"
 msgstr "डाटाबेस फाइल नकल बनाइस"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:874
+#: core/libs/database/coredb/coredbschemaupdater.cpp:869
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -27354,22 +27354,22 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:895
+#: core/libs/database/coredb/coredbschemaupdater.cpp:890
 #, kde-format
 msgid "Opened new database file"
 msgstr "नवा डाटाबेस फाइल  खोलिस"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:994
+#: core/libs/database/coredb/coredbschemaupdater.cpp:989
 #, kde-format
 msgid "Prepared table creation"
 msgstr "टेबल बनाए के तैयारी"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1013
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
 #, kde-format
 msgid "Created tables"
 msgstr "टेबल बनाइस"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1026
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -27377,7 +27377,7 @@ msgid ""
 "your configuration."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1048
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -27389,52 +27389,52 @@ msgid ""
 "based on false assumptions from a broken installation."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1075
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
 #, kde-format
 msgid "Configured one album root"
 msgstr "रूट एलबम कान्फिगर करिस"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1101
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
 #, kde-format
 msgid "Imported albums"
 msgstr "एलबम आयातित"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1138
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
 #, kde-format
 msgid "Imported images information"
 msgstr "फोटू जानकारी आयातित"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1168
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
 #, fuzzy, kde-format
 msgid "Last Search (0.9)"
 msgstr "पिछला खोज"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1229
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "फाइल सफिक्स छनइया इनिसियलाइज अउ आयातित"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1251
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "सुरू मं पूरा स्कैन करिस"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1275
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
 #, kde-format
 msgid "Imported creation dates"
 msgstr "बनाए के तारीक आयातित"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1306
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
 #, kde-format
 msgid "Imported comments"
 msgstr "टिप्पनियाँ आयातित"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1333
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
 #, kde-format
 msgid "Imported ratings"
 msgstr "दरजा आयातित"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1344
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "वी३ टेबल छोड़ा"
@@ -27508,43 +27508,43 @@ msgid ""
 " %1"
 msgstr ""
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:457
+#: core/libs/database/history/itemhistorygraphmodel.cpp:448
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "फोटू छांटव (&S)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:486
+#: core/libs/database/history/itemhistorygraphmodel.cpp:477
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "फोटू संपादक "
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:569
+#: core/libs/database/history/itemhistorygraphmodel.cpp:560
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "फोटू सहेजव"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:579
+#: core/libs/database/history/itemhistorygraphmodel.cpp:570
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "फोटू चुनव"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:586
+#: core/libs/database/history/itemhistorygraphmodel.cpp:577
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "फोटू खोलव"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:642
+#: core/libs/database/history/itemhistorygraphmodel.cpp:633
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "इंटीग्रल चरन:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:856
+#: core/libs/database/history/itemhistorygraphmodel.cpp:847
 #, fuzzy, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -27552,7 +27552,7 @@ msgid ""
 "(Original Image)"
 msgstr "असली फोटू:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:861
+#: core/libs/database/history/itemhistorygraphmodel.cpp:852
 #, fuzzy, kde-format
 msgctxt "@item filename"
 msgid ""
