@@ -889,8 +889,6 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                         quint64 infoPixelSize = (quint64)info.dimensions().width() *
                                                 (quint64)info.dimensions().height();
 
-                        bool referenceFound = false;
-
                         if (useReferenceImages)
                         {
                             for (auto it = refs.begin() ; it != refs.end() ; ++it)

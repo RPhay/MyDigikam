@@ -51,19 +51,17 @@ class Q_DECL_HIDDEN valStruct
 
 public:
 
-    valStruct()
-      : d(0.0),
-        i(0)
-    {
-    }
-
-    Unit d;   ///< [f]abs(a[i])
-    int  i;   ///< index i of a[i]
+    valStruct() = default;
 
     bool operator< (const valStruct& right) const
     {
         return (d > right.d);
     }
+
+public:
+
+    Unit d = 0.0;   ///< [f]abs(a[i])
+    int  i = 0;     ///< index i of a[i]
 };
 
 typedef std::priority_queue<valStruct> valqueue;
