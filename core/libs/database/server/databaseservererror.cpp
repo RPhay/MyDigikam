@@ -34,7 +34,7 @@ DatabaseServerError::~DatabaseServerError()
 {
 }
 
-int DatabaseServerError::getErrorType() const
+DatabaseServerError::DatabaseServerErrorEnum DatabaseServerError::getErrorType() const
 {
     return m_ErrorType;
 }

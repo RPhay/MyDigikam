@@ -131,7 +131,8 @@ private:
     /**
      * Returns i18n converted error message and writes to qCDebug.
      */
-    QString processErrorLog(QProcess* const process, const QString& msg) const;
+    QString processErrorLog(QProcess* const process,
+                            const QString& msg)                          const;
 
 private:
 

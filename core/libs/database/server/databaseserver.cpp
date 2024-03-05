@@ -48,14 +48,10 @@ class Q_DECL_HIDDEN DatabaseServer::Private
 {
 public:
 
-    explicit Private()
-        : databaseProcess(nullptr),
-          serverPort(3307)
-    {
-    }
+    Private() = default;
 
     DbEngineParameters     params;
-    QProcess*              databaseProcess;
+    QProcess*              databaseProcess = nullptr;
 
     QString                internalDBName;
     QString                mysqlUpgradePath;
@@ -68,7 +64,7 @@ public:
     QString                actualConfig;
     QString                globalConfig;
 
-    int                    serverPort;
+    int                    serverPort      = 3307;
 };
 
 DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerStarter* const parent)
@@ -136,6 +132,7 @@ void DatabaseServer::run()
     while (databaseServerStateEnum != stopped);
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Shutting down database server";
+
     Q_EMIT done();
 }
 

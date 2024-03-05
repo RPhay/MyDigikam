@@ -57,15 +57,16 @@ public:
     DatabaseServerError(const DatabaseServerError& dbServerError);
     ~DatabaseServerError();
 
-    int     getErrorType() const;
-    void    setErrorType(DatabaseServerErrorEnum errorType);
-    QString getErrorText() const;
-    void    setErrorText(const QString& errorText);
+    DatabaseServerErrorEnum getErrorType() const;
+    void                    setErrorType(DatabaseServerErrorEnum errorType);
+
+    QString                 getErrorText() const;
+    void                    setErrorText(const QString& errorText);
 
 private:
 
-    QString m_ErrorText;
-    int     m_ErrorType;
+    QString                 m_ErrorText;
+    DatabaseServerErrorEnum m_ErrorType = NoErrors;
 };
 
 } // namespace Digikam

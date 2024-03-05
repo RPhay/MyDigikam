@@ -31,12 +31,9 @@ class Q_DECL_HIDDEN DatabaseServerStarter::Private
 {
 public:
 
-    explicit Private()
-        : internalServer(nullptr)
-    {
-    }
+    Private() = default;
 
-    DatabaseServer* internalServer;
+    DatabaseServer* internalServer = nullptr;
 };
 
 // -----------------------------------------------------------------------------------------------
