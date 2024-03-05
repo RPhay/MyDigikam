@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Gimp
+Exec="%ProgramFiles%/GIMP/bin/gimp-2.10.exe" %f
+Icon="%ProgramFiles%/GIMP/bin/gimp-2.10.exe"
+MimeType=image/jpg;image/raw
