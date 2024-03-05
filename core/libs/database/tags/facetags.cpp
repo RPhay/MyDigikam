@@ -166,12 +166,14 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
         if (FaceTags::isPerson(id))
         {
             qCDebug(DIGIKAM_DATABASE_LOG) << "Found tag with name" << name << "is already a person." << id;
+
             return id;
         }
         else if (convert)
         {
             qCDebug(DIGIKAM_DATABASE_LOG) << "Converting tag with name" << name << "to a person." << id;
             makeFaceTag(id, fullName);
+
             return id;
         }
     }

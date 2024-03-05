@@ -58,24 +58,18 @@ class Q_DECL_HIDDEN TagsCache::Private
 public:
 
     explicit Private(TagsCache* const q)
-      : initialized(false),
-        needUpdateInfos(true),
-        needUpdateHash(true),
-        needUpdateProperties(true),
-        needUpdateLabelTags(true),
-        changingDB(false),
-        q(q)
+        : q(q)
     {
     }
 
 public:
 
-    volatile bool               initialized;
-    volatile bool               needUpdateInfos;
-    volatile bool               needUpdateHash;
-    volatile bool               needUpdateProperties;
-    volatile bool               needUpdateLabelTags;
-    volatile bool               changingDB;
+    volatile bool               initialized             = false;
+    volatile bool               needUpdateInfos         = true;
+    volatile bool               needUpdateHash          = true;
+    volatile bool               needUpdateProperties    = true;
+    volatile bool               needUpdateLabelTags     = true;
+    volatile bool               changingDB              = false;
 
     QReadWriteLock              lock;
     QList<TagShortInfo>         infos;
@@ -87,7 +81,7 @@ public:
     QVector<int>                colorLabelsTags; ///< index = Label enum, value = tagId
     QVector<int>                pickLabelsTags;
 
-    TagsCache* const            q;
+    TagsCache* const            q                       = nullptr;
 
 public:
 
@@ -590,6 +584,7 @@ int TagsCache::tagForPath(const QString& path) const
     }
 
     // split the path into its components
+
     QStringList tagHierarchy = path.split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
 
     if (tagHierarchy.isEmpty())
@@ -1041,6 +1036,7 @@ void TagsCache::slotTagChanged(const TagChangeset& changeset)
     if (changeset.operation() == TagChangeset::Deleted)
     {
         QString name = this->tagName(changeset.tagId());
+
         Q_EMIT tagAboutToBeDeleted(name);
     }
 

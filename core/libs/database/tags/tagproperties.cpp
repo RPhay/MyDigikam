@@ -34,10 +34,7 @@ class Q_DECL_HIDDEN TagProperties::TagPropertiesPriv : public QSharedData
 {
 public:
 
-    explicit TagPropertiesPriv()
-      : tagId(-1)
-    {
-    }
+    TagPropertiesPriv() = default;
 
     static TagPropertiesPrivSharedPointer createGuarded(int tagId);
 
@@ -45,7 +42,7 @@ public:
 
 public:
 
-    int                         tagId;
+    int                         tagId = -1;
     QMultiMap<QString, QString> properties;
 };
 
@@ -168,6 +165,7 @@ void TagProperties::setProperty(const QString& key, const QString& value)
     {
         return;
     }
+
     if (d->properties.contains(key, value) && d->properties.count(key) == 1)
     {
         return;

@@ -263,9 +263,9 @@ QSize TagRegion::adjustToOrientation(QRect& region, int rotation, const QSize& f
 {
     QSize size = fullSize;
 
-    if ((rotation == MetaEngine::ORIENTATION_ROT_90)       ||
-        (rotation == MetaEngine::ORIENTATION_ROT_90_HFLIP) ||
-        (rotation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
+    if      ((rotation == MetaEngine::ORIENTATION_ROT_90)       ||
+             (rotation == MetaEngine::ORIENTATION_ROT_90_HFLIP) ||
+             (rotation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
     {
         region.moveTo(size.height() - region.y() - region.height(), region.x());
         region.setSize(region.size().transposed());
