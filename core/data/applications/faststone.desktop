@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=FastStone Image Viewer
+Exec="%ProgramFiles(x86)%/FastStone Image Viewer/FSViewer.exe" %f
+Icon="%ProgramFiles(x86)%/FastStone Image Viewer/FSViewer.exe"
+MimeType=image/jpg;image/bmp;image/png
