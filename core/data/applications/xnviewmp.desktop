@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=XnView MP
+Exec=%ProgramFiles%/XnViewMP/xnviewmp.exe %f
+Icon=%ProgramFiles%/XnViewMP/xnviewmp.exe
+MimeType=image/jpg;image/bmp;image/png
