@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-04 01:34+0000\n"
+"POT-Creation-Date: 2024-03-05 01:33+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -3246,7 +3246,7 @@ msgid "Map Search"
 msgstr "การค้นหาผ่านแผนที่"
 
 #: core/app/views/stack/itemiconview_p.h:138
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1166
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
 msgstr "การค้นหาล่าสุด"
@@ -28220,7 +28220,7 @@ msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
 msgstr ""
 
-#: core/libs/database/coredb/coredbaccess.cpp:310
+#: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
 #: core/libs/facesengine/facedb/facedbaccess.cpp:238
@@ -28282,7 +28282,7 @@ msgstr ""
 "เกิดข้อผิดพลาดระหว่างเปิดแบ็คเอนด์ฐานข้อมูล\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:206
+#: core/libs/database/coredb/coredbschemaupdater.cpp:199
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -28291,7 +28291,7 @@ msgid ""
 "Check your privileges on the database and restart digiKam."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:240
+#: core/libs/database/coredb/coredbschemaupdater.cpp:233
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -28302,7 +28302,7 @@ msgstr ""
 "ทำให้ไม่สามารถตรวจความถูกต้องของรุ่นของชุดรูปแบบฐานข้อมูลปัจจุบันได้ "
 "โปรดลองเริ่มการทำงานด้วยฐานข้อมูลเปล่าดู"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:263
 #, fuzzy, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28315,7 +28315,7 @@ msgstr ""
 "(ซึ่งหมายความว่าดิจิแคมรุ่นนี้เก่าเกินไปนั่นเอง หรือเป็นไปได้ว่า รูปแบบของฐานข้อมูลนั้นใหม่เกินไป) "
 "โปรดใช้ดิจิแคมรุ่นที่ใหม่มากกว่ารุ่นที่คุณกำลังใช้อยู่นี้"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:332
+#: core/libs/database/coredb/coredbschemaupdater.cpp:325
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
 #, kde-format
@@ -28326,7 +28326,7 @@ msgstr ""
 "ล้มเหลวในการสร้างตารางในฐานข้อมูล\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:346
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to open a database transaction on your database file \"%1\". This "
@@ -28347,7 +28347,7 @@ msgstr ""
 "devel@kde.org และควรตรวจสอบดูจากผลลัพธ์ที่ดิจิแคมแสดงออกมา ผ่านทางคอนโซลด้วย "
 "(ด้วยการเรียกดิจิแคมให้ทำงานผ่านทางเทอร์มินัล)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:414
+#: core/libs/database/coredb/coredbschemaupdater.cpp:407
 #, fuzzy, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -28365,7 +28365,7 @@ msgstr ""
 "org ก็ได้ ทั้งนี้คุณควรตรวจสอบดูจากผลลัพธ์ที่ดิจิแคมแสดงออกมา ผ่านทางคอนโซลด้วย "
 "(ด้วยการเรียกดิจิแคมให้ทำงานผ่านทางเทอร์มินัล)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:452
+#: core/libs/database/coredb/coredbschemaupdater.cpp:445
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28374,7 +28374,7 @@ msgid ""
 "database."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:461
+#: core/libs/database/coredb/coredbschemaupdater.cpp:454
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28382,7 +28382,7 @@ msgid ""
 "as a bug at bugs.kde.org."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:680
+#: core/libs/database/coredb/coredbschemaupdater.cpp:674
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28390,12 +28390,12 @@ msgid ""
 "place. "
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:701
+#: core/libs/database/coredb/coredbschemaupdater.cpp:695
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:847
+#: core/libs/database/coredb/coredbschemaupdater.cpp:842
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28406,12 +28406,12 @@ msgstr ""
 "ได้ข้อความผิดพลาดคือ: \"%3\" โปรดตรวจสอบเพื่อความแน่ใจว่า "
 "แฟ้มดังกล่าวสามารถที่จะคัดลอกหรือลบมันได้"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:864
 #, kde-format
 msgid "Copied database file"
 msgstr "คัดลอกฐานข้อมูลแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:874
+#: core/libs/database/coredb/coredbschemaupdater.cpp:869
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28422,22 +28422,22 @@ msgstr ""
 "เรียบร้อยแล้วแต่มันไม่สามารถเปิดได้ โปรดลบแฟ้มนี้และลองใหม่อีกครั้ง "
 "โดยจะเริ่มการทำงานใหม่ด้วยฐานข้อมูลเปล่า"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:895
+#: core/libs/database/coredb/coredbschemaupdater.cpp:890
 #, kde-format
 msgid "Opened new database file"
 msgstr "เปิดแฟ้มฐานข้อมูลใหม่แล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:994
+#: core/libs/database/coredb/coredbschemaupdater.cpp:989
 #, kde-format
 msgid "Prepared table creation"
 msgstr "เตรียมการสร้างตารางข้อมูลแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1013
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
 #, kde-format
 msgid "Created tables"
 msgstr "สร้างตารางข้อมูลเรียบร้อยแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1026
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28447,7 +28447,7 @@ msgstr ""
 "ไม่พบส่วนระบุถึงตำแหน่งของคลังอัลบั้มในแฟ้มปรับแต่ง กำลังยกเลิกกระบวนการปรับปรุงรายการ "
 "โปรดลองใหม่อีกครั้งโดยใช้ฐานข้อมูลเปล่า หรือแก้ไขการตั้งค่าของคุณเสียก่อน"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1048
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
 #, fuzzy, kde-format
 #| msgid ""
 #| "There was an error associating your albumLibraryPath (\"%1\") with a "
@@ -28475,52 +28475,52 @@ msgstr ""
 "เนื่องจากเราไม่ต้องการจะสร้างฐานข้อมูลใหม่ที่มีฐานจากสมมติฐานที่ว่า "
 "มีปัญหาในการติดตั้งโปรแกรมบนระบบ"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1075
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
 #, kde-format
 msgid "Configured one album root"
 msgstr "ปรับแต่งตำแหน่งรากของอัลบั้มแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1101
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
 #, kde-format
 msgid "Imported albums"
 msgstr "นำเข้าอัลบั้มแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1138
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
 #, kde-format
 msgid "Imported images information"
 msgstr "นำเข้าข้อมูลรายละเอียดของรูปภาพแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1168
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "การค้นหาล่าสุด (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1229
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "เริ่มใช้และนำเข้าตัวกรองคำนำหน้าแฟ้มเรียบร้อยแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1251
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "ทำการตรวจค้นเต็มรูปแบบแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1275
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
 #, kde-format
 msgid "Imported creation dates"
 msgstr "นำเข้าวันที่สร้างภาพแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1306
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
 #, kde-format
 msgid "Imported comments"
 msgstr "แสดงหมายเหตุของภาพแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1333
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
 #, kde-format
 msgid "Imported ratings"
 msgstr "นำเข้าระดับความชื่นชอบแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1344
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "ลบตารางข้อมูล รุ่น 3"
@@ -28604,43 +28604,43 @@ msgid ""
 " %1"
 msgstr ""
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:457
+#: core/libs/database/history/itemhistorygraphmodel.cpp:448
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "จัดเ&รียงรูปภาพ"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:486
+#: core/libs/database/history/itemhistorygraphmodel.cpp:477
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "เครื่องมือแก้ไขภาพ"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:569
+#: core/libs/database/history/itemhistorygraphmodel.cpp:560
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "บันทึกภาพ"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:579
+#: core/libs/database/history/itemhistorygraphmodel.cpp:570
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "เลือกภาพต่าง ๆ "
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:586
+#: core/libs/database/history/itemhistorygraphmodel.cpp:577
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "เปิดภาพ"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:642
+#: core/libs/database/history/itemhistorygraphmodel.cpp:633
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "ระดับขั้นเชิงอินทีกรัล:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:856
+#: core/libs/database/history/itemhistorygraphmodel.cpp:847
 #, fuzzy, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -28648,7 +28648,7 @@ msgid ""
 "(Original Image)"
 msgstr "ภาพต้นฉบับ"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:861
+#: core/libs/database/history/itemhistorygraphmodel.cpp:852
 #, fuzzy, kde-format
 msgctxt "@item filename"
 msgid ""
