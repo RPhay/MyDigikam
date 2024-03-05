@@ -83,51 +83,33 @@ class Q_DECL_HIDDEN TagsManager::Private
 {
 public:
 
-    explicit Private()
-      : tagMngrView     (nullptr),
-        tagPixmap       (nullptr),
-        searchBar       (nullptr),
-        splitter        (nullptr),
-        treeWindow      (nullptr),
-        mainToolbar     (nullptr),
-        organizeButton  (nullptr),
-        syncexportButton(nullptr),
-        tagProperties   (nullptr),
-        addAction       (nullptr),
-        delAction       (nullptr),
-        titleEdit       (nullptr),
-        listView        (nullptr),
-        tagPropWidget   (nullptr),
-        tagModel        (nullptr),
-        tagPropVisible  (false)
-    {
-    }
+    Private() = default;
 
-    TagMngrTreeView* tagMngrView;
-    QLabel*          tagPixmap;
-    SearchTextBarDb* searchBar;
+    TagMngrTreeView* tagMngrView        = nullptr;
+    QLabel*          tagPixmap          = nullptr;
+    SearchTextBarDb* searchBar          = nullptr;
 
 
-    QSplitter*       splitter;
-    QWidget*         treeWindow;
-    QToolBar*        mainToolbar;
-    QPushButton*     organizeButton;
-    QPushButton*     syncexportButton;
-    QAction*         tagProperties;
-    QAction*         addAction;
-    QAction*         delAction;
-    QAction*         titleEdit;
+    QSplitter*       splitter           = nullptr;
+    QWidget*         treeWindow         = nullptr;
+    QToolBar*        mainToolbar        = nullptr;
+    QPushButton*     organizeButton     = nullptr;
+    QPushButton*     syncexportButton   = nullptr;
+    QAction*         tagProperties      = nullptr;
+    QAction*         addAction          = nullptr;
+    QAction*         delAction          = nullptr;
+    QAction*         titleEdit          = nullptr;
 
     /**
      * Options unavailable for root tag
      */
     QList<QAction*>  rootDisabledOptions;
 
-    TagList*         listView;
-    TagPropWidget*   tagPropWidget;
-    TagModel*        tagModel;
+    TagList*         listView           = nullptr;
+    TagPropWidget*   tagPropWidget      = nullptr;
+    TagModel*        tagModel           = nullptr;
 
-    bool             tagPropVisible;
+    bool             tagPropVisible     = false;
 };
 
 TagsManager::TagsManager()

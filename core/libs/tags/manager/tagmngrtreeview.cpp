@@ -41,12 +41,9 @@ class Q_DECL_HIDDEN TagMngrTreeView::Private
 
 public:
 
-    explicit Private()
-      : tagMngr(nullptr)
-    {
-    }
+    Private() = default;
 
-    TagsManager* tagMngr;
+    TagsManager* tagMngr = nullptr;
 };
 
 TagMngrTreeView::TagMngrTreeView(TagsManager* const parent, TagModel* const model)

@@ -43,18 +43,12 @@ class Q_DECL_HIDDEN TagList::Private
 {
 public:
 
-    explicit Private()
-      : addButton   (nullptr),
-        tagList     (nullptr),
-        tagListModel(nullptr),
-        treeView    (nullptr)
-    {
-    }
+    Private() = default;
 
-    QPushButton*                 addButton;
-    TagMngrListView*             tagList;
-    TagMngrListModel*            tagListModel;
-    TagMngrTreeView*             treeView;
+    QPushButton*                 addButton      = nullptr;
+    TagMngrListView*             tagList        = nullptr;
+    TagMngrListModel*            tagListModel   = nullptr;
+    TagMngrTreeView*             treeView       = nullptr;
     QMap<int, QList<ListItem*> > tagMap;
 };
 

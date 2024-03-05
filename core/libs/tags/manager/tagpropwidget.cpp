@@ -54,30 +54,20 @@ class Q_DECL_HIDDEN TagPropWidget::Private
 {
 public:
 
-    explicit Private()
-      : topLabel        (nullptr),
-        iconButton      (nullptr),
-        resetIconButton (nullptr),
-        saveButton      (nullptr),
-        discardButton   (nullptr),
-        keySeqWidget    (nullptr),
-        titleEdit       (nullptr),
-        changed         (false)
-    {
-    }
+    Private() = default;
 
-    QLabel*             topLabel;
+    QLabel*             topLabel        = nullptr;
 
     QString             icon;
 
-    QPushButton*        iconButton;
-    QPushButton*        resetIconButton;
-    QPushButton*        saveButton;
-    QPushButton*        discardButton;
+    QPushButton*        iconButton      = nullptr;
+    QPushButton*        resetIconButton = nullptr;
+    QPushButton*        saveButton      = nullptr;
+    QPushButton*        discardButton   = nullptr;
     QList<TAlbum*>      selectedAlbums;
-    KKeySequenceWidget* keySeqWidget;
-    DTextEdit*          titleEdit;
-    bool                changed;
+    KKeySequenceWidget* keySeqWidget    = nullptr;
+    DTextEdit*          titleEdit       = nullptr;
+    bool                changed         = false;
 };
 
 TagPropWidget::TagPropWidget(QWidget* const parent)
