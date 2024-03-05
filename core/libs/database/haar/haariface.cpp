@@ -864,7 +864,6 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                     }
                 }
 
-
                 if (!useReferenceImages                                                               ||
                     (!referenceFound && (refImageSelectionMethod == RefImageSelMethod::PreferFolder)) ||
                     (referenceFound  && (refImageSelectionMethod == RefImageSelMethod::ExcludeFolder)))
@@ -888,6 +887,8 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                         ItemInfo info(refId);
                         quint64 infoPixelSize = (quint64)info.dimensions().width() *
                                                 (quint64)info.dimensions().height();
+
+                        referenceFound = false;
 
                         if (useReferenceImages)
                         {
