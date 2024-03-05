@@ -1,6 +1,13 @@
 [Desktop Entry]
 Type=Application
 Name=VLC media player
+Name[ca]=Reproductor multimèdia VLC
+Name[ca@valencia]=Reproductor multimèdia VLC
+Name[nl]=VLC mediaspeler
+Name[sl]=Medijski predvajalnik VLC
+Name[tr]=VLC Ortam Oynatıcısı
+Name[uk]=Мультимедійний програвач VLC
+Name[x-test]=xxVLC media playerxx
 Exec=vlc.exe %f
 Icon=vlc.exe
 MimeType=video/mp4;video/mov;video/mpg;video/wmv
