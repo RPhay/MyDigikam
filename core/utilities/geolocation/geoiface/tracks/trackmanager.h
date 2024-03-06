@@ -59,16 +59,7 @@ public:
     {
     public:
 
-        explicit TrackPoint()
-          : dateTime    (),
-            coordinates (),
-            nSatellites (-1),
-            hDop        (-1),
-            pDop        (-1),
-            fixType     (-1),
-            speed       (-1)
-        {
-        }
+        TrackPoint() = default;
 
         static bool EarlierThan(const TrackPoint& a, const TrackPoint& b);
 
@@ -76,11 +67,11 @@ public:
 
         QDateTime                 dateTime;
         GeoCoordinates            coordinates;
-        int                       nSatellites;
-        qreal                     hDop;
-        qreal                     pDop;
-        int                       fixType;
-        qreal                     speed;
+        int                       nSatellites   = -1;
+        qreal                     hDop          = -1.0;
+        qreal                     pDop          = -1.0;
+        int                       fixType       = -1;
+        qreal                     speed         = -1.0;
 
         typedef QList<TrackPoint> List;
     };
@@ -99,12 +90,7 @@ public:
 
     public:
 
-        explicit Track()
-          : url     (),
-            points  (),
-            id      (0),
-            color   (Qt::red),
-            flags   (FlagDefault)
+        Track()
         {
             qRegisterMetaType<TrackChanges>("TrackChanges");
         }
@@ -113,9 +99,9 @@ public:
         QList<TrackPoint>    points;
 
         /// 0 means no track id assigned yet
-        Id                   id;
-        QColor               color;
-        Flags                flags;
+        Id                   id     = 0;
+        QColor               color  = Qt::red;
+        Flags                flags  = FlagDefault;
 
         typedef QList<Track> List;
     };

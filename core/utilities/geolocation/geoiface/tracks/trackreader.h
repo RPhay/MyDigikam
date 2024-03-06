@@ -40,15 +40,10 @@ public:
     {
     public:
 
-        explicit TrackReadResult()
-          : track    (),
-            isValid  (false),
-            loadError()
-        {
-        }
+        TrackReadResult() = default;
 
         TrackManager::Track            track;
-        bool                           isValid;
+        bool                           isValid = false;
         QString                        loadError;
 
         typedef QList<TrackReadResult> List;

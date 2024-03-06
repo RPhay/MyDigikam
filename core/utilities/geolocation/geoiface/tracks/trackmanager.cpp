@@ -41,26 +41,17 @@ class Q_DECL_HIDDEN TrackManager::Private
 {
 public:
 
-    explicit Private()
-      : trackLoadFutureWatcher(nullptr),
-        trackLoadFuture       (),
-        trackList             (),
-        loadErrorFiles        (),
-        nextTrackId           (1),
-        nextTrackColor        (0),
-        visibility            (true)
-    {
-    }
+    Private() = default;
 
-    QFutureWatcher<TrackReader::TrackReadResult>* trackLoadFutureWatcher;
+    QFutureWatcher<TrackReader::TrackReadResult>* trackLoadFutureWatcher = nullptr;
     QFuture<TrackReader::TrackReadResult>         trackLoadFuture;
     TrackManager::Track::List                     trackPendingList;
     TrackManager::Track::List                     trackList;
     QList<QPair<QUrl, QString> >                  loadErrorFiles;
 
-    Id                                            nextTrackId;
-    int                                           nextTrackColor;
-    bool                                          visibility;
+    Id                                            nextTrackId            = 1;
+    int                                           nextTrackColor         = 0;
+    bool                                          visibility             = true;
 };
 
 TrackManager::TrackManager(QObject* const parent)

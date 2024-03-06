@@ -31,12 +31,9 @@ class Q_DECL_HIDDEN TrackReader::Private
 {
 public:
 
-    explicit Private()
-        : fileData (nullptr)
-    {
-    }
+    Private() = default;
 
-    TrackReadResult* fileData;
+    TrackReadResult* fileData = nullptr;
 };
 
 TrackReader::TrackReader(TrackReadResult* const dataTarget)
@@ -106,7 +103,7 @@ QDateTime TrackReader::ParseTime(const QString& tstring)
 
 void TrackReader::parseTrack(QXmlStreamReader& xml)
 {
-    /* check that really getting a track. */
+    // check that really getting a track.
 
     if ((xml.tokenType() != QXmlStreamReader::StartElement) &&
         (xml.name()      == QLatin1String("trkpt")))
@@ -116,11 +113,11 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
     TrackManager::TrackPoint currentDataPoint;
 
-    /* get first the attributes for track points */
+    // get first the attributes for track points.
 
     QXmlStreamAttributes attributes = xml.attributes();
 
-    /* check that track has lat or lon attribute. */
+    // check that track has lat or lon attribute.
 
     if (attributes.hasAttribute(QLatin1String("lat")) &&
         attributes.hasAttribute(QLatin1String("lon")))
@@ -129,7 +126,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
                                                attributes.value(QLatin1String("lon")).toDouble());
     }
 
-    /* Next element... */
+    // Next element...
 
     xml.readNext();
 
@@ -207,7 +204,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
             }
         }
 
-        /* ...and next... */
+        // ...and next...
 
         xml.readNext();
     }
