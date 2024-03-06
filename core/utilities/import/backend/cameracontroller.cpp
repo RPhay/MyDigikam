@@ -77,7 +77,13 @@ public:
         cam_capture
     };
 
-    Action                  action;
+public:
+
+    CameraCommand() = default;
+
+public:
+
+    Action                  action = cam_none;
     QMap<QString, QVariant> map;
 };
 
@@ -85,27 +91,19 @@ class Q_DECL_HIDDEN CameraController::Private
 {
 public:
 
-    explicit Private()
-      : close       (false),
-        canceled    (false),
-        running     (false),
-        parent      (nullptr),
-        timer       (nullptr),
-        camera      (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                  close;
-    bool                  canceled;
-    bool                  running;
+    bool                  close     = false;
+    bool                  canceled  = false;
+    bool                  running   = false;
 
     QStringList           folderList;
 
-    QWidget*              parent;
+    QWidget*              parent    = nullptr;
 
-    QTimer*               timer;
+    QTimer*               timer     = nullptr;
 
-    DKCamera*             camera;
+    DKCamera*             camera    = nullptr;
 
     QMutex                mutex;
     QWaitCondition        condVar;
@@ -710,7 +708,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                     SafeTemporaryFile* const temp2 = new SafeTemporaryFile(tempTemplate.arg(dest).arg(convFile));
                     temp2->setAutoRemove(false);
                     temp2->open();
-                    convFile                        = temp2->safeFilePath();
+                    convFile                       = temp2->safeFilePath();
                     delete temp2;
 
                     qCDebug(DIGIKAM_IMPORTUI_LOG) << "Convert to LossLess: " << file;
@@ -1075,6 +1073,7 @@ void CameraController::slotDeleteFailed(const QString& folder, const QString& fi
 void CameraController::slotLockFailed(const QString& folder, const QString& file)
 {
     Q_EMIT signalLocked(folder, file, false);
+
     sendLogMsg(xi18n("Failed to lock <filename>%1</filename>", file),
                DHistoryView::ErrorEntry, folder, file);
 

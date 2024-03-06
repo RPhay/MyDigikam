@@ -36,14 +36,11 @@ class Q_DECL_HIDDEN CameraThumbsCtrlStaticPriv
 {
 public:
 
-    CameraThumbsCtrlStaticPriv()
-      : profile(IccProfile::sRGB())
-    {
-    }
+    CameraThumbsCtrlStaticPriv() = default;
 
 public:
 
-    IccProfile profile;
+    IccProfile profile = IccProfile::sRGB();
 };
 
 Q_GLOBAL_STATIC(CameraThumbsCtrlStaticPriv, static_d)
@@ -55,16 +52,13 @@ class Q_DECL_HIDDEN CameraThumbsCtrl::Private
 
 public:
 
-    explicit Private()
-        : controller(nullptr)
-    {
-    }
+    Private() = default;
 
     QCache<QUrl, CachedItem>   cache;  // Camera info/thumb cache based on item url keys.
 
     QMap<QUrl, CameraCommand*> pendingItems;
 
-    CameraController*          controller;
+    CameraController*          controller = nullptr;
 };
 
 // --------------------------------------------------------
@@ -148,6 +142,7 @@ void CameraThumbsCtrl::slotThumbInfo(const QString&, const QString& file, const 
 
     putItemToCache(info.url(), info, QPixmap::fromImage(thumbnail));
     d->pendingItems.remove(info.url());
+
     Q_EMIT signalThumbInfoReady(info);
 }
 
@@ -156,6 +151,7 @@ void CameraThumbsCtrl::slotThumbInfoFailed(const QString& /*folder*/, const QStr
     QPixmap pix = d->controller->mimeTypeThumbnail(file).pixmap(ThumbnailSize::maxThumbsSize());
     putItemToCache(info.url(), info, pix);
     d->pendingItems.remove(info.url());
+
     Q_EMIT signalThumbInfoReady(info);
 }
 

@@ -163,6 +163,7 @@ bool UMSCamera::getFolders(const QString& folder)
 
     QStringList subFolderList;
 
+    // cppcheck-suppress knownConditionTrueFalse
     while (it.hasNext() && !m_cancel)
     {
         subFolderList << it.next();

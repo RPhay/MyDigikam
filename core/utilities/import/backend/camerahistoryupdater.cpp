@@ -40,14 +40,12 @@ public:
 
 public:
 
-    explicit Private()
-      : canceled(false),
-        running (false)
-    {
-    }
+    Private() = default;
 
-    bool              canceled;
-    bool              running;
+public:
+
+    bool              canceled = false;
+    bool              running  = false;
 
     QMutex            mutex;
     QWaitCondition    condVar;
@@ -151,21 +149,27 @@ void CameraHistoryUpdater::proccessMap(const QByteArray& id, CHUpdateItemMap& ma
         switch (CoreDbDownloadHistory::status(QString::fromUtf8(id), (*it).name, (*it).size, (*it).ctime))
         {
             case CoreDbDownloadHistory::NotDownloaded:
+            {
                 (*it).downloaded = CamItemInfo::NewPicture;
                 break;
+            }
 
             case CoreDbDownloadHistory::Downloaded:
+            {
                 (*it).downloaded = CamItemInfo::DownloadedYes;
                 break;
+            }
 
             default: // CoreDbDownloadHistory::StatusUnknown
+            {
                 (*it).downloaded = CamItemInfo::DownloadUnknown;
                 break;
+            }
         }
 
         ++it;
     }
-    while (it != map.end() && !d->canceled);
+    while ((it != map.end()) && !d->canceled);
 
     Q_EMIT signalHistoryMap(map);
 }
