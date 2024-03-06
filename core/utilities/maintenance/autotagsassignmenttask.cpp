@@ -107,6 +107,7 @@ void AutotagsAssignmentTask::run()
 
         for (int i = 0 ; i < d->loadCount ; ++i)
         {
+            // cppcheck-suppress knownConditionTrueFalse
             if (m_cancel)
             {
                 return;

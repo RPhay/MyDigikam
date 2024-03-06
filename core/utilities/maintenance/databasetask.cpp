@@ -40,24 +40,17 @@ class Q_DECL_HIDDEN DatabaseTask::Private
 {
 public:
 
-    explicit Private()
-        : scanThumbsDb     (false),
-          scanRecognitionDb(false),
-          scanSimilarityDb (false),
-          mode             (Mode::Unknown),
-          data             (nullptr)
-    {
-    }
+    Private() = default;
 
     QString          objectIdentification;
 
-    bool             scanThumbsDb;
-    bool             scanRecognitionDb;
-    bool             scanSimilarityDb;
+    bool             scanThumbsDb           = false;
+    bool             scanRecognitionDb      = false;
+    bool             scanSimilarityDb       = false;
 
-    Mode             mode;
+    Mode             mode                   = Mode::Unknown;
 
-    MaintenanceData* data;
+    MaintenanceData* data                   = nullptr;
 };
 
 // -------------------------------------------------------
@@ -121,6 +114,7 @@ void DatabaseTask::run()
             else
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of core DB. Integrity check after vacuuming was positive.";
+
                 Q_EMIT signalFinished(true, true);
             }
         }
@@ -157,6 +151,7 @@ void DatabaseTask::run()
                 else
                 {
                     qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of thumbnails DB. Integrity check after vacuuming was positive.";
+
                     Q_EMIT signalFinished(true, true);
                 }
             }
@@ -172,6 +167,7 @@ void DatabaseTask::run()
         else
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "Thumbnails DB is not initialised. Will not vacuum.";
+
             Q_EMIT signalFinished(false, false);
         }
 
@@ -197,6 +193,7 @@ void DatabaseTask::run()
             else
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of recognition DB. Integrity check after vacuuming was positive.";
+
                 Q_EMIT signalFinished(true, true);
             }
         }
@@ -563,6 +560,7 @@ void DatabaseTask::run()
             }
 
             FacialRecognitionWrapper().deleteIdentity(identity);
+
             Q_EMIT signalFinished();
         }
     }

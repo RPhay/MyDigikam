@@ -32,15 +32,11 @@ class Q_DECL_HIDDEN ThumbsTask::Private
 {
 public:
 
-    explicit Private()
-        : thread (nullptr),
-          data   (nullptr)
-    {
-    }
+    Private() = default;
 
-    ThumbnailLoadThread* thread;
+    ThumbnailLoadThread* thread = nullptr;
 
-    MaintenanceData*     data;
+    MaintenanceData*     data   = nullptr;
 
     QImage               image;
 
@@ -104,11 +100,13 @@ void ThumbsTask::run()
 
         ItemInfo info = ItemInfo::fromLocalFile(path);
 
+        // cppcheck-suppress knownConditionTrueFalse
         if (!m_cancel && !info.isNull())
         {
             d->thread->deleteThumbnail(info.filePath());
             d->thread->find(info.thumbnailIdentifier());
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (!m_cancel && d->image.isNull())
             {
                 QMutexLocker locker(&d->mutex);
@@ -116,6 +114,7 @@ void ThumbsTask::run()
             }
 
             Q_EMIT signalFinished(d->image);
+
             d->image = QImage();
         }
     }

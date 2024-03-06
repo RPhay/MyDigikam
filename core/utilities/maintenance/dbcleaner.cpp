@@ -41,33 +41,23 @@ class Q_DECL_HIDDEN DbCleaner::Private
 {
 public:
 
-    explicit Private()
-      : thread                 (nullptr),
-        cleanThumbsDb          (false),
-        cleanFacesDb           (false),
-        cleanSimilarityDb      (false),
-        shrinkDatabases        (false),
-        databasesToAnalyseCount(1),
-        databasesToShrinkCount (0),
-        shrinkDlg              (nullptr)
-    {
-    }
+    Private() = default;
 
-    MaintenanceThread* thread;
-    bool               cleanThumbsDb;
-    bool               cleanFacesDb;
-    bool               cleanSimilarityDb;
-    bool               shrinkDatabases;
+    MaintenanceThread* thread                   = nullptr;
+    bool               cleanThumbsDb            = false;
+    bool               cleanFacesDb             = false;
+    bool               cleanSimilarityDb        = false;
+    bool               shrinkDatabases          = false;
 
     QList<qlonglong>   imagesToRemove;
     QList<int>         staleThumbnails;
     QList<Identity>    staleIdentities;
     QList<qlonglong>   staleImageSimilarities;
 
-    int                databasesToAnalyseCount;
-    int                databasesToShrinkCount;
+    int                databasesToAnalyseCount  = 1;
+    int                databasesToShrinkCount   = 0;
 
-    DbShrinkDialog*    shrinkDlg;
+    DbShrinkDialog*    shrinkDlg                = nullptr;
 };
 
 DbCleaner::DbCleaner(bool cleanThumbsDb,
@@ -470,20 +460,13 @@ class Q_DECL_HIDDEN DbShrinkDialog::Private
 {
 public:
 
-    explicit Private()
-      : active       (-1),
-        progressPix  (nullptr),
-        progressTimer(nullptr),
-        progressIndex(1),
-        statusList   (nullptr)
-    {
-    }
+    Private() = default;
 
-    int             active;
-    DWorkingPixmap* progressPix;
-    QTimer*         progressTimer;
-    int             progressIndex;
-    QListWidget*    statusList;
+    int             active          = -1;
+    DWorkingPixmap* progressPix     = nullptr;
+    QTimer*         progressTimer   = nullptr;
+    int             progressIndex   = 1;
+    QListWidget*    statusList      = nullptr;
 };
 
 DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
