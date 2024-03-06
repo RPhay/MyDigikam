@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-05 01:33+0000\n"
+"POT-Creation-Date: 2024-03-06 01:32+0000\n"
 "PO-Revision-Date: 2024-02-17 06:48+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -3161,7 +3161,7 @@ msgid "Tools"
 msgstr "Инструменти"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:833
 #, kde-format
 msgid "Help"
 msgstr "Помощ"
@@ -3910,7 +3910,7 @@ msgstr "Име на файл"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:170
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
@@ -11467,7 +11467,7 @@ msgstr "Две карти - отгоре и отдолу"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:633
+#: core/utilities/searchwindow/searchutilities.cpp:653
 #, kde-format
 msgid "OK"
 msgstr "Добре"
@@ -11532,7 +11532,7 @@ msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Зареждане на метаданни -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11540,25 +11540,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Имате 1 модифицирано изображение."
 msgstr[1] "Имате %1 модифицирани изображения."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Незапазени промени"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:837
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Искате ли да запазите промените, които сте направили в тях?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:953
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Запазване на промените -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1012
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11602,13 +11602,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Грешка"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1013
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Част от информацията не можа да се запази:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1051
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -13862,7 +13862,7 @@ msgstr "До&бавяне"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:599
+#: core/libs/dialogs/deletedialog.cpp:574
 #, kde-format
 msgid "&Delete"
 msgstr "&Изтриване"
@@ -15324,7 +15324,7 @@ msgid "Status"
 msgstr "Състояние"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:142
-#: core/libs/dialogs/solidhardwaredlg.cpp:294
+#: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"
 msgid "Properties"
@@ -24395,13 +24395,13 @@ msgstr ""
 "Искате ли да продължите?"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
-#: core/libs/dialogs/webbrowserdlg.cpp:129
+#: core/libs/dialogs/webbrowserdlg.cpp:123
 #, kde-format
 msgid "Home"
 msgstr "Начална страница"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:190
-#: core/libs/dialogs/webbrowserdlg.cpp:130
+#: core/libs/dialogs/webbrowserdlg.cpp:124
 #, kde-format
 msgid "Go back to Home page"
 msgstr "Обратно към Началната страница"
@@ -27658,8 +27658,8 @@ msgid "Labels Album"
 msgstr "Етикети за албум"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
-#: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:134
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -28760,46 +28760,46 @@ msgstr "Не е избрано изображение"
 msgid "This is the original image"
 msgstr "Това е оригиналното изображение"
 
-#: core/libs/database/server/databaseserver.cpp:153
+#: core/libs/database/server/databaseserver.cpp:150
 #, kde-format
 msgid "Database type is not supported."
 msgstr "Типът на базата данни не се поддържа."
 
-#: core/libs/database/server/databaseserver.cpp:294
+#: core/libs/database/server/databaseserver.cpp:291
 #, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
 "Няма път до командата за актуализиране  на mysql, зададен в конфигурационния "
 "файл."
 
-#: core/libs/database/server/databaseserver.cpp:303
+#: core/libs/database/server/databaseserver.cpp:300
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
 "Няма път до командата за сървър на mysql, зададена в конфигурационния файл."
 
-#: core/libs/database/server/databaseserver.cpp:312
+#: core/libs/database/server/databaseserver.cpp:309
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 "В конфигурационния файл не е зададен път до командата за администриране на "
 "mysql."
 
-#: core/libs/database/server/databaseserver.cpp:321
+#: core/libs/database/server/databaseserver.cpp:318
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 "Няма път до командата за инициализация на mysql, зададена в конфигурационния "
 "файл."
 
-#: core/libs/database/server/databaseserver.cpp:331
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
+#: core/libs/database/server/databaseserver.cpp:328
+#: core/libs/database/server/databaseserver.cpp:338
+#: core/libs/database/server/databaseserver.cpp:348
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Не може да се създаде директория %1"
 
-#: core/libs/database/server/databaseserver.cpp:431
+#: core/libs/database/server/databaseserver.cpp:428
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28811,50 +28811,50 @@ msgstr ""
 "може да бъде прочетен, или целевият файл</p><p> %2</p><p> не може да бъде "
 "записан.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:453
+#: core/libs/database/server/databaseserver.cpp:450
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Не може да намери конфигурацията по подразбиране на MySQL сървъра (mysql-"
 "global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:501
+#: core/libs/database/server/databaseserver.cpp:498
 #, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "Инициализира се  вътрешната база данни на MySQL. Моля, изчакайте..."
 
-#: core/libs/database/server/databaseserver.cpp:549
+#: core/libs/database/server/databaseserver.cpp:546
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Не можа да се стартира инициализаторът на базата данни."
 
-#: core/libs/database/server/databaseserver.cpp:612
+#: core/libs/database/server/databaseserver.cpp:609
 #, kde-format
 msgid "Could not start database server."
 msgstr "Не може да бъде стартирана базата от данни."
 
-#: core/libs/database/server/databaseserver.cpp:654
+#: core/libs/database/server/databaseserver.cpp:651
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 "Невалиден обект на базата данни по време на стартирането на сървъра за бази "
 "данни"
 
-#: core/libs/database/server/databaseserver.cpp:685
+#: core/libs/database/server/databaseserver.cpp:682
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "Процесът на базата данни е излязъл неочаквано по време на първоначалното "
 "свързване."
 
-#: core/libs/database/server/databaseserver.cpp:691
+#: core/libs/database/server/databaseserver.cpp:688
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 "Не можа да се свърже с базата данни, след като опита в продължение на 60 "
 "секунди."
 
-#: core/libs/database/server/databaseserver.cpp:724
+#: core/libs/database/server/databaseserver.cpp:721
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28862,17 +28862,17 @@ msgstr ""
 "Неуспешно създаване на базата от данни<p>Грешка на заявката: %1</p><p>Грешка "
 "на базата от данни: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:748
+#: core/libs/database/server/databaseserver.cpp:745
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Актуализация на базата данни на MySQL е в ход, моля, изчакайте."
 
-#: core/libs/database/server/databaseserver.cpp:792
+#: core/libs/database/server/databaseserver.cpp:789
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Не можа да се актуализира базата данни."
 
-#: core/libs/database/server/databaseserver.cpp:828
+#: core/libs/database/server/databaseserver.cpp:825
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -28904,25 +28904,25 @@ msgstr ""
 "форматът на базата данни е твърде нов) Моля, използвайте по-новата версия на "
 "digikam, която сте използвали преди. "
 
-#: core/libs/database/tags/facetags.cpp:403
+#: core/libs/database/tags/facetags.cpp:405
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Хора"
 
-#: core/libs/database/tags/facetags.cpp:467
+#: core/libs/database/tags/facetags.cpp:469
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/database/tags/facetags.cpp:487
+#: core/libs/database/tags/facetags.cpp:489
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Непотвърдено"
 
-#: core/libs/database/tags/facetags.cpp:507
+#: core/libs/database/tags/facetags.cpp:509
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -29838,22 +29838,22 @@ msgstr ""
 "Този двоичен файл се използва за обновяване на базата данни до текущата "
 "версия на сървъра."
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:170
 #, kde-format
 msgid "Thumb"
 msgstr "Thumb"
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:173
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Списък на елементите, които предстои да бъдат изтрити."
 
-#: core/libs/dialogs/deletedialog.cpp:181
+#: core/libs/dialogs/deletedialog.cpp:174
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Това е списък на файловете, които ще бъдат изтрити."
 
-#: core/libs/dialogs/deletedialog.cpp:303
+#: core/libs/dialogs/deletedialog.cpp:285
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -29862,7 +29862,7 @@ msgstr ""
 "Ако е поставена отметка, файловете ще бъдат трайно премахнати, вместо да "
 "бъдат поставени в кошчето."
 
-#: core/libs/dialogs/deletedialog.cpp:305
+#: core/libs/dialogs/deletedialog.cpp:287
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29874,17 +29874,17 @@ msgstr ""
 "тази опция с повишено внимание</em>: повечето файлови системи не са в "
 "състояние да възстановят надеждно изтритите елементи.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:311
+#: core/libs/dialogs/deletedialog.cpp:293
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "&Изтриване на елементите вместо преместване в кошчето"
 
-#: core/libs/dialogs/deletedialog.cpp:318
+#: core/libs/dialogs/deletedialog.cpp:300
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Да не се &пита отново"
 
-#: core/libs/dialogs/deletedialog.cpp:377
+#: core/libs/dialogs/deletedialog.cpp:359
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29893,7 +29893,7 @@ msgstr ""
 "Ако е поставена отметка, този диалогов прозорец вече няма да се показва, а "
 "елементите ще бъдат директно и постоянно изтривани."
 
-#: core/libs/dialogs/deletedialog.cpp:379
+#: core/libs/dialogs/deletedialog.cpp:361
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29902,7 +29902,7 @@ msgstr ""
 "Ако това поле е поставено, този диалог вече няма да се показва и елементите "
 "ще бъдат директно и постоянно изтривани."
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:366
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29911,7 +29911,7 @@ msgstr ""
 "Ако е поставена отметка, този диалогов прозорец вече няма да се показва, а "
 "елементите ще бъдат директно премествани в кошчето."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:368
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29920,43 +29920,43 @@ msgstr ""
 "Ако това квадратче е поставено, този диалогов прозорец вече няма да се "
 "показва и елементите ще бъдат директно преместени в кошчето."
 
-#: core/libs/dialogs/deletedialog.cpp:398
+#: core/libs/dialogs/deletedialog.cpp:380
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr ""
 "Избраните елементи ще бъдат <b>безвъзвратно изтрити</b> от твърдия диск."
 
-#: core/libs/dialogs/deletedialog.cpp:404
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Тези елементи ще бъдат преместени в кошчето."
 
-#: core/libs/dialogs/deletedialog.cpp:406
+#: core/libs/dialogs/deletedialog.cpp:388
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "Маркиран е <b>1</b> елемент."
 msgstr[1] "Маркирани са <b>%1</b> елемента."
 
-#: core/libs/dialogs/deletedialog.cpp:419
+#: core/libs/dialogs/deletedialog.cpp:401
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Тези албуми ще бъдат <b>за постоянно изтрити</b> от вашия твърд диск."
 
-#: core/libs/dialogs/deletedialog.cpp:425
+#: core/libs/dialogs/deletedialog.cpp:407
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Тези албуми ще бъдат преместени в кошчето."
 
-#: core/libs/dialogs/deletedialog.cpp:429
-#: core/libs/dialogs/deletedialog.cpp:456
+#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:438
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> албум е избран."
 msgstr[1] "<b>%1</b> албума са избрани."
 
-#: core/libs/dialogs/deletedialog.cpp:440
+#: core/libs/dialogs/deletedialog.cpp:422
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29967,7 +29967,7 @@ msgstr ""
 "p><p>Имайте предвид, че<b>всички подалбуми</b> са включени в този списък и "
 "също ще бъдат изтрити за постоянно.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:449
+#: core/libs/dialogs/deletedialog.cpp:431
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -29977,18 +29977,18 @@ msgstr ""
 "че<b>всички подалбуми</b> са включени в този списък и също ще бъдат "
 "преместени в кошчето.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:600
+#: core/libs/dialogs/deletedialog.cpp:575
 #, kde-format
 msgid "&Move to Trash"
 msgstr "Преместване в &кошчето"
 
-#: core/libs/dialogs/deletedialog.cpp:660
+#: core/libs/dialogs/deletedialog.cpp:635
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Предстои изтриване на избрани елементи"
 
-#: core/libs/dialogs/deletedialog.cpp:667
+#: core/libs/dialogs/deletedialog.cpp:642
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -30021,12 +30021,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Данни за цветовия профил - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:233
+#: core/libs/dialogs/imagedialog.cpp:207
 #, kde-format
 msgid "Select an Item"
 msgstr "Избиране на елемент"
 
-#: core/libs/dialogs/imagedialog.cpp:247
+#: core/libs/dialogs/imagedialog.cpp:221
 #, kde-format
 msgid "Select Items"
 msgstr "Избор на обекти"
@@ -30106,26 +30106,26 @@ msgstr "<i>Скорост на кадрите:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Видео кодек:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Информация за споделени библиотеки и компоненти"
 
-#: core/libs/dialogs/infodlg.cpp:74
+#: core/libs/dialogs/infodlg.cpp:68
 #: core/libs/progressmanager/dhistoryview.cpp:149
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "Копиране в клипборда"
 
-#: core/libs/dialogs/infodlg.cpp:96
+#: core/libs/dialogs/infodlg.cpp:90
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr ""
 "<font size=\"5\">%1</font><br/><b>Версия %2</b><p>%3</p><p><i>%4</i></p>"
 
-#: core/libs/dialogs/infodlg.cpp:117
+#: core/libs/dialogs/infodlg.cpp:111
 #, kde-format
 msgid "Items List"
 msgstr "Списък с елементи"
@@ -30196,20 +30196,20 @@ msgctxt "@info: tri state"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/dialogs/rawcameradlg.cpp:56
+#: core/libs/dialogs/rawcameradlg.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
 msgstr "Списък на поддържаните RAW фотоапарати"
 
-#: core/libs/dialogs/rawcameradlg.cpp:129
+#: core/libs/dialogs/rawcameradlg.cpp:125
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
 msgstr[0] "Използване на версия на LibRaw %2<br/> 1 модел в списъка"
 msgstr[1] "Използване на версия на Libraw %2 <br/> %1 в списъка"
 
-#: core/libs/dialogs/rawcameradlg.cpp:139
+#: core/libs/dialogs/rawcameradlg.cpp:135
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
@@ -30217,13 +30217,13 @@ msgstr[0] ""
 "Използване на версия на LibRaw %2 <br/> 1 модел в списъка (намерени: %3)"
 msgstr[1] "Използване на версия на Libraw %2 <br/> %1 в списъка (Намерено: %3)"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:83
+#: core/libs/dialogs/solidhardwaredlg.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Detected Hardware"
 msgstr "Списък на открития хардуер"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:86
+#: core/libs/dialogs/solidhardwaredlg.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -30236,137 +30236,137 @@ msgstr ""
 "Натиснете \"Опресняване\", за да актуализирате списъка, ако включите "
 "сменяемо устройство."
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:116
+#: core/libs/dialogs/solidhardwaredlg.cpp:111
 #, kde-format
 msgctxt "@title"
 msgid "Hotplug Device Events"
 msgstr "Събития на директно включване на устройства"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:117
+#: core/libs/dialogs/solidhardwaredlg.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid "Devices List"
 msgstr "Списък с устройства"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:130
+#: core/libs/dialogs/solidhardwaredlg.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Refresh"
 msgstr "Презареждане"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:272
-#: core/libs/dialogs/solidhardwaredlg.cpp:393
+#: core/libs/dialogs/solidhardwaredlg.cpp:268
+#: core/libs/dialogs/solidhardwaredlg.cpp:389
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
 msgstr "Уди"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:272
-#: core/libs/dialogs/solidhardwaredlg.cpp:278
-#: core/libs/dialogs/solidhardwaredlg.cpp:281
-#: core/libs/dialogs/solidhardwaredlg.cpp:284
+#: core/libs/dialogs/solidhardwaredlg.cpp:268
+#: core/libs/dialogs/solidhardwaredlg.cpp:274
+#: core/libs/dialogs/solidhardwaredlg.cpp:277
+#: core/libs/dialogs/solidhardwaredlg.cpp:280
 #, kde-format
 msgctxt "@item: device property"
 msgid "empty"
 msgstr "празно"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:275
-#: core/libs/dialogs/solidhardwaredlg.cpp:396
+#: core/libs/dialogs/solidhardwaredlg.cpp:271
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
 #, kde-format
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
 msgstr "UDI на родителско устройство"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:275
-#: core/libs/dialogs/solidhardwaredlg.cpp:287
+#: core/libs/dialogs/solidhardwaredlg.cpp:271
+#: core/libs/dialogs/solidhardwaredlg.cpp:283
 #, kde-format
 msgctxt "@item: device property"
 msgid "none"
 msgstr "липсва"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:278
+#: core/libs/dialogs/solidhardwaredlg.cpp:274
 #, kde-format
 msgctxt "@item; device constructor"
 msgid "Vendor"
 msgstr "Доставчик"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:281
-#: core/libs/dialogs/solidhardwaredlg.cpp:402
+#: core/libs/dialogs/solidhardwaredlg.cpp:277
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
 #, kde-format
 msgctxt "@item: device name"
 msgid "Product"
 msgstr "Продукт"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:284
-#: core/libs/dialogs/solidhardwaredlg.cpp:405
+#: core/libs/dialogs/solidhardwaredlg.cpp:280
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@item: device description"
 msgid "Description"
 msgstr "Описание"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:287
-#: core/libs/dialogs/solidhardwaredlg.cpp:408
+#: core/libs/dialogs/solidhardwaredlg.cpp:283
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@item: device status"
 msgid "States"
 msgstr "Провинции"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:294
+#: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"
 msgid "Non-portable info"
 msgstr "Непреносими данни"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:386
+#: core/libs/dialogs/solidhardwaredlg.cpp:382
 #, kde-format
 msgctxt "@item"
 msgid "New Device Added"
 msgstr "Добавено е ново устройство"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:396
-#: core/libs/dialogs/solidhardwaredlg.cpp:408
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@info: device property"
 msgid "none"
 msgstr "липсва"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:399
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
 #, kde-format
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr "Доставчик"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:399
-#: core/libs/dialogs/solidhardwaredlg.cpp:402
-#: core/libs/dialogs/solidhardwaredlg.cpp:405
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr "празно"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:418
+#: core/libs/dialogs/solidhardwaredlg.cpp:414
 #, kde-format
 msgctxt "@item"
 msgid "Device Removed"
 msgstr "Устройството е отстранено"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:421
+#: core/libs/dialogs/solidhardwaredlg.cpp:417
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
 msgstr "Уди"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:134
+#: core/libs/dialogs/webbrowserdlg.cpp:128
 #, kde-format
 msgid "Desktop Browser"
 msgstr "Браузър на работната среда"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:135
+#: core/libs/dialogs/webbrowserdlg.cpp:129
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr "Отваряне на началната страница с уеб браузъра по подразбиране"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:249
+#: core/libs/dialogs/webbrowserdlg.cpp:243
 #, kde-format
 msgid "Cannot load page %1"
 msgstr "Не може да се зареди страница %1"
@@ -39642,120 +39642,120 @@ msgstr "Задаване на цветен етикет \"%1\""
 msgid "Assign Tag \"%1\""
 msgstr "Поставяне на таг \"%1\""
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:155
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "All Tags"
 msgstr "Всички тагове"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:287
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
 msgstr "Списък за бърз достъп"
 
-#: core/libs/tags/manager/models/tagmngrlistview.cpp:152
+#: core/libs/tags/manager/models/tagmngrlistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr "Изтриване на избраните от списъка"
 
-#: core/libs/tags/manager/taglist.cpp:67
+#: core/libs/tags/manager/taglist.cpp:61
 #, kde-format
 msgid "Add to List"
 msgstr "Добавяне към списък"
 
-#: core/libs/tags/manager/taglist.cpp:68
+#: core/libs/tags/manager/taglist.cpp:62
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr "Добавяне на избрани тагове към списъка за бърз достъп"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:138
+#: core/libs/tags/manager/tagmngrtreeview.cpp:135
 #, kde-format
 msgid "Delete Tags"
 msgstr "Изтриване на тагове"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:716
+#: core/libs/tags/manager/tagmngrtreeview.cpp:143
+#: core/libs/tags/manager/tagsmanager.cpp:698
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Редактиране на заглавие на таг"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagmngrtreeview.cpp:147
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #: core/libs/tags/widgets/tagfolderview.cpp:69
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Възстановяване иконата на тага"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagmngrtreeview.cpp:150
+#: core/libs/tags/manager/tagsmanager.cpp:711
 #, kde-format
 msgid "Invert Selection"
 msgstr "Обръщане на избирането"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Разгъване на структурата на таговете"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Свиване на структурата на таговете"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:741
+#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Премахване на таг от изображенията"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:98
+#: core/libs/tags/manager/tagpropwidget.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "Свойства на таг"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:107
+#: core/libs/tags/manager/tagpropwidget.cpp:97
 #: core/libs/tags/widgets/tageditdlg.cpp:139
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "&Заглавие:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:112
+#: core/libs/tags/manager/tagpropwidget.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "Въведете име на таг тук"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:125
+#: core/libs/tags/manager/tagpropwidget.cpp:115
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "&Икона:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:134
+#: core/libs/tags/manager/tagpropwidget.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "Възстановяване на мащаба"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:147
+#: core/libs/tags/manager/tagpropwidget.cpp:137
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "&Бърз клавиш:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:160
+#: core/libs/tags/manager/tagpropwidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "Забележка"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:161
+#: core/libs/tags/manager/tagpropwidget.cpp:151
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
@@ -39763,31 +39763,31 @@ msgstr ""
 "Този пряк път може да се използва за присвояване или отменяне на етикет към "
 "елементи."
 
-#: core/libs/tags/manager/tagpropwidget.cpp:166
+#: core/libs/tags/manager/tagpropwidget.cpp:156
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Запазване"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:167
+#: core/libs/tags/manager/tagpropwidget.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "Отхвърляне"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:234
+#: core/libs/tags/manager/tagpropwidget.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Предишните тагове бяха променени. Да се запазят ли промените? "
 
-#: core/libs/tags/manager/tagsmanager.cpp:180
+#: core/libs/tags/manager/tagsmanager.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Управление на тагове"
 
-#: core/libs/tags/manager/tagsmanager.cpp:339
+#: core/libs/tags/manager/tagsmanager.cpp:321
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39803,7 +39803,7 @@ msgstr[1] ""
 "Таговете %2 имат един или повече подтагове. Изтриването им също ще изтрие "
 "подтаговете. Искате ли да продължите?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:362
+#: core/libs/tags/manager/tagsmanager.cpp:344
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39814,7 +39814,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Тагове %2 са присвоени на един или повече елементи. Искате ли да ги изтриете?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:372
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39822,7 +39822,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Да се изтрие ли таг %2?"
 msgstr[1] "Да се изтрият ли тагове %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:378
+#: core/libs/tags/manager/tagsmanager.cpp:360
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39830,7 +39830,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Изтриване на таг"
 msgstr[1] "Изтриване на тагове"
 
-#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager.cpp:486
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39842,8 +39842,8 @@ msgstr ""
 "това (чрез извикване на Зареждане на тагове от изображение).<br/>Искате ли "
 "да продължите?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:516
-#: core/libs/tags/manager/tagsmanager.cpp:535
+#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:517
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39853,7 +39853,7 @@ msgstr ""
 "колекцията.\n"
 "Искате ли да продължите?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:555
+#: core/libs/tags/manager/tagsmanager.cpp:537
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39865,7 +39865,7 @@ msgstr ""
 "на метаданни във файл.\n"
 "Искате ли да продължите?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:622
+#: core/libs/tags/manager/tagsmanager.cpp:604
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39874,35 +39874,35 @@ msgstr[0] ""
 msgstr[1] ""
 "Наистина ли искате да премахнете избраните тагове от всички изображения?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:703
+#: core/libs/tags/manager/tagsmanager.cpp:685
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Организиране"
 
-#: core/libs/tags/manager/tagsmanager.cpp:706
+#: core/libs/tags/manager/tagsmanager.cpp:688
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Синхронизирано &експортиране"
 
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:705
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Създаване на таг от адресника"
 
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:708
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Маркиране на неприсвоени тагове"
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Добавяне на нов таг към текущия таг. Текущият таг е последно избрания таг."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39911,76 +39911,76 @@ msgstr ""
 "Изтриване на избрани елементи. Работи и с няколко елемента, но няма да "
 "изтрие основния таг."
 
-#: core/libs/tags/manager/tagsmanager.cpp:753
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Редактиране на заглавието от избрания таг."
 
-#: core/libs/tags/manager/tagsmanager.cpp:755
+#: core/libs/tags/manager/tagsmanager.cpp:737
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Нулиране на иконата на избраните тагове. Работи при многократно избиране."
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Маркирайте всички тагове, които не са присвоени на изображения."
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Инвертиране на избора. Ще бъдат избрани само видимите елементи"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Избраните елементи ще бъдат разширени"
 
-#: core/libs/tags/manager/tagsmanager.cpp:765
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Напълно разгъване на структурата на таговете"
 
-#: core/libs/tags/manager/tagsmanager.cpp:767
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Напълно свиване на структурата на таговете"
 
-#: core/libs/tags/manager/tagsmanager.cpp:769
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Изтриване на избран(и) таг(и) от изображенията. Работи с множество селекции."
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:799
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Записване на тагове от базата данни към изображението"
 
-#: core/libs/tags/manager/tagsmanager.cpp:820
+#: core/libs/tags/manager/tagsmanager.cpp:802
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Зареждане на тагове от изображение"
 
-#: core/libs/tags/manager/tagsmanager.cpp:823
+#: core/libs/tags/manager/tagsmanager.cpp:805
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Изтриване на всички тагове само от базата данни"
 
-#: core/libs/tags/manager/tagsmanager.cpp:825
+#: core/libs/tags/manager/tagsmanager.cpp:807
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Записване на метаданни на таговете в изображението."
 
-#: core/libs/tags/manager/tagsmanager.cpp:827
+#: core/libs/tags/manager/tagsmanager.cpp:809
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Четене на тагове от изображения в база данни. Съществуващите тагове няма да "
 "бъдат засегнати"
 
-#: core/libs/tags/manager/tagsmanager.cpp:830
+#: core/libs/tags/manager/tagsmanager.cpp:812
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39989,7 +39989,7 @@ msgstr ""
 "Изтрийте всички тагове само от базата данни. Няма да се синхронизира с "
 "файловете. Действайте с повишено внимание."
 
-#: core/libs/tags/manager/tagsmanager.cpp:852
+#: core/libs/tags/manager/tagsmanager.cpp:834
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-05 01:33+0000\n"
+"POT-Creation-Date: 2024-03-06 01:32+0000\n"
 "PO-Revision-Date: 2024-02-29 12:56\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3070,7 +3070,7 @@ msgid "Tools"
 msgstr "工具"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:833
 #, kde-format
 msgid "Help"
 msgstr "帮助"
@@ -3768,7 +3768,7 @@ msgstr "文件名"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:170
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
@@ -10852,7 +10852,7 @@ msgstr "双地图 - 顶部和底部"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:633
+#: core/utilities/searchwindow/searchutilities.cpp:653
 #, kde-format
 msgid "OK"
 msgstr "确定"
@@ -10917,32 +10917,32 @@ msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "正在加载元数据 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
 msgstr[0] "您有 %1 张已修改图像。"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "未保存的更改"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:837
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 您想要保存您所作的更改吗？"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:953
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "正在保存更改 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1012
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -10986,13 +10986,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "错误"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1013
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "无法保存部分信息："
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1051
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -13150,7 +13150,7 @@ msgstr "添加(&A)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:599
+#: core/libs/dialogs/deletedialog.cpp:574
 #, kde-format
 msgid "&Delete"
 msgstr "删除(&D)"
@@ -14554,7 +14554,7 @@ msgid "Status"
 msgstr "状态"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:142
-#: core/libs/dialogs/solidhardwaredlg.cpp:294
+#: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"
 msgid "Properties"
@@ -23282,13 +23282,13 @@ msgstr ""
 "您想要继续吗？"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
-#: core/libs/dialogs/webbrowserdlg.cpp:129
+#: core/libs/dialogs/webbrowserdlg.cpp:123
 #, kde-format
 msgid "Home"
 msgstr "主页"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:190
-#: core/libs/dialogs/webbrowserdlg.cpp:130
+#: core/libs/dialogs/webbrowserdlg.cpp:124
 #, kde-format
 msgid "Go back to Home page"
 msgstr "返回主页"
@@ -26455,8 +26455,8 @@ msgid "Labels Album"
 msgstr "标记相册"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
-#: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:134
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -27509,39 +27509,39 @@ msgstr "未选择图像"
 msgid "This is the original image"
 msgstr "这是原始图像"
 
-#: core/libs/database/server/databaseserver.cpp:153
+#: core/libs/database/server/databaseserver.cpp:150
 #, kde-format
 msgid "Database type is not supported."
 msgstr "数据库类型不支持。"
 
-#: core/libs/database/server/databaseserver.cpp:294
+#: core/libs/database/server/databaseserver.cpp:291
 #, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr "配置文件中并未设置 MySQL 升级命令的路径。"
 
-#: core/libs/database/server/databaseserver.cpp:303
+#: core/libs/database/server/databaseserver.cpp:300
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr "配置文件中并未设置 MySQL 服务器命令的路径。"
 
-#: core/libs/database/server/databaseserver.cpp:312
+#: core/libs/database/server/databaseserver.cpp:309
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr "配置文件中并未设置 MySQL 管理命令的路径。"
 
-#: core/libs/database/server/databaseserver.cpp:321
+#: core/libs/database/server/databaseserver.cpp:318
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "配置文件中并未设置 MySQL 初始化命令的路径。"
 
-#: core/libs/database/server/databaseserver.cpp:331
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
+#: core/libs/database/server/databaseserver.cpp:328
+#: core/libs/database/server/databaseserver.cpp:338
+#: core/libs/database/server/databaseserver.cpp:348
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "无法创建目录“%1”"
 
-#: core/libs/database/server/databaseserver.cpp:431
+#: core/libs/database/server/databaseserver.cpp:428
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -27551,58 +27551,58 @@ msgstr ""
 "无法创建 MySQL 服务器配置文件。<p>这意味着默认配置文件</p><p>%1</p><p>不可读"
 "取，或者目标文件</p><p>%2</p><p>不可写入。"
 
-#: core/libs/database/server/databaseserver.cpp:453
+#: core/libs/database/server/databaseserver.cpp:450
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "无法找到 MySQL 服务器的默认配置文件 (mysql-global.conf)。"
 
-#: core/libs/database/server/databaseserver.cpp:501
+#: core/libs/database/server/databaseserver.cpp:498
 #, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "内建 MySQL 数据库正在初始化，请稍候..."
 
-#: core/libs/database/server/databaseserver.cpp:549
+#: core/libs/database/server/databaseserver.cpp:546
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "无法启动数据库初始化程序。"
 
-#: core/libs/database/server/databaseserver.cpp:612
+#: core/libs/database/server/databaseserver.cpp:609
 #, kde-format
 msgid "Could not start database server."
 msgstr "无法启动数据库服务器。"
 
-#: core/libs/database/server/databaseserver.cpp:654
+#: core/libs/database/server/databaseserver.cpp:651
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "数据库服务器启动时遇到无效的数据库对象"
 
-#: core/libs/database/server/databaseserver.cpp:685
+#: core/libs/database/server/databaseserver.cpp:682
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "数据库进程在初始化连接时意外退出。"
 
-#: core/libs/database/server/databaseserver.cpp:691
+#: core/libs/database/server/databaseserver.cpp:688
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "无法连接到数据库，已尝试 60 秒。"
 
-#: core/libs/database/server/databaseserver.cpp:724
+#: core/libs/database/server/databaseserver.cpp:721
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr "无法创建数据库<p>查询错误：%1</p><p>数据库错误：%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:748
+#: core/libs/database/server/databaseserver.cpp:745
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "正在进行 MySQL 数据库升级，请稍候..."
 
-#: core/libs/database/server/databaseserver.cpp:792
+#: core/libs/database/server/databaseserver.cpp:789
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "无法升级数据库。"
 
-#: core/libs/database/server/databaseserver.cpp:828
+#: core/libs/database/server/databaseserver.cpp:825
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>可执行程序：%2</p><p>参数：%3</p><p>进程错误：%4</p>"
@@ -27629,25 +27629,25 @@ msgstr ""
 "该数据库曾经被版本较新的 digiKam 使用过，它的纲目结构已被更新为新版，因此无法"
 "用于此旧版 digiKam。请升级为在此数据库中使用过的新版 digiKam。"
 
-#: core/libs/database/tags/facetags.cpp:403
+#: core/libs/database/tags/facetags.cpp:405
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "人物"
 
-#: core/libs/database/tags/facetags.cpp:467
+#: core/libs/database/tags/facetags.cpp:469
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/database/tags/facetags.cpp:487
+#: core/libs/database/tags/facetags.cpp:489
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "未确认"
 
-#: core/libs/database/tags/facetags.cpp:507
+#: core/libs/database/tags/facetags.cpp:509
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -28517,29 +28517,29 @@ msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr "此二进制文件用于将数据库升级到当前服务器的版本。"
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:170
 #, kde-format
 msgid "Thumb"
 msgstr "缩略图"
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:173
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "即将删除的项目列表。"
 
-#: core/libs/dialogs/deletedialog.cpp:181
+#: core/libs/dialogs/deletedialog.cpp:174
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "即将删除的项目列表。"
 
-#: core/libs/dialogs/deletedialog.cpp:303
+#: core/libs/dialogs/deletedialog.cpp:285
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr "勾选此项后，文件将被彻底删除而不移动到回收站。"
 
-#: core/libs/dialogs/deletedialog.cpp:305
+#: core/libs/dialogs/deletedialog.cpp:287
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -28549,78 +28549,78 @@ msgstr ""
 "<p>勾选此项后，项目将被<b>彻底删除</b>而不是移动到回收站。</p><p><b>请谨慎使"
 "用此选项</b>：大多数文件系统均无法可靠地恢复被彻底删除的项目。</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:311
+#: core/libs/dialogs/deletedialog.cpp:293
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "彻底删除项目而不移动到回收站(&D)"
 
-#: core/libs/dialogs/deletedialog.cpp:318
+#: core/libs/dialogs/deletedialog.cpp:300
 #, kde-format
 msgid "Do not &ask again"
 msgstr "不再询问(&A)"
 
-#: core/libs/dialogs/deletedialog.cpp:377
+#: core/libs/dialogs/deletedialog.cpp:359
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "and permanently deleted."
 msgstr "勾选此项后，将不再显示此对话框，项目将被直接彻底删除。"
 
-#: core/libs/dialogs/deletedialog.cpp:379
+#: core/libs/dialogs/deletedialog.cpp:361
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly and permanently deleted."
 msgstr "勾选此项后，将不再显示此对话框，项目将被直接彻底删除。"
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:366
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "moved to the Trash."
 msgstr "勾选此项后，将不再显示此对话框，项目将被直接移动到回收站。"
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:368
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly moved to the Trash."
 msgstr "勾选此项后，将不再显示此对话框，项目将被直接移动到回收站。"
 
-#: core/libs/dialogs/deletedialog.cpp:398
+#: core/libs/dialogs/deletedialog.cpp:380
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "这些项目将从您的存储设备上<b>彻底删除</b>。"
 
-#: core/libs/dialogs/deletedialog.cpp:404
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "这些项目将被移动到回收站。"
 
-#: core/libs/dialogs/deletedialog.cpp:406
+#: core/libs/dialogs/deletedialog.cpp:388
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "已选中 <b>%1</b> 项。"
 
-#: core/libs/dialogs/deletedialog.cpp:419
+#: core/libs/dialogs/deletedialog.cpp:401
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "这些相册将从您的存储设备上<b>彻底删除</b>。"
 
-#: core/libs/dialogs/deletedialog.cpp:425
+#: core/libs/dialogs/deletedialog.cpp:407
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "这些相册将被移动到回收站。"
 
-#: core/libs/dialogs/deletedialog.cpp:429
-#: core/libs/dialogs/deletedialog.cpp:456
+#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:438
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "已选中 <b>%1</b> 个相册。"
 
-#: core/libs/dialogs/deletedialog.cpp:440
+#: core/libs/dialogs/deletedialog.cpp:422
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -28630,7 +28630,7 @@ msgstr ""
 "<p>这些相册将从您的存储设备上<b>彻底删除</b>。</p><p>提示：这些相册包含的 <b>"
 "所有子相册</b> 也将被彻底删除。</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:449
+#: core/libs/dialogs/deletedialog.cpp:431
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -28639,18 +28639,18 @@ msgstr ""
 "<p>这些相册将被移动到回收站。</p><p>提示：这些相册包含的<b>所有子相册</b>也将"
 "被移动到回收站。</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:600
+#: core/libs/dialogs/deletedialog.cpp:575
 #, kde-format
 msgid "&Move to Trash"
 msgstr "移动到回收站(&M)"
 
-#: core/libs/dialogs/deletedialog.cpp:660
+#: core/libs/dialogs/deletedialog.cpp:635
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "即将删除所选项"
 
-#: core/libs/dialogs/deletedialog.cpp:667
+#: core/libs/dialogs/deletedialog.cpp:642
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -28683,12 +28683,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "色彩特性文件信息 - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:233
+#: core/libs/dialogs/imagedialog.cpp:207
 #, kde-format
 msgid "Select an Item"
 msgstr "选择一项"
 
-#: core/libs/dialogs/imagedialog.cpp:247
+#: core/libs/dialogs/imagedialog.cpp:221
 #, kde-format
 msgid "Select Items"
 msgstr "选择多项"
@@ -28768,25 +28768,25 @@ msgstr "<b>帧速率：</b>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<b>视频编码：</b>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "共享程序库和组件信息"
 
-#: core/libs/dialogs/infodlg.cpp:74
+#: core/libs/dialogs/infodlg.cpp:68
 #: core/libs/progressmanager/dhistoryview.cpp:149
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "复制到剪贴板"
 
-#: core/libs/dialogs/infodlg.cpp:96
+#: core/libs/dialogs/infodlg.cpp:90
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr "<font size=\"5\">%1</font><br/><b>版本 %2</b><p>%3</p><p><i>%4</i></p>"
 
-#: core/libs/dialogs/infodlg.cpp:117
+#: core/libs/dialogs/infodlg.cpp:111
 #, kde-format
 msgid "Items List"
 msgstr "项目列表"
@@ -28857,31 +28857,31 @@ msgctxt "@info: tri state"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/dialogs/rawcameradlg.cpp:56
+#: core/libs/dialogs/rawcameradlg.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
 msgstr "支持的 RAW 相机列表"
 
-#: core/libs/dialogs/rawcameradlg.cpp:129
+#: core/libs/dialogs/rawcameradlg.cpp:125
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
 msgstr[0] "正在使用 LibRaw 版本 %2<br/>列表中有 %1 种型号"
 
-#: core/libs/dialogs/rawcameradlg.cpp:139
+#: core/libs/dialogs/rawcameradlg.cpp:135
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
 msgstr[0] "正在使用 LibRaw 版本 %2<br/>列表中有 %1 种型号 (检测到：%3 种)"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:83
+#: core/libs/dialogs/solidhardwaredlg.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Detected Hardware"
 msgstr "检测到的硬件列表"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:86
+#: core/libs/dialogs/solidhardwaredlg.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -28893,137 +28893,137 @@ msgstr ""
 "对本机的设备进行检测和管理。\n"
 "如果您连接了可移动设备，请点击“刷新”更新列表。"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:116
+#: core/libs/dialogs/solidhardwaredlg.cpp:111
 #, kde-format
 msgctxt "@title"
 msgid "Hotplug Device Events"
 msgstr "热插拔设备事件"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:117
+#: core/libs/dialogs/solidhardwaredlg.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid "Devices List"
 msgstr "设备列表"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:130
+#: core/libs/dialogs/solidhardwaredlg.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Refresh"
 msgstr "刷新"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:272
-#: core/libs/dialogs/solidhardwaredlg.cpp:393
+#: core/libs/dialogs/solidhardwaredlg.cpp:268
+#: core/libs/dialogs/solidhardwaredlg.cpp:389
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
 msgstr "UDI"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:272
-#: core/libs/dialogs/solidhardwaredlg.cpp:278
-#: core/libs/dialogs/solidhardwaredlg.cpp:281
-#: core/libs/dialogs/solidhardwaredlg.cpp:284
+#: core/libs/dialogs/solidhardwaredlg.cpp:268
+#: core/libs/dialogs/solidhardwaredlg.cpp:274
+#: core/libs/dialogs/solidhardwaredlg.cpp:277
+#: core/libs/dialogs/solidhardwaredlg.cpp:280
 #, kde-format
 msgctxt "@item: device property"
 msgid "empty"
 msgstr "空"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:275
-#: core/libs/dialogs/solidhardwaredlg.cpp:396
+#: core/libs/dialogs/solidhardwaredlg.cpp:271
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
 #, kde-format
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
 msgstr "父 UDI"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:275
-#: core/libs/dialogs/solidhardwaredlg.cpp:287
+#: core/libs/dialogs/solidhardwaredlg.cpp:271
+#: core/libs/dialogs/solidhardwaredlg.cpp:283
 #, kde-format
 msgctxt "@item: device property"
 msgid "none"
 msgstr "无"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:278
+#: core/libs/dialogs/solidhardwaredlg.cpp:274
 #, kde-format
 msgctxt "@item; device constructor"
 msgid "Vendor"
 msgstr "厂商"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:281
-#: core/libs/dialogs/solidhardwaredlg.cpp:402
+#: core/libs/dialogs/solidhardwaredlg.cpp:277
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
 #, kde-format
 msgctxt "@item: device name"
 msgid "Product"
 msgstr "产品"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:284
-#: core/libs/dialogs/solidhardwaredlg.cpp:405
+#: core/libs/dialogs/solidhardwaredlg.cpp:280
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@item: device description"
 msgid "Description"
 msgstr "描述"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:287
-#: core/libs/dialogs/solidhardwaredlg.cpp:408
+#: core/libs/dialogs/solidhardwaredlg.cpp:283
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@item: device status"
 msgid "States"
 msgstr "状态"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:294
+#: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"
 msgid "Non-portable info"
 msgstr "非可移植信息"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:386
+#: core/libs/dialogs/solidhardwaredlg.cpp:382
 #, kde-format
 msgctxt "@item"
 msgid "New Device Added"
 msgstr "新设备已添加"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:396
-#: core/libs/dialogs/solidhardwaredlg.cpp:408
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@info: device property"
 msgid "none"
 msgstr "无"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:399
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
 #, kde-format
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr "厂商"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:399
-#: core/libs/dialogs/solidhardwaredlg.cpp:402
-#: core/libs/dialogs/solidhardwaredlg.cpp:405
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr "空"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:418
+#: core/libs/dialogs/solidhardwaredlg.cpp:414
 #, kde-format
 msgctxt "@item"
 msgid "Device Removed"
 msgstr "设备已移除"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:421
+#: core/libs/dialogs/solidhardwaredlg.cpp:417
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
 msgstr "UDI"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:134
+#: core/libs/dialogs/webbrowserdlg.cpp:128
 #, kde-format
 msgid "Desktop Browser"
 msgstr "桌面浏览器"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:135
+#: core/libs/dialogs/webbrowserdlg.cpp:129
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr "使用默认桌面浏览器打开主页"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:249
+#: core/libs/dialogs/webbrowserdlg.cpp:243
 #, kde-format
 msgid "Cannot load page %1"
 msgstr "无法加载页面 %1"
@@ -37952,150 +37952,150 @@ msgstr "指定颜色标记“%1”"
 msgid "Assign Tag \"%1\""
 msgstr "指定标签“%1”"
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:155
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "All Tags"
 msgstr "所有标签"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:287
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
 msgstr "快速访问列表"
 
-#: core/libs/tags/manager/models/tagmngrlistview.cpp:152
+#: core/libs/tags/manager/models/tagmngrlistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr "删除列表中的所选项"
 
-#: core/libs/tags/manager/taglist.cpp:67
+#: core/libs/tags/manager/taglist.cpp:61
 #, kde-format
 msgid "Add to List"
 msgstr "添加到列表"
 
-#: core/libs/tags/manager/taglist.cpp:68
+#: core/libs/tags/manager/taglist.cpp:62
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr "添加所选标签到快速访问列表"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:138
+#: core/libs/tags/manager/tagmngrtreeview.cpp:135
 #, kde-format
 msgid "Delete Tags"
 msgstr "删除标签"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:716
+#: core/libs/tags/manager/tagmngrtreeview.cpp:143
+#: core/libs/tags/manager/tagsmanager.cpp:698
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "编辑标签标题"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagmngrtreeview.cpp:147
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #: core/libs/tags/widgets/tagfolderview.cpp:69
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "重置标签图标"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagmngrtreeview.cpp:150
+#: core/libs/tags/manager/tagsmanager.cpp:711
 #, kde-format
 msgid "Invert Selection"
 msgstr "反向选择"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "展开标签树"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "折叠标签树"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:741
+#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "从图像中移除标签"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:98
+#: core/libs/tags/manager/tagpropwidget.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "标签属性"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:107
+#: core/libs/tags/manager/tagpropwidget.cpp:97
 #: core/libs/tags/widgets/tageditdlg.cpp:139
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "标题(&T)："
 
-#: core/libs/tags/manager/tagpropwidget.cpp:112
+#: core/libs/tags/manager/tagpropwidget.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "在此输入标签名称"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:125
+#: core/libs/tags/manager/tagpropwidget.cpp:115
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "图标(&I)："
 
-#: core/libs/tags/manager/tagpropwidget.cpp:134
+#: core/libs/tags/manager/tagpropwidget.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "重置"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:147
+#: core/libs/tags/manager/tagpropwidget.cpp:137
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "快捷键(&S)："
 
-#: core/libs/tags/manager/tagpropwidget.cpp:160
+#: core/libs/tags/manager/tagpropwidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "提示"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:161
+#: core/libs/tags/manager/tagpropwidget.cpp:151
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr "此快捷键用于对项目指定或取消标签。"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:166
+#: core/libs/tags/manager/tagpropwidget.cpp:156
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "保存"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:167
+#: core/libs/tags/manager/tagpropwidget.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "丢弃"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:234
+#: core/libs/tags/manager/tagpropwidget.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "原有标签已被更改。是否保存更改？ "
 
-#: core/libs/tags/manager/tagsmanager.cpp:180
+#: core/libs/tags/manager/tagsmanager.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "标签管理器"
 
-#: core/libs/tags/manager/tagsmanager.cpp:339
+#: core/libs/tags/manager/tagsmanager.cpp:321
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -38107,7 +38107,7 @@ msgid_plural ""
 msgstr[0] ""
 "标签 %2 含有一个或多个子标签。删除此标签将同时删除它的子标签。您想要继续吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:362
+#: core/libs/tags/manager/tagsmanager.cpp:344
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -38115,21 +38115,21 @@ msgid_plural ""
 "Tags %2 are assigned to one or more items. Do you want to delete them?"
 msgstr[0] "标签 %2 已被指定到一个或多个项目。您想要继续吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:372
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
 msgstr[0] "删除标签 %2 吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:378
+#: core/libs/tags/manager/tagsmanager.cpp:360
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "删除标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager.cpp:486
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -38140,8 +38140,8 @@ msgstr ""
 "这之前没有读取过文件的标签 (通过调用“读取图像标签”操作)，您可能会<b>丢失标签"
 "</b>。<br/> 您想要继续吗？</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:516
-#: core/libs/tags/manager/tagsmanager.cpp:535
+#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:517
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -38150,7 +38150,7 @@ msgstr ""
 "此操作可能耗时较长，这取决于相册集合的规模。\n"
 "您想要继续吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:555
+#: core/libs/tags/manager/tagsmanager.cpp:537
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -38161,119 +38161,119 @@ msgstr ""
 "要应用更改到文件，您必须在这之后选择写入元数据到文件。\n"
 "您想要继续吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:622
+#: core/libs/tags/manager/tagsmanager.cpp:604
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "您确定要从所有图像中移除所选标签吗？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:703
+#: core/libs/tags/manager/tagsmanager.cpp:685
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "组织标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:706
+#: core/libs/tags/manager/tagsmanager.cpp:688
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "同步导出(&E)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:705
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "从地址簿创建标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:708
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "标记未指定标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr "添加新标签到当前标签。当前标签是最后一个点击的标签。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr "删除所选项目。这也可以删除多个项目。但不能删除根标签。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:753
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "编辑所选标签的标题"
 
-#: core/libs/tags/manager/tagsmanager.cpp:755
+#: core/libs/tags/manager/tagsmanager.cpp:737
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "重置图标到所选标签。可以重置多个选中标签的图标。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "标记所有未分配到图像的标签。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "反向选择。只有可见项目会被选择。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "所选项目将被展开"
 
-#: core/libs/tags/manager/tagsmanager.cpp:765
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "展开整个标签树"
 
-#: core/libs/tags/manager/tagsmanager.cpp:767
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "折叠整个标签树"
 
-#: core/libs/tags/manager/tagsmanager.cpp:769
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "从图像中杉树所选标签。可以删除多个标签。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:799
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "写入数据库标签到图像"
 
-#: core/libs/tags/manager/tagsmanager.cpp:820
+#: core/libs/tags/manager/tagsmanager.cpp:802
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "读取图像标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:823
+#: core/libs/tags/manager/tagsmanager.cpp:805
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "仅从数据库清除所有标签"
 
-#: core/libs/tags/manager/tagsmanager.cpp:825
+#: core/libs/tags/manager/tagsmanager.cpp:807
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "写入标签元数据到图像。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:827
+#: core/libs/tags/manager/tagsmanager.cpp:809
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr "读取图像的标签到数据库。已有标签将不受影响。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:830
+#: core/libs/tags/manager/tagsmanager.cpp:812
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr "删除数据库中的所有标签。更改不会同步到文件。请谨慎操作。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:852
+#: core/libs/tags/manager/tagsmanager.cpp:834
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"

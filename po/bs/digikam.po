@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-05 01:33+0000\n"
+"POT-Creation-Date: 2024-03-06 01:32+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3485,7 +3485,7 @@ msgid "Tools"
 msgstr "Alati"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:833
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgid "Help"
@@ -4227,7 +4227,7 @@ msgstr "Ime datoteke"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:170
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
@@ -11908,7 +11908,7 @@ msgstr "Dvije karte - vodoravno"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:633
+#: core/utilities/searchwindow/searchutilities.cpp:653
 #, kde-format
 msgid "OK"
 msgstr "OK"
@@ -11983,7 +11983,7 @@ msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Učitavanje metapodataka - %p%"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
 #, fuzzy, kde-format
 #| msgid "You have 1 modified image."
 #| msgid_plural "You have %1 modified images."
@@ -11994,28 +11994,28 @@ msgstr[0] "Imate %1 modifikovanu sliku."
 msgstr[1] "Imate %1 modifikovanih slika."
 msgstr[2] "Imate %1 modifikovane slike."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
 #, fuzzy, kde-format
 #| msgid "Unsaved changes"
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Nespremljene promjene"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:837
 #, fuzzy, kde-format
 #| msgid "%1 Would you like to save the changes you made to them?"
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Želite li sačuvati promjene koje ste napravili na njima?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:953
 #, fuzzy, kde-format
 #| msgid "Saving changes - %p%"
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Snimanje promjena - %p%"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1012
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -12060,14 +12060,14 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Greška"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1013
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Nije uspjelo snimanje nekih informacija:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1051
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -14389,7 +14389,7 @@ msgstr "&Dodaj"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:599
+#: core/libs/dialogs/deletedialog.cpp:574
 #, kde-format
 msgid "&Delete"
 msgstr "&Obriši"
@@ -16031,7 +16031,7 @@ msgid "Status"
 msgstr "Status"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:142
-#: core/libs/dialogs/solidhardwaredlg.cpp:294
+#: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@item"
@@ -25657,13 +25657,13 @@ msgstr ""
 "nastaviti?"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
-#: core/libs/dialogs/webbrowserdlg.cpp:129
+#: core/libs/dialogs/webbrowserdlg.cpp:123
 #, kde-format
 msgid "Home"
 msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:190
-#: core/libs/dialogs/webbrowserdlg.cpp:130
+#: core/libs/dialogs/webbrowserdlg.cpp:124
 #, kde-format
 msgid "Go back to Home page"
 msgstr ""
@@ -29144,8 +29144,8 @@ msgid "Labels Album"
 msgstr "Album oznaka"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
-#: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:134
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -30347,44 +30347,44 @@ msgstr "Nijedna slika nije izabrana"
 msgid "This is the original image"
 msgstr "Ovo je originalna slika"
 
-#: core/libs/database/server/databaseserver.cpp:153
+#: core/libs/database/server/databaseserver.cpp:150
 #, fuzzy, kde-format
 #| msgid "Filter identifier or version is not supported"
 msgid "Database type is not supported."
 msgstr "Identifikator filtera ili verzija nije podržana"
 
-#: core/libs/database/server/databaseserver.cpp:294
+#: core/libs/database/server/databaseserver.cpp:291
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr "Nema staze do mysqld postavke u konfiguraciji servera."
 
-#: core/libs/database/server/databaseserver.cpp:303
+#: core/libs/database/server/databaseserver.cpp:300
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql server command set in configuration file."
 msgstr "Nema staze do mysqld postavke u konfiguraciji servera."
 
-#: core/libs/database/server/databaseserver.cpp:312
+#: core/libs/database/server/databaseserver.cpp:309
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql administration command set in configuration file."
 msgstr "Nema staze do mysqld postavke u konfiguraciji servera."
 
-#: core/libs/database/server/databaseserver.cpp:321
+#: core/libs/database/server/databaseserver.cpp:318
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "Nema staze do mysqld postavke u konfiguraciji servera."
 
-#: core/libs/database/server/databaseserver.cpp:331
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
+#: core/libs/database/server/databaseserver.cpp:328
+#: core/libs/database/server/databaseserver.cpp:338
+#: core/libs/database/server/databaseserver.cpp:348
 #, fuzzy, kde-format
 msgid "Cannot create directory %1"
 msgstr "Kreiranje direktorijuma nije uspjelo,"
 
-#: core/libs/database/server/databaseserver.cpp:431
+#: core/libs/database/server/databaseserver.cpp:428
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to create MySQL server configuration file.\n"
@@ -30401,36 +30401,36 @@ msgstr ""
 "nije mogla da bude pročitana ili ciljana datoteka (mysql.conf) nije mogala "
 "biti zapisana."
 
-#: core/libs/database/server/databaseserver.cpp:453
+#: core/libs/database/server/databaseserver.cpp:450
 #, fuzzy, kde-format
 #| msgid "Did not find MySQL server default configuration (mysql-global.conf)."
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Nije pronađena zadana konfiguracija za MySQL server  (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:501
+#: core/libs/database/server/databaseserver.cpp:498
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "Otkivanje uređaja u toku,molimo Vas da sačekate..."
 
-#: core/libs/database/server/databaseserver.cpp:549
+#: core/libs/database/server/databaseserver.cpp:546
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not start database initializer."
 msgstr "Server baze podataka nije moguće pokrenuti."
 
-#: core/libs/database/server/databaseserver.cpp:612
+#: core/libs/database/server/databaseserver.cpp:609
 #, kde-format
 msgid "Could not start database server."
 msgstr "Server baze podataka nije moguće pokrenuti."
 
-#: core/libs/database/server/databaseserver.cpp:654
+#: core/libs/database/server/databaseserver.cpp:651
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:685
+#: core/libs/database/server/databaseserver.cpp:682
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -30440,12 +30440,12 @@ msgstr ""
 "Database proces je završio neocekivano tokom početnog povezivanja.<p>Izvršni "
 "program: %1</p>”<p>Greška procesa: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:691
+#: core/libs/database/server/databaseserver.cpp:688
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:724
+#: core/libs/database/server/databaseserver.cpp:721
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -30453,19 +30453,19 @@ msgstr ""
 "Kreiranje baze podataka nije uspjelo <p>Greška upita: %1</p><p>Greška baze "
 "podataka:%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:748
+#: core/libs/database/server/databaseserver.cpp:745
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Otkivanje uređaja u toku,molimo Vas da sačekate..."
 
-#: core/libs/database/server/databaseserver.cpp:792
+#: core/libs/database/server/databaseserver.cpp:789
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "Server baze podataka nije moguće pokrenuti."
 
-#: core/libs/database/server/databaseserver.cpp:828
+#: core/libs/database/server/databaseserver.cpp:825
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -30505,26 +30505,26 @@ msgstr ""
 "nov) Molimo Vas da koristite noviju verziju digikam-a od one što ste "
 "koristili ranije. "
 
-#: core/libs/database/tags/facetags.cpp:403
+#: core/libs/database/tags/facetags.cpp:405
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Osobe"
 
-#: core/libs/database/tags/facetags.cpp:467
+#: core/libs/database/tags/facetags.cpp:469
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Nepoznata"
 
-#: core/libs/database/tags/facetags.cpp:487
+#: core/libs/database/tags/facetags.cpp:489
 #, fuzzy, kde-format
 #| msgid "Confirm"
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Potvrdi"
 
-#: core/libs/database/tags/facetags.cpp:507
+#: core/libs/database/tags/facetags.cpp:509
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "List of detected faces that need not be recognized"
@@ -31410,22 +31410,22 @@ msgstr ""
 "Ova opcija se može koristiti za zumiranje slike na trenutno odabrano "
 "područje."
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:170
 #, kde-format
 msgid "Thumb"
 msgstr "Umanjeni prikaz"
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:173
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Lista stavki koje će biti obrisane."
 
-#: core/libs/dialogs/deletedialog.cpp:181
+#: core/libs/dialogs/deletedialog.cpp:174
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Ovo je lista stavki koje će upravo biti obrisane."
 
-#: core/libs/dialogs/deletedialog.cpp:303
+#: core/libs/dialogs/deletedialog.cpp:285
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -31434,7 +31434,7 @@ msgstr ""
 "Ako su označeni, fajlovi će biti trajno uklonjeni umjesto da budu prebačeni "
 "u Smeće."
 
-#: core/libs/dialogs/deletedialog.cpp:305
+#: core/libs/dialogs/deletedialog.cpp:287
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -31445,17 +31445,17 @@ msgstr ""
 "da budu premještene u Smeće.</p><p><em>Koristite ovu opciju sa oprezom</em>:"
 "većina sistema fajlova nisu u mogućnosti da ponovo vrate obrisane stavke</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:311
+#: core/libs/dialogs/deletedialog.cpp:293
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "&Obriši stavke umjesto premještanja u smeće"
 
-#: core/libs/dialogs/deletedialog.cpp:318
+#: core/libs/dialogs/deletedialog.cpp:300
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Ne pit&aj ponovo"
 
-#: core/libs/dialogs/deletedialog.cpp:377
+#: core/libs/dialogs/deletedialog.cpp:359
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -31464,7 +31464,7 @@ msgstr ""
 "Ako je označeno, ovaj dijalog više neće biti prikazan, a predmeti će se "
 "direktno i trajno izbrisati."
 
-#: core/libs/dialogs/deletedialog.cpp:379
+#: core/libs/dialogs/deletedialog.cpp:361
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -31473,7 +31473,7 @@ msgstr ""
 "Ako je taj okvir označen, ovaj dijalog više neće biti prikazan, a predmeti "
 "će se direktno i trajno izbrisati."
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:366
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -31482,7 +31482,7 @@ msgstr ""
 "Ako je označeno, ovaj dijalog više neće biti prikazan, a predmeti direktno "
 "će biti premješteni u Smeće."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:368
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -31491,17 +31491,17 @@ msgstr ""
 "Ako je ovaj okvir označen, ovaj dijalog više neće biti prikazan, a predmeti "
 "direktno će biti premješteni u Smeće."
 
-#: core/libs/dialogs/deletedialog.cpp:398
+#: core/libs/dialogs/deletedialog.cpp:380
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ovi predmeti će biti <b> trajno obrisani </b> sa vašeg hard diska."
 
-#: core/libs/dialogs/deletedialog.cpp:404
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Ovi predmeti će biti premješteni u Smeće."
 
-#: core/libs/dialogs/deletedialog.cpp:406
+#: core/libs/dialogs/deletedialog.cpp:388
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
@@ -31509,18 +31509,18 @@ msgstr[0] "<b>%1</b> stavka odabrana."
 msgstr[1] "<b>%1</b> stavki odabrano."
 msgstr[2] "<b>%1</b> stavki odabrano."
 
-#: core/libs/dialogs/deletedialog.cpp:419
+#: core/libs/dialogs/deletedialog.cpp:401
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ovi albumi će biti <b> trajno obrisani </b> sa vašeg hard diska."
 
-#: core/libs/dialogs/deletedialog.cpp:425
+#: core/libs/dialogs/deletedialog.cpp:407
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Ovi albumi će biti premješteni u Smeće."
 
-#: core/libs/dialogs/deletedialog.cpp:429
-#: core/libs/dialogs/deletedialog.cpp:456
+#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:438
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
@@ -31528,7 +31528,7 @@ msgstr[0] "<b>%1</b> album odabran."
 msgstr[1] "<b>%1</b> albuma odabrano."
 msgstr[2] "<b>%1</b> albuma odabrano."
 
-#: core/libs/dialogs/deletedialog.cpp:440
+#: core/libs/dialogs/deletedialog.cpp:422
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -31539,7 +31539,7 @@ msgstr ""
 "p><p>Napomena <b>svi podalbumi </b> su uključeni u ovu listu i bit će "
 "također trajno obrisani.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:449
+#: core/libs/dialogs/deletedialog.cpp:431
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -31548,19 +31548,19 @@ msgstr ""
 "<p>Svi albumi će biti  pomjereni u Smeće.</p><p>Napomena <b>svi podalbumi </"
 "b> su uključeni u ovu listu i bit će također pomjereni u Smeće.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:600
+#: core/libs/dialogs/deletedialog.cpp:575
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Premjesti u Smeće"
 
-#: core/libs/dialogs/deletedialog.cpp:660
+#: core/libs/dialogs/deletedialog.cpp:635
 #, fuzzy, kde-format
 #| msgid "About to delete selected items"
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Spremam se da obrišem odabrane predmete"
 
-#: core/libs/dialogs/deletedialog.cpp:667
+#: core/libs/dialogs/deletedialog.cpp:642
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -31596,12 +31596,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Informacije o boji profila - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:233
+#: core/libs/dialogs/imagedialog.cpp:207
 #, fuzzy, kde-format
 msgid "Select an Item"
 msgstr "Odaberi stavku"
 
-#: core/libs/dialogs/imagedialog.cpp:247
+#: core/libs/dialogs/imagedialog.cpp:221
 #, fuzzy, kde-format
 msgid "Select Items"
 msgstr "Odaberi stavku"
@@ -31683,27 +31683,27 @@ msgstr "<i>SlikaPoJediniciVremena:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>VideoKodek:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:163
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Dijeljene biblioteke i informacije o komponentama"
 
-#: core/libs/dialogs/infodlg.cpp:74
+#: core/libs/dialogs/infodlg.cpp:68
 #: core/libs/progressmanager/dhistoryview.cpp:149
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "Kopiraj u Clipboard"
 
-#: core/libs/dialogs/infodlg.cpp:96
+#: core/libs/dialogs/infodlg.cpp:90
 #, fuzzy, kde-format
 #| msgid "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr "<font size=\"5\">%1</font><br/><b>Verzija %2</b><p>%3</p>"
 
-#: core/libs/dialogs/infodlg.cpp:117
+#: core/libs/dialogs/infodlg.cpp:111
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Image History"
@@ -31789,14 +31789,14 @@ msgctxt "@info: tri state"
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: core/libs/dialogs/rawcameradlg.cpp:56
+#: core/libs/dialogs/rawcameradlg.cpp:52
 #, fuzzy, kde-format
 #| msgid "List of supported RAW cameras"
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
 msgstr "Lista podržanih RAW kamera"
 
-#: core/libs/dialogs/rawcameradlg.cpp:129
+#: core/libs/dialogs/rawcameradlg.cpp:125
 #, fuzzy, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
@@ -31810,7 +31810,7 @@ msgstr[2] ""
 "<p>Koristeći KDcraw biblioteku verzije %2<br/>Koristeći LibRaw verzije %3<br/"
 ">%1 modela na listi</p>"
 
-#: core/libs/dialogs/rawcameradlg.cpp:139
+#: core/libs/dialogs/rawcameradlg.cpp:135
 #, fuzzy, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
@@ -31824,13 +31824,13 @@ msgstr[2] ""
 "<p>Koristeći KDcraw biblioteku verzije %2<br/>Koristeći LibRaw verzije %3<br/"
 ">%1 modela na listi (pronađeno:%4)</p>"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:83
+#: core/libs/dialogs/solidhardwaredlg.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Detected Hardware"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:86
+#: core/libs/dialogs/solidhardwaredlg.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -31839,52 +31839,52 @@ msgid ""
 "Press \"Refresh\" to update list if you plug a removable device."
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:116
+#: core/libs/dialogs/solidhardwaredlg.cpp:111
 #, kde-format
 msgctxt "@title"
 msgid "Hotplug Device Events"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:117
+#: core/libs/dialogs/solidhardwaredlg.cpp:112
 #, fuzzy, kde-format
 #| msgid "Devices"
 msgctxt "@title"
 msgid "Devices List"
 msgstr "Uređaji"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:130
+#: core/libs/dialogs/solidhardwaredlg.cpp:125
 #, fuzzy, kde-format
 #| msgid "Refresh"
 msgctxt "@action"
 msgid "Refresh"
 msgstr "Osvježi"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:272
-#: core/libs/dialogs/solidhardwaredlg.cpp:393
+#: core/libs/dialogs/solidhardwaredlg.cpp:268
+#: core/libs/dialogs/solidhardwaredlg.cpp:389
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:272
-#: core/libs/dialogs/solidhardwaredlg.cpp:278
-#: core/libs/dialogs/solidhardwaredlg.cpp:281
-#: core/libs/dialogs/solidhardwaredlg.cpp:284
+#: core/libs/dialogs/solidhardwaredlg.cpp:268
+#: core/libs/dialogs/solidhardwaredlg.cpp:274
+#: core/libs/dialogs/solidhardwaredlg.cpp:277
+#: core/libs/dialogs/solidhardwaredlg.cpp:280
 #, kde-format
 msgctxt "@item: device property"
 msgid "empty"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:275
-#: core/libs/dialogs/solidhardwaredlg.cpp:396
+#: core/libs/dialogs/solidhardwaredlg.cpp:271
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
 #, fuzzy, kde-format
 #| msgid "Parents"
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
 msgstr "Roditelji"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:275
-#: core/libs/dialogs/solidhardwaredlg.cpp:287
+#: core/libs/dialogs/solidhardwaredlg.cpp:271
+#: core/libs/dialogs/solidhardwaredlg.cpp:283
 #, fuzzy, kde-format
 #| msgctxt "none of the paths"
 #| msgid "none"
@@ -31892,52 +31892,52 @@ msgctxt "@item: device property"
 msgid "none"
 msgstr "nijedan"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:278
+#: core/libs/dialogs/solidhardwaredlg.cpp:274
 #, fuzzy, kde-format
 #| msgid "Andorra"
 msgctxt "@item; device constructor"
 msgid "Vendor"
 msgstr "Andora"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:281
-#: core/libs/dialogs/solidhardwaredlg.cpp:402
+#: core/libs/dialogs/solidhardwaredlg.cpp:277
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
 #, fuzzy, kde-format
 #| msgid "Product ID:"
 msgctxt "@item: device name"
 msgid "Product"
 msgstr "Identifikacijski broj produkta:"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:284
-#: core/libs/dialogs/solidhardwaredlg.cpp:405
+#: core/libs/dialogs/solidhardwaredlg.cpp:280
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@item: device description"
 msgid "Description"
 msgstr "Opis"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:287
-#: core/libs/dialogs/solidhardwaredlg.cpp:408
+#: core/libs/dialogs/solidhardwaredlg.cpp:283
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item: device status"
 msgid "States"
 msgstr "Status"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:294
+#: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"
 msgid "Non-portable info"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:386
+#: core/libs/dialogs/solidhardwaredlg.cpp:382
 #, fuzzy, kde-format
 #| msgid "Device model (*):"
 msgctxt "@item"
 msgid "New Device Added"
 msgstr "Model uređaja (*):"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:396
-#: core/libs/dialogs/solidhardwaredlg.cpp:408
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, fuzzy, kde-format
 #| msgctxt "none of the paths"
 #| msgid "none"
@@ -31945,46 +31945,46 @@ msgctxt "@info: device property"
 msgid "none"
 msgstr "nijedan"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:399
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
 #, fuzzy, kde-format
 #| msgid "Andorra"
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr "Andora"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:399
-#: core/libs/dialogs/solidhardwaredlg.cpp:402
-#: core/libs/dialogs/solidhardwaredlg.cpp:405
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:418
+#: core/libs/dialogs/solidhardwaredlg.cpp:414
 #, fuzzy, kde-format
 #| msgid "Device model (*):"
 msgctxt "@item"
 msgid "Device Removed"
 msgstr "Model uređaja (*):"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:421
+#: core/libs/dialogs/solidhardwaredlg.cpp:417
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:134
+#: core/libs/dialogs/webbrowserdlg.cpp:128
 #, fuzzy, kde-format
 #| msgid "Open in Terminal"
 msgid "Desktop Browser"
 msgstr "Otvori u terminalu"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:135
+#: core/libs/dialogs/webbrowserdlg.cpp:129
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:249
+#: core/libs/dialogs/webbrowserdlg.cpp:243
 #, fuzzy, kde-format
 #| msgid "Cannot delete Root Tag"
 msgid "Cannot load page %1"
@@ -41622,89 +41622,89 @@ msgstr "Dodijeli Color labelu \"%1\""
 msgid "Assign Tag \"%1\""
 msgstr "Pridruži oznaku \"%1\""
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:155
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:154
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@info"
 msgid "All Tags"
 msgstr "Sve oznake"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:287
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:290
 #, fuzzy, kde-format
 #| msgid "Quick Access List"
 msgctxt "@info"
 msgid "Quick Access List"
 msgstr "Lista brzog pristupa"
 
-#: core/libs/tags/manager/models/tagmngrlistview.cpp:152
+#: core/libs/tags/manager/models/tagmngrlistview.cpp:155
 #, fuzzy, kde-format
 #| msgid "Delete Selected from List"
 msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr "Izbrišite izabrano iz liste"
 
-#: core/libs/tags/manager/taglist.cpp:67
+#: core/libs/tags/manager/taglist.cpp:61
 #, kde-format
 msgid "Add to List"
 msgstr "Dodaj na listu"
 
-#: core/libs/tags/manager/taglist.cpp:68
+#: core/libs/tags/manager/taglist.cpp:62
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr "Dodaj izabrane oznake na Quick Access listu"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:138
+#: core/libs/tags/manager/tagmngrtreeview.cpp:135
 #, kde-format
 msgid "Delete Tags"
 msgstr "Izbriši oznake"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:716
+#: core/libs/tags/manager/tagmngrtreeview.cpp:143
+#: core/libs/tags/manager/tagsmanager.cpp:698
 #, fuzzy, kde-format
 #| msgid "Edit Titles"
 msgid "Edit Tag Title"
 msgstr "Izmjeni naslove"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagmngrtreeview.cpp:147
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #: core/libs/tags/widgets/tagfolderview.cpp:69
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Resetuj ikonu oznake"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagmngrtreeview.cpp:150
+#: core/libs/tags/manager/tagsmanager.cpp:711
 #, kde-format
 msgid "Invert Selection"
 msgstr "Obrni izbor"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Proširi stablo oznaka"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Collapse Tag Tree"
 msgstr "Po albumu"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:741
+#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Ukloni oznaku sa slika"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:98
+#: core/libs/tags/manager/tagpropwidget.cpp:88
 #, fuzzy, kde-format
 #| msgid "Tag Properties"
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "Svojstva oznake"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:107
+#: core/libs/tags/manager/tagpropwidget.cpp:97
 #: core/libs/tags/widgets/tageditdlg.cpp:139
 #, fuzzy, kde-format
 #| msgid "&Title:"
@@ -41712,41 +41712,41 @@ msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "&Naslov:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:112
+#: core/libs/tags/manager/tagpropwidget.cpp:102
 #, fuzzy, kde-format
 #| msgid "Enter tag name here"
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "Unesite ime oznake ovdje"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:125
+#: core/libs/tags/manager/tagpropwidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "&Icon:"
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "&Ikona:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:134
+#: core/libs/tags/manager/tagpropwidget.cpp:124
 #, fuzzy, kde-format
 #| msgid "Reset"
 msgctxt "@action"
 msgid "Reset"
 msgstr "Resetuj"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:147
+#: core/libs/tags/manager/tagpropwidget.cpp:137
 #, fuzzy, kde-format
 #| msgid "&Shortcut:"
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "&Prečica:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:160
+#: core/libs/tags/manager/tagpropwidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:161
+#: core/libs/tags/manager/tagpropwidget.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to "
@@ -41757,28 +41757,28 @@ msgstr ""
 "<p><b>Note</b>: ova skraćenica može biti korištena da pridruži ili poništi "
 "oznaku za stavku.</p>"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:166
+#: core/libs/tags/manager/tagpropwidget.cpp:156
 #, fuzzy, kde-format
 #| msgid "Save"
 msgctxt "@action"
 msgid "Save"
 msgstr "Sačuvaj"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:167
+#: core/libs/tags/manager/tagpropwidget.cpp:157
 #, fuzzy, kde-format
 #| msgid "Discard"
 msgctxt "@action"
 msgid "Discard"
 msgstr "Poništi"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:234
+#: core/libs/tags/manager/tagpropwidget.cpp:224
 #, fuzzy, kde-format
 #| msgid "Previous tags were changed. Save changes? "
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Prethodne oznake su izmijenjene. Spasiti izmjene? "
 
-#: core/libs/tags/manager/tagsmanager.cpp:180
+#: core/libs/tags/manager/tagsmanager.cpp:162
 #, fuzzy, kde-format
 #| msgid "Tags Manager"
 msgctxt "@title:window"
@@ -41786,7 +41786,7 @@ msgid "Tags Manager"
 msgstr "Upravitelj oznaka"
 
 #         translations.
-#: core/libs/tags/manager/tagsmanager.cpp:339
+#: core/libs/tags/manager/tagsmanager.cpp:321
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -41806,7 +41806,7 @@ msgstr[2] ""
 "podoznake. Da li želite nastaviti?"
 
 #         translations.
-#: core/libs/tags/manager/tagsmanager.cpp:362
+#: core/libs/tags/manager/tagsmanager.cpp:344
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -41820,7 +41820,7 @@ msgstr[2] ""
 "Oznake %2 su dodijeljene jednoj ili više stavki. Da li ih želite obrisati?"
 
 #         translations.
-#: core/libs/tags/manager/tagsmanager.cpp:372
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -41829,7 +41829,7 @@ msgstr[0] "Brisanje oznake %2?"
 msgstr[1] "Brisanje oznaka %2?"
 msgstr[2] "Brisanje oznaka %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:378
+#: core/libs/tags/manager/tagsmanager.cpp:360
 #, fuzzy, kde-format
 #| msgid "Delete tag"
 #| msgid_plural "Delete tags"
@@ -41840,7 +41840,7 @@ msgstr[0] "Obriši oznaku"
 msgstr[1] "Obriši oznake"
 msgstr[2] "Obriši oznake"
 
-#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager.cpp:486
 #, fuzzy, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -41851,8 +41851,8 @@ msgstr ""
 "podataka.<br> Mogli bi <b>izgubiti oznake</b> ako niste prije pročitali "
 "oznake (pozivom Čitaj oznake iz Slike).<br> Da li želite nastaviti?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:516
-#: core/libs/tags/manager/tagsmanager.cpp:535
+#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:517
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -41861,7 +41861,7 @@ msgstr ""
 "Ova operacija može trajati dugo vremena, zavisno od veličine kolekcije.\n"
 "Da li želite nastaviti?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:555
+#: core/libs/tags/manager/tagsmanager.cpp:537
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -41874,7 +41874,7 @@ msgstr ""
 "Da li želite nastaviti?"
 
 #         translations.
-#: core/libs/tags/manager/tagsmanager.cpp:622
+#: core/libs/tags/manager/tagsmanager.cpp:604
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -41882,7 +41882,7 @@ msgstr[0] "Da li stvarno želite ukloniti izabranu oznaku sa svih slika?"
 msgstr[1] "Da li stvarno želite ukloniti izabrane oznake sa svih slika?"
 msgstr[2] "Da li stvarno želite ukloniti izabrane oznake sa svih slika?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:703
+#: core/libs/tags/manager/tagsmanager.cpp:685
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Organize"
@@ -41890,31 +41890,31 @@ msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organiziraj"
 
-#: core/libs/tags/manager/tagsmanager.cpp:706
+#: core/libs/tags/manager/tagsmanager.cpp:688
 #, fuzzy, kde-format
 #| msgid "Sync &Export"
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sinhronizacija i izvoz"
 
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:705
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Kreiraj oznaku iz adresara"
 
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:708
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Nedavno pridružene oznake"
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Dodaj novu oznaku na trenutnu oznaku. Trenutna oznaka je posljednja kliknuta "
 "oznaka."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, fuzzy, kde-format
 #| msgid ""
 #| "Delete selected items. Also work with multiple items, but won't delete "
@@ -41926,72 +41926,72 @@ msgstr ""
 "Izbriši označene stavke. Radi i sa višestrukim stavkama, bez brisanja "
 "korjenske oznake."
 
-#: core/libs/tags/manager/tagsmanager.cpp:753
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Edit title from selected tag."
 msgstr "Ukloni odabranu oznaku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:755
+#: core/libs/tags/manager/tagsmanager.cpp:737
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "Ponovo namjesti ikonu sa odabranim oznakama. Radi sa više odabira."
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, fuzzy, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 "Obrišite sve oznake samo iz baze podataka. Neće se sinhronizovati sa "
 "datotekama. Nastavite uz oprez."
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Okreni odabir. Samo vidljive stavke će biti odabrane."
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Odabrane stavke će biti proširene"
 
-#: core/libs/tags/manager/tagsmanager.cpp:765
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, fuzzy, kde-format
 #| msgid "Expand tag tree by one level"
 msgid "Expand tag tree completely"
 msgstr "Proširi stablo oznaka za još jedan nivo"
 
-#: core/libs/tags/manager/tagsmanager.cpp:767
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, fuzzy, kde-format
 #| msgid "Slideshow Usage"
 msgid "Collapse tag tree completely"
 msgstr "Iskoristivost projekcije slajdova"
 
-#: core/libs/tags/manager/tagsmanager.cpp:769
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "Izbriši odabranu(e) oznaku(e) sa slika. Radi sa više odabira."
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:799
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Prepiši oznake iz baze podataka na sliku"
 
-#: core/libs/tags/manager/tagsmanager.cpp:820
+#: core/libs/tags/manager/tagsmanager.cpp:802
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Pročitaj oznake sa slike"
 
-#: core/libs/tags/manager/tagsmanager.cpp:823
+#: core/libs/tags/manager/tagsmanager.cpp:805
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Brisanje svih oznaka samo iz baze podataka"
 
-#: core/libs/tags/manager/tagsmanager.cpp:825
+#: core/libs/tags/manager/tagsmanager.cpp:807
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Prepiši oznake metapodataka na sliku."
 
-#: core/libs/tags/manager/tagsmanager.cpp:827
+#: core/libs/tags/manager/tagsmanager.cpp:809
 #, fuzzy, kde-format
 #| msgid "Read tags from Images into Database. Existing tags won't be affected"
 msgid "Read tags from Images into Database. Existing tags will not be affected"
@@ -41999,7 +41999,7 @@ msgstr ""
 "Pročitaj oznake sa slika u bazu podataka. To neće utjecati na postojeće "
 "oznake."
 
-#: core/libs/tags/manager/tagsmanager.cpp:830
+#: core/libs/tags/manager/tagsmanager.cpp:812
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -42008,7 +42008,7 @@ msgstr ""
 "Obrišite sve oznake samo iz baze podataka. Neće se sinhronizovati sa "
 "datotekama. Nastavite uz oprez."
 
-#: core/libs/tags/manager/tagsmanager.cpp:852
+#: core/libs/tags/manager/tagsmanager.cpp:834
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"

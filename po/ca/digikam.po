@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-05 01:33+0000\n"
+"POT-Creation-Date: 2024-03-06 01:32+0000\n"
 "PO-Revision-Date: 2024-02-26 17:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3143,7 +3143,7 @@ msgid "Tools"
 msgstr "Eines"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:833
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
@@ -3898,7 +3898,7 @@ msgstr "Nom del fitxer"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:170
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
@@ -11439,7 +11439,7 @@ msgstr "Dos mapes - superior i inferior"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:633
+#: core/utilities/searchwindow/searchutilities.cpp:653
 #, kde-format
 msgid "OK"
 msgstr "D'acord"
@@ -11504,7 +11504,7 @@ msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Càrrega de les metadades -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11512,25 +11512,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Hi ha 1 imatge modificada."
 msgstr[1] "Hi ha %1 imatges modificades."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Canvis sense desar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:837
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Voleu desar els canvis que hi heu fet?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:953
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Es desen els canvis -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1012
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11574,13 +11574,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Error"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1013
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Ha fallat en desar alguna informació:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1051
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -13837,7 +13837,7 @@ msgstr "&Afegeix"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:599
+#: core/libs/dialogs/deletedialog.cpp:574
 #, kde-format
 msgid "&Delete"
 msgstr "Su&primeix"
@@ -15300,7 +15300,7 @@ msgid "Status"
 msgstr "Estat"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:142
-#: core/libs/dialogs/solidhardwaredlg.cpp:294
+#: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"
 msgid "Properties"
@@ -24373,13 +24373,13 @@ msgstr ""
 "Voleu continuar?"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
-#: core/libs/dialogs/webbrowserdlg.cpp:129
+#: core/libs/dialogs/webbrowserdlg.cpp:123
 #, kde-format
 msgid "Home"
 msgstr "Inici"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:190
-#: core/libs/dialogs/webbrowserdlg.cpp:130
+#: core/libs/dialogs/webbrowserdlg.cpp:124
 #, kde-format
 msgid "Go back to Home page"
 msgstr "Torna a la pàgina d'inici"
@@ -27630,8 +27630,8 @@ msgid "Labels Album"
 msgstr "Retola l'àlbum"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
-#: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:134
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -28733,19 +28733,19 @@ msgstr "No s'ha seleccionat cap imatge"
 msgid "This is the original image"
 msgstr "Aquesta és la imatge original"
 
-#: core/libs/database/server/databaseserver.cpp:153
+#: core/libs/database/server/databaseserver.cpp:150
 #, kde-format
 msgid "Database type is not supported."
 msgstr "El tipus de base de dades està admès."
 
-#: core/libs/database/server/databaseserver.cpp:294
+#: core/libs/database/server/databaseserver.cpp:291
 #, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
 "No s'ha establert cap camí a l'ordre d'actualització del «mysql» en el "
 "fitxer de configuració."
 
-#: core/libs/database/server/databaseserver.cpp:303
+#: core/libs/database/server/databaseserver.cpp:300
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
@@ -28753,7 +28753,7 @@ msgstr ""
 "configuració."
 
 # skip-rule: punctuation-period
-#: core/libs/database/server/databaseserver.cpp:312
+#: core/libs/database/server/databaseserver.cpp:309
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
@@ -28761,21 +28761,21 @@ msgstr ""
 "fitxer de configuració."
 
 # skip-rule: punctuation-period
-#: core/libs/database/server/databaseserver.cpp:321
+#: core/libs/database/server/databaseserver.cpp:318
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 "No s'ha establert cap camí a l'ordre d'inicialització del «mysql» en el "
 "fitxer de configuració."
 
-#: core/libs/database/server/databaseserver.cpp:331
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
+#: core/libs/database/server/databaseserver.cpp:328
+#: core/libs/database/server/databaseserver.cpp:338
+#: core/libs/database/server/databaseserver.cpp:348
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "No s'ha pogut crear el directori %1"
 
-#: core/libs/database/server/databaseserver.cpp:431
+#: core/libs/database/server/databaseserver.cpp:428
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28786,50 +28786,50 @@ msgstr ""
 "vol dir que el fitxer de configuració predeterminat</p><p>%1</p><p>no es pot "
 "llegir o el fitxer de destinació</p><p>%2</p><p>no es pot escriure.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:453
+#: core/libs/database/server/databaseserver.cpp:450
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "No s'ha pogut trobar cap configuració predeterminada del servidor de MySQL "
 "(mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:501
+#: core/libs/database/server/databaseserver.cpp:498
 #, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "La base de dades MySQL interna s'està inicialitzant, espereu..."
 
-#: core/libs/database/server/databaseserver.cpp:549
+#: core/libs/database/server/databaseserver.cpp:546
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "No s'ha pogut iniciar l'iniciador de la base de dades."
 
-#: core/libs/database/server/databaseserver.cpp:612
+#: core/libs/database/server/databaseserver.cpp:609
 #, kde-format
 msgid "Could not start database server."
 msgstr "No s'ha pogut iniciar el servidor de base de dades."
 
-#: core/libs/database/server/databaseserver.cpp:654
+#: core/libs/database/server/databaseserver.cpp:651
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 "L'objecte de base de dades no és vàlid durant l'inici del servidor de base "
 "de dades"
 
-#: core/libs/database/server/databaseserver.cpp:685
+#: core/libs/database/server/databaseserver.cpp:682
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "El procés de la base de dades ha acabat inesperadament durant la connexió "
 "inicial."
 
-#: core/libs/database/server/databaseserver.cpp:691
+#: core/libs/database/server/databaseserver.cpp:688
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 "No s'ha pogut connectar a la base de dades després d'intentar-ho durant 60 "
 "segons."
 
-#: core/libs/database/server/databaseserver.cpp:724
+#: core/libs/database/server/databaseserver.cpp:721
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28837,17 +28837,17 @@ msgstr ""
 "Ha fallat en crear la base de dades<p>Error de la interrogació: %1</"
 "p><p>Error de la base de dades: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:748
+#: core/libs/database/server/databaseserver.cpp:745
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Hi ha una actualització de la base de dades MySQL en curs, espereu..."
 
-#: core/libs/database/server/databaseserver.cpp:792
+#: core/libs/database/server/databaseserver.cpp:789
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "No s'ha pogut actualitzar la base de dades."
 
-#: core/libs/database/server/databaseserver.cpp:828
+#: core/libs/database/server/databaseserver.cpp:825
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Error del procés: %4</p>"
@@ -28878,25 +28878,25 @@ msgstr ""
 "format de la base de dades és massa recent. Si us plau, useu la versió més "
 "recent del digiKam que hàgiu usat abans. "
 
-#: core/libs/database/tags/facetags.cpp:403
+#: core/libs/database/tags/facetags.cpp:405
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Persones"
 
-#: core/libs/database/tags/facetags.cpp:467
+#: core/libs/database/tags/facetags.cpp:469
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/database/tags/facetags.cpp:487
+#: core/libs/database/tags/facetags.cpp:489
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Sense confirmació"
 
-#: core/libs/database/tags/facetags.cpp:507
+#: core/libs/database/tags/facetags.cpp:509
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -29822,22 +29822,22 @@ msgstr ""
 "Aquest fitxer executable s'usa per a actualitzar la base de dades a la "
 "versió actual del servidor."
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:170
 #, kde-format
 msgid "Thumb"
 msgstr "Miniatura"
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:173
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Llista d'elements que estan a punt de ser suprimits."
 
-#: core/libs/dialogs/deletedialog.cpp:181
+#: core/libs/dialogs/deletedialog.cpp:174
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Aquesta és la llista d'elements que estan a punt de ser suprimits."
 
-#: core/libs/dialogs/deletedialog.cpp:303
+#: core/libs/dialogs/deletedialog.cpp:285
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -29846,7 +29846,7 @@ msgstr ""
 "Si està activada, els fitxers s'eliminaran definitivament en lloc de "
 "moure'ls a la paperera."
 
-#: core/libs/dialogs/deletedialog.cpp:305
+#: core/libs/dialogs/deletedialog.cpp:287
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29858,17 +29858,17 @@ msgstr ""
 "aquesta opció amb compte</em>: la majoria de sistemes de fitxers no poden "
 "recuperar amb fiabilitat els elements suprimits.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:311
+#: core/libs/dialogs/deletedialog.cpp:293
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Su&primeix els elements en lloc de moure'ls a la paperera"
 
-#: core/libs/dialogs/deletedialog.cpp:318
+#: core/libs/dialogs/deletedialog.cpp:300
 #, kde-format
 msgid "Do not &ask again"
 msgstr "No ho tornis &a preguntar"
 
-#: core/libs/dialogs/deletedialog.cpp:377
+#: core/libs/dialogs/deletedialog.cpp:359
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29877,7 +29877,7 @@ msgstr ""
 "Si està activada, no es tornarà a mostrar aquest diàleg i els elements se "
 "suprimiran directament i permanentment."
 
-#: core/libs/dialogs/deletedialog.cpp:379
+#: core/libs/dialogs/deletedialog.cpp:361
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29886,7 +29886,7 @@ msgstr ""
 "Si aquesta casella està activada, no es tornarà a mostrar aquest diàleg i "
 "els elements se suprimiran directament i permanentment."
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:366
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29895,7 +29895,7 @@ msgstr ""
 "Si està activada, no es tornarà a mostrar aquest diàleg i els elements es "
 "mouran directament a la paperera."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:368
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29904,42 +29904,42 @@ msgstr ""
 "Si aquesta casella està activada, no es tornarà a mostrar aquest diàleg i "
 "els elements es mouran directament a la paperera."
 
-#: core/libs/dialogs/deletedialog.cpp:398
+#: core/libs/dialogs/deletedialog.cpp:380
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Aquests elements <b>se suprimiran permanentment</b> del disc dur."
 
-#: core/libs/dialogs/deletedialog.cpp:404
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Aquests àlbums es mouran a la paperera."
 
-#: core/libs/dialogs/deletedialog.cpp:406
+#: core/libs/dialogs/deletedialog.cpp:388
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "S'ha seleccionat <b>1</b> element."
 msgstr[1] "S'han seleccionat <b>%1</b> elements."
 
-#: core/libs/dialogs/deletedialog.cpp:419
+#: core/libs/dialogs/deletedialog.cpp:401
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Aquests àlbums <b>se suprimiran permanentment</b> del disc dur."
 
-#: core/libs/dialogs/deletedialog.cpp:425
+#: core/libs/dialogs/deletedialog.cpp:407
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Aquests àlbums es mouran a la paperera."
 
-#: core/libs/dialogs/deletedialog.cpp:429
-#: core/libs/dialogs/deletedialog.cpp:456
+#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:438
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "S'ha seleccionat <b>1</b> àlbum."
 msgstr[1] "S'han seleccionat <b>%1</b> àlbums."
 
-#: core/libs/dialogs/deletedialog.cpp:440
+#: core/libs/dialogs/deletedialog.cpp:422
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29950,7 +29950,7 @@ msgstr ""
 "tenir en compte que <b>tots els subàlbums</b> inclosos en aquesta llista "
 "també se suprimiran definitivament.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:449
+#: core/libs/dialogs/deletedialog.cpp:431
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -29960,18 +29960,18 @@ msgstr ""
 "<b>tots els subàlbums</b> inclosos en aquesta llista també es mouran a la "
 "paperera.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:600
+#: core/libs/dialogs/deletedialog.cpp:575
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Mou a la paperera"
 
-#: core/libs/dialogs/deletedialog.cpp:660
+#: core/libs/dialogs/deletedialog.cpp:635
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Esteu a punt de suprimir els elements seleccionats"
 
-#: core/libs/dialogs/deletedialog.cpp:667
+#: core/libs/dialogs/deletedialog.cpp:642
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -30004,12 +30004,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Informació del perfil de color - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:233
+#: core/libs/dialogs/imagedialog.cpp:207
 #, kde-format
 msgid "Select an Item"
 msgstr "Selecciona un element"
 
-#: core/libs/dialogs/imagedialog.cpp:247
+#: core/libs/dialogs/imagedialog.cpp:221
 #, kde-format
 msgid "Select Items"
 msgstr "Selecciona els elements"
@@ -30089,26 +30089,26 @@ msgstr "<i>Velocitat dels fotogrames:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Còdec de vídeo:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Informació de les biblioteques compartides i components"
 
-#: core/libs/dialogs/infodlg.cpp:74
+#: core/libs/dialogs/infodlg.cpp:68
 #: core/libs/progressmanager/dhistoryview.cpp:149
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "Copia al porta-retalls"
 
-#: core/libs/dialogs/infodlg.cpp:96
+#: core/libs/dialogs/infodlg.cpp:90
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr ""
 "<font size=\"5\">%1</font><br/><b>Versió %2</b><p>%3</p><p><i>%4</i></p>"
 
-#: core/libs/dialogs/infodlg.cpp:117
+#: core/libs/dialogs/infodlg.cpp:111
 #, kde-format
 msgid "Items List"
 msgstr "Llista d'elements"
@@ -30179,20 +30179,20 @@ msgctxt "@info: tri state"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: core/libs/dialogs/rawcameradlg.cpp:56
+#: core/libs/dialogs/rawcameradlg.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
 msgstr "Llista de les càmeres RAW admeses"
 
-#: core/libs/dialogs/rawcameradlg.cpp:129
+#: core/libs/dialogs/rawcameradlg.cpp:125
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
 msgstr[0] "S'està usant la LibRaw versió %2<br/>1 model a la llista"
 msgstr[1] "S'està usant la LibRaw versió %2<br/>%1 models a la llista"
 
-#: core/libs/dialogs/rawcameradlg.cpp:139
+#: core/libs/dialogs/rawcameradlg.cpp:135
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
@@ -30201,13 +30201,13 @@ msgstr[0] ""
 msgstr[1] ""
 "S'està usant la LibRaw versió %2<br/>%1 models a la llista (s'han trobat: %3)"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:83
+#: core/libs/dialogs/solidhardwaredlg.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Detected Hardware"
 msgstr "Llista del maquinari detectat"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:86
+#: core/libs/dialogs/solidhardwaredlg.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -30220,138 +30220,138 @@ msgstr ""
 "Premeu «Actualitza» per a actualitzar la llista si connecteu un dispositiu "
 "extraïble."
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:116
+#: core/libs/dialogs/solidhardwaredlg.cpp:111
 #, kde-format
 msgctxt "@title"
 msgid "Hotplug Device Events"
 msgstr "Esdeveniments de connexió en calent"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:117
+#: core/libs/dialogs/solidhardwaredlg.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid "Devices List"
 msgstr "Llista de dispositius"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:130
+#: core/libs/dialogs/solidhardwaredlg.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Refresh"
 msgstr "Actualitza"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:272
-#: core/libs/dialogs/solidhardwaredlg.cpp:393
+#: core/libs/dialogs/solidhardwaredlg.cpp:268
+#: core/libs/dialogs/solidhardwaredlg.cpp:389
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
 msgstr "UDI"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:272
-#: core/libs/dialogs/solidhardwaredlg.cpp:278
-#: core/libs/dialogs/solidhardwaredlg.cpp:281
-#: core/libs/dialogs/solidhardwaredlg.cpp:284
+#: core/libs/dialogs/solidhardwaredlg.cpp:268
+#: core/libs/dialogs/solidhardwaredlg.cpp:274
+#: core/libs/dialogs/solidhardwaredlg.cpp:277
+#: core/libs/dialogs/solidhardwaredlg.cpp:280
 #, kde-format
 msgctxt "@item: device property"
 msgid "empty"
 msgstr "buit"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:275
-#: core/libs/dialogs/solidhardwaredlg.cpp:396
+#: core/libs/dialogs/solidhardwaredlg.cpp:271
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
 #, kde-format
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
 msgstr "UDI pare"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:275
-#: core/libs/dialogs/solidhardwaredlg.cpp:287
+#: core/libs/dialogs/solidhardwaredlg.cpp:271
+#: core/libs/dialogs/solidhardwaredlg.cpp:283
 #, kde-format
 msgctxt "@item: device property"
 msgid "none"
 msgstr "cap"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:278
+#: core/libs/dialogs/solidhardwaredlg.cpp:274
 #, kde-format
 msgctxt "@item; device constructor"
 msgid "Vendor"
 msgstr "Fabricant"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:281
-#: core/libs/dialogs/solidhardwaredlg.cpp:402
+#: core/libs/dialogs/solidhardwaredlg.cpp:277
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
 #, kde-format
 msgctxt "@item: device name"
 msgid "Product"
 msgstr "Producte"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:284
-#: core/libs/dialogs/solidhardwaredlg.cpp:405
+#: core/libs/dialogs/solidhardwaredlg.cpp:280
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@item: device description"
 msgid "Description"
 msgstr "Descripció"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:287
-#: core/libs/dialogs/solidhardwaredlg.cpp:408
+#: core/libs/dialogs/solidhardwaredlg.cpp:283
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@item: device status"
 msgid "States"
 msgstr "Estats"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:294
+#: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"
 msgid "Non-portable info"
 msgstr "Informació no portable"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:386
+#: core/libs/dialogs/solidhardwaredlg.cpp:382
 #, kde-format
 msgctxt "@item"
 msgid "New Device Added"
 msgstr "S'ha afegit un dispositiu nou"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:396
-#: core/libs/dialogs/solidhardwaredlg.cpp:408
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@info: device property"
 msgid "none"
 msgstr "cap"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:399
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
 #, kde-format
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr "Fabricant"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:399
-#: core/libs/dialogs/solidhardwaredlg.cpp:402
-#: core/libs/dialogs/solidhardwaredlg.cpp:405
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr "buit"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:418
+#: core/libs/dialogs/solidhardwaredlg.cpp:414
 #, kde-format
 msgctxt "@item"
 msgid "Device Removed"
 msgstr "Dispositiu extret"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:421
+#: core/libs/dialogs/solidhardwaredlg.cpp:417
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
 msgstr "UDI"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:134
+#: core/libs/dialogs/webbrowserdlg.cpp:128
 #, kde-format
 msgid "Desktop Browser"
 msgstr "Navegador de l'escriptori"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:135
+#: core/libs/dialogs/webbrowserdlg.cpp:129
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr ""
 "Obre la pàgina d'inici amb el navegador Web predeterminat de l'escriptori"
 
-#: core/libs/dialogs/webbrowserdlg.cpp:249
+#: core/libs/dialogs/webbrowserdlg.cpp:243
 #, kde-format
 msgid "Cannot load page %1"
 msgstr "No s'ha pogut carregar la pàgina %1"
@@ -39657,120 +39657,120 @@ msgstr "Assigna el rètol de color «%1»"
 msgid "Assign Tag \"%1\""
 msgstr "Assigna l'etiqueta «%1»"
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:155
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "All Tags"
 msgstr "Totes les etiquetes"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:287
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
 msgstr "Llista d'accés ràpid"
 
-#: core/libs/tags/manager/models/tagmngrlistview.cpp:152
+#: core/libs/tags/manager/models/tagmngrlistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr "Suprimeix els seleccionats de la llista"
 
-#: core/libs/tags/manager/taglist.cpp:67
+#: core/libs/tags/manager/taglist.cpp:61
 #, kde-format
 msgid "Add to List"
 msgstr "Afegeix a la llista"
 
-#: core/libs/tags/manager/taglist.cpp:68
+#: core/libs/tags/manager/taglist.cpp:62
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr "Afegeix les etiquetes seleccionades a la llista d'accés ràpid"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:138
+#: core/libs/tags/manager/tagmngrtreeview.cpp:135
 #, kde-format
 msgid "Delete Tags"
 msgstr "Suprimeix les etiquetes"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:716
+#: core/libs/tags/manager/tagmngrtreeview.cpp:143
+#: core/libs/tags/manager/tagsmanager.cpp:698
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Edita el títol de l'etiqueta"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagmngrtreeview.cpp:147
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #: core/libs/tags/widgets/tagfolderview.cpp:69
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Reinicia la icona de l'etiqueta"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagmngrtreeview.cpp:150
+#: core/libs/tags/manager/tagsmanager.cpp:711
 #, kde-format
 msgid "Invert Selection"
 msgstr "Inverteix la selecció"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Desplega l'arbre d'etiquetes"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Redueix l'arbre d'etiquetes"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:741
+#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Elimina les etiquetes de les imatges"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:98
+#: core/libs/tags/manager/tagpropwidget.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr "Propietats de l'etiqueta"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:107
+#: core/libs/tags/manager/tagpropwidget.cpp:97
 #: core/libs/tags/widgets/tageditdlg.cpp:139
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr "&Títol:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:112
+#: core/libs/tags/manager/tagpropwidget.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr "Introduïu aquí el nom de l'etiqueta"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:125
+#: core/libs/tags/manager/tagpropwidget.cpp:115
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr "&Icona:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:134
+#: core/libs/tags/manager/tagpropwidget.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr "Inicialitza"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:147
+#: core/libs/tags/manager/tagpropwidget.cpp:137
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr "&Drecera:"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:160
+#: core/libs/tags/manager/tagpropwidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr "Nota"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:161
+#: core/libs/tags/manager/tagpropwidget.cpp:151
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
@@ -39778,31 +39778,31 @@ msgstr ""
 "Aquesta drecera es pot usar per a assignar o desassignar etiquetes als "
 "elements."
 
-#: core/libs/tags/manager/tagpropwidget.cpp:166
+#: core/libs/tags/manager/tagpropwidget.cpp:156
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr "Desa"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:167
+#: core/libs/tags/manager/tagpropwidget.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr "Descarta"
 
-#: core/libs/tags/manager/tagpropwidget.cpp:234
+#: core/libs/tags/manager/tagpropwidget.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Les etiquetes anteriors han canviat. Deso els canvis? "
 
-#: core/libs/tags/manager/tagsmanager.cpp:180
+#: core/libs/tags/manager/tagsmanager.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Gestor d'etiquetes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:339
+#: core/libs/tags/manager/tagsmanager.cpp:321
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39818,7 +39818,7 @@ msgstr[1] ""
 "Les etiquetes %2 tenen una o més subetiquetes. La seva supressió també "
 "suprimirà les subetiquetes. Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:362
+#: core/libs/tags/manager/tagsmanager.cpp:344
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39829,7 +39829,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Les etiquetes %2 estan assignades a un o més elements. Les voleu suprimir?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:372
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39837,7 +39837,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Suprimeixo l'etiqueta %2?"
 msgstr[1] "Suprimeixo les etiquetes %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:378
+#: core/libs/tags/manager/tagsmanager.cpp:360
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39845,7 +39845,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Supressió d'etiqueta"
 msgstr[1] "Supressió d'etiquetes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager.cpp:486
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39857,8 +39857,8 @@ msgstr ""
 "llegiu abans (crideu «Llegeix les etiquetes de la imatge»).<br/>Voleu "
 "continuar?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:516
-#: core/libs/tags/manager/tagsmanager.cpp:535
+#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:517
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39867,7 +39867,7 @@ msgstr ""
 "Aquesta operació pot trigar molt de temps segons la mida de la col·lecció.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:555
+#: core/libs/tags/manager/tagsmanager.cpp:537
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39879,7 +39879,7 @@ msgstr ""
 "metadades al fitxer.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:622
+#: core/libs/tags/manager/tagsmanager.cpp:604
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39888,36 +39888,36 @@ msgstr[0] ""
 msgstr[1] ""
 "Realment voleu eliminar les etiquetes seleccionades de totes les imatges?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:703
+#: core/libs/tags/manager/tagsmanager.cpp:685
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organitza"
 
-#: core/libs/tags/manager/tagsmanager.cpp:706
+#: core/libs/tags/manager/tagsmanager.cpp:688
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sincronitza l'&exportació"
 
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:705
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Crea una etiqueta a partir de la llibreta d'adreces"
 
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:708
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Marca les etiquetes sense assignar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Afegeix una etiqueta nova a l'etiqueta actual. L'etiqueta actual és la "
 "darrera etiqueta clicada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39926,78 +39926,78 @@ msgstr ""
 "Suprimeix els elements seleccionats. També funciona amb elements múltiples, "
 "però no suprimeix l'etiqueta arrel."
 
-#: core/libs/tags/manager/tagsmanager.cpp:753
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Edita el títol de l'etiqueta seleccionada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:755
+#: core/libs/tags/manager/tagsmanager.cpp:737
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Reinicia la icona de les etiquetes seleccionades. Funciona amb selecció "
 "múltiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Marca totes les etiquetes no assignades a les imatges."
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Inverteix la selecció. Només se seleccionaran els elements visibles"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Els elements seleccionats es desplegaran"
 
-#: core/libs/tags/manager/tagsmanager.cpp:765
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Desplega l'arbre d'etiquetes completament"
 
-#: core/libs/tags/manager/tagsmanager.cpp:767
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Redueix l'arbre d'etiquetes completament"
 
-#: core/libs/tags/manager/tagsmanager.cpp:769
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Suprimeix les etiquetes seleccionades de les imatges. Funciona amb selecció "
 "múltiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:799
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Escriu les etiquetes de la base de dades a la imatge"
 
-#: core/libs/tags/manager/tagsmanager.cpp:820
+#: core/libs/tags/manager/tagsmanager.cpp:802
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Llegeix les etiquetes de la imatge"
 
-#: core/libs/tags/manager/tagsmanager.cpp:823
+#: core/libs/tags/manager/tagsmanager.cpp:805
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Esborra totes les etiquetes només de la base de dades"
 
-#: core/libs/tags/manager/tagsmanager.cpp:825
+#: core/libs/tags/manager/tagsmanager.cpp:807
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Escriu les metadades de les etiquetes a la imatge."
 
-#: core/libs/tags/manager/tagsmanager.cpp:827
+#: core/libs/tags/manager/tagsmanager.cpp:809
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Llegeix les etiquetes de la imatge cap a la base de dades. Les etiquetes "
 "existents no quedaran afectades"
 
-#: core/libs/tags/manager/tagsmanager.cpp:830
+#: core/libs/tags/manager/tagsmanager.cpp:812
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -40006,7 +40006,7 @@ msgstr ""
 "Suprimeix totes les etiquetes només de la base de dades. No se sincronitzarà "
 "amb els fitxers. Procediu amb precaució."
 
-#: core/libs/tags/manager/tagsmanager.cpp:852
+#: core/libs/tags/manager/tagsmanager.cpp:834
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
