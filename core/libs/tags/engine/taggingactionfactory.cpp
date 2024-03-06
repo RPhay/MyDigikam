@@ -29,30 +29,22 @@ class Q_DECL_HIDDEN TaggingActionFactory::Private
 {
 public:
 
-    explicit Private()
-        : parentTagId        (0),               ///< 0 means toplevel tag
-          nameMatchMode      (MatchStartingWithFragment),
-          constraintInterface(nullptr),
-          defaultIndex       (-1),
-          recentIndex        (0),
-          valid              (false)
-    {
-    }
+    Private() = default;
 
 public:
 
     QString              fragment;
-    int                  parentTagId;
-    NameMatchMode        nameMatchMode;
-    ConstraintInterface* constraintInterface;
+    int                  parentTagId            = 0;
+    NameMatchMode        nameMatchMode          = MatchStartingWithFragment;
+    ConstraintInterface* constraintInterface    = nullptr;
 
-    int                  defaultIndex;  ///< use if valid is true
-    int                  recentIndex;   ///< use if valid is true
+    int                  defaultIndex           = -1;   ///< use if valid is true
+    int                  recentIndex            = 0;    ///< use if valid is true
 
-    QList<TaggingAction> actions;       ///< use if valid is true
-    bool                 valid;
+    QList<TaggingAction> actions;                       ///< use if valid is true
+    bool                 valid                  = false;
 
-    TaggingAction        defaultAction; ///< independent from valid
+    TaggingAction        defaultAction;                 ///< independent from valid
 
 public:
 

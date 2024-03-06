@@ -54,14 +54,10 @@ class Q_DECL_HIDDEN TagModificationHelper::Private
 {
 public:
 
-    explicit Private()
-      : parentTag   (nullptr),
-        dialogParent(nullptr)
-    {
-    }
+    Private() = default;
 
-    AlbumPointer<TAlbum> parentTag;
-    QWidget*             dialogParent;
+    AlbumPointer<TAlbum> parentTag      = nullptr;
+    QWidget*             dialogParent   = nullptr;
 };
 
 TagModificationHelper::TagModificationHelper(QObject* const parent, QWidget* const dialogParent)

@@ -83,21 +83,15 @@ class Q_DECL_HIDDEN TagsActionMngr::Private
 {
 public:
 
-    explicit Private()
-        : ratingShortcutPrefix(QLatin1String("rateshortcut")),
-          tagShortcutPrefix   (QLatin1String("tagshortcut")),
-          pickShortcutPrefix  (QLatin1String("pickshortcut")),
-          colorShortcutPrefix (QLatin1String("colorshortcut"))
-    {
-    }
+    Private() = default;
 
     QMultiMap<int, QAction*>  tagsActionMap;
     QList<KActionCollection*> actionCollectionList;
 
-    const QString             ratingShortcutPrefix;
-    const QString             tagShortcutPrefix;
-    const QString             pickShortcutPrefix;
-    const QString             colorShortcutPrefix;
+    const QString             ratingShortcutPrefix  = QLatin1String("rateshortcut");
+    const QString             tagShortcutPrefix     = QLatin1String("tagshortcut");
+    const QString             pickShortcutPrefix    = QLatin1String("pickshortcut");
+    const QString             colorShortcutPrefix   = QLatin1String("colorshortcut");
 };
 
 // -------------------------------------------------------------------------------------------------
