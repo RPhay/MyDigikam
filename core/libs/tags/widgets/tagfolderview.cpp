@@ -45,19 +45,13 @@ class Q_DECL_HIDDEN TagFolderView::Private
 {
 public:
 
-    explicit Private()
-      : showFindDuplicateAction (true),
-        showDeleteFaceTagsAction(false),
-        resetIconAction         (nullptr),
-        findDuplAction          (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool     showFindDuplicateAction;
-    bool     showDeleteFaceTagsAction;
+    bool     showFindDuplicateAction    = true;
+    bool     showDeleteFaceTagsAction   = false;
 
-    QAction* resetIconAction;
-    QAction* findDuplAction;
+    QAction* resetIconAction            = nullptr;
+    QAction* findDuplAction             = nullptr;
 };
 
 TagFolderView::TagFolderView(QWidget* const parent, TagModel* const model)

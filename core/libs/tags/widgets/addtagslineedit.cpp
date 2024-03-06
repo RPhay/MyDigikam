@@ -36,19 +36,13 @@ class Q_DECL_HIDDEN AddTagsLineEdit::Private
 {
 public:
 
-    explicit Private()
-        : completer     (nullptr),
-          tagView       (nullptr),
-          tagFilterModel(nullptr),
-          parentTagId   (0)
-    {
-    }
+    Private() = default;
 
-    TagCompleter*       completer;
-    TagTreeView*        tagView;
-    AlbumFilterModel*   tagFilterModel;
+    TagCompleter*       completer       = nullptr;
+    TagTreeView*        tagView         = nullptr;
+    AlbumFilterModel*   tagFilterModel  = nullptr;
     TaggingAction       currentTaggingAction;
-    int                 parentTagId;
+    int                 parentTagId     = 0;
 };
 
 AddTagsLineEdit::AddTagsLineEdit(QWidget* const parent)
@@ -73,16 +67,16 @@ AddTagsLineEdit::AddTagsLineEdit(QWidget* const parent)
 
     connect(d->completer, QOverload<const TaggingAction&>::of(&TagCompleter::signalActivated),
             d->completer, [=](const TaggingAction& action)
-            {
-                completerActivated(action);
-            }
+        {
+            completerActivated(action);
+        }
     );
 
     connect(d->completer, QOverload<const TaggingAction&>::of(&TagCompleter::signalHighlighted),
             d->completer, [=](const TaggingAction& action)
-            {
-                completerHighlighted(action);
-            }
+        {
+            completerHighlighted(action);
+        }
     );
 }
 

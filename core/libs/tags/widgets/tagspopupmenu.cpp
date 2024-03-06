@@ -69,8 +69,8 @@ public:
 
 private:
 
-    bool m_checked;
-    bool m_checkBoxHidden;
+    bool m_checked          = false;
+    bool m_checkBoxHidden   = false;
 };
 
 // ------------------------------------------------------------------------
@@ -97,8 +97,8 @@ private:
 
 private:
 
-    QMenu*           m_menu;
-    TagToggleAction* m_action;
+    QMenu*           m_menu     = nullptr;
+    TagToggleAction* m_action   = nullptr;
 };
 
 // ------------------------------------------------------------------------
@@ -342,18 +342,14 @@ QRect TagToggleMenuWidget::checkIndicatorSize(QStyleOption* option) const
 // ------------------------------------------------------------------------
 
 TagToggleAction::TagToggleAction(const QString& text, QObject* const parent)
-    : QWidgetAction   (parent),
-      m_checked       (false),
-      m_checkBoxHidden(false)
+    : QWidgetAction   (parent)
 {
     setText(text);
     setCheckable(true);
 }
 
 TagToggleAction::TagToggleAction(const QIcon& icon, const QString& text, QObject* const parent)
-    : QWidgetAction   (parent),
-      m_checked       (false),
-      m_checkBoxHidden(false)
+    : QWidgetAction   (parent)
 {
     setIcon(icon);
     setText(text);
@@ -405,12 +401,7 @@ class Q_DECL_HIDDEN TagsPopupMenu::Private
 {
 public:
 
-    explicit Private()
-      : addTagActions   (nullptr),
-        toggleTagActions(nullptr),
-        mode            (ASSIGN)
-    {
-    }
+    Private() = default;
 
     QPixmap              addTagPix;
     QPixmap              recentTagPix;
@@ -420,10 +411,10 @@ public:
     QSet<int>            parentAssignedTags;
     QList<qlonglong>     selectedImageIDs;
 
-    QActionGroup*        addTagActions;
-    QActionGroup*        toggleTagActions;
+    QActionGroup*        addTagActions      = nullptr;
+    QActionGroup*        toggleTagActions   = nullptr;
 
-    TagsPopupMenu::Mode  mode;
+    TagsPopupMenu::Mode  mode               = ASSIGN;
 };
 
 TagsPopupMenu::TagsPopupMenu(qlonglong selectedImageId, Mode mode, QWidget* const parent)
@@ -840,6 +831,7 @@ void TagsPopupMenu::slotAddTag(QAction* action)
     if (tagID == -1)
     {
         Q_EMIT signalPopupTagsView();
+
         return;
     }
 

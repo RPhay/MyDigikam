@@ -70,33 +70,23 @@ class Q_DECL_HIDDEN TagEditDlg::Private
 {
 public:
 
-    explicit Private()
-      : create         (false),
-        topLabel       (nullptr),
-        iconButton     (nullptr),
-        resetIconButton(nullptr),
-        buttons        (nullptr),
-        keySeqWidget   (nullptr),
-        mainRootAlbum  (nullptr),
-        titleEdit      (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                create;
+    bool                create          = false;
 
-    QLabel*             topLabel;
+    QLabel*             topLabel        = nullptr;
 
     QString             icon;
 
-    QPushButton*        iconButton;
-    QPushButton*        resetIconButton;
+    QPushButton*        iconButton      = nullptr;
+    QPushButton*        resetIconButton = nullptr;
 
-    QDialogButtonBox*   buttons;
+    QDialogButtonBox*   buttons         = nullptr;
 
-    KKeySequenceWidget* keySeqWidget;
+    KKeySequenceWidget* keySeqWidget    = nullptr;
 
-    TAlbum*             mainRootAlbum;
-    SearchTextBar*      titleEdit;
+    TAlbum*             mainRootAlbum   = nullptr;
+    SearchTextBar*      titleEdit       = nullptr;
 };
 
 TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)

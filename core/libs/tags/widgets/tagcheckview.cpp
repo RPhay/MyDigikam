@@ -41,27 +41,18 @@ class Q_DECL_HIDDEN TagCheckView::Private
 {
 public:
 
-    explicit Private()
-      : toggleAutoTags      (TagCheckView::NoToggleAuto),
-        checkNewTags        (false),
-        toggleAutoAction    (nullptr),
-        toggleNoneAction    (nullptr),
-        toggleChildrenAction(nullptr),
-        toggleParentsAction (nullptr),
-        toggleBothAction    (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString         configToggleAutoTagsEntry;
 
-    TagCheckView::ToggleAutoTags toggleAutoTags;
-    bool                         checkNewTags;
+    TagCheckView::ToggleAutoTags toggleAutoTags         = TagCheckView::NoToggleAuto;
+    bool                         checkNewTags           = false;
 
-    KSelectAction*               toggleAutoAction;
-    QAction*                     toggleNoneAction;
-    QAction*                     toggleChildrenAction;
-    QAction*                     toggleParentsAction;
-    QAction*                     toggleBothAction;
+    KSelectAction*               toggleAutoAction       = nullptr;
+    QAction*                     toggleNoneAction       = nullptr;
+    QAction*                     toggleChildrenAction   = nullptr;
+    QAction*                     toggleParentsAction    = nullptr;
+    QAction*                     toggleBothAction       = nullptr;
 };
 
 const QString TagCheckView::Private::configToggleAutoTagsEntry(QLatin1String("Toggle Auto Tags"));
@@ -132,23 +123,31 @@ void TagCheckView::slotCheckStateChange(Album* album, Qt::CheckState state)
     switch (d->toggleAutoTags)
     {
         case Children:
+        {
             albumModel()->setCheckState(album, state);
             albumModel()->setCheckStateForChildren(album, state);
             break;
+        }
 
         case Parents:
+        {
             albumModel()->setCheckState(album, state);
             albumModel()->setCheckStateForParents(album, state);
             break;
+        }
 
         case ChildrenAndParents:
+        {
             albumModel()->setCheckState(album, state);
             albumModel()->setCheckStateForChildren(album, state);
             albumModel()->setCheckStateForParents(album, state);
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     connect(albumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),

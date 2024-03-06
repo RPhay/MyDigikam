@@ -38,12 +38,9 @@ class Q_DECL_HIDDEN AddTagsComboBox::Private
 {
 public:
 
-    explicit Private()
-      : lineEdit(nullptr)
-    {
-    }
+    Private() = default;
 
-    AddTagsLineEdit* lineEdit;
+    AddTagsLineEdit* lineEdit = nullptr;
     TaggingAction    viewTaggingAction;
 };
 
