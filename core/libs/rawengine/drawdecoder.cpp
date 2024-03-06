@@ -420,6 +420,7 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
         return false;
     }
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (m_cancel)
     {
         raw->recycle();
@@ -444,6 +445,7 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
         return false;
     }
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (m_cancel)
     {
         raw->recycle();
@@ -465,6 +467,7 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
         return false;
     }
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (m_cancel)
     {
         raw->recycle();
@@ -477,6 +480,7 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
 
     Private::fillIndentifyInfo(raw, identify);
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (m_cancel)
     {
         raw->recycle();
