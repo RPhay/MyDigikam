@@ -78,7 +78,7 @@ bool VidSlideAlbumsPage::validatePage()
         return false;
     }
 
-    if (d->settings->iface && d->settings->iface->albumChooserItems().isEmpty())
+    if (d->settings->iface->albumChooserItems().isEmpty())
     {
         return false;
     }
@@ -86,6 +86,7 @@ bool VidSlideAlbumsPage::validatePage()
     d->wizard->settings()->inputImages.clear();
 
     // update image list with album contents.
+
     Q_FOREACH (const QUrl& url, d->settings->iface->albumsItems(d->settings->iface->albumChooserItems()))
     {
         d->wizard->settings()->inputImages << url;
