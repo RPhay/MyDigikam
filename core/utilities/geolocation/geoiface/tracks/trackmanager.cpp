@@ -206,13 +206,13 @@ QColor TrackManager::getNextFreeTrackColor()
     QList<QColor> colorList;
     colorList << Qt::red << Qt::blue << Qt::green << Qt::magenta;
 
-    const QColor nextColor = colorList.at(d->nextTrackColor);
-    ++(d->nextTrackColor);
-
     if (d->nextTrackColor >= colorList.count())
     {
         d->nextTrackColor = 0;
     }
+
+    const QColor nextColor = colorList.at(d->nextTrackColor);
+    ++(d->nextTrackColor);
 
     return nextColor;
 }
