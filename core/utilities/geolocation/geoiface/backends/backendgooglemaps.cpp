@@ -455,7 +455,7 @@ void BackendGoogleMaps::slotUngroupedModelChanged(const int mindex)
 
     // this can happen when a model was removed and we are simply asked to remove its markers
 
-    if (mindex > s->ungroupedModels.count())
+    if (mindex >= s->ungroupedModels.count())
     {
         return;
     }
