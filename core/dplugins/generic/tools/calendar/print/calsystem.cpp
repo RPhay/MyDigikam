@@ -1276,7 +1276,7 @@ QDate CalSystem::addMonths(const QDate& dt, int months) const
                     month += months;
                     months = 0;
                 }
-                else if (months < 0)
+                else
                 {
                     year    = d->addYears(year, -1);
                     months += d->monthsInYear(year);
