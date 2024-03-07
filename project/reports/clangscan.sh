@@ -6,7 +6,7 @@
 # https://clang-analyzer.llvm.org/
 # Dependencies : clang static analyzer version >= 3.9.0.
 #
-# If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
+# If '--webupdate' is passed as argument, static analyzer results are just created locally.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -143,7 +143,7 @@ for DROP_ITEM in $KRAZY_FILTERS ; do
 
 done
 
-if [[ $1 != "--nowebupdate" ]] ; then
+if [[ $1 != "--webupdate" ]] ; then
 
     # update www.digikam.org report section.
     updateReportToWebsite "clang" $SCANBUILD_DIR $TITLE $(parseGitBranch)

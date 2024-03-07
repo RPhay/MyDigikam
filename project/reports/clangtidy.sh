@@ -4,7 +4,7 @@
 #
 # Run Clang tidy lint static analyzer on whole digiKam source code.
 #
-# If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
+# If '--webupdate' is passed as argument, static analyzer results are just created locally.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -40,7 +40,7 @@ python3 ./clangtidy_visualizer.py $REPORT_DIR/clang-tidy.log
 #rm -f $REPORT_DIR/clang-tidy.log
 mv tidy.html $REPORT_DIR/index.html
 
-if [[ $1 != "--nowebupdate" ]] ; then
+if [[ $1 != "--webupdate" ]] ; then
 
     updateReportToWebsite "tidy" $REPORT_DIR $TITLE $(parseGitBranch)
 
