@@ -1,6 +1,13 @@
 [Desktop Entry]
 Type=Application
 Name=XnView MP
+Name[ca]=XnView MP
+Name[es]=XnView MP
+Name[nl]=XnView MP
+Name[sl]=XnView MP
+Name[tr]=XnView MP
+Name[uk]=XnView MP
+Name[x-test]=xxXnView MPxx
 Exec=%ProgramFiles%/XnViewMP/xnviewmp.exe %f
 Icon=%ProgramFiles%/XnViewMP/xnviewmp.exe
 MimeType=image/jpg;image/bmp;image/png
