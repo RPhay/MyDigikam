@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 01:34+0000\n"
+"POT-Creation-Date: 2024-03-06 01:32+0000\n"
 "PO-Revision-Date: 2023-05-17 18:31+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1020,7 +1020,7 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:167
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:122
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:110
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
 #: core/utilities/import/items/importtooltipfiller.cpp:81
 #, kde-format
@@ -1106,7 +1106,7 @@ msgstr "Blendaropning/brennvidd:"
 #: core/app/items/utils/tooltipfiller.cpp:234
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
-#: core/libs/video/osd/frameosd.cpp:212
+#: core/libs/video/osd/frameosd.cpp:207
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
 #, kde-format
@@ -2809,7 +2809,7 @@ msgstr "Vis fokuspunkt"
 msgid "Show Fullscreen"
 msgstr "Vis i fullskjerm"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:145
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -3017,7 +3017,7 @@ msgstr ""
 "søk / virtuelt album med namn lik teksten i skrivefeltet."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:186
+#: core/app/views/stack/itemiconview_p.h:142
 #, kde-format
 msgid "Timeline"
 msgstr "Tidslinje"
@@ -3042,7 +3042,7 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Filter"
 
-#: core/app/views/stack/itemiconview_albums.cpp:318
+#: core/app/views/stack/itemiconview_albums.cpp:299
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Kan ikkje opna rotalbumet. Det er ikkje ei fysisk mappe."
@@ -3054,23 +3054,23 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:169
+#: core/app/views/stack/itemiconview_p.h:125
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Skissesøk"
 
-#: core/app/views/stack/itemiconview_p.h:173
+#: core/app/views/stack/itemiconview_p.h:129
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Uklare søk"
 
-#: core/app/views/stack/itemiconview_p.h:177
+#: core/app/views/stack/itemiconview_p.h:133
 #, kde-format
 msgid "Map Search"
 msgstr "Kartsøk"
 
-#: core/app/views/stack/itemiconview_p.h:182
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1166
+#: core/app/views/stack/itemiconview_p.h:138
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
 msgstr "Førre søk"
@@ -3106,7 +3106,7 @@ msgid "Tools"
 msgstr "Verktøy"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:851
+#: core/libs/tags/manager/tagsmanager.cpp:833
 #, kde-format
 msgid "Help"
 msgstr ""
@@ -3787,7 +3787,7 @@ msgstr "Filnamn"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:170
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:382
 #, kde-format
 msgid "Path"
@@ -6493,24 +6493,24 @@ msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:68
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
 #, kde-format
 msgid "Lossless HEIF files"
 msgstr "HEIF-filer utan kvalitetstap"
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:70
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for HEIF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress HEIF pictures.</p>"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:77
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
 #, kde-format
 msgid "HEIF quality:"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:79
+#: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
@@ -6572,14 +6572,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr ""
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6601,8 +6601,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:153
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6623,8 +6623,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:141
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:157
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -8520,7 +8520,7 @@ msgid "Unsharp Mask"
 msgstr "Uskarpleiksmaske"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:284
-#: core/libs/dimg/filters/sharp/refocusfilter.cpp:100
+#: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:145
 #, kde-format
 msgid "Refocus"
@@ -8550,30 +8550,30 @@ msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Skarp opp …"
 
-#: core/dplugins/editor/file/print/printhelper.cpp:177
+#: core/dplugins/editor/file/print/printhelper.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "No Printer Available"
 msgstr ""
 
-#: core/dplugins/editor/file/print/printhelper.cpp:178
+#: core/dplugins/editor/file/print/printhelper.cpp:175
 #, kde-format
 msgctxt "@info"
 msgid "No printer is installed on your system. Please install one at least."
 msgstr ""
 
-#: core/dplugins/editor/file/print/printhelper.cpp:188
+#: core/dplugins/editor/file/print/printhelper.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr ""
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:90
+#: core/dplugins/editor/file/print/printoptionspage.cpp:83
 #, kde-format
 msgid "Use Color Management for Printing"
 msgstr "Bruk fargestyring for utskrift"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:92
+#: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:77
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
@@ -8581,7 +8581,7 @@ msgstr "Bruk fargestyring for utskrift"
 msgid "Settings..."
 msgstr "Innstillingar …"
 
-#: core/dplugins/editor/file/print/printoptionspage.cpp:339
+#: core/dplugins/editor/file/print/printoptionspage.cpp:332
 #, kde-format
 msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
@@ -9399,7 +9399,7 @@ msgstr "Vel den nye høgda til biletet i pikslar."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:211
 #: core/dplugins/editor/transform/resize/resizetool.cpp:371
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:161
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:149
 #, kde-format
 msgid "Width (%):"
 msgstr "Breidd (%):"
@@ -10824,7 +10824,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:633
+#: core/utilities/searchwindow/searchutilities.cpp:653
 #, kde-format
 msgid "OK"
 msgstr "OK"
@@ -10889,7 +10889,7 @@ msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Hentar metadata –"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -10897,25 +10897,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Du har eitt endra bilete."
 msgstr[1] "Du har %1 endra bilete."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:837
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Vil du lagra endringane du har gjort med dei?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:953
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Lagrar endringar –"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1012
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -10959,13 +10959,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Feil"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1013
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Feil ved lagring av noko informasjon:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1051
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -13187,7 +13187,7 @@ msgstr "&Legg til"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:599
+#: core/libs/dialogs/deletedialog.cpp:574
 #, kde-format
 msgid "&Delete"
 msgstr "&Slett"
@@ -14568,7 +14568,7 @@ msgid "Status"
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:142
-#: core/libs/dialogs/solidhardwaredlg.cpp:294
+#: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"
 msgid "Properties"
@@ -16169,13 +16169,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Bland stabla bilete …"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:327
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:326
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:922
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:921
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -16425,235 +16425,235 @@ msgstr ""
 msgid "Could not save image to file '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:104
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Create directories"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:129
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "Copying theme"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid "Could not copy theme"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:153
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:166
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:290
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:317
 #, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:342
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:334
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:378
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:371
 #, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:387
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:380
 #, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:414
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
 #, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:431
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:446
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
 #, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
@@ -17384,7 +17384,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:215
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:261
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:79
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:75
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:117
 #, kde-format
 msgctxt "@label"
@@ -20191,7 +20191,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:155
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -22956,13 +22956,13 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
-#: core/libs/dialogs/webbrowserdlg.cpp:129
+#: core/libs/dialogs/webbrowserdlg.cpp:123
 #, kde-format
 msgid "Home"
 msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:190
-#: core/libs/dialogs/webbrowserdlg.cpp:130
+#: core/libs/dialogs/webbrowserdlg.cpp:124
 #, kde-format
 msgid "Go back to Home page"
 msgstr ""
@@ -25902,12 +25902,12 @@ msgstr ""
 "Denne handlinga kan ta lang tid i bakgrunnen.\n"
 "Vil du skriva metadata til %1 filer no?"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:48
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:42
 #, kde-format
 msgid "Context menu"
 msgstr "Kontekstmeny"
 
-#: core/libs/album/treeview/abstractalbumtreeview.cpp:1126
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
 #: core/libs/database/utils/ifaces/dio.cpp:903
 #, kde-format
 msgid "Empty Trash"
@@ -26046,8 +26046,8 @@ msgid "Labels Album"
 msgstr ""
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
-#: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:134
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -26651,7 +26651,7 @@ msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
 msgstr ""
 
-#: core/libs/database/coredb/coredbaccess.cpp:310
+#: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
 #: core/libs/facesengine/facedb/facedbaccess.cpp:238
@@ -26702,7 +26702,7 @@ msgstr ""
 "Feil ved konvertering av databaseskjema.\n"
 " Detaljar: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:206
+#: core/libs/database/coredb/coredbschemaupdater.cpp:199
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -26715,7 +26715,7 @@ msgstr ""
 " %1\n"
 "Kontroller løyva dine på databasen og start digiKam på nytt."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:240
+#: core/libs/database/coredb/coredbschemaupdater.cpp:233
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -26726,7 +26726,7 @@ msgstr ""
 "versjonen av databaseskjemaet kan ikkje stadfestast. Prøv å starta med ein "
 "tom database. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:263
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -26739,7 +26739,7 @@ msgstr ""
 "tyder at denne versjonen av digiKam er for gammal eller at databaseformatet "
 "er for nytt.) Bruk heller den nye versjonen av digiKam som du brukte før. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:332
+#: core/libs/database/coredb/coredbschemaupdater.cpp:325
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
 #, kde-format
@@ -26750,7 +26750,7 @@ msgstr ""
 "Klarte ikkje å laga tabellar i databasen.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:346
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -26765,7 +26765,7 @@ msgstr ""
 "diskusjon av digiKam-utviklinga (sjå www.digikam.org/support). Sjå òg på "
 "eventuelle meldingar som digiKam har skrive på terminalen. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:414
+#: core/libs/database/coredb/coredbschemaupdater.cpp:407
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -26782,7 +26782,7 @@ msgstr ""
 "digikam.org/support). Sjå òg på eventuelle meldingar som digiKam har skrive "
 "på terminalen. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:452
+#: core/libs/database/coredb/coredbschemaupdater.cpp:445
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -26791,7 +26791,7 @@ msgid ""
 "database."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:461
+#: core/libs/database/coredb/coredbschemaupdater.cpp:454
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -26799,7 +26799,7 @@ msgid ""
 "as a bug at bugs.kde.org."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:680
+#: core/libs/database/coredb/coredbschemaupdater.cpp:674
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -26809,12 +26809,12 @@ msgstr ""
 "Finn ikkje handlinga for databaseoppdatering. Kontroller at dbconfig.xml-"
 "fila for gjeldande versjon av digiKam er installert på rett stad. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:701
+#: core/libs/database/coredb/coredbschemaupdater.cpp:695
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Oppdaterte skjemaet til versjon %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:847
+#: core/libs/database/coredb/coredbschemaupdater.cpp:842
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26824,12 +26824,12 @@ msgstr ""
 "Klarte ikkje kopiera den gamle databasefila («%1») til den nye mappa («%2»). "
 "Feilmelding: «%3». Kontroller at fila kan kopierast, eventuelt slett ho."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:864
 #, kde-format
 msgid "Copied database file"
 msgstr "Kopierte databasefil"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:874
+#: core/libs/database/coredb/coredbschemaupdater.cpp:869
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -26839,22 +26839,22 @@ msgstr ""
 "Den gamle databasefila («%1») vart kopiert til den nye mappa («%2») men kan "
 "ikkje opnast. Fjern begge filene og prøv på nytt med ein tom database. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:895
+#: core/libs/database/coredb/coredbschemaupdater.cpp:890
 #, kde-format
 msgid "Opened new database file"
 msgstr "Opna ny databasefil"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:994
+#: core/libs/database/coredb/coredbschemaupdater.cpp:989
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Førebudde skiping av tabellar"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1013
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
 #, kde-format
 msgid "Created tables"
 msgstr "Skipa tabellar"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1026
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -26864,7 +26864,7 @@ msgstr ""
 "Fann ikkje noko albumbibliotek i oppsettfila. Gjev opp å oppdatera skjema. "
 "Prøv med ein tom database, eller rett opp i  oppsettet."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1048
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -26883,52 +26883,52 @@ msgstr ""
 "ikkje vil laga ein ny database frå galne føresetnadar frå ein øydelagd "
 "installasjon."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1075
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
 #, kde-format
 msgid "Configured one album root"
 msgstr "Sette opp éi albumrot"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1101
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
 #, kde-format
 msgid "Imported albums"
 msgstr "Importerte album"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1138
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
 #, kde-format
 msgid "Imported images information"
 msgstr "Importerte biletinformasjon"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1168
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Førre søk (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1229
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Gjorde klart og importerte filter for filetternamn"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1251
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Gjorde første fullskanning"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1275
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Importerte opprettingsdatoar"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1306
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
 #, kde-format
 msgid "Imported comments"
 msgstr "Importerte kommentarar"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1333
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
 #, kde-format
 msgid "Imported ratings"
 msgstr "Importerte karakterar"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1344
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Fjerna v3-tabellar"
@@ -27017,43 +27017,43 @@ msgstr ""
 "<p><b>Det oppstod ein databasefeil.</b></p>Detaljar:\n"
 " %1"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:457
+#: core/libs/database/history/itemhistorygraphmodel.cpp:448
 #, kde-format
 msgctxt "@title"
 msgid "Source Images"
 msgstr "Kjeldebilete"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:486
+#: core/libs/database/history/itemhistorygraphmodel.cpp:477
 #, kde-format
 msgctxt "@title"
 msgid "Image History"
 msgstr "Biletlogg"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:569
+#: core/libs/database/history/itemhistorygraphmodel.cpp:560
 #, kde-format
 msgctxt "@title"
 msgid "Derived Images"
 msgstr "Avleidde bilete"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:579
+#: core/libs/database/history/itemhistorygraphmodel.cpp:570
 #, kde-format
 msgctxt "@title"
 msgid "Related Images"
 msgstr "Nærskylde bilete"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:586
+#: core/libs/database/history/itemhistorygraphmodel.cpp:577
 #, kde-format
 msgctxt "@title"
 msgid "Identical Images"
 msgstr "Identiske bilete"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:642
+#: core/libs/database/history/itemhistorygraphmodel.cpp:633
 #, kde-format
 msgctxt "@title"
 msgid "Intermediate Steps:"
 msgstr "Mellomliggjande steg:"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:856
+#: core/libs/database/history/itemhistorygraphmodel.cpp:847
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -27063,7 +27063,7 @@ msgstr ""
 "%1\n"
 "(opphavleg bilete)"
 
-#: core/libs/database/history/itemhistorygraphmodel.cpp:861
+#: core/libs/database/history/itemhistorygraphmodel.cpp:852
 #, kde-format
 msgctxt "@item filename"
 msgid ""
@@ -27109,39 +27109,39 @@ msgstr "Inkje bilete valt"
 msgid "This is the original image"
 msgstr "Dette er originalbiletet"
 
-#: core/libs/database/server/databaseserver.cpp:153
+#: core/libs/database/server/databaseserver.cpp:150
 #, kde-format
 msgid "Database type is not supported."
 msgstr "Databasetypen er ikkje støtta."
 
-#: core/libs/database/server/databaseserver.cpp:294
+#: core/libs/database/server/databaseserver.cpp:291
 #, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:303
+#: core/libs/database/server/databaseserver.cpp:300
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:312
+#: core/libs/database/server/databaseserver.cpp:309
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:321
+#: core/libs/database/server/databaseserver.cpp:318
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:331
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
+#: core/libs/database/server/databaseserver.cpp:328
+#: core/libs/database/server/databaseserver.cpp:338
+#: core/libs/database/server/databaseserver.cpp:348
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Klarte ikkje oppretta mappa %1"
 
-#: core/libs/database/server/databaseserver.cpp:431
+#: core/libs/database/server/databaseserver.cpp:428
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -27152,59 +27152,59 @@ msgstr ""
 "standard oppsettfil</p><p>%1</p><p>ikkje var lesbar eller at målfila</"
 "p><p>%2</p><p>ikkje var skrivbar.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:453
+#: core/libs/database/server/databaseserver.cpp:450
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Fann ikkje standardoppsettet for MySQL-tenaren (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:501
+#: core/libs/database/server/databaseserver.cpp:498
 #, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:549
+#: core/libs/database/server/databaseserver.cpp:546
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Klarte ikkje starta databaseklargjering."
 
-#: core/libs/database/server/databaseserver.cpp:612
+#: core/libs/database/server/databaseserver.cpp:609
 #, kde-format
 msgid "Could not start database server."
 msgstr "Klarte ikkje starta databasetenaren."
 
-#: core/libs/database/server/databaseserver.cpp:654
+#: core/libs/database/server/databaseserver.cpp:651
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Ugyldig databaseobjekt ved oppstart av databasetenaren"
 
-#: core/libs/database/server/databaseserver.cpp:685
+#: core/libs/database/server/databaseserver.cpp:682
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Databaseprosessen avslutta uventa ved første oppstart."
 
-#: core/libs/database/server/databaseserver.cpp:691
+#: core/libs/database/server/databaseserver.cpp:688
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Klarte ikkje kopla til databasen i løpet av 60 sekund."
 
-#: core/libs/database/server/databaseserver.cpp:724
+#: core/libs/database/server/databaseserver.cpp:721
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 "Klarte ikkje skipa database<p>Spørjingsfeil: %1</p><p>Databasefeil: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:748
+#: core/libs/database/server/databaseserver.cpp:745
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:792
+#: core/libs/database/server/databaseserver.cpp:789
 #, kde-format
 msgid "Could not upgrade database."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:828
+#: core/libs/database/server/databaseserver.cpp:825
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>Programfil: %2</p><p>Argument: %3</p><p>Prosessfeil: %4</p>"
@@ -27235,25 +27235,25 @@ msgstr ""
 "databaseformatet er for nytt.) Bruk heller den nye versjonen av digiKam som "
 "du brukte før. "
 
-#: core/libs/database/tags/facetags.cpp:403
+#: core/libs/database/tags/facetags.cpp:405
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Personar"
 
-#: core/libs/database/tags/facetags.cpp:467
+#: core/libs/database/tags/facetags.cpp:469
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Ukjend"
 
-#: core/libs/database/tags/facetags.cpp:487
+#: core/libs/database/tags/facetags.cpp:489
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Ikkje stadfesta"
 
-#: core/libs/database/tags/facetags.cpp:507
+#: core/libs/database/tags/facetags.cpp:509
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -28083,22 +28083,22 @@ msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:177
+#: core/libs/dialogs/deletedialog.cpp:170
 #, kde-format
 msgid "Thumb"
 msgstr "Miniatyrbilete"
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:173
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Liste over filer som skal slettast."
 
-#: core/libs/dialogs/deletedialog.cpp:181
+#: core/libs/dialogs/deletedialog.cpp:174
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Dette er lista over filer som skal slettast."
 
-#: core/libs/dialogs/deletedialog.cpp:303
+#: core/libs/dialogs/deletedialog.cpp:285
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -28107,7 +28107,7 @@ msgstr ""
 "Viss det er kryssa av her, vert filer sletta for alltid i staden for å verta "
 "flytta til papirkorga."
 
-#: core/libs/dialogs/deletedialog.cpp:305
+#: core/libs/dialogs/deletedialog.cpp:287
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -28119,17 +28119,17 @@ msgstr ""
 "Det er i dei fleste filsystem ikkje mogleg å gjenoppretta sletta filer og "
 "mapper på ein enkel måte.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:311
+#: core/libs/dialogs/deletedialog.cpp:293
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "&Slett element i staden for å flytta dei til papirkorga"
 
-#: core/libs/dialogs/deletedialog.cpp:318
+#: core/libs/dialogs/deletedialog.cpp:300
 #, kde-format
 msgid "Do not &ask again"
 msgstr "&Ikkje spør på nytt"
 
-#: core/libs/dialogs/deletedialog.cpp:377
+#: core/libs/dialogs/deletedialog.cpp:359
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -28138,7 +28138,7 @@ msgstr ""
 "Viss det er kryssa av her, vert ikkje dette vindauget vist fleire gongar, og "
 "elementa vert sletta for alltid."
 
-#: core/libs/dialogs/deletedialog.cpp:379
+#: core/libs/dialogs/deletedialog.cpp:361
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -28147,7 +28147,7 @@ msgstr ""
 "Viss det er kryssa av her, vert ikkje dette vindauget vist fleire gongar, og "
 "elementa vert sletta for alltid."
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:366
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -28156,7 +28156,7 @@ msgstr ""
 "Viss det er kryssa av her, vert ikkje dette vindauget vist fleire gongar, og "
 "elementa vert flytta til papirkorga."
 
-#: core/libs/dialogs/deletedialog.cpp:386
+#: core/libs/dialogs/deletedialog.cpp:368
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -28165,42 +28165,42 @@ msgstr ""
 "Viss det er kryssa av her, vert ikkje dette vindauget vist fleire gongar, og "
 "elementa vert flytta til papirkorga."
 
-#: core/libs/dialogs/deletedialog.cpp:398
+#: core/libs/dialogs/deletedialog.cpp:380
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Desse elementa vert <b>sletta for alltid</b> frå harddisken."
 
-#: core/libs/dialogs/deletedialog.cpp:404
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Desse elementa vert flytta til papirkorga."
 
-#: core/libs/dialogs/deletedialog.cpp:406
+#: core/libs/dialogs/deletedialog.cpp:388
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> merkt element."
 msgstr[1] "<b>%1</b> merkte element."
 
-#: core/libs/dialogs/deletedialog.cpp:419
+#: core/libs/dialogs/deletedialog.cpp:401
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Desse albuma vert <b>sletta for alltid</b> frå harddisken."
 
-#: core/libs/dialogs/deletedialog.cpp:425
+#: core/libs/dialogs/deletedialog.cpp:407
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Desse albuma vert flytta til papirkorga."
 
-#: core/libs/dialogs/deletedialog.cpp:429
-#: core/libs/dialogs/deletedialog.cpp:456
+#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:438
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> merkt album."
 msgstr[1] "<b>%1</b> merkte album."
 
-#: core/libs/dialogs/deletedialog.cpp:440
+#: core/libs/dialogs/deletedialog.cpp:422
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -28210,7 +28210,7 @@ msgstr ""
 "<p>Desse albuma vert <b>sletta for alltid</b> frå harddisken.</p><p>Merk at "
 "òg <b>alle underalbuma</b> vert sletta for alltid.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:449
+#: core/libs/dialogs/deletedialog.cpp:431
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -28219,18 +28219,18 @@ msgstr ""
 "<p>Desse albuma vert flytta til papirkorga.</p><p>Merk at òg <b>alle "
 "underalbuma</b> vert flytta til papirkorga.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:600
+#: core/libs/dialogs/deletedialog.cpp:575
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Flytt til papirkorga"
 
-#: core/libs/dialogs/deletedialog.cpp:660
+#: core/libs/dialogs/deletedialog.cpp:635
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:667
+#: core/libs/dialogs/deletedialog.cpp:642
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -28263,12 +28263,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr ""
 
-#: core/libs/dialogs/imagedialog.cpp:233
+#: core/libs/dialogs/imagedialog.cpp:207
 #, kde-format
 msgid "Select an Item"
 msgstr "Vel eit element"
 
-#: core/libs/dialogs/imagedialog.cpp:247
+#: core/libs/dialogs/imagedialog.cpp:221
 #, kde-format
 msgid "Select Items"
 msgstr "Vel element"
@@ -28348,26 +28348,26 @@ msgstr "<i>Biletfrekvens:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videokodek:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:163
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr ""
 
-#: core/libs/dialogs/infodlg.cpp:74
+#: core/libs/dialogs/infodlg.cpp:68
 #: core/libs/progressmanager/dhistoryview.cpp:149
 #, kde-format
 msgid "Copy to Clipboard"
 msgstr "Kopier til utklippstavla"
 
-#: core/libs/dialogs/infodlg.cpp:96
+#: core/libs/dialogs/infodlg.cpp:90
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr ""
 "<font size=\"5\">%1</font><br/><b>Versjon %2</b><p>%3</p><p><i>%4</i></p>"
 
-#: core/libs/dialogs/infodlg.cpp:117
+#: core/libs/dialogs/infodlg.cpp:111
 #, kde-format
 msgid "Items List"
 msgstr ""
@@ -28438,33 +28438,33 @@ msgctxt "@info: tri state"
 msgid "Unknown"
 msgstr ""
 
-#: core/libs/dialogs/rawcameradlg.cpp:56
+#: core/libs/dialogs/rawcameradlg.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
 msgstr ""
 
-#: core/libs/dialogs/rawcameradlg.cpp:129
+#: core/libs/dialogs/rawcameradlg.cpp:125
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
 msgstr[0] "Brukar LibRaw versjon %2<br/>1 modell på lista"
 msgstr[1] "Brukar LibRaw versjon %2<br/>%1 modellar på lista"
 
-#: core/libs/dialogs/rawcameradlg.cpp:139
+#: core/libs/dialogs/rawcameradlg.cpp:135
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
 msgstr[0] "Brukar LibRaw versjon %2<br/>1 modell på lista (fann: %3)"
 msgstr[1] "Brukar LibRaw versjon %2<br/>%1 modellar på lista (fann: %3)"
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:83
+#: core/libs/dialogs/solidhardwaredlg.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Detected Hardware"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:86
+#: core/libs/dialogs/solidhardwaredlg.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -28473,137 +28473,137 @@ msgid ""
 "Press \"Refresh\" to update list if you plug a removable device."
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:116
+#: core/libs/dialogs/solidhardwaredlg.cpp:111
 #, kde-format
 msgctxt "@title"
 msgid "Hotplug Device Events"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:117
+#: core/libs/dialogs/solidhardwaredlg.cpp:112
 #, kde-format
 msgctxt "@title"
 msgid "Devices List"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:130
+#: core/libs/dialogs/solidhardwaredlg.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Refresh"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:272
-#: core/libs/dialogs/solidhardwaredlg.cpp:393
+#: core/libs/dialogs/solidhardwaredlg.cpp:268
+#: core/libs/dialogs/solidhardwaredlg.cpp:389
 #, kde-format
 msgctxt "@item: universal device ID"
 msgid "Udi"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:272
-#: core/libs/dialogs/solidhardwaredlg.cpp:278
-#: core/libs/dialogs/solidhardwaredlg.cpp:281
-#: core/libs/dialogs/solidhardwaredlg.cpp:284
+#: core/libs/dialogs/solidhardwaredlg.cpp:268
+#: core/libs/dialogs/solidhardwaredlg.cpp:274
+#: core/libs/dialogs/solidhardwaredlg.cpp:277
+#: core/libs/dialogs/solidhardwaredlg.cpp:280
 #, kde-format
 msgctxt "@item: device property"
 msgid "empty"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:275
-#: core/libs/dialogs/solidhardwaredlg.cpp:396
+#: core/libs/dialogs/solidhardwaredlg.cpp:271
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
 #, kde-format
 msgctxt "@item: parent device ID"
 msgid "Parent Udi"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:275
-#: core/libs/dialogs/solidhardwaredlg.cpp:287
+#: core/libs/dialogs/solidhardwaredlg.cpp:271
+#: core/libs/dialogs/solidhardwaredlg.cpp:283
 #, kde-format
 msgctxt "@item: device property"
 msgid "none"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:278
+#: core/libs/dialogs/solidhardwaredlg.cpp:274
 #, kde-format
 msgctxt "@item; device constructor"
 msgid "Vendor"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:281
-#: core/libs/dialogs/solidhardwaredlg.cpp:402
+#: core/libs/dialogs/solidhardwaredlg.cpp:277
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
 #, kde-format
 msgctxt "@item: device name"
 msgid "Product"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:284
-#: core/libs/dialogs/solidhardwaredlg.cpp:405
+#: core/libs/dialogs/solidhardwaredlg.cpp:280
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@item: device description"
 msgid "Description"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:287
-#: core/libs/dialogs/solidhardwaredlg.cpp:408
+#: core/libs/dialogs/solidhardwaredlg.cpp:283
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@item: device status"
 msgid "States"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:294
+#: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"
 msgid "Non-portable info"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:386
+#: core/libs/dialogs/solidhardwaredlg.cpp:382
 #, kde-format
 msgctxt "@item"
 msgid "New Device Added"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:396
-#: core/libs/dialogs/solidhardwaredlg.cpp:408
+#: core/libs/dialogs/solidhardwaredlg.cpp:392
+#: core/libs/dialogs/solidhardwaredlg.cpp:404
 #, kde-format
 msgctxt "@info: device property"
 msgid "none"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:399
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
 #, kde-format
 msgctxt "@item: device constructor"
 msgid "Vendor"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:399
-#: core/libs/dialogs/solidhardwaredlg.cpp:402
-#: core/libs/dialogs/solidhardwaredlg.cpp:405
+#: core/libs/dialogs/solidhardwaredlg.cpp:395
+#: core/libs/dialogs/solidhardwaredlg.cpp:398
+#: core/libs/dialogs/solidhardwaredlg.cpp:401
 #, kde-format
 msgctxt "@info: device property"
 msgid "empty"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:418
+#: core/libs/dialogs/solidhardwaredlg.cpp:414
 #, kde-format
 msgctxt "@item"
 msgid "Device Removed"
 msgstr ""
 
-#: core/libs/dialogs/solidhardwaredlg.cpp:421
+#: core/libs/dialogs/solidhardwaredlg.cpp:417
 #, kde-format
 msgctxt "@item"
 msgid "Udi"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:134
+#: core/libs/dialogs/webbrowserdlg.cpp:128
 #, kde-format
 msgid "Desktop Browser"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:135
+#: core/libs/dialogs/webbrowserdlg.cpp:129
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
 msgstr ""
 
-#: core/libs/dialogs/webbrowserdlg.cpp:249
+#: core/libs/dialogs/webbrowserdlg.cpp:243
 #, kde-format
 msgid "Cannot load page %1"
 msgstr ""
@@ -29486,24 +29486,24 @@ msgstr ""
 msgid "Adjust Curves"
 msgstr "Juster kurver"
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:242
+#: core/libs/dimg/filters/curves/curvessettings.cpp:238
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr ""
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:254
+#: core/libs/dimg/filters/curves/curvessettings.cpp:250
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
 msgstr "Klarte ikkje opna Gimp-kurvefila."
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:263
+#: core/libs/dimg/filters/curves/curvessettings.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr ""
 
-#: core/libs/dimg/filters/curves/curvessettings.cpp:275
+#: core/libs/dimg/filters/curves/curvessettings.cpp:271
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
 msgstr "Klarte ikkje lagra Gimp-kurvefila."
@@ -29539,114 +29539,114 @@ msgstr ""
 "x:%1\n"
 "y:%2"
 
-#: core/libs/dimg/filters/decorate/borderfilter.cpp:122
+#: core/libs/dimg/filters/decorate/borderfilter.cpp:117
 #, kde-format
 msgid "Border Tool"
 msgstr "Rammeverktøy"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:124
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:112
 #, kde-format
 msgctxt "solid border type"
 msgid "Solid"
 msgstr "Einsfarga"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:130
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:118
 #, kde-format
 msgctxt "beveled border type"
 msgid "Beveled"
 msgstr "Skråkant"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:131
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:119
 #, kde-format
 msgid "Decorative Pine"
 msgstr "Dekorativ furu"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:132
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:120
 #, kde-format
 msgid "Decorative Wood"
 msgstr "Dekorativt trevirke"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:133
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:121
 #, kde-format
 msgid "Decorative Paper"
 msgstr "Dekorativt papir"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:134
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:122
 #, kde-format
 msgid "Decorative Parquet"
 msgstr "Dekorativ parkett"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:135
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:123
 #, kde-format
 msgid "Decorative Ice"
 msgstr "Dekorativ is"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:136
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:124
 #, kde-format
 msgid "Decorative Leaf"
 msgstr "Dekorativt lauv"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:137
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:125
 #, kde-format
 msgid "Decorative Marble"
 msgstr "Dekorativ marmor"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:138
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:126
 #, kde-format
 msgid "Decorative Rain"
 msgstr "Dekorativ regn"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:139
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:127
 #, kde-format
 msgid "Decorative Craters"
 msgstr "Dekorative krater"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:140
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:128
 #, kde-format
 msgid "Decorative Dried"
 msgstr "Dekorativ uttørka"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:141
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:129
 #, kde-format
 msgid "Decorative Pink"
 msgstr "Dekorativ rosa"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:142
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:130
 #, kde-format
 msgid "Decorative Stone"
 msgstr "Dekorativ stein"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:143
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:131
 #, kde-format
 msgid "Decorative Chalk"
 msgstr "Dekorativ krit"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:144
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:132
 #, kde-format
 msgid "Decorative Granite"
 msgstr "Dekorativ granitt"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:145
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:133
 #, kde-format
 msgid "Decorative Rock"
 msgstr "Dekorativ stein"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:146
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:134
 #, kde-format
 msgid "Decorative Wall"
 msgstr "Dekorativ mur"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:148
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:136
 #, kde-format
 msgid "Select the border type to add around the image here."
 msgstr "Vel kva type biletramme du vil bruka på biletet."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:155
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:143
 #, kde-format
 msgid "Preserve Aspect Ratio"
 msgstr "Hald fast breidd/høgd-forhold"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:156
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:144
 #, kde-format
 msgid ""
 "Enable this option if you want to preserve the aspect ratio of image. If "
@@ -29657,69 +29657,69 @@ msgstr ""
 "Breidda på ramma vert då fastsett i prosent av biletstorleiken. Elles vert "
 "ho fastsett i pikslar."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:165
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:153
 #, kde-format
 msgid "Set here the border width as a percentage of the image size."
 msgstr "Vel breidda på ramma i prosent av biletstorleiken."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:167
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:155
 #, kde-format
 msgid "Width (pixels):"
 msgstr "Breidd (pikslar):"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:171
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:159
 #, kde-format
 msgid "Set here the border width in pixels to add around the image."
 msgstr "Vel breidda på kantlinja i pikslar."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:401
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:405
 #, kde-format
 msgctxt "first color for border effect"
 msgid "First:"
 msgstr "Første:"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:402
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:406
 #, kde-format
 msgctxt "second color for border effect"
 msgid "Second:"
 msgstr "Andre:"
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:403
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:407
 #, kde-format
 msgid "Set here the foreground color of the border."
 msgstr "Vel framgrunnsfargen til ramma."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:404
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:408
 #, kde-format
 msgid "Set here the Background color of the border."
 msgstr "Vel bakgrunnsfargen til ramma."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:420
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:427
 #, kde-format
 msgid "Set here the color of the main border."
 msgstr "Vel fargen til hovudramma."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:421
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:428
 #, kde-format
 msgid "Set here the color of the line."
 msgstr "Vel fargen til linja."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:427
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:436
 #, kde-format
 msgid "Set here the color of the upper left area."
 msgstr "Vel fargen til området oppe til venstre."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:428
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:437
 #, kde-format
 msgid "Set here the color of the lower right area."
 msgstr "Vel fargen til området nede til høgre."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:449
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:460
 #, kde-format
 msgid "Set here the color of the first line."
 msgstr "Vel fargen til den første linja."
 
-#: core/libs/dimg/filters/decorate/bordersettings.cpp:450
+#: core/libs/dimg/filters/decorate/bordersettings.cpp:461
 #, kde-format
 msgid "Set here the color of the second line."
 msgstr "Vel fargen til den andre linja."
@@ -29729,115 +29729,115 @@ msgstr "Vel fargen til den andre linja."
 msgid "Texture Filter"
 msgstr "Teksturfilter"
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:81
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:77
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Paper"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:82
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:78
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Paper 2"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:83
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:79
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Fabric"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:84
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:80
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Burlap"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:85
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:81
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Bricks"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:86
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:82
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Bricks 2"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:87
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:83
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Canvas"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:88
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:84
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Marble"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:89
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:85
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Marble 2"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:90
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:86
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Blue Jean"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:91
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:87
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Cell Wood"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:92
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:88
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Metal Wire"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:93
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:89
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Modern"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:94
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:90
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Wall"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:95
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:91
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Moss"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:96
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:92
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Stone"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:98
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Set here the texture type to apply to image."
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:102
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:98
 #, kde-format
 msgctxt "@label"
 msgid "Relief:"
 msgstr ""
 
-#: core/libs/dimg/filters/decorate/texturesettings.cpp:106
+#: core/libs/dimg/filters/decorate/texturesettings.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Set here the relief gain used to merge texture and image."
@@ -30977,113 +30977,113 @@ msgstr ""
 msgid "(exact match found)"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:115
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:110
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:417
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:419
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:414
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:421
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:420
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:427
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:430
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:433
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:436
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:427
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:422
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:434
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:437
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:423
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:426
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:429
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:432
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:430
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:425
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:433
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:428
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:436
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:431
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:69
 #, kde-format
 msgid "Lens Corrections to Apply:"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:76
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:70
 #, kde-format
 msgid "Chromatic Aberration"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:77
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:71
 #, kde-format
 msgid ""
 "Chromatic aberration is easily recognized as color fringes towards the image "
 "corners. CA is due to a varying lens focus for different colors."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:80
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:74
 #, kde-format
 msgid "Vignetting"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:81
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:75
 #, kde-format
 msgid ""
 "Vignetting refers to an image darkening, mostly in the corners. Optical and "
@@ -31091,12 +31091,12 @@ msgid ""
 "vignetting will not be cured."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:84
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:78
 #, kde-format
 msgid "Distortion"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:79
 #, kde-format
 msgid ""
 "Distortion refers to an image deformation, which is most pronounced towards "
@@ -31104,19 +31104,19 @@ msgid ""
 "distortions."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:88
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:82
 #, kde-format
 msgid "Geometry"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:89
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:83
 #, kde-format
 msgid ""
 "Four geometries are handled here: Rectilinear (99 percent of all lenses), "
 "Fisheye, Cylindrical, Equirectangular."
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunsettings.cpp:91
+#: core/libs/dimg/filters/lens/lensfunsettings.cpp:85
 #, kde-format
 msgid ""
 "<b>Note: lens correction options depend of filters available in LensFun "
@@ -31124,12 +31124,12 @@ msgid ""
 "site</a> for more information.</b>"
 msgstr ""
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:77
+#: core/libs/dimg/filters/levels/histogrambox.cpp:68
 #, kde-format
 msgid "Channel:"
 msgstr "Kanal:"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:83
+#: core/libs/dimg/filters/levels/histogrambox.cpp:74
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the image's maximal counts are "
@@ -31138,98 +31138,98 @@ msgid ""
 "(small and large) will be visible on the graph.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:89
+#: core/libs/dimg/filters/levels/histogrambox.cpp:80
 #, kde-format
 msgctxt "linear histogram scaling mode"
 msgid "Linear"
 msgstr ""
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:95
+#: core/libs/dimg/filters/levels/histogrambox.cpp:86
 #, kde-format
 msgctxt "logarithmic histogram scaling mode"
 msgid "Logarithmic"
 msgstr ""
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:112
+#: core/libs/dimg/filters/levels/histogrambox.cpp:103
 #, kde-format
 msgid ""
 "Here you can see the target preview image histogram drawing of the selected "
 "image channel. This one is re-computed at any settings changes."
 msgstr ""
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:269
+#: core/libs/dimg/filters/levels/histogrambox.cpp:272
 #, kde-format
 msgid "<p>Select the histogram channel to display:</p>"
 msgstr ""
 
 # unreviewed-context
-#: core/libs/dimg/filters/levels/histogrambox.cpp:275
+#: core/libs/dimg/filters/levels/histogrambox.cpp:278
 #, kde-format
 msgctxt "The luminosity channel"
 msgid "Luminosity"
 msgstr "Lysstyrke"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:276
+#: core/libs/dimg/filters/levels/histogrambox.cpp:279
 #, kde-format
 msgid "<b>Luminosity</b>: display the image's luminosity values."
 msgstr ""
 
 # unreviewed-context
-#: core/libs/dimg/filters/levels/histogrambox.cpp:278
+#: core/libs/dimg/filters/levels/histogrambox.cpp:281
 #, kde-format
 msgctxt "The red channel"
 msgid "Red"
 msgstr "Raud"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:279
+#: core/libs/dimg/filters/levels/histogrambox.cpp:282
 #, kde-format
 msgid "<b>Red</b>: display the red image-channel values."
 msgstr ""
 
 # unreviewed-context
-#: core/libs/dimg/filters/levels/histogrambox.cpp:281
+#: core/libs/dimg/filters/levels/histogrambox.cpp:284
 #, kde-format
 msgctxt "The green channel"
 msgid "Green"
 msgstr "Grøn"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:282
+#: core/libs/dimg/filters/levels/histogrambox.cpp:285
 #, kde-format
 msgid "<b>Green</b>: display the green image-channel values."
 msgstr ""
 
 # unreviewed-context
-#: core/libs/dimg/filters/levels/histogrambox.cpp:284
+#: core/libs/dimg/filters/levels/histogrambox.cpp:287
 #, kde-format
 msgctxt "The blue channel"
 msgid "Blue"
 msgstr "Blå"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:285
+#: core/libs/dimg/filters/levels/histogrambox.cpp:288
 #, kde-format
 msgid "<b>Blue</b>: display the blue image-channel values."
 msgstr ""
 
 # unreviewed-context
-#: core/libs/dimg/filters/levels/histogrambox.cpp:287
+#: core/libs/dimg/filters/levels/histogrambox.cpp:290
 #, kde-format
 msgctxt "The colors channel"
 msgid "Colors"
 msgstr "Fargar"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:288
+#: core/libs/dimg/filters/levels/histogrambox.cpp:291
 #, kde-format
 msgid "<b>Colors</b>: Display all color channel values at the same time."
 msgstr ""
 
 # unreviewed-context
-#: core/libs/dimg/filters/levels/histogrambox.cpp:290
+#: core/libs/dimg/filters/levels/histogrambox.cpp:293
 #, kde-format
 msgctxt "The alpha channel"
 msgid "Alpha"
 msgstr "Gjennomsikt"
 
-#: core/libs/dimg/filters/levels/histogrambox.cpp:291
+#: core/libs/dimg/filters/levels/histogrambox.cpp:294
 #, kde-format
 msgid ""
 "<b>Alpha</b>: display the alpha image-channel values. This channel "
@@ -32595,8 +32595,8 @@ msgid "&Start"
 msgstr "&Start"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:103
-#: core/libs/onlineversion/onlineversiondlg.cpp:321
-#: core/libs/onlineversion/onlineversiondlg.cpp:498
+#: core/libs/onlineversion/onlineversiondlg.cpp:305
+#: core/libs/onlineversion/onlineversiondlg.cpp:482
 #, kde-format
 msgid "Close"
 msgstr "Lukk"
@@ -33566,12 +33566,12 @@ msgstr ""
 msgid "Could not copy file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:287
+#: core/libs/iojobs/iojob.cpp:290
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Fila finst ikkje"
 
-#: core/libs/iojobs/iojob.cpp:299
+#: core/libs/iojobs/iojob.cpp:302
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -33579,7 +33579,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:311
+#: core/libs/iojobs/iojob.cpp:314
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -33587,32 +33587,32 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:328
+#: core/libs/iojobs/iojob.cpp:331
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Albumnamnet kan ikkje vera tomt."
 
-#: core/libs/iojobs/iojob.cpp:340
+#: core/libs/iojobs/iojob.cpp:343
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:386
+#: core/libs/iojobs/iojob.cpp:389
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:396
+#: core/libs/iojobs/iojob.cpp:399
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:411
+#: core/libs/iojobs/iojob.cpp:414
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:489
+#: core/libs/iojobs/iojob.cpp:492
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr ""
@@ -34796,101 +34796,101 @@ msgstr ""
 msgid "Close message"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:112
+#: core/libs/onlineversion/onlineversionchecker.cpp:104
 #, kde-format
 msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:190
+#: core/libs/onlineversion/onlineversionchecker.cpp:182
 #, kde-format
 msgid "No data returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:205
-#: core/libs/onlineversion/onlineversiondwnl.cpp:148
+#: core/libs/onlineversion/onlineversionchecker.cpp:197
+#: core/libs/onlineversion/onlineversiondwnl.cpp:141
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:232
+#: core/libs/onlineversion/onlineversionchecker.cpp:224
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:257
+#: core/libs/onlineversion/onlineversionchecker.cpp:249
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:289
+#: core/libs/onlineversion/onlineversionchecker.cpp:281
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:171
+#: core/libs/onlineversion/onlineversiondlg.cpp:155
 #, kde-format
 msgctxt "@info: download status"
 msgid "Received:"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:172
+#: core/libs/onlineversion/onlineversiondlg.cpp:156
 #, kde-format
 msgctxt "@info: download status"
 msgid "Total:"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:173
+#: core/libs/onlineversion/onlineversiondlg.cpp:157
 #, kde-format
 msgctxt "@info: download status"
 msgid "Rate:"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:174
+#: core/libs/onlineversion/onlineversiondlg.cpp:158
 #, kde-format
 msgctxt "@info: download status"
 msgid "ETA:"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:185
+#: core/libs/onlineversion/onlineversiondlg.cpp:169
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:186
+#: core/libs/onlineversion/onlineversiondlg.cpp:170
 #, kde-format
 msgid "Check for new pre-release version available, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:190
+#: core/libs/onlineversion/onlineversiondlg.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:191
+#: core/libs/onlineversion/onlineversiondlg.cpp:175
 #, kde-format
 msgid "Check for new stable version available, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:244
+#: core/libs/onlineversion/onlineversiondlg.cpp:228
 #, kde-format
 msgid "Configure..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:245
+#: core/libs/onlineversion/onlineversiondlg.cpp:229
 #, kde-format
 msgid "Open setup dialog page to configure updates."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:273
+#: core/libs/onlineversion/onlineversiondlg.cpp:257
 #: core/utilities/setup/downloader/filesdownloader.cpp:161
 #, kde-format
 msgid "Download"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:287
+#: core/libs/onlineversion/onlineversiondlg.cpp:271
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -34901,7 +34901,7 @@ msgid ""
 "customize update options from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:300
+#: core/libs/onlineversion/onlineversiondlg.cpp:284
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version "
@@ -34914,40 +34914,40 @@ msgid ""
 "from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:328
+#: core/libs/onlineversion/onlineversiondlg.cpp:312
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 pre-release built on %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:335
+#: core/libs/onlineversion/onlineversiondlg.cpp:319
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 stable version %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:343
+#: core/libs/onlineversion/onlineversiondlg.cpp:327
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
 "\"%2\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:353
-#: core/libs/onlineversion/onlineversiondlg.cpp:395
+#: core/libs/onlineversion/onlineversiondlg.cpp:337
+#: core/libs/onlineversion/onlineversiondlg.cpp:379
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:354
-#: core/libs/onlineversion/onlineversiondlg.cpp:396
+#: core/libs/onlineversion/onlineversiondlg.cpp:338
+#: core/libs/onlineversion/onlineversiondlg.cpp:380
 #, kde-format
 msgid "built on %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:356
+#: core/libs/onlineversion/onlineversiondlg.cpp:340
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -34955,19 +34955,19 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:362
-#: core/libs/onlineversion/onlineversiondlg.cpp:404
+#: core/libs/onlineversion/onlineversiondlg.cpp:346
+#: core/libs/onlineversion/onlineversiondlg.cpp:388
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:363
-#: core/libs/onlineversion/onlineversiondlg.cpp:405
+#: core/libs/onlineversion/onlineversiondlg.cpp:347
+#: core/libs/onlineversion/onlineversiondlg.cpp:389
 #, kde-format
 msgid "version %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:365
+#: core/libs/onlineversion/onlineversiondlg.cpp:349
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -34975,7 +34975,7 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:398
+#: core/libs/onlineversion/onlineversiondlg.cpp:382
 #, kde-format
 msgid ""
 "Verify Checksum for new %1\n"
@@ -34983,7 +34983,7 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:407
+#: core/libs/onlineversion/onlineversiondlg.cpp:391
 #, kde-format
 msgid ""
 "Verify checksum for %1\n"
@@ -34991,13 +34991,13 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:434
+#: core/libs/onlineversion/onlineversiondlg.cpp:418
 #, kde-format
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:445
+#: core/libs/onlineversion/onlineversiondlg.cpp:429
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35009,7 +35009,7 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:454
+#: core/libs/onlineversion/onlineversiondlg.cpp:438
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35021,12 +35021,12 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:465
+#: core/libs/onlineversion/onlineversiondlg.cpp:449
 #, kde-format
 msgid "Install..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:470
+#: core/libs/onlineversion/onlineversiondlg.cpp:454
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -35038,7 +35038,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:479
+#: core/libs/onlineversion/onlineversiondlg.cpp:463
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35050,7 +35050,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:503
+#: core/libs/onlineversion/onlineversiondlg.cpp:487
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -35059,7 +35059,7 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:510
+#: core/libs/onlineversion/onlineversiondlg.cpp:494
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -35068,34 +35068,34 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:602
+#: core/libs/onlineversion/onlineversiondlg.cpp:586
 #, kde-format
 msgid ""
 "Cannot start installer:\n"
 "%1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:237
+#: core/libs/onlineversion/onlineversiondwnl.cpp:230
 #, kde-format
 msgid "Checksum file is empty."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:249
+#: core/libs/onlineversion/onlineversiondwnl.cpp:242
 #, kde-format
 msgid "Checksum is invalid."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:270
+#: core/libs/onlineversion/onlineversiondwnl.cpp:263
 #, kde-format
 msgid "Downloaded file is empty."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:302
+#: core/libs/onlineversion/onlineversiondwnl.cpp:295
 #, kde-format
 msgid "Checksums error."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondwnl.cpp:329
+#: core/libs/onlineversion/onlineversiondwnl.cpp:322
 #, kde-format
 msgid "Cannot open target file."
 msgstr ""
@@ -35788,7 +35788,7 @@ msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:641
+#: core/libs/properties/itempropertiessidebardb.cpp:633
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -35799,10 +35799,10 @@ msgstr ""
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:279
 #: core/libs/properties/itempropertiessidebar.cpp:282
-#: core/libs/properties/itempropertiessidebardb.cpp:699
-#: core/libs/properties/itempropertiessidebardb.cpp:701
-#: core/libs/properties/itempropertiessidebardb.cpp:804
-#: core/libs/properties/itempropertiessidebardb.cpp:806
+#: core/libs/properties/itempropertiessidebardb.cpp:691
+#: core/libs/properties/itempropertiessidebardb.cpp:693
+#: core/libs/properties/itempropertiessidebardb.cpp:796
+#: core/libs/properties/itempropertiessidebardb.cpp:798
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
@@ -35814,10 +35814,10 @@ msgstr ""
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:698
-#: core/libs/properties/itempropertiessidebardb.cpp:700
-#: core/libs/properties/itempropertiessidebardb.cpp:803
-#: core/libs/properties/itempropertiessidebardb.cpp:805
+#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:692
+#: core/libs/properties/itempropertiessidebardb.cpp:795
+#: core/libs/properties/itempropertiessidebardb.cpp:797
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -35853,31 +35853,31 @@ msgctxt "@label"
 msgid "%1 ISO"
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:151
+#: core/libs/properties/itempropertiescolorstab.cpp:132
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Range:"
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:158
+#: core/libs/properties/itempropertiescolorstab.cpp:139
 #, kde-format
 msgctxt "@info: color properties"
 msgid "Select the minimal intensity value of the histogram selection here."
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:164
+#: core/libs/properties/itempropertiescolorstab.cpp:145
 #, kde-format
 msgctxt "@info: color properties"
 msgid "Select the maximal intensity value of the histogram selection here."
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:172
+#: core/libs/properties/itempropertiescolorstab.cpp:153
 #, kde-format
 msgctxt "@title: color properties"
 msgid "Statistics"
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:173
+#: core/libs/properties/itempropertiescolorstab.cpp:154
 #, kde-format
 msgctxt "@info: color properties"
 msgid ""
@@ -35885,124 +35885,124 @@ msgid ""
 "histogram part. These values are available for all channels."
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:178
+#: core/libs/properties/itempropertiescolorstab.cpp:159
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Pixels: "
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:181
+#: core/libs/properties/itempropertiescolorstab.cpp:162
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Count: "
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:184
+#: core/libs/properties/itempropertiescolorstab.cpp:165
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Mean: "
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:187
+#: core/libs/properties/itempropertiescolorstab.cpp:168
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Std. deviation: "
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:190
+#: core/libs/properties/itempropertiescolorstab.cpp:171
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Median: "
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:193
+#: core/libs/properties/itempropertiescolorstab.cpp:174
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Percentile: "
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:196
+#: core/libs/properties/itempropertiescolorstab.cpp:177
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Color depth: "
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:199
+#: core/libs/properties/itempropertiescolorstab.cpp:180
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Alpha Channel: "
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:202
+#: core/libs/properties/itempropertiescolorstab.cpp:183
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Source: "
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:257
+#: core/libs/properties/itempropertiescolorstab.cpp:238
 #, kde-format
 msgctxt "@title: color properties"
 msgid "Histogram"
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:267
+#: core/libs/properties/itempropertiescolorstab.cpp:248
 #, kde-format
 msgctxt "@title: color properties"
 msgid "ICC profile"
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:686
+#: core/libs/properties/itempropertiescolorstab.cpp:667
 #, kde-format
 msgctxt "@label: color properties"
 msgid "16 bits"
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:687
+#: core/libs/properties/itempropertiescolorstab.cpp:668
 #, kde-format
 msgctxt "@label: color properties"
 msgid "8 bits"
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:688
+#: core/libs/properties/itempropertiescolorstab.cpp:669
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Yes"
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:689
+#: core/libs/properties/itempropertiescolorstab.cpp:670
 #, kde-format
 msgctxt "@label: color properties"
 msgid "No"
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:730
+#: core/libs/properties/itempropertiescolorstab.cpp:711
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Full Image"
 msgstr ""
 
-#: core/libs/properties/itempropertiescolorstab.cpp:731
+#: core/libs/properties/itempropertiescolorstab.cpp:712
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Image Region"
 msgstr ""
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:82
+#: core/libs/properties/itempropertiesmetadatatab.cpp:77
 #, kde-format
 msgid "EXIF"
 msgstr "Exif"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:87
+#: core/libs/properties/itempropertiesmetadatatab.cpp:82
 #, kde-format
 msgid "Makernote"
 msgstr "MakerNote"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:92
+#: core/libs/properties/itempropertiesmetadatatab.cpp:87
 #, kde-format
 msgid "IPTC"
 msgstr "IPTC"
 
-#: core/libs/properties/itempropertiesmetadatatab.cpp:100
+#: core/libs/properties/itempropertiesmetadatatab.cpp:95
 #: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "XMP"
@@ -36048,8 +36048,8 @@ msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:261
 #: core/libs/properties/itempropertiessidebar.cpp:268
-#: core/libs/properties/itempropertiessidebardb.cpp:675
-#: core/libs/properties/itempropertiessidebardb.cpp:688
+#: core/libs/properties/itempropertiessidebardb.cpp:667
+#: core/libs/properties/itempropertiessidebardb.cpp:680
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -36062,39 +36062,39 @@ msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:277
-#: core/libs/properties/itempropertiessidebardb.cpp:697
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:313
-#: core/libs/properties/itempropertiessidebardb.cpp:731
+#: core/libs/properties/itempropertiessidebardb.cpp:723
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:318
-#: core/libs/properties/itempropertiessidebardb.cpp:736
+#: core/libs/properties/itempropertiessidebardb.cpp:728
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:87
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:88
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:680
+#: core/libs/properties/itempropertiessidebardb.cpp:672
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -36262,27 +36262,27 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:76
+#: core/libs/properties/itemselectionpropertiestab.cpp:70
 #, kde-format
 msgid "Count: "
 msgstr ""
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:77
+#: core/libs/properties/itemselectionpropertiestab.cpp:71
 #, kde-format
 msgid "Size: "
 msgstr "Filstorleik: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:78
+#: core/libs/properties/itemselectionpropertiestab.cpp:72
 #, kde-format
 msgid "Total Count: "
 msgstr "I alt: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:79
+#: core/libs/properties/itemselectionpropertiestab.cpp:73
 #, kde-format
 msgid "Total Size: "
 msgstr "Total storleik: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:104
+#: core/libs/properties/itemselectionpropertiestab.cpp:98
 #, kde-format
 msgid "Selection Properties"
 msgstr "Utvalseigenskapar"
@@ -37170,49 +37170,49 @@ msgid ""
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -37348,150 +37348,150 @@ msgstr "Bruk fargekategorien «%1»"
 msgid "Assign Tag \"%1\""
 msgstr ""
 
-#: core/libs/tags/manager/models/tagmngrlistitem.cpp:155
+#: core/libs/tags/manager/models/tagmngrlistitem.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "All Tags"
 msgstr ""
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:287
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
 msgstr ""
 
-#: core/libs/tags/manager/models/tagmngrlistview.cpp:152
+#: core/libs/tags/manager/models/tagmngrlistview.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Delete Selected from List"
 msgstr ""
 
-#: core/libs/tags/manager/taglist.cpp:67
+#: core/libs/tags/manager/taglist.cpp:61
 #, kde-format
 msgid "Add to List"
 msgstr "Legg til i liste"
 
-#: core/libs/tags/manager/taglist.cpp:68
+#: core/libs/tags/manager/taglist.cpp:62
 #, kde-format
 msgid "Add selected tags to Quick Access List"
 msgstr ""
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:138
+#: core/libs/tags/manager/tagmngrtreeview.cpp:135
 #, kde-format
 msgid "Delete Tags"
 msgstr "Slett merkelappar"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:716
+#: core/libs/tags/manager/tagmngrtreeview.cpp:143
+#: core/libs/tags/manager/tagsmanager.cpp:698
 #, kde-format
 msgid "Edit Tag Title"
 msgstr ""
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagmngrtreeview.cpp:147
+#: core/libs/tags/manager/tagsmanager.cpp:702
 #: core/libs/tags/widgets/tagfolderview.cpp:69
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Fjern merkelappikon"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagmngrtreeview.cpp:150
+#: core/libs/tags/manager/tagsmanager.cpp:711
 #, kde-format
 msgid "Invert Selection"
 msgstr "Omvend merking"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr ""
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:738
+#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr ""
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:741
+#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:98
+#: core/libs/tags/manager/tagpropwidget.cpp:88
 #, kde-format
 msgctxt "@label"
 msgid "Tag Properties"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:107
+#: core/libs/tags/manager/tagpropwidget.cpp:97
 #: core/libs/tags/widgets/tageditdlg.cpp:139
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:112
+#: core/libs/tags/manager/tagpropwidget.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:125
+#: core/libs/tags/manager/tagpropwidget.cpp:115
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Icon:"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:134
+#: core/libs/tags/manager/tagpropwidget.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:147
+#: core/libs/tags/manager/tagpropwidget.cpp:137
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Shortcut:"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:160
+#: core/libs/tags/manager/tagpropwidget.cpp:150
 #, kde-format
 msgctxt "@label"
 msgid "Note"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:161
+#: core/libs/tags/manager/tagpropwidget.cpp:151
 #, kde-format
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:166
+#: core/libs/tags/manager/tagpropwidget.cpp:156
 #, kde-format
 msgctxt "@action"
 msgid "Save"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:167
+#: core/libs/tags/manager/tagpropwidget.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Discard"
 msgstr ""
 
-#: core/libs/tags/manager/tagpropwidget.cpp:234
+#: core/libs/tags/manager/tagpropwidget.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:180
+#: core/libs/tags/manager/tagsmanager.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:339
+#: core/libs/tags/manager/tagsmanager.cpp:321
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -37503,7 +37503,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:362
+#: core/libs/tags/manager/tagsmanager.cpp:344
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -37512,7 +37512,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:372
+#: core/libs/tags/manager/tagsmanager.cpp:354
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -37520,7 +37520,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:378
+#: core/libs/tags/manager/tagsmanager.cpp:360
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -37528,7 +37528,7 @@ msgid_plural "Delete tags"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:504
+#: core/libs/tags/manager/tagsmanager.cpp:486
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -37536,15 +37536,15 @@ msgid ""
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:516
-#: core/libs/tags/manager/tagsmanager.cpp:535
+#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:517
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:555
+#: core/libs/tags/manager/tagsmanager.cpp:537
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -37552,120 +37552,120 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:622
+#: core/libs/tags/manager/tagsmanager.cpp:604
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:703
+#: core/libs/tags/manager/tagsmanager.cpp:685
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:706
+#: core/libs/tags/manager/tagsmanager.cpp:688
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:705
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:708
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:753
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:755
+#: core/libs/tags/manager/tagsmanager.cpp:737
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:745
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:765
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:767
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:769
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:799
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:820
+#: core/libs/tags/manager/tagsmanager.cpp:802
 #, kde-format
 msgid "Read Tags from Image"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:823
+#: core/libs/tags/manager/tagsmanager.cpp:805
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:825
+#: core/libs/tags/manager/tagsmanager.cpp:807
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:827
+#: core/libs/tags/manager/tagsmanager.cpp:809
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:830
+#: core/libs/tags/manager/tagsmanager.cpp:812
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:852
+#: core/libs/tags/manager/tagsmanager.cpp:834
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -48278,13 +48278,13 @@ msgid ""
 msgstr ""
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:349
-#: core/utilities/import/widgets/scriptingsettings.cpp:85
+#: core/utilities/import/widgets/scriptingsettings.cpp:79
 #, kde-format
 msgid "Show a list of all available options"
 msgstr ""
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:110
 #, kde-format
 msgid "Modifiers"
 msgstr ""
@@ -48338,7 +48338,7 @@ msgid ""
 "(album UI only)."
 msgstr ""
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:50
 #, kde-format
 msgctxt "@title:window"
 msgid "Information"
@@ -53278,7 +53278,7 @@ msgstr ""
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:259
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
@@ -54677,13 +54677,13 @@ msgstr ""
 msgid "Maximum Tile Level"
 msgstr ""
 
-#: core/utilities/imageeditor/core/undoaction.cpp:147
+#: core/utilities/imageeditor/core/undoaction.cpp:145
 #, kde-format
 msgctxt "@title: menu entry to undo unknown previous action"
 msgid "Unknown"
 msgstr ""
 
-#: core/utilities/imageeditor/core/undocache.cpp:132
+#: core/utilities/imageeditor/core/undocache.cpp:131
 #, kde-format
 msgid ""
 "The free disk space in the path \"%1\" for the undo cache file is less than "
@@ -56833,93 +56833,93 @@ msgctxt "@action: go to next image"
 msgid "Forward"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:84
+#: core/utilities/import/widgets/advancedsettings.cpp:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Write the document name to EXIF"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:85
+#: core/utilities/import/widgets/advancedsettings.cpp:75
 #, kde-format
 msgctxt "@option:check"
 msgid "Fix internal date && time"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:87
+#: core/utilities/import/widgets/advancedsettings.cpp:77
 #, kde-format
 msgctxt "@option:check"
 msgid "Auto-rotate/flip image"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:88
+#: core/utilities/import/widgets/advancedsettings.cpp:78
 #, kde-format
 msgctxt "@option:check"
 msgid "Convert to lossless file format"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:90
+#: core/utilities/import/widgets/advancedsettings.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "New image format:"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:92
+#: core/utilities/import/widgets/advancedsettings.cpp:82
 #: core/utilities/setup/editor/setupversioning.cpp:150
 #, kde-format
 msgctxt "@label:listbox"
 msgid "PNG"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:93
+#: core/utilities/import/widgets/advancedsettings.cpp:83
 #: core/utilities/setup/editor/setupversioning.cpp:149
 #, kde-format
 msgctxt "@label:listbox"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/import/widgets/advancedsettings.cpp:94
+#: core/utilities/import/widgets/advancedsettings.cpp:84
 #: core/utilities/setup/editor/setupversioning.cpp:151
 #, kde-format
 msgctxt "@label:listbox"
 msgid "PGF"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:98
+#: core/utilities/import/widgets/advancedsettings.cpp:88
 #: core/utilities/setup/editor/setupversioning.cpp:155
 #, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG-2000"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:104
+#: core/utilities/import/widgets/advancedsettings.cpp:94
 #: core/utilities/setup/editor/setupversioning.cpp:161
 #, kde-format
 msgctxt "@label:listbox"
 msgid "HEIF"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:112
+#: core/utilities/import/widgets/advancedsettings.cpp:102
 #: core/utilities/setup/editor/setupversioning.cpp:169
 #, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG-XL"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:119
+#: core/utilities/import/widgets/advancedsettings.cpp:109
 #: core/utilities/setup/editor/setupversioning.cpp:176
 #, kde-format
 msgctxt "@label:listbox"
 msgid "WEBP"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:126
+#: core/utilities/import/widgets/advancedsettings.cpp:116
 #: core/utilities/setup/editor/setupversioning.cpp:183
 #, kde-format
 msgctxt "@label:listbox"
 msgid "AVIF"
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:140
+#: core/utilities/import/widgets/advancedsettings.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56927,7 +56927,7 @@ msgid ""
 "downloaded."
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:142
+#: core/utilities/import/widgets/advancedsettings.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56935,13 +56935,13 @@ msgid ""
 "Exif information provided by the camera."
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:144
+#: core/utilities/import/widgets/advancedsettings.cpp:134
 #, kde-format
 msgctxt "@info"
 msgid "Select here which metadata template you want to apply to images."
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:146
+#: core/utilities/import/widgets/advancedsettings.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56949,7 +56949,7 @@ msgid ""
 "document name is the original file name of the imported file."
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:148
+#: core/utilities/import/widgets/advancedsettings.cpp:138
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56959,7 +56959,7 @@ msgid ""
 "and IPTC tags."
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:152
+#: core/utilities/import/widgets/advancedsettings.cpp:142
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56967,7 +56967,7 @@ msgid ""
 "image format. Note: Image conversion can take a while on a slow computer."
 msgstr ""
 
-#: core/utilities/import/widgets/advancedsettings.cpp:157
+#: core/utilities/import/widgets/advancedsettings.cpp:147
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -56976,7 +56976,7 @@ msgid ""
 "metadata support.</para>"
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:86
+#: core/utilities/import/widgets/albumcustomizer.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56998,61 +56998,61 @@ msgid ""
 "b> : Photo shot on Sunday</p>"
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:107
+#: core/utilities/import/widgets/albumcustomizer.cpp:97
 #, kde-format
 msgctxt "@option:check"
 msgid "Extension-based sub-albums"
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:108
+#: core/utilities/import/widgets/albumcustomizer.cpp:98
 #, kde-format
 msgctxt "@option:check"
 msgid "Date-based sub-albums"
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:110
+#: core/utilities/import/widgets/albumcustomizer.cpp:100
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Date format:"
 msgstr "Datoformat:"
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:112
+#: core/utilities/import/widgets/albumcustomizer.cpp:102
 #, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "ISO"
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:113
+#: core/utilities/import/widgets/albumcustomizer.cpp:103
 #, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Full Text"
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:114
+#: core/utilities/import/widgets/albumcustomizer.cpp:104
 #, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Local Settings"
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:115
+#: core/utilities/import/widgets/albumcustomizer.cpp:105
 #, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Custom"
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:121
+#: core/utilities/import/widgets/albumcustomizer.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Show a list of all available options"
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:134
+#: core/utilities/import/widgets/albumcustomizer.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Set how digiKam creates albums automatically when downloading."
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:135
+#: core/utilities/import/widgets/albumcustomizer.cpp:125
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57061,7 +57061,7 @@ msgid ""
 "you can separate JPEG and RAW files as they are downloaded from your camera."
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:138
+#: core/utilities/import/widgets/albumcustomizer.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57069,7 +57069,7 @@ msgid ""
 "created file date-based sub-albums of the destination album."
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:141
+#: core/utilities/import/widgets/albumcustomizer.cpp:131
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57084,43 +57084,43 @@ msgid ""
 "\"Custom\": use a customized format for date."
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:149
+#: core/utilities/import/widgets/albumcustomizer.cpp:139
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Show the result of converted date 1968-12-26 using your customized format."
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:248
+#: core/utilities/import/widgets/albumcustomizer.cpp:238
 #, kde-format
 msgctxt "@info Example of custom date format for album naming"
 msgid "Ex.: %1"
 msgstr ""
 
-#: core/utilities/import/widgets/albumcustomizer.cpp:252
+#: core/utilities/import/widgets/albumcustomizer.cpp:242
 #, kde-format
 msgctxt "@info Custom date format"
 msgid "Format is not valid..."
 msgstr ""
 
-#: core/utilities/import/widgets/capturewidget.cpp:83
+#: core/utilities/import/widgets/capturewidget.cpp:81
 #, kde-format
 msgid "Cannot display camera preview"
 msgstr ""
 
-#: core/utilities/import/widgets/dngconvertsettings.cpp:66
+#: core/utilities/import/widgets/dngconvertsettings.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Convert RAW images to"
 msgstr ""
 
-#: core/utilities/import/widgets/dngconvertsettings.cpp:74
+#: core/utilities/import/widgets/dngconvertsettings.cpp:69
 #, kde-format
 msgctxt "@label"
 msgid "DNG container"
 msgstr ""
 
-#: core/utilities/import/widgets/dngconvertsettings.cpp:87
+#: core/utilities/import/widgets/dngconvertsettings.cpp:82
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57128,40 +57128,40 @@ msgid ""
 "they are downloaded."
 msgstr ""
 
-#: core/utilities/import/widgets/dngconvertsettings.cpp:89
+#: core/utilities/import/widgets/dngconvertsettings.cpp:84
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Enable this option to convert RAW images to DNG container automatically."
 msgstr ""
 
-#: core/utilities/import/widgets/freespacewidget.cpp:331
+#: core/utilities/import/widgets/freespacewidget.cpp:317
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr ""
 
-#: core/utilities/import/widgets/freespacewidget.cpp:335
+#: core/utilities/import/widgets/freespacewidget.cpp:321
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr ""
 
-#: core/utilities/import/widgets/freespacewidget.cpp:345
-#: core/utilities/import/widgets/freespacewidget.cpp:356
+#: core/utilities/import/widgets/freespacewidget.cpp:331
+#: core/utilities/import/widgets/freespacewidget.cpp:342
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "Kapasitet:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:348
-#: core/utilities/import/widgets/freespacewidget.cpp:359
+#: core/utilities/import/widgets/freespacewidget.cpp:334
+#: core/utilities/import/widgets/freespacewidget.cpp:345
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "Tilgjengeleg:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:351
+#: core/utilities/import/widgets/freespacewidget.cpp:337
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
@@ -57185,89 +57185,89 @@ msgctxt "@title:menu"
 msgid "Open With..."
 msgstr "Opna med …"
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:419
+#: core/utilities/import/widgets/importcontextmenu.cpp:423
 #, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"
 msgstr ""
 
-#: core/utilities/import/widgets/importfiltercombobox.cpp:122
+#: core/utilities/import/widgets/importfiltercombobox.cpp:123
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Files"
 msgstr "Alle filer"
 
-#: core/utilities/import/widgets/importfiltercombobox.cpp:126
+#: core/utilities/import/widgets/importfiltercombobox.cpp:127
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Only New Files"
 msgstr "Berre nye filer"
 
-#: core/utilities/import/widgets/importfiltercombobox.cpp:131
+#: core/utilities/import/widgets/importfiltercombobox.cpp:132
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Raw Files"
 msgstr "Råfiler"
 
-#: core/utilities/import/widgets/importfiltercombobox.cpp:141
+#: core/utilities/import/widgets/importfiltercombobox.cpp:142
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "JPG/TIFF Files"
 msgstr "JPG- og TIFF-filer"
 
-#: core/utilities/import/widgets/importfiltercombobox.cpp:146
+#: core/utilities/import/widgets/importfiltercombobox.cpp:147
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Video Files"
 msgstr "Videofiler"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:110
+#: core/utilities/import/widgets/renamecustomizer.cpp:97
 #, kde-format
 msgid "Camera filenames"
 msgstr "Kamerafilnamn"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:112
+#: core/utilities/import/widgets/renamecustomizer.cpp:99
 #, kde-format
 msgid ""
 "Turn on this option to use the camera provided image filenames without "
 "modifications."
 msgstr ""
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:118
+#: core/utilities/import/widgets/renamecustomizer.cpp:105
 #, kde-format
 msgid "Change case to:"
 msgstr "Endra store/små bokstavar til:"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:122
+#: core/utilities/import/widgets/renamecustomizer.cpp:109
 #, kde-format
 msgctxt "Leave filename as it is"
 msgid "Leave as-is"
 msgstr ""
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:123
+#: core/utilities/import/widgets/renamecustomizer.cpp:110
 #, kde-format
 msgctxt "Filename to uppercase"
 msgid "Upper"
 msgstr "Store bokstavar"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:124
+#: core/utilities/import/widgets/renamecustomizer.cpp:111
 #, kde-format
 msgctxt "Filename to lowercase"
 msgid "Lower"
 msgstr "Små bokstavar"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:126
+#: core/utilities/import/widgets/renamecustomizer.cpp:113
 #, kde-format
 msgid "Set the method to use to change the case of the image filenames."
 msgstr ""
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:137
+#: core/utilities/import/widgets/renamecustomizer.cpp:124
 #, kde-format
 msgctxt "Custom Image Renaming"
 msgid "Customize"
 msgstr ""
 
-#: core/utilities/import/widgets/scriptingsettings.cpp:67
+#: core/utilities/import/widgets/scriptingsettings.cpp:61
 #, kde-format
 msgid ""
 "<p>These expressions may be used to customize the command line:</"
@@ -57278,17 +57278,17 @@ msgid ""
 "command.</p>"
 msgstr ""
 
-#: core/utilities/import/widgets/scriptingsettings.cpp:78
+#: core/utilities/import/widgets/scriptingsettings.cpp:72
 #, kde-format
 msgid "Execute script for image:"
 msgstr ""
 
-#: core/utilities/import/widgets/scriptingsettings.cpp:82
+#: core/utilities/import/widgets/scriptingsettings.cpp:76
 #, kde-format
 msgid "No script selected"
 msgstr ""
 
-#: core/utilities/import/widgets/scriptingsettings.cpp:93
+#: core/utilities/import/widgets/scriptingsettings.cpp:87
 #, kde-format
 msgid "Set here the script that is executed for every imported image."
 msgstr ""
@@ -57298,27 +57298,27 @@ msgstr ""
 msgid "Drag and drop an image here"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:257
 #, kde-format
 msgid "Show on left panel"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:258
 #, kde-format
 msgid "Show on right panel"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:265
+#: core/utilities/lighttable/lighttablethumbbar.cpp:260
 #, kde-format
 msgid "Remove item"
 msgstr "Fjern elementet"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:266
+#: core/utilities/lighttable/lighttablethumbbar.cpp:261
 #, kde-format
 msgid "Clear all"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:469
+#: core/utilities/lighttable/lighttablethumbbar.cpp:464
 #, kde-format
 msgid "Drag and drop images here"
 msgstr ""
@@ -57885,24 +57885,24 @@ msgstr ""
 "Ferdig med handsaminga.\n"
 "Tid brukt: %1"
 
-#: core/utilities/maintenance/metadataremover.cpp:189
+#: core/utilities/maintenance/metadataremover.cpp:183
 #, kde-format
 msgid "Remove all faces from image"
 msgstr ""
 
-#: core/utilities/maintenance/metadataremover.cpp:194
+#: core/utilities/maintenance/metadataremover.cpp:188
 #, kde-format
 msgid "Remove all tags from image"
 msgstr ""
 
-#: core/utilities/maintenance/metadataremover.cpp:210
+#: core/utilities/maintenance/metadataremover.cpp:204
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
 
-#: core/utilities/maintenance/metadataremover.cpp:215
+#: core/utilities/maintenance/metadataremover.cpp:209
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
@@ -60687,7 +60687,7 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
-#: core/utilities/setup/collections/setupcollectionview.cpp:1488
+#: core/utilities/setup/collections/setupcollectionview.cpp:1493
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
@@ -60729,19 +60729,19 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1702
+#: core/utilities/setup/collections/setupcollectionview.cpp:1707
 #, kde-format
 msgid "Local Collections"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1703
+#: core/utilities/setup/collections/setupcollectionview.cpp:1708
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1704
+#: core/utilities/setup/collections/setupcollectionview.cpp:1709
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr ""
@@ -60804,52 +60804,52 @@ msgctxt "#title: collection status"
 msgid "Status"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1536
+#: core/utilities/setup/collections/setupcollectionview.cpp:1541
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
-msgstr ""
-
-#: core/utilities/setup/collections/setupcollectionview.cpp:1571
-#, kde-format
-msgctxt "@title:window"
-msgid "Problem Adding Collection"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1576
 #, kde-format
 msgctxt "@title:window"
+msgid "Problem Adding Collection"
+msgstr ""
+
+#: core/utilities/setup/collections/setupcollectionview.cpp:1581
+#, kde-format
+msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1593
+#: core/utilities/setup/collections/setupcollectionview.cpp:1598
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1597
+#: core/utilities/setup/collections/setupcollectionview.cpp:1602
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1605
+#: core/utilities/setup/collections/setupcollectionview.cpp:1610
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1609
+#: core/utilities/setup/collections/setupcollectionview.cpp:1614
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1692
+#: core/utilities/setup/collections/setupcollectionview.cpp:1697
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1696
+#: core/utilities/setup/collections/setupcollectionview.cpp:1701
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr ""
