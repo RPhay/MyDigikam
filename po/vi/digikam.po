@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 01:32+0000\n"
+"POT-Creation-Date: 2024-03-07 01:32+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -2931,7 +2931,7 @@ msgstr "Tập ảnh tôi"
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/tags/widgets/tagfolderview.cpp:106
+#: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
@@ -25788,7 +25788,7 @@ msgstr "<p>Đây là cách điều chỉnh độ trưng của ảnh"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
-#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
@@ -26317,7 +26317,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "Không cho phép tên thẻ chứa « / »"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:313
-#: core/libs/tags/widgets/tageditdlg.cpp:476
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Tên thẻ đã có."
@@ -26566,7 +26566,7 @@ msgstr "Tập ảnh mới"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
-#: core/libs/tags/widgets/tagfolderview.cpp:134
+#: core/libs/tags/widgets/tagfolderview.cpp:128
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
 msgstr "Chọn Không gì"
@@ -26578,8 +26578,8 @@ msgid "Expand all Albums"
 msgstr "Tập ảnh tôi"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:222
-#: core/libs/tags/widgets/tagfolderview.cpp:139
-#: core/libs/tags/widgets/tagfolderview.cpp:242
+#: core/libs/tags/widgets/tagfolderview.cpp:133
+#: core/libs/tags/widgets/tagfolderview.cpp:236
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "%1 mục đã chọn"
@@ -26591,7 +26591,7 @@ msgid "Collapse all Albums"
 msgstr "Tập ảnh tôi"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:228
-#: core/libs/tags/widgets/tagfolderview.cpp:70
+#: core/libs/tags/widgets/tagfolderview.cpp:64
 #, fuzzy, kde-format
 msgid "Find Duplicates..."
 msgstr "Vẽ biếm hoạ"
@@ -27849,7 +27849,7 @@ msgid "Scanning collection"
 msgstr "Theo tập hợp"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:87
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
 msgstr ""
@@ -37981,24 +37981,24 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Lặt vặt"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:382
+#: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, fuzzy, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 (%2)"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:390
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, fuzzy, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "%1 (%2)"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:395
+#: core/libs/tags/engine/taggingactionfactory.cpp:387
 #, fuzzy, kde-format
 msgid "Create \"%1\""
 msgstr "tạo : %1"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:260
+#: core/libs/tags/engine/tagmodificationhelper.cpp:256
 #, fuzzy, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -38010,7 +38010,7 @@ msgstr[0] ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:283
+#: core/libs/tags/engine/tagmodificationhelper.cpp:279
 #, fuzzy, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -38018,20 +38018,20 @@ msgstr[0] ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:291
+#: core/libs/tags/engine/tagmodificationhelper.cpp:287
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Xoá thẻ « %1 » không?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:413
+#: core/libs/tags/engine/tagmodificationhelper.cpp:290
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Xoá thẻ"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:387
+#: core/libs/tags/engine/tagmodificationhelper.cpp:383
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -38041,19 +38041,19 @@ msgstr ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:400
 #, fuzzy, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:410
+#: core/libs/tags/engine/tagmodificationhelper.cpp:406
 #, fuzzy, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Xoá thẻ « %1 » không?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:574
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -38067,7 +38067,7 @@ msgstr[0] ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:596
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -38077,35 +38077,35 @@ msgstr[0] ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:604
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, fuzzy, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Đặt lại biểu tượng thẻ"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:615
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, fuzzy, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] "<p>Ở đây hãy đặt phương pháp mài sắc cần áp dụng cho ảnh."
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:217
+#: core/libs/tags/engine/tagsactionmngr.cpp:211
 #, fuzzy, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Gán đánh giá « 0 sao »"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:236
+#: core/libs/tags/engine/tagsactionmngr.cpp:230
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, fuzzy, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Gán hồ sơ"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:303
+#: core/libs/tags/engine/tagsactionmngr.cpp:297
 #, fuzzy, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Gán thẻ"
@@ -38152,7 +38152,7 @@ msgstr "Tệp ảnh"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
 #: core/libs/tags/manager/tagsmanager.cpp:702
-#: core/libs/tags/widgets/tagfolderview.cpp:69
+#: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Đặt lại biểu tượng thẻ"
@@ -38189,7 +38189,7 @@ msgid "Tag Properties"
 msgstr "Thuộc tính"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:97
-#: core/libs/tags/widgets/tageditdlg.cpp:139
+#: core/libs/tags/widgets/tageditdlg.cpp:129
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: tag properties"
@@ -38441,55 +38441,55 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr ""
 
-#: core/libs/tags/widgets/tagcheckview.cpp:82
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, fuzzy, kde-format
 msgid "Toggle Auto"
 msgstr "Bật/tắt tự động"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:83
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, fuzzy, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "Không có"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:85
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, fuzzy, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "Trẻ"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:86
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, fuzzy, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "Cha"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:87
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, fuzzy, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "Cả hai"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:113
+#: core/libs/tags/widgets/tageditdlg.cpp:103
 #, fuzzy, kde-format
 #| msgid "New Tag"
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Thẻ mới"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:117
+#: core/libs/tags/widgets/tageditdlg.cpp:107
 #, fuzzy, kde-format
 #| msgid "Edit Tag"
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Sửa thẻ"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:141
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, fuzzy, kde-format
 msgid "Enter tag name here..."
 msgstr "Hãy nhập vào tên tập ảnh mới:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:148
+#: core/libs/tags/widgets/tageditdlg.cpp:138
 #, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -38500,104 +38500,104 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:182
+#: core/libs/tags/widgets/tageditdlg.cpp:172
 #, kde-format
 msgid "&Icon:"
 msgstr "B&iểu tượng"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:206
+#: core/libs/tags/widgets/tageditdlg.cpp:196
 #, kde-format
 msgid "&Shortcut:"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:226
+#: core/libs/tags/widgets/tageditdlg.cpp:216
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
 "</p>"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:347
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, fuzzy, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<qt><b>Tạo thẻ mới trong « <i>%1</i> »</b></qt>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:351
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, fuzzy, kde-format
 msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgstr "<qt><b>Tạo thẻ mới trong « <i>%1</i> »</b></qt>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:357
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, fuzzy, kde-format
 msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<qt><b>Tạo thẻ mới trong « <i>%1</i> »</b></qt>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:519
 #, fuzzy, kde-format
 #| msgid "Profile Error"
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Lỗi hồ sơ"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:544
+#: core/libs/tags/widgets/tageditdlg.cpp:534
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, fuzzy, kde-format
 msgid "Tag Path"
 msgstr "Theo đường dẫn"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:144
+#: core/libs/tags/widgets/tagfolderview.cpp:138
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgid "Expand all Tags"
 msgstr "Mọi thẻ"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:149
+#: core/libs/tags/widgets/tagfolderview.cpp:143
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse all Tags"
 msgstr "Tập ảnh tôi"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:237
+#: core/libs/tags/widgets/tagfolderview.cpp:231
 #, fuzzy, kde-format
 msgid "Expand Selected Recursively"
 msgstr "Chọn Không gì"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:553
+#: core/libs/tags/widgets/tagspopupmenu.cpp:544
 #, kde-format
 msgid "No Recently Assigned Tags"
 msgstr "Không có thẻ vừa được gán"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:557
+#: core/libs/tags/widgets/tagspopupmenu.cpp:548
 #, fuzzy, kde-format
 msgid "Recently Assigned Tags"
 msgstr "Không có thẻ vừa được gán"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:614
-#: core/libs/tags/widgets/tagspopupmenu.cpp:754
+#: core/libs/tags/widgets/tagspopupmenu.cpp:605
+#: core/libs/tags/widgets/tagspopupmenu.cpp:745
 #, kde-format
 msgid "Add New Tag..."
 msgstr "Thêm thẻ mới..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:620
+#: core/libs/tags/widgets/tagspopupmenu.cpp:611
 #, fuzzy, kde-format
 msgid "More Tags..."
 msgstr "Thẻ mới..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:720
+#: core/libs/tags/widgets/tagspopupmenu.cpp:711
 #, fuzzy, kde-format
 msgid "Assign this Tag"
 msgstr "Gán thẻ"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:729
+#: core/libs/tags/widgets/tagspopupmenu.cpp:720
 #, fuzzy, kde-format
 msgid "Remove this Tag"
 msgstr "Bỏ thẻ"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:739
+#: core/libs/tags/widgets/tagspopupmenu.cpp:730
 #, fuzzy, kde-format
 msgid "Go to this Tag"
 msgstr "Bỏ thẻ"
@@ -52301,24 +52301,24 @@ msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Giải mã RAW"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:234
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:231
 #, fuzzy, kde-format
 msgid "Could not open: %1"
 msgstr "Độ sâu màu :"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:241
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:238
 #, fuzzy, kde-format
 msgid "File is empty."
 msgstr "Cỡ gạch lát:"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:273
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:270
 #, fuzzy, kde-format
 msgid "Probably not a GPX file."
 msgstr ""
 "Không thể hiển thị ô xem thử cho\n"
 "« %1 »"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:285
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:282
 #, kde-format
 msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
@@ -57295,161 +57295,161 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "Thoát khỏi chế độ xem thử"
 
-#: core/utilities/import/backend/cameracontroller.cpp:413
+#: core/utilities/import/backend/cameracontroller.cpp:411
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "Đang kết nối tới máy ảnh..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:422
+#: core/utilities/import/backend/cameracontroller.cpp:420
 #, fuzzy, kde-format
 msgid "Connection established."
 msgstr "Sự kết nối đã được thiết lập"
 
-#: core/utilities/import/backend/cameracontroller.cpp:426
+#: core/utilities/import/backend/cameracontroller.cpp:424
 #, fuzzy, kde-format
 msgid "Connection failed."
 msgstr "Lỗi kết nối"
 
-#: core/utilities/import/backend/cameracontroller.cpp:451
+#: core/utilities/import/backend/cameracontroller.cpp:449
 #, fuzzy, kde-format
 msgid "Failed to get free space from camera"
 msgstr "Lỗi lấy tệp %1 từ máy ảnh"
 
-#: core/utilities/import/backend/cameracontroller.cpp:465
+#: core/utilities/import/backend/cameracontroller.cpp:463
 #, fuzzy, kde-format
 msgid "Failed to get preview from camera"
 msgstr "Lỗi lấy tệp %1 từ máy ảnh"
 
-#: core/utilities/import/backend/cameracontroller.cpp:479
+#: core/utilities/import/backend/cameracontroller.cpp:477
 #, fuzzy, kde-format
 msgid "Failed to process capture from camera"
 msgstr "Lỗi lấy tệp %1 từ máy ảnh"
 
-#: core/utilities/import/backend/cameracontroller.cpp:493
+#: core/utilities/import/backend/cameracontroller.cpp:491
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file \"%1\"."
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "Lỗi xoá tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:509
+#: core/utilities/import/backend/cameracontroller.cpp:507
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file \"%1\"."
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Lỗi xoá tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:561
+#: core/utilities/import/backend/cameracontroller.cpp:559
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:579
+#: core/utilities/import/backend/cameracontroller.cpp:577
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:628
-#: core/utilities/import/backend/cameracontroller.cpp:995
+#: core/utilities/import/backend/cameracontroller.cpp:626
+#: core/utilities/import/backend/cameracontroller.cpp:993
 #: core/utilities/import/main/importui.cpp:2419
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Lỗi tải xuống tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:726
+#: core/utilities/import/backend/cameracontroller.cpp:724
 #, fuzzy, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Lỗi xoá tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:771
+#: core/utilities/import/backend/cameracontroller.cpp:769
 #, fuzzy, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Lỗi xoá tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:786
 #, fuzzy, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Lỗi xoá tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:807
+#: core/utilities/import/backend/cameracontroller.cpp:805
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:881
+#: core/utilities/import/backend/cameracontroller.cpp:879
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:888
+#: core/utilities/import/backend/cameracontroller.cpp:886
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1003
+#: core/utilities/import/backend/cameracontroller.cpp:1001
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Lỗi tải xuống tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1007
+#: core/utilities/import/backend/cameracontroller.cpp:1005
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1024
+#: core/utilities/import/backend/cameracontroller.cpp:1022
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1032
+#: core/utilities/import/backend/cameracontroller.cpp:1030
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1036
+#: core/utilities/import/backend/cameracontroller.cpp:1034
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr ""
 "Thẻ « %1 » có một thẻ phụ. Xoá thẻ này thì cũng xoá thẻ phụ đó. Bạn có chắc "
 "muốn tiếp tục không?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1051
+#: core/utilities/import/backend/cameracontroller.cpp:1049
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Lỗi tải xuống tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1059
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Lỗi xoá tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1063
+#: core/utilities/import/backend/cameracontroller.cpp:1061
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr ""
 "Ảnh « %1 » đã bị sửa đổi.\n"
 "Bạn có muốn lưu nó không?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1077
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1086
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Lỗi bật/tắt tệp khoá « %1 »."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1090
+#: core/utilities/import/backend/cameracontroller.cpp:1089
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
@@ -57516,7 +57516,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "không"
 
-#: core/utilities/import/backend/umscamera.cpp:570
+#: core/utilities/import/backend/umscamera.cpp:571
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57527,7 +57527,7 @@ msgstr ""
 "Trình điều khiển <b>máy ảnh đã lắp</b> cho các máy ảnh cất giữ hàng loạt USB/"
 "IEEE1394 và máy đọc thẻ Flash.<br><br>"
 
-#: core/utilities/import/backend/umscamera.cpp:577
+#: core/utilities/import/backend/umscamera.cpp:578
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -57539,7 +57539,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/umscamera.cpp:585
+#: core/utilities/import/backend/umscamera.cpp:586
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -57564,31 +57564,31 @@ msgstr ""
 " • xoá thư mục: %9\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "có"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "không"
 
-#: core/utilities/import/backend/umscamera.cpp:602
+#: core/utilities/import/backend/umscamera.cpp:603
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57599,7 +57599,7 @@ msgstr ""
 "digiKam, phần <b>Supported Digital Still Cameras</b> (các máy ảnh tĩnh số đã "
 "hỗ trợ)."
 
-#: core/utilities/import/backend/umscamera.cpp:610
+#: core/utilities/import/backend/umscamera.cpp:611
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59043,49 +59043,49 @@ msgstr "Quản lí màu"
 msgid "Autotags Assignment"
 msgstr "Điều chỉnh:"
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
-#: core/utilities/maintenance/dbcleaner.cpp:230
-#: core/utilities/maintenance/dbcleaner.cpp:259
-#: core/utilities/maintenance/dbcleaner.cpp:290
-#: core/utilities/maintenance/dbcleaner.cpp:329
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:120
+#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
+#: core/utilities/maintenance/dbcleaner.cpp:120
 #, fuzzy, kde-format
 msgid "analysing databases"
 msgstr "Đang đọc cơ sở dữ liệu..."
 
-#: core/utilities/maintenance/dbcleaner.cpp:230
+#: core/utilities/maintenance/dbcleaner.cpp:220
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:259
+#: core/utilities/maintenance/dbcleaner.cpp:249
 #, fuzzy, kde-format
 #| msgid "Rebuild all Thumbnails..."
 msgid "cleaning thumbnails db"
 msgstr "Xây dựng lạ mọi ảnh mẫu..."
 
-#: core/utilities/maintenance/dbcleaner.cpp:290
+#: core/utilities/maintenance/dbcleaner.cpp:280
 #, fuzzy, kde-format
 msgid "cleaning recognition db"
 msgstr "Chưa chọn gì"
 
-#: core/utilities/maintenance/dbcleaner.cpp:329
+#: core/utilities/maintenance/dbcleaner.cpp:319
 #, fuzzy, kde-format
 #| msgid "Rebuild all Thumbnails..."
 msgid "cleaning similarity db"
 msgstr "Xây dựng lạ mọi ảnh mẫu..."
 
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, fuzzy, kde-format
 msgid "shrinking databases"
 msgstr "Đang đọc cơ sở dữ liệu..."
 
-#: core/utilities/maintenance/dbcleaner.cpp:500
+#: core/utilities/maintenance/dbcleaner.cpp:483
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -59095,22 +59095,22 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:513
+#: core/utilities/maintenance/dbcleaner.cpp:496
 #, fuzzy, kde-format
 msgid "Core DB"
 msgstr "Tên ảnh"
 
-#: core/utilities/maintenance/dbcleaner.cpp:514
+#: core/utilities/maintenance/dbcleaner.cpp:497
 #, fuzzy, kde-format
 msgid "Thumbnails DB"
 msgstr "Hiện các ảnh mẫu"
 
-#: core/utilities/maintenance/dbcleaner.cpp:515
+#: core/utilities/maintenance/dbcleaner.cpp:498
 #, fuzzy, kde-format
 msgid "Face Recognition DB"
 msgstr "Chưa chọn gì"
 
-#: core/utilities/maintenance/dbcleaner.cpp:516
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, fuzzy, kde-format
 msgid "Similarity DB"
 msgstr "Độ đều đặn:"

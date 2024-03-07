@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 01:32+0000\n"
+"POT-Creation-Date: 2024-03-07 01:32+0000\n"
 "PO-Revision-Date: 2024-02-27 00:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2997,7 +2997,7 @@ msgstr "Álbum sin etiquetas"
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/tags/widgets/tagfolderview.cpp:106
+#: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
@@ -26857,7 +26857,7 @@ msgstr "Este es el ajuste de la curva de luminosidad de la imagen"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
-#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
@@ -27438,7 +27438,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "El nombre de la etiqueta no puede contener «/»"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:313
-#: core/libs/tags/widgets/tageditdlg.cpp:476
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "El nombre de etiqueta ya existe"
@@ -27678,7 +27678,7 @@ msgstr "Emblemas del álbum"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
-#: core/libs/tags/widgets/tagfolderview.cpp:134
+#: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
 msgstr "Expandir nodos seleccionados"
@@ -27689,8 +27689,8 @@ msgid "Expand all Albums"
 msgstr "Expandir todos los álbumes"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:222
-#: core/libs/tags/widgets/tagfolderview.cpp:139
-#: core/libs/tags/widgets/tagfolderview.cpp:242
+#: core/libs/tags/widgets/tagfolderview.cpp:133
+#: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Contraer seleccionados recursivamente"
@@ -27701,7 +27701,7 @@ msgid "Collapse all Albums"
 msgstr "Contraer todos los álbumes"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:228
-#: core/libs/tags/widgets/tagfolderview.cpp:70
+#: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Buscar duplicados..."
@@ -29063,7 +29063,7 @@ msgid "Scanning collection"
 msgstr "Escaneando la colección"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:87
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
 msgstr "Error"
@@ -39540,24 +39540,24 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Otros"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:382
+#: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 en %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:390
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "Crear «%1» en %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:395
+#: core/libs/tags/engine/taggingactionfactory.cpp:387
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Crear «%1»"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:260
+#: core/libs/tags/engine/tagmodificationhelper.cpp:256
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -39574,7 +39574,7 @@ msgstr[1] ""
 "subetiquetas.\n"
 "¿Seguro que desea continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:283
+#: core/libs/tags/engine/tagmodificationhelper.cpp:279
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39583,19 +39583,19 @@ msgstr[0] ""
 msgstr[1] ""
 "La etiqueta «%2» tiene %1 elementos asignados. ¿Seguro que desea continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:291
+#: core/libs/tags/engine/tagmodificationhelper.cpp:287
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "¿Borrar la etiqueta «%1»?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:413
+#: core/libs/tags/engine/tagmodificationhelper.cpp:290
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Borrar etiqueta"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:387
+#: core/libs/tags/engine/tagmodificationhelper.cpp:383
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39606,19 +39606,19 @@ msgstr ""
 "borrará las subetiquetas.\n"
 "¿Seguro que desea continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:400
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Las etiquetas «%1» están asignadas a uno o más elementos. ¿Seguro que desea "
 "continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:410
+#: core/libs/tags/engine/tagmodificationhelper.cpp:406
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "¿Borrar la(s) etiqueta(s) «%1»?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:574
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39637,7 +39637,7 @@ msgstr[1] ""
 "las elimina, también eliminará las etiquetas anidadas.\n"
 "¿Desea continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:596
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39650,14 +39650,14 @@ msgstr[1] ""
 "Las etiquetas de caras «%2» están asignadas al menos a un elemento. ¿Desea "
 "continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:604
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "¿Eliminar etiqueta de cara?"
 msgstr[1] "¿Eliminar etiquetas de caras?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:615
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -39669,22 +39669,22 @@ msgstr[1] ""
 "¿Eliminar las %1 etiquetas que corresponden a estas etiquetas de caras de "
 "las imágenes?"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:217
+#: core/libs/tags/engine/tagsactionmngr.cpp:211
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Asignar puntuación «%1 estrellas»"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:236
+#: core/libs/tags/engine/tagsactionmngr.cpp:230
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Asignar el emblema de elección «%1»"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Asignar el emblema de color «%1»"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:303
+#: core/libs/tags/engine/tagsactionmngr.cpp:297
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Asignar etiqueta «%1»"
@@ -39730,7 +39730,7 @@ msgstr "Editar título de la etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
 #: core/libs/tags/manager/tagsmanager.cpp:702
-#: core/libs/tags/widgets/tagfolderview.cpp:69
+#: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Restablecer icono de etiquetas"
@@ -39766,7 +39766,7 @@ msgid "Tag Properties"
 msgstr "Propiedades de la etiqueta"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:97
-#: core/libs/tags/widgets/tageditdlg.cpp:139
+#: core/libs/tags/widgets/tageditdlg.cpp:129
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
@@ -40049,53 +40049,53 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr "Ayuda en línea sobre la gestión de etiquetas"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:82
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, kde-format
 msgid "Toggle Auto"
 msgstr "Conmutar auto"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:83
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "Ninguna"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:85
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "Hijas"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:86
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "Padres"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:87
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "Ambos"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:113
+#: core/libs/tags/widgets/tageditdlg.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Nueva etiqueta"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:117
+#: core/libs/tags/widgets/tageditdlg.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Editar etiqueta"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:141
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgid "Enter tag name here..."
 msgstr "Introduzca el nombre de la etiqueta..."
 
-#: core/libs/tags/widgets/tageditdlg.cpp:148
+#: core/libs/tags/widgets/tageditdlg.cpp:138
 #, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -40112,17 +40112,17 @@ msgstr ""
 "Monumento/Notre-Dame»</i></li><li>Si una jerarquía de etiquetas comienza por "
 "«/», se usará el álbum de etiquetas raíz como padre.</li></ul></p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:182
+#: core/libs/tags/widgets/tageditdlg.cpp:172
 #, kde-format
 msgid "&Icon:"
 msgstr "&Icono:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:206
+#: core/libs/tags/widgets/tageditdlg.cpp:196
 #, kde-format
 msgid "&Shortcut:"
 msgstr "A&tajo:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:226
+#: core/libs/tags/widgets/tageditdlg.cpp:216
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
@@ -40131,84 +40131,84 @@ msgstr ""
 "<p><b>Nota</b>: este acceso rápido se podrá usar para atribuir o retirar una "
 "etiqueta de los elementos.</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:347
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Crear nueva etiqueta</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:351
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, kde-format
 msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgstr "<b>Crear nueva etiqueta en<br/>«%1»</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:357
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, kde-format
 msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Propiedades de la etiqueta<br/>«%1»</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Ha ocurrido un error al crear etiqueta"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:544
+#: core/libs/tags/widgets/tageditdlg.cpp:534
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Ha ocurrido un error al crear la etiqueta:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Tag Path"
 msgstr "Ruta de la etiqueta"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:144
+#: core/libs/tags/widgets/tagfolderview.cpp:138
 #, kde-format
 msgid "Expand all Tags"
 msgstr "Expandir todas las etiquetas"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:149
+#: core/libs/tags/widgets/tagfolderview.cpp:143
 #, kde-format
 msgid "Collapse all Tags"
 msgstr "Contraer todas las etiquetas"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:237
+#: core/libs/tags/widgets/tagfolderview.cpp:231
 #, kde-format
 msgid "Expand Selected Recursively"
 msgstr "Expandir seleccionados recursivamente"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:553
+#: core/libs/tags/widgets/tagspopupmenu.cpp:544
 #, kde-format
 msgid "No Recently Assigned Tags"
 msgstr "No hay etiquetas asignadas recientemente"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:557
+#: core/libs/tags/widgets/tagspopupmenu.cpp:548
 #, kde-format
 msgid "Recently Assigned Tags"
 msgstr "Etiquetas asignadas recientemente"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:614
-#: core/libs/tags/widgets/tagspopupmenu.cpp:754
+#: core/libs/tags/widgets/tagspopupmenu.cpp:605
+#: core/libs/tags/widgets/tagspopupmenu.cpp:745
 #, kde-format
 msgid "Add New Tag..."
 msgstr "Añadir nueva etiqueta..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:620
+#: core/libs/tags/widgets/tagspopupmenu.cpp:611
 #, kde-format
 msgid "More Tags..."
 msgstr "Más etiquetas..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:720
+#: core/libs/tags/widgets/tagspopupmenu.cpp:711
 #, kde-format
 msgid "Assign this Tag"
 msgstr "Asignar esta etiqueta"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:729
+#: core/libs/tags/widgets/tagspopupmenu.cpp:720
 #, kde-format
 msgid "Remove this Tag"
 msgstr "Eliminar esta etiqueta"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:739
+#: core/libs/tags/widgets/tagspopupmenu.cpp:730
 #, kde-format
 msgid "Go to this Tag"
 msgstr "Ir a esta etiqueta"
@@ -54035,22 +54035,22 @@ msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "¿Interrumpir geocodificación inversa?"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:234
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:231
 #, kde-format
 msgid "Could not open: %1"
 msgstr "No se ha podido abrir: %1"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:241
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:238
 #, kde-format
 msgid "File is empty."
 msgstr "Archivo vacío."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:273
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:270
 #, kde-format
 msgid "Probably not a GPX file."
 msgstr "Probablemente no sea un archivo GPX."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:285
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:282
 #, kde-format
 msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
@@ -59058,144 +59058,144 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "Modo de vista previa"
 
-#: core/utilities/import/backend/cameracontroller.cpp:413
+#: core/utilities/import/backend/cameracontroller.cpp:411
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "Conectándose a la cámara..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:422
+#: core/utilities/import/backend/cameracontroller.cpp:420
 #, kde-format
 msgid "Connection established."
 msgstr "Conexión establecida."
 
-#: core/utilities/import/backend/cameracontroller.cpp:426
+#: core/utilities/import/backend/cameracontroller.cpp:424
 #, kde-format
 msgid "Connection failed."
 msgstr "Conexión fallida."
 
-#: core/utilities/import/backend/cameracontroller.cpp:451
+#: core/utilities/import/backend/cameracontroller.cpp:449
 #, kde-format
 msgid "Failed to get free space from camera"
 msgstr "No se ha podido obtener el espacio libre de la cámara"
 
-#: core/utilities/import/backend/cameracontroller.cpp:465
+#: core/utilities/import/backend/cameracontroller.cpp:463
 #, kde-format
 msgid "Failed to get preview from camera"
 msgstr "No se ha podido obtener la vista previa de la cámara"
 
-#: core/utilities/import/backend/cameracontroller.cpp:479
+#: core/utilities/import/backend/cameracontroller.cpp:477
 #, kde-format
 msgid "Failed to process capture from camera"
 msgstr "No se ha podido procesar la captura de la cámara"
 
-#: core/utilities/import/backend/cameracontroller.cpp:493
+#: core/utilities/import/backend/cameracontroller.cpp:491
 #, kde-kuit-format
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "No se ha podido listar la carpeta <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:509
+#: core/utilities/import/backend/cameracontroller.cpp:507
 #, kde-kuit-format
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Ha fallado el listado de archivos de <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:561
+#: core/utilities/import/backend/cameracontroller.cpp:559
 #, kde-kuit-format
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "No se ha podido obtener la miniatura para <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:579
+#: core/utilities/import/backend/cameracontroller.cpp:577
 #, kde-kuit-format
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Ha fallado la obtención de metadatos de <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:628
-#: core/utilities/import/backend/cameracontroller.cpp:995
+#: core/utilities/import/backend/cameracontroller.cpp:626
+#: core/utilities/import/backend/cameracontroller.cpp:993
 #: core/utilities/import/main/importui.cpp:2419
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "No se ha podido descargar <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:726
+#: core/utilities/import/backend/cameracontroller.cpp:724
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "No se ha podido convertir el archivo <filename>%1</filename> a JPEG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:771
+#: core/utilities/import/backend/cameracontroller.cpp:769
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "No se ha podido convertir el archivo <filename>%1</filename> a DNG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:786
 #, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Se ha omitido la conversión del archivo <filename>%1</filename> a DNG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:807
+#: core/utilities/import/backend/cameracontroller.cpp:805
 #, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "No se ha podido abrir el guion <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:881
+#: core/utilities/import/backend/cameracontroller.cpp:879
 #, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Se ha agotado el tiempo del guion para <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:888
+#: core/utilities/import/backend/cameracontroller.cpp:886
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "No se ha podido ejecutar el guion <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1003
+#: core/utilities/import/backend/cameracontroller.cpp:1001
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "No se ha podido descargar el archivo <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1007
+#: core/utilities/import/backend/cameracontroller.cpp:1005
 #, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "No se ha podido descargar el archivo <b>%1</b>. ¿Desea continuar?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1024
+#: core/utilities/import/backend/cameracontroller.cpp:1022
 #, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "No se ha podido enviar <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1032
+#: core/utilities/import/backend/cameracontroller.cpp:1030
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "No se ha podido enviar el archivo <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1036
+#: core/utilities/import/backend/cameracontroller.cpp:1034
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "No se ha podido enviar el archivo <b>%1</b>. ¿Desea continuar?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1051
+#: core/utilities/import/backend/cameracontroller.cpp:1049
 #, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "No se ha podido borrar <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1059
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "No se ha podido borrar el archivo <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1063
+#: core/utilities/import/backend/cameracontroller.cpp:1061
 #, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "No se ha podido borrar el archivo <b>%1</b>. ¿Desea continuar?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1077
 #, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "No se ha podido bloquear <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1086
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "No se ha podido cambiar el estado de bloqueo del archivo <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1090
+#: core/utilities/import/backend/cameracontroller.cpp:1089
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
@@ -59260,7 +59260,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "no"
 
-#: core/utilities/import/backend/umscamera.cpp:570
+#: core/utilities/import/backend/umscamera.cpp:571
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59272,7 +59272,7 @@ msgstr ""
 "IEEE1394 y lectores de tarjetas Flash.\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:577
+#: core/utilities/import/backend/umscamera.cpp:578
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -59290,7 +59290,7 @@ msgstr ""
 "UUID: «%5»\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:585
+#: core/utilities/import/backend/umscamera.cpp:586
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -59310,29 +59310,29 @@ msgstr ""
 "Borrar directorios: «%6»\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "sí"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "no"
 
-#: core/utilities/import/backend/umscamera.cpp:602
+#: core/utilities/import/backend/umscamera.cpp:603
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59343,7 +59343,7 @@ msgstr ""
 "montada», consulte la sección «cámaras fotográficas digitales permitidas» "
 "del manual de digiKam."
 
-#: core/utilities/import/backend/umscamera.cpp:610
+#: core/utilities/import/backend/umscamera.cpp:611
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60843,47 +60843,47 @@ msgstr "Panel &derecho"
 msgid "Autotags Assignment"
 msgstr "Asignación automática de etiquetas"
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
-#: core/utilities/maintenance/dbcleaner.cpp:230
-#: core/utilities/maintenance/dbcleaner.cpp:259
-#: core/utilities/maintenance/dbcleaner.cpp:290
-#: core/utilities/maintenance/dbcleaner.cpp:329
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:120
+#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Limpiar las bases de datos: "
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
+#: core/utilities/maintenance/dbcleaner.cpp:120
 #, kde-format
 msgid "analysing databases"
 msgstr "analizando bases de datos"
 
-#: core/utilities/maintenance/dbcleaner.cpp:230
+#: core/utilities/maintenance/dbcleaner.cpp:220
 #, kde-format
 msgid "cleaning core db"
 msgstr "borrando base de datos principal"
 
-#: core/utilities/maintenance/dbcleaner.cpp:259
+#: core/utilities/maintenance/dbcleaner.cpp:249
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "borrando base de datos de miniaturas"
 
-#: core/utilities/maintenance/dbcleaner.cpp:290
+#: core/utilities/maintenance/dbcleaner.cpp:280
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "borrando base de datos de reconocimiento"
 
-#: core/utilities/maintenance/dbcleaner.cpp:329
+#: core/utilities/maintenance/dbcleaner.cpp:319
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "borrando base de datos de similitud"
 
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, kde-format
 msgid "shrinking databases"
 msgstr "reduciendo bases de datos"
 
-#: core/utilities/maintenance/dbcleaner.cpp:500
+#: core/utilities/maintenance/dbcleaner.cpp:483
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -60898,22 +60898,22 @@ msgstr ""
 "que se dañen las bases de datos. Este cuadro informativo desaparecerá cuando "
 "haya terminado el proceso de reducción.</p>Estado actual:"
 
-#: core/utilities/maintenance/dbcleaner.cpp:513
+#: core/utilities/maintenance/dbcleaner.cpp:496
 #, kde-format
 msgid "Core DB"
 msgstr "Base de datos principal"
 
-#: core/utilities/maintenance/dbcleaner.cpp:514
+#: core/utilities/maintenance/dbcleaner.cpp:497
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "Base de datos de miniaturas"
 
-#: core/utilities/maintenance/dbcleaner.cpp:515
+#: core/utilities/maintenance/dbcleaner.cpp:498
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "Base de datos de reconocimiento de caras"
 
-#: core/utilities/maintenance/dbcleaner.cpp:516
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, kde-format
 msgid "Similarity DB"
 msgstr "Base de datos de similitud"

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 01:32+0000\n"
+"POT-Creation-Date: 2024-03-07 01:32+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -3090,7 +3090,7 @@ msgstr "อัลบั้มของฉัน"
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/tags/widgets/tagfolderview.cpp:106
+#: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
@@ -26749,7 +26749,7 @@ msgstr "นี่เป็นเส้นโค้งที่ใช้ในก
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
-#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
@@ -27328,7 +27328,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "ชื่อของป้ายกำกับไม่สามารถมีอักษร '/' ได้"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:313
-#: core/libs/tags/widgets/tageditdlg.cpp:476
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "มีป้ายกำกับที่มีชื่อนี้อยู่แล้ว"
@@ -27575,7 +27575,7 @@ msgstr "อัลบั้มใหม่"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
-#: core/libs/tags/widgets/tagfolderview.cpp:134
+#: core/libs/tags/widgets/tagfolderview.cpp:128
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
 msgstr "ไม่เลือกเลย"
@@ -27587,8 +27587,8 @@ msgid "Expand all Albums"
 msgstr "อัลบั้มของฉัน"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:222
-#: core/libs/tags/widgets/tagfolderview.cpp:139
-#: core/libs/tags/widgets/tagfolderview.cpp:242
+#: core/libs/tags/widgets/tagfolderview.cpp:133
+#: core/libs/tags/widgets/tagfolderview.cpp:236
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "ยังไม่มีการเลือกอัลบั้มใด ๆ"
@@ -27600,7 +27600,7 @@ msgid "Collapse all Albums"
 msgstr "อัลบั้มของฉัน"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:228
-#: core/libs/tags/widgets/tagfolderview.cpp:70
+#: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "ค้นหาภาพซ้ำ..."
@@ -28969,7 +28969,7 @@ msgid "Scanning collection"
 msgstr "การเพิ่มคลังภาพ"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:87
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
 msgstr "ผิดพลาด"
@@ -39327,24 +39327,24 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "เบ็ดเตล็ด"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:382
+#: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, fuzzy, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 - %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:390
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, fuzzy, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "%1 - %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:395
+#: core/libs/tags/engine/taggingactionfactory.cpp:387
 #, fuzzy, kde-format
 msgid "Create \"%1\""
 msgstr "สร้างเมื่อ : %1\n"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:260
+#: core/libs/tags/engine/tagmodificationhelper.cpp:256
 #, fuzzy, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -39357,7 +39357,7 @@ msgstr[0] ""
 "การลบมันจะเป็นการลบป้ายกำกับย่อยออกไปด้วย \n"
 "คุณแน่ใจว่าต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:283
+#: core/libs/tags/engine/tagmodificationhelper.cpp:279
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39365,20 +39365,20 @@ msgstr[0] ""
 "จะทำการกำหนดป้ายกำกับ '%2' ให้กับภาพ %1 ภาพ \n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:291
+#: core/libs/tags/engine/tagmodificationhelper.cpp:287
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "ต้องการจะลบป้ายกำกับ '%1' จริงหรือไม่ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:413
+#: core/libs/tags/engine/tagmodificationhelper.cpp:290
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "ลบป้ายกำกับ"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:387
+#: core/libs/tags/engine/tagmodificationhelper.cpp:383
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39389,19 +39389,19 @@ msgstr ""
 "การลบมันจะเป็นการลบป้ายกำกับย่อยออกไปด้วย \n"
 "คุณแน่ใจว่าต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:400
 #, fuzzy, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "จะทำการกำหนดป้ายกำกับ '%2' ให้กับภาพ %1 ภาพ \n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:410
+#: core/libs/tags/engine/tagmodificationhelper.cpp:406
 #, fuzzy, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "ต้องการจะลบป้ายกำกับ '%1' จริงหรือไม่ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:574
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39416,7 +39416,7 @@ msgstr[0] ""
 "การลบมันจะเป็นการลบป้ายกำกับย่อยออกไปด้วย \n"
 "คุณแน่ใจว่าต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:596
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39428,14 +39428,14 @@ msgstr[0] ""
 "จะทำการกำหนดป้ายกำกับ '%2' ให้กับภาพ %1 ภาพ \n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:604
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "เอาป้ายกำกับออก"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:615
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Remove the tag corresponding to this face tag from the images?"
@@ -39443,22 +39443,22 @@ msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] "ลบค่าที่เลือกไว้ออกจากรายการ"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:217
+#: core/libs/tags/engine/tagsactionmngr.cpp:211
 #, fuzzy, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "กำหนดความชื่นชอบ \"ไม่ติดดาว\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:236
+#: core/libs/tags/engine/tagsactionmngr.cpp:230
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, fuzzy, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "โพรไฟล์สีที่กำหนดมา:"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:303
+#: core/libs/tags/engine/tagsactionmngr.cpp:297
 #, fuzzy, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "กำหนดป้ายกำกับ"
@@ -39505,7 +39505,7 @@ msgstr "แฟ้มภาพ"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
 #: core/libs/tags/manager/tagsmanager.cpp:702
-#: core/libs/tags/widgets/tagfolderview.cpp:69
+#: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "ปรับไอคอนป้ายกำกับกลับเป็นค่าเดิม"
@@ -39542,7 +39542,7 @@ msgid "Tag Properties"
 msgstr "คุณสมบัติ"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:97
-#: core/libs/tags/widgets/tageditdlg.cpp:139
+#: core/libs/tags/widgets/tageditdlg.cpp:129
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: tag properties"
@@ -39792,55 +39792,55 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr ""
 
-#: core/libs/tags/widgets/tagcheckview.cpp:82
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, kde-format
 msgid "Toggle Auto"
 msgstr "กาเลือก/ไม่กาเลือก อัตโนมัติ"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:83
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "ไม่มี"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:85
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "เด็ก ๆ"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:86
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "พ่อแม่"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:87
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "ทั้งคู่"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:113
+#: core/libs/tags/widgets/tageditdlg.cpp:103
 #, fuzzy, kde-format
 #| msgid "New Tag"
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "สร้างป้ายกำกับใหม่"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:117
+#: core/libs/tags/widgets/tageditdlg.cpp:107
 #, fuzzy, kde-format
 #| msgid "Edit Tag"
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "แก้ไขป้ายกำกับ"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:141
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgid "Enter tag name here..."
 msgstr "ป้อนชื่อของป้ายกำกับที่นี่..."
 
-#: core/libs/tags/widgets/tageditdlg.cpp:148
+#: core/libs/tags/widgets/tageditdlg.cpp:138
 #, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -39857,103 +39857,103 @@ msgstr ""
 "li><li>หากลำดับการสืบทอดเริ่มด้วย '/' จะทำให้มีการใช้ป้ายกำกับของอัลบั้มรากมาเป็นตัวแม่</"
 "li></ul></p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:182
+#: core/libs/tags/widgets/tageditdlg.cpp:172
 #, kde-format
 msgid "&Icon:"
 msgstr "ไ&อคอน:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:206
+#: core/libs/tags/widgets/tageditdlg.cpp:196
 #, kde-format
 msgid "&Shortcut:"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:226
+#: core/libs/tags/widgets/tageditdlg.cpp:216
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
 "</p>"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:347
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>สร้างป้ายกำกับใหม่</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:351
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, fuzzy, kde-format
 msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgstr "<b>สร้างป้ายกำกับใหม่ใน<br/><i>\"%1\"</i></b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:357
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, fuzzy, kde-format
 msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>คุณสมบัติของป้ายกำกับ<br/><i>\"%1\"</i></b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:519
 #, fuzzy, kde-format
 #| msgid "Tag creation Error"
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "ผิดพลาดในการสร้างป้ายกำกับ"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:544
+#: core/libs/tags/widgets/tageditdlg.cpp:534
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "เกิดข้อผิดพลาดระหว่างทำการสร้างป้ายกำกับ:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Tag Path"
 msgstr "เส้นทางไปยังป้ายกำกับ"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:144
+#: core/libs/tags/widgets/tagfolderview.cpp:138
 #, fuzzy, kde-format
 msgid "Expand all Tags"
 msgstr "รวมส่วนย่อยภายใต้ผังต้นไม้ของป้ายด้วย"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:149
+#: core/libs/tags/widgets/tagfolderview.cpp:143
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse all Tags"
 msgstr "อัลบั้มของฉัน"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:237
+#: core/libs/tags/widgets/tagfolderview.cpp:231
 #, fuzzy, kde-format
 msgid "Expand Selected Recursively"
 msgstr "ไม่เลือกเลย"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:553
+#: core/libs/tags/widgets/tagspopupmenu.cpp:544
 #, kde-format
 msgid "No Recently Assigned Tags"
 msgstr "ยังไม่เคยมีการกำหนดป้ายกำกับมาก่อน"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:557
+#: core/libs/tags/widgets/tagspopupmenu.cpp:548
 #, fuzzy, kde-format
 msgid "Recently Assigned Tags"
 msgstr "ยังไม่เคยมีการกำหนดป้ายกำกับมาก่อน"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:614
-#: core/libs/tags/widgets/tagspopupmenu.cpp:754
+#: core/libs/tags/widgets/tagspopupmenu.cpp:605
+#: core/libs/tags/widgets/tagspopupmenu.cpp:745
 #, kde-format
 msgid "Add New Tag..."
 msgstr "เพิ่มป้ายกำกับใหม่..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:620
+#: core/libs/tags/widgets/tagspopupmenu.cpp:611
 #, fuzzy, kde-format
 msgid "More Tags..."
 msgstr "สร้างป้ายกำกับใหม่..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:720
+#: core/libs/tags/widgets/tagspopupmenu.cpp:711
 #, kde-format
 msgid "Assign this Tag"
 msgstr "กำหนดให้ใช้ป้ายกำกับนี้"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:729
+#: core/libs/tags/widgets/tagspopupmenu.cpp:720
 #, kde-format
 msgid "Remove this Tag"
 msgstr "เอาป้ายกำกับนี้ออก"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:739
+#: core/libs/tags/widgets/tagspopupmenu.cpp:730
 #, kde-format
 msgid "Go to this Tag"
 msgstr "ไปยังป้ายกำกับนี้"
@@ -54746,23 +54746,23 @@ msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:234
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:231
 #, fuzzy, kde-format
 msgid "Could not open: %1"
 msgstr "ไม่สามารถสร้าง '%1 ได้"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:241
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:238
 #, fuzzy, kde-format
 msgid "File is empty."
 msgstr "ขนาดแฟ้ม"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:273
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:270
 #, fuzzy, kde-format
 #| msgid "Cannot save \"%1\" file"
 msgid "Probably not a GPX file."
 msgstr "ไม่สามารถบันทึกแฟ้ม \"%1\" ได้"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:285
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:282
 #, kde-format
 msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
@@ -59981,159 +59981,159 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "ออกจากการแสดงตัวอย่าง"
 
-#: core/utilities/import/backend/cameracontroller.cpp:413
+#: core/utilities/import/backend/cameracontroller.cpp:411
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "กำลังเชื่อมต่อกับกล้อง..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:422
+#: core/utilities/import/backend/cameracontroller.cpp:420
 #, kde-format
 msgid "Connection established."
 msgstr "ทำการเชื่อมต่อได้แล้ว"
 
-#: core/utilities/import/backend/cameracontroller.cpp:426
+#: core/utilities/import/backend/cameracontroller.cpp:424
 #, kde-format
 msgid "Connection failed."
 msgstr "การเชื่อมต่อล้มเหลว"
 
-#: core/utilities/import/backend/cameracontroller.cpp:451
+#: core/utilities/import/backend/cameracontroller.cpp:449
 #, fuzzy, kde-format
 msgid "Failed to get free space from camera"
 msgstr "ล้มเหลวในการรับแฟ้ม %1 จากกล้อง"
 
-#: core/utilities/import/backend/cameracontroller.cpp:465
+#: core/utilities/import/backend/cameracontroller.cpp:463
 #, fuzzy, kde-format
 msgid "Failed to get preview from camera"
 msgstr "ล้มเหลวในการรับแฟ้ม %1 จากกล้อง"
 
-#: core/utilities/import/backend/cameracontroller.cpp:479
+#: core/utilities/import/backend/cameracontroller.cpp:477
 #, fuzzy, kde-format
 msgid "Failed to process capture from camera"
 msgstr "ล้มเหลวในการรับแฟ้ม %1 จากกล้อง"
 
-#: core/utilities/import/backend/cameracontroller.cpp:493
+#: core/utilities/import/backend/cameracontroller.cpp:491
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file \"%1\"."
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "ล้มเหลวในการลบแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:509
+#: core/utilities/import/backend/cameracontroller.cpp:507
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file \"%1\"."
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "ล้มเหลวในการลบแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:561
+#: core/utilities/import/backend/cameracontroller.cpp:559
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:579
+#: core/utilities/import/backend/cameracontroller.cpp:577
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:628
-#: core/utilities/import/backend/cameracontroller.cpp:995
+#: core/utilities/import/backend/cameracontroller.cpp:626
+#: core/utilities/import/backend/cameracontroller.cpp:993
 #: core/utilities/import/main/importui.cpp:2419
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
 msgstr "ล้มเหลวในการดาวน์โหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:726
+#: core/utilities/import/backend/cameracontroller.cpp:724
 #, fuzzy, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "ล้มเหลวในการลบแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:771
+#: core/utilities/import/backend/cameracontroller.cpp:769
 #, fuzzy, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "ล้มเหลวในการลบแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:786
 #, fuzzy, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "ล้มเหลวในการลบแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:807
+#: core/utilities/import/backend/cameracontroller.cpp:805
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:881
+#: core/utilities/import/backend/cameracontroller.cpp:879
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:888
+#: core/utilities/import/backend/cameracontroller.cpp:886
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:1003
+#: core/utilities/import/backend/cameracontroller.cpp:1001
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "ล้มเหลวในการดาวน์โหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:1007
+#: core/utilities/import/backend/cameracontroller.cpp:1005
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr ""
 "จะทำการกำหนดป้ายกำกับ '%2' ให้กับภาพ %1 ภาพ \n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1024
+#: core/utilities/import/backend/cameracontroller.cpp:1022
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:1032
+#: core/utilities/import/backend/cameracontroller.cpp:1030
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:1036
+#: core/utilities/import/backend/cameracontroller.cpp:1034
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr ""
 "จะทำการกำหนดป้ายกำกับ '%2' ให้กับภาพ %1 ภาพ \n"
 "คุณต้องการจะทำต่อไปหรือไม่ ?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1051
+#: core/utilities/import/backend/cameracontroller.cpp:1049
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "ล้มเหลวในการดาวน์โหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:1059
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "ล้มเหลวในการลบ %1..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1063
+#: core/utilities/import/backend/cameracontroller.cpp:1061
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "คลังภาพนี้ไม่มีให้เลือกใช้งานแล้วในปัจจุบัน"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1077
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:1086
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "ล้มเหลวในการสลับการล็อคแฟ้ม \"%1\""
 
-#: core/utilities/import/backend/cameracontroller.cpp:1090
+#: core/utilities/import/backend/cameracontroller.cpp:1089
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
@@ -60191,7 +60191,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "ไม่ใช่"
 
-#: core/utilities/import/backend/umscamera.cpp:570
+#: core/utilities/import/backend/umscamera.cpp:571
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Mounted Camera</b> driver for USB/IEEE1394 mass storage cameras and "
@@ -60205,7 +60205,7 @@ msgstr ""
 "<b>กล้องที่ถูกเมานท์</b> ไดรเวอร์สำหรับกล้องต่าง ๆ แบบสื่อจัดเก็บข้อมูล USB/IEEE1394 "
 "และตัวอ่านแฟลชดิสก์<br/><br/>"
 
-#: core/utilities/import/backend/umscamera.cpp:577
+#: core/utilities/import/backend/umscamera.cpp:578
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -60217,7 +60217,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/umscamera.cpp:585
+#: core/utilities/import/backend/umscamera.cpp:586
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -60233,31 +60233,31 @@ msgstr ""
 "<b>%3</b><br/>รองรับการอัปโหลดรายการ: <b>%4</b><br/>รองรับการสร้างไดเรกทอรี: <b>"
 "%5</b><br/>รองรับการลบไดเรกทอรี: <b>%6</b><br/><br/>"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "ใช่"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "ไม่ใช่"
 
-#: core/utilities/import/backend/umscamera.cpp:602
+#: core/utilities/import/backend/umscamera.cpp:603
 #, fuzzy, kde-format
 #| msgid ""
 #| "For more information about the <b>Mounted Camera</b> driver, please read "
@@ -60270,7 +60270,7 @@ msgstr ""
 "สำหรับข้อมูลเกี่ยวกับไดรเวอร์ของ<b>กล้องที่ถูกเมาทน์</b> สามารถอ่านได้จากคู่มือของ digiKam "
 "ในส่วน <b>การรองรับกล้องถ่ายภาพนิ่งดิจิทัล</b>"
 
-#: core/utilities/import/backend/umscamera.cpp:610
+#: core/utilities/import/backend/umscamera.cpp:611
 #, fuzzy, kde-format
 #| msgid ""
 #| "The <b>Mounted Camera</b> driver is a simple interface to a camera disk "
@@ -61767,49 +61767,49 @@ msgstr "พาเนลด้านข&วา"
 msgid "Autotags Assignment"
 msgstr "ปรับแก้อัตโนมัติ"
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
-#: core/utilities/maintenance/dbcleaner.cpp:230
-#: core/utilities/maintenance/dbcleaner.cpp:259
-#: core/utilities/maintenance/dbcleaner.cpp:290
-#: core/utilities/maintenance/dbcleaner.cpp:329
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:120
+#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
+#: core/utilities/maintenance/dbcleaner.cpp:120
 #, fuzzy, kde-format
 msgid "analysing databases"
 msgstr "กำลังเตรียมฐานข้อมูล"
 
-#: core/utilities/maintenance/dbcleaner.cpp:230
+#: core/utilities/maintenance/dbcleaner.cpp:220
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:259
+#: core/utilities/maintenance/dbcleaner.cpp:249
 #, fuzzy, kde-format
 #| msgid "Build Missing Thumbnails"
 msgid "cleaning thumbnails db"
 msgstr "ทำการสร้างภาพตัวอย่างของภาพที่ยังไม่มี"
 
-#: core/utilities/maintenance/dbcleaner.cpp:290
+#: core/utilities/maintenance/dbcleaner.cpp:280
 #, fuzzy, kde-format
 msgid "cleaning recognition db"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/maintenance/dbcleaner.cpp:329
+#: core/utilities/maintenance/dbcleaner.cpp:319
 #, fuzzy, kde-format
 #| msgid "Build Missing Thumbnails"
 msgid "cleaning similarity db"
 msgstr "ทำการสร้างภาพตัวอย่างของภาพที่ยังไม่มี"
 
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, fuzzy, kde-format
 msgid "shrinking databases"
 msgstr "กำลังเตรียมฐานข้อมูล"
 
-#: core/utilities/maintenance/dbcleaner.cpp:500
+#: core/utilities/maintenance/dbcleaner.cpp:483
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -61819,22 +61819,22 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:513
+#: core/utilities/maintenance/dbcleaner.cpp:496
 #, fuzzy, kde-format
 msgid "Core DB"
 msgstr "ชื่อของภาพ"
 
-#: core/utilities/maintenance/dbcleaner.cpp:514
+#: core/utilities/maintenance/dbcleaner.cpp:497
 #, fuzzy, kde-format
 msgid "Thumbnails DB"
 msgstr "ภาพตัวอย่าง"
 
-#: core/utilities/maintenance/dbcleaner.cpp:515
+#: core/utilities/maintenance/dbcleaner.cpp:498
 #, fuzzy, kde-format
 msgid "Face Recognition DB"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/maintenance/dbcleaner.cpp:516
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Similarity DB"

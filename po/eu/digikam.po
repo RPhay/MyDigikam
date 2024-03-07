@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 01:32+0000\n"
+"POT-Creation-Date: 2024-03-07 01:32+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2979,7 +2979,7 @@ msgstr "Etiketarik gabeko albuma"
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/tags/widgets/tagfolderview.cpp:106
+#: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
@@ -27143,7 +27143,7 @@ msgstr "Hau da irudi argitasunaren doiketa kurba"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
-#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
@@ -27748,7 +27748,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "Etiketaren izenak ezin du \"/\" karakterea eduki"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:313
-#: core/libs/tags/widgets/tageditdlg.cpp:476
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Jadanik badago etiketa lehendik ere"
@@ -28013,7 +28013,7 @@ msgstr "Etiketen albuma"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
-#: core/libs/tags/widgets/tagfolderview.cpp:134
+#: core/libs/tags/widgets/tagfolderview.cpp:128
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
 msgstr "Bat ere ez hautatu"
@@ -28025,8 +28025,8 @@ msgid "Expand all Albums"
 msgstr "Album guztiak analizatzen"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:222
-#: core/libs/tags/widgets/tagfolderview.cpp:139
-#: core/libs/tags/widgets/tagfolderview.cpp:242
+#: core/libs/tags/widgets/tagfolderview.cpp:133
+#: core/libs/tags/widgets/tagfolderview.cpp:236
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Ez da albumik hautatu"
@@ -28038,7 +28038,7 @@ msgid "Collapse all Albums"
 msgstr "Album guztiak analizatzen"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:228
-#: core/libs/tags/widgets/tagfolderview.cpp:70
+#: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Bilatu bikoizketak..."
@@ -29467,7 +29467,7 @@ msgid "Scanning collection"
 msgstr "Bilduma aztertzen"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:87
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
 msgstr "Errorea"
@@ -40271,24 +40271,24 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Hainbat"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:382
+#: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, fuzzy, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 - %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:390
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, fuzzy, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "%1 - %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:395
+#: core/libs/tags/engine/taggingactionfactory.cpp:387
 #, fuzzy, kde-format
 msgid "Create \"%1\""
 msgstr "Sortu"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:260
+#: core/libs/tags/engine/tagmodificationhelper.cpp:256
 #, fuzzy, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -40303,27 +40303,27 @@ msgstr[1] ""
 "\"%1\" etiketak %2 azpi-etiketa ditu. Hau ezabatzean azpi-etiketak ere "
 "ezabatuko dituzu. Jarraitu nahi duzu?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:283
+#: core/libs/tags/engine/tagmodificationhelper.cpp:279
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
 msgstr[0] "\"%2\" etiketa elementu batera esleituta dago. Jarraitu nahi duzu?"
 msgstr[1] "\"%2\" etiketa %1 elementura esleituta dago. Jarraitu nahi duzu?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:291
+#: core/libs/tags/engine/tagmodificationhelper.cpp:287
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Ezabatu \"%1\" etiketa?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:413
+#: core/libs/tags/engine/tagmodificationhelper.cpp:290
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Ezabatu etiketa"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:387
+#: core/libs/tags/engine/tagmodificationhelper.cpp:383
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -40333,17 +40333,17 @@ msgstr ""
 "\"%2\" etiketak azpi-etiketa bat du. Hau ezabatzean azpi-etiketa ere "
 "ezabatuko duzu. Jarraitu nahi duzu?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:400
 #, fuzzy, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "\"%2\" etiketa elementu batera esleituta dago. Jarraitu nahi duzu?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:410
+#: core/libs/tags/engine/tagmodificationhelper.cpp:406
 #, fuzzy, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Ezabatu \"%1\" etiketa?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:574
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -40360,7 +40360,7 @@ msgstr[1] ""
 "\"%1\" etiketak %2 azpi-etiketa ditu. Hau ezabatzean azpi-etiketak ere "
 "ezabatuko dituzu. Jarraitu nahi duzu?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:596
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -40371,7 +40371,7 @@ msgid_plural ""
 msgstr[0] "\"%2\" etiketa elementu batera esleituta dago. Jarraitu nahi duzu?"
 msgstr[1] "\"%2\" etiketa %1 elementutara esleituta dago. Jarraitu nahi duzu?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:604
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, fuzzy, kde-format
 #| msgid "Remove Tag"
 msgid "Remove face tag?"
@@ -40379,7 +40379,7 @@ msgid_plural "Remove face tags?"
 msgstr[0] "Kendu etiketa"
 msgstr[1] "Kendu etiketa"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:615
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Remove the tag corresponding to this face tag from the images?"
@@ -40388,22 +40388,22 @@ msgid_plural ""
 msgstr[0] "Supprimer la valeur actuellement sélectionnée de la liste"
 msgstr[1] "Supprimer la valeur actuellement sélectionnée de la liste"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:217
+#: core/libs/tags/engine/tagsactionmngr.cpp:211
 #, fuzzy, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Esleitu puntuazioa \"Izarrik gabera\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:236
+#: core/libs/tags/engine/tagsactionmngr.cpp:230
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, fuzzy, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Esleitutako kolore-profila:"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:303
+#: core/libs/tags/engine/tagsactionmngr.cpp:297
 #, fuzzy, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Esleitu etiketa"
@@ -40450,7 +40450,7 @@ msgstr "Irudi-fitxategiak"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
 #: core/libs/tags/manager/tagsmanager.cpp:702
-#: core/libs/tags/widgets/tagfolderview.cpp:69
+#: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Berrezarri etiketaren ikonoa"
@@ -40487,7 +40487,7 @@ msgid "Tag Properties"
 msgstr "Propietateak"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:97
-#: core/libs/tags/widgets/tageditdlg.cpp:139
+#: core/libs/tags/widgets/tageditdlg.cpp:129
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
@@ -40741,55 +40741,55 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr ""
 
-#: core/libs/tags/widgets/tagcheckview.cpp:82
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, kde-format
 msgid "Toggle Auto"
 msgstr "Txandakatu automatikoa"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:83
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "Bat ere ez"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:85
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "Umeak"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:86
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "Gurasoak"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:87
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "Biak"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:113
+#: core/libs/tags/widgets/tageditdlg.cpp:103
 #, fuzzy, kde-format
 #| msgid "New Tag"
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Etiketa berria"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:117
+#: core/libs/tags/widgets/tageditdlg.cpp:107
 #, fuzzy, kde-format
 #| msgid "Edit Tag"
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Editatu etiketa"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:141
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgid "Enter tag name here..."
 msgstr "Sartu etiketaren izen berria..."
 
-#: core/libs/tags/widgets/tageditdlg.cpp:148
+#: core/libs/tags/widgets/tageditdlg.cpp:138
 #, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -40807,103 +40807,103 @@ msgstr ""
 "karakterearekin hasten bada, erroko etiketaren albuma erabiliko da guraso "
 "gisa.</li></ul></p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:182
+#: core/libs/tags/widgets/tageditdlg.cpp:172
 #, kde-format
 msgid "&Icon:"
 msgstr "&Ikonoa:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:206
+#: core/libs/tags/widgets/tageditdlg.cpp:196
 #, fuzzy, kde-format
 msgid "&Shortcut:"
 msgstr "&Lasterbidea:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:226
+#: core/libs/tags/widgets/tageditdlg.cpp:216
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
 "</p>"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:347
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Sortu etiketa berria</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:351
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, fuzzy, kde-format
 msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgstr "<b>Sortu etiketa berria hemen:<br/><i>%1</i></b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:357
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, fuzzy, kde-format
 msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Etiketaren propietateak<br/><i>%1</i></b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:519
 #, fuzzy, kde-format
 #| msgid "Tag creation Error"
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Errorea etiketa sortzean"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:544
+#: core/libs/tags/widgets/tageditdlg.cpp:534
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Errorea gertatu da etiketa sortzean:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Tag Path"
 msgstr "Etiketaren bide-izena"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:144
+#: core/libs/tags/widgets/tagfolderview.cpp:138
 #, fuzzy, kde-format
 msgid "Expand all Tags"
 msgstr "Sartu etiketen azpi-zuhaitza"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:149
+#: core/libs/tags/widgets/tagfolderview.cpp:143
 #, fuzzy, kde-format
 #| msgid "Parsing all albums"
 msgid "Collapse all Tags"
 msgstr "Album guztiak analizatzen"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:237
+#: core/libs/tags/widgets/tagfolderview.cpp:231
 #, fuzzy, kde-format
 msgid "Expand Selected Recursively"
 msgstr "Bat ere ez hautatu"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:553
+#: core/libs/tags/widgets/tagspopupmenu.cpp:544
 #, kde-format
 msgid "No Recently Assigned Tags"
 msgstr "Oraintsu esleitutako etiketarik ez"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:557
+#: core/libs/tags/widgets/tagspopupmenu.cpp:548
 #, fuzzy, kde-format
 msgid "Recently Assigned Tags"
 msgstr "Oraintsu esleitutako etiketarik ez"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:614
-#: core/libs/tags/widgets/tagspopupmenu.cpp:754
+#: core/libs/tags/widgets/tagspopupmenu.cpp:605
+#: core/libs/tags/widgets/tagspopupmenu.cpp:745
 #, kde-format
 msgid "Add New Tag..."
 msgstr "Gehitu etiketa berria..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:620
+#: core/libs/tags/widgets/tagspopupmenu.cpp:611
 #, fuzzy, kde-format
 msgid "More Tags..."
 msgstr "Kopiatu etiketak..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:720
+#: core/libs/tags/widgets/tagspopupmenu.cpp:711
 #, kde-format
 msgid "Assign this Tag"
 msgstr "Esleitu etiketa hau"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:729
+#: core/libs/tags/widgets/tagspopupmenu.cpp:720
 #, kde-format
 msgid "Remove this Tag"
 msgstr "Kendu etiketa hau"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:739
+#: core/libs/tags/widgets/tagspopupmenu.cpp:730
 #, kde-format
 msgid "Go to this Tag"
 msgstr "Joan etiketa honetara"
@@ -55856,22 +55856,22 @@ msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Prozesatu alderantzizko geo-kodeketa"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:234
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:231
 #, kde-format
 msgid "Could not open: %1"
 msgstr "Ezin izan da ireki: %1"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:241
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:238
 #, kde-format
 msgid "File is empty."
 msgstr "Fitxategia hutsik dago."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:273
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:270
 #, fuzzy, kde-format
 msgid "Probably not a GPX file."
 msgstr "Ez da GPX elementurik aurkitu - Ziurrenik ez da GPX fitxategi bat."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:285
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:282
 #, kde-format
 msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
@@ -61179,154 +61179,154 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "Irten aurrebistaren modutik"
 
-#: core/utilities/import/backend/cameracontroller.cpp:413
+#: core/utilities/import/backend/cameracontroller.cpp:411
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "Kamerarekin konektatzen..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:422
+#: core/utilities/import/backend/cameracontroller.cpp:420
 #, kde-format
 msgid "Connection established."
 msgstr "Konexioa ezarri da."
 
-#: core/utilities/import/backend/cameracontroller.cpp:426
+#: core/utilities/import/backend/cameracontroller.cpp:424
 #, kde-format
 msgid "Connection failed."
 msgstr "Konexioak huts egin du."
 
-#: core/utilities/import/backend/cameracontroller.cpp:451
+#: core/utilities/import/backend/cameracontroller.cpp:449
 #, fuzzy, kde-format
 msgid "Failed to get free space from camera"
 msgstr "Huts egin du kameratik %1 fitxategia eskuratzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:465
+#: core/utilities/import/backend/cameracontroller.cpp:463
 #, fuzzy, kde-format
 msgid "Failed to get preview from camera"
 msgstr "Huts egin du kameratik %1 fitxategia eskuratzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:479
+#: core/utilities/import/backend/cameracontroller.cpp:477
 #, fuzzy, kde-format
 msgid "Failed to process capture from camera"
 msgstr "Huts egin du kameratik %1 fitxategia eskuratzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:493
+#: core/utilities/import/backend/cameracontroller.cpp:491
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file \"%1\"."
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia ezabatzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:509
+#: core/utilities/import/backend/cameracontroller.cpp:507
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file \"%1\"."
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia ezabatzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:561
+#: core/utilities/import/backend/cameracontroller.cpp:559
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:579
+#: core/utilities/import/backend/cameracontroller.cpp:577
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:628
-#: core/utilities/import/backend/cameracontroller.cpp:995
+#: core/utilities/import/backend/cameracontroller.cpp:626
+#: core/utilities/import/backend/cameracontroller.cpp:993
 #: core/utilities/import/main/importui.cpp:2419
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia deskargatzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:726
+#: core/utilities/import/backend/cameracontroller.cpp:724
 #, fuzzy, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Huts egin du \"%1\" fitxategia ezabatzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:771
+#: core/utilities/import/backend/cameracontroller.cpp:769
 #, fuzzy, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Huts egin du \"%1\" fitxategia ezabatzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:786
 #, fuzzy, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Huts egin du \"%1\" fitxategia ezabatzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:807
+#: core/utilities/import/backend/cameracontroller.cpp:805
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:881
+#: core/utilities/import/backend/cameracontroller.cpp:879
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:888
+#: core/utilities/import/backend/cameracontroller.cpp:886
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1003
+#: core/utilities/import/backend/cameracontroller.cpp:1001
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Huts egin du \"%1\" fitxategia deskargatzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1007
+#: core/utilities/import/backend/cameracontroller.cpp:1005
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "\"%2\" etiketa elementu batera esleituta dago. Jarraitu nahi duzu?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1024
+#: core/utilities/import/backend/cameracontroller.cpp:1022
 #, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "<filename>%1</filename> zama-igotzea huts egin du"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1032
+#: core/utilities/import/backend/cameracontroller.cpp:1030
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "<b>%1</b> fitxategia zama-igotzea huts egin du."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1036
+#: core/utilities/import/backend/cameracontroller.cpp:1034
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "<b>%1</b> fitxategia zama-igotzea huts egin du. Jarraitu nahi duzu?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1051
+#: core/utilities/import/backend/cameracontroller.cpp:1049
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia deskargatzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1059
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Huts egin du %1 ezabatzean..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1063
+#: core/utilities/import/backend/cameracontroller.cpp:1061
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "Bilduma hau unean ez dago erabilgarri."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1077
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1086
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Huts egin du \"%1\" fitxategiaren blokeoa txandakatzean."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1090
+#: core/utilities/import/backend/cameracontroller.cpp:1089
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "\"%2\" etiketa elementu batera esleituta dago. Jarraitu nahi duzu?"
@@ -61386,7 +61386,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "ez"
 
-#: core/utilities/import/backend/umscamera.cpp:570
+#: core/utilities/import/backend/umscamera.cpp:571
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Mounted Camera</b> driver for USB/IEEE1394 mass storage cameras and "
@@ -61400,7 +61400,7 @@ msgstr ""
 "<b>Muntatutako kameraren</b> kontrolatzailea USB/IEEE1394 biltegiratze "
 "masiboko kamera eta Flash txartelen irakurleentzako.<br/><br/>"
 
-#: core/utilities/import/backend/umscamera.cpp:577
+#: core/utilities/import/backend/umscamera.cpp:578
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -61412,7 +61412,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/umscamera.cpp:585
+#: core/utilities/import/backend/umscamera.cpp:586
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -61432,29 +61432,29 @@ msgstr ""
 "Direktorioak ezabatzea: «%6»\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "bai"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "ez"
 
-#: core/utilities/import/backend/umscamera.cpp:602
+#: core/utilities/import/backend/umscamera.cpp:603
 #, fuzzy, kde-format
 #| msgid ""
 #| "For more information about the <b>Mounted Camera</b> driver, please read "
@@ -61468,7 +61468,7 @@ msgstr ""
 "irakurri digiKam-eko eskuliburuko <b>Onartutako kamera digital finkoak</b> "
 "atala."
 
-#: core/utilities/import/backend/umscamera.cpp:610
+#: core/utilities/import/backend/umscamera.cpp:611
 #, fuzzy, kde-format
 #| msgid ""
 #| "The <b>Mounted Camera</b> driver is a simple interface to a camera disk "
@@ -62985,49 +62985,49 @@ msgstr "e&skuineko panela"
 msgid "Autotags Assignment"
 msgstr "Doitze automatikoa"
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
-#: core/utilities/maintenance/dbcleaner.cpp:230
-#: core/utilities/maintenance/dbcleaner.cpp:259
-#: core/utilities/maintenance/dbcleaner.cpp:290
-#: core/utilities/maintenance/dbcleaner.cpp:329
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:120
+#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
+#: core/utilities/maintenance/dbcleaner.cpp:120
 #, fuzzy, kde-format
 msgid "analysing databases"
 msgstr "Datu-basea hasieratzea"
 
-#: core/utilities/maintenance/dbcleaner.cpp:230
+#: core/utilities/maintenance/dbcleaner.cpp:220
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:259
+#: core/utilities/maintenance/dbcleaner.cpp:249
 #, fuzzy, kde-format
 #| msgid "Build Missing Thumbnails"
 msgid "cleaning thumbnails db"
 msgstr "Eraiki falta diren koadro txikiak"
 
-#: core/utilities/maintenance/dbcleaner.cpp:290
+#: core/utilities/maintenance/dbcleaner.cpp:280
 #, fuzzy, kde-format
 msgid "cleaning recognition db"
 msgstr "Alderantzizko ordenan"
 
-#: core/utilities/maintenance/dbcleaner.cpp:329
+#: core/utilities/maintenance/dbcleaner.cpp:319
 #, fuzzy, kde-format
 #| msgid "Build Missing Thumbnails"
 msgid "cleaning similarity db"
 msgstr "Eraiki falta diren koadro txikiak"
 
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, fuzzy, kde-format
 msgid "shrinking databases"
 msgstr "Datu-basea hasieratzea"
 
-#: core/utilities/maintenance/dbcleaner.cpp:500
+#: core/utilities/maintenance/dbcleaner.cpp:483
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -63037,23 +63037,23 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:513
+#: core/utilities/maintenance/dbcleaner.cpp:496
 #, fuzzy, kde-format
 #| msgid "Schema Name"
 msgid "Core DB"
 msgstr "Eskemaren izena"
 
-#: core/utilities/maintenance/dbcleaner.cpp:514
+#: core/utilities/maintenance/dbcleaner.cpp:497
 #, fuzzy, kde-format
 msgid "Thumbnails DB"
 msgstr "Koadro txikiak"
 
-#: core/utilities/maintenance/dbcleaner.cpp:515
+#: core/utilities/maintenance/dbcleaner.cpp:498
 #, fuzzy, kde-format
 msgid "Face Recognition DB"
 msgstr "Alderantzizko ordenan"
 
-#: core/utilities/maintenance/dbcleaner.cpp:516
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Similarity DB"

@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 01:32+0000\n"
+"POT-Creation-Date: 2024-03-07 01:32+0000\n"
 "PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -2967,7 +2967,7 @@ msgstr "Album bez štítkov"
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/tags/widgets/tagfolderview.cpp:106
+#: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
@@ -26411,7 +26411,7 @@ msgstr "Toto je nastavenie krivky svietivosti obrázka"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
-#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
@@ -26985,7 +26985,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "Názov štítka nesmie obsahovať „/“"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:313
-#: core/libs/tags/widgets/tageditdlg.cpp:476
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Názov štítka už existuje"
@@ -27232,7 +27232,7 @@ msgstr "Menovky albumu"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
-#: core/libs/tags/widgets/tagfolderview.cpp:134
+#: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
 msgstr "Rozbaliť vybrané uzly"
@@ -27243,8 +27243,8 @@ msgid "Expand all Albums"
 msgstr "Rozbaliť všetky albumy"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:222
-#: core/libs/tags/widgets/tagfolderview.cpp:139
-#: core/libs/tags/widgets/tagfolderview.cpp:242
+#: core/libs/tags/widgets/tagfolderview.cpp:133
+#: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Zbaliť výber rekurzívne"
@@ -27255,7 +27255,7 @@ msgid "Collapse all Albums"
 msgstr "Zbaliť všetky albumy"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:228
-#: core/libs/tags/widgets/tagfolderview.cpp:70
+#: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Hľadať duplicity..."
@@ -28652,7 +28652,7 @@ msgid "Scanning collection"
 msgstr "Prehľadávanie kolekcie"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:87
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
 msgstr "Chyba"
@@ -39332,24 +39332,24 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Rôzne"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:382
+#: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 v %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:390
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "Vytvoriť \"%1\" v %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:395
+#: core/libs/tags/engine/taggingactionfactory.cpp:387
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Vytvoriť \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:260
+#: core/libs/tags/engine/tagmodificationhelper.cpp:256
 #, fuzzy, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -39367,7 +39367,7 @@ msgstr[2] ""
 "Štítok '%2' má %1 podštítkov. Ak ho zmažete, odstránia sa aj tieto "
 "podštítky. Chcete pokračovať?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:283
+#: core/libs/tags/engine/tagmodificationhelper.cpp:279
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39375,20 +39375,20 @@ msgstr[0] "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 msgstr[1] "Štítok '%2' je priradený %1 položkám. Chcete pokračovať?"
 msgstr[2] "Štítok '%2' je priradený %1 položkám. Chcete pokračovať?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:291
+#: core/libs/tags/engine/tagmodificationhelper.cpp:287
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Odstrániť štítok „%1“?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:413
+#: core/libs/tags/engine/tagmodificationhelper.cpp:290
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Odstrániť štítok"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:387
+#: core/libs/tags/engine/tagmodificationhelper.cpp:383
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39398,17 +39398,17 @@ msgstr ""
 "Štítok '%2' má jeden podštítok. Ak ho zmažete, odstráni sa aj tento "
 "podštítok. Chcete pokračovať?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:400
 #, fuzzy, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:410
+#: core/libs/tags/engine/tagmodificationhelper.cpp:406
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Odstrániť štítok(ky) „%1“?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:574
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39428,7 +39428,7 @@ msgstr[2] ""
 "Štítok '%2' má %1 podštítkov. Ak ho zmažete, odstránia sa aj tieto "
 "podštítky. Chcete pokračovať?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:596
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39440,7 +39440,7 @@ msgstr[0] "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 msgstr[1] "Štítok '%2' je priradený %1 položkám. Chcete pokračovať?"
 msgstr[2] "Štítok '%2' je priradený %1 položkám. Chcete pokračovať?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:604
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
@@ -39448,7 +39448,7 @@ msgstr[0] "Odstrániť štítok tváre?"
 msgstr[1] "Odstrániť štítky tváre?"
 msgstr[2] "Odstrániť štítky tvare?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:615
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, fuzzy, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -39457,22 +39457,22 @@ msgstr[0] "Odstráni označenú výnimku pre proxy servery zo zoznamu."
 msgstr[1] "Odstráni označenú výnimku pre proxy servery zo zoznamu."
 msgstr[2] "Odstráni označenú výnimku pre proxy servery zo zoznamu."
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:217
+#: core/libs/tags/engine/tagsactionmngr.cpp:211
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Priradiť hodnotenie \"%1 hviezdička\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:236
+#: core/libs/tags/engine/tagsactionmngr.cpp:230
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Priradiť menovku výberu \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Priradiť farebnú menovku \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:303
+#: core/libs/tags/engine/tagsactionmngr.cpp:297
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Priradiť štítok \"%1\""
@@ -39518,7 +39518,7 @@ msgstr "Upraviť názov štítku"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
 #: core/libs/tags/manager/tagsmanager.cpp:702
-#: core/libs/tags/widgets/tagfolderview.cpp:69
+#: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Vynulovať ikonu štítkov"
@@ -39555,7 +39555,7 @@ msgid "Tag Properties"
 msgstr "Vlastnosti štítku"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:97
-#: core/libs/tags/widgets/tageditdlg.cpp:139
+#: core/libs/tags/widgets/tageditdlg.cpp:129
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
@@ -39833,55 +39833,55 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr ""
 
-#: core/libs/tags/widgets/tagcheckview.cpp:82
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, kde-format
 msgid "Toggle Auto"
 msgstr "Prepnúť automatiku"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:83
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "Žiadne"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:85
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "Deti"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:86
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "Rodičia"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:87
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "Obe"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:113
+#: core/libs/tags/widgets/tageditdlg.cpp:103
 #, fuzzy, kde-format
 #| msgid "New Tag"
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Nový štítok"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:117
+#: core/libs/tags/widgets/tageditdlg.cpp:107
 #, fuzzy, kde-format
 #| msgid "Edit Tag"
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Upraviť štítok"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:141
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgid "Enter tag name here..."
 msgstr "Zadajte meno štítku..."
 
-#: core/libs/tags/widgets/tageditdlg.cpp:148
+#: core/libs/tags/widgets/tageditdlg.cpp:138
 #, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -39898,17 +39898,17 @@ msgstr ""
 "Dame\"</i></li><li>Ak strom štítkov začína na '/', je ako rodič použitý "
 "koreňový album.</li></ul></p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:182
+#: core/libs/tags/widgets/tageditdlg.cpp:172
 #, kde-format
 msgid "&Icon:"
 msgstr "&Ikona:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:206
+#: core/libs/tags/widgets/tageditdlg.cpp:196
 #, kde-format
 msgid "&Shortcut:"
 msgstr "Skrat&ka:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:226
+#: core/libs/tags/widgets/tageditdlg.cpp:216
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
@@ -39917,87 +39917,87 @@ msgstr ""
 "<p><b>Poznámka</b>: túto klávesovú skratku môžete použiť na priradenie/"
 "zrušenie priradenia štítku k položkám.</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:347
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Vytvoriť nový štítok</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:351
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, kde-format
 msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgstr "<b>Vytvoriť novú značku v<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:357
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, kde-format
 msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Vlastnosti štítku<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:519
 #, fuzzy, kde-format
 #| msgid "Tag creation Error"
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Chyba pri vytváraní značky"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:544
+#: core/libs/tags/widgets/tageditdlg.cpp:534
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Pri vytváraní štítku sa vyskytla chyba:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Tag Path"
 msgstr "Umiestnenie štítkov"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:144
+#: core/libs/tags/widgets/tagfolderview.cpp:138
 #, fuzzy, kde-format
 #| msgid "Expand Tag Tree"
 msgid "Expand all Tags"
 msgstr "Rozbaliť strom štítkov"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:149
+#: core/libs/tags/widgets/tagfolderview.cpp:143
 #, fuzzy, kde-format
 #| msgid "Copy Album"
 msgid "Collapse all Tags"
 msgstr "Kopírovať album"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:237
+#: core/libs/tags/widgets/tagfolderview.cpp:231
 #, kde-format
 msgid "Expand Selected Recursively"
 msgstr "Rozbaliť výber rekurzívne"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:553
+#: core/libs/tags/widgets/tagspopupmenu.cpp:544
 #, kde-format
 msgid "No Recently Assigned Tags"
 msgstr "Žiadne nedávno pridelené štítky"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:557
+#: core/libs/tags/widgets/tagspopupmenu.cpp:548
 #, kde-format
 msgid "Recently Assigned Tags"
 msgstr "Nedávno pridelené štítky"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:614
-#: core/libs/tags/widgets/tagspopupmenu.cpp:754
+#: core/libs/tags/widgets/tagspopupmenu.cpp:605
+#: core/libs/tags/widgets/tagspopupmenu.cpp:745
 #, kde-format
 msgid "Add New Tag..."
 msgstr "Pridať nový štítok..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:620
+#: core/libs/tags/widgets/tagspopupmenu.cpp:611
 #, fuzzy, kde-format
 msgid "More Tags..."
 msgstr "Komentár/tagy:"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:720
+#: core/libs/tags/widgets/tagspopupmenu.cpp:711
 #, kde-format
 msgid "Assign this Tag"
 msgstr "Priradiť tento štítok"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:729
+#: core/libs/tags/widgets/tagspopupmenu.cpp:720
 #, kde-format
 msgid "Remove this Tag"
 msgstr "Odstrániť tento štítok"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:739
+#: core/libs/tags/widgets/tagspopupmenu.cpp:730
 #, kde-format
 msgid "Go to this Tag"
 msgstr "Prejsť na tento štítok"
@@ -54800,23 +54800,23 @@ msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Paralelne vertikálne obrátene"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:234
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:231
 #, kde-format
 msgid "Could not open: %1"
 msgstr "Nemôžem otvoriť: %1"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:241
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:238
 #, kde-format
 msgid "File is empty."
 msgstr "Súbor je prázdny."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:273
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:270
 #, fuzzy, kde-format
 #| msgid "No GPX element found - probably not a GPX file."
 msgid "Probably not a GPX file."
 msgstr "Nenašiel sa GPX prvok - pravdepodobne to nie je GPX súbor."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:285
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:282
 #, fuzzy, kde-format
 #| msgid "File is a GPX file, but no datapoints were found."
 msgid ""
@@ -60114,144 +60114,144 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "Režim náhľadu"
 
-#: core/utilities/import/backend/cameracontroller.cpp:413
+#: core/utilities/import/backend/cameracontroller.cpp:411
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "Prebieha pripájanie k fotoaparátu..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:422
+#: core/utilities/import/backend/cameracontroller.cpp:420
 #, kde-format
 msgid "Connection established."
 msgstr "Pripojenie nadviazané."
 
-#: core/utilities/import/backend/cameracontroller.cpp:426
+#: core/utilities/import/backend/cameracontroller.cpp:424
 #, kde-format
 msgid "Connection failed."
 msgstr "Pripojenie zlyhalo."
 
-#: core/utilities/import/backend/cameracontroller.cpp:451
+#: core/utilities/import/backend/cameracontroller.cpp:449
 #, fuzzy, kde-format
 msgid "Failed to get free space from camera"
 msgstr "Získavajú sa informácie o dostupnom mieste na fotoaparáte..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:465
+#: core/utilities/import/backend/cameracontroller.cpp:463
 #, kde-format
 msgid "Failed to get preview from camera"
 msgstr "Chyba pri získavaní náhľadu z fotoaparátu"
 
-#: core/utilities/import/backend/cameracontroller.cpp:479
+#: core/utilities/import/backend/cameracontroller.cpp:477
 #, fuzzy, kde-format
 msgid "Failed to process capture from camera"
 msgstr "Nepodarilo sa spracovať položku..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:493
+#: core/utilities/import/backend/cameracontroller.cpp:491
 #, fuzzy, kde-kuit-format
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "Nepodarilo sa zmazať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:509
+#: core/utilities/import/backend/cameracontroller.cpp:507
 #, fuzzy, kde-kuit-format
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Nepodarilo sa zmazať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:561
+#: core/utilities/import/backend/cameracontroller.cpp:559
 #, fuzzy, kde-kuit-format
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "Nie je možné otvoriť bod pripojenia súboru <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:579
+#: core/utilities/import/backend/cameracontroller.cpp:577
 #, fuzzy, kde-kuit-format
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Nepodarilo sa zmazať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:628
-#: core/utilities/import/backend/cameracontroller.cpp:995
+#: core/utilities/import/backend/cameracontroller.cpp:626
+#: core/utilities/import/backend/cameracontroller.cpp:993
 #: core/utilities/import/main/importui.cpp:2419
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Zlyhalo stiahnutie <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:726
+#: core/utilities/import/backend/cameracontroller.cpp:724
 #, fuzzy, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Nepodarilo sa zmazať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:771
+#: core/utilities/import/backend/cameracontroller.cpp:769
 #, fuzzy, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Nepodarilo sa zmazať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:786
 #, fuzzy, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Nepodarilo sa zmazať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:807
+#: core/utilities/import/backend/cameracontroller.cpp:805
 #, fuzzy, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:881
+#: core/utilities/import/backend/cameracontroller.cpp:879
 #, fuzzy, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:888
+#: core/utilities/import/backend/cameracontroller.cpp:886
 #, fuzzy, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1003
+#: core/utilities/import/backend/cameracontroller.cpp:1001
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Nepodarilo sa stiahnuť súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1007
+#: core/utilities/import/backend/cameracontroller.cpp:1005
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1024
+#: core/utilities/import/backend/cameracontroller.cpp:1022
 #, fuzzy, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1032
+#: core/utilities/import/backend/cameracontroller.cpp:1030
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1036
+#: core/utilities/import/backend/cameracontroller.cpp:1034
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1051
+#: core/utilities/import/backend/cameracontroller.cpp:1049
 #, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Zlyhalo vymazanie <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1059
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Nepodarilo sa zmazať súbor <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1063
+#: core/utilities/import/backend/cameracontroller.cpp:1061
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "Táto kolekcia nie je momentálne dostupná."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1077
 #, fuzzy, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Nepodarilo sa zamknúť <filename>%1</filename>...."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1086
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Nepodarilo sa prepnúť súbor zámku <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1090
+#: core/utilities/import/backend/cameracontroller.cpp:1089
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
@@ -60310,7 +60310,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "nie"
 
-#: core/utilities/import/backend/umscamera.cpp:570
+#: core/utilities/import/backend/umscamera.cpp:571
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Mounted Camera</b> driver for USB/IEEE1394 mass storage cameras and "
@@ -60324,7 +60324,7 @@ msgstr ""
 "Ovládač <b>Mounted Camera</b> pre USB/IEEE1394 mass storage fotoaparáty a "
 "čítačky flashdiskov.<br/><br/>"
 
-#: core/utilities/import/backend/umscamera.cpp:577
+#: core/utilities/import/backend/umscamera.cpp:578
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -60336,7 +60336,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/umscamera.cpp:585
+#: core/utilities/import/backend/umscamera.cpp:586
 #, fuzzy, kde-format
 #| msgctxt "@info List of supported device operations"
 #| msgid ""
@@ -60357,29 +60357,29 @@ msgstr ""
 "%3</b><br/>Nahrať položky: <b>%4</b><br/>Vytvoriť adresáre: <b>%5</b><br/"
 ">Zmazať adresáre: <b>%6</b><br/><br/>"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "áno"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "nie"
 
-#: core/utilities/import/backend/umscamera.cpp:602
+#: core/utilities/import/backend/umscamera.cpp:603
 #, fuzzy, kde-format
 #| msgid ""
 #| "For more information about the <b>Mounted Camera</b> driver, please read "
@@ -60392,7 +60392,7 @@ msgstr ""
 "Viac informácií o ovládači <b>Mounted Camera</b> nájdete v príručke digiKam "
 "v časti <b>Podporované digitálne fotoaparáty</b>."
 
-#: core/utilities/import/backend/umscamera.cpp:610
+#: core/utilities/import/backend/umscamera.cpp:611
 #, fuzzy, kde-format
 #| msgid ""
 #| "The <b>Mounted Camera</b> driver is a simple interface to a camera disk "
@@ -61927,49 +61927,49 @@ msgstr "P&ravý panel"
 msgid "Autotags Assignment"
 msgstr "Automatická oprava"
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
-#: core/utilities/maintenance/dbcleaner.cpp:230
-#: core/utilities/maintenance/dbcleaner.cpp:259
-#: core/utilities/maintenance/dbcleaner.cpp:290
-#: core/utilities/maintenance/dbcleaner.cpp:329
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:120
+#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Vyčistiť databázy: "
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
+#: core/utilities/maintenance/dbcleaner.cpp:120
 #, kde-format
 msgid "analysing databases"
 msgstr "analyzujem databázy"
 
-#: core/utilities/maintenance/dbcleaner.cpp:230
+#: core/utilities/maintenance/dbcleaner.cpp:220
 #, kde-format
 msgid "cleaning core db"
 msgstr "čistím základnú databázu"
 
-#: core/utilities/maintenance/dbcleaner.cpp:259
+#: core/utilities/maintenance/dbcleaner.cpp:249
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "čistím databázu náhľadov"
 
-#: core/utilities/maintenance/dbcleaner.cpp:290
+#: core/utilities/maintenance/dbcleaner.cpp:280
 #, fuzzy, kde-format
 msgid "cleaning recognition db"
 msgstr "Detekcia horného okraja"
 
-#: core/utilities/maintenance/dbcleaner.cpp:329
+#: core/utilities/maintenance/dbcleaner.cpp:319
 #, fuzzy, kde-format
 #| msgid "Rebuild Thumbnails"
 msgid "cleaning similarity db"
 msgstr "Znovu vytvoriť náhľady"
 
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgid "shrinking databases"
 msgstr "Inicializuje sa databáza..."
 
-#: core/utilities/maintenance/dbcleaner.cpp:500
+#: core/utilities/maintenance/dbcleaner.cpp:483
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -61984,22 +61984,22 @@ msgstr ""
 "Po dokončení procesu zmenšovania toto informačné okno zmizne.</p>>Aktuálny "
 "stav:"
 
-#: core/utilities/maintenance/dbcleaner.cpp:513
+#: core/utilities/maintenance/dbcleaner.cpp:496
 #, kde-format
 msgid "Core DB"
 msgstr "Základná databáza"
 
-#: core/utilities/maintenance/dbcleaner.cpp:514
+#: core/utilities/maintenance/dbcleaner.cpp:497
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "Databáza s náhľadmi"
 
-#: core/utilities/maintenance/dbcleaner.cpp:515
+#: core/utilities/maintenance/dbcleaner.cpp:498
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "Databáza rozpoznávania tvárí"
 
-#: core/utilities/maintenance/dbcleaner.cpp:516
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, kde-format
 msgid "Similarity DB"
 msgstr "Databáza podobnosti"

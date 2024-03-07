@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 01:32+0000\n"
+"POT-Creation-Date: 2024-03-07 01:32+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3033,7 +3033,7 @@ msgstr "Luokittelematon albumi"
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/tags/widgets/tagfolderview.cpp:106
+#: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
@@ -26971,7 +26971,7 @@ msgstr "Tämä on kuvan värikirkkauden säätökäyrä"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
-#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
@@ -27547,7 +27547,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "Tunnisteen nimi ei voi sisältää merkkiä ”/”"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:313
-#: core/libs/tags/widgets/tageditdlg.cpp:476
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Tunniste on jo olemassa"
@@ -27789,7 +27789,7 @@ msgstr "Uusi albumi"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
-#: core/libs/tags/widgets/tagfolderview.cpp:134
+#: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
 msgstr "Laajenna valitut solmut"
@@ -27800,8 +27800,8 @@ msgid "Expand all Albums"
 msgstr "Laajenna kaikki albumit"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:222
-#: core/libs/tags/widgets/tagfolderview.cpp:139
-#: core/libs/tags/widgets/tagfolderview.cpp:242
+#: core/libs/tags/widgets/tagfolderview.cpp:133
+#: core/libs/tags/widgets/tagfolderview.cpp:236
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Ei valittua albumia"
@@ -27812,7 +27812,7 @@ msgid "Collapse all Albums"
 msgstr "Supista kaikki albumit"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:228
-#: core/libs/tags/widgets/tagfolderview.cpp:70
+#: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Etsi kaksoiskappaleita…"
@@ -29166,7 +29166,7 @@ msgid "Scanning collection"
 msgstr "Kartoitetaan kokoelmaa"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:87
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
 msgstr "Virhe"
@@ -39383,13 +39383,13 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Sekalaiset"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:382
+#: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 polussa %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:390
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, fuzzy, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
@@ -39397,12 +39397,12 @@ msgstr ""
 "Luo ”%1”\n"
 "  kohteeseen %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:395
+#: core/libs/tags/engine/taggingactionfactory.cpp:387
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Luo ”%1”"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:260
+#: core/libs/tags/engine/tagmodificationhelper.cpp:256
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -39419,26 +39419,26 @@ msgstr[1] ""
 "ne.\n"
 "Haluatko jatkaa?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:283
+#: core/libs/tags/engine/tagmodificationhelper.cpp:279
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
 msgstr[0] "Tunniste ”%2” on annettu yhdelle kohteelle. Haluatko jatkaa?"
 msgstr[1] "Tunniste ”%2” on annettu %1 kohteelle. Haluatko jatkaa?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:291
+#: core/libs/tags/engine/tagmodificationhelper.cpp:287
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Poistetaanko tunniste ”%1”?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:413
+#: core/libs/tags/engine/tagmodificationhelper.cpp:290
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Poista luokitus"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:387
+#: core/libs/tags/engine/tagmodificationhelper.cpp:383
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39448,17 +39448,17 @@ msgstr ""
 "Tunnisteella ”%2” on yksi alitunniste. Myös alitunniste häviää mikäli "
 "poistat valitun tunnisteen. Haluatko varmasti jatkaa?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:400
 #, fuzzy, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "Tunniste ”%2” on annettu yhdelle kohteelle. Haluatko jatkaa?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:410
+#: core/libs/tags/engine/tagmodificationhelper.cpp:406
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Poistetaanko luokitukset ”%1”?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:574
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39475,7 +39475,7 @@ msgstr[1] ""
 "Tunnisteella ”%2” on %1 alitunnistetta. Myös alitunnisteet häviävät mikäli "
 "poistat valitut tunnisteet. Haluatko varmasti jatkaa?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:596
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39486,14 +39486,14 @@ msgid_plural ""
 msgstr[0] "Tunniste ”%2” on annettu yhdelle kohteelle. Haluatko jatkaa?"
 msgstr[1] "Tunniste ”%2” on annettu %1 kohteelle. Haluatko jatkaa?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:604
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Poistetaanko kasvoluokitus?"
 msgstr[1] "Poistetaanko kasvoluokitukset?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:615
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -39501,22 +39501,22 @@ msgid_plural ""
 msgstr[0] "Poistetaanko kuvista tätä kasvoluokitusta vastaava luokitus?"
 msgstr[1] "Poistetaanko kuvista tätä kasvoluokitusta vastaavat %1 luokitusta?"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:217
+#: core/libs/tags/engine/tagsactionmngr.cpp:211
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Aseta arvio ”%1 tähteä”"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:236
+#: core/libs/tags/engine/tagsactionmngr.cpp:230
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Aseta poimintamerkki ”%1”"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Aseta värimerkki ”%1”"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:303
+#: core/libs/tags/engine/tagsactionmngr.cpp:297
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Aseta tunniste ”%1”"
@@ -39562,7 +39562,7 @@ msgstr "Muokkaa luokituksen otsikkoa"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
 #: core/libs/tags/manager/tagsmanager.cpp:702
-#: core/libs/tags/widgets/tagfolderview.cpp:69
+#: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Poista tunnisteen kuvake"
@@ -39598,7 +39598,7 @@ msgid "Tag Properties"
 msgstr "Luokituksen ominaisuudet"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:97
-#: core/libs/tags/widgets/tageditdlg.cpp:139
+#: core/libs/tags/widgets/tageditdlg.cpp:129
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
@@ -39871,53 +39871,53 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr ""
 
-#: core/libs/tags/widgets/tagcheckview.cpp:82
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, kde-format
 msgid "Toggle Auto"
 msgstr "Käytä automatiikkaa tai poista se käytöstä"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:83
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "Ei mitään"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:85
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "Alaluokat"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:86
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "Yläluokat"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:87
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "Molemmat"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:113
+#: core/libs/tags/widgets/tageditdlg.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Uusi luokitus"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:117
+#: core/libs/tags/widgets/tageditdlg.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Muokkaa luokitusta"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:141
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgid "Enter tag name here..."
 msgstr "Anna tunnisteelle nimi…"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:148
+#: core/libs/tags/widgets/tageditdlg.cpp:138
 #, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -39935,17 +39935,17 @@ msgstr ""
 "tunniste alkaa kauttamerkillä, juurialbumia käytetään ylätunnisteena</li> </"
 "ul></p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:182
+#: core/libs/tags/widgets/tageditdlg.cpp:172
 #, kde-format
 msgid "&Icon:"
 msgstr "&Kuvake:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:206
+#: core/libs/tags/widgets/tageditdlg.cpp:196
 #, kde-format
 msgid "&Shortcut:"
 msgstr "&Pikanäppäin:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:226
+#: core/libs/tags/widgets/tageditdlg.cpp:216
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
@@ -39954,84 +39954,84 @@ msgstr ""
 "<p><b>Huom!</b> Tällä pikanäppäimellä kohteille voi osoittaa tai niiltä "
 "poistaa luokituksia.</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:347
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Luo uusi tunniste</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:351
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, kde-format
 msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgstr "<b>Luo uusi tunniste kohteeseen<br/>”%1”</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:357
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, kde-format
 msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Tunnisteen ”%1” ominaisuudet</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Luokituksen luontivirhe"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:544
+#: core/libs/tags/widgets/tageditdlg.cpp:534
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Tunnisteiden luonti keskeytyi virheeseen:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Tag Path"
 msgstr "Tunnistehierarkia"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:144
+#: core/libs/tags/widgets/tagfolderview.cpp:138
 #, kde-format
 msgid "Expand all Tags"
 msgstr "Laajenna kaikki luokitukset"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:149
+#: core/libs/tags/widgets/tagfolderview.cpp:143
 #, kde-format
 msgid "Collapse all Tags"
 msgstr "Supista kaikki luokitukset"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:237
+#: core/libs/tags/widgets/tagfolderview.cpp:231
 #, kde-format
 msgid "Expand Selected Recursively"
 msgstr "Laajenna valitut rekursiivisesti"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:553
+#: core/libs/tags/widgets/tagspopupmenu.cpp:544
 #, kde-format
 msgid "No Recently Assigned Tags"
 msgstr "Ei äskettäin määritettyjä tunnisteita"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:557
+#: core/libs/tags/widgets/tagspopupmenu.cpp:548
 #, kde-format
 msgid "Recently Assigned Tags"
 msgstr "Äskettäin määritetyt tunnisteet"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:614
-#: core/libs/tags/widgets/tagspopupmenu.cpp:754
+#: core/libs/tags/widgets/tagspopupmenu.cpp:605
+#: core/libs/tags/widgets/tagspopupmenu.cpp:745
 #, kde-format
 msgid "Add New Tag..."
 msgstr "Lisää uusi tunniste…"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:620
+#: core/libs/tags/widgets/tagspopupmenu.cpp:611
 #, kde-format
 msgid "More Tags..."
 msgstr "Lisää tunnisteita…"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:720
+#: core/libs/tags/widgets/tagspopupmenu.cpp:711
 #, kde-format
 msgid "Assign this Tag"
 msgstr "Anna tämä tunniste"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:729
+#: core/libs/tags/widgets/tagspopupmenu.cpp:720
 #, kde-format
 msgid "Remove this Tag"
 msgstr "Poista tämä tunniste"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:739
+#: core/libs/tags/widgets/tagspopupmenu.cpp:730
 #, kde-format
 msgid "Go to this Tag"
 msgstr "Siirry tähän tunnisteeseen"
@@ -53639,22 +53639,22 @@ msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Käsittele käänteinen sijaintitieto"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:234
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:231
 #, kde-format
 msgid "Could not open: %1"
 msgstr "Ei voitu avata: %1"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:241
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:238
 #, kde-format
 msgid "File is empty."
 msgstr "Tiedosto on tyhjä."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:273
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:270
 #, kde-format
 msgid "Probably not a GPX file."
 msgstr "Todennäköisesti ei GPX-tiedosto."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:285
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:282
 #, fuzzy, kde-format
 #| msgid "File is a GPX file, but no datapoints were found."
 msgid ""
@@ -58927,151 +58927,151 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "Esikatselutila"
 
-#: core/utilities/import/backend/cameracontroller.cpp:413
+#: core/utilities/import/backend/cameracontroller.cpp:411
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "Yhdistetään kameraan…"
 
-#: core/utilities/import/backend/cameracontroller.cpp:422
+#: core/utilities/import/backend/cameracontroller.cpp:420
 #, kde-format
 msgid "Connection established."
 msgstr "Yhteys muodostettu."
 
-#: core/utilities/import/backend/cameracontroller.cpp:426
+#: core/utilities/import/backend/cameracontroller.cpp:424
 #, kde-format
 msgid "Connection failed."
 msgstr "Yhteyden muodostus epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:451
+#: core/utilities/import/backend/cameracontroller.cpp:449
 #, fuzzy, kde-format
 msgid "Failed to get free space from camera"
 msgstr "Tiedoston ”%1” siirto kamerasta epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:465
+#: core/utilities/import/backend/cameracontroller.cpp:463
 #, fuzzy, kde-format
 msgid "Failed to get preview from camera"
 msgstr "Tiedoston ”%1” siirto kamerasta epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:479
+#: core/utilities/import/backend/cameracontroller.cpp:477
 #, fuzzy, kde-format
 msgid "Failed to process capture from camera"
 msgstr "Tiedoston ”%1” siirto kamerasta epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:493
+#: core/utilities/import/backend/cameracontroller.cpp:491
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "Tiedoston <filename>%1</filename> poisto epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:509
+#: core/utilities/import/backend/cameracontroller.cpp:507
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to delete file <filename>%1</filename>."
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Tiedoston <filename>%1</filename> poisto epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:561
+#: core/utilities/import/backend/cameracontroller.cpp:559
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "Tiedoston ”%1” lähetys epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:579
+#: core/utilities/import/backend/cameracontroller.cpp:577
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Tiedoston ”%1” lähetys epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:628
-#: core/utilities/import/backend/cameracontroller.cpp:995
+#: core/utilities/import/backend/cameracontroller.cpp:626
+#: core/utilities/import/backend/cameracontroller.cpp:993
 #: core/utilities/import/main/importui.cpp:2419
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Tiedoston <filename>%1</filename> lataaminen epäonnistui"
 
-#: core/utilities/import/backend/cameracontroller.cpp:726
+#: core/utilities/import/backend/cameracontroller.cpp:724
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Tiedoston <filename>%1</filename> muuntaminen JPEGiksi epäonnistui"
 
-#: core/utilities/import/backend/cameracontroller.cpp:771
+#: core/utilities/import/backend/cameracontroller.cpp:769
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Tiedoston <filename>%1</filename> muuntaminen DNG:ksi epäonnistui"
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:786
 #, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Tiedoston <filename>%1</filename> muunnos DNG:ksi ohitettiin"
 
-#: core/utilities/import/backend/cameracontroller.cpp:807
+#: core/utilities/import/backend/cameracontroller.cpp:805
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Tiedoston ”%1” lähetys epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:881
+#: core/utilities/import/backend/cameracontroller.cpp:879
 #, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Skriptin aikakatkaisu tiedostossa <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:888
+#: core/utilities/import/backend/cameracontroller.cpp:886
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Tiedoston ”%1” lähetys epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1003
+#: core/utilities/import/backend/cameracontroller.cpp:1001
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Tiedoston ”%1” siirto kamerasta epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1007
+#: core/utilities/import/backend/cameracontroller.cpp:1005
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "Tunniste ”%2” on annettu yhdelle kohteelle. Haluatko jatkaa?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1024
+#: core/utilities/import/backend/cameracontroller.cpp:1022
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Tiedoston ”%1” lähetys epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1032
+#: core/utilities/import/backend/cameracontroller.cpp:1030
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Tiedoston ”%1” lähetys epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1036
+#: core/utilities/import/backend/cameracontroller.cpp:1034
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "Tunniste ”%2” on annettu yhdelle kohteelle. Haluatko jatkaa?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1051
+#: core/utilities/import/backend/cameracontroller.cpp:1049
 #, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Tiedoston <filename>%1</filename> poisto epäonnistui"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1059
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Tiedoston <b>%1</b> poisto epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1063
+#: core/utilities/import/backend/cameracontroller.cpp:1061
 #, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "Tiedoston <b>%1</b> poisto epäonnistui. Haluatko jatkaa?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1077
 #, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Tiedoston <filename>%1</filename> lukitseminen epäonnistui"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1086
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Tiedoston ”%1” lukituksen tilan vaihto epäonnistui."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1090
+#: core/utilities/import/backend/cameracontroller.cpp:1089
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Tunniste ”%2” on annettu yhdelle kohteelle. Haluatko jatkaa?"
@@ -59134,7 +59134,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "ei"
 
-#: core/utilities/import/backend/umscamera.cpp:570
+#: core/utilities/import/backend/umscamera.cpp:571
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Mounted Camera</b> driver for USB/IEEE1394 mass storage cameras and "
@@ -59148,7 +59148,7 @@ msgstr ""
 "<b>Massamuisti</b>ajuri USB/FireWire (IEEE1394) -liitäntäisille kameroille "
 "sekä Flash-kortinlukijoille.<br /><br />"
 
-#: core/utilities/import/backend/umscamera.cpp:577
+#: core/utilities/import/backend/umscamera.cpp:578
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -59166,7 +59166,7 @@ msgstr ""
 "UUID: ”%5”\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:585
+#: core/utilities/import/backend/umscamera.cpp:586
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -59186,29 +59186,29 @@ msgstr ""
 "Kansioiden poistaminen: ”%6”\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "kyllä"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "ei"
 
-#: core/utilities/import/backend/umscamera.cpp:602
+#: core/utilities/import/backend/umscamera.cpp:603
 #, fuzzy, kde-format
 #| msgid ""
 #| "For more information about the <b>Mounted Camera</b> driver, please read "
@@ -59221,7 +59221,7 @@ msgstr ""
 "<b>Massamuistiajurista</b> saat lisätietoa digiKamin englanninkielisen "
 "käyttöoppaan kohdasta <b>Supported Digital Still Cameras</b>."
 
-#: core/utilities/import/backend/umscamera.cpp:610
+#: core/utilities/import/backend/umscamera.cpp:611
 #, fuzzy, kde-format
 #| msgid ""
 #| "The <b>Mounted Camera</b> driver is a simple interface to a camera disk "
@@ -60703,47 +60703,47 @@ msgstr "&Oikea paneeli"
 msgid "Autotags Assignment"
 msgstr "Automaattinen asetus"
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
-#: core/utilities/maintenance/dbcleaner.cpp:230
-#: core/utilities/maintenance/dbcleaner.cpp:259
-#: core/utilities/maintenance/dbcleaner.cpp:290
-#: core/utilities/maintenance/dbcleaner.cpp:329
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:120
+#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Siivoa tietokannat: "
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
+#: core/utilities/maintenance/dbcleaner.cpp:120
 #, kde-format
 msgid "analysing databases"
 msgstr "analysoidaan tietokantoja"
 
-#: core/utilities/maintenance/dbcleaner.cpp:230
+#: core/utilities/maintenance/dbcleaner.cpp:220
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:259
+#: core/utilities/maintenance/dbcleaner.cpp:249
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "siivotaan pienoiskuvatietokantaa"
 
-#: core/utilities/maintenance/dbcleaner.cpp:290
+#: core/utilities/maintenance/dbcleaner.cpp:280
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "siivotaan tunnistustietokantaa"
 
-#: core/utilities/maintenance/dbcleaner.cpp:329
+#: core/utilities/maintenance/dbcleaner.cpp:319
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "siivotaan yhdennäköisyystietokantaa"
 
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, kde-format
 msgid "shrinking databases"
 msgstr "kutistetaan tietokantoja"
 
-#: core/utilities/maintenance/dbcleaner.cpp:500
+#: core/utilities/maintenance/dbcleaner.cpp:483
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -60753,22 +60753,22 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:513
+#: core/utilities/maintenance/dbcleaner.cpp:496
 #, kde-format
 msgid "Core DB"
 msgstr "Perustietokanta"
 
-#: core/utilities/maintenance/dbcleaner.cpp:514
+#: core/utilities/maintenance/dbcleaner.cpp:497
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "Pienoiskuvatietokanta"
 
-#: core/utilities/maintenance/dbcleaner.cpp:515
+#: core/utilities/maintenance/dbcleaner.cpp:498
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "Kasvontunnistustietokanta"
 
-#: core/utilities/maintenance/dbcleaner.cpp:516
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, kde-format
 msgid "Similarity DB"
 msgstr "Yhdennäköisyystietokanta"

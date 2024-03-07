@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 01:32+0000\n"
+"POT-Creation-Date: 2024-03-07 01:32+0000\n"
 "PO-Revision-Date: 2024-01-02 20:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2997,7 +2997,7 @@ msgstr "Brak albumu znaczników"
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
-#: core/libs/tags/widgets/tagfolderview.cpp:106
+#: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
@@ -26615,7 +26615,7 @@ msgstr "To jest krzywa dopasowania jasności obrazu"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
-#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
@@ -27210,7 +27210,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "Nazwa znacznika nie może zawierać \"/\""
 
 #: core/libs/album/manager/albummanager_talbum.cpp:313
-#: core/libs/tags/widgets/tageditdlg.cpp:476
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Znacznik o tej nazwie już istnieje"
@@ -27450,7 +27450,7 @@ msgstr "Album etykiet"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
-#: core/libs/tags/widgets/tagfolderview.cpp:134
+#: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
 msgid "Expand Selected Nodes"
 msgstr "Rozwiń wybrane węzły"
@@ -27461,8 +27461,8 @@ msgid "Expand all Albums"
 msgstr "Rozwiń wszystkie albumy"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:222
-#: core/libs/tags/widgets/tagfolderview.cpp:139
-#: core/libs/tags/widgets/tagfolderview.cpp:242
+#: core/libs/tags/widgets/tagfolderview.cpp:133
+#: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Zwiń wybrane wgłąb"
@@ -27473,7 +27473,7 @@ msgid "Collapse all Albums"
 msgstr "Zwiń wszystkie albumy"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:228
-#: core/libs/tags/widgets/tagfolderview.cpp:70
+#: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Poszukaj powieleń..."
@@ -28823,7 +28823,7 @@ msgid "Scanning collection"
 msgstr "Skanowanie zbioru"
 
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:87
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
 msgstr "Błąd"
@@ -39211,24 +39211,24 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Różne"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:382
+#: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 w %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:390
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "Utwórz \"%1\" w %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:395
+#: core/libs/tags/engine/taggingactionfactory.cpp:387
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Utwórz \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:260
+#: core/libs/tags/engine/tagmodificationhelper.cpp:256
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -39249,7 +39249,7 @@ msgstr[2] ""
 "podznaczniki.\n"
 "Czy chcesz kontynuować?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:283
+#: core/libs/tags/engine/tagmodificationhelper.cpp:279
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39260,19 +39260,19 @@ msgstr[1] ""
 msgstr[2] ""
 "Znacznik \"%2\" jest przypisany do %1 rzeczy. Czy chcesz kontynuować?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:291
+#: core/libs/tags/engine/tagmodificationhelper.cpp:287
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Usunąć znacznik \"%1\"?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:413
+#: core/libs/tags/engine/tagmodificationhelper.cpp:290
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Usuń znacznik"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:387
+#: core/libs/tags/engine/tagmodificationhelper.cpp:383
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39283,19 +39283,19 @@ msgstr ""
 "również te podznacznik.\n"
 "Czy chcesz kontynuować?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:400
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Znaczniki '%1' są przypisane do jednego lub więcej rzeczy. Czy chcesz "
 "kontynuować?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:410
+#: core/libs/tags/engine/tagmodificationhelper.cpp:406
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Czy usunąć '%1' znacznik(i)?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:574
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39318,7 +39318,7 @@ msgstr[2] ""
 "ich usunie również te podznaczniki.\n"
 "Czy chcesz kontynuować?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:596
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39334,7 +39334,7 @@ msgstr[2] ""
 "Znaczniki twarzy '%2' są przypisane do co najmniej jednego  rzeczy. Czy "
 "chcesz kontynuować?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:604
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
@@ -39342,7 +39342,7 @@ msgstr[0] "Usunąć znacznik twarzy?"
 msgstr[1] "Usunąć znaczniki twarzy?"
 msgstr[2] "Usunąć znaczniki twarzy?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:615
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -39352,22 +39352,22 @@ msgstr[1] "Usunąć %1 znaczniki odpowiadające tym znacznikom twarzy z obrazów
 msgstr[2] ""
 "Usunąć %1 znaczników odpowiadających tym znacznikom twarzy z obrazów?"
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:217
+#: core/libs/tags/engine/tagsactionmngr.cpp:211
 #, kde-format
 msgid "Assign Rating \"%1 Star\""
 msgstr "Przypisz ocenę \"%1 gwiazda\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:236
+#: core/libs/tags/engine/tagsactionmngr.cpp:230
 #, kde-format
 msgid "Assign Pick Label \"%1\""
 msgstr "Przypisz etykietę wyboru \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:255
+#: core/libs/tags/engine/tagsactionmngr.cpp:249
 #, kde-format
 msgid "Assign Color Label \"%1\""
 msgstr "Przypisz etykietę koloru \"%1\""
 
-#: core/libs/tags/engine/tagsactionmngr.cpp:303
+#: core/libs/tags/engine/tagsactionmngr.cpp:297
 #, kde-format
 msgid "Assign Tag \"%1\""
 msgstr "Przypisz znacznik \"%1\""
@@ -39413,7 +39413,7 @@ msgstr "Edytuj tytuł znacznika"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:147
 #: core/libs/tags/manager/tagsmanager.cpp:702
-#: core/libs/tags/widgets/tagfolderview.cpp:69
+#: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Wyzeruj ikonę znacznika"
@@ -39449,7 +39449,7 @@ msgid "Tag Properties"
 msgstr "Właściwości znacznika"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:97
-#: core/libs/tags/widgets/tageditdlg.cpp:139
+#: core/libs/tags/widgets/tageditdlg.cpp:129
 #, kde-format
 msgctxt "@label: tag properties"
 msgid "&Title:"
@@ -39734,53 +39734,53 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr "Pomoc w sieci nt. zarządzania znacznikami"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:82
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, kde-format
 msgid "Toggle Auto"
 msgstr "Przełącz auto"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:83
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "Brak"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:85
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "Dzieci"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:86
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "Rodzice"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:87
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
 msgstr "Oba"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:113
+#: core/libs/tags/widgets/tageditdlg.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Nowy znacznik"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:117
+#: core/libs/tags/widgets/tageditdlg.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Edytuj znacznik"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:141
+#: core/libs/tags/widgets/tageditdlg.cpp:131
 #, kde-format
 msgid "Enter tag name here..."
 msgstr "Tutaj wpisz nazwę znacznika..."
 
-#: core/libs/tags/widgets/tageditdlg.cpp:148
+#: core/libs/tags/widgets/tageditdlg.cpp:138
 #, kde-format
 msgid ""
 "<p>To create new tags, you can use the following rules:</p><p><ul><li>'/' "
@@ -39797,17 +39797,17 @@ msgstr ""
 "\"</i></li><li>Jeśli hierarchia zaczyna się od \"/\", jako rodzic zostanie "
 "użyty katalog podstawowy.</li></ul></p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:182
+#: core/libs/tags/widgets/tageditdlg.cpp:172
 #, kde-format
 msgid "&Icon:"
 msgstr "&Ikona:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:206
+#: core/libs/tags/widgets/tageditdlg.cpp:196
 #, kde-format
 msgid "&Shortcut:"
 msgstr "&Skrót:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:226
+#: core/libs/tags/widgets/tageditdlg.cpp:216
 #, kde-format
 msgid ""
 "<p><b>Note</b>: this shortcut can be used to assign or unassign tag to items."
@@ -39816,84 +39816,84 @@ msgstr ""
 "<p><b>Uwaga</b>: skrót ten może zostać użyty do przypisania lub usunięcia "
 "przypisania znacznika do rzeczy.</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:347
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Tworzenie nowego znacznika</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:351
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, kde-format
 msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgstr "<b>Tworzenie nowego znacznika w<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:357
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, kde-format
 msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Właściwości znacznika<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:529
+#: core/libs/tags/widgets/tageditdlg.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Błąd tworzenia znacznika"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:544
+#: core/libs/tags/widgets/tageditdlg.cpp:534
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Wystąpił błąd przy tworzeniu znacznika:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:546
+#: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Tag Path"
 msgstr "Ścieżka znacznika"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:144
+#: core/libs/tags/widgets/tagfolderview.cpp:138
 #, kde-format
 msgid "Expand all Tags"
 msgstr "Rozwiń wszystkie znaczniki"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:149
+#: core/libs/tags/widgets/tagfolderview.cpp:143
 #, kde-format
 msgid "Collapse all Tags"
 msgstr "Zwiń wszystkie znaczniki"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:237
+#: core/libs/tags/widgets/tagfolderview.cpp:231
 #, kde-format
 msgid "Expand Selected Recursively"
 msgstr "Rozwiń wybrane wgłąb"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:553
+#: core/libs/tags/widgets/tagspopupmenu.cpp:544
 #, kde-format
 msgid "No Recently Assigned Tags"
 msgstr "Brak ostatnio przypisanych znaczników"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:557
+#: core/libs/tags/widgets/tagspopupmenu.cpp:548
 #, kde-format
 msgid "Recently Assigned Tags"
 msgstr "Ostatnio przypisane znaczniki"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:614
-#: core/libs/tags/widgets/tagspopupmenu.cpp:754
+#: core/libs/tags/widgets/tagspopupmenu.cpp:605
+#: core/libs/tags/widgets/tagspopupmenu.cpp:745
 #, kde-format
 msgid "Add New Tag..."
 msgstr "Dodaj nowy znacznik..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:620
+#: core/libs/tags/widgets/tagspopupmenu.cpp:611
 #, kde-format
 msgid "More Tags..."
 msgstr "Więcej znaczników..."
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:720
+#: core/libs/tags/widgets/tagspopupmenu.cpp:711
 #, kde-format
 msgid "Assign this Tag"
 msgstr "Przypisz ten znacznik"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:729
+#: core/libs/tags/widgets/tagspopupmenu.cpp:720
 #, kde-format
 msgid "Remove this Tag"
 msgstr "Usuń ten znacznik"
 
-#: core/libs/tags/widgets/tagspopupmenu.cpp:739
+#: core/libs/tags/widgets/tagspopupmenu.cpp:730
 #, kde-format
 msgid "Go to this Tag"
 msgstr "Idź do tego znacznika"
@@ -53618,22 +53618,22 @@ msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr "Przerwać odwrotne geo-kodowanie?"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:234
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:231
 #, kde-format
 msgid "Could not open: %1"
 msgstr "Nie można otworzyć: %1"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:241
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:238
 #, kde-format
 msgid "File is empty."
 msgstr "Plik jest pusty."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:273
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:270
 #, kde-format
 msgid "Probably not a GPX file."
 msgstr "Prawdopodobnie to nie jest plik GPX."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:285
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:282
 #, kde-format
 msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
@@ -58618,145 +58618,145 @@ msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
 msgstr "Tryb podglądu"
 
-#: core/utilities/import/backend/cameracontroller.cpp:413
+#: core/utilities/import/backend/cameracontroller.cpp:411
 #, kde-format
 msgid "Connecting to camera..."
 msgstr "Łączenie z aparatem..."
 
-#: core/utilities/import/backend/cameracontroller.cpp:422
+#: core/utilities/import/backend/cameracontroller.cpp:420
 #, kde-format
 msgid "Connection established."
 msgstr "Nawiązano połączenie."
 
-#: core/utilities/import/backend/cameracontroller.cpp:426
+#: core/utilities/import/backend/cameracontroller.cpp:424
 #, kde-format
 msgid "Connection failed."
 msgstr "Połączenie nie powiodło się."
 
-#: core/utilities/import/backend/cameracontroller.cpp:451
+#: core/utilities/import/backend/cameracontroller.cpp:449
 #, kde-format
 msgid "Failed to get free space from camera"
 msgstr "Nie można uzyskać wolnej przestrzeni z aparatu"
 
-#: core/utilities/import/backend/cameracontroller.cpp:465
+#: core/utilities/import/backend/cameracontroller.cpp:463
 #, kde-format
 msgid "Failed to get preview from camera"
 msgstr "Nie można uzyskać podglądu z aparatu"
 
-#: core/utilities/import/backend/cameracontroller.cpp:479
+#: core/utilities/import/backend/cameracontroller.cpp:477
 #, kde-format
 msgid "Failed to process capture from camera"
 msgstr "Nie można przechwycić z aparatu"
 
-#: core/utilities/import/backend/cameracontroller.cpp:493
+#: core/utilities/import/backend/cameracontroller.cpp:491
 #, kde-kuit-format
 msgid "Failed to list folder <filename>%1</filename>"
 msgstr "Nieudane wyszczególnianie katalogu <b>%1</b>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:509
+#: core/utilities/import/backend/cameracontroller.cpp:507
 #, kde-kuit-format
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Nieudane wyszczególnianie plików w <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:561
+#: core/utilities/import/backend/cameracontroller.cpp:559
 #, kde-kuit-format
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "Nieudane pobieranie miniatury dla <b>%1</b>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:579
+#: core/utilities/import/backend/cameracontroller.cpp:577
 #, kde-kuit-format
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Nieudane pobieranie metadanych dla <b>%1</b>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:628
-#: core/utilities/import/backend/cameracontroller.cpp:995
+#: core/utilities/import/backend/cameracontroller.cpp:626
+#: core/utilities/import/backend/cameracontroller.cpp:993
 #: core/utilities/import/main/importui.cpp:2419
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Nieudane pobieranie <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:726
+#: core/utilities/import/backend/cameracontroller.cpp:724
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Nie udało się przekształcić <filename>%1</filename> na JPEG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:771
+#: core/utilities/import/backend/cameracontroller.cpp:769
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Nie udało się przekształcić <filename>%1</filename> na DNG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:788
+#: core/utilities/import/backend/cameracontroller.cpp:786
 #, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Pominięto przekształacanie pliku <filename>%1</filename> na DNG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:807
+#: core/utilities/import/backend/cameracontroller.cpp:805
 #, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Nie udało się otworzyć skryptu dla <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:881
+#: core/utilities/import/backend/cameracontroller.cpp:879
 #, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Przekroczono czas w skrypcie <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:888
+#: core/utilities/import/backend/cameracontroller.cpp:886
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Nie udało się uruchomić skryptu <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1003
+#: core/utilities/import/backend/cameracontroller.cpp:1001
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Nieudane pobieranie pliku <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1007
+#: core/utilities/import/backend/cameracontroller.cpp:1005
 #, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "Nie udało się pobrać pliku <b>%1</b>. Czy chcesz kontynuować?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1024
+#: core/utilities/import/backend/cameracontroller.cpp:1022
 #, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Nieudane wysyłanie <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1032
+#: core/utilities/import/backend/cameracontroller.cpp:1030
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Nieudane wysyłanie pliku <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1036
+#: core/utilities/import/backend/cameracontroller.cpp:1034
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr ""
 "Wysyłanie pliku <b>%1</b> zakończone niepowodzeniem. Czy chcesz kontynuować?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1051
+#: core/utilities/import/backend/cameracontroller.cpp:1049
 #, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Nieudane usunięcie <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1059
+#: core/utilities/import/backend/cameracontroller.cpp:1057
 #, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Nieudane usunięcie pliku <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1063
+#: core/utilities/import/backend/cameracontroller.cpp:1061
 #, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "Nie udało się usunąć pliku <b>%1</b>. Czy chcesz kontynuować?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1078
+#: core/utilities/import/backend/cameracontroller.cpp:1077
 #, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Nieudane zablokowanie <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1086
+#: core/utilities/import/backend/cameracontroller.cpp:1085
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Nieudane zablokowanie pliku <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1090
+#: core/utilities/import/backend/cameracontroller.cpp:1089
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Nie udało się zblokować pliku <b>%1</b>. Czy chcesz kontynuować?"
@@ -58819,7 +58819,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "nie"
 
-#: core/utilities/import/backend/umscamera.cpp:570
+#: core/utilities/import/backend/umscamera.cpp:571
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58831,7 +58831,7 @@ msgstr ""
 "czytników kart Flash.\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:577
+#: core/utilities/import/backend/umscamera.cpp:578
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -58849,7 +58849,7 @@ msgstr ""
 "UUID: \"%5\"\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:585
+#: core/utilities/import/backend/umscamera.cpp:586
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -58869,29 +58869,29 @@ msgstr ""
 "Usuwanie katalogów: \"%6\"\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "tak"
 
-#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
 #: core/utilities/import/backend/umscamera.cpp:593
 #: core/utilities/import/backend/umscamera.cpp:594
 #: core/utilities/import/backend/umscamera.cpp:595
 #: core/utilities/import/backend/umscamera.cpp:596
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "nie"
 
-#: core/utilities/import/backend/umscamera.cpp:602
+#: core/utilities/import/backend/umscamera.cpp:603
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58901,7 +58901,7 @@ msgstr ""
 "Więcej informacji o sterowniku podpięty aparat znajdziesz w dokumentacji "
 "digiKam, w rozdziale Obsługiwane aparaty cyfrowe."
 
-#: core/utilities/import/backend/umscamera.cpp:610
+#: core/utilities/import/backend/umscamera.cpp:611
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60393,47 +60393,47 @@ msgstr "P&rawy panel"
 msgid "Autotags Assignment"
 msgstr "Samoprzypisywanie znaczników"
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
-#: core/utilities/maintenance/dbcleaner.cpp:230
-#: core/utilities/maintenance/dbcleaner.cpp:259
-#: core/utilities/maintenance/dbcleaner.cpp:290
-#: core/utilities/maintenance/dbcleaner.cpp:329
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:120
+#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Oczyśc bazy danych : "
 
-#: core/utilities/maintenance/dbcleaner.cpp:130
+#: core/utilities/maintenance/dbcleaner.cpp:120
 #, kde-format
 msgid "analysing databases"
 msgstr "analizowanie baz danych"
 
-#: core/utilities/maintenance/dbcleaner.cpp:230
+#: core/utilities/maintenance/dbcleaner.cpp:220
 #, kde-format
 msgid "cleaning core db"
 msgstr "czyszczenie głównej bd"
 
-#: core/utilities/maintenance/dbcleaner.cpp:259
+#: core/utilities/maintenance/dbcleaner.cpp:249
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "czyszczenie bd miniatur"
 
-#: core/utilities/maintenance/dbcleaner.cpp:290
+#: core/utilities/maintenance/dbcleaner.cpp:280
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "czyszczenie bd rozpoznawania"
 
-#: core/utilities/maintenance/dbcleaner.cpp:329
+#: core/utilities/maintenance/dbcleaner.cpp:319
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "czyszczenie bd podobieństw"
 
-#: core/utilities/maintenance/dbcleaner.cpp:374
+#: core/utilities/maintenance/dbcleaner.cpp:364
 #, kde-format
 msgid "shrinking databases"
 msgstr "kurczenie baz danych"
 
-#: core/utilities/maintenance/dbcleaner.cpp:500
+#: core/utilities/maintenance/dbcleaner.cpp:483
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -60447,22 +60447,22 @@ msgstr ""
 "uniknąć uszkodzenia bazy danych. To pole informacyjne zniknie po zakończeniu "
 "procesu kurczenia.</p>Postęp:"
 
-#: core/utilities/maintenance/dbcleaner.cpp:513
+#: core/utilities/maintenance/dbcleaner.cpp:496
 #, kde-format
 msgid "Core DB"
 msgstr "Główna BD"
 
-#: core/utilities/maintenance/dbcleaner.cpp:514
+#: core/utilities/maintenance/dbcleaner.cpp:497
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "BD miniatur"
 
-#: core/utilities/maintenance/dbcleaner.cpp:515
+#: core/utilities/maintenance/dbcleaner.cpp:498
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "BD rozpoznawania twarzy"
 
-#: core/utilities/maintenance/dbcleaner.cpp:516
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, kde-format
 msgid "Similarity DB"
 msgstr "BD podobieństw"
