@@ -252,7 +252,7 @@ void Benchmark::verifyTestSet()
         return;
     }
 
-    m_error = float(nbNotRecognize + nbWrongLabel)/m_testSize;
+    m_error = float(nbNotRecognize + nbWrongLabel) / m_testSize;
 
     qCDebug(DIGIKAM_TESTS_LOG) << "nb Not Recognized :" << nbNotRecognize;
     qCDebug(DIGIKAM_TESTS_LOG) << "nb Wrong Label :"    << nbWrongLabel;
@@ -260,10 +260,7 @@ void Benchmark::verifyTestSet()
     qCDebug(DIGIKAM_TESTS_LOG) << "Accuracy :" << (1 - m_error) * 100 << "%"
              << "on total"   << m_trainSize << "training faces, and"
                              << m_testSize << "test faces";
-    if (m_testSize != 0)
-    {
-        qCDebug(DIGIKAM_TESTS_LOG) << "(" << float(elapsedDetection) / m_testSize << "ms/face )";
-    }
+    qCDebug(DIGIKAM_TESTS_LOG) << "(" << float(elapsedDetection) / m_testSize << "ms/face )";
 }
 
 QImage* Benchmark::detect(const QImage& faceImg) const
@@ -333,22 +330,24 @@ bool Benchmark::preprocess(QImage* faceImg, cv::Mat& face) const
         case QImage::Format_RGB32:
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:
-
+        {
             // I think we can ignore premultiplication when converting to grayscale
 
             cvImageWrapper = cv::Mat(croppedFace.height(), croppedFace.width(), CV_8UC4, croppedFace.scanLine(0), croppedFace.bytesPerLine());
             cv::cvtColor(cvImageWrapper, face, CV_RGBA2RGB);
 
             break;
+        }
 
         default:
-
+        {
             croppedFace = croppedFace.convertToFormat(QImage::Format_RGB888);
             face        = cv::Mat(croppedFace.height(), croppedFace.width(), CV_8UC3, croppedFace.scanLine(0), croppedFace.bytesPerLine());
 /*
             cvtColor(cvImageWrapper, cvImage, CV_RGB2GRAY);
 */
             break;
+        }
     }
 
     return true;
