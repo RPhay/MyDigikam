@@ -51,6 +51,18 @@ cppcheck -j$CPU_CORES \
          -DQ_OS_LINUX \
          -DQ_OS_UNIX \
          -DQ_PROCESSOR_X86_64 \
+         -DHAVE_GEOLOCATION \
+         -DHAVE_MEDIA_PLAYER \
+         -DHAVE_QWEBENGINE \
+         -DHAVE_QTMULTIMEDIA \
+         -DHAVE_OPENGL \
+         -DHAVE_MYSQLSUPPORT \
+         -DHAVE_INTERNALMYSQL \
+         -DHAVE_GPHOTO2 \
+         -DHAVE_PANORAMA \
+         -DHAVE_X11 \
+         -DHAVE_DBUS \
+         -DHAVE_LENSFUN \
          --verbose \
          --std=c++17 \
          --library=qt.cfg \
