@@ -48,15 +48,11 @@ class Q_DECL_HIDDEN CalPainter::Private
 {
 public:
 
-    explicit Private()
-      : cancelled  (false),
-        orientation(MetaEngine::ORIENTATION_UNSPECIFIED)
-    {
-    }
+    Private() = default;
 
-    bool       cancelled;
+    bool       cancelled   = false;
 
-    int        orientation;
+    int        orientation = MetaEngine::ORIENTATION_UNSPECIFIED;
 
     QImage     image;
     QUrl       imagePath;
@@ -133,7 +129,7 @@ void CalPainter::paint(int month)
 
     switch (params.imgPos)
     {
-        case (CalParams::Top):
+        case CalParams::Top:
         {
             rImage.setWidth(width);
             rImage.setHeight((int)(height * params.ratio / (params.ratio + 100)));
@@ -155,7 +151,7 @@ void CalPainter::paint(int month)
             break;
         }
 
-        case (CalParams::Left):
+        case CalParams::Left:
         {
             rImage.setHeight(height);
             rImage.setWidth((int)(width * params.ratio / (params.ratio + 100)));
@@ -176,7 +172,7 @@ void CalPainter::paint(int month)
             break;
         }
 
-        case (CalParams::Right):
+        case CalParams::Right:
         {
             rImage.setHeight(height);
             rImage.setWidth((int)(width * params.ratio / (params.ratio + 100)));

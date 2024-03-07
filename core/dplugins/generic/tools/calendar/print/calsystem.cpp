@@ -99,40 +99,64 @@ qint64 CalSystemPrivate::epoch() const
     switch (calendarSystem())
     {
         case CalSystem::GregorianCalendar:
+        {
             return 1721426;  //  0001-01-01 Gregorian
+        }
 
         case CalSystem::CopticCalendar:
+        {
             return 1825030;  //  0001-01-01 ==  0284-08-29 Gregorian
+        }
 
         case CalSystem::EthiopicCalendar:
+        {
             return 1724221;  //  0001-01-01 ==  0008-08-29 Gregorian
+        }
 
         case CalSystem::EthiopicAmeteAlemCalendar:
+        {
             return -284655;  //  0001-01-01 == -5492-08-29 Gregorian
+        }
 
         case CalSystem::IndianNationalCalendar:
+        {
             return 1749994;  //  0000-01-01 == 0078-03-22 Gregorian
+        }
 
         case CalSystem::IslamicCivilCalendar:
+        {
             return 1948440;  //  0001-01-01 == 0622-07-19 Gregorian
+        }
 
         case CalSystem::ISO8601Calendar:
+        {
             return 1721060;  //  0000-01-01 Gregorian
+        }
 
         case CalSystem::JapaneseCalendar:
+        {
             return 1721426;  //  0001-01-01 Gregorian
+        }
 
         case CalSystem::JulianCalendar:
+        {
             return 1721424;  //  0001-01-01 ==  Gregorian
+        }
 
         case CalSystem::ROCCalendar:
+        {
             return 2419403;  //  0001-01-01 ==  1912-01-01 Gregorian
+        }
 
         case CalSystem::ThaiCalendar:
+        {
             return 1522734;  //  0000-01-01 == -0544-01-01 Gregorian
+        }
 
         default:
+        {
             return 0;
+        }
     }
 }
 
@@ -141,40 +165,64 @@ qint64 CalSystemPrivate::earliestValidDate() const
     switch (calendarSystem())
     {
         case CalSystem::GregorianCalendar:
+        {
             return -31738;   // -4800-01-01 Gregorian
+        }
 
         case CalSystem::CopticCalendar:
+        {
             return 1825030;  //  0001-01-01 == 0284-08-29 Gregorian
+        }
 
         case CalSystem::EthiopicCalendar:
+        {
             return 1724221;  //  0001-01-01 == 0008-08-29 Gregorian
+        }
 
         case CalSystem::EthiopicAmeteAlemCalendar:
+        {
             return -284655;  //  0001-01-01 == -5492-08-29 Gregorian
+        }
 
         case CalSystem::IndianNationalCalendar:
+        {
             return 1749994;  //  0000-01-01 == 0078-03-22 Gregorian
+        }
 
         case CalSystem::IslamicCivilCalendar:
+        {
             return 1948440;  //  0001-01-01 == 0622-07-19 Gregorian
+        }
 
         case CalSystem::ISO8601Calendar:
+        {
             return 1721060;  //  0000-01-01 Gregorian
+        }
 
         case CalSystem::JapaneseCalendar:
+        {
             return -31738;   // -4800-01-01 Gregorian
+        }
 
         case CalSystem::JulianCalendar:
+        {
             return -31776;   // -4800-01-01 Julian
+        }
 
         case CalSystem::ROCCalendar:
+        {
             return 2419403;  //  0001-01-01 == 1912-01-01 Gregorian
+        }
 
         case CalSystem::ThaiCalendar:
+        {
             return 1522734;  //  0000-01-01 == -0544-01-01 Gregorian
+        }
 
         default:
+        {
             return 0;
+        }
     }
 }
 
@@ -185,15 +233,21 @@ int CalSystemPrivate::earliestValidYear() const
         case CalSystem::GregorianCalendar:
         case CalSystem::JapaneseCalendar:
         case CalSystem::JulianCalendar:
+        {
             return -4800;
+        }
 
         case CalSystem::IndianNationalCalendar:
         case CalSystem::ISO8601Calendar:
         case CalSystem::ThaiCalendar:
+        {
             return 0;
+        }
 
         default:
+        {
             return 1;
+        }
     }
 }
 
@@ -202,40 +256,64 @@ qint64 CalSystemPrivate::latestValidDate() const
     switch (calendarSystem())
     {
         case CalSystem::GregorianCalendar:
+        {
             return 5373484;  //  9999-12-31 Gregorian
+        }
 
         case CalSystem::CopticCalendar:
+        {
             return 5477164;  //  9999-13-05 == 10283-11-12 Gregorian
+        }
 
         case CalSystem::EthiopicCalendar:
+        {
             return 5376721;  //  9999-13-05 == 10008-11-10 Gregorian
+        }
 
         case CalSystem::EthiopicAmeteAlemCalendar:
+        {
             return 3367114;  //  9999-13-05 ==  4506-09-29 Gregorian
+        }
 
         case CalSystem::IndianNationalCalendar:
+        {
             return 5402054;  //  9999-12-30 == 10078-03-21 Gregorian
+        }
 
         case CalSystem::IslamicCivilCalendar:
+        {
             return 5491751;  //  9999-12-29 == 10323-10-21 Gregorian
+        }
 
         case CalSystem::ISO8601Calendar:
+        {
             return 5373484;  //  9999-12-31 Gregorian
+        }
 
         case CalSystem::JapaneseCalendar:
+        {
             return 5373484;  //  9999-12-31 Gregorian
+        }
 
         case CalSystem::JulianCalendar:
+        {
             return 5373557;  //  9999-12-31 == 10000-03-13 Gregorian
+        }
 
         case CalSystem::ROCCalendar:
+        {
             return 6071462;  //  9999-12-31 == 11910-12-31 Gregorian
+        }
 
         case CalSystem::ThaiCalendar:
+        {
             return 5175158;  //  9999-12-31 ==  9456-12-31 Gregorian
+        }
 
         default:
+        {
             return 0;
+        }
     }
 }
 
@@ -249,13 +327,19 @@ int CalSystemPrivate::yearOffset() const
     switch (calendarSystem())
     {
         case CalSystem::ROCCalendar:
+        {
             return 1911;  // 0001-01-01 == 1912-01-01 Gregorian
+        }
 
         case CalSystem::ThaiCalendar:
+        {
             return -543;  // 0000-01-01 == -544-01-01 Gregorian
+        }
 
         default:
+        {
             return 0;
+        }
     }
 }
 
@@ -266,10 +350,14 @@ int CalSystemPrivate::maxMonthsInYear() const
         case CalSystem::CopticCalendar:
         case CalSystem::EthiopicCalendar:
         case CalSystem::EthiopicAmeteAlemCalendar:
+        {
             return 13;
+        }
 
         default:
+        {
             return 12;
+        }
     }
 }
 
@@ -280,10 +368,14 @@ int CalSystemPrivate::monthsInYear(int /*year*/) const
         case CalSystem::CopticCalendar:
         case CalSystem::EthiopicCalendar:
         case CalSystem::EthiopicAmeteAlemCalendar:
+        {
             return 13;
+        }
 
         default:
+        {
             return 12;
+        }
     }
 }
 
@@ -292,10 +384,14 @@ int CalSystemPrivate::maxDaysInYear() const
     switch (calendarSystem())
     {
         case CalSystem::IslamicCivilCalendar:
+        {
             return 355;
+        }
 
         default:
+        {
             return 366;
+        }
     }
 }
 
@@ -304,10 +400,14 @@ int CalSystemPrivate::daysInYear(int year) const
     switch (calendarSystem())
     {
         case CalSystem::IslamicCivilCalendar:
+        {
             return (isLeapYear(year) ? 355 : 354);
+        }
 
         default:
+        {
             return (isLeapYear(year) ? 366 : 365);
+        }
     }
 }
 
@@ -319,10 +419,14 @@ int CalSystemPrivate::maxDaysInMonth() const
         case CalSystem::EthiopicCalendar:
         case CalSystem::EthiopicAmeteAlemCalendar:
         case CalSystem::IslamicCivilCalendar:
+        {
             return 30;
+        }
 
         default:
+        {
             return 31;
+        }
     }
 }
 
@@ -403,7 +507,9 @@ int CalSystemPrivate::daysInMonth(int year, int month) const
         }
 
         default:
+        {
             return 0;
+        }
     }
 }
 
@@ -414,10 +520,14 @@ bool CalSystemPrivate::hasYearZero() const
         case CalSystem::IndianNationalCalendar:
         case CalSystem::ISO8601Calendar:
         case CalSystem::ThaiCalendar:
+        {
             return true;
+        }
 
         default:
+        {
             return false;
+        }
     }
 }
 
@@ -479,21 +589,31 @@ bool CalSystemPrivate::isLeapYear(int year) const
         case CalSystem::JapaneseCalendar:
         case CalSystem::ROCCalendar:
         case CalSystem::ThaiCalendar:
+        {
             return ((((year % 4) == 0) && ((year % 100) != 0)) || ((year % 400) == 0));
+        }
 
         case CalSystem::CopticCalendar:
         case CalSystem::EthiopicCalendar:
         case CalSystem::EthiopicAmeteAlemCalendar:
+        {
             return ((year % 4) == 3);
+        }
 
         case CalSystem::JulianCalendar:
+        {
             return ((year % 4) == 0);
+        }
 
         case CalSystem::IslamicCivilCalendar:
+        {
             return ((((11 * year) + 14) % 30) < 11);
+        }
 
         default:
+        {
             return false;
+        }
     }
 }
 
@@ -594,7 +714,9 @@ void CalSystemPrivate::julianDayToDate(qint64 jd, int* year, int* month, int* da
         }
 
         default:
+        {
             break;
+        }
     }
 
     if (!hasYearZero() && (yy < 1))
@@ -720,7 +842,9 @@ qint64 CalSystemPrivate::julianDayFromDate(int yr, int mth, int dy) const
         }
 
         default:
+        {
             break;
+        }
     }
 
     return jd;

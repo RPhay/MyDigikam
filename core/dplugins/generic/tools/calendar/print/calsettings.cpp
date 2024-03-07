@@ -60,9 +60,7 @@ class Q_DECL_HIDDEN CalSettings::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QMap<int, QUrl>  monthMap;
     QMap<QDate, Day> special;
@@ -198,6 +196,7 @@ void CalSettings::setDrawLines(bool draw)
     if (params.drawLines != draw)
     {
         params.drawLines = draw;
+
         Q_EMIT settingsChanged();
     }
 }
@@ -207,6 +206,7 @@ void CalSettings::setRatio(int ratio)
     if (params.ratio != ratio)
     {
         params.ratio = ratio;
+
         Q_EMIT settingsChanged();
     }
 }

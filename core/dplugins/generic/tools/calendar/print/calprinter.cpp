@@ -30,19 +30,14 @@ class Q_DECL_HIDDEN CalPrinter::Private
 {
 public:
 
-    explicit Private()
-      : cancelled(false),
-        printer  (nullptr),
-        painter  (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool             cancelled;
+    bool             cancelled = false;
 
     QMap<int, QUrl>  months;
-    QPrinter*        printer;
+    QPrinter*        printer   = nullptr;
 
-    CalPainter*      painter;
+    CalPainter*      painter   = nullptr;
 };
 
 CalPrinter::CalPrinter(QPrinter* const printer,

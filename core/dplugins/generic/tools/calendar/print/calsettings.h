@@ -62,7 +62,7 @@ public:
     int                   height;
     bool                  drawLines;
     float                 ratio;
-    ItemPosition         imgPos;
+    ItemPosition          imgPos;
     QFont                 baseFont;
     int                   year;
 };
