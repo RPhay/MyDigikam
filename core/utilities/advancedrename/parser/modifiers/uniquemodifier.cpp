@@ -37,8 +37,10 @@ UniqueModifier::UniqueModifier()
 {
     addToken(QLatin1String("{unique}"),
              description());
+
     addToken(QLatin1String("{unique:||n||}"),
              i18n("Add a suffix number, ||n|| specifies the number of digits to use"));
+
     addToken(QLatin1String("{unique:||n||,||c||,||0||}"),
              i18n("Add a suffix number, "
                   "||n|| specifies the number of digits to use, "
@@ -46,6 +48,7 @@ UniqueModifier::UniqueModifier()
                   "||a|| optional to include all options for uniqueness, "
                   "||0|| optional to always pad with ||n|| zero digits"));
              QRegularExpression reg(QLatin1String("\\{unique(:(\\d+))?(,([ -~]))?(,(a|0|a0|0a))?\\}"));
+
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }

@@ -66,6 +66,7 @@ QString CaseModifier::parseOperation(ParseSettings& settings, const QRegularExpr
 
 QString CaseModifier::firstupper(const QString& str2Modify)
 {
+    // cppcheck-suppress knownConditionTrueFalse
     if (str2Modify.isNull() || str2Modify.isEmpty())
     {
         return QString();

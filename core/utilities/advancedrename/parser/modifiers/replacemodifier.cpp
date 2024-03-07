@@ -111,6 +111,7 @@ QString ReplaceModifier::parseOperation(ParseSettings& settings, const QRegularE
                                                                                               : Qt::CaseSensitive;
 
     QRegularExpression ro(original);
+
     if (caseType == Qt::CaseInsensitive)
     {
         ro.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
