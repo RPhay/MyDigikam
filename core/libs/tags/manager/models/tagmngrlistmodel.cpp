@@ -213,7 +213,7 @@ bool TagMngrListModel::dropMimeData(const QMimeData* data, Qt::DropAction action
 
     Q_EMIT layoutAboutToBeChanged();
 
-    for (QList<int>::iterator itr = toRemove.end() -1 ; itr > toRemove.begin() -1 ; --itr)
+    for (QList<int>::reverse_iterator itr = toRemove.rbegin() ; itr != toRemove.rend() ; ++itr)
     {
         d->rootItem->deleteChild(*itr);
     }
