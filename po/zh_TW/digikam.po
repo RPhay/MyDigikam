@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 01:32+0000\n"
+"POT-Creation-Date: 2024-03-08 01:33+0000\n"
 "PO-Revision-Date: 2024-02-27 06:11+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -52430,12 +52430,12 @@ msgstr "單一"
 msgid "Add a suffix number to have unique strings in duplicate values"
 msgstr "在數值重複時加入尾數以擁有唯一的字串"
 
-#: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:41
+#: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:42
 #, kde-format
 msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgstr "新增後置數字，||n|| 指定使用的位數"
 
-#: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
+#: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:45
 #, fuzzy, kde-format
 #| msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgid ""
@@ -60354,7 +60354,7 @@ msgstr "切換檔案 <filename>%1</filename> 的鎖定失敗。"
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "切換檔案 <filename>%1</filename> 的鎖定失敗。您要繼續嗎？"
 
-#: core/utilities/import/backend/gpcamera.cpp:1537
+#: core/utilities/import/backend/gpcamera.cpp:1615
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -60365,7 +60365,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1544
+#: core/utilities/import/backend/gpcamera.cpp:1622
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -60385,24 +60385,24 @@ msgstr ""
 "刪除目錄：\"%6\"\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1550
-#: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
-#: core/utilities/import/backend/gpcamera.cpp:1553
-#: core/utilities/import/backend/gpcamera.cpp:1554
-#: core/utilities/import/backend/gpcamera.cpp:1555
+#: core/utilities/import/backend/gpcamera.cpp:1628
+#: core/utilities/import/backend/gpcamera.cpp:1629
+#: core/utilities/import/backend/gpcamera.cpp:1630
+#: core/utilities/import/backend/gpcamera.cpp:1631
+#: core/utilities/import/backend/gpcamera.cpp:1632
+#: core/utilities/import/backend/gpcamera.cpp:1633
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "是"
 
-#: core/utilities/import/backend/gpcamera.cpp:1550
-#: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
-#: core/utilities/import/backend/gpcamera.cpp:1553
-#: core/utilities/import/backend/gpcamera.cpp:1554
-#: core/utilities/import/backend/gpcamera.cpp:1555
+#: core/utilities/import/backend/gpcamera.cpp:1628
+#: core/utilities/import/backend/gpcamera.cpp:1629
+#: core/utilities/import/backend/gpcamera.cpp:1630
+#: core/utilities/import/backend/gpcamera.cpp:1631
+#: core/utilities/import/backend/gpcamera.cpp:1632
+#: core/utilities/import/backend/gpcamera.cpp:1633
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: gphoto backend feature"

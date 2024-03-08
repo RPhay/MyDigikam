@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-07 01:32+0000\n"
+"POT-Creation-Date: 2024-03-08 01:33+0000\n"
 "PO-Revision-Date: 2024-02-27 00:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -51344,13 +51344,13 @@ msgstr ""
 "Añadir un número como sufijo para tener cadenas únicas en los valores "
 "duplicados"
 
-#: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:41
+#: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:42
 #, kde-format
 msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgstr ""
 "Añadir un sufijo numérico, ||n|| indica el número de dígitos que se debe usar"
 
-#: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
+#: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:45
 #, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
@@ -59202,7 +59202,7 @@ msgstr ""
 "No se ha podido cambiar el estado de bloqueo del archivo <b>%1</b>. ¿Desea "
 "continuar?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1537
+#: core/utilities/import/backend/gpcamera.cpp:1615
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -59218,7 +59218,7 @@ msgstr ""
 "Ruta: «%4»\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1544
+#: core/utilities/import/backend/gpcamera.cpp:1622
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -59238,23 +59238,23 @@ msgstr ""
 "Borrar directorios: «%6»\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1550
-#: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
-#: core/utilities/import/backend/gpcamera.cpp:1553
-#: core/utilities/import/backend/gpcamera.cpp:1554
-#: core/utilities/import/backend/gpcamera.cpp:1555
+#: core/utilities/import/backend/gpcamera.cpp:1628
+#: core/utilities/import/backend/gpcamera.cpp:1629
+#: core/utilities/import/backend/gpcamera.cpp:1630
+#: core/utilities/import/backend/gpcamera.cpp:1631
+#: core/utilities/import/backend/gpcamera.cpp:1632
+#: core/utilities/import/backend/gpcamera.cpp:1633
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "sí"
 
-#: core/utilities/import/backend/gpcamera.cpp:1550
-#: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
-#: core/utilities/import/backend/gpcamera.cpp:1553
-#: core/utilities/import/backend/gpcamera.cpp:1554
-#: core/utilities/import/backend/gpcamera.cpp:1555
+#: core/utilities/import/backend/gpcamera.cpp:1628
+#: core/utilities/import/backend/gpcamera.cpp:1629
+#: core/utilities/import/backend/gpcamera.cpp:1630
+#: core/utilities/import/backend/gpcamera.cpp:1631
+#: core/utilities/import/backend/gpcamera.cpp:1632
+#: core/utilities/import/backend/gpcamera.cpp:1633
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
