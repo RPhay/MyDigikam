@@ -31,25 +31,14 @@ class DIGIKAM_EXPORT ExposureSettingsContainer
 
 public:
 
-    explicit ExposureSettingsContainer()
-        : underExposureIndicator(false),
-          overExposureIndicator (false),
-          exposureIndicatorMode (true),
-          underExposurePercent  (1.0),
-          overExposurePercent   (1.0),
-          underExposureColor    (Qt::white),
-          overExposureColor     (Qt::black)
-    {
-    };
+    ExposureSettingsContainer()          = default;
 
-    virtual ~ExposureSettingsContainer()
-    {
-    };
+    virtual ~ExposureSettingsContainer() = default;
 
 public:
 
-    bool   underExposureIndicator;
-    bool   overExposureIndicator;
+    bool   underExposureIndicator   = false;
+    bool   overExposureIndicator    = false;
 
     /**
      * If this option is true, over and under exposure indicators will be displayed
@@ -57,13 +46,13 @@ public:
      * the condition in the same time.
      * Else indicators are turn on when one of color components match the condition.
      */
-    bool   exposureIndicatorMode;
+    bool   exposureIndicatorMode    = true;
 
-    float  underExposurePercent;
-    float  overExposurePercent;
+    float  underExposurePercent     = 1.0;
+    float  overExposurePercent      = 1.0;
 
-    QColor underExposureColor;
-    QColor overExposureColor;
+    QColor underExposureColor       = Qt::white;
+    QColor overExposureColor        = Qt::black;
 
 private:
 

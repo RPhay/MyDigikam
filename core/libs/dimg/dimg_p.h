@@ -116,16 +116,7 @@ class DIGIKAM_EXPORT DImg::Private : public QSharedData
 {
 public:
 
-    explicit Private()
-      : null        (true),
-        alpha       (false),
-        sixteenBit  (false),
-        width       (0),
-        height      (0),
-        data        (nullptr),
-        lanczos_func(nullptr)
-    {
-    }
+    Private() = default;
 
     ~Private()
     {
@@ -135,15 +126,15 @@ public:
 
 public:
 
-    bool                    null;
-    bool                    alpha;
-    bool                    sixteenBit;
+    bool                    null            = true;
+    bool                    alpha           = false;
+    bool                    sixteenBit      = false;
 
-    unsigned int            width;
-    unsigned int            height;
+    unsigned int            width           = 0;
+    unsigned int            height          = 0;
 
-    unsigned char*          data;
-    LANCZOS_DATA_TYPE*      lanczos_func;
+    unsigned char*          data            = nullptr;
+    LANCZOS_DATA_TYPE*      lanczos_func    = nullptr;
 
     MetaEngineData          metaData;
     QMap<QString, QVariant> attributes;

@@ -366,7 +366,7 @@ void DImg::prepareSubPixelAccess()
         return;
     }
 
-    /* Precompute the Lanczos kernel */
+    // Precompute the Lanczos kernel
 
     LANCZOS_DATA_TYPE* lanczos_func = new LANCZOS_DATA_TYPE[LANCZOS_SUPPORT * LANCZOS_SUPPORT * LANCZOS_TABLE_RES];
 
@@ -411,7 +411,7 @@ static inline int normalizeAndClamp(float norm, int sum, int max)
     return r;
 }
 
-#else /* LANCZOS_DATA_FLOAT */
+#else // LANCZOS_DATA_FLOAT
 
 static inline int normalizeAndClamp(int norm, int sum, int max)
 {
@@ -434,7 +434,7 @@ static inline int normalizeAndClamp(int norm, int sum, int max)
     return r;
 }
 
-#endif /* LANCZOS_DATA_FLOAT */
+#endif // LANCZOS_DATA_FLOAT
 
 DColor DImg::getSubPixelColor(float x, float y) const
 {
@@ -500,7 +500,7 @@ DColor DImg::getSubPixelColor(float x, float y) const
         col.setBlue(normalizeAndClamp(norm, sumB, max));
     }
 
-#else /* LANCZOS_DATA_FLOAT */
+#else // LANCZOS_DATA_FLOAT
 
     // Do it in integer arithmetic, it's faster
 
@@ -515,7 +515,7 @@ DColor DImg::getSubPixelColor(float x, float y) const
     int sumG = 0;
     int sumB = 0;
     int _dx  = (int)(x * 4096.0) - (xs << 12);
-    int dy   = (int)(y * 4096.0) - (ys << 12);
+    int dy   = (int)(y * 4096.0) - (ys << 12);      // cppcheck-suppress shiftNegativeLHS
 
     for ( ; ys <= ye ; ++ys, dy -= 4096)
     {
@@ -552,7 +552,7 @@ DColor DImg::getSubPixelColor(float x, float y) const
     col.setGreen(normalizeAndClamp(norm, sumG, max));
     col.setBlue(normalizeAndClamp(norm, sumB, max));
 
-#endif /* LANCZOS_DATA_FLOAT */
+#endif // LANCZOS_DATA_FLOAT
 
     return col;
 }

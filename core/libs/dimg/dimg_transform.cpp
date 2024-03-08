@@ -70,7 +70,7 @@ void DImg::rotate(ANGLE angle)
 
     switch (angle)
     {
-        case (ROT90):
+        case ROT90:
         {
             uint w  = height();
             uint h  = width();
@@ -123,7 +123,7 @@ void DImg::rotate(ANGLE angle)
             break;
         }
 
-        case (ROT180):
+        case ROT180:
         {
             uint w          = width();
             uint h          = height();
@@ -202,7 +202,7 @@ void DImg::rotate(ANGLE angle)
             break;
         }
 
-        case (ROT270):
+        case ROT270:
         {
             uint w  = height();
             uint h  = width();
@@ -283,7 +283,7 @@ void DImg::flip(FLIP direction)
 
     switch (direction)
     {
-        case (HORIZONTAL):
+        case HORIZONTAL:
         {
             uint w  = width();
             uint h  = height();
@@ -346,7 +346,7 @@ void DImg::flip(FLIP direction)
             break;
         }
 
-        case (VERTICAL):
+        case VERTICAL:
         {
             uint w  = width();
             uint h  = height();
@@ -410,7 +410,9 @@ void DImg::flip(FLIP direction)
         }
 
         default:
+        {
             break;
+        }
     }
 }
 

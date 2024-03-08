@@ -53,15 +53,7 @@ class Q_DECL_HIDDEN DImgScaleInfo
 {
 public:
 
-    DImgScaleInfo()
-      : xpoints  (nullptr),
-        ypoints  (nullptr),
-        ypoints16(nullptr),
-        xapoints (nullptr),
-        yapoints (nullptr),
-        xup_yup  (0)
-    {
-    }
+    DImgScaleInfo() = default;
 
     ~DImgScaleInfo()
     {
@@ -72,12 +64,12 @@ public:
         delete [] yapoints;
     }
 
-    int*     xpoints;
-    uint**   ypoints;
-    ullong** ypoints16;
-    int*     xapoints;
-    int*     yapoints;
-    int      xup_yup;
+    int*     xpoints    = nullptr;
+    uint**   ypoints    = nullptr;
+    ullong** ypoints16  = nullptr;
+    int*     xapoints   = nullptr;
+    int*     yapoints   = nullptr;
+    int      xup_yup    = 0;
 };
 
 uint**   dimgCalcYPoints(uint* const src, int sw, int sh, int dh);

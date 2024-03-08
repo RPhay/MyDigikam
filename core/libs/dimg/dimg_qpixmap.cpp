@@ -39,6 +39,7 @@ private:
     {
         QPixmap pix(1, 1);
         QPainter p(&pix);
+
         return (p.paintEngine() && (p.paintEngine()->type() == QPaintEngine::Raster));
     }
 
