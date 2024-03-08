@@ -263,8 +263,8 @@ BUGFIXES:
 240 ==> 481753 - digiKam 8.3 crashes on Fedora 38 / Thumbnail view.
 241 ==> 415845 - Configurable "open with" menu under Windows.
 242 ==> 467805 - Improvement proposal: image thumbnail: right clic open with in context menu.
-243 ==> 
-244 ==> 
+243 ==> 482714 - digiKam crashes some seconds or some minutes after starting it.
+244 ==> 482718 - Add "Save As New Version" to toolbar failed.
 245 ==> 
 246 ==> 
 247 ==> 
