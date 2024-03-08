@@ -61,8 +61,13 @@ cppcheck -j$CPU_CORES \
          -DHAVE_GPHOTO2 \
          -DHAVE_PANORAMA \
          -DHAVE_X11 \
+         -DHAVE_X265 \
          -DHAVE_DBUS \
          -DHAVE_LENSFUN \
+         -DHAVE_HEIF \
+         -DHAVE_EIGEN3 \
+         -DHAVE_JASPER \
+         -DHAVE_IMAGE_MAGICK \
          --verbose \
          --std=c++17 \
          --library=qt.cfg \
