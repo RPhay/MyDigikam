@@ -36,16 +36,12 @@ class Q_DECL_HIDDEN MetaEngineSettings::Private
 {
 public:
 
-    explicit Private ()
-        : mutex      (),
-          configGroup(QLatin1String("Metadata Settings"))
-    {
-    }
+    Private() = default;
 
     MetaEngineSettingsContainer settings;
     QMutex                      mutex;
 
-    const QString               configGroup;
+    const QString               configGroup = QLatin1String("Metadata Settings");
 
 public:
 
@@ -127,8 +123,10 @@ bool MetaEngineSettings::exifRotate() const
 void MetaEngineSettings::setSettings(const MetaEngineSettingsContainer& settings)
 {
     MetaEngineSettingsContainer old = d->setSettings(settings);
+
     Q_EMIT signalMetaEngineSettingsChanged(settings, old);
     Q_EMIT signalSettingsChanged();
+
     d->writeToConfig();
 }
 
@@ -136,6 +134,7 @@ void MetaEngineSettings::readFromConfig()
 {
     MetaEngineSettingsContainer s   = d->readFromConfig();
     MetaEngineSettingsContainer old = d->setSettings(s);
+
     Q_EMIT signalMetaEngineSettingsChanged(s, old);
     Q_EMIT signalSettingsChanged();
 }

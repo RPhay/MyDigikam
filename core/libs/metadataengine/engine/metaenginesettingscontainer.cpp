@@ -14,9 +14,6 @@
 
 #include "metaenginesettingscontainer.h"
 
-// Qt includes
-
-
 // KDE includes
 
 #include <kconfiggroup.h>

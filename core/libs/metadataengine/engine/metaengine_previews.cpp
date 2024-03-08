@@ -33,10 +33,7 @@ class Q_DECL_HIDDEN MetaEnginePreviews::Private
 {
 public:
 
-    explicit Private()
-        : manager(nullptr)
-    {
-    }
+    Private() = default;
 
     ~Private()
     {
@@ -86,7 +83,7 @@ public:
 public:
 
     Exiv2::Image::AutoPtr           image;
-    Exiv2::PreviewManager*          manager;
+    Exiv2::PreviewManager*          manager = nullptr;
     QList<Exiv2::PreviewProperties> properties;
 };
 

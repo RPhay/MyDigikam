@@ -671,6 +671,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             {
                 const char* tmp = comment.c_str();
 
+                // cppcheck-suppress knownConditionTrueFalse
                 if (tmp)
                 {
                     return codec->toUnicode(tmp);
