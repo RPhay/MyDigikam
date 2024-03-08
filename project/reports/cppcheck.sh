@@ -68,6 +68,7 @@ cppcheck -j$CPU_CORES \
          -DHAVE_EIGEN3 \
          -DHAVE_JASPER \
          -DHAVE_IMAGE_MAGICK \
+         -D_XMP_SUPPORT_ \
          --verbose \
          --std=c++17 \
          --library=qt.cfg \
