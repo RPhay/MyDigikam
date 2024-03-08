@@ -55,58 +55,34 @@ public:
 
 public:
 
-    explicit Private()
-      : detectBlur          (nullptr),
-        detectNoise         (nullptr),
-        detectCompression   (nullptr),
-        detectExposure      (nullptr),
-        detectButtonGroup   (nullptr),
-        detectAesthetic     (nullptr),
-        detectBasicFactors  (nullptr),
-        setRejected         (nullptr),
-        setPending          (nullptr),
-        setAccepted         (nullptr),
-        lbl2                (nullptr),
-        lbl3                (nullptr),
-        lbl4                (nullptr),
-        lbl5                (nullptr),
-        lbl6                (nullptr),
-        lbl7                (nullptr),
-        setRejectedThreshold(nullptr),
-        setPendingThreshold (nullptr),
-        setAcceptedThreshold(nullptr),
-        setBlurWeight       (nullptr),
-        setNoiseWeight      (nullptr),
-        setCompressionWeight(nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*    detectBlur;
-    QCheckBox*    detectNoise;
-    QCheckBox*    detectCompression;
-    QCheckBox*    detectExposure;
+    QCheckBox*    detectBlur            = nullptr;
+    QCheckBox*    detectNoise           = nullptr;
+    QCheckBox*    detectCompression     = nullptr;
+    QCheckBox*    detectExposure        = nullptr;
 
-    QButtonGroup* detectButtonGroup;
-    QRadioButton* detectAesthetic;
-    QRadioButton* detectBasicFactors;
+    QButtonGroup* detectButtonGroup     = nullptr;
+    QRadioButton* detectAesthetic       = nullptr;
+    QRadioButton* detectBasicFactors    = nullptr;
 
-    QCheckBox*    setRejected;
-    QCheckBox*    setPending;
-    QCheckBox*    setAccepted;
+    QCheckBox*    setRejected           = nullptr;
+    QCheckBox*    setPending            = nullptr;
+    QCheckBox*    setAccepted           = nullptr;
 
-    QLabel*       lbl2;
-    QLabel*       lbl3;
-    QLabel*       lbl4;
-    QLabel*       lbl5;
-    QLabel*       lbl6;
-    QLabel*       lbl7;
+    QLabel*       lbl2                  = nullptr;
+    QLabel*       lbl3                  = nullptr;
+    QLabel*       lbl4                  = nullptr;
+    QLabel*       lbl5                  = nullptr;
+    QLabel*       lbl6                  = nullptr;
+    QLabel*       lbl7                  = nullptr;
 
-    DIntNumInput* setRejectedThreshold;
-    DIntNumInput* setPendingThreshold;
-    DIntNumInput* setAcceptedThreshold;
-    DIntNumInput* setBlurWeight;
-    DIntNumInput* setNoiseWeight;
-    DIntNumInput* setCompressionWeight;
+    DIntNumInput* setRejectedThreshold  = nullptr;
+    DIntNumInput* setPendingThreshold   = nullptr;
+    DIntNumInput* setAcceptedThreshold  = nullptr;
+    DIntNumInput* setBlurWeight         = nullptr;
+    DIntNumInput* setNoiseWeight        = nullptr;
+    DIntNumInput* setCompressionWeight  = nullptr;
 };
 
 // --------------------------------------------------------

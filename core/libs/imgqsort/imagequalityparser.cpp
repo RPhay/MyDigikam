@@ -219,7 +219,7 @@ void ImageQualityParser::startAnalyse()
 
                 return;
             }
-            else if (((int)finalQuality > d->imq.rejectedThreshold) &&
+            else if (((int)finalQuality > d->imq.rejectedThreshold) &&     // cppcheck-suppress knownConditionTrueFalse
                      ((int)finalQuality <= d->imq.acceptedThreshold))
             {
                 if (d->imq.mediumQPending)

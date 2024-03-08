@@ -42,22 +42,15 @@ class Q_DECL_HIDDEN ImageQualityConfSelector::Private
 {
 public:
 
-    explicit Private()
-      : selButtonGroup(nullptr),
-        selDefault    (nullptr),
-        selCustom     (nullptr),
-        qualitySetup  (nullptr),
-        customView    (nullptr)
-    {
-    }
+    Private() = default;
 
-    QButtonGroup*         selButtonGroup;
-    QRadioButton*         selDefault;
-    QRadioButton*         selCustom;
+    QButtonGroup*         selButtonGroup = nullptr;
+    QRadioButton*         selDefault     = nullptr;
+    QRadioButton*         selCustom      = nullptr;
 
-    QPushButton*          qualitySetup;
+    QPushButton*          qualitySetup   = nullptr;
 
-    ImageQualitySettings* customView;
+    ImageQualitySettings* customView     = nullptr;
 };
 
 ImageQualityConfSelector::ImageQualityConfSelector(QWidget* const parent)

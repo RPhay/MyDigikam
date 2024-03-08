@@ -26,14 +26,10 @@ class Q_DECL_HIDDEN ImageQualityCalculator::Private
 {
 public:
 
-    explicit Private()
-      : threshold_punish(0.9),
-        weight_punish   (20.0)
-    {
-    }
+    Private() = default;
 
-    float                  threshold_punish;
-    float                  weight_punish;
+    float                  threshold_punish = 0.9;
+    float                  weight_punish    = 20.0;
 
     QRecursiveMutex        mutex;
 
