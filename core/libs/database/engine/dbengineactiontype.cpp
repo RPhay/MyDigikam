@@ -24,12 +24,10 @@ class Q_DECL_HIDDEN DbEngineActionType::Private
 {
 
 public:
-    explicit Private()
-        : isValue(false)
-    {
-    }
 
-    bool     isValue;
+    Private() = default;
+
+    bool     isValue    = false;
     QVariant actionValue;
 };
 
@@ -55,6 +53,7 @@ DbEngineActionType DbEngineActionType::value(const QVariant& value)
     DbEngineActionType actionType;
     actionType.setValue(true);
     actionType.setActionValue(value);
+
     return actionType;
 }
 
@@ -63,6 +62,7 @@ DbEngineActionType DbEngineActionType::fieldEntry(const QVariant& actionValue)
     DbEngineActionType actionType;
     actionType.setValue(false);
     actionType.setActionValue(actionValue);
+
     return actionType;
 }
 

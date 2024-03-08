@@ -44,14 +44,10 @@ class Q_DECL_HIDDEN DbEngineConnectionChecker::Private
 
 public:
 
-    explicit Private()
-        : stop(false),
-          success(false)
-    {
-    }
+    Private() = default;
 
-    bool               stop;
-    bool               success;
+    bool               stop     = false;
+    bool               success  = false;
 
     QMutex             mutex;
     QWaitCondition     condVar;
@@ -137,15 +133,12 @@ class Q_DECL_HIDDEN DbEngineGuiErrorHandler::Private
 
 public:
 
-    explicit Private()
-        : checker(nullptr)
-    {
-    }
+    Private() = default;
 
     QPointer<QProgressDialog>  dialog;
 
     DbEngineParameters         parameters;
-    DbEngineConnectionChecker* checker;
+    DbEngineConnectionChecker* checker      = nullptr;
 };
 
 DbEngineGuiErrorHandler::DbEngineGuiErrorHandler(const DbEngineParameters& parameters)
@@ -193,6 +186,7 @@ bool DbEngineGuiErrorHandler::checkDatabaseConnection()
 
     bool result = d->checker->checkSuccessful();
     delete d->checker;
+
     return result;
 }
 

@@ -132,9 +132,9 @@ void DbEngineConfigSettingsLoader::readDBActions(const QDomElement& sqlStatement
 
         DbEngineAction action;
         action.name = dbActionElement.attribute(QLatin1String("name"));
-
-        //qCDebug(DIGIKAM_DBENGINE_LOG) << "Getting attribute " << dbActionElement.attribute("name");
-
+/*
+        qCDebug(DIGIKAM_DBENGINE_LOG) << "Getting attribute " << dbActionElement.attribute("name");
+*/
         if (dbActionElement.hasAttribute(QLatin1String("mode")))
         {
             action.mode = dbActionElement.attribute(QLatin1String("mode"));
@@ -142,7 +142,7 @@ void DbEngineConfigSettingsLoader::readDBActions(const QDomElement& sqlStatement
 
         QDomElement databaseElement = dbActionElement.firstChildElement(QLatin1String("statement"));
 
-        for ( ; !databaseElement.isNull();  databaseElement = databaseElement.nextSiblingElement(QLatin1String("statement")))
+        for ( ; !databaseElement.isNull() ;  databaseElement = databaseElement.nextSiblingElement(QLatin1String("statement")))
         {
             if (!databaseElement.hasAttribute(QLatin1String("mode")))
             {
@@ -231,9 +231,9 @@ bool DbEngineConfigSettingsLoader::readConfig(const QString& filepath, int xmlVe
                             filepath);
         return false;
     }
-
-    //qCDebug(DIGIKAM_DBENGINE_LOG) << "Default DB Node contains: " << defaultDB.text();
-
+/*
+    qCDebug(DIGIKAM_DBENGINE_LOG) << "Default DB Node contains: " << defaultDB.text();
+*/
     QDomElement databaseElement = element.firstChildElement(QLatin1String("database"));
 
     for ( ; !databaseElement.isNull(); databaseElement=databaseElement.nextSiblingElement(QLatin1String("database")))

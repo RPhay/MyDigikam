@@ -32,13 +32,10 @@ class DIGIKAM_EXPORT DbEngineActionElement
 {
 public:
 
-    explicit DbEngineActionElement()
-        : order(0)
-    {
-    }
+    DbEngineActionElement() = default;
 
     QString mode;
-    int     order;
+    int     order       = 0;
     QString statement;
 };
 
@@ -47,6 +44,8 @@ public:
 class DIGIKAM_EXPORT DbEngineAction
 {
 public:
+
+    DbEngineAction() = default;
 
     QString                      name;
     QString                      mode;

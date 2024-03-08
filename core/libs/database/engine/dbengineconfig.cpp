@@ -37,6 +37,7 @@ Q_GLOBAL_STATIC_WITH_ARGS(DbEngineConfigSettingsLoader,
 DbEngineConfigSettings DbEngineConfig::element(const QString& databaseType)
 {
     // Unprotected read-only access? Usually accessed under CoreDbAccess protection anyway
+
     return dbcoreloader->databaseConfigs.value(databaseType);
 }
 

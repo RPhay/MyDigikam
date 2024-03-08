@@ -499,9 +499,13 @@ bool BdEngineBackendPrivate::handleWithErrorHandler(const DbEngineSqlQuery* cons
         {
             case BdEngineBackend::ExecuteNormal:
             case BdEngineBackend::Wait:
+            {
                 return true;
+            }
             case BdEngineBackend::AbortQueries:
+            {
                 return false;
+            }
         }
     }
     else
@@ -589,8 +593,8 @@ BdEngineBackendPrivate::AbstractWaitingUnlocker::AbstractWaitingUnlocker(BdEngin
                                                                          QMutex* const mutex,
                                                                          QWaitCondition* const condVar)
     : AbstractUnlocker(d),
-      mutex(mutex),
-      condVar(condVar)
+      mutex           (mutex),
+      condVar         (condVar)
 {
     // Why two mutexes? The main mutex is recursive and won't work with a condvar.
     // lock condvar mutex (lock only if main mutex is locked)
@@ -616,9 +620,10 @@ bool BdEngineBackendPrivate::AbstractWaitingUnlocker::wait(unsigned long time)
 
 // -----------------------------------------------------------------------------------------
 
-/** This suspends the current thread if the query status as
- *  set by setFlag() is Wait and until the thread is woken with wakeAll().
- *  The CoreDbAccess mutex will be unlocked while waiting.
+/**
+ * This suspends the current thread if the query status as
+ * set by setFlag() is Wait and until the thread is woken with wakeAll().
+ * The CoreDbAccess mutex will be unlocked while waiting.
  */
 void BdEngineBackendPrivate::ErrorLocker::wait()
 {
@@ -680,6 +685,7 @@ DbEngineAction BdEngineBackend::getDBAction(const QString& actionName) const
 BdEngineBackend::DbType BdEngineBackend::databaseType() const
 {
     Q_D(const BdEngineBackend);
+
     return d->parameters.isSQLite() ? DbType::SQLite : DbType::MySQL;
 }
 
@@ -846,6 +852,7 @@ bool BdEngineBackend::checkOrSetWALMode()
 
     execSql(QString::fromUtf8("PRAGMA journal_mode;"), &values);
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (values.isEmpty())
     {
         return false;
@@ -1467,6 +1474,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
     }
 
     exec(query);
+
     return query;
 }
 

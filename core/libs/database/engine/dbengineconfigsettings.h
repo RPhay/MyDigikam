@@ -32,6 +32,8 @@ class DbEngineConfigSettings
 
 public:
 
+    DbEngineConfigSettings() = default;
+
     QString                       databaseID;
     QString                       hostName;
     QString                       port;

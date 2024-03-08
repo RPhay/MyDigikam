@@ -76,6 +76,7 @@ bool DbEngineAccess::checkReadyForUse(QString& error)
     {
         qCDebug(DIGIKAM_COREDB_LOG) << "Database could not be found";
         error = QLatin1String("No valid database type available.");
+
         return false;
     }
 
