@@ -45,18 +45,12 @@ class Q_DECL_HIDDEN BlurFXFilter::Private
 {
 public:
 
-    explicit Private()
-      : blurFXType  (ZoomBlur),
-        distance    (100),
-        level       (45),
-        randomSeed  (RandomNumberGenerator::timeSeed())
-    {
-    }
+    Private() = default;
 
-    int     blurFXType;
-    int     distance;
-    int     level;
-    quint32 randomSeed;
+    int     blurFXType  = ZoomBlur;
+    int     distance    = 100;
+    int     level       = 45;
+    quint32 randomSeed  = RandomNumberGenerator::timeSeed();
 };
 
 BlurFXFilter::BlurFXFilter(QObject* const parent)
@@ -96,44 +90,64 @@ void BlurFXFilter::filterImage()
     switch (d->blurFXType)
     {
         case ZoomBlur:
+        {
             zoomBlur(&m_orgImage, &m_destImage, w / 2, h / 2, d->distance);
             break;
+        }
 
         case RadialBlur:
+        {
             radialBlur(&m_orgImage, &m_destImage, w / 2, h / 2, d->distance);
             break;
+        }
 
         case FarBlur:
+        {
             farBlur(&m_orgImage, &m_destImage, d->distance);
             break;
+        }
 
         case MotionBlur:
+        {
             motionBlur(&m_orgImage, &m_destImage, d->distance, (double)d->level);
             break;
+        }
 
         case SoftenerBlur:
+        {
             softenerBlur(&m_orgImage, &m_destImage);
             break;
+        }
 
         case ShakeBlur:
+        {
             shakeBlur(&m_orgImage, &m_destImage, d->distance);
             break;
+        }
 
         case FocusBlur:
+        {
             focusBlur(&m_orgImage, &m_destImage, w / 2, h / 2, d->distance, d->level * 10);
             break;
+        }
 
         case SmartBlur:
+        {
             smartBlur(&m_orgImage, &m_destImage, d->distance, d->level);
             break;
+        }
 
         case FrostGlass:
+        {
             frostGlass(&m_orgImage, &m_destImage, d->distance);
             break;
+        }
 
         case Mosaic:
+        {
             mosaic(&m_orgImage, &m_destImage, d->distance, d->distance);
             break;
+        }
     }
 }
 
@@ -155,11 +169,12 @@ void BlurFXFilter::zoomBlurMultithreaded(const Args& prm)
 
     double lfRadMax = qSqrt(Height * Height + Width * Width);
 
-    for (uint w = prm.start; runningFlag() && (w < prm.stop); ++w)
+    for (uint w = prm.start ; runningFlag() && (w < prm.stop) ; ++w)
     {
         // ...we enter this loop to sum the bits
 
         // we initialize the variables
+
         sumR = sumG = sumB = nCount = 0;
 
         nw = prm.X - w;
@@ -169,19 +184,22 @@ void BlurFXFilter::zoomBlurMultithreaded(const Args& prm)
         lfAngle     = qAtan2((double)nh, (double)nw);
         lfNewRadius = (lfRadius * prm.Distance) / lfRadMax;
 
-        for (int r = 0; runningFlag() && (r <= lfNewRadius); ++r)
+        for (int r = 0 ; runningFlag() && (r <= lfNewRadius) ; ++r)
         {
             // we need to calc the positions
+
             nw = (int)(prm.X - (lfRadius - r) * cos(lfAngle));
             nh = (int)(prm.Y - (lfRadius - r) * sin(lfAngle));
 
             if (IsInside(Width, Height, nw, nh))
             {
                 // read color
+
                 offset = GetOffset(Width, nw, nh, bytesDepth);
                 color.setColor(data + offset, sixteenBit);
 
                 // we sum the bits
+
                 sumR += color.red();
                 sumG += color.green();
                 sumB += color.blue();
@@ -195,16 +213,21 @@ void BlurFXFilter::zoomBlurMultithreaded(const Args& prm)
         }
 
         // calculate pointer
+
         offset = GetOffset(Width, w, prm.h, bytesDepth);
+
         // read color to preserve alpha
+
         color.setColor(data + offset, sixteenBit);
 
         // now, we have to calc the arithmetic average
+
         color.setRed(sumR   / nCount);
         color.setGreen(sumG / nCount);
         color.setBlue(sumB  / nCount);
 
         // write color to destination
+
         color.setPixel(pResBits + offset);
     }
 }
@@ -235,12 +258,14 @@ void BlurFXFilter::zoomBlur(DImg* const orgImage, DImg* const destImage, int X, 
     int progress;
 
     // We working on full image.
+
     int xMin = 0;
     int xMax = orgImage->width();
     int yMin = 0;
     int yMax = orgImage->height();
 
     // If we working in preview mode, else we using the preview area.
+
     if (pArea.isValid())
     {
         xMin = pArea.x();
@@ -260,7 +285,8 @@ void BlurFXFilter::zoomBlur(DImg* const orgImage, DImg* const destImage, int X, 
     prm.Distance  = Distance;
 
     // we have reached the main loop
-    for (int h = yMin; runningFlag() && (h < yMax); ++h)
+
+    for (int h = yMin ; runningFlag() && (h < yMax) ; ++h)
     {
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
@@ -285,12 +311,15 @@ void BlurFXFilter::zoomBlur(DImg* const orgImage, DImg* const destImage, int X, 
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)(h - yMin) * 100.0) / (yMax - yMin));
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -314,41 +343,47 @@ void BlurFXFilter::radialBlurMultithreaded(const Args& prm)
 
     QScopedArrayPointer<double> nMultArray(new double[prm.Distance * 2 + 1]);
 
-    for (int i = -prm.Distance; i <= prm.Distance; ++i)
+    for (int i = -prm.Distance ; i <= prm.Distance ; ++i)
     {
         nMultArray[i + prm.Distance] = i * ANGLE_RATIO;
     }
 
     // number of added pixels
+
     int nCount = 0;
 
-    for (uint w = prm.start; runningFlag() && (w < prm.stop); ++w)
+    for (uint w = prm.start ; runningFlag() && (w < prm.stop) ; ++w)
     {
         // ...we enter this loop to sum the bits
 
         // we initialize the variables
+
         sumR = sumG = sumB = nCount = 0;
 
-        nw = prm.X - w;
-        nh = prm.Y - prm.h;
+        nw       = prm.X - w;
+        nh       = prm.Y - prm.h;
 
         Radius   = qSqrt(nw * nw + nh * nh);
         AngleRad = qAtan2((double)nh, (double)nw);
 
-        for (int a = -prm.Distance; runningFlag() && (a <= prm.Distance); ++a)
+        for (int a = -prm.Distance ; runningFlag() && (a <= prm.Distance) ; ++a)
         {
             Angle = AngleRad + nMultArray[a + prm.Distance];
+
             // we need to calc the positions
+
             nw = (int)(prm.X - Radius * qCos(Angle));
             nh = (int)(prm.Y - Radius * qSin(Angle));
 
             if (IsInside(Width, Height, nw, nh))
             {
                 // read color
+
                 offset = GetOffset(Width, nw, nh, bytesDepth);
                 color.setColor(data + offset, sixteenBit);
 
                 // we sum the bits
+
                 sumR += color.red();
                 sumG += color.green();
                 sumB += color.blue();
@@ -362,16 +397,21 @@ void BlurFXFilter::radialBlurMultithreaded(const Args& prm)
         }
 
         // calculate pointer
+
         offset = GetOffset(Width, w, prm.h, bytesDepth);
+
         // read color to preserve alpha
+
         color.setColor(data + offset, sixteenBit);
 
         // now, we have to calc the arithmetic average
+
         color.setRed(sumR   / nCount);
         color.setGreen(sumG / nCount);
         color.setBlue(sumB  / nCount);
 
         // write color to destination
+
         color.setPixel(pResBits + offset);
     }
 }
@@ -402,12 +442,14 @@ void BlurFXFilter::radialBlur(DImg* const orgImage, DImg* const destImage, int X
     int progress;
 
     // We working on full image.
+
     int xMin = 0;
     int xMax = orgImage->width();
     int yMin = 0;
     int yMax = orgImage->height();
 
     // If we working in preview mode, else we using the preview area.
+
     if (pArea.isValid())
     {
         xMin = pArea.x();
@@ -428,7 +470,7 @@ void BlurFXFilter::radialBlur(DImg* const orgImage, DImg* const destImage, int X
 
     // we have reached the main loop
 
-    for (int h = yMin; runningFlag() && (h < yMax); ++h)
+    for (int h = yMin ; runningFlag() && (h < yMax) ; ++h)
     {
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
@@ -453,12 +495,15 @@ void BlurFXFilter::radialBlur(DImg* const orgImage, DImg* const destImage, int X
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)(h - yMin) * 100.0) / (yMax - yMin));
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -495,10 +540,10 @@ void BlurFXFilter::farBlur(DImg* const orgImage, DImg* const destImage, int Dist
 
     QScopedArrayPointer<int> nKern(new int[Distance * 2 + 1]);
 
-    for (int i = 0; i < Distance * 2 + 1; ++i)
+    for (int i = 0 ; i < Distance * 2 + 1 ; ++i)
     {
         // the first element is 3
-        if (i == 0)
+        if      (i == 0)
         {
             nKern[i] = 2;
         }
@@ -520,6 +565,7 @@ void BlurFXFilter::farBlur(DImg* const orgImage, DImg* const destImage, int Dist
     }
 
     // now, we apply a convolution with kernel
+
     MakeConvolution(orgImage, destImage, Distance, nKern.data());
 }
 
@@ -536,15 +582,18 @@ void BlurFXFilter::motionBlurMultithreaded(const Args& prm)
     DColor color;
     int offset, sumR, sumG, sumB, nw, nh;
 
-    for (uint w = prm.start; runningFlag() && (w < prm.stop); ++w)
+    for (uint w = prm.start ; runningFlag() && (w < prm.stop) ; ++w)
     {
         // we initialize the variables
+
         sumR = sumG = sumB = 0;
 
         // ...we enter this loop to sum the bits
-        for (int a = -prm.Distance; runningFlag() && (a <= prm.Distance); ++a)
+
+        for (int a = -prm.Distance ; runningFlag() && (a <= prm.Distance) ; ++a)
         {
             // we need to calc the positions
+
             nw = w     + prm.lpXArray[a + prm.Distance];
             nh = prm.h + prm.lpYArray[a + prm.Distance];
 
@@ -552,6 +601,7 @@ void BlurFXFilter::motionBlurMultithreaded(const Args& prm)
             color.setColor(data + offset, sixteenBit);
 
             // we sum the bits
+
             sumR += color.red();
             sumG += color.green();
             sumB += color.blue();
@@ -563,16 +613,21 @@ void BlurFXFilter::motionBlurMultithreaded(const Args& prm)
         }
 
         // calculate pointer
+
         offset = GetOffset(Width, w, prm.h, bytesDepth);
+
         // read color to preserve alpha
+
         color.setColor(data + offset, sixteenBit);
 
         // now, we have to calc the arithmetic average
+
         color.setRed(sumR   / nCount);
         color.setGreen(sumG / nCount);
         color.setBlue(sumB  / nCount);
 
         // write color to destination
+
         color.setPixel(pResBits + offset);
     }
 }
@@ -600,23 +655,27 @@ void BlurFXFilter::motionBlur(DImg* const orgImage, DImg* const destImage, int D
     int progress;
 
     // we try to avoid division by 0 (zero)
+
     if (Angle == 0.0)
     {
         Angle = 360.0;
     }
 
     // we initialize cos and sin for a best performance
+
     double nAngX = cos((2.0 * M_PI) / (360.0 / Angle));
     double nAngY = sin((2.0 * M_PI) / (360.0 / Angle));
 
     // total of bits to be taken is given by this formula
+
     int nCount = Distance * 2 + 1;
 
     // we will alloc size and calc the possible results
+
     QScopedArrayPointer<int> lpXArray(new int[nCount]);
     QScopedArrayPointer<int> lpYArray(new int[nCount]);
 
-    for (int i = 0; i < nCount; ++i)
+    for (int i = 0 ; i < nCount ; ++i)
     {
         lpXArray[i] = lround((double)(i - Distance) * nAngX);
         lpYArray[i] = lround((double)(i - Distance) * nAngY);
@@ -635,7 +694,7 @@ void BlurFXFilter::motionBlur(DImg* const orgImage, DImg* const destImage, int D
 
     // we have reached the main loop
 
-    for (uint h = 0; runningFlag() && (h < orgImage->height()); ++h)
+    for (uint h = 0 ; runningFlag() && (h < orgImage->height()) ; ++h)
     {
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
@@ -659,12 +718,15 @@ void BlurFXFilter::motionBlur(DImg* const orgImage, DImg* const destImage, int D
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 100.0) / orgImage->height());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -688,7 +750,7 @@ void BlurFXFilter::softenerBlurMultithreaded(const Args& prm)
 
     int grayLimit = sixteenBit ? 32767 : 127;
 
-    for (uint w = prm.start; runningFlag() && (w < prm.stop); ++w)
+    for (uint w = prm.start ; runningFlag() && (w < prm.stop) ; ++w)
     {
         SomaR = SomaG = SomaB = 0;
 
@@ -700,9 +762,10 @@ void BlurFXFilter::softenerBlurMultithreaded(const Args& prm)
         if (Gray > grayLimit)
         {
             // 7x7
-            for (int a = -3; runningFlag() && (a <= 3); ++a)
+
+            for (int a = -3 ; runningFlag() && (a <= 3) ; ++a)
             {
-                for (int b = -3; runningFlag() && (b <= 3); ++b)
+                for (int b = -3 ; runningFlag() && (b <= 3) ; ++b)
                 {
                     if ((((int)prm.h + a) < 0) || (((int)w + b) < 0))
                     {
@@ -723,6 +786,7 @@ void BlurFXFilter::softenerBlurMultithreaded(const Args& prm)
             }
 
             // 7*7 = 49
+
             color.setRed(SomaR   / 49);
             color.setGreen(SomaG / 49);
             color.setBlue(SomaB  / 49);
@@ -731,9 +795,10 @@ void BlurFXFilter::softenerBlurMultithreaded(const Args& prm)
         else
         {
             // 3x3
-            for (int a = -1; runningFlag() && (a <= 1); ++a)
+
+            for (int a = -1 ; runningFlag() && (a <= 1) ; ++a)
             {
-                for (int b = -1; runningFlag() && (b <= 1); ++b)
+                for (int b = -1 ; runningFlag() && (b <= 1) ; ++b)
                 {
                     if ((((int)prm.h + a) < 0) || (((int)w + b) < 0))
                     {
@@ -754,6 +819,7 @@ void BlurFXFilter::softenerBlurMultithreaded(const Args& prm)
             }
 
             // 3*3 = 9
+
             color.setRed(SomaR   / 9);
             color.setGreen(SomaG / 9);
             color.setBlue(SomaB  / 9);
@@ -785,7 +851,7 @@ void BlurFXFilter::softenerBlur(DImg* const orgImage, DImg* const destImage)
 
     // we have reached the main loop
 
-    for (uint h = 0; runningFlag() && (h < orgImage->height()); ++h)
+    for (uint h = 0 ; runningFlag() && (h < orgImage->height()) ; ++h)
     {
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
@@ -810,12 +876,15 @@ void BlurFXFilter::softenerBlur(DImg* const orgImage, DImg* const destImage)
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 100.0) / orgImage->height());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -834,7 +903,7 @@ void BlurFXFilter::shakeBlurStage1Multithreaded(const Args& prm)
     int offset, offsetLayer;
     int nw, nh;
 
-    for (uint w = prm.start; runningFlag() && (w < prm.stop); ++w)
+    for (uint w = prm.start ; runningFlag() && (w < prm.stop) ; ++w)
     {
         offsetLayer = GetOffset(Width, w, prm.h, bytesDepth);
 
@@ -871,18 +940,23 @@ void BlurFXFilter::shakeBlurStage2Multithreaded(const Args& prm)
     DColor color, color1, color2, color3, color4;
     int offset;
 
-    for (uint w = prm.start; runningFlag() && (w < prm.stop); ++w)
+    for (uint w = prm.start ; runningFlag() && (w < prm.stop) ; ++w)
     {
         offset = GetOffset(Width, w, prm.h, bytesDepth);
+
         // read original data to preserve alpha
+
         color.setColor(data + offset, sixteenBit);
+
         // read colors from all four layers
+
         color1.setColor(prm.layer1 + offset, sixteenBit);
         color2.setColor(prm.layer2 + offset, sixteenBit);
         color3.setColor(prm.layer3 + offset, sixteenBit);
         color4.setColor(prm.layer4 + offset, sixteenBit);
 
         // set color components of resulting color
+
         color.setRed((color1.red()     + color2.red()   + color3.red()   + color4.red())   / 4);
         color.setGreen((color1.green() + color2.green() + color3.green() + color4.green()) / 4);
         color.setBlue((color1.blue()   + color2.blue()  + color3.blue()  + color4.blue())  / 4);
@@ -927,7 +1001,7 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
 
     // we have reached the main loop
 
-    for (uint h = 0; runningFlag() && (h < orgImage->height()); ++h)
+    for (uint h = 0 ; runningFlag() && (h < orgImage->height()) ; ++h)
     {
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
@@ -952,12 +1026,15 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 50.0) / orgImage->height());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -965,7 +1042,7 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
 
     tasks.clear();
 
-    for (uint h = 0; runningFlag() && (h < orgImage->height()); ++h)
+    for (uint h = 0 ; runningFlag() && (h < orgImage->height()) ; ++h)
     {
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
@@ -990,12 +1067,15 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(50.0 + ((double)h * 50.0) / orgImage->height());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -1013,6 +1093,7 @@ void BlurFXFilter::focusBlurMultithreaded(const Args& prm)
     uchar* ptr = nullptr;
 
     // get composer for default blending
+
     DColorComposer* const composer = DColorComposer::getComposer(DColorComposer::PorterDuffNone);
 
     int Width       = prm.orgImage->width();
@@ -1024,7 +1105,7 @@ void BlurFXFilter::focusBlurMultithreaded(const Args& prm)
     int nw = 0;
     int nh = prm.Y - prm.h;
 
-    for (uint w = prm.start; runningFlag() && (w < prm.stop); ++w)
+    for (uint w = prm.start ; runningFlag() && (w < prm.stop) ; ++w)
     {
         nw = prm.X - w;
 
@@ -1040,12 +1121,14 @@ void BlurFXFilter::focusBlurMultithreaded(const Args& prm)
         }
 
         // Read color values
+
         offset = GetOffset(Width, w, prm.h, bytesDepth);
         ptr    = pResBits + offset;
         colorOrgImage.setColor(data + offset, sixteenBit);
         colorBlurredImage.setColor(ptr, sixteenBit);
 
         // Preserve alpha
+
         alpha = colorOrgImage.alpha();
 
         // In normal mode, the image is focused in the middle
@@ -1053,26 +1136,41 @@ void BlurFXFilter::focusBlurMultithreaded(const Args& prm)
         // In inverse mode, the image is more focused towards the edge
         // and less focused in the middle.
         // This is achieved by swapping src and dest while blending.
+
         if (prm.bInversed)
         {
             // set blending alpha value as src alpha. Original value is stored above.
+
             colorOrgImage.setAlpha(nBlendFactor);
+
             // compose colors, writing to dest - colorBlurredImage
+
             composer->compose(colorBlurredImage, colorOrgImage);
+
             // restore alpha
+
             colorBlurredImage.setAlpha(alpha);
+
             // write color to destination
+
             colorBlurredImage.setPixel(ptr);
         }
         else
         {
             // set blending alpha value as src alpha. Original value is stored above.
+
             colorBlurredImage.setAlpha(nBlendFactor);
+
             // compose colors, writing to dest - colorOrgImage
+
             composer->compose(colorOrgImage, colorBlurredImage);
+
             // restore alpha
+
             colorOrgImage.setAlpha(alpha);
+
             // write color to destination
+
             colorOrgImage.setPixel(ptr);
         }
     }
@@ -1194,7 +1292,7 @@ void BlurFXFilter::focusBlur(DImg* const orgImage, DImg* const destImage,
 
         progress = (int)(80.0 + ((double)(h - yMin) * 20.0) / (yMax - yMin));
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -1216,28 +1314,35 @@ void BlurFXFilter::smartBlurStage1Multithreaded(const Args& prm)
     for (uint w = prm.start ; runningFlag() && (w < prm.stop) ; ++w)
     {
         // we initialize the variables
+
         sumR = sumG = sumB = nCount = 0;
 
         // read color
+
         offset = GetOffset(Width, w, prm.h, bytesDepth);
         color.setColor(data + offset, sixteenBit);
 
         // ...we enter this loop to sum the bits
+
         for (int a = -prm.Radius ; runningFlag() && (a <= prm.Radius) ; ++a)
         {
             // verify if is inside the rect
+
             if (IsInside(Width, Height, w + a, prm.h))
             {
                 // read color
+
                 loopOffset = GetOffset(Width, w + a, prm.h, bytesDepth);
                 radiusColor.setColor(data + loopOffset, sixteenBit);
 
                 // now, we have to check if is inside the sensibility filter
+
                 if (IsColorInsideTheRange(color.red(), color.green(), color.blue(),
                                           radiusColor.red(), radiusColor.green(), radiusColor.blue(),
                                           prm.StrengthRange))
                 {
                     // finally we sum the bits
+
                     sumR += radiusColor.red();
                     sumG += radiusColor.green();
                     sumB += radiusColor.blue();
@@ -1245,12 +1350,14 @@ void BlurFXFilter::smartBlurStage1Multithreaded(const Args& prm)
                 else
                 {
                     // finally we sum the bits
+
                     sumR += color.red();
                     sumG += color.green();
                     sumB += color.blue();
                 }
 
                 // increment counter
+
                 ++nCount;
             }
         }
@@ -1261,11 +1368,13 @@ void BlurFXFilter::smartBlurStage1Multithreaded(const Args& prm)
         }
 
         // now, we have to calc the arithmetic average
+
         color.setRed(sumR   / nCount);
         color.setGreen(sumG / nCount);
         color.setBlue(sumB  / nCount);
 
         // write color to destination
+
         color.setPixel(prm.pBlur + offset);
     }
 }
@@ -1286,29 +1395,37 @@ void BlurFXFilter::smartBlurStage2Multithreaded(const Args& prm)
     for (uint h = prm.start ; runningFlag() && (h < prm.stop) ; ++h)
     {
         // we initialize the variables
+
         sumR = sumG = sumB = nCount = 0;
 
         // read color
+
         offset = GetOffset(Width, prm.w, h, bytesDepth);
         color.setColor(data + offset, sixteenBit);
 
         // ...we enter this loop to sum the bits
+
         for (int a = -prm.Radius ; runningFlag() && (a <= prm.Radius) ; ++a)
         {
             // verify if is inside the rect
+
             if (IsInside(Width, Height, prm.w, h + a))
             {
                 // read color
+
                 loopOffset = GetOffset(Width, prm.w, h + a, bytesDepth);
                 radiusColor.setColor(data + loopOffset, sixteenBit);
 
                 // now, we have to check if is inside the sensibility filter
+
                 if (IsColorInsideTheRange(color.red(), color.green(), color.blue(),
                                           radiusColor.red(), radiusColor.green(), radiusColor.blue(),
                                           prm.StrengthRange))
                 {
                     radiusColorBlur.setColor(prm.pBlur + loopOffset, sixteenBit);
+
                     // finally we sum the bits
+
                     sumR += radiusColorBlur.red();
                     sumG += radiusColorBlur.green();
                     sumB += radiusColorBlur.blue();
@@ -1316,12 +1433,14 @@ void BlurFXFilter::smartBlurStage2Multithreaded(const Args& prm)
                 else
                 {
                     // finally we sum the bits
+
                     sumR += color.red();
                     sumG += color.green();
                     sumB += color.blue();
                 }
 
                 // increment counter
+
                 ++nCount;
             }
         }
@@ -1332,11 +1451,13 @@ void BlurFXFilter::smartBlurStage2Multithreaded(const Args& prm)
         }
 
         // now, we have to calc the arithmetic average
+
         color.setRed(sumR   / nCount);
         color.setGreen(sumG / nCount);
         color.setBlue(sumB  / nCount);
 
         // write color to destination
+
         color.setPixel(pResBits + offset);
     }
 }
@@ -1415,12 +1536,15 @@ void BlurFXFilter::smartBlur(DImg* const orgImage, DImg* const destImage, int Ra
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 50.0) / orgImage->height());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -1455,12 +1579,15 @@ void BlurFXFilter::smartBlur(DImg* const orgImage, DImg* const destImage, int Ra
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(50.0 + ((double)w * 50.0) / orgImage->width());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -1499,12 +1626,14 @@ void BlurFXFilter::frostGlass(DImg* const orgImage, DImg* const destImage, int F
     int offset;
 
     // Randomize.
+
     RandomNumberGenerator generator;
     generator.seed(d->randomSeed);
 
     int range = sixteenBit ? 65535 : 255;
 
     // it is a huge optimization to allocate these here once
+
     QScopedArrayPointer<uchar> IntensityCount(new uchar[range + 1]);
     QScopedArrayPointer<uint> AverageColorR(new uint[range + 1]);
     QScopedArrayPointer<uint> AverageColorG(new uint[range + 1]);
@@ -1515,22 +1644,27 @@ void BlurFXFilter::frostGlass(DImg* const orgImage, DImg* const destImage, int F
         for (w = 0; runningFlag() && (w < Width); ++w)
         {
             offset = GetOffset(Width, w, h, bytesDepth);
+
             // read color to preserve alpha
+
             color.setColor(data + offset, sixteenBit);
 
             // get random color from surrounding of w|h
+
             color = RandomColor(data, Width, Height, sixteenBit, bytesDepth,
                                 w, h, Frost, color.alpha(), generator, range, IntensityCount.data(),
                                 AverageColorR.data(), AverageColorG.data(), AverageColorB.data());
 
             // write color to destination
+
             color.setPixel(pResBits + offset);
         }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 100.0) / Height);
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -1563,9 +1697,11 @@ void BlurFXFilter::mosaicMultithreaded(const Args& prm)
             for (uint subh = prm.h; runningFlag() && (subh <= prm.h + prm.SizeH); ++subh)
             {
                 // if is inside...
+
                 if (IsInside(Width, Height, subw, subh))
                 {
                     // set color
+
                     offset = GetOffset(Width, subw, subh, bytesDepth);
                     color.setPixel(pResBits + offset);
                 }
@@ -1594,6 +1730,7 @@ void BlurFXFilter::mosaic(DImg* const orgImage, DImg* const destImage, int SizeW
     int progress;
 
     // we need to check for valid values
+
     if (SizeW < 1)
     {
         SizeW = 1;
@@ -1620,7 +1757,7 @@ void BlurFXFilter::mosaic(DImg* const orgImage, DImg* const destImage, int SizeW
 
     // this loop will never look for transparent colors
 
-    for (uint h = 0; runningFlag() && (h < orgImage->height()); h += SizeH)
+    for (uint h = 0 ; runningFlag() && (h < orgImage->height()) ; h += SizeH)
     {
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
@@ -1644,12 +1781,15 @@ void BlurFXFilter::mosaic(DImg* const orgImage, DImg* const destImage, int SizeW
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 100.0) / orgImage->height());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -1681,14 +1821,15 @@ DColor BlurFXFilter::RandomColor(uchar* const Bits, int Width, int Height, bool 
 
     // For 16 bit we have a problem here because this takes 255 times longer,
     // and the algorithm is really slow for 16 bit, but I think this cannot be avoided.
+
     memset(IntensityCount, 0, (range + 1) * sizeof(uchar));
     memset(AverageColorR,  0, (range + 1) * sizeof(uint));
     memset(AverageColorG,  0, (range + 1) * sizeof(uint));
     memset(AverageColorB,  0, (range + 1) * sizeof(uint));
 
-    for (w = X - Radius; runningFlag() && (w <= X + Radius); ++w)
+    for (w = X - Radius ; runningFlag() && (w <= X + Radius) ; ++w)
     {
-        for (h = Y - Radius; runningFlag() && (h <= Y + Radius); ++h)
+        for (h = Y - Radius ; runningFlag() && (h <= Y + Radius) ; ++h)
         {
             if ((w >= 0) && (w < Width) && (h >= 0) && (h < Height))
             {
@@ -1715,6 +1856,7 @@ DColor BlurFXFilter::RandomColor(uchar* const Bits, int Width, int Height, bool 
     }
 
     // check for runningFlag here before entering the do loop (will crash with SIGFPE otherwise)
+
     if (!runningFlag())
     {
         return DColor(0, 0, 0, 0, sixteenBit);
@@ -1735,13 +1877,14 @@ DColor BlurFXFilter::RandomColor(uchar* const Bits, int Width, int Height, bool 
             count += IntensityCount[Index];
             ++Index;
         }
-        while (runningFlag() && (count < RandNumber));
+        while (runningFlag() && (count < RandNumber)); // cppcheck-suppress knownConditionTrueFalse
 
         J = Index - 1;
         ++ErrorCount;
     }
-    while (runningFlag() && (IntensityCount[J] == 0) && (ErrorCount <= counter));
+    while (runningFlag() && (IntensityCount[J] == 0) && (ErrorCount <= counter)); // cppcheck-suppress knownConditionTrueFalse
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (!runningFlag())
     {
         return DColor(0, 0, 0, 0, sixteenBit);
@@ -1791,28 +1934,33 @@ void BlurFXFilter::MakeConvolutionStage1Multithreaded(const Args& prm)
     DColor color;
     int offset;
 
-    for (uint w = prm.start; runningFlag() && (w < prm.stop); ++w)
+    for (uint w = prm.start ; runningFlag() && (w < prm.stop) ; ++w)
     {
         // initialize the variables
+
         nSumR = nSumG = nSumB = nCount = 0;
 
         // first of all, we need to blur the horizontal lines
 
-        for (n = -prm.Radius; runningFlag() && (n <= prm.Radius); ++n)
+        for (n = -prm.Radius ; runningFlag() && (n <= prm.Radius) ; ++n)
         {
             // if is inside...
+
             if (IsInside(Width, Height, w + n, prm.h))
             {
                 // read color from orgImage
+
                 offset = GetOffset(Width, w + n, prm.h, bytesDepth);
                 color.setColor(data + offset, sixteenBit);
 
                 // finally, we sum the pixels using a method similar to assigntables
+
                 nSumR += prm.arrMult[n + prm.Radius][color.red()];
                 nSumG += prm.arrMult[n + prm.Radius][color.green()];
                 nSumB += prm.arrMult[n + prm.Radius][color.blue()];
 
                 // we need to add the kernel value to the counter
+
                 nCount += prm.Kernel[n + prm.Radius];
             }
         }
@@ -1823,11 +1971,15 @@ void BlurFXFilter::MakeConvolutionStage1Multithreaded(const Args& prm)
         }
 
         // calculate pointer
+
         offset = GetOffset(Width, w, prm.h, bytesDepth);
+
         // read color from orgImage to preserve alpha
+
         color.setColor(data + offset, sixteenBit);
 
         // now, we have to calc the arithmetic average
+
         if (sixteenBit)
         {
             color.setRed(CLAMP065535(nSumR   / nCount));
@@ -1842,6 +1994,7 @@ void BlurFXFilter::MakeConvolutionStage1Multithreaded(const Args& prm)
         }
 
         // write color to blur bits
+
         color.setPixel(prm.pBlur + offset);
     }
 }
@@ -1861,27 +2014,33 @@ void BlurFXFilter::MakeConvolutionStage2Multithreaded(const Args& prm)
     DColor color;
     int offset;
 
-    for (uint h = prm.start; runningFlag() && (h < prm.stop); ++h)
+    for (uint h = prm.start ; runningFlag() && (h < prm.stop) ; ++h)
     {
         // initialize the variables
+
         nSumR = nSumG = nSumB = nCount = 0;
 
         // first of all, we need to blur the vertical lines
+
         for (n = -prm.Radius; runningFlag() && (n <= prm.Radius); ++n)
         {
             // if is inside...
+
             if (IsInside(Width, Height, prm.w, h + n))
             {
                 // read color from blur bits
+
                 offset = GetOffset(Width, prm.w, h + n, bytesDepth);
                 color.setColor(prm.pBlur + offset, sixteenBit);
 
                 // finally, we sum the pixels using a method similar to assigntables
+
                 nSumR += prm.arrMult[n + prm.Radius][color.red()];
                 nSumG += prm.arrMult[n + prm.Radius][color.green()];
                 nSumB += prm.arrMult[n + prm.Radius][color.blue()];
 
                 // we need to add the kernel value to the counter
+
                 nCount += prm.Kernel[n + prm.Radius];
             }
         }
@@ -1892,11 +2051,15 @@ void BlurFXFilter::MakeConvolutionStage2Multithreaded(const Args& prm)
         }
 
         // calculate pointer
+
         offset = GetOffset(Width, prm.w, h, bytesDepth);
+
         // read color from orgImage to preserve alpha
+
         color.setColor(data + offset, sixteenBit);
 
         // now, we have to calc the arithmetic average
+
         if (sixteenBit)
         {
             color.setRed(CLAMP065535(nSumR   / nCount));
@@ -1911,6 +2074,7 @@ void BlurFXFilter::MakeConvolutionStage2Multithreaded(const Args& prm)
         }
 
         // write color to destination
+
         color.setPixel(pOutBits + offset);
     }
 }
@@ -1949,9 +2113,9 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
 
     int** const arrMult = Alloc2DArray(nKernelWidth, range);
 
-    for (int i = 0; i < nKernelWidth; ++i)
+    for (int i = 0 ; i < nKernelWidth ; ++i)
     {
-        for (int j = 0; j < range; ++j)
+        for (int j = 0 ; j < range ; ++j)
         {
             arrMult[i][j] = j * Kernel[i];
         }
@@ -1971,7 +2135,7 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
 
     // Now, we enter in the first loop
 
-    for (uint h = 0; runningFlag() && (h < orgImage->height()); ++h)
+    for (uint h = 0 ; runningFlag() && (h < orgImage->height()) ; ++h)
     {
         for (int j = 0 ; runningFlag() && (j < valsw.count()-1) ; ++j)
         {
@@ -1996,12 +2160,15 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 50.0) / orgImage->height());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -2011,7 +2178,7 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
 
     tasks.clear();
 
-    for (uint w = 0; runningFlag() && (w < orgImage->width()); ++w)
+    for (uint w = 0 ; runningFlag() && (w < orgImage->width()) ; ++w)
     {
         for (int j = 0 ; runningFlag() && (j < valsh.count()-1) ; ++j)
         {
@@ -2036,18 +2203,22 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(50.0 + ((double)w * 50.0) / orgImage->width());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
     }
 
     // now, we must free memory
+
     Free2DArray(arrMult, nKernelWidth);
 }
 

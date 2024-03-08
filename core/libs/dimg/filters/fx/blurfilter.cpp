@@ -34,28 +34,24 @@ class Q_DECL_HIDDEN BlurFilter::Private
 {
 public:
 
-    explicit Private()
-      : radius        (3),
-        globalProgress(0)
-    {
-    }
+    Private() = default;
 
-    int    radius;
-    int    globalProgress;
+    int    radius         = 3;
+    int    globalProgress = 0;
 
     QMutex lock;
 };
 
 BlurFilter::BlurFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 BlurFilter::BlurFilter(DImg* const orgImage, QObject* const parent, int radius)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("GaussianBlur")),
-      d(new Private)
+      d                 (new Private)
 {
     d->radius = radius;
     initFilter();
@@ -82,6 +78,7 @@ BlurFilter::BlurFilter(DImgThreadedFilter* const parentFilter,
 BlurFilter::~BlurFilter()
 {
     cancelFilter();
+
     delete d;
 }
 
@@ -114,6 +111,7 @@ void BlurFilter::blurMultithreaded(uint start, uint stop)
         my = y - radius;
         mh = (radius << 1) + 1;
 
+        // cppcheck-suppress knownConditionTrueFalse
         if (my < 0)
         {
             mh += my;
@@ -246,6 +244,7 @@ void BlurFilter::filterImage()
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Radius out of range...";
         m_destImage = m_orgImage;
+
         return;
     }
 

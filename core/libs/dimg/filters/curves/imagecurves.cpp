@@ -155,6 +155,7 @@ ImageCurves::~ImageCurves()
 ImageCurves& ImageCurves::operator=(const ImageCurves& other)
 {
     d = other.d;
+
     return *this;
 }
 
@@ -204,6 +205,7 @@ void ImageCurves::fillFromOtherCurves(const ImageCurves* const otherCurves)
 
     // other curve is 8 bit and this curve is 16 bit
 
+    // cppcheck-suppress knownConditionTrueFalse
     else if (isSixteenBits() && !otherCurves->isSixteenBits())
     {
         //qCDebug(DIGIKAM_DIMG_LOG) << "This curve is 16 bit and the other is 8 bit";
@@ -244,6 +246,7 @@ void ImageCurves::fillFromOtherCurves(const ImageCurves* const otherCurves)
 
     // other curve is 16 bit and this is 8 bit
 
+    // cppcheck-suppress knownConditionTrueFalse
     else if (!isSixteenBits() && otherCurves->isSixteenBits())
     {
         //qCDebug(DIGIKAM_DIMG_LOG) << "This curve is 8 bit and the other is 16 bit";
@@ -892,6 +895,7 @@ CurvesContainer ImageCurves::getContainer() const
         if ((type = getCurveType(i)) == CURVE_FREE)
         {
             type = CURVE_FREE;
+
             break;
         }
     }
@@ -979,9 +983,10 @@ void ImageCurves::setCurveValue(int channel, int bin, int val)
 
 void ImageCurves::setCurveValues(int channel, const QPolygon& vals)
 {
-    //qCDebug(DIGIKAM_DIMG_LOG) << "vals size: " << vals.size();
-    //qCDebug(DIGIKAM_DIMG_LOG) << "segmentMax: " << d->segmentMax + 1;
-
+/*
+    qCDebug(DIGIKAM_DIMG_LOG) << "vals size: " << vals.size();
+    qCDebug(DIGIKAM_DIMG_LOG) << "segmentMax: " << d->segmentMax + 1;
+*/
     if (d->curves && (channel >= 0) && (channel < NUM_CHANNELS))
     {
         if (vals.isEmpty())
@@ -1208,12 +1213,14 @@ bool ImageCurves::loadCurvesFromGimpCurvesFile(const QUrl& fileUrl)
     if (! fgets(buf, sizeof(buf), file))
     {
         fclose(file);
+
         return false;
     }
 
     if (strcmp(buf, "# GIMP Curves File\n") != 0)
     {
         fclose(file);
+
         return false;
     }
 
@@ -1229,6 +1236,7 @@ bool ImageCurves::loadCurvesFromGimpCurvesFile(const QUrl& fileUrl)
             {
                 qCWarning(DIGIKAM_DIMG_LOG) <<  "Invalid Gimp curves file!";
                 fclose(file);
+
                 return false;
             }
         }
@@ -1511,6 +1519,7 @@ bool ImageCurves::setChannelFromBinary(int channel, const QByteArray& data)
     if (data.isEmpty())
     {
         curvesChannelReset(channel);
+
         return false;
     }
 

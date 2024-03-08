@@ -51,48 +51,30 @@ class Q_DECL_HIDDEN CurvesBox::Private
 {
 public:
 
-    explicit Private()
-      : sixteenBit(false),
-        channel(LuminosityChannel),
-        curveFree(nullptr),
-        curveSmooth(nullptr),
-        pickBlack(nullptr),
-        pickGray(nullptr),
-        pickWhite(nullptr),
-        curveType(nullptr),
-        pickerType(nullptr),
-        pickerBox(nullptr),
-        resetButton(nullptr),
-        resetChannelAction(nullptr),
-        resetChannelsAction(nullptr),
-        curvesWidget(nullptr),
-        hGradient(nullptr),
-        vGradient(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                 sixteenBit;
-    ChannelType          channel;
+    bool                 sixteenBit             = false;
+    ChannelType          channel                = LuminosityChannel;
 
-    QToolButton*         curveFree;
-    QToolButton*         curveSmooth;
-    QToolButton*         pickBlack;
-    QToolButton*         pickGray;
-    QToolButton*         pickWhite;
+    QToolButton*         curveFree              = nullptr;
+    QToolButton*         curveSmooth            = nullptr;
+    QToolButton*         pickBlack              = nullptr;
+    QToolButton*         pickGray               = nullptr;
+    QToolButton*         pickWhite              = nullptr;
 
-    QButtonGroup*        curveType;
-    QButtonGroup*        pickerType;
+    QButtonGroup*        curveType              = nullptr;
+    QButtonGroup*        pickerType             = nullptr;
 
-    QWidget*             pickerBox;
+    QWidget*             pickerBox              = nullptr;
 
-    QPushButton*         resetButton;
+    QPushButton*         resetButton            = nullptr;
 
-    QAction*             resetChannelAction;
-    QAction*             resetChannelsAction;
+    QAction*             resetChannelAction     = nullptr;
+    QAction*             resetChannelsAction    = nullptr;
 
-    CurvesWidget*        curvesWidget;
-    ColorGradientWidget* hGradient;
-    ColorGradientWidget* vGradient;
+    CurvesWidget*        curvesWidget           = nullptr;
+    ColorGradientWidget* hGradient              = nullptr;
+    ColorGradientWidget* vGradient              = nullptr;
 };
 
 CurvesBox::CurvesBox(int w, int h, QWidget* const parent, bool readOnly)
@@ -344,6 +326,7 @@ void CurvesBox::slotCurveTypeChanged(int type)
     }
 
     d->curvesWidget->curveTypeChanged();
+
     Q_EMIT signalCurveTypeChanged(type);
 }
 
@@ -408,6 +391,7 @@ void CurvesBox::resetPickers()
     d->pickGray->setChecked(false);
     d->pickWhite->setChecked(false);
     d->pickerType->setExclusive(true);
+
     Q_EMIT signalPickerChanged(NoPicker);
 }
 
@@ -420,6 +404,7 @@ void CurvesBox::resetChannel(int channel)
 void CurvesBox::slotResetChannel()
 {
     resetChannel(d->channel);
+
     Q_EMIT signalChannelReset(d->channel);
 }
 
@@ -437,6 +422,7 @@ void CurvesBox::resetChannels()
     }
 
     Q_EMIT signalChannelReset(d->channel);
+
     reset();
 }
 

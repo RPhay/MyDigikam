@@ -65,56 +65,39 @@ public:
 
 public:
 
-    explicit Private(CurvesWidget* const q)
-        : readOnlyMode(false),
-          guideVisible(false),
-          clearFlag(HistogramNone),
-          leftMost(0),
-          rightMost(0),
-          grabPoint(-1),
-          last(0),
-          xMouseOver(-1),
-          yMouseOver(-1),
-          progressCount(0),
-          channelType(LuminosityChannel),
-          scaleType(LinScaleHistogram),
-          imageHistogram(nullptr),
-          progressTimer(nullptr),
-          progressPix(nullptr),
-          curves(nullptr),
-          histogramPainter(nullptr),
-          q(q)
+    explicit Private(CurvesWidget* const qq)
+        : q(qq)
     {
     }
 
-    bool                           readOnlyMode;
-    bool                           guideVisible;
+    bool                           readOnlyMode     = false;
+    bool                           guideVisible     = false;
 
-    int                            clearFlag;          // Clear drawing zone with message.
-    int                            leftMost;
-    int                            rightMost;
-    int                            grabPoint;
-    int                            last;
-    int                            xMouseOver;
-    int                            yMouseOver;
-    int                            progressCount;      // Position of animation during loading/calculation.
-    ChannelType                    channelType;        // Channel type to draw
-    HistogramScale                 scaleType;          // Scale to use for drawing
-    ImageHistogram*                imageHistogram;     // Full image
+    int                            clearFlag        = HistogramNone;        // Clear drawing zone with message.
+    int                            leftMost         = 0;
+    int                            rightMost        = 0;
+    int                            grabPoint        = -1;
+    int                            last             = 0;
+    int                            xMouseOver       = -1;
+    int                            yMouseOver       = -1;
+    int                            progressCount    = 0;                    // Position of animation during loading/calculation.
+    ChannelType                    channelType      = LuminosityChannel;    // Channel type to draw
+    HistogramScale                 scaleType        = LinScaleHistogram;    // Scale to use for drawing
+    ImageHistogram*                imageHistogram   = nullptr;              // Full image
 
-    QTimer*                        progressTimer;
+    QTimer*                        progressTimer    = nullptr;
 
-    DWorkingPixmap*                progressPix;
+    DWorkingPixmap*                progressPix      = nullptr;
 
     DColor                         colorGuide;
 
-    ImageCurves*                   curves;             // Curves data instance.
+    ImageCurves*                   curves           = nullptr;              // Curves data instance.
 
-    HistogramPainter*              histogramPainter;
+    HistogramPainter*              histogramPainter = nullptr;
 
 private:
 
-    CurvesWidget* q;
+    CurvesWidget*                  q                = nullptr;
 
 public:
 
@@ -123,6 +106,7 @@ public:
     int getDelta() const
     {
         // TODO magic number, what is this?
+
         return imageHistogram->getHistogramSegments() / 16;
     }
 
@@ -219,6 +203,7 @@ public:
         int wHeight = pm.height();
 
         // Drawing curves.
+
         QPainterPath curvePath;
         curvePath.moveTo(0, wHeight);
 
@@ -226,6 +211,7 @@ public:
         {
 
             // TODO duplicate code...
+
             int i = (x * imageHistogram->getHistogramSegments()) / wWidth;
 
             int curveVal = curves->getCurveValue(channelType, i);
@@ -240,11 +226,10 @@ public:
         p1.drawPath(curvePath);
         p1.restore();
 
-
         // Drawing curves points.
+
         if (!readOnlyMode && curves->getCurveType(channelType) == ImageCurves::CURVE_SMOOTH)
         {
-
             p1.save();
             p1.setPen(QPen(Qt::red, 3, Qt::SolidLine));
             p1.setRenderHint(QPainter::Antialiasing);
@@ -275,6 +260,7 @@ public:
         int wHeight = pm.height();
 
         // Drawing black/middle/highlight tone grid separators.
+
         p1.setPen(QPen(q->palette().color(QPalette::Active, QPalette::Base), 1, Qt::SolidLine));
         p1.drawLine(wWidth / 4, 0, wWidth / 4, wHeight);
         p1.drawLine(wWidth / 2, 0, wWidth / 2, wHeight);
@@ -282,7 +268,6 @@ public:
         p1.drawLine(0, wHeight / 4, wWidth, wHeight / 4);
         p1.drawLine(0, wHeight / 2, wWidth, wHeight / 2);
         p1.drawLine(0, 3 * wHeight / 4, wWidth, 3 * wHeight / 4);
-
     }
 
     void renderMousePosition(QPixmap& pm)
@@ -295,6 +280,7 @@ public:
         int wHeight = pm.height();
 
         // Drawing X,Y point position dragged by mouse over widget.
+
         p1.setPen(QPen(Qt::red, 1, Qt::DotLine));
 
         if ((xMouseOver != -1) && (yMouseOver != -1))
@@ -347,7 +333,7 @@ public:
 
 CurvesWidget::CurvesWidget(int w, int h, QWidget* const parent, bool readOnly)
     : QWidget(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setup(w, h, readOnly);
@@ -434,6 +420,7 @@ void CurvesWidget::restoreCurve(KConfigGroup& group, const QString& prefix)
                                                                ImageCurves::getDisabledValue());
 
             // always load a 16 bit curve and stretch it to 8 bit if necessary
+
             if (!isSixteenBits() && (p != ImageCurves::getDisabledValue()))
             {
                 p.setX(p.x() / ImageCurves::MULTIPLIER_16BIT);
@@ -454,6 +441,7 @@ void CurvesWidget::updateData(const DImg& img)
     stopHistogramComputation();
 
     // Remove old histogram data from memory.
+
     delete d->imageHistogram;
     d->imageHistogram = new ImageHistogram(img);
 
@@ -466,6 +454,7 @@ void CurvesWidget::updateData(const DImg& img)
     d->imageHistogram->calculateInThread();
 
     // keep the old curve
+
     ImageCurves* const newCurves = new ImageCurves(img.sixteenBit());
     newCurves->setCurveType(ImageCurves::CURVE_SMOOTH);
 
@@ -539,8 +528,9 @@ void CurvesWidget::curveTypeChanged()
     switch (d->curves->getCurveType(d->channelType))
     {
         case ImageCurves::CURVE_SMOOTH:
-
+        {
             //  pick representative points from the curve and make them control points
+
             int index;
 
             for (int i = 0 ; i <= 16 ; ++i)
@@ -551,9 +541,12 @@ void CurvesWidget::curveTypeChanged()
 
             d->curves->curvesCalculateCurve(d->channelType);
             break;
+        }
 
         case ImageCurves::CURVE_FREE:
+        {
             break;
+        }
     }
 
     update();
@@ -585,6 +578,7 @@ void CurvesWidget::slotCalculationFinished(bool success)
         d->progressTimer->stop();
         update();
         setCursor(Qt::ArrowCursor);
+
         Q_EMIT signalHistogramComputationFailed();
     }
 }
@@ -610,15 +604,17 @@ void CurvesWidget::paintEvent(QPaintEvent*)
 {
     // special cases
 
-    if (d->clearFlag == Private::HistogramDataLoading ||
-        d->clearFlag == Private::HistogramStarted)
+    if      (d->clearFlag == Private::HistogramDataLoading ||
+             d->clearFlag == Private::HistogramStarted)
     {
         d->renderLoadingAnimation();
+
         return;
     }
     else if (d->clearFlag == Private::HistogramFailed)
     {
         d->renderHistogramFailed();
+
         return;
     }
 
@@ -627,6 +623,7 @@ void CurvesWidget::paintEvent(QPaintEvent*)
     if (!d->imageHistogram)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Should render a histogram, but did not get one.";
+
         return;
     }
 
@@ -809,6 +806,7 @@ void CurvesWidget::mouseMoveEvent(QMouseEvent* e)
                 }
 
                 d->curves->curvesCalculateCurve(d->channelType);
+
                 Q_EMIT signalCurvesChanged();
             }
 
@@ -859,7 +857,9 @@ void CurvesWidget::mouseMoveEvent(QMouseEvent* e)
 
     d->xMouseOver = x;
     d->yMouseOver = d->imageHistogram->getMaxSegmentIndex() - y;
+
     Q_EMIT signalMouseMoved(d->xMouseOver, d->yMouseOver);
+
     update();
 }
 
@@ -867,7 +867,9 @@ void CurvesWidget::leaveEvent(QEvent*)
 {
     d->xMouseOver = -1;
     d->yMouseOver = -1;
+
     Q_EMIT signalMouseMoved(d->xMouseOver, d->yMouseOver);
+
     update();
 }
 
