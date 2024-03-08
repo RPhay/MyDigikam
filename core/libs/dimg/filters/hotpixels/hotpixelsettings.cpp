@@ -48,12 +48,7 @@ class Q_DECL_HIDDEN HotPixelSettings::Private
 {
 public:
 
-    explicit Private()
-      : blackFrameButton  (nullptr),
-        filterMethodCombo (nullptr),
-        blackFrameListView(nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configGroupName;
     static const QString configAllBlackFrameFilesEntry;
@@ -61,9 +56,9 @@ public:
     static const QString configHotPixelsListEntry;
     static const QString configFilterMethodEntry;
 
-    QPushButton*         blackFrameButton;
-    DComboBox*           filterMethodCombo;
-    BlackFrameListView*  blackFrameListView;
+    QPushButton*         blackFrameButton   = nullptr;
+    DComboBox*           filterMethodCombo  = nullptr;
+    BlackFrameListView*  blackFrameListView = nullptr;
 
     QList<HotPixelProps> hotPixelsList;
     QUrl                 currentBlackFrameUrl;

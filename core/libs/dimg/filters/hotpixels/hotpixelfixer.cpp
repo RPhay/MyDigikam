@@ -91,12 +91,15 @@ void HotPixelFixer::readParameters(const FilterAction& action)
     m_settings.filterMethod = (HotPixelContainer::InterpolationMethod)action.parameter(QLatin1String("interpolationMethod")).toInt();
 
     const QHash<QString, QVariant> &params = action.parameters();
+
     for (QHash<QString, QVariant>::const_iterator i = params.constBegin(); i != params.constEnd(); ++i)
     {
         const QString &key = i.key();
+
         if (key == QLatin1String("hotPixel"))
         {
             HotPixelProps hp;
+
             if (hp.fromString(i.value().toString()))
             {
                 m_settings.hotPixelsList << hp;
@@ -214,16 +217,22 @@ void HotPixelFixer::interpolate(DImg& img, HotPixelProps& hp, int method)
         }
 
         case HotPixelContainer::LINEAR_INTERPOLATION:
+        {
             weightPixels(img, hp, HotPixelContainer::LINEAR_INTERPOLATION, HotPixelContainer::TWODIM_DIRECTION, sixtBits ? 65535: 255);
             break;
+        }
 
         case HotPixelContainer::QUADRATIC_INTERPOLATION:
+        {
             weightPixels(img, hp, HotPixelContainer::QUADRATIC_INTERPOLATION, HotPixelContainer::TWODIM_DIRECTION, sixtBits ? 65535 : 255);
             break;
+        }
 
         case HotPixelContainer::CUBIC_INTERPOLATION:
+        {
             weightPixels(img, hp, HotPixelContainer::CUBIC_INTERPOLATION, HotPixelContainer::TWODIM_DIRECTION, sixtBits ? 65535 : 255);
             break;
+        }
     }
 }
 
@@ -245,19 +254,27 @@ void HotPixelFixer::weightPixels(DImg& img,
         switch (method)
         {
             case HotPixelContainer::AVERAGE_INTERPOLATION:  // Gilles: to prevent warnings from compiler.
+            {
                 break;
+            }
 
             case HotPixelContainer::LINEAR_INTERPOLATION:
+            {
                 polynomeOrder = 1;
                 break;
+            }
 
             case HotPixelContainer::QUADRATIC_INTERPOLATION:
+            {
                 polynomeOrder = 2;
                 break;
+            }
 
             case HotPixelContainer::CUBIC_INTERPOLATION:
+            {
                 polynomeOrder = 3;
                 break;
+            }
         }
 
         if (polynomeOrder < 0)

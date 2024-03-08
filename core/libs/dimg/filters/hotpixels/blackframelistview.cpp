@@ -39,16 +39,11 @@ namespace Digikam
 {
 public:
 
-    explicit Private()
-      : toolTipTimer(nullptr),
-        toolTip     (nullptr),
-        toolTipItem (nullptr)
-    {
-    }
+    Private() = default;
 
-    QTimer*            toolTipTimer;
-    BlackFrameToolTip* toolTip;
-    QTreeWidgetItem*   toolTipItem;
+    QTimer*            toolTipTimer = nullptr;
+    BlackFrameToolTip* toolTip      = nullptr;
+    QTreeWidgetItem*   toolTipItem  = nullptr;
 };
 
 BlackFrameListView::BlackFrameListView(QWidget* const parent)
@@ -280,6 +275,7 @@ void BlackFrameListView::slotContextMenu()
             {
                 QUrl url = item->frameUrl();
                 delete item;
+
                 Q_EMIT signalBlackFrameRemoved(url);
             }
         }
@@ -287,6 +283,7 @@ void BlackFrameListView::slotContextMenu()
     else if (choice == clearAction)
     {
         clear();
+
         Q_EMIT signalClearBlackFrameList();
     }
 }

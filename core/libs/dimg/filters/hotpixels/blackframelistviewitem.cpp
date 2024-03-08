@@ -44,16 +44,13 @@ class Q_DECL_HIDDEN BlackFrameListViewItem::Private
 {
 public:
 
-    explicit Private()
-      : parser(nullptr)
-    {
-    }
+    Private() = default;
 
     QList<HotPixelProps> hotPixels;
 
     QUrl                 blackFrameUrl;
 
-    BlackFrameParser*    parser;
+    BlackFrameParser*    parser = nullptr;
 
     QString              toolTipStr;
 };

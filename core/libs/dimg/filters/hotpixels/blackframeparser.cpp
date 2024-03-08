@@ -50,14 +50,11 @@ class Q_DECL_HIDDEN BlackFrameParser::Private
 {
 public:
 
-    explicit Private()
-      : imageLoaderThread(nullptr)
-    {
-    }
+    Private() = default;
 
     DImg            image;
 
-    LoadSaveThread* imageLoaderThread;
+    LoadSaveThread* imageLoaderThread = nullptr;
 };
 
 BlackFrameParser::BlackFrameParser(QObject* const parent)
@@ -217,6 +214,7 @@ void BlackFrameParser::consolidatePixels(QList<HotPixelProps>& list)
 
     for ( ; it != list.end() ; ++it)
     {
+        // cppcheck-suppress knownConditionTrueFalse
         while (it != list.end())
         {
             point = (*it);

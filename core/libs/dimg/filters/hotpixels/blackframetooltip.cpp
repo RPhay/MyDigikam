@@ -28,16 +28,12 @@ class Q_DECL_HIDDEN BlackFrameToolTip::Private
 {
 public:
 
-    explicit Private()
-      : view(nullptr),
-        item(nullptr)
-    {
-    }
+    Private() = default;
 
     QString          tip;
 
-    QTreeWidget*     view;
-    QTreeWidgetItem* item;
+    QTreeWidget*     view = nullptr;
+    QTreeWidgetItem* item = nullptr;
 };
 
 BlackFrameToolTip::BlackFrameToolTip(QTreeWidget* const view)
