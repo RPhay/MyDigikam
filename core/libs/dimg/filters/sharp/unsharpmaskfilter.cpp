@@ -183,6 +183,7 @@ void UnsharpMaskFilter::filterImage()
     if (m_orgImage.isNull())
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "No image data available!";
+
         return;
     }
 

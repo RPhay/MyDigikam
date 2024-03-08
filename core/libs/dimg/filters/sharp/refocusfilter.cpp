@@ -243,6 +243,7 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
                 {
                     index1 = prm.width * (y1 + y2 - mat_offset) + x1 + x2 - mat_offset;
 
+                    // cppcheck-suppress knownConditionTrueFalse
                     if ((index1 >= 0) && (index1 < imageSize))
                     {
                         ptr                      =  &prm.orgData[index1 * 4];   // cppcheck-suppress objectIndex
@@ -259,6 +260,7 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
 
             index2 = y1 * prm.width + x1;
 
+            // cppcheck-suppress knownConditionTrueFalse
             if ((index2 >= 0) && (index2 < imageSize))
             {
                 // To get Alpha channel value from original (unchanged)
@@ -286,6 +288,7 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
                 {
                     index1 = prm.width * (y1 + y2 - mat_offset) + x1 + x2 - mat_offset;
 
+                    // cppcheck-suppress knownConditionTrueFalse
                     if ((index1 >= 0) && (index1 < imageSize))
                     {
                         ptr                      =  &orgData16[index1 * 4];
@@ -302,6 +305,7 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
 
             index2 = y1 * prm.width + x1;
 
+            // cppcheck-suppress knownConditionTrueFalse
             if ((index2 >= 0) && (index2 < imageSize))
             {
                 // To get Alpha channel value from original (unchanged)
@@ -329,7 +333,7 @@ void RefocusFilter::convolveImage(const Args& prm)
     {
         QList <QFuture<void> > tasks;
 
-        for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
+        for (int j = 0 ; runningFlag() && (j < vals.count() - 1) ; ++j)
         {
             tasks.append(QtConcurrent::run(
 

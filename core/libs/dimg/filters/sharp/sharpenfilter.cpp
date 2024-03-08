@@ -101,12 +101,14 @@ void SharpenFilter::sharpenImage(double radius, double sigma)
     if (m_orgImage.isNull())
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "No image data available!";
+
         return;
     }
 
     if (radius <= 0.0)
     {
         m_destImage = m_orgImage;
+
         return;
     }
 
@@ -119,6 +121,7 @@ void SharpenFilter::sharpenImage(double radius, double sigma)
     if ((int)m_orgImage.width() < kernelWidth)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Image is smaller than radius!";
+
         return;
     }
 
@@ -127,6 +130,7 @@ void SharpenFilter::sharpenImage(double radius, double sigma)
     if (kernel.isNull())
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Unable to allocate memory!";
+
         return;
     }
 
@@ -176,10 +180,10 @@ void SharpenFilter::convolveImageMultithreaded(const Args& prm)
             }
         }
 
-        red   =   red < 0.0 ? 0.0 :   red > maxClamp ? maxClamp :   red + 0.5;
-        green = green < 0.0 ? 0.0 : green > maxClamp ? maxClamp : green + 0.5;
-        blue  =  blue < 0.0 ? 0.0 :  blue > maxClamp ? maxClamp :  blue + 0.5;
-        alpha = alpha < 0.0 ? 0.0 : alpha > maxClamp ? maxClamp : alpha + 0.5;
+        red   =   red < 0.0 ? 0.0 :   (red > maxClamp) ? maxClamp :   red + 0.5;
+        green = green < 0.0 ? 0.0 : (green > maxClamp) ? maxClamp : green + 0.5;
+        blue  =  blue < 0.0 ? 0.0 :  (blue > maxClamp) ? maxClamp :  blue + 0.5;
+        alpha = alpha < 0.0 ? 0.0 : (alpha > maxClamp) ? maxClamp : alpha + 0.5;
 
         m_destImage.setPixelColor(x, prm.y, DColor((int)(red  / 257UL), (int)(green / 257UL),
                                                    (int)(blue / 257UL), (int)(alpha / 257UL),
@@ -201,6 +205,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
     if ((prm.kernelWidth % 2) == 0)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Kernel width must be an odd number!";
+
         return false;
     }
 
@@ -209,6 +214,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
     if (normal_kernel.isNull())
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Unable to allocate memory!";
+
         return false;
     }
 
@@ -286,7 +292,7 @@ int SharpenFilter::getOptimalKernelWidth(double radius, double sigma)
         return((int)(2.0 * ceil(radius) + 1.0));
     }
 
-    for (kernelWidth = 5; ;)
+    for (kernelWidth = 5 ; ; )
     {
         normalize = 0.0;
 

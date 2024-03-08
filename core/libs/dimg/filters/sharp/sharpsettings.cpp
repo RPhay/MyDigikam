@@ -56,27 +56,7 @@ class Q_DECL_HIDDEN SharpSettings::Private
 
 public:
 
-    explicit Private()
-      : stack           (nullptr),
-        sharpMethod     (nullptr),
-        radiusInput     (nullptr),
-
-#ifdef HAVE_EIGEN3
-
-        radius          (nullptr),
-        correlation     (nullptr),
-        noise           (nullptr),
-        gauss           (nullptr),
-        matrixSize      (nullptr),
-
-#endif // HAVE_EIGEN3
-
-        radiusInput2    (nullptr),
-        amountInput     (nullptr),
-        thresholdInput  (nullptr),
-        luma            (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configSharpenMethodEntry;
     static const QString configSimpleSharpRadiusAdjustmentEntry;
@@ -90,27 +70,32 @@ public:
     static const QString configRefocusGaussAdjustmentEntry;
     static const QString configRefocusMatrixSizeEntry;
 
-    QStackedWidget*      stack;
+    QStackedWidget*      stack          = nullptr;
 
-    DComboBox*           sharpMethod;
+    DComboBox*           sharpMethod    = nullptr;
 
     // Simple sharp.
-    DIntNumInput*        radiusInput;
+
+    DIntNumInput*        radiusInput    = nullptr;
 
 #ifdef HAVE_EIGEN3
+
     // Refocus.
-    DDoubleNumInput*     radius;
-    DDoubleNumInput*     correlation;
-    DDoubleNumInput*     noise;
-    DDoubleNumInput*     gauss;
-    DIntNumInput*        matrixSize;
+
+    DDoubleNumInput*     radius         = nullptr;
+    DDoubleNumInput*     correlation    = nullptr;
+    DDoubleNumInput*     noise          = nullptr;
+    DDoubleNumInput*     gauss          = nullptr;
+    DIntNumInput*        matrixSize     = nullptr;
+
 #endif // HAVE_EIGEN3
 
     // Unsharp mask.
-    DDoubleNumInput*     radiusInput2;
-    DDoubleNumInput*     amountInput;
-    DDoubleNumInput*     thresholdInput;
-    QCheckBox*           luma;
+
+    DDoubleNumInput*     radiusInput2   = nullptr;
+    DDoubleNumInput*     amountInput    = nullptr;
+    DDoubleNumInput*     thresholdInput = nullptr;
+    QCheckBox*           luma           = nullptr;
 };
 
 const QString SharpSettings::Private::configSharpenMethodEntry(QLatin1String("SharpenMethod"));
