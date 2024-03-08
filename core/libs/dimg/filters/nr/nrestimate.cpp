@@ -46,8 +46,6 @@ class Q_DECL_HIDDEN NREstimate::Private
 public:
 
     explicit Private()
-      : clusterCount(30),
-        size        (512)
     {
         for (int c = 0 ; c < 3 ; ++c)
         {
@@ -57,11 +55,11 @@ public:
 
     NRContainer prm;
 
-    QString     path;   ///< Path to host log files.
+    QString     path;                   ///< Path to host log files.
 
     float*      fimg[3];
-    const uint  clusterCount;
-    const uint  size;   ///< Size of squared original image.
+    const uint  clusterCount    = 30;
+    const uint  size            = 512;   ///< Size of squared original image.
 };
 
 NREstimate::NREstimate(DImg* const img, QObject* const parent)
@@ -275,6 +273,7 @@ void NREstimate::startAnalyse()
 
     for (int i = 0 ; runningFlag() && (i < sd->cols) ; ++i)
     {
+        // cppcheck-suppress knownConditionTrueFalse
         if (runningFlag() && (rowPosition[(i/points->cols)] >= 1))
         {
             CvMat* workingArr = cvCreateMat(rowPosition[(i / points->cols)], 1, CV_32FC1);

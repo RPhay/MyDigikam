@@ -47,20 +47,7 @@ class Q_DECL_HIDDEN NRSettings::Private
 {
 public:
 
-    explicit Private()
-      : luminanceBox      (nullptr),
-        chrominanceRedBox (nullptr),
-        chrominanceBlueBox(nullptr),
-        checkAutoEst      (nullptr),
-        advExpanderBox    (nullptr),
-        thrLumInput       (nullptr),
-        softLumInput      (nullptr),
-        thrCrInput        (nullptr),
-        softCrInput       (nullptr),
-        thrCbInput        (nullptr),
-        softCbInput       (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configThrLumInputAdjustmentEntry;
     static const QString configSoftLumInputAdjustmentEntry;
@@ -70,20 +57,20 @@ public:
     static const QString configSoftCbInputAdjustmentEntry;
     static const QString configCheckAutoEstimationEntry;
 
-    QWidget*             luminanceBox;
-    QWidget*             chrominanceRedBox;
-    QWidget*             chrominanceBlueBox;
+    QWidget*             luminanceBox           = nullptr;
+    QWidget*             chrominanceRedBox      = nullptr;
+    QWidget*             chrominanceBlueBox     = nullptr;
 
-    QCheckBox*           checkAutoEst;
+    QCheckBox*           checkAutoEst           = nullptr;
 
-    DExpanderBox*        advExpanderBox;
+    DExpanderBox*        advExpanderBox         = nullptr;
 
-    DDoubleNumInput*     thrLumInput;
-    DDoubleNumInput*     softLumInput;
-    DDoubleNumInput*     thrCrInput;
-    DDoubleNumInput*     softCrInput;
-    DDoubleNumInput*     thrCbInput;
-    DDoubleNumInput*     softCbInput;
+    DDoubleNumInput*     thrLumInput            = nullptr;
+    DDoubleNumInput*     softLumInput           = nullptr;
+    DDoubleNumInput*     thrCrInput             = nullptr;
+    DDoubleNumInput*     softCrInput            = nullptr;
+    DDoubleNumInput*     thrCbInput             = nullptr;
+    DDoubleNumInput*     softCbInput            = nullptr;
 };
 
 const QString NRSettings::Private::configThrLumInputAdjustmentEntry(QLatin1String("ThrLumAdjustment"));
