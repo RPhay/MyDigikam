@@ -40,9 +40,7 @@ class Q_DECL_HIDDEN MetadataHubMngr::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QList<qlonglong> pendingItemIds;
     QMutex           mutex;

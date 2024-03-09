@@ -58,7 +58,7 @@ void TwoProgressItemsContainer::advance(QAtomicPointer<ProgressItem>& ptr, int n
     {
         ProgressItem* const item = ptr;
 
-        if (item && ptr.testAndSetOrdered(item, nullptr))
+        if (ptr.testAndSetOrdered(item, nullptr))
         {
             item->setComplete();
         }

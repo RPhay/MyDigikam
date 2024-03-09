@@ -175,12 +175,12 @@ public:
     QString                               writerMessage;
     QMutex                                mutex;
 
-    FileActionMngr*                       q;
+    FileActionMngr*                       q             = nullptr;
 
     DatabaseWorkerInterface*              dbWorker;
     ParallelAdapter<FileWorkerInterface>* fileWorker;
 
-    QTimer*                               sleepTimer;
+    QTimer*                               sleepTimer    = nullptr;
 
     PrivateProgressItemCreator            dbProgress;
     PrivateProgressItemCreator            fileProgress;

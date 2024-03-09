@@ -50,27 +50,14 @@ class Q_DECL_HIDDEN MetadataHub::Private
 {
 public:
 
-    explicit Private()
-      : pickLabel       (-1),
-        colorLabel      (-1),
-        rating          (-1),
-        count           (0),
-        dateTimeStatus  (MetadataHub::MetadataInvalid),
-        titlesStatus    (MetadataHub::MetadataInvalid),
-        commentsStatus  (MetadataHub::MetadataInvalid),
-        pickLabelStatus (MetadataHub::MetadataInvalid),
-        colorLabelStatus(MetadataHub::MetadataInvalid),
-        ratingStatus    (MetadataHub::MetadataInvalid),
-        templateStatus  (MetadataHub::MetadataInvalid)
-    {
-    }
+    Private() = default;
 
 public:
 
-    int                            pickLabel;
-    int                            colorLabel;
-    int                            rating;
-    int                            count;
+    int                            pickLabel        = -1;
+    int                            colorLabel       = -1;
+    int                            rating           = -1;
+    int                            count            = 0;
 
     QDateTime                      dateTime;
     QPair<QSize, int>              imageProp;
@@ -87,13 +74,13 @@ public:
     QList<FaceTagsIface>           facesList;
     ItemPosition                   itemPosition;
 
-    MetadataHub::Status            dateTimeStatus;
-    MetadataHub::Status            titlesStatus;
-    MetadataHub::Status            commentsStatus;
-    MetadataHub::Status            pickLabelStatus;
-    MetadataHub::Status            colorLabelStatus;
-    MetadataHub::Status            ratingStatus;
-    MetadataHub::Status            templateStatus;
+    MetadataHub::Status            dateTimeStatus   = MetadataHub::MetadataInvalid;
+    MetadataHub::Status            titlesStatus     = MetadataHub::MetadataInvalid;
+    MetadataHub::Status            commentsStatus   = MetadataHub::MetadataInvalid;
+    MetadataHub::Status            pickLabelStatus  = MetadataHub::MetadataInvalid;
+    MetadataHub::Status            colorLabelStatus = MetadataHub::MetadataInvalid;
+    MetadataHub::Status            ratingStatus     = MetadataHub::MetadataInvalid;
+    MetadataHub::Status            templateStatus   = MetadataHub::MetadataInvalid;
 
 public:
 

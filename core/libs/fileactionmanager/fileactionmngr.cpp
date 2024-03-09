@@ -86,6 +86,7 @@ bool FileActionMngr::requestShutDown()
     dialog->exec();
 
     // Either, we finished and all is fine, or the user cancelled and we kill
+
     shutDown();
 
     return true;

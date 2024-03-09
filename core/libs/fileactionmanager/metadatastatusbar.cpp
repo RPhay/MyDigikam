@@ -38,24 +38,18 @@ class Q_DECL_HIDDEN MetadataStatusBar::Private
 {
 public:
 
-    explicit Private()
-      : number  (0),
-        enabled (true),
-        info    (nullptr),
-        applyBtn(nullptr)
-    {
-    }
+    Private() = default;
 
-    int               number;
-    bool              enabled;
+    int               number    = 0;
+    bool              enabled   = true;
 
-    DAdjustableLabel* info;
-    QToolButton*      applyBtn;
+    DAdjustableLabel* info      = nullptr;
+    QToolButton*      applyBtn  = nullptr;
 };
 
 MetadataStatusBar::MetadataStatusBar(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QHBoxLayout* const vlay = new QHBoxLayout(this);
     d->applyBtn             = new QToolButton(this);

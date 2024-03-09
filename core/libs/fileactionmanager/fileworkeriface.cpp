@@ -339,6 +339,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
         if (!failedItems.contains(info.name()))
         {
             Q_EMIT imageDataChanged(filePath, true, true);
+
             ItemAttributesWatch::instance()->fileMetadataChanged(info.fileUrl());
         }
 
