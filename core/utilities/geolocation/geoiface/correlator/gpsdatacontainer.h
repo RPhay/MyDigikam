@@ -41,24 +41,16 @@ public:
 
 public:
 
-    GPSDataContainer()
-      : m_hasFlags   (HasFlags()),
-        m_coordinates(),
-        m_nSatellites(-1),
-        m_dop        (-1),
-        m_fixType    (-1),
-        m_speed      (0)
-    {
-    }
+    GPSDataContainer() = default;
 
 private:
 
-    HasFlags       m_hasFlags;
+    HasFlags       m_hasFlags       = HasFlags();
     GeoCoordinates m_coordinates;
-    int            m_nSatellites;
-    qreal          m_dop;
-    int            m_fixType;
-    qreal          m_speed;
+    int            m_nSatellites    = -1;
+    qreal          m_dop            = -1.0;
+    int            m_fixType        = -1;
+    qreal          m_speed          = 0.0;
 
 public:
 

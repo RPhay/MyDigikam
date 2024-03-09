@@ -37,12 +37,9 @@ class Q_DECL_HIDDEN TrackListModel::Private
 {
 public:
 
-    explicit Private()
-      : trackManager(nullptr)
-    {
-    }
+    Private() = default;
 
-    TrackManager* trackManager;
+    TrackManager* trackManager = nullptr;
 };
 
 TrackListModel::TrackListModel(TrackManager* const trackManager, QObject* const parent)
@@ -103,7 +100,7 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
     switch (role)
     {
         case Qt::DisplayRole:
-
+        {
             switch (columnNumber)
             {
                 case ColumnFilename:
@@ -123,10 +120,11 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
             }
 
             break;
+        }
 
         case Qt::BackgroundRole:
         case Qt::DecorationRole:
-
+        {
             switch (columnNumber)
             {
                 case ColumnVisible:
@@ -136,6 +134,7 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
             }
 
             break;
+        }
     }
 
     return QVariant();

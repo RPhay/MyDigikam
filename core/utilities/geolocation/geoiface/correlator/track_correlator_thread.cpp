@@ -19,9 +19,6 @@
 
 #include <QTimeZone>
 
-// Local includes
-
-
 namespace Digikam
 {
 
@@ -63,6 +60,7 @@ void TrackCorrelatorThread::run()
         if (doCancel)
         {
             canceled = true;
+
             return;
         }
 
@@ -80,9 +78,11 @@ void TrackCorrelatorThread::run()
 
         for (int f = 0 ; f < nFiles ; ++f)
         {
+            // cppcheck-suppress knownConditionTrueFalse
             if (doCancel)
             {
                 canceled = true;
+
                 return;
             }
 
@@ -91,9 +91,11 @@ void TrackCorrelatorThread::run()
 
             for ( ; index < currentFile.points.count() ; ++index)
             {
+                // cppcheck-suppress knownConditionTrueFalse
                 if (doCancel)
                 {
                     canceled = true;
+
                     return;
                 }
 
@@ -258,7 +260,6 @@ void TrackCorrelatorThread::run()
                     correlatedData.coordinates = resultCoordinates;
                     correlatedData.flags       = static_cast<TrackCorrelator::CorrelationFlags>(correlatedData.flags | TrackCorrelator::CorrelationFlagCoordinates);
                 }
-
             }
         }
 

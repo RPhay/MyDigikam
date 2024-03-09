@@ -27,14 +27,10 @@ class Q_DECL_HIDDEN TrackCorrelator::Private
 {
 public:
 
-    explicit Private()
-      : trackManager(nullptr),
-        thread      (nullptr)
-    {
-    }
+    Private() = default;
 
-    TrackManager*           trackManager;
-    TrackCorrelatorThread*  thread;
+    TrackManager*           trackManager = nullptr;
+    TrackCorrelatorThread*  thread       = nullptr;
 };
 
 TrackCorrelator::TrackCorrelator(TrackManager* const trackManager,
