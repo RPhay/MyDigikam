@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-08 01:33+0000\n"
+"POT-Creation-Date: 2024-03-09 01:41+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1121,7 +1121,7 @@ msgid "Photograph Properties"
 msgstr "Ιδιότητες φωτογραφίας"
 
 #: core/app/items/utils/tooltipfiller.cpp:158
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:133
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
@@ -3965,7 +3965,7 @@ msgstr "Διαδρομή"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:70
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:65
 #, kde-format
 msgid "Size"
 msgstr "Μέγεθος"
@@ -4543,7 +4543,7 @@ msgstr "Αυτόματη έκθεση"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:65
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:62
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, kde-format
 msgid "Filter:"
 msgstr "Φίλτρο:"
@@ -7883,7 +7883,7 @@ msgid "Select the maximal output intensity value of the histogram here."
 msgstr "Επιλέξτε εδώ τη μέγιστη τιμή έντασης εισόδου του ιστογράμματος."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:250
-#: core/libs/dimg/filters/curves/curvesbox.cpp:176
+#: core/libs/dimg/filters/curves/curvesbox.cpp:158
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "Επιλογή τόνου σκιάς για όλα τα κανάλια"
@@ -7900,7 +7900,7 @@ msgstr ""
 "των καναλιών κόκκινου, πράσινου, μπλε και ακτινοβολίας."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:258
-#: core/libs/dimg/filters/curves/curvesbox.cpp:184
+#: core/libs/dimg/filters/curves/curvesbox.cpp:166
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "Επιλογή μέσου τόνου για όλα τα κανάλια"
@@ -7917,7 +7917,7 @@ msgstr ""
 "των καναλιών κόκκινου, πράσινου, μπλε και ακτινοβολίας."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
-#: core/libs/dimg/filters/curves/curvesbox.cpp:192
+#: core/libs/dimg/filters/curves/curvesbox.cpp:174
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "Επιλογή υψηλού τόνου για όλα τα κανάλια"
@@ -7948,8 +7948,8 @@ msgstr ""
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:294
 #: core/dplugins/editor/colors/film/filmtool.cpp:238
-#: core/libs/dimg/filters/curves/curvesbox.cpp:214
-#: core/libs/dimg/filters/curves/curvesbox.cpp:221
+#: core/libs/dimg/filters/curves/curvesbox.cpp:196
+#: core/libs/dimg/filters/curves/curvesbox.cpp:203
 #, kde-format
 msgid "&Reset"
 msgstr "&Επαναφορά"
@@ -9273,7 +9273,7 @@ msgstr "Μάσκα αναίρεσης όξυνσης"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:284
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:145
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:130
 #, kde-format
 msgid "Refocus"
 msgstr "Επανεστίαση"
@@ -9332,7 +9332,7 @@ msgid "Use Color Management for Printing"
 msgstr "Χρήση διαχείρισης χρωμάτων στην εκτύπωση"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
@@ -12931,7 +12931,7 @@ msgstr ""
 "φωτογραφική μηχανή κατά τη σύλληψη."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:167
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:152
 #, kde-format
 msgid "Sharpness:"
 msgstr "Οξύτητα:"
@@ -16931,7 +16931,7 @@ msgstr "Αποτυχία δημιουργίας φακέλου της βάσης
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:64
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -29931,7 +29931,7 @@ msgstr ""
 "η έκδοση που κυκλοφόρησε με την εκτελούμενη έκδοση του digiKam, έχει "
 "εγκατασταθεί. "
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:211
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:205
 #, kde-format
 msgid ""
 "Error while opening the database.\n"
@@ -29940,7 +29940,7 @@ msgstr ""
 "Σφάλμα κατά το άνοιγμα της βάσης δεδομένων.\n"
 "Η digiKam θα προσπαθήσει αυτόματη επανασύνδεση με τη βάση."
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:243
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:237
 #, kde-format
 msgid ""
 "<p><b>A database error occurred.</b></p>Details:\n"
@@ -32653,24 +32653,24 @@ msgctxt "@info"
 msgid "Set here the yellow/blue color adjustment of the image."
 msgstr "Καθορίστε εδώ τη ρύθμιση χρώματος κίτρινου/μπλε της εικόνας."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:144
+#: core/libs/dimg/filters/curves/curvesbox.cpp:126
 #, kde-format
 msgid "Curve free mode"
 msgstr "Λειτουργία ελεύθερης καμπύλης"
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:145
+#: core/libs/dimg/filters/curves/curvesbox.cpp:127
 #, kde-format
 msgid "With this button, you can draw your curve free-hand with the mouse."
 msgstr ""
 "Με αυτό το κουμπί, μπορείτε να σχεδιάσετε την καμπύλη σας με ελεύθερο χέρι "
 "με το ποντίκι."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:151
+#: core/libs/dimg/filters/curves/curvesbox.cpp:133
 #, kde-format
 msgid "Curve smooth mode"
 msgstr "Λειτουργία ομαλής καμπύλης"
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:152
+#: core/libs/dimg/filters/curves/curvesbox.cpp:134
 #, kde-format
 msgid ""
 "With this button, the curve type is constrained to be a smooth line with "
@@ -32679,7 +32679,7 @@ msgstr ""
 "Με αυτό το κουμπί, περιορίζετε τον τύπο καμπύλης σε μια ομαλή γραμμή με "
 "ένταση."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:177
+#: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid ""
 "With this button, you can pick the color from original image used to set "
@@ -32690,7 +32690,7 @@ msgstr ""
 "θα χρησιμοποιηθεί για τον ορισμό του σημείου καμπύλης <b>τόνου σκιάς</b> στα "
 "κανάλια κόκκινου, πράσινου, μπλε και φωτεινότητας."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:185
+#: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid ""
 "With this button, you can pick the color from original image used to set "
@@ -32701,7 +32701,7 @@ msgstr ""
 "θα χρησιμοποιηθεί για τον ορισμό του σημείου καμπύλης <b>μέσου τόνου</b> στα "
 "κανάλια κόκκινου, πράσινου, μπλε και φωτεινότητας."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:193
+#: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid ""
 "With this button, you can pick the color from original image used to set "
@@ -32712,25 +32712,25 @@ msgstr ""
 "θα χρησιμοποιηθεί για τον ορισμό του σημείου καμπύλης <b>υψηλού τόνου</b> "
 "στα κανάλια κόκκινου, πράσινου, μπλε και φωτεινότητας."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:216
+#: core/libs/dimg/filters/curves/curvesbox.cpp:198
 #, fuzzy, kde-format
 #| msgid "Reset current channel curves' values."
 msgid "Resets channel/channels curves' values."
 msgstr "Επαναφορά των τιμών των καμπυλών του τρέχοντος καναλιού."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:217
+#: core/libs/dimg/filters/curves/curvesbox.cpp:199
 #, kde-format
 msgid ""
 "If you press this button, custom menu will appear: First option will reset "
 "current channel. Second option will reset all channels."
 msgstr ""
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:222
+#: core/libs/dimg/filters/curves/curvesbox.cpp:204
 #, fuzzy, kde-format
 msgid "Reset &Channel"
 msgstr "Επαναφορά από αλλαγές"
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:223
+#: core/libs/dimg/filters/curves/curvesbox.cpp:205
 #, fuzzy, kde-format
 #| msgid "Reset"
 msgid "Reset &All"
@@ -32765,18 +32765,18 @@ msgstr "Αρχείο καμπυλών Gimp για αποθήκευση"
 msgid "Cannot save to the Gimp curves text file."
 msgstr "Αδυναμία αποθήκευσης στο αρχείο καμπυλών Gimp."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:189
+#: core/libs/dimg/filters/curves/curveswidget.cpp:173
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:790
 #, kde-format
 msgid "Loading image..."
 msgstr "Φόρτωση εικόνας..."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:194
+#: core/libs/dimg/filters/curves/curveswidget.cpp:178
 #, kde-format
 msgid "Histogram calculation..."
 msgstr "Υπολογισμός ιστογράμματος..."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:208
+#: core/libs/dimg/filters/curves/curveswidget.cpp:192
 #, kde-format
 msgid ""
 "Histogram\n"
@@ -32787,7 +32787,7 @@ msgstr ""
 "ιστογράμματος\n"
 "απέτυχε."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:302
+#: core/libs/dimg/filters/curves/curveswidget.cpp:288
 #, kde-format
 msgid ""
 "x:%1\n"
@@ -33215,12 +33215,12 @@ msgstr "Ενσωματωμένος μετασχηματισμός δεν υπο�
 msgid "Filter identifier or version is not supported"
 msgstr "Αναγνωριστικό ή έκδοση φίλτρου δεν υποστηρίζονται."
 
-#: core/libs/dimg/filters/fx/blurfilter.cpp:90
+#: core/libs/dimg/filters/fx/blurfilter.cpp:87
 #, kde-format
 msgid "Blur Filter"
 msgstr "Φίλτρο θαμπώματος"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:88
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "Φίλτρο θαμπώματος FX"
@@ -33770,7 +33770,7 @@ msgstr "Ταχεία προσέγγιση"
 msgid "Enable fast approximation when rendering images."
 msgstr "Ενεργοποίηση της ταχείας προσέγγισης για την αποτύπωση των εικόνων."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:72
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
 #, fuzzy, kde-format
 #| msgid "Hot Pixels"
 msgctxt ""
@@ -33779,37 +33779,37 @@ msgctxt ""
 msgid "Hot Pixels"
 msgstr "Ενεργά εικονοστοιχεία"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:262
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:257
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgid "Remove Black Frame"
 msgstr "Μαύρο πλαίσιο..."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:263
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, kde-format
 msgid "Clear List"
 msgstr "Καθαρισμός λίστας"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:94
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgid "Loading Frame"
 msgstr "Φόρτωση: "
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:163
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgid "Black Frame"
 msgstr "Μαύρο πλαίσιο..."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:175
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:172
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgid "File Name:"
 msgstr "Όνομα αρχείου"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
 #, fuzzy, kde-format
 #| msgctxt "creation date of the image"
 #| msgid "Created:"
@@ -33817,13 +33817,13 @@ msgctxt "@info: creation date"
 msgid "Created:"
 msgstr "Δημιουργήθηκε:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:188
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgid "Serial Number:"
 msgstr "Αριθμός:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:199
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:196
 #, fuzzy, kde-format
 #| msgid "Hot Pixels"
 msgid "Hot Pixels:"
@@ -33834,36 +33834,36 @@ msgstr "Ενεργά εικονοστοιχεία"
 msgid "Hot Pixels Tool"
 msgstr "Εργαλείο ενεργών εικονοστοιχείων"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:91
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:86
 #, kde-format
 msgctxt "average filter mode"
 msgid "Average"
 msgstr "Μέσος όρος"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:92
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
 #, kde-format
 msgctxt "linear filter mode"
 msgid "Linear"
 msgstr "Γραμμική"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:93
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:88
 #, kde-format
 msgctxt "quadratic filter mode"
 msgid "Quadratic"
 msgstr "Τετράγωνη"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:94
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
 #, kde-format
 msgctxt "cubic filter mode"
 msgid "Cubic"
 msgstr "Κυβική"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:97
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:92
 #, kde-format
 msgid "Black Frame..."
 msgstr "Μαύρο πλαίσιο..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:99
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:94
 #, kde-format
 msgid ""
 "<p>Use this button to add a new black frame file which will be used by the "
@@ -33879,19 +33879,19 @@ msgid ""
 "eliminate wrong colors in these pixels.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:225
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:220
 #, kde-format
 msgid "Select Black Frame Image"
 msgstr "Επιλογή εικόνας μαύρου πλαισίου"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:226
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "Μαύρο πλαίσιο..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:232
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:227
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""
@@ -34180,7 +34180,7 @@ msgstr ""
 "εφαρμοσμένη στην εικόνα."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:118
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:196
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
 #, kde-format
 msgid "Amount:"
 msgstr "Ποσότητα:"
@@ -34737,7 +34737,7 @@ msgstr "Εργαλείο προσαρμογής επιπέδων"
 msgid "Noise Reduction Filter"
 msgstr "Φίλτρο μείωσης θορύβου"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:108
+#: core/libs/dimg/filters/nr/nrsettings.cpp:95
 #, kde-format
 msgid ""
 "<b>Threshold</b>: Adjusts the threshold for denoising of the image in a "
@@ -34748,7 +34748,7 @@ msgstr ""
 "εύρος από 0.0 (κανένα) έως 10.0. Το κατώφλι είναι η τιμή κάτω από την οποία "
 "όλα θεωρούνται θόρυβος."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:112
+#: core/libs/dimg/filters/nr/nrsettings.cpp:99
 #, kde-format
 msgid ""
 "<b>Softness</b>: This adjusts the softness of the thresholding (soft as "
@@ -34759,12 +34759,12 @@ msgstr ""
 "σε αντίθεση με τη σκληρή εφαρμογή). Όσο υψηλότερη είναι η απαλότητα τόσο "
 "περισσότερος θόρυβος παραμένει στην εικόνα."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:118
+#: core/libs/dimg/filters/nr/nrsettings.cpp:105
 #, kde-format
 msgid "Estimate Noise"
 msgstr "Εκτίμηση θορύβου"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:119
+#: core/libs/dimg/filters/nr/nrsettings.cpp:106
 #, kde-format
 msgid ""
 "Compute automatically all noise reduction settings by a parse of noise "
@@ -34773,61 +34773,61 @@ msgstr ""
 "Αυτόματος υπολογισμός των ρυθμίσεων μείωσης θορύβου με ανάλυση του θορύβου "
 "που περιέχεται στην εικόνα."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:130
-#: core/libs/dimg/filters/nr/nrsettings.cpp:157
-#: core/libs/dimg/filters/nr/nrsettings.cpp:184
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:204
+#: core/libs/dimg/filters/nr/nrsettings.cpp:117
+#: core/libs/dimg/filters/nr/nrsettings.cpp:144
+#: core/libs/dimg/filters/nr/nrsettings.cpp:171
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:189
 #, kde-format
 msgid "Threshold:"
 msgstr "Κατώφλι:"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:137
-#: core/libs/dimg/filters/nr/nrsettings.cpp:164
-#: core/libs/dimg/filters/nr/nrsettings.cpp:191
+#: core/libs/dimg/filters/nr/nrsettings.cpp:124
+#: core/libs/dimg/filters/nr/nrsettings.cpp:151
+#: core/libs/dimg/filters/nr/nrsettings.cpp:178
 #, kde-format
 msgid "Softness:"
 msgstr "Απαλότητα:"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:210
+#: core/libs/dimg/filters/nr/nrsettings.cpp:197
 #, kde-format
 msgid "Luminance"
 msgstr "Ακτινοβολία"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:214
+#: core/libs/dimg/filters/nr/nrsettings.cpp:201
 #, kde-format
 msgid "Chrominance Blue"
 msgstr "Χρωματική σύνθεση μπλε"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:218
+#: core/libs/dimg/filters/nr/nrsettings.cpp:205
 #, kde-format
 msgid "Chrominance Red"
 msgstr "Χρωματική σύνθεση κόκκινου"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:372
+#: core/libs/dimg/filters/nr/nrsettings.cpp:359
 #, fuzzy, kde-format
 #| msgid "Photograph Noise Reduction Settings File to Load"
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
 msgstr "Αρχείο για φόρτωση ρυθμίσεων μείωσης θορύβου φωτογραφίας"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:390
+#: core/libs/dimg/filters/nr/nrsettings.cpp:377
 #, kde-format
 msgid "\"%1\" is not a Photograph Noise Reduction settings text file."
 msgstr "Το \"%1\" δεν είναι αρχείο ρυθμίσεων μείωσης θορύβου φωτογραφίας."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:410
+#: core/libs/dimg/filters/nr/nrsettings.cpp:397
 #, kde-format
 msgid "Cannot load settings from the Photograph Noise Reduction text file."
 msgstr "Αδυναμία φόρτωσης ρυθμίσεων από το αρχείο μείωσης θορύβου φωτογραφίας."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:418
+#: core/libs/dimg/filters/nr/nrsettings.cpp:405
 #, fuzzy, kde-format
 #| msgid "Photograph Noise Reduction Settings File to Save"
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
 msgstr "Αρχείο για αποθήκευση ρυθμίσεων μείωσης θορύβου φωτογραφίας"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:443
+#: core/libs/dimg/filters/nr/nrsettings.cpp:430
 #, kde-format
 msgid "Cannot save settings to the Photograph Noise Reduction text file."
 msgstr ""
@@ -34855,27 +34855,27 @@ msgstr ""
 "Καθορίστε εδώ το επίπεδο ελάττωσης του κόκκινου σε σχέση με τη μέση τιμή του "
 "μπλε και του πράσινου."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:138
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:123
 #, kde-format
 msgid "Method:"
 msgstr "Μέθοδος:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:125
 #, kde-format
 msgid "Simple sharp"
 msgstr "Απλή όξυνση"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:141
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:126
 #, kde-format
 msgid "Unsharp mask"
 msgstr "Μάσκα αναίρεσης όξυνσης"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:150
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:135
 #, kde-format
 msgid "Select the sharpening method to apply to the image."
 msgstr "Επιλέξτε εδώ τη μέθοδο όξυνσης που θα εφαρμοστεί στην εικόνα."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:171
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:156
 #, kde-format
 msgid ""
 "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
@@ -34884,12 +34884,12 @@ msgstr ""
 "Οξύτητα ίση με 0 δεν έχει αποτέλεσμα, ενώ 1 και πάνω ορίζει την ακτίνα της "
 "μήτρας όξυνσης που καθορίζει το βαθμό όξυνσης της εικόνας."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:188
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
 #, kde-format
 msgid "Radius:"
 msgstr "Ακτίνα:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:193
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:178
 #, kde-format
 msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
@@ -34898,7 +34898,7 @@ msgstr ""
 "Η τιμή ακτίνας είναι η τιμή της ακτίνας της μήτρας του Gaussian θαμπώματος "
 "που χρησιμοποιείται για τον καθορισμό του βαθμού θαμπώματος της εικόνας."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:201
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:186
 #, kde-format
 msgid ""
 "The value of the difference between the original and the blur image that is "
@@ -34907,7 +34907,7 @@ msgstr ""
 "Η τιμή διαφοράς μεταξύ αρχικής και θαμπωμένης εικόνας που προστίθεται πάνω "
 "στην αρχική."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:209
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:194
 #, kde-format
 msgid ""
 "The threshold, as a fraction of the maximum luminosity value, needed to "
@@ -34916,12 +34916,12 @@ msgstr ""
 "Το κατώφλι ως κλάσμα της μέγιστης τιμής φωτεινότητας, που θα εφαρμοστεί στη "
 "ποσότητα διαφοράς."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:213
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:198
 #, kde-format
 msgid "Suppress color noise."
 msgstr "Καταστολή χρωματικού θορύβου."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:215
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:200
 #, kde-format
 msgid ""
 "An option to apply filter on luminosity channel only used to suppress chroma "
@@ -34930,12 +34930,12 @@ msgstr ""
 "Μια επιλογή εφαρμογής φίλτρου στο κανάλι φωτεινότητας με μοναδικό σκοπό την "
 "καταστολή της ενίσχυσης του θορύβου στο χρώμα."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:238
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:223
 #, kde-format
 msgid "Circular sharpness:"
 msgstr "Κυκλική οξύτητα:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:243
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:228
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is the radius of the circular convolution. It is the most important "
@@ -34953,12 +34953,12 @@ msgstr ""
 "1.0 θα δώσει καλά αποτελέσματα. Επιλέξτε μια μεγαλύτερη τιμή όταν η εικόνα "
 "σας είναι πολύ θαμπωμένη."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:247
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:232
 #, kde-format
 msgid "Correlation:"
 msgstr "Συσχέτιση:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:252
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:237
 #, fuzzy, kde-format
 #| msgid ""
 #| "Increasing the correlation may help to reduce artifacts. The correlation "
@@ -34976,12 +34976,12 @@ msgstr ""
 "στο 1, π.χ. 0.95 και 0.99. Χρησιμοποιώντας μια υψηλή τιμή για τη συσχέτιση "
 "θα μειώσει το εφέ όξυνσης του πρόσθετου."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:257
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:242
 #, kde-format
 msgid "Noise filter:"
 msgstr "Φίλτρο θορύβου:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:262
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:247
 #, fuzzy, kde-format
 #| msgid ""
 #| "Increasing the noise filter parameter may help to reduce artifacts. The "
@@ -35003,12 +35003,12 @@ msgstr ""
 "0.01. Χρησιμοποιώντας μια ψηλή τιμή για το φίλτρο θορύβου θα μειώσει το εφέ "
 "όξυνσης του πρόσθετου."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:268
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:253
 #, kde-format
 msgid "Gaussian sharpness:"
 msgstr "Gaussian οξύτητα:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:273
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:258
 #, kde-format
 msgid ""
 "This is the sharpness for the Gaussian convolution. Use this parameter when "
@@ -35023,12 +35023,12 @@ msgstr ""
 "τεχνουργήματα. Όταν χρησιμοποιείτε μη μηδενικές τιμές πιθανότατα θα πρέπει "
 "να αυξήσετε τις παραμέτρους συσχέτισης ή/και φίλτρου θορύβου."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:278
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:263
 #, kde-format
 msgid "Matrix size:"
 msgstr "Μέγεθος μήτρας:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:282
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:267
 #, kde-format
 msgid ""
 "This parameter determines the size of the transformation matrix. Increasing "
@@ -35039,31 +35039,31 @@ msgstr ""
 "το πλάτος της μήτρας μπορεί να δώσει καλύτερα αποτελέσματα, ειδικά αν έχετε "
 "επιλέξει μεγάλες τιμές για κυκλική ή Gaussian όξυνση."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:515
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:500
 #, fuzzy, kde-format
 #| msgid "Photograph Refocus Settings File to Load"
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "Αρχείο ρυθμίσεων επανεστίασης φωτογραφίας για φόρτωση"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:533
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:518
 #, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
 msgstr "Το \"%1\" δεν είναι αρχείο ρυθμίσεων επανεστίασης."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:556
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:541
 #, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr "Αδυναμία φόρτωσης ρυθμίσεων από το αρχείο επανεστίασης φωτογραφίας."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:549
 #, fuzzy, kde-format
 #| msgid "Photograph Refocus Settings File to Save"
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "Αρχείο ρυθμίσεων επανεστίασης φωτογραφίας για αποθήκευση"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:594
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:579
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr "Αδυναμία αποθήκευσης ρυθμίσεων στο αρχείο επανεστίασης φωτογραφίας."
@@ -37014,38 +37014,38 @@ msgstr "Καθάρισμα όλων"
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:73
+#: core/libs/imgqsort/imagequalityconfselector.cpp:66
 #, fuzzy, kde-format
 #| msgid "Revert to default settings"
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "Επαναφορά των προκαθορισμένων ρυθμίσεων"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:74
+#: core/libs/imgqsort/imagequalityconfselector.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:81
+#: core/libs/imgqsort/imagequalityconfselector.cpp:74
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "Χρήση προσαρμοσμένου μήκους"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:82
+#: core/libs/imgqsort/imagequalityconfselector.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:123
+#: core/libs/imgqsort/imagequalitysettings.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:124
+#: core/libs/imgqsort/imagequalitysettings.cpp:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37053,13 +37053,13 @@ msgid ""
 "assigned to Rejected label."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#: core/libs/imgqsort/imagequalitysettings.cpp:112
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:137
+#: core/libs/imgqsort/imagequalitysettings.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37067,13 +37067,13 @@ msgid ""
 "be assigned to Pending label."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:149
+#: core/libs/imgqsort/imagequalitysettings.cpp:125
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:150
+#: core/libs/imgqsort/imagequalitysettings.cpp:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37081,13 +37081,13 @@ msgid ""
 "be assigned to Accepted label."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:163
+#: core/libs/imgqsort/imagequalitysettings.cpp:139
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitysettings.cpp:141
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37095,13 +37095,13 @@ msgid ""
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:170
+#: core/libs/imgqsort/imagequalitysettings.cpp:146
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -37109,49 +37109,49 @@ msgid ""
 "exposure, and compression)."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:183
+#: core/libs/imgqsort/imagequalitysettings.cpp:159
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Κατώφλι:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:188
+#: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:190
+#: core/libs/imgqsort/imagequalitysettings.cpp:166
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Κατώφλι:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:195
+#: core/libs/imgqsort/imagequalitysettings.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:197
+#: core/libs/imgqsort/imagequalitysettings.cpp:173
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Κατώφλι:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:202
+#: core/libs/imgqsort/imagequalitysettings.cpp:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:204
+#: core/libs/imgqsort/imagequalitysettings.cpp:180
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Επιλογή λευκώματος"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:205
+#: core/libs/imgqsort/imagequalitysettings.cpp:181
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
@@ -37159,28 +37159,28 @@ msgstr ""
 "Επιλέξτε εδώ το χρώμα φόντου που θα χρησιμοποιηθεί για την περιοχή του "
 "επεξεργαστή εικόνας."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:207
-#: core/libs/imgqsort/imagequalitysettings.cpp:217
-#: core/libs/imgqsort/imagequalitysettings.cpp:227
+#: core/libs/imgqsort/imagequalitysettings.cpp:183
+#: core/libs/imgqsort/imagequalitysettings.cpp:193
+#: core/libs/imgqsort/imagequalitysettings.cpp:203
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Ύψος:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:212
+#: core/libs/imgqsort/imagequalitysettings.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:214
+#: core/libs/imgqsort/imagequalitysettings.cpp:190
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Χωρίς επιλογή"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:215
+#: core/libs/imgqsort/imagequalitysettings.cpp:191
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
@@ -37188,19 +37188,19 @@ msgstr ""
 "Επιλέξτε εδώ το χρώμα φόντου που θα χρησιμοποιηθεί για την περιοχή του "
 "επεξεργαστή εικόνας."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:222
+#: core/libs/imgqsort/imagequalitysettings.cpp:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:224
+#: core/libs/imgqsort/imagequalitysettings.cpp:200
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Συμπίεση PNG:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:225
+#: core/libs/imgqsort/imagequalitysettings.cpp:201
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
@@ -37208,19 +37208,19 @@ msgstr ""
 "Επιλέξτε εδώ το χρώμα φόντου που θα χρησιμοποιηθεί για την περιοχή του "
 "επεξεργαστή εικόνας."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:232
+#: core/libs/imgqsort/imagequalitysettings.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:234
+#: core/libs/imgqsort/imagequalitysettings.cpp:210
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Χωρίς επιλογή"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:235
+#: core/libs/imgqsort/imagequalitysettings.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"

@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-08 01:33+0000\n"
+"POT-Creation-Date: 2024-03-09 01:41+0000\n"
 "PO-Revision-Date: 2024-01-02 20:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1129,7 +1129,7 @@ msgid "Photograph Properties"
 msgstr "Właściwości zdjęcia"
 
 #: core/app/items/utils/tooltipfiller.cpp:158
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:133
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
@@ -3950,7 +3950,7 @@ msgstr "Ścieżka"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:70
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:65
 #, kde-format
 msgid "Size"
 msgstr "Rozmiar"
@@ -4477,7 +4477,7 @@ msgstr "Sam popraw naświetlenie"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:65
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:62
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, kde-format
 msgid "Filter:"
 msgstr "Filtr:"
@@ -7721,7 +7721,7 @@ msgid "Select the maximal output intensity value of the histogram here."
 msgstr "Tutaj wybierz maksymalną wartość natężenia wyjściowego histogramu."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:250
-#: core/libs/dimg/filters/curves/curvesbox.cpp:176
+#: core/libs/dimg/filters/curves/curvesbox.cpp:158
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "Wybór koloru cieni dla wszystkich kanałów"
@@ -7738,7 +7738,7 @@ msgstr ""
 "zielonego, niebieskiego i jasności."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:258
-#: core/libs/dimg/filters/curves/curvesbox.cpp:184
+#: core/libs/dimg/filters/curves/curvesbox.cpp:166
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "Wybór koloru pośredniego dla wszystkich kanałów"
@@ -7755,7 +7755,7 @@ msgstr ""
 "kanałów czerwonego, zielonego, niebieskiego i jasności."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
-#: core/libs/dimg/filters/curves/curvesbox.cpp:192
+#: core/libs/dimg/filters/curves/curvesbox.cpp:174
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "Wybór koloru świateł dla wszystkich kanałów"
@@ -7786,8 +7786,8 @@ msgstr ""
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:294
 #: core/dplugins/editor/colors/film/filmtool.cpp:238
-#: core/libs/dimg/filters/curves/curvesbox.cpp:214
-#: core/libs/dimg/filters/curves/curvesbox.cpp:221
+#: core/libs/dimg/filters/curves/curvesbox.cpp:196
+#: core/libs/dimg/filters/curves/curvesbox.cpp:203
 #, kde-format
 msgid "&Reset"
 msgstr "Wyze&ruj"
@@ -9046,7 +9046,7 @@ msgstr "Maskowanie nieostrości"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:284
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:145
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:130
 #, kde-format
 msgid "Refocus"
 msgstr "Ponownie ogniskuj"
@@ -9100,7 +9100,7 @@ msgid "Use Color Management for Printing"
 msgstr "Użyj zarządzania barwami dla drukowania"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
@@ -12529,7 +12529,7 @@ msgstr ""
 "zdjęcia."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:167
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:152
 #, kde-format
 msgid "Sharpness:"
 msgstr "Ostrość:"
@@ -16088,7 +16088,7 @@ msgstr "Tworzenie wzorca kalendarza"
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:64
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -28436,7 +28436,7 @@ msgstr ""
 "Znaleziono starą wersję pliku ustawień <b>%1</b>. Upewnij się, że "
 "zainstalowana jest wersja wydana z obecnie uruchomioną wersją digiKam. "
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:211
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:205
 #, kde-format
 msgid ""
 "Error while opening the database.\n"
@@ -28445,7 +28445,7 @@ msgstr ""
 "Błąd podczas otwierania bazy danych.\n"
 "digiKam spróbuje samoczynnie połączyć się ponownie do bazy danych."
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:243
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:237
 #, kde-format
 msgid ""
 "<p><b>A database error occurred.</b></p>Details:\n"
@@ -30949,30 +30949,30 @@ msgctxt "@info"
 msgid "Set here the yellow/blue color adjustment of the image."
 msgstr "Ustaw tutaj wartość poprawki żółty/niebieski."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:144
+#: core/libs/dimg/filters/curves/curvesbox.cpp:126
 #, kde-format
 msgid "Curve free mode"
 msgstr "Tryb wolnej krzywej"
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:145
+#: core/libs/dimg/filters/curves/curvesbox.cpp:127
 #, kde-format
 msgid "With this button, you can draw your curve free-hand with the mouse."
 msgstr ""
 "Dzięki temu przyciskowi możesz rysować za pomocą myszki swobodną krzywą."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:151
+#: core/libs/dimg/filters/curves/curvesbox.cpp:133
 #, kde-format
 msgid "Curve smooth mode"
 msgstr "Tryb gładkiej krzywej"
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:152
+#: core/libs/dimg/filters/curves/curvesbox.cpp:134
 #, kde-format
 msgid ""
 "With this button, the curve type is constrained to be a smooth line with "
 "tension."
 msgstr "Ten przycisk ogranicza typ krzywej do gładkiej, napiętej linii."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:177
+#: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid ""
 "With this button, you can pick the color from original image used to set "
@@ -30983,7 +30983,7 @@ msgstr ""
 "do ustawienia punktu krzywej <b>cieni</b> dla kanałów czerwonego, zielonego, "
 "niebieskiego i jasności."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:185
+#: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid ""
 "With this button, you can pick the color from original image used to set "
@@ -30994,7 +30994,7 @@ msgstr ""
 "do ustawienia punktu krzywej <b>koloru pośredniego</b> dla kanałów "
 "czerwonego, zielonego, niebieskiego i jasności."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:193
+#: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid ""
 "With this button, you can pick the color from original image used to set "
@@ -31005,12 +31005,12 @@ msgstr ""
 "do ustawienia punktu krzywej <b>świateł</b> dla kanałów czerwonego, "
 "zielonego, niebieskiego i jasności."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:216
+#: core/libs/dimg/filters/curves/curvesbox.cpp:198
 #, kde-format
 msgid "Resets channel/channels curves' values."
 msgstr "Zeruje wartości krzywych kanału/kanałów."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:217
+#: core/libs/dimg/filters/curves/curvesbox.cpp:199
 #, kde-format
 msgid ""
 "If you press this button, custom menu will appear: First option will reset "
@@ -31019,12 +31019,12 @@ msgstr ""
 "Po naciśnięciu tego przycisku, pojawi się własne menu: Pierwsza opcja "
 "wyzeruje bieżący kanał. Druga opcja wyzeruje wszystkie kanały."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:222
+#: core/libs/dimg/filters/curves/curvesbox.cpp:204
 #, kde-format
 msgid "Reset &Channel"
 msgstr "Wyzeruj &kanał"
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:223
+#: core/libs/dimg/filters/curves/curvesbox.cpp:205
 #, kde-format
 msgid "Reset &All"
 msgstr "&Wyzeruj wszystkie"
@@ -31056,18 +31056,18 @@ msgstr "Plik krzywych programu Gimp do zapisania"
 msgid "Cannot save to the Gimp curves text file."
 msgstr "Nie można zapisać danych do tekstowego pliku krzywych programu Gimp."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:189
+#: core/libs/dimg/filters/curves/curveswidget.cpp:173
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:790
 #, kde-format
 msgid "Loading image..."
 msgstr "Wczytywanie obrazu..."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:194
+#: core/libs/dimg/filters/curves/curveswidget.cpp:178
 #, kde-format
 msgid "Histogram calculation..."
 msgstr "Wyliczanie histogramu..."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:208
+#: core/libs/dimg/filters/curves/curveswidget.cpp:192
 #, kde-format
 msgid ""
 "Histogram\n"
@@ -31078,7 +31078,7 @@ msgstr ""
 "histogramu\n"
 "nieudane."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:302
+#: core/libs/dimg/filters/curves/curveswidget.cpp:288
 #, kde-format
 msgid ""
 "x:%1\n"
@@ -31481,12 +31481,12 @@ msgstr "Wbudowane przekształcenie nieobsługiwane"
 msgid "Filter identifier or version is not supported"
 msgstr "Identyfikator filtra lub wersja nieobsługiwana"
 
-#: core/libs/dimg/filters/fx/blurfilter.cpp:90
+#: core/libs/dimg/filters/fx/blurfilter.cpp:87
 #, kde-format
 msgid "Blur Filter"
 msgstr "Filtr rozmycia"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:88
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
 #, kde-format
 msgid "Blur FX Filter"
 msgstr "Filtr FX rozmycia"
@@ -31992,7 +31992,7 @@ msgstr "Szybkie przybliżenie"
 msgid "Enable fast approximation when rendering images."
 msgstr "Włącz szybkie przybliżenie przy rysowaniu obrazu."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:72
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
 #, kde-format
 msgctxt ""
 "This is a column which will contain the amount of HotPixels found in the "
@@ -32000,44 +32000,44 @@ msgctxt ""
 msgid "Hot Pixels"
 msgstr "Gorące piksele"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:262
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:257
 #, kde-format
 msgid "Remove Black Frame"
 msgstr "Usuń czarną ramkę"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:263
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, kde-format
 msgid "Clear List"
 msgstr "Wyczyść listę"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:94
 #, kde-format
 msgid "Loading Frame"
 msgstr "Wczytywanie ramki"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:163
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, kde-format
 msgid "Black Frame"
 msgstr "Czarna ramka"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:175
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:172
 #, kde-format
 msgid "File Name:"
 msgstr "Nazwa pliku:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
 #, kde-format
 msgctxt "@info: creation date"
 msgid "Created:"
 msgstr "Utworzony:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:188
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
 #, kde-format
 msgid "Serial Number:"
 msgstr "Numer seryjny:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:199
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:196
 #, kde-format
 msgid "Hot Pixels:"
 msgstr "Gorące piksele:"
@@ -32047,36 +32047,36 @@ msgstr "Gorące piksele:"
 msgid "Hot Pixels Tool"
 msgstr "Narzędzie gorących pikseli"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:91
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:86
 #, kde-format
 msgctxt "average filter mode"
 msgid "Average"
 msgstr "Przeciętny"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:92
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
 #, kde-format
 msgctxt "linear filter mode"
 msgid "Linear"
 msgstr "Liniowy"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:93
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:88
 #, kde-format
 msgctxt "quadratic filter mode"
 msgid "Quadratic"
 msgstr "Kwadratowy"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:94
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
 #, kde-format
 msgctxt "cubic filter mode"
 msgid "Cubic"
 msgstr "Sześcienny"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:97
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:92
 #, kde-format
 msgid "Black Frame..."
 msgstr "Czarna ramka..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:99
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:94
 #, kde-format
 msgid ""
 "<p>Use this button to add a new black frame file which will be used by the "
@@ -32105,18 +32105,18 @@ msgstr ""
 "pozycji, w których obraz musi zostać poprawiony, aby wyeliminować "
 "niewłaściwe kolory w tych pikselach.</p>"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:225
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:220
 #, kde-format
 msgid "Select Black Frame Image"
 msgstr "Wybierz obraz czarnego kadru"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:226
 #, kde-format
 msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "Analizator składni czarnej ramki"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:232
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:227
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""
@@ -32397,7 +32397,7 @@ msgstr ""
 "Można tutaj podejrzeć miniaturkę zdjęcia z zastosowaną maską antywinietującą."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:118
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:196
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
 #, kde-format
 msgid "Amount:"
 msgstr "Ilość:"
@@ -32932,7 +32932,7 @@ msgstr "Narzędzie dostrajania poziomów"
 msgid "Noise Reduction Filter"
 msgstr "Filtr redukcji szumu"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:108
+#: core/libs/dimg/filters/nr/nrsettings.cpp:95
 #, kde-format
 msgid ""
 "<b>Threshold</b>: Adjusts the threshold for denoising of the image in a "
@@ -32942,7 +32942,7 @@ msgstr ""
 "<b>Próg</b>: Dostosuj próg odszumiania obrazu w zakresie od 0.0 (żaden) do "
 "10.0. Próg jest wartością, poniżej której wszystko jest uważane za szum."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:112
+#: core/libs/dimg/filters/nr/nrsettings.cpp:99
 #, kde-format
 msgid ""
 "<b>Softness</b>: This adjusts the softness of the thresholding (soft as "
@@ -32953,12 +32953,12 @@ msgstr ""
 "przeciwieństwie do twardego stopniowania). Im wyższa miękkość tym więcej "
 "szumu pozostaje w obrazie."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:118
+#: core/libs/dimg/filters/nr/nrsettings.cpp:105
 #, kde-format
 msgid "Estimate Noise"
 msgstr "Oszacuj szum"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:119
+#: core/libs/dimg/filters/nr/nrsettings.cpp:106
 #, kde-format
 msgid ""
 "Compute automatically all noise reduction settings by a parse of noise "
@@ -32967,60 +32967,60 @@ msgstr ""
 "Samoczynnie oblicz wszystkie ustawienia redukcji szumu poprzez analizę szumu "
 "zawartego na obrazie."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:130
-#: core/libs/dimg/filters/nr/nrsettings.cpp:157
-#: core/libs/dimg/filters/nr/nrsettings.cpp:184
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:204
+#: core/libs/dimg/filters/nr/nrsettings.cpp:117
+#: core/libs/dimg/filters/nr/nrsettings.cpp:144
+#: core/libs/dimg/filters/nr/nrsettings.cpp:171
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:189
 #, kde-format
 msgid "Threshold:"
 msgstr "Próg:"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:137
-#: core/libs/dimg/filters/nr/nrsettings.cpp:164
-#: core/libs/dimg/filters/nr/nrsettings.cpp:191
+#: core/libs/dimg/filters/nr/nrsettings.cpp:124
+#: core/libs/dimg/filters/nr/nrsettings.cpp:151
+#: core/libs/dimg/filters/nr/nrsettings.cpp:178
 #, kde-format
 msgid "Softness:"
 msgstr "Miękkość:"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:210
+#: core/libs/dimg/filters/nr/nrsettings.cpp:197
 #, kde-format
 msgid "Luminance"
 msgstr "Jaskrawość"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:214
+#: core/libs/dimg/filters/nr/nrsettings.cpp:201
 #, kde-format
 msgid "Chrominance Blue"
 msgstr "Niebieski chrominancji"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:218
+#: core/libs/dimg/filters/nr/nrsettings.cpp:205
 #, kde-format
 msgid "Chrominance Red"
 msgstr "Czerwony chrominancji"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:372
+#: core/libs/dimg/filters/nr/nrsettings.cpp:359
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
 msgstr "Plik ustawień redukcji szumów do wczytania"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:390
+#: core/libs/dimg/filters/nr/nrsettings.cpp:377
 #, kde-format
 msgid "\"%1\" is not a Photograph Noise Reduction settings text file."
 msgstr ""
 "\"%1\" nie jest tekstowym plikiem ustawień redukcji szumów z fotografii."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:410
+#: core/libs/dimg/filters/nr/nrsettings.cpp:397
 #, kde-format
 msgid "Cannot load settings from the Photograph Noise Reduction text file."
 msgstr "Nie można wczytać ustawień z tekstowego pliku redukcji szumów."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:418
+#: core/libs/dimg/filters/nr/nrsettings.cpp:405
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
 msgstr "Plik ustawień redukcji szumów do zapisu"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:443
+#: core/libs/dimg/filters/nr/nrsettings.cpp:430
 #, kde-format
 msgid "Cannot save settings to the Photograph Noise Reduction text file."
 msgstr "Nie mogę zapisać ustawień do tekstowego pliku redukcji szumów."
@@ -33047,28 +33047,28 @@ msgstr ""
 "Tutaj ustaw poziom ograniczania poziomu czerwonego do średniej niebieskiego "
 "i zielonego."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:138
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:123
 #, kde-format
 msgid "Method:"
 msgstr "Metoda:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:125
 #, kde-format
 msgid "Simple sharp"
 msgstr "Proste wyostrzanie"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:141
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:126
 #, kde-format
 msgid "Unsharp mask"
 msgstr "Maska wyostrzania"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:150
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:135
 #, kde-format
 msgid "Select the sharpening method to apply to the image."
 msgstr ""
 "Wybierz tutaj metodę wyostrzania jaką chcesz zastosować dla fotografii."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:171
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:156
 #, kde-format
 msgid ""
 "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
@@ -33078,12 +33078,12 @@ msgstr ""
 "promień matrycy wyostrzania, która decyduje jak bardzo obraz będzie "
 "wyostrzony."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:188
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
 #, kde-format
 msgid "Radius:"
 msgstr "Promień:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:193
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:178
 #, kde-format
 msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
@@ -33092,7 +33092,7 @@ msgstr ""
 "Promień jest wartością promienia rozmycia gaussowskiego używaną do "
 "określenia jak bardzo należy rozmyć obraz."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:201
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:186
 #, kde-format
 msgid ""
 "The value of the difference between the original and the blur image that is "
@@ -33101,7 +33101,7 @@ msgstr ""
 "Różnica pomiędzy obrazem źródłowym i rozmytym, która jest ponownie dodawana "
 "do obrazu źródłowego."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:209
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:194
 #, kde-format
 msgid ""
 "The threshold, as a fraction of the maximum luminosity value, needed to "
@@ -33109,12 +33109,12 @@ msgid ""
 msgstr ""
 "Próg (jako ułamek maksymalnej jasności) potrzebny, żeby nałożyć różnicę."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:213
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:198
 #, kde-format
 msgid "Suppress color noise."
 msgstr "Zmniejsz szum koloru."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:215
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:200
 #, kde-format
 msgid ""
 "An option to apply filter on luminosity channel only used to suppress chroma "
@@ -33123,12 +33123,12 @@ msgstr ""
 "Opcja nałożenia filtra na kanał luminancji używany tyko do słumienia "
 "wzmocnienia szumu chromy."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:238
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:223
 #, kde-format
 msgid "Circular sharpness:"
 msgstr "Ostrość kołowa:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:243
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:228
 #, kde-format
 msgid ""
 "This is the radius of the circular convolution. It is the most important "
@@ -33140,12 +33140,12 @@ msgstr ""
 "narzędzia. Dla większości obrazów domyślna wartość 1.0 powinna dać dobre "
 "rezultaty. Wybierz większą wartość gdy obraz jest bardzo rozmyty."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:247
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:232
 #, kde-format
 msgid "Correlation:"
 msgstr "Korelacja:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:252
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:237
 #, kde-format
 msgid ""
 "Increasing the correlation may help to reduce artifacts. The correlation can "
@@ -33158,12 +33158,12 @@ msgstr ""
 "do 1, np. 0,95 i 0,99. Użycie dużej wartości korelacji zmniejszy efekt "
 "wyostrzania narzędzia."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:257
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:242
 #, kde-format
 msgid "Noise filter:"
 msgstr "Filtr szumu:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:262
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:247
 #, kde-format
 msgid ""
 "Increasing the noise filter parameter may help to reduce artifacts. The "
@@ -33178,12 +33178,12 @@ msgstr ""
 "będzie bardzo zła. Użyteczną wartość stanowi 0,01. Użycie dużej wartości "
 "filtra szumu zmniejszy efekt wyostrzania narzędzia."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:268
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:253
 #, kde-format
 msgid "Gaussian sharpness:"
 msgstr "Ostrość Gaussa:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:273
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:258
 #, kde-format
 msgid ""
 "This is the sharpness for the Gaussian convolution. Use this parameter when "
@@ -33197,12 +33197,12 @@ msgstr ""
 "występowanie brzydkich artefaktów. Gdy będziesz używać niezerowych wartości, "
 "będziesz prawdopodobnie musiał również zwiększyć korelację i/lub filtr szumu."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:278
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:263
 #, kde-format
 msgid "Matrix size:"
 msgstr "Rozmiar macierzy:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:282
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:267
 #, kde-format
 msgid ""
 "This parameter determines the size of the transformation matrix. Increasing "
@@ -33213,30 +33213,30 @@ msgstr ""
 "dać lepsze rezultaty, zwłaszcza gdy jednocześnie wybrane zostały duże "
 "wartości dla ostrości kołowej lub Gaussa."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:515
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:500
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "Plik ustawień ogniskowania zdjęcia do wczytania"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:533
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:518
 #, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
 msgstr "\"%1\" nie jest tekstowym plikiem ustawień ogniskowania zdjęcia."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:556
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:541
 #, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr ""
 "Nie można wczytać ustawień z tekstowego pliku ustawień ogniskowania zdjęcia."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:549
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "Plik ustawień ogniskowania zdjęcia do zapisu"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:594
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:579
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr ""
@@ -35022,13 +35022,13 @@ msgstr "Wyczyść wszystko"
 msgid "Select All"
 msgstr "Zaznacz wszystko"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:73
+#: core/libs/imgqsort/imagequalityconfselector.cpp:66
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "Użyj ustawień domyślnych"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:74
+#: core/libs/imgqsort/imagequalityconfselector.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
@@ -35036,13 +35036,13 @@ msgstr ""
 "Użyj domyślnych parametrów szeregowania po jakości ustawionych w oknie "
 "ustawień."
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:81
+#: core/libs/imgqsort/imagequalityconfselector.cpp:74
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "Użyj własnych ustawień"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:82
+#: core/libs/imgqsort/imagequalityconfselector.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
@@ -35050,13 +35050,13 @@ msgstr ""
 "Używaj własnych parametrów do szeregowania po jakości, zamiast tych "
 "domyślnych."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:123
+#: core/libs/imgqsort/imagequalitysettings.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr "Przypisz etykietę 'Odrzucone' dla zdjęć o niskiej jakości"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:124
+#: core/libs/imgqsort/imagequalitysettings.cpp:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35066,13 +35066,13 @@ msgstr ""
 "Obrazy o niskiej jakości wykryte przez analizę rozmycia, szumu i kompresji "
 "będą miały przypisaną etykietę 'odrzucone'."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#: core/libs/imgqsort/imagequalitysettings.cpp:112
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr "Przypisz etykietę 'Oczekujące' dla zdjęć o średniej jakości"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:137
+#: core/libs/imgqsort/imagequalitysettings.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35082,13 +35082,13 @@ msgstr ""
 "Obrazy o średniej jakości wykryte przez analizę rozmycia, szumu i kompresji "
 "będą miały przypisaną etykietę 'oczekujące'."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:149
+#: core/libs/imgqsort/imagequalitysettings.cpp:125
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr "Przypisz etykietę 'Przyjęte' dla zdjęć o wysokiej jakości"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:150
+#: core/libs/imgqsort/imagequalitysettings.cpp:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35098,13 +35098,13 @@ msgstr ""
 "Obrazy o wysokiej jakości wykryte przez analizę rozmycia, szumu i kompresji "
 "będą miały przypisaną etykietę 'przyjęte'."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:163
+#: core/libs/imgqsort/imagequalitysettings.cpp:139
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr "Wykryj estetykę obrazu, używając głębokiego uczenia się"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitysettings.cpp:141
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35115,13 +35115,13 @@ msgstr ""
 "Silnik wykrywania estetyki używa modelu głębokiego uczenia do klasyfikowania "
 "obrazów"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:170
+#: core/libs/imgqsort/imagequalitysettings.cpp:146
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr "Wykryj jakość przy użyciu podstawowych współczynników"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -35131,13 +35131,13 @@ msgstr ""
 "Wykryj, czy obraz sabotuje na podstawie czterech podstawowych czynników "
 "(rozmycie, szum, naświetlenie i poziom spakowania)."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:183
+#: core/libs/imgqsort/imagequalitysettings.cpp:159
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "Próg odrzucenia:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:188
+#: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
@@ -35145,13 +35145,13 @@ msgstr ""
 "Próg, poniżej którego wszystkie zdjęcia będą miały przypisaną "
 "etykietę 'odrzucone'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:190
+#: core/libs/imgqsort/imagequalitysettings.cpp:166
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "Próg oczekiwania:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:195
+#: core/libs/imgqsort/imagequalitysettings.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
@@ -35159,13 +35159,13 @@ msgstr ""
 "Próg, poniżej którego wszystkie zdjęcia będą miały przypisaną "
 "etykietę 'oczekujące'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:197
+#: core/libs/imgqsort/imagequalitysettings.cpp:173
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "Próg przyjęcia:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:202
+#: core/libs/imgqsort/imagequalitysettings.cpp:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
@@ -35173,75 +35173,75 @@ msgstr ""
 "Próg, powyżej którego wszystkie zdjęcia będą miały przypisaną "
 "etykietę 'przyjęte'"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:204
+#: core/libs/imgqsort/imagequalitysettings.cpp:180
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "Wykryj rozmycie"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:205
+#: core/libs/imgqsort/imagequalitysettings.cpp:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "Wykryj ilość rozmycia w przekazywanych obrazach"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:207
-#: core/libs/imgqsort/imagequalitysettings.cpp:217
-#: core/libs/imgqsort/imagequalitysettings.cpp:227
+#: core/libs/imgqsort/imagequalitysettings.cpp:183
+#: core/libs/imgqsort/imagequalitysettings.cpp:193
+#: core/libs/imgqsort/imagequalitysettings.cpp:203
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
 msgstr "Waga:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:212
+#: core/libs/imgqsort/imagequalitysettings.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr "Waga przypisana do algorytmu rozmycia"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:214
+#: core/libs/imgqsort/imagequalitysettings.cpp:190
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "Wykryj szum"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:215
+#: core/libs/imgqsort/imagequalitysettings.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "Wykryj ilość szumu w przekazywanych obrazach"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:222
+#: core/libs/imgqsort/imagequalitysettings.cpp:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr "Waga przypisana do algorytmu szumu"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:224
+#: core/libs/imgqsort/imagequalitysettings.cpp:200
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "Wykryj kompresję"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:225
+#: core/libs/imgqsort/imagequalitysettings.cpp:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "Wykryj ilość kompresji w przekazywanych obrazach"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:232
+#: core/libs/imgqsort/imagequalitysettings.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr "Waga przypisana do algorytmu kompresji"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:234
+#: core/libs/imgqsort/imagequalitysettings.cpp:210
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "Wykryj niedoświetlenie i prześwietlenie"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:235
+#: core/libs/imgqsort/imagequalitysettings.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"

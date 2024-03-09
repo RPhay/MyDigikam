@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-08 01:33+0000\n"
+"POT-Creation-Date: 2024-03-09 01:41+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -1123,7 +1123,7 @@ msgid "Photograph Properties"
 msgstr "फोटोग्राफ गुन"
 
 #: core/app/items/utils/tooltipfiller.cpp:158
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:133
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
@@ -3892,7 +3892,7 @@ msgstr "पथ"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:90
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:70
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:65
 #, kde-format
 msgid "Size"
 msgstr "आकार"
@@ -4440,7 +4440,7 @@ msgstr "अपने अपन एक्सपोजर"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:65
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:62
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:84
 #, kde-format
 msgid "Filter:"
 msgstr "फिल्टर:"
@@ -7408,7 +7408,7 @@ msgid "Select the maximal output intensity value of the histogram here."
 msgstr "इहां हिस्टोग्राम के सबसे अधिक तीव्रता इनपुट मूल्य चुनव."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:250
-#: core/libs/dimg/filters/curves/curvesbox.cpp:176
+#: core/libs/dimg/filters/curves/curvesbox.cpp:158
 #, kde-format
 msgid "All channels shadow tone color picker"
 msgstr "सब्बो चैनल छइंहा टोन रंग चुनइया"
@@ -7422,7 +7422,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:258
-#: core/libs/dimg/filters/curves/curvesbox.cpp:184
+#: core/libs/dimg/filters/curves/curvesbox.cpp:166
 #, kde-format
 msgid "All channels middle tone color picker"
 msgstr "सब्बो चैनल मध्य टोन रंग चुनइया"
@@ -7436,7 +7436,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
-#: core/libs/dimg/filters/curves/curvesbox.cpp:192
+#: core/libs/dimg/filters/curves/curvesbox.cpp:174
 #, kde-format
 msgid "All channels highlight tone color picker"
 msgstr "सब्बो चैनल उभार टोन रंग चुनइया"
@@ -7462,8 +7462,8 @@ msgstr "यदि आप मन ए बटन ल दबाहू, सब्ब�
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:294
 #: core/dplugins/editor/colors/film/filmtool.cpp:238
-#: core/libs/dimg/filters/curves/curvesbox.cpp:214
-#: core/libs/dimg/filters/curves/curvesbox.cpp:221
+#: core/libs/dimg/filters/curves/curvesbox.cpp:196
+#: core/libs/dimg/filters/curves/curvesbox.cpp:203
 #, kde-format
 msgid "&Reset"
 msgstr "रीसेट (&R)"
@@ -8664,7 +8664,7 @@ msgstr "अनसार्प मास्क"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:284
 #: core/libs/dimg/filters/sharp/refocusfilter.cpp:93
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:145
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:130
 #, kde-format
 msgid "Refocus"
 msgstr "रीफोकस"
@@ -8720,7 +8720,7 @@ msgid "Use Color Management for Printing"
 msgstr "रंग प्रबंधन सेटिंग"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
-#: core/libs/imgqsort/imagequalityconfselector.cpp:77
+#: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
 #: core/utilities/maintenance/maintenancedlg.cpp:249
 #, fuzzy, kde-format
@@ -12028,7 +12028,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:167
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:152
 #, kde-format
 msgid "Sharpness:"
 msgstr "सुस्पस्टता:"
@@ -15568,7 +15568,7 @@ msgstr "डाटाबेस फोल्डर बनाए मं फेल"
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
 #. i18n: ectx: property (text), widget (QTableWidget, m_tableWidget)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:69
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:64
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:178
 #, kde-format
 msgid "Preview"
@@ -27494,14 +27494,14 @@ msgid ""
 "that the version released with the running version of digiKam is installed. "
 msgstr ""
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:211
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:205
 #, kde-format
 msgid ""
 "Error while opening the database.\n"
 "digiKam will try to automatically reconnect to the database."
 msgstr ""
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:243
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:237
 #, kde-format
 msgid ""
 "<p><b>A database error occurred.</b></p>Details:\n"
@@ -29846,29 +29846,29 @@ msgctxt "@info"
 msgid "Set here the yellow/blue color adjustment of the image."
 msgstr "इहां फोटू के पीला/नीला रंग समायोजन सेट करव."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:144
+#: core/libs/dimg/filters/curves/curvesbox.cpp:126
 #, kde-format
 msgid "Curve free mode"
 msgstr "वक्र फ्री मोड"
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:145
+#: core/libs/dimg/filters/curves/curvesbox.cpp:127
 #, kde-format
 msgid "With this button, you can draw your curve free-hand with the mouse."
 msgstr "ये बटन के साथ, आप मन मुसुवा के साथ वक्र फ्री ड्राइंग बना सकथो."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:151
+#: core/libs/dimg/filters/curves/curvesbox.cpp:133
 #, kde-format
 msgid "Curve smooth mode"
 msgstr "वक्र स्मूथ मोड"
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:152
+#: core/libs/dimg/filters/curves/curvesbox.cpp:134
 #, fuzzy, kde-format
 msgid ""
 "With this button, the curve type is constrained to be a smooth line with "
 "tension."
 msgstr "ये बटन के साथ, वक्र किसिम ल खिंचाव के साथ समतल बना सकथो."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:177
+#: core/libs/dimg/filters/curves/curvesbox.cpp:159
 #, kde-format
 msgid ""
 "With this button, you can pick the color from original image used to set "
@@ -29876,7 +29876,7 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:185
+#: core/libs/dimg/filters/curves/curvesbox.cpp:167
 #, kde-format
 msgid ""
 "With this button, you can pick the color from original image used to set "
@@ -29884,7 +29884,7 @@ msgid ""
 "channels."
 msgstr ""
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:193
+#: core/libs/dimg/filters/curves/curvesbox.cpp:175
 #, kde-format
 msgid ""
 "With this button, you can pick the color from original image used to set "
@@ -29892,25 +29892,25 @@ msgid ""
 "Luminosity channels."
 msgstr ""
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:216
+#: core/libs/dimg/filters/curves/curvesbox.cpp:198
 #, fuzzy, kde-format
 #| msgid "Reset current channel curves' values."
 msgid "Resets channel/channels curves' values."
 msgstr "अभी हाल के चैनल वक्र मूल्य मन ल रीसेट करव."
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:217
+#: core/libs/dimg/filters/curves/curvesbox.cpp:199
 #, kde-format
 msgid ""
 "If you press this button, custom menu will appear: First option will reset "
 "current channel. Second option will reset all channels."
 msgstr ""
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:222
+#: core/libs/dimg/filters/curves/curvesbox.cpp:204
 #, fuzzy, kde-format
 msgid "Reset &Channel"
 msgstr "सब्बो बदलाव मन ल वापस करव"
 
-#: core/libs/dimg/filters/curves/curvesbox.cpp:223
+#: core/libs/dimg/filters/curves/curvesbox.cpp:205
 #, fuzzy, kde-format
 #| msgid "Reset"
 msgid "Reset &All"
@@ -29945,18 +29945,18 @@ msgstr "सहेजे बर गिम्प कर्व्स फाइल"
 msgid "Cannot save to the Gimp curves text file."
 msgstr "गिम्प कर्व्स पाठ फाइल मं सहेज नइ सकिस."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:189
+#: core/libs/dimg/filters/curves/curveswidget.cpp:173
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:790
 #, kde-format
 msgid "Loading image..."
 msgstr "फोटू लोड करत हे ..."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:194
+#: core/libs/dimg/filters/curves/curveswidget.cpp:178
 #, kde-format
 msgid "Histogram calculation..."
 msgstr "हिस्टोग्राम गनना..."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:208
+#: core/libs/dimg/filters/curves/curveswidget.cpp:192
 #, kde-format
 msgid ""
 "Histogram\n"
@@ -29967,7 +29967,7 @@ msgstr ""
 "गनना\n"
 "फेल."
 
-#: core/libs/dimg/filters/curves/curveswidget.cpp:302
+#: core/libs/dimg/filters/curves/curveswidget.cpp:288
 #, kde-format
 msgid ""
 "x:%1\n"
@@ -30386,12 +30386,12 @@ msgstr ""
 msgid "Filter identifier or version is not supported"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/blurfilter.cpp:90
+#: core/libs/dimg/filters/fx/blurfilter.cpp:87
 #, fuzzy, kde-format
 msgid "Blur Filter"
 msgstr "लाल फिल्टर"
 
-#: core/libs/dimg/filters/fx/blurfxfilter.cpp:88
+#: core/libs/dimg/filters/fx/blurfxfilter.cpp:82
 #, fuzzy, kde-format
 msgid "Blur FX Filter"
 msgstr "लाल फिल्टर"
@@ -30887,7 +30887,7 @@ msgstr "तीव्र एप्राक्सीमेसन"
 msgid "Enable fast approximation when rendering images."
 msgstr "फोटू प्रदर्सित करे बर तीव्र एप्राक्सीमेसन सक्छम करव."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:72
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:67
 #, fuzzy, kde-format
 #| msgid "Hot Pixels"
 msgctxt ""
@@ -30896,49 +30896,49 @@ msgctxt ""
 msgid "Hot Pixels"
 msgstr "हाट पिक्सल्स"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:262
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:257
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgid "Remove Black Frame"
 msgstr "काला फ्रेम..."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:263
+#: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:258
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, fuzzy, kde-format
 msgid "Clear List"
 msgstr "कैमरा सूची"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:94
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgid "Loading Frame"
 msgstr "लोड करत हे:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:163
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:160
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgid "Black Frame"
 msgstr "काला फ्रेम..."
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:175
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:172
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgid "File Name:"
 msgstr "फाइल नाम"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:182
 #, fuzzy, kde-format
 msgctxt "@info: creation date"
 msgid "Created:"
 msgstr "सृजितः"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:188
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:185
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgid "Serial Number:"
 msgstr "संख्या:"
 
-#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:199
+#: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:196
 #, fuzzy, kde-format
 #| msgid "Hot Pixels"
 msgid "Hot Pixels:"
@@ -30949,36 +30949,36 @@ msgstr "हाट पिक्सल्स"
 msgid "Hot Pixels Tool"
 msgstr "हाट पिक्सल्स"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:91
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:86
 #, fuzzy, kde-format
 msgctxt "average filter mode"
 msgid "Average"
 msgstr "औसत"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:92
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:87
 #, fuzzy, kde-format
 msgctxt "linear filter mode"
 msgid "Linear"
 msgstr "लीनियर"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:93
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:88
 #, fuzzy, kde-format
 msgctxt "quadratic filter mode"
 msgid "Quadratic"
 msgstr "द्विघात"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:94
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
 #, fuzzy, kde-format
 msgctxt "cubic filter mode"
 msgid "Cubic"
 msgstr "घन"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:97
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:92
 #, kde-format
 msgid "Black Frame..."
 msgstr "काला फ्रेम..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:99
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:94
 #, kde-format
 msgid ""
 "<p>Use this button to add a new black frame file which will be used by the "
@@ -30994,19 +30994,19 @@ msgid ""
 "eliminate wrong colors in these pixels.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:225
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:220
 #, kde-format
 msgid "Select Black Frame Image"
 msgstr "काला फ्रेम फोटू चुनव"
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:226
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
 msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "काला फ्रेम..."
 
-#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:232
+#: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:227
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""
@@ -31265,7 +31265,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:118
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:196
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
 #, kde-format
 msgid "Amount:"
 msgstr "मात्राः"
@@ -31766,7 +31766,7 @@ msgstr "स्तर समायोजन..."
 msgid "Noise Reduction Filter"
 msgstr "सोर कम करे जाना"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:108
+#: core/libs/dimg/filters/nr/nrsettings.cpp:95
 #, kde-format
 msgid ""
 "<b>Threshold</b>: Adjusts the threshold for denoising of the image in a "
@@ -31774,7 +31774,7 @@ msgid ""
 "everything is considered noise."
 msgstr ""
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:112
+#: core/libs/dimg/filters/nr/nrsettings.cpp:99
 #, kde-format
 msgid ""
 "<b>Softness</b>: This adjusts the softness of the thresholding (soft as "
@@ -31782,73 +31782,73 @@ msgid ""
 "remains in the image."
 msgstr ""
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:118
+#: core/libs/dimg/filters/nr/nrsettings.cpp:105
 #, fuzzy, kde-format
 msgid "Estimate Noise"
 msgstr "संदीप्ति:"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:119
+#: core/libs/dimg/filters/nr/nrsettings.cpp:106
 #, kde-format
 msgid ""
 "Compute automatically all noise reduction settings by a parse of noise "
 "contained in image."
 msgstr ""
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:130
-#: core/libs/dimg/filters/nr/nrsettings.cpp:157
-#: core/libs/dimg/filters/nr/nrsettings.cpp:184
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:204
+#: core/libs/dimg/filters/nr/nrsettings.cpp:117
+#: core/libs/dimg/filters/nr/nrsettings.cpp:144
+#: core/libs/dimg/filters/nr/nrsettings.cpp:171
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:189
 #, kde-format
 msgid "Threshold:"
 msgstr "देहलीज:"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:137
-#: core/libs/dimg/filters/nr/nrsettings.cpp:164
-#: core/libs/dimg/filters/nr/nrsettings.cpp:191
+#: core/libs/dimg/filters/nr/nrsettings.cpp:124
+#: core/libs/dimg/filters/nr/nrsettings.cpp:151
+#: core/libs/dimg/filters/nr/nrsettings.cpp:178
 #, fuzzy, kde-format
 msgid "Softness:"
 msgstr "स्मूथनेस:"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:210
+#: core/libs/dimg/filters/nr/nrsettings.cpp:197
 #, fuzzy, kde-format
 msgid "Luminance"
 msgstr "संदीप्ति:"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:214
+#: core/libs/dimg/filters/nr/nrsettings.cpp:201
 #, kde-format
 msgid "Chrominance Blue"
 msgstr ""
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:218
+#: core/libs/dimg/filters/nr/nrsettings.cpp:205
 #, kde-format
 msgid "Chrominance Red"
 msgstr ""
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:372
+#: core/libs/dimg/filters/nr/nrsettings.cpp:359
 #, fuzzy, kde-format
 #| msgid "Photograph Noise Reduction Settings File to Load"
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
 msgstr "फोटोग्राफ मं सोर कम करे के सेटिंग फाइल जऊन ल लोड करना हे"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:390
+#: core/libs/dimg/filters/nr/nrsettings.cpp:377
 #, kde-format
 msgid "\"%1\" is not a Photograph Noise Reduction settings text file."
 msgstr "\"%1\" ए फोटोग्राफ सोर कम करे के सेटिंग पाठ फाइल नइ हे."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:410
+#: core/libs/dimg/filters/nr/nrsettings.cpp:397
 #, kde-format
 msgid "Cannot load settings from the Photograph Noise Reduction text file."
 msgstr "फोटोग्राफ सोर कम करे के सेटिंग पाठ फाइल से सेटिंग लोड नइ कर सकिस."
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:418
+#: core/libs/dimg/filters/nr/nrsettings.cpp:405
 #, fuzzy, kde-format
 #| msgid "Photograph Noise Reduction Settings File to Save"
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
 msgstr "फोटोग्राफ मं सोर कम करे के सेटिंग फाइल जऊन ल सहेजना हे"
 
-#: core/libs/dimg/filters/nr/nrsettings.cpp:443
+#: core/libs/dimg/filters/nr/nrsettings.cpp:430
 #, kde-format
 msgid "Cannot save settings to the Photograph Noise Reduction text file."
 msgstr "फोटोग्राफ सोर कम करे के सेटिंग पाठ फाइल मं सेटिंग सहेज नइ सकिस."
@@ -31874,77 +31874,77 @@ msgstr "स्तरः"
 msgid "Set here the reducing level of red to the average of blue and green."
 msgstr "डिजिटल रिप्रेजेंटेसन बनाए के तारीक़ आज के सेट करव"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:138
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:123
 #, kde-format
 msgid "Method:"
 msgstr "विधिः"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:140
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:125
 #, kde-format
 msgid "Simple sharp"
 msgstr "सादा नोकीन"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:141
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:126
 #, kde-format
 msgid "Unsharp mask"
 msgstr "अनसार्प मास्क"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:150
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:135
 #, kde-format
 msgid "Select the sharpening method to apply to the image."
 msgstr "फोटू गुन सेट करे बर सही इंटरपोलेसन विधि चुनव."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:171
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:156
 #, kde-format
 msgid ""
 "A sharpness of 0 has no effect, 1 and above determine the sharpen matrix "
 "radius that determines how much to sharpen the image."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:188
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:173
 #, kde-format
 msgid "Radius:"
 msgstr "त्रिज्याः"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:193
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:178
 #, kde-format
 msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
 "much to blur the image."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:201
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:186
 #, kde-format
 msgid ""
 "The value of the difference between the original and the blur image that is "
 "added back into the original."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:209
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:194
 #, kde-format
 msgid ""
 "The threshold, as a fraction of the maximum luminosity value, needed to "
 "apply the difference amount."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:213
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:198
 #, kde-format
 msgid "Suppress color noise."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:215
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:200
 #, kde-format
 msgid ""
 "An option to apply filter on luminosity channel only used to suppress chroma "
 "noise amplification."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:238
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:223
 #, kde-format
 msgid "Circular sharpness:"
 msgstr "गोलाकार सुस्पस्टता:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:243
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:228
 #, kde-format
 msgid ""
 "This is the radius of the circular convolution. It is the most important "
@@ -31953,12 +31953,12 @@ msgid ""
 "blurred."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:247
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:232
 #, kde-format
 msgid "Correlation:"
 msgstr "कोरिलेसन:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:252
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:237
 #, kde-format
 msgid ""
 "Increasing the correlation may help to reduce artifacts. The correlation can "
@@ -31967,12 +31967,12 @@ msgid ""
 "effect of the tool."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:257
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:242
 #, kde-format
 msgid "Noise filter:"
 msgstr "नाइस फिल्टर:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:262
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:247
 #, kde-format
 msgid ""
 "Increasing the noise filter parameter may help to reduce artifacts. The "
@@ -31982,12 +31982,12 @@ msgid ""
 "filter will reduce the sharpening effect of the tool."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:268
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:253
 #, kde-format
 msgid "Gaussian sharpness:"
 msgstr "गासियन सुस्पस्टता:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:273
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:258
 #, kde-format
 msgid ""
 "This is the sharpness for the Gaussian convolution. Use this parameter when "
@@ -31997,12 +31997,12 @@ msgid ""
 "filter parameters."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:278
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:263
 #, kde-format
 msgid "Matrix size:"
 msgstr "माट्रिक्स आकार:"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:282
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:267
 #, kde-format
 msgid ""
 "This parameter determines the size of the transformation matrix. Increasing "
@@ -32010,31 +32010,31 @@ msgid ""
 "large values for circular or Gaussian sharpness."
 msgstr ""
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:515
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:500
 #, fuzzy, kde-format
 #| msgid "Photograph Refocus Settings File to Load"
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "फोटोग्राफ रीफोकस सेटिंग फाइल जऊन ल लोड करना हावे"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:533
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:518
 #, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
 msgstr "\"%1\" फोटोग्राफ रीफोकस सेटिंग पाठ फाइल नइ हे"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:556
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:541
 #, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr "फोटोग्राफ रीफोकस पाठ फाइल से सेटिंग लोड नइ कर सकिस."
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:549
 #, fuzzy, kde-format
 #| msgid "Photograph Refocus Settings File to Save"
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "फोटोग्राफ रीफोकस सेटिंग फाइल जऊन ल सहेजना हे"
 
-#: core/libs/dimg/filters/sharp/sharpsettings.cpp:594
+#: core/libs/dimg/filters/sharp/sharpsettings.cpp:579
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr "फोटोग्राफ रीफोकस पाठ फाइल म सेटिंग सहेज नइ सकिस."
@@ -33856,39 +33856,39 @@ msgstr "सब्बो साफ करव"
 msgid "Select All"
 msgstr "सब्बो चुनव"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:73
+#: core/libs/imgqsort/imagequalityconfselector.cpp:66
 #, fuzzy, kde-format
 #| msgid "Revert to default settings"
 msgctxt "@option:radio"
 msgid "Use default settings"
 msgstr "डिफाल्ट सेटिंग मं लहुटव"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:74
+#: core/libs/imgqsort/imagequalityconfselector.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:81
+#: core/libs/imgqsort/imagequalityconfselector.cpp:74
 #, fuzzy, kde-format
 #| msgid "Use custom definition"
 msgctxt "@option:radio"
 msgid "Use custom settings"
 msgstr "मनमाफिक परिभासा उपयोग करव"
 
-#: core/libs/imgqsort/imagequalityconfselector.cpp:82
+#: core/libs/imgqsort/imagequalityconfselector.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:123
+#: core/libs/imgqsort/imagequalitysettings.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:124
+#: core/libs/imgqsort/imagequalitysettings.cpp:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33896,13 +33896,13 @@ msgid ""
 "assigned to Rejected label."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:136
+#: core/libs/imgqsort/imagequalitysettings.cpp:112
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:137
+#: core/libs/imgqsort/imagequalitysettings.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33910,13 +33910,13 @@ msgid ""
 "be assigned to Pending label."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:149
+#: core/libs/imgqsort/imagequalitysettings.cpp:125
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:150
+#: core/libs/imgqsort/imagequalitysettings.cpp:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33924,13 +33924,13 @@ msgid ""
 "be assigned to Accepted label."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:163
+#: core/libs/imgqsort/imagequalitysettings.cpp:139
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:165
+#: core/libs/imgqsort/imagequalitysettings.cpp:141
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33938,13 +33938,13 @@ msgid ""
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:170
+#: core/libs/imgqsort/imagequalitysettings.cpp:146
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:172
+#: core/libs/imgqsort/imagequalitysettings.cpp:148
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -33952,112 +33952,112 @@ msgid ""
 "exposure, and compression)."
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:183
+#: core/libs/imgqsort/imagequalitysettings.cpp:159
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
 msgstr "देहलीज:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:188
+#: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:190
+#: core/libs/imgqsort/imagequalitysettings.cpp:166
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
 msgstr "देहलीज:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:195
+#: core/libs/imgqsort/imagequalitysettings.cpp:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:197
+#: core/libs/imgqsort/imagequalitysettings.cpp:173
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
 msgstr "देहलीज:"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:202
+#: core/libs/imgqsort/imagequalitysettings.cpp:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:204
+#: core/libs/imgqsort/imagequalitysettings.cpp:180
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
 msgstr "एलबम चुनव"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:205
+#: core/libs/imgqsort/imagequalitysettings.cpp:181
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
 msgstr "फोटू संपादक छेत्र मं उपयोग बर पिछोत अंगना रंग मनमाफिक करव."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:207
-#: core/libs/imgqsort/imagequalitysettings.cpp:217
-#: core/libs/imgqsort/imagequalitysettings.cpp:227
+#: core/libs/imgqsort/imagequalitysettings.cpp:183
+#: core/libs/imgqsort/imagequalitysettings.cpp:193
+#: core/libs/imgqsort/imagequalitysettings.cpp:203
 #, fuzzy, kde-format
 #| msgid "Height:"
 msgctxt "@label"
 msgid "Weight:"
 msgstr "ऊँचाईः"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:212
+#: core/libs/imgqsort/imagequalitysettings.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:214
+#: core/libs/imgqsort/imagequalitysettings.cpp:190
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
 msgstr "कुछ नइ चुनव"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:215
+#: core/libs/imgqsort/imagequalitysettings.cpp:191
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
 msgstr "फोटू संपादक छेत्र मं उपयोग बर पिछोत अंगना रंग मनमाफिक करव."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:222
+#: core/libs/imgqsort/imagequalitysettings.cpp:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:224
+#: core/libs/imgqsort/imagequalitysettings.cpp:200
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
 msgstr "पीएनजी संपीडन"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:225
+#: core/libs/imgqsort/imagequalitysettings.cpp:201
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
 msgstr "फोटू संपादक छेत्र मं उपयोग बर पिछोत अंगना रंग मनमाफिक करव."
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:232
+#: core/libs/imgqsort/imagequalitysettings.cpp:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
 msgstr ""
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:234
+#: core/libs/imgqsort/imagequalitysettings.cpp:210
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
 msgstr "कुछ नइ चुनव"
 
-#: core/libs/imgqsort/imagequalitysettings.cpp:235
+#: core/libs/imgqsort/imagequalitysettings.cpp:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
