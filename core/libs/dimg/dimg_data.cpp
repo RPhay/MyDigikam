@@ -83,6 +83,7 @@ void DImg::putImageData(uint width, uint height, bool sixteenBit, bool alpha, uc
     {
         size_t size = allocateData();
 
+        // cppcheck-suppress knownConditionTrueFalse
         if (m_priv->data && data)
         {
             memcpy(m_priv->data, data, size);
@@ -104,7 +105,7 @@ void DImg::putImageData(uint width, uint height, bool sixteenBit, bool alpha, uc
 
 void DImg::putImageData(uchar* const data, bool copyData)
 {
-    if (!data)
+    if      (!data)
     {
         delete [] m_priv->data;
         m_priv->data = nullptr;
