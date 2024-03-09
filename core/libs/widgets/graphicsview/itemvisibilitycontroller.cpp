@@ -454,7 +454,7 @@ void AnimationControl::setEasingCurve(const QEasingCurve& easing)
     {
         for (int i = 0 ; i < m_animationGroup->animationCount() ; ++i)
         {
-            QVariantAnimation* const anim = static_cast<QVariantAnimation*>(m_animationGroup->animationAt(i));
+            QVariantAnimation* const anim = dynamic_cast<QVariantAnimation*>(m_animationGroup->animationAt(i));
 
             if (anim)
             {
@@ -464,7 +464,7 @@ void AnimationControl::setEasingCurve(const QEasingCurve& easing)
     }
     else if (m_animation)
     {
-        QVariantAnimation* const anim = static_cast<QVariantAnimation*>(m_animation);
+        QVariantAnimation* const anim = dynamic_cast<QVariantAnimation*>(m_animation);
 
         if (anim)
         {
@@ -479,7 +479,7 @@ void AnimationControl::setAnimationDuration(int msecs)
     {
         for (int i = 0 ; i < m_animationGroup->animationCount() ; ++i)
         {
-            QVariantAnimation* const anim = static_cast<QVariantAnimation*>(m_animationGroup->animationAt(i));
+            QVariantAnimation* const anim = dynamic_cast<QVariantAnimation*>(m_animationGroup->animationAt(i));
 
             if (anim)
             {
@@ -489,7 +489,7 @@ void AnimationControl::setAnimationDuration(int msecs)
     }
     else if (m_animation)
     {
-        QVariantAnimation* const anim = static_cast<QVariantAnimation*>(m_animation);
+        QVariantAnimation* const anim = dynamic_cast<QVariantAnimation*>(m_animation);
 
         if (anim)
         {
