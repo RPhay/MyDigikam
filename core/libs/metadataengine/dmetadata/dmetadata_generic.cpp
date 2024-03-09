@@ -1187,8 +1187,6 @@ QStringList DMetadata::valuesToString(const QVariantList& values, const Metadata
 {
     int size = values.size();
 
-    Q_ASSERT(size == values.size());
-
     QStringList list;
 
     for (int i = 0 ; i < size ; ++i)
