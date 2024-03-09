@@ -37,22 +37,14 @@ class Q_DECL_HIDDEN GPSItemInfoSorter::Private
 {
 public:
 
-    explicit Private()
-      : mapWidgets              (),
-        sortOrder               (GPSItemInfoSorter::SortYoungestFirst),
-        sortMenu                (nullptr),
-        sortActionOldestFirst   (nullptr),
-        sortActionYoungestFirst (nullptr),
-        sortActionRating        (nullptr)
-    {
-    }
+    Private() = default;
 
     QList<QPointer<MapWidget> >    mapWidgets;
-    GPSItemInfoSorter::SortOptions sortOrder;
-    QPointer<QMenu>                sortMenu;
-    QAction*                       sortActionOldestFirst;
-    QAction*                       sortActionYoungestFirst;
-    QAction*                       sortActionRating;
+    GPSItemInfoSorter::SortOptions sortOrder                = GPSItemInfoSorter::SortYoungestFirst;
+    QPointer<QMenu>                sortMenu                 = nullptr;
+    QAction*                       sortActionOldestFirst    = nullptr;
+    QAction*                       sortActionYoungestFirst  = nullptr;
+    QAction*                       sortActionRating         = nullptr;
 };
 
 GPSItemInfoSorter::GPSItemInfoSorter(QObject* const parent)
@@ -125,7 +117,7 @@ bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo,
         }
 
         if (oldHasRating &&
-            newHasRating &&
+            newHasRating &&                         // cppcheck-suppress knownConditionTrueFalse
             (oldInfo.rating != newInfo.rating))
         {
             return oldInfo.rating < newInfo.rating;
@@ -144,6 +136,7 @@ bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo,
         return newHasDate;
     }
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (oldHasDate && newHasDate)
     {
         if (oldInfo.dateTime != newInfo.dateTime)
