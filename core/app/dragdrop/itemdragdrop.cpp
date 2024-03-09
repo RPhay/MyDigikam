@@ -394,6 +394,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         if      (m_readOnly)
         {
             Q_EMIT itemInfosDropped(ItemInfoList(imageIDs));
+
             return true;
         }
         else if (palbum)
@@ -401,11 +402,6 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             // Check if items dropped come from outside current album.
 
             QList<ItemInfo> extImages, intImages;
-
-            if (imageIDs.isEmpty())
-            {
-                return false;
-            }
 
             for (QList<qlonglong>::const_iterator it = imageIDs.constBegin() ;
                  it != imageIDs.constEnd() ; ++it)
@@ -519,6 +515,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             if (action == AssignTagAction)
             {
                 Q_EMIT assignTags(ItemInfoList(imageIDs), QList<int>() << talbum->id());
+
                 return true;
             }
         }
@@ -540,6 +537,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             }
 
             Q_EMIT addToGroup(droppedOnInfo, ItemInfoList(imageIDs));
+
             return true;
         }
 
@@ -551,6 +549,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             }
 
             Q_EMIT dragDropSort(droppedOnInfo, ItemInfoList(imageIDs));
+
             return true;
         }
 
@@ -562,7 +561,9 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             }
 
             Q_EMIT addToGroup(droppedOnInfo, ItemInfoList(imageIDs));
+
             DIO::move(ItemInfoList(imageIDs), palbum);
+
             return true;
         }
 
@@ -582,6 +583,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         if (m_readOnly)
         {
             Q_EMIT urlsDropped(srcURLs);
+
             return true;
         }
 
@@ -650,7 +652,6 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             popFaceTagMenu.addSeparator();
             popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
             popFaceTagMenu.setMouseTracking(true);
-
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
