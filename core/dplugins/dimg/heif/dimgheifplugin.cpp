@@ -65,6 +65,7 @@ QString DImgHEIFPlugin::description() const
 QString DImgHEIFPlugin::details() const
 {
     QString x265Notice = i18nc("@info", "This library is not present on your system.");
+    Q_UNUSED(x265Notice);
 
 #ifdef HAVE_X265
 
