@@ -37,6 +37,7 @@ CollectionManager* CollectionManager::instance()
 void CollectionManager::cleanUp()
 {
     delete m_instance;
+
     m_instance = nullptr;
 }
 
@@ -57,6 +58,7 @@ CollectionManager::CollectionManager()
 CollectionManager::~CollectionManager()
 {
     qDeleteAll(d->locations);
+
     delete d;
 }
 
@@ -110,6 +112,7 @@ void CollectionManager::accessibilityChanged(bool accessible, const QString& udi
 {
     Q_UNUSED(accessible);
     Q_UNUSED(udi);
+
     updateLocations();
 }
 

@@ -298,11 +298,11 @@ void CollectionScanner::resetDeleteRemovedSettings()
 
 bool CollectionScanner::checkDeleteRemoved()
 {
-    // returns true if removed items shall be deleted
+    // Returns true if removed items shall be deleted
 
     CoreDbAccess access;
 
-    // retrieve last time an item was removed (not deleted, but set to status removed)
+    // Retrieve last time an item was removed (not deleted, but set to status removed)
 
     QString removedItemsTimeString = access.db()->getSetting(QLatin1String("RemovedItemsTime"));
 
@@ -311,15 +311,11 @@ bool CollectionScanner::checkDeleteRemoved()
         return false;
     }
 
-    // retrieve last time removed items were (definitely) deleted from db
+    // Retrieve last time removed items were (definitely) deleted from db
 
     QString deleteRemovedTimeString = access.db()->getSetting(QLatin1String("DeleteRemovedTime"));
-    QDateTime removedItemsTime, deleteRemovedTime;
-
-    if (!removedItemsTimeString.isNull())
-    {
-        removedItemsTime = QDateTime::fromString(removedItemsTimeString, Qt::ISODate);
-    }
+    QDateTime removedItemsTime      = QDateTime::fromString(removedItemsTimeString, Qt::ISODate);
+    QDateTime deleteRemovedTime;
 
     if (!deleteRemovedTimeString.isNull())
     {
@@ -328,7 +324,7 @@ bool CollectionScanner::checkDeleteRemoved()
 
     QDateTime now     = QDateTime::currentDateTime();
 
-    // retrieve number of complete collection scans since the last time that removed items were deleted
+    // Retrieve number of complete collection scans since the last time that removed items were deleted
 
     int completeScans = access.db()->getSetting(QLatin1String("DeleteRemovedCompleteScanCount")).toInt();
 
@@ -339,7 +335,7 @@ bool CollectionScanner::checkDeleteRemoved()
         return false;
     }
 
-    // give at least a week between removed item deletions
+    // Give at least a week between removed item deletions
 
     if (deleteRemovedTime.isValid())
     {
