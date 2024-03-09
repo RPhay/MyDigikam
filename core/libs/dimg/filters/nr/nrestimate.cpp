@@ -279,6 +279,7 @@ void NREstimate::startAnalyse()
             CvMat* workingArr = cvCreateMat(rowPosition[(i / points->cols)], 1, CV_32FC1);
             ptr               = reinterpret_cast<float*>(workingArr->data.ptr);
 
+            // cppcheck-suppress knownConditionTrueFalse
             for (int j = 0 ; runningFlag() && (j < rowPosition[(i / (points->cols))]) ; ++j)
             {
                 *ptr++ = cvGet2D(sd, j, i).val[0];
