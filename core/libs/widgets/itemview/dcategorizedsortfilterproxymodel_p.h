@@ -33,26 +33,15 @@ class Q_DECL_HIDDEN DCategorizedSortFilterProxyModel::Private
 {
 public:
 
-    explicit Private()
-      : sortColumn                       (0),
-        sortOrder                        (Qt::AscendingOrder),
-        categorizedModel                 (false),
-        sortCategoriesByNaturalComparison(true)
-    {
-        collator.setNumericMode(true);
-        collator.setCaseSensitivity(Qt::CaseSensitive);
-    }
-
-    ~Private()
-    {
-    }
+    Private()  = default;
+    ~Private() = default;
 
 public:
 
-    int           sortColumn;
-    Qt::SortOrder sortOrder;
-    bool          categorizedModel;
-    bool          sortCategoriesByNaturalComparison;
+    int           sortColumn                            = 0;
+    Qt::SortOrder sortOrder                             = Qt::AscendingOrder;
+    bool          categorizedModel                      = false;
+    bool          sortCategoriesByNaturalComparison     = true;
     QCollator     collator;
 };
 

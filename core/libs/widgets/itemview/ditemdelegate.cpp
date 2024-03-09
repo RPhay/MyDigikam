@@ -45,9 +45,7 @@ class Q_DECL_HIDDEN DItemDelegate::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QCache<QString, QPixmap> thumbnailBorderCache;
     QCache<QString, QString> squeezedTextCache;

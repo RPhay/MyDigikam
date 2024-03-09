@@ -30,17 +30,13 @@ class Q_DECL_HIDDEN ItemViewToolTip::Private
 {
 public:
 
-    explicit Private()
-      : view           (nullptr),
-        filterInstalled(false)
-    {
-    }
+    Private() = default;
 
-    QAbstractItemView* view;
+    QAbstractItemView* view             = nullptr;
     QModelIndex        index;
     QRect              rect;
     QString            text;
-    bool               filterInstalled;
+    bool               filterInstalled  = false;
 };
 
 ItemViewToolTip::ItemViewToolTip(QAbstractItemView* const view)

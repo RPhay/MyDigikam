@@ -38,11 +38,9 @@ public:
     {
     }
 
-    ~Private()
-    {
-    }
+    ~Private() = default;
 
-    DCategorizedView* view;
+    DCategorizedView* view = nullptr;
 };
 
 

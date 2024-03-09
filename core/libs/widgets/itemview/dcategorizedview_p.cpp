@@ -158,6 +158,7 @@ QRect DCategorizedView::Private::visualRectInViewport(const QModelIndex& index) 
         itemHeight = listView->gridSize().height();
         itemWidth  = listView->gridSize().width();
     }
+    // cppcheck-suppress knownConditionTrueFalse
     else if (listView->gridSize().isEmpty() && !leftToRightFlow)
     {
         itemHeight = biggestItemSize.height();

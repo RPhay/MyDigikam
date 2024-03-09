@@ -39,20 +39,8 @@ class Q_DECL_HIDDEN ItemViewCategorized::Private
 {
 public:
 
-    explicit Private(ItemViewCategorized* const q)
-      : delegate                    (nullptr),
-        toolTip                     (nullptr),
-        notificationToolTip         (nullptr),
-        showToolTip                 (false),
-        usePointingHand             (true),
-        scrollStepFactor            (10),
-        currentMouseEvent           (nullptr),
-        ensureOneSelectedItem       (false),
-        ensureInitialSelectedItem   (false),
-        scrollCurrentToCenter       (false),
-        mouseButtonPressed          (Qt::NoButton),
-        hintAtSelectionRow          (-1),
-        q                           (q)
+    explicit Private(ItemViewCategorized* const qq)
+        : q(qq)
     {
     }
 
@@ -60,20 +48,20 @@ public:
 
 public:
 
-    DItemDelegate*             delegate;
-    ItemViewToolTip*           toolTip;
-    ItemViewToolTip*           notificationToolTip;
-    bool                       showToolTip;
-    bool                       usePointingHand;
-    int                        scrollStepFactor;
+    DItemDelegate*             delegate                     = nullptr;
+    ItemViewToolTip*           toolTip                      = nullptr;
+    ItemViewToolTip*           notificationToolTip          = nullptr;
+    bool                       showToolTip                  = false;
+    bool                       usePointingHand              = true;
+    int                        scrollStepFactor             = 10;
 
-    QMouseEvent*               currentMouseEvent;
-    bool                       ensureOneSelectedItem;
-    bool                       ensureInitialSelectedItem;
-    bool                       scrollCurrentToCenter;
-    Qt::MouseButton            mouseButtonPressed;
+    QMouseEvent*               currentMouseEvent            = nullptr;
+    bool                       ensureOneSelectedItem        = false;
+    bool                       ensureInitialSelectedItem    = false;
+    bool                       scrollCurrentToCenter        = false;
+    Qt::MouseButton            mouseButtonPressed           = Qt::NoButton;
     QPersistentModelIndex      hintAtSelectionIndex;
-    int                        hintAtSelectionRow;
+    int                        hintAtSelectionRow           = -1;
     QPersistentModelIndex      hintAtScrollPosition;
 
     ItemViewCategorized* const q;

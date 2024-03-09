@@ -185,14 +185,10 @@ class Q_DECL_HIDDEN DItemToolTip::Private
 {
 public:
 
-    explicit Private()
-      : tipBorder(5),
-        corner   (0)
-    {
-    }
+    Private() = default;
 
-    const int   tipBorder;
-    int         corner;
+    const int   tipBorder = 5;
+    int         corner    = 0;
     QPixmap     corners[4];
 };
 

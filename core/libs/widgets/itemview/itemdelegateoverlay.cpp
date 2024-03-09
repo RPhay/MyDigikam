@@ -484,14 +484,10 @@ class Q_DECL_HIDDEN PersistentWidgetDelegateOverlay::Private
 {
 public:
 
-    explicit Private()
-      : persistent  (false),
-        restoreFocus(false)
-    {
-    }
+    Private() = default;
 
-    bool                  persistent;
-    bool                  restoreFocus;
+    bool                  persistent    = false;
+    bool                  restoreFocus  = false;
 
     QPersistentModelIndex index;
     QPersistentModelIndex enteredIndex;
