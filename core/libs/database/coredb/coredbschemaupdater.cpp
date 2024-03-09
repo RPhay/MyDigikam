@@ -320,6 +320,7 @@ bool CoreDbSchemaUpdater::startUpdates()
 
         // No legacy handling: start with a fresh db
 
+        // cppcheck-suppress knownConditionTrueFalse
         if (!createDatabase() || !createFilterSettings())
         {
             QString errorMsg    = i18n("Failed to create tables in database.\n ") + d->backend->lastError();
