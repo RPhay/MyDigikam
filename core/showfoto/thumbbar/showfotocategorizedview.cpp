@@ -61,28 +61,19 @@ class Q_DECL_HIDDEN ShowfotoCategorizedView::Private
 {
 public:
 
-    explicit Private()
-      : model            (nullptr),
-        filterModel      (nullptr),
-        delegate         (nullptr),
-        showToolTip      (false),
-        scrollToItemId   (0),
-        delayedEnterTimer(nullptr),
-        currentMouseEvent(nullptr)
-    {
-    }
+    Private() = default;
 
-    ShowfotoItemModel*       model;
-    ShowfotoSortFilterModel* filterModel;
+    ShowfotoItemModel*       model              = nullptr;
+    ShowfotoSortFilterModel* filterModel        = nullptr;
 
-    ShowfotoDelegate*        delegate;
-    bool                     showToolTip;
+    ShowfotoDelegate*        delegate           = nullptr;
+    bool                     showToolTip        = false;
 
-    qlonglong                scrollToItemId;
+    qlonglong                scrollToItemId     = 0;
 
-    QTimer*                  delayedEnterTimer;
+    QTimer*                  delayedEnterTimer  = nullptr;
 
-    QMouseEvent*             currentMouseEvent;
+    QMouseEvent*             currentMouseEvent  = nullptr;
 };
 
 ShowfotoCategorizedView::ShowfotoCategorizedView(QWidget* const parent)
@@ -525,6 +516,7 @@ void ShowfotoCategorizedView::indexActivated(const QModelIndex& index, Qt::Keybo
     if (!info.isNull())
     {
         activated(info, modifiers);
+
         Q_EMIT showfotoItemInfoActivated(info);
     }
 }

@@ -53,19 +53,7 @@ class Q_DECL_HIDDEN ShowfotoKineticScroller::Private
 {
 public:
 
-    explicit Private()
-      : isPressed            (false),
-        isMoving             (false),
-        lastMouseYPos        (0),
-        lastMouseXPos        (0),
-        lastScrollBarPosition(0),
-        velocity             (0),
-        ignoredMouseMoves    (0),
-        ignoredMouseActions  (0),
-        scrollArea           (nullptr),
-        scrollFlow           (QListView::TopToBottom)
-    {
-    }
+    Private() = default;
 
     void stopMotion()
     {
@@ -74,20 +62,22 @@ public:
         kineticTimer.stop();
     }
 
-    bool                 isPressed;
-    bool                 isMoving;
+public:
 
-    int                  lastMouseYPos;
-    int                  lastMouseXPos;
-    int                  lastScrollBarPosition;
-    int                  velocity;
-    int                  ignoredMouseMoves;
-    int                  ignoredMouseActions;
+    bool                 isPressed              = false;
+    bool                 isMoving               = false;
 
-    QAbstractScrollArea* scrollArea;
+    int                  lastMouseYPos          = 0;
+    int                  lastMouseXPos          = 0;
+    int                  lastScrollBarPosition  = 0;
+    int                  velocity               = 0;
+    int                  ignoredMouseMoves      = 0;
+    int                  ignoredMouseActions    = 0;
+
+    QAbstractScrollArea* scrollArea             = nullptr;
     QPoint               lastPressPoint;
     QTimer               kineticTimer;
-    QListView::Flow      scrollFlow;
+    QListView::Flow      scrollFlow             = QListView::TopToBottom;
 };
 
 ShowfotoKineticScroller::ShowfotoKineticScroller(QObject* const parent)
@@ -108,6 +98,7 @@ void ShowfotoKineticScroller::enableKineticScrollFor(QAbstractScrollArea* const 
     if (!scrollArea)
     {
         Q_ASSERT_X(0, "kinetic scroller", "missing scroll area");
+
         return;
     }
 
@@ -179,11 +170,11 @@ bool ShowfotoKineticScroller::eventFilter(QObject* object, QEvent* event)
                 // A few move events are ignored as "click jitter", but after that we
                 // assume that the user is doing a click & drag
 
-                if      (d->ignoredMouseMoves < gMaxIgnoredMouseMoves)
+                if (d->ignoredMouseMoves < gMaxIgnoredMouseMoves)
                 {
                     ++d->ignoredMouseMoves;
                 }
-                else if (d->isPressed)
+                else
                 {
                     d->ignoredMouseMoves = 0;
                     d->isMoving          = true;
@@ -249,6 +240,7 @@ bool ShowfotoKineticScroller::eventFilter(QObject* object, QEvent* event)
         default:
         {
             // Nothing to do here.
+
             break;
         }
     }

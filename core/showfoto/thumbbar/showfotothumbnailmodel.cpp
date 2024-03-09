@@ -39,17 +39,7 @@ class Q_DECL_HIDDEN ShowfotoThumbnailModel::Private
 {
 public:
 
-    explicit Private()
-      : displayWidget       (nullptr),
-        loadingThread       (nullptr),
-        preloadThread       (nullptr),
-        thumbSize           (0),
-        lastGlobalThumbSize (0),
-        preloadThumbSize    (0),
-        maxThumbSize        (ThumbnailSize::Huge),
-        emitDataChanged     (true)
-    {
-    }
+    Private() = default;
 
     int preloadThumbnailSize() const
     {
@@ -63,16 +53,16 @@ public:
 
 public:
 
-    QWidget*             displayWidget;
+    QWidget*             displayWidget          = nullptr;
 
-    ThumbnailLoadThread* loadingThread;
-    ThumbnailLoadThread* preloadThread;
-    ThumbnailSize        thumbSize;
-    ThumbnailSize        lastGlobalThumbSize;
-    ThumbnailSize        preloadThumbSize;
+    ThumbnailLoadThread* loadingThread          = nullptr;
+    ThumbnailLoadThread* preloadThread          = nullptr;
+    ThumbnailSize        thumbSize              = ThumbnailSize(0);
+    ThumbnailSize        lastGlobalThumbSize    = ThumbnailSize(0);
+    ThumbnailSize        preloadThumbSize       = ThumbnailSize(0);
     QRect                detailRect;
-    int                  maxThumbSize;
-    bool                 emitDataChanged;
+    int                  maxThumbSize           = ThumbnailSize::Huge;
+    bool                 emitDataChanged        = true;
 };
 
 ShowfotoThumbnailModel::ShowfotoThumbnailModel(QWidget* const parent)
@@ -151,6 +141,7 @@ QVariant ShowfotoThumbnailModel::data(const QModelIndex& index, int role) const
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             QVariant var = QPixmap();
+
             return var;
 
 #else
@@ -176,6 +167,7 @@ QVariant ShowfotoThumbnailModel::data(const QModelIndex& index, int role) const
             thumbnailImage = thumbnailImage.scaled(thumbSize, thumbSize,
                                                    Qt::KeepAspectRatio,
                                                    Qt::SmoothTransformation);
+
             Q_EMIT signalThumbInfo(info, thumbnailImage);
 
             return thumbnailImage;
@@ -184,6 +176,7 @@ QVariant ShowfotoThumbnailModel::data(const QModelIndex& index, int role) const
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             QVariant var = QPixmap();
+
             return var;
 
 #else

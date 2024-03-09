@@ -38,16 +38,11 @@ class Q_DECL_HIDDEN ShowfotoThumbnailBar::Private
 {
 public:
 
-    explicit Private()
-      : scrollPolicy    (Qt::ScrollBarAlwaysOn),
-        duplicatesFilter(nullptr),
-        kScroller       (nullptr)
-    {
-    }
+    Private() = default;
 
-    Qt::ScrollBarPolicy              scrollPolicy;
-    NoDuplicatesShowfotoFilterModel* duplicatesFilter;
-    ShowfotoKineticScroller*         kScroller;
+    Qt::ScrollBarPolicy              scrollPolicy     = Qt::ScrollBarAlwaysOn;
+    NoDuplicatesShowfotoFilterModel* duplicatesFilter = nullptr;
+    ShowfotoKineticScroller*         kScroller        = nullptr;
 };
 
 ShowfotoThumbnailBar::ShowfotoThumbnailBar(QWidget* const parent)

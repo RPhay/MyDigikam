@@ -216,11 +216,7 @@ class Q_DECL_HIDDEN ShowfotoFilterModel::ShowfotoFilterModelPrivate : public QOb
 
 public:
 
-    ShowfotoFilterModelPrivate()
-      : q                (nullptr),
-        showfotoItemModel(nullptr)
-    {
-    }
+    ShowfotoFilterModelPrivate() = default;
 
     void init(ShowfotoFilterModel* const _q);
 
@@ -231,8 +227,8 @@ Q_SIGNALS:
 
 public:
 
-    ShowfotoFilterModel*     q;
-    ShowfotoItemModel*       showfotoItemModel;
+    ShowfotoFilterModel*     q                  = nullptr;
+    ShowfotoItemModel*       showfotoItemModel  = nullptr;
     ShowfotoItemSortSettings sorter;
 
 private:

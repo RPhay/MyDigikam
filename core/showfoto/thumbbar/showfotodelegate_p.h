@@ -48,17 +48,11 @@ class Q_DECL_HIDDEN ShowfotoDelegate::ShowfotoDelegatePrivate : public ShowfotoI
 public:
 
     ShowfotoDelegatePrivate()
-      : contentWidth       (0),
-        drawImageFormat    (true),
-        drawFocusFrame     (true),
-        drawMouseOverFrame (true),
-        currentView        (nullptr),
-        currentModel       (nullptr)
     {
         actualPixmapRectCache.setMaxCost(250);
     }
 
-    int                    contentWidth;
+    int                    contentWidth             = 0;
 
     QRect                  dateRect;
     QRect                  pixmapRect;
@@ -69,14 +63,14 @@ public:
     QRect                  groupRect;
     QRect                  coordinatesRect;
 
-    bool                   drawImageFormat;
-    bool                   drawFocusFrame;
-    bool                   drawMouseOverFrame;
+    bool                   drawImageFormat          = true;
+    bool                   drawFocusFrame           = true;
+    bool                   drawMouseOverFrame       = true;
 
     QCache<int, QRect>     actualPixmapRectCache;
 
-    ShowfotoThumbnailBar*  currentView;
-    QAbstractItemModel*    currentModel;
+    ShowfotoThumbnailBar*  currentView              = nullptr;
+    QAbstractItemModel*    currentModel             = nullptr;
 
 public:
 
@@ -90,7 +84,6 @@ class Q_DECL_HIDDEN ShowfotoThumbnailDelegatePrivate : public ShowfotoDelegate::
 public:
 
     ShowfotoThumbnailDelegatePrivate()
-      : flow              (QListView::LeftToRight)
     {
         // switch off drawing of frames
 
@@ -102,7 +95,7 @@ public:
 
 public:
 
-    QListView::Flow flow;
+    QListView::Flow flow        = QListView::LeftToRight;
     QRect           viewSize;
 };
 
@@ -112,9 +105,7 @@ class Q_DECL_HIDDEN ShowfotoNormalDelegatePrivate : public ShowfotoDelegate::Sho
 {
 public:
 
-    ShowfotoNormalDelegatePrivate()
-    {
-    }
+    ShowfotoNormalDelegatePrivate() = default;
 
     void init(ShowfotoNormalDelegate* const q, ShowfotoThumbnailBar* const parent);
 };

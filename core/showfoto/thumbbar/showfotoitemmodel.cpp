@@ -30,14 +30,7 @@ class Q_DECL_HIDDEN ShowfotoItemModel::Private
 {
 public:
 
-    explicit Private()
-      : keepFileUrlCache           (false),
-        refreshing                 (false),
-        reAdding                   (false),
-        incrementalRefreshRequested(false),
-        sendRemovalSignals         (false)
-    {
-    }
+    Private() = default;
 
     inline bool isValid(const QModelIndex& index)
     {
@@ -54,13 +47,13 @@ public:
     QMultiHash<qlonglong, int> idHash;
     QHash<QString, qlonglong>  fileUrlHash;
 
-    bool                       keepFileUrlCache;
+    bool                       keepFileUrlCache             = false;
 
-    bool                       refreshing;
-    bool                       reAdding;
-    bool                       incrementalRefreshRequested;
+    bool                       refreshing                   = false;
+    bool                       reAdding                     = false;
+    bool                       incrementalRefreshRequested  = false;
 
-    bool                       sendRemovalSignals;
+    bool                       sendRemovalSignals           = false;
 };
 
 // ----------------------------------------------------------------------------------------------------
