@@ -30,22 +30,16 @@ class Q_DECL_HIDDEN RGTagModel::Private
 {
 public:
 
-    explicit Private()
-      : tagModel    (nullptr),
-        rootTag     (nullptr),
-        startInsert (-1),
-        endInsert   (-1)
-    {
-    }
+    Private() = default;
 
 public:
 
-    QAbstractItemModel*          tagModel;
-    TreeBranch*                  rootTag;
+    QAbstractItemModel*          tagModel           = nullptr;
+    TreeBranch*                  rootTag            = nullptr;
 
     QModelIndex                  parent;
-    int                          startInsert;
-    int                          endInsert;
+    int                          startInsert        = -1;
+    int                          endInsert          = -1;
 
     QList<QList<TagData> >       newTags;
 
@@ -551,6 +545,7 @@ QModelIndex RGTagModel::index(int row, int column, const QModelIndex& parent) co
     {
         return createIndex(row, column, parentBranch->spacerChildren[row]);
     }
+    // cppcheck-suppress knownConditionTrueFalse
     else if ((row >= parentBranch->spacerChildren.count()) &&
              (row < (parentBranch->newChildren.count() + parentBranch->spacerChildren.count())))
     {

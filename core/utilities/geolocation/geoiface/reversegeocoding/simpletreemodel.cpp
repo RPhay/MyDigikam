@@ -22,14 +22,10 @@ class Q_DECL_HIDDEN SimpleTreeModel::Private
 {
 public:
 
-    explicit Private()
-        : rootItem   (nullptr),
-          columnCount(1)
-    {
-    }
+    Private() = default;
 
-    SimpleTreeModel::Item* rootItem;
-    int                    columnCount;
+    SimpleTreeModel::Item* rootItem     = nullptr;
+    int                    columnCount  = 1;
 };
 
 
