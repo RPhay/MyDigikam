@@ -39,8 +39,8 @@ static const struct NameSpaceDefinition
 
 #else
 
-    const char*                   context;
-    const char*                   title;
+    const char*                   context = nullptr;
+    const char*                   title   = nullptr;
 
 #endif
 
@@ -206,18 +206,14 @@ class Q_DECL_HIDDEN DMetadataSettingsContainer::Private
 {
 public:
 
-    explicit Private()
-      : unifyReadWrite(false),
-        readingAllTags(false)
-    {
-    }
+    Private() = default;
 
 public:
 
     QMap<QString, QList<NamespaceEntry> > readMappings;
     QMap<QString, QList<NamespaceEntry> > writeMappings;
-    bool                                  unifyReadWrite;
-    bool                                  readingAllTags;
+    bool                                  unifyReadWrite = false;
+    bool                                  readingAllTags = false;
 };
 
 // -------------------------------------------------------------------------------------------------

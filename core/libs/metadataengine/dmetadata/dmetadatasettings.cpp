@@ -37,16 +37,12 @@ class Q_DECL_HIDDEN DMetadataSettings::Private
 {
 public:
 
-    explicit Private()
-        : mutex      (),
-          configGroup(QLatin1String("DMetadata Settings"))
-    {
-    }
+    Private() = default;
 
     DMetadataSettingsContainer settings;
     QMutex                     mutex;
 
-    const QString              configGroup;
+    const QString              configGroup = QLatin1String("DMetadata Settings");
 
 public:
 
@@ -123,8 +119,10 @@ DMetadataSettingsContainer DMetadataSettings::settings() const
 void DMetadataSettings::setSettings(const DMetadataSettingsContainer& settings)
 {
     DMetadataSettingsContainer old = d->setSettings(settings);
+
     Q_EMIT signalDMetadataSettingsChanged(settings, old);
     Q_EMIT signalSettingsChanged();
+
     d->writeToConfig();
 }
 
@@ -132,6 +130,7 @@ void DMetadataSettings::readFromConfig()
 {
     DMetadataSettingsContainer s   = d->readFromConfig();
     DMetadataSettingsContainer old = d->setSettings(s);
+
     Q_EMIT signalDMetadataSettingsChanged(s, old);
     Q_EMIT signalSettingsChanged();
 }
