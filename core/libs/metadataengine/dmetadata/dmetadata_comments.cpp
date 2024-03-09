@@ -44,7 +44,7 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
         authorsMap = getXmpTagStringListLangAlt("Xmp.digiKam.CaptionsAuthorNames",    false);
         datesMap   = getXmpTagStringListLangAlt("Xmp.digiKam.CaptionsDateTimeStamps", false);
 
-        if (authorsMap.isEmpty() && commonAuthor.isEmpty())
+        if (authorsMap.isEmpty())
         {
             QString xmpAuthors = getXmpTagString("Xmp.acdsee.author", false);
 
