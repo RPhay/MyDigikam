@@ -48,47 +48,29 @@ class Q_DECL_HIDDEN GPSItemListContextMenu::Private
 {
 public:
 
-    explicit Private()
-      : enabled                     (true),
-        actionBookmark              (nullptr),
-        bookmarkOwner               (nullptr),
-        actionCopy                  (nullptr),
-        actionPaste                 (nullptr),
-        actionPasteSwap             (nullptr),
-        actionRemoveCoordinates     (nullptr),
-        actionRemoveAltitude        (nullptr),
-        actionRemoveUncertainty     (nullptr),
-        actionRemoveSpeed           (nullptr),
-        actionLookupMissingAltitudes(nullptr),
-        imagesList                  (nullptr),
-        altitudeLookup              (),
-        altitudeUndoCommand         (nullptr),
-        altitudeRequestedCount      (0),
-        altitudeReceivedCount       (0)
-    {
-    }
+    Private() = default;
 
-    bool                     enabled;
+    bool                     enabled                        = true;
 
-    QAction*                 actionBookmark;
-    GPSBookmarkOwner*        bookmarkOwner;
+    QAction*                 actionBookmark                 = nullptr;
+    GPSBookmarkOwner*        bookmarkOwner                  = nullptr;
 
-    QAction*                 actionCopy;
-    QAction*                 actionPaste;
-    QAction*                 actionPasteSwap;
-    QAction*                 actionRemoveCoordinates;
-    QAction*                 actionRemoveAltitude;
-    QAction*                 actionRemoveUncertainty;
-    QAction*                 actionRemoveSpeed;
-    QAction*                 actionLookupMissingAltitudes;
+    QAction*                 actionCopy                     = nullptr;
+    QAction*                 actionPaste                    = nullptr;
+    QAction*                 actionPasteSwap                = nullptr;
+    QAction*                 actionRemoveCoordinates        = nullptr;
+    QAction*                 actionRemoveAltitude           = nullptr;
+    QAction*                 actionRemoveUncertainty        = nullptr;
+    QAction*                 actionRemoveSpeed              = nullptr;
+    QAction*                 actionLookupMissingAltitudes   = nullptr;
 
-    GPSItemList*             imagesList;
+    GPSItemList*             imagesList                     = nullptr;
 
     /// Altitude lookup
     QPointer<LookupAltitude> altitudeLookup;
-    GPSUndoCommand*          altitudeUndoCommand;
-    int                      altitudeRequestedCount;
-    int                      altitudeReceivedCount;
+    GPSUndoCommand*          altitudeUndoCommand            = nullptr;
+    int                      altitudeRequestedCount         = 0;
+    int                      altitudeReceivedCount          = 0;
 };
 
 GPSItemListContextMenu::GPSItemListContextMenu(GPSItemList* const imagesList,
@@ -258,7 +240,6 @@ bool GPSItemListContextMenu::eventFilter(QObject* watched, QEvent* event)
     {
         return QObject::eventFilter(watched, event);
     }
-
 }
 
 bool GPSItemListContextMenu::getCurrentItemPositionAndUrl(GPSDataContainer* const gpsInfo,
@@ -568,6 +549,7 @@ void GPSItemListContextMenu::setGPSDataForSelectedItems(const GPSDataContainer& 
     }
 
     undoCommand->setText(undoDescription);
+
     Q_EMIT signalUndoCommand(undoCommand);
 }
 
@@ -760,6 +742,7 @@ void GPSItemListContextMenu::slotLookupMissingAltitudes()
             this, SLOT(slotAltitudeLookupDone()));
 
     Q_EMIT signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotAltitudeLookupCancel())));
+
     Q_EMIT signalProgressSetup(altitudeQueries.count(), i18n("Looking up altitudes"));
 
     d->altitudeUndoCommand    = new GPSUndoCommand();
@@ -820,6 +803,7 @@ void GPSItemListContextMenu::slotAltitudeLookupDone()
         // at least some queries returned a result, save the undo command
 
         d->altitudeUndoCommand->setText(i18n("Altitude looked up"));
+
         Q_EMIT signalUndoCommand(d->altitudeUndoCommand);
     }
     else

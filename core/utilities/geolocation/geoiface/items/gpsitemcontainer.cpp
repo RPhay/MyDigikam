@@ -64,14 +64,18 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
             case QVariant::Bool:
             case QVariant::LongLong:
             case QVariant::ULongLong:
+            {
                 success = meta->setXmpTagString(xmpTagName, QString::number(value.toInt()));
+
                 break;
+            }
 
             case QVariant::Double:
             {
                 long num, den;
                 meta->convertToRationalSmallDenominator(value.toDouble(), &num, &den);
                 success = meta->setXmpTagString(xmpTagName, QString::fromLatin1("%1/%2").arg(num).arg(den));
+
                 break;
             }
 
@@ -92,6 +96,7 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
                 }
 
                 success = meta->setXmpTagString(xmpTagName, QString::fromLatin1("%1/%2").arg(num).arg(den));
+
                 break;
             }
 
@@ -112,19 +117,27 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
 
             case QVariant::String:
             case QVariant::Char:
+            {
                 success = meta->setXmpTagString(xmpTagName, value.toString());
+
                 break;
+            }
 
             case QVariant::ByteArray:
-
+            {
                 /// @todo I don't know a straightforward way to convert a byte array to XMP
 
                 success = false;
+
                 break;
+            }
 
             default:
+            {
                 success = false;
+
                 break;
+            }
         }
     }
 
@@ -472,20 +485,30 @@ QVariant GPSItemContainer::data(const int column, const int role) const
             switch (warningLevel)
             {
                 case 1:
+                {
                     return QBrush(Qt::green);
+                }
 
                 case 2:
+                {
                     return QBrush(Qt::yellow);
+                }
 
                 case 3:
+                {
                     // orange
                     return QBrush(QColor(0xff, 0x80, 0x00));
+                }
 
                 case 4:
+                {
                     return QBrush(Qt::red);
+                }
 
                 default:
+                {
                     break;
+                }
             }
         }
     }
@@ -616,13 +639,19 @@ bool GPSItemContainer::lessThan(const GPSItemContainer* const otherItem, const i
     switch (column)
     {
         case ColumnThumbnail:
+        {
             return false;
+        }
 
         case ColumnFilename:
+        {
             return (m_url < otherItem->m_url);
+        }
 
         case ColumnDateTime:
+        {
             return (m_dateTime < otherItem->m_dateTime);
+        }
 
         case ColumnAltitude:
         {
@@ -682,6 +711,7 @@ bool GPSItemContainer::lessThan(const GPSItemContainer* const otherItem, const i
                 return !m_gpsData.hasDop();
             }
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (m_gpsData.hasDop() && otherItem->m_gpsData.hasDop())
             {
                 return (m_gpsData.getDop() < otherItem->m_gpsData.getDop());
@@ -692,6 +722,7 @@ bool GPSItemContainer::lessThan(const GPSItemContainer* const otherItem, const i
                 return m_gpsData.hasFixType();
             }
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (m_gpsData.hasFixType() && otherItem->m_gpsData.hasFixType())
             {
                 return (m_gpsData.getFixType() > otherItem->m_gpsData.getFixType());
@@ -702,6 +733,7 @@ bool GPSItemContainer::lessThan(const GPSItemContainer* const otherItem, const i
                 return m_gpsData.hasNSatellites();
             }
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (m_gpsData.hasNSatellites() && otherItem->m_gpsData.hasNSatellites())
             {
                 return (m_gpsData.getNSatellites() > otherItem->m_gpsData.getNSatellites());

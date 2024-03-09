@@ -32,14 +32,10 @@ class Q_DECL_HIDDEN GPSItemDelegate::Private
 {
 public:
 
-    explicit Private()
-      : imageList    (nullptr),
-        thumbnailSize(60)
-    {
-    }
+    Private() = default;
 
-    GPSItemList* imageList;
-    int          thumbnailSize;
+    GPSItemList* imageList      = nullptr;
+    int          thumbnailSize  = 60;
 };
 
 GPSItemDelegate::GPSItemDelegate(GPSItemList* const imageList, QObject* const parent)

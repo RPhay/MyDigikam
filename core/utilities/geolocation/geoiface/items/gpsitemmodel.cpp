@@ -26,17 +26,12 @@ class Q_DECL_HIDDEN GPSItemModel::Private
 {
 public:
 
-    explicit Private()
-      : items              (),
-        columnCount        (0),
-        thumbnailLoadThread(nullptr)
-    {
-    }
+    Private() = default;
 
     QList<GPSItemContainer*>        items;
-    int                             columnCount;
+    int                             columnCount         = 0;
     QMap<QPair<int, int>, QVariant> headerData;
-    ThumbnailLoadThread*            thumbnailLoadThread;
+    ThumbnailLoadThread*            thumbnailLoadThread = nullptr;
 };
 
 GPSItemModel::GPSItemModel(QObject* const parent)
@@ -289,6 +284,7 @@ void GPSItemModel::slotThumbnailLoaded(const LoadingDescription& loadingDescript
     if (currentIndex.isValid())
     {
         QPersistentModelIndex goodIndex(currentIndex);
+
         Q_EMIT signalThumbnailForIndexAvailable(goodIndex, thumb.copy(1, 1, thumb.size().width()-2, thumb.size().height()-2));
     }
 }

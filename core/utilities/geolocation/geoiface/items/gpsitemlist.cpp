@@ -40,29 +40,20 @@ class Q_DECL_HIDDEN GPSItemList::Private
 {
 public:
 
-    explicit Private()
-      : editEnabled         (true),
-        dragEnabled         (false),
-        model               (nullptr),
-        selectionModel      (nullptr),
-        itemDelegate        (nullptr),
-        imageSortProxyModel (nullptr),
-        dragDropHandler     (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                     editEnabled;
-    bool                     dragEnabled;
-    GPSItemModel*            model;
-    QItemSelectionModel*     selectionModel;
-    GPSItemDelegate*         itemDelegate;
-    GPSItemSortProxyModel*   imageSortProxyModel;
-    ItemListDragDropHandler* dragDropHandler;
+    bool                     editEnabled            = true;
+    bool                     dragEnabled            = false;
+    GPSItemModel*            model                  = nullptr;
+    QItemSelectionModel*     selectionModel         = nullptr;
+    GPSItemDelegate*         itemDelegate           = nullptr;
+    GPSItemSortProxyModel*   imageSortProxyModel    = nullptr;
+    ItemListDragDropHandler* dragDropHandler        = nullptr;
 };
 
 GPSItemList::GPSItemList(QWidget* const parent)
     : QTreeView(parent),
-      d(new Private())
+      d        (new Private())
 {
     header()->setSectionsMovable(true);
     setAlternatingRowColors(true);
@@ -87,6 +78,7 @@ void GPSItemList::startDrag(Qt::DropActions supportedActions)
     if (!d->dragDropHandler)
     {
         QTreeView::startDrag(supportedActions);
+
         return;
     }
 
