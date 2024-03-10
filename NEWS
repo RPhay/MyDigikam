@@ -265,7 +265,7 @@ BUGFIXES:
 242 ==> 467805 - Improvement proposal: image thumbnail: right clic open with in context menu.
 243 ==> 482714 - digiKam crashes some seconds or some minutes after starting it.
 244 ==> 482718 - Add "Save As New Version" to toolbar failed.
-245 ==> 
+245 ==> 483135 - Crash when right-clicking on photo.
 246 ==> 
 247 ==> 
 248 ==> 
