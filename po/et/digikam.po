@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-09 01:41+0000\n"
+"POT-Creation-Date: 2024-03-10 01:57+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -254,7 +254,7 @@ msgstr "&Kopeeri siia"
 #: core/app/dragdrop/albumdragdrop.cpp:356
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
-#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:766
+#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:767
 #: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
 #: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:396
 #, kde-format
@@ -268,13 +268,13 @@ msgid "Set as Album Thumbnail"
 msgstr "Määra albumi pisipildiks"
 
 #: core/app/dragdrop/albumdragdrop.cpp:288
-#: core/app/dragdrop/itemdragdrop.cpp:762
+#: core/app/dragdrop/itemdragdrop.cpp:763
 #, kde-format
 msgid "Download From Camera"
 msgstr "Laadi kaamerast alla"
 
 #: core/app/dragdrop/albumdragdrop.cpp:289
-#: core/app/dragdrop/itemdragdrop.cpp:764
+#: core/app/dragdrop/itemdragdrop.cpp:765
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Laadi alla ja kustuta kaamerast"
@@ -319,40 +319,40 @@ msgstr "Loo siin rühma ja liiguta albumisse"
 msgid "Assign Tag to Dropped Items"
 msgstr "Omista silt lohistatud elementidele"
 
-#: core/app/dragdrop/itemdragdrop.cpp:643
+#: core/app/dragdrop/itemdragdrop.cpp:645
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Muuda näosilte"
 
-#: core/app/dragdrop/itemdragdrop.cpp:647
+#: core/app/dragdrop/itemdragdrop.cpp:649
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Muuda näosilti"
 
-#: core/app/dragdrop/itemdragdrop.cpp:651
-#: core/app/dragdrop/itemdragdrop.cpp:705
+#: core/app/dragdrop/itemdragdrop.cpp:653
+#: core/app/dragdrop/itemdragdrop.cpp:706
 #: core/app/views/preview/itempreviewview.cpp:720
 #, kde-format
 msgid "&Cancel"
 msgstr "&Loobu"
 
-#: core/app/dragdrop/itemdragdrop.cpp:690
+#: core/app/dragdrop/itemdragdrop.cpp:691
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Omi&sta sildid valitud elementidele"
 
-#: core/app/dragdrop/itemdragdrop.cpp:698
+#: core/app/dragdrop/itemdragdrop.cpp:699
 #: core/app/views/preview/itempreviewview.cpp:718
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Omist&a sildid sellele elemendile"
 
-#: core/app/dragdrop/itemdragdrop.cpp:702
+#: core/app/dragdrop/itemdragdrop.cpp:703
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Omist&a sildid kõigile elementidele"
 
-#: core/app/dragdrop/itemdragdrop.cpp:760
+#: core/app/dragdrop/itemdragdrop.cpp:761
 #, kde-format
 msgid "Importing"
 msgstr "Import"
@@ -3209,7 +3209,7 @@ msgstr "Siltide albumit pole"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:634
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3368,7 +3368,7 @@ msgid "Map Search"
 msgstr "Kaardiotsing"
 
 #: core/app/views/stack/itemiconview_p.h:138
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1162
 #, kde-format
 msgid "Last Search"
 msgstr "Viimane otsing"
@@ -4152,7 +4152,7 @@ msgstr "Faili omadused"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
@@ -4220,7 +4220,7 @@ msgstr "Koordinaadid"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:627
 #, kde-format
 msgid "Altitude"
 msgstr "Kõrgus"
@@ -4501,7 +4501,7 @@ msgstr "Ühik"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:270
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
 #, kde-format
 msgid "Thumbnail"
 msgstr "Pisipilt"
@@ -7414,7 +7414,7 @@ msgctxt "@info"
 msgid "This library is not present on your system."
 msgstr "Seda teeki sinu süsteemis ei leidu."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:75
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:76
 #, fuzzy, kde-format
 #| msgid ""
 #| "This library is available on your system with a maximum color depth "
@@ -7427,7 +7427,7 @@ msgstr ""
 "See teek on sinu süsteemis olemas, toetades maksimaalset värvisügavust %1 "
 "bitti."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:80
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:81
 #, fuzzy, kde-format
 #| msgid ""
 #| "This library is available on your system but is not able to encode image "
@@ -7440,7 +7440,7 @@ msgstr ""
 "See teek on sinu süsteemis olemas, aga ei suuda kodeerida pilti vajaliku "
 "värvisügavusega."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:87
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:88
 #, fuzzy, kde-kuit-format
 #| msgid ""
 #| "<p>This plugin permit to load and save image using Libheif codec.</"
@@ -7482,16 +7482,16 @@ msgstr ""
 "artiklist <a href='https://en.wikipedia.org/wiki/"
 "High_Efficiency_Image_File_Format'>High Efficiency Image File Format</a>.</p>"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:148
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
 #, fuzzy, kde-format
 #| msgid "High efficiency image coding"
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "Ülitõhus pildi kodeerimine"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -7514,8 +7514,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "jah"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:153
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -7537,8 +7537,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "jah"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:141
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:157
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -12088,9 +12088,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Faili \"%1\" salvestamine nurjus"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:438
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:539
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:815
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:419
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:520
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:798
 #, fuzzy, kde-format
 #| msgid "Geolocation Editor"
 msgctxt "@title:window"
@@ -12303,31 +12303,31 @@ msgid "Edit Geolocation"
 msgstr "Geolokatsiooni muutmine"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:625
 #, kde-format
 msgid "Latitude"
 msgstr "Laiuskraad"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
 #, kde-format
 msgid "Longitude"
 msgstr "Pikkuskraad"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:632
 #, kde-format
 msgid "Speed"
 msgstr "Kiirus"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:631
 #, kde-format
 msgid "# satellites"
 msgstr "Satelliitide arv"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:630
 #, kde-format
 msgid "Fix type"
 msgstr "Paranduse tüüp"
@@ -12343,7 +12343,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:629
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -12874,7 +12874,7 @@ msgid "Toggle the visibility of the search results on the map."
 msgstr "Otsingutulemuste kaardil näitamise lülitamine."
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:185
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:101
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:83
 #, kde-format
 msgid "Copy coordinates"
 msgstr "Kopeeri koordinaadid"
@@ -12895,7 +12895,7 @@ msgid "Select which service you would like to use."
 msgstr "Kasutatava teenuse valimine."
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:218
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:140
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:122
 #, kde-format
 msgid "Bookmarks"
 msgstr "Järjehoidjad"
@@ -17021,7 +17021,7 @@ msgstr "Uuendatud ajatempel"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:633
 #, kde-format
 msgid "Status"
 msgstr "Olek"
@@ -29979,7 +29979,7 @@ msgstr ""
 "uus.) Palun kasuta digiKami uuemat versiooni, mida oled juba varem "
 "kasutanud. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:325
+#: core/libs/database/coredb/coredbschemaupdater.cpp:326
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
 #, kde-format
@@ -29990,7 +29990,7 @@ msgstr ""
 "Tabelite loomine andmebaasis nurjus.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:346
+#: core/libs/database/coredb/coredbschemaupdater.cpp:347
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -30005,7 +30005,7 @@ msgstr ""
 "digiKamiarendajate postiloendist (vt www.digikam.org/support). Samuti tasuks "
 "uurida, mida digiKam teatab konsoolis."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:407
+#: core/libs/database/coredb/coredbschemaupdater.cpp:408
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -30022,7 +30022,7 @@ msgstr ""
 "digiKami arendajate postiloendis (vt www.digikam.org/support). Samuti tasuks "
 "uurida, mida digiKam teatab konsoolis."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:445
+#: core/libs/database/coredb/coredbschemaupdater.cpp:446
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -30038,7 +30038,7 @@ msgstr ""
 "loe konsoolis näidatavaid veateateid ja anna sellest teada veana veebisaidil "
 "bugs.kde.org. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:454
+#: core/libs/database/coredb/coredbschemaupdater.cpp:455
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -30053,7 +30053,7 @@ msgstr ""
 "loe konsoolis näidatavaid veateateid ja anna sellest teada veana veebisaidil "
 "bugs.kde.org. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:674
+#: core/libs/database/coredb/coredbschemaupdater.cpp:675
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -30063,12 +30063,12 @@ msgstr ""
 "Andmebaasi uuendamise toimingut ei leitud. Palun kontrolli, kas digiKami "
 "aktiivse versiooni fail dbconfig.xml on ikka paigaldatud õigesse kohta. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:695
+#: core/libs/database/coredb/coredbschemaupdater.cpp:696
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "Skeem uuendati versioonile %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:842
+#: core/libs/database/coredb/coredbschemaupdater.cpp:843
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -30078,12 +30078,12 @@ msgstr ""
 "Vana andmebaasifaili (\"%1\") kopeerimine uude asukohta (\"%2\") nurjus. "
 "Veateade: \"%3\". Palun kontrolli, kas faili saab kopeerida, või kustuta see."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:864
+#: core/libs/database/coredb/coredbschemaupdater.cpp:865
 #, kde-format
 msgid "Copied database file"
 msgstr "Kopeeriti andmebaasifail"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:870
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -30094,22 +30094,22 @@ msgstr ""
 "õnnestu avada. Palun kustuta mõlemad failid ja proovi uuesti, alustades "
 "tühja andmebaasiga. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:890
+#: core/libs/database/coredb/coredbschemaupdater.cpp:891
 #, kde-format
 msgid "Opened new database file"
 msgstr "Avati uus andmebaasifail"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:989
+#: core/libs/database/coredb/coredbschemaupdater.cpp:990
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Valmistuti tabeli loomiseks"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1009
 #, kde-format
 msgid "Created tables"
 msgstr "Loodi tabelid"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -30119,7 +30119,7 @@ msgstr ""
 "Seadistustefailis ei leitud ühtegi albumiteegi asukohta. Skeemi uuendamisest "
 "loobuti. Palun proovi tühja andmebaasiga või paranda seadistust."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1044
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -30137,52 +30137,52 @@ msgstr ""
 "Andmebaasi uuendamisest nüüd loobutakse, sest me ei soovi luua uut "
 "andmebaasi võib-olla vigase paigalduse baasil."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1071
 #, kde-format
 msgid "Configured one album root"
 msgstr "Seadistati üks albumi juurkataloog"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1097
 #, kde-format
 msgid "Imported albums"
 msgstr "Imporditi albumid"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1134
 #, kde-format
 msgid "Imported images information"
 msgstr "Imporditi piltide info"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1164
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Viimane otsing (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1225
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Initsialiseeriti ja imporditi failisufiksi filter"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1247
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Sooritati esialgne täielik läbiuurimine"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Imporditi loomisajad"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1302
 #, kde-format
 msgid "Imported comments"
 msgstr "Imporditi kommentaarid"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1329
 #, kde-format
 msgid "Imported ratings"
 msgstr "Imporditi hinnangud"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1340
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Visati ära v3 tabelid"
@@ -36675,55 +36675,55 @@ msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "Ülesannete lõpetamine"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:130
+#: core/libs/fileactionmanager/fileactionmngr.cpp:131
 #, kde-format
 msgid "Assigning image tags"
 msgstr "Siltide omistamine piltidele"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:152
+#: core/libs/fileactionmanager/fileactionmngr.cpp:153
 #, kde-format
 msgid "Removing image tags"
 msgstr "Pildisiltide eemaldamine"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:169
+#: core/libs/fileactionmanager/fileactionmngr.cpp:170
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "Valikumärgise omistamine piltidele"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:176
+#: core/libs/fileactionmanager/fileactionmngr.cpp:177
 #, kde-format
 msgid "Assigning image color label"
 msgstr "Värvimärgise omistamine piltidele"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:188
+#: core/libs/fileactionmanager/fileactionmngr.cpp:189
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "Hinnangute omistamine piltidele"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:195
-#: core/libs/fileactionmanager/fileactionmngr.cpp:207
-#: core/libs/fileactionmanager/fileactionmngr.cpp:219
+#: core/libs/fileactionmanager/fileactionmngr.cpp:196
+#: core/libs/fileactionmanager/fileactionmngr.cpp:208
+#: core/libs/fileactionmanager/fileactionmngr.cpp:220
 #, kde-format
 msgid "Editing group"
 msgstr "Rühma redigeerimine"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:226
+#: core/libs/fileactionmanager/fileactionmngr.cpp:227
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "Orientatsiooni uuendamine andmebaasis"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:244
-#: core/libs/fileactionmanager/fileactionmngr.cpp:262
+#: core/libs/fileactionmanager/fileactionmngr.cpp:245
+#: core/libs/fileactionmanager/fileactionmngr.cpp:263
 #, kde-format
 msgid "Applying metadata"
 msgstr "Metaandmete rakendamine"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:269
+#: core/libs/fileactionmanager/fileactionmngr.cpp:270
 #, kde-format
 msgid "Rotating images"
 msgstr "Piltide pööramine"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:285
+#: core/libs/fileactionmanager/fileactionmngr.cpp:286
 #, kde-format
 msgid "Copying attributes"
 msgstr "Atribuutide kopeerimine"
@@ -36738,29 +36738,29 @@ msgstr "Elementide töötlemine"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Järgmiste failide EXIF-orientatsiooni uurimine nurjus:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:350
+#: core/libs/fileactionmanager/fileworkeriface.cpp:351
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Järgmiste failide teisendamine nurjus:"
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:172
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
 #, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
 msgstr "Ootel muudatuste rakendamine metaandmetele"
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:63
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:57
 #, kde-format
 msgid "Apply pending changes to metadata"
 msgstr "Ootel muudatuste rakendamine metaandmetele"
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:72
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:132
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:66
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:126
 #, kde-format
 msgid "No pending metadata synchronization"
 msgstr "Ootel metaandmete sünkroonimist pole"
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:74
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:68
 #, kde-format
 msgid ""
 "If lazy synchronization is enabled in metadata settings, the status bar will "
@@ -36769,7 +36769,7 @@ msgstr ""
 "Kui metaandmete seadistustes on lubatud laisk sünkroonimine, näitab "
 "olekuriba sünkroonimist ootavate elementide arvu"
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:137
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:131
 #, kde-format
 msgid "1 file awaits synchronization"
 msgid_plural "%1 files await synchronization"
@@ -37621,14 +37621,14 @@ msgctxt "@info: Height in meters"
 msgid "%1m"
 msgstr "%1 m"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1256
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1254
 #, fuzzy, kde-format
 #| msgid "Flash has been fired"
 msgctxt "@info"
 msgid "Flash has been fired"
 msgstr "Välklamp"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1257
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1255
 #, fuzzy, kde-format
 #| msgid "Flash with red-eye reduction mode"
 msgctxt "@info"
@@ -44927,7 +44927,7 @@ msgctxt "@info: file open filters"
 msgid "ICC Files (*.icc; *.icm)"
 msgstr "ICC-failid (*.icc; *.icm)"
 
-#: core/libs/widgets/itemview/ditemdelegate.cpp:162
+#: core/libs/widgets/itemview/ditemdelegate.cpp:160
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
@@ -55180,7 +55180,7 @@ msgid "Tilt"
 msgstr "Kalle"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:628
 #, kde-format
 msgid "Accuracy"
 msgstr "Täpsus"
@@ -57135,126 +57135,126 @@ msgid_plural "%1 images correlated"
 msgstr[0] "1 pilt on viidud korrelatsiooni"
 msgstr[1] "%1 pilti on viidud korrelatsiooni"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:219
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:218
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@title: track list header"
 msgid "Color"
 msgstr "Värv"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:224
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:223
 #, fuzzy, kde-format
 #| msgid "Filename"
 msgctxt "@title: track list header"
 msgid "Filename"
 msgstr "Failinimi"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:229
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:228
 #, fuzzy, kde-format
 #| msgid "#points"
 msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#punktid"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:416
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:429
 #, kde-format
 msgid "Not available"
 msgstr "Pole saadaval"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:455
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:460
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:473
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Parandus: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:465
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:478
 #, kde-format
 msgid "#Sat: %1"
 msgstr "Sat. arv: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:508
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:531
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:532
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:555
 #, kde-format
 msgid "Modified"
 msgstr "Muudetud"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
 #, kde-format
 msgid "Date and time"
 msgstr "Kuupäev ja kellaaeg"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:845
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:877
 #, kde-format
 msgid "Failed to open file."
 msgstr "Faili avamine nurjus."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:917
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:949
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "GPS-teabe lisamine pildile nurjus."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:929
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:961
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "GPS-teabe eemaldamine pildilt nurjus."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:964
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:972
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1028
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Siltide salvestamine faili nurjus."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1008
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1040
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Muudatuste salvestamine faili nurjus"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:103
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:85
 #, kde-format
 msgid "Paste coordinates"
 msgstr "Aseta koordinaadid"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:105
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:87
 #, kde-format
 msgid "Paste coordinates swapped"
 msgstr "Aseta koordinaadid vahetatuna"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:107
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:89
 #, kde-format
 msgid "Remove coordinates"
 msgstr "Eemalda koordinaadid"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:108
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:90
 #, kde-format
 msgid "Remove altitude"
 msgstr "Eemalda kõrgus"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:109
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:91
 #, kde-format
 msgid "Remove uncertainty"
 msgstr "Eemalda ebakindlus"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:110
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:708
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:92
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:690
 #, kde-format
 msgid "Remove speed"
 msgstr "Eemalda kiirus"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:111
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:93
 #, kde-format
 msgid "Look up missing altitude values"
 msgstr "Otsi puuduvaid kõrgusi"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:420
 #, kde-format
 msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
@@ -57263,42 +57263,42 @@ msgstr ""
 "Lõikepuhvris leiti rohkem kui üks punkt. Korraga saab omistada ainult ühe "
 "punkti."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:521
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
 msgstr "Lõikepuhvris ei leitud mingeid koordinaate."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:544
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:525
 #, kde-format
 msgid "Coordinates pasted"
 msgstr "Koordinaadid on asetatud"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:576
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:558
 #, kde-format
 msgid "Bookmark selected"
 msgstr "Lisa valik järjehoidjatesse"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:687
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:669
 #, kde-format
 msgid "Remove coordinates information"
 msgstr "Eemalda koordinaatide teave"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:692
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:674
 #, kde-format
 msgid "Remove altitude information"
 msgstr "Eemalda kõrguse teave"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:698
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:680
 #, kde-format
 msgid "Remove uncertainty information"
 msgstr "Eemalda ebakindluse teave"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:763
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:746
 #, kde-format
 msgid "Looking up altitudes"
 msgstr "Kõrguste otsimine"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:814
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:797
 #, kde-format
 msgid ""
 "Altitude lookup failed:\n"
@@ -57307,7 +57307,7 @@ msgstr ""
 "Kõrguseotsing nurjus:\n"
 "%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:822
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:805
 #, kde-format
 msgid "Altitude looked up"
 msgstr "Kõrguseotsing"
@@ -57317,85 +57317,85 @@ msgstr "Kõrguseotsing"
 msgid "geonames.org"
 msgstr "geonames.org"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:71
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:65
 #, kde-format
 msgid "{Country}"
 msgstr "{Riik}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:72
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:66
 #, kde-format
 msgctxt "Part of a country"
 msgid "{State}"
 msgstr "{Maakond/provints}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:73
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Statistics"
 msgid "{State district}"
 msgstr "Statistika"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:74
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:68
 #, kde-format
 msgid "{County}"
 msgstr "{Vald}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:75
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:69
 #, kde-format
 msgid "{City}"
 msgstr "{Linn}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:76
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:70
 #, fuzzy, kde-format
 #| msgid "Add city district tag"
 msgid "{City district}"
 msgstr "Lisa linnaosa silt"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:77
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:71
 #, kde-format
 msgid "{Suburb}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:78
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:72
 #, kde-format
 msgid "{Town}"
 msgstr "{Alev}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:79
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:73
 #, kde-format
 msgid "{Village}"
 msgstr "{Alevik}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:80
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:74
 #, kde-format
 msgid "{Hamlet}"
 msgstr "{Küla}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:81
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:75
 #, kde-format
 msgid "{Street}"
 msgstr "{Tänav}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:82
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:76
 #, fuzzy, kde-format
 #| msgid "Add house number tag"
 msgid "{House number}"
 msgstr "Lisa majanumbri silt"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:83
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:77
 #, fuzzy, kde-format
 #| msgctxt "Replace string"
 #| msgid "Replace:"
 msgid "{Place}"
 msgstr "Asendamine:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:84
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:78
 #, kde-format
 msgctxt "Local administrative area 1"
 msgid "{LAU1}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:85
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:79
 #, kde-format
 msgctxt "Local administrative area 2"
 msgid "{LAU2}"
@@ -57724,22 +57724,22 @@ msgstr "Esitusnimekirja laadimine failist."
 msgid "Geolocation Interface"
 msgstr "Geolokatsiooni liides"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:190
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:183
 #, kde-format
 msgid "Sorting"
 msgstr "Sortimine"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:197
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:190
 #, kde-format
 msgid "Show oldest first"
 msgstr "Vanimate näitamine esimesena"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:201
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:194
 #, kde-format
 msgid "Show youngest first"
 msgstr "Uusimate näitamine esimesena"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:205
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:198
 #, kde-format
 msgid "Sort by rating"
 msgstr "Sordi hinnangu järgi"

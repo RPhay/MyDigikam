@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-09 01:41+0000\n"
+"POT-Creation-Date: 2024-03-10 01:57+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -270,7 +270,7 @@ msgstr "ចម្លង​​នៅ​ទីនេះ"
 #: core/app/dragdrop/albumdragdrop.cpp:356
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
-#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:766
+#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:767
 #: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
 #: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:396
 #, kde-format
@@ -284,13 +284,13 @@ msgid "Set as Album Thumbnail"
 msgstr "កំណត់​ជា​រូបភាព​តូច​អាល់ប៊ុម"
 
 #: core/app/dragdrop/albumdragdrop.cpp:288
-#: core/app/dragdrop/itemdragdrop.cpp:762
+#: core/app/dragdrop/itemdragdrop.cpp:763
 #, kde-format
 msgid "Download From Camera"
 msgstr "ទាញ​យក​ពី​ម៉ាស៊ីន​ថតរូប"
 
 #: core/app/dragdrop/albumdragdrop.cpp:289
-#: core/app/dragdrop/itemdragdrop.cpp:764
+#: core/app/dragdrop/itemdragdrop.cpp:765
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "ទាញ​យក និង​លុប​ពី​ម៉ាស៊ីន​ថត​រូប"
@@ -337,42 +337,42 @@ msgstr ""
 msgid "Assign Tag to Dropped Items"
 msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​ដែល​បាន​ទម្លាក់"
 
-#: core/app/dragdrop/itemdragdrop.cpp:643
+#: core/app/dragdrop/itemdragdrop.cpp:645
 #, fuzzy, kde-format
 #| msgid "Show Face Tags"
 msgid "Change Face Tags"
 msgstr "បង្ហាញ​ស្លាក​មុខ"
 
-#: core/app/dragdrop/itemdragdrop.cpp:647
+#: core/app/dragdrop/itemdragdrop.cpp:649
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
 msgid "Change Face Tag"
 msgstr "បន្ថែម​ស្លាក​មុខ"
 
-#: core/app/dragdrop/itemdragdrop.cpp:651
-#: core/app/dragdrop/itemdragdrop.cpp:705
+#: core/app/dragdrop/itemdragdrop.cpp:653
+#: core/app/dragdrop/itemdragdrop.cpp:706
 #: core/app/views/preview/itempreviewview.cpp:720
 #, kde-format
 msgid "&Cancel"
 msgstr "បោះបង់"
 
-#: core/app/dragdrop/itemdragdrop.cpp:690
+#: core/app/dragdrop/itemdragdrop.cpp:691
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​ដែល​បាន​ជ្រើស"
 
-#: core/app/dragdrop/itemdragdrop.cpp:698
+#: core/app/dragdrop/itemdragdrop.cpp:699
 #: core/app/views/preview/itempreviewview.cpp:718
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​នេះ"
 
-#: core/app/dragdrop/itemdragdrop.cpp:702
+#: core/app/dragdrop/itemdragdrop.cpp:703
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "កំណត់​ស្លាក​ទៅកាន់​ធាតុ​នេះ"
 
-#: core/app/dragdrop/itemdragdrop.cpp:760
+#: core/app/dragdrop/itemdragdrop.cpp:761
 #, fuzzy, kde-format
 msgid "Importing"
 msgstr "នាំចូល"
@@ -3175,7 +3175,7 @@ msgstr "គ្មាន​អាល់ប៊ុម​ឡើង"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:634
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3330,7 +3330,7 @@ msgid "Map Search"
 msgstr "ស្វែងរក​ផែនទី"
 
 #: core/app/views/stack/itemiconview_p.h:138
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1162
 #, kde-format
 msgid "Last Search"
 msgstr "ស្វែងរក​ចុងក្រោយ"
@@ -4052,7 +4052,7 @@ msgstr "លក្ខណ​សម្បត្តិ​ឯកសារ"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
@@ -4118,7 +4118,7 @@ msgstr "Polar Coordinates"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:627
 #, kde-format
 msgid "Altitude"
 msgstr "រយៈ​កម្ពស់​​​​"
@@ -4390,7 +4390,7 @@ msgstr "ពេលវេលា​រហូត​ដល់ ៖"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:270
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
 #, kde-format
 msgid "Thumbnail"
 msgstr "រូបភាព​តូច"
@@ -6977,7 +6977,7 @@ msgctxt "@info"
 msgid "This library is not present on your system."
 msgstr "មិនមានការ​គាំទ្រ OpenGL នៅ​ក្នុង​ប្រព័ន្ធ​របស់​អ្នក​ទេ ។"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:75
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6985,7 +6985,7 @@ msgid ""
 "of %1 bits."
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:80
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:81
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6993,7 +6993,7 @@ msgid ""
 "with a suitable color depth."
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:87
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:88
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7010,15 +7010,15 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:148
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "តាម​ទ្រង់ទ្រាយ"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -7041,8 +7041,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "បាទ/ចាស"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:153
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -7064,8 +7064,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "បាទ/ចាស"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:141
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:157
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -11237,9 +11237,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "មិន​អាច​រក្សា​ទុក​ឯកសារ \"%1\""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:438
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:539
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:815
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:419
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:520
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:798
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -11450,31 +11450,31 @@ msgid "Edit Geolocation"
 msgstr "ទីតាំង​ភូមិសាស្ត្រ"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:625
 #, kde-format
 msgid "Latitude"
 msgstr "រយៈទទឹង​​"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
 #, kde-format
 msgid "Longitude"
 msgstr "រយៈបណ្ដោយ​​"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:632
 #, kde-format
 msgid "Speed"
 msgstr "ល្បឿន​"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:631
 #, kde-format
 msgid "# satellites"
 msgstr "# satellites"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:630
 #, kde-format
 msgid "Fix type"
 msgstr "ប្រភេទ​ថេរ"
@@ -11490,7 +11490,7 @@ msgid "3-d"
 msgstr "ត្រីមាត្រ"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:629
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -12032,7 +12032,7 @@ msgid "Toggle the visibility of the search results on the map."
 msgstr "បិទ​/​បើក​ភាព​អាច​មើល​ឃើញ​នៃ​លទ្ធផល​ស្វែងរក​លើ​ផែនទី ។"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:185
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:101
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:83
 #, kde-format
 msgid "Copy coordinates"
 msgstr "ចម្លង​កូអរដោនេ​​"
@@ -12053,7 +12053,7 @@ msgid "Select which service you would like to use."
 msgstr "ជ្រើស​សេវា​ណា​មួយ​ដែល​អ្នក​ចូលចិត្ត​ប្រើ ។​"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:218
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:140
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:122
 #, kde-format
 msgid "Bookmarks"
 msgstr "ចំណាំ​"
@@ -16090,7 +16090,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:633
 #, kde-format
 msgid "Status"
 msgstr "ស្ថានភាព"
@@ -28495,7 +28495,7 @@ msgstr ""
 "បំព្រួញ​មូលដ្ឋាន​ទិន្នន័យ​ដែល​មិន​អាច​ត្រូវ​បាន​ប្រើ​ជា​មួយ​កំណែ​នេះ ។ (មាន​ន័យ​ថា​កំណែ digiKam ចាស់​ពេក ឬ​"
 "ទ្រង់ទ្រាយ​មូលដ្ឋាន​ទិន្នន័យ ។) សូម​ប្រើ​កំណែ​ថ្មី​ជា​ច្រើន​របស់ digiKam ដែល​អ្នក​បាន​ប្រើ​ពីមុន ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:325
+#: core/libs/database/coredb/coredbschemaupdater.cpp:326
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
 #, kde-format
@@ -28506,7 +28506,7 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​តារាង​នៅ​ក្នុង​មូលដ្ឋាន​ទិន្នន័យ ។\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:346
+#: core/libs/database/coredb/coredbschemaupdater.cpp:347
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to open a database transaction on your database file \"%1\". This "
@@ -28526,7 +28526,7 @@ msgstr ""
 "បញ្ហា អ្នក​អាច​ទទួល​បាន​ជំនួយ​ពី​បញ្ជី​សំបុត្រ​រួម digikam-devel@kde.org ។  សូម​មើល digiKam នៅ​លើ​"
 "កុងសូល ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:407
+#: core/libs/database/coredb/coredbschemaupdater.cpp:408
 #, fuzzy, kde-format
 #| msgid ""
 #| "The schema updating process from version 4 to 6 failed, caused by an "
@@ -28548,7 +28548,7 @@ msgstr ""
 "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ \"%1\" និង \"%2\" ពី​ថត \"%3\") ។ ប្រហែល​ជា​អ្នក​ចង់​រាយការណ៍​បន្ថែម​អំពី​កំហុស​"
 "នេះ​ទៅកាន់​បញ្ជី​សំបុត្រ​រួម digikam-devel@kde.org ។ សូម​មើល digiKam នៅ​លើ​កុងសុល ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:445
+#: core/libs/database/coredb/coredbschemaupdater.cpp:446
 #, fuzzy, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28559,7 +28559,7 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​ធ្វើ​​បច្ចុប្បន្នភាព​គំនូរ​បំព្រួញ​​មូលដ្ឋាន​ទិន្នន័យ​ពី​កំណែ ៥ ដល់ កំណែ ៦ ។ សូម​​​អាន​សារ​កំហុស​ដែល​"
 "បាន​បោះពុម្ព​នៅ​លើ​កុងសូល ហើយ​រាយការណ៍​កំហុស​នេះ​ជា​កំហុស​នៅ bugs.kde.org. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:454
+#: core/libs/database/coredb/coredbschemaupdater.cpp:455
 #, fuzzy, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28569,7 +28569,7 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​ធ្វើ​​បច្ចុប្បន្នភាព​គំនូរ​បំព្រួញ​​មូលដ្ឋាន​ទិន្នន័យ​ពី​កំណែ ៥ ដល់ កំណែ ៦ ។ សូម​​​អាន​សារ​កំហុស​ដែល​"
 "បាន​បោះពុម្ព​នៅ​លើ​កុងសូល ហើយ​រាយការណ៍​កំហុស​នេះ​ជា​កំហុស​នៅ bugs.kde.org. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:674
+#: core/libs/database/coredb/coredbschemaupdater.cpp:675
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28579,12 +28579,12 @@ msgstr ""
 "​មិន​អាច​រក​ឃើញ​សកម្មភាព​ធ្វើ​បច្ចុប្បន្ន​មូលដ្ឋាន​ទិន្នន័យ​ឡើយ ។ សូម​ប្រាកដ​ថា​ឯកសារ dbconfig.xml របស់​"
 "កំណែ​បច្ចុប្បន្ន​​នៃ digiKam ត្រូវ​បាន​ដំឡើង​នៅ​ទីតាំង​ត្រឹមត្រូវ​ហើយ ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:695
+#: core/libs/database/coredb/coredbschemaupdater.cpp:696
 #, fuzzy, kde-format
 msgid "Updated schema to version %1."
 msgstr "គំនូរ​បំព្រួញ​ដែល​បាន​ធ្វើ​បច្ចុប្បន្នភាព​កំណែ ៦ ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:842
+#: core/libs/database/coredb/coredbschemaupdater.cpp:843
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28594,12 +28594,12 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​ចម្លង​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ចាស់ (\"%1\") ទៅកាន់​ទីតាំង​ថ្មី​របស់​វា (\"%2\") ។ "
 "សារ​កំហុស ៖ \"%3\" ។ សូម​ប្រាកដ​ថា​ឯកសារ​​អាច​ត្រូវ​បាន​ចម្លង ឬ​លុប​ ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:864
+#: core/libs/database/coredb/coredbschemaupdater.cpp:865
 #, kde-format
 msgid "Copied database file"
 msgstr "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ដែល​បាន​ចម្លង"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:870
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28609,22 +28609,22 @@ msgstr ""
 "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ចាស់ (\"%1\") ត្រូវ​បាន​ចម្លង​ទៅកាន់​ទីតាំង​ថ្មី (\"%2\") ប៉ុន្តែ​វា​មិន​អាច​ត្រូវ​បាន​"
 "បើក​ឡើយ ។ សូល​លុប​ឯកសារ​ទាំងពីរ ហើយ​សាកល្បង​ម្ដងទៀត ចាប់ផ្ដើម​ជាមួយ​មូលដ្ឋាន​ទិន្នន័យ​ទទេ ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:890
+#: core/libs/database/coredb/coredbschemaupdater.cpp:891
 #, kde-format
 msgid "Opened new database file"
 msgstr "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី​ដែល​បាន​បើក"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:989
+#: core/libs/database/coredb/coredbschemaupdater.cpp:990
 #, kde-format
 msgid "Prepared table creation"
 msgstr "បាន​រៀបចំ​ការ​បង្កើត​តារាង"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1009
 #, kde-format
 msgid "Created tables"
 msgstr "បាន​បង្កើត​តារាង"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28634,7 +28634,7 @@ msgstr ""
 "​រក​មិន​ឃើញ​ផ្លូវ​​​ផ្លូវ​បណ្ណាល័យ​អាល់ប៊ុម​នៅ​ក្នុង​ឯកសារ​ការ​កំណត់​រចនា​សម្ព័ន្ធ ។ ដំណើរការ​ធ្វើ​បច្ចុប្បន្នភាព​​គំនូរ​"
 "បំព្រួញ ។ សូម​សាកល្បង​ជាមួយ​មូលដ្ឋាន​ទិន្នន័យ​ទទេ ឬ​​​បង្កើត​ការ​កំណត់​រចនាសម្ព័ន្ធ​របស់​អ្នក​ឡើង​វិញ ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1044
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28646,52 +28646,52 @@ msgid ""
 "based on false assumptions from a broken installation."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1071
 #, kde-format
 msgid "Configured one album root"
 msgstr "បាន​កំណត់​រចនាសម្ព័ន្ធ​អាល់ប៊ុម​មួយ​ជា root"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1097
 #, kde-format
 msgid "Imported albums"
 msgstr "អាល់ប៊ុម​ដែល​បាន​នាំចូល"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1134
 #, kde-format
 msgid "Imported images information"
 msgstr "ព័ត៌មាន​រូបភាព​ដែល​បាន​នាំចូល"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1164
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "ស្វែងរក​ចុងក្រោយ (០.៩)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1225
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "តម្រង​បច្ច័យ​ឯកសារ​ដែល​បាន​នាំចូល និង​បាន​រៀបចំ"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1247
 #, kde-format
 msgid "Did the initial full scan"
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
 #, kde-format
 msgid "Imported creation dates"
 msgstr "កាលបរិច្ឆេទ​​ការ​បង្កើត​ដែល​បាន​នាំចូល"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1302
 #, kde-format
 msgid "Imported comments"
 msgstr "មតិយោបល់​ដែល​បាន​នាំចូល"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1329
 #, kde-format
 msgid "Imported ratings"
 msgstr "ការ​វាយ​តម្លៃ​ដែល​បាន​នាំចូល"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1340
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "តារាង v3 ដែល​បាន​ទម្លាក់"
@@ -34794,55 +34794,55 @@ msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "បញ្ចប់​កិច្ចការ"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:130
+#: core/libs/fileactionmanager/fileactionmngr.cpp:131
 #, kde-format
 msgid "Assigning image tags"
 msgstr "កំណត់​ស្លាក​រូបភាព"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:152
+#: core/libs/fileactionmanager/fileactionmngr.cpp:153
 #, kde-format
 msgid "Removing image tags"
 msgstr "យក​ស្លាក​រូបភាព​ចេញ"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:169
+#: core/libs/fileactionmanager/fileactionmngr.cpp:170
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "កំណត់​រូបភាព​ស្លាក​ដែល​ជ្រើស"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:176
+#: core/libs/fileactionmanager/fileactionmngr.cpp:177
 #, kde-format
 msgid "Assigning image color label"
 msgstr "កំណត់​​ស្លាក​ពណ៌​រូបភាព"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:188
+#: core/libs/fileactionmanager/fileactionmngr.cpp:189
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "កំណត់​ការ​វាយ​តម្លៃ​រូបភាព"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:195
-#: core/libs/fileactionmanager/fileactionmngr.cpp:207
-#: core/libs/fileactionmanager/fileactionmngr.cpp:219
+#: core/libs/fileactionmanager/fileactionmngr.cpp:196
+#: core/libs/fileactionmanager/fileactionmngr.cpp:208
+#: core/libs/fileactionmanager/fileactionmngr.cpp:220
 #, kde-format
 msgid "Editing group"
 msgstr "កែសម្រួល​ក្រុម"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:226
+#: core/libs/fileactionmanager/fileactionmngr.cpp:227
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "ធ្វើ​បច្ចុប្បន្នភាព​ទិស​នៅ​ក្នុង​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:244
-#: core/libs/fileactionmanager/fileactionmngr.cpp:262
+#: core/libs/fileactionmanager/fileactionmngr.cpp:245
+#: core/libs/fileactionmanager/fileactionmngr.cpp:263
 #, kde-format
 msgid "Applying metadata"
 msgstr "អនុវត្ត​​ទិន្នន័យ​មេតា"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:269
+#: core/libs/fileactionmanager/fileactionmngr.cpp:270
 #, kde-format
 msgid "Rotating images"
 msgstr "បង្វិល​រូបភាព"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:285
+#: core/libs/fileactionmanager/fileactionmngr.cpp:286
 #, kde-format
 msgid "Copying attributes"
 msgstr "ចម្លង​គុណលក្ខណៈ"
@@ -34857,36 +34857,36 @@ msgstr "ដំណើរការ​ធាតុ"
 msgid "Failed to revise Exif orientation these files:"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:350
+#: core/libs/fileactionmanager/fileworkeriface.cpp:351
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr ""
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:172
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
 msgstr "អនុវត្ត​​ទិន្នន័យ​មេតា"
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:63
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:57
 #, fuzzy, kde-format
 msgid "Apply pending changes to metadata"
 msgstr "អនុវត្ត​​ទិន្នន័យ​មេតា"
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:72
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:132
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:66
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:126
 #, kde-format
 msgid "No pending metadata synchronization"
 msgstr ""
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:74
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:68
 #, kde-format
 msgid ""
 "If lazy synchronization is enabled in metadata settings, the status bar will "
 "display the number of items waiting for synchronization"
 msgstr ""
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:137
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:131
 #, kde-format
 msgid "1 file awaits synchronization"
 msgid_plural "%1 files await synchronization"
@@ -35696,13 +35696,13 @@ msgctxt "@info: Height in meters"
 msgid "%1m"
 msgstr "%1d"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1256
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1254
 #, kde-format
 msgctxt "@info"
 msgid "Flash has been fired"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1257
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1255
 #, kde-format
 msgctxt "@info"
 msgid "Flash with red-eye reduction mode"
@@ -42409,7 +42409,7 @@ msgctxt "@info: file open filters"
 msgid "ICC Files (*.icc; *.icm)"
 msgstr ""
 
-#: core/libs/widgets/itemview/ditemdelegate.cpp:162
+#: core/libs/widgets/itemview/ditemdelegate.cpp:160
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
@@ -52415,7 +52415,7 @@ msgid "Tilt"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:628
 #, kde-format
 msgid "Accuracy"
 msgstr "សុក្រឹតភាព​"
@@ -54224,169 +54224,169 @@ msgid "1 image correlated"
 msgid_plural "%1 images correlated"
 msgstr[0] "%1 រូបភាព​ដែល​​ជាប់​ទាក់ទង​"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:219
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:218
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title: track list header"
 msgid "Color"
 msgstr "ពណ៌"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:224
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:223
 #, fuzzy, kde-format
 #| msgid "Filename"
 msgctxt "@title: track list header"
 msgid "Filename"
 msgstr "ឈ្មោះ​ឯកសារ​"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:229
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:228
 #, fuzzy, kde-format
 #| msgid "#points"
 msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#points"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:416
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:429
 #, kde-format
 msgid "Not available"
 msgstr "ដែល​មិន​អាច​រក​បាន​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:455
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:460
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:473
 #, kde-format
 msgid "Fix: %1d"
 msgstr "ថេរ ៖ %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:465
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:478
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#Sat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:508
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:531
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:532
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:555
 #, kde-format
 msgid "Modified"
 msgstr "បាន​កែប្រែ​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
 #, kde-format
 msgid "Date and time"
 msgstr "កាលបរិច្ឆេទ និង​ពេលវេលា​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:845
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:877
 #, kde-format
 msgid "Failed to open file."
 msgstr "បាន​បរាជ័យ​ដើម្បី​បើក​ឯកសារ ។"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:917
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:949
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "បាន​បរាជ័យ​ដើម្បី​បន្ថែម​ព័ត៌មាន​អំពី​ GPS ទៅ​កាន់​រូបភាព ។"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:929
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:961
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "បាន​បរាជ័យ​ដើម្បី​​យក​ព័ត៌មាន​អំពី​ GPS ចេញ​ពី​រូបភាព​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:964
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:972
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1028
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "បាន​បរាជ័យ​ដើម្បី​រក្សាទុក​ស្លាក​ទៅកាន់​ឯកសារ ។"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1008
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1040
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "មិន​អាច​រក្សាទុក​ការ​ផ្លាស់ប្ដូរ​ទៅ​កាន់​​ឯកសារ​បាន​ឡើយ"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:103
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:85
 #, kde-format
 msgid "Paste coordinates"
 msgstr "បិទ​ភ្ជាប់​កូអរដោនេ​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:105
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:87
 #, fuzzy, kde-format
 #| msgid "Paste coordinates"
 msgid "Paste coordinates swapped"
 msgstr "បិទ​ភ្ជាប់​កូអរដោនេ​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:107
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:89
 #, kde-format
 msgid "Remove coordinates"
 msgstr "យក​កូអរដោនេ​​ចេញ​​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:108
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:90
 #, kde-format
 msgid "Remove altitude"
 msgstr "យក​រយៈកំពស់​ចេញ​​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:109
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:91
 #, kde-format
 msgid "Remove uncertainty"
 msgstr "យក​ភាព​មិន​ពិត​ប្រាកដ​ចេញ​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:110
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:708
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:92
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:690
 #, kde-format
 msgid "Remove speed"
 msgstr "យក​ល្បឿន​ចេញ​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:111
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:93
 #, kde-format
 msgid "Look up missing altitude values"
 msgstr "រកមើល​តម្លៃ​រយៈកម្ពស់​ដែល​បាត់​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:420
 #, kde-format
 msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
 "time."
 msgstr "បាន​រក​ឃើញ​ចំណុច​ច្រើនជាង​មួយ​លើ​ក្ដារ​តម្បៀត​ខ្ទាស់​​ - អាច​​​​កំណត់​បាន​តែ​មួយ​ចំណុច​ប៉ុណ្ណោះ​​នៅ​ពេល​តែមួយ​ ។"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:521
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
 msgstr "មិន​អាច​រក​កូអរដោនេ​​មួយ​ចំនួន​​លើ​ក្ដារ​​តម្បៀត​ខ្ទាស់​បាន​ឡើយ​ ។​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:544
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:525
 #, kde-format
 msgid "Coordinates pasted"
 msgstr "​បាន​បិទភ្ជាប់​កូអរដោនេ​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:576
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:558
 #, kde-format
 msgid "Bookmark selected"
 msgstr "បាន​ជ្រើស​ចំណាំ​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:687
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:669
 #, kde-format
 msgid "Remove coordinates information"
 msgstr "យក​​ព័ត៌មាន​អំពី​កូអរដោនេ​​ចេញ​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:692
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:674
 #, kde-format
 msgid "Remove altitude information"
 msgstr "យក​ព័ត៌មាន​អំពី​រយៈកម្ពស់​ចេញ​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:698
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:680
 #, kde-format
 msgid "Remove uncertainty information"
 msgstr "យក​ព័ត៌មាន​អំពី​ភាព​មិន​ពិត​ប្រាកដ​ចេញ​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:763
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:746
 #, kde-format
 msgid "Looking up altitudes"
 msgstr "ស្វែងរក​រយៈ​កម្ពស់​​"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:814
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:797
 #, kde-format
 msgid ""
 "Altitude lookup failed:\n"
@@ -54395,7 +54395,7 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​ស្វែង​រក​រយៈ​កម្ពស់ ៖\n"
 "%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:822
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:805
 #, kde-format
 msgid "Altitude looked up"
 msgstr "រយៈ​កម្ពស់​ស្វែងរក​"
@@ -54405,84 +54405,84 @@ msgstr "រយៈ​កម្ពស់​ស្វែងរក​"
 msgid "geonames.org"
 msgstr "geonames.org"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:71
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:65
 #, kde-format
 msgid "{Country}"
 msgstr "{ប្រទេស​}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:72
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:66
 #, kde-format
 msgctxt "Part of a country"
 msgid "{State}"
 msgstr "{រដ្ឋ}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:73
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Statistics"
 msgid "{State district}"
 msgstr "ស្ថិតិ"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:74
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:68
 #, kde-format
 msgid "{County}"
 msgstr "{ប្រទេស​}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:75
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:69
 #, kde-format
 msgid "{City}"
 msgstr "{ទីក្រុង​}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:76
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:70
 #, fuzzy, kde-format
 #| msgid "Add city district tag"
 msgid "{City district}"
 msgstr "បន្ថែម​ស្លាក​ស្រុក​របស់​ទីក្រុង"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:77
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:71
 #, kde-format
 msgid "{Suburb}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:78
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:72
 #, kde-format
 msgid "{Town}"
 msgstr "{ទីក្រុង​}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:79
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:73
 #, kde-format
 msgid "{Village}"
 msgstr "{ភូមិ​}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:80
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:74
 #, kde-format
 msgid "{Hamlet}"
 msgstr "{ឃុំ​}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:81
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:75
 #, kde-format
 msgid "{Street}"
 msgstr "{ផ្លូវ​}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:82
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:76
 #, fuzzy, kde-format
 #| msgid "Add house number tag"
 msgid "{House number}"
 msgstr "បន្ថែម​ស្លាក​លេខ​ផ្ទះ​"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:83
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:77
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgid "{Place}"
 msgstr "ជំនួស​"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:84
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:78
 #, kde-format
 msgctxt "Local administrative area 1"
 msgid "{LAU1}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:85
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:79
 #, kde-format
 msgctxt "Local administrative area 2"
 msgid "{LAU2}"
@@ -54817,22 +54817,22 @@ msgstr "ផ្ទុក​បញ្ជី​ចាក់​ពី​ឯកសា
 msgid "Geolocation Interface"
 msgstr "តម្រង​ភូមិសាស្ត្រ"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:190
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:183
 #, kde-format
 msgid "Sorting"
 msgstr "តម្រៀប​"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:197
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:190
 #, kde-format
 msgid "Show oldest first"
 msgstr "ដំបូង​បង្ហាញ​ចាស់​បំផុត"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:201
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:194
 #, kde-format
 msgid "Show youngest first"
 msgstr "ដំបូង​បង្ហាញ​​ថ្មី​​បំផុត"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:205
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:198
 #, kde-format
 msgid "Sort by rating"
 msgstr ""

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-09 01:41+0000\n"
+"POT-Creation-Date: 2024-03-10 01:57+0000\n"
 "PO-Revision-Date: 2024-02-27 06:11+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -228,7 +228,7 @@ msgstr "複製至此(&C)"
 #: core/app/dragdrop/albumdragdrop.cpp:356
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
-#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:766
+#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:767
 #: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
 #: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:396
 #, kde-format
@@ -242,13 +242,13 @@ msgid "Set as Album Thumbnail"
 msgstr "設為相簿縮圖"
 
 #: core/app/dragdrop/albumdragdrop.cpp:288
-#: core/app/dragdrop/itemdragdrop.cpp:762
+#: core/app/dragdrop/itemdragdrop.cpp:763
 #, kde-format
 msgid "Download From Camera"
 msgstr "從相機下載"
 
 #: core/app/dragdrop/albumdragdrop.cpp:289
-#: core/app/dragdrop/itemdragdrop.cpp:764
+#: core/app/dragdrop/itemdragdrop.cpp:765
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "從相機下載與刪除"
@@ -293,40 +293,40 @@ msgstr ""
 msgid "Assign Tag to Dropped Items"
 msgstr "指定標籤到丟棄的項目"
 
-#: core/app/dragdrop/itemdragdrop.cpp:643
+#: core/app/dragdrop/itemdragdrop.cpp:645
 #, kde-format
 msgid "Change Face Tags"
 msgstr "修改臉孔標籤"
 
-#: core/app/dragdrop/itemdragdrop.cpp:647
+#: core/app/dragdrop/itemdragdrop.cpp:649
 #, kde-format
 msgid "Change Face Tag"
 msgstr "修改臉孔標籤"
 
-#: core/app/dragdrop/itemdragdrop.cpp:651
-#: core/app/dragdrop/itemdragdrop.cpp:705
+#: core/app/dragdrop/itemdragdrop.cpp:653
+#: core/app/dragdrop/itemdragdrop.cpp:706
 #: core/app/views/preview/itempreviewview.cpp:720
 #, kde-format
 msgid "&Cancel"
 msgstr "取消(&C)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:690
+#: core/app/dragdrop/itemdragdrop.cpp:691
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "指定標籤到選擇的項目(&S)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:698
+#: core/app/dragdrop/itemdragdrop.cpp:699
 #: core/app/views/preview/itempreviewview.cpp:718
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "指定標籤到這個項目(&T)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:702
+#: core/app/dragdrop/itemdragdrop.cpp:703
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "指定標籤到所有項目(&A)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:760
+#: core/app/dragdrop/itemdragdrop.cpp:761
 #, kde-format
 msgid "Importing"
 msgstr "匯入中"
@@ -3084,7 +3084,7 @@ msgstr "沒有標籤的相簿"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:611
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:634
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3237,7 +3237,7 @@ msgid "Map Search"
 msgstr "地圖搜尋"
 
 #: core/app/views/stack/itemiconview_p.h:138
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1162
 #, kde-format
 msgid "Last Search"
 msgstr "上次搜尋"
@@ -3964,7 +3964,7 @@ msgstr "檔案屬性"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
@@ -4031,7 +4031,7 @@ msgstr "座標"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:627
 #, kde-format
 msgid "Altitude"
 msgstr "高度"
@@ -4293,7 +4293,7 @@ msgstr "單位"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:270
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
 #, kde-format
 msgid "Thumbnail"
 msgstr "縮圖"
@@ -6913,7 +6913,7 @@ msgctxt "@info"
 msgid "This library is not present on your system."
 msgstr "此函式庫不存在於您的系統上。"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:75
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6921,7 +6921,7 @@ msgid ""
 "of %1 bits."
 msgstr "此函式庫在您的系統中，支援最大色彩深度為 %1 位元。"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:80
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:81
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6929,7 +6929,7 @@ msgid ""
 "with a suitable color depth."
 msgstr "此函式庫在您的系統中，但無法以合適的色彩深度為影像編碼。"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:87
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:88
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6946,16 +6946,16 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:148
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
 #, fuzzy, kde-format
 #| msgid "Show image Format"
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "顯示影像格式"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6978,8 +6978,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "是"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:153
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -7001,8 +7001,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "是"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:141
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:157
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -11251,9 +11251,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "無法儲存「%1」檔案"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:438
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:539
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:815
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:419
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:520
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:798
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -11443,31 +11443,31 @@ msgid "Edit Geolocation"
 msgstr "編輯地理位置"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:625
 #, kde-format
 msgid "Latitude"
 msgstr "緯度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
 #, kde-format
 msgid "Longitude"
 msgstr "經度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:632
 #, kde-format
 msgid "Speed"
 msgstr "速度"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:631
 #, kde-format
 msgid "# satellites"
 msgstr "衛星數"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:630
 #, kde-format
 msgid "Fix type"
 msgstr "固定型態"
@@ -11483,7 +11483,7 @@ msgid "3-d"
 msgstr "三維"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:629
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -11997,7 +11997,7 @@ msgid "Toggle the visibility of the search results on the map."
 msgstr "在地圖上切換是否可見搜尋結果。"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:185
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:101
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:83
 #, kde-format
 msgid "Copy coordinates"
 msgstr "複製座標"
@@ -12018,7 +12018,7 @@ msgid "Select which service you would like to use."
 msgstr "選擇您要使用的服務。"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:218
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:140
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:122
 #, kde-format
 msgid "Bookmarks"
 msgstr "書籤"
@@ -15987,7 +15987,7 @@ msgstr "時間"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:610
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:633
 #, kde-format
 msgid "Status"
 msgstr "狀態"
@@ -28454,7 +28454,7 @@ msgstr ""
 "要。(這表示這個 digiKam 版本太舊，或者資料庫不是最新的格式) 請使用 digiKam 較"
 "新的版本。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:325
+#: core/libs/database/coredb/coredbschemaupdater.cpp:326
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
 #, kde-format
@@ -28465,7 +28465,7 @@ msgstr ""
 "在資料庫中建立資料表失敗。\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:346
+#: core/libs/database/coredb/coredbschemaupdater.cpp:347
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to open a database transaction on your database file \"%1\". This "
@@ -28485,7 +28485,7 @@ msgstr ""
 "digikam-devel@kde.org 郵件論壇尋求幫助。也請看看 digiKam 在終端機上輸出什麼訊"
 "息。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:407
+#: core/libs/database/coredb/coredbschemaupdater.cpp:408
 #, fuzzy, kde-format
 #| msgid ""
 #| "The schema updating process from version 4 to 6 failed, caused by an "
@@ -28507,7 +28507,7 @@ msgstr ""
 "和 \"%2\")。很可能您會想要回報這個錯誤到 digikam-devel@kde.org 郵件論壇。也請"
 "看看 digiKam 在終端機上輸出什麼訊息。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:445
+#: core/libs/database/coredb/coredbschemaupdater.cpp:446
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -28522,7 +28522,7 @@ msgstr ""
 "更新綱要版本從版本 %1 到 %2 時失敗。請讀取主控台上的錯誤訊息並到 bugs.kde."
 "org 回報此錯誤。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:454
+#: core/libs/database/coredb/coredbschemaupdater.cpp:455
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to update the database schema from version %1 to version %2. "
@@ -28536,7 +28536,7 @@ msgstr ""
 "更新綱要版本從版本 %1 到 %2 時失敗。請讀取主控台上的錯誤訊息並到 bugs.kde."
 "org 回報此錯誤。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:674
+#: core/libs/database/coredb/coredbschemaupdater.cpp:675
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28546,12 +28546,12 @@ msgstr ""
 "找不到資料庫更新動作。請確定目前板的 digiKam 裡的 dbconfig.xml 檔已安裝在正確"
 "的位置。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:695
+#: core/libs/database/coredb/coredbschemaupdater.cpp:696
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "更新綱要到版本 %1。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:842
+#: core/libs/database/coredb/coredbschemaupdater.cpp:843
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28561,12 +28561,12 @@ msgstr ""
 "將舊的資料庫檔案 (\"%1\") 複製到新的位置 (\"%2\") 失敗。錯誤訊息：「%3」。請"
 "確認檔案已經複製或者刪除它。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:864
+#: core/libs/database/coredb/coredbschemaupdater.cpp:865
 #, kde-format
 msgid "Copied database file"
 msgstr "已複製資料庫檔案"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:869
+#: core/libs/database/coredb/coredbschemaupdater.cpp:870
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28576,22 +28576,22 @@ msgstr ""
 "已經將舊的資料庫檔案 (\"%1\") 複製到新的位置 (\"%2\") ，但是無法開啟。請將檔"
 "案都刪除並重試一次，以空白資料庫啟動。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:890
+#: core/libs/database/coredb/coredbschemaupdater.cpp:891
 #, kde-format
 msgid "Opened new database file"
 msgstr "開啟的新資料庫檔案"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:989
+#: core/libs/database/coredb/coredbschemaupdater.cpp:990
 #, kde-format
 msgid "Prepared table creation"
 msgstr "已準備資料表建立"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1009
 #, kde-format
 msgid "Created tables"
 msgstr "已建立資料表"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28601,7 +28601,7 @@ msgstr ""
 "在組態設定檔中沒有找到相簿櫃路徑。放棄綱要更新處理。請用空白資料庫重試一次，"
 "或者修復您的組態設定。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1044
 #, fuzzy, kde-format
 #| msgid ""
 #| "There was an error associating your albumLibraryPath (\"%1\") with a "
@@ -28625,52 +28625,52 @@ msgstr ""
 "至 digikam-devel@kde.or 郵件論壇尋求意見。此資料庫更新動作會立刻中止，因為我"
 "們不希望從毀損的安裝作出錯誤之假設來建立一個新的資料庫。"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1071
 #, kde-format
 msgid "Configured one album root"
 msgstr "已設定一個相簿的根"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1097
 #, kde-format
 msgid "Imported albums"
 msgstr "匯入的相簿"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1134
 #, kde-format
 msgid "Imported images information"
 msgstr "匯入的影像資訊"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1164
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "上次搜尋 (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1225
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "已初始化且匯入的檔案字根過濾器"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1247
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "已執行過最初的完整掃描"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
 #, kde-format
 msgid "Imported creation dates"
 msgstr "匯入的建立日期"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1302
 #, kde-format
 msgid "Imported comments"
 msgstr "匯入的註解"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1329
 #, kde-format
 msgid "Imported ratings"
 msgstr "匯入的評等"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1340
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "已刪除 v3 資料表"
@@ -34976,55 +34976,55 @@ msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "完成工作中"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:130
+#: core/libs/fileactionmanager/fileactionmngr.cpp:131
 #, kde-format
 msgid "Assigning image tags"
 msgstr "正在指定影像標籤"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:152
+#: core/libs/fileactionmanager/fileactionmngr.cpp:153
 #, kde-format
 msgid "Removing image tags"
 msgstr "正在移除影像標籤"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:169
+#: core/libs/fileactionmanager/fileactionmngr.cpp:170
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "正在指定影像挑選旗標"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:176
+#: core/libs/fileactionmanager/fileactionmngr.cpp:177
 #, kde-format
 msgid "Assigning image color label"
 msgstr "正在指定影像色彩旗標"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:188
+#: core/libs/fileactionmanager/fileactionmngr.cpp:189
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "正在指定影像評等"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:195
-#: core/libs/fileactionmanager/fileactionmngr.cpp:207
-#: core/libs/fileactionmanager/fileactionmngr.cpp:219
+#: core/libs/fileactionmanager/fileactionmngr.cpp:196
+#: core/libs/fileactionmanager/fileactionmngr.cpp:208
+#: core/libs/fileactionmanager/fileactionmngr.cpp:220
 #, kde-format
 msgid "Editing group"
 msgstr "編輯群組"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:226
+#: core/libs/fileactionmanager/fileactionmngr.cpp:227
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "正在更新資料庫中的方向標示"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:244
-#: core/libs/fileactionmanager/fileactionmngr.cpp:262
+#: core/libs/fileactionmanager/fileactionmngr.cpp:245
+#: core/libs/fileactionmanager/fileactionmngr.cpp:263
 #, kde-format
 msgid "Applying metadata"
 msgstr "套用中繼資料中"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:269
+#: core/libs/fileactionmanager/fileactionmngr.cpp:270
 #, kde-format
 msgid "Rotating images"
 msgstr "旋轉影像中"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:285
+#: core/libs/fileactionmanager/fileactionmngr.cpp:286
 #, kde-format
 msgid "Copying attributes"
 msgstr "複製屬性中"
@@ -35039,36 +35039,36 @@ msgstr "處理項目"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "修改這些檔案的 EXIF 方向標示失敗："
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:350
+#: core/libs/fileactionmanager/fileworkeriface.cpp:351
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "轉換這些檔案失敗："
 
-#: core/libs/fileactionmanager/metadatahubmngr.cpp:172
+#: core/libs/fileactionmanager/metadatahubmngr.cpp:170
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Apply pending changes to metadata"
 msgstr "套用中繼資料中"
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:63
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:57
 #, fuzzy, kde-format
 msgid "Apply pending changes to metadata"
 msgstr "套用中繼資料中"
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:72
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:132
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:66
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:126
 #, fuzzy, kde-format
 msgid "No pending metadata synchronization"
 msgstr "加入中繼資料資訊"
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:74
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:68
 #, kde-format
 msgid ""
 "If lazy synchronization is enabled in metadata settings, the status bar will "
 "display the number of items waiting for synchronization"
 msgstr ""
 
-#: core/libs/fileactionmanager/metadatastatusbar.cpp:137
+#: core/libs/fileactionmanager/metadatastatusbar.cpp:131
 #, fuzzy, kde-format
 msgid "1 file awaits synchronization"
 msgid_plural "%1 files await synchronization"
@@ -35904,14 +35904,14 @@ msgctxt "@info: Height in meters"
 msgid "%1m"
 msgstr "%1m"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1256
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1254
 #, fuzzy, kde-format
 #| msgid "Flash has been fired"
 msgctxt "@info"
 msgid "Flash has been fired"
 msgstr "已開啟閃光"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1257
+#: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1255
 #, fuzzy, kde-format
 #| msgid "Flash with red-eye reduction mode"
 msgctxt "@info"
@@ -42742,7 +42742,7 @@ msgctxt "@info: file open filters"
 msgid "ICC Files (*.icc; *.icm)"
 msgstr "ICC 檔案 (*.icc; *.icm)"
 
-#: core/libs/widgets/itemview/ditemdelegate.cpp:162
+#: core/libs/widgets/itemview/ditemdelegate.cpp:160
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
@@ -52773,7 +52773,7 @@ msgid "Tilt"
 msgstr "傾斜"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:628
 #, kde-format
 msgid "Accuracy"
 msgstr "精準度"
@@ -54642,166 +54642,166 @@ msgid "1 image correlated"
 msgid_plural "%1 images correlated"
 msgstr[0] "已建立 %1 張影像的關聯"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:219
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:218
 #, kde-format
 msgctxt "@title: track list header"
 msgid "Color"
 msgstr "顏色"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:224
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:223
 #, kde-format
 msgctxt "@title: track list header"
 msgid "Filename"
 msgstr "檔名"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:229
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:228
 #, kde-format
 msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#點"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:416
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:429
 #, kde-format
 msgid "Not available"
 msgstr "無法使用"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:455
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP：%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:460
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:473
 #, kde-format
 msgid "Fix: %1d"
 msgstr "固定：%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:465
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:478
 #, kde-format
 msgid "#Sat: %1"
 msgstr "衛星數：%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:508
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:531
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:532
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:555
 #, kde-format
 msgid "Modified"
 msgstr "已變更"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
 #, kde-format
 msgid "Date and time"
 msgstr "日期和時間"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:845
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:877
 #, kde-format
 msgid "Failed to open file."
 msgstr "開啟檔案失敗。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:917
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:949
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "加入 GPS 資訊到影像中失敗。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:929
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:961
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "從影像中移除 GPS 資訊失敗。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:964
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:972
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1028
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "儲存標籤到檔案中失敗。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1008
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1040
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "無法儲存變更到檔案"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:103
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:85
 #, kde-format
 msgid "Paste coordinates"
 msgstr "貼上座標"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:105
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:87
 #, fuzzy, kde-format
 #| msgid "Paste coordinates"
 msgid "Paste coordinates swapped"
 msgstr "貼上座標"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:107
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:89
 #, kde-format
 msgid "Remove coordinates"
 msgstr "移除座標"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:108
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:90
 #, kde-format
 msgid "Remove altitude"
 msgstr "移除緯度"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:109
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:91
 #, kde-format
 msgid "Remove uncertainty"
 msgstr "移除不確定性"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:110
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:708
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:92
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:690
 #, kde-format
 msgid "Remove speed"
 msgstr "移除速度"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:111
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:93
 #, kde-format
 msgid "Look up missing altitude values"
 msgstr "尋找遺失的高度數值"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:420
 #, kde-format
 msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
 "time."
 msgstr "在剪貼簿上找到多個定點 - 一次只能指定一個點。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:521
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
 msgstr "在剪貼簿上沒有找到任何座標。"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:544
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:525
 #, kde-format
 msgid "Coordinates pasted"
 msgstr "座標已貼上"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:576
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:558
 #, kde-format
 msgid "Bookmark selected"
 msgstr "書籤已選擇"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:687
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:669
 #, kde-format
 msgid "Remove coordinates information"
 msgstr "移除座標資訊"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:692
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:674
 #, kde-format
 msgid "Remove altitude information"
 msgstr "移除緯度資訊"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:698
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:680
 #, kde-format
 msgid "Remove uncertainty information"
 msgstr "移除不確定性資訊"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:763
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:746
 #, kde-format
 msgid "Looking up altitudes"
 msgstr "尋找高度"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:814
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:797
 #, kde-format
 msgid ""
 "Altitude lookup failed:\n"
@@ -54810,7 +54810,7 @@ msgstr ""
 "高度尋找失敗：\n"
 "%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:822
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:805
 #, kde-format
 msgid "Altitude looked up"
 msgstr "已找到高度"
@@ -54820,84 +54820,84 @@ msgstr "已找到高度"
 msgid "geonames.org"
 msgstr "geonames.org"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:71
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:65
 #, kde-format
 msgid "{Country}"
 msgstr "{Country}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:72
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:66
 #, kde-format
 msgctxt "Part of a country"
 msgid "{State}"
 msgstr "{State}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:73
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Statistics"
 msgid "{State district}"
 msgstr "統計"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:74
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:68
 #, kde-format
 msgid "{County}"
 msgstr "{County}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:75
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:69
 #, kde-format
 msgid "{City}"
 msgstr "{City}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:76
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:70
 #, fuzzy, kde-format
 #| msgid "Add city district tag"
 msgid "{City district}"
 msgstr "新增城市行政區標籤"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:77
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:71
 #, kde-format
 msgid "{Suburb}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:78
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:72
 #, kde-format
 msgid "{Town}"
 msgstr "{Town}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:79
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:73
 #, kde-format
 msgid "{Village}"
 msgstr "{Village}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:80
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:74
 #, kde-format
 msgid "{Hamlet}"
 msgstr "{Hamlet}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:81
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:75
 #, kde-format
 msgid "{Street}"
 msgstr "{Street}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:82
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:76
 #, fuzzy, kde-format
 #| msgid "Add house number tag"
 msgid "{House number}"
 msgstr "新增門牌號碼標籤 "
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:83
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:77
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgid "{Place}"
 msgstr "取代 (&R)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:84
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:78
 #, kde-format
 msgctxt "Local administrative area 1"
 msgid "{LAU1}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:85
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgtagmodel.cpp:79
 #, kde-format
 msgctxt "Local administrative area 2"
 msgid "{LAU2}"
@@ -55227,22 +55227,22 @@ msgstr "從相簿載入軌跡"
 msgid "Geolocation Interface"
 msgstr "地理位置介面"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:190
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:183
 #, kde-format
 msgid "Sorting"
 msgstr "排序"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:197
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:190
 #, kde-format
 msgid "Show oldest first"
 msgstr "先顯示最舊的"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:201
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:194
 #, kde-format
 msgid "Show youngest first"
 msgstr "先顯示最新的"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:205
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:198
 #, kde-format
 msgid "Sort by rating"
 msgstr "依評等排序"
