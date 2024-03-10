@@ -50,7 +50,7 @@ VidSlideAlbumsPage::VidSlideAlbumsPage(QWizard* const dialog, const QString& tit
     : DWizardPage(dialog, title),
       d          (new Private(dialog))
 {
-    if (d->settings->iface)
+    if (d->settings && d->settings->iface)
     {
         d->albumSelector = d->settings->iface->albumChooser(this);
 
@@ -73,36 +73,41 @@ VidSlideAlbumsPage::~VidSlideAlbumsPage()
 
 bool VidSlideAlbumsPage::validatePage()
 {
-    if (!d->settings->iface)
+    if (d->settings && d->wizard)
     {
-        return false;
+        if (!d->settings->iface)
+        {
+            return false;
+        }
+
+        if (d->settings->iface->albumChooserItems().isEmpty())
+        {
+            return false;
+        }
+
+        d->wizard->settings()->inputImages.clear();
+
+        // update image list with album contents.
+
+        Q_FOREACH (const QUrl& url, d->settings->iface->albumsItems(d->settings->iface->albumChooserItems()))
+        {
+            d->wizard->settings()->inputImages << url;
+        }
+
+        return true;
     }
 
-    if (d->settings->iface->albumChooserItems().isEmpty())
-    {
-        return false;
-    }
-
-    d->wizard->settings()->inputImages.clear();
-
-    // update image list with album contents.
-
-    Q_FOREACH (const QUrl& url, d->settings->iface->albumsItems(d->settings->iface->albumChooserItems()))
-    {
-        d->wizard->settings()->inputImages << url;
-    }
-
-    return true;
+    return false;
 }
 
 bool VidSlideAlbumsPage::isComplete() const
 {
-    if (!d->settings->iface)
+    if (d->settings && d->settings->iface)
     {
-        return false;
+        return (!d->settings->iface->albumChooserItems().isEmpty());
     }
 
-    return (!d->settings->iface->albumChooserItems().isEmpty());
+    return false;
 }
 
 } // namespace DigikamGenericVideoSlideShowPlugin
