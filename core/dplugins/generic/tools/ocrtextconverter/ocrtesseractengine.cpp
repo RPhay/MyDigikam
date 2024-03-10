@@ -36,14 +36,11 @@ class OcrTesseractEngine::Private
 
 public:
 
-    Private()
-      : cancel (false)
-    {
-    }
+    Private() = default;
 
     OcrOptions          opt;
 
-    bool                cancel;
+    bool                cancel = false;
 
     QPointer<QProcess>  ocrProcess;
 
@@ -52,8 +49,9 @@ public:
     QString             ocrResult;
 };
 
-OcrTesseractEngine::OcrTesseractEngine()
-    : d(new Private())
+OcrTesseractEngine::OcrTesseractEngine(QObject* const parent)
+    : QObject(parent),
+      d(new Private())
 {
 }
 

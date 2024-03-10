@@ -48,7 +48,7 @@ public:
 
 public:
 
-    explicit OcrTesseractEngine();
+    explicit OcrTesseractEngine(QObject* const parent = nullptr);
     ~OcrTesseractEngine();
 
     QString inputFile()          const;
