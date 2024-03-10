@@ -23,6 +23,7 @@
 #include <QSlider>
 #include <QStyle>
 #include <QLabel>
+#include <QTimer>
 
 // KDE includes
 
@@ -219,7 +220,9 @@ void SlideVideo::slotPlayerStateChanged(QAVPlayer::State newState)
 {
     if (newState == QAVPlayer::PlayingState)
     {
-        // Nothing to do.
+        slotPlayingStateChanged();
+
+        QTimer::singleShot(250, this, SLOT(slotPlayingStateChanged()));
     }
 }
 
@@ -236,20 +239,6 @@ void SlideVideo::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
 
         case QAVPlayer::LoadedMedia:
         {
-            int rotate = d->videoWidget->videoMediaOrientation();
-
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Video orientation from QtAVPlayer:"
-                                         << rotate;
-
-            rotate     = (-rotate) + d->videoWidget->videoItemOrientation();
-
-            if ((rotate > 270) || (rotate < 0))
-            {
-                rotate = d->videoWidget->videoItemOrientation();
-            }
-
-            d->videoWidget->setVideoItemOrientation(rotate);
-
             Q_EMIT signalVideoLoaded(true);
 
             break;
@@ -329,6 +318,21 @@ void SlideVideo::slotPosition(int position)
 void SlideVideo::slotHandlePlayerError(QAVPlayer::Error /*err*/, const QString& message)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtAVPlayer Error: " << message;
+}
+
+void SlideVideo::slotPlayingStateChanged()
+{
+    int rotate = d->videoWidget->videoMediaOrientation();
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Video orientation from QtAVPlayer:"
+                                 << rotate;
+
+    if (rotate != d->videoWidget->videoItemOrientation())
+    {
+        rotate = d->videoWidget->videoItemOrientation();
+    }
+
+    d->videoWidget->setVideoItemOrientation(rotate);
 }
 
 } // namespace Digikam

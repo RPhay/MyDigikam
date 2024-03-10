@@ -200,7 +200,7 @@ void DVideoWidget::adjustVideoSize()
     if ((nativeSize.width()  < 1.0) ||
         (nativeSize.height() < 1.0))
     {
-        return;
+        nativeSize = QSizeF(352.0, 288.0);
     }
 
     double ratio = (nativeSize.width() /

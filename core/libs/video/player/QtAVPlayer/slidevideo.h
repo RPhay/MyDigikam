@@ -62,11 +62,13 @@ private Q_SLOTS:
     void slotPlayerStateChanged(QAVPlayer::State newState);
     void slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus);
     void slotHandlePlayerError(QAVPlayer::Error err, const QString&);
+    void slotPlayingStateChanged();
 
     void slotPositionChanged(qint64 position);
     void slotDurationChanged(qint64 duration);
     void slotVolumeChanged(int volume);
     void slotPosition(int position);
+
 
 private:
 
