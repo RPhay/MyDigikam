@@ -35,7 +35,7 @@ class GeoDataParser
 public:
 
     explicit GeoDataParser();
-    ~GeoDataParser() {};
+    ~GeoDataParser() = default;
 
     bool loadGPXFile(const QUrl& url);
 

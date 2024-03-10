@@ -27,13 +27,7 @@ class GeoDataContainer
 {
 public:
 
-    GeoDataContainer()
-        : m_interpolated(false),
-          m_altitude    (0.0),
-          m_latitude    (0.0),
-          m_longitude   (0.0)
-    {
-    };
+    GeoDataContainer() = default;
 
     GeoDataContainer(double altitude,
                      double latitude,
@@ -46,9 +40,7 @@ public:
     {
     };
 
-    ~GeoDataContainer()
-    {
-    };
+    ~GeoDataContainer() = default;
 
     GeoDataContainer(const GeoDataContainer& data)
     {
@@ -170,11 +162,11 @@ public:
 
 private:
 
-    bool   m_interpolated;
+    bool   m_interpolated   = false;
 
-    double m_altitude;
-    double m_latitude;
-    double m_longitude;
+    double m_altitude       = 0.0;
+    double m_latitude       = 0.0;
+    double m_longitude      = 0.0;
 };
 
 } // namespace DigikamGenericGeolocationEditPlugin

@@ -45,8 +45,10 @@ QDateTime GeoDataParserParseTime(QString timeString)
     const int timeZonePlusPosition  = timeString.lastIndexOf(QLatin1Char('+'));
     const int timeZoneMinusPosition = timeString.lastIndexOf(QLatin1Char('-'));
 
-    if ((timeZonePlusPosition  == timeZoneSignPosition) ||
-        (timeZoneMinusPosition == timeZoneSignPosition))
+    if (
+        (timeZonePlusPosition  == timeZoneSignPosition) ||
+        (timeZoneMinusPosition == timeZoneSignPosition)
+       )
     {
         const int timeZoneSign       = (timeZonePlusPosition == timeZoneSignPosition) ? +1 : -1;
 

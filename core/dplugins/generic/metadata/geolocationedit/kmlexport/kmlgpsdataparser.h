@@ -95,7 +95,7 @@ private:
 
     /*! @todo maybe initialize it in the constructor */
     /*! the root document, used to create all QDomElements */
-    QDomDocument* kmlDocument;
+    QDomDocument* kmlDocument = nullptr;
 };
 
 } // namespace DigikamGenericGeolocationEditPlugin

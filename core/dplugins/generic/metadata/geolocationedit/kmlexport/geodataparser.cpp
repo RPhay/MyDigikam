@@ -98,7 +98,9 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
     }
 
     if (findItem)
+    {
         return true;
+    }
 
     // If we can't find it, we will trying to interpolate the GPS point.
 
@@ -213,6 +215,7 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
     if (!gpxDoc.setContent(&gpxfile))
     {
         gpxfile.close();
+
         return false;
     }
 
@@ -221,6 +224,7 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
     if (gpxDocElem.tagName() != QLatin1String("gpx"))
     {
         gpxfile.close();
+
         return false;
     }
 
@@ -229,30 +233,42 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
         QDomElement trkElem = nTrk.toElement();
 
         if (trkElem.isNull())
+        {
             continue;
+        }
 
         if (trkElem.tagName() != QLatin1String("trk"))
+        {
             continue;
+        }
 
         for (QDomNode nTrkseg = trkElem.firstChild() ; !nTrkseg.isNull() ; nTrkseg = nTrkseg.nextSibling())
         {
             QDomElement trksegElem = nTrkseg.toElement();
 
             if (trksegElem.isNull())
+            {
                 continue;
+            }
 
             if (trksegElem.tagName() != QLatin1String("trkseg"))
+            {
                 continue;
+            }
 
             for (QDomNode nTrkpt = trksegElem.firstChild() ; !nTrkpt.isNull() ; nTrkpt = nTrkpt.nextSibling())
             {
                 QDomElement trkptElem = nTrkpt.toElement();
 
                 if (trkptElem.isNull())
+                {
                     continue;
+                }
 
                 if (trkptElem.tagName() != QLatin1String("trkpt"))
+                {
                     continue;
+                }
 
                 QDateTime ptDateTime;
                 double    ptAltitude  = 0.0;
@@ -265,7 +281,9 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
                 QString lon = trkptElem.attribute(QLatin1String("lon"));
 
                 if (lat.isEmpty() || lon.isEmpty())
+                {
                     continue;
+                }
 
                 ptLatitude  = lat.toDouble();
                 ptLongitude = lon.toDouble();
@@ -277,7 +295,9 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
                     QDomElement trkptMetaElem = nTrkptMeta.toElement();
 
                     if (trkptMetaElem.isNull())
+                    {
                         continue;
+                    }
 
                     if (trkptMetaElem.tagName() == QLatin1String("time"))
                     {
@@ -286,7 +306,9 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
                         const QString time = trkptMetaElem.text();
 
                         if (time.isEmpty())
+                        {
                             continue;
+                        }
 
                         ptDateTime = GeoDataParserParseTime(time);
                     }
