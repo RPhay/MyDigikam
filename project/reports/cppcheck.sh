@@ -84,12 +84,11 @@ cppcheck -j$CPU_CORES \
          --suppress=*:*libraw*.h \
          --suppress=*:*libpgf*.h \
          --suppress=*:*upnpsdk*.h \
-         --suppress=*:*yfauth*.h \
          --suppress=*:*o2*.h \
          --suppress=*:*lqr*.h \
          --suppress=*:*libjpeg*.h \
          --suppress=*:*dng_sdk*.h \
-         --suppress=*:*xmp_sdk*.h \
+         --suppress=*:*xmp_sdk/*.h \
          --suppress=*:*qav*.h \
          --suppress=missingIncludeSystem \
          --suppress=missingInclude \
