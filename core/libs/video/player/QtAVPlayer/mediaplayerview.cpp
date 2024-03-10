@@ -28,6 +28,7 @@
 #include <QLabel>
 #include <QFrame>
 #include <QStyle>
+#include <QTimer>
 
 // KDE includes
 
@@ -325,6 +326,8 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
 {
     if      (newState == QAVPlayer::PlayingState)
     {
+        QTimer::singleShot(50, this, SLOT(slotPlayingStateChanged()));
+
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
     else if (newState == QAVPlayer::PausedState)
@@ -346,25 +349,9 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
 
 void MediaPlayerView::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
 {
-    if      (newStatus == QAVPlayer::InvalidMedia)
+    if (newStatus == QAVPlayer::InvalidMedia)
     {
         setPreviewMode(Private::ErrorView);
-    }
-    else if (newStatus == QAVPlayer::LoadedMedia)
-    {
-        int rotate = d->videoWidget->videoMediaOrientation();
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Video orientation from QtAVPlayer:"
-                                     << rotate;
-
-        rotate     = (-rotate) + d->videoWidget->videoItemOrientation();
-
-        if ((rotate > 270) || (rotate < 0))
-        {
-            rotate = d->videoWidget->videoItemOrientation();
-        }
-
-        d->videoWidget->setVideoItemOrientation(rotate);
     }
 }
 
@@ -608,7 +595,6 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     d->videoWidget->player()->setSource(d->currentItem.toLocalFile());
     setPreviewMode(Private::PlayerView);
-    d->videoWidget->player()->seek(10);
     d->videoWidget->player()->play();
 }
 
@@ -682,9 +668,19 @@ void MediaPlayerView::slotHandlePlayerError(QAVPlayer::Error /*err*/, const QStr
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtAVPlayer Error: " << message;
 }
 
-void MediaPlayerView::slotNativeSizeChanged()
+void MediaPlayerView::slotPlayingStateChanged()
 {
-    d->videoWidget->adjustVideoSize();
+    int rotate = d->videoWidget->videoMediaOrientation();
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Video orientation from QtAVPlayer:"
+                                 << rotate;
+
+    if (rotate != d->videoWidget->videoItemOrientation())
+    {
+        rotate = d->videoWidget->videoItemOrientation();
+    }
+
+    d->videoWidget->setVideoItemOrientation(rotate);
 }
 
 bool MediaPlayerView::eventFilter(QObject* watched, QEvent* event)

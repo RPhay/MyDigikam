@@ -196,18 +196,11 @@ void DVideoWidget::adjustVideoSize()
     d->videoItem->resetTransform();
 
     QSizeF nativeSize    = d->videoItem->nativeSize();
-    int mediaOrientation = videoMediaOrientation();
 
     if ((nativeSize.width()  < 1.0) ||
         (nativeSize.height() < 1.0))
     {
         return;
-    }
-
-    if ((mediaOrientation == 90) ||
-        (mediaOrientation == 270))
-    {
-        nativeSize.transpose();
     }
 
     double ratio = (nativeSize.width() /
