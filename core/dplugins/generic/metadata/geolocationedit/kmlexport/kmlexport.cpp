@@ -230,7 +230,7 @@ void KmlExport::generateImagesthumb(const QUrl& imageURL, QDomElement& kmlAlbum)
         }
         else if (m_meta->load(imageURL.toLocalFile()))
         {
-            if (m_meta->getGPSInfo(alt, lat, lng))
+            if (!m_meta->getGPSInfo(alt, lat, lng))
             {
                 logError(i18n("Cannot get GPS Information from %1 file.", imageURL.toLocalFile()));
             }
