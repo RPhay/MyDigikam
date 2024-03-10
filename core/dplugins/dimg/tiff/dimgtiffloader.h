@@ -73,13 +73,13 @@ private:
     // cppcheck-suppress unusedPrivateFunction
     void tiffSetExifDataTag(TIFF* const tif, ttag_t tiffTag, const DMetadata& metaData, const char* const exifTagName);
 
-    static void dimg_tiff_warning(const char* module, const char* format, va_list warnings);
-    static void dimg_tiff_error(const char* module, const char* format, va_list errors);
+    static void dimg_tiff_warning(const char* module, const char* format, va_list warnings); // clazy:exclude=function-args-by-ref
+    static void dimg_tiff_error(const char* module, const char* format, va_list errors);     // clazy:exclude=function-args-by-ref
 
 private:
 
-    bool m_sixteenBit;
-    bool m_hasAlpha;
+    bool m_sixteenBit = false;
+    bool m_hasAlpha   = false;
 };
 
 } // namespace DigikamTIFFDImgPlugin

@@ -36,15 +36,11 @@ class Q_DECL_HIDDEN DImgTIFFExportSettings::Private
 
 public:
 
-    explicit Private()
-      : TIFFGrid       (nullptr),
-        TIFFcompression(nullptr)
-    {
-    }
+    Private() = default;
 
-    QGridLayout* TIFFGrid;
+    QGridLayout* TIFFGrid           = nullptr;
 
-    QCheckBox*   TIFFcompression;
+    QCheckBox*   TIFFcompression    = nullptr;
 };
 
 DImgTIFFExportSettings::DImgTIFFExportSettings(QWidget* const parent)
