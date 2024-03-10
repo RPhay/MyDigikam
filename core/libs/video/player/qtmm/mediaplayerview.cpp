@@ -422,20 +422,6 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
 {
     if (newState == QMediaPlayer::PlayingState)
     {
-        int rotate = d->videoMediaOrientation();
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
-                                     << rotate;
-
-        rotate     = (-rotate) + d->videoOrientation;
-
-        if ((rotate > 270) || (rotate < 0))
-        {
-            rotate = d->videoOrientation;
-        }
-
-        d->setVideoItemOrientation(rotate);
-
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
     else
@@ -467,7 +453,23 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
 
 void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus)
 {
-    if (newStatus == QMediaPlayer::InvalidMedia)
+    if      (newStatus == QMediaPlayer::LoadedMedia)
+    {
+        int rotate = d->videoMediaOrientation();
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
+                                     << rotate;
+
+        rotate     = (-rotate) + d->videoOrientation;
+
+        if ((rotate > 270) || (rotate < 0))
+        {
+            rotate = d->videoOrientation;
+        }
+
+        d->setVideoItemOrientation(rotate);
+    }
+    else if (newStatus == QMediaPlayer::InvalidMedia)
     {
         setPreviewMode(Private::ErrorView);
     }

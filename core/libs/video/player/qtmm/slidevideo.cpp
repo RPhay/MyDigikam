@@ -321,19 +321,7 @@ void SlideVideo::slotPlayerStateChanged(QMediaPlayer::PlaybackState newState)
 {
     if (newState == QMediaPlayer::PlayingState)
     {
-        int rotate = d->videoMediaOrientation();
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
-                                     << rotate;
-
-        rotate     = (-rotate) + d->videoOrientation;
-
-        if ((rotate > 270) || (rotate < 0))
-        {
-            rotate = d->videoOrientation;
-        }
-
-        d->setVideoItemOrientation(rotate);
+        // Nothing to do.
     }
 }
 
@@ -366,6 +354,23 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
             Q_EMIT signalVideoLoaded(false);
 
             break;
+        }
+
+        case QMediaPlayer::LoadedMedia:
+        {
+            int rotate = d->videoMediaOrientation();
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
+                                         << rotate;
+
+            rotate     = (-rotate) + d->videoOrientation;
+
+            if ((rotate > 270) || (rotate < 0))
+            {
+                rotate = d->videoOrientation;
+            }
+
+            d->setVideoItemOrientation(rotate);
         }
 
         default:
