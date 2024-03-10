@@ -382,7 +382,12 @@ GeoDataDocument* Pn2Runner::parseForVersion2( const QString &fileName, DocumentR
         }
     }
 
-    if ( (prevFlag == INNERBOUNDARY || prevFlag == OUTERBOUNDARY) && prevFlag != MULTIGEOMETRY ) {
+    if (
+         placemark                                                &&
+         (prevFlag == INNERBOUNDARY || prevFlag == OUTERBOUNDARY) &&
+         (prevFlag != MULTIGEOMETRY)
+       )
+    {
         placemark->setGeometry( polygon );
     }
 
