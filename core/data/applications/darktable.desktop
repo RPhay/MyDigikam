@@ -13,6 +13,7 @@ Name[sl]=Darktable
 Name[tr]=Darktable
 Name[uk]=Darktable
 Name[x-test]=xxDarktablexx
+Name[zh_CN]=Darktable
 Exec=darktable.exe %f
 Icon=darktable.exe
 MimeType=image/jpg;image/raw

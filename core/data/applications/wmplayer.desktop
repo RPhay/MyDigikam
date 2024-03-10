@@ -12,6 +12,7 @@ Name[sl]=Windows Media Player
 Name[tr]=Windows Media Player
 Name[uk]=Windows Media Player
 Name[x-test]=xxWindows Media Playerxx
+Name[zh_CN]=Windows 媒体播放器
 Exec=wmplayer.exe %f
 Icon=wmplayer.exe
 MimeType=video/mp4;video/mov;video/mpg;video/wmv

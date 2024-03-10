@@ -12,6 +12,7 @@ Name[sl]=ART (Another RAW Therapee)
 Name[tr]=ART (Another RAW Therapee)
 Name[uk]=ART (Another RAW Therapee)
 Name[x-test]=xxART (Another RAW Therapee)xx
+Name[zh_CN]=ART (Another RAW Therapee)
 Exec=ART.exe %f
 Icon=ART.exe
 MimeType=image/jpg;image/raw

@@ -13,6 +13,7 @@ Name[sl]=RawTherapee
 Name[tr]=RawTherapee
 Name[uk]=RawTherapee
 Name[x-test]=xxRawTherapeexx
+Name[zh_CN]=RawTherapee
 Exec=rawtherapee.exe %f
 Icon=rawtherapee.exe
 MimeType=image/jpg;image/raw

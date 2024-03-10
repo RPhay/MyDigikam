@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=FastStone Image Viewer
+Name[bg]=FastStone Image Viewer
 Name[ca]=FastStone Image Viewer
 Name[ca@valencia]=Visor d'imatges FastStone
 Name[eo]=FastStone Image Viewer
@@ -11,6 +12,7 @@ Name[sl]=Ogledovalnik slik FastStone
 Name[tr]=FastStone Image Viewer
 Name[uk]=FastStone Image Viewer
 Name[x-test]=xxFastStone Image Viewerxx
+Name[zh_CN]=FastStone 图像查看器
 Exec="%ProgramFiles(x86)%/FastStone Image Viewer/FSViewer.exe" %f
 Icon="%ProgramFiles(x86)%/FastStone Image Viewer/FSViewer.exe"
 MimeType=image/jpg;image/bmp;image/png

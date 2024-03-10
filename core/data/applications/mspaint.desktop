@@ -12,6 +12,7 @@ Name[sl]=Microsoft Paint
 Name[tr]=Microsoft Paint
 Name[uk]=Microsoft Paint
 Name[x-test]=xxMicrosoft Paintxx
+Name[zh_CN]=微软画图
 Exec=mspaint.exe %f
 Icon=mspaint.exe
 MimeType=image/jpg;image/bmp;image/png

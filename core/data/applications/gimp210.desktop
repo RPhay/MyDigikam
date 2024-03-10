@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Gimp
+Name[bg]=Gimp
 Name[ca]=Gimp
 Name[ca@valencia]=Gimp
 Name[eo]=Gimp
@@ -11,6 +12,7 @@ Name[sl]=Gimp
 Name[tr]=GIMP
 Name[uk]=Gimp
 Name[x-test]=xxGimpxx
+Name[zh_CN]=GIMP
 Exec="%ProgramFiles%/GIMP 2/bin/gimp-2.10.exe" %f
 Icon="%ProgramFiles%/GIMP 2/bin/gimp-2.10.exe"
 MimeType=image/jpg;image/raw
