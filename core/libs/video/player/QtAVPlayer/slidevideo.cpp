@@ -220,9 +220,7 @@ void SlideVideo::slotPlayerStateChanged(QAVPlayer::State newState)
 {
     if (newState == QAVPlayer::PlayingState)
     {
-        slotPlayingStateChanged();
-
-        QTimer::singleShot(250, this, SLOT(slotPlayingStateChanged()));
+        // Nothing to do.
     }
 }
 
@@ -239,7 +237,11 @@ void SlideVideo::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
 
         case QAVPlayer::LoadedMedia:
         {
+            slotPlayingStateChanged();
+
             Q_EMIT signalVideoLoaded(true);
+
+            QTimer::singleShot(250, this, SLOT(slotPlayingStateChanged()));
 
             break;
         }

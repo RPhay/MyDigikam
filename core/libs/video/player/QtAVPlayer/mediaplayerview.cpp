@@ -326,10 +326,6 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
 {
     if      (newState == QAVPlayer::PlayingState)
     {
-        slotPlayingStateChanged();
-
-        QTimer::singleShot(250, this, SLOT(slotPlayingStateChanged()));
-
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
     else if (newState == QAVPlayer::PausedState)
@@ -351,7 +347,13 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
 
 void MediaPlayerView::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
 {
-    if (newStatus == QAVPlayer::InvalidMedia)
+    if      (newStatus == QAVPlayer::LoadedMedia)
+    {
+        slotPlayingStateChanged();
+
+        QTimer::singleShot(250, this, SLOT(slotPlayingStateChanged()));
+    }
+    else if (newStatus == QAVPlayer::InvalidMedia)
     {
         setPreviewMode(Private::ErrorView);
     }

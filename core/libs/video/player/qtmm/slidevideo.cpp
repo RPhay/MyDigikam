@@ -331,27 +331,7 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
     {
         case QMediaPlayer::EndOfMedia:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia completed:" << d->player->source();
-
             Q_EMIT signalVideoFinished();
-
-            break;
-        }
-
-        case QMediaPlayer::LoadingMedia:
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia media loaded:" << d->player->source();
-
-            Q_EMIT signalVideoLoaded(true);
-
-            break;
-        }
-
-        case QMediaPlayer::InvalidMedia:
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia media invalid:" << d->player->source();
-
-            Q_EMIT signalVideoLoaded(false);
 
             break;
         }
@@ -371,6 +351,17 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
             }
 
             d->setVideoItemOrientation(rotate);
+
+            Q_EMIT signalVideoLoaded(true);
+
+            break;
+        }
+
+        case QMediaPlayer::InvalidMedia:
+        {
+            Q_EMIT signalVideoLoaded(false);
+
+            break;
         }
 
         default:
