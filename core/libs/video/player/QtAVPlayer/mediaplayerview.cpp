@@ -326,7 +326,9 @@ void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
 {
     if      (newState == QAVPlayer::PlayingState)
     {
-        QTimer::singleShot(50, this, SLOT(slotPlayingStateChanged()));
+        slotPlayingStateChanged();
+
+        QTimer::singleShot(250, this, SLOT(slotPlayingStateChanged()));
 
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
