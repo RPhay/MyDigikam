@@ -78,7 +78,7 @@ GeoDataDocument *PntRunner::parseFile(const QString &fileName, DocumentRole role
             error = true;
         }
 
-        if (header >= 1000 && !document->isEmpty()) {
+        if (header >= 1000 && !document->isEmpty() && placemark) {
             GeoDataLineString *const polyline = static_cast<GeoDataLineString*>( placemark->geometry() );
             if ( polyline->size() == 1 ) {
                 qCDebug(DIGIKAM_MARBLE_LOG) << Q_FUNC_INFO << fileName << "contains single-point polygon at" << count << ". Aborting.";
@@ -182,13 +182,16 @@ GeoDataDocument *PntRunner::parseFile(const QString &fileName, DocumentRole role
             break;
         }
 
-        GeoDataLineString *polyline = static_cast<GeoDataLineString*>( placemark->geometry() );
+        if (placemark)
+        {
+            GeoDataLineString *polyline = static_cast<GeoDataLineString*>( placemark->geometry() );
 
-        // Transforming Range of Coordinates to iLat [0,ARCMINUTE] , iLon [0,2 * ARCMINUTE]
-        polyline->append( GeoDataCoordinates( (qreal)(iLon) * INT2RAD, (qreal)(iLat) * INT2RAD,
-                                              0.0, GeoDataCoordinates::Radian,
-                                              5 - qMin( 5, (int)header  ) ) ); // if 1 <= header <= 5, header contains level of detail
-                                                                           // else pick most sparse level of detail, which equals 0
+            // Transforming Range of Coordinates to iLat [0,ARCMINUTE] , iLon [0,2 * ARCMINUTE]
+            polyline->append( GeoDataCoordinates( (qreal)(iLon) * INT2RAD, (qreal)(iLat) * INT2RAD,
+                                                  0.0, GeoDataCoordinates::Radian,
+                                                  5 - qMin( 5, (int)header  ) ) ); // if 1 <= header <= 5, header contains level of detail
+                                                                                   // else pick most sparse level of detail, which equals 0
+        }
 
         ++count;
     }
