@@ -25,8 +25,7 @@ namespace DigikamGenericHtmlGalleryPlugin
 static const char* THEME_GROUP_PREFIX = "Theme ";
 
 GalleryInfo::GalleryInfo(DInfoInterface* const iface)
-    : m_iface    (iface),
-      m_getOption(IMAGES)
+    : m_iface(iface)
 {
 }
 
@@ -59,6 +58,7 @@ void GalleryInfo::setThemeParameterValue(const QString& theme,
                                          const QString& value)
 {
     // FIXME: This is hackish, but config() is const :'(
+
     KConfig* const localConfig = const_cast<KConfig*>(config());
     QString groupName          = QLatin1String(THEME_GROUP_PREFIX) + theme;
     KConfigGroup group         = localConfig->group(groupName);
@@ -68,6 +68,7 @@ void GalleryInfo::setThemeParameterValue(const QString& theme,
 QString GalleryInfo::getEnumString(const QString& itemName) const
 {
     // findItem is not marked const :-(
+
     GalleryInfo* const that               = const_cast<GalleryInfo*>(this);
     KConfigSkeletonItem* const tmp        = that->findItem(itemName);
     KConfigSkeleton::ItemEnum* const item = dynamic_cast<KConfigSkeleton::ItemEnum*>(tmp);

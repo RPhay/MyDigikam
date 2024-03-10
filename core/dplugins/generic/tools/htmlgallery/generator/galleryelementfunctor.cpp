@@ -104,6 +104,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
         if (!DRawDecoder::loadRawPreview(originalImage, path))
         {
             emitWarning(i18n("Error loading RAW image '%1'", QDir::toNativeSeparators(path)));
+
             return;
         }
     }
@@ -114,6 +115,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
         if (!imageFile.open(QIODevice::ReadOnly))
         {
             emitWarning(i18n("Could not read image '%1'", QDir::toNativeSeparators(path)));
+
             return;
         }
 
@@ -123,6 +125,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
         {
             emitWarning(i18n("Format of image '%1' is unknown", QDir::toNativeSeparators(path)));
             imageFile.close();
+
             return;
         }
 
@@ -132,6 +135,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
         if (!originalImage.loadFromData(imageData))
         {
             emitWarning(i18n("Error loading image '%1'", QDir::toNativeSeparators(path)));
+
             return;
         }
     }

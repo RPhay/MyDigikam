@@ -128,7 +128,7 @@ protected:
     bool       m_thumbnailSquare;
     QUrl       m_destUrl;
     int        m_openInBrowser;
-    QString    m_imageSelectionTitle; // Gallery title to use for GalleryInfo::ImageGetOption::IMAGES selection.
+    QString    m_imageSelectionTitle; ///< Gallery title to use for GalleryInfo::ImageGetOption::IMAGES selection.
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin

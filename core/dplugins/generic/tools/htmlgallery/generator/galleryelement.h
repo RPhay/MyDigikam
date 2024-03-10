@@ -52,10 +52,10 @@ public:
 
 public:
 
-    bool                         m_valid;
+    bool                         m_valid        = false;
     QString                      m_title;
     QString                      m_description;
-    DMetadata::ImageOrientation  m_orientation;
+    DMetadata::ImageOrientation  m_orientation  = MetaEngine::ORIENTATION_UNSPECIFIED;
     QDateTime                    m_time;
 
     QString                      m_path;
@@ -68,6 +68,7 @@ public:
     QSize                        m_originalSize;
 
     // Exif Metadata
+
     QString                      m_exifImageMake;
     QString                      m_exifItemModel;
     QString                      m_exifImageOrientation;
@@ -85,6 +86,7 @@ public:
     QString                      m_exifPhotoFocalLength;
 
     // GPS Metadata
+
     QString                      m_exifGPSLatitude;
     QString                      m_exifGPSLongitude;
     QString                      m_exifGPSAltitude;

@@ -23,7 +23,6 @@ namespace DigikamGenericHtmlGalleryPlugin
 {
 
 GalleryElement::GalleryElement(const DInfoInterface::DInfoMap& info)
-    : m_valid(false)
 {
     DItemInfo item(info);
     m_title       = item.name();
@@ -33,8 +32,6 @@ GalleryElement::GalleryElement(const DInfoInterface::DInfoMap& info)
 }
 
 GalleryElement::GalleryElement()
-    : m_valid(false),
-      m_orientation(MetaEngine::ORIENTATION_UNSPECIFIED)
 {
 }
 
@@ -63,8 +60,9 @@ void GalleryElement::appendToXML(XMLWriter& xmlWriter, bool copyOriginalImage) c
                                 m_originalFileName, m_originalSize);
     }
 
-    //Exif
+    // Exif
     // TODO put all exif tags in a sub level
+
     XMLElement imageExif(xmlWriter, QLatin1String("exif"));
     xmlWriter.writeElement("exifimagemake",              m_exifImageMake);
     xmlWriter.writeElement("exifimagemodel",             m_exifItemModel);
@@ -83,15 +81,16 @@ void GalleryElement::appendToXML(XMLWriter& xmlWriter, bool copyOriginalImage) c
     xmlWriter.writeElement("exifphotofocallength",       m_exifPhotoFocalLength);
 
     // GPS
+
     xmlWriter.writeElement("exifgpslatitude",            m_exifGPSLatitude);
     xmlWriter.writeElement("exifgpslongitude",           m_exifGPSLongitude);
     xmlWriter.writeElement("exifgpsaltitude",            m_exifGPSAltitude);
 }
 
 void GalleryElement::appendImageElementToXML(XMLWriter& xmlWriter,
-                                           const QString& elementName,
-                                           const QString& fileName,
-                                           const QSize& size) const
+                                             const QString& elementName,
+                                             const QString& fileName,
+                                             const QSize& size) const
 {
     XMLAttributeList attrList;
     attrList.append(QLatin1String("fileName"), fileName);

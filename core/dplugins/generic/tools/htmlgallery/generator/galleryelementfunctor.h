@@ -56,8 +56,8 @@ private:
 
     // NOTE: Do not use a d private internal container here.
 
-    GalleryGenerator* m_generator;
-    GalleryInfo*      m_info;
+    GalleryGenerator* m_generator = nullptr;
+    GalleryInfo*      m_info      = nullptr;
     QString           m_destDir;
     GalleryNameHelper m_uniqueNameHelper;
 };

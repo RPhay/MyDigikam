@@ -65,13 +65,13 @@ public:
 
 public:
 
-    ImageGetOption            m_getOption;      // Type of image selection (albums or images list).
+    ImageGetOption            m_getOption   = IMAGES;       ///< Type of image selection (albums or images list).
 
-    DInfoInterface::DAlbumIDs m_albumList;      // Albums list for ImageGetOption::ALBUMS selection.
+    DInfoInterface::DAlbumIDs m_albumList;                  ///< Albums list for ImageGetOption::ALBUMS selection.
 
-    QList<QUrl>               m_imageList;      // Images list for ImageGetOption::IMAGES selection.
+    QList<QUrl>               m_imageList;                  ///< Images list for ImageGetOption::IMAGES selection.
 
-    DInfoInterface*           m_iface;          // Interface to handle items information.
+    DInfoInterface*           m_iface       = nullptr;      ///< Interface to handle items information.
 
 private:
 

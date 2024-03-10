@@ -168,7 +168,9 @@ GalleryConfig::~GalleryConfig()
 void GalleryConfig::setTheme(const QString& v)
 {
     if (!isImmutable(QLatin1String("theme")))
+    {
         m_theme = v;
+    }
 }
 
 QString GalleryConfig::theme() const
@@ -179,7 +181,9 @@ QString GalleryConfig::theme() const
 void GalleryConfig::setUseOriginalImageAsFullImage(bool v)
 {
     if (!isImmutable(QLatin1String("useOriginalImageAsFullImage")))
+    {
         m_useOriginalImageAsFullImage = v;
+    }
 }
 
 bool GalleryConfig::GalleryConfig::useOriginalImageAsFullImage() const
@@ -190,7 +194,9 @@ bool GalleryConfig::GalleryConfig::useOriginalImageAsFullImage() const
 void GalleryConfig::setFullResize(bool v)
 {
     if (!isImmutable(QLatin1String("fullResize")))
+    {
         m_fullResize = v;
+    }
 }
 
 bool GalleryConfig::fullResize() const
@@ -201,7 +207,9 @@ bool GalleryConfig::fullResize() const
 void GalleryConfig::setFullSize(int v)
 {
     if (!isImmutable(QLatin1String("fullSize")))
+    {
         m_fullSize = v;
+    }
 }
 
 int GalleryConfig::fullSize() const
@@ -212,7 +220,9 @@ int GalleryConfig::fullSize() const
 void GalleryConfig::setFullFormat(int v)
 {
     if (!isImmutable(QLatin1String("fullFormat")))
+    {
         m_fullFormat = v;
+    }
 }
 
 int GalleryConfig::fullFormat() const
@@ -223,7 +233,9 @@ int GalleryConfig::fullFormat() const
 void GalleryConfig::setFullQuality(int v)
 {
     if (!isImmutable(QLatin1String("fullQuality")))
+    {
         m_fullQuality = v;
+    }
 }
 
 int GalleryConfig::fullQuality() const
@@ -234,7 +246,9 @@ int GalleryConfig::fullQuality() const
 void GalleryConfig::setCopyOriginalImage(bool v)
 {
     if (!isImmutable(QLatin1String("copyOriginalImage")))
+    {
         m_copyOriginalImage = v;
+    }
 }
 
 bool GalleryConfig::copyOriginalImage() const
@@ -245,7 +259,9 @@ bool GalleryConfig::copyOriginalImage() const
 void GalleryConfig::setThumbnailSize(int v)
 {
     if (!isImmutable(QLatin1String("thumbnailSize")))
+    {
         m_thumbnailSize = v;
+    }
 }
 
 int GalleryConfig::thumbnailSize() const
@@ -256,7 +272,9 @@ int GalleryConfig::thumbnailSize() const
 void GalleryConfig::setThumbnailFormat(int v)
 {
     if (!isImmutable(QLatin1String("thumbnailFormat")))
+    {
         m_thumbnailFormat = v;
+    }
 }
 
 int GalleryConfig::thumbnailFormat() const
@@ -267,7 +285,9 @@ int GalleryConfig::thumbnailFormat() const
 void GalleryConfig::setThumbnailQuality(int v)
 {
     if (!isImmutable(QLatin1String("thumbnailQuality")))
+    {
         m_thumbnailQuality = v;
+    }
 }
 
 int GalleryConfig::thumbnailQuality() const
@@ -278,7 +298,9 @@ int GalleryConfig::thumbnailQuality() const
 void GalleryConfig::setThumbnailSquare(bool v)
 {
     if (!isImmutable(QLatin1String("thumbnailSquare")))
+    {
         m_thumbnailSquare = v;
+    }
 }
 
 bool GalleryConfig::thumbnailSquare() const
@@ -289,7 +311,9 @@ bool GalleryConfig::thumbnailSquare() const
 void GalleryConfig::setDestUrl(const QUrl& v)
 {
     if (!isImmutable(QLatin1String("destUrl")))
+    {
         m_destUrl = v;
+    }
 }
 
 QUrl GalleryConfig::destUrl() const
@@ -300,7 +324,9 @@ QUrl GalleryConfig::destUrl() const
 void GalleryConfig::setOpenInBrowser(int v)
 {
     if (!isImmutable(QLatin1String("openInBrowser")))
+    {
         m_openInBrowser = v;
+    }
 }
 
 int GalleryConfig::openInBrowser() const
@@ -311,7 +337,9 @@ int GalleryConfig::openInBrowser() const
 void GalleryConfig::setImageSelectionTitle(const QString& v)
 {
     if (!isImmutable(QLatin1String("imageSelectionTitle")))
+    {
         m_imageSelectionTitle = v;
+    }
 }
 
 QString GalleryConfig::imageSelectionTitle() const
