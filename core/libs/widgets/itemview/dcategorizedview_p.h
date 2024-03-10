@@ -84,8 +84,8 @@ private:
 
 private:
 
-    QAbstractItemModel* model;
-    int                 column;
+    QAbstractItemModel* model   = nullptr;
+    int                 column  = 0;
 };
 
 // ------------------------------------------------------------------------------------
@@ -194,42 +194,42 @@ public:
 public:
 
     /// Attributes
+
     class Q_DECL_HIDDEN ElementInfo
     {
     public:
 
-        explicit ElementInfo()
-            : relativeOffsetToCategory(0)
-        {
-        }
+        ElementInfo() = default;
 
         QString category;
-        int     relativeOffsetToCategory;
+        int     relativeOffsetToCategory = 0;
     };
 
 public:
 
     /// Basic data
-    DCategorizedView*                 listView;
-    DCategoryDrawer*                  categoryDrawer;
-    QSize                             biggestItemSize;
+
+    DCategorizedView*                 listView                  = nullptr;
+    DCategoryDrawer*                  categoryDrawer            = nullptr;
+    QSize                             biggestItemSize           = QSize(0, 0);
 
     /// Behavior data
-    bool                              mouseButtonPressed;
-    bool                              rightMouseButtonPressed;
-    bool                              dragLeftViewport;
-    bool                              drawItemsWhileDragging;
+    bool                              mouseButtonPressed        = false;
+    bool                              rightMouseButtonPressed   = false;
+    bool                              dragLeftViewport          = false;
+    bool                              drawItemsWhileDragging    = true;
     QModelIndex                       hovered;
     QString                           hoveredCategory;
     QPoint                            initialPressPosition;
     QPoint                            mousePosition;
-    int                               forcedSelectionPosition;
+    int                               forcedSelectionPosition   = 0;
 
     /**
      * Cache data
      * We cannot merge some of them into structs because it would affect
      * performance
      */
+
     QVector<ElementInfo>              elementsInfo;
     QHash<int, QRect>                 elementsPosition;
     QHash<QString, QVector<int> >     categoriesIndexes;
@@ -240,7 +240,8 @@ public:
     QItemSelection                    lastSelection;
 
     /// Attributes for speed reasons
-    DCategorizedSortFilterProxyModel* proxyModel;
+
+    DCategorizedSortFilterProxyModel* proxyModel                = nullptr;
 };
 
 } // namespace Digikam

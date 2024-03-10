@@ -599,7 +599,7 @@ QModelIndex ItemViewCategorized::nextIndexHint(const QModelIndex& indexToAnchor,
             return QModelIndex();
         }
 
-        return model()->index(removed.topLeft().row() - 1, 0);    // last remaining, no next one left
+        return model()->index(removed.topLeft().row() - 1, 0);        // last remaining, no next one left
     }
     else
     {
@@ -653,7 +653,10 @@ void ItemViewCategorized::ensureSelectionAfterChanges()
             // we want ensureInitial set to false if and only if the selection
             // is done from any other place than the previous line (i.e., by user action)
             // Effect: we select whatever is the current index(0,0)
+            // TODO: cppcheck report here that hadInitial condition is always true.
+            //       This code must be refactored later.
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (hadInitial)
             {
                 d->ensureInitialSelectedItem = true;
@@ -960,6 +963,7 @@ void ItemViewCategorized::wheelEvent(QWheelEvent* event)
         }
 
         event->accept();
+
         return;
     }
 
@@ -986,12 +990,14 @@ void ItemViewCategorized::keyPressEvent(QKeyEvent* event)
     {
         copy();
         event->accept();
+
         return;
     }
     else if (event == QKeySequence::Paste)
     {
         paste();
         event->accept();
+
         return;
     }
 
@@ -1005,6 +1011,7 @@ void ItemViewCategorized::keyPressEvent(QKeyEvent* event)
     if (trigger)
     {
         const QModelIndexList indexList = selModel->selectedIndexes();
+
         Q_FOREACH (const QModelIndex& index, indexList)
         {
             Q_EMIT itemTriggered(itemForIndex(index));
@@ -1031,6 +1038,7 @@ bool ItemViewCategorized::viewportEvent(QEvent* event)
         case QEvent::FontChange:
         {
             updateDelegateSizes();
+
             break;
         }
 
@@ -1064,6 +1072,7 @@ bool ItemViewCategorized::viewportEvent(QEvent* event)
             option.rect                 =  visualRect(index);
             option.state               |= ((index == currentIndex()) ? QStyle::State_HasFocus : QStyle::State_None);
             showToolTip(index, option, he);
+
             return true;
         }
 

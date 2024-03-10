@@ -20,15 +20,7 @@ namespace Digikam
 {
 
 DCategorizedView::Private::Private(DCategorizedView* const lv)
-    : listView                  (lv),
-      categoryDrawer            (nullptr),
-      biggestItemSize           (QSize(0, 0)),
-      mouseButtonPressed        (false),
-      rightMouseButtonPressed   (false),
-      dragLeftViewport          (false),
-      drawItemsWhileDragging    (true),
-      forcedSelectionPosition   (0),
-      proxyModel                (nullptr)
+    : listView(lv)
 {
 }
 
@@ -70,8 +62,11 @@ const QModelIndexList& DCategorizedView::Private::intersectionSet(const QRect& r
 
         indexVisualRect.setHeight(indexVisualRect.height() + (itemHeight - indexVisualRect.height()));
 
-        if (qMax(indexVisualRect.topLeft().y(), indexVisualRect.bottomRight().y()) <
-            qMin(rect.topLeft().y(), rect.bottomRight().y()))
+        if (
+            qMax(indexVisualRect.topLeft().y(),
+                 indexVisualRect.bottomRight().y()) < qMin(rect.topLeft().y(),
+                                                           rect.bottomRight().y())
+           )
         {
             bottom = middle + 1;
         }
@@ -93,8 +88,11 @@ const QModelIndexList& DCategorizedView::Private::intersectionSet(const QRect& r
 
         // If we passed next item, stop searching for hits
 
-        if (qMax(rect.bottomRight().y(),
-                 rect.topLeft().y()) < qMin(indexVisualRect.topLeft().y(), indexVisualRect.bottomRight().y()))
+        if (
+            qMax(rect.bottomRight().y(),
+                 rect.topLeft().y()) < qMin(indexVisualRect.topLeft().y(),
+                                            indexVisualRect.bottomRight().y())
+           )
         {
             break;
         }
@@ -350,8 +348,8 @@ QRect DCategorizedView::Private::visualCategoryRectInViewport(const QString& cat
             ++rowsInt;
         }
 
-        retRect.setTop(retRect.top() +
-                       (rowsInt * itemHeight) +
+        retRect.setTop(retRect.top()                                 +
+                       (rowsInt * itemHeight)                        +
                        categoryDrawer->categoryHeight(index, option) +
                        listView->spacing() * 2);
 
@@ -453,14 +451,15 @@ QSize DCategorizedView::Private::contentsSize()
                                                         : proxyModel->index(categoriesIndexes[categories.last()].last(), 0);
 
     int lastItemBottom    = cachedRectIndex(lastIndex).top() +
-                            listView->spacing() +
+                            listView->spacing()              +
                             (listView->gridSize().isEmpty() ? biggestItemSize.height()
                                                             : listView->gridSize().height()) - listView->viewport()->height();
 
     return QSize(listView->viewport()->width(), lastItemBottom);
 }
 
-void DCategorizedView::Private::drawNewCategory(const QModelIndex& index, int sortRole, const QStyleOption& option, QPainter* painter)
+void DCategorizedView::Private::drawNewCategory(const QModelIndex& index, int sortRole,
+                                                const QStyleOption& option, QPainter* painter)
 {
     if (!index.isValid())
     {
@@ -471,7 +470,10 @@ void DCategorizedView::Private::drawNewCategory(const QModelIndex& index, int so
     const QString category  = proxyModel->data(index, DCategorizedSortFilterProxyModel::CategoryDisplayRole).toString();
     optionCopy.state       &= ~QStyle::State_Selected;
 
-    if ((listView->selectionMode() != SingleSelection) && (listView->selectionMode() != NoSelection))
+    if (
+        (listView->selectionMode() != SingleSelection) &&
+        (listView->selectionMode() != NoSelection)
+       )
     {
         if      ((category == hoveredCategory) && !mouseButtonPressed)
         {
