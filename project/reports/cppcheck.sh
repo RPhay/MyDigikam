@@ -79,7 +79,6 @@ cppcheck -j$CPU_CORES \
          --xml-version=2 \
          --platform=unix64 \
          --enable=all \
-         --report-progress \
          --check-level=exhaustive \
          --suppress=*:*cimg*.h \
          --suppress=*:*libraw*.h \
@@ -91,6 +90,7 @@ cppcheck -j$CPU_CORES \
          --suppress=*:*libjpeg*.h \
          --suppress=*:*dng_sdk*.h \
          --suppress=*:*xmp_sdk*.h \
+         --suppress=*:*qav*.h \
          --suppress=missingIncludeSystem \
          --suppress=missingInclude \
          --suppress=variableScope \
