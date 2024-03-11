@@ -60,14 +60,13 @@ krazySkipConfig
 IGNORE_DIRS=""
 
 for DROP_ITEM in $KRAZY_FILTERS ; do
-    IGNORE_DIRS+="--exclude $DROP_ITEM "
+    IGNORE_DIRS+="--exclude ../../$DROP_ITEM/ "
 done
 
-scan-build $CMAKE_BINARY -G "Unix Makefiles" . \
+scan-build $CMAKE_BINARY -G "Unix Makefiles" \
       -DCMAKE_BUILD_TYPE=debug \
       -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
       -DBUILD_TESTING=ON \
-      -DBUILD_WITH_CCACHE=ON \
       -DDIGIKAMSC_CHECKOUT_PO=OFF \
       -DDIGIKAMSC_CHECKOUT_DOC=OFF \
       -DDIGIKAMSC_COMPILE_PO=OFF \
