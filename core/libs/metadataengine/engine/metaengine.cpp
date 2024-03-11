@@ -342,6 +342,10 @@ bool MetaEngine::loadFromDataAndMerge(const QByteArray& imgData, const QStringLi
 
 #endif // _XMP_SUPPORT_
 
+        // Exif byte order  -------------------------------
+
+        d->exifByteOrder() = image->byteOrder();
+
         return true;
     }
     catch (Exiv2::AnyError& e)
