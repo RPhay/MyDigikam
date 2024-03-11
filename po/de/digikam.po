@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-10 01:57+0000\n"
+"POT-Creation-Date: 2024-03-11 01:33+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2793,7 +2793,7 @@ msgstr ""
 "Branch: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:180
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:181
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:260
 #, kde-format
 msgctxt "go to previous image"
@@ -2801,7 +2801,7 @@ msgid "Back"
 msgstr "Zurück"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:183
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, kde-format
 msgctxt "go to next image"
@@ -7561,12 +7561,12 @@ msgctxt "@info: can write file format"
 msgid "no"
 msgstr "nein"
 
-#: core/dplugins/dimg/tiff/dimgtiffexportsettings.cpp:58
+#: core/dplugins/dimg/tiff/dimgtiffexportsettings.cpp:54
 #, kde-format
 msgid "Compress TIFF files"
 msgstr "TIFF-Dateien komprimieren"
 
-#: core/dplugins/dimg/tiff/dimgtiffexportsettings.cpp:60
+#: core/dplugins/dimg/tiff/dimgtiffexportsettings.cpp:56
 #, kde-format
 msgid ""
 "<p>Toggle compression for TIFF images.</p><p>If this option is enabled, the "
@@ -11715,25 +11715,25 @@ msgstr "Geolokalisierung bearbeiten ..."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:145
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:162
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:117
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "Das Bild „%1“ kann nicht gelesen werden."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:154
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:126
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "Das Format des Bildes „%1“ ist unbekannt."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:172
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:134
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "Fehler beim Laden des Bilds „%1“"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:215
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:189
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "Das Bild „%1“ lässt sich nicht unter „%2“ speichern."
@@ -11743,80 +11743,87 @@ msgstr "Das Bild „%1“ lässt sich nicht unter „%2“ speichern."
 msgid "Creation of picture '%1'"
 msgstr "Bild „%1“ wird erstellt"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:321
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:235
+#, fuzzy, kde-format
+#| msgid "Failed to Fetch Photoset information from %1. %2\n"
+msgid "Cannot get GPS Information from %1 file."
+msgstr ""
+"Die Informationen des Fotosatzes lassen sich nicht von %1 abfragen. %2\n"
+
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:324
 #, kde-format
 msgid "Creation of placemark '%1'"
 msgstr "Erstellung der Ortsmarke „%1“"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:330
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:333
 #, kde-format
 msgid "Could not save icon for image '%1' to '%2'"
 msgstr "Das Symbol für Bild „%1“ lässt sich nicht unter „%2“ speichern"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:334
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:337
 #, kde-format
 msgid "Creation of icon '%1'"
 msgstr "Symbol „%1“ wird erstellt"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:361
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:364
 #, kde-format
 msgid "No GPX file chosen."
 msgstr "Es ist keine GPX-Datei ausgewählt."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:370
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:373
 #, kde-format
 msgid "Cannot parse %1 GPX file."
 msgstr "Die GPX-Datei „%1“ kann nicht gelesen werden."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:379
 #, kde-format
 msgid "The %1 GPX file do not have a date-time track to use."
 msgstr "Die GPX-Gatei %1 hat keine Datum-Zeitspur, die verwendet werden kann."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:384
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:387
 #, kde-format
 msgid "Tracks"
 msgstr "Messpunkte"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:488
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:491
 #, kde-format
 msgid "No position data for '%1'"
 msgstr "Keine Positionsdaten für „%1“"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:503
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:506
 #, kde-format
 msgid "Cannot open file for writing"
 msgstr "Die Datei kann nicht zum Schreiben geöffnet werden"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:516
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:519
 #, kde-format
 msgid "Move %1 to final directory %2"
 msgstr "%1 in endgültigen Ordner %2 verschieben"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:520
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:523
 #, kde-format
 msgid "Cannot move data to destination directory"
 msgstr "Die Daten können nicht in den Zielordner verschoben werden"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:530
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:533
 #, kde-format
 msgid "Report below have been generated while KML file processing:"
 msgstr ""
 "Der folgende Bericht wurde während der Verarbeitung der KML-Datei erstellt:"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:58
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:57
 #, kde-format
 msgctxt "@item: linetrack over the map"
 msgid "Track"
 msgstr "Weg"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:84
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:83
 #, kde-format
 msgctxt "@item: points over the map"
 msgid "Points"
 msgstr "Punkte"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:97
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:96
 #, kde-format
 msgctxt "@item: point coordinates"
 msgid "Point"
@@ -17305,23 +17312,23 @@ msgstr "Bilder verschmelzen"
 msgid "Error loading RAW image '%1'"
 msgstr "Fehler beim Laden des RAW-Bilds „%1“"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:222
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "Die Vorschau für Bild „%1“ lässt sich nicht als „%2“ speichern"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:234
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "nicht verfügbar"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:510
 #, kde-format
 msgid "Could not open file '%1' for writing"
 msgstr "Datei „%1“ kann nicht zum Schreiben geöffnet werden"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:517
 #, kde-format
 msgid "Could not save image to file '%1'"
 msgstr "Das Bild lässt sich nicht in Datei „%1“ speichern"
@@ -41967,27 +41974,27 @@ msgstr ""
 "Es ist ein Fehler bei der Anzeige des Eintrags aufgetreten\n"
 "%1"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:185
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Anhalten/Abspielen"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:187
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Videobild aufnehmen"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:269
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Mit dem Medienspieler ist ein Fehler aufgetreten ..."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:220
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:221
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, kde-format
 msgid "Toggle playing in a loop"

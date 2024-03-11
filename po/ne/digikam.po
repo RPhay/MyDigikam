@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-10 01:57+0000\n"
+"POT-Creation-Date: 2024-03-11 01:33+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -2782,7 +2782,7 @@ msgid ""
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:180
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:181
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:260
 #, fuzzy, kde-format
 msgctxt "go to previous image"
@@ -2790,7 +2790,7 @@ msgid "Back"
 msgstr "पछाडि"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:183
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:262
 #, fuzzy, kde-format
 msgctxt "go to next image"
@@ -7203,12 +7203,12 @@ msgctxt "@info: can write file format"
 msgid "no"
 msgstr "होइन"
 
-#: core/dplugins/dimg/tiff/dimgtiffexportsettings.cpp:58
+#: core/dplugins/dimg/tiff/dimgtiffexportsettings.cpp:54
 #, kde-format
 msgid "Compress TIFF files"
 msgstr "TIFF फाइल सङ्कुचन गर्नुहोस्"
 
-#: core/dplugins/dimg/tiff/dimgtiffexportsettings.cpp:60
+#: core/dplugins/dimg/tiff/dimgtiffexportsettings.cpp:56
 #, fuzzy, kde-format
 msgid ""
 "<p>Toggle compression for TIFF images.</p><p>If this option is enabled, the "
@@ -11108,26 +11108,26 @@ msgstr "चयन"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:145
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:162
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:116
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:117
 #, fuzzy, kde-format
 msgid "Could not read image '%1'"
 msgstr "रङ गहिराइ:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:154
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:126
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:172
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:134
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgid "Error loading image '%1'"
 msgstr "फाइल बचत गर्दा त्रुटि"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:215
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:189
 #, fuzzy, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
@@ -11137,82 +11137,87 @@ msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 msgid "Creation of picture '%1'"
 msgstr "अवधि: %1"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:321
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:235
+#, fuzzy, kde-format
+msgid "Cannot get GPS Information from %1 file."
+msgstr "फाइल/छवि सूचना"
+
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:324
 #, kde-format
 msgid "Creation of placemark '%1'"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:330
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:333
 #, fuzzy, kde-format
 msgid "Could not save icon for image '%1' to '%2'"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:334
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:337
 #, kde-format
 msgid "Creation of icon '%1'"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:361
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:364
 #, fuzzy, kde-format
 msgid "No GPX file chosen."
 msgstr "विषयवस्तु लोडिङ"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:370
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:373
 #, fuzzy, kde-format
 msgid "Cannot parse %1 GPX file."
 msgstr ""
 "यसको पूर्वावलोकन देखाउन सकिदैन\n"
 "\"%1\""
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:376
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:379
 #, kde-format
 msgid "The %1 GPX file do not have a date-time track to use."
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:384
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:387
 #, kde-format
 msgid "Tracks"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:488
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:491
 #, fuzzy, kde-format
 msgid "No position data for '%1'"
 msgstr "रङ गहिराइ:"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:503
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:506
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgid "Cannot open file for writing"
 msgstr "%1 मा फाइल सूचीकरण गर्न असफल"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:516
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:519
 #, fuzzy, kde-format
 msgid "Move %1 to final directory %2"
 msgstr "एल्बम पुन: नामकरण गर्न असफल"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:520
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:523
 #, fuzzy, kde-format
 msgid "Cannot move data to destination directory"
 msgstr "एल्बम पुन: नामकरण गर्न असफल"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:530
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:533
 #, kde-format
 msgid "Report below have been generated while KML file processing:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:58
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:57
 #, kde-format
 msgctxt "@item: linetrack over the map"
 msgid "Track"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:84
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:83
 #, fuzzy, kde-format
 msgctxt "@item: points over the map"
 msgid "Points"
 msgstr "%1 मुद्रण गर्नुहोस्"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:97
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:96
 #, fuzzy, kde-format
 msgctxt "@item: point coordinates"
 msgid "Point"
@@ -16418,25 +16423,25 @@ msgstr "रङ"
 msgid "Error loading RAW image '%1'"
 msgstr "फाइल बचत गर्दा त्रुटि"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:222
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Could not save thumbnail for image '%1' to '%2'"
 msgstr "%1 का लागि थम्बनेल सिर्जना गर्न सकिदैन"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:234
 #: core/libs/widgets/itemview/ditemtooltip.cpp:44
 #, kde-format
 msgid "unavailable"
 msgstr "उपलब्ध छैन"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:510
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgid "Could not open file '%1' for writing"
 msgstr "%1 मा फाइल सूचीकरण गर्न असफल"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
+#: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:517
 #, fuzzy, kde-format
 msgid "Could not save image to file '%1'"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
@@ -39736,27 +39741,27 @@ msgstr ""
 msgid "An error has occurred while playing: %1"
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:185
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:264
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:187
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "प्रकृति"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:189
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:269
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:220
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:221
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:312
 #, fuzzy, kde-format
 #| msgid "Display in loop"
