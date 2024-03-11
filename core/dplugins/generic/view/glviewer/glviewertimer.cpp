@@ -31,13 +31,10 @@ class Q_DECL_HIDDEN GLViewerTimer::Private
 {
 public:
 
-    explicit Private()
-    {
-        meantime = 0;
-    }
+    Private() = default;
 
     QElapsedTimer timer;
-    int           meantime;
+    int           meantime = 0;
 };
 
 GLViewerTimer::GLViewerTimer()

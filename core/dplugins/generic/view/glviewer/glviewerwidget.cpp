@@ -242,18 +242,23 @@ void GLViewerWidget::initializeGL()
     glEnable(GL_TEXTURE_RECTANGLE_ARB);
 
     // Clear The Background Color
+
     glClearColor(0.0, 0.0, 0.0, 1.0f);
 
     // Turn Blending On
+
     glEnable(GL_BLEND);
 
     // Blending Function For Translucency Based On Source Alpha Value
+
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // Enable perspective vision
+
     glClearDepth(1.0f);
 
     // initialize cache
+
     for (int i = 0 ; i < CACHESIZE ; ++i)
     {
         d->cache[i].file_index = EMPTY;
@@ -975,21 +980,24 @@ void GLViewerWidget::nextImage()
  */
 void GLViewerWidget::zoom(int mdelta, const QPoint& pos, float factor)
 {
-    if (mdelta == 0)
+    if ((mdelta == 0) || !d->texture)
     {
         // do nothing
+
         return;
     }
 
     if (mdelta > 0)
     {
         // multiplicator for zooming in
+
         d->delta = factor;
     }
 
     if (mdelta < 0)
     {
         // multiplicator for zooming out
+
         d->delta = 2.0 - factor;
     }
 
