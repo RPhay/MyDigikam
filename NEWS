@@ -267,7 +267,7 @@ BUGFIXES:
 244 ==> 482718 - Add "Save As New Version" to toolbar failed.
 245 ==> 483135 - Crash when right-clicking on photo.
 246 ==> 483228 - Error when accessing digikam.org and docs.digikam.org : SSL certificates needs updates.
-247 ==> 
+247 ==> 483288 - Xmp metadata of some jxl files are not correctly displayed (missing data, duplicated strings, ...).
 248 ==> 
 249 ==> 
 250 ==> 

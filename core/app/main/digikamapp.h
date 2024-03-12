@@ -80,6 +80,7 @@ Q_SIGNALS:
     void signalPasteAlbumItemsSelection();
 
     void signalWindowHasMoved();
+    void signalNotificationError(const QString& message, int type);
 
 protected:
 

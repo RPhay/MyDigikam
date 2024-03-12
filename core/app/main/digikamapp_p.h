@@ -143,6 +143,7 @@
 #include "facesdetector.h"
 #include "localizesettings.h"
 #include "networkmanager.h"
+#include "dnotificationwidget.h"
 
 #ifdef HAVE_GEOLOCATION
 #   include "geolocationsettings.h"

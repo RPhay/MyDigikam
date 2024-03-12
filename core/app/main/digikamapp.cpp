@@ -397,6 +397,18 @@ void DigikamApp::show()
         delete d->splashScreen;
         d->splashScreen = nullptr;
     }
+
+    QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
+
+    if (!parser->exifToolAvailable())
+    {
+        QString msg = i18n("ExifTool is not available in your digiKam installation or "
+                           "is not working correctly. Go to the digiKam settings and "
+                           "check the availability of the ExifTool binary file in "
+                           "the metadata section.");
+
+        Q_EMIT signalNotificationError(msg, DNotificationWidget::Warning);
+    }
 }
 
 void DigikamApp::restoreSession()

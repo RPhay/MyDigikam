@@ -283,6 +283,9 @@ void ItemIconView::setupConnections()
     connect(d->parent, SIGNAL(signalPasteAlbumItemsSelection()),
             this, SLOT(slotImagePaste()));
 
+    connect(d->parent, SIGNAL(signalNotificationError(QString,int)),
+            this, SLOT(slotNotificationError(QString,int)));
+
     // -- AlbumManager connections --------------------------------
 
     connect(d->albumManager, SIGNAL(signalAlbumCurrentChanged(QList<Album*>)),
