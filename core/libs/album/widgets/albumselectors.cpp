@@ -217,7 +217,7 @@ void AlbumSelectors::initAlbumWidget()
             this, SIGNAL(signalSelectionChanged()));
 
     connect(d->recursiveSelectionAlbum, &QCheckBox::clicked,
-            [this] (bool checked)
+            d->recursiveSelectionAlbum, [this] (bool checked)
         {
             d->albumSelectCB->setRecursive(checked);
         }
@@ -276,7 +276,7 @@ void AlbumSelectors::initTagWidget()
             this, SLOT(slotUpdateClearButtons()));
 
     connect(d->recursiveSelectionTags, &QCheckBox::clicked,
-            [this] (bool checked)
+            d->recursiveSelectionTags, [this] (bool checked)
         {
             d->tagSelectCB->setRecursive(checked);
         }
