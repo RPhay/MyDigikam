@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 01:33+0000\n"
+"POT-Creation-Date: 2024-03-12 01:33+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1410,7 +1410,15 @@ msgstr ""
 "«Нет» (функция управления цветом будет отключена до тех пор, пока эта "
 "проблема не будет решена).</p>"
 
-#: core/app/main/digikamapp.cpp:678 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:405
+#, kde-format
+msgid ""
+"ExifTool is not available in your digiKam installation or is not working "
+"correctly. Go to the digiKam settings and check the availability of the "
+"ExifTool binary file in the metadata section."
+msgstr ""
+
+#: core/app/main/digikamapp.cpp:690 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1419,7 +1427,7 @@ msgstr[1] "Ничего не выбрано (%1 объекта)"
 msgstr[2] "Ничего не выбрано (%1 объектов)"
 msgstr[3] "Ничего не выбрано (один объект)"
 
-#: core/app/main/digikamapp.cpp:684
+#: core/app/main/digikamapp.cpp:696
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1428,7 +1436,7 @@ msgstr[1] "Ничего не выбрано (%1 [%2] объекта)"
 msgstr[2] "Ничего не выбрано (%1 [%2] объектов)"
 msgstr[3] "Ничего не выбрано (%1 [%2] объект)"
 
-#: core/app/main/digikamapp.cpp:689
+#: core/app/main/digikamapp.cpp:701
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1440,7 +1448,7 @@ msgstr[2] ""
 msgstr[3] ""
 "Ничего не выбрано (один объект. Всего вместе со сгруппированными: %2)"
 
-#: core/app/main/digikamapp.cpp:700
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1449,7 +1457,7 @@ msgstr[1] "Выбрано объектов: %1 из %2 (%3 из %4)"
 msgstr[2] "Выбрано объектов: %1 из %2 (%3 из %4)"
 msgstr[3] "Выбрано объектов: %1 из %2 (%3 из %4)"
 
-#: core/app/main/digikamapp.cpp:713
+#: core/app/main/digikamapp.cpp:725
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1458,7 +1466,7 @@ msgstr[1] "Выбрано объектов: %1 из %2 [%3] (%4 из %5)"
 msgstr[2] "Выбрано объектов: %1 из %2 [%3] (%4 из %5)"
 msgstr[3] "Выбрано объектов: %1 из %2 [%3] (%4 из %5)"
 
-#: core/app/main/digikamapp.cpp:721
+#: core/app/main/digikamapp.cpp:733
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1467,7 +1475,7 @@ msgstr[1] "Выбрано объектов: %1 из %2. Всего вместе 
 msgstr[2] "Выбрано объектов: %1 из %2. Всего вместе со сгруппированными: %3"
 msgstr[3] "Выбрано объектов: %1 из %2. Всего вместе со сгруппированными: %3"
 
-#: core/app/main/digikamapp.cpp:729
+#: core/app/main/digikamapp.cpp:741
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1476,7 +1484,7 @@ msgstr[1] "Выбрано объектов: %1 из %2 [%3 из %4] (%5 из %6)
 msgstr[2] "Выбрано объектов: %1 из %2 [%3 из %4] (%5 из %6)"
 msgstr[3] "Выбрано объектов: %1 из %2 [%3 из %4] (%5 из %6)"
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:750
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1485,22 +1493,22 @@ msgstr[1] "Выбрано объектов: %1 из %2. Вместе со сгр
 msgstr[2] "Выбрано объектов: %1 из %2. Вместе со сгруппированными: %3 из %4"
 msgstr[3] "Выбрано объектов: %1 из %2. Вместе со сгруппированными: %3 из %4"
 
-#: core/app/main/digikamapp.cpp:769
+#: core/app/main/digikamapp.cpp:781
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 из %2)"
 
-#: core/app/main/digikamapp.cpp:783
+#: core/app/main/digikamapp.cpp:795
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 из %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:799
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr "(%1 из %2. Всего вместе с сгруппированными: %3 объектов)"
 
-#: core/app/main/digikamapp.cpp:798
+#: core/app/main/digikamapp.cpp:810
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1509,7 +1517,7 @@ msgstr[1] "Скрыто %1 объекта"
 msgstr[2] "Скрыто %1 объектов"
 msgstr[3] "Скрыт один объект"
 
-#: core/app/main/digikamapp.cpp:849
+#: core/app/main/digikamapp.cpp:861
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1518,7 +1526,7 @@ msgstr[1] "Записать метаданные в выбранные файл�
 msgstr[2] "Записать метаданные в выбранные файлы"
 msgstr[3] "Записать метаданные в файл"
 
-#: core/app/main/digikamapp.cpp:851
+#: core/app/main/digikamapp.cpp:863
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"

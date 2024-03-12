@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 01:33+0000\n"
-"PO-Revision-Date: 2024-03-01 14:46+0300\n"
+"POT-Creation-Date: 2024-03-12 01:33+0000\n"
+"PO-Revision-Date: 2024-03-11 15:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1378,92 +1378,100 @@ msgstr ""
 "seçerseniz \"Renk Yönetimi\" desteği siz bu sorunu çözene dek devre dışı "
 "bırakılacaktır.</p>"
 
-#: core/app/main/digikamapp.cpp:678 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:405
+#, kde-format
+msgid ""
+"ExifTool is not available in your digiKam installation or is not working "
+"correctly. Go to the digiKam settings and check the availability of the "
+"ExifTool binary file in the metadata section."
+msgstr ""
+
+#: core/app/main/digikamapp.cpp:690 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Seçili öge yok (%1 öge)"
 msgstr[1] "Seçili öge yok (%1 öge)"
 
-#: core/app/main/digikamapp.cpp:684
+#: core/app/main/digikamapp.cpp:696
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Seçili öge yok (%1 [%2] öge)"
 msgstr[1] "Seçili öge yok  (%1 [%2] öge)"
 
-#: core/app/main/digikamapp.cpp:689
+#: core/app/main/digikamapp.cpp:701
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Seçili öge yok (%1 öge. Gruplanmış ögelerle birlikte: %2)"
 msgstr[1] "Seçili öge yok (%1 öge. Gruplanmış ögelerle birlikte: %2)"
 
-#: core/app/main/digikamapp.cpp:700
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 öge seçili (%3/%4)"
 msgstr[1] "%1/%2 öge seçili (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:713
+#: core/app/main/digikamapp.cpp:725
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] öge seçili (%4/%5)"
 msgstr[1] "%1/%2 [%3] öge seçili (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:721
+#: core/app/main/digikamapp.cpp:733
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 öge seçili. Gruplanan ögelerle birlikte toplam: %3"
 msgstr[1] "%1/%2 öge seçili. Gruplanan ögelerle birlikte toplam: %3"
 
-#: core/app/main/digikamapp.cpp:729
+#: core/app/main/digikamapp.cpp:741
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] öge seçili (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] öge seçili (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:750
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 öge seçili. Gruplanan ögelerle birlikte: %3/%4"
 msgstr[1] "%1/%2 öge seçili. Gruplanan ögelerle birlikte: %3/%4"
 
-#: core/app/main/digikamapp.cpp:769
+#: core/app/main/digikamapp.cpp:781
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1/%2)"
 
-#: core/app/main/digikamapp.cpp:783
+#: core/app/main/digikamapp.cpp:795
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1/%2 [%3])"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:799
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1/%2. Gruplanan ögelerle birlikte toplam: %3)"
 
-#: core/app/main/digikamapp.cpp:798
+#: core/app/main/digikamapp.cpp:810
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 öge gizli"
 msgstr[1] "%1 öge gizli"
 
-#: core/app/main/digikamapp.cpp:849
+#: core/app/main/digikamapp.cpp:861
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Dosyaya Üst Veri Yaz"
 msgstr[1] "Seçili Dosyalara Üst Veri Yaz"
 
-#: core/app/main/digikamapp.cpp:851
+#: core/app/main/digikamapp.cpp:863
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -7774,7 +7782,7 @@ msgstr "Yüklenecek GIMP Düzeyleri Dosyasını Seç"
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:912
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
-msgstr "GIMP düzeyleri metin dosyasından yüklenemedi."
+msgstr "GIMP düzeyleri metin dosyasından yüklenemiyor."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:927
 #, kde-format
@@ -7785,7 +7793,7 @@ msgstr "Kaydedilecek GIMP Düzeyleri Dosyası"
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:939
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
-msgstr "GIMP düzeyleri metin dosyası kaydedilemedi."
+msgstr "GIMP düzeyleri metin dosyası kaydedilemiyor."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:44
 #, kde-format
@@ -11622,10 +11630,9 @@ msgid "Creation of picture '%1'"
 msgstr "'%1' görselinin oluşturma işlemi"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:235
-#, fuzzy, kde-format
-#| msgid "Failed to Fetch Photoset information from %1. %2\n"
+#, kde-format
 msgid "Cannot get GPS Information from %1 file."
-msgstr "%1 konumundan Photoset bilgisi getirilemedi. %2\n"
+msgstr "%1 dosyasından GPS bilgisi alınamıyor."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:324
 #, kde-format
@@ -20179,7 +20186,7 @@ msgstr "properties.txt"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:302
 #, kde-format
 msgid "Image properties file cannot be opened"
-msgstr "Görsel özellikleri dosyası açılamadı"
+msgstr "Görsel özellikleri dosyası açılamıyor"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:314
 #, kde-format
@@ -20200,7 +20207,7 @@ msgid ""
 "Some images cannot be resized.\n"
 "Do you want them to be added as attachments without resizing?"
 msgstr ""
-"Bazı görseller yeniden boyutlandırılamadı.\n"
+"Bazı görseller yeniden boyutlandırılamıyor.\n"
 "Onları yeniden boyutlandırmadan eklemek ister misiniz?"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:405
@@ -20949,7 +20956,7 @@ msgstr "Duvar kağıdı görseli yolu ayarlanamıyor."
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:139
 #, kde-format
 msgid "Cannot set wallpaper properties."
-msgstr "Duvar kağıdı özellikleri ayarlanıyor."
+msgstr "Duvar kağıdı özellikleri ayarlanamıyor."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:149
 #, kde-format
@@ -30799,7 +30806,7 @@ msgstr "Yüklenecek GIMP Kazanç Karıştırma Dosyası"
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
-msgstr "Kazanç Karıştırma metin dosyasından ayarlar yüklenemedi."
+msgstr "Kazanç Karıştırma metin dosyasından ayarlar yüklenemiyor."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:635
 #, kde-format
@@ -30811,7 +30818,7 @@ msgstr "Kaydedilecek GIMP Kazanç Karıştırma Dosyası"
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
-msgstr "Kazanç Karıştırma metin dosyasına ayarlar kaydedilemedi."
+msgstr "Kazanç Karıştırma metin dosyasına ayarlar kaydedilemiyor."
 
 #: core/libs/dimg/filters/bw/tonalityfilter.cpp:54
 #, kde-format
@@ -33595,7 +33602,7 @@ msgstr "\"%1\" beyaz renk dengesi ayarları metin dosyası değil."
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the White Color Balance text file."
-msgstr "Beyaz renk dengesi metin dosyasından ayarlar yüklenemedi."
+msgstr "Beyaz renk dengesi metin dosyasından ayarlar yüklenemiyor."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:569
 #, kde-format
@@ -33607,7 +33614,7 @@ msgstr "Kaydedilecek Beyaz Renk Dengesi Ayarları Dosyası"
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the White Color Balance text file."
-msgstr "Beyaz renk dengesi metin dosyasına ayarlar kaydedilemedi."
+msgstr "Beyaz renk dengesi metin dosyasına ayarlar kaydedilemiyor."
 
 #: core/libs/dngwriter/dngsettings.cpp:80
 #, kde-format

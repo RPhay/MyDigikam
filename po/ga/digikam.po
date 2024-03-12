@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-11 01:33+0000\n"
+"POT-Creation-Date: 2024-03-12 01:33+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1471,7 +1471,15 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:678 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:405
+#, kde-format
+msgid ""
+"ExifTool is not available in your digiKam installation or is not working "
+"correctly. Go to the digiKam settings and check the availability of the "
+"ExifTool binary file in the metadata section."
+msgstr ""
+
+#: core/app/main/digikamapp.cpp:690 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1481,7 +1489,7 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/app/main/digikamapp.cpp:684
+#: core/app/main/digikamapp.cpp:696
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1493,7 +1501,7 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/app/main/digikamapp.cpp:689
+#: core/app/main/digikamapp.cpp:701
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1505,7 +1513,7 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/app/main/digikamapp.cpp:700
+#: core/app/main/digikamapp.cpp:712
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1517,7 +1525,7 @@ msgstr[2] "Roghnaíodh %2/%1 mhír"
 msgstr[3] "Roghnaíodh %2/%1 mhír"
 msgstr[4] "Roghnaíodh %2/%1 mhír"
 
-#: core/app/main/digikamapp.cpp:713
+#: core/app/main/digikamapp.cpp:725
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1529,7 +1537,7 @@ msgstr[2] "Roghnaíodh %2/%1 mhír"
 msgstr[3] "Roghnaíodh %2/%1 mhír"
 msgstr[4] "Roghnaíodh %2/%1 mhír"
 
-#: core/app/main/digikamapp.cpp:721
+#: core/app/main/digikamapp.cpp:733
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1541,7 +1549,7 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/app/main/digikamapp.cpp:729
+#: core/app/main/digikamapp.cpp:741
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1553,7 +1561,7 @@ msgstr[2] "Roghnaíodh %2/%1 mhír"
 msgstr[3] "Roghnaíodh %2/%1 mhír"
 msgstr[4] "Roghnaíodh %2/%1 mhír"
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:750
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1565,23 +1573,23 @@ msgstr[2] "Níl aon mhír roghnaithe (%1 mhír)"
 msgstr[3] "Níl aon mhír roghnaithe (%1 mír)"
 msgstr[4] "Níl aon mhír roghnaithe (%1 mír)"
 
-#: core/app/main/digikamapp.cpp:769
+#: core/app/main/digikamapp.cpp:781
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 as %2)"
 
-#: core/app/main/digikamapp.cpp:783
+#: core/app/main/digikamapp.cpp:795
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 as %2)"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:799
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:798
+#: core/app/main/digikamapp.cpp:810
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1593,7 +1601,7 @@ msgstr[2] "%1 mhír"
 msgstr[3] "%1 mír"
 msgstr[4] "%1 mír"
 
-#: core/app/main/digikamapp.cpp:849
+#: core/app/main/digikamapp.cpp:861
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1605,7 +1613,7 @@ msgstr[2] "Scríobh meiteashonraí sna híomhánna"
 msgstr[3] "Scríobh meiteashonraí sna híomhánna"
 msgstr[4] "Scríobh meiteashonraí sna híomhánna"
 
-#: core/app/main/digikamapp.cpp:851
+#: core/app/main/digikamapp.cpp:863
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
