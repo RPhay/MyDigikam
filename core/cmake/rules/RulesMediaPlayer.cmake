@@ -18,7 +18,8 @@ if(ENABLE_MEDIAPLAYER)
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Multimedia,INTERFACE_INCLUDE_DIRECTORIES>
                         $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::MultimediaWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
 
-    if(Qt6_FOUND)
+
+    if (Qt${QT_VERSION_MAJOR}Multimedia_VERSION VERSION_GREATER_EQUAL 6.5.0)
 
         include_directories(${CMAKE_SOURCE_DIR}/core/libs/video/player/qtmm)
 
