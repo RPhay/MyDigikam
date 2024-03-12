@@ -33,7 +33,21 @@ echo "Clang Scan Static Analyzer task name: $TITLE"
 rm -fr $REPORT_DIR
 rm -fr $WEBSITE_DIR
 
+# Do not parse unwanted directories accordingly with Krazy configuration.
+krazySkipConfig
+
 cd ../..
+
+ROOT_REPO="`pwd`"
+
+IGNORE_DIRS=""
+
+for DROP_ITEM in $KRAZY_FILTERS ; do
+    IGNORE_DIRS+="--exclude $ROOT_REPO/$DROP_ITEM/ "
+done
+
+IGNORE_DIRS+="--exclude /opt/qt6/include/ "
+IGNORE_DIRS+="--exclude /usr/include/ "
 
 rm -fr build.scan
 mkdir -p build.scan
@@ -53,15 +67,6 @@ else
     export CMAKE_BINARY=cmake
 
 fi
-
-# Do not parse unwanted directories accordingly with Krazy configuration.
-krazySkipConfig
-
-IGNORE_DIRS=""
-
-for DROP_ITEM in $KRAZY_FILTERS ; do
-    IGNORE_DIRS+="--exclude ../../$DROP_ITEM/ "
-done
 
 scan-build $CMAKE_BINARY -G "Unix Makefiles" \
       -DCMAKE_BUILD_TYPE=debug \
