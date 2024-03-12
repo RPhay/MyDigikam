@@ -68,22 +68,7 @@ class Q_DECL_HIDDEN AlbumSelectors::Private
 {
 public:
 
-    explicit Private()
-      : albumSelectCB          (nullptr),
-        tagSelectCB            (nullptr),
-        albumClearButton       (nullptr),
-        tagClearButton         (nullptr),
-        recursiveSelectionAlbum(nullptr),
-        wholeAlbums            (nullptr),
-        recursiveSelectionTags (nullptr),
-        wholeTags              (nullptr),
-        tabWidget              (nullptr),
-        albumWidget            (nullptr),
-        tagWidget              (nullptr),
-        selectionMode          (All),
-        allowRecursive         (false)
-    {
-    }
+    Private() = default;
 
     static const QString         configUseWholeAlbumsEntry;
     static const QString         configUseWholeTagsEntry;
@@ -91,23 +76,23 @@ public:
 
     QString                      configName;
 
-    AlbumTreeViewSelectComboBox* albumSelectCB;
-    TagTreeViewSelectComboBox*   tagSelectCB;
-    ModelClearButton*            albumClearButton;
-    ModelClearButton*            tagClearButton;
+    AlbumTreeViewSelectComboBox* albumSelectCB              = nullptr;
+    TagTreeViewSelectComboBox*   tagSelectCB                = nullptr;
+    ModelClearButton*            albumClearButton           = nullptr;
+    ModelClearButton*            tagClearButton             = nullptr;
 
-    QCheckBox*                   recursiveSelectionAlbum;
-    QCheckBox*                   wholeAlbums;
-    QCheckBox*                   recursiveSelectionTags;
-    QCheckBox*                   wholeTags;
+    QCheckBox*                   recursiveSelectionAlbum    = nullptr;
+    QCheckBox*                   wholeAlbums                = nullptr;
+    QCheckBox*                   recursiveSelectionTags     = nullptr;
+    QCheckBox*                   wholeTags                  = nullptr;
 
-    QTabWidget*                  tabWidget;
-    QWidget*                     albumWidget;
-    QWidget*                     tagWidget;
+    QTabWidget*                  tabWidget                  = nullptr;
+    QWidget*                     albumWidget                = nullptr;
+    QWidget*                     tagWidget                  = nullptr;
 
-    AlbumType                    selectionMode;
+    AlbumType                    selectionMode              = All;
 
-    bool                         allowRecursive;
+    bool                         allowRecursive             = false;
 };
 
 const QString AlbumSelectors::Private::configUseWholeAlbumsEntry(QLatin1String("UseWholeAlbumsEntry"));
@@ -193,7 +178,10 @@ void AlbumSelectors::initAlbumWidget()
     d->albumSelectCB->setDefaultModel();
     d->albumSelectCB->setRecursive(d->allowRecursive ? d->recursiveSelectionAlbum->isChecked() : false);
     d->albumSelectCB->setNoSelectionText(i18nc("@info", "No Album Selected"));
-    //d->albumSelectCB->setAddExcludeTristate(true);
+/*
+    d->albumSelectCB->setAddExcludeTristate(true);
+
+*/
     d->albumSelectCB->addCheckUncheckContextMenuActions();
 
     d->albumClearButton = new ModelClearButton(d->albumSelectCB->view()->albumModel());

@@ -82,29 +82,19 @@ class Q_DECL_HIDDEN AlbumPropsEdit::Private
 
 public:
 
-    explicit Private()
-      : buttons         (nullptr),
-        topLabel        (nullptr),
-        categoryCombo   (nullptr),
-        parentCombo     (nullptr),
-        titleEdit       (nullptr),
-        commentsEdit    (nullptr),
-        datePicker      (nullptr),
-        album           (nullptr)
-    {
-    }
+    Private() = default;
 
-    QDialogButtonBox* buttons;
+    QDialogButtonBox* buttons       = nullptr;
 
-    QLabel*           topLabel;
-    QComboBox*        categoryCombo;
-    QComboBox*        parentCombo;
-    DTextEdit*        titleEdit;
-    DPlainTextEdit*   commentsEdit;
+    QLabel*           topLabel      = nullptr;
+    QComboBox*        categoryCombo = nullptr;
+    QComboBox*        parentCombo   = nullptr;
+    DTextEdit*        titleEdit     = nullptr;
+    DPlainTextEdit*   commentsEdit  = nullptr;
 
-    AlbumDatePicker*  datePicker;
+    AlbumDatePicker*  datePicker    = nullptr;
 
-    PAlbum*           album;
+    PAlbum*           album         = nullptr;
 };
 
 AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
@@ -112,7 +102,8 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
       d      (new Private)
 {
     setModal(true);
-    setWindowTitle(create ? i18nc("@title:window, album properties", "New Album") : i18nc("@title:window, album properties", "Edit Album"));
+    setWindowTitle(create ? i18nc("@title:window, album properties", "New Album")
+                          : i18nc("@title:window, album properties", "Edit Album"));
 
     d->buttons          = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);

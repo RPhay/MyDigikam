@@ -40,15 +40,8 @@ class Q_DECL_HIDDEN AlbumSelectComboBox::Private
 {
 public:
 
-    explicit Private(AlbumSelectComboBox* const q)
-      : model                   (nullptr),
-        filterModel             (nullptr),
-        recursive               (false),
-        isCheckable             (true),
-        closeOnActivate         (false),
-        allSelectedText         (false),
-        showCheckStateSummary   (true),
-        q                       (q)
+    explicit Private(AlbumSelectComboBox* const qq)
+        : q(qq)
     {
     }
 
@@ -57,14 +50,14 @@ public:
 
 public:
 
-    AbstractCheckableAlbumModel* model;
-    AlbumFilterModel*            filterModel;
+    AbstractCheckableAlbumModel* model                  = nullptr;
+    AlbumFilterModel*            filterModel            = nullptr;
     QString                      noSelectionText;
-    bool                         recursive;
-    bool                         isCheckable;
-    bool                         closeOnActivate;
-    bool                         allSelectedText;
-    bool                         showCheckStateSummary;
+    bool                         recursive              = false;
+    bool                         isCheckable            = true;
+    bool                         closeOnActivate        = false;
+    bool                         allSelectedText        = false;
+    bool                         showCheckStateSummary  = true;
 
     AlbumSelectComboBox* const   q;
 };
@@ -78,6 +71,7 @@ AlbumSelectComboBox::AlbumSelectComboBox(QWidget* const parent)
     // Workaround for QLineEdit text when QComboBox loses focus
 
     // --- NOTE: use dynamic binding as updateText() is a virtual slot which can be re-implemented in derived classes.
+
     connect(this, &AlbumSelectComboBox::editTextChanged,
             this, &AlbumSelectComboBox::updateText);
 }
@@ -138,8 +132,10 @@ void AlbumSelectComboBox::installView(QAbstractItemView* v)
 
     // cppcheck-suppress nullPointerRedundantCheck
     view()->sortByColumn(0, Qt::AscendingOrder);
+
     // cppcheck-suppress nullPointerRedundantCheck
     view()->setSortingEnabled(true);
+
     // cppcheck-suppress nullPointerRedundantCheck
     view()->collapseAll();
 }

@@ -51,20 +51,7 @@ class Q_DECL_HIDDEN AlbumSelectTabs::Private
 {
 public:
 
-    explicit Private()
-      : albumModel          (nullptr),
-        albumTreeView       (nullptr),
-        tagModel            (nullptr),
-        tagTreeView         (nullptr),
-        searchModel         (nullptr),
-        searchTreeView      (nullptr),
-        albumSearchBar      (nullptr),
-        tagSearchBar        (nullptr),
-        searchSearchBar     (nullptr),
-        labelsTree          (nullptr),
-        labelsSearchHandler (nullptr)
-    {
-    }
+    Private() = default;
 
     void prepareTreeView(AbstractCheckableAlbumTreeView* const treeView)
     {
@@ -81,21 +68,21 @@ public:
 
 public:
 
-    AlbumModel*               albumModel;
-    AlbumTreeView*            albumTreeView;
+    AlbumModel*               albumModel            = nullptr;
+    AlbumTreeView*            albumTreeView         = nullptr;
 
-    TagModel*                 tagModel;
-    TagTreeView*              tagTreeView;
+    TagModel*                 tagModel              = nullptr;
+    TagTreeView*              tagTreeView           = nullptr;
 
-    SearchModel*              searchModel;
-    SearchTreeView*           searchTreeView;
+    SearchModel*              searchModel           = nullptr;
+    SearchTreeView*           searchTreeView        = nullptr;
 
-    SearchTextBarDb*          albumSearchBar;
-    SearchTextBarDb*          tagSearchBar;
-    SearchTextBarDb*          searchSearchBar;
+    SearchTextBarDb*          albumSearchBar        = nullptr;
+    SearchTextBarDb*          tagSearchBar          = nullptr;
+    SearchTextBarDb*          searchSearchBar       = nullptr;
 
-    LabelsTreeView*           labelsTree;
-    AlbumLabelsSearchHandler* labelsSearchHandler;
+    LabelsTreeView*           labelsTree            = nullptr;
+    AlbumLabelsSearchHandler* labelsSearchHandler   = nullptr;
 };
 
 AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
@@ -241,6 +228,7 @@ AlbumList AlbumSelectTabs::selectedAlbums() const
     list << d->labelsSearchHandler->albumForSelectedItems();
 
     // Remove all null albums.
+
     list.removeAll(nullptr);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << list.count() << " albums selected";

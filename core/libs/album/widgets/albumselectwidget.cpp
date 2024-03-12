@@ -47,14 +47,10 @@ class Q_DECL_HIDDEN AlbumSelectTreeView::Private
 {
 public:
 
-    explicit Private()
-      : albumModificationHelper(nullptr),
-        newAlbumAction         (nullptr)
-    {
-    }
+    Private() = default;
 
-    AlbumModificationHelper* albumModificationHelper;
-    QAction*                 newAlbumAction;
+    AlbumModificationHelper* albumModificationHelper = nullptr;
+    QAction*                 newAlbumAction          = nullptr;
 };
 
 AlbumSelectTreeView::AlbumSelectTreeView(AlbumModel* const model,
@@ -112,25 +108,17 @@ class Q_DECL_HIDDEN AlbumSelectWidget::Private
 {
 public:
 
-    explicit Private()
-      : complAlbum             (nullptr),
-        albumModel             (nullptr),
-        albumTreeView          (nullptr),
-        albumModificationHelper(nullptr),
-        searchBar              (nullptr),
-        newAlbumBtn            (nullptr)
-    {
-    }
+    Private() = default;
 
-    PAlbum*                  complAlbum;
-    AlbumModel*              albumModel;
-    AlbumSelectTreeView*     albumTreeView;
+    PAlbum*                  complAlbum                 = nullptr;
+    AlbumModel*              albumModel                 = nullptr;
+    AlbumSelectTreeView*     albumTreeView              = nullptr;
 
-    AlbumModificationHelper* albumModificationHelper;
+    AlbumModificationHelper* albumModificationHelper    = nullptr;
 
-    SearchTextBarDb*         searchBar;
+    SearchTextBarDb*         searchBar                  = nullptr;
 
-    QPushButton*             newAlbumBtn;
+    QPushButton*             newAlbumBtn                = nullptr;
 };
 
 AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,

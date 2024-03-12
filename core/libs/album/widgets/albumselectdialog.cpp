@@ -53,18 +53,13 @@ class Q_DECL_HIDDEN AlbumSelectDialog::Private
 
 public:
 
-    explicit Private()
-      : buttons     (nullptr),
-        albumSel    (nullptr),
-        searchBar   (nullptr)
-    {
-    }
+    Private() = default;
 
-    QDialogButtonBox*  buttons;
+    QDialogButtonBox*  buttons      = nullptr;
 
-    AlbumSelectWidget* albumSel;
+    AlbumSelectWidget* albumSel     = nullptr;
 
-    SearchTextBar*     searchBar;
+    SearchTextBar*     searchBar    = nullptr;
 };
 
 AlbumSelectDialog::AlbumSelectDialog(QWidget* const parent, PAlbum* const albumToSelect, const QString& header)
