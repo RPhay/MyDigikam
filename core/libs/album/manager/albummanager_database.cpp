@@ -772,7 +772,7 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
             setup, SLOT(reject()));
 
     connect(buttons->button(QDialogButtonBox::Reset), &QPushButton::clicked,
-            this, [&]()
+            this, [&newDatabase, setup]()
             {
                 newDatabase = true;
                 setup->accept();
