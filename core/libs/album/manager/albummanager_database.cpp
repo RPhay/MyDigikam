@@ -19,9 +19,9 @@
 // Qt includes
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    #include <QTextCodec>
+#   include <QTextCodec>
 #else
-    #include <QStringConverter>
+#   include <QStringConverter>
 #endif
 
 // KDE includes
@@ -729,6 +729,7 @@ bool AlbumManager::copyToNewLocation(const QFileInfo& oldFile,
     if (!ret)
     {
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), message);
+
         return false;
     }
 
@@ -772,11 +773,11 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
             setup, SLOT(reject()));
 
     connect(buttons->button(QDialogButtonBox::Reset), &QPushButton::clicked,
-            this, [&newDatabase, setup]()
-            {
-                newDatabase = true;
-                setup->accept();
-            }
+            this, [&newDatabase, setup]()        // clazy:exclude=lambda-in-connect
+        {
+            newDatabase = true;
+            setup->accept();
+        }
     );
 
     ApplicationSettings* const settings = ApplicationSettings::instance();
