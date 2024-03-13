@@ -19,10 +19,7 @@
 
 #include <QObject>
 #include <QTest>
-
-// Local includes
-
-class QDir;
+#include <QDir>
 
 /**
  * Unit tests for HaarIface class in core/libs/database/haar/haariface

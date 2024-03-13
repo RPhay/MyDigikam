@@ -67,7 +67,7 @@ do                                                                              
     bool complete            = false;                                                                       \
                                                                                                             \
     connect(finder, &DuplicatesFinder::signalComplete,                                                      \
-            [&complete]()                                                                                   \
+            [&complete]()      /* clazy:exclude=lambda-in-connect */                                        \
         {                                                                                                   \
             complete = true;                                                                                \
         }                                                                                                   \
@@ -139,7 +139,7 @@ void HaarIfaceTest::initTestCase()
 
     // Update collection path, because this is hardcoded
 
-    for (const auto& col: CollectionManager::instance()->allLocations())
+    for (const auto& col : CollectionManager::instance()->allLocations())
     {
         CollectionManager::instance()->removeLocation(col);
     }
@@ -265,7 +265,7 @@ void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates()
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
 
-    for (auto* a: all)
+    for (auto* const a : all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -320,7 +320,7 @@ void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates()
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
 
-    for (auto* a: all)
+    for (auto* const a : all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -368,7 +368,7 @@ void HaarIfaceTest::testPreferNewerCreationDate()
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
 
-    for (auto* a: all)
+    for (auto* const a : all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -410,7 +410,7 @@ void HaarIfaceTest::testPreferNewerModificationDate()
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
 
-    for (auto* a: all)
+    for (auto* const a : all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -449,12 +449,11 @@ void HaarIfaceTest::testPreferNewerModificationDate()
 void HaarIfaceTest::testPreferFolderWhole()
 {
     const auto refImageSelMethod = HaarIface::RefImageSelMethod::PreferFolder;
-
-    AlbumList all = AlbumManager::instance()->allPAlbums();
+    AlbumList all                = AlbumManager::instance()->allPAlbums();
 
     AlbumList tags; // empty
-    AlbumList searchAlbums    = all;
-    AlbumList referenceAlbums = all;
+    AlbumList searchAlbums       = all;
+    AlbumList referenceAlbums    = all;
 
     QHash<ImagePath, QList<ItemInfo>> references;
     START_SEARCHING_DUPLICATES;
@@ -485,13 +484,12 @@ void HaarIfaceTest::testPreferFolderWhole()
 void HaarIfaceTest::testReferenceFolderNotSelected()
 {
     const auto refImageSelMethod = HaarIface::RefImageSelMethod::ExcludeFolder;
-
-    AlbumList all = AlbumManager::instance()->allPAlbums();
+    AlbumList all                = AlbumManager::instance()->allPAlbums();
 
     AlbumList tags; // empty
     AlbumList searchAlbums;
 
-    for (auto* a: all)
+    for (auto* const a : all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -509,7 +507,7 @@ void HaarIfaceTest::testReferenceFolderNotSelected()
 
     AlbumList referenceAlbums;
 
-    for (auto* a: all)
+    for (auto* const a : all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -565,7 +563,7 @@ void HaarIfaceTest::testReferenceFolderPartlySelected()
     AlbumList tags; // empty
     AlbumList searchAlbums;
 
-    for (auto* a: all)
+    for (auto* const a : all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
@@ -589,7 +587,7 @@ void HaarIfaceTest::testReferenceFolderPartlySelected()
 
     AlbumList referenceAlbums;
 
-    for (auto* a: all)
+    for (auto* const a : all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
 
