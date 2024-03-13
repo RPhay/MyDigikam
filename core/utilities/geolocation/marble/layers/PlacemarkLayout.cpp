@@ -382,7 +382,7 @@ QVector<VisiblePlacemark *> PlacemarkLayout::generateLayout( const ViewportParam
         // First handle the selected placemarks as they have the highest priority.
 
         const QModelIndexList selectedIndexes = m_selectionModel->selection().indexes();
-        auto const viewLatLonAltBox = viewport->viewLatLonAltBox();
+        const auto & viewLatLonAltBox = viewport->viewLatLonAltBox();
 
         for ( int i = 0; i < selectedIndexes.count(); ++i ) {
             const QModelIndex index = selectedIndexes.at( i );
