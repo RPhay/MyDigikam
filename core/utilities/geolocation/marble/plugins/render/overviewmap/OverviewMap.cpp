@@ -29,10 +29,7 @@ namespace Marble
 {
 
 OverviewMap::OverviewMap()
-    : AbstractFloatItem( nullptr ),
-      ui_configWidget( nullptr ),
-      m_configDialog( nullptr ),
-      m_mapChanged( false )
+    : AbstractFloatItem( nullptr )
 {
 }
 
@@ -40,10 +37,7 @@ OverviewMap::OverviewMap( const MarbleModel *marbleModel )
     : AbstractFloatItem( marbleModel, QPointF( 10.5, 10.5 ), QSizeF( 166.0, 86.0 ) ),
       m_target(),
       m_planetID( PlanetFactory::planetList() ),
-      m_defaultSize( AbstractFloatItem::size() ),
-      ui_configWidget( nullptr ),
-      m_configDialog( nullptr ),
-      m_mapChanged( false )
+      m_defaultSize( AbstractFloatItem::size() )
 {
     // cache is no needed because:
     // (1) the SVG overview map is already rendered and stored in m_worldmap pixmap

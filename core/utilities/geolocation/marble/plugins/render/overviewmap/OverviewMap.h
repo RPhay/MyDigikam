@@ -28,59 +28,58 @@ namespace Marble
  * @short The class that creates an overview map.
  *
  */
-
 class OverviewMap : public AbstractFloatItem,
                     public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.OverviewMap")
-    Q_INTERFACES( Marble::RenderPluginInterface )
-    Q_INTERFACES( Marble::DialogConfigurationInterface )
-    MARBLE_PLUGIN( OverviewMap )
+    Q_INTERFACES(Marble::RenderPluginInterface)
+    Q_INTERFACES(Marble::DialogConfigurationInterface)
+    MARBLE_PLUGIN(OverviewMap)
 
 public:
 
     OverviewMap();
-    explicit OverviewMap( const MarbleModel *marbleModel );
-    ~OverviewMap() override;
+    explicit OverviewMap(const MarbleModel* marbleModel);
+    ~OverviewMap()                                              override;
 
-    QStringList backendTypes() const override;
+    QStringList backendTypes()                            const override;
 
-    QString name() const override;
+    QString name()                                        const override;
 
-    QString guiString() const override;
+    QString guiString()                                   const override;
 
-    QString nameId() const override;
+    QString nameId()                                      const override;
 
-    QString version() const override;
+    QString version()                                     const override;
 
-    QString description() const override;
+    QString description()                                 const override;
 
-    QString copyrightYears() const override;
+    QString copyrightYears()                              const override;
 
-    QVector<PluginAuthor> pluginAuthors() const override;
+    QVector<PluginAuthor> pluginAuthors()                 const override;
 
-    QIcon icon () const override;
+    QIcon icon()                                          const override;
 
-    QDialog *configDialog() override;
+    QDialog* configDialog()                                     override;
 
-    void initialize () override;
+    void initialize()                                           override;
 
-    bool isInitialized () const override;
+    bool isInitialized()                                  const override;
 
-    void setProjection( const ViewportParams *viewport ) override;
+    void setProjection(const ViewportParams* viewport)          override;
 
-    void paintContent( QPainter *painter ) override;
+    void paintContent(QPainter* painter)                        override;
 
     /**
      * @return: The settings of the item.
      */
-    QHash<QString,QVariant> settings() const override;
+    QHash<QString, QVariant> settings()                   const override;
 
     /**
      * Set the settings of the item.
      */
-    void setSettings( const QHash<QString,QVariant> &settings ) override;
+    void setSettings(const QHash<QString, QVariant>& settings)  override;
 
 public Q_SLOTS:
 
@@ -90,7 +89,7 @@ public Q_SLOTS:
 
 protected:
 
-    bool eventFilter( QObject *object, QEvent *e ) override;
+    bool eventFilter(QObject* object, QEvent* e) override;
 
 private:
 
@@ -100,23 +99,25 @@ private:
     void loadPlanetMaps();
     void loadMapSuggestions();
 
-    QString m_target;
-    QSvgRenderer   m_svgobj;
-    QHash<QString, QSvgWidget *> m_svgWidgets;
-    QHash<QString, QString> m_svgPaths;
-    QStringList    m_planetID;
-    QPixmap        m_worldmap;
-    QHash<QString,QVariant> m_settings;
-    QColor m_posColor;
-    QSizeF m_defaultSize;
+private:
 
-    Ui::OverviewMapConfigWidget *ui_configWidget;
-    QDialog *m_configDialog;
+    QString                         m_target;
+    QSvgRenderer                    m_svgobj;
+    QHash<QString, QSvgWidget*>     m_svgWidgets;
+    QHash<QString, QString>         m_svgPaths;
+    QStringList                     m_planetID;
+    QPixmap                         m_worldmap;
+    QHash<QString,QVariant>         m_settings;
+    QColor                          m_posColor;
+    QSizeF                          m_defaultSize;
 
-    GeoDataLatLonAltBox m_latLonAltBox;
-    qreal m_centerLat;
-    qreal m_centerLon;
-    bool m_mapChanged;
+    Ui::OverviewMapConfigWidget*    ui_configWidget = nullptr;
+    QDialog*                        m_configDialog  = nullptr;
+
+    GeoDataLatLonAltBox             m_latLonAltBox;
+    qreal                           m_centerLat     = 0.0;
+    qreal                           m_centerLon     = 0.0;
+    bool                            m_mapChanged    = false;
 
 private Q_SLOTS:
 
@@ -124,7 +125,7 @@ private Q_SLOTS:
     void synchronizeSpinboxes();
     void showCurrentPlanetPreview() const;
     void choosePositionIndicatorColor();
-    void useMapSuggestion( int index );
+    void useMapSuggestion(int index);
 };
 
 } // namespace Marble
