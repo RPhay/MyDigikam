@@ -49,34 +49,51 @@ echo "Check Coverity SCAN Toolkit passed..."
 
 cd $ORIG_WD/../..
 
-# Manage build sub-dir
+rm -fr build.coverity
+mkdir -p build.coverity
+cd build.coverity
 
-if [ -d "build" ]; then
+if [[ -d /opt/qt6 ]] ; then
 
-    rm -rfv ./build
-
-fi
-
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-
-    ./bootstrap.linux
-
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-
-    ./bootstrap.macports
+    export BUILD_WITH_QT6=1
+    export Qt6_DIR=/opt/qt6
+    QTPATHS="/opt/qt6/bin/qtpaths6"
+    export CMAKE_BINARY=/opt/qt6/bin/cmake
 
 else
 
-    echo "Unsupported platform..."
-    exit -1
+    export BUILD_WITH_QT6=0
+    QTPATHS="qtpaths"
+    export CMAKE_BINARY=cmake
 
 fi
+
+$CMAKE_BINARY -G "Unix Makefiles" . \
+      -DCMAKE_BUILD_TYPE=debug \
+      -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
+      -DBUILD_TESTING=ON \
+      -DDIGIKAMSC_CHECKOUT_PO=OFF \
+      -DDIGIKAMSC_CHECKOUT_DOC=OFF \
+      -DDIGIKAMSC_COMPILE_PO=OFF \
+      -DDIGIKAMSC_COMPILE_DOC=OFF \
+      -DENABLE_KFILEMETADATASUPPORT=ON \
+      -DENABLE_AKONADICONTACTSUPPORT=ON \
+      -DENABLE_MYSQLSUPPORT=ON \
+      -DENABLE_INTERNALMYSQL=ON \
+      -DENABLE_MEDIAPLAYER=ON \
+      -DENABLE_QTMULTIMEDIA=ON \
+      -DENABLE_DBUS=ON \
+      -DENABLE_APPSTYLES=ON \
+      -DENABLE_GEOLOCATION=ON \
+      -DENABLE_QWEBENGINE=ON \
+      -Wno-dev \
+      ..
 
 # Get active git branches to create report description string
 ./gits branch | sed -e "s/*/#/g" | sed -e "s/On:/#On:/g" | grep "#" | sed -e "s/#On:/On:/g" | sed -e "s/#/BRANCH:/g" > ./build/git_branches.txt
 desc=$(<build/git_branches.txt)
 
-cd $ORIG_WD/../../build
+cd $ORIG_WD/../../build.coverity
 
 CPU_CORES=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || sysctl -n hw.ncpu)
 echo "CPU cores detected to compile : $CPU_CORES."
@@ -84,7 +101,7 @@ echo "CPU cores detected to compile : $CPU_CORES."
 cov-build --dir cov-int --tmpdir ~/tmp make -j$CPU_CORES
 tar czvf myproject.tgz cov-int
 
-cd $ORIG_WD/../../build
+cd $ORIG_WD/../../build.coverity
 
 echo "-- SCAN Import description --"
 echo $desc
