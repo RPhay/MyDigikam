@@ -329,46 +329,71 @@ void DownloadRegionDialog::setSelectionMethod( SelectionMethod const selectionMe
 
 QVector<TileCoordsPyramid> DownloadRegionDialog::region() const
 {
-    if ( !d->hasTextureLayers() && !d->hasVectorLayers() ) {
+    if (!d->hasTextureLayers() && !d->hasVectorLayers())
+    {
         return QVector<TileCoordsPyramid>();
     }
 
-    d->m_visibleTileLevel = (tileType() == TextureTileType && d->m_textureLayer->tileZoomLevel() != -1)
-            ? d->m_textureLayer->tileZoomLevel() : d->m_vectorTileLayer->tileZoomLevel();
+    d->m_visibleTileLevel = ((tileType() == TextureTileType) && (d->m_textureLayer->tileZoomLevel() != -1))
+        ? d->m_textureLayer->tileZoomLevel()
+        : d->m_vectorTileLayer->tileZoomLevel();
 
-    const TileLayer * tileLayer = (tileType() == TextureTileType && d->m_textureLayer->layerCount() > 0)
-            ? dynamic_cast<const TileLayer *>(d->m_textureLayer)
-            : dynamic_cast<const TileLayer *>(d->m_vectorTileLayer);
+    const TileLayer* tileLayer = ((tileType() == TextureTileType) && (d->m_textureLayer->layerCount() > 0))
+        ? dynamic_cast<const TileLayer *>(d->m_textureLayer)
+        : dynamic_cast<const TileLayer *>(d->m_vectorTileLayer);
 
-    d->m_downloadRegion.setTileLevelRange( d->m_tileLevelRangeWidget->topLevel(),
-                                           d->m_tileLevelRangeWidget->bottomLevel() );
-    d->m_downloadRegion.setVisibleTileLevel( d->m_visibleTileLevel );
+    if (!tileLayer)
+    {
+        return QVector<TileCoordsPyramid>();
+    }
+
+    d->m_downloadRegion.setTileLevelRange(d->m_tileLevelRangeWidget->topLevel(),
+                                          d->m_tileLevelRangeWidget->bottomLevel());
+
+    d->m_downloadRegion.setVisibleTileLevel(d->m_visibleTileLevel);
 
     // check whether "visible region" or "lat/lon region" is selection method
+
     GeoDataLatLonAltBox downloadRegion;
-    switch ( d->m_selectionMethod ) {
-    case VisibleRegionMethod:
-        downloadRegion = d->m_visibleRegion;
-        break;
-    case SpecifiedRegionMethod:
-        downloadRegion = GeoDataLatLonAltBox( d->m_latLonBoxWidget->latLonBox(), 0, 0 );
-        break;
-    case RouteDownloadMethod:
-        qreal offset = d->m_routeOffsetSpinBox->value();
-        if (d->m_routeOffsetSpinBox->suffix() == QLatin1String(" km")) {
-            offset *= KM2METER;
+
+    switch (d->m_selectionMethod)
+    {
+        case VisibleRegionMethod:
+        {
+            downloadRegion = d->m_visibleRegion;
+            break;
         }
-        const GeoDataLineString waypoints;// = d->m_model->routingManager()->routingModel()->route().path();
-        return d->m_downloadRegion.fromPath( tileLayer, offset, waypoints );
+
+        case SpecifiedRegionMethod:
+        {
+            downloadRegion = GeoDataLatLonAltBox( d->m_latLonBoxWidget->latLonBox(), 0, 0 );
+            break;
+        }
+
+        case RouteDownloadMethod:
+        {
+            qreal offset = d->m_routeOffsetSpinBox->value();
+
+            if (d->m_routeOffsetSpinBox->suffix() == QLatin1String(" km"))
+            {
+                offset *= KM2METER;
+            }
+
+            const GeoDataLineString waypoints;  // = d->m_model->routingManager()->routingModel()->route().path();
+
+            return d->m_downloadRegion.fromPath(tileLayer, offset, waypoints);
+        }
     }
 
     // For Mercator tiles limit the LatLonBox to the valid tile range.
-    if (tileLayer->tileProjection()->type() == GeoSceneAbstractTileProjection::Mercator) {
+
+    if (tileLayer->tileProjection()->type() == GeoSceneAbstractTileProjection::Mercator)
+    {
         downloadRegion.setNorth(qMin(downloadRegion.north(), +1.4835));
         downloadRegion.setSouth(qMax(downloadRegion.south(), -1.4835));
     }
 
-    return d->m_downloadRegion.region( tileLayer, downloadRegion );
+    return d->m_downloadRegion.region(tileLayer, downloadRegion);
 }
 
 TileType DownloadRegionDialog::tileType() const
