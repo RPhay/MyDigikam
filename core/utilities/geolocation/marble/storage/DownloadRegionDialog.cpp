@@ -48,69 +48,60 @@
 namespace Marble
 {
 
-int const maxTilesCount = 100000;
-int const minimumRouteOffset = 0;
-int const maximumRouteOffset = 10000;
-int averageTextureTileSize = 13; //The average size of a tile in kilobytes
-int averageVectorTileSize = 30; // The average size of a vector tile in kilobytes
+int const maxTilesCount         = 100000;
+int const minimumRouteOffset    = 0;
+int const maximumRouteOffset    = 10000;
+int averageTextureTileSize      = 13; // The average size of a tile in kilobytes
+int averageVectorTileSize       = 30; // The average size of a vector tile in kilobytes
 
 class Q_DECL_HIDDEN DownloadRegionDialog::Private
 {
 public:
-    Private( MarbleWidget *const widget, QDialog * const dialog );
-    QWidget * createSelectionMethodBox();
-    QLayout * createTilesCounter();
-    QWidget * createOkCancelButtonBox();
+
+    Private(MarbleWidget* const widget, QDialog* const dialog);
+    QWidget* createSelectionMethodBox();
+    QLayout* createTilesCounter();
+    QWidget* createOkCancelButtonBox();
 
     bool hasRoute() const;
     bool hasTextureLayers() const;
     bool hasVectorLayers() const;
-    QDialog * m_dialog;
-    QLabel * m_layerLabel;
-    QComboBox * m_layerComboBox;
-    QButtonGroup * m_buttonGroup;
-    QRadioButton * m_visibleRegionMethodButton;
-    QRadioButton * m_specifiedRegionMethodButton;
-    LatLonBoxWidget * m_latLonBoxWidget;
-    TileLevelRangeWidget * m_tileLevelRangeWidget;
-    QRadioButton *m_routeDownloadMethodButton;
-    QLabel* m_routeOffsetLabel;
-    QDoubleSpinBox *m_routeOffsetSpinBox;
-    QLabel * m_tilesCountLabel;
-    QLabel * m_tileSizeInfo;
-    QPushButton * m_okButton;
-    QPushButton * m_applyButton;
-    TextureLayer const * m_textureLayer;
-    VectorTileLayer const * m_vectorTileLayer;
-    int m_visibleTileLevel;
+
+public:
+
+    QDialog*                m_dialog                        = nullptr;
+    QLabel*                 m_layerLabel                    = nullptr;
+    QComboBox*              m_layerComboBox                 = nullptr;
+    QButtonGroup*           m_buttonGroup                   = nullptr;
+    QRadioButton*           m_visibleRegionMethodButton     = nullptr;
+    QRadioButton*           m_specifiedRegionMethodButton   = nullptr;
+    LatLonBoxWidget*        m_latLonBoxWidget               = nullptr;
+    TileLevelRangeWidget*   m_tileLevelRangeWidget          = nullptr;
+    QRadioButton*           m_routeDownloadMethodButton     = nullptr;
+    QLabel*                 m_routeOffsetLabel              = nullptr;
+    QDoubleSpinBox*         m_routeOffsetSpinBox            = nullptr;
+    QLabel*                 m_tilesCountLabel               = nullptr;
+    QLabel*                 m_tileSizeInfo                  = nullptr;
+    QPushButton*            m_okButton                      = nullptr;
+    QPushButton*            m_applyButton                   = nullptr;
+    TextureLayer const*     m_textureLayer                  = nullptr;
+    VectorTileLayer const*  m_vectorTileLayer               = nullptr;
+    int                     m_visibleTileLevel              = 0;
     MarbleModel const*const m_model;
-    MarbleWidget *const m_widget;
-    SelectionMethod m_selectionMethod;
-    GeoDataLatLonAltBox m_visibleRegion;
-    DownloadRegion m_downloadRegion;
-    TileType m_tileType;
+    MarbleWidget* const     m_widget                        = nullptr;
+    SelectionMethod         m_selectionMethod;
+    GeoDataLatLonAltBox     m_visibleRegion;
+    DownloadRegion          m_downloadRegion;
+    TileType                m_tileType;
 };
 
 DownloadRegionDialog::Private::Private( MarbleWidget * const widget,
                                         QDialog * const dialog )
-    : m_dialog( dialog ),
-      m_layerLabel( nullptr ),
-      m_layerComboBox( nullptr ),
-      m_buttonGroup(nullptr),
-      m_visibleRegionMethodButton( nullptr ),
-      m_specifiedRegionMethodButton( nullptr ),
+    : m_dialog(dialog),
       m_latLonBoxWidget( new LatLonBoxWidget ),
       m_tileLevelRangeWidget( new TileLevelRangeWidget ),
-      m_routeDownloadMethodButton( nullptr ),
-      m_routeOffsetLabel( nullptr ),
-      m_routeOffsetSpinBox( nullptr ),
-      m_tilesCountLabel( nullptr ),
-      m_tileSizeInfo( nullptr ),
-      m_okButton( nullptr ),
-      m_applyButton( nullptr ),
       m_textureLayer( widget->textureLayer() ),
       m_vectorTileLayer( widget->vectorTileLayer() ),
-      m_visibleTileLevel( 0 ),
       m_model( widget->model() ),
       m_widget( widget ),
       m_selectionMethod( VisibleRegionMethod ),
@@ -121,8 +112,6 @@ DownloadRegionDialog::Private::Private( MarbleWidget * const widget,
     m_tileLevelRangeWidget->setDefaultLevel( m_visibleTileLevel );
     m_downloadRegion.setMarbleModel( widget->model() );
 }
-
-
 
 QWidget * DownloadRegionDialog::Private::createSelectionMethodBox()
 {
