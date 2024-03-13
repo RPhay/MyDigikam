@@ -53,21 +53,33 @@ int DownloadRegionPrivate::rad2PixelX( qreal const lon, const TileLayer *tileLay
 }
 
 // copied from AbstractScanlineTextureMapper and slightly adjusted
-int DownloadRegionPrivate::rad2PixelY( qreal const lat, const TileLayer *tileLayer ) const
+int DownloadRegionPrivate::rad2PixelY(qreal const lat, const TileLayer* tileLayer) const
 {
-    qreal tileHeight = tileLayer && tileLayer->layerCount() > 0 ? tileLayer->tileSize().height() : 256;
-    qreal const globalHeight = tileHeight * tileLayer->tileRowCount( m_visibleTileLevel );
+    if (tileLayer)
+    {
+        qreal tileHeight         = (tileLayer->layerCount() > 0) ? tileLayer->tileSize().height()
+                                                                 : 256;
+        qreal const globalHeight = tileHeight * tileLayer->tileRowCount(m_visibleTileLevel);
 
-    switch (tileLayer->tileProjection()->type()) {
-    case GeoSceneAbstractTileProjection::Equirectangular:
-        return static_cast<int>(globalHeight * (0.5 - lat / M_PI));
-    case GeoSceneAbstractTileProjection::Mercator:
-        if ( fabs( lat ) < 1.4835 )
-            return static_cast<int>(globalHeight * 0.5 * (1 - gdInv(lat) / M_PI));
-        if ( lat >= +1.4835 )
-            return static_cast<int>(globalHeight * 0.5 * (1 - 3.1309587 / M_PI));
-        if ( lat <= -1.4835 )
-            return static_cast<int>(globalHeight * 0.5 * (1 + 3.1309587 / M_PI));
+        switch (tileLayer->tileProjection()->type())
+        {
+            case GeoSceneAbstractTileProjection::Equirectangular:
+            {
+                return static_cast<int>(globalHeight * (0.5 - lat / M_PI));
+            }
+
+            case GeoSceneAbstractTileProjection::Mercator:
+            {
+                if ( fabs( lat ) < 1.4835 )
+                    return static_cast<int>(globalHeight * 0.5 * (1 - gdInv(lat) / M_PI));
+
+                if ( lat >= +1.4835 )
+                    return static_cast<int>(globalHeight * 0.5 * (1 - 3.1309587 / M_PI));
+
+                if ( lat <= -1.4835 )
+                    return static_cast<int>(globalHeight * 0.5 * (1 + 3.1309587 / M_PI));
+            }
+        }
     }
 
     // Dummy value to avoid a warning.
