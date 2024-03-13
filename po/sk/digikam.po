@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 01:33+0000\n"
+"POT-Creation-Date: 2024-03-13 01:35+0000\n"
 "PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -2881,7 +2881,7 @@ msgstr "Zobraziť na celej obrazovke"
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
-#: core/libs/album/widgets/albumselecttabs.cpp:191
+#: core/libs/album/widgets/albumselecttabs.cpp:178
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
 #, kde-format
@@ -2908,7 +2908,7 @@ msgstr "Mapa"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:118
-#: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
@@ -2973,7 +2973,7 @@ msgstr "Album bez štítkov"
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:176
-#: core/libs/album/widgets/albumselecttabs.cpp:192
+#: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:634
@@ -26585,7 +26585,7 @@ msgid "Scanning albums"
 msgstr "Hľadajú sa odstránené albumy"
 
 #: core/libs/album/manager/albummanager.cpp:179
-#: core/libs/album/widgets/albumselecttabs.cpp:193
+#: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
 #, kde-format
@@ -27414,14 +27414,14 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "Biela"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:115
+#: core/libs/album/widgets/albumpropsedit.cpp:105
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Nový album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:115
+#: core/libs/album/widgets/albumpropsedit.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "@title: album properties"
 #| msgid "Edit Album"
@@ -27429,7 +27429,7 @@ msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Upraviť album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:136
+#: core/libs/album/widgets/albumpropsedit.cpp:127
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27439,56 +27439,56 @@ msgstr ""
 "\"%1\"\n"
 "Vlastnosti albumu"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:144
+#: core/libs/album/widgets/albumpropsedit.cpp:135
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Názov:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:148
+#: core/libs/album/widgets/albumpropsedit.cpp:139
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:153
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ka&tegória:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:160
+#: core/libs/album/widgets/albumpropsedit.cpp:151
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "&Potomok:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:166
+#: core/libs/album/widgets/albumpropsedit.cpp:157
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Titu&lok:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:162
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Sem zadajte titulok albumu..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:165
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Dátum albumu:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:180
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "Naj&starší"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:181
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -27497,14 +27497,14 @@ msgstr ""
 "Použite toto tlačidlo na prejdenie zvolených albumov a nájdenie duplicitných "
 "položiek."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Priemer"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -27513,14 +27513,14 @@ msgstr ""
 "Použite toto tlačidlo na prejdenie zvolených albumov a nájdenie duplicitných "
 "položiek."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Najnovší"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -27529,31 +27529,31 @@ msgstr ""
 "Použite toto tlačidlo na prejdenie zvolených albumov a nájdenie duplicitných "
 "položiek."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:269
+#: core/libs/album/widgets/albumpropsedit.cpp:260
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Nový album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:262
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Vybraný album (predvolené)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:272
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Koreň aktuálnej kolekcie"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:346
+#: core/libs/album/widgets/albumpropsedit.cpp:337
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Nezaradený album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:432
+#: core/libs/album/widgets/albumpropsedit.cpp:423
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27563,7 +27563,7 @@ msgstr ""
 "Vytvoriť nový album v\n"
 "\"%1\""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:477
+#: core/libs/album/widgets/albumpropsedit.cpp:468
 #, fuzzy, kde-format
 #| msgctxt "@title: album properties"
 #| msgid "Could Not Calculate Average"
@@ -27571,24 +27571,24 @@ msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Nepodarilo sa vypočítať priemer"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:478
+#: core/libs/album/widgets/albumpropsedit.cpp:469
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "Nepodarilo sa vypočítať priemerný dátum tohto albumu."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:76
-#: core/libs/album/widgets/albumselectcombobox.cpp:92
+#: core/libs/album/widgets/albumselectcombobox.cpp:69
+#: core/libs/album/widgets/albumselectcombobox.cpp:86
 #, kde-format
 msgid "No Album Selected"
 msgstr "Nie je vybraný žiadny album"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:99
+#: core/libs/album/widgets/albumselectcombobox.cpp:93
 #, kde-format
 msgid "No Tag Selected"
 msgstr "Nie je vybraný žiadny štítok"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:299
+#: core/libs/album/widgets/albumselectcombobox.cpp:295
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
@@ -27596,7 +27596,7 @@ msgstr[0] "Vybraná 1 položka"
 msgstr[1] "Vybrané %1 položky"
 msgstr[2] "Vybraných %1 položiek"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:304
+#: core/libs/album/widgets/albumselectcombobox.cpp:300
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
@@ -27604,7 +27604,7 @@ msgstr[0] "Vybraný 1 album"
 msgstr[1] "Vybrané %1 albumy"
 msgstr[2] "Vybraných %1 albumov"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:314
+#: core/libs/album/widgets/albumselectcombobox.cpp:310
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
@@ -27612,7 +27612,7 @@ msgstr[0] "1 štítok vylúčený"
 msgstr[1] "%1 štítky vylúčené"
 msgstr[2] "%1 štítkov vylúčených"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:319
+#: core/libs/album/widgets/albumselectcombobox.cpp:315
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -27620,27 +27620,27 @@ msgstr[0] "1 album vylúčený"
 msgstr[1] "%1 albumy vylúčené"
 msgstr[2] "%1 albumov vylúčených"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:80
+#: core/libs/album/widgets/albumselectdialog.cpp:75
 #, fuzzy, kde-format
 #| msgid "Select Album"
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Vybrať album"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:130
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Albumy (Všetky)"
 
-#: core/libs/album/widgets/albumselectors.cpp:148
+#: core/libs/album/widgets/albumselectors.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Štítky: (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:180
+#: core/libs/album/widgets/albumselectors.cpp:165
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Albums"
@@ -27648,41 +27648,41 @@ msgctxt "@option"
 msgid "All albums"
 msgstr "Všetky albumy"
 
-#: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:238
+#: core/libs/album/widgets/albumselectors.cpp:166
+#: core/libs/album/widgets/albumselectors.cpp:226
 #, fuzzy, kde-format
 #| msgid "Theme Selection"
 msgctxt "@option"
 msgid "Recursive"
 msgstr "Výber motívu"
 
-#: core/libs/album/widgets/albumselectors.cpp:182
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:167
+#: core/libs/album/widgets/albumselectors.cpp:227
 #, fuzzy, kde-format
 #| msgid "Theme Selection"
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
 msgstr "Výber motívu"
 
-#: core/libs/album/widgets/albumselectors.cpp:192
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Vyberte všetky albumy, ktoré majú byť spracované."
 
-#: core/libs/album/widgets/albumselectors.cpp:195
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Nie je vybraný žiadny album"
 
-#: core/libs/album/widgets/albumselectors.cpp:200
+#: core/libs/album/widgets/albumselectors.cpp:188
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Nie je zvolený žiadny album"
 
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:225
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Tags"
@@ -27690,53 +27690,53 @@ msgctxt "@option"
 msgid "All tags"
 msgstr "Všetky štítky"
 
-#: core/libs/album/widgets/albumselectors.cpp:249
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Vyberte všetky štítky, ktoré majú byť spracované."
 
-#: core/libs/album/widgets/albumselectors.cpp:252
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Nie je vybraný žiadny štítok"
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:244
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Nie je zvolený žiadny štítok"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albumy (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:542
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Štítky (Všetky)"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:543
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
 msgstr "Štítky (%1)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:69
+#: core/libs/album/widgets/albumselectwidget.cpp:65
 #, kde-format
 msgid "Create New Album"
 msgstr "Vytvoriť nový album"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:157
 #, kde-format
 msgid "&New Album"
 msgstr "&Nový album"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:170
+#: core/libs/album/widgets/albumselectwidget.cpp:158
 #, kde-format
 msgid "Create new album"
 msgstr "Vytvoriť nový album"

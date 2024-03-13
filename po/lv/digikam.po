@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 01:33+0000\n"
+"POT-Creation-Date: 2024-03-13 01:35+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -2918,7 +2918,7 @@ msgstr "Rādīt pilnekrāna režīmā"
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
-#: core/libs/album/widgets/albumselecttabs.cpp:191
+#: core/libs/album/widgets/albumselecttabs.cpp:178
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
 #, kde-format
@@ -2945,7 +2945,7 @@ msgstr "Karte"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:118
-#: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
@@ -3007,7 +3007,7 @@ msgstr "Mani albumi"
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:176
-#: core/libs/album/widgets/albumselecttabs.cpp:192
+#: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:634
@@ -26249,7 +26249,7 @@ msgid "Scanning albums"
 msgstr "Skenēt albumus"
 
 #: core/libs/album/manager/albummanager.cpp:179
-#: core/libs/album/widgets/albumselecttabs.cpp:193
+#: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
 #, kde-format
@@ -27101,14 +27101,14 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "balta"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:115
+#: core/libs/album/widgets/albumpropsedit.cpp:105
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Jauns albums"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:115
+#: core/libs/album/widgets/albumpropsedit.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "@title: album properties"
 #| msgid "Edit Album"
@@ -27116,7 +27116,7 @@ msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Rediģēt albumu"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:136
+#: core/libs/album/widgets/albumpropsedit.cpp:127
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27126,59 +27126,59 @@ msgstr ""
 "\"%1\"\n"
 "Albuma īpašības"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:144
+#: core/libs/album/widgets/albumpropsedit.cpp:135
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Nosaukums:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:148
+#: core/libs/album/widgets/albumpropsedit.cpp:139
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Šeit var norādīt teksta krāsu."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:153
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, fuzzy, kde-format
 #| msgid "Ca&tegory:"
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ka&tegorija:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:160
+#: core/libs/album/widgets/albumpropsedit.cpp:151
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:166
+#: core/libs/album/widgets/albumpropsedit.cpp:157
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "A&praksts:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:162
 #, fuzzy, kde-format
 #| msgid "Enter caption text here."
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Ievadiet apraksta tekstu šeit."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:165
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "Albuma &datums:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:180
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&Vecākais"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:181
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Use this button to delete all duplicate images."
@@ -27186,7 +27186,7 @@ msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "Spiediet šo pogu, lai izdzēstu visus attēlus, kas atkārtojas."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "Calculates the average date"
@@ -27195,7 +27195,7 @@ msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "V&idējais"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Use this button to delete all duplicate images."
@@ -27203,14 +27203,14 @@ msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "Spiediet šo pogu, lai izdzēstu visus attēlus, kas atkārtojas."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Jaunākais"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Use this button to delete all duplicate images."
@@ -27218,32 +27218,32 @@ msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "Spiediet šo pogu, lai izdzēstu visus attēlus, kas atkārtojas."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:269
+#: core/libs/album/widgets/albumpropsedit.cpp:260
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Jauns albums"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:262
 #, fuzzy, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Izvēlieties albumu"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:272
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, fuzzy, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Notīrīt izvēli"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:346
+#: core/libs/album/widgets/albumpropsedit.cpp:337
 #, fuzzy, kde-format
 #| msgid "Uncategorized Album"
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Albums bez kategorijas"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:432
+#: core/libs/album/widgets/albumpropsedit.cpp:423
 #, fuzzy, kde-format
 #| msgid "Create New Album"
 msgctxt "@label: album properties"
@@ -27252,31 +27252,31 @@ msgid ""
 "\"%1\""
 msgstr "Izveidot jaunu albumu"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:477
+#: core/libs/album/widgets/albumpropsedit.cpp:468
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Neizdevās aprēķināt vidējo"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:478
+#: core/libs/album/widgets/albumpropsedit.cpp:469
 #, fuzzy, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "Neizdevās aprēķināt vidējo."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:76
-#: core/libs/album/widgets/albumselectcombobox.cpp:92
+#: core/libs/album/widgets/albumselectcombobox.cpp:69
+#: core/libs/album/widgets/albumselectcombobox.cpp:86
 #, kde-format
 msgid "No Album Selected"
 msgstr "Nav izvēlēts albums"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:99
+#: core/libs/album/widgets/albumselectcombobox.cpp:93
 #, kde-format
 msgid "No Tag Selected"
 msgstr "Nav izvēlēts tags"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:299
+#: core/libs/album/widgets/albumselectcombobox.cpp:295
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
@@ -27284,7 +27284,7 @@ msgstr[0] "Izvēlēts %1 tags"
 msgstr[1] "Izvēlēti %1 tagi"
 msgstr[2] "Izvēlēts %1 tagu"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:304
+#: core/libs/album/widgets/albumselectcombobox.cpp:300
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
@@ -27292,7 +27292,7 @@ msgstr[0] "Izvēlēts %1 albums"
 msgstr[1] "Izvēlēti %1 albumi"
 msgstr[2] "Izvēlēts %1 albumu"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:314
+#: core/libs/album/widgets/albumselectcombobox.cpp:310
 #, fuzzy, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
@@ -27300,7 +27300,7 @@ msgstr[0] "Izvēlēts %1 tags"
 msgstr[1] "Izvēlēti %1 tagi"
 msgstr[2] "Izvēlēts %1 tagu"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:319
+#: core/libs/album/widgets/albumselectcombobox.cpp:315
 #, fuzzy, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -27308,27 +27308,27 @@ msgstr[0] "Izvēlēts %1 albums"
 msgstr[1] "Izvēlēti %1 albumi"
 msgstr[2] "Izvēlēts %1 albumu"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:80
+#: core/libs/album/widgets/albumselectdialog.cpp:75
 #, fuzzy, kde-format
 #| msgid "Select Album"
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Izvēlieties albumu"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:130
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Albumi (visi)"
 
-#: core/libs/album/widgets/albumselectors.cpp:148
+#: core/libs/album/widgets/albumselectors.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Tagi (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:180
+#: core/libs/album/widgets/albumselectors.cpp:165
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Albums"
@@ -27336,41 +27336,41 @@ msgctxt "@option"
 msgid "All albums"
 msgstr "Visi albumi"
 
-#: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:238
+#: core/libs/album/widgets/albumselectors.cpp:166
+#: core/libs/album/widgets/albumselectors.cpp:226
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
 msgid "Recursive"
 msgstr "Iezīmētais"
 
-#: core/libs/album/widgets/albumselectors.cpp:182
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:167
+#: core/libs/album/widgets/albumselectors.cpp:227
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
 msgstr "Iezīmētais"
 
-#: core/libs/album/widgets/albumselectors.cpp:192
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Izvēlieties visus albumus, kuri būtu jāiekļauj meklējamo sarakstā."
 
-#: core/libs/album/widgets/albumselectors.cpp:195
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Nav izvēlēts neviens albums"
 
-#: core/libs/album/widgets/albumselectors.cpp:200
+#: core/libs/album/widgets/albumselectors.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Atiestatīt albumu atlasi"
 
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:225
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Tags"
@@ -27378,53 +27378,53 @@ msgctxt "@option"
 msgid "All tags"
 msgstr "Visi tagi"
 
-#: core/libs/album/widgets/albumselectors.cpp:249
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Izvēlieties visus tagus, kuri būtu jāiekļauj meklējamo sarakstā."
 
-#: core/libs/album/widgets/albumselectors.cpp:252
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Nav izvēlēts neviens tags"
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:244
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Atstatīt saturu"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albumi (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:542
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Tagi (visi)"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:543
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
 msgstr "Tagi (%1)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:69
+#: core/libs/album/widgets/albumselectwidget.cpp:65
 #, kde-format
 msgid "Create New Album"
 msgstr "Izveidot jaunu albumu"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:157
 #, kde-format
 msgid "&New Album"
 msgstr "&Jauns albums"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:170
+#: core/libs/album/widgets/albumselectwidget.cpp:158
 #, kde-format
 msgid "Create new album"
 msgstr "Izveidot jaunu albumu"

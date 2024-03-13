@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 01:33+0000\n"
+"POT-Creation-Date: 2024-03-13 01:35+0000\n"
 "PO-Revision-Date: 2024-03-09 04:48\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2798,7 +2798,7 @@ msgstr "全屏显示"
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
-#: core/libs/album/widgets/albumselecttabs.cpp:191
+#: core/libs/album/widgets/albumselecttabs.cpp:178
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
 #, kde-format
@@ -2825,7 +2825,7 @@ msgstr "地图"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:118
-#: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
@@ -2889,7 +2889,7 @@ msgstr "无标签相册"
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:176
-#: core/libs/album/widgets/albumselecttabs.cpp:192
+#: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:634
@@ -25844,7 +25844,7 @@ msgid "Scanning albums"
 msgstr "正在扫描相册"
 
 #: core/libs/album/manager/albummanager.cpp:179
-#: core/libs/album/widgets/albumselecttabs.cpp:193
+#: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
 #, kde-format
@@ -26639,19 +26639,19 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "白"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:115
+#: core/libs/album/widgets/albumpropsedit.cpp:105
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "新建相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:115
+#: core/libs/album/widgets/albumpropsedit.cpp:106
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "编辑相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:136
+#: core/libs/album/widgets/albumpropsedit.cpp:127
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -26661,112 +26661,112 @@ msgstr ""
 "“%1”\n"
 "相册属性"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:144
+#: core/libs/album/widgets/albumpropsedit.cpp:135
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "标题(&T)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:148
+#: core/libs/album/widgets/albumpropsedit.cpp:139
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "在此设置新相册标题"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:153
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "分类(&T)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:160
+#: core/libs/album/widgets/albumpropsedit.cpp:151
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "父相册(&I)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:166
+#: core/libs/album/widgets/albumpropsedit.cpp:157
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "说明(&P)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:162
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "在此输入相册说明..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:165
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "相册日期(&D)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:180
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "最旧(&O)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:181
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "使用此按钮从相册中选择最旧的图像日期。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "平均(&A)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "使用此按钮来计算相册图像的平均日期。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "最新"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "使用此按钮从相册中选择最新的图像日期。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:269
+#: core/libs/album/widgets/albumpropsedit.cpp:260
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "新建相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:262
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "所选相册 (默认)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:272
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "当前相册集合根目录"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:346
+#: core/libs/album/widgets/albumpropsedit.cpp:337
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "未分类相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:432
+#: core/libs/album/widgets/albumpropsedit.cpp:423
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -26776,163 +26776,163 @@ msgstr ""
 "创建新相册到\n"
 "“%1”"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:477
+#: core/libs/album/widgets/albumpropsedit.cpp:468
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "无法计算平均日期"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:478
+#: core/libs/album/widgets/albumpropsedit.cpp:469
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "无法计算此相册的平均日期。"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:76
-#: core/libs/album/widgets/albumselectcombobox.cpp:92
+#: core/libs/album/widgets/albumselectcombobox.cpp:69
+#: core/libs/album/widgets/albumselectcombobox.cpp:86
 #, kde-format
 msgid "No Album Selected"
 msgstr "未选中相册"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:99
+#: core/libs/album/widgets/albumselectcombobox.cpp:93
 #, kde-format
 msgid "No Tag Selected"
 msgstr "未选中标签"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:299
+#: core/libs/album/widgets/albumselectcombobox.cpp:295
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "已选中 %1 个标签"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:304
+#: core/libs/album/widgets/albumselectcombobox.cpp:300
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "已选中 %1 个相册"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:314
+#: core/libs/album/widgets/albumselectcombobox.cpp:310
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "已排除 %1 个标签"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:319
+#: core/libs/album/widgets/albumselectcombobox.cpp:315
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
 msgstr[0] "已排除 %1 个相册"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:80
+#: core/libs/album/widgets/albumselectdialog.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "选择相册"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:130
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "相册 (全部)"
 
-#: core/libs/album/widgets/albumselectors.cpp:148
+#: core/libs/album/widgets/albumselectors.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "标签 (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:180
+#: core/libs/album/widgets/albumselectors.cpp:165
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "所有相册"
 
-#: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:238
+#: core/libs/album/widgets/albumselectors.cpp:166
+#: core/libs/album/widgets/albumselectors.cpp:226
 #, kde-format
 msgctxt "@option"
 msgid "Recursive"
 msgstr "递归式"
 
-#: core/libs/album/widgets/albumselectors.cpp:182
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:167
+#: core/libs/album/widgets/albumselectors.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
 msgstr "递归式选择。"
 
-#: core/libs/album/widgets/albumselectors.cpp:192
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "选择需要处理的所有相册。"
 
-#: core/libs/album/widgets/albumselectors.cpp:195
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "未选择相册"
 
-#: core/libs/album/widgets/albumselectors.cpp:200
+#: core/libs/album/widgets/albumselectors.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "重置已选中相册"
 
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:225
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "所有标签"
 
-#: core/libs/album/widgets/albumselectors.cpp:249
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "选择需要处理的全部标签。"
 
-#: core/libs/album/widgets/albumselectors.cpp:252
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "未选择标签"
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:244
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "重置已选中标签"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "相册 (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:542
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "标签 (全部)"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:543
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
 msgstr "标签 (%1)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:69
+#: core/libs/album/widgets/albumselectwidget.cpp:65
 #, kde-format
 msgid "Create New Album"
 msgstr "创建新相册"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:157
 #, kde-format
 msgid "&New Album"
 msgstr "新建相册(&N)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:170
+#: core/libs/album/widgets/albumselectwidget.cpp:158
 #, kde-format
 msgid "Create new album"
 msgstr "创建新相册"

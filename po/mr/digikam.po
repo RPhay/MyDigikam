@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 01:33+0000\n"
+"POT-Creation-Date: 2024-03-13 01:35+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -2916,7 +2916,7 @@ msgstr ""
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
-#: core/libs/album/widgets/albumselecttabs.cpp:191
+#: core/libs/album/widgets/albumselecttabs.cpp:178
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
 #, kde-format
@@ -2943,7 +2943,7 @@ msgstr "नकाशा"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:118
-#: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
@@ -3006,7 +3006,7 @@ msgstr ""
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:176
-#: core/libs/album/widgets/albumselecttabs.cpp:192
+#: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:634
@@ -25757,7 +25757,7 @@ msgid "Scanning albums"
 msgstr "यामध्ये शोधा '%1'..."
 
 #: core/libs/album/manager/albummanager.cpp:179
-#: core/libs/album/widgets/albumselecttabs.cpp:193
+#: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
 #, fuzzy, kde-format
@@ -26540,21 +26540,21 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "पांढरा"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:115
+#: core/libs/album/widgets/albumpropsedit.cpp:105
 #, fuzzy, kde-format
 #| msgid "New Name"
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "नवीन नाव"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:115
+#: core/libs/album/widgets/albumpropsedit.cpp:106
 #, fuzzy, kde-format
 #| msgid "Album"
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "अल्बम"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:136
+#: core/libs/album/widgets/albumpropsedit.cpp:127
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -26562,79 +26562,79 @@ msgid ""
 "Album Properties"
 msgstr "गुणधर्म"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:144
+#: core/libs/album/widgets/albumpropsedit.cpp:135
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "शिर्षक (&T):"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:148
+#: core/libs/album/widgets/albumpropsedit.cpp:139
 #, fuzzy, kde-format
 #| msgid "Select item language here."
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "येथे घटकाची भाषा निवडा"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:153
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "विभाग"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:160
+#: core/libs/album/widgets/albumpropsedit.cpp:151
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:166
+#: core/libs/album/widgets/albumpropsedit.cpp:157
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "कॅप्शन :"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:162
 #, fuzzy, kde-format
 #| msgid "Action"
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "क्रिया"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:165
 #, fuzzy, kde-format
 #| msgid "Album Name"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "अल्बम नाव"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:180
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, fuzzy, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "सर्वात जुने : %1"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:181
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, fuzzy, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "सरासरी"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the newest image"
@@ -26643,39 +26643,39 @@ msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "नवीन"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:269
+#: core/libs/album/widgets/albumpropsedit.cpp:260
 #, fuzzy, kde-format
 #| msgid "New Name"
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "नवीन नाव"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:262
 #, fuzzy, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "मूलभूत"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:272
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, fuzzy, kde-format
 #| msgid "Collection:"
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "संग्रह :"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:346
+#: core/libs/album/widgets/albumpropsedit.cpp:337
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:432
+#: core/libs/album/widgets/albumpropsedit.cpp:423
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -26683,175 +26683,175 @@ msgid ""
 "\"%1\""
 msgstr "निर्माण करा"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:477
+#: core/libs/album/widgets/albumpropsedit.cpp:468
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "उघडणे शक्य झाले नाही : %1"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:478
+#: core/libs/album/widgets/albumpropsedit.cpp:469
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:76
-#: core/libs/album/widgets/albumselectcombobox.cpp:92
+#: core/libs/album/widgets/albumselectcombobox.cpp:69
+#: core/libs/album/widgets/albumselectcombobox.cpp:86
 #, kde-format
 msgid "No Album Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:99
+#: core/libs/album/widgets/albumselectcombobox.cpp:93
 #, kde-format
 msgid "No Tag Selected"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:299
+#: core/libs/album/widgets/albumselectcombobox.cpp:295
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:304
+#: core/libs/album/widgets/albumselectcombobox.cpp:300
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:314
+#: core/libs/album/widgets/albumselectcombobox.cpp:310
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:319
+#: core/libs/album/widgets/albumselectcombobox.cpp:315
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/album/widgets/albumselectdialog.cpp:80
+#: core/libs/album/widgets/albumselectdialog.cpp:75
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "सर्व काढून टाका"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:130
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "अल्बम्स"
 
-#: core/libs/album/widgets/albumselectors.cpp:148
+#: core/libs/album/widgets/albumselectors.cpp:133
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "टॅग्स :"
 
-#: core/libs/album/widgets/albumselectors.cpp:180
+#: core/libs/album/widgets/albumselectors.cpp:165
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@option"
 msgid "All albums"
 msgstr "अल्बम्स"
 
-#: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:238
+#: core/libs/album/widgets/albumselectors.cpp:166
+#: core/libs/album/widgets/albumselectors.cpp:226
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@option"
 msgid "Recursive"
 msgstr "निवड"
 
-#: core/libs/album/widgets/albumselectors.cpp:182
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:167
+#: core/libs/album/widgets/albumselectors.cpp:227
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
 msgstr "निवड"
 
-#: core/libs/album/widgets/albumselectors.cpp:192
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:195
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, fuzzy, kde-format
 #| msgid "Collection:"
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "संग्रह :"
 
-#: core/libs/album/widgets/albumselectors.cpp:200
+#: core/libs/album/widgets/albumselectors.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:225
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@option"
 msgid "All tags"
 msgstr "सर्व टॅग"
 
-#: core/libs/album/widgets/albumselectors.cpp:249
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:252
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "डाउनलोड केलेले"
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:244
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "अल्बम्स"
 
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:542
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "टॅग्स :"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:543
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
 msgstr "टॅग"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:69
+#: core/libs/album/widgets/albumselectwidget.cpp:65
 #, kde-format
 msgid "Create New Album"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:157
 #, kde-format
 msgid "&New Album"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectwidget.cpp:170
+#: core/libs/album/widgets/albumselectwidget.cpp:158
 #, kde-format
 msgid "Create new album"
 msgstr ""

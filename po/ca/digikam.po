@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-12 01:33+0000\n"
-"PO-Revision-Date: 2024-03-11 12:59+0100\n"
+"POT-Creation-Date: 2024-03-13 01:35+0000\n"
+"PO-Revision-Date: 2024-03-12 20:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1350,6 +1350,9 @@ msgid ""
 "correctly. Go to the digiKam settings and check the availability of the "
 "ExifTool binary file in the metadata section."
 msgstr ""
+"L'ExifTool no està disponible a la instal·lació del digiKam o no funciona "
+"correctament. Aneu a la configuració del digiKam i comproveu la "
+"disponibilitat del fitxer executable de l'ExifTool a la secció metadades."
 
 #: core/app/main/digikamapp.cpp:690 core/app/views/stack/trashview.cpp:514
 #, kde-format
@@ -2858,7 +2861,7 @@ msgstr "Mostra a pantalla completa"
 #: core/libs/album/engine/album.cpp:487
 #: core/libs/album/manager/albummanager.cpp:173
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
-#: core/libs/album/widgets/albumselecttabs.cpp:191
+#: core/libs/album/widgets/albumselecttabs.cpp:178
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
 #, kde-format
@@ -2885,7 +2888,7 @@ msgstr "Mapa"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/app/views/sidebar/labelssidebarwidget.cpp:118
-#: core/libs/album/widgets/albumselecttabs.cpp:194
+#: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
 #: core/utilities/searchwindow/searchfields_createfield.cpp:152
@@ -2952,7 +2955,7 @@ msgstr "Sense etiquetes d'àlbum"
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:176
-#: core/libs/album/widgets/albumselecttabs.cpp:192
+#: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:634
@@ -26988,7 +26991,7 @@ msgid "Scanning albums"
 msgstr "S'estan explorant els àlbums"
 
 #: core/libs/album/manager/albummanager.cpp:179
-#: core/libs/album/widgets/albumselecttabs.cpp:193
+#: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
 #, kde-format
@@ -27814,19 +27817,19 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "Blanc"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:115
+#: core/libs/album/widgets/albumpropsedit.cpp:105
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Àlbum nou"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:115
+#: core/libs/album/widgets/albumpropsedit.cpp:106
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Edició d'àlbum"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:136
+#: core/libs/album/widgets/albumpropsedit.cpp:127
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27836,56 +27839,56 @@ msgstr ""
 "«%1»\n"
 "Propietats de l'àlbum"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:144
+#: core/libs/album/widgets/albumpropsedit.cpp:135
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Títol:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:148
+#: core/libs/album/widgets/albumpropsedit.cpp:139
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Establiu aquí el títol de l'àlbum nou"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:153
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ca&tegoria:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:160
+#: core/libs/album/widgets/albumpropsedit.cpp:151
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "F&ill de:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:166
+#: core/libs/album/widgets/albumpropsedit.cpp:157
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Lle&genda:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:162
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Introduïu aquí la llegenda de l'àlbum..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:165
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Data de l'àlbum:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:180
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&Més antiga"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:181
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
@@ -27893,14 +27896,14 @@ msgstr ""
 "Useu aquest botó per a seleccionar la data de la imatge més antiga de "
 "l'àlbum."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "Mitj&ana"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
@@ -27908,45 +27911,45 @@ msgstr ""
 "Useu aquest botó per a calcular la data mitjana de totes les imatges de "
 "l'àlbum."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Més nova"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr ""
 "Useu aquest botó per a seleccionar la data de la imatge més nova de l'àlbum."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:269
+#: core/libs/album/widgets/albumpropsedit.cpp:260
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Àlbum nou"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:262
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Àlbum seleccionat (predeterminat)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:272
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Arrel de la col·lecció actual"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:346
+#: core/libs/album/widgets/albumpropsedit.cpp:337
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Àlbum sense categoria"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:432
+#: core/libs/album/widgets/albumpropsedit.cpp:423
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27956,167 +27959,167 @@ msgstr ""
 "Crea un àlbum nou a\n"
 "«%1»"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:477
+#: core/libs/album/widgets/albumpropsedit.cpp:468
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "No s'ha pogut calcular la mitjana"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:478
+#: core/libs/album/widgets/albumpropsedit.cpp:469
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "No s'ha pogut calcular la mitjana per a aquest àlbum."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:76
-#: core/libs/album/widgets/albumselectcombobox.cpp:92
+#: core/libs/album/widgets/albumselectcombobox.cpp:69
+#: core/libs/album/widgets/albumselectcombobox.cpp:86
 #, kde-format
 msgid "No Album Selected"
 msgstr "No hi ha cap àlbum seleccionat"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:99
+#: core/libs/album/widgets/albumselectcombobox.cpp:93
 #, kde-format
 msgid "No Tag Selected"
 msgstr "No hi ha cap etiqueta seleccionada"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:299
+#: core/libs/album/widgets/albumselectcombobox.cpp:295
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "S'ha seleccionat 1 etiqueta"
 msgstr[1] "S'han seleccionat %1 etiquetes"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:304
+#: core/libs/album/widgets/albumselectcombobox.cpp:300
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "S'ha seleccionat 1 àlbum"
 msgstr[1] "S'han seleccionat %1 àlbums"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:314
+#: core/libs/album/widgets/albumselectcombobox.cpp:310
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "S'ha exclòs 1 etiqueta"
 msgstr[1] "S'han exclòs %1 etiquetes"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:319
+#: core/libs/album/widgets/albumselectcombobox.cpp:315
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
 msgstr[0] "S'ha exclòs 1 àlbum"
 msgstr[1] "S'han exclòs %1 àlbums"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:80
+#: core/libs/album/widgets/albumselectdialog.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Selecció d'àlbum"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
-#: core/libs/album/widgets/albumselectors.cpp:550
+#: core/libs/album/widgets/albumselectors.cpp:130
+#: core/libs/album/widgets/albumselectors.cpp:538
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Àlbums (tots)"
 
-#: core/libs/album/widgets/albumselectors.cpp:148
+#: core/libs/album/widgets/albumselectors.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Etiquetes (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:180
+#: core/libs/album/widgets/albumselectors.cpp:165
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Tots els àlbums"
 
-#: core/libs/album/widgets/albumselectors.cpp:181
-#: core/libs/album/widgets/albumselectors.cpp:238
+#: core/libs/album/widgets/albumselectors.cpp:166
+#: core/libs/album/widgets/albumselectors.cpp:226
 #, kde-format
 msgctxt "@option"
 msgid "Recursive"
 msgstr "Recursiu"
 
-#: core/libs/album/widgets/albumselectors.cpp:182
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:167
+#: core/libs/album/widgets/albumselectors.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Recursive selection."
 msgstr "Selecció recursiva."
 
-#: core/libs/album/widgets/albumselectors.cpp:192
+#: core/libs/album/widgets/albumselectors.cpp:177
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Seleccioneu tots els àlbums que s'haurien de processar."
 
-#: core/libs/album/widgets/albumselectors.cpp:195
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "No hi ha cap àlbum seleccionat"
 
-#: core/libs/album/widgets/albumselectors.cpp:200
+#: core/libs/album/widgets/albumselectors.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Reinicia els àlbums seleccionats"
 
-#: core/libs/album/widgets/albumselectors.cpp:237
+#: core/libs/album/widgets/albumselectors.cpp:225
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Totes les etiquetes"
 
-#: core/libs/album/widgets/albumselectors.cpp:249
+#: core/libs/album/widgets/albumselectors.cpp:237
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Seleccioneu totes les etiquetes que s'haurien de processar."
 
-#: core/libs/album/widgets/albumselectors.cpp:252
+#: core/libs/album/widgets/albumselectors.cpp:240
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "No hi ha cap etiqueta seleccionada"
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:244
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Reinicia les etiquetes seleccionades"
 
-#: core/libs/album/widgets/albumselectors.cpp:551
+#: core/libs/album/widgets/albumselectors.cpp:539
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Àlbums (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:542
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Etiquetes (totes)"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:543
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
 msgstr "Etiquetes (%1)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:69
+#: core/libs/album/widgets/albumselectwidget.cpp:65
 #, kde-format
 msgid "Create New Album"
 msgstr "Crea un àlbum nou"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:169
+#: core/libs/album/widgets/albumselectwidget.cpp:157
 #, kde-format
 msgid "&New Album"
 msgstr "Àlbum &nou"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:170
+#: core/libs/album/widgets/albumselectwidget.cpp:158
 #, kde-format
 msgid "Create new album"
 msgstr "Crea un àlbum nou"
@@ -63440,7 +63443,7 @@ msgstr ""
 #, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
-"Desmarqueu això si no voleu canviar l'escala de les imatges petites per "
+"Desmarqueu això si no voleu canviar l'escala de les imatges petites per a "
 "ajustar-les a la finestra."
 
 #: core/utilities/setup/album/setupalbumview.cpp:336
