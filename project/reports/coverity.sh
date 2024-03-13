@@ -24,6 +24,10 @@ set -eE
 trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
+. ./common.sh
+
+checksCPUCores
+
 ORIG_WD="`pwd`"
 
 # Check run-time dependencies
@@ -90,13 +94,9 @@ $CMAKE_BINARY -G "Unix Makefiles" . \
       ..
 
 # Get active git branches to create report description string
-./gits branch | sed -e "s/*/#/g" | sed -e "s/On:/#On:/g" | grep "#" | sed -e "s/#On:/On:/g" | sed -e "s/#/BRANCH:/g" > ./build/git_branches.txt
-desc=$(<build/git_branches.txt)
+desc="digiKam-$(parseGitBranch)$(parseGitHash)"
 
 cd $ORIG_WD/../../build.coverity
-
-CPU_CORES=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || sysctl -n hw.ncpu)
-echo "CPU cores detected to compile : $CPU_CORES."
 
 cov-build --dir cov-int --tmpdir ~/tmp make -j$CPU_CORES
 tar czvf myproject.tgz cov-int
