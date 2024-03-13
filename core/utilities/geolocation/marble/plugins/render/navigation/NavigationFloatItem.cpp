@@ -27,14 +27,8 @@
 namespace Marble
 {
 
-NavigationFloatItem::NavigationFloatItem( const MarbleModel *marbleModel )
-    : AbstractFloatItem( marbleModel, QPointF( -10, -30 ) ),
-      m_marbleWidget( nullptr ),
-      m_widgetItem( nullptr ),
-      m_navigationWidget( nullptr ),
-      m_oldViewportRadius( 0 ),
-      m_contextMenu( nullptr ),
-      m_showHomeButton( true )
+NavigationFloatItem::NavigationFloatItem(const MarbleModel* marbleModel)
+    : AbstractFloatItem(marbleModel, QPointF(-10, -30))
 {
     // Plugin is visible by default on desktop systems
     const bool smallScreen = MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen;
