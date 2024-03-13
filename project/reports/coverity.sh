@@ -53,6 +53,12 @@ echo "Check Coverity SCAN Toolkit passed..."
 
 cd $ORIG_WD/../..
 
+# Get active git branches to create report description string
+
+desc="digiKam-$(parseGitBranch)$(parseGitHash)"
+
+# Clean, configure, and build...
+
 rm -fr build.coverity
 mkdir -p build.coverity
 cd build.coverity
@@ -93,12 +99,14 @@ $CMAKE_BINARY -G "Unix Makefiles" . \
       -Wno-dev \
       ..
 
-# Get active git branches to create report description string
-desc="digiKam-$(parseGitBranch)$(parseGitHash)"
-
 cd $ORIG_WD/../../build.coverity
 
 cov-build --dir cov-int --tmpdir ~/tmp make -j$CPU_CORES
+
+# Archive and upload results...
+
+cd $ORIG_WD/../../build.coverity
+
 tar czvf myproject.tgz cov-int
 
 cd $ORIG_WD/../../build.coverity
@@ -113,9 +121,11 @@ echo "-----------------------------"
 echo "Coverity Scan tarball 'myproject.tgz' uploading in progress..."
 
 # To be sure that resolve domain is in cache
+
 nslookup scan.coverity.com
 
 # To measure uploading time
+
 SECONDS=0
 
 curl https://scan.coverity.com/builds?project=digiKam \
