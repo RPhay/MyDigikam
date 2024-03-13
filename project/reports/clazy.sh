@@ -97,9 +97,25 @@ rm -fr build.clazy
 mkdir -p build.clazy
 cd build.clazy
 
-cmake -G "Unix Makefiles" . \
+if [[ -d /opt/qt6 ]] ; then
+
+    export BUILD_WITH_QT6=1
+    export Qt6_DIR=/opt/qt6
+    QTPATHS="/opt/qt6/bin/qtpaths6"
+    export CMAKE_BINARY=/opt/qt6/bin/cmake
+
+else
+
+    export BUILD_WITH_QT6=0
+    QTPATHS="qtpaths"
+    export CMAKE_BINARY=cmake
+
+fi
+
+$CMAKE_BINARY -G "Unix Makefiles" . \
       -DCMAKE_BUILD_TYPE=debug \
       -DCMAKE_CXX_COMPILER=clazy \
+      -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
       -DBUILD_TESTING=ON \
       -DDIGIKAMSC_CHECKOUT_PO=OFF \
       -DDIGIKAMSC_CHECKOUT_DOC=OFF \
@@ -113,6 +129,7 @@ cmake -G "Unix Makefiles" . \
       -DENABLE_QTMULTIMEDIA=ON \
       -DENABLE_DBUS=ON \
       -DENABLE_APPSTYLES=ON \
+      -DENABLE_GEOLOCATION=ON \
       -DENABLE_QWEBENGINE=ON \
       -Wno-dev \
       ..
