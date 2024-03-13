@@ -158,6 +158,7 @@ public:
 MarbleMapPrivate::MarbleMapPrivate( MarbleMap *parent, MarbleModel *model ) :
     q( parent ),
     m_model( model ),
+    m_modelIsOwned( false ),
     m_viewParams(),
     m_showFrameRate( false ),
     m_showDebugPolygons( false ),
