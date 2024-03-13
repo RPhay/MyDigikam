@@ -131,6 +131,8 @@ private:
 
 #ifdef Q_OS_MAC
 
+public:
+
     /**
      * Given a filename extension 'suffix', here's how to find all of the
      * applications known to the MacOS who can open files of that type.
