@@ -49,7 +49,7 @@ GeoDataDocument *PntRunner::parseFile(const QString &fileName, DocumentRole role
         return nullptr;
     }
 
-    file.open( QIODevice::ReadOnly );
+    (void)file.open( QIODevice::ReadOnly );
     QDataStream stream( &file );  // read the data serialized from the file
     stream.setByteOrder( QDataStream::LittleEndian );
 
