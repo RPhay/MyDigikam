@@ -128,15 +128,16 @@ nslookup scan.coverity.com
 
 SECONDS=0
 
-curl https://scan.coverity.com/builds?project=digiKam \
-     --progress-bar \
+curl --progress-bar \
      --verbose \
      --form token=$DKCoverityToken \
      --form email=$digikam-devel@kde.org \
      --form file=@myproject.tgz \
      --form version=git \
-     --form description="$desc"
+     --form description="$desc" \
+     https://scan.coverity.com/builds?project=digiKam
 
+echo ""
 echo "Done. Coverity Scan tarball 'myproject.tgz' is uploaded."
 echo "That took approximately $SECONDS seconds to upload."
 echo "File will be post processed for analyse. A mail notification will be send to digikam-devel@kde.org."
