@@ -271,5 +271,3 @@ BUGFIXES:
 248 ==> 483376 - Authentication for Google Photos / Drive is broken.
 249 ==> 482944 - The date is wrong! digiKam appears to be using modified date not the create date despite there being a "date taken" tag in windows properties.
 250 ==> 483413 - Opening a folder to load a gpx file freezes Digikam if there is a .json file into this folder (any .json file).
-251 ==> 
-252 ==> 
