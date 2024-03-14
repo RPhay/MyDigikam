@@ -1,4 +1,4 @@
-digiKam 8.3.0 - Release date: 2024-03-10
+digiKam 8.3.0 - Release date: 2024-03-17
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -9,7 +9,7 @@ Maintenance    : Add new tool to assign tag automatically to images using deep l
 QueueManager   : New tool to assign tag automatically to images using deep learning neural network engine.
 QueueManager   : New tool to apply metadata from an image or JSON file to images.
 General        : Add Generic Network Proxy Settings to acess on Internet ressources.
-Bundles        : AppImage uses frameworks Qt 5.15.12 and KDE 5.114.
+Bundles        : AppImage uses frameworks Qt 5.15.12 and KDE 5.115.
 Bundles        : Windows installer use frameworks Qt 6.6.1 and KDE snapshot 30122023.
 General        : Update internal Libraw to snapshoot 2024-02-02.
 Setup          : Add new page to customize Geolocation settings.
@@ -269,5 +269,6 @@ BUGFIXES:
 246 ==> 483228 - Error when accessing digikam.org and docs.digikam.org : SSL certificates needs updates.
 247 ==> 483288 - Xmp metadata of some jxl files are not correctly displayed (missing data, duplicated strings, ...).
 248 ==> 483376 - Authentication for Google Photos / Drive is broken.
-249 ==> 
+249 ==> 482944 - The date is wrong! digiKam appears to be using modified date not the create date despite there being a "date taken" tag in windows properties.
 250 ==> 
+251 ==> 
