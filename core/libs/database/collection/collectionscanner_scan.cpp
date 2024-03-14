@@ -140,13 +140,13 @@ void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)
 
     QStringList sortedPaths = albumPaths;
     std::sort(sortedPaths.begin(), sortedPaths.end());
-    QStringList::iterator it, it2;
+    QStringList::const_iterator it, it2;
 
-    for (it = sortedPaths.begin() ; it != sortedPaths.end() ; )
+    for (it = sortedPaths.constBegin() ; it != sortedPaths.constEnd() ; )
     {
         // remove all following entries as long as they have the same beginning (= are subalbums)
 
-        for (it2 = it + 1 ; it2 != sortedPaths.end() && it2->startsWith(*it) ; )
+        for (it2 = it + 1 ; (it2 != sortedPaths.constEnd()) && it2->startsWith(*it) ; )
         {
             it2 = sortedPaths.erase(it2);
         }
