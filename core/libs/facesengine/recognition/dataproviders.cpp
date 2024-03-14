@@ -24,9 +24,9 @@ QListImageListProvider::QListImageListProvider()
 
 QListImageListProvider::~QListImageListProvider()
 {
-    QList<QImage*>::const_iterator img = list.constBegin();
+    QList<QImage*>::iterator img = list.begin();
 
-    while (img != list.constEnd())
+    while (img != list.end())
     {
         delete *img;
         img = list.erase(img);

@@ -185,9 +185,9 @@ void CollectionScannerHintContainerImplementation::recordHint(const ItemMetadata
     else if (hint.isEditingFinished())
     {
         QWriteLocker locker(&lock);
-        QHash<qlonglong, QDateTime>::const_iterator it = metadataAboutToAdjustHints.find(hint.id());
+        QHash<qlonglong, QDateTime>::iterator it = metadataAboutToAdjustHints.find(hint.id());
 
-        if (it == metadataAboutToAdjustHints.constEnd())
+        if (it == metadataAboutToAdjustHints.end())
         {
             return;
         }
