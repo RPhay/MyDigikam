@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 01:35+0000\n"
+"POT-Creation-Date: 2024-03-14 01:58+0000\n"
 "PO-Revision-Date: 2024-03-12 20:26+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -27410,13 +27410,13 @@ msgstr ""
 "Не вдалося скопіювати файл старої бази даних («%1») на його нове місце "
 "(«%2»). Буде розпочато роботу з порожньою базою даних."
 
-#: core/libs/album/manager/albummanager_database.cpp:742
+#: core/libs/album/manager/albummanager_database.cpp:743
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 "<p><b>Будь ласка, перевірте параметри бази даних у цьому вікні.</b></p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:758
+#: core/libs/album/manager/albummanager_database.cpp:759
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -57028,52 +57028,52 @@ msgstr "&Вилучити точки вимірювання"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:55
 #, kde-format
 msgid "Navigation"
 msgstr "Навігація"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
 #, kde-format
 msgid "&Navigation"
 msgstr "&Навігація"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:75
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr "Додаток для керування мишею зміною масштабу і пересуванням картою"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:234
 #, kde-format
 msgid "Current Location Button"
 msgstr "Кнопка поточного розташування"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:237
 #, kde-format
 msgid "Home Button"
 msgstr "Кнопка домівки"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:74
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:68
 #, kde-format
 msgid "Overview Map"
 msgstr "Перегляд карти"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:79
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:73
 #, kde-format
 msgid "&Overview Map"
 msgstr "&Перегляд карти"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:88
 #, kde-format
 msgid "A plugin to add a float item that provides an overview map."
 msgstr "Додаток для додавання рухомого елемента з загальним виглядом карти."
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:479
 #, kde-format
 msgid "Choose Overview Map"
 msgstr "Вибір оглядової карти"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:517
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:511
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr "Будь ласка, виберіть колір позначки позиції"
@@ -57752,83 +57752,83 @@ msgstr "Інструменти запуску"
 msgid "Unable to insert data into cache"
 msgstr "Не вдалося додати дані до кешу"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:131
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:120
 #, kde-format
 msgid "Visible region"
 msgstr "Видима ділянка"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:133
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:122
 #, kde-format
 msgid "Specify region"
 msgstr "Вказати ділянку"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:135
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:124
 #, kde-format
 msgid "Download Route"
 msgstr "Отримати маршрут"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:137
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:126
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr "Увімкнено, якщо маршрут існує"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:150
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:139
 #, kde-format
 msgid "Offset from route:"
 msgstr "Відхилення від маршруту:"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:180
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:169
 #, kde-format
 msgid "Selection Method"
 msgstr "Спосіб вибору"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:188
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:177
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr "Кількість елементів для отримання:"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:238
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:227
 #, kde-format
 msgid "Download Region"
 msgstr "Отримання ділянки"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:240
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:229
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Тип плиток, які буде отримано:"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:242
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:231
 #, kde-format
 msgid "Texture tiles"
 msgstr "Плитки текстур"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:243
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:232
 #, kde-format
 msgid "Vector tiles"
 msgstr "Векторні плитки"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:244
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:233
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 "Надає змогу вибирати тип шарів, які буде показано під час обробки зображення."
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:513
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:527
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Передбачено обмеження отримання даних у %1 плиток."
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:537
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Приблизний об’єм даних, які доведеться отримати"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:527
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:541
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Приблизний об’єм отримання: %1 МБ"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:530
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:544
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Приблизний об’єм отримання: %1 кБ"

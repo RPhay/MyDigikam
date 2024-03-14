@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 01:35+0000\n"
+"POT-Creation-Date: 2024-03-14 01:58+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -27409,12 +27409,12 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​​ការ​ចម្លង​ឯកសារ​មូលដ្ឋាន​​ទិន្នន័យ​ចាស់ (\"%1\") ទៅកាន់​ទីតាំង​ថ្មី​របស់​វា (\"%2\") ។ "
 "ចាប់ផ្ដើម​ដោយ​មាន​មូលដ្ឋាន​ទិន្នន័យ​ទទេ ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:742
+#: core/libs/album/manager/albummanager_database.cpp:743
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:758
+#: core/libs/album/manager/albummanager_database.cpp:759
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@action:button"
@@ -57675,58 +57675,58 @@ msgstr "យក​ស្លាក​នេះ​ចេញ"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:55
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "Navigation"
 msgstr "បង្ហាញ​ការ​ត្រួតពិនិត្យ​ការ​រុករក"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
 #, fuzzy, kde-format
 #| msgid "Show Navigation Control"
 msgid "&Navigation"
 msgstr "បង្ហាញ​ការ​ត្រួតពិនិត្យ​ការ​រុករក"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:75
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:234
 #, fuzzy, kde-format
 #| msgid "Current aspect ratio"
 msgid "Current Location Button"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:237
 #, kde-format
 msgid "Home Button"
 msgstr ""
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:74
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:68
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "Overview Map"
 msgstr "បង្ហាញ​ផែនទី​ទិដ្ឋភាព​ទូទៅ"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:79
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:73
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "&Overview Map"
 msgstr "បង្ហាញ​ផែនទី​ទិដ្ឋភាព​ទូទៅ"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:88
 #, fuzzy, kde-format
 msgid "A plugin to add a float item that provides an overview map."
 msgstr "កែសម្រួល​លក្ខណ​សម្បត្តិ​អាល់ប៊ុម និង​ព័ត៌មាន​សម្រាំង ។"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:479
 #, fuzzy, kde-format
 #| msgid "Show overview map"
 msgid "Choose Overview Map"
 msgstr "បង្ហាញ​ផែនទី​ទិដ្ឋភាព​ទូទៅ"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:517
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:511
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr ""
@@ -58386,84 +58386,84 @@ msgstr "ឧបករណ៍​កាត់"
 msgid "Unable to insert data into cache"
 msgstr "មិន​អាច​រក្សាទុក​ការ​ផ្លាស់ប្ដូរ​ទៅ​កាន់​​ឯកសារ​បាន​ឡើយ"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:131
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:120
 #, fuzzy, kde-format
 msgid "Visible region"
 msgstr "ការ​បង្វិល​សេរី"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:133
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:122
 #, fuzzy, kde-format
 msgid "Specify region"
 msgstr "សេចក្ដី​ណែ​នាំ​ពិសេស​ ៖​"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:135
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:124
 #, fuzzy, kde-format
 msgid "Download Route"
 msgstr "ទាញ​យក​ពី​ម៉ាស៊ីន​ថតរូប"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:137
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:126
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:150
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:139
 #, kde-format
 msgid "Offset from route:"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:180
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:169
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Selection Method"
 msgstr "ទិសដៅ​ ៖"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:188
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:177
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:238
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:227
 #, fuzzy, kde-format
 msgid "Download Region"
 msgstr "ទាញ​យក​ពី​ម៉ាស៊ីន​ថតរូប"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:240
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:229
 #, fuzzy, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:242
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:231
 #, fuzzy, kde-format
 #| msgid "Text Filter"
 msgid "Texture tiles"
 msgstr "តម្រង​អត្ថបទ"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:243
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:232
 #, fuzzy, kde-format
 msgid "Vector tiles"
 msgstr "ឯកសារ​អូឌីយ៉ូ"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:244
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:233
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:513
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:527
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:537
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:527
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:541
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr ""
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:530
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:544
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr ""

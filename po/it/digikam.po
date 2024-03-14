@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 01:35+0000\n"
+"POT-Creation-Date: 2024-03-14 01:58+0000\n"
 "PO-Revision-Date: 2024-03-02 20:31+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -27323,14 +27323,14 @@ msgstr ""
 "Copia del vecchio file della banca dati («%1») nella nuova posizione («%2») "
 "non riuscita. Avvio con una banca dati vuota."
 
-#: core/libs/album/manager/albummanager_database.cpp:742
+#: core/libs/album/manager/albummanager_database.cpp:743
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 "<p><b>Verifica le impostazioni della banca dati in questa finestra di "
 "dialogo.</b></p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:758
+#: core/libs/album/manager/albummanager_database.cpp:759
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -56856,55 +56856,55 @@ msgstr "&Rimuovi punti di misura"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
 #: core/utilities/geolocation/marble/plugins/render/navigation/navigation.ui:14
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:61
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:55
 #, kde-format
 msgid "Navigation"
 msgstr "Navigazione"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:66
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
 #, kde-format
 msgid "&Navigation"
 msgstr "&Navigazione"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:81
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:75
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
 "Estensione per aggiungere il controllo per il mouse per ingrandire e muovere "
 "la mappa."
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:240
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:234
 #, kde-format
 msgid "Current Location Button"
 msgstr "Pulsante della località corrente"
 
-#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:243
+#: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:237
 #, kde-format
 msgid "Home Button"
 msgstr "Pulsante località di riferimento"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:74
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:68
 #, kde-format
 msgid "Overview Map"
 msgstr "Mappa panoramica"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:79
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:73
 #, kde-format
 msgid "&Overview Map"
 msgstr "Mappa &panoramica"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:94
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:88
 #, kde-format
 msgid "A plugin to add a float item that provides an overview map."
 msgstr ""
 "Estensione per aggiungere un oggetto mobile che mostra una mappa panoramica."
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:485
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:479
 #, kde-format
 msgid "Choose Overview Map"
 msgstr "Scegli la mappa panoramica"
 
-#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:517
+#: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMap.cpp:511
 #, kde-format
 msgid "Please choose the color for the position indicator"
 msgstr "Scegli il colore per l'indicatore della posizione"
@@ -57575,84 +57575,84 @@ msgstr "Strumenti di guida"
 msgid "Unable to insert data into cache"
 msgstr "Impossibile inserire i dati nella cache"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:131
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:120
 #, kde-format
 msgid "Visible region"
 msgstr "Regione visibile"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:133
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:122
 #, kde-format
 msgid "Specify region"
 msgstr "Specifica regione"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:135
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:124
 #, kde-format
 msgid "Download Route"
 msgstr "Scarica itinerario"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:137
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:126
 #, kde-format
 msgid "Enabled when a route exists"
 msgstr "Abilitato quando esiste un itinerario"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:150
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:139
 #, kde-format
 msgid "Offset from route:"
 msgstr "Scostamento dall'itinerario:"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:180
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:169
 #, kde-format
 msgid "Selection Method"
 msgstr "Metodo di selezione"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:188
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:177
 #, kde-format
 msgid "Number of tiles to download:"
 msgstr "Numero di tessere da scaricare:"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:238
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:227
 #, kde-format
 msgid "Download Region"
 msgstr "Scarica regione"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:240
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:229
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Tipo di tessera da scaricare:"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:242
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:231
 #, kde-format
 msgid "Texture tiles"
 msgstr "Tessere delle texture"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:243
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:232
 #, kde-format
 msgid "Vector tiles"
 msgstr "Tessere dei vettori"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:244
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:233
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 "Consente la selezione tra i tipi di livello che vengono generati "
 "visibilmente."
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:513
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:527
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "C'è un limite di %1 tessere da scaricare."
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:523
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:537
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Dimensione approssimativa delle tessere da scaricare"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:527
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:541
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Dimensione stimata di scaricamento: %1 MB"
 
-#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:530
+#: core/utilities/geolocation/marble/storage/DownloadRegionDialog.cpp:544
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Dimensione stimata di scaricamento: %1 kB"
