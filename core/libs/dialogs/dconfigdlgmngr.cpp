@@ -50,34 +50,30 @@ class Q_DECL_HIDDEN DConfigDlgMngr::Private
 {
 public:
 
-    explicit Private(DConfigDlgMngr* const q)
-        : q             (q),
-          conf          (nullptr),
-          dialog        (nullptr),
-          insideGroupBox(false),
-          trackChanges  (false)
+    explicit Private(DConfigDlgMngr* const qq)
+        : q(qq)
     {
     }
 
 public:
 
-    DConfigDlgMngr* const    q;
+    DConfigDlgMngr* const    q              = nullptr;
 
     /**
      * Skeleton object used to store settings
      */
-    KConfigSkeleton*         conf;
+    KConfigSkeleton*         conf           = nullptr;
 
     /**
      * Dialog being managed
      */
-    QWidget*                 dialog;
+    QWidget*                 dialog         = nullptr;
 
     QHash<QString, QWidget*> knownWidget;
     QHash<QString, QWidget*> buddyWidget;
     QSet<QWidget*>           allExclusiveGroupBoxes;
-    bool                     insideGroupBox;
-    bool                     trackChanges;
+    bool                     insideGroupBox = false;
+    bool                     trackChanges   = false;
 };
 
 DConfigDlgMngr::DConfigDlgMngr(QWidget* const parent, KConfigSkeleton* const conf)
@@ -336,8 +332,8 @@ bool DConfigDlgMngr::parseChildren(const QWidget* widget, bool trackChanges)
 
                                 if (notifySignal.isValid())
                                 {
-                                    connect(childWidget, notifySignal,      // clazy:exclude=connect-non-signal
-                                            this, widgetModifiedSignal);
+                                    connect(childWidget, notifySignal,
+                                            this, widgetModifiedSignal);       // clazy:exclude=connect-non-signal
 
                                     changeSignalFound = true;
                                 }

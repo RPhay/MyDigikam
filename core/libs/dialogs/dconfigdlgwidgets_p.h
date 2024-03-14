@@ -52,13 +52,7 @@ class Q_DECL_HIDDEN DConfigDlgTitle::Private
 public:
 
     explicit Private(DConfigDlgTitle* const parent)
-        : q              (parent),
-          headerLayout   (nullptr),
-          imageLabel     (nullptr),
-          textLabel      (nullptr),
-          commentLabel   (nullptr),
-          autoHideTimeout(0),
-          messageType    (InfoMessage)
+        : q(parent)
     {
     }
 
@@ -84,14 +78,18 @@ public:
             case InfoMessage:
             case WarningMessage:
             case ErrorMessage:
+            {
                 styleSheet = QString::fromLatin1("QLabel { color: palette(%1); background: palette(%2); }")
                              .arg(q->palette().color(QPalette::HighlightedText).name())
                              .arg(q->palette().color(QPalette::Highlight).name());
                 break;
+            }
 
             case PlainMessage:
             default:
+            {
                 break;
+            }
         }
 
         return styleSheet;
@@ -107,19 +105,27 @@ public:
         switch (type)
         {
             case DConfigDlgTitle::InfoMessage:
+            {
                 return QLatin1String("dialog-information");
                 break;
+            }
 
             case DConfigDlgTitle::ErrorMessage:
+            {
                 return QLatin1String("dialog-error");
                 break;
+            }
 
             case DConfigDlgTitle::WarningMessage:
+            {
                 return QLatin1String("dialog-warning");
                 break;
+            }
 
             case DConfigDlgTitle::PlainMessage:
+            {
                 break;
+            }
         }
 
         return QString();
@@ -132,13 +138,13 @@ public:
 
 public:
 
-    DConfigDlgTitle* q;
-    QGridLayout*     headerLayout;
-    QLabel*          imageLabel;
-    QLabel*          textLabel;
-    QLabel*          commentLabel;
-    int              autoHideTimeout;
-    MessageType      messageType;
+    DConfigDlgTitle* q                  = nullptr;
+    QGridLayout*     headerLayout       = nullptr;
+    QLabel*          imageLabel         = nullptr;
+    QLabel*          textLabel          = nullptr;
+    QLabel*          commentLabel       = nullptr;
+    int              autoHideTimeout    = 0;
+    MessageType      messageType        = InfoMessage;
 };
 
 } // namespace Digikam

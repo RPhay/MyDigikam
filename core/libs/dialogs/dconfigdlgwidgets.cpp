@@ -136,6 +136,7 @@ void DConfigDlgWdg::addSubPage(DConfigDlgWdgItem* parent, DConfigDlgWdgItem* ite
 void DConfigDlgWdg::removePage(DConfigDlgWdgItem* item)
 {
     Q_EMIT pageRemoved(item); // Emit signal before we remove it, because the item will be deleted in the model
+
     d_func()->model()->removePage(item);
 }
 
@@ -267,9 +268,11 @@ void DConfigDlgTitle::changeEvent(QEvent* e)
 {
     QWidget::changeEvent(e);
 
-    if ((e->type() == QEvent::PaletteChange) ||
+    if (
+        (e->type() == QEvent::PaletteChange) ||
         (e->type() == QEvent::FontChange)    ||
-        (e->type() == QEvent::ApplicationFontChange))
+        (e->type() == QEvent::ApplicationFontChange)
+       )
     {
         d->textLabel->setStyleSheet(d->textStyleSheet());
         d->commentLabel->setStyleSheet(d->commentStyleSheet());

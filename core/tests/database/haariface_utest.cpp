@@ -54,6 +54,8 @@ typedef QString ImagePath;
 #define PATHFROMFILEINFO(info) \
     QDir(filesPath).relativeFilePath(info.filePath())
 
+// clazy:excludeall=lambda-in-connect
+
 #define START_SEARCHING_DUPLICATES                                                                          \
 do                                                                                                          \
 {                                                                                                           \
@@ -67,7 +69,7 @@ do                                                                              
     bool complete            = false;                                                                       \
                                                                                                             \
     connect(finder, &DuplicatesFinder::signalComplete,                                                      \
-            [&complete]()      /* clazy:exclude=lambda-in-connect */                                        \
+            [&complete]()                                                                                   \
         {                                                                                                   \
             complete = true;                                                                                \
         }                                                                                                   \

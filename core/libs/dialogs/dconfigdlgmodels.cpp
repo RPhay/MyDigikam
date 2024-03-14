@@ -51,12 +51,7 @@ class Q_DECL_HIDDEN DConfigDlgWdgItem::Private
 {
 public:
 
-    explicit Private()
-        : checkable(false),
-          checked  (false),
-          enabled  (true)
-    {
-    }
+    Private() = default;
 
     ~Private()
     {
@@ -68,9 +63,9 @@ public:
     QString           header;
     QIcon             icon;
     QPointer<QWidget> widget;
-    bool              checkable : 1;
-    bool              checked   : 1;
-    bool              enabled   : 1;
+    bool              checkable = false;
+    bool              checked   = false;
+    bool              enabled   = true;
 };
 
 DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* const widget)

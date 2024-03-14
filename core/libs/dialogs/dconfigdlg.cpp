@@ -33,15 +33,11 @@ class Q_DECL_HIDDEN DConfigDlgPrivate
 protected:
 
     explicit DConfigDlgPrivate(DConfigDlg* const parent)
-        : q_ptr      (parent),
-          mPageWidget(nullptr),
-          mButtonBox (nullptr)
+        : q_ptr(parent)
     {
     }
 
-    virtual ~DConfigDlgPrivate()
-    {
-    }
+    virtual ~DConfigDlgPrivate() = default;
 
     void init()
     {
@@ -80,9 +76,9 @@ protected:
 
 protected:
 
-    DConfigDlg* const q_ptr;
-    DConfigDlgWdg*    mPageWidget;
-    QDialogButtonBox* mButtonBox;
+    DConfigDlg* const q_ptr         = nullptr;
+    DConfigDlgWdg*    mPageWidget   = nullptr;
+    QDialogButtonBox* mButtonBox    = nullptr;
 
 private:
 
