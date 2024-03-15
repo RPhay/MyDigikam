@@ -2397,9 +2397,9 @@ void EclSolar::getLocalDetails(char *otxt)
   int dd, mm, yy, deg, mnt;
   double sec, hh;
 
-  int spp[4], nump;
-  double spt[4], ept[4];
-  double jd, jdf;
+  int spp[4] = {0}, nump;
+  double spt[4] = {0.0}, ept[4] = {0.0};
+  double jd  = 0.0, jdf = 0.0;
   char dts[13];
   char outb[127];
 

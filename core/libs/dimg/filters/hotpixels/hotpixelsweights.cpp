@@ -162,7 +162,7 @@ HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
         {
             // Allocate m_height rows on each position
 
-            m_weightMatrices[i] = new double*[m_height];
+            m_weightMatrices[i] = new double* [m_height];
 
             for (uint j = 0 ; j < m_height ; ++j)
             {
@@ -184,7 +184,7 @@ HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
 void HotPixelsWeights::calculateHotPixelsWeights()
 {
     m_coefficientNumber = (m_twoDim ? ((size_t)m_polynomeOrder + 1) * ((size_t)m_polynomeOrder + 1)
-                                  :  (size_t)m_polynomeOrder + 1);
+                                    :  (size_t)m_polynomeOrder + 1);
     size_t  ix, iy, i, j;
     int     x, y;
 
@@ -236,9 +236,9 @@ void HotPixelsWeights::calculateHotPixelsWeights()
 
     // Allocate memory.
 
-    QScopedArrayPointer<double> matrix (new double[m_coefficientNumber * m_coefficientNumber]);
-    QScopedArrayPointer<double> vector0(new double[m_positions.count() * m_coefficientNumber]);
-    QScopedArrayPointer<double> vector1(new double[m_positions.count() * m_coefficientNumber]);
+    QScopedArrayPointer<double> matrix (new double[m_coefficientNumber * m_coefficientNumber]{});
+    QScopedArrayPointer<double> vector0(new double[m_positions.count() * m_coefficientNumber]{});
+    QScopedArrayPointer<double> vector1(new double[m_positions.count() * m_coefficientNumber]{});
 
     // Calculate coefficient matrix and vectors
 
@@ -292,7 +292,7 @@ void HotPixelsWeights::calculateHotPixelsWeights()
     {
         // Allocate m_height rows on each position
 
-        m_weightMatrices[i] = new double*[m_height];
+        m_weightMatrices[i] = new double* [m_height];
 
         for (j = 0 ; j < m_height ; ++j)
         {
@@ -337,7 +337,7 @@ bool HotPixelsWeights::operator==(const HotPixelsWeights& ws) const
  */
 void HotPixelsWeights::matrixInv (double* const a, const size_t size)
 {
-    QScopedArrayPointer<double> b(new double[size * size]);
+    QScopedArrayPointer<double> b(new double[size * size]{});
     size_t ix, iy, j;
 
     // Copy matrix to new location.
