@@ -36,13 +36,10 @@ class Q_DECL_HIDDEN LocalContrastFilter::Private
 {
 public:
 
-    explicit Private()
-      : current_process_power_value(20.0)
-    {
-    }
+    Private() = default;
 
     /// preprocessed values
-    float                  current_process_power_value;
+    float                  current_process_power_value = 20.0;
 
     LocalContrastContainer par;
 
@@ -154,7 +151,7 @@ void LocalContrastFilter::filterImage()
 void LocalContrastFilter::process8bitRgbImage(unsigned char* const img, int sizex, int sizey)
 {
     int size = sizex * sizey;
-    QScopedArrayPointer<float> tmpimage(new float[size * 3]);
+    QScopedArrayPointer<float> tmpimage(new float[size * 3]{});
 
     for (int i = 0 ; runningFlag() && (i < size * 3) ; ++i)
     {

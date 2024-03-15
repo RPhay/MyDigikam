@@ -40,16 +40,14 @@ class Q_DECL_HIDDEN AutoCrop::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QRect  cropArea;
 };
 
 AutoCrop::AutoCrop(DImg* const img, QObject* const parent)
     : DImgThreadedAnalyser(parent, QLatin1String("AutoCrop")),
-      d(new Private)
+      d                   (new Private)
 {
     setOriginalImage(*img);
 }
@@ -866,14 +864,17 @@ void AutoCrop::startAnalyse()
     else
     {
         //threshold.save("ThresholdedImage.jpg",0,100);
+
         qCDebug(DIGIKAM_DIMG_LOG) << "Area not adequate!";
         qCDebug(DIGIKAM_DIMG_LOG) << "Extra Cropping Required";
 
         // --- Step 2 -- Search between local minima
+
         qCDebug(DIGIKAM_DIMG_LOG) << "In local minima function";
 
         // We need to find the maxima between the first two local minima from either side
-        int* const blackpointCount = new int[threshold.width()];
+
+        int* const blackpointCount = new int[threshold.width()]{};
         int leftminima             = 0;
         int rightminima            = (threshold.width()-1);
         int topCropLine            = 0;
@@ -885,6 +886,7 @@ void AutoCrop::startAnalyse()
         (void) bottomCropLine; // Remove clang warnings.
 
         // initialize black point count
+
         for (i = 0 ; i < threshold.width() ; ++i)
         {
             blackpointCount[i] = 0;

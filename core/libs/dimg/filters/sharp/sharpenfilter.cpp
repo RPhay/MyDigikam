@@ -125,7 +125,7 @@ void SharpenFilter::sharpenImage(double radius, double sigma)
         return;
     }
 
-    QScopedArrayPointer<double> kernel(new double[kernelWidth * kernelWidth]);
+    QScopedArrayPointer<double> kernel(new double[kernelWidth * kernelWidth]{});
 
     if (kernel.isNull())
     {
@@ -209,7 +209,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
         return false;
     }
 
-    QScopedArrayPointer<double> normal_kernel(new double[prm.kernelWidth * prm.kernelWidth]);
+    QScopedArrayPointer<double> normal_kernel(new double[prm.kernelWidth * prm.kernelWidth]{});
 
     if (normal_kernel.isNull())
     {
@@ -236,7 +236,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
     }
 
     prm.normal_kernel = normal_kernel.data();
-    QList<int> vals = multithreadedSteps(m_destImage.width());
+    QList<int> vals   = multithreadedSteps(m_destImage.width());
 
     for (y = 0 ; runningFlag() && (y < m_destImage.height()) ; ++y)
     {

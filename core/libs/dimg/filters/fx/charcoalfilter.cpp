@@ -44,16 +44,11 @@ class Q_DECL_HIDDEN CharcoalFilter::Private
 {
 public:
 
-    explicit Private()
-      : pencil        (5.0),
-        smooth        (10.0),
-        globalProgress(0)
-    {
-    }
+    Private() = default;
 
-    double pencil;
-    double smooth;
-    int    globalProgress;
+    double pencil           = 5.0;
+    double smooth           = 10.0;
+    int    globalProgress   = 0;
 
     QMutex lock;
 };
@@ -114,7 +109,7 @@ void CharcoalFilter::filterImage()
         return;
     }
 
-    QScopedArrayPointer<double> kernel(new double[kernelWidth * kernelWidth]);
+    QScopedArrayPointer<double> kernel(new double[kernelWidth * kernelWidth]{});
 
     if (kernel.isNull())
     {
