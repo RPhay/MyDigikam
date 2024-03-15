@@ -329,8 +329,10 @@ void SlideVideo::slotPlayingStateChanged()
     qCDebug(DIGIKAM_GENERAL_LOG) << "Video orientation from QtAVPlayer:"
                                  << rotate;
 
+    // cppcheck-suppress duplicateConditionalAssign
     if (rotate != d->videoWidget->videoItemOrientation())
     {
+        // cppcheck-suppress duplicateConditionalAssign
         rotate = d->videoWidget->videoItemOrientation();
     }
 
