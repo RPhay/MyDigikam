@@ -39,6 +39,7 @@ krazySkipConfig
 cd ../..
 
 ROOT_REPO="`pwd`"
+ROOT_REPO="${ROOT_REPO:1}"  # Remove root slash
 
 IGNORE_DIRS=""
 
