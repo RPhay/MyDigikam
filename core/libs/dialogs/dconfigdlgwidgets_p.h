@@ -107,19 +107,16 @@ public:
             case DConfigDlgTitle::InfoMessage:
             {
                 return QLatin1String("dialog-information");
-                break;
             }
 
             case DConfigDlgTitle::ErrorMessage:
             {
                 return QLatin1String("dialog-error");
-                break;
             }
 
             case DConfigDlgTitle::WarningMessage:
             {
                 return QLatin1String("dialog-warning");
-                break;
             }
 
             case DConfigDlgTitle::PlainMessage:
