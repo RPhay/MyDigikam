@@ -37,7 +37,6 @@ if [ ! -f /opt/saxon/saxon9he.jar ] ; then
     echo "Aborted..."
     exit -1
 
-
 else
 
     echo "Check Java Saxon 9HE XML parser passed..."
@@ -84,8 +83,7 @@ krazy2all --export xml \
           --exclude-types qml,python,qdoc,perl \
           --topdir ../../ \
           --config ../../.krazy \
-          --outfile ./report.krazy.xml \
-          || true
+          --outfile ./report.krazy.xml
 
 # Clean up XML file
 
