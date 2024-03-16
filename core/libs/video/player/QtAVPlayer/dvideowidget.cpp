@@ -65,6 +65,7 @@ DVideoWidget::DVideoWidget(QWidget* const parent)
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
+    d->videoView->setFrameShape(QFrame::NoFrame);
     d->videoItem   = new QGraphicsVideoItem();
     d->videoScene->addItem(d->videoItem);
     d->videoItem->setAspectRatioMode(Qt::IgnoreAspectRatio);

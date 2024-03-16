@@ -287,6 +287,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
+    d->videoView->setFrameShape(QFrame::NoFrame);
     d->videoItem  = new QGraphicsVideoItem();
     d->player     = new QMediaPlayer(this);
     d->audio      = new QAudioOutput;
