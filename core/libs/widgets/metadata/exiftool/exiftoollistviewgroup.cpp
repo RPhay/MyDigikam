@@ -31,7 +31,8 @@ namespace Digikam
 
 ExifToolListViewGroup::ExifToolListViewGroup(ExifToolListView* const parent,
                                              const QString& group)
-    : QTreeWidgetItem(parent)
+    : QObject        (parent),
+      QTreeWidgetItem(parent)
 {
     setFlags(Qt::ItemIsEnabled);
     setExpanded(true);

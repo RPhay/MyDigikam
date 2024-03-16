@@ -25,8 +25,11 @@ namespace Digikam
 
 class ExifToolListView;
 
-class ExifToolListViewGroup : public QTreeWidgetItem
+class ExifToolListViewGroup : public QObject,
+                              public QTreeWidgetItem
 {
+    Q_OBJECT
+
 public:
 
     ExifToolListViewGroup(ExifToolListView* const parent,
