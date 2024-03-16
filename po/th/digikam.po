@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -31599,7 +31599,7 @@ msgstr "ฟิลเตอร์สีน้ำเงิน"
 msgid "Blur FX Filter"
 msgstr "ฟิลเตอร์สีน้ำเงิน"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, fuzzy, kde-format
 msgid "Charcoal Effect"
 msgstr "ลูกเล่นของสี"
@@ -32313,7 +32313,7 @@ msgstr "ไม่มีโพรไฟล์สำหรับนำเข้า
 msgid "Output color profile \"%1\" not available"
 msgstr "ไม่มีโพรไฟล์สำหรับการส่งข้อมูลออกให้เลือกใช้"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, fuzzy, kde-format
 msgid "Local Contrast Filter"
 msgstr "ความเปรียบต่างภายใน"

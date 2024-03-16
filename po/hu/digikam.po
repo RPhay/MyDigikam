@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -30303,7 +30303,7 @@ msgstr "Elmosás szűrő"
 msgid "Blur FX Filter"
 msgstr "Elmosás FX szűrő"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Szénrajz hatás"
@@ -30969,7 +30969,7 @@ msgstr "A(z) „%1” bemeneti színprofil nem érhető el"
 msgid "Output color profile \"%1\" not available"
 msgstr "A(z) „%1” kimeneti színprofil nem érhető el"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Helyi kontraszt szűrő"

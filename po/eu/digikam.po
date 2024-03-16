@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -32299,7 +32299,7 @@ msgstr "Iragazki urdina"
 msgid "Blur FX Filter"
 msgstr "Iragazki urdina"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, fuzzy, kde-format
 msgid "Charcoal Effect"
 msgstr "Kolorearen efektuak"
@@ -33025,7 +33025,7 @@ msgstr "Ez dago sarrerako profilik erabilgarri"
 msgid "Output color profile \"%1\" not available"
 msgstr "Ez dago irteerako profilik erabilgarri"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, fuzzy, kde-format
 msgid "Local Contrast Filter"
 msgstr "Lokaleko kontrastea"

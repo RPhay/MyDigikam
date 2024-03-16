@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -30184,7 +30184,7 @@ msgstr "फ़िल्टर इस्तेमाल करें"
 msgid "Blur FX Filter"
 msgstr "फ़िल्टर इस्तेमाल करें"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, fuzzy, kde-format
 msgid "Charcoal Effect"
 msgstr "रंग प्रभाव"
@@ -30866,7 +30866,7 @@ msgstr "कोई प्रोफ़ाइल उपलब्ध नहीं...
 msgid "Output color profile \"%1\" not available"
 msgstr "कोई प्रोफ़ाइल उपलब्ध नहीं..."
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, fuzzy, kde-format
 msgid "Local Contrast Filter"
 msgstr "कंट्रास्ट बढ़ाएँ"

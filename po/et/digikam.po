@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -33430,7 +33430,7 @@ msgstr "Hägufilter"
 msgid "Blur FX Filter"
 msgstr "Hägustamise eriefektide filter"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Söejoonistuse efekt"
@@ -34165,7 +34165,7 @@ msgstr "Sisend-värviprofiil \"%1\" ei ole saadaval"
 msgid "Output color profile \"%1\" not available"
 msgstr "Väljund-värviprofiil \"%1\" ei ole saadaval"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Kohalik kontrasti filter"

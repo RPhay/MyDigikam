@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2024-03-12 20:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -31752,7 +31752,7 @@ msgstr "Filtre de difuminat"
 msgid "Blur FX Filter"
 msgstr "Filtre d'efectes especials de difuminat"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Efecte de carbonet"
@@ -32467,7 +32467,7 @@ msgstr "El perfil de color «%1» d'entrada no està disponible"
 msgid "Output color profile \"%1\" not available"
 msgstr "El perfil de color «%1» de sortida no està disponible"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Filtre de contrast local"

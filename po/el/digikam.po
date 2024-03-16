@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -33239,7 +33239,7 @@ msgstr "Φίλτρο θαμπώματος"
 msgid "Blur FX Filter"
 msgstr "Φίλτρο θαμπώματος FX"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Εφέ κάρβουνου"
@@ -33988,7 +33988,7 @@ msgstr "Το προφίλ \"%1\" του χρώματος εισόδου δεν �
 msgid "Output color profile \"%1\" not available"
 msgstr "Το προφίλ \"%1\" του χρώματος εξόδου δεν είναι διαθέσιμο"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Φίλτρο τοπικής αντίθεσης"

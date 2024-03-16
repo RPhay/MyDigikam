@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2023-09-03 12:57+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -34151,7 +34151,7 @@ msgstr "Filtro de desenfoque"
 msgid "Blur FX Filter"
 msgstr "Filtro de desenfoque FX"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Filtro de carbón"
@@ -34895,7 +34895,7 @@ msgstr "Non se dispón do perfil de cores de entrada «%1»"
 msgid "Output color profile \"%1\" not available"
 msgstr "Non se dispón do perfil de cores de saída «%1»"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Filtro de contraste local"

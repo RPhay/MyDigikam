@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -31818,7 +31818,7 @@ msgstr "Sumennussuodatin"
 msgid "Blur FX Filter"
 msgstr "Sumennustehostesuodatin"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Hiilipiirustustehoste"
@@ -32490,7 +32490,7 @@ msgstr "Syöteväriprofiili ”%1” ei käytettävissä"
 msgid "Output color profile \"%1\" not available"
 msgstr "Tulosväriprofiili ”%1” ei käytettävissä"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Paikalliskontrastisuodin"

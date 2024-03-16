@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
-"PO-Revision-Date: 2024-03-14 19:29\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
+"PO-Revision-Date: 2024-03-15 21:02\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -30345,7 +30345,7 @@ msgstr "模糊滤镜"
 msgid "Blur FX Filter"
 msgstr "模糊特效滤镜"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "炭笔画特效"
@@ -31029,7 +31029,7 @@ msgstr "输入色彩特性文件“%1”不可用"
 msgid "Output color profile \"%1\" not available"
 msgstr "输出色彩特性文件“%1”不可用"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "局部对比度滤镜"

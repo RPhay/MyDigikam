@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2024-02-05 11:46+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -31331,7 +31331,7 @@ msgstr "Móðunarsía"
 msgid "Blur FX Filter"
 msgstr "FX móðunarsía"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, kde-format
 msgid "Charcoal Effect"
 msgstr "Viðarkolateikning"
@@ -32035,7 +32035,7 @@ msgstr "Inntakslitasniðið \"%1\" er ekki tiltækt"
 msgid "Output color profile \"%1\" not available"
 msgstr "Úttakslitasniðið \"%1\" er ekki tiltækt"
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, kde-format
 msgid "Local Contrast Filter"
 msgstr "Staðbundin birtuskil"

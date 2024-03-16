@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 01:58+0000\n"
+"POT-Creation-Date: 2024-03-16 02:02+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -30995,7 +30995,7 @@ msgstr "پالایه قرمز"
 msgid "Blur FX Filter"
 msgstr "پالایه قرمز"
 
-#: core/libs/dimg/filters/fx/charcoalfilter.cpp:89
+#: core/libs/dimg/filters/fx/charcoalfilter.cpp:84
 #, fuzzy, kde-format
 msgid "Charcoal Effect"
 msgstr "جلوه‌های رنگ"
@@ -31700,7 +31700,7 @@ msgstr "هیچ profile موجود نیست..."
 msgid "Output color profile \"%1\" not available"
 msgstr "هیچ profile موجود نیست..."
 
-#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:77
+#: core/libs/dimg/filters/lc/localcontrastfilter.cpp:74
 #, fuzzy, kde-format
 msgid "Local Contrast Filter"
 msgstr "افزایش سایه روشن"
