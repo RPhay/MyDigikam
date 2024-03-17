@@ -59,6 +59,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     if (!file)
     {
         loadingFailed();
+
         return false;
     }
 
@@ -74,17 +75,12 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     cinfo.err->output_message = dimg_jpeg_output_message;
 
     // setjmp-save cleanup
+
     class Q_DECL_HIDDEN CleanupData
     {
     public:
 
-        CleanupData()
-          : data(nullptr),
-            dest(nullptr),
-            file(nullptr),
-            cmod(0)
-        {
-        }
+        CleanupData() = default;
 
         ~CleanupData()
         {
@@ -135,12 +131,12 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     public:
 
-        uchar* data;
-        uchar* dest;
-        FILE*  file;
+        uchar* data = nullptr;
+        uchar* dest = nullptr;
+        FILE*  file = nullptr;
 
         QSize  size;
-        int    cmod;
+        int    cmod = 0;
     };
 
     CleanupData* const cleanupData = new CleanupData;
@@ -166,6 +162,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         {
             delete cleanupData;
             loadingFailed();
+
             return false;
         }
 
@@ -191,11 +188,13 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
         cleanupData->takeDest();
         delete cleanupData;
+
         return true;
     }
 
     // -------------------------------------------------------------------
     // Find out if we do the fast-track loading with reduced size. Jpeg specific.
+
     int scaledLoadingSize = 0;
     QVariant attribute    = imageGetAttribute(QLatin1String("scaledLoadingSize"));
 
@@ -213,15 +212,18 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     jpeg_stdio_src(&cinfo, file);
 
     // Recording ICC profile marker (from iccjpeg.c)
+
     if (m_loadFlags & LoadICCData)
     {
         setup_read_icc_profile(&cinfo);
     }
 
     // read image information
+
     jpeg_read_header(&cinfo, boolean(true));
 
     // read dimension (nominal values from header)
+
     int w = cinfo.image_width;
     int h = cinfo.image_height;
     QSize originalSize(w, h);
@@ -229,38 +231,52 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     // Libjpeg handles the following conversions:
     // YCbCr => GRAYSCALE, YCbCr => RGB, GRAYSCALE => RGB, YCCK => CMYK
     // So we cannot get RGB from CMYK or YCCK, CMYK conversion is handled below
+
     int colorModel = DImg::COLORMODELUNKNOWN;
 
     switch (cinfo.jpeg_color_space)
     {
         case JCS_UNKNOWN:
+        {
             // perhaps jpeg_read_header did some guessing, leave value unchanged
+
             colorModel            = DImg::COLORMODELUNKNOWN;
             break;
+        }
 
         case JCS_GRAYSCALE:
+        {
             cinfo.out_color_space = JCS_RGB;
             colorModel            = DImg::GRAYSCALE;
             break;
+        }
 
         case JCS_RGB:
+        {
             cinfo.out_color_space = JCS_RGB;
             colorModel            = DImg::RGB;
             break;
+        }
 
         case JCS_YCbCr:
+        {
             cinfo.out_color_space = JCS_RGB;
             colorModel            = DImg::YCBCR;
             break;
+        }
 
         case JCS_CMYK:
         case JCS_YCCK:
+        {
             cinfo.out_color_space = JCS_CMYK;
             colorModel            = DImg::CMYK;
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     cleanupData->setColorModel(colorModel);
@@ -273,10 +289,12 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     if (m_loadFlags & LoadImageData)
     {
         // set decompression parameters
+
         cinfo.do_fancy_upsampling = boolean(true);
         cinfo.do_block_smoothing  = boolean(false);
 
         // handle scaled loading
+
         if (scaledLoadingSize)
         {
             int imgSize = qMax(cinfo.image_width, cinfo.image_height);
@@ -301,6 +319,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         }
 
         // initialize decompression
+
         if (!startedDecompress)
         {
             jpeg_start_decompress(&cinfo);
@@ -308,12 +327,14 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         }
 
         // some pseudo-progress
+
         if (observer)
         {
             observer->progressInfo(0.1F);
         }
 
         // re-read dimension (scaling included)
+
         w = cinfo.output_width;
         h = cinfo.output_height;
 
@@ -332,14 +353,18 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
             qCWarning(DIGIKAM_DIMG_LOG_JPEG) << "Height of JPEG scanline buffer out of range!";
             delete cleanupData;
             loadingFailed();
+
             return false;
         }
 
         // We only take RGB with 1 or 3 components, or CMYK with 4 components
-        if (!(
-                (cinfo.out_color_space == JCS_RGB  && (cinfo.output_components == 3 || cinfo.output_components == 1)) ||
-                (cinfo.out_color_space == JCS_CMYK &&  cinfo.output_components == 4)
-            ))
+
+        if (
+            !(
+                ((cinfo.out_color_space == JCS_RGB)  && ((cinfo.output_components == 3) || (cinfo.output_components == 1))) ||
+                ((cinfo.out_color_space == JCS_CMYK) && (cinfo.output_components == 4))
+             )
+           )
         {
             jpeg_destroy_decompress(&cinfo);
             qCWarning(DIGIKAM_DIMG_LOG_JPEG)
@@ -350,6 +375,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     << ") unsupported!";
             delete cleanupData;
             loadingFailed();
+
             return false;
         }
 
@@ -362,6 +388,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
             qCWarning(DIGIKAM_DIMG_LOG_JPEG) << "Cannot allocate memory!";
             delete cleanupData;
             loadingFailed();
+
             return false;
         }
 
@@ -375,6 +402,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
             qCWarning(DIGIKAM_DIMG_LOG_JPEG) << "Cannot allocate memory!";
             delete cleanupData;
             loadingFailed();
+
             return false;
         }
 
@@ -384,17 +412,18 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
         if (cinfo.output_components == 3)
         {
-            for (i = 0; i < cinfo.rec_outbuf_height; ++i)
+            for (i = 0 ; i < cinfo.rec_outbuf_height ; ++i)
             {
                 line[i] = data + (i * w * 3);
             }
 
             int checkPoint = 0;
 
-            for (l = 0; l < h; l += cinfo.rec_outbuf_height)
+            for (l = 0 ; l < h ; l += cinfo.rec_outbuf_height)
             {
                 // use 0-10% and 90-100% for pseudo-progress
-                if (observer && l >= checkPoint)
+
+                if (observer && (l >= checkPoint))
                 {
                     checkPoint += granularity(observer, h, 0.8F);
 
@@ -403,6 +432,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         jpeg_destroy_decompress(&cinfo);
                         delete cleanupData;
                         loadingFailed();
+
                         return false;
                     }
 
@@ -419,9 +449,9 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                 ptr = data;
 
-                for (y = 0; y < scans; ++y)
+                for (y = 0 ; y < scans ; ++y)
                 {
-                    for (x = 0; x < w; ++x)
+                    for (x = 0 ; x < w ; ++x)
                     {
                         ptr2[3] = 0xFF;
                         ptr2[2] = ptr[0];
@@ -436,16 +466,16 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         }
         else if (cinfo.output_components == 1)
         {
-            for (i = 0; i < cinfo.rec_outbuf_height; ++i)
+            for (i = 0 ; i < cinfo.rec_outbuf_height ; ++i)
             {
                 line[i] = data + (i * w);
             }
 
             int checkPoint = 0;
 
-            for (l = 0; l < h; l += cinfo.rec_outbuf_height)
+            for (l = 0 ; l < h ; l += cinfo.rec_outbuf_height)
             {
-                if (observer && l >= checkPoint)
+                if (observer && (l >= checkPoint))
                 {
                     checkPoint += granularity(observer, h, 0.8F);
 
@@ -454,6 +484,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         jpeg_destroy_decompress(&cinfo);
                         delete cleanupData;
                         loadingFailed();
+
                         return false;
                     }
 
@@ -470,9 +501,9 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                 ptr = data;
 
-                for (y = 0; y < scans; ++y)
+                for (y = 0 ; y < scans ; ++y)
                 {
-                    for (x = 0; x < w; ++x)
+                    for (x = 0 ; x < w ; ++x)
                     {
                         ptr2[3] = 0xFF;
                         ptr2[2] = ptr[0];
@@ -487,17 +518,18 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         }
         else // CMYK
         {
-            for (i = 0; i < cinfo.rec_outbuf_height; ++i)
+            for (i = 0 ; i < cinfo.rec_outbuf_height ; ++i)
             {
                 line[i] = data + (i * w * 4);
             }
 
             int checkPoint = 0;
 
-            for (l = 0; l < h; l += cinfo.rec_outbuf_height)
+            for (l = 0 ; l < h ; l += cinfo.rec_outbuf_height)
             {
                 // use 0-10% and 90-100% for pseudo-progress
-                if (observer && l >= checkPoint)
+
+                if (observer && (l >= checkPoint))
                 {
                     checkPoint += granularity(observer, h, 0.8F);
 
@@ -506,6 +538,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         jpeg_destroy_decompress(&cinfo);
                         delete cleanupData;
                         loadingFailed();
+
                         return false;
                     }
 
@@ -522,9 +555,9 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                 ptr   = data;
 
-                for (y = 0; y < scans; ++y)
+                for (y = 0 ; y < scans ; ++y)
                 {
-                    for (x = 0; x < w; ++x)
+                    for (x = 0 ; x < w ; ++x)
                     {
                         // Inspired by Qt's JPEG loader
 
@@ -543,6 +576,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         }
 
         // clean up
+
         cleanupData->deleteData();
     }
 
@@ -573,6 +607,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         else
         {
             // If ICC profile is null, check Exif metadata.
+
             checkExifWorkingColorSpace();
         }
     }

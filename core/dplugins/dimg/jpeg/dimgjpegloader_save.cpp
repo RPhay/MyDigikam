@@ -72,15 +72,12 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     cinfo.err->output_message = dimg_jpeg_output_message;
 
     // setjmp-save cleanup
+
     class Q_DECL_HIDDEN CleanupData
     {
     public:
 
-        CleanupData()
-            : line(nullptr),
-              f(nullptr)
-        {
-        }
+        CleanupData() = default;
 
         ~CleanupData()
         {
@@ -110,8 +107,8 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     public:
 
-        uchar* line;
-        FILE*  f;
+        uchar* line = nullptr;
+        FILE*  f    = nullptr;
     };
 
     CleanupData* const cleanupData = new CleanupData;
@@ -145,10 +142,12 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     unsigned char*& data   = imageData();
 
     // Size of image.
+
     cinfo.image_width      = w;
     cinfo.image_height     = h;
 
     // Color components of image in RGB.
+
     cinfo.input_components = 3;
     cinfo.in_color_space   = JCS_RGB;
 
@@ -260,10 +259,9 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     if (!imageSixteenBit())     // 8 bits image.
     {
-
         uchar* srcPtr = data;
 
-        for (uint j = 0; j < h; ++j)
+        for (uint j = 0 ; j < h ; ++j)
         {
 
             if (observer && j == checkPoint)
@@ -274,16 +272,18 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 {
                     jpeg_destroy_compress(&cinfo);
                     delete cleanupData;
+
                     return false;
                 }
 
                 // use 0-20% for pseudo-progress, now fill 20-100%
+
                 observer->progressInfo(0.2F + (0.8F * (((float)j) / ((float)h))));
             }
 
             dstPtr = line;
 
-            for (uint i = 0; i < w; ++i)
+            for (uint i = 0 ; i < w ; ++i)
             {
                 dstPtr[2] = srcPtr[0];  // Blue
                 dstPtr[1] = srcPtr[1];  // Green
@@ -300,7 +300,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     {
         unsigned short* srcPtr = reinterpret_cast<unsigned short*>(data);
 
-        for (uint j = 0; j < h; ++j)
+        for (uint j = 0 ; j < h ; ++j)
         {
 
             if (observer && j == checkPoint)
@@ -311,16 +311,18 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 {
                     jpeg_destroy_compress(&cinfo);
                     delete cleanupData;
+
                     return false;
                 }
 
                 // use 0-20% for pseudo-progress, now fill 20-100%
+
                 observer->progressInfo(0.2F + (0.8F * (((float)j) / ((float)h))));
             }
 
             dstPtr = line;
 
-            for (uint i = 0; i < w; ++i)
+            for (uint i = 0 ; i < w ; ++i)
             {
                 dstPtr[2] = (srcPtr[0] * 255UL) / 65535UL;  // Blue
                 dstPtr[1] = (srcPtr[1] * 255UL) / 65535UL;  // Green

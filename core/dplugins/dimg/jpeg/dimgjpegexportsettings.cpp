@@ -41,25 +41,17 @@ class Q_DECL_HIDDEN DImgJPEGExportSettings::Private
 
 public:
 
-    explicit Private()
-      : JPEGGrid            (nullptr),
-        labelJPEGcompression(nullptr),
-        labelWarning        (nullptr),
-        labelSubSampling    (nullptr),
-        subSamplingCB       (nullptr),
-        JPEGcompression     (nullptr)
-    {
-    }
+    Private() = default;
 
-    QGridLayout*  JPEGGrid;
+    QGridLayout*  JPEGGrid              = nullptr;
 
-    QLabel*       labelJPEGcompression;
-    QLabel*       labelWarning;
-    QLabel*       labelSubSampling;
+    QLabel*       labelJPEGcompression  = nullptr;
+    QLabel*       labelWarning          = nullptr;
+    QLabel*       labelSubSampling      = nullptr;
 
-    QComboBox*    subSamplingCB;
+    QComboBox*    subSamplingCB         = nullptr;
 
-    DIntNumInput* JPEGcompression;
+    DIntNumInput* JPEGcompression       = nullptr;
 };
 
 DImgJPEGExportSettings::DImgJPEGExportSettings(QWidget* const parent)
