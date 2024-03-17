@@ -91,9 +91,9 @@ scan-build $CMAKE_BINARY -G "Unix Makefiles" \
       ..
 
 scan-build -o $REPORT_DIR \
-           -no-failure-reports \
            -v \
            -k \
+           -no-failure-reports \
            --keep-empty \
            --html-title $TITLE \
            $IGNORE_DIRS \
