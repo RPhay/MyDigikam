@@ -230,7 +230,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
                                                             : afPointWidths[i].toFloat();
 
         float afPointHeightUsed = (afPointWidths.isEmpty()) ? afPointHeight.toFloat()
-                                                            : afPointWidths[i].toFloat();
+                                                            : afPointHeights[i].toFloat();
 
         FocusPoint point        = CanonInternal::create_af_point(
                                                                  imageWidth.toFloat(),
