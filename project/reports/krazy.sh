@@ -83,7 +83,8 @@ krazy2all --export xml \
           --exclude-types qml,python,qdoc,perl \
           --topdir ../../ \
           --config ../../.krazy \
-          --outfile ./report.krazy.xml
+          --outfile ./report.krazy.xml \
+          || true
 
 # Clean up XML file
 
