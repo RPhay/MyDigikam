@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-17 01:57+0000\n"
+"POT-Creation-Date: 2024-03-18 01:59+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -6922,13 +6922,13 @@ msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr "ez"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:76
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:68
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:181
 #, kde-format
 msgid "JPEG quality:"
 msgstr "JPEG kalitatea:"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:78
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:70
 #, kde-format
 msgid ""
 "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and small "
@@ -6942,7 +6942,7 @@ msgstr ""
 "(konpresiorik ez eta fitxategi handiak)</p><p><b>Oharra: JPEG ez da "
 "galerarik gabeko konpresio-formatu bat.</b></p>"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:87
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:79
 #, kde-format
 msgid ""
 "<font color='red'><i>Warning: <a href='https://en.wikipedia.org/wiki/"
@@ -6951,32 +6951,32 @@ msgstr ""
 "<font color='red'><i>Abisua: <a href='https://en.wikipedia.org/wiki/"
 "JPEG'>JPEG</a> galera duen irudi konpresio-formatu bat da.</i></font>"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:97
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:89
 #, kde-format
 msgid "Chroma subsampling:"
 msgstr "Kromaren azpilagina:"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:100
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:92
 #, kde-format
 msgid "4:4:4 (best quality)"
 msgstr "4:4:4 (kalitaterik onena)"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:101
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:93
 #, kde-format
 msgid "4:2:2 (good quality)"
 msgstr "4:2:2 (kalitate ona)"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:102
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:94
 #, kde-format
 msgid "4:2:0 (low quality)"
 msgstr "4:2:0 (kalitate baxua)"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:103
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:95
 #, kde-format
 msgid "4:1:1 (low quality)"
 msgstr "4:1:1 (kalitate baxua)"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:104
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:96
 #, kde-format
 msgid ""
 "<p>Chroma subsampling reduces file size by taking advantage of the eye's "

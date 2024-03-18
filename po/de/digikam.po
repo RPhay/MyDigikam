@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-17 01:57+0000\n"
+"POT-Creation-Date: 2024-03-18 01:59+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -7005,13 +7005,13 @@ msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr "nein"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:76
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:68
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:181
 #, kde-format
 msgid "JPEG quality:"
 msgstr "JPEG-Qualität:"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:78
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:70
 #, kde-format
 msgid ""
 "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and small "
@@ -7025,7 +7025,7 @@ msgstr ""
 "(keine Komprimierung und große Datei)</p><p><b>Beachten Sie: JPEG ist ein "
 "verlustbehaftetes Format.</b></p>"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:87
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:79
 #, kde-format
 msgid ""
 "<font color='red'><i>Warning: <a href='https://en.wikipedia.org/wiki/"
@@ -7034,32 +7034,32 @@ msgstr ""
 "<font color='red'><i>Warnung: <a href='https://de.wikipedia.org/wiki/"
 "JPEG'>JPEG</a> ist ein Format mit verlustbehafteter Komprimierung.</i></font>"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:97
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:89
 #, kde-format
 msgid "Chroma subsampling:"
 msgstr "Farbton-Unterabtastung:"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:100
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:92
 #, kde-format
 msgid "4:4:4 (best quality)"
 msgstr "4:4:4 (Beste Qualität)"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:101
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:93
 #, kde-format
 msgid "4:2:2 (good quality)"
 msgstr "4:2:2 (Gute Qualität)"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:102
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:94
 #, kde-format
 msgid "4:2:0 (low quality)"
 msgstr "4:2:0 (Niedrige Qualität)"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:103
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:95
 #, kde-format
 msgid "4:1:1 (low quality)"
 msgstr "4:1:1 (Niedrige Qualität)"
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:104
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:96
 #, kde-format
 msgid ""
 "<p>Chroma subsampling reduces file size by taking advantage of the eye's "
