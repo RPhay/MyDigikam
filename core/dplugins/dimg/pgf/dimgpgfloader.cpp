@@ -83,10 +83,7 @@ namespace Digikam
 {
 
 DImgPGFLoader::DImgPGFLoader(DImg* const image)
-    : DImgLoader  (image),
-      m_sixteenBit(false),
-      m_hasAlpha  (false),
-      m_observer  (nullptr)
+    : DImgLoader(image)
 {
 }
 

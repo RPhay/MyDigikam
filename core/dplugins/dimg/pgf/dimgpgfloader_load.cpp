@@ -122,6 +122,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     if (memcmp(&header[0], &pgfID, 3) != 0)
     {
         // not a PGF file
+
         loadingFailed();
         fclose(file);
 
@@ -166,22 +167,28 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     try
     {
         // open pgf image
+
         pgf.Open(&stream);
 
         switch (pgf.Mode())
         {
             case ImageModeRGBColor:
             case ImageModeRGB48:
+            {
                 m_hasAlpha = false;
                 colorModel = DImg::RGB;
                 break;
+            }
 
             case ImageModeRGBA:
+            {
                 m_hasAlpha = true;
                 colorModel = DImg::RGB;
                 break;
+            }
 
             default:
+            {
                 qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Cannot load PGF image: color mode not supported ("
                                                 << pgf.Mode() << ")";
 
@@ -199,15 +206,19 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
                 return false;
                 break;
+            }
         }
 
         switch (pgf.Channels())
         {
             case 3:
             case 4:
+            {
                 break;
+            }
 
             default:
+            {
                 qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Cannot load PGF image: color channels number not supported ("
                                                 << pgf.Channels() << ")";
 
@@ -224,7 +235,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                 loadingFailed();
 
                 return false;
-                break;
+            }
         }
 
         int bitDepth = pgf.BPP();
@@ -233,15 +244,20 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         {
             case 24:    // RGB 8 bits.
             case 32:    // RGBA 8 bits.
+            {
                 m_sixteenBit = false;
                 break;
+            }
 
             case 48:    // RGB 16 bits.
             case 64:    // RGBA 16 bits.
+            {
                 m_sixteenBit = true;
                 break;
+            }
 
             default:
+            {
                 qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Cannot load PGF image: color bits depth not supported ("
                                                 << bitDepth << ")";
 
@@ -258,7 +274,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                 loadingFailed();
 
                 return false;
-                break;
+            }
         }
 
         if (DIGIKAM_DIMG_LOG_PGF().isDebugEnabled())
@@ -275,6 +291,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         }
 
         // NOTE: see bug #273765 : Loading PGF thumbs with OpenMP support through a separated thread do not work properly with libppgf 6.11.24
+
         pgf.ConfigureDecoder(false);
 
         int width   = pgf.Width();
@@ -285,8 +302,8 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         if (m_loadFlags & LoadImageData)
         {
-            // -------------------------------------------------------------------
             // Find out if we do the fast-track loading with reduced size. PGF specific.
+
             int level          = 0;
             QVariant attribute = imageGetAttribute(QLatin1String("scaledLoadingSize"));
 
@@ -328,6 +345,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             }
 
             // Fill all with 255 including alpha channel.
+
             memset(data, 0xFF, width * height * (m_sixteenBit ? 8 : 4));
 
             pgf.Read(level, DImgPGFLoader::CallbackForLibPGF, this);
@@ -360,6 +378,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         if (m_loadFlags & LoadICCData)
         {
             // TODO: Implement proper storage in PGF for color profiles
+
             checkExifWorkingColorSpace();
         }
 

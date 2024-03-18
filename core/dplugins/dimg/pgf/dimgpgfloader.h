@@ -52,10 +52,10 @@ private:
 
 private:
 
-    bool                m_sixteenBit;
-    bool                m_hasAlpha;
+    bool                m_sixteenBit    = false;
+    bool                m_hasAlpha      = false;
 
-    DImgLoaderObserver* m_observer;
+    DImgLoaderObserver* m_observer      = nullptr;
 };
 
 } // namespace Digikam

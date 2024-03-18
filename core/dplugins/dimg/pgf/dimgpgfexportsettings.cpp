@@ -40,21 +40,15 @@ class Q_DECL_HIDDEN DImgPGFExportSettings::Private
 
 public:
 
-    explicit Private()
-      : PGFGrid            (nullptr),
-        labelPGFcompression(nullptr),
-        PGFLossLess        (nullptr),
-        PGFcompression     (nullptr)
-    {
-    }
+    Private() = default;
 
-    QGridLayout*  PGFGrid;
+    QGridLayout*  PGFGrid               = nullptr;
 
-    QLabel*       labelPGFcompression;
+    QLabel*       labelPGFcompression   = nullptr;
 
-    QCheckBox*    PGFLossLess;
+    QCheckBox*    PGFLossLess           = nullptr;
 
-    DIntNumInput* PGFcompression;
+    DIntNumInput* PGFcompression        = nullptr;
 };
 
 DImgPGFExportSettings::DImgPGFExportSettings(QWidget* const parent)
