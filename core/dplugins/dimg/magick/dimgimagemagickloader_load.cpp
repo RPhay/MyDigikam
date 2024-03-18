@@ -141,6 +141,7 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
 #endif
 
             // We considering that PNG is the most representative format of an image loaded by ImageMagick
+
             imageSetAttribute(QLatin1String("format"),             QLatin1String("PNG"));
             imageSetAttribute(QLatin1String("originalColorModel"), DImg::RGB);
             imageSetAttribute(QLatin1String("originalBitDepth"),   m_sixteenBit ? 16 : 8);
@@ -182,6 +183,7 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagick exception [" << filePath << "]" << error.what();
         loadingFailed();
+
         return false;
     }
 

@@ -55,8 +55,6 @@ namespace DigikamImageMagickDImgPlugin
 DImgImageMagickLoader::DImgImageMagickLoader(DImg* const image)
     : DImgLoader(image)
 {
-    m_hasAlpha   = false;
-    m_sixteenBit = false;
 }
 
 DImgImageMagickLoader::~DImgImageMagickLoader()

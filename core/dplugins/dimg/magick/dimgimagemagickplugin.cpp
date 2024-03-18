@@ -133,7 +133,7 @@ QList<DPluginAuthor> DImgImageMagickPlugin::authors() const
                              QString::fromUtf8("(C) 2019-2023"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2023"))
+                             QString::fromUtf8("(C) 2006-2024"))
             ;
 }
 
@@ -156,6 +156,7 @@ QMap<QString, QStringList> DImgImageMagickPlugin::extraAboutData() const
         if (!inflst)
         {
             qCWarning(DIGIKAM_DIMG_LOG_MAGICK) << "ImageMagick coders list is null!";
+
             return QMap<QString, QStringList>();
         }
 
@@ -198,6 +199,7 @@ QMap<QString, QStringList> DImgImageMagickPlugin::extraAboutData() const
     catch (Exception& error)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
+
         return QMap<QString, QStringList>();
     }
 
@@ -295,11 +297,11 @@ QStringList DImgImageMagickPlugin::decoderFormats() const
 
 #if (MagickLibVersion >= 0x69A && defined(magick_module))
 
-            formats.append(QString::fromLatin1(inf->magick_module).toUpper());
+                formats.append(QString::fromLatin1(inf->magick_module).toUpper());
 
 #else
 
-            formats.append(QString::fromLatin1(inf->module).toUpper());
+                formats.append(QString::fromLatin1(inf->module).toUpper());
 
 #endif
 
@@ -311,6 +313,7 @@ QStringList DImgImageMagickPlugin::decoderFormats() const
     catch (Exception& error)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
+
         return QStringList();
     }
 
@@ -346,6 +349,7 @@ QStringList DImgImageMagickPlugin::encoderFormats() const
         if (!inflst)
         {
             qWarning() << "ImageMagick coders list is null!";
+
             return QStringList();
         }
 
@@ -374,6 +378,7 @@ QStringList DImgImageMagickPlugin::encoderFormats() const
     catch (Exception& error)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
+
         return QStringList();
     }
 

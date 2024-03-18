@@ -112,11 +112,13 @@ bool DImgImageMagickLoader::save(const QString& filePath, DImgLoaderObserver* co
         imageSetAttribute(QLatin1String("format"), format.toUpper());
 
         saveMetadata(filePath);
+
         return true;
     }
     catch (Exception& error)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagick exception [" << filePath << "]" << error.what();
+
         return false;
     }
 
