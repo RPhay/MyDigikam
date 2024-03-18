@@ -104,10 +104,10 @@ void DigikamApp::slotThemeChanged()
 
         if (!xdgCurrentDesktop.isEmpty() && (xdgCurrentDesktop.toUpper() == "KDE"))
         {
-            msgText   = i18n("We now set the icon theme to the system theme. "
-                             "The icon colors are automatically adjusted "
-                             "on a Plasma 6 desktop. The icon theme is "
-                             "available after a restart of digiKam.");
+            msgText   = i18n("We now switch to the system icon theme. The icon "
+                             "colors are automatically adjusted on a Plasma 6 "
+                             "desktop. The icon theme is available after "
+                             "a restart of digiKam.");
 
             iconTheme = QLatin1String("");
         }
