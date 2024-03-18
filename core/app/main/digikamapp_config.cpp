@@ -98,7 +98,27 @@ void DigikamApp::slotThemeChanged()
         QString iconTheme;
         QString msgText;
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        const QByteArray xdgCurrentDesktop = qgetenv("XDG_CURRENT_DESKTOP");
+
+        if (!xdgCurrentDesktop.isEmpty() && (xdgCurrentDesktop.toUpper() == "KDE"))
+        {
+            msgText   = i18n("We now set the icon theme to the system theme. "
+                             "The icon colors are automatically adjusted "
+                             "on a Plasma 6 desktop. The icon theme is "
+                             "available after a restart of digiKam.");
+
+            iconTheme = QLatin1String("");
+        }
+        else if (color.lightness() > 127)
+
+#else
+
         if (color.lightness() > 127)
+
+#endif
+
         {
             msgText   = i18n("You have chosen a bright color scheme. We switch "
                              "to a dark icon theme. The icon theme is "
