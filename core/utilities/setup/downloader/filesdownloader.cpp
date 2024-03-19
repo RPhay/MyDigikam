@@ -250,13 +250,14 @@ void FilesDownloader::slotDownload()
                  i18nc("@title:window", "Download Error"),
                  i18n("An error occurred during the download.\n\n"
                       "File: %1\n\n%2\n\n"
-                      "You can try again or continue the "
-                      "download at the next start.",
+                      "You can try again with an alternative "
+                      "mirror server or continue the "
+                      "download on the next startup.",
                       d->currentInfo.name, d->error),
                  QMessageBox::Yes | QMessageBox::Cancel,
                  qApp->activeWindow());
 
-        msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Try Again"));
+        msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Try Alternate"));
         msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
 
         int result = msgBox->exec();
