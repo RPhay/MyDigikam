@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# SPDX-FileCopyrightText: 2008-2024 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2008-2024 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
-# SPDX-License-Identifier: BSD-3-Clause
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 # Copy this script on root folder where are source code
 
@@ -32,4 +33,5 @@ cmake -H./ \
       -DJAS_ENABLE_MULTITHREADING_SUPPORT=ON \
       -DJAS_PREFER_PTHREAD=ON \
       -DJAS_PREFER_PTHREAD_TSS=OFF \
-      -DJAS_STRICT=OFF
+      -DJAS_STRICT=OFF \
+      -DALLOW_IN_SOURCE_BUILD=ON
