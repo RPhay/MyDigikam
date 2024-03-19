@@ -21,6 +21,13 @@ if(KPim${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 
         $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
     )
+elseif(KPim${QT_VERSION_MAJOR}AkonadiContactCore_FOUND)
+    include_directories(
+        $<TARGET_PROPERTY:KPim${QT_VERSION_MAJOR}::AkonadiCore,INTERFACE_INCLUDE_DIRECTORIES>
+        $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Contacts,INTERFACE_INCLUDE_DIRECTORIES>
+
+        $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
+    )
 endif()
 
 add_library(core_akonadiiface_obj OBJECT ${akonadiiface_SRCS})
@@ -38,4 +45,7 @@ target_link_libraries(akonadiiface PRIVATE Qt${QT_VERSION_MAJOR}::Core KF${QT_VE
 if(KPim${QT_VERSION_MAJOR}AkonadiContact_FOUND)
     target_include_directories(core_akonadiiface_obj PRIVATE $<TARGET_PROPERTY:KPim${QT_VERSION_MAJOR}::AkonadiContact,INTERFACE_INCLUDE_DIRECTORIES>)
     target_link_libraries(akonadiiface PRIVATE KPim${QT_VERSION_MAJOR}::AkonadiContact KF${QT_VERSION_MAJOR}::Contacts)
+elseif(KPim${QT_VERSION_MAJOR}AkonadiContactCore_FOUND)
+    target_include_directories(core_akonadiiface_obj PRIVATE $<TARGET_PROPERTY:KPim${QT_VERSION_MAJOR}::AkonadiContactCore,INTERFACE_INCLUDE_DIRECTORIES>)
+    target_link_libraries(akonadiiface PRIVATE KPim${QT_VERSION_MAJOR}::AkonadiContactCore KF${QT_VERSION_MAJOR}::Contacts)
 endif()

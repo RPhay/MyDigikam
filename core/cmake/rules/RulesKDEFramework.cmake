@@ -34,17 +34,34 @@ if(ENABLE_KFILEMETADATASUPPORT)
 
 endif()
 
-
 if(ENABLE_AKONADICONTACTSUPPORT)
 
-    find_package(KF${QT_VERSION_MAJOR} ${AKONADI_MIN_VERSION} QUIET
-                                            OPTIONAL_COMPONENTS
-                                            Akonadi
-                                            AkonadiContact      # For KDE Mail Contacts support.
-                                            Contacts            # API for contacts/address book data.
-    )
-    find_package(KPim${QT_VERSION_MAJOR}Akonadi ${AKONADI_MIN_VERSION} QUIET)
-    find_package(KPim${QT_VERSION_MAJOR}AkonadiContact ${AKONADI_MIN_VERSION} QUIET)
+    if(Qt6_FOUND)
+
+        find_package(KPim${QT_VERSION_MAJOR} ${AKONADI_MIN_VERSION} QUIET
+                                                OPTIONAL_COMPONENTS
+                                                Akonadi
+                                                AkonadiContactCore  # For KDE Mail Contacts support.
+        )
+        find_package(KF${QT_VERSION_MAJOR} ${AKONADI_MIN_VERSION} QUIET
+                                                OPTIONAL_COMPONENTS
+                                                Contacts            # API for contacts/address book data.
+        )
+        find_package(KPim${QT_VERSION_MAJOR}Akonadi ${AKONADI_MIN_VERSION} QUIET)
+        find_package(KPim${QT_VERSION_MAJOR}AkonadiContactCore ${AKONADI_MIN_VERSION} QUIET)
+
+    else()
+
+        find_package(KF${QT_VERSION_MAJOR} ${AKONADI_MIN_VERSION} QUIET
+                                                OPTIONAL_COMPONENTS
+                                                Akonadi
+                                                AkonadiContact      # For KDE Mail Contacts support.
+                                                Contacts            # API for contacts/address book data.
+        )
+        find_package(KPim${QT_VERSION_MAJOR}Akonadi ${AKONADI_MIN_VERSION} QUIET)
+        find_package(KPim${QT_VERSION_MAJOR}AkonadiContact ${AKONADI_MIN_VERSION} QUIET)
+
+    endif()
 
 endif()
 
@@ -72,7 +89,8 @@ if ("${KF${QT_VERSION_MAJOR}CalendarCore_VERSION}" VERSION_GREATER 5.6.40)
 
 endif()
 
-if(ENABLE_AKONADICONTACTSUPPORT AND (NOT KPim${QT_VERSION_MAJOR}AkonadiContact_FOUND OR NOT KPim${QT_VERSION_MAJOR}Contacts_FOUND))
+if(ENABLE_AKONADICONTACTSUPPORT AND
+   (NOT (KPim${QT_VERSION_MAJOR}AkonadiContact_FOUND OR KPim${QT_VERSION_MAJOR}AkonadiContactCore_FOUND) OR NOT KF${QT_VERSION_MAJOR}Contacts_FOUND))
 
     set(ENABLE_AKONADICONTACTSUPPORT OFF)
 
