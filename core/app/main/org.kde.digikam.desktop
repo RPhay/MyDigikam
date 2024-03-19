@@ -4,7 +4,6 @@ Categories=Qt;Graphics;Photography;
 Exec=digikam -qwindowtitle %c
 Icon=digikam
 X-DocPath=digikam/index.html
-MimeType=x-content/image-dcf;x-content/image-picturecd;
 Name=digiKam
 Name[ar]=دِجي‌كام
 Name[be]=digiKam
