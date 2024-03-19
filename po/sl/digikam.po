@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-18 01:59+0000\n"
+"POT-Creation-Date: 2024-03-19 01:40+0000\n"
 "PO-Revision-Date: 2024-03-12 07:42+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1563,7 +1563,20 @@ msgstr "Doda nove mape v knjižnico albumov."
 msgid "Images found in %1"
 msgstr "Slike najdene v %1"
 
-#: core/app/main/digikamapp_config.cpp:103
+#: core/app/main/digikamapp_config.cpp:107
+#, fuzzy, kde-format
+#| msgid ""
+#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
+#| "The icon theme is available after a restart of digiKam."
+msgid ""
+"We now switch to the system icon theme. The icon colors are automatically "
+"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
+"of digiKam."
+msgstr ""
+"Izbrali ste svetlo barvno shemo. Preklopimo na temno temo ikon. Tema ikone "
+"je na voljo po ponovnem zagonu digiKama."
+
+#: core/app/main/digikamapp_config.cpp:123
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1573,7 +1586,7 @@ msgstr ""
 "Izbrali ste svetlo barvno shemo. Preklopimo na temno temo ikon. Tema ikone "
 "je na voljo po ponovnem zagonu digiKama."
 
-#: core/app/main/digikamapp_config.cpp:111
+#: core/app/main/digikamapp_config.cpp:131
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""
@@ -6956,7 +6969,7 @@ msgstr "Visoko učinkovito kodiranje slik (HEIC)"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
@@ -6979,7 +6992,7 @@ msgstr "da"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:188
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
@@ -6993,7 +7006,7 @@ msgstr "da"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:190
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
@@ -7240,7 +7253,7 @@ msgstr ""
 "para><para>Glejte <a href='https://en.wikipedia.org/wiki/"
 "ImageMagick'>dokumentacijo ImageMagick</a> za podrobnosti.</para>"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:187
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, kde-format
@@ -7248,12 +7261,12 @@ msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "ne"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:62
 #, kde-format
 msgid "Lossless PGF files"
 msgstr "Datoteke PGF brez izgub"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:70
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
@@ -7262,12 +7275,12 @@ msgstr ""
 "<p>Preklopi stiskanje brez izgub za slike PGF.</p><p>Če omogočite to "
 "možnost, boste za shranjevanje slik PGF uporabili stiskanje brez izgub.</p>"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:77
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:71
 #, kde-format
 msgid "PGF quality:"
 msgstr "Kakovost PGF:"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:79
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "

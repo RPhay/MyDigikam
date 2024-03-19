@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-18 01:59+0000\n"
+"POT-Creation-Date: 2024-03-19 01:40+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -1515,7 +1515,15 @@ msgstr ""
 msgid "Images found in %1"
 msgstr "תמונות נמצאו ב- %1"
 
-#: core/app/main/digikamapp_config.cpp:103
+#: core/app/main/digikamapp_config.cpp:107
+#, kde-format
+msgid ""
+"We now switch to the system icon theme. The icon colors are automatically "
+"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
+"of digiKam."
+msgstr ""
+
+#: core/app/main/digikamapp_config.cpp:123
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1523,7 +1531,7 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:111
+#: core/app/main/digikamapp_config.cpp:131
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""
@@ -6670,7 +6678,7 @@ msgstr "תצורה חדשה לתמונה:"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
@@ -6694,7 +6702,7 @@ msgstr "כן"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:188
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
@@ -6709,7 +6717,7 @@ msgstr "כן"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:190
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
@@ -6911,7 +6919,7 @@ msgid ""
 "wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:187
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, fuzzy, kde-format
@@ -6920,24 +6928,24 @@ msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "לא"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:62
 #, fuzzy, kde-format
 msgid "Lossless PGF files"
 msgstr "קבצים דחוסים מסוג JPEG-2000 שאינם מאבדים מידע"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:70
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress PGF pictures.</p>"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:77
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:71
 #, fuzzy, kde-format
 msgid "PGF quality:"
 msgstr "איכות JPEG:"
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:79
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
