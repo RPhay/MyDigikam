@@ -11,7 +11,7 @@ BUGFIXES:
 002 ==> 483839 - Lighttable shows incorrect active AF focus points from Canon EOS R7.
 003 ==> 483995 - Failure to download required files for face detection, red-eye removal and auto-tagging of images.
 004 ==> 484084 - Impossible to rename a picture when changing only the case of one letter of its name.
-005 ==> 
+005 ==> 446201 - Freeze while browsing pictures.
 006 ==> 
 007 ==> 
 008 ==> 
