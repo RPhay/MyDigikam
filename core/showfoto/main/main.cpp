@@ -32,6 +32,7 @@
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
+#include <kmemoryinfo.h>
 #include <kaboutdata.h>
 
 // ImageMagick includes
@@ -115,7 +116,10 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #else
 
-    QImageReader::setAllocationLimit(2048);
+    KMemoryInfo memInfo;
+    quint64 maxLimit = memInfo.totalPhysical() / 1024 / 1024 / 1.40;
+    maxLimit         = qMax((quint64)1024, maxLimit);
+    QImageReader::setAllocationLimit(maxLimit);
 
 #endif
 
