@@ -6,7 +6,7 @@
  * Date        : 2022-04-01
  * Description : JPEG-XL image export settings widget.
  *
- * SPDX-FileCopyrightText: 2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2024 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -40,21 +40,15 @@ class Q_DECL_HIDDEN DImgJXLExportSettings::Private
 
 public:
 
-    explicit Private()
-      : JXLGrid            (nullptr),
-        labelJXLcompression(nullptr),
-        JXLLossLess        (nullptr),
-        JXLcompression     (nullptr)
-    {
-    }
+    Private() = default;
 
-    QGridLayout*  JXLGrid;
+    QGridLayout*  JXLGrid               = nullptr;
 
-    QLabel*       labelJXLcompression;
+    QLabel*       labelJXLcompression   = nullptr;
 
-    QCheckBox*    JXLLossLess;
+    QCheckBox*    JXLLossLess           = nullptr;
 
-    DIntNumInput* JXLcompression;
+    DIntNumInput* JXLcompression        = nullptr;
 };
 
 DImgJXLExportSettings::DImgJXLExportSettings(QWidget* const parent)

@@ -7,7 +7,7 @@
  * Description : A QImage loader for DImg framework - load method.
  *
  * SPDX-FileCopyrightText: 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * SPDX-FileCopyrightText: 2006-2021 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2024 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -53,6 +53,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Can not load \"" << filePath << "\" using DImg::DImgQImageLoader!";
         qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Error message from loader:" << reader.errorString();
         loadingFailed();
+
         return false;
     }
 
@@ -66,6 +67,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         {
             colorModel    = DImg::COLORMODELUNKNOWN;
             originalDepth = 0;
+
             break;
         }
 
@@ -74,6 +76,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         {
             colorModel    = DImg::MONOCHROME;
             originalDepth = 1;
+
             break;
         }
 
@@ -81,6 +84,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         {
             colorModel    = DImg::INDEXED;
             originalDepth = 0;
+
             break;
         }
 
@@ -88,6 +92,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         {
             colorModel    = DImg::RGB;
             originalDepth = 8;
+
             break;
         }
 
@@ -96,6 +101,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         {
             colorModel    = DImg::RGB;
             originalDepth = 8;
+
             break;
         }
 
@@ -106,6 +112,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
             colorModel    = DImg::RGB;
             m_sixteenBit  = true;
             originalDepth = 16;
+
             break;
         }
     }
@@ -129,6 +136,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         {
             qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
             loadingFailed();
+
             return false;
         }
 
@@ -161,6 +169,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
         {
             qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Failed to allocate memory for loading" << filePath;
             loadingFailed();
+
             return false;
         }
 
