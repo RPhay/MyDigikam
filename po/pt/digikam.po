@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-19 01:40+0000\n"
+"POT-Creation-Date: 2024-03-20 01:39+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -64858,7 +64858,15 @@ msgid "Download Error"
 msgstr "Erro de Transferência"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:251
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred during the download.\n"
+#| "\n"
+#| "File: %1\n"
+#| "\n"
+#| "%2\n"
+#| "\n"
+#| "You can try again or continue the download at the next start."
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -64866,7 +64874,8 @@ msgid ""
 "\n"
 "%2\n"
 "\n"
-"You can try again or continue the download at the next start."
+"You can try again with an alternative mirror server or continue the download "
+"on the next startup."
 msgstr ""
 "Ocorreu um erro durante a transferência.\n"
 "\n"
@@ -64876,33 +64885,34 @@ msgstr ""
 "\n"
 "Poderá tentar de novo ou prosseguir a transferência no próximo início."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
-#, kde-format
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#, fuzzy, kde-format
+#| msgid "Alternative name"
 msgctxt "@action:button"
-msgid "Try Again"
-msgstr "Tentar de Novo"
+msgid "Try Alternate"
+msgstr "Nome alternativo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:394
+#: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "O código de validação é incorrecto."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:418
+#: core/utilities/setup/downloader/filesdownloader.cpp:419
 #, kde-format
 msgid "File write error."
 msgstr "Erro de escrita no ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:425
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File open error."
 msgstr "Erro de acesso ao ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "File on the server is too large."
 msgstr "O ficheiro no servidor é demasiado grande."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:581
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path, %2: disk size with unit"
 #| msgid ""
@@ -64934,13 +64944,13 @@ msgstr ""
 "se que tem cerca de %2 disponíveis. <b>Após a transferência terminar com "
 "sucesso, terá de reiniciar o digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:594
+#: core/utilities/setup/downloader/filesdownloader.cpp:595
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#: core/utilities/setup/downloader/filesdownloader.cpp:602
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
@@ -68093,6 +68103,10 @@ msgstr "Itens do Álbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importar os Itens"
+
+#~ msgctxt "@action:button"
+#~ msgid "Try Again"
+#~ msgstr "Tentar de Novo"
 
 #~ msgctxt "@item: xmp namespace"
 #~ msgid "DigiKam"

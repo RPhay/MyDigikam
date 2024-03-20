@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-19 01:40+0000\n"
+"POT-Creation-Date: 2024-03-20 01:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -64855,7 +64855,15 @@ msgid "Download Error"
 msgstr "Ошибка загрузки"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:251
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred during the download.\n"
+#| "\n"
+#| "File: %1\n"
+#| "\n"
+#| "%2\n"
+#| "\n"
+#| "You can try again or continue the download at the next start."
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -64863,7 +64871,8 @@ msgid ""
 "\n"
 "%2\n"
 "\n"
-"You can try again or continue the download at the next start."
+"You can try again with an alternative mirror server or continue the download "
+"on the next startup."
 msgstr ""
 "Во время загрузки файлов произошла ошибка.\n"
 "\n"
@@ -64872,33 +64881,34 @@ msgstr ""
 "%2\n"
 "Возможно повторить попытку или продолжить загрузку при следующем запуске."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
-#, kde-format
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#, fuzzy, kde-format
+#| msgid "Alternative name"
 msgctxt "@action:button"
-msgid "Try Again"
-msgstr "Попробовать снова"
+msgid "Try Alternate"
+msgstr "Альтернативное имя"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:394
+#: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Неверная контрольная сумма"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:418
+#: core/utilities/setup/downloader/filesdownloader.cpp:419
 #, kde-format
 msgid "File write error."
 msgstr "Ошибка записи файла."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:425
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File open error."
 msgstr "Ошибка открытия файла"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файл на сервере слишком большой"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:581
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path, %2: disk size with unit"
 #| msgid ""
@@ -64928,13 +64938,13 @@ msgstr ""
 "каталог «%1», убедитесь, что на устройстве доступно не менее %2.<b>После "
 "окончания загрузки файлов потребуется перезапустить digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:594
+#: core/utilities/setup/downloader/filesdownloader.cpp:595
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#: core/utilities/setup/downloader/filesdownloader.cpp:602
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
@@ -68074,6 +68084,10 @@ msgstr "Альбомы"
 #, kde-format
 msgid "Import Items"
 msgstr "Импорт"
+
+#~ msgctxt "@action:button"
+#~ msgid "Try Again"
+#~ msgstr "Попробовать снова"
 
 #~ msgctxt "@item: xmp namespace"
 #~ msgid "DigiKam"

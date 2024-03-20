@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-19 01:40+0000\n"
-"PO-Revision-Date: 2024-03-12 07:42+0100\n"
+"POT-Creation-Date: 2024-03-20 01:39+0000\n"
+"PO-Revision-Date: 2024-03-19 07:05+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1564,17 +1564,14 @@ msgid "Images found in %1"
 msgstr "Slike najdene v %1"
 
 #: core/app/main/digikamapp_config.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"Izbrali ste svetlo barvno shemo. Preklopimo na temno temo ikon. Tema ikone "
-"je na voljo po ponovnem zagonu digiKama."
+"Zdaj preklopimo na temo sistemske ikone. Barve ikon se samodejno prilagodijo "
+"na namizju Plasma 6. Tema ikon je na voljo po ponovnem zagonu digiKama."
 
 #: core/app/main/digikamapp_config.cpp:123
 #: core/showfoto/main/showfoto_config.cpp:183
@@ -63979,7 +63976,15 @@ msgid "Download Error"
 msgstr "Napaka prenosa"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:251
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred during the download.\n"
+#| "\n"
+#| "File: %1\n"
+#| "\n"
+#| "%2\n"
+#| "\n"
+#| "You can try again or continue the download at the next start."
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -63987,7 +63992,8 @@ msgid ""
 "\n"
 "%2\n"
 "\n"
-"You can try again or continue the download at the next start."
+"You can try again with an alternative mirror server or continue the download "
+"on the next startup."
 msgstr ""
 "Pojavila se je napaka pri prenosu.\n"
 "\n"
@@ -63997,33 +64003,34 @@ msgstr ""
 "\n"
 "Lahko ponovite ali nadaljujete prenos po novem zagonu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
-#, kde-format
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#, fuzzy, kde-format
+#| msgid "Alternative name"
 msgctxt "@action:button"
-msgid "Try Again"
-msgstr "Poskusite znova"
+msgid "Try Alternate"
+msgstr "Alternativno ime"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:394
+#: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Kontrolna vsota ni pravilna."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:418
+#: core/utilities/setup/downloader/filesdownloader.cpp:419
 #, kde-format
 msgid "File write error."
 msgstr "Napaka pri pisanju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:425
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File open error."
 msgstr "Napaka pri odpiranju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Datoteka na strežniku je prevelika."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:581
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64047,13 +64054,13 @@ msgstr ""
 "bodo prenesene v %1.</p><p><b>Po uspešnem prenosu morate znova zagnati "
 "digiKam.</b> </p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:594
+#: core/utilities/setup/downloader/filesdownloader.cpp:595
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Prenos zahteva %1 datotek z velikostjo %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#: core/utilities/setup/downloader/filesdownloader.cpp:602
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Najdene so bile vse datoteke izbranih zmožnosti."
@@ -67122,6 +67129,10 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Predmeti uvoza"
+
+#~ msgctxt "@action:button"
+#~ msgid "Try Again"
+#~ msgstr "Poskusite znova"
 
 #~ msgctxt "@item: xmp namespace"
 #~ msgid "DigiKam"

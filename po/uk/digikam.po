@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-19 01:40+0000\n"
-"PO-Revision-Date: 2024-03-12 20:26+0200\n"
+"POT-Creation-Date: 2024-03-20 01:39+0000\n"
+"PO-Revision-Date: 2024-03-19 08:26+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1537,18 +1537,15 @@ msgid "Images found in %1"
 msgstr "Зображення, які знайдено в %1"
 
 #: core/app/main/digikamapp_config.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"Вами вибрано світлу схему кольорів. Перемикаємо програму на використання "
-"темної теми піктограм. Нові піктограми стануть доступними після перезапуску "
-"digiKam."
+"Перемикаємо програму на використання загальносистемної теми піктограм. У "
+"стільниці Плазми 6 кольори піктограм буде скориговано автоматично. Нові "
+"піктограми стануть доступними після перезапуску digiKam."
 
 #: core/app/main/digikamapp_config.cpp:123
 #: core/showfoto/main/showfoto_config.cpp:183
@@ -64733,7 +64730,15 @@ msgid "Download Error"
 msgstr "Помилка під час отримання"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:251
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred during the download.\n"
+#| "\n"
+#| "File: %1\n"
+#| "\n"
+#| "%2\n"
+#| "\n"
+#| "You can try again or continue the download at the next start."
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -64741,7 +64746,8 @@ msgid ""
 "\n"
 "%2\n"
 "\n"
-"You can try again or continue the download at the next start."
+"You can try again with an alternative mirror server or continue the download "
+"on the next startup."
 msgstr ""
 "Під час спроби отримати дані сталася помилка.\n"
 "\n"
@@ -64752,33 +64758,34 @@ msgstr ""
 "Ви можете повторити спробу або продовжити отримання даних під час наступного "
 "запуску."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
-#, kde-format
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#, fuzzy, kde-format
+#| msgid "Alternative name"
 msgctxt "@action:button"
-msgid "Try Again"
-msgstr "Спробувати ще раз"
+msgid "Try Alternate"
+msgstr "Інша назва"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:394
+#: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Неправильна контрольна сума."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:418
+#: core/utilities/setup/downloader/filesdownloader.cpp:419
 #, kde-format
 msgid "File write error."
 msgstr "Помилка запису до файла."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:425
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File open error."
 msgstr "Помилка під час спроби відкрити файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файл на сервері є надто великим."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:581
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64802,13 +64809,13 @@ msgstr ""
 "</p><p>Файли буде отримано до %1.</p><p><b>Після успішного отримання файлів "
 "вам слід перезапустити digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:594
+#: core/utilities/setup/downloader/filesdownloader.cpp:595
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "Для отримання даних потрібні дані %1 файлів розміром %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#: core/utilities/setup/downloader/filesdownloader.cpp:602
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Знайдено усі файли для реалізації вибраних можливостей."
@@ -67936,6 +67943,10 @@ msgstr "Пункти альбомів"
 #, kde-format
 msgid "Import Items"
 msgstr "Імпортовані пункти"
+
+#~ msgctxt "@action:button"
+#~ msgid "Try Again"
+#~ msgstr "Спробувати ще раз"
 
 #~ msgctxt "@item: xmp namespace"
 #~ msgid "DigiKam"

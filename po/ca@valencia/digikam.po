@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-19 01:40+0000\n"
-"PO-Revision-Date: 2024-03-12 20:31+0100\n"
+"POT-Creation-Date: 2024-03-20 01:39+0000\n"
+"PO-Revision-Date: 2024-03-19 12:56+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1498,17 +1498,15 @@ msgid "Images found in %1"
 msgstr "S'ha trobat imatges a %1"
 
 #: core/app/main/digikamapp_config.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"Heu triat un esquema de color brillant. Es canvia a un tema d'icones fosc. "
-"El tema d'icones serà disponible després de reiniciar digiKam."
+"Ara canviem al tema d'icones del sistema. Els colors de les icones s'ajusten "
+"automàticament en un escriptori Plasma 6. El tema d'icones estarà disponible "
+"després de reiniciar digiKam."
 
 #: core/app/main/digikamapp_config.cpp:123
 #: core/showfoto/main/showfoto_config.cpp:183
@@ -64551,7 +64549,15 @@ msgid "Download Error"
 msgstr "S'ha produït un error de baixada"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:251
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred during the download.\n"
+#| "\n"
+#| "File: %1\n"
+#| "\n"
+#| "%2\n"
+#| "\n"
+#| "You can try again or continue the download at the next start."
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -64559,7 +64565,8 @@ msgid ""
 "\n"
 "%2\n"
 "\n"
-"You can try again or continue the download at the next start."
+"You can try again with an alternative mirror server or continue the download "
+"on the next startup."
 msgstr ""
 "S'ha detectat un error durant la baixada.\n"
 "\n"
@@ -64569,33 +64576,34 @@ msgstr ""
 "\n"
 "Podeu intentar-ho de nou o continuar amb la descàrrega en el següent inici."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
-#, kde-format
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#, fuzzy, kde-format
+#| msgid "Alternative name"
 msgctxt "@action:button"
-msgid "Try Again"
-msgstr "Torna-ho a provar"
+msgid "Try Alternate"
+msgstr "Nom alternatiu"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:394
+#: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificació no és correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:418
+#: core/utilities/setup/downloader/filesdownloader.cpp:419
 #, kde-format
 msgid "File write error."
 msgstr "S'ha produït un error d'escriptura en el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:425
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File open error."
 msgstr "S'ha produït un error en obrir el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El fitxer que hi ha en el servidor és massa gran."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:581
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64619,13 +64627,13 @@ msgstr ""
 "</p><p>Els fitxers es descarregaran a %1.</p><p><b>Una vegada finalitzada la "
 "baixada, caldrà reiniciar digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:594
+#: core/utilities/setup/downloader/filesdownloader.cpp:595
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "La baixada necessita %1 fitxers amb una mida de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#: core/utilities/setup/downloader/filesdownloader.cpp:602
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "S'han trobat tots els fitxers de les característiques seleccionades."
@@ -67744,3 +67752,7 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
+
+#~ msgctxt "@action:button"
+#~ msgid "Try Again"
+#~ msgstr "Torna-ho a provar"

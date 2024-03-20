@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-19 01:40+0000\n"
-"PO-Revision-Date: 2024-03-12 13:22+0300\n"
+"POT-Creation-Date: 2024-03-20 01:39+0000\n"
+"PO-Revision-Date: 2024-03-19 14:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1533,17 +1533,15 @@ msgid "Images found in %1"
 msgstr "%1 içinde bulunan görseller"
 
 #: core/app/main/digikamapp_config.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"Parlak bir renk şeması seçtiniz. Karanlık bir simge temasına geçiyoruz. "
-"Simge teması, digiKam yeniden başlatıldıktan sonra kullanılabilir."
+"Sistem geneli simge temasına geçiyoruz. Simge renkleri bir Plasma 6 kullanan "
+"sistemde kendiliğinden ayarlanır. Simge teması, digiKam yeniden "
+"başlatıldıktan sonra kullanılabilir."
 
 #: core/app/main/digikamapp_config.cpp:123
 #: core/showfoto/main/showfoto_config.cpp:183
@@ -63939,7 +63937,15 @@ msgid "Download Error"
 msgstr "İndirme Hatası"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:251
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred during the download.\n"
+#| "\n"
+#| "File: %1\n"
+#| "\n"
+#| "%2\n"
+#| "\n"
+#| "You can try again or continue the download at the next start."
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -63947,7 +63953,8 @@ msgid ""
 "\n"
 "%2\n"
 "\n"
-"You can try again or continue the download at the next start."
+"You can try again with an alternative mirror server or continue the download "
+"on the next startup."
 msgstr ""
 "İndirme sırasında bir hata oluştu.\n"
 "\n"
@@ -63957,33 +63964,34 @@ msgstr ""
 "\n"
 "Yeniden deneyebilir veya bir sonrak başlangıçta indirmeyi sürdürebilirsiniz."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
-#, kde-format
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#, fuzzy, kde-format
+#| msgid "Alternative name"
 msgctxt "@action:button"
-msgid "Try Again"
-msgstr "Yeniden Dene"
+msgid "Try Alternate"
+msgstr "Alternatif ad"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:394
+#: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Sağlama toplamı doğru değil."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:418
+#: core/utilities/setup/downloader/filesdownloader.cpp:419
 #, kde-format
 msgid "File write error."
 msgstr "Dosya yazma hatası."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:425
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File open error."
 msgstr "Dosya açma hatası."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Sunucudaki dosya pek büyük."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:581
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -64008,13 +64016,13 @@ msgstr ""
 "p><p><b>Başarılı bir indirme işleminden sonra digiKam'ı yeniden başlatmanız "
 "gerekir.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:594
+#: core/utilities/setup/downloader/filesdownloader.cpp:595
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "İndirme, %2 boyutunda %1 dosya gerektiriyor."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#: core/utilities/setup/downloader/filesdownloader.cpp:602
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Seçili özelliklerin tüm dosyaları bulunamadı."
@@ -67085,6 +67093,10 @@ msgstr "Albüm Ögeleri"
 #, kde-format
 msgid "Import Items"
 msgstr "İçe Aktarılan Ögeler"
+
+#~ msgctxt "@action:button"
+#~ msgid "Try Again"
+#~ msgstr "Yeniden Dene"
 
 #~ msgctxt "@item: xmp namespace"
 #~ msgid "DigiKam"

@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-19 01:40+0000\n"
-"PO-Revision-Date: 2024-03-02 16:58+0100\n"
+"POT-Creation-Date: 2024-03-20 01:39+0000\n"
+"PO-Revision-Date: 2024-03-19 07:25+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1357,6 +1357,9 @@ msgid ""
 "correctly. Go to the digiKam settings and check the availability of the "
 "ExifTool binary file in the metadata section."
 msgstr ""
+"ExifTool ne disponeblas en via digiKam-instalaĵo aŭ ne funkcias ĝuste. Iru "
+"al la agordoj de digiKam kaj kontrolu la haveblecon de la ExifTool-"
+"duumdosiero en la metadatuma sekcio."
 
 #: core/app/main/digikamapp.cpp:690 core/app/views/stack/trashview.cpp:514
 #, kde-format
@@ -1502,17 +1505,15 @@ msgid "Images found in %1"
 msgstr "Bildoj trovitaj en %1"
 
 #: core/app/main/digikamapp_config.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"Vi elektis helan kolorskemon. Ni ŝanĝas al malhela piktograma etoso. La "
-"piktograma etoso disponeblas post rekomenco de digiKam."
+"Ni nun ŝanĝas al la sistemikona etoso. La piktogramkoloroj aŭtomate estas "
+"ĝustigitaj en labortablo de Plasma-6. La piktogrametoso disponeblas post "
+"rekomenco de digiKam."
 
 #: core/app/main/digikamapp_config.cpp:123
 #: core/showfoto/main/showfoto_config.cpp:183
@@ -11543,10 +11544,9 @@ msgid "Creation of picture '%1'"
 msgstr "Kreo de bildo '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:235
-#, fuzzy, kde-format
-#| msgid "Failed to Fetch Photoset information from %1. %2\n"
+#, kde-format
 msgid "Cannot get GPS Information from %1 file."
-msgstr "Malsukcesis preni informojn pri fotoaro de %1. %2\n"
+msgstr "Ne eblas preni GPS-Informon el dosiero %1."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:324
 #, kde-format
@@ -63688,7 +63688,15 @@ msgid "Download Error"
 msgstr "Elŝuta Eraro"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:251
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "An error occurred during the download.\n"
+#| "\n"
+#| "File: %1\n"
+#| "\n"
+#| "%2\n"
+#| "\n"
+#| "You can try again or continue the download at the next start."
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -63696,7 +63704,8 @@ msgid ""
 "\n"
 "%2\n"
 "\n"
-"You can try again or continue the download at the next start."
+"You can try again with an alternative mirror server or continue the download "
+"on the next startup."
 msgstr ""
 "Eraro okazis dum la elŝuto.\n"
 "\n"
@@ -63706,33 +63715,34 @@ msgstr ""
 "\n"
 "Vi povas provi denove aŭ daŭrigi la elŝuton ĉe la sekva komenco."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
-#, kde-format
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#, fuzzy, kde-format
+#| msgid "Alternative name"
 msgctxt "@action:button"
-msgid "Try Again"
-msgstr "Provi denove"
+msgid "Try Alternate"
+msgstr "Alternativa nomo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:394
+#: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Kontrolsumo estas malĝusta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:418
+#: core/utilities/setup/downloader/filesdownloader.cpp:419
 #, kde-format
 msgid "File write error."
 msgstr "Dosiera skriberaro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:425
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File open error."
 msgstr "Dosiero-malferma eraro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Dosiero sur la servilo estas tro granda."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:581
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -63756,13 +63766,13 @@ msgstr ""
 "dosieroj estos elŝutitaj al %1.</p><p><b>Post la sukcesa elŝuto vi devas "
 "rekomenci digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:594
+#: core/utilities/setup/downloader/filesdownloader.cpp:595
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr "La elŝuto postulas %1 dosierojn kun grandeco de %2."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#: core/utilities/setup/downloader/filesdownloader.cpp:602
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr "Ĉiuj dosieroj de la elektitaj funkcioj estis trovitaj."
@@ -66826,3 +66836,7 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
+
+#~ msgctxt "@action:button"
+#~ msgid "Try Again"
+#~ msgstr "Provi denove"
