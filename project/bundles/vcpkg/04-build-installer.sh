@@ -282,7 +282,7 @@ fi
 echo -e "\n---------- Apply manifest file to enable UTF-8 support for file paths\n"
 
 "$MT_BIN" \
-        -manifest $ORIG_WD/data/digikam.exe.manifest \
+        -manifest $VCPKG_INSTALL_PREFIX/bin/digikam.exe.manifest \
         -outputresource:$VCPKG_INSTALL_PREFIX/bin/digikam.exe;#1
 
 echo -e "\n---------- Copy executables with recursive dependencies in bundle directory\n"

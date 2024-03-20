@@ -163,3 +163,11 @@ if(WIN32)
     install(TARGETS digikam_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 endif()
+
+if(MSVC)
+
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/digikam.exe.manifest.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/digikam.exe.manifest)
+
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/digikam.exe.manifest DESTINATION ${KDE_INSTALL_BINDIR})
+
+endif()
