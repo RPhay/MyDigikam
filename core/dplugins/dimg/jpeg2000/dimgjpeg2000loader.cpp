@@ -47,8 +47,6 @@ namespace DigikamJPEG2000DImgPlugin
 DImgJPEG2000Loader::DImgJPEG2000Loader(DImg* const image)
     : DImgLoader(image)
 {
-    m_hasAlpha   = false;
-    m_sixteenBit = false;
 }
 
 DImgJPEG2000Loader::~DImgJPEG2000Loader()

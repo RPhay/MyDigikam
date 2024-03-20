@@ -40,21 +40,15 @@ class Q_DECL_HIDDEN DImgJPEG2000ExportSettings::Private
 
 public:
 
-    explicit Private()
-      : JPEG2000Grid            (nullptr),
-        labelJPEG2000compression(nullptr),
-        JPEG2000LossLess        (nullptr),
-        JPEG2000compression     (nullptr)
-    {
-    }
+    Private() = default;
 
-    QGridLayout*  JPEG2000Grid;
+    QGridLayout*  JPEG2000Grid              = nullptr;
 
-    QLabel*       labelJPEG2000compression;
+    QLabel*       labelJPEG2000compression  = nullptr;
 
-    QCheckBox*    JPEG2000LossLess;
+    QCheckBox*    JPEG2000LossLess          = nullptr;
 
-    DIntNumInput* JPEG2000compression;
+    DIntNumInput* JPEG2000compression       = nullptr;
 };
 
 DImgJPEG2000ExportSettings::DImgJPEG2000ExportSettings(QWidget* const parent)
@@ -71,7 +65,7 @@ DImgJPEG2000ExportSettings::DImgJPEG2000ExportSettings(QWidget* const parent)
                                            "<p>If this option is enabled, a lossless method will be used "
                                            "to compress JPEG 2000 pictures.</p>"));
 
-    d->JPEG2000compression = new DIntNumInput(this);
+    d->JPEG2000compression      = new DIntNumInput(this);
     d->JPEG2000compression->setDefaultValue(75);
     d->JPEG2000compression->setRange(1, 100, 1);
     d->labelJPEG2000compression = new QLabel(i18n("JPEG 2000 quality:"), this);

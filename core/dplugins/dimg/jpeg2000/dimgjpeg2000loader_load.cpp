@@ -218,6 +218,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             }
 
             colorModel = DImg::RGB;
+
             break;
         }
 
@@ -239,6 +240,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
             number_components = 1;
             colorModel        = DImg::GRAYSCALE;
+
             break;
         }
 
@@ -272,6 +274,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             // FIXME: image->colorspace = YCbCrColorspace;
 
             colorModel = DImg::YCBCR;
+
             break;
         }
 
@@ -545,7 +548,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
             // Use 0-10% and 90-100% for pseudo-progress
 
-            if (observer && y >= (long)checkPoint)
+            if (observer && (y >= (long)checkPoint))
             {
                 checkPoint += granularity(observer, y, 0.8F);
 
@@ -579,6 +582,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         jas_cmprof_t*  cm_profile  = nullptr;
 
         // To prevent cppcheck warnings.
+
         (void)icc_profile;
         (void)icc_stream;
         (void)cm_profile;

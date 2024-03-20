@@ -9,7 +9,7 @@ TIFF/EP Done  Done   Done  Done      Done    yes      yes     libtiff
 RAW     Done  N.A    N.A   Done      Done    yes      yes     libraw             (internal)
 PGF     Done  Done   TODO  Done      N.A     yes      yes     libpgf             (internal)
 JPEG2K  Done  Done   Done  Done      N.A     yes      yes     libjasper
-HEIF    Done  Done   Done  Done      N.A     yes      yes     libheif / libde265 (internal) + libx265 (external)
+HEIF    Done  Done   Done  Done      N.A     yes      yes     libheif + libde265 + libx265
 
 Others file formats are supported:
 

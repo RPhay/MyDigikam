@@ -57,8 +57,7 @@ namespace DigikamJPEG2000DImgPlugin
 {
 
 DImgJPEG2000Plugin::DImgJPEG2000Plugin(QObject* const parent)
-    : DPluginDImg (parent),
-      m_initJasper(false)
+    : DPluginDImg (parent)
 {
 
 #if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
@@ -155,7 +154,7 @@ QList<DPluginAuthor> DImgJPEG2000Plugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2023"))
+                             QString::fromUtf8("(C) 2006-2024"))
             ;
 }
 
@@ -259,7 +258,7 @@ int DImgJPEG2000Plugin::canWrite(const QString& format) const
         return 0;
     }
 
-    return typeMimes().contains(format.toUpper()) ? 10 : 0;
+    return (typeMimes().contains(format.toUpper()) ? 10 : 0);
 }
 
 DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image, const DRawDecoding&) const

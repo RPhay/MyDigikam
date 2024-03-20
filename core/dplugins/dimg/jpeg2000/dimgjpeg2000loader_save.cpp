@@ -173,7 +173,9 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
             if (cm_profile)
             {
                 jas_image_setcmprof(jp2_image, cm_profile);
-                //enable when it works: purgeExifWorkingColorSpace();
+
+                // TODO: enable when it works
+                // purgeExifWorkingColorSpace();
             }
         }
     }
