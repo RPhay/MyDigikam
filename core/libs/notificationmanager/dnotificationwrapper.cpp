@@ -133,7 +133,7 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched to KDE desktop notifier";
 
-        if (true/*eventId.isEmpty()*/)
+        if (eventId.isEmpty())
         {
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
