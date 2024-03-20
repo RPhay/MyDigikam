@@ -5,6 +5,7 @@
 # Dependencies:
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
+#   - Mt from VSCommunity C++ Desktop tools.
 #   - ImageMagick for the rune-time dll.
 #   - Msys2/Rsync CLI tools for Windows.
 #
@@ -53,7 +54,7 @@ else
     echo "Check NSIS CLI tools passed..."
 fi
 
-# Check if DumpBin CLI tool is installed.
+# Check if the DumpBin CLI tool is installed.
 
 DUMP_BIN="`find "/c/Program Files/Microsoft Visual Studio/" -name "dumpbin.exe" -type f -executable | grep 'Hostx64/x64/dumpbin.exe'`"
 echo "$DUMP_BIN"
@@ -64,6 +65,19 @@ if [ ! -f "$DUMP_BIN" ] ; then
     exit 1
 else
     echo "Check DumpBin CLI tools passed..."
+fi
+
+# Check if the Mt CLI tool is installed.
+C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x86
+MT_BIN="`find "/c/Program Files (x86)/Windows Kits/" -name "mt.exe" -type f -executable | grep '/x64/mt.exe'`"
+echo "$MT_BIN"
+
+if [ ! -f "$MT_BIN" ] ; then
+    echo "Mt CLI tool is not installed"
+    echo "Install VSCommunity C++ Desktop tools component."
+    exit 1
+else
+    echo "Check Mt CLI tools passed..."
 fi
 
 # Check for the ImageMagick install directory.
@@ -267,7 +281,7 @@ fi
 
 echo -e "\n---------- Apply manifest file to enable UTF-8 support for file paths\n"
 
-"/c/Program Files (x86)/Windows Kits/10/bin/x64/mt" \
+"MT_BIN" \
         -manifest $ORIG_WD/data/digikam.exe.manifest \
         -outputresource:$VCPKG_INSTALL_PREFIX/bin/digikam.exe;#1
 
