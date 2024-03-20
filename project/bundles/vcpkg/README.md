@@ -106,7 +106,8 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
             + C++ ATL for latest v143 build tools
             + C++/CLI support for v143
             + C++ Clang tools for Windows (16.0.5)
-            + C++ Profiling tools.                      For DumpBin tool.
+            + C++ Profiling tools.                      For dumpbin.exe tool.
+            + C++ Desktop tools.                        For mt.exe tool.
 
     - ImageMagick 7.1 or later                          https://imagemagick.org/script/download.php#windows
         + x64 Version with Q16 and HDR support          Note: IM version compiled with MSVC
