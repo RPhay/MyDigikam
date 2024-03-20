@@ -68,7 +68,7 @@ else
 fi
 
 # Check if the Mt CLI tool is installed.
-C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x86
+
 MT_BIN="`find "/c/Program Files (x86)/Windows Kits/" -name "mt.exe" -type f -executable | grep '/x64/mt.exe'`"
 echo "$MT_BIN"
 
@@ -281,7 +281,7 @@ fi
 
 echo -e "\n---------- Apply manifest file to enable UTF-8 support for file paths\n"
 
-"MT_BIN" \
+"$MT_BIN" \
         -manifest $ORIG_WD/data/digikam.exe.manifest \
         -outputresource:$VCPKG_INSTALL_PREFIX/bin/digikam.exe;#1
 
