@@ -100,7 +100,7 @@ QList<DPluginAuthor> DImgRAWPlugin::authors() const
                              QString::fromUtf8("(C) 2005-2012"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2022"))
+                             QString::fromUtf8("(C) 2009-2024"))
             ;
 }
 
@@ -142,7 +142,7 @@ int DImgRAWPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
         QString rawFilesExt = DRawDecoder::rawFiles();
         QString format      = fileInfo.suffix().toUpper();
 
-        return (!format.isEmpty() && rawFilesExt.toUpper().contains(format)) ? 10 : 0;
+        return ((!format.isEmpty() && rawFilesExt.toUpper().contains(format)) ? 10 : 0);
     }
 
     return 0;
@@ -151,12 +151,13 @@ int DImgRAWPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 int DImgRAWPlugin::canWrite(const QString& /*format*/) const
 {
     // NOTE: Raw are read only files.
+
     return 0;
 }
 
 DImgLoader* DImgRAWPlugin::loader(DImg* const image, const DRawDecoding& rawSettings) const
 {
-    return new DImgRAWLoader(image, rawSettings);
+    return (new DImgRAWLoader(image, rawSettings));
 }
 
 DImgLoaderSettings* DImgRAWPlugin::exportWidget(const QString& format) const

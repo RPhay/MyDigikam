@@ -71,8 +71,8 @@ private:
 
 private:
 
-    DImgLoaderObserver*  m_observer;
-    RawProcessingFilter* m_filter;
+    DImgLoaderObserver*  m_observer = nullptr;
+    RawProcessingFilter* m_filter   = nullptr;
 };
 
 } // namespace DigikamRAWDImgPlugin

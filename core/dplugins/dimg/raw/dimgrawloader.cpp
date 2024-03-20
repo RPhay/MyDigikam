@@ -34,9 +34,7 @@ namespace DigikamRAWDImgPlugin
 {
 
 DImgRAWLoader::DImgRAWLoader(DImg* const image, const DRawDecoding& rawDecodingSettings)
-    : DImgLoader(image),
-      m_observer(nullptr),
-      m_filter(nullptr)
+    : DImgLoader(image)
 {
     m_decoderSettings = rawDecodingSettings.rawPrm;
     m_filter          = new RawProcessingFilter(this);
@@ -108,12 +106,14 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         if (!DRawDecoder::decodeRAWImage(filePath, m_decoderSettings, data, width, height, rgbmax))
         {
             loadingFailed();
+
             return false;
         }
 
         if (!loadedFromRawData(data, width, height, rgbmax, observer))
         {
             loadingFailed();
+
             return false;
         }
     }
@@ -159,6 +159,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
         if (!image)
         {
             qCWarning(DIGIKAM_DIMG_LOG_RAW) << "Failed to allocate memory for loading raw file";
+
             return false;
         }
 
@@ -176,6 +177,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
                 if (!observer->continueQuery())
                 {
                     delete [] image;
+
                     return false;
                 }
 
@@ -215,6 +217,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
         if (!image)
         {
             qCWarning(DIGIKAM_DIMG_LOG_RAW) << "Failed to allocate memory for loading raw file";
+
             return false;
         }
 
@@ -232,6 +235,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
                 if (!observer->continueQuery())
                 {
                     delete [] image;
+
                     return false;
                 }
 
