@@ -59,8 +59,6 @@ namespace DigikamPNGDImgPlugin
 DImgPNGLoader::DImgPNGLoader(DImg* const image)
     : DImgLoader(image)
 {
-    m_hasAlpha   = false;
-    m_sixteenBit = false;
 }
 
 DImgPNGLoader::~DImgPNGLoader()

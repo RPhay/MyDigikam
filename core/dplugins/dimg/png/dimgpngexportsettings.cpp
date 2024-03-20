@@ -39,18 +39,13 @@ class Q_DECL_HIDDEN DImgPNGExportSettings::Private
 
 public:
 
-    explicit Private()
-      : PNGGrid            (nullptr),
-        labelPNGcompression(nullptr),
-        PNGcompression     (nullptr)
-    {
-    }
+    Private() = default;
 
-    QGridLayout*  PNGGrid;
+    QGridLayout*  PNGGrid               = nullptr;
 
-    QLabel*       labelPNGcompression;
+    QLabel*       labelPNGcompression   = nullptr;
 
-    DIntNumInput* PNGcompression;
+    DIntNumInput* PNGcompression        = nullptr;
 };
 
 DImgPNGExportSettings::DImgPNGExportSettings(QWidget* parent)
@@ -60,8 +55,8 @@ DImgPNGExportSettings::DImgPNGExportSettings(QWidget* parent)
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
-    d->PNGGrid        = new QGridLayout(this);
-    d->PNGcompression = new DIntNumInput(this);
+    d->PNGGrid             = new QGridLayout(this);
+    d->PNGcompression      = new DIntNumInput(this);
     d->PNGcompression->setDefaultValue(6);
     d->PNGcompression->setRange(1, 9, 1);
     d->labelPNGcompression = new QLabel(i18n("PNG compression:"), this);

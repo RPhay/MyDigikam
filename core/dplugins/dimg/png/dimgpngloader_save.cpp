@@ -100,6 +100,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     if (!f)
     {
         qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Cannot open target image file.";
+
         return false;
     }
 
@@ -112,6 +113,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     {
         qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Invalid target PNG image file structure.";
         fclose(f);
+
         return false;
     }
 
@@ -122,6 +124,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Cannot create PNG image file structure.";
         png_destroy_write_struct(&png_ptr, (png_infopp) nullptr);
         fclose(f);
+
         return false;
     }
 
@@ -130,15 +133,12 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     // will jump here
 
     // setjmp-save cleanup
+
     class Q_DECL_HIDDEN CleanupData
     {
     public:
 
-        CleanupData()
-          : data(nullptr),
-            f   (nullptr)
-        {
-        }
+        CleanupData() = default;
 
         ~CleanupData()
         {
@@ -160,8 +160,8 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
             f = file;
         }
 
-        uchar* data;
-        FILE*  f;
+        uchar* data = nullptr;
+        FILE*  f    = nullptr;
     };
 
     CleanupData* const cleanupData = new CleanupData;
@@ -176,11 +176,13 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     if (setjmp(png_ptr->jmpbuf))
 
 #endif
+
     {
         qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Internal libPNG error during writing file. Process aborted!";
         png_destroy_write_struct(&png_ptr, (png_infopp) & info_ptr);
         png_destroy_info_struct(png_ptr, (png_infopp) & info_ptr);
         delete cleanupData;
+
         return false;
     }
 
@@ -294,7 +296,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
     for (EmbeddedTextMap::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
     {
-        if (it.key() != QLatin1String("Software") && it.key() != QLatin1String("Comment"))
+        if ((it.key() != QLatin1String("Software")) && (it.key() != QLatin1String("Comment")))
         {
             QByteArray key   = it.key().toLatin1();
             QByteArray value = it.value().toLatin1();
@@ -346,7 +348,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     for (y = 0 ; y < imageHeight() ; ++y)
     {
 
-        if (observer && y == checkPoint)
+        if (observer && (y == checkPoint))
         {
             checkPoint += granularity(observer, imageHeight(), 0.8F);
 
@@ -355,6 +357,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
                 png_destroy_write_struct(&png_ptr, (png_infopp) & info_ptr);
                 png_destroy_info_struct(png_ptr, (png_infopp) & info_ptr);
                 delete cleanupData;
+
                 return false;
             }
 

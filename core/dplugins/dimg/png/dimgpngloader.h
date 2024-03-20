@@ -45,8 +45,8 @@ public:
 
 private:
 
-    bool m_sixteenBit;
-    bool m_hasAlpha;
+    bool m_sixteenBit   = false;
+    bool m_hasAlpha     = false;
 };
 
 } // namespace DigikamPNGDImgPlugin

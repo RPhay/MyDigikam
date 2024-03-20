@@ -111,6 +111,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     {
         qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Cannot open image file.";
         loadingFailed();
+
         return false;
     }
 
@@ -127,10 +128,12 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     if ((membersRead != PNG_BYTES_TO_CHECK) || !png_check_sig(buf, PNG_BYTES_TO_CHECK))
 
 #endif
+
     {
         qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Not a PNG image file.";
         fclose(f);
         loadingFailed();
+
         return false;
     }
 
@@ -146,6 +149,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Invalid PNG image file structure.";
         fclose(f);
         loadingFailed();
+
         return false;
     }
 
@@ -157,6 +161,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         png_destroy_read_struct(&png_ptr, nullptr, nullptr);
         fclose(f);
         loadingFailed();
+
         return false;
     }
 
@@ -170,13 +175,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     public:
 
-        CleanupData()
-          : data (nullptr),
-            lines(nullptr),
-            file (nullptr),
-            cmod (0)
-        {
-        }
+        CleanupData() = default;
 
         ~CleanupData()
         {
@@ -231,12 +230,12 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     public:
 
-        uchar*  data;
-        uchar** lines;
-        FILE*   file;
+        uchar*  data    = nullptr;
+        uchar** lines   = { nullptr };
+        FILE*   file    = nullptr;
 
         QSize  size;
-        int    cmod;
+        int    cmod     = 0;
     };
 
     CleanupData* const cleanupData = new CleanupData;
@@ -251,6 +250,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     if (setjmp(png_ptr->jmpbuf))
 
 #endif
+
     {
         png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) nullptr);
 
@@ -260,6 +260,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Internal libPNG error during reading file. Process aborted!";
             delete cleanupData;
             loadingFailed();
+
             return false;
         }
 
@@ -285,6 +286,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         cleanupData->takeData();
         delete cleanupData;
+
         return true;
     }
 
@@ -335,6 +337,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         {
             m_hasAlpha = false;
             colorModel = DImg::RGB;
+
             break;
         }
 
@@ -342,6 +345,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         {
             m_hasAlpha = true;
             colorModel = DImg::RGB;
+
             break;
         }
 
@@ -349,6 +353,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         {
             m_hasAlpha = false;
             colorModel = DImg::GRAYSCALE;
+
             break;
         }
 
@@ -356,6 +361,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         {
             m_hasAlpha = true;
             colorModel = DImg::GRAYSCALE;
+
             break;
         }
 
@@ -363,6 +369,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         {
             m_hasAlpha = false;
             colorModel = DImg::INDEXED;
+
             break;
         }
     }
@@ -385,43 +392,41 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
             switch (color_type)
             {
-                case PNG_COLOR_TYPE_RGB :           // RGB
+                case PNG_COLOR_TYPE_RGB:           // RGB
                 {
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_RGB";
-
                     png_set_add_alpha(png_ptr, 0xFFFF, PNG_FILLER_AFTER);
+
                     break;
                 }
 
-                case PNG_COLOR_TYPE_RGB_ALPHA :     // RGBA
+                case PNG_COLOR_TYPE_RGB_ALPHA:     // RGBA
                 {
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_RGB_ALPHA";
+
                     break;
                 }
 
-                case PNG_COLOR_TYPE_GRAY :          // Grayscale
+                case PNG_COLOR_TYPE_GRAY:          // Grayscale
                 {
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_GRAY";
-
                     png_set_gray_to_rgb(png_ptr);
                     png_set_add_alpha(png_ptr, 0xFFFF, PNG_FILLER_AFTER);
 
                     break;
                 }
 
-                case PNG_COLOR_TYPE_GRAY_ALPHA :    // Grayscale + Alpha
+                case PNG_COLOR_TYPE_GRAY_ALPHA:    // Grayscale + Alpha
                 {
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_GRAY_ALPHA";
-
                     png_set_gray_to_rgb(png_ptr);
 
                     break;
                 }
 
-                case PNG_COLOR_TYPE_PALETTE :       // Indexed
+                case PNG_COLOR_TYPE_PALETTE:       // Indexed
                 {
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_PALETTE";
-
                     png_set_palette_to_rgb(png_ptr);
                     png_set_add_alpha(png_ptr, 0xFFFF, PNG_FILLER_AFTER);
 
@@ -431,9 +436,9 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                 default:
                 {
                     qCWarning(DIGIKAM_DIMG_LOG_PNG) << "PNG color type unknown.";
-
                     delete cleanupData;
                     loadingFailed();
+
                     return false;
                 }
             }
@@ -441,28 +446,26 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         else
         {
             qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in >=8 bits/color/pixel.";
-
             png_set_packing(png_ptr);
 
             switch (color_type)
             {
-                case PNG_COLOR_TYPE_RGB :           // RGB
+                case PNG_COLOR_TYPE_RGB:           // RGB
                 {
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_RGB";
-
                     png_set_add_alpha(png_ptr, 0xFF, PNG_FILLER_AFTER);
 
                     break;
                 }
 
-                case PNG_COLOR_TYPE_RGB_ALPHA :     // RGBA
+                case PNG_COLOR_TYPE_RGB_ALPHA:     // RGBA
                 {
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_RGB_ALPHA";
 
                     break;
                 }
 
-                case PNG_COLOR_TYPE_GRAY :          // Grayscale
+                case PNG_COLOR_TYPE_GRAY:          // Grayscale
                 {
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_GRAY";
 
@@ -482,18 +485,17 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                     break;
                 }
 
-                case PNG_COLOR_TYPE_GRAY_ALPHA :    // Grayscale + alpha
+                case PNG_COLOR_TYPE_GRAY_ALPHA:    // Grayscale + alpha
                 {
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_GRAY_ALPHA";
-
                     png_set_gray_to_rgb(png_ptr);
+
                     break;
                 }
 
-                case PNG_COLOR_TYPE_PALETTE :       // Indexed
+                case PNG_COLOR_TYPE_PALETTE:       // Indexed
                 {
                     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "PNG in PNG_COLOR_TYPE_PALETTE";
-
                     png_set_packing(png_ptr);
                     png_set_palette_to_rgb(png_ptr);
                     png_set_add_alpha(png_ptr, 0xFF, PNG_FILLER_AFTER);
@@ -504,9 +506,9 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                 default:
                 {
                     qCWarning(DIGIKAM_DIMG_LOG_PNG) << "PNG color type unknown." << color_type;
-
                     delete cleanupData;
                     loadingFailed();
+
                     return false;
                 }
             }
@@ -540,6 +542,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         // Call before png_read_update_info and png_start_read_image()
         // for non-interlaced images number_passes will be 1
+
         int number_passes = png_set_interlace_handling(png_ptr);
 
         png_read_update_info(png_ptr, info_ptr);
@@ -567,6 +570,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) nullptr);
             delete cleanupData;
             loadingFailed();
+
             return false;
         }
 
@@ -593,7 +597,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
             for (int y = 0 ; y < height ; ++y)
             {
-                if (observer && y == checkPoint)
+                if (observer && (y == checkPoint))
                 {
                     checkPoint += granularity(observer, height, 0.7F);
 
@@ -602,10 +606,12 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                         png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) nullptr);
                         delete cleanupData;
                         loadingFailed();
+
                         return false;
                     }
 
                     // use 10% - 80% for progress while reading rows
+
                     observer->progressInfo(0.1F + (0.7F * (((float)y) / ((float)height))));
                 }
 
@@ -702,9 +708,9 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         {
             // Check if we have a Raw profile embedded using ImageMagick technique.
 
-            if (memcmp(text_ptr[i].key, "Raw profile type exif", 21) != 0 ||
-                memcmp(text_ptr[i].key, "Raw profile type APP1", 21) != 0 ||
-                memcmp(text_ptr[i].key, "Raw profile type iptc", 21) != 0)
+            if ((memcmp(text_ptr[i].key, "Raw profile type exif", 21) != 0) ||
+                (memcmp(text_ptr[i].key, "Raw profile type APP1", 21) != 0) ||
+                (memcmp(text_ptr[i].key, "Raw profile type iptc", 21) != 0))
             {
                 imageSetEmbbededText(QLatin1String(text_ptr[i].key), QLatin1String(text_ptr[i].text));
 
