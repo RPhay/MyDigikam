@@ -516,6 +516,8 @@ bool DFileOperations::renameFile(const QString& srcFile,
 
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
                                        << dstFile;
+
+        return true;
     }
 
     return false;
