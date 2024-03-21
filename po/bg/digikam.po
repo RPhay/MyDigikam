@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 01:39+0000\n"
-"PO-Revision-Date: 2024-03-06 10:22+0100\n"
+"POT-Creation-Date: 2024-03-21 01:38+0000\n"
+"PO-Revision-Date: 2024-03-20 10:18+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: core/app/date/ddateedit.cpp:497
 #, kde-format
@@ -1369,6 +1369,9 @@ msgid ""
 "correctly. Go to the digiKam settings and check the availability of the "
 "ExifTool binary file in the metadata section."
 msgstr ""
+"ExifTool не е наличен във вашата инсталация на digiKam или не работи "
+"правилно. Отидете в настройките на digiKam и проверете наличието на ExifTool "
+"в раздела за метаданни."
 
 #: core/app/main/digikamapp.cpp:690 core/app/views/stack/trashview.cpp:514
 #, kde-format
@@ -1514,17 +1517,15 @@ msgid "Images found in %1"
 msgstr "Открити в %1 снимки"
 
 #: core/app/main/digikamapp_config.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"Избрали сте ярка цветова схема. Преминаваме към тъмна тема на иконите. "
-"Темата на иконите е налична след рестартиране на digiKam."
+"Сега преминаваме към темата със системните икони. Цветовете на иконите са "
+"автоматично нагласени за работния плот на Plasma 6. Темата на иконите е "
+"достъпна след рестартиране на digiKam."
 
 #: core/app/main/digikamapp_config.cpp:123
 #: core/showfoto/main/showfoto_config.cpp:183
@@ -2653,7 +2654,7 @@ msgstr "&Помощ"
 msgid "Main Toolbar"
 msgstr "Основна лента с инструменти"
 
-#: core/app/main/main.cpp:197 core/app/views/stack/welcomepageview.cpp:257
+#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:257
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2663,35 +2664,35 @@ msgstr "Основна лента с инструменти"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:206 core/showfoto/main/main.cpp:187
+#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:191
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Златко Попов,Ясен Праматаров"
 
-#: core/app/main/main.cpp:207 core/showfoto/main/main.cpp:188
+#: core/app/main/main.cpp:211 core/showfoto/main/main.cpp:192
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zlatkopopov@fsa-bg.org, yasen@lindeas.com"
 
-#: core/app/main/main.cpp:215
+#: core/app/main/main.cpp:219
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Отваряне на диалоговия прозорец на камерата при \"path\""
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:222
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 "Отваряне на диалогов прозорец на камерата за устройството с Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:225
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Автоматично откриване и зареждане на закачен фотоапарат"
 
-#: core/app/main/main.cpp:223
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2699,12 +2700,12 @@ msgstr ""
 "Стартиране на digikam с файла с база данни SQLite, намерен в директорията "
 "\"dir\""
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:230
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Стартиране на digikam с конфигурационния файл \"config\""
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2715,7 +2716,7 @@ msgstr ""
 "инсталирайте 64-битовата версия на digiKam, за да получите по-добри "
 "резултати.</p>"
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:297
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2726,7 +2727,7 @@ msgstr ""
 "го.\n"
 "На вашия компютър няма инсталирана приставка за база данни."
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:306
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2736,7 +2737,7 @@ msgstr ""
 "Не е наличен плъгин за бази данни Qt SQLite или MySQL, моля, инсталирайте го."
 "Плъгините за бази данни, инсталирани на вашия компютър, са изброени по-долу."
 
-#: core/app/main/main.cpp:342
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -6955,11 +6956,11 @@ msgstr "Високоефективно кодиране на изображен�
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
@@ -6978,11 +6979,11 @@ msgstr "да"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:172
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:176
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
@@ -7128,12 +7129,12 @@ msgctxt "@title"
 msgid "JPEG image"
 msgstr "Изображение JPEG"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:68
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:62
 #, kde-format
 msgid "Lossless JPEG 2000 files"
 msgstr "Файлове JPEG 2000 без загуба на качество"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:70
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for JPEG 2000 images.</p><p>If this option is "
@@ -7143,12 +7144,12 @@ msgstr ""
 "p><p>Ако е включено, се използва формат за компресиране без загуба на "
 "качество JPEG 2000.</p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:77
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:71
 #, kde-format
 msgid "JPEG 2000 quality:"
 msgstr "Качество на JPEG 2000:"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:79
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality (high "
@@ -7164,19 +7165,19 @@ msgstr ""
 "p><p><b> Забележка: JPEG 2000 не е формат на компресия на изображение без "
 "загуба, когато използвате тази настройка. </b></p> "
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:108
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:107
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "Зареждане на JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:123
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr "Програма за зареждане на изображения, базирана на кодека Libjasper"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:128
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:127
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7199,21 +7200,21 @@ msgstr ""
 "href='https://en.wikipedia.org/wiki/JPEG_2000'>Joint Photographic Experts "
 "Group</a> за подробности. </para> "
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:169
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:173
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "Изображение JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:177
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "Поток JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
@@ -7334,12 +7335,12 @@ msgctxt "@title"
 msgid "Progressive Graphics File"
 msgstr "Файл на Progressive Graphics"
 
-#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:67
+#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:62
 #, kde-format
 msgid "PNG compression:"
 msgstr "Компресия на PNG:"
 
-#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:69
+#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
@@ -7391,12 +7392,12 @@ msgctxt "@title"
 msgid "Portable Network Graphic"
 msgstr "Portable Network Graphic"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:62
 #, kde-format
 msgid "Lossless AVIF files"
 msgstr "Файлове AVIF без загуба на качество"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for AVIF images.</p><p>If this option is "
@@ -7406,12 +7407,12 @@ msgstr ""
 "тази опция е активирана, за компресиране на JPEG XL снимки ще се използва "
 "метод без загуба.</p>"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:71
 #, kde-format
 msgid "AVIF quality:"
 msgstr "Качество на AVIF:"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
@@ -7427,12 +7428,12 @@ msgstr ""
 "Забележка: AVIF не е формат на компресия на изображение без загуба, когато "
 "използвате тази настройка. </b></p> "
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:62
 #, kde-format
 msgid "Lossless JPEG XL files"
 msgstr "Файлове JPEG XL без загуба на качество"
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for JPEG XL images.</p><p>If this option is "
@@ -7442,12 +7443,12 @@ msgstr ""
 "тази опция е активирана, за компресиране на JPEG XL снимки ще се използва "
 "метод без загуби.</p>"
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:71
 #, kde-format
 msgid "JPEG XL quality:"
 msgstr "Качество на JPEG XL:"
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
@@ -7494,12 +7495,12 @@ msgstr ""
 "kimageformats/-/blob/master/README.md'>KDE Framework documentation </a>за "
 "разширен списък с поддържани формати. </para> "
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:62
 #, kde-format
 msgid "Lossless WEBP files"
 msgstr "Файлове WEBP без загуби"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for WEBP images.</p><p>If this option is "
@@ -7509,12 +7510,12 @@ msgstr ""
 "тази опция е активирана, за компресиране на WEBP снимки ще се използва метод "
 "без загуби.</p>.</p>"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:71
 #, kde-format
 msgid "WEBP quality:"
 msgstr "Качество на WEBP:"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
@@ -11761,10 +11762,9 @@ msgid "Creation of picture '%1'"
 msgstr "Създаване на изображение '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:235
-#, fuzzy, kde-format
-#| msgid "Failed to Fetch Photoset information from %1. %2\n"
+#, kde-format
 msgid "Cannot get GPS Information from %1 file."
-msgstr "Неуспешно извличане на информация за комплект снимки от %1. %2\n"
+msgstr "Не може да се извлече информацията за GPS от %1 file."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:324
 #, kde-format
@@ -49473,19 +49473,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Папки"
 
-#: core/showfoto/main/main.cpp:178
+#: core/showfoto/main/main.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:196
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Файл(ове) или папка(и) за отваряне"
 
-#: core/showfoto/main/main.cpp:225
+#: core/showfoto/main/main.cpp:229
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -64497,15 +64497,7 @@ msgid "Download Error"
 msgstr "Грешка при изтегляне"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:251
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the download.\n"
-#| "\n"
-#| "File: %1\n"
-#| "\n"
-#| "%2\n"
-#| "\n"
-#| "You can try again or continue the download at the next start."
+#, kde-format
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -64522,15 +64514,14 @@ msgstr ""
 "\n"
 "%2\n"
 "\n"
-"Можете да опитате отново или да продължите изтеглянето при следващото "
-"стартиране."
+"Можете да опитате отново с алтернативен огледален сървър или да продължите "
+"изтеглянето при следващото стартиране."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:260
-#, fuzzy, kde-format
-#| msgid "Alternative name"
+#, kde-format
 msgctxt "@action:button"
 msgid "Try Alternate"
-msgstr "Алтернативно име"
+msgstr "Алтернативно огледало"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format

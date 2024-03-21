@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 01:39+0000\n"
+"POT-Creation-Date: 2024-03-21 01:38+0000\n"
 "PO-Revision-Date: 2024-03-17 20:45\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2580,7 +2580,7 @@ msgstr "帮助(&H)"
 msgid "Main Toolbar"
 msgstr "主工具栏"
 
-#: core/app/main/main.cpp:197 core/app/views/stack/welcomepageview.cpp:257
+#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:257
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2590,7 +2590,7 @@ msgstr "主工具栏"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:206 core/showfoto/main/main.cpp:187
+#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:191
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2598,7 +2598,7 @@ msgstr ""
 "Tyson Tan (谭代山/钛山), CoelacanthusHex, Feng Chao, Funda Wang, Guo Yunhe, "
 "millionart, Ni Hui, sanfanling, Weng Xuetian, YFdyh000, 李子"
 
-#: core/app/main/main.cpp:207 core/showfoto/main/main.cpp:188
+#: core/app/main/main.cpp:211 core/showfoto/main/main.cpp:192
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2608,33 +2608,33 @@ msgstr ""
 "shuizhuyuanluo@126.com, xujia19@gmail.com, wengxt@gmail.com, YFdyh000@kde."
 "org, bingling00@kde.org"
 
-#: core/app/main/main.cpp:215
+#: core/app/main/main.cpp:219
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "打开位于 \"path\" 的相机对话框"
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:222
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "打开 Solid UDI 为 \"udi\" 设备的相机对话框"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:225
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "自动检测并打开已连接的 gphoto2 相机"
 
-#: core/app/main/main.cpp:223
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "启动 digiKam 时使用在 \"dir\" 目录中发现的 SQLite 数据库文件"
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:230
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "启动 digiKam 时使用名为 \"config\" 的配置文件"
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2644,7 +2644,7 @@ msgstr ""
 "<p>您正在 64 位 Windows 操作系统中运行 32 位版本的 digiKam。</p><p>请安装 64 "
 "位版本的 digiKam 以获得更好的使用体验。</p>"
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:297
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2654,7 +2654,7 @@ msgstr ""
 "Qt SQLite 运行时组件或 MySQL 数据库插件不可用。请安装该组件。\n"
 "本机并未安装任何数据库插件。"
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:306
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2664,7 +2664,7 @@ msgstr ""
 "Qt SQLite 运行时组件或 MySQL 数据库插件不可用。请安装该组件。\n"
 "本机已安装的数据库插件如下："
 
-#: core/app/main/main.cpp:342
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -6648,11 +6648,11 @@ msgstr "HEIC 高效率图像编码"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
@@ -6671,11 +6671,11 @@ msgstr "是"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:172
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:176
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
@@ -6811,12 +6811,12 @@ msgctxt "@title"
 msgid "JPEG image"
 msgstr "JPEG 图像"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:68
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:62
 #, kde-format
 msgid "Lossless JPEG 2000 files"
 msgstr "无损 JPEG 2000 文件"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:70
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for JPEG 2000 images.</p><p>If this option is "
@@ -6825,12 +6825,12 @@ msgstr ""
 "<p>启用/禁用 JPEG 2000 图像的无损压缩。</p><p>勾选此项后，JPEG 2000 图像将使"
 "用无损方式进行压缩。</p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:77
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:71
 #, kde-format
 msgid "JPEG 2000 quality:"
 msgstr "JPEG 2000 画质："
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:79
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality (high "
@@ -6844,19 +6844,19 @@ msgstr ""
 "最高画质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，JPEG 2000 格式并"
 "非使用无损方式压缩图像。</b></p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:108
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:107
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "JPEG-2000 加载程序"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:123
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr "基于 Libjasper 编解码器的图像加载程序"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:128
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:127
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6875,21 +6875,21 @@ msgstr ""
 "像存档、安监系统、数码摄影和医学影像等领域。</para><para>详情请参见 <a "
 "href='https://baike.baidu.com/item/JPEG 2000'>JPEG 2000 介绍页面</a>。</para>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:169
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:173
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "JPEG-2000 图像"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:177
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "JPEG-2000 图像流"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
@@ -7002,12 +7002,12 @@ msgctxt "@title"
 msgid "Progressive Graphics File"
 msgstr "PGF 渐进式图形文件"
 
-#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:67
+#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:62
 #, kde-format
 msgid "PNG compression:"
 msgstr "PNG 压缩率："
 
-#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:69
+#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
@@ -7054,12 +7054,12 @@ msgctxt "@title"
 msgid "Portable Network Graphic"
 msgstr "可移植网络图形 (PNG)"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:62
 #, kde-format
 msgid "Lossless AVIF files"
 msgstr "无损 AVIF 文件"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for AVIF images.</p><p>If this option is "
@@ -7068,12 +7068,12 @@ msgstr ""
 "<p>启用/禁用 AVIF 图像的无损压缩。</p><p>勾选此项后，JPEG XL 图像将使用无损方"
 "式进行压缩。</p>"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:71
 #, kde-format
 msgid "AVIF quality:"
 msgstr "AVIF 画质："
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
@@ -7087,12 +7087,12 @@ msgstr ""
 "质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，AVIF 格式并非使用无损"
 "方式压缩图像。</b></p>"
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:62
 #, kde-format
 msgid "Lossless JPEG XL files"
 msgstr "无损 JPEG XL 文件"
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for JPEG XL images.</p><p>If this option is "
@@ -7101,12 +7101,12 @@ msgstr ""
 "<p>启用/禁用 JPEG XL 图像的无损压缩。</p><p>勾选此项后，JPEG-XL 图像将使用无"
 "损方式进行压缩。</p>"
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:71
 #, kde-format
 msgid "JPEG XL quality:"
 msgstr "JPEG XL 画质："
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
@@ -7149,12 +7149,12 @@ msgstr ""
 "请见 <a href='https://invent.kde.org/frameworks/kimageformats/-/blob/master/"
 "README.md'>KDE 程序框架相关文档</a>。</para>"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:62
 #, kde-format
 msgid "Lossless WEBP files"
 msgstr "无损 WEBP 文件"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for WEBP images.</p><p>If this option is "
@@ -7163,12 +7163,12 @@ msgstr ""
 "<p>启用/禁用 WEBP 图像的无损压缩。</p><p>勾选此项后，WEBP 图像将使用无损方式"
 "进行压缩。</p>"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:71
 #, kde-format
 msgid "WEBP quality:"
 msgstr "WEBP 画质："
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
@@ -47596,19 +47596,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "文件夹"
 
-#: core/showfoto/main/main.cpp:178
+#: core/showfoto/main/main.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:196
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "要打开的文件或文件夹"
 
-#: core/showfoto/main/main.cpp:225
+#: core/showfoto/main/main.cpp:229
 #, kde-format
 msgctxt "#info"
 msgid ""

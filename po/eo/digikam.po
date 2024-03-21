@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 01:39+0000\n"
-"PO-Revision-Date: 2024-03-19 07:25+0100\n"
+"POT-Creation-Date: 2024-03-21 01:38+0000\n"
+"PO-Revision-Date: 2024-03-20 22:52+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2635,7 +2635,7 @@ msgstr "&Helpo"
 msgid "Main Toolbar"
 msgstr "Ĉefa ilobreto"
 
-#: core/app/main/main.cpp:197 core/app/views/stack/welcomepageview.cpp:257
+#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:257
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2645,34 +2645,34 @@ msgstr "Ĉefa ilobreto"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:206 core/showfoto/main/main.cpp:187
+#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:191
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Axel Rousseau,Oliver Kellogg"
 
-#: core/app/main/main.cpp:207 core/showfoto/main/main.cpp:188
+#: core/app/main/main.cpp:211 core/showfoto/main/main.cpp:192
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
-#: core/app/main/main.cpp:215
+#: core/app/main/main.cpp:219
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Malfermi fotilan dialogon ĉe \"vojo\""
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:222
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Malfermi fotilan dialogon por la aparato kun Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:225
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Aŭtomate detekti kaj malfermi konektitan fotilon gphoto2"
 
-#: core/app/main/main.cpp:223
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2680,12 +2680,12 @@ msgstr ""
 "Komenci digikam per la datumbaza dosiero SQLite trovita en la dosierujo \"dir"
 "\""
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:230
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Komenci digikam per la agorda dosiero \"config\""
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2696,7 +2696,7 @@ msgstr ""
 "instali la 64-bitan version de digiKam por akiri pli bonan sperton kun "
 "digiKam.</p>"
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:297
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2707,7 +2707,7 @@ msgstr ""
 "ĝin.\n"
 "Ne estas datumbaza kromaĵo instalita en via komputilo."
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:306
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2718,7 +2718,7 @@ msgstr ""
 "ĝin.\n"
 "Datumbazaj aldonaĵoj instalitaj sur via komputilo estas listigitaj malsupre."
 
-#: core/app/main/main.cpp:342
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -6878,11 +6878,11 @@ msgstr "Alta efikeco bilda kodigo"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
@@ -6901,11 +6901,11 @@ msgstr "jes"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:172
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:176
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
@@ -7046,12 +7046,12 @@ msgctxt "@title"
 msgid "JPEG image"
 msgstr "JPEG bildo"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:68
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:62
 #, kde-format
 msgid "Lossless JPEG 2000 files"
 msgstr "Senperdaj JPEG 2000 dosieroj"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:70
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for JPEG 2000 images.</p><p>If this option is "
@@ -7061,12 +7061,12 @@ msgstr ""
 "estas ebligita, senperda metodo estos uzata por kunpremi JPEG 2000 bildojn.</"
 "p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:77
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:71
 #, kde-format
 msgid "JPEG 2000 quality:"
 msgstr "JPEG 2000 kvalito:"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:79
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality (high "
@@ -7081,19 +7081,19 @@ msgstr ""
 "kunpremo kaj granda dosiergrandeco)</p><p> <b>Noto: JPEG 2000 ne estas "
 "senperda bildkunprema formato kiam vi uzas ĉi tiun agordon.</b></p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:108
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:107
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "Ŝargilo JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:123
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr "Bildŝargilo bazita sur Libjasper-kodeko"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:128
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:127
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7115,21 +7115,21 @@ msgstr ""
 "para><para>Vidu <a href='https://en.wikipedia.org/wiki/JPEG_2000' "
 ">Dokumentado pri Komuna Fotografa Ekspertgrupo</a> por detaloj.</para>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:169
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:173
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "Bildo JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:177
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "JPEG-2000-rivereto"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
@@ -7246,12 +7246,12 @@ msgctxt "@title"
 msgid "Progressive Graphics File"
 msgstr "Progresema Grafika Dosiero"
 
-#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:67
+#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:62
 #, kde-format
 msgid "PNG compression:"
 msgstr "PNG kunpremado:"
 
-#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:69
+#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
@@ -7303,12 +7303,12 @@ msgctxt "@title"
 msgid "Portable Network Graphic"
 msgstr "Portebla Reta Grafiko"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:62
 #, kde-format
 msgid "Lossless AVIF files"
 msgstr "Senperdaj AVIF-dosieroj"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for AVIF images.</p><p>If this option is "
@@ -7317,12 +7317,12 @@ msgstr ""
 "<p>Ŝaltigi senperdan kunpremadon por AVIF-bildoj.</p><p>Se ĉi tiu opcio "
 "estas ebligita, senperda metodo estos uzata por kunpremi JPEG XL-bildojn.</p>"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:71
 #, kde-format
 msgid "AVIF quality:"
 msgstr "AVIF-kvalito:"
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
@@ -7337,12 +7337,12 @@ msgstr ""
 "kunpremo kaj granda dosiergrandeco)</p><p><b>Noto: AVIF ne estas senperda "
 "bildkunprema formato kiam vi uzas ĉi tiun agordon.</b></p>"
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:62
 #, kde-format
 msgid "Lossless JPEG XL files"
 msgstr "Senperdaj dosieroj JPEG XL"
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for JPEG XL images.</p><p>If this option is "
@@ -7351,12 +7351,12 @@ msgstr ""
 "<p>Ŝangi senperdan kunpremadon por JPEG XL-bildoj.</p><p>Se ĉi tiu opcio "
 "estas ebligita, senperda metodo estos uzata por kunpremi JPEG XL-bildojn.</p>"
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:71
 #, kde-format
 msgid "JPEG XL quality:"
 msgstr "JPEG XL-kvalito:"
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
@@ -7402,12 +7402,12 @@ msgstr ""
 "README.md'>KDE-Kadra dokumentaro</a> por plilongigita listo de formatoj "
 "subtenataj.</para>"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:62
 #, kde-format
 msgid "Lossless WEBP files"
 msgstr "Senperdaj WEBP-dosieroj"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for WEBP images.</p><p>If this option is "
@@ -7416,12 +7416,12 @@ msgstr ""
 "<p>Ŝaltigi senperdan kunpremadon por WEBP-bildoj.</p><p>Se ĉi tiu opcio "
 "estas ebligita, senperda metodo estos uzata por kunpremi WEBP-bildojn.</p>"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:71
 #, kde-format
 msgid "WEBP quality:"
 msgstr "Kvalito WEB:"
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
@@ -48843,19 +48843,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Dosierujoj"
 
-#: core/showfoto/main/main.cpp:178
+#: core/showfoto/main/main.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:196
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Dosiero(j) aŭ dosierujo(j) por malfermi"
 
-#: core/showfoto/main/main.cpp:225
+#: core/showfoto/main/main.cpp:229
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -63688,15 +63688,7 @@ msgid "Download Error"
 msgstr "Elŝuta Eraro"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:251
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the download.\n"
-#| "\n"
-#| "File: %1\n"
-#| "\n"
-#| "%2\n"
-#| "\n"
-#| "You can try again or continue the download at the next start."
+#, kde-format
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -63713,14 +63705,14 @@ msgstr ""
 "\n"
 "%2\n"
 "\n"
-"Vi povas provi denove aŭ daŭrigi la elŝuton ĉe la sekva komenco."
+"Vi povas provi denove per alternativa spegulservilo aŭ daŭrigi la elŝuton je "
+"la sekva komenco."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:260
-#, fuzzy, kde-format
-#| msgid "Alternative name"
+#, kde-format
 msgctxt "@action:button"
 msgid "Try Alternate"
-msgstr "Alternativa nomo"
+msgstr "Provi Alternativan"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
@@ -66836,7 +66828,3 @@ msgstr "Albumaj Objektoj"
 #, kde-format
 msgid "Import Items"
 msgstr "Importi Objektojn"
-
-#~ msgctxt "@action:button"
-#~ msgid "Try Again"
-#~ msgstr "Provi denove"
