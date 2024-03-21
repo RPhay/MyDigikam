@@ -222,6 +222,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotToggleContainer();
+    void slotUpdateIcon();
 
 private:
 

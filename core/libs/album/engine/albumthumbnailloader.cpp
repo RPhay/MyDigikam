@@ -31,6 +31,7 @@
 #include "digikam_debug.h"
 #include "album.h"
 #include "albummanager.h"
+#include "thememanager.h"
 #include "applicationsettings.h"
 #include "coredb.h"
 #include "coredbaccess.h"
@@ -119,6 +120,13 @@ AlbumThumbnailLoader::AlbumThumbnailLoader()
 
     connect(AlbumManager::instance(), SIGNAL(signalAlbumDeleted(Album*)),
             this, SLOT(slotIconChanged(Album*)));
+
+    connect(ThemeManager::instance(), &ThemeManager::signalThemeChanged,
+            this, [this]()
+        {
+            d->iconCache.clear();
+        }
+    );
 }
 
 AlbumThumbnailLoader::~AlbumThumbnailLoader()

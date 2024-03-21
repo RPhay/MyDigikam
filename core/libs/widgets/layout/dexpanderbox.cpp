@@ -38,6 +38,7 @@
 // Local includes
 
 #include "dlayoutbox.h"
+#include "thememanager.h"
 
 namespace Digikam
 {
@@ -482,6 +483,8 @@ public:
     DLineWidget*      line;
     QWidget*          hbox;
 
+    QIcon             icon;
+
     DArrowClickLabel* arrow;
     DClickLabel*      clickLabel;
 };
@@ -535,6 +538,9 @@ DLabelExpander::DLabelExpander(QWidget* const parent)
 
     connect(d->btn, &QToolButton::pressed,
             this, &DLabelExpander::signalButtonPressed);
+
+    connect(ThemeManager::instance(), &ThemeManager::signalThemeChanged,
+            this, &DLabelExpander::slotUpdateIcon);
 }
 
 DLabelExpander::~DLabelExpander()
@@ -584,22 +590,13 @@ QString DLabelExpander::text() const
 
 void DLabelExpander::setIcon(const QIcon& icon)
 {
-    d->pixmapLabel->setPixmap(icon.pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)));
+    d->icon = icon;
+    slotUpdateIcon();
 }
 
 QIcon DLabelExpander::icon() const
 {
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
-
-    return QIcon(d->pixmapLabel->pixmap(Qt::ReturnByValue));
-
-#else
-
-    return QIcon(*d->pixmapLabel->pixmap());
-
-#endif
-
+    return d->icon;
 }
 
 void DLabelExpander::setButtonVisible(bool b)
@@ -697,6 +694,11 @@ bool DLabelExpander::eventFilter(QObject* obj, QEvent* ev)
     }
 }
 
+void DLabelExpander::slotUpdateIcon()
+{
+    d->pixmapLabel->setPixmap(d->icon.pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)));
+}
+
 // ------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN DExpanderBox::Private
@@ -714,7 +716,7 @@ public:
     {
         DLabelExpander* const exp = new DLabelExpander(parent->viewport());
         exp->setText(txt);
-        exp->setIcon(icon.pixmap(QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize)));
+        exp->setIcon(icon);
         exp->setWidget(w);
         exp->setLineVisible(!wList.isEmpty());
         exp->setObjectName(objName);

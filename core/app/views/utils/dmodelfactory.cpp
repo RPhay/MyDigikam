@@ -22,6 +22,7 @@
 // Local settings
 
 #include "applicationsettings.h"
+#include "thememanager.h"
 
 namespace Digikam
 {
@@ -70,6 +71,9 @@ DModelFactory::DModelFactory()
     slotApplicationSettingsChanged();
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
+            this, SLOT(slotApplicationSettingsChanged()));
+
+    connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
             this, SLOT(slotApplicationSettingsChanged()));
 }
 
