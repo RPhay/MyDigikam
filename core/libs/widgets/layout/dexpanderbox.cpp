@@ -612,7 +612,8 @@ bool DLabelExpander::buttonIsVisible() const
 void DLabelExpander::setButtonIcon(const QIcon& icon)
 {
     d->btn->setIcon(icon);
-    d->btn->setIconSize(QSize(style()->pixelMetric(QStyle::PM_SmallIconSize), style()->pixelMetric(QStyle::PM_SmallIconSize)));
+    d->btn->setIconSize(QSize(style()->pixelMetric(QStyle::PM_SmallIconSize),
+                              style()->pixelMetric(QStyle::PM_SmallIconSize)));
 }
 
 void DLabelExpander::setWidget(QWidget* const widget)
