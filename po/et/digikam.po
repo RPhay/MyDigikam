@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-21 01:38+0000\n"
+"POT-Creation-Date: 2024-03-22 01:35+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1605,7 +1605,7 @@ msgstr "Uute kataloogide lisamine albumiteeki."
 msgid "Images found in %1"
 msgstr "Leiti pildid asukohas %1"
 
-#: core/app/main/digikamapp_config.cpp:107
+#: core/app/main/digikamapp_config.cpp:112
 #, fuzzy, kde-format
 #| msgid ""
 #| "You have chosen a bright color scheme. We switch to a dark icon theme. "
@@ -1618,7 +1618,7 @@ msgstr ""
 "Oled valinud heleda värviskeemi. Me lülitume tumedale ikooniteemale. "
 "Ikooniteema on saadaval pärast digiKami taaskäivitamist."
 
-#: core/app/main/digikamapp_config.cpp:123
+#: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1628,7 +1628,7 @@ msgstr ""
 "Oled valinud heleda värviskeemi. Me lülitume tumedale ikooniteemale. "
 "Ikooniteema on saadaval pärast digiKami taaskäivitamist."
 
-#: core/app/main/digikamapp_config.cpp:131
+#: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""

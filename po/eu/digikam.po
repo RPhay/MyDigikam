@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-21 01:38+0000\n"
+"POT-Creation-Date: 2024-03-22 01:35+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1522,7 +1522,7 @@ msgstr "Gehitu karpeta berriak album liburutegira."
 msgid "Images found in %1"
 msgstr "%1(e)n aurkitutako irudiak"
 
-#: core/app/main/digikamapp_config.cpp:107
+#: core/app/main/digikamapp_config.cpp:112
 #, fuzzy, kde-format
 #| msgid ""
 #| "You have chosen a bright color scheme. We switch to a dark icon theme. "
@@ -1535,7 +1535,7 @@ msgstr ""
 "Kolore-antolaera argi bat aukeratu duzu. Ikono iluneko gai batera aldatzen "
 "dugu. Ikono-gaia erabilgarri egongo da digiKam berrabiatu ondoren."
 
-#: core/app/main/digikamapp_config.cpp:123
+#: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1545,7 +1545,7 @@ msgstr ""
 "Kolore-antolaera argi bat aukeratu duzu. Ikono iluneko gai batera aldatzen "
 "dugu. Ikono-gaia erabilgarri egongo da digiKam berrabiatu ondoren."
 
-#: core/app/main/digikamapp_config.cpp:131
+#: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""

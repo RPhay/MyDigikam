@@ -68,9 +68,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-21 01:38+0000\n"
-"PO-Revision-Date: 2024-03-13 14:00+0100\n"
-"Last-Translator: xavier <xavier.besnard@kde.org>\n"
+"POT-Creation-Date: 2024-03-22 01:35+0000\n"
+"PO-Revision-Date: 2024-03-20 10:30+0100\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -1559,21 +1559,18 @@ msgstr "Ajoute de nouveaux dossiers à la bibliothèque d'albums."
 msgid "Images found in %1"
 msgstr "Images trouvées dans %1"
 
-#: core/app/main/digikamapp_config.cpp:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#: core/app/main/digikamapp_config.cpp:112
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"Vous avez sélectionné un thème de couleurs lumineuses. Il y a un basculement "
-"vers un thème d'icônes sombres. Celui-ci ne sera effectif qu'après un re-"
-"démarrage de DigiKam."
+"Vous avez basculé vers un thème d'icônes du système. Les couleurs des icônes "
+"sont ajustées automatiquement sur le bureau de Plasma 6.  Le thème d'icônes "
+"ne sera effectif qu'après un re-démarrage de DigiKam."
 
-#: core/app/main/digikamapp_config.cpp:123
+#: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1584,7 +1581,7 @@ msgstr ""
 "vers un thème d'icônes sombres. Celui-ci ne sera effectif qu'après un re-"
 "démarrage de DigiKam."
 
-#: core/app/main/digikamapp_config.cpp:131
+#: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""

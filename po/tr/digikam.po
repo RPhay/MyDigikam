@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-21 01:38+0000\n"
+"POT-Creation-Date: 2024-03-22 01:35+0000\n"
 "PO-Revision-Date: 2024-03-20 14:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1532,7 +1532,7 @@ msgstr "Albüm kitaplığına yeni klasörler ekler."
 msgid "Images found in %1"
 msgstr "%1 içinde bulunan görseller"
 
-#: core/app/main/digikamapp_config.cpp:107
+#: core/app/main/digikamapp_config.cpp:112
 #, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
@@ -1543,7 +1543,7 @@ msgstr ""
 "sistemde kendiliğinden ayarlanır. Simge teması, digiKam yeniden "
 "başlatıldıktan sonra kullanılabilir."
 
-#: core/app/main/digikamapp_config.cpp:123
+#: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1553,7 +1553,7 @@ msgstr ""
 "Parlak bir renk şeması seçtiniz. Karanlık bir simge temasına geçiyoruz. "
 "Simge teması, digiKam yeniden başlatıldıktan sonra kullanılabilir."
 
-#: core/app/main/digikamapp_config.cpp:131
+#: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""

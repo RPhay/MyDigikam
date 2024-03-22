@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-21 01:38+0000\n"
+"POT-Creation-Date: 2024-03-22 01:35+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -1642,7 +1642,7 @@ msgstr "Adiciona pastas novas à biblioteca de Álbuns."
 msgid "Images found in %1"
 msgstr "Imagens encontradas em %1"
 
-#: core/app/main/digikamapp_config.cpp:107
+#: core/app/main/digikamapp_config.cpp:112
 #, fuzzy, kde-format
 #| msgid ""
 #| "You have chosen a bright color scheme. We switch to a dark icon theme. "
@@ -1655,7 +1655,7 @@ msgstr ""
 "Escolheu um esquema de cores claro. Estamos a mudar para um tema de ícones "
 "escuro. O tema de ícones fica disponível após reiniciar o digiKam."
 
-#: core/app/main/digikamapp_config.cpp:123
+#: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1665,7 +1665,7 @@ msgstr ""
 "Escolheu um esquema de cores claro. Estamos a mudar para um tema de ícones "
 "escuro. O tema de ícones fica disponível após reiniciar o digiKam."
 
-#: core/app/main/digikamapp_config.cpp:131
+#: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""

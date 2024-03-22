@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-21 01:38+0000\n"
+"POT-Creation-Date: 2024-03-22 01:35+0000\n"
 "PO-Revision-Date: 2024-03-20 10:18+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1516,7 +1516,7 @@ msgstr "Добавяне на нови папки към библиотекат�
 msgid "Images found in %1"
 msgstr "Открити в %1 снимки"
 
-#: core/app/main/digikamapp_config.cpp:107
+#: core/app/main/digikamapp_config.cpp:112
 #, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
@@ -1527,7 +1527,7 @@ msgstr ""
 "автоматично нагласени за работния плот на Plasma 6. Темата на иконите е "
 "достъпна след рестартиране на digiKam."
 
-#: core/app/main/digikamapp_config.cpp:123
+#: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1537,7 +1537,7 @@ msgstr ""
 "Избрали сте ярка цветова схема. Преминаваме към тъмна тема на иконите. "
 "Темата на иконите е налична след рестартиране на digiKam."
 
-#: core/app/main/digikamapp_config.cpp:131
+#: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""

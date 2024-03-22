@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-21 01:38+0000\n"
+"POT-Creation-Date: 2024-03-22 01:35+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1547,7 +1547,7 @@ msgstr "Προσθήκη νέων φακέλων στη βιβλιοθήκη τ�
 msgid "Images found in %1"
 msgstr "Βρέθηκαν εικόνες στο %1"
 
-#: core/app/main/digikamapp_config.cpp:107
+#: core/app/main/digikamapp_config.cpp:112
 #, fuzzy, kde-format
 #| msgid ""
 #| "You have chosen a bright color scheme. We switch to a dark icon theme. "
@@ -1560,7 +1560,7 @@ msgstr ""
 "Έχετε επιλέξει αν θέμα φωτεινού Χρώματος.  Αλλάξαμε σε σκοτεινό θέμα. Το "
 "θέμα εικονιδίων είναι διαθέσιμο μετά την επανεκκίνηση του digiKam."
 
-#: core/app/main/digikamapp_config.cpp:123
+#: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1570,7 +1570,7 @@ msgstr ""
 "Έχετε επιλέξει αν θέμα φωτεινού Χρώματος.  Αλλάξαμε σε σκοτεινό θέμα. Το "
 "θέμα εικονιδίων είναι διαθέσιμο μετά την επανεκκίνηση του digiKam."
 
-#: core/app/main/digikamapp_config.cpp:131
+#: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""

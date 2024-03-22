@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-21 01:38+0000\n"
+"POT-Creation-Date: 2024-03-22 01:35+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1469,7 +1469,7 @@ msgstr "앨범 라이브러리에 새 폴더를 추가합니다."
 msgid "Images found in %1"
 msgstr "%1에서 찾은 이미지"
 
-#: core/app/main/digikamapp_config.cpp:107
+#: core/app/main/digikamapp_config.cpp:112
 #, fuzzy, kde-format
 #| msgid ""
 #| "You have chosen a bright color scheme. We switch to a dark icon theme. "
@@ -1482,7 +1482,7 @@ msgstr ""
 "밝은 색 구성표를 선택했습니다. 어두운 아이콘 테마로 전환합니다. 아이콘 테마"
 "는 digiKam을 다시 시작한 후에 사용할 수 있습니다."
 
-#: core/app/main/digikamapp_config.cpp:123
+#: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1492,7 +1492,7 @@ msgstr ""
 "밝은 색 구성표를 선택했습니다. 어두운 아이콘 테마로 전환합니다. 아이콘 테마"
 "는 digiKam을 다시 시작한 후에 사용할 수 있습니다."
 
-#: core/app/main/digikamapp_config.cpp:131
+#: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""

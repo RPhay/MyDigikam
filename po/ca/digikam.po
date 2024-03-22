@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-21 01:38+0000\n"
+"POT-Creation-Date: 2024-03-22 01:35+0000\n"
 "PO-Revision-Date: 2024-03-20 09:47+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1497,7 +1497,7 @@ msgstr "Afegeix les carpetes noves a la biblioteca d'àlbums."
 msgid "Images found in %1"
 msgstr "S'ha trobat imatges a %1"
 
-#: core/app/main/digikamapp_config.cpp:107
+#: core/app/main/digikamapp_config.cpp:112
 #, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
@@ -1508,7 +1508,7 @@ msgstr ""
 "automàticament en un escriptori Plasma 6. El tema d'icones estarà disponible "
 "després de reiniciar el digiKam."
 
-#: core/app/main/digikamapp_config.cpp:123
+#: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1518,7 +1518,7 @@ msgstr ""
 "Heu triat un esquema de color brillant. Es canvia a un tema d'icones fosc. "
 "El tema d'icones serà disponible després de reiniciar el digiKam."
 
-#: core/app/main/digikamapp_config.cpp:131
+#: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""
