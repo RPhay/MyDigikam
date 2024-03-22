@@ -6,7 +6,7 @@
 # http://cppcheck.sourceforge.net/
 # Dependencies : Python::pygments module to export report as HTML.
 #
-# If '--webupdate' is passed as argument, static analyzer results are pushed on the web site.
+# If '--webupdate' is not passed as argument, static analyzer results are pushed on the web site.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

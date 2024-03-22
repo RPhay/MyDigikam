@@ -6,7 +6,7 @@
 # https://github.com/KDE/clazy
 # Dependencies : Python BeautifulSoup and SoupSieve at run-time.
 #
-# If '--webupdate' is passed as argument, static analyzer results are just created locally.
+# If '--webupdate' is not passed as argument, static analyzer results are just created locally.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

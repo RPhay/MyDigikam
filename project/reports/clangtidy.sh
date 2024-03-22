@@ -4,7 +4,7 @@
 #
 # Run Clang tidy lint static analyzer on whole digiKam source code.
 #
-# If '--webupdate' is passed as argument, static analyzer results are just created locally.
+# If '--webupdate' is not passed as argument, static analyzer results are just created locally.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

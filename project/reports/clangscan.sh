@@ -4,9 +4,9 @@
 #
 # Run Clang static analyzer on whole digiKam source code.
 # https://clang-analyzer.llvm.org/
-# Dependencies : clang static analyzer version >= 3.9.0.
+# Dependencies : LLVM clang static analyzer version >= 16.
 #
-# If '--webupdate' is passed as argument, static analyzer results are just created locally.
+# If '--webupdate' is not passed as argument, static analyzer results are just created locally.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

@@ -14,7 +14,7 @@
 #  - Saxon 9HE java xml parser (saxon.jar) to export report as HTML [https://www.saxonica.com/download/java.xml].
 #    Production files: saxon9he.jar  saxon9-test.jar  saxon9-xqj.jar
 #
-# If '--webupdate' is passed as argument, static analyzer results are just created locally.
+# If '--webupdate' is not passed as argument, static analyzer results are just created locally.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
