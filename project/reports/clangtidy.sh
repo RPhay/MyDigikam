@@ -18,6 +18,22 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 checksCPUCores
 
+# Check run-time dependencies
+
+if ! which run-cland-tidy.py ; then
+
+    echo "CLANG-TIDY tool from LLVM is not installed!"
+    echo "See https://scan.coverity.com/download?tab=cxx for details."
+    exit -1
+
+else
+
+    CLANG_TIDY_BIN=run-clang-tidy.py
+
+fi
+
+echo "Found SCAN_BUILD tool: $SCAN_BUILD_BIN"
+
 ORIG_WD="`pwd`"
 REPORT_DIR="${ORIG_WD}/report.tidy"
 WEBSITE_DIR="${ORIG_WD}/site"
@@ -33,7 +49,7 @@ rm -fr $WEBSITE_DIR
 
 mkdir -p $REPORT_DIR
 
-/usr/share/clang/run-clang-tidy.py -quiet -j$CPU_CORES -p  ../../build/ | tee $REPORT_DIR/clang-tidy.log
+$CLANG_TIDY_BIN -quiet -j$CPU_CORES -p  ../../build/ | tee $REPORT_DIR/clang-tidy.log
 
 python3 ./clangtidy_visualizer.py $REPORT_DIR/clang-tidy.log
 
