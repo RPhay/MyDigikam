@@ -32,7 +32,7 @@ else
 
 fi
 
-echo "Found SCAN_BUILD tool: $SCAN_BUILD_BIN"
+echo "Found CLANG-TIDY tool: $CLANG_TIDY_BIN"
 
 ORIG_WD="`pwd`"
 REPORT_DIR="${ORIG_WD}/report.tidy"

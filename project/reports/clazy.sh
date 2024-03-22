@@ -18,6 +18,9 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
+# Skip directories from the analysis.
+. ../../.scan-build
+
 # Check run-time dependencies
 
 if [ ! -f /usr/bin/clazy ] ; then
@@ -44,19 +47,20 @@ WEBSITE_DIR="${ORIG_WD}/site"
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "Clazy Static Analyzer task name: $TITLE"
 
-# Do not parse unwanted directories accordingly with Krazy configuration.
-krazySkipConfig
+# Print the skipped directories taken from the config file.
 
-IGNORE_DIRS=".*include.*|"
+for DROP_ITEM in $IGNORE_DIRS ; do
 
-for DROP_ITEM in $KRAZY_FILTERS ; do
-    IGNORE_DIRS+=".*$DROP_ITEM.*|"
+    if [[ $DROP_ITEM != *exclude ]] ; then
+
+        echo "Skipped dir: $DROP_ITEM"
+
+    fi
+
 done
 
-# Remove last character
-IGNORE_DIRS=${IGNORE_DIRS::-1}
-
 export CLAZY_IGNORE_DIRS=$IGNORE_DIRS
+
 export CLAZY_CHECKS="\
 level2,\
 no-fully-qualified-moc-types,\
@@ -82,7 +86,6 @@ missing-qobject-macro\
 
 #qt6-qlatin1stringchar-to-u         What is that exactly ???
 
-echo "IGNORE DIRECTORIES:     $CLAZY_IGNORE_DIRS"
 echo "CHECKERS CONFIGURATION: $CLAZY_CHECKS"
 
 # Clean up and prepare to scan.
