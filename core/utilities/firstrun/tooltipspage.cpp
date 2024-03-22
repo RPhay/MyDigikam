@@ -40,24 +40,19 @@ class Q_DECL_HIDDEN TooltipsPage::Private
 {
 public:
 
-    explicit Private()
-      : showTooltips(nullptr),
-        hideTooltips(nullptr),
-        tooltipsBehavior(nullptr)
-    {
-    }
+    Private() = default;
 
-    QRadioButton* showTooltips;
-    QRadioButton* hideTooltips;
-    QButtonGroup* tooltipsBehavior;
+    QRadioButton* showTooltips      = nullptr;
+    QRadioButton* hideTooltips      = nullptr;
+    QButtonGroup* tooltipsBehavior  = nullptr;
 };
 
 TooltipsPage::TooltipsPage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Enabled Contextual Tooltips</b>")),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     DVBox* const vbox       = new DVBox(this);
     QLabel* const label1    = new QLabel(vbox);

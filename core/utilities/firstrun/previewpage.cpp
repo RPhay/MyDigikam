@@ -40,24 +40,19 @@ class Q_DECL_HIDDEN PreviewPage::Private
 {
 public:
 
-    explicit Private()
-      : loadReduced(nullptr),
-        loadimage(nullptr),
-        previewBehavior(nullptr)
-    {
-    }
+    Private() = default;
 
-    QRadioButton* loadReduced;
-    QRadioButton* loadimage;
-    QButtonGroup* previewBehavior;
+    QRadioButton* loadReduced       = nullptr;
+    QRadioButton* loadimage         = nullptr;
+    QButtonGroup* previewBehavior   = nullptr;
 };
 
 PreviewPage::PreviewPage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure Preview Behavior</b>")),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     DVBox* const vbox       = new DVBox(this);
     QLabel* const label1    = new QLabel(vbox);

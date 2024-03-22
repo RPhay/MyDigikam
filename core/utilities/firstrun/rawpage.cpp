@@ -40,24 +40,19 @@ class Q_DECL_HIDDEN RawPage::Private
 {
 public:
 
-    explicit Private()
-      : openDirectly(nullptr),
-        useRawImport(nullptr),
-        rawHandling(nullptr)
-    {
-    }
+    Private() = default;
 
-    QRadioButton* openDirectly;
-    QRadioButton* useRawImport;
-    QButtonGroup* rawHandling;
+    QRadioButton* openDirectly = nullptr;
+    QRadioButton* useRawImport = nullptr;
+    QButtonGroup* rawHandling  = nullptr;
 };
 
 RawPage::RawPage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure Raw File Handling</b>")),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     DVBox* const vbox       = new DVBox(this);
     QLabel* const label1    = new QLabel(vbox);

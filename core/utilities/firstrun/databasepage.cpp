@@ -40,17 +40,14 @@ class Q_DECL_HIDDEN DatabasePage::Private
 {
 public:
 
-    explicit Private()
-      : dbsettingswidget(nullptr)
-    {
-    }
+    explicit Private() = default;
 
-    DatabaseSettingsWidget* dbsettingswidget;
+    DatabaseSettingsWidget* dbsettingswidget = nullptr;
 };
 
 DatabasePage::DatabasePage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure where you will store databases</b>")),
-      d(new Private)
+      d          (new Private)
 {
     d->dbsettingswidget = new DatabaseSettingsWidget(this);
 

@@ -43,47 +43,29 @@ class Q_DECL_HIDDEN FirstRunDlg::Private
 {
 public:
 
-    explicit Private()
-      : welcomePage(nullptr),
+    Private() = default;
+
+    WelcomePage*             welcomePage                = nullptr;
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
-        migrateFromDigikam4Page(nullptr),
+    MigrateFromDigikam4Page* migrateFromDigikam4Page    = nullptr;
 
 #endif
 
-        collectionPage(nullptr),
-        databasePage(nullptr),
-        rawPage(nullptr),
-        metadataPage(nullptr),
-        previewPage(nullptr),
-        openFilePage(nullptr),
-        tooltipsPage(nullptr),
-        startScanPage(nullptr)
-    {
-    }
-
-    WelcomePage*             welcomePage;
-
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-
-    MigrateFromDigikam4Page* migrateFromDigikam4Page;
-
-#endif
-
-    CollectionPage*          collectionPage;
-    DatabasePage*            databasePage;
-    RawPage*                 rawPage;
-    MetadataPage*            metadataPage;
-    PreviewPage*             previewPage;
-    OpenFilePage*            openFilePage;
-    TooltipsPage*            tooltipsPage;
-    StartScanPage*           startScanPage;
+    CollectionPage*          collectionPage             = nullptr;
+    DatabasePage*            databasePage               = nullptr;
+    RawPage*                 rawPage                    = nullptr;
+    MetadataPage*            metadataPage               = nullptr;
+    PreviewPage*             previewPage                = nullptr;
+    OpenFilePage*            openFilePage               = nullptr;
+    TooltipsPage*            tooltipsPage               = nullptr;
+    StartScanPage*           startScanPage              = nullptr;
 };
 
 FirstRunDlg::FirstRunDlg(QWidget* const parent)
     : QWizard(parent),
-      d(new Private)
+      d      (new Private)
 {
     setWizardStyle(QWizard::ClassicStyle);
     setButtonLayout(QList<QWizard::WizardButton>() << QWizard::HelpButton

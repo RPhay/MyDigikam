@@ -46,19 +46,16 @@ class Q_DECL_HIDDEN CollectionPage::Private
 {
 public:
 
-    explicit Private()
-      : rootAlbumPathRequester(nullptr)
-    {
-    }
+    Private() = default;
 
     QString        rootAlbum;
 
-    DFileSelector* rootAlbumPathRequester;
+    DFileSelector* rootAlbumPathRequester = nullptr;
 };
 
 CollectionPage::CollectionPage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure where you keep your images</b>")),
-      d(new Private)
+      d          (new Private)
 {
     QWidget* const widget       = new QWidget(this);
     QVBoxLayout* const vlayout  = new QVBoxLayout(widget);

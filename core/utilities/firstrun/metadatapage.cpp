@@ -39,24 +39,19 @@ class Q_DECL_HIDDEN MetadataPage::Private
 {
 public:
 
-    explicit Private()
-      : doNothing(nullptr),
-        storeInFiles(nullptr),
-        metadataStorage(nullptr)
-    {
-    }
+    Private() = default;
 
-    QRadioButton* doNothing;
-    QRadioButton* storeInFiles;
-    QButtonGroup* metadataStorage;
+    QRadioButton* doNothing         = nullptr;
+    QRadioButton* storeInFiles      = nullptr;
+    QButtonGroup* metadataStorage   = nullptr;
 };
 
 MetadataPage::MetadataPage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure Metadata Storage to Files</b>")),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     DVBox* const vbox        = new DVBox(this);
     QLabel* const label1     = new QLabel(vbox);

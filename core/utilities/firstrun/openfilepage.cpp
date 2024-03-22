@@ -41,24 +41,19 @@ class Q_DECL_HIDDEN OpenFilePage::Private
 {
 public:
 
-    explicit Private()
-      : openAsPreview(nullptr),
-        openInEditor(nullptr),
-        openFileBehavior(nullptr)
-    {
-    }
+    Private() = default;
 
-    QRadioButton* openAsPreview;
-    QRadioButton* openInEditor;
-    QButtonGroup* openFileBehavior;
+    QRadioButton* openAsPreview     = nullptr;
+    QRadioButton* openInEditor      = nullptr;
+    QButtonGroup* openFileBehavior  = nullptr;
 };
 
 OpenFilePage::OpenFilePage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure Open File Behavior</b>")),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     DVBox* const vbox       = new DVBox(this);
     QLabel* const label1    = new QLabel(vbox);

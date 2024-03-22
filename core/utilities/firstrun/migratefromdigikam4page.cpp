@@ -50,16 +50,11 @@ class Q_DECL_HIDDEN MigrateFromDigikam4Page::Private
 {
 public:
 
-    explicit Private()
-      : migrateBehavior(nullptr),
-        migrate        (nullptr),
-        createnew      (nullptr)
-    {
-    }
+    Private() = default;
 
-    QButtonGroup* migrateBehavior;
-    QRadioButton* migrate;
-    QRadioButton* createnew;
+    QButtonGroup* migrateBehavior = nullptr;
+    QRadioButton* migrate         = nullptr;
+    QRadioButton* createnew       = nullptr;
 };
 
 MigrateFromDigikam4Page::MigrateFromDigikam4Page(QWizard* const dlg)
