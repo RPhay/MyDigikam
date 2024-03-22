@@ -131,7 +131,7 @@ echo "Clang Report $TITLE is located to $SCAN_BUILD_DIR"
 if [[ $1 == "--webupdate" ]] ; then
 
     # update online report section.
-    updateReportToWebsite "clang" $SCAN_BUILD_DIR $TITLE $(parseGitBranch)
+    updateReportToWebsite "clang" $REPORT_DIR $TITLE $(parseGitBranch)
 
 fi
 

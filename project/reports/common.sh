@@ -49,6 +49,8 @@ function updateReportToWebsite()
     echo -e "---------- Upload new static analyzer report to remote web site\n"
 
     rsync -r -v --progress -e ssh $1_$4.tar.xv $DK_UPLOADURL:$DK_UPLOADDIR
+
+    rm -fr $1_$4.tar.xv
 }
 
 ########################################################################
