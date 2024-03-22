@@ -18,14 +18,8 @@
 namespace Digikam
 {
 
-FocusPointGroup::Private::Private(FocusPointGroup* const q)
-    : view                  (nullptr),
-      exifRotate            (true),
-      manuallyAddWrapItem   (nullptr),
-      manuallyAddedItem     (nullptr),
-      state                 (NoPoints),
-      visibilityController  (nullptr),
-      q                     (q)
+FocusPointGroup::Private::Private(FocusPointGroup* const qq)
+    : q(qq)
 {
 }
 

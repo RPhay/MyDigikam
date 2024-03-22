@@ -32,15 +32,11 @@ class Q_DECL_HIDDEN FocusPointItem::Private
 {
 public:
 
-    explicit Private()
-        : color(QColor::fromRgb(0, 0, 0, 255)), ///< alpha is 100 to let more transparency
-          width(3.0F)
-    {
-    }
+    Private() = default;
 
     FocusPoint point;
-    QColor     color;
-    float      width;
+    QColor     color = QColor::fromRgb(0, 0, 0, 255); ///< alpha is 100 to let more transparency;
+    float      width = 3.0F;
 };
 
 FocusPointItem::FocusPointItem(QGraphicsItem* const parent)
@@ -65,6 +61,7 @@ void FocusPointItem::setPoint(const FocusPoint& point)
         {
             d->color.setAlpha(130);
             d->width = 1;
+
             break;
         }
 
@@ -72,12 +69,14 @@ void FocusPointItem::setPoint(const FocusPoint& point)
         case FocusPoint::TypePoint::SelectedInFocus:
         {
             d->color.setRed(255);
+
             break;
         }
 
         default: // FocusPoint::TypePoint::InFocus
         {
             // TODO
+
             break;
         }
     }

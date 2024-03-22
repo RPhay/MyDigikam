@@ -46,19 +46,19 @@ public:
 
 public:
 
-    GraphicsDImgView*           view;
+    GraphicsDImgView*           view                    = nullptr;
     ItemInfo                    info;
-    bool                        exifRotate;
+    bool                        exifRotate              = true;
 
     QList<FocusPointItem*>      items;
 
-    ClickDragReleaseItem*       manuallyAddWrapItem;
-    FocusPointItem*             manuallyAddedItem;
+    ClickDragReleaseItem*       manuallyAddWrapItem     = nullptr;
+    FocusPointItem*             manuallyAddedItem       = nullptr;
 
-    FocusPointGroupState        state;
-    ItemVisibilityController*   visibilityController;
+    FocusPointGroupState        state                   = NoPoints;
+    ItemVisibilityController*   visibilityController    = nullptr;
 
-    FocusPointGroup* const      q;
+    FocusPointGroup* const      q                       = nullptr;
 };
 
 } // namespace Digikam

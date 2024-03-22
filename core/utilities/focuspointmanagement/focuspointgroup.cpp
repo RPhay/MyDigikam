@@ -55,6 +55,7 @@ void FocusPointGroup::itemStateChanged(int itemState)
         case DImgPreviewItem::ImageLoadingFailed:
         {
             d->visibilityController->hide();
+
             break;
         }
 
