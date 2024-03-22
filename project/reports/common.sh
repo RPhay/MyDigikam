@@ -35,36 +35,20 @@ function parseGitHash()
 #
 function updateReportToWebsite()
 {
-    WEBSITE_DIR="`pwd`/site"
+    DK_UPLOADURL="digikam@tinami.kde.org"
+    DK_UPLOADDIR="/srv/archives/files/digikam/reports/"
 
-    rm -fr $WEBSITE_DIR
+    echo -e "---------- Create archive of static analyzer report\n"
 
-    git clone git@invent.kde.org:websites/digikam-org $WEBSITE_DIR
+    XZ_OPT=-9 tar cJf $1_$4.tar.xv $2
 
-    cd $WEBSITE_DIR
+    echo -e "---------- Cleanup older static analyzer report from remote web site\n"
 
-    git checkout -b dev remotes/origin/dev
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm $1_$4.tar.xv"
 
-    git rm -r $WEBSITE_DIR/static/reports/$1/$4/* || true
-    mkdir -p $WEBSITE_DIR/static/reports/$1/$4
-    cp -r $2/* $WEBSITE_DIR/static/reports/$1/$4/
+    echo -e "---------- Upload new static analyzer report to remote web site\n"
 
-    # Add new report contents in dev branch
-
-    git add $WEBSITE_DIR/static/reports/$1/$4/*
-    git commit . -m"update $1 static analyzer report $3."
-    git push
-
-    # update master branch
-
-    git checkout master
-    git merge dev -m"Update $1 static analyzer report $3.
-See https://www.digikam.org/reports/$1/$4 for details.
-CCMAIL: digikam-bugs-null@kde.org"
-    git push
-
-    echo "$1 Report $3 published to https://www.digikam.org/reports/$1/$4"
-    echo "Web site will be synchronized in few minutes..."
+    rsync -r -v --progress -e ssh $1_$4.tar.xv $DK_UPLOADURL:$DK_UPLOADDIR
 }
 
 ########################################################################
