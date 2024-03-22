@@ -23,7 +23,7 @@ checksCPUCores
 if ! which run-cland-tidy.py ; then
 
     echo "CLANG-TIDY tool from LLVM is not installed!"
-    echo "See https://scan.coverity.com/download?tab=cxx for details."
+    echo "See https://clang.llvm.org/extra/clang-tidy/ for details."
     exit -1
 
 else

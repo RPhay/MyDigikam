@@ -30,7 +30,7 @@ if ! which scan-build ; then
     if ! which scan-build-17 ; then
 
         echo "SCAN-BUILD tool from LLVM is not installed!"
-        echo "See https://scan.coverity.com/download?tab=cxx for details."
+        echo "See https://clang-analyzer.llvm.org/scan-build.html for details."
         exit -1
 
     else
