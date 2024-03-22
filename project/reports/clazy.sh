@@ -148,7 +148,7 @@ mv clazy.html $REPORT_DIR/index.html
 
 if [[ $1 == "--webupdate" ]] ; then
 
-    # update www.digikam.org report section.
+    # update online report section.
     updateReportToWebsite "clazy" $REPORT_DIR $TITLE $(parseGitBranch)
 
 fi

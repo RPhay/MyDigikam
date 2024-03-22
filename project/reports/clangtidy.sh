@@ -58,6 +58,7 @@ mv tidy.html $REPORT_DIR/index.html
 
 if [[ $1 != "--webupdate" ]] ; then
 
+    # update online report section.
     updateReportToWebsite "tidy" $REPORT_DIR $TITLE $(parseGitBranch)
 
 fi

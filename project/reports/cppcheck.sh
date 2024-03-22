@@ -120,7 +120,7 @@ cppcheck-htmlreport --file=report.cppcheck.xml \
 
 if [[ $1 == "--webupdate" ]] ; then
 
-    # update www.digikam.org report section.
+    # update online report section.
     updateReportToWebsite "cppcheck" $REPORT_DIR $TITLE $(parseGitBranch)
 
 fi

@@ -130,7 +130,7 @@ echo "Clang Report $TITLE is located to $SCAN_BUILD_DIR"
 
 if [[ $1 == "--webupdate" ]] ; then
 
-    # update www.digikam.org report section.
+    # update online report section.
     updateReportToWebsite "clang" $SCAN_BUILD_DIR $TITLE $(parseGitBranch)
 
 fi
