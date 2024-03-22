@@ -27,7 +27,7 @@ function parseGitHash()
 }
 
 ########################################################################
-# Update www.digikam.org static analyze report section.
+# Update online static analyze report section.
 # arg1: static analyzer name (clang, cppcheck, krazy, ...).
 # arg2: static analyzer report directory with html contents.
 # arg3: static analyzer report title.
