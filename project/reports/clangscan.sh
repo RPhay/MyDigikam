@@ -18,7 +18,34 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
+# Skip directories from the analysis.
+. ../../.scan-build
+
 checksCPUCores
+
+# Check run-time dependencies
+
+if ! which scan-build ; then
+
+    if ! which scan-build-17 ; then
+
+        echo "SCAN-BUILD tool from LLVM is not installed!"
+        echo "See https://scan.coverity.com/download?tab=cxx for details."
+        exit -1
+
+    else
+
+        SCAN_BUILD_BIN=scan-build-17
+
+    fi
+
+else
+
+    SCAN_BUILD_BIN=scan-build
+
+fi
+
+echo "Found SCAN_BUILD tool: $SCAN_BUILD_BIN"
 
 ORIG_WD="`pwd`"
 REPORT_DIR="${ORIG_WD}/report.scan"
@@ -33,22 +60,7 @@ echo "Clang Scan Static Analyzer task name: $TITLE"
 rm -fr $REPORT_DIR
 rm -fr $WEBSITE_DIR
 
-# Do not parse unwanted directories accordingly with Krazy configuration.
-krazySkipConfig
-
 cd ../..
-
-ROOT_REPO="`pwd`"
-ROOT_REPO="${ROOT_REPO:1}"  # Remove root slash
-
-IGNORE_DIRS=""
-
-for DROP_ITEM in $KRAZY_FILTERS ; do
-    IGNORE_DIRS+="--exclude $ROOT_REPO/$DROP_ITEM/ "
-done
-
-IGNORE_DIRS+="--exclude /opt/qt6/include/ "
-IGNORE_DIRS+="--exclude /usr/include/ "
 
 rm -fr build.scan
 mkdir -p build.scan
@@ -69,7 +81,7 @@ else
 
 fi
 
-scan-build $CMAKE_BINARY -G "Unix Makefiles" \
+$SCAN_BUILD_BIN $CMAKE_BINARY -G "Unix Makefiles" \
       -DCMAKE_BUILD_TYPE=debug \
       -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
       -DBUILD_TESTING=ON \
@@ -90,7 +102,19 @@ scan-build $CMAKE_BINARY -G "Unix Makefiles" \
       -Wno-dev \
       ..
 
-scan-build -o $REPORT_DIR \
+# Print the skipped directories taken from the config file.
+
+for DROP_ITEM in $IGNORE_DIRS ; do
+
+    if [[ $DROP_ITEM != *exclude ]] ; then
+
+        echo "Skipped dir: $DROP_ITEM"
+
+    fi
+
+done
+
+$SCAN_BUILD_BIN -o $REPORT_DIR \
            -v \
            -k \
            -no-failure-reports \
@@ -101,13 +125,13 @@ scan-build -o $REPORT_DIR \
 
 cd $ORIG_WD
 
-SCANBUILD_DIR=$(find ${REPORT_DIR} -maxdepth 1 -not -empty -not -name `basename ${REPORT_DIR}`)
-echo "Clang Report $TITLE is located to $SCANBUILD_DIR"
+SCAN_BUILD_DIR=$(find ${REPORT_DIR} -maxdepth 1 -not -empty -not -name `basename ${REPORT_DIR}`)
+echo "Clang Report $TITLE is located to $SCAN_BUILD_DIR"
 
 if [[ $1 == "--webupdate" ]] ; then
 
     # update www.digikam.org report section.
-    updateReportToWebsite "clang" $SCANBUILD_DIR $TITLE $(parseGitBranch)
+    updateReportToWebsite "clang" $SCAN_BUILD_DIR $TITLE $(parseGitBranch)
 
 fi
 
