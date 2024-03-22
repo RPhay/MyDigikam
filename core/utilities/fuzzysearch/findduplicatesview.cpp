@@ -60,51 +60,32 @@ class Q_DECL_HIDDEN FindDuplicatesView::Private
 
 public:
 
-    explicit Private()
-      : includeAlbumsLabel     (nullptr),
-        similarityLabel        (nullptr),
-        restrictResultsLabel   (nullptr),
-        albumTagRelationLabel  (nullptr),
-        similarityRange        (nullptr),
-        searchResultRestriction(nullptr),
-        albumTagRelation       (nullptr),
-        refImageSelMethod      (nullptr),
-        findDuplicatesBtn      (nullptr),
-        updateFingerPrtBtn     (nullptr),
-        removeDuplicatesBtn    (nullptr),
-        listView               (nullptr),
-        progressItem           (nullptr),
-        albumSelectors         (nullptr),
-        refImageAlbumSelector  (nullptr),
-        settings               (nullptr),
-        active                 (false)
-    {
-    }
+    Private() = default;
 
-    QLabel*              includeAlbumsLabel;
-    QLabel*              similarityLabel;
-    QLabel*              restrictResultsLabel;
-    QLabel*              albumTagRelationLabel;
+    QLabel*              includeAlbumsLabel      = nullptr;
+    QLabel*              similarityLabel         = nullptr;
+    QLabel*              restrictResultsLabel    = nullptr;
+    QLabel*              albumTagRelationLabel   = nullptr;
 
-    DIntRangeBox*        similarityRange;
-    SqueezedComboBox*    searchResultRestriction;
-    SqueezedComboBox*    albumTagRelation;
-    SqueezedComboBox*    refImageSelMethod;
+    DIntRangeBox*        similarityRange         = nullptr;
+    SqueezedComboBox*    searchResultRestriction = nullptr;
+    SqueezedComboBox*    albumTagRelation        = nullptr;
+    SqueezedComboBox*    refImageSelMethod       = nullptr;
 
-    QPushButton*         findDuplicatesBtn;
-    QPushButton*         updateFingerPrtBtn;
-    QPushButton*         removeDuplicatesBtn;
+    QPushButton*         findDuplicatesBtn       = nullptr;
+    QPushButton*         updateFingerPrtBtn      = nullptr;
+    QPushButton*         removeDuplicatesBtn     = nullptr;
 
-    FindDuplicatesAlbum* listView;
+    FindDuplicatesAlbum* listView                = nullptr;
 
-    ProgressItem*        progressItem;
+    ProgressItem*        progressItem            = nullptr;
 
-    AlbumSelectors*      albumSelectors;
-    AlbumSelectors*      refImageAlbumSelector;
+    AlbumSelectors*      albumSelectors          = nullptr;
+    AlbumSelectors*      refImageAlbumSelector   = nullptr;
 
-    ApplicationSettings* settings;
+    ApplicationSettings* settings                = nullptr;
 
-    bool                 active;
+    bool                 active                  = false;
 };
 
 FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
@@ -341,6 +322,7 @@ void FindDuplicatesView::setActive(bool val)
     d->active = val;
     slotCheckForValidSettings();
     d->removeDuplicatesBtn->setEnabled(false);
+
     QTimer::singleShot(250, this, SLOT(slotSelectItemsTimer()));
 }
 
@@ -569,15 +551,17 @@ void FindDuplicatesView::slotFindDuplicates()
 
     connect(finder, &DuplicatesFinder::signalComplete,
             this, [this]
-            {
-                d->removeDuplicatesBtn->setEnabled(true);
-            });
+       {
+            d->removeDuplicatesBtn->setEnabled(true);
+       }
+    );
 
     connect(finder, &DuplicatesFinder::signalCanceled,
             this, [this]
-            {
-                d->removeDuplicatesBtn->setEnabled(false);
-            });
+       {
+            d->removeDuplicatesBtn->setEnabled(false);
+       }
+    );
 
     finder->start();
 }

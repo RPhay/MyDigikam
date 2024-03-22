@@ -44,7 +44,7 @@ class FindDuplicatesAlbum : public QTreeWidget
 public:
 
     explicit FindDuplicatesAlbum(QWidget* const parent = nullptr);
-    ~FindDuplicatesAlbum()                        override;
+    ~FindDuplicatesAlbum()                       override;
 
     void updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbumsToRebuild,
                                     const QList<qlonglong>& deletedImages);

@@ -310,6 +310,7 @@ void FuzzySearchView::slotTabChanged(int tab)
             albums << d->imageSAlbum;
             AlbumManager::instance()->setCurrentAlbums(albums);
             d->folderView->setVisible(true);
+
             break;
         }
 
@@ -318,6 +319,7 @@ void FuzzySearchView::slotTabChanged(int tab)
             albums << d->sketchSAlbum;
             AlbumManager::instance()->setCurrentAlbums(albums);
             d->folderView->setVisible(true);
+
             break;
         }
 
@@ -334,6 +336,7 @@ void FuzzySearchView::slotTabChanged(int tab)
             d->findDuplicatesPanel->populateTreeView();
             d->findDuplicatesPanel->setActive(true);
             d->folderView->setVisible(false);
+
             break;
         }
     }
@@ -348,12 +351,14 @@ void FuzzySearchView::slotAlbumSelected(Album* album)
     if (!salbum || !salbum->isHaarSearch())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Not a haar search, returning";
+
         return;
     }
 
     if (!d->active)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Not active, returning";
+
         return;
     }
 

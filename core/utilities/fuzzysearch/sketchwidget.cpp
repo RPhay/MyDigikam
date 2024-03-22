@@ -38,11 +38,7 @@ class Q_DECL_HIDDEN DrawEvent
 {
 public:
 
-    DrawEvent()
-      : penWidth(10),
-        penColor(Qt::black)
-    {
-    }
+    DrawEvent() = default;
 
     DrawEvent(int width, const QColor& color)
       : penWidth(width),
@@ -57,8 +53,8 @@ public:
 
 public:
 
-    int          penWidth;
-    QColor       penColor;
+    int          penWidth   = 10;
+    QColor       penColor   = Qt::black;
     QPainterPath path;
 };
 
@@ -68,15 +64,7 @@ class Q_DECL_HIDDEN SketchWidget::Private
 {
 public:
 
-    explicit Private()
-      : isClear     (true),
-        drawing     (false),
-        penWidth    (10),
-        eventIndex  (-1),
-        penColor    (Qt::black),
-        pixmap      (QPixmap(256, 256))
-    {
-    }
+    Private() = default;
 
     void startDrawEvent(const QPoint& pos)
     {
@@ -120,15 +108,15 @@ public:
 
 public:
 
-    bool             isClear;
-    bool             drawing;
+    bool             isClear    = true;
+    bool             drawing    = false;
 
-    int              penWidth;
-    int              eventIndex;
+    int              penWidth   = 10;
+    int              eventIndex = -1;
 
-    QColor           penColor;
+    QColor           penColor   = Qt::black;
 
-    QPixmap          pixmap;
+    QPixmap          pixmap     = QPixmap(256, 256);
 
     QPoint           lastPoint;
     QTime            drawEventCreationTime;
@@ -140,7 +128,7 @@ public:
 
 SketchWidget::SketchWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setWhatsThis(i18n("You simply draw here a rough sketch of what you want to find "
                       "and digiKam will displays the best matches in thumbnail view."));
@@ -220,10 +208,10 @@ void SketchWidget::slotUndo()
         Q_EMIT signalSketchChanged(sketchImage());
 
         Q_EMIT signalUndoRedoStateChanged(
-                                        // cppcheck-suppress knownConditionTrueFalse
-                                        (d->eventIndex != -1),
-                                        (d->eventIndex != (d->drawEventList.count() - 1))
-                                       );
+                                          // cppcheck-suppress knownConditionTrueFalse
+                                          (d->eventIndex != -1),
+                                          (d->eventIndex != (d->drawEventList.count() - 1))
+                                         );
     }
 }
 
@@ -241,10 +229,10 @@ void SketchWidget::slotRedo()
     Q_EMIT signalSketchChanged(sketchImage());
 
     Q_EMIT signalUndoRedoStateChanged(
-                                    (d->eventIndex != -1),
-                                    // cppcheck-suppress knownConditionTrueFalse
-                                    (d->eventIndex != (d->drawEventList.count() - 1))
-                                   );
+                                      (d->eventIndex != -1),
+                                      // cppcheck-suppress knownConditionTrueFalse
+                                      (d->eventIndex != (d->drawEventList.count() - 1))
+                                     );
 }
 
 void SketchWidget::replayEvents(int index)
@@ -578,6 +566,7 @@ void SketchWidget::wheelEvent(QWheelEvent* e)
         }
 
         Q_EMIT signalPenSizeChanged(size);
+
         setCursor(d->drawCursor);
     }
 }
@@ -589,7 +578,9 @@ void SketchWidget::mouseReleaseEvent(QMouseEvent* e)
         QPoint currentPos = e->pos();
         d->currentDrawEvent().lineTo(currentPos);
         d->drawing        = false;
+
         Q_EMIT signalSketchChanged(sketchImage());
+
         Q_EMIT signalUndoRedoStateChanged(true, false);
     }
 }
@@ -634,7 +625,8 @@ void SketchWidget::drawLineTo(const QPoint& endPoint)
     drawLineTo(d->penWidth, d->penColor, d->lastPoint, endPoint);
 }
 
-void SketchWidget::drawLineTo(int width, const QColor& color, const QPoint& start, const QPoint& end)
+void SketchWidget::drawLineTo(int width, const QColor& color,
+                              const QPoint& start, const QPoint& end)
 {
     QPainter painter(&d->pixmap);
     painter.setPen(QPen(color, width, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));

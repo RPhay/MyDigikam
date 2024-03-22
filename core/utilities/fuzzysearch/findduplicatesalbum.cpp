@@ -40,20 +40,16 @@ class Q_DECL_HIDDEN FindDuplicatesAlbum::Private
 
 public:
 
-    explicit Private()
-        : iconSize       (64),
-          thumbLoadThread(nullptr)
-    {
-    }
+    Private() = default;
 
-    const int            iconSize;
+    const int            iconSize        = 64;
 
-    ThumbnailLoadThread* thumbLoadThread;
+    ThumbnailLoadThread* thumbLoadThread = nullptr;
 };
 
 FindDuplicatesAlbum::FindDuplicatesAlbum(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->thumbLoadThread = ThumbnailLoadThread::defaultThread();
 

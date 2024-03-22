@@ -37,20 +37,17 @@ class Q_DECL_HIDDEN FindDuplicatesAlbumItem::Private
 
 public:
 
-    explicit Private()
-      : hasThumb  (false),
-        album     (nullptr),
-        itemCount (0)
+    Private()
     {
         collator.setNumericMode(true);
         collator.setIgnorePunctuation(false);
         collator.setCaseSensitivity(Qt::CaseSensitive);
     }
 
-    bool      hasThumb;
+    bool      hasThumb  = false;
 
-    SAlbum*   album;
-    int       itemCount;
+    SAlbum*   album     = nullptr;
+    int       itemCount = 0;
 
     QCollator collator;
 
