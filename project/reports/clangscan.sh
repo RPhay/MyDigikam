@@ -19,7 +19,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
-# Skip directories from the analysis.
+# Analyzer configuration.
 . ../../.scan-build
 
 checksCPUCores

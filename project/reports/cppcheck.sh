@@ -19,6 +19,9 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
+# Analyzer configuration.
+. ../../.cppcheck
+
 checksCPUCores
 
 ORIG_WD="`pwd`"
@@ -32,14 +35,21 @@ echo "CppCheck Static Analyzer task name: $TITLE"
 rm -fr $REPORT_DIR
 rm -fr $WEBSITE_DIR
 
-# Do not parse unwanted directories accordingly with Krazy configuration.
-krazySkipConfig
+# Print the skipped directories taken from the config file.
 
-IGNORE_DIRS=""
+for DROP_ITEM in $IGNORE_DIRS ; do
 
-for DROP_ITEM in $KRAZY_FILTERS ; do
-    IGNORE_DIRS+="-i../../$DROP_ITEM/ "
+    if [[ $DROP_ITEM != *-i ]] ; then
+
+        echo "Skipped dir: $DROP_ITEM"
+
+    fi
+
 done
+
+echo "Cppcheck defines     : $CPPCHECK_DEFINES"
+echo "Cppcheck options     : $CPPCHECK_OPTIONS"
+echo "Cppcheck suppressions: $CPPCHECK_SUPPRESSIONS"
 
 # List sub-dirs with headers to append as cppcheck includes paths
 HDIRS=$(find ../../core -name '*.h' -printf '%h\n' | sort -u)
@@ -49,66 +59,13 @@ for INCLUDE_PATH in $HDIRS ; do
 done
 
 cppcheck -j$CPU_CORES \
-         -DQ_OS_LINUX \
-         -DQ_OS_UNIX \
-         -DQ_PROCESSOR_X86_64 \
-         -DHAVE_GEOLOCATION \
-         -DHAVE_MEDIA_PLAYER \
-         -DHAVE_QWEBENGINE \
-         -DHAVE_QTMULTIMEDIA \
-         -DHAVE_OPENGL \
-         -DHAVE_MYSQLSUPPORT \
-         -DHAVE_INTERNALMYSQL \
-         -DHAVE_GPHOTO2 \
-         -DHAVE_PANORAMA \
-         -DHAVE_X11 \
-         -DHAVE_X265 \
-         -DHAVE_DBUS \
-         -DHAVE_LENSFUN \
-         -DHAVE_HEIF \
-         -DHAVE_EIGEN3 \
-         -DHAVE_JASPER \
-         -DHAVE_IMAGE_MAGICK \
-         -D_XMP_SUPPORT_ \
+         $CPPCHECK_DEFINES \
          --verbose \
-         --std=c++17 \
-         --library=qt.cfg \
-         --library=opencv2.cfg \
-         --library=boost.cfg \
-         --library=kde.cfg \
-         --inline-suppr \
-         --xml-version=2 \
-         --platform=unix64 \
+         $CPPCHECK_OPTIONS \
          --enable=all \
          --check-level=exhaustive \
-         --suppress=*:*cimg*.h \
-         --suppress=*:*libraw*.h \
-         --suppress=*:*libpgf*.h \
-         --suppress=*:*upnpsdk*.h \
-         --suppress=*:*o2*.h \
-         --suppress=*:*lqr*.h \
-         --suppress=*:*libjpeg*.h \
-         --suppress=*:*dng_sdk*.h \
-         --suppress=*:*xmp_sdk/*.h \
-         --suppress=*:*qav*.h \
-         --suppress=missingIncludeSystem \
-         --suppress=missingInclude \
-         --suppress=variableScope \
-         --suppress=purgedConfiguration \
-         --suppress=toomanyconfigs \
-         --suppress=unreadVariable \
-         --suppress=unusedVariable \
-         --suppress=unusedStructMember \
-         --suppress=unusedPrivateFunction \
-         --suppress=unknownMacro \
-         --suppress=unmatchedSuppression:* \
-         --suppress=unassignedVariable \
-         --suppress=class_X_Y \
-         --suppress=ConfigurationNotChecked \
-         --suppress=useStlAlgorithm \
-         --suppress=cstyleCast \
-         --suppress=constVariablePointer \
-         --suppress=shadowFunction \
+         $CPPCHECK_SUPPRESSIONS \
+         --xml-version=2 \
          --output-file=report.cppcheck.xml \
          $IGNORE_DIRS \
          $INCLUDE_DIRS \

@@ -1,0 +1,101 @@
+#!/bin/bash
+
+# SPDX-FileCopyrightText: 2008-2024 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+# Cppcheck static analyzer configuration used by project/reports/cppcheck.sh
+
+# --- Directories to exclude from Cppcheck static analysis.
+
+IGNORE_DIRS="-i ../../core/libs/dimg/filters/transform/lqr/ "
+IGNORE_DIRS+="-i ../../core/libs/pgfutils/libpgf/ "
+IGNORE_DIRS+="-i ../../core/libs/dimg/filters/greycstoration/cimg/ "
+IGNORE_DIRS+="-i ../../core/tests/mediawiki/data/ "
+IGNORE_DIRS+="-i ../../core/libs/jpegutils/libjpeg/ "
+IGNORE_DIRS+="-i ../../core/libs/rawengine/libraw/ "
+IGNORE_DIRS+="-i ../../core/libs/dngwriter/extra/ "
+IGNORE_DIRS+="-i ../../core/libs/dplugins/webservices/o2/ "
+IGNORE_DIRS+="-i ../../core/dplugins/generic/tools/mediaserver/upnpsdk/ "
+IGNORE_DIRS+="-i ../../core/utilities/geolocation/marble/ "
+IGNORE_DIRS+="-i ../../core/libs/video/QtAVPlayer/ "
+IGNORE_DIRS+="-i ../../opt/qt6/include/ "
+IGNORE_DIRS+="-i ../../usr/include/ "
+IGNORE_DIRS+="-i ../../project/ "
+IGNORE_DIRS+="-i ../../build/ "
+IGNORE_DIRS+="-i ../../build.qt6/ "
+IGNORE_DIRS+="-i ../../build.scan/ "
+IGNORE_DIRS+="-i ../../build.api/ "
+IGNORE_DIRS+="-i ../../build.win32/ "
+IGNORE_DIRS+="-i ../../build.win64/ "
+IGNORE_DIRS+="-i ../../build.clazy/ "
+IGNORE_DIRS+="-i ../../po/ "
+IGNORE_DIRS+="-i ../../test-data/ "
+IGNORE_DIRS+="-i ../../LICENSES/ "
+
+# --- Defines to use with static analysis.
+
+CPPCHECK_DEFINES="\
+-DQ_OS_LINUX \
+-DQ_OS_UNIX \
+-DQ_PROCESSOR_X86_64 \
+-DHAVE_GEOLOCATION \
+-DHAVE_MEDIA_PLAYER \
+-DHAVE_QWEBENGINE \
+-DHAVE_QTMULTIMEDIA \
+-DHAVE_OPENGL \
+-DHAVE_MYSQLSUPPORT \
+-DHAVE_INTERNALMYSQL \
+-DHAVE_GPHOTO2 \
+-DHAVE_PANORAMA \
+-DHAVE_X11 \
+-DHAVE_X265 \
+-DHAVE_DBUS \
+-DHAVE_LENSFUN \
+-DHAVE_HEIF \
+-DHAVE_EIGEN3 \
+-DHAVE_JASPER \
+-DHAVE_IMAGE_MAGICK \
+-D_XMP_SUPPORT_ \
+"
+
+CPPCHECK_OPTIONS="\
+--std=c++17 \
+--library=qt.cfg \
+--library=opencv2.cfg \
+--library=boost.cfg \
+--library=kde.cfg \
+--platform=unix64 \
+"
+
+CPPCHECK_SUPPRESSIONS="\
+--inline-suppr \
+--suppress=*:*cimg*.h \
+--suppress=*:*libraw*.h \
+--suppress=*:*libpgf*.h \
+--suppress=*:*upnpsdk*.h \
+--suppress=*:*o2*.h \
+--suppress=*:*lqr*.h \
+--suppress=*:*libjpeg*.h \
+--suppress=*:*dng_sdk*.h \
+--suppress=*:*xmp_sdk/*.h \
+--suppress=*:*qav*.h \
+--suppress=missingIncludeSystem \
+--suppress=missingInclude \
+--suppress=variableScope \
+--suppress=purgedConfiguration \
+--suppress=toomanyconfigs \
+--suppress=unreadVariable \
+--suppress=unusedVariable \
+--suppress=unusedStructMember \
+--suppress=unusedPrivateFunction \
+--suppress=unknownMacro \
+--suppress=unmatchedSuppression:* \
+--suppress=unassignedVariable \
+--suppress=class_X_Y \
+--suppress=ConfigurationNotChecked \
+--suppress=useStlAlgorithm \
+--suppress=cstyleCast \
+--suppress=constVariablePointer \
+--suppress=shadowFunction \
+"
