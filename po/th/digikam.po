@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 01:35+0000\n"
+"POT-Creation-Date: 2024-03-23 01:36+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -52984,19 +52984,19 @@ msgctxt "@title:tab"
 msgid "Settings"
 msgstr "ตั้งค่าต่าง ๆ"
 
-#: core/utilities/firstrun/collectionpage.cpp:60
+#: core/utilities/firstrun/collectionpage.cpp:57
 #, fuzzy, kde-format
 msgid "<b>Configure where you keep your images</b>"
 msgstr "<b>ปรับแต่งว่าจะจัดเก็บภาพต่าง ๆ และข้อมูลกำกับไว้ที่ใด</b>"
 
-#: core/utilities/firstrun/collectionpage.cpp:73
+#: core/utilities/firstrun/collectionpage.cpp:70
 #, kde-format
 msgctxt ""
 "This is a path name so you should include the slash in the translation"
 msgid "/Pictures"
 msgstr "/รูปภาพ"
 
-#: core/utilities/firstrun/collectionpage.cpp:79
+#: core/utilities/firstrun/collectionpage.cpp:76
 #, fuzzy, kde-format
 msgid ""
 "<p>Please enter a location where you keep your images.</p> <p>You can choose "
@@ -53008,7 +53008,7 @@ msgstr ""
 "อยู่ภายในอยู่แล้ว<br/> ทั้งนี้คุณสามารถจะทำการเพิ่มโฟลเดอร์อื่น ๆ เพิ่มเติมได้อีกในภายหลัง "
 "โดยเรียกใช้ผ่านเมนู <i>ตั้งค่า</i> </p>"
 
-#: core/utilities/firstrun/collectionpage.cpp:87
+#: core/utilities/firstrun/collectionpage.cpp:84
 #, fuzzy, kde-format
 msgid ""
 "<p><i>Note:</i> removable media (such as USB drives or DVDs) and remote file "
@@ -53020,7 +53020,7 @@ msgstr ""
 "และระบบแฟ้มทางระบบแฟ้มทางไกลที่ใช้ร่วมกันบนเครือข่าย (เช่น ผ่านทาง NFS หรือแซมบ้า) "
 "เพื่อใช้เป็นตำแหน่งรากของอัลบั้มก็ได้เช่นกัน</p><p></p>"
 
-#: core/utilities/firstrun/collectionpage.cpp:150
+#: core/utilities/firstrun/collectionpage.cpp:147
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to use as the root album. All of your "
@@ -53029,14 +53029,14 @@ msgstr ""
 "คุณต้องเลือกโฟลเดอร์ที่จะให้ 'ดิจิแคม - digiKam' ใช้เป็นรากของคลังอัลบั้มก่อน ซึ่งรูปภาพต่าง ๆ "
 "ของคุณจะถูกจัดเก็บไว้ที่นี่"
 
-#: core/utilities/firstrun/collectionpage.cpp:178
+#: core/utilities/firstrun/collectionpage.cpp:175
 #, fuzzy, kde-format
 #| msgid "Create Root Album Folder?"
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
 msgstr "จะให้สร้างโฟลเดอร์ของรากอัลบั้มหรือไม่ ?"
 
-#: core/utilities/firstrun/collectionpage.cpp:179
+#: core/utilities/firstrun/collectionpage.cpp:176
 #, kde-format
 msgid ""
 "<p>The folder to use as the root album path does not exist:</p><p><b>%1</b></"
@@ -53045,14 +53045,14 @@ msgstr ""
 "<p>โฟลเดอร์ต่อไปนี้ที่คุณเลือกใช้เป็นรากของอัลบั้มยังไม่มีอยู่: </p><p><b>%1</b></p> "
 "คุณต้องการจะให้ 'ดิจิแคม' สร้างโฟลเดอร์ให้คุณหรือไม่ ?"
 
-#: core/utilities/firstrun/collectionpage.cpp:191
+#: core/utilities/firstrun/collectionpage.cpp:188
 #, fuzzy, kde-format
 #| msgid "Create Root Album Folder Failed"
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
 msgstr "การสร้างโฟลเดอร์ของรากอัลบั้มล้มเหลว"
 
-#: core/utilities/firstrun/collectionpage.cpp:192
+#: core/utilities/firstrun/collectionpage.cpp:189
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to use as the root album.\n"
@@ -53061,7 +53061,7 @@ msgstr ""
 "<p>'ดิจิแคม' ไม่สามารถสร้างโฟลเดอร์เพื่อใช้เป็นรากของอัลบั้มได้\n"
 "โปรดเลือกใช้ตำแหน่งโฟลเดอร์อื่น ๆ</p><p><b>%1</b></p>"
 
-#: core/utilities/firstrun/collectionpage.cpp:217
+#: core/utilities/firstrun/collectionpage.cpp:214
 #, kde-format
 msgid ""
 "You do not seem to have write access for the folder selected to be the root "
@@ -53071,17 +53071,17 @@ msgstr ""
 "คุณยังไม่มีสิทธิ์ในการเขียนไปยังโฟลเดอร์ที่เลือกไว้เพื่อใช้เป็นตำแหน่งของรากอัลบั้ม\n"
 "คำเตือน: หากไม่มีสิทธิ์ในการเขียน จะไม่สามารถแก้ไขส่วนหมายเหตุและป้ายกำกับภาพได้"
 
-#: core/utilities/firstrun/databasepage.cpp:52
+#: core/utilities/firstrun/databasepage.cpp:49
 #, fuzzy, kde-format
 msgid "<b>Configure where you will store databases</b>"
 msgstr "<b>ปรับแต่งว่าจะจัดเก็บภาพต่าง ๆ และข้อมูลกำกับไว้ที่ใด</b>"
 
-#: core/utilities/firstrun/metadatapage.cpp:55
+#: core/utilities/firstrun/metadatapage.cpp:50
 #, kde-format
 msgid "<b>Configure Metadata Storage to Files</b>"
 msgstr "<b>ปรับแต่งการจัดเก็บข้อมูลกำกับภาพไปไว้ยังแฟ้ม</b>"
 
-#: core/utilities/firstrun/metadatapage.cpp:64
+#: core/utilities/firstrun/metadatapage.cpp:59
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Set here if you want to store the information assigned to items in "
@@ -53096,17 +53096,17 @@ msgstr ""
 "'ดิจิแคม' ไว้ในส่วนข้อมูลกำกับ (metadata) ของแฟ้มรูปภาพ "
 "เพื่อให้สามารถทำงานร่วมกับโปรแกรมจัดการภาพถ่ายอื่น ๆ ได้ดียิ่งขึ้นหรือไม่:</p></qt>"
 
-#: core/utilities/firstrun/metadatapage.cpp:74
+#: core/utilities/firstrun/metadatapage.cpp:69
 #, kde-format
 msgid "Do nothing"
 msgstr "ไม่ต้องทำอะไร"
 
-#: core/utilities/firstrun/metadatapage.cpp:79
+#: core/utilities/firstrun/metadatapage.cpp:74
 #, kde-format
 msgid "Add information to files"
 msgstr "เพิ่มข้อมูลรายละเอียดไปไว้ในแฟ้มรูปภาพ"
 
-#: core/utilities/firstrun/metadatapage.cpp:89
+#: core/utilities/firstrun/metadatapage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> recording information to the files' metadata can slow "
@@ -53115,12 +53115,12 @@ msgstr ""
 "<qt><p><i>ข้อควรทราบ:</i> การบันทึกข้อมูลรายละเอียดไปยังส่วนข้อมูลกำกับ (metadata) "
 "ของแฟ้มรูปภาพ จะทำให้ปฏิบัติการที่ใช้จัดการภาพถ่ายทำงานได้ช้าลง</p></qt>"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:66
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:61
 #, kde-format
 msgid "Migration from digiKam 4"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:74
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:69
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Migrate configuration and metadata from digiKam 4</b></h1></"
@@ -53134,22 +53134,22 @@ msgid ""
 "and databases before proceeding.</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:91
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:86
 #, kde-format
 msgid "Migrate configuration from digiKam 4"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:100
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:95
 #, fuzzy, kde-format
 msgid "Create a new configuration"
 msgstr "ตำแหน่งจัดเก็บแฟ้มฐานข้อมูล"
 
-#: core/utilities/firstrun/openfilepage.cpp:57
+#: core/utilities/firstrun/openfilepage.cpp:52
 #, kde-format
 msgid "<b>Configure Open File Behavior</b>"
 msgstr "<b>ปรับแต่งพฤติกรรมการเปิดแฟ้ม</b>"
 
-#: core/utilities/firstrun/openfilepage.cpp:66
+#: core/utilities/firstrun/openfilepage.cpp:61
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Specify how images should be opened when right-clicked on in the "
@@ -53161,17 +53161,17 @@ msgstr ""
 "<qt><p>กำหนดว่าควรจะให้ทำการเปิดรูปภาพอย่างไรเมื่อมีการคลิกเมาส์ปุ่มขวาบนไอคอนในมุมมอง:</"
 "p></qt>"
 
-#: core/utilities/firstrun/openfilepage.cpp:75
+#: core/utilities/firstrun/openfilepage.cpp:70
 #, kde-format
 msgid "Open a preview"
 msgstr "เปิดภาพตัวอย่าง"
 
-#: core/utilities/firstrun/openfilepage.cpp:80
+#: core/utilities/firstrun/openfilepage.cpp:75
 #, kde-format
 msgid "Open in the editor"
 msgstr "เปิดในเครื่องมือแก้ไขภาพ"
 
-#: core/utilities/firstrun/openfilepage.cpp:90
+#: core/utilities/firstrun/openfilepage.cpp:85
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> using a preview is always faster than using the editor, "
@@ -53188,12 +53188,12 @@ msgstr ""
 "เนื่องจากมันสามารถแสดงรูปภาพต่าง ๆ ได้ในแบบข้างต่อข้าง และยังสามารถจะปรับเทียบภาพได้ "
 "ไม่ว่าจะทำการดูย่อ/ขยาย และแพนภาพ</p></qt>"
 
-#: core/utilities/firstrun/previewpage.cpp:56
+#: core/utilities/firstrun/previewpage.cpp:51
 #, kde-format
 msgid "<b>Configure Preview Behavior</b>"
 msgstr "<b>ปรับแต่งพฤติกรรมการแสดงตัวอย่าง</b>"
 
-#: core/utilities/firstrun/previewpage.cpp:65
+#: core/utilities/firstrun/previewpage.cpp:60
 #, kde-format
 msgid ""
 "<qt><p>Set here how images are displayed in preview mode and on the light "
@@ -53202,17 +53202,17 @@ msgstr ""
 "<qt><p>ตั้งค่าว่าจะให้แสดงรูปภาพต่าง ๆ อย่างไร ในโหมดแสดงตัวอย่างและในโต๊ะฉายแสง:</p></"
 "qt>"
 
-#: core/utilities/firstrun/previewpage.cpp:74
+#: core/utilities/firstrun/previewpage.cpp:69
 #, kde-format
 msgid "Load reduced version of image"
 msgstr "โหลดรูปภาพในรูปแบบลดขนาด"
 
-#: core/utilities/firstrun/previewpage.cpp:79
+#: core/utilities/firstrun/previewpage.cpp:74
 #, kde-format
 msgid "Load image"
 msgstr "โหลดรูปภาพ"
 
-#: core/utilities/firstrun/previewpage.cpp:89
+#: core/utilities/firstrun/previewpage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> loading a reduced version of an image is faster but can "
@@ -53228,29 +53228,29 @@ msgstr ""
 "โดยมากจะฝังอยู่ในข้อมูลกำกับภาพของแฟ้ม และถูกใช้โดยกล้องเพื่อให้แสดงภาพได้รวดเร็วกว่าข้อมูลดิบ "
 "เมื่อมีการใช้กล้องเพื่อแสดงภาพไปยังเครื่องรับโทรทัศน์</p></qt>"
 
-#: core/utilities/firstrun/rawpage.cpp:56
+#: core/utilities/firstrun/rawpage.cpp:51
 #, kde-format
 msgid "<b>Configure Raw File Handling</b>"
 msgstr "<b>ปรับแต่งการจัดการกับแฟ้มข้อมูลดิบ (Raw)</b>"
 
-#: core/utilities/firstrun/rawpage.cpp:65
+#: core/utilities/firstrun/rawpage.cpp:60
 #, kde-format
 msgid "<qt><p>Set here how you want to open Raw images in the editor:</p></qt>"
 msgstr ""
 "<qt><p>ตั้งค่าว่าคุณต้องการจะเปิดแฟ้มข้อมูลดิบของภาพ (แฟ้ม Raw) อย่างไรในเครื่องมือแก้ไข:</"
 "p></qt>"
 
-#: core/utilities/firstrun/rawpage.cpp:74
+#: core/utilities/firstrun/rawpage.cpp:69
 #, kde-format
 msgid "Open directly, with adjustments made automatically"
 msgstr "เปิดขึ้นมาโดยตรง โดยมีการปรับแก้ค่าต่าง ๆ ให้โดยอัตโนมัติ"
 
-#: core/utilities/firstrun/rawpage.cpp:79
+#: core/utilities/firstrun/rawpage.cpp:74
 #, kde-format
 msgid "Use the Raw import tool to adjust corrections manually"
 msgstr "ใช้เครื่องมือนำเข้าข้อมูลดิบ (Raw) เพื่อใช้ปรับแก้ให้ถูกต้องด้วยตัวเอง"
 
-#: core/utilities/firstrun/rawpage.cpp:89
+#: core/utilities/firstrun/rawpage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> the Raw import tool is designed for advanced users who "
@@ -53302,12 +53302,12 @@ msgstr ""
 "ซึ่งจะทำให้ดิจิแคมเริ่มการทำงานได้รวดเร็วมากขึ้น หากคุณต้องการจะทำการตรวจค้นคลังภาพด้วยตัวเอง "
 "สามารถเรียกใช้ได้ผ่านทางเมนู <b>เครื่องมือ/ตรวจค้นหารูปภาพใหม่ ๆ</b></p></qt>"
 
-#: core/utilities/firstrun/tooltipspage.cpp:56
+#: core/utilities/firstrun/tooltipspage.cpp:51
 #, kde-format
 msgid "<b>Enabled Contextual Tooltips</b>"
 msgstr "<b>เปิดใช้งานทูลทิปแสดงข้อมูลที่เกี่ยวข้อง</b>"
 
-#: core/utilities/firstrun/tooltipspage.cpp:65
+#: core/utilities/firstrun/tooltipspage.cpp:60
 #, kde-format
 msgid ""
 "<qt><p>Set here if you want to show contextual tooltips in icon-view and "
@@ -53316,17 +53316,17 @@ msgstr ""
 "<qt><p>ตั้งค่าว่าคุณต้องการจะให้ใช้ทูลทิปแสดงข้อมูลที่เกี่ยวข้องอย่างไร  ในมุมมองแบบไอคอน "
 "และมุมมองแบบโฟลเดอร์:</p></qt>"
 
-#: core/utilities/firstrun/tooltipspage.cpp:74
+#: core/utilities/firstrun/tooltipspage.cpp:69
 #, kde-format
 msgid "Do not show tooltips"
 msgstr "ไม่ต้องแสดงทูลทิป"
 
-#: core/utilities/firstrun/tooltipspage.cpp:79
+#: core/utilities/firstrun/tooltipspage.cpp:74
 #, kde-format
 msgid "Use Tooltips"
 msgstr "ใช้ทูลทิป"
 
-#: core/utilities/firstrun/tooltipspage.cpp:89
+#: core/utilities/firstrun/tooltipspage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> tooltips show photograph and digiKam metadata on the "
@@ -53371,107 +53371,107 @@ msgid ""
 "risk.</p></qt>"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:64
 #, kde-format
 msgid "Ref. images"
 msgstr "ภาพอ้างอิง"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, fuzzy, kde-format
 #| msgid "Ref. images"
 msgid "Ref. dates"
 msgstr "ภาพอ้างอิง"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:70
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:66
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgid "Ref. albums"
 msgstr "อัลบั้มใหม่"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:71
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:67
 #, kde-format
 msgid "Items"
 msgstr "รายการ"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:72
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Avg. similarity"
 msgstr "ระดับความคล้ายกัน:"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:78
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:74
 #, kde-format
 msgid "This shows all found duplicate items."
 msgstr "ที่ตรงนี้จะแสดงรายการต่าง ๆ ที่ซ้ำกันที่ถูกค้นพบ"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:107
 #, fuzzy, kde-format
 #| msgid "Update fingerprints"
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "ปรับปรุงอัตลักษณ์ของภาพ"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:128
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:109
 #, fuzzy, kde-format
 #| msgid "Use this button to update all image fingerprints."
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr "ใช้ปุ่มนี้ เพื่อปรับปรุงอัตลักษณ์ของภาพทั้งหมด"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:130
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:111
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "ค้นหาภาพซ้ำ"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:113
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr "ใช้ปุ่มนี้เพื่อทำการค้นหาในอัลบั้มที่เลือกไว้ เพื่อค้นหารายการต่าง ๆ ที่ซ้ำกัน"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:118
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "ค้นหาใน:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "ระดับความคล้ายกัน:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:140
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "ซ่อมแซมภาพถ่าย"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "ไม่ใช้"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "ทำการลบอัลบั้มต่าง ๆ ที่เลือกไว้"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "ทำการลบอัลบั้มต่าง ๆ ที่เลือกไว้"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53480,26 +53480,26 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "ซ่อมแซมภาพถ่าย"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "ตั้งค่าเนื้อหาใหม่"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, fuzzy, kde-format
 #| msgctxt "toggle child and parent tags"
 #| msgid "Both"
@@ -53507,72 +53507,72 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "ทั้งคู่"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
 #, fuzzy, kde-format
 #| msgid "File does not exist"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "ยังไม่มีแฟ้มอยู่"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "ล้มเหลวในการเปลี่ยนชื่ออัลบั้ม"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "วันที่สร้าง"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
 #, fuzzy, kde-format
 #| msgid "Modification"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "การแก้ไข"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:208
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "ข้อมูลเกี่ยวกับพื้นที่ส่วนที่เลือกไว้ในปัจจุบัน"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@label"
 msgid "Reference"
 msgstr "อ้างอิง:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:216
 #, fuzzy, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
 msgstr "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53587,13 +53587,13 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "เอารายการต่าง ๆ ออก"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:241
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -53767,7 +53767,7 @@ msgstr ""
 "หากคุณกดที่ปุ่มนี้ การค้นหาโดยการร่างภาพตัวปัจจุบัน "
 "จะถูกบันทึกเป็นอัลบั้มเสมือนตัวใหม่โดยใช้ชื่อที่ตั้งไว้ทางด้านซ้ายนี้"
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:145
+#: core/utilities/fuzzysearch/sketchwidget.cpp:133
 #, kde-format
 msgid ""
 "You simply draw here a rough sketch of what you want to find and digiKam "
@@ -53776,7 +53776,7 @@ msgstr ""
 "คุณสามารถวาดภาพร่างง่าย ๆ ได้ที่นี่ เพื่อใช้ในการค้นหา และ digiKam "
 "จะแสดงภาพที่ใกล้เคียงที่สุดให้ในมุมมองภาพตัวอย่าง"
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:624
+#: core/utilities/fuzzysearch/sketchwidget.cpp:615
 #, kde-format
 msgid ""
 "Draw a sketch here\n"
