@@ -6,7 +6,8 @@
 # https://github.com/KDE/clazy
 # Dependencies : Python BeautifulSoup and SoupSieve at run-time.
 #
-# If '--webupdate' is not passed as argument, static analyzer results are just created locally.
+# If '--webupdate' is passed as argument, static analyzer results are pushed online at
+# https://files.kde.org/digikam/reports/
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -18,8 +19,8 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
 . ./common.sh
 
-# Skip directories from the analysis.
-. ../../.scan-build
+# Analyzer configuration.
+. ../../.clazy
 
 # Check run-time dependencies
 
@@ -47,46 +48,8 @@ WEBSITE_DIR="${ORIG_WD}/site"
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "Clazy Static Analyzer task name: $TITLE"
 
-# Print the skipped directories taken from the config file.
-
-for DROP_ITEM in $IGNORE_DIRS ; do
-
-    if [[ $DROP_ITEM != *exclude ]] ; then
-
-        echo "Skipped dir: $DROP_ITEM"
-
-    fi
-
-done
-
-export CLAZY_IGNORE_DIRS=$IGNORE_DIRS
-
-export CLAZY_CHECKS="\
-level2,\
-no-fully-qualified-moc-types,\
-no-qproperty-without-notify,\
-no-old-style-connect,\
-no-rule-of-three,\
-no-inefficient-qlist-soft,\
-no-qstring-allocations,\
-no-qstring-arg,\
-no-qstring-insensitive-allocation,\
-no-qstring-ref,\
-no-function-args-by-value,\
-qt6-qhash-signature,\
-qt6-deprecated-api-fixes,\
-qt6-fwd-fixes,\
-qt6-header-fixes,\
-unexpected-flag-enumerator-value,\
-signal-with-return-value,\
-raw-environment-function,\
-qt-keywords,\
-missing-qobject-macro\
-"
-
-#qt6-qlatin1stringchar-to-u         What is that exactly ???
-
-echo "CHECKERS CONFIGURATION: $CLAZY_CHECKS"
+echo "IGNORE DIRS CONFIGURATION: $CLAZY_IGNORE_DIRS"
+echo "CHECKERS CONFIGURATION:    $CLAZY_CHECKS"
 
 # Clean up and prepare to scan.
 
@@ -148,8 +111,7 @@ mv clazy.html $REPORT_DIR/index.html
 
 if [[ $1 == "--webupdate" ]] ; then
 
-    # update online report section.
-    updateReportToWebsite "clazy" $REPORT_DIR $TITLE $(parseGitBranch)
+    updateOnlineReport "clazy" $REPORT_DIR $TITLE $(parseGitBranch)
 
 fi
 

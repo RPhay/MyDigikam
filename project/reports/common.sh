@@ -27,13 +27,13 @@ function parseGitHash()
 }
 
 ########################################################################
-# Update online static analyze report section.
+# Update online static analyze report.
 # arg1: static analyzer name (clang, cppcheck, krazy, ...).
 # arg2: static analyzer report directory with html contents.
 # arg3: static analyzer report title.
 # arg4: git branch name.
 #
-function updateReportToWebsite()
+function updateOnlineReport()
 {
     DK_UPLOADURL="digikam@tinami.kde.org"
     DK_UPLOADDIR="/srv/archives/files/digikam/reports/"
@@ -46,11 +46,13 @@ function updateReportToWebsite()
 
     sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm $1_$4.tar.xv"
 
-    echo -e "---------- Upload new static analyzer report to remote web site\n"
+    echo -e "---------- Upload new static analyzer report\n"
 
     rsync -r -v --progress -e ssh $1_$4.tar.xv $DK_UPLOADURL:$DK_UPLOADDIR
 
     rm -fr $1_$4.tar.xv
+
+    echo -e "---------- Report is available online at https://files.kde.org/digikam/reports/\n"
 }
 
 ########################################################################

@@ -4,7 +4,8 @@
 #
 # Run Clang tidy lint static analyzer on whole digiKam source code.
 #
-# If '--webupdate' is not passed as argument, static analyzer results are just created locally.
+# If '--webupdate' is passed as argument, static analyzer results are pushed online at
+# https://files.kde.org/digikam/reports/
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -58,8 +59,7 @@ mv tidy.html $REPORT_DIR/index.html
 
 if [[ $1 != "--webupdate" ]] ; then
 
-    # update online report section.
-    updateReportToWebsite "tidy" $REPORT_DIR $TITLE $(parseGitBranch)
+    updateOnlineReport "tidy" $REPORT_DIR $TITLE $(parseGitBranch)
 
 fi
 
