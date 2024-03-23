@@ -37,7 +37,7 @@ public:
 
 protected:
 
-    ThumbnailImageCatcher* catcher;
+    ThumbnailImageCatcher* catcher = nullptr;
 
 private:
 
