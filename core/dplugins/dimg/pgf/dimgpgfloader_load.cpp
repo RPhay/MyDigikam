@@ -205,7 +205,6 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                 loadingFailed();
 
                 return false;
-                break;
             }
         }
 
