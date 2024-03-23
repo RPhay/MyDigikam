@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 01:35+0000\n"
+"POT-Creation-Date: 2024-03-23 01:36+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -55714,7 +55714,7 @@ msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Postavke"
 
-#: core/utilities/firstrun/collectionpage.cpp:60
+#: core/utilities/firstrun/collectionpage.cpp:57
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Configure where you keep your images and you will store database</b>"
@@ -55722,14 +55722,14 @@ msgid "<b>Configure where you keep your images</b>"
 msgstr ""
 "<b>Konfigurišite gdje držite slike i gdje ćete pohraniti bazu podataka</b>"
 
-#: core/utilities/firstrun/collectionpage.cpp:73
+#: core/utilities/firstrun/collectionpage.cpp:70
 #, kde-format
 msgctxt ""
 "This is a path name so you should include the slash in the translation"
 msgid "/Pictures"
 msgstr "/Slike"
 
-#: core/utilities/firstrun/collectionpage.cpp:79
+#: core/utilities/firstrun/collectionpage.cpp:76
 #, kde-format
 msgid ""
 "<p>Please enter a location where you keep your images.</p> <p>You can choose "
@@ -55740,7 +55740,7 @@ msgstr ""
 "bilo koji lokalni folder, pa čak i onaj koji već sadrži slike.<br/> Više "
 "foldera se može dodati kasnije pod <i>Postavke</i> menijem. </p> "
 
-#: core/utilities/firstrun/collectionpage.cpp:87
+#: core/utilities/firstrun/collectionpage.cpp:84
 #, kde-format
 msgid ""
 "<p><i>Note:</i> removable media (such as USB drives or DVDs) and remote file "
@@ -55750,7 +55750,7 @@ msgstr ""
 "udaljeni datotečni sistemi (kao što su NFS, ili Samba montirane sa cifs/"
 "smbfs) su podržani.</p>"
 
-#: core/utilities/firstrun/collectionpage.cpp:150
+#: core/utilities/firstrun/collectionpage.cpp:147
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to use as the root album. All of your "
@@ -55759,14 +55759,14 @@ msgstr ""
 "Morate označiti folder koji će digiKam koristiti kao korijeni album. Sve "
 "Vaše slike će ići tamo."
 
-#: core/utilities/firstrun/collectionpage.cpp:178
+#: core/utilities/firstrun/collectionpage.cpp:175
 #, fuzzy, kde-format
 #| msgid "Create Root Album Folder?"
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
 msgstr "Kreiraj folder za korijeni album'?"
 
-#: core/utilities/firstrun/collectionpage.cpp:179
+#: core/utilities/firstrun/collectionpage.cpp:176
 #, kde-format
 msgid ""
 "<p>The folder to use as the root album path does not exist:</p><p><b>%1</b></"
@@ -55775,14 +55775,14 @@ msgstr ""
 "<p>Folder za korištenje kao putanju za korijeni album ne postoji:</p><p><b>"
 "%1</b></p>Da li želite da ga digiKam kreira za Vas?"
 
-#: core/utilities/firstrun/collectionpage.cpp:191
+#: core/utilities/firstrun/collectionpage.cpp:188
 #, fuzzy, kde-format
 #| msgid "Create Root Album Folder Failed"
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
 msgstr "Kreiranje foldera za korijeni album nije uspjelo"
 
-#: core/utilities/firstrun/collectionpage.cpp:192
+#: core/utilities/firstrun/collectionpage.cpp:189
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to use as the root album.\n"
@@ -55792,7 +55792,7 @@ msgstr ""
 "album.\n"
 "Molimo Vas,odaberite drugu lokaciju.</p><p><b>%1</b></p>"
 
-#: core/utilities/firstrun/collectionpage.cpp:217
+#: core/utilities/firstrun/collectionpage.cpp:214
 #, kde-format
 msgid ""
 "You do not seem to have write access for the folder selected to be the root "
@@ -55803,7 +55803,7 @@ msgstr ""
 "album.\n"
 "Upozorenje: Bez pristupa pisanju, stavke ne mogu biti uređene."
 
-#: core/utilities/firstrun/databasepage.cpp:52
+#: core/utilities/firstrun/databasepage.cpp:49
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Configure where you keep your images and you will store database</b>"
@@ -55811,12 +55811,12 @@ msgid "<b>Configure where you will store databases</b>"
 msgstr ""
 "<b>Konfigurišite gdje držite slike i gdje ćete pohraniti bazu podataka</b>"
 
-#: core/utilities/firstrun/metadatapage.cpp:55
+#: core/utilities/firstrun/metadatapage.cpp:50
 #, kde-format
 msgid "<b>Configure Metadata Storage to Files</b>"
 msgstr "<b>Izvrši konfiguraciju pohrane metapodataka u datoteke</b>"
 
-#: core/utilities/firstrun/metadatapage.cpp:64
+#: core/utilities/firstrun/metadatapage.cpp:59
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Set here if you want to store the information assigned to items in "
@@ -55832,17 +55832,17 @@ msgstr ""
 "interoperabilnosti sa ostalim programima za upravljanje fotografijama:</p></"
 "qt>"
 
-#: core/utilities/firstrun/metadatapage.cpp:74
+#: core/utilities/firstrun/metadatapage.cpp:69
 #, kde-format
 msgid "Do nothing"
 msgstr "Ne radi ništa"
 
-#: core/utilities/firstrun/metadatapage.cpp:79
+#: core/utilities/firstrun/metadatapage.cpp:74
 #, kde-format
 msgid "Add information to files"
 msgstr "Dodaj informaciju u datoteke"
 
-#: core/utilities/firstrun/metadatapage.cpp:89
+#: core/utilities/firstrun/metadatapage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> recording information to the files' metadata can slow "
@@ -55851,12 +55851,12 @@ msgstr ""
 "<qt><p><i>Napomena:</i> snimanje informacija u metapodatke datoteka može "
 "usporiti operacije upravljanja fotografijama.</p></qt>"
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:66
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:61
 #, kde-format
 msgid "Migration from digiKam 4"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:74
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:69
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Migrate configuration and metadata from digiKam 4</b></h1></"
@@ -55870,23 +55870,23 @@ msgid ""
 "and databases before proceeding.</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:91
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:86
 #, kde-format
 msgid "Migrate configuration from digiKam 4"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:100
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:95
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgid "Create a new configuration"
 msgstr "Prenošenje baze podataka..."
 
-#: core/utilities/firstrun/openfilepage.cpp:57
+#: core/utilities/firstrun/openfilepage.cpp:52
 #, kde-format
 msgid "<b>Configure Open File Behavior</b>"
 msgstr "<b>Konfiguriši ponašanje otvorene datoteke</b>"
 
-#: core/utilities/firstrun/openfilepage.cpp:66
+#: core/utilities/firstrun/openfilepage.cpp:61
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Specify how images should be opened when right-clicked on in the "
@@ -55898,17 +55898,17 @@ msgstr ""
 "<qt><p>Specificiraj kao bi slike trebale biti otvorene nakon desnog klika na "
 "ikonu:</p></qt>"
 
-#: core/utilities/firstrun/openfilepage.cpp:75
+#: core/utilities/firstrun/openfilepage.cpp:70
 #, kde-format
 msgid "Open a preview"
 msgstr "Otvori predpregled"
 
-#: core/utilities/firstrun/openfilepage.cpp:80
+#: core/utilities/firstrun/openfilepage.cpp:75
 #, kde-format
 msgid "Open in the editor"
 msgstr "Otvori u uređivaču"
 
-#: core/utilities/firstrun/openfilepage.cpp:90
+#: core/utilities/firstrun/openfilepage.cpp:85
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> using a preview is always faster than using the editor, "
@@ -55924,12 +55924,12 @@ msgstr ""
 "mogu biti prikazane na način da se prikazuje jedna po jedna strana i može "
 "biti izvedeno sinhronizirano uvećavanje i pomjeranje.</p></qt>"
 
-#: core/utilities/firstrun/previewpage.cpp:56
+#: core/utilities/firstrun/previewpage.cpp:51
 #, kde-format
 msgid "<b>Configure Preview Behavior</b>"
 msgstr "<b>Konfiguriši ponašanje predpregleda</b>"
 
-#: core/utilities/firstrun/previewpage.cpp:65
+#: core/utilities/firstrun/previewpage.cpp:60
 #, kde-format
 msgid ""
 "<qt><p>Set here how images are displayed in preview mode and on the light "
@@ -55938,17 +55938,17 @@ msgstr ""
 "<qt><p>Podesite način prikaza slika u režimu pregleda i na svijetloj tabli:</"
 "p></qt>"
 
-#: core/utilities/firstrun/previewpage.cpp:74
+#: core/utilities/firstrun/previewpage.cpp:69
 #, kde-format
 msgid "Load reduced version of image"
 msgstr "Učitaj reduciranu verziju slike"
 
-#: core/utilities/firstrun/previewpage.cpp:79
+#: core/utilities/firstrun/previewpage.cpp:74
 #, kde-format
 msgid "Load image"
 msgstr "Učitaj sliku"
 
-#: core/utilities/firstrun/previewpage.cpp:89
+#: core/utilities/firstrun/previewpage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> loading a reduced version of an image is faster but can "
@@ -55963,27 +55963,27 @@ msgstr ""
 "slike. Ova JPEG slika je ugrađena u metapodatke datoteke i fotoaparat je "
 "koristi za brži prikaz Raw slika na TV ekran.</p></qt>"
 
-#: core/utilities/firstrun/rawpage.cpp:56
+#: core/utilities/firstrun/rawpage.cpp:51
 #, kde-format
 msgid "<b>Configure Raw File Handling</b>"
 msgstr "<b>Izvrši konfiguraciju rukovanja Raw datotekama</b>"
 
-#: core/utilities/firstrun/rawpage.cpp:65
+#: core/utilities/firstrun/rawpage.cpp:60
 #, kde-format
 msgid "<qt><p>Set here how you want to open Raw images in the editor:</p></qt>"
 msgstr "<qt><p>Podesite kako želite otvarati Raw slike u uredniku:</p></qt>"
 
-#: core/utilities/firstrun/rawpage.cpp:74
+#: core/utilities/firstrun/rawpage.cpp:69
 #, kde-format
 msgid "Open directly, with adjustments made automatically"
 msgstr "Otvori direktno,sa prilagodbama napravljenim automatski"
 
-#: core/utilities/firstrun/rawpage.cpp:79
+#: core/utilities/firstrun/rawpage.cpp:74
 #, kde-format
 msgid "Use the Raw import tool to adjust corrections manually"
 msgstr "Koristite Raw alatku prenosa za ručno podešavanje korekcija"
 
-#: core/utilities/firstrun/rawpage.cpp:89
+#: core/utilities/firstrun/rawpage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> the Raw import tool is designed for advanced users who "
@@ -56051,12 +56051,12 @@ msgstr ""
 "brže. Možete i ručno pokrenuti pretraživanje digiKam-a, korištenjem <b>Alati-"
 ">Održavanje->Pretraga novih stavki</b> menija.</p></qt>"
 
-#: core/utilities/firstrun/tooltipspage.cpp:56
+#: core/utilities/firstrun/tooltipspage.cpp:51
 #, kde-format
 msgid "<b>Enabled Contextual Tooltips</b>"
 msgstr "<b>Omogućeni kratki opisi konteksta</b>"
 
-#: core/utilities/firstrun/tooltipspage.cpp:65
+#: core/utilities/firstrun/tooltipspage.cpp:60
 #, kde-format
 msgid ""
 "<qt><p>Set here if you want to show contextual tooltips in icon-view and "
@@ -56065,17 +56065,17 @@ msgstr ""
 "<qt><p>Postavite ovdje ako želite prikaz kratkih opisa konteksta u prikazu "
 "pomoću ikona i u prikazu pomoću direktorija</p></qt>"
 
-#: core/utilities/firstrun/tooltipspage.cpp:74
+#: core/utilities/firstrun/tooltipspage.cpp:69
 #, kde-format
 msgid "Do not show tooltips"
 msgstr "Ne prikazuj savjete"
 
-#: core/utilities/firstrun/tooltipspage.cpp:79
+#: core/utilities/firstrun/tooltipspage.cpp:74
 #, kde-format
 msgid "Use Tooltips"
 msgstr "Koristi savjete"
 
-#: core/utilities/firstrun/tooltipspage.cpp:89
+#: core/utilities/firstrun/tooltipspage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> tooltips show photograph and digiKam metadata on the "
@@ -56121,61 +56121,61 @@ msgid ""
 "risk.</p></qt>"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:64
 #, kde-format
 msgid "Ref. images"
 msgstr "Ref. slike"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, fuzzy, kde-format
 #| msgid "Ref. images"
 msgid "Ref. dates"
 msgstr "Ref. slike"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:70
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:66
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgid "Ref. albums"
 msgstr "Novi album"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:71
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:67
 #, kde-format
 msgid "Items"
 msgstr "Stavke"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:72
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Avg. similarity"
 msgstr "Sličnost:"
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:78
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:74
 #, kde-format
 msgid "This shows all found duplicate items."
 msgstr "Ovo prikazuje sve pronađene duplicirane stavke."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:107
 #, fuzzy, kde-format
 #| msgid "Update fingerprints"
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Osvježi otiske prstiju"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:128
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:109
 #, fuzzy, kde-format
 #| msgid "Use this button to update all image fingerprints."
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr "Koristite ovo dugme za ažuriranje svih otisaka slike."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:130
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:111
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Pronađi duplikate"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:113
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -56183,34 +56183,34 @@ msgid "Use this button to scan the selected albums for duplicate items."
 msgstr ""
 "Koristite ovu tipku za skeniranje odabranih albuma za dupliciranje predmeta."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:118
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "Traži u:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Sličnost:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:140
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Restauracija"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Bez"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reset selected albums"
@@ -56218,7 +56218,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Poništi odabrane albume"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reset selected albums"
@@ -56226,7 +56226,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Poništi odabrane albume"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56235,28 +56235,28 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Restauracija"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Ukloni odabranu oznaku"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
 #, fuzzy, kde-format
 #| msgid "One map"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Jedna karta"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, fuzzy, kde-format
 #| msgctxt "toggle child and parent tags"
 #| msgid "Both"
@@ -56264,74 +56264,74 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Oboje"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
 #, fuzzy, kde-format
 #| msgid "File does not exist"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Datoteka ne postoji"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Neuspjela promjena imena albuma"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "Datum stvaranja"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
 #, fuzzy, kde-format
 #| msgid "Modification"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "Izmjena"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:208
 #, fuzzy, kde-format
 #| msgid "Information about current image selection"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "Informacije o trenutnom odabiru slike"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@label"
 msgid "Reference"
 msgstr "Referenca:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:216
 #, fuzzy, kde-format
 #| msgid "No image selected"
 msgctxt "@group"
 msgid "Reference Image Selection Method"
 msgstr "Nijedna slika nije izabrana"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56346,14 +56346,14 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, fuzzy, kde-format
 #| msgid "Remove duplicate words"
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Uklonite duple riječi"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:241
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -56549,7 +56549,7 @@ msgstr ""
 "spremljena na novo pretraživanje virtualnog albuma koristeći ime postavljeno "
 "na lijevoj strani."
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:145
+#: core/utilities/fuzzysearch/sketchwidget.cpp:133
 #, kde-format
 msgid ""
 "You simply draw here a rough sketch of what you want to find and digiKam "
@@ -56558,7 +56558,7 @@ msgstr ""
 "Jednostavno ovdje nacrtajte grubi nacrt onoga što želite da pronađete i "
 "digiKam će prikazati najbolja podudaranja u prikazu kao sličice."
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:624
+#: core/utilities/fuzzysearch/sketchwidget.cpp:615
 #, kde-format
 msgid ""
 "Draw a sketch here\n"
