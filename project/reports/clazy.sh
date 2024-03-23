@@ -116,3 +116,5 @@ if [[ $1 != "--nowebupdate" ]] ; then
 fi
 
 cd $ORIG_DIR
+
+rm -fr ../../build.clazy

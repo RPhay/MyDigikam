@@ -50,7 +50,10 @@ rm -fr $WEBSITE_DIR
 
 mkdir -p $REPORT_DIR
 
-$CLANG_TIDY_BIN -quiet -j$CPU_CORES -p  ../../build/ | tee $REPORT_DIR/clang-tidy.log
+rm -fr ../../build.tidy
+mkdir -p ../../build.tidy
+
+$CLANG_TIDY_BIN -quiet -j$CPU_CORES -p  ../../build.tidy/ | tee $REPORT_DIR/clang-tidy.log
 
 python3 ./clangtidy_visualizer.py $REPORT_DIR/clang-tidy.log
 
@@ -64,4 +67,6 @@ if [[ $1 != "--nowebupdate" ]] ; then
 fi
 
 cd $ORIG_DIR
+
+rm -fr ../../build.tidy
 
