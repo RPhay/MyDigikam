@@ -46,20 +46,20 @@ protected:
     {
     public:
 
-        Statistics();
+        Statistics() = default;
 
     public:
 
-        int knownFaces;
-        int correctlyRecognized;
+        int knownFaces          = 0;
+        int correctlyRecognized = 0;
     };
 
 protected:
 
     QMap<int, Statistics>        results;
-
-    FacePipeline::Private* const d;
     FacialRecognitionWrapper     recognizer;
+
+    FacePipeline::Private* const d          = nullptr;
 };
 
 } // namespace Digikam

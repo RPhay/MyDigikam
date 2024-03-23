@@ -42,19 +42,19 @@ Q_SIGNALS:
 
 protected:
 
-    int                          totalImages;
-    int                          faces;
-    double                       totalPixels;
-    double                       facePixels;
+    int                          totalImages            = 0;
+    int                          faces                  = 0;
+    double                       totalPixels            = 0.0;
+    double                       facePixels             = 0.0;
 
-    int                          trueNegativeImages;
-    int                          falsePositiveImages;
+    int                          trueNegativeImages     = 0;
+    int                          falsePositiveImages    = 0;
 
-    int                          truePositiveFaces;
-    int                          falseNegativeFaces;
-    int                          falsePositiveFaces;
+    int                          truePositiveFaces      = 0;
+    int                          falseNegativeFaces     = 0;
+    int                          falsePositiveFaces     = 0;
 
-    FacePipeline::Private* const d;
+    FacePipeline::Private* const d                      = nullptr;
 };
 
 } // namespace Digikam

@@ -23,17 +23,8 @@
 namespace Digikam
 {
 
-DetectionBenchmarker::DetectionBenchmarker(FacePipeline::Private* const d)
-    : totalImages           (0),
-      faces                 (0),
-      totalPixels           (0),
-      facePixels            (0),
-      trueNegativeImages    (0),
-      falsePositiveImages   (0),
-      truePositiveFaces     (0),
-      falseNegativeFaces    (0),
-      falsePositiveFaces    (0),
-      d                     (d)
+DetectionBenchmarker::DetectionBenchmarker(FacePipeline::Private* const dd)
+    : d(dd)
 {
 }
 
@@ -78,6 +69,7 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
                 {   // cppcheck-suppress useStlAlgorithm
                     matchedTrueFaces << trueFace;
                     unmatchedTrueFaces.removeOne(trueFace);
+
                     break;
                 }
             }
@@ -90,6 +82,7 @@ void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& packa
                 if (trueFace.region().intersects(testedFace.region(), minOverlap))
                 {   // cppcheck-suppress useStlAlgorithm
                     unmatchedTestedFaces.removeOne(testedFace);
+
                     break;
                 }
             }

@@ -23,12 +23,6 @@
 namespace Digikam
 {
 
-RecognitionBenchmarker::Statistics::Statistics()
-    : knownFaces         (0),
-      correctlyRecognized(0)
-{
-}
-
 RecognitionBenchmarker::RecognitionBenchmarker(FacePipeline::Private* const dd)
     : d(dd)
 {
