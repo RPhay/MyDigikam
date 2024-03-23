@@ -6,8 +6,8 @@
 # http://cppcheck.sourceforge.net/
 # Dependencies : Python::pygments module to export report as HTML.
 #
-# If '--webupdate' is passed as argument, static analyzer results are pushed online at
-# https://files.kde.org/digikam/reports/
+# If '--nowebupdate' is passed as argument, static analyzer results are not pushed online at
+# https://files.kde.org/digikam/reports/ (default yes).
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -76,7 +76,7 @@ cppcheck-htmlreport --file=report.cppcheck.xml \
                     --source-dir=. \
                     --title=$TITLE
 
-if [[ $1 == "--webupdate" ]] ; then
+if [[ $1 != "--nowebupdate" ]] ; then
 
     updateOnlineReport "cppcheck" $REPORT_DIR $TITLE $(parseGitBranch)
 

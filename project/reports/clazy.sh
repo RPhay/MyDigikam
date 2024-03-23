@@ -6,8 +6,8 @@
 # https://github.com/KDE/clazy
 # Dependencies : Python BeautifulSoup and SoupSieve at run-time.
 #
-# If '--webupdate' is passed as argument, static analyzer results are pushed online at
-# https://files.kde.org/digikam/reports/
+# If '--nowebupdate' is passed as argument, static analyzer results are not pushed online at
+# https://files.kde.org/digikam/reports/ (default yes).
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -109,7 +109,7 @@ python3 ./clazy_visualizer.py $REPORT_DIR/trace.log
 rm -f $REPORT_DIR/trace.log
 mv clazy.html $REPORT_DIR/index.html
 
-if [[ $1 == "--webupdate" ]] ; then
+if [[ $1 != "--nowebupdate" ]] ; then
 
     updateOnlineReport "clazy" $REPORT_DIR $TITLE $(parseGitBranch)
 

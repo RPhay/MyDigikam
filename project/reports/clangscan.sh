@@ -6,8 +6,8 @@
 # https://clang-analyzer.llvm.org/
 # Dependencies : LLVM clang static analyzer version >= 16.
 #
-# If '--webupdate' is passed as argument, static analyzer results are pushed online at
-# https://files.kde.org/digikam/reports/
+# If '--nowebupdate' is passed as argument, static analyzer results are not pushed online at
+# https://files.kde.org/digikam/reports/ (default yes).
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -129,7 +129,7 @@ cd $ORIG_WD
 SCAN_BUILD_DIR=$(find ${REPORT_DIR} -maxdepth 1 -not -empty -not -name `basename ${REPORT_DIR}`)
 echo "Clang Report $TITLE is located to $SCAN_BUILD_DIR"
 
-if [[ $1 == "--webupdate" ]] ; then
+if [[ $1 != "--nowebupdate" ]] ; then
 
     updateOnlineReport "clang" $REPORT_DIR $TITLE $(parseGitBranch)
 
