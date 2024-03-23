@@ -93,118 +93,77 @@ public:
 
 public:
 
-    explicit Private()
-      : configTabEntry                  (QLatin1String("FuzzySearch Tab")),
-        configPenSketchSizeEntry        (QLatin1String("Pen Sketch Size")),
-        configResultSketchItemsEntry    (QLatin1String("Result Sketch items")),
-        configPenSketchHueEntry         (QLatin1String("Pen Sketch Hue")),
-        configPenSketchSaturationEntry  (QLatin1String("Pen Sketch Saturation")),
-        configPenSkethValueEntry        (QLatin1String("Pen Sketch Value")),
-        configSimilarsThresholdEntry    (QLatin1String("Similars Threshold")),
-        configSimilarsMaxThresholdEntry (QLatin1String("Similars Maximum Threshold")),
-        active                          (false),                      ///< initially be active to update sketch panel when the search list is restored
-        fingerprintsChecked             (false),
-        resetButton                     (nullptr),
-        saveBtnSketch                   (nullptr),
-        undoBtnSketch                   (nullptr),
-        redoBtnSketch                   (nullptr),
-        saveBtnImage                    (nullptr),
-        penSize                         (nullptr),
-        resultsSketch                   (nullptr),
-        similarityRange                 (nullptr),
-        imageWidget                     (nullptr),
-        timerSketch                     (nullptr),
-        timerImage                      (nullptr),
-        folderView                      (nullptr),
-        nameEditSketch                  (nullptr),
-        nameEditImage                   (nullptr),
-        tabWidget                       (nullptr),
-        hsSelector                      (nullptr),
-        vSelector                       (nullptr),
-        labelFile                       (nullptr),
-        labelFolder                     (nullptr),
-        searchFuzzyBar                  (nullptr),
-        searchTreeView                  (nullptr),
-        sketchWidget                    (nullptr),
-        thumbLoadThread                 (nullptr),
-        findDuplicatesPanel             (nullptr),
-        imageSAlbum                     (nullptr),
-        sketchSAlbum                    (nullptr),
-        fuzzySearchAlbumSelectors       (nullptr),
-        sketchSearchAlbumSelectors      (nullptr),
-        searchModel                     (nullptr),
-        searchModificationHelper        (nullptr),
-        settings                        (nullptr)
-    {
-    }
+    Private() = default;
 
-    const QString             configTabEntry;
-    const QString             configPenSketchSizeEntry;
-    const QString             configResultSketchItemsEntry;
-    const QString             configPenSketchHueEntry;
-    const QString             configPenSketchSaturationEntry;
-    const QString             configPenSkethValueEntry;
-    const QString             configSimilarsThresholdEntry;
-    const QString             configSimilarsMaxThresholdEntry;
+public:
 
-    bool                      active;
-    bool                      fingerprintsChecked;
+    const QString             configTabEntry                    = QLatin1String("FuzzySearch Tab");
+    const QString             configPenSketchSizeEntry          = QLatin1String("Pen Sketch Size");
+    const QString             configResultSketchItemsEntry      = QLatin1String("Result Sketch items");
+    const QString             configPenSketchHueEntry           = QLatin1String("Pen Sketch Hue");
+    const QString             configPenSketchSaturationEntry    = QLatin1String("Pen Sketch Saturation");
+    const QString             configPenSkethValueEntry          = QLatin1String("Pen Sketch Value");
+    const QString             configSimilarsThresholdEntry      = QLatin1String("Similars Threshold");
+    const QString             configSimilarsMaxThresholdEntry   = QLatin1String("Similars Maximum Threshold");
+
+    bool                      active                            = false;  ///< initially be active to update sketch panel when the search list is restored
+    bool                      fingerprintsChecked               = false;
 
     QColor                    selColor;
 
-    QToolButton*              resetButton;
-    QToolButton*              saveBtnSketch;
-    QToolButton*              undoBtnSketch;
-    QToolButton*              redoBtnSketch;
-    QToolButton*              saveBtnImage;
+    QToolButton*              resetButton                       = nullptr;
+    QToolButton*              saveBtnSketch                     = nullptr;
+    QToolButton*              undoBtnSketch                     = nullptr;
+    QToolButton*              redoBtnSketch                     = nullptr;
+    QToolButton*              saveBtnImage                      = nullptr;
 
-    QSpinBox*                 penSize;
-    QSpinBox*                 resultsSketch;
+    QSpinBox*                 penSize                           = nullptr;
+    QSpinBox*                 resultsSketch                     = nullptr;
 
-    DIntRangeBox*             similarityRange;
+    DIntRangeBox*             similarityRange                   = nullptr;
 
-    QLabel*                   imageWidget;
+    QLabel*                   imageWidget                       = nullptr;
 
-    QTimer*                   timerSketch;
-    QTimer*                   timerImage;
+    QTimer*                   timerSketch                       = nullptr;
+    QTimer*                   timerImage                        = nullptr;
 
-    DVBox*                    folderView;
+    DVBox*                    folderView                        = nullptr;
 
-    DTextEdit*                nameEditSketch;
-    DTextEdit*                nameEditImage;
+    DTextEdit*                nameEditSketch                    = nullptr;
+    DTextEdit*                nameEditImage                     = nullptr;
 
-    QTabWidget*               tabWidget;
+    QTabWidget*               tabWidget                         = nullptr;
 
-    DHueSaturationSelector*   hsSelector;
+    DHueSaturationSelector*   hsSelector                        = nullptr;
 
-    DColorValueSelector*      vSelector;
+    DColorValueSelector*      vSelector                         = nullptr;
 
-    DAdjustableLabel*         labelFile;
-    DAdjustableLabel*         labelFolder;
+    DAdjustableLabel*         labelFile                         = nullptr;
+    DAdjustableLabel*         labelFolder                       = nullptr;
 
     ItemInfo                  imageInfo;
     QUrl                      imageUrl;
 
-    SearchTextBarDb*          searchFuzzyBar;
+    SearchTextBarDb*          searchFuzzyBar                    = nullptr;
 
-    EditableSearchTreeView*   searchTreeView;
+    EditableSearchTreeView*   searchTreeView                    = nullptr;
 
-    SketchWidget*             sketchWidget;
+    SketchWidget*             sketchWidget                      = nullptr;
 
-    ThumbnailLoadThread*      thumbLoadThread;
+    ThumbnailLoadThread*      thumbLoadThread                   = nullptr;
 
-    FindDuplicatesView*       findDuplicatesPanel;
+    FindDuplicatesView*       findDuplicatesPanel               = nullptr;
 
     AlbumPointer<SAlbum>      imageSAlbum;
     AlbumPointer<SAlbum>      sketchSAlbum;
 
-    AlbumSelectors*           fuzzySearchAlbumSelectors;
-    AlbumSelectors*           sketchSearchAlbumSelectors;
+    AlbumSelectors*           fuzzySearchAlbumSelectors         = nullptr;
+    AlbumSelectors*           sketchSearchAlbumSelectors        = nullptr;
 
-    SearchModel*              searchModel;
-    SearchModificationHelper* searchModificationHelper;
+    SearchModel*              searchModel                       = nullptr;
+    SearchModificationHelper* searchModificationHelper          = nullptr;
 
-    ApplicationSettings*      settings;
+    ApplicationSettings*      settings                          = nullptr;
 };
 
 } // namespace Digikam
