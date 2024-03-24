@@ -16,7 +16,7 @@ BUGFIXES:
 007 ==> 484311 - Allow to generate non English keywords with Auto-Tags engine.
 008 ==> 484341 - Translate auto tags in non-english languages.
 009 ==> 467968 - Advanced slideshow using opengl re-displays some jpegs, sometimes crashes.
-010 ==> 
+010 ==> 484350 - Failed to load image.
 011 ==> 
 012 ==> 
 013 ==> 
