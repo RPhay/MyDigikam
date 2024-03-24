@@ -323,12 +323,12 @@ public:
     void setBetweenText(const QString& between);
     void setBoundary(const QTime& min, const QTime& max);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -336,9 +336,9 @@ protected Q_SLOTS:
 
 protected:
 
-    QTimeEdit* m_firstTimeEdit;
-    QTimeEdit* m_secondTimeEdit;
-    QLabel*    m_betweenLabel;
+    QTimeEdit* m_firstTimeEdit  = nullptr;
+    QTimeEdit* m_secondTimeEdit = nullptr;
+    QLabel*    m_betweenLabel   = nullptr;
 
 private:
 
@@ -361,12 +361,12 @@ public:
     void setChoice(const QStringList& choice);
     void setAnyText(const QString& anyText);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -378,20 +378,20 @@ protected:
 
 protected:
 
-    ChoiceSearchComboBox* m_comboBox;
+    ChoiceSearchComboBox* m_comboBox    = nullptr;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    QMetaType::Type       m_type;
+    QMetaType::Type       m_type        = QMetaType::UnknownType;
 
 #else
 
-    QVariant::Type        m_type;
+    QVariant::Type        m_type        = QVariant::Invalid;
 
 #endif
 
     QString               m_anyText;
-    ChoiceSearchModel*    m_model;
+    ChoiceSearchModel*    m_model       = nullptr;
 
 private:
 
@@ -432,12 +432,12 @@ public:
 
     SearchFieldAlbum(QObject* const parent, Type type);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -445,12 +445,12 @@ protected Q_SLOTS:
 
 protected:
 
-    QWidget*                             m_wrapperBox;
-    AlbumTreeViewSelectComboBox*         m_albumComboBox;
-    TagTreeViewSelectComboBox*           m_tagComboBox;
-    SqueezedComboBox*                    m_operation;
-    Type                                 m_type;
-    AbstractCheckableAlbumModel*         m_model;
+    QWidget*                             m_wrapperBox       = nullptr;
+    AlbumTreeViewSelectComboBox*         m_albumComboBox    = nullptr;
+    TagTreeViewSelectComboBox*           m_tagComboBox      = nullptr;
+    SqueezedComboBox*                    m_operation        = nullptr;
+    Type                                 m_type             = TypeAlbum;
+    AbstractCheckableAlbumModel*         m_model            = nullptr;
 };
 
 //-----------------------------------------------------------------------------
@@ -465,12 +465,12 @@ public:
 
     void setBetweenText(const QString& text);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -479,9 +479,9 @@ protected Q_SLOTS:
 
 protected:
 
-    RatingComboBox* m_firstBox;
-    RatingComboBox* m_secondBox;
-    QLabel*         m_betweenLabel;
+    RatingComboBox* m_firstBox      = nullptr;
+    RatingComboBox* m_secondBox     = nullptr;
+    QLabel*         m_betweenLabel  = nullptr;
 
 private:
 
@@ -500,11 +500,11 @@ public:
 
     explicit SearchFieldComboBox(QObject* const  parent);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -512,7 +512,7 @@ protected Q_SLOTS:
 
 protected:
 
-    QComboBox* m_comboBox;
+    QComboBox* m_comboBox = nullptr;
 };
 
 //-----------------------------------------------------------------------------
@@ -527,12 +527,12 @@ public:
 
     void setLabel(const QString& text);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -540,7 +540,7 @@ protected Q_SLOTS:
 
 protected:
 
-    QCheckBox* m_checkBox;
+    QCheckBox* m_checkBox = nullptr;
     QString    m_text;
 };
 
@@ -555,7 +555,7 @@ public:
     explicit SearchFieldColorDepth(QObject* const parent);
 
     void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
+    void read(SearchXmlCachingReader& reader)                        override;
 };
 
 //-----------------------------------------------------------------------------
@@ -569,7 +569,7 @@ public:
     explicit SearchFieldPageOrientation(QObject* const parent);
 
     void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
+    void read(SearchXmlCachingReader& reader)                        override;
 };
 
 //-----------------------------------------------------------------------------
@@ -582,12 +582,12 @@ public:
 
     explicit SearchFieldLabels(QObject* const parent);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -595,8 +595,8 @@ protected Q_SLOTS:
 
 protected:
 
-    PickLabelFilter*  m_pickLabelFilter;
-    ColorLabelFilter* m_colorLabelFilter;
+    PickLabelFilter*  m_pickLabelFilter  = nullptr;
+    ColorLabelFilter* m_colorLabelFilter = nullptr;
 };
 
 //-----------------------------------------------------------------------------
@@ -609,12 +609,12 @@ public:
 
     explicit SearchFieldMonthDay(QObject* const parent);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -622,9 +622,9 @@ protected Q_SLOTS:
 
 protected:
 
-    QLabel*    m_dayLabel;
-    QComboBox* m_monthBox;
-    QComboBox* m_dayBox;
+    QLabel*    m_dayLabel   = nullptr;
+    QComboBox* m_monthBox   = nullptr;
+    QComboBox* m_dayBox     = nullptr;
 };
 
 } // namespace Digikam

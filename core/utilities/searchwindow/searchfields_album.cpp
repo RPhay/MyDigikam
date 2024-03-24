@@ -19,13 +19,8 @@ namespace Digikam
 {
 
 SearchFieldAlbum::SearchFieldAlbum(QObject* const parent, Type type)
-    : SearchField       (parent),
-      m_wrapperBox      (nullptr),
-      m_albumComboBox   (nullptr),
-      m_tagComboBox     (nullptr),
-      m_operation       (nullptr),
-      m_type            (type),
-      m_model           (nullptr)
+    : SearchField(parent),
+      m_type     (type)
 {
 }
 
@@ -201,6 +196,7 @@ QList<QRect> SearchFieldAlbum::valueWidgetRects() const
 {
     QList<QRect> rects;
     rects << m_wrapperBox->geometry();
+
     return rects;
 }
 

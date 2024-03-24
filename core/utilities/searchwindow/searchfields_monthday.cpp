@@ -19,10 +19,7 @@ namespace Digikam
 {
 
 SearchFieldMonthDay::SearchFieldMonthDay(QObject* const parent)
-    : SearchField(parent),
-      m_dayLabel (nullptr),
-      m_monthBox (nullptr),
-      m_dayBox   (nullptr)
+    : SearchField(parent)
 {
 }
 

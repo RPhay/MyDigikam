@@ -19,8 +19,7 @@ namespace Digikam
 {
 
 SearchFieldCheckBox::SearchFieldCheckBox(QObject* const parent)
-    : SearchField(parent),
-      m_checkBox (nullptr)
+    : SearchField(parent)
 {
 }
 
