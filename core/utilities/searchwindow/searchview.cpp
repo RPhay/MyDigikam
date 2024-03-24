@@ -45,8 +45,7 @@ namespace Digikam
 {
 
 AbstractSearchGroupContainer::AbstractSearchGroupContainer(QWidget* const parent)
-    : QWidget     (parent),
-      m_groupIndex(0)
+    : QWidget(parent)
 {
 }
 
@@ -149,21 +148,15 @@ class Q_DECL_HIDDEN SearchView::Private
 {
 public:
 
-    explicit Private()
-      : needAnimationForReadIn(false),
-        layout                (nullptr),
-        timeline              (nullptr),
-        bar                   (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                     needAnimationForReadIn;
+    bool                     needAnimationForReadIn = false;
 
-    QVBoxLayout*             layout;
+    QVBoxLayout*             layout                 = nullptr;
     QCache<QString, QPixmap> pixmapCache;
-    QTimeLine*               timeline;
+    QTimeLine*               timeline               = nullptr;
 
-    SearchViewBottomBar*     bar;
+    SearchViewBottomBar*     bar                    = nullptr;
 };
 
 SearchView::SearchView()
@@ -464,8 +457,8 @@ void SearchView::setTheme()
 
 QPixmap SearchView::cachedBannerPixmap(int w, int h) const
 {
-    QString key  = QLatin1String("BannerPixmap-") + QString::number(w) + QLatin1Char('-') + QString::number(h);
-    QPixmap* pix = d->pixmapCache.object(key);
+    QString key        = QLatin1String("BannerPixmap-") + QString::number(w) + QLatin1Char('-') + QString::number(h);
+    QPixmap* const pix = d->pixmapCache.object(key);
 
     if (!pix)
     {

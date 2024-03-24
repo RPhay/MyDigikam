@@ -58,8 +58,7 @@ class Q_DECL_HIDDEN KeywordLineEdit : public QLineEdit
 public:
 
     explicit KeywordLineEdit(QWidget* const parent = nullptr)
-        : QLineEdit    (parent),
-          m_hasAdvanced(false)
+        : QLineEdit    (parent)
     {
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
         KConfigGroup group        = config->group(QLatin1String("KeywordSearchEdit Settings"));
@@ -164,8 +163,8 @@ public Q_SLOTS:
 
 protected:
 
-    bool    m_hasAdvanced;
-    bool    m_autoSearch;
+    bool    m_hasAdvanced   = false;
+    bool    m_autoSearch    = false;
     QString m_i18nSearch;
 };
 
@@ -175,53 +174,33 @@ class Q_DECL_HIDDEN SearchTabHeader::Private
 {
 public:
 
-    explicit Private()
-      : newSearchWidget         (nullptr),
-        saveAsWidget            (nullptr),
-        editSimpleWidget        (nullptr),
-        editAdvancedWidget      (nullptr),
-        lowerArea               (nullptr),
-        keywordEdit             (nullptr),
-        advancedNewSearch       (nullptr),
-        advancedEditSearch      (nullptr),
-        saveNameEdit            (nullptr),
-        saveButton              (nullptr),
-        storedKeywordEditName   (nullptr),
-        storedKeywordEdit       (nullptr),
-        storedAdvancedEditName  (nullptr),
-        storedAdvancedEditLabel (nullptr),
-        keywordEditTimer        (nullptr),
-        storedKeywordEditTimer  (nullptr),
-        searchWindow            (nullptr),
-        currentAlbum            (nullptr)
-    {
-    }
+    Private() = default;
 
-    QGroupBox*          newSearchWidget;
-    QGroupBox*          saveAsWidget;
-    QGroupBox*          editSimpleWidget;
-    QGroupBox*          editAdvancedWidget;
+    QGroupBox*          newSearchWidget         = nullptr;
+    QGroupBox*          saveAsWidget            = nullptr;
+    QGroupBox*          editSimpleWidget        = nullptr;
+    QGroupBox*          editAdvancedWidget      = nullptr;
 
-    QStackedLayout*     lowerArea;
+    QStackedLayout*     lowerArea               = nullptr;
 
-    KeywordLineEdit*    keywordEdit;
-    QPushButton*        advancedNewSearch;
-    QPushButton*        advancedEditSearch;
+    KeywordLineEdit*    keywordEdit             = nullptr;
+    QPushButton*        advancedNewSearch       = nullptr;
+    QPushButton*        advancedEditSearch      = nullptr;
 
-    QLineEdit*          saveNameEdit;
-    QToolButton*        saveButton;
+    QLineEdit*          saveNameEdit            = nullptr;
+    QToolButton*        saveButton              = nullptr;
 
-    DAdjustableLabel*   storedKeywordEditName;
-    QLineEdit*          storedKeywordEdit;
-    DAdjustableLabel*   storedAdvancedEditName;
-    QPushButton*        storedAdvancedEditLabel;
+    DAdjustableLabel*   storedKeywordEditName   = nullptr;
+    QLineEdit*          storedKeywordEdit       = nullptr;
+    DAdjustableLabel*   storedAdvancedEditName  = nullptr;
+    QPushButton*        storedAdvancedEditLabel = nullptr;
 
-    QTimer*             keywordEditTimer;
-    QTimer*             storedKeywordEditTimer;
+    QTimer*             keywordEditTimer        = nullptr;
+    QTimer*             storedKeywordEditTimer  = nullptr;
 
-    SearchWindow*       searchWindow;
+    SearchWindow*       searchWindow            = nullptr;
 
-    SAlbum*             currentAlbum;
+    SAlbum*             currentAlbum            = nullptr;
 
     QString             oldKeywordContent;
     QString             oldStoredKeywordContent;
@@ -483,7 +462,7 @@ void SearchTabHeader::editSearch(SAlbum* album)
 
     if      (album->isAdvancedSearch())
     {
-        SearchWindow* window = searchWindow();
+        SearchWindow* const window = searchWindow();
         window->reset();
         window->readSearch(album->id(), album->query());
         window->show();
@@ -598,8 +577,8 @@ void SearchTabHeader::saveSearch()
         oldAlbum = AlbumManager::instance()->findSAlbum(name);
     }
 
-    SAlbum* newAlbum = AlbumManager::instance()->createSAlbum(name, d->currentAlbum->searchType(),
-                                                              d->currentAlbum->query());
+    SAlbum* const newAlbum = AlbumManager::instance()->createSAlbum(name, d->currentAlbum->searchType(),
+                                                                    d->currentAlbum->query());
     Q_EMIT searchShallBeSelected(QList<Album*>() << newAlbum);
 }
 
@@ -619,6 +598,7 @@ void SearchTabHeader::storedKeywordChanged()
     if (d->currentAlbum)
     {
         AlbumManager::instance()->updateSAlbum(d->currentAlbum, queryFromKeywords(keywords));
+
         Q_EMIT searchShallBeSelected(QList<Album*>() << d->currentAlbum);
     }
 }
@@ -627,7 +607,7 @@ void SearchTabHeader::editStoredAdvancedSearch()
 {
     if (d->currentAlbum)
     {
-        SearchWindow* window = searchWindow();
+        SearchWindow* const window = searchWindow();
         window->readSearch(d->currentAlbum->id(), d->currentAlbum->query());
         window->show();
         window->raise();
@@ -655,6 +635,7 @@ void SearchTabHeader::advancedSearchEdited(int id, const QString& query)
         if (album)
         {
             AlbumManager::instance()->updateSAlbum(album, query, album->title(), type);
+
             Q_EMIT searchShallBeSelected(QList<Album*>() << album);
         }
     }

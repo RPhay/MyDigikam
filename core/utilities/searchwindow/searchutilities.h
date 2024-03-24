@@ -252,9 +252,9 @@ protected Q_SLOTS:
 
 protected:
 
-    QTextEdit*   m_edit;
-    QPushButton* m_okButton;
-    QWidget*     m_widget;
+    QTextEdit*   m_edit         = nullptr;
+    QPushButton* m_okButton     = nullptr;
+    QWidget*     m_widget       = nullptr;
 };
 
 } // namespace Digikam

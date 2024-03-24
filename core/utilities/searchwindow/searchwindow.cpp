@@ -42,20 +42,13 @@ class Q_DECL_HIDDEN SearchWindow::Private
 {
 public:
 
-    explicit Private()
-      : scrollArea   (nullptr),
-        searchView   (nullptr),
-        bottomBar    (nullptr),
-        currentId    (-1),
-        hasTouchedXml(false)
-    {
-    }
+    Private() = default;
 
-    QScrollArea*         scrollArea;
-    SearchView*          searchView;
-    SearchViewBottomBar* bottomBar;
-    int                  currentId;
-    bool                 hasTouchedXml;
+    QScrollArea*         scrollArea     = nullptr;
+    SearchView*          searchView     = nullptr;
+    SearchViewBottomBar* bottomBar      = nullptr;
+    int                  currentId      = -1;
+    bool                 hasTouchedXml  = false;
     QString              oldXml;
 };
 
@@ -157,7 +150,9 @@ QString SearchWindow::search() const
 void SearchWindow::searchOk()
 {
     d->hasTouchedXml = true;
+
     Q_EMIT searchEdited(d->currentId, search());
+
     hide();
 }
 
@@ -168,6 +163,7 @@ void SearchWindow::searchCancel()
     if (d->hasTouchedXml)
     {
         Q_EMIT searchEdited(d->currentId, d->oldXml);
+
         d->hasTouchedXml = false;
     }
 
@@ -177,6 +173,7 @@ void SearchWindow::searchCancel()
 void SearchWindow::searchTryout()
 {
     d->hasTouchedXml = true;
+
     Q_EMIT searchEdited(d->currentId, search());
 }
 
@@ -191,17 +188,23 @@ void SearchWindow::keyPressEvent(QKeyEvent* e)
             case Qt::Key_Enter:
             case Qt::Key_Return:
             case Qt::Key_Select:
+            {
                 searchOk();
                 break;
+            }
 
             case Qt::Key_F4:
             case Qt::Key_Escape:
             case Qt::Key_Back:
+            {
                 searchCancel();
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
 }
