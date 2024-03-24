@@ -39,6 +39,9 @@
 #include "autotagsassign.h"
 #include "dlayoutbox.h"
 #include "dfileoperations.h"
+#include "donlinetranslator.h"
+#include "localizesettings.h"
+#include "localizeselector.h"
 
 namespace DigikamBqmAssignTagsPlugin
 {
@@ -49,8 +52,9 @@ public:
 
     Private() = default;
 
-    QComboBox* modelSelectionMode = nullptr;
-    bool           changeSettings = true;
+    QComboBox*            modelSelectionMode = nullptr;
+    LocalizeSelectorList* trSelectorList     = nullptr;
+    bool                  changeSettings     = true;
 };
 
 AssignTags::AssignTags(QObject* const parent)
@@ -104,12 +108,18 @@ void AssignTags::registerSettingsWidget()
         "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is primarily focused on image classification and does not provide object localization. "
         "It can recognize objects from a vast set of more than 1,000 classes, covering a wide range of objects, animals, and scenes.</p>"));
 
+    d->trSelectorList      = new LocalizeSelectorList(vbox);
+    d->trSelectorList->setTitle(i18nc("@label", "Translate Tags to:"));
+
     QWidget* const space2  = new QWidget(vbox);
     vbox->setStretchFactor(space2, 10);
 
     m_settingsWidget = vbox;
 
     connect(d->modelSelectionMode, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->trSelectorList, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
 
     BatchTool::registerSettingsWidget();
@@ -128,8 +138,17 @@ void AssignTags::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
 
-    int model = settings()[QLatin1String("AutoTagModel")].toInt();
+    int model         = settings()[QLatin1String("AutoTagModel")].toInt();
     d->modelSelectionMode->setCurrentIndex(model);
+
+    QStringList langs = settings()[QLatin1String("TrAutoTagsLangs")].toStringList();
+
+    d->trSelectorList->clearLanguages();
+
+    Q_FOREACH (const QString& lg, langs)
+    {
+        d->trSelectorList->addLanguage(lg);
+    }
 
     d->changeSettings = true;
 }
@@ -140,7 +159,10 @@ void AssignTags::slotSettingsChanged()
     {
         BatchToolSettings settings;
 
-        settings.insert(QLatin1String("AutoTagModel"), d->modelSelectionMode->currentIndex());
+        settings.insert(QLatin1String("AutoTagModel"),    d->modelSelectionMode->currentIndex());
+
+        QStringList langs = d->trSelectorList->languagesList();
+        settings.insert(QLatin1String("TrAutoTagsLangs"), langs);
 
         BatchTool::slotSettingsChanged(settings);
     }
@@ -167,8 +189,17 @@ bool AssignTags::toolOperations()
         meta->setData(image().getMetadata());
     }
 
+    QStringList langs;
     DImg img  = image();
     int model = settings()[QLatin1String("AutoTagModel")].toInt();
+
+    Q_FOREACH (const QString& trLang, settings()[QLatin1String("TrAutoTagsLangs")].toStringList())
+    {
+        if (!trLang.isEmpty())
+        {
+            langs << trLang;
+        }
+    }
 
     if (ret && img.isNull())
     {
@@ -186,11 +217,36 @@ bool AssignTags::toolOperations()
             qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Path to process with Auto-Tags:" << path;
 
             QStringList tagsPath;
-            QString rootTags = QLatin1String("auto/");
+            const QString rootTags = QLatin1String("auto/");
 
             for (const auto& tag : tagsLists.at(0))
             {
-                tagsPath << rootTags + tag;
+                if (!langs.isEmpty())
+                {
+                    Q_FOREACH (const QString& trLang, langs)
+                    {
+                        QString trOut;
+                        QString error;
+                        bool trRet = s_inlineTranslateString(tag, trLang, trOut, error);
+
+                        if (trRet)
+                        {
+                            tagsPath << (rootTags + trLang +
+                                         QLatin1Char('/')  +  trOut);
+                        }
+                        else
+                        {
+                            qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Auto-Tags online translation error:"
+                                                             << error;
+                            tagsPath << (rootTags + trLang +
+                                         QLatin1Char('/')  +  tag);
+                        }
+                    }
+                }
+                else
+                {
+                    tagsPath << (rootTags + tag);
+                }
             }
 
             if (!tagsPath.isEmpty())
