@@ -70,9 +70,9 @@ protected Q_SLOTS:
 protected:
 
     QList<SearchField*>    m_fields;
-    QGridLayout*           m_layout;
-    SearchFieldGroupLabel* m_label;
-    VisibilityController*  m_controller;
+    QGridLayout*           m_layout     = nullptr;
+    SearchFieldGroupLabel* m_label      = nullptr;
+    VisibilityController*  m_controller = nullptr;
     QSet<SearchField*>     m_markedFields;
 
 private:
@@ -105,8 +105,8 @@ Q_SIGNALS:
 protected:
 
     QString      m_title;
-    DClickLabel* m_titleLabel;
-    QLabel*      m_expandLabel;
+    DClickLabel* m_titleLabel   = nullptr;
+    QLabel*      m_expandLabel  = nullptr;
 };
 
 } // namespace Digikam

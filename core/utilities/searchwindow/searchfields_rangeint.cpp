@@ -19,12 +19,7 @@ namespace Digikam
 {
 
 SearchFieldRangeInt::SearchFieldRangeInt(QObject* const parent)
-    : SearchField   (parent),
-      m_min         (0),
-      m_max         (100),
-      m_reciprocal  (false),
-      m_firstBox    (nullptr),
-      m_secondBox   (nullptr)
+    : SearchField(parent)
 {
     m_betweenLabel = new QLabel;
     m_firstBox     = new CustomStepsIntSpinBox;
@@ -66,18 +61,24 @@ void SearchFieldRangeInt::read(SearchXmlCachingReader& reader)
         {
             case SearchXml::LessThanOrEqual:
             case SearchXml::LessThan:
+            {
                 m_firstBox->setFractionMagicValue(reader.valueToDouble());
                 break;
+            }
 
             case SearchXml::GreaterThanOrEqual:
             case SearchXml::GreaterThan:
+            {
                 m_secondBox->setFractionMagicValue(reader.valueToDouble());
                 break;
+            }
 
             case SearchXml::Equal:
+            {
                 m_firstBox->setFractionMagicValue(reader.valueToDouble());
                 m_secondBox->setFractionMagicValue(reader.valueToDouble());
                 break;
+            }
 
             case SearchXml::Interval:
             case SearchXml::IntervalOpen:
@@ -95,7 +96,9 @@ void SearchFieldRangeInt::read(SearchXmlCachingReader& reader)
             }
 
             default:
+            {
                 break;
+            }
         }
     }
     else
@@ -103,25 +106,35 @@ void SearchFieldRangeInt::read(SearchXmlCachingReader& reader)
         switch (relation)
         {
             case SearchXml::GreaterThanOrEqual:
+            {
                 m_firstBox->setValue(reader.valueToInt());
                 break;
+            }
 
             case SearchXml::GreaterThan:
+            {
                 m_firstBox->setValue(reader.valueToInt() - 1);
                 break;
+            }
 
             case SearchXml::LessThanOrEqual:
+            {
                 m_secondBox->setValue(reader.valueToInt());
                 break;
+            }
 
             case SearchXml::LessThan:
+            {
                 m_secondBox->setValue(reader.valueToInt() + 1);
                 break;
+            }
 
             case SearchXml::Equal:
+            {
                 m_firstBox->setValue(reader.valueToInt());
                 m_secondBox->setValue(reader.valueToInt());
                 break;
+            }
 
             case SearchXml::Interval:
             case SearchXml::IntervalOpen:
@@ -139,7 +152,9 @@ void SearchFieldRangeInt::read(SearchXmlCachingReader& reader)
             }
 
             default:
+            {
                 break;
+            }
         }
     }
 }

@@ -110,13 +110,13 @@ protected:
 
     QString              m_name;
 
-    QLabel*              m_label;
-    QLabel*              m_detailLabel;
+    QLabel*              m_label                    = nullptr;
+    QLabel*              m_detailLabel              = nullptr;
 
-    AnimatedClearButton* m_clearButton;
+    AnimatedClearButton* m_clearButton              = nullptr;
 
-    bool                 m_categoryLabelVisible;
-    bool                 m_valueIsValid;
+    bool                 m_categoryLabelVisible     = true;
+    bool                 m_valueIsValid             = false;
 
 private:
 
@@ -135,12 +135,12 @@ public:
 
     explicit SearchFieldText(QObject* const parent);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void setValueWidgetsVisible(bool visible) override;
-    void reset() override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    void reset()                                                        override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -148,7 +148,7 @@ protected Q_SLOTS:
 
 protected:
 
-    QLineEdit* m_edit;
+    QLineEdit* m_edit = nullptr;
 };
 
 //-----------------------------------------------------------------------------
@@ -186,12 +186,12 @@ public:
     void setSingleSteps(int smaller, int larger);
     void setInvertStepping(bool invert);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -199,12 +199,12 @@ protected Q_SLOTS:
 
 protected:
 
-    int                    m_min;
-    int                    m_max;
-    bool                   m_reciprocal;
-    CustomStepsIntSpinBox* m_firstBox;
-    CustomStepsIntSpinBox* m_secondBox;
-    QLabel*                m_betweenLabel;
+    int                    m_min            = 0;
+    int                    m_max            = 100;
+    bool                   m_reciprocal     = false;
+    CustomStepsIntSpinBox* m_firstBox       = nullptr;
+    CustomStepsIntSpinBox* m_secondBox      = nullptr;
+    QLabel*                m_betweenLabel   = nullptr;
 
 private:
 
@@ -234,12 +234,12 @@ public:
     void setSingleSteps(double smaller, double larger);
     void setInvertStepping(bool invert);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -247,12 +247,12 @@ protected Q_SLOTS:
 
 protected:
 
-    double                    m_min;
-    double                    m_max;
-    double                    m_factor;
-    CustomStepsDoubleSpinBox* m_firstBox;
-    CustomStepsDoubleSpinBox* m_secondBox;
-    QLabel*                   m_betweenLabel;
+    double                    m_min          = 0.0;
+    double                    m_max          = 100.0;
+    double                    m_factor       = 1.0;
+    CustomStepsDoubleSpinBox* m_firstBox     = nullptr;
+    CustomStepsDoubleSpinBox* m_secondBox    = nullptr;
+    QLabel*                   m_betweenLabel = nullptr;
 
 private:
 
@@ -282,12 +282,12 @@ public:
     void setBetweenText(const QString& between);
     void setBoundary(const QDateTime& min, const QDateTime& max);
 
-    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
-    void read(SearchXmlCachingReader& reader) override;
-    void write(SearchXmlWriter& writer) override;
-    void reset() override;
-    void setValueWidgetsVisible(bool visible) override;
-    QList<QRect> valueWidgetRects() const override;
+    void setupValueWidgets(QGridLayout* layout, int row, int column)    override;
+    void read(SearchXmlCachingReader& reader)                           override;
+    void write(SearchXmlWriter& writer)                                 override;
+    void reset()                                                        override;
+    void setValueWidgetsVisible(bool visible)                           override;
+    QList<QRect> valueWidgetRects()                               const override;
 
 protected Q_SLOTS:
 
@@ -295,13 +295,13 @@ protected Q_SLOTS:
 
 protected:
 
-    QTimeEdit* m_firstTimeEdit;
-    DDateEdit* m_firstDateEdit;
-    QTimeEdit* m_secondTimeEdit;
-    DDateEdit* m_secondDateEdit;
-    QLabel*    m_betweenLabel;
+    QTimeEdit* m_firstTimeEdit  = nullptr;
+    DDateEdit* m_firstDateEdit  = nullptr;
+    QTimeEdit* m_secondTimeEdit = nullptr;
+    DDateEdit* m_secondDateEdit = nullptr;
+    QLabel*    m_betweenLabel   = nullptr;
 
-    Type       m_type;
+    Type       m_type           = DateOnly;
 
 private:
 

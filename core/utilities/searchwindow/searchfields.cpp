@@ -24,8 +24,6 @@ SearchField::SearchField(QObject* const parent)
     m_label                = new QLabel;
     m_detailLabel          = new QLabel;
     m_clearButton          = new AnimatedClearButton;
-    m_categoryLabelVisible = true;
-    m_valueIsValid         = false;
 }
 
 void SearchField::setup(QGridLayout* const layout, int line)

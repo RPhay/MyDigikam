@@ -32,8 +32,7 @@ namespace Digikam
 {
 
 SearchFieldGroup::SearchFieldGroup(SearchGroup* const parent)
-    : QWidget(parent),
-      m_label(nullptr)
+    : QWidget(parent)
 {
     m_layout     = new QGridLayout;
     setLayout(m_layout);
