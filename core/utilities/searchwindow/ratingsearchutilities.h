@@ -80,12 +80,12 @@ protected Q_SLOTS:
 
 protected:
 
-    RatingComboBoxModel*  m_model;
-    RatingComboBoxWidget* m_ratingWidget;
+    RatingComboBoxModel*  m_model        = nullptr;
+    RatingComboBoxWidget* m_ratingWidget = nullptr;
 
 private:
 
-    bool                  m_syncing;
+    bool                  m_syncing      = false;
 };
 
 // -- Internal classes ----------------------------------------------------------------
@@ -94,14 +94,14 @@ class RatingStarDrawer
 {
 public:
 
-    RatingStarDrawer();
+    RatingStarDrawer() = default;
 
     QRect drawStarPolygons(QPainter* p, int numberOfStars) const;
 
 protected:
 
-    QPolygon m_starPolygon;
-    QSize    m_starPolygonSize;
+    QPolygon m_starPolygon     = RatingWidget::starPolygon();
+    QSize    m_starPolygonSize = QSize(15, 15);
 };
 
 // -------------------------------------------------------------------------
@@ -136,7 +136,7 @@ protected:
 
 protected:
 
-    RatingComboBox::RatingValue m_value;
+    RatingComboBox::RatingValue m_value = RatingComboBox::Null;
 };
 
 // -------------------------------------------------------------------------

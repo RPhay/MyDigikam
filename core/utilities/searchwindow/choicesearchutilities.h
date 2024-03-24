@@ -122,7 +122,7 @@ protected:
     {
     public:
 
-        Entry();
+        Entry() = default;
         Entry(const QVariant& key, const QString& userDisplay);
 
         bool operator==(const Entry& other) const;
@@ -134,7 +134,7 @@ protected:
 
         QVariant m_key;
         QString  m_display;
-        bool     m_checkState;
+        bool     m_checkState = false;
     };
 
 protected:
@@ -230,7 +230,7 @@ protected:
 
 protected:
 
-    DSqueezedClickLabel* m_label;
+    DSqueezedClickLabel* m_label = nullptr;
 };
 
 } // namespace Digikam

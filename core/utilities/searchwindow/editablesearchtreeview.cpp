@@ -37,17 +37,12 @@ class Q_DECL_HIDDEN EditableSearchTreeView::Private
 {
 public:
 
-    explicit Private()
-      : searchModificationHelper(nullptr),
-        renameSearchAction      (nullptr),
-        deleteSearchAction      (nullptr)
-    {
-    }
+    Private() = default;
 
-    SearchModificationHelper* searchModificationHelper;
+    SearchModificationHelper* searchModificationHelper  = nullptr;
 
-    QAction*                  renameSearchAction;
-    QAction*                  deleteSearchAction;
+    QAction*                  renameSearchAction        = nullptr;
+    QAction*                  deleteSearchAction        = nullptr;
 };
 
 EditableSearchTreeView::EditableSearchTreeView(QWidget* const parent,

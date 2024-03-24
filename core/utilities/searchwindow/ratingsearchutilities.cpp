@@ -39,12 +39,6 @@
 namespace Digikam
 {
 
-RatingStarDrawer::RatingStarDrawer()
-    : m_starPolygon    (RatingWidget::starPolygon()),
-      m_starPolygonSize(QSize(15, 15))
-{
-}
-
 QRect RatingStarDrawer::drawStarPolygons(QPainter* painter, int numberOfStars) const
 {
     QRect    drawnRect(0, 0, 0, 0);
@@ -255,8 +249,6 @@ QModelIndex RatingComboBoxModel::indexForRatingValue(RatingComboBox::RatingValue
 RatingComboBoxWidget::RatingComboBoxWidget(QWidget* const parent)
     : RatingWidget(parent)
 {
-    m_value = RatingComboBox::Null;
-
     // generate paint event on mouse enter/leave
 
     setAttribute(Qt::WA_Hover);
@@ -300,6 +292,7 @@ void RatingComboBoxWidget::setRatingValue(RatingComboBox::RatingValue value)
     blockSignals(false);
 
     update();
+
     Q_EMIT ratingValueChanged(m_value);
 }
 
@@ -310,6 +303,7 @@ void RatingComboBoxWidget::slotRatingChanged(int rating)
     if (m_value != newValue)
     {
         m_value = newValue;
+
         Q_EMIT ratingValueChanged(m_value);
     }
 }
@@ -385,8 +379,6 @@ void RatingComboBoxWidget::paintEvent(QPaintEvent* e)
 RatingComboBox::RatingComboBox(QWidget* const parent)
     : ModelIndexBasedComboBox(parent)
 {
-    m_syncing = false;
-
     // create a custom model that contains the rating values
 
     m_model   = new RatingComboBoxModel(this);
@@ -399,8 +391,8 @@ RatingComboBox::RatingComboBox(QWidget* const parent)
 
     // set a line edit that carries a RatingWidget
 
-    ProxyLineEdit* lineEdit = new ProxyLineEdit;
-    m_ratingWidget          = new RatingComboBoxWidget;
+    ProxyLineEdit* const lineEdit = new ProxyLineEdit;
+    m_ratingWidget                = new RatingComboBoxWidget;
     lineEdit->setWidget(m_ratingWidget);
     setLineEdit(lineEdit);
 

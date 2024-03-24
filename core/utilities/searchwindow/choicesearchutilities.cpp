@@ -26,15 +26,9 @@
 namespace Digikam
 {
 
-ChoiceSearchModel::Entry::Entry()
-    : m_checkState(false)
-{
-}
-
 ChoiceSearchModel::Entry::Entry(const QVariant& key, const QString& userDisplay)
-    : m_key       (key),
-      m_display   (userDisplay),
-      m_checkState(false)
+    : m_key    (key),
+      m_display(userDisplay)
 {
 }
 
@@ -219,8 +213,7 @@ bool ChoiceSearchModel::setData(const QModelIndex& index, const QVariant& value,
 // --------------------------------------------------------------------------------------
 
 ChoiceSearchComboBox::ChoiceSearchComboBox(QWidget* const parent)
-    : ListViewComboBox(parent),
-      m_label         (nullptr)
+    : ListViewComboBox(parent)
 {
 }
 
