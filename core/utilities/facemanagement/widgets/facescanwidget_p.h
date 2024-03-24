@@ -64,54 +64,35 @@ class Q_DECL_HIDDEN FaceScanWidget::Private
 {
 public:
 
-    explicit Private()
-        : workflowWidget                    (nullptr),
-          detectAndRecognizeButton          (nullptr),
-          detectButton                      (nullptr),
-          alreadyScannedBox                 (nullptr),
-          reRecognizeButton                 (nullptr),
-          helpButton                        (nullptr),
-          tabWidget                         (nullptr),
-          albumSelectors                    (nullptr),
-          accuracyInput                     (nullptr),
-          useYoloV3Button                   (nullptr),
-          useFullCpuButton                  (nullptr),
-          configName                        (QLatin1String("Face Management Settings")),
-          configMainTask                    (QLatin1String("Face Scan Main Task")),
-          configValueDetect                 (QLatin1String("Detect")),
-          configValueDetectAndRecognize     (QLatin1String("Detect and Recognize Faces")),
-          configValueRecognizedMarkedFaces  (QLatin1String("Recognize Marked Faces")),
-          configAlreadyScannedHandling      (QLatin1String("Already Scanned Handling")),
-          configUseFullCpu                  (QLatin1String("Use Full CPU")),
-          settingsConflicted                (false)
-    {
-    }
+    Private() = default;
 
-    QWidget*          workflowWidget;
-    QRadioButton*     detectAndRecognizeButton;
-    QRadioButton*     detectButton;
-    SqueezedComboBox* alreadyScannedBox;
-    QRadioButton*     reRecognizeButton;
-    QPushButton*      helpButton;
+public:
 
-    QTabWidget*       tabWidget;
+    QWidget*          workflowWidget                    = nullptr;
+    QRadioButton*     detectAndRecognizeButton          = nullptr;
+    QRadioButton*     detectButton                      = nullptr;
+    SqueezedComboBox* alreadyScannedBox                 = nullptr;
+    QRadioButton*     reRecognizeButton                 = nullptr;
+    QPushButton*      helpButton                        = nullptr;
 
-    AlbumSelectors*   albumSelectors;
+    QTabWidget*       tabWidget                         = nullptr;
 
-    DIntNumInput*     accuracyInput;
+    AlbumSelectors*   albumSelectors                    = nullptr;
 
-    QCheckBox*        useYoloV3Button;
-    QCheckBox*        useFullCpuButton;
+    DIntNumInput*     accuracyInput                     = nullptr;
 
-    const QString     configName;
-    const QString     configMainTask;
-    const QString     configValueDetect;
-    const QString     configValueDetectAndRecognize;
-    const QString     configValueRecognizedMarkedFaces;
-    const QString     configAlreadyScannedHandling;
-    const QString     configUseFullCpu;
+    QCheckBox*        useYoloV3Button                   = nullptr;
+    QCheckBox*        useFullCpuButton                  = nullptr;
 
-    bool              settingsConflicted;
+    const QString     configName                        = QLatin1String("Face Management Settings");
+    const QString     configMainTask                    = QLatin1String("Face Scan Main Task");
+    const QString     configValueDetect                 = QLatin1String("Detect");
+    const QString     configValueDetectAndRecognize     = QLatin1String("Detect and Recognize Faces");
+    const QString     configValueRecognizedMarkedFaces  = QLatin1String("Recognize Marked Faces");
+    const QString     configAlreadyScannedHandling      = QLatin1String("Already Scanned Handling");
+    const QString     configUseFullCpu                  = QLatin1String("Use Full CPU");
+
+    bool              settingsConflicted                = false;
 };
 
 } // namespace Digikam

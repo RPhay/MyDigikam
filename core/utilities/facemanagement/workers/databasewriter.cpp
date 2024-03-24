@@ -22,8 +22,8 @@
 namespace Digikam
 {
 
-DatabaseWriter::DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const dd)
-    : mode               (mode),
+DatabaseWriter::DatabaseWriter(FacePipeline::WriteMode wmode, FacePipeline::Private* const dd)
+    : mode               (wmode),
       thumbnailLoadThread(dd->createThumbnailLoadThread()),
       d                  (dd)
 {

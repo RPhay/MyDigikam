@@ -47,7 +47,7 @@ Q_SIGNALS:
 protected:
 
     FaceDetector                 detector;
-    FacePipeline::Private* const d;
+    FacePipeline::Private* const d          = nullptr;
 
 private:
 

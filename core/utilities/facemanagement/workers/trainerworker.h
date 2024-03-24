@@ -49,7 +49,7 @@ protected:
 
     FacialRecognitionWrapper     recognizer;
     FaceItemRetriever            imageRetriever;
-    FacePipeline::Private* const d;
+    FacePipeline::Private* const d              = nullptr;
 };
 
 } // namespace Digikam

@@ -26,9 +26,7 @@ class Q_DECL_HIDDEN MapListTrainingDataProvider : public TrainingDataProvider
 {
 public:
 
-    MapListTrainingDataProvider()
-    {
-    }
+    MapListTrainingDataProvider() = default;
 
     ~MapListTrainingDataProvider() override
     {

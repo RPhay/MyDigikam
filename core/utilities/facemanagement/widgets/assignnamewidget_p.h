@@ -54,7 +54,7 @@ class Q_DECL_HIDDEN AssignNameWidget::Private
 {
 public:
 
-    explicit Private(AssignNameWidget* const q);
+    explicit Private(AssignNameWidget* const qq);
 
     bool         isValid()                                        const;
 
@@ -98,27 +98,27 @@ public:
     QVariant                   faceIdentifier;
     AlbumPointer<TAlbum>       currentTag;
 
-    Mode                       mode;
-    LayoutMode                 layoutMode;
-    VisualStyle                visualStyle;
-    TagEntryWidgetMode         widgetMode;
+    Mode                       mode             = InvalidMode;
+    LayoutMode                 layoutMode       = InvalidLayout;
+    VisualStyle                visualStyle      = InvalidVisualStyle;
+    TagEntryWidgetMode         widgetMode       = InvalidTagEntryWidgetMode;
 
-    AddTagsComboBox*           comboBox;
-    AddTagsLineEdit*           lineEdit;
-    QToolButton*               confirmButton;
-    QToolButton*               rejectButton;
-    QToolButton*               ignoreButton;
-    DClickLabel*               clickLabel;
+    AddTagsComboBox*           comboBox         = nullptr;
+    AddTagsLineEdit*           lineEdit         = nullptr;
+    QToolButton*               confirmButton    = nullptr;
+    QToolButton*               rejectButton     = nullptr;
+    QToolButton*               ignoreButton     = nullptr;
+    DClickLabel*               clickLabel       = nullptr;
 
-    bool                       modelsGiven;
-    TagModel*                  tagModel;
-    CheckableAlbumFilterModel* tagFilterModel;
-    TagPropertiesFilterModel*  tagFilteredModel;
+    bool                       modelsGiven      = false;
+    TagModel*                  tagModel         = nullptr;
+    CheckableAlbumFilterModel* tagFilterModel   = nullptr;
+    TagPropertiesFilterModel*  tagFilteredModel = nullptr;
     AlbumPointer<TAlbum>       parentTag;
 
-    QGridLayout*               layout;
+    QGridLayout*               layout           = nullptr;
 
-    AssignNameWidget* const    q;
+    AssignNameWidget* const    q                = nullptr;
 };
 
 } // namespace Digikam

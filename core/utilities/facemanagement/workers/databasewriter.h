@@ -30,7 +30,7 @@ class Q_DECL_HIDDEN DatabaseWriter : public WorkerObject
 
 public:
 
-    DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const dd);
+    DatabaseWriter(FacePipeline::WriteMode wmode, FacePipeline::Private* const dd);
     ~DatabaseWriter() override;
 
 public Q_SLOTS:
@@ -43,9 +43,9 @@ Q_SIGNALS:
 
 protected:
 
-    FacePipeline::WriteMode      mode;
-    ThumbnailLoadThread*         thumbnailLoadThread;
-    FacePipeline::Private* const d;
+    FacePipeline::WriteMode      mode                = FacePipeline::NormalWrite;
+    ThumbnailLoadThread*         thumbnailLoadThread = nullptr;
+    FacePipeline::Private* const d                   = nullptr;
 
 private:
 

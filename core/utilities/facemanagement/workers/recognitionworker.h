@@ -52,7 +52,7 @@ protected:
 
     FaceItemRetriever            imageRetriever;
     FacialRecognitionWrapper     recognizer;
-    FacePipeline::Private* const d;
+    FacePipeline::Private* const d              = nullptr;
 
 private:
 
