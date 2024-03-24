@@ -17,12 +17,9 @@
 
 // Qt includes
 
-#include <QApplication>
+#include <QComboBox>
 #include <QWidget>
 #include <QLabel>
-#include <QStyle>
-#include <QLayout>
-#include <QComboBox>
 
 // KDE includes
 
@@ -32,14 +29,14 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "previewloadthread.h"
 #include "dimg.h"
 #include "dmetadata.h"
 #include "dpluginbqm.h"
-#include "autotagsassign.h"
 #include "dlayoutbox.h"
+#include "autotagsassign.h"
 #include "dfileoperations.h"
 #include "localizeselector.h"
+#include "previewloadthread.h"
 
 namespace DigikamBqmAssignTagsPlugin
 {
