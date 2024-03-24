@@ -45,7 +45,8 @@ MaintenanceDlg::Private::Private()
      faceScannedHandling     (nullptr),
      searchResultRestriction (nullptr),
      expanderBox             (nullptr),
-     albumSelectors          (nullptr)
+     albumSelectors          (nullptr),
+     trSelectorList          (nullptr)
 {
 }
 
@@ -66,6 +67,7 @@ const QString MaintenanceDlg::Private::configFaceScannedHandling(QLatin1String("
 const QString MaintenanceDlg::Private::configAutotagsAssignment(QLatin1String("AutotagsAssignment"));
 const QString MaintenanceDlg::Private::configAutotaggingScanMode(QLatin1String("AutotaggingScanMode"));
 const QString MaintenanceDlg::Private::configModelSelectionMode(QLatin1String("ModelSelectionMode"));
+const QString MaintenanceDlg::Private::configAutotagsLanguages(QLatin1String("AutotagsLanguages"));
 const QString MaintenanceDlg::Private::configImageQualitySorter(QLatin1String("ImageQualitySorter"));
 const QString MaintenanceDlg::Private::configQualityScanMode(QLatin1String("QualityScanMode"));
 const QString MaintenanceDlg::Private::configQualitySettingsSelected(QLatin1String("QualitySettingsSelected"));

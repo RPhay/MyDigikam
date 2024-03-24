@@ -161,7 +161,7 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
     appendJobs(collection);
 }
 
-void MaintenanceThread::generateTags(const QStringList& paths, int modelType)
+void MaintenanceThread::generateTags(const QStringList& paths, int modelType, const QStringList& langs)
 {
     ActionJobCollection collection;
 
@@ -173,6 +173,7 @@ void MaintenanceThread::generateTags(const QStringList& paths, int modelType)
 
         t->setMaintenanceData(data);
         t->setModelType(modelType);
+        t->setLanguages(langs);
 
         connect(t, SIGNAL(signalFinished(QImage)),
                 this, SIGNAL(signalAdvance(QImage)));

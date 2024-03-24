@@ -83,6 +83,8 @@ public:
     int                                     autotaggingScanMode;
     /// model selection mode
     int                                     modelSelectionMode;
+    /// Autotags languages
+    QStringList                             autotagsLanguages;
 
     /// Perform Image Quality Sorting.
     bool                                    qualitySort;

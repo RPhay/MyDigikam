@@ -17,12 +17,9 @@
 
 // Qt includes
 
-#include <QApplication>
+#include <QComboBox>
 #include <QWidget>
 #include <QLabel>
-#include <QStyle>
-#include <QLayout>
-#include <QComboBox>
 
 // KDE includes
 
@@ -32,16 +29,14 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "previewloadthread.h"
 #include "dimg.h"
 #include "dmetadata.h"
 #include "dpluginbqm.h"
-#include "autotagsassign.h"
 #include "dlayoutbox.h"
+#include "autotagsassign.h"
 #include "dfileoperations.h"
-#include "donlinetranslator.h"
-#include "localizesettings.h"
 #include "localizeselector.h"
+#include "previewloadthread.h"
 
 namespace DigikamBqmAssignTagsPlugin
 {
@@ -209,7 +204,7 @@ bool AssignTags::toolOperations()
             qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Path to process with Auto-Tags:" << path;
 
             QStringList tagsPath;
-            const QString rootTags = QLatin1String("auto/");
+            const QString rootTag = QLatin1String("auto/");
 
             for (const auto& tag : tagsLists.at(0))
             {
@@ -223,21 +218,21 @@ bool AssignTags::toolOperations()
 
                         if (trRet)
                         {
-                            tagsPath << (rootTags + trLang +
-                                         QLatin1Char('/')  +  trOut);
+                            tagsPath << (rootTag + trLang +
+                                         QLatin1Char('/') +  trOut);
                         }
                         else
                         {
                             qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Auto-Tags online translation error:"
                                                              << error;
-                            tagsPath << (rootTags + trLang +
-                                         QLatin1Char('/')  +  tag);
+                            tagsPath << (rootTag + trLang +
+                                         QLatin1Char('/') +  tag);
                         }
                     }
                 }
                 else
                 {
-                    tagsPath << (rootTags + tag);
+                    tagsPath << (rootTag + tag);
                 }
             }
 

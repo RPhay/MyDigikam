@@ -18,6 +18,7 @@
 
 #include "digikam_debug.h"
 #include "previewloadthread.h"
+#include "localizeselector.h"
 #include "maintenancedata.h"
 #include "autotagsassign.h"
 #include "scancontroller.h"
@@ -38,6 +39,7 @@ public:
     const int loadCount        = 3;
     const int batchSize        = 16;
     MaintenanceData* data      = nullptr;
+    QStringList      langs;
     int              modelType = DetectorModel::YOLOV5NANO;
 };
 
@@ -61,6 +63,11 @@ void AutotagsAssignmentTask::setMaintenanceData(MaintenanceData* const data)
     d->data = data;
 }
 
+void AutotagsAssignmentTask::setLanguages(const QStringList& langs)
+{
+    d->langs = langs;
+}
+
 void AutotagsAssignmentTask::setModelType(int modelType)
 {
     d->modelType = modelType;
@@ -68,28 +75,71 @@ void AutotagsAssignmentTask::setModelType(int modelType)
 
 void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QString>& tagsList)
 {
-    if (tagsList.isEmpty())
-    {
-        return;
-    }
-
-    ItemInfo info              = ItemInfo::fromLocalFile(pathImage);
+    bool tagsChanged           = false;
+    const QString rootTag      = QLatin1String("auto/");
     TagsCache* const tagsCache = Digikam::TagsCache::instance();
-    QString rootTags           = QLatin1String("auto/");
+    const int rootTagId        = tagsCache->getOrCreateTag(rootTag);
+    ItemInfo info              = ItemInfo::fromLocalFile(pathImage);
+
+    // Clear auto-tags
+
+    Q_FOREACH (int tid, info.tagIds())
+    {
+        if (tagsCache->parentTags(tid).contains(rootTagId))
+        {
+            info.removeTag(tid);
+            tagsChanged = true;
+        }
+    }
 
     for (const auto& tag : tagsList)
     {
-        int tagId = tagsCache->getOrCreateTag(rootTags + tag);
-        info.setTag(tagId);
+        int tagId = -1;
+
+        if (!d->langs.isEmpty())
+        {
+            Q_FOREACH (const QString& trLang, d->langs)
+            {
+                QString trOut;
+                QString error;
+                bool trRet = s_inlineTranslateString(tag, trLang, trOut, error);
+
+                if (trRet)
+                {
+                    tagId = tagsCache->getOrCreateTag(rootTag + trLang +
+                                                      QLatin1Char('/') + trOut);
+                }
+                else
+                {
+                    qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Auto-Tags online translation error:"
+                                                        << error;
+                    tagId = tagsCache->getOrCreateTag(rootTag + trLang +
+                                                      QLatin1Char('/') +  tag);
+                }
+            }
+        }
+        else
+        {
+            tagId = tagsCache->getOrCreateTag(rootTag + tag);
+        }
+
+        if (tagId != -1)
+        {
+            info.setTag(tagId);
+            tagsChanged = true;
+        }
     }
 
     // Write tags to the metadata too
 
-    MetadataHub hub;
-    hub.load(info);
+    if (tagsChanged)
+    {
+        MetadataHub hub;
+        hub.load(info);
 
-    ScanController::FileMetadataWrite writeScope(info);
-    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+        ScanController::FileMetadataWrite writeScope(info);
+        writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+    }
 }
 
 void AutotagsAssignmentTask::run()

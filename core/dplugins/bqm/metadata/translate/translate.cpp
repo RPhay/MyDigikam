@@ -18,12 +18,9 @@
 
 #include <QGridLayout>
 #include <QCheckBox>
-#include <QComboBox>
 #include <QWidget>
-#include <QListWidget>
 #include <QLabel>
 #include <QFile>
-#include <QMenu>
 
 // KDE includes
 
@@ -34,7 +31,6 @@
 #include "digikam_debug.h"
 #include "dimg.h"
 #include "dfileoperations.h"
-#include "donlinetranslator.h"
 #include "localizesettings.h"
 #include "localizeselector.h"
 #include "altlangstredit.h"
@@ -325,9 +321,9 @@ bool Translate::insertTranslation(int entry, const QString& trLang, DMetadata* c
 
         if (!sc.isEmpty())
         {
-            QString tr;
+            QString trOut;
             QString error;
-            ret = s_inlineTranslateString(sc, trLang, tr, error);
+            ret = s_inlineTranslateString(sc, trLang, trOut, error);
 
             if (ret)
             {
@@ -336,7 +332,7 @@ bool Translate::insertTranslation(int entry, const QString& trLang, DMetadata* c
                     case Private::Title:
                     {
                         CaptionValues val = captions[QLatin1String("x-default")];
-                        val.caption       = tr;
+                        val.caption       = trOut;
                         captions[trLang]  = val;
                         meta->setItemTitles(captions);
                         break;
@@ -345,7 +341,7 @@ bool Translate::insertTranslation(int entry, const QString& trLang, DMetadata* c
                     case Private::Caption:
                     {
                         CaptionValues val = captions[QLatin1String("x-default")];
-                        val.caption       = tr;
+                        val.caption       = trOut;
                         captions[trLang]  = val;
                         meta->setItemComments(captions);
                         break;
@@ -353,14 +349,14 @@ bool Translate::insertTranslation(int entry, const QString& trLang, DMetadata* c
 
                     case Private::Copyrights:
                     {
-                        map[trLang] = tr;
+                        map[trLang] = trOut;
                         meta->setXmpTagStringListLangAlt("Xmp.dc.rights", map);
                         break;
                     }
 
                     case Private::UsageTerms:
                     {
-                        map[trLang] = tr;
+                        map[trLang] = trOut;
                         meta->setXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", map);
                         break;
                     }

@@ -39,6 +39,7 @@ public:
 
     void assignTags(const QString& pathImage, const QList<QString>& tagsList);
     void setMaintenanceData(MaintenanceData* const data = nullptr);
+    void setLanguages(const QStringList& langs);
     void setModelType(int modelType);
 
 Q_SIGNALS:

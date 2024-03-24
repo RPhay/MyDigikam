@@ -332,7 +332,8 @@ void MaintenanceMngr::stage7()
         list << d->settings.albums;
         list << d->settings.tags;
 
-        d->autotagsAssignment = new AutotagsAssignment((AutotagsAssignment::AutotagsAssignmentScanMode)d->settings.autotaggingScanMode, list, d->settings.modelSelectionMode);
+        d->autotagsAssignment = new AutotagsAssignment((AutotagsAssignment::AutotagsAssignmentScanMode)d->settings.autotaggingScanMode,
+                                                       list, d->settings.modelSelectionMode, d->settings.autotagsLanguages);
         d->autotagsAssignment->setNotificationEnabled(false);
         d->autotagsAssignment->setUseMultiCoreCPU(d->settings.useMutiCoreCPU);
         d->autotagsAssignment->start();
