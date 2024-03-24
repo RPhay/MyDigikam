@@ -19,19 +19,8 @@
 namespace Digikam
 {
 
-FaceGroup::Private::Private(FaceGroup* const q)
-    : view                  (nullptr),
-      exifRotate            (true),
-      autoSuggest           (false),
-      showOnHover           (false),
-      manuallyAddWrapItem   (nullptr),
-      manuallyAddedItem     (nullptr),
-      state                 (NoFaces),
-      visibilityController  (nullptr),
-      tagModel              (nullptr),
-      filterModel           (nullptr),
-      filteredModel         (nullptr),
-      q                     (q)
+FaceGroup::Private::Private(FaceGroup* const qq)
+    : q(qq)
 {
 }
 

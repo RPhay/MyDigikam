@@ -51,8 +51,8 @@ public:
 protected:
 
     FaceTagsIface       m_face;
-    AssignNameWidget*   m_widget;
-    HidingStateChanger* m_changer;
+    AssignNameWidget*   m_widget    = nullptr;
+    HidingStateChanger* m_changer   = nullptr;
 
 private:
 

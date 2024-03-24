@@ -28,7 +28,7 @@ class Q_DECL_HIDDEN ParallelPipes : public QObject
 
 public:
 
-    explicit ParallelPipes();
+    ParallelPipes() = default;
     ~ParallelPipes() override;
 
     void schedule();
@@ -53,7 +53,7 @@ Q_SIGNALS:
 protected:
 
     QList<QMetaMethod> m_methods;
-    int                m_currentIndex;
+    int                m_currentIndex = 0;
 
 private:
 

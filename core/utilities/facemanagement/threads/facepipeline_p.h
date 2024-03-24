@@ -43,7 +43,7 @@ class Q_DECL_HIDDEN FacePipeline::Private : public QObject
 
 public:
 
-    explicit Private(FacePipeline* const q);
+    explicit Private(FacePipeline* const qq);
 
     void processBatch(const QList<ItemInfo>& infos);
     void sendFromFilter(const QList<FacePipelineExtendedPackage::Ptr>& packages);
@@ -71,26 +71,26 @@ public:
 
 public:
 
-    ScanStateFilter*                        databaseFilter;
-    FacePreviewLoader*                      previewThread;
-    DetectionWorker*                        detectionWorker;
-    ParallelPipes*                          parallelDetectors;
-    RecognitionWorker*                      recognitionWorker;
-    DatabaseWriter*                         databaseWriter;
-    TrainerWorker*                          trainerWorker;
-    DetectionBenchmarker*                   detectionBenchmarker;
-    RecognitionBenchmarker*                 recognitionBenchmarker;
+    ScanStateFilter*                        databaseFilter          = nullptr;
+    FacePreviewLoader*                      previewThread           = nullptr;
+    DetectionWorker*                        detectionWorker         = nullptr;
+    ParallelPipes*                          parallelDetectors       = nullptr;
+    RecognitionWorker*                      recognitionWorker       = nullptr;
+    DatabaseWriter*                         databaseWriter          = nullptr;
+    TrainerWorker*                          trainerWorker           = nullptr;
+    DetectionBenchmarker*                   detectionBenchmarker    = nullptr;
+    RecognitionBenchmarker*                 recognitionBenchmarker  = nullptr;
 
     QList<QObject*>                         pipeline;
-    QThread::Priority                       priority;
+    QThread::Priority                       priority                = QThread::LowPriority;
 
     QList<ThumbnailLoadThread*>             thumbnailLoadThreads;
-    bool                                    started;
-    bool                                    waiting;
-    int                                     infosForFiltering;
-    int                                     packagesOnTheRoad;
-    int                                     maxPackagesOnTheRoad;
-    int                                     totalPackagesAdded;
+    bool                                    started                 = false;
+    bool                                    waiting                 = false;
+    int                                     infosForFiltering       = 0;
+    int                                     packagesOnTheRoad       = 0;
+    int                                     maxPackagesOnTheRoad    = 30;
+    int                                     totalPackagesAdded      = 0;
 
     QList<FacePipelineExtendedPackage::Ptr> delayedPackages;
 

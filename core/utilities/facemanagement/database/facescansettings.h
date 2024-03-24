@@ -38,7 +38,7 @@ public:
         BenchmarkRecognition
     };
 
-    /// For detect and recognize
+    /// To detect and recognize
     enum AlreadyScannedHandling
     {
         Skip,
@@ -49,22 +49,22 @@ public:
 
 public:
 
-    explicit FaceScanSettings();
-    ~FaceScanSettings();
+    FaceScanSettings()  = default;
+    ~FaceScanSettings() = default;
 
 public:
 
     /// whole albums checked
-    bool                                    wholeAlbums;
+    bool                                    wholeAlbums                 = false;
 
     /// Processing power
-    bool                                    useFullCpu;
+    bool                                    useFullCpu                  = false;
 
     /// Use Yolo V3 model
-    bool                                    useYoloV3;
+    bool                                    useYoloV3                   = false;
 
     /// Detection accuracy
-    double                                  accuracy;
+    double                                  accuracy                    = 0.7;
 
     /// Albums to scan
     AlbumList                               albums;
@@ -72,9 +72,9 @@ public:
     /// Image infos to scan
     ItemInfoList                            infos;
 
-    ScanTask                                task;
+    ScanTask                                task                        = Detect;
 
-    AlreadyScannedHandling                  alreadyScannedHandling;
+    AlreadyScannedHandling                  alreadyScannedHandling      = Skip;
 };
 
 } // namespace Digikam

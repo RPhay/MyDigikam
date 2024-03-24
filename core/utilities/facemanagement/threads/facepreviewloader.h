@@ -47,8 +47,11 @@ Q_SIGNALS:
 protected:
 
     PackageLoadingDescriptionList scheduledPackages;
-    int                           maximumSentOutPackages;
-    FacePipeline::Private* const  d;
+
+    /// upper limit for memory cost
+    int                           maximumSentOutPackages = qMin(QThread::idealThreadCount(), 4);
+
+    FacePipeline::Private* const  d                      = nullptr;
 
 private:
 

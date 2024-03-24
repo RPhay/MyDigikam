@@ -24,10 +24,6 @@ namespace Digikam
 FacePreviewLoader::FacePreviewLoader(FacePipeline::Private* const dd)
     : d(dd)
 {
-    // upper limit for memory cost
-
-    maximumSentOutPackages = qMin(QThread::idealThreadCount(), 4);
-
     // this is crucial! Per default, only the last added image will be loaded
 
     setLoadingPolicy(PreviewLoadThread::LoadingPolicySimpleAppend);
@@ -51,6 +47,7 @@ void FacePreviewLoader::process(const FacePipelineExtendedPackage::Ptr& package)
     if (!package->image.isNull())
     {
         Q_EMIT processed(package);
+
         return;
     }
 

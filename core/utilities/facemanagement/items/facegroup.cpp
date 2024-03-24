@@ -56,6 +56,7 @@ void FaceGroup::itemStateChanged(int itemState)
         case DImgPreviewItem::ImageLoadingFailed:
         {
             d->visibilityController->hide();
+
             break;
         }
 

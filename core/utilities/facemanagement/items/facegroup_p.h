@@ -58,7 +58,7 @@ class Q_DECL_HIDDEN FaceGroup::Private
 {
 public:
 
-    explicit Private(FaceGroup* const q);
+    explicit Private(FaceGroup* const qq);
 
     void                       applyVisible();
     FaceItem*                  createItem(const FaceTagsIface& face);
@@ -71,27 +71,27 @@ public:
 
 public:
 
-    GraphicsDImgView*          view;
+    GraphicsDImgView*          view                     = nullptr;
     ItemInfo                   info;
-    bool                       exifRotate;
-    bool                       autoSuggest;
-    bool                       showOnHover;
+    bool                       exifRotate               = true;
+    bool                       autoSuggest              = false;
+    bool                       showOnHover              = false;
 
     QList<FaceItem*>           items;
 
-    ClickDragReleaseItem*      manuallyAddWrapItem;
-    FaceItem*                  manuallyAddedItem;
+    ClickDragReleaseItem*      manuallyAddWrapItem      = nullptr;
+    FaceItem*                  manuallyAddedItem        = nullptr;
 
-    FaceGroupState             state;
+    FaceGroupState             state                    = NoFaces;
     ItemVisibilityController*  visibilityController;
 
-    TagModel*                  tagModel;
-    CheckableAlbumFilterModel* filterModel;
-    TagPropertiesFilterModel*  filteredModel;
+    TagModel*                  tagModel                 = nullptr;
+    CheckableAlbumFilterModel* filterModel              = nullptr;
+    TagPropertiesFilterModel*  filteredModel            = nullptr;
 
     FacePipeline               editPipeline;
 
-    FaceGroup* const           q;
+    FaceGroup* const           q                        = nullptr;
 };
 
 } // namespace Digikam

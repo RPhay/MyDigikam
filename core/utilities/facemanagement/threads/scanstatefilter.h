@@ -28,7 +28,7 @@ class Q_DECL_HIDDEN ScanStateFilter : public DynamicThread
 
 public:
 
-    ScanStateFilter(FacePipeline::FilterMode mode, FacePipeline::Private* const d);
+    ScanStateFilter(FacePipeline::FilterMode fmode, FacePipeline::Private* const dd);
     ~ScanStateFilter() override;
 
     void process(const QList<ItemInfo>& infos);
@@ -38,8 +38,8 @@ public:
 
 public:
 
-    FacePipeline::Private* const     d;
-    FacePipeline::FilterMode         mode;
+    FacePipeline::Private* const     d     = nullptr;
+    FacePipeline::FilterMode         mode  = FacePipeline::SkipAlreadyScanned;
     FacePipelineFaceTagsIface::Roles tasks;
 
 protected Q_SLOTS:

@@ -10,7 +10,6 @@ APPLY_COMMON_POLICIES()
 set(libfacemanagement_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/database/faceutils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/database/faceitemretriever.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/database/facescansettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/faceitem.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/facegroup_p.cpp

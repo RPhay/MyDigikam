@@ -24,9 +24,7 @@ namespace Digikam
 {
 
 FaceItem::FaceItem(QGraphicsItem* const parent)
-    : RegionFrameItem(parent),
-      m_widget       (nullptr),
-      m_changer      (nullptr)
+    : RegionFrameItem(parent)
 {
 }
 

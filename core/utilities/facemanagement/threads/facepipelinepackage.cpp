@@ -31,32 +31,19 @@
 namespace Digikam
 {
 
-FacePipelineFaceTagsIface::FacePipelineFaceTagsIface()
-    : roles         (NoRole),
-      assignedTagId (0)
-{
-}
-
 FacePipelineFaceTagsIface::FacePipelineFaceTagsIface(const FaceTagsIface& face)
-    : FaceTagsIface (face),
-      roles         (NoRole),
-      assignedTagId (0)
-{
-}
-
-FacePipelineFaceTagsIface::~FacePipelineFaceTagsIface()
+    : FaceTagsIface(face)
 {
 }
 
 // ----------------------------------------------------------------------------------------
 
-FacePipelineFaceTagsIfaceList::FacePipelineFaceTagsIfaceList()
+bool FacePipelineExtendedPackage::operator==(const LoadingDescription& description) const
 {
+    return (filePath == description.filePath);
 }
 
-FacePipelineFaceTagsIfaceList::~FacePipelineFaceTagsIfaceList()
-{
-}
+// ----------------------------------------------------------------------------------------
 
 FacePipelineFaceTagsIfaceList::FacePipelineFaceTagsIfaceList(const QList<FaceTagsIface>& faces)
 {
@@ -129,29 +116,6 @@ FacePipelineFaceTagsIfaceList FacePipelineFaceTagsIfaceList::facesForRole(FacePi
     return faces;
 }
 
-// -----------------------------------------------------------------------------------------
-
-FacePipelinePackage::FacePipelinePackage()
-    : processFlags(NotProcessed)
-{
-}
-
-FacePipelinePackage::~FacePipelinePackage()
-{
-}
-
-// ----------------------------------------------------------------------------------------
-
-FacePipelineExtendedPackage::FacePipelineExtendedPackage()
-{
-}
-
-FacePipelineExtendedPackage::~FacePipelineExtendedPackage()
-{
-}
-
-// ----------------------------------------------------------------------------------------
-
 FacePipelineExtendedPackage::Ptr PackageLoadingDescriptionList::take(const LoadingDescription& description)
 {
     FacePipelineExtendedPackage::Ptr                  package;
@@ -163,26 +127,12 @@ FacePipelineExtendedPackage::Ptr PackageLoadingDescriptionList::take(const Loadi
         {
             package = *it;
             erase(it);
+
             break;
         }
     }
 
     return package;
-}
-
-bool FacePipelineExtendedPackage::operator==(const LoadingDescription& description) const
-{
-    return (filePath == description.filePath);
-}
-
-// ----------------------------------------------------------------------------------------
-
-PackageLoadingDescriptionList::PackageLoadingDescriptionList()
-{
-}
-
-PackageLoadingDescriptionList::~PackageLoadingDescriptionList()
-{
 }
 
 } // namespace Digikam

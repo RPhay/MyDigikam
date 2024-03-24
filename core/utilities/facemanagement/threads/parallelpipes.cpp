@@ -21,11 +21,6 @@
 namespace Digikam
 {
 
-ParallelPipes::ParallelPipes()
-    : m_currentIndex(0)
-{
-}
-
 ParallelPipes::~ParallelPipes()
 {
     Q_FOREACH (WorkerObject* const object, m_workers)

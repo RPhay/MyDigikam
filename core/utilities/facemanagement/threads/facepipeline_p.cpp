@@ -29,24 +29,8 @@
 namespace Digikam
 {
 
-FacePipeline::Private::Private(FacePipeline* const q)
-    : databaseFilter        (nullptr),
-      previewThread         (nullptr),
-      detectionWorker       (nullptr),
-      parallelDetectors     (nullptr),
-      recognitionWorker     (nullptr),
-      databaseWriter        (nullptr),
-      trainerWorker         (nullptr),
-      detectionBenchmarker  (nullptr),
-      recognitionBenchmarker(nullptr),
-      priority              (QThread::LowPriority),
-      started               (false),
-      waiting               (false),
-      infosForFiltering     (0),
-      packagesOnTheRoad     (0),
-      maxPackagesOnTheRoad  (30),
-      totalPackagesAdded    (0),
-      q                     (q)
+FacePipeline::Private::Private(FacePipeline* const qq)
+    : q(qq)
 {
 }
 
@@ -135,11 +119,13 @@ void FacePipeline::Private::send(const FacePipelineExtendedPackage::Ptr& package
 {
     start();
     ++totalPackagesAdded;
+
     Q_EMIT q->processing(*package);
 
     if (senderFlowControl(package))
     {
         ++packagesOnTheRoad;
+
         Q_EMIT startProcess(package);
     }
 }
@@ -197,6 +183,7 @@ void FacePipeline::Private::checkFinished()
     if (hasFinished())
     {
         totalPackagesAdded = 0;
+
         Q_EMIT q->finished();
 
         // stop threads
@@ -231,6 +218,7 @@ void FacePipeline::Private::start()
 
     started = true;
     waiting = false;
+
     Q_EMIT q->started(i18n("Applying face changes"));
 }
 

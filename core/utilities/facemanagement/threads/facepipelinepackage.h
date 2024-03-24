@@ -73,14 +73,14 @@ public:
 
 public:
 
-    FacePipelineFaceTagsIface();
+    FacePipelineFaceTagsIface()  = default;
     explicit FacePipelineFaceTagsIface(const FaceTagsIface& face);
-    ~FacePipelineFaceTagsIface();
+    ~FacePipelineFaceTagsIface() = default;
 
 public:
 
-    Roles     roles;
-    int       assignedTagId;
+    Roles     roles             = NoRole;
+    int       assignedTagId     = 0;
     TagRegion assignedRegion;
 };
 
@@ -90,9 +90,9 @@ class FacePipelineFaceTagsIfaceList : public QList<FacePipelineFaceTagsIface>
 {
 public:
 
-    FacePipelineFaceTagsIfaceList();
+    FacePipelineFaceTagsIfaceList()  = default;
     explicit FacePipelineFaceTagsIfaceList(const QList<FaceTagsIface>& faces);
-    ~FacePipelineFaceTagsIfaceList();
+    ~FacePipelineFaceTagsIfaceList() = default;
 
     FacePipelineFaceTagsIfaceList& operator=(const QList<FaceTagsIface>& faces);
 
@@ -127,8 +127,8 @@ public:
 
 public:
 
-    explicit FacePipelinePackage();
-    ~FacePipelinePackage();
+    FacePipelinePackage()  = default;
+    ~FacePipelinePackage() = default;
 
 public:
 
@@ -138,7 +138,7 @@ public:
     QList<Identity>               recognitionResults;
     FacePipelineFaceTagsIfaceList databaseFaces;
 
-    ProcessFlags                  processFlags;
+    ProcessFlags                  processFlags        = NotProcessed;
 };
 
 // ------------------------------------------------------------------------------------
@@ -148,8 +148,8 @@ class Q_DECL_HIDDEN FacePipelineExtendedPackage : public FacePipelinePackage,
 {
 public:
 
-    explicit FacePipelineExtendedPackage();
-    ~FacePipelineExtendedPackage();
+    FacePipelineExtendedPackage()  = default;
+    ~FacePipelineExtendedPackage() = default;
 
     bool operator==(const LoadingDescription& description) const;
 
@@ -165,8 +165,8 @@ class Q_DECL_HIDDEN PackageLoadingDescriptionList : public QList<FacePipelineExt
 {
 public:
 
-    explicit PackageLoadingDescriptionList();
-    ~PackageLoadingDescriptionList();
+    PackageLoadingDescriptionList()  = default;
+    ~PackageLoadingDescriptionList() = default;
 
     FacePipelineExtendedPackage::Ptr take(const LoadingDescription& description);
 };
