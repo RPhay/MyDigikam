@@ -36,12 +36,11 @@ class Q_DECL_HIDDEN FingerprintsTask::Private
 {
 public:
 
-    explicit Private()
-        : data(nullptr)
-    {
-    }
+    Private() = default;
 
-    MaintenanceData* data;
+    MaintenanceData* data       = nullptr;
+    bool             rebuildAll = true;
+
     QImage           okImage;
 };
 
@@ -64,6 +63,11 @@ FingerprintsTask::~FingerprintsTask()
 void FingerprintsTask::setMaintenanceData(MaintenanceData* const data)
 {
     d->data = data;
+}
+
+void FingerprintsTask::setRebuildAll(bool b)
+{
+    d->rebuildAll = b;
 }
 
 void FingerprintsTask::run()
@@ -90,7 +94,7 @@ void FingerprintsTask::run()
             (info.category() == DatabaseItem::Category::Image)            &&
             !info.filePath().isEmpty()                                    &&
             !m_cancel                                                     &&
-            (d->data->getRebuildAllFingerprints()                         ||
+            (d->rebuildAll                                                ||
              SimilarityDbAccess().db()->hasDirtyOrMissingFingerprint(info)))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Updating fingerprints for file:" << info.filePath();

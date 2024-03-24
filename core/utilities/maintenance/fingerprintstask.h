@@ -41,6 +41,7 @@ public:
     ~FingerprintsTask() override;
 
     void setMaintenanceData(MaintenanceData* const data = nullptr);
+    void setRebuildAll(bool b);
 
 Q_SIGNALS:
 
