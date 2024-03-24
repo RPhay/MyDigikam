@@ -50,6 +50,7 @@ public:
     explicit AutotagsAssignment(AutotagsAssignmentScanMode mode,
                                 const AlbumList& list,
                                 int modelType,
+                                const QStringList& langs,
                                 ProgressItem* const parent = nullptr);
     ~AutotagsAssignment()           override;
 

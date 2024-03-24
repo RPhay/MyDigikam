@@ -46,6 +46,7 @@ public:
     AutotagsAssignmentScanMode mode            = AutotagsAssignmentScanMode::NonAssignedItems;
 
     QStringList                allPicturesPath;
+    QStringList                languages;
 
     AlbumList                  albumList;
 
@@ -57,6 +58,7 @@ public:
 AutotagsAssignment::AutotagsAssignment(AutotagsAssignmentScanMode mode,
                                        const AlbumList& list,
                                        int modelType,
+                                       const QStringList& langs,
                                        ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("AutotagsAssignment"), parent),
       d              (new Private)
@@ -64,6 +66,7 @@ AutotagsAssignment::AutotagsAssignment(AutotagsAssignmentScanMode mode,
     d->mode      = mode;
     d->albumList = list;
     d->modelType = modelType;
+    d->languages = langs;
     d->thread    = new MaintenanceThread(this);
 
     connect(d->thread, SIGNAL(signalCompleted()),
@@ -174,7 +177,7 @@ void AutotagsAssignment::slotStart()
 
     setTotalItems(d->allPicturesPath.count());
 
-    d->thread->generateTags(d->allPicturesPath, d->modelType);
+    d->thread->generateTags(d->allPicturesPath, d->modelType, d->languages);
     d->thread->start();
 }
 

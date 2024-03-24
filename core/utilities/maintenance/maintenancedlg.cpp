@@ -208,6 +208,9 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
         "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is primarily focused on image classification and does not provide object localization. "
         "It can recognize objects from a vast set of more than 1,000 classes, covering a wide range of objects, animals, and scenes.</p>"));
 
+    d->trSelectorList      = new LocalizeSelectorList(d->vbox5);
+    d->trSelectorList->setTitle(i18nc("@label", "Translate Tags to:"));
+
     d->expanderBox->insertItem(Private::AutotagsAssignment, d->vbox5,
                                QIcon::fromTheme(QLatin1String("tag")), i18n("Auto-tags Assignment"),
                                QLatin1String("AutotagsAssignment"), false);

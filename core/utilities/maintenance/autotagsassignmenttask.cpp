@@ -18,6 +18,7 @@
 
 #include "digikam_debug.h"
 #include "previewloadthread.h"
+#include "localizeselector.h"
 #include "maintenancedata.h"
 #include "autotagsassign.h"
 #include "scancontroller.h"
@@ -38,6 +39,7 @@ public:
     const int loadCount        = 3;
     const int batchSize        = 16;
     MaintenanceData* data      = nullptr;
+    QStringList      langs;
     int              modelType = DetectorModel::YOLOV5NANO;
 };
 
@@ -61,6 +63,11 @@ void AutotagsAssignmentTask::setMaintenanceData(MaintenanceData* const data)
     d->data = data;
 }
 
+void AutotagsAssignmentTask::setLanguages(const QStringList& langs)
+{
+    d->langs = langs;
+}
+
 void AutotagsAssignmentTask::setModelType(int modelType)
 {
     d->modelType = modelType;
@@ -75,12 +82,43 @@ void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QS
 
     ItemInfo info              = ItemInfo::fromLocalFile(pathImage);
     TagsCache* const tagsCache = Digikam::TagsCache::instance();
-    QString rootTags           = QLatin1String("auto/");
+    const QString rootTags     = QLatin1String("auto/");
 
     for (const auto& tag : tagsList)
     {
-        int tagId = tagsCache->getOrCreateTag(rootTags + tag);
-        info.setTag(tagId);
+        int tagId = -1;
+
+        if (!d->langs.isEmpty())
+        {
+            Q_FOREACH (const QString& trLang, d->langs)
+            {
+                QString trOut;
+                QString error;
+                bool trRet = s_inlineTranslateString(tag, trLang, trOut, error);
+
+                if (trRet)
+                {
+                    tagId = tagsCache->getOrCreateTag(rootTags + trLang +
+                                                      QLatin1Char('/')  + trOut);
+                }
+                else
+                {
+                    qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Auto-Tags online translation error:"
+                                                        << error;
+                    tagId = tagsCache->getOrCreateTag(rootTags + trLang +
+                                                      QLatin1Char('/')  +  tag);
+                }
+            }
+        }
+        else
+        {
+            tagId = tagsCache->getOrCreateTag(rootTags + tag);
+        }
+
+        if (tagId != -1)
+        {
+            info.setTag(tagId);
+        }
     }
 
     // Write tags to the metadata too

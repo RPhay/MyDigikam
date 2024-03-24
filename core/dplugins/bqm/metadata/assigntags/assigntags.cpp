@@ -39,8 +39,6 @@
 #include "autotagsassign.h"
 #include "dlayoutbox.h"
 #include "dfileoperations.h"
-#include "donlinetranslator.h"
-#include "localizesettings.h"
 #include "localizeselector.h"
 
 namespace DigikamBqmAssignTagsPlugin

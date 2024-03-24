@@ -54,6 +54,7 @@
 #include "drangebox.h"
 #include "autotagsassignment.h"
 #include "autotagsassign.h"
+#include "localizeselector.h"
 
 namespace Digikam
 {
@@ -100,6 +101,7 @@ public:
     static const QString configAutotagsAssignment;
     static const QString configAutotaggingScanMode;
     static const QString configModelSelectionMode;
+    static const QString configAutotagsLanguages;
     static const QString configImageQualitySorter;
     static const QString configQualityScanMode;
     static const QString configQualitySettingsSelected;
@@ -144,6 +146,7 @@ public:
     QComboBox*                searchResultRestriction;
     DExpanderBox*             expanderBox;
     AlbumSelectors*           albumSelectors;
+    LocalizeSelectorList*     trSelectorList;
 };
 
 } // namespace Digikam

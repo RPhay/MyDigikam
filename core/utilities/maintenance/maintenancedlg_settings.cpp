@@ -50,6 +50,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.autotagsAssignment                  = d->expanderBox->isChecked(Private::AutotagsAssignment);
     prm.autotaggingScanMode                 = d->autotaggingScanMode->itemData(d->autotaggingScanMode->currentIndex()).toInt();
     prm.modelSelectionMode                  = d->modelSelectionMode->itemData(d->modelSelectionMode->currentIndex()).toInt();
+    prm.autotagsLanguages                   = d->trSelectorList->languagesList();
 
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
     prm.qualityScanMode                     = d->qualityScanMode->itemData(d->qualityScanMode->currentIndex()).toInt();
@@ -117,6 +118,12 @@ void MaintenanceDlg::readSettings()
         d->autotaggingScanMode->setCurrentIndex(tagScanMode);
         int tagSelection = d->modelSelectionMode->findData(group.readEntry(d->configModelSelectionMode,         prm.modelSelectionMode));
         d->modelSelectionMode->setCurrentIndex(tagSelection);
+        d->trSelectorList->clearLanguages();
+
+        Q_FOREACH (const QString& lg, group.readEntry(d->configAutotagsLanguages,                               prm.autotagsLanguages))
+        {
+            d->trSelectorList->addLanguage(lg);
+        }
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
         int qualityMod   = d->qualityScanMode->findData(group.readEntry(d->configQualityScanMode,               prm.qualityScanMode));
