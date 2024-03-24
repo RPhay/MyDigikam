@@ -75,14 +75,22 @@ void AutotagsAssignmentTask::setModelType(int modelType)
 
 void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QString>& tagsList)
 {
-    if (tagsList.isEmpty())
-    {
-        return;
-    }
-
-    ItemInfo info              = ItemInfo::fromLocalFile(pathImage);
+    bool tagsChanged           = false;
+    const QString rootTag      = QLatin1String("auto/");
     TagsCache* const tagsCache = Digikam::TagsCache::instance();
-    const QString rootTags     = QLatin1String("auto/");
+    const int rootTagId        = tagsCache->getOrCreateTag(rootTag);
+    ItemInfo info              = ItemInfo::fromLocalFile(pathImage);
+
+    // Clear auto-tags
+
+    Q_FOREACH (int tid, info.tagIds())
+    {
+        if (tagsCache->parentTags(tid).contains(rootTagId))
+        {
+            info.removeTag(tid);
+            tagsChanged = true;
+        }
+    }
 
     for (const auto& tag : tagsList)
     {
@@ -98,36 +106,40 @@ void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QS
 
                 if (trRet)
                 {
-                    tagId = tagsCache->getOrCreateTag(rootTags + trLang +
-                                                      QLatin1Char('/')  + trOut);
+                    tagId = tagsCache->getOrCreateTag(rootTag + trLang +
+                                                      QLatin1Char('/') + trOut);
                 }
                 else
                 {
                     qCDebug(DIGIKAM_AUTOTAGSENGINE_LOG) << "Auto-Tags online translation error:"
                                                         << error;
-                    tagId = tagsCache->getOrCreateTag(rootTags + trLang +
-                                                      QLatin1Char('/')  +  tag);
+                    tagId = tagsCache->getOrCreateTag(rootTag + trLang +
+                                                      QLatin1Char('/') +  tag);
                 }
             }
         }
         else
         {
-            tagId = tagsCache->getOrCreateTag(rootTags + tag);
+            tagId = tagsCache->getOrCreateTag(rootTag + tag);
         }
 
         if (tagId != -1)
         {
             info.setTag(tagId);
+            tagsChanged = true;
         }
     }
 
     // Write tags to the metadata too
 
-    MetadataHub hub;
-    hub.load(info);
+    if (tagsChanged)
+    {
+        MetadataHub hub;
+        hub.load(info);
 
-    ScanController::FileMetadataWrite writeScope(info);
-    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+        ScanController::FileMetadataWrite writeScope(info);
+        writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+    }
 }
 
 void AutotagsAssignmentTask::run()

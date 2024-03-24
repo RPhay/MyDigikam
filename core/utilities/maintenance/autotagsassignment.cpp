@@ -111,8 +111,8 @@ void AutotagsAssignment::slotStart()
     // Get all item in DB which do not have any auto Tag assigned.
     // Any images containing root Path "auto".
 
-    const QString rootTags    = QLatin1String("auto/");
-    QStringList assignedItems = CoreDbAccess().db()->getItemURLsInTag(TagsCache::instance()->getOrCreateTag(rootTags), true);
+    const QString rootTag     = QLatin1String("auto/");
+    QStringList assignedItems = CoreDbAccess().db()->getItemURLsInTag(TagsCache::instance()->getOrCreateTag(rootTag), true);
 
     // Get all digiKam albums collection pictures path, depending of d->rebuildAll flag.
 
