@@ -18,7 +18,7 @@ BUGFIXES:
 009 ==> 467968 - Advanced slideshow using opengl re-displays some jpegs, sometimes crashes.
 010 ==> 484350 - Failed to load image.
 011 ==> 484400 - digiKam doesn't find DB anymore after change of settings.
-012 ==> 
+012 ==> 484398 - GPS Coordinates for JPEG files are not saved (needs two iterations).
 013 ==> 
 014 ==> 
 015 ==> 
