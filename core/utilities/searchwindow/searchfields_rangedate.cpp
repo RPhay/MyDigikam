@@ -19,12 +19,8 @@ namespace Digikam
 {
 
 SearchFieldRangeDate::SearchFieldRangeDate(QObject* const parent, Type type)
-    : SearchField     (parent),
-      m_firstTimeEdit (nullptr),
-      m_firstDateEdit (nullptr),
-      m_secondTimeEdit(nullptr),
-      m_secondDateEdit(nullptr),
-      m_type          (type)
+    : SearchField(parent),
+      m_type     (type)
 {
     m_betweenLabel = new QLabel;
 }

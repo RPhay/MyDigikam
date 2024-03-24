@@ -19,12 +19,7 @@ namespace Digikam
 {
 
 SearchFieldRangeDouble::SearchFieldRangeDouble(QObject* const parent)
-    : SearchField(parent),
-      m_min      (0),
-      m_max      (100),
-      m_factor   (1),
-      m_firstBox (nullptr),
-      m_secondBox(nullptr)
+    : SearchField(parent)
 {
     m_betweenLabel = new QLabel;
     m_firstBox     = new CustomStepsDoubleSpinBox;
