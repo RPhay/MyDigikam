@@ -184,6 +184,7 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configAutotagsAssignment,         prm.autotagsAssignment);
         group.writeEntry(d->configAutotaggingScanMode,        prm.autotaggingScanMode);
         group.writeEntry(d->configModelSelectionMode,         prm.modelSelectionMode);
+        group.writeEntry(d->configAutotagsLanguages,          prm.autotagsLanguages);
         group.writeEntry(d->configImageQualitySorter,         prm.qualitySort);
         group.writeEntry(d->configQualityScanMode,            prm.qualityScanMode);
         group.writeEntry(d->configQualitySettingsSelected,    prm.qualitySettingsSelected);
