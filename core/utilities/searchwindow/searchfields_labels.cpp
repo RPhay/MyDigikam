@@ -19,9 +19,7 @@ namespace Digikam
 {
 
 SearchFieldLabels::SearchFieldLabels(QObject* const parent)
-    : SearchField       (parent),
-      m_pickLabelFilter (nullptr),
-      m_colorLabelFilter(nullptr)
+    : SearchField       (parent)
 {
 }
 

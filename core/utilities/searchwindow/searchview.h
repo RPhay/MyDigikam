@@ -96,7 +96,7 @@ protected Q_SLOTS:
 
 protected:
 
-    int                 m_groupIndex;
+    int                 m_groupIndex = 0;
     QList<SearchGroup*> m_groups;
 };
 
@@ -184,13 +184,13 @@ protected:
 
 protected:
 
-    QHBoxLayout*                m_mainLayout;
+    QHBoxLayout*                m_mainLayout        = nullptr;
 
-    QDialogButtonBox*           m_buttonBox;
-    QPushButton*                m_addGroupsButton;
-    QPushButton*                m_resetButton;
+    QDialogButtonBox*           m_buttonBox         = nullptr;
+    QPushButton*                m_addGroupsButton   = nullptr;
+    QPushButton*                m_resetButton       = nullptr;
 
-    SearchViewThemedPartsCache* m_themeCache;
+    SearchViewThemedPartsCache* m_themeCache        = nullptr;
 
 private Q_SLOTS:
 

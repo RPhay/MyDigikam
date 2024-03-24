@@ -46,25 +46,35 @@ void SearchFieldRating::read(SearchXmlCachingReader& reader)
     switch (relation)
     {
         case SearchXml::GreaterThanOrEqual:
+        {
             m_firstBox->setRatingValue((RatingComboBox::RatingValue)reader.valueToInt());
             break;
+        }
 
         case SearchXml::GreaterThan:
+        {
             m_firstBox->setRatingValue((RatingComboBox::RatingValue)(reader.valueToInt() - 1));
             break;
+        }
 
         case SearchXml::LessThanOrEqual:
+        {
             m_secondBox->setRatingValue((RatingComboBox::RatingValue)reader.valueToInt());
             break;
+        }
 
         case SearchXml::LessThan:
+        {
             m_secondBox->setRatingValue((RatingComboBox::RatingValue)(reader.valueToInt() + 1));
             break;
+        }
 
         case SearchXml::Equal:
+        {
             m_firstBox->setRatingValue((RatingComboBox::RatingValue)reader.valueToInt());
             m_secondBox->setRatingValue((RatingComboBox::RatingValue)reader.valueToInt());
             break;
+        }
 
         case SearchXml::Interval:
         case SearchXml::IntervalOpen:
@@ -82,7 +92,9 @@ void SearchFieldRating::read(SearchXmlCachingReader& reader)
         }
 
         default:
+        {
             break;
+        }
     }
 }
 

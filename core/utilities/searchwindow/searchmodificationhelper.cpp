@@ -42,12 +42,9 @@ class Q_DECL_HIDDEN SearchModificationHelper::Private
 {
 public:
 
-    explicit Private()
-      : dialogParent(nullptr)
-    {
-    }
+    Private() = default;
 
-    QWidget* dialogParent;
+    QWidget* dialogParent = nullptr;
 };
 
 SearchModificationHelper::SearchModificationHelper(QObject* const parent, QWidget* const dialogParent)

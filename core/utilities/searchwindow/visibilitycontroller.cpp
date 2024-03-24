@@ -21,15 +21,11 @@ class Q_DECL_HIDDEN VisibilityController::Private
 {
 public:
 
-    explicit Private()
-      : status         (VisibilityController::Unknown),
-        containerWidget(nullptr)
-    {
-    }
+    Private() = default;
 
-    VisibilityController::Status status;
+    VisibilityController::Status status             = VisibilityController::Unknown;
     QList<VisibilityObject*>     objects;
-    QWidget*                     containerWidget;
+    QWidget*                     containerWidget    = nullptr;
 };
 
 class Q_DECL_HIDDEN VisibilityWidgetWrapper : public QObject,
@@ -55,7 +51,7 @@ public:
         return m_widget->isVisible();
     }
 
-    QWidget* m_widget;
+    QWidget* m_widget = nullptr;
 };
 
 // -------------------------------------------------------------------------------------

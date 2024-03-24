@@ -19,8 +19,7 @@ namespace Digikam
 {
 
 SearchFieldComboBox::SearchFieldComboBox(QObject* const parent)
-    : SearchField(parent),
-      m_comboBox (nullptr)
+    : SearchField(parent)
 {
 }
 

@@ -59,14 +59,12 @@ class Q_DECL_HIDDEN AnimatedClearButton::Private : public AnimatedVisibility
 public:
 
     explicit Private(QObject* const parent)
-        : AnimatedVisibility(parent),
-          stayAlwaysVisible (false),
-          pixmapEnabled     (true)
+        : AnimatedVisibility(parent)
     {
     }
 
-    bool    stayAlwaysVisible;
-    bool    pixmapEnabled;
+    bool    stayAlwaysVisible   = false;
+    bool    pixmapEnabled       = true;
     QPixmap pixmap;
 };
 
@@ -190,21 +188,14 @@ class Q_DECL_HIDDEN CustomStepsDoubleSpinBox::Private
 {
 public:
 
-    explicit Private()
-      : beforeInitialValue(true),
-        initialValue      (0),
-        smallerStep       (0),
-        largerStep        (0),
-        invertStepping    (false)
-    {
-    }
+    Private() = default;
 
-    bool          beforeInitialValue;
+    bool          beforeInitialValue    = true;
     QList<double> values;
-    double        initialValue;
-    double        smallerStep;
-    double        largerStep;
-    bool          invertStepping;
+    double        initialValue          = 0.0;
+    double        smallerStep           = 0.0;
+    double        largerStep            = 0.0;
+    bool          invertStepping        = false;
 };
 
 CustomStepsDoubleSpinBox::CustomStepsDoubleSpinBox(QWidget* const parent)
@@ -365,28 +356,21 @@ class Q_DECL_HIDDEN CustomStepsIntSpinBox::Private
 {
 public:
 
-    explicit Private()
-      : beforeInitialValue(true),
-        initialValue      (0),
-        smallerStep       (0),
-        largerStep        (0),
-        invertStepping    (false)
-    {
-    }
+    Private() = default;
 
-    bool       beforeInitialValue;
+    bool       beforeInitialValue   = true;
     QList<int> values;
-    int        initialValue;
-    int        smallerStep;
-    int        largerStep;
-    bool       invertStepping;
+    int        initialValue         = 0;
+    int        smallerStep          = 0;
+    int        largerStep           = 0;
+    bool       invertStepping       = false;
     QString    fractionPrefix;
     QString    fractionSpecialValueText;
 };
 
 CustomStepsIntSpinBox::CustomStepsIntSpinBox(QWidget* const parent)
     : QSpinBox(parent),
-      d(new Private)
+      d       (new Private)
 {
 }
 
@@ -593,7 +577,7 @@ double CustomStepsIntSpinBox::fractionMagicValue() const
 
     if (v < 0)
     {
-        return - 1.0 / v;
+        return (- 1.0 / v);
     }
     else
     {
@@ -642,7 +626,7 @@ void CustomStepsIntSpinBox::slotValueChanged(int val)
 // ------------------------------------------------------------------------
 
 StyleSheetDebugger::StyleSheetDebugger(QWidget* const object)
-    : QWidget (nullptr),
+    : QWidget(nullptr),
       m_widget(object)
 {
     setAttribute(Qt::WA_DeleteOnClose);

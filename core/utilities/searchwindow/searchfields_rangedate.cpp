@@ -301,9 +301,7 @@ void SearchFieldRangeDate::valueChanged()
 //-----------------------------------------------------------------------------
 
 SearchFieldRangeTime::SearchFieldRangeTime(QObject* const parent)
-    : SearchField     (parent),
-      m_firstTimeEdit (nullptr),
-      m_secondTimeEdit(nullptr)
+    : SearchField(parent)
 {
     m_betweenLabel = new QLabel;
 }

@@ -19,19 +19,7 @@ namespace Digikam
 {
 
 SearchFieldChoice::SearchFieldChoice(QObject* const parent)
-    : SearchField(parent),
-      m_comboBox (nullptr),
-
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-
-      m_type     (QMetaType::UnknownType)
-
-#else
-
-      m_type     (QVariant::Invalid)
-
-#endif
-
+    : SearchField(parent)
 {
     m_model   = new ChoiceSearchModel(this);
     m_anyText = i18nc("@option: default kind of search options combined", "Any");
