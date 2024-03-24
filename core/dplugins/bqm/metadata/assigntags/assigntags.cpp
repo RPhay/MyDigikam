@@ -189,17 +189,9 @@ bool AssignTags::toolOperations()
         meta->setData(image().getMetadata());
     }
 
-    QStringList langs;
-    DImg img  = image();
-    int model = settings()[QLatin1String("AutoTagModel")].toInt();
-
-    Q_FOREACH (const QString& trLang, settings()[QLatin1String("TrAutoTagsLangs")].toStringList())
-    {
-        if (!trLang.isEmpty())
-        {
-            langs << trLang;
-        }
-    }
+    DImg img           = image();
+    int model         = settings()[QLatin1String("AutoTagModel")].toInt();
+    QStringList langs = settings()[QLatin1String("TrAutoTagsLangs")].toStringList();
 
     if (ret && img.isNull())
     {

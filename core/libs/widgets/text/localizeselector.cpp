@@ -247,7 +247,13 @@ QStringList LocalizeSelectorList::languagesList() const
 
     while (*it)
     {
-        codes << (*it)->text(0);
+        QString lang = (*it)->text(0);
+
+        if (!lang.isEmpty())
+        {
+            codes << lang;
+        }
+
         ++it;
     }
 
