@@ -128,14 +128,27 @@ nslookup scan.coverity.com
 
 SECONDS=0
 
-curl --progress-bar \
-     --verbose \
-     --form token=$DKCoverityToken \
-     --form email=$digikam-devel@kde.org \
-     --form file=@myproject.tgz \
-     --form version=git \
-     --form description="$desc" \
-     https://scan.coverity.com/builds?project=digiKam
+curl -X POST \
+     -d version="git" \
+     -d description="$desc" \
+     -d email=digikam-devel@kde.org \
+     -d token=$DKCoverityToken \
+     -d file_name="'myproject.tgz'" \
+     https://scan.coverity.com/projects/285/builds/init \
+     | tee response
+
+upload_url=$(jq -r '.url' response)
+build_id=$(jq -r '.build_id' response)
+
+curl -X PUT \
+     --progress-bar \
+     --header 'Content-Type: application/json' \
+     --upload-file myproject.tgz \
+     $upload_url
+
+curl -X PUT \
+     -d token=$DKCoverityToken \
+     https://scan.coverity.com/projects/285/builds/$build_id/enqueue
 
 echo ""
 echo "Done. Coverity Scan tarball 'myproject.tgz' is uploaded."
