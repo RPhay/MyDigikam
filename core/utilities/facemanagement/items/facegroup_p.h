@@ -83,7 +83,7 @@ public:
     FaceItem*                  manuallyAddedItem        = nullptr;
 
     FaceGroupState             state                    = NoFaces;
-    ItemVisibilityController*  visibilityController;
+    ItemVisibilityController*  visibilityController     = nullptr;
 
     TagModel*                  tagModel                 = nullptr;
     CheckableAlbumFilterModel* filterModel              = nullptr;
