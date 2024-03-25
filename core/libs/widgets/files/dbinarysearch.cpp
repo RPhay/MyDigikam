@@ -35,14 +35,11 @@ class Q_DECL_HIDDEN DBinarySearch::Private
 {
 public:
 
-    explicit Private()
-      : downloadLabel(nullptr)
-    {
-    }
+    Private() = default;
 
     QVector<DBinaryIface*>    binaryIfaces;
     QVector<QTreeWidgetItem*> items;
-    QLabel*                   downloadLabel;
+    QLabel*                   downloadLabel = nullptr;
 };
 
 DBinarySearch::DBinarySearch(QWidget* const parent)
@@ -89,7 +86,7 @@ void DBinarySearch::addBinary(DBinaryIface& binary)
 {
     delete d->downloadLabel;
 
-    binary.recheckDirectories();
+    (void)binary.recheckDirectories();
 
     d->binaryIfaces.append(&binary);
     d->items.append(new QTreeWidgetItem());
@@ -161,7 +158,7 @@ bool DBinarySearch::allBinariesFound()
     {
         int index = d->binaryIfaces.indexOf(binary);
 
-        if (binary->isValid())
+        if      (binary->isValid())
         {
             if (!binary->developmentVersion())
             {
@@ -209,7 +206,9 @@ bool DBinarySearch::allBinariesFound()
 void DBinarySearch::slotAreBinariesFound()
 {
     bool allFound = allBinariesFound();
+
     Q_EMIT signalBinariesFound(allFound);
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "All Binaries Found : " << allFound;
 }
 
