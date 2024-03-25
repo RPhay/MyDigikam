@@ -1088,11 +1088,13 @@ bool DOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
     switch (engine)
     {
         case Google:
-            isSupportTranslation(Google, lang); // Google supports transliteration for all supported languages
-            break;
+        {
+            // Google supports transliteration for all supported languages
+            return isSupportTranslation(Google, lang);
+        }
 
         case Yandex:
-
+        {
             switch (lang)
             {
                 case Amharic:
@@ -1121,9 +1123,10 @@ bool DOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
                 default:
                     return false;
             }
+        }
 
         case Bing:
-
+        {
             switch (lang)
             {
                 case Arabic:
@@ -1147,10 +1150,13 @@ bool DOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
                 default:
                     return false;
             }
+        }
 
         case LibreTranslate:    // LibreTranslate doesn't support translit
         case Lingva:            // Although Lingvo is a frontend to Google Translate, it doesn't support transliteration
+        {
             return false;
+        }
     }
 
     return false;
