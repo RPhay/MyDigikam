@@ -1167,15 +1167,17 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
     switch (engine)
     {
         case Google:
+        {
             // Google supports dictionary for all supported languages
             return isSupportTranslation(Google, sourceLang) && isSupportTranslation(Google, translationLang);
+        }
 
         case Yandex:
-
+        {
             switch (sourceLang)
             {
                 case Belarusian:
-
+                {
                     switch (translationLang)
                     {
                         case Belarusian:
@@ -1184,9 +1186,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case Bulgarian:
-
+                {
                     switch (translationLang)
                     {
                         case Russian:
@@ -1194,6 +1197,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case Czech:
                 case Danish:
@@ -1205,7 +1209,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                 case Portuguese:
                 case Slovak:
                 case Swedish:
-
+                {
                     switch (translationLang)
                     {
                         case English:
@@ -1214,9 +1218,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case German:
-
+                {
                     switch (translationLang)
                     {
                         case German:
@@ -1227,9 +1232,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case English:
-
+                {
                     switch (translationLang)
                     {
                         case Czech:
@@ -1256,9 +1262,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case Spanish:
-
+                {
                     switch (translationLang)
                     {
                         case English:
@@ -1268,9 +1275,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case Finnish:
-
+                {
                     switch (translationLang)
                     {
                         case English:
@@ -1280,8 +1288,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
-                case French:
+                }
 
+                case French:
+                {
                     switch (translationLang)
                     {
                         case French:
@@ -1291,9 +1301,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case Hungarian:
-
+                {
                     switch (translationLang)
                     {
                         case Hungarian:
@@ -1302,9 +1313,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case Italian:
-
+                {
                     switch (translationLang)
                     {
                         case English:
@@ -1314,8 +1326,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case Lithuanian:
+                {
                     switch (translationLang)
                     {
                         case English:
@@ -1325,12 +1339,13 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case Mari:
                 case HillMari:
                 case Polish:
                 case Tatar:
-
+                {
                     switch (translationLang)
                     {
                         case Russian:
@@ -1338,9 +1353,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
+                }
 
                 case Russian:
-
+                {
                     switch (translationLang)
                     {
                         case Belarusian:
@@ -1374,7 +1390,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     }
 
                     case Turkish:
-
+                    {
                         switch (translationLang)
                         {
                             case German:
@@ -1384,9 +1400,10 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                             default:
                                 return false;
                         }
+                    }
 
                     case Ukrainian:
-
+                    {
                         switch (translationLang)
                         {
                             case English:
@@ -1396,84 +1413,92 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                             default:
                                 return false;
                         }
+                    }
 
                     default:
+                    {
                         return false;
-            }
-
-            case Bing:
-
-                // Bing support dictionary only to or from English
-
-                Language secondLang;
-
-                if      (sourceLang == English)
-                    secondLang = translationLang;
-                else if (translationLang == English)
-                    secondLang = sourceLang;
-                else
-                    return false;
-
-                switch (secondLang)
-                {
-                    case Afrikaans:
-                    case Arabic:
-                    case Bengali:
-                    case Bosnian:
-                    case Bulgarian:
-                    case Catalan:
-                    case SimplifiedChinese:
-                    case Croatian:
-                    case Czech:
-                    case Danish:
-                    case Dutch:
-                    case Estonian:
-                    case Finnish:
-                    case French:
-                    case German:
-                    case Greek:
-                    case HaitianCreole:
-                    case Hebrew:
-                    case Hindi:
-                    case Hmong:
-                    case Hungarian:
-                    case Icelandic:
-                    case Indonesian:
-                    case Italian:
-                    case Japanese:
-                    case Swahili:
-                    case Klingon:
-                    case Korean:
-                    case Latvian:
-                    case Lithuanian:
-                    case Malay:
-                    case Maltese:
-                    case Norwegian:
-                    case Persian:
-                    case Polish:
-                    case Portuguese:
-                    case Romanian:
-                    case Russian:
-                    case SerbianLatin:
-                    case Slovak:
-                    case Slovenian:
-                    case Spanish:
-                    case Swedish:
-                    case Tamil:
-                    case Thai:
-                    case Turkish:
-                    case Ukrainian:
-                    case Urdu:
-                    case Vietnamese:
-                    case Welsh:
-                        return true;
-                    default:
-                        return false;
+                    }
                 }
+            }
+        }
 
-            case LibreTranslate: // LibreTranslate doesn't support dictinaries
-            case Lingva:         // Although Lingvo is a frontend to Google Translate, it doesn't support dictionaries
+        case Bing:
+        {
+            // Bing support dictionary only to or from English
+
+            Language secondLang;
+
+            if      (sourceLang == English)
+                secondLang = translationLang;
+            else if (translationLang == English)
+                secondLang = sourceLang;
+            else
                 return false;
+
+            switch (secondLang)
+            {
+                case Afrikaans:
+                case Arabic:
+                case Bengali:
+                case Bosnian:
+                case Bulgarian:
+                case Catalan:
+                case SimplifiedChinese:
+                case Croatian:
+                case Czech:
+                case Danish:
+                case Dutch:
+                case Estonian:
+                case Finnish:
+                case French:
+                case German:
+                case Greek:
+                case HaitianCreole:
+                case Hebrew:
+                case Hindi:
+                case Hmong:
+                case Hungarian:
+                case Icelandic:
+                case Indonesian:
+                case Italian:
+                case Japanese:
+                case Swahili:
+                case Klingon:
+                case Korean:
+                case Latvian:
+                case Lithuanian:
+                case Malay:
+                case Maltese:
+                case Norwegian:
+                case Persian:
+                case Polish:
+                case Portuguese:
+                case Romanian:
+                case Russian:
+                case SerbianLatin:
+                case Slovak:
+                case Slovenian:
+                case Spanish:
+                case Swedish:
+                case Tamil:
+                case Thai:
+                case Turkish:
+                case Ukrainian:
+                case Urdu:
+                case Vietnamese:
+                case Welsh:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        case LibreTranslate: // LibreTranslate doesn't support dictinaries
+        case Lingva:         // Although Lingvo is a frontend to Google Translate, it doesn't support dictionaries
+        {
+            return false;
+        }
     }
 
     return false;
