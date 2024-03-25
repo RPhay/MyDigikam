@@ -390,6 +390,7 @@ private:
     QVariant fromExifOrXmpList(const QStringList& tagList)                                                              const;
     bool hasValidField(const QVariantList& list)                                                                        const;
     QVariant toStringListVariant(const QStringList& list)                                                               const;
+    QVariant toStringVariant(const QString& str)                                                                        const;
 
 #ifdef HAVE_HEIF
 

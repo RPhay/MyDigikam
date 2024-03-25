@@ -132,12 +132,12 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::CommentJfif:
         {
-            return getCommentsDecoded();
+            return toStringVariant(getCommentsDecoded());
         }
 
         case MetadataInfo::CommentExif:
         {
-            return getExifComment();
+            return toStringVariant(getExifComment());
         }
 
         case MetadataInfo::CommentIptc:
@@ -219,7 +219,7 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
 #else
 
-            QMultiMap<QString,QVariant> faceMap;
+            QMultiMap<QString, QVariant> faceMap;
             getItemFacesMap(faceMap);
             var = QVariant(faceMap);
 
@@ -407,7 +407,7 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::Longitude:
         {
-            return getGPSLongitudeString();
+            return toStringVariant(getGPSLongitudeString());
         }
 
         case MetadataInfo::LongitudeNumber:
@@ -436,7 +436,7 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::Latitude:
         {
-            return getGPSLatitudeString();
+            return toStringVariant(getGPSLatitudeString());
         }
 
         case MetadataInfo::LatitudeNumber:
@@ -1304,6 +1304,26 @@ QVariant DMetadata::toStringListVariant(const QStringList& list) const
     }
 
     return list;
+}
+
+QVariant DMetadata::toStringVariant(const QString& str) const
+{
+    if (str.isEmpty())
+    {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+            return QVariant(QMetaType(QMetaType::QString));
+
+#else
+
+            return QVariant(QVariant::String);
+
+#endif
+
+    }
+
+    return str;
 }
 
 } // namespace Digikam
