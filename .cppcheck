@@ -11,7 +11,6 @@
 IGNORE_DIRS="-i ../../core/libs/dimg/filters/transform/lqr/ "
 IGNORE_DIRS+="-i ../../core/libs/pgfutils/libpgf/ "
 IGNORE_DIRS+="-i ../../core/libs/dimg/filters/greycstoration/cimg/ "
-IGNORE_DIRS+="-i ../../core/tests/mediawiki/data/ "
 IGNORE_DIRS+="-i ../../core/libs/jpegutils/libjpeg/ "
 IGNORE_DIRS+="-i ../../core/libs/rawengine/libraw/ "
 IGNORE_DIRS+="-i ../../core/libs/dngwriter/extra/ "
