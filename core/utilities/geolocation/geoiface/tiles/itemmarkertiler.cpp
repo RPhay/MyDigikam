@@ -28,7 +28,9 @@ class Q_DECL_HIDDEN ItemMarkerTiler::MyTile : public Tile
 {
 public:
 
-    MyTile() = default;
+    MyTile()          = default;
+    virtual ~MyTile() = default;
+
     void removeMarkerIndexOrInvalidIndex(const QModelIndex& indexToRemove);
 
 public:
@@ -78,18 +80,12 @@ class Q_DECL_HIDDEN ItemMarkerTiler::Private
 {
 public:
 
-    explicit Private()
-      : modelHelper   (nullptr),
-        selectionModel(nullptr),
-        markerModel   (nullptr),
-        activeState   (false)
-    {
-    }
+    Private() = default;
 
-    GeoModelHelper*         modelHelper;
-    QItemSelectionModel* selectionModel;
-    QAbstractItemModel*  markerModel;
-    bool                 activeState;
+    GeoModelHelper*      modelHelper    = nullptr;
+    QItemSelectionModel* selectionModel = nullptr;
+    QAbstractItemModel*  markerModel    = nullptr;
+    bool                 activeState    = false;
 };
 
 ItemMarkerTiler::ItemMarkerTiler(GeoModelHelper* const modelHelper, QObject* const parent)
