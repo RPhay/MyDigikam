@@ -200,7 +200,7 @@ void VidSlideTask::run()
 
     fList.close();
 
-    m_settings->outputFile = outFile;
+    m_settings->outputFile = QDir::toNativeSeparators(outFile);
 
     Q_EMIT signalDone(!m_cancel);
 }
