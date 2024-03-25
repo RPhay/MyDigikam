@@ -19,7 +19,7 @@ BUGFIXES:
 010 ==> 484350 - Failed to load image.
 011 ==> 484400 - digiKam doesn't find DB anymore after change of settings.
 012 ==> 484398 - GPS Coordinates for JPEG files are not saved (needs two iterations).
-013 ==> 
+013 ==> 484482 - Dragging an image on a tag does not assign this tag to the image.
 014 ==> 
 015 ==> 
 016 ==> 
