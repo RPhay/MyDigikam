@@ -29,7 +29,7 @@ class Q_DECL_HIDDEN ItemMarkerTiler::MyTile : public Tile
 public:
 
     MyTile()          = default;
-    virtual ~MyTile() = default;
+    ~MyTile()         = default;      // No virtual destructor else crash at in unit-test.
 
     void removeMarkerIndexOrInvalidIndex(const QModelIndex& indexToRemove);
 
@@ -40,7 +40,7 @@ public:
 
 private:
 
-    MyTile(const MyTile&) = delete;
+    MyTile(const MyTile&)            = delete;
     MyTile& operator=(const MyTile&) = delete;
 };
 
