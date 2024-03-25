@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 01:36+0000\n"
+"POT-Creation-Date: 2024-03-25 01:59+0000\n"
 "PO-Revision-Date: 2024-03-21 09:22+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -3346,7 +3346,7 @@ msgstr "Sélection"
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:888
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
@@ -6304,7 +6304,7 @@ msgstr ""
 "<para>Ce gestionnaire de traitement par lots allouera des valeurs de "
 "métadonnées pour la notation, la couleur ou l'étiquette de sélection.</para>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -6323,31 +6323,31 @@ msgstr ""
 "arrière-plan générera automatiquement une série d'étiquettes décrivant le "
 "contenu et enregistrera les résultats dans la base de données. </p>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
 #: core/utilities/maintenance/maintenancedlg.cpp:191
 #, kde-format
 msgid "Selection model: "
 msgstr "Modèle de sélection :"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
 #: core/utilities/maintenance/maintenancedlg.cpp:196
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr "YOLOv5 Nano"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
 #: core/utilities/maintenance/maintenancedlg.cpp:197
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr "YOLOv5 XLarge"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
 #: core/utilities/maintenance/maintenancedlg.cpp:198
 #, kde-format
 msgid "ResNet50"
 msgstr "ResNet50"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -6390,6 +6390,15 @@ msgstr ""
 "localisation d'objet. Il peut reconnaître des objets à partir d'un vaste "
 "ensemble de plus de 1000 classes, couvrant un large éventail d'objets, "
 "d'animaux et de scènes. </p>"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
+#: core/utilities/maintenance/maintenancedlg.cpp:212
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Translate to:"
+msgctxt "@label"
+msgid "Translate Tags to:"
+msgstr "Traduire vers :"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -6638,37 +6647,37 @@ msgstr ""
 "<p>Ce gestionnaire de traitement par lots peut ajuster l'heure des images.</"
 "p>"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:107
+#: core/dplugins/bqm/metadata/translate/translate.cpp:103
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "Titre"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:108
+#: core/dplugins/bqm/metadata/translate/translate.cpp:104
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "Légende"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:109
+#: core/dplugins/bqm/metadata/translate/translate.cpp:105
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "Droits d'auteur"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:110
+#: core/dplugins/bqm/metadata/translate/translate.cpp:106
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "Droits et conditions d'utilisation"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:113
+#: core/dplugins/bqm/metadata/translate/translate.cpp:109
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "Traduire vers :"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:151
+#: core/dplugins/bqm/metadata/translate/translate.cpp:147
 #, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
@@ -9277,7 +9286,7 @@ msgstr "Utiliser le gestionnaire de couleurs pour l'impression"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
-#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Settings..."
 msgstr "Paramètres…"
@@ -11587,7 +11596,7 @@ msgstr "Deux cartes - en haut et en bas"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:653
+#: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
 msgstr "Ok"
@@ -27045,7 +27054,7 @@ msgstr "Il s'agit de l'ajustement de la courbe de luminosité de l'image"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
 #: core/libs/tags/widgets/tageditdlg.cpp:183
-#: core/utilities/searchwindow/searchview.cpp:510
+#: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
 msgstr "Réinitialiser"
@@ -27185,7 +27194,7 @@ msgstr ""
 "vraiment continuer ? </p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:286
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:144
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
@@ -27198,7 +27207,7 @@ msgid "Rename Album Root (%1)"
 msgstr "Renommer la racine de l'album (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:145
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
 msgstr "Saisissez un nouveau nom d'album :"
@@ -27211,7 +27220,7 @@ msgstr "Analyse des albums…"
 #: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/models/albummodel_search.cpp:25
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:77
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:72
 #, kde-format
 msgid "Searches"
 msgstr "Recherches"
@@ -27392,32 +27401,32 @@ msgstr ""
 "données ?</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:472
-#: core/libs/album/manager/albummanager_database.cpp:540
-#: core/libs/album/manager/albummanager_database.cpp:562
+#: core/libs/album/manager/albummanager_database.cpp:539
+#: core/libs/album/manager/albummanager_database.cpp:561
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Mettre à niveau une base de données"
 
 #: core/libs/album/manager/albummanager_database.cpp:474
-#: core/libs/album/manager/albummanager_database.cpp:542
-#: core/libs/album/manager/albummanager_database.cpp:564
-#: core/libs/album/manager/albummanager_database.cpp:612
+#: core/libs/album/manager/albummanager_database.cpp:541
+#: core/libs/album/manager/albummanager_database.cpp:563
+#: core/libs/album/manager/albummanager_database.cpp:611
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Créer une nouvelle base de données"
 
-#: core/libs/album/manager/albummanager_database.cpp:531
-#: core/libs/album/manager/albummanager_database.cpp:554
-#: core/libs/album/manager/albummanager_database.cpp:604
-#: core/libs/album/manager/albummanager_database.cpp:636
+#: core/libs/album/manager/albummanager_database.cpp:530
+#: core/libs/album/manager/albummanager_database.cpp:553
+#: core/libs/album/manager/albummanager_database.cpp:603
+#: core/libs/album/manager/albummanager_database.cpp:635
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Nouveau dossier de base de données"
 
-#: core/libs/album/manager/albummanager_database.cpp:532
+#: core/libs/album/manager/albummanager_database.cpp:531
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27433,15 +27442,15 @@ msgstr ""
 "base de données ou copier la base de données actuelle dans cet emplacement "
 "et continuer à l'utiliser ?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:544
-#: core/libs/album/manager/albummanager_database.cpp:614
-#: core/libs/album/manager/albummanager_database.cpp:645
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:613
+#: core/libs/album/manager/albummanager_database.cpp:644
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Copier la base de données courante"
 
-#: core/libs/album/manager/albummanager_database.cpp:555
+#: core/libs/album/manager/albummanager_database.cpp:554
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27455,7 +27464,7 @@ msgstr ""
 "à niveau l'ancien fichier de base de données ou démarrer avec une nouvelle "
 "base de données ?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:590
+#: core/libs/album/manager/albummanager_database.cpp:589
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27465,7 +27474,7 @@ msgstr ""
 "nouvel emplacement (« %2 »). Essayez de mettre à niveau les anciennes bases "
 "de données."
 
-#: core/libs/album/manager/albummanager_database.cpp:605
+#: core/libs/album/manager/albummanager_database.cpp:604
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -27477,7 +27486,7 @@ msgstr ""
 "cet emplacement et continuer à l'utiliser, ou démarrer avec une nouvelle "
 "base de données ?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:637
+#: core/libs/album/manager/albummanager_database.cpp:636
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27491,13 +27500,13 @@ msgstr ""
 "base de données ou le supprimer et copier la base de données actuelle à cet "
 "endroit ?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:647
+#: core/libs/album/manager/albummanager_database.cpp:646
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Utiliser un fichier existant"
 
-#: core/libs/album/manager/albummanager_database.cpp:702
+#: core/libs/album/manager/albummanager_database.cpp:701
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -27507,7 +27516,7 @@ msgstr ""
 "(« %1 »). Refus de remplacer le fichier sans sauvegarde, utilisation du "
 "fichier existant."
 
-#: core/libs/album/manager/albummanager_database.cpp:720
+#: core/libs/album/manager/albummanager_database.cpp:719
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27516,14 +27525,14 @@ msgstr ""
 "Impossible de copier le fichier de l'ancienne base de données (« %1 ») dans "
 "son nouvel emplacement (« %2 »). Démarrage avec une base de données vide."
 
-#: core/libs/album/manager/albummanager_database.cpp:743
+#: core/libs/album/manager/albummanager_database.cpp:742
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 "<p><b>Veuillez vérifier la configuration de la base de données grâce à cette "
 "boîte de dialogue.</b></p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:759
+#: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -43279,7 +43288,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:231
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Tri d'images par qualité"
@@ -49236,13 +49245,13 @@ msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "Sélectionnez la langue à traduire avec %1"
 
-#: core/libs/widgets/text/localizeselector.cpp:262
+#: core/libs/widgets/text/localizeselector.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "Supprimer cette entrée"
 
-#: core/libs/widgets/text/localizeselector.cpp:263
+#: core/libs/widgets/text/localizeselector.cpp:269
 #, kde-format
 msgctxt "@action"
 msgid "Clear List"
@@ -52310,76 +52319,76 @@ msgstr "Créer une étiquette à partir du carnet d'adresses"
 msgid "No address book entries found"
 msgstr "Impossible de trouver une entrée de carnet d'adresse"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:234
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
 msgid "Applying face changes"
 msgstr "Appliquer les modifications des visages"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:591
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "Ok"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "Confirmer que la personne sélectionnée est affichée ici."
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Confirmer"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:193
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:218
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Supprimer"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:219
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Supprimer cette région de visages"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "Démarquer ce visage comme « Ignoré »"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:530
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Qui est-ce ?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:576
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Ignorer"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:577
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Ignorer ce visage"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:609
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Marquer ce visage comme « Ignoré »"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:614
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -54551,8 +54560,8 @@ msgid "Show Non-Geolocated Items"
 msgstr "Afficher les éléments non géolocalisés"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:541
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:112
-#: core/utilities/searchwindow/searchtabheader.cpp:582
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:109
+#: core/utilities/searchwindow/searchtabheader.cpp:561
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -54562,8 +54571,8 @@ msgstr ""
 "Veuillez saisir un nouveau nom :"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:116
-#: core/utilities/searchwindow/searchtabheader.cpp:586
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:113
+#: core/utilities/searchwindow/searchtabheader.cpp:565
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
@@ -61227,7 +61236,7 @@ msgstr "&Panneau de gauche"
 msgid "&Right Panel"
 msgstr "Pa&nneau de droite"
 
-#: core/utilities/maintenance/autotagsassignment.cpp:99
+#: core/utilities/maintenance/autotagsassignment.cpp:102
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Association automatique des étiquettes"
@@ -61542,7 +61551,7 @@ msgid "Clean all and re-assign"
 msgstr "Tout effacer et ré-allouer"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:185
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:229
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Analyser seulement ce qui n'est pas affecté"
@@ -61604,48 +61613,48 @@ msgstr ""
 "reconnaître des objets à partir d'un vaste ensemble de plus de 1000 classes, "
 "couvrant un large éventail d'objets, d'animaux et de scènes. </p>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:212
+#: core/utilities/maintenance/maintenancedlg.cpp:215
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Association automatique des étiquettes"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:223
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Mode analyse :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Tout effacer et analyser à nouveau"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direction de synchro :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:242
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Depuis la base de données vers les métadonnées des images"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:243
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Depuis les métadonnées des images vers la base de données"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:246
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Vérifiez les détails du panneau de configuration des métadonnées : "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:254
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Synchroniser les métadonnées et la base de données"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:395
+#: core/utilities/maintenance/maintenancemngr.cpp:396
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -61654,7 +61663,7 @@ msgstr ""
 "Toutes les opérations sont effectuées.\n"
 "Durée : %1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:396
+#: core/utilities/maintenance/maintenancemngr.cpp:397
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "Maintenance de DigiKam"
@@ -62387,63 +62396,63 @@ msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgstr ""
 "Voulez-vous vraiment supprimer le flux de production sélectionné « %1 » ?"
 
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:62
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:57
 #, kde-format
 msgid "Rename..."
 msgstr "Renommer…"
 
-#: core/utilities/searchwindow/ratingsearchutilities.cpp:207
+#: core/utilities/searchwindow/ratingsearchutilities.cpp:201
 #, kde-format
 msgid "(No Value Selected)"
 msgstr "(pas de valeur sélectionnée)"
 
-#: core/utilities/searchwindow/ratingsearchutilities.cpp:212
+#: core/utilities/searchwindow/ratingsearchutilities.cpp:206
 #, kde-format
 msgid "No Rating assigned"
 msgstr "Pas de note affectée"
 
-#: core/utilities/searchwindow/searchfields.cpp:76
+#: core/utilities/searchwindow/searchfields.cpp:74
 #, kde-format
 msgid "Reset contents"
 msgstr "Réinitialiser le contenu"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:41
+#: core/utilities/searchwindow/searchfields_album.cpp:36
 #, kde-format
 msgctxt "@item"
 msgid "Any Album"
 msgstr "Tout album"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:53
+#: core/utilities/searchwindow/searchfields_album.cpp:48
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In All"
 msgstr "Partout"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:54
+#: core/utilities/searchwindow/searchfields_album.cpp:49
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In One of"
 msgstr "Dans un parmi"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:55
+#: core/utilities/searchwindow/searchfields_album.cpp:50
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In Tree"
 msgstr "En arborescence"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:59
+#: core/utilities/searchwindow/searchfields_album.cpp:54
 #, kde-format
 msgctxt "@item"
 msgid "Any Tag"
 msgstr "Toute étiquette"
 
-#: core/utilities/searchwindow/searchfields_choice.cpp:37
+#: core/utilities/searchwindow/searchfields_choice.cpp:25
 #, kde-format
 msgctxt "@option: default kind of search options combined"
 msgid "Any"
 msgstr "Tout"
 
-#: core/utilities/searchwindow/searchfields_choice.cpp:123
+#: core/utilities/searchwindow/searchfields_choice.cpp:111
 #, kde-format
 msgctxt "@label: search field choice combo-box description"
 msgid "Any of: %1"
@@ -63198,17 +63207,17 @@ msgstr "Retourner les éléments sans régions de visages"
 msgid "No Face Regions"
 msgstr "Aucune région de visages"
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:34
+#: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, kde-format
 msgid "Day:"
 msgstr "Jour :"
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:38
+#: core/utilities/searchwindow/searchfields_monthday.cpp:35
 #, kde-format
 msgid "Every Month"
 msgstr "Chaque mois"
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:45
+#: core/utilities/searchwindow/searchfields_monthday.cpp:42
 #, kde-format
 msgid "Every Day"
 msgstr "Chaque jour"
@@ -63312,72 +63321,72 @@ msgstr "Supprimer un groupe"
 msgid "Hide Options"
 msgstr "Cacher les options"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:74
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "Supprimer la recherche ?"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:75
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:72
 #, kde-format
 msgid "Are you sure you want to delete the selected search \"%1\"?"
 msgstr "Voulez-vous vraiment supprimer la recherche sélectionnée « %1 » ?"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:67
+#: core/utilities/searchwindow/searchtabheader.cpp:66
 #, kde-format
 msgid "(Advanced Search)"
 msgstr "(Recherche avancée)"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:104
+#: core/utilities/searchwindow/searchtabheader.cpp:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Autostart Search"
 msgstr "Recherche automatique"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:262
+#: core/utilities/searchwindow/searchtabheader.cpp:241
 #, kde-format
 msgid "New Search"
 msgstr "Nouvelle recherche"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:264
+#: core/utilities/searchwindow/searchtabheader.cpp:243
 #, kde-format
 msgctxt "@label: quick search properties"
 msgid "Search:"
 msgstr "Rechercher :"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:267
+#: core/utilities/searchwindow/searchtabheader.cpp:246
 #, kde-format
 msgid "Enter keywords here..."
 msgstr "Saisissez ici des mots clés…"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:269
+#: core/utilities/searchwindow/searchtabheader.cpp:248
 #, kde-format
 msgid "New Advanced Search..."
 msgstr "Nouvelle recherche avancée…"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:270
+#: core/utilities/searchwindow/searchtabheader.cpp:249
 #, kde-format
 msgid "Edit Current Search..."
 msgstr "Modifier la recherche actuelle..."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:285
+#: core/utilities/searchwindow/searchtabheader.cpp:264
 #, kde-format
 msgid "Save Current Search"
 msgstr "Enregistrer la recherche actuelle"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:289
+#: core/utilities/searchwindow/searchtabheader.cpp:268
 #, kde-format
 msgid "Enter a name for the current search to save it in the \"Searches\" view"
 msgstr ""
 "Saisissez un nom pour la recherche actuelle afin de l'enregistrer dans la "
 "vue « Recherches »"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:294
+#: core/utilities/searchwindow/searchtabheader.cpp:273
 #, kde-format
 msgid "Save current search to a new virtual Album"
 msgstr "Enregistrer la recherche actuelle dans un nouvel album virtuel"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:295
+#: core/utilities/searchwindow/searchtabheader.cpp:274
 #, kde-format
 msgid ""
 "If you press this button, the current search will be saved to a new virtual "
@@ -63386,28 +63395,28 @@ msgstr ""
 "Si vous cliquez sur ce bouton, la recherche actuelle est enregistrée dans un "
 "nouvel album virtuel à l'aide du nom défini sur le côté gauche."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:310
-#: core/utilities/searchwindow/searchtabheader.cpp:337
+#: core/utilities/searchwindow/searchtabheader.cpp:289
+#: core/utilities/searchwindow/searchtabheader.cpp:316
 #, kde-format
 msgid "Edit Stored Search"
 msgstr "Modifier une recherche enregistrée"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:352
+#: core/utilities/searchwindow/searchtabheader.cpp:331
 #, kde-format
 msgid "Edit..."
 msgstr "Modifier…"
 
-#: core/utilities/searchwindow/searchview.cpp:502
+#: core/utilities/searchwindow/searchview.cpp:495
 #, kde-format
 msgid "Add Search Group"
 msgstr "Ajouter un groupe de recherche"
 
-#: core/utilities/searchwindow/searchview.cpp:531
+#: core/utilities/searchwindow/searchview.cpp:524
 #, kde-format
 msgid "Try"
 msgstr "Essayer"
 
-#: core/utilities/searchwindow/searchwindow.cpp:88
+#: core/utilities/searchwindow/searchwindow.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"

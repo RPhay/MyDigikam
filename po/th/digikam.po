@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 01:36+0000\n"
+"POT-Creation-Date: 2024-03-25 01:59+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -3393,7 +3393,7 @@ msgstr "ส่วนที่เลือก"
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:888
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
@@ -6199,7 +6199,7 @@ msgid ""
 "label metadata values to images.</para>"
 msgstr "เครื่องมือสำหรับเปลี่ยนแปลงเป็นภาพขาวดำ"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -6211,32 +6211,32 @@ msgid ""
 "contents and store the results in the database.</p>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
 #: core/utilities/maintenance/maintenancedlg.cpp:191
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Selection model: "
 msgstr "ปลายทาง:"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
 #: core/utilities/maintenance/maintenancedlg.cpp:196
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
 #: core/utilities/maintenance/maintenancedlg.cpp:197
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
 #: core/utilities/maintenance/maintenancedlg.cpp:198
 #, kde-format
 msgid "ResNet50"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -6259,6 +6259,14 @@ msgid ""
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
+#: core/utilities/maintenance/maintenancedlg.cpp:212
+#, fuzzy, kde-format
+#| msgid "Rating equal to %1."
+msgctxt "@label"
+msgid "Translate Tags to:"
+msgstr "ระดับความชื่นชอบเท่ากับ %1"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, fuzzy, kde-format
@@ -6511,42 +6519,42 @@ msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr "เครื่องมือสำหรับเปลี่ยนแปลงเป็นภาพขาวดำ"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:107
+#: core/dplugins/bqm/metadata/translate/translate.cpp:103
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "ชื่อ"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:108
+#: core/dplugins/bqm/metadata/translate/translate.cpp:104
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "คำบรรยายภาพ"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:109
+#: core/dplugins/bqm/metadata/translate/translate.cpp:105
 #, fuzzy, kde-format
 #| msgid "Copyright"
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "สงวนลิขสิทธิ์"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:110
+#: core/dplugins/bqm/metadata/translate/translate.cpp:106
 #, fuzzy, kde-format
 #| msgid "Right Usage Terms:"
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "เงื่อนไขการใช้สิทธิ์:"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:113
+#: core/dplugins/bqm/metadata/translate/translate.cpp:109
 #, fuzzy, kde-format
 #| msgid "Rating equal to %1."
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "ระดับความชื่นชอบเท่ากับ %1"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:151
+#: core/dplugins/bqm/metadata/translate/translate.cpp:147
 #, fuzzy, kde-format
 #| msgid "Hungarian translations"
 msgctxt "@label"
@@ -9051,7 +9059,7 @@ msgstr "ใช้ระบบการจัดการสีสำหรับ
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
-#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Settings..."
 msgstr "ตั้งค่าต่าง ๆ ..."
@@ -11304,7 +11312,7 @@ msgstr "พลิกด้านแนวนอน"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:653
+#: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
 msgstr ""
@@ -26772,7 +26780,7 @@ msgstr "นี่เป็นเส้นโค้งที่ใช้ในก
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
 #: core/libs/tags/widgets/tageditdlg.cpp:183
-#: core/utilities/searchwindow/searchview.cpp:510
+#: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
 msgstr "ตั้งค่าใหม่"
@@ -26900,7 +26908,7 @@ msgid ""
 msgstr "คลังภาพนี้ไม่มีให้เลือกใช้งานแล้วในปัจจุบัน"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:286
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:144
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
 msgctxt "@title:window"
@@ -26915,7 +26923,7 @@ msgid "Rename Album Root (%1)"
 msgstr "เปลี่ยนชื่ออัลบั้ม (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:145
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
 msgstr "ป้อนชื่ออัลบั้มใหม่:"
@@ -26928,7 +26936,7 @@ msgstr "ตรวจค้นอัลบั้ม"
 #: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/models/albummodel_search.cpp:25
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:77
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:72
 #, kde-format
 msgid "Searches"
 msgstr "การค้นหา"
@@ -27110,8 +27118,8 @@ msgstr ""
 "หรือจะละทิ้งแฟ้มฐานข้อมูลเก่า แล้วเริ่มด้วยฐานข้อมูลใหม่แทน ?</p> "
 
 #: core/libs/album/manager/albummanager_database.cpp:472
-#: core/libs/album/manager/albummanager_database.cpp:540
-#: core/libs/album/manager/albummanager_database.cpp:562
+#: core/libs/album/manager/albummanager_database.cpp:539
+#: core/libs/album/manager/albummanager_database.cpp:561
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgctxt "@action:button"
@@ -27119,26 +27127,26 @@ msgid "Upgrade Database"
 msgstr "ปรับปรุงฐานข้อมูล"
 
 #: core/libs/album/manager/albummanager_database.cpp:474
-#: core/libs/album/manager/albummanager_database.cpp:542
-#: core/libs/album/manager/albummanager_database.cpp:564
-#: core/libs/album/manager/albummanager_database.cpp:612
+#: core/libs/album/manager/albummanager_database.cpp:541
+#: core/libs/album/manager/albummanager_database.cpp:563
+#: core/libs/album/manager/albummanager_database.cpp:611
 #, fuzzy, kde-format
 #| msgid "Create New Database"
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "สร้างฐานข้อมูลใหม่"
 
-#: core/libs/album/manager/albummanager_database.cpp:531
-#: core/libs/album/manager/albummanager_database.cpp:554
-#: core/libs/album/manager/albummanager_database.cpp:604
-#: core/libs/album/manager/albummanager_database.cpp:636
+#: core/libs/album/manager/albummanager_database.cpp:530
+#: core/libs/album/manager/albummanager_database.cpp:553
+#: core/libs/album/manager/albummanager_database.cpp:603
+#: core/libs/album/manager/albummanager_database.cpp:635
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "โฟลเดอร์ใหม่สำหรับเก็บฐานข้อมูล"
 
-#: core/libs/album/manager/albummanager_database.cpp:532
+#: core/libs/album/manager/albummanager_database.cpp:531
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27152,16 +27160,16 @@ msgstr ""
 "<p>คุณต้องการจะทำการปรับรุ่นแฟ้มฐานข้อมูลเก่า, เริ่มใช้งานฐานข้อมูลใหม่ "
 "หรือจะคัดลอกฐานข้อมูลปัจจุบันไปยังตำแหน่งนี้ แล้วทำการใช้งานมันต่อไป ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:544
-#: core/libs/album/manager/albummanager_database.cpp:614
-#: core/libs/album/manager/albummanager_database.cpp:645
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:613
+#: core/libs/album/manager/albummanager_database.cpp:644
 #, fuzzy, kde-format
 #| msgid "Copy Current Database"
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "คัดลอกฐานข้อมูลปัจจุบัน"
 
-#: core/libs/album/manager/albummanager_database.cpp:555
+#: core/libs/album/manager/albummanager_database.cpp:554
 #, fuzzy, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27174,7 +27182,7 @@ msgstr ""
 "<p>คุณต้องการจะทำการปรับรุ่นแฟ้มฐานข้อมูลเก่า, เริ่มใช้งานฐานข้อมูลใหม่ "
 "หรือจะคัดลอกฐานข้อมูลปัจจุบันไปยังตำแหน่งนี้ แล้วทำการใช้งานมันต่อไป ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:590
+#: core/libs/album/manager/albummanager_database.cpp:589
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27183,7 +27191,7 @@ msgstr ""
 "ล้มเหลวในการคัดลอกฐานข้อมูลเก่าแฟ้ม (\"%1\") ไปยังตำแหน่งใหม่ (\"%2\") "
 "กำลังพยายามทำการปรับรุ่นฐานข้อมูลเก่า"
 
-#: core/libs/album/manager/albummanager_database.cpp:605
+#: core/libs/album/manager/albummanager_database.cpp:604
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -27194,7 +27202,7 @@ msgstr ""
 "p><p>คุณต้องการจะคัดลอกฐานข้อมูลปัจจุบันไปยังตำแหน่งใหม่ และทำการใช้งานมันต่อไป "
 "หรือจะเริ่มโดยใช้ฐานข้อมูลตัวใหม่ ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:637
+#: core/libs/album/manager/albummanager_database.cpp:636
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27207,14 +27215,14 @@ msgstr ""
 "p><p>คุณต้องการจะใช้แฟ้มที่มีอยู่ก่อนแล้วเป็นฐานข้อมูลใหม่ หรือจะลบมันก่อน "
 "แล้วคัดลอกฐานข้อมูลปัจจุบันไปยังตำแหน่งใหม่แทน ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:647
+#: core/libs/album/manager/albummanager_database.cpp:646
 #, fuzzy, kde-format
 #| msgid "Use Existing File"
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "ใช้แฟ้มที่มีอยู่แล้ว"
 
-#: core/libs/album/manager/albummanager_database.cpp:702
+#: core/libs/album/manager/albummanager_database.cpp:701
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -27223,7 +27231,7 @@ msgstr ""
 "ล้มเหลวในการสำรองข้อมูลแฟ้มฐานข้อมูลที่มีอยู่แล้ว (\"%1\") "
 "จึงทำการปฏิเสธการแทนที่แฟ้มโดยไม่มีการสำรองข้อมูล และจะใช้งานแฟ้มที่มีอยู่แล้วแทน"
 
-#: core/libs/album/manager/albummanager_database.cpp:720
+#: core/libs/album/manager/albummanager_database.cpp:719
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27232,12 +27240,12 @@ msgstr ""
 "ล้มเหลวในการคัดลอกฐานข้อมูลเก่าแฟ้ม (\"%1\") ไปยังตำแหน่งใหม่ (\"%2\") "
 "กำลังเริ่มโดยใช้ฐานข้อมูลว่าง ๆ "
 
-#: core/libs/album/manager/albummanager_database.cpp:743
+#: core/libs/album/manager/albummanager_database.cpp:742
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:759
+#: core/libs/album/manager/albummanager_database.cpp:758
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@action:button"
@@ -42713,7 +42721,7 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:231
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
 msgstr "เครื่องมือแก้ไขภาพ"
@@ -49646,14 +49654,14 @@ msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "เลือกรหัสภาษาของเนื้อหาได้ที่นี่"
 
-#: core/libs/widgets/text/localizeselector.cpp:262
+#: core/libs/widgets/text/localizeselector.cpp:268
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "เอาป้ายกำกับนี้ออก"
 
-#: core/libs/widgets/text/localizeselector.cpp:263
+#: core/libs/widgets/text/localizeselector.cpp:269
 #, fuzzy, kde-format
 #| msgid "Clear List"
 msgctxt "@action"
@@ -52743,78 +52751,78 @@ msgstr "สร้างป้ายกำกับจากสมุดที่
 msgid "No address book entries found"
 msgstr "ไม่พบรายการใด ๆ ในสมุดที่อยู่"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:234
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, fuzzy, kde-format
 msgid "Applying face changes"
 msgstr "ต้องการจะปรับใช้การเปลี่ยนแปลงหรือไม่ ?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:591
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "ปรับแต่ง"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:193
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:218
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "เ&อาออก"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:219
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "เอาป้ายกำกับนี้ออก"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:530
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:576
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@action"
 msgid "Ignore"
 msgstr "โพรไฟล์ของจอภาพ:"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:577
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "กำหนดให้ใช้ป้ายกำกับนี้"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:609
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "เพิ่มป้ายกำกับใหม่..."
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:614
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -54942,8 +54950,8 @@ msgid "Show Non-Geolocated Items"
 msgstr "ค้นหาภาพซ้ำ"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:541
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:112
-#: core/utilities/searchwindow/searchtabheader.cpp:582
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:109
+#: core/utilities/searchwindow/searchtabheader.cpp:561
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -54953,8 +54961,8 @@ msgstr ""
 "โปรดตั้งชื่อการค้นหาใหม่:"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:116
-#: core/utilities/searchwindow/searchtabheader.cpp:586
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:113
+#: core/utilities/searchwindow/searchtabheader.cpp:565
 #, fuzzy, kde-format
 #| msgid "Name exists"
 msgctxt "@title:window"
@@ -61783,7 +61791,7 @@ msgstr "พาเนลด้านซ้า&ย"
 msgid "&Right Panel"
 msgstr "พาเนลด้านข&วา"
 
-#: core/utilities/maintenance/autotagsassignment.cpp:99
+#: core/utilities/maintenance/autotagsassignment.cpp:102
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Autotags Assignment"
@@ -62083,7 +62091,7 @@ msgid "Clean all and re-assign"
 msgstr ""
 
 #: core/utilities/maintenance/maintenancedlg.cpp:185
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:229
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr ""
@@ -62121,56 +62129,56 @@ msgid ""
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:212
+#: core/utilities/maintenance/maintenancedlg.cpp:215
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Auto-tags Assignment"
 msgstr "ปรับแก้อัตโนมัติ"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:223
 #, fuzzy, kde-format
 msgid "Scan Mode: "
 msgstr "รุ่น: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, fuzzy, kde-format
 msgid "Sync Direction: "
 msgstr "ปรับแก้ค่าสี HSL ให้ถูกต้อง"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:242
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, fuzzy, kde-format
 msgid "From database to image metadata"
 msgstr "กำลังทำการปรับปรุงฐานข้อมูลจากข้อมูลกำกับของภาพ โปรดรอสักครู่..."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:243
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, fuzzy, kde-format
 msgid "From image metadata to database"
 msgstr "กำลังปรับเทียบข้อมูลกำกับภาพโดยใช้ข้อมูลจากฐานข้อมูล โปรดรอสักครู่..."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:246
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:254
 #, fuzzy, kde-format
 msgid "Sync Metadata and Database"
 msgstr "กำลังปรับเทียบข้อมูลกำกับภาพโดยใช้ข้อมูลจากฐานข้อมูล โปรดรอสักครู่..."
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:395
+#: core/utilities/maintenance/maintenancemngr.cpp:396
 #, fuzzy, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:396
+#: core/utilities/maintenance/maintenancemngr.cpp:397
 #, fuzzy, kde-format
 msgid "digiKam Maintenance"
 msgstr "มุมหลัก:"
@@ -62912,66 +62920,66 @@ msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgstr "คุณแน่ใจหรือว่า ต้องการจะลบการค้นหา \"%1\" ที่เลือกไว้นี้ ?"
 
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:62
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:57
 #, kde-format
 msgid "Rename..."
 msgstr "เปลี่ยนชื่อ..."
 
-#: core/utilities/searchwindow/ratingsearchutilities.cpp:207
+#: core/utilities/searchwindow/ratingsearchutilities.cpp:201
 #, kde-format
 msgid "(No Value Selected)"
 msgstr "(ยังไม่มีการเลือกค่าใด ๆ)"
 
-#: core/utilities/searchwindow/ratingsearchutilities.cpp:212
+#: core/utilities/searchwindow/ratingsearchutilities.cpp:206
 #, kde-format
 msgid "No Rating assigned"
 msgstr "ยังไม่มีการจัดระดับความชื่นชอบ"
 
-#: core/utilities/searchwindow/searchfields.cpp:76
+#: core/utilities/searchwindow/searchfields.cpp:74
 #, kde-format
 msgid "Reset contents"
 msgstr "ตั้งค่าเนื้อหาใหม่"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:41
+#: core/utilities/searchwindow/searchfields_album.cpp:36
 #, fuzzy, kde-format
 #| msgid "Any Album"
 msgctxt "@item"
 msgid "Any Album"
 msgstr "อัลบั้มใด ๆ"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:53
+#: core/utilities/searchwindow/searchfields_album.cpp:48
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In All"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_album.cpp:54
+#: core/utilities/searchwindow/searchfields_album.cpp:49
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In One of"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_album.cpp:55
+#: core/utilities/searchwindow/searchfields_album.cpp:50
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In Tree"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_album.cpp:59
+#: core/utilities/searchwindow/searchfields_album.cpp:54
 #, fuzzy, kde-format
 #| msgid "Any Tag"
 msgctxt "@item"
 msgid "Any Tag"
 msgstr "ป้ายกำกับใด ๆ"
 
-#: core/utilities/searchwindow/searchfields_choice.cpp:37
+#: core/utilities/searchwindow/searchfields_choice.cpp:25
 #, fuzzy, kde-format
 #| msgid "Any"
 msgctxt "@option: default kind of search options combined"
 msgid "Any"
 msgstr "ค่าใด ๆ"
 
-#: core/utilities/searchwindow/searchfields_choice.cpp:123
+#: core/utilities/searchwindow/searchfields_choice.cpp:111
 #, fuzzy, kde-format
 #| msgid "Any of: %1"
 msgctxt "@label: search field choice combo-box description"
@@ -63797,18 +63805,18 @@ msgstr "คืนค่าเป็นรูปภาพที่มีป้า
 msgid "No Face Regions"
 msgstr "กลับค่าการเรียงลำดับ"
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:34
+#: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, kde-format
 msgid "Day:"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:38
+#: core/utilities/searchwindow/searchfields_monthday.cpp:35
 #, fuzzy, kde-format
 #| msgid "Month"
 msgid "Every Month"
 msgstr "เดือน"
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:45
+#: core/utilities/searchwindow/searchfields_monthday.cpp:42
 #, kde-format
 msgid "Every Day"
 msgstr ""
@@ -63911,102 +63919,102 @@ msgstr "ลบกลุ่ม"
 msgid "Hide Options"
 msgstr "ซ่อนตัวเลือกต่าง ๆ <<"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:74
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:71
 #, fuzzy, kde-format
 #| msgid "Delete Search?"
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "ลบการค้นหา ?"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:75
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:72
 #, kde-format
 msgid "Are you sure you want to delete the selected search \"%1\"?"
 msgstr "คุณแน่ใจหรือว่า ต้องการจะลบการค้นหา \"%1\" ที่เลือกไว้นี้ ?"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:67
+#: core/utilities/searchwindow/searchtabheader.cpp:66
 #, kde-format
 msgid "(Advanced Search)"
 msgstr "(การค้นหาอย่างละเอียด)"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:104
+#: core/utilities/searchwindow/searchtabheader.cpp:103
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Autostart Search"
 msgstr "การค้นหาล่าสุด"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:262
+#: core/utilities/searchwindow/searchtabheader.cpp:241
 #, kde-format
 msgid "New Search"
 msgstr "การค้นหาใหม่"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:264
+#: core/utilities/searchwindow/searchtabheader.cpp:243
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgctxt "@label: quick search properties"
 msgid "Search:"
 msgstr "ค้นหา:"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:267
+#: core/utilities/searchwindow/searchtabheader.cpp:246
 #, kde-format
 msgid "Enter keywords here..."
 msgstr "ป้อนคำค้นที่นี่..."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:269
+#: core/utilities/searchwindow/searchtabheader.cpp:248
 #, kde-format
 msgid "New Advanced Search..."
 msgstr "สร้างการค้นหาอย่างละเอียดใหม่..."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:270
+#: core/utilities/searchwindow/searchtabheader.cpp:249
 #, fuzzy, kde-format
 #| msgid "Current Search"
 msgid "Edit Current Search..."
 msgstr "การค้นหา ตัวปัจจุบัน"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:285
+#: core/utilities/searchwindow/searchtabheader.cpp:264
 #, kde-format
 msgid "Save Current Search"
 msgstr "จัดเก็บการค้นหาปัจจุบัน"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:289
+#: core/utilities/searchwindow/searchtabheader.cpp:268
 #, kde-format
 msgid "Enter a name for the current search to save it in the \"Searches\" view"
 msgstr "ป้อนชื่อที่จะใช้จัดเก็บการค้นหาปัจจุบัน ไว้ในมุมมอง \"การค้นหา\""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:294
+#: core/utilities/searchwindow/searchtabheader.cpp:273
 #, kde-format
 msgid "Save current search to a new virtual Album"
 msgstr "จัดเก็บการค้นหาปัจจุบันไปเป็นอัลบั้มเสมือนตัวใหม่"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:295
+#: core/utilities/searchwindow/searchtabheader.cpp:274
 #, kde-format
 msgid ""
 "If you press this button, the current search will be saved to a new virtual "
 "Search Album using the name set on the left side."
 msgstr "หากคุณกดที่ปุ่มนี้ การค้นหาตัวปัจจุบันจะถูกบันทึกเป็นอัลบั้มเสมือน โดยใช้ชื่อที่ตั้งไว้ทางด้านซ้ายนี้"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:310
-#: core/utilities/searchwindow/searchtabheader.cpp:337
+#: core/utilities/searchwindow/searchtabheader.cpp:289
+#: core/utilities/searchwindow/searchtabheader.cpp:316
 #, kde-format
 msgid "Edit Stored Search"
 msgstr "แก้ไขการค้นหาที่จัดเก็บไว้"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:352
+#: core/utilities/searchwindow/searchtabheader.cpp:331
 #, kde-format
 msgid "Edit..."
 msgstr "แก้ไขภาพ..."
 
-#: core/utilities/searchwindow/searchview.cpp:502
+#: core/utilities/searchwindow/searchview.cpp:495
 #, kde-format
 msgid "Add Search Group"
 msgstr "เพิ่มกลุ่มการค้นหา"
 
-#: core/utilities/searchwindow/searchview.cpp:531
+#: core/utilities/searchwindow/searchview.cpp:524
 #, kde-format
 msgid "Try"
 msgstr "ทดลอง"
 
-#: core/utilities/searchwindow/searchwindow.cpp:88
+#: core/utilities/searchwindow/searchwindow.cpp:81
 #, fuzzy, kde-format
 #| msgid "Advanced Search"
 msgctxt "@title:window"

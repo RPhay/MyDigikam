@@ -17,7 +17,7 @@ BUGFIXES:
 008 ==> 484341 - Translate auto tags in non-english languages.
 009 ==> 467968 - Advanced slideshow using opengl re-displays some jpegs, sometimes crashes.
 010 ==> 484350 - Failed to load image.
-011 ==> 
+011 ==> 484400 - digiKam doesn't find DB anymore after change of settings.
 012 ==> 
 013 ==> 
 014 ==> 

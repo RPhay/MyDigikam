@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 01:36+0000\n"
+"POT-Creation-Date: 2024-03-25 01:59+0000\n"
 "PO-Revision-Date: 2024-03-17 20:45\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3185,7 +3185,7 @@ msgstr "选中内容"
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:888
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
@@ -5949,7 +5949,7 @@ msgid ""
 msgstr ""
 "<para>用于将评分、颜色、挑选标记的元数据值分配给图像的批处理工具。</para>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5965,31 +5965,31 @@ msgstr ""
 "定照片主体。选定的神经网络模型会在后台自动生成一系列描述了图像内容的标签，并"
 "将它们存储到数据库中。</p>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
 #: core/utilities/maintenance/maintenancedlg.cpp:191
 #, kde-format
 msgid "Selection model: "
 msgstr "选择模型："
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
 #: core/utilities/maintenance/maintenancedlg.cpp:196
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr "YOLOv5 Nano"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
 #: core/utilities/maintenance/maintenancedlg.cpp:197
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr "YOLOv5 XLarge"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
 #: core/utilities/maintenance/maintenancedlg.cpp:198
 #, kde-format
 msgid "ResNet50"
 msgstr "ResNet50"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -6022,6 +6022,15 @@ msgstr ""
 "极大的神经网络，而不会遭遇梯度消失问题。和 YOLO 模型不同，ResNet50 主要着眼于"
 "图像分类，它并不提供对象定位功能。它能够识别大于 1000 类的大型数据集，涵盖了"
 "类型广泛的对象、动物和场景。</p>"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
+#: core/utilities/maintenance/maintenancedlg.cpp:212
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Translate to:"
+msgctxt "@label"
+msgid "Translate Tags to:"
+msgstr "翻译为："
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -6258,37 +6267,37 @@ msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr "<para>用于调整图像的日期和时间标记的批处理工具。</para>"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:107
+#: core/dplugins/bqm/metadata/translate/translate.cpp:103
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "标题"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:108
+#: core/dplugins/bqm/metadata/translate/translate.cpp:104
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "说明"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:109
+#: core/dplugins/bqm/metadata/translate/translate.cpp:105
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "版权信息"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:110
+#: core/dplugins/bqm/metadata/translate/translate.cpp:106
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "使用条款"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:113
+#: core/dplugins/bqm/metadata/translate/translate.cpp:109
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "翻译为："
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:151
+#: core/dplugins/bqm/metadata/translate/translate.cpp:147
 #, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
@@ -8695,7 +8704,7 @@ msgstr "对打印流程进行色彩管理"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
-#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Settings..."
 msgstr "设置..."
@@ -10875,7 +10884,7 @@ msgstr "双地图 - 顶部和底部"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:653
+#: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
 msgstr "确定"
@@ -25700,7 +25709,7 @@ msgstr "在此调整图像亮度 (HSY' 光度) 曲线"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
 #: core/libs/tags/widgets/tageditdlg.cpp:183
-#: core/utilities/searchwindow/searchview.cpp:510
+#: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
 msgstr "重置"
@@ -25834,7 +25843,7 @@ msgid ""
 msgstr "<p>您想要删除的相册包含文件。</p><p>您想要继续吗？</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:286
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:144
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
@@ -25847,7 +25856,7 @@ msgid "Rename Album Root (%1)"
 msgstr "重命名相册根 (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:145
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
 msgstr "输入新相册名称："
@@ -25860,7 +25869,7 @@ msgstr "正在扫描相册"
 #: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/models/albummodel_search.cpp:25
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:77
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:72
 #, kde-format
 msgid "Searches"
 msgstr "搜索记录"
@@ -26019,32 +26028,32 @@ msgstr ""
 "还是忽略它并新建一个数据库？</p> "
 
 #: core/libs/album/manager/albummanager_database.cpp:472
-#: core/libs/album/manager/albummanager_database.cpp:540
-#: core/libs/album/manager/albummanager_database.cpp:562
+#: core/libs/album/manager/albummanager_database.cpp:539
+#: core/libs/album/manager/albummanager_database.cpp:561
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "升级数据库"
 
 #: core/libs/album/manager/albummanager_database.cpp:474
-#: core/libs/album/manager/albummanager_database.cpp:542
-#: core/libs/album/manager/albummanager_database.cpp:564
-#: core/libs/album/manager/albummanager_database.cpp:612
+#: core/libs/album/manager/albummanager_database.cpp:541
+#: core/libs/album/manager/albummanager_database.cpp:563
+#: core/libs/album/manager/albummanager_database.cpp:611
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "新建数据库"
 
-#: core/libs/album/manager/albummanager_database.cpp:531
-#: core/libs/album/manager/albummanager_database.cpp:554
-#: core/libs/album/manager/albummanager_database.cpp:604
-#: core/libs/album/manager/albummanager_database.cpp:636
+#: core/libs/album/manager/albummanager_database.cpp:530
+#: core/libs/album/manager/albummanager_database.cpp:553
+#: core/libs/album/manager/albummanager_database.cpp:603
+#: core/libs/album/manager/albummanager_database.cpp:635
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "新建数据库文件夹"
 
-#: core/libs/album/manager/albummanager_database.cpp:532
+#: core/libs/album/manager/albummanager_database.cpp:531
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26057,15 +26066,15 @@ msgstr ""
 "的数据库文件。</p> <p>您想要升级该旧数据库，新建一个数据库，还是复制当前数据"
 "库到此位置并继续使用它？</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:544
-#: core/libs/album/manager/albummanager_database.cpp:614
-#: core/libs/album/manager/albummanager_database.cpp:645
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:613
+#: core/libs/album/manager/albummanager_database.cpp:644
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "复制当前数据库"
 
-#: core/libs/album/manager/albummanager_database.cpp:555
+#: core/libs/album/manager/albummanager_database.cpp:554
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26076,14 +26085,14 @@ msgstr ""
 "<p>您已选择将“%1”文件夹作为数据库的新存储位置。在此文件夹中存在旧版 digiKam "
 "的数据库文件。</p> <p>您想要升级该旧数据库，还是新建一个数据库？</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:590
+#: core/libs/album/manager/albummanager_database.cpp:589
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Trying to upgrade old databases."
 msgstr "无法复制旧数据库文件 (“%1”) 到其新位置 (“%2”)。请尝试升级旧数据库。"
 
-#: core/libs/album/manager/albummanager_database.cpp:605
+#: core/libs/album/manager/albummanager_database.cpp:604
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -26093,7 +26102,7 @@ msgstr ""
 "<p>您已选择将“%1”文件夹作为数据库的新存储位置。</p> <p>您想要复制当前数据库到"
 "此位置并继续使用它，还是新建一个数据库？</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:637
+#: core/libs/album/manager/albummanager_database.cpp:636
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26105,13 +26114,13 @@ msgstr ""
 "</p> <p>您想要让数据库直接使用此文件，还是移除它并复制当前数据库到此位置？</"
 "p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:647
+#: core/libs/album/manager/albummanager_database.cpp:646
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "使用已有文件"
 
-#: core/libs/album/manager/albummanager_database.cpp:702
+#: core/libs/album/manager/albummanager_database.cpp:701
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -26120,7 +26129,7 @@ msgstr ""
 "无法备份已有数据库文件 (“%1”)。不能在未经备份的情况下替换该文件，将继续使用该"
 "文件。"
 
-#: core/libs/album/manager/albummanager_database.cpp:720
+#: core/libs/album/manager/albummanager_database.cpp:719
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26128,12 +26137,12 @@ msgid ""
 msgstr ""
 "无法复制旧数据库文件 (“%1”) 到其新位置 (“%2”)。将使用空数据库启动软件。"
 
-#: core/libs/album/manager/albummanager_database.cpp:743
+#: core/libs/album/manager/albummanager_database.cpp:742
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr "<p><b>请在此对话框中检查数据库设置。</b></p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:759
+#: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -41116,7 +41125,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:231
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "图像品质分类器"
@@ -47033,13 +47042,13 @@ msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "选择要通过 %1 翻译的语言"
 
-#: core/libs/widgets/text/localizeselector.cpp:262
+#: core/libs/widgets/text/localizeselector.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "删除此条目"
 
-#: core/libs/widgets/text/localizeselector.cpp:263
+#: core/libs/widgets/text/localizeselector.cpp:269
 #, kde-format
 msgctxt "@action"
 msgid "Clear List"
@@ -49962,76 +49971,76 @@ msgstr "从地址簿创建标签"
 msgid "No address book entries found"
 msgstr "未找到地址簿条目"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:234
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
 msgid "Applying face changes"
 msgstr "应用人脸更改"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:591
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "确定"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "确认所选人物显示在此处"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "确认"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:193
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:218
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "移除"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:219
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "移除此人脸区域"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "取消标记此人脸为忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:530
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "这是谁？"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:576
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:577
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "忽略这张人脸"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:609
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "标记此人脸为忽略"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:614
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -52075,8 +52084,8 @@ msgid "Show Non-Geolocated Items"
 msgstr "显示不含地理信息的项目"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:541
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:112
-#: core/utilities/searchwindow/searchtabheader.cpp:582
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:109
+#: core/utilities/searchwindow/searchtabheader.cpp:561
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -52086,8 +52095,8 @@ msgstr ""
 "请输入另一个名称："
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:116
-#: core/utilities/searchwindow/searchtabheader.cpp:586
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:113
+#: core/utilities/searchwindow/searchtabheader.cpp:565
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
@@ -58536,7 +58545,7 @@ msgstr "左视图(&L)"
 msgid "&Right Panel"
 msgstr "右视图(&R)"
 
-#: core/utilities/maintenance/autotagsassignment.cpp:99
+#: core/utilities/maintenance/autotagsassignment.cpp:102
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "自动标签分配"
@@ -58838,7 +58847,7 @@ msgid "Clean all and re-assign"
 msgstr "清理所有标签并重新分配"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:185
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:229
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "仅扫描未指定品质项目"
@@ -58888,48 +58897,48 @@ msgstr ""
 "图像分类，它并不提供对象定位功能。它能够识别大于 1000 类的大型数据集，涵盖了"
 "类型广泛的对象、动物和场景。</p>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:212
+#: core/utilities/maintenance/maintenancedlg.cpp:215
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "自动标签分配"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:223
 #, kde-format
 msgid "Scan Mode: "
 msgstr "扫描模式："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "清除所有信息并重新扫描"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, kde-format
 msgid "Sync Direction: "
 msgstr "同步方向："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:242
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, kde-format
 msgid "From database to image metadata"
 msgstr "从数据库到图像元数据"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:243
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid "From image metadata to database"
 msgstr "从图像元数据到数据库"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:246
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "打开元数据管理配置对话框："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:254
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "图像与数据库元数据同步"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:395
+#: core/utilities/maintenance/maintenancemngr.cpp:396
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -58938,7 +58947,7 @@ msgstr ""
 "所有操作已完成。\n"
 "耗时：%1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:396
+#: core/utilities/maintenance/maintenancemngr.cpp:397
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam 系统维护"
@@ -59634,63 +59643,63 @@ msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgstr "您确定要删除所选的工作流程“%1”吗？"
 
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:62
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:57
 #, kde-format
 msgid "Rename..."
 msgstr "重命名..."
 
-#: core/utilities/searchwindow/ratingsearchutilities.cpp:207
+#: core/utilities/searchwindow/ratingsearchutilities.cpp:201
 #, kde-format
 msgid "(No Value Selected)"
 msgstr "(未选中数值)"
 
-#: core/utilities/searchwindow/ratingsearchutilities.cpp:212
+#: core/utilities/searchwindow/ratingsearchutilities.cpp:206
 #, kde-format
 msgid "No Rating assigned"
 msgstr "未指定评分"
 
-#: core/utilities/searchwindow/searchfields.cpp:76
+#: core/utilities/searchwindow/searchfields.cpp:74
 #, kde-format
 msgid "Reset contents"
 msgstr "重置内容"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:41
+#: core/utilities/searchwindow/searchfields_album.cpp:36
 #, kde-format
 msgctxt "@item"
 msgid "Any Album"
 msgstr "任意相册"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:53
+#: core/utilities/searchwindow/searchfields_album.cpp:48
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In All"
 msgstr "匹配全部"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:54
+#: core/utilities/searchwindow/searchfields_album.cpp:49
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In One of"
 msgstr "匹配任一"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:55
+#: core/utilities/searchwindow/searchfields_album.cpp:50
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In Tree"
 msgstr "树形视图"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:59
+#: core/utilities/searchwindow/searchfields_album.cpp:54
 #, kde-format
 msgctxt "@item"
 msgid "Any Tag"
 msgstr "任意标签"
 
-#: core/utilities/searchwindow/searchfields_choice.cpp:37
+#: core/utilities/searchwindow/searchfields_choice.cpp:25
 #, kde-format
 msgctxt "@option: default kind of search options combined"
 msgid "Any"
 msgstr "任意"
 
-#: core/utilities/searchwindow/searchfields_choice.cpp:123
+#: core/utilities/searchwindow/searchfields_choice.cpp:111
 #, kde-format
 msgctxt "@label: search field choice combo-box description"
 msgid "Any of: %1"
@@ -60445,17 +60454,17 @@ msgstr "无人脸区域"
 msgid "No Face Regions"
 msgstr "无人脸区域"
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:34
+#: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, kde-format
 msgid "Day:"
 msgstr "日期："
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:38
+#: core/utilities/searchwindow/searchfields_monthday.cpp:35
 #, kde-format
 msgid "Every Month"
 msgstr "每月"
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:45
+#: core/utilities/searchwindow/searchfields_monthday.cpp:42
 #, kde-format
 msgid "Every Day"
 msgstr "每天"
@@ -60557,98 +60566,98 @@ msgstr "移除分组"
 msgid "Hide Options"
 msgstr "隐藏选项"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:74
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "删除搜索记录？"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:75
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:72
 #, kde-format
 msgid "Are you sure you want to delete the selected search \"%1\"?"
 msgstr "您确定要删除选中的搜索记录“%1”吗？"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:67
+#: core/utilities/searchwindow/searchtabheader.cpp:66
 #, kde-format
 msgid "(Advanced Search)"
 msgstr "(高级搜索)"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:104
+#: core/utilities/searchwindow/searchtabheader.cpp:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Autostart Search"
 msgstr "自动开始搜索"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:262
+#: core/utilities/searchwindow/searchtabheader.cpp:241
 #, kde-format
 msgid "New Search"
 msgstr "新搜索"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:264
+#: core/utilities/searchwindow/searchtabheader.cpp:243
 #, kde-format
 msgctxt "@label: quick search properties"
 msgid "Search:"
 msgstr "搜索："
 
-#: core/utilities/searchwindow/searchtabheader.cpp:267
+#: core/utilities/searchwindow/searchtabheader.cpp:246
 #, kde-format
 msgid "Enter keywords here..."
 msgstr "在此输入关键字..."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:269
+#: core/utilities/searchwindow/searchtabheader.cpp:248
 #, kde-format
 msgid "New Advanced Search..."
 msgstr "新建高级搜索..."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:270
+#: core/utilities/searchwindow/searchtabheader.cpp:249
 #, kde-format
 msgid "Edit Current Search..."
 msgstr "编辑当前搜索..."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:285
+#: core/utilities/searchwindow/searchtabheader.cpp:264
 #, kde-format
 msgid "Save Current Search"
 msgstr "保存当前搜索结果"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:289
+#: core/utilities/searchwindow/searchtabheader.cpp:268
 #, kde-format
 msgid "Enter a name for the current search to save it in the \"Searches\" view"
 msgstr "输入名称以命名当前搜索结果，用于将其保存到“搜索”视图。"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:294
+#: core/utilities/searchwindow/searchtabheader.cpp:273
 #, kde-format
 msgid "Save current search to a new virtual Album"
 msgstr "保存当前搜索结果到一个新的虚拟相册"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:295
+#: core/utilities/searchwindow/searchtabheader.cpp:274
 #, kde-format
 msgid ""
 "If you press this button, the current search will be saved to a new virtual "
 "Search Album using the name set on the left side."
 msgstr "按下此按钮后，当前搜索结果将以左侧输入的名称保存到一个新的虚拟相册。"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:310
-#: core/utilities/searchwindow/searchtabheader.cpp:337
+#: core/utilities/searchwindow/searchtabheader.cpp:289
+#: core/utilities/searchwindow/searchtabheader.cpp:316
 #, kde-format
 msgid "Edit Stored Search"
 msgstr "编辑已保存的搜索"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:352
+#: core/utilities/searchwindow/searchtabheader.cpp:331
 #, kde-format
 msgid "Edit..."
 msgstr "编辑..."
 
-#: core/utilities/searchwindow/searchview.cpp:502
+#: core/utilities/searchwindow/searchview.cpp:495
 #, kde-format
 msgid "Add Search Group"
 msgstr "添加搜索分组"
 
-#: core/utilities/searchwindow/searchview.cpp:531
+#: core/utilities/searchwindow/searchview.cpp:524
 #, kde-format
 msgid "Try"
 msgstr "试用"
 
-#: core/utilities/searchwindow/searchwindow.cpp:88
+#: core/utilities/searchwindow/searchwindow.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"

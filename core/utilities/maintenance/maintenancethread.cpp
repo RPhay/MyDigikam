@@ -142,13 +142,13 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
     ActionJobCollection collection;
 
     data->setImageIds(itemIds);
-    data->setRebuildAllFingerprints(rebuildAll);
 
     for (int i = 1 ; i <= (maximumNumberOfThreads()) ; ++i)
     {
         FingerprintsTask* const t = new FingerprintsTask();
 
         t->setMaintenanceData(data);
+        t->setRebuildAll(rebuildAll);
 
         connect(t, SIGNAL(signalFinished(QImage)),
                 this, SIGNAL(signalAdvance(QImage)));

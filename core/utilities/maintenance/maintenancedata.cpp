@@ -29,10 +29,7 @@ class Q_DECL_HIDDEN MaintenanceData::Private
 {
 public:
 
-    explicit Private()
-      : rebuildAllFingerprints(true)
-    {
-    }
+    Private() = default;
 
     QList<qlonglong> imageIdList;
     QList<int>       thumbnailIdList;
@@ -40,8 +37,6 @@ public:
     QList<ItemInfo>  imageInfoList;
     QList<Identity>  identitiesList;
     QList<qlonglong> similarityImageIdList;
-
-    bool             rebuildAllFingerprints;
 
     QRecursiveMutex  mutex;
 };
@@ -84,11 +79,6 @@ void MaintenanceData::setSimilarityImageIds(const QList<qlonglong>& ids)
 void MaintenanceData::setIdentities(const QList<Identity>& identities)
 {
     d->identitiesList = identities;
-}
-
-void MaintenanceData::setRebuildAllFingerprints(bool b)
-{
-    d->rebuildAllFingerprints = b;
 }
 
 qlonglong MaintenanceData::getImageId() const
@@ -173,11 +163,6 @@ qlonglong MaintenanceData::getSimilarityImageId() const
     }
 
     return id;
-}
-
-bool MaintenanceData::getRebuildAllFingerprints() const
-{
-    return d->rebuildAllFingerprints;
 }
 
 } // namespace Digikam

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-23 01:36+0000\n"
+"POT-Creation-Date: 2024-03-25 01:59+0000\n"
 "PO-Revision-Date: 2024-02-05 11:46+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -3258,7 +3258,7 @@ msgstr "Val"
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:888
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
@@ -6155,7 +6155,7 @@ msgstr ""
 "<para>Þetta verkfæri magnvinnslustjórans getur úthlutað einkunn, litmerki "
 "eða sérmerki í lýsigögnum á myndir.</para>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -6173,31 +6173,31 @@ msgstr ""
 "ljósmyndanna. Tauganetskerfið sem keyrir í bakgrunni mun útbúa sjálfvirkt "
 "röð merkja til að lýsa myndefninu og geyma niðurstöðurnar í gagnagrunni.</p>"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
 #: core/utilities/maintenance/maintenancedlg.cpp:191
 #, kde-format
 msgid "Selection model: "
 msgstr "Valhamur:"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
 #: core/utilities/maintenance/maintenancedlg.cpp:196
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr "YOLOv5 Nano"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
 #: core/utilities/maintenance/maintenancedlg.cpp:197
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr "YOLOv5 XLarge"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
 #: core/utilities/maintenance/maintenancedlg.cpp:198
 #, kde-format
 msgid "ResNet50"
 msgstr "ResNet50"
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -6236,6 +6236,15 @@ msgstr ""
 "fyrir flokkun mynda og kemur ekki með staðsetningu hluta. Það getur þekkt "
 "hluti úr stóru safni með meira en 1.000 flokkum, sem inniheldur breitt svið "
 "af hlutum, dýrum og aðstæðum.</p>"
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
+#: core/utilities/maintenance/maintenancedlg.cpp:212
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Translate to:"
+msgctxt "@label"
+msgid "Translate Tags to:"
+msgstr "Þýða yfir á:"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -6488,37 +6497,37 @@ msgstr ""
 "<para>Þetta verkfæri magnvinnslustjórans getur aðlagað tímasetningar í "
 "myndum.</para>"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:107
+#: core/dplugins/bqm/metadata/translate/translate.cpp:103
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "Titill"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:108
+#: core/dplugins/bqm/metadata/translate/translate.cpp:104
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr "Skýringatexti"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:109
+#: core/dplugins/bqm/metadata/translate/translate.cpp:105
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr "Höfundarréttur"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:110
+#: core/dplugins/bqm/metadata/translate/translate.cpp:106
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr "Notkunarskilmálar"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:113
+#: core/dplugins/bqm/metadata/translate/translate.cpp:109
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
 msgstr "Þýða yfir á:"
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:151
+#: core/dplugins/bqm/metadata/translate/translate.cpp:147
 #, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
@@ -9031,7 +9040,7 @@ msgstr "Nota litastýringu við prentun"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
-#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Settings..."
 msgstr "Stillingar..."
@@ -11297,7 +11306,7 @@ msgstr "Tvö landakort - efst og neðst"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:653
+#: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
 msgstr "Í lagi"
@@ -26498,7 +26507,7 @@ msgstr "Settu hér breytingar á birtustigi myndar"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
 #: core/libs/tags/widgets/tageditdlg.cpp:183
-#: core/utilities/searchwindow/searchview.cpp:510
+#: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
 msgstr "Frumstilla"
@@ -26638,7 +26647,7 @@ msgstr ""
 "<p>Mappan sem þú ætlar að eyða er ekki tóm.</p><p>Viltu halda áfram?</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:286
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:144
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
@@ -26651,7 +26660,7 @@ msgid "Rename Album Root (%1)"
 msgstr "Endurnefna grunnalbúm (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:145
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
 msgstr "Settu inn nafn á albúminu:"
@@ -26664,7 +26673,7 @@ msgstr "Leita að albúmum"
 #: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/models/albummodel_search.cpp:25
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:77
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:72
 #, kde-format
 msgid "Searches"
 msgstr "Leitir"
@@ -26837,32 +26846,32 @@ msgstr ""
 "\"%2\" - eða hunsa gömlu skrána og byrja með nýjum gagnagrunni?</p> "
 
 #: core/libs/album/manager/albummanager_database.cpp:472
-#: core/libs/album/manager/albummanager_database.cpp:540
-#: core/libs/album/manager/albummanager_database.cpp:562
+#: core/libs/album/manager/albummanager_database.cpp:539
+#: core/libs/album/manager/albummanager_database.cpp:561
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Uppfæra gagnagrunn"
 
 #: core/libs/album/manager/albummanager_database.cpp:474
-#: core/libs/album/manager/albummanager_database.cpp:542
-#: core/libs/album/manager/albummanager_database.cpp:564
-#: core/libs/album/manager/albummanager_database.cpp:612
+#: core/libs/album/manager/albummanager_database.cpp:541
+#: core/libs/album/manager/albummanager_database.cpp:563
+#: core/libs/album/manager/albummanager_database.cpp:611
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Búa til nýjan gagnagrunn"
 
-#: core/libs/album/manager/albummanager_database.cpp:531
-#: core/libs/album/manager/albummanager_database.cpp:554
-#: core/libs/album/manager/albummanager_database.cpp:604
-#: core/libs/album/manager/albummanager_database.cpp:636
+#: core/libs/album/manager/albummanager_database.cpp:530
+#: core/libs/album/manager/albummanager_database.cpp:553
+#: core/libs/album/manager/albummanager_database.cpp:603
+#: core/libs/album/manager/albummanager_database.cpp:635
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Ný gagnagrunnsmappa"
 
-#: core/libs/album/manager/albummanager_database.cpp:532
+#: core/libs/album/manager/albummanager_database.cpp:531
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26876,15 +26885,15 @@ msgstr ""
 "<p>Viltu uppfæra gömlu gagnagrunnsskrána, byrja með nýjum gagnagrunni, eða "
 "afrita núgildandi gagnagrunn á þennan stað og halda áfram að nota hann?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:544
-#: core/libs/album/manager/albummanager_database.cpp:614
-#: core/libs/album/manager/albummanager_database.cpp:645
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:613
+#: core/libs/album/manager/albummanager_database.cpp:644
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Afrita núverandi gagnagrunn"
 
-#: core/libs/album/manager/albummanager_database.cpp:555
+#: core/libs/album/manager/albummanager_database.cpp:554
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26897,7 +26906,7 @@ msgstr ""
 "<p>Viltu uppfæra gömlu gagnagrunnsskrána eða byrja með nýjum gagnagrunni?</"
 "p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:590
+#: core/libs/album/manager/albummanager_database.cpp:589
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26906,7 +26915,7 @@ msgstr ""
 "Mistókst að afrita eldri gagnagrunnsskrána (\"%1\") á nýja staðinn (\"%2\"). "
 "Reyni að uppfæra eldri gagnagrunna."
 
-#: core/libs/album/manager/albummanager_database.cpp:605
+#: core/libs/album/manager/albummanager_database.cpp:604
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -26917,7 +26926,7 @@ msgstr ""
 "</p> <p>Viltu afrita núgildandi gagnagrunn á þennan stað og halda áfram að "
 "nota hann, eða byrja með nýjum gagnagrunni?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:637
+#: core/libs/album/manager/albummanager_database.cpp:636
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26930,13 +26939,13 @@ msgstr ""
 "nota þessa skrá sem nýjan gagnagrunn, eða fjarlægja hana og afrita "
 "núgildandi gagnagrunn á þennan stað?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:647
+#: core/libs/album/manager/albummanager_database.cpp:646
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Nota tiltæka skrá"
 
-#: core/libs/album/manager/albummanager_database.cpp:702
+#: core/libs/album/manager/albummanager_database.cpp:701
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -26945,7 +26954,7 @@ msgstr ""
 "Mistókst að öryggisafrita fyrirliggjandi gagnagrunnsskrána (\"%1\"). Neita "
 "að skipta út skránni án öryggisafrits, nota skrána sem þegar er til staðar."
 
-#: core/libs/album/manager/albummanager_database.cpp:720
+#: core/libs/album/manager/albummanager_database.cpp:719
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26954,12 +26963,12 @@ msgstr ""
 "Mistókst að afrita gömlu gagnagrunnsskrána (\"%1\") á nýju staðsetninguna "
 "(\"%2\"). Ræsi með auðum gagnagrunni."
 
-#: core/libs/album/manager/albummanager_database.cpp:743
+#: core/libs/album/manager/albummanager_database.cpp:742
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr "<p><b>Athugaðu stillingar gagnagrunnsins í þessum glugga.</b></p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:759
+#: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -42437,7 +42446,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:231
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Myndgæðaröðun"
@@ -48364,13 +48373,13 @@ msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "Veldu tungumál til að þýða %1 yfir á"
 
-#: core/libs/widgets/text/localizeselector.cpp:262
+#: core/libs/widgets/text/localizeselector.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "Fjarlægja þessa færslu"
 
-#: core/libs/widgets/text/localizeselector.cpp:263
+#: core/libs/widgets/text/localizeselector.cpp:269
 #, kde-format
 msgctxt "@action"
 msgid "Clear List"
@@ -51382,76 +51391,76 @@ msgstr "Gera merki úr vistfangaskrá"
 msgid "No address book entries found"
 msgstr "Engar færslur fundust í nafnaskrá"
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:234
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
 msgid "Applying face changes"
 msgstr "Virkja breytingar á andlitaupplýsingum"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:591
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr "Í lagi"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr "Staðfestu að valinn einstaklingur sé birtur hér"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr "Staðfesta"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:193
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:218
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr "Fjarlægja"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:219
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr "Fjarlægja þetta andlitssvæði"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr "Taka Hunsað-merki af þessu andliti"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:530
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr "Hver er þetta?"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:576
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Hunsa"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:577
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr "Hunsa þetta andlit"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:609
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr "Merkja þetta andlit sem hunsað"
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:614
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -53576,8 +53585,8 @@ msgid "Show Non-Geolocated Items"
 msgstr "Birta óhnattstaðsett atriði"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:541
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:112
-#: core/utilities/searchwindow/searchtabheader.cpp:582
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:109
+#: core/utilities/searchwindow/searchtabheader.cpp:561
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -53587,8 +53596,8 @@ msgstr ""
 "Veldu eitthvað annað nafn:"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:116
-#: core/utilities/searchwindow/searchtabheader.cpp:586
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:113
+#: core/utilities/searchwindow/searchtabheader.cpp:565
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
@@ -60157,7 +60166,7 @@ msgstr "&Vinstra spjald"
 msgid "&Right Panel"
 msgstr "Hæg&ra spjald"
 
-#: core/utilities/maintenance/autotagsassignment.cpp:99
+#: core/utilities/maintenance/autotagsassignment.cpp:102
 #, kde-format
 msgid "Autotags Assignment"
 msgstr "Sjálfvirk úthlutun merkja"
@@ -60469,7 +60478,7 @@ msgid "Clean all and re-assign"
 msgstr "Hreinsa allt og endurúthluta"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:185
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:229
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Skanna einungis óúthlutað"
@@ -60527,48 +60536,48 @@ msgstr ""
 "hluti úr stóru safni með meira en 1.000 flokkum, sem inniheldur breitt svið "
 "af hlutum, dýrum og aðstæðum.</p>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:212
+#: core/utilities/maintenance/maintenancedlg.cpp:215
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr "Sjálfvirk úthlutun merkja"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:223
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Skönnunarhamur"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Hreinsa allt og endurskanna"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Stefna samræmingar: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:242
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Úr gagnagrunni yfir í lýsigögn mynda"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:243
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Úr lýsigögnum mynda yfir í gagnagrunn"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:246
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Skoða nánar á spjaldi fyrir uppsetningu lýsigagna: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:254
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Samræma lýsigögn og gagnagrunn"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:395
+#: core/utilities/maintenance/maintenancemngr.cpp:396
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -60577,7 +60586,7 @@ msgstr ""
 "Öllum aðgerðum er lokið.\n"
 "Tímalengd: %1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:396
+#: core/utilities/maintenance/maintenancemngr.cpp:397
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKam viðhald"
@@ -61298,63 +61307,63 @@ msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgstr "Ertu viss um að þú viljir eyða valda vinnuferlinu  \"%1\"?"
 
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:62
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:57
 #, kde-format
 msgid "Rename..."
 msgstr "Endurnefna..."
 
-#: core/utilities/searchwindow/ratingsearchutilities.cpp:207
+#: core/utilities/searchwindow/ratingsearchutilities.cpp:201
 #, kde-format
 msgid "(No Value Selected)"
 msgstr "(Ekkert gildi valið)"
 
-#: core/utilities/searchwindow/ratingsearchutilities.cpp:212
+#: core/utilities/searchwindow/ratingsearchutilities.cpp:206
 #, kde-format
 msgid "No Rating assigned"
 msgstr "Engri einkunn úthlutað"
 
-#: core/utilities/searchwindow/searchfields.cpp:76
+#: core/utilities/searchwindow/searchfields.cpp:74
 #, kde-format
 msgid "Reset contents"
 msgstr "Endurstilla innihald"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:41
+#: core/utilities/searchwindow/searchfields_album.cpp:36
 #, kde-format
 msgctxt "@item"
 msgid "Any Album"
 msgstr "Einhver albúm"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:53
+#: core/utilities/searchwindow/searchfields_album.cpp:48
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In All"
 msgstr "Í öllum"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:54
+#: core/utilities/searchwindow/searchfields_album.cpp:49
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In One of"
 msgstr "Í einni af"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:55
+#: core/utilities/searchwindow/searchfields_album.cpp:50
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In Tree"
 msgstr "Í þremur"
 
-#: core/utilities/searchwindow/searchfields_album.cpp:59
+#: core/utilities/searchwindow/searchfields_album.cpp:54
 #, kde-format
 msgctxt "@item"
 msgid "Any Tag"
 msgstr "Einhver merki"
 
-#: core/utilities/searchwindow/searchfields_choice.cpp:37
+#: core/utilities/searchwindow/searchfields_choice.cpp:25
 #, kde-format
 msgctxt "@option: default kind of search options combined"
 msgid "Any"
 msgstr "Hvað sem er"
 
-#: core/utilities/searchwindow/searchfields_choice.cpp:123
+#: core/utilities/searchwindow/searchfields_choice.cpp:111
 #, kde-format
 msgctxt "@label: search field choice combo-box description"
 msgid "Any of: %1"
@@ -62109,17 +62118,17 @@ msgstr "Finna atriði án andlitasvæða"
 msgid "No Face Regions"
 msgstr "Engin andlitasvæði"
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:34
+#: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, kde-format
 msgid "Day:"
 msgstr "Dagur:"
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:38
+#: core/utilities/searchwindow/searchfields_monthday.cpp:35
 #, kde-format
 msgid "Every Month"
 msgstr "Mánaðarlega"
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:45
+#: core/utilities/searchwindow/searchfields_monthday.cpp:42
 #, kde-format
 msgid "Every Day"
 msgstr "Alla daga"
@@ -62223,71 +62232,71 @@ msgstr "Fjarlægja hóp"
 msgid "Hide Options"
 msgstr "Fela valkosti"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:74
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "Eyða leit?"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:75
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:72
 #, kde-format
 msgid "Are you sure you want to delete the selected search \"%1\"?"
 msgstr "Ertu viss um að þú viljir eyða þessari leit \"%1\"?"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:67
+#: core/utilities/searchwindow/searchtabheader.cpp:66
 #, kde-format
 msgid "(Advanced Search)"
 msgstr "(Ítarleg leit)"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:104
+#: core/utilities/searchwindow/searchtabheader.cpp:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Autostart Search"
 msgstr "Sjálfræsing leitar"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:262
+#: core/utilities/searchwindow/searchtabheader.cpp:241
 #, kde-format
 msgid "New Search"
 msgstr "Ný leit"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:264
+#: core/utilities/searchwindow/searchtabheader.cpp:243
 #, kde-format
 msgctxt "@label: quick search properties"
 msgid "Search:"
 msgstr "Leita:"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:267
+#: core/utilities/searchwindow/searchtabheader.cpp:246
 #, kde-format
 msgid "Enter keywords here..."
 msgstr "Settu inn stikkorð hér..."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:269
+#: core/utilities/searchwindow/searchtabheader.cpp:248
 #, kde-format
 msgid "New Advanced Search..."
 msgstr "Mý ítarleg leit..."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:270
+#: core/utilities/searchwindow/searchtabheader.cpp:249
 #, kde-format
 msgid "Edit Current Search..."
 msgstr "Breyta núverandi leit..."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:285
+#: core/utilities/searchwindow/searchtabheader.cpp:264
 #, kde-format
 msgid "Save Current Search"
 msgstr "Vista núverandi leit"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:289
+#: core/utilities/searchwindow/searchtabheader.cpp:268
 #, kde-format
 msgid "Enter a name for the current search to save it in the \"Searches\" view"
 msgstr ""
 "Settu hér nafnið sem notað er til vistunar á núverandi leit í \"Leitir\""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:294
+#: core/utilities/searchwindow/searchtabheader.cpp:273
 #, kde-format
 msgid "Save current search to a new virtual Album"
 msgstr "Vista núverandi val í nýtt sýndaralbúm"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:295
+#: core/utilities/searchwindow/searchtabheader.cpp:274
 #, kde-format
 msgid ""
 "If you press this button, the current search will be saved to a new virtual "
@@ -62296,28 +62305,28 @@ msgstr ""
 "Ef þú styður á þennan hnapp, mun leitin verða vistuð í nýtt leitar-"
 "sýndaralbúm undir heitinu sem stillt er hér til vinstri."
 
-#: core/utilities/searchwindow/searchtabheader.cpp:310
-#: core/utilities/searchwindow/searchtabheader.cpp:337
+#: core/utilities/searchwindow/searchtabheader.cpp:289
+#: core/utilities/searchwindow/searchtabheader.cpp:316
 #, kde-format
 msgid "Edit Stored Search"
 msgstr "Breyta geymdri leit"
 
-#: core/utilities/searchwindow/searchtabheader.cpp:352
+#: core/utilities/searchwindow/searchtabheader.cpp:331
 #, kde-format
 msgid "Edit..."
 msgstr "Breyta..."
 
-#: core/utilities/searchwindow/searchview.cpp:502
+#: core/utilities/searchwindow/searchview.cpp:495
 #, kde-format
 msgid "Add Search Group"
 msgstr "Bæta við leitarhóp"
 
-#: core/utilities/searchwindow/searchview.cpp:531
+#: core/utilities/searchwindow/searchview.cpp:524
 #, kde-format
 msgid "Try"
 msgstr "Prófa"
 
-#: core/utilities/searchwindow/searchwindow.cpp:88
+#: core/utilities/searchwindow/searchwindow.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"
