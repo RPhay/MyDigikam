@@ -23,6 +23,7 @@
 #include <QIcon>
 #include <QStandardPaths>
 #include <QFileInfo>
+#include <QDir>
 
 // KDE includes
 
