@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 01:59+0000\n"
+"POT-Creation-Date: 2024-03-26 01:59+0000\n"
 "PO-Revision-Date: 2024-03-23 11:16+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -41937,39 +41937,39 @@ msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "Navegar hasta %1"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:62
+#: core/libs/widgets/files/dbinarysearch.cpp:59
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Binary"
 msgstr "Binario"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:63
+#: core/libs/widgets/files/dbinarysearch.cpp:60
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Version"
 msgstr "Versión"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:101
+#: core/libs/widgets/files/dbinarysearch.cpp:98
 #, kde-format
 msgid "Binary not found."
 msgstr "Binario no encontrado."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:102
+#: core/libs/widgets/files/dbinarysearch.cpp:99
 #, kde-format
 msgid "Minimal version number required for this binary is %1"
 msgstr "El número de versión mínima necesario para este binario es %1"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:104
+#: core/libs/widgets/files/dbinarysearch.cpp:101
 #, kde-format
 msgid "Find"
 msgstr "Encontrar"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:106
+#: core/libs/widgets/files/dbinarysearch.cpp:103
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
 msgstr " o <a href=\"%1\">descargar</a>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:135
+#: core/libs/widgets/files/dbinarysearch.cpp:132
 #, kde-format
 msgid ""
 "<qt><p><font color=\"red\"><b>Warning:</b> Some necessary binaries have not "
@@ -41982,7 +41982,7 @@ msgstr ""
 "botón «Encontrar» para localizarlos. En caso contrario, descárguelos e "
 "instálelos para poder continuar.</font></p></qt>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:174
+#: core/libs/widgets/files/dbinarysearch.cpp:171
 #, kde-format
 msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
@@ -41991,12 +41991,12 @@ msgstr ""
 "Se ha detectado una versión de desarrollo. No existe garantía sobre el "
 "comportamiento de este programa binario."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:184
+#: core/libs/widgets/files/dbinarysearch.cpp:181
 #, kde-format
 msgid "Change"
 msgstr "Cambiar"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:190
+#: core/libs/widgets/files/dbinarysearch.cpp:187
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
 msgstr "Parece que el archivo binario encontrado no funciona como se esperaba."

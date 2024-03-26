@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 01:59+0000\n"
+"POT-Creation-Date: 2024-03-26 01:59+0000\n"
 "PO-Revision-Date: 2024-03-20 22:52+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -41276,39 +41276,39 @@ msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "Iri al %1"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:62
+#: core/libs/widgets/files/dbinarysearch.cpp:59
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Binary"
 msgstr "Binara"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:63
+#: core/libs/widgets/files/dbinarysearch.cpp:60
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Version"
 msgstr "Versio"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:101
+#: core/libs/widgets/files/dbinarysearch.cpp:98
 #, kde-format
 msgid "Binary not found."
 msgstr "Binaro ne trovita."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:102
+#: core/libs/widgets/files/dbinarysearch.cpp:99
 #, kde-format
 msgid "Minimal version number required for this binary is %1"
 msgstr "Minimuma versio-numero necesa por ĉi tiu duumaro estas %1"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:104
+#: core/libs/widgets/files/dbinarysearch.cpp:101
 #, kde-format
 msgid "Find"
 msgstr "Trovi"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:106
+#: core/libs/widgets/files/dbinarysearch.cpp:103
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
 msgstr "aŭ <a href=\"%1\">elŝuti</a>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:135
+#: core/libs/widgets/files/dbinarysearch.cpp:132
 #, kde-format
 msgid ""
 "<qt><p><font color=\"red\"><b>Warning:</b> Some necessary binaries have not "
@@ -41321,7 +41321,7 @@ msgstr ""
 "klaki la butonon 'Trovi' por trovi ilin en via sistemo, alie bonvolu elŝuti "
 "kaj instali ilin por daŭrigi.</font></p></qt>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:174
+#: core/libs/widgets/files/dbinarysearch.cpp:171
 #, kde-format
 msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
@@ -41330,12 +41330,12 @@ msgstr ""
 "Disvolva versio estis detektita. Ne estas garantio pri la konduto de ĉi tiu "
 "duuma."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:184
+#: core/libs/widgets/files/dbinarysearch.cpp:181
 #, kde-format
 msgid "Change"
 msgstr "Ŝanĝi"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:190
+#: core/libs/widgets/files/dbinarysearch.cpp:187
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
 msgstr "La duuma dosiero trovita ne ŝajnas funkcii kiel intencite."

@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 01:59+0000\n"
+"POT-Creation-Date: 2024-03-26 01:59+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -40910,40 +40910,40 @@ msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "Vērtējums vienāds ar %1."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:62
+#: core/libs/widgets/files/dbinarysearch.cpp:59
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Binary"
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:63
+#: core/libs/widgets/files/dbinarysearch.cpp:60
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Version"
 msgstr "Versija"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:101
+#: core/libs/widgets/files/dbinarysearch.cpp:98
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgid "Binary not found."
 msgstr "Kolekcija nav atrasta"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:102
+#: core/libs/widgets/files/dbinarysearch.cpp:99
 #, kde-format
 msgid "Minimal version number required for this binary is %1"
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:104
+#: core/libs/widgets/files/dbinarysearch.cpp:101
 #, kde-format
 msgid "Find"
 msgstr "Atrast"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:106
+#: core/libs/widgets/files/dbinarysearch.cpp:103
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:135
+#: core/libs/widgets/files/dbinarysearch.cpp:132
 #, kde-format
 msgid ""
 "<qt><p><font color=\"red\"><b>Warning:</b> Some necessary binaries have not "
@@ -40952,20 +40952,20 @@ msgid ""
 "download and install them to proceed.</font></p></qt>"
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:174
+#: core/libs/widgets/files/dbinarysearch.cpp:171
 #, kde-format
 msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
 "of this binary."
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:184
+#: core/libs/widgets/files/dbinarysearch.cpp:181
 #, fuzzy, kde-format
 #| msgid "Channel:"
 msgid "Change"
 msgstr "Kanāls:"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:190
+#: core/libs/widgets/files/dbinarysearch.cpp:187
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
 msgstr ""

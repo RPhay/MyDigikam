@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 01:59+0000\n"
-"PO-Revision-Date: 2024-03-13 21:27+0100\n"
+"POT-Creation-Date: 2024-03-26 01:59+0000\n"
+"PO-Revision-Date: 2024-03-22 21:08+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1508,17 +1508,15 @@ msgid "Images found in %1"
 msgstr "Immagini trovate in %1"
 
 #: core/app/main/digikamapp_config.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"Hai scelto uno schema di colori chiaro. Passiamo a un tema di icone scuro. "
-"Il tema di icone sarà disponibile dopo aver riavviato digiKam."
+"Ora passeremo al tema icone di sistema. I colori delle icone saranno "
+"regolati in base a un desktop Plasma 6. Il tema icone sarà disponibile dopo "
+"aver riavviato digiKam."
 
 #: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
@@ -1527,8 +1525,8 @@ msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
-"Hai scelto uno schema di colori chiaro. Passiamo a un tema di icone scuro. "
-"Il tema di icone sarà disponibile dopo aver riavviato digiKam."
+"Hai scelto uno schema di colori chiaro. Passiamo a un tema icone scuro. Il "
+"tema icone sarà disponibile dopo aver riavviato digiKam."
 
 #: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
@@ -1537,8 +1535,8 @@ msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
-"Hai scelto uno schema di colori scuro. Passiamo a un tema di icone chiaro. "
-"Il tema di icone sarà disponibile dopo aver riavviato digiKam."
+"Hai scelto uno schema di colori scuro. Passiamo a un tema icone chiaro. Il "
+"tema icone sarà disponibile dopo aver riavviato digiKam."
 
 #: core/app/main/digikamapp_import.cpp:81
 #, kde-format
@@ -41921,39 +41919,39 @@ msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "Esplora %1"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:62
+#: core/libs/widgets/files/dbinarysearch.cpp:59
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Binary"
 msgstr "Binario"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:63
+#: core/libs/widgets/files/dbinarysearch.cpp:60
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Version"
 msgstr "Versione"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:101
+#: core/libs/widgets/files/dbinarysearch.cpp:98
 #, kde-format
 msgid "Binary not found."
 msgstr "Binario non trovato."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:102
+#: core/libs/widgets/files/dbinarysearch.cpp:99
 #, kde-format
 msgid "Minimal version number required for this binary is %1"
 msgstr "Il numero minimo di versione richiesto per questo binario è %1"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:104
+#: core/libs/widgets/files/dbinarysearch.cpp:101
 #, kde-format
 msgid "Find"
 msgstr "Trova"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:106
+#: core/libs/widgets/files/dbinarysearch.cpp:103
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
 msgstr " o <a href=\"%1\">scarica</a>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:135
+#: core/libs/widgets/files/dbinarysearch.cpp:132
 #, kde-format
 msgid ""
 "<qt><p><font color=\"red\"><b>Warning:</b> Some necessary binaries have not "
@@ -41966,7 +41964,7 @@ msgstr ""
 "«Trova» per individuarli, in alternativa scaricali e installali per "
 "procedere.</font></p></qt>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:174
+#: core/libs/widgets/files/dbinarysearch.cpp:171
 #, kde-format
 msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
@@ -41975,12 +41973,12 @@ msgstr ""
 "È stata individuata una versione di sviluppo. Il comportamento di questo "
 "binario non è garantito."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:184
+#: core/libs/widgets/files/dbinarysearch.cpp:181
 #, kde-format
 msgid "Change"
 msgstr "Cambia"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:190
+#: core/libs/widgets/files/dbinarysearch.cpp:187
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
 msgstr "Il file eseguibile trovato non sembra funzionare come dovrebbe."
@@ -64549,15 +64547,7 @@ msgid "Download Error"
 msgstr "Errore nello scaricamento"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:251
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the download.\n"
-#| "\n"
-#| "File: %1\n"
-#| "\n"
-#| "%2\n"
-#| "\n"
-#| "You can try again or continue the download at the next start."
+#, kde-format
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -64574,14 +64564,14 @@ msgstr ""
 "\n"
 "%2\n"
 "\n"
-"Puoi ritentare o continuare lo scaricamento al prossimo avvio."
+"Puoi ritentare con un server mirror alternativo o continuare lo scaricamento "
+"al prossimo avvio."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:260
-#, fuzzy, kde-format
-#| msgid "Alternative name"
+#, kde-format
 msgctxt "@action:button"
 msgid "Try Alternate"
-msgstr "Nome alternativo"
+msgstr "Prova alternativo"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
