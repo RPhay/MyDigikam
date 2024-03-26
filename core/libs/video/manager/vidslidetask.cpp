@@ -81,7 +81,7 @@ void VidSlideTask::run()
 
     QUrl dest       = QUrl::fromLocalFile(m_settings->outputDir);
     dest            = dest.adjusted(QUrl::StripTrailingSlash);
-    dest.setPath(dest.path() + QDir::separator() + QLatin1String("videoslideshow.") + m_settings->videoFormat());
+    dest.setPath(dest.path() + QLatin1Char('/') + QLatin1String("videoslideshow.") + m_settings->videoFormat());
     QString outFile = dest.toLocalFile();
     QFileInfo fi(outFile);
 
@@ -200,7 +200,7 @@ void VidSlideTask::run()
 
     fList.close();
 
-    m_settings->outputFile = QDir::toNativeSeparators(outFile);
+    m_settings->outputFile = outFile;
 
     Q_EMIT signalDone(!m_cancel);
 }

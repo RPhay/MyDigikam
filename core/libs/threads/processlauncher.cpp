@@ -118,9 +118,6 @@ void ProcessLauncher::startProcess()
 
 void ProcessLauncher::run()
 {
-    QString     prog;
-    QStringList args;
-
     d->process.reset(new QProcess());
     d->process->setProcessChannelMode(QProcess::MergedChannels);
     d->process->setWorkingDirectory(d->dir);
@@ -134,28 +131,16 @@ void ProcessLauncher::run()
     QElapsedTimer etimer;
     etimer.start();
 
-#ifdef Q_OS_WIN
-
-    prog = QLatin1String("cmd");
-    args = QStringList() << QLatin1String("/c") << d->prog << d->args;
-
-#else   // Linux and MacOS
-
-    prog = d->prog;
-    args = d->args;
-
-#endif
-
-    qCInfo(DIGIKAM_GENERAL_LOG) << "=== Starting process:" << prog << args;
+    qCInfo(DIGIKAM_GENERAL_LOG) << "=== Starting process:" << d->prog << d->args;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-    d->process->start(prog, args);
+    d->process->start(d->prog, d->args);
 
 #else
 
-    d->process->setProgram(prog);
-    d->process->setArguments(args);
+    d->process->setProgram(d->prog);
+    d->process->setArguments(d->args);
     d->process->start();
 
 #endif

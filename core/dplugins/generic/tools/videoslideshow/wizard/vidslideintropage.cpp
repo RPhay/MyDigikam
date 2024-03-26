@@ -23,7 +23,6 @@
 #include <QIcon>
 #include <QStandardPaths>
 #include <QFileInfo>
-#include <QDir>
 
 // KDE includes
 
@@ -174,15 +173,7 @@ bool VidSlideIntroPage::validatePage()
             path.append(FFmpegBinary::ffmpegToolBin());
         }
 
-#ifdef Q_OS_WIN
-
-        d->wizard->settings()->ffmpegPath = QLatin1Char('"') + QDir::toNativeSeparators(path) + QLatin1Char('"');
-
-#else
-
         d->wizard->settings()->ffmpegPath = path;
-
-#endif
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << d->ffmpegBin.directory() << d->ffmpegBin.path();
 

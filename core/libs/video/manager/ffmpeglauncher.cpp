@@ -20,8 +20,9 @@
 
 // Qt includes
 
-#include <QEventLoop>
+#include <QDir>
 #include <QDateTime>
+#include <QEventLoop>
 #include <QStringList>
 
 // Local includes
@@ -63,7 +64,7 @@ void FFmpegLauncher::encodeFrames()
     args << QLatin1String("-f")
          << QLatin1String("concat")
          << QLatin1String("-i")
-         << m_settings->filesList;                                // File list of frames to encode.
+         << QDir::toNativeSeparators(m_settings->filesList);      // File list of frames to encode.
 
     // Audio input
 
@@ -104,7 +105,7 @@ void FFmpegLauncher::encodeFrames()
          << QLatin1String("-vcodec")                              // Video codec.
          << m_settings->videoCodec()
          << QLatin1String("-y")                                   // Overwrite target.
-         << m_settings->outputFile;                               // Target video stream.
+         << QDir::toNativeSeparators(m_settings->outputFile);     // Target video stream.
 
     setArguments(args);
     startProcess();
