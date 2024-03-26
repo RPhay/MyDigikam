@@ -127,16 +127,22 @@ QString MetaReaderThread::directionToString(Direction direction)
     switch (direction)
     {
         case (MetaReaderThread::READ_INFO_FROM_FILE):
+        {
              ret = QLatin1String("Read info from file");
              break;
+        }
 
         case (MetaReaderThread::READ_PREVIEW_FROM_FILE):
+        {
              ret = QLatin1String("Read preview from file");
              break;
+        }
 
         default: // WRITE_INFO_TO_SIDECAR
+        {
              ret = QLatin1String("Write info to side-car");
              break;
+        }
      }
 
      return ret;
@@ -208,7 +214,11 @@ QString MetaReaderThread::stats(const QStringList& mimeTypes)
     }
 
     count = m_stats.values().count(false);
-    out.append(QString::fromLatin1("Failed(%1 - %2%) ").arg(count).arg(count*100.0/m_stats.count()));
+    out.append(QString::fromLatin1("Failed(%1 - %2%) ")
+        .arg(count)
+        .arg((m_stats.count() > 0) ? (count * 100.0 / m_stats.count())
+                                   : 0)
+    );
 
     return out;
 }
