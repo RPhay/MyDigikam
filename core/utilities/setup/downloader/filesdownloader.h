@@ -6,7 +6,7 @@
  * Date        : 2020-11-14
  * Description : Files downloader
  *
- * SPDX-FileCopyrightText: 2020-2021 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2024 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -62,7 +62,7 @@ public:
     /**
      * The file size
      */
-    qint64  size;
+    qint64  size = 0;
 };
 
 // ----------------------------------------------------------------------------

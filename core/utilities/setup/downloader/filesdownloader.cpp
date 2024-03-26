@@ -6,7 +6,7 @@
  * Date        : 2020-11-14
  * Description : Files downloader
  *
- * SPDX-FileCopyrightText: 2020-2021 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2024 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -52,54 +52,41 @@ class Q_DECL_HIDDEN FilesDownloader::Private
 {
 public:
 
-    explicit Private()
-      : downloadUrls( { QLatin1String("https://files.kde.org/digikam/"),
-                        QLatin1String("https://mirror.faigner.de/kde/files/digikam/"),
-                        QLatin1String("https://kde-applicationdata.mirrors.omnilance.com/digikam/"),
-                        QLatin1String("https://mirrors.ocf.berkeley.edu/kde-applicationdata/digikam/") } ),
-        mirrorIndex     (0),
-        redirects       (0),
-        total           (0),
-        count           (0),
-        buttons         (nullptr),
-        progress        (nullptr),
-        facesEngineCheck(nullptr),
-        aestheticCheck  (nullptr),
-        autoTagsCheck   (nullptr),
-        nameLabel       (nullptr),
-        infoLabel       (nullptr),
-        sizeLabel       (nullptr),
-        reply           (nullptr),
-        netMngr         (nullptr),
-        system          (qApp->applicationName())
-    {
-    }
+    Private() = default;
 
-    const QStringList      downloadUrls;
+    const QStringList      downloadUrls     = QStringList
+                                              (
+                                                {
+                                                 QLatin1String("https://files.kde.org/digikam/"),
+                                                 QLatin1String("https://mirror.faigner.de/kde/files/digikam/"),
+                                                 QLatin1String("https://kde-applicationdata.mirrors.omnilance.com/digikam/"),
+                                                 QLatin1String("https://mirrors.ocf.berkeley.edu/kde-applicationdata/digikam/")
+                                                }
+                                              );
 
     QString                error;
 
     QList<DownloadInfo>    files;
     DownloadInfo           currentInfo;
 
-    int                    mirrorIndex;
-    int                    redirects;
-    int                    total;
-    int                    count;
+    int                    mirrorIndex      = 0;
+    int                    redirects        = 0;
+    int                    total            = 0;
+    int                    count            = 0;
 
-    QDialogButtonBox*      buttons;
-    QProgressBar*          progress;
-    QCheckBox*             facesEngineCheck;
-    QCheckBox*             aestheticCheck;
-    QCheckBox*             autoTagsCheck;
-    QLabel*                nameLabel;
-    QLabel*                infoLabel;
-    QLabel*                sizeLabel;
+    QDialogButtonBox*      buttons          = nullptr;
+    QProgressBar*          progress         = nullptr;
+    QCheckBox*             facesEngineCheck = nullptr;
+    QCheckBox*             aestheticCheck   = nullptr;
+    QCheckBox*             autoTagsCheck    = nullptr;
+    QLabel*                nameLabel        = nullptr;
+    QLabel*                infoLabel        = nullptr;
+    QLabel*                sizeLabel        = nullptr;
 
-    QNetworkReply*         reply;
-    QNetworkAccessManager* netMngr;
+    QNetworkReply*         reply            = nullptr;
+    QNetworkAccessManager* netMngr          = nullptr;
 
-    SystemSettings         system;
+    SystemSettings         system           = SystemSettings(qApp->applicationName());
 };
 
 FilesDownloader::FilesDownloader(QWidget* const parent)
@@ -608,7 +595,6 @@ void FilesDownloader::slotUpdateDownloadInfo()
 //-----------------------------------------------------------------------------
 
 DownloadInfo::DownloadInfo()
-    : size(0)
 {
 }
 
