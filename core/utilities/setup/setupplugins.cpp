@@ -41,21 +41,14 @@ class Q_DECL_HIDDEN SetupPlugins::Private
 {
 public:
 
-    explicit Private()
-      : tab         (nullptr),
-        setupGeneric(nullptr),
-        setupEditor (nullptr),
-        setupBqm    (nullptr),
-        setupDImg   (nullptr)
-    {
-    }
+    Private() = default;
 
-    QTabWidget*   tab;
+    QTabWidget*   tab           = nullptr;
 
-    DPluginSetup* setupGeneric;
-    DPluginSetup* setupEditor;
-    DPluginSetup* setupBqm;
-    DPluginSetup* setupDImg;
+    DPluginSetup* setupGeneric  = nullptr;
+    DPluginSetup* setupEditor   = nullptr;
+    DPluginSetup* setupBqm      = nullptr;
+    DPluginSetup* setupDImg     = nullptr;
 };
 
 SetupPlugins::SetupPlugins(QWidget* const parent)

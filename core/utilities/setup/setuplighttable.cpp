@@ -42,13 +42,7 @@ class Q_DECL_HIDDEN SetupLightTable::Private
 {
 public:
 
-    explicit Private()
-      : autoSyncPreview(nullptr),
-        autoLoadOnRightPanel(nullptr),
-        clearOnClose(nullptr),
-        fullScreenSettings(nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configGroupName;
     static const QString configAutoSyncPreviewEntry;
@@ -56,11 +50,11 @@ public:
     static const QString configLoadFullImagesizeEntry;
     static const QString configClearOnCloseEntry;
 
-    QCheckBox*           autoSyncPreview;
-    QCheckBox*           autoLoadOnRightPanel;
-    QCheckBox*           clearOnClose;
+    QCheckBox*           autoSyncPreview        = nullptr;
+    QCheckBox*           autoLoadOnRightPanel   = nullptr;
+    QCheckBox*           clearOnClose           = nullptr;
 
-    FullScreenSettings*  fullScreenSettings;
+    FullScreenSettings*  fullScreenSettings     = nullptr;
 };
 
 const QString SetupLightTable::Private::configGroupName(QLatin1String("LightTable Settings"));
@@ -72,10 +66,10 @@ const QString SetupLightTable::Private::configClearOnCloseEntry(QLatin1String("C
 
 SetupLightTable::SetupLightTable(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QWidget* const panel      = new QWidget(viewport());
     setWidget(panel);

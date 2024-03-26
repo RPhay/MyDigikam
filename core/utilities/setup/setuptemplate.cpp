@@ -45,30 +45,22 @@ class Q_DECL_HIDDEN SetupTemplate::Private
 {
 public:
 
-    explicit Private()
-      : addButton(nullptr),
-        delButton(nullptr),
-        repButton(nullptr),
-        titleEdit(nullptr),
-        listView(nullptr),
-        tview(nullptr)
-    {
-    }
+    Private() = default;
 
-    QPushButton*   addButton;
-    QPushButton*   delButton;
-    QPushButton*   repButton;
+    QPushButton*   addButton    = nullptr;
+    QPushButton*   delButton    = nullptr;
+    QPushButton*   repButton    = nullptr;
 
-    DTextEdit*     titleEdit;
+    DTextEdit*     titleEdit    = nullptr;
 
-    TemplateList*  listView;
+    TemplateList*  listView     = nullptr;
 
-    TemplatePanel* tview;
+    TemplatePanel* tview        = nullptr;
 };
 
 SetupTemplate::SetupTemplate(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     QWidget* const panel = new QWidget(viewport());
     setWidget(panel);
