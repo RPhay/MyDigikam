@@ -1052,8 +1052,10 @@ void INatWindow::slotImageListChanged()
         }
 
         DItemInfo info(d->iface->itemInfo(url));
+        QColor txtColor(listView->palette().color(QPalette::Text));
         DItemsListViewItem* const item = listView->findItem(url);
         QDateTime dateTime             = info.dateTime();
+        dateTime.setTimeSpec(Qt::LocalTime);
         QString dt;
 
         if (dateTime.isValid())
@@ -1065,8 +1067,7 @@ void INatWindow::slotImageListChanged()
                 observationTime = dateTime;
                 dt              = QLocale().toString(dateTime, QLocale::ShortFormat) + lf +
                                   i18n("observation time");
-                QBrush brush(Qt::black);
-                item->setForeground(ItemDate, brush);
+                item->setForeground(ItemDate, QBrush(txtColor));
             }
             else
             {
@@ -1075,7 +1076,7 @@ void INatWindow::slotImageListChanged()
                 int difference = int(qAbs(dateTime.secsTo(observationTime)));
                 dt             = localizedTimeDifference(difference) + lf +
                                  i18n("from observation");
-                QBrush brush((difference > 60 * d->photoMaxTimeDiffSpB->value()) ? Qt::red : Qt::black);
+                QBrush brush((difference > 60 * d->photoMaxTimeDiffSpB->value()) ? Qt::red : txtColor);
                 item->setForeground(ItemDate, brush);
             }
         }
@@ -1102,7 +1103,7 @@ void INatWindow::slotImageListChanged()
                                                   info.longitude());
                 gps             = localizedDistance(distance,'f', 0) + lf +
                                   i18n("from observation");
-                QBrush brush((distance > d->photoMaxDistanceSpB->value()) ? Qt::red : Qt::black);
+                QBrush brush((distance > d->photoMaxDistanceSpB->value()) ? Qt::red : txtColor);
                 item->setForeground(ItemLocation, brush);
             }
             else
@@ -1114,8 +1115,7 @@ void INatWindow::slotImageListChanged()
                 longitude   = info.longitude();
                 gps         = localizedLocation(latitude, longitude, COORD_PRECISION) +
                               lf + i18n("observation location");
-                QBrush brush(Qt::black);
-                item->setForeground(ItemLocation, brush);
+                item->setForeground(ItemLocation, QBrush(txtColor));
             }
         }
         else

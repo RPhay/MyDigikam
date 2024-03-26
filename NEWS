@@ -22,7 +22,7 @@ BUGFIXES:
 013 ==> 484482 - Dragging an image on a tag does not assign this tag to the image.
 014 ==> 484107 - After sucessful (?) installation on Win 10, digiKam app does not show any window.
 015 ==> 484456 - C:\program is not recognized as an internal or external command.
-016 ==> 
+016 ==> 484373 - Wrong time/timezone data.
 017 ==> 
 018 ==> 
 019 ==> 
