@@ -44,8 +44,8 @@ public:
 
     QUrl          m_orgUrl;
     QString       m_destName;
-    MailSettings* m_settings;
-    int*          m_count;
+    MailSettings* m_settings  = nullptr;
+    int*          m_count     = nullptr;
 
 Q_SIGNALS:
 

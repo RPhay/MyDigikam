@@ -24,13 +24,14 @@
 #include <QProcess>
 #include <QPointer>
 #include <QStringList>
-#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
-#include <QTextCodec>
-#endif
 #include <QTextStream>
 #include <QApplication>
 #include <QMessageBox>
 #include <QTemporaryDir>
+
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+#   include <QTextCodec>
+#endif
 
 // KDE includes
 
@@ -49,30 +50,24 @@ class Q_DECL_HIDDEN MailProcess::Private
 {
 public:
 
-    explicit Private()
-      : cancel(false),
-        settings(nullptr),
-        iface(nullptr),
-        threadImgResize(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool               cancel;
+    bool               cancel               = false;
 
     QList<QUrl>        attachementFiles;
     QList<QUrl>        failedResizedImages;
 
-    MailSettings*      settings;
-    DInfoInterface*    iface;
+    MailSettings*      settings             = nullptr;
+    DInfoInterface*    iface                = nullptr;
 
-    ImageResizeThread* threadImgResize;
+    ImageResizeThread* threadImgResize      = nullptr;
 };
 
 MailProcess::MailProcess(MailSettings* const settings,
                         DInfoInterface* const iface,
                         QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->settings        = settings;
     d->iface           = iface;
@@ -112,7 +107,9 @@ void MailProcess::firstStage()
     if (!tempPath.isValid())
     {
         Q_EMIT signalMessage(i18n("Cannot create a temporary directory"), true);
+
         slotCancel();
+
         Q_EMIT signalDone(false);
 
         return;
@@ -143,6 +140,7 @@ void MailProcess::firstStage()
         }
 
         Q_EMIT signalProgress(50);
+
         secondStage();
     }
 }
@@ -170,6 +168,7 @@ void MailProcess::slotStartingResize(const QUrl& orgUrl)
     }
 
     QString text = i18n("Resizing %1", orgUrl.fileName());
+
     Q_EMIT signalMessage(text, false);
 }
 
@@ -181,11 +180,13 @@ void MailProcess::slotFinishedResize(const QUrl& orgUrl, const QUrl& emailUrl, i
     }
 
     Q_EMIT signalProgress((int)(80.0*(percent/100.0)));
+
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << emailUrl;
     d->attachementFiles.append(emailUrl);
     d->settings->setMailUrl(orgUrl, emailUrl);
 
     QString text = i18n("%1 resized successfully", orgUrl.fileName());
+
     Q_EMIT signalMessage(text, false);
 }
 
@@ -197,7 +198,9 @@ void MailProcess::slotFailedResize(const QUrl& orgUrl, const QString& error, int
     }
 
     Q_EMIT signalProgress((int)(80.0*(percent/100.0)));
+
     QString text = i18n("Failed to resize %1: %2", orgUrl.fileName(), error);
+
     Q_EMIT signalMessage(text, true);
 
     d->failedResizedImages.append(orgUrl);
@@ -240,8 +243,11 @@ void MailProcess::secondStage()
     }
 
     buildPropertiesFile();
+
     Q_EMIT signalProgress(90);
+
     invokeMailAgent();
+
     Q_EMIT signalProgress(100);
 }
 
@@ -291,17 +297,22 @@ void MailProcess::buildPropertiesFile()
 
         QFile propertiesFile(d->settings->tempPath + i18n("properties.txt"));
         QTextStream stream(&propertiesFile);
+
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+
         // In Qt5 only. Qt6 uses UTF-8 by default.
+
         stream.setCodec(QTextCodec::codecForName("UTF-8"));
+
 #endif
+
         stream.setAutoDetectUnicode(true);
 
         if (!propertiesFile.open(QIODevice::WriteOnly))
         {
             Q_EMIT signalMessage(i18n("Image properties file cannot be opened"), true);
-            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "File open error:" << propertiesFile.fileName();
 
+            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "File open error:" << propertiesFile.fileName();
             return;
         }
 
@@ -345,6 +356,7 @@ bool MailProcess::showFailedResizedImages() const
             case QMessageBox::Yes:
             {
                 // Added source image files instead resized images...
+
                 for (QList<QUrl>::const_iterator it = d->failedResizedImages.constBegin() ;
                     it != d->failedResizedImages.constEnd() ; ++it)
                 {
@@ -358,12 +370,14 @@ bool MailProcess::showFailedResizedImages() const
             case QMessageBox::No:
             {
                 // Do nothing...
+
                 break;
             }
 
             case QMessageBox::Cancel:
             {
                 // Stop process...
+
                 ret = false;
                 break;
             }
@@ -405,6 +419,7 @@ QList<QUrl> MailProcess::divideEmails()
                 QString mess = i18n("The file \"%1\" is too big to be sent, "
                                     "please reduce its size or change your settings",
                                     file.fileName());
+
                 Q_EMIT signalMessage(mess, true);
             }
             else
@@ -632,7 +647,9 @@ void MailProcess::invokeMailAgentError(const QString& prog, const QStringList& a
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Command Line: " << prog << args;
     QString text = i18n("Failed to start \"%1\" program. Check your system.", prog);
+
     Q_EMIT signalMessage(text, true);
+
     slotCleanUp();
 
     Q_EMIT signalDone(false);
@@ -642,6 +659,7 @@ void MailProcess::invokeMailAgentDone(const QString& prog, const QStringList& ar
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Command Line: " << prog << args;
     QString text = i18n("Starting \"%1\" program...", prog);
+
     Q_EMIT signalMessage(text, false);
 
     Q_EMIT signalMessage(i18n("After having sent your images by email..."), false);

@@ -37,7 +37,6 @@ namespace DigikamGenericSendByMailPlugin
 
 ImageResizeJob::ImageResizeJob(int* count)
     : ActionJob (),
-      m_settings(nullptr),
       m_count   (count)
 {
 }
@@ -58,11 +57,17 @@ void ImageResizeJob::run()
     (*m_count)++;
     m_mutex.unlock();
 
-    int percent = (int)(((float)(*m_count)/(float)m_settings->itemsList.count())*100.0);
+    int percent = 0;
+
+    if (m_settings->itemsList.count() > 0)
+    {
+        percent = (int)(((float)(*m_count) / (float)m_settings->itemsList.count()) * 100.0);
+    }
 
     if (imageResize(m_settings, m_orgUrl, m_destName, errString))
     {
         QUrl emailUrl(QUrl::fromLocalFile(m_destName));
+
         Q_EMIT finishedResize(m_orgUrl, emailUrl, percent);
     }
     else

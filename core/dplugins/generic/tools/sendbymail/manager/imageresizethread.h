@@ -50,7 +50,7 @@ Q_SIGNALS:
 
 private:
 
-    int* m_count;    ///< Although it is private, it's address is passed to Task
+    int* m_count = nullptr;    ///< Although it is private, it's address is passed to Task
 };
 
 } // namespace DigikamGenericSendByMailPlugin
