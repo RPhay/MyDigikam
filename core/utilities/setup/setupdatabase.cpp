@@ -50,16 +50,11 @@ class Q_DECL_HIDDEN SetupDatabase::Private
 {
 public:
 
-    explicit Private()
-      : databaseWidget(nullptr),
-        updateBox(nullptr),
-        hashesButton(nullptr)
-    {
-    }
+    Private() = default;
 
-    DatabaseSettingsWidget* databaseWidget;
-    QGroupBox*              updateBox;
-    QPushButton*            hashesButton;
+    DatabaseSettingsWidget* databaseWidget  = nullptr;
+    QGroupBox*              updateBox       = nullptr;
+    QPushButton*            hashesButton    = nullptr;
 };
 
 SetupDatabase::SetupDatabase(QWidget* const parent)

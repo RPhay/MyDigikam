@@ -59,91 +59,49 @@ class Q_DECL_HIDDEN Setup::Private
 {
 public:
 
-    explicit Private()
-      : page_database           (nullptr),
-        page_collections        (nullptr),
-        page_albumView          (nullptr),
-        page_tooltip            (nullptr),
-        page_metadata           (nullptr),
-        page_template           (nullptr),
-        page_lighttable         (nullptr),
+    Private() = default;
+
+    DConfigDlgWdgItem*       page_database              = nullptr;
+    DConfigDlgWdgItem*       page_collections           = nullptr;
+    DConfigDlgWdgItem*       page_albumView             = nullptr;
+    DConfigDlgWdgItem*       page_tooltip               = nullptr;
+    DConfigDlgWdgItem*       page_metadata              = nullptr;
+    DConfigDlgWdgItem*       page_template              = nullptr;
+    DConfigDlgWdgItem*       page_lighttable            = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
-        page_geolocation        (nullptr),
+    DConfigDlgWdgItem*       page_geolocation           = nullptr;
 
 #endif
 
-        page_editor             (nullptr),
-        page_imagequalitysorter (nullptr),
-        page_icc                (nullptr),
-        page_camera             (nullptr),
-        page_plugins            (nullptr),
-        page_misc               (nullptr),
-        databasePage            (nullptr),
-        collectionsPage         (nullptr),
-        albumViewPage           (nullptr),
-        tooltipPage             (nullptr),
-        metadataPage            (nullptr),
-        templatePage            (nullptr),
-        lighttablePage          (nullptr),
+    DConfigDlgWdgItem*       page_editor                = nullptr;
+    DConfigDlgWdgItem*       page_imagequalitysorter    = nullptr;
+    DConfigDlgWdgItem*       page_icc                   = nullptr;
+    DConfigDlgWdgItem*       page_camera                = nullptr;
+    DConfigDlgWdgItem*       page_plugins               = nullptr;
+    DConfigDlgWdgItem*       page_misc                  = nullptr;
+
+    SetupDatabase*           databasePage               = nullptr;
+    SetupCollections*        collectionsPage            = nullptr;
+    SetupAlbumView*          albumViewPage              = nullptr;
+    SetupToolTip*            tooltipPage                = nullptr;
+    SetupMetadata*           metadataPage               = nullptr;
+    SetupTemplate*           templatePage               = nullptr;
+    SetupLightTable*         lighttablePage             = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
-        geolocationPage         (nullptr),
+    SetupGeolocation*        geolocationPage            = nullptr;
 
 #endif
 
-        editorPage              (nullptr),
-        imageQualitySorterPage  (nullptr),
-        iccPage                 (nullptr),
-        cameraPage              (nullptr),
-        pluginsPage             (nullptr),
-        miscPage                (nullptr)
-    {
-    }
-
-    DConfigDlgWdgItem*       page_database;
-    DConfigDlgWdgItem*       page_collections;
-    DConfigDlgWdgItem*       page_albumView;
-    DConfigDlgWdgItem*       page_tooltip;
-    DConfigDlgWdgItem*       page_metadata;
-    DConfigDlgWdgItem*       page_template;
-    DConfigDlgWdgItem*       page_lighttable;
-
-#ifdef HAVE_GEOLOCATION
-
-    DConfigDlgWdgItem*       page_geolocation;
-
-#endif
-
-    DConfigDlgWdgItem*       page_editor;
-    DConfigDlgWdgItem*       page_imagequalitysorter;
-    DConfigDlgWdgItem*       page_icc;
-    DConfigDlgWdgItem*       page_camera;
-    DConfigDlgWdgItem*       page_plugins;
-    DConfigDlgWdgItem*       page_misc;
-
-    SetupDatabase*           databasePage;
-    SetupCollections*        collectionsPage;
-    SetupAlbumView*          albumViewPage;
-    SetupToolTip*            tooltipPage;
-    SetupMetadata*           metadataPage;
-    SetupTemplate*           templatePage;
-    SetupLightTable*         lighttablePage;
-
-#ifdef HAVE_GEOLOCATION
-
-    SetupGeolocation*        geolocationPage;
-
-#endif
-
-    SetupEditor*             editorPage;
-    SetupImageQualitySorter* imageQualitySorterPage;
-    SetupICC*                iccPage;
-    SetupCamera*             cameraPage;
-    SetupPlugins*            pluginsPage;
-    SetupMisc*               miscPage;
+    SetupEditor*             editorPage                 = nullptr;
+    SetupImageQualitySorter* imageQualitySorterPage     = nullptr;
+    SetupICC*                iccPage                    = nullptr;
+    SetupCamera*             cameraPage                 = nullptr;
+    SetupPlugins*            pluginsPage                = nullptr;
+    SetupMisc*               miscPage                   = nullptr;
 
 public:
 
