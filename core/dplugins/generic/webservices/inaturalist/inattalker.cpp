@@ -1265,6 +1265,7 @@ void INatTalker::computerVision(const QUrl& localImage)
     }
 
     QDateTime dateTime = info.dateTime();
+    dateTime.setTimeSpec(Qt::LocalTime);
 
     if (dateTime.isValid())
     {
