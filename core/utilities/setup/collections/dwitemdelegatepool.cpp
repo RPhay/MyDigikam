@@ -39,10 +39,10 @@ class Q_DECL_HIDDEN DWItemDelegateEventListener : public QObject
 
 public:
 
-    explicit DWItemDelegateEventListener(DWItemDelegatePoolPrivate* const poolPrivate,
+    explicit DWItemDelegateEventListener(DWItemDelegatePoolPrivate* const pp,
                                          QObject* const parent = nullptr)
         : QObject    (parent),
-          poolPrivate(poolPrivate)
+          poolPrivate(pp)
     {
     }
 
@@ -50,15 +50,14 @@ public:
 
 private:
 
-    DWItemDelegatePoolPrivate* poolPrivate;
+    DWItemDelegatePoolPrivate* poolPrivate = nullptr;
 };
 
 // -------------------------------------------------------------------------------------------
 
-DWItemDelegatePoolPrivate::DWItemDelegatePoolPrivate(DWItemDelegate* const d)
-    : delegate     (d),
-      eventListener(new DWItemDelegateEventListener(this)),
-      clearing     (false)
+DWItemDelegatePoolPrivate::DWItemDelegatePoolPrivate(DWItemDelegate* const dd)
+    : delegate     (dd),
+      eventListener(new DWItemDelegateEventListener(this))
 {
 }
 
@@ -113,7 +112,7 @@ QList<QWidget*> DWItemDelegatePool::findWidgets(const QPersistentModelIndex& idx
     }
     else
     {
-        result = d->delegate->createItemWidgets(index);
+        result                = d->delegate->createItemWidgets(index);
         d->usedWidgets[index] = result;
 
         Q_FOREACH (QWidget* const widget, result)

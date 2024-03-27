@@ -55,8 +55,7 @@ namespace Digikam
 {
 
 SetupCollectionDelegate::SetupCollectionDelegate(QAbstractItemView* const view, QObject* const parent)
-    : DWItemDelegate(view, parent),
-      m_categoryMaxStyledWidth(0)
+    : DWItemDelegate(view, parent)
 {
     // We keep a standard delegate that does all the normal drawing work for us
     // DWItemDelegate handles the widgets, for the rest of the work we act as a proxy to m_styledDelegate
@@ -100,7 +99,11 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
     list << pushButton;
 
     connect(pushButton, &QPushButton::clicked,
-            this, [this, pushButton]() { Q_EMIT categoryButtonPressed(pushButton->property("id").toInt()); });
+            this, [this, pushButton]()
+        {
+            Q_EMIT categoryButtonPressed(pushButton->property("id").toInt());
+        }
+    );
 
     QToolButton* const appendButton = new QToolButton();
     appendButton->setToolTip(i18nc("@info:tooltip", "Append a path to the collection."));
@@ -108,7 +111,11 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
     list << appendButton;
 
     connect(appendButton, &QToolButton::clicked,
-            this, [this, appendButton]() { Q_EMIT appendPressed(appendButton->property("id").toInt()); });
+            this, [this, appendButton]()
+        {
+            Q_EMIT appendPressed(appendButton->property("id").toInt());
+        }
+    );
 
     QToolButton* const updateButton = new QToolButton();
     updateButton->setToolTip(i18nc("@info:tooltip", "Updates the path of the collection."));
@@ -116,7 +123,11 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
     list << updateButton;
 
     connect(updateButton, &QToolButton::clicked,
-            this, [this, updateButton]() { Q_EMIT updatePressed(updateButton->property("id").toInt()); });
+            this, [this, updateButton]()
+        {
+            Q_EMIT updatePressed(updateButton->property("id").toInt());
+        }
+    );
 
     QToolButton* const deleteButton = new QToolButton();
     deleteButton->setToolTip(i18nc("@info:tooltip", "Removes the collection from digiKam."));
@@ -124,7 +135,11 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
     list << deleteButton;
 
     connect(deleteButton, &QToolButton::clicked,
-            this, [this, deleteButton]() { Q_EMIT deletePressed(deleteButton->property("id").toInt()); });
+            this, [this, deleteButton]()
+        {
+            Q_EMIT deletePressed(deleteButton->property("id").toInt());
+        }
+    );
 
     return list;
 }
@@ -397,20 +412,12 @@ void SetupCollectionTreeView::modelLoadedCollections()
 // ------------- Model ----------------- //
 
 SetupCollectionModel::Item::Item()
-    : parentId(INTERNALID),
-      orgIndex(0),
-      appended(false),
-      updated (false),
-      deleted (false)
+    : parentId(INTERNALID)
 {
 }
 
 SetupCollectionModel::Item::Item(const CollectionLocation& location)
-    : location(location),
-      orgIndex(0),
-      appended(false),
-      updated (false),
-      deleted (false)
+    : location(location)
 {
     parentId = SetupCollectionModel::typeToCategory(location.type());
 }
@@ -418,11 +425,7 @@ SetupCollectionModel::Item::Item(const CollectionLocation& location)
 SetupCollectionModel::Item::Item(const QString& path, const QString& label, SetupCollectionModel::Category category)
     : label   (label),
       path    (path),
-      parentId(category),
-      orgIndex(0),
-      appended(false),
-      updated (false),
-      deleted (false)
+      parentId(category)
 {
 }
 
@@ -441,8 +444,7 @@ SetupCollectionModel::Item::Item(const QString& path, const QString& label, Setu
  */
 
 SetupCollectionModel::SetupCollectionModel(QObject* const parent)
-    : QAbstractItemModel(parent),
-      m_dialogParentWidget(nullptr)
+    : QAbstractItemModel(parent)
 {
 }
 
@@ -487,6 +489,7 @@ void SetupCollectionModel::loadCollections()
     }
 
     endResetModel();
+
     Q_EMIT collectionsLoaded();
 }
 
@@ -518,7 +521,7 @@ void SetupCollectionModel::apply()
         {
             // if item has a valid location, is updated or has changed its label
 
-            if (item.updated)
+            if      (item.updated)
             {
                 updatedItems << i;
             }
@@ -767,11 +770,13 @@ void SetupCollectionModel::addCollection(int category)
 }
 
 /*
-//This code works, but is currently not used. Was intended as a workaround for 219876.
+// NOTE: This code works, but is currently not used. Was intended as a workaround for 219876.
+
 void SetupCollectionModel::emitDataChangedForChildren(const QModelIndex& parent)
 {
     int rows    = rowCount(parent);
     int columns = columnCount(parent);
+
     Q_EMIT dataChanged(index(0, 0, parent), index(rows, columns, parent));
 
     for (int r = 0 ; r < rows ; ++r)
@@ -845,6 +850,7 @@ void SetupCollectionModel::deleteCollection(int internalId)
     int result    = QMessageBox::No;
     Item& item    = m_collections[index.internalId()];
     QString label = data(indexForId(internalId, (int)ColumnName), Qt::DisplayRole).toString();
+
     Q_UNUSED(result);
 
     // Ask for confirmation
@@ -874,7 +880,7 @@ void SetupCollectionModel::deleteCollection(int internalId)
         item.deleted = true;
         endRemoveRows();
 
-        if (item.appended)
+        if      (item.appended)
         {
             Item& orgItem   = m_collections[item.orgIndex];
 
@@ -1351,10 +1357,16 @@ bool SetupCollectionModel::setData(const QModelIndex& index, const QVariant& val
 {
     // only editable in one case
 
-    if (index.isValid() && (index.internalId() != INTERNALID) && (index.column() == ColumnName) && (role == Qt::EditRole))
+    if (
+        index.isValid()                    &&
+        (index.internalId() != INTERNALID) &&
+        (index.column() == ColumnName)     &&
+        (role == Qt::EditRole)
+       )
     {
         Item& item = m_collections[index.internalId()];
         item.label = value.toString();
+
         Q_EMIT dataChanged(index, index);
     }
 
@@ -1374,6 +1386,7 @@ QModelIndex SetupCollectionModel::index(int row, int column, const QModelIndex& 
     {
         // m_collections is a flat list with all entries, of all categories and also deleted entries.
         // The model indices contain as internal id the index to this list.
+
         int parentId = parent.row();
         int rowCount = 0;
 
@@ -1541,6 +1554,7 @@ bool SetupCollectionModel::askForNewCollectionPath(bool adding, int category, QS
                     messageFromManager = i18n("You have previously added a collection "
                                               "that contains the path \"%1\".", QDir::toNativeSeparators(path));
                     result             = CollectionManager::LocationNotAllowed;
+
                     break;
                 }
             }
@@ -1556,12 +1570,14 @@ bool SetupCollectionModel::askForNewCollectionPath(bool adding, int category, QS
         case CollectionManager::LocationAllRight:
         {
             iconName = QLatin1String("dialog-ok-apply");
+
             break;
         }
 
         case CollectionManager::LocationHasProblems:
         {
             iconName = QLatin1String("dialog-information");
+
             break;
         }
 

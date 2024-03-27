@@ -81,7 +81,7 @@ private:
     friend class DWItemDelegate;
     friend class DWItemDelegatePrivate;
 
-    DWItemDelegatePoolPrivate* const d;
+    DWItemDelegatePoolPrivate* const d = nullptr;
 };
 
 // -----------------------------------------------------------------------------------------------------------
@@ -92,17 +92,17 @@ class DWItemDelegatePoolPrivate
 {
 public:
 
-    explicit DWItemDelegatePoolPrivate(DWItemDelegate* const d);
+    explicit DWItemDelegatePoolPrivate(DWItemDelegate* const dd);
 
 public:
 
-    DWItemDelegate*                                delegate;
-    DWItemDelegateEventListener*                   eventListener;
+    DWItemDelegate*                                delegate         = nullptr;
+    DWItemDelegateEventListener*                   eventListener    = nullptr;
 
     QHash<QPersistentModelIndex, QList<QWidget*> > usedWidgets;
     QHash<QWidget*, QPersistentModelIndex>         widgetInIndex;
 
-    bool                                           clearing;
+    bool                                           clearing         = false;
 
 private:
 

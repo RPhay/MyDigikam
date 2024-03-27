@@ -101,7 +101,7 @@ public:
 public:
 
     explicit SetupCollectionModel(QObject* const parent = nullptr);
-    ~SetupCollectionModel() override;
+    ~SetupCollectionModel()                                                                         override;
 
     /// Read collections from CollectionManager
     void loadCollections();
@@ -116,6 +116,7 @@ public:
     QList<QModelIndex> categoryIndexes()                                                      const;
 
     /// QAbstractItemModel implementation
+
     QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                       const override;
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex& parent = QModelIndex())                                   const override;
@@ -135,6 +136,7 @@ public:
 Q_SIGNALS:
 
     /// Emitted when all collections were loaded and the model reset in loadCollections
+
     void collectionsLoaded();
 
 public Q_SLOTS:
@@ -167,7 +169,7 @@ protected Q_SLOTS:
 
 protected:
 
-    QModelIndex indexForId(int id, int column)          const;
+    QModelIndex indexForId(int id, int column)                                                const;
 
     bool askForNewCollectionPath(bool adding,
                                  int category,
@@ -175,8 +177,8 @@ protected:
                                  QString* const newLabel);
     bool askForNewCollectionCategory(int* const category);
 
-    int categoryButtonMapId(const QModelIndex& index)   const;
-    int buttonMapId(const QModelIndex& index)           const;
+    int categoryButtonMapId(const QModelIndex& index)                                         const;
+    int buttonMapId(const QModelIndex& index)                                                 const;
 
     static Category typeToCategory(CollectionLocation::Type type);
 
@@ -196,17 +198,17 @@ protected:
         QStringList        childs;
         QString            label;
         QString            path;
-        int                parentId;
-        int                orgIndex;
-        bool               appended;
-        bool               updated;
-        bool               deleted;
+        int                parentId  = 0;
+        int                orgIndex  = 0;
+        bool               appended  = false;
+        bool               updated   = false;
+        bool               deleted   = false;
     };
 
 protected:
 
     QList<Item> m_collections;
-    QWidget*    m_dialogParentWidget;
+    QWidget*    m_dialogParentWidget = nullptr;
 
 private Q_SLOTS:
 
@@ -290,13 +292,13 @@ Q_SIGNALS:
 
 protected:
 
-    QStyledItemDelegate* m_styledDelegate;
+    QStyledItemDelegate* m_styledDelegate           = nullptr;
 
-    QPushButton*         m_samplePushButton;
-    QToolButton*         m_sampleAppendButton;
-    QToolButton*         m_sampleUpdateButton;
-    QToolButton*         m_sampleDeleteButton;
-    int                  m_categoryMaxStyledWidth;
+    QPushButton*         m_samplePushButton         = nullptr;
+    QToolButton*         m_sampleAppendButton       = nullptr;
+    QToolButton*         m_sampleUpdateButton       = nullptr;
+    QToolButton*         m_sampleDeleteButton       = nullptr;
+    int                  m_categoryMaxStyledWidth   = 0;
 };
 
 } // namespace Digikam

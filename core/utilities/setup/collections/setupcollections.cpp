@@ -47,29 +47,20 @@ class Q_DECL_HIDDEN SetupCollections::Private
 {
 public:
 
-    explicit Private()
-      : rootsPathChanged(false),
-        collectionView  (nullptr),
-        collectionModel (nullptr),
-        monitoringBox   (nullptr),
-        ignoreEdit      (nullptr),
-        tab             (nullptr),
-        ignoreLabel     (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString     configGroupName;
     static const QString     configLastAddedCollectionPath;
 
-    bool                     rootsPathChanged;
+    bool                     rootsPathChanged   = false;
 
-    SetupCollectionTreeView* collectionView;
-    SetupCollectionModel*    collectionModel;
+    SetupCollectionTreeView* collectionView     = nullptr;
+    SetupCollectionModel*    collectionModel    = nullptr;
 
-    QCheckBox*               monitoringBox;
-    QLineEdit*               ignoreEdit;
-    QTabWidget*              tab;
-    QLabel*                  ignoreLabel;
+    QCheckBox*               monitoringBox      = nullptr;
+    QLineEdit*               ignoreEdit         = nullptr;
+    QTabWidget*              tab                = nullptr;
+    QLabel*                  ignoreLabel        = nullptr;
 };
 
 const QString SetupCollections::Private::configGroupName(QLatin1String("Collection Settings"));
@@ -80,7 +71,7 @@ SetupCollections::SetupCollections(QWidget* const parent)
       d          (new Private)
 {
     const int spacing     = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                 QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->tab                = new QTabWidget(viewport());
     setWidget(d->tab);
@@ -224,7 +215,7 @@ void SetupCollections::applySettings()
     if (d->ignoreEdit->text() != ignoreDirectory)
     {
         CoreDbAccess().db()->setUserIgnoreDirectoryFilterSettings(
-                    cleanUserFilterString(d->ignoreEdit->text(), true, true));
+            cleanUserFilterString(d->ignoreEdit->text(), true, true));
 
         ScanController::instance()->completeCollectionScanInBackground(false, false);
     }
