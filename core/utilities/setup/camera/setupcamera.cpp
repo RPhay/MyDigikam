@@ -162,44 +162,7 @@ class Q_DECL_HIDDEN SetupCamera::Private
 {
 public:
 
-    explicit Private()
-      : addButton                   (nullptr),
-        removeButton                (nullptr),
-        editButton                  (nullptr),
-        autoDetectButton            (nullptr),
-        importAddButton             (nullptr),
-        importRemoveButton          (nullptr),
-        importEditButton            (nullptr),
-        storeDiffButton             (nullptr),
-        overwriteButton             (nullptr),
-        skipFileButton              (nullptr),
-        conflictButtonGroup         (nullptr),
-        useFileMetadata             (nullptr),
-        turnHighQualityThumbs       (nullptr),
-        useDefaultTargetAlbum       (nullptr),
-        iconShowNameBox             (nullptr),
-        iconShowSizeBox             (nullptr),
-        iconShowDateBox             (nullptr),
-        iconShowResolutionBox       (nullptr),
-        iconShowTagsBox             (nullptr),
-        iconShowOverlaysBox         (nullptr),
-        iconShowRatingBox           (nullptr),
-        iconShowFormatBox           (nullptr),
-        iconShowCoordinatesBox      (nullptr),
-        previewLoadFullImageSize    (nullptr),
-        previewItemsWhileDownload   (nullptr),
-        previewShowIcons            (nullptr),
-        leftClickActionComboBox     (nullptr),
-        iconViewFontSelect          (nullptr),
-        target1AlbumSelector        (nullptr),
-        listView                    (nullptr),
-        importListView              (nullptr),
-        tab                         (nullptr),
-        ignoreNamesEdit             (nullptr),
-        ignoreExtensionsEdit        (nullptr),
-        fullScreenSettings          (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configGroupName;
     static const QString configUseFileMetadata;
@@ -209,55 +172,54 @@ public:
     static const QString configFileSaveConflictRule;
     static const QString importFiltersConfigGroupName;
 
-    QPushButton*         addButton;
-    QPushButton*         removeButton;
-    QPushButton*         editButton;
-    QPushButton*         autoDetectButton;
-    QPushButton*         importAddButton;
-    QPushButton*         importRemoveButton;
-    QPushButton*         importEditButton;
+    QPushButton*         addButton                  = nullptr;
+    QPushButton*         removeButton               = nullptr;
+    QPushButton*         editButton                 = nullptr;
+    QPushButton*         autoDetectButton           = nullptr;
+    QPushButton*         importAddButton            = nullptr;
+    QPushButton*         importRemoveButton         = nullptr;
+    QPushButton*         importEditButton           = nullptr;
 
-    QRadioButton*        storeDiffButton;
-    QRadioButton*        overwriteButton;
-    QRadioButton*        skipFileButton;
+    QRadioButton*        storeDiffButton            = nullptr;
+    QRadioButton*        overwriteButton            = nullptr;
+    QRadioButton*        skipFileButton             = nullptr;
 
-    QButtonGroup*        conflictButtonGroup;
+    QButtonGroup*        conflictButtonGroup        = nullptr;
 
-    QCheckBox*           useFileMetadata;
-    QCheckBox*           turnHighQualityThumbs;
-    QCheckBox*           useDefaultTargetAlbum;
+    QCheckBox*           useFileMetadata            = nullptr;
+    QCheckBox*           turnHighQualityThumbs      = nullptr;
+    QCheckBox*           useDefaultTargetAlbum      = nullptr;
 
-    QCheckBox*           iconShowNameBox;
-    QCheckBox*           iconShowSizeBox;
-    QCheckBox*           iconShowDateBox;
-    QCheckBox*           iconShowResolutionBox;
-    QCheckBox*           iconShowTagsBox;
-    QCheckBox*           iconShowOverlaysBox;
-    QCheckBox*           iconShowRatingBox;
-    QCheckBox*           iconShowFormatBox;
-    QCheckBox*           iconShowCoordinatesBox;
-    QCheckBox*           previewLoadFullImageSize;
-    QCheckBox*           previewItemsWhileDownload;
-    QCheckBox*           previewShowIcons;
+    QCheckBox*           iconShowNameBox            = nullptr;
+    QCheckBox*           iconShowSizeBox            = nullptr;
+    QCheckBox*           iconShowDateBox            = nullptr;
+    QCheckBox*           iconShowResolutionBox      = nullptr;
+    QCheckBox*           iconShowTagsBox            = nullptr;
+    QCheckBox*           iconShowOverlaysBox        = nullptr;
+    QCheckBox*           iconShowRatingBox          = nullptr;
+    QCheckBox*           iconShowFormatBox          = nullptr;
+    QCheckBox*           iconShowCoordinatesBox     = nullptr;
+    QCheckBox*           previewLoadFullImageSize   = nullptr;
+    QCheckBox*           previewItemsWhileDownload  = nullptr;
+    QCheckBox*           previewShowIcons           = nullptr;
 
-    QComboBox*           leftClickActionComboBox;
+    QComboBox*           leftClickActionComboBox    = nullptr;
 
-    DFontSelect*         iconViewFontSelect;
+    DFontSelect*         iconViewFontSelect         = nullptr;
 
+    AlbumSelectWidget*   target1AlbumSelector       = nullptr;
 
-    AlbumSelectWidget*   target1AlbumSelector;
+    QTreeWidget*         listView                   = nullptr;
+    QListWidget*         importListView             = nullptr;
 
-    QTreeWidget*         listView;
-    QListWidget*         importListView;
+    QTabWidget*          tab                        = nullptr;
 
-    QTabWidget*          tab;
-
-    QLineEdit*           ignoreNamesEdit;
-    QLineEdit*           ignoreExtensionsEdit;
+    QLineEdit*           ignoreNamesEdit            = nullptr;
+    QLineEdit*           ignoreExtensionsEdit       = nullptr;
 
     FilterList           filters;
 
-    FullScreenSettings*  fullScreenSettings;
+    FullScreenSettings*  fullScreenSettings         = nullptr;
 };
 
 const QString SetupCamera::Private::configGroupName(QLatin1String("Camera Settings"));
