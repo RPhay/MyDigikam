@@ -142,20 +142,19 @@ QString ItemGPS::saveChanges()
 
     MetadataHub hub;
     hub.load(m_info);
-    QString filePath = m_info.filePath();
 
     if (MetaEngineSettings::instance()->settings().useLazySync)
     {
-        hub.write(filePath, MetadataHub::WRITE_TAGS     |
-                            MetadataHub::WRITE_TEMPLATE |
-                            MetadataHub::WRITE_POSITION);
+        hub.writeToMetadata(m_info, MetadataHub::WRITE_TAGS     |
+                                    MetadataHub::WRITE_TEMPLATE |
+                                    MetadataHub::WRITE_POSITION);
     }
     else
     {
         ScanController::FileMetadataWrite writeScope(m_info);
-        writeScope.changed(hub.write(filePath, MetadataHub::WRITE_TAGS     |
-                                               MetadataHub::WRITE_TEMPLATE |
-                                               MetadataHub::WRITE_POSITION));
+        writeScope.changed(hub.writeToMetadata(m_info, MetadataHub::WRITE_TAGS     |
+                                                       MetadataHub::WRITE_TEMPLATE |
+                                                       MetadataHub::WRITE_POSITION));
     }
 
     m_dirty        = false;

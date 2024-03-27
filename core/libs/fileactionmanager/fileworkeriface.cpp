@@ -85,24 +85,22 @@ void FileActionMngrFileWorker::writeMetadataToFiles(const FileActionItemInfoList
 
     Q_FOREACH (const ItemInfo& info, infos)
     {
-        MetadataHub hub;
-
         if (state() == WorkerObject::Deactivating)
         {
             break;
         }
 
+        MetadataHub hub;
         hub.load(info);
-        QString filePath = info.filePath();
 
         if (MetaEngineSettings::instance()->settings().useLazySync)
         {
-            hub.write(filePath, MetadataHub::WRITE_ALL);
+            hub.writeToMetadata(info, MetadataHub::WRITE_ALL);
         }
         else
         {
             ScanController::FileMetadataWrite writeScope(info);
-            writeScope.changed(hub.write(filePath, MetadataHub::WRITE_ALL));
+            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_ALL));
         }
 
         // hub emits fileMetadataChanged
@@ -123,13 +121,12 @@ void FileActionMngrFileWorker::writeMetadata(const FileActionItemInfoList& infos
 
     Q_FOREACH (const ItemInfo& info, infos)
     {
-        MetadataHub hub;
-
         if (state() == WorkerObject::Deactivating)
         {
             break;
         }
 
+        MetadataHub hub;
         hub.load(info);
 
         // apply to file metadata
