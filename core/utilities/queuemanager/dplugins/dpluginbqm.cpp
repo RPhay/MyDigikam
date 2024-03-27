@@ -31,9 +31,7 @@ class Q_DECL_HIDDEN DPluginBqm::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QList<BatchTool*> tools;
 };
@@ -131,6 +129,11 @@ bool DPluginBqm::hasVisibilityProperty() const
     // Code is missing in BQM to check workflow tools list validity if a plugin is disabled from setup dialog.
 
     return false;
+}
+
+QString DPluginBqm::ifaceIid() const
+{
+    return QLatin1String(DIGIKAM_DPLUGIN_BQM_IID);
 }
 
 } // namespace Digikam

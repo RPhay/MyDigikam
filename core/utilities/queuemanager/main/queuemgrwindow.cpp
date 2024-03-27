@@ -1065,6 +1065,13 @@ void QueueMgrWindow::customizedFullScreenMode(bool set)
     showMenuBarAction()->setEnabled(!set);
 }
 
+DInfoInterface* QueueMgrWindow::infoIface(DPluginAction* const)
+{
+    // Reimplemented in BatchToolsFactory
+
+    return nullptr;
+}
+
 } // namespace Digikam
 
 #include "moc_queuemgrwindow.cpp"

@@ -67,13 +67,7 @@ public:
 
     bool queryClose()                                   override;
 
-public:
-
-    DInfoInterface* infoIface(DPluginAction* const)     override
-    {
-        // Reimplemented in BatchToolsFactory
-        return nullptr;
-    };
+    DInfoInterface* infoIface(DPluginAction* const)     override;
 
 Q_SIGNALS:
 

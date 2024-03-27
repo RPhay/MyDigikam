@@ -99,88 +99,52 @@ class Q_DECL_HIDDEN QueueMgrWindow::Private
 
 public:
 
-    explicit Private()
-        : busy                          (false),
-          processingAllQueues           (false),
-          currentQueueToProcess         (0),
-          statusLabel                   (nullptr),
-          clearQueueAction              (nullptr),
-          removeItemsSelAction          (nullptr),
-          removeItemsDoneAction         (nullptr),
-          moveUpToolAction              (nullptr),
-          moveDownToolAction            (nullptr),
-          removeToolAction              (nullptr),
-          clearToolsAction              (nullptr),
-          runAction                     (nullptr),
-          runAllAction                  (nullptr),
-          stopAction                    (nullptr),
-          removeQueueAction             (nullptr),
-          newQueueAction                (nullptr),
-          saveQueueAction               (nullptr),
-          donateMoneyAction             (nullptr),
-          contributeAction              (nullptr),
-          rawCameraListAction           (nullptr),
-          topSplitter                   (nullptr),
-          bottomSplitter                (nullptr),
-          verticalSplitter              (nullptr),
-          batchToolsMgr                 (nullptr),
-          statusProgressBar             (nullptr),
-          thread                        (nullptr),
-          toolsView                     (nullptr),
-          toolSettings                  (nullptr),
-          assignedList                  (nullptr),
-          queuePool                     (nullptr),
-          queueSettingsView             (nullptr),
-          TOP_SPLITTER_CONFIG_KEY       (QLatin1String("BqmTopSplitter")),
-          BOTTOM_SPLITTER_CONFIG_KEY    (QLatin1String("BqmBottomSplitter")),
-          VERTICAL_SPLITTER_CONFIG_KEY  (QLatin1String("BqmVerticalSplitter"))
-    {
-    }
+    Private() = default;
 
-    bool                     busy;
-    bool                     processingAllQueues;
+    bool                     busy                           = false;
+    bool                     processingAllQueues            = false;
 
-    int                      currentQueueToProcess;
+    int                      currentQueueToProcess          = 0;
 
-    QLabel*                  statusLabel;
+    QLabel*                  statusLabel                    = nullptr;
 
-    QAction*                 clearQueueAction;
-    QAction*                 removeItemsSelAction;
-    QAction*                 removeItemsDoneAction;
-    QAction*                 moveUpToolAction;
-    QAction*                 moveDownToolAction;
-    QAction*                 removeToolAction;
-    QAction*                 clearToolsAction;
+    QAction*                 clearQueueAction               = nullptr;
+    QAction*                 removeItemsSelAction           = nullptr;
+    QAction*                 removeItemsDoneAction          = nullptr;
+    QAction*                 moveUpToolAction               = nullptr;
+    QAction*                 moveDownToolAction             = nullptr;
+    QAction*                 removeToolAction               = nullptr;
+    QAction*                 clearToolsAction               = nullptr;
 
-    QAction*                 runAction;
-    QAction*                 runAllAction;
-    QAction*                 stopAction;
-    QAction*                 removeQueueAction;
-    QAction*                 newQueueAction;
-    QAction*                 saveQueueAction;
-    QAction*                 donateMoneyAction;
-    QAction*                 contributeAction;
-    QAction*                 rawCameraListAction;
+    QAction*                 runAction                      = nullptr;
+    QAction*                 runAllAction                   = nullptr;
+    QAction*                 stopAction                     = nullptr;
+    QAction*                 removeQueueAction              = nullptr;
+    QAction*                 newQueueAction                 = nullptr;
+    QAction*                 saveQueueAction                = nullptr;
+    QAction*                 donateMoneyAction              = nullptr;
+    QAction*                 contributeAction               = nullptr;
+    QAction*                 rawCameraListAction            = nullptr;
 
-    SidebarSplitter*         topSplitter;
-    SidebarSplitter*         bottomSplitter;
-    SidebarSplitter*         verticalSplitter;
+    SidebarSplitter*         topSplitter                    = nullptr;
+    SidebarSplitter*         bottomSplitter                 = nullptr;
+    SidebarSplitter*         verticalSplitter               = nullptr;
 
-    BatchToolsFactory*       batchToolsMgr;
+    BatchToolsFactory*       batchToolsMgr                  = nullptr;
 
-    StatusProgressBar*       statusProgressBar;
+    StatusProgressBar*       statusProgressBar              = nullptr;
 
-    ActionThread*            thread;
+    ActionThread*            thread                         = nullptr;
 
-    ToolsView*               toolsView;
-    ToolSettingsView*        toolSettings;
-    AssignedListView*        assignedList;
-    QueuePool*               queuePool;
-    QueueSettingsView*       queueSettingsView;
+    ToolsView*               toolsView                      = nullptr;
+    ToolSettingsView*        toolSettings                   = nullptr;
+    AssignedListView*        assignedList                   = nullptr;
+    QueuePool*               queuePool                      = nullptr;
+    QueueSettingsView*       queueSettingsView              = nullptr;
 
-    const QString            TOP_SPLITTER_CONFIG_KEY;
-    const QString            BOTTOM_SPLITTER_CONFIG_KEY;
-    const QString            VERTICAL_SPLITTER_CONFIG_KEY;
+    const QString            TOP_SPLITTER_CONFIG_KEY        = QLatin1String("BqmTopSplitter");
+    const QString            BOTTOM_SPLITTER_CONFIG_KEY     = QLatin1String("BqmBottomSplitter");
+    const QString            VERTICAL_SPLITTER_CONFIG_KEY   = QLatin1String("BqmVerticalSplitter");
 };
 
 } // namespace Digikam

@@ -78,10 +78,7 @@ public:
     /**
      * Return the plugin interface identifier.
      */
-    QString ifaceIid()                                  const override
-    {
-        return QLatin1String(DIGIKAM_DPLUGIN_BQM_IID);
-    };
+    QString ifaceIid()                                  const override;
 
 Q_SIGNALS:
 
