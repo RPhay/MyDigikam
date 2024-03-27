@@ -97,6 +97,7 @@ void ItemPropertiesTab::shortenedMakeInfo(QString& make)
 {
     make.remove(QLatin1String(" CORPORATION"),       Qt::CaseInsensitive);        // from Nikon, Pentax, and Olympus
     make.remove(QLatin1String("EASTMAN "),           Qt::CaseInsensitive);        // from Kodak
+    make.remove(QLatin1String(" COMPANY, LTD."),     Qt::CaseInsensitive);        // from Ricoh
     make.remove(QLatin1String(" COMPANY"),           Qt::CaseInsensitive);        // from Kodak
     make.remove(QLatin1String(" OPTICAL CO.,LTD"),   Qt::CaseInsensitive);        // from Olympus
     make.remove(QLatin1String(" IMAGING CORP."),     Qt::CaseInsensitive);        // from Olympus
