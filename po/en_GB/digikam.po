@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 01:59+0000\n"
+"POT-Creation-Date: 2024-03-27 01:59+0000\n"
 "PO-Revision-Date: 2023-05-21 15:02+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -19961,37 +19961,37 @@ msgstr "Photo %1 of %2"
 msgid "Page %1 of %2"
 msgstr "Page %1 of %2"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:92
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:97
 #, kde-format
 msgid "Error opening input file"
 msgstr "Error opening input file"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:103
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:108
 #, kde-format
 msgid "Error opening temporary folder"
 msgstr "Error opening temporary folder"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:126
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:131
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "Cannot resize image. Aborting."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:139
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:144
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr "Cannot save resized image (JPEG). Aborting."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:147
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:152
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr "Cannot save resized image (PNG). Aborting."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:114
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:109
 #, kde-format
 msgid "Cannot create a temporary directory"
 msgstr "Cannot create a temporary directory"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:172
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:170
 #, kde-format
 msgid "Resizing %1"
 msgstr "Resizing %1"
@@ -20001,32 +20001,32 @@ msgstr "Resizing %1"
 msgid "%1 resized successfully"
 msgstr "%1 resized successfully"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:200
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:202
 #, kde-format
 msgid "Failed to resize %1: %2"
 msgstr "Failed to resize %1: %2"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:236
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:239
 #, kde-format
 msgid "There are no files to send"
 msgstr "There are no files to send"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:257
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:263
 #, kde-format
 msgid "Build images properties file"
 msgstr "Build images properties file"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:273
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:279
 #, kde-format
 msgid "no caption"
 msgstr "no caption"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:278
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:284
 #, kde-format
 msgid "no keywords"
 msgstr "no keywords"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:281
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:287
 #, kde-format
 msgid ""
 "file \"%1\":\n"
@@ -20035,37 +20035,37 @@ msgstr ""
 "file \"%1\":\n"
 "Original images: %2\n"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:283
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:289
 #, kde-format
 msgid "Comments: %1\n"
 msgstr "Comments: %1\n"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:285
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:291
 #, kde-format
 msgid "Tags: %1\n"
 msgstr "Tags: %1\n"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:287
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:293
 #, kde-format
 msgid "Rating: %1\n"
 msgstr "Rating: %1\n"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:292
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:298
 #, kde-format
 msgid "properties.txt"
 msgstr "properties.txt"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:302
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:313
 #, kde-format
 msgid "Image properties file cannot be opened"
 msgstr "Image properties file cannot be opened"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:314
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:325
 #, kde-format
 msgid "Image properties file done"
 msgstr "Image properties file done"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:345
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:983
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:996
 #, kde-format
@@ -20073,7 +20073,7 @@ msgctxt "@title:window"
 msgid "Processing Failed"
 msgstr "Processing Failed"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:335
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:346
 #, kde-format
 msgid ""
 "Some images cannot be resized.\n"
@@ -20082,7 +20082,7 @@ msgstr ""
 "Some images cannot be resized.\n"
 "Do you want them to be added as attachments without resizing?"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:405
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:419
 #, kde-format
 msgid ""
 "The file \"%1\" is too big to be sent, please reduce its size or change your "
@@ -20091,22 +20091,22 @@ msgstr ""
 "The file \"%1\" is too big to be sent, please reduce its size or change your "
 "settings"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:634
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:649
 #, kde-format
 msgid "Failed to start \"%1\" program. Check your system."
 msgstr "Failed to start \"%1\" program. Check your system."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:644
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:661
 #, kde-format
 msgid "Starting \"%1\" program..."
 msgstr "Starting \"%1\" program..."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:647
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:665
 #, kde-format
 msgid "After having sent your images by email..."
 msgstr "After having sent your images by email..."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:648
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:666
 #, kde-format
 msgid "Press 'Finish' button to clean up temporary files"
 msgstr "Press 'Finish' button to clean up temporary files"
@@ -24114,27 +24114,27 @@ msgstr "iNaturalist"
 msgid "Login"
 msgstr "Login"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1346
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1508
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "ERROR While Creating Observation"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1586
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1704
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "ERROR While Uploading Photo"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1824
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "ERROR While Deleting Observation"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1928
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr "Timeout after exceeding %1 seconds"
@@ -24502,18 +24502,18 @@ msgstr "obscured"
 msgid "Closest %1research-grade %2 reported in %3."
 msgstr "Closest %1research-grade %2 reported in %3."
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1067
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1069
 #, kde-format
 msgid "observation time"
 msgstr "observation time"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1077
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1104
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1078
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1105
 #, kde-format
 msgid "from observation"
 msgstr "from observation"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1084
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1085
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1125
 #: core/utilities/geolocation/marble/core/MarbleInputHandler.cpp:666
 #: core/utilities/geolocation/marble/core/MarbleWidget.cpp:646
@@ -24521,7 +24521,7 @@ msgstr "from observation"
 msgid "not available"
 msgstr "not available"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1116
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1117
 #, kde-format
 msgid "observation location"
 msgstr "observation location"
@@ -36439,7 +36439,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Open setup dialogue page to configure updates."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:257
-#: core/utilities/setup/downloader/filesdownloader.cpp:161
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
 msgid "Download"
 msgstr "Download"
@@ -49049,7 +49049,7 @@ msgstr "&Decorate"
 msgid "Effec&ts"
 msgstr "Effec&ts"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -49127,14 +49127,14 @@ msgstr ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:216
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:174
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolocation"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:217
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid ""
@@ -52527,7 +52527,7 @@ msgstr "Edit Geolocation Bookmarks"
 #: core/utilities/setup/album/setupcategory.cpp:99
 #: core/utilities/setup/camera/setupcamera.cpp:319
 #: core/utilities/setup/camera/setupcamera.cpp:441
-#: core/utilities/setup/setuptemplate.cpp:116
+#: core/utilities/setup/setuptemplate.cpp:108
 #, kde-format
 msgid "&Remove"
 msgstr "&Remove"
@@ -63081,7 +63081,7 @@ msgstr ""
 #: core/utilities/setup/album/setupcategory.cpp:98
 #: core/utilities/setup/camera/setupcamera.cpp:317
 #: core/utilities/setup/camera/setupcamera.cpp:439
-#: core/utilities/setup/setuptemplate.cpp:114
+#: core/utilities/setup/setuptemplate.cpp:106
 #, kde-format
 msgid "&Add..."
 msgstr "&Add..."
@@ -64039,41 +64039,41 @@ msgstr "Select Category"
 msgid "Your collection will use this category:"
 msgstr "Your collection will use this category:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:149
+#: core/utilities/setup/downloader/filesdownloader.cpp:136
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Download Required Files"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Use Face Detection feature"
 msgstr "Face Detection"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:158
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use Auto Tags Assignment feature"
 msgstr "Automatic Adjustment"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:230
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "All files were downloaded successfully."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Download Error"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:251
+#: core/utilities/setup/downloader/filesdownloader.cpp:238
 #, fuzzy, kde-format
 #| msgid ""
 #| "An error occurred during the download.\n"
@@ -64101,34 +64101,34 @@ msgstr ""
 "\n"
 "You can try again or continue the download at the next start."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#: core/utilities/setup/downloader/filesdownloader.cpp:247
 #, fuzzy, kde-format
 #| msgid "Alternative name"
 msgctxt "@action:button"
 msgid "Try Alternate"
 msgstr "Alternative name"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:395
+#: core/utilities/setup/downloader/filesdownloader.cpp:382
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Checksum is incorrect."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:419
+#: core/utilities/setup/downloader/filesdownloader.cpp:406
 #, kde-format
 msgid "File write error."
 msgstr "File write error."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:426
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "File open error."
 msgstr "File open error."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:428
 #, kde-format
 msgid "File on the server is too large."
 msgstr "File on the server is too large."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:582
+#: core/utilities/setup/downloader/filesdownloader.cpp:569
 #, fuzzy, kde-format
 #| msgctxt "%1: folder path, %2: disk size with unit"
 #| msgid ""
@@ -64159,13 +64159,13 @@ msgstr ""
 "sure there are around %2 available. <b>After the successful download you "
 "have to restart digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:595
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:602
+#: core/utilities/setup/downloader/filesdownloader.cpp:589
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
@@ -64189,7 +64189,7 @@ msgid "Save Settings"
 msgstr "Save Settings"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:126
-#: core/utilities/setup/setuplighttable.cpp:88
+#: core/utilities/setup/setuplighttable.cpp:82
 #, kde-format
 msgid "Interface Options"
 msgstr "Interface Options"
@@ -66069,13 +66069,13 @@ msgstr ""
 "<b>Note: All changes to these settings only take effect after the restart. "
 "Some settings are hardware dependent and may have no effect.</b>"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:127
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Database"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:128
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66085,13 +66085,13 @@ msgstr ""
 "Database Settings\n"
 "Customise database settings"
 
-#: core/utilities/setup/setup.cpp:174
+#: core/utilities/setup/setup.cpp:132
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Collections"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66101,13 +66101,13 @@ msgstr ""
 "Collections Settings\n"
 "Set root albums locations"
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:137
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Views"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66117,13 +66117,13 @@ msgstr ""
 "Application Views Settings\n"
 "Customise the look of the views"
 
-#: core/utilities/setup/setup.cpp:184
+#: core/utilities/setup/setup.cpp:142
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Tool-Tip"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66133,13 +66133,13 @@ msgstr ""
 "Items Tool-Tip Settings\n"
 "Customise information in item tool-tips"
 
-#: core/utilities/setup/setup.cpp:189
+#: core/utilities/setup/setup.cpp:147
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadata"
 
-#: core/utilities/setup/setup.cpp:190
+#: core/utilities/setup/setup.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66149,13 +66149,13 @@ msgstr ""
 "Embedded Image Information Management\n"
 "Setup relations between images and metadata"
 
-#: core/utilities/setup/setup.cpp:194
+#: core/utilities/setup/setup.cpp:152
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Templates"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66165,13 +66165,13 @@ msgstr ""
 "Metadata templates\n"
 "Manage your collection of metadata templates"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:157
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Image Editor"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66181,13 +66181,13 @@ msgstr ""
 "Image Editor Settings\n"
 "Customise the image editor settings"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Colour Management"
 
-#: core/utilities/setup/setup.cpp:205
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66197,13 +66197,13 @@ msgstr ""
 "Settings for Colour Management\n"
 "Customise the colour management settings"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:167
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Light Table"
 
-#: core/utilities/setup/setup.cpp:210
+#: core/utilities/setup/setup.cpp:168
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid ""
@@ -66217,13 +66217,13 @@ msgstr ""
 "Light Table Settings\n"
 "Customise tool used to compare images"
 
-#: core/utilities/setup/setup.cpp:223
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Image Quality Sorter"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66233,13 +66233,13 @@ msgstr ""
 "Image Quality Sorter Settings\n"
 "Customise default settings to perform image triaging by quality"
 
-#: core/utilities/setup/setup.cpp:228
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Cameras"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66249,13 +66249,13 @@ msgstr ""
 "Camera Settings\n"
 "Manage your camera devices"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Plugins"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66265,13 +66265,13 @@ msgstr ""
 "Plug-in Settings\n"
 "Set which plugins will be accessible from application"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Miscellaneous"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -66281,7 +66281,7 @@ msgstr ""
 "Miscellaneous Settings\n"
 "Customise behaviour of the other parts of digiKam"
 
-#: core/utilities/setup/setupdatabase.cpp:174
+#: core/utilities/setup/setupdatabase.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66299,19 +66299,19 @@ msgstr ""
 "to 2.0.\n"
 "Do you want to begin the update?"
 
-#: core/utilities/setup/setupdatabase.cpp:188
+#: core/utilities/setup/setupdatabase.cpp:183
 #, kde-format
 msgctxt "@title:group"
 msgid "Updates"
 msgstr "Updates"
 
-#: core/utilities/setup/setupdatabase.cpp:191
+#: core/utilities/setup/setupdatabase.cpp:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr "Update File Hashes"
 
-#: core/utilities/setup/setupdatabase.cpp:193
+#: core/utilities/setup/setupdatabase.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -66329,7 +66329,7 @@ msgstr ""
 "After the upgrade you cannot use your database with a digiKam version prior "
 "to 2.0."
 
-#: core/utilities/setup/setupdatabase.cpp:202
+#: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <interface>Update File Hashes</interface>"
@@ -66737,7 +66737,7 @@ msgstr ""
 "li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>On your system, "
 "currently these paths exist and are scanned:<ul><li>%1</li></ul>"
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:54
+#: core/utilities/setup/setupimagequalitysorter.cpp:51
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -66763,18 +66763,18 @@ msgstr ""
 "deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
 "settings, and make this feature easier to use."
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:64
+#: core/utilities/setup/setupimagequalitysorter.cpp:61
 #, kde-format
 msgctxt "@label"
 msgid "aesthetic image quality"
 msgstr "aesthetic image quality"
 
-#: core/utilities/setup/setuplighttable.cpp:91
+#: core/utilities/setup/setuplighttable.cpp:85
 #, kde-format
 msgid "Synchronize panels automatically"
 msgstr "Synchronise panels automatically"
 
-#: core/utilities/setup/setuplighttable.cpp:92
+#: core/utilities/setup/setuplighttable.cpp:86
 #, kde-format
 msgid ""
 "Set this option to automatically synchronize zooming and panning between "
@@ -66783,12 +66783,12 @@ msgstr ""
 "Set this option to automatically synchronise zooming and panning between "
 "left and right panels if the images have the same size."
 
-#: core/utilities/setup/setuplighttable.cpp:96
+#: core/utilities/setup/setuplighttable.cpp:90
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
 msgstr "Selecting a thumbbar item loads the image to the right panel"
 
-#: core/utilities/setup/setuplighttable.cpp:98
+#: core/utilities/setup/setuplighttable.cpp:92
 #, kde-format
 msgid ""
 "Set this option to automatically load an image into the right panel when the "
@@ -66797,12 +66797,12 @@ msgstr ""
 "Set this option to automatically load an image into the right panel when the "
 "corresponding item is selected on the thumbbar."
 
-#: core/utilities/setup/setuplighttable.cpp:101
+#: core/utilities/setup/setuplighttable.cpp:95
 #, kde-format
 msgid "Clear the light table on close"
 msgstr "Clear the light table on close"
 
-#: core/utilities/setup/setuplighttable.cpp:102
+#: core/utilities/setup/setuplighttable.cpp:96
 #, kde-format
 msgid ""
 "Set this option to remove all images from the light table when you close it, "
@@ -66811,41 +66811,41 @@ msgstr ""
 "Set this option to remove all images from the light table when you close it, "
 "or unset it to preserve the images currently on the light table."
 
-#: core/utilities/setup/setupplugins.cpp:73
+#: core/utilities/setup/setupplugins.cpp:66
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Generic"
 msgstr "Generic"
 
-#: core/utilities/setup/setupplugins.cpp:79
+#: core/utilities/setup/setupplugins.cpp:72
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Editor"
 msgstr "Image Editor"
 
-#: core/utilities/setup/setupplugins.cpp:85
+#: core/utilities/setup/setupplugins.cpp:78
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
 msgstr "Batch Queue Manager"
 
-#: core/utilities/setup/setupplugins.cpp:91
+#: core/utilities/setup/setupplugins.cpp:84
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Image Loaders"
 
-#: core/utilities/setup/setuptemplate.cpp:85
+#: core/utilities/setup/setuptemplate.cpp:77
 #, kde-format
 msgid "Template Title:"
 msgstr "Template Title:"
 
-#: core/utilities/setup/setuptemplate.cpp:88
+#: core/utilities/setup/setuptemplate.cpp:80
 #, kde-format
 msgid "Enter the metadata template title here."
 msgstr "Enter the metadata template title here."
 
-#: core/utilities/setup/setuptemplate.cpp:89
+#: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
 msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
@@ -66854,7 +66854,7 @@ msgstr ""
 "<p>Enter the metadata template title here. This title will be used to "
 "identify a template in your collection.</p>"
 
-#: core/utilities/setup/setuptemplate.cpp:99
+#: core/utilities/setup/setuptemplate.cpp:91
 #, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
@@ -66869,18 +66869,18 @@ msgstr ""
 "limitation with XMP, but note that IPTC text tag sizes are limited. Use "
 "contextual help for details.</b>"
 
-#: core/utilities/setup/setuptemplate.cpp:118
+#: core/utilities/setup/setuptemplate.cpp:110
 #, kde-format
 msgid "&Replace..."
 msgstr "&Replace..."
 
-#: core/utilities/setup/setuptemplate.cpp:253
-#: core/utilities/setup/setuptemplate.cpp:284
+#: core/utilities/setup/setuptemplate.cpp:245
+#: core/utilities/setup/setuptemplate.cpp:276
 #, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "Cannot register new metadata template without title."
 
-#: core/utilities/setup/setuptemplate.cpp:260
+#: core/utilities/setup/setuptemplate.cpp:252
 #, kde-format
 msgid "A metadata template named '%1' already exists."
 msgstr "A metadata template named '%1' already exists."

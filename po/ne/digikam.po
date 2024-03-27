@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 01:59+0000\n"
+"POT-Creation-Date: 2024-03-27 01:59+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -19272,38 +19272,38 @@ msgstr " (%3 को %2)"
 msgid "Page %1 of %2"
 msgstr " (%3 को %2)"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:92
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:97
 #, fuzzy, kde-format
 msgid "Error opening input file"
 msgstr "फाइल बचत गर्दा त्रुटि"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:103
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:108
 #, fuzzy, kde-format
 #| msgid "Failed to delete file \"%1\"."
 msgid "Error opening temporary folder"
 msgstr "\"%1\" फाइल मेट्न असफल"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:126
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:131
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:139
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:144
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:147
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:152
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:114
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:109
 #, fuzzy, kde-format
 msgid "Cannot create a temporary directory"
 msgstr "एल्बम पुन: नामकरण गर्न असफल"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:172
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:170
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgid "Resizing %1"
@@ -19314,73 +19314,73 @@ msgstr "दर"
 msgid "%1 resized successfully"
 msgstr "%1 फाइल डाउनलोड गर्दैछ..."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:200
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:202
 #, fuzzy, kde-format
 msgid "Failed to resize %1: %2"
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:236
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:239
 #, fuzzy, kde-format
 #| msgid "There are no pictures in this folder."
 msgid "There are no files to send"
 msgstr "यो फोल्डरमा तस्विर छैन"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:257
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:263
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Build images properties file"
 msgstr "फाइल गुण"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:273
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:279
 #, fuzzy, kde-format
 msgid "no caption"
 msgstr "चयन"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:278
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:284
 #, fuzzy, kde-format
 msgid "no keywords"
 msgstr "मेटाडेटा"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:281
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:287
 #, fuzzy, kde-format
 msgid ""
 "file \"%1\":\n"
 "Original images: %2\n"
 msgstr "मौलिक"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:283
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:289
 #, fuzzy, kde-format
 #| msgid "Contrast:"
 msgid "Comments: %1\n"
 msgstr "व्यतिरेक:"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:285
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:291
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgid "Tags: %1\n"
 msgstr "ट्याग: %1"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:287
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:293
 #, fuzzy, kde-format
 msgid "Rating: %1\n"
 msgstr "दर:"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:292
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:298
 #, fuzzy, kde-format
 msgid "properties.txt"
 msgstr "फाइल गुण"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:302
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:313
 #, kde-format
 msgid "Image properties file cannot be opened"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:314
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:325
 #, fuzzy, kde-format
 msgid "Image properties file done"
 msgstr "फाइल गुण"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:345
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:983
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:996
 #, fuzzy, kde-format
@@ -19388,36 +19388,36 @@ msgctxt "@title:window"
 msgid "Processing Failed"
 msgstr "चलचित्र फाइल"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:335
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:346
 #, kde-format
 msgid ""
 "Some images cannot be resized.\n"
 "Do you want them to be added as attachments without resizing?"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:405
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:419
 #, kde-format
 msgid ""
 "The file \"%1\" is too big to be sent, please reduce its size or change your "
 "settings"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:634
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:649
 #, kde-format
 msgid "Failed to start \"%1\" program. Check your system."
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:644
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:661
 #, kde-format
 msgid "Starting \"%1\" program..."
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:647
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:665
 #, kde-format
 msgid "After having sent your images by email..."
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:648
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:666
 #, kde-format
 msgid "Press 'Finish' button to clean up temporary files"
 msgstr ""
@@ -23278,27 +23278,27 @@ msgstr "प्रकृति"
 msgid "Login"
 msgstr "प्रोफाइल त्रुटि"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1346
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1508
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "\"%1\" छवि लोड गर्न असफल"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1586
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1704
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "\"%1\" छवि लोड गर्न असफल"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1824
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "\"%1\" छवि लोड गर्न असफल"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1928
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -23670,18 +23670,18 @@ msgstr ""
 msgid "Closest %1research-grade %2 reported in %3."
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1067
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1069
 #, fuzzy, kde-format
 msgid "observation time"
 msgstr "टोन फिल्टर होइन"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1077
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1104
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1078
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1105
 #, fuzzy, kde-format
 msgid "from observation"
 msgstr "छवि सूचना"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1084
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1085
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1125
 #: core/utilities/geolocation/marble/core/MarbleInputHandler.cpp:666
 #: core/utilities/geolocation/marble/core/MarbleWidget.cpp:646
@@ -23689,7 +23689,7 @@ msgstr "छवि सूचना"
 msgid "not available"
 msgstr "विकल्प उपलब्ध छैन"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1116
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1117
 #, fuzzy, kde-format
 msgid "observation location"
 msgstr "चयन"
@@ -35139,7 +35139,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:257
-#: core/utilities/setup/downloader/filesdownloader.cpp:161
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "डाउनलोड गर्नुहोस्"
@@ -47786,7 +47786,7 @@ msgstr "घुमाउनुहोस्"
 msgid "Effec&ts"
 msgstr "रङ गहिराइ:"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:120
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -47853,13 +47853,13 @@ msgid ""
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:216
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:174
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "चयन"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:217
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -51092,7 +51092,7 @@ msgstr "चयन"
 #: core/utilities/setup/album/setupcategory.cpp:99
 #: core/utilities/setup/camera/setupcamera.cpp:319
 #: core/utilities/setup/camera/setupcamera.cpp:441
-#: core/utilities/setup/setuptemplate.cpp:116
+#: core/utilities/setup/setuptemplate.cpp:108
 #, fuzzy, kde-format
 msgid "&Remove"
 msgstr "ट्याग हटाउनुहोस्"
@@ -61135,7 +61135,7 @@ msgstr ""
 #: core/utilities/setup/album/setupcategory.cpp:98
 #: core/utilities/setup/camera/setupcamera.cpp:317
 #: core/utilities/setup/camera/setupcamera.cpp:439
-#: core/utilities/setup/setuptemplate.cpp:114
+#: core/utilities/setup/setuptemplate.cpp:106
 #, kde-format
 msgid "&Add..."
 msgstr "थप्नुहोस्..."
@@ -62008,41 +62008,41 @@ msgstr "नयाँ वस्तु चयन गर्नुहोस्"
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:149
+#: core/utilities/setup/downloader/filesdownloader.cpp:136
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "%1 फाइल डाउनलोड गर्दैछ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
 #, fuzzy, kde-format
 msgid "Use Face Detection feature"
 msgstr "चयन"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:158
 #, fuzzy, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr "HSL समायोजन"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:230
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgid "All files were downloaded successfully."
 msgstr "%1 फाइल डाउनलोड गर्दैछ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "डाउनलोड गर्नुहोस्"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:251
+#: core/utilities/setup/downloader/filesdownloader.cpp:238
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -62055,33 +62055,33 @@ msgid ""
 "on the next startup."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#: core/utilities/setup/downloader/filesdownloader.cpp:247
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Try Alternate"
 msgstr "सङ्कलनद्वारा"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:395
+#: core/utilities/setup/downloader/filesdownloader.cpp:382
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:419
+#: core/utilities/setup/downloader/filesdownloader.cpp:406
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:426
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, fuzzy, kde-format
 msgid "File open error."
 msgstr "निर्यात"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:428
 #, fuzzy, kde-format
 msgid "File on the server is too large."
 msgstr "फाइल मुद्रण गर्न असफल: '%1'"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:582
+#: core/utilities/setup/downloader/filesdownloader.cpp:569
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -62096,13 +62096,13 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:595
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:602
+#: core/utilities/setup/downloader/filesdownloader.cpp:589
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
@@ -62127,7 +62127,7 @@ msgid "Save Settings"
 msgstr "छवि सेटिङ"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:126
-#: core/utilities/setup/setuplighttable.cpp:88
+#: core/utilities/setup/setuplighttable.cpp:82
 #, kde-format
 msgid "Interface Options"
 msgstr "इन्टरफेस विकल्प"
@@ -63725,13 +63725,13 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:127
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "फोल्डर सिर्जना गर्नुहुन्छ ?"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:128
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63739,14 +63739,14 @@ msgid ""
 "Customize database settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:174
+#: core/utilities/setup/setup.cpp:132
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "सङ्कलन"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:133
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63754,13 +63754,13 @@ msgid ""
 "Set root albums locations"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:137
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "दृश्य..."
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63768,13 +63768,13 @@ msgid ""
 "Customize the look of the views"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:184
+#: core/utilities/setup/setup.cpp:142
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "उपकरण टिप"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:143
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63782,14 +63782,14 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:189
+#: core/utilities/setup/setup.cpp:147
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "मेटाडेटा"
 
-#: core/utilities/setup/setup.cpp:190
+#: core/utilities/setup/setup.cpp:148
 #, fuzzy, kde-format
 #| msgid "Embedded Image Information Management"
 msgctxt "@title"
@@ -63798,13 +63798,13 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr "सम्मिलित छवि सूचना व्यवस्थापन"
 
-#: core/utilities/setup/setup.cpp:194
+#: core/utilities/setup/setup.cpp:152
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "सिर्जना:"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63812,14 +63812,14 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:157
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "छवि सम्पादक"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63827,14 +63827,14 @@ msgid ""
 "Customize the image editor settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:162
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "रङ व्यवस्थापन"
 
-#: core/utilities/setup/setup.cpp:205
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63842,13 +63842,13 @@ msgid ""
 "Customize the color management settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:167
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "प्रकाश"
 
-#: core/utilities/setup/setup.cpp:210
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63856,13 +63856,13 @@ msgid ""
 "Customize tool used to compare items"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:223
+#: core/utilities/setup/setup.cpp:181
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "छवि सम्पादक"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63870,14 +63870,14 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:228
+#: core/utilities/setup/setup.cpp:186
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "क्यामेरा"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63885,13 +63885,13 @@ msgid ""
 "Manage your camera devices"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:194
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "किपि प्लगइन"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63899,13 +63899,13 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:199
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "विविध सेटिङ"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63913,7 +63913,7 @@ msgid ""
 "Customize behavior of the other parts of digiKam"
 msgstr ""
 
-#: core/utilities/setup/setupdatabase.cpp:174
+#: core/utilities/setup/setupdatabase.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63925,19 +63925,19 @@ msgid ""
 "Do you want to begin the update?"
 msgstr ""
 
-#: core/utilities/setup/setupdatabase.cpp:188
+#: core/utilities/setup/setupdatabase.cpp:183
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Updates"
 msgstr "मिति:"
 
-#: core/utilities/setup/setupdatabase.cpp:191
+#: core/utilities/setup/setupdatabase.cpp:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr ""
 
-#: core/utilities/setup/setupdatabase.cpp:193
+#: core/utilities/setup/setupdatabase.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -63949,7 +63949,7 @@ msgid ""
 "to 2.0."
 msgstr ""
 
-#: core/utilities/setup/setupdatabase.cpp:202
+#: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <interface>Update File Hashes</interface>"
@@ -64315,7 +64315,7 @@ msgid ""
 "currently these paths exist and are scanned:<ul><li>%1</li></ul>"
 msgstr ""
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:54
+#: core/utilities/setup/setupimagequalitysorter.cpp:51
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -64331,93 +64331,93 @@ msgid ""
 "settings, and make this feature easier to use."
 msgstr ""
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:64
+#: core/utilities/setup/setupimagequalitysorter.cpp:61
 #, fuzzy, kde-format
 #| msgid "&Sort Images"
 msgctxt "@label"
 msgid "aesthetic image quality"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/utilities/setup/setuplighttable.cpp:91
+#: core/utilities/setup/setuplighttable.cpp:85
 #, kde-format
 msgid "Synchronize panels automatically"
 msgstr "प्यानल स्वचालित रूपले समक्रमण गर्नुहोस्"
 
-#: core/utilities/setup/setuplighttable.cpp:92
+#: core/utilities/setup/setuplighttable.cpp:86
 #, kde-format
 msgid ""
 "Set this option to automatically synchronize zooming and panning between "
 "left and right panels if the images have the same size."
 msgstr ""
 
-#: core/utilities/setup/setuplighttable.cpp:96
+#: core/utilities/setup/setuplighttable.cpp:90
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
 msgstr ""
 
-#: core/utilities/setup/setuplighttable.cpp:98
+#: core/utilities/setup/setuplighttable.cpp:92
 #, fuzzy, kde-format
 msgid ""
 "Set this option to automatically load an image into the right panel when the "
 "corresponding item is selected on the thumbbar."
 msgstr "<p>एल्बम वस्तु माथि माउस हुँदा छवि सूचना प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/utilities/setup/setuplighttable.cpp:101
+#: core/utilities/setup/setuplighttable.cpp:95
 #, kde-format
 msgid "Clear the light table on close"
 msgstr ""
 
-#: core/utilities/setup/setuplighttable.cpp:102
+#: core/utilities/setup/setuplighttable.cpp:96
 #, kde-format
 msgid ""
 "Set this option to remove all images from the light table when you close it, "
 "or unset it to preserve the images currently on the light table."
 msgstr ""
 
-#: core/utilities/setup/setupplugins.cpp:73
+#: core/utilities/setup/setupplugins.cpp:66
 #, fuzzy, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Generic"
 msgstr "साधारण"
 
-#: core/utilities/setup/setupplugins.cpp:79
+#: core/utilities/setup/setupplugins.cpp:72
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title:tab plugins type"
 msgid "Image Editor"
 msgstr "छवि सम्पादक"
 
-#: core/utilities/setup/setupplugins.cpp:85
+#: core/utilities/setup/setupplugins.cpp:78
 #, fuzzy, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
 msgstr "फोल्डर सूचीकरण समाप्त भयो..."
 
-#: core/utilities/setup/setupplugins.cpp:91
+#: core/utilities/setup/setupplugins.cpp:84
 #, fuzzy, kde-format
 #| msgid "Image Files"
 msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "छवि फाइल"
 
-#: core/utilities/setup/setuptemplate.cpp:85
+#: core/utilities/setup/setuptemplate.cpp:77
 #, fuzzy, kde-format
 msgid "Template Title:"
 msgstr "सिर्जना:"
 
-#: core/utilities/setup/setuptemplate.cpp:88
+#: core/utilities/setup/setuptemplate.cpp:80
 #, fuzzy, kde-format
 msgid "Enter the metadata template title here."
 msgstr "<p>यहाँ अचल आकार अनुपात अभिमुखीकरण चयन गर्नुहोस् ।"
 
-#: core/utilities/setup/setuptemplate.cpp:89
+#: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
 msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
 "identify a template in your collection.</p>"
 msgstr ""
 
-#: core/utilities/setup/setuptemplate.cpp:99
+#: core/utilities/setup/setuptemplate.cpp:91
 #, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
@@ -64427,18 +64427,18 @@ msgid ""
 "contextual help for details.</b>"
 msgstr ""
 
-#: core/utilities/setup/setuptemplate.cpp:118
+#: core/utilities/setup/setuptemplate.cpp:110
 #, fuzzy, kde-format
 msgid "&Replace..."
 msgstr "पुन: नामकरण गर्नुहोस्..."
 
-#: core/utilities/setup/setuptemplate.cpp:253
-#: core/utilities/setup/setuptemplate.cpp:284
+#: core/utilities/setup/setuptemplate.cpp:245
+#: core/utilities/setup/setuptemplate.cpp:276
 #, fuzzy, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "<p>यहाँ अचल आकार अनुपात अभिमुखीकरण चयन गर्नुहोस् ।"
 
-#: core/utilities/setup/setuptemplate.cpp:260
+#: core/utilities/setup/setuptemplate.cpp:252
 #, fuzzy, kde-format
 msgid "A metadata template named '%1' already exists."
 msgstr "फाइल पहिल्यै अवस्थित छ"

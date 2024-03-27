@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-17 01:57+0000\n"
+"POT-Creation-Date: 2024-03-26 01:59+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -1470,7 +1470,15 @@ msgstr ""
 msgid "Images found in %1"
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:103
+#: core/app/main/digikamapp_config.cpp:112
+#, kde-format
+msgid ""
+"We now switch to the system icon theme. The icon colors are automatically "
+"adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
+"of digiKam."
+msgstr ""
+
+#: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1478,7 +1486,7 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:111
+#: core/app/main/digikamapp_config.cpp:136
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""
@@ -2571,7 +2579,7 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr ""
 
-#: core/app/main/main.cpp:197 core/app/views/stack/welcomepageview.cpp:257
+#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:257
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2581,45 +2589,45 @@ msgstr ""
 msgid "digiKam"
 msgstr ""
 
-#: core/app/main/main.cpp:206 core/showfoto/main/main.cpp:187
+#: core/app/main/main.cpp:210 core/showfoto/main/main.cpp:191
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: core/app/main/main.cpp:207 core/showfoto/main/main.cpp:188
+#: core/app/main/main.cpp:211 core/showfoto/main/main.cpp:192
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: core/app/main/main.cpp:215
+#: core/app/main/main.cpp:219
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr ""
 
-#: core/app/main/main.cpp:218
+#: core/app/main/main.cpp:222
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:225
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr ""
 
-#: core/app/main/main.cpp:223
+#: core/app/main/main.cpp:227
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 
-#: core/app/main/main.cpp:226
+#: core/app/main/main.cpp:230
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr ""
 
-#: core/app/main/main.cpp:251
+#: core/app/main/main.cpp:255
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2627,7 +2635,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:293
+#: core/app/main/main.cpp:297
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2635,7 +2643,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:302
+#: core/app/main/main.cpp:306
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2643,7 +2651,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:342
+#: core/app/main/main.cpp:346
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3143,7 +3151,7 @@ msgstr ""
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:888
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
@@ -5797,7 +5805,7 @@ msgid ""
 "label metadata values to images.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:78
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:77
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -5809,31 +5817,31 @@ msgid ""
 "contents and store the results in the database.</p>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:87
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:86
 #: core/utilities/maintenance/maintenancedlg.cpp:191
 #, kde-format
 msgid "Selection model: "
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:91
 #: core/utilities/maintenance/maintenancedlg.cpp:196
 #, kde-format
 msgid "YOLOv5 Nano"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:92
 #: core/utilities/maintenance/maintenancedlg.cpp:197
 #, kde-format
 msgid "YOLOv5 XLarge"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:94
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:93
 #: core/utilities/maintenance/maintenancedlg.cpp:198
 #, kde-format
 msgid "ResNet50"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:96
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -5855,6 +5863,13 @@ msgid ""
 "ResNet50 is primarily focused on image classification and does not provide "
 "object localization. It can recognize objects from a vast set of more than "
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
+msgstr ""
+
+#: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
+#: core/utilities/maintenance/maintenancedlg.cpp:212
+#, kde-format
+msgctxt "@label"
+msgid "Translate Tags to:"
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
@@ -6088,37 +6103,37 @@ msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:107
+#: core/dplugins/bqm/metadata/translate/translate.cpp:103
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:108
+#: core/dplugins/bqm/metadata/translate/translate.cpp:104
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:109
+#: core/dplugins/bqm/metadata/translate/translate.cpp:105
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:110
+#: core/dplugins/bqm/metadata/translate/translate.cpp:106
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:113
+#: core/dplugins/bqm/metadata/translate/translate.cpp:109
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/translate/translate.cpp:151
+#: core/dplugins/bqm/metadata/translate/translate.cpp:147
 #, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
@@ -6469,12 +6484,12 @@ msgstr ""
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
@@ -6492,12 +6507,12 @@ msgstr ""
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:172
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:176
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:188
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
@@ -6511,7 +6526,7 @@ msgstr ""
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:190
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
@@ -6519,13 +6534,13 @@ msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:76
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:68
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:181
 #, kde-format
 msgid "JPEG quality:"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:78
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:70
 #, kde-format
 msgid ""
 "<p>The JPEG quality:</p><p><b>1</b>: low quality (high compression and small "
@@ -6534,39 +6549,39 @@ msgid ""
 "p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:87
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:79
 #, kde-format
 msgid ""
 "<font color='red'><i>Warning: <a href='https://en.wikipedia.org/wiki/"
 "JPEG'>JPEG</a> is a lossy image compression format.</i></font>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:97
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:89
 #, kde-format
 msgid "Chroma subsampling:"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:100
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:92
 #, kde-format
 msgid "4:4:4 (best quality)"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:101
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:93
 #, kde-format
 msgid "4:2:2 (good quality)"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:102
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:94
 #, kde-format
 msgid "4:2:0 (low quality)"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:103
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:95
 #, kde-format
 msgid "4:1:1 (low quality)"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:104
+#: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:96
 #, kde-format
 msgid ""
 "<p>Chroma subsampling reduces file size by taking advantage of the eye's "
@@ -6614,24 +6629,24 @@ msgctxt "@title"
 msgid "JPEG image"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:68
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:62
 #, kde-format
 msgid "Lossless JPEG 2000 files"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:70
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for JPEG 2000 images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG 2000 pictures.</p>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:77
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:71
 #, kde-format
 msgid "JPEG 2000 quality:"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:79
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality (high "
@@ -6641,19 +6656,19 @@ msgid ""
 "compression format when you use this setting.</b></p>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:108
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:107
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:123
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:128
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:127
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6667,21 +6682,21 @@ msgid ""
 "Group documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:169
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:173
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:177
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
@@ -6710,7 +6725,7 @@ msgid ""
 "wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:187
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, kde-format
@@ -6718,24 +6733,24 @@ msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:62
 #, kde-format
 msgid "Lossless PGF files"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:70
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress PGF pictures.</p>"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:77
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:71
 #, kde-format
 msgid "PGF quality:"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:79
+#: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for PGF images:</p><p><b>1</b>: high quality (no "
@@ -6777,12 +6792,12 @@ msgctxt "@title"
 msgid "Progressive Graphics File"
 msgstr ""
 
-#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:67
+#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:62
 #, kde-format
 msgid "PNG compression:"
 msgstr ""
 
-#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:69
+#: core/dplugins/dimg/png/dimgpngexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>The compression value for PNG images:</p><p><b>1</b>: low compression "
@@ -6822,24 +6837,24 @@ msgctxt "@title"
 msgid "Portable Network Graphic"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:62
 #, kde-format
 msgid "Lossless AVIF files"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for AVIF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG XL pictures.</p>"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:71
 #, kde-format
 msgid "AVIF quality:"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for AVIF images:</p><p><b>1</b>: low quality (high "
@@ -6849,24 +6864,24 @@ msgid ""
 "format when you use this setting.</b></p>"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:62
 #, kde-format
 msgid "Lossless JPEG XL files"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for JPEG XL images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG XL pictures.</p>"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:71
 #, kde-format
 msgid "JPEG XL quality:"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for JPEG XL images:</p><p><b>1</b>: low quality (high "
@@ -6900,24 +6915,24 @@ msgid ""
 "Framework documentation</a> for extended list of formats supported.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:68
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:62
 #, kde-format
 msgid "Lossless WEBP files"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:70
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:64
 #, kde-format
 msgid ""
 "<p>Toggle lossless compression for WEBP images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress WEBP pictures.</p>"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:77
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:71
 #, kde-format
 msgid "WEBP quality:"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:79
+#: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:73
 #, kde-format
 msgid ""
 "<p>The quality value for WEB images:</p><p><b>1</b>: low quality (high "
@@ -8363,7 +8378,7 @@ msgstr ""
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:70
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
-#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Settings..."
 msgstr ""
@@ -10468,7 +10483,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
-#: core/utilities/searchwindow/searchutilities.cpp:653
+#: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
 msgid "OK"
 msgstr ""
@@ -24805,7 +24820,7 @@ msgstr ""
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
 #: core/libs/tags/widgets/tageditdlg.cpp:183
-#: core/utilities/searchwindow/searchview.cpp:510
+#: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
 msgstr ""
@@ -24933,7 +24948,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/engine/albummodificationhelper.cpp:286
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:144
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
@@ -24946,7 +24961,7 @@ msgid "Rename Album Root (%1)"
 msgstr ""
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:145
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
 msgstr ""
@@ -24959,7 +24974,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager.cpp:179
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/models/albummodel_search.cpp:25
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:77
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:72
 #, kde-format
 msgid "Searches"
 msgstr ""
@@ -25095,32 +25110,32 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:472
-#: core/libs/album/manager/albummanager_database.cpp:540
-#: core/libs/album/manager/albummanager_database.cpp:562
+#: core/libs/album/manager/albummanager_database.cpp:539
+#: core/libs/album/manager/albummanager_database.cpp:561
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:474
-#: core/libs/album/manager/albummanager_database.cpp:542
-#: core/libs/album/manager/albummanager_database.cpp:564
-#: core/libs/album/manager/albummanager_database.cpp:612
+#: core/libs/album/manager/albummanager_database.cpp:541
+#: core/libs/album/manager/albummanager_database.cpp:563
+#: core/libs/album/manager/albummanager_database.cpp:611
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:531
-#: core/libs/album/manager/albummanager_database.cpp:554
-#: core/libs/album/manager/albummanager_database.cpp:604
-#: core/libs/album/manager/albummanager_database.cpp:636
+#: core/libs/album/manager/albummanager_database.cpp:530
+#: core/libs/album/manager/albummanager_database.cpp:553
+#: core/libs/album/manager/albummanager_database.cpp:603
+#: core/libs/album/manager/albummanager_database.cpp:635
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:532
+#: core/libs/album/manager/albummanager_database.cpp:531
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -25130,15 +25145,15 @@ msgid ""
 "it?</p> "
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:544
-#: core/libs/album/manager/albummanager_database.cpp:614
-#: core/libs/album/manager/albummanager_database.cpp:645
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:613
+#: core/libs/album/manager/albummanager_database.cpp:644
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:555
+#: core/libs/album/manager/albummanager_database.cpp:554
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -25147,14 +25162,14 @@ msgid ""
 "database?</p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:590
+#: core/libs/album/manager/albummanager_database.cpp:589
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Trying to upgrade old databases."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:605
+#: core/libs/album/manager/albummanager_database.cpp:604
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -25162,7 +25177,7 @@ msgid ""
 "continue using it, or start with a new database?</p> "
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:637
+#: core/libs/album/manager/albummanager_database.cpp:636
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -25171,32 +25186,32 @@ msgid ""
 "current database to this place?</p> "
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:647
+#: core/libs/album/manager/albummanager_database.cpp:646
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:702
+#: core/libs/album/manager/albummanager_database.cpp:701
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
 "file without backup, using the existing file."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:720
+#: core/libs/album/manager/albummanager_database.cpp:719
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Starting with an empty database."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:743
+#: core/libs/album/manager/albummanager_database.cpp:742
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:759
+#: core/libs/album/manager/albummanager_database.cpp:758
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -38576,39 +38591,39 @@ msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:62
+#: core/libs/widgets/files/dbinarysearch.cpp:59
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Binary"
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:63
+#: core/libs/widgets/files/dbinarysearch.cpp:60
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Version"
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:101
+#: core/libs/widgets/files/dbinarysearch.cpp:98
 #, kde-format
 msgid "Binary not found."
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:102
+#: core/libs/widgets/files/dbinarysearch.cpp:99
 #, kde-format
 msgid "Minimal version number required for this binary is %1"
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:104
+#: core/libs/widgets/files/dbinarysearch.cpp:101
 #, kde-format
 msgid "Find"
 msgstr "Oza"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:106
+#: core/libs/widgets/files/dbinarysearch.cpp:103
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:135
+#: core/libs/widgets/files/dbinarysearch.cpp:132
 #, kde-format
 msgid ""
 "<qt><p><font color=\"red\"><b>Warning:</b> Some necessary binaries have not "
@@ -38617,19 +38632,19 @@ msgid ""
 "download and install them to proceed.</font></p></qt>"
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:174
+#: core/libs/widgets/files/dbinarysearch.cpp:171
 #, kde-format
 msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
 "of this binary."
 msgstr ""
 
-#: core/libs/widgets/files/dbinarysearch.cpp:184
+#: core/libs/widgets/files/dbinarysearch.cpp:181
 #, kde-format
 msgid "Change"
 msgstr "Molsso"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:190
+#: core/libs/widgets/files/dbinarysearch.cpp:187
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
 msgstr ""
@@ -39590,7 +39605,7 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:231
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr ""
@@ -45489,13 +45504,13 @@ msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr ""
 
-#: core/libs/widgets/text/localizeselector.cpp:262
+#: core/libs/widgets/text/localizeselector.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr ""
 
-#: core/libs/widgets/text/localizeselector.cpp:263
+#: core/libs/widgets/text/localizeselector.cpp:269
 #, kde-format
 msgctxt "@action"
 msgid "Clear List"
@@ -46044,19 +46059,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:178
+#: core/showfoto/main/main.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:196
+#: core/showfoto/main/main.cpp:200
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:225
+#: core/showfoto/main/main.cpp:229
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -48365,76 +48380,76 @@ msgstr ""
 msgid "No address book entries found"
 msgstr ""
 
-#: core/utilities/facemanagement/threads/facepipeline_p.cpp:234
+#: core/utilities/facemanagement/threads/facepipeline_p.cpp:222
 #, kde-format
 msgid "Applying face changes"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
 #: core/utilities/imageeditor/editor/editorwindow.cpp:591
 #, kde-format
 msgctxt "@action"
 msgid "OK"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Confirm that the selected person is shown here"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:184
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Confirm"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:193
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:218
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:178
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:203
 #, kde-format
 msgctxt "@action"
 msgid "Remove"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:219
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:210
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Unmark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:530
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:515
 #, kde-format
 msgctxt "@label"
 msgid "Who is this?"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:576
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:561
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:577
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:562
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Ignore this face"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:609
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:594
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark this face as Ignored"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:614
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:599
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
@@ -48597,19 +48612,19 @@ msgctxt "@title:tab"
 msgid "Settings"
 msgstr ""
 
-#: core/utilities/firstrun/collectionpage.cpp:60
+#: core/utilities/firstrun/collectionpage.cpp:57
 #, kde-format
 msgid "<b>Configure where you keep your images</b>"
 msgstr ""
 
-#: core/utilities/firstrun/collectionpage.cpp:73
+#: core/utilities/firstrun/collectionpage.cpp:70
 #, kde-format
 msgctxt ""
 "This is a path name so you should include the slash in the translation"
 msgid "/Pictures"
 msgstr ""
 
-#: core/utilities/firstrun/collectionpage.cpp:79
+#: core/utilities/firstrun/collectionpage.cpp:76
 #, kde-format
 msgid ""
 "<p>Please enter a location where you keep your images.</p> <p>You can choose "
@@ -48617,47 +48632,47 @@ msgid ""
 "can be added later under the <i>Settings</i> menu. </p> "
 msgstr ""
 
-#: core/utilities/firstrun/collectionpage.cpp:87
+#: core/utilities/firstrun/collectionpage.cpp:84
 #, kde-format
 msgid ""
 "<p><i>Note:</i> removable media (such as USB drives or DVDs) and remote file "
 "systems (such as NFS, or Samba mounted with cifs/smbfs) are supported.</p>"
 msgstr ""
 
-#: core/utilities/firstrun/collectionpage.cpp:150
+#: core/utilities/firstrun/collectionpage.cpp:147
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to use as the root album. All of your "
 "images will go there."
 msgstr ""
 
-#: core/utilities/firstrun/collectionpage.cpp:178
+#: core/utilities/firstrun/collectionpage.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
 msgstr ""
 
-#: core/utilities/firstrun/collectionpage.cpp:179
+#: core/utilities/firstrun/collectionpage.cpp:176
 #, kde-format
 msgid ""
 "<p>The folder to use as the root album path does not exist:</p><p><b>%1</b></"
 "p>Would you like digiKam to create it for you?"
 msgstr ""
 
-#: core/utilities/firstrun/collectionpage.cpp:191
+#: core/utilities/firstrun/collectionpage.cpp:188
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
 msgstr ""
 
-#: core/utilities/firstrun/collectionpage.cpp:192
+#: core/utilities/firstrun/collectionpage.cpp:189
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to use as the root album.\n"
 "Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 
-#: core/utilities/firstrun/collectionpage.cpp:217
+#: core/utilities/firstrun/collectionpage.cpp:214
 #, kde-format
 msgid ""
 "You do not seem to have write access for the folder selected to be the root "
@@ -48665,17 +48680,17 @@ msgid ""
 "Warning: Without write access, items cannot be edited."
 msgstr ""
 
-#: core/utilities/firstrun/databasepage.cpp:52
+#: core/utilities/firstrun/databasepage.cpp:49
 #, kde-format
 msgid "<b>Configure where you will store databases</b>"
 msgstr ""
 
-#: core/utilities/firstrun/metadatapage.cpp:55
+#: core/utilities/firstrun/metadatapage.cpp:50
 #, kde-format
 msgid "<b>Configure Metadata Storage to Files</b>"
 msgstr ""
 
-#: core/utilities/firstrun/metadatapage.cpp:64
+#: core/utilities/firstrun/metadatapage.cpp:59
 #, kde-format
 msgid ""
 "<qt><p>Set here if you want to store the information assigned to items in "
@@ -48683,29 +48698,29 @@ msgid ""
 "management programs:</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/metadatapage.cpp:74
+#: core/utilities/firstrun/metadatapage.cpp:69
 #, kde-format
 msgid "Do nothing"
 msgstr ""
 
-#: core/utilities/firstrun/metadatapage.cpp:79
+#: core/utilities/firstrun/metadatapage.cpp:74
 #, kde-format
 msgid "Add information to files"
 msgstr ""
 
-#: core/utilities/firstrun/metadatapage.cpp:89
+#: core/utilities/firstrun/metadatapage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> recording information to the files' metadata can slow "
 "down photo management operations.</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:66
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:61
 #, kde-format
 msgid "Migration from digiKam 4"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:74
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:69
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Migrate configuration and metadata from digiKam 4</b></h1></"
@@ -48719,39 +48734,39 @@ msgid ""
 "and databases before proceeding.</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:91
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:86
 #, kde-format
 msgid "Migrate configuration from digiKam 4"
 msgstr ""
 
-#: core/utilities/firstrun/migratefromdigikam4page.cpp:100
+#: core/utilities/firstrun/migratefromdigikam4page.cpp:95
 #, kde-format
 msgid "Create a new configuration"
 msgstr ""
 
-#: core/utilities/firstrun/openfilepage.cpp:57
+#: core/utilities/firstrun/openfilepage.cpp:52
 #, kde-format
 msgid "<b>Configure Open File Behavior</b>"
 msgstr ""
 
-#: core/utilities/firstrun/openfilepage.cpp:66
+#: core/utilities/firstrun/openfilepage.cpp:61
 #, kde-format
 msgid ""
 "<qt><p>Specify how images should be opened when left-clicked on in the icon "
 "view:</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/openfilepage.cpp:75
+#: core/utilities/firstrun/openfilepage.cpp:70
 #, kde-format
 msgid "Open a preview"
 msgstr ""
 
-#: core/utilities/firstrun/openfilepage.cpp:80
+#: core/utilities/firstrun/openfilepage.cpp:75
 #, kde-format
 msgid "Open in the editor"
 msgstr ""
 
-#: core/utilities/firstrun/openfilepage.cpp:90
+#: core/utilities/firstrun/openfilepage.cpp:85
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> using a preview is always faster than using the editor, "
@@ -48761,29 +48776,29 @@ msgid ""
 "side-by-side, and synchronized zooming and panning can be performed.</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/previewpage.cpp:56
+#: core/utilities/firstrun/previewpage.cpp:51
 #, kde-format
 msgid "<b>Configure Preview Behavior</b>"
 msgstr ""
 
-#: core/utilities/firstrun/previewpage.cpp:65
+#: core/utilities/firstrun/previewpage.cpp:60
 #, kde-format
 msgid ""
 "<qt><p>Set here how images are displayed in preview mode and on the light "
 "table:</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/previewpage.cpp:74
+#: core/utilities/firstrun/previewpage.cpp:69
 #, kde-format
 msgid "Load reduced version of image"
 msgstr ""
 
-#: core/utilities/firstrun/previewpage.cpp:79
+#: core/utilities/firstrun/previewpage.cpp:74
 #, kde-format
 msgid "Load image"
 msgstr ""
 
-#: core/utilities/firstrun/previewpage.cpp:89
+#: core/utilities/firstrun/previewpage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> loading a reduced version of an image is faster but can "
@@ -48793,27 +48808,27 @@ msgid ""
 "to display a Raw image faster to a TV screen.</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/rawpage.cpp:56
+#: core/utilities/firstrun/rawpage.cpp:51
 #, kde-format
 msgid "<b>Configure Raw File Handling</b>"
 msgstr ""
 
-#: core/utilities/firstrun/rawpage.cpp:65
+#: core/utilities/firstrun/rawpage.cpp:60
 #, kde-format
 msgid "<qt><p>Set here how you want to open Raw images in the editor:</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/rawpage.cpp:74
+#: core/utilities/firstrun/rawpage.cpp:69
 #, kde-format
 msgid "Open directly, with adjustments made automatically"
 msgstr ""
 
-#: core/utilities/firstrun/rawpage.cpp:79
+#: core/utilities/firstrun/rawpage.cpp:74
 #, kde-format
 msgid "Use the Raw import tool to adjust corrections manually"
 msgstr ""
 
-#: core/utilities/firstrun/rawpage.cpp:89
+#: core/utilities/firstrun/rawpage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> the Raw import tool is designed for advanced users who "
@@ -48846,29 +48861,29 @@ msgid ""
 ">Maintenance->Scan for new items</b> menu entry.</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/tooltipspage.cpp:56
+#: core/utilities/firstrun/tooltipspage.cpp:51
 #, kde-format
 msgid "<b>Enabled Contextual Tooltips</b>"
 msgstr ""
 
-#: core/utilities/firstrun/tooltipspage.cpp:65
+#: core/utilities/firstrun/tooltipspage.cpp:60
 #, kde-format
 msgid ""
 "<qt><p>Set here if you want to show contextual tooltips in icon-view and "
 "folder-view:</p></qt>"
 msgstr ""
 
-#: core/utilities/firstrun/tooltipspage.cpp:74
+#: core/utilities/firstrun/tooltipspage.cpp:69
 #, kde-format
 msgid "Do not show tooltips"
 msgstr ""
 
-#: core/utilities/firstrun/tooltipspage.cpp:79
+#: core/utilities/firstrun/tooltipspage.cpp:74
 #, kde-format
 msgid "Use Tooltips"
 msgstr ""
 
-#: core/utilities/firstrun/tooltipspage.cpp:89
+#: core/utilities/firstrun/tooltipspage.cpp:84
 #, kde-format
 msgid ""
 "<qt><p><i>Note:</i> tooltips show photograph and digiKam metadata on the "
@@ -48902,97 +48917,97 @@ msgid ""
 "risk.</p></qt>"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:64
 #, kde-format
 msgid "Ref. images"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:65
 #, kde-format
 msgid "Ref. dates"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:70
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:66
 #, kde-format
 msgid "Ref. albums"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:71
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:67
 #, kde-format
 msgid "Items"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:72
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, kde-format
 msgid "Avg. similarity"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:78
+#: core/utilities/fuzzysearch/findduplicatesalbum.cpp:74
 #, kde-format
 msgid "This shows all found duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:128
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:109
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:130
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:113
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:118
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:140
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:144
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:145
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:146
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49001,91 +49016,91 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:176
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:182
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:208
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
 #, kde-format
 msgctxt "@label"
 msgid "Reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:216
 #, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49100,13 +49115,13 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:239
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:241
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -49261,14 +49276,14 @@ msgid ""
 "new search virtual album using the name set on the left side."
 msgstr ""
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:145
+#: core/utilities/fuzzysearch/sketchwidget.cpp:133
 #, kde-format
 msgid ""
 "You simply draw here a rough sketch of what you want to find and digiKam "
 "will displays the best matches in thumbnail view."
 msgstr ""
 
-#: core/utilities/fuzzysearch/sketchwidget.cpp:624
+#: core/utilities/fuzzysearch/sketchwidget.cpp:615
 #, kde-format
 msgid ""
 "Draw a sketch here\n"
@@ -50381,8 +50396,8 @@ msgid "Show Non-Geolocated Items"
 msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:541
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:112
-#: core/utilities/searchwindow/searchtabheader.cpp:582
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:109
+#: core/utilities/searchwindow/searchtabheader.cpp:561
 #, kde-format
 msgid ""
 "Search name already exists.\n"
@@ -50390,8 +50405,8 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:116
-#: core/utilities/searchwindow/searchtabheader.cpp:586
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:113
+#: core/utilities/searchwindow/searchtabheader.cpp:565
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
@@ -56661,7 +56676,7 @@ msgstr ""
 msgid "&Right Panel"
 msgstr ""
 
-#: core/utilities/maintenance/autotagsassignment.cpp:99
+#: core/utilities/maintenance/autotagsassignment.cpp:102
 #, kde-format
 msgid "Autotags Assignment"
 msgstr ""
@@ -56951,7 +56966,7 @@ msgid "Clean all and re-assign"
 msgstr ""
 
 #: core/utilities/maintenance/maintenancedlg.cpp:185
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:229
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr ""
@@ -56989,55 +57004,55 @@ msgid ""
 "1,000 classes, covering a wide range of objects, animals, and scenes.</p>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:212
+#: core/utilities/maintenance/maintenancedlg.cpp:215
 #, kde-format
 msgid "Auto-tags Assignment"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:223
 #, kde-format
 msgid "Scan Mode: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, kde-format
 msgid "Sync Direction: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:242
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, kde-format
 msgid "From database to image metadata"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:243
+#: core/utilities/maintenance/maintenancedlg.cpp:246
 #, kde-format
 msgid "From image metadata to database"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:246
+#: core/utilities/maintenance/maintenancedlg.cpp:249
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:254
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:395
+#: core/utilities/maintenance/maintenancemngr.cpp:396
 #, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancemngr.cpp:396
+#: core/utilities/maintenance/maintenancemngr.cpp:397
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr ""
@@ -57726,63 +57741,63 @@ msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgstr ""
 
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:62
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:57
 #, kde-format
 msgid "Rename..."
 msgstr ""
 
-#: core/utilities/searchwindow/ratingsearchutilities.cpp:207
+#: core/utilities/searchwindow/ratingsearchutilities.cpp:201
 #, kde-format
 msgid "(No Value Selected)"
 msgstr ""
 
-#: core/utilities/searchwindow/ratingsearchutilities.cpp:212
+#: core/utilities/searchwindow/ratingsearchutilities.cpp:206
 #, kde-format
 msgid "No Rating assigned"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields.cpp:76
+#: core/utilities/searchwindow/searchfields.cpp:74
 #, kde-format
 msgid "Reset contents"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_album.cpp:41
+#: core/utilities/searchwindow/searchfields_album.cpp:36
 #, kde-format
 msgctxt "@item"
 msgid "Any Album"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_album.cpp:53
+#: core/utilities/searchwindow/searchfields_album.cpp:48
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In All"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_album.cpp:54
+#: core/utilities/searchwindow/searchfields_album.cpp:49
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In One of"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_album.cpp:55
+#: core/utilities/searchwindow/searchfields_album.cpp:50
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In Tree"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_album.cpp:59
+#: core/utilities/searchwindow/searchfields_album.cpp:54
 #, kde-format
 msgctxt "@item"
 msgid "Any Tag"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_choice.cpp:37
+#: core/utilities/searchwindow/searchfields_choice.cpp:25
 #, kde-format
 msgctxt "@option: default kind of search options combined"
 msgid "Any"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_choice.cpp:123
+#: core/utilities/searchwindow/searchfields_choice.cpp:111
 #, kde-format
 msgctxt "@label: search field choice combo-box description"
 msgid "Any of: %1"
@@ -58537,17 +58552,17 @@ msgstr ""
 msgid "No Face Regions"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:34
+#: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, kde-format
 msgid "Day:"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:38
+#: core/utilities/searchwindow/searchfields_monthday.cpp:35
 #, kde-format
 msgid "Every Month"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_monthday.cpp:45
+#: core/utilities/searchwindow/searchfields_monthday.cpp:42
 #, kde-format
 msgid "Every Day"
 msgstr ""
@@ -58649,98 +58664,98 @@ msgstr ""
 msgid "Hide Options"
 msgstr ""
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:74
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr ""
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:75
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:72
 #, kde-format
 msgid "Are you sure you want to delete the selected search \"%1\"?"
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:67
+#: core/utilities/searchwindow/searchtabheader.cpp:66
 #, kde-format
 msgid "(Advanced Search)"
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:104
+#: core/utilities/searchwindow/searchtabheader.cpp:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Autostart Search"
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:262
+#: core/utilities/searchwindow/searchtabheader.cpp:241
 #, kde-format
 msgid "New Search"
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:264
+#: core/utilities/searchwindow/searchtabheader.cpp:243
 #, kde-format
 msgctxt "@label: quick search properties"
 msgid "Search:"
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:267
+#: core/utilities/searchwindow/searchtabheader.cpp:246
 #, kde-format
 msgid "Enter keywords here..."
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:269
+#: core/utilities/searchwindow/searchtabheader.cpp:248
 #, kde-format
 msgid "New Advanced Search..."
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:270
+#: core/utilities/searchwindow/searchtabheader.cpp:249
 #, kde-format
 msgid "Edit Current Search..."
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:285
+#: core/utilities/searchwindow/searchtabheader.cpp:264
 #, kde-format
 msgid "Save Current Search"
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:289
+#: core/utilities/searchwindow/searchtabheader.cpp:268
 #, kde-format
 msgid "Enter a name for the current search to save it in the \"Searches\" view"
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:294
+#: core/utilities/searchwindow/searchtabheader.cpp:273
 #, kde-format
 msgid "Save current search to a new virtual Album"
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:295
+#: core/utilities/searchwindow/searchtabheader.cpp:274
 #, kde-format
 msgid ""
 "If you press this button, the current search will be saved to a new virtual "
 "Search Album using the name set on the left side."
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:310
-#: core/utilities/searchwindow/searchtabheader.cpp:337
+#: core/utilities/searchwindow/searchtabheader.cpp:289
+#: core/utilities/searchwindow/searchtabheader.cpp:316
 #, kde-format
 msgid "Edit Stored Search"
 msgstr ""
 
-#: core/utilities/searchwindow/searchtabheader.cpp:352
+#: core/utilities/searchwindow/searchtabheader.cpp:331
 #, kde-format
 msgid "Edit..."
 msgstr ""
 
-#: core/utilities/searchwindow/searchview.cpp:502
+#: core/utilities/searchwindow/searchview.cpp:495
 #, kde-format
 msgid "Add Search Group"
 msgstr ""
 
-#: core/utilities/searchwindow/searchview.cpp:531
+#: core/utilities/searchwindow/searchview.cpp:524
 #, kde-format
 msgid "Try"
 msgstr ""
 
-#: core/utilities/searchwindow/searchwindow.cpp:88
+#: core/utilities/searchwindow/searchwindow.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"
@@ -60052,36 +60067,37 @@ msgid ""
 "\n"
 "%2\n"
 "\n"
-"You can try again or continue the download at the next start."
+"You can try again with an alternative mirror server or continue the download "
+"on the next startup."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:260
 #, kde-format
 msgctxt "@action:button"
-msgid "Try Again"
+msgid "Try Alternate"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:394
+#: core/utilities/setup/downloader/filesdownloader.cpp:395
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:418
+#: core/utilities/setup/downloader/filesdownloader.cpp:419
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:425
+#: core/utilities/setup/downloader/filesdownloader.cpp:426
 #, kde-format
 msgid "File open error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:581
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -60096,13 +60112,13 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:594
+#: core/utilities/setup/downloader/filesdownloader.cpp:595
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:601
+#: core/utilities/setup/downloader/filesdownloader.cpp:602
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""

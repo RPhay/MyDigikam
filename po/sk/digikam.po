@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 01:59+0000\n"
+"POT-Creation-Date: 2024-03-27 01:59+0000\n"
 "PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -19978,43 +19978,43 @@ msgstr " (%1 z %2)"
 msgid "Page %1 of %2"
 msgstr " (%1 z %2)"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:92
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:97
 #, fuzzy, kde-format
 msgid "Error opening input file"
 msgstr ""
 "Chyba pri načítavaní súboru\n"
 "%1"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:103
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:108
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgid "Error opening temporary folder"
 msgstr "Nebolo možné otvoriť dočasný súbor v priečinku „%1“: %2 (%3)"
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:126
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:131
 #, kde-format
 msgid "Cannot resize image. Aborting."
 msgstr "Nedá sa zmeniť veľkosť obrázka. Akcia bola zrušená."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:139
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:144
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
 msgstr ""
 "Obrázok (JPEG) so zmenenou veľkosťou sa nedá uložiť. Akcia bola zrušená."
 
-#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:147
+#: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:152
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
 msgstr ""
 "Obrázok (PNG) so zmenenou veľkoštou sa nedá uložiť. Akcia bola prerušená."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:114
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:109
 #, fuzzy, kde-format
 #| msgid "Cannot create directory %1"
 msgid "Cannot create a temporary directory"
 msgstr "Nie je možné vytvoriť adresár %1"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:172
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:170
 #, kde-format
 msgid "Resizing %1"
 msgstr "Prebieha zmena veľkosti %1"
@@ -20024,79 +20024,79 @@ msgstr "Prebieha zmena veľkosti %1"
 msgid "%1 resized successfully"
 msgstr "Proces skončil úspešne"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:200
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:202
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Failed to resize %1: %2"
 msgstr "Zlyhalo uloženie súboru: %1"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:236
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:239
 #, fuzzy, kde-format
 #| msgid "There are no images to show."
 msgid "There are no files to send"
 msgstr "Nie sú žiadne obrázky na prezentáciu."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:257
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:263
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Build images properties file"
 msgstr "Vlastnosti súboru"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:273
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:279
 #, fuzzy, kde-format
 #| msgid "Location"
 msgid "no caption"
 msgstr "Umiestnenie"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:278
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:284
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgid "no keywords"
 msgstr "Kľúčové slová"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:281
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:287
 #, fuzzy, kde-format
 msgid ""
 "file \"%1\":\n"
 "Original images: %2\n"
 msgstr "%1<nl/>(pôvodný obrázok)"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:283
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:289
 #, fuzzy, kde-format
 #| msgid "Contrast: %1"
 msgid "Comments: %1\n"
 msgstr "Kontrast: %1"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:285
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:291
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgid "Tags: %1\n"
 msgstr "Štítok: %1"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:287
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:293
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgid "Rating: %1\n"
 msgstr "Hodnotenie: "
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:292
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:298
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgid "properties.txt"
 msgstr "Vlastnosti"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:302
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:313
 #, kde-format
 msgid "Image properties file cannot be opened"
 msgstr "Súbor s vlastnosťami obrázka sa nedá otvoriť"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:314
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:325
 #, fuzzy, kde-format
 #| msgid "Item properties"
 msgid "Image properties file done"
 msgstr "Vlastnosti položky"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:345
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:983
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:996
 #, fuzzy, kde-format
@@ -20104,7 +20104,7 @@ msgctxt "@title:window"
 msgid "Processing Failed"
 msgstr "Ukladá sa súbor..."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:335
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:346
 #, kde-format
 msgid ""
 "Some images cannot be resized.\n"
@@ -20113,7 +20113,7 @@ msgstr ""
 "Pri niektorých obrázkoch sa nedá zmeniť veľkosť.\n"
 "Želáte si ich pripojiť ako prílohy bez zmeny veľkosti?"
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:405
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:419
 #, kde-format
 msgid ""
 "The file \"%1\" is too big to be sent, please reduce its size or change your "
@@ -20122,22 +20122,22 @@ msgstr ""
 "Súbor \"%1\" je príliš veľký na to, aby mohol byť odoslaný. Prosím, zmenšite "
 "ho alebo zmeňte nastavenia."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:634
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:649
 #, kde-format
 msgid "Failed to start \"%1\" program. Check your system."
 msgstr "Nedá sa spustiť program \"%1\". Skontrolujte váš systém."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:644
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:661
 #, kde-format
 msgid "Starting \"%1\" program..."
 msgstr "Spúšťa sa program \"%1\"..."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:647
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:665
 #, kde-format
 msgid "After having sent your images by email..."
 msgstr "Po odoslaní vašich obrázkov e-mailom..."
 
-#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:648
+#: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:666
 #, kde-format
 msgid "Press 'Finish' button to clean up temporary files"
 msgstr "Po stlačení tlačidla 'Dokončiť' budú odstránené dočasné súbory"
@@ -24073,30 +24073,30 @@ msgstr "iNaturalist"
 msgid "Login"
 msgstr "Chyba profilu"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1346
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1508
 #, fuzzy, kde-format
 #| msgid "Failed to upload photo"
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "Nepodarilo sa odoslať fotografiu"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1586
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1704
 #, fuzzy, kde-format
 #| msgid "Failed to upload photo"
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "Nepodarilo sa odoslať fotografiu"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1823
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1824
 #, fuzzy, kde-format
 #| msgid "Failed to upload photo"
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "Nepodarilo sa odoslať fotografiu"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1927
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1928
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
 msgstr ""
@@ -24496,19 +24496,19 @@ msgstr ""
 msgid "Closest %1research-grade %2 reported in %3."
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1067
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1069
 #, fuzzy, kde-format
 #| msgid "Creation time"
 msgid "observation time"
 msgstr "Čas vytvorenia"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1077
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1104
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1078
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1105
 #, fuzzy, kde-format
 msgid "from observation"
 msgstr "Povoliť opravu chromatickej aberácie"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1084
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1085
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1125
 #: core/utilities/geolocation/marble/core/MarbleInputHandler.cpp:666
 #: core/utilities/geolocation/marble/core/MarbleWidget.cpp:646
@@ -24516,7 +24516,7 @@ msgstr "Povoliť opravu chromatickej aberácie"
 msgid "not available"
 msgstr "nedostupné"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1116
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1117
 #, kde-format
 msgid "observation location"
 msgstr "miesto pozorovania"
@@ -36873,7 +36873,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:257
-#: core/utilities/setup/downloader/filesdownloader.cpp:161
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
 msgid "Download"
 msgstr "Stiahnuť"
@@ -50422,7 +50422,7 @@ msgstr "&Ozdobiť"
 msgid "Effec&ts"
 msgstr "Efek&ty"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:120
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -50502,14 +50502,14 @@ msgstr ""
 "<qt>Nastavenie ukladania obrázkových súborov<br/><i>Nastaviť predvolené "
 "hodnoty pre ukladanie obrázkov</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:216
+#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:174
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokácia"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:217
+#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -54018,7 +54018,7 @@ msgstr "Upraviť záložky geolokácie"
 #: core/utilities/setup/album/setupcategory.cpp:99
 #: core/utilities/setup/camera/setupcamera.cpp:319
 #: core/utilities/setup/camera/setupcamera.cpp:441
-#: core/utilities/setup/setuptemplate.cpp:116
+#: core/utilities/setup/setuptemplate.cpp:108
 #, kde-format
 msgid "&Remove"
 msgstr "&Odstrániť"
@@ -64635,7 +64635,7 @@ msgstr ""
 #: core/utilities/setup/album/setupcategory.cpp:98
 #: core/utilities/setup/camera/setupcamera.cpp:317
 #: core/utilities/setup/camera/setupcamera.cpp:439
-#: core/utilities/setup/setuptemplate.cpp:114
+#: core/utilities/setup/setuptemplate.cpp:106
 #, kde-format
 msgid "&Add..."
 msgstr "&Pridať..."
@@ -65621,43 +65621,43 @@ msgstr "Vyberte kategóriu"
 msgid "Your collection will use this category:"
 msgstr "Vaša nová kolekcia bude používať túto kategóriu:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:149
+#: core/utilities/setup/downloader/filesdownloader.cpp:136
 #, fuzzy, kde-format
 #| msgid "Download required files"
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Stiahnuť potrebné súbory"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:169
+#: core/utilities/setup/downloader/filesdownloader.cpp:156
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Use Face Detection feature"
 msgstr "Detekcia tváre"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:170
+#: core/utilities/setup/downloader/filesdownloader.cpp:157
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:171
+#: core/utilities/setup/downloader/filesdownloader.cpp:158
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use Auto Tags Assignment feature"
 msgstr "Automatická oprava"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:243
+#: core/utilities/setup/downloader/filesdownloader.cpp:230
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Všetky súbory boli úspešne stiahnuté."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:250
+#: core/utilities/setup/downloader/filesdownloader.cpp:237
 #, fuzzy, kde-format
 #| msgid "Download error"
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Chyba sťahovania"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:251
+#: core/utilities/setup/downloader/filesdownloader.cpp:238
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65670,29 +65670,29 @@ msgid ""
 "on the next startup."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:260
+#: core/utilities/setup/downloader/filesdownloader.cpp:247
 #, fuzzy, kde-format
 #| msgid "Alternative name"
 msgctxt "@action:button"
 msgid "Try Alternate"
 msgstr "Alternatívny názov"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:395
+#: core/utilities/setup/downloader/filesdownloader.cpp:382
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Kontrolný súčet je nesprávny."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:419
+#: core/utilities/setup/downloader/filesdownloader.cpp:406
 #, kde-format
 msgid "File write error."
 msgstr "Chyba pri zápise súboru."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:426
+#: core/utilities/setup/downloader/filesdownloader.cpp:413
 #, kde-format
 msgid "File open error."
 msgstr "Chyba pri otváraní súboru."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:428
 #, fuzzy, kde-format
 msgid "File on the server is too large."
 msgstr ""
@@ -65701,7 +65701,7 @@ msgstr ""
 "do\n"
 "„%2“."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:582
+#: core/utilities/setup/downloader/filesdownloader.cpp:569
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -65716,13 +65716,13 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:595
+#: core/utilities/setup/downloader/filesdownloader.cpp:582
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:602
+#: core/utilities/setup/downloader/filesdownloader.cpp:589
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
@@ -65746,7 +65746,7 @@ msgid "Save Settings"
 msgstr "Uložiť nastavenie"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:126
-#: core/utilities/setup/setuplighttable.cpp:88
+#: core/utilities/setup/setuplighttable.cpp:82
 #, kde-format
 msgid "Interface Options"
 msgstr "Možnosti rozhrania"
@@ -67612,13 +67612,13 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:127
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Databáza"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:128
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -67627,13 +67627,13 @@ msgid ""
 "Customize database settings"
 msgstr "<qt>Nastavenia databázy<br/><i>Upraviť nastavenie databázy</i></qt>"
 
-#: core/utilities/setup/setup.cpp:174
+#: core/utilities/setup/setup.cpp:132
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Kolekcie"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:133
 #, fuzzy, kde-format
 #| msgid "<qt>Collections Settings<br/><i>Set root albums locations</i></qt>"
 msgctxt "@title"
@@ -67644,14 +67644,14 @@ msgstr ""
 "<qt>Nastavenie zbierok<br/><i>Nastaviť umiestnenia koreňových albumov</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:137
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Pohľady"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:138
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -67660,13 +67660,13 @@ msgid ""
 msgstr ""
 "<qt>Nastavenie prezentácie<br/><i>Prispôsobiť nastavenie prezentácie</i></qt>"
 
-#: core/utilities/setup/setup.cpp:184
+#: core/utilities/setup/setup.cpp:142
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Bublinový pomocník"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:143
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -67676,14 +67676,14 @@ msgstr ""
 "<qt>Nastavenie bublín položiek panela náhľadov<br/><i>Prispôsobiť informácie "
 "v bublinách</i></qt>"
 
-#: core/utilities/setup/setup.cpp:189
+#: core/utilities/setup/setup.cpp:147
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadáta"
 
-#: core/utilities/setup/setup.cpp:190
+#: core/utilities/setup/setup.cpp:148
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -67696,13 +67696,13 @@ msgstr ""
 "<qt>Správa informácií ukladaných do obrázka<br/><i>Nastavenie vzťahu medzi "
 "obrázkami a metadátami</i></qt>"
 
-#: core/utilities/setup/setup.cpp:194
+#: core/utilities/setup/setup.cpp:152
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Šablóny"
 
-#: core/utilities/setup/setup.cpp:195
+#: core/utilities/setup/setup.cpp:153
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -67710,13 +67710,13 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr "<qt>Nastavenia fotoaparátu<br/><i>Správa vašich fotoaparátov</i></qt>"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:157
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Editor obrázkov"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:158
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -67726,13 +67726,13 @@ msgstr ""
 "<qt>Nastavenie dekódovania RAW súborov<br/><i>Prispôsobiť predvolené "
 "nastavenie dekódovania RAW</i></qt>"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Správa farieb"
 
-#: core/utilities/setup/setup.cpp:205
+#: core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -67742,14 +67742,14 @@ msgstr ""
 "<qt>Nastavenie správy farieb<br/><i>Prispôsobiť nastavenie správy farieb</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:167
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Svetelná tabuľa"
 
-#: core/utilities/setup/setup.cpp:210
+#: core/utilities/setup/setup.cpp:168
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -67762,13 +67762,13 @@ msgstr ""
 "<qt>Nastavenie Svetelnej tabule<br/><i>Prispôsobenie nástroja na "
 "porovnávanie fotografií</i></qt>"
 
-#: core/utilities/setup/setup.cpp:223
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Triedenie kvality obrázkov"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:182
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -67778,13 +67778,13 @@ msgstr ""
 "<qt>Nastavenie dekódovania RAW súborov<br/><i>Prispôsobiť predvolené "
 "nastavenie dekódovania RAW</i></qt>"
 
-#: core/utilities/setup/setup.cpp:228
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Fotoaparáty"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:187
 #, fuzzy, kde-format
 #| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
 msgctxt "@title"
@@ -67793,13 +67793,13 @@ msgid ""
 "Manage your camera devices"
 msgstr "<qt>Nastavenia fotoaparátu<br/><i>Správa vašich fotoaparátov</i></qt>"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:194
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Pluginy"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:195
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -67808,13 +67808,13 @@ msgid ""
 msgstr ""
 "<qt>Nastavenie prezentácie<br/><i>Prispôsobiť nastavenie prezentácie</i></qt>"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Rôzne"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:200
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
@@ -67827,7 +67827,7 @@ msgstr ""
 "<qt>Rôzne nastavenia<br/><i>Upraviť správanie ostatných súčastí digiKamu</"
 "i></qt>"
 
-#: core/utilities/setup/setupdatabase.cpp:174
+#: core/utilities/setup/setupdatabase.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67845,19 +67845,19 @@ msgstr ""
 "verzia 2.0.\n"
 "Želáte si spustiť aktualizáciu?"
 
-#: core/utilities/setup/setupdatabase.cpp:188
+#: core/utilities/setup/setupdatabase.cpp:183
 #, kde-format
 msgctxt "@title:group"
 msgid "Updates"
 msgstr "Aktualizácia"
 
-#: core/utilities/setup/setupdatabase.cpp:191
+#: core/utilities/setup/setupdatabase.cpp:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Update File Hashes"
 msgstr "Aktualizovať kontrolné súčty súborov"
 
-#: core/utilities/setup/setupdatabase.cpp:193
+#: core/utilities/setup/setupdatabase.cpp:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -67874,7 +67874,7 @@ msgstr ""
 "odporúčaná, nie však vyžadovaná. Po aktualizácii nebude vaša databáza "
 "fungovať s digiKamom starším ako je verzia 2.0."
 
-#: core/utilities/setup/setupdatabase.cpp:202
+#: core/utilities/setup/setupdatabase.cpp:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <interface>Update File Hashes</interface>"
@@ -68294,7 +68294,7 @@ msgstr ""
 "vašom systéme existujú a budú prehľadané nasledujúce cesty:<ul><li>%1</li></"
 "ul>"
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:54
+#: core/utilities/setup/setupimagequalitysorter.cpp:51
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -68310,19 +68310,19 @@ msgid ""
 "settings, and make this feature easier to use."
 msgstr ""
 
-#: core/utilities/setup/setupimagequalitysorter.cpp:64
+#: core/utilities/setup/setupimagequalitysorter.cpp:61
 #, fuzzy, kde-format
 #| msgid "Image quality:"
 msgctxt "@label"
 msgid "aesthetic image quality"
 msgstr "Kvalita obrázka:"
 
-#: core/utilities/setup/setuplighttable.cpp:91
+#: core/utilities/setup/setuplighttable.cpp:85
 #, kde-format
 msgid "Synchronize panels automatically"
 msgstr "Automaticky synchronizovať panely"
 
-#: core/utilities/setup/setuplighttable.cpp:92
+#: core/utilities/setup/setuplighttable.cpp:86
 #, kde-format
 msgid ""
 "Set this option to automatically synchronize zooming and panning between "
@@ -68332,12 +68332,12 @@ msgstr ""
 "ľavom paneli súčasne s obrázkom na pravom paneli, ak oba obrázky majú "
 "rovnakú veľkosť."
 
-#: core/utilities/setup/setuplighttable.cpp:96
+#: core/utilities/setup/setuplighttable.cpp:90
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
 msgstr "Výberom položky z panela náhľadov načítať obrázok do pravého panela"
 
-#: core/utilities/setup/setuplighttable.cpp:98
+#: core/utilities/setup/setuplighttable.cpp:92
 #, fuzzy, kde-format
 msgid ""
 "Set this option to automatically load an image into the right panel when the "
@@ -68346,12 +68346,12 @@ msgstr ""
 "<p>Ak je táto voľba zapnutá, budú sa zobrazovať informácie o obrázku keď "
 "podržíte kurzor myši nad položkou albumu."
 
-#: core/utilities/setup/setuplighttable.cpp:101
+#: core/utilities/setup/setuplighttable.cpp:95
 #, kde-format
 msgid "Clear the light table on close"
 msgstr "Vyčistiť Svetelnú tabuľu pri zatvorení"
 
-#: core/utilities/setup/setuplighttable.cpp:102
+#: core/utilities/setup/setuplighttable.cpp:96
 #, kde-format
 msgid ""
 "Set this option to remove all images from the light table when you close it, "
@@ -68360,42 +68360,42 @@ msgstr ""
 "Výberom tejto možnosti budú pri zatvorení všetky obrázky zo Svetelnej tabule "
 "odstránené, ak toto nastavenie vypnete, zostanú aktuálne obrázky zachované."
 
-#: core/utilities/setup/setupplugins.cpp:73
+#: core/utilities/setup/setupplugins.cpp:66
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Generic"
 msgstr "Všeobecné"
 
-#: core/utilities/setup/setupplugins.cpp:79
+#: core/utilities/setup/setupplugins.cpp:72
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Editor"
 msgstr "Editor obrázkov"
 
-#: core/utilities/setup/setupplugins.cpp:85
+#: core/utilities/setup/setupplugins.cpp:78
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
 msgstr "Správca dávkového spracovania"
 
-#: core/utilities/setup/setupplugins.cpp:91
+#: core/utilities/setup/setupplugins.cpp:84
 #, fuzzy, kde-format
 #| msgid "Image Files"
 msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
 msgstr "Súbory obrázkov"
 
-#: core/utilities/setup/setuptemplate.cpp:85
+#: core/utilities/setup/setuptemplate.cpp:77
 #, kde-format
 msgid "Template Title:"
 msgstr "Názov šablóny:"
 
-#: core/utilities/setup/setuptemplate.cpp:88
+#: core/utilities/setup/setuptemplate.cpp:80
 #, fuzzy, kde-format
 msgid "Enter the metadata template title here."
 msgstr "Tu nastavte otočenie textu, ktoré chcete použiť."
 
-#: core/utilities/setup/setuptemplate.cpp:89
+#: core/utilities/setup/setuptemplate.cpp:81
 #, kde-format
 msgid ""
 "<p>Enter the metadata template title here. This title will be used to "
@@ -68404,7 +68404,7 @@ msgstr ""
 "<p>Sem zadajte názov šablóny metadát. Tento názov bude slúžiť pre "
 "identifikáciu šablóny vo vašej kolekcii.</p>"
 
-#: core/utilities/setup/setuptemplate.cpp:99
+#: core/utilities/setup/setuptemplate.cpp:91
 #, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
@@ -68419,18 +68419,18 @@ msgstr ""
 "neexistujú obmedzenia, ale pri IPTC existujú limity dĺžky textu štítkov. Pre "
 "podrobnosti použite kontextovú ponuku.</b>"
 
-#: core/utilities/setup/setuptemplate.cpp:118
+#: core/utilities/setup/setuptemplate.cpp:110
 #, kde-format
 msgid "&Replace..."
 msgstr "Nahr&adiť..."
 
-#: core/utilities/setup/setuptemplate.cpp:253
-#: core/utilities/setup/setuptemplate.cpp:284
+#: core/utilities/setup/setuptemplate.cpp:245
+#: core/utilities/setup/setuptemplate.cpp:276
 #, fuzzy, kde-format
 msgid "Cannot register new metadata template without title."
 msgstr "Tu nastavte otočenie textu, ktoré chcete použiť."
 
-#: core/utilities/setup/setuptemplate.cpp:260
+#: core/utilities/setup/setuptemplate.cpp:252
 #, fuzzy, kde-format
 msgid "A metadata template named '%1' already exists."
 msgstr "Starší súbor s menom '%1' už existuje.\n"
