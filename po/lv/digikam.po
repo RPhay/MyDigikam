@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-27 01:59+0000\n"
+"POT-Creation-Date: 2024-03-27 10:08+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -3692,7 +3692,7 @@ msgstr "Alfa kanāls: "
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
 #: core/utilities/searchwindow/searchfields_createfield.cpp:955
-#: core/utilities/setup/setuptooltip.cpp:319
+#: core/utilities/setup/setuptooltip.cpp:262
 #, fuzzy, kde-format
 msgid "Audio Codec"
 msgstr "Audio faili"
@@ -9985,7 +9985,7 @@ msgid "Energy function"
 msgstr "Enerģijas funkcija"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:426
-#: core/utilities/setup/setupicc.cpp:477
+#: core/utilities/setup/setupicc.cpp:436
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Papildu iestatījumi"
@@ -13483,7 +13483,7 @@ msgstr "&Dzēst"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:98
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:84
-#: core/utilities/setup/album/setupcategory.cpp:100
+#: core/utilities/setup/album/setupcategory.cpp:93
 #, kde-format
 msgid "&Replace"
 msgstr "&Aizvietot"
@@ -25999,7 +25999,7 @@ msgstr "Pēcapstrāde"
 
 #: core/dplugins/rawimport/native/rawimport.cpp:176
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:308
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:258
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:221
 #, kde-format
 msgid "Raw Decoding"
 msgstr "RAW dekodēšana"
@@ -34250,7 +34250,7 @@ msgid "All Files"
 msgstr "Visi faili"
 
 #: core/libs/filters/mimefilter.cpp:28
-#: core/utilities/setup/album/setupmime.cpp:97
+#: core/utilities/setup/album/setupmime.cpp:89
 #, kde-format
 msgid "Image Files"
 msgstr "Attēlu faili"
@@ -34320,13 +34320,13 @@ msgid "RAW Files"
 msgstr "RAW faili"
 
 #: core/libs/filters/mimefilter.cpp:41
-#: core/utilities/setup/album/setupmime.cpp:129
+#: core/utilities/setup/album/setupmime.cpp:121
 #, kde-format
 msgid "Video Files"
 msgstr "Video faili"
 
 #: core/libs/filters/mimefilter.cpp:42
-#: core/utilities/setup/album/setupmime.cpp:164
+#: core/utilities/setup/album/setupmime.cpp:156
 #, kde-format
 msgid "Audio Files"
 msgstr "Audio faili"
@@ -40981,19 +40981,19 @@ msgid "If Target File Exists:"
 msgstr "Ja mērķa fails pastāv:"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:70
-#: core/utilities/setup/camera/setupcamera.cpp:375
+#: core/utilities/setup/camera/setupcamera.cpp:333
 #, kde-format
 msgid "Store as a different name"
 msgstr ""
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:71
-#: core/utilities/setup/camera/setupcamera.cpp:376
+#: core/utilities/setup/camera/setupcamera.cpp:334
 #, kde-format
 msgid "Overwrite automatically"
 msgstr "Automātiski pārrakstīt"
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:72
-#: core/utilities/setup/camera/setupcamera.cpp:377
+#: core/utilities/setup/camera/setupcamera.cpp:335
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgid "Skip automatically"
@@ -43351,7 +43351,7 @@ msgstr "Attēla informācija"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:139
 #: core/utilities/searchwindow/searchgroup.cpp:156
-#: core/utilities/setup/setuptooltip.cpp:232
+#: core/utilities/setup/setuptooltip.cpp:175
 #, kde-format
 msgid "Photograph Information"
 msgstr "Fotogrāfijas informācija"
@@ -49963,7 +49963,7 @@ msgid "&Show image Format"
 msgstr "Rādīt attēla vērtējumu"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:177
-#: core/utilities/setup/camera/setupcamera.cpp:486
+#: core/utilities/setup/camera/setupcamera.cpp:444
 #, fuzzy, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila nosaukumu zem sīktēliem."
@@ -49974,7 +49974,7 @@ msgid "&Show Geolocation Indicator"
 msgstr "Zaļš filtrs"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:179
-#: core/utilities/setup/camera/setupcamera.cpp:489
+#: core/utilities/setup/camera/setupcamera.cpp:447
 #, fuzzy, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr "Ieslēdziet šo iespēju, lai rādītu attēla aprakstu."
@@ -50278,7 +50278,7 @@ msgid "Show file name"
 msgstr "Rādīt faila nosaukumu"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:115
-#: core/utilities/setup/setuptooltip.cpp:204
+#: core/utilities/setup/setuptooltip.cpp:147
 #, kde-format
 msgid "Set this option to display the image file name."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila nosaukumu."
@@ -50289,7 +50289,7 @@ msgid "Show file date"
 msgstr "Rādīt faila datumu"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:118
-#: core/utilities/setup/setuptooltip.cpp:207
+#: core/utilities/setup/setuptooltip.cpp:150
 #, kde-format
 msgid "Set this option to display the image file date."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila datumu."
@@ -50300,7 +50300,7 @@ msgid "Show file size"
 msgstr "Rādīt faila izmēru"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:121
-#: core/utilities/setup/setuptooltip.cpp:210
+#: core/utilities/setup/setuptooltip.cpp:153
 #, kde-format
 msgid "Set this option to display the image file size."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila izmēru."
@@ -50311,7 +50311,7 @@ msgid "Show image type"
 msgstr "Rādīt attēla tipu"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:124
-#: core/utilities/setup/setuptooltip.cpp:213
+#: core/utilities/setup/setuptooltip.cpp:156
 #, kde-format
 msgid "Set this option to display the image type."
 msgstr "Ieslēdziet šo iespēju, lai rādītu attēla tipu."
@@ -50322,14 +50322,14 @@ msgid "Show image dimensions"
 msgstr "Rādīt attēla izmērus"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:127
-#: core/utilities/setup/setuptooltip.cpp:216
+#: core/utilities/setup/setuptooltip.cpp:159
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr "Ieslēdziet šo iespēju, lai rādītu attēla izmērus pikseļos."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:143
-#: core/utilities/setup/setuptooltip.cpp:236
-#: core/utilities/setup/setuptooltip.cpp:416
+#: core/utilities/setup/setuptooltip.cpp:179
+#: core/utilities/setup/setuptooltip.cpp:359
 #, kde-format
 msgid ""
 "Set this option to display the make and model of the camera with which the "
@@ -50339,15 +50339,15 @@ msgstr ""
 "ražotāju un modeli."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:146
-#: core/utilities/setup/setuptooltip.cpp:239
-#: core/utilities/setup/setuptooltip.cpp:419
+#: core/utilities/setup/setuptooltip.cpp:182
+#: core/utilities/setup/setuptooltip.cpp:362
 #, fuzzy, kde-format
 msgid "Camera lens model"
 msgstr "Fotoaparāta nosaukums"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:147
-#: core/utilities/setup/setuptooltip.cpp:240
-#: core/utilities/setup/setuptooltip.cpp:420
+#: core/utilities/setup/setuptooltip.cpp:183
+#: core/utilities/setup/setuptooltip.cpp:363
 #, fuzzy, kde-format
 #| msgid "Set this option to display the date when the image was taken."
 msgid ""
@@ -50360,14 +50360,14 @@ msgid "Show camera date"
 msgstr "Rādīt uzņemšanas datumu"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:151
-#: core/utilities/setup/setuptooltip.cpp:244
+#: core/utilities/setup/setuptooltip.cpp:187
 #, kde-format
 msgid "Set this option to display the date when the image was taken."
 msgstr "Ieslēdziet šo iespēju, lai rādītu datumu, kurā attēls uzņemts."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:154
-#: core/utilities/setup/setuptooltip.cpp:247
-#: core/utilities/setup/setuptooltip.cpp:424
+#: core/utilities/setup/setuptooltip.cpp:190
+#: core/utilities/setup/setuptooltip.cpp:367
 #, kde-format
 msgid ""
 "Set this option to display the camera aperture and focal settings used to "
@@ -50377,8 +50377,8 @@ msgstr ""
 "iestatījumus attēla uzņemšanas brīdī."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:158
-#: core/utilities/setup/setuptooltip.cpp:251
-#: core/utilities/setup/setuptooltip.cpp:428
+#: core/utilities/setup/setuptooltip.cpp:194
+#: core/utilities/setup/setuptooltip.cpp:371
 #, kde-format
 msgid ""
 "Set this option to display the camera exposure and sensitivity used to take "
@@ -50393,7 +50393,7 @@ msgid "Show camera mode and program"
 msgstr "Rādīt fotoaparāta režīmu un programmu"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:162
-#: core/utilities/setup/setuptooltip.cpp:255
+#: core/utilities/setup/setuptooltip.cpp:198
 #, kde-format
 msgid ""
 "Set this option to display the camera mode and program used to take the "
@@ -50408,8 +50408,8 @@ msgid "Show camera flash settings"
 msgstr "Rādīt fotoaparāta zibspuldzes iestatījumus"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:166
-#: core/utilities/setup/setuptooltip.cpp:259
-#: core/utilities/setup/setuptooltip.cpp:432
+#: core/utilities/setup/setuptooltip.cpp:202
+#: core/utilities/setup/setuptooltip.cpp:375
 #, kde-format
 msgid ""
 "Set this option to display the camera flash settings used to take the image."
@@ -50423,8 +50423,8 @@ msgid "Show camera white balance settings"
 msgstr "Rādīt fotoaparāta baltā balansa iestatījumus"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:170
-#: core/utilities/setup/setuptooltip.cpp:263
-#: core/utilities/setup/setuptooltip.cpp:436
+#: core/utilities/setup/setuptooltip.cpp:206
+#: core/utilities/setup/setuptooltip.cpp:379
 #, kde-format
 msgid ""
 "Set this option to display the camera white balance settings used to take "
@@ -51591,14 +51591,14 @@ msgstr "Saglabāt malu attiecību"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
 #: core/utilities/searchwindow/searchfields_createfield.cpp:918
-#: core/utilities/setup/setuptooltip.cpp:313
+#: core/utilities/setup/setuptooltip.cpp:256
 #, fuzzy, kde-format
 msgid "Audio Bit Rate"
 msgstr "Audio faili"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
 #: core/utilities/searchwindow/searchfields_createfield.cpp:936
-#: core/utilities/setup/setuptooltip.cpp:316
+#: core/utilities/setup/setuptooltip.cpp:259
 #, fuzzy, kde-format
 msgid "Audio Channel Type"
 msgstr "Alfa kanāls: "
@@ -51619,7 +51619,7 @@ msgid "Frame Rate of Video"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:83
-#: core/utilities/setup/setuptooltip.cpp:328
+#: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Codec"
 msgstr ""
@@ -52216,7 +52216,7 @@ msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:235
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
@@ -53149,9 +53149,9 @@ msgid "Edit Geolocation Bookmarks"
 msgstr "Rediģēt ģeolokācijas grāmatzīmes"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:232
-#: core/utilities/setup/album/setupcategory.cpp:99
-#: core/utilities/setup/camera/setupcamera.cpp:319
-#: core/utilities/setup/camera/setupcamera.cpp:441
+#: core/utilities/setup/album/setupcategory.cpp:92
+#: core/utilities/setup/camera/setupcamera.cpp:277
+#: core/utilities/setup/camera/setupcamera.cpp:399
 #: core/utilities/setup/setuptemplate.cpp:108
 #, kde-format
 msgid "&Remove"
@@ -57945,7 +57945,7 @@ msgstr ""
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:389
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:488
-#: core/utilities/setup/setupicc.cpp:753
+#: core/utilities/setup/setupicc.cpp:712
 #, kde-format
 msgid "No Profile Available"
 msgstr "Nav neviena profila"
@@ -57993,7 +57993,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:530
-#: core/utilities/setup/setupicc.cpp:755
+#: core/utilities/setup/setupicc.cpp:714
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "Nav neviena ievades profila"
@@ -58045,7 +58045,7 @@ msgid "Profile of the output device to simulate:"
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:105
-#: core/utilities/setup/setupicc.cpp:428
+#: core/utilities/setup/setupicc.cpp:387
 #, kde-format
 msgid ""
 "<p>Select the profile for your output device (usually, your printer). This "
@@ -58076,7 +58076,7 @@ msgid "Highlighting color:"
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:228
-#: core/utilities/setup/setupicc.cpp:865
+#: core/utilities/setup/setupicc.cpp:824
 #, fuzzy, kde-format
 #| msgid "Profile Error"
 msgctxt "@title:window"
@@ -58084,7 +58084,7 @@ msgid "Profile Error"
 msgstr "Profila kļūda"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:228
-#: core/utilities/setup/setupicc.cpp:865
+#: core/utilities/setup/setupicc.cpp:824
 #, kde-format
 msgid "No profile is selected."
 msgstr "Nav izvēlēts neviens profils."
@@ -58156,13 +58156,13 @@ msgid "Tools"
 msgstr "Rīki"
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:145
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:116
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:106
 #, kde-format
 msgid "About this tool..."
 msgstr "Par šo rīku..."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:149
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:112
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:102
 #, fuzzy, kde-format
 #| msgid "Online Handbook..."
 msgid "Tool online handbook..."
@@ -60676,7 +60676,7 @@ msgid "Show item on right panel"
 msgstr "Rādīt attēlu labajā panelī"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:67
-#: core/utilities/setup/camera/setupcamera.cpp:507
+#: core/utilities/setup/camera/setupcamera.cpp:465
 #, kde-format
 msgid "Open With Default Application"
 msgstr "Atvērt ar noklusējuma lietotni"
@@ -61482,106 +61482,106 @@ msgstr "Visas masveida rindas ir apstrādātas"
 msgid "&Queues"
 msgstr "&Rindas"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:184
+#: core/utilities/queuemanager/manager/batchtool.cpp:172
 #, fuzzy, kde-format
 #| msgid "Base"
 msgctxt "@title: tool group"
 msgid "Base"
 msgstr "Bāzes"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:189
+#: core/utilities/queuemanager/manager/batchtool.cpp:177
 #, fuzzy, kde-format
 msgctxt "@title: tool group"
 msgid "Custom"
 msgstr "Pielāgota"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:194
+#: core/utilities/queuemanager/manager/batchtool.cpp:182
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Colors"
 msgstr "Krāsas"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:199
+#: core/utilities/queuemanager/manager/batchtool.cpp:187
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Enhance"
 msgstr "Uzlabot"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:204
+#: core/utilities/queuemanager/manager/batchtool.cpp:192
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Transform"
 msgstr "Transformēt"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:209
+#: core/utilities/queuemanager/manager/batchtool.cpp:197
 #, fuzzy, kde-format
 msgctxt "@title: tool group"
 msgid "Decorate"
 msgstr "&Atkodēt"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:214
+#: core/utilities/queuemanager/manager/batchtool.cpp:202
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Filters"
 msgstr "Filtri"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:219
+#: core/utilities/queuemanager/manager/batchtool.cpp:207
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Convert"
 msgstr "Pārveidot"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:224
+#: core/utilities/queuemanager/manager/batchtool.cpp:212
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Metadata"
 msgstr "Metadati"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:233
+#: core/utilities/queuemanager/manager/batchtool.cpp:221
 #, fuzzy, kde-format
 #| msgid "Invalid Profile"
 msgctxt "@title: tool group"
 msgid "Invalid"
 msgstr "Nederīgs"
 
-#: core/utilities/queuemanager/manager/batchtool.cpp:643
+#: core/utilities/queuemanager/manager/batchtool.cpp:632
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "No setting available"
 msgstr "Nav opciju"
 
-#: core/utilities/queuemanager/manager/task.cpp:157
+#: core/utilities/queuemanager/manager/task.cpp:153
 #, fuzzy, kde-format
 msgid "Failed to find tool..."
 msgstr "Neizdevās saglabāt attēlu..."
 
-#: core/utilities/queuemanager/manager/task.cpp:255
+#: core/utilities/queuemanager/manager/task.cpp:251
 #, kde-format
 msgid "(overwritten)"
 msgstr "(pārrakstīts)"
 
-#: core/utilities/queuemanager/manager/task.cpp:260
+#: core/utilities/queuemanager/manager/task.cpp:256
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(pārdēvēts par %1)"
 
-#: core/utilities/queuemanager/manager/task.cpp:265
+#: core/utilities/queuemanager/manager/task.cpp:261
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/task.cpp:290
+#: core/utilities/queuemanager/manager/task.cpp:286
 #, fuzzy, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Neizdevās saglabāt attēlu..."
 
-#: core/utilities/queuemanager/manager/task.cpp:299
+#: core/utilities/queuemanager/manager/task.cpp:295
 #, fuzzy, kde-format
 msgid "Item processed successfully %1"
 msgstr "Attēls veiksmīgi apstrādāts..."
 
-#: core/utilities/queuemanager/manager/task.cpp:304
-#: core/utilities/queuemanager/manager/task.cpp:309
+#: core/utilities/queuemanager/manager/task.cpp:300
+#: core/utilities/queuemanager/manager/task.cpp:305
 #, fuzzy, kde-format
 msgid "Failed to create file..."
 msgstr "Neizdevās saglabāt attēlu..."
@@ -61591,26 +61591,26 @@ msgstr "Neizdevās saglabāt attēlu..."
 msgid "This is the list of batch tools assigned."
 msgstr "Šis ir pielikto masveida apstrādes rīku saraksts."
 
-#: core/utilities/queuemanager/views/queuelist.cpp:309
+#: core/utilities/queuemanager/views/queuelist.cpp:292
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgctxt "@info"
 msgid "This is the list of images to batch process."
 msgstr "Šis ir masveida apstrādei pievienoto failu saraksts."
 
-#: core/utilities/queuemanager/views/queuelist.cpp:327
+#: core/utilities/queuemanager/views/queuelist.cpp:310
 #, kde-format
 msgctxt "@title: preview item"
 msgid "Thumbnail"
 msgstr "Sīktēls"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:328
+#: core/utilities/queuemanager/views/queuelist.cpp:311
 #, fuzzy, kde-format
 msgctxt "@title: original item name"
 msgid "Original"
 msgstr "Orģināls"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:329
+#: core/utilities/queuemanager/views/queuelist.cpp:312
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@title: target item name"
@@ -61649,84 +61649,84 @@ msgstr ""
 "Zemāk redzamo rindu piešķirto rīku saraksts ir tukšs. Lūdzu, pievienojiet "
 "rīkus."
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:167
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:130
 #, fuzzy, kde-format
 msgid "Use original Album"
 msgstr "Lietot oriģinālos failu nosaukumus"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:169
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:132
 #, kde-format
 msgid "Target"
 msgstr "Rezultāts"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:179
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:142
 #, kde-format
 msgid "Use original filenames"
 msgstr "Lietot oriģinālos failu nosaukumus"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:180
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:143
 #, kde-format
 msgid "Turn on this option to use original filenames without modifications."
 msgstr ""
 "Ieslēdziet šo iespēju, lai lietotu sākotnējos failu nosaukumus bez izmaiņām."
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:183
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:146
 #, kde-format
 msgid "Customize filenames:"
 msgstr "Pielāgot failu nosaukumus:"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:199
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:162
 #, kde-format
 msgid "File Renaming"
 msgstr "Failu pārdēvēšana"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:211
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:174
 #, fuzzy, kde-format
 msgid "Raw Files Loading:"
 msgstr "RAW faili"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:215
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:178
 #, kde-format
 msgid "Perform RAW demosaicing"
 msgstr ""
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:216
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:179
 #, fuzzy, kde-format
 msgid "Extract embedded preview (faster)"
 msgstr "Parādīt iegulto priekšapskati"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:231
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:194
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Save image as a newly created branch"
 msgstr "Pārvietot uz miskasti bez apstiprināšanas"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:232
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:195
 #, fuzzy, kde-format
 msgid ""
 "Turn on this option to save the current modifications to a new version of "
 "the file"
 msgstr "Saglabāt aktīvo izvēli jaunā virtuālajā albumā."
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:236
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
 msgid ""
 "Turn on this option to use all CPU core from your computer to process more "
 "than one item from a queue at the same time."
 msgstr ""
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:249
-#: core/utilities/setup/camera/setupcamera.cpp:394
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:212
+#: core/utilities/setup/camera/setupcamera.cpp:352
 #, kde-format
 msgid "Behavior"
 msgstr "Izturēšanās"
 
-#: core/utilities/queuemanager/views/queuesettingsview.cpp:389
+#: core/utilities/queuemanager/views/queuesettingsview.cpp:352
 #, fuzzy, kde-format
 msgid "Saving Images"
 msgstr "Attēlu saglabāšana"
 
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:108
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:98
 #, kde-format
 msgid "Reset current tool settings to default values."
 msgstr "Atjaunot aktīvā rīka iestatījumus uz to noklusētajām vērtībām."
@@ -61786,72 +61786,72 @@ msgctxt "@action"
 msgid "Assign tools"
 msgstr "Piešķirt rīkus"
 
-#: core/utilities/queuemanager/views/toolsview.cpp:63
+#: core/utilities/queuemanager/views/toolsview.cpp:58
 #, kde-format
 msgid "This is the list of digiKam batch tools available."
 msgstr "Šis ir pieejamo digiKam masveida apstrādes rīku saraksts."
 
-#: core/utilities/queuemanager/views/toolsview.cpp:72
+#: core/utilities/queuemanager/views/toolsview.cpp:67
 #, kde-format
 msgid "Base Tools"
 msgstr "Pamata rīki"
 
-#: core/utilities/queuemanager/views/toolsview.cpp:77
+#: core/utilities/queuemanager/views/toolsview.cpp:72
 #, fuzzy, kde-format
 msgid "This is the list of your customized workflow settings."
 msgstr "Šis ir lietotāja pielāgotu masveida apstrādes rīku saraksts."
 
-#: core/utilities/queuemanager/views/toolsview.cpp:78
+#: core/utilities/queuemanager/views/toolsview.cpp:73
 #, kde-format
 msgid "Workflow"
 msgstr "Darbplūsma"
 
-#: core/utilities/queuemanager/views/toolsview.cpp:83
+#: core/utilities/queuemanager/views/toolsview.cpp:78
 #, kde-format
 msgid "You can see below the history of last batch operations processed."
 msgstr ""
 
-#: core/utilities/queuemanager/views/toolsview.cpp:84
+#: core/utilities/queuemanager/views/toolsview.cpp:79
 #, kde-format
 msgid "History"
 msgstr "Vēsture"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:66
+#: core/utilities/queuemanager/views/workflowdlg.cpp:61
 #, fuzzy, kde-format
 #| msgid "New Workflow"
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Jauna darbplūsma"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:66
+#: core/utilities/queuemanager/views/workflowdlg.cpp:61
 #, fuzzy, kde-format
 #| msgid "Edit Workflow"
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Rediģēt darbplūsmu"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:79
+#: core/utilities/queuemanager/views/workflowdlg.cpp:74
 #, fuzzy, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
 msgstr "<qt><b>Izveidot jaunu albumu iekš <br/>\"<i>%1</i>\"</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:83
+#: core/utilities/queuemanager/views/workflowdlg.cpp:78
 #, fuzzy, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
 msgstr "<big><b>Faila īpašības</b></big>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:94
+#: core/utilities/queuemanager/views/workflowdlg.cpp:89
 #, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "&Nosaukums:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:106
+#: core/utilities/queuemanager/views/workflowdlg.cpp:101
 #, fuzzy, kde-format
 msgid "Description:"
 msgstr "Apraksts"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:135
+#: core/utilities/queuemanager/views/workflowdlg.cpp:130
 #, kde-format
 msgid "New Workflow"
 msgstr "Jauna darbplūsma"
@@ -61913,7 +61913,7 @@ msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "Dzēst darbplūsmu"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:342
+#: core/utilities/queuemanager/views/workflowlist.cpp:343
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Delete Workflow?"
@@ -61921,7 +61921,7 @@ msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Dzēst darbplūsmu?"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:343
+#: core/utilities/queuemanager/views/workflowlist.cpp:344
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
@@ -63008,50 +63008,50 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Izvērstā meklēšana"
 
-#: core/utilities/setup/album/setupalbumview.cpp:155
-#: core/utilities/setup/camera/setupcamera.cpp:469
+#: core/utilities/setup/album/setupalbumview.cpp:118
+#: core/utilities/setup/camera/setupcamera.cpp:427
 #, kde-format
 msgid "Show file&name"
 msgstr "Rādīt faila &nosaukumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
-#: core/utilities/setup/camera/setupcamera.cpp:470
+#: core/utilities/setup/album/setupalbumview.cpp:119
+#: core/utilities/setup/camera/setupcamera.cpp:428
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila nosaukumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:158
-#: core/utilities/setup/camera/setupcamera.cpp:472
+#: core/utilities/setup/album/setupalbumview.cpp:121
+#: core/utilities/setup/camera/setupcamera.cpp:430
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Rādīt faila i&zmēru"
 
-#: core/utilities/setup/album/setupalbumview.cpp:159
-#: core/utilities/setup/camera/setupcamera.cpp:473
+#: core/utilities/setup/album/setupalbumview.cpp:122
+#: core/utilities/setup/camera/setupcamera.cpp:431
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila izmēru zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:161
-#: core/utilities/setup/camera/setupcamera.cpp:475
+#: core/utilities/setup/album/setupalbumview.cpp:124
+#: core/utilities/setup/camera/setupcamera.cpp:433
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Rādīt uzņemšanas &datumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:162
-#: core/utilities/setup/camera/setupcamera.cpp:476
+#: core/utilities/setup/album/setupalbumview.cpp:125
+#: core/utilities/setup/camera/setupcamera.cpp:434
 #, kde-format
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu uzņemšanas datumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:128
 #, fuzzy, kde-format
 #| msgid "Show image creation date"
 msgid "Show file &modification date"
 msgstr "Rādīt attēla uzņemšanas datumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:166
+#: core/utilities/setup/album/setupalbumview.cpp:129
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -63059,99 +63059,99 @@ msgid ""
 "identify quickly which items have been modified."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:170
+#: core/utilities/setup/album/setupalbumview.cpp:133
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "Rādīt attēlu izmēr&us"
 
-#: core/utilities/setup/album/setupalbumview.cpp:171
+#: core/utilities/setup/album/setupalbumview.cpp:134
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
 msgstr ""
 "Ieslēdziet šo iespēju, lai rādītu attēlu izmērus pikseļos zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:174
+#: core/utilities/setup/album/setupalbumview.cpp:137
 #, fuzzy, kde-format
 msgid "Show image aspect ratio"
 msgstr "Saglabāt malu attiecību"
 
-#: core/utilities/setup/album/setupalbumview.cpp:175
+#: core/utilities/setup/album/setupalbumview.cpp:138
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam vērtējumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:178
+#: core/utilities/setup/album/setupalbumview.cpp:141
 #, fuzzy, kde-format
 msgid "Show image format"
 msgstr "Rādīt attēla vērtējumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/album/setupalbumview.cpp:142
 #, fuzzy, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila nosaukumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:181
+#: core/utilities/setup/album/setupalbumview.cpp:144
 #, fuzzy, kde-format
 msgid "Show digiKam tit&le"
 msgstr "Rādīt digiKam &vērtējumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:182
+#: core/utilities/setup/album/setupalbumview.cpp:145
 #, fuzzy, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam vērtējumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:185
+#: core/utilities/setup/album/setupalbumview.cpp:148
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "Rādīt digiKam a&prakstus"
 
-#: core/utilities/setup/album/setupalbumview.cpp:186
+#: core/utilities/setup/album/setupalbumview.cpp:149
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam aprakstus zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:189
-#: core/utilities/setup/camera/setupcamera.cpp:491
+#: core/utilities/setup/album/setupalbumview.cpp:152
+#: core/utilities/setup/camera/setupcamera.cpp:449
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Rādīt digiKam &tagus"
 
-#: core/utilities/setup/album/setupalbumview.cpp:190
+#: core/utilities/setup/album/setupalbumview.cpp:153
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam tagus zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:193
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "Rādīt digiKam &vērtējumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:194
+#: core/utilities/setup/album/setupalbumview.cpp:157
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam vērtējumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:197
+#: core/utilities/setup/album/setupalbumview.cpp:160
 #, fuzzy, kde-format
 msgid "Show digiKam &pick label"
 msgstr "Rādīt digiKam &vērtējumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:198
+#: core/utilities/setup/album/setupalbumview.cpp:161
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam vērtējumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:201
+#: core/utilities/setup/album/setupalbumview.cpp:164
 #, fuzzy, kde-format
 msgid "Show digiKam color &label"
 msgstr "Rādīt digiKam &vērtējumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:202
+#: core/utilities/setup/album/setupalbumview.cpp:165
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
@@ -63159,13 +63159,13 @@ msgid ""
 "thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam tagus zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:205
-#: core/utilities/setup/camera/setupcamera.cpp:499
+#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/camera/setupcamera.cpp:457
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Rādīt pārklātās pagriešanas pogas"
 
-#: core/utilities/setup/album/setupalbumview.cpp:206
+#: core/utilities/setup/album/setupalbumview.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show overlay buttons on the image thumbnail for image "
@@ -63177,12 +63177,12 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai uz attēla rādītu pārklātās pogas attēla "
 "pagriešanai."
 
-#: core/utilities/setup/album/setupalbumview.cpp:209
+#: core/utilities/setup/album/setupalbumview.cpp:172
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Rādīt pārklāto pilnekrāna režīma pogu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:210
+#: core/utilities/setup/album/setupalbumview.cpp:173
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
@@ -63191,13 +63191,13 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai uz attēla rādītu pārklātās pogas attēla "
 "pagriešanai."
 
-#: core/utilities/setup/album/setupalbumview.cpp:213
-#: core/utilities/setup/camera/setupcamera.cpp:488
+#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/camera/setupcamera.cpp:446
 #, fuzzy, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "Zaļš filtrs"
 
-#: core/utilities/setup/album/setupalbumview.cpp:214
+#: core/utilities/setup/album/setupalbumview.cpp:177
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show overlay buttons on the image thumbnail for image "
@@ -63209,59 +63209,59 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai uz attēla rādītu pārklātās pogas attēla "
 "pagriešanai."
 
-#: core/utilities/setup/album/setupalbumview.cpp:216
-#: core/utilities/setup/camera/setupcamera.cpp:503
+#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/camera/setupcamera.cpp:461
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Klikšķa uz sīktēla darbība:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:218
+#: core/utilities/setup/album/setupalbumview.cpp:181
 #, kde-format
 msgid "Show Preview"
 msgstr "Rādīt priekšskatījumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:219
+#: core/utilities/setup/album/setupalbumview.cpp:182
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgid "Start Image Editor"
 msgstr "Palaist attēlu redaktoru"
 
-#: core/utilities/setup/album/setupalbumview.cpp:220
+#: core/utilities/setup/album/setupalbumview.cpp:183
 #, fuzzy, kde-format
 #| msgid "Show on right panel"
 msgid "Show on Light Table"
 msgstr "Rādīt labajā panelī"
 
-#: core/utilities/setup/album/setupalbumview.cpp:221
+#: core/utilities/setup/album/setupalbumview.cpp:184
 #, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgid "Open with Default Application"
 msgstr "Atvērt ar noklusējuma lietotni"
 
-#: core/utilities/setup/album/setupalbumview.cpp:222
-#: core/utilities/setup/camera/setupcamera.cpp:508
+#: core/utilities/setup/album/setupalbumview.cpp:185
+#: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Izvēlieties, kas notiek, noklikšķinot uz sīktēla."
 
-#: core/utilities/setup/album/setupalbumview.cpp:224
-#: core/utilities/setup/camera/setupcamera.cpp:510
+#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/camera/setupcamera.cpp:468
 #, kde-format
 msgid "Icon View font:"
 msgstr "Ikonu skata fonts:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:225
+#: core/utilities/setup/album/setupalbumview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Icon Views."
 msgid "Select here the font used to display text in icon views."
 msgstr "Šeit norādiet fontu, ar kādu attēlot tekstu ikonu skatos."
 
-#: core/utilities/setup/album/setupalbumview.cpp:227
+#: core/utilities/setup/album/setupalbumview.cpp:190
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:228
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -63275,19 +63275,19 @@ msgid ""
 "collections."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:263
+#: core/utilities/setup/album/setupalbumview.cpp:226
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Ikonas"
 
-#: core/utilities/setup/album/setupalbumview.cpp:270
+#: core/utilities/setup/album/setupalbumview.cpp:233
 #, fuzzy, kde-format
 #| msgid "Tree View thumbnail size:"
 msgid "Tree View icon size:"
 msgstr "Koka skata sīktēla izmērs:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:240
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View "
@@ -63298,13 +63298,13 @@ msgid ""
 msgstr ""
 "Šeit varat konfigurēt digiKam sānjoslu koku skatu sīktēlu izmēru, pikseļos."
 
-#: core/utilities/setup/album/setupalbumview.cpp:280
+#: core/utilities/setup/album/setupalbumview.cpp:243
 #, fuzzy, kde-format
 #| msgid "Tree View thumbnail size:"
 msgid "People Tree View icon size:"
 msgstr "Koka skata sīktēla izmērs:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:288
+#: core/utilities/setup/album/setupalbumview.cpp:251
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View "
@@ -63315,22 +63315,22 @@ msgid ""
 msgstr ""
 "Šeit varat konfigurēt digiKam sānjoslu koku skatu sīktēlu izmēru, pikseļos."
 
-#: core/utilities/setup/album/setupalbumview.cpp:291
+#: core/utilities/setup/album/setupalbumview.cpp:254
 #, kde-format
 msgid "Tree View font:"
 msgstr "Koka skata fonts:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:292
+#: core/utilities/setup/album/setupalbumview.cpp:255
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "Šeit varat norādīt koku skatu fontu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:294
+#: core/utilities/setup/album/setupalbumview.cpp:257
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Koku skatos rādīt elementu skaitu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:295
+#: core/utilities/setup/album/setupalbumview.cpp:258
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to display album information when the mouse hovers over a "
@@ -63342,113 +63342,113 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai, paturot peli uz albuma, tiktu parādīts tā "
 "apraksts."
 
-#: core/utilities/setup/album/setupalbumview.cpp:307
+#: core/utilities/setup/album/setupalbumview.cpp:270
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Skats"
 
-#: core/utilities/setup/album/setupalbumview.cpp:315
+#: core/utilities/setup/album/setupalbumview.cpp:278
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:317
+#: core/utilities/setup/album/setupalbumview.cpp:280
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Iegultais priekšskatījums ielādē pilna izmēra attēlus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:319
+#: core/utilities/setup/album/setupalbumview.cpp:282
 #, fuzzy, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Par. attēli"
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:285
 #, fuzzy, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Automātiska koriģēšana"
 
-#: core/utilities/setup/album/setupalbumview.cpp:324
+#: core/utilities/setup/album/setupalbumview.cpp:287
 #, fuzzy, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Parādīt iegulto priekšapskati"
 
-#: core/utilities/setup/album/setupalbumview.cpp:326
+#: core/utilities/setup/album/setupalbumview.cpp:289
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:328
+#: core/utilities/setup/album/setupalbumview.cpp:291
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:330
+#: core/utilities/setup/album/setupalbumview.cpp:293
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:331
+#: core/utilities/setup/album/setupalbumview.cpp:294
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:333
+#: core/utilities/setup/album/setupalbumview.cpp:296
 #, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:334
+#: core/utilities/setup/album/setupalbumview.cpp:297
 #, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:336
-#: core/utilities/setup/camera/setupcamera.cpp:547
+#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/camera/setupcamera.cpp:505
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:337
-#: core/utilities/setup/camera/setupcamera.cpp:548
+#: core/utilities/setup/album/setupalbumview.cpp:300
+#: core/utilities/setup/camera/setupcamera.cpp:506
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:354
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Priekšskatījums"
 
-#: core/utilities/setup/album/setupalbumview.cpp:369
+#: core/utilities/setup/album/setupalbumview.cpp:332
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Pilnekrāns"
 
-#: core/utilities/setup/album/setupalbumview.cpp:374
+#: core/utilities/setup/album/setupalbumview.cpp:337
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "MIME tipi"
 
-#: core/utilities/setup/album/setupalbumview.cpp:377
+#: core/utilities/setup/album/setupalbumview.cpp:340
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategorijas"
 
-#: core/utilities/setup/album/setupalbumview.cpp:543
+#: core/utilities/setup/album/setupalbumview.cpp:506
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63458,17 +63458,17 @@ msgid ""
 "Maintenance</interface> menu."
 msgstr ""
 
-#: core/utilities/setup/album/setupcategory.cpp:82
+#: core/utilities/setup/album/setupcategory.cpp:75
 #, kde-format
 msgid "Manage categories to sort and re-arrange album tree-view."
 msgstr ""
 
-#: core/utilities/setup/album/setupcategory.cpp:89
+#: core/utilities/setup/album/setupcategory.cpp:82
 #, fuzzy, kde-format
 msgid "Set here the new category"
 msgstr "Šeit var norādīt teksta krāsu."
 
-#: core/utilities/setup/album/setupcategory.cpp:92
+#: core/utilities/setup/album/setupcategory.cpp:85
 #, kde-format
 msgid ""
 "You can add or remove Album category types here to improve how your Albums "
@@ -63477,15 +63477,15 @@ msgstr ""
 "Šeit var pievienot un izņemt albumu kategorijas, lai uzlabotu digiKam albumu "
 "kārtošanu."
 
-#: core/utilities/setup/album/setupcategory.cpp:98
-#: core/utilities/setup/camera/setupcamera.cpp:317
-#: core/utilities/setup/camera/setupcamera.cpp:439
+#: core/utilities/setup/album/setupcategory.cpp:91
+#: core/utilities/setup/camera/setupcamera.cpp:275
+#: core/utilities/setup/camera/setupcamera.cpp:397
 #: core/utilities/setup/setuptemplate.cpp:106
 #, kde-format
 msgid "&Add..."
 msgstr "&Pievienot..."
 
-#: core/utilities/setup/album/setupmime.cpp:85
+#: core/utilities/setup/album/setupmime.cpp:77
 #, kde-format
 msgid ""
 "<p>Add new file types to show as album items.</p><p>digiKam attempts to "
@@ -63497,7 +63497,7 @@ msgid ""
 "in this view will perform a database rescan in the background.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/album/setupmime.cpp:103
+#: core/utilities/setup/album/setupmime.cpp:95
 #, kde-format
 msgid ""
 "Additional &image file extensions (<a href='image'>Currently-supported "
@@ -63506,7 +63506,7 @@ msgstr ""
 "Papildu a&ttēlu failu paplašinājumi (<a href='image'>Šobrīd atbalstītie "
 "attēlu tipi</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:107
+#: core/utilities/setup/album/setupmime.cpp:99
 #, kde-format
 msgid ""
 "<p>Here you can add the extensions of image files (including RAW files) to "
@@ -63519,12 +63519,12 @@ msgid ""
 "means losing all of their tags and ratings.</p>"
 msgstr ""
 
-#: core/utilities/setup/album/setupmime.cpp:117
+#: core/utilities/setup/album/setupmime.cpp:109
 #, fuzzy, kde-format
 msgid "Enter additional image file extensions."
 msgstr "Šeit ievadiet rediģēšanas informāciju."
 
-#: core/utilities/setup/album/setupmime.cpp:136
+#: core/utilities/setup/album/setupmime.cpp:128
 #, fuzzy, kde-format
 #| msgid ""
 #| "Additional &movie file extensions (<a href='video'>Currently-supported "
@@ -63536,7 +63536,7 @@ msgstr ""
 "Papildu &video failu paplašinājumi (<a href='video'>Šobrīd atbalstītie video "
 "tipi</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:140
+#: core/utilities/setup/album/setupmime.cpp:132
 #, kde-format
 msgid ""
 "<p>Here you can add extra extensions of video files to be displayed in your "
@@ -63550,12 +63550,12 @@ msgid ""
 "their tags and ratings.</p>"
 msgstr ""
 
-#: core/utilities/setup/album/setupmime.cpp:152
+#: core/utilities/setup/album/setupmime.cpp:144
 #, fuzzy, kde-format
 msgid "Enter additional video file extensions."
 msgstr "Failu pārdēvēšana"
 
-#: core/utilities/setup/album/setupmime.cpp:171
+#: core/utilities/setup/album/setupmime.cpp:163
 #, kde-format
 msgid ""
 "Additional &audio file extensions (<a href='audio'>Currently-supported "
@@ -63564,7 +63564,7 @@ msgstr ""
 "Papildu &audio failu paplašinājumi (<a href='audio'>Šobrīd atbalstītie audio "
 "tipi</a>):"
 
-#: core/utilities/setup/album/setupmime.cpp:175
+#: core/utilities/setup/album/setupmime.cpp:167
 #, kde-format
 msgid ""
 "<p>Here you can add extra extensions of audio files to be displayed in your "
@@ -63578,12 +63578,12 @@ msgid ""
 "their tags and ratings.</p>"
 msgstr ""
 
-#: core/utilities/setup/album/setupmime.cpp:187
+#: core/utilities/setup/album/setupmime.cpp:179
 #, fuzzy, kde-format
 msgid "Enter additional audio file extensions."
 msgstr "Failu pārdēvēšana"
 
-#: core/utilities/setup/album/setupmime.cpp:251
+#: core/utilities/setup/album/setupmime.cpp:243
 #, kde-format
 msgid ""
 "<p>You have chosen to remove the following image formats from the list of "
@@ -63594,7 +63594,7 @@ msgid ""
 "support for these formats?</p>"
 msgstr ""
 
-#: core/utilities/setup/album/setupmime.cpp:304
+#: core/utilities/setup/album/setupmime.cpp:296
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as images and included "
@@ -63603,7 +63603,7 @@ msgstr ""
 "<p>Faili ar šiem paplašinājumiem tika atpazīti kā attēlu faili un "
 "automātiski iekļauti datubāzē:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/album/setupmime.cpp:314
+#: core/utilities/setup/album/setupmime.cpp:306
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Files with these extensions will be recognized as movie files and "
@@ -63615,7 +63615,7 @@ msgstr ""
 "<p>Faili ar šiem paplašinājumiem tika atpazīti kā video faili un automātiski "
 "iekļauti datubāzē:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/album/setupmime.cpp:324
+#: core/utilities/setup/album/setupmime.cpp:316
 #, kde-format
 msgid ""
 "<p>Files with these extensions will be recognized as audio files and "
@@ -63624,7 +63624,7 @@ msgstr ""
 "<p>Faili ar šiem paplašinājumiem tika atpazīti kā audio faili un automātiski "
 "iekļauti datubāzē:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/camera/cameralist.cpp:289
+#: core/utilities/setup/camera/cameralist.cpp:286
 #, kde-format
 msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
@@ -63633,7 +63633,7 @@ msgstr ""
 "Neizdvās automātiski atrast fotoaparātu! Lūdzu, pārliecinieties, ka tas ir "
 "korekti pieslēgts un ir ieslēgts. Vai mēģināt vēlreiz?"
 
-#: core/utilities/setup/camera/cameraselection.cpp:104
+#: core/utilities/setup/camera/cameraselection.cpp:91
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@title:window"
@@ -63641,17 +63641,17 @@ msgid "Camera Configuration"
 msgstr "Fotoaparāta konfigurācija"
 
 #. i18n!
-#: core/utilities/setup/camera/cameraselection.cpp:114
+#: core/utilities/setup/camera/cameraselection.cpp:101
 #, kde-format
 msgid "Mounted Camera"
 msgstr "Piemontēts fotoaparāts"
 
-#: core/utilities/setup/camera/cameraselection.cpp:130
+#: core/utilities/setup/camera/cameraselection.cpp:117
 #, kde-format
 msgid "Camera List"
 msgstr "Fotoaparātu saraksts"
 
-#: core/utilities/setup/camera/cameraselection.cpp:131
+#: core/utilities/setup/camera/cameraselection.cpp:118
 #, kde-format
 msgid ""
 "<p>Select the camera name that you want to use here. All default settings on "
@@ -63659,90 +63659,90 @@ msgid ""
 "generated using the gphoto2 library installed on your computer.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:140
+#: core/utilities/setup/camera/cameraselection.cpp:127
 #, kde-format
 msgid "Camera Title"
 msgstr "Fotoaparāta nosaukums"
 
-#: core/utilities/setup/camera/cameraselection.cpp:144
+#: core/utilities/setup/camera/cameraselection.cpp:131
 #, kde-format
 msgid ""
 "<p>Set here the name used in digiKam interface to identify this camera.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:153
+#: core/utilities/setup/camera/cameraselection.cpp:140
 #, kde-format
 msgid "Camera Port Type"
 msgstr "Fotoaparāta pieslēgvietas tips"
 
-#: core/utilities/setup/camera/cameraselection.cpp:158
+#: core/utilities/setup/camera/cameraselection.cpp:145
 #, kde-format
 msgid "USB"
 msgstr "USB"
 
-#: core/utilities/setup/camera/cameraselection.cpp:159
+#: core/utilities/setup/camera/cameraselection.cpp:146
 #, kde-format
 msgid ""
 "<p>Select this option if your camera is connected to your computer using a "
 "USB cable.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:162
+#: core/utilities/setup/camera/cameraselection.cpp:149
 #, fuzzy, kde-format
 #| msgid "Serial"
 msgctxt "@item: serail port based camera"
 msgid "Serial"
 msgstr "Seriālais"
 
-#: core/utilities/setup/camera/cameraselection.cpp:163
+#: core/utilities/setup/camera/cameraselection.cpp:150
 #, kde-format
 msgid ""
 "<p>Select this option if your camera is connected to your computer using a "
 "serial cable.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:166
+#: core/utilities/setup/camera/cameraselection.cpp:153
 #, kde-format
 msgid "Network"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:167
+#: core/utilities/setup/camera/cameraselection.cpp:154
 #, kde-format
 msgid ""
 "<p>Select this option if your camera is connected to your computer network.</"
 "p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:172
+#: core/utilities/setup/camera/cameraselection.cpp:159
 #, kde-format
 msgid ""
 "<p>Select the serial port to use on your computer here. This option is only "
 "required if you use a serial camera.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:176
+#: core/utilities/setup/camera/cameraselection.cpp:163
 #, kde-format
 msgid "<p>Enter here the network address of your camera.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:194
+#: core/utilities/setup/camera/cameraselection.cpp:181
 #, kde-format
 msgid "Camera Mount Path"
 msgstr "Fotoaparāta montēšanas ceļš"
 
-#: core/utilities/setup/camera/cameraselection.cpp:198
+#: core/utilities/setup/camera/cameraselection.cpp:185
 #, kde-format
 msgid "Note: only for USB/IEEE mass storage cameras."
 msgstr "Piezīme: tikai USB/IEEE mass storage fotoaparātiem."
 
-#: core/utilities/setup/camera/cameraselection.cpp:204
+#: core/utilities/setup/camera/cameraselection.cpp:191
 #, kde-format
 msgid ""
 "<p>Set here the mount path to use on your computer. This option is only "
 "required if you use a <b>USB Mass Storage</b> camera.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:222
+#: core/utilities/setup/camera/cameraselection.cpp:209
 #, kde-format
 msgid ""
 "<p>To set a <b>USB Mass Storage</b> camera<br/>(which looks like a removable "
@@ -63750,7 +63750,7 @@ msgid ""
 "\">%1</a> from the camera list.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:229
+#: core/utilities/setup/camera/cameraselection.cpp:216
 #, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP USB Device</b><br/>(which uses Picture Transfer "
@@ -63758,7 +63758,7 @@ msgid ""
 "</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:235
+#: core/utilities/setup/camera/cameraselection.cpp:222
 #, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP/IP Network Device</b><br/>(which uses Picture "
@@ -63766,7 +63766,7 @@ msgid ""
 "camera list.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/cameraselection.cpp:242
+#: core/utilities/setup/camera/cameraselection.cpp:229
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>A complete list of camera settings to use is<br/>available at <a "
@@ -63779,55 +63779,55 @@ msgstr ""
 "<p>Pilns fotoaparātu iestatījumu saraksts ir <br/>pieejams <a href='http://"
 "www.teaser.fr/~hfiguiere/linux/digicam.html'>šeit</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:85
+#: core/utilities/setup/camera/importfilterdlg.cpp:73
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Audio faili"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:102
+#: core/utilities/setup/camera/importfilterdlg.cpp:90
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Nosaukums:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:109
+#: core/utilities/setup/camera/importfilterdlg.cpp:97
 #, fuzzy, kde-format
 msgid "Mime filter:"
 msgstr "Trokšņu filtrs:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:117
+#: core/utilities/setup/camera/importfilterdlg.cpp:105
 #, fuzzy, kde-format
 msgid "Select Type Mime..."
 msgstr "Izvēlieties attēlus"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:122
+#: core/utilities/setup/camera/importfilterdlg.cpp:110
 #, fuzzy, kde-format
 msgid "File name filter:"
 msgstr "Faila nosaukums"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:132
+#: core/utilities/setup/camera/importfilterdlg.cpp:120
 #, fuzzy, kde-format
 msgid "Path filter:"
 msgstr "Nav aktīva filtra"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:142
+#: core/utilities/setup/camera/importfilterdlg.cpp:130
 #, fuzzy, kde-format
 msgid "Show only new files"
 msgstr "Rādīt vecākos vispirms"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:216
+#: core/utilities/setup/camera/importfilterdlg.cpp:204
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr ""
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:218
+#: core/utilities/setup/camera/importfilterdlg.cpp:206
 #, fuzzy, kde-format
 msgid "Select Mime Types"
 msgstr "Izvēlieties attēlus"
 
-#: core/utilities/setup/camera/setupcamera.cpp:296
+#: core/utilities/setup/camera/setupcamera.cpp:254
 #, kde-format
 msgid ""
 "Here you can see the digital camera list used by digiKam via the Gphoto "
@@ -63836,113 +63836,113 @@ msgstr ""
 "Šeit var redzēt ciparu fotoaparātu sarakstu, ko digiKam izmanto caur GPhoto "
 "saskarni."
 
-#: core/utilities/setup/camera/setupcamera.cpp:300
+#: core/utilities/setup/camera/setupcamera.cpp:258
 #, kde-format
 msgctxt "@title: camera title"
 msgid "Title"
 msgstr "Nosaukums"
 
-#: core/utilities/setup/camera/setupcamera.cpp:301
+#: core/utilities/setup/camera/setupcamera.cpp:259
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@title: camera model"
 msgid "Model"
 msgstr "Modelis"
 
-#: core/utilities/setup/camera/setupcamera.cpp:302
+#: core/utilities/setup/camera/setupcamera.cpp:260
 #, fuzzy, kde-format
 #| msgid "Port"
 msgctxt "@title: camera port"
 msgid "Port"
 msgstr "Ports"
 
-#: core/utilities/setup/camera/setupcamera.cpp:303
+#: core/utilities/setup/camera/setupcamera.cpp:261
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "@title: camera mount path"
 msgid "Path"
 msgstr "Ceļš"
 
-#: core/utilities/setup/camera/setupcamera.cpp:321
-#: core/utilities/setup/camera/setupcamera.cpp:443
+#: core/utilities/setup/camera/setupcamera.cpp:279
+#: core/utilities/setup/camera/setupcamera.cpp:401
 #, kde-format
 msgid "&Edit..."
 msgstr "R&ediģēt..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:323
+#: core/utilities/setup/camera/setupcamera.cpp:281
 #, kde-format
 msgid "Auto-&Detect"
 msgstr "Automātiski &noteikt"
 
-#: core/utilities/setup/camera/setupcamera.cpp:334
+#: core/utilities/setup/camera/setupcamera.cpp:292
 #, kde-format
 msgid "Visit Gphoto project website"
 msgstr "Apmeklējiet Gphoto projekta tīmekļa lapu"
 
-#: core/utilities/setup/camera/setupcamera.cpp:357
+#: core/utilities/setup/camera/setupcamera.cpp:315
 #, fuzzy, kde-format
 msgid "Devices"
 msgstr "&Ierīce"
 
-#: core/utilities/setup/camera/setupcamera.cpp:364
+#: core/utilities/setup/camera/setupcamera.cpp:322
 #, kde-format
 msgid "Use file metadata (makes connection slower)"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:365
+#: core/utilities/setup/camera/setupcamera.cpp:323
 #, kde-format
 msgid "Turn on high quality thumbnail loading (slower loading)"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:366
+#: core/utilities/setup/camera/setupcamera.cpp:324
 #, kde-format
 msgid "Use a default target album to download from camera"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:372
+#: core/utilities/setup/camera/setupcamera.cpp:330
 #, fuzzy, kde-format
 #| msgid "If Target File Exists:"
 msgid "If target file exists when downloaded from camera"
 msgstr "Ja mērķa fails pastāv:"
 
-#: core/utilities/setup/camera/setupcamera.cpp:413
+#: core/utilities/setup/camera/setupcamera.cpp:371
 #, kde-format
 msgid ""
 "Here you can see filters that can be used to filter files in import dialog."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:426
+#: core/utilities/setup/camera/setupcamera.cpp:384
 #, kde-format
 msgid "Use a space as a separator to specify multiple file names to ignore."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:432
+#: core/utilities/setup/camera/setupcamera.cpp:390
 #, kde-format
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:436
+#: core/utilities/setup/camera/setupcamera.cpp:394
 #, kde-format
 msgid "Always ignore"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:437
+#: core/utilities/setup/camera/setupcamera.cpp:395
 #, fuzzy, kde-format
 msgid "Ignored file names:"
 msgstr "Rādīt faila nosaukumu"
 
-#: core/utilities/setup/camera/setupcamera.cpp:438
+#: core/utilities/setup/camera/setupcamera.cpp:396
 #, fuzzy, kde-format
 msgid "Ignored file extensions:"
 msgstr "Failu pārdēvēšana"
 
-#: core/utilities/setup/camera/setupcamera.cpp:458
+#: core/utilities/setup/camera/setupcamera.cpp:416
 #, kde-format
 msgid "Import Filters"
 msgstr "Importēt filtrus"
 
-#: core/utilities/setup/camera/setupcamera.cpp:466
+#: core/utilities/setup/camera/setupcamera.cpp:424
 #, kde-format
 msgid "Icon-View Options"
 msgstr "Ikonu skata opcijas"
@@ -63951,27 +63951,27 @@ msgstr "Ikonu skata opcijas"
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
 #. "below the image thumbnail."));
 #.
-#: core/utilities/setup/camera/setupcamera.cpp:485
+#: core/utilities/setup/camera/setupcamera.cpp:443
 #, fuzzy, kde-format
 msgid "Show image Format"
 msgstr "Rādīt attēla vērtējumu"
 
-#: core/utilities/setup/camera/setupcamera.cpp:492
+#: core/utilities/setup/camera/setupcamera.cpp:450
 #, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam tagus zem sīktēliem."
 
-#: core/utilities/setup/camera/setupcamera.cpp:495
+#: core/utilities/setup/camera/setupcamera.cpp:453
 #, kde-format
 msgid "Show item &rating"
 msgstr "Rādīt attēla &vērtējumu"
 
-#: core/utilities/setup/camera/setupcamera.cpp:496
+#: core/utilities/setup/camera/setupcamera.cpp:454
 #, fuzzy, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam vērtējumu zem sīktēliem."
 
-#: core/utilities/setup/camera/setupcamera.cpp:500
+#: core/utilities/setup/camera/setupcamera.cpp:458
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons on the image thumbnail for image "
@@ -63980,32 +63980,32 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai uz attēla rādītu pārklātās pogas attēla "
 "pagriešanai."
 
-#: core/utilities/setup/camera/setupcamera.cpp:505
+#: core/utilities/setup/camera/setupcamera.cpp:463
 #, kde-format
 msgid "Show embedded preview"
 msgstr "Parādīt iegulto priekšapskati"
 
-#: core/utilities/setup/camera/setupcamera.cpp:506
+#: core/utilities/setup/camera/setupcamera.cpp:464
 #, kde-format
 msgid "Start image editor"
 msgstr "Palaist attēlu redaktoru"
 
-#: core/utilities/setup/camera/setupcamera.cpp:511
+#: core/utilities/setup/camera/setupcamera.cpp:469
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
 msgstr "Šeit norādiet fontu, ar kādu attēlot tekstu ikonu skatos."
 
-#: core/utilities/setup/camera/setupcamera.cpp:533
+#: core/utilities/setup/camera/setupcamera.cpp:491
 #, fuzzy, kde-format
 msgid "Preview Options"
 msgstr "Mapju skata iestatījumi"
 
-#: core/utilities/setup/camera/setupcamera.cpp:536
+#: core/utilities/setup/camera/setupcamera.cpp:494
 #, fuzzy, kde-format
 msgid "Embedded preview loads full-sized images"
 msgstr "Iegultais priekšskatījums ielādē pilna izmēra attēlus."
 
-#: core/utilities/setup/camera/setupcamera.cpp:537
+#: core/utilities/setup/camera/setupcamera.cpp:495
 #, fuzzy, kde-format
 msgid ""
 "<p>Set this option to load images at their full size for preview, rather "
@@ -64018,35 +64018,35 @@ msgstr ""
 "izšķirtspējas attēlu. Pilnas izšķirtspējas attēla ielādēšana aizņems vairāk "
 "laika, lietojiet to tikai tad, ja jums ir ātrs dators."
 
-#: core/utilities/setup/camera/setupcamera.cpp:544
+#: core/utilities/setup/camera/setupcamera.cpp:502
 #, kde-format
 msgid "Preview each item while downloading it"
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:545
+#: core/utilities/setup/camera/setupcamera.cpp:503
 #, fuzzy, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila datumu."
 
-#: core/utilities/setup/camera/setupcamera.cpp:567
+#: core/utilities/setup/camera/setupcamera.cpp:525
 #, fuzzy, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Importēt"
 
-#: core/utilities/setup/camera/setupcamera.cpp:831
+#: core/utilities/setup/camera/setupcamera.cpp:789
 #, kde-format
 msgid ""
 "No default target album have been selected to process download from camera "
 "device. Please select one."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:919
+#: core/utilities/setup/camera/setupcamera.cpp:877
 #, kde-format
 msgid "Device detection under progress, please wait..."
 msgstr "Meklē ierīci, lūdzu, uzgaidiet..."
 
-#: core/utilities/setup/camera/setupcamera.cpp:930
+#: core/utilities/setup/camera/setupcamera.cpp:888
 #, kde-format
 msgid ""
 "Failed to auto-detect camera.\n"
@@ -64057,28 +64057,28 @@ msgstr ""
 "korekti pieslēgts un ir ieslēgts, un mēģiniet vēlreiz, vai arī mēģiniet to "
 "konfigurēt pašrocīgi."
 
-#: core/utilities/setup/camera/setupcamera.cpp:945
+#: core/utilities/setup/camera/setupcamera.cpp:903
 #, kde-format
 msgid "Camera '%1' (%2) is already in list."
 msgstr "Fotoaparāts '%1' (%2) jau ir sarakstā."
 
-#: core/utilities/setup/camera/setupcamera.cpp:949
+#: core/utilities/setup/camera/setupcamera.cpp:907
 #, kde-format
 msgid "Found camera '%1' (%2) and added it to the list."
 msgstr "Atrasts fotoaparāts '%1' (%2) un pievienots sarakstam."
 
-#: core/utilities/setup/camera/setupcamera.cpp:965
+#: core/utilities/setup/camera/setupcamera.cpp:923
 #, kde-format
 msgid "Untitled"
 msgstr "Nenosaukts"
 
-#: core/utilities/setup/camera/setupcamera.cpp:1029
+#: core/utilities/setup/camera/setupcamera.cpp:987
 #, kde-format
 msgid ""
 "In order to enable this feature, the full-sized preview will be disabled."
 msgstr ""
 
-#: core/utilities/setup/camera/setupcamera.cpp:1040
+#: core/utilities/setup/camera/setupcamera.cpp:998
 #, kde-format
 msgid ""
 "If the full-sized preview is enabled it will affect the speed of previewing "
@@ -66433,12 +66433,12 @@ msgid ""
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:178
+#: core/utilities/setup/setupicc.cpp:137
 #, kde-format
 msgid "Enable Color Management"
 msgstr "Ieslēgt krāsu pārvaldību"
 
-#: core/utilities/setup/setupicc.cpp:179
+#: core/utilities/setup/setupicc.cpp:138
 #, kde-format
 msgid ""
 "<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
@@ -66447,17 +66447,17 @@ msgstr ""
 "<ul><li>Atzīmēts: krāsu pārvaldība ieslēgta</li><li>Nav atzīmēts: krāsu "
 "pārvaldība izslēgta</li></ul>"
 
-#: core/utilities/setup/setupicc.cpp:186
+#: core/utilities/setup/setupicc.cpp:145
 #, kde-format
 msgid "Visit Little CMS project website"
 msgstr "Apmeklējiet Little CMS projekta tīmekļa lapu"
 
-#: core/utilities/setup/setupicc.cpp:196
+#: core/utilities/setup/setupicc.cpp:155
 #, kde-format
 msgid "Working Color Space"
 msgstr "Darba krāsu telpa"
 
-#: core/utilities/setup/setupicc.cpp:202
+#: core/utilities/setup/setupicc.cpp:161
 #, kde-format
 msgid ""
 "<p>This is the color space all the images will be converted to when opened "
@@ -66466,24 +66466,24 @@ msgid ""
 "IEC61966-2.1</b></p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:208
+#: core/utilities/setup/setupicc.cpp:167
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected workspace profile.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:222
+#: core/utilities/setup/setupicc.cpp:181
 #, kde-format
 msgid "When the profile of an image does not match the working color space"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:230 core/utilities/setup/setupicc.cpp:261
+#: core/utilities/setup/setupicc.cpp:189 core/utilities/setup/setupicc.cpp:220
 #, kde-format
 msgid "Ask when opening the image"
 msgstr "Vaicāt atverot attēlu"
 
-#: core/utilities/setup/setupicc.cpp:231
+#: core/utilities/setup/setupicc.cpp:190
 #, kde-format
 msgid ""
 "<p>If an image has an embedded color profile not matching the working space "
@@ -66492,12 +66492,12 @@ msgid ""
 "one.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:237
+#: core/utilities/setup/setupicc.cpp:196
 #, kde-format
 msgid "Convert the image to the working color space"
 msgstr "Pārveidot attēlu uz darba krāsu telpu"
 
-#: core/utilities/setup/setupicc.cpp:238
+#: core/utilities/setup/setupicc.cpp:197
 #, kde-format
 msgid ""
 "<p>If an image has an embedded color profile not matching the working space "
@@ -66506,12 +66506,12 @@ msgid ""
 "image.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:254
+#: core/utilities/setup/setupicc.cpp:213
 #, kde-format
 msgid "When an image has no color profile information"
 msgstr "Kad attēlam nav krāsu profila informācijas"
 
-#: core/utilities/setup/setupicc.cpp:262
+#: core/utilities/setup/setupicc.cpp:221
 #, kde-format
 msgid ""
 "<p>If an image has no embedded color profile, digiKam will ask which color "
@@ -66519,82 +66519,82 @@ msgid ""
 "be transformed for editing.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:266
+#: core/utilities/setup/setupicc.cpp:225
 #, kde-format
 msgid "Assume it is using the sRGB color space (Internet standard)"
 msgstr "Pieņemt, ka tas izmanto sRGB krāsu telpu (interneta standarts)"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:272
+#: core/utilities/setup/setupicc.cpp:231
 #, kde-format
 msgid "and convert it to the working color space"
 msgstr "un pārveidot to uz darba krāsu telpu"
 
-#: core/utilities/setup/setupicc.cpp:285
+#: core/utilities/setup/setupicc.cpp:244
 #, kde-format
 msgid "Assume it is using the working color space"
 msgstr "Pieņemt, ka tas izmanto darba krāsu telpu"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:291
+#: core/utilities/setup/setupicc.cpp:250
 #, kde-format
 msgid "Convert it from default input color space to working space"
 msgstr "Pārveidot to no noklusētās ievades krāsu telpas uz darba telpu"
 
-#: core/utilities/setup/setupicc.cpp:310
+#: core/utilities/setup/setupicc.cpp:269
 #, kde-format
 msgid "When loading a RAW file with uncalibrated colors"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:317
+#: core/utilities/setup/setupicc.cpp:276
 #, kde-format
 msgid "Ask for the input profile"
 msgstr "Vaicāt pēc ievades profila"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:323
+#: core/utilities/setup/setupicc.cpp:282
 #, kde-format
 msgid "Automatic color correction"
 msgstr "Automātiska krāsu koriģēšana"
 
 #. i18n("<p></p>"));
 #.
-#: core/utilities/setup/setupicc.cpp:329
+#: core/utilities/setup/setupicc.cpp:288
 #, kde-format
 msgid "Convert it from the default input profile"
 msgstr "Pārveidot to no noklusētā ievades profila"
 
-#: core/utilities/setup/setupicc.cpp:354
+#: core/utilities/setup/setupicc.cpp:313
 #, kde-format
 msgid "Color Managed View"
 msgstr "Krāsu pārvaldīts skats"
 
-#: core/utilities/setup/setupicc.cpp:359
+#: core/utilities/setup/setupicc.cpp:318
 #, kde-format
 msgid "Monitor profile:"
 msgstr "Monitora profils:"
 
-#: core/utilities/setup/setupicc.cpp:363
+#: core/utilities/setup/setupicc.cpp:322
 #, kde-format
 msgid "<p>Select the color profile for your monitor here.</p>"
 msgstr "<p>Šeit izvēlieties krāsu profilu jūsu monitoram.</p>"
 
-#: core/utilities/setup/setupicc.cpp:367
+#: core/utilities/setup/setupicc.cpp:326
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected monitor profile.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:371
+#: core/utilities/setup/setupicc.cpp:330
 #, kde-format
 msgid "Use color managed view in editor"
 msgstr "Lietot krāsu pārvaldītu skatu redaktorā"
 
-#: core/utilities/setup/setupicc.cpp:372
+#: core/utilities/setup/setupicc.cpp:331
 #, kde-format
 msgid ""
 "<p>Turn on this option if you want to use your <b>Monitor Color Profile</b> "
@@ -66604,22 +66604,22 @@ msgid ""
 "depending on the speed of your computer.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:379
+#: core/utilities/setup/setupicc.cpp:338
 #, kde-format
 msgid "Use color managed view for previews and thumbnails"
 msgstr "Lietot krāsu pārvaldītu skatu priekšskatījumiem un sīktēliem"
 
-#: core/utilities/setup/setupicc.cpp:395
+#: core/utilities/setup/setupicc.cpp:354
 #, kde-format
 msgid "Camera and Scanner"
 msgstr "Fotoaparāts un skeneris"
 
-#: core/utilities/setup/setupicc.cpp:400
+#: core/utilities/setup/setupicc.cpp:359
 #, kde-format
 msgid "Default input color profile:"
 msgstr "Noklusētais ievades krāsu profils:"
 
-#: core/utilities/setup/setupicc.cpp:402
+#: core/utilities/setup/setupicc.cpp:361
 #, kde-format
 msgid ""
 "<p>This is the default color profile for your input device (that is your "
@@ -66628,43 +66628,43 @@ msgid ""
 "behavior above refer to this profile.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:409
+#: core/utilities/setup/setupicc.cpp:368
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected input profile.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:420
+#: core/utilities/setup/setupicc.cpp:379
 #, kde-format
 msgid "Printing and Proofing"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:425
+#: core/utilities/setup/setupicc.cpp:384
 #, kde-format
 msgid "Output device profile:"
 msgstr "Izvades ierīces profils:"
 
-#: core/utilities/setup/setupicc.cpp:434
+#: core/utilities/setup/setupicc.cpp:393
 #, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected proofing profile.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:445
+#: core/utilities/setup/setupicc.cpp:404
 #, kde-format
 msgid "Color Profiles Repository"
 msgstr "Krāsu profilu repozitorijs"
 
-#: core/utilities/setup/setupicc.cpp:450
+#: core/utilities/setup/setupicc.cpp:409
 #, kde-format
 msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
 "locations</a>. You can specify an additional folder:"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:458
+#: core/utilities/setup/setupicc.cpp:417
 #, kde-format
 msgid ""
 "<p>digiKam searches ICC profiles in default system folders and ships itself "
@@ -66672,12 +66672,12 @@ msgid ""
 "directory set here.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:481
+#: core/utilities/setup/setupicc.cpp:440
 #, kde-format
 msgid "Use black point compensation"
 msgstr "Lietot melnā punkta kompensāciju"
 
-#: core/utilities/setup/setupicc.cpp:482
+#: core/utilities/setup/setupicc.cpp:441
 #, kde-format
 msgid ""
 "<p><b>Black Point Compensation</b> is a way to make adjustments between the "
@@ -66685,59 +66685,59 @@ msgid ""
 "digital devices.</p>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:488
+#: core/utilities/setup/setupicc.cpp:447
 #, kde-format
 msgid "Rendering Intents:"
 msgstr "Attēlošanas mērķi:"
 
-#: core/utilities/setup/setupicc.cpp:503
+#: core/utilities/setup/setupicc.cpp:462
 #, fuzzy, kde-format
 #| msgid "Behavior"
 msgctxt "@title: icc panel tab"
 msgid "Behavior"
 msgstr "Izturēšanās"
 
-#: core/utilities/setup/setupicc.cpp:504
+#: core/utilities/setup/setupicc.cpp:463
 #, fuzzy, kde-format
 #| msgid "Profiles"
 msgctxt "@title: icc panel tab"
 msgid "Profiles"
 msgstr "Profili"
 
-#: core/utilities/setup/setupicc.cpp:505
+#: core/utilities/setup/setupicc.cpp:464
 #, fuzzy, kde-format
 #| msgid "Advanced"
 msgctxt "@title: icc panel tab"
 msgid "Advanced"
 msgstr "Paplašināti"
 
-#: core/utilities/setup/setupicc.cpp:706
+#: core/utilities/setup/setupicc.cpp:665
 #, kde-format
 msgid "Monitor Profile From System Settings"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:738
+#: core/utilities/setup/setupicc.cpp:697
 #, kde-format
 msgid "No ICC profiles files found."
 msgstr "ICC profila faili netika atrasti."
 
-#: core/utilities/setup/setupicc.cpp:754
+#: core/utilities/setup/setupicc.cpp:713
 #, kde-format
 msgid "No Display Profile Available"
 msgstr "Nav neviena ekrāna profila"
 
-#: core/utilities/setup/setupicc.cpp:756
+#: core/utilities/setup/setupicc.cpp:715
 #, kde-format
 msgid "No Output Profile Available"
 msgstr "Nav neviena izvades profila"
 
-#: core/utilities/setup/setupicc.cpp:890
+#: core/utilities/setup/setupicc.cpp:849
 #, kde-format
 msgctxt "none of the paths"
 msgid "none"
 msgstr "nav"
 
-#: core/utilities/setup/setupicc.cpp:899
+#: core/utilities/setup/setupicc.cpp:858
 #, kde-format
 msgid ""
 "On Windows, the default search paths include <ul><li>%1/Windows/System32/"
@@ -66746,7 +66746,7 @@ msgid ""
 "scanned:<ul><li>%3</li></ul>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:915
+#: core/utilities/setup/setupicc.cpp:874
 #, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
@@ -66757,7 +66757,7 @@ msgid ""
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
 
-#: core/utilities/setup/setupicc.cpp:934
+#: core/utilities/setup/setupicc.cpp:893
 #, kde-format
 msgid ""
 "On Linux, the default search paths include <ul><li>/usr/share/color/icc</"
@@ -66897,22 +66897,22 @@ msgstr ""
 msgid "A metadata template named '%1' already exists."
 msgstr ""
 
-#: core/utilities/setup/setuptooltip.cpp:187
+#: core/utilities/setup/setuptooltip.cpp:130
 #, kde-format
 msgid "Tool-Tips Font:"
 msgstr "Padomu fonts:"
 
-#: core/utilities/setup/setuptooltip.cpp:188
+#: core/utilities/setup/setuptooltip.cpp:131
 #, kde-format
 msgid "Select here the font used to display text in tool-tips."
 msgstr "Šeit norādiet fontu, ar kādu attēlot paskaidru tekstu."
 
-#: core/utilities/setup/setuptooltip.cpp:196
+#: core/utilities/setup/setuptooltip.cpp:139
 #, kde-format
 msgid "Show icon-view and thumb-bar items' tool-tips"
 msgstr "Rādīt paskaidres ikonu skatā un sīktēlu joslā"
 
-#: core/utilities/setup/setuptooltip.cpp:197
+#: core/utilities/setup/setuptooltip.cpp:140
 #, kde-format
 msgid ""
 "Set this option to display image information when the mouse hovers over an "
@@ -66921,215 +66921,215 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai, paturot peli uz sīktēla ikonu skatā vai sīktēlu "
 "joslā, tiktu parādīts tā apraksts."
 
-#: core/utilities/setup/setuptooltip.cpp:200
+#: core/utilities/setup/setuptooltip.cpp:143
 #, fuzzy, kde-format
 msgid "File/Item Information"
 msgstr "Faila/attēla informācija"
 
-#: core/utilities/setup/setuptooltip.cpp:203
+#: core/utilities/setup/setuptooltip.cpp:146
 #, kde-format
 msgid "File name"
 msgstr "Faila nosaukums"
 
-#: core/utilities/setup/setuptooltip.cpp:206
+#: core/utilities/setup/setuptooltip.cpp:149
 #, kde-format
 msgid "File date"
 msgstr "Faila datums"
 
-#: core/utilities/setup/setuptooltip.cpp:209
+#: core/utilities/setup/setuptooltip.cpp:152
 #, kde-format
 msgid "File size"
 msgstr "Faila izmērs"
 
-#: core/utilities/setup/setuptooltip.cpp:212
+#: core/utilities/setup/setuptooltip.cpp:155
 #, fuzzy, kde-format
 #| msgid "Show image type"
 msgid "Image type"
 msgstr "Rādīt attēla tipu"
 
-#: core/utilities/setup/setuptooltip.cpp:215
+#: core/utilities/setup/setuptooltip.cpp:158
 #, fuzzy, kde-format
 msgid "Image dimensions"
 msgstr "Rādīt attēla izmērus"
 
-#: core/utilities/setup/setuptooltip.cpp:218
+#: core/utilities/setup/setuptooltip.cpp:161
 #, fuzzy, kde-format
 msgid "Image aspect ratio"
 msgstr "Saglabāt malu attiecību"
 
-#: core/utilities/setup/setuptooltip.cpp:219
+#: core/utilities/setup/setuptooltip.cpp:162
 #, fuzzy, kde-format
 msgid "Set this option to display the image aspect ratio."
 msgstr "Ieslēdziet šo iespēju, lai rādītu attēla aprakstu."
 
-#: core/utilities/setup/setuptooltip.cpp:235
-#: core/utilities/setup/setuptooltip.cpp:415
+#: core/utilities/setup/setuptooltip.cpp:178
+#: core/utilities/setup/setuptooltip.cpp:358
 #, fuzzy, kde-format
 #| msgid "Show camera make and model"
 msgid "Camera make and model"
 msgstr "Rādīt fotoaparāta ražotāju un modeli"
 
-#: core/utilities/setup/setuptooltip.cpp:243
+#: core/utilities/setup/setuptooltip.cpp:186
 #, fuzzy, kde-format
 #| msgid "Camera name"
 msgid "Camera date"
 msgstr "Fotoaparāta nosaukums"
 
-#: core/utilities/setup/setuptooltip.cpp:246
-#: core/utilities/setup/setuptooltip.cpp:423
+#: core/utilities/setup/setuptooltip.cpp:189
+#: core/utilities/setup/setuptooltip.cpp:366
 #, fuzzy, kde-format
 #| msgid "Show camera aperture and focal length"
 msgid "Camera aperture and focal length"
 msgstr "Rādīt fotoaparāta atvērumu un fokusa attālumu"
 
-#: core/utilities/setup/setuptooltip.cpp:250
-#: core/utilities/setup/setuptooltip.cpp:427
+#: core/utilities/setup/setuptooltip.cpp:193
+#: core/utilities/setup/setuptooltip.cpp:370
 #, fuzzy, kde-format
 #| msgid "Show camera exposure and sensitivity"
 msgid "Camera exposure and sensitivity"
 msgstr "Rādīt fotoaparāta ekspozīciju un jutību"
 
-#: core/utilities/setup/setuptooltip.cpp:254
+#: core/utilities/setup/setuptooltip.cpp:197
 #, fuzzy, kde-format
 #| msgid "Show camera mode and program"
 msgid "Camera mode and program"
 msgstr "Rādīt fotoaparāta režīmu un programmu"
 
-#: core/utilities/setup/setuptooltip.cpp:258
-#: core/utilities/setup/setuptooltip.cpp:431
+#: core/utilities/setup/setuptooltip.cpp:201
+#: core/utilities/setup/setuptooltip.cpp:374
 #, fuzzy, kde-format
 #| msgid "Show camera flash settings"
 msgid "Camera flash settings"
 msgstr "Rādīt fotoaparāta zibspuldzes iestatījumus"
 
-#: core/utilities/setup/setuptooltip.cpp:262
-#: core/utilities/setup/setuptooltip.cpp:435
+#: core/utilities/setup/setuptooltip.cpp:205
+#: core/utilities/setup/setuptooltip.cpp:378
 #, fuzzy, kde-format
 #| msgid "Show camera white balance settings"
 msgid "Camera white balance settings"
 msgstr "Rādīt fotoaparāta baltā balansa iestatījumus"
 
-#: core/utilities/setup/setuptooltip.cpp:279
+#: core/utilities/setup/setuptooltip.cpp:222
 #, kde-format
 msgid "digiKam Information"
 msgstr "digiKam informācija"
 
-#: core/utilities/setup/setuptooltip.cpp:282
-#: core/utilities/setup/setuptooltip.cpp:355
+#: core/utilities/setup/setuptooltip.cpp:225
+#: core/utilities/setup/setuptooltip.cpp:298
 #, fuzzy, kde-format
 msgid "Album name"
 msgstr "Jaunā albuma nosaukums"
 
-#: core/utilities/setup/setuptooltip.cpp:283
-#: core/utilities/setup/setuptooltip.cpp:356
+#: core/utilities/setup/setuptooltip.cpp:226
+#: core/utilities/setup/setuptooltip.cpp:299
 #, kde-format
 msgid "Set this option to display the album name."
 msgstr "Ieslēdziet šo iespēju, lai rādītu albuma nosaukumu."
 
-#: core/utilities/setup/setuptooltip.cpp:285
+#: core/utilities/setup/setuptooltip.cpp:228
 #, kde-format
 msgid "Image title"
 msgstr "Attēla nosaukums"
 
-#: core/utilities/setup/setuptooltip.cpp:286
+#: core/utilities/setup/setuptooltip.cpp:229
 #, fuzzy, kde-format
 msgid "Set this option to display the image title."
 msgstr "Ieslēdziet šo iespēju, lai rādītu attēla tipu."
 
-#: core/utilities/setup/setuptooltip.cpp:288
+#: core/utilities/setup/setuptooltip.cpp:231
 #, fuzzy, kde-format
 #| msgid "Show image caption"
 msgid "Image caption"
 msgstr "Rādīt attēla aprakstu"
 
-#: core/utilities/setup/setuptooltip.cpp:289
+#: core/utilities/setup/setuptooltip.cpp:232
 #, kde-format
 msgid "Set this option to display the image captions."
 msgstr "Ieslēdziet šo iespēju, lai rādītu attēla aprakstu."
 
-#: core/utilities/setup/setuptooltip.cpp:291
+#: core/utilities/setup/setuptooltip.cpp:234
 #, kde-format
 msgid "Image tags"
 msgstr "Attēla tagi"
 
-#: core/utilities/setup/setuptooltip.cpp:292
+#: core/utilities/setup/setuptooltip.cpp:235
 #, kde-format
 msgid "Set this option to display the image tags."
 msgstr "Ieslēdziet šo iespēju, lai rādītu attēla tagus."
 
-#: core/utilities/setup/setuptooltip.cpp:294
+#: core/utilities/setup/setuptooltip.cpp:237
 #, kde-format
 msgid "Image labels"
 msgstr "Attēla iezīmes"
 
-#: core/utilities/setup/setuptooltip.cpp:295
+#: core/utilities/setup/setuptooltip.cpp:238
 #, fuzzy, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
 msgstr "Ieslēdziet šo iespēju, lai rādītu attēla vērtējumu."
 
-#: core/utilities/setup/setuptooltip.cpp:307
+#: core/utilities/setup/setuptooltip.cpp:250
 #, fuzzy, kde-format
 msgid "Audio/Video Information"
 msgstr "Ierīces informācija"
 
-#: core/utilities/setup/setuptooltip.cpp:310
+#: core/utilities/setup/setuptooltip.cpp:253
 #, kde-format
 msgid "Video Aspect Ratio"
 msgstr "Video malu attiecība"
 
-#: core/utilities/setup/setuptooltip.cpp:311
-#: core/utilities/setup/setuptooltip.cpp:326
+#: core/utilities/setup/setuptooltip.cpp:254
+#: core/utilities/setup/setuptooltip.cpp:269
 #, fuzzy, kde-format
 msgid "Set this option to display the Aspect Ratio of the Video."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila datumu."
 
-#: core/utilities/setup/setuptooltip.cpp:314
+#: core/utilities/setup/setuptooltip.cpp:257
 #, fuzzy, kde-format
 msgid "Set this option to display the Audio Bit Rate of the Video."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila datumu."
 
-#: core/utilities/setup/setuptooltip.cpp:317
+#: core/utilities/setup/setuptooltip.cpp:260
 #, fuzzy, kde-format
 msgid "Set this option to display the Audio Channel Type of the Video."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila datumu."
 
-#: core/utilities/setup/setuptooltip.cpp:320
+#: core/utilities/setup/setuptooltip.cpp:263
 #, fuzzy, kde-format
 msgid "Set this option to display the Audio Codec of the Video."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila datumu."
 
-#: core/utilities/setup/setuptooltip.cpp:322
+#: core/utilities/setup/setuptooltip.cpp:265
 #, kde-format
 msgid "Video Duration"
 msgstr "Video ilgums"
 
-#: core/utilities/setup/setuptooltip.cpp:323
+#: core/utilities/setup/setuptooltip.cpp:266
 #, fuzzy, kde-format
 msgid "Set this option to display the Duration of the Video."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila datumu."
 
-#: core/utilities/setup/setuptooltip.cpp:325
+#: core/utilities/setup/setuptooltip.cpp:268
 #, fuzzy, kde-format
 msgid "Video Frame Rate"
 msgstr "Rādīt attēla vērtējumu"
 
-#: core/utilities/setup/setuptooltip.cpp:329
+#: core/utilities/setup/setuptooltip.cpp:272
 #, fuzzy, kde-format
 msgid "Set this option to display the Codec of the Video."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila datumu."
 
-#: core/utilities/setup/setuptooltip.cpp:349
+#: core/utilities/setup/setuptooltip.cpp:292
 #, kde-format
 msgid "Show album items' tool-tips"
 msgstr "Rādīt izlecošos padomus albumiem"
 
-#: core/utilities/setup/setuptooltip.cpp:350
+#: core/utilities/setup/setuptooltip.cpp:293
 #, kde-format
 msgid "Album Information"
 msgstr "Albuma informācija"
 
-#: core/utilities/setup/setuptooltip.cpp:352
-#: core/utilities/setup/setuptooltip.cpp:393
+#: core/utilities/setup/setuptooltip.cpp:295
+#: core/utilities/setup/setuptooltip.cpp:336
 #, kde-format
 msgid ""
 "Set this option to display album information when the mouse hovers over a "
@@ -67138,139 +67138,139 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai, paturot peli uz albuma, tiktu parādīts tā "
 "apraksts."
 
-#: core/utilities/setup/setuptooltip.cpp:358
+#: core/utilities/setup/setuptooltip.cpp:301
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgid "Album date"
 msgstr "Albuma &datums:"
 
-#: core/utilities/setup/setuptooltip.cpp:359
+#: core/utilities/setup/setuptooltip.cpp:302
 #, kde-format
 msgid "Set this option to display the album date."
 msgstr "Ieslēdziet šo iespēju, lai rādītu albuma datumu."
 
-#: core/utilities/setup/setuptooltip.cpp:361
+#: core/utilities/setup/setuptooltip.cpp:304
 #, fuzzy, kde-format
 #| msgid "Show album collection"
 msgid "Album collection"
 msgstr "Rādīt albuma kolekciju"
 
-#: core/utilities/setup/setuptooltip.cpp:362
+#: core/utilities/setup/setuptooltip.cpp:305
 #, kde-format
 msgid "Set this option to display the album collection."
 msgstr "Ieslēdziet šo iespēju, lai rādītu albuma kolekciju"
 
-#: core/utilities/setup/setuptooltip.cpp:364
+#: core/utilities/setup/setuptooltip.cpp:307
 #, fuzzy, kde-format
 #| msgid "Album Category"
 msgid "Album category"
 msgstr "Albumu kategorijas"
 
-#: core/utilities/setup/setuptooltip.cpp:365
+#: core/utilities/setup/setuptooltip.cpp:308
 #, kde-format
 msgid "Set this option to display the album category."
 msgstr "Ieslēdziet šo iespēju, lai rādītu albuma kategoriju"
 
-#: core/utilities/setup/setuptooltip.cpp:367
+#: core/utilities/setup/setuptooltip.cpp:310
 #, fuzzy, kde-format
 #| msgid "Show album caption"
 msgid "Album caption"
 msgstr "Rādīt albuma aprakstu"
 
-#: core/utilities/setup/setuptooltip.cpp:368
+#: core/utilities/setup/setuptooltip.cpp:311
 #, kde-format
 msgid "Set this option to display the album caption."
 msgstr "Ieslēdziet šo iespēju, lai rādītu album aprakstu."
 
-#: core/utilities/setup/setuptooltip.cpp:370
+#: core/utilities/setup/setuptooltip.cpp:313
 #, fuzzy, kde-format
 #| msgid "Album View"
 msgid "Album preview"
 msgstr "Albumu skats"
 
-#: core/utilities/setup/setuptooltip.cpp:371
+#: core/utilities/setup/setuptooltip.cpp:314
 #, fuzzy, kde-format
 msgid "Set this option to display the album preview."
 msgstr "Ieslēdziet šo iespēju, lai rādītu albuma nosaukumu."
 
-#: core/utilities/setup/setuptooltip.cpp:390
+#: core/utilities/setup/setuptooltip.cpp:333
 #, fuzzy, kde-format
 msgid "Show import items' tool-tips"
 msgstr "Rādīt izlecošos padomus albumiem"
 
-#: core/utilities/setup/setuptooltip.cpp:391
+#: core/utilities/setup/setuptooltip.cpp:334
 #, fuzzy, kde-format
 msgid "Import Information"
 msgstr "Komponentes informācija"
 
-#: core/utilities/setup/setuptooltip.cpp:396
+#: core/utilities/setup/setuptooltip.cpp:339
 #, fuzzy, kde-format
 msgid "Item name"
 msgstr "Rādīt attēla faila nosaukumu"
 
-#: core/utilities/setup/setuptooltip.cpp:397
+#: core/utilities/setup/setuptooltip.cpp:340
 #, fuzzy, kde-format
 msgid "Set this option to display the item name."
 msgstr "Ieslēdziet šo iespēju, lai rādītu albuma nosaukumu."
 
-#: core/utilities/setup/setuptooltip.cpp:399
+#: core/utilities/setup/setuptooltip.cpp:342
 #, fuzzy, kde-format
 msgid "Item date"
 msgstr "Rādīt attēla faila nosaukumu"
 
-#: core/utilities/setup/setuptooltip.cpp:400
+#: core/utilities/setup/setuptooltip.cpp:343
 #, fuzzy, kde-format
 msgid "Set this option to display the item date."
 msgstr "Ieslēdziet šo iespēju, lai rādītu albuma datumu."
 
-#: core/utilities/setup/setuptooltip.cpp:402
+#: core/utilities/setup/setuptooltip.cpp:345
 #, fuzzy, kde-format
 msgid "Item size"
 msgstr "Attēlu faili"
 
-#: core/utilities/setup/setuptooltip.cpp:403
+#: core/utilities/setup/setuptooltip.cpp:346
 #, fuzzy, kde-format
 msgid "Set this option to display the item size."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila izmēru."
 
-#: core/utilities/setup/setuptooltip.cpp:405
+#: core/utilities/setup/setuptooltip.cpp:348
 #, fuzzy, kde-format
 msgid "Item type"
 msgstr "Attēlu faili"
 
-#: core/utilities/setup/setuptooltip.cpp:406
+#: core/utilities/setup/setuptooltip.cpp:349
 #, fuzzy, kde-format
 msgid "Set this option to display the item type."
 msgstr "Ieslēdziet šo iespēju, lai rādītu attēla tipu."
 
-#: core/utilities/setup/setuptooltip.cpp:408
+#: core/utilities/setup/setuptooltip.cpp:351
 #, fuzzy, kde-format
 msgid "Item dimensions"
 msgstr "Rādīt attēla izmērus"
 
-#: core/utilities/setup/setuptooltip.cpp:409
+#: core/utilities/setup/setuptooltip.cpp:352
 #, fuzzy, kde-format
 msgid "Set this option to display the item dimensions."
 msgstr "Ieslēdziet šo iespēju, lai rādītu attēla izmērus pikseļos."
 
-#: core/utilities/setup/setuptooltip.cpp:412
+#: core/utilities/setup/setuptooltip.cpp:355
 #, kde-format
 msgid ""
 "Note: these settings require \"Use File Metadata\" option from Camera Setup "
 "Behavior page."
 msgstr ""
 
-#: core/utilities/setup/setuptooltip.cpp:462
+#: core/utilities/setup/setuptooltip.cpp:405
 #, kde-format
 msgid "Icon Items"
 msgstr "Ikonu vienības"
 
-#: core/utilities/setup/setuptooltip.cpp:463
+#: core/utilities/setup/setuptooltip.cpp:406
 #, kde-format
 msgid "Album Items"
 msgstr "Albumu vienības"
 
-#: core/utilities/setup/setuptooltip.cpp:464
+#: core/utilities/setup/setuptooltip.cpp:407
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "&Kārtot attēlus"
