@@ -44,8 +44,8 @@ class BatchToolSet
 {
 public:
 
-    explicit BatchToolSet();
-    ~BatchToolSet()                          = default;
+    BatchToolSet()  = default;
+    ~BatchToolSet() = default;
 
     /**
      * Equality operator which check index, version, name, and group data. Settings member is ignored.
@@ -53,10 +53,10 @@ public:
     bool operator==(const BatchToolSet& set) const;
 
     /// Tool identifier data. Index is tool ID from assigned list.
-    int                       index;
-    int                       version;
+    int                       index     = -1;
+    int                       version   = 0;
     QString                   name;
-    BatchTool::BatchToolGroup group;
+    BatchTool::BatchToolGroup group     = BatchTool::BaseTool;
 
     /// Settings hosted in this container.
     BatchToolSettings         settings;

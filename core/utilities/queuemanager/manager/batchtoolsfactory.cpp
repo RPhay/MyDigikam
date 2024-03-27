@@ -30,12 +30,9 @@ class Q_DECL_HIDDEN BatchToolsFactory::Private
 
 public:
 
-    explicit Private()
-        : iface(nullptr)
-    {
-    }
+    Private() = default;
 
-    DBInfoIface*   iface;
+    DBInfoIface*   iface     = nullptr;
 
     BatchToolsList toolsList;
 };

@@ -25,13 +25,6 @@
 namespace Digikam
 {
 
-BatchToolSet::BatchToolSet()
-    : index  (-1),
-      version(0),
-      group  (BatchTool::BaseTool)
-{
-}
-
 bool BatchToolSet::operator==(const BatchToolSet& set) const
 {
     return (

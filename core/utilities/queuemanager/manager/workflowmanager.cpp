@@ -21,10 +21,11 @@
 #include <QDomDocument>
 #include <QDomElement>
 #include <QTextStream>
-#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
-#include <QTextCodec>
-#endif
 #include <QStandardPaths>
+
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+#   include <QTextCodec>
+#endif
 
 // Local includes
 
@@ -38,13 +39,9 @@ class Q_DECL_HIDDEN WorkflowManager::Private
 {
 public:
 
-    explicit Private()
-        : modified(false),
-          mutex   ()
-    {
-    }
+    Private() = default;
 
-    bool            modified;
+    bool            modified    = false;
 
     QList<Workflow> qList;
     QString         file;
@@ -80,6 +77,7 @@ WorkflowManager::~WorkflowManager()
 {
     save();
     clear();
+
     delete d;
 }
 
@@ -137,6 +135,7 @@ void WorkflowManager::removePrivate(const Workflow& q)
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Remove " << it->title << " from Workflow list";
                 it = d->qList.erase(it);
+
                 break;
             }
         }
@@ -325,10 +324,15 @@ bool WorkflowManager::save()
     }
 
     QTextStream stream(&file);
+
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+
     // In Qt5 only. Qt6 uses UTF-8 by default.
+
     stream.setCodec(QTextCodec::codecForName("UTF-8"));
+
 #endif
+
     stream.setAutoDetectUnicode(true);
     stream << doc.toString(4);
     file.close();
@@ -347,6 +351,7 @@ bool WorkflowManager::load(QStringList& failed)
         if (!file.open(QIODevice::ReadOnly))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot open XML file to load Workflow";
+
             return false;
         }
 
@@ -356,6 +361,7 @@ bool WorkflowManager::load(QStringList& failed)
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot load Workflow XML file";
             file.close();
+
             return false;
         }
 
@@ -365,6 +371,7 @@ bool WorkflowManager::load(QStringList& failed)
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Workflow XML file do not content Queue List data";
             file.close();
+
             return false;
         }
 
@@ -562,6 +569,7 @@ bool WorkflowManager::load(QStringList& failed)
         }
 
         file.close();
+
         return true;
     }
     else

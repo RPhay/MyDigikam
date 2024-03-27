@@ -44,20 +44,16 @@ public:
 
 public:
 
-    explicit ActionData()
-        : status (None),
-          noWrite(false)
-    {
-    }
+    ActionData() = default;
 
-    ActionStatus status;
+    ActionStatus status     = None;
 
     QString      message;
 
     QUrl         fileUrl;
     QUrl         destUrl;
 
-    bool         noWrite;
+    bool         noWrite    = false;
 };
 
 } // namespace Digikam

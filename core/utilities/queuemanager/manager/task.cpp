@@ -41,15 +41,11 @@ class Q_DECL_HIDDEN Task::Private
 {
 public:
 
-    explicit Private()
-      : cancel(false),
-        tool  (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool               cancel;
+    bool               cancel   = false;
 
-    BatchTool*         tool;
+    BatchTool*         tool     = nullptr;
 
     QueueSettings      settings;
     AssignedBatchTools tools;

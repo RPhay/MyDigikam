@@ -51,26 +51,14 @@ class Q_DECL_HIDDEN BatchTool::Private
 
 public:
 
-    explicit Private()
-      : exifResetOrientation  (false),
-        exifCanEditOrientation(true),
-        saveAsNewVersion      (true),
-        branchHistory         (true),
-        cancel                (false),
-        last                  (false),
-        observer              (nullptr),
-        toolGroup             (BaseTool),
-        rawLoadingRule        (QueueSettings::DEMOSAICING),
-        plugin                (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                          exifResetOrientation;
-    bool                          exifCanEditOrientation;
-    bool                          saveAsNewVersion;
-    bool                          branchHistory;
-    bool                          cancel;
-    bool                          last;
+    bool                          exifResetOrientation      = false;
+    bool                          exifCanEditOrientation    = true;
+    bool                          saveAsNewVersion          = true;
+    bool                          branchHistory             = true;
+    bool                          cancel                    = false;
+    bool                          last                      = false;
 
     QString                       errorMessage;
     QString                       toolTitle;          ///< User friendly tool title.
@@ -91,13 +79,13 @@ public:
 
     BatchToolSettings             settings;
 
-    BatchToolObserver*            observer;
+    BatchToolObserver*            observer                  = nullptr;
 
-    BatchTool::BatchToolGroup     toolGroup;
+    BatchTool::BatchToolGroup     toolGroup                 = BaseTool;
 
-    QueueSettings::RawLoadingRule rawLoadingRule;
+    QueueSettings::RawLoadingRule rawLoadingRule            = QueueSettings::DEMOSAICING;
 
-    DPluginBqm*                   plugin;
+    DPluginBqm*                   plugin                    = nullptr;
 };
 
 class Q_DECL_HIDDEN BatchToolObserver : public DImgLoaderObserver
@@ -122,7 +110,7 @@ public:
 
 private:
 
-    BatchTool::Private* const d;
+    BatchTool::Private* const d = nullptr;
 };
 
 BatchTool::BatchTool(const QString& name, BatchToolGroup group, QObject* const parent)
@@ -276,6 +264,7 @@ void BatchTool::slotResetSettingsToDefault()
 void BatchTool::slotSettingsChanged(const BatchToolSettings& settings)
 {
     setSettings(settings);
+
     Q_EMIT signalSettingsChanged(d->settings);
 }
 

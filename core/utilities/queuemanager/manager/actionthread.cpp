@@ -31,9 +31,7 @@ class Q_DECL_HIDDEN ActionThread::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QueueSettings settings;
 };
@@ -158,6 +156,7 @@ void ActionThread::slotThreadFinished()
     if (isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "List of Pending Jobs is empty";
+
         Q_EMIT signalQueueProcessed();
     }
 }

@@ -55,23 +55,23 @@ public:
 
 public:
 
-    bool                              useMultiCoreCPU;
+    bool                              useMultiCoreCPU       = false;
 
-    bool                              saveAsNewVersion;
+    bool                              saveAsNewVersion      = true;
 
     /// Setting managed through Metadata control panel.
-    bool                              exifSetOrientation;
+    bool                              exifSetOrientation    = true;
 
     /// If true, original file dir will be used to process queue items.
-    bool                              useOrgAlbum;
+    bool                              useOrgAlbum           = true;
 
     QString                           renamingParser;
 
     QUrl                              workingUrl;
 
-    FileSaveConflictBox::ConflictRule conflictRule;
-    RenamingRule                      renamingRule;
-    RawLoadingRule                    rawLoadingRule;
+    FileSaveConflictBox::ConflictRule conflictRule          = FileSaveConflictBox::DIFFNAME;
+    RenamingRule                      renamingRule          = USEORIGINAL;
+    RawLoadingRule                    rawLoadingRule        = DEMOSAICING;
 
     DRawDecoderSettings               rawDecodingSettings;
 

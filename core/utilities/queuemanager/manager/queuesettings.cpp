@@ -28,13 +28,6 @@ namespace Digikam
 {
 
 QueueSettings::QueueSettings()
-    : useMultiCoreCPU   (false),
-      saveAsNewVersion  (true),
-      exifSetOrientation(true),
-      useOrgAlbum       (true),
-      conflictRule      (FileSaveConflictBox::DIFFNAME),
-      renamingRule      (USEORIGINAL),
-      rawLoadingRule    (DEMOSAICING)
 {
     KSharedConfig::Ptr config          = KSharedConfig::openConfig();
     KConfigGroup group                 = config->group(QLatin1String("ImageViewer Settings"));
