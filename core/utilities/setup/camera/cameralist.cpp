@@ -54,12 +54,9 @@ class Q_DECL_HIDDEN CameraList::Private
 {
 public:
 
-    explicit Private()
-      : modified(false)
-    {
-    }
+    Private() = default;
 
-    bool               modified;
+    bool               modified = false;
 
     QList<CameraType*> clist;
     QString            file;

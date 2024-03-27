@@ -53,30 +53,17 @@ class Q_DECL_HIDDEN CameraSelection::Private
 {
 public:
 
-    explicit Private()
-      : buttons         (nullptr),
-        portButtonGroup (nullptr),
-        usbButton       (nullptr),
-        serialButton    (nullptr),
-        networkButton   (nullptr),
-        portPathComboBox(nullptr),
-        listView        (nullptr),
-        titleEdit       (nullptr),
-        networkEdit     (nullptr),
-        umsMountURL     (nullptr),
-        searchBar       (nullptr)
-    {
-    }
+    Private() = default;
 
-    QDialogButtonBox* buttons;
+    QDialogButtonBox* buttons               = nullptr;
 
-    QButtonGroup*     portButtonGroup;
+    QButtonGroup*     portButtonGroup       = nullptr;
 
-    QRadioButton*     usbButton;
-    QRadioButton*     serialButton;
-    QRadioButton*     networkButton;
+    QRadioButton*     usbButton             = nullptr;
+    QRadioButton*     serialButton          = nullptr;
+    QRadioButton*     networkButton         = nullptr;
 
-    QComboBox*        portPathComboBox;
+    QComboBox*        portPathComboBox      = nullptr;
 
     QString           UMSCameraNameActual;
     QString           UMSCameraNameShown;
@@ -85,14 +72,14 @@ public:
 
     QStringList       serialPortList;
 
-    QTreeWidget*      listView;
+    QTreeWidget*      listView              = nullptr;
 
-    DTextEdit*        titleEdit;
-    QLineEdit*        networkEdit;
+    DTextEdit*        titleEdit             = nullptr;
+    QLineEdit*        networkEdit           = nullptr;
 
-    DFileSelector*    umsMountURL;
+    DFileSelector*    umsMountURL           = nullptr;
 
-    SearchTextBar*    searchBar;
+    SearchTextBar*    searchBar             = nullptr;
 };
 
 CameraSelection::CameraSelection(QWidget* const parent)
@@ -453,6 +440,7 @@ void CameraSelection::setCamera(const QString& title, const QString& model,
                 if (port == d->portPathComboBox->itemText(i))
                 {
                     d->portPathComboBox->setCurrentIndex(i);
+
                     break;
                 }
             }
@@ -676,7 +664,7 @@ QString CameraSelection::currentCameraPath() const
 void CameraSelection::slotOkClicked()
 {
     Q_EMIT signalOkClicked(currentTitle(),    currentModel(),
-                         currentPortPath(), currentCameraPath());
+                           currentPortPath(), currentCameraPath());
     accept();
 }
 

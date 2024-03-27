@@ -30,23 +30,18 @@ class Q_DECL_HIDDEN CameraType::Private
 {
 public:
 
-    explicit Private()
-      : valid         (false),
-        startingNumber(1),
-        action        (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool               valid;
+    bool               valid            = false;
 
-    int                startingNumber;
+    int                startingNumber   = 1;
 
     QString            title;
     QString            model;
     QString            port;
     QString            path;
 
-    QAction*           action;
+    QAction*           action           = nullptr;
 
     QPointer<ImportUI> currentImportUI;
 };

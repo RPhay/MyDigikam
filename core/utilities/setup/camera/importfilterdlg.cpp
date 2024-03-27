@@ -49,31 +49,19 @@ class Q_DECL_HIDDEN ImportFilterDlg::Private
 {
 public:
 
-    explicit Private()
-      : buttons         (nullptr),
-        filterName      (nullptr),
-        mimeCheckBox    (nullptr),
-        mimeLabel       (nullptr),
-        mimeButton      (nullptr),
-        fileNameCheckBox(nullptr),
-        fileNameEdit    (nullptr),
-        pathCheckBox    (nullptr),
-        pathEdit        (nullptr),
-        newFilesCheckBox(nullptr)
-    {
-    }
+    Private() = default;
 
-    QDialogButtonBox*   buttons;
+    QDialogButtonBox*   buttons             = nullptr;
 
-    DTextEdit*          filterName;
-    QCheckBox*          mimeCheckBox;
-    DAdjustableLabel*   mimeLabel;
-    QToolButton*        mimeButton;
-    QCheckBox*          fileNameCheckBox;
-    QLineEdit*          fileNameEdit;
-    QCheckBox*          pathCheckBox;
-    QLineEdit*          pathEdit;
-    QCheckBox*          newFilesCheckBox;
+    DTextEdit*          filterName          = nullptr;
+    QCheckBox*          mimeCheckBox        = nullptr;
+    DAdjustableLabel*   mimeLabel           = nullptr;
+    QToolButton*        mimeButton          = nullptr;
+    QCheckBox*          fileNameCheckBox    = nullptr;
+    QLineEdit*          fileNameEdit        = nullptr;
+    QCheckBox*          pathCheckBox        = nullptr;
+    QLineEdit*          pathEdit            = nullptr;
+    QCheckBox*          newFilesCheckBox    = nullptr;
 };
 
 // ----------------------------------------------------------------------------------------

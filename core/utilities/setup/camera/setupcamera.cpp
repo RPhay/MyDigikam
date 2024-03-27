@@ -69,8 +69,7 @@ class Q_DECL_HIDDEN SetupCameraItem : public QTreeWidgetItem
 public:
 
     explicit SetupCameraItem(QTreeWidget* const parent, CameraType* const ctype)
-        : QTreeWidgetItem(parent),
-          m_ctype        (nullptr)
+        : QTreeWidgetItem(parent)
     {
         setCameraType(ctype);
     };
@@ -102,7 +101,7 @@ public:
 
 private:
 
-    CameraType* m_ctype;
+    CameraType* m_ctype = nullptr;
 
 private:
 
@@ -115,12 +114,9 @@ class Q_DECL_HIDDEN CameraAutoDetectThread::Private
 {
 public:
 
-    explicit Private()
-      : result(0)
-    {
-    }
+    Private() = default;
 
-    int     result;
+    int     result = 0;
 
     QString model;
     QString port;
