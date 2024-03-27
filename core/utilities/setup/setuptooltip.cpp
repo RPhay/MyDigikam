@@ -45,142 +45,85 @@ class Q_DECL_HIDDEN SetupToolTip::Private
 {
 public:
 
-    explicit Private() :
-        cameraUseFileMetadata(false),
-        showToolTipsBox(nullptr),
-        showFileNameBox(nullptr),
-        showFileDateBox(nullptr),
-        showFileSizeBox(nullptr),
-        showImageTypeBox(nullptr),
-        showImageDimBox(nullptr),
-        showImageARBox(nullptr),
-        showPhotoMakeBox(nullptr),
-        showPhotoLensBox(nullptr),
-        showPhotoDateBox(nullptr),
-        showPhotoFocalBox(nullptr),
-        showPhotoExpoBox(nullptr),
-        showPhotoModeBox(nullptr),
-        showPhotoFlashBox(nullptr),
-        showPhotoWbBox(nullptr),
-        showVideoAspectRatio(nullptr),
-        showVideoAudioBitRate(nullptr),
-        showVideoAudioChannelType(nullptr),
-        showVideoAudioCodec(nullptr),
-        showVideoDuration(nullptr),
-        showVideoFrameRate(nullptr),
-        showVideoVideoCodec(nullptr),
-        showAlbumNameBox(nullptr),
-        showTitlesBox(nullptr),
-        showCommentsBox(nullptr),
-        showTagsBox(nullptr),
-        showLabelsBox(nullptr),
-        showAlbumToolTipsBox(nullptr),
-        showAlbumTitleBox(nullptr),
-        showAlbumDateBox(nullptr),
-        showAlbumCollectionBox(nullptr),
-        showAlbumCategoryBox(nullptr),
-        showAlbumCaptionBox(nullptr),
-        showAlbumPreviewBox(nullptr),
-        showImportToolTipsBox(nullptr),
-        showItemTitleBox(nullptr),
-        showItemDateBox(nullptr),
-        showItemSizeBox(nullptr),
-        showItemTypeBox(nullptr),
-        showItemDimensionsBox(nullptr),
-        showItemPhotoMakeBox(nullptr),
-        showItemPhotoLensBox(nullptr),
-        showItemPhotoFocalBox(nullptr),
-        showItemPhotoExpoBox(nullptr),
-        showItemPhotoFlashBox(nullptr),
-        showItemPhotoWBBox(nullptr),
-        fileSettingBox(nullptr),
-        photoSettingBox(nullptr),
-        videoSettingBox(nullptr),
-        digikamSettingBox(nullptr),
-        albumSettingBox(nullptr),
-        importSettingBox(nullptr),
-        tab(nullptr),
-        fontSelect(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool         cameraUseFileMetadata;
+    bool         cameraUseFileMetadata      = false;
 
-    QCheckBox*   showToolTipsBox;
+    QCheckBox*   showToolTipsBox            = nullptr;
 
-    QCheckBox*   showFileNameBox;
-    QCheckBox*   showFileDateBox;
-    QCheckBox*   showFileSizeBox;
-    QCheckBox*   showImageTypeBox;
-    QCheckBox*   showImageDimBox;
-    QCheckBox*   showImageARBox;
+    QCheckBox*   showFileNameBox            = nullptr;
+    QCheckBox*   showFileDateBox            = nullptr;
+    QCheckBox*   showFileSizeBox            = nullptr;
+    QCheckBox*   showImageTypeBox           = nullptr;
+    QCheckBox*   showImageDimBox            = nullptr;
+    QCheckBox*   showImageARBox             = nullptr;
 
-    QCheckBox*   showPhotoMakeBox;
-    QCheckBox*   showPhotoLensBox;
-    QCheckBox*   showPhotoDateBox;
-    QCheckBox*   showPhotoFocalBox;
-    QCheckBox*   showPhotoExpoBox;
-    QCheckBox*   showPhotoModeBox;
-    QCheckBox*   showPhotoFlashBox;
-    QCheckBox*   showPhotoWbBox;
+    QCheckBox*   showPhotoMakeBox           = nullptr;
+    QCheckBox*   showPhotoLensBox           = nullptr;
+    QCheckBox*   showPhotoDateBox           = nullptr;
+    QCheckBox*   showPhotoFocalBox          = nullptr;
+    QCheckBox*   showPhotoExpoBox           = nullptr;
+    QCheckBox*   showPhotoModeBox           = nullptr;
+    QCheckBox*   showPhotoFlashBox          = nullptr;
+    QCheckBox*   showPhotoWbBox             = nullptr;
 
-    QCheckBox*   showVideoAspectRatio;
-    QCheckBox*   showVideoAudioBitRate;
-    QCheckBox*   showVideoAudioChannelType;
-    QCheckBox*   showVideoAudioCodec;
-    QCheckBox*   showVideoDuration;
-    QCheckBox*   showVideoFrameRate;
-    QCheckBox*   showVideoVideoCodec;
+    QCheckBox*   showVideoAspectRatio       = nullptr;
+    QCheckBox*   showVideoAudioBitRate      = nullptr;
+    QCheckBox*   showVideoAudioChannelType  = nullptr;
+    QCheckBox*   showVideoAudioCodec        = nullptr;
+    QCheckBox*   showVideoDuration          = nullptr;
+    QCheckBox*   showVideoFrameRate         = nullptr;
+    QCheckBox*   showVideoVideoCodec        = nullptr;
 
-    QCheckBox*   showAlbumNameBox;
-    QCheckBox*   showTitlesBox;
-    QCheckBox*   showCommentsBox;
-    QCheckBox*   showTagsBox;
-    QCheckBox*   showLabelsBox;
+    QCheckBox*   showAlbumNameBox           = nullptr;
+    QCheckBox*   showTitlesBox              = nullptr;
+    QCheckBox*   showCommentsBox            = nullptr;
+    QCheckBox*   showTagsBox                = nullptr;
+    QCheckBox*   showLabelsBox              = nullptr;
 
-    QCheckBox*   showAlbumToolTipsBox;
-    QCheckBox*   showAlbumTitleBox;
-    QCheckBox*   showAlbumDateBox;
-    QCheckBox*   showAlbumCollectionBox;
-    QCheckBox*   showAlbumCategoryBox;
-    QCheckBox*   showAlbumCaptionBox;
-    QCheckBox*   showAlbumPreviewBox;
+    QCheckBox*   showAlbumToolTipsBox       = nullptr;
+    QCheckBox*   showAlbumTitleBox          = nullptr;
+    QCheckBox*   showAlbumDateBox           = nullptr;
+    QCheckBox*   showAlbumCollectionBox     = nullptr;
+    QCheckBox*   showAlbumCategoryBox       = nullptr;
+    QCheckBox*   showAlbumCaptionBox        = nullptr;
+    QCheckBox*   showAlbumPreviewBox        = nullptr;
 
-    QCheckBox*   showImportToolTipsBox;
-    QCheckBox*   showItemTitleBox;
-    QCheckBox*   showItemDateBox;
-    QCheckBox*   showItemSizeBox;
-    QCheckBox*   showItemTypeBox;
-    QCheckBox*   showItemDimensionsBox;
-    QCheckBox*   showItemPhotoMakeBox;
-    QCheckBox*   showItemPhotoLensBox;
-    QCheckBox*   showItemPhotoFocalBox;
-    QCheckBox*   showItemPhotoExpoBox;
-    QCheckBox*   showItemPhotoFlashBox;
-    QCheckBox*   showItemPhotoWBBox;
+    QCheckBox*   showImportToolTipsBox      = nullptr;
+    QCheckBox*   showItemTitleBox           = nullptr;
+    QCheckBox*   showItemDateBox            = nullptr;
+    QCheckBox*   showItemSizeBox            = nullptr;
+    QCheckBox*   showItemTypeBox            = nullptr;
+    QCheckBox*   showItemDimensionsBox      = nullptr;
+    QCheckBox*   showItemPhotoMakeBox       = nullptr;
+    QCheckBox*   showItemPhotoLensBox       = nullptr;
+    QCheckBox*   showItemPhotoFocalBox      = nullptr;
+    QCheckBox*   showItemPhotoExpoBox       = nullptr;
+    QCheckBox*   showItemPhotoFlashBox      = nullptr;
+    QCheckBox*   showItemPhotoWBBox         = nullptr;
 
-    QGroupBox*   fileSettingBox;
-    QGroupBox*   photoSettingBox;
-    QGroupBox*   videoSettingBox;
-    QGroupBox*   digikamSettingBox;
-    QGroupBox*   albumSettingBox;
-    QGroupBox*   importSettingBox;
+    QGroupBox*   fileSettingBox             = nullptr;
+    QGroupBox*   photoSettingBox            = nullptr;
+    QGroupBox*   videoSettingBox            = nullptr;
+    QGroupBox*   digikamSettingBox          = nullptr;
+    QGroupBox*   albumSettingBox            = nullptr;
+    QGroupBox*   importSettingBox           = nullptr;
 
-    QTabWidget*  tab;
+    QTabWidget*  tab                        = nullptr;
 
-    DFontSelect* fontSelect;
+    DFontSelect* fontSelect                 = nullptr;
 };
 
 SetupToolTip::SetupToolTip(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     QWidget* const panel     = new QWidget(viewport());
     setWidget(panel);
     setWidgetResizable(true);
 
     const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QVBoxLayout* const vlay  = new QVBoxLayout(panel);
 

@@ -48,22 +48,15 @@ class Q_DECL_HIDDEN SetupCategory::Private
 {
 public:
 
-    explicit Private()
-      : addCategoryButton(nullptr),
-        delCategoryButton(nullptr),
-        repCategoryButton(nullptr),
-        albumCategoryBox (nullptr),
-        categoryEdit     (nullptr)
-    {
-    }
+    Private() = default;
 
-    QPushButton* addCategoryButton;
-    QPushButton* delCategoryButton;
-    QPushButton* repCategoryButton;
+    QPushButton* addCategoryButton  = nullptr;
+    QPushButton* delCategoryButton  = nullptr;
+    QPushButton* repCategoryButton  = nullptr;
 
-    QListWidget* albumCategoryBox;
+    QListWidget* albumCategoryBox   = nullptr;
 
-    DTextEdit*   categoryEdit;
+    DTextEdit*   categoryEdit       = nullptr;
 };
 
 SetupCategory::SetupCategory(QWidget* const parent)
@@ -75,7 +68,7 @@ SetupCategory::SetupCategory(QWidget* const parent)
     setWidgetResizable(true);
 
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QGridLayout* const grid = new QGridLayout(panel);
 
     QLabel* const explanationLabel = new QLabel(panel);

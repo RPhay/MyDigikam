@@ -54,86 +54,49 @@ class Q_DECL_HIDDEN SetupAlbumView::Private
 {
 public:
 
-    explicit Private()
-      : useLargeThumbsOriginal      (false),
-        useLargeThumbsShowedInfo    (false),
-        iconShowNameBox             (nullptr),
-        iconShowSizeBox             (nullptr),
-        iconShowDateBox             (nullptr),
-        iconShowModDateBox          (nullptr),
-        iconShowResolutionBox       (nullptr),
-        iconShowAspectRatioBox      (nullptr),
-        iconShowTitleBox            (nullptr),
-        iconShowCommentsBox         (nullptr),
-        iconShowTagsBox             (nullptr),
-        iconShowOverlaysBox         (nullptr),
-        iconShowFullscreenBox       (nullptr),
-        iconShowRatingBox           (nullptr),
-        iconShowPickLabelBox        (nullptr),
-        iconShowColorLabelBox       (nullptr),
-        iconShowFormatBox           (nullptr),
-        iconShowCoordinatesBox      (nullptr),
-        previewFastPreview          (nullptr),
-        previewFullView             (nullptr),
-        previewRawMode              (nullptr),
-        previewConvertToEightBit    (nullptr),
-        previewScaleFitToWindow     (nullptr),
-        previewShowIcons            (nullptr),
-        showFolderTreeViewItemsCount(nullptr),
-        largeThumbsBox              (nullptr),
-        iconTreeThumbSize           (nullptr),
-        iconTreeFaceSize            (nullptr),
-        leftClickActionComboBox     (nullptr),
-        tab                         (nullptr),
-        iconViewFontSelect          (nullptr),
-        treeViewFontSelect          (nullptr),
-        fullScreenSettings          (nullptr),
-        category                    (nullptr),
-        mimetype                    (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                useLargeThumbsOriginal;
-    bool                useLargeThumbsShowedInfo;
+    bool                useLargeThumbsOriginal          = false;
+    bool                useLargeThumbsShowedInfo        = false;
 
-    QCheckBox*          iconShowNameBox;
-    QCheckBox*          iconShowSizeBox;
-    QCheckBox*          iconShowDateBox;
-    QCheckBox*          iconShowModDateBox;
-    QCheckBox*          iconShowResolutionBox;
-    QCheckBox*          iconShowAspectRatioBox;
-    QCheckBox*          iconShowTitleBox;
-    QCheckBox*          iconShowCommentsBox;
-    QCheckBox*          iconShowTagsBox;
-    QCheckBox*          iconShowOverlaysBox;
-    QCheckBox*          iconShowFullscreenBox;
-    QCheckBox*          iconShowRatingBox;
-    QCheckBox*          iconShowPickLabelBox;
-    QCheckBox*          iconShowColorLabelBox;
-    QCheckBox*          iconShowFormatBox;
-    QCheckBox*          iconShowCoordinatesBox;
-    QRadioButton*       previewFastPreview;
-    QRadioButton*       previewFullView;
-    QComboBox*          previewRawMode;
-    QCheckBox*          previewConvertToEightBit;
-    QCheckBox*          previewScaleFitToWindow;
-    QCheckBox*          previewShowIcons;
-    QCheckBox*          showFolderTreeViewItemsCount;
-    QCheckBox*          largeThumbsBox;
+    QCheckBox*          iconShowNameBox                 = nullptr;
+    QCheckBox*          iconShowSizeBox                 = nullptr;
+    QCheckBox*          iconShowDateBox                 = nullptr;
+    QCheckBox*          iconShowModDateBox              = nullptr;
+    QCheckBox*          iconShowResolutionBox           = nullptr;
+    QCheckBox*          iconShowAspectRatioBox          = nullptr;
+    QCheckBox*          iconShowTitleBox                = nullptr;
+    QCheckBox*          iconShowCommentsBox             = nullptr;
+    QCheckBox*          iconShowTagsBox                 = nullptr;
+    QCheckBox*          iconShowOverlaysBox             = nullptr;
+    QCheckBox*          iconShowFullscreenBox           = nullptr;
+    QCheckBox*          iconShowRatingBox               = nullptr;
+    QCheckBox*          iconShowPickLabelBox            = nullptr;
+    QCheckBox*          iconShowColorLabelBox           = nullptr;
+    QCheckBox*          iconShowFormatBox               = nullptr;
+    QCheckBox*          iconShowCoordinatesBox          = nullptr;
+    QRadioButton*       previewFastPreview              = nullptr;
+    QRadioButton*       previewFullView                 = nullptr;
+    QComboBox*          previewRawMode                  = nullptr;
+    QCheckBox*          previewConvertToEightBit        = nullptr;
+    QCheckBox*          previewScaleFitToWindow         = nullptr;
+    QCheckBox*          previewShowIcons                = nullptr;
+    QCheckBox*          showFolderTreeViewItemsCount    = nullptr;
+    QCheckBox*          largeThumbsBox                  = nullptr;
 
-    QComboBox*          iconTreeThumbSize;
-    QComboBox*          iconTreeFaceSize;
-    QComboBox*          leftClickActionComboBox;
+    QComboBox*          iconTreeThumbSize               = nullptr;
+    QComboBox*          iconTreeFaceSize                = nullptr;
+    QComboBox*          leftClickActionComboBox         = nullptr;
 
-    QTabWidget*         tab;
+    QTabWidget*         tab                             = nullptr;
 
-    DFontSelect*        iconViewFontSelect;
-    DFontSelect*        treeViewFontSelect;
+    DFontSelect*        iconViewFontSelect              = nullptr;
+    DFontSelect*        treeViewFontSelect              = nullptr;
 
-    FullScreenSettings* fullScreenSettings;
+    FullScreenSettings* fullScreenSettings              = nullptr;
 
-    SetupCategory*      category;
-    SetupMime*          mimetype;
+    SetupCategory*      category                        = nullptr;
+    SetupMime*          mimetype                        = nullptr;
 };
 
 SetupAlbumView::SetupAlbumView(QWidget* const parent)
@@ -146,7 +109,7 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     QWidget* const iwpanel     = new QWidget(d->tab);
     const int spacing          = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                      QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     // --------------------------------------------------------
 

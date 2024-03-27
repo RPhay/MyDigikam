@@ -48,23 +48,15 @@ class Q_DECL_HIDDEN SetupMime::Private
 {
 public:
 
-    explicit Private()
-      : imageFileFilterLabel(nullptr),
-        movieFileFilterLabel(nullptr),
-        audioFileFilterLabel(nullptr),
-        imageFileFilterEdit (nullptr),
-        movieFileFilterEdit (nullptr),
-        audioFileFilterEdit (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*    imageFileFilterLabel;
-    QLabel*    movieFileFilterLabel;
-    QLabel*    audioFileFilterLabel;
+    QLabel*    imageFileFilterLabel = nullptr;
+    QLabel*    movieFileFilterLabel = nullptr;
+    QLabel*    audioFileFilterLabel = nullptr;
 
-    QLineEdit* imageFileFilterEdit;
-    QLineEdit* movieFileFilterEdit;
-    QLineEdit* audioFileFilterEdit;
+    QLineEdit* imageFileFilterEdit  = nullptr;
+    QLineEdit* movieFileFilterEdit  = nullptr;
+    QLineEdit* audioFileFilterEdit  = nullptr;
 };
 
 SetupMime::SetupMime(QWidget* const parent)
@@ -76,7 +68,7 @@ SetupMime::SetupMime(QWidget* const parent)
     setWidgetResizable(true);
 
     const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QVBoxLayout* const layout = new QVBoxLayout(panel);
 
     // --------------------------------------------------------

@@ -63,96 +63,55 @@ class Q_DECL_HIDDEN SetupICC::Private
 {
 public:
 
-    explicit Private()
-      : iccFolderLabel          (nullptr),
-        enableColorManagement   (nullptr),
-        defaultSRGBConvert      (nullptr),
-        bpcAlgorithm            (nullptr),
-        managedView             (nullptr),
-        managedPreviews         (nullptr),
-        defaultAskMismatch      (nullptr),
-        defaultConvertMismatch  (nullptr),
-        defaultAskMissing       (nullptr),
-        defaultSRGBMissing      (nullptr),
-        defaultWSMissing        (nullptr),
-        defaultInputMissing     (nullptr),
-        defaultAskRaw           (nullptr),
-        defaultInputRaw         (nullptr),
-        defaultGuessRaw         (nullptr),
-        infoWorkProfiles        (nullptr),
-        infoMonitorProfiles     (nullptr),
-        infoInProfiles          (nullptr),
-        infoProofProfiles       (nullptr),
-        workspaceGB             (nullptr),
-        mismatchGB              (nullptr),
-        missingGB               (nullptr),
-        rawGB                   (nullptr),
-        inputGB                 (nullptr),
-        viewGB                  (nullptr),
-        proofGB                 (nullptr),
-        iccFolderGB             (nullptr),
-        advancedSettingsGB      (nullptr),
-        defaultPathKU           (nullptr),
-        renderingIntentKC       (nullptr),
-        behaviorPanel           (nullptr),
-        profilesPanel           (nullptr),
-        advancedPanel           (nullptr),
-        tab                     (nullptr),
-        dlgBtnBox               (nullptr),
-        inProfilesKC            (nullptr),
-        workProfilesKC          (nullptr),
-        proofProfilesKC         (nullptr),
-        monitorProfilesKC       (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*                     iccFolderLabel;
+    QLabel*                     iccFolderLabel          = nullptr;
 
-    QCheckBox*                  enableColorManagement;
-    QCheckBox*                  defaultSRGBConvert;
-    QCheckBox*                  bpcAlgorithm;
-    QCheckBox*                  managedView;
-    QCheckBox*                  managedPreviews;
+    QCheckBox*                  enableColorManagement   = nullptr;
+    QCheckBox*                  defaultSRGBConvert      = nullptr;
+    QCheckBox*                  bpcAlgorithm            = nullptr;
+    QCheckBox*                  managedView             = nullptr;
+    QCheckBox*                  managedPreviews         = nullptr;
 
-    QRadioButton*               defaultAskMismatch;
-    QRadioButton*               defaultConvertMismatch;
-    QRadioButton*               defaultAskMissing;
-    QRadioButton*               defaultSRGBMissing;
-    QRadioButton*               defaultWSMissing;
-    QRadioButton*               defaultInputMissing;
-    QRadioButton*               defaultAskRaw;
-    QRadioButton*               defaultInputRaw;
-    QRadioButton*               defaultGuessRaw;
+    QRadioButton*               defaultAskMismatch      = nullptr;
+    QRadioButton*               defaultConvertMismatch  = nullptr;
+    QRadioButton*               defaultAskMissing       = nullptr;
+    QRadioButton*               defaultSRGBMissing      = nullptr;
+    QRadioButton*               defaultWSMissing        = nullptr;
+    QRadioButton*               defaultInputMissing     = nullptr;
+    QRadioButton*               defaultAskRaw           = nullptr;
+    QRadioButton*               defaultInputRaw         = nullptr;
+    QRadioButton*               defaultGuessRaw         = nullptr;
 
-    QPushButton*                infoWorkProfiles;
-    QPushButton*                infoMonitorProfiles;
-    QPushButton*                infoInProfiles;
-    QPushButton*                infoProofProfiles;
+    QPushButton*                infoWorkProfiles        = nullptr;
+    QPushButton*                infoMonitorProfiles     = nullptr;
+    QPushButton*                infoInProfiles          = nullptr;
+    QPushButton*                infoProofProfiles       = nullptr;
 
-    QGroupBox*                  workspaceGB;
-    QGroupBox*                  mismatchGB;
-    QGroupBox*                  missingGB;
-    QGroupBox*                  rawGB;
-    QGroupBox*                  inputGB;
-    QGroupBox*                  viewGB;
-    QGroupBox*                  proofGB;
-    QGroupBox*                  iccFolderGB;
-    QGroupBox*                  advancedSettingsGB;
+    QGroupBox*                  workspaceGB             = nullptr;
+    QGroupBox*                  mismatchGB              = nullptr;
+    QGroupBox*                  missingGB               = nullptr;
+    QGroupBox*                  rawGB                   = nullptr;
+    QGroupBox*                  inputGB                 = nullptr;
+    QGroupBox*                  viewGB                  = nullptr;
+    QGroupBox*                  proofGB                 = nullptr;
+    QGroupBox*                  iccFolderGB             = nullptr;
+    QGroupBox*                  advancedSettingsGB      = nullptr;
 
-    DFileSelector*              defaultPathKU;
+    DFileSelector*              defaultPathKU           = nullptr;
 
-    IccRenderingIntentComboBox* renderingIntentKC;
+    IccRenderingIntentComboBox* renderingIntentKC       = nullptr;
 
-    QWidget*                    behaviorPanel;
-    QWidget*                    profilesPanel;
-    QWidget*                    advancedPanel;
-    QTabWidget*                 tab;
-    QDialogButtonBox*           dlgBtnBox;
+    QWidget*                    behaviorPanel           = nullptr;
+    QWidget*                    profilesPanel           = nullptr;
+    QWidget*                    advancedPanel           = nullptr;
+    QTabWidget*                 tab                     = nullptr;
+    QDialogButtonBox*           dlgBtnBox               = nullptr;
 
-    IccProfilesComboBox*        inProfilesKC;
-    IccProfilesComboBox*        workProfilesKC;
-    IccProfilesComboBox*        proofProfilesKC;
-    IccProfilesComboBox*        monitorProfilesKC;
+    IccProfilesComboBox*        inProfilesKC            = nullptr;
+    IccProfilesComboBox*        workProfilesKC          = nullptr;
+    IccProfilesComboBox*        proofProfilesKC         = nullptr;
+    IccProfilesComboBox*        monitorProfilesKC       = nullptr;
 };
 
 SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
