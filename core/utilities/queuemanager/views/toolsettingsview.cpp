@@ -54,30 +54,20 @@ public:
 
 public:
 
-    explicit Private()
-      : messageView      (nullptr),
-        settingsViewIcon (nullptr),
-        settingsViewTitle(nullptr),
-        settingsViewReset(nullptr),
-        settingsViewHelp (nullptr),
-        settingsViewAbout(nullptr),
-        settingsView     (nullptr),
-        tool             (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*      messageView;
-    QLabel*      settingsViewIcon;
-    QLabel*      settingsViewTitle;
+    QLabel*      messageView        = nullptr;
+    QLabel*      settingsViewIcon   = nullptr;
+    QLabel*      settingsViewTitle  = nullptr;
 
-    QPushButton* settingsViewReset;
-    QPushButton* settingsViewHelp;
-    QPushButton* settingsViewAbout;
+    QPushButton* settingsViewReset  = nullptr;
+    QPushButton* settingsViewHelp   = nullptr;
+    QPushButton* settingsViewAbout  = nullptr;
 
-    QScrollArea* settingsView;
+    QScrollArea* settingsView       = nullptr;
 
     BatchToolSet set;
-    BatchTool*   tool;
+    BatchTool*   tool               = nullptr;
 };
 
 ToolSettingsView::ToolSettingsView(QWidget* const parent)

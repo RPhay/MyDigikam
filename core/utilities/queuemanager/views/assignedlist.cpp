@@ -191,6 +191,7 @@ void AssignedListView::slotRemoveCurrentTool()
     {
         delete item;
         refreshIndex();
+
         Q_EMIT signalAssignedToolsChanged(assignedList());
     }
 
@@ -203,6 +204,7 @@ void AssignedListView::slotRemoveCurrentTool()
 void AssignedListView::slotClearToolsList()
 {
     clear();
+
     Q_EMIT signalAssignedToolsChanged(assignedList());
     Q_EMIT signalToolSelected(BatchToolSet());
 }
@@ -507,6 +509,7 @@ void AssignedListView::slotQueueSelected(int, const QueueSettings&, const Assign
     // Clear assigned tools list and tool settings view.
 
     clear();
+
     Q_EMIT signalToolSelected(BatchToolSet());
 
     if (!tools.m_toolsList.isEmpty())
@@ -529,6 +532,7 @@ void AssignedListView::slotSettingsChanged(const BatchToolSet& set)
     if (item)
     {
         item->setToolSet(set);
+
         Q_EMIT signalAssignedToolsChanged(assignedList());
     }
 }

@@ -34,14 +34,10 @@ class Q_DECL_HIDDEN QueueToolTip::Private
 {
 public:
 
-    explicit Private()
-      : view(nullptr),
-        item(nullptr)
-    {
-    }
+    Private() = default;
 
-    QueueListView*     view;
-    QueueListViewItem* item;
+    QueueListView*     view = nullptr;
+    QueueListViewItem* item = nullptr;
 };
 
 QueueToolTip::QueueToolTip(QueueListView* const view)

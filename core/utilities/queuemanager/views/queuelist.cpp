@@ -76,26 +76,19 @@ class Q_DECL_HIDDEN QueueListViewItem::Private
 
 public:
 
-    explicit Private()
-      : isBusy       (false),
-        done         (false),
-        hasThumb     (false),
-        progressIndex(0),
-        view         (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool           isBusy;
-    bool           done;
-    bool           hasThumb;
+    bool           isBusy           = false;
+    bool           done             = false;
+    bool           hasThumb         = false;
 
-    int            progressIndex;
+    int            progressIndex    = 0;
 
     QString        destFileName;
 
     QPixmap        preview;
 
-    QueueListView* view;
+    QueueListView* view             = nullptr;
 
     ItemInfo       info;
 };
@@ -268,36 +261,26 @@ public:
 
 public:
 
-    explicit Private()
-      : showTips        (false),
-        iconSize        (64),
-        toolTipTimer    (nullptr),
-        progressTimer   (nullptr),
-        thumbLoadThread (ThumbnailLoadThread::defaultThread()),
-        toolTip         (nullptr),
-        toolTipItem     (nullptr),
-        progressPix     (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                        showTips;
+    bool                        showTips        = false;
 
-    const int                   iconSize;
+    const int                   iconSize        = 64;
 
-    QTimer*                     toolTipTimer;
-    QTimer*                     progressTimer;
+    QTimer*                     toolTipTimer    = nullptr;
+    QTimer*                     progressTimer   = nullptr;
 
-    ThumbnailLoadThread*        thumbLoadThread;
+    ThumbnailLoadThread*        thumbLoadThread = ThumbnailLoadThread::defaultThread();
 
     QueueSettings               settings;
 
     AssignedBatchTools          toolsList;
 
-    QueueToolTip*               toolTip;
+    QueueToolTip*               toolTip         = nullptr;
 
-    QueueListViewItem*          toolTipItem;
+    QueueListViewItem*          toolTipItem     = nullptr;
 
-    DWorkingPixmap*             progressPix;
+    DWorkingPixmap*             progressPix     = nullptr;
 };
 
 QueueListView::QueueListView(QWidget* const parent)

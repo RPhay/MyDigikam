@@ -63,87 +63,50 @@ public:
 
 public:
 
-    explicit Private()
-      : rawLoadingLabel         (nullptr),
-        renamingButtonGroup     (nullptr),
-        rawLoadingButtonGroup   (nullptr),
-        renameOriginal          (nullptr),
-        renameManual            (nullptr),
-        extractJPEGButton       (nullptr),
-        demosaicingButton       (nullptr),
-        useOrgAlbum             (nullptr),
-        asNewVersion            (nullptr),
-        useMutiCoreCPU          (nullptr),
-        conflictBox             (nullptr),
-        albumSel                (nullptr),
-        advancedRenameManager   (nullptr),
-        advancedRenameWidget    (nullptr),
-        rawSettings             (nullptr),
-        jpgSettings             (nullptr),
-        pngSettings             (nullptr),
-        tifSettings             (nullptr),
+    Private() = default;
+
+    QLabel*                rawLoadingLabel          = nullptr;
+
+    QButtonGroup*          renamingButtonGroup      = nullptr;
+    QButtonGroup*          rawLoadingButtonGroup    = nullptr;
+
+    QRadioButton*          renameOriginal           = nullptr;
+    QRadioButton*          renameManual             = nullptr;
+    QRadioButton*          extractJPEGButton        = nullptr;
+    QRadioButton*          demosaicingButton        = nullptr;
+
+    QCheckBox*             useOrgAlbum              = nullptr;
+    QCheckBox*             asNewVersion             = nullptr;
+    QCheckBox*             useMutiCoreCPU           = nullptr;
+
+    FileSaveConflictBox*   conflictBox              = nullptr;
+    AlbumSelectWidget*     albumSel                 = nullptr;
+
+    AdvancedRenameManager* advancedRenameManager    = nullptr;
+    AdvancedRenameWidget*  advancedRenameWidget     = nullptr;
+
+    DRawDecoderWidget*     rawSettings              = nullptr;
+
+    DImgLoaderSettings*    jpgSettings              = nullptr;
+    DImgLoaderSettings*    pngSettings              = nullptr;
+    DImgLoaderSettings*    tifSettings              = nullptr;
 
 #ifdef HAVE_JASPER
 
-        j2kSettings             (nullptr),
+    DImgLoaderSettings*    j2kSettings              = nullptr;
 
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
 
-        heifSettings            (nullptr),
+    DImgLoaderSettings*    heifSettings             = nullptr;
 
 #endif // HAVE_X265
 
-        pgfSettings             (nullptr),
-        jxlSettings             (nullptr),
-        webpSettings            (nullptr),
-        avifSettings            (nullptr)
-    {
-    }
-
-    QLabel*                rawLoadingLabel;
-
-    QButtonGroup*          renamingButtonGroup;
-    QButtonGroup*          rawLoadingButtonGroup;
-
-    QRadioButton*          renameOriginal;
-    QRadioButton*          renameManual;
-    QRadioButton*          extractJPEGButton;
-    QRadioButton*          demosaicingButton;
-
-    QCheckBox*             useOrgAlbum;
-    QCheckBox*             asNewVersion;
-    QCheckBox*             useMutiCoreCPU;
-
-    FileSaveConflictBox*   conflictBox;
-    AlbumSelectWidget*     albumSel;
-
-    AdvancedRenameManager* advancedRenameManager;
-    AdvancedRenameWidget*  advancedRenameWidget;
-
-    DRawDecoderWidget*     rawSettings;
-
-    DImgLoaderSettings*    jpgSettings;
-    DImgLoaderSettings*    pngSettings;
-    DImgLoaderSettings*    tifSettings;
-
-#ifdef HAVE_JASPER
-
-    DImgLoaderSettings*    j2kSettings;
-
-#endif // HAVE_JASPER
-
-#ifdef HAVE_X265
-
-    DImgLoaderSettings*    heifSettings;
-
-#endif // HAVE_X265
-
-    DImgLoaderSettings*    pgfSettings;
-    DImgLoaderSettings*    jxlSettings;
-    DImgLoaderSettings*    webpSettings;
-    DImgLoaderSettings*    avifSettings;
+    DImgLoaderSettings*    pgfSettings              = nullptr;
+    DImgLoaderSettings*    jxlSettings              = nullptr;
+    DImgLoaderSettings*    webpSettings             = nullptr;
+    DImgLoaderSettings*    avifSettings             = nullptr;
 };
 
 QueueSettingsView::QueueSettingsView(QWidget* const parent)

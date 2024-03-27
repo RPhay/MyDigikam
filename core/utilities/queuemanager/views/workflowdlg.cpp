@@ -46,16 +46,11 @@ class Q_DECL_HIDDEN WorkflowDlg::Private
 
 public:
 
-    explicit Private()
-      : buttons  (nullptr),
-        titleEdit(nullptr),
-        descEdit (nullptr)
-    {
-    }
+    Private() = default;
 
-    QDialogButtonBox* buttons;
-    DTextEdit*        titleEdit;
-    DTextEdit*        descEdit;
+    QDialogButtonBox* buttons   = nullptr;
+    DTextEdit*        titleEdit = nullptr;
+    DTextEdit*        descEdit  = nullptr;
 };
 
 WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)

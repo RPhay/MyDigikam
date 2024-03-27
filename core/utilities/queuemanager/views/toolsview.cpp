@@ -39,16 +39,11 @@ class Q_DECL_HIDDEN ToolsView::Private
 
 public:
 
-    explicit Private()
-      : baseTools  (nullptr),
-        historyView(nullptr),
-        workflow   (nullptr)
-    {
-    }
+    Private() = default;
 
-    ToolsListView* baseTools;
-    DHistoryView*  historyView;
-    WorkflowList*  workflow;
+    ToolsListView* baseTools    = nullptr;
+    DHistoryView*  historyView  = nullptr;
+    WorkflowList*  workflow     = nullptr;
 };
 
 ToolsView::ToolsView(QWidget* const parent)
@@ -136,11 +131,15 @@ void ToolsView::addTool(BatchTool* const tool)
         case BatchTool::ConvertTool:
         case BatchTool::MetadataTool:
         case BatchTool::CustomTool:
+        {
             d->baseTools->addTool(tool);
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 
@@ -160,11 +159,15 @@ bool ToolsView::removeTool(BatchTool* const tool)
             case BatchTool::ConvertTool:
             case BatchTool::MetadataTool:
             case BatchTool::CustomTool:
+            {
                 ret = d->baseTools->removeTool(tool);
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
 
