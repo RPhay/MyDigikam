@@ -26,7 +26,7 @@ BUGFIXES:
 017 ==> 484610 - Advanced search fails to find photos from Ricoh GR II when searching by 'Make'.
 018 ==> 478075 - All database operations are far slower than with previous version.
 019 ==> 480772 - digiKam: App freezes when entering system file picker or opening right mouse button menu.
-020 ==> 
+020 ==> 446750 - Can't export to onedrive: unable to login then crash.
 021 ==> 
 022 ==> 
 023 ==> 
