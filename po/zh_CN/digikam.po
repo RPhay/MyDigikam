@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-27 10:08+0000\n"
+"POT-Creation-Date: 2024-03-28 02:05+0000\n"
 "PO-Revision-Date: 2024-03-17 20:45\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -33401,7 +33401,7 @@ msgstr "正在处理项目"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "无法修改这些文件的 EXIF 方向标签："
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:351
+#: core/libs/fileactionmanager/fileworkeriface.cpp:348
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "无法对这些文件进行变形："
@@ -36799,13 +36799,13 @@ msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "版权信息"
 
-#: core/libs/properties/itempropertiestab_helpers.cpp:209
+#: core/libs/properties/itempropertiestab_helpers.cpp:210
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1:%2 (%3)"
 
-#: core/libs/properties/itempropertiestab_helpers.cpp:242
+#: core/libs/properties/itempropertiestab_helpers.cpp:243
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
@@ -61720,7 +61720,7 @@ msgid ""
 msgstr ""
 "如果启用了内嵌预览视图加载完整图像，下载过程中预览每张图像的速度将受到影响。"
 
-#: core/utilities/setup/collections/setupcollections.cpp:96
+#: core/utilities/setup/collections/setupcollections.cpp:87
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -61735,7 +61735,7 @@ msgstr ""
 "系统 (如 NFS、通过 cifs/smbfs 挂载到本机的 Samba 位置)。</p><p>注意：您必须先"
 "在本机挂载共享位置，然后再在 digiKam 中设置远程相册集合。</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:109
+#: core/utilities/setup/collections/setupcollections.cpp:100
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -61745,12 +61745,12 @@ msgstr ""
 "<p>下表列出了所有用于存储图像的根相册位置。要编辑这些相册中的图像，必须具备这"
 "些位置的写入权限。</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:123
+#: core/utilities/setup/collections/setupcollections.cpp:114
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr "监视相册的外部更改 (需要重新启动)"
 
-#: core/utilities/setup/collections/setupcollections.cpp:126
+#: core/utilities/setup/collections/setupcollections.cpp:117
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
@@ -61760,13 +61760,13 @@ msgstr ""
 "<b>注意：监视相册的外部更改会消耗大量系统资源并拖慢 digiKam 的速度。如果您正"
 "在使用 macOS 和网络相册集合，请不要启用相册监视功能。</b>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:139
+#: core/utilities/setup/collections/setupcollections.cpp:130
 #, kde-format
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "根相册文件夹"
 
-#: core/utilities/setup/collections/setupcollections.cpp:146
+#: core/utilities/setup/collections/setupcollections.cpp:137
 #, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
@@ -61784,219 +61784,219 @@ msgstr ""
 "图，@eaDir 目录已被默认忽略。</p><p>要包含被默认忽略的目录，请在目录名称前添"
 "加半角减号前缀，如 -@eaDir。</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:164
+#: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
 "directories</a>):"
 msgstr "额外的忽略目录 (<a href='image'>当前已忽略目录</a>)："
 
-#: core/utilities/setup/collections/setupcollections.cpp:169
+#: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr "输入您想在添加到相册集合时忽略的目录。"
 
-#: core/utilities/setup/collections/setupcollections.cpp:185
+#: core/utilities/setup/collections/setupcollections.cpp:176
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "已忽略目录"
 
-#: core/utilities/setup/collections/setupcollections.cpp:256
+#: core/utilities/setup/collections/setupcollections.cpp:247
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
 "code></p>"
 msgstr "<p>目录名以半角句号开头时将被默认忽略<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:106
+#: core/utilities/setup/collections/setupcollectionview.cpp:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
 msgstr "附加路径到收藏集合。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:114
+#: core/utilities/setup/collections/setupcollectionview.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
 msgstr "更新该集合的路径。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:122
+#: core/utilities/setup/collections/setupcollectionview.cpp:133
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr "从 digiKam 中移除该集合。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:629
+#: core/utilities/setup/collections/setupcollectionview.cpp:632
 #, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr "无法添加下列路径到相册集合："
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:657
-#: core/utilities/setup/collections/setupcollectionview.cpp:1493
+#: core/utilities/setup/collections/setupcollectionview.cpp:660
+#: core/utilities/setup/collections/setupcollectionview.cpp:1506
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "选择包含相册集合的文件夹"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:694
+#: core/utilities/setup/collections/setupcollectionview.cpp:697
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "附加到相册集合时出错"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:695
+#: core/utilities/setup/collections/setupcollectionview.cpp:698
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "已存在包含路径“%1”的相册集合。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:855
+#: core/utilities/setup/collections/setupcollectionview.cpp:861
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "移除收藏集合中的此路径？"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:856
+#: core/utilities/setup/collections/setupcollectionview.cpp:862
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "您是否想要移除相册集合“%2”中的附加路径“%1”？"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:863
+#: core/utilities/setup/collections/setupcollectionview.cpp:869
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "移除相册集合？"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:864
+#: core/utilities/setup/collections/setupcollectionview.cpp:870
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "您想要从相册集合列表移除相册集合“%1”吗？"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1707
+#: core/utilities/setup/collections/setupcollectionview.cpp:935
+#: core/utilities/setup/collections/setupcollectionview.cpp:1723
 #, kde-format
 msgid "Local Collections"
 msgstr "本地集合"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1708
+#: core/utilities/setup/collections/setupcollectionview.cpp:940
+#: core/utilities/setup/collections/setupcollectionview.cpp:1724
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "可移动媒介集合"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1709
+#: core/utilities/setup/collections/setupcollectionview.cpp:945
+#: core/utilities/setup/collections/setupcollectionview.cpp:1725
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "网络共享集合"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:976
+#: core/utilities/setup/collections/setupcollectionview.cpp:982
 #, kde-format
 msgid "Add Collection"
 msgstr "添加集合"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1026
+#: core/utilities/setup/collections/setupcollectionview.cpp:1032
 #, kde-format
 msgid "Col. %1"
 msgstr "集合. %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1122
+#: core/utilities/setup/collections/setupcollectionview.cpp:1128
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "此相册集合当前不可用。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1127
+#: core/utilities/setup/collections/setupcollectionview.cpp:1133
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "未发现问题，可放心使用此相册集合。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1132
+#: core/utilities/setup/collections/setupcollectionview.cpp:1138
 #, kde-format
 msgid "This collection is hidden."
 msgstr "此相册集合已隐藏。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1151
+#: core/utilities/setup/collections/setupcollectionview.cpp:1157
 #, kde-format
 msgid "Append network path"
 msgstr "附加网络路径"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1179
+#: core/utilities/setup/collections/setupcollectionview.cpp:1185
 #, kde-format
 msgid "Update collection"
 msgstr "更新相册集合"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1207
+#: core/utilities/setup/collections/setupcollectionview.cpp:1213
 #, kde-format
 msgid "Remove collection"
 msgstr "移除相册集合"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1242
+#: core/utilities/setup/collections/setupcollectionview.cpp:1248
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "名称"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1247
+#: core/utilities/setup/collections/setupcollectionview.cpp:1253
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "路径"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1252
+#: core/utilities/setup/collections/setupcollectionview.cpp:1258
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "状态"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1541
+#: core/utilities/setup/collections/setupcollectionview.cpp:1554
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "您已经添加过包含路径“%1”的相册集合。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1592
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "添加相册集合时出错"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1581
+#: core/utilities/setup/collections/setupcollectionview.cpp:1597
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "更新相册集合时遇到问题"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1598
+#: core/utilities/setup/collections/setupcollectionview.cpp:1614
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "添加相册集合"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1602
+#: core/utilities/setup/collections/setupcollectionview.cpp:1618
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "更新相册集合"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1610
+#: core/utilities/setup/collections/setupcollectionview.cpp:1626
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "新相册集合将以此名称创建："
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1614
+#: core/utilities/setup/collections/setupcollectionview.cpp:1630
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr "您的相册集合将被更新到此名称："
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1697
+#: core/utilities/setup/collections/setupcollectionview.cpp:1713
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "选择相册集合类型"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1701
+#: core/utilities/setup/collections/setupcollectionview.cpp:1717
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "该相册集合将被设为以下分类："

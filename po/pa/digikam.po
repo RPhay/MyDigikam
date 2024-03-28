@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-27 10:08+0000\n"
+"POT-Creation-Date: 2024-03-28 02:05+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -34361,7 +34361,7 @@ msgstr "ਆਈਟਮ ਹਟਾਓ"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "ਇੰਨ੍ਹਾਂ ਫਾਇਲਾਂ ਲਈ Exif ਸਥਿਤੀ ਰੱਖਣ ਲਈ ਫੇਲ੍ਹ:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:351
+#: core/libs/fileactionmanager/fileworkeriface.cpp:348
 #, fuzzy, kde-format
 msgid "Failed to transform these files:"
 msgstr "ਇੰਨ੍ਹਾਂ ਫਾਇਲਾਂ ਲਈ Exif ਸਥਿਤੀ ਰੱਖਣ ਲਈ ਫੇਲ੍ਹ:"
@@ -37916,13 +37916,13 @@ msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "ਹੱਕ"
 
-#: core/libs/properties/itempropertiestab_helpers.cpp:209
+#: core/libs/properties/itempropertiestab_helpers.cpp:210
 #, fuzzy, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/properties/itempropertiestab_helpers.cpp:242
+#: core/libs/properties/itempropertiestab_helpers.cpp:243
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
@@ -64263,7 +64263,7 @@ msgid ""
 "each item while download."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:96
+#: core/utilities/setup/collections/setupcollections.cpp:87
 #, fuzzy, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -64279,7 +64279,7 @@ msgstr ""
 "ਕਿ USB ਅਤੇ DVD ਆਦਿ) ਅਤੇ ਰਿਮੋਟ ਫਾਇਲ ਸਿਸਟਮ (NFS ਅਤੇ cifs/smbfs ਨਾਲ ਸਾਂਬਾ) ਵੀ ਸਹਾਇਕ "
 "ਹਨ।</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:109
+#: core/utilities/setup/collections/setupcollections.cpp:100
 #, fuzzy, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -64292,12 +64292,12 @@ msgstr ""
 "ਕਿ USB ਅਤੇ DVD ਆਦਿ) ਅਤੇ ਰਿਮੋਟ ਫਾਇਲ ਸਿਸਟਮ (NFS ਅਤੇ cifs/smbfs ਨਾਲ ਸਾਂਬਾ) ਵੀ ਸਹਾਇਕ "
 "ਹਨ।</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:123
+#: core/utilities/setup/collections/setupcollections.cpp:114
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:126
+#: core/utilities/setup/collections/setupcollections.cpp:117
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
@@ -64305,14 +64305,14 @@ msgid ""
 "activate album monitoring.</b>"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:139
+#: core/utilities/setup/collections/setupcollections.cpp:130
 #, fuzzy, kde-format
 #| msgid "Root Album Folders"
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "ਰੂਟ ਐਲਬਮ ਫੋਲਡਰ"
 
-#: core/utilities/setup/collections/setupcollections.cpp:146
+#: core/utilities/setup/collections/setupcollections.cpp:137
 #, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
@@ -64325,7 +64325,7 @@ msgid ""
 "default prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:164
+#: core/utilities/setup/collections/setupcollections.cpp:155
 #, fuzzy, kde-format
 #| msgid ""
 #| "Additional &image file extensions (<a href='image'>Currently-supported "
@@ -64335,19 +64335,19 @@ msgid ""
 "directories</a>):"
 msgstr "ਹੋਰ ਚਿੱਤਰ ਫਾਇਲ ਇਕਸਟੈਨਸ਼ਨਾਂ(&i) (<a href='image'>ਮੌਜੂਦਾ-ਸਹਾਇਕ ਟਾਈਪ</a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:169
+#: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:185
+#: core/utilities/setup/collections/setupcollections.cpp:176
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "ਇਹ ਟੈਗ ਅਣਡਿੱਠਾ"
 
-#: core/utilities/setup/collections/setupcollections.cpp:256
+#: core/utilities/setup/collections/setupcollections.cpp:247
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Files with these extensions will be recognized as movie files and "
@@ -64359,60 +64359,60 @@ msgstr ""
 "<p>ਇਹ ਇਕਸਟੈਨਸ਼ਨ ਵਾਲੀਆਂ ਫਾਇਲਾਂ ਨੂੰ ਮੂਵੀ ਫਾਇਲਾਂ ਵਜੋਂ ਪਛਾਣਿਆ ਜਾਵੇਗਾ ਅਤੇ ਡਾਟਾਬੇਸ ਵਿੱਚ ਸ਼ਾਮਲ "
 "ਕੀਤਾ ਜਾਵੇਗਾ:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:106
+#: core/utilities/setup/collections/setupcollectionview.cpp:109
 #, fuzzy, kde-format
 #| msgid "Creates a new empty Album in the collection."
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
 msgstr "ਭੰਡਾਰ ਵਿੱਚ ਨਵੀਂ ਖਾਲੀ ਐਲਬਮ ਬਣਾਉ।"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:114
+#: core/utilities/setup/collections/setupcollectionview.cpp:121
 #, fuzzy, kde-format
 #| msgid "Creates a new empty Album in the collection."
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
 msgstr "ਭੰਡਾਰ ਵਿੱਚ ਨਵੀਂ ਖਾਲੀ ਐਲਬਮ ਬਣਾਉ।"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:122
+#: core/utilities/setup/collections/setupcollectionview.cpp:133
 #, fuzzy, kde-format
 #| msgid "Remove collection"
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr "ਭੰਡਾਰ ਹਟਾਓ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:629
+#: core/utilities/setup/collections/setupcollectionview.cpp:632
 #, fuzzy, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr "ਇੱਕ ਭੰਡਾਰ ਨੂੰ ਹੇਠ ਦਿੱਤੇ ਪਾਥ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨਾ ਸੰਭਵ ਨਹੀਂ ਹੈ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:657
-#: core/utilities/setup/collections/setupcollectionview.cpp:1493
+#: core/utilities/setup/collections/setupcollectionview.cpp:660
+#: core/utilities/setup/collections/setupcollectionview.cpp:1506
 #, fuzzy, kde-format
 #| msgid "Choose the folder containing your collection"
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "ਤੁਹਾਡਾ ਭੰਡਾਰ ਰੱਖਣ ਵਾਲਾ ਫੋਲਡਰ ਚੁਣੋ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:694
+#: core/utilities/setup/collections/setupcollectionview.cpp:697
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "ਭੰਡਾਰ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਸਮੱਸਿਆ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:695
+#: core/utilities/setup/collections/setupcollectionview.cpp:698
 #, fuzzy, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "ਫਾਇਲ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:855
+#: core/utilities/setup/collections/setupcollectionview.cpp:861
 #, fuzzy, kde-format
 #| msgid "Remove Collection?"
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "ਭੰਡਾਰ ਹਟਾਉਣਾ?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:856
+#: core/utilities/setup/collections/setupcollectionview.cpp:862
 #, fuzzy, kde-format
 #| msgid ""
 #| "Do you want to remove the collection \"%1\" from your list of collections?"
@@ -64420,151 +64420,151 @@ msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "ਕੀ ਤੁਸੀਂ ਆਪਣੀ ਭੰਡਾਰ ਲਿਸਟ ਤੋਂ \"%1\" ਭੰਡਾਰ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:863
+#: core/utilities/setup/collections/setupcollectionview.cpp:869
 #, fuzzy, kde-format
 #| msgid "Remove Collection?"
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "ਭੰਡਾਰ ਹਟਾਉਣਾ?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:864
+#: core/utilities/setup/collections/setupcollectionview.cpp:870
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "ਕੀ ਤੁਸੀਂ ਆਪਣੀ ਭੰਡਾਰ ਲਿਸਟ ਤੋਂ \"%1\" ਭੰਡਾਰ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1707
+#: core/utilities/setup/collections/setupcollectionview.cpp:935
+#: core/utilities/setup/collections/setupcollectionview.cpp:1723
 #, kde-format
 msgid "Local Collections"
 msgstr "ਲੋਕਲ ਭੰਡਾਰ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1708
+#: core/utilities/setup/collections/setupcollectionview.cpp:940
+#: core/utilities/setup/collections/setupcollectionview.cpp:1724
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡਿਆ ਉੱਤੇ ਭੰਡਾਰ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1709
+#: core/utilities/setup/collections/setupcollectionview.cpp:945
+#: core/utilities/setup/collections/setupcollectionview.cpp:1725
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "ਨੈੱਟਵਰਕ ਸਾਂਝ ਉੱਤੇ ਭੰਡਾਰ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:976
+#: core/utilities/setup/collections/setupcollectionview.cpp:982
 #, kde-format
 msgid "Add Collection"
 msgstr "ਭੰਡਾਰ ਸ਼ਾਮਲ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1026
+#: core/utilities/setup/collections/setupcollectionview.cpp:1032
 #, kde-format
 msgid "Col. %1"
 msgstr "ਭੰਡਾਰ %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1122
+#: core/utilities/setup/collections/setupcollectionview.cpp:1128
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "ਇਹ ਭੰਡਾਰ ਹਾਲੇ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1127
+#: core/utilities/setup/collections/setupcollectionview.cpp:1133
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "ਕੋਈ ਸਮੱਸਿਆ ਨਹੀਂ ਲੱਭੀ, ਇਹ ਭੰਡਾਰ ਨਾਲ ਮੌਜਾਂ ਕਰੋ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1132
+#: core/utilities/setup/collections/setupcollectionview.cpp:1138
 #, kde-format
 msgid "This collection is hidden."
 msgstr "ਇਹ ਭੰਡਾਰ ਲੁਕਵਾਂ ਹੈ।"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1151
+#: core/utilities/setup/collections/setupcollectionview.cpp:1157
 #, kde-format
 msgid "Append network path"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1179
+#: core/utilities/setup/collections/setupcollectionview.cpp:1185
 #, fuzzy, kde-format
 #| msgid "Add Collection"
 msgid "Update collection"
 msgstr "ਭੰਡਾਰ ਸ਼ਾਮਲ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1207
+#: core/utilities/setup/collections/setupcollectionview.cpp:1213
 #, kde-format
 msgid "Remove collection"
 msgstr "ਭੰਡਾਰ ਹਟਾਓ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1242
+#: core/utilities/setup/collections/setupcollectionview.cpp:1248
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "ਨਾਂ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1247
+#: core/utilities/setup/collections/setupcollectionview.cpp:1253
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "ਮਾਰਗ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1252
+#: core/utilities/setup/collections/setupcollectionview.cpp:1258
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "ਹਾਲਤ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1541
+#: core/utilities/setup/collections/setupcollectionview.cpp:1554
 #, fuzzy, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "ਫੋਲਡਰ \"%1\" ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਇੱਕ ਭੰਡਾਰ ਮੌਜੂਦ ਹੈ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1592
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "ਭੰਡਾਰ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਸਮੱਸਿਆ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1581
+#: core/utilities/setup/collections/setupcollectionview.cpp:1597
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "ਭੰਡਾਰ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਸਮੱਸਿਆ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1598
+#: core/utilities/setup/collections/setupcollectionview.cpp:1614
 #, fuzzy, kde-format
 #| msgid "Adding Collection"
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "ਭੰਡਾਰ ਸ਼ਾਮਲ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1602
+#: core/utilities/setup/collections/setupcollectionview.cpp:1618
 #, fuzzy, kde-format
 #| msgid "Add Collection"
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "ਭੰਡਾਰ ਸ਼ਾਮਲ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1610
+#: core/utilities/setup/collections/setupcollectionview.cpp:1626
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "ਤੁਹਾਡਾ ਨਵਾਂ ਭੰਡਾਰ ਇਸੇ ਨਾਂ ਨਾਲ ਬਣਾਇਆ ਜਾਵੇਗਾ:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1614
+#: core/utilities/setup/collections/setupcollectionview.cpp:1630
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will be updated to this name:"
 msgstr "ਤੁਹਾਡਾ ਨਵਾਂ ਭੰਡਾਰ ਇਸੇ ਨਾਂ ਨਾਲ ਬਣਾਇਆ ਜਾਵੇਗਾ:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1697
+#: core/utilities/setup/collections/setupcollectionview.cpp:1713
 #, fuzzy, kde-format
 #| msgid "Select a year"
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "ਸਾਲ ਚੁਣੋ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1701
+#: core/utilities/setup/collections/setupcollectionview.cpp:1717
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will use this category:"

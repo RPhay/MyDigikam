@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-27 10:08+0000\n"
-"PO-Revision-Date: 2024-03-20 22:52+0100\n"
+"POT-Creation-Date: 2024-03-28 02:05+0000\n"
+"PO-Revision-Date: 2024-03-27 19:34+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -341,7 +341,7 @@ msgstr[1] "Ŝanĝi vizaĝonomojn de '%2' al '%3'"
 #: core/app/dragdrop/tagdragdrop.cpp:387
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
-msgstr "Asigni Etikedon(j)n '%1' al Eroj"
+msgstr "Asigni Etikedo(j)n '%1' al Eroj"
 
 #: core/app/filters/filtersidebarwidget.cpp:143
 #, kde-format
@@ -6228,12 +6228,10 @@ msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
 #: core/utilities/maintenance/maintenancedlg.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate to:"
+#, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
-msgstr "Traduki al:"
+msgstr "Traduki Etikedojn al:"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -34415,7 +34413,7 @@ msgstr "Procezi Erojn"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Malsukcesis revizii Exif-orientiĝon ĉi tiujn dosierojn:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:351
+#: core/libs/fileactionmanager/fileworkeriface.cpp:348
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Malsukcesis transformi ĉi tiujn dosierojn:"
@@ -37855,13 +37853,13 @@ msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Rajtoj"
 
-#: core/libs/properties/itempropertiestab_helpers.cpp:209
+#: core/libs/properties/itempropertiestab_helpers.cpp:210
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1:%2 (%3)"
 
-#: core/libs/properties/itempropertiestab_helpers.cpp:242
+#: core/libs/properties/itempropertiestab_helpers.cpp:243
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
@@ -39412,7 +39410,7 @@ msgstr "Maletendi etikedarbon tute"
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
-"Forigi elektita(j)n etikedon(j)n de bildoj. Funkcias kun multobla elekto."
+"Forigi elektita(j)n etikedo(j)n de bildoj. Funkcias kun multobla elekto."
 
 #: core/libs/tags/manager/tagsmanager.cpp:799
 #, kde-format
@@ -39817,7 +39815,7 @@ msgid ""
 "this field is limited to 128 characters.</p>"
 msgstr ""
 "<p>La Kopirajta Avizo devus enhavi ajnan necesan kopirajton por postuli la "
-"intelektan proprieton, kaj devus identigi la nunan posedanton(j)n de la "
+"intelektan proprieton, kaj devus identigi la nunan posedanto(j)n de la "
 "kopirajto por la foto. Kutime, ĉi tio estus la fotisto, sed se la bildo "
 "estis farita de dungito aŭ kiel dungito, tiam la agentejo aŭ kompanio devus "
 "esti listigita. Uzu la formularon taŭgan al via lando. Usono: © {dato de "
@@ -63372,7 +63370,7 @@ msgstr ""
 "Se la plengranda antaŭrigardo estas ebligita, ĝi influos la rapidecon de "
 "antaŭrigardo de ĉiu objekto dum elŝuto."
 
-#: core/utilities/setup/collections/setupcollections.cpp:96
+#: core/utilities/setup/collections/setupcollections.cpp:87
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -63389,7 +63387,7 @@ msgstr ""
 "p><p>Grave: Vi devas munti la kunhavon denaske en via sistemo antaŭ ol "
 "agordi foran kolekton.</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:109
+#: core/utilities/setup/collections/setupcollections.cpp:100
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -63400,12 +63398,12 @@ msgstr ""
 "bildojn. Skriba aliro estas necesa por povi redakti bildojn en ĉi tiuj "
 "albumoj.</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:123
+#: core/utilities/setup/collections/setupcollections.cpp:114
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Monitori la albumojn por eksteraj ŝanĝoj (postulas rekomencon)"
 
-#: core/utilities/setup/collections/setupcollections.cpp:126
+#: core/utilities/setup/collections/setupcollections.cpp:117
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
@@ -63416,13 +63414,13 @@ msgstr ""
 "malrapidigi digiKam. Se vi uzas MacOS kaj retajn kolektojn, vi ne devas "
 "aktivigi la monitoradon de la albumo.</b>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:139
+#: core/utilities/setup/collections/setupcollections.cpp:130
 #, kde-format
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "Radikaj Albumaj Dosierujoj"
 
-#: core/utilities/setup/collections/setupcollections.cpp:146
+#: core/utilities/setup/collections/setupcollections.cpp:137
 #, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
@@ -63443,7 +63441,7 @@ msgstr ""
 "ignorita.</p><p>Por re-inkluzivi dosierujojn kiuj estas defaŭlte ignoritaj "
 "prefikso ĝin per minuso, ekz. -@eaDir.</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:164
+#: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
@@ -63452,19 +63450,19 @@ msgstr ""
 "Pliaj dosierujoj por ignori (<a href='image'>Nuntempe ignoritaj dosierujoj</"
 "a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:169
+#: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr "Enigu dosierujojn, kiujn vi volas ignori de aldonado al viaj kolektoj."
 
-#: core/utilities/setup/collections/setupcollections.cpp:185
+#: core/utilities/setup/collections/setupcollections.cpp:176
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "Ignoritaj Dosierujoj"
 
-#: core/utilities/setup/collections/setupcollections.cpp:256
+#: core/utilities/setup/collections/setupcollections.cpp:247
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
@@ -63473,193 +63471,193 @@ msgstr ""
 "<p> Dosierujoj komenciĝantaj per punkto estas defaŭlte ignorataj.<br/> <code>"
 "%1</code></p>"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:106
+#: core/utilities/setup/collections/setupcollectionview.cpp:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
 msgstr "Aldonu vojon al la kolekto."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:114
+#: core/utilities/setup/collections/setupcollectionview.cpp:121
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
 msgstr "Ĝisdatigas la vojon de la kolekto."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:122
+#: core/utilities/setup/collections/setupcollectionview.cpp:133
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr "Forigas la kolekton de digiKam."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:629
+#: core/utilities/setup/collections/setupcollectionview.cpp:632
 #, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr "Ne eblis aldoni kolekton por la sekvaj vojoj:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:657
-#: core/utilities/setup/collections/setupcollectionview.cpp:1493
+#: core/utilities/setup/collections/setupcollectionview.cpp:660
+#: core/utilities/setup/collections/setupcollectionview.cpp:1506
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Elekti la Dosierujon Enhavanta vian Kolekton"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:694
+#: core/utilities/setup/collections/setupcollectionview.cpp:697
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Problemo Aldonante Kolekton"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:695
+#: core/utilities/setup/collections/setupcollectionview.cpp:698
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "Kolekto kun la vojo \"%1\" jam ekzistas."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:855
+#: core/utilities/setup/collections/setupcollectionview.cpp:861
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Ĉu forigi Padon de la Kolekto?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:856
+#: core/utilities/setup/collections/setupcollectionview.cpp:862
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "Ĉu vi volas forigi la aldonitan vojon \"%1\" el la kolekto \"%2\"?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:863
+#: core/utilities/setup/collections/setupcollectionview.cpp:869
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Ĉu forigi kolekton?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:864
+#: core/utilities/setup/collections/setupcollectionview.cpp:870
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "Ĉu vi volas forigi la kolekton \"%1\" el via listo de kolektoj?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1707
+#: core/utilities/setup/collections/setupcollectionview.cpp:935
+#: core/utilities/setup/collections/setupcollectionview.cpp:1723
 #, kde-format
 msgid "Local Collections"
 msgstr "Lokaj Kolektoj"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1708
+#: core/utilities/setup/collections/setupcollectionview.cpp:940
+#: core/utilities/setup/collections/setupcollectionview.cpp:1724
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Kolektoj sur Forpreneblaj datumportiloj"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1709
+#: core/utilities/setup/collections/setupcollectionview.cpp:945
+#: core/utilities/setup/collections/setupcollectionview.cpp:1725
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Kolektoj sur Retaj Kunhavaĵoj"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:976
+#: core/utilities/setup/collections/setupcollectionview.cpp:982
 #, kde-format
 msgid "Add Collection"
 msgstr "Aldoni Kolekton"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1026
+#: core/utilities/setup/collections/setupcollectionview.cpp:1032
 #, kde-format
 msgid "Col. %1"
 msgstr "Kol. %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1122
+#: core/utilities/setup/collections/setupcollectionview.cpp:1128
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "Ĉi tiu kolekto nuntempe ne haveblas."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1127
+#: core/utilities/setup/collections/setupcollectionview.cpp:1133
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "Neniuj problemoj trovitaj, ĝuu ĉi tiun kolekton."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1132
+#: core/utilities/setup/collections/setupcollectionview.cpp:1138
 #, kde-format
 msgid "This collection is hidden."
 msgstr "Ĉi tiu kolekto estas kaŝita."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1151
+#: core/utilities/setup/collections/setupcollectionview.cpp:1157
 #, kde-format
 msgid "Append network path"
 msgstr "Aldoni retan vojon"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1179
+#: core/utilities/setup/collections/setupcollectionview.cpp:1185
 #, kde-format
 msgid "Update collection"
 msgstr "Ĝisdatigi kolekton"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1207
+#: core/utilities/setup/collections/setupcollectionview.cpp:1213
 #, kde-format
 msgid "Remove collection"
 msgstr "Forigi kolekton"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1242
+#: core/utilities/setup/collections/setupcollectionview.cpp:1248
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Nomo"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1247
+#: core/utilities/setup/collections/setupcollectionview.cpp:1253
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Vojo"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1252
+#: core/utilities/setup/collections/setupcollectionview.cpp:1258
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Stato"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1541
+#: core/utilities/setup/collections/setupcollectionview.cpp:1554
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Vi antaŭe aldonis kolekton, kiu enhavas la vojon \"%1\"."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1592
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Problemo Aldonante Kolekton"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1581
+#: core/utilities/setup/collections/setupcollectionview.cpp:1597
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
 msgstr "Problemo ĝisdatigante Kolekton"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1598
+#: core/utilities/setup/collections/setupcollectionview.cpp:1614
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Aldonante Kolekton"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1602
+#: core/utilities/setup/collections/setupcollectionview.cpp:1618
 #, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Ĝisdatigi Kolekton"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1610
+#: core/utilities/setup/collections/setupcollectionview.cpp:1626
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Via nova kolekto estos kreata kun ĉi tiu nomo:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1614
+#: core/utilities/setup/collections/setupcollectionview.cpp:1630
 #, kde-format
 msgid "Your collection will be updated to this name:"
 msgstr "Via kolekto estos ĝisdatigata kun ĉi tiu nomo:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1697
+#: core/utilities/setup/collections/setupcollectionview.cpp:1713
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Elekti Kategorion"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1701
+#: core/utilities/setup/collections/setupcollectionview.cpp:1717
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "Via kolekto uzos ĉi tiun kategorion:"
