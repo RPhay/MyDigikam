@@ -30,7 +30,7 @@ BUGFIXES:
 021 ==> 452892 - Unneeded message every startup.
 022 ==> 478373 - digiKam Version 8.2 start slowly.
 023 ==> 478396 - digiKam after Update 8.2.0 very slow.
-024 ==> 
+024 ==> 454580 - Persistent message to download face recognition on startup.
 025 ==> 
 026 ==> 
 027 ==> 
