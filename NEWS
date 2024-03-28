@@ -29,7 +29,7 @@ BUGFIXES:
 020 ==> 446750 - Can't export to onedrive: unable to login then crash.
 021 ==> 452892 - Unneeded message every startup.
 022 ==> 478373 - digiKam Version 8.2 start slowly.
-023 ==> 
+023 ==> 478396 - digiKam after Update 8.2.0 very slow.
 024 ==> 
 025 ==> 
 026 ==> 
