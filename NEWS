@@ -25,7 +25,7 @@ BUGFIXES:
 016 ==> 484373 - Wrong time/timezone data.
 017 ==> 484610 - Advanced search fails to find photos from Ricoh GR II when searching by 'Make'.
 018 ==> 478075 - All database operations are far slower than with previous version.
-019 ==> 
+019 ==> 480772 - digiKam: App freezes when entering system file picker or opening right mouse button menu.
 020 ==> 
 021 ==> 
 022 ==> 
