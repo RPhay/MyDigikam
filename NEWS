@@ -28,7 +28,7 @@ BUGFIXES:
 019 ==> 480772 - digiKam: App freezes when entering system file picker or opening right mouse button menu.
 020 ==> 446750 - Can't export to onedrive: unable to login then crash.
 021 ==> 452892 - Unneeded message every startup.
-022 ==> 
+022 ==> 478373 - digiKam Version 8.2 start slowly.
 023 ==> 
 024 ==> 
 025 ==> 
