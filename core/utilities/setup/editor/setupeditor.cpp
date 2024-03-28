@@ -36,21 +36,14 @@ class Q_DECL_HIDDEN SetupEditor::Private
 {
 public:
 
-    explicit Private()
-      : tab         (nullptr),
-        iface       (nullptr),
-        iofiles     (nullptr),
-        versioning  (nullptr),
-        raw         (nullptr)
-    {
-    }
+    Private() = default;
 
-    QTabWidget*       tab;
+    QTabWidget*       tab        = nullptr;
 
-    SetupEditorIface* iface;
-    SetupIOFiles*     iofiles;
-    SetupVersioning*  versioning;
-    SetupRaw*         raw;
+    SetupEditorIface* iface      = nullptr;
+    SetupIOFiles*     iofiles    = nullptr;
+    SetupVersioning*  versioning = nullptr;
+    SetupRaw*         raw        = nullptr;
 };
 
 SetupEditor::SetupEditor(QWidget* const parent)

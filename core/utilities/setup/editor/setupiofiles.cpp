@@ -38,31 +38,7 @@ class Q_DECL_HIDDEN SetupIOFiles::Private
 {
 public:
 
-    explicit Private()
-      : JPEGOptions             (nullptr),
-        PNGOptions              (nullptr),
-        TIFFOptions             (nullptr),
-
-#ifdef HAVE_JASPER
-
-        JPEG2000Options         (nullptr),
-
-#endif // HAVE_JASPER
-
-        PGFOptions              (nullptr),
-
-#ifdef HAVE_X265
-
-        HEIFOptions             (nullptr),
-
-#endif // HAVE_X265
-
-        JXLOptions              (nullptr),
-        WEBPOptions             (nullptr),
-        AVIFOptions             (nullptr),
-        showImageSettingsDialog (nullptr)
-    {
-    }
+    Private() = default;
 
     QWidget* createGroupBox(QWidget* const w) const
     {
@@ -95,28 +71,28 @@ public:
     static const QString configAVIFCompressionEntry;
     static const QString configAVIFLossLessEntry;
 
-    DImgLoaderSettings*  JPEGOptions;
-    DImgLoaderSettings*  PNGOptions;
-    DImgLoaderSettings*  TIFFOptions;
+    DImgLoaderSettings*  JPEGOptions                = nullptr;
+    DImgLoaderSettings*  PNGOptions                 = nullptr;
+    DImgLoaderSettings*  TIFFOptions                = nullptr;
 
 #ifdef HAVE_JASPER
 
-    DImgLoaderSettings*  JPEG2000Options;
+    DImgLoaderSettings*  JPEG2000Options            = nullptr;
 
 #endif // HAVE_JASPER
 
-    DImgLoaderSettings*  PGFOptions;
+    DImgLoaderSettings*  PGFOptions                 = nullptr;
 
 #ifdef HAVE_X265
 
-    DImgLoaderSettings*  HEIFOptions;
+    DImgLoaderSettings*  HEIFOptions                = nullptr;
 
 #endif // HAVE_X265
 
-    DImgLoaderSettings*  JXLOptions;
-    DImgLoaderSettings*  WEBPOptions;
-    DImgLoaderSettings*  AVIFOptions;
-    QCheckBox*           showImageSettingsDialog;
+    DImgLoaderSettings*  JXLOptions                 = nullptr;
+    DImgLoaderSettings*  WEBPOptions                = nullptr;
+    DImgLoaderSettings*  AVIFOptions                = nullptr;
+    QCheckBox*           showImageSettingsDialog    = nullptr;
 };
 
 const QString SetupIOFiles::Private::configGroupName(QLatin1String("ImageViewer Settings"));

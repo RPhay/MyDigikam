@@ -48,37 +48,26 @@ class Q_DECL_HIDDEN SetupRaw::Private
 {
 public:
 
-    explicit Private()
-      : tab             (nullptr),
-        behaviorPanel   (nullptr),
-        settingsPanel   (nullptr),
-        openSimple      (nullptr),
-        openDefault     (nullptr),
-        openTool        (nullptr),
-        rawImportTool   (nullptr),
-        toolAbout       (nullptr),
-        rawSettings     (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString  configGroupName;
     static const QString  configUseRawImportToolEntry;
     static const QString  configRawImportToolIidEntry;
     static const QString  nativeRawImportToolIid;
 
-    QTabWidget*           tab;
+    QTabWidget*           tab           = nullptr;
 
-    QWidget*              behaviorPanel;
-    QWidget*              settingsPanel;
+    QWidget*              behaviorPanel = nullptr;
+    QWidget*              settingsPanel = nullptr;
 
-    QRadioButton*         openSimple;
-    QRadioButton*         openDefault;
-    QRadioButton*         openTool;
+    QRadioButton*         openSimple    = nullptr;
+    QRadioButton*         openDefault   = nullptr;
+    QRadioButton*         openTool      = nullptr;
 
-    QComboBox*            rawImportTool;
-    QPushButton*          toolAbout;
+    QComboBox*            rawImportTool = nullptr;
+    QPushButton*          toolAbout     = nullptr;
 
-    DRawDecoderWidget*    rawSettings;
+    DRawDecoderWidget*    rawSettings   = nullptr;
 };
 
 const QString SetupRaw::Private::configGroupName(QLatin1String("ImageViewer Settings"));

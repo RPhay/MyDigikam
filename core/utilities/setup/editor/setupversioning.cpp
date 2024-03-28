@@ -48,56 +48,35 @@ class Q_DECL_HIDDEN SetupVersioning::Private
 {
 public:
 
-    explicit Private()
-        : tab                   (nullptr),
-          nonDestructivePanel   (nullptr),
-          workspaceGB           (nullptr),
-          closingGB             (nullptr),
-          snapshotGB            (nullptr),
-          viewGB                (nullptr),
-          enableNonDestructive  (nullptr),
-          snapshotAfterRaw      (nullptr),
-          snapshotSession       (nullptr),
-          snapshotComplex       (nullptr),
-          viewShowOriginal      (nullptr),
-          viewShowSnapshots     (nullptr),
-          formatBox             (nullptr),
-          askToSave             (nullptr),
-          autoSave              (nullptr),
-          infoNonDestructive    (nullptr),
-          infoFormat            (nullptr),
-          infoSnapshot          (nullptr),
-          infoView              (nullptr)
-    {
-    }
+    Private() = default;
 
-    QTabWidget*    tab;
+    QTabWidget*    tab                  = nullptr;
 
-    QWidget*       nonDestructivePanel;
+    QWidget*       nonDestructivePanel  = nullptr;
 
-    QGroupBox*     workspaceGB;
-    QGroupBox*     closingGB;
-    QGroupBox*     snapshotGB;
-    QGroupBox*     viewGB;
+    QGroupBox*     workspaceGB          = nullptr;
+    QGroupBox*     closingGB            = nullptr;
+    QGroupBox*     snapshotGB           = nullptr;
+    QGroupBox*     viewGB               = nullptr;
 
-    QCheckBox*     enableNonDestructive;
+    QCheckBox*     enableNonDestructive = nullptr;
 
-    QCheckBox*     snapshotAfterRaw;
-    QCheckBox*     snapshotSession;
-    QCheckBox*     snapshotComplex;
+    QCheckBox*     snapshotAfterRaw     = nullptr;
+    QCheckBox*     snapshotSession      = nullptr;
+    QCheckBox*     snapshotComplex      = nullptr;
 
-    QCheckBox*     viewShowOriginal;
-    QCheckBox*     viewShowSnapshots;
+    QCheckBox*     viewShowOriginal     = nullptr;
+    QCheckBox*     viewShowSnapshots    = nullptr;
 
-    QComboBox*     formatBox;
+    QComboBox*     formatBox            = nullptr;
 
-    QRadioButton*  askToSave;
-    QRadioButton*  autoSave;
+    QRadioButton*  askToSave            = nullptr;
+    QRadioButton*  autoSave             = nullptr;
 
-    QPushButton*   infoNonDestructive;
-    QPushButton*   infoFormat;
-    QPushButton*   infoSnapshot;
-    QPushButton*   infoView;
+    QPushButton*   infoNonDestructive   = nullptr;
+    QPushButton*   infoFormat           = nullptr;
+    QPushButton*   infoSnapshot         = nullptr;
+    QPushButton*   infoView             = nullptr;
 };
 
 SetupVersioning::SetupVersioning(QWidget* const parent)

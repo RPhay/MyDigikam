@@ -50,21 +50,7 @@ class Q_DECL_HIDDEN SetupEditorIface::Private
 {
 public:
 
-    explicit Private()
-      : themebackgroundColor(nullptr),
-        expoIndicatorMode   (nullptr),
-        restoreSettings     (nullptr),
-        expoPreview         (nullptr),
-        colorBox            (nullptr),
-        backgroundColor     (nullptr),
-        underExposureColor  (nullptr),
-        overExposureColor   (nullptr),
-        expoPreviewHisto    (nullptr),
-        fullScreenSettings  (nullptr),
-        underExposurePcents (nullptr),
-        overExposurePcents  (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString  configGroupName;
     static const QString  configUseThemeBackgroundColorEntry;
@@ -76,25 +62,25 @@ public:
     static const QString  configExpoIndicatorModeEntry;
     static const QString  configRestoreSettingsEntry;
 
-    QCheckBox*            themebackgroundColor;
-    QCheckBox*            expoIndicatorMode;
-    QCheckBox*            restoreSettings;
+    QCheckBox*            themebackgroundColor  = nullptr;
+    QCheckBox*            expoIndicatorMode     = nullptr;
+    QCheckBox*            restoreSettings       = nullptr;
 
-    QLabel*               expoPreview;
+    QLabel*               expoPreview           = nullptr;
 
-    DHBox*                colorBox;
-    DColorSelector*       backgroundColor;
-    DColorSelector*       underExposureColor;
-    DColorSelector*       overExposureColor;
+    DHBox*                colorBox              = nullptr;
+    DColorSelector*       backgroundColor       = nullptr;
+    DColorSelector*       underExposureColor    = nullptr;
+    DColorSelector*       overExposureColor     = nullptr;
 
-    HistogramWidget*      expoPreviewHisto;
+    HistogramWidget*      expoPreviewHisto      = nullptr;
 
-    FullScreenSettings*   fullScreenSettings;
+    FullScreenSettings*   fullScreenSettings    = nullptr;
 
     DImg                  preview;
 
-    DDoubleNumInput*      underExposurePcents;
-    DDoubleNumInput*      overExposurePcents;
+    DDoubleNumInput*      underExposurePcents   = nullptr;
+    DDoubleNumInput*      overExposurePcents    = nullptr;
 };
 
 const QString SetupEditorIface::Private::configGroupName(QLatin1String("ImageViewer Settings"));
