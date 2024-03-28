@@ -54,22 +54,9 @@ public:
 
     Private() = default;
 
-    const QStringList      downloadUrls     = QStringList
-                                              (
-                                                {
-                                                 QLatin1String("https://files.kde.org/digikam/"),
-                                                 QLatin1String("https://mirror.faigner.de/kde/files/digikam/"),
-                                                 QLatin1String("https://kde-applicationdata.mirrors.omnilance.com/digikam/"),
-                                                 QLatin1String("https://mirrors.ocf.berkeley.edu/kde-applicationdata/digikam/")
-                                                }
-                                              );
-
-    QString                error;
-
     QList<DownloadInfo>    files;
     DownloadInfo           currentInfo;
 
-    int                    mirrorIndex      = 0;
     int                    redirects        = 0;
     int                    total            = 0;
     int                    count            = 0;
@@ -87,6 +74,9 @@ public:
     QNetworkAccessManager* netMngr          = nullptr;
 
     SystemSettings         system           = SystemSettings(qApp->applicationName());
+
+    QString                error;
+    const QString          downloadUrl      = QLatin1String("https://files.kde.org/digikam/");
 };
 
 FilesDownloader::FilesDownloader(QWidget* const parent)
@@ -237,14 +227,13 @@ void FilesDownloader::slotDownload()
                  i18nc("@title:window", "Download Error"),
                  i18n("An error occurred during the download.\n\n"
                       "File: %1\n\n%2\n\n"
-                      "You can try again with an alternative "
-                      "mirror server or continue the "
-                      "download on the next startup.",
+                      "You can try again or continue the "
+                      "download at the next start.",
                       d->currentInfo.name, d->error),
                  QMessageBox::Yes | QMessageBox::Cancel,
                  qApp->activeWindow());
 
-        msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Try Alternate"));
+        msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Try Again"));
         msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
 
         int result = msgBox->exec();
@@ -253,13 +242,6 @@ void FilesDownloader::slotDownload()
         if (result == QMessageBox::Yes)
         {
             d->error.clear();
-            d->mirrorIndex++;
-
-            if (d->mirrorIndex >= d->downloadUrls.size())
-            {
-                d->mirrorIndex = 0;
-            }
-
             download();
 
             return;
@@ -280,8 +262,9 @@ void FilesDownloader::download()
                 this, SLOT(slotDownloaded(QNetworkReply*)));
     }
 
-    QUrl request(d->downloadUrls.at(d->mirrorIndex) +
-                 d->currentInfo.path + d->currentInfo.name);
+    QUrl request(d->downloadUrl      +
+                 d->currentInfo.path +
+                 d->currentInfo.name);
 
     d->redirects = 0;
     createRequest(request);
