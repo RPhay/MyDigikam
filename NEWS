@@ -24,7 +24,7 @@ BUGFIXES:
 015 ==> 484456 - C:\program is not recognized as an internal or external command.
 016 ==> 484373 - Wrong time/timezone data.
 017 ==> 484610 - Advanced search fails to find photos from Ricoh GR II when searching by 'Make'.
-018 ==> 
+018 ==> 478075 - All database operations are far slower than with previous version.
 019 ==> 
 020 ==> 
 021 ==> 
