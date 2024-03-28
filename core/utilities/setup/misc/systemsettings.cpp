@@ -57,17 +57,17 @@ void SystemSettings::readSettings()
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
-    #ifdef Q_OS_LINUX
+#   ifdef Q_OS_LINUX
 
     useHighDpiScaling    = settings.value(QLatin1String("useHighDpiScaling"), true).toBool();
     useHighDpiPixmaps    = settings.value(QLatin1String("useHighDpiPixmaps"), true).toBool();
 
-    #else
+#   else
 
     useHighDpiScaling    = settings.value(QLatin1String("useHighDpiScaling"), false).toBool();
     useHighDpiPixmaps    = settings.value(QLatin1String("useHighDpiPixmaps"), false).toBool();
 
-    #endif
+#   endif
 
 #endif
 

@@ -69,96 +69,54 @@ class Q_DECL_HIDDEN SetupMisc::Private
 {
 public:
 
-    explicit Private()
-      : tab                                     (nullptr),
-        updateTypeLabel                         (nullptr),
-        updateWithDebug                         (nullptr),
-        sidebarTypeLabel                        (nullptr),
-        albumDateSourceLabel                    (nullptr),
-        stringComparisonTypeLabel               (nullptr),
-        applicationStyleLabel                   (nullptr),
-        applicationIconLabel                    (nullptr),
-        minSimilarityBoundLabel                 (nullptr),
-        showSplashCheck                         (nullptr),
-        showTrashDeleteDialogCheck              (nullptr),
-        showPermanentDeleteDialogCheck          (nullptr),
-        sidebarApplyDirectlyCheck               (nullptr),
-        useNativeFileDialogCheck                (nullptr),
-        drawFramesToGroupedCheck                (nullptr),
-        expandNewCurrentItemCheck               (nullptr),
-        scrollItemToCenterCheck                 (nullptr),
-        showOnlyPersonTagsInPeopleSidebarCheck  (nullptr),
-        scanAtStart                             (nullptr),
-        useFastScan                             (nullptr),
-        detectFaces                             (nullptr),
-        cleanAtStart                            (nullptr),
-        updateType                              (nullptr),
-        sidebarType                             (nullptr),
-        albumDateSource                         (nullptr),
-        stringComparisonType                    (nullptr),
-        applicationStyle                        (nullptr),
-        applicationIcon                         (nullptr),
-        applicationFont                         (nullptr),
-        minimumSimilarityBound                  (nullptr),
-        systemSettingsWidget                    (nullptr),
+    Private() = default;
+
+    QTabWidget*               tab                                       = nullptr;
+
+    QLabel*                   updateTypeLabel                           = nullptr;
+    QCheckBox*                updateWithDebug                           = nullptr;
+
+    QLabel*                   sidebarTypeLabel                          = nullptr;
+    QLabel*                   albumDateSourceLabel                      = nullptr;
+    QLabel*                   stringComparisonTypeLabel                 = nullptr;
+    QLabel*                   applicationStyleLabel                     = nullptr;
+    QLabel*                   applicationIconLabel                      = nullptr;
+    QLabel*                   minSimilarityBoundLabel                   = nullptr;
+
+    QCheckBox*                showSplashCheck                           = nullptr;
+    QCheckBox*                showTrashDeleteDialogCheck                = nullptr;
+    QCheckBox*                showPermanentDeleteDialogCheck            = nullptr;
+    QCheckBox*                sidebarApplyDirectlyCheck                 = nullptr;
+    QCheckBox*                useNativeFileDialogCheck                  = nullptr;
+    QCheckBox*                drawFramesToGroupedCheck                  = nullptr;
+    QCheckBox*                expandNewCurrentItemCheck                 = nullptr;
+    QCheckBox*                scrollItemToCenterCheck                   = nullptr;
+    QCheckBox*                showOnlyPersonTagsInPeopleSidebarCheck    = nullptr;
+    QCheckBox*                scanAtStart                               = nullptr;
+    QCheckBox*                useFastScan                               = nullptr;
+    QCheckBox*                detectFaces                               = nullptr;
+    QCheckBox*                cleanAtStart                              = nullptr;
+
+    QComboBox*                updateType                                = nullptr;
+    QComboBox*                sidebarType                               = nullptr;
+    QComboBox*                albumDateSource                           = nullptr;
+    QComboBox*                stringComparisonType                      = nullptr;
+    QComboBox*                applicationStyle                          = nullptr;
+    QComboBox*                applicationIcon                           = nullptr;
+    DFontSelect*              applicationFont                           = nullptr;
+
+    QSpinBox*                 minimumSimilarityBound                    = nullptr;
+
+    SystemSettingsWidget*     systemSettingsWidget                      = nullptr;
 
 #ifdef HAVE_SONNET
 
-        spellCheckWidget                        (nullptr),
+    SpellCheckConfig*         spellCheckWidget                          = nullptr;
 
 #endif
 
-        localizeWidget                          (nullptr),
-        groupingButtons                         (QHash<int, QButtonGroup*>())
-    {
-    }
-
-    QTabWidget*               tab;
-
-    QLabel*                   updateTypeLabel;
-    QCheckBox*                updateWithDebug;
-
-    QLabel*                   sidebarTypeLabel;
-    QLabel*                   albumDateSourceLabel;
-    QLabel*                   stringComparisonTypeLabel;
-    QLabel*                   applicationStyleLabel;
-    QLabel*                   applicationIconLabel;
-    QLabel*                   minSimilarityBoundLabel;
-
-    QCheckBox*                showSplashCheck;
-    QCheckBox*                showTrashDeleteDialogCheck;
-    QCheckBox*                showPermanentDeleteDialogCheck;
-    QCheckBox*                sidebarApplyDirectlyCheck;
-    QCheckBox*                useNativeFileDialogCheck;
-    QCheckBox*                drawFramesToGroupedCheck;
-    QCheckBox*                expandNewCurrentItemCheck;
-    QCheckBox*                scrollItemToCenterCheck;
-    QCheckBox*                showOnlyPersonTagsInPeopleSidebarCheck;
-    QCheckBox*                scanAtStart;
-    QCheckBox*                useFastScan;
-    QCheckBox*                detectFaces;
-    QCheckBox*                cleanAtStart;
-
-    QComboBox*                updateType;
-    QComboBox*                sidebarType;
-    QComboBox*                albumDateSource;
-    QComboBox*                stringComparisonType;
-    QComboBox*                applicationStyle;
-    QComboBox*                applicationIcon;
-    DFontSelect*              applicationFont;
-
-    QSpinBox*                 minimumSimilarityBound;
-
-    SystemSettingsWidget*     systemSettingsWidget;
-
-#ifdef HAVE_SONNET
-
-    SpellCheckConfig*         spellCheckWidget;
-
-#endif
-
-    LocalizeConfig*           localizeWidget;
-    QHash<int, QButtonGroup*> groupingButtons;
+    LocalizeConfig*           localizeWidget                            = nullptr;
+    QHash<int, QButtonGroup*> groupingButtons                           = QHash<int, QButtonGroup*>();
 };
 
 } // namespace Digikam
