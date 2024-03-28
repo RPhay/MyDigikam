@@ -51,45 +51,27 @@ class Q_DECL_HIDDEN AdvancedMetadataTab::Private
 {
 public:
 
-    explicit Private()
-      : metadataType    (nullptr),
-        operationType   (nullptr),
-        addButton       (nullptr),
-        editButton      (nullptr),
-        deleteButton    (nullptr),
-        moveUpButton    (nullptr),
-        moveDownButton  (nullptr),
-        revertChanges   (nullptr),
-        saveProfile     (nullptr),
-        loadProfile     (nullptr),
-        resetButton     (nullptr),
-        unifyReadWrite  (nullptr),
-        readingAllTags  (nullptr),
-        namespaceView   (nullptr),
-        metadataTypeSize(0),
-        changed         (false)
-    {
-    }
+    Private() = default;
 
-    QComboBox*                  metadataType;
-    QComboBox*                  operationType;
-    QPushButton*                addButton;
-    QPushButton*                editButton;
-    QPushButton*                deleteButton;
-    QPushButton*                moveUpButton;
-    QPushButton*                moveDownButton;
-    QPushButton*                revertChanges;
-    QPushButton*                saveProfile;
-    QPushButton*                loadProfile;
-    QPushButton*                resetButton;
-    QCheckBox*                  unifyReadWrite;
-    QCheckBox*                  readingAllTags;
+    QComboBox*                  metadataType        = nullptr;
+    QComboBox*                  operationType       = nullptr;
+    QPushButton*                addButton           = nullptr;
+    QPushButton*                editButton          = nullptr;
+    QPushButton*                deleteButton        = nullptr;
+    QPushButton*                moveUpButton        = nullptr;
+    QPushButton*                moveDownButton      = nullptr;
+    QPushButton*                revertChanges       = nullptr;
+    QPushButton*                saveProfile         = nullptr;
+    QPushButton*                loadProfile         = nullptr;
+    QPushButton*                resetButton         = nullptr;
+    QCheckBox*                  unifyReadWrite      = nullptr;
+    QCheckBox*                  readingAllTags      = nullptr;
     QList<QStandardItemModel*>  models;
-    NamespaceListView*          namespaceView;
+    NamespaceListView*          namespaceView       = nullptr;
     DMetadataSettingsContainer  container;
-    int                         metadataTypeSize;
+    int                         metadataTypeSize    = 0;
 
-    bool                        changed;
+    bool                        changed             = false;
 };
 
 AdvancedMetadataTab::AdvancedMetadataTab(QWidget* const parent)

@@ -68,62 +68,62 @@ class Q_DECL_HIDDEN SetupMetadata::Private
 {
 public:
 
-    explicit Private();
+    Private() = default;
 
     void readSettings();
 
 public:
 
-    bool                 exifAutoRotateOriginal;
-    bool                 exifAutoRotateShowedInfo;
-    bool                 sidecarFileNameShowedInfo;
+    bool                 exifAutoRotateOriginal     = false;
+    bool                 exifAutoRotateShowedInfo   = false;
+    bool                 sidecarFileNameShowedInfo  = false;
 
-    QGroupBox*           fieldsGroup;
-    QGroupBox*           readWriteGroup;
-    QGroupBox*           rotationGroup;
-    QGroupBox*           rotationAdvGroup;
+    QGroupBox*           fieldsGroup                = nullptr;
+    QGroupBox*           readWriteGroup             = nullptr;
+    QGroupBox*           rotationGroup              = nullptr;
+    QGroupBox*           rotationAdvGroup           = nullptr;
 
-    QCheckBox*           saveTagsBox;
-    QCheckBox*           saveCommentsBox;
-    QCheckBox*           saveRatingBox;
-    QCheckBox*           savePickLabelBox;
-    QCheckBox*           saveColorLabelBox;
-    QCheckBox*           saveDateTimeBox;
-    QCheckBox*           saveTemplateBox;
-    QCheckBox*           saveFaceTags;
-    QCheckBox*           savePosition;
+    QCheckBox*           saveTagsBox                = nullptr;
+    QCheckBox*           saveCommentsBox            = nullptr;
+    QCheckBox*           saveRatingBox              = nullptr;
+    QCheckBox*           savePickLabelBox           = nullptr;
+    QCheckBox*           saveColorLabelBox          = nullptr;
+    QCheckBox*           saveDateTimeBox            = nullptr;
+    QCheckBox*           saveTemplateBox            = nullptr;
+    QCheckBox*           saveFaceTags               = nullptr;
+    QCheckBox*           savePosition               = nullptr;
 
-    QCheckBox*           useLazySync;
-    QCheckBox*           writeWithExifToolBox;
-    QCheckBox*           writeDngFilesBox;
-    QCheckBox*           writeRawFilesBox;
-    QLabel*              writeWithExifToolLabel;
-    QCheckBox*           writeXMPSidecarBox;
-    QCheckBox*           readXMPSidecarBox;
-    QCheckBox*           sidecarFileNameBox;
-    QCheckBox*           updateFileTimeStampBox;
-    QCheckBox*           rescanImageIfModifiedBox;
-    QComboBox*           writingModeCombo;
+    QCheckBox*           useLazySync                = nullptr;
+    QCheckBox*           writeWithExifToolBox       = nullptr;
+    QCheckBox*           writeDngFilesBox           = nullptr;
+    QCheckBox*           writeRawFilesBox           = nullptr;
+    QLabel*              writeWithExifToolLabel     = nullptr;
+    QCheckBox*           writeXMPSidecarBox         = nullptr;
+    QCheckBox*           readXMPSidecarBox          = nullptr;
+    QCheckBox*           sidecarFileNameBox         = nullptr;
+    QCheckBox*           updateFileTimeStampBox     = nullptr;
+    QCheckBox*           rescanImageIfModifiedBox   = nullptr;
+    QComboBox*           writingModeCombo           = nullptr;
 
-    QRadioButton*        rotateByFlag;
-    QRadioButton*        rotateByContents;
-    QCheckBox*           allowRotateByMetadata;
-    QCheckBox*           allowLossyRotate;
-    QCheckBox*           exifRotateBox;
-    QCheckBox*           exifSetOrientationBox;
+    QRadioButton*        rotateByFlag               = nullptr;
+    QRadioButton*        rotateByContents           = nullptr;
+    QCheckBox*           allowRotateByMetadata      = nullptr;
+    QCheckBox*           allowLossyRotate           = nullptr;
+    QCheckBox*           exifRotateBox              = nullptr;
+    QCheckBox*           exifSetOrientationBox      = nullptr;
 
-    QCheckBox*           saveToBalooBox;
-    QCheckBox*           readFromBalooBox;
+    QCheckBox*           saveToBalooBox             = nullptr;
+    QCheckBox*           readFromBalooBox           = nullptr;
 
-    QTabWidget*          tab;
-    QTabWidget*          displaySubTab;
+    QTabWidget*          tab                        = nullptr;
+    QTabWidget*          displaySubTab              = nullptr;
 
-    MetadataPanel*       tagsCfgPanel;
-    AdvancedMetadataTab* advTab;
+    MetadataPanel*       tagsCfgPanel               = nullptr;
+    AdvancedMetadataTab* advTab                     = nullptr;
 
-    ExifToolConfPanel*   exifToolView;
+    ExifToolConfPanel*   exifToolView               = nullptr;
 
-    QLineEdit*           extensionsEdit;
+    QLineEdit*           extensionsEdit             = nullptr;
 };
 
 } // namespace Digikam

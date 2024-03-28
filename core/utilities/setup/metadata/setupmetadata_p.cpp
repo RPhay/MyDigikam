@@ -20,51 +20,6 @@
 namespace Digikam
 {
 
-SetupMetadata::Private::Private()
-  : exifAutoRotateOriginal   (false),
-    exifAutoRotateShowedInfo (false),
-    sidecarFileNameShowedInfo(false),
-    fieldsGroup              (nullptr),
-    readWriteGroup           (nullptr),
-    rotationGroup            (nullptr),
-    rotationAdvGroup         (nullptr),
-    saveTagsBox              (nullptr),
-    saveCommentsBox          (nullptr),
-    saveRatingBox            (nullptr),
-    savePickLabelBox         (nullptr),
-    saveColorLabelBox        (nullptr),
-    saveDateTimeBox          (nullptr),
-    saveTemplateBox          (nullptr),
-    saveFaceTags             (nullptr),
-    savePosition             (nullptr),
-    useLazySync              (nullptr),
-    writeWithExifToolBox     (nullptr),
-    writeDngFilesBox         (nullptr),
-    writeRawFilesBox         (nullptr),
-    writeWithExifToolLabel   (nullptr),
-    writeXMPSidecarBox       (nullptr),
-    readXMPSidecarBox        (nullptr),
-    sidecarFileNameBox       (nullptr),
-    updateFileTimeStampBox   (nullptr),
-    rescanImageIfModifiedBox (nullptr),
-    writingModeCombo         (nullptr),
-    rotateByFlag             (nullptr),
-    rotateByContents         (nullptr),
-    allowRotateByMetadata    (nullptr),
-    allowLossyRotate         (nullptr),
-    exifRotateBox            (nullptr),
-    exifSetOrientationBox    (nullptr),
-    saveToBalooBox           (nullptr),
-    readFromBalooBox         (nullptr),
-    tab                      (nullptr),
-    displaySubTab            (nullptr),
-    tagsCfgPanel             (nullptr),
-    advTab                   (nullptr),
-    exifToolView             (nullptr),
-    extensionsEdit           (nullptr)
-{
-}
-
 void SetupMetadata::Private::readSettings()
 {
     MetaEngineSettings* const mSettings = MetaEngineSettings::instance();

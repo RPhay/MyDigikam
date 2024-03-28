@@ -71,7 +71,6 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-
     d->readSettings();
     slotSidecarReadWriteToggled();
     slotWriteWithExifToolToggled(d->writeWithExifToolBox->isChecked());
