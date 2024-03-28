@@ -68,8 +68,7 @@ class Q_DECL_HIDDEN LightTableItemListModel : public ItemListModel
 public:
 
     explicit LightTableItemListModel(QWidget* const parent)
-        : ItemListModel(parent),
-          m_exclusive  (false)
+        : ItemListModel(parent)
     {
     }
 
@@ -146,7 +145,7 @@ protected:
 
     QSet<int> m_leftIndexes;
     QSet<int> m_rightIndexes;
-    bool      m_exclusive;
+    bool      m_exclusive    = false;
 };
 
 class Q_DECL_HIDDEN LightTableThumbBar::Private

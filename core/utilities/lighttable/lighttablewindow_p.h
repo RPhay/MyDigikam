@@ -105,47 +105,7 @@ class Q_DECL_HIDDEN LightTableWindow::Private
 
 public:
 
-    Private()
-      : autoLoadOnRightPanel        (true),
-        autoSyncPreview             (true),
-        fromLeftPreview             (true),
-        setItemLeftAction           (nullptr),
-        setItemRightAction          (nullptr),
-        clearListAction             (nullptr),
-        editItemAction              (nullptr),
-        removeItemAction            (nullptr),
-        fileDeleteAction            (nullptr),
-        fileDeleteFinalAction       (nullptr),
-        leftZoomPlusAction          (nullptr),
-        leftZoomMinusAction         (nullptr),
-        leftZoomTo100percents       (nullptr),
-        leftZoomFitToWindowAction   (nullptr),
-        rightZoomPlusAction         (nullptr),
-        rightZoomMinusAction        (nullptr),
-        rightZoomTo100percents      (nullptr),
-        rightZoomFitToWindowAction  (nullptr),
-        forwardAction               (nullptr),
-        backwardAction              (nullptr),
-        firstAction                 (nullptr),
-        lastAction                  (nullptr),
-        showBarAction               (nullptr),
-        viewCMViewAction            (nullptr),
-        syncPreviewAction           (nullptr),
-        navigateByPairAction        (nullptr),
-        clearOnCloseAction          (nullptr),
-        leftFileName                (nullptr),
-        rightFileName               (nullptr),
-        hSplitter                   (nullptr),
-        barViewDock                 (nullptr),
-        thumbView                   (nullptr),
-        previewView                 (nullptr),
-        leftZoomBar                 (nullptr),
-        rightZoomBar                (nullptr),
-        statusProgressBar           (nullptr),
-        leftSideBar                 (nullptr),
-        rightSideBar                (nullptr)
-    {
-    }
+    Private() = default;
 
     void addPageUpDownActions(const LightTableWindow* const q, QWidget* const w)
     {
@@ -157,54 +117,54 @@ public:
 
 public:
 
-    bool                      autoLoadOnRightPanel;
-    bool                      autoSyncPreview;
-    bool                      fromLeftPreview;
+    bool                      autoLoadOnRightPanel          = true;
+    bool                      autoSyncPreview               = true;
+    bool                      fromLeftPreview               = true;
 
-    QAction*                  setItemLeftAction;
-    QAction*                  setItemRightAction;
-    QAction*                  clearListAction;
-    QAction*                  editItemAction;
-    QAction*                  removeItemAction;
-    QAction*                  fileDeleteAction;
-    QAction*                  fileDeleteFinalAction;
-    QAction*                  leftZoomPlusAction;
-    QAction*                  leftZoomMinusAction;
-    QAction*                  leftZoomTo100percents;
-    QAction*                  leftZoomFitToWindowAction;
-    QAction*                  rightZoomPlusAction;
-    QAction*                  rightZoomMinusAction;
-    QAction*                  rightZoomTo100percents;
-    QAction*                  rightZoomFitToWindowAction;
+    QAction*                  setItemLeftAction             = nullptr;
+    QAction*                  setItemRightAction            = nullptr;
+    QAction*                  clearListAction               = nullptr;
+    QAction*                  editItemAction                = nullptr;
+    QAction*                  removeItemAction              = nullptr;
+    QAction*                  fileDeleteAction              = nullptr;
+    QAction*                  fileDeleteFinalAction         = nullptr;
+    QAction*                  leftZoomPlusAction            = nullptr;
+    QAction*                  leftZoomMinusAction           = nullptr;
+    QAction*                  leftZoomTo100percents         = nullptr;
+    QAction*                  leftZoomFitToWindowAction     = nullptr;
+    QAction*                  rightZoomPlusAction           = nullptr;
+    QAction*                  rightZoomMinusAction          = nullptr;
+    QAction*                  rightZoomTo100percents        = nullptr;
+    QAction*                  rightZoomFitToWindowAction    = nullptr;
 
-    QAction*                  forwardAction;
-    QAction*                  backwardAction;
-    QAction*                  firstAction;
-    QAction*                  lastAction;
+    QAction*                  forwardAction                 = nullptr;
+    QAction*                  backwardAction                = nullptr;
+    QAction*                  firstAction                   = nullptr;
+    QAction*                  lastAction                    = nullptr;
 
-    QAction*                  showBarAction;
-    QAction*                  viewCMViewAction;
-    QAction*                  syncPreviewAction;
-    QAction*                  navigateByPairAction;
-    QAction*                  clearOnCloseAction;
+    QAction*                  showBarAction                 = nullptr;
+    QAction*                  viewCMViewAction              = nullptr;
+    QAction*                  syncPreviewAction             = nullptr;
+    QAction*                  navigateByPairAction          = nullptr;
+    QAction*                  clearOnCloseAction            = nullptr;
 
-    DAdjustableLabel*         leftFileName;     ///< File name loaded in left preview and show on status bar.
-    DAdjustableLabel*         rightFileName;    ///< File name loaded in right preview and show on status bar.
+    DAdjustableLabel*         leftFileName                  = nullptr;     ///< File name loaded in left preview and show on status bar.
+    DAdjustableLabel*         rightFileName                 = nullptr;     ///< File name loaded in right preview and show on status bar.
 
-    SidebarSplitter*          hSplitter;
-    ThumbBarDock*             barViewDock;
+    SidebarSplitter*          hSplitter                     = nullptr;
+    ThumbBarDock*             barViewDock                   = nullptr;
 
-    LightTableThumbBar*       thumbView;        ///< Top level view to host thumbar.
+    LightTableThumbBar*       thumbView                     = nullptr;     ///< Top level view to host thumbar.
 
-    LightTableView*           previewView;      ///< Central view including left and right pannels.
+    LightTableView*           previewView                   = nullptr;     ///< Central view including left and right pannels.
 
-    DZoomBar*                 leftZoomBar;      ///< Zoom bar to control the left preview and show on status bar.
-    DZoomBar*                 rightZoomBar;     ///< Zoom bar to control the right preview and show on status bar.
+    DZoomBar*                 leftZoomBar                   = nullptr;     ///< Zoom bar to control the left preview and show on status bar.
+    DZoomBar*                 rightZoomBar                  = nullptr;     ///< Zoom bar to control the right preview and show on status bar.
 
-    StatusProgressBar*        statusProgressBar;
+    StatusProgressBar*        statusProgressBar             = nullptr;
 
-    ItemPropertiesSideBarDB*  leftSideBar;      ///< Side bar to display properties of the left preview and show on the left side..
-    ItemPropertiesSideBarDB*  rightSideBar;     ///< Side bar to display properties of the right preview and show on the right side..
+    ItemPropertiesSideBarDB*  leftSideBar                   = nullptr;     ///< Side bar to display properties of the left preview and show on the left side..
+    ItemPropertiesSideBarDB*  rightSideBar                  = nullptr;     ///< Side bar to display properties of the right preview and show on the right side..
 };
 
 } // namespace Digikam
