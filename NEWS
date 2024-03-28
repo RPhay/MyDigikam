@@ -31,7 +31,7 @@ BUGFIXES:
 022 ==> 478373 - digiKam Version 8.2 start slowly.
 023 ==> 478396 - digiKam after Update 8.2.0 very slow.
 024 ==> 454580 - Persistent message to download face recognition on startup.
-025 ==> 
+025 ==> 479294 - Error exporting to Google Photos.
 026 ==> 
 027 ==> 
 028 ==> 
