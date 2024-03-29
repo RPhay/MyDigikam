@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-28 02:05+0000\n"
+"POT-Creation-Date: 2024-03-29 01:58+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3294,7 +3294,7 @@ msgstr "Hautapena"
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:888
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
 msgid "Delete"
 msgstr "Ezabatu"
@@ -4386,31 +4386,31 @@ msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
 msgstr "FFmpeg konfigurazioa"
 
-#: core/app/views/utils/componentsinfodlg.cpp:211
+#: core/app/views/utils/componentsinfodlg.cpp:214
 #, kde-format
 msgctxt "@item: component info"
 msgid "Video Decoders"
 msgstr "Bideo deskodetzaileak"
 
-#: core/app/views/utils/componentsinfodlg.cpp:223
+#: core/app/views/utils/componentsinfodlg.cpp:226
 #, kde-format
 msgctxt "@item: component info"
 msgid "Video Encoders"
 msgstr "Bideo kodetzaileak"
 
-#: core/app/views/utils/componentsinfodlg.cpp:238
+#: core/app/views/utils/componentsinfodlg.cpp:245
 #, kde-format
 msgctxt "@item: component info"
 msgid "Audio Decoders"
 msgstr "Audio deskodetzaileak"
 
-#: core/app/views/utils/componentsinfodlg.cpp:250
+#: core/app/views/utils/componentsinfodlg.cpp:257
 #, kde-format
 msgctxt "@item: component info"
 msgid "Audio Encoders"
 msgstr "Audio kodetzaileak"
 
-#: core/app/views/utils/componentsinfodlg.cpp:265
+#: core/app/views/utils/componentsinfodlg.cpp:276
 #, kde-format
 msgctxt "@item: component info"
 msgid "Supported Extensions"
@@ -30682,21 +30682,21 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "FFmpeg konfigurazioa"
 
-#: core/libs/dialogs/libsinfodlg.cpp:613
+#: core/libs/dialogs/libsinfodlg.cpp:620
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Bai"
 
-#: core/libs/dialogs/libsinfodlg.cpp:618
+#: core/libs/dialogs/libsinfodlg.cpp:625
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ez"
 
-#: core/libs/dialogs/libsinfodlg.cpp:623
+#: core/libs/dialogs/libsinfodlg.cpp:630
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -37828,7 +37828,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:257
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:138
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "Deskargatu"
@@ -44558,558 +44558,558 @@ msgstr ""
 "<b>Titulua: </b><p>%1</p><b>Balioa: </b><p>%2</p><b>Deskripzioa: </b><p>%3</"
 "p>"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:48
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:44
 #, kde-format
 msgid "AXS File Concatenation Protocol"
 msgstr "AXS fitxategiak kateatzeko protokoloa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:52
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:48
 #, kde-format
 msgid "Audio Interchange File Format"
 msgstr ""
 "AIFF - audio-trukerako fitxategiaren formatua (Audio Interchange File Format)"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:56
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:52
 #, kde-format
 msgid "Monkey's Audio"
 msgstr "Monkey's Audioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:60
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:56
 #, kde-format
 msgid "JPEG Meta Information Level 0"
 msgstr "JPEG meta-informazioaren  0 maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:64
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:60
 #, kde-format
 msgid "JPEG Meta Information Level 1"
 msgstr "JPEG meta-informazioaren  1. maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:68
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:64
 #, kde-format
 msgid "JPEG Meta Information Level 11"
 msgstr "JPEG meta-informazioaren  11. maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:72
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:68
 #, kde-format
 msgid "JPEG Meta Information Level 12"
 msgstr "JPEG meta-informazioaren  12. maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:76
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:72
 #, kde-format
 msgid "JPEG Meta Information Level 13"
 msgstr "JPEG meta-informazioaren  13. maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:80
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:76
 #, kde-format
 msgid "JPEG Meta Information Level 14"
 msgstr "JPEG meta-informazioaren  14. maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:84
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:80
 #, kde-format
 msgid "JPEG Meta Information Level 15"
 msgstr "JPEG meta-informazioaren  15. maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:88
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:84
 #, kde-format
 msgid "JPEG Meta Information Level 4"
 msgstr "JPEG meta-informazioaren  4. maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:92
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:88
 #, kde-format
 msgid "JPEG Meta Information Level 5"
 msgstr "JPEG meta-informazioaren  5. maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:96
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:92
 #, kde-format
 msgid "JPEG Meta Information Level 6"
 msgstr "JPEG meta-informazioaren  6. maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:100
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:96
 #, kde-format
 msgid "JPEG Meta Information Level 8"
 msgstr "JPEG meta-informazioaren  8. maila"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:104
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:100
 #, kde-format
 msgid "Microsoft Advanced Systems Format"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:108
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:104
 #, kde-format
 msgid "Audible Audiobook"
 msgstr "Audible Audio-liburua"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:112
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:108
 #, kde-format
 msgid "Canon Camera Information"
 msgstr "Canon kamararen informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:116
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:112
 #, fuzzy, kde-format
 #| msgid "Common File Information"
 msgid "Canon Recipe Data Information"
 msgstr "Fitxategi arrunten informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:120
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:116
 #, kde-format
 msgid "Derived Convenience Tags"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:124
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:120
 #, kde-format
 msgid "Digital Imaging and Communications in Medicine"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:128
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:124
 #, kde-format
 msgid "Digital Negative"
 msgstr "Negatibo digitala"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:132
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:128
 #, kde-format
 msgid "Digital Video"
 msgstr "Bideo digitala"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:136
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:132
 #, kde-format
 msgid "DjVu image"
 msgstr "DjVu irudia"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:140
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:136
 #, kde-format
 msgid "Photoshop Save for Web"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:144
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:140
 #, kde-format
 msgid "DOS/Windows executable"
 msgstr "DOS/Windows exekutagarria"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:148
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:144
 #, kde-format
 msgid "Exchangeable Image File Format metadata"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:152
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:148
 #, kde-format
 msgid "Flexible Image Transport System"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:156
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:152
 #, fuzzy, kde-format
 #| msgid "Audio Codec"
 msgid "Free Lossless Audio Codec"
 msgstr "Audio kodeka"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:160
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:156
 #, fuzzy, kde-format
 #| msgid "File/Image Information"
 msgid "FLIR Thermal Imaging Camera Information"
 msgstr "Fitxategiaren/Irudiaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:164
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:160
 #, fuzzy, kde-format
 #| msgid "File/Item Information"
 msgid "File System Information"
 msgstr "Fitxategi/Irudiaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:168
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:164
 #, fuzzy, kde-format
 #| msgid "Common File Information"
 msgid "Macromedia/Adobe Flash Information"
 msgstr "Fitxategi arrunten informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:172
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:168
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgid "FlashPix Information"
 msgstr "Informations de légende"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:176
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:172
 #, fuzzy, kde-format
 #| msgid "Found Tags"
 msgid "Font Name Tags"
 msgstr "Aurkitutako etiketak"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:180
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:176
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgid "FotoWare FotoStation Information"
 msgstr "Informations de légende"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:180
 #, kde-format
 msgid "Compuserve Graphics Interchange Format"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:188
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:184
 #, fuzzy, kde-format
 msgid "GNU Image Manipulation Program"
 msgstr "Irudiak Manipulatzeko GNU Programa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:192
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:188
 #, fuzzy, kde-format
 #| msgid "Tagged Image File Format (version 5.0)"
 msgid "Geolocated Tagged Image File Format"
 msgstr "TIFF (Tagged Image File Format version 5.0)"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:196
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:192
 #, fuzzy, kde-format
 #| msgid "No Tags"
 msgid "GoPro Tags"
 msgstr "Etiketarik ez"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:200
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:196
 #, fuzzy, kde-format
 #| msgid "File/Item Information"
 msgid "H.264 Video Streams Information"
 msgstr "Fitxategi/Irudiaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:204
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:200
 #, fuzzy, kde-format
 #| msgid "Hypertext Markup Language \"HTML\""
 msgid "HyperText Markup Language"
 msgstr "Langage de balisage hypertexte « HTML »"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:208
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:204
 #, kde-format
 msgid "International Color Consortium Color Profile"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:212
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:208
 #, fuzzy, kde-format
 #| msgid "Date and Time Information"
 msgid "ID3 And Lyrics3 information"
 msgstr "Informations sur la date et l'heure"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:216
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:212
 #, kde-format
 msgid "International Press Telecommunications Council"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:220
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:216
 #, kde-format
 msgid "ISO 9660 Disk Image"
 msgstr "ISO 9660 disko-irudia"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:224
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:220
 #, kde-format
 msgid "iTunes Cover Flow Artwork"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:228
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:224
 #, fuzzy, kde-format
 #| msgid "JPEG File Interchange"
 msgid "JPEG File Interchange Format"
 msgstr "JPEG File Interchange"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:232
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:228
 #, fuzzy, kde-format
 #| msgid "Photograph Properties"
 msgid "Joint Photographic Experts Group"
 msgstr "Argazkiaren propietateak"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:236
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:232
 #, kde-format
 msgid "JavaScript Object Notation"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:240
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:236
 #, kde-format
 msgid "Joint Photographic Experts Group 2000"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:244
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:240
 #, fuzzy, kde-format
 #| msgid "Microsoft Photo"
 msgid "Microsoft Shell Link"
 msgstr "Microsoft Photo"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:248
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:244
 #, fuzzy, kde-format
 msgid "Creo Leaf Capture Information"
 msgstr "Informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:252
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:248
 #, kde-format
 msgid "Lytro Light Field Picture Info"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:256
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:252
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgid "MPEG-2 Transport Stream"
 msgstr "JPEG 2000 irudia"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:260
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:256
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgid "Meta Information Encapsulation"
 msgstr "Metadatuen informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:264
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:260
 #, fuzzy, kde-format
 msgid "Magick Image File Format"
 msgstr "Fitxategi-formatua"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:268
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:264
 #, kde-format
 msgid "Multiple-image Network Graphics"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:272
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:268
 #, kde-format
 msgid "JVC Canon and Panasonic Camcorders Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:276
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:272
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgid "Musepack Audio Information"
 msgstr "Metadatuen informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:280
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:276
 #, kde-format
 msgid "Motion Picture Experts Group"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:284
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:280
 #, kde-format
 msgid "CIPA Multi-Picture Format Specification"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:288
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:284
 #, fuzzy, kde-format
 msgid "Material Exchange Format"
 msgstr "%1|GPS trukatzeko formatua"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:292
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:288
 #, fuzzy, kde-format
 #| msgid "Progress Information"
 msgid "Maker Notes Information"
 msgstr "Aurrerapenaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:296
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:292
 #, fuzzy, kde-format
 #| msgid "Audio/Video Information"
 msgid "Matroska Audio/Video/Subtitle Information"
 msgstr "Audio/bideoaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:300
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:296
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgid "Meta Information"
 msgstr "Metadatuak"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:304
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:300
 #, kde-format
 msgid "Ogg Bitstream Container"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:308
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:304
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgid "Open Extended Range"
 msgstr "Ireki fitxategi-kudeatzailean"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:312
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:308
 #, fuzzy, kde-format
 msgid "Ogg Opus Audio"
 msgstr "Ogg Opus audio"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:316
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:312
 #, fuzzy, kde-format
 #| msgid "Portable Document File [*.PDF] Adobe"
 msgid "Adobe Portable Document Format"
 msgstr "Adobe PDF (Portable Document File) [*.PDF]"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:320
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:316
 #, fuzzy, kde-format
 msgid "Apple Picture Information"
 msgstr "Gailuaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:324
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:320
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Apple Property List"
 msgstr "Fitxategiaren propietateak"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:328
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:324
 #, fuzzy, kde-format
 msgid "Portable Network Graphics"
 msgstr "Irudi-fitxategiak"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:332
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:328
 #, fuzzy, kde-format
 #| msgid "Light Source Information"
 msgid "Paint Shop Pro Information"
 msgstr "Informations sur la source de lumière"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:336
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:332
 #, kde-format
 msgid ""
 "Palm database, Mobipocket electronic books, and Amazon Kindle Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:340
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:336
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgid "Panasonic RAW 2 Information"
 msgstr "Informations de légende"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:344
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:340
 #, fuzzy, kde-format
 #| msgid "Date and Time Information"
 msgid "Streaming Parrot Drone Video Information"
 msgstr "Informations sur la date et l'heure"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:348
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:344
 #, fuzzy, kde-format
 #| msgid "Photo-CD Image-Pac"
 msgid "Kodak Photo CD Image Pac"
 msgstr "Photo-CD Image-Pac"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:352
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:348
 #, fuzzy, kde-format
 #| msgid "Photograph Information"
 msgid "Photo Mechanic Trailer Information"
 msgstr "Argazkiaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:356
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:352
 #, fuzzy, kde-format
 #| msgid "Photograph Information"
 msgid "Adobe Photoshop Information"
 msgstr "Argazkiaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:360
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:356
 #, fuzzy, kde-format
 #| msgid "Photograph Information"
 msgid "PostScript Information"
 msgstr "Argazkiaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:364
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:360
 #, fuzzy, kde-format
 msgid "PrintIM Information"
 msgstr "Informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:368
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:364
 #, fuzzy, kde-format
 #| msgid "Audio/Video Information"
 msgid "Apple QuickTime Movie Information"
 msgstr "Audio/bideoaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:372
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:368
 #, fuzzy, kde-format
 #| msgid "Import Information"
 msgid "FujiFilm RAW Format Information"
 msgstr "Inportatu informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:376
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:372
 #, fuzzy, kde-format
 #| msgid "Audio Interchange File Format AIFF"
 msgid "Resource Interchange File Format Information"
 msgstr "AIFF (Audio Interchange File Format)"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:380
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:376
 #, kde-format
 msgid "Mac OS Resource"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:384
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:380
 #, fuzzy, kde-format
 #| msgid "File Format"
 msgid "Rich Text Format"
 msgstr "Testu aberastuko formatua"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:388
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:384
 #, kde-format
 msgid "RGBE High Dynamic-Range"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:392
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:388
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Rawzor Image Information"
 msgstr "Irudiaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:396
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:392
 #, fuzzy, kde-format
 #| msgid "Audio/Video Information"
 msgid "Real Media/Video Information"
 msgstr "Audio/bideoaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:400
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:396
 #, fuzzy, kde-format
 #| msgid "Audio/Video Information"
 msgid "Redcode RAW Video Information"
 msgstr "Audio/bideoaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:404
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:400
 #, fuzzy, kde-format
 msgid "Scalable Vector Graphics"
 msgstr "Bektore-Grafiko Eskalagarria"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:408
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:404
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Sigma/Foveon RAW Information"
 msgstr "Irudiaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:412
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:408
 #, fuzzy, kde-format
 msgid "Sony Cameras Information"
 msgstr "Informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:416
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:412
 #, fuzzy, kde-format
 #| msgid "File/Image Information"
 msgid "Stereo Still Image Information"
 msgstr "Fitxategiaren/Irudiaren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:420
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:416
 #, kde-format
 msgid "Ogg Theora Video Specification"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:424
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:420
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgid "BitTorrent Description Information"
 msgstr "Informations de légende"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:428
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:424
 #, fuzzy, kde-format
 msgid "Trailer Information"
 msgstr "Kameraren informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:432
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:428
 #, fuzzy, kde-format
 msgid "Virtual Card Information"
 msgstr "Informazioa"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:436
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:432
 #, fuzzy, kde-format
 #| msgid "Location"
 msgid "Ogg Vorbis Specification"
 msgstr "Kokalekua"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:440
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:436
 #, kde-format
 msgid "Windows Recorded TV Show Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:444
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:440
 #, fuzzy, kde-format
 #| msgid "Hypertext Markup Language \"HTML\""
 msgid "Extensible Markup Language"
 msgstr "Langage de balisage hypertexte « HTML »"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:448
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:444
 #, kde-format
 msgid "Extensible Metadata Platform"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:452
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:448
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "ZIP Archive Information"
@@ -58301,9 +58301,9 @@ msgstr "Zeelanda Berria"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
-#: core/utilities/lighttable/lighttablethumbbar.cpp:259
+#: core/utilities/lighttable/lighttablethumbbar.cpp:258
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:426
 #, kde-format
 msgid "Edit"
 msgstr "Editatu"
@@ -62316,56 +62316,56 @@ msgid "New image format:"
 msgstr "Irudiaren formatu berria:"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:82
-#: core/utilities/setup/editor/setupversioning.cpp:150
+#: core/utilities/setup/editor/setupversioning.cpp:129
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "PNG"
 msgstr "LibPNG"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:83
-#: core/utilities/setup/editor/setupversioning.cpp:149
+#: core/utilities/setup/editor/setupversioning.cpp:128
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "TIFF"
 msgstr "LibTIFF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:84
-#: core/utilities/setup/editor/setupversioning.cpp:151
+#: core/utilities/setup/editor/setupversioning.cpp:130
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "PGF"
 msgstr "LibPGF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:88
-#: core/utilities/setup/editor/setupversioning.cpp:155
+#: core/utilities/setup/editor/setupversioning.cpp:134
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG-2000"
 msgstr "JPEG 2000 irudia"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:94
-#: core/utilities/setup/editor/setupversioning.cpp:161
+#: core/utilities/setup/editor/setupversioning.cpp:140
 #, kde-format
 msgctxt "@label:listbox"
 msgid "HEIF"
 msgstr ""
 
 #: core/utilities/import/widgets/advancedsettings.cpp:102
-#: core/utilities/setup/editor/setupversioning.cpp:169
+#: core/utilities/setup/editor/setupversioning.cpp:148
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG-XL"
 msgstr "LibJPEG"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:109
-#: core/utilities/setup/editor/setupversioning.cpp:176
+#: core/utilities/setup/editor/setupversioning.cpp:155
 #, kde-format
 msgctxt "@label:listbox"
 msgid "WEBP"
 msgstr ""
 
 #: core/utilities/import/widgets/advancedsettings.cpp:116
-#: core/utilities/setup/editor/setupversioning.cpp:183
+#: core/utilities/setup/editor/setupversioning.cpp:162
 #, kde-format
 msgctxt "@label:listbox"
 msgid "AVIF"
@@ -62816,27 +62816,27 @@ msgstr "Ezarri erliebearen irabazia testura eta irudia batzean erabiltzeko."
 msgid "Drag and drop an image here"
 msgstr "Arrastatu eta jaregin irudia hona"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:257
+#: core/utilities/lighttable/lighttablethumbbar.cpp:256
 #, kde-format
 msgid "Show on left panel"
 msgstr "Erakutsi ezkerreko panelean"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:258
+#: core/utilities/lighttable/lighttablethumbbar.cpp:257
 #, kde-format
 msgid "Show on right panel"
 msgstr "Erakutsi eskuineko panelean"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:260
+#: core/utilities/lighttable/lighttablethumbbar.cpp:259
 #, kde-format
 msgid "Remove item"
 msgstr "Kendu elementua"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:261
+#: core/utilities/lighttable/lighttablethumbbar.cpp:260
 #, kde-format
 msgid "Clear all"
 msgstr "Garbitu dena"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:464
+#: core/utilities/lighttable/lighttablethumbbar.cpp:463
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Arrastatu eta jaregin irudia hona"
@@ -66805,43 +66805,43 @@ msgstr "Hautatu kategoria"
 msgid "Your collection will use this category:"
 msgstr "Zure bilduma berria izen honekin sortu da:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:136
+#: core/utilities/setup/downloader/filesdownloader.cpp:126
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "%1 fitxategia deskargatzen..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/downloader/filesdownloader.cpp:146
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Use Face Detection feature"
 msgstr "Aurpegia atzematea"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:158
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, fuzzy, kde-format
 #| msgid "Automatic Adjustment"
 msgid "Use Auto Tags Assignment feature"
 msgstr "Doitze automatikoa"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:230
+#: core/utilities/setup/downloader/filesdownloader.cpp:220
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Fitxategi guztiak ondo zama-jaitsi dira."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:237
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, fuzzy, kde-format
 #| msgid "Download error"
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Zama-jaiste errorea"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:238
+#: core/utilities/setup/downloader/filesdownloader.cpp:228
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -66850,37 +66850,37 @@ msgid ""
 "\n"
 "%2\n"
 "\n"
-"You can try again with an alternative mirror server or continue the download "
-"on the next startup."
+"You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:247
+#: core/utilities/setup/downloader/filesdownloader.cpp:236
 #, fuzzy, kde-format
+#| msgid "Try again"
 msgctxt "@action:button"
-msgid "Try Alternate"
-msgstr "Pinu apaingarria"
+msgid "Try Again"
+msgstr "Saiatu berriro"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:382
+#: core/utilities/setup/downloader/filesdownloader.cpp:365
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Egiaztapen-batura okerra da."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:406
+#: core/utilities/setup/downloader/filesdownloader.cpp:389
 #, fuzzy, kde-format
 msgid "File write error."
 msgstr "Idazteko akatsa"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:413
+#: core/utilities/setup/downloader/filesdownloader.cpp:396
 #, fuzzy, kde-format
 msgid "File open error."
 msgstr "Fitxategi irekitze errorea"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:428
+#: core/utilities/setup/downloader/filesdownloader.cpp:411
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Zerbitzariko fitxategia handiegia da."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:569
+#: core/utilities/setup/downloader/filesdownloader.cpp:552
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -66895,48 +66895,48 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:582
+#: core/utilities/setup/downloader/filesdownloader.cpp:565
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:589
+#: core/utilities/setup/downloader/filesdownloader.cpp:572
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditor.cpp:70
+#: core/utilities/setup/editor/setupeditor.cpp:63
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Editor Window"
 msgstr "Doitu &leihora"
 
-#: core/utilities/setup/editor/setupeditor.cpp:71
+#: core/utilities/setup/editor/setupeditor.cpp:64
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Versioning"
 msgstr "Beherantz"
 
-#: core/utilities/setup/editor/setupeditor.cpp:72
+#: core/utilities/setup/editor/setupeditor.cpp:65
 #, fuzzy, kde-format
 #| msgid "Image Settings"
 msgctxt "@title:tab"
 msgid "Save Settings"
 msgstr "Irudiaren ezarpenak"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:126
+#: core/utilities/setup/editor/setupeditoriface.cpp:112
 #: core/utilities/setup/setuplighttable.cpp:82
 #, kde-format
 msgid "Interface Options"
 msgstr "Interfazearen aukerak"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:129
+#: core/utilities/setup/editor/setupeditoriface.cpp:115
 #, kde-format
 msgid "&Use theme background color"
 msgstr "&erabili gaiaren atzeko planoaren kolorea"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:132
+#: core/utilities/setup/editor/setupeditoriface.cpp:118
 #, kde-format
 msgid ""
 "Enable this option to use the background theme color in the image editor "
@@ -66945,77 +66945,77 @@ msgstr ""
 "Gaitu aukera hau gaiaren atzeko planoaren kolorea irudien editorearen arean "
 "erabiltzeko."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:136
+#: core/utilities/setup/editor/setupeditoriface.cpp:122
 #, kde-format
 msgid "&Background color:"
 msgstr "&Atzeko planoaren kolorea:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:139
+#: core/utilities/setup/editor/setupeditoriface.cpp:125
 #, kde-format
 msgid "Customize the background color to use in the image editor area."
 msgstr ""
 "Pertsonalizatu atzeko planoaren kolorea irudien editorearen arean "
 "erabiltzeko."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:153
+#: core/utilities/setup/editor/setupeditoriface.cpp:139
 #, kde-format
 msgid "Exposure Indicators"
 msgstr "Esposizioaren adierazleak"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:156
+#: core/utilities/setup/editor/setupeditoriface.cpp:142
 #, fuzzy, kde-format
 msgid "&Under-exposure color: "
 msgstr "&Azpi-esposizioaren kolorea:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:159
+#: core/utilities/setup/editor/setupeditoriface.cpp:145
 #, kde-format
 msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr ""
 "Pertsonalizatu irudien editorean erabilik oden kolorea azpi-esposizioko "
 "pixelak identifikatzeko."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:162
+#: core/utilities/setup/editor/setupeditoriface.cpp:148
 #, fuzzy, kde-format
 msgid "Under-exposure percents: "
 msgstr "&Azpi-esposizioaren kolorea:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:168
+#: core/utilities/setup/editor/setupeditoriface.cpp:154
 #, kde-format
 msgid ""
 "Adjust the percents of the bottom of image histogram which will be used to "
 "check under exposed pixels."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:171
+#: core/utilities/setup/editor/setupeditoriface.cpp:157
 #, fuzzy, kde-format
 msgid "&Over-exposure color: "
 msgstr "&Gain-esposizioaren kolorea:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:174
+#: core/utilities/setup/editor/setupeditoriface.cpp:160
 #, kde-format
 msgid "Customize color used in image editor to identify over-exposed pixels."
 msgstr ""
 "Pertsonalizatu irudien editorean erabilik oden kolorea gain-esposizioko "
 "pixelak identifikatzeko."
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:177
+#: core/utilities/setup/editor/setupeditoriface.cpp:163
 #, fuzzy, kde-format
 msgid "Over-exposure percents: "
 msgstr "&Gain-esposizioaren kolorea:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:183
+#: core/utilities/setup/editor/setupeditoriface.cpp:169
 #, kde-format
 msgid ""
 "Adjust the percents of the top of image histogram which will be used to "
 "check over exposed pixels."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:186
+#: core/utilities/setup/editor/setupeditoriface.cpp:172
 #, fuzzy, kde-format
 msgid "Indicate exposure as pure color"
 msgstr "&Azpi-esposizioaren kolorea:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:187
+#: core/utilities/setup/editor/setupeditoriface.cpp:173
 #, kde-format
 msgid ""
 "If this option is enabled, over- and under-exposure indicators will be "
@@ -67024,34 +67024,34 @@ msgid ""
 "turned on when one of the color components matches the condition."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:192
+#: core/utilities/setup/editor/setupeditoriface.cpp:178
 #, fuzzy, kde-format
 msgid "Example:"
 msgstr "Adibidea:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:225
+#: core/utilities/setup/editor/setupeditoriface.cpp:211
 #, fuzzy, kde-format
 msgid "Tool Options"
 msgstr "Tresna-aukerak"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:228
+#: core/utilities/setup/editor/setupeditoriface.cpp:214
 #, kde-format
 msgid "&Restore the settings of the Image Editor tools"
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:230
+#: core/utilities/setup/editor/setupeditoriface.cpp:216
 #, kde-format
 msgid ""
 "Enable this option to restore the settings of the Image Editor tools from "
 "the last session. Otherwise, the default settings will be used."
 msgstr ""
 
-#: core/utilities/setup/editor/setupiofiles.cpp:225
+#: core/utilities/setup/editor/setupiofiles.cpp:201
 #, kde-format
 msgid "Show Settings Dialog when Saving Image Files"
 msgstr "Erakutsi ezarpenen elkarrizketa-koadroa irudien fitxategiak gordetzean"
 
-#: core/utilities/setup/editor/setupiofiles.cpp:226
+#: core/utilities/setup/editor/setupiofiles.cpp:202
 #, kde-format
 msgid ""
 "<ul><li>Checked: A dialog where settings can be changed when saving image "
@@ -67062,7 +67062,7 @@ msgstr ""
 "fitxategiak gordetzean.</li><li>Aktibatu gabe: ezarpen lehenetsiak erabiliko "
 "dira irudien fitxategiak gordetzean</li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:102
+#: core/utilities/setup/editor/setupraw.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67071,69 +67071,69 @@ msgid ""
 "Opening a raw file requires extensive data interpretation and processing."
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:120
+#: core/utilities/setup/editor/setupraw.cpp:109
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "Ireki hautatutako elementua irudien editorean."
 
-#: core/utilities/setup/editor/setupraw.cpp:123
+#: core/utilities/setup/editor/setupraw.cpp:112
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:125
+#: core/utilities/setup/editor/setupraw.cpp:114
 #, fuzzy, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "Leheneratu ezarpen lehenetsietara"
 
-#: core/utilities/setup/editor/setupraw.cpp:127
+#: core/utilities/setup/editor/setupraw.cpp:116
 #, fuzzy, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr "Erabili Raw inportatzeko tresna zuzenketak eskuz doitzeko"
 
-#: core/utilities/setup/editor/setupraw.cpp:142
+#: core/utilities/setup/editor/setupraw.cpp:131
 #, fuzzy, kde-format
 #| msgid "Default"
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr " (lehenetsia)"
 
-#: core/utilities/setup/editor/setupraw.cpp:170
+#: core/utilities/setup/editor/setupraw.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:204
+#: core/utilities/setup/editor/setupraw.cpp:193
 #, fuzzy, kde-format
 #| msgid "Behavior"
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "Portaera"
 
-#: core/utilities/setup/editor/setupraw.cpp:205
+#: core/utilities/setup/editor/setupraw.cpp:194
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"
 msgstr "Ezarpen orokorrak"
 
-#: core/utilities/setup/editor/setupversioning.cpp:115
+#: core/utilities/setup/editor/setupversioning.cpp:94
 #, kde-format
 msgctxt "@title"
 msgid "Enable Non-Destructive Editing and Versioning"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:117
+#: core/utilities/setup/editor/setupversioning.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enable support for non-destructive editing and image versioning"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:119
+#: core/utilities/setup/editor/setupversioning.cpp:98
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67143,31 +67143,31 @@ msgid ""
 "and can be accessed later.</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:129
+#: core/utilities/setup/editor/setupversioning.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information on non-destructive editing and file versioning"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:138
+#: core/utilities/setup/editor/setupversioning.cpp:117
 #, kde-format
 msgctxt "@title:group"
 msgid "Workspace File Format"
 msgstr "Languneko fitxategi-formatua"
 
-#: core/utilities/setup/editor/setupversioning.cpp:143
+#: core/utilities/setup/editor/setupversioning.cpp:122
 #, kde-format
 msgctxt "@label"
 msgid "Save files as"
 msgstr "Gorde fitxategia honela"
 
-#: core/utilities/setup/editor/setupversioning.cpp:148
+#: core/utilities/setup/editor/setupversioning.cpp:127
 #, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/setup/editor/setupversioning.cpp:190
+#: core/utilities/setup/editor/setupversioning.cpp:169
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67177,31 +67177,31 @@ msgid ""
 "<interface>Format Options</interface> tab.</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:200
+#: core/utilities/setup/editor/setupversioning.cpp:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information on available image file formats"
 msgstr "Lortu irudi formatu erabilgarrien gaineko informazioa"
 
-#: core/utilities/setup/editor/setupversioning.cpp:217
+#: core/utilities/setup/editor/setupversioning.cpp:196
 #, kde-format
 msgctxt "@label"
 msgid "When closing the editor"
 msgstr "Editorea ixtean"
 
-#: core/utilities/setup/editor/setupversioning.cpp:220
+#: core/utilities/setup/editor/setupversioning.cpp:199
 #, kde-format
 msgctxt "@option:radio"
 msgid "Always ask to save changes"
 msgstr "Galdetu beti aldaketak gordetzeko"
 
-#: core/utilities/setup/editor/setupversioning.cpp:221
+#: core/utilities/setup/editor/setupversioning.cpp:200
 #, kde-format
 msgctxt "@option:radio"
 msgid "Save changes automatically"
 msgstr "Gorde aldaketak automatikoki"
 
-#: core/utilities/setup/editor/setupversioning.cpp:253
+#: core/utilities/setup/editor/setupversioning.cpp:232
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67217,38 +67217,38 @@ msgid ""
 "</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:268
+#: core/utilities/setup/editor/setupversioning.cpp:247
 #, kde-format
 msgctxt "@label"
 msgid "Keep a snapshot of an edited image"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:272
-#: core/utilities/setup/editor/setupversioning.cpp:318
+#: core/utilities/setup/editor/setupversioning.cpp:251
+#: core/utilities/setup/editor/setupversioning.cpp:297
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get an explanation for these options"
 msgstr "Lortu aukera hautarako azalpen bat"
 
-#: core/utilities/setup/editor/setupversioning.cpp:274
+#: core/utilities/setup/editor/setupversioning.cpp:253
 #, kde-format
 msgctxt "@option:check"
 msgid "After converting from a RAW image"
 msgstr "RAW irudi batetik bihurtu ondoren"
 
-#: core/utilities/setup/editor/setupversioning.cpp:275
+#: core/utilities/setup/editor/setupversioning.cpp:254
 #, kde-format
 msgctxt "@option:check"
 msgid "After each editing session"
 msgstr "Editatzeko saio bakoitzaren ondoren"
 
-#: core/utilities/setup/editor/setupversioning.cpp:276
+#: core/utilities/setup/editor/setupversioning.cpp:255
 #, kde-format
 msgctxt "@option:check"
 msgid "After each step that is not completely reproducible"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:303
+#: core/utilities/setup/editor/setupversioning.cpp:282
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67261,25 +67261,25 @@ msgid ""
 "images.</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:311
+#: core/utilities/setup/editor/setupversioning.cpp:290
 #, kde-format
 msgctxt "@label"
 msgid "In main view"
 msgstr "Ikuspegi nagusian"
 
-#: core/utilities/setup/editor/setupversioning.cpp:320
+#: core/utilities/setup/editor/setupversioning.cpp:299
 #, kde-format
 msgctxt "@option:check"
 msgid "Always show original images"
 msgstr "Erakutsi beti jatorrizko irudiak"
 
-#: core/utilities/setup/editor/setupversioning.cpp:321
+#: core/utilities/setup/editor/setupversioning.cpp:300
 #, kde-format
 msgctxt "@option:check"
 msgid "Always show intermediate snapshots"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:480
+#: core/utilities/setup/editor/setupversioning.cpp:459
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67300,7 +67300,7 @@ msgid ""
 "publish them on the web. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:513
+#: core/utilities/setup/editor/setupversioning.cpp:492
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67310,7 +67310,7 @@ msgid ""
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:525
+#: core/utilities/setup/editor/setupversioning.cpp:504
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67320,7 +67320,7 @@ msgid ""
 "quality JPEG. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:536
+#: core/utilities/setup/editor/setupversioning.cpp:515
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67330,7 +67330,7 @@ msgid ""
 "replacement. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:546
+#: core/utilities/setup/editor/setupversioning.cpp:525
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67340,7 +67340,7 @@ msgid ""
 "the same size. It supports both lossy and lossless compression</item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:557
+#: core/utilities/setup/editor/setupversioning.cpp:536
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -67350,7 +67350,7 @@ msgid ""
 "encoding format. </item>"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:126
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From File"
 #| msgid_plural "Reread Metadata From Selected Files"
@@ -67358,20 +67358,20 @@ msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
 msgstr "Berrirakurri meta-datuak fitxategitik"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:155
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
 msgstr "Kendu fitxategiko meta-datuak"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:196
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Abisua"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67383,7 +67383,7 @@ msgstr ""
 "Zure aldaketa guztiak galduko dira.\n"
 "Jarraitu nahi duzu?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:389
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -67391,94 +67391,94 @@ msgid ""
 "b>Order is important when reading metadata"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:399
 #, kde-format
 msgid "Read Options"
 msgstr "Irakurtzeko aukerak"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:400
 #, fuzzy, kde-format
 msgid "Write Options"
 msgstr "Karpeta-ikuspegiaren aukerak"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:402
 #, kde-format
 msgid "Unify read and write"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:403
 #, fuzzy, kde-format
 msgid "Read all metadata for tags"
 msgstr "Irakurri metadatuak Nepomuk-etik"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:423
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "Gehitu"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
 #, fuzzy, kde-format
 msgid "Move Up"
 msgstr "Eraman gora"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
 #, fuzzy, kde-format
 msgid "Move Down"
 msgstr "Eraman behera"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:438
 #, fuzzy, kde-format
 msgid "Revert Changes"
 msgstr "Leheneratu aldaketa guztiak"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, fuzzy, kde-format
 #| msgid "Save File"
 msgid "Save Profile"
 msgstr "Gorde fitxategia"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Profile"
 msgid "Load Profile"
 msgstr "Profil"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, fuzzy, kde-format
 msgid "Reset to Default"
 msgstr "Berrezarri lehenetsietara"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:110
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
 msgstr "Izen berria"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:114
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
 msgstr "Izen berria"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:204
 #, fuzzy, kde-format
 msgid "Add metadata namespace"
 msgstr "Gehitu metadatuen informazioa"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:242
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:208
 #, fuzzy, kde-format
 msgid "Metadata Subspace"
 msgstr "Metadatuak"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:254
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:220
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label: namespace name"
 msgid "Name:"
 msgstr "Izena:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:262
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:228
 #, kde-format
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
@@ -67488,7 +67488,7 @@ msgid ""
 "written.</li></ul></p>"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:273
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:239
 #, kde-format
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
@@ -67498,7 +67498,7 @@ msgid ""
 "from list.</li></ul></p>"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:284
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:250
 #, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
@@ -67506,82 +67506,82 @@ msgid ""
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:293
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:259
 #, fuzzy, kde-format
 msgid "Special Options"
 msgstr "Instructions particulières :"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:320
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:286
 #, fuzzy, kde-format
 msgid "Alternative name"
 msgstr "Pinu apaingarria"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:324
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:290
 #, fuzzy, kde-format
 msgid "Alternative special options"
 msgstr "Urreko espiralen atalak"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:354
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:320
 #, fuzzy, kde-format
 msgid "Separator:"
 msgstr "Bereizlea:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:360
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:326
 #, fuzzy, kde-format
 msgid "Set Tags Path:"
 msgstr "Etiketaren bide-izena"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:380
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:346
 #, fuzzy, kde-format
 msgid "Rating Mapping:"
 msgstr "Puntuazioa:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:542
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:525
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:570
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:552
 #, kde-format
 msgid "The namespace name is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:580
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:587
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:571
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:597
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:604
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:591
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:614
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:603
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:621
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:611
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:637
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:632
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:643
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:638
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr ""
@@ -67593,7 +67593,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Aurreratua"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:267
+#: core/utilities/setup/metadata/setupmetadata.cpp:266
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67604,7 +67604,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:285
+#: core/utilities/setup/metadata/setupmetadata.cpp:284
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67612,7 +67612,7 @@ msgid ""
 "wrong orientation, so only change this option if you explicitly require this."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:308
+#: core/utilities/setup/metadata/setupmetadata.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -67624,13 +67624,13 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:316
+#: core/utilities/setup/metadata/setupmetadata.cpp:315
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:326
+#: core/utilities/setup/metadata/setupmetadata.cpp:325
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -69850,10 +69850,9 @@ msgid "Import Items"
 msgstr "Inportatu elementuak"
 
 #, fuzzy
-#~| msgid "Try again"
 #~ msgctxt "@action:button"
-#~ msgid "Try Again"
-#~ msgstr "Saiatu berriro"
+#~ msgid "Try Alternate"
+#~ msgstr "Pinu apaingarria"
 
 #~ msgctxt "@item: xmp namespace"
 #~ msgid "DigiKam"

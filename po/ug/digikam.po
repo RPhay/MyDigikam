@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-28 02:05+0000\n"
+"POT-Creation-Date: 2024-03-29 01:58+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -3352,7 +3352,7 @@ msgstr "تاللا"
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:888
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
 msgid "Delete"
 msgstr "ئۆچۈر"
@@ -4458,35 +4458,35 @@ msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
 msgstr "ئالىي تەڭشەك"
 
-#: core/app/views/utils/componentsinfodlg.cpp:211
+#: core/app/views/utils/componentsinfodlg.cpp:214
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@item: component info"
 msgid "Video Decoders"
 msgstr "كۆرۈش چاستوتا كودېك"
 
-#: core/app/views/utils/componentsinfodlg.cpp:223
+#: core/app/views/utils/componentsinfodlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@item: component info"
 msgid "Video Encoders"
 msgstr "كۆرۈش چاستوتا كودېك"
 
-#: core/app/views/utils/componentsinfodlg.cpp:238
+#: core/app/views/utils/componentsinfodlg.cpp:245
 #, fuzzy, kde-format
 #| msgid "Video Codec"
 msgctxt "@item: component info"
 msgid "Audio Decoders"
 msgstr "سىن كودلىغۇچ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:250
+#: core/app/views/utils/componentsinfodlg.cpp:257
 #, fuzzy, kde-format
 #| msgid "Video Codec"
 msgctxt "@item: component info"
 msgid "Audio Encoders"
 msgstr "سىن كودلىغۇچ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:265
+#: core/app/views/utils/componentsinfodlg.cpp:276
 #, fuzzy, kde-format
 #| msgid "Pixel Size"
 msgctxt "@item: component info"
@@ -29283,21 +29283,21 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "ئالىي تەڭشەك"
 
-#: core/libs/dialogs/libsinfodlg.cpp:613
+#: core/libs/dialogs/libsinfodlg.cpp:620
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "ھەئە"
 
-#: core/libs/dialogs/libsinfodlg.cpp:618
+#: core/libs/dialogs/libsinfodlg.cpp:625
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "ياق"
 
-#: core/libs/dialogs/libsinfodlg.cpp:623
+#: core/libs/dialogs/libsinfodlg.cpp:630
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -35929,7 +35929,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:257
-#: core/utilities/setup/downloader/filesdownloader.cpp:148
+#: core/utilities/setup/downloader/filesdownloader.cpp:138
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "چۈشۈرۈش"
@@ -42318,538 +42318,538 @@ msgid ""
 "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</p>"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:48
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:44
 #, kde-format
 msgid "AXS File Concatenation Protocol"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:52
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:48
 #, kde-format
 msgid "Audio Interchange File Format"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:56
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:52
 #, kde-format
 msgid "Monkey's Audio"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:60
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:56
 #, kde-format
 msgid "JPEG Meta Information Level 0"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:64
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:60
 #, kde-format
 msgid "JPEG Meta Information Level 1"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:68
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:64
 #, kde-format
 msgid "JPEG Meta Information Level 11"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:72
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:68
 #, kde-format
 msgid "JPEG Meta Information Level 12"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:76
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:72
 #, kde-format
 msgid "JPEG Meta Information Level 13"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:80
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:76
 #, kde-format
 msgid "JPEG Meta Information Level 14"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:84
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:80
 #, kde-format
 msgid "JPEG Meta Information Level 15"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:88
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:84
 #, kde-format
 msgid "JPEG Meta Information Level 4"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:92
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:88
 #, kde-format
 msgid "JPEG Meta Information Level 5"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:96
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:92
 #, kde-format
 msgid "JPEG Meta Information Level 6"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:100
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:96
 #, kde-format
 msgid "JPEG Meta Information Level 8"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:104
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:100
 #, kde-format
 msgid "Microsoft Advanced Systems Format"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:108
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:104
 #, kde-format
 msgid "Audible Audiobook"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:112
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:108
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "Canon Camera Information"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:116
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:112
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "Canon Recipe Data Information"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:120
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:116
 #, kde-format
 msgid "Derived Convenience Tags"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:124
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:120
 #, kde-format
 msgid "Digital Imaging and Communications in Medicine"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:128
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:124
 #, kde-format
 msgid "Digital Negative"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:132
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:128
 #, kde-format
 msgid "Digital Video"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:136
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:132
 #, fuzzy, kde-format
 msgid "DjVu image"
 msgstr "%1 (%2)"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:140
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:136
 #, kde-format
 msgid "Photoshop Save for Web"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:144
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:140
 #, kde-format
 msgid "DOS/Windows executable"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:148
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:144
 #, kde-format
 msgid "Exchangeable Image File Format metadata"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:152
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:148
 #, kde-format
 msgid "Flexible Image Transport System"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:156
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:152
 #, fuzzy, kde-format
 #| msgid "Video Codec"
 msgid "Free Lossless Audio Codec"
 msgstr "سىن كودلىغۇچ"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:160
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:156
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "FLIR Thermal Imaging Camera Information"
 msgstr "سۈرەت ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:164
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:160
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "File System Information"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:168
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:164
 #, kde-format
 msgid "Macromedia/Adobe Flash Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:172
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:168
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "FlashPix Information"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:176
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:172
 #, fuzzy, kde-format
 #| msgid "Host Name"
 msgid "Font Name Tags"
 msgstr "ماشىنا ئاتى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:180
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:176
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "FotoWare FotoStation Information"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:180
 #, kde-format
 msgid "Compuserve Graphics Interchange Format"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:188
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:184
 #, kde-format
 msgid "GNU Image Manipulation Program"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:192
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:188
 #, kde-format
 msgid "Geolocated Tagged Image File Format"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:196
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:192
 #, fuzzy, kde-format
 msgid "GoPro Tags"
 msgstr "خەتكۈشلەر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:200
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:196
 #, fuzzy, kde-format
 msgid "H.264 Video Streams Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:204
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:200
 #, kde-format
 msgid "HyperText Markup Language"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:208
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:204
 #, kde-format
 msgid "International Color Consortium Color Profile"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:212
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:208
 #, fuzzy, kde-format
 msgid "ID3 And Lyrics3 information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:216
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:212
 #, kde-format
 msgid "International Press Telecommunications Council"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:220
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:216
 #, kde-format
 msgid "ISO 9660 Disk Image"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:224
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:220
 #, kde-format
 msgid "iTunes Cover Flow Artwork"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:228
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:224
 #, fuzzy, kde-format
 msgid "JPEG File Interchange Format"
 msgstr "%1|GPS ئۇچۇر فورماتى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:232
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:228
 #, fuzzy, kde-format
 msgid "Joint Photographic Experts Group"
 msgstr "خاسلىق"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:236
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:232
 #, kde-format
 msgid "JavaScript Object Notation"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:240
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:236
 #, kde-format
 msgid "Joint Photographic Experts Group 2000"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:244
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:240
 #, kde-format
 msgid "Microsoft Shell Link"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:248
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:244
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "Creo Leaf Capture Information"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:252
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:248
 #, kde-format
 msgid "Lytro Light Field Picture Info"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:256
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:252
 #, kde-format
 msgid "MPEG-2 Transport Stream"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:260
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:256
 #, fuzzy, kde-format
 msgid "Meta Information Encapsulation"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:264
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:260
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Magick Image File Format"
 msgstr "سۈرەت ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:268
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:264
 #, kde-format
 msgid "Multiple-image Network Graphics"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:272
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:268
 #, kde-format
 msgid "JVC Canon and Panasonic Camcorders Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:276
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:272
 #, fuzzy, kde-format
 msgid "Musepack Audio Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:280
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:276
 #, kde-format
 msgid "Motion Picture Experts Group"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:284
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:280
 #, kde-format
 msgid "CIPA Multi-Picture Format Specification"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:288
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:284
 #, fuzzy, kde-format
 msgid "Material Exchange Format"
 msgstr "%1|GPS ئۇچۇر فورماتى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:292
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:288
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Maker Notes Information"
 msgstr "سۈرەت ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:296
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:292
 #, fuzzy, kde-format
 msgid "Matroska Audio/Video/Subtitle Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:300
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:296
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "Meta Information"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:304
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:300
 #, kde-format
 msgid "Ogg Bitstream Container"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:308
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:304
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgid "Open Extended Range"
 msgstr "ھۆججەت باشقۇرغۇچتا ئاچ"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:312
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:308
 #, kde-format
 msgid "Ogg Opus Audio"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:316
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:312
 #, kde-format
 msgid "Adobe Portable Document Format"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:320
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:316
 #, fuzzy, kde-format
 msgid "Apple Picture Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:324
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:320
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgid "Apple Property List"
 msgstr "ھۆججەت خاسلىقى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:328
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:324
 #, kde-format
 msgid "Portable Network Graphics"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:332
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:328
 #, fuzzy, kde-format
 msgid "Paint Shop Pro Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:336
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:332
 #, kde-format
 msgid ""
 "Palm database, Mobipocket electronic books, and Amazon Kindle Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:340
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:336
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "Panasonic RAW 2 Information"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:344
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:340
 #, fuzzy, kde-format
 msgid "Streaming Parrot Drone Video Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:348
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:344
 #, kde-format
 msgid "Kodak Photo CD Image Pac"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:352
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:348
 #, fuzzy, kde-format
 msgid "Photo Mechanic Trailer Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:356
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:352
 #, fuzzy, kde-format
 msgid "Adobe Photoshop Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:360
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:356
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "PostScript Information"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:364
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:360
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "PrintIM Information"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:368
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:364
 #, fuzzy, kde-format
 msgid "Apple QuickTime Movie Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:372
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:368
 #, kde-format
 msgid "FujiFilm RAW Format Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:376
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:372
 #, kde-format
 msgid "Resource Interchange File Format Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:380
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:376
 #, kde-format
 msgid "Mac OS Resource"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:384
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:380
 #, fuzzy, kde-format
 #| msgid "File Format"
 msgid "Rich Text Format"
 msgstr "ھۆججەت فورماتى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:388
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:384
 #, kde-format
 msgid "RGBE High Dynamic-Range"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:392
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:388
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Rawzor Image Information"
 msgstr "سۈرەت ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:396
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:392
 #, fuzzy, kde-format
 msgid "Real Media/Video Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:400
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:396
 #, fuzzy, kde-format
 msgid "Redcode RAW Video Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:404
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:400
 #, kde-format
 msgid "Scalable Vector Graphics"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:408
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:404
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Sigma/Foveon RAW Information"
 msgstr "سۈرەت ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:412
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:408
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Sony Cameras Information"
 msgstr "سۈرەت ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:416
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:412
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Stereo Still Image Information"
 msgstr "سۈرەت ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:420
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:416
 #, kde-format
 msgid "Ogg Theora Video Specification"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:424
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:420
 #, fuzzy, kde-format
 #| msgid "Information"
 msgid "BitTorrent Description Information"
 msgstr "ئۇچۇر"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:428
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:424
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Trailer Information"
 msgstr "سۈرەت ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:432
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:428
 #, fuzzy, kde-format
 msgid "Virtual Card Information"
 msgstr "ئۈسكۈنە ئۇچۇرى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:436
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:432
 #, fuzzy, kde-format
 #| msgid "Location"
 msgid "Ogg Vorbis Specification"
 msgstr "ئورنى"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:440
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:436
 #, kde-format
 msgid "Windows Recorded TV Show Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:444
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:440
 #, kde-format
 msgid "Extensible Markup Language"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:448
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:444
 #, kde-format
 msgid "Extensible Metadata Platform"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:452
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:448
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "ZIP Archive Information"
@@ -55895,9 +55895,9 @@ msgstr "يېڭى زېلاندىيە"
 
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:144
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:155
-#: core/utilities/lighttable/lighttablethumbbar.cpp:259
+#: core/utilities/lighttable/lighttablethumbbar.cpp:258
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:426
 #, kde-format
 msgid "Edit"
 msgstr "تەھرىرلەش"
@@ -59642,28 +59642,28 @@ msgid "New image format:"
 msgstr "ھۆججەت فورماتى"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:82
-#: core/utilities/setup/editor/setupversioning.cpp:150
+#: core/utilities/setup/editor/setupversioning.cpp:129
 #, kde-format
 msgctxt "@label:listbox"
 msgid "PNG"
 msgstr "PNG"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:83
-#: core/utilities/setup/editor/setupversioning.cpp:149
+#: core/utilities/setup/editor/setupversioning.cpp:128
 #, kde-format
 msgctxt "@label:listbox"
 msgid "TIFF"
 msgstr "TIFF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:84
-#: core/utilities/setup/editor/setupversioning.cpp:151
+#: core/utilities/setup/editor/setupversioning.cpp:130
 #, kde-format
 msgctxt "@label:listbox"
 msgid "PGF"
 msgstr ""
 
 #: core/utilities/import/widgets/advancedsettings.cpp:88
-#: core/utilities/setup/editor/setupversioning.cpp:155
+#: core/utilities/setup/editor/setupversioning.cpp:134
 #, fuzzy, kde-format
 #| msgid "JPEG Files"
 msgctxt "@label:listbox"
@@ -59671,14 +59671,14 @@ msgid "JPEG-2000"
 msgstr "JPEG ھۆججەتلىرى"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:94
-#: core/utilities/setup/editor/setupversioning.cpp:161
+#: core/utilities/setup/editor/setupversioning.cpp:140
 #, kde-format
 msgctxt "@label:listbox"
 msgid "HEIF"
 msgstr ""
 
 #: core/utilities/import/widgets/advancedsettings.cpp:102
-#: core/utilities/setup/editor/setupversioning.cpp:169
+#: core/utilities/setup/editor/setupversioning.cpp:148
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "JPEG"
@@ -59687,14 +59687,14 @@ msgid "JPEG-XL"
 msgstr "JPEG"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:109
-#: core/utilities/setup/editor/setupversioning.cpp:176
+#: core/utilities/setup/editor/setupversioning.cpp:155
 #, kde-format
 msgctxt "@label:listbox"
 msgid "WEBP"
 msgstr ""
 
 #: core/utilities/import/widgets/advancedsettings.cpp:116
-#: core/utilities/setup/editor/setupversioning.cpp:183
+#: core/utilities/setup/editor/setupversioning.cpp:162
 #, kde-format
 msgctxt "@label:listbox"
 msgid "AVIF"
@@ -60084,27 +60084,27 @@ msgstr ""
 msgid "Drag and drop an image here"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:257
+#: core/utilities/lighttable/lighttablethumbbar.cpp:256
 #, kde-format
 msgid "Show on left panel"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:258
+#: core/utilities/lighttable/lighttablethumbbar.cpp:257
 #, kde-format
 msgid "Show on right panel"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:260
+#: core/utilities/lighttable/lighttablethumbbar.cpp:259
 #, kde-format
 msgid "Remove item"
 msgstr "تۈر چىقىرىۋەت"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:261
+#: core/utilities/lighttable/lighttablethumbbar.cpp:260
 #, kde-format
 msgid "Clear all"
 msgstr "ھەممىنى تازىلا"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:464
+#: core/utilities/lighttable/lighttablethumbbar.cpp:463
 #, kde-format
 msgid "Drag and drop images here"
 msgstr ""
@@ -63755,41 +63755,41 @@ msgstr "تۈر تاللا"
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:136
+#: core/utilities/setup/downloader/filesdownloader.cpp:126
 #, fuzzy, kde-format
 #| msgid "Downloaded: "
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "چۈشۈرگىنى: "
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:156
+#: core/utilities/setup/downloader/filesdownloader.cpp:146
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Use Face Detection feature"
 msgstr "تاللانمىدى"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:157
+#: core/utilities/setup/downloader/filesdownloader.cpp:147
 #, kde-format
 msgid "Use Aesthetic Detection feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:158
+#: core/utilities/setup/downloader/filesdownloader.cpp:148
 #, kde-format
 msgid "Use Auto Tags Assignment feature"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:230
+#: core/utilities/setup/downloader/filesdownloader.cpp:220
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:237
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "چۈشۈرۈش"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:238
+#: core/utilities/setup/downloader/filesdownloader.cpp:228
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -63798,38 +63798,38 @@ msgid ""
 "\n"
 "%2\n"
 "\n"
-"You can try again with an alternative mirror server or continue the download "
-"on the next startup."
+"You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:247
-#, kde-format
+#: core/utilities/setup/downloader/filesdownloader.cpp:236
+#, fuzzy, kde-format
+#| msgid "Add new tag"
 msgctxt "@action:button"
-msgid "Try Alternate"
-msgstr ""
+msgid "Try Again"
+msgstr "يېڭى خەتكۈش قوش"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:382
+#: core/utilities/setup/downloader/filesdownloader.cpp:365
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:406
+#: core/utilities/setup/downloader/filesdownloader.cpp:389
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:413
+#: core/utilities/setup/downloader/filesdownloader.cpp:396
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "File open error."
 msgstr "ئېكسپورت قىل"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:428
+#: core/utilities/setup/downloader/filesdownloader.cpp:411
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:569
+#: core/utilities/setup/downloader/filesdownloader.cpp:552
 #, kde-format
 msgctxt "%1: folder path"
 msgid ""
@@ -63844,120 +63844,120 @@ msgid ""
 "digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:582
+#: core/utilities/setup/downloader/filesdownloader.cpp:565
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:589
+#: core/utilities/setup/downloader/filesdownloader.cpp:572
 #, kde-format
 msgid "All files of the selected features were found."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditor.cpp:70
+#: core/utilities/setup/editor/setupeditor.cpp:63
 #, kde-format
 msgctxt "@title:tab"
 msgid "Editor Window"
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditor.cpp:71
+#: core/utilities/setup/editor/setupeditor.cpp:64
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@title:tab"
 msgid "Versioning"
 msgstr "نەشرى"
 
-#: core/utilities/setup/editor/setupeditor.cpp:72
+#: core/utilities/setup/editor/setupeditor.cpp:65
 #, fuzzy, kde-format
 #| msgid "Image Settings"
 msgctxt "@title:tab"
 msgid "Save Settings"
 msgstr "سۈرەت تەڭشەك"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:126
+#: core/utilities/setup/editor/setupeditoriface.cpp:112
 #: core/utilities/setup/setuplighttable.cpp:82
 #, kde-format
 msgid "Interface Options"
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:129
+#: core/utilities/setup/editor/setupeditoriface.cpp:115
 #, kde-format
 msgid "&Use theme background color"
 msgstr "ئۆرنەك تەگلىك رەڭگىنى ئىشلەت(&U)"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:132
+#: core/utilities/setup/editor/setupeditoriface.cpp:118
 #, kde-format
 msgid ""
 "Enable this option to use the background theme color in the image editor "
 "area."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:136
+#: core/utilities/setup/editor/setupeditoriface.cpp:122
 #, kde-format
 msgid "&Background color:"
 msgstr "تەگلىك رەڭگى(&B):"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:139
+#: core/utilities/setup/editor/setupeditoriface.cpp:125
 #, kde-format
 msgid "Customize the background color to use in the image editor area."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:153
+#: core/utilities/setup/editor/setupeditoriface.cpp:139
 #, kde-format
 msgid "Exposure Indicators"
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:156
+#: core/utilities/setup/editor/setupeditoriface.cpp:142
 #, kde-format
 msgid "&Under-exposure color: "
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:159
+#: core/utilities/setup/editor/setupeditoriface.cpp:145
 #, kde-format
 msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:162
+#: core/utilities/setup/editor/setupeditoriface.cpp:148
 #, kde-format
 msgid "Under-exposure percents: "
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:168
+#: core/utilities/setup/editor/setupeditoriface.cpp:154
 #, kde-format
 msgid ""
 "Adjust the percents of the bottom of image histogram which will be used to "
 "check under exposed pixels."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:171
+#: core/utilities/setup/editor/setupeditoriface.cpp:157
 #, kde-format
 msgid "&Over-exposure color: "
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:174
+#: core/utilities/setup/editor/setupeditoriface.cpp:160
 #, kde-format
 msgid "Customize color used in image editor to identify over-exposed pixels."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:177
+#: core/utilities/setup/editor/setupeditoriface.cpp:163
 #, kde-format
 msgid "Over-exposure percents: "
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:183
+#: core/utilities/setup/editor/setupeditoriface.cpp:169
 #, kde-format
 msgid ""
 "Adjust the percents of the top of image histogram which will be used to "
 "check over exposed pixels."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:186
+#: core/utilities/setup/editor/setupeditoriface.cpp:172
 #, kde-format
 msgid "Indicate exposure as pure color"
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:187
+#: core/utilities/setup/editor/setupeditoriface.cpp:173
 #, kde-format
 msgid ""
 "If this option is enabled, over- and under-exposure indicators will be "
@@ -63966,34 +63966,34 @@ msgid ""
 "turned on when one of the color components matches the condition."
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:192
+#: core/utilities/setup/editor/setupeditoriface.cpp:178
 #, kde-format
 msgid "Example:"
 msgstr "مىسال:"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:225
+#: core/utilities/setup/editor/setupeditoriface.cpp:211
 #, fuzzy, kde-format
 msgid "Tool Options"
 msgstr "تاللانما"
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:228
+#: core/utilities/setup/editor/setupeditoriface.cpp:214
 #, kde-format
 msgid "&Restore the settings of the Image Editor tools"
 msgstr ""
 
-#: core/utilities/setup/editor/setupeditoriface.cpp:230
+#: core/utilities/setup/editor/setupeditoriface.cpp:216
 #, kde-format
 msgid ""
 "Enable this option to restore the settings of the Image Editor tools from "
 "the last session. Otherwise, the default settings will be used."
 msgstr ""
 
-#: core/utilities/setup/editor/setupiofiles.cpp:225
+#: core/utilities/setup/editor/setupiofiles.cpp:201
 #, kde-format
 msgid "Show Settings Dialog when Saving Image Files"
 msgstr ""
 
-#: core/utilities/setup/editor/setupiofiles.cpp:226
+#: core/utilities/setup/editor/setupiofiles.cpp:202
 #, kde-format
 msgid ""
 "<ul><li>Checked: A dialog where settings can be changed when saving image "
@@ -64001,7 +64001,7 @@ msgid ""
 "li></ul>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:102
+#: core/utilities/setup/editor/setupraw.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64010,51 +64010,51 @@ msgid ""
 "Opening a raw file requires extensive data interpretation and processing."
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:120
+#: core/utilities/setup/editor/setupraw.cpp:109
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:123
+#: core/utilities/setup/editor/setupraw.cpp:112
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:125
+#: core/utilities/setup/editor/setupraw.cpp:114
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:127
+#: core/utilities/setup/editor/setupraw.cpp:116
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:142
+#: core/utilities/setup/editor/setupraw.cpp:131
 #, fuzzy, kde-format
 #| msgid "Default"
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr "كۆڭۈلدىكى"
 
-#: core/utilities/setup/editor/setupraw.cpp:170
+#: core/utilities/setup/editor/setupraw.cpp:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:204
+#: core/utilities/setup/editor/setupraw.cpp:193
 #, fuzzy, kde-format
 #| msgid "Behavior"
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "ھەرىكەت"
 
-#: core/utilities/setup/editor/setupraw.cpp:205
+#: core/utilities/setup/editor/setupraw.cpp:194
 #, fuzzy, kde-format
 #| msgctxt "@title:tab"
 #| msgid "Default Settings"
@@ -64062,19 +64062,19 @@ msgctxt "@title:tab"
 msgid "RAW Default Settings"
 msgstr "كۆڭۈلدىكى تەڭشەكلەر"
 
-#: core/utilities/setup/editor/setupversioning.cpp:115
+#: core/utilities/setup/editor/setupversioning.cpp:94
 #, kde-format
 msgctxt "@title"
 msgid "Enable Non-Destructive Editing and Versioning"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:117
+#: core/utilities/setup/editor/setupversioning.cpp:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enable support for non-destructive editing and image versioning"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:119
+#: core/utilities/setup/editor/setupversioning.cpp:98
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64084,31 +64084,31 @@ msgid ""
 "and can be accessed later.</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:129
+#: core/utilities/setup/editor/setupversioning.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information on non-destructive editing and file versioning"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:138
+#: core/utilities/setup/editor/setupversioning.cpp:117
 #, kde-format
 msgctxt "@title:group"
 msgid "Workspace File Format"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:143
+#: core/utilities/setup/editor/setupversioning.cpp:122
 #, kde-format
 msgctxt "@label"
 msgid "Save files as"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:148
+#: core/utilities/setup/editor/setupversioning.cpp:127
 #, kde-format
 msgctxt "@label:listbox"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/setup/editor/setupversioning.cpp:190
+#: core/utilities/setup/editor/setupversioning.cpp:169
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64118,31 +64118,31 @@ msgid ""
 "<interface>Format Options</interface> tab.</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:200
+#: core/utilities/setup/editor/setupversioning.cpp:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information on available image file formats"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:217
+#: core/utilities/setup/editor/setupversioning.cpp:196
 #, kde-format
 msgctxt "@label"
 msgid "When closing the editor"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:220
+#: core/utilities/setup/editor/setupversioning.cpp:199
 #, kde-format
 msgctxt "@option:radio"
 msgid "Always ask to save changes"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:221
+#: core/utilities/setup/editor/setupversioning.cpp:200
 #, kde-format
 msgctxt "@option:radio"
 msgid "Save changes automatically"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:253
+#: core/utilities/setup/editor/setupversioning.cpp:232
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64158,38 +64158,38 @@ msgid ""
 "</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:268
+#: core/utilities/setup/editor/setupversioning.cpp:247
 #, kde-format
 msgctxt "@label"
 msgid "Keep a snapshot of an edited image"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:272
-#: core/utilities/setup/editor/setupversioning.cpp:318
+#: core/utilities/setup/editor/setupversioning.cpp:251
+#: core/utilities/setup/editor/setupversioning.cpp:297
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get an explanation for these options"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:274
+#: core/utilities/setup/editor/setupversioning.cpp:253
 #, kde-format
 msgctxt "@option:check"
 msgid "After converting from a RAW image"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:275
+#: core/utilities/setup/editor/setupversioning.cpp:254
 #, kde-format
 msgctxt "@option:check"
 msgid "After each editing session"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:276
+#: core/utilities/setup/editor/setupversioning.cpp:255
 #, kde-format
 msgctxt "@option:check"
 msgid "After each step that is not completely reproducible"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:303
+#: core/utilities/setup/editor/setupversioning.cpp:282
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64202,25 +64202,25 @@ msgid ""
 "images.</para>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:311
+#: core/utilities/setup/editor/setupversioning.cpp:290
 #, kde-format
 msgctxt "@label"
 msgid "In main view"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:320
+#: core/utilities/setup/editor/setupversioning.cpp:299
 #, kde-format
 msgctxt "@option:check"
 msgid "Always show original images"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:321
+#: core/utilities/setup/editor/setupversioning.cpp:300
 #, kde-format
 msgctxt "@option:check"
 msgid "Always show intermediate snapshots"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:480
+#: core/utilities/setup/editor/setupversioning.cpp:459
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64241,7 +64241,7 @@ msgid ""
 "publish them on the web. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:513
+#: core/utilities/setup/editor/setupversioning.cpp:492
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64251,7 +64251,7 @@ msgid ""
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:525
+#: core/utilities/setup/editor/setupversioning.cpp:504
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64261,7 +64261,7 @@ msgid ""
 "quality JPEG. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:536
+#: core/utilities/setup/editor/setupversioning.cpp:515
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64271,7 +64271,7 @@ msgid ""
 "replacement. </item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:546
+#: core/utilities/setup/editor/setupversioning.cpp:525
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64281,7 +64281,7 @@ msgid ""
 "the same size. It supports both lossy and lossless compression</item>"
 msgstr ""
 
-#: core/utilities/setup/editor/setupversioning.cpp:557
+#: core/utilities/setup/editor/setupversioning.cpp:536
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -64291,28 +64291,28 @@ msgid ""
 "encoding format. </item>"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:126
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
 msgstr "سۈزگۈچنى چىقىرىۋەت"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:155
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
 msgstr "سۈزگۈچنى چىقىرىۋەت"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:196
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "ئاگاھلاندۇرۇش"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64321,7 +64321,7 @@ msgid ""
 " Do you want to continue?"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:389
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -64329,96 +64329,96 @@ msgid ""
 "b>Order is important when reading metadata"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:399
 #, fuzzy, kde-format
 msgid "Read Options"
 msgstr "تاللانما"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:400
 #, fuzzy, kde-format
 msgid "Write Options"
 msgstr "تېخىمۇ كۆپ تاللانما"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:402
 #, kde-format
 msgid "Unify read and write"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:403
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgid "Read all metadata for tags"
 msgstr "سۈزگۈچنى چىقىرىۋەت"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:423
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "قوش(&A)"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
 #, fuzzy, kde-format
 msgid "Move Up"
 msgstr "يۇقىرىغا"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
 #, fuzzy, kde-format
 msgid "Move Down"
 msgstr "تۆۋەنگە"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:438
 #, fuzzy, kde-format
 msgid "Revert Changes"
 msgstr "ئۆزگەرتكەننى ساقلا"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
 msgid "Save Profile"
 msgstr "ئۆزگەرتكەننى ساقلا"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Profile"
 msgid "Load Profile"
 msgstr "سەپلىمە ھۆججەت"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, fuzzy, kde-format
 msgid "Reset to Default"
 msgstr "كۆڭۈلدىكىنى ئىشلەت"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:110
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
 msgstr "يېڭى ئات"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:114
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
 msgstr "يېڭى ئات"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:204
 #, kde-format
 msgid "Add metadata namespace"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:242
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:208
 #, fuzzy, kde-format
 msgid "Metadata Subspace"
 msgstr "مېتا سانلىق-مەلۇماتى"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:254
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:220
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label: namespace name"
 msgid "Name:"
 msgstr "ئاتى:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:262
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:228
 #, kde-format
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
@@ -64428,7 +64428,7 @@ msgid ""
 "written.</li></ul></p>"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:273
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:239
 #, kde-format
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
@@ -64438,7 +64438,7 @@ msgid ""
 "from list.</li></ul></p>"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:284
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:250
 #, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
@@ -64446,82 +64446,82 @@ msgid ""
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:293
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:259
 #, fuzzy, kde-format
 msgid "Special Options"
 msgstr "تاللانما"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:320
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:286
 #, kde-format
 msgid "Alternative name"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:324
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:290
 #, kde-format
 msgid "Alternative special options"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:354
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:320
 #, fuzzy, kde-format
 msgid "Separator:"
 msgstr "مېركاتور"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:360
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:326
 #, kde-format
 msgid "Set Tags Path:"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:380
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:346
 #, fuzzy, kde-format
 msgid "Rating Mapping:"
 msgstr "باھالاش:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:542
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:525
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:570
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:552
 #, kde-format
 msgid "The namespace name is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:580
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:563
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:587
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:571
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:597
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:604
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:591
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:614
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:603
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:621
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:611
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:637
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:632
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:643
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:638
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr ""
@@ -64533,7 +64533,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "ئالىي"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:267
+#: core/utilities/setup/metadata/setupmetadata.cpp:266
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64544,7 +64544,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:285
+#: core/utilities/setup/metadata/setupmetadata.cpp:284
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64552,7 +64552,7 @@ msgid ""
 "wrong orientation, so only change this option if you explicitly require this."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:308
+#: core/utilities/setup/metadata/setupmetadata.cpp:307
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64564,13 +64564,13 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:316
+#: core/utilities/setup/metadata/setupmetadata.cpp:315
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:326
+#: core/utilities/setup/metadata/setupmetadata.cpp:325
 #, fuzzy, kde-format
 #| msgid "Remove filter"
 msgctxt "@info"
@@ -66585,12 +66585,6 @@ msgstr ""
 #, kde-format
 msgid "Import Items"
 msgstr ""
-
-#, fuzzy
-#~| msgid "Add new tag"
-#~ msgctxt "@action:button"
-#~ msgid "Try Again"
-#~ msgstr "يېڭى خەتكۈش قوش"
 
 #, fuzzy
 #~| msgid "digiKam"
