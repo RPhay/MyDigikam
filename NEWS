@@ -34,7 +34,7 @@ BUGFIXES:
 025 ==> 479294 - Error exporting to Google Photos.
 026 ==> 481787 - Google Photo plugin stops working.
 027 ==> 478988 - digiKam freezes on startup W10.
-028 ==> 
+028 ==> 467711 - Time latency introduced while applying changes in Sqlite database under Windows.
 029 ==> 
 030 ==> 
 031 ==> 
