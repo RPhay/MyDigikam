@@ -452,23 +452,30 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
             }
             else
             {
-                QTreeWidgetItem* const oclplfrm = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL platform"));
-
-                for (size_t i = 0 ; i < platforms.size() ; i++)
+                if (platforms.size())
                 {
-                    const cv::ocl::PlatformInfo* platform = &platforms[i];
-                    QTreeWidgetItem* const plfrm = new QTreeWidgetItem(oclplfrm, QStringList() << QString::fromStdString(platform->name()));
+                    QTreeWidgetItem* const oclplfrm = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL platform"));
 
-                    cv::ocl::Device current_device;
-
-                    for (int j = 0 ; j < platform->deviceNumber() ; j++)
+                    for (size_t i = 0 ; i < platforms.size() ; i++)
                     {
-                        platform->getDevice(current_device, j);
-                        QString deviceTypeStr = openCVGetDeviceTypeString(current_device);
+                        const cv::ocl::PlatformInfo* platform = &platforms[i];
 
-                        new QTreeWidgetItem(plfrm, QStringList()
-                            << deviceTypeStr << QString::fromStdString(current_device.name()) +
-                               QLatin1String(" (") + QString::fromStdString(current_device.version()) + QLatin1Char(')'));
+                        if (platform->deviceNumber())
+                        {
+                            QTreeWidgetItem* const plfrm = new QTreeWidgetItem(oclplfrm, QStringList() << QString::fromStdString(platform->name()));
+
+                            cv::ocl::Device current_device;
+
+                            for (int j = 0 ; j < platform->deviceNumber() ; j++)
+                            {
+                                platform->getDevice(current_device, j);
+                                QString deviceTypeStr = openCVGetDeviceTypeString(current_device);
+
+                                new QTreeWidgetItem(plfrm, QStringList()
+                                    << deviceTypeStr << QString::fromStdString(current_device.name()) +
+                                       QLatin1String(" (") + QString::fromStdString(current_device.version()) + QLatin1Char(')'));
+                            }
+                        }
                     }
                 }
 
