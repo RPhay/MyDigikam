@@ -405,6 +405,10 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
         QTextStream in(&file);
         QTreeWidgetItem* manifestEntry = nullptr;
 
+#ifndef __clang_analyzer__
+
+        // Disable fals-positive memory leak reported bt scan-build with QTreeWidgetItem.
+
         while (!in.atEnd())
         {
             QString line = in.readLine();
@@ -423,6 +427,8 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                 new QTreeWidgetItem(manifestEntry, line.split(QLatin1Char(':')));
             }
         }
+
+#endif
 
         file.close();
     }
