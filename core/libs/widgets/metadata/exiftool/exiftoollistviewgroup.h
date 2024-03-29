@@ -23,8 +23,6 @@
 namespace Digikam
 {
 
-class ExifToolListView;
-
 class ExifToolListViewGroup : public QObject,
                               public QTreeWidgetItem
 {
@@ -32,7 +30,7 @@ class ExifToolListViewGroup : public QObject,
 
 public:
 
-    ExifToolListViewGroup(ExifToolListView* const parent,
+    ExifToolListViewGroup(QTreeWidget* const parent,
                           const QString& group);
     ~ExifToolListViewGroup() override;
 

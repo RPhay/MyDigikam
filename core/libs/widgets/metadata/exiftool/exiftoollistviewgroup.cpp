@@ -22,14 +22,10 @@
 
 #include <klocalizedstring.h>
 
-// Local includes
-
-#include "exiftoollistview.h"
-
 namespace Digikam
 {
 
-ExifToolListViewGroup::ExifToolListViewGroup(ExifToolListView* const parent,
+ExifToolListViewGroup::ExifToolListViewGroup(QTreeWidget* const parent,
                                              const QString& group)
     : QObject        (parent),
       QTreeWidgetItem(parent)
