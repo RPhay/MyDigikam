@@ -98,6 +98,11 @@ extern "C"
 
 #ifdef HAVE_JASPER
 
+#   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#       pragma GCC diagnostic push
+#       pragma GCC diagnostic ignored "-Wcpp"
+#   endif
+
 #   if defined(Q_CC_CLANG)
 #       pragma clang diagnostic push
 #       pragma clang diagnostic ignored "-Werror"
@@ -105,6 +110,11 @@ extern "C"
 #   endif
 
 #   include <jasper/jas_version.h>
+
+// Restore warnings
+#   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#       pragma GCC diagnostic pop
+#   endif
 
 #   if defined(Q_CC_CLANG)
 #       pragma clang diagnostic pop

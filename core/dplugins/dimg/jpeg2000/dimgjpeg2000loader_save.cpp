@@ -35,6 +35,11 @@ extern "C"
 {
 #endif
 
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wcpp"
+#endif
+
 #if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wshift-negative-value"
@@ -42,6 +47,11 @@ extern "C"
 
 #include <jasper/jasper.h>
 #include <jasper/jas_version.h>
+
+// Restore warnings
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic pop
+#endif
 
 #if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
