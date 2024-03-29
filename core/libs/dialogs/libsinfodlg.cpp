@@ -452,31 +452,35 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
             }
             else
             {
-                if (platforms.size())
+                QTreeWidgetItem* const oclplfrm = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL platform"));
+
+                for (size_t i = 0 ; i < platforms.size() ; i++)
                 {
-                    QTreeWidgetItem* const oclplfrm = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL platform"));
+                    const cv::ocl::PlatformInfo* platform = &platforms[i];
 
-                    for (size_t i = 0 ; i < platforms.size() ; i++)
+                    QTreeWidgetItem* const plfrm = new QTreeWidgetItem(oclplfrm, QStringList() << QString::fromStdString(platform->name()));
+
+                    cv::ocl::Device current_device;
+
+                    for (int j = 0 ; j < platform->deviceNumber() ; j++)
                     {
-                        const cv::ocl::PlatformInfo* platform = &platforms[i];
+                        platform->getDevice(current_device, j);
+                        QString deviceTypeStr = openCVGetDeviceTypeString(current_device);
 
-                        if (platform->deviceNumber())
-                        {
-                            QTreeWidgetItem* const plfrm = new QTreeWidgetItem(oclplfrm, QStringList() << QString::fromStdString(platform->name()));
-
-                            cv::ocl::Device current_device;
-
-                            for (int j = 0 ; j < platform->deviceNumber() ; j++)
-                            {
-                                platform->getDevice(current_device, j);
-                                QString deviceTypeStr = openCVGetDeviceTypeString(current_device);
-
-                                new QTreeWidgetItem(plfrm, QStringList()
-                                    << deviceTypeStr << QString::fromStdString(current_device.name()) +
-                                       QLatin1String(" (") + QString::fromStdString(current_device.version()) + QLatin1Char(')'));
-                            }
-                        }
+                        new QTreeWidgetItem(plfrm, QStringList()
+                            << deviceTypeStr << QString::fromStdString(current_device.name()) +
+                               QLatin1String(" (") + QString::fromStdString(current_device.version()) + QLatin1Char(')'));
                     }
+
+                    if (plfrm->childCount() == 0)
+                    {
+                        new QTreeWidgetItem(plfrm, QStringList() << i18n("no entry"));
+                    }
+                }
+
+                if (oclplfrm->childCount() == 0)
+                {
+                    new QTreeWidgetItem(oclplfrm, QStringList() << i18n("no entry"));
                 }
 
                 const cv::ocl::Device& device = cv::ocl::Device::getDefault();
