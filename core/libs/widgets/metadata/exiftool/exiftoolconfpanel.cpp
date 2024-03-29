@@ -45,20 +45,15 @@ class Q_DECL_HIDDEN ExifToolConfPanel::Private
 {
 public:
 
-    explicit Private()
-      : exifToolBinWidget(nullptr),
-        searchBar        (nullptr),
-        exifToolFormats  (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    DBinarySearch* exifToolBinWidget;
+    DBinarySearch* exifToolBinWidget = nullptr;
     ExifToolBinary exifToolBin;
-    SearchTextBar* searchBar;
+    SearchTextBar* searchBar         = nullptr;
 
-    QTreeWidget*   exifToolFormats;
+    QTreeWidget*   exifToolFormats   = nullptr;
 };
 
 // --------------------------------------------------------

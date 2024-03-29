@@ -34,15 +34,11 @@ class Q_DECL_HIDDEN ExifToolErrorView::Private
 
 public:
 
-    explicit Private()
-        : errorLbl(nullptr),
-          btn     (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*           errorLbl;
+    QLabel*           errorLbl = nullptr;
 
-    QPushButton*      btn;
+    QPushButton*      btn      = nullptr;
 };
 
 ExifToolErrorView::ExifToolErrorView(QWidget* const parent)

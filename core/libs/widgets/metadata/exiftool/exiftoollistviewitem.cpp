@@ -35,9 +35,7 @@ class Q_DECL_HIDDEN ExifToolListViewItem::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QString key;
     QString desc;

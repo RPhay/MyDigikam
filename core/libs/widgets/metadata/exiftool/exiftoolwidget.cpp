@@ -87,22 +87,6 @@ public:
 public:
 
     explicit Private()
-        : noneAction      (nullptr),
-          photoAction     (nullptr),
-          customAction    (nullptr),
-          settingsAction  (nullptr),
-          metadataView    (nullptr),
-          loadingView     (nullptr),
-          view            (nullptr),
-          errorView       (nullptr),
-          searchBar       (nullptr),
-          filterBtn       (nullptr),
-          toolBtn         (nullptr),
-          saveMetadata    (nullptr),
-          printMetadata   (nullptr),
-          copy2ClipBoard  (nullptr),
-          optionsMenu     (nullptr),
-          preLoadingTimer (nullptr)
     {
         for (int i = 0 ; QLatin1String(StandardExifToolEntryList[i]) != QLatin1String("-1") ; ++i)
         {
@@ -110,31 +94,31 @@ public:
         }
     }
 
-    QAction*             noneAction;
-    QAction*             photoAction;
-    QAction*             customAction;
-    QAction*             settingsAction;
+    QAction*             noneAction      = nullptr;
+    QAction*             photoAction     = nullptr;
+    QAction*             customAction    = nullptr;
+    QAction*             settingsAction  = nullptr;
 
-    QWidget*             metadataView;
-    ExifToolLoadingView* loadingView;
-    ExifToolListView*    view;
-    ExifToolErrorView*   errorView;
-    SearchTextBar*       searchBar;
+    QWidget*             metadataView    = nullptr;
+    ExifToolLoadingView* loadingView     = nullptr;
+    ExifToolListView*    view            = nullptr;
+    ExifToolErrorView*   errorView       = nullptr;
+    SearchTextBar*       searchBar       = nullptr;
 
     QString              fileName;
 
-    QToolButton*         filterBtn;
-    QToolButton*         toolBtn;
+    QToolButton*         filterBtn       = nullptr;
+    QToolButton*         toolBtn         = nullptr;
 
     QStringList          tagsFilter;
     QStringList          keysFilter;
 
-    QAction*             saveMetadata;
-    QAction*             printMetadata;
-    QAction*             copy2ClipBoard;
+    QAction*             saveMetadata    = nullptr;
+    QAction*             printMetadata   = nullptr;
+    QAction*             copy2ClipBoard  = nullptr;
 
-    QMenu*               optionsMenu;
-    QTimer*              preLoadingTimer;   ///< To prevent flicker effect with loading view with short loading time.
+    QMenu*               optionsMenu     = nullptr;
+    QTimer*              preLoadingTimer = nullptr;   ///< To prevent flicker effect with loading view with short loading time.
 };
 
 ExifToolWidget::ExifToolWidget(QWidget* const parent)
@@ -174,7 +158,7 @@ ExifToolWidget::ExifToolWidget(QWidget* const parent)
     // -----------------------------------------------------------------
 
     const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     d->metadataView          = new QWidget(this);
     QGridLayout* const grid2 = new QGridLayout(d->metadataView);
 

@@ -38,23 +38,15 @@ class Q_DECL_HIDDEN ExifToolLoadingView::Private
 
 public:
 
-    explicit Private()
-        : msgLbl          (nullptr),
-          busy            (false),
-          progressCount   (0),
-          progressPix     (nullptr),
-          progressTimer   (nullptr),
-          progressLabel   (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*         msgLbl;
+    QLabel*         msgLbl          = nullptr;
 
-    bool            busy;
-    int             progressCount;
-    DWorkingPixmap* progressPix;
-    QTimer*         progressTimer;
-    QLabel*         progressLabel;
+    bool            busy            = false;
+    int             progressCount   = 0;
+    DWorkingPixmap* progressPix     = nullptr;
+    QTimer*         progressTimer   = nullptr;
+    QLabel*         progressLabel   = nullptr;
 };
 
 ExifToolLoadingView::ExifToolLoadingView(QWidget* const parent)
@@ -63,7 +55,7 @@ ExifToolLoadingView::ExifToolLoadingView(QWidget* const parent)
 {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid  = new QGridLayout(this);
 
