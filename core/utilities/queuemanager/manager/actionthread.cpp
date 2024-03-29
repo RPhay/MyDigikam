@@ -87,7 +87,7 @@ void ActionThread::processQueueItems(const QList<AssignedBatchTools>& items)
 
         connect(t, SIGNAL(signalFinished(Digikam::ActionData)),
                 this, SLOT(slotUpdateItemInfo(Digikam::ActionData)),
-                Qt::BlockingQueuedConnection);
+                Qt::QueuedConnection);
 
         connect(this, SIGNAL(signalCancelTask()),
                 t, SLOT(slotCancel()),
