@@ -215,6 +215,7 @@ QMap<QString, bool> TimeAdjustContainer::getDateTimeTagsMap() const
     tagsMap.insert(QLatin1String("Iptc.Application2.TimeCreated"), updIPTCDate);
 
     tagsMap.insert(QLatin1String("Xmp.exif.DateTimeOriginal"),     updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.exif.DateTimeDigitized"),    updXMPDate);
     tagsMap.insert(QLatin1String("Xmp.photoshop.DateCreated"),     updXMPDate);
     tagsMap.insert(QLatin1String("Xmp.xmp.MetadataDate"),          updXMPDate);
     tagsMap.insert(QLatin1String("Xmp.xmp.CreateDate"),            updXMPDate);
