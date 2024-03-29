@@ -32,24 +32,15 @@ class Q_DECL_HIDDEN DModelFactory::Private
 
 public:
 
-    explicit Private()
-     :  tagModel         (nullptr),
-        tagFaceModel     (nullptr),
-        tagFilterModel   (nullptr),
-        albumModel       (nullptr),
-        searchModel      (nullptr),
-        dateAlbumModel   (nullptr),
-        imageVersionModel(nullptr)
-    {
-    }
+    Private() = default;
 
-    TagModel*          tagModel;
-    TagModel*          tagFaceModel;
-    TagModel*          tagFilterModel;
-    AlbumModel*        albumModel;
-    SearchModel*       searchModel;
-    DateAlbumModel*    dateAlbumModel;
-    ItemVersionsModel* imageVersionModel;
+    TagModel*          tagModel          = nullptr;
+    TagModel*          tagFaceModel      = nullptr;
+    TagModel*          tagFilterModel    = nullptr;
+    AlbumModel*        albumModel        = nullptr;
+    SearchModel*       searchModel       = nullptr;
+    DateAlbumModel*    dateAlbumModel    = nullptr;
+    ItemVersionsModel* imageVersionModel = nullptr;
 };
 
 DModelFactory::DModelFactory()
