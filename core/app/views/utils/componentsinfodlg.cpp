@@ -207,68 +207,80 @@ public:
 
         // --- FFMPEG Video codecs ---
 
-        FFMpegProperties propsVid     = FFMpegConfigHelper::getVideoCodecsProperties();
-        QTreeWidgetItem* const vidDec = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Video Decoders"));
+        FFMpegProperties propsVid = FFMpegConfigHelper::getVideoCodecsProperties();
 
-        for (FFMpegProperties::const_iterator it = propsVid.constBegin() ; it != propsVid.constEnd() ; ++it)
+        if (!propsVid.isEmpty())
         {
-            QStringList vals = it.value();
+            QTreeWidgetItem* const vidDec = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Video Decoders"));
 
-            if ((vals.size() > 1) && (vals[1] == QLatin1String("R")))
+            for (FFMpegProperties::const_iterator it = propsVid.constBegin() ; it != propsVid.constEnd() ; ++it)
             {
-                new QTreeWidgetItem(vidDec, QStringList() << it.key() << vals[0]);
+                QStringList vals = it.value();
+
+                if ((vals.size() > 1) && (vals[1] == QLatin1String("R")))
+                {
+                    new QTreeWidgetItem(vidDec, QStringList() << it.key() << vals[0]);
+                }
             }
-        }
 
-        QTreeWidgetItem* const vidEnc = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Video Encoders"));
+            QTreeWidgetItem* const vidEnc = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Video Encoders"));
 
-        for (FFMpegProperties::const_iterator it = propsVid.constBegin() ; it != propsVid.constEnd() ; ++it)
-        {
-            QStringList vals = it.value();
-
-            if ((vals.size() > 2) && (vals[2] == QLatin1String("W")))
+            for (FFMpegProperties::const_iterator it = propsVid.constBegin() ; it != propsVid.constEnd() ; ++it)
             {
-                new QTreeWidgetItem(vidEnc, QStringList() << it.key() << vals[0]);
+                QStringList vals = it.value();
+
+                if ((vals.size() > 2) && (vals[2] == QLatin1String("W")))
+                {
+                    new QTreeWidgetItem(vidEnc, QStringList() << it.key() << vals[0]);
+                }
             }
         }
 
         // --- FFMPEG Audio codecs ---
 
-        FFMpegProperties propsAud     = FFMpegConfigHelper::getAudioCodecsProperties();
-        QTreeWidgetItem* const audDec = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Audio Decoders"));
+        FFMpegProperties propsAud = FFMpegConfigHelper::getAudioCodecsProperties();
 
-        for (FFMpegProperties::const_iterator it = propsAud.constBegin() ; it != propsAud.constEnd() ; ++it)
+        if (!propsAud.isEmpty())
         {
-            QStringList vals = it.value();
+            QTreeWidgetItem* const audDec = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Audio Decoders"));
 
-            if ((vals.size() > 1) && (vals[1] == QLatin1String("R")))
+            for (FFMpegProperties::const_iterator it = propsAud.constBegin() ; it != propsAud.constEnd() ; ++it)
             {
-                new QTreeWidgetItem(audDec, QStringList() << it.key() << vals[0]);
+                QStringList vals = it.value();
+
+                if ((vals.size() > 1) && (vals[1] == QLatin1String("R")))
+                {
+                    new QTreeWidgetItem(audDec, QStringList() << it.key() << vals[0]);
+                }
             }
-        }
 
-        QTreeWidgetItem* const audEnc = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Audio Encoders"));
+            QTreeWidgetItem* const audEnc = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Audio Encoders"));
 
-        for (FFMpegProperties::const_iterator it = propsAud.constBegin() ; it != propsAud.constEnd() ; ++it)
-        {
-            QStringList vals = it.value();
-
-            if ((vals.size() > 2) && (vals[2] == QLatin1String("W")))
+            for (FFMpegProperties::const_iterator it = propsAud.constBegin() ; it != propsAud.constEnd() ; ++it)
             {
-                new QTreeWidgetItem(audEnc, QStringList() << it.key() << vals[0]);
+                QStringList vals = it.value();
+
+                if ((vals.size() > 2) && (vals[2] == QLatin1String("W")))
+                {
+                    new QTreeWidgetItem(audEnc, QStringList() << it.key() << vals[0]);
+                }
             }
         }
 
         // --- FFMPEG supported extensions ---
 
-        FFMpegProperties propsExt       = FFMpegConfigHelper::getExtensionsProperties();
-        QTreeWidgetItem* const extEntry = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Supported Extensions"));
+        FFMpegProperties propsExt = FFMpegConfigHelper::getExtensionsProperties();
 
-        for (FFMpegProperties::const_iterator it = propsExt.constBegin() ; it != propsExt.constEnd() ; ++it)
+        if (!propsExt.isEmpty())
         {
-            if (!it.value().isEmpty())
+            QTreeWidgetItem* const extEntry = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Supported Extensions"));
+
+            for (FFMpegProperties::const_iterator it = propsExt.constBegin() ; it != propsExt.constEnd() ; ++it)
             {
-                new QTreeWidgetItem(extEntry, QStringList() << it.key() << it.value()[0]);
+                if (!it.value().isEmpty())
+                {
+                    new QTreeWidgetItem(extEntry, QStringList() << it.key() << it.value()[0]);
+                }
             }
         }
 
