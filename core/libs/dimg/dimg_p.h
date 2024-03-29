@@ -61,6 +61,7 @@ extern "C"
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dimg.h"
 #include "dplugindimg.h"
 #include "digikam_export.h"

@@ -245,7 +245,17 @@ DIGIKAM_EXPORT void installQtTranslationFiles(QApplication& app);
 /**
  * This method returns QDateTime from with date set to parameter date and time set to start of the day.
  */
-DIGIKAM_EXPORT QDateTime startOfDay(const QDate&);
+DIGIKAM_EXPORT QDateTime startOfDay(const QDate& date);
+
+/**
+ * This method returns QDateTime with UTC timespec.
+ */
+DIGIKAM_EXPORT QDateTime asDateTimeUTC(const QDateTime& dt);
+
+/**
+ * This method returns QDateTime with Local timespec.
+ */
+DIGIKAM_EXPORT QDateTime asDateTimeLocal(const QDateTime& dt);
 
 /**
  * Open online handbook at the section/chapter/reference page.

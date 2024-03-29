@@ -39,6 +39,7 @@
 #include "inatutils.h"
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "digikam_globals.h"
 #include "digikam_version.h"
 #include "previewloadthread.h"
 #include "inatbrowserdlg.h"
@@ -1264,8 +1265,7 @@ void INatTalker::computerVision(const QUrl& localImage)
                                 GEOLOCATION_PRECISION));
     }
 
-    QDateTime dateTime = info.dateTime();
-    dateTime.setTimeSpec(Qt::LocalTime);
+    QDateTime dateTime = asDateTimeLocal(info.dateTime());
 
     if (dateTime.isValid())
     {

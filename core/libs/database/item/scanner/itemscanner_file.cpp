@@ -73,27 +73,20 @@ QDateTime ItemScanner::creationDateFromFilesystem(const QFileInfo& info)
 {
     // creation date is not what it seems on Unix
 
-    QDateTime ctime = info.birthTime();
-    QDateTime mtime = info.lastModified();
+    QDateTime ctime = asDateTimeUTC(info.birthTime());
+    QDateTime mtime = asDateTimeUTC(info.lastModified());
 
     if (ctime.isValid())
     {
-        ctime.setTimeSpec(Qt::UTC);
-
         return ctime;
     }
 
     if (mtime.isValid())
     {
-        mtime.setTimeSpec(Qt::UTC);
-
         return mtime;
     }
 
-    QDateTime dateTime = QDateTime::currentDateTime();
-    dateTime.setTimeSpec(Qt::UTC);
-
-    return dateTime;
+    return asDateTimeUTC(QDateTime::currentDateTime());
 }
 
 void ItemScanner::scanItemInformation()

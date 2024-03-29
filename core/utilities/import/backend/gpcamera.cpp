@@ -53,6 +53,7 @@ extern "C"
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "digikam_globals.h"
 #include "dfileoperations.h"
 #include "dmetadata.h"
 
@@ -1022,14 +1023,12 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
             {
                 if (cfinfo.file.fields & GP_FILE_INFO_MTIME)
                 {
-                    info.ctime = QDateTime::fromSecsSinceEpoch(cfinfo.file.mtime);
+                    info.ctime = asDateTimeUTC(QDateTime::fromSecsSinceEpoch(cfinfo.file.mtime));
                 }
                 else
                 {
-                    info.ctime = QDateTime::currentDateTime();
+                    info.ctime = asDateTimeUTC(QDateTime::currentDateTime());
                 }
-
-                info.ctime.setTimeSpec(Qt::UTC);
             }
         }
         else
@@ -1038,14 +1037,12 @@ void GPCamera::getItemInfoInternal(const QString& folder, const QString& itemNam
 
             if (cfinfo.file.fields & GP_FILE_INFO_MTIME)
             {
-                info.ctime = QDateTime::fromSecsSinceEpoch(cfinfo.file.mtime);
+                info.ctime = asDateTimeUTC(QDateTime::fromSecsSinceEpoch(cfinfo.file.mtime));
             }
             else
             {
-                info.ctime = QDateTime::currentDateTime();
+                info.ctime = asDateTimeUTC(QDateTime::currentDateTime());
             }
-
-            info.ctime.setTimeSpec(Qt::UTC);
 
             if (cfinfo.file.fields & GP_FILE_INFO_WIDTH)
             {

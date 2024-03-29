@@ -117,11 +117,9 @@ void ItemLister::listPAlbum(ItemListerReceiver* const receiver,
         ++it;
         record.format            = (*it).toString();
         ++it;
-        record.creationDate      = (*it).toDateTime();
-        record.creationDate.setTimeSpec(Qt::UTC);
+        record.creationDate      = asDateTimeUTC((*it).toDateTime());
         ++it;
-        record.modificationDate  = (*it).toDateTime();
-        record.modificationDate.setTimeSpec(Qt::UTC);
+        record.modificationDate  = asDateTimeUTC((*it).toDateTime());
         ++it;
         record.fileSize          = (*it).toLongLong();
         ++it;

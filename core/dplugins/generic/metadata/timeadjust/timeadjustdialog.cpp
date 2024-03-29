@@ -55,8 +55,10 @@
 #include "dmetadata.h"
 #include "dprogresswdg.h"
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dxmlguiwindow.h"
 #include "timeadjustlist.h"
+#include "digikam_globals.h"
 #include "digikam_version.h"
 #include "timeadjustthread.h"
 
@@ -268,13 +270,13 @@ void TimeAdjustDialog::readSettings()
     KConfigGroup group        = config->group(QLatin1String("Time Adjust Settings"));
 
     prm.customDate     = group.readEntry(QLatin1String("Custom Date"),                   QDateTime());
-    prm.customDate.setTimeSpec(Qt::UTC);
+    prm.customDate     = asDateTimeUTC(prm.customDate);
     prm.customTime     = group.readEntry(QLatin1String("Custom Time"),                   QDateTime());
-    prm.customTime.setTimeSpec(Qt::UTC);
+    prm.customTime     = asDateTimeUTC(prm.customTime);
     prm.adjustmentType = group.readEntry(QLatin1String("Adjustment Type"),               0);
     prm.adjustmentDays = group.readEntry(QLatin1String("Adjustment Days"),               0);
     prm.adjustmentTime = group.readEntry(QLatin1String("Adjustment Time"),               QDateTime());
-    prm.adjustmentTime.setTimeSpec(Qt::UTC);
+    prm.adjustmentTime = asDateTimeUTC(prm.adjustmentTime);
 
     prm.updIfAvailable = group.readEntry(QLatin1String("Update Only If Available Time"), true);
     prm.updFileModDate = group.readEntry(QLatin1String("Update File Modification Time"), true);

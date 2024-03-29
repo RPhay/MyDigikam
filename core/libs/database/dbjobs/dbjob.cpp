@@ -16,6 +16,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
 #include "coredb.h"
@@ -97,8 +98,7 @@ void DatesJob::run()
         {
             if (!value.isNull())
             {
-                QDateTime dateTime = value.toDateTime();
-                dateTime.setTimeSpec(Qt::UTC);
+                QDateTime dateTime = asDateTimeUTC(value.toDateTime());
 
                 if (!dateTime.isValid())
                 {

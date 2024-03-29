@@ -22,6 +22,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -116,8 +117,7 @@ ThumbsDbInfo ThumbsDb::fillThumbnailInfo(const QList<QVariant>& values)
 
     info.id               = values.at(0).toInt();
     info.type             = (DatabaseThumbnail::Type)values.at(1).toInt();
-    info.modificationDate = values.at(2).toDateTime();
-    info.modificationDate.setTimeSpec(Qt::UTC);
+    info.modificationDate = asDateTimeUTC(values.at(2).toDateTime());
     info.orientationHint  = values.at(3).toInt();
     info.data             = values.at(4).toByteArray();
 

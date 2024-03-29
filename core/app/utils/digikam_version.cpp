@@ -28,6 +28,7 @@
 
 #include "digikam_gitversion.h"
 #include "digikam_builddate.h"
+#include "digikam_globals.h"
 #include "daboutdata.h"
 
 namespace Digikam
@@ -46,9 +47,8 @@ const QString digiKamVersion()
 const QDateTime digiKamBuildDate()
 {
     QDateTime dt = QDateTime::fromString(QLatin1String(BUILD_DATE), QLatin1String("yyyyMMddTHHmmss"));
-    dt.setTimeSpec(Qt::UTC);
 
-    return dt;
+    return asDateTimeUTC(dt);
 }
 
 const QString additionalInformation()

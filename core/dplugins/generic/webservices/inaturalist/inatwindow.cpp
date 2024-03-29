@@ -50,6 +50,7 @@
 #include "dmetadata.h"
 #include "dtextedit.h"
 #include "wsselectuserdlg.h"
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "previewloadthread.h"
 #include "inatwidget_p.h"
@@ -1054,8 +1055,7 @@ void INatWindow::slotImageListChanged()
         DItemInfo info(d->iface->itemInfo(url));
         QColor txtColor(listView->palette().color(QPalette::Text));
         DItemsListViewItem* const item = listView->findItem(url);
-        QDateTime dateTime             = info.dateTime();
-        dateTime.setTimeSpec(Qt::LocalTime);
+        QDateTime dateTime             = asDateTimeLocal(info.dateTime());
         QString dt;
 
         if (dateTime.isValid())

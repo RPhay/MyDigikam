@@ -20,6 +20,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -206,8 +207,7 @@ bool SimilarityDb::hasDirtyOrMissingFingerprint(const ItemInfo& imageInfo, Fuzzy
 
             if (values.size() == 2)
             {
-                QDateTime modDateTime = values.at(0).toDateTime();
-                modDateTime.setTimeSpec(Qt::UTC);
+                QDateTime modDateTime = asDateTimeUTC(values.at(0).toDateTime());
 
                 if ((modDateTime             != imageInfo.modDateTime()) ||
                     (values.at(1).toString() != imageInfo.uniqueHash()))
@@ -248,8 +248,7 @@ QList<qlonglong> SimilarityDb::getDirtyOrMissingFingerprints(const QList<ItemInf
 
                 if (values.size() == 2)
                 {
-                    QDateTime modDateTime = values.at(0).toDateTime();
-                    modDateTime.setTimeSpec(Qt::UTC);
+                    QDateTime modDateTime = asDateTimeUTC(values.at(0).toDateTime());
 
                     if ((modDateTime             != info.modDateTime()) ||
                         (values.at(1).toString() != info.uniqueHash()))
@@ -291,8 +290,7 @@ QStringList SimilarityDb::getDirtyOrMissingFingerprintURLs(const QList<ItemInfo>
 
                 if (values.size() == 2)
                 {
-                    QDateTime modDateTime = values.at(0).toDateTime();
-                    modDateTime.setTimeSpec(Qt::UTC);
+                    QDateTime modDateTime = asDateTimeUTC(values.at(0).toDateTime());
 
                     if ((modDateTime             != info.modDateTime()) ||
                         (values.at(1).toString() != info.uniqueHash()))

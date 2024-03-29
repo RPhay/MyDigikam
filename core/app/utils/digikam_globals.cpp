@@ -218,6 +218,40 @@ QDateTime startOfDay(const QDate& date)
     return date.startOfDay();
 }
 
+QDateTime asDateTimeUTC(const QDateTime& dt)
+{
+    QDateTime dateTime(dt);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 5, 0))
+
+    dateTime.setTimeZone(QTimeZone::UTC);
+
+#else
+
+    dateTime.setTimeSpec(Qt::UTC);
+
+#endif
+
+    return dateTime;
+}
+
+QDateTime asDateTimeLocal(const QDateTime& dt)
+{
+    QDateTime dateTime(dt);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 5, 0))
+
+    dateTime.setTimeZone(QTimeZone::LocalTime);
+
+#else
+
+    dateTime.setTimeSpec(Qt::LocalTime);
+
+#endif
+
+    return dateTime;
+}
+
 void openOnlineDocumentation(const QString& section, const QString& chapter, const QString& reference)
 {
     QUrl url;

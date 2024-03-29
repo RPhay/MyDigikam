@@ -53,6 +53,7 @@
 #include "captionvalues.h"
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "digikam_globals.h"
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -1603,8 +1604,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
                 if (creationdDate.isValid() && (creationdDate.timeSpec() == Qt::OffsetFromUTC))
                 {
-                    creationdDate.setTimeSpec(Qt::LocalTime);
-                    dateStr = creationdDate.toString(Qt::ISODate);
+                    dateStr = asDateTimeLocal(creationdDate).toString(Qt::ISODate);
                     rmeta.insert(QLatin1String("com.apple.quicktime.creationdate"), dateStr);
                 }
             }

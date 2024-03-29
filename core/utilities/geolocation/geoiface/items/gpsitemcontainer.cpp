@@ -29,6 +29,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "gpsitemmodel.h"
 #include "dmetadata.h"
 #include "metaenginesettings.h"
@@ -239,8 +240,8 @@ bool GPSItemContainer::loadImageData()
 
         QFileInfo info(m_url.toLocalFile());
 
-        QDateTime ctime = info.birthTime();
-        QDateTime mtime = info.lastModified();
+        QDateTime ctime = asDateTimeUTC(info.birthTime());
+        QDateTime mtime = asDateTimeUTC(info.lastModified());
 
         if (ctime.isNull() || mtime.isNull())
         {
@@ -250,8 +251,6 @@ bool GPSItemContainer::loadImageData()
         {
             m_dateTime = qMin(ctime, mtime);
         }
-
-        m_dateTime.setTimeSpec(Qt::UTC);
     }
 
     if (!meta)

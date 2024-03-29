@@ -31,6 +31,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 
 namespace DigikamGenericGeolocationEditPlugin
 {
@@ -61,7 +62,7 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
 
     if (offsetContainsTimeZone)
     {
-        cameraGMTDateTime.setTimeSpec(Qt::UTC);
+        cameraGMTDateTime = Digikam::asDateTimeUTC(cameraGMTDateTime);
     }
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "    photoDateTime: " << photoDateTime << photoDateTime.timeSpec();

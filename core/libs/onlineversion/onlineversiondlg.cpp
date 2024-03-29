@@ -265,8 +265,7 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
 
     if (d->preRelease)
     {
-        d->onlineDt = QDateTime::fromString(d->newVersion, QLatin1String("yyyyMMddTHHmmss"));
-        d->onlineDt.setTimeSpec(Qt::UTC);
+        d->onlineDt = asDateTimeUTC(QDateTime::fromString(d->newVersion, QLatin1String("yyyyMMddTHHmmss")));
 
         d->label->setText(i18n("<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p>"
                                "<p>New pre-release built on <i>%3</i> is available on this <a href='%4'>repository</a>.</p>"

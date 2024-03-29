@@ -30,6 +30,7 @@
 // Local includes
 
 #include "digikam_version.h"
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 
 namespace Digikam
@@ -231,16 +232,14 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         // Check 1 - the fila name include a pre release suffix as -beta or -rc
 
         QString dtStr      = sections[3];
-        QDateTime onlineDt = QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss"));
-        onlineDt.setTimeSpec(Qt::UTC);
+        QDateTime onlineDt = asDateTimeUTC(QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss")));
 
         if (!onlineDt.isValid())
         {
             // Check 2 - the file name do not include a pre release suffix
 
             dtStr    = sections[2];
-            onlineDt = QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss"));
-            onlineDt.setTimeSpec(Qt::UTC);
+            onlineDt = asDateTimeUTC(QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss")));
         }
 
         if (!onlineDt.isValid())

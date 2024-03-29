@@ -39,6 +39,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dexpanderbox.h"
 #include "clockphotodialog.h"
 #include "dmetadata.h"
@@ -557,8 +558,7 @@ void TimeAdjustSettings::slotSrcTimestampChanged()
 
 void TimeAdjustSettings::slotResetDateToCurrent()
 {
-    QDateTime currentDateTime(QDateTime::currentDateTime());
-    currentDateTime.setTimeSpec(Qt::UTC);
+    QDateTime currentDateTime(asDateTimeUTC(QDateTime::currentDateTime()));
     d->useCustDateInput->setDateTime(currentDateTime);
     d->useCustTimeInput->setDateTime(currentDateTime);
 
