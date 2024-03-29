@@ -195,11 +195,15 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "Parallelized demosaicing") <<        checkTriState(DRawDecoder::librawUseGomp()));
 
 #ifdef HAVE_QTXMLPATTERNS
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Rajce support") <<                   SUPPORTED_YES);
+
 #else
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Rajce support") <<                   SUPPORTED_NO);
+
 #endif
 
     new QTreeWidgetItem(m_features, QStringList() <<
@@ -227,27 +231,39 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "LibRaw") <<                         DRawDecoder::librawVersion());
 
 #ifdef HAVE_EIGEN3
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Eigen") <<                          QLatin1String(EIGEN3_VERSION_STRING));
+
 #else
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Eigen support") <<                  SUPPORTED_NO);
+
 #endif
 
 #ifdef HAVE_QWEBENGINE
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Qt WebEngine version") <<           QLatin1String(QTWEBENGINEWIDGETS_VERSION_STR));
+
 #else
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Qt WebKit version") <<              QLatin1String(QTWEBKITWIDGETS_VERSION_STR));
+
 #endif
 
 #ifdef HAVE_QMULTIMEDIA
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Qt Multimedia support") <<          SUPPORTED_YES);
+
 #else
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Qt Multimedia support") <<          SUPPORTED_YES);
+
 #endif
 
     new QTreeWidgetItem(m_libraries, QStringList() <<
@@ -270,32 +286,45 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     }
 
 #ifdef HAVE_LENSFUN
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "LensFun") <<                        LensFunIface::lensFunVersion());
+
 #else
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "LensFun support") <<                SUPPORTED_NO);
+
 #endif
 
 #ifdef HAVE_IMAGE_MAGICK
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "ImageMagick codecs") <<             QLatin1String(MagickLibVersionText));
+
 #else
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "ImageMagick codecs support") <<     SUPPORTED_NO);
+
 #endif
 
 #ifdef HAVE_HEIF
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "LibHEIF") <<                        QLatin1String(LIBHEIF_VERSION));
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "HEIF reading support") <<           SUPPORTED_YES);
+
 #else
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "HEIF reading support") <<           SUPPORTED_NO);
+
 #endif
 
 #ifdef HAVE_X265
+
     const x265_api* const x265api = x265_api_get(0);
 
     new QTreeWidgetItem(m_libraries, QStringList() <<
@@ -303,9 +332,12 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                                                                           : i18nc("@info: version", "Unknown")));
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "HEIF writing support") <<           SUPPORTED_YES);
+
 #else
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "HEIF Writing support") <<           SUPPORTED_NO);
+
 #endif
 
     QString tiffver = QLatin1String(TIFFLIB_VERSION_STR);
@@ -336,19 +368,27 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "DNG SDK") <<                        DNGWriter::dngSdkVersion());
 
 #ifdef HAVE_JASPER
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "LibJasper") <<                      QLatin1String(jas_getversion()));
+
 #else
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "LibJasper support") <<              SUPPORTED_NO);
+
 #endif
 
 #ifdef HAVE_GEOLOCATION
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Geolocation support") <<            SUPPORTED_YES);
+
 #else
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Geolocation support") <<            SUPPORTED_NO);
+
 #endif
 
 #ifdef HAVE_SONNET
@@ -417,7 +457,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
 #ifndef __clang_analyzer__
 
-        // Disable fals-positive memory leak reported bt scan-build with QTreeWidgetItem.
+        // Disable false-positive memory leak reported by scan-build with QTreeWidgetItem.
 
         while (!in.atEnd())
         {
