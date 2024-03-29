@@ -209,79 +209,93 @@ public:
 
         FFMpegProperties propsVid = FFMpegConfigHelper::getVideoCodecsProperties();
 
-        if (!propsVid.isEmpty())
+        QTreeWidgetItem* const vidDec = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Video Decoders"));
+
+        for (FFMpegProperties::const_iterator it = propsVid.constBegin() ; it != propsVid.constEnd() ; ++it)
         {
-            QTreeWidgetItem* const vidDec = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Video Decoders"));
+            QStringList vals = it.value();
 
-            for (FFMpegProperties::const_iterator it = propsVid.constBegin() ; it != propsVid.constEnd() ; ++it)
+            if ((vals.size() > 1) && (vals[1] == QLatin1String("R")))
             {
-                QStringList vals = it.value();
-
-                if ((vals.size() > 1) && (vals[1] == QLatin1String("R")))
-                {
-                    new QTreeWidgetItem(vidDec, QStringList() << it.key() << vals[0]);
-                }
+                new QTreeWidgetItem(vidDec, QStringList() << it.key() << vals[0]);
             }
+        }
 
-            QTreeWidgetItem* const vidEnc = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Video Encoders"));
+        if (vidDec->childCount() == 0)
+        {
+            new QTreeWidgetItem(vidDec, QStringList() << i18n("no entry"));
+        }
 
-            for (FFMpegProperties::const_iterator it = propsVid.constBegin() ; it != propsVid.constEnd() ; ++it)
+        QTreeWidgetItem* const vidEnc = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Video Encoders"));
+
+        for (FFMpegProperties::const_iterator it = propsVid.constBegin() ; it != propsVid.constEnd() ; ++it)
+        {
+            QStringList vals = it.value();
+
+            if ((vals.size() > 2) && (vals[2] == QLatin1String("W")))
             {
-                QStringList vals = it.value();
-
-                if ((vals.size() > 2) && (vals[2] == QLatin1String("W")))
-                {
-                    new QTreeWidgetItem(vidEnc, QStringList() << it.key() << vals[0]);
-                }
+                new QTreeWidgetItem(vidEnc, QStringList() << it.key() << vals[0]);
             }
+        }
+
+        if (vidEnc->childCount() == 0)
+        {
+            new QTreeWidgetItem(vidEnc, QStringList() << i18n("no entry"));
         }
 
         // --- FFMPEG Audio codecs ---
 
-        FFMpegProperties propsAud = FFMpegConfigHelper::getAudioCodecsProperties();
+        FFMpegProperties propsAud     = FFMpegConfigHelper::getAudioCodecsProperties();
+        QTreeWidgetItem* const audDec = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Audio Decoders"));
 
-        if (!propsAud.isEmpty())
+        for (FFMpegProperties::const_iterator it = propsAud.constBegin() ; it != propsAud.constEnd() ; ++it)
         {
-            QTreeWidgetItem* const audDec = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Audio Decoders"));
+            QStringList vals = it.value();
 
-            for (FFMpegProperties::const_iterator it = propsAud.constBegin() ; it != propsAud.constEnd() ; ++it)
+            if ((vals.size() > 1) && (vals[1] == QLatin1String("R")))
             {
-                QStringList vals = it.value();
-
-                if ((vals.size() > 1) && (vals[1] == QLatin1String("R")))
-                {
                     new QTreeWidgetItem(audDec, QStringList() << it.key() << vals[0]);
-                }
             }
+        }
 
-            QTreeWidgetItem* const audEnc = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Audio Encoders"));
+        if (audDec->childCount() == 0)
+        {
+            new QTreeWidgetItem(audDec, QStringList() << i18n("no entry"));
+        }
 
-            for (FFMpegProperties::const_iterator it = propsAud.constBegin() ; it != propsAud.constEnd() ; ++it)
+        QTreeWidgetItem* const audEnc = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Audio Encoders"));
+
+        for (FFMpegProperties::const_iterator it = propsAud.constBegin() ; it != propsAud.constEnd() ; ++it)
+        {
+            QStringList vals = it.value();
+
+            if ((vals.size() > 2) && (vals[2] == QLatin1String("W")))
             {
-                QStringList vals = it.value();
-
-                if ((vals.size() > 2) && (vals[2] == QLatin1String("W")))
-                {
-                    new QTreeWidgetItem(audEnc, QStringList() << it.key() << vals[0]);
-                }
+                new QTreeWidgetItem(audEnc, QStringList() << it.key() << vals[0]);
             }
+        }
+
+        if (audEnc->childCount() == 0)
+        {
+             new QTreeWidgetItem(audEnc, QStringList() << i18n("no entry"));
         }
 
         // --- FFMPEG supported extensions ---
 
-        FFMpegProperties propsExt = FFMpegConfigHelper::getExtensionsProperties();
+        FFMpegProperties propsExt       = FFMpegConfigHelper::getExtensionsProperties();
+        QTreeWidgetItem* const extEntry = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Supported Extensions"));
 
-        if (!propsExt.isEmpty())
+        for (FFMpegProperties::const_iterator it = propsExt.constBegin() ; it != propsExt.constEnd() ; ++it)
         {
-            QTreeWidgetItem* const extEntry = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Supported Extensions"));
-
-            for (FFMpegProperties::const_iterator it = propsExt.constBegin() ; it != propsExt.constEnd() ; ++it)
+            if (!it.value().isEmpty())
             {
-                if (!it.value().isEmpty())
-                {
-                    new QTreeWidgetItem(extEntry, QStringList() << it.key() << it.value()[0]);
-                }
+                new QTreeWidgetItem(extEntry, QStringList() << it.key() << it.value()[0]);
             }
+        }
+
+        if (extEntry->childCount() == 0)
+        {
+             new QTreeWidgetItem(extEntry, QStringList() << i18n("no entry"));
         }
 
 #endif
