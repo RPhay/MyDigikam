@@ -335,6 +335,7 @@ void CountrySelector::setCountry(const QString& countryCode)
         if (itemText(i).left(3) == countryCode)
         {
             id = i;
+
             break;
         }
     }

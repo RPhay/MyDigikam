@@ -63,40 +63,26 @@ class Q_DECL_HIDDEN AltLangStrEdit::Private
 {
 public:
 
-    explicit Private()
-      : currentLanguage (QLatin1String("x-default")),
-        linesVisible    (0),
-        grid            (nullptr),
-        titleWidget     (nullptr),
-        delValueButton  (nullptr),
-        localizeSelector(nullptr),
-        valueEdit       (nullptr),
-        languageCB      (nullptr),
-        trengine        (nullptr)
-    {
-    }
-
-    ~Private()
-    {
-    }
+    Private()  = default;
+    ~Private() = default;
 
 public:
 
-    QString                        currentLanguage;
+    QString                        currentLanguage  = QLatin1String("x-default");
 
-    uint                           linesVisible;
+    uint                           linesVisible     = 0;
 
-    QGridLayout*                   grid;
+    QGridLayout*                   grid             = nullptr;
 
-    QWidget*                       titleWidget;
+    QWidget*                       titleWidget      = nullptr;
 
-    QToolButton*                   delValueButton;
-    LocalizeSelector*              localizeSelector;
+    QToolButton*                   delValueButton   = nullptr;
+    LocalizeSelector*              localizeSelector = nullptr;
 
-    DTextEdit*                     valueEdit;
+    DTextEdit*                     valueEdit        = nullptr;
 
-    QComboBox*                     languageCB;
-    DOnlineTranslator*             trengine;
+    QComboBox*                     languageCB       = nullptr;
+    DOnlineTranslator*             trengine         = nullptr;
     QString                        trCode;
 
     MetaEngine::AltLangMap         values;

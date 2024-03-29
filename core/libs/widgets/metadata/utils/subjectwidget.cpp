@@ -53,23 +53,7 @@ public:
 
 public:
 
-    explicit Private()
-      : optionsBox      (nullptr),
-        addSubjectButton(nullptr),
-        delSubjectButton(nullptr),
-        repSubjectButton(nullptr),
-        iprLabel        (nullptr),
-        refLabel        (nullptr),
-        nameLabel       (nullptr),
-        matterLabel     (nullptr),
-        detailLabel     (nullptr),
-        btnGroup        (nullptr),
-        stdBtn          (nullptr),
-        customBtn       (nullptr),
-        refCB           (nullptr),
-        subjectsBox     (nullptr)
-    {
-    }
+    Private() = default;
 
     typedef QMap<QString, SubjectData> SubjectCodesMap;
 
@@ -77,26 +61,26 @@ public:
 
     QStringList                        subjectsList;
 
-    QWidget*                           optionsBox;
+    QWidget*                           optionsBox       = nullptr;
 
-    QPushButton*                       addSubjectButton;
-    QPushButton*                       delSubjectButton;
-    QPushButton*                       repSubjectButton;
+    QPushButton*                       addSubjectButton = nullptr;
+    QPushButton*                       delSubjectButton = nullptr;
+    QPushButton*                       repSubjectButton = nullptr;
 
-    QLabel*                            iprLabel;
-    QLabel*                            refLabel;
-    QLabel*                            nameLabel;
-    QLabel*                            matterLabel;
-    QLabel*                            detailLabel;
+    QLabel*                            iprLabel         = nullptr;
+    QLabel*                            refLabel         = nullptr;
+    QLabel*                            nameLabel        = nullptr;
+    QLabel*                            matterLabel      = nullptr;
+    QLabel*                            detailLabel      = nullptr;
 
-    QButtonGroup*                      btnGroup;
+    QButtonGroup*                      btnGroup         = nullptr;
 
-    QRadioButton*                      stdBtn;
-    QRadioButton*                      customBtn;
+    QRadioButton*                      stdBtn           = nullptr;
+    QRadioButton*                      customBtn        = nullptr;
 
-    QComboBox*                         refCB;
+    QComboBox*                         refCB            = nullptr;
 
-    QListWidget*                       subjectsBox;
+    QListWidget*                       subjectsBox      = nullptr;
 };
 
 // --------------------------------------------------------------------------------
@@ -360,6 +344,7 @@ void SubjectWidget::slotSubjectsToggled(bool b)
     d->addSubjectButton->setEnabled(b);
     d->delSubjectButton->setEnabled(b);
     d->repSubjectButton->setEnabled(b);
+
     slotEditOptionChanged(d->btnGroup->id(d->btnGroup->checkedButton()));
 }
 
