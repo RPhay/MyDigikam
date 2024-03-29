@@ -79,6 +79,7 @@ bool ExifWidget::loadFromURL(const QUrl& url)
     if (url.isEmpty())
     {
         setMetadata();
+
         return false;
     }
     else
@@ -88,6 +89,7 @@ bool ExifWidget::loadFromURL(const QUrl& url)
         if (!metadata->hasExif())
         {
             setMetadata();
+
             return false;
         }
         else
@@ -124,18 +126,21 @@ void ExifWidget::buildView()
         case CUSTOM:
         {
             setIfdList(getMetadataMap(), m_keysFilter, getTagsFilter());
+
             break;
         }
 
         case PHOTO:
         {
             setIfdList(getMetadataMap(), m_keysFilter, QStringList() << QLatin1String("FULL"));
+
             break;
         }
 
         default: // NONE
         {
             setIfdList(getMetadataMap(), m_keysFilter, QStringList());
+
             break;
         }
     }

@@ -69,30 +69,19 @@ class Q_DECL_HIDDEN RatingWidget::Private
 {
 public:
 
-    explicit Private()
-      : tracking        (true),
-        isHovered       (false),
-        fading          (false),
-        rating          (0),
-        fadingValue     (0),
-        duration        (600),
-        offset          (0),
-        width           (15),
-        fadingTimeLine  (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool       tracking;
-    bool       isHovered;
-    bool       fading;
+    bool       tracking         = true;
+    bool       isHovered        = false;
+    bool       fading           = false;
 
-    int        rating;
-    int        fadingValue;
-    int        duration;       ///< in milliseconds
-    int        offset;
-    int        width;
+    int        rating           = 0;
+    int        fadingValue      = 0;
+    int        duration         = 600;       ///< in milliseconds
+    int        offset           = 0;
+    int        width            = 15;
 
-    QTimeLine* fadingTimeLine;
+    QTimeLine* fadingTimeLine   = nullptr;
 
     QPixmap    selPixmap;      ///< Selected star.
     QPixmap    regPixmap;      ///< Regular star.
@@ -354,6 +343,7 @@ void RatingWidget::mouseMoveEvent(QMouseEvent* e)
         }
 
         Q_EMIT signalRatingModified(d->rating);
+
         update();
     }
 }
@@ -514,15 +504,11 @@ class Q_DECL_HIDDEN RatingBox::Private
 
 public:
 
-    explicit Private()
-      : shortcut    (nullptr),
-        ratingWidget(nullptr)
-    {
-    }
+    Private() = default;
 
-    DAdjustableLabel* shortcut;
+    DAdjustableLabel* shortcut      = nullptr;
 
-    RatingWidget*     ratingWidget;
+    RatingWidget*     ratingWidget  = nullptr;
 };
 
 RatingBox::RatingBox(QWidget* const parent)

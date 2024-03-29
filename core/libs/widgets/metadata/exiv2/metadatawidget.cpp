@@ -63,49 +63,33 @@ class Q_DECL_HIDDEN MetadataWidget::Private
 
 public:
 
-    explicit Private()
-      : noneAction      (nullptr),
-        photoAction     (nullptr),
-        customAction    (nullptr),
-        settingsAction  (nullptr),
-        mainLayout      (nullptr),
-        filterBtn       (nullptr),
-        toolBtn         (nullptr),
-        saveMetadata    (nullptr),
-        printMetadata   (nullptr),
-        copy2ClipBoard  (nullptr),
-        optionsMenu     (nullptr),
-        view            (nullptr),
-        searchBar       (nullptr),
-        metadata        (nullptr)
-    {
-    }
+    Private() = default;
 
-    QAction*               noneAction;
-    QAction*               photoAction;
-    QAction*               customAction;
-    QAction*               settingsAction;
+    QAction*               noneAction       = nullptr;
+    QAction*               photoAction      = nullptr;
+    QAction*               customAction     = nullptr;
+    QAction*               settingsAction   = nullptr;
 
-    QGridLayout*           mainLayout;
+    QGridLayout*           mainLayout       = nullptr;
 
-    QToolButton*           filterBtn;
-    QToolButton*           toolBtn;
+    QToolButton*           filterBtn        = nullptr;
+    QToolButton*           toolBtn          = nullptr;
 
     QString                fileName;
 
     QStringList            tagsFilter;
 
-    QAction*               saveMetadata;
-    QAction*               printMetadata;
-    QAction*               copy2ClipBoard;
+    QAction*               saveMetadata     = nullptr;
+    QAction*               printMetadata    = nullptr;
+    QAction*               copy2ClipBoard   = nullptr;
 
-    QMenu*                 optionsMenu;
+    QMenu*                 optionsMenu      = nullptr;
 
-    MetadataListView*      view;
+    MetadataListView*      view             = nullptr;
 
-    SearchTextBar*         searchBar;
+    SearchTextBar*         searchBar        = nullptr;
 
-    DMetadata*             metadata;
+    DMetadata*             metadata         = nullptr;
     DMetadata::MetaDataMap metaDataMap;
 };
 
@@ -269,6 +253,7 @@ bool MetadataWidget::setMetadata(const DMetadata& data)
     if (d->metadata->isEmpty())
     {
         setMetadataEmpty();
+
         return false;
     }
 

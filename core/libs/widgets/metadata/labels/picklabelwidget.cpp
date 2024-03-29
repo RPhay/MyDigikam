@@ -64,30 +64,20 @@ class Q_DECL_HIDDEN PickLabelWidget::Private
 
 public:
 
-    explicit Private()
-      : pickBtns    (nullptr),
-        desc        (nullptr),
-        btnNone     (nullptr),
-        btnRej      (nullptr),
-        btnPndg     (nullptr),
-        btnAccpt    (nullptr),
-        descBox     (nullptr),
-        shortcut    (nullptr)
-    {
-    }
+    Private() = default;
 
-    QButtonGroup*     pickBtns;
+    QButtonGroup*     pickBtns  = nullptr;
 
-    QLabel*           desc;
+    QLabel*           desc      = nullptr;
 
-    QToolButton*      btnNone;
-    QToolButton*      btnRej;
-    QToolButton*      btnPndg;
-    QToolButton*      btnAccpt;
+    QToolButton*      btnNone   = nullptr;
+    QToolButton*      btnRej    = nullptr;
+    QToolButton*      btnPndg   = nullptr;
+    QToolButton*      btnAccpt  = nullptr;
 
-    DHBox*            descBox;
+    DHBox*            descBox   = nullptr;
 
-    DAdjustableLabel* shortcut;
+    DAdjustableLabel* shortcut  = nullptr;
 };
 
 PickLabelWidget::PickLabelWidget(QWidget* const parent)
@@ -212,6 +202,7 @@ bool PickLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(NoPickLabel);
+
             return false;
         }
     }
@@ -221,6 +212,7 @@ bool PickLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(RejectedLabel);
+
             return false;
         }
     }
@@ -230,6 +222,7 @@ bool PickLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(PendingLabel);
+
             return false;
         }
     }
@@ -239,6 +232,7 @@ bool PickLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(AcceptedLabel);
+
             return false;
         }
     }
@@ -265,7 +259,9 @@ QList<PickLabel> PickLabelWidget::pickLabels() const
     Q_FOREACH (QAbstractButton* const btn, d->pickBtns->buttons())
     {
         if (btn && btn->isChecked())
+        {
             list.append((PickLabel)(d->pickBtns->id(btn)));
+        }
     }
 
     return list;
@@ -342,12 +338,9 @@ class Q_DECL_HIDDEN PickLabelSelector::Private
 
 public:
 
-    explicit Private()
-      : plw(nullptr)
-    {
-    }
+    Private() = default;
 
-    PickLabelWidget* plw;
+    PickLabelWidget* plw = nullptr;
 };
 
 PickLabelSelector::PickLabelSelector(QWidget* const parent)

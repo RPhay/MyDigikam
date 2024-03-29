@@ -64,42 +64,26 @@ class Q_DECL_HIDDEN ColorLabelWidget::Private
 {
 public:
 
-    explicit Private()
-      : colorBtns   (nullptr),
-        desc        (nullptr),
-        btnNone     (nullptr),
-        btnRed      (nullptr),
-        btnOrange   (nullptr),
-        btnYellow   (nullptr),
-        btnGreen    (nullptr),
-        btnBlue     (nullptr),
-        btnMagenta  (nullptr),
-        btnGray     (nullptr),
-        btnBlack    (nullptr),
-        btnWhite    (nullptr),
-        descBox     (nullptr),
-        shortcut    (nullptr)
-    {
-    }
+    Private() = default;
 
-    QButtonGroup*       colorBtns;
+    QButtonGroup*       colorBtns   = nullptr;
 
-    QLabel*             desc;
+    QLabel*             desc        = nullptr;
 
-    QToolButton*        btnNone;
-    QToolButton*        btnRed;
-    QToolButton*        btnOrange;
-    QToolButton*        btnYellow;
-    QToolButton*        btnGreen;
-    QToolButton*        btnBlue;
-    QToolButton*        btnMagenta;
-    QToolButton*        btnGray;
-    QToolButton*        btnBlack;
-    QToolButton*        btnWhite;
+    QToolButton*        btnNone     = nullptr;
+    QToolButton*        btnRed      = nullptr;
+    QToolButton*        btnOrange   = nullptr;
+    QToolButton*        btnYellow   = nullptr;
+    QToolButton*        btnGreen    = nullptr;
+    QToolButton*        btnBlue     = nullptr;
+    QToolButton*        btnMagenta  = nullptr;
+    QToolButton*        btnGray     = nullptr;
+    QToolButton*        btnBlack    = nullptr;
+    QToolButton*        btnWhite    = nullptr;
 
-    DHBox*              descBox;
+    DHBox*              descBox     = nullptr;
 
-    DAdjustableLabel*   shortcut;
+    DAdjustableLabel*   shortcut    = nullptr;
 };
 
 ColorLabelWidget::ColorLabelWidget(QWidget* const parent)
@@ -143,7 +127,7 @@ ColorLabelWidget::ColorLabelWidget(QWidget* const parent)
     d->btnGreen->setIcon(buildIcon(GreenLabel));
     d->btnGreen->installEventFilter(this);
 
-    d->btnBlue = new QToolButton(hbox);
+    d->btnBlue  = new QToolButton(hbox);
     d->btnBlue->setCheckable(true);
     d->btnBlue->setFocusPolicy(Qt::NoFocus);
     d->btnBlue->setIcon(buildIcon(BlueLabel));
@@ -266,6 +250,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(NoColorLabel);
+
             return false;
         }
     }
@@ -275,6 +260,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(RedLabel);
+
             return false;
         }
     }
@@ -284,6 +270,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(OrangeLabel);
+
             return false;
         }
     }
@@ -293,6 +280,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(YellowLabel);
+
             return false;
         }
     }
@@ -302,6 +290,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(GreenLabel);
+
             return false;
         }
     }
@@ -311,6 +300,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(BlueLabel);
+
             return false;
         }
     }
@@ -320,6 +310,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(MagentaLabel);
+
             return false;
         }
     }
@@ -329,6 +320,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(GrayLabel);
+
             return false;
         }
     }
@@ -338,6 +330,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(BlackLabel);
+
             return false;
         }
     }
@@ -347,6 +340,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
         if (ev->type() == QEvent::Enter)
         {
             updateDescription(WhiteLabel);
+
             return false;
         }
     }
@@ -404,43 +398,63 @@ QColor ColorLabelWidget::labelColor(ColorLabel label)
     switch (label)
     {
         case RedLabel:
+        {
             color = qRgb(0xDF, 0x6E, 0x5F);
             break;
+        }
 
         case OrangeLabel:
+        {
             color = qRgb(0xEE, 0xAF, 0x6B);
             break;
+        }
 
         case YellowLabel:
+        {
             color = qRgb(0xE4, 0xD3, 0x78);
             break;
+        }
 
         case GreenLabel:
+        {
             color = qRgb(0xAF, 0xD8, 0x78);
             break;
+        }
 
         case BlueLabel:
+        {
             color = qRgb(0x77, 0xBA, 0xE8);
             break;
+        }
 
         case MagentaLabel:
+        {
             color = qRgb(0xCB, 0x98, 0xE1);
             break;
+        }
 
         case GrayLabel:
+        {
             color = qRgb(0xB7, 0xB7, 0xB7);
             break;
+        }
 
         case BlackLabel:
+        {
             color = qRgb(0x28, 0x28, 0x28);
             break;
+        }
 
         case WhiteLabel:
+        {
             color = qRgb(0xF7, 0xFE, 0xFA);
             break;
+        }
 
         default:   // NoColorLabel
+        {
             break;
+        }
     }
 
     return color;
@@ -453,44 +467,64 @@ QString ColorLabelWidget::labelColorName(ColorLabel label)
     switch (label)
     {
         case RedLabel:
+        {
             name = i18nc("@info: color label name", "Red");
             break;
+        }
 
         case OrangeLabel:
+        {
             name = i18nc("@info: color label name", "Orange");
             break;
+        }
 
         case YellowLabel:
+        {
             name = i18nc("@info: color label name", "Yellow");
             break;
+        }
 
         case GreenLabel:
+        {
             name = i18nc("@info: color label name", "Green");
             break;
+        }
 
         case BlueLabel:
+        {
             name = i18nc("@info: color label name", "Blue");
             break;
+        }
 
         case MagentaLabel:
+        {
             name = i18nc("@info: color label name", "Magenta");
             break;
+        }
 
         case GrayLabel:
+        {
             name = i18nc("@info: color label name", "Gray");
             break;
+        }
 
         case BlackLabel:
+        {
             name = i18nc("@info: color label name", "Black");
             break;
+        }
 
         case WhiteLabel:
+        {
             name = i18nc("@info: color label name", "White");
             break;
+        }
 
         default:   // NoColorLabel
+        {
             name = i18nc("@info: color label name", "None");
             break;
+        }
     }
 
     return name;
@@ -503,12 +537,9 @@ class Q_DECL_HIDDEN ColorLabelSelector::Private
 
 public:
 
-    explicit Private()
-      : clw(nullptr)
-    {
-    }
+    Private() = default;
 
-    ColorLabelWidget* clw;
+    ColorLabelWidget* clw = nullptr;
 };
 
 ColorLabelSelector::ColorLabelSelector(QWidget* parent)

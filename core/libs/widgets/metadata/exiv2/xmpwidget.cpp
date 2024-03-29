@@ -96,6 +96,7 @@ bool XmpWidget::loadFromURL(const QUrl& url)
     if (url.isEmpty())
     {
         setMetadata();
+
         return false;
     }
     else
@@ -105,6 +106,7 @@ bool XmpWidget::loadFromURL(const QUrl& url)
         if (!metadata->hasXmp())
         {
             setMetadata();
+
             return false;
         }
         else
@@ -139,18 +141,21 @@ void XmpWidget::buildView()
         case CUSTOM:
         {
             setIfdList(getMetadataMap(), m_keysFilter, getTagsFilter());
+
             break;
         }
 
         case PHOTO:
         {
             setIfdList(getMetadataMap(), m_keysFilter, QStringList() << QLatin1String("FULL"));
+
             break;
         }
 
         default: // NONE
         {
             setIfdList(getMetadataMap(), QStringList());
+
             break;
         }
     }

@@ -259,26 +259,18 @@ class Q_DECL_HIDDEN MetadataSelectorView::Private
 {
 public:
 
-    explicit Private()
-      : selectAllBtn       (nullptr),
-        clearSelectionBtn  (nullptr),
-        defaultSelectionBtn(nullptr),
-        selector           (nullptr),
-        searchBar          (nullptr),
-        backend            (Exiv2Backend)
-    {
-    }
+    Private() = default;
 
     QStringList       defaultFilter;
 
-    QPushButton*      selectAllBtn;
-    QPushButton*      clearSelectionBtn;
-    QPushButton*      defaultSelectionBtn;
+    QPushButton*      selectAllBtn          = nullptr;
+    QPushButton*      clearSelectionBtn     = nullptr;
+    QPushButton*      defaultSelectionBtn   = nullptr;
 
-    MetadataSelector* selector;
+    MetadataSelector* selector              = nullptr;
 
-    SearchTextBar*    searchBar;
-    Backend           backend;
+    SearchTextBar*    searchBar             = nullptr;
+    Backend           backend               = Exiv2Backend;
 };
 
 MetadataSelectorView::MetadataSelectorView(QWidget* const parent, Backend be)
@@ -287,7 +279,7 @@ MetadataSelectorView::MetadataSelectorView(QWidget* const parent, Backend be)
 {
     d->backend              = be;
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(this);
     d->selector             = new MetadataSelector(this);

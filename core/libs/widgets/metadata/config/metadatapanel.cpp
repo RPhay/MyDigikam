@@ -161,14 +161,6 @@ class Q_DECL_HIDDEN MetadataPanel::Private
 public:
 
     explicit Private()
-      : tab                 (nullptr),
-        parser              (nullptr),
-        parserRunning       (false),
-        exifViewerConfig    (nullptr),
-        mknoteViewerConfig  (nullptr),
-        iptcViewerConfig    (nullptr),
-        xmpViewerConfig     (nullptr),
-        exifToolViewerConfig(nullptr)
     {
         setDefaultFilter(ExifHumanList,      defaultExifFilter);
         setDefaultFilter(MakerNoteHumanList, defaultMknoteFilter);
@@ -191,7 +183,7 @@ public:
 
 public:
 
-    QTabWidget*                  tab;
+    QTabWidget*                  tab                    = nullptr;
 
     QStringList                  defaultExifFilter;
     QStringList                  defaultMknoteFilter;
@@ -200,14 +192,14 @@ public:
     QStringList                  defaultExifToolFilter;
 
     ExifToolParser::ExifToolData parsedData;
-    ExifToolParser*              parser;
-    bool                         parserRunning;
+    ExifToolParser*              parser                 = nullptr;
+    bool                         parserRunning          = false;
 
-    MetadataSelectorView*        exifViewerConfig;
-    MetadataSelectorView*        mknoteViewerConfig;
-    MetadataSelectorView*        iptcViewerConfig;
-    MetadataSelectorView*        xmpViewerConfig;
-    MetadataSelectorView*        exifToolViewerConfig;
+    MetadataSelectorView*        exifViewerConfig       = nullptr;
+    MetadataSelectorView*        mknoteViewerConfig     = nullptr;
+    MetadataSelectorView*        iptcViewerConfig       = nullptr;
+    MetadataSelectorView*        xmpViewerConfig        = nullptr;
+    MetadataSelectorView*        exifToolViewerConfig   = nullptr;
 };
 
 MetadataPanel::MetadataPanel(QTabWidget* const tab)

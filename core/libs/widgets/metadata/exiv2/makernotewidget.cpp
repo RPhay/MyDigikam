@@ -76,6 +76,7 @@ bool MakerNoteWidget::loadFromURL(const QUrl& url)
     if (url.isEmpty())
     {
         setMetadata();
+
         return false;
     }
     else
@@ -85,6 +86,7 @@ bool MakerNoteWidget::loadFromURL(const QUrl& url)
         if (!metadata->hasExif())
         {
             setMetadata();
+
             return false;
         }
         else
@@ -121,18 +123,21 @@ void MakerNoteWidget::buildView()
         case CUSTOM:
         {
             setIfdList(getMetadataMap(), getTagsFilter());
+
             break;
         }
 
         case PHOTO:
         {
             setIfdList(getMetadataMap(), QStringList() << QLatin1String("FULL"));
+
             break;
         }
 
         default: // NONE
         {
             setIfdList(getMetadataMap(), QStringList());
+
             break;
         }
     }
