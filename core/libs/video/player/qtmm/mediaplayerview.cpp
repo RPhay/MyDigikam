@@ -173,6 +173,7 @@ public:
     QSlider*             slider             = nullptr;
     QSlider*             volume             = nullptr;
     QLabel*              tlabel             = nullptr;
+    QLabel*              speaker            = nullptr;
     QUrl                 currentItem;
 
     int                  videoOrientation   = 0;
@@ -314,8 +315,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->loopPlay->setFocusPolicy(Qt::NoFocus);
     d->loopPlay->setMinimumSize(22, 22);
     d->loopPlay->setCheckable(true);
-    QLabel* const spk = new QLabel(hbox);
-    spk->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
+    d->speaker        = new QLabel(hbox);
+    d->speaker->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
     d->volume         = new QSlider(Qt::Horizontal, hbox);
     d->volume->setRange(0, 100);
     d->volume->setValue(50);
@@ -493,6 +494,8 @@ void MediaPlayerView::slotThemeChanged()
     QPalette palette2;
     palette2.setColor(d->playerView->backgroundRole(), qApp->palette().color(QPalette::Base));
     d->playerView->setPalette(palette2);
+
+    d->speaker->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
 }
 
 void MediaPlayerView::slotEscapePressed()
