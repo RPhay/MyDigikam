@@ -97,7 +97,7 @@ void AssignTags::registerSettingsWidget()
         "and extracting the location of objects within an image. The limitation on the number of recognizable objects is set to 80.</p>"
         "<p><b>YOLOv5 XLarge</b>: as the previous one, this model is a neural network dedicated for more complex object detection requirements and "
         "showcases remarkable capabilities. Despite the additional complexity introducing more time-latency and "
-        "computer resources, it's must be used for larger-scale object detection scenarios as it provides more accurate predictions at the expense of speed.</p>"
+        "computer resources, it must be used for larger-scale object detection scenarios as it provides more accurate predictions at the expense of speed.</p>"
         "<p><b>ResNet50</b>: this model is a specific type of convolutional neural network formed by stacking residual blocks "
         "commonly used to power computer vision applications as object detections. This kind of design allows the training of very deep networks without "
         "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is primarily focused on image classification and does not provide object localization. "
