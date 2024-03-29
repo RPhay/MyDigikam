@@ -38,16 +38,13 @@ class Q_DECL_HIDDEN ExifToolListView::Private
 
 public:
 
-    explicit Private()
-      : parser(nullptr)
-    {
-    }
+    Private() = default;
 
     QString                      lastError;
     QString                      selectedItemKey;
     QStringList                  simplifiedTagsList;
 
-    ExifToolParser*              parser;
+    ExifToolParser*              parser = nullptr;
     ExifToolParser::ExifToolData map;
 };
 
@@ -258,6 +255,10 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
     QStringList filters = tagsFilter;
     QString groupItemName;
 
+#ifndef __clang_analyzer__
+
+    // Disable false-positive memory leak reported by scan-build with QTreeWidgetItem.
+
     /** Key is formatted like this:
      *
      * EXIF.ExifIFD.Image.ExposureCompensation
@@ -339,6 +340,8 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
             }
         }
     }
+
+#endif
 
     // Add not found tags from filter as grey items.
 
