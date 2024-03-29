@@ -35,7 +35,7 @@ BUGFIXES:
 026 ==> 481787 - Google Photo plugin stops working.
 027 ==> 478988 - digiKam freezes on startup W10.
 028 ==> 467711 - Time latency introduced while applying changes in Sqlite database under Windows.
-029 ==> 
+029 ==> 484708 - Images.modificationDate value in the db is incorrect.
 030 ==> 
 031 ==> 
 032 ==> 

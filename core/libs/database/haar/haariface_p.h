@@ -39,6 +39,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals_p.h"
 #include "jpegutils.h"
 #include "dimg.h"
 #include "iteminfo.h"
