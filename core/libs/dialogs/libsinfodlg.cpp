@@ -552,6 +552,11 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
                         pos = pos2 + 1;
                     }
+
+                    if (ocldevext->childCount() == 0)
+                    {
+                        new QTreeWidgetItem(ocldevext, QStringList() << i18n("no entry"));
+                    }
                 }
             }
         }
