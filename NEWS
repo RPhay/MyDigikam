@@ -48,7 +48,7 @@ BUGFIXES:
 028 ==> 467711 - Time latency introduced while applying changes in Sqlite database under Windows.
 029 ==> 484708 - Images.modificationDate value in the db is incorrect.
 030 ==> 484762 - digiKam doesn't recognize XMP video tags.
-031 ==> 
+031 ==> 484698 - Program crash when entered face tag name.
 032 ==> 
 033 ==> 
 034 ==> 
