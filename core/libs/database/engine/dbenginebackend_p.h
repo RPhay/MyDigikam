@@ -65,6 +65,7 @@ public:
 
     QSqlDatabase databaseForThread();
     QSqlError    databaseErrorForThread();
+    bool         resetDatabaseForThread();
     void         setDatabaseErrorForThread(const QSqlError& lastError);
 
     QString      connectionName();
