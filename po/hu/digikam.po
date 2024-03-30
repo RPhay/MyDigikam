@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 01:58+0000\n"
+"POT-Creation-Date: 2024-03-30 01:33+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2666,7 +2666,7 @@ msgstr "Alap eszköztár"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
 #: core/libs/album/manager/albummanager_talbum.cpp:979
-#: core/libs/timeadjust/timeadjustsettings.cpp:161
+#: core/libs/timeadjust/timeadjustsettings.cpp:162
 #, kde-format
 msgid "digiKam"
 msgstr "digiKam"
@@ -2811,16 +2811,16 @@ msgid ""
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:181
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:260
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Vissza"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:183
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -2964,7 +2964,7 @@ msgstr ""
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:634
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:633
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3821,7 +3821,7 @@ msgstr "Fájl tulajdonságok"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
@@ -3887,7 +3887,7 @@ msgstr "Koordináták"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:627
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
 #, kde-format
 msgid "Altitude"
 msgstr "Magasság"
@@ -4143,7 +4143,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:270
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "Thumbnail"
 msgstr "Miniatűr"
@@ -4299,7 +4299,7 @@ msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
 msgstr "Kamera konfiguráció"
 
-#: core/app/views/utils/componentsinfodlg.cpp:214
+#: core/app/views/utils/componentsinfodlg.cpp:212
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@item: component info"
@@ -4307,27 +4307,39 @@ msgid "Video Decoders"
 msgstr "Videó kodek"
 
 #: core/app/views/utils/componentsinfodlg.cpp:226
+#: core/app/views/utils/componentsinfodlg.cpp:243
+#: core/app/views/utils/componentsinfodlg.cpp:263
+#: core/app/views/utils/componentsinfodlg.cpp:280
+#: core/app/views/utils/componentsinfodlg.cpp:298
+#: core/libs/dialogs/libsinfodlg.cpp:533 core/libs/dialogs/libsinfodlg.cpp:539
+#: core/libs/dialogs/libsinfodlg.cpp:614
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "no entry"
+msgstr "Ország:"
+
+#: core/app/views/utils/componentsinfodlg.cpp:229
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@item: component info"
 msgid "Video Encoders"
 msgstr "Videó kodek"
 
-#: core/app/views/utils/componentsinfodlg.cpp:245
+#: core/app/views/utils/componentsinfodlg.cpp:249
 #, fuzzy, kde-format
 #| msgid "Audio compressor"
 msgctxt "@item: component info"
 msgid "Audio Decoders"
 msgstr "Hangtömörítő"
 
-#: core/app/views/utils/componentsinfodlg.cpp:257
+#: core/app/views/utils/componentsinfodlg.cpp:266
 #, fuzzy, kde-format
 #| msgid "Audio compressor"
 msgctxt "@item: component info"
 msgid "Audio Encoders"
 msgstr "Hangtömörítő"
 
-#: core/app/views/utils/componentsinfodlg.cpp:276
+#: core/app/views/utils/componentsinfodlg.cpp:286
 #, fuzzy, kde-format
 #| msgid "Ignored file extensions:"
 msgctxt "@item: component info"
@@ -6228,8 +6240,8 @@ msgid ""
 "objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
 "model is a neural network dedicated for more complex object detection "
 "requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it's must "
-"be used for larger-scale object detection scenarios as it provides more "
+"complexity introducing more time-latency and computer resources, it must be "
+"used for larger-scale object detection scenarios as it provides more "
 "accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
 "model is a specific type of convolutional neural network formed by stacking "
 "residual blocks commonly used to power computer vision applications as "
@@ -6918,11 +6930,11 @@ msgstr "Képformátum megjelenítése"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
@@ -6943,11 +6955,11 @@ msgstr "igen"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
@@ -7101,20 +7113,20 @@ msgid ""
 "compression format when you use this setting.</b></p>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:107
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:117
 #, fuzzy, kde-format
 #| msgid "JPEG Files"
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "JPEG-fájlok"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:122
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:127
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:137
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7128,23 +7140,23 @@ msgid ""
 "Group documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:169
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:173
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #, fuzzy, kde-format
 #| msgid "JPEG Files"
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "JPEG-fájlok"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:177
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:191
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "JPEG 2000 kép"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:195
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
@@ -11055,7 +11067,7 @@ msgstr "Két térkép - vízszintes"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:115
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
@@ -11174,7 +11186,7 @@ msgstr "Változások mentése -"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1010
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1229
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1246
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:606
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:607
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:401
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
@@ -11209,31 +11221,31 @@ msgid "Edit Geolocation"
 msgstr "Földrajzi hely szerkesztése"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:625
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
 #, kde-format
 msgid "Latitude"
 msgstr "Szélesség"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:625
 #, kde-format
 msgid "Longitude"
 msgstr "Hosszúság"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:632
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:631
 #, kde-format
 msgid "Speed"
 msgstr "Sebesség"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:631
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:630
 #, kde-format
 msgid "# satellites"
 msgstr "Műholdak száma"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:630
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:629
 #, kde-format
 msgid "Fix type"
 msgstr "Típus javítása"
@@ -11249,7 +11261,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:629
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:628
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -15451,7 +15463,7 @@ msgid ""
 "a standard XMP/NAA reference code."
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:106
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Adjust Time & Date"
@@ -15459,7 +15471,7 @@ msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Idő és dátum beállítása"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:119
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Write the corrected date and time for each image"
@@ -15467,19 +15479,19 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr "Az egyes képek javított dátumának és idejének kiírása"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Az egyes képek javított dátumának és idejének kiírása"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:369
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Idő és dátum beállítása"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
 #: core/utilities/imageeditor/editor/editorwindow.cpp:597
 #, kde-format
@@ -15487,21 +15499,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Mégse"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Az aktuális művelet megszakítása"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Bezárás"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
 #, kde-format
 msgctxt "@info"
@@ -15509,13 +15521,13 @@ msgid "Close window"
 msgstr "Ablak bezárása"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:302
+#: core/libs/timeadjust/timeadjustsettings.cpp:303
 #, kde-format
 msgid "Timestamp Used"
 msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:304
+#: core/libs/timeadjust/timeadjustsettings.cpp:305
 #, kde-format
 msgid "Timestamp Updated"
 msgstr ""
@@ -15523,7 +15535,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:633
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:632
 #, kde-format
 msgid "Status"
 msgstr "Státusz"
@@ -22797,7 +22809,7 @@ msgid "Export to %1 Web Service"
 msgstr "Exportálás a webszolgáltatásokba ..."
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:238
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:239
 #, fuzzy, kde-format
 #| msgid "Start Upload"
 msgctxt "@action:button"
@@ -23516,12 +23528,12 @@ msgstr ""
 msgid "invalid name"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:567
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:568
 #, kde-format
 msgid "iNaturalist"
 msgstr "iNaturalist"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:569
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:570
 #, kde-format
 msgid "Login"
 msgstr "Bejelentkezés"
@@ -23829,7 +23841,7 @@ msgid "Place:"
 msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:535
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:536
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:480
 #, kde-format
 msgid "More options"
@@ -23864,49 +23876,49 @@ msgid ""
 "h2></b>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:184
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Export as %1 Observation"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:529
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:530
 #, kde-format
 msgid "Fewer options"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:593
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:594
 #, kde-format
 msgid "<i>login <b>failed</b></i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:656
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:657
 #, kde-format
 msgid "<i>login <b>canceled</b></i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:713
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:714
 #, kde-format
 msgid "<i>no valid identification</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:760
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:761
 #, kde-format
 msgid "iNaturalist Export"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1011
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1012
 #, kde-format
 msgid "observation"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1017
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1018
 #, kde-format
 msgctxt "location"
 msgid "obscured"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1021
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1022
 #, kde-format
 msgid "Closest %1research-grade %2 reported in %3."
 msgstr ""
@@ -26462,63 +26474,63 @@ msgid "No Color"
 msgstr "Nincs szín"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:318
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:471
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Vörös"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:460
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Narancs"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:326
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:464
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Sárga"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:330
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Zöld"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:472
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Kék"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:476
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Bíborvörös"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:342
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Szürke"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:484
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Fekete"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:488
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
@@ -26537,21 +26549,21 @@ msgid "No Pick"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:379
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:312
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:308
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr ""
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:318
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "Függőben"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:387
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:324
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
@@ -27548,7 +27560,7 @@ msgstr ""
 "%1\n"
 "(Forráskép)"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:194
+#: core/libs/database/item/scanner/itemscanner.cpp:192
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -28784,7 +28796,7 @@ msgstr "<i>Képkockasebesség:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videó kodek:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:163
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:173
 #, fuzzy, kde-format
 #| msgid "Components Information"
 msgctxt "@title:window"
@@ -28808,19 +28820,19 @@ msgstr ""
 msgid "Items List"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:166
+#: core/libs/dialogs/libsinfodlg.cpp:176
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Igen"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:177
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Nem"
 
-#: core/libs/dialogs/libsinfodlg.cpp:181
+#: core/libs/dialogs/libsinfodlg.cpp:191
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -28828,7 +28840,7 @@ msgctxt "@title"
 msgid "Features"
 msgstr "Szolgáltatás"
 
-#: core/libs/dialogs/libsinfodlg.cpp:206
+#: core/libs/dialogs/libsinfodlg.cpp:220
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Library"
@@ -28836,7 +28848,7 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Könyvtár"
 
-#: core/libs/dialogs/libsinfodlg.cpp:293
+#: core/libs/dialogs/libsinfodlg.cpp:332
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -28844,7 +28856,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: core/libs/dialogs/libsinfodlg.cpp:374
+#: core/libs/dialogs/libsinfodlg.cpp:424
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -28852,32 +28864,32 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: core/libs/dialogs/libsinfodlg.cpp:402
+#: core/libs/dialogs/libsinfodlg.cpp:452
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:430
+#: core/libs/dialogs/libsinfodlg.cpp:486
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Kamera konfiguráció"
 
-#: core/libs/dialogs/libsinfodlg.cpp:620
+#: core/libs/dialogs/libsinfodlg.cpp:685
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Igen"
 
-#: core/libs/dialogs/libsinfodlg.cpp:625
+#: core/libs/dialogs/libsinfodlg.cpp:690
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:630
+#: core/libs/dialogs/libsinfodlg.cpp:695
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -32963,8 +32975,8 @@ msgid "&Start"
 msgstr "&Rajt"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:103
-#: core/libs/onlineversion/onlineversiondlg.cpp:305
-#: core/libs/onlineversion/onlineversiondlg.cpp:482
+#: core/libs/onlineversion/onlineversiondlg.cpp:304
+#: core/libs/onlineversion/onlineversiondlg.cpp:481
 #, kde-format
 msgid "Close"
 msgstr "Bezárás"
@@ -35407,7 +35419,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Szín címke"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1389
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1386
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -35483,34 +35495,34 @@ msgstr ""
 msgid "Close message"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:104
+#: core/libs/onlineversion/onlineversionchecker.cpp:105
 #, kde-format
 msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr "soha"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:182
+#: core/libs/onlineversion/onlineversionchecker.cpp:183
 #, kde-format
 msgid "No data returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:197
+#: core/libs/onlineversion/onlineversionchecker.cpp:198
 #: core/libs/onlineversion/onlineversiondwnl.cpp:141
 #, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:224
+#: core/libs/onlineversion/onlineversionchecker.cpp:225
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:249
+#: core/libs/onlineversion/onlineversionchecker.cpp:248
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:281
+#: core/libs/onlineversion/onlineversionchecker.cpp:280
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr ""
@@ -35577,7 +35589,7 @@ msgstr ""
 msgid "Download"
 msgstr "Letöltés"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:271
+#: core/libs/onlineversion/onlineversiondlg.cpp:270
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -35588,7 +35600,7 @@ msgid ""
 "customize update options from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:284
+#: core/libs/onlineversion/onlineversiondlg.cpp:283
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
@@ -35601,40 +35613,40 @@ msgid ""
 "from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:312
+#: core/libs/onlineversion/onlineversiondlg.cpp:311
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 pre-release built on %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:319
+#: core/libs/onlineversion/onlineversiondlg.cpp:318
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 stable version %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:327
+#: core/libs/onlineversion/onlineversiondlg.cpp:326
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
 "\"%2\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:337
-#: core/libs/onlineversion/onlineversiondlg.cpp:379
+#: core/libs/onlineversion/onlineversiondlg.cpp:336
+#: core/libs/onlineversion/onlineversiondlg.cpp:378
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:338
-#: core/libs/onlineversion/onlineversiondlg.cpp:380
+#: core/libs/onlineversion/onlineversiondlg.cpp:337
+#: core/libs/onlineversion/onlineversiondlg.cpp:379
 #, kde-format
 msgid "built on %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:339
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -35642,19 +35654,19 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:346
-#: core/libs/onlineversion/onlineversiondlg.cpp:388
+#: core/libs/onlineversion/onlineversiondlg.cpp:345
+#: core/libs/onlineversion/onlineversiondlg.cpp:387
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:347
-#: core/libs/onlineversion/onlineversiondlg.cpp:389
+#: core/libs/onlineversion/onlineversiondlg.cpp:346
+#: core/libs/onlineversion/onlineversiondlg.cpp:388
 #, kde-format
 msgid "version %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:348
 #, kde-format
 msgid ""
 "Downloading new %1\n"
@@ -35662,7 +35674,7 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:382
+#: core/libs/onlineversion/onlineversiondlg.cpp:381
 #, kde-format
 msgid ""
 "Verify Checksum for new %1\n"
@@ -35670,7 +35682,7 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:391
+#: core/libs/onlineversion/onlineversiondlg.cpp:390
 #, kde-format
 msgid ""
 "Verify checksum for %1\n"
@@ -35678,13 +35690,13 @@ msgid ""
 "in progress, please wait..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:418
+#: core/libs/onlineversion/onlineversiondlg.cpp:417
 #, kde-format
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr "Megnyitás ..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:429
+#: core/libs/onlineversion/onlineversiondlg.cpp:428
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35696,7 +35708,7 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:438
+#: core/libs/onlineversion/onlineversiondlg.cpp:437
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35708,12 +35720,12 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:449
+#: core/libs/onlineversion/onlineversiondlg.cpp:448
 #, kde-format
 msgid "Install..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:454
+#: core/libs/onlineversion/onlineversiondlg.cpp:453
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -35725,7 +35737,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:463
+#: core/libs/onlineversion/onlineversiondlg.cpp:462
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -35737,7 +35749,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:487
+#: core/libs/onlineversion/onlineversiondlg.cpp:486
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -35746,7 +35758,7 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:494
+#: core/libs/onlineversion/onlineversiondlg.cpp:493
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -35755,7 +35767,7 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:586
+#: core/libs/onlineversion/onlineversiondlg.cpp:585
 #, kde-format
 msgid ""
 "Cannot start installer:\n"
@@ -36741,7 +36753,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -39088,138 +39100,138 @@ msgstr ""
 msgid "Select Image to Extract Clock Photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:166
 #, kde-format
 msgid "Showfoto"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:168
+#: core/libs/timeadjust/timeadjustsettings.cpp:169
 #, kde-format
 msgid "%1 timestamp"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:173
+#: core/libs/timeadjust/timeadjustsettings.cpp:174
 #, kde-format
 msgid "File name timestamp"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:177
-#: core/libs/timeadjust/timeadjustsettings.cpp:271
+#: core/libs/timeadjust/timeadjustsettings.cpp:178
+#: core/libs/timeadjust/timeadjustsettings.cpp:272
 #, kde-format
 msgid "File last modified"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:186
+#: core/libs/timeadjust/timeadjustsettings.cpp:187
 #, kde-format
 msgid "EXIF/IPTC/XMP"
-msgstr ""
-
-#: core/libs/timeadjust/timeadjustsettings.cpp:187
-#: core/libs/timeadjust/timeadjustsettings.cpp:272
-#, kde-format
-msgid "EXIF: created"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:188
 #: core/libs/timeadjust/timeadjustsettings.cpp:273
 #, kde-format
-msgid "EXIF: original"
+msgid "EXIF: created"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:189
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
 #, kde-format
-msgid "EXIF: digitized"
+msgid "EXIF: original"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#, kde-format
+msgid "EXIF: digitized"
+msgstr ""
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:191
+#: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, kde-format
 msgid "IPTC: created"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:191
+#: core/libs/timeadjust/timeadjustsettings.cpp:192
 #, kde-format
 msgid "XMP: created"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:192
+#: core/libs/timeadjust/timeadjustsettings.cpp:193
 #, kde-format
 msgid "EXIF: created (fuzzy)"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:193
+#: core/libs/timeadjust/timeadjustsettings.cpp:194
 #, kde-format
 msgid "EXIF: original (fuzzy)"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:194
+#: core/libs/timeadjust/timeadjustsettings.cpp:195
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:204
+#: core/libs/timeadjust/timeadjustsettings.cpp:205
 #, kde-format
 msgid "Reset to current date"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:236
+#: core/libs/timeadjust/timeadjustsettings.cpp:237
 #, kde-format
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:237
+#: core/libs/timeadjust/timeadjustsettings.cpp:238
 #, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "Hozzáadás"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:238
+#: core/libs/timeadjust/timeadjustsettings.cpp:239
 #, kde-format
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:242
+#: core/libs/timeadjust/timeadjustsettings.cpp:243
 #, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:248
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, kde-format
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "napok"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:252
+#: core/libs/timeadjust/timeadjustsettings.cpp:253
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:270
+#: core/libs/timeadjust/timeadjustsettings.cpp:271
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#: core/libs/timeadjust/timeadjustsettings.cpp:276
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "XMP: Video"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:303
+#: core/libs/timeadjust/timeadjustsettings.cpp:304
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr ""
@@ -40148,28 +40160,28 @@ msgstr "Hiba keletkezett a címke létrehozása közben:"
 msgid "An error has occurred while playing: %1"
 msgstr "Hiba keletkezett a címke létrehozása közben:"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:185
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:187
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Rögzítés"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:269
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:191
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:221
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:222
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -41707,27 +41719,27 @@ msgctxt "default theme name"
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:224
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:216
 #, kde-format
 msgid "EXIF viewer"
 msgstr "EXIF néző"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:228
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:220
 #, kde-format
 msgid "Makernotes viewer"
 msgstr "Makernotes megjelenítő"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:232
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:224
 #, kde-format
 msgid "IPTC viewer"
 msgstr "IPTC néző"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:236
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:228
 #, kde-format
 msgid "XMP viewer"
 msgstr "XMP néző"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:240
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:232
 #, kde-format
 msgid "ExifTool viewer"
 msgstr "ExifTool néző"
@@ -41744,19 +41756,19 @@ msgctxt "@title: metadata properties"
 msgid "Description"
 msgstr "Leírás"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:295
+#: core/libs/widgets/metadata/config/metadataselector.cpp:287
 #, kde-format
 msgctxt "@action: metadata selector"
 msgid "Select All"
 msgstr "Minden kijelölése"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:296
+#: core/libs/widgets/metadata/config/metadataselector.cpp:288
 #, kde-format
 msgctxt "@action: metadata selector"
 msgid "Clear"
 msgstr "Törlés"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:297
+#: core/libs/widgets/metadata/config/metadataselector.cpp:289
 #, kde-format
 msgctxt "@action: metadata selector"
 msgid "Default"
@@ -41769,7 +41781,7 @@ msgid ""
 "writing and editing meta information in a wide variety of files."
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:72
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -41785,56 +41797,56 @@ msgid ""
 "installed on your computer."
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:90
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:85
 #, kde-format
 msgctxt "@title: group"
 msgid "Supported File Formats"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:100
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:95
 #, kde-format
 msgctxt "@title: column"
 msgid "Extension"
 msgstr "Kiterjesztés"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:101
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:96
 #, kde-format
 msgctxt "@title: column"
 msgid "Read"
 msgstr "Olvasás"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:102
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:97
 #, kde-format
 msgctxt "@title: column"
 msgid "Write"
 msgstr "Írás"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:103
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:98
 #, kde-format
 msgctxt "@title: column"
 msgid "Description"
 msgstr "Leírás"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:188
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:189
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
 #, kde-format
 msgctxt "@info: status"
 msgid "yes"
 msgstr "igen"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:190
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
 #, kde-format
 msgctxt "@info: status"
 msgid "no"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolerrorview.cpp:63
+#: core/libs/widgets/metadata/exiftool/exiftoolerrorview.cpp:59
 #, kde-format
 msgctxt "@action: button"
 msgid "Open Setup Dialog..."
 msgstr "Beállítás párbeszédpanel megnyitása ..."
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:246
+#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
 #: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:138
 #, kde-format
 msgid ""
@@ -42352,96 +42364,96 @@ msgstr ""
 msgid "ZIP Archive Information"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:92
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:90
 #: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:67
 #, kde-format
 msgid "Unavailable"
 msgstr "Nem elérhető"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolloadingview.cpp:74
+#: core/libs/widgets/metadata/exiftool/exiftoolloadingview.cpp:66
 #, kde-format
 msgctxt "info"
 msgid "Loading in progress"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:150
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:125
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:134
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:109
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:153
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:137
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:112
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:158
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:133
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:142
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:117
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "No filter"
 msgstr "Nincs szűrő"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:161
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:136
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:145
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:120
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Photograph"
 msgstr "Fénykép"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:164
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:139
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:148
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:123
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Custom"
 msgstr "Egyedi"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:168
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:143
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:152
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:127
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:182
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:152
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:166
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:136
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Tools"
 msgstr "Eszközök"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:185
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:155
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:169
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:139
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Run tool over metadata tags."
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:188
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:158
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:172
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:142
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save in file"
 msgstr "Mentés fájlba"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:189
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:159
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:173
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:143
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print"
 msgstr "Nyomtatás"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:190
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:160
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:174
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:144
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy to Clipboard"
 msgstr "Másolás vágólapra"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:255
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:239
 #, kde-format
 msgctxt "@info: error message"
 msgid ""
@@ -42452,13 +42464,13 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:307
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:291
 #, kde-format
 msgctxt "@info: metadata to text"
 msgid "File name: %1 (%2)"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:397
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:381
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Caption Information"
@@ -42471,22 +42483,22 @@ msgstr "Felirat információ"
 msgid "Standard Exif Tags"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:166
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:155
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:163
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:181
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:171
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:160
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:168
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:186
 #, kde-format
 msgid "No description available"
 msgstr "Nincs elérhető leírás"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:174
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:171
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:179
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:176
 #, kde-format
 msgid "EXIF File to Save"
 msgstr "A mentendő EXIF fájl"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:175
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:172
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:180
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:177
 #, kde-format
 msgid "EXIF binary Files (*.exif)"
 msgstr "EXIF bináris fájlok (*.exif)"
@@ -42496,12 +42508,12 @@ msgstr "EXIF bináris fájlok (*.exif)"
 msgid "IPTC Records"
 msgstr "IPTC rekordok"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:163
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:168
 #, kde-format
 msgid "IPTC File to Save"
 msgstr "A mentendő IPTC fájl"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:164
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:169
 #, kde-format
 msgid "IPTC binary Files (*.iptc)"
 msgstr "IPTC bináris fájlok (*.iptc)"
@@ -42689,7 +42701,7 @@ msgstr ""
 msgid "Image Magick Properties"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:349
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:334
 #, kde-format
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"
@@ -42700,53 +42712,53 @@ msgstr ""
 msgid "XMP Schema"
 msgstr "XMP séma"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:189
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:194
 #, kde-format
 msgid "XMP File to Save"
 msgstr "A mentendő XMP fájl"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:190
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:195
 #, kde-format
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP szöveg fájlok (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
 #, kde-format
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Nincs"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:594
 #, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr "Színcímke: %1"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:574
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:605
 #, kde-format
 msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "Szín"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:330
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "None"
 msgstr "Nincs"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:402
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:395
 #, kde-format
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:413
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:406
 #, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:582
+#: core/libs/widgets/metadata/labels/ratingwidget.cpp:568
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
@@ -46580,66 +46592,66 @@ msgctxt "@item: unknown country"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:134
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:118
 #, kde-format
 msgctxt "@title: subject widget"
 msgid "Use structured definition of the subject matter:"
 msgstr ""
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:141
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:125
 #, kde-format
 msgctxt "@label: subject widget"
 msgid "Use standard"
 msgstr "Szabványos használata"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:142
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:126
 #, kde-format
 msgctxt "@label: subject widget"
 msgid "reference code"
 msgstr "referencia kód"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:151
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:135
 #, kde-format
 msgctxt "@label: subject widget"
 msgid "Use custom definition"
 msgstr "Egyéni meghatározás használata"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:167
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:151
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgctxt "@info"
 msgid "Set here the Informative Provider Reference"
 msgstr "Itt állíthatja be a tartalomszolgáltatót."
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:179
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:163
 #, fuzzy, kde-format
 #| msgid "Set here the contact 'phone number."
 msgctxt "@info"
 msgid "Set here the Subject Reference Number"
 msgstr "Itt állíthatja be a kapcsolati telefonszámot."
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:190
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:174
 #, fuzzy, kde-format
 #| msgid "Set here the contact address."
 msgctxt "@info"
 msgid "Set here the Subject Name"
 msgstr "Itt állíthatja be a kapcsolati címet."
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:201
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:185
 #, fuzzy, kde-format
 #| msgid "Set here the contact address."
 msgctxt "@info"
 msgid "Set here the Subject Matter Name"
 msgstr "Itt állíthatja be a kapcsolati címet."
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:212
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:196
 #, fuzzy, kde-format
 #| msgid "Set here the contact e-mail."
 msgctxt "@info"
 msgid "Set here the Subject Detail Name"
 msgstr "Itt állíthatja be a kapcsolati e-mail címet."
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:224
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:208
 #, kde-format
 msgctxt ""
 "@label: Information Provider Reference: A name, registered with the IPTC/"
@@ -46647,43 +46659,43 @@ msgctxt ""
 msgid "I.P.R:"
 msgstr ""
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:225
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:209
 #, kde-format
 msgctxt "@label: subject properties"
 msgid "Reference:"
 msgstr "Hivatkozás:"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:226
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:210
 #, kde-format
 msgctxt "@label: subject properties"
 msgid "Name:"
 msgstr "Név:"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:227
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:211
 #, kde-format
 msgctxt "@label: subject properties"
 msgid "Matter:"
 msgstr "Ügy:"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:228
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:212
 #, kde-format
 msgctxt "@label: subject properties"
 msgid "Detail:"
 msgstr "Részlet:"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:235
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:219
 #, kde-format
 msgctxt "@action: subject properties"
 msgid "&Add"
 msgstr "&Hozzáadás"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:236
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:220
 #, kde-format
 msgctxt "@action: subject properties"
 msgid "&Delete"
 msgstr "&Törlés"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:237
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:221
 #, kde-format
 msgctxt "@action: subject properties"
 msgid "&Replace"
@@ -50644,48 +50656,48 @@ msgid "Tilt"
 msgstr "Cím"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:628
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:627
 #, kde-format
 msgid "Accuracy"
 msgstr "Pontosság"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:40
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:41
 #, kde-format
 msgctxt "@info: date format settings"
 msgid "format settings"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:49
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:50
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Standard"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:50
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:51
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "ISO"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:51
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:52
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Text"
 msgstr "Szöveg"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:52
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:53
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Unix Time Stamp"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:53
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:54
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Custom"
 msgstr "Egyéni"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:114
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:115
 #, kde-format
 msgctxt "@item: Get date information from the image"
 msgid "Image"
@@ -50694,44 +50706,44 @@ msgstr "Kép"
 #. i18nc("Get date information from the current date", "Current Date"),
 #. QVariant(CurrentDateTime));
 #.
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:120
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:121
 #, kde-format
 msgctxt "@item: Set a fixed date"
 msgid "Fixed Date"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:145
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "Enter custom format"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:252
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:253
 #, kde-format
 msgctxt "@info"
 msgid "example: "
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:259
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:260
 #, kde-format
 msgctxt "@info"
 msgid "Date && Time..."
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:260
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Add date and time information"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:263
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:264
 #, kde-format
 msgctxt "@item"
 msgid "Date and time (standard format)"
 msgstr "Dátum és idő (szabványos formátum)"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:264
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:265
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:266
 #, kde-format
 msgctxt "@item"
 msgid "Date and time"
@@ -52459,64 +52471,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:429
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:428
 #, kde-format
 msgid "Not available"
 msgstr "Nem érhető el"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:467
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:473
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:472
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Javítás: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:478
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:477
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#Műh: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:531
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:530
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:555
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:554
 #, kde-format
 msgid "Modified"
 msgstr "Módosítva"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
 #, kde-format
 msgid "Date and time"
 msgstr "Dátum és idő"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:877
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:876
 #, kde-format
 msgid "Failed to open file."
 msgstr "Nem sikerült megnyitni a fájlt."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:949
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:948
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Nem sikerült hozzáadni a GPS információkat a képhez."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:961
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:960
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Nem sikerült eltávolítani a GPS információkat a képről"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1028
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1003
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1027
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Nem sikerült fájlba menteni a címkéket."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1040
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1039
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Nem lehet fájlba menteni a változtatásokat"
@@ -58213,7 +58225,7 @@ msgstr ""
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1615
+#: core/utilities/import/backend/gpcamera.cpp:1612
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -58224,7 +58236,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1622
+#: core/utilities/import/backend/gpcamera.cpp:1619
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -58237,23 +58249,23 @@ msgid ""
 "\n"
 msgstr ""
 
+#: core/utilities/import/backend/gpcamera.cpp:1625
+#: core/utilities/import/backend/gpcamera.cpp:1626
+#: core/utilities/import/backend/gpcamera.cpp:1627
 #: core/utilities/import/backend/gpcamera.cpp:1628
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
-#: core/utilities/import/backend/gpcamera.cpp:1631
-#: core/utilities/import/backend/gpcamera.cpp:1632
-#: core/utilities/import/backend/gpcamera.cpp:1633
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "igen"
 
+#: core/utilities/import/backend/gpcamera.cpp:1625
+#: core/utilities/import/backend/gpcamera.cpp:1626
+#: core/utilities/import/backend/gpcamera.cpp:1627
 #: core/utilities/import/backend/gpcamera.cpp:1628
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
-#: core/utilities/import/backend/gpcamera.cpp:1631
-#: core/utilities/import/backend/gpcamera.cpp:1632
-#: core/utilities/import/backend/gpcamera.cpp:1633
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
@@ -60045,8 +60057,8 @@ msgid ""
 "objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
 "model is a neural network dedicated for more complex object detection "
 "requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it's must "
-"be used for larger-scale object detection scenarios as it provides more "
+"complexity introducing more time-latency and computer resources, it must be "
+"used for larger-scale object detection scenarios as it provides more "
 "accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
 "model is a specific type of convolutional neural network formed by stacking "
 "residual blocks commonly used to power computer vision applications as "

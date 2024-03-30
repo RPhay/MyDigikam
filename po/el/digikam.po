@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 01:58+0000\n"
+"POT-Creation-Date: 2024-03-30 01:33+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -2702,7 +2702,7 @@ msgstr "Κύρια γραμμή εργαλείων"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
 #: core/libs/album/manager/albummanager_talbum.cpp:979
-#: core/libs/timeadjust/timeadjustsettings.cpp:161
+#: core/libs/timeadjust/timeadjustsettings.cpp:162
 #, kde-format
 msgid "digiKam"
 msgstr "digiKam"
@@ -2872,16 +2872,16 @@ msgstr ""
 "Κλάδος: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:181
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:260
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Πίσω"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:183
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:262
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -3028,7 +3028,7 @@ msgstr "Λεύκωμα χωρίς ετικέτες"
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:634
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:633
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3970,7 +3970,7 @@ msgstr "Ιδιότητες αρχείου"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
@@ -4038,7 +4038,7 @@ msgstr "Συντεταγμένες"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:627
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
 #, kde-format
 msgid "Altitude"
 msgstr "Υψόμετρο"
@@ -4319,7 +4319,7 @@ msgstr "Μονάδα"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:270
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "Thumbnail"
 msgstr "Εικόνα επισκόπησης"
@@ -4489,7 +4489,7 @@ msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
 msgstr "Διαμόρφωση φωτογραφικής μηχανής"
 
-#: core/app/views/utils/componentsinfodlg.cpp:214
+#: core/app/views/utils/componentsinfodlg.cpp:212
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@item: component info"
@@ -4497,27 +4497,39 @@ msgid "Video Decoders"
 msgstr "Τύπος συμπίεσης βίντεο"
 
 #: core/app/views/utils/componentsinfodlg.cpp:226
+#: core/app/views/utils/componentsinfodlg.cpp:243
+#: core/app/views/utils/componentsinfodlg.cpp:263
+#: core/app/views/utils/componentsinfodlg.cpp:280
+#: core/app/views/utils/componentsinfodlg.cpp:298
+#: core/libs/dialogs/libsinfodlg.cpp:533 core/libs/dialogs/libsinfodlg.cpp:539
+#: core/libs/dialogs/libsinfodlg.cpp:614
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "no entry"
+msgstr "Χώρα:"
+
+#: core/app/views/utils/componentsinfodlg.cpp:229
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@item: component info"
 msgid "Video Encoders"
 msgstr "Τύπος συμπίεσης βίντεο"
 
-#: core/app/views/utils/componentsinfodlg.cpp:245
+#: core/app/views/utils/componentsinfodlg.cpp:249
 #, fuzzy, kde-format
 #| msgid "Video Codec"
 msgctxt "@item: component info"
 msgid "Audio Decoders"
 msgstr "Τύπος συμπίεσης βίντεο"
 
-#: core/app/views/utils/componentsinfodlg.cpp:257
+#: core/app/views/utils/componentsinfodlg.cpp:266
 #, fuzzy, kde-format
 #| msgid "Video Codec"
 msgctxt "@item: component info"
 msgid "Audio Encoders"
 msgstr "Τύπος συμπίεσης βίντεο"
 
-#: core/app/views/utils/componentsinfodlg.cpp:276
+#: core/app/views/utils/componentsinfodlg.cpp:286
 #, fuzzy, kde-format
 #| msgid "Ignored file extensions:"
 msgctxt "@item: component info"
@@ -6390,8 +6402,8 @@ msgid ""
 "objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
 "model is a neural network dedicated for more complex object detection "
 "requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it's must "
-"be used for larger-scale object detection scenarios as it provides more "
+"complexity introducing more time-latency and computer resources, it must be "
+"used for larger-scale object detection scenarios as it provides more "
 "accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
 "model is a specific type of convolutional neural network formed by stacking "
 "residual blocks commonly used to power computer vision applications as "
@@ -7135,11 +7147,11 @@ msgstr "Εμφάνιση τύπου αρχειοθέτησης εικόνας"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
@@ -7159,11 +7171,11 @@ msgstr "ναι"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
@@ -7343,20 +7355,20 @@ msgstr ""
 "χρησιμοποιηθεί αυτή η τιμή, η JPEG 2000 δεν είναι τύπος συμπίεσης εικόνας "
 "χωρίς απώλειες.</b></p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:107
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:117
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "Εικόνα JPEG 2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:122
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:127
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:137
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7370,23 +7382,23 @@ msgid ""
 "Group documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:169
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:173
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "Εικόνα JPEG 2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:177
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:191
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "Εικόνα JPEG 2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:195
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
@@ -11768,7 +11780,7 @@ msgstr "Δύο χάρτες - οριζόντια"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:115
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
@@ -11900,7 +11912,7 @@ msgstr "Αποθήκευση αλλαγών - %p%"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1010
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1229
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1246
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:606
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:607
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:401
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
@@ -11937,31 +11949,31 @@ msgid "Edit Geolocation"
 msgstr "Γεωτοποθέτηση"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:625
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
 #, kde-format
 msgid "Latitude"
 msgstr "Γεωγραφικό πλάτος"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:625
 #, kde-format
 msgid "Longitude"
 msgstr "Γεωγραφικό μήκος"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:632
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:631
 #, kde-format
 msgid "Speed"
 msgstr "Ταχύτητα"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:631
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:630
 #, kde-format
 msgid "# satellites"
 msgstr "# δορυφόρων"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:630
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:629
 #, kde-format
 msgid "Fix type"
 msgstr "Τύπος fix"
@@ -11977,7 +11989,7 @@ msgid "3-d"
 msgstr "τρισδιάστατο"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:629
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:628
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -16664,35 +16676,35 @@ msgstr ""
 "Εισάγετε εδώ τις λεπτομέρειες του θέματος. Χρησιμοποιείται η αγγλική γλώσσα "
 "αν έχετε επιλέξει έναν τυπικό κωδικό αναφοράς XMP/NAA."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:106
 #, fuzzy, kde-format
 #| msgid "Add file properties"
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Προσθήκη ιδιοτήτων αρχείου"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:119
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr "Εγγραφή μεταδεδομένων σε κάθε αρχείο"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:123
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Εγγραφή μεταδεδομένων σε κάθε αρχείο"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:369
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Προσαρμογή:"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
 #: core/utilities/imageeditor/editor/editorwindow.cpp:597
 #, fuzzy, kde-format
@@ -16701,7 +16713,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
@@ -16709,7 +16721,7 @@ msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Ακύρωση αυτής της λειτουργίας."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
 #, fuzzy, kde-format
 #| msgid "&Close"
@@ -16717,7 +16729,7 @@ msgctxt "@action"
 msgid "Close"
 msgstr "&Κλείσιμο"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
 #, fuzzy, kde-format
 #| msgid "Close view"
@@ -16726,7 +16738,7 @@ msgid "Close window"
 msgstr "Κοντινή"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:302
+#: core/libs/timeadjust/timeadjustsettings.cpp:303
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Timestamps"
@@ -16734,7 +16746,7 @@ msgid "Timestamp Used"
 msgstr "Χρονικές σφραγίδες"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:304
+#: core/libs/timeadjust/timeadjustsettings.cpp:305
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Timestamps"
@@ -16744,7 +16756,7 @@ msgstr "Χρονικές σφραγίδες"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:633
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:632
 #, kde-format
 msgid "Status"
 msgstr "Κατάσταση"
@@ -24713,7 +24725,7 @@ msgid "Export to %1 Web Service"
 msgstr "Ταξινόμηση με αξιολόγηση"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:238
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:239
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Start Uploading"
@@ -25498,14 +25510,14 @@ msgstr ""
 msgid "invalid name"
 msgstr "Μη έγκυρο προφίλ"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:567
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:568
 #, fuzzy, kde-format
 #| msgctxt "method to compare strings"
 #| msgid "Natural"
 msgid "iNaturalist"
 msgstr "Φυσική"
 
-#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:569
+#: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:570
 #, fuzzy, kde-format
 #| msgid "Profile Error"
 msgid "Login"
@@ -25845,7 +25857,7 @@ msgid "Place:"
 msgstr "Αντικατάσταση:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:535
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:536
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:480
 #, kde-format
 msgid "More options"
@@ -25880,54 +25892,54 @@ msgid ""
 "h2></b>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:184
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:185
 #, fuzzy, kde-format
 #| msgid "Sort by rating"
 msgctxt "@title:window"
 msgid "Export as %1 Observation"
 msgstr "Ταξινόμηση με αξιολόγηση"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:529
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:530
 #, fuzzy, kde-format
 #| msgid "Free Rotation"
 msgid "Fewer options"
 msgstr "Ελεύθερη περιστροφή"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:593
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:594
 #, kde-format
 msgid "<i>login <b>failed</b></i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:656
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:657
 #, fuzzy, kde-format
 #| msgid "<b>Downloaded</b>:"
 msgid "<i>login <b>canceled</b></i>"
 msgstr "<b>Έχει ληφθεί</b>:"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:713
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:714
 #, kde-format
 msgid "<i>no valid identification</i>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:760
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:761
 #, fuzzy, kde-format
 #| msgid "Start Index:"
 msgid "iNaturalist Export"
 msgstr "Δείκτης αρχής:"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1011
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1012
 #, fuzzy, kde-format
 #| msgid "Iteration:"
 msgid "observation"
 msgstr "Επανάληψη:"
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1017
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1018
 #, kde-format
 msgctxt "location"
 msgid "obscured"
 msgstr ""
 
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1021
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1022
 #, kde-format
 msgid "Closest %1research-grade %2 reported in %3."
 msgstr ""
@@ -28761,7 +28773,7 @@ msgid "No Color"
 msgstr "Χωρίς χρώμα"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:318
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:456
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:471
 #, fuzzy, kde-format
 #| msgid "Red"
 msgctxt "@info: color label name"
@@ -28769,7 +28781,7 @@ msgid "Red"
 msgstr "Κόκκινο"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:460
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, fuzzy, kde-format
 #| msgid "Orange"
 msgctxt "@info: color label name"
@@ -28777,7 +28789,7 @@ msgid "Orange"
 msgstr "Πορτοκαλί"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:326
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:464
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:483
 #, fuzzy, kde-format
 #| msgid "Yellow"
 msgctxt "@info: color label name"
@@ -28785,7 +28797,7 @@ msgid "Yellow"
 msgstr "Κίτρινο"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:330
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:468
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, fuzzy, kde-format
 #| msgid "Green"
 msgctxt "@info: color label name"
@@ -28793,7 +28805,7 @@ msgid "Green"
 msgstr "Πράσινο"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:472
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, fuzzy, kde-format
 #| msgid "Blue"
 msgctxt "@info: color label name"
@@ -28801,7 +28813,7 @@ msgid "Blue"
 msgstr "Μπλε"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:476
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, fuzzy, kde-format
 #| msgid "Magenta"
 msgctxt "@info: color label name"
@@ -28809,7 +28821,7 @@ msgid "Magenta"
 msgstr "Ματζέντα"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:342
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:480
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, fuzzy, kde-format
 #| msgid "Gray"
 msgctxt "@info: color label name"
@@ -28817,7 +28829,7 @@ msgid "Gray"
 msgstr "Γκρι"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:484
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, fuzzy, kde-format
 #| msgid "Black"
 msgctxt "@info: color label name"
@@ -28825,7 +28837,7 @@ msgid "Black"
 msgstr "Μαύρο"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:488
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, fuzzy, kde-format
 #| msgid "White"
 msgctxt "@info: color label name"
@@ -28847,7 +28859,7 @@ msgid "No Pick"
 msgstr "Χωρίς επιλογή"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:379
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:312
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:308
 #, fuzzy, kde-format
 #| msgid "Rejected"
 msgctxt "@info: pick label name"
@@ -28855,7 +28867,7 @@ msgid "Rejected"
 msgstr "Απορρίφθηκε"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:318
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, fuzzy, kde-format
 #| msgid "Pending"
 msgctxt "@info: pick label name"
@@ -28863,7 +28875,7 @@ msgid "Pending"
 msgstr "Εκκρεμεί"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:387
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:324
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, fuzzy, kde-format
 #| msgid "Accepted"
 msgctxt "@info: pick label name"
@@ -30040,7 +30052,7 @@ msgstr ""
 "%1\n"
 "(Πηγαία εικόνα)"
 
-#: core/libs/database/item/scanner/itemscanner.cpp:194
+#: core/libs/database/item/scanner/itemscanner.cpp:192
 #, kde-format
 msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
@@ -31513,7 +31525,7 @@ msgstr "<i>FrameRate:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>VideoCodec:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:163
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:173
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -31540,21 +31552,21 @@ msgstr "<font size=\"5\">%1</font><br/><b>Έκδοση %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "Ιστορικό εικόνων"
 
-#: core/libs/dialogs/libsinfodlg.cpp:166
+#: core/libs/dialogs/libsinfodlg.cpp:176
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Ναι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:167
+#: core/libs/dialogs/libsinfodlg.cpp:177
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Όχι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:181
+#: core/libs/dialogs/libsinfodlg.cpp:191
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -31562,14 +31574,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "Χαρακτηριστικό"
 
-#: core/libs/dialogs/libsinfodlg.cpp:206
+#: core/libs/dialogs/libsinfodlg.cpp:220
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Βιβλιοθήκη λευκωμάτων"
 
-#: core/libs/dialogs/libsinfodlg.cpp:293
+#: core/libs/dialogs/libsinfodlg.cpp:332
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31577,7 +31589,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/dialogs/libsinfodlg.cpp:374
+#: core/libs/dialogs/libsinfodlg.cpp:424
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31585,34 +31597,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/dialogs/libsinfodlg.cpp:402
+#: core/libs/dialogs/libsinfodlg.cpp:452
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:430
+#: core/libs/dialogs/libsinfodlg.cpp:486
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Διαμόρφωση φωτογραφικής μηχανής"
 
-#: core/libs/dialogs/libsinfodlg.cpp:620
+#: core/libs/dialogs/libsinfodlg.cpp:685
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ναι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:625
+#: core/libs/dialogs/libsinfodlg.cpp:690
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Όχι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:630
+#: core/libs/dialogs/libsinfodlg.cpp:695
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -36274,8 +36286,8 @@ msgid "&Start"
 msgstr "Αρχικό:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:103
-#: core/libs/onlineversion/onlineversiondlg.cpp:305
-#: core/libs/onlineversion/onlineversiondlg.cpp:482
+#: core/libs/onlineversion/onlineversiondlg.cpp:304
+#: core/libs/onlineversion/onlineversiondlg.cpp:481
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgid "Close"
@@ -38570,7 +38582,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Επιγραφή χρώματος"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1389
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1386
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -38646,34 +38658,34 @@ msgstr "&Κλείσιμο"
 msgid "Close message"
 msgstr "Κλείσιμο μηνύματος"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:104
+#: core/libs/onlineversion/onlineversionchecker.cpp:105
 #, kde-format
 msgctxt "@info: check of new online version never done yet"
 msgid "never"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:182
+#: core/libs/onlineversion/onlineversionchecker.cpp:183
 #, kde-format
 msgid "No data returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:197
+#: core/libs/onlineversion/onlineversionchecker.cpp:198
 #: core/libs/onlineversion/onlineversiondwnl.cpp:141
 #, fuzzy, kde-format
 msgid "Unsupported Architecture: %1"
 msgstr "Άγνωστος τύπος αποθήκευσης"
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:224
+#: core/libs/onlineversion/onlineversionchecker.cpp:225
 #, kde-format
 msgid "Invalid file name format returned from the remote connection."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:249
+#: core/libs/onlineversion/onlineversionchecker.cpp:248
 #, kde-format
 msgid "Invalid pre-release date from the remote list."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversionchecker.cpp:281
+#: core/libs/onlineversion/onlineversionchecker.cpp:280
 #, kde-format
 msgid "Invalid format returned from the remote connection."
 msgstr ""
@@ -38742,7 +38754,7 @@ msgstr ""
 msgid "Download"
 msgstr "Λήψη"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:271
+#: core/libs/onlineversion/onlineversiondlg.cpp:270
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> pre-release date is <i>%2</i>.</p><p>New pre-release "
@@ -38753,7 +38765,7 @@ msgid ""
 "customize update options from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:284
+#: core/libs/onlineversion/onlineversiondlg.cpp:283
 #, kde-format
 msgid ""
 "<p>Current <b>%1</b> stable version is <i>%2</i></p><p>New stable version <i>"
@@ -38766,40 +38778,40 @@ msgid ""
 "from setup dialog.</p>"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:312
+#: core/libs/onlineversion/onlineversiondlg.cpp:311
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 pre-release built on %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:319
+#: core/libs/onlineversion/onlineversiondlg.cpp:318
 #, kde-format
 msgid ""
 "Your software is up-to-date.\n"
 "%1 stable version %2 is the most recent version available."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:327
+#: core/libs/onlineversion/onlineversiondlg.cpp:326
 #, kde-format
 msgid ""
 "Error while trying to check for new %1 version:\n"
 "\"%2\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:337
-#: core/libs/onlineversion/onlineversiondlg.cpp:379
+#: core/libs/onlineversion/onlineversiondlg.cpp:336
+#: core/libs/onlineversion/onlineversiondlg.cpp:378
 #, kde-format
 msgid "built on %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:338
-#: core/libs/onlineversion/onlineversiondlg.cpp:380
+#: core/libs/onlineversion/onlineversiondlg.cpp:337
+#: core/libs/onlineversion/onlineversiondlg.cpp:379
 #, kde-format
 msgid "built on %1"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:340
+#: core/libs/onlineversion/onlineversiondlg.cpp:339
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -38808,20 +38820,20 @@ msgid ""
 "in progress, please wait..."
 msgstr "Ανίχνευση συσκευής σε εξέλιξη, παρακαλώ περιμένετε..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:346
-#: core/libs/onlineversion/onlineversiondlg.cpp:388
+#: core/libs/onlineversion/onlineversiondlg.cpp:345
+#: core/libs/onlineversion/onlineversiondlg.cpp:387
 #, kde-format
 msgid "version %1 with debug symbols"
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:347
-#: core/libs/onlineversion/onlineversiondlg.cpp:389
+#: core/libs/onlineversion/onlineversiondlg.cpp:346
+#: core/libs/onlineversion/onlineversiondlg.cpp:388
 #, fuzzy, kde-format
 #| msgid "Version"
 msgid "version %1"
 msgstr "Έκδοση"
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:349
+#: core/libs/onlineversion/onlineversiondlg.cpp:348
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -38830,7 +38842,7 @@ msgid ""
 "in progress, please wait..."
 msgstr "Ανίχνευση συσκευής σε εξέλιξη, παρακαλώ περιμένετε..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:382
+#: core/libs/onlineversion/onlineversiondlg.cpp:381
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -38839,7 +38851,7 @@ msgid ""
 "in progress, please wait..."
 msgstr "Ανίχνευση συσκευής σε εξέλιξη, παρακαλώ περιμένετε..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:391
+#: core/libs/onlineversion/onlineversiondlg.cpp:390
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid ""
@@ -38848,14 +38860,14 @@ msgid ""
 "in progress, please wait..."
 msgstr "Ανίχνευση συσκευής σε εξέλιξη, παρακαλώ περιμένετε..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:418
+#: core/libs/onlineversion/onlineversiondlg.cpp:417
 #, fuzzy, kde-format
 #| msgid "Open..."
 msgctxt "@action: open bundle file"
 msgid "Open..."
 msgstr "Άνοιγμα..."
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:429
+#: core/libs/onlineversion/onlineversiondlg.cpp:428
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -38867,7 +38879,7 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:438
+#: core/libs/onlineversion/onlineversiondlg.cpp:437
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -38879,12 +38891,12 @@ msgid ""
 "Press \"Open\" to show the bundle in file-manager..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:449
+#: core/libs/onlineversion/onlineversiondlg.cpp:448
 #, kde-format
 msgid "Install..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:454
+#: core/libs/onlineversion/onlineversiondlg.cpp:453
 #, kde-format
 msgid ""
 "The new pre-release %1\n"
@@ -38896,7 +38908,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:463
+#: core/libs/onlineversion/onlineversiondlg.cpp:462
 #, kde-format
 msgid ""
 "The new %1\n"
@@ -38908,7 +38920,7 @@ msgid ""
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:487
+#: core/libs/onlineversion/onlineversiondlg.cpp:486
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -38917,7 +38929,7 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:494
+#: core/libs/onlineversion/onlineversiondlg.cpp:493
 #, kde-format
 msgid ""
 "Error while trying to download %1\n"
@@ -38926,7 +38938,7 @@ msgid ""
 "\"%3\""
 msgstr ""
 
-#: core/libs/onlineversion/onlineversiondlg.cpp:586
+#: core/libs/onlineversion/onlineversiondlg.cpp:585
 #, fuzzy, kde-format
 msgid ""
 "Cannot start installer:\n"
@@ -39997,7 +40009,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -42815,153 +42827,153 @@ msgstr "Ημερομηνία και ώρα δημιουργίας"
 msgid "Select Image to Extract Clock Photo"
 msgstr "Επιλογή εικόνας για αποστολή"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:166
 #, kde-format
 msgid "Showfoto"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:168
+#: core/libs/timeadjust/timeadjustsettings.cpp:169
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Timestamps"
 msgid "%1 timestamp"
 msgstr "Χρονικές σφραγίδες"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:173
+#: core/libs/timeadjust/timeadjustsettings.cpp:174
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgid "File name timestamp"
 msgstr "Φίλτρο ονόματος αρχείου:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:177
-#: core/libs/timeadjust/timeadjustsettings.cpp:271
+#: core/libs/timeadjust/timeadjustsettings.cpp:178
+#: core/libs/timeadjust/timeadjustsettings.cpp:272
 #, fuzzy, kde-format
 #| msgid "Last modified"
 msgid "File last modified"
 msgstr "Τελευταία τροποποίηση"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:186
+#: core/libs/timeadjust/timeadjustsettings.cpp:187
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:187
-#: core/libs/timeadjust/timeadjustsettings.cpp:272
+#: core/libs/timeadjust/timeadjustsettings.cpp:188
+#: core/libs/timeadjust/timeadjustsettings.cpp:273
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "EXIF: created"
 msgstr "Συγχρονισμός ημερομηνία δημιουργίας EXIF"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:188
-#: core/libs/timeadjust/timeadjustsettings.cpp:273
+#: core/libs/timeadjust/timeadjustsettings.cpp:189
+#: core/libs/timeadjust/timeadjustsettings.cpp:274
 #, fuzzy, kde-format
 msgid "EXIF: original"
 msgstr "Αρχική"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:189
-#: core/libs/timeadjust/timeadjustsettings.cpp:274
+#: core/libs/timeadjust/timeadjustsettings.cpp:190
+#: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, kde-format
 msgid "EXIF: digitized"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:191
+#: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, fuzzy, kde-format
 #| msgid "Created:"
 msgid "IPTC: created"
 msgstr "Δημιουργήθηκε:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:191
+#: core/libs/timeadjust/timeadjustsettings.cpp:192
 #, fuzzy, kde-format
 #| msgctxt "date of image creation"
 #| msgid "created: %1"
 msgid "XMP: created"
 msgstr "δημιουργήθηκε : %1"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:192
+#: core/libs/timeadjust/timeadjustsettings.cpp:193
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "EXIF: created (fuzzy)"
 msgstr "Συγχρονισμός ημερομηνία δημιουργίας EXIF"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:193
+#: core/libs/timeadjust/timeadjustsettings.cpp:194
 #, fuzzy, kde-format
 msgid "EXIF: original (fuzzy)"
 msgstr "Αρχική"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:194
+#: core/libs/timeadjust/timeadjustsettings.cpp:195
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:204
+#: core/libs/timeadjust/timeadjustsettings.cpp:205
 #, fuzzy, kde-format
 #| msgid "Start with current image"
 msgid "Reset to current date"
 msgstr "Εκκίνηση με την τρέχουσα εικόνα"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:236
+#: core/libs/timeadjust/timeadjustsettings.cpp:237
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "καμία προκαθορισμένη τιμή"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:237
+#: core/libs/timeadjust/timeadjustsettings.cpp:238
 #, fuzzy, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "&Προσθήκη"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:238
+#: core/libs/timeadjust/timeadjustsettings.cpp:239
 #, fuzzy, kde-format
 #| msgid "Abstract"
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "Αφηρημένο"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:242
+#: core/libs/timeadjust/timeadjustsettings.cpp:243
 #, fuzzy, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "Παρεμβολή:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:248
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "Διακοπές"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:252
+#: core/libs/timeadjust/timeadjustsettings.cpp:253
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:270
+#: core/libs/timeadjust/timeadjustsettings.cpp:271
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#: core/libs/timeadjust/timeadjustsettings.cpp:276
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgid "EXIF: Thumbnail"
 msgstr "Εικόνα επισκόπησης"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgid "XMP: Video"
 msgstr "Βίντεο"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:303
+#: core/libs/timeadjust/timeadjustsettings.cpp:304
 #, fuzzy, kde-format
 #| msgid "Pictures Adjustments"
 msgid "Timestamp Adjustments"
@@ -43899,29 +43911,29 @@ msgstr "Συνέβη ένα σφάλμα με τον αναπαραγωγέα μ
 msgid "An error has occurred while playing: %1"
 msgstr "Συνέβη ένα σφάλμα με τον αναπαραγωγέα μέσων..."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:185
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:264
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:187
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Σύλληψη"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:269
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:191
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "Συνέβη ένα σφάλμα με τον αναπαραγωγέα μέσων..."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:221
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:222
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
 #, fuzzy, kde-format
 #| msgid "Display in loop"
 msgid "Toggle playing in a loop"
@@ -45622,27 +45634,27 @@ msgctxt "default theme name"
 msgid "Default"
 msgstr "Προκαθορισμένο"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:224
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:216
 #, kde-format
 msgid "EXIF viewer"
 msgstr "Προβολή EXIF"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:228
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:220
 #, kde-format
 msgid "Makernotes viewer"
 msgstr "Προβολή Makernotes"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:232
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:224
 #, kde-format
 msgid "IPTC viewer"
 msgstr "Προβολή IPTC"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:236
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:228
 #, kde-format
 msgid "XMP viewer"
 msgstr "Προβολή XMP"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:240
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:232
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgid "ExifTool viewer"
@@ -45662,21 +45674,21 @@ msgctxt "@title: metadata properties"
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:295
+#: core/libs/widgets/metadata/config/metadataselector.cpp:287
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: metadata selector"
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:296
+#: core/libs/widgets/metadata/config/metadataselector.cpp:288
 #, fuzzy, kde-format
 #| msgid "Clear"
 msgctxt "@action: metadata selector"
 msgid "Clear"
 msgstr "Καθαρισμός"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:297
+#: core/libs/widgets/metadata/config/metadataselector.cpp:289
 #, fuzzy, kde-format
 #| msgid "Default"
 msgctxt "@action: metadata selector"
@@ -45690,7 +45702,7 @@ msgid ""
 "writing and editing meta information in a wide variety of files."
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:72
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -45706,13 +45718,13 @@ msgid ""
 "installed on your computer."
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:90
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:85
 #, fuzzy, kde-format
 msgctxt "@title: group"
 msgid "Supported File Formats"
 msgstr "Άγνωστος τύπος αποθήκευσης"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:100
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:95
 #, fuzzy, kde-format
 #| msgctxt "File extension"
 #| msgid "Extension"
@@ -45720,49 +45732,49 @@ msgctxt "@title: column"
 msgid "Extension"
 msgstr "Επέκταση"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:101
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:96
 #, fuzzy, kde-format
 msgctxt "@title: column"
 msgid "Read"
 msgstr "Έτοιμο"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:102
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:97
 #, fuzzy, kde-format
 #| msgid "Writable: "
 msgctxt "@title: column"
 msgid "Write"
 msgstr "Εγγράψιμο: "
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:103
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:98
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: column"
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:188
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:189
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: status"
 msgid "yes"
 msgstr "ναι"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:190
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: status"
 msgid "no"
 msgstr "όχι"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolerrorview.cpp:63
+#: core/libs/widgets/metadata/exiftool/exiftoolerrorview.cpp:59
 #, fuzzy, kde-format
 #| msgid "Opening Download Dialog..."
 msgctxt "@action: button"
 msgid "Open Setup Dialog..."
 msgstr "Άνοιγμα του διαλόγου λήψης αρχείων..."
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:246
+#: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
 #: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:138
 #, kde-format
 msgid ""
@@ -46353,100 +46365,100 @@ msgstr ""
 msgid "ZIP Archive Information"
 msgstr "Πληροφορίες εικόνας"
 
-#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:92
+#: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:90
 #: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:67
 #, kde-format
 msgid "Unavailable"
 msgstr "Μη διαθέσιμο"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolloadingview.cpp:74
+#: core/libs/widgets/metadata/exiftool/exiftoolloadingview.cpp:66
 #, fuzzy, kde-format
 #| msgid "Printing and Proofing"
 msgctxt "info"
 msgid "Loading in progress"
 msgstr "Εκτύπωση και εμφάνιση"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:150
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:125
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:134
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:109
 #, fuzzy, kde-format
 msgctxt "@info: metadata view"
 msgid "Tags filter options"
 msgstr "Επιλογές φίλτρου αξιολόγησης"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:153
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:128
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:137
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:112
 #, fuzzy, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
 msgstr "Εφαρμογή μεταδεδομένων από πρότυπο"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:158
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:133
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:142
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:117
 #, fuzzy, kde-format
 msgctxt "@action: metadata view"
 msgid "No filter"
 msgstr "Φίλτρο θορύβου:"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:161
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:136
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:145
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:120
 #, fuzzy, kde-format
 msgctxt "@action: metadata view"
 msgid "Photograph"
 msgstr "Φωτο φλας"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:164
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:139
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:148
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:123
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@action: metadata view"
 msgid "Custom"
 msgstr "Προσαρμοσμένο"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:168
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:143
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:152
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:127
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action: metadata view"
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:182
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:152
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:166
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@info: metadata view"
 msgid "Tools"
 msgstr "Εργαλεία"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:185
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:155
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:169
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:139
 #, fuzzy, kde-format
 msgctxt "@info: metadata view"
 msgid "Run tool over metadata tags."
 msgstr "Εργαλείο περιστροφής εικόνων."
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:188
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:158
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:172
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:142
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Save in file"
 msgstr "Αποθήκευση αρχείων ως"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:189
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:159
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:173
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:143
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Print"
 msgstr "Εκτύπωση εικόνας"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:190
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:160
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:174
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:144
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy to Clipboard"
 msgstr "Αντιγραφή στο πρόχειρο"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:255
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:239
 #, kde-format
 msgctxt "@info: error message"
 msgid ""
@@ -46457,14 +46469,14 @@ msgid ""
 "%2"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:307
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:291
 #, fuzzy, kde-format
 #| msgid "File name: %1 (%2)"
 msgctxt "@info: metadata to text"
 msgid "File name: %1 (%2)"
 msgstr "Όνομα αρχείου: %1 (%2)"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:397
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:381
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgctxt "@title:window"
@@ -46477,22 +46489,22 @@ msgstr "Πληροφορίες τίτλου"
 msgid "Standard Exif Tags"
 msgstr "Τυπικές ετικέτες EXIF"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:166
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:155
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:163
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:181
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:171
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:160
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:168
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:186
 #, kde-format
 msgid "No description available"
 msgstr "Μη διαθέσιμη περιγραφή"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:174
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:171
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:179
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:176
 #, kde-format
 msgid "EXIF File to Save"
 msgstr "Αρχείο EXIF για αποθήκευση"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:175
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:172
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:180
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:177
 #, kde-format
 msgid "EXIF binary Files (*.exif)"
 msgstr "Δυαδικά αρχεία EXIF (*.exif)"
@@ -46502,12 +46514,12 @@ msgstr "Δυαδικά αρχεία EXIF (*.exif)"
 msgid "IPTC Records"
 msgstr "Εγγραφές IPTC"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:163
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:168
 #, kde-format
 msgid "IPTC File to Save"
 msgstr "Αρχείο IPTC για αποθήκευση"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:164
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:169
 #, kde-format
 msgid "IPTC binary Files (*.iptc)"
 msgstr "Δυαδικά αρχεία IPTC (*.iptc)"
@@ -46700,7 +46712,7 @@ msgstr "Χρήση φλας"
 msgid "Image Magick Properties"
 msgstr "Ιδιότητες"
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:349
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:334
 #, fuzzy, kde-format
 #| msgid "File name: %1 (%2)"
 msgctxt "@info: metadata clipboard"
@@ -46712,59 +46724,59 @@ msgstr "Όνομα αρχείου: %1 (%2)"
 msgid "XMP Schema"
 msgstr "Σχήμα XMP"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:189
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:194
 #, kde-format
 msgid "XMP File to Save"
 msgstr "Αρχείο XMP για αποθήκευση"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:190
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:195
 #, kde-format
 msgid "XMP text Files (*.xmp)"
 msgstr "Αρχεία κειμένου XMP (*.xmp)"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:492
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:525
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: color label name"
 msgid "None"
 msgstr "Καθόλου"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:563
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:594
 #, fuzzy, kde-format
 #| msgid "Color Label: %1"
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
 msgstr "Επιγραφή χρώματος: %1"
 
-#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:574
+#: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:605
 #, fuzzy, kde-format
 #| msgid "Color"
 msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "Χρώμα"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:330
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:326
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@info: pick label name"
 msgid "None"
 msgstr "Καθόλου"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:402
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:395
 #, fuzzy, kde-format
 #| msgid "Pick Label: %1"
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
 msgstr "Επιγραφή επιλογής: %1"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:413
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:406
 #, fuzzy, kde-format
 #| msgid "Pick"
 msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Επιλογή"
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:582
+#: core/libs/widgets/metadata/labels/ratingwidget.cpp:568
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
@@ -50902,69 +50914,69 @@ msgctxt "@item: unknown country"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:134
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Use structured definition of the subject matter:"
 msgctxt "@title: subject widget"
 msgid "Use structured definition of the subject matter:"
 msgstr "Χρήση δομημένου ορισμού του θέματος:"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:141
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Standard"
 msgctxt "@label: subject widget"
 msgid "Use standard"
 msgstr "Τυπικός"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:142
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "Reference Image"
 msgctxt "@label: subject widget"
 msgid "reference code"
 msgstr "Σχετική εικόνα"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:151
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:135
 #, fuzzy, kde-format
 msgctxt "@label: subject widget"
 msgid "Use custom definition"
 msgstr "Χρήση προσαρμοσμένου μήκους"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:167
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:151
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgctxt "@info"
 msgid "Set here the Informative Provider Reference"
 msgstr "Ορίστε εδώ τον πάροχο του περιεχομένου."
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:179
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:163
 #, fuzzy, kde-format
 #| msgid "Set here the contact 'phone number."
 msgctxt "@info"
 msgid "Set here the Subject Reference Number"
 msgstr "Ορίστε εδώ τον αριθμό τηλεφώνου της επαφής."
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:190
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:174
 #, fuzzy, kde-format
 #| msgid "Set here the contact address."
 msgctxt "@info"
 msgid "Set here the Subject Name"
 msgstr "Ορίστε εδώ τη διεύθυνση της επαφής."
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:201
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:185
 #, fuzzy, kde-format
 #| msgid "Set here the contact address."
 msgctxt "@info"
 msgid "Set here the Subject Matter Name"
 msgstr "Ορίστε εδώ τη διεύθυνση της επαφής."
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:212
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:196
 #, fuzzy, kde-format
 #| msgid "Set here the contact e-mail."
 msgctxt "@info"
 msgid "Set here the Subject Detail Name"
 msgstr "Ορίστε εδώ το e-mail της επαφής."
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:224
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:208
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Information Provider Reference: A name, registered with the IPTC/NAA, "
@@ -50976,47 +50988,47 @@ msgctxt ""
 msgid "I.P.R:"
 msgstr "I.P.R:"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:225
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:209
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@label: subject properties"
 msgid "Reference:"
 msgstr "Αναφορά:"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:226
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:210
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label: subject properties"
 msgid "Name:"
 msgstr "Όνομα:"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:227
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:211
 #, fuzzy, kde-format
 msgctxt "@label: subject properties"
 msgid "Matter:"
 msgstr "Makernote"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:228
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:212
 #, fuzzy, kde-format
 msgctxt "@label: subject properties"
 msgid "Detail:"
 msgstr "Λεπτομέρειες"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:235
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:219
 #, fuzzy, kde-format
 #| msgid "&Add"
 msgctxt "@action: subject properties"
 msgid "&Add"
 msgstr "&Προσθήκη"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:236
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:220
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action: subject properties"
 msgid "&Delete"
 msgstr "&Διαγραφή"
 
-#: core/libs/widgets/metadata/utils/subjectwidget.cpp:237
+#: core/libs/widgets/metadata/utils/subjectwidget.cpp:221
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action: subject properties"
@@ -54958,12 +54970,12 @@ msgid "Tilt"
 msgstr "Κλίση"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:628
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:627
 #, kde-format
 msgid "Accuracy"
 msgstr "Ακρίβεια"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:40
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:41
 #, fuzzy, kde-format
 #| msgctxt "date format settings"
 #| msgid "format settings"
@@ -54971,27 +54983,27 @@ msgctxt "@info: date format settings"
 msgid "format settings"
 msgstr "Ρυθμίσεις μορφής"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:49
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:50
 #, fuzzy, kde-format
 #| msgid "Standard"
 msgctxt "@item:inlistbox date format"
 msgid "Standard"
 msgstr "Τυπικός"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:50
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:51
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "ISO"
 msgstr "ISO"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:51
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:52
 #, fuzzy, kde-format
 #| msgid "Text"
 msgctxt "@item:inlistbox date format"
 msgid "Text"
 msgstr "Κείμενο"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:52
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:53
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Timestamps"
@@ -54999,14 +55011,14 @@ msgctxt "@item:inlistbox date format"
 msgid "Unix Time Stamp"
 msgstr "Χρονικές σφραγίδες"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:53
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:54
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@item:inlistbox date format"
 msgid "Custom"
 msgstr "Προσαρμοσμένο"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:114
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:115
 #, fuzzy, kde-format
 #| msgid "Image"
 msgctxt "@item: Get date information from the image"
@@ -55016,7 +55028,7 @@ msgstr "Εικόνα"
 #. i18nc("Get date information from the current date", "Current Date"),
 #. QVariant(CurrentDateTime));
 #.
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:120
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "Set a fixed date"
 #| msgid "Fixed Date"
@@ -55024,43 +55036,43 @@ msgctxt "@item: Set a fixed date"
 msgid "Fixed Date"
 msgstr "Σταθερή ημερομηνία"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:145
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:146
 #, fuzzy, kde-format
 #| msgid "Enter custom format"
 msgctxt "@info"
 msgid "Enter custom format"
 msgstr "Εισαγωγή προσαρμοσμένης μορφής"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:252
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:253
 #, fuzzy, kde-format
 #| msgid "Example:"
 msgctxt "@info"
 msgid "example: "
 msgstr "Παράδειγμα:"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:259
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:260
 #, fuzzy, kde-format
 #| msgid "Date && Time..."
 msgctxt "@info"
 msgid "Date && Time..."
 msgstr "Ημερομηνία && ώρα..."
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:260
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:261
 #, fuzzy, kde-format
 #| msgid "Add date and time information"
 msgctxt "@info"
 msgid "Add date and time information"
 msgstr "Προσθήκη πληροφοριών ημερομηνίας και ώρας"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:263
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:264
 #, fuzzy, kde-format
 #| msgid "Date and time (standard format)"
 msgctxt "@item"
 msgid "Date and time (standard format)"
 msgstr "Ημερομηνία και ώρα (τυπική μορφή)"
 
-#: core/utilities/advancedrename/parser/options/dateoption.cpp:264
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:265
+#: core/utilities/advancedrename/parser/options/dateoption.cpp:266
 #, fuzzy, kde-format
 #| msgid "Date and time"
 msgctxt "@item"
@@ -57008,64 +57020,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#σημείων"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:429
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:428
 #, kde-format
 msgid "Not available"
 msgstr "Μη διαθέσιμο"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:467
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:473
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:472
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Fix: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:478
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:477
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#Δορ: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:531
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:530
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:555
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:554
 #, kde-format
 msgid "Modified"
 msgstr "Τροποποιημένο"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
 #, kde-format
 msgid "Date and time"
 msgstr "Ημερομηνία και ώρα"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:877
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:876
 #, kde-format
 msgid "Failed to open file."
 msgstr "Αποτυχία ανοίγματος αρχείου"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:949
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:948
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Αποτυχία προσθήκης πληροφοριών GPS στην εικόνα."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:961
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:960
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Αποτυχία αφαίρεσης πληροφοριών GPS από την εικόνα."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:996
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1028
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1003
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1027
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Αποτυχία αποθήκευσης ετικετών στο αρχείο."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1040
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1039
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Αποτυχία αποθήκευσης αλλαγών στο αρχείο"
@@ -62980,7 +62992,7 @@ msgstr "Αποτυχία εναλλαγής κλειδώματος του αρχ
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Η ετικέτα '%2' έχει οριστεί σε ένα αντικείμενο. Θέλετε να συνεχίσετε;"
 
-#: core/utilities/import/backend/gpcamera.cpp:1615
+#: core/utilities/import/backend/gpcamera.cpp:1612
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -62991,7 +63003,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1622
+#: core/utilities/import/backend/gpcamera.cpp:1619
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -63007,24 +63019,24 @@ msgstr ""
 "αντικειμένων: <b>%3</b><br/>Αποστολή αντικειμένων: <b>%4</b><br/>Δημιουργία "
 "καταλόγων: <b>%5</b><br/>Διαγραφή καταλόγων: <b>%6</b><br/><br/>"
 
+#: core/utilities/import/backend/gpcamera.cpp:1625
+#: core/utilities/import/backend/gpcamera.cpp:1626
+#: core/utilities/import/backend/gpcamera.cpp:1627
 #: core/utilities/import/backend/gpcamera.cpp:1628
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
-#: core/utilities/import/backend/gpcamera.cpp:1631
-#: core/utilities/import/backend/gpcamera.cpp:1632
-#: core/utilities/import/backend/gpcamera.cpp:1633
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "ναι"
 
+#: core/utilities/import/backend/gpcamera.cpp:1625
+#: core/utilities/import/backend/gpcamera.cpp:1626
+#: core/utilities/import/backend/gpcamera.cpp:1627
 #: core/utilities/import/backend/gpcamera.cpp:1628
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
-#: core/utilities/import/backend/gpcamera.cpp:1631
-#: core/utilities/import/backend/gpcamera.cpp:1632
-#: core/utilities/import/backend/gpcamera.cpp:1633
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: gphoto backend feature"
@@ -65051,8 +65063,8 @@ msgid ""
 "objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the previous one, this "
 "model is a neural network dedicated for more complex object detection "
 "requirements and showcases remarkable capabilities. Despite the additional "
-"complexity introducing more time-latency and computer resources, it's must "
-"be used for larger-scale object detection scenarios as it provides more "
+"complexity introducing more time-latency and computer resources, it must be "
+"used for larger-scale object detection scenarios as it provides more "
 "accurate predictions at the expense of speed.</p><p><b>ResNet50</b>: this "
 "model is a specific type of convolutional neural network formed by stacking "
 "residual blocks commonly used to power computer vision applications as "
