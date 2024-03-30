@@ -97,8 +97,8 @@ protected:
     QString                      m_destFile;
     QString                      m_documentName;
     QSize                        m_originalSize;
-    DMetadata*                   m_metadata;
-    MetaEngine::ImageOrientation m_orientation;
+    DMetadata*                   m_metadata     = nullptr;
+    MetaEngine::ImageOrientation m_orientation  = MetaEngine::ORIENTATION_UNSPECIFIED;
 
 protected:
 

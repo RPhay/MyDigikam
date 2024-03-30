@@ -217,21 +217,29 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     switch (cinfo.jpeg_color_space)
     {
         case JCS_UNKNOWN:
+        {
             break;
+        }
 
         case JCS_GRAYSCALE:
         case JCS_RGB:
         case JCS_YCbCr:
+        {
             cinfo.out_color_space = JCS_RGB;
             break;
+        }
 
         case JCS_CMYK:
         case JCS_YCCK:
+        {
             cinfo.out_color_space = JCS_CMYK;
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     jpeg_start_decompress(&cinfo);
@@ -253,6 +261,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     {
         jpeg_destroy_decompress(&cinfo);
         fclose(inFile);
+
         return false;
     }
 
@@ -260,10 +269,13 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     {
         case 3:
         case 4:
+        {
             img = QImage(cinfo.output_width, cinfo.output_height, QImage::Format_RGB32);
             break;
+        }
 
         case 1: // B&W image
+        {
             img = QImage(cinfo.output_width, cinfo.output_height, QImage::Format_Indexed8);
             img.setColorCount(256);
 
@@ -273,6 +285,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
             }
 
             break;
+        }
     }
 
     uchar* const data = img.bits();
@@ -342,7 +355,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
 }
 
 JpegRotator::JpegRotator(const QString& file)
-    : m_file(file),
+    : m_file    (file),
       m_destFile(file)
 {
     m_metadata     = new DMetadata;
@@ -404,6 +417,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
     if (!isJpegImage(m_file))
     {
         // Not a jpeg image.
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: not a JPEG file: " << m_file;
 
         return false;
@@ -473,6 +487,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
             {
                 removeLater << tempFile;
                 ret = false;
+
                 break;
             }
 
@@ -484,6 +499,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
             {
                 removeLater << tempFile;
                 ret = false;
+
                 break;
             }
 
@@ -500,6 +516,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
                 removeLater << tempFile;
                 ret = false;
+
                 break;
             }
 
@@ -512,6 +529,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
             src = tempFile;
             removeLater << tempFile;
+
             continue;
         }
 
@@ -544,9 +562,11 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
             }
         }
 
-        if ((tempFile != dest)      &&
+        if (
+            (tempFile != dest)      &&
             QFile::exists(tempFile) &&
-            QFile::exists(dest))
+            QFile::exists(dest)
+           )
         {
             QFile::remove(dest);
         }
@@ -558,6 +578,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
             removeLater << tempFile;
             ret = false;
+
             break;
         }
     }
@@ -574,7 +595,7 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
 {
     QTransform qmatrix = matrix.toTransform();
     QRect r(QPoint(0, 0), m_originalSize);
-    QSize newSize   = qmatrix.mapRect(r).size();
+    QSize newSize      = qmatrix.mapRect(r).size();
 
     // Get the new image dimension of the temp image. Using a dummy QImage object here
     // has a sense because the Exif dimension information can be missing from original image.
@@ -683,6 +704,7 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     if (!input_file)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening input file: " << src;
+
         return false;
     }
 
@@ -700,6 +722,7 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     {
         fclose(input_file);
         qCWarning(DIGIKAM_GENERAL_LOG) << "ExifRotate: Error in opening output file: " << dest;
+
         return false;
     }
 
@@ -709,6 +732,7 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
         jpeg_destroy_compress(&dstinfo);
         fclose(input_file);
         fclose(output_file);
+
         return false;
     }
 
@@ -804,6 +828,7 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
     if (!fi.exists())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "JpegConvert: file do not exist: " << src;
+
         return false;
     }
 
@@ -826,9 +851,11 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
         // will be found into Exiv2.
         // Note : There is no limitation with TIFF and PNG about IPTC byte array size.
 
-        if ((format.toUpper() != QLatin1String("JPG"))  &&
+        if (
+            (format.toUpper() != QLatin1String("JPG"))  &&
             (format.toUpper() != QLatin1String("JPEG")) &&
-            (format.toUpper() != QLatin1String("JPE")))
+            (format.toUpper() != QLatin1String("JPE"))
+           )
         {
             meta->setItemPreview(preview);
         }
@@ -858,9 +885,11 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
             image.setAttribute(QLatin1String("compress"), true);
         }
 
-        if ((format.toUpper() == QLatin1String("JP2")) || (format.toUpper() == QLatin1String("JPX")) ||
+        if (
+            (format.toUpper() == QLatin1String("JP2")) || (format.toUpper() == QLatin1String("JPX")) ||
             (format.toUpper() == QLatin1String("JPC")) || (format.toUpper() == QLatin1String("PGX")) ||
-            (format.toUpper() == QLatin1String("J2K")))
+            (format.toUpper() == QLatin1String("J2K"))
+           )
         {
             image.setAttribute(QLatin1String("quality"), 100);    // LossLess
         }
@@ -1093,6 +1122,7 @@ int getJpegQuality(const QString& file)
     fclose(inFile);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "JPEG Quality: " << quality << " File: " << file;
+
     return quality;
 }
 

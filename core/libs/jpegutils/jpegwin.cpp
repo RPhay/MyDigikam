@@ -67,7 +67,7 @@ void term_source (j_decompress_ptr /*cinfo*/)
 
 void jpeg_memory_src (j_decompress_ptr cinfo, const JOCTET* buffer, size_t bufsize)
 {
-    digikam_source_mgr* src = 0;
+    digikam_source_mgr* src = NULL;
 
     if (cinfo->src == NULL)
     {
