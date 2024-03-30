@@ -49,7 +49,7 @@ BUGFIXES:
 029 ==> 484708 - Images.modificationDate value in the db is incorrect.
 030 ==> 484762 - digiKam doesn't recognize XMP video tags.
 031 ==> 484698 - Program crash when entered face tag name.
-032 ==> 
+032 ==> 484745 - Inconsistent date for Dynamic Media:Shot Date in case of .mov video.
 033 ==> 
 034 ==> 
 035 ==> 
