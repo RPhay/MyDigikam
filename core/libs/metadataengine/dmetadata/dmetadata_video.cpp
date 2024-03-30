@@ -755,7 +755,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 setXmpTagString("Xmp.video.TrackCreateDate",
                                 QString::number(s_secondsSinceJanuary1904(dt)));
 
-                setXmpTagString("Xmp.xmpDM.shotDate", dt.toString());
+                setXmpTagString("Xmp.xmpDM.shotDate", dt.toString(QLatin1String("yyyy-MM-ddThh:mm:ss")));
             }
 
             // --------------
