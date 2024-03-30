@@ -35,20 +35,13 @@ class Q_DECL_HIDDEN FocusPoint::Private : public QSharedData
 {
 public:
 
-    explicit Private()
-      : x_position(0.0),
-        y_position(0.0),
-        width     (0.0),
-        height    (0.0),
-        type      (Inactive)
-    {
-    };
+    Private() = default;
 
-    float     x_position;       ///< Relative X coordinate of the center of focus point area (depending of original image width).
-    float     y_position;       ///< Relative Y coordinate of the center of focus point area (depending of original image height).
-    float     width;            ///< Relative Width of focus point area (depending of original image width).
-    float     height;           ///< Relative Height of focus point area (depending of original image height).
-    TypePoint type;             ///< Focus point area type. See TypePoint enum definition for details.
+    float     x_position = 0.0F;       ///< Relative X coordinate of the center of focus point area (depending of original image width).
+    float     y_position = 0.0F;       ///< Relative Y coordinate of the center of focus point area (depending of original image height).
+    float     width      = 0.0F;       ///< Relative Width of focus point area (depending of original image width).
+    float     height     = 0.0F;       ///< Relative Height of focus point area (depending of original image height).
+    TypePoint type       = Inactive;   ///< Focus point area type. See TypePoint enum definition for details.
 };
 
 FocusPoint::FocusPoint()

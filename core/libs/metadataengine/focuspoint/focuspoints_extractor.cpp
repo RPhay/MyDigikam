@@ -28,21 +28,16 @@ class Q_DECL_HIDDEN FocusPointsExtractor::Private
 
 public:
 
-    explicit Private()
-        : exifToolAvailable(false),
-          afPointsReadOnly (true),
-          orientation      (MetaEngine::ORIENTATION_UNSPECIFIED)
-    {
-    }
+    Private() = default;
 
-    ListAFPoints                    af_points;          ///< List of AF points extracted from metadata.
-    bool                            exifToolAvailable;  ///< True if ExifTool binary is available.
-    ExifToolParser::ExifToolData    metadata;           ///< List of tags parsed by ExifTool.
-    bool                            afPointsReadOnly;   ///< True if AF points are read-only in metadata.
-    QString                         make;               ///< Camera Manufacturer Name
-    QString                         model;              ///< Camera Model Name.
-    QSize                           originalSize;       ///< Original size of image taken by camera
-    MetaEngine::ImageOrientation    orientation;        ///< Image orientation set by camera.
+    ListAFPoints                    af_points;                                                  ///< List of AF points extracted from metadata.
+    bool                            exifToolAvailable = false;                                  ///< True if ExifTool binary is available.
+    ExifToolParser::ExifToolData    metadata;                                                   ///< List of tags parsed by ExifTool.
+    bool                            afPointsReadOnly  = true;                                   ///< True if AF points are read-only in metadata.
+    QString                         make;                                                       ///< Camera Manufacturer Name
+    QString                         model;                                                      ///< Camera Model Name.
+    QSize                           originalSize;                                               ///< Original size of image taken by camera
+    MetaEngine::ImageOrientation    orientation       = MetaEngine::ORIENTATION_UNSPECIFIED;    ///< Image orientation set by camera.
 };
 
 FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& image_path)

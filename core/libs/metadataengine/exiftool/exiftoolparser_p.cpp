@@ -18,9 +18,7 @@ namespace Digikam
 {
 
 ExifToolParser::Private::Private(ExifToolParser* const q)
-    : pp          (q),
-      proc        (nullptr),
-      async       (false)
+    : pp(q)
 {
     argsFile.setAutoRemove(false);
 }
@@ -69,8 +67,10 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs,
 
     ExifToolProcess::Result result = proc->getExifToolResult(cmdId);
 
-    while ((result.cmdNumber != cmdId) &&
-           (result.cmdStatus != ExifToolProcess::FINISH_RESULT))
+    while (
+           (result.cmdNumber != cmdId) &&
+           (result.cmdStatus != ExifToolProcess::FINISH_RESULT)
+          )
     {
         result = proc->waitForExifToolResult(cmdId);
 

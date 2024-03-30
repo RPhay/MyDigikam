@@ -58,15 +58,11 @@ public:
     {
     public:
 
-        Command()
-          : id     (0),
-            ac     (ExifToolProcess::NO_ACTION)
-        {
-        }
+        Command() = default;
 
-        int                     id;
+        int                     id      = 0;
         QByteArray              argsStr;
-        ExifToolProcess::Action ac;
+        ExifToolProcess::Action ac      = ExifToolProcess::NO_ACTION;
     };
 
 public:
@@ -84,26 +80,26 @@ public Q_SLOTS:
 
 public:
 
-    ExifToolProcess*                   pp;
+    ExifToolProcess*                   pp                   = nullptr;
     QString                            etExePath;
     QString                            perlExePath;
 
     QElapsedTimer                      execTimer;
     QList<Command>                     cmdQueue;
-    int                                cmdNumber;
-    ExifToolProcess::Action            cmdAction;
+    int                                cmdNumber            = 0;
+    ExifToolProcess::Action            cmdAction            = ExifToolProcess::NO_ACTION;
     QMap<int, ExifToolProcess::Result> resultMap;
 
     int                                outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput
     bool                               outReady[2];             ///< [0] StandardOutput | [1] ErrorOutput
     QByteArray                         outBuff[2];              ///< [0] StandardOutput | [1] ErrorOutput
 
-    bool                               writeChannelIsClosed;
+    bool                               writeChannelIsClosed = true;
 
-    QProcess::ProcessError             processError;
+    QProcess::ProcessError             processError         = QProcess::UnknownError;
     QString                            errorString;
 
-    int                                nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
+    int                                nextCmdId            = CMD_ID_MIN;  ///< Unique identifier, even in a multi-instances or multi-thread environment
 
     QMutex                             cmdMutex;
 

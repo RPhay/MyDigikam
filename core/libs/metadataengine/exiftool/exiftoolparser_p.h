@@ -69,16 +69,16 @@ public:
 
 public:
 
-    ExifToolParser*                pp;
-    ExifToolProcess*               proc;            ///< ExifTool process instance.
-    QString                        currentPath;     ///< Current file path processed by ExifTool.
-    QString                        errorString;     ///< Current error string from the last started ExifTool process.
-    ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
-    QTemporaryFile                 argsFile;        ///< Temporary file to store Exiftool arg config file.
+    ExifToolParser*                pp           = nullptr;
+    ExifToolProcess*               proc         = nullptr;  ///< ExifTool process instance.
+    QString                        currentPath;             ///< Current file path processed by ExifTool.
+    QString                        errorString;             ///< Current error string from the last started ExifTool process.
+    ExifToolData                   exifToolData;            ///< Current ExifTool data (input or output depending of the called method.
+    QTemporaryFile                 argsFile;                ///< Temporary file to store Exiftool arg config file.
 
     QMutex                         mutex;
 
-    bool                           async;
+    bool                           async        = false;
     QList<int>                     asyncRunning;
 };
 

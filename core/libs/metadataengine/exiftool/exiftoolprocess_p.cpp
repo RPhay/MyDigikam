@@ -21,13 +21,8 @@ namespace Digikam
 {
 
 ExifToolProcess::Private::Private(ExifToolProcess* const q)
-    : QObject             (q),
-      pp                  (q),
-      cmdNumber           (0),
-      cmdAction           (ExifToolProcess::NO_ACTION),
-      writeChannelIsClosed(true),
-      processError        (QProcess::UnknownError),
-      nextCmdId           (CMD_ID_MIN)
+    : QObject(q),
+      pp     (q)
 {
     outAwait[0] = false;
     outAwait[1] = false;

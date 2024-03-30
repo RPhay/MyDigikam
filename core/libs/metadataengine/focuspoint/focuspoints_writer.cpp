@@ -31,12 +31,9 @@ class Q_DECL_HIDDEN FocusPointsWriter::Private
 {
 public:
 
-    explicit Private()
-      : exifTool(nullptr)
-    {
-    };
+    Private() = default;
 
-    ExifToolParser* exifTool;
+    ExifToolParser* exifTool = nullptr;
     QString         path;
 };
 
