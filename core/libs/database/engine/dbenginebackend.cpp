@@ -244,6 +244,21 @@ QSqlError BdEngineBackendPrivate::databaseErrorForThread()
     return QSqlError();
 }
 
+bool BdEngineBackendPrivate::resetDatabaseForThread()
+{
+    int tc = 0;
+
+    if (threadDataStorage.hasLocalData())
+    {
+        tc = threadDataStorage.localData()->transactionCount;
+
+        closeDatabaseForThread();
+        databaseForThread();
+    }
+
+    return ((bool)tc);
+}
+
 void BdEngineBackendPrivate::setDatabaseErrorForThread(const QSqlError& lastError)
 {
     if (threadDataStorage.hasLocalData())
@@ -1737,13 +1752,12 @@ bool BdEngineBackend::execBatch(DbEngineSqlQuery& query)
 
                 if (d->isSQLiteLockError(query))
                 {
-                    d->closeDatabaseForThread();
-                    query = copyQuery(query);
-
-                    if (d->isInTransaction)
+                    if (d->resetDatabaseForThread())
                     {
                         beginTransaction();
                     }
+
+                    query = copyQuery(query);
                 }
 
                 continue;
