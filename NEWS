@@ -47,7 +47,7 @@ BUGFIXES:
 027 ==> 478988 - digiKam freezes on startup W10.
 028 ==> 467711 - Time latency introduced while applying changes in Sqlite database under Windows.
 029 ==> 484708 - Images.modificationDate value in the db is incorrect.
-030 ==> 
+030 ==> 484762 - digiKam doesn't recognize XMP video tags.
 031 ==> 
 032 ==> 
 033 ==> 
