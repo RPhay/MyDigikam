@@ -144,7 +144,7 @@ public:
     protected:
 
         int                           count;
-        BdEngineBackendPrivate* const d;
+        BdEngineBackendPrivate* const d = nullptr;
     };
 
     friend class AbstractUnlocker;

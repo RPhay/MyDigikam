@@ -71,7 +71,7 @@ public:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 #endif // DIGIKAM_STATE_SAVING_OBJECT_UTEST_H

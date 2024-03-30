@@ -68,7 +68,7 @@ private Q_SLOTS:
     Q_DISABLE_COPY( MarbleWidgetPopupMenu )
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 }

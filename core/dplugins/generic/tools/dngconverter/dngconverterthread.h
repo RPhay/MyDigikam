@@ -67,7 +67,7 @@ Q_SIGNALS:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace DigikamGenericDNGConverterPlugin

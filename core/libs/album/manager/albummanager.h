@@ -855,7 +855,7 @@ public:
 
 private:
 
-    Private* const d;
+    Private* const d = nullptr;
 
     template <class T> friend class AlbumPointer;
     friend class Album;

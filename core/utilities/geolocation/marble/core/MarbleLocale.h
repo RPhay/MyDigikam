@@ -71,7 +71,7 @@ public:
 private:
 
     Q_DISABLE_COPY( MarbleLocale )
-    MarbleLocalePrivate* const d;
+    MarbleLocalePrivate* const d = nullptr;
 };
 
 }

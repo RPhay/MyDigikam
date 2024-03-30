@@ -141,7 +141,7 @@ public:
 
 private:
 
-    ExpoBlendingThread::Private* const d;
+    ExpoBlendingThread::Private* const d = nullptr;
 };
 
 ExpoBlendingThread::ExpoBlendingThread(QObject* const parent)

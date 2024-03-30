@@ -155,7 +155,7 @@ private:
     friend class DMultiTabBarButton;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // -------------------------------------------------------------------------------------
@@ -266,7 +266,7 @@ protected:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // -------------------------------------------------------------------------------------
@@ -303,7 +303,7 @@ private:
     friend class DMultiTabBar;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // -------------------------------------------------------------------------------------
@@ -463,7 +463,7 @@ private:
     friend class SidebarSplitter;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // -----------------------------------------------------------------------------
@@ -533,7 +533,7 @@ private:
     friend class Sidebar;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

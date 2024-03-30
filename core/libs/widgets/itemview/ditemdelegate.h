@@ -93,7 +93,7 @@ protected:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

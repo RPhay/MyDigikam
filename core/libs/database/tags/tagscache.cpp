@@ -317,7 +317,7 @@ public:
         d->changingDB = false;
     }
 
-    TagsCache::Private* const d;
+    TagsCache::Private* const d = nullptr;
 };
 
 // ------------------------------------------------------------------------------------------

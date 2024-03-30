@@ -1168,7 +1168,7 @@ class DIGIKAM_EXPORT MarbleWidget : public QWidget
 
     Q_DISABLE_COPY( MarbleWidget )
 
-    MarbleWidgetPrivate* const d;
+    MarbleWidgetPrivate* const d = nullptr;
     friend class MarbleWidgetPrivate;
 
     class CustomPaintLayer;

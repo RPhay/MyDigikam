@@ -76,7 +76,7 @@ private:
     CoreDbOperationGroup& operator=(const CoreDbOperationGroup&) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT DownloadRegion : public QObject
     QVector<int> validTileLevels( const TileType tileType ) const;
 
   private:
-    DownloadRegionPrivate* const d;
+    DownloadRegionPrivate* const d = nullptr;
 };
 
 }

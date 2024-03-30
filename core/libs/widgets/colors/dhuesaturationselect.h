@@ -140,7 +140,7 @@ private:
 
     class Private;
     friend class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // --------------------------------------------------------------------------------
@@ -246,7 +246,7 @@ private:
 
     class Private;
     friend class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

@@ -78,7 +78,7 @@ public:
     void setHttpQuery(const QString &httpQuery);
 
 private:
-    GeoDataLinkPrivate* const d;
+    GeoDataLinkPrivate* const d = nullptr;
 };
 
 }

@@ -100,7 +100,7 @@ public:
 
     Q_PRIVATE_SLOT( d,  void timerTimeout() )
 
-    MarbleClockPrivate* const d;
+    MarbleClockPrivate* const d = nullptr;
 
     friend class MarbleClockPrivate;
 };

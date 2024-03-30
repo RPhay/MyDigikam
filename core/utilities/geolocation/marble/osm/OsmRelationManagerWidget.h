@@ -60,7 +60,7 @@ Q_SIGNALS:
 
 private:
     friend class OsmRelationManagerWidgetPrivate;
-    OsmRelationManagerWidgetPrivate* const d;
+    OsmRelationManagerWidgetPrivate* const d = nullptr;
 };
 
 }

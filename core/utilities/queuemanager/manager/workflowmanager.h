@@ -101,7 +101,7 @@ private:
     friend class WorkflowManagerCreator;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

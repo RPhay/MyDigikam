@@ -156,7 +156,7 @@ private:
     // Disabled
     explicit CoreDbWatch(QObject*) = delete;
 
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 #ifdef HAVE_DBUS

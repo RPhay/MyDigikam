@@ -51,7 +51,7 @@ public:
     void setLink(const GeoDataLink &link);
 
 private:
-    GeoDataNetworkLinkPrivate* const d;
+    GeoDataNetworkLinkPrivate* const d = nullptr;
 };
 
 }

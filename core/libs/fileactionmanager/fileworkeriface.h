@@ -66,7 +66,7 @@ public:
 
 private:
 
-    FileActionMngr::Private* const d;
+    FileActionMngr::Private* const d = nullptr;
 };
 
 } // namespace Digikam

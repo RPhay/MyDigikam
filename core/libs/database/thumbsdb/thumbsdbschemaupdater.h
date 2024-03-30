@@ -58,7 +58,7 @@ private:
     ThumbsDbSchemaUpdater& operator=(const ThumbsDbSchemaUpdater&) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

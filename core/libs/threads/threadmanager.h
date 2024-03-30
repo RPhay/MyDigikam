@@ -67,7 +67,7 @@ private:
     friend class ThreadManagerCreator;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

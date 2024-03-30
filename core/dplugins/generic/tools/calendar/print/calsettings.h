@@ -130,7 +130,7 @@ private:
     static QPointer<CalSettings> s_instance;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

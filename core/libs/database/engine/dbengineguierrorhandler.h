@@ -59,7 +59,7 @@ private:
     DbEngineConnectionChecker(QObject*) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // --------------------------------------------------------------
@@ -90,7 +90,7 @@ private:
     DbEngineGuiErrorHandler(QObject*) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

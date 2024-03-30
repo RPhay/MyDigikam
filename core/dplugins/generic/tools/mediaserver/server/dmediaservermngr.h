@@ -94,7 +94,7 @@ private:
     friend class DMediaServerMngrCreator;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace DigikamGenericMediaServerPlugin

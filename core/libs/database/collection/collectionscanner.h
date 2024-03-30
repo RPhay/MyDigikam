@@ -306,7 +306,7 @@ private:
     CollectionScanner(QObject*) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

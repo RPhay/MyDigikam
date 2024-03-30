@@ -769,7 +769,7 @@ private:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     friend class DOnlineTts;
 };
@@ -966,7 +966,7 @@ private:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

@@ -251,7 +251,7 @@ private:
     SimilarityDb& operator=(const SimilarityDb&) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     friend class SimilarityDbAccess;
 };

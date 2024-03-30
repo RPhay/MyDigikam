@@ -197,7 +197,7 @@ private:
     const QList<QImage*>&                   images;
     QVector<int>&                           ids;
 
-    OpenCVDNNFaceRecognizer::Private* const d;
+    OpenCVDNNFaceRecognizer::Private* const d = nullptr;
 
 private:
 
@@ -239,7 +239,7 @@ private:
     const int&                              id;
     const QString&                          context;
 
-    OpenCVDNNFaceRecognizer::Private* const d;
+    OpenCVDNNFaceRecognizer::Private* const d = nullptr;
 
 private:
 

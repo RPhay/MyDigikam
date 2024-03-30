@@ -46,7 +46,7 @@ Q_SIGNALS:
 
 private:
     friend class OsmTagEditorWidgetPrivate;
-    OsmTagEditorWidgetPrivate* const d;
+    OsmTagEditorWidgetPrivate* const d = nullptr;
 };
 
 }

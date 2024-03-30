@@ -59,7 +59,7 @@ public:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     class Node;
 };

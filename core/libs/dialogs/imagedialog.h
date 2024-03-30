@@ -67,7 +67,7 @@ private:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // ------------------------------------------------------------------------
@@ -96,7 +96,7 @@ private:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // ------------------------------------------------------------------------
@@ -124,7 +124,7 @@ public:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // ------------------------------------------------------------------------
@@ -173,7 +173,7 @@ private Q_SLOTS:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

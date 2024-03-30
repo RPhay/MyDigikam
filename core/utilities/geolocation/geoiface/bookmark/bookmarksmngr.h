@@ -95,7 +95,7 @@ public:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 /**
@@ -151,7 +151,7 @@ public Q_SLOTS:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 /**
@@ -238,7 +238,7 @@ public Q_SLOTS:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     friend class RemoveBookmarksCommand;
     friend class ChangeBookmarkCommand;

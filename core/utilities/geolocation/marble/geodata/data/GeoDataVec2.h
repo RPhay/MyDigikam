@@ -38,7 +38,7 @@ public:
     void setYunits( Unit yunit );
 
 private:
-    GeoDataVec2Private* const d;
+    GeoDataVec2Private* const d = nullptr;
 };
 
 }

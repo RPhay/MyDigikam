@@ -127,7 +127,7 @@ class StackedTileLoader : public QObject
         Q_DISABLE_COPY( StackedTileLoader )
 
         friend class StackedTileLoaderPrivate;
-        StackedTileLoaderPrivate* const d;
+        StackedTileLoaderPrivate* const d = nullptr;
 };
 
 }

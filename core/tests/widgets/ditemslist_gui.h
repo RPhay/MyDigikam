@@ -73,7 +73,7 @@ private Q_SLOTS:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 #endif // DIGIKAM_DITEMS_LIST_TEST_H

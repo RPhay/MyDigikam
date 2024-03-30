@@ -42,7 +42,7 @@ public:
     void setUpdate( GeoDataUpdate *update );
 
 private:
-    GeoDataAnimatedUpdatePrivate* const d;
+    GeoDataAnimatedUpdatePrivate* const d = nullptr;
 };
 
 }

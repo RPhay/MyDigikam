@@ -50,7 +50,7 @@ public:
     void setGridOrigin(GridOrigin gridOrigin);
 
 private:
-    GeoDataImagePyramidPrivate* const d;
+    GeoDataImagePyramidPrivate* const d = nullptr;
 };
 
 }

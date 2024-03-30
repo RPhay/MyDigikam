@@ -322,7 +322,7 @@ protected:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     Q_PRIVATE_SLOT(d, void _k_timeoutFinished())
     Q_DISABLE_COPY(DConfigDlgTitle)

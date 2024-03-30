@@ -122,7 +122,7 @@ private:
     ItemHistoryGraphModel& operator=(const ItemHistoryGraphModel&) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

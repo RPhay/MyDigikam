@@ -67,7 +67,7 @@ public:
     bool isValid() const;
 
 private:
-    GeoDataLatLonQuadPrivate* const d;
+    GeoDataLatLonQuadPrivate* const d = nullptr;
 };
 
 }

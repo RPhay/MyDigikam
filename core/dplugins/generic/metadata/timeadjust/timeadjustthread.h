@@ -83,7 +83,7 @@ public:
 
 private:
 
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace DigikamGenericTimeAdjustPlugin

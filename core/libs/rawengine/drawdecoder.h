@@ -268,7 +268,7 @@ private:
     // Disabled
     explicit DRawDecoder(QObject*) = delete;
 
-    Private* const d;
+    Private* const d = nullptr;
 
     friend class Private;
 };

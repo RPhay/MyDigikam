@@ -53,7 +53,7 @@ public:
     void setFlyToMode( const FlyToMode flyToMode );
 
 private:
-    GeoDataFlyToPrivate* const d;
+    GeoDataFlyToPrivate* const d = nullptr;
 };
 
 }

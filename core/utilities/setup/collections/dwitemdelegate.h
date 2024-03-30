@@ -141,7 +141,7 @@ private:
     friend class DWItemDelegatePool;
     friend class DWItemDelegateEventListener;
 
-    DWItemDelegatePrivate* const d;
+    DWItemDelegatePrivate* const d = nullptr;
 
     Q_PRIVATE_SLOT(d, void slotDWRowsInserted(const QModelIndex&, int, int))
     Q_PRIVATE_SLOT(d, void slotDWRowsAboutToBeRemoved(const QModelIndex&, int, int))

@@ -165,7 +165,7 @@ private:
     friend class DynamicThreadPriv;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

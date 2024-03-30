@@ -1345,7 +1345,7 @@ private:
      * Internal container to store private members. Used to improve binary compatibility
      */
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     friend class MetaEnginePreviews;
 };

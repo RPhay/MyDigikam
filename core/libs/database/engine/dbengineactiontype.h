@@ -72,7 +72,7 @@ private:
     DbEngineActionType& operator=(const DbEngineActionType&) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

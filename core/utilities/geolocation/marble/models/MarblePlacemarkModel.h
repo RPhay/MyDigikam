@@ -120,7 +120,7 @@ Q_SIGNALS:
 
     Q_DISABLE_COPY( MarblePlacemarkModel )
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
     QHash<int, QByteArray> m_roleNames;
 };
 

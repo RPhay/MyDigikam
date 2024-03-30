@@ -130,7 +130,7 @@ private:
     friend class MjpegServerMngrCreator;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace DigikamGenericMjpegStreamPlugin

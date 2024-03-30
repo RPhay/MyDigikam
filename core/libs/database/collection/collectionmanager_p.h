@@ -296,7 +296,7 @@ public:
 
 public:
 
-    CollectionManager::Private* const d;
+    CollectionManager::Private* const d = nullptr;
 };
 
 } // namespace Digikam

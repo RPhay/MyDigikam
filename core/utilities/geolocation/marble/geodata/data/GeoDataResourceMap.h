@@ -48,7 +48,7 @@ public:
     void setTargetHref( const QString& targetHref );
 
 private:
-    GeoDataResourceMapPrivate* const d;
+    GeoDataResourceMapPrivate* const d = nullptr;
 };
 
 }

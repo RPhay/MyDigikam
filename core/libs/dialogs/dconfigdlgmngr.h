@@ -224,7 +224,7 @@ protected:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     Q_DISABLE_COPY(DConfigDlgMngr)
 };

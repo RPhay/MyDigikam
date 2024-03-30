@@ -575,7 +575,7 @@ private:
     friend class ApplicationSettingsCreator;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

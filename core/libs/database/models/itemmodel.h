@@ -405,7 +405,7 @@ private:
     ItemModel(const ItemModel&)            = delete;
     ItemModel& operator=(const ItemModel&) = delete;
 
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

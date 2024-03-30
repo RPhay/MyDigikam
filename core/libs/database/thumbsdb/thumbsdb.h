@@ -149,7 +149,7 @@ private:
     ThumbsDb& operator=(const ThumbsDb&) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     friend class ThumbsDbAccess;
 };

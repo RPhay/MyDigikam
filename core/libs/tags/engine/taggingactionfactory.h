@@ -103,7 +103,7 @@ private:
     TaggingActionFactory& operator=(const TaggingActionFactory&) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

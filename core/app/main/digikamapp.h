@@ -264,7 +264,7 @@ private:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     static DigikamApp* m_instance;
 };

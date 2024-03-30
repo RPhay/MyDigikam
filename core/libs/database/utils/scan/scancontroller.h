@@ -394,7 +394,7 @@ private:
     friend class ScanControllerCreator;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

@@ -48,7 +48,7 @@ public:
     void setAltitude( qreal altitude );
 
 protected:
-    GeoDataLocationPrivate* const d;
+    GeoDataLocationPrivate* const d = nullptr;
 };
 
 }

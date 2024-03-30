@@ -134,7 +134,7 @@ public:
     void setEntries(const QVector<NamedEntry>& entries);
 
 private:
-    GeoDataBuildingPrivate* const d;
+    GeoDataBuildingPrivate* const d = nullptr;
 };
 
 }

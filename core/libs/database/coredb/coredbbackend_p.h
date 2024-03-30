@@ -119,7 +119,7 @@ public:
     public:
 
         QList<T>                    changesets;
-        CoreDbBackendPrivate* const d;
+        CoreDbBackendPrivate* const d = nullptr;
     };
 
 public:

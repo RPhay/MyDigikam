@@ -68,7 +68,7 @@ private:
     explicit Marquee(QObject*);
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace FaceEngineDemo

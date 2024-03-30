@@ -159,7 +159,7 @@ protected:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     friend class Private;
 };

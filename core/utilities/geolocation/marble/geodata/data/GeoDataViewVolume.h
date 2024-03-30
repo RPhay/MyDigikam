@@ -48,7 +48,7 @@ public:
     void setNear(qreal near);
 
 private:
-    GeoDataViewVolumePrivate* const d;
+    GeoDataViewVolumePrivate* const d = nullptr;
 };
 
 }

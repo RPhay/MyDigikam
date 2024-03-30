@@ -56,7 +56,7 @@ private Q_SLOTS:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // -----------------------------------------------------------------
@@ -88,7 +88,7 @@ private Q_SLOTS:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 // -----------------------------------------------------------------

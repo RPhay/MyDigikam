@@ -128,7 +128,7 @@ private:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(DDatePickerPopup::Items)

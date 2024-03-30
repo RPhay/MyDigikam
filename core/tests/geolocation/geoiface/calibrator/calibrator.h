@@ -48,7 +48,7 @@ public:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     Q_DISABLE_COPY(CalibratorModelHelper)
 };
@@ -80,7 +80,7 @@ private Q_SLOTS:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     Q_DISABLE_COPY(Calibrator)
 };

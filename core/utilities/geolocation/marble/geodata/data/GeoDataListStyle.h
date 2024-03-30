@@ -87,7 +87,7 @@ public:
 
 private:
     friend class GeoDataItemIcon;
-    GeoDataListStylePrivate* const d;
+    GeoDataListStylePrivate* const d = nullptr;
 };
 
 }

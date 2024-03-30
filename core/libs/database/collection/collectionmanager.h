@@ -335,7 +335,7 @@ private:
 
     static CollectionManager* m_instance;
 
-    Private* const d;
+    Private* const d = nullptr;
 
     friend class Private;
     friend class CoreDbWatch;

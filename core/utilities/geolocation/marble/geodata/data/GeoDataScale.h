@@ -46,7 +46,7 @@ public:
     void setZ( double z);
 
 private:
-    GeoDataScalePrivate* const d;
+    GeoDataScalePrivate* const d = nullptr;
 };
 
 }

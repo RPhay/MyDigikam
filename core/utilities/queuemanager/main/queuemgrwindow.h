@@ -132,7 +132,7 @@ private:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     static QueueMgrWindow* m_instance;
 };

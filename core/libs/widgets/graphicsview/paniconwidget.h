@@ -106,7 +106,7 @@ private:
 
     class Private;
     friend class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     Q_DISABLE_COPY(PanIconFrame)
 };
@@ -172,7 +172,7 @@ protected Q_SLOTS:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

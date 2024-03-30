@@ -131,7 +131,7 @@ protected:
     friend class PLT_MediaItem;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
 private:
 

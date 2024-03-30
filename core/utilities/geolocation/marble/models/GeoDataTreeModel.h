@@ -106,7 +106,7 @@ Q_SIGNALS:
  private:
     Q_DISABLE_COPY( GeoDataTreeModel )
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 }

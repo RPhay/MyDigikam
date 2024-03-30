@@ -111,7 +111,7 @@ private:
     explicit FileActionMngr(QObject*);
     ~FileActionMngr() override;
 
-    Private* const d;
+    Private* const d = nullptr;
 
     friend class FileActionMngrCreator;
 };

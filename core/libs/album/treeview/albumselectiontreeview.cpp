@@ -197,7 +197,7 @@ public:
 
 public:
 
-    AlbumSelectionTreeView::Private* const d;
+    AlbumSelectionTreeView::Private* const d = nullptr;
 };
 
 // ----------------------------------------------------------------------------------------------------

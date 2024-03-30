@@ -158,7 +158,7 @@ private:
     Q_DISABLE_COPY(DPluginLoader)
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     friend class DPluginLoaderCreator;
 };

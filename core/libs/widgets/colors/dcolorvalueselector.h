@@ -110,7 +110,7 @@ private:
 
     class Private;
     friend class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     Q_DISABLE_COPY(DSelector)
 };
@@ -215,7 +215,7 @@ private:
 
     class Private;
     friend class Private;
-    Private* const d;
+    Private* const d = nullptr;
 
     Q_DISABLE_COPY(DColorValueSelector)
 };

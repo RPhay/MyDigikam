@@ -137,7 +137,7 @@ private:
 
 #endif
 
-    PluginManagerPrivate* const d;
+    PluginManagerPrivate* const d = nullptr;
 };
 
 }

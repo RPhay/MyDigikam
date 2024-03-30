@@ -128,7 +128,7 @@ private:
     ItemThumbnailModel& operator=(const ItemThumbnailModel&) = delete;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

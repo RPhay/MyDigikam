@@ -58,7 +58,7 @@ protected:
 private:
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 #endif // DIGIKAM_GEO_MY_TREE_WIDGET_H

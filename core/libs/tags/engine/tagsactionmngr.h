@@ -108,7 +108,7 @@ private:
     static TagsActionMngr* m_defaultManager;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

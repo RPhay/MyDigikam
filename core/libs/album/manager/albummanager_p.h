@@ -209,7 +209,7 @@ public:
     explicit ChangingDB(AlbumManager::Private* const dd);
     ~ChangingDB();
 
-    AlbumManager::Private* const d;
+    AlbumManager::Private* const d = nullptr;
 };
 
 // -----------------------------------------------------------------------------------

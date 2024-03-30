@@ -50,7 +50,7 @@ private:
     Q_DISABLE_COPY(MarbleConfigView)
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Marble

@@ -282,7 +282,7 @@ class  DIGIKAM_EXPORT MarbleGlobal
 {
 
 public:
- 
+
     static MarbleGlobal * getInstance();
     ~MarbleGlobal();
 
@@ -304,7 +304,7 @@ private:
     MarbleGlobal();
     Q_DISABLE_COPY( MarbleGlobal )
 
-    MarbleGlobalPrivate* const d;
+    MarbleGlobalPrivate* const d = nullptr;
 };
 
 }

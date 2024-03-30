@@ -51,7 +51,7 @@ public:
     void setDelete( GeoDataDelete* dataDelete );
 
 private:
-    GeoDataUpdatePrivate* const d;
+    GeoDataUpdatePrivate* const d = nullptr;
 };
 
 }

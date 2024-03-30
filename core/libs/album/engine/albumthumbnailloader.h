@@ -204,7 +204,7 @@ private:
     friend class AlbumThumbnailLoaderCreator;
 
     class Private;
-    Private* const d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam
