@@ -132,10 +132,12 @@ public:
         CUSTOMOUTPUTCS
     };
 
+public:
+
     /**
      * Standard constructor with default settings
      */
-    DRawDecoderSettings();
+    DRawDecoderSettings() = default;
 
     /**
      * Equivalent to the copy constructor
@@ -151,7 +153,7 @@ public:
     /**
      * Standard destructor
      */
-    ~DRawDecoderSettings();
+    ~DRawDecoderSettings() = default;
 
     /**
      * Method to use a settings to optimize time loading, for example to compute image histogram
@@ -164,47 +166,47 @@ public:
      * If true, images with overblown channels are processed much more accurate,
      * without 'pink clouds' (and blue highlights under tungsten lamps).
      */
-    bool fixColorsHighlights;
+    bool fixColorsHighlights            = false;
 
     /**
      * If false, use a fixed white level, ignoring the image histogram.
      */
-    bool autoBrightness;
+    bool autoBrightness                 = true;
 
     /**
      * Turn on RAW file decoding in 16 bits per color per pixel instead 8 bits.
      */
-    bool sixteenBitsImage;
+    bool sixteenBitsImage               = false;
 
     /**
      * Half-size color image decoding (twice as fast as "enableRAWQuality").
      * Turn on this option to reduce time loading to render histogram for example,
      * no to render an image to screen.
      */
-    bool halfSizeColorImage;
+    bool halfSizeColorImage             = false;
 
     /**
      * White balance type to use. See WhiteBalance values for detail
      */
-    WhiteBalance whiteBalance;
+    WhiteBalance whiteBalance           = CAMERA;
 
     /**
      * The temperature and the green multiplier of the custom white balance
      */
-    int    customWhiteBalance;
-    double customWhiteBalanceGreen;
+    int    customWhiteBalance           = 6500;
+    double customWhiteBalanceGreen      = 1.0;
 
     /**
      * Turn on RAW file decoding using RGB interpolation as four colors.
      */
-    bool RGBInterpolate4Colors;
+    bool RGBInterpolate4Colors          = false;
 
     /**
      * For cameras with non-square pixels, do not stretch the image to its
      * correct aspect ratio. In any case, this option guarantees that each
      * output pixel corresponds to one RAW pixel.
      */
-    bool DontStretchPixels;
+    bool DontStretchPixels              = false;
 
     /**
      * Unclip Highlight color level:
@@ -215,61 +217,61 @@ public:
      *  3-9 = Reconstruct highlights. Low numbers favor whites; high numbers
      *        favor colors.
      */
-    int unclipColors;
+    int unclipColors                    = 0;
 
     /**
      * RAW quality decoding factor value. See DecodingQuality values
      * for details.
      */
-    DecodingQuality RAWQuality;
+    DecodingQuality RAWQuality          = BILINEAR;
 
     /**
      * After interpolation, clean up color artifacts by repeatedly applying
      * a 3x3 median filter to the R-G and B-G channels.
      */
-    int medianFilterPasses;
+    int medianFilterPasses              = 0;
 
     /**
      * Noise reduction method to apply before demosaicing.
      */
-    NoiseReduction NRType;
+    NoiseReduction NRType               = NONR;
 
     /**
      * Noise reduction threshold value. Null value disable NR. Range is between 100 and 1000.
      * For IMPULSENR : set the amount of Luminance impulse denoise.
      */
-    int NRThreshold;
+    int NRThreshold                     = 0;
 
     /**
      * Brightness of output image.
      */
-    double brightness;
+    double brightness                   = 1.0;
 
     /**
      * Turn on the black point setting to decode RAW image.
      */
-    bool enableBlackPoint;
+    bool enableBlackPoint               = false;
 
     /**
      * Black Point value of output image.
      */
-    int blackPoint;
+    int blackPoint                      = 0;
 
     /**
      * Turn on the white point setting to decode RAW image.
      */
-    bool enableWhitePoint;
+    bool enableWhitePoint               = false;
 
     /**
      * White Point value of output image.
      */
-    int whitePoint;
+    int whitePoint                      = 0;
 
     /**
      * The input color profile used to decoded RAW data. See OutputColorProfile
      * values for details.
      */
-    InputColorSpace inputColorSpace;
+    InputColorSpace inputColorSpace     = NOINPUTCS;
 
     /**
      * Path to custom input ICC profile to define the camera's raw colorspace.
@@ -280,7 +282,7 @@ public:
      * The output color profile used to decoded RAW data. See OutputColorProfile
      * values for details.
      */
-    OutputColorSpace outputColorSpace;
+    OutputColorSpace outputColorSpace   = SRGB;
 
     /**
      * Path to custom output ICC profile to define the color workspace.
@@ -306,30 +308,30 @@ public:
      * -1   : disable (default)
      * 1-10 : DCB correction passes
      */
-    int dcbIterations;
+    int dcbIterations                   = -1;
 
     /**
      * Turn on the DCB interpolation with enhance interpolated colors.
      */
-    bool dcbEnhanceFl;
+    bool dcbEnhanceFl                   = false;
 
     /**
      * Turn on the Exposure Correction before interpolation.
      */
-    bool expoCorrection;
+    bool expoCorrection                 = false;
 
     /**
      * Shift of Exposure Correction before interpolation in linear scale.
      * Usable range is from 0.25 (darken image 1 stop : -2EV) to 8.0 (lighten ~1.5 photographic stops : +3EV).
      */
-    double expoCorrectionShift;
+    double expoCorrectionShift          = 1.0;
 
     /**
      * Amount of highlight preservation for exposure correction before interpolation in E.V.
      * Usable range is from 0.0 (linear exposure shift, highlights may blow) to 1.0 (maximum highlights preservation)
      * This settings can only take effect if expoCorrectionShift > 1.0.
      */
-    double expoCorrectionHighlight;
+    double expoCorrectionHighlight      = 0.0;
 };
 
 //! qDebug() stream operator. Writes settings @a s to the debug output in a nicely formatted way.

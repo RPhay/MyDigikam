@@ -80,56 +80,10 @@ class Q_DECL_HIDDEN DRawDecoderWidget::Private
 {
 public:
 
-    explicit Private()
-      : demosaicingSettings             (nullptr),
-        whiteBalanceSettings            (nullptr),
-        correctionsSettings             (nullptr),
-        colormanSettings                (nullptr),
-        whiteBalanceLabel               (nullptr),
-        customWhiteBalanceLabel         (nullptr),
-        customWhiteBalanceGreenLabel    (nullptr),
-        brightnessLabel                 (nullptr),
-        RAWQualityLabel                 (nullptr),
-        NRLabel1                        (nullptr),
-        unclipColorLabel                (nullptr),
-        reconstructLabel                (nullptr),
-        inputColorSpaceLabel            (nullptr),
-        outputColorSpaceLabel           (nullptr),
-        medianFilterPassesLabel         (nullptr),
-        noiseReductionLabel             (nullptr),
-        expoCorrectionShiftLabel        (nullptr),
-        expoCorrectionHighlightLabel    (nullptr),
-        blackPointCheckBox              (nullptr),
-        whitePointCheckBox              (nullptr),
-        sixteenBitsImage                (nullptr),
-        autoBrightnessBox               (nullptr),
-        fourColorCheckBox               (nullptr),
-        dontStretchPixelsCheckBox       (nullptr),
-        fixColorsHighlightsBox          (nullptr),
-        refineInterpolationBox          (nullptr),
-        expoCorrectionBox               (nullptr),
-        inIccUrlEdit                    (nullptr),
-        outIccUrlEdit                   (nullptr),
-        noiseReductionComboBox          (nullptr),
-        whiteBalanceComboBox            (nullptr),
-        RAWQualityComboBox              (nullptr),
-        unclipColorComboBox             (nullptr),
-        inputColorSpaceComboBox         (nullptr),
-        outputColorSpaceComboBox        (nullptr),
-        customWhiteBalanceSpinBox       (nullptr),
-        reconstructSpinBox              (nullptr),
-        blackPointSpinBox               (nullptr),
-        whitePointSpinBox               (nullptr),
-        NRSpinBox1                      (nullptr),
-        medianFilterPassesSpinBox       (nullptr),
-        customWhiteBalanceGreenSpinBox  (nullptr),
-        brightnessSpinBox               (nullptr),
-        expoCorrectionShiftSpinBox      (nullptr),
-        expoCorrectionHighlightSpinBox  (nullptr)
-    {
-    }
+    Private() = default;
 
-    /** Convert Exposure correction shift E.V value from GUI to Linear value needs by libraw decoder.
+    /**
+     * Convert Exposure correction shift E.V value from GUI to Linear value needs by libraw decoder.
      */
     double shiftExpoFromEvToLinear(double ev) const
     {
@@ -138,7 +92,8 @@ public:
         return (1.55*ev + 3.35);
     }
 
-    /** Convert Exposure correction shift Linear value from liraw decoder to E.V value needs by GUI.
+    /**
+     * Convert Exposure correction shift Linear value from liraw decoder to E.V value needs by GUI.
      */
     double shiftExpoFromLinearToEv(double lin) const
     {
@@ -149,57 +104,57 @@ public:
 
 public:
 
-    QWidget*         demosaicingSettings;
-    QWidget*         whiteBalanceSettings;
-    QWidget*         correctionsSettings;
-    QWidget*         colormanSettings;
+    QWidget*         demosaicingSettings                = nullptr;
+    QWidget*         whiteBalanceSettings               = nullptr;
+    QWidget*         correctionsSettings                = nullptr;
+    QWidget*         colormanSettings                   = nullptr;
 
-    QLabel*          whiteBalanceLabel;
-    QLabel*          customWhiteBalanceLabel;
-    QLabel*          customWhiteBalanceGreenLabel;
-    QLabel*          brightnessLabel;
-    QLabel*          RAWQualityLabel;
-    QLabel*          NRLabel1;
-    QLabel*          unclipColorLabel;
-    QLabel*          reconstructLabel;
-    QLabel*          inputColorSpaceLabel;
-    QLabel*          outputColorSpaceLabel;
-    QLabel*          medianFilterPassesLabel;
-    QLabel*          noiseReductionLabel;
-    QLabel*          expoCorrectionShiftLabel;
-    QLabel*          expoCorrectionHighlightLabel;
+    QLabel*          whiteBalanceLabel                  = nullptr;
+    QLabel*          customWhiteBalanceLabel            = nullptr;
+    QLabel*          customWhiteBalanceGreenLabel       = nullptr;
+    QLabel*          brightnessLabel                    = nullptr;
+    QLabel*          RAWQualityLabel                    = nullptr;
+    QLabel*          NRLabel1                           = nullptr;
+    QLabel*          unclipColorLabel                   = nullptr;
+    QLabel*          reconstructLabel                   = nullptr;
+    QLabel*          inputColorSpaceLabel               = nullptr;
+    QLabel*          outputColorSpaceLabel              = nullptr;
+    QLabel*          medianFilterPassesLabel            = nullptr;
+    QLabel*          noiseReductionLabel                = nullptr;
+    QLabel*          expoCorrectionShiftLabel           = nullptr;
+    QLabel*          expoCorrectionHighlightLabel       = nullptr;
 
-    QCheckBox*       blackPointCheckBox;
-    QCheckBox*       whitePointCheckBox;
-    QCheckBox*       sixteenBitsImage;
-    QCheckBox*       autoBrightnessBox;
-    QCheckBox*       fourColorCheckBox;
-    QCheckBox*       dontStretchPixelsCheckBox;
-    QCheckBox*       fixColorsHighlightsBox;
-    QCheckBox*       refineInterpolationBox;
-    QCheckBox*       expoCorrectionBox;
+    QCheckBox*       blackPointCheckBox                 = nullptr;
+    QCheckBox*       whitePointCheckBox                 = nullptr;
+    QCheckBox*       sixteenBitsImage                   = nullptr;
+    QCheckBox*       autoBrightnessBox                  = nullptr;
+    QCheckBox*       fourColorCheckBox                  = nullptr;
+    QCheckBox*       dontStretchPixelsCheckBox          = nullptr;
+    QCheckBox*       fixColorsHighlightsBox             = nullptr;
+    QCheckBox*       refineInterpolationBox             = nullptr;
+    QCheckBox*       expoCorrectionBox                  = nullptr;
 
-    DFileSelector*   inIccUrlEdit;
-    DFileSelector*   outIccUrlEdit;
+    DFileSelector*   inIccUrlEdit                       = nullptr;
+    DFileSelector*   outIccUrlEdit                      = nullptr;
 
-    DComboBox*       noiseReductionComboBox;
-    DComboBox*       whiteBalanceComboBox;
-    DComboBox*       RAWQualityComboBox;
-    DComboBox*       unclipColorComboBox;
-    DComboBox*       inputColorSpaceComboBox;
-    DComboBox*       outputColorSpaceComboBox;
+    DComboBox*       noiseReductionComboBox             = nullptr;
+    DComboBox*       whiteBalanceComboBox               = nullptr;
+    DComboBox*       RAWQualityComboBox                 = nullptr;
+    DComboBox*       unclipColorComboBox                = nullptr;
+    DComboBox*       inputColorSpaceComboBox            = nullptr;
+    DComboBox*       outputColorSpaceComboBox           = nullptr;
 
-    DIntNumInput*    customWhiteBalanceSpinBox;
-    DIntNumInput*    reconstructSpinBox;
-    DIntNumInput*    blackPointSpinBox;
-    DIntNumInput*    whitePointSpinBox;
-    DIntNumInput*    NRSpinBox1;
-    DIntNumInput*    medianFilterPassesSpinBox;
+    DIntNumInput*    customWhiteBalanceSpinBox          = nullptr;
+    DIntNumInput*    reconstructSpinBox                 = nullptr;
+    DIntNumInput*    blackPointSpinBox                  = nullptr;
+    DIntNumInput*    whitePointSpinBox                  = nullptr;
+    DIntNumInput*    NRSpinBox1                         = nullptr;
+    DIntNumInput*    medianFilterPassesSpinBox          = nullptr;
 
-    DDoubleNumInput* customWhiteBalanceGreenSpinBox;
-    DDoubleNumInput* brightnessSpinBox;
-    DDoubleNumInput* expoCorrectionShiftSpinBox;
-    DDoubleNumInput* expoCorrectionHighlightSpinBox;
+    DDoubleNumInput* customWhiteBalanceGreenSpinBox     = nullptr;
+    DDoubleNumInput* brightnessSpinBox                  = nullptr;
+    DDoubleNumInput* expoCorrectionShiftSpinBox         = nullptr;
+    DDoubleNumInput* expoCorrectionHighlightSpinBox     = nullptr;
 };
 
 DRawDecoderWidget::DRawDecoderWidget(QWidget* const parent, int advSettings)
@@ -279,6 +234,7 @@ void DRawDecoderWidget::setup(int advSettings)
     d->RAWQualityComboBox = new DComboBox(d->demosaicingSettings);
 
     // Original Raw engine demosaicing methods
+
     d->RAWQualityComboBox->insertItem(0, i18nc("@item:inlistbox Quality", "Bilinear"), QVariant(DRawDecoderSettings::BILINEAR));
     d->RAWQualityComboBox->insertItem(1, i18nc("@item:inlistbox Quality", "VNG"),      QVariant(DRawDecoderSettings::VNG));
     d->RAWQualityComboBox->insertItem(2, i18nc("@item:inlistbox Quality", "PPG"),      QVariant(DRawDecoderSettings::PPG));
@@ -687,7 +643,7 @@ void DRawDecoderWidget::setup(int advSettings)
     connect(d->expoCorrectionShiftSpinBox, &DDoubleNumInput::valueChanged,
             this, &DRawDecoderWidget::slotExpoCorrectionShiftChanged);
 
-    // Wrapper to Q_EMIT signal when something is changed in settings.
+    // Wrapper to emit signal when something is changed in settings.
 
     connect(d->inIccUrlEdit->lineEdit(), &QLineEdit::textChanged,
             this, &DRawDecoderWidget::signalSettingsChanged);
@@ -800,6 +756,7 @@ void DRawDecoderWidget::resetToDefault()
 void DRawDecoderWidget::slotsixteenBitsImageToggled(bool b)
 {
     setEnabledBrightnessSettings(!b);
+
     Q_EMIT signalSixteenBitsImageToggled(d->sixteenBitsImage->isChecked());
 }
 
@@ -849,6 +806,7 @@ void DRawDecoderWidget::slotNoiseReductionChanged(int item)
         case DRawDecoderSettings::FBDDNR:
         {
             // NOTE : no ops
+
             break;
         }
 

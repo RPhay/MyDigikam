@@ -23,47 +23,6 @@
 namespace Digikam
 {
 
-DRawDecoderSettings::DRawDecoderSettings()
-    : fixColorsHighlights       (false),
-      autoBrightness            (true),
-      sixteenBitsImage          (false),
-      halfSizeColorImage        (false),
-      whiteBalance              (CAMERA),
-      customWhiteBalance        (6500),
-      customWhiteBalanceGreen   (1.0),
-      RGBInterpolate4Colors     (false),
-      DontStretchPixels         (false),
-      unclipColors              (0),
-      RAWQuality                (BILINEAR),
-      medianFilterPasses        (0),
-      NRType                    (NONR),
-      NRThreshold               (0),
-      brightness                (1.0),
-      enableBlackPoint          (false),
-      blackPoint                (0),
-      enableWhitePoint          (false),
-      whitePoint                (0),
-      inputColorSpace           (NOINPUTCS),
-      inputProfile              (QString()),
-      outputColorSpace          (SRGB),
-      outputProfile             (QString()),
-      deadPixelMap              (QString()),
-      whiteBalanceArea          (QRect()),
-
-      //-- Extended demosaicing settings ----------------------------------------------------------
-
-      dcbIterations             (-1),
-      dcbEnhanceFl              (false),
-      expoCorrection            (false),
-      expoCorrectionShift       (1.0),
-      expoCorrectionHighlight   (0.0)
-{
-}
-
-DRawDecoderSettings::~DRawDecoderSettings()
-{
-}
-
 DRawDecoderSettings::DRawDecoderSettings(const DRawDecoderSettings& o)
     : fixColorsHighlights       (o.fixColorsHighlights),
       autoBrightness            (o.autoBrightness),
