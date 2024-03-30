@@ -37,7 +37,7 @@ private:
 
 private:
 
-    DNGWriter::Private* const m_priv;
+    DNGWriter::Private* const m_priv = nullptr;
 };
 
 } // namespace Digikam

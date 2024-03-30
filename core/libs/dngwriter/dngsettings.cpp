@@ -45,23 +45,16 @@ class Q_DECL_HIDDEN DNGSettings::Private
 {
 public:
 
-    explicit Private()
-      : previewModeLabel     (nullptr),
-        compressLossLess     (nullptr),
-        backupOriginalRawFile(nullptr),
-        previewModeCB        (nullptr),
-        errorView            (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*             previewModeLabel;
+    QLabel*             previewModeLabel        = nullptr;
 
-    QCheckBox*          compressLossLess;
-    QCheckBox*          backupOriginalRawFile;
+    QCheckBox*          compressLossLess        = nullptr;
+    QCheckBox*          backupOriginalRawFile   = nullptr;
 
-    DComboBox*          previewModeCB;
+    DComboBox*          previewModeCB           = nullptr;
 
-    ExifToolErrorView*  errorView;
+    ExifToolErrorView*  errorView               = nullptr;
 };
 
 DNGSettings::DNGSettings(QWidget* const parent)

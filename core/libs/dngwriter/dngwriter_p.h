@@ -97,7 +97,7 @@ public:
 public:
 
     explicit Private(DNGWriter* const dd);
-    ~Private();
+    ~Private() = default;
 
 public:
 
@@ -173,23 +173,23 @@ private:
 
 public:
 
-    DNGWriter*          parent;                     ///< Parent class instance.
-    DNGBayerPattern     bayerPattern;
-    uint32              filter;
+    DNGWriter*          parent                      = nullptr;  ///< Parent class instance.
+    DNGBayerPattern     bayerPattern                = Unknown;
+    uint32              filter                      = 0;
 
-    bool                metaLoaded;                 ///< Set to true if metadata are properly loaded at Exif stage.
-    bool                cancel;
-    bool                jpegLossLessCompression;
-    bool                updateFileDate;
-    bool                backupOriginalRawFile;
+    bool                metaLoaded                  = false;    ///< Set to true if metadata are properly loaded at Exif stage.
+    bool                cancel                      = false;
+    bool                jpegLossLessCompression     = true;
+    bool                updateFileDate              = false;
+    bool                backupOriginalRawFile       = false;
 
-    int                 previewMode;
-    int                 activeWidth;
-    int                 activeHeight;
-    int                 outputHeight;
-    int                 outputWidth;
-    int                 width;
-    int                 height;
+    int                 previewMode                 = DNGWriter::FULL_SIZE;
+    int                 activeWidth                 = 0;
+    int                 activeHeight                = 0;
+    int                 outputHeight                = 0;
+    int                 outputWidth                 = 0;
+    int                 width                       = 0;
+    int                 height                      = 0;
 
     QString             inputFile;
     QString             outputFile;
@@ -202,7 +202,7 @@ public:
 
     dng_date_time_info  orgDateTimeInfo;
     dng_rect            activeArea;
-    dng_exif*           exif;                       ///< Instance to Exif DNG SDK container.
+    dng_exif*           exif                        = nullptr;  ///< Instance to Exif DNG SDK container.
 };
 
 } // namespace Digikam
