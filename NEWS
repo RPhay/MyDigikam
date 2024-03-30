@@ -3,6 +3,17 @@ digiKam 8.4.0 - Release date: 2024-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
+RawEngine: Update internal libraw to last 20240330 snapshot. New supported cameras:
+           Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra.
+           Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.
+           Hasselblad X2D-100c.
+           Leica Q3, M11 Monochrom.
+           Nikon Z30, Z8.
+           OM Digital OM-5.
+           Panasonic DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / TZ220D, DC-S5-II, DC-GH6.
+           Sony A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1.
+           Multiple DJI and Skydio drones.
+           Multiple smartphones with DNG format recorded.
 
 *****************************************************************************************************
 BUGFIXES:

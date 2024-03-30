@@ -120,6 +120,7 @@ $SCAN_BUILD_BIN -o $REPORT_DIR \
            -k \
            -no-failure-reports \
            --keep-empty \
+           --show-description \
            --html-title $TITLE \
            $IGNORE_DIRS \
            make -j$CPU_CORES
