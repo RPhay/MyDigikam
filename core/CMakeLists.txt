@@ -54,6 +54,7 @@ find_package(LCMS2)
 find_package(EXPAT)         # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)       # For DNGWriter and LibRaw which needs native threads support.
 find_package(Libheif)       # For HEIF support.
+find_package(Libjxl)        # For JPEG-XL support.
 
 if(HEIF_FOUND)
 
