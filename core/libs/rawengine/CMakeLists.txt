@@ -50,6 +50,10 @@ endif()
 
 add_definitions(-DUSE_DNGSDK)
 
+# Flag to compile with Zlib support for FP DNG.
+
+add_definitions(-DUSE_ZLIB)
+
 # Flag to debug LibRaw
 
 add_definitions(-DDCRAW_VERBOSE)
@@ -61,6 +65,10 @@ add_definitions(-DDCRAW_VERBOSE)
 
 add_definitions(-DUSE_X3FTOOLS)
 add_definitions(-DUSE_6BY9RPI)
+
+# Flag to support C++17
+
+add_definitions(-DLIBRAW_USE_AUTOPTR)
 
 if(WIN32)
 
