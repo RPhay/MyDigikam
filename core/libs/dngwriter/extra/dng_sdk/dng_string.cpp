@@ -28,6 +28,7 @@
 
 #if qWinOS
 #include <windows.h>
+#include <winnls.h>
 #endif
 
 #if qiPhone || qAndroid || qLinux
