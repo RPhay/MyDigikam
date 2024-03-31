@@ -16,6 +16,9 @@
 add_definitions(-DEnablePluginManager=0)    # Do not use plugin extensions
 add_definitions(-DXMP_StaticBuild=1)        # Build statically
 
+add_definitions(-DBUILDING_XMPCOMPAREANDMERGE_LIB=1 -DXMP_COMPONENT_INT_NAMESPACE=AdobeXMPCompareAndMerge_Int -DLINKING_XMPCORE_LIB=1)
+add_definitions(-DBUILDING_XMPCOMPAREANDMERGE_AS_STATIC=1)
+
 # Prevent a denial-service-attack related to XML entity expansion
 # ("billion laughs attack").
 # See https://bugzilla.redhat.com/show_bug.cgi?id=888769

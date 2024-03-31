@@ -1,11 +1,32 @@
 // =================================================================================================
-// ADOBE SYSTEMS INCORPORATED
-// Copyright 2012 Adobe Systems Incorporated
+// Copyright Adobe
+// Copyright 2012 Adobe
 // All Rights Reserved
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it.
+// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// than Adobe, then your use, modification, or distribution of it requires the prior written permission
+// of Adobe.
 // =================================================================================================
+
+#if AdobePrivate
+// =================================================================================================
+// Change history
+// ==============
+//
+// Writers:
+//	AWL Alan Lillich
+//	ADC Amandeep Chawla
+//
+// mm-dd-yy who Description of changes, most recent first.
+//
+// 05-13-13 ADC 5.6-f060 Removing usage of bool in APIs exposed at DLL boundaries.
+//
+// 06-22-12 AWL 5.5-f019 Add file update progress tracking to the MPEG-4 handler.
+// 06-20-12 AWL 5.5-f018 Add outer layers for XMPFiles progress notifications, no handlers use it yet.
+//
+// =================================================================================================
+#endif	// AdobePrivate
 
 #include "public/include/XMP_Environment.h"	// ! XMP_Environment.h must be the first included header.
 
@@ -24,7 +45,7 @@ XMP_ProgressTracker::XMP_ProgressTracker ( const CallbackInfo & _cbInfo )
 	this->Clear();
 	if ( _cbInfo.clientProc == 0 ) return;
 	XMP_Assert ( _cbInfo.wrapperProc != 0 );
-
+	
 	this->cbInfo = _cbInfo;
 	if ( this->cbInfo.interval < 0.0 ) this->cbInfo.interval = 1.0;
 
@@ -56,7 +77,7 @@ void XMP_ProgressTracker::AddTotalWork ( float workIncrement )
 
 	if ( workIncrement < 0.0 ) workIncrement = 0.0;
 	this->totalWork += workIncrement;
-
+	
 }	// XMP_ProgressTracker::AddTotalWork
 
 // =================================================================================================
@@ -69,7 +90,7 @@ void XMP_ProgressTracker::AddWorkDone ( float workIncrement )
 	if ( workIncrement < 0.0 ) workIncrement = 0.0;
 	this->workDone += workIncrement;
 	this->NotifyClient();
-
+	
 }	// XMP_ProgressTracker::AddWorkDone
 
 // =================================================================================================
@@ -120,18 +141,18 @@ void XMP_ProgressTracker::NotifyClient ( bool isStartStop )
 {
 	XMP_Bool ok = !kXMP_Bool_False;
 	float fractionDone = 0.0;
-
+	
 	if ( this->cbInfo.clientProc == 0 ) return;
 	XMP_Assert ( this->cbInfo.wrapperProc != 0 );
 	XMP_Assert ( (this->totalWork >= 0.0) && (this->workDone >= 0.0) && (this->cbInfo.interval >= 0.0) );
 	// ! Note that totalWork might be unknown or understimated, and workDone greater than totalWork.
-
+	
 	if ( isStartStop ) {
 
 		float totalTime = 0.0;
 		if ( this->workDone > 0.0 ) {
 			fractionDone = 1.0;	// This is the stop call.
-			totalTime = PerfUtils::GetElapsedSeconds ( this->startTime, PerfUtils::NoteThisMoment() );
+			totalTime = (float)PerfUtils::GetElapsedSeconds ( this->startTime, PerfUtils::NoteThisMoment() );
 		}
 		ok = (*this->cbInfo.wrapperProc ) ( this->cbInfo.clientProc, this->cbInfo.context,
 											totalTime, fractionDone, 0.0 );
@@ -139,15 +160,15 @@ void XMP_ProgressTracker::NotifyClient ( bool isStartStop )
 	} else {
 
 		PerfUtils::MomentValue currentTime = PerfUtils::NoteThisMoment();
-		float elapsedTime = PerfUtils::GetElapsedSeconds ( this->prevTime, currentTime );
+		float elapsedTime =(float) PerfUtils::GetElapsedSeconds ( this->prevTime, currentTime );
 		if ( elapsedTime < this->cbInfo.interval ) return;
 
 		float remainingTime = 0.0;
 		if ( (this->totalWork > 0.0) && (this->workDone > 0.0) ) {
 			fractionDone = this->workDone / this->totalWork;
 			if ( fractionDone > 1.0 ) fractionDone = 1.0;
-			elapsedTime = PerfUtils::GetElapsedSeconds ( this->startTime, currentTime );
-			remainingTime = (elapsedTime / fractionDone) * (1.0 - fractionDone);
+			elapsedTime =(float) PerfUtils::GetElapsedSeconds ( this->startTime, currentTime );
+			remainingTime = (float)((elapsedTime / fractionDone) * (1.0F - fractionDone));
 		}
 
 		this->prevTime = currentTime;
@@ -157,7 +178,7 @@ void XMP_ProgressTracker::NotifyClient ( bool isStartStop )
 	}
 
 	if ( ok == kXMP_Bool_False ) XMP_Throw ( "Abort signaled by progress reporting callback", kXMPErr_ProgressAbort );
-
+		
 }	// XMP_ProgressTracker::NotifyClient
 
 // =================================================================================================

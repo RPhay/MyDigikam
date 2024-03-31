@@ -156,6 +156,7 @@ target_link_libraries(digikamcore
 
                       ${CMAKE_THREAD_LIBS_INIT}
                       ${EXPAT_LIBRARY}
+                      ${JXL_LIBRARIES}
 
                       ${LCMS2_LIBRARIES} # filters
 

@@ -16,6 +16,7 @@ include_directories(
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 
     ${EXPAT_INCLUDE_DIR}
+    ${JXL_INCLUDE_DIRS}
 
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/md5
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk
@@ -63,7 +64,6 @@ endif()
 
 # NOTE: minimum XMP SDK code to compile for DNG SDK. See extra/README for details.
 set(libxmp_SRCS
-
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/PerfUtils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/SafeStringAPIs.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/source/UnicodeConversions.cpp
@@ -74,6 +74,7 @@ set(libxmp_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/ExpatAdapter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/ParseRDF.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/WXMPDocOps.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/WXMPIterator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/WXMPMeta.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/WXMPUtils.cpp
@@ -88,6 +89,8 @@ set(libxmp_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPUtils-FileInfo.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPUtils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPUtils2.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPDocOps.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPDocOps-Utils.cpp
 )
 
 # Used by digikamcore
@@ -183,6 +186,11 @@ set(libdng_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk/dng_xmp.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk/dng_xmp_sdk.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk/dng_xy_coord.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk/dng_bmff.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk/dng_jpeg_memory_source.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk/dng_jxl.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk/dng_lossless_jpeg_shared.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk/dng_update_meta.cpp
 )
 
 # Used by digikamcore
@@ -220,6 +228,14 @@ add_library(libdng STATIC
             $<TARGET_OBJECTS:core_libdng_obj>
             $<TARGET_OBJECTS:core_libxmp_obj>
             $<TARGET_OBJECTS:core_libmd5_obj>
+)
+
+target_link_libraries(libdng
+
+                      PRIVATE
+
+                      ${EXPAT_LIBRARY}
+                      ${JXL_LIBRARIES}
 )
 
 #------------------------------------------------------------------------------------

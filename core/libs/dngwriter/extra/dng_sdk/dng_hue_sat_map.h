@@ -2,7 +2,7 @@
 // Copyright 2007-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:  Adobe permits you to use, modify, and distribute this file in
+// NOTICE:	Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -58,7 +58,7 @@ class dng_hue_sat_map
 		uint32 fHueDivisions;
 		uint32 fSatDivisions;
 		uint32 fValDivisions;
-
+		
 		uint32 fHueStep;
 		uint32 fValStep;
 
@@ -110,12 +110,12 @@ class dng_hue_sat_map
 
 		bool IsValid () const
 			{
-
+			
 			return fHueDivisions > 0 &&
 				   fSatDivisions > 1 &&
 				   fValDivisions > 0 &&
 				   fDeltas.Buffer ();
-
+				   
 			}
 
 		/// Clear the hue sat map, making it invalid.
@@ -126,7 +126,7 @@ class dng_hue_sat_map
 			fHueDivisions = 0;
 			fSatDivisions = 0;
 			fValDivisions = 0;
-
+			
 			fHueStep = 0;
 			fValStep = 0;
 
@@ -146,13 +146,13 @@ class dng_hue_sat_map
 			satDivisions = fSatDivisions;
 			valDivisions = fValDivisions;
 			}
-
+			
 		/// Set the table dimensions (number of samples in each dimension). This
 		/// erases any existing table data.
 
 		void SetDivisions (uint32 hueDivisions,
 						   uint32 satDivisions,
-						   uint32 valDivisions = 1);
+						   uint32 valDivisions = 1);	
 
 		/// Get a specific table entry, specified by table indices.
 
@@ -167,7 +167,7 @@ class dng_hue_sat_map
 			{
 			fDeltas.EnsureWriteable ();
 			}
-
+		
 		/// Set a specific table entry, specified by table indices.
 
 		void SetDelta (uint32 hueDiv,
@@ -175,23 +175,23 @@ class dng_hue_sat_map
 					   uint32 valDiv,
 					   const HSBModify &modify)
 			{
-
+			
 			EnsureWriteable ();
-
+			
 			SetDeltaKnownWriteable (hueDiv,
 									satDiv,
 									valDiv,
 									modify);
-
+			
 			}
-
+		
 		/// Same as SetDelta, without checking that the table is writeable.
 
 		void SetDeltaKnownWriteable (uint32 hueDiv,
 									 uint32 satDiv,
 									 uint32 valDiv,
 									 const HSBModify &modify);
-
+		
 		/// Get the total number of samples (across all dimensions).
 
 		uint32 DeltasCount () const
@@ -200,13 +200,13 @@ class dng_hue_sat_map
 					dng_safe_uint32 (fHueDivisions) *
 					dng_safe_uint32 (fSatDivisions)).Get ();
 			}
-
+		
 		/// Direct read/write access to table entries. The entries are stored in
 		/// value-hue-saturation order (outer to inner).
 
 		HSBModify *GetDeltas ()
 			{
-
+				
 			EnsureWriteable ();
 
 			return (HSBModify *) fDeltas.Buffer_real32 ();
@@ -240,7 +240,7 @@ class dng_hue_sat_map
 		/// Equality test.
 
 		bool operator== (const dng_hue_sat_map &rhs) const;
-
+		
 		/// Compute a linearly-interpolated hue sat map (i.e., delta and scale factors)
 		/// from the specified tables, with the specified weight. map1 and map2 must
 		/// have the same dimensions.
@@ -248,6 +248,16 @@ class dng_hue_sat_map
 		static dng_hue_sat_map * Interpolate (const dng_hue_sat_map &map1,
 											  const dng_hue_sat_map &map2,
 											  real64 weight1);
+
+		/// Compute a linearly-interpolated hue sat map (i.e., delta and scale factors)
+		/// from the specified tables, with the specified weight. All three maps must
+		/// have the same dimensions.
+
+		static dng_hue_sat_map * Interpolate (const dng_hue_sat_map &map1,
+											  const dng_hue_sat_map &map2,
+											  const dng_hue_sat_map &map3,
+											  real64 weight1,
+											  real64 weight2);
 
 	};
 

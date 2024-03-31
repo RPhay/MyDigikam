@@ -2,7 +2,7 @@
 // Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:  Adobe permits you to use, modify, and distribute this file in
+// NOTICE:	Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -19,16 +19,20 @@
 
 #include "dng_types.h"
 
+#include <atomic>
+
 /*****************************************************************************/
 
 /// Type for all errors used in DNG SDK. Generally held inside a dng_exception.
 
 typedef int32 dng_error_code;
 
+typedef std::atomic<dng_error_code> dng_atomic_error_code;
+
 enum
 	{
 	dng_error_none					= 0,		//!< No error. Success.
-	dng_error_unknown       		= 100000,	//!< Logic or program error or other unclassifiable error.
+	dng_error_unknown				= 100000,	//!< Logic or program error or other unclassifiable error.
 	dng_error_not_yet_implemented,				//!< Functionality requested is not yet implemented.
 	dng_error_silent,							//!< An error which should not be signalled to user.
 	dng_error_user_canceled,					//!< Processing stopped by user (or host application) request
@@ -44,11 +48,13 @@ enum
 	dng_error_image_too_big_dng,				//!< Image is too big to save as DNG.
 	dng_error_image_too_big_tiff,				//!< Image is too big to save as TIFF.
 	dng_error_unsupported_dng,					//!< DNG version is unsupported.
-	dng_error_overflow							//!< Arithmetic overflow.
+	dng_error_overflow,							//!< Arithmetic overflow.
+	dng_error_jxl_encoder,						//!< JPEG XL encoder error.
+	dng_error_jxl_decoder,						//!< JPEG XL decoder error.
 	};
-
+	
 /*****************************************************************************/
 
 #endif
-
+	
 /*****************************************************************************/

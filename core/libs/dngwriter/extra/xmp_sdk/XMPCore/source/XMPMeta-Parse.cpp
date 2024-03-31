@@ -1,15 +1,167 @@
 // =================================================================================================
-// Copyright 2003 Adobe Systems Incorporated
+// Copyright 2003 Adobe
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it.
+// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// than Adobe, then your use, modification, or distribution of it requires the prior written permission
+// of Adobe.
 //
 // Adobe patent application tracking #P435, entitled 'Unique markers to simplify embedding data of
 // one format in a file with a different format', inventors: Sean Parent, Greg Gilley.
 // =================================================================================================
 
+#if AdobePrivate
+// =================================================================================================
+// Change history
+// ==============
+//
+// Writers:
+//  AWL Alan Lillich
+//  ADC Amandeep Chawla
+//
+// mm-dd-yy who Description of changes, most recent on top.
+//
+// 02-09-15 AJ  5.6-c038 Fixing some more warnings due to implicit typecasting
+// 02-06-15 AJ  5.6-c037 Fixing warnings due to implicit typecasting
+// 07-10-14 ADC 5.6-c015 Refactoring, partial documentation and bug fixes of XMPCommon and XMPCore C++ APIs.
+//
+// 10-10-12 ADC 5.5-c012 Changed internal implementation of common error notification infrastructure.
+// 09-21-12 AWL 5.5-c011 Remove Transform XMP.
+// 08-14-12 AWL 5.5-c009 Add XMPCore error notifications for RDF parsing errors.
+// 08-08-12 AWL 5.5-c007 XMPCore error notifications for one case of XML parsing, no existing test failures.
+// 08-03-12 AWL 5.5-c006 Remove defunct XMPMeta prevTkVer data member.
+//
+// 07-21-09 AWL 5.0-c047 Add XMPUtils::ApplyTemplate.
+// 06-11-09 AWL 5.0-c034 Finish threading revamp, implement friendly reader/writer locking.
+// 04-03-09 AWL 5.0-c022 Change PlainXMP to TransformXMP.
+//
+// 07-01-08 AWL 4.3-c060 Hide all uses of PlainXMP.
+// 06-24-08 AWL 4.3-c059 [1830156] Make sure exif:UserComment is a LangAlt.
+//
+// 01-25-08 AWL 4.2-c037 Change all xap* namespace prefixes to xmp*.
+// 11-30-07 AWL 4.2-c027 Expose XML_Node and ExpatAdapter so that XMPFiles can use them.
+// 02-12-07 AWL 4.2-c010 [1482676] Remove TouchUpOneSchema from XMPMeta-Parse.cpp. Replace the loop
+//				calling it with individual special cases. Some of the touchups can create or delete
+//				schema, making the loop misbehave - at worst referenece beyond the end of the vector.
+//
+// 11-16-06 AWL 4.1-c025 [1423378] Add logic to TouchUpDataModel to repair bad AltText arrays. A
+//				common problem is clients not creating the xml:lang qualifiers.
+// 10-13-06 AWL 4.1-c022 [1386343] Add parsing special case to migrate xmpDM:copyright to dc:rights.
+// 08-22-06 AWL 4.1-c018 [1312441,1340116] Fix another Latin-1 mistake, an infinite loop in edge
+//				cases of escape checking. This is stressed and exposed by single byte parsing, but
+//				could in theory occur "in the wild" with the right buffer boundaries.
+// 08-21-06 AWL 4.1-c017 [1312441,1340116] Fix a bug in the Latin-1 changes: Regression testing
+//				found an off-by-one error where the byte after a UTF-8 character is ignored.
+// 08-16-06 AWL 4.1-c015 [1312441,1340116] Change the parsing code to tolerate ISO Latin-1 input. At
+//				the same time, get rid of the ugly hackery that tries to deal with unescaped ASCII
+//				control characters. Also get rid of the check and complaint about parsing into an
+//				empty object. This is predominantly what people want, so clear the XMPMeta object.
+//
+// 03-24-06 AWL 4.0-c001 Adapt for move to ham-perforce, integrate XMPFiles, bump version to 4.
+//
+// 01-24-06 AWL 3.3-010 Turn off snprintf warning.
+// 10-13-05 AWL 3.3-008 [1247154] Fix incorrect dc:subject array type.
+//
+// 06-07-05 AWL 3.2-112 Serialize empty packets nicely.
+// 06-06-05 AWL 3.2-111 [0536565] Fix the compact serialization of empty structs.
+// 06-03-05 AWL 3.2-109 [0467370] Parse failures must leave the XMP object empty, ready for another parse.
+// 06-03-05 AWL 3.2-108 Output empty element in RDF for an empty array, e.g. <rdf:Seq/>.
+// 06-02-05 AWL 3.2-105 [1016912] Use empty element form when rdf:Description has only attribute content.
+// 06-01-05 AWL 3.2-105 [1110051] Add delete-existing option for SetProperty.
+// 06-01-05 AWL 3.2-103 [0509601,1204017] Fix SetLocalizedText to find and set a matching "real"
+//				language value when the specific_lang parameter is "x-default".
+// 05-27-05 AWL 3.2-102 Move the setting of the alloc/free procs to the top of XMPMeta::Initialize.
+// 05-16-05 AWL 3.2-100 Complete the deBIBification, integrate the internal and SDK source. Bump the
+//              version to 3.3 and build to 100, well ahead of main's latest 3.3-009.
+//
+// 05-02-05 AWL 3.2-019 Add the Dynamic Media namespace, kXMP_NS_DM, "http://ns.adobe.com/xmp/1.0/DynamicMedia/".
+// 04-14-05 AWL 3.2-018 Move the padding param, add overloads to simplify use of SerializeToBuffer.
+// 04-13-05 AWL 3.2-017 Improve the documentation and behavior of Get/SetLocalizedText.
+// 04-11-05 AWL 3.2-016 Add AdobePrivate conditionals where appropriate.
+// 04-08-05 AWL 3.2-015 Undo unnecessary constant changes in XMP_Const.h - keep compatibility over
+//				"perfection" so that SDK and internal code are easier to merge.
+// 04-07-05 AWL 3.2-014 Fix SetLocalizedText to set the alt-text bit for empty alt array. This became
+//				broken in the changes for 3.2-010 (SDK) and 3.3-003 (main). Don't throw an exception
+//				if x:xmpmeta is missing and kXMP_RequireXMPMeta is used. Old code ignored that
+//				candidate. This changed in the previous build's root node lookup changes.
+// 04-06-05 AWL 3.2-013 [0509601] Normalize "single value" alt-text arrays. Improve the way the root
+//				XML node is found and extract the previous toolkit version number.
+// 04-05-05 AWL 3.2-012 [1172565] Move instance ID from rdf:about to xmpMM:InstanceID.
+// 04-05-05 AWL 3.2-011 [0532345] Normalize xml:lang values so that compares are in effect case
+//				insensitive as required by RFC 3066. Change parsing and serializing to force the
+//				x-default item to be first.
+// 04-01-05 AWL 3.2-010 Add leafOptions parameter to FindNode, used when creating new nodes.
+// 03-17-05 AWL 3.2-006 Revise Plain XMP parsing and serialization for latest proposal.
+// 02-16-05 AWL 3.2-005 Add first cut of Plain XMP parsing and serialization.
+// 02-14-05 AWL 3.2-003 Add thread locks.
+// 02-11-05 AWL 3.2-002 Add client reference counting.
+// 01-28-05 AWL 3.2-001 Remove BIB.
+//
+// 02-02-05 AWL 3.1.1-110 [1145657] Fix XMPMeta::SerializeToBuffer to do an exact size UTF-16 or UTF-32
+//				packet correctly. It was doing UTF-8 of the exact size, then converting.
+// 01-26-05 AWL 3.1.1-107 [1141684] Add XMPMeta::UnregisterAssertNotify and XMPMeta::SendAssertNotify.
+// 01-25-05 AWL 3.1.1-106 [1141007] Add XMPMeta::RegisterAssertNotify.
+// 01-17-05 AWL 3.1.1-105 [1135773] Delete empty schema in addition to removing the pointer from the
+//				tree node's child vector. This bug was introduced in the -101 changes.
+// 01-07-05 AWL 3.1.1-104 [1129616] Fix SetObjectName to verify that the string is UTF-8.
+// 12-14-04 AWL 3.1.1-101 [1085740] Delete empty schema nodes in CleanupParsedAliases.
+// 12-14-04 AWL 3.1.1-100 [1022350,1075328] Add more namespaces and internal/external properties.
+// 12-09-04 AWl 3.1.1-099 [1041438] Add parsing and serialization support for UTF-16 and UTF-32.
+// 11-05-04 AWL 3.1.1-093 [1037508] Touch up exif:GPSTimeStamp values that have zero for the date.
+// 11-05-04 AWL 3.1.1-092 [1106408] Add new IPTC namespace.
+// 10-29-04 AWL 3.1.1-089 [1099634] Fix ParseFromBuffer to properly handle a partial escape followed
+//				by another escape. E.g. "blah blah &#" then "xA;&#xA; blah blah".
+// 10-20-04 AWL 3.1.1-085 [1084185] Fix XMP_InternalRef to not depend on BIBContainerBase layout.
+// 10-12-04 AWL 3.1.1-084 [0616293] Add value checking to SetNodeValue, prefix checking to RegisterNamespace.
+// 10-06-04 AWL 3.1.1-083 [1061778] Add lock tracing under TraceXMPLocking.
+// 10-05-04 AWL 3.1.1-082 [1061778] Use recursive form of BIB mutex.
+//
+// 08-27-04 AWL 3.1-079 Remove overly aggressive option checks in SerializeAsRDF.
+// 08-27-04 AWL 3.1-078 Add EXIF_Aux and CameraRaw namespaces.
+// 08-23-04 AWL 3.1-076 Add kXMP_NS_PSAlbum as a predefined namespace.
+// 08-04-04 AWL 3.1-073 [1050719] Fix handling of an empty default namespace declaration.
+// 07-28-04 AWL 3.1-069 [1043286] Preflight parse buffers for ASCII controls.
+// 07-26-04 AWL 3.1-068 [1046381,1046384] Fix XMPUtils::ConvertToXyz to throw instead of assert for
+//				null or empty string. Fix XMPMeta::GetProperty_Xyz to make sure property is simple.
+// 07-21-04 AWL 3.1-067 [1044036] Increase fudge factor for output reserve in SerializeToBuffer.
+// 07-15-04 AWL 3.1-066 [1015904] Fix Get/SetLocalizedText to allow empty alt arrays.
+// 07-14-04 AWL 3.1-062 [1026373] Strip old iX:changes elements during parsing.
+// 07-14-04 AWL 3.1-059 [0658992] Fix SetQualifier to throw if property does not exist.
+// 07-13-04 AWL 3.1-058 [1014255] Remove empty schema nodes.
+// 07-13-04 AWL 3.1-057 [1006568] Check all XPath components for valid namespace prefixes.
+// 07-09-04 AWL 3.1-053 [1037918] Use double escaping for ASCII controls other than tab, lf, and cr.
+// 06-10-04 AWL 3.1-047 Fix more HPUX and AIX compilation errors and warnings.
+// 06-04-04 AWL 3.1-046 Fix HPUX compilation errors and warnings.
+//
+// 05-25-04 AWL [1018426] Hide all use of cin/cout streams in #if DEBUG or equivalent.
+// 05-14-04 AWL [1016811,1018220] Fix escaping bugs in serialization.
+// 04-30-04 AWL Add new & delete operators that call BIBMemory functions. Change static objects that
+//				require allocation to explicit pointers. Properly delete partial tree when parse
+//				errors throw an exception. Clean up memory leaks.
+// 04-19-04 AWL [1010249] Don't write a final newline after the packet trailer, the packet must end
+//			    at the '>' of the trailer.
+// 04-16-04 AWL Fix major bogosity in IsAttrQualifier XMPMeta.cpp.
+// 04-16-04 AWL Inflate serialization size estimate to accommodate anticipated character entities,
+//              e.g. &#xA; for newlines. There can be a lot in the base 64 encoding of a thumbnail.
+// 03-17-04 AWL Cleanup error exceptions, make sure all have a reasonable message. Have GetProperty
+//				and friends throw an exception if the schema namespace is not registered.
+// 03-04-04 AWL Add hacks to handle the DC singleton denormalization of the XMP from Acrobat 5.
+// 02-19-04 AWL Add the new "transient" standard namespace.
+// 02-06-04 AWL Register a couple of missing standard namespaces.
+// 01-29-04 AWL Add AppendArrayItem.
+// 01-26-04 AWL Revamp expanded XPath handling to work better for aliases.
+// 04-24-03	AWL	Initial start on the new implementation.
+//
+// =================================================================================================
+#endif /* AdobePrivate */
+
 #include "public/include/XMP_Environment.h"	// ! This must be the first include!
+
+#if XMP_DebugBuild
+	#include <iostream>
+#endif
+
 #include "XMPCore/source/XMPCore_Impl.hpp"
 
 #include "XMPCore/source/XMPMeta.hpp"
@@ -20,10 +172,6 @@
 #include "source/ExpatAdapter.hpp"
 #define  STATIC_SAFE_API
 #include "source/SafeStringAPIs.h"
-
-#if XMP_DebugBuild
-	#include <iostream>
-#endif
 
 using namespace std;
 
@@ -60,7 +208,7 @@ static const char * kReplaceLatin1[128] =
 		// The bytes 0x81, 0x8D, 0x8F, 0x90, and 0x9D are formally undefined by Windows 1252, but
 		// their conversion API maps them to U+0081, etc. These are in XML's RestrictedChar set, so
 		// we map them to a space.
-
+		
 		"\xE2\x82\xAC", " ",            "\xE2\x80\x9A", "\xC6\x92",		// 0x80 .. 0x83
 		"\xE2\x80\x9E", "\xE2\x80\xA6", "\xE2\x80\xA0", "\xE2\x80\xA1",	// 0x84 .. 0x87
 		"\xCB\x86",     "\xE2\x80\xB0", "\xC5\xA0",     "\xE2\x80\xB9",	// 0x88 .. 0x8B
@@ -73,7 +221,7 @@ static const char * kReplaceLatin1[128] =
 
 		// These are the UTF-8 forms of the official Latin-1 characters in the range 0xA0..0xFF. Not
 		// too surprisingly these map to U+00A0, etc. Which is the Unicode Latin Supplement range.
-
+		
 		"\xC2\xA0", "\xC2\xA1", "\xC2\xA2", "\xC2\xA3", "\xC2\xA4", "\xC2\xA5", "\xC2\xA6", "\xC2\xA7",	// 0xA0 .. 0xA7
 		"\xC2\xA8", "\xC2\xA9", "\xC2\xAA", "\xC2\xAB", "\xC2\xAC", "\xC2\xAD", "\xC2\xAE", "\xC2\xAF",	// 0xA8 .. 0xAF
 
@@ -116,6 +264,15 @@ static const char * kReplaceLatin1[128] =
 static const XML_Node * PickBestRoot ( const XML_Node & xmlParent, XMP_OptionBits options )
 {
 
+#if AdobePrivate
+	// Look among this parent's content for txmp:XMP_Packet or x:xmpmeta. The recursion for
+	// x:xmpmeta is broader than the strictly defined choice, but gives us smaller code.
+	for ( size_t childNum = 0, childLim = xmlParent.content.size(); childNum < childLim; ++childNum ) {
+		const XML_Node * childNode = xmlParent.content[childNum];
+		if ( childNode->kind != kElemNode ) continue;
+		if ( (childNode->name == "x:xmpmeta") || (childNode->name == "x:xapmeta") ) return PickBestRoot ( *childNode, 0 );
+	}
+#else
 	// Look among this parent's content for x:xmpmeta. The recursion for x:xmpmeta is broader than
 	// the strictly defined choice, but gives us smaller code.
 	for ( size_t childNum = 0, childLim = xmlParent.content.size(); childNum < childLim; ++childNum ) {
@@ -123,6 +280,8 @@ static const XML_Node * PickBestRoot ( const XML_Node & xmlParent, XMP_OptionBit
 		if ( childNode->kind != kElemNode ) continue;
 		if ( (childNode->name == "x:xmpmeta") || (childNode->name == "x:xapmeta") ) return PickBestRoot ( *childNode, 0 );
 	}
+#endif
+
 	// Look among this parent's content for a bare rdf:RDF if that is allowed.
 	if ( ! (options & kXMP_RequireXMPMeta) ) {
 		for ( size_t childNum = 0, childLim = xmlParent.content.size(); childNum < childLim; ++childNum ) {
@@ -131,13 +290,13 @@ static const XML_Node * PickBestRoot ( const XML_Node & xmlParent, XMP_OptionBit
 			if ( childNode->name == "rdf:RDF" ) return childNode;
 		}
 	}
-
+	
 	// Recurse into the content.
 	for ( size_t childNum = 0, childLim = xmlParent.content.size(); childNum < childLim; ++childNum ) {
 		const XML_Node * foundRoot = PickBestRoot ( *xmlParent.content[childNum], options );
 		if ( foundRoot != 0 ) return foundRoot;
 	}
-
+	
 	return 0;
 
 }	// PickBestRoot
@@ -156,18 +315,18 @@ static const XML_Node * PickBestRoot ( const XML_Node & xmlParent, XMP_OptionBit
 static const XML_Node * FindRootNode ( const XMLParserAdapter & xmlParser, XMP_OptionBits options )
 {
 	const XML_Node * rootNode = xmlParser.rootNode;
-
+	
 	if ( xmlParser.rootCount > 1 ) rootNode = PickBestRoot ( xmlParser.tree, options );
 	if ( rootNode == 0 ) return 0;
 
 		XMP_Assert ( rootNode->name == "rdf:RDF" );
-
+	
 		if ( (options & kXMP_RequireXMPMeta) &&
 		     ((rootNode->parent == 0) ||
 		      ((rootNode->parent->name != "x:xmpmeta") && (rootNode->parent->name != "x:xapmeta"))) ) return 0;
-
+		
 	return rootNode;
-
+	
 }	// FindRootNode
 
 // -------------------------------------------------------------------------------------------------
@@ -185,13 +344,13 @@ NormalizeDCArrays ( XMP_Node * xmpTree )
 {
 	XMP_Node * dcSchema = FindSchemaNode ( xmpTree, kXMP_NS_DC, kXMP_ExistingOnly );
 	if ( dcSchema == 0 ) return;
-
+	
 	for ( size_t propNum = 0, propLimit = dcSchema->children.size(); propNum < propLimit; ++propNum ) {
 		XMP_Node *     currProp  = dcSchema->children[propNum];
 		XMP_OptionBits arrayForm = 0;
-
+		
 		if ( ! XMP_PropIsSimple ( currProp->options ) ) continue;	// Nothing to do if not simple.
-
+		
 		if ( (currProp->name == "dc:creator" )     ||	// See if it is supposed to be an array.
 		     (currProp->name == "dc:date" ) ) {			// *** Think about an array of char* and a loop.
 			arrayForm = kXMP_PropArrayIsOrdered;
@@ -210,21 +369,21 @@ NormalizeDCArrays ( XMP_Node * xmpTree )
 			arrayForm = kXMP_PropValueIsArray;
 		}
 		if ( arrayForm == 0 ) continue;	// Nothing to do if it isn't supposed to be an array.
-
+		
 		arrayForm = VerifySetOptions ( arrayForm, 0 );	// Set the implicit array bits.
 		XMP_Node * newArray = new XMP_Node ( dcSchema, currProp->name.c_str(), arrayForm );
 		dcSchema->children[propNum] = newArray;
-
+		
 		if ( currProp->value.empty() ) {	// Don't add an empty item, leave the array empty.
-
+		
 			delete ( currProp );
-
+		
 		} else {
-
+		
 			newArray->children.push_back ( currProp );
 			currProp->parent = newArray;
 			currProp->name = kXMP_ArrayItemName;
-
+			
 			if ( XMP_ArrayIsAltText ( arrayForm ) && (! (currProp->options & kXMP_PropHasLang)) ) {
 				XMP_Node * newLang = new XMP_Node ( currProp, "xml:lang", "x-default", kXMP_PropIsQualifier );
 				currProp->options |= (kXMP_PropHasQualifiers | kXMP_PropHasLang);
@@ -234,11 +393,11 @@ NormalizeDCArrays ( XMP_Node * xmpTree )
 					currProp->qualifiers.insert ( currProp->qualifiers.begin(), newLang );
 				}
 			}
-
+		
 		}
 
 	}
-
+	
 }	// NormalizeDCArrays
 
 
@@ -274,19 +433,19 @@ CompareAliasedSubtrees ( XMP_Node * aliasNode, XMP_Node * baseNode,
 			errorCallback.NotifyClient ( kXMPErrSev_OperationFatal, error );
 		}
 	}
-
+	
 	for ( size_t childNum = 0, childLim = aliasNode->children.size(); childNum < childLim; ++childNum ) {
 		XMP_Node * aliasChild = aliasNode->children[childNum];
 		XMP_Node * baseChild  = baseNode->children[childNum];
 		CompareAliasedSubtrees ( aliasChild, baseChild, errorCallback, false );
 	}
-
+	
 	for ( size_t qualNum = 0, qualLim = aliasNode->qualifiers.size(); qualNum < qualLim; ++qualNum ) {
 		XMP_Node * aliasQual = aliasNode->qualifiers[qualNum];
 		XMP_Node * baseQual  = baseNode->qualifiers[qualNum];
 		CompareAliasedSubtrees ( aliasQual, baseQual, errorCallback, false );
 	}
-
+	
 }	// CompareAliasedSubtrees
 
 
@@ -354,18 +513,18 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 {
 	tree->options ^= kXMP_PropHasAliases;
 	const bool strictAliasing = ((parseOptions & kXMP_StrictAliasing) != 0);
-
+	
 	// Visit all of the top level nodes looking for aliases. If there is no base, transplant the
-	// alias subtree. If there is a base and strict aliasing is on, make sure the alias and base
+	// alias subtree. If there is a base and strict aliasing is on, make sure the alias and base 
 	// subtrees match.
-
+	
 	// ! Use "while" loops not "for" loops since both the schema and property loops can remove the
 	// ! current item from the vector being traversed. And don't increment the counter for a delete.
-
+	
 	size_t schemaNum = 0;
 	while ( schemaNum < tree->children.size() ) {
 		XMP_Node * currSchema = tree->children[schemaNum];
-
+		
 		size_t propNum = 0;
 		while ( propNum < currSchema->children.size() ) {
 			XMP_Node * currProp = currSchema->children[propNum];
@@ -387,7 +546,7 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 			XMP_Node * baseNode = FindChildNode ( baseSchema, basePath[kRootPropStep].step.c_str(), kXMP_ExistingOnly );
 
 			if ( baseNode == 0 ) {
-
+			
 				if ( basePath.size() == 2 ) {
 					// A top-to-top alias, transplant the property.
 					TransplantNamedAlias ( currSchema, propNum, baseSchema, basePath[kRootPropStep].step );
@@ -397,20 +556,20 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 					baseSchema->children.push_back ( baseNode );
 					TransplantArrayItemAlias ( currSchema, propNum, baseNode, errorCallback );
 				}
-
+			
 			} else if ( basePath.size() == 2 ) {
-
+			
 				// The base node does exist and this is a top-to-top alias. Check for conflicts if
 				// strict aliasing is on. Remove and delete the alias subtree.
 				if ( strictAliasing ) CompareAliasedSubtrees ( currProp, baseNode, errorCallback );
 				currSchema->children.erase ( currSchema->children.begin() + propNum );
 				delete currProp;
-
+			
 			} else {
-
+			
 				// This is an alias to an array item and the array exists. Look for the aliased item.
 				// Then transplant or check & delete as appropriate.
-
+				
 				XMP_Node * itemNode = 0;
 				if ( arrayOptions & kXMP_PropArrayIsAltText ) {
 					XMP_Index xdIndex = LookupLangItem ( baseNode, *xdefaultName );
@@ -418,7 +577,7 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 				} else if ( ! baseNode->children.empty() ) {
 					itemNode = baseNode->children[0];
 				}
-
+				
 				if ( itemNode == 0 ) {
 					TransplantArrayItemAlias ( currSchema, propNum, baseNode, errorCallback );
 				} else {
@@ -430,7 +589,7 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 			}
 
 		}	// Property loop
-
+		
 		// Increment the counter or remove an empty schema node.
 		if ( currSchema->children.size() > 0 ) {
 			++schemaNum;
@@ -438,9 +597,9 @@ MoveExplicitAliases ( XMP_Node * tree, XMP_OptionBits parseOptions, XMPMeta::Err
 			delete tree->children[schemaNum];	// ! Delete the schema node itself.
 			tree->children.erase ( tree->children.begin() + schemaNum );
 		}
-
+		
 	}	// Schema loop
-
+	
 }	// MoveExplicitAliases
 
 
@@ -458,7 +617,7 @@ FixGPSTimeStamp ( XMP_Node * exifSchema, XMP_Node * gpsDateTime )
 		return;	// Don't let a bad date stop other things.
 	}
 	if ( (binGPSStamp.year != 0) || (binGPSStamp.month != 0) || (binGPSStamp.day != 0) ) return;
-
+	
 	XMP_Node * otherDate = FindChildNode ( exifSchema, "exif:DateTimeOriginal", kXMP_ExistingOnly );
 	if ( otherDate == 0 ) otherDate = FindChildNode ( exifSchema, "exif:DateTimeDigitized", kXMP_ExistingOnly );
 	if ( otherDate == 0 ) return;
@@ -469,7 +628,7 @@ FixGPSTimeStamp ( XMP_Node * exifSchema, XMP_Node * gpsDateTime )
 	} catch ( ... ) {
 		return;	// Don't let a bad date stop other things.
 	}
-
+	
 	binGPSStamp.year  = binOtherDate.year;
 	binGPSStamp.month = binOtherDate.month;
 	binGPSStamp.day   = binOtherDate.day;
@@ -507,61 +666,61 @@ MigrateAudioCopyright ( XMPMeta * xmp, XMP_Node * dmCopyright )
 {
 
 	try {
-
+	
 		std::string & dmValue = dmCopyright->value;
 		static const char * kDoubleLF = "\xA\xA";
-
+		
 		XMP_Node * dcSchema = FindSchemaNode ( &xmp->tree, kXMP_NS_DC, kXMP_CreateNodes );
 		XMP_Node * dcRightsArray = FindChildNode ( dcSchema, "dc:rights", kXMP_ExistingOnly );
-
+		
 		if ( (dcRightsArray == 0) || dcRightsArray->children.empty() ) {
-
+		
 			// 1. No dc:rights array, create from double linefeed and xmpDM:copyright.
 			dmValue.insert ( 0, kDoubleLF );
 			xmp->SetLocalizedText ( kXMP_NS_DC, "rights", "", "x-default",  dmValue.c_str(), 0 );
-
+		
 		} else {
 
 			std::string xdefaultStr ( "x-default" );
-
+			
 			XMP_Index xdIndex = LookupLangItem ( dcRightsArray, xdefaultStr );
-
+			
 			if ( xdIndex < 0 ) {
 				// 2. No x-default item, create from the first item.
 				XMP_StringPtr firstValue = dcRightsArray->children[0]->value.c_str();
 				xmp->SetLocalizedText ( kXMP_NS_DC, "rights", "", "x-default",  firstValue, 0 );
 				xdIndex = LookupLangItem ( dcRightsArray, xdefaultStr );
 			}
-
+						
 			// 3. Look for a double linefeed in the x-default value.
 			XMP_Assert ( xdIndex == 0 );
 			std::string & defaultValue = dcRightsArray->children[xdIndex]->value;
 			XMP_Index lfPos = static_cast<XMP_Index>( defaultValue.find ( kDoubleLF ));
-
+			
 			if ( lfPos < 0 ) {
-
+			
 				// 3A. No double LF, compare whole values.
 				if ( dmValue != defaultValue ) {
 					// 3A2. Append the xmpDM:copyright to the x-default item.
 					defaultValue += kDoubleLF;
 					defaultValue += dmValue;
 				}
-
+			
 			} else {
-
+			
 				// 3B. Has double LF, compare the tail.
 				if ( defaultValue.compare ( lfPos+2, std::string::npos, dmValue ) != 0 ) {
 					// 3B2. Replace the x-default tail.
 					defaultValue.replace ( lfPos+2, std::string::npos, dmValue );
 				}
-
+			
 			}
 
 		}
-
+		
 		// 4. Get rid of the xmpDM:copyright.
 		xmp->DeleteProperty ( kXMP_NS_DM, "copyright" );
-
+	
 	} catch ( ... ) {
 		// Don't let failures (like a bad dc:rights form) stop other cleanup.
 	}
@@ -581,15 +740,15 @@ RepairAltText ( XMP_Node & tree, XMP_StringPtr schemaNS, XMP_StringPtr arrayName
 {
 	XMP_Node * schemaNode = FindSchemaNode ( &tree, schemaNS, kXMP_ExistingOnly );
 	if ( schemaNode == 0 ) return;
-
+	
 	XMP_Node * arrayNode = FindChildNode ( schemaNode, arrayName, kXMP_ExistingOnly );
 	if ( (arrayNode == 0) || XMP_ArrayIsAltText ( arrayNode->options ) ) return;	// Already OK.
-
+	
 	if ( ! XMP_PropIsArray ( arrayNode->options ) ) return;	// ! Not even an array, leave it alone.
 	// *** Should probably change simple values to LangAlt with 'x-default' item.
-
+	
 	arrayNode->options |= (kXMP_PropArrayIsOrdered | kXMP_PropArrayIsAlternate | kXMP_PropArrayIsAltText);
-
+	
 	for ( int i = static_cast<int>( arrayNode->children.size()-1 ); i >= 0; --i ) {	// ! Need a signed index type.
 
 		XMP_Node * currChild = arrayNode->children[i];
@@ -601,7 +760,7 @@ RepairAltText ( XMP_Node & tree, XMP_StringPtr schemaNS, XMP_StringPtr arrayName
 			arrayNode->children.erase ( arrayNode->children.begin() + i );
 
 		} else if ( ! XMP_PropHasLang ( currChild->options ) ) {
-
+		
 			if ( currChild->value.empty() ) {
 
 				// Delete empty valued children that have no xml:lang.
@@ -636,7 +795,7 @@ void
 TouchUpDataModel ( XMPMeta * xmp, XMPMeta::ErrorCallbackInfo & errorCallback )
 {
 	XMP_Node & tree = xmp->tree;
-
+	
 	// Do special case touch ups for certain schema.
 
 	XMP_Node * currSchema = 0;
@@ -647,7 +806,7 @@ TouchUpDataModel ( XMPMeta * xmp, XMPMeta::ErrorCallbackInfo & errorCallback )
 		// Do a special case fix for exif:GPSTimeStamp.
 		XMP_Node * gpsDateTime = FindChildNode ( currSchema, "exif:GPSTimeStamp", kXMP_ExistingOnly );
 		if ( gpsDateTime != 0 ) FixGPSTimeStamp ( currSchema, gpsDateTime );
-
+	
 		// *** Should probably have RepairAltText change simple values to LangAlt with 'x-default' item.
 		// *** For now just do this for exif:UserComment, the one case we know about, late in cycle fix.
 		XMP_Node * userComment = FindChildNode ( currSchema, "exif:UserComment", kXMP_ExistingOnly );
@@ -684,22 +843,22 @@ TouchUpDataModel ( XMPMeta * xmp, XMPMeta::ErrorCallbackInfo & errorCallback )
 			dcSubject->options &= keepMask;	// Make sure any ordered array bits are clear.
 		}
 	}
-
+	
 	// Fix any broken AltText arrays that we know about.
-
+	
 	RepairAltText ( tree, kXMP_NS_DC, "dc:description" );	// ! Note inclusion of prefixes for direct node lookup!
 	RepairAltText ( tree, kXMP_NS_DC, "dc:rights" );
 	RepairAltText ( tree, kXMP_NS_DC, "dc:title" );
 	RepairAltText ( tree, kXMP_NS_XMP_Rights, "xmpRights:UsageTerms" );
 	RepairAltText ( tree, kXMP_NS_EXIF, "exif:UserComment" );
-
+	
 	// Tweak old XMP: Move an instance ID from rdf:about to the xmpMM:InstanceID property. An old
 	// instance ID usually looks like "uuid:bac965c4-9d87-11d9-9a30-000d936b79c4", plus InDesign
 	// 3.0 wrote them like "bac965c4-9d87-11d9-9a30-000d936b79c4". If the name looks like a UUID
 	// simply move it to xmpMM:InstanceID, don't worry about any existing xmpMM:InstanceID. Both
 	// will only be present when a newer file with the xmpMM:InstanceID property is updated by an
 	// old app that uses rdf:about.
-
+	
 	if ( ! tree.name.empty() ) {
 
 		bool nameIsUUID = false;
@@ -726,7 +885,7 @@ TouchUpDataModel ( XMPMeta * xmp, XMPMeta::ErrorCallbackInfo & errorCallback )
 			}
 
 		}
-
+		
 		if ( nameIsUUID ) {
 
 			XMP_ExpandedXPath expPath;
@@ -781,11 +940,11 @@ static XMP_OptionBits
 DetermineInputEncoding ( const XMP_Uns8 * buffer, size_t length )
 {
 	if ( length < 2 ) return kXMP_EncodeUTF8;
-
+	
 	XMP_Uns8 * uniChar = (XMP_Uns8*)buffer;	// ! Make sure comparisons are unsigned.
-
+	
 	if ( uniChar[0] == 0 ) {
-
+	
 		// These cases are:
 		//   00 nn -- -- - Big endian UTF-16
 		//   00 00 00 nn - Big endian UTF-32
@@ -793,9 +952,9 @@ DetermineInputEncoding ( const XMP_Uns8 * buffer, size_t length )
 
 		if ( (length < 4) || (uniChar[1] != 0) ) return kXMP_EncodeUTF16Big;
 		return kXMP_EncodeUTF32Big;
-
+		
 	} else if ( uniChar[0] < 0x80 ) {
-
+	
 		// These cases are:
 		//   nn mm -- -- - UTF-8, includes EF BB BF case
 		//   nn 00 00 00 - Little endian UTF-32
@@ -806,7 +965,7 @@ DetermineInputEncoding ( const XMP_Uns8 * buffer, size_t length )
 		return kXMP_EncodeUTF32Little;
 
 	} else {
-
+	
 		// These cases are:
 		//   EF BB BF -- - UTF-8
 		//   FE FF -- -- - Big endian UTF-16
@@ -819,7 +978,7 @@ DetermineInputEncoding ( const XMP_Uns8 * buffer, size_t length )
 		return kXMP_EncodeUTF32Little;
 
 	}
-
+		
 }	// DetermineInputEncoding
 
 
@@ -840,19 +999,19 @@ CountUTF8 ( const XMP_Uns8 * charStart, const XMP_Uns8 * bufEnd )
 	XMP_Assert ( charStart < bufEnd );		// Catch this in debug builds.
 	if ( charStart >= bufEnd ) return 0;	// Don't run-on in release builds.
 	if ( (*charStart & 0xC0) != 0xC0 ) return 0;	// Must have at least 2 high bits set.
-
+	
 	int byteCount = 2;
 	XMP_Uns8 firstByte = *charStart;
 	for ( firstByte = firstByte << 2; (firstByte & 0x80) != 0; firstByte = firstByte << 1 ) ++byteCount;
-
+	
 	if ( (charStart + byteCount) > bufEnd ) return -byteCount;
 
 	for ( int i = 1; i < byteCount; ++i ) {
 		if ( (charStart[i] & 0xC0) != 0x80 ) return 0;
 	}
-
+	
 	return byteCount;
-
+	
 }	// CountUTF8
 
 
@@ -870,15 +1029,15 @@ CountControlEscape ( const XMP_Uns8 * escStart, const XMP_Uns8 * bufEnd )
 	XMP_Assert ( escStart < bufEnd );	// Catch this in debug builds.
 	if ( escStart >= bufEnd ) return 0;	// Don't run-on in release builds.
 	XMP_Assert ( *escStart == '&' );
-
+	
 	size_t tailLen = bufEnd - escStart;
 	if ( tailLen < 5 ) return -1;	// Don't need a more thorough check, we'll catch it on the next pass.
-
+	
 	if ( strncmp ( (char*)escStart, "&#x", 3 ) != 0 ) return 0;
-
+	
 	XMP_Uns8 escValue = 0;
 	const XMP_Uns8 * escPos = escStart + 3;
-
+	
 	if ( ('0' <= *escPos) && (*escPos <= '9') ) {
 		escValue = *escPos - '0';
 		++escPos;
@@ -889,7 +1048,7 @@ CountControlEscape ( const XMP_Uns8 * escStart, const XMP_Uns8 * bufEnd )
 		escValue = *escPos - 'a' + 10;
 		++escPos;
 	}
-
+	
 	if ( ('0' <= *escPos) && (*escPos <= '9') ) {
 		escValue = (escValue << 4) + (*escPos - '0');
 		++escPos;
@@ -900,17 +1059,17 @@ CountControlEscape ( const XMP_Uns8 * escStart, const XMP_Uns8 * bufEnd )
 		escValue = (escValue << 4) + (*escPos - 'a' + 10);
 		++escPos;
 	}
-
+	
 	if ( escPos == bufEnd ) return -1;	// Partial escape.
 	if ( *escPos != ';' ) return 0;
-
+	
 	size_t escLen = escPos - escStart + 1;
 	if ( escLen < 5 ) return 0;	// ! Catch "&#x;".
-
+	
 	if ( (escValue == kTab) || (escValue == kLF) || (escValue == kCR) ) return 0;	// An allowed escape.
-
+	
 	return static_cast<int>(escLen);	// Found a full "prohibited" numeric escape.
-
+	
 }	// CountControlEscape
 
 
@@ -947,16 +1106,16 @@ ProcessUTF8Portion ( XMLParserAdapter * xmlParser,
 					 bool				last )
 {
 	const XMP_Uns8 * bufEnd = buffer + length;
-
+	
 	const XMP_Uns8 * spanStart = buffer;
 	const XMP_Uns8 * spanEnd;
-
+		
 	for ( spanEnd = spanStart; spanEnd < bufEnd; ++spanEnd ) {
 
 		if ( (0x20 <= *spanEnd) && (*spanEnd <= 0x7E) && (*spanEnd != '&') ) continue;	// A regular ASCII character.
 
 		if ( *spanEnd >= 0x80 ) {
-
+		
 			// See if this is a multi-byte UTF-8 sequence, or a Latin-1 character to replace.
 
 			int uniLen = CountUTF8 ( spanEnd, bufEnd );
@@ -981,7 +1140,7 @@ ProcessUTF8Portion ( XMLParserAdapter * xmlParser,
 				spanStart = spanEnd + 1;	// ! The loop increment will do "spanEnd = spanStart".
 
 			}
-
+		
 		} else if ( (*spanEnd < 0x20) || (*spanEnd == 0x7F) ) {
 
 			// Replace ASCII controls other than tab, LF, and CR with a space.
@@ -991,14 +1150,14 @@ ProcessUTF8Portion ( XMLParserAdapter * xmlParser,
 			xmlParser->ParseBuffer ( spanStart, (spanEnd - spanStart), false );
 			xmlParser->ParseBuffer ( " ", 1, false );
 			spanStart = spanEnd + 1;	// ! The loop increment will do "spanEnd = spanStart".
-
+		
 		} else {
-
+		
 			// See if this is a numeric escape sequence for a prohibited ASCII control.
-
+			
 			XMP_Assert ( *spanEnd == '&' );
 			int escLen = CountControlEscape ( spanEnd, bufEnd );
-
+			
 			if ( escLen < 0 ) {
 
 				// Have a partial numeric escape in this buffer, wait for more input.
@@ -1017,14 +1176,14 @@ ProcessUTF8Portion ( XMLParserAdapter * xmlParser,
 			}
 
 		}
-
+		
 	}
-
+	
 	XMP_Assert ( spanEnd == bufEnd );
 
 	if ( spanStart < bufEnd ) xmlParser->ParseBuffer ( spanStart, (spanEnd - spanStart), false );
 	if ( last ) xmlParser->ParseBuffer ( " ", 1, true );
-
+	
 	return length;
 
 }	// ProcessUTF8Portion
@@ -1044,7 +1203,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 	// order to handle the edge case of single byte buffers.
 
 	XMLParserAdapter & parser = *this->xmlParser;
-
+		
 	if ( parser.charEncoding == XMP_OptionBits(-1) ) {
 
 		if ( (parser.pendingCount == 0) && (xmpSize >= kXMLPendingInputMax) ) {
@@ -1053,7 +1212,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 			parser.charEncoding = DetermineInputEncoding ( (XMP_Uns8*)buffer, xmpSize );
 
 		} else {
-
+		
 			// Try to fill the pendingInput buffer before calling DetermineInputEncoding.
 
 			size_t pendingOverlap = kXMLPendingInputMax - parser.pendingCount;
@@ -1066,28 +1225,28 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 
 			if ( (! lastClientCall) && (parser.pendingCount < kXMLPendingInputMax) ) return false;	// Wait for the next buffer.
 			parser.charEncoding = DetermineInputEncoding ( parser.pendingInput, parser.pendingCount );
-
+			
 			#if Trace_ParsingHackery
 				fprintf ( stderr, "XMP Character encoding is %d\n", parser.charEncoding );
 			#endif
-
+		
 		}
 
 	}
-
+	
 	// We have the character encoding. Process UTF-16 and UTF-32 as is. UTF-8 needs special
 	// handling to take care of things like ISO Latin-1 or unescaped ASCII controls.
 
 	XMP_Assert ( parser.charEncoding != XMP_OptionBits(-1) );
 
 	if ( parser.charEncoding != kXMP_EncodeUTF8 ) {
-
+	
 		if ( parser.pendingCount > 0 ) {
 			// Might have pendingInput from the above portion to determine the character encoding.
 			parser.ParseBuffer ( parser.pendingInput, parser.pendingCount, false );
 		}
 		parser.ParseBuffer ( buffer, xmpSize, lastClientCall );
-
+		
 	} else {
 
 		#if Trace_ParsingHackery
@@ -1099,17 +1258,17 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 		// This is done by scanning the input for byte sequences that are not valid UTF-8,
 		// assuming they are Latin-1 characters in the range 0x80..0xFF. This requires saving a
 		// pending input buffer to handle partial UTF-8 sequences at the end of a buffer.
-
+		
 		while ( parser.pendingCount > 0 ) {
-
+		
 			// We've got some leftover input, process it first then continue with the current
 			// buffer. Try to fill the pendingInput buffer before parsing further. We use a loop
 			// for wierd edge cases like a 2 byte input buffer, using 1 byte for pendingInput,
 			// then having a partial UTF-8 end and need to absorb more.
-
+			
 			size_t pendingOverlap = kXMLPendingInputMax - parser.pendingCount;
 			if ( pendingOverlap > xmpSize ) pendingOverlap = xmpSize;
-
+			
 			memcpy ( &parser.pendingInput[parser.pendingCount], buffer, pendingOverlap );	// AUDIT: Count is safe.
 			parser.pendingCount += pendingOverlap;
 			buffer += pendingOverlap;
@@ -1122,7 +1281,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 			#if Trace_ParsingHackery
 				fprintf ( stderr, "   ProcessUTF8Portion handled %d pending bytes\n", bytesDone );
 			#endif
-
+			
 			if ( bytesDone == parser.pendingCount ) {
 
 				// Done with all of the pending input, move on to the current buffer.
@@ -1153,9 +1312,9 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 				return false;	// Wait for the next buffer.
 
 			}
-
+		
 		}
-
+		
 		// Done with the pending input, process the current buffer.
 
 		size_t bytesDone = ProcessUTF8Portion ( xmlParser, (XMP_Uns8*)buffer, xmpSize, lastClientCall );
@@ -1163,7 +1322,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 		#if Trace_ParsingHackery
 			fprintf ( stderr, "   ProcessUTF8Portion handled %d additional bytes\n", bytesDone );
 		#endif
-
+		
 		if ( bytesDone < xmpSize ) {
 
 			XMP_Assert ( ! lastClientCall );
@@ -1177,7 +1336,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 		}
 
 	}
-
+	
 	return true;	// This buffer has been processed.
 
 }	// ProcessXMLBuffer
@@ -1189,7 +1348,7 @@ bool XMPMeta::ProcessXMLBuffer ( XMP_StringPtr buffer, XMP_StringLen xmpSize, bo
 
 void XMPMeta::ProcessXMLTree ( XMP_OptionBits options )
 {
-
+		
 	#if XMP_DebugBuild && DumpXMLParseTree
 		if ( this->xmlParser->parseLog == 0 ) this->xmlParser->parseLog = stdout;
 		DumpXMLTree ( this->xmlParser->parseLog, this->xmlParser->tree, 0 );
@@ -1204,7 +1363,7 @@ void XMPMeta::ProcessXMLTree ( XMP_OptionBits options )
 		NormalizeDCArrays ( &this->tree );
 		if ( this->tree.options & kXMP_PropHasAliases ) MoveExplicitAliases ( &this->tree, options, this->errorCallback );
 		TouchUpDataModel ( this, this->errorCallback );
-
+		
 		// Delete empty schema nodes. Do this last, other cleanup can make empty schema.
 		size_t schemaNum = 0;
 		while ( schemaNum < this->tree.children.size() ) {
@@ -1216,7 +1375,7 @@ void XMPMeta::ProcessXMLTree ( XMP_OptionBits options )
 				this->tree.children.erase ( this->tree.children.begin() + schemaNum );
 			}
 		}
-
+		
 	}
 
 }	// ProcessXMLTree
@@ -1245,27 +1404,27 @@ XMPMeta::ParseFromBuffer ( XMP_StringPtr  buffer,
 {
 	if ( (buffer == 0) && (xmpSize != 0) ) XMP_Throw ( "Null parse buffer", kXMPErr_BadParam );
 	if (xmpSize == kXMP_UseNullTermination) xmpSize = static_cast<XMP_Index>(strnlen_safe(buffer, Max_XMP_Uns32));
-
+	
 	const bool lastClientCall = ((options & kXMP_ParseMoreBuffers) == 0);	// *** Could use FlagIsSet & FlagIsClear macros.
-
+	
 	if ( this->xmlParser == 0 ) {
 		this->tree.ClearNode();	// Make sure the target XMP object is totally empty.
 		if ( (xmpSize == 0) && lastClientCall ) return;	// Tolerate empty parse. Expat complains if there are no XML elements.
 		this->xmlParser = XMP_NewExpatAdapter ( ExpatAdapter::kUseGlobalNamespaces );
 		this->xmlParser->SetErrorCallback ( &this->errorCallback );
 	}
-
+	
 	try {	// Cleanup the tree and xmlParser if anything fails.
-
+	
 		bool done = this->ProcessXMLBuffer ( buffer, xmpSize, lastClientCall );
 		if ( ! done ) return;	// Wait for the next buffer.
-
+		
 		if ( lastClientCall ) {
 			this->ProcessXMLTree ( options );
 			delete this->xmlParser;
 			this->xmlParser = 0;
 		}
-
+		
 	} catch ( ... ) {
 
 		delete this->xmlParser;
@@ -1273,7 +1432,7 @@ XMPMeta::ParseFromBuffer ( XMP_StringPtr  buffer,
 		throw;
 
 	}
-
+	
 }	// ParseFromBuffer
 
 // =================================================================================================

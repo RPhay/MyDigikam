@@ -1,14 +1,126 @@
 // =================================================================================================
-// Copyright 2003 Adobe Systems Incorporated
+// Copyright 2003 Adobe
 // All Rights Reserved.
 //
 // NOTICE:	Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it.
+// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// than Adobe, then your use, modification, or distribution of it requires the prior written permission
+// of Adobe.
 // =================================================================================================
 
-#ifdef __MINGW32__  // krazy:exclude=cpp
-#   define _POSIX_THREAD_SAFE_FUNCTIONS
-#endif
+#if AdobePrivate
+// =================================================================================================
+// Change history
+// ==============
+//
+// Writers:
+//	AWL Alan Lillich
+//	JEH Joerg Ehrlich
+//	ADC Amandeep Chawla
+//  AJ  Abhishek Jindal
+//
+// mm-dd-yy who Description of changes, most recent on top.
+//
+// 03-27-15 AJ  5.6-c068 Checking in complete implementation of XMPUtils with the new Core APIs
+// 09-03-15 AJ  5.6-c045 Get/SetBulkMarkers with the new DOM APIs and some bug fixes for the same
+// 02-06-15 AJ  5.6-c037 Fixing warnings due to implicit typecasting
+// 12-21-14 AJ  5.6-c031 Routed XMPDocOps to new DOM APIs.
+// 07-11-14 ADC 5.6-c018 Fixing issues related to Linux build.
+// 07-10-14 ADC 5.6-c015 Refactoring, partial documentation and bug fixes of XMPCommon and XMPCore C++ APIs.
+//
+// 07-02-13 ADC 5.5-c020 Corrected the left Trimming of the value before passing onto
+//						 GetProperty_Int, GetProperty_Int64 and GetProperty_Float.
+//
+// 12-14-11 AWL 5.3-c011 [2810247] Fix lurking bugs in XMPUtils::ConvertToFloat.
+//
+// 07-01-09 JEH 5.0-c042 Fix wrong property name for extended XMP in JPEG utils.
+// 06-18-09 AWL 5.0-c037 Minor tweaks from code review.
+// 06-11-09 AWL 5.0-c034 Finish threading revamp, implement friendly reader/writer locking.
+// 05-27-09 AWL 5.0-c033 Remove XMPMeta::SendAssertNotify.
+// 05-05-09 AWL 5.0-c028 [2317800] Fix GatherInt in XMPUtils.cpp to check for overflow.
+// 01-22-09 FNO 5.0-c004 Fix broken Linux/Solaris build in regard to previous change.
+// 12-18-08 AWL 5.0-c002 [1912198] Allow "+00:00" and "-00:00" timezones, e.g. local time in England.
+//
+// 10-13-08 AWL 4.4-c009 Add support for zone-less times. Get rid of old XMPUtils forms of DocOps.
+//
+// 02-14-08 AWL 4.2-c039 [1610768] Use %lld format for ConvertFromInt64. Use sscanf with appropeiate
+//				format for ConvertFromInt and ConvertFromInt64.
+// 01-22-08 AWL 4.2-c036 Add fixes and comments for the Acrobat security review.
+// 11-02-07 AWL 4.2-c024 Start implementing XMPDocOps.
+// 01-25-07 AWL 4.2-c008 [1470354] Change SXMPUtils::PackageForJPEG to use a standard XMP limit of 65000.
+//
+// 08-11-06 AWL 4.1-c015 Workaround a map ordering bug in Xcode 2.3 in order to properly pick the
+//				largest estimated property in MoveLargestProperty.
+// 08-02-06 AWL 4.1-c013 Update the Unlimited JPEG implementation for the latest partitioning policy.
+//
+// 05-16-06 AWL 4.0-c006 Add SXMPUtils::PackageForJPEG and SXMPUtils::MergeFromJPEG.
+// 03-24-06 AWL 4.0-c001 Adapt for move to ham-perforce, integrate XMPFiles, bump version to 4.
+//
+// 03-21-06 AWL 3.3-016 [1269463] Silently correct bad date values to avoid killing clients that
+//				are not catching exceptions. The long term mainline fix will be an error callback.
+// 01-24-06 AWL 3.3-010 Turn off snprintf warning. Use VC8 thread safe versions of gmtime and localtime.
+// 07-15-05 AWL 3.3-001 [1214033] Bump version to 3.3, the SDK is out. Put back missing multi-file utils.
+//
+// 06-07-05 AWL 3.2-114 [1206111] Improve the 3.2-104 fix so that ConvertToDate will tolerate "1:2:3".
+// 06-01-05 AWL 3.2-104 [0528667] Fix ConvertToDate to tolerate a string like "hh:mm:ss".
+// 04-11-05 AWL 3.2-016 Add AdobePrivate conditionals where appropriate.
+// 04-05-05 AWL 3.2-011 [0532345] Normalize xml:lang values so that compares are in effect case
+//				insensitive as required by RFC 3066. Change parsing and serializing to force the
+//				x-default item to be first.
+// 04-01-05 AWL 3.2-010 Add leafOptions parameter to FindNode, used when creating new nodes.
+// 02-14-05 AWL 3.2-004 [1125901] Fix overrun problem in XMPUtils::DecodeFromBase64.
+// 01-28-05 AWL 3.2-001 Remove BIB.
+//
+// 01-27-05 AWL 3.1.1-109 [1140533] Fix XMPUtils::SetTimeZone to workaround a bug in Apple's mktime.
+// 01-07-05 AWL 3.1.1-103 [1115333] Some versions of mktime barf on years before 1970.
+// 12-14-04 AWL 3.1.1-100 [1022350,1075328] Add more namespaces and internal/external properties.
+// 11-08-04 AWL 3.1.1-096 [0664438] Add checks in OpenWorkingDocument and SaveWorkingDocument to
+//				remove the transient schema (xmpx:) used in the File Info multi-file support.
+// 11-08-04 AWL 3.1.1-095 [0663706] Allow null or empty MIME string in SetMIMEMapping - deletes mapping.
+// 11-08-04 AWL 3.1.1-094 [0660881] Preserve qualifiers on existing values in SeparateArrayItems.
+// 11-04-04 AWL 3.1.1-090 [1014853] Add XMPUtils::RemoveMultiValueInfo. Fix AppendProperties to call
+//				RemoveMultiValueInfo, i.e. to mimic a user edit.
+// 10-28-04 AWL 3.1.1-088 [1060796] Fix SetTimeZone to use appropriate date so that daylight savings
+//				time is taken into account, use thread safe time functions, use difftime for offset.
+// 10-21-04 AWL 3.1.1-087 [1070165,1096322] Fix SetTimeZone to set tzSign to zero for GMT.
+// 10-06-04 AWL 3.1.1-083 [1061778] Add lock tracing under TraceXMPLocking.
+// 09-23-04 AWL 3.1.1-080 [1058198,1061778] Fix bugs in CollectMultiFileXMP. Set version to 3.1.1
+//				for Cookie Dough, Gordon branch (Acrobat 7) is 3.1.
+//
+// 08-18-04 AWL 3.1-075 Add HasContainedDoc.
+// 08-04-04 AWL 3.1-072 [1010361] Handle bad times from Photoshop 8 that have a zero date and no time zone.
+// 07-29-04 AWL 3.1-070 [1024539] Fix CatenateArrayItems to verify the separator string.
+// 07-26-04 AWL 3.1-068 [1046381,1046384] Fix XMPUtils::ConvertToXyz to throw instead of assert for
+//				null or empty string. Fix XMPMeta::GetProperty_Xyz to make sure property is simple.
+// 07-14-04 AWL 3.1-063 [1013976] Fix DistributeMultiFileXMP to clear NewImplicit bit on schema node.
+// 07-14-04 AWL 3.1-061 [0664349] Fix SetResourceRef to tolerate null refXMP parameter.
+// 07-14-04 AWL 3.1-059 [0657909] Require registered namespaces in path composition routines.
+// 07-13-04 AWL 3.1-058 [1014255] Remove empty schema nodes.
+// 07-12-04 AWL 3.1-054 [1028368] Fix DecodeFromBase64 to properly handle embedded whitespace.
+//
+// 06-15-04 AWL Add DiffSchema field to the DifferingProperties array elements.
+// 05-06-05 AWL Move GetMainPacket and UpdateMainPacket PacketAccess.cpp.
+// 05-04-04 AWL [1014856] Fix XMPUtils::RemoveProperties to handle a property name at any level, not
+//				just top level. At the same time add optional removal of aliases.
+// 04-30-04 AWL Add new & delete operators that call BIBMemory functions. Change static objects that
+//				require allocation to explicit pointers. Clean up memory leaks.
+// 04-23-04 AWL [1014270] Fix ConvertToDate and internal callers to handle date properties with
+//				empty values, don't assert in ConvertToDate.
+// 04-19-04 AWL [1010249] Fix UpdateMainPacket to actually write the file.
+// 04-08-04 AWL Have GetDateRange and GetMergedListPath also resolve aliases before lookup.
+// 03-29-04 AWL Add Q&D versions of GetMainPacket and UpdateMainPacket.
+// 03-24-04 AWL Improve error checking in time utils. Have CurrentDateTime return local time.
+// 03-23-04 AWL Have IsPropertyMultiValued resolve aliases before lookup.
+// 03-17-04 AWL Cleanup error exceptions, make sure all have a reasonable message.
+// 03-15-04 AWL Fix mixup of sConvertedPath and sConvertedValue in ConvertFromInt and ConvertFromFloat.
+// 03-10-04 AWL Fix bug in IsPropertyMultiValued, bad walk through existing properties.
+// 03-08-04 AWL Fix bugs in IsPropertyMultiValued, GetDateRange, and GetMergedListPath.
+// 02-17-04 AWL Add multi-file utilities. Rename CreateXyzDocument to InitializeXyzDocument.
+// 02-09-04 AWL Start adding the new Document Operation utilities.
+// 05-24-03 AWL Initial start on the new implementation.
+//
+// =================================================================================================
+#endif /* AdobePrivate */
 
 #include "public/include/XMP_Environment.h"	// ! This must be the first include!
 #include "XMPCore/source/XMPCore_Impl.hpp"
@@ -16,6 +128,7 @@
 #include "XMPCore/source/XMPUtils.hpp"
 
 #include "XMP_MD5.h"
+
 
 #include <map>
 
@@ -55,9 +168,7 @@ const XMP_VarString xmlNameSpace  = "http://www.w3.org/XML/1998/namespace";
 // =================================================================================================
 // Local Utilities
 // ===============
-extern void SplitNameAndValue ( const XMP_VarString & selStep, XMP_VarString * nameStr, XMP_VarString * valueStr );
 
-extern void DumpNodeOptions	( XMP_OptionBits	 options,XMP_TextOutputProc outProc,void *refCon );
 // -------------------------------------------------------------------------------------------------
 // SetINode
 // --------------
@@ -73,19 +184,19 @@ void XMPUtils::SetNode	( const spINode & node , XMP_StringPtr value, XMP_OptionB
 		node->Clear();
 	}
 	if ( value != 0 ) {
-
+		
 		if ( options & kXMP_PropCompositeMask ) XMP_Throw ( "Composite nodes can't have values", kXMPErr_BadXPath );
 		if ( !node ) return;
 		XMP_Assert( node->GetNodeType() == INode::kNTSimple);
 		spISimpleNode simpleNode = node->ConvertToSimpleNode();
-		std::string newValue = value;
-
+		std::string newValue = value;	
+	
 		XMP_Uns8* chPtr = (XMP_Uns8*) newValue.c_str();	// Check for valid UTF-8, replace ASCII controls with a space.
 		while ( *chPtr != 0 ) {
 			while ( (*chPtr != 0) && (*chPtr < 0x80) ) {
 				if ( *chPtr < 0x20 ) {
 					if ( (*chPtr != kTab) && (*chPtr != kLF) && (*chPtr != kCR) ) *chPtr = 0x20;
-				}
+				}	
 				else if (*chPtr == 0x7F ) {
 				*chPtr = 0x20;
 				}
@@ -112,12 +223,12 @@ void XMPUtils::SetNode	( const spINode & node , XMP_StringPtr value, XMP_OptionB
 				XMP_Throw ( "Requested and existing composite form mismatch", kXMPErr_BadXPath );
 		}
 		node->Clear();
-
+		
 	}
-
+	
 }	// SetINode
 XMP_OptionBits  XMPUtils::ConvertNewArrayFormToOldArrayForm (const spcIArrayNode & arrayNode) {
-
+	
 	XMP_OptionBits options = 0;
 	if(!arrayNode) return options;
 	if( arrayNode->GetArrayForm() == IArrayNode::kAFAlternative) return kXMP_PropArrayIsAlternate;
@@ -127,7 +238,7 @@ XMP_OptionBits  XMPUtils::ConvertNewArrayFormToOldArrayForm (const spcIArrayNode
 }
 
 spINode  XMPUtils::CreateArrayChildNode( const spIArrayNode & arrayNode, XMP_OptionBits options) {
-
+	
 	XMP_VarString nodeNameSpace = arrayNode->GetNameSpace()->c_str(), nodeName = arrayNode->GetName()->c_str();
 	spINode itemNode;
 	size_t arrayChildCount = arrayNode->ChildCount();
@@ -174,14 +285,14 @@ void
 	XMP_VarString arrayName = arrayNode->GetName()->c_str();
 	options &= ~kXMP_PropArrayLocationMask;
 	options = VerifySetOptions ( options, itemValue );
-
+	
 	// Now locate or create the item node and set the value. Note the index parameter is one-based!
 	// The index can be in the range [0..size+1] or "last", normalize it and check the insert flags.
 	// The order of the normalization checks is important. If the array is empty we end up with an
 	// index and location to set item size+1.
-
-
-
+	
+	
+	
 	spINode itemNode;
 	if ( itemIndex == kXMP_ArrayLastItem ) itemIndex = arraySize;
 	if ( (itemIndex == 0) && (itemLoc == kXMP_InsertAfterItem) ) {
@@ -193,20 +304,20 @@ void
 		itemLoc = 0;
 	}
 	if ( (itemIndex == arraySize + 1) && (itemLoc == kXMP_InsertBeforeItem) ) itemLoc = 0;
-
+	
 	if ( itemIndex == arraySize + 1 ) {
 
 		if ( itemLoc ) XMP_Throw ( "Can't insert before or after implicit new item", kXMPErr_BadIndex );
 		itemNode = CreateArrayChildNode(arrayNode, options);
 		arrayNode->InsertNodeAtIndex(itemNode, arraySize + 1);
-	}
+	} 
 	else {
-
+		
 		if ( (itemIndex < 1) || (itemIndex > arraySize) ) XMP_Throw ( "Array index out of bounds", kXMPErr_BadIndex );
-
+	
 		if ( itemLoc == 0 ) {
 			itemNode = arrayNode->GetNodeAtIndex( itemIndex )->ConvertToSimpleNode();
-		}
+		} 
 		else {
 			itemNode = CreateArrayChildNode(arrayNode, options);
 			if ( itemLoc == kXMP_InsertAfterItem ) ++itemIndex;
@@ -236,8 +347,8 @@ void  XMPUtils::SetImplicitNodeInformation( bool & firstImplicitNodeFound,
 void  XMPUtils::GetNameSpaceAndNameFromStepValue( const std::string & stepStr,
 									  const spcINameSpacePrefixMap & defaultMap,
 									  std::string &stepNameSpace,
-									  std::string &stepName)
-{
+									  std::string &stepName) 
+{	
 	size_t colonPos = stepStr.find(':');
 	XMP_VarString prefix = stepStr.substr( 0, colonPos );
 	stepNameSpace =  defaultMap->GetNameSpace( prefix.c_str(), prefix.size() )->c_str();
@@ -314,7 +425,7 @@ bool XMPUtils::HandleConstAliasStep(const spIMetadata & mDOM,
 				return true;
 			}
 			return false;
-		}
+		}	
 		else if (aliasPos->second[2].options == kXMP_QualSelectorStep) {
 			XMP_Assert(aliasPos->second[2].step == "[?xml:lang=\"x-default\"]");
 			spcINodeIterator iter = XMPUtils::GetNodeChildIterator(destNode);
@@ -334,9 +445,9 @@ bool XMPUtils::HandleConstAliasStep(const spIMetadata & mDOM,
 			}
 			return false;
 		}
-
-		return false;
-
+		
+		return false; 
+		
 	}
 }
 bool XMPUtils::HandleAliasStep(const spIMetadata &  mDOM,
@@ -347,7 +458,7 @@ bool XMPUtils::HandleAliasStep(const spIMetadata &  mDOM,
 	XMP_Index           *nodeIndex,
 	bool ignoreLastStep
 	)
-
+	
 {
 	destNode = mDOM;
 	bool isAliasBeingCreated = expandedXPath.size() == 2;
@@ -380,7 +491,7 @@ bool XMPUtils::HandleAliasStep(const spIMetadata &  mDOM,
 			return false;
 		}
 
-
+		
 		//XMP_Assert(destNode->GetNodeType() == INode::kNTArray);
 		XMP_Assert(aliasPos->second.size() == 3);
 		if (aliasPos->second[2].options == kXMP_ArrayIndexStep) {
@@ -392,7 +503,7 @@ bool XMPUtils::HandleAliasStep(const spIMetadata &  mDOM,
 				mDOM->AppendNode(arrayNode);
 				destNode = arrayNode;
 			}
-
+		
 			if ( destNode->ConvertToArrayNode()->GetNodeAtIndex( 1 ) ) {
 				destNode = destNode->ConvertToArrayNode()->GetNodeAtIndex( 1 );
 				if (nodeIndex) *nodeIndex = 1;
@@ -443,10 +554,10 @@ bool XMPUtils::HandleAliasStep(const spIMetadata &  mDOM,
 				destNode = destNode->ConvertToArrayNode()->GetNodeAtIndex( 1 );
 				return true;
 			}
-
+		
 		}
 
-
+		
 
 	}
 	return false;
@@ -457,10 +568,10 @@ bool XMPUtils:: FindNode ( const spIMetadata  & mDOM,
 		   XMP_OptionBits	   leafOptions /* = 0 */,
 	 	   spINode       &retNode,
 		   XMP_Index           *nodeIndex ,
-		   bool ignoreLastStep
+		   bool ignoreLastStep 
 		   )
 {
-
+	
 	// TO DO - Differentiate between failures on last step and steps before that
 	spINode   destNode = mDOM;
 	spINode   parentDestNode = mDOM;
@@ -565,13 +676,13 @@ bool XMPUtils:: FindNode ( const spIMetadata  & mDOM,
 			break;
 			case kXMP_ArrayIndexStep:
 			{
-				// TO DO : type array item
+				// TO DO : type array item 
 				// if array not empty -> see type of first array element
 				// else if next is array type , arrayitem is array
 				// if next is struct select type, array item is struct
 				// if next is type qualifier , array item is simple property
 				//  TODO : HANDLE EXIT CASE
-				//
+				// 
 				//  we should check if the previous segment is an array segment
 				if (destNode->GetNodeType() != INode::kNTArray) {
 					XMP_Throw("Indexing applied to non-array", kXMPErr_BadXPath);
@@ -598,7 +709,7 @@ bool XMPUtils:: FindNode ( const spIMetadata  & mDOM,
 				if (parentArrayNode->ChildCount() + 1 < index) goto EXIT;
 				if (i == expPath.size() - 1) {
 					// to do if array not empty create of type already existing type
-					/// else create simple node
+					/// else create simple node 
 					spINode simpleInsertNode = CreateTerminalNode((nameSpace) ? nameSpace->c_str() : kXMP_NS_XMP, stepName.c_str(), leafOptions);
 					parentArrayNode->InsertNodeAtIndex(simpleInsertNode, index);
 					destNode = simpleInsertNode;
@@ -749,7 +860,7 @@ bool XMPUtils:: FindNode ( const spIMetadata  & mDOM,
 
 			case kXMP_QualSelectorStep:
 			{
-				// TODO - check the old behavior - checked - no implicit nodes except in one case
+				// TODO - check the old behavior - checked - no implicit nodes except in one case 
 				// TODO it is perhaps not required, can be done later
 				// if next path step is array(index/lastinddex/qualselect/fieldselect) - this will be an arraynode
 				// if next path step is a struct, this will be an structnode
@@ -861,7 +972,7 @@ EXIT:
 
 		if( firstImplicitNodeFound ) {
 
-			spINode parentImplicitNode = implicitNodeRoot->GetParent();
+			spINode parentImplicitNode = implicitNodeRoot->GetParent(); 
 			if(parentImplicitNode->GetNodeType() == INode::kNTArray) {
 				parentImplicitNode->ConvertToArrayNode()->RemoveNodeAtIndex( implicitNodeIndex );
 			}
@@ -892,7 +1003,7 @@ bool  XMPUtils::FindCnstNode ( const spIMetadata & mDOM,XMP_ExpandedXPath &expPa
 		XMP_VarString  stepStr = expPath[i].step;
 		XMP_VarString  prevStep = (i == 0)? "" : expPath[i - 1].step;
 		spcIUTF8String nameSpace ;
-
+		
 		switch( expPath[i].options ) {
 		case kXMP_StructFieldStep:
 			{
@@ -936,7 +1047,7 @@ bool  XMPUtils::FindCnstNode ( const spIMetadata & mDOM,XMP_ExpandedXPath &expPa
 					XMP_Throw ( "Indexes allowed for arrays only", kXMPErr_BadXPath );
 				}
 				spIArrayNode tempNode = destNode->ConvertToArrayNode();
-
+				
 				size_t colonPos = prevStep.find(':');
 				XMP_VarString prefix = prevStep.substr( 0, colonPos );
 				nameSpace = defaultMap->GetNameSpace( prefix.c_str(), prefix.size() );
@@ -949,7 +1060,7 @@ bool  XMPUtils::FindCnstNode ( const spIMetadata & mDOM,XMP_ExpandedXPath &expPa
 					destNode = tempNode->GetNodeAtIndex(childCount);
 					if(arrayIndex)  *arrayIndex = (XMP_Index)childCount;
 				}
-
+				
 			}
 			break;
 		case kXMP_QualifierStep:
@@ -962,12 +1073,12 @@ bool  XMPUtils::FindCnstNode ( const spIMetadata & mDOM,XMP_ExpandedXPath &expPa
 				nameSpace = defaultMap->GetNameSpace( prefix.c_str(), prefix.size() );
 				qualifierFlag = true;
 				destNode = destNode->GetQualifier(nameSpace->c_str(), nameSpace->size(), stepStr.c_str() + colonPos + 1, AdobeXMPCommon::npos);
-
+				
 			//	spINode node = mDOM->GetNode( path);
 			}
-
+			
 			break;
-
+			
 		case kXMP_QualSelectorStep:
 			{
 				// what if multiple indices match search criterion ?
@@ -975,7 +1086,7 @@ bool  XMPUtils::FindCnstNode ( const spIMetadata & mDOM,XMP_ExpandedXPath &expPa
 					XMP_Throw ( "Indexes allowed for arrays only", kXMPErr_BadXPath );
 				}
 				spIArrayNode tempNode = destNode->ConvertToArrayNode();
-				XMP_VarString  qualName, qualValue, qualNameSpace;
+				XMP_VarString  qualName, qualValue, qualNameSpace;	
 				SplitNameAndValue (stepStr, &qualName, &qualValue );
 				spINode parentNode = destNode;
 				size_t colonPos = qualName.find(':');
@@ -987,7 +1098,7 @@ bool  XMPUtils::FindCnstNode ( const spIMetadata & mDOM,XMP_ExpandedXPath &expPa
 					spIArrayNode parentArrayNode = parentNode->ConvertToArrayNode();
 					size_t arrayChildCount = parentArrayNode->ChildCount();
 					for(size_t arrayIdx = 1; arrayIdx <= arrayChildCount; arrayIdx++) {
-
+						
 						spINode currentArrayItem = parentArrayNode->GetNodeAtIndex(arrayIdx);
 						spINode qualNode = currentArrayItem->GetQualifier(qualNameSpace.c_str(), qualNameSpace.size(), qualName.c_str() + colonPos + 1, AdobeXMPCommon::npos );
 						if(!qualNode) continue;
@@ -1006,13 +1117,13 @@ bool  XMPUtils::FindCnstNode ( const spIMetadata & mDOM,XMP_ExpandedXPath &expPa
 				}
 			}
 			break;
-
+		
 		case kXMP_FieldSelectorStep :
 			{
 				// what if multiple indices match search criterion ?
 				// what if parent node isn't an array- exception or return false ?
 				// same issue what if one or more child nodes aren't structures ?
-				XMP_VarString  fieldName, fieldValue, fieldNameSpace;
+				XMP_VarString  fieldName, fieldValue, fieldNameSpace;	
 				SplitNameAndValue (stepStr, &fieldName, &fieldValue );
 				spINode parentNode = destNode;
 				size_t colonPos = fieldName.find(':');
@@ -1024,13 +1135,13 @@ bool  XMPUtils::FindCnstNode ( const spIMetadata & mDOM,XMP_ExpandedXPath &expPa
 					spIArrayNode parentArrayNode = parentNode->ConvertToArrayNode();
 					size_t arrayChildCount = parentArrayNode->ChildCount();
 					for(size_t arrayIdx = 1; arrayIdx <= arrayChildCount; arrayIdx++) {
-
+						
 						spINode currentItem = parentArrayNode->GetNodeAtIndex(arrayIdx);
-
+						
 						if(currentItem->GetNodeType() != INode::kNTStructure) {
 							return false;
 						}
-
+						
 						spINode fieldNode = currentItem->ConvertToStructureNode()->GetNode(fieldNameSpace.c_str(), fieldNameSpace.size(), fieldName.c_str() + colonPos + 1, AdobeXMPCommon::npos );
 						if(!fieldNode || fieldNode->GetNodeType() != INode::kNTSimple) continue;
 						XMP_VarString currentFieldValue = fieldNode->ConvertToSimpleNode()->GetValue()->c_str();
@@ -1051,7 +1162,7 @@ bool  XMPUtils::FindCnstNode ( const spIMetadata & mDOM,XMP_ExpandedXPath &expPa
 			break;
 
 		}
-
+		
 	}
 	if(!destNode) return false;
 	if(!options) return true;
@@ -1068,7 +1179,7 @@ size_t  XMPUtils::  GetNodeChildCount(const spcINode & node){
 		childCount = node->ConvertToStructureNode()->ChildCount();
 	}
 	return childCount;
-
+	
 }
 
 spcINodeIterator   XMPUtils::GetNodeChildIterator(const spcINode & node){
@@ -1080,7 +1191,7 @@ spcINodeIterator   XMPUtils::GetNodeChildIterator(const spcINode & node){
 		childIter = node->ConvertToStructureNode()->Iterator();
 	}
 	return childIter;
-
+		
 }
 
 std::vector<spcINode>  XMPUtils:: GetChildVector( const spINode & node) {
@@ -1102,7 +1213,7 @@ XMP_OptionBits  XMPUtils:: GetIXMPOptions( const spcINode & node) {
 			if( node->GetQualifier(xmlNameSpace.c_str(), xmlNameSpace.size(), "lang", AdobeXMPCommon::npos )) {
 				options |= kXMP_PropHasLang;
 		}
-
+		
 		if( node->GetQualifier("http://www.w3.org/1999/02/22-rdf-syntax-ns#", AdobeXMPCommon::npos, "type", AdobeXMPCommon::npos )) {
 			options |= kXMP_PropHasType;
 		}
@@ -1110,23 +1221,23 @@ XMP_OptionBits  XMPUtils:: GetIXMPOptions( const spcINode & node) {
 	XMP_VarString snamespace = node->GetNameSpace()->c_str();
 	XMP_VarString sname = node->GetName()->c_str();
 	spcINode parentNode = node->GetParent();
-
+	
 	if (node->IsQualifierNode()){
 		options |= kXMP_PropIsQualifier;
 	}
 
 	if ( node->GetNodeType() == INode::kNTSimple ) {
-
+		
 		if( node->ConvertToSimpleNode()->IsURIType()){
 			options |=  kXMP_PropValueIsURI;
 		}
-
-	}
+		
+	} 
 	else if ( node->GetNodeType() == INode::kNTArray) {
-
+		
 		spcIArrayNode arrayNode = node->ConvertToArrayNode();
 		options |= kXMP_PropValueIsArray;
-
+		
 		switch(arrayNode->GetArrayForm()) {
 
 			case IArrayNode::kAFAlternative:
@@ -1157,7 +1268,7 @@ XMP_OptionBits  XMPUtils:: GetIXMPOptions( const spcINode & node) {
 		if(isAltTextArray) {
 			options |= kXMP_PropArrayIsAltText;
 		}
-
+		
 	}
 	else if( node->GetNodeType() == INode::kNTStructure && node->GetParent() ) {
 		options |= kXMP_PropValueIsStruct;
@@ -1165,7 +1276,7 @@ XMP_OptionBits  XMPUtils:: GetIXMPOptions( const spcINode & node) {
 	return options;
 }
 
-spINode
+spINode 
 XMPUtils::FindChildNode	( const spINode &parent,
 				  XMP_StringPtr		childName,
 				  XMP_StringPtr		childNameSpace,
@@ -1176,7 +1287,7 @@ XMPUtils::FindChildNode	( const spINode &parent,
 	spINode childNode;
 	XMP_OptionBits parentOptions = XMPUtils::GetIXMPOptions(parent);
 	if ( ! (parentOptions & (kXMP_SchemaNode | kXMP_PropValueIsStruct)) ) {
-
+	
 		if ( parentOptions & kXMP_PropValueIsArray ) {
 			XMP_Throw ( "Named children not allowed for arrays", kXMPErr_BadXPath );
 		}
@@ -1184,7 +1295,7 @@ XMPUtils::FindChildNode	( const spINode &parent,
 	spcINodeIterator childIter = XMPUtils::GetNodeChildIterator(parent);
 
 	for (size_t idx = 1 ;  childIter; childIter = childIter->Next(), ++idx ) {
-		spcINode currChild = childIter->GetNode();
+		spcINode currChild = childIter->GetNode(); 
 
 		if (currChild && XMP_LitMatch(currChild->GetName()->c_str(), childName) && XMP_LitMatch(currChild->GetNameSpace()->c_str(), childNameSpace) ) {
 			childNode = AdobeXMPCore_Int::const_pointer_cast<INode>(currChild);
@@ -1192,19 +1303,19 @@ XMPUtils::FindChildNode	( const spINode &parent,
 			break;
 		}
 	}
-
+	
 	if ( (!childNode) && createNodes ) {
 		childNode = ISimpleNode::CreateSimpleNode(childNameSpace, AdobeXMPCommon::npos, childName, AdobeXMPCommon::npos );
 		parent->ConvertToStructureNode()->InsertNode( childNode );
 	}
-
+	
 	XMP_Assert ( (childNode ) || (! createNodes) );
 	return childNode;
-
+	
 }	// FindChildNode
 
 spcIUTF8String XMPUtils::GetNodeValue( const spINode & node) {
-
+	
 
 	if (node && node->GetNodeType() == INode::kNTSimple) {
 		return node->ConvertToSimpleNode()->GetValue();
@@ -1217,7 +1328,7 @@ XMP_Index XMPUtils::LookupFieldSelector_v2(const spIArrayNode & arrayNode, XMP_V
 
 	XMP_Index destIdx = -1;
 	if (arrayNode->GetNodeType() != INode::kNTArray)	return destIdx;
-	for (size_t index = 1, indexLim = arrayNode->ChildCount(); index <= indexLim; ++index) {
+	for (XMP_Index index = 1, indexLim = (XMP_Index)arrayNode->ChildCount(); index <= indexLim; ++index) {
 
 		spINode childNode = arrayNode->GetNodeAtIndex(index);
 		if (childNode->GetNodeType() != INode::kNTStructure) {
@@ -1245,7 +1356,7 @@ XMP_Index XMPUtils::LookupFieldSelector_v2(const spIArrayNode & arrayNode, XMP_V
 // A bit of hackery to use the best available time functions. Mac, UNIX and iOS have thread safe versions
 // of gmtime and localtime.
 
-#if XMP_MacBuild | XMP_UNIXBuild | XMP_iOSBuild
+#if XMP_MacBuild | XMP_UNIXBuild | XMP_iOSBuild | XMP_AndroidBuild
 
 	typedef time_t			ansi_tt;
 	typedef struct tm		ansi_tm;
@@ -1254,13 +1365,8 @@ XMP_Index XMPUtils::LookupFieldSelector_v2(const spIArrayNode & arrayNode, XMP_V
 	#define ansi_mktime		mktime
 	#define ansi_difftime	difftime
 
-	#ifdef __MINGW32__  // krazy:exclude=cpp
-		#define ansi_gmtime(tt,tm)		gmtime_s ( tm, tt )
-		#define ansi_localtime(tt,tm)	localtime_s ( tm, tt )
-	#else
-		#define ansi_gmtime		gmtime_r
-		#define ansi_localtime	localtime_r
-	#endif
+	#define ansi_gmtime		gmtime_r
+	#define ansi_localtime	localtime_r
 
 #elif XMP_WinBuild
 
@@ -1274,7 +1380,7 @@ XMP_Index XMPUtils::LookupFieldSelector_v2(const spIArrayNode & arrayNode, XMP_V
 	#define ansi_mktime		mktime
 	#define ansi_difftime	difftime
 
-        #if defined(_MSC_VER) && (_MSC_VER >= 1400)
+	#if defined(_MSC_VER) && (_MSC_VER >= 1400)
 		#define ansi_gmtime(tt,tm)		gmtime_s ( tm, tt )
 		#define ansi_localtime(tt,tm)	localtime_s ( tm, tt )
 	#else
@@ -1639,7 +1745,7 @@ EstimateSizeForJPEG ( const XMP_Node * xmpNode )
 
 	return estSize;
 
-}
+}	
 
 
 #if ENABLE_CPP_DOM_MODEL
@@ -1655,7 +1761,7 @@ EstimateSizeForJPEG(const spINode &xmpNode)
 
 	size_t estSize = 0;
 	auto defaultMap = INameSpacePrefixMap::GetDefaultNameSpacePrefixMap();
-
+	
 	size_t nameSize = xmpNode->GetName()->size() + 1 ;
 	nameSize += defaultMap->GetPrefix(xmpNode->GetNameSpace()->c_str(), xmpNode->GetNameSpace()->size())->size();
 
@@ -1675,7 +1781,7 @@ EstimateSizeForJPEG(const spINode &xmpNode)
 		size_t arraySize = structNode->ChildCount();
 		estSize += 9 + 10;	// The rdf:Xyz tags.
 		estSize += arraySize * (8 + 9);	// The rdf:li tags.
-
+		
 		for (auto structIter = structNode->Iterator(); structIter; structIter = structIter->Next()) {
 
 			estSize += EstimateSizeForJPEG(structIter->GetNode());
@@ -1689,12 +1795,12 @@ EstimateSizeForJPEG(const spINode &xmpNode)
 		spIStructureNode structNode = xmpNode->ConvertToStructureNode();
 		estSize += 25;	// The rdf:parseType="Resource" attribute.
 		size_t fieldCount = structNode->ChildCount();
-
+		
 		for (auto structIter = structNode->Iterator(); structIter; structIter = structIter->Next()) {
 
 			estSize += EstimateSizeForJPEG(structIter->GetNode());
 		}
-
+	
 
 	}
 
@@ -1752,7 +1858,7 @@ static bool MoveOneProperty(XMPMeta2 & stdXMP, XMPMeta2 * extXMP,
 	spINode clonedNode = propNode->Clone();
 
 	spIStructureNode rootNode2 = extXMP->mDOM;
-
+	
 	if (rootNode2->GetNode(schemaURI, AdobeXMPCommon::npos, propName, AdobeXMPCommon::npos )) {
 		rootNode2->RemoveNode(schemaURI, AdobeXMPCommon::npos, propName, AdobeXMPCommon::npos);
 	}
@@ -1818,7 +1924,7 @@ static void CreateEstimatedSizeMap(XMPMeta2 & stdXMP, PropSizeMap2 * propSizes)
 	spIStructureNode rootNode = stdXMP.mDOM;
 
 	for (auto rootIter = rootNode->Iterator(); rootIter; rootIter = rootIter->Next()) {
-
+		
 		const spINode & node = rootIter->GetNode();
 		if (!strcmp(node->GetNameSpace()->c_str(), kXMP_NS_XMP_Note) && !strcmp(node->GetName()->c_str(), "HasExtendedXMP")) continue;
 		size_t propSize = EstimateSizeForJPEG(node);
@@ -1829,7 +1935,7 @@ static void CreateEstimatedSizeMap(XMPMeta2 & stdXMP, PropSizeMap2 * propSizes)
 		printf("    %d bytes, %s in %s\n", propSize, stdProp->name.c_str(), stdSchema->name.c_str());
 #endif
 	}
-
+	
 
 }	// CreateEstimatedSizeMap
 #endif
@@ -2503,12 +2609,18 @@ XMPUtils::ConvertToDate ( XMP_StringPtr	 strValue,
 		++pos;
 		temp = GatherInt ( strValue, &pos, "Invalid month in date string" );	// Extract the month.
 		if ( (strValue[pos] != 0) && (strValue[pos] != '-') ) XMP_Throw ( "Invalid date string, after month", kXMPErr_BadParam );
+		
+		if ( binValue->year != 0 && temp < 1 ) temp = 1;
+		if (  temp > 12 ) temp = 12;
+		
 		binValue->month = temp;
 		if ( strValue[pos] == 0 ) return;
 
 		++pos;
 		temp = GatherInt ( strValue, &pos, "Invalid day in date string" );	// Extract the day.
 		if ( (strValue[pos] != 0) && (strValue[pos] != 'T') ) XMP_Throw ( "Invalid date string, after day", kXMPErr_BadParam );
+		
+		if ( temp > 31 ) temp = 31;
 		binValue->day = temp;
 		if ( strValue[pos] == 0 ) return;
 
@@ -2518,9 +2630,9 @@ XMPUtils::ConvertToDate ( XMP_StringPtr	 strValue,
 			// if ( (binValue->month < 1) || (binValue->month > 12) ) XMP_Throw ( "Month is out of range", kXMPErr_BadParam );
 			// if ( (binValue->day < 1) || (binValue->day > 31) ) XMP_Throw ( "Day is out of range", kXMPErr_BadParam );
 			if ( binValue->month < 1 ) binValue->month = 1;
-			if ( binValue->month > 12 ) binValue->month = 12;
+			// if ( binValue->month > 12 ) binValue->month = 12;
 			if ( binValue->day < 1 ) binValue->day = 1;
-			if ( binValue->day > 31 ) binValue->day = 31;
+			// if ( binValue->day > 31 ) binValue->day = 31;
 		}
 
 	}
@@ -3084,7 +3196,7 @@ XMPUtils::PackageForJPEG(const XMPMeta2 & origXMP,
 		// Couldn't fit everything, make a copy of the input XMP and make sure there is no xmp:Thumbnails property.
 
 		stdXMP.mDOM = origXMP.mDOM->Clone()->ConvertToMetadata();
-
+		
 
 		if (stdXMP.DoesPropertyExist(kXMP_NS_XMP, "Thumbnails")) {
 			stdXMP.DeleteProperty(kXMP_NS_XMP, "Thumbnails");
@@ -3105,7 +3217,7 @@ XMPUtils::PackageForJPEG(const XMPMeta2 & origXMP,
 		spIStructureNode currRootNode = stdXMP.mDOM;
 		std::vector<XMP_VarString> nodes;
 		for (auto rootPropIter = currRootNode->Iterator(); rootPropIter; rootPropIter = rootPropIter->Next()) {
-
+			
 			auto rootPropNodeCloned = rootPropIter->GetNode()->Clone();
 			if (strcmp(rootPropNodeCloned->GetNameSpace()->c_str(), kXMP_NS_CameraRaw ) ) continue;
 			extXMP.mDOM->AppendNode(rootPropNodeCloned);
@@ -3113,13 +3225,13 @@ XMPUtils::PackageForJPEG(const XMPMeta2 & origXMP,
 		}
 
 		for (size_t childIdx = 0, childLim = nodes.size(); childIdx != childLim; ++childIdx) {
-
+		
 			stdXMP.mDOM->RemoveNode(kXMP_NS_CameraRaw, AdobeXMPCommon::npos, nodes[childIdx].c_str(), nodes[childIdx].size() );
 		}
 
 
 		if (nodes.size() != 0) {
-
+			
 			stdXMP.SerializeToBuffer(&tempStr, keepItSmall, 1, "", "", 0);
 #if Trace_PackageForJPEG
 			printf("  Move Camera Raw schema, %d bytes left\n", tempStr.size());

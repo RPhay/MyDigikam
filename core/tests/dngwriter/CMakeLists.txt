@@ -22,6 +22,7 @@ target_link_libraries(dngvalidate_cli
                       digikamcore
 
                       ${EXPAT_LIBRARY}
+                      ${JXL_LIBRARIES}
                       ${CMAKE_THREAD_LIBS_INIT}
                       PNG::PNG                          # For zlib
                       ${JPEG_LIBRARIES}

@@ -54,7 +54,7 @@ find_package(LCMS2)
 find_package(EXPAT)         # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)       # For DNGWriter and LibRaw which needs native threads support.
 find_package(Libheif)       # For HEIF support.
-find_package(Libjxl)        # For JPEG-XL support.
+find_package(Libjxl)        # For JPEG-XL support with DNGWriter.
 
 if(HEIF_FOUND)
 
@@ -269,6 +269,7 @@ endif()
 
 PRINT_LIBRARY_STATUS("libexpat"      "https://libexpat.github.io"                        "(version >= 2.0.0)"                 EXPAT_FOUND)
 PRINT_LIBRARY_STATUS("libjpeg"       "https://github.com/libjpeg-turbo/libjpeg-turbo"    "(version >= 6b)"                    JPEG_FOUND)
+PRINT_LIBRARY_STATUS("libjpegxl"     "https://github.com/libjxl/libjxl"                  "(version >= 0.7)"                   JXL_FOUND)
 PRINT_LIBRARY_STATUS("libkde"        "https://invent.kde.org/frameworks/"                "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"    KF${QT_VERSION_MAJOR}_FOUND)
 PRINT_LIBRARY_STATUS("liblcms"       "https://github.com/mm2/Little-CMS"                 "(version >= 2.0.0)"                 LCMS2_FOUND)
 PRINT_LIBRARY_STATUS("libopencv"     "https://github.com/opencv/opencv"                  "(version >= ${OPENCV_MIN_VERSION})" OpenCV_FOUND)
@@ -320,6 +321,7 @@ if(Boost_FOUND                          AND
    (LibExiv2_FOUND OR exiv2_FOUND)      AND
    EXPAT_FOUND                          AND
    JPEG_FOUND                           AND
+   JXL_FOUND                            AND
    KF${QT_VERSION_MAJOR}_FOUND          AND
    LCMS2_FOUND                          AND
    OpenCV_FOUND                         AND

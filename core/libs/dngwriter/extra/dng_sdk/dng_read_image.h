@@ -2,7 +2,7 @@
 // Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:  Adobe permits you to use, modify, and distribute this file in
+// NOTICE:	Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -25,6 +25,8 @@
 #include "dng_mutex.h"
 #include "dng_types.h"
 
+#include <memory>
+
 /******************************************************************************/
 
 bool DecodePackBits (dng_stream &stream,
@@ -33,67 +35,50 @@ bool DecodePackBits (dng_stream &stream,
 
 /*****************************************************************************/
 
-class dng_row_interleaved_image: public dng_image
-	{
-
-	private:
-
-		dng_image &fImage;
-
-		uint32 fFactor;
-
-	public:
-
-		dng_row_interleaved_image (dng_image &image,
-								   uint32 factor);
-
-		virtual void DoGet (dng_pixel_buffer &buffer) const;
-
-		virtual void DoPut (const dng_pixel_buffer &buffer);
-
-	private:
-
-		int32 MapRow (int32 row) const;
-
-	};
+void Interleave2D (dng_host &host,
+				   const dng_image &srcImage,
+				   dng_image &dstImage,
+				   const int32 rowFactor,
+				   const int32 colFactor,
+				   bool encode);
 
 /*****************************************************************************/
 
 class dng_read_image
 	{
-
+	
 	friend class dng_read_tiles_task;
-
+	
 	protected:
-
+	
 		enum
 			{
-
+			
 			// Target size for buffer used to copy data to the image.
-
+			
 			kImageBufferSize = 128 * 1024
-
+			
 			};
-
+			
 		AutoPtr<dng_memory_block> fJPEGTables;
-
+	
 	public:
-
+	
 		dng_read_image ();
-
+		
 		virtual ~dng_read_image ();
-
+		
 		virtual bool CanRead (const dng_ifd &ifd);
-
+		
 		virtual void Read (dng_host &host,
 						   const dng_ifd &ifd,
 						   dng_stream &stream,
 						   dng_image &image,
-						   dng_jpeg_image *jpegImage,
-						   dng_fingerprint *jpegDigest);
-
+						   dng_lossy_compressed_image *lossyImage,
+						   dng_fingerprint *lossyDigest);
+						   
 	protected:
-
+								
 		virtual bool ReadUncompressed (dng_host &host,
 									   const dng_ifd &ifd,
 									   dng_stream &stream,
@@ -103,7 +88,7 @@ class dng_read_image
 									   uint32 planes,
 									   AutoPtr<dng_memory_block> &uncompressedBuffer,
 									   AutoPtr<dng_memory_block> &subTileBlockBuffer);
-
+									   
 		virtual void DecodeLossyJPEG (dng_host &host,
 									  dng_image &image,
 									  const dng_rect &tileArea,
@@ -112,8 +97,8 @@ class dng_read_image
 									  uint32 photometricInterpretation,
 									  uint32 jpegDataSize,
 									  uint8 *jpegDataInMemory,
-                                      bool usingMultipleThreads);
-
+									  bool usingMultipleThreads);
+	
 		virtual bool ReadBaselineJPEG (dng_host &host,
 									   const dng_ifd &ifd,
 									   dng_stream &stream,
@@ -123,8 +108,8 @@ class dng_read_image
 									   uint32 planes,
 									   uint32 tileByteCount,
 									   uint8 *jpegDataInMemory,
-                                       bool usingMultipleThreads);
-
+									   bool usingMultipleThreads);
+	
 		virtual bool ReadLosslessJPEG (dng_host &host,
 									   const dng_ifd &ifd,
 									   dng_stream &stream,
@@ -136,16 +121,25 @@ class dng_read_image
 									   AutoPtr<dng_memory_block> &uncompressedBuffer,
 									   AutoPtr<dng_memory_block> &subTileBlockBuffer);
 
+		virtual bool ReadJXL (dng_host &host,
+							  const dng_ifd &ifd,
+							  dng_stream &stream,
+							  dng_image &image,
+							  const dng_rect &tileArea,
+							  uint32 tileByteCount,
+							  uint8 *jxlCompressedRawBitStream,
+							  bool usingMultipleThreads);
+
 		virtual bool CanReadTile (const dng_ifd &ifd);
-
+		
 		virtual bool NeedsCompressedBuffer (const dng_ifd &ifd);
-
+	
 		virtual void ByteSwapBuffer (dng_host &host,
 									 dng_pixel_buffer &buffer);
 
 		virtual void DecodePredictor (dng_host &host,
 									  const dng_ifd &ifd,
-						        	  dng_pixel_buffer &buffer);
+									  dng_pixel_buffer &buffer);
 
 		virtual void ReadTile (dng_host &host,
 							   const dng_ifd &ifd,
@@ -155,17 +149,17 @@ class dng_read_image
 							   uint32 plane,
 							   uint32 planes,
 							   uint32 tileByteCount,
-							   AutoPtr<dng_memory_block> &compressedBuffer,
+							   std::shared_ptr<dng_memory_block> &compressedBuffer,
 							   AutoPtr<dng_memory_block> &uncompressedBuffer,
 							   AutoPtr<dng_memory_block> &subTileBlockBuffer,
-                               bool usingMultipleThreads);
+							   bool usingMultipleThreads);
 
 		virtual void DoReadTiles (dng_host &host,
 								  const dng_ifd &ifd,
 								  dng_stream &stream,
 								  dng_image &image,
-								  dng_jpeg_image *jpegImage,
-								  dng_fingerprint *jpegTileDigest,
+								  dng_lossy_compressed_image *lossyImage,
+								  dng_fingerprint *lossyTileDigest,
 								  uint32 outerSamples,
 								  uint32 innerSamples,
 								  uint32 tilesDown,
@@ -174,7 +168,7 @@ class dng_read_image
 								  uint32 *tileByteCount,
 								  uint32 compressedSize,
 								  uint32 uncompressedSize);
-
+	
 	};
 
 /*****************************************************************************/
@@ -182,52 +176,52 @@ class dng_read_image
 class dng_read_tiles_task : public dng_area_task,
 							private dng_uncopyable
 	{
-
+	
 	protected:
-
+	
 		dng_read_image &fReadImage;
-
+		
 		dng_host &fHost;
-
+		
 		const dng_ifd &fIFD;
-
+		
 		dng_stream &fStream;
-
+		
 		dng_image &fImage;
-
-		dng_jpeg_image *fJPEGImage;
-
-		dng_fingerprint *fJPEGTileDigest;
-
-		uint32 fOuterSamples;
-
-		uint32 fInnerSamples;
-
-		uint32 fTilesDown;
-
-		uint32 fTilesAcross;
-
-		uint64 *fTileOffset;
-
-		uint32 *fTileByteCount;
-
-		uint32 fCompressedSize;
-
-		uint32 fUncompressedSize;
-
+		
+		dng_lossy_compressed_image *fLossyImage = nullptr;
+		
+		dng_fingerprint *fLossyTileDigest		= nullptr;
+		
+		uint32 fOuterSamples					= 0;
+		
+		uint32 fInnerSamples					= 0;
+		
+		uint32 fTilesDown						= 0;
+		
+		uint32 fTilesAcross						= 0;
+		
+		uint64 *fTileOffset						= nullptr;
+		
+		uint32 *fTileByteCount					= nullptr;
+		
+		uint32 fCompressedSize					= 0;
+		
+		uint32 fUncompressedSize				= 0;
+		
 		dng_mutex fMutex;
-
-		uint32 fNextTileIndex;
-
+		
+		uint32 fNextTileIndex					= 0;
+		
 	public:
-
+	
 		dng_read_tiles_task (dng_read_image &readImage,
 							 dng_host &host,
 							 const dng_ifd &ifd,
 							 dng_stream &stream,
 							 dng_image &image,
-							 dng_jpeg_image *jpegImage,
-							 dng_fingerprint *jpegTileDigest,
+							 dng_lossy_compressed_image *lossyImage,
+							 dng_fingerprint *lossyTileDigest,
 							 uint32 outerSamples,
 							 uint32 innerSamples,
 							 uint32 tilesDown,
@@ -250,14 +244,14 @@ class dng_read_tiles_task : public dng_area_task,
 		void ProcessTask (uint32 tileIndex,
 						  uint32 byteCount,
 						  dng_abort_sniffer *sniffer,
-						  AutoPtr<dng_memory_block> &compressedBuffer,
+						  std::shared_ptr<dng_memory_block> &compressedBuffer,
 						  AutoPtr<dng_memory_block> &uncompressedBuffer,
 						  AutoPtr<dng_memory_block> &subTileBlockBuffer);
-
+		
 	};
 
 /*****************************************************************************/
 
-#endif
-
+#endif	// __dng_read_image__
+	
 /*****************************************************************************/

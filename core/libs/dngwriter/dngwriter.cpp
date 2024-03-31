@@ -132,7 +132,7 @@ QString DNGWriter::dngSdkVersion()
 {
     // NOTE: DNG SDK do not seem to have a version ID shared in header.
 
-    return QString::fromLatin1("1.5.1");
+    return QString::fromLatin1("1.7.1");
 }
 
 } // namespace Digikam

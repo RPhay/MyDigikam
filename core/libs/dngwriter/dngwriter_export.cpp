@@ -88,7 +88,7 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
     thumbnail->fInfo.fColorSpace       = previewColorSpace_sRGB;
 
     negRender.SetMaximumSize(256);
-    thumbnail->fImage.Reset(negRender.Render());
+    thumbnail->fImage.reset(negRender.Render());
     AutoPtr<dng_preview> tn(static_cast<dng_preview*>(thumbnail));
     previewList.Append(tn);
 

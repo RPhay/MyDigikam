@@ -2,13 +2,32 @@
 #define __XMP_IO_hpp__	1
 
 // =================================================================================================
-// ADOBE SYSTEMS INCORPORATED
-// Copyright 2010 Adobe Systems Incorporated
+// Copyright Adobe
+// Copyright 2010 Adobe
 // All Rights Reserved
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it.
+// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// than Adobe, then your use, modification, or distribution of it requires the prior written permission
+// of Adobe.
 // =================================================================================================
+
+#if AdobePrivate
+// =================================================================================================
+// Change history
+// ==============
+//
+// Writers:
+//  AWL Alan Lillich
+//
+// mm-dd-yy who Description of changes, most recent first.
+//
+// 08-27-10 AWL 5.2-f009 Add comments to Host_IO.hpp, fix semantic irregularities in the code.
+// 08-19-10 AWL 5.2-f006 Move the seek mode constants to XMP_Const.
+// 08-17-10 AWL 5.2-f003 Integrate I/O revamp to main.
+//
+// =================================================================================================
+#endif	// AdobePrivate
 
 #include "XMP_Environment.h"	// ! XMP_Environment.h must be the first included header.
 
@@ -41,7 +60,7 @@
 
 class XMP_IO {
 public:
-
+    enum { kReadAll = true };
 	// ---------------------------------------------------------------------------------------------
 	/// @brief Read into a buffer, returning the number of bytes read.
 	///
@@ -55,8 +74,6 @@ public:
 	/// @param readAll True if reading less than the requested amount is a failure.
 	///
 	/// @return Returns the number of bytes read.
-
-	enum { kReadAll = true };
 
 	virtual XMP_Uns32 Read ( void* buffer, XMP_Uns32 count, bool readAll = false ) = 0;
 
@@ -164,7 +181,7 @@ private:
 	/// share state across multiple XMP_IO objects.
 
 	XMP_IO ( const XMP_IO & original );
-	void operator= ( const XMP_IO& in ) { *this = in; /* Avoid Win compile warnings. */ };
+	void operator= ( const XMP_IO& ) { /**this = in; *//* Avoid Win compile warnings. */ };
 
 };
 

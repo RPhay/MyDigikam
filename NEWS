@@ -3,6 +3,7 @@ digiKam 8.4.0 - Release date: 2024-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
+Auto-Tags: Add online translators support to internationalize generated keywords.
 RawEngine: Update internal libraw to last 20240330 snapshot. New supported cameras:
            Canon EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra.
            Fujifilm GFX100-II, X-T5, X-S20, X-H2, X-H2S.
@@ -14,6 +15,7 @@ RawEngine: Update internal libraw to last 20240330 snapshot. New supported camer
            Sony A7C-II, A7CR, ILCE-6700,  ZV-1M2, ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, DSC-HX95, A1.
            Multiple DJI and Skydio drones.
            Multiple smartphones with DNG format recorded.
+DNGWriter: update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.
 
 *****************************************************************************************************
 BUGFIXES:

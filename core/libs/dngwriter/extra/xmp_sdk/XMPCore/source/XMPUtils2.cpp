@@ -1,11 +1,29 @@
 // =================================================================================================
-// ADOBE SYSTEMS INCORPORATED
-// Copyright 2014 Adobe Systems Incorporated
+// Copyright Adobe
+// Copyright 2014 Adobe
 // All Rights Reserved
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it.
+// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// than Adobe, then your use, modification, or distribution of it requires the prior written permission
+// of Adobe.
 // =================================================================================================
+
+#if AdobePrivate
+// =================================================================================================
+// Change history
+// ==============
+//
+// Writers:
+//  AJ	Abhishek Jindal
+//
+// mm-dd-yy who Description of changes, most recent first.
+//
+// 03-27-15 AJ  5.6-c068 Checking in complete implementation of XMPUtils with the new Core APIs
+//
+// =================================================================================================
+#endif
+
 
 #include "public/include/XMP_Environment.h"	// ! This must be the first include!
 #include "XMPCore/source/XMPCore_Impl.hpp"
@@ -16,7 +34,7 @@
 #include "source/UnicodeInlines.incl_cpp"
 #include "source/UnicodeConversions.hpp"
 #include "source/ExpatAdapter.hpp"
-#include "XMP_MD5.h"
+#include "third-party/zuid/interfaces/MD5.h"
 #include "XMPCore/Interfaces/IMetadata_I.h"
 #include "XMPCore/Interfaces/IArrayNode_I.h"
 #include "XMPCore/Interfaces/ISimpleNode_I.h"
@@ -29,7 +47,6 @@
 #include "XMPCommon/Interfaces/IUTF8String_I.h"
 
 const XMP_VarString xmlNameSpace = "http://www.w3.org/XML/1998/namespace";
-extern bool IsInternalProperty(const XMP_VarString & schema, const XMP_VarString & prop);
 extern const char * sListProps[];
 extern const char * sDateProps[];
 
@@ -40,8 +57,9 @@ using namespace AdobeXMPCore;
 // CloneSubtree
 // ============
 
-void
-CloneIXMPSubtree(const spcINode & origRoot, const spINode & cloneParent, bool skipEmpty /* = false */)
+
+
+static void CloneIXMPSubtree(const spcINode & origRoot, const spINode & cloneParent, bool skipEmpty /* = false */)
 {
 	spINode clonedRoot = origRoot->Clone(skipEmpty, true);
 	if (!clonedRoot) return;
@@ -59,8 +77,7 @@ CloneIXMPSubtree(const spcINode & origRoot, const spINode & cloneParent, bool sk
 //
 // ! Assumes that the language value is already normalized.
 
-XMP_Index
-LookupIXMPLangItem(const spcIArrayNode & arrayNode, XMP_VarString & lang)
+static XMP_Index LookupIXMPLangItem(const spcIArrayNode & arrayNode, XMP_VarString & lang)
 {
 	XMP_OptionBits arrayOptions = XMPUtils::GetIXMPOptions(arrayNode);
 	if (!(arrayOptions & kXMP_PropValueIsArray)) {	// *** Check for alt-text?
@@ -68,7 +85,7 @@ LookupIXMPLangItem(const spcIArrayNode & arrayNode, XMP_VarString & lang)
 	}
 
 	XMP_Index index = 1;
-	XMP_Index itemLim = arrayNode->ChildCount();
+	XMP_Index itemLim = (XMP_Index)arrayNode->ChildCount();
 
 	for (; index <= itemLim; ++index) {
 		spcINode currItem = arrayNode->GetNodeAtIndex(index);
@@ -99,9 +116,7 @@ LookupIXMPLangItem(const spcIArrayNode & arrayNode, XMP_VarString & lang)
 // *** Might someday consider sorting unordered arrays.
 // *** Should expose this through XMPUtils.
 
-
-bool
-CompareSubtrees(spcINode leftNode, spcINode rightNode)
+static bool CompareSubtrees(spcINode leftNode, spcINode rightNode)
 {
 	// Don't compare the names here, we want to allow the outermost roots to have different names.
 	XMP_OptionBits leftNodeOptions = XMPUtils::GetIXMPOptions(leftNode), rightNodeOptions = XMPUtils::GetIXMPOptions(rightNode);
@@ -146,7 +161,7 @@ CompareSubtrees(spcINode leftNode, spcINode rightNode)
 			spcINode leftChildFirstQualifier = leftChild->GetQualifier(xmlNameSpace.c_str(), xmlNameSpace.size(), "lang", AdobeXMPCommon::npos );
 			if (leftChildFirstQualifier) {
 				XMP_VarString leftChildFirstQualifierValue = leftChildFirstQualifier->ConvertToSimpleNode()->GetValue()->c_str();
-				size_t rightIdx = LookupIXMPLangItem( rightNodeAsArray, leftChildFirstQualifierValue );
+				XMP_Index rightIdx = LookupIXMPLangItem( rightNodeAsArray, leftChildFirstQualifierValue );
 				if (rightIdx == -1) {
 					return false;
 				}
@@ -155,7 +170,7 @@ CompareSubtrees(spcINode leftNode, spcINode rightNode)
 					return false;
 				}
 			}
-
+			
 		}
 
 
@@ -207,6 +222,182 @@ MergeArrayItems(spINode newArray, spINode mergedArray)
 	}
 
 }	// MergeArrayItems
+#if AdobePrivate
+// -------------------------------------------------------------------------------------------------
+// UpdateArrayDifference
+// ---------------------
+
+static void
+UpdateArrayDifference(spINode dpItem, spINode propNode)
+{
+	XMP_Assert(propNode->GetNodeType() == INode::kNTArray);
+
+	spINode mergedList = XMPUtils::FindChildNode(dpItem, "DiffMergedList", kXMP_NS_Transient,kXMP_ExistingOnly, 0);
+	XMP_Assert(mergedList);
+
+	MergeArrayItems(propNode, mergedList);
+
+}	// UpdateArrayDifference
+// -------------------------------------------------------------------------------------------------
+// UpdateDateDifference
+// --------------------
+
+static void
+UpdateDateDifference (spINode dpItem, spcINode propNode )
+{
+	spINode oldestNode = XMPUtils::FindChildNode ( dpItem, "DiffOldest", kXMP_NS_Transient, kXMP_ExistingOnly, 0);
+	spINode newestNode = XMPUtils::FindChildNode ( dpItem, "DiffNewest",  kXMP_NS_Transient, kXMP_ExistingOnly, 0);
+	XMP_Assert ( (oldestNode != libcppNULL) && (newestNode != libcppNULL) );
+	
+	XMP_DateTime propDate;
+	XMP_DateTime rangeDate;
+	
+	if (propNode->GetNodeType() != INode::kNTSimple) return;
+	
+	spcIUTF8String propNodeValue = propNode->ConvertToSimpleNode()->GetValue();
+	spcIUTF8String oldestNodeValue = oldestNode->ConvertToSimpleNode()->GetValue();
+	if ( propNodeValue->empty() ) return;	// ! Ignore missing dates.
+	XMPUtils::ConvertToDate ( propNodeValue->c_str(), &propDate );
+	XMPUtils::ConvertToDate ( oldestNodeValue->c_str(), &rangeDate );
+
+	if ( XMPUtils::CompareDateTime ( propDate, rangeDate ) == -1 ) {
+		oldestNode->ConvertToSimpleNode()->SetValue( propNodeValue->c_str(), propNodeValue->size() );
+	} else {
+		XMPUtils::ConvertToDate( newestNode->ConvertToSimpleNode()->GetValue()->c_str(), &rangeDate);
+		if ( XMPUtils::CompareDateTime ( propDate, rangeDate ) == +1 ) {
+			newestNode->ConvertToSimpleNode()->SetValue(propNodeValue->c_str(), propNodeValue->size());
+		}
+	}
+			
+}	// UpdateDateDifference
+
+static void AddNewDifference(spIArrayNode dpArray, spINode propNode, bool propIsList, bool propIsDate)
+{
+	auto defaultMap = INameSpacePrefixMap::GetDefaultNameSpacePrefixMap()->GetINameSpacePrefixMap_I();
+	XMP_VarString currNameSpace = defaultMap->GetPrefix( propNode->GetNameSpace() )->c_str();
+	XMP_VarString nodeFullName = currNameSpace + ":" + propNode->GetName()->c_str();
+	XMP_Assert(XMPUtils::LookupFieldSelector_v2(dpArray, "DiffPath", nodeFullName) == -1);
+
+	
+	spIStructureNode dpItem = IStructureNode::CreateStructureNode(dpArray->GetNameSpace()->c_str(), dpArray->GetNameSpace()->size(),
+		kXMP_ArrayItemName, AdobeXMPCommon::npos );
+	dpArray->AppendNode(dpItem);
+
+	spISimpleNode dpName = ISimpleNode::CreateSimpleNode(kXMP_NS_Transient, AdobeXMPCommon::npos, "DiffPath", AdobeXMPCommon::npos,
+		nodeFullName.c_str(), nodeFullName.size() );
+	dpItem->AppendNode(dpName);
+	spcINode propSchema = propNode->GetParent();
+	 
+	
+	spISimpleNode dpSchema = ISimpleNode::CreateSimpleNode(kXMP_NS_Transient, AdobeXMPCommon::npos, "DiffURI", AdobeXMPCommon::npos,
+		propNode->GetNameSpace()->c_str(), propNode->GetNameSpace()->size() );
+	dpItem->AppendNode(dpSchema);
+	if (propIsList) {
+		spIArrayNode mergedList = AdobeXMPCore_Int::IArrayNode_I::CreateArrayNode(
+			AdobeXMPCore_Int::IUTF8String_I::CreateUTF8String( kXMP_NS_Transient, AdobeXMPCommon::npos ),
+			AdobeXMPCore_Int::IUTF8String_I::CreateUTF8String( "DiffMergedList", AdobeXMPCommon::npos ),
+			propNode->ConvertToArrayNode()->GetArrayForm());
+
+		//TODO
+		//XMP_Node * mergedList = new XMP_Node(dpItem, "xmpx:DiffMergedList", "", (propNode.options & kXMP_PropArrayFormMask));
+		
+		dpItem->AppendNode(mergedList);
+		MergeArrayItems(propNode, mergedList);	// ! Remove duplicates from first part.
+	}
+	else if (propIsDate) {
+		XMP_Assert(propNode->GetNodeType() == INode::kNTSimple); // ! Catch bool param reversal.
+		spcIUTF8String propNodeValue = propNode->ConvertToSimpleNode()->GetValue();
+		spISimpleNode dateNode1 = ISimpleNode::CreateSimpleNode( kXMP_NS_Transient, AdobeXMPCommon::npos,
+			"DiffOldest", AdobeXMPCommon::npos, propNodeValue->c_str(), propNodeValue->size() );
+		spISimpleNode dateNode2 = ISimpleNode::CreateSimpleNode(kXMP_NS_Transient, AdobeXMPCommon::npos,
+			"DiffNewest", AdobeXMPCommon::npos, propNodeValue->c_str(), propNodeValue->size() );
+		dpItem->AppendNode(dateNode1);
+		dpItem->AppendNode(dateNode2);
+	}
+
+}	// AddNewDifference
+
+static void
+NoteDifferingProperty_v2 ( spINode xmpxNode,
+						  spINode  multiProp,		// ! Might be null!
+						  spINode inputProp )	// ! Might be null!
+{
+	XMP_Assert ( (multiProp != libcppNULL) || (inputProp != libcppNULL) ); // Can't have both prop pointers be null.
+
+	// ---------------------------------------------------------------------------------------------
+	// Do some common setup, find the xmpx:DifferingProperties array, see if the property is already
+	// noted, decide if the property is a date or catenated list.
+	
+	spINode dpArrayNode = XMPUtils::FindChildNode(xmpxNode, "DifferingProperties", kXMP_NS_Transient, false, 0);
+	XMP_Assert ( dpArrayNode );
+	spIArrayNode dpArray = dpArrayNode->ConvertToArrayNode();
+	spINode propNode = multiProp;
+	if (!propNode) propNode = inputProp;
+	XMP_Assert ( propNode);	// Can't have both prop pointers be null.
+	auto defaultMap = INameSpacePrefixMap::GetDefaultNameSpacePrefixMap()->GetINameSpacePrefixMap_I();
+	XMP_VarString currNameSpace = defaultMap->GetPrefix(propNode->GetNameSpace())->c_str();
+	XMP_VarString nodeFullName = currNameSpace + ":" + propNode->GetName()->c_str();
+	spINode dpItem;
+	XMP_Index dpItemIndex = XMPUtils::LookupFieldSelector_v2(dpArray, "DiffPath", nodeFullName);
+	if ( dpItemIndex != -1 ) dpItem = dpArray->GetNodeAtIndex(dpItemIndex);
+	
+	const bool propIsList = CheckSpecialProperty ( nodeFullName, sListProps );
+	const bool propIsDate = CheckSpecialProperty ( nodeFullName, sDateProps );
+
+	// -----------------------
+	// Process the difference.
+	
+	if ( !inputProp ) {
+
+		// All prior input matched, this input lacks the property.
+		XMP_Assert ( !dpItem );
+		AddNewDifference ( dpArray, multiProp, propIsList, propIsDate );
+		dpItem = dpArray->GetNodeAtIndex(dpArray->ChildCount()); 
+		#if TraceMultiFile
+			printf ( "	  New input lacks %s\n", multiProp->name.c_str() ); fflush(stdout);
+		#endif
+					
+	} else if ( multiProp) {
+	
+		// The aggregate and input both have the property. All prior input matched, this input differs.
+		XMP_Assert ( dpItem == libcppNULL );
+		AddNewDifference ( dpArray, multiProp, propIsList, propIsDate );
+		dpItem = dpArray->GetNodeAtIndex(dpArray->ChildCount());
+		if ( propIsDate ) {
+			UpdateDateDifference ( dpItem, inputProp );
+		} else if ( propIsList ) {
+			UpdateArrayDifference ( dpItem, inputProp );
+		}
+		#if TraceMultiFile
+			printf ( "	  New input differs for %s\n", inputProp->name.c_str() ); fflush(stdout);
+		#endif
+	
+	} else if ( !dpItem ) {
+	
+		// The property is appearing for the first time in this input.
+	
+		AddNewDifference ( dpArray, inputProp, propIsList, propIsDate );
+		dpItem = dpArray->GetNodeAtIndex(dpArray->ChildCount());
+		#if TraceMultiFile
+			printf ( "	  Prior input lacks %s\n", inputProp->name.c_str() ); fflush(stdout);
+		#endif
+	
+	} else {
+	
+		// The property is already noted. Since it is present in the input, update a date
+		// range and merge a catenated list. Nothing else to do for regular properties.
+		XMP_Assert ( dpItem );
+		if ( propIsDate ) {
+			UpdateDateDifference ( dpItem, inputProp );
+		} else if ( propIsList ) {
+			UpdateArrayDifference ( dpItem, inputProp );
+		}
+	
+	}
+
+}	// NoteDifferingProperty
+#endif //AdobePrivate
+
 static bool
 ItemValuesMatch(spcINode leftNode, spcINode rightNode)
 {
@@ -301,14 +492,14 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 
 	XMP_VarString sourceName = sourceNode->GetName()->c_str();
 	XMP_VarString sourceNamespace = sourceNode->GetNameSpace()->c_str();
-
+	
 	XMP_VarString destName = destParent->GetName()->c_str();
 	XMP_VarString destNamespace = destParent->GetNameSpace()->c_str();
 	if (sourceName.find("UserComment") != XMP_VarString::npos) {
 		int y = 1;
 		y++;
 	}
-	// Need clone non empty only
+	// Need clone non empty only 
 	// to do lang alt append
 	// to do lang alt
 	size_t destPos = 0;
@@ -316,15 +507,15 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 
 	bool valueIsEmpty = false;
 	XMP_OptionBits sourceNodeOptions = XMPUtils::GetIXMPOptions(sourceNode);
-
+	
 	if (sourceNode->GetNodeType() == INode::kNTSimple) {
 		valueIsEmpty = sourceNode->ConvertToSimpleNode()->GetValue()->empty();
 	}
 	else {
-
+		
 		valueIsEmpty = XMPUtils::GetNodeChildCount(sourceNode) == 0;
 	}
-
+	
 
 	if (valueIsEmpty) {
 		if (sourceNode && deleteEmpty) {
@@ -420,7 +611,7 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 			spcINode langQualNode = sourceItem->GetQualifier(xmlNameSpace.c_str(), xmlNameSpace.size(), "lang", AdobeXMPCommon::npos );
 			if (!langQualNode || langQualNode->GetNodeType() != INode::kNTSimple) continue;
 			XMP_VarString langValue = langQualNode->ConvertToSimpleNode()->GetValue()->c_str();
-			size_t destIndex = LookupIXMPLangItem( destNode->ConvertToArrayNode(), langValue );
+			XMP_Index destIndex = LookupIXMPLangItem( destNode->ConvertToArrayNode(), langValue );
 
 			if (sourceItemValue->empty()) {
 
@@ -454,14 +645,14 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 				}
 				else {
 
-
+					
 					spcISimpleNode firstQualifier = sourceItem->GetSimpleQualifier( xmlNameSpace.c_str(), xmlNameSpace.size(), "lang", AdobeXMPCommon::npos );
 					if ((!XMP_LitMatch(firstQualifier->GetValue()->c_str(), "x-default")) || !XMPUtils::GetNodeChildCount(destNode)) {
-
+						
 						CloneIXMPSubtree(sourceItem, destNode, true);
 					}
 					else {
-
+						
 						spINode destItem = AdobeXMPCore_Int::ISimpleNode_I::CreateSimpleNode( sourceItem->GetNameSpace(), sourceItem->GetName(), sourceItemValue );
 						destNode->ConvertToArrayNode()->InsertNodeAtIndex(destItem, 1);
 					}
@@ -473,7 +664,7 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 		}
 
 	}
-
+	
 	else if (sourceForm & kXMP_PropValueIsArray)  {
 		auto sourceNodeChildIter = XMPUtils::GetNodeChildIterator(sourceNode);
 		for (; sourceNodeChildIter; sourceNodeChildIter = sourceNodeChildIter->Next()) {
@@ -494,7 +685,7 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 			if (foundIndex == arrayChildCount + 1) {
 
 				CloneIXMPSubtree(sourceItem, destNode, true);
-
+				
 			}
 
 		}
@@ -503,6 +694,45 @@ const bool mergeCompound, const bool replaceOld, const bool deleteEmpty)
 	}
 
 }	// AppendSubtree_v2
+
+#if AdobePrivate
+// -------------------------------------------------------------------------------------------------
+// AppendProperties_v2
+// ----------------
+
+/* class static */ void
+XMPUtils::AppendProperties_v2(	const XMPMeta & sourceptr,
+								XMPMeta *		 destPtr,
+								XMP_OptionBits	 options )
+{
+	
+	if(sUseNewCoreAPIs) {
+		const XMPMeta2 & source = dynamic_cast<const XMPMeta2 &> (sourceptr);
+		XMPMeta2 * dest = dynamic_cast<XMPMeta2 *>(destPtr);
+		XMP_Assert(dest != 0);	// ! Enforced by wrapper.
+		auto defaultMap = INameSpacePrefixMap::GetDefaultNameSpacePrefixMap()->GetINameSpacePrefixMap_I();
+		
+
+		const bool doAll = ((options & kXMPUtil_DoAllProperties) != 0);
+		const bool replaceOld = ((options & kXMPUtil_ReplaceOldValues) != 0);
+		const bool deleteEmpty = ((options & kXMPUtil_DeleteEmptyValues) != 0);
+		const bool mergeCompound = (!replaceOld);	// ! Old API had implicit Add, superceded by explicit Replace.
+
+		auto topLevelIter = XMPUtils::GetNodeChildIterator(source.mDOM);
+		for (; topLevelIter; topLevelIter = topLevelIter->Next()) {
+			spcINode topLevelNode = topLevelIter->GetNode();
+			XMP_VarString currNameSpace = defaultMap->GetPrefix(topLevelNode->GetNameSpace())->c_str();
+			XMP_VarString nodeFullName = currNameSpace + ":" + topLevelNode->GetName()->c_str();
+			if (doAll || !IsInternalProperty(topLevelNode->GetNameSpace()->c_str(), nodeFullName)) {
+				spINode destRoot = dest->mDOM;
+				AppendSubtree(topLevelNode, destRoot, mergeCompound, replaceOld, deleteEmpty);
+
+			}
+		}
+	}
+
+}	// AppendProperties_v2
+#endif //AdobePrivate
 
 // -------------------------------------------------------------------------------------------------
 // ApplyTemplate
@@ -515,14 +745,14 @@ XMPUtils::ApplyTemplate_v2( XMPMeta *	      workingXMPBasePtr,
 {
 	XMPMeta2 * workingXMP = dynamic_cast<XMPMeta2 *>(workingXMPBasePtr);
 	if (!workingXMPBasePtr) return;
-	const XMPMeta2 & templateXMP = dynamic_cast<const XMPMeta2 &> (templateXMPBasePtr);
+	const XMPMeta2 & templateXMP = dynamic_cast<const XMPMeta2 &> (templateXMPBasePtr); 
 	bool doClear = XMP_OptionIsSet(actions, kXMPTemplate_ClearUnnamedProperties);
 	bool doAdd = XMP_OptionIsSet(actions, kXMPTemplate_AddNewProperties);
 	bool doReplace = XMP_OptionIsSet(actions, kXMPTemplate_ReplaceExistingProperties);
 
 	bool deleteEmpty = XMP_OptionIsSet(actions, kXMPTemplate_ReplaceWithDeleteEmpty);
 	doReplace |= deleteEmpty;	// Delete-empty implies Replace.
-	deleteEmpty &= (!doClear);	// Clear implies not delete-empty, but keep the implicit Replace.
+	deleteEmpty &= (!doClear);	// Clear implies not delete-empty, but keep the implicit Replace. 
 
 	bool doAll = XMP_OptionIsSet(actions, kXMPTemplate_IncludeInternalProperties);
 
@@ -555,7 +785,7 @@ XMPUtils::ApplyTemplate_v2( XMPMeta *	      workingXMPBasePtr,
 
 		auto templateTopPropIter = XMPUtils::GetNodeChildIterator(templateXMP.mDOM);
 		for (; templateTopPropIter; templateTopPropIter = templateTopPropIter->Next()) {
-			spcINode currentTemplateTopProp = templateTopPropIter->GetNode();
+			spcINode currentTemplateTopProp = templateTopPropIter->GetNode();	
 			XMP_VarString currNameSpace = defaultMap->GetPrefix(currentTemplateTopProp->GetNameSpace())->c_str();
 			XMP_VarString nodeFullName = currNameSpace + ":" + currentTemplateTopProp->GetName()->c_str();
 			XMP_ExpandedXPath	expPath;
@@ -576,10 +806,9 @@ XMPUtils::ApplyTemplate_v2( XMPMeta *	      workingXMPBasePtr,
 // DuplicateSubtree
 // ----------------
 
+static void CloneContents(spINode sourceNode, spINode &destNode) {
 
-void CloneContents(spINode sourceNode, spINode &destNode) {
-
-
+	
 	if (sourceNode->GetNodeType() == INode::kNTSimple) {
 
 		spISimpleNode sourceSimpleNode = sourceNode->ConvertToSimpleNode();
@@ -603,7 +832,7 @@ void CloneContents(spINode sourceNode, spINode &destNode) {
 	else {
 
 		spIStructureNode arraySourceNode = sourceNode->ConvertToStructureNode();
-
+		
 		spIStructureNode destArrayNode = destNode->ConvertToStructureNode();
 		for (auto childIter = arraySourceNode->Iterator(); childIter; childIter = childIter->Next()) {
 
@@ -699,11 +928,11 @@ XMP_OptionBits	 options)
 
 		XMP_ExpandedXPath srcPath;
 		ExpandXPath(sourceNS, sourceRoot, &srcPath);
-		spINode sourceNode;
+		spINode spSourceNode;
 		XMP_OptionBits sourceNodeOptions = 0;
-		XMPUtils::FindCnstNode(source.mDOM, srcPath, sourceNode, &sourceNodeOptions);
+		XMPUtils::FindCnstNode(source.mDOM, srcPath, spSourceNode, &sourceNodeOptions);
 
-		if ((!sourceNode) || (!XMP_PropIsStruct(sourceNodeOptions))) {
+		if ((!spSourceNode) || (!XMP_PropIsStruct(sourceNodeOptions))) {
 			XMP_Throw("Source must be an existing struct", kXMPErr_BadXPath);
 		}
 
@@ -719,7 +948,7 @@ XMP_OptionBits	 options)
 		}
 
 
-		for (auto sourceChildIter = XMPUtils::GetNodeChildIterator(sourceNode); sourceChildIter; sourceChildIter = sourceChildIter->Next()) {
+		for (auto sourceChildIter = XMPUtils::GetNodeChildIterator(spSourceNode); sourceChildIter; sourceChildIter = sourceChildIter->Next()) {
 
 			spINode copyNode = sourceChildIter->GetNode()->Clone();
 			if (destNode->GetNodeType() == INode::kNTStructure){
@@ -761,7 +990,7 @@ XMP_OptionBits	 options)
 
 		// *** Could use a CloneTree util here and maybe elsewhere.
 		//destNode = sourceNode->Clone();
-
+		
 		if (sourceNode->GetNodeType() == INode::kNTSimple) {
 
 			spISimpleNode sourceSimpleNode = sourceNode->ConvertToSimpleNode();
@@ -770,7 +999,7 @@ XMP_OptionBits	 options)
 			destNodeCopy = destSimpleNode;
 		}
 		else if (sourceNode->GetNodeType() == INode::kNTArray)
-		{
+		{	
 			spIArrayNode arraySourceNode = sourceNode->ConvertToArrayNode();
 			spIArrayNode destArrayNode = AdobeXMPCore_Int::IArrayNode_I::CreateArrayNode(destNode->GetNameSpace(), destNode->GetName(), arraySourceNode->GetArrayForm());
 			destNodeCopy = destArrayNode;
@@ -781,7 +1010,7 @@ XMP_OptionBits	 options)
 			}
 
 			destNodeCopy = destArrayNode;
-
+			
 		}
 		else {
 
@@ -807,12 +1036,361 @@ XMP_OptionBits	 options)
 				destNodeCopy->InsertQualifier(clonedQual);
 			}
 		}
-
+		
 		dest->mDOM->ReplaceNode(destNodeCopy);
 	}
 
 }	// DuplicateSubtree_v2
 
+#if AdobePrivate
+// -------------------------------------------------------------------------------------------------
+// CollectMultiFileXMP
+// -------------------
+
+/* class static */ void
+XMPUtils::CollectMultiFileXMP_v2(const XMPMeta & inputXMPRef,
+								XMPMeta *       multiXMPPtr,
+								XMP_OptionBits  options)
+{
+	if(sUseNewCoreAPIs) {
+		const XMPMeta2 & inputXMP = dynamic_cast<const XMPMeta2&>(inputXMPRef);
+		XMPMeta2 * multiXMP = dynamic_cast<XMPMeta2 *>(multiXMPPtr);
+
+		IgnoreParam(options);
+
+		bool transientSchemaExists = false;
+		for (auto propIter = multiXMP->mDOM->Iterator(); propIter; propIter = propIter->Next()) {
+			spINode propNode = propIter->GetNode();
+			if (XMP_LitMatch(propNode->GetNameSpace()->c_str(), kXMP_NS_Transient)) {
+				//CloneIXMPSubtree( propNode, multiXMP->mDOM,false);
+				transientSchemaExists = true;
+				break;
+			}
+		}
+		if (!transientSchemaExists) {
+
+			if (XMPUtils::GetNodeChildCount(multiXMP->mDOM)) XMP_Throw("Multi XMP must be empty at first", kXMPErr_BadParam);
+			spcIUTF8String aboutURI = multiXMP->mDOM->GetAboutURI();
+			spINode clonedCopy = inputXMP.mDOM->Clone();
+			multiXMP->mDOM = clonedCopy->ConvertToMetadata();
+			multiXMP->mDOM->SetAboutURI(aboutURI->c_str(), aboutURI->size());
+			multiXMP->SetProperty(kXMP_NS_Transient, "MultiFileCount", "1", kXMP_NoOptions);
+			multiXMP->SetProperty(kXMP_NS_Transient, "DifferingProperties", 0, kXMP_PropValueIsArray);
+
+		}
+		else {
+
+			// This is a later call, add the input XMP with checking for differing properties.
+
+			XMP_Index fileCount;
+			XMP_OptionBits voidOptions;
+			bool found = multiXMP->GetProperty_Int(kXMP_NS_Transient, "MultiFileCount", &fileCount, &voidOptions);
+			XMP_Assert(found);
+			multiXMP->SetProperty_Int(kXMP_NS_Transient, "MultiFileCount", fileCount + 1, kXMP_NoOptions);
+#if TraceMultiFile
+			fflush(stdout); printf ( "\nCollectMultiFileXMP adding file #%d\n", fileCount+1 ); fflush(stdout);
+#endif
+
+			for (auto inputPropIter = XMPUtils::GetNodeChildIterator(inputXMP.mDOM); inputPropIter; inputPropIter = inputPropIter->Next()) {
+				spINode inputPropNode = AdobeXMPCore_Int::const_pointer_cast<INode>(inputPropIter->GetNode());
+				XMP_Assert(!XMP_LitMatch(inputPropNode->GetNameSpace()->c_str(), kXMP_NS_Transient));
+				spINode multiPropNode = multiXMP->mDOM->GetIStructureNode_I()->GetNode(inputPropNode->GetNameSpace(), inputPropNode->GetName());
+				if (!multiPropNode) {
+
+					NoteDifferingProperty_v2(multiXMP->mDOM, spINode(), inputPropNode);
+				}
+				// if subtrees not equal
+				else if (!CompareSubtrees(inputPropNode, multiPropNode)){
+					NoteDifferingProperty_v2(multiXMP->mDOM, multiPropNode, inputPropNode);
+					multiXMP->mDOM->GetIStructureNode_I()->RemoveNode(inputPropNode->GetNameSpace(), inputPropNode->GetName());
+				}
+
+			}
+			std::vector<spINode> nodesToBeDeleted;
+
+			for (auto multiPropIter = multiXMP->mDOM->Iterator(); multiPropIter; multiPropIter = multiPropIter->Next()) {
+
+				spINode multiPropNode = multiPropIter->GetNode();
+				if (XMP_LitMatch(multiPropNode->GetNameSpace()->c_str(), kXMP_NS_Transient)) continue;
+				spINode inputPropNode = inputXMP.mDOM->GetIStructureNode_I()->RemoveNode(multiPropNode->GetNameSpace(), multiPropNode->GetName());
+				if (!inputPropNode) {
+					//NoteDifferingProperty ( xmpxSchema, multiProp, 0 );
+					NoteDifferingProperty_v2(multiXMP->mDOM, multiPropNode, spINode());
+					nodesToBeDeleted.push_back(multiPropNode);
+				}
+
+			}
+			for (size_t idx = 0; idx < nodesToBeDeleted.size(); ++idx) {
+
+				multiXMP->mDOM->GetIStructureNode_I()->RemoveNode(nodesToBeDeleted[idx]->GetNameSpace(), nodesToBeDeleted[idx]->GetName());
+
+			}
+
+		}
+	}
+	
+}	// CollectMultiFileXMP
+
+// -------------------------------------------------------------------------------------------------
+// DistributeMultiFileXMP
+// ----------------------
+
+/* class static */ void
+XMPUtils::DistributeMultiFileXMP_v2(const XMPMeta & multiXMPRef,
+                                   XMPMeta *       outputXMPPtr,
+                                   XMP_OptionBits  options)
+{
+	if(sUseNewCoreAPIs) {
+		const XMPMeta2 & multiXMP = dynamic_cast<const XMPMeta2 &> (multiXMPRef);
+		XMPMeta2 * outputXMP = dynamic_cast<XMPMeta2 *>(outputXMPPtr);
+		IgnoreParam(options);
+
+		// Delete the properties that, well, need deleting.
+		spcINode delArray = multiXMP.mDOM->GetNode(kXMP_NS_Transient, AdobeXMPCommon::npos, "DeletedProperties", AdobeXMPCommon::npos );
+		if (delArray) {
+			for (size_t propNum = 1, propLim = XMPUtils::GetNodeChildCount(delArray); propNum <= propLim; ++propNum) {
+				spcINode delItem = delArray->ConvertToArrayNode()->GetNodeAtIndex(propNum);
+				spcINode delURI = delItem->ConvertToStructureNode()->GetNode( kXMP_NS_Transient, AdobeXMPCommon::npos, "DelURI", AdobeXMPCommon::npos );
+				spcINode delPath = delItem->ConvertToStructureNode()->GetNode( kXMP_NS_Transient, AdobeXMPCommon::npos, "DelPath", AdobeXMPCommon::npos );
+				if (!delURI || !delPath) XMP_Throw("Invalid DeletedProperties entry", kXMPErr_BadXMP);
+				outputXMP->DeleteProperty(delURI->ConvertToSimpleNode()->GetValue()->c_str(), delPath->ConvertToSimpleNode()->GetValue()->c_str());
+
+			}
+		}
+
+		for (auto propIter = multiXMP.mDOM->Iterator(); propIter; propIter = propIter->Next()) {
+
+			spINode propNode = propIter->GetNode();
+			if (XMP_LitMatch(propNode->GetNameSpace()->c_str(), kXMP_NS_Transient)) continue;
+			spINode outputRoot = outputXMP->mDOM;
+			AppendSubtree(propNode, outputRoot, false, true, false);
+		}
+		// Update the normal (non-transient) properties, replacing any existing value.
+	}
+	
+
+}	// DistributeMultiFileXMP
+
+// -------------------------------------------------------------------------------------------------
+// IsPropertyMultiValued
+// ---------------------
+
+// *** Depends on the prefix for the transient namespace!
+
+/* class static */ bool
+XMPUtils::IsPropertyMultiValued_v2(const XMPMeta & multiXMPRef,
+                                  XMP_StringPtr   propNS,
+                                  XMP_StringPtr   propName)
+
+{
+	if(sUseNewCoreAPIs) {
+
+		const XMPMeta2 & multiXMP = dynamic_cast<const XMPMeta2 &> (multiXMPRef);
+		spINode dpArray = multiXMP.mDOM->GetNode( kXMP_NS_Transient, AdobeXMPCommon::npos, "DifferingProperties", AdobeXMPCommon::npos );
+		if (!dpArray) return false;
+
+		XMP_ExpandedXPath expPath;
+		ExpandXPath(propNS, propName, &expPath);		// *** Should have LookupBase utility.
+		XMP_StringPtr baseProp = expPath[kRootPropStep].step.c_str();
+		if (expPath[kRootPropStep].options & kXMP_StepIsAlias) {
+			XMP_AliasMapPos aliasPos = sRegisteredAliasMap->find(expPath[kRootPropStep].step);
+			XMP_Assert(aliasPos != sRegisteredAliasMap->end());
+			baseProp = aliasPos->second[kRootPropStep].step.c_str();
+		}
+		XMP_Index dpIndex = LookupFieldSelector_v2( dpArray->ConvertToArrayNode(), "DiffPath", baseProp);
+		if (dpIndex == -1) return false;
+		return true;
+	}
+	else {
+		return false;
+	}
+
+}	// IsPropertyMultiValued
+
+// -------------------------------------------------------------------------------------------------
+// GetDateRange
+// ------------
+
+// *** Depends on the prefix for the transient namespace!
+
+/* class static */ bool
+XMPUtils::GetDateRange_v2(const XMPMeta & multiXMPRef,
+                         XMP_StringPtr   propNS,
+                         XMP_StringPtr   propName,
+                         XMP_DateTime *  oldest,
+                         XMP_DateTime *  newest)
+{
+	if(sUseNewCoreAPIs) {
+		const XMPMeta2 & multiXMP = dynamic_cast<const XMPMeta2 &> (multiXMPRef);
+		spINode dpArray = multiXMP.mDOM->GetNode( kXMP_NS_Transient, AdobeXMPCommon::npos, "DifferingProperties", AdobeXMPCommon::npos );
+		if (!dpArray) return false;
+
+		XMP_ExpandedXPath expPath;
+		ExpandXPath(propNS, propName, &expPath);
+		if (expPath.size() > 2) return false;	// Only top level properties are tracked.
+		XMP_StringPtr baseProp = expPath[kRootPropStep].step.c_str();
+		if (expPath[kRootPropStep].options & kXMP_StepIsAlias) {
+			XMP_AliasMapPos aliasPos = sRegisteredAliasMap->find(expPath[kRootPropStep].step);
+			XMP_Assert(aliasPos != sRegisteredAliasMap->end());
+			baseProp = aliasPos->second[kRootPropStep].step.c_str();
+		}
+		XMP_Index propIndex = LookupFieldSelector_v2( dpArray->ConvertToArrayNode(), "DiffPath", baseProp);
+		if (propIndex == -1) return false;
+
+		spINode dpItem = dpArray->ConvertToArrayNode()->GetNodeAtIndex(propIndex);
+		spINode oldestNode = FindChildNode(dpItem, "DiffOldest", kXMP_NS_Transient, false, 0);
+		if (!oldestNode) return false;
+		spINode newestNode = FindChildNode(dpItem, "DiffNewest", kXMP_NS_Transient, false, 0);
+		if (!newestNode) XMP_Throw("Missing xmpx:DiffNewest property", kXMPErr_BadXMP);
+		XMPUtils::ConvertToDate( oldestNode->ConvertToSimpleNode()->GetValue()->c_str(), oldest);
+		XMPUtils::ConvertToDate( newestNode->ConvertToSimpleNode()->GetValue()->c_str(), newest);
+		return true;
+	}
+	else  {
+		return true;
+	}
+}	// GetDateRange
+
+// -------------------------------------------------------------------------------------------------
+// GetMergedListPath
+// -----------------
+
+// *** Depends on the prefix for the transient namespace!
+
+/* class static */ bool
+XMPUtils::GetMergedListPath_v2(const XMPMeta & multiXMPRef,
+                              XMP_StringPtr   propNS,
+                              XMP_StringPtr   propName,
+                              XMP_VarString * pathStr)
+{
+
+	if(sUseNewCoreAPIs) {
+
+		const XMPMeta2 & multiXMP = dynamic_cast<const XMPMeta2 &> (multiXMPRef);
+		pathStr->erase();
+
+		spINode dpArray = multiXMP.mDOM->GetNode( kXMP_NS_Transient, AdobeXMPCommon::npos, "DifferingProperties", AdobeXMPCommon::npos );
+		if (!dpArray) return false;
+		XMP_ExpandedXPath expPath;
+		ExpandXPath(propNS, propName, &expPath);
+		if (expPath.size() > 2) return false;	// Only top level properties are tracked.
+		XMP_StringPtr baseProp = expPath[kRootPropStep].step.c_str();
+		if (expPath[kRootPropStep].options & kXMP_StepIsAlias) {
+			XMP_AliasMapPos aliasPos = sRegisteredAliasMap->find(expPath[kRootPropStep].step);
+			XMP_Assert(aliasPos != sRegisteredAliasMap->end());
+			baseProp = aliasPos->second[kRootPropStep].step.c_str();
+		}
+		spcINode   oldestNode, newestNode;
+		XMP_Index propIndex = LookupFieldSelector_v2( dpArray->ConvertToArrayNode(), "DiffPath", baseProp);
+		if (propIndex == -1) return false;
+		spINode dpItem = dpArray->ConvertToArrayNode()->GetNodeAtIndex(propIndex);
+		spINode mergedList = FindChildNode(dpItem, "DiffMergedList", kXMP_NS_Transient, false, 0);
+		if (!mergedList) return false;
+		
+		XMPUtils::ComposeArrayItemPath(kXMP_NS_Transient, "DifferingProperties", propIndex, pathStr);
+		XMPUtils::ComposeStructFieldPath(kXMP_NS_Transient, pathStr->c_str(), kXMP_NS_Transient, "DiffMergedList", pathStr);
+		return true;
+	}
+	else {
+		return false;
+	}
+
+}	// GetMergedListPath
+
+// -------------------------------------------------------------------------------------------------
+// RemoveMultiValueInfo
+// --------------------
+
+// *** Depends on the prefix for the transient namespace!
+
+/* class static */ void
+XMPUtils::RemoveMultiValueInfo_v2(XMPMeta *     multiXMPPtr,
+                                 XMP_StringPtr propNS,
+                                 XMP_StringPtr propName)
+{
+
+	XMPMeta2 *     multiXMP = dynamic_cast<XMPMeta2 *>(multiXMPPtr);
+	if (multiXMP) {
+		spINode diffArray = multiXMP->mDOM->GetNode( kXMP_NS_Transient, AdobeXMPCommon::npos, "DifferingProperties", AdobeXMPCommon::npos );
+		spINode delArray = multiXMP->mDOM->GetNode(kXMP_NS_Transient, AdobeXMPCommon::npos, "DeletedProperties", AdobeXMPCommon::npos );
+
+
+		if (*propName == 0) {
+
+			// Remove the info for all properties in the given schema.
+
+			if (diffArray) {
+				for (size_t itemNum = 1; itemNum <= XMPUtils::GetNodeChildCount(diffArray); itemNum++){
+
+					spINode  diffItem = diffArray->ConvertToArrayNode()->GetNodeAtIndex(itemNum);
+					spINode diffSchema = diffItem->ConvertToStructureNode()->GetNode( kXMP_NS_Transient, AdobeXMPCommon::npos, "DiffURI", AdobeXMPCommon::npos );
+					XMP_Assert(diffSchema != libcppNULL && diffSchema->GetNodeType() == INode::kNTSimple);
+					if (!strcmp(propNS, diffSchema->ConvertToSimpleNode()->GetValue()->c_str())){
+
+						diffArray->ConvertToArrayNode()->RemoveNodeAtIndex(itemNum);
+						--itemNum;
+					}
+				}
+			}
+
+			if (delArray) {
+				for (size_t itemNum = 1; itemNum <= XMPUtils::GetNodeChildCount(delArray); itemNum++) {
+
+					spINode delItem = delArray->ConvertToArrayNode()->GetNodeAtIndex(itemNum);
+					spINode delURI = delItem->ConvertToStructureNode()->GetNode( kXMP_NS_Transient, AdobeXMPCommon::npos, "DelURI", AdobeXMPCommon::npos );
+					XMP_Assert(delURI && delURI->GetNodeType() == INode::kNTSimple);
+					if (!strcmp( delURI->ConvertToSimpleNode()->GetValue()->c_str(), propNS)) {
+
+						diffArray->ConvertToArrayNode()->RemoveNodeAtIndex(itemNum);
+						--itemNum;
+					}
+				}
+			}
+
+		}
+		else {
+
+			// Remove the info for the named property.
+
+			XMP_ExpandedXPath expPath;
+			ExpandXPath(propNS, propName, &expPath);		// *** Should have LookupBase utility.
+		
+			XMP_StringPtr baseProp = expPath[kRootPropStep].step.c_str();
+
+			if (expPath[kRootPropStep].options & kXMP_StepIsAlias) {
+				XMP_AliasMapPos aliasPos = sRegisteredAliasMap->find(expPath[kRootPropStep].step);
+				XMP_Assert(aliasPos != sRegisteredAliasMap->end());
+				baseProp = aliasPos->second[kRootPropStep].step.c_str();
+			}
+
+			if (diffArray) {
+
+				for (size_t itemNum = 1; itemNum <= XMPUtils::GetNodeChildCount(diffArray); itemNum++) {
+					spINode  diffItem = diffArray->ConvertToArrayNode()->GetNodeAtIndex(itemNum);
+					spINode diffPath = diffItem->ConvertToStructureNode()->GetNode( kXMP_NS_Transient, AdobeXMPCommon::npos, "DiffPath", AdobeXMPCommon::npos );
+					XMP_Assert(diffPath);
+					if (IsPathPrefix( diffPath->ConvertToSimpleNode()->GetValue()->c_str(), baseProp)) {
+						diffArray->ConvertToArrayNode()->RemoveNodeAtIndex( itemNum );
+					}
+				}
+			}
+			if (delArray) {
+				for (size_t itemNum = 1; itemNum <= XMPUtils::GetNodeChildCount(delArray); itemNum++) {
+
+					spINode delItem = delArray->ConvertToArrayNode()->GetNodeAtIndex(itemNum);
+					spINode delURI = delItem->ConvertToStructureNode()->GetNode( kXMP_NS_Transient, AdobeXMPCommon::npos, "DelPath", AdobeXMPCommon::npos );
+					XMP_Assert(delURI && delURI->GetNodeType() == INode::kNTSimple);
+					if (IsPathPrefix( delURI->ConvertToSimpleNode()->GetValue()->c_str(), baseProp)) {
+						diffArray->ConvertToArrayNode()->RemoveNodeAtIndex(itemNum);
+					}
+				}
+			}
+		}
+	}
+
+}	// RemoveMultiValueInfo
+
+#endif //AdobePrivate
 // -------------------------------------------------------------------------------------------------
 // RemoveProperties
 // ----------------
@@ -843,7 +1421,7 @@ XMPUtils::RemoveProperties_v2(XMPMeta *		xmpMetaPtr,
 		if (*schemaNS == 0) XMP_Throw("Property name requires schema namespace", kXMPErr_BadParam);
 
 		XMP_ExpandedXPath expPath;
-
+		
 		ExpandXPath(schemaNS, propName, &expPath);
 		XMP_Index propIndex = 0;
 		spINode propNode;
