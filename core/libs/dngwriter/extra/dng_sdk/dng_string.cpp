@@ -27,9 +27,15 @@
 #endif
 
 #if qWinOS
-#include <windows.h>
-#include <winnls.h>
-#include <stringapiset.h>
+
+#   include <windows.h>
+#   include <winnls.h>
+#   include <stringapiset.h>
+
+#   ifndef SORT_DIGITSASNUMBERS
+#       define SORT_DIGITSASNUMBERS      0x00000008  // use digits as numbers sort method
+#   endif
+
 #endif
 
 #if qiPhone || qAndroid || qLinux
