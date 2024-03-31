@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 01:33+0000\n"
-"PO-Revision-Date: 2024-03-29 08:28+0200\n"
+"POT-Creation-Date: 2024-03-31 01:58+0000\n"
+"PO-Revision-Date: 2024-03-30 11:07+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -4434,10 +4434,9 @@ msgstr "Декодувальники відео"
 #: core/app/views/utils/componentsinfodlg.cpp:298
 #: core/libs/dialogs/libsinfodlg.cpp:533 core/libs/dialogs/libsinfodlg.cpp:539
 #: core/libs/dialogs/libsinfodlg.cpp:614
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "no entry"
-msgstr "Країна"
+msgstr "немає записів"
 
 #: core/app/views/utils/componentsinfodlg.cpp:229
 #, kde-format
@@ -6294,28 +6293,7 @@ msgid "ResNet50"
 msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "kind of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -34149,40 +34127,40 @@ msgctxt "@info"
 msgid "Cannot save settings to the White Color Balance text file."
 msgstr "Не вдалося зберегти текстовий файл параметрів балансу білого кольору."
 
-#: core/libs/dngwriter/dngsettings.cpp:80
+#: core/libs/dngwriter/dngsettings.cpp:73
 #, kde-format
 msgid "Embed Original File"
 msgstr "Вбудувати початковий файл"
 
-#: core/libs/dngwriter/dngsettings.cpp:81
+#: core/libs/dngwriter/dngsettings.cpp:74
 #, kde-format
 msgid "Lossless Compression"
 msgstr "Стискання без втрат"
 
-#: core/libs/dngwriter/dngsettings.cpp:85
+#: core/libs/dngwriter/dngsettings.cpp:78
 #, kde-format
 msgid "JPEG Preview:"
 msgstr "Перегляд JPEG:"
 
-#: core/libs/dngwriter/dngsettings.cpp:87
+#: core/libs/dngwriter/dngsettings.cpp:80
 #, kde-format
 msgctxt "embedded preview type in dng file"
 msgid "None"
 msgstr "Немає"
 
-#: core/libs/dngwriter/dngsettings.cpp:88
+#: core/libs/dngwriter/dngsettings.cpp:81
 #, kde-format
 msgctxt "embedded preview type in dng file"
 msgid "Medium"
 msgstr "Середній"
 
-#: core/libs/dngwriter/dngsettings.cpp:89
+#: core/libs/dngwriter/dngsettings.cpp:82
 #, kde-format
 msgctxt "embedded preview type in dng file"
 msgid "Full size"
 msgstr "Повнорозмірний"
 
-#: core/libs/dngwriter/dngsettings.cpp:93
+#: core/libs/dngwriter/dngsettings.cpp:86
 #, kde-format
 msgid ""
 "Warning: ExifTool is not available to post-process metadata. Without "
@@ -36980,30 +36958,30 @@ msgstr "ExifTool немає у системі або файл програми �
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl немає у системі або файл програми не є виконуваним"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:153
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:148
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr "Помилка синхронізації між каналами"
 
-#: core/libs/metadataengine/focuspoint/focuspoint.cpp:118
+#: core/libs/metadataengine/focuspoint/focuspoint.cpp:111
 #, kde-format
 msgctxt "Focus point type description"
 msgid "In Focus"
 msgstr "У фокусі"
 
-#: core/libs/metadataengine/focuspoint/focuspoint.cpp:123
+#: core/libs/metadataengine/focuspoint/focuspoint.cpp:116
 #, kde-format
 msgctxt "Focus point type description"
 msgid "Selected"
 msgstr "Вибрано"
 
-#: core/libs/metadataengine/focuspoint/focuspoint.cpp:128
+#: core/libs/metadataengine/focuspoint/focuspoint.cpp:121
 #, kde-format
 msgctxt "Focus point type description"
 msgid "Selected In Focus"
 msgstr "Вибрано у фокусі"
 
-#: core/libs/metadataengine/focuspoint/focuspoint.cpp:133
+#: core/libs/metadataengine/focuspoint/focuspoint.cpp:126
 #, kde-format
 msgctxt "Focus point type description"
 msgid "Inactive"
@@ -38635,13 +38613,13 @@ msgstr "Загальний розмір: "
 msgid "Selection Properties"
 msgstr "Властивості позначеного"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:223
+#: core/libs/rawengine/drawdecoderwidget.cpp:178
 #, kde-format
 msgctxt "@option:check"
 msgid "16 bits color depth"
 msgstr "16-бітова глибина кольору"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:224
+#: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -38660,13 +38638,13 @@ msgstr ""
 "точки білого у 99 процентилів. Такий режим швидший за 16-бітове декодування."
 "</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:243
+#: core/libs/rawengine/drawdecoderwidget.cpp:198
 #, kde-format
 msgctxt "@option:check"
 msgid "Interpolate RGB as four colors"
 msgstr "Інтерполювати RGB як чотири кольори"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:244
+#: core/libs/rawengine/drawdecoderwidget.cpp:199
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -38687,19 +38665,19 @@ msgstr ""
 "позбувається фальшивого візерунка сітки 2x2 за допомогою методу якості VNG "
 "або переплітається з методом AHD.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:258
+#: core/libs/rawengine/drawdecoderwidget.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Visit LibRaw project website"
 msgstr "Відвідайте вебсайт проєкту LibRaw"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:268
+#: core/libs/rawengine/drawdecoderwidget.cpp:223
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not stretch or rotate pixels"
 msgstr "Не витягувати і не повертати пікселі"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:270
+#: core/libs/rawengine/drawdecoderwidget.cpp:225
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -38715,55 +38693,55 @@ msgstr ""
 "співвідношення сторін. У кожному разі, цей параметр гарантує, що кожен "
 "отриманий піксель відповідатиме точно одному пікселю RAW.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:278
+#: core/libs/rawengine/drawdecoderwidget.cpp:233
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Quality:"
 msgstr "Якість:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:282
+#: core/libs/rawengine/drawdecoderwidget.cpp:238
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "Bilinear"
 msgstr "Білінійна"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:283
+#: core/libs/rawengine/drawdecoderwidget.cpp:239
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "VNG"
 msgstr "VNG"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:284
+#: core/libs/rawengine/drawdecoderwidget.cpp:240
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "PPG"
 msgstr "PPG"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:285
+#: core/libs/rawengine/drawdecoderwidget.cpp:241
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "AHD"
 msgstr "AHD"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:286
+#: core/libs/rawengine/drawdecoderwidget.cpp:242
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "DCB"
 msgstr "DCB"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:287
+#: core/libs/rawengine/drawdecoderwidget.cpp:243
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "DHT"
 msgstr "DHT"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:288
+#: core/libs/rawengine/drawdecoderwidget.cpp:244
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "AAHD"
 msgstr "AAHD"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:292
+#: core/libs/rawengine/drawdecoderwidget.cpp:248
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -38829,13 +38807,13 @@ msgstr ""
 "node/2306, щоб дізнатися більше.</item><item><emphasis strong='true'>AAHD</"
 "emphasis>: модифікована інтерполяція AHD.</item></list></para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:340
+#: core/libs/rawengine/drawdecoderwidget.cpp:296
 #, kde-format
 msgctxt "@label:slider"
 msgid "Pass:"
 msgstr "Проходи:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:341
+#: core/libs/rawengine/drawdecoderwidget.cpp:297
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -38856,13 +38834,13 @@ msgstr ""
 "<emphasis strong='true'>DCB</emphasis> та <emphasis strong='true'>VCD і AHD</"
 "emphasis>.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:353
+#: core/libs/rawengine/drawdecoderwidget.cpp:309
 #, kde-format
 msgctxt "@option:check"
 msgid "Refine interpolation"
 msgstr "Покращена інтерполяція"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:354
+#: core/libs/rawengine/drawdecoderwidget.cpp:310
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -38880,43 +38858,43 @@ msgstr ""
 "strong='true'>VCD і AHD</emphasis>: увімкнути покращену інтерполяцію видимих "
 "кольорів (EECI) для збільшення різкості.</item></list></para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:367
+#: core/libs/rawengine/drawdecoderwidget.cpp:323
 #, kde-format
 msgctxt "@label"
 msgid "Demosaicing"
 msgstr "Усунення мозаїчності"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:375
+#: core/libs/rawengine/drawdecoderwidget.cpp:331
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Method:"
 msgstr "Метод:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:377
+#: core/libs/rawengine/drawdecoderwidget.cpp:333
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default D65"
 msgstr "Типовий D65"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:378
+#: core/libs/rawengine/drawdecoderwidget.cpp:334
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Camera"
 msgstr "Фотоапарат"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:379
+#: core/libs/rawengine/drawdecoderwidget.cpp:335
 #, kde-format
 msgctxt "@item:inlistbox set while balance automatically"
 msgid "Automatic"
 msgstr "Автоматично"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:380
+#: core/libs/rawengine/drawdecoderwidget.cpp:336
 #, kde-format
 msgctxt "@item:inlistbox set white balance manually"
 msgid "Manual"
 msgstr "Вручну"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:382
+#: core/libs/rawengine/drawdecoderwidget.cpp:338
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -38942,13 +38920,13 @@ msgstr ""
 "Встановити нетипові значення кольорової температури і рівня зеленого.</"
 "item></list></para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:397
+#: core/libs/rawengine/drawdecoderwidget.cpp:353
 #, kde-format
 msgctxt "@label:slider"
 msgid "T(K):"
 msgstr "T(у K):"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:398
+#: core/libs/rawengine/drawdecoderwidget.cpp:354
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -38958,13 +38936,13 @@ msgstr ""
 "<title>Температура</title><para>Тут ви можете встановити кольорову "
 "температуру у градусах Кельвіна.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:405
+#: core/libs/rawengine/drawdecoderwidget.cpp:361
 #, kde-format
 msgctxt "@label:slider Green component"
 msgid "Green:"
 msgstr "Зелений:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:406
+#: core/libs/rawengine/drawdecoderwidget.cpp:362
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -38974,37 +38952,37 @@ msgstr ""
 "<para>Тут ви можете встановити зелений компонент для визначення рівня "
 "вилучення відтінків пурпурового.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:409
+#: core/libs/rawengine/drawdecoderwidget.cpp:365
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Highlights:"
 msgstr "Виблиски:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:411
+#: core/libs/rawengine/drawdecoderwidget.cpp:367
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Solid white"
 msgstr "Суцільний білий"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:412
+#: core/libs/rawengine/drawdecoderwidget.cpp:368
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Unclip"
 msgstr "Не об'єднувати"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:413
+#: core/libs/rawengine/drawdecoderwidget.cpp:369
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Blend"
 msgstr "Змішати"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:414
+#: core/libs/rawengine/drawdecoderwidget.cpp:370
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Rebuild"
 msgstr "Перебудувати"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:416
+#: core/libs/rawengine/drawdecoderwidget.cpp:372
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39026,13 +39004,13 @@ msgstr ""
 "білий.</item><item><emphasis strong='true'>Перебудувати</emphasis>: "
 "перебудувати виблиски за допомогою значення рівня.</item></list></para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:427
+#: core/libs/rawengine/drawdecoderwidget.cpp:383
 #, kde-format
 msgctxt "@label:slider Highlight reconstruct level"
 msgid "Level:"
 msgstr "Рівень:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:431
+#: core/libs/rawengine/drawdecoderwidget.cpp:387
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39042,26 +39020,26 @@ msgstr ""
 "<title>Рівень</title><para>Тут можна вказати рівень перебудови виблисків. "
 "Низькі значення нададуть перевагу білому, а високі — кольорам.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:435
+#: core/libs/rawengine/drawdecoderwidget.cpp:391
 #, kde-format
 msgctxt "@option:check"
 msgid "Exposure Correction (E.V)"
 msgstr "Виправлення експозиції"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:436
+#: core/libs/rawengine/drawdecoderwidget.cpp:392
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "<para>Turn on the exposure correction before interpolation.</para>"
 msgstr ""
 "<para>Увімкнути виправлення експозиції до застосування інтерполяції.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:439
+#: core/libs/rawengine/drawdecoderwidget.cpp:395
 #, kde-format
 msgctxt "@label:slider"
 msgid "Linear Shift:"
 msgstr "Лінійний зсув:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:444
+#: core/libs/rawengine/drawdecoderwidget.cpp:400
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39071,13 +39049,13 @@ msgstr ""
 "<title>Зсув</title><para>Лінійний зсув виправлення експозиції до "
 "інтерполяції у лінійній шкалі під час виправлення експозиції.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:447
+#: core/libs/rawengine/drawdecoderwidget.cpp:403
 #, kde-format
 msgctxt "@label:slider"
 msgid "Highlight:"
 msgstr "Виблиски:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:452
+#: core/libs/rawengine/drawdecoderwidget.cpp:408
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39089,13 +39067,13 @@ msgstr ""
 "ділянок під час виправлення експозиції до інтерполяції. Має помітний вплив, "
 "лише якщо виправлення зсуву має значення > 1,0.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:456
+#: core/libs/rawengine/drawdecoderwidget.cpp:412
 #, kde-format
 msgctxt "@option:check"
 msgid "Correct false colors in highlights"
 msgstr "Виправляти фальшиві кольори на пересвічених ділянках"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:457
+#: core/libs/rawengine/drawdecoderwidget.cpp:413
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39107,13 +39085,13 @@ msgstr ""
 "буде оброблено набагато точніше, без «рожевих хмар» (та синіх відблисків від "
 "ламп розжарювання).</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:461
+#: core/libs/rawengine/drawdecoderwidget.cpp:417
 #, kde-format
 msgctxt "@option:check"
 msgid "Auto Brightness"
 msgstr "Автояскравість"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:462
+#: core/libs/rawengine/drawdecoderwidget.cpp:418
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39124,13 +39102,13 @@ msgstr ""
 "фіксований рівень білого і ігноруватиме гістограму під час налаштування "
 "яскравості.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:465
+#: core/libs/rawengine/drawdecoderwidget.cpp:421
 #, kde-format
 msgctxt "@label:slider"
 msgid "Brightness:"
 msgstr "Яскравість:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:470
+#: core/libs/rawengine/drawdecoderwidget.cpp:426
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39140,13 +39118,13 @@ msgstr ""
 "<title>Яскравість</title><para>Задайте рівень яскравості остаточного "
 "зображення. Типовим є значення 1.0 (працює лише у 8-бітовому режимі).</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:480
+#: core/libs/rawengine/drawdecoderwidget.cpp:436
 #, kde-format
 msgctxt "@option:check Black point"
 msgid "Black:"
 msgstr "Чорний:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:481
+#: core/libs/rawengine/drawdecoderwidget.cpp:437
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39158,7 +39136,7 @@ msgstr ""
 "декодування знімків RAW. Якщо ви вимкнете цей параметр, значення Точки "
 "чорного буде обчислено автоматично.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:488
+#: core/libs/rawengine/drawdecoderwidget.cpp:444
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39168,13 +39146,13 @@ msgstr ""
 "<title>Значення точки чорного</title><para>Тут ви можете вказати значення "
 "особливої точки чорного остаточного зображення.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:491
+#: core/libs/rawengine/drawdecoderwidget.cpp:447
 #, kde-format
 msgctxt "@option:check White point"
 msgid "White:"
 msgstr "Білий:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:492
+#: core/libs/rawengine/drawdecoderwidget.cpp:448
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39186,7 +39164,7 @@ msgstr ""
 "декодування знімків RAW. Якщо ви вимкнете цей параметр, значення Точки "
 "білого буде обчислено автоматично.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:499
+#: core/libs/rawengine/drawdecoderwidget.cpp:455
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39196,37 +39174,37 @@ msgstr ""
 "<title>Значення точки білого</title><para>Тут ви можете вказати значення "
 "особливої точки білого остаточного зображення.</para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:539
+#: core/libs/rawengine/drawdecoderwidget.cpp:495
 #, kde-format
 msgctxt "@label"
 msgid "White Balance"
 msgstr "Баланс білого"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:547
+#: core/libs/rawengine/drawdecoderwidget.cpp:503
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Noise reduction:"
 msgstr "Вилучення шумів:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:549
+#: core/libs/rawengine/drawdecoderwidget.cpp:505
 #, kde-format
 msgctxt "@item:inlistbox Noise Reduction"
 msgid "None"
 msgstr "Немає"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:550
+#: core/libs/rawengine/drawdecoderwidget.cpp:506
 #, kde-format
 msgctxt "@item:inlistbox Noise Reduction"
 msgid "Wavelets"
 msgstr "Вейвлети"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:551
+#: core/libs/rawengine/drawdecoderwidget.cpp:507
 #, kde-format
 msgctxt "@item:inlistbox Noise Reduction"
 msgid "FBDD"
 msgstr "FBDD"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:553
+#: core/libs/rawengine/drawdecoderwidget.cpp:509
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39249,37 +39227,37 @@ msgstr ""
 "Before Demosaicing Denoising або несправжнє усування шумів до усування "
 "мозаїчності. Застосовується до інтерполяції.</item></list></para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:578
+#: core/libs/rawengine/drawdecoderwidget.cpp:534
 #, kde-format
 msgctxt "@label"
 msgid "Corrections"
 msgstr "Виправлення"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:586
+#: core/libs/rawengine/drawdecoderwidget.cpp:542
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Camera Profile:"
 msgstr "Профіль фотоапарата:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:588
+#: core/libs/rawengine/drawdecoderwidget.cpp:544
 #, kde-format
 msgctxt "@item:inlistbox Camera Profile"
 msgid "None"
 msgstr "Немає"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:589
+#: core/libs/rawengine/drawdecoderwidget.cpp:545
 #, kde-format
 msgctxt "@item:inlistbox Camera Profile"
 msgid "Embedded"
 msgstr "Вбудований"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:590
+#: core/libs/rawengine/drawdecoderwidget.cpp:546
 #, kde-format
 msgctxt "@item:inlistbox Camera Profile"
 msgid "Custom"
 msgstr "Нетиповий"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:592
+#: core/libs/rawengine/drawdecoderwidget.cpp:548
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39299,56 +39277,56 @@ msgstr ""
 "вказано.</item><item><emphasis strong='true'>Нетиповий</emphasis>: "
 "використовувати нетиповий вхідний профіль кольорів.</item></list></para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:603
-#: core/libs/rawengine/drawdecoderwidget.cpp:637
+#: core/libs/rawengine/drawdecoderwidget.cpp:559
+#: core/libs/rawengine/drawdecoderwidget.cpp:593
 #, kde-format
 msgctxt "@info: open file filters"
 msgid "ICC Files (*.icc *.icm)"
 msgstr "Файли ICC (*.icc *.iсм)"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:605
+#: core/libs/rawengine/drawdecoderwidget.cpp:561
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Workspace:"
 msgstr "Робочий простір:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:607
+#: core/libs/rawengine/drawdecoderwidget.cpp:563
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Raw (no profile)"
 msgstr "Без профілю"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:608
+#: core/libs/rawengine/drawdecoderwidget.cpp:564
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "sRGB"
 msgstr "sRGB"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:609
+#: core/libs/rawengine/drawdecoderwidget.cpp:565
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Adobe RGB"
 msgstr "Adobe RGB"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:610
+#: core/libs/rawengine/drawdecoderwidget.cpp:566
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Wide Gamut"
 msgstr "Wide Gamut"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:611
+#: core/libs/rawengine/drawdecoderwidget.cpp:567
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Pro-Photo"
 msgstr "Pro-Photo"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:612
+#: core/libs/rawengine/drawdecoderwidget.cpp:568
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Custom"
 msgstr "Нетиповий"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:614
+#: core/libs/rawengine/drawdecoderwidget.cpp:570
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39389,19 +39367,19 @@ msgstr ""
 "використовувати нетиповий профіль кольорів для результату.</item></list></"
 "para>"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:649
+#: core/libs/rawengine/drawdecoderwidget.cpp:605
 #, kde-format
 msgctxt "@label"
 msgid "Color Management"
 msgstr "Керування кольорами"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:842
+#: core/libs/rawengine/drawdecoderwidget.cpp:799
 #, kde-format
 msgctxt "@label"
 msgid "Threshold:"
 msgstr "Поріг:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:843
+#: core/libs/rawengine/drawdecoderwidget.cpp:800
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -61408,28 +61386,7 @@ msgstr ""
 "призначених міток.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "king of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "

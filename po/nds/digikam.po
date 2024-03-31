@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 01:33+0000\n"
+"POT-Creation-Date: 2024-03-31 01:58+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -34498,40 +34498,40 @@ msgctxt "@info"
 msgid "Cannot save settings to the White Color Balance text file."
 msgstr "Instellen laat sik nich na de Textdatei för de Wittbalangs sekern."
 
-#: core/libs/dngwriter/dngsettings.cpp:80
+#: core/libs/dngwriter/dngsettings.cpp:73
 #, kde-format
 msgid "Embed Original File"
 msgstr "Orginaaldatei inbetten"
 
-#: core/libs/dngwriter/dngsettings.cpp:81
+#: core/libs/dngwriter/dngsettings.cpp:74
 #, kde-format
 msgid "Lossless Compression"
 msgstr "Komprimeren ahn Verlusten"
 
-#: core/libs/dngwriter/dngsettings.cpp:85
+#: core/libs/dngwriter/dngsettings.cpp:78
 #, kde-format
 msgid "JPEG Preview:"
 msgstr "JPEG-Vöransicht:"
 
-#: core/libs/dngwriter/dngsettings.cpp:87
+#: core/libs/dngwriter/dngsettings.cpp:80
 #, kde-format
 msgctxt "embedded preview type in dng file"
 msgid "None"
 msgstr "Keen"
 
-#: core/libs/dngwriter/dngsettings.cpp:88
+#: core/libs/dngwriter/dngsettings.cpp:81
 #, kde-format
 msgctxt "embedded preview type in dng file"
 msgid "Medium"
 msgstr "Normaal"
 
-#: core/libs/dngwriter/dngsettings.cpp:89
+#: core/libs/dngwriter/dngsettings.cpp:82
 #, kde-format
 msgctxt "embedded preview type in dng file"
 msgid "Full size"
 msgstr "Heel Grött"
 
-#: core/libs/dngwriter/dngsettings.cpp:93
+#: core/libs/dngwriter/dngsettings.cpp:86
 #, kde-format
 msgid ""
 "Warning: ExifTool is not available to post-process metadata. Without "
@@ -37437,31 +37437,31 @@ msgstr "Den utsöchten Orner gifft dat nich, oder he lett sik nich lesen"
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Den utsöchten Orner gifft dat nich, oder he lett sik nich lesen"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:153
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:148
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr ""
 
-#: core/libs/metadataengine/focuspoint/focuspoint.cpp:118
+#: core/libs/metadataengine/focuspoint/focuspoint.cpp:111
 #, kde-format
 msgctxt "Focus point type description"
 msgid "In Focus"
 msgstr ""
 
-#: core/libs/metadataengine/focuspoint/focuspoint.cpp:123
+#: core/libs/metadataengine/focuspoint/focuspoint.cpp:116
 #, fuzzy, kde-format
 #| msgid "Select"
 msgctxt "Focus point type description"
 msgid "Selected"
 msgstr "Utsöken"
 
-#: core/libs/metadataengine/focuspoint/focuspoint.cpp:128
+#: core/libs/metadataengine/focuspoint/focuspoint.cpp:121
 #, fuzzy, kde-format
 msgctxt "Focus point type description"
 msgid "Selected In Focus"
 msgstr "Indrag utsöken"
 
-#: core/libs/metadataengine/focuspoint/focuspoint.cpp:133
+#: core/libs/metadataengine/focuspoint/focuspoint.cpp:126
 #, fuzzy, kde-format
 msgctxt "Focus point type description"
 msgid "Inactive"
@@ -39127,13 +39127,13 @@ msgstr "%1 (%2)"
 msgid "Selection Properties"
 msgstr "Datei-Egenschappen"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:223
+#: core/libs/rawengine/drawdecoderwidget.cpp:178
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "16 bits color depth"
 msgstr "All Klöördeepden"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:224
+#: core/libs/rawengine/drawdecoderwidget.cpp:179
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39145,13 +39145,13 @@ msgid ""
 "</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:243
+#: core/libs/rawengine/drawdecoderwidget.cpp:198
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Interpolate RGB as four colors"
 msgstr "Klöör för Ü&nnerbelichten:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:244
+#: core/libs/rawengine/drawdecoderwidget.cpp:199
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39164,19 +39164,19 @@ msgid ""
 "with AHD quality method.</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:258
+#: core/libs/rawengine/drawdecoderwidget.cpp:213
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Visit LibRaw project website"
 msgstr "Na digiKam-Projektnettsiet gahn"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:268
+#: core/libs/rawengine/drawdecoderwidget.cpp:223
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not stretch or rotate pixels"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:270
+#: core/libs/rawengine/drawdecoderwidget.cpp:225
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39187,56 +39187,56 @@ msgid ""
 "para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:278
+#: core/libs/rawengine/drawdecoderwidget.cpp:233
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Quality:"
 msgstr "PGF-Gööd:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:282
+#: core/libs/rawengine/drawdecoderwidget.cpp:238
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "Bilinear"
 msgstr "Lineaar"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:283
+#: core/libs/rawengine/drawdecoderwidget.cpp:239
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "VNG"
 msgstr "LibPNG"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:284
+#: core/libs/rawengine/drawdecoderwidget.cpp:240
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "PPG"
 msgstr "LibPNG"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:285
+#: core/libs/rawengine/drawdecoderwidget.cpp:241
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "AHD"
 msgstr "UN"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:286
+#: core/libs/rawengine/drawdecoderwidget.cpp:242
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "DCB"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:287
+#: core/libs/rawengine/drawdecoderwidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "DTD"
 msgctxt "@item:inlistbox Quality"
 msgid "DHT"
 msgstr "DTD"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:288
+#: core/libs/rawengine/drawdecoderwidget.cpp:244
 #, kde-format
 msgctxt "@item:inlistbox Quality"
 msgid "AAHD"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:292
+#: core/libs/rawengine/drawdecoderwidget.cpp:248
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39269,13 +39269,13 @@ msgid ""
 "para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:340
+#: core/libs/rawengine/drawdecoderwidget.cpp:296
 #, fuzzy, kde-format
 msgctxt "@label:slider"
 msgid "Pass:"
 msgstr "Passwoort"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:341
+#: core/libs/rawengine/drawdecoderwidget.cpp:297
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39288,13 +39288,13 @@ msgid ""
 "<emphasis strong='true'>VCD & AHD</emphasis>.</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:353
+#: core/libs/rawengine/drawdecoderwidget.cpp:309
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Refine interpolation"
 msgstr "Estemeren:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:354
+#: core/libs/rawengine/drawdecoderwidget.cpp:310
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39306,43 +39306,43 @@ msgid ""
 "item></list></para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:367
+#: core/libs/rawengine/drawdecoderwidget.cpp:323
 #, kde-format
 msgctxt "@label"
 msgid "Demosaicing"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:375
+#: core/libs/rawengine/drawdecoderwidget.cpp:331
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Method:"
 msgstr "Metood:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:377
+#: core/libs/rawengine/drawdecoderwidget.cpp:333
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default D65"
 msgstr "Standard"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:378
+#: core/libs/rawengine/drawdecoderwidget.cpp:334
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Camera"
 msgstr "Kamera"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:379
+#: core/libs/rawengine/drawdecoderwidget.cpp:335
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox set while balance automatically"
 msgid "Automatic"
 msgstr "Automaatsch topassen"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:380
+#: core/libs/rawengine/drawdecoderwidget.cpp:336
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox set white balance manually"
 msgid "Manual"
 msgstr "Vun Hand"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:382
+#: core/libs/rawengine/drawdecoderwidget.cpp:338
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39357,13 +39357,13 @@ msgid ""
 "values.</item></list></para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:397
+#: core/libs/rawengine/drawdecoderwidget.cpp:353
 #, kde-format
 msgctxt "@label:slider"
 msgid "T(K):"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:398
+#: core/libs/rawengine/drawdecoderwidget.cpp:354
 #, fuzzy, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39372,13 +39372,13 @@ msgid ""
 msgstr ""
 "Hier kannst Du de Klöörtemperatuur (in Kelvin) för de Wittbalangs topassen."
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:405
+#: core/libs/rawengine/drawdecoderwidget.cpp:361
 #, fuzzy, kde-format
 msgctxt "@label:slider Green component"
 msgid "Green:"
 msgstr "Gröön:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:406
+#: core/libs/rawengine/drawdecoderwidget.cpp:362
 #, fuzzy, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39388,37 +39388,37 @@ msgstr ""
 "Hier kannst Du den Gröönandeel för de Stärk vun de Magenta-Minnern "
 "fastleggen."
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:409
+#: core/libs/rawengine/drawdecoderwidget.cpp:365
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Highlights:"
 msgstr "Gleemrebeden:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:411
+#: core/libs/rawengine/drawdecoderwidget.cpp:367
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Solid white"
 msgstr "Vull"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:412
+#: core/libs/rawengine/drawdecoderwidget.cpp:368
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Unclip"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:413
+#: core/libs/rawengine/drawdecoderwidget.cpp:369
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Blend"
 msgstr "Kalenner"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:414
+#: core/libs/rawengine/drawdecoderwidget.cpp:370
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Rebuild"
 msgstr "All nieg opstellen"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:416
+#: core/libs/rawengine/drawdecoderwidget.cpp:372
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39432,13 +39432,13 @@ msgid ""
 "value</item></list></para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:427
+#: core/libs/rawengine/drawdecoderwidget.cpp:383
 #, fuzzy, kde-format
 msgctxt "@label:slider Highlight reconstruct level"
 msgid "Level:"
 msgstr "Stoop:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:431
+#: core/libs/rawengine/drawdecoderwidget.cpp:387
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39446,25 +39446,25 @@ msgid ""
 "values favor whites and high values favor colors.</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:435
+#: core/libs/rawengine/drawdecoderwidget.cpp:391
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Exposure Correction (E.V)"
 msgstr "Belichtentiet"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:436
+#: core/libs/rawengine/drawdecoderwidget.cpp:392
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid "<para>Turn on the exposure correction before interpolation.</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:439
+#: core/libs/rawengine/drawdecoderwidget.cpp:395
 #, fuzzy, kde-format
 msgctxt "@label:slider"
 msgid "Linear Shift:"
 msgstr "Lineaar"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:444
+#: core/libs/rawengine/drawdecoderwidget.cpp:400
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39472,13 +39472,13 @@ msgid ""
 "interpolation in E.V</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:447
+#: core/libs/rawengine/drawdecoderwidget.cpp:403
 #, fuzzy, kde-format
 msgctxt "@label:slider"
 msgid "Highlight:"
 msgstr "Gleemrebeden:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:452
+#: core/libs/rawengine/drawdecoderwidget.cpp:408
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39487,13 +39487,13 @@ msgid ""
 "is > 1.0 E.V</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:456
+#: core/libs/rawengine/drawdecoderwidget.cpp:412
 #, kde-format
 msgctxt "@option:check"
 msgid "Correct false colors in highlights"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:457
+#: core/libs/rawengine/drawdecoderwidget.cpp:413
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39502,13 +39502,13 @@ msgid ""
 "</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:461
+#: core/libs/rawengine/drawdecoderwidget.cpp:417
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Auto Brightness"
 msgstr "Helligkeit:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:462
+#: core/libs/rawengine/drawdecoderwidget.cpp:418
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39516,13 +39516,13 @@ msgid ""
 "adjust brightness.</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:465
+#: core/libs/rawengine/drawdecoderwidget.cpp:421
 #, fuzzy, kde-format
 msgctxt "@label:slider"
 msgid "Brightness:"
 msgstr "Helligkeit:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:470
+#: core/libs/rawengine/drawdecoderwidget.cpp:426
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39530,13 +39530,13 @@ msgid ""
 "The default value is 1.0 (works in 8-bit mode only).</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:480
+#: core/libs/rawengine/drawdecoderwidget.cpp:436
 #, fuzzy, kde-format
 msgctxt "@option:check Black point"
 msgid "Black:"
 msgstr "Torüch"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:481
+#: core/libs/rawengine/drawdecoderwidget.cpp:437
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39545,7 +39545,7 @@ msgid ""
 "automatically computed.</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:488
+#: core/libs/rawengine/drawdecoderwidget.cpp:444
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39553,13 +39553,13 @@ msgid ""
 "the output image.</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:491
+#: core/libs/rawengine/drawdecoderwidget.cpp:447
 #, fuzzy, kde-format
 msgctxt "@option:check White point"
 msgid "White:"
 msgstr "Titel"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:492
+#: core/libs/rawengine/drawdecoderwidget.cpp:448
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39568,7 +39568,7 @@ msgid ""
 "automatically computed.</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:499
+#: core/libs/rawengine/drawdecoderwidget.cpp:455
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39576,37 +39576,37 @@ msgid ""
 "the output image.</para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:539
+#: core/libs/rawengine/drawdecoderwidget.cpp:495
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "White Balance"
 msgstr "Wittbalangs"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:547
+#: core/libs/rawengine/drawdecoderwidget.cpp:503
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Noise reduction:"
 msgstr "Ruusminnern"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:549
+#: core/libs/rawengine/drawdecoderwidget.cpp:505
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Noise Reduction"
 msgid "None"
 msgstr "Keen"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:550
+#: core/libs/rawengine/drawdecoderwidget.cpp:506
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Noise Reduction"
 msgid "Wavelets"
 msgstr "Pielrecht Bülgen"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:551
+#: core/libs/rawengine/drawdecoderwidget.cpp:507
 #, kde-format
 msgctxt "@item:inlistbox Noise Reduction"
 msgid "FBDD"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:553
+#: core/libs/rawengine/drawdecoderwidget.cpp:509
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39620,37 +39620,37 @@ msgid ""
 "list></para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:578
+#: core/libs/rawengine/drawdecoderwidget.cpp:534
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Corrections"
 msgstr "Sammeln"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:586
+#: core/libs/rawengine/drawdecoderwidget.cpp:542
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Camera Profile:"
 msgstr "Kamera-Naam"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:588
+#: core/libs/rawengine/drawdecoderwidget.cpp:544
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Camera Profile"
 msgid "None"
 msgstr "Keen"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:589
+#: core/libs/rawengine/drawdecoderwidget.cpp:545
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Camera Profile"
 msgid "Embedded"
 msgstr "Inbett Vöransicht wiesen"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:590
+#: core/libs/rawengine/drawdecoderwidget.cpp:546
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Camera Profile"
 msgid "Custom"
 msgstr "Topasst"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:592
+#: core/libs/rawengine/drawdecoderwidget.cpp:548
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39663,57 +39663,57 @@ msgid ""
 "item></list></para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:603
-#: core/libs/rawengine/drawdecoderwidget.cpp:637
+#: core/libs/rawengine/drawdecoderwidget.cpp:559
+#: core/libs/rawengine/drawdecoderwidget.cpp:593
 #, fuzzy, kde-format
 #| msgid "ICC Files (*.icc; *.icm)"
 msgctxt "@info: open file filters"
 msgid "ICC Files (*.icc *.icm)"
 msgstr "ICC-Dateien (*.icc; *.icm)"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:605
+#: core/libs/rawengine/drawdecoderwidget.cpp:561
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Workspace:"
 msgstr "Arbeitrebeet:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:607
+#: core/libs/rawengine/drawdecoderwidget.cpp:563
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Raw (no profile)"
 msgstr "Monitorprofil:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:608
+#: core/libs/rawengine/drawdecoderwidget.cpp:564
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "sRGB"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:609
+#: core/libs/rawengine/drawdecoderwidget.cpp:565
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Adobe RGB"
 msgstr "Adobe PDF"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:610
+#: core/libs/rawengine/drawdecoderwidget.cpp:566
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Wide Gamut"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:611
+#: core/libs/rawengine/drawdecoderwidget.cpp:567
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Pro-Photo"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:612
+#: core/libs/rawengine/drawdecoderwidget.cpp:568
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Custom"
 msgstr "Topasst"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:614
+#: core/libs/rawengine/drawdecoderwidget.cpp:570
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -39735,19 +39735,19 @@ msgid ""
 "item></list></para>"
 msgstr ""
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:649
+#: core/libs/rawengine/drawdecoderwidget.cpp:605
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Color Management"
 msgstr "Klöörpleeg"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:842
+#: core/libs/rawengine/drawdecoderwidget.cpp:799
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Threshold:"
 msgstr "Grenzweert:"
 
-#: core/libs/rawengine/drawdecoderwidget.cpp:843
+#: core/libs/rawengine/drawdecoderwidget.cpp:800
 #, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
