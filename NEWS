@@ -50,7 +50,7 @@ BUGFIXES:
 030 ==> 484762 - digiKam doesn't recognize XMP video tags.
 031 ==> 484698 - Program crash when entered face tag name.
 032 ==> 484745 - Inconsistent date for Dynamic Media:Shot Date in case of .mov video.
-033 ==> 
+033 ==> 484802 - The 'album date' is updated to the 'creation date' of a picture when that picture is renamed outside of digiKam.
 034 ==> 
 035 ==> 
 036 ==> 
