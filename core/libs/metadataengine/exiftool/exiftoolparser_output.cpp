@@ -198,6 +198,12 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
             break;
         }
 
+        case ExifToolProcess::CHANGE_TIMESTAMPS:
+        {
+            printExifToolOutput(result.output);
+            break;
+        }
+
         case ExifToolProcess::COPY_TAGS:
         {
             printExifToolOutput(result.output);
