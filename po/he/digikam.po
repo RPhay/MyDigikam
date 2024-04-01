@@ -6,106 +6,102 @@
 # Nadav Kavalerchik <nadavkav@gmail.com>, 2009.
 # Diego Iastrubni <elcuco@kde.org>, 2012.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-31 01:58+0000\n"
-"PO-Revision-Date: 2017-05-16 06:48-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: American English <kde-i18n-he@kde.org>\n"
+"PO-Revision-Date: 2024-04-01 00:18+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: core/app/date/ddateedit.cpp:497
-#, fuzzy, kde-format
-#| msgid "tomorrow"
+#, kde-format
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "מחר"
 
 #: core/app/date/ddateedit.cpp:498
-#, fuzzy, kde-format
-#| msgid "today"
+#, kde-format
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "היום"
 
 #: core/app/date/ddateedit.cpp:499
-#, fuzzy, kde-format
-#| msgid "yesterday"
+#, kde-format
 msgctxt "@item: date keyword"
 msgid "yesterday"
 msgstr "אתמול"
 
 #: core/app/date/ddatepicker.cpp:115
-#, fuzzy, kde-format
+#, kde-format
 msgid "Next year"
 msgstr "בשבוע &הבא"
 
 #: core/app/date/ddatepicker.cpp:116
-#, fuzzy, kde-format
+#, kde-format
 msgid "Previous year"
 msgstr "תמונה קודמת"
 
 #: core/app/date/ddatepicker.cpp:117
-#, fuzzy, kde-format
+#, kde-format
 msgid "Next month"
 msgstr "ב&חודש הבא"
 
 #: core/app/date/ddatepicker.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 msgid "Previous month"
 msgstr "תמונה קודמת"
 
 #: core/app/date/ddatepicker.cpp:119
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select a week"
 msgstr "בחירת פריטים חדשים"
 
 #: core/app/date/ddatepicker.cpp:120
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select a month"
 msgstr "בחירה בכלום"
 
 #: core/app/date/ddatepicker.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select a year"
 msgstr "בחירת פריטים חדשים"
 
 #: core/app/date/ddatepicker.cpp:122
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select the current day"
 msgstr "התחילו בתמונה נוכחית"
 
 #: core/app/date/ddatepicker.cpp:572
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "&סיגרה"
 
 #: core/app/date/ddatepicker_p.cpp:173
-#, fuzzy, kde-format
+#, kde-format
 msgid "Week %1"
-msgstr "שבוע"
+msgstr "שבוע %1"
 
 #: core/app/date/ddatepickerpopup.cpp:128
-#, fuzzy, kde-format
-#| msgid "&Today"
+#, kde-format
 msgctxt "@item: date menu"
 msgid "&Today"
-msgstr "&היום"
+msgstr "היו&ם"
 
 #: core/app/date/ddatepickerpopup.cpp:129
-#, fuzzy, kde-format
-#| msgid "To&morrow"
+#, kde-format
 msgctxt "@item: date menu"
 msgid "To&morrow"
-msgstr "מח&ר"
+msgstr "מ&חר"
 
 #: core/app/date/ddatepickerpopup.cpp:130
 #, fuzzy, kde-format
@@ -122,11 +118,10 @@ msgid "Next M&onth"
 msgstr "ב&חודש הבא"
 
 #: core/app/date/ddatepickerpopup.cpp:132
-#, fuzzy, kde-format
-#| msgid "Y&esterday"
+#, kde-format
 msgctxt "@item: date menu"
 msgid "Y&esterday"
-msgstr "אתמול"
+msgstr "&אתמול"
 
 #: core/app/date/ddatepickerpopup.cpp:133
 #, fuzzy, kde-format
@@ -157,27 +152,28 @@ msgid "Last M&onth"
 msgstr "בחודש האחרון"
 
 #: core/app/date/ddatepickerpopup.cpp:146
-#, fuzzy, kde-format
-#| msgid "No Date"
+#, kde-format
 msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "ללא תאריך"
 
 #: core/app/date/timelinewidget.cpp:314
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
 "Start:\tEnd: "
 msgid ""
 "Week #%1 - %2 %3\n"
 "%4\t%5"
-msgstr "שבוע #%1 - %2 %3"
+msgstr ""
+"שבוע מס׳ %1 - %2 %3\n"
+"%4\t%5"
 
 #: core/app/date/timelinewidget.cpp:318
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
-msgstr "עוצמה:"
+msgstr "התחלה: "
 
 #: core/app/date/timelinewidget.cpp:319
 #, kde-format
@@ -186,9 +182,7 @@ msgid "End: "
 msgstr ""
 
 #: core/app/date/timelinewidget.cpp:326
-#, fuzzy, kde-format
-#| msgctxt "month-name year-string"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
@@ -233,15 +227,15 @@ msgstr "קביעת צלמית לאלבום"
 
 #: core/app/dragdrop/albumdragdrop.cpp:288
 #: core/app/dragdrop/itemdragdrop.cpp:763
-#, fuzzy, kde-format
+#, kde-format
 msgid "Download From Camera"
-msgstr "העתיקו מהמצלמה"
+msgstr "הורדה מהמצלמה"
 
 #: core/app/dragdrop/albumdragdrop.cpp:289
 #: core/app/dragdrop/itemdragdrop.cpp:765
-#, fuzzy, kde-format
+#, kde-format
 msgid "Download && Delete From Camera"
-msgstr "העתיקו מהמצלמה ומחקו"
+msgstr "הורדה ומחיקה מהמצלמה"
 
 #: core/app/dragdrop/importdragdrop.cpp:50
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:44
@@ -256,9 +250,9 @@ msgid "Exporting"
 msgstr "ייצא"
 
 #: core/app/dragdrop/importdragdrop.cpp:182
-#, fuzzy, kde-format
+#, kde-format
 msgid "Upload to Camera"
-msgstr "&העתקה למצלמה"
+msgstr "העלאה למצלמה"
 
 #: core/app/dragdrop/itemdragdrop.cpp:64
 #, fuzzy, kde-format
@@ -64193,7 +64187,7 @@ msgstr "הצגת נתוני איזון-לובן של תמונה"
 #: core/utilities/setup/setuptooltip.cpp:222
 #, kde-format
 msgid "digiKam Information"
-msgstr "מידע אודות digiKam"
+msgstr "פרטים על digiKam"
 
 #: core/utilities/setup/setuptooltip.cpp:225
 #: core/utilities/setup/setuptooltip.cpp:298
@@ -64441,7 +64435,7 @@ msgstr ""
 #: core/utilities/setup/setuptooltip.cpp:406
 #, kde-format
 msgid "Album Items"
-msgstr "פריטי אוסף-התמונות"
+msgstr "פריטי אלבום"
 
 #: core/utilities/setup/setuptooltip.cpp:407
 #, fuzzy, kde-format

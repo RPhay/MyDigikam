@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-31 01:58+0000\n"
-"PO-Revision-Date: 2024-03-26 08:59+0100\n"
+"PO-Revision-Date: 2024-03-30 08:44+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -65010,16 +65010,7 @@ msgid "Download Error"
 msgstr "Erreur de téléchargement"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:228
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the download.\n"
-#| "\n"
-#| "File: %1\n"
-#| "\n"
-#| "%2\n"
-#| "\n"
-#| "You can try again with an alternative mirror server or continue the "
-#| "download on the next startup."
+#, kde-format
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -65035,8 +65026,7 @@ msgstr ""
 "\n"
 "%2\n"
 "\n"
-"Vous pouvez ré-essayer avec un serveur miroir de remplacement ou continuer "
-"le téléchargement au prochain démarrage."
+"Vous pouvez ré-essayer ou continuer le téléchargement au prochain démarrage."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:236
 #, kde-format
