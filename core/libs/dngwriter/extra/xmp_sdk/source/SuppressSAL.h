@@ -34,7 +34,7 @@
 #ifndef _H_SuppressSAL
 #define _H_SuppressSAL
 
-#if !defined(_WIN32) && !defined(_WIN64) /* The following definition is applicable only for non-windows platform */
+#if defined (__MINGW32__) || (!defined(_WIN32) && !defined(_WIN64)) /* The following definition is applicable only for non-windows platform */
 
 #define _In_
 #define _In_opt_
