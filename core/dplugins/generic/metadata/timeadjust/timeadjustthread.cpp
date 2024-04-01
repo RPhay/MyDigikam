@@ -33,24 +33,19 @@ class Q_DECL_HIDDEN TimeAdjustThread::Private
 
 public:
 
-    explicit Private()
-      : iface(nullptr)
-    {
-    }
+    Private() = default;
 
-    // Settings from GUI.
-
-    TimeAdjustContainer settings;
+    TimeAdjustContainer settings;  ///< Settings from GUI.
 
     QMap<QUrl, int>     itemsMap;
 
-    DInfoInterface*     iface;
+    DInfoInterface*     iface   = nullptr;
 };
 
 
 TimeAdjustThread::TimeAdjustThread(QObject* const parent, DInfoInterface* const iface)
     : ActionThreadBase(parent),
-      d(new Private)
+      d               (new Private)
 {
     d->iface = iface;
 }

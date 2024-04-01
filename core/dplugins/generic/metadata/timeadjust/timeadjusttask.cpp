@@ -39,23 +39,18 @@ class Q_DECL_HIDDEN TimeAdjustTask::Private
 {
 public:
 
-    explicit Private()
-      : thread(nullptr)
-    {
-    }
+    Private() = default;
 
-    // Settings from GUI.
+    TimeAdjustContainer   settings;     ///< Settings from GUI.
 
-    TimeAdjustContainer   settings;
-
-    TimeAdjustThread*     thread;
+    TimeAdjustThread*     thread = nullptr;
 
     QUrl                  url;
 };
 
 TimeAdjustTask::TimeAdjustTask(const QUrl& url, TimeAdjustThread* const thread)
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
     d->url    = url;
     d->thread = thread;
@@ -262,23 +257,18 @@ class Q_DECL_HIDDEN TimePreviewTask::Private
 {
 public:
 
-    explicit Private()
-      : thread(nullptr)
-    {
-    }
+    Private() = default;
 
-    // Settings from GUI.
+    TimeAdjustContainer   settings;     ///< Settings from GUI.
 
-    TimeAdjustContainer   settings;
-
-    TimeAdjustThread*     thread;
+    TimeAdjustThread*     thread    = nullptr;
 
     QUrl                  url;
 };
 
 TimePreviewTask::TimePreviewTask(const QUrl& url, TimeAdjustThread* const thread)
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
     d->url    = url;
     d->thread = thread;

@@ -52,14 +52,13 @@
 
 // Local includes
 
+#include "digikam_globals.h"
+#include "digikam_debug.h"
+#include "digikam_version.h"
 #include "dmetadata.h"
 #include "dprogresswdg.h"
-#include "digikam_debug.h"
-#include "digikam_globals.h"
 #include "dxmlguiwindow.h"
 #include "timeadjustlist.h"
-#include "digikam_globals.h"
-#include "digikam_version.h"
 #include "timeadjustthread.h"
 
 namespace DigikamGenericTimeAdjustPlugin
@@ -70,33 +69,23 @@ class Q_DECL_HIDDEN TimeAdjustDialog::Private
 
 public:
 
-    explicit Private()
-      : settingsView(nullptr),
-        previewTimer(nullptr),
-        updateTimer (nullptr),
-        exitAfterOk (false),
-        progressBar (nullptr),
-        listView    (nullptr),
-        thread      (nullptr),
-        iface       (nullptr)
-    {
-    }
+    Private() = default;
 
-    TimeAdjustSettings*   settingsView;
+    TimeAdjustSettings*   settingsView  = nullptr;
 
     QMap<QUrl, int>       itemsUsedMap;           // Map of item urls and index.
 
-    QTimer*               previewTimer;
-    QTimer*               updateTimer;
+    QTimer*               previewTimer  = nullptr;
+    QTimer*               updateTimer   = nullptr;
 
-    bool                  exitAfterOk;
+    bool                  exitAfterOk   = false;
 
-    DProgressWdg*         progressBar;
-    TimeAdjustList*       listView;
+    DProgressWdg*         progressBar   = nullptr;
+    TimeAdjustList*       listView      = nullptr;
 
-    TimeAdjustThread*     thread;
+    TimeAdjustThread*     thread        = nullptr;
 
-    DInfoInterface*       iface;
+    DInfoInterface*       iface         = nullptr;
 };
 
 TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const iface)
