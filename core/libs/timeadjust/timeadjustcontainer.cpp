@@ -29,6 +29,7 @@ TimeAdjustContainer::TimeAdjustContainer()
     : customDate    (QDateTime::currentDateTime()),
       customTime    (QDateTime::currentDateTime()),
       adjustmentTime(QDateTime()),
+      updUseExifTool(false),
       updIfAvailable(true),
       updEXIFModDate(false),
       updEXIFOriDate(false),

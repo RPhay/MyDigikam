@@ -28,6 +28,7 @@
 #include "digikam_debug.h"
 #include "dinfointerface.h"
 #include "dfileoperations.h"
+#include "exiftoolparser.h"
 #include "timeadjustlist.h"
 #include "metaenginesettings.h"
 
@@ -80,6 +81,7 @@ void TimeAdjustTask::run()
 
     Q_EMIT signalProcessStarted(d->url);
 
+    int status    = TimeAdjustList::NOPROCESS_ERROR;
     QDateTime org = d->thread->readTimestamp(d->url);
     QDateTime adj = d->settings.calculateAdjustedDate(org, d->thread->indexForUrl(d->url));
 
@@ -95,12 +97,37 @@ void TimeAdjustTask::run()
         return;
     }
 
+    if (d->settings.updUseExifTool)
+    {
+        QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
+
+        if (parser->exifToolAvailable())
+        {
+            if (!parser->changeTimestamps(d->url.toLocalFile(), adj))
+            {
+                status |= TimeAdjustList::EXIF_TOOL_ERROR;
+            }
+        }
+        else
+        {
+            status |= TimeAdjustList::EXIF_TOOL_ERROR;
+        }
+
+        if (status == TimeAdjustList::NOPROCESS_ERROR)
+        {
+            Q_EMIT signalDateTimeForUrl(d->url, adj, d->settings.updFileModDate);
+        }
+
+        Q_EMIT signalProcessEnded(d->url, org, adj, status);
+        Q_EMIT signalDone();
+
+        return;
+    }
+
     bool metadataChanged               = false;
     bool writeToSidecar                = (MetaEngineSettings::instance()->settings()
                                           .metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY);
     bool writeWithExifTool             = (MetaEngineSettings::instance()->settings().writeWithExifTool);
-
-    int status                         = TimeAdjustList::NOPROCESS_ERROR;
 
     QString exifDateTimeFormat         = QLatin1String("yyyy:MM:dd hh:mm:ss");
     QString xmpDateTimeFormat          = QLatin1String("yyyy-MM-ddThh:mm:ss");

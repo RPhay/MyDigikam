@@ -52,7 +52,8 @@ public:
         CLRSTATUS_ERROR = 1 << 0,
         NOPROCESS_ERROR = 1 << 1,
         META_TIME_ERROR = 1 << 2,
-        FILE_TIME_ERROR = 1 << 3
+        FILE_TIME_ERROR = 1 << 3,
+        EXIF_TOOL_ERROR = 1 << 4
     };
 
 public:

@@ -82,6 +82,11 @@ void TimeAdjustList::setStatus(const QUrl& url,
             errors << i18n("Failed to update file timestamp");
         }
 
+        if (status & EXIF_TOOL_ERROR)
+        {
+            errors << i18n("ExifTool reported an error");
+        }
+
         if      (status & CLRSTATUS_ERROR)
         {
             item->setText(STATUS, QLatin1String(""));

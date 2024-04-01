@@ -53,6 +53,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
+    void slotUseExifToolChanged();
     void slotSrcTimestampChanged();
     void slotResetDateToCurrent();
     void slotAdjustmentTypeChanged();

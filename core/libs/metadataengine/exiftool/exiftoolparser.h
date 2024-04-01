@@ -155,6 +155,13 @@ public:
     bool applyMetadataFile(const QString& path, const QString& meta);
 
     /**
+     * Change all timestamps of the target file using ExifTool.
+     * @param path is the target file to change.
+     * @param dateTime is the date/time.
+     */
+    bool changeTimestamps(const QString& path, const QDateTime& dateTime);
+
+    /**
      * Return a list of readable file format extensions.
      * Use currentData() to get the container as QStringList.
      */

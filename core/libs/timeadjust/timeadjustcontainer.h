@@ -90,6 +90,7 @@ public:
     QDateTime customTime;
     QDateTime adjustmentTime;
 
+    bool      updUseExifTool;
     bool      updIfAvailable;
     bool      updEXIFModDate;
     bool      updEXIFOriDate;

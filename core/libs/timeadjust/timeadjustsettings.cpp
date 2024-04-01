@@ -63,6 +63,7 @@ public:
         useFileNameBtn          (nullptr),
         useMetaDateBtn          (nullptr),
         useCustomDateBtn        (nullptr),
+        updUseExifToolCheck     (nullptr),
         updIfAvailableCheck     (nullptr),
         updFileModDateCheck     (nullptr),
         updEXIFModDateCheck     (nullptr),
@@ -99,6 +100,7 @@ public:
     QRadioButton*          useMetaDateBtn;
     QRadioButton*          useCustomDateBtn;
 
+    QCheckBox*             updUseExifToolCheck;
     QCheckBox*             updIfAvailableCheck;
     QCheckBox*             updFileModDateCheck;
     QCheckBox*             updEXIFModDateCheck;
@@ -268,6 +270,7 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
     d->updateSettingsBox              = new QWidget(d->settingsExpander);
     QGridLayout* const updateGBLayout = new QGridLayout(d->updateSettingsBox);
 
+    d->updUseExifToolCheck      = new QCheckBox(i18n("Update timestamps with ExifTool"), d->updateSettingsBox);
     d->updIfAvailableCheck      = new QCheckBox(i18n("Update only existing timestamps"), d->updateSettingsBox);
     d->updFileModDateCheck      = new QCheckBox(i18n("File last modified"),              d->updateSettingsBox);
     d->updEXIFModDateCheck      = new QCheckBox(i18n("EXIF: created"),                   d->updateSettingsBox);
@@ -278,15 +281,16 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
     d->updXMPVideoCheck         = new QCheckBox(i18n("XMP: Video"),                      d->updateSettingsBox);
     d->updXMPDateCheck          = new QCheckBox(i18n("XMP"),                             d->updateSettingsBox);
 
-    updateGBLayout->addWidget(d->updIfAvailableCheck, 0, 0, 1, 2);
-    updateGBLayout->addWidget(d->updEXIFOriDateCheck, 1, 0, 1, 1);
-    updateGBLayout->addWidget(d->updEXIFModDateCheck, 1, 1, 1, 1);
-    updateGBLayout->addWidget(d->updEXIFDigDateCheck, 2, 0, 1, 1);
-    updateGBLayout->addWidget(d->updEXIFThmDateCheck, 2, 1, 1, 1);
-    updateGBLayout->addWidget(d->updXMPDateCheck,     3, 0, 1, 1);
-    updateGBLayout->addWidget(d->updXMPVideoCheck,    3, 1, 1, 1);
-    updateGBLayout->addWidget(d->updIPTCDateCheck,    4, 0, 1, 1);
-    updateGBLayout->addWidget(d->updFileModDateCheck, 4, 1, 1, 1);
+    updateGBLayout->addWidget(d->updUseExifToolCheck, 0, 0, 1, 2);
+    updateGBLayout->addWidget(d->updIfAvailableCheck, 1, 0, 1, 2);
+    updateGBLayout->addWidget(d->updEXIFOriDateCheck, 2, 0, 1, 1);
+    updateGBLayout->addWidget(d->updEXIFModDateCheck, 2, 1, 1, 1);
+    updateGBLayout->addWidget(d->updEXIFDigDateCheck, 3, 0, 1, 1);
+    updateGBLayout->addWidget(d->updEXIFThmDateCheck, 3, 1, 1, 1);
+    updateGBLayout->addWidget(d->updXMPDateCheck,     4, 0, 1, 1);
+    updateGBLayout->addWidget(d->updXMPVideoCheck,    4, 1, 1, 1);
+    updateGBLayout->addWidget(d->updIPTCDateCheck,    5, 0, 1, 1);
+    updateGBLayout->addWidget(d->updFileModDateCheck, 5, 1, 1, 1);
     updateGBLayout->setContentsMargins(spacing, spacing, spacing, spacing);
     updateGBLayout->setSpacing(spacing);
     updateGBLayout->setColumnStretch(0, 1);
@@ -340,6 +344,9 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
     connect(d->adjDetByClockPhotoBtn, SIGNAL(signalClockPhotoDropped(QUrl)),
             this, SLOT(slotDetAdjustmentByClockPhotoUrl(QUrl)));
 
+    connect(d->updUseExifToolCheck, SIGNAL(toggled(bool)),
+            this, SLOT(slotUseExifToolChanged()));
+
     connect(d->useCustDateInput, SIGNAL(editingFinished()),
             this, SIGNAL(signalSettingsChanged()));
 
@@ -383,6 +390,9 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
             this, SIGNAL(signalSettingsChanged()));
 
     connect(d->updFileModDateCheck, SIGNAL(toggled(bool)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->updUseExifToolCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalSettingsChanged()));
 
     connect(d->updIfAvailableCheck, SIGNAL(toggled(bool)),
@@ -431,6 +441,7 @@ void TimeAdjustSettings::setSettings(const TimeAdjustContainer& settings)
     d->adjDaysInput->setValue(settings.adjustmentDays);
     d->adjTimeInput->setDateTime(settings.adjustmentTime);
 
+    d->updUseExifToolCheck->setChecked(settings.updUseExifTool);
     d->updIfAvailableCheck->setChecked(settings.updIfAvailable);
     d->updFileModDateCheck->setChecked(settings.updFileModDate);
     d->updEXIFModDateCheck->setChecked(settings.updEXIFModDate);
@@ -441,6 +452,7 @@ void TimeAdjustSettings::setSettings(const TimeAdjustContainer& settings)
     d->updXMPVideoCheck->setChecked(settings.updXMPVideo);
     d->updXMPDateCheck->setChecked(settings.updXMPDate);
 
+    slotUseExifToolChanged();
     slotSrcTimestampChanged();
     slotAdjustmentTypeChanged();
 }
@@ -456,6 +468,7 @@ TimeAdjustContainer TimeAdjustSettings::settings() const
     settings.adjustmentDays = d->adjDaysInput->value();
     settings.adjustmentTime = d->adjTimeInput->dateTime();
 
+    settings.updUseExifTool = d->updUseExifToolCheck->isChecked();
     settings.updIfAvailable = d->updIfAvailableCheck->isChecked();
     settings.updFileModDate = d->updFileModDateCheck->isChecked();
     settings.updEXIFModDate = d->updEXIFModDateCheck->isChecked();
@@ -528,6 +541,20 @@ void TimeAdjustSettings::detAdjustmentByClockPhotoUrl(const QUrl& url)
     }
 
     delete dlg;
+}
+
+void TimeAdjustSettings::slotUseExifToolChanged()
+{
+    bool check = d->updUseExifToolCheck->isChecked();
+
+    d->updIfAvailableCheck->setEnabled(!check);
+    d->updEXIFModDateCheck->setEnabled(!check);
+    d->updEXIFOriDateCheck->setEnabled(!check);
+    d->updEXIFDigDateCheck->setEnabled(!check);
+    d->updEXIFThmDateCheck->setEnabled(!check);
+    d->updIPTCDateCheck->setEnabled(!check);
+    d->updXMPVideoCheck->setEnabled(!check);
+    d->updXMPDateCheck->setEnabled(!check);
 }
 
 void TimeAdjustSettings::slotSrcTimestampChanged()

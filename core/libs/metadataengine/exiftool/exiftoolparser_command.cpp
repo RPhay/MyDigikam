@@ -286,6 +286,30 @@ bool ExifToolParser::applyMetadataFile(const QString& path, const QString& meta)
     return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_METADATA_FILE));
 }
 
+bool ExifToolParser::changeTimestamps(const QString& path, const QDateTime& dateTime)
+{
+    QFileInfo fileInfo(path);
+
+    if (!fileInfo.exists())
+    {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open source file to process with ExifTool...";
+        return false;
+    }
+
+    d->prepareProcess();
+
+    QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-wm");
+    cmdArgs << QByteArray("w");
+    cmdArgs << (QByteArray("-time:all=") + dateTime.toString(Qt::ISODate).toLatin1());
+
+    cmdArgs << QByteArray("-overwrite_original");
+    cmdArgs << d->filePathEncoding(fileInfo);
+    d->currentPath = fileInfo.filePath();
+
+    return (d->startProcess(cmdArgs, ExifToolProcess::CHANGE_TIMESTAMPS));
+}
+
 bool ExifToolParser::readableFormats()
 {
     d->prepareProcess();

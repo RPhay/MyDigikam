@@ -164,6 +164,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Apply Metadata File");
         }
 
+        case ExifToolProcess::CHANGE_TIMESTAMPS:
+        {
+            return QLatin1String("Change Timestamps");
+        }
+
         case ExifToolProcess::READ_FORMATS:
         {
             return QLatin1String("Readable Formats");
