@@ -54,7 +54,7 @@ BUGFIXES:
 032 ==> 484745 - Inconsistent date for Dynamic Media:Shot Date in case of .mov video.
 033 ==> 484802 - The 'album date' is updated to the 'creation date' of a picture when that picture is renamed outside of digiKam.
 034 ==> 484758 - Displayed dates on Metadata panels come from different dates found in a video file from Ricoh GR II (inconsistency ?).
-035 ==> 
+035 ==> 484882 - Item -> Write Metadata to File changes camera creation date to UTC.
 036 ==> 
 037 ==> 
 038 ==> 
