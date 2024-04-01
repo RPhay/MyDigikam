@@ -551,8 +551,10 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     if (url.isEmpty())
     {
-        d->videoWidget->player()->stop();
         d->currentItem = url;
+
+        d->videoWidget->player()->stop();
+        d->videoWidget->player()->setSource(QString());
 
         return;
     }
@@ -565,6 +567,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     d->currentItem = url;
 
     d->videoWidget->player()->stop();
+    d->videoWidget->player()->setSource(QString());
 
     int orientation = 0;
 
