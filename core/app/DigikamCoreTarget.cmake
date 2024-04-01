@@ -422,6 +422,7 @@ if(WIN32)
                           # Defined in RulesWindows.cmake
                           ${WSOCK32_LIBRARY}
                           ${WS2_32_LIBRARY}
+                          ${BCRYPT_LIBRARY}
                           ${NETAPI32_LIBRARY}
                           ${USEENV_LIBRARY}
                           ${PSAPI_LIBRARY}

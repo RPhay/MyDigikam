@@ -12,6 +12,7 @@ if(WIN32)
 
         find_library(WSOCK32_LIBRARY  wsock32)
         find_library(WS2_32_LIBRARY   ws2_32)
+        find_library(BCRYPT_LIBRARY   Bcrypt)
 
         # For MediaPlayer
 
@@ -25,6 +26,7 @@ if(WIN32)
 
         set(WSOCK32_LIBRARY  wsock32)
         set(WS2_32_LIBRARY   ws2_32)
+        set(BCRYPT_LIBRARY   Bcrypt)
 
         # For MediaPlayer
 
