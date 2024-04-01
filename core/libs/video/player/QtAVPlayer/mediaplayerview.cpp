@@ -325,8 +325,6 @@ void MediaPlayerView::reload()
 
 void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "slotPlayerStateChanged()" << newState;
-
     if      (newState == QAVPlayer::PlayingState)
     {
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
@@ -427,8 +425,6 @@ void MediaPlayerView::slotRotateVideo()
 
 void MediaPlayerView::slotPausePlay()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "slotPausePlay()" << d->videoWidget->player()->state();
-
     if (d->videoWidget->player()->state() != QAVPlayer::PlayingState)
     {
         d->videoWidget->player()->play();
