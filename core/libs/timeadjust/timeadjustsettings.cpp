@@ -281,6 +281,8 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
     d->updXMPVideoCheck         = new QCheckBox(i18n("XMP: Video"),                      d->updateSettingsBox);
     d->updXMPDateCheck          = new QCheckBox(i18n("XMP"),                             d->updateSettingsBox);
 
+    d->updUseExifToolCheck->setVisible(timeAdjustTool);
+
     updateGBLayout->addWidget(d->updUseExifToolCheck, 0, 0, 1, 2);
     updateGBLayout->addWidget(d->updIfAvailableCheck, 1, 0, 1, 2);
     updateGBLayout->addWidget(d->updEXIFOriDateCheck, 2, 0, 1, 1);
