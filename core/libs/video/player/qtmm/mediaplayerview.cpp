@@ -179,6 +179,11 @@ public:
     int                  videoOrientation   = 0;
     qint64               sliderTime         = 0;
 
+    const QUrl           dummyVideo         = QUrl::fromLocalFile(
+                                                  QStandardPaths::locate(
+                                                      QStandardPaths::GenericDataLocation,
+                                                      QLatin1String("digikam/data/video-digikam.mp4")));
+
 public:
 
     void adjustVideoSize()
@@ -480,9 +485,7 @@ void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus
 void MediaPlayerView::escapePreview()
 {
     d->player->stop();
-    QString dummy = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                           QLatin1String("digikam/data/video-digikam.mp4"));
-    d->player->setSource(QUrl::fromLocalFile(dummy));
+    d->player->setSource(d->dummyVideo);
 }
 
 void MediaPlayerView::slotThemeChanged()
