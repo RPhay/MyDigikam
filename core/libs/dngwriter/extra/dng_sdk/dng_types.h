@@ -2,7 +2,7 @@
 // Copyright 2006-2022 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:	Adobe permits you to use, modify, and distribute this file in
+// NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -59,9 +59,9 @@ typedef uint16_t uint16;
 typedef uint32_t uint32;
 typedef uint64_t uint64;
 
-#endif	// __cplusplus
+#endif  // __cplusplus
 
-#endif	// qDNGUseCustomIntegralTypes
+#endif  // qDNGUseCustomIntegralTypes
 
 typedef uintptr_t uintptr;
 
@@ -74,10 +74,10 @@ typedef double real64;
 
 /// \def Build a Macintosh style four-character constant in a compiler safe way.
 
-#define DNG_CHAR4(a,b,c,d)	((((uint32) a) << 24) |\
-							 (((uint32) b) << 16) |\
-							 (((uint32) c) <<  8) |\
-							 (((uint32) d)		))
+#define DNG_CHAR4(a,b,c,d)  ((((uint32) a) << 24) |\
+                             (((uint32) b) << 16) |\
+                             (((uint32) c) <<  8) |\
+                             (((uint32) d)      ))
 
 /*****************************************************************************/
 
@@ -106,5 +106,5 @@ typedef double real64;
 /*****************************************************************************/
 
 #endif
-	
+    
 /*****************************************************************************/

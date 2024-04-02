@@ -89,4 +89,4 @@
 #define BUILDVERSIONSTR MAKESTR(BUILDVERSION_MAC)
 #define BUILDIDSTR MAKESTR(BUILDID)
 
-#endif	/* __XMP_BuildInfo_h__ */
+#endif  /* __XMP_BuildInfo_h__ */

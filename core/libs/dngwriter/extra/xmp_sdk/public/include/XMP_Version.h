@@ -23,7 +23,7 @@
 ///
 /// \li Do not display the static values defined here to users as the version of XMP in use.
 /// \li Do not base runtime decisions on the static version alone; you can, however, compare the
-/// 	runtime and static versions.
+///     runtime and static versions.
 // =================================================================================================
 
 #include "build/XMP_BuildInfo.h"
@@ -37,11 +37,11 @@
 #define XMPSCRIPT_API_VERSION_MAJOR  6
 #define XMPSCRIPT_API_VERSION_MINOR  0
 
-#define XMPCOMPAREANDMERGE_API_VERSION_MAJOR	3
-#define XMPCOMPAREANDMERGE_API_VERSION_MINOR	0
+#define XMPCOMPAREANDMERGE_API_VERSION_MAJOR    3
+#define XMPCOMPAREANDMERGE_API_VERSION_MINOR    0
 
-#define XMPEXTENSIONS_API_VERSION_MAJOR	2
-#define XMPEXTENSIONS_API_VERSION_MINOR	0
+#define XMPEXTENSIONS_API_VERSION_MAJOR 2
+#define XMPEXTENSIONS_API_VERSION_MINOR 0
 
 #define XMPCORE_API_VERSION MACRO_PASTE(XMPCORE_API_VERSION_MAJOR, ., XMPCORE_API_VERSION_MINOR)
 #define XMPFILES_API_VERSION MACRO_PASTE(XMPFILES_API_VERSION_MAJOR, ., XMPFILES_API_VERSION_MINOR)

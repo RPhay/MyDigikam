@@ -2,7 +2,7 @@
 // Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:	Adobe permits you to use, modify, and distribute this file in
+// NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -116,6 +116,6 @@ const uint32 kMaxParseDepth = 10;
 
 /*****************************************************************************/
 
-#endif	// __dng_sdk_limits__
-	
+#endif  // __dng_sdk_limits__
+    
 /*****************************************************************************/

@@ -2,7 +2,7 @@
 // Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:	Adobe permits you to use, modify, and distribute this file in
+// NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -18,60 +18,60 @@
 /*****************************************************************************/
 
 dng_file_stream::dng_file_stream (const char *filename,
-								  bool output,
-								  uint32 bufferSize)
+                                  bool output,
+                                  uint32 bufferSize)
 
-	:	dng_stream ((dng_abort_sniffer *) NULL,
-					bufferSize,
-					0)
-	
-	,	fFile (NULL)
-	
-	{
+    :   dng_stream ((dng_abort_sniffer *) NULL,
+                    bufferSize,
+                    0)
+    
+    ,   fFile (NULL)
+    
+    {
 
-	fFile = fopen (filename, output ? "wb" : "rb");
+    fFile = fopen (filename, output ? "wb" : "rb");
 
-	if (!fFile)
-		{
-		
-		#if qDNGValidate
+    if (!fFile)
+        {
+        
+        #if qDNGValidate
 
-		ReportError ("Unable to open file",
-					 filename);
-					 
-		ThrowSilentError ();
-		
-		#else
-		
-		ThrowOpenFile ();
-		
-		#endif
+        ReportError ("Unable to open file",
+                     filename);
+                     
+        ThrowSilentError ();
+        
+        #else
+        
+        ThrowOpenFile ();
+        
+        #endif
 
-		}
-	
-	}
+        }
+    
+    }
 
 /*****************************************************************************/
 
 dng_file_stream::dng_file_stream (FILE *file,
-								  uint32 bufferSize)
+                                  uint32 bufferSize)
 
-	:	dng_stream ((dng_abort_sniffer *) NULL,
-					bufferSize,
-					0)
-	
-	,	fFile (file)
-	
-	{
+    :   dng_stream ((dng_abort_sniffer *) NULL,
+                    bufferSize,
+                    0)
+    
+    ,   fFile (file)
+    
+    {
 
-	if (!fFile)
-		{
-		
-		ThrowOpenFile ("Unable to open FILE *");
+    if (!fFile)
+        {
+        
+        ThrowOpenFile ("Unable to open FILE *");
 
-		}
-	
-	}
+        }
+    
+    }
 
 /*****************************************************************************/
 
@@ -80,82 +80,82 @@ dng_file_stream::dng_file_stream (FILE *file,
 /*****************************************************************************/
 
 dng_file_stream::dng_file_stream (int fd,
-								  const char *mode,
-								  uint32 bufferSize)
+                                  const char *mode,
+                                  uint32 bufferSize)
 
-	:	dng_stream ((dng_abort_sniffer *) NULL,
-					bufferSize,
-					0)
+    :   dng_stream ((dng_abort_sniffer *) NULL,
+                    bufferSize,
+                    0)
 
-	,	fFile (NULL)
+    ,   fFile (NULL)
 
-	{
+    {
 
-	// Note: Use dup here as caller is responsible for separately managing fd.
+    // Note: Use dup here as caller is responsible for separately managing fd.
 
-	fFile = fdopen (dup (fd), mode);
+    fFile = fdopen (dup (fd), mode);
 
-	if (!fFile)
-		{
+    if (!fFile)
+        {
 
-		#if qDNGValidate
+        #if qDNGValidate
 
-		ReportError ("Unable to open file",
-					 filename);
+        ReportError ("Unable to open file",
+                     filename);
 
-		ThrowSilentError ();
+        ThrowSilentError ();
 
-		#else
+        #else
 
-		ThrowOpenFile ();
+        ThrowOpenFile ();
 
-		#endif
+        #endif
 
-		}
+        }
 
-	}
+    }
 
 /*****************************************************************************/
 
 dng_file_stream::dng_file_stream (int fd,
-								  bool output,
-								  uint32 bufferSize)
+                                  bool output,
+                                  uint32 bufferSize)
 
-	:	dng_stream ((dng_abort_sniffer *) NULL,
-					bufferSize,
-					0)
+    :   dng_stream ((dng_abort_sniffer *) NULL,
+                    bufferSize,
+                    0)
 
-	,	fFile (NULL)
+    ,   fFile (NULL)
 
-	{
+    {
 
-	// Note: Use dup here as caller is responsible for separately managing fd.
+    // Note: Use dup here as caller is responsible for separately managing fd.
 
-	fFile = fdopen (dup (fd), output ? "wb" : "rb");
+    fFile = fdopen (dup (fd), output ? "wb" : "rb");
 
-	if (!fFile)
-		{
+    if (!fFile)
+        {
 
-		#if qDNGValidate
+        #if qDNGValidate
 
-		ReportError ("Unable to open file",
-					 filename);
+        ReportError ("Unable to open file",
+                     filename);
 
-		ThrowSilentError ();
+        ThrowSilentError ();
 
-		#else
+        #else
 
-		ThrowOpenFile ();
+        ThrowOpenFile ();
 
-		#endif
+        #endif
 
-		}
+        }
 
-	}
+    }
 
 /*****************************************************************************/
 
-#endif	// qAndroid
+#endif  // qAndroid
 
 /*****************************************************************************/
 
@@ -164,130 +164,130 @@ dng_file_stream::dng_file_stream (int fd,
 /*****************************************************************************/
 
 dng_file_stream::dng_file_stream (const wchar_t *filename,
-								  bool output,
-								  uint32 bufferSize)
+                                  bool output,
+                                  uint32 bufferSize)
 
-	:	dng_stream ((dng_abort_sniffer *) NULL,
-					bufferSize,
-					0)
-	
-	,	fFile (NULL)
-	
-	{
+    :   dng_stream ((dng_abort_sniffer *) NULL,
+                    bufferSize,
+                    0)
+    
+    ,   fFile (NULL)
+    
+    {
 
-	fFile = _wfopen (filename, output ? L"wb" : L"rb");
+    fFile = _wfopen (filename, output ? L"wb" : L"rb");
 
-	if (!fFile)
-		{
-		
-		#if qDNGValidate
+    if (!fFile)
+        {
+        
+        #if qDNGValidate
 
-		char filenameCString[256];
+        char filenameCString[256];
 
-		size_t returnCount;
+        size_t returnCount;
 
-		wcstombs_s (&returnCount, 
-					filenameCString, 
-					256, 
-					filename, 
-					_TRUNCATE);
+        wcstombs_s (&returnCount, 
+                    filenameCString, 
+                    256, 
+                    filename, 
+                    _TRUNCATE);
 
-		ReportError ("Unable to open file",
-					 filenameCString);
-					 
-		ThrowSilentError ();
-		
-		#else
-		
-		ThrowOpenFile ();
-		
-		#endif	// qDNGValidate
+        ReportError ("Unable to open file",
+                     filenameCString);
+                     
+        ThrowSilentError ();
+        
+        #else
+        
+        ThrowOpenFile ();
+        
+        #endif  // qDNGValidate
 
-		}
-	
-	}
+        }
+    
+    }
 
 /*****************************************************************************/
 
-#endif	// qWinOS
-		
+#endif  // qWinOS
+        
 /*****************************************************************************/
 
 dng_file_stream::~dng_file_stream ()
-	{
-	
-	if (fFile)
-		{
-		fclose (fFile);
-		fFile = NULL;
-		}
-	
-	}
-		
+    {
+    
+    if (fFile)
+        {
+        fclose (fFile);
+        fFile = NULL;
+        }
+    
+    }
+        
 /*****************************************************************************/
 
 uint64 dng_file_stream::DoGetLength ()
-	{
-	
-	if (fseek (fFile, 0, SEEK_END) != 0)
-		{
-		
-		ThrowReadFile ();
+    {
+    
+    if (fseek (fFile, 0, SEEK_END) != 0)
+        {
+        
+        ThrowReadFile ();
 
-		}
-	
-	return (uint64) ftell (fFile);
-	
-	}
-		
+        }
+    
+    return (uint64) ftell (fFile);
+    
+    }
+        
 /*****************************************************************************/
 
 void dng_file_stream::DoRead (void *data,
-							  uint32 count,
-							  uint64 offset)
-	{
-	
-	if (fseek (fFile, (long) offset, SEEK_SET) != 0)
-		{
-		
-		ThrowReadFile ();
+                              uint32 count,
+                              uint64 offset)
+    {
+    
+    if (fseek (fFile, (long) offset, SEEK_SET) != 0)
+        {
+        
+        ThrowReadFile ();
 
-		}
-	
-	uint32 bytesRead = (uint32) fread (data, 1, count, fFile);
-	
-	if (bytesRead != count)
-		{
-		
-		ThrowReadFile ();
+        }
+    
+    uint32 bytesRead = (uint32) fread (data, 1, count, fFile);
+    
+    if (bytesRead != count)
+        {
+        
+        ThrowReadFile ();
 
-		}
-	
-	}
-		
+        }
+    
+    }
+        
 /*****************************************************************************/
 
 void dng_file_stream::DoWrite (const void *data,
-							   uint32 count,
-							   uint64 offset)
-	{
-	
-	if (fseek (fFile, (uint32) offset, SEEK_SET) != 0)
-		{
-		
-		ThrowWriteFile ();
+                               uint32 count,
+                               uint64 offset)
+    {
+    
+    if (fseek (fFile, (uint32) offset, SEEK_SET) != 0)
+        {
+        
+        ThrowWriteFile ();
 
-		}
-	
-	uint32 bytesWritten = (uint32) fwrite (data, 1, count, fFile);
-	
-	if (bytesWritten != count)
-		{
-		
-		ThrowWriteFile ();
+        }
+    
+    uint32 bytesWritten = (uint32) fwrite (data, 1, count, fFile);
+    
+    if (bytesWritten != count)
+        {
+        
+        ThrowWriteFile ();
 
-		}
-	
-	}
-		
+        }
+    
+    }
+        
 /*****************************************************************************/

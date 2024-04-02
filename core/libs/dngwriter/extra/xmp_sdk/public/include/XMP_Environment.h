@@ -30,7 +30,7 @@
 //  JKR Jens Krueger
 //  IJS Inder Jeet Singh
 //  HK  Honey Kansal
-//  ADC	Amandeep Chawla
+//  ADC Amandeep Chawla
 //
 // mm/dd/yy who Description of changes, most recent on top.
 //
@@ -40,7 +40,7 @@
 //
 // 12-19-12 IJS 5.6-f005 Making the importToXMP and exportFromXMP as public Plug-in methods
 //
-// 05-18-12	JKR	5.4-c005 Add iOS targets, separate iOS specific code behind XMP_iOSBuild preprocessor define.
+// 05-18-12 JKR 5.4-c005 Add iOS targets, separate iOS specific code behind XMP_iOSBuild preprocessor define.
 //
 // 05-19-09 AWL 5.0-c031-f039 First part of threading improvements. Force full rebuilds.
 //
@@ -49,11 +49,11 @@
 // 08-24-07 AWL 4.2-c019 Remove support for ancient CXMP_* init/term routines and non-public (AXE) expat.
 //
 // 04-14-06 AWL 4.0-c003 Undo the previous edits. There seems to be no way on the UNIX platforms to
-//				determine the endianness safely. There are no standard macros, we can't force it on
-//				the client's build scripts.
+//              determine the endianness safely. There are no standard macros, we can't force it on
+//              the client's build scripts.
 // 04-14-06 AWL 4.0-c002 Add XMP_NativeBigEndian macro to XMP_Environment.h, verify the setting at
-//				init time in both the client and DLL. Verify that this matches the expat_config.h
-//				settings. Change UnicodeConversions to use the macro.
+//              init time in both the client and DLL. Verify that this matches the expat_config.h
+//              settings. Change UnicodeConversions to use the macro.
 // 03-24-06 AWL 4.0 Adapt for move to ham-perforce, integrate XMPFiles, bump version to 4.
 //
 // 01-28-05 AWL Remove BIB.
@@ -76,10 +76,10 @@
 
 #if defined ( MAC_ENV ) && !defined (IOS_ENV)
 
-	#if 0	// ! maybe someday - ! MAC_ENV
-		#error "MAC_ENV must be defined so that \"#if MAC_ENV\" is true"
-	#endif
-	
+    #if 0   // ! maybe someday - ! MAC_ENV
+        #error "MAC_ENV must be defined so that \"#if MAC_ENV\" is true"
+    #endif
+    
     #if defined ( WIN_ENV ) || defined ( UNIX_ENV ) || defined ( ANDROID_ENV ) || defined ( WEB_ENV )
         #error "XMP environment error - must define only one of MAC_ENV, WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
     #endif
@@ -87,83 +87,83 @@
     #define XMP_MacBuild  1
     #define XMP_WinBuild  0
     #define XMP_UNIXBuild 0
-	#define XMP_iOSBuild  0
-	#define XMP_UWP	      0
-	#define XMP_AndroidBuild  0
+    #define XMP_iOSBuild  0
+    #define XMP_UWP       0
+    #define XMP_AndroidBuild  0
 
 #elif defined ( WIN_ENV )
 
-	#if 0	// ! maybe someday - ! WIN_ENV
-		#error "WIN_ENV must be defined so that \"#if WIN_ENV\" is true"
-	#endif
-	
+    #if 0   // ! maybe someday - ! WIN_ENV
+        #error "WIN_ENV must be defined so that \"#if WIN_ENV\" is true"
+    #endif
+    
     #if defined ( MAC_ENV ) || defined ( UNIX_ENV ) || defined ( IOS_ENV ) || defined ( ANDROID_ENV ) || defined ( WEB_ENV )
-		#error "XMP environment error - must define only one of MAC_ENV (or IOS_ENV), WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
+        #error "XMP environment error - must define only one of MAC_ENV (or IOS_ENV), WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
     #endif
 
     #define XMP_MacBuild  0
     #define XMP_WinBuild  1
     #define XMP_UNIXBuild 0
-	#define XMP_iOSBuild  0
-	#if defined ( WIN_UNIVERSAL_ENV)
-		#define XMP_UWP	  1
-	#else
-		#define XMP_UWP	  0
-	#endif
-	#define XMP_AndroidBuild  0
+    #define XMP_iOSBuild  0
+    #if defined ( WIN_UNIVERSAL_ENV)
+        #define XMP_UWP   1
+    #else
+        #define XMP_UWP   0
+    #endif
+    #define XMP_AndroidBuild  0
 
 #elif defined ( UNIX_ENV ) && !defined (ANDROID_ENV) && !defined (WEB_ENV)
 
-	#if 0	// ! maybe someday - ! UNIX_ENV
-		#error "UNIX_ENV must be defined so that \"#if UNIX_ENV\" is true"
-	#endif
-	
-	#if defined ( MAC_ENV ) || defined ( WIN_ENV ) || defined ( IOS_ENV ) || defined ( ANDROID_ENV ) || defined ( WEB_ENV )
-		#error "XMP environment error - must define only one of MAC_ENV (or IOS_ENV), WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
-	#endif
+    #if 0   // ! maybe someday - ! UNIX_ENV
+        #error "UNIX_ENV must be defined so that \"#if UNIX_ENV\" is true"
+    #endif
+    
+    #if defined ( MAC_ENV ) || defined ( WIN_ENV ) || defined ( IOS_ENV ) || defined ( ANDROID_ENV ) || defined ( WEB_ENV )
+        #error "XMP environment error - must define only one of MAC_ENV (or IOS_ENV), WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
+    #endif
 
     #define XMP_MacBuild  0
     #define XMP_WinBuild  0
     #define XMP_UNIXBuild 1
-	#define XMP_iOSBuild  0
+    #define XMP_iOSBuild  0
 
-	#define XMP_UWP		  0
-	#define XMP_AndroidBuild  0
+    #define XMP_UWP       0
+    #define XMP_AndroidBuild  0
 
 #elif defined ( IOS_ENV )
 
-	#if 0	// ! maybe someday - ! IOS_ENV
-		#error "IOS_ENV must be defined so that \"#if IOS_ENV\" is true"
-	#endif
+    #if 0   // ! maybe someday - ! IOS_ENV
+        #error "IOS_ENV must be defined so that \"#if IOS_ENV\" is true"
+    #endif
 
-	#if defined ( WIN_ENV ) || defined ( UNIX_ENV ) || defined ( ANDROID_ENV ) || defined ( WEB_ENV )
-		#error "XMP environment error - must define only one of IOS_ENV, WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
-	#endif
-
-	#define XMP_MacBuild  0
-	#define XMP_WinBuild  0
-	#define XMP_UNIXBuild 0
-	#define XMP_iOSBuild  1
-
-	#define XMP_UWP		  0
-
-	#define XMP_AndroidBuild  0
-
-#elif defined ( ANDROID_ENV )
-
-	#if 0	// ! maybe someday - ! UNIX_ENV
-		#error "ANDROID_ENV must be defined so that \"#if ANDROID_ENV\" is true"
-	#endif
-	
-	#if defined ( MAC_ENV ) || defined ( WIN_ENV ) || defined ( IOS_ENV ) || defined ( WEB_ENV )
-		#error "XMP environment error - must define only one of MAC_ENV (or IOS_ENV), WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
-	#endif
+    #if defined ( WIN_ENV ) || defined ( UNIX_ENV ) || defined ( ANDROID_ENV ) || defined ( WEB_ENV )
+        #error "XMP environment error - must define only one of IOS_ENV, WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
+    #endif
 
     #define XMP_MacBuild  0
     #define XMP_WinBuild  0
     #define XMP_UNIXBuild 0
-	#define XMP_iOSBuild  0
-	#define XMP_AndroidBuild  1
+    #define XMP_iOSBuild  1
+
+    #define XMP_UWP       0
+
+    #define XMP_AndroidBuild  0
+
+#elif defined ( ANDROID_ENV )
+
+    #if 0   // ! maybe someday - ! UNIX_ENV
+        #error "ANDROID_ENV must be defined so that \"#if ANDROID_ENV\" is true"
+    #endif
+    
+    #if defined ( MAC_ENV ) || defined ( WIN_ENV ) || defined ( IOS_ENV ) || defined ( WEB_ENV )
+        #error "XMP environment error - must define only one of MAC_ENV (or IOS_ENV), WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
+    #endif
+
+    #define XMP_MacBuild  0
+    #define XMP_WinBuild  0
+    #define XMP_UNIXBuild 0
+    #define XMP_iOSBuild  0
+    #define XMP_AndroidBuild  1
 
 #elif defined ( WEB_ENV )
 
@@ -171,9 +171,9 @@
         #error "WEB_ENV must be defined so that \"#if WEB_ENV\" is true"
     #endif
     
-	#if defined ( MAC_ENV ) || defined ( WIN_ENV ) || defined ( IOS_ENV ) || defined ( ANDROID_ENV )
-    	#error "XMP environment error - must define only one of MAC_ENV (or IOS_ENV), WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
-	#endif
+    #if defined ( MAC_ENV ) || defined ( WIN_ENV ) || defined ( IOS_ENV ) || defined ( ANDROID_ENV )
+        #error "XMP environment error - must define only one of MAC_ENV (or IOS_ENV), WIN_ENV, UNIX_ENV, ANDROID_ENV or WEB_ENV"
+    #endif
 
     #define XMP_MacBuild  0
     #define XMP_WinBuild  0
@@ -212,7 +212,7 @@
 #endif
 
 #ifndef AdobePrivate
-	#define AdobePrivate 1
+    #define AdobePrivate 1
 #endif
 
 #if AdobePrivate
@@ -220,80 +220,80 @@
         #error "Use of XMP_PRESERVE_BIB_CLIENT is no longer supported"
     #endif
     #ifdef UsePublicExpat
-		#error "Use of a non-public Expat (like AXE) is no longer supported"
+        #error "Use of a non-public Expat (like AXE) is no longer supported"
     #endif
 #endif
 
 
 #ifndef DISABLE_SERIALIZED_IMPORT_EXPORT 
-	#define DISABLE_SERIALIZED_IMPORT_EXPORT 0
+    #define DISABLE_SERIALIZED_IMPORT_EXPORT 0
 #endif
 
 #ifndef XMP_64
-	#if _WIN64 || defined(_LP64)
-		#define XMP_64 1
-	#else
-		#define XMP_64 0
-	#endif
+    #if _WIN64 || defined(_LP64)
+        #define XMP_64 1
+    #else
+        #define XMP_64 0
+    #endif
 #endif
 
 // =================================================================================================
 // Macintosh Specific Settings
 // ===========================
 #if (XMP_MacBuild)
-	#define XMP_HELPER_DLL_IMPORT __attribute__((visibility("default")))
-	#define XMP_HELPER_DLL_EXPORT __attribute__((visibility("default")))
-	#define XMP_HELPER_DLL_PRIVATE __attribute__((visibility("hidden")))
-	#define APICALL 
+    #define XMP_HELPER_DLL_IMPORT __attribute__((visibility("default")))
+    #define XMP_HELPER_DLL_EXPORT __attribute__((visibility("default")))
+    #define XMP_HELPER_DLL_PRIVATE __attribute__((visibility("hidden")))
+    #define APICALL 
 #endif
 
 // =================================================================================================
 // Windows Specific Settings
 // =========================
 #if (XMP_WinBuild)
-	#define XMP_HELPER_DLL_IMPORT
-	#define XMP_HELPER_DLL_EXPORT
-	#define XMP_HELPER_DLL_PRIVATE
-	#define APICALL __stdcall
+    #define XMP_HELPER_DLL_IMPORT
+    #define XMP_HELPER_DLL_EXPORT
+    #define XMP_HELPER_DLL_PRIVATE
+    #define APICALL __stdcall
 #endif
 
 // =================================================================================================
 // UNIX Specific Settings
 // ======================
 #if (XMP_UNIXBuild) | (XMP_AndroidBuild)
-	#define XMP_HELPER_DLL_IMPORT
-	#define XMP_HELPER_DLL_EXPORT __attribute__ ((visibility ("default")))
-	#define XMP_HELPER_DLL_PRIVATE __attribute__ ((visibility ("hidden")))
-	#define APICALL 
+    #define XMP_HELPER_DLL_IMPORT
+    #define XMP_HELPER_DLL_EXPORT __attribute__ ((visibility ("default")))
+    #define XMP_HELPER_DLL_PRIVATE __attribute__ ((visibility ("hidden")))
+    #define APICALL 
 #endif
 
 // =================================================================================================
 // IOS Specific Settings
 // ===========================
 #if (XMP_iOSBuild)
-	#include <TargetConditionals.h>
-	#if (TARGET_CPU_ARM)
-		#define XMP_IOS_ARM 1
-	#else
-		#define XMP_IOS_ARM 0
-	#endif
-	#define XMP_HELPER_DLL_IMPORT __attribute__((visibility("default")))
-	#define XMP_HELPER_DLL_EXPORT __attribute__((visibility("default")))
-	#define XMP_HELPER_DLL_PRIVATE __attribute__((visibility("hidden")))
-	#define APICALL 
+    #include <TargetConditionals.h>
+    #if (TARGET_CPU_ARM)
+        #define XMP_IOS_ARM 1
+    #else
+        #define XMP_IOS_ARM 0
+    #endif
+    #define XMP_HELPER_DLL_IMPORT __attribute__((visibility("default")))
+    #define XMP_HELPER_DLL_EXPORT __attribute__((visibility("default")))
+    #define XMP_HELPER_DLL_PRIVATE __attribute__((visibility("hidden")))
+    #define APICALL 
 #endif
 
 // =================================================================================================
 
 #if (XMP_DynamicBuild)
-	#define XMP_PUBLIC XMP_HELPER_DLL_EXPORT
-	#define XMP_PRIVATE XMP_HELPER_DLL_PRIVATE
+    #define XMP_PUBLIC XMP_HELPER_DLL_EXPORT
+    #define XMP_PRIVATE XMP_HELPER_DLL_PRIVATE
 #elif (XMP_StaticBuild)
-	#define XMP_PUBLIC
-	#define XMP_PRIVATE
+    #define XMP_PUBLIC
+    #define XMP_PRIVATE
 #else
-	#define XMP_PUBLIC XMP_HELPER_DLL_IMPORT
-	#define XMP_PRIVATE XMP_HELPER_DLL_PRIVATE
+    #define XMP_PUBLIC XMP_HELPER_DLL_IMPORT
+    #define XMP_PRIVATE XMP_HELPER_DLL_PRIVATE
 #endif
 
 #endif  // __XMP_Environment_h__

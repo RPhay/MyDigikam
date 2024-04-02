@@ -2,7 +2,7 @@
 // Copyright 2023 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:	Adobe permits you to use, modify, and distribute this file in
+// NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -26,56 +26,56 @@
 /*****************************************************************************/
 
 class dng_semantic_mask
-	{
-		
-	public:
+    {
+        
+    public:
 
-		// String identifying the semantics of this mask. Corresponds to
-		// SemanticName tag.
+        // String identifying the semantics of this mask. Corresponds to
+        // SemanticName tag.
 
-		dng_string fName;
+        dng_string fName;
 
-		// String identifying the instance of this mask. Corresponds to
-		// SemanticInstanceID tag.
+        // String identifying the instance of this mask. Corresponds to
+        // SemanticInstanceID tag.
 
-		dng_string fInstanceID;
+        dng_string fInstanceID;
 
-		// XMP block. We don't use this for anything at present; just make
-		// sure we preserve it.
+        // XMP block. We don't use this for anything at present; just make
+        // sure we preserve it.
 
-		std::shared_ptr<const dng_memory_block> fXMP;
+        std::shared_ptr<const dng_memory_block> fXMP;
 
-		// The semantic mask. The origin of the image bounds is always (0,0)
-		// by convention.
+        // The semantic mask. The origin of the image bounds is always (0,0)
+        // by convention.
 
-		std::shared_ptr<const dng_image> fMask;
+        std::shared_ptr<const dng_image> fMask;
 
-		// Optional MaskSubArea tag (top, left, bottom, right).
+        // Optional MaskSubArea tag (top, left, bottom, right).
 
-		// [0]: top crop
-		// [1]: left crop
-		
-		// [2]: width full
-		// [3]: height full
+        // [0]: top crop
+        // [1]: left crop
+        
+        // [2]: width full
+        // [3]: height full
 
-		uint32 fMaskSubArea [4] = { 0, 0, 0, 0 };
-		
-		// Lossy compressed data.
-		
-		std::shared_ptr<const dng_lossy_compressed_image> fLossyCompressed;
+        uint32 fMaskSubArea [4] = { 0, 0, 0, 0 };
+        
+        // Lossy compressed data.
+        
+        std::shared_ptr<const dng_lossy_compressed_image> fLossyCompressed;
 
-	public:
+    public:
 
-		bool IsMaskSubAreaValid () const;
+        bool IsMaskSubAreaValid () const;
 
-		void CalcMaskSubArea (dng_point &origin,
-							  dng_rect &wholeImageArea) const;
-		
-	};
+        void CalcMaskSubArea (dng_point &origin,
+                              dng_rect &wholeImageArea) const;
+        
+    };
 
 /*****************************************************************************/
 
-#endif	// __dng_semantic_mask__
+#endif  // __dng_semantic_mask__
 
 /*****************************************************************************/
 

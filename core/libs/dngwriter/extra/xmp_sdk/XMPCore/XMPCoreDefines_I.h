@@ -18,8 +18,8 @@
 #include "XMPCommon/XMPCommonDefines_I.h"
 
 namespace AdobeXMPCore_Int {
-	extern const char * kArrayItemName;
-	extern const char * kArrayItemNameSpace;
+    extern const char * kArrayItemName;
+    extern const char * kArrayItemNameSpace;
 }
 
 // =================================================================================================

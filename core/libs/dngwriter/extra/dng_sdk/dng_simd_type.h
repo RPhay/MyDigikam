@@ -2,7 +2,7 @@
 // Copyright 2017-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:	Adobe permits you to use, modify, and distribute this file in
+// NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -17,25 +17,25 @@
 
 #if qDNGIntelCompiler
 #include <immintrin.h>
-#endif	// qDNGIntelCompiler
+#endif  // qDNGIntelCompiler
 
 /*****************************************************************************/
 
 enum SIMDType
-	{
+    {
 
-	Scalar,
+    Scalar,
 
-	SSE2,		// Pentium 4
-	arm64_neon = SSE2,
-	AVX,		// Sandy Bridge
-	AVX2,		// Haswell
-	F16C = AVX2, //Ivy bridge
-	AVX512_SKX, // Sky Lake Server
+    SSE2,       // Pentium 4
+    arm64_neon = SSE2,
+    AVX,        // Sandy Bridge
+    AVX2,       // Haswell
+    F16C = AVX2, //Ivy bridge
+    AVX512_SKX, // Sky Lake Server
 
-	SIMD_Sentinel
+    SIMD_Sentinel
 
-	};
+    };
 
 /*****************************************************************************/
 
@@ -43,45 +43,45 @@ template <int SIMDType>
 class SIMDTraits
 {
 public:
-	static const int kVecSizeFloat = 1;
-	static const int kVecSizeInt32 = 1;
+    static const int kVecSizeFloat = 1;
+    static const int kVecSizeInt32 = 1;
 };
 
 template <>
 class SIMDTraits<SSE2>
 {
 public:
-	static const int kVecSizeFloat = 4;
-	static const int kVecSizeInt32 = 4;
+    static const int kVecSizeFloat = 4;
+    static const int kVecSizeInt32 = 4;
 };
 
 template <>
 class SIMDTraits<AVX>
 {
 public:
-	static const int kVecSizeFloat = 8;
-	static const int kVecSizeInt32 = 4;
+    static const int kVecSizeFloat = 8;
+    static const int kVecSizeInt32 = 4;
 };
 
 template <>
 class SIMDTraits<AVX2>
 {
 public:
-	static const int kVecSizeFloat = 8;
-	static const int kVecSizeInt32 = 8;
+    static const int kVecSizeFloat = 8;
+    static const int kVecSizeInt32 = 8;
 };
 
 template <>
 class SIMDTraits<AVX512_SKX>
 {
 public:
-	static const int kVecSizeFloat = 16;
-	static const int kVecSizeInt32 = 16;
+    static const int kVecSizeFloat = 16;
+    static const int kVecSizeInt32 = 16;
 };
 
 const SIMDType SIMDTypeMaxValue = SIMDType(SIMD_Sentinel - 1);
 
-extern SIMDType	gDNGMaxSIMD;
+extern SIMDType gDNGMaxSIMD;
 
 /*****************************************************************************/
 
@@ -97,10 +97,10 @@ extern SIMDType	gDNGMaxSIMD;
 
 // Pre-defined feature levels.
 
-#define CR_SIMD_MIN_FEATURE	  (_FEATURE_SSE2)
-#define CR_AVX_FEATURE		  (_FEATURE_AVX)
-#define CR_AVX2_FEATURE		  (_FEATURE_AVX|_FEATURE_FMA|_FEATURE_AVX2)
-#define CR_F16C_FEATURE			CR_AVX2_FEATURE
+#define CR_SIMD_MIN_FEATURE   (_FEATURE_SSE2)
+#define CR_AVX_FEATURE        (_FEATURE_AVX)
+#define CR_AVX2_FEATURE       (_FEATURE_AVX|_FEATURE_FMA|_FEATURE_AVX2)
+#define CR_F16C_FEATURE         CR_AVX2_FEATURE
 #define CR_AVX512_SKX_FEATURE (_FEATURE_AVX512F|_FEATURE_AVX512CD|_FEATURE_AVX512BW|_FEATURE_AVX512DQ|_FEATURE_AVX512VL)
 #define CR_COMPILER_USING_AVX512_SKX (__AVX512F__ && __AVX512VL__ && __AVX512BW__ && __AVX512DQ__ && __AVX512CD__)
 
@@ -126,12 +126,12 @@ extern SIMDType	gDNGMaxSIMD;
 
 //#define INTEL_PRAGMA_SIMD_ASSERT_C(clause) _Pragma(PM2__STR1__(simd assert clause))
 #define INTEL_PRAGMA_SIMD_ASSERT _Pragma("omp simd assert")
-#define INTEL_PRAGMA_SIMD_ASSERT_VECLEN_FLOAT(s) _Pragma(_SIMDTYPE_TFY(INTEL_OMP_SIMD_SIMDLEN_ASSERT( SIMDTraits<s>::kVecSizeFloat	 ) ))
-#define INTEL_PRAGMA_SIMD_ASSERT_VECLEN_INT32(s) _Pragma(_SIMDTYPE_TFY(INTEL_OMP_SIMD_SIMDLEN_ASSERT( SIMDTraits<s>::kVecSizeInt32	 ) ))
+#define INTEL_PRAGMA_SIMD_ASSERT_VECLEN_FLOAT(s) _Pragma(_SIMDTYPE_TFY(INTEL_OMP_SIMD_SIMDLEN_ASSERT( SIMDTraits<s>::kVecSizeFloat   ) ))
+#define INTEL_PRAGMA_SIMD_ASSERT_VECLEN_INT32(s) _Pragma(_SIMDTYPE_TFY(INTEL_OMP_SIMD_SIMDLEN_ASSERT( SIMDTraits<s>::kVecSizeInt32   ) ))
 #define INTEL_PRAGMA_SIMD_ASSERT_VECLEN_INT16(s) _Pragma(_SIMDTYPE_TFY(INTEL_OMP_SIMD_SIMDLEN_ASSERT( SIMDTraits<s>::kVecSizeInt32*2 ) ))
-#define INTEL_PRAGMA_SIMD_ASSERT_VECLEN_INT8(s)	 _Pragma(_SIMDTYPE_TFY(INTEL_OMP_SIMD_SIMDLEN_ASSERT( SIMDTraits<s>::kVecSizeInt32*4 ) ))
+#define INTEL_PRAGMA_SIMD_ASSERT_VECLEN_INT8(s)  _Pragma(_SIMDTYPE_TFY(INTEL_OMP_SIMD_SIMDLEN_ASSERT( SIMDTraits<s>::kVecSizeInt32*4 ) ))
 
-#endif	// qDNGDebug
+#endif  // qDNGDebug
 
 #ifdef __INTEL_COMPILER
 #define SET_CPU_FEATURE(simd) _allow_cpu_features( (simd >= AVX512_SKX) ? CR_AVX512_SKX_FEATURE : (simd >= AVX2) ? CR_AVX2_FEATURE : ((simd >= AVX) ? CR_AVX_FEATURE : CR_SIMD_MIN_FEATURE) )
@@ -154,9 +154,9 @@ extern SIMDType	gDNGMaxSIMD;
 
 // Non-Intel compiler. Use empty definitions for the macros.
 // Credit: http://www.highprogrammer.com/alan/windev/visualstudio.html, but avoid using $ character
-#define Stringize( L )			#L
-#define MakeString( M, L )		M(L)
-#define _x_Line					MakeString( Stringize, __LINE__ )
+#define Stringize( L )          #L
+#define MakeString( M, L )      M(L)
+#define _x_Line                 MakeString( Stringize, __LINE__ )
 
 #if qDNGValidateTarget || qMacOS || defined(__clang__)
 // Do not warn about Intel compiler if building dng_validate or if we're on macOS.
@@ -183,10 +183,10 @@ extern SIMDType	gDNGMaxSIMD;
 #define INTEL_PRAGMA_SIMD_ASSERT_VECLEN_INT8(simd)
 #define INTEL_PRAGMA_NOVECTOR
 
-#endif	// qDNGIntelCompiler
+#endif  // qDNGIntelCompiler
 
 /*****************************************************************************/
 
-#endif	// __dng_simd_type__
+#endif  // __dng_simd_type__
 
 /*****************************************************************************/

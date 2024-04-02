@@ -2,7 +2,7 @@
 // Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:	Adobe permits you to use, modify, and distribute this file in
+// NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -259,7 +259,7 @@
 #if qMacOS
 
 #ifdef __LP64__
-#if	   __LP64__
+#if    __LP64__
 #define qDNG64Bit 1
 #endif
 #endif
@@ -267,7 +267,7 @@
 #elif qWinOS
 
 #ifdef WIN64
-#if	   WIN64
+#if    WIN64
 #define qDNG64Bit 1
 #endif
 #endif
@@ -275,7 +275,7 @@
 #elif qLinux
 
 #ifdef __LP64__
-#if	   __LP64__
+#if    __LP64__
 #define qDNG64Bit 1
 #endif
 #endif
@@ -283,7 +283,7 @@
 #elif qAndroid
 
 #ifdef __LP64__
-#if	   __LP64__
+#if    __LP64__
 #define qDNG64Bit 1
 #endif
 #endif
@@ -310,7 +310,7 @@
 #else
 #define DNG_RESTRICT
 #endif
-#endif	/* __cplusplus */
+#endif  /* __cplusplus */
 
 /*****************************************************************************/
 
@@ -320,7 +320,7 @@
 #else
 #define DNG_ALWAYS_INLINE inline
 #endif
-#endif	/* __cplusplus */
+#endif  /* __cplusplus */
 
 /*****************************************************************************/
 
@@ -471,5 +471,5 @@
 /*****************************************************************************/
 
 #endif
-	
+    
 /*****************************************************************************/

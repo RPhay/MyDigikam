@@ -2,7 +2,7 @@
 // Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:	Adobe permits you to use, modify, and distribute this file in
+// NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -13,269 +13,269 @@
 #include "dng_pixel_buffer.h"
 #include "dng_tag_types.h"
 #include "dng_utils.h"
-		
+        
 /*****************************************************************************/
 
 dng_tile_iterator::dng_tile_iterator (const dng_image &image,
-									  const dng_rect &area)
-									  
-	:	fArea			()
-	,	fTileWidth		(0)
-	,	fTileHeight		(0)
-	,	fTileTop		(0)
-	,	fTileLeft		(0)
-	,	fRowLeft		(0)
-	,	fLeftPage		(0)
-	,	fRightPage		(0)
-	,	fTopPage		(0)
-	,	fBottomPage		(0)
-	,	fHorizontalPage (0)
-	,	fVerticalPage	(0)
-	
-	{
-	
-	Initialize (image.RepeatingTile (),
-				area & image.Bounds ());
-				
-	}
-						   
+                                      const dng_rect &area)
+                                      
+    :   fArea           ()
+    ,   fTileWidth      (0)
+    ,   fTileHeight     (0)
+    ,   fTileTop        (0)
+    ,   fTileLeft       (0)
+    ,   fRowLeft        (0)
+    ,   fLeftPage       (0)
+    ,   fRightPage      (0)
+    ,   fTopPage        (0)
+    ,   fBottomPage     (0)
+    ,   fHorizontalPage (0)
+    ,   fVerticalPage   (0)
+    
+    {
+    
+    Initialize (image.RepeatingTile (),
+                area & image.Bounds ());
+                
+    }
+                           
 /*****************************************************************************/
 
 dng_tile_iterator::dng_tile_iterator (const dng_point &tileSize,
-									  const dng_rect &area)
-									  
-	:	fArea			()
-	,	fTileWidth		(0)
-	,	fTileHeight		(0)
-	,	fTileTop		(0)
-	,	fTileLeft		(0)
-	,	fRowLeft		(0)
-	,	fLeftPage		(0)
-	,	fRightPage		(0)
-	,	fTopPage		(0)
-	,	fBottomPage		(0)
-	,	fHorizontalPage (0)
-	,	fVerticalPage	(0)
-	
-	{
-	
-	dng_rect tile (area);
-	
-	tile.b = Min_int32 (tile.b, tile.t + tileSize.v);
-	tile.r = Min_int32 (tile.r, tile.l + tileSize.h);
-	
-	Initialize (tile,
-				area);
-	
-	}
-						   
+                                      const dng_rect &area)
+                                      
+    :   fArea           ()
+    ,   fTileWidth      (0)
+    ,   fTileHeight     (0)
+    ,   fTileTop        (0)
+    ,   fTileLeft       (0)
+    ,   fRowLeft        (0)
+    ,   fLeftPage       (0)
+    ,   fRightPage      (0)
+    ,   fTopPage        (0)
+    ,   fBottomPage     (0)
+    ,   fHorizontalPage (0)
+    ,   fVerticalPage   (0)
+    
+    {
+    
+    dng_rect tile (area);
+    
+    tile.b = Min_int32 (tile.b, tile.t + tileSize.v);
+    tile.r = Min_int32 (tile.r, tile.l + tileSize.h);
+    
+    Initialize (tile,
+                area);
+    
+    }
+                           
 /*****************************************************************************/
 
 dng_tile_iterator::dng_tile_iterator (const dng_rect &tile,
-									  const dng_rect &area)
-									  
-	:	fArea			()
-	,	fTileWidth		(0)
-	,	fTileHeight		(0)
-	,	fTileTop		(0)
-	,	fTileLeft		(0)
-	,	fRowLeft		(0)
-	,	fLeftPage		(0)
-	,	fRightPage		(0)
-	,	fTopPage		(0)
-	,	fBottomPage		(0)
-	,	fHorizontalPage (0)
-	,	fVerticalPage	(0)
-	
-	{
-	
-	Initialize (tile,
-				area);
-	
-	}
-						   
+                                      const dng_rect &area)
+                                      
+    :   fArea           ()
+    ,   fTileWidth      (0)
+    ,   fTileHeight     (0)
+    ,   fTileTop        (0)
+    ,   fTileLeft       (0)
+    ,   fRowLeft        (0)
+    ,   fLeftPage       (0)
+    ,   fRightPage      (0)
+    ,   fTopPage        (0)
+    ,   fBottomPage     (0)
+    ,   fHorizontalPage (0)
+    ,   fVerticalPage   (0)
+    
+    {
+    
+    Initialize (tile,
+                area);
+    
+    }
+                           
 /*****************************************************************************/
 
 void dng_tile_iterator::Initialize (const dng_rect &tile,
-									const dng_rect &area)
-	{
-	
-	fArea = area;
-	
-	if (area.IsEmpty ())
-		{
-		
-		fVerticalPage =	 0;
-		fBottomPage	  = -1;
-		
-		return;
-		
-		}
-	
-	int32 vOffset = tile.t;
-	int32 hOffset = tile.l;
-	
-	int32 tileHeight = tile.b - vOffset;
-	int32 tileWidth	 = tile.r - hOffset;
-	
-	fTileHeight = tileHeight;
-	fTileWidth	= tileWidth;
-	
-	fLeftPage  = (fArea.l - hOffset	   ) / tileWidth;
-	fRightPage = (fArea.r - hOffset - 1) / tileWidth;
-	
-	fHorizontalPage = fLeftPage;
-	
-	fTopPage	= (fArea.t - vOffset	) / tileHeight;
-	fBottomPage = (fArea.b - vOffset - 1) / tileHeight;
-	
-	fVerticalPage = fTopPage;
-	
-	fTileLeft = fHorizontalPage * tileWidth	 + hOffset;
-	fTileTop  = fVerticalPage	* tileHeight + vOffset;
+                                    const dng_rect &area)
+    {
+    
+    fArea = area;
+    
+    if (area.IsEmpty ())
+        {
+        
+        fVerticalPage =  0;
+        fBottomPage   = -1;
+        
+        return;
+        
+        }
+    
+    int32 vOffset = tile.t;
+    int32 hOffset = tile.l;
+    
+    int32 tileHeight = tile.b - vOffset;
+    int32 tileWidth  = tile.r - hOffset;
+    
+    fTileHeight = tileHeight;
+    fTileWidth  = tileWidth;
+    
+    fLeftPage  = (fArea.l - hOffset    ) / tileWidth;
+    fRightPage = (fArea.r - hOffset - 1) / tileWidth;
+    
+    fHorizontalPage = fLeftPage;
+    
+    fTopPage    = (fArea.t - vOffset    ) / tileHeight;
+    fBottomPage = (fArea.b - vOffset - 1) / tileHeight;
+    
+    fVerticalPage = fTopPage;
+    
+    fTileLeft = fHorizontalPage * tileWidth  + hOffset;
+    fTileTop  = fVerticalPage   * tileHeight + vOffset;
 
-	fRowLeft = fTileLeft;
-			
-	}
-									  
+    fRowLeft = fTileLeft;
+            
+    }
+                                      
 /*****************************************************************************/
 
 bool dng_tile_iterator::GetOneTile (dng_rect &tile)
-	{
-	
-	if (fVerticalPage > fBottomPage)
-		{
-		return false;
-		}
+    {
+    
+    if (fVerticalPage > fBottomPage)
+        {
+        return false;
+        }
 
-	if (fVerticalPage > fTopPage)
-		tile.t = fTileTop;
-	else
-		tile.t = fArea.t;
+    if (fVerticalPage > fTopPage)
+        tile.t = fTileTop;
+    else
+        tile.t = fArea.t;
 
-	if (fVerticalPage < fBottomPage)
-		tile.b = fTileTop + fTileHeight;
-	else
-		tile.b = fArea.b;
+    if (fVerticalPage < fBottomPage)
+        tile.b = fTileTop + fTileHeight;
+    else
+        tile.b = fArea.b;
 
-	if (fHorizontalPage > fLeftPage)
-		tile.l = fTileLeft;
-	else
-		tile.l = fArea.l;
+    if (fHorizontalPage > fLeftPage)
+        tile.l = fTileLeft;
+    else
+        tile.l = fArea.l;
 
-	if (fHorizontalPage < fRightPage)
-		tile.r = fTileLeft + fTileWidth;
-	else
-		tile.r = fArea.r;
+    if (fHorizontalPage < fRightPage)
+        tile.r = fTileLeft + fTileWidth;
+    else
+        tile.r = fArea.r;
 
-	if (fHorizontalPage < fRightPage)
-		{
-		fHorizontalPage++;
-		fTileLeft += fTileWidth;
-		}
+    if (fHorizontalPage < fRightPage)
+        {
+        fHorizontalPage++;
+        fTileLeft += fTileWidth;
+        }
 
-	else
-		{
+    else
+        {
 
-		fVerticalPage++;
-		fTileTop += fTileHeight;
+        fVerticalPage++;
+        fTileTop += fTileHeight;
 
-		fHorizontalPage = fLeftPage;
-		fTileLeft = fRowLeft;
+        fHorizontalPage = fLeftPage;
+        fTileLeft = fRowLeft;
 
-		}
-		
-	return true;
-	
-	}
+        }
+        
+    return true;
+    
+    }
 
 /*****************************************************************************/
 
 dng_tile_reverse_iterator::dng_tile_reverse_iterator (const dng_image &image,
-													  const dng_rect &area)
+                                                      const dng_rect &area)
 
-	:	fTiles ()
+    :   fTiles ()
 
-	,	fIndex (0)
+    ,   fIndex (0)
 
-	{
-	
-	dng_tile_forward_iterator iterator (image, area);
+    {
+    
+    dng_tile_forward_iterator iterator (image, area);
 
-	Initialize (iterator);
+    Initialize (iterator);
 
-	}
+    }
 
 /*****************************************************************************/
 
 dng_tile_reverse_iterator::dng_tile_reverse_iterator (const dng_point &tileSize,
-													  const dng_rect &area)
+                                                      const dng_rect &area)
 
-	:	fTiles ()
+    :   fTiles ()
 
-	,	fIndex (0)
+    ,   fIndex (0)
 
-	{
-	
-	dng_tile_forward_iterator iterator (tileSize, area);
+    {
+    
+    dng_tile_forward_iterator iterator (tileSize, area);
 
-	Initialize (iterator);
-	
-	}
-						   
+    Initialize (iterator);
+    
+    }
+                           
 /*****************************************************************************/
 
 dng_tile_reverse_iterator::dng_tile_reverse_iterator (const dng_rect &tile,
-													  const dng_rect &area)
+                                                      const dng_rect &area)
 
-	:	fTiles ()
+    :   fTiles ()
 
-	,	fIndex (0)
+    ,   fIndex (0)
 
-	{
-	
-	dng_tile_forward_iterator iterator (tile, area);
+    {
+    
+    dng_tile_forward_iterator iterator (tile, area);
 
-	Initialize (iterator);
-	
-	}
-	
+    Initialize (iterator);
+    
+    }
+    
 /*****************************************************************************/
 
 bool dng_tile_reverse_iterator::GetOneTile (dng_rect &tile)
-	{
-	
-	if (fIndex == 0)
-		{
-		
-		return false;
-		
-		}
+    {
+    
+    if (fIndex == 0)
+        {
+        
+        return false;
+        
+        }
 
-	fIndex--;
-	
-	tile = fTiles [fIndex];
+    fIndex--;
+    
+    tile = fTiles [fIndex];
 
-	return true;
+    return true;
 
-	}
+    }
 
 /*****************************************************************************/
 
 void dng_tile_reverse_iterator::Initialize (dng_tile_forward_iterator &iterator)
-	{
-	
-	dng_rect tile;
+    {
+    
+    dng_rect tile;
 
-	while (iterator.GetOneTile (tile))
-		{
-		
-		fTiles.push_back (tile);
-		
-		}
+    while (iterator.GetOneTile (tile))
+        {
+        
+        fTiles.push_back (tile);
+        
+        }
 
-	fIndex = fTiles.size ();
-	
-	}
+    fIndex = fTiles.size ();
+    
+    }
 
 /*****************************************************************************/

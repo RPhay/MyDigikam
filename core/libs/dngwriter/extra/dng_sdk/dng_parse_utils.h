@@ -2,7 +2,7 @@
 // Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
-// NOTICE:	Adobe permits you to use, modify, and distribute this file in
+// NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
 
@@ -29,7 +29,7 @@ const char * LookupParentCode (uint32 parentCode);
 /*****************************************************************************/
 
 const char * LookupTagCode (uint32 parentCode,
-							uint32 tagCode);
+                            uint32 tagCode);
 
 /*****************************************************************************/
 
@@ -108,24 +108,24 @@ const char * LookupDepthMeasureType (uint32 key);
 /*****************************************************************************/
 
 void DumpHexAscii (dng_stream &stream,
-				   uint32 count);
-				   
+                   uint32 count);
+                   
 void DumpHexAscii (const uint8 *buf,
-				   uint32 count);
+                   uint32 count);
 
 void DumpXMP (dng_stream &stream,
-			  uint32 count);
+              uint32 count);
 
 void DumpString (const dng_string &s);
 
 void DumpTagValues (dng_stream &stream,
-					const char *entry_name,
-					uint32 parentCode,
-					uint32 tagCode,
-					uint32 tagType,
-					uint32 tagCount,
-					const char *tag_name = NULL);
-					
+                    const char *entry_name,
+                    uint32 parentCode,
+                    uint32 tagCode,
+                    uint32 tagType,
+                    uint32 tagCount,
+                    const char *tag_name = NULL);
+                    
 void DumpMatrix (const dng_matrix &m);
 
 void DumpVector (const dng_vector &v);
@@ -137,10 +137,10 @@ void DumpExposureTime (real64 x);
 void DumpFingerprint (const dng_fingerprint &p);
 
 void DumpHueSatMap (dng_stream &stream,
-					uint32 hues,
-					uint32 sats,
-					uint32 vals,
-					bool skipSat0);
+                    uint32 hues,
+                    uint32 sats,
+                    uint32 vals,
+                    bool skipSat0);
 
 /*****************************************************************************/
 
@@ -149,87 +149,87 @@ void DumpHueSatMap (dng_stream &stream,
 /*****************************************************************************/
 
 bool CheckTagType (uint32 parentCode,
-				   uint32 tagCode,
-				   uint32 tagType,
-				   uint16 validType0,
-				   uint16 validType1 = 0,
-				   uint16 validType2 = 0,
-				   uint16 validType3 = 0);
+                   uint32 tagCode,
+                   uint32 tagType,
+                   uint16 validType0,
+                   uint16 validType1 = 0,
+                   uint16 validType2 = 0,
+                   uint16 validType3 = 0);
 
 bool CheckTagCount (uint32 parentCode,
-					uint32 tagCode,
-					uint32 tagCount,
-					uint32 minCount,
-					uint32 maxCount = 0);
-							
+                    uint32 tagCode,
+                    uint32 tagCount,
+                    uint32 minCount,
+                    uint32 maxCount = 0);
+                            
 bool CheckColorImage (uint32 parentCode,
-					  uint32 tagCode,
-					  uint32 colorPlanes);
-					  
+                      uint32 tagCode,
+                      uint32 colorPlanes);
+                      
 bool CheckMainIFD (uint32 parentCode,
-				   uint32 tagCode,
-				   uint32 newSubFileType);
+                   uint32 tagCode,
+                   uint32 newSubFileType);
 
 bool CheckMainOrEnhancedIFD (uint32 parentCode,
-							 uint32 tagCode,
-							 uint32 newSubFileType);
+                             uint32 tagCode,
+                             uint32 newSubFileType);
 
 bool CheckRawIFD (uint32 parentCode,
-				  uint32 tagCode,
-				  uint32 photometricInterpretation);
+                  uint32 tagCode,
+                  uint32 photometricInterpretation);
 
 bool CheckCFA (uint32 parentCode,
-			   uint32 tagCode,
-			   uint32 photometricInterpretation);
+               uint32 tagCode,
+               uint32 photometricInterpretation);
 
 /*****************************************************************************/
 
 void ParseStringTag (dng_stream &stream,
-					 uint32 parentCode,
-					 uint32 tagCode,
-					 uint32 tagCount,
-					 dng_string &s,
-					 bool trimBlanks = true);
-						  
+                     uint32 parentCode,
+                     uint32 tagCode,
+                     uint32 tagCount,
+                     dng_string &s,
+                     bool trimBlanks = true);
+                          
 void ParseDualStringTag (dng_stream &stream,
-						 uint32 parentCode,
-						 uint32 tagCode,
-						 uint32 tagCount,
-						 dng_string &s1,
-						 dng_string &s2);
+                         uint32 parentCode,
+                         uint32 tagCode,
+                         uint32 tagCount,
+                         dng_string &s1,
+                         dng_string &s2);
 
 void ParseEncodedStringTag (dng_stream &stream,
-							uint32 parentCode,
-							uint32 tagCode,
-							uint32 tagCount,
-							dng_string &s);
-							
+                            uint32 parentCode,
+                            uint32 tagCode,
+                            uint32 tagCount,
+                            dng_string &s);
+                            
 bool ParseMatrixTag (dng_stream &stream,
-					 uint32 parentCode,
-					 uint32 tagCode,
-					 uint32 tagType,
-					 uint32 tagCount,
-					 uint32 rows,
-					 uint32 cols,
-					 dng_matrix &m);
-							
+                     uint32 parentCode,
+                     uint32 tagCode,
+                     uint32 tagType,
+                     uint32 tagCount,
+                     uint32 rows,
+                     uint32 cols,
+                     dng_matrix &m);
+                            
 bool ParseVectorTag (dng_stream &stream,
-					 uint32 parentCode,
-					 uint32 tagCode,
-					 uint32 tagType,
-					 uint32 tagCount,
-					 uint32 count,
-					 dng_vector &v);
-					 
+                     uint32 parentCode,
+                     uint32 tagCode,
+                     uint32 tagType,
+                     uint32 tagCount,
+                     uint32 count,
+                     dng_vector &v);
+                     
 bool ParseDateTimeTag (dng_stream &stream,
-					   uint32 parentCode,
-					   uint32 tagCode,
-					   uint32 tagType,
-					   uint32 tagCount,
-					   dng_date_time &dt);
-							
+                       uint32 parentCode,
+                       uint32 tagCode,
+                       uint32 tagType,
+                       uint32 tagCount,
+                       dng_date_time &dt);
+                            
 /*****************************************************************************/
 
 #endif
-	
+    
 /*****************************************************************************/

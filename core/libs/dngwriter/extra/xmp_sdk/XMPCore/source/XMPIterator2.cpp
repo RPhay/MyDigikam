@@ -9,7 +9,7 @@
 // =================================================================================================
 
 
-#include "public/include/XMP_Environment.h"	// ! This must be the first include!
+#include "public/include/XMP_Environment.h" // ! This must be the first include!
 #include "XMPCore/source/XMPCore_Impl.hpp"
 
 #include "XMPCore/XMPCoreDefines.h"
@@ -23,12 +23,12 @@
 #include "XMPCore/Interfaces/ISimpleNode_I.h"
 #include <map>
 #include <string>
-#include <stdio.h>	// For snprintf.
+#include <stdio.h>  // For snprintf.
 
 #if XMP_WinBuild
-	#pragma warning ( disable : 4702 )	// unreachable code
-	#pragma warning ( disable : 4800 )	// forcing value to bool 'true' or 'false' (performance warning)
-	#pragma warning ( disable : 4996 )	// '...' was declared deprecated
+    #pragma warning ( disable : 4702 )  // unreachable code
+    #pragma warning ( disable : 4800 )  // forcing value to bool 'true' or 'false' (performance warning)
+    #pragma warning ( disable : 4996 )  // '...' was declared deprecated
 #endif
 
 // =================================================================================================
@@ -37,226 +37,226 @@
 
 
 #ifndef TraceIterators
-	#define TraceIterators 0
+    #define TraceIterators 0
 #endif
 
 #if TraceIterators
-	static const char * sStageNames[] = { "before", "self", "qualifiers", "children" };
+    static const char * sStageNames[] = { "before", "self", "qualifiers", "children" };
 #endif
 
 
 static XMP_VarString GetNameSpace( const AdobeXMPCommon::spcIUTF8String & nameSpace )
 {
-	auto defaultMap = AdobeXMPCore::INameSpacePrefixMap::GetDefaultNameSpacePrefixMap()->GetINameSpacePrefixMap_I();
-	auto prefix = defaultMap->GetPrefix( nameSpace );
-	return prefix->c_str();
+    auto defaultMap = AdobeXMPCore::INameSpacePrefixMap::GetDefaultNameSpacePrefixMap()->GetINameSpacePrefixMap_I();
+    auto prefix = defaultMap->GetPrefix( nameSpace );
+    return prefix->c_str();
 }
 
 
 static XMP_VarString NodeFullName( const AdobeXMPCore::spcINode & node )
 {
-	XMP_VarString name = GetNameSpace(node->GetNameSpace()) + ":" + node->GetName()->c_str();
-	return name;
+    XMP_VarString name = GetNameSpace(node->GetNameSpace()) + ":" + node->GetName()->c_str();
+    return name;
 }
 
 void  XMPIterator2::AddSchemaProperties(IteratorNode & iterSchema, const char * nameSpace)
 {
-	using namespace  AdobeXMPCore;
+    using namespace  AdobeXMPCore;
 
-	for (auto childIter = mDOM->Iterator(); childIter; childIter = childIter->Next()) {
+    for (auto childIter = mDOM->Iterator(); childIter; childIter = childIter->Next()) {
 
-		spINode childNode = childIter->GetNode();
-		//TODO check name
-		if (!strcmp(childNode->GetNameSpace()->c_str(), nameSpace)) {
-			iterSchema.nodeChildren.push_back(IteratorNode( XMPUtils::GetIXMPOptions(childNode), NodeFullName(childNode), 0 ));
-		}
+        spINode childNode = childIter->GetNode();
+        //TODO check name
+        if (!strcmp(childNode->GetNameSpace()->c_str(), nameSpace)) {
+            iterSchema.nodeChildren.push_back(IteratorNode( XMPUtils::GetIXMPOptions(childNode), NodeFullName(childNode), 0 ));
+        }
 
-	}
+    }
 
 }
  void XMPIterator2::SetCurrentSchema(XMP_StringPtr schemaName)
 {
 
-	info.currSchema = schemaName;
+    info.currSchema = schemaName;
 
-}	// SetCurrSchema
+}   // SetCurrSchema
 
  void XMPIterator2::SetCurrentSchema(XMP_VarString & schemaName)
 {
 
-	info.currSchema = schemaName;
+    info.currSchema = schemaName;
 
-}	// SetCurrSchema
+}   // SetCurrSchema
 
 void XMPIterator2::AdvanceIteratorPosition()
 {
 
-	while (true) {
-	
-		if (info.currPos == info.endPos) {
+    while (true) {
+    
+        if (info.currPos == info.endPos) {
 
-			if (info.ancestors.empty()) break;
+            if (info.ancestors.empty()) break;
 
-			IteratorPosPair & parent = info.ancestors.back();
-			info.currPos = parent.first;
-			info.endPos = parent.second;
-			info.ancestors.pop_back();
-		}
-		else {
+            IteratorPosPair & parent = info.ancestors.back();
+            info.currPos = parent.first;
+            info.endPos = parent.second;
+            info.ancestors.pop_back();
+        }
+        else {
 
-			if (info.currPos->visitStage == kIter_BeforeVisit) {
-				if (info.currPos->options & kXMP_SchemaNode) SetCurrentSchema(info.currPos->fullPath);
-				break;
-			}
+            if (info.currPos->visitStage == kIter_BeforeVisit) {
+                if (info.currPos->options & kXMP_SchemaNode) SetCurrentSchema(info.currPos->fullPath);
+                break;
+            }
 
 
-			if (info.currPos->visitStage == kIter_VisitSelf) {
+            if (info.currPos->visitStage == kIter_VisitSelf) {
 
-				info.currPos->visitStage = kIter_VisitQualifiers;
-				if (!info.currPos->nodeQualifiers.empty()) {
+                info.currPos->visitStage = kIter_VisitQualifiers;
+                if (!info.currPos->nodeQualifiers.empty()) {
 
-					info.ancestors.push_back(IteratorPosPair(info.currPos, info.endPos));
-					info.endPos = info.currPos->nodeQualifiers.end();
-					info.currPos = info.currPos->nodeQualifiers.begin();
-					break;
-				}
-			}
+                    info.ancestors.push_back(IteratorPosPair(info.currPos, info.endPos));
+                    info.endPos = info.currPos->nodeQualifiers.end();
+                    info.currPos = info.currPos->nodeQualifiers.begin();
+                    break;
+                }
+            }
 
-			if (info.currPos->visitStage == kIter_VisitQualifiers) {	// Just finished visiting the qualifiers.
-				info.currPos->nodeQualifiers.clear();
-				info.currPos->visitStage = kIter_VisitChildren;			// Start visiting the children.
-				if (!info.currPos->nodeChildren.empty()) {
-					info.ancestors.push_back(IteratorPosPair(info.currPos, info.endPos));
-					info.endPos = info.currPos->nodeChildren.end();		// ! Set the parent's endPos before changing currPos!
-					info.currPos = info.currPos->nodeChildren.begin();
-					break;
-				}
-			}
+            if (info.currPos->visitStage == kIter_VisitQualifiers) {    // Just finished visiting the qualifiers.
+                info.currPos->nodeQualifiers.clear();
+                info.currPos->visitStage = kIter_VisitChildren;         // Start visiting the children.
+                if (!info.currPos->nodeChildren.empty()) {
+                    info.ancestors.push_back(IteratorPosPair(info.currPos, info.endPos));
+                    info.endPos = info.currPos->nodeChildren.end();     // ! Set the parent's endPos before changing currPos!
+                    info.currPos = info.currPos->nodeChildren.begin();
+                    break;
+                }
+            }
 
-			if (info.currPos->visitStage == kIter_VisitChildren) {
-				info.currPos->nodeChildren.clear();
-				++info.currPos;
-				continue;
-			}
-		}
-	}
+            if (info.currPos->visitStage == kIter_VisitChildren) {
+                info.currPos->nodeChildren.clear();
+                ++info.currPos;
+                continue;
+            }
+        }
+    }
 
-	XMP_Assert((info.currPos == info.endPos) || (info.currPos->visitStage == kIter_BeforeVisit));
+    XMP_Assert((info.currPos == info.endPos) || (info.currPos->visitStage == kIter_BeforeVisit));
 
 }
 
 AdobeXMPCore::spINode XMPIterator2::GetNextNode(bool & isSchema)
 {
-	using namespace  AdobeXMPCore;
-	spINode xmpNode = spINode();
+    using namespace  AdobeXMPCore;
+    spINode xmpNode = spINode();
 
-	if (info.currPos->visitStage != kIter_BeforeVisit) AdvanceIteratorPosition();
+    if (info.currPos->visitStage != kIter_BeforeVisit) AdvanceIteratorPosition();
 
-	bool isSchemaNode = false;
-	XMP_ExpandedXPath exPath; 
+    bool isSchemaNode = false;
+    XMP_ExpandedXPath exPath; 
 
-	while (info.currPos != info.endPos) {
+    while (info.currPos != info.endPos) {
 
-		isSchemaNode = XMP_NodeIsSchema(info.currPos->options);
-		if (isSchemaNode) {
+        isSchemaNode = XMP_NodeIsSchema(info.currPos->options);
+        if (isSchemaNode) {
 
-			SetCurrentSchema(info.currPos->fullPath);
+            SetCurrentSchema(info.currPos->fullPath);
 
-			isSchema = isSchemaNode;
-		}
-		else {
+            isSchema = isSchemaNode;
+        }
+        else {
 
-			ExpandXPath(info.currSchema.c_str(), info.currPos->fullPath.c_str(), &exPath);
-			bool found = XMPUtils::FindCnstNode(mDOM, exPath, xmpNode);
-		}
-		if (xmpNode ||  isSchemaNode) break;
+            ExpandXPath(info.currSchema.c_str(), info.currPos->fullPath.c_str(), &exPath);
+            bool found = XMPUtils::FindCnstNode(mDOM, exPath, xmpNode);
+        }
+        if (xmpNode ||  isSchemaNode) break;
 
-		info.currPos->visitStage = kIter_VisitChildren;
-		info.currPos->nodeChildren.clear();
-		info.currPos->nodeQualifiers.clear();
+        info.currPos->visitStage = kIter_VisitChildren;
+        info.currPos->nodeChildren.clear();
+        info.currPos->nodeQualifiers.clear();
 
-		AdvanceIteratorPosition();
-	}
-	
-	if (info.currPos == info.endPos) return spINode();
+        AdvanceIteratorPosition();
+    }
+    
+    if (info.currPos == info.endPos) return spINode();
 
-	XMP_Assert(info.currPos->visitStage == kIter_BeforeVisit);
+    XMP_Assert(info.currPos->visitStage == kIter_BeforeVisit);
 
-	if (info.currPos->visitStage == kIter_BeforeVisit) {
+    if (info.currPos->visitStage == kIter_BeforeVisit) {
 
-		if (!isSchemaNode && !(info.options & kXMP_IterJustChildren)) {
-			
-			AddNodeOffSpring(*info.currPos, xmpNode);
-		}
-		info.currPos->visitStage = kIter_VisitSelf;
-	}
+        if (!isSchemaNode && !(info.options & kXMP_IterJustChildren)) {
+            
+            AddNodeOffSpring(*info.currPos, xmpNode);
+        }
+        info.currPos->visitStage = kIter_VisitSelf;
+    }
 
-	return xmpNode;
+    return xmpNode;
 }
 
 void XMPIterator2::AddNodeOffSpring(IteratorNode &iterParent, const AdobeXMPCore::spINode & xmpParent)
 {
 
-		using namespace AdobeXMPCore;
-		XMP_VarString currPath(iterParent.fullPath);
-		size_t leafOffset = currPath.size();
-		if (xmpParent->HasQualifiers() && (!(info.options & kXMP_IterOmitQualifiers))) {
+        using namespace AdobeXMPCore;
+        XMP_VarString currPath(iterParent.fullPath);
+        size_t leafOffset = currPath.size();
+        if (xmpParent->HasQualifiers() && (!(info.options & kXMP_IterOmitQualifiers))) {
 
-			currPath += "/?";	// All qualifiers are named and use paths like "Prop/?Qual".
-			leafOffset += 2;
+            currPath += "/?";   // All qualifiers are named and use paths like "Prop/?Qual".
+            leafOffset += 2;
 
-			for ( auto qualIter = xmpParent->QualifiersIterator(); qualIter; qualIter = qualIter->Next() ) {
+            for ( auto qualIter = xmpParent->QualifiersIterator(); qualIter; qualIter = qualIter->Next() ) {
 
-				spINode qualNode = qualIter->GetNode();
-				//TOTO Add prefix too
-				currPath += NodeFullName( qualNode );
+                spINode qualNode = qualIter->GetNode();
+                //TOTO Add prefix too
+                currPath += NodeFullName( qualNode );
 
-				iterParent.nodeQualifiers.push_back( IteratorNode( XMPUtils::GetIXMPOptions( qualNode ), currPath, leafOffset ) );
-				currPath.erase( leafOffset );
-			}
+                iterParent.nodeQualifiers.push_back( IteratorNode( XMPUtils::GetIXMPOptions( qualNode ), currPath, leafOffset ) );
+                currPath.erase( leafOffset );
+            }
 
-			leafOffset -= 2;
-			currPath.erase(leafOffset);
+            leafOffset -= 2;
+            currPath.erase(leafOffset);
 
-		}
-		if (XMPUtils::GetNodeChildCount(xmpParent)) {
-
-
-
-			if (xmpParent->GetNodeType() == INode::kNTStructure) {
-				currPath += '/';
-				leafOffset += 1;
-			}
-			size_t childIdx = 0;
-			for (auto childIter = XMPUtils::GetNodeChildIterator(xmpParent); childIter; childIter = childIter->Next(), ++childIdx) {
-
-				spcINode xmpChild = childIter->GetNode();
-				if (xmpParent->GetNodeType() != INode::kNTArray) {
-					//TODO Add prefix as well
-					currPath += NodeFullName(xmpChild);
-				}
-				else {
-
-					char buffer[32];	// AUDIT: Using sizeof(buffer) below for snprintf length is safe.
-					#if XMP_WinBuild
-						snprintf(buffer, sizeof(buffer), "[%Iu]", childIdx + 1);	// ! XPath indices are one-based.
-					#else
-						snprintf(buffer, sizeof(buffer), "[%zu]", childIdx + 1);
-					#endif
-					currPath += buffer;
-				}
-
-				iterParent.nodeChildren.push_back(IteratorNode(XMPUtils::GetIXMPOptions(xmpChild), currPath, leafOffset));
-				currPath.erase(leafOffset);
-
-			}
-
-
-		}
+        }
+        if (XMPUtils::GetNodeChildCount(xmpParent)) {
 
 
 
-	}	// AddNodeOffspring
+            if (xmpParent->GetNodeType() == INode::kNTStructure) {
+                currPath += '/';
+                leafOffset += 1;
+            }
+            size_t childIdx = 0;
+            for (auto childIter = XMPUtils::GetNodeChildIterator(xmpParent); childIter; childIter = childIter->Next(), ++childIdx) {
+
+                spcINode xmpChild = childIter->GetNode();
+                if (xmpParent->GetNodeType() != INode::kNTArray) {
+                    //TODO Add prefix as well
+                    currPath += NodeFullName(xmpChild);
+                }
+                else {
+
+                    char buffer[32];    // AUDIT: Using sizeof(buffer) below for snprintf length is safe.
+                    #if XMP_WinBuild
+                        snprintf(buffer, sizeof(buffer), "[%Iu]", childIdx + 1);    // ! XPath indices are one-based.
+                    #else
+                        snprintf(buffer, sizeof(buffer), "[%zu]", childIdx + 1);
+                    #endif
+                    currPath += buffer;
+                }
+
+                iterParent.nodeChildren.push_back(IteratorNode(XMPUtils::GetIXMPOptions(xmpChild), currPath, leafOffset));
+                currPath.erase(leafOffset);
+
+            }
+
+
+        }
+
+
+
+    }   // AddNodeOffspring
 
 // =================================================================================================
 // Constructors
@@ -275,129 +275,129 @@ void XMPIterator2::AddNodeOffSpring(IteratorNode &iterParent, const AdobeXMPCore
 // pruned when they are no longer needed. 
 
 XMPIterator2::XMPIterator2 ( const XMPMeta & xmpObjBase,
-						   XMP_StringPtr   schemaNS,
-						   XMP_StringPtr   propName,
-						   XMP_OptionBits  options) :XMPIterator(xmpObjBase, schemaNS, propName, options)
+                           XMP_StringPtr   schemaNS,
+                           XMP_StringPtr   propName,
+                           XMP_OptionBits  options) :XMPIterator(xmpObjBase, schemaNS, propName, options)
 {
-	using namespace AdobeXMPCore;
-	if ( (options & kXMP_IterClassMask) != kXMP_IterProperties ) {
-		XMP_Throw ( "Unsupported iteration kind", kXMPErr_BadOptions );
-	}
-	iteratorOptions = options;
-	info.options = options;
-	
-	if(sUseNewCoreAPIs) {
+    using namespace AdobeXMPCore;
+    if ( (options & kXMP_IterClassMask) != kXMP_IterProperties ) {
+        XMP_Throw ( "Unsupported iteration kind", kXMPErr_BadOptions );
+    }
+    iteratorOptions = options;
+    info.options = options;
+    
+    if(sUseNewCoreAPIs) {
 
-		const XMPMeta2 & tempPtr = dynamic_cast<const XMPMeta2 &>(xmpObjBase);
-		
-	}
-	else {
-		XMP_Throw("Unsupported iteration kind", kXMPErr_BadOptions);
-	}
-	
-	const XMPMeta2 & xmpObj = dynamic_cast<const XMPMeta2 &>(xmpObjBase);
+        const XMPMeta2 & tempPtr = dynamic_cast<const XMPMeta2 &>(xmpObjBase);
+        
+    }
+    else {
+        XMP_Throw("Unsupported iteration kind", kXMPErr_BadOptions);
+    }
+    
+    const XMPMeta2 & xmpObj = dynamic_cast<const XMPMeta2 &>(xmpObjBase);
 
-	spIMetadata root = xmpObj.mDOM;
-	mDOM = xmpObj.mDOM;
-	// *** Lock the XMPMeta object if we ever stop using a full DLL lock.
+    spIMetadata root = xmpObj.mDOM;
+    mDOM = xmpObj.mDOM;
+    // *** Lock the XMPMeta object if we ever stop using a full DLL lock.
 
-	if ( *propName != 0 ) {
-		XMP_ExpandedXPath propPath;
-		ExpandXPath(schemaNS, propName, &propPath);
-		spINode destNode;
-		XMP_OptionBits destOptions = 0;
-		bool nodeFound = XMPUtils::FindCnstNode(root, propPath, destNode,&destOptions);
+    if ( *propName != 0 ) {
+        XMP_ExpandedXPath propPath;
+        ExpandXPath(schemaNS, propName, &propPath);
+        spINode destNode;
+        XMP_OptionBits destOptions = 0;
+        bool nodeFound = XMPUtils::FindCnstNode(root, propPath, destNode,&destOptions);
 
-		if (nodeFound) {
+        if (nodeFound) {
 
-			XMP_VarString rootName(propPath[1].step);	// The schema is [0].
-			for (size_t i = 2; i < propPath.size(); ++i) {
-				XMP_OptionBits stepKind = GetStepKind(propPath[i].options);
-				if (stepKind <= kXMP_QualifierStep) rootName += '/';
-				rootName += propPath[i].step;
-			}
+            XMP_VarString rootName(propPath[1].step);   // The schema is [0].
+            for (size_t i = 2; i < propPath.size(); ++i) {
+                XMP_OptionBits stepKind = GetStepKind(propPath[i].options);
+                if (stepKind <= kXMP_QualifierStep) rootName += '/';
+                rootName += propPath[i].step;
+            }
 
-			propName = rootName.c_str();
-			size_t leafOffset = rootName.size();
-			while ((leafOffset > 0) && (propName[leafOffset] != '/') && (propName[leafOffset] != '[')) --leafOffset;
-			if (propName[leafOffset] == '/') ++leafOffset;
+            propName = rootName.c_str();
+            size_t leafOffset = rootName.size();
+            while ((leafOffset > 0) && (propName[leafOffset] != '/') && (propName[leafOffset] != '[')) --leafOffset;
+            if (propName[leafOffset] == '/') ++leafOffset;
 
-			info.tree.nodeChildren.push_back( IteratorNode( destOptions, propName, leafOffset ) );
-			SetCurrentSchema(propPath[kSchemaStep].step.c_str());
-			if (options & kXMP_IterJustChildren) {
+            info.tree.nodeChildren.push_back( IteratorNode( destOptions, propName, leafOffset ) );
+            SetCurrentSchema(propPath[kSchemaStep].step.c_str());
+            if (options & kXMP_IterJustChildren) {
 
-				AddNodeOffSpring(info.tree.nodeChildren.back(), destNode);
-			}
+                AddNodeOffSpring(info.tree.nodeChildren.back(), destNode);
+            }
 
-		}
-	
-	
-	} else if ( *schemaNS != 0 ) {
+        }
+    
+    
+    } else if ( *schemaNS != 0 ) {
 
-		info.tree.nodeChildren.push_back(IteratorNode(kXMP_SchemaNode, schemaNS, 0));
-		IteratorNode & iterSchema = info.tree.nodeChildren.back();
+        info.tree.nodeChildren.push_back(IteratorNode(kXMP_SchemaNode, schemaNS, 0));
+        IteratorNode & iterSchema = info.tree.nodeChildren.back();
 
-		bool schemaFound = false;
+        bool schemaFound = false;
 
-		for (auto childIter = mDOM->Iterator(); childIter; childIter = childIter->Next()) {
+        for (auto childIter = mDOM->Iterator(); childIter; childIter = childIter->Next()) {
 
-			if (!strcmp(childIter->GetNode()->GetNameSpace()->c_str(), schemaNS)) {
+            if (!strcmp(childIter->GetNode()->GetNameSpace()->c_str(), schemaNS)) {
 
-				schemaFound = true;
-				break;
-			}
-		}
-		
+                schemaFound = true;
+                break;
+            }
+        }
+        
 
-		if (schemaFound) AddSchemaProperties(iterSchema, schemaNS);
+        if (schemaFound) AddSchemaProperties(iterSchema, schemaNS);
 
-		if (iterSchema.nodeChildren.empty()) {
-			info.tree.nodeChildren.pop_back();	// No properties, remove the schema node.
-		}
-		else {
-			SetCurrentSchema(schemaNS);
-		}
-		
-	
-	} else {
+        if (iterSchema.nodeChildren.empty()) {
+            info.tree.nodeChildren.pop_back();  // No properties, remove the schema node.
+        }
+        else {
+            SetCurrentSchema(schemaNS);
+        }
+        
+    
+    } else {
 
-		std::map < XMP_VarString, bool > schemaProperties;
+        std::map < XMP_VarString, bool > schemaProperties;
 
-		for (auto childIter = mDOM->Iterator(); childIter; childIter = childIter->Next()) {
+        for (auto childIter = mDOM->Iterator(); childIter; childIter = childIter->Next()) {
 
-			spINode childNode = childIter->GetNode();
+            spINode childNode = childIter->GetNode();
 
-			schemaProperties[childNode->GetNameSpace()->c_str()] = true;
-		}
-
-
-		for (auto key : schemaProperties) {
-			//TODO check name
-			info.tree.nodeChildren.push_back(IteratorNode( kXMP_SchemaNode, key.first, 0 ));
-
-			IteratorNode & iterSchema = info.tree.nodeChildren.back();
-
-			if (!(info.options & kXMP_IterJustChildren)) {
-				AddSchemaProperties(iterSchema, key.first.c_str());
-			//	if (iterSchema.nodeChildren.empty()) info.tree.nodeChildren.pop_back();	// No properties, remove the schema node.
-			}
-		}
+            schemaProperties[childNode->GetNameSpace()->c_str()] = true;
+        }
 
 
+        for (auto key : schemaProperties) {
+            //TODO check name
+            info.tree.nodeChildren.push_back(IteratorNode( kXMP_SchemaNode, key.first, 0 ));
+
+            IteratorNode & iterSchema = info.tree.nodeChildren.back();
+
+            if (!(info.options & kXMP_IterJustChildren)) {
+                AddSchemaProperties(iterSchema, key.first.c_str());
+            //  if (iterSchema.nodeChildren.empty()) info.tree.nodeChildren.pop_back(); // No properties, remove the schema node.
+            }
+        }
 
 
-	}
 
-	info.currPos = info.tree.nodeChildren.begin();
-	info.endPos = info.tree.nodeChildren.end();
 
-	if ((info.options & kXMP_IterJustChildren) && (info.currPos != info.endPos) && (*schemaNS != 0)) {
-		info.currPos->visitStage = kIter_VisitSelf;
-	}
-	
+    }
 
-	
-}	// XMPIterator for XMPMeta objects
+    info.currPos = info.tree.nodeChildren.begin();
+    info.endPos = info.tree.nodeChildren.end();
+
+    if ((info.options & kXMP_IterJustChildren) && (info.currPos != info.endPos) && (*schemaNS != 0)) {
+        info.currPos->visitStage = kIter_VisitSelf;
+    }
+    
+
+    
+}   // XMPIterator for XMPMeta objects
 
 // -------------------------------------------------------------------------------------------------
 // XMPIterator
@@ -406,13 +406,13 @@ XMPIterator2::XMPIterator2 ( const XMPMeta & xmpObjBase,
 // Constructor for iterations over global tables such as registered namespaces or aliases.
 
 XMPIterator2::XMPIterator2 ( XMP_StringPtr  schemaNS,
-	XMP_StringPtr  propName,
-	XMP_OptionBits options) : XMPIterator(schemaNS, propName, options)
+    XMP_StringPtr  propName,
+    XMP_OptionBits options) : XMPIterator(schemaNS, propName, options)
 {
-	void * p; p = &schemaNS; p = &propName; p = &options;	// Avoid unused param warnings.
-	XMP_Throw("Unimplemented XMPIterator constructor for global tables", kXMPErr_Unimplemented);
+    void * p; p = &schemaNS; p = &propName; p = &options;   // Avoid unused param warnings.
+    XMP_Throw("Unimplemented XMPIterator constructor for global tables", kXMPErr_Unimplemented);
 
-}	// XMPIterator for global tables
+}   // XMPIterator for global tables
 
 // -------------------------------------------------------------------------------------------------
 // ~XMPIterator
@@ -420,10 +420,10 @@ XMPIterator2::XMPIterator2 ( XMP_StringPtr  schemaNS,
 
 XMPIterator2::~XMPIterator2() RELEASE_NO_THROW
 {
-	
-	// Let everything else default.
-	
-}	// ~XMPIterator
+    
+    // Let everything else default.
+    
+}   // ~XMPIterator
 
 // =================================================================================================
 // Iteration Methods
@@ -439,70 +439,70 @@ XMPIterator2::~XMPIterator2() RELEASE_NO_THROW
 
 bool
 XMPIterator2::Next ( XMP_StringPtr * schemaNS,
-					XMP_StringLen *	 nsSize,
-					XMP_StringPtr *	 propPath,
-					XMP_StringLen *	 pathSize,
-					XMP_StringPtr *	 propValue,
-					XMP_StringLen *	 valueSize,
-					XMP_OptionBits * propOptions )
+                    XMP_StringLen *  nsSize,
+                    XMP_StringPtr *  propPath,
+                    XMP_StringLen *  pathSize,
+                    XMP_StringPtr *  propValue,
+                    XMP_StringLen *  valueSize,
+                    XMP_OptionBits * propOptions )
 {
 
-	if (info.currPos == info.endPos) return false;
-	using namespace AdobeXMPCore;
-	using namespace AdobeXMPCommon;
-	bool isSchema = false;
-	spcINode xmpNode = GetNextNode(isSchema);
-	if (!xmpNode && !isSchema) return false;
-	bool isSchemaNode = isSchema;
-	if (info.options & kXMP_IterJustLeafNodes) {
-		while (isSchemaNode || ( xmpNode && XMPUtils::GetNodeChildCount(xmpNode)))  {
-			info.currPos->visitStage = kIter_VisitQualifiers;	// Skip to this node's children.
-			xmpNode = GetNextNode(isSchemaNode);
-			if (xmpNode == libcppNULL && !isSchemaNode) return false;
-			isSchemaNode = XMP_NodeIsSchema(info.currPos->options);
-		}
-	}
+    if (info.currPos == info.endPos) return false;
+    using namespace AdobeXMPCore;
+    using namespace AdobeXMPCommon;
+    bool isSchema = false;
+    spcINode xmpNode = GetNextNode(isSchema);
+    if (!xmpNode && !isSchema) return false;
+    bool isSchemaNode = isSchema;
+    if (info.options & kXMP_IterJustLeafNodes) {
+        while (isSchemaNode || ( xmpNode && XMPUtils::GetNodeChildCount(xmpNode)))  {
+            info.currPos->visitStage = kIter_VisitQualifiers;   // Skip to this node's children.
+            xmpNode = GetNextNode(isSchemaNode);
+            if (xmpNode == libcppNULL && !isSchemaNode) return false;
+            isSchemaNode = XMP_NodeIsSchema(info.currPos->options);
+        }
+    }
 
-	*schemaNS = info.currSchema.c_str();
-	*nsSize = (XMP_Uns32)info.currSchema.size();
-	
+    *schemaNS = info.currSchema.c_str();
+    *nsSize = (XMP_Uns32)info.currSchema.size();
+    
 
-	*propOptions = info.currPos->options;
+    *propOptions = info.currPos->options;
 
-	*propPath = "";
-	*pathSize = 0;
-	*propValue = "";
-	*valueSize = 0;
+    *propPath = "";
+    *pathSize = 0;
+    *propValue = "";
+    *valueSize = 0;
 
-	if (!(*propOptions & kXMP_SchemaNode)) {
+    if (!(*propOptions & kXMP_SchemaNode)) {
 
-		*propPath = info.currPos->fullPath.c_str();
-		*pathSize = (XMP_Uns32)info.currPos->fullPath.size();
+        *propPath = info.currPos->fullPath.c_str();
+        *pathSize = (XMP_Uns32)info.currPos->fullPath.size();
 
-		if (info.options & kXMP_IterJustLeafName) {
-			*propPath += info.currPos->leafOffset;
-			*pathSize -= info.currPos->leafOffset;
-			if (! xmpNode->IsArrayItem()) {
-				*schemaNS = xmpNode->GetNameSpace()->c_str();
-				*nsSize = (XMP_Uns32)xmpNode->GetNameSpace()->size();
-			}
-			else {
-				*schemaNS = "";
-				*nsSize = 0;
-			}
+        if (info.options & kXMP_IterJustLeafName) {
+            *propPath += info.currPos->leafOffset;
+            *pathSize -= info.currPos->leafOffset;
+            if (! xmpNode->IsArrayItem()) {
+                *schemaNS = xmpNode->GetNameSpace()->c_str();
+                *nsSize = (XMP_Uns32)xmpNode->GetNameSpace()->size();
+            }
+            else {
+                *schemaNS = "";
+                *nsSize = 0;
+            }
 
-		}
+        }
 
-		if (!(*propOptions & kXMP_PropCompositeMask)) {
-			spcIUTF8String nodeValue = xmpNode->ConvertToSimpleNode()->GetValue();
-			*propValue = nodeValue->c_str();
-			*valueSize = (XMP_Uns32)nodeValue->size();
-		}
+        if (!(*propOptions & kXMP_PropCompositeMask)) {
+            spcIUTF8String nodeValue = xmpNode->ConvertToSimpleNode()->GetValue();
+            *propValue = nodeValue->c_str();
+            *valueSize = (XMP_Uns32)nodeValue->size();
+        }
 
-	}
+    }
 
-	return true;
-}	// Next
+    return true;
+}   // Next
 
 // -------------------------------------------------------------------------------------------------
 // Skip
@@ -514,29 +514,29 @@ XMPIterator2::Next ( XMP_StringPtr * schemaNS,
 // moved past the things to skip, e.g. if the previous node was simple and the last of its siblings.
 
 enum {
-	kXMP_ValidIterSkipOptions = kXMP_IterSkipSubtree | kXMP_IterSkipSiblings
+    kXMP_ValidIterSkipOptions = kXMP_IterSkipSubtree | kXMP_IterSkipSiblings
 };
 
 
 void
 XMPIterator2::Skip ( XMP_OptionBits iterOptions )
 {
-	//	if ( (info.currPos == kIter_NullPos) )  XMP_Throw ( "No prior postion to skip from", kXMPErr_BadIterPosition );
-	if (iterOptions == 0) XMP_Throw("Must specify what to skip", kXMPErr_BadOptions);
-	if ((iterOptions & ~kXMP_ValidIterSkipOptions) != 0) XMP_Throw("Undefined options", kXMPErr_BadOptions);
+    //  if ( (info.currPos == kIter_NullPos) )  XMP_Throw ( "No prior postion to skip from", kXMPErr_BadIterPosition );
+    if (iterOptions == 0) XMP_Throw("Must specify what to skip", kXMPErr_BadOptions);
+    if ((iterOptions & ~kXMP_ValidIterSkipOptions) != 0) XMP_Throw("Undefined options", kXMPErr_BadOptions);
 
 
-	if (iterOptions & kXMP_IterSkipSubtree) {
+    if (iterOptions & kXMP_IterSkipSubtree) {
 
-		info.currPos->visitStage = kIter_VisitChildren;
-	}
-	else if (iterOptions & kXMP_IterSkipSiblings) {
+        info.currPos->visitStage = kIter_VisitChildren;
+    }
+    else if (iterOptions & kXMP_IterSkipSiblings) {
 
-		info.currPos = info.endPos;
-		AdvanceIteratorPosition();
-	}
+        info.currPos = info.endPos;
+        AdvanceIteratorPosition();
+    }
 
-}	// Skip
+}   // Skip
 
 
 

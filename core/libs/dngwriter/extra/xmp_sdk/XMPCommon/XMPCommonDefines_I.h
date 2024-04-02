@@ -18,17 +18,17 @@
 // ===========================
 
 #ifndef XMP_COMPONENT_INT_NAMESPACE
-	#error "Please define XMP_COMPONENT_INT_NAMESPACE"
+    #error "Please define XMP_COMPONENT_INT_NAMESPACE"
 #endif
 
 namespace AdobeXMPCommon_Int {
-	using namespace AdobeXMPCommon;
-	const uint32 kInternalInterfaceVersionNumber( 0xFFFFFFFF );
+    using namespace AdobeXMPCommon;
+    const uint32 kInternalInterfaceVersionNumber( 0xFFFFFFFF );
 }
 
 namespace XMP_COMPONENT_INT_NAMESPACE {
-	using namespace AdobeXMPCommon;
-	using namespace AdobeXMPCommon_Int;
+    using namespace AdobeXMPCommon;
+    using namespace AdobeXMPCommon_Int;
 }
 
 // =================================================================================================

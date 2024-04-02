@@ -17,14 +17,14 @@
 
 namespace XMP_COMPONENT_INT_NAMESPACE {
 
-	//!
-	//! Initializes the XMP Common Framework.
-	//!
-	void InitializeXMPCommonFramework();
+    //!
+    //! Initializes the XMP Common Framework.
+    //!
+    void InitializeXMPCommonFramework();
 
-	//!
-	//! Terminates the XMP Common Framework.
-	void TerminateXMPCommonFramework();
+    //!
+    //! Terminates the XMP Common Framework.
+    void TerminateXMPCommonFramework();
 }
 
 #endif  // XMPCommon_I_h__

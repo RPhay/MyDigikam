@@ -15,27 +15,27 @@ using namespace std;
 /******************************************************************************/
 
 /*
-	MD5C.C - RSA Data Security, Inc., MD5 message-digest algorithm
+    MD5C.C - RSA Data Security, Inc., MD5 message-digest algorithm
 
-	Copyright (C) 1991-2, RSA Data Security, Inc. Created 1991. All rights 
-	reserved.
+    Copyright (C) 1991-2, RSA Data Security, Inc. Created 1991. All rights 
+    reserved.
 
-	License to copy and use this software is granted provided that it is 
-	identified as the "RSA Data Security, Inc. MD5 Message-Digest Algorithm" in 
-	all material mentioning or referencing this software or this function. 
+    License to copy and use this software is granted provided that it is 
+    identified as the "RSA Data Security, Inc. MD5 Message-Digest Algorithm" in 
+    all material mentioning or referencing this software or this function. 
 
-	License is also granted to make and use derivative works provided that such 
-	works are identified as "derived from the RSA Data Security, Inc. MD5 
-	Message-Digest Algorithm" in all material mentioning or referencing the 
-	derived work. 
-	
-	RSA Data Security, Inc. makes no representations concerning either the 
-	merchantability of this software or the suitability of this software for 
-	any particular purpose. It is provided "as is" without express or implied 
-	warranty of any kind. 
-	
-	These notices must be retained in any copies of any part of this 
-	documentation and/or software. 
+    License is also granted to make and use derivative works provided that such 
+    works are identified as "derived from the RSA Data Security, Inc. MD5 
+    Message-Digest Algorithm" in all material mentioning or referencing the 
+    derived work. 
+    
+    RSA Data Security, Inc. makes no representations concerning either the 
+    merchantability of this software or the suitability of this software for 
+    any particular purpose. It is provided "as is" without express or implied 
+    warranty of any kind. 
+    
+    These notices must be retained in any copies of any part of this 
+    documentation and/or software. 
 */
 
 /******************************************************************************/
@@ -64,11 +64,11 @@ static void Encode (XMP_Uns8 *, XMP_Uns32 *, XMP_Uns32);
 static void Decode (XMP_Uns32 *, XMP_Uns8 *, XMP_Uns32);
 
 static XMP_Uns8 PADDING[64] =
-	{
+    {
      0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-	};
+    };
 
 /* F, G, H and I are basic MD5 functions.
 
@@ -133,11 +133,11 @@ void MD5Init (MD5_CTX * context)
 
       */
 
-void MD5Update (	MD5_CTX *context, /* context */
-					XMP_Uns8 *input, /* input block */
-					XMP_Uns32 inputLen) /* length of input block */
+void MD5Update (    MD5_CTX *context, /* context */
+                    XMP_Uns8 *input, /* input block */
+                    XMP_Uns32 inputLen) /* length of input block */
 {
-	using namespace std;
+    using namespace std;
 
      XMP_Uns32 i, index, partLen;
 
@@ -156,7 +156,7 @@ void MD5Update (	MD5_CTX *context, /* context */
 
 */
      if (inputLen >= partLen) {
-	 std::memcpy (&context->buffer[index], input, partLen);	// AUDIT: From public MD5 code, assumed safe.
+     std::memcpy (&context->buffer[index], input, partLen); // AUDIT: From public MD5 code, assumed safe.
      MD5Transform (context->state, context->buffer);
 
      for (i = partLen; i + 63 < inputLen; i += 64)
@@ -168,7 +168,7 @@ void MD5Update (	MD5_CTX *context, /* context */
      i = 0;
 
        /* Buffer remaining input */
-	 std::memcpy (&context->buffer[index], &input[i], inputLen-i);	// AUDIT: From public MD5 code, assumed safe.
+     std::memcpy (&context->buffer[index], &input[i], inputLen-i);  // AUDIT: From public MD5 code, assumed safe.
 
 }
 
@@ -177,8 +177,8 @@ void MD5Update (	MD5_CTX *context, /* context */
 
       */
 
-void MD5Final (	XMP_Uns8 digest[16], /* message digest */
-				MD5_CTX *context /* context */)
+void MD5Final ( XMP_Uns8 digest[16], /* message digest */
+                MD5_CTX *context /* context */)
 {
      XMP_Uns8 bits[8];
      XMP_Uns32 index, padLen;
@@ -201,16 +201,16 @@ void MD5Final (	XMP_Uns8 digest[16], /* message digest */
        /* Zeroize sensitive information.
 
 */
-	assert ( sizeof(*context) == sizeof(MD5_CTX) );
-    memset ( context, 0, sizeof (*context) );	// AUDIT: Safe, using sizeof destination.
+    assert ( sizeof(*context) == sizeof(MD5_CTX) );
+    memset ( context, 0, sizeof (*context) );   // AUDIT: Safe, using sizeof destination.
 }
 
 /* MD5 basic transformation. Transforms state based on block.
 
       */
 
-static void MD5Transform (	XMP_Uns32 state[4],
-							XMP_Uns8 block[64])
+static void MD5Transform (  XMP_Uns32 state[4],
+                            XMP_Uns8 block[64])
 {
      XMP_Uns32 a = state[0], b = state[1], c = state[2], d = state[3], x[16];
 
@@ -303,9 +303,9 @@ static void MD5Transform (	XMP_Uns32 state[4],
 
       */
 
-static void Encode (	XMP_Uns8 *output,
-						XMP_Uns32 *input,
-						XMP_Uns32 len)
+static void Encode (    XMP_Uns8 *output,
+                        XMP_Uns32 *input,
+                        XMP_Uns32 len)
 {
      XMP_Uns32 i, j;
 
@@ -322,9 +322,9 @@ static void Encode (	XMP_Uns8 *output,
 
       */
 
-static void Decode (	XMP_Uns32 *output,
-						XMP_Uns8 *input,
-						XMP_Uns32 len)
+static void Decode (    XMP_Uns32 *output,
+                        XMP_Uns8 *input,
+                        XMP_Uns32 len)
 {
      XMP_Uns32 i, j;
 
