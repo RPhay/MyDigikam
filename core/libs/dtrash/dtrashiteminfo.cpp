@@ -21,11 +21,6 @@
 namespace Digikam
 {
 
-DTrashItemInfo::DTrashItemInfo()
-    : imageId(-1)
-{
-}
-
 bool DTrashItemInfo::isNull() const
 {
     return (

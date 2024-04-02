@@ -35,12 +35,10 @@ class Q_DECL_HIDDEN FaceDb::Private
 {
 
 public:
-    explicit Private()
-        : db(nullptr)
-    {
-    }
 
-    FaceDbBackend* db;
+    Private() = default;
+
+    FaceDbBackend* db = nullptr;
 };
 
 } // namespace Digikam

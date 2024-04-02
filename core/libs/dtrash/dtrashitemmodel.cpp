@@ -41,29 +41,20 @@ class Q_DECL_HIDDEN DTrashItemModel::Private
 
 public:
 
-    explicit Private()
-      : thumbSize      (ThumbnailSize::Large),
-        sortColumn     (DTrashTimeStamp),
-        sortOrder      (Qt::DescendingOrder),
-        sortEnabled    (true),
-        displayWidget  (nullptr),
-        itemsLoadingJob(nullptr),
-        thumbnailThread(nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    int                  thumbSize;
-    int                  sortColumn;
+    int                  thumbSize          = ThumbnailSize::Large;
+    int                  sortColumn         = DTrashTimeStamp;
 
-    Qt::SortOrder        sortOrder;
-    bool                 sortEnabled;
+    Qt::SortOrder        sortOrder          = Qt::DescendingOrder;
+    bool                 sortEnabled        = true;
 
-    QWidget*             displayWidget;
+    QWidget*             displayWidget      = nullptr;
 
-    IOJobsThread*        itemsLoadingJob;
-    ThumbnailLoadThread* thumbnailThread;
+    IOJobsThread*        itemsLoadingJob    = nullptr;
+    ThumbnailLoadThread* thumbnailThread    = nullptr;
 
     QString              trashAlbumPath;
 

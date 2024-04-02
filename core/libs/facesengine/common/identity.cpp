@@ -21,14 +21,11 @@ class Q_DECL_HIDDEN Identity::Private : public QSharedData
 {
 public:
 
-    explicit Private()
-        : id(-1)
-    {
-    }
+    Private() = default;
 
 public:
 
-    int                    id;
+    int                         id = -1;
     QMultiMap<QString, QString> attributes;
 };
 

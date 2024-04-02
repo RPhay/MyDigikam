@@ -28,7 +28,7 @@ class DTrashItemInfo
 
 public:
 
-    explicit DTrashItemInfo();
+    DTrashItemInfo() = default;
 
     bool isNull()                                   const;
     bool operator==(const DTrashItemInfo& itemInfo) const;
@@ -40,7 +40,7 @@ public:
     QString   collectionPath;
     QString   collectionRelativePath;
     QDateTime deletionTimestamp;
-    qlonglong imageId;
+    qlonglong imageId                = -1;
 };
 
 typedef QList<DTrashItemInfo> DTrashItemInfoList;

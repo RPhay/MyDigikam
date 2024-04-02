@@ -31,10 +31,7 @@ class Q_DECL_HIDDEN FaceDetector::Private : public QSharedData
 {
 public:
 
-    explicit Private()
-        : m_dnnDetectorBackend(nullptr)
-    {
-    }
+    Private() = default;
 
     ~Private()
     {
@@ -103,7 +100,7 @@ public:
 
 private:
 
-    OpenCVDNNFaceDetector* m_dnnDetectorBackend;
+    OpenCVDNNFaceDetector* m_dnnDetectorBackend = nullptr;
 };
 
 // ---------------------------------------------------------------------------------

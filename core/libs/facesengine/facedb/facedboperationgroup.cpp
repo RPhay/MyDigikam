@@ -30,19 +30,14 @@ class Q_DECL_HIDDEN FaceDbOperationGroup::Private
 {
 public:
 
-    explicit Private()
-        : dbAccess(nullptr),
-          acquired(false),
-          maxTime (0)
-    {
-    }
+    Private() = default;
 
 public:
 
-    FaceDbAccess* dbAccess;
-    bool          acquired;
+    FaceDbAccess* dbAccess      = nullptr;
+    bool          acquired      = false;
     QElapsedTimer timeAcquired;
-    int           maxTime;
+    int           maxTime       = 0;
 
 public:
 

@@ -33,11 +33,6 @@ float DNNFaceDetectorBase::nmsThreshold         = 0.4F;
 
 // --------------------------------------------------------------------------------------------------------
 
-DNNFaceDetectorBase::DNNFaceDetectorBase()
-  : scaleFactor(1.0)
-{
-}
-
 DNNFaceDetectorBase::DNNFaceDetectorBase(float scale,
                                          const cv::Scalar& val,
                                          const cv::Size& inputImgSize)

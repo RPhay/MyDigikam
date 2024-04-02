@@ -95,7 +95,7 @@ public:
 
 private:
 
-    int count;
+    int count = 0;
 
 private:
 

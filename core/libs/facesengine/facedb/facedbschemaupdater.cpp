@@ -41,23 +41,16 @@ class Q_DECL_HIDDEN FaceDbSchemaUpdater::Private
 {
 public:
 
-    explicit Private()
-        : setError              (false),
-          currentVersion        (0),
-          currentRequiredVersion(0),
-          dbAccess              (nullptr),
-          observer              (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                    setError;
+    bool                    setError                = false;
 
-    int                     currentVersion;
-    int                     currentRequiredVersion;
+    int                     currentVersion          = 0;
+    int                     currentRequiredVersion  = 0;
 
-    FaceDbAccess*           dbAccess;
+    FaceDbAccess*           dbAccess                = nullptr;
 
-    InitializationObserver* observer;
+    InitializationObserver* observer                = nullptr;
 };
 
 FaceDbSchemaUpdater::FaceDbSchemaUpdater(FaceDbAccess* const dbAccess)

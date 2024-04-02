@@ -41,25 +41,17 @@ class Q_DECL_HIDDEN FaceDbAccessStaticPriv
 {
 public:
 
-    explicit FaceDbAccessStaticPriv()
-        : backend     (nullptr),
-          db          (nullptr),
-          initializing(false)
-    {
-    }
-
-    ~FaceDbAccessStaticPriv()
-    {
-    }
+    FaceDbAccessStaticPriv()  = default;
+    ~FaceDbAccessStaticPriv() = default;
 
 public:
 
-    FaceDbBackend*     backend;
-    FaceDb*            db;
+    FaceDbBackend*     backend      = nullptr;
+    FaceDb*            db           = nullptr;
     DbEngineParameters parameters;
     DbEngineLocking    lock;
     QString            lastError;
-    bool               initializing;
+    bool               initializing = false;
 };
 
 FaceDbAccessStaticPriv* FaceDbAccess::d = nullptr;
@@ -95,7 +87,7 @@ public:
 
 public:
 
-    FaceDbAccessStaticPriv* const d;
+    FaceDbAccessStaticPriv* const d = nullptr;
 };
 
 // -----------------------------------------------------------------------------
