@@ -43,15 +43,10 @@ class DNGConverterActionData
 
 public:
 
-    DNGConverterActionData()
-      : starting(false),
-        result  (DNGWriter::PROCESS_COMPLETE),
-        action  (NONE)
-    {
-    }
+    DNGConverterActionData() = default;
 
-    bool                starting;
-    int                 result;
+    bool                starting = false;
+    int                 result   = DNGWriter::PROCESS_COMPLETE;
 
     QString             destPath;
     QString             message;
@@ -60,7 +55,7 @@ public:
 
     QUrl                fileUrl;
 
-    DNGConverterAction  action;
+    DNGConverterAction  action   = NONE;
 };
 
 }  // namespace DigikamGenericDNGConverterPlugin

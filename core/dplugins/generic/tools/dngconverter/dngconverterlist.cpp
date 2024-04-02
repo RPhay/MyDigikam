@@ -117,9 +117,7 @@ class DNGConverterListViewItem::Private
 {
 public:
 
-    Private()
-    {
-    }
+    Private() = default;
 
     QString destFileName;
     QString identity;

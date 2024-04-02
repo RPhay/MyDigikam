@@ -63,32 +63,23 @@ class DNGConverterDialog::Private
 {
 public:
 
-    Private()
-      : busy            (false),
-        progressBar     (nullptr),
-        listView        (nullptr),
-        thread          (nullptr),
-        dngSettings     (nullptr),
-        conflictSettings(nullptr),
-        iface           (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                      busy;
+    bool                      busy              = false;
 
     QStringList               fileList;
 
-    DProgressWdg*             progressBar;
+    DProgressWdg*             progressBar       = nullptr;
 
-    DNGConverterList*         listView;
+    DNGConverterList*         listView          = nullptr;
 
-    DNGConverterActionThread* thread;
+    DNGConverterActionThread* thread            = nullptr;
 
-    DNGSettings*              dngSettings;
+    DNGSettings*              dngSettings       = nullptr;
 
-    FileSaveConflictBox*      conflictSettings;
+    FileSaveConflictBox*      conflictSettings  = nullptr;
 
-    DInfoInterface*           iface;
+    DInfoInterface*           iface             = nullptr;
 };
 
 DNGConverterDialog::DNGConverterDialog(QWidget* const parent, DInfoInterface* const iface)

@@ -36,25 +36,17 @@ class DNGConverterTask::Private
 {
 public:
 
-    Private()
-      : backupOriginalRawFile(false),
-        compressLossLess     (true),
-        updateFileDate       (false),
-        cancel               (false),
-        previewMode          (DNGWriter::FULL_SIZE),
-        action               (NONE)
-    {
-    }
+    Private() = default;
 
-    bool               backupOriginalRawFile;
-    bool               compressLossLess;
-    bool               updateFileDate;
-    bool               cancel;
+    bool               backupOriginalRawFile    = false;
+    bool               compressLossLess         = true;
+    bool               updateFileDate           = false;
+    bool               cancel                   = false;
 
-    int                previewMode;
+    int                previewMode              = DNGWriter::FULL_SIZE;
 
     QUrl               url;
-    DNGConverterAction action;
+    DNGConverterAction action                   = NONE;
 
     DNGWriter          dngProcessor;
 };
@@ -121,7 +113,9 @@ void DNGConverterTask::run()
             ad.fileUrl       = d->url;
             ad.message       = identify;
             ad.result        = DNGWriter::PROCESS_COMPLETE;
+
             Q_EMIT signalFinished(ad);
+
             break;
         }
 
@@ -131,6 +125,7 @@ void DNGConverterTask::run()
             ad1.action   = PROCESS;
             ad1.fileUrl  = d->url;
             ad1.starting = true;
+
             Q_EMIT signalStarting(ad1);
 
             QString destPath;
@@ -153,7 +148,9 @@ void DNGConverterTask::run()
             ad2.fileUrl  = d->url;
             ad2.destPath = destPath;
             ad2.result   = ret;
+
             Q_EMIT signalFinished(ad2);
+
             break;
         }
 
@@ -174,6 +171,5 @@ void DNGConverterTask::slotCancel()
 }
 
 } // namespace DigikamGenericDNGConverterPlugin
-
 
 #include "moc_dngconvertertask.cpp"

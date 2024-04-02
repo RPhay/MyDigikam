@@ -34,18 +34,12 @@ class DNGConverterActionThread::Private
 {
 public:
 
-    Private()
-      : backupOriginalRawFile(false),
-        compressLossLess     (true),
-        updateFileDate       (false),
-        previewMode          (DNGWriter::FULL_SIZE)
-    {
-    }
+    Private() = default;
 
-    bool backupOriginalRawFile;
-    bool compressLossLess;
-    bool updateFileDate;
-    int  previewMode;
+    bool backupOriginalRawFile  = false;
+    bool compressLossLess       = true;
+    bool updateFileDate         = false;
+    int  previewMode            = DNGWriter::FULL_SIZE;
 };
 
 DNGConverterActionThread::DNGConverterActionThread(QObject* const parent)

@@ -56,7 +56,7 @@ private:
 private:
 
     DNGWriter m_dngProcessor;
-    bool      m_changeSettings;
+    bool      m_changeSettings  = true;
 };
 
 } // namespace DigikamBqmConvertToDngPlugin
