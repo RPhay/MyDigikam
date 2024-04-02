@@ -182,7 +182,6 @@ std::vector<std::vector<T> > operator*(const std::vector<std::vector<T> >& v1,
     return result;
 }
 
-
 template<class T>
 std::vector<std::vector<T> > operator*(const std::vector<T>& v1,
                                        const std::vector<T>& v2)

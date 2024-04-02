@@ -28,7 +28,7 @@ class RecognitionPreprocessor::Private
 
 public:
 
-    explicit Private();
+    Private() = default;
     ~Private();
 
     void init(PreprocessorSelection mode);
@@ -36,18 +36,12 @@ public:
 
 private:
 
-    int                   preprocessingMode;
+    int                   preprocessingMode = -1;
 
-    OpenfacePreprocessor* ofpreprocessor;
+    OpenfacePreprocessor* ofpreprocessor    = nullptr;
 };
 
 // -------------------------------------------------------------------------------
-
-RecognitionPreprocessor::Private::Private()
-  : preprocessingMode(-1),
-    ofpreprocessor   (nullptr)
-{
-}
 
 RecognitionPreprocessor::Private::~Private()
 {

@@ -38,17 +38,7 @@ class Q_DECL_HIDDEN DNNFaceExtractor::Private
 {
 public:
 
-    Private()
-        : preprocessor      (nullptr),
-          ref               (1),
-
-          // As we use OpenFace, we need to set appropriate values for image color space and image size
-
-          imageSize         (cv::Size(96, 96)),
-          scaleFactor       (1.0F / 255.0F),
-          meanValToSubtract (cv::Scalar(0.0, 0.0, 0.0))
-    {
-    }
+    Private() = default;
 
     ~Private()
     {
@@ -57,16 +47,18 @@ public:
 
 public:
 
-    RecognitionPreprocessor* preprocessor;
+    RecognitionPreprocessor* preprocessor       = nullptr;
 
-    int                      ref;
+    int                      ref                = 1;
 
     cv::dnn::Net             net;
     QMutex                   mutex;
 
-    cv::Size                 imageSize;
-    float                    scaleFactor;
-    cv::Scalar               meanValToSubtract;
+    // As we use OpenFace, we need to set appropriate values for image color space and image size
+
+    cv::Size                 imageSize          = cv::Size(96, 96);
+    float                    scaleFactor        = 1.0F / 255.0F;
+    cv::Scalar               meanValToSubtract  = cv::Scalar(0.0, 0.0, 0.0);
 };
 
 DNNFaceExtractor::DNNFaceExtractor()

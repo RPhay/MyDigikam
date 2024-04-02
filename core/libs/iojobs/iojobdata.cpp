@@ -32,23 +32,15 @@ class Q_DECL_HIDDEN IOJobData::Private
 {
 public:
 
-    explicit Private()
-      : operation    (Unknown),
-        fileConflict (Continue),
-        errorOrCancel(false),
-        srcAlbum     (nullptr),
-        destAlbum    (nullptr),
-        jobTime      (QDateTime::currentDateTime())
-    {
-    }
+    Private() = default;
 
-    int                operation;
-    int                fileConflict;
+    int                operation        = Unknown;
+    int                fileConflict     = Continue;
 
-    bool               errorOrCancel;
+    bool               errorOrCancel    = false;
 
-    PAlbum*            srcAlbum;
-    PAlbum*            destAlbum;
+    PAlbum*            srcAlbum         = nullptr;
+    PAlbum*            destAlbum        = nullptr;
 
     DTrashItemInfoList trashItemList;
     QMap<QUrl, QUrl>   changeDestMap;
@@ -59,7 +51,7 @@ public:
     QUrl               destUrl;
 
     QString            progressId;
-    QDateTime          jobTime;
+    QDateTime          jobTime          = QDateTime::currentDateTime();
 
     QRecursiveMutex    mutex;
 };

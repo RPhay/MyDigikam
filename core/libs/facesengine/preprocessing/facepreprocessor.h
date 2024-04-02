@@ -29,8 +29,8 @@ class DIGIKAM_EXPORT FacePreprocessor
 
 public:
 
-    explicit FacePreprocessor();
-    virtual ~FacePreprocessor();
+    FacePreprocessor()          = default;
+    virtual ~FacePreprocessor() = default;
 
     virtual cv::Mat preprocess(const cv::Mat& image) const = 0;
 
