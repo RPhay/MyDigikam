@@ -281,7 +281,8 @@ bool ExifToolParser::applyMetadataFile(const QString& path, const QString& meta)
     }
 
     cmdArgs << QByteArray("-overwrite_original");
-    cmdArgs << d->filePathEncoding(fileInfo);
+    d->prepareFileAndSidecar(cmdArgs, fileInfo);
+    d->currentPath = fileInfo.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_METADATA_FILE));
 }
@@ -305,7 +306,7 @@ bool ExifToolParser::changeTimestamps(const QString& path, const QDateTime& date
                 dateTime.toString(QLatin1String("yyyy-MM-ddThh:mm:ss")).toLatin1());
 
     cmdArgs << QByteArray("-overwrite_original");
-    cmdArgs << d->filePathEncoding(fileInfo);
+    d->prepareFileAndSidecar(cmdArgs, fileInfo);
     d->currentPath = fileInfo.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::CHANGE_TIMESTAMPS));

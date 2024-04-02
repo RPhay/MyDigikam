@@ -88,6 +88,23 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs,
     return true;
 }
 
+void ExifToolParser::Private::prepareFileAndSidecar(QByteArrayList& cmdArgs, const QFileInfo& fi)
+{
+    MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
+
+    if (settings.metadataWritingMode != DMetadata::WRITE_TO_SIDECAR_ONLY)
+    {
+        cmdArgs << filePathEncoding(fi);
+    }
+
+    if (settings.metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY)
+    {
+        QFileInfo si(DMetadata::sidecarPath(fi.filePath()));
+
+        cmdArgs << filePathEncoding(si);
+    }
+}
+
 QByteArray ExifToolParser::Private::filePathEncoding(const QFileInfo& fi) const
 {
     return (QDir::toNativeSeparators(fi.filePath()).toUtf8());

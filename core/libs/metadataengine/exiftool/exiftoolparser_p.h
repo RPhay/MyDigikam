@@ -44,7 +44,9 @@
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
+#include "dmetadata.h"
 #include "exiftoolthread.h"
+#include "metaenginesettings.h"
 
 namespace Digikam
 {
@@ -58,6 +60,7 @@ public:
 
     void       prepareProcess();
     bool       startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction);
+    void       prepareFileAndSidecar(QByteArrayList& cmdArgs, const QFileInfo& fi);
     QByteArray filePathEncoding(const QFileInfo& fi) const;
 
     void       jumpToResultCommand(const ExifToolProcess::Result& result, int cmdId);
