@@ -26,12 +26,9 @@ class Q_DECL_HIDDEN DPlugin::Private
 {
 public:
 
-    explicit Private()
-      : shouldLoaded(false)
-    {
-    }
+    Private() = default;
 
-    bool    shouldLoaded;
+    bool    shouldLoaded = false;
     QString libraryFileName;
 };
 

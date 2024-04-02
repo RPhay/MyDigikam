@@ -43,16 +43,11 @@ class Q_DECL_HIDDEN WSLoginDialog::Private
 {
 public:
 
-    explicit Private()
-        : headerLabel   (nullptr),
-          loginEdit     (nullptr),
-          passwordEdit  (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*    headerLabel;
-    QLineEdit* loginEdit;
-    QLineEdit* passwordEdit;
+    QLabel*    headerLabel  = nullptr;
+    QLineEdit* loginEdit    = nullptr;
+    QLineEdit* passwordEdit = nullptr;
 };
 
 WSLoginDialog::WSLoginDialog(QWidget* const parent,

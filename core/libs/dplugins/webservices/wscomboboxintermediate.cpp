@@ -30,12 +30,9 @@ class Q_DECL_HIDDEN WSComboBoxIntermediate::Private
 {
 public:
 
-    explicit Private()
-        : isIntermediate(false)
-    {
-    }
+    Private() = default;
 
-    bool    isIntermediate;
+    bool    isIntermediate = false;
     QString intermediateText;
 };
 
@@ -83,6 +80,7 @@ void WSComboBoxIntermediate::setIntermediate(bool state)
 
         removeItem(count() - 1);
         removeItem(count() - 1);
+
         d->isIntermediate = false;
     }
 }

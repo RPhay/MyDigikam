@@ -32,20 +32,16 @@ class Q_DECL_HIDDEN ComboBoxDelegate::Private
 {
 public:
 
-    explicit Private()
-      : parent   (nullptr),
-        rowEdited(-1)
-    {
-    }
+    Private() = default;
 
-    DItemsList*       parent;
+    DItemsList*       parent     = nullptr;
     QMap<int, QString> items;
 
     /*
      * The row in the view that is currently being edited. Should be -1 to
      * indicate that no row is edited.
      */
-    int                rowEdited;
+    int                rowEdited = -1;
 
     QSize              size;
 };

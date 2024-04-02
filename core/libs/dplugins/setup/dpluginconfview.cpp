@@ -103,9 +103,7 @@ class Q_DECL_HIDDEN DPluginConfView::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QString           filter;
     QList<DPluginCB*> plugBoxes;

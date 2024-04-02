@@ -56,24 +56,24 @@ public:
         buttonBox      = new QDialogButtonBox();
     }
 
-    DTextEdit*         titleEdt;
-    DTextEdit*         descEdt;
-    DTextEdit*         locEdt;
-    QDateTimeEdit*     dtEdt;
+    DTextEdit*         titleEdt         = nullptr;
+    DTextEdit*         descEdt          = nullptr;
+    DTextEdit*         locEdt           = nullptr;
+    QDateTimeEdit*     dtEdt            = nullptr;
 
-    QLabel*            titleLabel;
-    QLabel*            dateLabel;
-    QLabel*            descLabel;
-    QLabel*            locLabel;
+    QLabel*            titleLabel       = nullptr;
+    QLabel*            dateLabel        = nullptr;
+    QLabel*            descLabel        = nullptr;
+    QLabel*            locLabel         = nullptr;
 
     QString            toolName;
-    QDialogButtonBox*  buttonBox;
+    QDialogButtonBox*  buttonBox        = nullptr;
 
-    QGridLayout*       albumBoxLayout;
-    QGroupBox*         albumBox;
+    QGridLayout*       albumBoxLayout   = nullptr;
+    QGroupBox*         albumBox         = nullptr;
 
-    QVBoxLayout*       mainLayout;
-    QWidget*           mainWidget;
+    QVBoxLayout*       mainLayout       = nullptr;
+    QWidget*           mainWidget       = nullptr;
 };
 
 WSNewAlbumDialog::WSNewAlbumDialog(QWidget* const parent, const QString& toolName)

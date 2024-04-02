@@ -45,10 +45,10 @@ public:
     {
     }
 
-    QPushButton*      startButton;
-    QWidget*          mainWidget;
+    QPushButton*      startButton       = nullptr;
+    QWidget*          mainWidget        = nullptr;
 
-    bool              propagateReject;
+    bool              propagateReject   = true;
 };
 
 WSToolDialog::WSToolDialog(QWidget* const parent, const QString& objName)

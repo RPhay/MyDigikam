@@ -28,12 +28,9 @@ class Q_DECL_HIDDEN WebWidget::Private
 {
 public:
 
-    explicit Private()
-      : parent(nullptr)
-    {
-    }
+    Private() = default;
 
-    QWidget* parent;
+    QWidget* parent = nullptr;
 };
 
 WebWidget::WebWidget(QWidget* const parent)

@@ -32,14 +32,7 @@ class DIGIKAM_EXPORT WSAlbum
 
 public:
 
-    explicit WSAlbum()
-      : parentID(QLatin1String("")),
-        isRoot(true),
-        description(QLatin1String("")),
-        url(QLatin1String("")),
-        uploadable(true)
-    {
-    }
+    WSAlbum() = default;
 
     /**
      * This method is used by derived class of WSAblum,
@@ -60,13 +53,13 @@ public:
 
     QString   id;
     QString   parentID;
-    bool      isRoot;
+    bool      isRoot     = true;
 
     QString   title;
     QString   description;
     QString   location;
     QString   url;
-    bool      uploadable;
+    bool      uploadable = true;
 };
 
 /**
@@ -80,18 +73,16 @@ class DIGIKAM_EXPORT AlbumSimplified
 public:
 
     explicit AlbumSimplified()
-      : uploadable(true)
     {
     }
 
     explicit AlbumSimplified(const QString& title)
-      : title(title),
-        uploadable(true)
+      : title(title)
     {
     }
 
     explicit AlbumSimplified(const QString& title, bool uploadable)
-      : title(title),
+      : title     (title),
         uploadable(uploadable)
     {
     }
@@ -100,7 +91,7 @@ public:
 
     QString     title;
     QStringList childrenIDs;
-    bool        uploadable;
+    bool        uploadable  = true;
 };
 
 } // namespace Digikam

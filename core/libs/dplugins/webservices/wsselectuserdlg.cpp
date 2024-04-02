@@ -37,16 +37,11 @@ class Q_DECL_HIDDEN WSSelectUserDlg::Private
 {
 public:
 
-    explicit Private()
-      : userComboBox(nullptr),
-        label       (nullptr),
-        okButton    (nullptr)
-    {
-    }
+    Private() = default;
 
-    QComboBox*   userComboBox;
-    QLabel*      label;
-    QPushButton* okButton;
+    QComboBox*   userComboBox   = nullptr;
+    QLabel*      label          = nullptr;
+    QPushButton* okButton       = nullptr;
     QString      userName;
     QString      serviceName;
 };

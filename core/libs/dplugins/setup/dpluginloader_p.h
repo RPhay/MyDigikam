@@ -30,7 +30,7 @@ class Q_DECL_HIDDEN DPluginLoader::Private
 public:
 
     explicit Private();
-    ~Private();
+    ~Private() = default;
 
     /**
      * Try to find plugin files from Qt5 plugins install dir:
@@ -50,7 +50,7 @@ public:
 
 public:
 
-    bool                  pluginsLoaded;
+    bool                  pluginsLoaded = false;
     QList<DPlugin*>       allPlugins;
     QStringList           blacklist;
     QStringList           whitelist;

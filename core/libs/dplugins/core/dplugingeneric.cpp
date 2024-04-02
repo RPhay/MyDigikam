@@ -32,9 +32,7 @@ class Q_DECL_HIDDEN DPluginGeneric::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QList<DPluginAction*> actions;
 };

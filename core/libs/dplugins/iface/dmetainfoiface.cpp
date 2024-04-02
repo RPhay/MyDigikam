@@ -43,12 +43,9 @@ class Q_DECL_HIDDEN DMetaInfoIface::Private
 {
 public:
 
-    explicit Private()
-      : dirSelector(nullptr)
-    {
-    }
+    Private() = default;
 
-    DFileSelector* dirSelector;
+    DFileSelector* dirSelector = nullptr;
     QList<QUrl>    urls;
 };
 

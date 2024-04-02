@@ -41,29 +41,19 @@ class Q_DECL_HIDDEN DPluginSetup::Private
 {
 public:
 
-    explicit Private()
-      : pluginsNumber         (nullptr),
-        pluginsNumberActivated(nullptr),
-        checkAllBtn           (nullptr),
-        clearBtn              (nullptr),
-        grid                  (nullptr),
-        hbox                  (nullptr),
-        pluginFilter          (nullptr),
-        pluginsList           (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*          pluginsNumber;
-    QLabel*          pluginsNumberActivated;
+    QLabel*          pluginsNumber              = nullptr;
+    QLabel*          pluginsNumberActivated     = nullptr;
 
-    QPushButton*     checkAllBtn;
-    QPushButton*     clearBtn;
+    QPushButton*     checkAllBtn                = nullptr;
+    QPushButton*     clearBtn                   = nullptr;
 
-    QGridLayout*     grid;
-    QWidget*         hbox;
+    QGridLayout*     grid                       = nullptr;
+    QWidget*         hbox                       = nullptr;
 
-    SearchTextBar*   pluginFilter;
-    DPluginConfView* pluginsList;
+    SearchTextBar*   pluginFilter               = nullptr;
+    DPluginConfView* pluginsList                = nullptr;
 };
 
 DPluginSetup::DPluginSetup(QWidget* const parent)

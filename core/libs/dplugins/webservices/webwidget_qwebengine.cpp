@@ -30,12 +30,9 @@ class Q_DECL_HIDDEN WebWidget::Private
 {
 public:
 
-    explicit Private()
-      : parent(nullptr)
-    {
-    }
+    Private() = default;
 
-    QWidget* parent;
+    QWidget* parent = nullptr;
 };
 
 WebWidget::WebWidget(QWidget* const parent)
@@ -48,6 +45,7 @@ WebWidget::WebWidget(QWidget* const parent)
 void WebWidget::closeEvent(QCloseEvent* event)
 {
     Q_EMIT closeView(false);
+
     event->accept();
 }
 

@@ -31,9 +31,7 @@ class Q_DECL_HIDDEN DPluginEditor::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QList<DPluginAction*> actions;
 };
