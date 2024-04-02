@@ -141,7 +141,9 @@ bool DFontSelect::event(QEvent* e)
 void DFontSelect::slotOpenFontDialog()
 {
     bool ok = false;
-    QFont f = QFontDialog::getFont(&ok, font(), this);
+    QFont f = QFontDialog::getFont(&ok, font(), this,
+                                   i18n("Select a Font"),
+                                   QFontDialog::DontUseNativeDialog);
 
     if (ok)
     {
