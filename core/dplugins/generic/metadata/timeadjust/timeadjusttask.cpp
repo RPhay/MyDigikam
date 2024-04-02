@@ -24,8 +24,9 @@
 
 // Local includes
 
-#include "dmetadata.h"
 #include "digikam_debug.h"
+#include "digikam_globals.h"
+#include "dmetadata.h"
 #include "dinfointerface.h"
 #include "dfileoperations.h"
 #include "exiftoolparser.h"
@@ -76,9 +77,12 @@ void TimeAdjustTask::run()
 
     Q_EMIT signalProcessStarted(d->url);
 
-    int status    = TimeAdjustList::NOPROCESS_ERROR;
-    QDateTime org = d->thread->readTimestamp(d->url);
-    QDateTime adj = d->settings.calculateAdjustedDate(org, d->thread->indexForUrl(d->url));
+    int status             = TimeAdjustList::NOPROCESS_ERROR;
+    QDateTime org          = d->thread->readTimestamp(d->url);
+    QDateTime adj          = asDateTimeLocal(d->settings.calculateAdjustedDate(org, d->thread->indexForUrl(d->url)));
+    bool writeToSidecar    = (MetaEngineSettings::instance()->settings()
+                              .metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY);
+    bool writeWithExifTool = (MetaEngineSettings::instance()->settings().writeWithExifTool);
 
     if (!adj.isValid())
     {
@@ -101,129 +105,119 @@ void TimeAdjustTask::run()
             if (!parser->changeTimestamps(d->url.toLocalFile(), adj))
             {
                 status |= TimeAdjustList::EXIF_TOOL_ERROR;
+                status |= TimeAdjustList::META_TIME_ERROR;
             }
         }
         else
         {
             status |= TimeAdjustList::EXIF_TOOL_ERROR;
-        }
-
-        if (status == TimeAdjustList::NOPROCESS_ERROR)
-        {
-            Q_EMIT signalDateTimeForUrl(d->url, adj, d->settings.updFileModDate);
-        }
-
-        Q_EMIT signalProcessEnded(d->url, org, adj, status);
-        Q_EMIT signalDone();
-
-        return;
-    }
-
-    bool metadataChanged               = false;
-    bool writeToSidecar                = (MetaEngineSettings::instance()->settings()
-                                          .metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY);
-    bool writeWithExifTool             = (MetaEngineSettings::instance()->settings().writeWithExifTool);
-
-    QString exifDateTimeFormat         = QLatin1String("yyyy:MM:dd hh:mm:ss");
-    QString xmpDateTimeFormat          = QLatin1String("yyyy-MM-ddThh:mm:ss");
-
-    const QMap<QString, bool>& tagsMap = d->settings.getDateTimeTagsMap();
-    QMap<QString, bool>::const_iterator it;
-
-    QScopedPointer<DMetadata> meta(new DMetadata);
-
-    if (meta->load(d->url.toLocalFile()))
-    {
-        for (it = tagsMap.constBegin() ; it != tagsMap.constEnd() ; ++it)
-        {
-            if (!it.value())
-            {
-                continue;
-            }
-
-            bool ret = true;
-
-            if      (it.key().startsWith(QLatin1String("Exif.")) &&
-                     (meta->canWriteExif(d->url.toLocalFile())   ||
-                      writeWithExifTool                          ||
-                      writeToSidecar)
-                    )
-            {
-                if (!d->settings.updIfAvailable ||
-                    !meta->getExifTagString(it.key().toLatin1().constData()).isEmpty())
-                {
-                    ret &= meta->setExifTagString(it.key().toLatin1().constData(),
-                                                  adj.toString(exifDateTimeFormat));
-
-                    metadataChanged = true;
-                }
-            }
-            else if (it.key().startsWith(QLatin1String("Iptc.")) &&
-                     (meta->canWriteIptc(d->url.toLocalFile())   ||
-                      writeWithExifTool                          ||
-                      writeToSidecar)
-                    )
-            {
-                if (!d->settings.updIfAvailable ||
-                    !meta->getIptcTagString(it.key().toLatin1().constData()).isEmpty())
-                {
-                    if      (it.key().contains(QLatin1String("Date")))
-                    {
-                        ret &= meta->setIptcTagString(it.key().toLatin1().constData(),
-                                                      adj.date().toString(Qt::ISODate));
-
-                        metadataChanged = true;
-                    }
-                    else if (it.key().contains(QLatin1String("Time")))
-                    {
-                        ret &= meta->setIptcTagString(it.key().toLatin1().constData(),
-                                                      adj.time().toString(Qt::ISODate));
-
-                        metadataChanged = true;
-                    }
-                }
-            }
-            else if (it.key().startsWith(QLatin1String("Xmp.")) &&
-                     (meta->canWriteXmp(d->url.toLocalFile())   ||
-                      writeWithExifTool                         ||
-                      writeToSidecar)
-                     )
-            {
-                if (!d->settings.updIfAvailable ||
-                    !meta->getXmpTagString(it.key().toLatin1().constData()).isEmpty())
-                {
-                    ret &= meta->setXmpTagString(it.key().toLatin1().constData(),
-                                                 adj.toString(xmpDateTimeFormat));
-
-                    metadataChanged = true;
-                }
-            }
-
-            if (!ret)
-            {
-                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to set metadata for tag" << it.key();
-
-                status |= TimeAdjustList::META_TIME_ERROR;
-
-                break;
-            }
-        }
-
-        if ((status == TimeAdjustList::NOPROCESS_ERROR) && metadataChanged)
-        {
-            if (!meta->save(d->url.toLocalFile()))
-            {
-                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to update metadata in file" << d->url.fileName();
-
-                status |= TimeAdjustList::META_TIME_ERROR;
-            }
+            status |= TimeAdjustList::META_TIME_ERROR;
         }
     }
     else
     {
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to load metadata from file" << d->url.fileName();
+        bool metadataChanged       = false;
+        QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
+        QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
 
-        status |= TimeAdjustList::META_TIME_ERROR;
+        const QMap<QString, bool>& tagsMap = d->settings.getDateTimeTagsMap();
+        QMap<QString, bool>::const_iterator it;
+
+        QScopedPointer<DMetadata> meta(new DMetadata);
+
+        if (meta->load(d->url.toLocalFile()))
+        {
+            for (it = tagsMap.constBegin() ; it != tagsMap.constEnd() ; ++it)
+            {
+                if (!it.value())
+                {
+                    continue;
+                }
+
+                bool ret = true;
+
+                if      (it.key().startsWith(QLatin1String("Exif.")) &&
+                         (meta->canWriteExif(d->url.toLocalFile())   ||
+                          writeWithExifTool                          ||
+                          writeToSidecar)
+                        )
+                {
+                    if (!d->settings.updIfAvailable ||
+                        !meta->getExifTagString(it.key().toLatin1().constData()).isEmpty())
+                    {
+                        ret &= meta->setExifTagString(it.key().toLatin1().constData(),
+                                                      adj.toString(exifDateTimeFormat));
+
+                        metadataChanged = true;
+                    }
+                }
+                else if (it.key().startsWith(QLatin1String("Iptc.")) &&
+                         (meta->canWriteIptc(d->url.toLocalFile())   ||
+                          writeWithExifTool                          ||
+                          writeToSidecar)
+                        )
+                {
+                    if (!d->settings.updIfAvailable ||
+                        !meta->getIptcTagString(it.key().toLatin1().constData()).isEmpty())
+                    {
+                        if      (it.key().contains(QLatin1String("Date")))
+                        {
+                            ret &= meta->setIptcTagString(it.key().toLatin1().constData(),
+                                                          adj.date().toString(Qt::ISODate));
+
+                            metadataChanged = true;
+                        }
+                        else if (it.key().contains(QLatin1String("Time")))
+                        {
+                            ret &= meta->setIptcTagString(it.key().toLatin1().constData(),
+                                                          adj.time().toString(Qt::ISODate));
+
+                            metadataChanged = true;
+                        }
+                    }
+                }
+                else if (it.key().startsWith(QLatin1String("Xmp.")) &&
+                         (meta->canWriteXmp(d->url.toLocalFile())   ||
+                          writeWithExifTool                         ||
+                          writeToSidecar)
+                         )
+                {
+                    if (!d->settings.updIfAvailable ||
+                        !meta->getXmpTagString(it.key().toLatin1().constData()).isEmpty())
+                    {
+                        ret &= meta->setXmpTagString(it.key().toLatin1().constData(),
+                                                     adj.toString(xmpDateTimeFormat));
+
+                        metadataChanged = true;
+                    }
+                }
+
+                if (!ret)
+                {
+                    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to set metadata for tag" << it.key();
+
+                    status |= TimeAdjustList::META_TIME_ERROR;
+
+                    break;
+                }
+            }
+
+            if ((status == TimeAdjustList::NOPROCESS_ERROR) && metadataChanged)
+            {
+                if (!meta->save(d->url.toLocalFile()))
+                {
+                    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to update metadata in file" << d->url.fileName();
+
+                    status |= TimeAdjustList::META_TIME_ERROR;
+                }
+            }
+        }
+        else
+        {
+            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to load metadata from file" << d->url.fileName();
+
+            status |= TimeAdjustList::META_TIME_ERROR;
+        }
     }
 
     if (d->settings.updFileModDate)
