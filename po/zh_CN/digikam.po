@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-31 01:58+0000\n"
+"POT-Creation-Date: 2024-04-02 01:33+0000\n"
 "PO-Revision-Date: 2024-03-17 20:45\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2585,7 +2585,7 @@ msgstr "主工具栏"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
 #: core/libs/album/manager/albummanager_talbum.cpp:979
-#: core/libs/timeadjust/timeadjustsettings.cpp:162
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
 #, kde-format
 msgid "digiKam"
 msgstr "digiKam"
@@ -2755,7 +2755,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2763,7 +2763,7 @@ msgstr "后退"
 
 #: core/app/views/preview/itempreviewview.cpp:187
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:268
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -10913,7 +10913,7 @@ msgstr "双地图 - 顶部和底部"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:115
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
@@ -15243,31 +15243,31 @@ msgstr ""
 "在此输入主题详情名称。当使用了标准 XMP/NAA 引用码时，此字段将使用英语。此字段"
 "不得输入超过 64 个字符。"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:106
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "调整时间和日期"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr "写入已校准日期和时间到每张图像然后关闭对话框"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:123
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "写入已校准日期和时间到每张图像"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:362
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "调整时间和日期"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
 #: core/utilities/imageeditor/editor/editorwindow.cpp:597
 #, kde-format
@@ -15275,21 +15275,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:394
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "取消当前操作"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "关闭"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:400
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
 #, kde-format
 msgctxt "@info"
@@ -15297,13 +15297,13 @@ msgid "Close window"
 msgstr "关闭窗口"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:303
+#: core/libs/timeadjust/timeadjustsettings.cpp:309
 #, kde-format
 msgid "Timestamp Used"
 msgstr "已使用时间戳"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:305
+#: core/libs/timeadjust/timeadjustsettings.cpp:311
 #, kde-format
 msgid "Timestamp Updated"
 msgstr "已更新时间戳"
@@ -15326,19 +15326,26 @@ msgstr "无法更新元数据时间戳"
 msgid "Failed to update file timestamp"
 msgstr "无法更新文件时间戳"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:92
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:87
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Apply Metadata: ExifTool reported an error."
+msgid "ExifTool reported an error"
+msgstr "应用元数据：ExifTool 报告了一个错误。"
+
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
 #, kde-format
 msgid "Success"
 msgstr "成功"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:105
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:114
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:119
 #, kde-format
 msgid "not valid"
 msgstr "无效"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:129
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:134
 #, kde-format
 msgid "Please wait ..."
 msgstr "请稍候 ..."
@@ -36591,7 +36598,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:282
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -39044,138 +39051,143 @@ msgstr "时钟日期和时间："
 msgid "Select Image to Extract Clock Photo"
 msgstr "选择要提取时钟照片的图像"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:168
 #, kde-format
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:169
+#: core/libs/timeadjust/timeadjustsettings.cpp:171
 #, kde-format
 msgid "%1 timestamp"
 msgstr "%1 时间戳"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:174
+#: core/libs/timeadjust/timeadjustsettings.cpp:176
 #, kde-format
 msgid "File name timestamp"
 msgstr "文件名时间戳"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:178
-#: core/libs/timeadjust/timeadjustsettings.cpp:272
+#: core/libs/timeadjust/timeadjustsettings.cpp:180
+#: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, kde-format
 msgid "File last modified"
 msgstr "文件最后修改时间"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:187
+#: core/libs/timeadjust/timeadjustsettings.cpp:189
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr "EXIF/IPTC/XMP"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:188
-#: core/libs/timeadjust/timeadjustsettings.cpp:273
+#: core/libs/timeadjust/timeadjustsettings.cpp:190
+#: core/libs/timeadjust/timeadjustsettings.cpp:276
 #, kde-format
 msgid "EXIF: created"
 msgstr "EXIF：创建时间"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:189
-#: core/libs/timeadjust/timeadjustsettings.cpp:274
+#: core/libs/timeadjust/timeadjustsettings.cpp:191
+#: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, kde-format
 msgid "EXIF: original"
 msgstr "EXIF：原始时间"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#: core/libs/timeadjust/timeadjustsettings.cpp:192
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "EXIF: digitized"
 msgstr "EXIF：数字化时间"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:191
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:193
+#: core/libs/timeadjust/timeadjustsettings.cpp:280
 #, kde-format
 msgid "IPTC: created"
 msgstr "IPTC：创建时间"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:192
+#: core/libs/timeadjust/timeadjustsettings.cpp:194
 #, kde-format
 msgid "XMP: created"
 msgstr "XMP：创建时间"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:193
+#: core/libs/timeadjust/timeadjustsettings.cpp:195
 #, kde-format
 msgid "EXIF: created (fuzzy)"
 msgstr "EXIF：创建日期 (模糊)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:194
+#: core/libs/timeadjust/timeadjustsettings.cpp:196
 #, kde-format
 msgid "EXIF: original (fuzzy)"
 msgstr "EXIF：原始日期 (模糊)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:195
+#: core/libs/timeadjust/timeadjustsettings.cpp:197
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr "EXIF：数字化日期 (模糊)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:205
+#: core/libs/timeadjust/timeadjustsettings.cpp:207
 #, kde-format
 msgid "Reset to current date"
 msgstr "重置为当前日期"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:237
+#: core/libs/timeadjust/timeadjustsettings.cpp:239
 #, kde-format
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "复制数值"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:238
+#: core/libs/timeadjust/timeadjustsettings.cpp:240
 #, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "加上"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:239
+#: core/libs/timeadjust/timeadjustsettings.cpp:241
 #, kde-format
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "减去"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:243
+#: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "间隔"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:249
+#: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, kde-format
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "天"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:252
+#: core/libs/timeadjust/timeadjustsettings.cpp:254
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr "根据时钟照片确定时间差"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:253
+#: core/libs/timeadjust/timeadjustsettings.cpp:255
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr "点击或拖放照片到按钮以选择一张时钟照片"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:271
+#: core/libs/timeadjust/timeadjustsettings.cpp:273
+#, kde-format
+msgid "Update timestamps with ExifTool"
+msgstr ""
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:274
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr "仅更新已有时间戳"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "EXIF：缩略图时间"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:281
 #, kde-format
 msgid "XMP: Video"
 msgstr "XMP：视频时间"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:304
+#: core/libs/timeadjust/timeadjustsettings.cpp:310
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr "时间戳调整"
@@ -40071,27 +40083,27 @@ msgid "An error has occurred while playing: %1"
 msgstr "播放时发生错误：%1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "暂停/播放"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:272
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "捕获"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:191
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:275
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "媒体播放器发生错误..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:222
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "打开/关闭循环播放"

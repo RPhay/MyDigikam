@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-31 01:58+0000\n"
+"POT-Creation-Date: 2024-04-02 01:33+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -2721,7 +2721,7 @@ msgstr "मुख्य साधनपट्टी"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
 #: core/libs/album/manager/albummanager_talbum.cpp:979
-#: core/libs/timeadjust/timeadjustsettings.cpp:162
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
 #, kde-format
 msgid "digiKam"
 msgstr ""
@@ -2865,7 +2865,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:185
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:261
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2873,7 +2873,7 @@ msgstr "मागे"
 
 #: core/app/views/preview/itempreviewview.cpp:187
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:263
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:268
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -10793,7 +10793,7 @@ msgstr "आडवे पलटी करा"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:115
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #: core/utilities/maintenance/facesdetector.cpp:66
@@ -15193,31 +15193,31 @@ msgid ""
 "a standard XMP/NAA reference code."
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:106
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:95
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "गुणधर्म"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:121
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:123
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:362
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "गुणधर्म"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:401
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
 #: core/utilities/imageeditor/editor/editorwindow.cpp:597
 #, fuzzy, kde-format
@@ -15226,7 +15226,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "रद्द करा"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:394
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:681
 #, fuzzy, kde-format
 #| msgid "More options"
@@ -15234,7 +15234,7 @@ msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "जादा पर्याय"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:407
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:398
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
 #, fuzzy, kde-format
 #| msgid "Close view"
@@ -15242,7 +15242,7 @@ msgctxt "@action"
 msgid "Close"
 msgstr "निकट दृष्य"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:409
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:400
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:674
 #, fuzzy, kde-format
 #| msgid "Close view"
@@ -15251,13 +15251,13 @@ msgid "Close window"
 msgstr "निकट दृष्य"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:303
+#: core/libs/timeadjust/timeadjustsettings.cpp:309
 #, kde-format
 msgid "Timestamp Used"
 msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:305
+#: core/libs/timeadjust/timeadjustsettings.cpp:311
 #, kde-format
 msgid "Timestamp Updated"
 msgstr ""
@@ -15280,19 +15280,24 @@ msgstr ""
 msgid "Failed to update file timestamp"
 msgstr "उघडणे शक्य झाले नाही : %1"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:92
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:87
+#, fuzzy, kde-format
+msgid "ExifTool reported an error"
+msgstr "निर्यात"
+
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
 #, kde-format
 msgid "Success"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:105
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:114
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:119
 #, kde-format
 msgid "not valid"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:129
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:134
 #, kde-format
 msgid "Please wait ..."
 msgstr ""
@@ -36342,7 +36347,7 @@ msgid "IPTC"
 msgstr ""
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:282
 #, kde-format
 msgid "XMP"
 msgstr ""
@@ -38685,148 +38690,153 @@ msgstr "दिनांक व वेळ"
 msgid "Select Image to Extract Clock Photo"
 msgstr "पानावर प्रतिमा बसवा (&F)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:168
 #, kde-format
 msgid "Showfoto"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:169
+#: core/libs/timeadjust/timeadjustsettings.cpp:171
 #, kde-format
 msgid "%1 timestamp"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:174
+#: core/libs/timeadjust/timeadjustsettings.cpp:176
 #, fuzzy, kde-format
 msgid "File name timestamp"
 msgstr "नमूना"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:178
-#: core/libs/timeadjust/timeadjustsettings.cpp:272
+#: core/libs/timeadjust/timeadjustsettings.cpp:180
+#: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, fuzzy, kde-format
 msgid "File last modified"
 msgstr "सुधारले"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:187
+#: core/libs/timeadjust/timeadjustsettings.cpp:189
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:188
-#: core/libs/timeadjust/timeadjustsettings.cpp:273
+#: core/libs/timeadjust/timeadjustsettings.cpp:190
+#: core/libs/timeadjust/timeadjustsettings.cpp:276
 #, kde-format
 msgid "EXIF: created"
-msgstr ""
-
-#: core/libs/timeadjust/timeadjustsettings.cpp:189
-#: core/libs/timeadjust/timeadjustsettings.cpp:274
-#, fuzzy, kde-format
-#| msgid "Origin"
-msgid "EXIF: original"
-msgstr "मूळ"
-
-#: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
-#, kde-format
-msgid "EXIF: digitized"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:191
 #: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, fuzzy, kde-format
+#| msgid "Origin"
+msgid "EXIF: original"
+msgstr "मूळ"
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:192
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#, kde-format
+msgid "EXIF: digitized"
+msgstr ""
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:193
+#: core/libs/timeadjust/timeadjustsettings.cpp:280
+#, fuzzy, kde-format
 #| msgid "Created:"
 msgid "IPTC: created"
 msgstr "तयार केले :"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:192
+#: core/libs/timeadjust/timeadjustsettings.cpp:194
 #, fuzzy, kde-format
 msgid "XMP: created"
 msgstr "तयार केले :"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:193
+#: core/libs/timeadjust/timeadjustsettings.cpp:195
 #, fuzzy, kde-format
 msgid "EXIF: created (fuzzy)"
 msgstr "तयार केले :"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:194
+#: core/libs/timeadjust/timeadjustsettings.cpp:196
 #, fuzzy, kde-format
 #| msgid "Origin"
 msgid "EXIF: original (fuzzy)"
 msgstr "मूळ"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:195
+#: core/libs/timeadjust/timeadjustsettings.cpp:197
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:205
+#: core/libs/timeadjust/timeadjustsettings.cpp:207
 #, fuzzy, kde-format
 #| msgid "Remove the current filter"
 msgid "Reset to current date"
 msgstr "वर्तमान गाळणी काढून टाका"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:237
+#: core/libs/timeadjust/timeadjustsettings.cpp:239
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "येथे प्रत करा (&C)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:238
+#: core/libs/timeadjust/timeadjustsettings.cpp:240
 #, fuzzy, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "जोडा (&A)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:239
+#: core/libs/timeadjust/timeadjustsettings.cpp:241
 #, fuzzy, kde-format
 #| msgid "Soundtrack"
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "आवाज ट्रॅक"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:243
+#: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, fuzzy, kde-format
 #| msgid "&Interface"
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "दुवा (&I)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:249
+#: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "सुट्टया"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:252
+#: core/libs/timeadjust/timeadjustsettings.cpp:254
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:253
+#: core/libs/timeadjust/timeadjustsettings.cpp:255
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:271
+#: core/libs/timeadjust/timeadjustsettings.cpp:273
+#, kde-format
+msgid "Update timestamps with ExifTool"
+msgstr ""
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:274
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgid "EXIF: Thumbnail"
 msgstr "लघुप्रतिमा"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:281
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgid "XMP: Video"
 msgstr "व्हिडीओ"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:304
+#: core/libs/timeadjust/timeadjustsettings.cpp:310
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr ""
@@ -39734,27 +39744,27 @@ msgid "An error has occurred while playing: %1"
 msgstr ""
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:186
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:265
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:188
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:267
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:272
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "कॅपचर: %1"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:191
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:270
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:275
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr ""
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:222
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -66639,11 +66649,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "Precision"
 #~ msgstr "परवानगी"
-
-#, fuzzy
-#~ msgctxt "@title:window"
-#~ msgid "Export error"
-#~ msgstr "निर्यात"
 
 #, fuzzy
 #~| msgid "Google Maps"
