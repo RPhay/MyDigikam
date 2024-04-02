@@ -39,12 +39,6 @@
 namespace Digikam
 {
 
-IOJob::IOJob()
-{
-}
-
-// --------------------------------------------
-
 CopyOrMoveJob::CopyOrMoveJob(IOJobData* const data)
     : m_data(data)
 {
@@ -68,12 +62,14 @@ void CopyOrMoveJob::run()
         if (!srcInfo.exists())
         {
             Q_EMIT signalError(i18n("File/Folder %1 does not exist anymore", srcName));
+
             continue;
         }
 
         if (!dstDir.exists())
         {
             Q_EMIT signalError(i18n("Album %1 does not exist anymore", dstDir.dirName()));
+
             continue;
         }
 
@@ -390,16 +386,19 @@ void RenameFileJob::run()
                                             QDir::toNativeSeparators(destUrl.toLocalFile())));
 
                     Q_EMIT signalRenameFailed(renameUrl);
+
                     continue;
                 }
             }
             else
             {
                 qCDebug(DIGIKAM_IOJOB_LOG) << "File with the same name exists!";
+
                 Q_EMIT signalError(i18n("Image with the same name %1 already there",
                                         QDir::toNativeSeparators(destUrl.toLocalFile())));
 
                 Q_EMIT signalRenameFailed(renameUrl);
+
                 continue;
             }
         }
@@ -411,10 +410,12 @@ void RenameFileJob::run()
         if (!DFileOperations::renameFile(renameUrl.toLocalFile(), destUrl.toLocalFile()))
         {
             qCDebug(DIGIKAM_IOJOB_LOG) << "File could not be renamed!";
+
             Q_EMIT signalError(i18n("Image %1 could not be renamed",
                                     QDir::toNativeSeparators(renameUrl.toLocalFile())));
 
             Q_EMIT signalRenameFailed(renameUrl);
+
             continue;
         }
 

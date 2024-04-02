@@ -37,7 +37,7 @@ class DIGIKAM_GUI_EXPORT IOJob : public ActionJob
 
 protected:
 
-    IOJob();
+    IOJob() = default;
 
 Q_SIGNALS:
 
@@ -71,7 +71,7 @@ private:
 
 private:
 
-    IOJobData* m_data;
+    IOJobData* m_data = nullptr;
 };
 
 // ---------------------------------------
@@ -95,7 +95,7 @@ private:
 
 private:
 
-    IOJobData* m_data;
+    IOJobData* m_data = nullptr;
 };
 
 // ---------------------------------------
@@ -123,7 +123,7 @@ private:
 
 private:
 
-    IOJobData* m_data;
+    IOJobData* m_data = nullptr;
 };
 
 // ----------------------------------------------
@@ -175,7 +175,7 @@ private:
 
 private:
 
-    IOJobData* m_data;
+    IOJobData* m_data = nullptr;
 };
 
 // ----------------------------------------------
@@ -199,7 +199,7 @@ private:
 
 private:
 
-    IOJobData* m_data;
+    IOJobData* m_data = nullptr;
 };
 
 // ----------------------------------------------

@@ -36,24 +36,19 @@ class Q_DECL_HIDDEN IOJobsThread::Private
 
 public:
 
-    explicit Private()
-      : jobsCount (0),
-        isCanceled(false),
-        jobData   (nullptr)
-    {
-    }
+    Private() = default;
 
-    int         jobsCount;
-    bool        isCanceled;
+    int         jobsCount   = 0;
+    bool        isCanceled  = false;
 
-    IOJobData*  jobData;
+    IOJobData*  jobData     = nullptr;
 
     QStringList errorsList;
 };
 
 IOJobsThread::IOJobsThread(QObject* const parent)
     : ActionThreadBase(parent),
-      d(new Private)
+      d               (new Private)
 {
     setObjectName(QLatin1String("IOJobsThread"));
 }
@@ -230,6 +225,7 @@ void IOJobsThread::slotOneJobFinished()
     if (d->jobsCount == 0)
     {
         Q_EMIT signalFinished();
+
         qCDebug(DIGIKAM_IOJOB_LOG) << "Thread Finished";
     }
 }

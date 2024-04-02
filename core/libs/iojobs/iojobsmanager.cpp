@@ -55,28 +55,40 @@ IOJobsThread* IOJobsManager::startIOJobs(IOJobData* const data)
         case IOJobData::MoveAlbum:
         case IOJobData::MoveImage:
         case IOJobData::MoveFiles:
+        {
             thread->copyOrMove(data);
             break;
+        }
 
         case IOJobData::Trash:
         case IOJobData::Delete:
+        {
             thread->deleteFiles(data);
             break;
+        }
 
         case IOJobData::Rename:
+        {
             thread->renameFile(data);
             break;
+        }
 
         case IOJobData::Restore:
+        {
             thread->restoreDTrashItems(data);
             break;
+        }
 
         case IOJobData::Empty:
+        {
             thread->emptyDTrashItems(data);
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     connect(thread, SIGNAL(signalFinished()),
