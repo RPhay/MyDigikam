@@ -34,9 +34,6 @@ T* getObjectOrCreate(T* &ptr)
 */
 
 FacialRecognitionWrapper::Private::Private()
-    : ref       (1),
-      mutex     (),
-      recognizer(nullptr)
 {
     DbEngineParameters params = CoreDbAccess::parameters().faceParameters();
     params.setFaceDatabasePath(CoreDbAccess::parameters().faceParameters().getFaceDatabaseNameOrDir());

@@ -41,12 +41,8 @@ class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 {
 public:
 
-    Private(Classifier method)
-        : method        (method),
-          tree          (nullptr),
-          kNeighbors    (5),
-          threshold     (0.4),
-          newDataAdded  (true)
+    Private(Classifier mthd)
+        : method(mthd)
     {
         for (int i = 0 ; i < 1 ; ++i)
         {
@@ -122,11 +118,11 @@ public:
     cv::Ptr<cv::ml::SVM>       svm;
     cv::Ptr<cv::ml::KNearest>  knn;
 
-    KDTree*                    tree;
-    int                        kNeighbors;
-    float                      threshold;
+    KDTree*                    tree         = nullptr;
+    int                        kNeighbors   = 5;
+    float                      threshold    = 0.4F;
 
-    bool                       newDataAdded;
+    bool                       newDataAdded = true;
 
 public:
 

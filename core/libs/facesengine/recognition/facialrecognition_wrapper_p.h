@@ -74,19 +74,19 @@ public:
                                  const QString& value);
 
     Identity findByAttribute(const QString& attribute,
-                             const QString& value)                    const;
+                             const QString& value)                         const;
 
     Identity findByAttributes(const QString& attribute,
                               const QMultiMap<QString, QString>& valueMap) const;
 
 public:
 
-    bool                        dbAvailable;
-    int                         ref;
+    bool                        dbAvailable = false;
+    int                         ref         = 1;
     mutable QRecursiveMutex     mutex;
     QVariantMap                 parameters;
     QHash<int, Identity>        identityCache;
-    OpenCVDNNFaceRecognizer*    recognizer;
+    OpenCVDNNFaceRecognizer*    recognizer  = nullptr;
 };
 
 } // namespace Digikam

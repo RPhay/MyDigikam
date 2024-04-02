@@ -26,8 +26,7 @@ class Q_DECL_HIDDEN KDTree::Private
 public:
 
     Private(int dim)
-        : nbDimension   (dim),
-          root          (nullptr)
+        : nbDimension(dim)
     {
     }
 
@@ -38,8 +37,8 @@ public:
 
 public:
 
-    int     nbDimension;
-    KDNode* root;
+    int     nbDimension = 0;
+    KDNode* root        = nullptr;
     QMutex  mutex;
 };
 
