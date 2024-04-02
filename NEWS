@@ -56,7 +56,7 @@ BUGFIXES:
 034 ==> 484758 - Displayed dates on Metadata panels come from different dates found in a video file from Ricoh GR II (inconsistency ?).
 035 ==> 484882 - Item -> Write Metadata to File changes camera creation date to UTC.
 036 ==> 483866 - Frozen/unfunctional setup windows.
-037 ==> 
+037 ==> 484719 - Adjust Time & Date misses to adjust some metadata fields in case of a video (it is ok in case of a photo).
 038 ==> 
 039 ==> 
 040 ==> 
