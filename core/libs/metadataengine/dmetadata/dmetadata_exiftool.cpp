@@ -20,7 +20,6 @@
 
 #include <QString>
 #include <QFileInfo>
-#include <QMimeDatabase>
 #include <QScopedPointer>
 
 // Local includes
@@ -34,11 +33,9 @@ namespace Digikam
 
 bool DMetadata::loadUsingExifTool(const QString& filePath, bool videoAll, bool merge)
 {
-    QMimeDatabase mimeDB;
     QFileInfo info(filePath);
 
-    QString mimeType = mimeDB.mimeTypeForFile(info).name();
-    bool    isFITS   = (info.suffix().toUpper() == QLatin1String("FITS"));
+    const bool isFITS = (info.suffix().toUpper() == QLatin1String("FITS"));
 
     QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
