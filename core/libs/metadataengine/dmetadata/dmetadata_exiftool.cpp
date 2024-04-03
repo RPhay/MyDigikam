@@ -32,14 +32,13 @@
 namespace Digikam
 {
 
-bool DMetadata::loadUsingExifTool(const QString& filePath, bool merge)
+bool DMetadata::loadUsingExifTool(const QString& filePath, bool videoAll, bool merge)
 {
     QMimeDatabase mimeDB;
     QFileInfo info(filePath);
 
-    QString mimeType  = mimeDB.mimeTypeForFile(info).name();
-    bool    copyToAll = (mimeType.startsWith(QLatin1String("video/"))     ||
-                         (info.suffix().toUpper() == QLatin1String("FITS")));
+    QString mimeType = mimeDB.mimeTypeForFile(info).name();
+    bool    isFITS   = (info.suffix().toUpper() == QLatin1String("FITS"));
 
     QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
@@ -50,7 +49,7 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool merge)
         return false;
     }
 
-    if (!parser->loadChunk(filePath, copyToAll))
+    if (!parser->loadChunk(filePath, (videoAll || isFITS)))
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Load metadata using ExifTool failed...";
 

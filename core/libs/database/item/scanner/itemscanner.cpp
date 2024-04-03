@@ -119,7 +119,7 @@ void ItemScanner::loadFromDisk()
 
     d->loadedFromDisk = true;
     d->metadata->registerMetadataSettings();
-    d->hasMetadata    = d->metadata->load(d->fileInfo.filePath());
+    d->hasMetadata    = d->metadata->load(d->fileInfo.filePath(), true);
 
     if (d->scanInfo.category == DatabaseItem::Image)
     {

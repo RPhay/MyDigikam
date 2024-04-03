@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-bool DMetadata::load(const QString& filePath, Backend* backend)
+bool DMetadata::load(const QString& filePath, bool videoAll, Backend* backend)
 {
     FileReadLocker lock(filePath);
 
@@ -115,7 +115,32 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
     {
         // No image files (aka video or audio), process with ExifTool or ffmpeg backends.
 
-        if (!(hasLoaded = loadUsingFFmpeg(filePath)))
+        if (videoAll)
+        {
+            if (!(hasLoaded = loadUsingFFmpeg(filePath)))
+            {
+                if (!(hasLoaded = loadUsingExifTool(filePath, videoAll)))
+                {
+                    usedBackend = NoBackend;
+                }
+                else
+                {
+                    usedBackend = ExifToolBackend;
+                }
+            }
+            else
+            {
+                if (loadUsingExifTool(filePath, videoAll, true))
+                {
+                    usedBackend = VideoMergeBackend;
+                }
+                else
+                {
+                    usedBackend = FFMpegBackend;
+                }
+            }
+        }
+        else
         {
             if (!(hasLoaded = loadUsingExifTool(filePath)))
             {
@@ -124,17 +149,6 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
             else
             {
                 usedBackend = ExifToolBackend;
-            }
-        }
-        else
-        {
-            if (loadUsingExifTool(filePath, true))
-            {
-                usedBackend = VideoMergeBackend;
-            }
-            else
-            {
-                usedBackend = FFMpegBackend;
             }
         }
 

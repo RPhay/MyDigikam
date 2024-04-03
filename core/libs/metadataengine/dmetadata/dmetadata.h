@@ -85,7 +85,7 @@ public: // File I/O helpers
      * If backend is non null, return the backend used to populate metadata (Exiv2).
      * See MetaEngine::Backend enum for details.
      */
-    bool load(const QString& filePath, Backend* backend = nullptr);
+    bool load(const QString& filePath, bool videoAll = false, Backend* backend = nullptr);
     bool save(const QString& filePath, bool setVersion = false)                                                         const;
     bool applyChanges(bool setVersion = false)                                                                          const;
 
@@ -415,7 +415,7 @@ private:
     /**
      * ExifTool helper methods.
      */
-    bool loadUsingExifTool(const QString& filePath, bool merge = false);
+    bool loadUsingExifTool(const QString& filePath, bool videoAll = false, bool merge = false);
     bool saveUsingExifTool(const QString& filePath) const;
 };
 

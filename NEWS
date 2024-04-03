@@ -58,7 +58,7 @@ BUGFIXES:
 036 ==> 483866 - Frozen/unfunctional setup windows.
 037 ==> 484719 - Adjust Time & Date misses to adjust some metadata fields in case of a video (it is ok in case of a photo).
 038 ==> 484957 - Wrong caption date timestamp.
-039 ==> 
+039 ==> 484959 - Inconsistent metadata behavior between photo and video after adding a caption.
 040 ==> 
 041 ==> 
 042 ==> 

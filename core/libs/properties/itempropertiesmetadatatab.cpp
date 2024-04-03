@@ -226,7 +226,7 @@ void ItemPropertiesMetadataTab::setCurrentURL(const QUrl& url)
     QElapsedTimer execTimer;
     execTimer.start();
 
-    bool ret = metadata->load(url.toLocalFile());
+    bool ret = metadata->load(url.toLocalFile(), true);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Metadata loading with Exiv2 took"
                                  << execTimer.elapsed() << "ms (" << ret << ")";
