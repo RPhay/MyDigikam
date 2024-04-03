@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-02 01:33+0000\n"
+"POT-Creation-Date: 2024-04-03 01:43+0000\n"
 "PO-Revision-Date: 2023-05-21 15:02+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -4206,7 +4206,7 @@ msgstr "Unit"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:261
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "Thumbnail"
@@ -15786,7 +15786,7 @@ msgid "ExifTool reported an error"
 msgstr "Apply Metadata Template"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
 #, kde-format
 msgid "Success"
 msgstr "Success"
@@ -16190,85 +16190,85 @@ msgstr "Printing calendar page for %1 of %2"
 msgid "Printing Complete"
 msgstr "Printing Complete"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:89
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "DNG Converter"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:106
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:97
 #, kde-format
 msgctxt "@action:button"
 msgid "&Convert"
 msgstr "&Convert"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, kde-format
 msgid "The list does not contain any Raw files to process."
 msgstr "The list does not contain any Raw files to process."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
 #, kde-format
 msgid "DNG Converter"
 msgstr "DNG Converter"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:418
 #, kde-format
 msgid "&Abort"
 msgstr "&Abort"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:428
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:419
 #, kde-format
 msgid "Abort the conversion of Raw files."
 msgstr "Abort the conversion of Raw files."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:432
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:423
 #, kde-format
 msgid "Con&vert"
 msgstr "Con&vert"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:433
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:424
 #, kde-format
 msgid "Start converting the Raw images using the current settings."
 msgstr "Start converting the Raw images using the current settings."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:457
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:448
 #, kde-format
 msgid "Failed to save image"
 msgstr "Failed to save image"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:468
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:459
 #, kde-format
 msgid "Failed to move sidecar"
 msgstr "Failed to move sidecar"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:465
 #, kde-format
 msgid "Failed to save image."
 msgstr "Failed to save image."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:506
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:497
 #, kde-format
 msgid "Process failed"
 msgstr "Process failed"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:512
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:503
 #, kde-format
 msgid "Process Canceled"
 msgstr "Process Cancelled"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:518
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:509
 #, kde-format
 msgid "File not supported"
 msgstr "File not supported"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:524
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:515
 #, kde-format
 msgid "Internal error"
 msgstr "Internal error"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:549
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:540
 #, kde-format
 msgid "Processing %1"
 msgstr "Processing %1"
@@ -16327,7 +16327,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "DNG Converter..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:112
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:104
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "Cannot identify Raw image"
@@ -27928,7 +27928,7 @@ msgstr "Shared directory mounted at \"%1\""
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
-#: core/libs/facesengine/facedb/facedbaccess.cpp:238
+#: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, kde-format
 msgid ""
 "Error opening database backend.\n"
@@ -34332,17 +34332,17 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Help"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:275
+#: core/libs/dtrash/dtrashitemmodel.cpp:266
 #, kde-format
 msgid "Relative Path"
 msgstr "Relative Path"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:280
+#: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, kde-format
 msgid "Deletion Time"
 msgstr "Deletion Time"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:120
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBFaceVersion\" setting does not exist. The "
@@ -34353,7 +34353,7 @@ msgstr ""
 "current database schema version cannot be verified. Try to start with an "
 "empty database. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:160
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:153
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -34366,7 +34366,7 @@ msgstr ""
 "(This means this digiKam version is too old, or the database format is to "
 "recent.) Please use the more recent version of digiKam that you used before."
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:191
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:184
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -35060,22 +35060,22 @@ msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Detect if the images are under-exposed or over-exposed"
 
-#: core/libs/iojobs/iojob.cpp:70
+#: core/libs/iojobs/iojob.cpp:64
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "File/Folder %1 does not exist anymore"
 
-#: core/libs/iojobs/iojob.cpp:76
+#: core/libs/iojobs/iojob.cpp:71
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "Album %1 does not exist anymore"
 
-#: core/libs/iojobs/iojob.cpp:103
+#: core/libs/iojobs/iojob.cpp:99
 #, kde-format
 msgid "Could not overwrite image %1"
 msgstr "Could not overwrite image %1"
 
-#: core/libs/iojobs/iojob.cpp:111
+#: core/libs/iojobs/iojob.cpp:107
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35084,17 +35084,17 @@ msgstr ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 
-#: core/libs/iojobs/iojob.cpp:139
+#: core/libs/iojobs/iojob.cpp:135
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "A file or folder named %1 already exists in %2"
 
-#: core/libs/iojobs/iojob.cpp:169
+#: core/libs/iojobs/iojob.cpp:165
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Could not move folder %1 to album %2"
 
-#: core/libs/iojobs/iojob.cpp:176
+#: core/libs/iojobs/iojob.cpp:172
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -35103,42 +35103,42 @@ msgstr ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 
-#: core/libs/iojobs/iojob.cpp:188
+#: core/libs/iojobs/iojob.cpp:184
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Could not move sidecar from file %1 to album %2"
 
-#: core/libs/iojobs/iojob.cpp:194
+#: core/libs/iojobs/iojob.cpp:190
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Could not move file %1 to album %2"
 
-#: core/libs/iojobs/iojob.cpp:218
+#: core/libs/iojobs/iojob.cpp:214
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Could not copy folder %1 to album %2"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:226
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Could not copy sidecar from file %1 to folder %2"
 
-#: core/libs/iojobs/iojob.cpp:238
+#: core/libs/iojobs/iojob.cpp:234
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Could not copy file %1 to folder %2"
 
-#: core/libs/iojobs/iojob.cpp:243
+#: core/libs/iojobs/iojob.cpp:239
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Could not copy file %1 to album %2"
 
-#: core/libs/iojobs/iojob.cpp:290
+#: core/libs/iojobs/iojob.cpp:286
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "File/Folder %1 does not exist"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:298
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35149,7 +35149,7 @@ msgstr ""
 "Check the file permission on the wastebin folder \".dtrash\" in the image "
 "collection."
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:310
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35160,22 +35160,22 @@ msgstr ""
 "Check the file permission on the wastebin folder \".dtrash\" in the image "
 "collection."
 
-#: core/libs/iojobs/iojob.cpp:331
+#: core/libs/iojobs/iojob.cpp:327
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Album %1 could not be removed"
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:339
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Image %1 could not be removed"
 
-#: core/libs/iojobs/iojob.cpp:389
+#: core/libs/iojobs/iojob.cpp:385
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Could not move image %1 to collection trash"
 
-#: core/libs/iojobs/iojob.cpp:399
+#: core/libs/iojobs/iojob.cpp:397
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Image with the same name %1 already there"
@@ -35185,7 +35185,7 @@ msgstr "Image with the same name %1 already there"
 msgid "Image %1 could not be renamed"
 msgstr "Image %1 could not be renamed"
 
-#: core/libs/iojobs/iojob.cpp:492
+#: core/libs/iojobs/iojob.cpp:493
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Could not restore file %1 from wastebin"
@@ -41627,6 +41627,12 @@ msgstr "Custom Font"
 #, kde-format
 msgid "Choose..."
 msgstr "Choose..."
+
+#: core/libs/widgets/fonts/dfontselect.cpp:145
+#, fuzzy, kde-format
+#| msgid "Select a month"
+msgid "Select a Font"
+msgstr "Select a month"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
 #, kde-format

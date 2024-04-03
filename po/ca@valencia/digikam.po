@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-02 01:33+0000\n"
-"PO-Revision-Date: 2024-03-25 10:18+0100\n"
+"POT-Creation-Date: 2024-04-03 01:43+0000\n"
+"PO-Revision-Date: 2024-04-02 13:56+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -4233,7 +4233,7 @@ msgstr "Unitat"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:261
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "Thumbnail"
@@ -4398,10 +4398,9 @@ msgstr "Descodificadors de vídeo"
 #: core/app/views/utils/componentsinfodlg.cpp:298
 #: core/libs/dialogs/libsinfodlg.cpp:533 core/libs/dialogs/libsinfodlg.cpp:539
 #: core/libs/dialogs/libsinfodlg.cpp:614
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "no entry"
-msgstr "País"
+msgstr "sense entrada"
 
 #: core/app/views/utils/componentsinfodlg.cpp:229
 #, kde-format
@@ -6252,28 +6251,7 @@ msgid "ResNet50"
 msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "kind of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -16054,14 +16032,12 @@ msgid "Failed to update file timestamp"
 msgstr "No s'ha pogut actualitzar la marca de temps del fitxer"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Apply Metadata: ExifTool reported an error."
+#, kde-format
 msgid "ExifTool reported an error"
-msgstr "Aplica metadades: ExifTool ha informat d'un error."
+msgstr "ExifTool ha informat d'un error"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
 #, kde-format
 msgid "Success"
 msgstr "Correcte"
@@ -16471,85 +16447,85 @@ msgstr "S'està imprimint la pàgina %1 de %2 del calendari"
 msgid "Printing Complete"
 msgstr "Ha finalitzat la impressió"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:89
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "Convertidor DNG"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:106
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:97
 #, kde-format
 msgctxt "@action:button"
 msgid "&Convert"
 msgstr "Con&vertix"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, kde-format
 msgid "The list does not contain any Raw files to process."
 msgstr "La llista no conté cap fitxer RAW que s'haja de processar."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
 #, kde-format
 msgid "DNG Converter"
 msgstr "Convertidor DNG"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:418
 #, kde-format
 msgid "&Abort"
 msgstr "&Interromp"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:428
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:419
 #, kde-format
 msgid "Abort the conversion of Raw files."
 msgstr "Interromp la conversió dels fitxers RAW."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:432
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:423
 #, kde-format
 msgid "Con&vert"
 msgstr "Con&vertix"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:433
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:424
 #, kde-format
 msgid "Start converting the Raw images using the current settings."
 msgstr "Comença a convertir les imatges RAW emprant la configuració actual."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:457
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:448
 #, kde-format
 msgid "Failed to save image"
 msgstr "No s'ha pogut guardar la imatge"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:468
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:459
 #, kde-format
 msgid "Failed to move sidecar"
 msgstr "No s'ha pogut moure el lateral"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:465
 #, kde-format
 msgid "Failed to save image."
 msgstr "No s'ha pogut guardar la imatge."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:506
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:497
 #, kde-format
 msgid "Process failed"
 msgstr "Ha fallat el processament"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:512
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:503
 #, kde-format
 msgid "Process Canceled"
 msgstr "S'ha cancel·lat el processament"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:518
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:509
 #, kde-format
 msgid "File not supported"
 msgstr "El fitxer no està admés"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:524
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:515
 #, kde-format
 msgid "Internal error"
 msgstr "S'ha produït un error intern"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:549
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:540
 #, kde-format
 msgid "Processing %1"
 msgstr "S'està processant %1"
@@ -16608,7 +16584,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "Convertidor DNG..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:112
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:104
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "No es pot identificar la imatge RAW"
@@ -28317,7 +28293,7 @@ msgstr "Directori compartit muntat a «%1»"
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
-#: core/libs/facesengine/facedb/facedbaccess.cpp:238
+#: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, kde-format
 msgid ""
 "Error opening database backend.\n"
@@ -34861,17 +34837,17 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Ajuda"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:275
+#: core/libs/dtrash/dtrashitemmodel.cpp:266
 #, kde-format
 msgid "Relative Path"
 msgstr "Camí relatiu"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:280
+#: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, kde-format
 msgid "Deletion Time"
 msgstr "Hora de la supressió"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:120
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBFaceVersion\" setting does not exist. The "
@@ -34882,7 +34858,7 @@ msgstr ""
 "«DBFaceVersion» no existix. No es pot verificar la versió de l'esquema de la "
 "base de dades actual. Proveu d'iniciar amb una base de dades buida. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:160
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:153
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -34896,7 +34872,7 @@ msgstr ""
 "format de la base de dades és massa recent. Utilitzeu la versió més recent "
 "de digiKam que hàgeu utilitzat abans."
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:191
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:184
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -35603,22 +35579,22 @@ msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Detecta si les imatges estan subexposades o sobreexposades"
 
-#: core/libs/iojobs/iojob.cpp:70
+#: core/libs/iojobs/iojob.cpp:64
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "El fitxer o carpeta %1 ja no existix"
 
-#: core/libs/iojobs/iojob.cpp:76
+#: core/libs/iojobs/iojob.cpp:71
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "L'àlbum %1 ja no existix"
 
-#: core/libs/iojobs/iojob.cpp:103
+#: core/libs/iojobs/iojob.cpp:99
 #, kde-format
 msgid "Could not overwrite image %1"
 msgstr "No s'ha pogut sobreescriure la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:111
+#: core/libs/iojobs/iojob.cpp:107
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35628,17 +35604,17 @@ msgstr ""
 "Verifiqueu els permisos del fitxer en la carpeta de paperera «%2» en la "
 "col·lecció d'imatges."
 
-#: core/libs/iojobs/iojob.cpp:139
+#: core/libs/iojobs/iojob.cpp:135
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Ja existix un fitxer o una carpeta anomenat %1 a %2"
 
-#: core/libs/iojobs/iojob.cpp:169
+#: core/libs/iojobs/iojob.cpp:165
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "No s'ha pogut moure la carpeta %1 cap a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:176
+#: core/libs/iojobs/iojob.cpp:172
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -35647,42 +35623,42 @@ msgstr ""
 "No s'ha pogut moure la carpeta %1 cap a l'àlbum %2. La carpeta %1 també s'ha "
 "copiat a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:188
+#: core/libs/iojobs/iojob.cpp:184
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "No s'ha pogut moure el lateral des del fitxer %1 cap a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:194
+#: core/libs/iojobs/iojob.cpp:190
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "No s'ha pogut moure el fitxer %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:218
+#: core/libs/iojobs/iojob.cpp:214
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "No s'ha pogut copiar la carpeta %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:226
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "No s'ha pogut copiar el lateral des del fitxer %1 a la carpeta %2"
 
-#: core/libs/iojobs/iojob.cpp:238
+#: core/libs/iojobs/iojob.cpp:234
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "No s'ha pogut copiar el fitxer %1 a la carpeta %2"
 
-#: core/libs/iojobs/iojob.cpp:243
+#: core/libs/iojobs/iojob.cpp:239
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "No s'ha pogut copiar el fitxer %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:290
+#: core/libs/iojobs/iojob.cpp:286
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "El fitxer o carpeta %1 no existix"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:298
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35694,7 +35670,7 @@ msgstr ""
 "Verifiqueu els permisos del fitxer en la carpeta de paperera «.dtrash» en la "
 "col·lecció d'imatges."
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:310
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35705,23 +35681,23 @@ msgstr ""
 "Verifiqueu els permisos del fitxer en la carpeta de paperera «.dtrash» en la "
 "col·lecció d'imatges."
 
-#: core/libs/iojobs/iojob.cpp:331
+#: core/libs/iojobs/iojob.cpp:327
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "No s'ha pogut eliminar l'àlbum %1"
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:339
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "No s'ha pogut eliminar la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:389
+#: core/libs/iojobs/iojob.cpp:385
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr ""
 "No s'ha pogut moure la imatge %1 cap a dins de la paperera de col·leccions"
 
-#: core/libs/iojobs/iojob.cpp:399
+#: core/libs/iojobs/iojob.cpp:397
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Ja hi ha una imatge amb el mateix nom %1"
@@ -35731,7 +35707,7 @@ msgstr "Ja hi ha una imatge amb el mateix nom %1"
 msgid "Image %1 could not be renamed"
 msgstr "No s'ha pogut canviar de nom la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:492
+#: core/libs/iojobs/iojob.cpp:493
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "No s'ha pogut restaurar el fitxer %1 des de la paperera"
@@ -40970,7 +40946,7 @@ msgstr ""
 #: core/libs/timeadjust/timeadjustsettings.cpp:273
 #, kde-format
 msgid "Update timestamps with ExifTool"
-msgstr ""
+msgstr "Actualitza les marques de temps amb ExifTool"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
 #, kde-format
@@ -42249,6 +42225,12 @@ msgstr "Tipus de lletra personalitzat"
 #, kde-format
 msgid "Choose..."
 msgstr "Tria..."
+
+#: core/libs/widgets/fonts/dfontselect.cpp:145
+#, fuzzy, kde-format
+#| msgid "Select a month"
+msgid "Select a Font"
+msgstr "Seleccioneu un mes"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
 #, kde-format
@@ -61238,28 +61220,7 @@ msgstr ""
 "cap etiqueta assignada.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "king of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -64621,16 +64582,7 @@ msgid "Download Error"
 msgstr "S'ha produït un error de baixada"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:228
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the download.\n"
-#| "\n"
-#| "File: %1\n"
-#| "\n"
-#| "%2\n"
-#| "\n"
-#| "You can try again with an alternative mirror server or continue the "
-#| "download on the next startup."
+#, kde-format
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -64646,14 +64598,13 @@ msgstr ""
 "\n"
 "%2\n"
 "\n"
-"Podeu intentar-ho de nou amb un servidor espill alternatiu o continuar la "
-"descàrrega en el següent inici."
+"Podeu intentar-ho de nou o continuar la descàrrega en el següent inici."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:236
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
-msgstr ""
+msgstr "Torna-ho a intentar"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:365
 #, kde-format
@@ -67824,7 +67775,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@action:button"
-#~ msgid "Try Alternate"
-#~ msgstr "Intenta un alternatiu"

@@ -10,10 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-02 01:33+0000\n"
-"PO-Revision-Date: 2024-03-30 11:07+0200\n"
+"POT-Creation-Date: 2024-04-03 01:43+0000\n"
+"PO-Revision-Date: 2024-04-02 09:17+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language-Team: Ukrainian\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4269,7 +4269,7 @@ msgstr "Одиниці"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:261
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "Thumbnail"
@@ -16140,14 +16140,12 @@ msgid "Failed to update file timestamp"
 msgstr "Не вдалося оновити часову позначку файла"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Apply Metadata: ExifTool reported an error."
+#, kde-format
 msgid "ExifTool reported an error"
-msgstr "Застосування метаданих: ExifTool надіслано повідомлення про помилку."
+msgstr "ExifTool надіслано повідомлення про помилку"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
 #, kde-format
 msgid "Success"
 msgstr "Успіх"
@@ -16559,87 +16557,87 @@ msgstr "Друк сторінки календаря за %1 %2"
 msgid "Printing Complete"
 msgstr "Друк завершено"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:89
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "Перетворювач DNG"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:106
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:97
 #, kde-format
 msgctxt "@action:button"
 msgid "&Convert"
 msgstr "П&еретворити"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, kde-format
 msgid "The list does not contain any Raw files to process."
 msgstr "У списку не міститься файлів цифрових негативів для обробки."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
 #, kde-format
 msgid "DNG Converter"
 msgstr "Перетворювач DNG"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:418
 #, kde-format
 msgid "&Abort"
 msgstr "П&ерервати"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:428
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:419
 #, kde-format
 msgid "Abort the conversion of Raw files."
 msgstr "Перервати перетворення файлів цифрових негативів."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:432
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:423
 #, kde-format
 msgid "Con&vert"
 msgstr "П&еретворити"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:433
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:424
 #, kde-format
 msgid "Start converting the Raw images using the current settings."
 msgstr ""
 "Розпочати перетворення зображень цифрових негативів на основі поточних "
 "параметрів."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:457
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:448
 #, kde-format
 msgid "Failed to save image"
 msgstr "Спроба збереження зображення була невдалою"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:468
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:459
 #, kde-format
 msgid "Failed to move sidecar"
 msgstr "Не вдалося пересунути файл додаткових даних"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:465
 #, kde-format
 msgid "Failed to save image."
 msgstr "Спроба збереження зображення була невдалою."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:506
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:497
 #, kde-format
 msgid "Process failed"
 msgstr "Помилка під час обробки"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:512
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:503
 #, kde-format
 msgid "Process Canceled"
 msgstr "Обробку скасовано"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:518
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:509
 #, kde-format
 msgid "File not supported"
 msgstr "Підтримки такого типу файлів не передбачено"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:524
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:515
 #, kde-format
 msgid "Internal error"
 msgstr "Внутрішня помилка"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:549
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:540
 #, kde-format
 msgid "Processing %1"
 msgstr "Обробляємо %1"
@@ -16702,7 +16700,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "Перетворювач на DNG…"
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:112
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:104
 #, kde-format
 msgid "Cannot identify Raw image"
 msgstr "Не вдалося ідентифікувати зображення цифрового негатива"
@@ -28433,7 +28431,7 @@ msgstr "Каталог спільного доступу змонтовано д
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
-#: core/libs/facesengine/facedb/facedbaccess.cpp:238
+#: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, kde-format
 msgid ""
 "Error opening database backend.\n"
@@ -34963,17 +34961,17 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Довідка"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:275
+#: core/libs/dtrash/dtrashitemmodel.cpp:266
 #, kde-format
 msgid "Relative Path"
 msgstr "Відносний шлях"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:280
+#: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, kde-format
 msgid "Deletion Time"
 msgstr "Час вилучення"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:120
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBFaceVersion\" setting does not exist. The "
@@ -34984,7 +34982,7 @@ msgstr ""
 "схеми поточної бази даних неможливо перевірити. Спробуйте почати з порожньої "
 "бази даних. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:160
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:153
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -34998,7 +34996,7 @@ msgstr ""
 "формат бази даних є занадто новим) Будь ласка, використовуйте новішу версію "
 "digiKam, якою ви користувалися раніше."
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:191
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:184
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -35711,22 +35709,22 @@ msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Визначати, чи є зображення недоекспонованими або переекспонованими"
 
-#: core/libs/iojobs/iojob.cpp:70
+#: core/libs/iojobs/iojob.cpp:64
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "Файла або теки %1 вже не існує"
 
-#: core/libs/iojobs/iojob.cpp:76
+#: core/libs/iojobs/iojob.cpp:71
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "Альбому %1 вже не існує"
 
-#: core/libs/iojobs/iojob.cpp:103
+#: core/libs/iojobs/iojob.cpp:99
 #, kde-format
 msgid "Could not overwrite image %1"
 msgstr "Не вдалося перезаписати зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:111
+#: core/libs/iojobs/iojob.cpp:107
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35735,17 +35733,17 @@ msgstr ""
 "Не вдалося пересунути зображення %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «%2» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:139
+#: core/libs/iojobs/iojob.cpp:135
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "У %2 вже є файл або тека з назвою %1"
 
-#: core/libs/iojobs/iojob.cpp:169
+#: core/libs/iojobs/iojob.cpp:165
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Не вдалося пересунути теку %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:176
+#: core/libs/iojobs/iojob.cpp:172
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -35754,43 +35752,43 @@ msgstr ""
 "Не вдалося пересунути теку %1 до альбому %2. Теку %1 також було скопійовано "
 "до альбому %2."
 
-#: core/libs/iojobs/iojob.cpp:188
+#: core/libs/iojobs/iojob.cpp:184
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Не вдалося пересунути додатковий файл для файла %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:194
+#: core/libs/iojobs/iojob.cpp:190
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Не вдалося пересунути файл %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:218
+#: core/libs/iojobs/iojob.cpp:214
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Не вдалося скопіювати теку %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:226
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr ""
 "Не вдалося виконати копіювання додаткового файла для файла %1 до теки %2"
 
-#: core/libs/iojobs/iojob.cpp:238
+#: core/libs/iojobs/iojob.cpp:234
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Не вдалося виконати копіювання файла %1 до теки %2"
 
-#: core/libs/iojobs/iojob.cpp:243
+#: core/libs/iojobs/iojob.cpp:239
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Не вдалося скопіювати файл %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:290
+#: core/libs/iojobs/iojob.cpp:286
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Файла або теки %1 не існує"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:298
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35800,7 +35798,7 @@ msgstr ""
 "Не вдалося пересунути теку %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «.dtrash» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:310
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35810,22 +35808,22 @@ msgstr ""
 "Не вдалося пересунути зображення %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «.dtrash» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:331
+#: core/libs/iojobs/iojob.cpp:327
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Не вдалося вилучити альбом %1"
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:339
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Не вдалося вилучити зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:389
+#: core/libs/iojobs/iojob.cpp:385
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Не вдалося пересунути зображення %1 до смітника збірки"
 
-#: core/libs/iojobs/iojob.cpp:399
+#: core/libs/iojobs/iojob.cpp:397
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Там уже є зображення із назвою %1"
@@ -35835,7 +35833,7 @@ msgstr "Там уже є зображення із назвою %1"
 msgid "Image %1 could not be renamed"
 msgstr "Не вдалося перейменувати зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:492
+#: core/libs/iojobs/iojob.cpp:493
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Не вдалося відновити файл %1 зі смітника"
@@ -41122,7 +41120,7 @@ msgstr ""
 #: core/libs/timeadjust/timeadjustsettings.cpp:273
 #, kde-format
 msgid "Update timestamps with ExifTool"
-msgstr ""
+msgstr "Оновити часові позначки за допомогою ExifTool"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
 #, kde-format
@@ -42383,6 +42381,12 @@ msgstr "Нетиповий шрифт"
 #, kde-format
 msgid "Choose..."
 msgstr "Вибрати…"
+
+#: core/libs/widgets/fonts/dfontselect.cpp:145
+#, fuzzy, kde-format
+#| msgid "Select a month"
+msgid "Select a Font"
+msgstr "Вибір місяця"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
 #, kde-format

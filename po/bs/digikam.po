@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-02 01:33+0000\n"
+"POT-Creation-Date: 2024-04-03 01:43+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -4583,7 +4583,7 @@ msgstr "Jedinica"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:261
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "Thumbnail"
@@ -16915,7 +16915,7 @@ msgid "ExifTool reported an error"
 msgstr "Primijenite predložak metapodataka"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
 #, fuzzy, kde-format
 #| msgid "Quick Access List"
 msgid "Success"
@@ -17348,97 +17348,97 @@ msgstr "Štampanje strane kalendara za %1 od %2"
 msgid "Printing Complete"
 msgstr "Štampanje je završeno"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:89
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "Pretvori"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:106
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:97
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@action:button"
 msgid "&Convert"
 msgstr "Pretvori"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, kde-format
 msgid "The list does not contain any Raw files to process."
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgid "DNG Converter"
 msgstr "Pretvori"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:418
 #, kde-format
 msgid "&Abort"
 msgstr "&Prekini"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:428
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:419
 #, fuzzy, kde-format
 #| msgid "Database conversion canceled."
 msgid "Abort the conversion of Raw files."
 msgstr "Konverzija baze podataka otkazana."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:432
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:423
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgid "Con&vert"
 msgstr "Pretvori"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:433
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:424
 #, fuzzy, kde-format
 #| msgid "Generate a Raw image preview using current settings."
 msgid "Start converting the Raw images using the current settings."
 msgstr "Napravi sirovi pregled slika koristeći trenutne postavke."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:457
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:448
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Failed to save image"
 msgstr "Neuspjelo snimanje oznaka na dokumentu."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:468
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:459
 #, fuzzy, kde-format
 #| msgid "Failed to open file."
 msgid "Failed to move sidecar"
 msgstr "Neuspjelo otvaranje dokumenta."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:465
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Failed to save image."
 msgstr "Neuspjelo snimanje oznaka na dokumentu."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:506
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:497
 #, fuzzy, kde-format
 msgid "Process failed"
 msgstr "Spasi u datoteku"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:512
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:503
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Process Canceled"
 msgstr "Proces otkazan..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:518
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:509
 #, fuzzy, kde-format
 #| msgid "LibEigen support"
 msgid "File not supported"
 msgstr "LibEigen podrška"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:524
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:515
 #, fuzzy, kde-format
 #| msgid "Internal Server"
 msgid "Internal error"
 msgstr "Interni server"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:549
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:540
 #, fuzzy, kde-format
 msgid "Processing %1"
 msgstr "Spasi u datoteku"
@@ -17497,7 +17497,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "Konverzija bojevnog prostora"
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:112
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot decode RAW image\n"
@@ -29880,7 +29880,7 @@ msgstr "Podijeljeni direktorij montiran na <filename>%1</filename>"
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
-#: core/libs/facesengine/facedb/facedbaccess.cpp:238
+#: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, fuzzy, kde-format
 #| msgid ""
 #| "Error opening database backend.\n"
@@ -36697,17 +36697,17 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "&Pomoć"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:275
+#: core/libs/dtrash/dtrashitemmodel.cpp:266
 #, fuzzy, kde-format
 msgid "Relative Path"
 msgstr "Parket"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:280
+#: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, fuzzy, kde-format
 msgid "Deletion Time"
 msgstr "Izbriši datoteku"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:120
 #, fuzzy, kde-format
 #| msgid ""
 #| "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -36722,7 +36722,7 @@ msgstr ""
 "šema baze podataka ne može biti ovjerena.Pokušajte početi sa praznom bazom "
 "podataka. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:160
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:153
 #, fuzzy, kde-format
 #| msgid ""
 #| "The database has been used with a more recent version of digiKam and has "
@@ -36742,7 +36742,7 @@ msgstr ""
 "nov) Molimo Vas da koristite noviju verziju digikam-a od one što ste "
 "koristili ranije. "
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:191
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:184
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to create tables in database.\n"
@@ -37482,82 +37482,82 @@ msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr "Otkrij ako su slike prevelike ekspozicije"
 
-#: core/libs/iojobs/iojob.cpp:70
+#: core/libs/iojobs/iojob.cpp:64
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "Datoteka ne postoji"
 
-#: core/libs/iojobs/iojob.cpp:76
+#: core/libs/iojobs/iojob.cpp:71
 #, fuzzy, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "Datoteka ne postoji"
 
-#: core/libs/iojobs/iojob.cpp:103
+#: core/libs/iojobs/iojob.cpp:99
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgid "Could not overwrite image %1"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/libs/iojobs/iojob.cpp:111
+#: core/libs/iojobs/iojob.cpp:107
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:139
+#: core/libs/iojobs/iojob.cpp:135
 #, fuzzy, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Predložak metapodataka pod nazivom '%1' već postoji."
 
-#: core/libs/iojobs/iojob.cpp:169
+#: core/libs/iojobs/iojob.cpp:165
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:176
+#: core/libs/iojobs/iojob.cpp:172
 #, fuzzy, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/libs/iojobs/iojob.cpp:188
+#: core/libs/iojobs/iojob.cpp:184
 #, fuzzy, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/libs/iojobs/iojob.cpp:194
+#: core/libs/iojobs/iojob.cpp:190
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:218
+#: core/libs/iojobs/iojob.cpp:214
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:226
 #, fuzzy, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/libs/iojobs/iojob.cpp:238
+#: core/libs/iojobs/iojob.cpp:234
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/libs/iojobs/iojob.cpp:243
+#: core/libs/iojobs/iojob.cpp:239
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Ne mogu otvoriti: %1"
 
-#: core/libs/iojobs/iojob.cpp:290
+#: core/libs/iojobs/iojob.cpp:286
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Datoteka ne postoji"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:298
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -37565,7 +37565,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:310
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -37573,23 +37573,23 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:331
+#: core/libs/iojobs/iojob.cpp:327
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Ime albuma ne može biti prazno."
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:339
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:389
+#: core/libs/iojobs/iojob.cpp:385
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Could not move image %1 to collection trash"
 msgstr "Neuspjelo snimanje oznaka na dokumentu."
 
-#: core/libs/iojobs/iojob.cpp:399
+#: core/libs/iojobs/iojob.cpp:397
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
@@ -37601,7 +37601,7 @@ msgstr ""
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:492
+#: core/libs/iojobs/iojob.cpp:493
 #, fuzzy, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Ne mogu otvoriti: %1"
@@ -44378,6 +44378,12 @@ msgstr "Prilagođena slova"
 #, kde-format
 msgid "Choose..."
 msgstr "Odaberi..."
+
+#: core/libs/widgets/fonts/dfontselect.cpp:145
+#, fuzzy, kde-format
+#| msgid "Select None"
+msgid "Select a Font"
+msgstr "Bez izbora"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
 #, kde-format
