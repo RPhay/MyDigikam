@@ -23,10 +23,10 @@ real64 dng_function_GammaEncode_sRGB::Evaluate (real64 x) const
 
     if (x <= 0.0031308)
         return x * 12.92;
-        
+
     else
         return 1.055 * pow (x, 1.0 / 2.4) - 0.055;
-    
+
     }
 
 /*****************************************************************************/
@@ -36,38 +36,38 @@ real64 dng_function_GammaEncode_sRGB::EvaluateInverse (real64 y) const
 
     if (y <= 0.0031308 * 12.92)
         return y * (1.0 / 12.92);
-        
+
     else
         return pow ((y + 0.055) * (1.0 / 1.055), 2.4);
-    
+
     }
 
 /*****************************************************************************/
 
 const dng_1d_function & dng_function_GammaEncode_sRGB::Get ()
     {
-    
+
     static dng_function_GammaEncode_sRGB static_function;
-    
+
     return static_function;
-    
+
     }
 
 /*****************************************************************************/
 
 real64 dng_function_GammaEncode_1_8::Evaluate (real64 x) const
     {
-    
+
     const real64 gamma = 1.0 / 1.8;
-    
+
     const real64 slope0 = 32.0;
-    
+
     const real64 x1 = 8.2118790552e-4;      // pow (slope0, 1.0 / (gamma - 1.0)) * 2.0
-    
+
     const real64 y1 = 0.019310851;          // pow (x1, gamma)
-    
+
     const real64 slope1 = 13.064306598;     // gamma * pow (x1, gamma - 1.0)
-    
+
     if (x <= x1)
         return EvaluateSplineSegment (x,
                                       0.0,
@@ -76,54 +76,54 @@ real64 dng_function_GammaEncode_1_8::Evaluate (real64 x) const
                                       x1,
                                       y1,
                                       slope1);
-                            
+
     else
         return pow (x, gamma);
-    
+
     }
-            
+
 /*****************************************************************************/
 
 real64 dng_function_GammaEncode_1_8::EvaluateInverse (real64 y) const
     {
-    
+
     if (y > 0.0 && y < 0.019310851)
         {
-        
+
         return dng_1d_function::EvaluateInverse (y);
-        
+
         }
-    
+
     return pow (y, 1.8);
-    
+
     }
 
 /*****************************************************************************/
 
 const dng_1d_function & dng_function_GammaEncode_1_8::Get ()
     {
-    
+
     static dng_function_GammaEncode_1_8 static_function;
-    
+
     return static_function;
-    
+
     }
 
 /*****************************************************************************/
 
 real64 dng_function_GammaEncode_2_2::Evaluate (real64 x) const
     {
-    
+
     const real64 gamma = 1.0 / 2.2;
-    
+
     const real64 slope0 = 32.0;
-    
+
     const real64 x1 = 0.0034800731;         // pow (slope0, 1.0 / (gamma - 1.0)) * 2.0
-    
+
     const real64 y1 = 0.0763027458;         // pow (x1, gamma)
-    
+
     const real64 slope1 = 9.9661890075;     // gamma * pow (x1, gamma - 1.0)
-    
+
     if (x <= x1)
         return EvaluateSplineSegment (x,
                                       0.0,
@@ -132,37 +132,37 @@ real64 dng_function_GammaEncode_2_2::Evaluate (real64 x) const
                                       x1,
                                       y1,
                                       slope1);
-                            
+
     else
         return pow (x, gamma);
-    
+
     }
 
 /*****************************************************************************/
 
 real64 dng_function_GammaEncode_2_2::EvaluateInverse (real64 y) const
     {
-    
+
     if (y > 0.0 && y < 0.0763027458)
         {
-        
+
         return dng_1d_function::EvaluateInverse (y);
-        
+
         }
-    
+
     return pow (y, 2.2);
-    
+
     }
 
 /*****************************************************************************/
 
 const dng_1d_function & dng_function_GammaEncode_2_2::Get ()
     {
-    
+
     static dng_function_GammaEncode_2_2 static_function;
-    
+
     return static_function;
-    
+
     }
 
 /*****************************************************************************/
@@ -171,89 +171,89 @@ dng_color_space::dng_color_space ()
 
     :   fMatrixToPCS   ()
     ,   fMatrixFromPCS ()
-    
+
     {
-    
+
     }
 
 /*****************************************************************************/
 
 dng_color_space::~dng_color_space ()
     {
-    
+
     }
 
 /*****************************************************************************/
 
 void dng_color_space::SetMonochrome ()
     {
-    
+
     fMatrixToPCS = PCStoXYZ ().AsColumn ();
-    
+
     dng_matrix m (1, 3);
-    
+
     m [0] [0] = 0.0;
     m [0] [1] = 1.0;
     m [0] [2] = 0.0;
-    
+
     fMatrixFromPCS = m;
-    
+
     }
 
 /*****************************************************************************/
 
 void dng_color_space::SetMatrixToPCS (const dng_matrix_3by3 &M)
     {
-    
+
     // The matrix values are often rounded, so adjust to
     // get them to convert device white exactly to the PCS.
-    
+
     dng_vector_3 W1 = M * dng_vector_3 (1.0, 1.0, 1.0);
     dng_vector_3 W2 = PCStoXYZ ();
-    
+
     real64 s0 = W2 [0] / W1 [0];
     real64 s1 = W2 [1] / W1 [1];
     real64 s2 = W2 [2] / W1 [2];
-    
+
     dng_matrix_3by3 S (s0,  0,  0,
                         0, s1,  0,
                         0,  0, s2);
-    
+
     fMatrixToPCS = S * M;
-    
+
     // Find reverse matrix.
-    
+
     fMatrixFromPCS = Invert (fMatrixToPCS);
-    
+
     }
-        
+
 /*****************************************************************************/
 
 const dng_1d_function & dng_color_space::GammaFunction () const
     {
-    
+
     return dng_1d_identity::Get ();
-    
+
     }
-        
+
 /*****************************************************************************/
 
 bool dng_color_space::ICCProfile (uint32 &size,
                                   const uint8 *&data) const
     {
-    
+
     size = 0;
     data = NULL;
-    
+
     return false;
-    
+
     }
-        
+
 /*****************************************************************************/
 
 dng_space_sRGB::dng_space_sRGB ()
     {
-    
+
     SetMatrixToPCS (dng_matrix_3by3 (0.4361, 0.3851, 0.1431,
                                      0.2225, 0.7169, 0.0606,
                                      0.0139, 0.0971, 0.7141));
@@ -264,18 +264,18 @@ dng_space_sRGB::dng_space_sRGB ()
 
 const dng_1d_function & dng_space_sRGB::GammaFunction () const
     {
-    
+
     return dng_function_GammaEncode_sRGB::Get ();
-        
+
     }
 
 /*****************************************************************************/
 
 bool dng_space_sRGB::ICCProfile (uint32 &size,
                                  const uint8 *&data) const
-        
+
     {
-    
+
     static const uint8 ksRGBProfileData [] =
         {
         0x00, 0x00, 0x0C, 0x48, 0x4C, 0x69, 0x6E, 0x6F, 0x02, 0x10, 0x00, 0x00,
@@ -544,27 +544,27 @@ bool dng_space_sRGB::ICCProfile (uint32 &size,
 
     size = sizeof (ksRGBProfileData);
     data = ksRGBProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_sRGB::Get ()
     {
-    
+
     static dng_space_sRGB static_space;
-    
+
     return static_space;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 dng_space_AdobeRGB::dng_space_AdobeRGB ()
     {
-    
+
     SetMatrixToPCS (dng_matrix_3by3 (0.6097, 0.2053, 0.1492,
                                      0.3111, 0.6257, 0.0632,
                                      0.0195, 0.0609, 0.7446));
@@ -575,18 +575,18 @@ dng_space_AdobeRGB::dng_space_AdobeRGB ()
 
 const dng_1d_function & dng_space_AdobeRGB::GammaFunction () const
     {
-    
+
     return dng_function_GammaEncode_2_2::Get ();
-        
+
     }
 
 /*****************************************************************************/
 
 bool dng_space_AdobeRGB::ICCProfile (uint32 &size,
                                      const uint8 *&data) const
-        
+
     {
-    
+
     static const uint8 kAdobeRGBProfileData [] =
         {
         0x00, 0x00, 0x02, 0x30, 0x41, 0x44, 0x42, 0x45, 0x02, 0x10, 0x00, 0x00,
@@ -640,27 +640,27 @@ bool dng_space_AdobeRGB::ICCProfile (uint32 &size,
 
     size = sizeof (kAdobeRGBProfileData);
     data = kAdobeRGBProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_AdobeRGB::Get ()
     {
-    
+
     static dng_space_AdobeRGB static_space;
-    
+
     return static_space;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 dng_space_ColorMatch::dng_space_ColorMatch ()
     {
-    
+
     SetMatrixToPCS (dng_matrix_3by3 (0.5094, 0.3208, 0.1339,
                                      0.2749, 0.6581, 0.0670,
                                      0.0243, 0.1087, 0.6919));
@@ -671,18 +671,18 @@ dng_space_ColorMatch::dng_space_ColorMatch ()
 
 const dng_1d_function & dng_space_ColorMatch::GammaFunction () const
     {
-    
+
     return dng_function_GammaEncode_1_8::Get ();
-        
+
     }
 
 /*****************************************************************************/
 
 bool dng_space_ColorMatch::ICCProfile (uint32 &size,
                                        const uint8 *&data) const
-        
+
     {
-    
+
     static const uint8 kColorMatchProfileData [] =
         {
         0x00, 0x00, 0x02, 0x30, 0x41, 0x44, 0x42, 0x45, 0x02, 0x10, 0x00, 0x00,
@@ -736,27 +736,27 @@ bool dng_space_ColorMatch::ICCProfile (uint32 &size,
 
     size = sizeof (kColorMatchProfileData);
     data = kColorMatchProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_ColorMatch::Get ()
     {
-    
+
     static dng_space_ColorMatch static_space;
-    
+
     return static_space;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 dng_space_DisplayP3::dng_space_DisplayP3 ()
     {
-    
+
     #if 0
 
     // Same primaries as DCI P3.
@@ -782,7 +782,7 @@ dng_space_DisplayP3::dng_space_DisplayP3 ()
                                     -0.0010, 0.0419, 0.7843));
 
     #endif
-    
+
     }
 
 /*****************************************************************************/
@@ -843,29 +843,29 @@ bool dng_space_DisplayP3::ICCProfile (uint32 &size,
 
     size = sizeof (kProfileData);
     data = kProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_1d_function & dng_space_DisplayP3::GammaFunction () const
     {
-    
+
     return dng_function_GammaEncode_sRGB::Get ();
-    
+
     }
 
 /*****************************************************************************/
 
 const dng_color_space & dng_space_DisplayP3::Get ()
     {
-    
+
     static dng_space_DisplayP3 static_space;
-    
+
     return static_space;
-    
+
     }
 
 /*****************************************************************************/
@@ -896,7 +896,7 @@ dng_space_Rec2020::dng_space_Rec2020 ()
                                     -0.0019, 0.0300, 0.7971));
 
     #endif
-    
+
     }
 
 /*****************************************************************************/
@@ -912,7 +912,7 @@ bool dng_space_Rec2020::ICCProfile (uint32 &size,
     // curve tags (gamma, a, b, c, d).
     //
     // See BuildRec2020RGB in our modified copy of ACEBuilder.h.
-    
+
     static const uint8 kProfileData [504] =
         {
         0x00, 0x00, 0x01, 0xF8, 0x41, 0x44, 0x42, 0x45, 0x04, 0x00, 0x00, 0x00,
@@ -961,38 +961,38 @@ bool dng_space_Rec2020::ICCProfile (uint32 &size,
 
     size = sizeof (kProfileData);
     data = kProfileData;
-    
+
     return true;
-    
+
     }
-                                 
+
 /*****************************************************************************/
 
 const dng_1d_function & dng_space_Rec2020::GammaFunction () const
     {
 
     // Rec. 709 and Rec. 2020 share the same gamma function.
-    
+
     return dng_function_GammaEncode_Rec709::Get ();
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_Rec2020::Get ()
     {
-    
+
     static dng_space_Rec2020 static_space;
-    
+
     return static_space;
-    
+
     }
 
 /*****************************************************************************/
 
 dng_space_ProPhoto::dng_space_ProPhoto ()
     {
-    
+
     SetMatrixToPCS (dng_matrix_3by3 (0.7977, 0.1352, 0.0313,
                                      0.2880, 0.7119, 0.0001,
                                      0.0000, 0.0000, 0.8249));
@@ -1003,18 +1003,18 @@ dng_space_ProPhoto::dng_space_ProPhoto ()
 
 const dng_1d_function & dng_space_ProPhoto::GammaFunction () const
     {
-    
+
     return dng_function_GammaEncode_1_8::Get ();
-        
+
     }
 
 /*****************************************************************************/
 
 bool dng_space_ProPhoto::ICCProfile (uint32 &size,
                                      const uint8 *&data) const
-        
+
     {
-    
+
     static const uint8 kProPhotoProfileData [] =
         {
         0x00, 0x00, 0x03, 0xAC, 0x4B, 0x43, 0x4D, 0x53, 0x02, 0x10, 0x00, 0x00,
@@ -1100,27 +1100,27 @@ bool dng_space_ProPhoto::ICCProfile (uint32 &size,
 
     size = sizeof (kProPhotoProfileData);
     data = kProPhotoProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_ProPhoto::Get ()
     {
-    
+
     static dng_space_ProPhoto static_space;
-    
+
     return static_space;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 dng_space_GrayGamma18::dng_space_GrayGamma18 ()
     {
-    
+
     SetMonochrome ();
 
     }
@@ -1129,18 +1129,18 @@ dng_space_GrayGamma18::dng_space_GrayGamma18 ()
 
 const dng_1d_function & dng_space_GrayGamma18::GammaFunction () const
     {
-    
+
     return dng_function_GammaEncode_1_8::Get ();
-        
+
     }
 
 /*****************************************************************************/
 
 bool dng_space_GrayGamma18::ICCProfile (uint32 &size,
                                         const uint8 *&data) const
-        
+
     {
-    
+
     static const uint8 kGamma18ProfileData [] =
         {
         0x00, 0x00, 0x01, 0x98, 0x41, 0x44, 0x42, 0x45, 0x02, 0x10, 0x00, 0x00,
@@ -1181,27 +1181,27 @@ bool dng_space_GrayGamma18::ICCProfile (uint32 &size,
 
     size = sizeof (kGamma18ProfileData);
     data = kGamma18ProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_GrayGamma18::Get ()
     {
-    
+
     static dng_space_GrayGamma18 static_space;
-    
+
     return static_space;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 dng_space_GrayGamma22::dng_space_GrayGamma22 ()
     {
-    
+
     SetMonochrome ();
 
     }
@@ -1210,18 +1210,18 @@ dng_space_GrayGamma22::dng_space_GrayGamma22 ()
 
 const dng_1d_function & dng_space_GrayGamma22::GammaFunction () const
     {
-    
+
     return dng_function_GammaEncode_2_2::Get ();
-        
+
     }
 
 /*****************************************************************************/
 
 bool dng_space_GrayGamma22::ICCProfile (uint32 &size,
                                         const uint8 *&data) const
-        
+
     {
-    
+
     static const uint8 kGamma22ProfileData [] =
         {
         0x00, 0x00, 0x01, 0x98, 0x41, 0x44, 0x42, 0x45, 0x02, 0x10, 0x00, 0x00,
@@ -1262,40 +1262,40 @@ bool dng_space_GrayGamma22::ICCProfile (uint32 &size,
 
     size = sizeof (kGamma22ProfileData);
     data = kGamma22ProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_GrayGamma22::Get ()
     {
-    
+
     static dng_space_GrayGamma22 static_space;
-    
+
     return static_space;
-    
+
     }
-    
+
 /*****************************************************************************/
 /*****************************************************************************/
 /*****************************************************************************/
 
 dng_space_sRGB_Linear::dng_space_sRGB_Linear ()
     {
-    
+
     SetMatrixToPCS (dng_space_sRGB::Get ().MatrixToPCS ());
-    
+
     }
 
 /*****************************************************************************/
 
 bool dng_space_sRGB_Linear::ICCProfile (uint32 &size,
                                         const uint8 *&data) const
-        
+
     {
-    
+
     static const uint8 ksRGBLinearProfileData [] =
         {
         0x00, 0x00, 0x02, 0x08, 0x41, 0x44, 0x42, 0x45, 0x02, 0x40, 0x00, 0x00,
@@ -1346,40 +1346,40 @@ bool dng_space_sRGB_Linear::ICCProfile (uint32 &size,
 
     size = sizeof (ksRGBLinearProfileData);
     data = ksRGBLinearProfileData;
-    
+
     return true;
-    
+
     }
 
 /*****************************************************************************/
 
 const dng_color_space & dng_space_sRGB_Linear::Get ()
     {
-    
+
     static dng_space_sRGB_Linear static_space;
-    
+
     return static_space;
-    
+
     }
-    
+
 /*****************************************************************************/
 /*****************************************************************************/
 /*****************************************************************************/
 
 dng_space_AdobeRGB_Linear::dng_space_AdobeRGB_Linear ()
     {
-    
+
     SetMatrixToPCS (dng_space_AdobeRGB::Get ().MatrixToPCS ());
-    
+
     }
 
 /*****************************************************************************/
 
 bool dng_space_AdobeRGB_Linear::ICCProfile (uint32 &size,
                                             const uint8 *&data) const
-        
+
     {
-    
+
     static const uint8 kAdobeRGBLinearProfileData [] =
         {
         0x00, 0x00, 0x02, 0x04, 0x41, 0x44, 0x42, 0x45, 0x02, 0x40, 0x00, 0x00,
@@ -1429,102 +1429,102 @@ bool dng_space_AdobeRGB_Linear::ICCProfile (uint32 &size,
 
     size = sizeof (kAdobeRGBLinearProfileData);
     data = kAdobeRGBLinearProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_AdobeRGB_Linear::Get ()
     {
-    
+
     static dng_space_AdobeRGB_Linear static_space;
-    
+
     return static_space;
-    
+
     }
-    
+
 /*****************************************************************************/
 /*****************************************************************************/
 /*****************************************************************************/
 
 dng_space_ProPhoto_Linear::dng_space_ProPhoto_Linear ()
     {
-    
+
     SetMatrixToPCS (dng_space_ProPhoto::Get ().MatrixToPCS ());
-    
+
     }
 
 /*****************************************************************************/
 
 bool dng_space_ProPhoto_Linear::ICCProfile (uint32 &size,
                                             const uint8 *&data) const
-        
+
     {
-    
+
     static const uint8 kProPhotoLinearProfileData [] =
         {
-        0x00, 0x00, 0x01, 0xf0, 0x41, 0x44, 0x42, 0x45, 0x02, 0x10, 0x00, 0x00, 
-        0x6d, 0x6e, 0x74, 0x72, 0x52, 0x47, 0x42, 0x20, 0x58, 0x59, 0x5a, 0x20, 
-        0x07, 0xd5, 0x00, 0x02, 0x00, 0x03, 0x00, 0x10, 0x00, 0x1f, 0x00, 0x1d, 
-        0x61, 0x63, 0x73, 0x70, 0x41, 0x50, 0x50, 0x4c, 0x00, 0x00, 0x00, 0x00, 
-        0x6e, 0x6f, 0x6e, 0x65, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf6, 0xd6, 
-        0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0xd3, 0x2c, 0x41, 0x44, 0x42, 0x45, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x09, 
-        0x63, 0x70, 0x72, 0x74, 0x00, 0x00, 0x00, 0xf0, 0x00, 0x00, 0x00, 0x32, 
-        0x64, 0x65, 0x73, 0x63, 0x00, 0x00, 0x01, 0x24, 0x00, 0x00, 0x00, 0x6a, 
-        0x77, 0x74, 0x70, 0x74, 0x00, 0x00, 0x01, 0x90, 0x00, 0x00, 0x00, 0x14, 
-        0x72, 0x58, 0x59, 0x5a, 0x00, 0x00, 0x01, 0xa4, 0x00, 0x00, 0x00, 0x14, 
-        0x67, 0x58, 0x59, 0x5a, 0x00, 0x00, 0x01, 0xb8, 0x00, 0x00, 0x00, 0x14, 
-        0x62, 0x58, 0x59, 0x5a, 0x00, 0x00, 0x01, 0xcc, 0x00, 0x00, 0x00, 0x14, 
-        0x72, 0x54, 0x52, 0x43, 0x00, 0x00, 0x01, 0xe0, 0x00, 0x00, 0x00, 0x0e, 
-        0x67, 0x54, 0x52, 0x43, 0x00, 0x00, 0x01, 0xe0, 0x00, 0x00, 0x00, 0x0e, 
-        0x62, 0x54, 0x52, 0x43, 0x00, 0x00, 0x01, 0xe0, 0x00, 0x00, 0x00, 0x0e, 
-        0x74, 0x65, 0x78, 0x74, 0x00, 0x00, 0x00, 0x00, 0x43, 0x6f, 0x70, 0x79, 
-        0x72, 0x69, 0x67, 0x68, 0x74, 0x20, 0x32, 0x30, 0x30, 0x35, 0x20, 0x41, 
-        0x64, 0x6f, 0x62, 0x65, 0x20, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 
-        0x20, 0x49, 0x6e, 0x63, 0x6f, 0x72, 0x70, 0x6f, 0x72, 0x61, 0x74, 0x65, 
-        0x64, 0x00, 0x00, 0x00, 0x64, 0x65, 0x73, 0x63, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x10, 0x4c, 0x69, 0x6e, 0x65, 0x61, 0x72, 0x20, 0x50, 
-        0x72, 0x6f, 0x50, 0x68, 0x6f, 0x74, 0x6f, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x00, 0x00, 0x58, 0x59, 0x5a, 0x20, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0xf6, 0xdc, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0xd3, 0x3a, 
-        0x58, 0x59, 0x5a, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xcc, 0x38, 
-        0x00, 0x00, 0x49, 0xbe, 0x00, 0x00, 0x00, 0x00, 0x58, 0x59, 0x5a, 0x20, 
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x22, 0x9a, 0x00, 0x00, 0xb6, 0x3d, 
-        0x00, 0x00, 0x00, 0x01, 0x58, 0x59, 0x5a, 0x20, 0x00, 0x00, 0x00, 0x00, 
-        0x00, 0x00, 0x08, 0x04, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0xd3, 0x2b, 
-        0x63, 0x75, 0x72, 0x76, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 
+        0x00, 0x00, 0x01, 0xf0, 0x41, 0x44, 0x42, 0x45, 0x02, 0x10, 0x00, 0x00,
+        0x6d, 0x6e, 0x74, 0x72, 0x52, 0x47, 0x42, 0x20, 0x58, 0x59, 0x5a, 0x20,
+        0x07, 0xd5, 0x00, 0x02, 0x00, 0x03, 0x00, 0x10, 0x00, 0x1f, 0x00, 0x1d,
+        0x61, 0x63, 0x73, 0x70, 0x41, 0x50, 0x50, 0x4c, 0x00, 0x00, 0x00, 0x00,
+        0x6e, 0x6f, 0x6e, 0x65, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf6, 0xd6,
+        0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0xd3, 0x2c, 0x41, 0x44, 0x42, 0x45,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x09,
+        0x63, 0x70, 0x72, 0x74, 0x00, 0x00, 0x00, 0xf0, 0x00, 0x00, 0x00, 0x32,
+        0x64, 0x65, 0x73, 0x63, 0x00, 0x00, 0x01, 0x24, 0x00, 0x00, 0x00, 0x6a,
+        0x77, 0x74, 0x70, 0x74, 0x00, 0x00, 0x01, 0x90, 0x00, 0x00, 0x00, 0x14,
+        0x72, 0x58, 0x59, 0x5a, 0x00, 0x00, 0x01, 0xa4, 0x00, 0x00, 0x00, 0x14,
+        0x67, 0x58, 0x59, 0x5a, 0x00, 0x00, 0x01, 0xb8, 0x00, 0x00, 0x00, 0x14,
+        0x62, 0x58, 0x59, 0x5a, 0x00, 0x00, 0x01, 0xcc, 0x00, 0x00, 0x00, 0x14,
+        0x72, 0x54, 0x52, 0x43, 0x00, 0x00, 0x01, 0xe0, 0x00, 0x00, 0x00, 0x0e,
+        0x67, 0x54, 0x52, 0x43, 0x00, 0x00, 0x01, 0xe0, 0x00, 0x00, 0x00, 0x0e,
+        0x62, 0x54, 0x52, 0x43, 0x00, 0x00, 0x01, 0xe0, 0x00, 0x00, 0x00, 0x0e,
+        0x74, 0x65, 0x78, 0x74, 0x00, 0x00, 0x00, 0x00, 0x43, 0x6f, 0x70, 0x79,
+        0x72, 0x69, 0x67, 0x68, 0x74, 0x20, 0x32, 0x30, 0x30, 0x35, 0x20, 0x41,
+        0x64, 0x6f, 0x62, 0x65, 0x20, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73,
+        0x20, 0x49, 0x6e, 0x63, 0x6f, 0x72, 0x70, 0x6f, 0x72, 0x61, 0x74, 0x65,
+        0x64, 0x00, 0x00, 0x00, 0x64, 0x65, 0x73, 0x63, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x10, 0x4c, 0x69, 0x6e, 0x65, 0x61, 0x72, 0x20, 0x50,
+        0x72, 0x6f, 0x50, 0x68, 0x6f, 0x74, 0x6f, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x58, 0x59, 0x5a, 0x20, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0xf6, 0xdc, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0xd3, 0x3a,
+        0x58, 0x59, 0x5a, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xcc, 0x38,
+        0x00, 0x00, 0x49, 0xbe, 0x00, 0x00, 0x00, 0x00, 0x58, 0x59, 0x5a, 0x20,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x22, 0x9a, 0x00, 0x00, 0xb6, 0x3d,
+        0x00, 0x00, 0x00, 0x01, 0x58, 0x59, 0x5a, 0x20, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x08, 0x04, 0x00, 0x00, 0x00, 0x05, 0x00, 0x00, 0xd3, 0x2b,
+        0x63, 0x75, 0x72, 0x76, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01,
         0x01, 0x00, 0x00, 0x00
         };
 
     size = sizeof (kProPhotoLinearProfileData);
     data = kProPhotoLinearProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_ProPhoto_Linear::Get ()
     {
-    
+
     static dng_space_ProPhoto_Linear static_space;
-    
+
     return static_space;
-    
+
     }
 
 /*****************************************************************************/
@@ -1533,18 +1533,18 @@ const dng_color_space & dng_space_ProPhoto_Linear::Get ()
 
 dng_space_Gray_Linear::dng_space_Gray_Linear ()
     {
-    
+
     SetMonochrome ();
-    
+
     }
 
 /*****************************************************************************/
 
 bool dng_space_Gray_Linear::ICCProfile (uint32 &size,
                                         const uint8 *&data) const
-        
+
     {
-    
+
     static const uint8 kGrayLinearProfileData [] =
         {
         0x00, 0x00, 0x01, 0x78, 0x41, 0x44, 0x42, 0x45, 0x02, 0x10, 0x00, 0x00,
@@ -1583,20 +1583,20 @@ bool dng_space_Gray_Linear::ICCProfile (uint32 &size,
 
     size = sizeof (kGrayLinearProfileData);
     data = kGrayLinearProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_Gray_Linear::Get ()
     {
-    
+
     static dng_space_Gray_Linear static_space;
-    
+
     return static_space;
-    
+
     }
 
 /*****************************************************************************/
@@ -1676,20 +1676,20 @@ bool dng_space_Rec2020_Linear::ICCProfile (uint32 &size,
 
     size = sizeof (kProfileData);
     data = kProfileData;
-    
+
     return true;
-    
+
     }
-                                 
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_Rec2020_Linear::Get ()
     {
-    
+
     static dng_space_Rec2020_Linear static_space;
-    
+
     return static_space;
-    
+
     }
 
 /*****************************************************************************/
@@ -1698,7 +1698,7 @@ const dng_color_space & dng_space_Rec2020_Linear::Get ()
 
 dng_space_LinearP3::dng_space_LinearP3 ()
     {
-    
+
     // Copied from dng_space_DisplayP3 constructor.
 
     SetMatrixToPCS (dng_matrix_3by3 (0.5151, 0.2920, 0.1571,
@@ -1762,20 +1762,20 @@ bool dng_space_LinearP3::ICCProfile (uint32 &size,
 
     size = sizeof (kProfileData);
     data = kProfileData;
-    
+
     return true;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 const dng_color_space & dng_space_LinearP3::Get ()
     {
-    
+
     static dng_space_LinearP3 static_space;
-    
+
     return static_space;
-    
+
     }
 
 /*****************************************************************************/
@@ -1784,7 +1784,7 @@ const dng_color_space & dng_space_LinearP3::Get ()
 
 dng_space_fakeRGB::dng_space_fakeRGB ()
     {
-    
+
     SetMatrixToPCS (dng_matrix_3by3 (0.6097, 0.2053, 0.1492,
                                      0.3111, 0.6257, 0.0632,
                                      0.0195, 0.0609, 0.7446));
@@ -1795,11 +1795,11 @@ dng_space_fakeRGB::dng_space_fakeRGB ()
 
 const dng_color_space & dng_space_fakeRGB::Get ()
     {
-    
+
     static dng_space_fakeRGB static_space;
-    
+
     return static_space;
-    
+
     }
-    
+
 /*****************************************************************************/

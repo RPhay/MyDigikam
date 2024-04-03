@@ -3,7 +3,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 //
@@ -27,15 +27,15 @@
 // 03-27-15 ADC 5.5-c066 Porting changes to gcc 4.4.4.
 // 03-26-15 AJ  5.6-c065 Disabling the code for linux for integrating into green as shared_ptr is not available on gcc 4.4.4
 // 03-26-15 AJ  5.6-c064 Minimizing risk of shared_ptr usage across dlls by changing glue code
-// 03-25-15 PRI 5.6-c063 Changing map<string,vector<>> .count to .size as it wasn't working as expected. 
-// 03-15-15 AJ  5.6-c062 Changing method of acquiring ownership of the shared_ptr 
-// 03-23-15 PRI 5.6-c060 Fixing some issues in Get/SetBulkMarker NewDOMImplementation and adding missing NULL check. 
+// 03-25-15 PRI 5.6-c063 Changing map<string,vector<>> .count to .size as it wasn't working as expected.
+// 03-15-15 AJ  5.6-c062 Changing method of acquiring ownership of the shared_ptr
+// 03-23-15 PRI 5.6-c060 Fixing some issues in Get/SetBulkMarker NewDOMImplementation and adding missing NULL check.
 // 03-23-15 AJ  5.6-c059 Fixing issue with a corner case of structure type extension
 // 03-23-15 AJ  5.6-c058 Fixing issue with setting the parent node of the extension node
 // 03-20-15 AJ  5.6-c057 Fixing minor issue with json parser exception handling
 // 03-19-15 AJ  5.6-c056 Fixing bug 3953797
 // 03-19-15 AJ  5.6-c054 Adding merging logic for extensions present in the extension node and the cue point params
-// 03-18-15 AJ  5.6-c052 Adding shared ptr for the private data in the marker structure 
+// 03-18-15 AJ  5.6-c052 Adding shared ptr for the private data in the marker structure
 // 03-17-15 AJ  5.6-c049 Adding a missed null check in GetBulkMarkers()
 // 03-16-15 AJ  5.6-c048 Fixing build break due to XMPCore.def
 // 03-16-15 AJ  5.6-c047 Completing Rework of Get/SetBulkMarkers()
@@ -211,7 +211,7 @@
 #include "XMPCore/Interfaces/ICoreObjectFactory.h"
 #include "XMPCommon/Interfaces/IUTF8String_I.h"
 #include "XMPCore/Interfaces/INode_I.h"
-#endif 
+#endif
 
 using namespace std;
 
@@ -236,7 +236,7 @@ typedef unsigned char XMP_CLTMatch;
 
 #if XMP_MARKER_EXTENSIBILITY_BACKWARD_COMPATIBILITY
 extern "C" {
-    
+
      static void ReleaseXMP_Node(void * node) {
         if (node) {
             XMP_Node * ptr = (XMP_Node *)node;
@@ -248,7 +248,7 @@ extern "C" {
 
 #if ENABLE_CPP_DOM_MODEL
 extern "C" {
-    
+
     static void ReleaseIStructureNode(void * node) {
         if (node) {
             AdobeXMPCore::pIStructureNode_base ptr = ( AdobeXMPCore::pIStructureNode_base )node;
@@ -297,9 +297,9 @@ void XMP_Node::SetValue( XMP_StringPtr _value )
             XMP_Assert ( this->name != "xmp:TestAssertNotify" );
         }
     #endif
-    
+
     std::string newValue = _value;  // Need a local copy to tweak and not change node.value for errors.
-    
+
     XMP_Uns8* chPtr = (XMP_Uns8*) newValue.c_str(); // Check for valid UTF-8, replace ASCII controls with a space.
     while ( *chPtr != 0 ) {
 
@@ -330,7 +330,7 @@ void XMP_Node::SetValue( XMP_StringPtr _value )
     #if 0   // *** XMP_DebugBuild
         this->_valuePtr = this->value.c_str();
     #endif
-    
+
 }   // XMP_Node::SetValue
 
 
@@ -350,18 +350,18 @@ SetNode ( XMP_Node * node, XMP_StringPtr value, XMP_OptionBits options )
         node->RemoveChildren();
         node->RemoveQualifiers();
     }
-    
+
     node->options |= options;   // Keep options set by FindNode when creating a new node.
 
     if ( value != 0 ) {
-    
+
         // This is setting the value of a leaf node.
         if ( node->options & kXMP_PropCompositeMask ) XMP_Throw ( "Composite nodes can't have values", kXMPErr_BadXPath );
         XMP_Assert ( node->children.empty() );
         SetNodeValue ( node, value );
-    
+
     } else {
-    
+
         // This is setting up an array or struct.
         if ( ! node->value.empty() ) XMP_Throw ( "Composite nodes can't have values", kXMPErr_BadXPath );
         if ( node->options & kXMP_PropCompositeMask ) { // Can't change an array to a struct, or vice versa.
@@ -370,9 +370,9 @@ SetNode ( XMP_Node * node, XMP_StringPtr value, XMP_OptionBits options )
             }
         }
         node->RemoveChildren();
-    
+
     }
-    
+
 }   // SetNode
 
 
@@ -388,17 +388,17 @@ DoSetArrayItem ( XMP_Node *     arrayNode,
 {
     XMP_OptionBits itemLoc = options & kXMP_PropArrayLocationMask;
     XMP_Index      arraySize = static_cast<XMP_Index>( arrayNode->children.size() );
-    
+
     options &= ~kXMP_PropArrayLocationMask;
     options = VerifySetOptions ( options, itemValue );
-    
+
     // Now locate or create the item node and set the value. Note the index parameter is one-based!
     // The index can be in the range [0..size+1] or "last", normalize it and check the insert flags.
     // The order of the normalization checks is important. If the array is empty we end up with an
     // index and location to set item size+1.
-    
+
     XMP_Node * itemNode = 0;
-    
+
     if ( itemIndex == kXMP_ArrayLastItem ) itemIndex = arraySize;
     if ( (itemIndex == 0) && (itemLoc == kXMP_InsertAfterItem) ) {
         itemIndex = 1;
@@ -409,7 +409,7 @@ DoSetArrayItem ( XMP_Node *     arrayNode,
         itemLoc = 0;
     }
     if ( (itemIndex == arraySize+1) && (itemLoc == kXMP_InsertBeforeItem) ) itemLoc = 0;
-    
+
     if ( itemIndex == arraySize+1 ) {
 
         if ( itemLoc != 0 ) XMP_Throw ( "Can't insert before or after implicit new item", kXMPErr_BadIndex );
@@ -430,9 +430,9 @@ DoSetArrayItem ( XMP_Node *     arrayNode,
         }
 
     }
-    
+
     SetNode ( itemNode, itemValue, options );
-    
+
 }   // DoSetArrayItem
 
 
@@ -454,7 +454,7 @@ ChooseLocalizedText ( const XMP_Node *   arrayNode,
     const XMP_Node * currItem = 0;
     const size_t itemLim = arrayNode->children.size();
     size_t itemNum;
-    
+
     // See if the array has the right form. Allow empty alt arrays, that is what parsing returns.
     // *** Should check alt-text bit when that is reliably maintained.
 
@@ -485,7 +485,7 @@ ChooseLocalizedText ( const XMP_Node *   arrayNode,
             return kXMP_CLT_SpecificMatch;
         }
     }
-    
+
     if ( *genericLang != 0 ) {
 
         // Look for the first partial match with the generic language.
@@ -503,7 +503,7 @@ ChooseLocalizedText ( const XMP_Node *   arrayNode,
         }
 
         if ( itemNum < itemLim ) {
-            
+
             // Look for a second partial match with the generic language.
             for ( ++itemNum; itemNum < itemLim; ++itemNum ) {
                 currItem = arrayNode->children[itemNum];
@@ -518,9 +518,9 @@ ChooseLocalizedText ( const XMP_Node *   arrayNode,
             return kXMP_CLT_SingleGeneric;  // No second partial match was found.
 
         }
-        
+
     }
-    
+
     // Look for an 'x-default' item.
     for ( itemNum = 0; itemNum < itemLim; ++itemNum ) {
         currItem = arrayNode->children[itemNum];
@@ -529,11 +529,11 @@ ChooseLocalizedText ( const XMP_Node *   arrayNode,
             return kXMP_CLT_XDefault;
         }
     }
-    
+
     // Everything failed, choose the first item.
     *itemNode = arrayNode->children[0];
     return kXMP_CLT_FirstItem;
-    
+
 }   // ChooseLocalizedText
 
 
@@ -546,7 +546,7 @@ AppendLangItem ( XMP_Node * arrayNode, XMP_StringPtr itemLang, XMP_StringPtr ite
 {
     XMP_Node * newItem  = new XMP_Node ( arrayNode, kXMP_ArrayItemName, (kXMP_PropHasQualifiers | kXMP_PropHasLang) );
     XMP_Node * langQual = new XMP_Node ( newItem, "xml:lang", kXMP_PropIsQualifier );
-    
+
     try {   // ! Use SetNodeValue, not constructors above, to get the character checks.
         SetNodeValue ( newItem, itemValue );
         SetNodeValue ( langQual, itemLang );
@@ -555,7 +555,7 @@ AppendLangItem ( XMP_Node * arrayNode, XMP_StringPtr itemLang, XMP_StringPtr ite
         delete langQual;
         throw;
     }
-    
+
     newItem->qualifiers.push_back ( langQual );
 
     if ( (arrayNode->children.empty()) || (langQual->value != "x-default") ) {
@@ -591,16 +591,16 @@ XMPMeta::GetProperty ( XMP_StringPtr    schemaNS,
 
     XMP_ExpandedXPath expPath;
     ExpandXPath ( schemaNS, propName, &expPath );
-    
+
     XMP_Node * propNode = FindConstNode ( &tree, expPath );
     if ( propNode == 0 ) return false;
-    
+
     *propValue = propNode->value.c_str();
     *valueSize = static_cast<XMP_StringLen>( propNode->value.size() );
     *options   = propNode->options;
-    
+
     return true;
-    
+
 }   // GetProperty
 
 
@@ -697,9 +697,9 @@ XMPMeta::SetProperty ( XMP_StringPtr  schemaNS,
 
     XMP_Node * propNode = FindNode ( &tree, expPath, kXMP_CreateNodes, options );
     if ( propNode == 0 ) XMP_Throw ( "Specified property does not exist", kXMPErr_BadXPath );
-    
+
     SetNode ( propNode, propValue, options );
-    
+
 }   // SetProperty
 
 
@@ -720,9 +720,9 @@ XMPMeta::SetArrayItem ( XMP_StringPtr  schemaNS,
     ExpandXPath ( schemaNS, arrayName, &arrayPath );
     XMP_Node * arrayNode = FindNode ( &tree, arrayPath, kXMP_ExistingOnly );    // Just lookup, don't try to create.
     if ( arrayNode == 0 ) XMP_Throw ( "Specified array does not exist", kXMPErr_BadXPath );
-    
+
     DoSetArrayItem ( arrayNode, itemIndex, itemValue, options );
-    
+
 }   // SetArrayItem
 
 
@@ -743,14 +743,14 @@ XMPMeta::AppendArrayItem ( XMP_StringPtr  schemaNS,
     if ( (arrayOptions & ~kXMP_PropArrayFormMask) != 0 ) {
         XMP_Throw ( "Only array form flags allowed for arrayOptions", kXMPErr_BadOptions );
     }
-    
+
     // Locate or create the array. If it already exists, make sure the array form from the options
     // parameter is compatible with the current state.
-    
+
     XMP_ExpandedXPath arrayPath;
     ExpandXPath ( schemaNS, arrayName, &arrayPath );
     XMP_Node * arrayNode = FindNode ( &tree, arrayPath, kXMP_ExistingOnly );    // Just lookup, don't try to create.
-    
+
     if ( arrayNode != 0 ) {
         // The array exists, make sure the form is compatible. Zero arrayForm means take what exists.
         if ( ! (arrayNode->options & kXMP_PropValueIsArray) ) {
@@ -768,9 +768,9 @@ XMPMeta::AppendArrayItem ( XMP_StringPtr  schemaNS,
         arrayNode = FindNode ( &tree, arrayPath, kXMP_CreateNodes, arrayOptions );
         if ( arrayNode == 0 ) XMP_Throw ( "Failure creating array node", kXMPErr_BadXPath );
     }
-    
+
     DoSetArrayItem ( arrayNode, kXMP_ArrayLastItem, itemValue, (options | kXMP_InsertAfterItem) );
-    
+
 }   // AppendArrayItem
 
 
@@ -833,14 +833,14 @@ XMPMeta::DeleteProperty ( XMP_StringPtr schemaNS,
 
     XMP_ExpandedXPath   expPath;
     ExpandXPath ( schemaNS, propName, &expPath );
-    
+
     XMP_NodePtrPos ptrPos;
     XMP_Node * propNode = FindNode ( &tree, expPath, kXMP_ExistingOnly, kXMP_NoOptions, &ptrPos );
     if ( propNode == 0 ) return;
     XMP_Node * parentNode = propNode->parent;
-    
+
     // Erase the pointer from the parent's vector, then delete the node and all below it.
-    
+
     if ( ! (propNode->options & kXMP_PropIsQualifier) ) {
 
         parentNode->children.erase ( ptrPos );
@@ -861,9 +861,9 @@ XMPMeta::DeleteProperty ( XMP_StringPtr schemaNS,
         if ( parentNode->qualifiers.empty() ) parentNode->options ^= kXMP_PropHasQualifiers;
 
     }
-    
+
     delete propNode;    // ! The destructor takes care of the whole subtree.
-    
+
 }   // DeleteProperty
 
 
@@ -938,7 +938,7 @@ XMPMeta::DoesPropertyExist ( XMP_StringPtr schemaNS,
 
     XMP_Node * propNode = FindConstNode ( &tree, expPath );
     return (propNode != 0);
-    
+
 }   // DoesPropertyExist
 
 
@@ -1021,22 +1021,22 @@ XMPMeta::GetLocalizedText ( XMP_StringPtr    schemaNS,
     XMP_VarString zSpecificLang ( _specificLang );
     NormalizeLangValue ( &zGenericLang );
     NormalizeLangValue ( &zSpecificLang );
-    
+
     XMP_StringPtr genericLang  = zGenericLang.c_str();
     XMP_StringPtr specificLang = zSpecificLang.c_str();
-    
+
     XMP_ExpandedXPath arrayPath;
     ExpandXPath ( schemaNS, arrayName, &arrayPath );
-    
+
     const XMP_Node * arrayNode = FindConstNode ( &tree, arrayPath );    // *** This expand/find idiom is used in 3 Getters.
     if ( arrayNode == 0 ) return false;         // *** Should extract it into a local utility.
-    
+
     XMP_CLTMatch match;
     const XMP_Node * itemNode;
-    
+
     match = ChooseLocalizedText ( arrayNode, genericLang, specificLang, &itemNode );
     if ( match == kXMP_CLT_NoValues ) return false;
-    
+
     *actualLang = itemNode->qualifiers[0]->value.c_str();
     *langSize   = static_cast<XMP_Index>( itemNode->qualifiers[0]->value.size() );
     *itemValue  = itemNode->value.c_str();
@@ -1044,7 +1044,7 @@ XMPMeta::GetLocalizedText ( XMP_StringPtr    schemaNS,
     *options    = itemNode->options;
 
     return true;
-    
+
 }   // GetLocalizedText
 
 
@@ -1068,13 +1068,13 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
     XMP_VarString zSpecificLang ( _specificLang );
     NormalizeLangValue ( &zGenericLang );
     NormalizeLangValue ( &zSpecificLang );
-    
+
     XMP_StringPtr genericLang  = zGenericLang.c_str();
     XMP_StringPtr specificLang = zSpecificLang.c_str();
-    
+
     XMP_ExpandedXPath arrayPath;
     ExpandXPath ( schemaNS, arrayName, &arrayPath );
-    
+
     // Find the array node and set the options if it was just created.
     XMP_Node * arrayNode = FindNode ( &tree, arrayPath, kXMP_CreateNodes,
                                       (kXMP_PropValueIsArray | kXMP_PropArrayIsOrdered | kXMP_PropArrayIsAlternate) );
@@ -1086,13 +1086,13 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
             XMP_Throw ( "Localized text array is not alt-text", kXMPErr_BadXPath );
         }
     }
-    
+
     // Make sure the x-default item, if any, is first.
-    
+
     size_t itemNum, itemLim;
     XMP_Node * xdItem = 0;
     bool haveXDefault = false;
-    
+
     for ( itemNum = 0, itemLim = arrayNode->children.size(); itemNum < itemLim; ++itemNum ) {
         XMP_Node * currItem = arrayNode->children[itemNum];
         XMP_Assert ( XMP_PropHasLang(currItem->options) );
@@ -1105,22 +1105,22 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
             break;
         }
     }
-    
+
     if ( haveXDefault && (itemNum != 0) ) {
         XMP_Assert ( arrayNode->children[itemNum]->qualifiers[0]->value == "x-default" );
         XMP_Node * temp = arrayNode->children[0];
         arrayNode->children[0] = arrayNode->children[itemNum];
         arrayNode->children[itemNum] = temp;
     }
-    
+
     // Find the appropriate item. ChooseLocalizedText will make sure the array is a language alternative.
-        
+
     const XMP_Node * cItemNode; // ! ChooseLocalizedText returns a pointer to a const node.
     XMP_CLTMatch match = ChooseLocalizedText ( arrayNode, genericLang, specificLang, &cItemNode );
     XMP_Node * itemNode = const_cast<XMP_Node*> ( cItemNode );
 
     const bool specificXDefault = XMP_LitMatch ( specificLang, "x-default" );
-    
+
     switch ( match ) {
 
         case kXMP_CLT_NoValues :
@@ -1130,9 +1130,9 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
             haveXDefault = true;
             if ( ! specificXDefault ) AppendLangItem ( arrayNode, specificLang, itemValue );
             break;
-            
+
         case kXMP_CLT_SpecificMatch :
-        
+
             if ( ! specificXDefault ) {
                 // Update the specific item, update x-default if it matches the old value.
                 if ( xdItem != NULL && haveXDefault && (xdItem != itemNode) && (xdItem->value == itemNode->value) ) {
@@ -1152,7 +1152,7 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
             break;
 
         case kXMP_CLT_SingleGeneric :
-        
+
             // Update the generic item, update x-default if it matches the old value.
             if (  xdItem != NULL && haveXDefault && (xdItem != itemNode) && (xdItem->value == itemNode->value) ) {
                 SetNodeValue ( xdItem, itemValue );
@@ -1161,12 +1161,12 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
             break;
 
         case kXMP_CLT_MultipleGeneric :
-        
+
             // Create the specific language, ignore x-default.
             AppendLangItem ( arrayNode, specificLang, itemValue );
             if ( specificXDefault ) haveXDefault = true;
             break;
-            
+
         case kXMP_CLT_XDefault :
 
             // Create the specific language, update x-default if it was the only item.
@@ -1180,7 +1180,7 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
             AppendLangItem ( arrayNode, specificLang, itemValue );
             if ( specificXDefault ) haveXDefault = true;
             break;
-            
+
         default :
             XMP_Throw ( "Unexpected result from ChooseLocalizedText", kXMPErr_InternalFailure );
 
@@ -1215,7 +1215,7 @@ XMPMeta::DeleteLocalizedText ( XMP_StringPtr schemaNS,
 
     XMP_ExpandedXPath arrayPath;
     ExpandXPath ( schemaNS, arrayName, &arrayPath );
-    
+
     // Find the LangAlt array and the selected array item.
 
     XMP_Node * arrayNode = FindNode ( &tree, arrayPath, kXMP_ExistingOnly );
@@ -1233,26 +1233,26 @@ XMPMeta::DeleteLocalizedText ( XMP_StringPtr schemaNS,
         if ( arrayNode->children[itemIndex] == itemNode ) break;
     }
     XMP_Enforce ( itemIndex < arraySize );
-    
+
     // Decide if the selected item is x-default or not, find relevant matching item.
-    
+
     bool itemIsXDefault = false;
     if ( ! itemNode->qualifiers.empty() ) {
         XMP_Node * qualNode = itemNode->qualifiers[0];
         if ( (qualNode->name == "xml:lang") && (qualNode->value == "x-default") ) itemIsXDefault = true;
     }
-    
+
     if ( itemIsXDefault && (itemIndex != 0) ) { // Enforce the x-default is first policy.
         XMP_Node * temp = arrayNode->children[0];
         arrayNode->children[0] = arrayNode->children[itemIndex];
         arrayNode->children[itemIndex] = temp;
         itemIndex = 0;
     }
-    
+
     XMP_Node * assocNode = 0;
     size_t assocIndex;
     size_t assocIsXDefault = false;
-    
+
     if ( itemIsXDefault ) {
 
         for ( assocIndex = 1; assocIndex < arraySize; ++assocIndex ) {
@@ -1275,11 +1275,11 @@ XMPMeta::DeleteLocalizedText ( XMP_StringPtr schemaNS,
         }
 
     }
-    
+
     // Delete the appropriate nodes.
-    
+
     XMP_NodePtrPos arrayBegin = arrayNode->children.begin();
-    
+
     if ( assocNode == 0 ) {
         arrayNode->children.erase ( arrayBegin + itemIndex );
     } else if ( itemIndex < assocIndex ) {
@@ -1310,14 +1310,14 @@ XMPMeta::GetProperty_Bool ( XMP_StringPtr    schemaNS,
 
     XMP_StringPtr   valueStr;
     XMP_StringLen   valueLen;
-    
+
     bool found = GetProperty ( schemaNS, propName, &valueStr, &valueLen, options );
     if ( found ) {
         if ( ! XMP_PropIsSimple ( *options ) ) XMP_Throw ( "Property must be simple", kXMPErr_BadXPath );
         *propValue = XMPUtils::ConvertToBool ( valueStr );
     }
     return found;
-    
+
 }   // GetProperty_Bool
 
 
@@ -1361,7 +1361,7 @@ XMPMeta::GetProperty_Int64 ( XMP_StringPtr    schemaNS,
 
     XMP_StringPtr   valueStr;
     XMP_StringLen   valueLen;
-    
+
     bool found = GetProperty ( schemaNS, propName, &valueStr, &valueLen, options );
     if ( found ) {
         if ( ! XMP_PropIsSimple ( *options ) ) XMP_Throw ( "Property must be simple", kXMPErr_BadXPath );
@@ -1371,7 +1371,7 @@ XMPMeta::GetProperty_Int64 ( XMP_StringPtr    schemaNS,
         *propValue = XMPUtils::ConvertToInt64 ( propValueStr.c_str() );
     }
     return found;
-    
+
 }   // GetProperty_Int64
 
 
@@ -1390,7 +1390,7 @@ XMPMeta::GetProperty_Float ( XMP_StringPtr    schemaNS,
 
     XMP_StringPtr   valueStr;
     XMP_StringLen   valueLen;
-    
+
     bool found = GetProperty ( schemaNS, propName, &valueStr, &valueLen, options );
     if ( found ) {
         if ( ! XMP_PropIsSimple ( *options ) ) XMP_Throw ( "Property must be simple", kXMPErr_BadXPath );
@@ -1400,7 +1400,7 @@ XMPMeta::GetProperty_Float ( XMP_StringPtr    schemaNS,
         *propValue = XMPUtils::ConvertToFloat ( propValueStr.c_str() );
     }
     return found;
-    
+
 }   // GetProperty_Float
 
 
@@ -1419,14 +1419,14 @@ XMPMeta::GetProperty_Date ( XMP_StringPtr    schemaNS,
 
     XMP_StringPtr   valueStr;
     XMP_StringLen   valueLen;
-    
+
     bool found = GetProperty ( schemaNS, propName, &valueStr, &valueLen, options );
     if ( found )  {
         if ( ! XMP_PropIsSimple ( *options ) ) XMP_Throw ( "Property must be simple", kXMPErr_BadXPath );
         XMPUtils::ConvertToDate ( valueStr, propValue );
     }
     return found;
-    
+
 }   // GetProperty_Date
 
 
@@ -1445,7 +1445,7 @@ XMPMeta::SetProperty_Bool ( XMP_StringPtr  schemaNS,
     XMP_VarString valueStr;
     XMPUtils::ConvertFromBool ( propValue, &valueStr );
     SetProperty ( schemaNS, propName, valueStr.c_str(), options );
-    
+
 }   // SetProperty_Bool
 
 
@@ -1464,7 +1464,7 @@ XMPMeta::SetProperty_Int ( XMP_StringPtr  schemaNS,
     XMP_VarString valueStr;
     XMPUtils::ConvertFromInt ( propValue, "", &valueStr );
     SetProperty ( schemaNS, propName, valueStr.c_str(), options );
-    
+
 }   // SetProperty_Int
 
 
@@ -1483,7 +1483,7 @@ XMPMeta::SetProperty_Int64 ( XMP_StringPtr  schemaNS,
     XMP_VarString valueStr;
     XMPUtils::ConvertFromInt64 ( propValue, "", &valueStr );
     SetProperty ( schemaNS, propName, valueStr.c_str(), options );
-    
+
 }   // SetProperty_Int64
 
 
@@ -1502,7 +1502,7 @@ XMPMeta::SetProperty_Float ( XMP_StringPtr  schemaNS,
     XMP_VarString valueStr;
     XMPUtils::ConvertFromFloat ( propValue, "", &valueStr );
     SetProperty ( schemaNS, propName, valueStr.c_str(), options );
-    
+
 }   // SetProperty_Float
 
 
@@ -1521,7 +1521,7 @@ XMPMeta::SetProperty_Date ( XMP_StringPtr          schemaNS,
     XMP_VarString valueStr;
     XMPUtils::ConvertFromDate ( propValue, &valueStr );
     SetProperty ( schemaNS, propName, valueStr.c_str(), options );
-    
+
 }   // SetProperty_Date
 
 // =================================================================================================
@@ -1554,11 +1554,11 @@ GetStringInfo( const AdobeXMPCore::spcINode & source, XMPDMO_StringInfo * dest)
 inline void
 GetStringInfo(const XMP_VarString & value, XMPDMO_StringInfo * dest)
 {
-    
+
 
     dest->ptr = value.c_str();
     dest->len = (XMP_Uns32)value.length();
-    
+
 }   // GetStringInfo
 
 
@@ -1568,10 +1568,10 @@ GetCuePointParams ( const XMP_Node * libField,
                     XMPDMO_AllocClientCuePointsProc AllocCuePointParams )
 {
     if ( ! XMP_PropIsArray ( libField->options ) ) return;  // Ignore bad data.
-    
+
     size_t cppLimit = libField->children.size();
     if ( cppLimit == 0 ) return;
-    
+
     XMPDMO_CuePointInfo * clientInfo = (XMPDMO_CuePointInfo*) (*AllocCuePointParams) ( clientMarker, (XMP_Index)cppLimit );
     if ( clientInfo == 0 ) XMP_Throw ( "Can't create CuePointParams", kXMPErr_NoMemory );
 
@@ -1594,7 +1594,7 @@ GetCuePointParams ( const XMP_Node * libField,
             continue;
         }
         if ( libValue->name != "xmpDM:value" ) continue;
-        
+
         GetStringInfo ( libKey, &clientInfo->key );
         GetStringInfo ( libValue, &clientInfo->value );
 
@@ -1659,7 +1659,7 @@ GetCuePointParams( const AdobeXMPCore::spcINode & libField,
 
     }
 
-}   
+}
 #endif
 // -------------------------------------------------------------------------------------------------
 
@@ -1729,7 +1729,7 @@ static inline void AddStringField(XMP_StringPtr valueInfo, XMP_StringPtr name, c
 static const XMP_VarString extensionPrefix = "Extensions_";
 static XMP_VarString doubleQuotes = "&quot;";
 static const XMP_VarString openingBrace = "{";
-static const XMP_VarString closingBrace = "}"; 
+static const XMP_VarString closingBrace = "}";
 static const XMP_VarString markerGUID = "marker_guid";
 const std::string guidNodeName = "xmpDM:guid";
 const std::string keyNodeName = "xmpDM:key";
@@ -1767,7 +1767,7 @@ bool XMPUtils::GetSerializedJSONForExtensionNode(const XMP_Node * xmpNode, XMP_V
 
 
     doubleQuotes = "&quot;";
-    
+
     if (!IsSuitableForJSONSerialization(xmpNode)) {
         return false;
     }
@@ -1789,7 +1789,7 @@ bool XMPUtils::GetSerializedJSONForExtensionNode(const XMP_Node * xmpNode, XMP_V
         //TODO verify from Aman whether childURI or childNamespaceprefix should be there
         childNode->GetFullQualifiedName(&childURI, &childURILen, &childName, &childNameLen);
         serializedJSON.append(doubleQuotes);
-        serializedJSON.append(childURI); 
+        serializedJSON.append(childURI);
         serializedJSON.append(":");
         serializedJSON.append(childName);
         serializedJSON.append(doubleQuotes);
@@ -1842,7 +1842,7 @@ static bool GetExtensionNameFromCPPKey(const XMP_VarString &extensionAsKey, XMP_
     return true;
 }
 bool XMPUtils::CreateExtensionNode(XMP_Node ** xmpNode, const XMP_VarString & serializedJSON, const XMP_VarString & doubleQuotesString) {
-    
+
     // TODO  handle quotes within URI, quotes within value
 
     try {
@@ -1872,7 +1872,7 @@ bool XMPUtils::CreateExtensionNode(XMP_Node ** xmpNode, const XMP_VarString & se
             jsonIter += doubleQuotes.length();
 
             size_t valueEnd = serializedJSON.find(doubleQuotes, jsonIter);
-            
+
             if (!(qualifiedNameEnd != std::string::npos)) throw 1;
 
             XMP_Node * newChildNode = new XMP_Node((*xmpNode), childPrefixName.c_str(), 0);
@@ -1891,8 +1891,8 @@ bool XMPUtils::CreateExtensionNode(XMP_Node ** xmpNode, const XMP_VarString & se
 
         size_t childSize = (*xmpNode)->children.size();
         (*xmpNode)->ClearNode();
-        
-        
+
+
         return false;
     }
 
@@ -1911,7 +1911,7 @@ bool XMPUtils::CreateExtensionNode( const AdobeXMPCore::spIStructureNode & xmpNo
         XMP_Index jsonIter = 1;
         size_t jsonLen = serializedJSON.length();
         if (!(jsonLen > 1)) throw 1;
-        if (!(serializedJSON[0] == '{' && serializedJSON[jsonLen - 1] == '}')) throw 1; 
+        if (!(serializedJSON[0] == '{' && serializedJSON[jsonLen - 1] == '}')) throw 1;
 
         while (jsonIter + 1 < (XMP_Index)jsonLen) {
 
@@ -1948,7 +1948,7 @@ bool XMPUtils::CreateExtensionNode( const AdobeXMPCore::spIStructureNode & xmpNo
     }
     catch (...) {
         xmpNode->Clear();
-        
+
         return false;
     }
 
@@ -2022,7 +2022,7 @@ static void mergeNodes( const AdobeXMPCore::spIStructureNode & sourceRootNode, c
         sourceRootNode->AppendNode(destNode);
     }
     else {
-        
+
         if (!XMPUtils::IsExtensionValidForBackwardCompatibility(sourceNode)) {
 
         }
@@ -2074,7 +2074,7 @@ static void GetNodeQualifiedName(const AdobeXMPCore::spcINode & node, std::strin
     qualifiedName.append(node->GetName()->c_str());
 
 }
-#endif 
+#endif
 
 static void CreateStringForSerialization(std::string & inputStr) {
 
@@ -2149,7 +2149,7 @@ static bool IsValidCuePointParam(const XMP_Node * cuePointParam, XMP_Node * &key
     }
     else if (!valueNode->name.compare(keyNodeName) ) {
 
-        
+
         if (!keyNode->name.compare(valueNodeName)) {
             XMP_Node * temp(valueNode);
             valueNode = keyNode;
@@ -2266,9 +2266,9 @@ XMPDMO_AllocClientCuePointsProc  AllocClientCuePoints)
             }
             size_t cppCount = cuePointParamsNode->children.size();
             for (XMP_Index cpp = 0; cpp < (XMP_Index)cppCount; ++cpp) {
-                
+
                 XMP_Node * keyNode(NULL), *valueNode(NULL);
-                
+
                 if (!IsValidCuePointParam(cuePointParamsNode->children[cpp], keyNode, valueNode)) continue;
 
                 if (IsKeyValidExtension(keyNode->value)) {
@@ -2287,7 +2287,7 @@ XMPDMO_AllocClientCuePointsProc  AllocClientCuePoints)
                         }
                     }
 
-                    // Add version 1 
+                    // Add version 1
                 }
             }
         }
@@ -2368,13 +2368,13 @@ XMPDMO_AllocClientCuePointsProc  AllocClientCuePoints)
 #if XMP_MARKER_EXTENSIBILITY_BACKWARD_COMPATIBILITY
         if (latestMarkerVersion) {
 
-            if (extensionNode) {            
+            if (extensionNode) {
                 XMP_Node * cloneOfExtension = CloneSubtreeNode(extensionNode, const_cast< XMP_Node * >(libMarker), false);
                 if (cloneOfExtension) {
                     const_cast< XMP_Node * >(libMarker)->children.pop_back(); // Hack
                     clientMarker->SetPrivateData(cloneOfExtension, ReleaseXMP_Node);
                 }
-                
+
             }
 
             if (!guidNode) {
@@ -2675,7 +2675,7 @@ XMPUtils::GetBulkMarkers(const XMPMeta2 & xmp,
 
 
 #if ENABLE_CPP_DOM_MODEL
-/* class static */ 
+/* class static */
 void XMPUtils::SetBulkMarkers(XMPMeta2 *     xmp,
                          XMP_StringPtr ns,
                          XMP_StringPtr path,
@@ -2692,13 +2692,13 @@ void XMPUtils::SetBulkMarkers(XMPMeta2 *     xmp,
     auto defaultMap = INameSpacePrefixMap::GetDefaultNameSpacePrefixMap();
     XMP_ExpandedXPath expPath;
     ExpandXPath(ns, path, &expPath);
-    
+
     XMP_OptionBits arrayOptions;
     spIArrayNode arrayNode;
     spINode tempArrayNode;
     XMPUtils::FindCnstNode(xmp->mDOM, expPath, tempArrayNode, &arrayOptions);
 
-    
+
     if (tempArrayNode && tempArrayNode->GetNodeType() != INode::kNTArray) {
         if (!XMP_PropIsArray(arrayOptions)) XMP_Throw("Markers must be an array", kXMPErr_BadParam);
          tempArrayNode->Clear();
@@ -2825,7 +2825,7 @@ void XMPUtils::SetBulkMarkers(XMPMeta2 *     xmp,
                     if (extensionNodeToBeAdded) {
                         mergeNodes(extensionRootNode, extensionNodeToBeAdded);
                     }
-                }   
+                }
             }
             if (extensionRootNode && !extensionRootNode->ChildCount()) {
                 extensionRootNode->Clear();
@@ -2838,7 +2838,7 @@ void XMPUtils::SetBulkMarkers(XMPMeta2 *     xmp,
                 }
             }
 #endif
-            
+
         }
 
 #if XMP_MARKER_EXTENSIBILITY_BACKWARD_COMPATIBILITY
@@ -2855,7 +2855,7 @@ void XMPUtils::SetBulkMarkers(XMPMeta2 *     xmp,
             for (spINodeIterator extensionIter = extensionRootNode->Iterator(); extensionIter; extensionIter = extensionIter->Next()) {
                 spINode extensionChildNode = extensionIter->GetNode();
 
-                
+
                 XMP_VarString expectedKey, serializedJSON;
                 bool isSerializable = SerializeExtensionAsJSON(extensionChildNode, expectedKey, serializedJSON);
                 if (!isSerializable) continue;
@@ -2870,12 +2870,12 @@ void XMPUtils::SetBulkMarkers(XMPMeta2 *     xmp,
                         if (!valueNode || valueNode->GetNodeType() != INode::kNTSimple || XMPUtils::GetNodeChildCount(libCuePointParamItem) != 2) continue;
                         valueNode->ConvertToSimpleNode()->SetValue(serializedJSON.c_str(), AdobeXMPCommon::npos );
                     }
-                    
+
                 }
                 else {
 
                     spIStructureNode libCPP = IStructureNode::CreateStructureNode(kXMP_NS_DM, AdobeXMPCommon::npos, "cuePointParams", AdobeXMPCommon::npos );
-                    
+
                     AddStringField(expectedKey.c_str(), "key", libCPP);
                     AddStringField(serializedJSON.c_str(), "value", libCPP);
                     libCuePointParams->AppendNode(libCPP);
@@ -2884,8 +2884,8 @@ void XMPUtils::SetBulkMarkers(XMPMeta2 *     xmp,
         }
         if (isGUIDPresentInMarkerStructure) {
 
-            
-            
+
+
             auto & cuePointParamsVectorByKey = cuePointParamsMap[markerGUID];
             if (cuePointParamsMap[markerGUID].size()) {
 
@@ -2935,7 +2935,7 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
         if (xmpMeta2Ptr) {
             return SetBulkMarkers(xmpMeta2Ptr, ns, path, count, clientArray, clientElemSize, GetCuePointParams);
         }
-    
+
 #endif
     XMP_Assert((ns != 0) && (path != 0));   // Enforced by wrapper.
 
@@ -2965,9 +2965,9 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
         if (libMarker == 0) XMP_Throw("Can't create marker", kXMPErr_NoMemory);
         arrayNode->children.push_back(libMarker);
         bool isGUIDPresentInMarkerStructure = false;
-        
+
         const XMPDMO_MarkerInfo & clientMarker = *((const XMPDMO_MarkerInfo *)((XMP_Uns8*)clientArray + m*clientElemSize));
-        
+
         XMP_Node * extensionRootNode( NULL );
         XMP_StringPtr guidString = NULL;
         AddStringField(clientMarker.startTime, "xmpDM:startTime", libMarker);
@@ -2984,7 +2984,7 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
 
 #if XMP_MARKER_EXTENSIBILITY_BACKWARD_COMPATIBILITY
 
-        if (latestMarkerVersion) { 
+        if (latestMarkerVersion) {
             // read guid from the new marker
             if (clientMarker.guid.ptr != NULL && clientMarker.guid.len) {
                 AddStringField(clientMarker.guid, guidNodeName.c_str(), libMarker);
@@ -3037,10 +3037,10 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
             libCuePointParams->children.push_back(libCPP);
 
             const XMPDMO_CuePointInfo & clientCPP = clientCuePointParams[cpp];
-            
+
             AddStringField(clientCPP.key, keyNodeName.c_str(), libCPP);
             AddStringField(clientCPP.value, valueNodeName.c_str(), libCPP);
-        
+
             if ( !clientCPP.key.ptr || !clientCPP.value.ptr ) continue;
 
 #if XMP_MARKER_EXTENSIBILITY_BACKWARD_COMPATIBILITY
@@ -3055,12 +3055,12 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
                     AddStringField(guidString, guidNodeName.c_str(), libMarker);
                 }
                 isGUIDPresentInMarkerStructure = true;
-                
+
             }
-            
+
             else if (IsKeyValidExtension(clientCPP.key.ptr)) {
                 cuePointParamsMap[clientCPP.key.ptr].push_back(cpp);
-                
+
                 XMP_VarString extensionName;
                 if (!GetExtensionNameFromCPPKey(clientCPP.key.ptr, extensionName)) continue;
                 if (!extensionRootNode) {
@@ -3073,11 +3073,11 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
                 }
                 else {
                     if (extensionChildNode) {
-                        
+
                         mergeNodes(&extensionRootNode, extensionChildNode, extensionChildrenMap);
                     }
                 }
-            }   
+            }
 #endif
         }
 
@@ -3094,7 +3094,7 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
             }
         }
         if (!isGUIDPresentInMarkerStructure) {
-            
+
             XMPDocOps::CreateID("xmp:id", &newGUID);
             AddStringField(newGUID.c_str(), guidNodeName.c_str(), libMarker);
             guidString = newGUID.c_str();
@@ -3107,7 +3107,7 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
                 const XMP_Node * extensionChildNode = extensionRootNode->children[extensionIter];
 
                 if (!IsSuitableForJSONSerialization(extensionChildNode)) continue;
-                
+
                 GetSerializedJSONForExtensionNode(extensionChildNode, extensionNodeAsKey, extensionNodeSerializedAsJSON);
                 if (!cuePointParamsMap[extensionNodeAsKey].size()) {
                     XMP_Node * extensionNodeInCuePointParams = new XMP_Node(libCuePointParams, kXMP_ArrayItemName, kXMP_PropValueIsStruct);
@@ -3118,7 +3118,7 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
                 }
                 else {
 
-                    
+
                     std::vector<size_t> & cuePointParamsVectorByKey = cuePointParamsMap[extensionNodeAsKey];
                     size_t extensionValuesPresentInCuePointParams = cuePointParamsVectorByKey.size();
                     size_t start = (entryFoundFirstInCuePointParams) ? 1 : 0;
@@ -3128,7 +3128,7 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
                         XMP_Node *keyNode(NULL), * valueNode(NULL);
 
                         if (!IsValidCuePointParam(libCuePointParams->children[cuePointParamsIndex], keyNode, valueNode)) continue;;
-                    
+
                         valueNode->SetValue(extensionNodeSerializedAsJSON.c_str());
                     }
                 }
@@ -3144,21 +3144,21 @@ XMPUtils::SetBulkMarkers( XMPMeta *     xmp,
                 AddStringField(guidString, valueNodeName.c_str(), guidNodeInCuePointParams);
             }
             else {
-                
+
                 size_t guidPresentInCuePointParams = guidVector.size();
                 size_t cuePointParamsIndex = 0;
                 XMP_Node * keyNode(NULL), *valueNode(NULL);
                 for (size_t index = 0; index < guidPresentInCuePointParams; index++) {
-                    cuePointParamsIndex = guidVector[index];    
+                    cuePointParamsIndex = guidVector[index];
                     if (!IsValidCuePointParam(libCuePointParams->children[cuePointParamsIndex], keyNode, valueNode)) continue;
-                    
+
                     valueNode->SetValue(guidString);
                 }
             }
         }
 #endif
         if (libCuePointParams && !libCuePointParams->children.size()) {
-            
+
             size_t libMarkerChildCount = libMarker->children.size();
             size_t idxToBeCleared = libMarkerChildCount;
             for (size_t childIdx = 0; childIdx < libMarkerChildCount; ++childIdx) {

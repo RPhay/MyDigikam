@@ -27,32 +27,32 @@
 
 class dng_xy_coord
     {
-    
+
     public:
-    
+
         real64 x;
         real64 y;
-        
+
     public:
-    
+
         dng_xy_coord ()
             :   x (0.0)
             ,   y (0.0)
             {
             }
-            
+
         dng_xy_coord (real64 xx, real64 yy)
             :   x (xx)
             ,   y (yy)
             {
             }
-            
+
         void Clear ()
             {
             x = 0.0;
             y = 0.0;
             }
-            
+
         bool IsValid () const
             {
             return x > 0.0 &&
@@ -82,55 +82,55 @@ class dng_xy_coord
 inline dng_xy_coord operator+ (const dng_xy_coord &A,
                                const dng_xy_coord &B)
     {
-    
+
     dng_xy_coord C;
-    
+
     C.x = A.x + B.x;
     C.y = A.y + B.y;
-    
+
     return C;
-    
+
     }
-            
+
 /*****************************************************************************/
 
 inline dng_xy_coord operator- (const dng_xy_coord &A,
                                const dng_xy_coord &B)
     {
-    
+
     dng_xy_coord C;
-    
+
     C.x = A.x - B.x;
     C.y = A.y - B.y;
-    
+
     return C;
-    
+
     }
-            
+
 /*****************************************************************************/
 
 inline dng_xy_coord operator* (real64 scale,
                                const dng_xy_coord &A)
     {
-    
+
     dng_xy_coord B;
-    
+
     B.x = A.x * scale;
     B.y = A.y * scale;
-    
+
     return B;
-    
+
     }
-            
+
 /******************************************************************************/
 
 inline real64 operator* (const dng_xy_coord &A,
                          const dng_xy_coord &B)
     {
-    
+
     return A.x * B.x +
            A.y * B.y;
-    
+
     }
 
 /*****************************************************************************/
@@ -196,7 +196,7 @@ class dng_illuminant_data
         dng_xy_coord fDerivedWhite;
 
         // x-y representation.
-        
+
         dng_urational fWhiteX;
         dng_urational fWhiteY;
 
@@ -220,7 +220,7 @@ class dng_illuminant_data
         void Clear ();
 
         bool IsValid () const;
-        
+
         void SetWhiteXY (const dng_xy_coord &white);
 
         void SetWhiteXY (const dng_urational &x,
@@ -238,11 +238,11 @@ class dng_illuminant_data
         void Get (dng_stream &stream,
                   const uint32 tagCount,
                   const char *tagName);
-        
+
         void Put (dng_stream &stream) const;
 
         uint32 TagCount () const;
-        
+
     private:
 
         void CalculateSpectrumXY ();
@@ -262,5 +262,5 @@ void CalculateTripleIlluminantWeights (const dng_xy_coord &white,
 /*****************************************************************************/
 
 #endif  // __dng_xy_coord__
-    
+
 /*****************************************************************************/

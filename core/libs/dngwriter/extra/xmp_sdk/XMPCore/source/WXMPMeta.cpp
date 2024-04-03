@@ -3,7 +3,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 // =================================================================================================
@@ -70,7 +70,7 @@ WXMPMeta_Initialize_1 ( XMP_AllocateProc AllocateProc,
                         WXMP_Result *    wResult )
 {
     XMP_ENTER_NoLock ( "WXMPMeta_Initialize_1" )
-    
+
         if ( ((AllocateProc == 0) && (DeleteProc != 0)) ||
              ((AllocateProc != 0) && (DeleteProc == 0)) ) {
             XMP_Throw ( "The allocate/delete functions must be provided together or not at all", kXMPErr_BadParam );
@@ -113,7 +113,7 @@ WXMPMeta_CTor_1 ( WXMP_Result * wResult )
              xmpObj = new XMPMeta2();
              isCreated = true;
         }
-#endif 
+#endif
 
         if(!isCreated)
             xmpObj = new XMPMeta();
@@ -197,7 +197,7 @@ WXMPMeta_GetMemProcs_1 ( XMP_AllocateProc * AllocateProc,
     XMP_ENTER_Static ( "WXMPMeta_GetMemProcs_1" )
 
         if ( (AllocateProc == 0) || (DeleteProc == 0) ) XMP_Throw ( "Null output pointer", kXMPErr_BadParam );
-        
+
         #if XMP_StaticBuild
             XMP_Throw ( "XMP memory procs are only supported in DLL builds", kXMPErr_Unavailable );
         #else
@@ -250,7 +250,7 @@ WXMPMeta_DumpNamespaces_1 ( XMP_TextOutputProc outProc,
     XMP_ENTER_Static ( "WXMPMeta_DumpNamespaces_1" )
 
         if ( outProc == 0 ) XMP_Throw ( "Null client output routine", kXMPErr_BadParam );
-        
+
         XMP_Status status = XMPMeta::DumpNamespaces ( outProc, refCon );
         wResult->int32Result = status;
 
@@ -268,7 +268,7 @@ WXMPMeta_DumpPropertyTraits_1 ( XMP_TextOutputProc outProc,
     XMP_ENTER_Static ( "WXMPMeta_DumpPropertyTraits_1" )
 
         if ( outProc == 0 ) XMP_Throw ( "Null client output routine", kXMPErr_BadParam );
-        
+
         XMP_Status status = XMPMeta::DumpPropertyTraits ( outProc, refCon );
         wResult->int32Result = status;
 
@@ -295,7 +295,7 @@ WXMPMeta_RegisterNamespace_1 ( XMP_StringPtr namespaceURI,
 
         bool prefixMatch = XMPMeta::RegisterNamespace ( namespaceURI, suggestedPrefix, &prefixPtr, &prefixSize );
         wResult->int32Result = prefixMatch;
-        
+
         if ( actualPrefix != 0 ) (*SetClientString) ( actualPrefix, prefixPtr, prefixSize );
 
     XMP_EXIT
@@ -318,9 +318,9 @@ WXMPMeta_GetNamespacePrefix_1 ( XMP_StringPtr namespaceURI,
 
         bool found = XMPMeta::GetNamespacePrefix ( namespaceURI, &prefixPtr, &prefixSize );
         wResult->int32Result = found;
-        
+
         if ( found && (namespacePrefix != 0) ) (*SetClientString) ( namespacePrefix, prefixPtr, prefixSize );
-        
+
     XMP_EXIT
 }
 
@@ -338,10 +338,10 @@ WXMPMeta_GetNamespaceURI_1 ( XMP_StringPtr namespacePrefix,
 
         XMP_StringPtr uriPtr = 0;
         XMP_StringLen uriSize = 0;
-       
+
         bool found = XMPMeta::GetNamespaceURI ( namespacePrefix, &uriPtr, &uriSize );
         wResult->int32Result = found;
-        
+
         if ( found && (namespaceURI != 0) ) (*SetClientString) ( namespaceURI, uriPtr, uriSize );
 
     XMP_EXIT
@@ -396,10 +396,10 @@ WXMPMeta_GetProperty_1 ( XMPMetaRef       xmpObjRef,
                          WXMP_Result *    wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_GetProperty_1" )
-    
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
-        
+
         XMP_StringPtr valuePtr = 0;
         XMP_StringLen valueSize = 0;
 
@@ -408,7 +408,7 @@ WXMPMeta_GetProperty_1 ( XMPMetaRef       xmpObjRef,
 
         bool found = thiz.GetProperty ( schemaNS, propName, &valuePtr, &valueSize, options );
         wResult->int32Result = found;
-        
+
         if ( found && (propValue != 0) ) (*SetClientString) ( propValue, valuePtr, valueSize );
 
     XMP_EXIT
@@ -427,10 +427,10 @@ WXMPMeta_GetArrayItem_1 ( XMPMetaRef       xmpObjRef,
                           WXMP_Result *    wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_GetArrayItem_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (arrayName == 0) || (*arrayName == 0) ) XMP_Throw ( "Empty array name", kXMPErr_BadXPath );
-        
+
         XMP_StringPtr valuePtr = 0;
         XMP_StringLen valueSize = 0;
 
@@ -439,7 +439,7 @@ WXMPMeta_GetArrayItem_1 ( XMPMetaRef       xmpObjRef,
 
         bool found = thiz.GetArrayItem ( schemaNS, arrayName, itemIndex, &valuePtr, &valueSize, options );
         wResult->int32Result = found;
-        
+
         if ( found && (itemValue != 0) ) (*SetClientString) ( itemValue, valuePtr, valueSize );
 
     XMP_EXIT
@@ -459,12 +459,12 @@ WXMPMeta_GetStructField_1 ( XMPMetaRef       xmpObjRef,
                             WXMP_Result *    wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_GetStructField_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (structName == 0) || (*structName == 0) ) XMP_Throw ( "Empty struct name", kXMPErr_BadXPath );
         if ( (fieldNS == 0) || (*fieldNS == 0) ) XMP_Throw ( "Empty field namespace URI", kXMPErr_BadSchema );
         if ( (fieldName == 0) || (*fieldName == 0) ) XMP_Throw ( "Empty field name", kXMPErr_BadXPath );
-        
+
         XMP_StringPtr valuePtr = 0;
         XMP_StringLen valueSize = 0;
 
@@ -473,7 +473,7 @@ WXMPMeta_GetStructField_1 ( XMPMetaRef       xmpObjRef,
 
         bool found = thiz.GetStructField ( schemaNS, structName, fieldNS, fieldName, &valuePtr, &valueSize, options );
         wResult->int32Result = found;
-        
+
         if ( found && (fieldValue != 0) ) (*SetClientString) ( fieldValue, valuePtr, valueSize );
 
     XMP_EXIT
@@ -493,12 +493,12 @@ WXMPMeta_GetQualifier_1 ( XMPMetaRef       xmpObjRef,
                           WXMP_Result *    wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_GetQualifier_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
         if ( (qualNS == 0) || (*qualNS == 0) ) XMP_Throw ( "Empty qualifier namespace URI", kXMPErr_BadSchema );
         if ( (qualName == 0) || (*qualName == 0) ) XMP_Throw ( "Empty qualifier name", kXMPErr_BadXPath );
-        
+
         XMP_StringPtr valuePtr = 0;
         XMP_StringLen valueSize = 0;
 
@@ -507,7 +507,7 @@ WXMPMeta_GetQualifier_1 ( XMPMetaRef       xmpObjRef,
 
         bool found = thiz.GetQualifier ( schemaNS, propName, qualNS, qualName, &valuePtr, &valueSize, options );
         wResult->int32Result = found;
-        
+
         if ( found && (qualValue != 0) ) (*SetClientString) ( qualValue, valuePtr, valueSize );
 
     XMP_EXIT
@@ -529,7 +529,7 @@ WXMPMeta_SetProperty_1 ( XMPMetaRef     xmpObjRef,
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
         thiz->SetProperty ( schemaNS, propName, propValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -550,7 +550,7 @@ WXMPMeta_SetArrayItem_1 ( XMPMetaRef     xmpObjRef,
         if ( (arrayName == 0) || (*arrayName == 0) ) XMP_Throw ( "Empty array name", kXMPErr_BadXPath );
 
         thiz->SetArrayItem ( schemaNS, arrayName, itemIndex, itemValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -571,7 +571,7 @@ WXMPMeta_AppendArrayItem_1 ( XMPMetaRef     xmpObjRef,
         if ( (arrayName == 0) || (*arrayName == 0) ) XMP_Throw ( "Empty array name", kXMPErr_BadXPath );
 
         thiz->AppendArrayItem ( schemaNS, arrayName, arrayOptions, itemValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -595,7 +595,7 @@ WXMPMeta_SetStructField_1 ( XMPMetaRef     xmpObjRef,
         if ( (fieldName == 0) || (*fieldName == 0) ) XMP_Throw ( "Empty field name", kXMPErr_BadXPath );
 
         thiz->SetStructField ( schemaNS, structName, fieldNS, fieldName, fieldValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -619,7 +619,7 @@ WXMPMeta_SetQualifier_1 ( XMPMetaRef     xmpObjRef,
         if ( (qualName == 0) || (*qualName == 0) ) XMP_Throw ( "Empty qualifier name", kXMPErr_BadXPath );
 
         thiz->SetQualifier ( schemaNS, propName, qualNS, qualName, qualValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -632,12 +632,12 @@ WXMPMeta_DeleteProperty_1 ( XMPMetaRef    xmpObjRef,
                             WXMP_Result * wResult )
 {
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_DeleteProperty_1" )
- 
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
         thiz->DeleteProperty ( schemaNS, propName );
-        
+
     XMP_EXIT
 }
 
@@ -656,7 +656,7 @@ WXMPMeta_DeleteArrayItem_1 ( XMPMetaRef    xmpObjRef,
         if ( (arrayName == 0) || (*arrayName == 0) ) XMP_Throw ( "Empty array name", kXMPErr_BadXPath );
 
         thiz->DeleteArrayItem ( schemaNS, arrayName, itemIndex );
-        
+
     XMP_EXIT
 }
 
@@ -678,7 +678,7 @@ WXMPMeta_DeleteStructField_1 ( XMPMetaRef    xmpObjRef,
         if ( (fieldName == 0) || (*fieldName == 0) ) XMP_Throw ( "Empty field name", kXMPErr_BadXPath );
 
         thiz->DeleteStructField ( schemaNS, structName, fieldNS, fieldName );
-        
+
     XMP_EXIT
 }
 
@@ -700,7 +700,7 @@ WXMPMeta_DeleteQualifier_1 ( XMPMetaRef    xmpObjRef,
         if ( (qualName == 0) || (*qualName == 0) ) XMP_Throw ( "Empty qualifier name", kXMPErr_BadXPath );
 
         thiz->DeleteQualifier ( schemaNS, propName, qualNS, qualName );
-        
+
     XMP_EXIT
 }
 
@@ -713,13 +713,13 @@ WXMPMeta_DoesPropertyExist_1 ( XMPMetaRef    xmpObjRef,
                                WXMP_Result * wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_DoesPropertyExist_1" )
-    
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
         bool found = thiz.DoesPropertyExist ( schemaNS, propName );
         wResult->int32Result = found;
-        
+
     XMP_EXIT
 }
 
@@ -733,13 +733,13 @@ WXMPMeta_DoesArrayItemExist_1 ( XMPMetaRef    xmpObjRef,
                                 WXMP_Result * wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_DoesArrayItemExist_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (arrayName == 0) || (*arrayName == 0) ) XMP_Throw ( "Empty array name", kXMPErr_BadXPath );
 
         bool found = thiz.DoesArrayItemExist ( schemaNS, arrayName, itemIndex );
         wResult->int32Result = found;
-        
+
     XMP_EXIT
 }
 
@@ -762,7 +762,7 @@ WXMPMeta_DoesStructFieldExist_1 ( XMPMetaRef    xmpObjRef,
 
         bool found = thiz.DoesStructFieldExist ( schemaNS, structName, fieldNS, fieldName );
         wResult->int32Result = found;
-        
+
     XMP_EXIT
 }
 
@@ -785,7 +785,7 @@ WXMPMeta_DoesQualifierExist_1 ( XMPMetaRef    xmpObjRef,
 
         bool found = thiz.DoesQualifierExist ( schemaNS, propName, qualNS, qualName );
         wResult->int32Result = found;
-        
+
     XMP_EXIT
 }
 
@@ -804,12 +804,12 @@ WXMPMeta_GetLocalizedText_1 ( XMPMetaRef       xmpObjRef,
                               WXMP_Result *    wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_GetLocalizedText_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (arrayName == 0) || (*arrayName == 0) ) XMP_Throw ( "Empty array name", kXMPErr_BadXPath );
         if ( genericLang == 0 ) genericLang = "";
         if ( (specificLang == 0) ||(*specificLang == 0) ) XMP_Throw ( "Empty specific language", kXMPErr_BadParam );
-        
+
         XMP_StringPtr langPtr = 0;
         XMP_StringLen langSize = 0;
         XMP_StringPtr valuePtr = 0;
@@ -821,7 +821,7 @@ WXMPMeta_GetLocalizedText_1 ( XMPMetaRef       xmpObjRef,
         bool found = thiz.GetLocalizedText ( schemaNS, arrayName, genericLang, specificLang,
                                              &langPtr, &langSize, &valuePtr, &valueSize, options );
         wResult->int32Result = found;
-        
+
         if ( found ) {
             if ( actualLang != 0 ) (*SetClientString) ( actualLang, langPtr, langSize );
             if ( itemValue != 0 ) (*SetClientString) ( itemValue, valuePtr, valueSize );
@@ -851,7 +851,7 @@ WXMPMeta_SetLocalizedText_1 ( XMPMetaRef     xmpObjRef,
         if ( itemValue == 0 ) itemValue = "";
 
         thiz->SetLocalizedText ( schemaNS, arrayName, genericLang, specificLang, itemValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -864,12 +864,12 @@ WXMPMeta_DeleteLocalizedText_1 ( XMPMetaRef    xmpObjRef,
                                  WXMP_Result * wResult )
 {
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_DeleteLocalizedText_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (arrayName == 0) || (*arrayName == 0) ) XMP_Throw ( "Empty array name", kXMPErr_BadXPath );
         if ( genericLang == 0 ) genericLang = "";
         if ( (specificLang == 0) ||(*specificLang == 0) ) XMP_Throw ( "Empty specific language", kXMPErr_BadParam );
-        
+
         thiz->DeleteLocalizedText ( schemaNS, arrayName, genericLang, specificLang );
 
     XMP_EXIT
@@ -887,7 +887,7 @@ WXMPMeta_GetProperty_Bool_1 ( XMPMetaRef       xmpObjRef,
                               WXMP_Result *    wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_GetProperty_Bool_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
@@ -901,7 +901,7 @@ WXMPMeta_GetProperty_Bool_1 ( XMPMetaRef       xmpObjRef,
         bool found = thiz.GetProperty_Bool ( schemaNS, propName, &value, options );
         if ( propValue != 0 ) *propValue = value;
         wResult->int32Result = found;
-        
+
     XMP_EXIT
 }
 
@@ -916,7 +916,7 @@ WXMPMeta_GetProperty_Int_1 ( XMPMetaRef       xmpObjRef,
                              WXMP_Result *    wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_GetProperty_Int_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
@@ -928,7 +928,7 @@ WXMPMeta_GetProperty_Int_1 ( XMPMetaRef       xmpObjRef,
 
         bool found = thiz.GetProperty_Int ( schemaNS, propName, propValue, options );
         wResult->int32Result = found;
-        
+
     XMP_EXIT
 }
 
@@ -943,7 +943,7 @@ WXMPMeta_GetProperty_Int64_1 ( XMPMetaRef       xmpObjRef,
                                WXMP_Result *    wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_GetProperty_Int64_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
@@ -955,7 +955,7 @@ WXMPMeta_GetProperty_Int64_1 ( XMPMetaRef       xmpObjRef,
 
         bool found = thiz.GetProperty_Int64 ( schemaNS, propName, propValue, options );
         wResult->int32Result = found;
-        
+
     XMP_EXIT
 }
 
@@ -970,7 +970,7 @@ WXMPMeta_GetProperty_Float_1 ( XMPMetaRef       xmpObjRef,
                                WXMP_Result *    wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_GetProperty_Float_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
@@ -982,7 +982,7 @@ WXMPMeta_GetProperty_Float_1 ( XMPMetaRef       xmpObjRef,
 
         bool found = thiz.GetProperty_Float ( schemaNS, propName, propValue, options );
         wResult->int32Result = found;
-        
+
     XMP_EXIT
 }
 
@@ -997,7 +997,7 @@ WXMPMeta_GetProperty_Date_1 ( XMPMetaRef       xmpObjRef,
                               WXMP_Result *    wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_GetProperty_Date_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
@@ -1009,7 +1009,7 @@ WXMPMeta_GetProperty_Date_1 ( XMPMetaRef       xmpObjRef,
 
         bool found = thiz.GetProperty_Date ( schemaNS, propName, propValue, options );
         wResult->int32Result = found;
-        
+
     XMP_EXIT
 }
 
@@ -1024,12 +1024,12 @@ WXMPMeta_SetProperty_Bool_1 ( XMPMetaRef     xmpObjRef,
                               WXMP_Result *  wResult )
 {
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_SetProperty_Bool_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
         thiz->SetProperty_Bool ( schemaNS, propName, propValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -1044,12 +1044,12 @@ WXMPMeta_SetProperty_Int_1 ( XMPMetaRef     xmpObjRef,
                              WXMP_Result *  wResult )
 {
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_SetProperty_Int_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
         thiz->SetProperty_Int ( schemaNS, propName, propValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -1064,12 +1064,12 @@ WXMPMeta_SetProperty_Int64_1 ( XMPMetaRef     xmpObjRef,
                                WXMP_Result *  wResult )
 {
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_SetProperty_Int64_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
         thiz->SetProperty_Int64 ( schemaNS, propName, propValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -1084,12 +1084,12 @@ WXMPMeta_SetProperty_Float_1 ( XMPMetaRef     xmpObjRef,
                                WXMP_Result *  wResult )
 {
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_SetProperty_Float_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
         thiz->SetProperty_Float ( schemaNS, propName, propValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -1104,12 +1104,12 @@ WXMPMeta_SetProperty_Date_1 ( XMPMetaRef           xmpObjRef,
                               WXMP_Result *        wResult )
 {
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_SetProperty_Date_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (propName == 0) || (*propName == 0) ) XMP_Throw ( "Empty property name", kXMPErr_BadXPath );
 
         thiz->SetProperty_Date ( schemaNS, propName, propValue, options );
-        
+
     XMP_EXIT
 }
 
@@ -1124,10 +1124,10 @@ WXMPMeta_DumpObject_1 ( XMPMetaRef         xmpObjRef,
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_DumpObject_1" )
 
         if ( outProc == 0 ) XMP_Throw ( "Null client output routine", kXMPErr_BadParam );
-        
+
         thiz.DumpObject ( outProc, refCon );
         wResult->int32Result = 0;
-        
+
     XMP_EXIT
 }
 
@@ -1140,7 +1140,7 @@ WXMPMeta_Sort_1 ( XMPMetaRef    xmpObjRef,
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_Sort_1" )
 
         thiz->Sort();
-        
+
     XMP_EXIT
 }
 
@@ -1153,7 +1153,7 @@ WXMPMeta_Erase_1 ( XMPMetaRef    xmpObjRef,
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_Erase_1" )
 
         thiz->Erase();
-        
+
     XMP_EXIT
 }
 
@@ -1228,13 +1228,13 @@ WXMPMeta_CountArrayItems_1 ( XMPMetaRef    xmpObjRef,
                              WXMP_Result * wResult ) /* const */
 {
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_CountArrayItems_1" )
-        
+
         if ( (schemaNS == 0) || (*schemaNS == 0) ) XMP_Throw ( "Empty schema namespace URI", kXMPErr_BadSchema );
         if ( (arrayName == 0) || (*arrayName == 0) ) XMP_Throw ( "Empty array name", kXMPErr_BadXPath );
 
         XMP_Index count = thiz.CountArrayItems ( schemaNS, arrayName );
         wResult->int32Result = count;
-        
+
     XMP_EXIT
 }
 
@@ -1249,7 +1249,7 @@ WXMPMeta_MarkStaleProperties_1 ( XMPMetaRef     xmpObjRef,
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_MarkStaleProperties_1" )
 
         thiz->MarkStaleProperties ( options );
-        
+
     XMP_EXIT
 }
 
@@ -1269,7 +1269,7 @@ WXMPMeta_GetObjectName_1 ( XMPMetaRef    xmpObjRef,
 
         thiz.GetObjectName ( &namePtr, &nameSize );
         if ( objName != 0 ) (*SetClientString) ( objName, namePtr, nameSize );
-        
+
     XMP_EXIT
 }
 
@@ -1285,7 +1285,7 @@ WXMPMeta_SetObjectName_1 ( XMPMetaRef    xmpObjRef,
         if ( name == 0 ) name = "";
 
         thiz->SetObjectName ( name );
-        
+
     XMP_EXIT
 }
 
@@ -1299,7 +1299,7 @@ WXMPMeta_GetObjectOptions_1 ( XMPMetaRef    xmpObjRef,
 
         XMP_OptionBits options = thiz.GetObjectOptions();
         wResult->int32Result = options;
-        
+
     XMP_EXIT
 }
 
@@ -1311,9 +1311,9 @@ WXMPMeta_SetObjectOptions_1 ( XMPMetaRef     xmpObjRef,
                               WXMP_Result *  wResult )
 {
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_SetObjectOptions_1" )
-    
+
         thiz->SetObjectOptions ( options );
-        
+
     XMP_EXIT
 }
 
@@ -1329,7 +1329,7 @@ WXMPMeta_ParseFromBuffer_1 ( XMPMetaRef     xmpObjRef,
     XMP_ENTER_ObjWrite ( XMPMeta, "WXMPMeta_ParseFromBuffer_1" )
 
         thiz->ParseFromBuffer ( buffer, bufferSize, options );
-        
+
     XMP_EXIT
 }
 
@@ -1349,10 +1349,10 @@ WXMPMeta_SerializeToBuffer_1 ( XMPMetaRef     xmpObjRef,
     XMP_ENTER_ObjRead ( XMPMeta, "WXMPMeta_SerializeToBuffer_1" )
 
         XMP_VarString localStr;
-        
+
         if ( newline == 0 ) newline = "";
         if ( indent == 0 ) indent = "";
-        
+
         thiz.SerializeToBuffer ( &localStr, options, padding, newline, indent, baseIndent );
         if ( pktString != 0 ) (*SetClientString) ( pktString, localStr.c_str(), static_cast< XMP_StringLen >( localStr.size() ) );
 

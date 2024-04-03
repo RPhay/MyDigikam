@@ -109,7 +109,7 @@ const char * LookupDepthMeasureType (uint32 key);
 
 void DumpHexAscii (dng_stream &stream,
                    uint32 count);
-                   
+
 void DumpHexAscii (const uint8 *buf,
                    uint32 count);
 
@@ -125,7 +125,7 @@ void DumpTagValues (dng_stream &stream,
                     uint32 tagType,
                     uint32 tagCount,
                     const char *tag_name = NULL);
-                    
+
 void DumpMatrix (const dng_matrix &m);
 
 void DumpVector (const dng_vector &v);
@@ -161,11 +161,11 @@ bool CheckTagCount (uint32 parentCode,
                     uint32 tagCount,
                     uint32 minCount,
                     uint32 maxCount = 0);
-                            
+
 bool CheckColorImage (uint32 parentCode,
                       uint32 tagCode,
                       uint32 colorPlanes);
-                      
+
 bool CheckMainIFD (uint32 parentCode,
                    uint32 tagCode,
                    uint32 newSubFileType);
@@ -190,7 +190,7 @@ void ParseStringTag (dng_stream &stream,
                      uint32 tagCount,
                      dng_string &s,
                      bool trimBlanks = true);
-                          
+
 void ParseDualStringTag (dng_stream &stream,
                          uint32 parentCode,
                          uint32 tagCode,
@@ -203,7 +203,7 @@ void ParseEncodedStringTag (dng_stream &stream,
                             uint32 tagCode,
                             uint32 tagCount,
                             dng_string &s);
-                            
+
 bool ParseMatrixTag (dng_stream &stream,
                      uint32 parentCode,
                      uint32 tagCode,
@@ -212,7 +212,7 @@ bool ParseMatrixTag (dng_stream &stream,
                      uint32 rows,
                      uint32 cols,
                      dng_matrix &m);
-                            
+
 bool ParseVectorTag (dng_stream &stream,
                      uint32 parentCode,
                      uint32 tagCode,
@@ -220,16 +220,16 @@ bool ParseVectorTag (dng_stream &stream,
                      uint32 tagCount,
                      uint32 count,
                      dng_vector &v);
-                     
+
 bool ParseDateTimeTag (dng_stream &stream,
                        uint32 parentCode,
                        uint32 tagCode,
                        uint32 tagType,
                        uint32 tagCount,
                        dng_date_time &dt);
-                            
+
 /*****************************************************************************/
 
 #endif
-    
+
 /*****************************************************************************/

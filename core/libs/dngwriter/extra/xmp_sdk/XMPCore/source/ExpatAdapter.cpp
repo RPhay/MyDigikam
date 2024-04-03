@@ -3,7 +3,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 // =================================================================================================
@@ -103,10 +103,10 @@ static void CommentHandler               ( void * userData, XMP_StringPtr commen
 #if BanAllEntityUsage
 
     // For now we do this by banning DOCTYPE entirely. This is easy and consistent with what is
-    // available in recent Java XML parsers. Another, somewhat less drastic, approach would be to 
+    // available in recent Java XML parsers. Another, somewhat less drastic, approach would be to
     // ban all entity declarations. We can't allow declarations and ban references, Expat does not
     // call the SkippedEntityHandler for references in attribute values.
-    
+
     // ! Standard entities (&amp;, &lt;, &gt;, &quot;, &apos;, and numeric character references) are
     // ! not banned. Expat handles them transparently no matter what.
 
@@ -146,9 +146,9 @@ ExpatAdapter::ExpatAdapter ( bool useGlobalNamespaces ) : parser(0), registeredN
         } else {
             this->registeredNamespaces = new XMP_NamespaceTable ( *sRegisteredNamespaces );
         }
-    
+
         XML_SetUserData ( this->parser, this );
-    
+
         XML_SetNamespaceDeclHandler ( this->parser, StartNamespaceDeclHandler, EndNamespaceDeclHandler );
         XML_SetElementHandler ( this->parser, StartElementHandler, EndElementHandler );
 
@@ -174,7 +174,7 @@ ExpatAdapter::~ExpatAdapter()
 
     if ( this->parser != 0 ) XML_ParserFree ( this->parser );
     this->parser = 0;
-    
+
     if ( this->registeredNamespaces != sRegisteredNamespaces ) delete ( this->registeredNamespaces );
     this->registeredNamespaces = 0;
 
@@ -191,15 +191,15 @@ static const char * kOneSpace = " ";
 void ExpatAdapter::ParseBuffer ( const void * buffer, size_t length, bool last /* = true */ )
 {
     enum XML_Status status;
-    
+
     if ( length == 0 ) {    // Expat does not like empty buffers.
         if ( ! last ) return;
         buffer = kOneSpace;
         length = 1;
     }
-    
+
     status = XML_Parse ( this->parser, (const char *)buffer, static_cast< XMP_StringLen >( length ), last );
-    
+
     #if BanAllEntityUsage
         if ( this->isAborted ) {
             XMP_Error error(kXMPErr_BadXML, "DOCTYPE is not allowed" );
@@ -208,18 +208,18 @@ void ExpatAdapter::ParseBuffer ( const void * buffer, size_t length, bool last /
     #endif
 
     if ( status != XML_STATUS_OK ) {
-    
+
         XMP_StringPtr errMsg = "XML parsing failure";
 
         #if 0   // XMP_DebugBuild   // Disable for now to make test output uniform. Restore later with thread safety.
-        
+
             // *** This is a good candidate for a callback error notification mechanism.
             // *** This code is not thread safe, the sExpatMessage isn't locked. But that's OK for debug usage.
 
             enum XML_Error expatErr = XML_GetErrorCode ( this->parser );
             const char *   expatMsg = XML_ErrorString ( expatErr );
             int errLine = XML_GetCurrentLineNumber ( this->parser );
-        
+
             char msgBuffer[1000];
             // AUDIT: Use of sizeof(msgBuffer) for snprintf length is safe.
             snprintf ( msgBuffer, sizeof(msgBuffer), "# Expat error %d at line %d, \"%s\"", expatErr, errLine, expatMsg );
@@ -236,7 +236,7 @@ void ExpatAdapter::ParseBuffer ( const void * buffer, size_t length, bool last /
         this->NotifyClient ( kXMPErrSev_Recoverable, error );
 
     }
-    
+
 }   // ExpatAdapter::ParseBuffer
 
 // =================================================================================================
@@ -259,7 +259,7 @@ static void SetQualName ( ExpatAdapter * thiz, XMP_StringPtr fullName, XML_Node 
 
     // As a compatibility hack, an "about" or "ID" attribute of an rdf:Description element is
     // changed to "rdf:about" or rdf:ID. Easier done here than in the RDF recognizer.
-    
+
     // As a bug fix hack, change a URI of "http://purl.org/dc/1.1/" to ""http://purl.org/dc/elements/1.1/.
     // Early versions of Flash that put XMP in SWF used a bad URI for the dc: namespace.
 
@@ -285,14 +285,14 @@ static void SetQualName ( ExpatAdapter * thiz, XMP_StringPtr fullName, XML_Node 
             thiz->NotifyClient ( kXMPErrSev_OperationFatal, error );
         }
         node->nsPrefixLen = prefixLen;  // ! Includes the ':'.
-        
+
         node->name = prefix;
         node->name += localPart;
 
     } else {
 
         node->name = fullName;  // The name is not in a namespace.
-    
+
         if ( node->parent->name == "rdf:Description" ) {
             if ( node->name == "about" ) {
                 node->ns   = kXMP_NS_RDF;
@@ -304,7 +304,7 @@ static void SetQualName ( ExpatAdapter * thiz, XMP_StringPtr fullName, XML_Node 
                 node->nsPrefixLen = 4;  // ! Include the ':'.
             }
         }
-        
+
     }
 
 }   // SetQualName
@@ -314,22 +314,22 @@ static void SetQualName ( ExpatAdapter * thiz, XMP_StringPtr fullName, XML_Node 
 static void StartNamespaceDeclHandler ( void * userData, XMP_StringPtr prefix, XMP_StringPtr uri )
 {
     IgnoreParam(userData);
-    
+
     // As a bug fix hack, change a URI of "http://purl.org/dc/1.1/" to ""http://purl.org/dc/elements/1.1/.
     // Early versions of Flash that put XMP in SWF used a bad URI for the dc: namespace.
-    
+
     ExpatAdapter * thiz = (ExpatAdapter*)userData;
 
     if ( prefix == 0 ) prefix = "_dflt_";   // Have default namespace.
     if ( uri == 0 ) return; // Ignore, have xmlns:pre="", no URI to register.
-    
+
     #if XMP_DebugBuild & DumpXMLParseEvents
         if ( thiz->parseLog != 0 ) {
             PrintIndent ( thiz->parseLog, thiz->elemNesting );
             fprintf ( thiz->parseLog, "StartNamespace: %s - \"%s\"\n", prefix, uri );
         }
     #endif
-    
+
     if ( XMP_LitMatch ( uri, "http://purl.org/dc/1.1/" ) ) uri = "http://purl.org/dc/elements/1.1/";
     if (thiz->registeredNamespaces == sRegisteredNamespaces) {
         (void)XMPMeta::RegisterNamespace(uri, prefix, 0, 0);
@@ -351,14 +351,14 @@ static void EndNamespaceDeclHandler ( void * userData, XMP_StringPtr prefix )
     #endif
 
     if ( prefix == 0 ) prefix = "_dflt_";   // Have default namespace.
-    
+
     #if XMP_DebugBuild & DumpXMLParseEvents
         if ( thiz->parseLog != 0 ) {
             PrintIndent ( thiz->parseLog, thiz->elemNesting );
             fprintf ( thiz->parseLog, "EndNamespace: %s\n", prefix );
         }
     #endif
-    
+
     // ! Nothing to do, Expat has done all of the XML processing.
 
 }   // EndNamespaceDeclHandler
@@ -369,7 +369,7 @@ static void StartElementHandler ( void * userData, XMP_StringPtr name, XMP_Strin
 {
     XMP_Assert ( attrs != 0 );
     ExpatAdapter * thiz = (ExpatAdapter*)userData;
-    
+
     size_t attrCount = 0;
     for ( XMP_StringPtr* a = attrs; *a != 0; ++a ) ++attrCount;
     if ( (attrCount & 1) != 0 ) {
@@ -377,7 +377,7 @@ static void StartElementHandler ( void * userData, XMP_StringPtr name, XMP_Strin
         thiz->NotifyClient ( kXMPErrSev_OperationFatal, error );
     }
     attrCount = attrCount/2;    // They are name/value pairs.
-    
+
     #if XMP_DebugBuild & DumpXMLParseEvents
         if ( thiz->parseLog != 0 ) {
             PrintIndent ( thiz->parseLog, thiz->elemNesting );
@@ -393,9 +393,9 @@ static void StartElementHandler ( void * userData, XMP_StringPtr name, XMP_Strin
 
     XML_Node * parentNode = thiz->parseStack.back();
     XML_Node * elemNode   = new XML_Node ( parentNode, "", kElemNode );
-    
+
     SetQualName ( thiz, name, elemNode );
-    
+
     for ( XMP_StringPtr* attr = attrs; *attr != 0; attr += 2 ) {
 
         XMP_StringPtr attrName = *attr;
@@ -408,10 +408,10 @@ static void StartElementHandler ( void * userData, XMP_StringPtr name, XMP_Strin
         elemNode->attrs.push_back ( attrNode );
 
     }
-    
+
     parentNode->content.push_back ( elemNode );
     thiz->parseStack.push_back ( elemNode );
-    
+
 #if AdobePrivate
     if ( (elemNode->name == "rdf:RDF") || (elemNode->name == "txmp:XMP_Packet") ) {
         thiz->rootNode = elemNode;
@@ -435,14 +435,14 @@ static void StartElementHandler ( void * userData, XMP_StringPtr name, XMP_Strin
 static void EndElementHandler ( void * userData, XMP_StringPtr name )
 {
     IgnoreParam(name);
-    
+
     ExpatAdapter * thiz = (ExpatAdapter*)userData;
 
     #if XMP_DebugBuild
         --thiz->elemNesting;
     #endif
     (void) thiz->parseStack.pop_back();
-    
+
     #if XMP_DebugBuild & DumpXMLParseEvents
         if ( thiz->parseLog != 0 ) {
             PrintIndent ( thiz->parseLog, thiz->elemNesting );
@@ -457,9 +457,9 @@ static void EndElementHandler ( void * userData, XMP_StringPtr name )
 static void CharacterDataHandler ( void * userData, XMP_StringPtr cData, int len )
 {
     ExpatAdapter * thiz = (ExpatAdapter*)userData;
-    
+
     if ( (cData == 0) || (len == 0) ) { cData = ""; len = 0; }
-    
+
     #if XMP_DebugBuild & DumpXMLParseEvents
         if ( thiz->parseLog != 0 ) {
             PrintIndent ( thiz->parseLog, thiz->elemNesting );
@@ -468,13 +468,13 @@ static void CharacterDataHandler ( void * userData, XMP_StringPtr cData, int len
             fprintf ( thiz->parseLog, "\"\n" );
         }
     #endif
-    
+
     XML_Node * parentNode = thiz->parseStack.back();
     XML_Node * cDataNode  = new XML_Node ( parentNode, "", kCDataNode );
-    
+
     cDataNode->value.assign ( cData, len );
     parentNode->content.push_back ( cDataNode );
-    
+
 }   // CharacterDataHandler
 
 // =================================================================================================
@@ -486,16 +486,16 @@ static void StartCdataSectionHandler ( void * userData )
     #if XMP_DebugBuild & DumpXMLParseEvents     // Avoid unused variable warning.
         ExpatAdapter * thiz = (ExpatAdapter*)userData;
     #endif
-    
+
     #if XMP_DebugBuild & DumpXMLParseEvents
         if ( thiz->parseLog != 0 ) {
             PrintIndent ( thiz->parseLog, thiz->elemNesting );
             fprintf ( thiz->parseLog, "StartCDATA\n" );
         }
     #endif
-    
+
     // *** Since markup isn't recognized inside CDATA, this affects XMP's double escaping.
-    
+
 }   // StartCdataSectionHandler
 
 // =================================================================================================
@@ -507,13 +507,13 @@ static void EndCdataSectionHandler ( void * userData )
     #if XMP_DebugBuild & DumpXMLParseEvents     // Avoid unused variable warning.
         ExpatAdapter * thiz = (ExpatAdapter*)userData;
     #endif
-    
+
     #if XMP_DebugBuild & DumpXMLParseEvents
         if ( thiz->parseLog != 0 ) {
             PrintIndent ( thiz->parseLog, thiz->elemNesting );
             fprintf ( thiz->parseLog, "EndCDATA\n" );
         }
-    #endif  
+    #endif
 
 }   // EndCdataSectionHandler
 
@@ -526,20 +526,20 @@ static void ProcessingInstructionHandler ( void * userData, XMP_StringPtr target
 
     if ( ! XMP_LitMatch ( target, "xpacket" ) ) return; // Ignore all PIs except the XMP packet wrapper.
     if ( data == 0 ) data = "";
-    
+
     #if XMP_DebugBuild & DumpXMLParseEvents
         if ( thiz->parseLog != 0 ) {
             PrintIndent ( thiz->parseLog, thiz->elemNesting );
             fprintf ( thiz->parseLog, "PI: %s - \"%s\"\n", target, data );
         }
     #endif
-    
+
     XML_Node * parentNode = thiz->parseStack.back();
     XML_Node * piNode  = new XML_Node ( parentNode, target, kPINode );
-    
+
     piNode->value.assign ( data );
     parentNode->content.push_back ( piNode );
-    
+
 }   // ProcessingInstructionHandler
 
 // =================================================================================================
@@ -553,16 +553,16 @@ static void CommentHandler ( void * userData, XMP_StringPtr comment )
     #endif
 
     if ( comment == 0 ) comment = "";
-    
+
     #if XMP_DebugBuild & DumpXMLParseEvents
         if ( thiz->parseLog != 0 ) {
             PrintIndent ( thiz->parseLog, thiz->elemNesting );
             fprintf ( thiz->parseLog, "Comment: \"%s\"\n", comment );
         }
     #endif
-    
+
     // ! Comments are ignored.
-    
+
 }   // CommentHandler
 
 // =================================================================================================
@@ -581,7 +581,7 @@ static void StartDoctypeDeclHandler ( void * userData, XMP_StringPtr doctypeName
             fprintf ( thiz->parseLog, "DocType: \"%s\"\n", doctypeName );
         }
     #endif
-    
+
     thiz->isAborted = true; // ! Can't throw an exception across the plain C Expat frames.
     (void) XML_StopParser ( thiz->parser, XML_FALSE /* not resumable */ );
 

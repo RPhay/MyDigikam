@@ -29,7 +29,7 @@
 
 class dng_bmff_box
     {
-        
+
     public:
 
         // Byte length of box as stored in the file:
@@ -42,7 +42,7 @@ class dng_bmff_box
 
         // Real byte length of box, if known. May be 0 if fStoredLength is 0,
         // denoting the last box.
-        
+
         uint64 fRealLength = 0ULL;
 
         // Offset of box (specifically, offset to the first byte of the length
@@ -75,7 +75,7 @@ class dng_bmff_io
     public:
 
         dng_bmff_box_list fBoxes;
-        
+
     public:
 
         virtual ~dng_bmff_io ();
@@ -95,7 +95,7 @@ class dng_bmff_io
             if (box)
                 fBoxes.push_back (box);
             }
-        
+
     protected:
 
         virtual bool ShouldReadBox (const dng_string & /* str */,
@@ -103,11 +103,11 @@ class dng_bmff_io
             {
             return true;
             }
-        
+
     };
 
 /*****************************************************************************/
 
 #endif  // __dng_bmff__
-    
+
 /*****************************************************************************/

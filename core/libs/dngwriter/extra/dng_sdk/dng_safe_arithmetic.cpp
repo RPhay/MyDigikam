@@ -369,23 +369,23 @@ float ConvertDoubleToFloat(double val) {
 
 dng_safe_uint32::dng_safe_uint32 (const dng_safe_int32 &x)
     {
-    
+
     if (x.Get () < 0)
         {
         ThrowOverflow ("Overflow in dng_safe_uint32");
         }
 
     fValue = static_cast<uint32> (x.Get ());
-    
+
     }
 
 /*****************************************************************************/
 
 dng_safe_int32::dng_safe_int32 (const dng_safe_uint32 &x)
     {
-    
+
     Set_uint32 (x.Get ());
-    
+
     }
 
 /*****************************************************************************/

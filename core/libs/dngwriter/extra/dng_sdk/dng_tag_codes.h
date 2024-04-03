@@ -18,7 +18,7 @@
 // TIFF tags 50706 through 50741 registered at:
 // http://partners.adobe.com/asn/tech/tiff/tiffregister.jsp
 // on 2003-11-04 & 2003-12-02, purpose "Digital Negative".
-    
+
 // TIFF tags 50778 through 50781 registered at:
 // http://partners.adobe.com/asn/tech/tiff/tiffregister.jsp
 // on 2004-08-17, purpose "Digital Negative".
@@ -388,16 +388,16 @@ enum
 
 enum
     {
-    
+
     tcFirstSubIFD                   = 0x10000,
     tcLastSubIFD                    = 0x1FFFF,
-    
+
     tcFirstChainedIFD               = 0x20000,
     tcLastChainedIFD                = 0x2FFFF,
-    
+
     tcFirstMakerNoteIFD             = 0x30000,
     tcLastMakerNoteIFD              = 0x3FFFF,
-    
+
     tcAppleMakerNote                = tcFirstMakerNoteIFD,
     tcCanonMakerNote,
     tcCasioMakerNote,
@@ -431,7 +431,7 @@ enum
     tcSonyPrivateIFD3A,
     tcSonyPrivateIFD3B,
     tcSonyPrivateIFD3C,
-    
+
     tcCanonCRW                      = 0x40000,
     tcContaxRAW,
     tcContaxHeader,
@@ -450,7 +450,7 @@ enum
     tcCanonCR3,
     tcJXL,
     tcAVIF,
-    
+
     };
 
 /*****************************************************************************/
@@ -505,14 +505,14 @@ enum
     tcRelatedImageWidth             = 0x1001,
     tcRelatedImageLength            = 0x1002
     };
-    
+
 /*****************************************************************************/
 
 // JPEG marker codes.
 
 enum JpegMarker
     {
-    
+
     M_TEM = 0x01,
 
     M_SOF0  = 0xc0,
@@ -584,11 +584,11 @@ enum JpegMarker
     M_COM   = 0xfe,
 
     M_ERROR = 0x100
-    
+
     };
 
 /*****************************************************************************/
 
 #endif
-    
+
 /*****************************************************************************/

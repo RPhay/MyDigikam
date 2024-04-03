@@ -3,7 +3,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 //
@@ -40,7 +40,7 @@
 //                       IXMPDOMFactory
 // 07-05-13 ADC 5.5-c021 In Terminate reset static variables.
 // 05-13-13 ADC 5.5-c018 Removing usage of bool in APIs exposed at DLL boundaries.
-// 04-26-13 ADC 5.5-c017 [3532883] XMP libraries provide mechanisms to clients for registration of memory allocation and 
+// 04-26-13 ADC 5.5-c017 [3532883] XMP libraries provide mechanisms to clients for registration of memory allocation and
 //                       de-allocation function pointers which causes problems with the static std::string obejcts in the code base.
 // 10-10-12 ADC 5.5-c012 Changed internal implementation of common error notification infrastructure.
 // 09-21-12 AWL 5.5-c011 Remove Transform XMP.
@@ -275,7 +275,7 @@ using namespace std;
             virtual void * APICALL reallocate( void * ptr, AdobeXMPCommon::sizet size ) __NOTHROW__ {
                 return NULL;
             }
-            
+
             virtual ~InternalClientAllocator(){}
 
         };
@@ -1031,7 +1031,7 @@ XMPMeta::Initialize ( XMP_AllocateProc AllocateProc,
     #if ENABLE_CPP_DOM_MODEL
         try {
             AdobeXMPCore_Int::InitializeXMPCommonFramework();
-    
+
             #if AdobePrivate
             #if !XMP_StaticBuild
                 auto confManager = AdobeXMPCore::ICoreConfigurationManager::GetCoreConfigurationManager();
@@ -1050,7 +1050,7 @@ XMPMeta::Initialize ( XMP_AllocateProc AllocateProc,
         // Explicitly setting sUseNewCoreAPIs as false (default value)
         sUseNewCoreAPIs = false;
     #endif
-    
+
     xdefaultName = new XMP_VarString ( "x-default" );
 
     sRegisteredNamespaces = new XMP_NamespaceTable;
@@ -1370,7 +1370,7 @@ XMPMeta::DumpPropertyTraits ( XMP_TextOutputProc outProc,
     XMP_Assert ( outProc != 0 );    // ! Enforced by wrapper.
     void * p; p = &outProc; p = &refCon;    // Avoid unused param warnings.
     XMP_Throw ( "Unimplemented method XMPMeta::DumpPropertyTraits", kXMPErr_Unimplemented );
-        
+
     return -1;  // Avoid no-result warning.
 
 }   // DumpPropertyTraits
@@ -1670,7 +1670,7 @@ XMPMeta::SetObjectOptions ( XMP_OptionBits options )
 {
     void * p; p = &options; // Avoid unused param warnings.
     XMP_Throw ( "Unimplemented method XMPMeta::SetObjectOptions", kXMPErr_Unimplemented );
-        
+
 
 }   // SetObjectOptions
 
@@ -1841,13 +1841,13 @@ XMPMeta::SetErrorCallback ( XMPMeta_ErrorCallbackWrapper wrapperProc,
                             XMP_Uns32 limit )
 {
     XMP_Assert ( wrapperProc != 0 );    // Must always be set by the glue;
-    
+
     this->errorCallback.Clear();
     this->errorCallback.wrapperProc = wrapperProc;
     this->errorCallback.clientProc = clientProc;
     this->errorCallback.context = context;
     this->errorCallback.limit = limit;
-    
+
 }   // SetErrorCallback
 
 // -------------------------------------------------------------------------------------------------

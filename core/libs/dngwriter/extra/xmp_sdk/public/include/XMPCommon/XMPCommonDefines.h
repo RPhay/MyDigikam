@@ -5,7 +5,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 // =================================================================================================
@@ -109,7 +109,7 @@
     #if XMP_UNIXBuild
         # if __clang__
             #define SUPPORT_STD_ATOMIC_IMPLEMENTATION 1
-        #else   
+        #else
             #define GCC_VERSION (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
             #if GCC_VERSION >= 40800
                 #define SUPPORT_STD_ATOMIC_IMPLEMENTATION 1
@@ -117,7 +117,7 @@
                 #define REQ_FRIEND_CLASS_DECLARATION() template<typename _Ptr, std::_Lock_policy _Lp> friend class std::_Sp_counted_ptr;
                 #define SUPPORT_STD_ATOMIC_IMPLEMENTATION 0
             #endif
-        #endif  
+        #endif
 
 
         #define SUPPORT_SHARED_POINTERS_IN_TR1 0

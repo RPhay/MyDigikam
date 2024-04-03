@@ -23,68 +23,68 @@
 
 dng_xy_coord XYZtoXY (const dng_vector_3 &coord)
     {
-    
+
     real64 X = coord [0];
     real64 Y = coord [1];
     real64 Z = coord [2];
-    
+
     real64 total = X + Y + Z;
-    
+
     if (total > 0.0)
         {
-        
+
         return dng_xy_coord (X / total,
                              Y / total);
-                        
+
         }
-        
+
     return D50_xy_coord ();
-        
+
     }
 
 /*****************************************************************************/
 
 dng_vector_3 XYtoXYZ (const dng_xy_coord &coord)
     {
-    
+
     dng_xy_coord temp = coord;
-    
+
     // Restrict xy coord to someplace inside the range of real xy coordinates.
     // This prevents math from doing strange things when users specify
     // extreme temperature/tint coordinates.
-    
+
     temp.x = Pin_real64 (0.000001, temp.x, 0.999999);
     temp.y = Pin_real64 (0.000001, temp.y, 0.999999);
-    
+
     if (temp.x + temp.y > 0.999999)
         {
         real64 scale = 0.999999 / (temp.x + temp.y);
         temp.x *= scale;
         temp.y *= scale;
         }
-    
+
     return dng_vector_3 (temp.x / temp.y,
                          1.0,
                          (1.0 - temp.x - temp.y) / temp.y);
-    
+
     }
 
 /*****************************************************************************/
 
 dng_xy_coord PCStoXY ()
     {
-    
+
     return D50_xy_coord ();
-    
+
     }
 
 /*****************************************************************************/
 
 dng_vector_3 PCStoXYZ ()
     {
-    
+
     return XYtoXYZ (PCStoXY ());
-    
+
     }
 
 /*****************************************************************************/
@@ -92,24 +92,24 @@ dng_vector_3 PCStoXYZ ()
 dng_illuminant_data::dng_illuminant_data (const uint32 light,
                                           const dng_illuminant_data *otherDataPtr)
     {
-    
+
     switch (light)
         {
-        
+
         case lsStandardLightA:
         case lsTungsten:
             {
             SetWhiteXY (StdA_xy_coord ());
             break;
             }
-            
+
         case lsISOStudioTungsten:
             {
             dng_temperature temp (3200.0, 0.0);
             SetWhiteXY (temp.Get_xy_coord ());
             break;
             }
-            
+
         case lsStandardLightB:
             {
             SetWhiteXY (dng_xy_coord (0.348483, 0.351747)); // 4871.4 K
@@ -121,13 +121,13 @@ dng_illuminant_data::dng_illuminant_data (const uint32 light,
             SetWhiteXY (dng_xy_coord (0.310061, 0.316150)); // 6774.3 K
             break;
             }
-            
+
         case lsD50:
             {
             SetWhiteXY (D50_xy_coord ());
             break;
             }
-            
+
         case lsD55:
         case lsDaylight:
         case lsFineWeather:
@@ -136,35 +136,35 @@ dng_illuminant_data::dng_illuminant_data (const uint32 light,
             SetWhiteXY (D55_xy_coord ());
             break;
             }
-            
+
         case lsD65:
         case lsCloudyWeather:
             {
             SetWhiteXY (D65_xy_coord ());
             break;
             }
-            
+
         case lsD75:
         case lsShade:
             {
             SetWhiteXY (D75_xy_coord ());
             break;
             }
-            
+
         case lsDaylightFluorescent:
             {
             // Use F1: ~6430 K.
             SetWhiteXY (dng_xy_coord (0.31310, 0.33727));
             break;
             }
-            
+
         case lsDayWhiteFluorescent:
             {
             // Use F8: ~5000 K.
             SetWhiteXY (dng_xy_coord (0.34588, 0.35875));
             break;
             }
-            
+
         case lsCoolWhiteFluorescent:
             {
             // Use F9: ~4150 K
@@ -178,14 +178,14 @@ dng_illuminant_data::dng_illuminant_data (const uint32 light,
             SetWhiteXY (dng_xy_coord (0.37208, 0.37529));
             break;
             }
-            
+
         case lsWhiteFluorescent:
             {
             // Use F3: ~3450 K
             SetWhiteXY (dng_xy_coord (0.40910, 0.39430));
             break;
             }
-            
+
         case lsWarmWhiteFluorescent:
             {
             // Use F4: ~2940 K
@@ -204,7 +204,7 @@ dng_illuminant_data::dng_illuminant_data (const uint32 light,
             break;
 
             }
-            
+
         default:
             {
             SetWhiteXY (D50_xy_coord ());
@@ -212,35 +212,35 @@ dng_illuminant_data::dng_illuminant_data (const uint32 light,
             }
 
         }
-    
+
     }
 
 /*****************************************************************************/
 
 void dng_illuminant_data::Clear ()
     {
-    
-    *this = dng_illuminant_data (); 
-    
+
+    *this = dng_illuminant_data ();
+
     }
 
 /*****************************************************************************/
 
 bool dng_illuminant_data::IsValid () const
     {
-    
+
     if (fType == kWhiteXY)
         {
 
         return (fWhiteX.IsValid () &&
                 fWhiteY.IsValid () &&
                 WhiteXY ().IsValid ());
-        
+
         }
 
     else if (fType == kSpectrum)
         {
-        
+
         if (fMinLambda.NotValid ())
             {
             return false;
@@ -258,13 +258,13 @@ bool dng_illuminant_data::IsValid () const
             }
 
         return WhiteXY ().IsValid ();
-        
+
         }
 
     // Not valid.
 
     return false;
-    
+
     }
 
 /*****************************************************************************/
@@ -290,9 +290,9 @@ void dng_illuminant_data::SetWhiteXY (const dng_urational &x,
 
     if (x.NotValid () || y.NotValid ())
         {
-        
+
         ThrowBadFormat ("Invalid x or y in dng_illuminant_data::SetWhiteXY");
-        
+
         }
 
     const real64 kMinValue = 0.000001;
@@ -304,9 +304,9 @@ void dng_illuminant_data::SetWhiteXY (const dng_urational &x,
     if (x64 < kMinValue || x64 > kMaxValue ||
         y64 < kMinValue || y64 > kMaxValue)
         {
-        
+
         ThrowBadFormat ("Out-of-range x or y in dng_illuminant_data::SetWhiteXY");
-        
+
         }
 
     // Set type.
@@ -344,7 +344,7 @@ void dng_illuminant_data::SetSpectrum (const dng_urational &minLambda,
 
     DNG_REQUIRE (minLambda.As_real64 () > 0.0,
                  "Invalid minLambda");
-                 
+
     DNG_REQUIRE (lambdaSpacing.As_real64 () > 0.0,
                  "Invalid lambdaSpacing");
 
@@ -355,24 +355,24 @@ void dng_illuminant_data::SetSpectrum (const dng_urational &minLambda,
                  "Too many spectral samples");
 
     #if qDNGValidate
-                
+
     real64 maxLambda =
         minLambda.As_real64 () + (lambdaSpacing.As_real64 () * (data.size () - 1));
 
     if (minLambda.As_real64 () > 400.0 ||
         maxLambda              < 700.0)
         {
-        
+
         ReportWarning ("spectrum data doesn't cover at least [400,700] nm");
-                
+
         }
 
     #endif
-        
+
     // Set type.
 
     fType = kSpectrum;
-    
+
     // Clear XY data.
 
     fWhiteX.Clear ();
@@ -398,9 +398,9 @@ void dng_illuminant_data::Get (dng_stream &stream,
                                const uint32 tagCount,
                                const char *tagName)
     {
-    
+
     (void) tagName;
-    
+
     uint16 type = stream.Get_uint16 ();
 
     if (type == 0)
@@ -412,9 +412,9 @@ void dng_illuminant_data::Get (dng_stream &stream,
             {
 
             ThrowBadFormat ("tag count too small for illuminant xy data");
-            
+
             }
-                
+
         dng_urational x = stream.TagValue_urational (ttRational);
         dng_urational y = stream.TagValue_urational (ttRational);
 
@@ -426,7 +426,7 @@ void dng_illuminant_data::Get (dng_stream &stream,
             {
 
             dng_temperature tempTint (WhiteXY ());
-            
+
             printf ("%s: x-y type, x=%u/%u (%.6lf), y=%u/%u (%.6lf), temp=%.1lf, tint=%.1lf\n",
                     tagName,
                     x.n,
@@ -437,11 +437,11 @@ void dng_illuminant_data::Get (dng_stream &stream,
                     y.As_real64 (),
                     tempTint.Temperature (),
                     tempTint.Tint ());
-            
+
             }
 
         #endif  // qDNGValidate
-                
+
         }
 
     else if (type == 1)
@@ -454,7 +454,7 @@ void dng_illuminant_data::Get (dng_stream &stream,
             {
 
             ThrowBadFormat ("invalid sample count for illuminant spectrum data");
-            
+
             }
 
         uint32 expectedTagBytes = (2 +           // type
@@ -471,22 +471,22 @@ void dng_illuminant_data::Get (dng_stream &stream,
             }
 
         dng_urational minLambda = stream.TagValue_urational (ttRational);
-                
+
         dng_urational spacing = stream.TagValue_urational (ttRational);
 
         std::vector<dng_urational> samples (numSamples);
 
         for (uint32 i = 0; i < numSamples; i++)
             {
-            
+
             samples [i] = stream.TagValue_urational (ttRational);
-            
+
             }
 
         SetSpectrum (minLambda,
                      spacing,
                      samples);
-        
+
         #if qDNGValidate
 
         if (gVerbose)
@@ -495,7 +495,7 @@ void dng_illuminant_data::Get (dng_stream &stream,
             const dng_xy_coord &xy = WhiteXY ();
 
             dng_temperature tempTint (xy);
-            
+
             printf ("%s: spectrum type, numSamples=%u, minLambda=%u/%u (%.1lf), "
                     "spacing=%u/%u (%.1lf), x=%.6lf, y=%.6lf, temp=%.1lf, tint=%.1lf\n",
                     tagName,
@@ -520,52 +520,52 @@ void dng_illuminant_data::Get (dng_stream &stream,
                 real64 lambda = minLambda64 + (i * spacing64);
 
                 const dng_urational &value = samples [i];
-                
+
                 printf ("%4u: %.8lf --> %8u/%8u (%.8lf)\n",
                         i,
                         lambda,
                         value.n,
                         value.d,
                         value.As_real64 ());
-                
+
                 }
-            
+
             }
 
         #endif  // qDNGValidate
-                
+
         }
-            
+
     else
         {
 
         ThrowBadFormat ("Unrecognized illuminant data type");
-        
+
         }
-    
+
     }
 
 /*****************************************************************************/
 
 void dng_illuminant_data::Put (dng_stream &stream) const
     {
-    
+
     if (fType == kWhiteXY)
         {
-        
+
         stream.Put_uint16 (0);
 
         stream.Put_uint32 (fWhiteX.n);
         stream.Put_uint32 (fWhiteX.d);
-        
+
         stream.Put_uint32 (fWhiteY.n);
         stream.Put_uint32 (fWhiteY.d);
-        
+
         }
 
     else if (fType == kSpectrum)
         {
-        
+
         stream.Put_uint16 (1);
 
         stream.Put_uint32 ((uint32) fSpectrum.size ());
@@ -578,52 +578,52 @@ void dng_illuminant_data::Put (dng_stream &stream) const
 
         for (const auto &sample : fSpectrum)
             {
-            
+
             stream.Put_uint32 (sample.n);
             stream.Put_uint32 (sample.d);
 
             }
-        
+
         }
 
     else
         {
-        
+
         ThrowProgramError ("Invalid fType in dng_illuminant_data::Put");
 
         }
-    
+
     }
 
 /*****************************************************************************/
 
 uint32 dng_illuminant_data::TagCount () const
     {
-    
+
     if (fType == kWhiteXY)
         {
-        
+
         return (2 +                          // type
                 8 +                          // x
                 8);                          // y
-        
+
         }
 
     else if (fType == kSpectrum)
         {
-        
+
         return (2 +                          // type
                 4 +                          // num samples
                 8 +                          // min lambda
                 8 +                          // spacing
                 (8 * (uint32) fSpectrum.size ())); // sample data
-        
+
         }
 
     ThrowProgramError ("Invalid fType in TagCount");
 
     return 0;
-    
+
     }
 
 /*****************************************************************************/
@@ -1122,7 +1122,7 @@ void dng_illuminant_data::CalculateSpectrumXY ()
     real64 lambdaStep64 = fLambdaSpacing.As_real64 ();
 
     real64 maxLambda64 = minLambda64;
-    
+
     for (size_t i = 0; i < fSpectrum.size (); i++)
         {
 
@@ -1131,7 +1131,7 @@ void dng_illuminant_data::CalculateSpectrumXY ()
         spectrumFunc.Add (lambda, fSpectrum [i].As_real64 ());
 
         maxLambda64 = lambda;
-        
+
         }
 
     // Check std observer data size.
@@ -1153,7 +1153,7 @@ void dng_illuminant_data::CalculateSpectrumXY ()
         {
 
         int32 observerIndex = i - 360;
-        
+
         real64 lambda = (real64) i;
 
         lambda = Pin_real64 (minLambda64, lambda, maxLambda64);
@@ -1167,11 +1167,11 @@ void dng_illuminant_data::CalculateSpectrumXY ()
         observerSum [0] += x;
         observerSum [1] += y;
         observerSum [2] += z;
-        
+
         sum [0] += (x * light);
         sum [1] += (y * light);
         sum [2] += (z * light);
-        
+
         }
 
     // Ideally the sums of the kCIEStdObserver2Degree columns should all be
@@ -1186,7 +1186,7 @@ void dng_illuminant_data::CalculateSpectrumXY ()
         {
 
         fDerivedWhite = XYZtoXY (sum);
-        
+
         }
 
     else
@@ -1202,7 +1202,7 @@ void dng_illuminant_data::CalculateSpectrumXY ()
 
 class dng_map_temp_func: public dng_1d_function
     {
-        
+
     public:
 
         real64 Evaluate (real64 x) const override
@@ -1215,7 +1215,7 @@ class dng_map_temp_func: public dng_1d_function
             return Min_real64 (1500.0 / x, 1.0);
 
             };
-        
+
     };
 
 /*****************************************************************************/

@@ -302,7 +302,7 @@ class dng_safe_uint32
     private:
 
         uint32 fValue;
-        
+
     public:
 
         template<typename T>
@@ -326,7 +326,7 @@ class dng_safe_uint32
             fValue = SafeUint32Add (fValue, x.fValue);
             return *this;
             }
-        
+
         template<typename T>
         dng_safe_uint32 & operator+= (T x)
             {
@@ -334,13 +334,13 @@ class dng_safe_uint32
             fValue = SafeUint32Add (fValue, x);
             return *this;
             }
-        
+
         dng_safe_uint32 & operator*= (const dng_safe_uint32 &x)
             {
             fValue = SafeUint32Mult (fValue, x.fValue);
             return *this;
             }
-        
+
         template<typename T>
         dng_safe_uint32 & operator*= (T x)
             {
@@ -350,31 +350,31 @@ class dng_safe_uint32
             }
 
         // Binary operators.
-        
+
         const dng_safe_uint32 operator+ (const dng_safe_uint32 &x) const
             {
             return dng_safe_uint32 (*this) += x;
             }
-        
+
         template<typename T>
         const dng_safe_uint32 operator+ (T x) const
             {
             CHECK_SAFE_UINT32;
             return dng_safe_uint32 (*this) += x;
             }
-        
+
         const dng_safe_uint32 operator* (const dng_safe_uint32 &x) const
             {
             return dng_safe_uint32 (*this) *= x;
             }
-        
+
         template<typename T>
         const dng_safe_uint32 operator* (T x) const
             {
             CHECK_SAFE_UINT32;
             return dng_safe_uint32 (*this) *= x;
             }
-        
+
     };
 
 #undef CHECK_SAFE_UINT32
@@ -393,7 +393,7 @@ class dng_safe_int32
     private:
 
         int32 fValue;
-        
+
     public:
 
         template<typename T>
@@ -431,7 +431,7 @@ class dng_safe_int32
             fValue = SafeInt32Add (fValue, x.fValue);
             return *this;
             }
-        
+
         template<typename T>
         dng_safe_int32 & operator+= (T x)
             {
@@ -439,13 +439,13 @@ class dng_safe_int32
             fValue = SafeInt32Add (fValue, x);
             return *this;
             }
-        
+
         dng_safe_int32 & operator-= (const dng_safe_int32 &x)
             {
             fValue = SafeInt32Sub (fValue, x.fValue);
             return *this;
             }
-        
+
         template<typename T>
         dng_safe_int32 & operator-= (T x)
             {
@@ -453,7 +453,7 @@ class dng_safe_int32
             fValue = SafeInt32Sub (fValue, x);
             return *this;
             }
-        
+
     };
 
 #undef CHECK_SAFE_INT32

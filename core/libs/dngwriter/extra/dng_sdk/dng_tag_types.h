@@ -17,7 +17,7 @@
 
 enum
     {
-    
+
     ttByte = 1,
     ttAscii,
     ttShort,
@@ -33,18 +33,18 @@ enum
     ttIFD,
     ttUnicode,
     ttComplex,
-    
+
     // Tag types added by BigTIFF:
 
     ttLong8,
     ttSLong8,
     ttIFD8,
-    
+
     // Note that this is not an official TIFF tag type, and should
     // not be used in TIFF/DNG files:
-    
+
     ttHalfFloat
-    
+
     };
 
 /*****************************************************************************/
@@ -54,5 +54,5 @@ uint32 TagTypeSize (uint32 tagType);
 /*****************************************************************************/
 
 #endif
-    
+
 /*****************************************************************************/

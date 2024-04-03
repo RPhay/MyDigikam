@@ -27,27 +27,27 @@
 /*****************************************************************************/
 
 /// \brief Holds a discrete (i.e., sampled) 2D representation of a gain map. This is
-/// effectively an image containing scale factors. 
+/// effectively an image containing scale factors.
 
 class dng_gain_map: private dng_uncopyable
     {
-    
+
     private:
-    
+
         dng_point fPoints;
-        
+
         dng_point_real64 fSpacing;
-        
+
         dng_point_real64 fOrigin;
-        
+
         uint32 fPlanes;
-        
+
         uint32 fRowStep;
-        
+
         AutoPtr<dng_memory_block> fBuffer;
-        
+
     public:
-    
+
         /// Construct a gain map with the specified memory allocator, number of
         /// samples (points), sample spacing, origin, and number of color planes.
 
@@ -63,7 +63,7 @@ class dng_gain_map: private dng_uncopyable
             {
             return fPoints;
             }
-            
+
         /// The space between adjacent samples in the horizontal and vertical
         /// directions.
 
@@ -71,14 +71,14 @@ class dng_gain_map: private dng_uncopyable
             {
             return fSpacing;
             }
-            
+
         /// The 2D coordinate for the first (i.e., top-left-most) sample.
 
         const dng_point_real64 & Origin () const
             {
             return fOrigin;
             }
-            
+
         /// The number of color planes.
 
         uint32 Planes () const
@@ -92,14 +92,14 @@ class dng_gain_map: private dng_uncopyable
                         uint32 colIndex,
                         uint32 plane)
             {
-            
+
             return *(fBuffer->Buffer_real32 () +
                      rowIndex * fRowStep +
                      colIndex * fPlanes  +
                      plane);
-            
+
             }
-            
+
         /// Getter for a gain map sample (specified by row index, column index, and
         /// plane index).
 
@@ -107,14 +107,14 @@ class dng_gain_map: private dng_uncopyable
                               uint32 colIndex,
                               uint32 plane) const
             {
-            
+
             return *(fBuffer->Buffer_real32 () +
                      rowIndex * fRowStep +
                      colIndex * fPlanes  +
                      plane);
-            
+
             }
-            
+
         /// Compute the interpolated gain (i.e., scale factor) at the specified pixel
         /// position and color plane, within the specified image bounds (in pixels).
 
@@ -122,15 +122,15 @@ class dng_gain_map: private dng_uncopyable
                             int32 col,
                             uint32 plane,
                             const dng_rect &bounds) const;
-                            
+
         /// The number of bytes needed to hold the gain map data.
 
         uint32 PutStreamSize () const;
-        
+
         /// Write the gain map to the specified stream.
 
         void PutStream (dng_stream &stream) const;
-        
+
         /// Read a gain map from the specified stream.
 
         static dng_gain_map * GetStream (dng_host &host,
@@ -147,17 +147,17 @@ class dng_gain_map: private dng_uncopyable
 
 class dng_gain_table_map: private dng_uncopyable
     {
-    
+
     private:
-    
+
         dng_point fPoints;                   // MapPointsV, MapPointsH
-        
+
         dng_point_real64 fSpacing;           // MapSpacingV, MapSpacingH
-        
+
         dng_point_real64 fOrigin;            // MapOriginV, MapOriginH
 
         uint32 fNumTablePoints = 0;          // MapPointsN
-        
+
         uint32 fRowStep = 0;
         uint32 fColStep = 0;
 
@@ -166,7 +166,7 @@ class dng_gain_table_map: private dng_uncopyable
         uint32 fSampleBytes = 0;
 
         real32 fMapInputWeights [5];         // MapInputWeights
-        
+
         AutoPtr<dng_memory_block> fBuffer;
 
         mutable dng_fingerprint fFingerprint;
@@ -197,7 +197,7 @@ class dng_gain_table_map: private dng_uncopyable
         AutoPtr<dng_memory_block> fOriginalBuffer;
 
     public:
-    
+
         /// Construct a gain map with the specified memory allocator, number
         /// of samples (points), sample spacing, origin, number of table
         /// points, and weights.
@@ -219,7 +219,7 @@ class dng_gain_table_map: private dng_uncopyable
             {
             return fPoints;
             }
-            
+
         /// The space between adjacent samples in the horizontal and vertical
         /// directions.
 
@@ -227,7 +227,7 @@ class dng_gain_table_map: private dng_uncopyable
             {
             return fSpacing;
             }
-            
+
         /// The 2D coordinate for the first (i.e., top-left-most) sample.
 
         const dng_point_real64 & Origin () const
@@ -249,21 +249,21 @@ class dng_gain_table_map: private dng_uncopyable
             {
             return fNumSamples;
             }
-        
+
         /// Getter for number of bytes used to represent just the samples.
 
         uint32 SampleBytes () const
             {
             return fSampleBytes;
             }
-        
+
         /// Getter for MapInputWeights.
 
         const real32 * MapInputWeights () const
             {
             return fMapInputWeights;
             }
-            
+
         /// Getter for a gain table map sample (specified by row, column, and
         /// table index).
 
@@ -271,14 +271,14 @@ class dng_gain_table_map: private dng_uncopyable
                         uint32 colIndex,
                         uint32 tableIndex)
             {
-            
+
             return *(fBuffer->Buffer_real32 () +
                      rowIndex * fRowStep +
                      colIndex * fColStep +
                      tableIndex);
-            
+
             }
-            
+
         /// Getter for a gain map sample (specified by row index, column index, and
         /// plane index).
 
@@ -286,12 +286,12 @@ class dng_gain_table_map: private dng_uncopyable
                               uint32 colIndex,
                               uint32 tableIndex) const
             {
-            
+
             return *(fBuffer->Buffer_real32 () +
                      rowIndex * fRowStep +
                      colIndex * fColStep +
                      tableIndex);
-            
+
             }
 
         /// Getters for low level processing.
@@ -300,7 +300,7 @@ class dng_gain_table_map: private dng_uncopyable
             {
             return fRowStep;
             }
-                            
+
         uint32 ColStep () const
             {
             return fColStep;
@@ -312,7 +312,7 @@ class dng_gain_table_map: private dng_uncopyable
             {
             return fBuffer.Get ();
             }
-                            
+
         const dng_memory_block * Block () const
             {
             return fBuffer.Get ();
@@ -327,7 +327,7 @@ class dng_gain_table_map: private dng_uncopyable
         /// The number of bytes needed to hold the gain table map data.
 
         uint32 PutStreamSize () const;
-        
+
         /// Write the gain table map to the specified stream.
 
         void PutStream (dng_stream &stream,
@@ -388,9 +388,9 @@ class dng_gain_table_map: private dng_uncopyable
             {
             return fGamma;
             }
-        
+
         bool SupportsVersion1 () const;
-        
+
         bool RequiresVersion2 () const
             {
             return !SupportsVersion1 ();
@@ -432,21 +432,21 @@ class dng_gain_table_map: private dng_uncopyable
 class dng_opcode_GainMap: public dng_inplace_opcode,
                           private dng_uncopyable
     {
-    
+
     private:
-    
+
         dng_area_spec fAreaSpec;
-    
+
         AutoPtr<dng_gain_map> fGainMap;
-    
+
     public:
-    
+
         /// Construct a GainMap opcode for the specified image area and the specified
         /// gain map.
 
         dng_opcode_GainMap (const dng_area_spec &areaSpec,
                             AutoPtr<dng_gain_map> &gainMap);
-    
+
         /// Construct a GainMap opcode from the specified stream.
 
         dng_opcode_GainMap (dng_host &host,
@@ -456,18 +456,18 @@ class dng_opcode_GainMap: public dng_inplace_opcode,
 
         const dng_area_spec& AreaSpec() const { return fAreaSpec; }
         const dng_gain_map& GainMap() const { return *fGainMap; }
-    
+
         /// Write the opcode to the specified stream.
 
         virtual void PutData (dng_stream &stream) const override;
-        
+
         /// The pixel data type of this opcode.
 
         virtual uint32 BufferPixelType (uint32 /* imagePixelType */) override
             {
             return ttFloat;
             }
-    
+
         /// The adjusted bounds (processing area) of this opcode. It is limited to
         /// the intersection of the specified image area and the GainMap area.
 
@@ -475,7 +475,7 @@ class dng_opcode_GainMap: public dng_inplace_opcode,
             {
             return fAreaSpec.ScaledOverlap (imageBounds);
             }
-    
+
         /// Apply the gain map.
 
         virtual void ProcessArea (dng_negative &negative,
@@ -488,11 +488,11 @@ class dng_opcode_GainMap: public dng_inplace_opcode,
             {
             fAreaSpec.ApplyAreaScale (scale);
             }
-        
+
     };
-    
+
 /*****************************************************************************/
 
 #endif
-    
+
 /*****************************************************************************/

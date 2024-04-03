@@ -47,7 +47,7 @@
 
 class jxl_memory_block
     {
-        
+
     public:
 
         dng_memory_allocator &fAllocator;
@@ -115,7 +115,7 @@ class jxl_memory_block
             {
             return fLogicalBuffer;
             }
-        
+
     };
 
 /*****************************************************************************/
@@ -124,12 +124,12 @@ class dng_jxl_decoder_callback_data
     {
 
     public:
-        
+
         dng_pixel_buffer fTemplateBuffer;
 
         dng_pixel_buffer fWholeBuffer;
 
-        AutoPtr<jxl_memory_block> fBlock;       
+        AutoPtr<jxl_memory_block> fBlock;
 
         AutoPtr<dng_image> fImage;           // 1 or 3 planes
 
@@ -149,17 +149,17 @@ static void dng_jxl_decoder_callback_func (void* opaque,
     {
 
     #if qLogJXL && 0
-    
+
     printf ("dng_jxl_decoder_callback_func: %u, %u, %u\n",
             (unsigned) x,
             (unsigned) y,
             (unsigned) num_pixels);
-    
+
     #endif
 
     // The decoder prepares a scanline or partial scanline of pixels for us to
     // copy elsewhere.
-    
+
     auto *cbData = (dng_jxl_decoder_callback_data *) opaque;
 
     auto buffer = cbData->fTemplateBuffer;
@@ -182,7 +182,7 @@ static void dng_jxl_decoder_callback_func (void* opaque,
     // mutex locks to access the relevant tiles, and (2) a scanline (very
     // wide, minimal height) is a poor match for tiles in dng_image, which are
     // roughly square by design.
-    
+
     cbData->fImage->Put (buffer);
 
     #else
@@ -198,7 +198,7 @@ static void dng_jxl_decoder_callback_func (void* opaque,
                                    buffer.fPlanes);
 
     #endif
-    
+
     }
 
 /*****************************************************************************/
@@ -207,11 +207,11 @@ class dng_jxl_parallel_runner_data
     {
 
     public:
-        
+
         dng_host *fHost = nullptr;
 
         dng_atomic_error_code fErrorCode { dng_error_none };
-        
+
     };
 
 /*****************************************************************************/
@@ -221,12 +221,12 @@ static void CheckResult (JxlDecoderStatus status,
                          const dng_jxl_parallel_runner_data *data,
                          const dng_error_code defaultErrorCode = dng_error_jxl_decoder)
     {
-    
+
     if (status != JXL_DEC_SUCCESS)
         {
-        
+
         #if qLogJXL
-        
+
         printf ("JXL encoder (%s) error with status %d",
                 msg,
                 (int) status);
@@ -253,15 +253,15 @@ static void CheckResult (JxlDecoderStatus status,
                     {
                     Throw_dng_error (code, "JXL decoder", msg);
                     }
-                
+
                 }
-            
+
             }
 
         Throw_dng_error (defaultErrorCode, "JXL decoder", msg);
-        
+
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -271,12 +271,12 @@ static void CheckResult (JxlEncoderStatus status,
                          const dng_jxl_parallel_runner_data *data,
                          const dng_error_code defaultErrorCode = dng_error_jxl_encoder)
     {
-    
+
     if (status != JXL_ENC_SUCCESS)
         {
 
         #if qLogJXL
-        
+
         printf ("JXL encoder (%s) error with status %d",
                 msg,
                 (int) status);
@@ -303,15 +303,15 @@ static void CheckResult (JxlEncoderStatus status,
                     {
                     Throw_dng_error (code, "JXL encoder", msg);
                     }
-                
+
                 }
-            
+
             }
 
         Throw_dng_error (defaultErrorCode, "JXL encoder", msg);
-        
+
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -326,13 +326,13 @@ static void * dng_jxl_alloc (void *opaque, size_t size)
     return malloc (size);
 
     #else
-    
+
     auto allocator = (dng_memory_allocator *) opaque;
 
     return allocator->Malloc (size);
 
     #endif
-    
+
     }
 
 /*****************************************************************************/
@@ -347,18 +347,18 @@ static void dng_jxl_free (void *opaque, void *addr)
     free (addr);
 
     #else
-    
+
     auto allocator = (dng_memory_allocator *) opaque;
 
     return allocator->Free (addr);
 
     #endif
-    
+
     }
 
 /*****************************************************************************/
 
-static JxlParallelRetCode dng_jxl_parallel_runner (void* runner_opaque, // dng_host 
+static JxlParallelRetCode dng_jxl_parallel_runner (void* runner_opaque, // dng_host
                                                    void* jpegxl_opaque,
                                                    JxlParallelRunInit init,
                                                    JxlParallelRunFunction func,
@@ -377,7 +377,7 @@ static JxlParallelRetCode dng_jxl_parallel_runner (void* runner_opaque, // dng_h
         return init_ret;
 
     auto &result = data->fErrorCode;
-    
+
     try
         {
 
@@ -413,30 +413,30 @@ static JxlParallelRetCode dng_jxl_parallel_runner (void* runner_opaque, // dng_h
 
     catch (const dng_exception &except)
         {
-        
+
         dng_error_code codeError = except.ErrorCode ();
         dng_error_code codeNormal = dng_error_none;
 
         (void) result.compare_exchange_strong (codeNormal,
-                                               codeError);      
-        
+                                               codeError);
+
         }
 
     catch (...)
         {
-        
+
         dng_error_code codeError = dng_error_unknown;
         dng_error_code codeNormal = dng_error_none;
 
         (void) result.compare_exchange_strong (codeNormal,
-                                               codeError);      
-        
+                                               codeError);
+
         }
 
     // Then tell libjxl that an error occurred, so it can stop running.
 
     return JXL_PARALLEL_RET_RUNNER_ERROR;
-    
+
     }
 
 /*****************************************************************************/
@@ -508,13 +508,13 @@ class dng_jxl_io_buffer
             // This is the number of bytes we're going to try to read from the
             // stream. It cannot be more than the number of bytes available in
             // the stream.
-            
+
             size_t next_read_size = std::min (fChunkSize,
                                               bytes_remaining_in_stream);
 
             // This is the number of bytes that jxl previously consumed from
             // our buffer.
-            
+
             size_t prev_read_size = fDataSize - remaining;
 
             // Update our pointer past the previously-consumed bytes.
@@ -532,15 +532,15 @@ class dng_jxl_io_buffer
                 memmove (fBlock->Buffer (),
                          fBlock->Buffer_uint8 () + fIndex,
                          remaining);
-                         
+
                 fIndex = 0;
-                
+
                 }
 
             // Read from the stream.
 
             auto ptr = Ptr () + remaining;
-            
+
             stream.Get (ptr, (uint32) next_read_size);
 
             // Update the amount of data in our buffer.
@@ -548,7 +548,7 @@ class dng_jxl_io_buffer
             fDataSize = remaining + next_read_size;
 
             }
-        
+
     };
 
 /*****************************************************************************/
@@ -556,18 +556,18 @@ class dng_jxl_io_buffer
 static void EnsureUseBoxes (JxlEncoder *enc,
                             bool &once_flag)
     {
-    
+
     if (!once_flag)
         {
-        
+
         once_flag = true;
 
         CheckResult (JxlEncoderUseBoxes (enc),
                      "JxlEncoderUseBoxes",
                      nullptr);
-        
+
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -577,19 +577,19 @@ static void EnsureUseBoxes (JxlEncoder *enc,
 static bool SamePixelBufferGeometry (const dng_pixel_buffer &a,
                                      const dng_pixel_buffer &b)
     {
-    
+
     if (a.fArea      != b.fArea)
         return false;
 
     if (a.fPlane     != b.fPlane ||
         a.fPlanes    != b.fPlanes)
         return false;
-        
+
     if (a.fRowStep   != b.fRowStep   ||
         a.fColStep   != b.fColStep   ||
         a.fPlaneStep != b.fPlaneStep)
         return false;
-        
+
     if (a.fPixelType != b.fPixelType   ||
         a.fPixelSize != b.fPixelSize)
         return false;
@@ -597,7 +597,7 @@ static bool SamePixelBufferGeometry (const dng_pixel_buffer &a,
     // Ignore the fData and fDirty fields.
 
     return true;
-    
+
     }
 
 /*****************************************************************************/
@@ -645,7 +645,7 @@ static void EncodeJXL (dng_host &host,
 
     else if (srcPixelType == ttFloat)
         {
-        
+
         DNG_REQUIRE (buffer.fPixelSize == 2 ||
                      buffer.fPixelSize == 4,
                      "unexpected ttFlaot pixel size");
@@ -726,15 +726,15 @@ static void EncodeJXL (dng_host &host,
 
     else
         {
-        
+
         printf ("Encoding using 1 thread\n");
-        
+
         }
 
     #endif
 
     // Are we going to use a container?
-    
+
     CheckResult
         (JxlEncoderUseContainer (enc,
                                  useContainer ? JXL_TRUE : JXL_FALSE),
@@ -745,15 +745,15 @@ static void EncodeJXL (dng_host &host,
 
     if (!useContainer)
         {
-        
+
         if (metadata && (includeExif || includeXMP || includeIPTC))
             {
-            
+
             printf ("EncodeJXL called with useContainer==false"
                     " -- ignoring metadata");
-            
+
             }
-        
+
         }
 
     #endif  // qLogJXL
@@ -766,7 +766,7 @@ static void EncodeJXL (dng_host &host,
         bool useBoxesOnceFlag = false;
 
         bool didAddBox = false;
-        
+
         // EXIF.
 
         if (includeExif)
@@ -805,7 +805,7 @@ static void EncodeJXL (dng_host &host,
                 }
 
             } // exif
-            
+
         // XMP.
 
         if (includeXMP && metadata->GetXMP ())
@@ -881,10 +881,10 @@ static void EncodeJXL (dng_host &host,
 
         if (additionalBoxes)
             {
-            
+
             for (const auto &box : *additionalBoxes)
                 {
-                
+
                 if (!box)
                     continue;
 
@@ -903,7 +903,7 @@ static void EncodeJXL (dng_host &host,
                     name [2],
                     name [3]
                     };
-                
+
                 JXL_BOOL compressBox = JXL_FALSE;
 
                 EnsureUseBoxes (enc, useBoxesOnceFlag);
@@ -919,7 +919,7 @@ static void EncodeJXL (dng_host &host,
                 didAddBox = true;
 
                 }
-            
+
             }
 
         // Tell the encoder there will be no more boxes added with
@@ -927,9 +927,9 @@ static void EncodeJXL (dng_host &host,
 
         if (didAddBox)
             {
-            
+
             JxlEncoderCloseBoxes (enc);
-            
+
             }
 
         } // metadata and container
@@ -937,30 +937,30 @@ static void EncodeJXL (dng_host &host,
     // Add color profile info.
 
     bool useJXLColorEncoding = false;
-    
+
     JxlColorEncoding colorEncoding;
 
     if (colorSpaceInfo.fJxlColorEncoding.Get ())
         {
-        
+
         // Provide color tag as special jxl color encoding.
-        
+
         colorEncoding = *colorSpaceInfo.fJxlColorEncoding;
 
         useJXLColorEncoding = true;
-        
+
         }
 
     else if (colorSpaceInfo.fICCProfile.Get ())
         {
-        
+
         // Use ICC profile.
-        
+
         }
 
     else
         {
-        
+
         // Fall back to assuming sRGB.
 
         memset (&colorEncoding, 0, sizeof (colorEncoding));
@@ -971,7 +971,7 @@ static void EncodeJXL (dng_host &host,
         colorEncoding.transfer_function = JXL_TRANSFER_FUNCTION_SRGB;
 
         useJXLColorEncoding = true;
-        
+
         }
 
     // Set basic info.
@@ -1092,7 +1092,7 @@ static void EncodeJXL (dng_host &host,
 
     if (useJXLColorEncoding)
         {
-            
+
         CheckResult (JxlEncoderSetColorEncoding (enc, &colorEncoding),
                      "JxlEncoderSetColorEncoding",
                      &parallelData);
@@ -1127,9 +1127,9 @@ static void EncodeJXL (dng_host &host,
             #if qLogJXL
             printf ("Writing untagged JXL file");
             #endif
-            
+
             }
-        
+
         }
 
     // Create settings for the frame.
@@ -1176,7 +1176,7 @@ static void EncodeJXL (dng_host &host,
     // Set effort.
 
     CheckResult
-        (JxlEncoderFrameSettingsSetOption (frameSettings,   
+        (JxlEncoderFrameSettingsSetOption (frameSettings,
                                            JXL_ENC_FRAME_SETTING_EFFORT,
                                            (int) settings.Effort ()),
          "JxlEncoderFrameSettingsSetOption",
@@ -1194,7 +1194,7 @@ static void EncodeJXL (dng_host &host,
         // Set decoding speed.
 
         CheckResult
-            (JxlEncoderFrameSettingsSetOption (frameSettings,   
+            (JxlEncoderFrameSettingsSetOption (frameSettings,
                                                JXL_ENC_FRAME_SETTING_DECODING_SPEED,
                                                (int) settings.DecodeSpeed ()),
              "JxlEncoderFrameSettingsSetOption",
@@ -1204,7 +1204,7 @@ static void EncodeJXL (dng_host &host,
         // to affect what happens between frames.
 
         CheckResult
-            (JxlEncoderFrameSettingsSetOption (frameSettings,   
+            (JxlEncoderFrameSettingsSetOption (frameSettings,
                                                JXL_ENC_FRAME_SETTING_PATCHES,
                                                0),
              "JxlEncoderFrameSettingsSetOption-Patches",
@@ -1216,7 +1216,7 @@ static void EncodeJXL (dng_host &host,
             // Enable gaborish. This helps to reduce blockiness.
 
             CheckResult
-                (JxlEncoderFrameSettingsSetOption (frameSettings,   
+                (JxlEncoderFrameSettingsSetOption (frameSettings,
                                                    JXL_ENC_FRAME_SETTING_GABORISH,
                                                    1),
                  "JxlEncoderFrameSettingsSetOption-Gaborish",
@@ -1226,7 +1226,7 @@ static void EncodeJXL (dng_host &host,
             // contrast edges (mountain against sky).
 
             CheckResult
-                (JxlEncoderFrameSettingsSetOption (frameSettings,   
+                (JxlEncoderFrameSettingsSetOption (frameSettings,
                                                    JXL_ENC_FRAME_SETTING_EPF,
                                                    3),
                  "JxlEncoderFrameSettingsSetOption-EPF",
@@ -1257,23 +1257,23 @@ static void EncodeJXL (dng_host &host,
 
     switch (srcPixelType)
         {
-        
+
         case ttByte:
             pixelFormat.data_type = JXL_TYPE_UINT8;
             break;
-            
+
         case ttShort:
             pixelFormat.data_type = JXL_TYPE_UINT16;
             break;
-            
+
         case ttHalfFloat:
             pixelFormat.data_type = JXL_TYPE_FLOAT16;
             break;
-            
+
         case ttFloat:
             pixelFormat.data_type = JXL_TYPE_FLOAT;
             break;
-            
+
         default:
             {
             #if qLogJXL
@@ -1282,7 +1282,7 @@ static void EncodeJXL (dng_host &host,
             ThrowProgramError ("unexpected srcPixelType");
             break;
             }
-        
+
         }
 
     // Set up pixel buffer to hold data to hand off to encoder. As of version
@@ -1298,13 +1298,13 @@ static void EncodeJXL (dng_host &host,
 
     const uint64 bytesNeeded = (uint64 (pixelBuffer.fRowStep) *
                                 uint64 (pixelBuffer.fArea.H ()) *
-                                uint64 (pixelBuffer.fPixelSize)); 
+                                uint64 (pixelBuffer.fPixelSize));
 
     AutoPtr<jxl_memory_block> block;
 
     // If not already tightly-packed chunky, then allocate a temp buffer and
     // convert to chunky layout.
-        
+
     if (!SamePixelBufferGeometry (pixelBuffer, buffer))
         {
 
@@ -1332,7 +1332,7 @@ static void EncodeJXL (dng_host &host,
 
     dng_pixel_buffer previewPixelBuffer;
 
-    previewPixelBuffer.fArea = dng_rect (200, 200); // TODO(erichan): 
+    previewPixelBuffer.fArea = dng_rect (200, 200); // TODO(erichan):
 
     previewPixelBuffer.fPlanes = planes;
 
@@ -1345,7 +1345,7 @@ static void EncodeJXL (dng_host &host,
 
     uint32 previewBytesNeeded = (previewPixelBuffer.fRowStep *
                                  previewPixelBuffer.fArea.H () *
-                                 previewPixelBuffer.fPixelSize); 
+                                 previewPixelBuffer.fPixelSize);
 
     AutoPtr<dng_memory_block> previewBlock (host.Allocate (previewBytesNeeded));
 
@@ -1364,14 +1364,14 @@ static void EncodeJXL (dng_host &host,
          "JxlEncoderAddImageFrame-preview");
 
     #endif  // disabled
-    
+
     // Setting the frame name is optional.
-    // 
+    //
     // In libjxl 0.8.0, setting a non-empty name prevents the fast lossless
     // encoder from being used.
 
     #if 0
-    
+
     CheckResult (JxlEncoderSetFrameName (frameSettings,
                                          "main"),
                  "JxlEncoderSetFrameName",
@@ -1398,7 +1398,7 @@ static void EncodeJXL (dng_host &host,
     const uint32 tempSize = 64 * 1024;
 
     AutoPtr<dng_memory_block> tempBlock (host.Allocate (tempSize));
-     
+
     uint8 *outBuffer = tempBlock->Buffer_uint8 ();
 
     size_t outAvailableBytes = (size_t) tempSize;
@@ -1406,10 +1406,10 @@ static void EncodeJXL (dng_host &host,
     uint8 *outBufferPtr = outBuffer;
 
     // Main encode loop.
-    
+
     for (;;)
         {
-        
+
         JxlEncoderStatus status = JxlEncoderProcessOutput (enc,
                                                            &outBufferPtr,
                                                            &outAvailableBytes);
@@ -1439,51 +1439,51 @@ static void EncodeJXL (dng_host &host,
             printf ("jxl encoder success!! bytes to flush: %u\n",
                     bytesToFlush);
             #endif
-                      
+
             stream.Put (outBuffer, bytesToFlush);
-            
+
             break;
-            
+
             }
 
         // Check if we need to update the output buffer.
 
         else if (status == JXL_ENC_NEED_MORE_OUTPUT)
             {
-            
+
             uint32 bytesToFlush = (uint32) (outBufferPtr - outBuffer);
 
             #if qLogJXL
             printf ("--- jxl encoder need more output. bytes to flush: %u\n",
                     bytesToFlush);
             #endif
-                      
+
             // Copy encoded data to the stream.
 
             stream.Put (outBuffer, bytesToFlush);
 
             // Reset temp buffer.
-            
+
             outBufferPtr = outBuffer;
 
             outAvailableBytes = tempSize;
-            
+
             }
 
         else
             {
 
             #if qLogJXL
-            
+
             printf ("Unexpected jxl encoder status 0x%x\n",
                     (unsigned) status);
 
             #endif
 
             ThrowNotYetImplemented ("unhandled jxl encoder status");
-            
+
             }
-        
+
         }
 
     }
@@ -1543,9 +1543,9 @@ static void EncodeJXL (dng_host &host,
     // 40 ms to 8 ms on a 2017 10-core iMac Pro.
 
     // dng_timer timer2 ("EncodeJXL-image-get");
-        
+
     #if 1
-        
+
     dng_get_buffer_task task (image,
                               pixelBuffer);
 
@@ -1553,9 +1553,9 @@ static void EncodeJXL (dng_host &host,
                           image.Bounds ());
 
     #else
-        
+
     image.Get (pixelBuffer);
-        
+
     #endif
 
     EncodeJXL (host,
@@ -1576,7 +1576,7 @@ static void EncodeJXL (dng_host &host,
 
 class dng_jxl_box_reader
     {
-        
+
     public:
 
         dng_host &fHost;
@@ -1584,13 +1584,13 @@ class dng_jxl_box_reader
         JxlDecoder *fDec = nullptr;
 
         bool fHasCurrentBox = false;
-        
+
         JxlBoxType fType;
-        
+
         std::vector<uint8> fData;
-        
+
         size_t fIndex = 0;
-        
+
         dng_info *fInfo = nullptr;
 
         dng_jxl_decoder &fDecoder;
@@ -1609,7 +1609,7 @@ class dng_jxl_box_reader
 
         void HandleDecBox ()
             {
-        
+
             // Wrap up any previous box.
 
             CheckFinishBox ();
@@ -1663,12 +1663,12 @@ class dng_jxl_box_reader
                  {
 
                  #if qLogJXL
-                    
+
                  printf ("jxl: Skipping large box with size %llu",
                          (unsigned long long) size);
 
                  #endif
-                    
+
                  }
 
             #endif
@@ -1699,7 +1699,7 @@ class dng_jxl_box_reader
 
         void HandleNeedMoreOutput ()
             {
-        
+
             size_t remaining = JxlDecoderReleaseBoxBuffer (fDec);
 
             fIndex = fData.size () - remaining;
@@ -1709,7 +1709,7 @@ class dng_jxl_box_reader
             fData.resize (newSize);
 
             size_t availableSize = newSize - fIndex;
-            
+
             #if qLogJXL
             printf ("box read output: remain=%llu\n",
                     (unsigned long long) remaining);
@@ -1720,7 +1720,7 @@ class dng_jxl_box_reader
                                                  availableSize),
                          "JxlDecoderSetBoxBuffer",
                          nullptr);
-        
+
             }
 
         void CheckFinishBox ()
@@ -1775,12 +1775,12 @@ class dng_jxl_box_reader
                       fType [1] == 'M' &&
                       fType [2] == 'L' &&
                       fType [3] == ' ') ||
-                     
+
                      (fType [0] == 'x' &&
                       fType [1] == 'm' &&
                       fType [2] == 'l' &&
                       fType [3] == ' '))
-                     
+
                 {
 
                 fDecoder.ProcessXMPBox (fHost,
@@ -1790,7 +1790,7 @@ class dng_jxl_box_reader
 
             else
                 {
-                
+
                 // Some other box.
 
                 const char rawTypeName [] =
@@ -1807,7 +1807,7 @@ class dng_jxl_box_reader
                 fDecoder.ProcessBox (fHost,
                                      typeName,
                                      fData);
-                
+
                 }
 
             // Developer code.
@@ -1832,15 +1832,15 @@ class dng_jxl_box_reader
 
             #endif  // dev code
 
-            }       
-        
+            }
+
     };
 
 /*****************************************************************************/
 
 class dng_put_alpha_buffer_task : public dng_area_task
     {
-        
+
     private:
 
         const dng_pixel_buffer &fSrc;
@@ -1853,15 +1853,15 @@ class dng_put_alpha_buffer_task : public dng_area_task
 
         dng_put_alpha_buffer_task (const dng_pixel_buffer &buffer,
                                    dng_image &image)
-            
+
             :   dng_area_task ("dng_put_alpha_buffer_task")
-                
+
             ,   fSrc (buffer)
-                
+
             ,   fDst (image)
-                
+
             {
-            
+
             DNG_REQUIRE (buffer.Planes () == 2 ||
                          buffer.Planes () == 4,
                          "Unsupported plane count in dng_stage_put_alpha_buffer");
@@ -1872,11 +1872,11 @@ class dng_put_alpha_buffer_task : public dng_area_task
 
         dng_rect RepeatingTile1 () const override
             {
-            
+
             return fDst.RepeatingTile ();
-            
+
             }
-            
+
         void Process (uint32 /* threadIndex */,
                       const dng_rect &tile,
                       dng_abort_sniffer * /* sniffer */) override
@@ -1894,9 +1894,9 @@ class dng_put_alpha_buffer_task : public dng_area_task
             temp.fPlanes = 1;
 
             fDst.Put (temp);
-        
+
             }
-        
+
     };
 
 /*****************************************************************************/
@@ -1913,7 +1913,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
     const bool needBoxMeta = fNeedBoxMeta;
     const bool needImage   = fNeedImage;
-    
+
     // Hook into our memory allocator.
 
     JxlMemoryManager memManager;
@@ -1943,7 +1943,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
     dng_jxl_parallel_runner_data parallelData;
 
     parallelData.fHost = &host;
-    
+
     #if 1
 
     // This seems slightly faster than using our own runner; this might due to
@@ -1953,7 +1953,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
     const size_t maxThreadCount =
         (size_t) (fUseSingleThread ? 1 : host.PerformAreaTaskThreads ());
-    
+
     JxlResizableParallelRunnerSetThreads (nativeRunner.get (),
                                           maxThreadCount);
 
@@ -1962,7 +1962,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
                                               nativeRunner.get ()),
                  "JxlDecoderSetParallelRunner",
                  &parallelData);
-    
+
     #else
 
     CheckResult (JxlDecoderSetParallelRunner (dec,
@@ -1970,7 +1970,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
                                               (void *) &parallelData),
                  "JxlDecoderSetParallelRunner",
                  &parallelData);
-    
+
     #endif
 
     // Subscribe to some events.
@@ -1996,7 +1996,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
         {
         eventsWanted = eventsWanted | JXL_DEC_FULL_IMAGE | JXL_DEC_FRAME;
         }
-    
+
     CheckResult (JxlDecoderSubscribeEvents (dec, eventsWanted),
                  "JxlDecoderSubscribeEvents",
                  &parallelData);
@@ -2034,7 +2034,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
         // The first time, this will output JXL_DEC_NEED_MORE_INPUT because no
         // input is set yet, this is ok since the input is set when handling this
         // event.
-        
+
         JxlDecoderStatus status = JxlDecoderProcessInput (dec);
 
         // Deal with decoder error event.
@@ -2046,36 +2046,36 @@ void dng_jxl_decoder::Decode (dng_host &host,
             #endif
             ThrowBadFormat ("JXL_DEC_ERROR");
             }
-          
+
         // Deal with success event.
 
         else if (status == JXL_DEC_SUCCESS)
             {
-            
+
             // Finished all processing.
-            
+
             #if qLogJXL
             printf ("jxl decode success\n");
             #endif
 
             boxReader.CheckFinishBox ();
-        
+
             break;
-        
+
             }
 
         // Deal with decoder's request for more input data.
 
         else if (status == JXL_DEC_NEED_MORE_INPUT)
             {
-            
+
             // The first time there is nothing to release and it returns 0, but that
             // is ok.
 
             #if qLogJXL
             printf ("--- JXL_DEC_NEED_MORE_INPUT\n");
             #endif
-            
+
             size_t remaining = JxlDecoderReleaseInput (dec);
 
             inputBuffer.ReadChunk (stream, remaining);
@@ -2092,11 +2092,11 @@ void dng_jxl_decoder::Decode (dng_host &host,
                 {
                 JxlDecoderCloseInput (dec);
                 }
-            
+
             }
 
         // Deal with basic info received from the code stream.
-        
+
         else if (status == JXL_DEC_BASIC_INFO)
             {
 
@@ -2121,7 +2121,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
                 if (basicInfo.exponent_bits_per_sample)
                     printf ("float, with exponent_bits_per_sample: %d\n",
                            basicInfo.exponent_bits_per_sample);
-                
+
                 if (basicInfo.intensity_target != 255.f ||
                     basicInfo.min_nits != 0.f ||
                     basicInfo.relative_to_max_display != 0 ||
@@ -2132,17 +2132,17 @@ void dng_jxl_decoder::Decode (dng_host &host,
                     printf ("relative_to_max_display: %d\n", basicInfo.relative_to_max_display);
                     printf ("linear_below: %f\n", basicInfo.linear_below);
                     }
-                
+
                 printf ("have_preview: %d\n", basicInfo.have_preview);
-                
+
                 if (basicInfo.have_preview)
                     {
                     printf ("preview xsize: %u\n", basicInfo.preview.xsize);
                     printf ("preview ysize: %u\n", basicInfo.preview.ysize);
                     }
-                
+
                 printf ("have_animation: %d\n", basicInfo.have_animation);
-                
+
                 if (basicInfo.have_animation)
                     {
 
@@ -2154,7 +2154,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
                     printf ("have_timecodes: %d\n", basicInfo.animation.have_timecodes);
 
                     }
-                
+
                 printf ("intrinsic xsize: %u\n", basicInfo.intrinsic_xsize);
                 printf ("intrinsic ysize: %u\n", basicInfo.intrinsic_ysize);
 
@@ -2165,7 +2165,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
                     "Transposed",      "90 degrees clockwise",
                     "Anti-Transposed", "90 degrees counter-clockwise"
                     };
-                
+
                 if (basicInfo.orientation > 0 && basicInfo.orientation < 9)
                     {
                     printf ("orientation: %d (%s)\n", basicInfo.orientation,
@@ -2176,12 +2176,12 @@ void dng_jxl_decoder::Decode (dng_host &host,
                     {
                     fprintf (stderr, "Invalid orientation\n");
                     }
-                
+
                 printf ("num_color_channels: %d\n", basicInfo.num_color_channels);
                 printf ("num_extra_channels: %d\n", basicInfo.num_extra_channels);
 
                 // Read extra channels.
-                
+
                 const char* const ec_type_names [7] =
                     {
                     "Alpha",
@@ -2192,46 +2192,46 @@ void dng_jxl_decoder::Decode (dng_host &host,
                     "CFA (Bayer data)",
                     "Thermal"
                     };
-                
+
                 for (uint32_t i = 0; i < basicInfo.num_extra_channels; i++)
                     {
 
                     JxlExtraChannelInfo extra;
-                    
+
                     CheckResult
                         (JxlDecoderGetExtraChannelInfo (dec,
                                                         i,
                                                         &extra),
                          "JxlDecoderGetExtraChannelInfo",
                          nullptr);
-                    
+
                     printf ("extra channel %u:\n", i);
-                    
+
                     printf ("  type: %s\n",
                             (extra.type < 7 ? ec_type_names [extra.type]
                              : (extra.type == JXL_CHANNEL_OPTIONAL
                                 ? "Unknown but can be ignored"
                                 : "Unknown, please update your libjxl")));
-                    
+
                     printf ("  bits_per_sample: %u\n",
                             extra.bits_per_sample);
-                    
+
                     if (extra.exponent_bits_per_sample > 0)
                         printf ("  float, with exponent_bits_per_sample: %u\n",
                                 extra.exponent_bits_per_sample);
-                    
+
                     if (extra.dim_shift > 0)
                         printf ("  dim_shift: %u (upsampled %ux)\n",
                                 extra.dim_shift,
                                 1 << extra.dim_shift);
-                    
+
                     if (extra.name_length)
                         {
 
                         std::vector<char> temp (extra.name_length + 1);
 
                         char *name = temp.data ();
-                        
+
                         CheckResult (JxlDecoderGetExtraChannelName
                                      (dec,
                                       i,
@@ -2241,31 +2241,31 @@ void dng_jxl_decoder::Decode (dng_host &host,
                                      nullptr);
 
                         printf ("  name: %s\n", name);
-                        
+
                         }
-                    
+
                     if (extra.type == JXL_CHANNEL_ALPHA)
                         printf ("  alpha_premultiplied: %d (%s)\n",
                                 extra.alpha_premultiplied,
                                 extra.alpha_premultiplied ? "Premultiplied"
                                                           : "Non-premultiplied");
-                    
+
                     if (extra.type == JXL_CHANNEL_SPOT_COLOR)
                         printf ("  point_color: (%f, %f, %f) with opacity %f\n",
                                 extra.spot_color[0],
                                 extra.spot_color[1],
                                 extra.spot_color[2],
                                 extra.spot_color[3]);
-                    
+
                     if (extra.type == JXL_CHANNEL_CFA)
                         printf ("  cfa_channel: %u\n", extra.cfa_channel);
-                    
+
                     } // for extra channels
 
                 } // verbose
 
             #endif  // qDNGValidate
-            
+
             } // basic info
 
         // Read color profile info.
@@ -2277,7 +2277,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
             // TODO(erichan): Does the choice of this format unduly affect the
             // result of JxlDecoderGetColorAsEncodedProfile?
-            
+
 #if JPEGXL_NUMERIC_VERSION < JPEGXL_COMPUTE_NUMERIC_VERSION(0, 9, 0)
             JxlPixelFormat format = { 3, JXL_TYPE_FLOAT, JXL_NATIVE_ENDIAN, 0 };
 #endif
@@ -2288,7 +2288,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
             #endif
 
             JxlColorEncoding color_encoding;
-            
+
             if (JXL_DEC_SUCCESS ==
                 JxlDecoderGetColorAsEncodedProfile (dec,
 #if JPEGXL_NUMERIC_VERSION < JPEGXL_COMPUTE_NUMERIC_VERSION(0, 9, 0)
@@ -2431,13 +2431,13 @@ void dng_jxl_decoder::Decode (dng_host &host,
                 #endif  // qDNGValidate
 
                 }
-            
+
             else
                 {
-                
+
                 // The color info cannot be represented as a JxlColorEncoding,
                 // so fetch as ICC profile instead.
-                
+
                 size_t profile_size;
 
                 CheckResult (JxlDecoderGetICCProfileSize
@@ -2449,26 +2449,26 @@ void dng_jxl_decoder::Decode (dng_host &host,
                               &profile_size),
                              "JxlDecoderGetICCProfileSize",
                              nullptr);
-                
+
                 if (profile_size < 132)
                     {
 
                     #if qLogJXL
-                    
+
                     printf ("ICC profile size %llu too small -- ignoring",
                             (unsigned long long) profile_size);
 
                     #endif
-                    
+
                     continue;
-                    
+
                     }
 
                 AutoPtr<dng_memory_block> profileBlock
                     (host.Allocate ((uint32) profile_size));
 
                 auto *profile = profileBlock->Buffer_uint8 ();
-                
+
                 CheckResult (JxlDecoderGetColorAsICCProfile
                              (dec,
 #if JPEGXL_NUMERIC_VERSION < JPEGXL_COMPUTE_NUMERIC_VERSION(0, 9, 0)
@@ -2500,7 +2500,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
                 #endif  // qDNGValidate
 
                 }
-            
+
             } // color profile info
 
         else if (status == JXL_DEC_FRAME)
@@ -2514,7 +2514,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
             if (gVerbose)
                 {
-                         
+
                 printf ("frame:\n");
 
                 if (frameHeader.name_length)
@@ -2567,9 +2567,9 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
         else if (status == JXL_DEC_BOX)
             {
-            
+
             boxReader.HandleDecBox ();
-                         
+
             }
 
         // Handle request for writing box data.
@@ -2602,10 +2602,10 @@ void dng_jxl_decoder::Decode (dng_host &host,
                 }
 
             uint32 pixelType = ttByte;
-            
+
             if (basicInfo.exponent_bits_per_sample == 0)
                 {
-                
+
                 // Integer.
 
                 if (basicInfo.bits_per_sample <= 8)
@@ -2613,11 +2613,11 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
                 else
                     {
-                    
+
                     pixelType = ttShort;
 
                     #if qLogJXL
-                    
+
                     if (basicInfo.bits_per_sample > 16)
                         printf ("jxl: bits per sample > 16; truncating to 16");
 
@@ -2632,13 +2632,13 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
                 // TODO(erichan): Do we want to try reading as fp16 if
                 // exponent_bits_per_sample is 5? For now, just read as fp32.
-                
+
                 // Float.
 
                 pixelType = ttFloat;
-                
+
                 }
-            
+
             JxlPixelFormat format;
 
             // Alpha support determines total # of planes. libjxl supports
@@ -2657,13 +2657,13 @@ void dng_jxl_decoder::Decode (dng_host &host,
             format.num_channels = totalPlanes;
 
             if (pixelType == ttByte)
-                format.data_type = JXL_TYPE_UINT8;              
+                format.data_type = JXL_TYPE_UINT8;
 
             else if (pixelType == ttShort)
-                format.data_type = JXL_TYPE_UINT16;             
+                format.data_type = JXL_TYPE_UINT16;
 
             else
-                format.data_type = JXL_TYPE_FLOAT;              
+                format.data_type = JXL_TYPE_FLOAT;
 
             format.endianness = JXL_NATIVE_ENDIAN;
 
@@ -2679,14 +2679,14 @@ void dng_jxl_decoder::Decode (dng_host &host,
             size.h = basicInfo.xsize;
             size.v = basicInfo.ysize;
 
-            // Set up chunky (row-col-plane interleaved) template buffer. 
+            // Set up chunky (row-col-plane interleaved) template buffer.
 
             auto &buffer      = cbData.fTemplateBuffer;
 
             buffer.fArea      = dng_rect (size);
 
             buffer.fPlanes    = totalPlanes;
-              
+
             buffer.fPlaneStep = 1;
             buffer.fColStep   = totalPlanes;
             buffer.fRowStep   = buffer.fColStep * size.h;
@@ -2707,13 +2707,13 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
                 if (doReadAlpha)
                     {
-                    
+
                     cbData.fAlphaMask.Reset (host.Make_dng_image (dng_rect (size),
                                                                   1,
                                                                   pixelType));
 
                     cbData.fAlphaPremultiplied = basicInfo.alpha_premultiplied;
-                    
+
                     }
 
                 }
@@ -2736,9 +2736,9 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
             cbData.fBlock.Reset (new jxl_memory_block (host.Allocator (),
                                                        bytesNeeded));
-            
+
             cbData.fWholeBuffer.fData = cbData.fBlock->Buffer ();
-              
+
             CheckResult
                 (JxlDecoderSetImageOutCallback
                  (dec,
@@ -2772,7 +2772,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
                          &parallelData);
 
             #endif  // incremental vs full
-              
+
             }
 
         // Event that full image has finished decoding or we're past this
@@ -2790,7 +2790,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
                 if (cbData.fImage.Get ())
                     {
-                
+
                     #if 1
 
                     // Multi-threaded put: much faster.
@@ -2815,7 +2815,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
                 if (cbData.fAlphaMask.Get ())
                     {
-                    
+
                     auto &dstImage = *cbData.fAlphaMask;
 
                     dng_put_alpha_buffer_task task (cbData.fWholeBuffer,
@@ -2823,7 +2823,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
                     host.PerformAreaTask (task,
                                           dstImage.Bounds ());
-                    
+
                     }
 
                 }
@@ -2845,7 +2845,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
             ThrowBadFormat ("unhandled jxl decoder status");
 
             }
-        
+
         } // jxl decode loop
 
     // Finished decode loop.
@@ -2895,7 +2895,7 @@ void dng_jxl_decoder::Decode (dng_host &host,
             ifd.fBitsPerSample [0] = (uint32) src.bits_per_sample;
 
             ifd.fSamplesPerPixel   = (uint32) src.num_color_channels;
-            
+
             ifd.fOrientation       = (uint32) src.orientation;
 
             if (src.exponent_bits_per_sample > 0)
@@ -2905,9 +2905,9 @@ void dng_jxl_decoder::Decode (dng_host &host,
                 ifd.fSampleFormat [0] = sfUnsignedInteger;
 
             // Remember the stream position.
-            
+
             ifd.fTileOffset [0]    = (uint64) startPosition;
-            
+
             }
 
         // Store basic info.
@@ -2918,12 +2918,12 @@ void dng_jxl_decoder::Decode (dng_host &host,
         fMainImageSize.v       = (int32) src.ysize;
 
         fMainImagePlanes       = (uint32) src.num_color_channels;
-        
+
         fBitsPerSample         = (uint32) src.bits_per_sample;
         fExponentBitsPerSample = (uint32) src.exponent_bits_per_sample;
-        
+
         fNumExtraChannels      = (uint32) src.num_extra_channels;
-        
+
         fHasPreview            = (src.have_preview != JXL_FALSE);
 
         fOrientation.SetTIFF ((uint32) src.orientation);
@@ -2938,17 +2938,17 @@ void dng_jxl_decoder::Decode (dng_host &host,
 
             DNG_REQUIRE (!cbData.fBlock->fUseMalloc,
                          "Expected dng_memory_block use for pixel buffer JXL decode");
-            
+
             DNG_REQUIRE (cbData.fBlock->fBlock.Get (),
                          "Missing dng_memory_block for pixel buffer JXL decode");
-            
+
             fMainBlock.Reset (cbData.fBlock->fBlock.Release ());
 
             }
 
         else
             {
-            
+
             fMainImage.Reset (cbData.fImage.Release ());
 
             fAlphaMask.Reset (cbData.fAlphaMask.Release ());
@@ -2961,9 +2961,9 @@ void dng_jxl_decoder::Decode (dng_host &host,
         // TODO(erichan): deal with depth, etc.
 
         // ....
-        
+
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -2983,7 +2983,7 @@ void dng_jxl_decoder::ProcessExifBox (dng_host &host,
         fInfo->Parse (host, exifStream);
 
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -2991,7 +2991,7 @@ void dng_jxl_decoder::ProcessExifBox (dng_host &host,
 void dng_jxl_decoder::ProcessXMPBox (dng_host &host,
                                      const std::vector<uint8> &data)
     {
-    
+
     #if qDNGValidate
 
     if (gVerbose)
@@ -3046,7 +3046,7 @@ void dng_jxl_decoder::ProcessXMPBox (dng_host &host,
             }
 
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -3055,7 +3055,7 @@ void dng_jxl_decoder::ProcessBox (dng_host & /* host */,
                                   const dng_string & /* name */,
                                   const std::vector<uint8> & /* data */)
     {
-    
+
     }
 
 /*****************************************************************************/
@@ -3064,7 +3064,7 @@ static bool DoParseJXL (dng_host &host,
                         dng_stream &stream,
                         dng_info &info)
     {
-    
+
     try
         {
 
@@ -3078,7 +3078,7 @@ static bool DoParseJXL (dng_host &host,
                         stream);
 
         return true;
-        
+
         }
 
     catch (const dng_exception &except)
@@ -3086,7 +3086,7 @@ static bool DoParseJXL (dng_host &host,
 
         // If we found a decoder error while parsing, then assume this is not
         // a valid JXL file.
-        
+
         if (except.ErrorCode () == dng_error_jxl_decoder)
             {
             return false;
@@ -3098,11 +3098,11 @@ static bool DoParseJXL (dng_host &host,
         // TODO(erichan): do we really want to throw for end of stream/file?
 
         throw;
-        
+
         }
 
     return false;
-    
+
     }
 
 /*****************************************************************************/
@@ -3111,7 +3111,7 @@ static bool ParseJXL_Basic (dng_host &host,
                             dng_stream &stream,
                             dng_info &info)
     {
-    
+
     if (stream.Length () < 2)
         {
         return false;
@@ -3120,26 +3120,26 @@ static bool ParseJXL_Basic (dng_host &host,
     const auto pos = stream.Position ();
 
     // Look for JPEG marker that indicates start of JXL codestream.
-        
+
     if (stream.Get_uint8 () != 0xFF)
         {
         return false;
         }
-        
+
     if (stream.Get_uint8 () != 0x0A)
         {
         return false;
         }
 
     #if qDNGValidate
-    
+
     if (gVerbose)
         {
         printf ("\nJXL (basic) file found\n");
         }
-        
+
     #endif
-    
+
     // Reset stream position.
 
     stream.SetReadPosition (pos);
@@ -3156,7 +3156,7 @@ static bool ParseJXL_Container (dng_host &host,
     {
 
     // Look for start of BMFF-based JXL container.
-    
+
     if (stream.Length () < 12)
         {
         return false;
@@ -3181,14 +3181,14 @@ static bool ParseJXL_Container (dng_host &host,
         }
 
     #if qDNGValidate
-    
+
     if (gVerbose)
         {
         printf ("\nJXL (container) file found\n");
         }
-        
+
     #endif
-    
+
     // Reset stream position.
 
     stream.SetReadPosition (pos);
@@ -3205,9 +3205,9 @@ bool ParseJXL (dng_host &host,
                bool supportBasicCodeStream,
                bool supportContainer)
     {
-    
+
     const uint64 startPosition = stream.Position ();
-    
+
     if (supportBasicCodeStream)
         {
 
@@ -3220,10 +3220,10 @@ bool ParseJXL (dng_host &host,
 
     if (supportContainer)
         {
-        
+
         if (ParseJXL_Container (host, stream, info))
             return true;
-        
+
         }
 
     return false;
@@ -3238,7 +3238,7 @@ void EncodeJXL_Tile (dng_host &host,
                      const dng_jxl_color_space_info &colorSpaceInfo,
                      const dng_jxl_encode_settings &settings)
     {
-    
+
     EncodeJXL (host,
                stream,
                image,
@@ -3250,7 +3250,7 @@ void EncodeJXL_Tile (dng_host &host,
                false,
                false,
                nullptr);                     // gain map meta
-    
+
     }
 
 /*****************************************************************************/
@@ -3261,7 +3261,7 @@ void EncodeJXL_Tile (dng_host &host,
                      const dng_jxl_color_space_info &colorSpaceInfo,
                      const dng_jxl_encode_settings &settings)
     {
-    
+
     EncodeJXL (host,
                stream,
                buffer,
@@ -3273,7 +3273,7 @@ void EncodeJXL_Tile (dng_host &host,
                false,
                false,
                nullptr);                     // gain map meta
-    
+
     }
 
 /*****************************************************************************/
@@ -3369,7 +3369,7 @@ real32 JXLQualityToDistance (uint32 quality)
 
 dng_jxl_encode_settings * JXLQualityToSettings (uint32 quality)
     {
-    
+
     AutoPtr<dng_jxl_encode_settings> settings (new dng_jxl_encode_settings);
 
     real32 d = JXLQualityToDistance (quality);
@@ -3380,7 +3380,7 @@ dng_jxl_encode_settings * JXLQualityToSettings (uint32 quality)
         settings->SetFastest ();             // Use fast lossless path
 
     return settings.Release ();
-    
+
     }
 
 /*****************************************************************************/
@@ -3425,7 +3425,7 @@ void PreviewColorSpaceToJXLEncoding (const PreviewColorSpaceEnum colorSpace,
 
         case previewColorSpace_AdobeRGB:
             {
-            
+
             encoding.color_space       = JXL_COLOR_SPACE_RGB;
             encoding.white_point       = JXL_WHITE_POINT_D65;
             encoding.primaries         = JXL_PRIMARIES_CUSTOM;
@@ -3442,7 +3442,7 @@ void PreviewColorSpaceToJXLEncoding (const PreviewColorSpaceEnum colorSpace,
             encoding.primaries_blue_xy  [1] = 0.0600;
 
             break;
-            
+
             }
 
         case previewColorSpace_ProPhotoRGB:
@@ -3467,9 +3467,9 @@ void PreviewColorSpaceToJXLEncoding (const PreviewColorSpaceEnum colorSpace,
 
             encoding.white_point_xy [0]     = white.x;
             encoding.white_point_xy [1]     = white.y;
-            
+
             break;
-            
+
             }
 
         case previewColorSpace_Unknown:
@@ -3490,7 +3490,7 @@ void PreviewColorSpaceToJXLEncoding (const PreviewColorSpaceEnum colorSpace,
                 encoding.primaries         = JXL_PRIMARIES_2100;  // unused
                 encoding.transfer_function = JXL_TRANSFER_FUNCTION_LINEAR;
                 }
-            
+
             else
                 {
                 encoding.color_space       = JXL_COLOR_SPACE_RGB;
@@ -3500,18 +3500,18 @@ void PreviewColorSpaceToJXLEncoding (const PreviewColorSpaceEnum colorSpace,
                 }
 
             break;
-            
+
             }
-        
+
         }
-    
+
     }
 
 /*****************************************************************************/
 
 bool SupportsJXL (const dng_image &image)
     {
-    
+
     // TODO(erichan): We should add an image size check. But currently JXL's
     // limits exceed our DNG SDK limits.
 
@@ -3529,7 +3529,7 @@ bool SupportsJXL (const dng_image &image)
              pixelType == ttShort     ||
              pixelType == ttHalfFloat ||
              pixelType == ttFloat));
-    
+
     }
 
 /*****************************************************************************/

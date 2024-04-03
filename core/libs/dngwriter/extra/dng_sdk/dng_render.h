@@ -33,17 +33,17 @@
 
 class dng_function_zero_offset: public dng_1d_function
     {
-    
+
     public:
-    
+
         real64 fZeroOffset;
-        
+
         real64 fScale;
-        
+
     public:
-        
+
         dng_function_zero_offset (real64 zeroOffset);
-        
+
         virtual real64 Evaluate (real64 x) const;
 
     };
@@ -55,30 +55,30 @@ class dng_function_zero_offset: public dng_1d_function
 
 class dng_function_exposure_ramp: public dng_1d_function
     {
-    
+
     public:
-    
+
         real64 fSlope;      // Slope of straight segment.
-        
+
         real64 fBlack;      // Intercept of straight segment.
-        
+
         real64 fRadius;     // Rounding radius.
-        
+
         real64 fQScale;     // Quadradic scale.
 
         const bool fSupportOverrange = false;
-        
+
     public:
-        
+
         dng_function_exposure_ramp (real64 white,
                                     real64 black,
                                     real64 minBlack,
                                     bool supportOverrange);
-            
+
         virtual real64 Evaluate (real64 x) const;
 
     };
-            
+
 /******************************************************************************/
 
 /// \brief Exposure compensation curve for a given compensation amount in stops using
@@ -86,65 +86,65 @@ class dng_function_exposure_ramp: public dng_1d_function
 
 class dng_function_exposure_tone: public dng_1d_function
     {
-    
+
     protected:
-    
+
         bool fIsNOP;        // Is this a NOP function?
-        
+
         real64 fSlope;      // Slope for lower part of curve.
-        
+
         real64 a;           // Quadradic parameters for upper two f-stops.
         real64 b;
         real64 c;
-    
+
     public:
-    
+
         dng_function_exposure_tone (real64 exposure);
-                
+
         /// Returns output value for a given input tone.
 
         virtual real64 Evaluate (real64 x) const;
-    
+
     };
-    
+
 /*****************************************************************************/
 
 /// Default ACR3 tone curve.
 
 class dng_tone_curve_acr3_default: public dng_1d_function
     {
-    
+
     public:
-        
+
         /// Returns output value for a given input tone.
 
         virtual real64 Evaluate (real64 x) const;
-        
+
         /// Returns nearest input value for a given output tone.
 
         virtual real64 EvaluateInverse (real64 x) const;
-        
+
         static const dng_1d_function & Get ();
 
     };
-            
+
 /*****************************************************************************/
 
 /// \brief Encoding gamma curve for a given color space.
 
 class dng_function_gamma_encode: public dng_1d_function
     {
-    
+
     protected:
-    
+
         const dng_color_space &fSpace;
-    
+
     public:
-    
+
         dng_function_gamma_encode (const dng_color_space &space);
-        
+
         virtual real64 Evaluate (real64 x) const;
-        
+
     };
 
 /*****************************************************************************/
@@ -153,48 +153,48 @@ class dng_function_gamma_encode: public dng_1d_function
 
 class dng_render: private dng_uncopyable
     {
-    
+
     protected:
-    
+
         dng_host &fHost;
-    
+
         const dng_negative &fNegative;
-    
+
         dng_xy_coord fWhiteXY;
-        
+
         real64 fExposure;
-        
+
         real64 fShadows;
-        
+
         const dng_1d_function *fToneCurve;
-        
+
         const dng_color_space *fFinalSpace;
-        
+
         uint32 fFinalPixelType;
-        
+
         uint32 fMaximumSize;
 
         // Which camera profile to use?
 
         dng_camera_profile_id fProfileID;
-        
+
     private:
-    
+
         AutoPtr<dng_spline_solver> fProfileToneCurve;
-        
+
     public:
-    
+
         /// Construct a rendering instance that will be used to convert a given digital negative.
         /// \param host The host to use for memory allocation, progress updates, and abort testing.
         /// \param negative The digital negative to convert to a displayable image.
 
         dng_render (dng_host &host,
                     const dng_negative &negative);
-        
+
         virtual ~dng_render ()
             {
             }
-        
+
         /// Set the white point to be used for conversion.
         /// \param white White point to use.
 
@@ -202,7 +202,7 @@ class dng_render: private dng_uncopyable
             {
             fWhiteXY = white;
             }
-            
+
         /// Get the white point to be used for conversion.
         /// \retval White point to use.
 
@@ -210,7 +210,7 @@ class dng_render: private dng_uncopyable
             {
             return fWhiteXY;
             }
-            
+
         /// Set exposure compensation.
         /// \param exposure Compensation value in stops, positive or negative.
 
@@ -218,7 +218,7 @@ class dng_render: private dng_uncopyable
             {
             fExposure = exposure;
             }
-            
+
         /// Get exposure compensation.
         /// \retval Compensation value in stops, positive or negative.
 
@@ -226,7 +226,7 @@ class dng_render: private dng_uncopyable
             {
             return fExposure;
             }
-            
+
         /// Set shadow clip amount.
         /// \param shadows Shadow clip amount.
 
@@ -234,7 +234,7 @@ class dng_render: private dng_uncopyable
             {
             fShadows = shadows;
             }
-            
+
         /// Get shadow clip amount.
         /// \retval Shadow clip amount.
 
@@ -242,15 +242,15 @@ class dng_render: private dng_uncopyable
             {
             return fShadows;
             }
-            
+
         /// Set custom tone curve for conversion.
         /// \param curve 1D function that defines tone mapping to use during conversion.
-    
+
         void SetToneCurve (const dng_1d_function &curve)
             {
             fToneCurve = &curve;
             }
-            
+
         /// Get custom tone curve for conversion.
         /// \retval 1D function that defines tone mapping to use during conversion.
 
@@ -267,12 +267,12 @@ class dng_render: private dng_uncopyable
             {
             fFinalSpace = &space;
             }
-            
+
         /// Get final color space in which resulting image data should be represented.
         /// \retval Color space to use.
 
         const dng_color_space & FinalSpace (const dng_camera_profile *profile) const;
-            
+
         /// Set pixel type of final image data.
         /// Can be ttByte (default), ttShort, or ttFloat.
         /// \param type Pixel type to use.
@@ -281,7 +281,7 @@ class dng_render: private dng_uncopyable
             {
             fFinalPixelType = type;
             }
-            
+
         /// Get pixel type of final image data.
         /// Can be ttByte (default), ttShort, or ttFloat.
         /// \retval Pixel type to use.
@@ -301,7 +301,7 @@ class dng_render: private dng_uncopyable
             {
             fMaximumSize = size;
             }
-            
+
         /// Get maximum dimension, in pixels, of resulting image.
         /// If the final image would have either dimension larger than this maximum, the larger
         /// of the two dimensions is set to this maximum size and the smaller dimension
@@ -332,11 +332,11 @@ class dng_render: private dng_uncopyable
         /// \retval The final resulting image.
 
         virtual dng_image * Render ();
-                                    
+
     };
 
 /*****************************************************************************/
 
 #endif  // __dng_render__
-    
+
 /*****************************************************************************/

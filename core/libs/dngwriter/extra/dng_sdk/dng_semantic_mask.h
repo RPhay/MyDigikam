@@ -27,7 +27,7 @@
 
 class dng_semantic_mask
     {
-        
+
     public:
 
         // String identifying the semantics of this mask. Corresponds to
@@ -54,14 +54,14 @@ class dng_semantic_mask
 
         // [0]: top crop
         // [1]: left crop
-        
+
         // [2]: width full
         // [3]: height full
 
         uint32 fMaskSubArea [4] = { 0, 0, 0, 0 };
-        
+
         // Lossy compressed data.
-        
+
         std::shared_ptr<const dng_lossy_compressed_image> fLossyCompressed;
 
     public:
@@ -70,7 +70,7 @@ class dng_semantic_mask
 
         void CalcMaskSubArea (dng_point &origin,
                               dng_rect &wholeImageArea) const;
-        
+
     };
 
 /*****************************************************************************/

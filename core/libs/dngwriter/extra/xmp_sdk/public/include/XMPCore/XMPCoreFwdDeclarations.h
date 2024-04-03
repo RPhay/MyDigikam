@@ -7,7 +7,7 @@
 // All Rights Reserved
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 // =================================================================================================
@@ -157,7 +157,7 @@ namespace AdobeXMPCore {
     typedef BASE_CLASS( IClientDOMSerializer, ICLIENTDOMSERIALIZER_VERSION )            IClientDOMSerializer;
     typedef IClientDOMSerializer *                                                      pIClientDOMSerializer;
     typedef const IClientDOMSerializer *                                                pcIClientDOMSerializer;
-    
+
     // IDOMParser
     class IDOMParser_v1;
     typedef IDOMParser_v1                                                               IDOMParser_base;
@@ -213,7 +213,7 @@ namespace AdobeXMPCore {
     typedef ICoreConfigurationManager *                                                 pICoreConfigurationManager;
     typedef const ICoreConfigurationManager *                                           pcICoreConfigurationManager;
     typedef shared_ptr< ICoreConfigurationManager >                                     spICoreConfigurationManager;
-    typedef shared_ptr< const ICoreConfigurationManager >                               spcICoreConfigurationManager;   
+    typedef shared_ptr< const ICoreConfigurationManager >                               spcICoreConfigurationManager;
     static const uint64 kICoreConfigurationManagerID                                    ( 0x63436f6e664d6772 /* cConfMgr */ );
 
     // IMetadataConverterUtils
@@ -316,7 +316,7 @@ namespace AdobeXMPCore_Int {
     class ICoreConfigurationManager_I;
     typedef ICoreConfigurationManager_I *                                               pICoreConfigurationManager_I;
     typedef const ICoreConfigurationManager_I *                                         pcICoreConfigurationManager_I;
-    
+
     // IMetadataConverterUtils_I
     class IMetadataConverterUtils_I;
     typedef IMetadataConverterUtils_I *                                                             pIMetadataConverterUtils_I;

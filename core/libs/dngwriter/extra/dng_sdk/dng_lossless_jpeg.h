@@ -25,20 +25,20 @@
 
 class dng_spooler
     {
-    
+
     protected:
-    
+
         virtual ~dng_spooler ()
             {
             }
-    
+
     public:
-    
+
         virtual void Spool (const void *data,
                             uint32 count) = 0;
-    
+
     };
-                           
+
 /*****************************************************************************/
 
 template<SIMDType simd>
@@ -62,5 +62,5 @@ void EncodeLosslessJPEG (const uint16 *srcData,
 /*****************************************************************************/
 
 #endif
-    
+
 /*****************************************************************************/

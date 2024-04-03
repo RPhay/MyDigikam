@@ -19,10 +19,10 @@
 
 /*****************************************************************************/
 
-/// \def qMacOS 
+/// \def qMacOS
 /// 1 if compiling for Mac OS X.
 
-/// \def qWinOS 
+/// \def qWinOS
 /// 1 if compiling for Windows.
 
 // Make sure a platform is defined
@@ -121,11 +121,11 @@
 #define qARM64 1
 #endif
 
-#ifndef qARM 
+#ifndef qARM
 #define qARM 0
 #endif
 
-#ifndef qARM64 
+#ifndef qARM64
 #define qARM64 0
 #endif
 
@@ -156,7 +156,7 @@
 
 /*****************************************************************************/
 
-/// \def qDNGDebug 
+/// \def qDNGDebug
 /// 1 if debug code is compiled in, 0 otherwise. Enables assertions and other debug
 /// checks in exchange for slower processing.
 
@@ -196,10 +196,10 @@
 
 // Figure out byte order.
 
-/// \def qDNGBigEndian 
+/// \def qDNGBigEndian
 /// 1 if this target platform is big endian (e.g. PowerPC Macintosh), else 0.
 ///
-/// \def qDNGLittleEndian 
+/// \def qDNGLittleEndian
 /// 1 if this target platform is little endian (e.g. x86 processors), else 0.
 
 #ifndef qDNGBigEndian
@@ -251,7 +251,7 @@
 
 /*****************************************************************************/
 
-/// \def qDNG64Bit 
+/// \def qDNG64Bit
 /// 1 if this target platform uses 64-bit addresses, 0 otherwise.
 
 #ifndef qDNG64Bit
@@ -324,7 +324,7 @@
 
 /*****************************************************************************/
 
-/// \def qDNGThreadSafe 
+/// \def qDNGThreadSafe
 /// 1 if target platform has thread support and threadsafe libraries, 0 otherwise.
 
 #ifndef qDNGThreadSafe
@@ -333,7 +333,7 @@
 
 /*****************************************************************************/
 
-/// \def qDNGValidateTarget 
+/// \def qDNGValidateTarget
 /// 1 if dng_validate command line tool is being built, 0 otherwise.
 
 #ifndef qDNGValidateTarget
@@ -342,7 +342,7 @@
 
 /*****************************************************************************/
 
-/// \def qDNGValidate 
+/// \def qDNGValidate
 /// 1 if DNG validation code is enabled, 0 otherwise.
 
 #ifndef qDNGValidate
@@ -351,7 +351,7 @@
 
 /*****************************************************************************/
 
-/// \def qDNGPrintMessages 
+/// \def qDNGPrintMessages
 /// 1 if dng_show_message should use fprintf to stderr. 0 if it should use a platform
 /// specific interrupt mechanism.
 
@@ -370,7 +370,7 @@
 
 /*****************************************************************************/
 
-/// \def qDNGXMPFiles 
+/// \def qDNGXMPFiles
 /// 1 to use XMPFiles.
 
 #ifndef qDNGXMPFiles
@@ -379,7 +379,7 @@
 
 /*****************************************************************************/
 
-/// \def qDNGXMPDocOps 
+/// \def qDNGXMPDocOps
 /// 1 to use XMPDocOps.
 
 #ifndef qDNGXMPDocOps
@@ -471,5 +471,5 @@
 /*****************************************************************************/
 
 #endif
-    
+
 /*****************************************************************************/

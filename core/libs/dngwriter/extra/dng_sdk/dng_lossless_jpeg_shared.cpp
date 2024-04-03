@@ -15,28 +15,28 @@
  * Copyright (c) 1993 Brian C. Smith, The Regents of the University
  * of California
  * All rights reserved.
- * 
+ *
  * Copyright (c) 1994 Kongji Huang and Brian C. Smith.
  * Cornell University
  * All rights reserved.
- * 
+ *
  * Permission to use, copy, modify, and distribute this software and its
  * documentation for any purpose, without fee, and without written agreement is
  * hereby granted, provided that the above copyright notice and the following
  * two paragraphs appear in all copies of this software.
- * 
+ *
  * IN NO EVENT SHALL CORNELL UNIVERSITY BE LIABLE TO ANY PARTY FOR
  * DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT
  * OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF CORNELL
  * UNIVERSITY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- * 
+ *
  * CORNELL UNIVERSITY SPECIFICALLY DISCLAIMS ANY WARRANTIES,
  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
  * AND FITNESS FOR A PARTICULAR PURPOSE.  THE SOFTWARE PROVIDED HEREUNDER IS
  * ON AN "AS IS" BASIS, AND CORNELL UNIVERSITY HAS NO OBLIGATION TO
  * PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
  */
- 
+
 /*****************************************************************************/
 
 #include "dng_lossless_jpeg.h"
@@ -88,10 +88,10 @@
  * may be some extra fields for encoding that aren't used in the decoding
  * and vice-versa.
  */
- 
+
 struct HuffmanTable
     {
-    
+
     /*
      * These two fields directly represent the contents of a JPEG DHT
      * marker
@@ -110,22 +110,22 @@ struct HuffmanTable
     int16 valptr[17];
     int32 numbits[256];
     int32 value[256];
-    
+
     uint16 ehufco[256];
     int8 ehufsi[256];
-    
+
     };
 
 /*****************************************************************************/
 
 // Computes the derived fields in the Huffman table structure.
- 
+
 static void FixHuffTbl (HuffmanTable *htbl)
     {
-    
+
     int32 l;
     int32 i;
-    
+
     const uint32 bitMask [] =
         {
         0xffffffff, 0x7fffffff, 0x3fffffff, 0x1fffffff,
@@ -137,50 +137,50 @@ static void FixHuffTbl (HuffmanTable *htbl)
         0x000000ff, 0x0000007f, 0x0000003f, 0x0000001f,
         0x0000000f, 0x00000007, 0x00000003, 0x00000001
         };
-        
+
     // Figure C.1: make table of Huffman code length for each symbol
     // Note that this is in code-length order.
 
     int8 huffsize [257];
-    
+
     int32 p = 0;
-    
+
     for (l = 1; l <= 16; l++)
         {
-        
+
         for (i = 1; i <= (int32) htbl->bits [l]; i++)
             huffsize [p++] = (int8) l;
 
         }
-        
+
     huffsize [p] = 0;
-    
+
     int32 lastp = p;
 
     // Figure C.2: generate the codes themselves
     // Note that this is in code-length order.
 
     uint16 huffcode [257];
-    
+
     uint16 code = 0;
-    
+
     int32 si = huffsize [0];
-    
+
     p = 0;
-    
+
     while (huffsize [p])
         {
-        
-        while (((int32) huffsize [p]) == si) 
+
+        while (((int32) huffsize [p]) == si)
             {
             huffcode [p++] = code;
             code++;
             }
-            
+
         code <<= 1;
-        
+
         si++;
-        
+
         }
 
     // Figure C.3: generate encoding tables
@@ -192,32 +192,32 @@ static void FixHuffTbl (HuffmanTable *htbl)
 
     for (p = 0; p < lastp; p++)
         {
-        
+
         htbl->ehufco [htbl->huffval [p]] = huffcode [p];
         htbl->ehufsi [htbl->huffval [p]] = huffsize [p];
-        
+
         }
-    
+
     // Figure F.15: generate decoding tables
- 
+
     p = 0;
-    
+
     for (l = 1; l <= 16; l++)
         {
-        
+
         if (htbl->bits [l])
             {
-            
+
             htbl->valptr  [l] = (int16) p;
             htbl->mincode [l] = huffcode [p];
-            
+
             p += htbl->bits [l];
-            
+
             htbl->maxcode [l] = huffcode [p - 1];
-            
+
             }
-            
-        else 
+
+        else
             {
             htbl->maxcode [l] = -1;
             }
@@ -235,21 +235,21 @@ static void FixHuffTbl (HuffmanTable *htbl)
     // code (this happens about 3-4% of the time).
 
     memset (htbl->numbits, 0, sizeof (htbl->numbits));
-    
+
     for (p = 0; p < lastp; p++)
         {
-        
+
         int32 size = huffsize [p];
-        
+
         if (size <= 8)
             {
-            
+
             int32 value = htbl->huffval [p];
-            
+
             code = huffcode [p];
-            
+
             int32 ll = code << (8  -size);
-            
+
             int32 ul = (size < 8 ? ll | bitMask [24 + size]
                                  : ll);
 
@@ -258,13 +258,13 @@ static void FixHuffTbl (HuffmanTable *htbl)
                 {
                 ThrowBadFormat ();
                 }
-                
+
             for (i = ll; i <= ul; i++)
                 {
                 htbl->numbits [i] = size;
                 htbl->value   [i] = value;
                 }
-                
+
             }
 
         }
@@ -276,10 +276,10 @@ static void FixHuffTbl (HuffmanTable *htbl)
 /*
  * The following structure stores basic information about one component.
  */
- 
+
 struct JpegComponentInfo
     {
-    
+
     /*
      * These values are fixed over the whole image.
      * They are read from the SOF marker.
@@ -289,7 +289,7 @@ struct JpegComponentInfo
 
     /*
      * Downsampling is not normally used in lossless JPEG, although
-     * it is permitted by the JPEG standard (DIS). We set all sampling 
+     * it is permitted by the JPEG standard (DIS). We set all sampling
      * factors to 1 in this program.
      */
     int16 hSampFactor;      /* horizontal sampling factor */
@@ -307,14 +307,14 @@ struct JpegComponentInfo
  * One of the following structures is used to pass around the
  * decompression information.
  */
- 
+
 struct DecompressInfo
     {
-    
+
     /*
      * Image width, height, and image data precision (bits/sample)
      * These fields are set by ReadFileHeader or ReadScanHeader
-     */ 
+     */
     int32 imageWidth;
     int32 imageHeight;
     int32 dataPrecision;
@@ -344,7 +344,7 @@ struct DecompressInfo
      */
     HuffmanTable *dcHuffTblPtrs[4];
 
-    /* 
+    /*
      * prediction selection value (PSV) and point transform parameter (Pt)
      */
     int32 Ss;
@@ -362,7 +362,7 @@ struct DecompressInfo
      */
     int32 restartRowsToGo;  /* MCUs rows left in this restart interval */
     int16 nextRestartNum;   /* # of next RSTn marker (0..7) */
-    
+
     };
 
 /*****************************************************************************/
@@ -378,55 +378,55 @@ typedef ComponentType *MCU;         // MCU - array of samples
 template <SIMDType simd>
 class dng_lossless_decoder: private dng_uncopyable
     {
-    
+
     private:
-    
+
         dng_stream *fStream;        // Input data.
-        
+
         dng_spooler *fSpooler;      // Output data.
-                
+
         bool fBug16;                // Decode data with the "16-bit" bug.
 
         dng_memory_data huffmanBuffer [4];
-        
+
         dng_memory_data compInfoBuffer;
-        
+
         DecompressInfo info;
-        
+
         dng_memory_data mcuBuffer1;
         dng_memory_data mcuBuffer2;
         dng_memory_data mcuBuffer3;
         dng_memory_data mcuBuffer4;
-    
+
         MCU *mcuROW1;
         MCU *mcuROW2;
-        
+
         uint64 getBuffer;           // current bit-extraction buffer
         int32 bitsLeft;             // # of unused bits in it
-                
+
         #if qSupportHasselblad_3FR
         bool fHasselblad3FR;
         #endif
 
     public:
-    
+
         dng_lossless_decoder (dng_stream *stream,
                               dng_spooler *spooler,
                               bool bug16);
-    
+
         void StartRead (uint32 &imageWidth,
                         uint32 &imageHeight,
                         uint32 &imageChannels);
 
         void FinishRead ();
-        
+
         #if qSupportHasselblad_3FR
-    
+
         bool IsHasselblad3FR ()
             {
             return fHasselblad3FR;
             }
-        
+
         #endif
 
     private:
@@ -435,14 +435,14 @@ class dng_lossless_decoder: private dng_uncopyable
             {
             return fStream->Get_uint8 ();
             }
-            
+
         DNG_ALWAYS_INLINE void UnGetJpegChar ()
             {
             fStream->SetReadPosition (fStream->Position () - 1);
             }
-            
+
         uint16 Get2bytes ();
-    
+
         void SkipVariable ();
 
         void GetDht ();
@@ -456,11 +456,11 @@ class dng_lossless_decoder: private dng_uncopyable
         void GetSos ();
 
         void GetSoi ();
-        
+
         int32 NextMarker ();
 
         JpegMarker ProcessTables ();
-        
+
         void ReadFileHeader ();
 
         int32 ReadScanHeader ();
@@ -498,7 +498,7 @@ class dng_lossless_decoder: private dng_uncopyable
         void DecodeFirstRow (MCU *curRowBuf);
 
         void DecodeImage ();
-        
+
     };
 
 /*****************************************************************************/
@@ -507,11 +507,11 @@ template <SIMDType simd>
 dng_lossless_decoder<simd>::dng_lossless_decoder (dng_stream *stream,
                                                   dng_spooler *spooler,
                                                   bool bug16)
-                                    
+
     :   fStream  (stream )
     ,   fSpooler (spooler)
     ,   fBug16   (bug16  )
-    
+
     ,   compInfoBuffer ()
     ,   info           ()
     ,   mcuBuffer1     ()
@@ -522,15 +522,15 @@ dng_lossless_decoder<simd>::dng_lossless_decoder (dng_stream *stream,
     ,   mcuROW2        (NULL)
     ,   getBuffer      (0)
     ,   bitsLeft       (0)
-    
+
     #if qSupportHasselblad_3FR
     ,   fHasselblad3FR (false)
     #endif
-    
+
     {
-    
+
     memset (&info, 0, sizeof (info));
-    
+
     }
 
 /*****************************************************************************/
@@ -538,11 +538,11 @@ dng_lossless_decoder<simd>::dng_lossless_decoder (dng_stream *stream,
 template <SIMDType simd>
 uint16 dng_lossless_decoder<simd>::Get2bytes ()
     {
-    
+
     uint16 a = GetJpegChar ();
-    
+
     return (uint16) ((a << 8) + GetJpegChar ());
-    
+
     }
 
 /*****************************************************************************/
@@ -563,13 +563,13 @@ uint16 dng_lossless_decoder<simd>::Get2bytes ()
  *
  *--------------------------------------------------------------
  */
- 
+
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::SkipVariable ()
     {
-    
+
     uint32 length = Get2bytes () - 2;
-    
+
     fStream->Skip (length);
 
     }
@@ -592,18 +592,18 @@ void dng_lossless_decoder<simd>::SkipVariable ()
  *
  *--------------------------------------------------------------
  */
- 
+
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::GetDht ()
     {
-    
+
     int32 length = Get2bytes () - 2;
-    
+
     while (length > 0)
         {
 
         int32 index = GetJpegChar ();
-        
+
         if (index < 0 || index >= 4)
             {
             ThrowBadFormat ();
@@ -613,42 +613,42 @@ void dng_lossless_decoder<simd>::GetDht ()
 
         if (htblptr == NULL)
             {
-            
+
             huffmanBuffer [index] . Allocate (sizeof (HuffmanTable));
-            
+
             htblptr = (HuffmanTable *) huffmanBuffer [index] . Buffer ();
-            
+
             }
 
         htblptr->bits [0] = 0;
-        
+
         int32 count = 0;
-        
+
         for (int32 i = 1; i <= 16; i++)
             {
-            
+
             htblptr->bits [i] = GetJpegChar ();
-            
+
             count += htblptr->bits [i];
-            
+
             }
 
-        if (count > 256) 
+        if (count > 256)
             {
             ThrowBadFormat ();
             }
 
         for (int32 j = 0; j < count; j++)
             {
-            
+
             htblptr->huffval [j] = GetJpegChar ();
-            
+
             }
 
         length -= 1 + 16 + count;
 
         }
-        
+
     }
 
 /*****************************************************************************/
@@ -673,12 +673,12 @@ void dng_lossless_decoder<simd>::GetDht ()
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::GetDri ()
     {
-    
+
     if (Get2bytes () != 4)
         {
         ThrowBadFormat ();
         }
-    
+
     info.restartInterval = Get2bytes ();
 
     }
@@ -706,7 +706,7 @@ void dng_lossless_decoder<simd>::GetApp0 ()
     {
 
     SkipVariable ();
-    
+
     }
 
 /*****************************************************************************/
@@ -728,11 +728,11 @@ void dng_lossless_decoder<simd>::GetApp0 ()
  *
  *--------------------------------------------------------------
  */
- 
+
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::GetSof (int32 /*code*/)
     {
-    
+
     int32 length = Get2bytes ();
 
     info.dataPrecision = GetJpegChar ();
@@ -743,9 +743,9 @@ void dng_lossless_decoder<simd>::GetSof (int32 /*code*/)
     // We don't support files in which the image height is initially
     // specified as 0 and is later redefined by DNL.  As long as we
     // have to check that, might as well have a general sanity check.
-     
+
     if ((info.imageHeight   <= 0) ||
-        (info.imageWidth    <= 0) || 
+        (info.imageWidth    <= 0) ||
         (info.numComponents <= 0))
         {
         ThrowBadFormat ();
@@ -761,42 +761,42 @@ void dng_lossless_decoder<simd>::GetSof (int32 /*code*/)
         {
         ThrowBadFormat ();
         }
-        
+
     // Check length of tag.
 
     if (length != (info.numComponents * 3 + 8))
         {
         ThrowBadFormat ();
         }
-        
+
     // Allocate per component info.
-    
+
     // We can cast info.numComponents to a uint32 because the check above
     // guarantees that it cannot be negative.
 
     compInfoBuffer.Allocate (static_cast<uint32> (info.numComponents),
                              sizeof (JpegComponentInfo));
-    
+
     info.compInfo = (JpegComponentInfo *) compInfoBuffer.Buffer ();
-                                 
+
     // Read in the per compent info.
 
     for (int32 ci = 0; ci < info.numComponents; ci++)
         {
-        
+
         JpegComponentInfo *compptr = &info.compInfo [ci];
-        
+
         compptr->componentIndex = (int16) ci;
-        
+
         compptr->componentId = GetJpegChar ();
-        
+
         int32 c = GetJpegChar ();
-        
+
         compptr->hSampFactor = (int16) ((c >> 4) & 15);
         compptr->vSampFactor = (int16) ((c     ) & 15);
-        
+
         (void) GetJpegChar ();   /* skip Tq */
-        
+
         }
 
     }
@@ -823,64 +823,64 @@ void dng_lossless_decoder<simd>::GetSof (int32 /*code*/)
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::GetSos ()
     {
-    
+
     int32 length = Get2bytes ();
 
     // Get the number of image components.
 
     int32 n = GetJpegChar ();
     info.compsInScan = (int16) n;
-    
+
     // Check length.
-    
+
     length -= 3;
 
     if (length != (n * 2 + 3) || n < 1 || n > 4)
         {
         ThrowBadFormat ();
         }
-    
+
     // Find index and huffman table for each component.
 
     for (int32 i = 0; i < n; i++)
         {
-        
+
         int32 cc = GetJpegChar ();
         int32 c  = GetJpegChar ();
-        
+
         int32 ci;
-        
+
         for (ci = 0; ci < info.numComponents; ci++)
             {
-            
+
             if (cc == info.compInfo[ci].componentId)
                 {
                 break;
                 }
-                
+
             }
 
-        if (ci >= info.numComponents) 
+        if (ci >= info.numComponents)
             {
             ThrowBadFormat ();
             }
 
         JpegComponentInfo *compptr = &info.compInfo [ci];
-        
+
         info.curCompInfo [i] = compptr;
-        
+
         compptr->dcTblNo = (int16) ((c >> 4) & 15);
-        
+
         }
 
     // Get the PSV, skip Se, and get the point transform parameter.
 
-    info.Ss = GetJpegChar (); 
-    
+    info.Ss = GetJpegChar ();
+
     (void) GetJpegChar ();
-    
+
     info.Pt = GetJpegChar () & 0x0F;
-    
+
     }
 
 /*****************************************************************************/
@@ -907,9 +907,9 @@ void dng_lossless_decoder<simd>::GetSoi ()
     {
 
     // Reset all parameters that are defined to be reset by SOI
-     
+
     info.restartInterval = 0;
-    
+
     }
 
 /*****************************************************************************/
@@ -934,33 +934,33 @@ void dng_lossless_decoder<simd>::GetSoi ()
 template <SIMDType simd>
 int32 dng_lossless_decoder<simd>::NextMarker ()
     {
-    
+
     int32 c;
 
     do
         {
 
         // skip any non-FF bytes
-        
-        do 
+
+        do
             {
             c = GetJpegChar ();
             }
         while (c != 0xFF);
-        
+
         // skip any duplicate FFs, since extra FFs are legal
-        
-        do 
+
+        do
             {
             c = GetJpegChar();
-            } 
+            }
         while (c == 0xFF);
-        
+
         }
     while (c == 0);     // repeat if it was a stuffed FF/00
 
     return c;
-    
+
     }
 
 /*****************************************************************************/
@@ -985,15 +985,15 @@ int32 dng_lossless_decoder<simd>::NextMarker ()
 template <SIMDType simd>
 JpegMarker dng_lossless_decoder<simd>::ProcessTables ()
     {
-    
+
     while (true)
         {
-    
+
         int32 c = NextMarker ();
-    
+
         switch (c)
             {
-            
+
             case M_SOF0:
             case M_SOF1:
             case M_SOF2:
@@ -1042,9 +1042,9 @@ JpegMarker dng_lossless_decoder<simd>::ProcessTables ()
             default:        // must be DNL, DHP, EXP, APPn, JPGn, COM, or RESn
                 SkipVariable ();
                 break;
-                
+
             }
-            
+
         }
 
         return M_ERROR;
@@ -1068,22 +1068,22 @@ JpegMarker dng_lossless_decoder<simd>::ProcessTables ()
  *
  *--------------------------------------------------------------
  */
- 
+
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::ReadFileHeader ()
     {
-    
+
     // Demand an SOI marker at the start of the stream --- otherwise it's
     // probably not a JPEG stream at all.
 
     int32 c  = GetJpegChar ();
     int32 c2 = GetJpegChar ();
-    
-    if ((c != 0xFF) || (c2 != M_SOI)) 
+
+    if ((c != 0xFF) || (c2 != M_SOI))
         {
         ThrowBadFormat ();
         }
-        
+
     // OK, process SOI
 
     GetSoi ();
@@ -1094,7 +1094,7 @@ void dng_lossless_decoder<simd>::ReadFileHeader ()
 
     switch (c)
         {
-        
+
         case M_SOF0:
         case M_SOF1:
         case M_SOF3:
@@ -1104,7 +1104,7 @@ void dng_lossless_decoder<simd>::ReadFileHeader ()
         default:
             ThrowBadFormat ();
             break;
-            
+
         }
 
     }
@@ -1137,7 +1137,7 @@ int32 dng_lossless_decoder<simd>::ReadScanHeader ()
 
     switch (c)
         {
-        
+
         case M_SOS:
             GetSos ();
             return 1;
@@ -1148,11 +1148,11 @@ int32 dng_lossless_decoder<simd>::ReadScanHeader ()
         default:
             ThrowBadFormat ();
             break;
-            
+
         }
-        
+
     return 0;
-    
+
     }
 
 /*****************************************************************************/
@@ -1177,11 +1177,11 @@ int32 dng_lossless_decoder<simd>::ReadScanHeader ()
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::DecoderStructInit ()
     {
-    
+
     int32 ci;
-    
+
     #if qSupportCanon_sRAW
-    
+
     bool canon_sRAW = (info.numComponents == 3) &&
                       (info.compInfo [0].hSampFactor == 2) &&
                       (info.compInfo [1].hSampFactor == 1) &&
@@ -1192,7 +1192,7 @@ void dng_lossless_decoder<simd>::DecoderStructInit ()
                       (info.dataPrecision == 15) &&
                       (info.Ss == 1) &&
                       ((info.imageWidth & 1) == 0);
-                      
+
     bool canon_sRAW2 = (info.numComponents == 3) &&
                        (info.compInfo [0].hSampFactor == 2) &&
                        (info.compInfo [1].hSampFactor == 1) &&
@@ -1204,11 +1204,11 @@ void dng_lossless_decoder<simd>::DecoderStructInit ()
                        (info.Ss == 1) &&
                        ((info.imageWidth  & 1) == 0) &&
                        ((info.imageHeight & 1) == 0);
-    
+
     #endif
-    
+
     #if qSupportSony_sRAW
-        
+
     bool sony_sRAW = (info.numComponents == 3) &&
                      (info.compInfo [0].hSampFactor == 2) &&
                      (info.compInfo [1].hSampFactor == 1) &&
@@ -1220,7 +1220,7 @@ void dng_lossless_decoder<simd>::DecoderStructInit ()
                      (info.Ss == 1) &&
                      ((info.imageWidth  & 1) == 0) &&
                      ((info.imageHeight & 1) == 0);
-    
+
     bool sony_sRAW2 = (info.numComponents == 3) &&
                      (info.compInfo [0].hSampFactor == 2) &&
                      (info.compInfo [1].hSampFactor == 1) &&
@@ -1232,33 +1232,33 @@ void dng_lossless_decoder<simd>::DecoderStructInit ()
                      (info.Ss == 1) &&
                      ((info.imageWidth  & 1) == 0) &&
                      ((info.imageHeight & 1) == 0);
-                       
+
     if (!canon_sRAW && !canon_sRAW2 && !sony_sRAW && !sony_sRAW2)
-    
+
     #endif
-    
+
         {
-    
+
         // Check sampling factor validity.
 
         for (ci = 0; ci < info.numComponents; ci++)
             {
-            
+
             JpegComponentInfo *compPtr = &info.compInfo [ci];
-            
+
             if (compPtr->hSampFactor != 1 ||
-                compPtr->vSampFactor != 1) 
+                compPtr->vSampFactor != 1)
                 {
                 ThrowBadFormat ();
                 }
-        
+
             }
-            
+
         }
-    
+
     // Prepare array describing MCU composition.
 
-    if (info.compsInScan < 0 || 
+    if (info.compsInScan < 0 ||
         info.compsInScan > 4)
         {
         ThrowBadFormat ();
@@ -1271,32 +1271,32 @@ void dng_lossless_decoder<simd>::DecoderStructInit ()
 
     // Initialize mucROW1 and mcuROW2 which buffer two rows of
     // pixels for predictor calculation.
-    
+
     // This multiplication cannot overflow because info.compsInScan is
     // guaranteed to be between 0 and 4 inclusive (see checks above).
 
     int32 mcuSize = info.compsInScan * (uint32) sizeof (ComponentType);
-    
+
     mcuBuffer1.Allocate (info.imageWidth, sizeof (MCU));
     mcuBuffer2.Allocate (info.imageWidth, sizeof (MCU));
-    
+
     mcuROW1 = (MCU *) mcuBuffer1.Buffer ();
     mcuROW2 = (MCU *) mcuBuffer2.Buffer ();
-    
+
     mcuBuffer3.Allocate (info.imageWidth, mcuSize);
     mcuBuffer4.Allocate (info.imageWidth, mcuSize);
-    
+
     mcuROW1 [0] = (ComponentType *) mcuBuffer3.Buffer ();
     mcuROW2 [0] = (ComponentType *) mcuBuffer4.Buffer ();
-    
+
     for (int32 j = 1; j < info.imageWidth; j++)
         {
-        
+
         mcuROW1 [j] = mcuROW1 [j - 1] + info.compsInScan;
         mcuROW2 [j] = mcuROW2 [j - 1] + info.compsInScan;
-    
+
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -1321,28 +1321,28 @@ void dng_lossless_decoder<simd>::DecoderStructInit ()
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::HuffDecoderInit ()
     {
-    
+
     // Initialize bit parser state
- 
+
     getBuffer = 0;
     bitsLeft  = 0;
-    
+
     // Prepare Huffman tables.
 
     for (int16 ci = 0; ci < info.compsInScan; ci++)
         {
-        
+
         JpegComponentInfo *compptr = info.curCompInfo [ci];
-        
+
         // Make sure requested tables are present
-        
+
         if (compptr->dcTblNo < 0 || compptr->dcTblNo > 3)
             {
             ThrowBadFormat ();
             }
 
-        if (info.dcHuffTblPtrs [compptr->dcTblNo] == NULL) 
-            { 
+        if (info.dcHuffTblPtrs [compptr->dcTblNo] == NULL)
+            {
             ThrowBadFormat ();
             }
 
@@ -1359,7 +1359,7 @@ void dng_lossless_decoder<simd>::HuffDecoderInit ()
     info.restartInRows   = info.restartInterval / info.imageWidth;
     info.restartRowsToGo = info.restartInRows;
     info.nextRestartNum  = 0;
-    
+
     }
 
 /*****************************************************************************/
@@ -1383,40 +1383,40 @@ void dng_lossless_decoder<simd>::HuffDecoderInit ()
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::ProcessRestart ()
     {
-    
+
     // Throw away and unused odd bits in the bit buffer.
-    
+
     fStream->SetReadPosition (fStream->Position () - bitsLeft / 8);
-    
+
     bitsLeft  = 0;
     getBuffer = 0;
-    
+
     // Scan for next JPEG marker
 
     int32 c;
 
     do
         {
-        
+
         // skip any non-FF bytes
-        
-        do 
-            { 
+
+        do
+            {
             c = GetJpegChar ();
             }
         while (c != 0xFF);
-        
+
         // skip any duplicate FFs
-        
+
         do
             {
             c = GetJpegChar ();
             }
         while (c == 0xFF);
-        
+
         }
     while (c == 0);     // repeat if it was a stuffed FF/00
-    
+
     // Verify correct restart code.
 
     if (c != (M_RST0 + info.nextRestartNum))
@@ -1428,7 +1428,7 @@ void dng_lossless_decoder<simd>::ProcessRestart ()
 
     info.restartRowsToGo = info.restartInRows;
     info.nextRestartNum  = (info.nextRestartNum + 1) & 7;
-    
+
     }
 
 /*****************************************************************************/
@@ -1439,8 +1439,8 @@ void dng_lossless_decoder<simd>::ProcessRestart ()
  * QuickPredict --
  *
  *      Calculate the predictor for sample curRowBuf[col][curComp].
- *  It does not handle the special cases at image edges, such 
- *      as first row and first column of a scan. We put the special 
+ *  It does not handle the special cases at image edges, such
+ *      as first row and first column of a scan. We put the special
  *  case checkings outside so that the computations in main
  *  loop can be simpler. This has enhenced the performance
  *  significantly.
@@ -1453,24 +1453,24 @@ void dng_lossless_decoder<simd>::ProcessRestart ()
  *
  *--------------------------------------------------------------
  */
- 
+
 template <SIMDType simd>
 DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::QuickPredict (int32 col,
                                                                   int32 curComp,
                                                                   MCU *curRowBuf,
                                                                   MCU *prevRowBuf)
     {
-    
+
     int32 diag  = prevRowBuf [col - 1] [curComp];
     int32 upper = prevRowBuf [col    ] [curComp];
     int32 left  = curRowBuf  [col - 1] [curComp];
 
     switch (info.Ss)
         {
-        
+
         case 0:
             return 0;
-            
+
         case 1:
             return left;
 
@@ -1497,11 +1497,11 @@ DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::QuickPredict (int32 col,
             ThrowBadFormat ();
             return 0;
             }
-              
+
         }
-     
+
     }
-    
+
 /*****************************************************************************/
 
 /*
@@ -1524,22 +1524,22 @@ DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::QuickPredict (int32 col,
 template <SIMDType simd>
 DNG_ALWAYS_INLINE void dng_lossless_decoder<simd>::FillBitBuffer (int32 nbits)
     {
-    
+
     const int32 kMinGetBits = sizeof (uint32) * 8 - 7;
-    
+
     #if qSupportHasselblad_3FR
-    
+
     if (fHasselblad3FR)
         {
-        
+
         while (bitsLeft < kMinGetBits)
             {
-            
+
             int32 c0 = 0;
             int32 c1 = 0;
             int32 c2 = 0;
             int32 c3 = 0;
-            
+
             try
                 {
                 c0 = GetJpegChar ();
@@ -1547,63 +1547,63 @@ DNG_ALWAYS_INLINE void dng_lossless_decoder<simd>::FillBitBuffer (int32 nbits)
                 c2 = GetJpegChar ();
                 c3 = GetJpegChar ();
                 }
-                
+
             catch (dng_exception &except)
                 {
-                
+
                 // If we got any exception other than EOF, rethrow.
-                
+
                 if (except.ErrorCode () != dng_error_end_of_file)
                     {
                     throw except;
                     }
-                    
+
                 // Some Hasselblad files now use the JPEG end of image marker.
                 // If we DIDN'T hit that, rethrow.
                 // This sequence also sometimes occurs in the image data, so
                 // we can't simply check for it and exit - we need to wait until
                 // we throw the EOF and then look to see if we had it.
-                    
+
                 // Look for the marker in c1 and c2 as well.
                 // (if we get it in c2 and c3, we won't throw.)
-                
+
                 if (!((c0 == 0xFF && c1 == 0xD9) ||
                       (c1 == 0xFF && c2 == 0xD9)))
                     {
                     throw except;
                     }
-                
+
                 // Swallow the case where we hit EOF with the JPEG EOI marker.
-                    
+
                 }
-            
+
             getBuffer = (getBuffer << 8) | c3;
             getBuffer = (getBuffer << 8) | c2;
             getBuffer = (getBuffer << 8) | c1;
             getBuffer = (getBuffer << 8) | c0;
-            
+
             bitsLeft += 32;
-            
+
             }
-            
+
         return;
-        
+
         }
-    
+
     #endif
-    
+
     while (bitsLeft < kMinGetBits)
         {
-        
+
         int32 c = GetJpegChar ();
 
         // If it's 0xFF, check and discard stuffed zero byte
 
         if (c == 0xFF)
             {
-            
+
             int32 c2 = GetJpegChar ();
-            
+
             if (c2 != 0)
                 {
 
@@ -1625,17 +1625,17 @@ DNG_ALWAYS_INLINE void dng_lossless_decoder<simd>::FillBitBuffer (int32 nbits)
                 // segment.
 
                 c = 0;
-                
+
                 }
-                
+
             }
-            
+
         getBuffer = (getBuffer << 8) | c;
-        
+
         bitsLeft += 8;
-        
+
         }
- 
+
     }
 
 /*****************************************************************************/
@@ -1643,12 +1643,12 @@ DNG_ALWAYS_INLINE void dng_lossless_decoder<simd>::FillBitBuffer (int32 nbits)
 template <SIMDType simd>
 DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::show_bits8 ()
     {
-    
+
     if (bitsLeft < 8)
         FillBitBuffer (8);
-        
+
     return (int32) ((getBuffer >> (bitsLeft - 8)) & 0xff);
-    
+
     }
 
 /*****************************************************************************/
@@ -1656,9 +1656,9 @@ DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::show_bits8 ()
 template <SIMDType simd>
 DNG_ALWAYS_INLINE void dng_lossless_decoder<simd>::flush_bits (int32 nbits)
     {
-    
+
     bitsLeft -= nbits;
-    
+
     }
 
 /*****************************************************************************/
@@ -1693,12 +1693,12 @@ static const int32 get_bits_mask[17] = {
 template <SIMDType simd>
 DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::get_bits (int32 nbits)
     {
-    
+
     if (nbits > 16)
         {
         ThrowBadFormat ();
         }
-    
+
     if (bitsLeft < nbits)
         FillBitBuffer (nbits);
 
@@ -1707,11 +1707,11 @@ DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::get_bits (int32 nbits)
     return (int32) ((getBuffer >> (bitsLeft -= nbits)) & get_bits_mask [nbits]);
 
     #else
-        
+
     return (int32) ((getBuffer >> (bitsLeft -= nbits)) & (0x0FFFF >> (16 - nbits)));
 
     #endif
-    
+
     }
 
 /*****************************************************************************/
@@ -1719,12 +1719,12 @@ DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::get_bits (int32 nbits)
 template <SIMDType simd>
 DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::get_bit ()
     {
-    
+
     if (!bitsLeft)
         FillBitBuffer (1);
-        
+
     return (int32) ((getBuffer >> (--bitsLeft)) & 1);
-    
+
     }
 
 /*****************************************************************************/
@@ -1749,30 +1749,30 @@ DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::get_bit ()
 template <SIMDType simd>
 DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::HuffDecode (HuffmanTable *htbl)
     {
-    
+
     // If the huffman code is less than 8 bits, we can use the fast
     // table lookup to get its value.  It's more than 8 bits about
     // 3-4% of the time.
 
     int32 code = show_bits8 ();
-    
+
     if (htbl->numbits [code])
         {
-        
+
         flush_bits (htbl->numbits [code]);
-        
+
         return htbl->value [code];
-        
+
         }
-        
+
     else
         {
-        
+
         flush_bits (8);
-        
+
         int32 l = 8;
-        
-        while (code > htbl->maxcode [l]) 
+
+        while (code > htbl->maxcode [l])
             {
             code = (code << 1) | get_bit ();
             l++;
@@ -1780,7 +1780,7 @@ DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::HuffDecode (HuffmanTable *ht
 
         // With garbage input we may reach the sentinel value l = 17.
 
-        if (l > 16) 
+        if (l > 16)
             {
             return 0;       // fake a zero as the safest result
             }
@@ -1789,9 +1789,9 @@ DNG_ALWAYS_INLINE int32 dng_lossless_decoder<simd>::HuffDecode (HuffmanTable *ht
             return htbl->huffval [htbl->valptr [l] +
                                   ((int32) (code - htbl->mincode [l]))];
             }
-            
+
         }
-        
+
     }
 
 /*****************************************************************************/
@@ -1830,7 +1830,7 @@ DNG_ALWAYS_INLINE void dng_lossless_decoder<simd>::HuffExtend (int32 &x, int32 s
     #else
 
     // Reference path.
-    
+
     if (x < (0x08000 >> (16 - s)))
         {
         x += (-1 << s) + 1;
@@ -1851,13 +1851,13 @@ void dng_lossless_decoder<simd>::PmPutRow (MCU *buf,
                                            int32 numCol,
                                            int32 /* row */)
     {
-    
+
     uint16 *sPtr = &buf [0] [0];
-    
+
     uint32 pixels = numCol * numComp;
-    
+
     fSpooler->Spool (sPtr, pixels * (uint32) sizeof (uint16));
-        
+
     }
 
 /*****************************************************************************/
@@ -1867,7 +1867,7 @@ void dng_lossless_decoder<simd>::PmPutRow (MCU *buf,
  *
  * DecodeFirstRow --
  *
- *  Decode the first raster line of samples at the start of 
+ *  Decode the first raster line of samples at the start of
  *      the scan and at the beginning of each restart interval.
  *  This includes modifying the component value so the real
  *      value, not the difference is returned.
@@ -1880,38 +1880,38 @@ void dng_lossless_decoder<simd>::PmPutRow (MCU *buf,
  *
  *--------------------------------------------------------------
  */
- 
+
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::DecodeFirstRow (MCU *curRowBuf)
     {
-    
+
     int32 compsInScan = info.compsInScan;
-    
+
     // Process the first column in the row.
 
-    for (int32 curComp = 0; curComp < compsInScan; curComp++) 
+    for (int32 curComp = 0; curComp < compsInScan; curComp++)
         {
-        
+
         int32 ci = info.MCUmembership [curComp];
-        
+
         JpegComponentInfo *compptr = info.curCompInfo [ci];
-        
+
         HuffmanTable *dctbl = info.dcHuffTblPtrs [compptr->dcTblNo];
 
         // Section F.2.2.1: decode the difference
 
         int32 d = 0;
-    
+
         int32 s = HuffDecode (dctbl);
-        
+
         if (s)
             {
-            
+
             if (s == 16 && !fBug16)
                 {
                 d = -32768;
                 }
-            
+
             else
                 {
                 d = get_bits (s);
@@ -1924,33 +1924,33 @@ void dng_lossless_decoder<simd>::DecodeFirstRow (MCU *curRowBuf)
 
         int32 Pr = info.dataPrecision;
         int32 Pt = info.Pt;
-    
+
         curRowBuf [0] [curComp] = (ComponentType) (d + (1 << (Pr-Pt-1)));
-        
+
         }
-        
+
     // Process the rest of the row.
-    
+
     int32 numCOL = info.imageWidth;
-    
+
     for (int32 col = 1; col < numCOL; col++)
         {
 
         for (int32 curComp = 0; curComp < compsInScan; curComp++)
             {
-            
+
             int32 ci = info.MCUmembership [curComp];
-            
+
             JpegComponentInfo *compptr = info.curCompInfo [ci];
-            
+
             HuffmanTable *dctbl = info.dcHuffTblPtrs [compptr->dcTblNo];
 
             // Section F.2.2.1: decode the difference
 
             int32 d = 0;
-        
+
             int32 s = HuffDecode (dctbl);
-            
+
             if (s)
                 {
 
@@ -1958,7 +1958,7 @@ void dng_lossless_decoder<simd>::DecodeFirstRow (MCU *curRowBuf)
                     {
                     d = -32768;
                     }
-                
+
                 else
                     {
                     d = get_bits (s);
@@ -1966,22 +1966,22 @@ void dng_lossless_decoder<simd>::DecodeFirstRow (MCU *curRowBuf)
                     }
 
                 }
-                
+
             // Add the predictor to the difference.
 
             curRowBuf [col] [curComp] = (ComponentType) (d + curRowBuf [col-1] [curComp]);
-            
+
             }
-            
+
         }
-        
+
     // Update the restart counter
 
     if (info.restartInRows)
         {
         info.restartRowsToGo--;
         }
-        
+
     }
 
 /*****************************************************************************/
@@ -2003,13 +2003,13 @@ void dng_lossless_decoder<simd>::DecodeFirstRow (MCU *curRowBuf)
  *
  *--------------------------------------------------------------
  */
- 
+
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::DecodeImage ()
     {
-    
+
     #if qSupportSony_sRAW
-        
+
     bool sony_sRAW = (info.numComponents == 3) &&
                      (info.compInfo [0].hSampFactor == 2) &&
                      (info.compInfo [1].hSampFactor == 1) &&
@@ -2021,7 +2021,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                      (info.Ss == 1) &&
                      ((info.imageWidth  & 1) == 0) &&
                      ((info.imageHeight & 1) == 0);
-        
+
     bool sony_sRAW2 = (info.numComponents == 3) &&
                      (info.compInfo [0].hSampFactor == 2) &&
                      (info.compInfo [1].hSampFactor == 1) &&
@@ -2035,86 +2035,86 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                      ((info.imageHeight & 1) == 0);
 
     #endif
-    
+
     #define swap(type,a,b) {type c; c=(a); (a)=(b); (b)=c;}
 
     int32 numCOL      = info.imageWidth;
     int32 numROW      = info.imageHeight;
     int32 compsInScan = info.compsInScan;
-    
+
     // Precompute the decoding table for each table.
-    
+
     HuffmanTable *ht [4];
 
     memset (ht, 0, sizeof (ht));
-    
+
     for (int32 curComp = 0; curComp < compsInScan; curComp++)
         {
-        
+
         int32 ci = info.MCUmembership [curComp];
-        
+
         JpegComponentInfo *compptr = info.curCompInfo [ci];
-        
+
         ht [curComp] = info.dcHuffTblPtrs [compptr->dcTblNo];
 
         }
-        
+
     MCU *prevRowBuf = mcuROW1;
     MCU *curRowBuf  = mcuROW2;
-    
+
     #if qSupportCanon_sRAW && qSupportSony_sRAW
-        
+
     // Canon sRAW support and Sony sRAW.
-    
+
     if (info.compInfo [0].hSampFactor == 2 &&
         info.compInfo [0].vSampFactor == 1)
         {
-    
+
         for (int32 row = 0; row < numROW; row++)
             {
-            
+
             // Initialize predictors.
-            
+
             int32 p0;
             int32 p1;
             int32 p2;
-            
+
             if (row == 0)
                 {
-                
+
                 if (sony_sRAW2)
                     {
                     p0 = 1 << 15;
                     }
-                
+
                 else // Canon.
                     {
                     p0 = 1 << 14;
                     }
-                
+
                 p1 = 1 << 14;
                 p2 = 1 << 14;
-                
+
                 }
-                
+
             else
                 {
                 p0 = prevRowBuf [0] [0];
                 p1 = prevRowBuf [0] [1];
                 p2 = prevRowBuf [0] [2];
                 }
-            
+
             for (int32 col = 0; col < numCOL; col += 2)
                 {
-                
+
                 // Read first luminance component.
-                
+
                     {
-                
+
                     int32 d = 0;
-                
+
                     int32 s = HuffDecode (ht [0]);
-                    
+
                     if (s)
                         {
 
@@ -2122,7 +2122,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                             {
                             d = -32768;
                             }
-                        
+
                         else
                             {
                             d = get_bits (s);
@@ -2130,21 +2130,21 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                             }
 
                         }
-                        
+
                     p0 += d;
-                    
+
                     curRowBuf [col] [0] = (ComponentType) p0;
-                
+
                     }
-                
+
                 // Read second luminance component.
-                
+
                     {
-                
+
                     int32 d = 0;
-                
+
                     int32 s = HuffDecode (ht [0]);
-                    
+
                     if (s)
                         {
 
@@ -2152,7 +2152,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                             {
                             d = -32768;
                             }
-                        
+
                         else
                             {
                             d = get_bits (s);
@@ -2160,21 +2160,21 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                             }
 
                         }
-                        
+
                     p0 += d;
-                    
+
                     curRowBuf [col + 1] [0] = (ComponentType) p0;
-                
+
                     }
-                
+
                 // Read first chroma component.
-                
+
                     {
-                
+
                     int32 d = 0;
-                
+
                     int32 s = HuffDecode (ht [1]);
-                    
+
                     if (s)
                         {
 
@@ -2182,7 +2182,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                             {
                             d = -32768;
                             }
-                        
+
                         else
                             {
                             d = get_bits (s);
@@ -2190,22 +2190,22 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                             }
 
                         }
-                        
+
                     p1 += d;
-                    
+
                     curRowBuf [col    ] [1] = (ComponentType) p1;
                     curRowBuf [col + 1] [1] = (ComponentType) p1;
-                
+
                     }
-                
+
                 // Read second chroma component.
-                
+
                     {
-                
+
                     int32 d = 0;
-                
+
                     int32 s = HuffDecode (ht [2]);
-                    
+
                     if (s)
                         {
 
@@ -2213,7 +2213,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                             {
                             d = -32768;
                             }
-                        
+
                         else
                             {
                             d = get_bits (s);
@@ -2221,57 +2221,57 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                             }
 
                         }
-                        
+
                     p2 += d;
-                    
+
                     curRowBuf [col    ] [2] = (ComponentType) p2;
                     curRowBuf [col + 1] [2] = (ComponentType) p2;
-                
+
                     }
-                                
+
                 }
-            
+
             PmPutRow (curRowBuf, compsInScan, numCOL, row);
 
             swap (MCU *, prevRowBuf, curRowBuf);
-            
+
             }
-            
+
         return;
-        
+
         }
-    
+
     if (info.compInfo [0].hSampFactor == 2 &&
         info.compInfo [0].vSampFactor == 2)
         {
-    
+
         for (int32 row = 0; row < numROW; row += 2)
             {
-            
+
             // Sony sRaw.
-            
+
             if (sony_sRAW)
                 {
-            
+
                 // Initialize predictors.
 
                 int32 p00 = 0;
                 int32 p01 = 0;
                 int32 p10 = 0;
                 int32 p11 = 0;
-                
+
                 int32 p1 = 0;
                 int32 p2 = 0;
-                
+
                 if (row == 0)
                     {
-                    
+
                     p00 = 1 << 15;
                     p1  = 1 << 14;
                     p2  = 1 << 14;
-                    
+
                     }
-                    
+
                 else
                     {
                     p00 = prevRowBuf [0] [0];
@@ -2281,15 +2281,15 @@ void dng_lossless_decoder<simd>::DecodeImage ()
 
                 for (int32 col = 0; col < numCOL; col += 2)
                     {
-            
+
                     // Read first luminance component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [0]);
-                        
+
                         if (s)
                             {
 
@@ -2297,7 +2297,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2309,17 +2309,17 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                         p00 = d + ((col == 0) ? p00 : p01);
 
                         prevRowBuf [col] [0] = (ComponentType) p00;
-                    
+
                         }
-                    
+
                     // Read second luminance component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [0]);
-                        
+
                         if (s)
                             {
 
@@ -2327,7 +2327,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2337,19 +2337,19 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                             }
 
                         p01 = p00 + d;
-                        
+
                         prevRowBuf [col + 1] [0] = (ComponentType) p01;
-                    
+
                         }
-                    
+
                     // Read third luminance component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [0]);
-                        
+
                         if (s)
                             {
 
@@ -2357,7 +2357,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2365,21 +2365,21 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 }
 
                             }
-                        
+
                         p10 = d + ((col == 0) ? p00 : p11);
 
                         curRowBuf [col] [0] = (ComponentType) p10;
-                    
+
                         }
-                    
+
                     // Read fourth luminance component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [0]);
-                        
+
                         if (s)
                             {
 
@@ -2387,7 +2387,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2395,21 +2395,21 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 }
 
                             }
-                            
+
                         p11 = p10 + d;
-                        
+
                         curRowBuf [col + 1] [0] = (ComponentType) p11;
-                    
+
                         }
-                    
+
                     // Read first chroma component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [1]);
-                        
+
                         if (s)
                             {
 
@@ -2417,7 +2417,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2425,25 +2425,25 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 }
 
                             }
-                            
+
                         p1 += d;
-                        
+
                         prevRowBuf [col    ] [1] = (ComponentType) p1;
                         prevRowBuf [col + 1] [1] = (ComponentType) p1;
 
                         curRowBuf [col    ] [1] = (ComponentType) p1;
                         curRowBuf [col + 1] [1] = (ComponentType) p1;
-                    
+
                         }
-                    
+
                     // Read second chroma component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [2]);
-                        
+
                         if (s)
                             {
 
@@ -2451,7 +2451,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2459,60 +2459,60 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 }
 
                             }
-                            
+
                         p2 += d;
-                        
+
                         prevRowBuf [col    ] [2] = (ComponentType) p2;
                         prevRowBuf [col + 1] [2] = (ComponentType) p2;
-                    
+
                         curRowBuf [col    ] [2] = (ComponentType) p2;
                         curRowBuf [col + 1] [2] = (ComponentType) p2;
-                    
+
                         }
-                                    
+
                     }
-                
+
                 PmPutRow (prevRowBuf, compsInScan, numCOL, row);
                 PmPutRow (curRowBuf, compsInScan, numCOL, row);
-                
+
                 }
-            
+
             // Canon sRaw.
-            
+
             else
                 {
-                
+
                 // Initialize predictors.
-                
+
                 int32 p0;
                 int32 p1;
                 int32 p2;
-                
+
                 if (row == 0)
                     {
                     p0 = 1 << 14;
                     p1 = 1 << 14;
                     p2 = 1 << 14;
                     }
-                    
+
                 else
                     {
                     p0 = prevRowBuf [0] [0];
                     p1 = prevRowBuf [0] [1];
                     p2 = prevRowBuf [0] [2];
                     }
-                
+
                 for (int32 col = 0; col < numCOL; col += 2)
                     {
-                    
+
                     // Read first luminance component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [0]);
-                        
+
                         if (s)
                             {
 
@@ -2520,7 +2520,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2528,21 +2528,21 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 }
 
                             }
-                            
+
                         p0 += d;
-                        
+
                         prevRowBuf [col] [0] = (ComponentType) p0;
-                    
+
                         }
-                    
+
                     // Read second luminance component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [0]);
-                        
+
                         if (s)
                             {
 
@@ -2550,7 +2550,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2558,21 +2558,21 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 }
 
                             }
-                            
+
                         p0 += d;
-                        
+
                         prevRowBuf [col + 1] [0] = (ComponentType) p0;
-                    
+
                         }
-                    
+
                     // Read third luminance component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [0]);
-                        
+
                         if (s)
                             {
 
@@ -2580,7 +2580,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2588,21 +2588,21 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 }
 
                             }
-                            
+
                         p0 += d;
-                        
+
                         curRowBuf [col] [0] = (ComponentType) p0;
-                    
+
                         }
-                    
+
                     // Read fourth luminance component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [0]);
-                        
+
                         if (s)
                             {
 
@@ -2610,7 +2610,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2618,21 +2618,21 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 }
 
                             }
-                            
+
                         p0 += d;
-                        
+
                         curRowBuf [col + 1] [0] = (ComponentType) p0;
-                    
+
                         }
-                    
+
                     // Read first chroma component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [1]);
-                        
+
                         if (s)
                             {
 
@@ -2640,7 +2640,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2648,25 +2648,25 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 }
 
                             }
-                            
+
                         p1 += d;
-                        
+
                         prevRowBuf [col    ] [1] = (ComponentType) p1;
                         prevRowBuf [col + 1] [1] = (ComponentType) p1;
 
                         curRowBuf [col    ] [1] = (ComponentType) p1;
                         curRowBuf [col + 1] [1] = (ComponentType) p1;
-                    
+
                         }
-                    
+
                     // Read second chroma component.
-                    
+
                         {
-                    
+
                         int32 d = 0;
-                    
+
                         int32 s = HuffDecode (ht [2]);
-                        
+
                         if (s)
                             {
 
@@ -2674,7 +2674,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 {
                                 d = -32768;
                                 }
-                            
+
                             else
                                 {
                                 d = get_bits (s);
@@ -2682,51 +2682,51 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                                 }
 
                             }
-                            
+
                         p2 += d;
-                        
+
                         prevRowBuf [col    ] [2] = (ComponentType) p2;
                         prevRowBuf [col + 1] [2] = (ComponentType) p2;
-                    
+
                         curRowBuf [col    ] [2] = (ComponentType) p2;
                         curRowBuf [col + 1] [2] = (ComponentType) p2;
-                    
+
                         }
-                                    
+
                     }
-                
+
                 PmPutRow (prevRowBuf, compsInScan, numCOL, row);
                 PmPutRow (curRowBuf, compsInScan, numCOL, row);
-                
+
                 }
 
             }
-            
+
         return;
-        
+
         }
 
     #endif
-    
+
     #if qSupportHasselblad_3FR
-    
+
     if (info.Ss == 8 && (numCOL & 1) == 0)
         {
-        
+
         fHasselblad3FR = true;
-        
+
         for (int32 row = 0; row < numROW; row++)
             {
-            
+
             int32 p0 = 32768;
             int32 p1 = 32768;
-            
+
             for (int32 col = 0; col < numCOL; col += 2)
                 {
-                
+
                 int32 s0 = HuffDecode (ht [0]);
                 int32 s1 = HuffDecode (ht [0]);
-                
+
                 if (s0)
                     {
                     int32 d = get_bits (s0);
@@ -2757,27 +2757,27 @@ void dng_lossless_decoder<simd>::DecodeImage ()
 
                 curRowBuf [col    ] [0] = (ComponentType) p0;
                 curRowBuf [col + 1] [0] = (ComponentType) p1;
-                
+
                 }
-            
+
             PmPutRow (curRowBuf, compsInScan, numCOL, row);
 
             }
 
         return;
-        
+
         }
-    
+
     #endif
-    
+
     // Decode the first row of image. Output the row and
     // turn this row into a previous row for later predictor
     // calculation.
 
     DecodeFirstRow (mcuROW1);
-    
+
     PmPutRow (mcuROW1, compsInScan, numCOL, 0);
-    
+
     // Process each row.
 
     for (int32 row = 1; row < numROW; row++)
@@ -2787,39 +2787,39 @@ void dng_lossless_decoder<simd>::DecodeImage ()
 
         if (info.restartInRows)
             {
-            
+
             if (info.restartRowsToGo == 0)
                 {
-                
+
                 ProcessRestart ();
-            
+
                 // Reset predictors at restart.
-                
+
                 DecodeFirstRow (curRowBuf);
-                
+
                 PmPutRow (curRowBuf, compsInScan, numCOL, row);
-                
+
                 swap (MCU *, prevRowBuf, curRowBuf);
-                
+
                 continue;
-                
+
                 }
-                
+
             info.restartRowsToGo--;
-           
+
             }
-            
+
         // The upper neighbors are predictors for the first column.
 
         for (int32 curComp = 0; curComp < compsInScan; curComp++)
             {
-            
+
             // Section F.2.2.1: decode the difference
 
             int32 d = 0;
-        
+
             int32 s = HuffDecode (ht [curComp]);
-            
+
             if (s)
                 {
 
@@ -2827,7 +2827,7 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                     {
                     d = -32768;
                     }
-                
+
                 else
                     {
                     d = get_bits (s);
@@ -2835,42 +2835,42 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                     }
 
                 }
-                
+
             // First column of row above is predictor for first column.
 
             curRowBuf [0] [curComp] = (ComponentType) (d + prevRowBuf [0] [curComp]);
-            
+
             }
 
         // For the rest of the column on this row, predictor
-        // calculations are based on PSV. 
+        // calculations are based on PSV.
 
         if (compsInScan == 2 && info.Ss == 1 && numCOL > 1)
             {
-            
-            // This is the combination used by both the Canon and Kodak raw formats. 
+
+            // This is the combination used by both the Canon and Kodak raw formats.
             // Unrolling the general case logic results in a significant speed increase.
-            
+
             uint16 *dPtr = &curRowBuf [1] [0];
-            
+
             int32 prev0 = dPtr [-2];
             int32 prev1 = dPtr [-1];
-            
+
             for (int32 col = 1; col < numCOL; col++)
                 {
-                
+
                 int32 s = HuffDecode (ht [0]);
-                
+
                 if (s)
                     {
-                    
+
                     int32 d;
 
                     if (s == 16 && !fBug16)
                         {
                         d = -32768;
                         }
-                    
+
                     else
                         {
                         d = get_bits (s);
@@ -2878,21 +2878,21 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                         }
 
                     prev0 += d;
-                    
+
                     }
-                    
+
                 s = HuffDecode (ht [1]);
-                
+
                 if (s)
                     {
-                    
+
                     int32 d;
 
                     if (s == 16 && !fBug16)
                         {
                         d = -32768;
                         }
-                    
+
                     else
                         {
                         d = get_bits (s);
@@ -2900,41 +2900,41 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                         }
 
                     prev1 += d;
-                    
+
                     }
-                
+
                 dPtr [0] = (uint16) prev0;
                 dPtr [1] = (uint16) prev1;
-                
+
                 dPtr += 2;
-                
+
                 }
-                
+
             }
-            
+
         else
             {
-            
+
             for (int32 col = 1; col < numCOL; col++)
                 {
-                
+
                 for (int32 curComp = 0; curComp < compsInScan; curComp++)
                     {
-                    
+
                     // Section F.2.2.1: decode the difference
 
                     int32 d = 0;
-                
+
                     int32 s = HuffDecode (ht [curComp]);
-                    
+
                     if (s)
                         {
-                        
+
                         if (s == 16 && !fBug16)
                             {
                             d = -32768;
                             }
-                        
+
                         else
                             {
                             d = get_bits (s);
@@ -2942,32 +2942,32 @@ void dng_lossless_decoder<simd>::DecodeImage ()
                             }
 
                         }
-                        
+
                     // Predict the pixel value.
-                    
+
                     int32 predictor = QuickPredict (col,
                                                     curComp,
                                                     curRowBuf,
                                                     prevRowBuf);
-                                                  
+
                     // Save the difference.
 
                     curRowBuf [col] [curComp] = (ComponentType) (d + predictor);
-                    
+
                     }
-                    
+
                 }
 
             }
 
         PmPutRow (curRowBuf, compsInScan, numCOL, row);
-        
+
         swap (MCU *, prevRowBuf, curRowBuf);
-        
+
         }
-        
+
     #undef swap
-    
+
     }
 
 /*****************************************************************************/
@@ -2976,17 +2976,17 @@ template <SIMDType simd>
 void dng_lossless_decoder<simd>::StartRead (uint32 &imageWidth,
                                             uint32 &imageHeight,
                                             uint32 &imageChannels)
-    { 
-    
+    {
+
     ReadFileHeader    ();
     ReadScanHeader    ();
     DecoderStructInit ();
     HuffDecoderInit   ();
-    
+
     imageWidth    = info.imageWidth;
     imageHeight   = info.imageHeight;
     imageChannels = info.compsInScan;
-    
+
     }
 
 /*****************************************************************************/
@@ -2994,9 +2994,9 @@ void dng_lossless_decoder<simd>::StartRead (uint32 &imageWidth,
 template <SIMDType simd>
 void dng_lossless_decoder<simd>::FinishRead ()
     {
-    
+
     DecodeImage ();
-        
+
     }
 
 /*****************************************************************************/
@@ -3004,39 +3004,39 @@ void dng_lossless_decoder<simd>::FinishRead ()
 template <SIMDType simd>
 class dng_lossless_encoder
     {
-    
+
     private:
-    
+
         const uint16 *fSrcData;
-        
+
         uint32 fSrcRows;
         uint32 fSrcCols;
         uint32 fSrcChannels;
         uint32 fSrcBitDepth;
-        
+
         int32 fSrcRowStep;
         int32 fSrcColStep;
-    
+
         dng_stream &fStream;
-    
+
         HuffmanTable huffTable [4];
-        
+
         uint32 freqCount [4] [257];
-        
+
         // Current bit-accumulation buffer
 
         uint64 huffPutBuffer;
         uint64 huffPutBits;
-        
+
         // Lookup table for number of bits in an 8 bit value.
-        
+
         int numBitsTable [256];
-        
+
         std::vector<uint8> streamBuffer;
         size_t streamBufferOffset;
 
     public:
-    
+
         dng_lossless_encoder (const uint16 *srcData,
                               uint32 srcRows,
                               uint32 srcCols,
@@ -3045,13 +3045,13 @@ class dng_lossless_encoder
                               int32 srcRowStep,
                               int32 srcColStep,
                               dng_stream &stream);
-        
+
         void Encode ();
-        
+
     private:
-    
+
         void EmitByte (uint8 value);
-    
+
         void EmitBits (int code, int size);
 
         void FlushBits ();
@@ -3071,7 +3071,7 @@ class dng_lossless_encoder
         void CountOneDiff (int diff, uint32 *countTable);
 
         void EncodeOneDiff (int diff, HuffmanTable *dctbl);
-        
+
         void FreqCountSet ();
 
         void HuffEncode ();
@@ -3097,7 +3097,7 @@ class dng_lossless_encoder
         void WriteFileTrailer ();
 
     };
-    
+
 /*****************************************************************************/
 
 template <SIMDType simd>
@@ -3109,7 +3109,7 @@ dng_lossless_encoder<simd>::dng_lossless_encoder (const uint16 *srcData,
                                             int32 srcRowStep,
                                             int32 srcColStep,
                                             dng_stream &stream)
-                                    
+
     :   fSrcData     (srcData    )
     ,   fSrcRows     (srcRows    )
     ,   fSrcCols     (srcCols    )
@@ -3118,33 +3118,33 @@ dng_lossless_encoder<simd>::dng_lossless_encoder (const uint16 *srcData,
     ,   fSrcRowStep  (srcRowStep )
     ,   fSrcColStep  (srcColStep )
     ,   fStream      (stream     )
-    
+
     ,   huffPutBuffer (0)
     ,   huffPutBits   (0)
 
     ,   streamBufferOffset (0)
 
     {
-    
+
     // Initialize number of bits lookup table.
-    
+
     numBitsTable [0] = 0;
-        
+
     for (int i = 1; i < 256; i++)
         {
-        
+
         int temp = i;
         int nbits = 1;
-        
+
         while (temp >>= 1)
             {
             nbits++;
             }
-            
+
         numBitsTable [i] = nbits;
-        
+
         }
-        
+
     // Get an upper bound of the size of encoded output for one chunk
     // of output. Chunks are the headers and then one per row.
     //
@@ -3174,11 +3174,11 @@ dng_lossless_encoder<simd>::dng_lossless_encoder (const uint16 *srcData,
 template <SIMDType simd>
 inline void dng_lossless_encoder<simd>::EmitByte (uint8 value)
     {
-    
+
     streamBuffer[streamBufferOffset++] = value;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 /*
@@ -3236,11 +3236,11 @@ void dng_lossless_encoder<simd>::PushBits ()
  *
  *--------------------------------------------------------------
  */
- 
+
 template <SIMDType simd>
 inline void dng_lossless_encoder<simd>::EmitBits (int code, int size)
     {
-    
+
     DNG_ASSERT (size != 0, "Bad Huffman table entry");
 
     if ((huffPutBits + size) > 64)
@@ -3274,7 +3274,7 @@ inline void dng_lossless_encoder<simd>::EmitBits (int code, int size)
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::FlushBits ()
     {
-    
+
     // The first call forces output of any partial bytes.
 
     EmitBits (0x007F, 7);
@@ -3285,7 +3285,7 @@ void dng_lossless_encoder<simd>::FlushBits ()
 
     huffPutBuffer = 0;
     huffPutBits   = 0;
-    
+
     }
 
 /*****************************************************************************/
@@ -3315,7 +3315,7 @@ void dng_lossless_encoder<simd>::FlushBuffer()
  *      diff is counted in countTable.
  *
  * Side effects:
- *      None. 
+ *      None.
  *
  *--------------------------------------------------------------
  */
@@ -3323,27 +3323,27 @@ void dng_lossless_encoder<simd>::FlushBuffer()
 template <SIMDType simd>
 inline void dng_lossless_encoder<simd>::CountOneDiff (int diff, uint32 *countTable)
     {
-    
+
     // Encode the DC coefficient difference per section F.1.2.1
-     
+
     int temp = diff;
-    
+
     if (temp < 0)
         {
-        
+
         temp = -temp;
- 
+
         }
 
     // Find the number of bits needed for the magnitude of the coefficient
 
     int nbits = temp >= 256 ? numBitsTable [temp >> 8  ] + 8
                             : numBitsTable [temp & 0xFF];
-            
+
     // Update count for this bit length
 
     countTable [nbits] ++;
-    
+
     }
 
 /*****************************************************************************/
@@ -3369,21 +3369,21 @@ inline void dng_lossless_encoder<simd>::EncodeOneDiff (int diff, HuffmanTable *d
     {
 
     // Encode the DC coefficient difference per section F.1.2.1
-     
+
     int temp  = diff;
     int temp2 = diff;
-    
+
     if (temp < 0)
         {
-        
+
         temp = -temp;
-        
+
         // For a negative input, want temp2 = bitwise complement of
         // abs (input).  This code assumes we are on a two's complement
         // machine.
 
         temp2--;
-        
+
         }
 
     // Find the number of bits needed for the magnitude of the coefficient
@@ -3398,7 +3398,7 @@ inline void dng_lossless_encoder<simd>::EncodeOneDiff (int diff, HuffmanTable *d
 
     // Emit that number of bits of the value, if positive,
     // or the complement of its magnitude, if negative.
-    
+
     // If the number of bits is 16, there is only one possible difference
     // value (-32786), so the lossless JPEG spec says not to output anything
     // in that case.  So we only need to output the diference value if
@@ -3406,10 +3406,10 @@ inline void dng_lossless_encoder<simd>::EncodeOneDiff (int diff, HuffmanTable *d
 
     if (nbits & 15)
         {
-        
+
         EmitBits (temp2 & (0x0FFFF >> (16 - nbits)),
                   nbits);
-        
+
         }
 
     }
@@ -3442,14 +3442,14 @@ inline int dng_lossless_encoder<simd>::EncodeOneDiffToBuffer (int diff,
                                                               int buffered_bits,
                                                               uint64 &bit_buffer)
     {
-    
+
     DNG_ASSERT(buffered_bits < 64, "buffered_bits too big(1)");
-    
+
     if (buffered_bits > 32)
         {
         buffered_bits = EmitBitsToBuffer(buffered_bits, bit_buffer);
         }
-        
+
     // Encode the DC coefficient difference per section F.1.2.1
 
     int temp  = diff;
@@ -3495,9 +3495,9 @@ inline int dng_lossless_encoder<simd>::EncodeOneDiffToBuffer (int diff,
         }
 
     DNG_ASSERT(buffered_bits < 64, "buffered_bits too big(2)");
-    
+
     return buffered_bits;
-    
+
     }
 
 /*****************************************************************************/
@@ -3513,8 +3513,8 @@ inline int dng_lossless_encoder<simd>::EncodeOneDiffToBuffer (int diff,
  *  None.
  *
  * Side effects:
- *  The freqCount has counted all category 
- *  symbols appeared in the image.        
+ *  The freqCount has counted all category
+ *  symbols appeared in the image.
  *
  *--------------------------------------------------------------
  */
@@ -3522,90 +3522,90 @@ inline int dng_lossless_encoder<simd>::EncodeOneDiffToBuffer (int diff,
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::FreqCountSet ()
     {
-    
+
     memset (freqCount, 0, sizeof (freqCount));
-    
+
     DNG_ASSERT ((int32)fSrcRows >= 0, "dng_lossless_encoder::FreqCountSet: fSrcRpws too large.");
 
     for (int32 row = 0; row < (int32)fSrcRows; row++)
         {
-        
+
         const uint16 *sPtr = fSrcData + row * fSrcRowStep;
-        
+
         // Initialize predictors for this row.
-        
+
         int32 predictor [4] = { 0, 0, 0, 0 };
-        
+
         for (int32 channel = 0; channel < (int32)fSrcChannels; channel++)
             {
-            
+
             if (row == 0)
                 predictor [channel] = 1 << (fSrcBitDepth - 1);
-                
+
             else
                 predictor [channel] = sPtr [channel - fSrcRowStep];
-            
+
             }
-            
+
         // Unroll most common case of two channels
-        
+
         if (fSrcChannels == 2)
             {
-            
+
             int32 pred0 = predictor [0];
             int32 pred1 = predictor [1];
-            
+
             uint32 srcCols    = fSrcCols;
             int32  srcColStep = fSrcColStep;
-            
+
             for (uint32 col = 0; col < srcCols; col++)
                 {
-                
+
                 int32 pixel0 = sPtr [0];
                 int32 pixel1 = sPtr [1];
-                
+
                 int16 diff0 = (int16) (pixel0 - pred0);
                 int16 diff1 = (int16) (pixel1 - pred1);
-                
+
                 CountOneDiff (diff0, freqCount [0]);
                 CountOneDiff (diff1, freqCount [1]);
-                
+
                 pred0 = pixel0;
                 pred1 = pixel1;
-                    
+
                 sPtr += srcColStep;
-                    
+
                 }
-            
+
             }
-            
+
         // General case.
-            
+
         else
             {
-            
+
             for (uint32 col = 0; col < fSrcCols; col++)
                 {
-                
+
                 for (uint32 channel = 0; channel < fSrcChannels; channel++)
                     {
-                    
+
                     int32 pixel = sPtr [channel];
-                    
+
                     int16 diff = (int16) (pixel - predictor [channel]);
-                    
+
                     CountOneDiff (diff, freqCount [channel]);
-                    
+
                     predictor [channel] = pixel;
-                    
+
                     }
-                    
+
                 sPtr += fSrcColStep;
-                    
+
                 }
-                
+
             }
-            
+
         }
 
     }
@@ -3631,7 +3631,7 @@ void dng_lossless_encoder<simd>::FreqCountSet ()
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::HuffEncode ()
     {
-    
+
     DNG_ASSERT ((int32)fSrcRows >= 0, "dng_lossless_encoder::HuffEncode: fSrcRows too large.");
 
     uint64 bit_buffer = 0;
@@ -3645,89 +3645,89 @@ void dng_lossless_encoder<simd>::HuffEncode ()
 
     for (int32 row = 0; row < (int32)fSrcRows; row++)
         {
-        
+
         const uint16 *sPtr = fSrcData + row * fSrcRowStep;
-        
+
         // Initialize predictors for this row.
-        
+
         int32 predictor [4] = { 0, 0, 0, 0 };
-        
+
         for (int32 channel = 0; channel < (int32)fSrcChannels; channel++)
             {
-            
+
             if (row == 0)
                 predictor [channel] = 1 << (fSrcBitDepth - 1);
-                
+
             else
                 predictor [channel] = sPtr [channel - fSrcRowStep];
-            
+
             }
-            
+
         // Unroll most common case of two channels
-        
+
         if (fSrcChannels == 2)
             {
-            
+
             int32 pred0 = predictor [0];
             int32 pred1 = predictor [1];
-            
+
             uint32 srcCols    = fSrcCols;
             int32  srcColStep = fSrcColStep;
-            
+
             for (uint32 col = 0; col < srcCols; col++)
                 {
-                
+
                 int32 pixel0 = sPtr [0];
                 int32 pixel1 = sPtr [1];
-                
+
                 int16 diff0 = (int16) (pixel0 - pred0);
                 int16 diff1 = (int16) (pixel1 - pred1);
-                
+
                 buffered_bits = EncodeOneDiffToBuffer (diff0, &huffTable [0], buffered_bits, bit_buffer);
                 buffered_bits = EncodeOneDiffToBuffer (diff1, &huffTable [1], buffered_bits, bit_buffer);
 
                 pred0 = pixel0;
                 pred1 = pixel1;
-                    
+
                 sPtr += srcColStep;
-                    
+
                 }
-            
+
             buffered_bits = EmitBitsToBuffer(buffered_bits, bit_buffer);
 
             }
-            
+
         // General case.
-            
+
         else
             {
-            
+
             for (uint32 col = 0; col < fSrcCols; col++)
                 {
-                
+
                 for (uint32 channel = 0; channel < fSrcChannels; channel++)
                     {
-                    
+
                     int32 pixel = sPtr [channel];
-                    
+
                     int16 diff = (int16) (pixel - predictor [channel]);
-                    
+
                     EncodeOneDiff (diff, &huffTable [channel]);
-                    
+
                     predictor [channel] = pixel;
-                    
+
                     }
-                    
+
                 sPtr += fSrcColStep;
-                    
+
                 }
-                
+
             }
-            
+
         FlushBuffer();
-        
+
         }
-  
+
     if (fSrcChannels == 2)
         {
         huffPutBuffer = bit_buffer;
@@ -3735,7 +3735,7 @@ void dng_lossless_encoder<simd>::HuffEncode ()
         }
 
     FlushBits ();
-    
+
     }
 
 /*****************************************************************************/
@@ -3745,9 +3745,9 @@ void dng_lossless_encoder<simd>::HuffEncode ()
  *
  * GenHuffCoding --
  *
- *  Generate the optimal coding for the given counts. 
+ *  Generate the optimal coding for the given counts.
  *  This algorithm is explained in section K.2 of the
- *  JPEG standard. 
+ *  JPEG standard.
  *
  * Results:
  *      htbl->bits and htbl->huffval are constructed.
@@ -3761,19 +3761,19 @@ void dng_lossless_encoder<simd>::HuffEncode ()
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::GenHuffCoding (HuffmanTable *htbl, uint32 *freq)
     {
-    
+
     int i;
     int j;
-    
+
     const int MAX_CLEN = 32;        // assumed maximum initial code length
-    
+
     uint8 bits [MAX_CLEN + 1];  // bits [k] = # of symbols with code length k
     short codesize [257];           // codesize [k] = code length of symbol k
     short others   [257];           // next symbol in current branch of tree
-    
+
     memset (bits    , 0, sizeof (bits    ));
     memset (codesize, 0, sizeof (codesize));
-    
+
     for (i = 0; i < 257; i++)
         others [i] = -1;            // init links to empty
 
@@ -3784,7 +3784,7 @@ void dng_lossless_encoder<simd>::GenHuffCoding (HuffmanTable *htbl, uint32 *freq
     freq [256] = 1;                 // make sure there is a nonzero count
 
     // Huffman's basic algorithm to assign optimal code lengths to symbols
-    
+
     while (true)
         {
 
@@ -3792,43 +3792,43 @@ void dng_lossless_encoder<simd>::GenHuffCoding (HuffmanTable *htbl, uint32 *freq
         // In case of ties, take the larger symbol number.
 
         int c1 = -1;
-        
+
         uint32 v = 0xFFFFFFFF;
-        
+
         for (i = 0; i <= 256; i++)
             {
-            
+
             if (freq [i] && freq [i] <= v)
                 {
                 v = freq [i];
                 c1 = i;
                 }
-    
+
             }
 
         // Find the next smallest nonzero frequency, set c2 = its symbol.
         // In case of ties, take the larger symbol number.
 
         int c2 = -1;
-        
+
         v = 0xFFFFFFFF;
-        
+
         for (i = 0; i <= 256; i++)
             {
-            
-            if (freq [i] && freq [i] <= v && i != c1) 
+
+            if (freq [i] && freq [i] <= v && i != c1)
                 {
                 v = freq [i];
                 c2 = i;
                 }
-                
+
             }
 
         // Done if we've merged everything into one frequency.
 
         if (c2 < 0)
             break;
-    
+
         // Else merge the two counts/trees.
 
         freq [c1] += freq [c2];
@@ -3837,22 +3837,22 @@ void dng_lossless_encoder<simd>::GenHuffCoding (HuffmanTable *htbl, uint32 *freq
         // Increment the codesize of everything in c1's tree branch.
 
         codesize [c1] ++;
-        
+
         while (others [c1] >= 0)
             {
             c1 = others [c1];
             codesize [c1] ++;
             }
-    
-        // chain c2 onto c1's tree branch 
+
+        // chain c2 onto c1's tree branch
 
         others [c1] = (short) c2;
-    
+
         // Increment the codesize of everything in c2's tree branch.
 
         codesize [c2] ++;
-        
-        while (others [c2] >= 0) 
+
+        while (others [c2] >= 0)
             {
             c2 = others [c2];
             codesize [c2] ++;
@@ -3864,22 +3864,22 @@ void dng_lossless_encoder<simd>::GenHuffCoding (HuffmanTable *htbl, uint32 *freq
 
     for (i = 0; i <= 256; i++)
         {
-        
+
         if (codesize [i])
             {
 
             // The JPEG standard seems to think that this can't happen,
             // but I'm paranoid...
-            
+
             if (codesize [i] > MAX_CLEN)
                 {
-       
+
                 ThrowOverflow ("Huffman code size table overflow");
-                
+
                 }
 
             bits [codesize [i]]++;
-            
+
             }
 
         }
@@ -3893,62 +3893,62 @@ void dng_lossless_encoder<simd>::GenHuffCoding (HuffmanTable *htbl, uint32 *freq
     // skipping the BITS entry for that prefix length, a code word from the next
     // shortest nonzero BITS entry is converted into a prefix for two code words
     // one bit longer.
-  
+
     for (i = MAX_CLEN; i > 16; i--)
         {
-        
+
         while (bits [i] > 0)
             {
-            
+
             // Kludge: I have never been able to test this logic, and there
             // are comments on the web that this encoder has bugs with 16-bit
             // data, so just throw an error if we get here and revert to a
             // default table.    - tknoll 12/1/03.
-            
+
             DNG_REPORT ("Info: Optimal huffman table bigger than 16 bits");
-            
+
             ThrowProgramError ();
-            
+
             // Original logic:
-            
+
             j = i - 2;      // find length of new prefix to be used
-            
+
             while (bits [j] == 0)
                 j--;
-      
+
             bits [i    ] -= 2;      // remove two symbols
             bits [i - 1] ++;        // one goes in this length
             bits [j + 1] += 2;      // two new symbols in this length
             bits [j    ] --;        // symbol of this length is now a prefix
-            
+
             }
-            
+
         }
 
     // Remove the count for the pseudo-symbol 256 from
     // the largest codelength.
-    
+
     while (bits [i] == 0)       // find largest codelength still in use
         i--;
-        
+
     bits [i] --;
-  
+
     // Return final symbol counts (only for lengths 0..16).
 
     memcpy (htbl->bits, bits, sizeof (htbl->bits));
-  
-    // Return a list of the symbols sorted by code length. 
+
+    // Return a list of the symbols sorted by code length.
     // It's not real clear to me why we don't need to consider the codelength
     // changes made above, but the JPEG spec seems to think this works.
-   
+
     int p = 0;
-    
+
     for (i = 1; i <= MAX_CLEN; i++)
         {
-        
+
         for (j = 0; j <= 255; j++)
             {
-            
+
             if (codesize [j] == i)
                 {
                 htbl->huffval [p] = (uint8) j;
@@ -3956,9 +3956,9 @@ void dng_lossless_encoder<simd>::GenHuffCoding (HuffmanTable *htbl, uint32 *freq
                 }
 
             }
-            
+
         }
- 
+
     }
 
 /*****************************************************************************/
@@ -3976,7 +3976,7 @@ void dng_lossless_encoder<simd>::GenHuffCoding (HuffmanTable *htbl, uint32 *freq
  *  It counts the times each category symbol occurs. Based on
  *  this counting, optimal Huffman tables are built. Then it
  *  uses this optimal Huffman table and counting table to find
- *  the best PSV. 
+ *  the best PSV.
  *
  * Results:
  *  Optimal Huffman tables are retured in cPtr->dcHuffTblPtrs[tbl].
@@ -3991,43 +3991,43 @@ void dng_lossless_encoder<simd>::GenHuffCoding (HuffmanTable *htbl, uint32 *freq
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::HuffOptimize ()
     {
-    
+
     // Collect the frequency counts.
-     
+
     FreqCountSet ();
-    
+
     // Generate Huffman encoding tables.
-    
+
     for (uint32 channel = 0; channel < fSrcChannels; channel++)
         {
-        
+
         try
             {
-            
+
             GenHuffCoding (&huffTable [channel], freqCount [channel]);
-            
+
             }
-            
+
         catch (...)
             {
-            
+
             DNG_REPORT ("Info: Reverting to default huffman table");
-            
+
             for (uint32 j = 0; j <= 256; j++)
                 {
-                
+
                 freqCount [channel] [j] = (j <= 16 ? 1 : 0);
-                
+
                 }
-            
+
             GenHuffCoding (&huffTable [channel], freqCount [channel]);
-            
+
             }
-        
+
         FixHuffTbl (&huffTable [channel]);
-        
+
         }
- 
+
     }
 
 /*****************************************************************************/
@@ -4051,10 +4051,10 @@ void dng_lossless_encoder<simd>::HuffOptimize ()
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::EmitMarker (JpegMarker mark)
     {
-    
+
     EmitByte (0xFF);
     EmitByte ((uint8) mark);
-    
+
     }
 
 /*****************************************************************************/
@@ -4079,10 +4079,10 @@ void dng_lossless_encoder<simd>::EmitMarker (JpegMarker mark)
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::Emit2bytes (int value)
     {
-    
+
     EmitByte ((value >> 8) & 0xFF);
     EmitByte (value & 0xFF);
- 
+
     }
 
 /*****************************************************************************/
@@ -4102,24 +4102,24 @@ void dng_lossless_encoder<simd>::Emit2bytes (int value)
  *
  *--------------------------------------------------------------
  */
- 
+
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::EmitDht (int index)
     {
-    
+
     int i;
-    
+
     HuffmanTable *htbl = &huffTable [index];
-    
+
     EmitMarker (M_DHT);
 
     int length = 0;
-    
+
     for (i = 1; i <= 16; i++)
         length += htbl->bits [i];
 
     Emit2bytes (length + 2 + 1 + 16);
-    
+
     EmitByte ((uint8) index);
 
     for (i = 1; i <= 16; i++)
@@ -4151,13 +4151,13 @@ void dng_lossless_encoder<simd>::EmitDht (int index)
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::EmitSof (JpegMarker code)
     {
-    
+
     EmitMarker (code);
 
     Emit2bytes (3 * fSrcChannels + 2 + 5 + 1);  // length
 
     EmitByte ((uint8) fSrcBitDepth);
-    
+
     Emit2bytes (fSrcRows);
     Emit2bytes (fSrcCols);
 
@@ -4165,15 +4165,15 @@ void dng_lossless_encoder<simd>::EmitSof (JpegMarker code)
 
     for (uint32 i = 0; i < fSrcChannels; i++)
         {
-        
+
         EmitByte ((uint8) i);
-        
+
         EmitByte ((uint8) ((1 << 4) + 1));      // Not subsampled.
-                 
+
         EmitByte (0);                   // Tq shall be 0 for lossless.
-        
+
         }
-   
+
     }
 
 /*****************************************************************************/
@@ -4197,27 +4197,27 @@ void dng_lossless_encoder<simd>::EmitSof (JpegMarker code)
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::EmitSos ()
     {
-    
+
     EmitMarker (M_SOS);
 
     Emit2bytes (2 * fSrcChannels + 2 + 1 + 3);  // length
 
     EmitByte ((uint8) fSrcChannels);            // Ns
 
-    for (uint32 i = 0; i < fSrcChannels; i++) 
-        { 
-        
+    for (uint32 i = 0; i < fSrcChannels; i++)
+        {
+
         // Cs,Td,Ta
-        
+
         EmitByte ((uint8) i);
         EmitByte ((uint8) (i << 4));
-        
+
         }
 
     EmitByte (1);       // PSV - hardcoded - tknoll
     EmitByte (0);       // Spectral selection end  - Se
-    EmitByte (0);       // The point transform parameter 
-    
+    EmitByte (0);       // The point transform parameter
+
     }
 
 /*****************************************************************************/
@@ -4241,11 +4241,11 @@ void dng_lossless_encoder<simd>::EmitSos ()
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::WriteFileHeader ()
     {
-    
+
     EmitMarker (M_SOI);     // first the SOI
-    
+
     EmitSof (M_SOF3);
-    
+
     }
 
 /*****************************************************************************/
@@ -4271,16 +4271,16 @@ void dng_lossless_encoder<simd>::WriteScanHeader ()
     {
 
     // Emit Huffman tables.
-    
+
     for (uint32 i = 0; i < fSrcChannels; i++)
         {
-        
+
         EmitDht (i);
-        
+
         }
 
     EmitSos ();
-     
+
     }
 
 /*****************************************************************************/
@@ -4304,9 +4304,9 @@ void dng_lossless_encoder<simd>::WriteScanHeader ()
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::WriteFileTrailer ()
     {
-    
+
     EmitMarker (M_EOI);
-    
+
     }
 
 /*****************************************************************************/
@@ -4314,30 +4314,30 @@ void dng_lossless_encoder<simd>::WriteFileTrailer ()
 template <SIMDType simd>
 void dng_lossless_encoder<simd>::Encode ()
     {
-    
+
     DNG_ASSERT (fSrcChannels <= 4, "Too many components in scan");
-    
-    // Count the times each difference category occurs. 
+
+    // Count the times each difference category occurs.
     // Construct the optimal Huffman table.
-    
+
     HuffOptimize ();
 
     // Write the frame and scan headers.
 
-    WriteFileHeader (); 
-    
+    WriteFileHeader ();
+
     WriteScanHeader ();
 
     FlushBuffer ();
 
     // Encode the image.
-    
+
     HuffEncode ();
 
     FlushBuffer ();
 
     // Clean up everything.
-    
+
     WriteFileTrailer ();
 
     FlushBuffer ();
@@ -4358,56 +4358,56 @@ void DecodeLosslessJPEG (dng_stream &stream,
     dng_lossless_decoder<simd> decoder (&stream,
                                         &spooler,
                                         bug16);
-    
+
     uint32 imageWidth;
     uint32 imageHeight;
     uint32 imageChannels;
-    
+
     decoder.StartRead (imageWidth,
                        imageHeight,
                        imageChannels);
-                       
+
     uint32 decodedSize = imageWidth    *
                          imageHeight   *
                          imageChannels *
                          (uint32) sizeof (uint16);
-                       
+
     if (decodedSize < minDecodedSize ||
         decodedSize > maxDecodedSize)
         {
         ThrowBadFormat ();
         }
-    
+
     decoder.FinishRead ();
-    
+
     uint64 streamPos = stream.Position ();
-    
+
     if (streamPos > endOfData)
         {
-        
+
         bool throwBadFormat = true;
-        
+
         // Per Hasselblad's request:
         // If we have a Hassy file with exactly four extra bytes,
         // let it through; the file is likely still valid.
-        
+
         #if qSupportHasselblad_3FR
-        
+
         if (decoder.IsHasselblad3FR () &&
             streamPos - endOfData == 4)
             {
             throwBadFormat = false;
             }
-            
+
         #endif
-        
+
         if (throwBadFormat)
             {
             ThrowBadFormat ();
             }
 
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -4422,7 +4422,7 @@ void EncodeLosslessJPEG (const uint16 *srcData,
                          int32 srcColStep,
                          dng_stream &stream)
     {
-    
+
     dng_lossless_encoder<simd> encoder (srcData,
                                         srcRows,
                                         srcCols,

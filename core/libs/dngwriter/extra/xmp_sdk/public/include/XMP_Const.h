@@ -6,7 +6,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 // =================================================================================================
@@ -39,7 +39,7 @@
 // 06-26-13 ADC 5.5-c019 [3083403] Failure to open a PDF file.
 //                       GetProperty_Int, GetProperty_Int64 and GetProperrty_Float will tolerate presence of
 //                       whitespace characters at the beginning and end.//
-// 06-11-13 IJS 5.5-f066 Moving #include vector out of AdobePrivate as now non-AdobePrivate function APIs in XMPFiles also 
+// 06-11-13 IJS 5.5-f066 Moving #include vector out of AdobePrivate as now non-AdobePrivate function APIs in XMPFiles also
 //                       need declaration for vector to compile successfully
 // 05-13-13 ADC 5.5-c018 Removing usage of bool in APIs exposed at DLL boundaries.
 // 05-13-13 ADC 5.6-f060 Removing usage of bool in APIs exposed at DLL boundaries.
@@ -335,7 +335,7 @@ typedef struct __XMPFiles__ *       XMPFilesRef;
 /// loop termination.
 
 /// \typedef XMP_OptionBits
-/// \brief The type for a collection of 32 flag bits. 
+/// \brief The type for a collection of 32 flag bits.
 /// @details Individual flags are defined as enum value bit
 ///  masks; see \c #kXMP_PropValueIsURI and following. A number of macros provide common set or set
 ///  operations, such as \c XMP_PropIsSimple. For other tests use an expression like <code>options &
@@ -360,7 +360,7 @@ typedef XMP_Uns32    XMP_OptionBits; // Used as 32 individual bits.
 #define kXMP_TrueStr  "True"  // Serialized XMP spellings, not for the type bool.
 #define kXMP_FalseStr "False"
 
-///@brief Type for yes/no/maybe answers. The values are picked to allow Boolean-like usage. The yes 
+///@brief Type for yes/no/maybe answers. The values are picked to allow Boolean-like usage. The yes
 ///values are true (non-zero), the no value is false (zero).
 enum {
     /// The part or parts have definitely changed.
@@ -859,7 +859,7 @@ enum {
 
 #define kXMP_SchemaNode ((XMP_OptionBits)0x80000000UL)
 
-/// @brief Option bit flags for the \c TXMPMeta property setting functions. 
+/// @brief Option bit flags for the \c TXMPMeta property setting functions.
 /// @details These option bits are shared with the accessor functions:
 ///   \li \c #kXMP_PropValueIsURI
 ///   \li \c #kXMP_PropValueIsStruct
@@ -929,8 +929,8 @@ enum {
     kXMP_OmitAllFormatting   = 0x0800UL,
 
     /// Omit the x:xmpmeta element surrounding the rdf:RDF element.
-    kXMP_OmitXMPMetaElement  = 0x1000UL,    
-    
+    kXMP_OmitXMPMetaElement  = 0x1000UL,
+
     /// Include a rdf Hash and Merged flag in x:xmpmeta element.
     kXMP_IncludeRDFHash      = 0x2000UL,
 
@@ -1385,7 +1385,7 @@ enum {
 
     /// Force use of the given handler (format), do not even verify the format.
     kXMPFiles_ForceGivenHandler     = 0x00000008,
-    
+
     /// Be strict about only attempting to use the designated file handler, no fallback to other handlers.
     kXMPFiles_OpenStrictly          = 0x00000010,
 
@@ -1403,13 +1403,13 @@ enum {
 
     /// When updating a file, spend the effort necessary to optimize file layout.
     kXMPFiles_OptimizeFileLayout    = 0x00000200,
-    
+
     /// When updating a PDF preserve state of document
     kXMPFiles_PreservePDFState    =  0x00000400
 };
 
 #if AdobePrivate
-    enum {      
+    enum {
         /// Open the file using Generic Handler if there is no Smart handler for the file format.
         kXMPFiles_OpenUseGenericHandler = 0x00000400
     };
@@ -1423,7 +1423,7 @@ enum {
 
 
 #if AdobePrivate
-    
+
     /// @brief Option bit flags for OpenFile for ARRI Plugin
     enum {
         kXMPFiles_ARRI_ColorSpace_ITU709                    = 0x00000800,
@@ -1435,25 +1435,25 @@ enum {
         kXMPFiles_ARRI_ColorSpace_Film                      = 0x00004000,
         /// The camera internal color space. Used for V3 LogC encoding
         kXMPFiles_ARRI_ColorSpace_WideGamut                 = 0x00008000,
-        
+
         kXMPFiles_ARRI_ColorSpace_Video_ITU709              = kXMPFiles_ARRI_ColorSpace_ITU709,
-        
+
         kXMPFiles_ARRI_ColorSpace_LogC_CameraNative         = kXMPFiles_ARRI_ColorSpace_CameraNative,
-        
+
         kXMPFiles_ARRI_ColorSpace_Video_P3                  = kXMPFiles_ARRI_ColorSpace_P3,
-        
+
         kXMPFiles_ARRI_ColorSpace_SceneLinear_Aces          = kXMPFiles_ARRI_ColorSpace_ACES,
-        
+
         kXMPFiles_ARRI_ColorSpace_LogC_Film                 = kXMPFiles_ARRI_ColorSpace_Film,
-        
+
         kXMPFiles_ARRI_ColorSpace_LogC_WideGamut            = kXMPFiles_ARRI_ColorSpace_WideGamut,
-        
+
         kXMPFiles_ARRI_ColorSpace_LogC_Monochrome           = 0x00010000,
-        
+
         kXMPFiles_ARRI_ColorSpace_Video_Monochrome          = 0x00020000,
-        
+
         kXMPFiles_ARRI_ColorSpace_SceneLinear_WideGamut     = 0x00040000,
-        
+
         kXMPFiles_ARRI_ColorSpace_SceneLinear_CameraNative  = 0x00080000,
         /// Primaries of the output color space are according to ITU Rec. 2020
         kXMPFiles_ARRI_ColorSpace_Video_ITU2020             = 0x00100000,
@@ -1461,21 +1461,21 @@ enum {
         kXMPFiles_ARRI_ColorSpace_Video_DCI_D60             = 0x00200000,
         /// Primaries of the output color space are according to the DCI color space with D65 white point
         kXMPFiles_ARRI_ColorSpace_Video_DCI_D65             = 0x00400000,
-        
+
         kXMPFiles_ARRI_ColorSpace_LastColorSpace            = kXMPFiles_ARRI_ColorSpace_Video_DCI_D65
     };
-    
+
     /// @brief Option bit flags for OpenFile for ARRI Plugin for BitsPerSample parameter
     enum {
         kXMPFiles_ARRI_10_bits      = 0x00800000,
-        
+
         kXMPFiles_ARRI_12_bits      = 0x01000000,
-        
+
         kXMPFiles_ARRI_14_bits      = 0x02000000,
-        
+
         kXMPFiles_ARRI_16_bits      = 0x04000000
     };
-    
+
 /// @brief Usage type of album art for \c TXMPAlbumArt.
 enum {
 
@@ -1954,7 +1954,7 @@ typedef XMP_Int32 XMP_Status;
 
 // -------------------------------------------------------------------------------------------------
 /// @brief The signature of a client-defined callback for text output from XMP Toolkit debugging
-/// operations. 
+/// operations.
 /// @details The callback is invoked one or more times for each line of output. The end of a line
 /// is signaled by a '\\n' character at the end of the buffer. Formatting newlines are never present
 /// in the middle of a buffer, but values of properties might contain any UTF-8 characters.
@@ -1975,7 +1975,7 @@ typedef XMP_Status (* XMP_TextOutputProc) ( void *        refCon,
 
 #if AdobePrivate
 // -------------------------------------------------------------------------------------------------
-/// Internal. The signature of a client-defined memory allocation routine. 
+/// Internal. The signature of a client-defined memory allocation routine.
 /// @details By default the XMP
 /// Toolkit uses the built-in C++ implementations for memory allocation and deallocation. You can
 /// supply an allocation routine conforming to this prototype when calling
@@ -2139,7 +2139,7 @@ struct XMPDMO_MarkerInfo : public XMPDMO_MarkerInfo_v1 {
     AdobeXMPCore::shared_ptr<void>    spExtension;
 
 #endif
-    
+
 private:
 #if XMP_MARKER_EXTENSIBILITY_BACKWARD_COMPATIBILITY
     void *                          extension;
@@ -2164,7 +2164,7 @@ public:
 private:
     template< typename t> friend class TXMPUtils;
     friend class XMPUtils;
-    
+
 };
 
 #endif // AdobePrivate

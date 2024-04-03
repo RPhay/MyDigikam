@@ -3,7 +3,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 // =================================================================================================
@@ -49,7 +49,7 @@
 
 #include "XMPCore/source/XMPIterator2.hpp"
 #endif
-#endif 
+#endif
 
 #if XMP_WinBuild
     #pragma warning ( disable : 4101 ) // unreferenced local variable
@@ -82,7 +82,7 @@ WXMPIterator_PropCTor_1 ( XMPMetaRef     xmpRef,
 
         const XMPMeta & xmpObj = WtoXMPMeta_Ref ( xmpRef );
         XMP_AutoLock metaLock ( &xmpObj.lock, kXMP_ReadLock );
-        
+
         XMPIterator * iter = NULL;
 #if AdobePrivate
 #if ENABLE_CPP_DOM_MODEL
@@ -177,7 +177,7 @@ WXMPIterator_Next_1 ( XMPIteratorRef   xmpObjRef,
         XMP_StringLen pathLen = 0;
         XMP_StringPtr valuePtr = 0;
         XMP_StringLen valueLen = 0;
-        
+
         XMP_OptionBits voidOptionBits = 0;
         if ( propOptions == 0 ) propOptions = &voidOptionBits;
 
@@ -186,7 +186,7 @@ WXMPIterator_Next_1 ( XMPIteratorRef   xmpObjRef,
 
         XMP_Bool found = thiz->Next ( &schemaPtr, &schemaLen, &pathPtr, &pathLen, &valuePtr, &valueLen, propOptions );
         wResult->int32Result = found;
-        
+
         if ( found ) {
             if ( schemaNS != 0 ) (*SetClientString) ( schemaNS, schemaPtr, schemaLen );
             if ( propPath != 0 ) (*SetClientString) ( propPath, pathPtr, pathLen );

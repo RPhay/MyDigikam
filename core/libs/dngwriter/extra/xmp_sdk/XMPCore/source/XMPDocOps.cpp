@@ -3,7 +3,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 // =================================================================================================
@@ -136,7 +136,7 @@ XMPDocOps::Initialize()
 
     sAppName = new std::string();
     if ( sAppName == 0 ) return false;
-    
+
     sGUIDCreationLock = new XMP_ReadWriteLock();
     if ( sGUIDCreationLock == 0 ) return false;
 
@@ -227,13 +227,13 @@ XMPDocOps::ResetDoc ( XMPMeta * xmpMeta )
 {
 
     if ( xmpMeta == 0 ) XMP_Throw ( "XMPDocOps object needs non-null XMPMeta", kXMPErr_BadParam );
-    
+
     if ( this->docXMP != xmpMeta ) {
         if ( this->docXMP != 0 ) WXMPMeta_DecrementRefCount_1 ( (XMPMetaRef)this->docXMP );
         if ( xmpMeta != 0 ) ++xmpMeta->clientRefs;  // ! Safe, see above.
         this->docXMP = xmpMeta;
     }
-    
+
     this->isDirty = this->isNew = this->isDerived = false;
     this->dirtyReasons = 0;
 
@@ -330,45 +330,45 @@ XMPDocOps::PruneRedundantHistory()
 {
 
     // Find the xmpMM:History node.
-    
+
     XMPMeta * xmpMeta = this->docXMP;
     XMP_NodePtr mmNode = FindSchemaNode ( &xmpMeta->tree, kXMP_NS_XMP_MM, false, 0 );
     XMP_NodePtr historyNode = FindChildNode ( mmNode, "xmpMM:History", false, 0 );
     XMP_Assert ( historyNode != 0 );    // Should always exist, called from PrepareForSave after AppendHistory.
-    
+
     XMP_Int32 historySize = (XMP_Int32)historyNode->children.size();
     if ( historySize < 3 ) return;
-    
+
     // Prune redundant "saved" entries from the tail of the history.
-    
+
     XMPDocOpsUtils::PruneOneRedundantRun ( historyNode, (historySize - 1) );
-    
+
     // If the history is still big do a global cleanup once for this XMPDocOps object. Use 1000
     // history entries as the general case limit. Use 100 as the limit for JPEG, trying to keep the
     // XMP under 64 KB. Each history entry is about 550 bytes, so 100 of them is about 55 KB.
-    
+
     if ( this->allHistoryCleaned ) return;
     this->allHistoryCleaned = true;
-    
+
     XMP_Int32 historyLimit = 1000;
     XMP_StringPtr dcFormat;
     bool found = xmpMeta->GetProperty ( kXMP_NS_DC, "format", &dcFormat, &voidLen, &voidOptions );
     if ( found && XMP_LitMatch ( dcFormat, "image/jpeg" ) ) historyLimit = 100;
-    
+
     historySize = (XMP_Int32)historyNode->children.size();  // Set again, it got reduced above.
     if ( historySize < historyLimit ) return;
-    
+
     // Go forward through the history and normalize the stEvt:changed fields.
-    
+
     for ( XMP_Int32 item = 0; item < historySize; ++item ) {
         XMP_NodePtr currEntry = historyNode->children[item];
         XMP_NodePtr currParts = FindChildNode ( currEntry, "stEvt:changed", false, 0 );
         if ( currParts != 0 ) XMPDocOpsUtils::NormalizePartsList ( currParts );
     }
-    
+
     // Repeat the redundant run pruning, now looking at the entire history array. Start at the end
     // again, the stEvt:changed normalization might have exposed a run.
-    
+
     XMP_Int32 endIndex = historySize - 1;
     while ( endIndex >= 2 ) {
         endIndex = XMPDocOpsUtils::PruneOneRedundantRun ( historyNode, endIndex );
@@ -524,7 +524,7 @@ XMPDocOps::BranchXMP ( XMPDocOps *    derivedDoc,
             XMP_Throw ( "Invalid single-document derived XMPMeta", kXMPErr_BadParam );
         }
         //PrepareForSave only checks prevMIMEType to detect mimetype changes.
-        if ( mimeType[0] != 0 ) this->prevMIMEType = mimeType; 
+        if ( mimeType[0] != 0 ) this->prevMIMEType = mimeType;
 
     } else {
 
@@ -533,7 +533,7 @@ XMPDocOps::BranchXMP ( XMPDocOps *    derivedDoc,
         }
         //transfer the path of the old doc so that the derived history event gets created if the paths change
         //this-prevFilePath value will be deleted with next PrepareForSave statement, therefore set it here.
-        derivedDoc->prevFilePath = this->prevFilePath; 
+        derivedDoc->prevFilePath = this->prevFilePath;
 
         this->PrepareForSave ( "", "", 0, 0 );  // Make sure the source has IDs, if it is already dirty.
         derivedDoc->ResetDoc ( derivedMeta );
@@ -547,7 +547,7 @@ XMPDocOps::BranchXMP ( XMPDocOps *    derivedDoc,
 
     if ( this->isDirty && this->nextInstanceID.empty() ) CreateID ( "xmp.iid:", &this->nextInstanceID );
 
-    // Append a "converted" history entry to the derived document if the mimetype has changed, note that 
+    // Append a "converted" history entry to the derived document if the mimetype has changed, note that
     //all of the derived document has changed, and mark the derived document as diry and derived.
 
     if ( mimeType[0] != 0 ) {
@@ -570,7 +570,7 @@ XMPDocOps::BranchXMP ( XMPDocOps *    derivedDoc,
         */
         //derivedMeta->SetProperty ( kXMP_NS_DC, "format", mimeType, kXMP_DeleteExisting );
     }
-    
+
     derivedDoc->InternalNoteChangeAll();
 
     derivedDoc->isDirty = derivedDoc->isDerived = true;
@@ -659,7 +659,7 @@ XMPDocOps::PrepareForSave ( XMP_StringPtr  mimeType,
     if ( this->contentChanged ) {
         xmpMeta->SetProperty ( kXMP_NS_XMP, "ModifyDate", dateStr.c_str(), kXMP_DeleteExisting );
     }
-    
+
     // Try to set xmpMM:DocumentID and xmpMM:OriginalDocumentID if they don't already exist. Do this
     // before the xmpMM:InstanceID or xmpMM:DocumentID get changed. We'll also check again later in
     // case they can't be set at this time.
@@ -771,7 +771,7 @@ XMPDocOps::NoteChange ( XMP_StringPtr * partsPtr,
     }
 
     std::string newPart;
-    
+
     for ( ; partsCount > 0; --partsCount, ++partsPtr ) {
 
         newPart = *partsPtr;
@@ -1029,13 +1029,13 @@ bool
 XMPDocOps::EnsureIDsExist ( XMP_OptionBits options )
 {
     bool madeNewIDs = false;
-    
+
     XMPMeta * xmpMeta = this->docXMP;
     if ( xmpMeta == 0 ) XMP_Throw ( "Must have associated XMPMeta", kXMPErr_BadValue );
 
     XMP_VarString idStr;
     XMP_StringPtr idPtr = 0;
-    
+
     bool haveInstID = xmpMeta->DoesPropertyExist ( kXMP_NS_XMP_MM, "InstanceID" );
 
     if ( ! haveInstID ) {
@@ -1045,7 +1045,7 @@ XMPDocOps::EnsureIDsExist ( XMP_OptionBits options )
         idStr[4] = 'd'; // Change the prefix to "xmp.did" for further use.
         madeNewIDs = true;
     }
-    
+
     bool haveDocID   = true;    // Assume we have it if ignored.
     bool ignoreDocID = XMP_OptionIsSet ( options, kXMPDocOps_IgnoreDocumentID );
     if ( ! ignoreDocID ) haveDocID = xmpMeta->DoesPropertyExist ( kXMP_NS_XMP_MM, "DocumentID" );
@@ -1070,7 +1070,7 @@ XMPDocOps::EnsureIDsExist ( XMP_OptionBits options )
         xmpMeta->SetProperty ( kXMP_NS_XMP_MM, "OriginalDocumentID", idPtr, kXMP_DeleteExisting );
         madeNewIDs = true;
     }
-    
+
     if ( madeNewIDs ) {
         this->isDirty = true;
         this->dirtyReasons |= (kXMPDirtyDoc_NewIDs | kXMPDirtyDoc_MetadataChanged);
@@ -1100,7 +1100,7 @@ void
 XMPDocOps::Clone ( XMPDocOps * clone, XMP_OptionBits options ) const
 {
     IgnoreParam(options);
-    
+
     if ( clone == 0 ) XMP_Throw ( "Null clone pointer", kXMPErr_BadParam );
     if ( options != 0 ) XMP_Throw ( "No options are defined yet", kXMPErr_BadOptions );
 
@@ -1123,7 +1123,7 @@ XMPDocOps::Clone ( XMPDocOps * clone, XMP_OptionBits options ) const
         ++clone->docXMP->clientRefs;    // ! Ensure ownership, thread safe because it is new.
         this->docXMP->Clone ( clone->docXMP, 0 );
     }
-    
+
     clone->isNew = this->isNew; // ! Don't copy everything, must not copy clientRefs and lock!
     clone->isDirty = this->isDirty;
     clone->isDerived = this->isDerived;
@@ -1136,7 +1136,7 @@ XMPDocOps::Clone ( XMPDocOps * clone, XMP_OptionBits options ) const
     clone->nextInstanceID = this->nextInstanceID;
 
     clone->changedParts = this->changedParts;
-    
+
 }   // Clone
 
 // -------------------------------------------------------------------------------------------------

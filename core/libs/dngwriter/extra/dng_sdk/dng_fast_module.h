@@ -10,8 +10,8 @@
  * Include file to set optimization to highest level for performance-critical routines.
  * Normal files should have otpimization set to normal level to save code size as there is less
  * cache pollution this way.
- */ 
- 
+ */
+
 /*****************************************************************************/
 
 // Include this file in modules that contain routines that should be as fast

@@ -28,13 +28,13 @@
 
 class dng_file_stream: public dng_stream
     {
-    
+
     private:
-    
+
         FILE *fFile;
-    
+
     public:
-    
+
         /// Open a stream on a filename by path.
         /// \param filename Pathname in platform syntax.
         /// \param output Set to true if writing, false otherwise.
@@ -44,18 +44,18 @@ class dng_file_stream: public dng_stream
         dng_file_stream (const char *filename,
                          bool output = false,
                          uint32 bufferSize = kDefaultBufferSize);
-    
+
         /// Open a stream on a FILE*.
         /// \param file FILE pointer. It should be opened in binary mode.
         /// I.e., use "rb" for reading and "wb" for writing.
         /// \param bufferSize size of internal buffer to use. Defaults to
         /// kDefaultBufferSize.
-        
+
         dng_file_stream (FILE *file,
                          uint32 bufferSize = kDefaultBufferSize);
-        
+
         #if qAndroid
-        
+
         dng_file_stream (int fileDescriptor,
                          bool output = false,
                          uint32 bufferSize = kDefaultBufferSize);
@@ -73,25 +73,25 @@ class dng_file_stream: public dng_stream
                          uint32 bufferSize = kDefaultBufferSize);
 
         #endif  // qWinOS
-        
+
         virtual ~dng_file_stream ();
-    
+
     protected:
-    
+
         virtual uint64 DoGetLength ();
-    
+
         virtual void DoRead (void *data,
                              uint32 count,
                              uint64 offset);
-        
+
         virtual void DoWrite (const void *data,
                               uint32 count,
                               uint64 offset);
-        
+
     };
-        
+
 /*****************************************************************************/
 
 #endif
-    
+
 /*****************************************************************************/

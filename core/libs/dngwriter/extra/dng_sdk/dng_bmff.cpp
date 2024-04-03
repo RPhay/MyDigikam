@@ -20,22 +20,22 @@
 
 static dng_string ReadName (dng_stream &stream)
     {
-    
+
     char name [5];
-    
+
     stream.Get (name, 4);
-    
+
     name [4] = 0;
-    
+
     return dng_string (name);
-    
+
     }
 
 /*****************************************************************************/
 
 dng_bmff_io::~dng_bmff_io ()
     {
-    
+
     }
 
 /*****************************************************************************/
@@ -43,19 +43,19 @@ dng_bmff_io::~dng_bmff_io ()
 void dng_bmff_io::Read (dng_host &host,
                         dng_stream &stream)
     {
-    
+
     stream.SetBigEndian ();
-    
+
     stream.SetReadPosition (0);
-    
+
     // Skip first 4 bytes (length field of first box).
-    
+
     stream.Skip (4);
-    
+
     // Quick check to see if this looks like a valid ISO BMFF or JXL file.
 
     dng_string firstName (ReadName (stream));
-    
+
     if (!(firstName.Matches ("ftyp", true) ||
           firstName.Matches ("JXL ", true))) // TODO(erichan): add compile flag
         {
@@ -63,7 +63,7 @@ void dng_bmff_io::Read (dng_host &host,
         }
 
     // Reset to reading.
-    
+
     stream.SetReadPosition (0);
 
     uint64 totalOffset = 0;
@@ -146,7 +146,7 @@ void dng_bmff_io::Read (dng_host &host,
             box->fContent.reset (host.Allocate (contentLength32));
 
             fBoxes.push_back (box);
-        
+
             stream.Get (box->fContent->Buffer (),
                         contentLength32);
 
@@ -158,9 +158,9 @@ void dng_bmff_io::Read (dng_host &host,
             {
 
             stream.Skip (contentLength);
-            
+
             }
-            
+
         // Update total offset.
 
         totalOffset += length;
@@ -192,10 +192,10 @@ void dng_bmff_io::Write (dng_host & /* host */,
 
         bool useLargeSize = ((box->fStoredLength == 1) ||
                              uint64 (dataLen + 8) > uint64 (0xFFFFFFFF));
-        
+
         if (useLargeSize)
             {
-            
+
             stream.Put_uint32 (1);       // use large size
 
             stream.Put (box->fName.Get (), 4);
@@ -205,7 +205,7 @@ void dng_bmff_io::Write (dng_host & /* host */,
             if (box->fContent && (dataLen > 0))
                 stream.Put (box->fContent->Buffer (),
                             dataLen);
-                
+
             }
 
         else
@@ -230,7 +230,7 @@ void dng_bmff_io::Write (dng_host & /* host */,
         } // all boxes
 
     stream.Flush ();
-    
+
     }
 
 /*****************************************************************************/
@@ -239,18 +239,18 @@ void dng_bmff_io::UpdateBigTables (dng_host &host,
                                    const dng_big_table_dictionary &newTables,
                                    const bool deleteUnused)
     {
-    
+
     // 1 box per table.
-    // 
+    //
     // Box tag: btbl (big table), registered here: https://mp4ra.org/#/request
-    // 
+    //
     // Box layout is big-endian.
-    // 
+    //
     //   length:   overall length of box  4 bytes
     //   tag code: btbl                   4 bytes
     //   version:  version identifier     4 bytes
     //   data                             variable
-    // 
+    //
     // version 1 data:
     //   md5 fingerprint                  16 bytes
     //   big table data                   variable
@@ -262,7 +262,7 @@ void dng_bmff_io::UpdateBigTables (dng_host &host,
     // Step 1: Find all existing tables in the file. Along the way, we clean
     // up duplicate tables and no-longer-used tables (tables that aren't in
     // the given 'metadata' object).
-        
+
     const auto &dictMap = newTables.Map ();
 
     std::unordered_map<dng_fingerprint,
@@ -271,7 +271,7 @@ void dng_bmff_io::UpdateBigTables (dng_host &host,
 
     for (auto &box : fBoxes)
         {
-            
+
         if (box &&
             (box->fName == kBigTableTagName) &&
             box->fContent &&
@@ -289,7 +289,7 @@ void dng_bmff_io::UpdateBigTables (dng_host &host,
 
             if (version == 1)
                 {
-                    
+
                 // Get fingerprint (16 bytes).
 
                 dng_fingerprint digest;
@@ -300,19 +300,19 @@ void dng_bmff_io::UpdateBigTables (dng_host &host,
                 if (digest.IsValid () &&
                     (digests.find (digest) == digests.end ()))
                     {
-                        
+
                     // Not seen yet.
 
                     if (dictMap.find (digest) == dictMap.end ())
                         {
-                            
+
                         // Not found in newTables, so we don't need this
                         // table. If requested to delete unused tables, then
                         // mark for delete.
 
                         if (deleteUnused)
                             box.reset ();
-                            
+
                         }
 
                     else
@@ -329,18 +329,18 @@ void dng_bmff_io::UpdateBigTables (dng_host &host,
 
                 else
                     {
-                        
+
                     // Already seen this table earlier in this loop, so
                     // this is a duplicate.
 
                     box.reset ();
-                        
+
                     }
 
-                }                   
-                
+                }
+
             }
-            
+
         }
 
     // Step 2: Write new tables.
@@ -365,7 +365,7 @@ void dng_bmff_io::UpdateBigTables (dng_host &host,
         temp->fName = kBigTableTagName;
 
         const dng_ref_counted_block &block = it->second;
-        
+
         const uint32 blockSize = block.LogicalSize ();
 
         dng_memory_stream memStream (host.Allocator ());
@@ -387,9 +387,9 @@ void dng_bmff_io::UpdateBigTables (dng_host &host,
                        blockSize);
 
         temp->fContent.reset (memStream.AsMemoryBlock (host.Allocator ()));
-        
+
         fBoxes.push_back (temp);
-            
+
         }
 
     }

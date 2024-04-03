@@ -51,23 +51,23 @@ class dng_area_task_progress: private dng_uncopyable
 
 class dng_area_task
     {
-    
+
     protected:
 
         uint32 fMaxThreads;
-    
+
         uint32 fMinTaskArea;
-        
+
         dng_point fUnitCell;
-        
+
         dng_point fMaxTileSize;
 
         dng_string fName;
-    
+
     public:
-    
+
         explicit dng_area_task (const char *name = "unnamed dng_area_task");
-        
+
         virtual ~dng_area_task ();
 
         const char * Name () const
@@ -138,7 +138,7 @@ class dng_area_task
         /// size for all constraints of the partitioner to be met.
 
         virtual dng_rect RepeatingTile1 () const;
-        
+
         /// Getter for RepeatingTile2.
         /// RepeatingTile1, RepeatingTile2, and RepeatingTile3 are used to
         /// establish a set of 0 to 3 tile patterns for which the resulting
@@ -164,7 +164,7 @@ class dng_area_task
         /// numbered RepeatingTile patterns are only used if all lower ones are
         /// non-empty. A RepeatingTile pattern must be a multiple of UnitCell in
         /// size for all constraints of the partitioner to be met.
-        
+
         virtual dng_rect RepeatingTile3 () const;
 
         /// Task startup method called before any processing is done on partitions.
@@ -202,7 +202,7 @@ class dng_area_task
         virtual void Process (uint32 threadIndex,
                               const dng_rect &tile,
                               dng_abort_sniffer *sniffer) = 0;
-        
+
         /// Task computation finalization and teardown method. Called after all
         /// resources have completed processing. Can be overridden to accumulate
         /// results and free resources allocated in Start.
@@ -293,16 +293,16 @@ class dng_range_parallel_task: public dng_area_task, dng_uncopyable
         static const int32 kDummySize = 16;
 
     protected:
-    
+
         dng_host &fHost;
 
         const int32 fStartIndex;
         const int32 fStopIndex;
-        
+
         std::vector<int32> fIndices;
 
     public:
-    
+
         dng_range_parallel_task (dng_host &host,
                                 int32 startIndex,
                                 int32 stopIndex,
@@ -328,7 +328,7 @@ class dng_range_parallel_task: public dng_area_task, dng_uncopyable
                     const dng_point &tileSize,
                     dng_memory_allocator *allocator,
                     dng_abort_sniffer *sniffer) override;
-    
+
         void Process (uint32 threadIndex,
                       const dng_rect & /* tile */,
                       dng_abort_sniffer *sniffer) override;
@@ -356,13 +356,13 @@ class dng_range_parallel_task: public dng_area_task, dng_uncopyable
                     ,   fEnd                    (end)
                     ,   fMinIndicesPerThread    (minIndicesPerThread)
                     ,   fRecommendedThreadCount (recommendedThreadCount)
-                        
+
                     {
 
                     }
-                      
+
             };
-        
+
         struct range
             {
             uint32 fThreadIndex;
@@ -370,21 +370,21 @@ class dng_range_parallel_task: public dng_area_task, dng_uncopyable
             int32 fEnd;
             dng_abort_sniffer *fSniffer;
             };
-        
+
         typedef std::function<void(const range &)> function_t;
 
         static void Do (dng_host &host,
                         const info &params,
                         const char *taskName,
                         const function_t &func);
-        
+
     };
 
 /*****************************************************************************/
 
 class dng_get_buffer_task : public dng_area_task
     {
-        
+
     private:
 
         const dng_image &fSrc;
@@ -398,31 +398,31 @@ class dng_get_buffer_task : public dng_area_task
         dng_get_buffer_task (const dng_image &image,
                              dng_pixel_buffer &buffer,
                              dng_image::edge_option edgeOption = dng_image::edge_repeat)
-            
+
             :   dng_area_task ("dng_get_buffer_task")
-                
+
             ,   fSrc (image)
             ,   fDst (buffer)
 
             ,   fEdgeOption (edgeOption)
-                
+
             {
-            
+
             }
 
         dng_rect RepeatingTile1 () const override;
-            
+
         void Process (uint32 /* threadIndex */,
                       const dng_rect &tile,
                       dng_abort_sniffer * /* sniffer */) override;
-        
+
     };
 
 /*****************************************************************************/
 
 class dng_copy_buffer_task : public dng_area_task
     {
-        
+
     private:
 
         const dng_pixel_buffer &fSrc;
@@ -435,18 +435,18 @@ class dng_copy_buffer_task : public dng_area_task
                               dng_pixel_buffer &dst);
 
         dng_rect RepeatingTile1 () const override;
-            
+
         void Process (uint32 /* threadIndex */,
                       const dng_rect &tile,
                       dng_abort_sniffer * /* sniffer */) override;
-        
+
     };
 
 /*****************************************************************************/
 
 class dng_put_buffer_task : public dng_area_task
     {
-        
+
     private:
 
         const dng_pixel_buffer &fSrc;
@@ -457,27 +457,27 @@ class dng_put_buffer_task : public dng_area_task
 
         dng_put_buffer_task (const dng_pixel_buffer &buffer,
                              dng_image &image)
-            
+
             :   dng_area_task ("dng_put_buffer_task")
-                
+
             ,   fSrc (buffer)
-                
+
             ,   fDst (image)
-                
+
             {
-            
+
             }
 
         dng_rect RepeatingTile1 () const override;
-            
+
         void Process (uint32 /* threadIndex */,
                       const dng_rect &tile,
                       dng_abort_sniffer * /* sniffer */) override;
-        
+
     };
 
 /*****************************************************************************/
 
 #endif  // __dng_area_task__
-    
+
 /*****************************************************************************/

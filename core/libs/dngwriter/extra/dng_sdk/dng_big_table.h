@@ -51,7 +51,7 @@ class dng_big_table
         dng_fingerprint fFingerprint;
 
         dng_big_table_cache * fCache;
-        
+
         bool fIsMissing;
 
     protected:
@@ -65,22 +65,22 @@ class dng_big_table
     public:
 
         virtual ~dng_big_table ();
-        
+
         bool IsMissing () const
             {
             return fIsMissing;
             }
-        
+
         void SetMissing ()
             {
             fIsMissing = true;
             }
-        
+
         bool IsEmbedNever () const
             {
             return (GetFlags () & 1) != 0;
             }
-        
+
         void SetEmbedNever ()
             {
             SetFlags (GetFlags () | 1);
@@ -94,32 +94,32 @@ class dng_big_table
                                const uint8 * compressedData,
                                uint32 compressedSize,
                                AutoPtr<dng_memory_block> *uncompressedCache = nullptr);
-        
+
         static void ASCIItoBinary (dng_memory_allocator &allocator,
                                    const char *sPtr,
                                    uint32 sCount,
                                    AutoPtr<dng_memory_block> &dBlock,
                                    uint32 &dCount);
-                                   
+
         bool DecodeFromString (dng_host &host,
                                const dng_string &block1);
-        
+
         dng_memory_block * EncodeAsBinary (dng_memory_allocator &allocator,
                                            uint32 &compressedSize) const;
-        
+
         dng_memory_block * EncodeAsString (dng_memory_allocator &allocator) const;
 
         bool ExtractFromCache (const dng_fingerprint &fingerprint);
 
-        
+
         #if qDNGUseXMP
-        
+
         bool ReadTableFromXMP (const dng_xmp &xmp,
                                const char *ns,
                                const dng_fingerprint &fingerprint,
                                dng_big_table_storage *storage = nullptr,
                                dng_abort_sniffer *sniffer = nullptr);
-        
+
         bool ReadFromXMP (const dng_xmp &xmp,
                           const char *ns,
                           const char *path,
@@ -142,11 +142,11 @@ class dng_big_table
         #endif  // qDNGValidate
 
     protected:
-    
+
         virtual dng_fingerprint ComputeFingerprint () const;
 
         void RecomputeFingerprint ();
-        
+
         virtual bool UseCompression () const
             {
             return true;
@@ -156,9 +156,9 @@ class dng_big_table
 
         virtual void PutStream (dng_stream &stream,
                                 bool forFingerprint) const = 0;
-        
+
         virtual uint32 GetFlags () const = 0;
-        
+
         virtual void SetFlags (uint32 flags) = 0;
 
     };
@@ -167,39 +167,39 @@ class dng_big_table
 
 class dng_big_table_accessor
     {
-    
+
     public:
-    
+
         dng_big_table_accessor ()
             {
             }
-            
+
         virtual ~dng_big_table_accessor ()
             {
             }
-                                       
+
         virtual bool HasTable (const dng_fingerprint & /* fingerprint */) const
             {
             return false;
             }
-        
+
         virtual bool GetTable (const dng_fingerprint & /* fingerprint */,
                                dng_ref_counted_block & /* block */) const
             {
             return false;
             }
-    
+
         virtual void AddTable (const dng_fingerprint & /* fingerprint */,
                                const dng_ref_counted_block & /* block */)
             {
             ThrowProgramError ("AddTable not implemented");
             }
-            
+
         virtual void CopyToDictionary (dng_big_table_dictionary & /* dictionary */) const
             {
             ThrowProgramError ("CopyToDictionary not implemented");
             }
-    
+
         virtual bool GroupToInstance (const dng_fingerprint & /* groupDigest */,
                                       dng_fingerprint & /* instanceDigest */) const
             {
@@ -207,71 +207,71 @@ class dng_big_table_accessor
             }
 
     };
-    
+
 /*****************************************************************************/
 
 class dng_big_table_dictionary : public dng_big_table_accessor
     {
-    
+
     private:
-    
+
         std::map<dng_fingerprint, dng_ref_counted_block> fMap;
-        
+
     public:
-    
+
         const std::map<dng_fingerprint, dng_ref_counted_block> & Map () const
             {
             return fMap;
             }
-        
+
         bool IsEmpty () const
             {
             return fMap.empty ();
             }
-            
+
         virtual bool HasTable (const dng_fingerprint &fingerprint) const;
-        
+
         virtual bool GetTable (const dng_fingerprint &fingerprint,
                                dng_ref_counted_block &block) const;
-    
+
         virtual void AddTable (const dng_fingerprint &fingerprint,
                                const dng_ref_counted_block &block);
-    
+
         virtual void CopyToDictionary (dng_big_table_dictionary & /* dictionary */) const;
-            
+
     };
-    
+
 /*****************************************************************************/
 
 class dng_big_table_index
     {
-    
+
     public:
-    
+
         struct IndexEntry
             {
             uint32 fTableSize;
             uint64 fTableOffset;
             };
-            
+
     private:
-    
+
         std::map<dng_fingerprint, IndexEntry> fMap;
-        
+
     public:
-    
+
         dng_big_table_index ();
-            
+
         bool IsEmpty () const
             {
             return fMap.empty ();
             }
-            
+
         const std::map<dng_fingerprint, IndexEntry> & Map () const
             {
             return fMap;
             }
-            
+
         bool HasEntry (const dng_fingerprint &fingerprint) const;
 
         bool GetEntry (const dng_fingerprint &fingerprint,
@@ -281,32 +281,32 @@ class dng_big_table_index
         void AddEntry (const dng_fingerprint &fingerprint,
                        uint32 tableSize,
                        uint64 tableOffset);
-                       
+
     };
 
 /*****************************************************************************/
 
 class dng_big_table_group_index
     {
-    
+
     private:
-    
+
         std::map<dng_fingerprint,            // group digest
                  dng_fingerprint> fMap;      // instance digest
-        
+
     public:
-    
+
         bool IsEmpty () const
             {
             return fMap.empty ();
             }
-            
+
         const std::map<dng_fingerprint,
                        dng_fingerprint> & Map () const
             {
             return fMap;
             }
-            
+
         bool HasEntry (const dng_fingerprint &groupDigest) const
             {
             return fMap.find (groupDigest) != fMap.end ();
@@ -322,28 +322,28 @@ class dng_big_table_group_index
                 fMap.insert (std::make_pair (groupDigest,
                                              instanceDigest));
             }
-                       
+
     };
 
 /*****************************************************************************/
 
 class dng_big_table_storage
     {
-    
+
     public:
-        
+
         dng_big_table_storage ();
-        
+
         virtual ~dng_big_table_storage ();
-        
+
         virtual bool ReadTable (dng_big_table &table,
                                 const dng_fingerprint &fingerprint,
                                 dng_memory_allocator &allocator);
-    
+
         virtual bool WriteTable (const dng_big_table &table,
                                  const dng_fingerprint &fingerprint,
                                  dng_memory_allocator &allocator);
-        
+
         virtual void MissingTable (const dng_fingerprint &fingerprint);
 
         virtual bool GroupToInstance (const dng_fingerprint &groupDigest,
@@ -362,18 +362,18 @@ class dng_look_table : public dng_big_table
 
         enum
             {
-            
+
             // Tables are are allowed to trade off resolution
             // between dimensions, but need to keep total
             // samples below this limit.  This results in
             // 216K memory footprint (12 byte per sample)
             // which is similar in size to the RGB table
             // size limit.
-            
+
             kMaxTotalSamples = 36 * 32 * 16,
-            
+
             // Also each must be within their own limits.
-            
+
             kMaxHueSamples = 360,
             kMaxSatSamples = 256,
             kMaxValSamples = 256
@@ -394,24 +394,24 @@ class dng_look_table : public dng_big_table
             {
 
             // 3-D hue/sat table to apply a "look".
-            
+
             dng_hue_sat_map fMap;
 
             // Value (V of HSV) encoding for look table.
 
             uint32 fEncoding;
-            
+
             // Minimum and maximum scale amounts supported by table.
 
             real64 fMinAmount;
             real64 fMaxAmount;
 
             // Does this table have only monochrome output (when amount is 1.0)?
-            
+
             bool fMonochrome;
-            
+
             // Flags.
-            
+
             uint32 fFlags;
 
             // Constructor to set defaults.
@@ -427,32 +427,32 @@ class dng_look_table : public dng_big_table
 
                 {
                 }
-                
+
             // Compute monchrome flag.
-            
+
             void ComputeMonochrome ()
                 {
-                
+
                 fMonochrome = true;
-                
+
                 uint32 count = fMap.DeltasCount ();
 
                 dng_hue_sat_map::HSBModify * deltas = fMap.GetDeltas ();
-                
+
                 for (uint32 index = 0; index < count; index++)
                     {
 
                     if (deltas [index] . fSatScale != 0.0f)
                         {
-                        
+
                         fMonochrome = false;
-                        
+
                         return;
-                        
+
                         }
-                    
+
                     }
-                
+
                 }
 
             };
@@ -509,11 +509,11 @@ class dng_look_table : public dng_big_table
             fData.fMinAmount = Pin_real64 (0.0,
                                            Round_int32 (minAmount * 100.0) * 0.01,
                                            1.0);
-                
+
             fData.fMaxAmount = Pin_real64 (1.0,
                                            Round_int32 (maxAmount * 100.0) * 0.01,
                                            2.0);
-            
+
             fAmount = Pin_real64 (fData.fMinAmount, fAmount, fData.fMaxAmount);
 
             RecomputeFingerprint ();
@@ -545,7 +545,7 @@ class dng_look_table : public dng_big_table
             {
             return fData.fEncoding;
             }
-        
+
         bool Monochrome () const
             {
             return IsValid () && fAmount == 1.0 && fData.fMonochrome;
@@ -562,12 +562,12 @@ class dng_look_table : public dng_big_table
             {
             return fData.fFlags;
             }
-        
+
         virtual void SetFlags (uint32 flags)
             {
-            
+
             fData.fFlags = flags;
-            
+
             RecomputeFingerprint ();
 
             }
@@ -649,12 +649,12 @@ class dng_rgb_table : public dng_big_table
             uint32 fDimensions;
 
             // Number of samples per side of table.
-            
+
             uint32 fDivisions;
 
             // Sample data.  16-bit unsigned encoding.
             // Right zero padded to 64 bits per sample (i.e. RGB0).
-            
+
             dng_ref_counted_block fSamples;
 
             // Color primaries for table.
@@ -675,11 +675,11 @@ class dng_rgb_table : public dng_big_table
             real64 fMaxAmount;
 
             // Does this table have only monochrome output (when amount is 1.0)?
-            
+
             bool fMonochrome;
-            
+
             // Flags.
-            
+
             uint32 fFlags;
 
             // Constructor to set defaults.
@@ -701,52 +701,52 @@ class dng_rgb_table : public dng_big_table
                 }
 
             // Compute monchrome flag.
-            
+
             void ComputeMonochrome ()
                 {
-                
+
                 if (fPrimaries != primaries_ProPhoto &&
                     fGamut     != gamut_clip)
                     {
-                    
+
                     fMonochrome = false;
-                    
+
                     return;
-                    
+
                     }
-                    
+
                 if (fDimensions != 3)
                     {
-                    
+
                     fMonochrome = false;
-                    
+
                     return;
-                    
+
                     }
-                
+
                 fMonochrome = true;
-                
+
                 uint32 count = fDivisions * fDivisions * fDivisions;
 
                 const uint16 * sample = fSamples.Buffer_uint16 ();
-                
+
                 for (uint32 index = 0; index < count; index++)
                     {
-                    
+
                     if (sample [0] != sample [1] ||
                         sample [0] != sample [2])
                         {
 
                         fMonochrome = false;
-                        
+
                         return;
-                        
+
                         }
-                        
+
                     sample += 4;
-                    
+
                     }
-                    
+
                 }
 
             };
@@ -846,11 +846,11 @@ class dng_rgb_table : public dng_big_table
             fData.fMinAmount = Pin_real64 (0.0,
                                            Round_int32 (minAmount * 100.0) * 0.01,
                                            1.0);
-                
+
             fData.fMaxAmount = Pin_real64 (1.0,
                                            Round_int32 (maxAmount * 100.0) * 0.01,
                                            2.0);
-            
+
             fAmount = Pin_real64 (fData.fMinAmount, fAmount, fData.fMaxAmount);
 
             RecomputeFingerprint ();
@@ -911,9 +911,9 @@ class dng_rgb_table : public dng_big_table
 
         virtual void SetFlags (uint32 flags)
             {
-            
+
             fData.fFlags = flags;
-            
+
             RecomputeFingerprint ();
 
             }
@@ -931,7 +931,7 @@ class dng_image_table_compression_info
     public:
 
         virtual ~dng_image_table_compression_info ();
-        
+
         virtual uint32 Type () const
             {
             return 0;
@@ -940,7 +940,7 @@ class dng_image_table_compression_info
         virtual void Compress (dng_host &host,
                                dng_stream &stream,
                                const dng_image &image) const;
-        
+
     };
 
 /*****************************************************************************/
@@ -958,7 +958,7 @@ class dng_image_table_jxl_compression_info : public dng_image_table_compression_
 
         // If true, then write floating-point image tables using fp16 instead
         // of fp32. This field is ignored for integer images.
-        
+
         bool fPreferHalfFloat = true;
 
     public:
@@ -969,11 +969,11 @@ class dng_image_table_jxl_compression_info : public dng_image_table_compression_
             {
             return ccJXL;
             }
-        
+
         void Compress (dng_host &host,
                        dng_stream &stream,
                        const dng_image &image) const override;
-        
+
     };
 
 /*****************************************************************************/
@@ -982,20 +982,20 @@ class dng_image_table_data
     {
 
     public:
-        
+
         std::shared_ptr<const dng_image> fImage;
 
         mutable std::shared_ptr<const dng_memory_block> fCompressedData;
 
         uint32 fCompressionType = 0;
-        
+
     };
 
 /*****************************************************************************/
 
 class dng_image_table : public dng_big_table
     {
-    
+
     friend class dng_image_table_cache;
     friend class dng_packed_image_table_cache;
 
@@ -1007,7 +1007,7 @@ class dng_image_table : public dng_big_table
             };
 
     protected:
-    
+
         std::shared_ptr<const dng_image> fImage;
 
         // For lossy-compressed big table data, we store a copy of the
@@ -1016,11 +1016,11 @@ class dng_image_table : public dng_big_table
         mutable std::shared_ptr<const dng_memory_block> fCompressedData;
 
         // Compression type -- for information/debugging purposes only.
-        
+
         uint32 fCompressionType = 0;
-        
+
     public:
-    
+
         dng_image_table ();
 
         dng_image_table (const dng_image_table &table);
@@ -1028,9 +1028,9 @@ class dng_image_table : public dng_big_table
         dng_image_table & operator= (const dng_image_table &table);
 
         virtual ~dng_image_table ();
-    
+
         virtual bool IsValid () const;
-        
+
         void SetInvalid ();
 
         bool operator== (const dng_image_table &table) const
@@ -1043,17 +1043,17 @@ class dng_image_table : public dng_big_table
             {
             return !(*this == table);
             }
-            
+
         const dng_image & Image () const
             {
             return *fImage;
             }
-            
+
         std::shared_ptr<const dng_image> ShareImage () const
             {
             return fImage;
             };
-            
+
         void SetImage (const dng_image *image,
                        const dng_image_table_compression_info *compressionInfo = nullptr,
                        dng_abort_sniffer *sniffer = nullptr);
@@ -1088,17 +1088,17 @@ class dng_image_table : public dng_big_table
         // optimized for image content, e.g., ccDeflate or ccJXL, and
         // therefore does not use the general, external compression method
         // provided by the base class.
-        
+
         virtual bool UseCompression () const
             {
             return false;
             }
-            
+
         virtual bool GetStream (dng_stream &stream);
 
         virtual void PutStream (dng_stream &stream,
                                 bool forFingerprint) const;
-        
+
         virtual uint32 GetFlags () const
             {
             return 0;
@@ -1112,7 +1112,7 @@ class dng_image_table : public dng_big_table
                                     dng_abort_sniffer *sniffer);
 
     protected:
-        
+
         virtual void
             PutCompressedStream (dng_stream &stream,
                                  bool forFingerprint,
@@ -1124,13 +1124,13 @@ class dng_image_table : public dng_big_table
 
 // A packed (opaque) image table. Reading the table will obtain only the
 // (compressed) bytes but does not perform any decompression until Unpack is
-// called. 
+// called.
 
 class dng_packed_image_table : public dng_big_table
     {
 
     friend class dng_packed_image_table_cache;
-    
+
     private:
 
         enum
@@ -1149,7 +1149,7 @@ class dng_packed_image_table : public dng_big_table
         std::unique_ptr<dng_image_table> fTable;
 
         // The packed / opaque image table.
-        
+
         std::shared_ptr<const dng_memory_block> fBlock;
 
         // Image properties.
@@ -1163,7 +1163,7 @@ class dng_packed_image_table : public dng_big_table
     public:
 
         dng_packed_image_table ();
-        
+
         dng_packed_image_table (const dng_packed_image_table &table);
 
         dng_packed_image_table & operator= (const dng_packed_image_table &table);
@@ -1243,7 +1243,7 @@ class dng_packed_image_table : public dng_big_table
             {
             return !(*this == table);
             }
-            
+
     public:
 
         // Factory methods.
@@ -1278,12 +1278,12 @@ class dng_packed_image_table : public dng_big_table
 
         void PutStream (dng_stream &stream,
                         bool forFingerprint) const override;
-        
+
         uint32 GetFlags () const override
             {
             return 0;
             }
-        
+
         void SetFlags (uint32 /* flags */) override
             {
             }
@@ -1292,16 +1292,16 @@ class dng_packed_image_table : public dng_big_table
             {
             return fTableDigest;
             }
-        
+
     };
-    
+
 /*****************************************************************************/
 
 // Implements RGBTables tag from DNG 1.6.
 
 class dng_masked_rgb_table: private dng_uncopyable
     {
-        
+
     private:
 
         // TableSemanticName and LengthTableSemanticName fields.
@@ -1315,7 +1315,7 @@ class dng_masked_rgb_table: private dng_uncopyable
         // 0 = ttByte
         // 1 = ttShort
         // 2 = ttFloat
-        
+
         uint32 fPixelType = 0;
 
         // The following RGBTables tag fields are represented inside the
@@ -1343,10 +1343,10 @@ class dng_masked_rgb_table: private dng_uncopyable
                               const dng_rgb_table &table);
 
         void Validate () const;
-        
+
         void GetStream (dng_host &host,
                         dng_stream &stream);
-        
+
         void PutStream (dng_stream &stream) const;
 
         void AddDigest (dng_md5_printer &printer) const;
@@ -1381,7 +1381,7 @@ class dng_masked_rgb_table: private dng_uncopyable
         static void CheckGamutExtension (dng_rgb_table::gamut_enum gamut);
 
         static void CheckColorPrimaries (dng_rgb_table::primaries_enum primaries);
-        
+
     };
 
 /*****************************************************************************/
@@ -1392,7 +1392,7 @@ class dng_masked_rgb_tables: private dng_uncopyable
     {
 
     public:
-        
+
         static const uint32 kMaxTables = 20;
 
         enum composite_method
@@ -1419,7 +1419,7 @@ class dng_masked_rgb_tables: private dng_uncopyable
             {
             return fTables;
             }
-        
+
         bool IsNOP () const;
 
         void Validate () const;
@@ -1455,7 +1455,7 @@ class dng_masked_rgb_tables: private dng_uncopyable
         #if qDNGValidate
         void Dump () const;
         #endif
-        
+
     };
 
 /*****************************************************************************/
@@ -1471,7 +1471,7 @@ class dng_rgb_to_rgb_table_data
 
         dng_matrix fEncodeMatrix;
         dng_matrix fDecodeMatrix;
-        
+
         AutoPtr<dng_1d_table> fEncodeTable;
         AutoPtr<dng_1d_table> fDecodeTable;
 
@@ -1503,7 +1503,7 @@ class dng_masked_rgb_table_render_data
     public:
 
         bool fUseSequentialMethod = false;
-        
+
         // A vector of paired RGB tables & masks. A given RGB table is meant
         // to be applied with the corresponding mask.
 
@@ -1517,7 +1517,7 @@ class dng_masked_rgb_table_render_data
 
         // Background RGB table and data. Will be left as nullptr if there is
         // no background table.
-        
+
         dng_masked_rgb_table_sptr fBackgroundTable;
 
         AutoPtr<dng_rgb_to_rgb_table_data> fBackgroundTableData;
@@ -1541,7 +1541,7 @@ class dng_masked_rgb_table_render_data
             }
 
         void PrepareRGBtoRGBTableData (dng_host &host);
-        
+
     };
 
 /*****************************************************************************/
@@ -1567,5 +1567,5 @@ void DualParseXMP (dng_host &host,
 /*****************************************************************************/
 
 #endif  // __dng_big_table__
-    
+
 /*****************************************************************************/

@@ -3,7 +3,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 //
@@ -251,7 +251,7 @@ static size_t
 EstimateRDFSize ( const XMP_Node * currNode, XMP_Index indent, size_t indentLen )
 {
     size_t outputLen = 2 * (indent*indentLen + currNode->name.size() + 4);  // The property element tags.
-    
+
     if ( ! currNode->qualifiers.empty() ) {
         // This node has qualifiers, assume it is written using rdf:value and estimate the qualifiers.
 
@@ -265,7 +265,7 @@ EstimateRDFSize ( const XMP_Node * currNode, XMP_Index indent, size_t indentLen 
         }
 
     }
-    
+
     if ( currNode->options & kXMP_PropValueIsStruct ) {
         indent += 1;
         outputLen += 2 * (indent*indentLen + strlen(kRDF_StructStart) + 2); // The rdf:Description tags.
@@ -283,7 +283,7 @@ EstimateRDFSize ( const XMP_Node * currNode, XMP_Index indent, size_t indentLen 
     }
 
     return outputLen;
-    
+
 }   // EstimateRDFSize
 
 
@@ -305,7 +305,7 @@ DeclareOneNamespace ( XMP_StringPtr   nsPrefix,
     size_t nsPos = usedNS.find ( boundedPrefix );
 
     if ( nsPos == XMP_VarString::npos ) {
-        
+
         outputStr += newline;
         for ( ; indent > 0; --indent ) outputStr += indentStr;
         outputStr += "xmlns:";
@@ -383,7 +383,7 @@ DeclareUsedNamespaces ( const XMP_Node * currNode,
         DeclareElemNamespace ( currQual->name, usedNS, outputStr, newline, indentStr, indent );
         DeclareUsedNamespaces ( currQual, usedNS, outputStr, newline, indentStr, indent );
     }
-    
+
 }   // DeclareUsedNamespaces
 
 // -------------------------------------------------------------------------------------------------
@@ -405,7 +405,7 @@ EmitRDFArrayTag ( XMP_OptionBits  arrayForm,
                   bool            isStartTag )
 {
     if ( (! isStartTag) && (arraySize == 0) ) return;
-    
+
     for ( XMP_Index level = indent; level > 0; --level ) outputStr += indentStr;
     if ( isStartTag ) {
         outputStr += "<rdf:";
@@ -420,7 +420,7 @@ EmitRDFArrayTag ( XMP_OptionBits  arrayForm,
     } else {
         outputStr += "Bag";
     }
-    
+
     if ( isStartTag && (arraySize == 0) ) outputStr += '/';
     outputStr += '>';
     outputStr += newline;
@@ -455,21 +455,21 @@ AppendNodeValue ( XMP_VarString & outputStr, const XMP_VarString & value, bool f
     unsigned char * runLimit  = runStart + value.size();
     unsigned char * runEnd;
     unsigned char   ch;
-    
+
     while ( runStart < runLimit ) {
-    
+
         for ( runEnd = runStart; runEnd < runLimit; ++runEnd ) {
             ch = *runEnd;
             if ( forAttribute && (ch == '"') ) break;
             if ( (ch < 0x20) || (ch == '&') || (ch == '<') || (ch == '>') ) break;
         }
-        
+
         outputStr.append ( (char *) runStart, (runEnd - runStart) );
-        
+
         if ( runEnd < runLimit ) {
 
             if ( ch < 0x20 ) {
-            
+
                 XMP_Assert ( (ch == kTab) || (ch == kLF) || (ch == kCR) );
 
                 char hexBuf[16];
@@ -495,9 +495,9 @@ AppendNodeValue ( XMP_VarString & outputStr, const XMP_VarString & value, bool f
             ++runEnd;
 
         }
-        
+
         runStart = runEnd;
-    
+
     }
 
 }   // AppendNodeValue
@@ -510,14 +510,14 @@ AppendNodeValue ( XMP_VarString & outputStr, const XMP_VarString & value, bool f
 static bool
 CanBeRDFAttrProp ( const XMP_Node * propNode )
 {
-    
+
     if ( propNode->name[0] == '[' ) return false;
     if ( ! propNode->qualifiers.empty() ) return false;
     if ( propNode->options & kXMP_PropValueIsURI ) return false;
     if ( propNode->options & kXMP_PropCompositeMask ) return false;
-    
+
     return true;
-    
+
 }   // CanBeRDFAttrProp
 
 
@@ -536,7 +536,7 @@ IsRDFAttrQualifier ( XMP_VarString qualName )
     }
 
     return false;
-    
+
 }   // IsRDFAttrQualifier
 
 
@@ -554,15 +554,15 @@ StartOuterRDFDescription ( const XMP_Node & xmpTree,
                            XMP_StringPtr    indentStr,
                            XMP_Index        baseIndent )
 {
-    
+
     // Begin the outer rdf:Description start tag.
-    
+
     for ( XMP_Index level = baseIndent+2; level > 0; --level ) outputStr += indentStr;
     outputStr += kRDF_SchemaStart;
     outputStr += '"';
     outputStr += xmpTree.name;
     outputStr += '"';
-    
+
     // Write all necessary xmlns attributes.
 
     XMP_VarString usedNS;
@@ -631,7 +631,7 @@ SerializeCanonicalRDFProperty ( const XMP_Node * propNode,
 
     // ------------------------------------------------------------------------------------------
     // Determine the XML element name. Open the start tag with the name and attribute qualifiers.
-    
+
     XMP_StringPtr elemName = propNode->name.c_str();
     if ( emitAsRDFValue ) {
         elemName= "rdf:value";
@@ -645,7 +645,7 @@ SerializeCanonicalRDFProperty ( const XMP_Node * propNode,
 
     bool hasGeneralQualifiers = false;
     bool hasRDFResourceQual   = false;
-    
+
     for ( size_t qualNum = 0, qualLim = propNode->qualifiers.size(); qualNum < qualLim; ++qualNum ) {
         const XMP_Node * currQual = propNode->qualifiers[qualNum];
         if ( ! IsRDFAttrQualifier ( currQual->name ) ) {
@@ -661,12 +661,12 @@ SerializeCanonicalRDFProperty ( const XMP_Node * propNode,
             }
         }
     }
-    
+
     // --------------------------------------------------------
     // Process the property according to the standard patterns.
-    
+
     if ( hasGeneralQualifiers && (! emitAsRDFValue) ) {
-    
+
         // -----------------------------------------------------------------------------------------
         // This node has general, non-attribute, qualifiers. Emit using the qualified property form.
         // ! The value is output by a recursive call ON THE SAME NODE with emitAsRDFValue set.
@@ -696,24 +696,24 @@ SerializeCanonicalRDFProperty ( const XMP_Node * propNode,
             SerializeCanonicalRDFProperty ( currQual, outputStr, newline, indentStr, indent+1,
                                             useCanonicalRDF, kEmitAsNormalValue );
         }
-        
+
         if ( useCanonicalRDF ) {
             for ( level = indent; level > 0; --level ) outputStr += indentStr;
             outputStr += "</rdf:Description>";
             outputStr += newline;
             indent -= 1;
         }
-        
+
     } else {
 
         // --------------------------------------------------------------------
         // This node has no general qualifiers. Emit using an unqualified form.
-        
+
         if ( propForm == 0 ) {
-        
+
             // --------------------------
             // This is a simple property.
-            
+
             if ( propNode->options & kXMP_PropValueIsURI ) {
                 outputStr += " rdf:resource=\"";
                 AppendNodeValue ( outputStr, propNode->value, kForAttribute );
@@ -729,9 +729,9 @@ SerializeCanonicalRDFProperty ( const XMP_Node * propNode,
                 AppendNodeValue ( outputStr, propNode->value, kForElement );
                 indentEndTag = false;
             }
-            
+
         } else if ( propForm & kXMP_PropValueIsArray ) {
-        
+
             // This is an array.
             outputStr += '>';
             outputStr += newline;
@@ -743,10 +743,10 @@ SerializeCanonicalRDFProperty ( const XMP_Node * propNode,
                                                 useCanonicalRDF, kEmitAsNormalValue );
             }
             EmitRDFArrayTag ( propForm, outputStr, newline, indentStr, indent+1, static_cast<XMP_Index>(propNode->children.size()), kIsEndTag );
-        
-        
+
+
         } else if ( ! hasRDFResourceQual ) {
-        
+
             // This is a "normal" struct, use the nested field element form form.
             XMP_Assert ( propForm & kXMP_PropValueIsStruct );
             if ( propNode->children.size() == 0 ) {
@@ -785,9 +785,9 @@ SerializeCanonicalRDFProperty ( const XMP_Node * propNode,
                     indent -= 1;
                 }
             }
-        
+
         } else {
-        
+
             // This is a struct with an rdf:resource attribute, use the "empty property element" form.
             XMP_Assert ( propForm & kXMP_PropValueIsStruct );
             for ( size_t childNum = 0, childLim = propNode->children.size(); childNum < childLim; ++childNum ) {
@@ -806,14 +806,14 @@ SerializeCanonicalRDFProperty ( const XMP_Node * propNode,
             outputStr += "/>";
             outputStr += newline;
             emitEndTag = false;
-        
+
         }
-        
+
     }
-    
+
     // ----------------------------------
     // Emit the property element end tag.
-    
+
     if ( emitEndTag ) {
         if ( indentEndTag ) for ( level = indent; level > 0; --level ) outputStr += indentStr;
         outputStr += "</";
@@ -821,7 +821,7 @@ SerializeCanonicalRDFProperty ( const XMP_Node * propNode,
         outputStr += '>';
         outputStr += newline;
     }
-    
+
 }   // SerializeCanonicalRDFProperty
 
 
@@ -853,7 +853,7 @@ SerializeCanonicalRDFSchemas ( const XMP_Node & xmpTree,
 {
 
     StartOuterRDFDescription ( xmpTree, outputStr, newline, indentStr, baseIndent );
-    
+
     if ( xmpTree.children.size() > 0 ) {
         outputStr += ">";
         outputStr += newline;
@@ -871,7 +871,7 @@ SerializeCanonicalRDFSchemas ( const XMP_Node & xmpTree,
                                             useCanonicalRDF, kEmitAsNormalValue );
         }
     }
-    
+
     // Write the rdf:Description end tag.
     for ( XMP_Index level = baseIndent+2; level > 0; --level ) outputStr += indentStr;
     outputStr += kRDF_SchemaEnd;
@@ -904,7 +904,7 @@ SerializeCompactRDFAttrProps ( const XMP_Node * parentNode,
             allAreAttrs = false;
             continue;
         }
-        
+
         outputStr += newline;
         for ( XMP_Index level = indent; level > 0; --level ) outputStr += indentStr;
         outputStr += currProp->name;
@@ -913,7 +913,7 @@ SerializeCompactRDFAttrProps ( const XMP_Node * parentNode,
         outputStr += '"';
 
     }
-    
+
     return allAreAttrs;
 
 }   // SerializeCompactRDFAttrProps
@@ -981,14 +981,14 @@ SerializeCompactRDFElemProps ( const XMP_Node * parentNode,
         // Determine the XML element name, write the name part of the start tag. Look over the
         // qualifiers to decide on "normal" versus "rdf:value" form. Emit the attribute
         // qualifiers at the same time.
-        
+
         XMP_StringPtr elemName = propNode->name.c_str();
         if ( *elemName == '[' ) elemName = "rdf:li";
 
         for ( level = indent; level > 0; --level ) outputStr += indentStr;
         outputStr += '<';
         outputStr += elemName;
-    
+
         bool hasGeneralQualifiers = false;
         bool hasRDFResourceQual   = false;
 
@@ -1005,17 +1005,17 @@ SerializeCompactRDFElemProps ( const XMP_Node * parentNode,
                 outputStr += '"';
             }
         }
-        
+
         // --------------------------------------------------------
         // Process the property according to the standard patterns.
-    
+
         if ( hasGeneralQualifiers ) {
-        
+
             // -------------------------------------------------------------------------------------
             // The node has general qualifiers, ones that can't be attributes on a property element.
             // Emit using the qualified property pseudo-struct form. The value is output by a call
             // to SerializeCanonicalRDFProperty with emitAsRDFValue set.
-            
+
             // *** We're losing compactness in the calls to SerializeCanonicalRDFProperty.
             // *** Should refactor to have SerializeCompactRDFProperty that does one node.
 
@@ -1028,23 +1028,23 @@ SerializeCompactRDFElemProps ( const XMP_Node * parentNode,
             size_t qualNum = 0;
             size_t qualLim = propNode->qualifiers.size();
             if ( propNode->options & kXMP_PropHasLang ) ++qualNum;
-            
+
             for ( ; qualNum < qualLim; ++qualNum ) {
                 const XMP_Node * currQual = propNode->qualifiers[qualNum];
                 SerializeCanonicalRDFProperty ( currQual, outputStr, newline, indentStr, indent+1,
                                                 kUseAdobeVerboseRDF, kEmitAsNormalValue );
             }
-            
+
         } else {
 
             // --------------------------------------------------------------------
             // This node has only attribute qualifiers. Emit as a property element.
-            
+
             if ( propForm == 0 ) {
-            
+
                 // --------------------------
                 // This is a simple property.
-                
+
                 if ( propNode->options & kXMP_PropValueIsURI ) {
                     outputStr += " rdf:resource=\"";
                     AppendNodeValue ( outputStr, propNode->value, kForAttribute );
@@ -1060,16 +1060,16 @@ SerializeCompactRDFElemProps ( const XMP_Node * parentNode,
                     AppendNodeValue ( outputStr, propNode->value, kForElement );
                     indentEndTag = false;
                 }
-                
+
             } else if ( propForm & kXMP_PropValueIsArray ) {
 
                 // -----------------
                 // This is an array.
-                
+
                 outputStr += '>';
                 outputStr += newline;
                 EmitRDFArrayTag ( propForm, outputStr, newline, indentStr, indent+1, static_cast<XMP_Index>(propNode->children.size()), kIsStartTag );
-            
+
                 if ( XMP_ArrayIsAltText(propNode->options) ) NormalizeLangArray ( (XMP_Node*)propNode );
                 SerializeCompactRDFElemProps ( propNode, outputStr, newline, indentStr, indent+2 );
 
@@ -1079,12 +1079,12 @@ SerializeCompactRDFElemProps ( const XMP_Node * parentNode,
 
                 // ----------------------
                 // This must be a struct.
-                
+
                 XMP_Assert ( propForm & kXMP_PropValueIsStruct );
 
                 bool hasAttrFields = false;
                 bool hasElemFields = false;
-            
+
                 size_t field, fieldLim;
                 for ( field = 0, fieldLim = propNode->children.size(); field != fieldLim; ++field ) {
                     XMP_Node * currField = propNode->children[field];
@@ -1096,19 +1096,19 @@ SerializeCompactRDFElemProps ( const XMP_Node * parentNode,
                         if ( hasAttrFields ) break; // No sense looking further.
                     }
                 }
-                
+
                 if ( hasRDFResourceQual && hasElemFields ) {
                     XMP_Throw ( "Can't mix rdf:resource qualifier and element fields", kXMPErr_BadRDF );
                 }
-                
+
                 if ( propNode->children.size() == 0 ) {
-                
+
                     // Catch an empty struct as a special case. The case below would emit an empty
                     // XML element, which gets reparsed as a simple property with an empty value.
                     outputStr += " rdf:parseType=\"Resource\"/>";
                     outputStr += newline;
                     emitEndTag = false;
-                
+
                 } else if ( ! hasElemFields ) {
 
                     // All fields can be attributes, use the emptyPropertyElt form.
@@ -1118,14 +1118,14 @@ SerializeCompactRDFElemProps ( const XMP_Node * parentNode,
                     emitEndTag = false;
 
                 } else if ( ! hasAttrFields ) {
-                
+
                     // All fields must be elements, use the parseTypeResourcePropertyElt form.
                     outputStr += " rdf:parseType=\"Resource\">";
                     outputStr += newline;
                     SerializeCompactRDFElemProps ( propNode, outputStr, newline, indentStr, indent+1 );
-                
+
                 } else {
-                
+
                     // Have a mix of attributes and elements, use an inner rdf:Description.
                     outputStr += '>';
                     outputStr += newline;
@@ -1144,10 +1144,10 @@ SerializeCompactRDFElemProps ( const XMP_Node * parentNode,
             }
 
         }
-        
+
         // ----------------------------------
         // Emit the property element end tag.
-        
+
         if ( emitEndTag ) {
             if ( indentEndTag ) for ( level = indent; level > 0; --level ) outputStr += indentStr;
             outputStr += "</";
@@ -1157,7 +1157,7 @@ SerializeCompactRDFElemProps ( const XMP_Node * parentNode,
         }
 
     }
-    
+
 }   // SerializeCompactRDFElemProps
 
 
@@ -1188,9 +1188,9 @@ SerializeCompactRDFSchemas ( const XMP_Node & xmpTree,
 {
     XMP_Index level;
     size_t schema, schemaLim;
-    
+
     StartOuterRDFDescription ( xmpTree, outputStr, newline, indentStr, baseIndent );
-    
+
     // Write the top level "attrProps" and close the rdf:Description start tag.
     bool allAreAttrs = true;
     for ( schema = 0, schemaLim = xmpTree.children.size(); schema != schemaLim; ++schema ) {
@@ -1211,7 +1211,7 @@ SerializeCompactRDFSchemas ( const XMP_Node & xmpTree,
         const XMP_Node * currSchema = xmpTree.children[schema];
         SerializeCompactRDFElemProps ( currSchema, outputStr, newline, indentStr, baseIndent+3 );
     }
-    
+
     // Write the rdf:Description end tag.
     for ( level = baseIndent+2; level > 0; --level ) outputStr += indentStr;
     outputStr += kRDF_SchemaEnd;
@@ -1256,9 +1256,9 @@ SerializeAsRDF ( const XMPMeta & xmpObj,
     // the values of properties, so it does not account for character entities, e.g. &#xA; for newline.
     // Since there can be a lot of these in things like the base 64 encoding of a large thumbnail,
     // inflate the count by 1/4 (easy to do) to accommodate.
-    
+
     // *** Need to include estimate for alias comments.
-    
+
     size_t outputLen = 2 * (strlen(kPacketHeader) + strlen(kRDF_XMPMetaStart) + strlen(kRDF_RDFStart) + 3*baseIndent*indentLen);
 
     for ( size_t schemaNum = 0, schemaLim = xmpObj.tree.children.size(); schemaNum < schemaLim; ++schemaNum ) {
@@ -1266,13 +1266,13 @@ SerializeAsRDF ( const XMPMeta & xmpObj,
         outputLen += 2*(baseIndent+2)*indentLen + strlen(kRDF_SchemaStart) + treeNameLen + strlen(kRDF_SchemaEnd) + 2;
         outputLen += EstimateRDFSize ( currSchema, baseIndent+2, indentLen );
     }
-    
+
     outputLen += (outputLen >> 2);  // Inflate by 1/4, an empirical fudge factor.
-    
+
     // Now generate the RDF into the head string as UTF-8.
-    
+
     XMP_Index level;
-    
+
     std::string rdfstring;
     headStr.erase();
     rdfstring.reserve ( outputLen );
@@ -1280,7 +1280,7 @@ SerializeAsRDF ( const XMPMeta & xmpObj,
     // Write the rdf:RDF start tag.
     rdfstring += kRDF_RDFStart;
     rdfstring += newline;
-    
+
     // Write all of the properties.
     if ( options & kXMP_UseCompactFormat ) {
         SerializeCompactRDFSchemas ( xmpObj.tree, rdfstring, newline, indentStr, baseIndent );
@@ -1308,7 +1308,7 @@ SerializeAsRDF ( const XMPMeta & xmpObj,
         unsigned char digestBin [16];
         if (options & kXMP_IncludeRDFHash)
         {
-            std::string hashrdf;    
+            std::string hashrdf;
             MD5_CTX    context;
             MD5Init ( &context );
             MD5Update ( &context, (XMP_Uns8*)rdfstring.c_str(), (unsigned int)rdfstring.size() );
@@ -1339,7 +1339,7 @@ SerializeAsRDF ( const XMPMeta & xmpObj,
         headStr += kRDF_XMPMetaEnd;
         headStr += newline;
     }
-    
+
     // Write the packet trailer PI into the tail string as UTF-8.
     tailStr.erase();
     if ( ! (options & kXMP_OmitPacketWrapper) ) {
@@ -1348,7 +1348,7 @@ SerializeAsRDF ( const XMPMeta & xmpObj,
         tailStr += kPacketTrailer;
         if ( options & kXMP_ReadOnlyPacket ) tailStr[tailStr.size()-4] = 'r';
     }
-    
+
 }   // SerializeAsRDF
 
 
@@ -1367,9 +1367,9 @@ XMPMeta::SerializeToBuffer ( XMP_VarString * rdfString,
     XMP_Enforce( rdfString != 0 );
     XMP_Assert ( (newline != 0) && (indentStr != 0) );
     rdfString->erase();
-    
+
     // Fix up some default parameters.
-    
+
     enum { kDefaultPad = 2048 };
     size_t unicodeUnitSize = 1;
     XMP_OptionBits charEncoding = options & kXMP_EncodingMask;
@@ -1384,7 +1384,7 @@ XMPMeta::SerializeToBuffer ( XMP_VarString * rdfString,
             XMP_Throw ( "Can't use _XMP_LittleEndian_Bit by itself", kXMPErr_BadOptions );
         }
     }
-    
+
     if ( options & kXMP_OmitAllFormatting ) {
         newline = " ";  // ! Yes, a space for "newline". This ensures token separation.
         indentStr = "";
@@ -1395,7 +1395,7 @@ XMPMeta::SerializeToBuffer ( XMP_VarString * rdfString,
             if ( ! (options & kXMP_UseCompactFormat) ) indentStr  = "   ";
         }
     }
-    
+
     if ( options & kXMP_ExactPacketLength ) {
         if ( options & (kXMP_OmitPacketWrapper | kXMP_IncludeThumbnailPad) ) {
             XMP_Throw ( "Inconsistent options for exact size serialize", kXMPErr_BadOptions );
@@ -1430,7 +1430,7 @@ XMPMeta::SerializeToBuffer ( XMP_VarString * rdfString,
     }
 
     // Serialize as UTF-8, then convert to UTF-16 or UTF-32 if necessary, and assemble with the padding and tail.
-    
+
     std::string tailStr;
 
     SerializeAsRDF ( *this, *rdfString, tailStr, options, newline, indentStr, baseIndent );
@@ -1442,9 +1442,9 @@ XMPMeta::SerializeToBuffer ( XMP_VarString * rdfString,
             if ( minSize > padding ) XMP_Throw ( "Can't fit into specified packet size", kXMPErr_BadSerialize );
             padding -= minSize; // Now the actual amount of padding to add.
         }
-        
+
         size_t newlineLen = strlen ( newline );
-    
+
         if ( padding < newlineLen ) {
             rdfString->append ( padding, ' ' );
         } else {
@@ -1459,18 +1459,18 @@ XMPMeta::SerializeToBuffer ( XMP_VarString * rdfString,
         }
 
         *rdfString += tailStr;
-    
+
     } else {
-    
+
         // Need to convert the encoding. Swap the UTF-8 into a local string and convert back. Assemble everything.
-        
+
         XMP_VarString utf8Str, newlineStr;
         bool bigEndian = ((charEncoding & _XMP_LittleEndian_Bit) == 0);
-        
+
         if ( charEncoding & _XMP_UTF16_Bit ) {
 
             std::string padStr ( "  " );  padStr[0] = 0;    // Assume big endian.
-            
+
             utf8Str.swap ( *rdfString );
             ToUTF16 ( (UTF8Unit*)utf8Str.c_str(), utf8Str.size(), rdfString, bigEndian );
             utf8Str.swap ( tailStr );
@@ -1485,7 +1485,7 @@ XMPMeta::SerializeToBuffer ( XMP_VarString * rdfString,
             utf8Str.assign ( newline );
             ToUTF16 ( (UTF8Unit*)utf8Str.c_str(), utf8Str.size(), &newlineStr, bigEndian );
             size_t newlineLen = newlineStr.size();
-    
+
             if ( padding < newlineLen ) {
                 for ( int i = padding/2; i > 0; --i ) *rdfString += padStr;
             } else {
@@ -1510,7 +1510,7 @@ XMPMeta::SerializeToBuffer ( XMP_VarString * rdfString,
                 padStr[0] = ' '; padStr[1] = padStr[2] = padStr[3] = 0;
                 Converter = UTF8_to_UTF32LE;
             }
-            
+
             utf8Str.swap ( *rdfString );
             ToUTF32 ( (UTF8Unit*)utf8Str.c_str(), utf8Str.size(), rdfString, bigEndian );
             utf8Str.swap ( tailStr );
@@ -1525,7 +1525,7 @@ XMPMeta::SerializeToBuffer ( XMP_VarString * rdfString,
             utf8Str.assign ( newline );
             ToUTF32 ( (UTF8Unit*)utf8Str.c_str(), utf8Str.size(), &newlineStr, bigEndian );
             size_t newlineLen = newlineStr.size();
-    
+
             if ( padding < newlineLen ) {
                 for ( int i = padding/4; i > 0; --i ) *rdfString += padStr;
             } else {
@@ -1542,7 +1542,7 @@ XMPMeta::SerializeToBuffer ( XMP_VarString * rdfString,
             *rdfString += tailStr;
 
         }
-    
+
     }
 
 }   // SerializeToBuffer

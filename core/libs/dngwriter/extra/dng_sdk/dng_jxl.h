@@ -46,7 +46,7 @@ static const uint32 kNumLeadingZeroBytesForEXIF = 4;
 
 class dng_jxl_encode_settings
     {
-    
+
     private:
 
         real32 fDistance = 1.0f;
@@ -64,7 +64,7 @@ class dng_jxl_encode_settings
 
         uint32 fDecodeSpeed = 4;
 
-        /* Notes from libjxl 0.7.0 
+        /* Notes from libjxl 0.7.0
 
            decode speed (ds) goes from level 0 thru 4
            0 means smaller files, but longer encode & decode times
@@ -117,7 +117,7 @@ class dng_jxl_encode_settings
                e5 is a little smaller (up to 6%) but 40% to 60% slower to encode
                ds0 is a little smaller (up to 5%) but 40% slower to decode
 
-               smallest files: use e5 + ds0 
+               smallest files: use e5 + ds0
                  pros: 10% smaller (than e3 + ds4)
                  cons: 87% slower to encode, 40% slower to decode (than e3 + ds4)
 
@@ -130,11 +130,11 @@ class dng_jxl_encode_settings
         bool fUseOriginalColorEncoding = false;
 
         bool fUseSingleThread = false;
-    
+
     public:
 
         // Low-level methods.
-    
+
         void SetDistance (real32 distance)
             {
             fDistance = distance;
@@ -206,7 +206,7 @@ class dng_jxl_encode_settings
         // If desired, add other JPEG XL encoding options here in the future.
 
         // ...
-        
+
     };
 
 /*****************************************************************************/
@@ -221,7 +221,7 @@ bool ParseJXL (dng_host &host,
 
 class dng_jxl_color_space_info
     {
-        
+
     public:
 
         AutoPtr<JxlColorEncoding> fJxlColorEncoding;
@@ -229,7 +229,7 @@ class dng_jxl_color_space_info
         AutoPtr<dng_memory_block> fICCProfile;
 
         real32 fIntensityTargetNits = 0.0f;
-        
+
     };
 
 /*****************************************************************************/
@@ -240,7 +240,7 @@ class dng_jxl_decoder
     {
 
     friend class dng_jxl_box_reader;
-        
+
     public:
 
         // Input params.
@@ -292,7 +292,7 @@ class dng_jxl_decoder
         // Other stuff we might want to decode.
 
         //const_dng_image_sptr fPreviewImage;
-        
+
         //const_dng_image_sptr fThumb;
 
     public:
@@ -319,7 +319,7 @@ class dng_jxl_decoder
 /*****************************************************************************/
 
 // Write a "raw JXL" codestream (no container, no metadata boxes) for a single
-// image. 
+// image.
 
 void EncodeJXL_Tile (dng_host &host,
                      dng_stream &stream,
@@ -392,5 +392,5 @@ bool SupportsJXL (const dng_image &image);
 /*****************************************************************************/
 
 #endif  // __dng_jxl__
-    
+
 /*****************************************************************************/

@@ -3,7 +3,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 // =================================================================================================
@@ -53,7 +53,7 @@ static inline void FormatByte ( XMP_Uns8 b, char * ch ) {
 
 #if XMP_MacBuild | XMP_iOSBuild
 
-    #include <CoreFoundation/CoreFoundation.h> 
+    #include <CoreFoundation/CoreFoundation.h>
 
     static void CreateBinaryID ( BinaryID * binID ) {
         XMP_Assert ( sizeof ( BinaryID ) == sizeof ( CFUUIDBytes ) );
@@ -74,29 +74,29 @@ static inline void FormatByte ( XMP_Uns8 b, char * ch ) {
         if ( err != S_OK ) {
             XMP_Throw ( "Failure from UuidCreate", kXMPErr_ExternalFailure );
         }
-        
+
 
     }
 
 #elif XMP_UNIXBuild
 
-#include <boost/uuid/uuid.hpp>            
-#include <boost/uuid/uuid_generators.hpp> 
-  
+#include <boost/uuid/uuid.hpp>
+#include <boost/uuid/uuid_generators.hpp>
+
 
     static void CreateBinaryID(BinaryID * binID) {
         boost::uuids::random_generator generator;
-        boost::uuids::uuid uuid = generator(); 
-    
+        boost::uuids::uuid uuid = generator();
+
         XMP_Index index = 0;
         for (boost::uuids::uuid::const_iterator it = uuid.begin(); it != uuid.end(); ++it) {
             (*binID)[index] = *it;
             index++;
             if (index > 15)
                 break;
-            
+
         }
-        
+
     }
 
 #elif  XMP_AndroidBuild
@@ -126,7 +126,7 @@ void XMPDocOpsUtils::ConjureUURI ( XMP_StringPtr prefix, XMP_VarString * idStr, 
     idStr->erase();
 
     // Create the binary ID, with thread locking if desired.
-    
+
     if ( threadLock == 0 ) {
         CreateBinaryID ( &binID );
     } else {
@@ -134,9 +134,9 @@ void XMPDocOpsUtils::ConjureUURI ( XMP_StringPtr prefix, XMP_VarString * idStr, 
         CreateBinaryID ( &binID );
         autoLock.Release();
     }
-    
+
     // Initialize the output string, reserving space, setting the prefix, and setting a suffix template.
-    
+
     size_t prefixLen = strlen ( prefix );
     idStr->reserve ( prefixLen + 1 + 36 );  // ...:12345678-1234-1234-1234-123456789012
     *idStr = prefix;
@@ -145,11 +145,11 @@ void XMPDocOpsUtils::ConjureUURI ( XMP_StringPtr prefix, XMP_VarString * idStr, 
     *idStr += "12345678-1234-1234-1234-123456789012";
 
     // Replace the suffix template with the actual ID.
-    
+
     XMP_Uns8 * b = &binID[0];
     char * ch = &((*idStr)[prefixLen]); // Should point to the first character of the suffix.
     XMP_Assert ( (*(ch-1) == ':') && (*ch == '1') );
-    
+
     for ( int i = 0; i < 4; ++i, ++b, ch += 2 ) FormatByte ( *b, ch );
     ++ch;   // Skip the '-'.
     for ( int i = 0; i < 2; ++i, ++b, ch += 2 ) FormatByte ( *b, ch );
@@ -175,16 +175,16 @@ bool XMPDocOpsUtils::GetLastModTime ( const XMPMeta & xmpMeta, XMP_DateTime * mo
 
 #if AdobePrivate
     #if ENABLE_CPP_DOM_MODEL
-    
+
         if(sUseNewCoreAPIs) {
-            
+
             const XMPMeta2 & xmpMeta2Ptr = dynamic_cast<const XMPMeta2 &>(xmpMeta);
             return XMPDocOpsUtils::GetLastModTime_v2(xmpMeta, modTime);
         }
 
     #endif
 #endif
-    
+
     XMP_ExpandedXPath   expPath;
     ExpandXPath(kXMP_NS_XMP_MM, "History", &expPath);
     const XMP_Node * arrayNode = FindConstNode(&xmpMeta.tree, expPath);
@@ -302,12 +302,12 @@ void XMPDocOpsUtils::FillResourceRef ( const XMPMeta & srcXMP, XMPMeta * destXMP
 void XMPDocOpsUtils::NormalizePartPath ( std::string & part )
 {
     // Enforce a leading '/', strip the tail of the path if it has any unknown operators.
-    
+
     if ( part[0] != '/' ) part.insert ( 0, 1, '/' );
-    
+
     size_t i, limit;
     for ( i = 0, limit = part.size(); i < limit; ++i ) {
-    
+
         XMP_Uns8 ch = part[i];
         if ( ch > 0x7F ) continue;
         if ( ('a' <= ch) && (ch <= 'z') ) continue;
@@ -315,9 +315,9 @@ void XMPDocOpsUtils::NormalizePartPath ( std::string & part )
         if ( ('0' <= ch) && (ch <= '9') ) continue;
         if ( (ch == '/') || (ch == ':') || (ch == '.') || (ch == '_') || (ch == '-') ) continue;
         break;
-    
+
     }
-    
+
     if ( i != limit ) {
         XMP_Assert ( (i > 0) && (part[0] == '/') );
         for ( ; part[i] != '/'; --i ) {}
@@ -333,7 +333,7 @@ void XMPDocOpsUtils::NormalizePartPath ( std::string & part )
     {
         part.erase(part.size() - 1);
     }
-    
+
 }   // NormalizePartPath
 
 // -------------------------------------------------------------------------------------------------
@@ -346,18 +346,18 @@ void XMPDocOpsUtils::NormalizePartPath ( std::string & part )
 // "/;/metadata". These need to be changed to simply "/".
 
 void XMPDocOpsUtils::NormalizePartsList ( XMP_NodePtr stEvt_changed ) {
-    
+
     // Change a struct (should never happen) to an empty simple value.
-    
+
     if ( XMP_PropIsStruct ( stEvt_changed->options ) ) {
         stEvt_changed->RemoveChildren();
         stEvt_changed->options &= ~kXMP_PropCompositeMask;
         XMP_Assert ( XMP_PropIsSimple ( stEvt_changed->options ) && stEvt_changed->value.empty() );
         return;
     }
-    
+
     // Catenate array item values into a single string.
-    
+
     if ( XMP_PropIsArray ( stEvt_changed->options ) ) {
 
         XMP_Assert ( stEvt_changed->value.empty() );
@@ -379,23 +379,23 @@ void XMPDocOpsUtils::NormalizePartsList ( XMP_NodePtr stEvt_changed ) {
         XMP_Assert ( XMP_PropIsSimple ( stEvt_changed->options ) );
 
     }
-    
+
     // Reduce a value containing all and other parts to just "/".
-    
+
     size_t valueSize = stEvt_changed->value.size();
     XMP_Assert ( XMP_PropIsSimple ( stEvt_changed->options ) );
-    
+
     if ( valueSize >= 2 ) {
-    
+
         const char * firstTwo = stEvt_changed->value.c_str();
         const char * lastTwo  = firstTwo + valueSize - 2;
-        
+
         if ( ((firstTwo[0] == '/') && (firstTwo[1] == ';')) ||
              ((lastTwo[0] == ';') && (lastTwo[1] == '/')) ||
              ((valueSize >= 3) && (stEvt_changed->value.find(";/;") != std::string::npos)) ) {
             stEvt_changed->value = '/';
         }
-    
+
     }
 
 }   // NormalizePartsList
@@ -419,7 +419,7 @@ XMP_Int32 XMPDocOpsUtils::PruneOneRedundantRun ( XMP_NodePtr historyNode, XMP_In
     if ( finalParts == 0 || finalParts->value.empty() ) return endIndex - 1;
 
     XMP_Int32 runLength = 1;
-    
+
     for ( XMP_Int32 item = endIndex-1; item >= 0; --item ) {    // ! Need a signed loop index!
         XMP_NodePtr currAction = FindChildNode ( historyNode->children[item], "stEvt:action", false, 0 );
         if ( (currAction == 0) || (currAction->value != "saved") ) break;
@@ -432,18 +432,18 @@ XMP_Int32 XMPDocOpsUtils::PruneOneRedundantRun ( XMP_NodePtr historyNode, XMP_In
 
         XMP_Int32 deleteStart = endIndex - (runLength-2);
         XMP_Int32 deleteEnd   = endIndex - 1;
-    
+
         for ( XMP_Int32 item = deleteStart; item <= deleteEnd; ++item ) {
             delete historyNode->children[item]; // Delete the XMP node, the vector holds pointers.
             historyNode->children[item] = 0;
         }
-        
+
         XMP_NodePtrPos iterStart = historyNode->children.begin() + deleteStart;
         XMP_NodePtrPos iterEnd   = historyNode->children.begin() + deleteEnd + 1;
         historyNode->children.erase ( iterStart, iterEnd ); // Removes deleteStart through and including deleteEnd.
-    
+
     }
-    
+
     return endIndex - runLength;
 
 }   // PruneOneRedundantRun
@@ -470,26 +470,26 @@ XMP_Int32 XMPDocOpsUtils::PruneOneRedundantRun ( XMP_NodePtr historyNode, XMP_In
 bool XMPDocOpsUtils::IsPartInList ( XMP_StringPtr * newPartsPtr, XMP_Index newPartsCount, const XMP_Node & oldPartsNode )
 {
     XMP_Assert ( (newPartsPtr != 0) || (newPartsCount == 0) );
-    
+
     if ( (newPartsCount == 0) || oldPartsNode.value.empty() ) return false;
     if ( oldPartsNode.value == "/" ) return true;   // Common special case of "all changed".
-    
+
     std::string newPart, oldPart;
 
     for ( ; newPartsCount > 0; --newPartsCount, ++newPartsPtr ) {
-    
+
         newPart = *newPartsPtr;
         NormalizePartPath ( newPart );
         size_t newLen = newPart.size();
         XMP_Assert ( newPart[0] == '/' );
-        
+
         if ( newLen == 1 ) return true; // The newPart must be "/".
 
         XMP_StringPtr nextPart = oldPartsNode.value.c_str();
         XMP_StringPtr limit    = nextPart + oldPartsNode.value.size();
-        
+
         while ( nextPart < limit ) {
-        
+
             XMP_StringPtr oldPtr = nextPart;
             while ( (nextPart < limit) && (*nextPart != ';') ) ++nextPart;
             size_t oldLen  = nextPart - oldPtr; // ! Do this before following increment.
@@ -510,9 +510,9 @@ bool XMPDocOpsUtils::IsPartInList ( XMP_StringPtr * newPartsPtr, XMP_Index newPa
                 // Is newPart an ancestor of oldPart?  (Must use bigger.compare!)
                 if ( (oldPart[newLen] == '/') && (oldPart.compare ( 0, newLen, newPart ) == 0) ) return true;
             }
-        
+
         }
-        
+
     }
 
     return false;

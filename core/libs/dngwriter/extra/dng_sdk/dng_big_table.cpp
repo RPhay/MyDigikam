@@ -46,7 +46,7 @@ class dng_big_table_cache
         typedef std::map <dng_fingerprint,
                           int32,
                           dng_fingerprint_less_than> RefCountsMap;
-        
+
         RefCountsMap fRefCounts;
 
         std::vector<dng_fingerprint> fRecentlyUsed;
@@ -200,7 +200,7 @@ void dng_big_table_cache::UseTable (dng_lock_std_mutex &lock,
 
 void dng_big_table_cache::FlushRecentlyUsed ()
     {
-    
+
     dng_lock_std_mutex lock (fMutex);
 
     while (!fRecentlyUsed.empty ())
@@ -331,7 +331,7 @@ bool dng_big_table_cache::CacheExtract (dng_lock_std_mutex &lock,
             ExtractTableData (lock, fingerprint, table);
 
             UseTable (lock, fingerprint);
-            
+
             return true;
 
             }
@@ -350,7 +350,7 @@ void dng_big_table_cache::Increment (dng_big_table_cache *cache,
 
     if (cache)
         {
-        
+
         dng_lock_std_mutex lock (cache->fMutex);
 
         cache->CacheIncrement (lock, fingerprint);
@@ -426,7 +426,7 @@ class dng_look_table_cache : public dng_big_table_cache
         typedef std::map <dng_fingerprint,
                           dng_look_table::table_data,
                           dng_fingerprint_less_than> TableDataMap;
-        
+
         TableDataMap fTableData;
 
     public:
@@ -528,7 +528,7 @@ class dng_rgb_table_cache : public dng_big_table_cache
         typedef std::map <dng_fingerprint,
                           dng_rgb_table::table_data,
                           dng_fingerprint_less_than> TableDataMap;
-        
+
         TableDataMap fTableData;
 
     public:
@@ -650,7 +650,7 @@ class dng_image_table_cache : public dng_big_table_cache
             dng_image_table_data data;
 
             imageTable->GetData (data);
-            
+
             fTableData.insert (std::make_pair (imageTable->Fingerprint (),
                                                data));
 
@@ -720,7 +720,7 @@ class dng_packed_image_table_cache : public dng_big_table_cache
 
         struct entry_t
             {
-                
+
             public:
 
                 dng_image_table_data fImageData;
@@ -814,7 +814,7 @@ class dng_packed_image_table_cache : public dng_big_table_cache
                 auto &dst = static_cast <dng_packed_image_table &> (table);
 
                 dst.fTableDigest = fingerprint;
-                
+
                 dst.fBlock     = iter->second.fBlock;
                 dst.fSize      = iter->second.fSize;
                 dst.fPlanes    = iter->second.fPlanes;
@@ -823,7 +823,7 @@ class dng_packed_image_table_cache : public dng_big_table_cache
                 AutoPtr<dng_image_table> temp (dst.MakeTable ());
 
                 temp->SetData (iter->second.fImageData);
-                
+
                 dst.fTable.reset (temp.Release ());
 
                 }
@@ -883,7 +883,7 @@ dng_big_table::dng_big_table (dng_big_table_cache *cache)
     {
 
     }
-    
+
 /*****************************************************************************/
 
 dng_big_table::dng_big_table (const dng_big_table &table)
@@ -897,7 +897,7 @@ dng_big_table::dng_big_table (const dng_big_table &table)
     dng_big_table_cache::Increment (fCache, fFingerprint);
 
     }
-    
+
 /*****************************************************************************/
 
 dng_big_table & dng_big_table::operator= (const dng_big_table &table)
@@ -919,7 +919,7 @@ dng_big_table & dng_big_table::operator= (const dng_big_table &table)
     return *this;
 
     }
-    
+
 /*****************************************************************************/
 
 dng_big_table::~dng_big_table ()
@@ -942,7 +942,7 @@ const dng_fingerprint & dng_big_table::Fingerprint () const
 
 dng_fingerprint dng_big_table::ComputeFingerprint () const
     {
-    
+
     dng_md5_printer_stream stream;
 
     stream.SetLittleEndian ();
@@ -950,7 +950,7 @@ dng_fingerprint dng_big_table::ComputeFingerprint () const
     PutStream (stream, true);
 
     return stream.Result ();
-    
+
     }
 
 /*****************************************************************************/
@@ -990,12 +990,12 @@ bool dng_big_table::DecodeFromBinary (dng_host &host,
                                       uint32 compressedSize,
                                       AutoPtr<dng_memory_block> *uncompressedCache)
     {
-       
+
     // Decompress the data, if required.
-    
+
     if (UseCompression ())
         {
-        
+
         if (compressedSize < 5)
             {
             return false;
@@ -1003,15 +1003,15 @@ bool dng_big_table::DecodeFromBinary (dng_host &host,
 
         uint8 *uncompressedData;
         uint32 uncompressedSize;
-        
+
         AutoPtr<dng_memory_block> uncompressedBlock;
-        
+
         if (uncompressedCache && uncompressedCache->Get ())
             {
             uncompressedData = uncompressedCache->Get ()->Buffer_uint8 ();
             uncompressedSize = uncompressedCache->Get ()->LogicalSize  ();
             }
-            
+
         else
             {
 
@@ -1024,7 +1024,7 @@ bool dng_big_table::DecodeFromBinary (dng_host &host,
                                (((uint32) compressedData [3]) << 24);
 
             uncompressedBlock.Reset (host.Allocate (uncompressedSize));
-            
+
             uncompressedData = uncompressedBlock->Buffer_uint8 ();
 
             uLongf destLen = uncompressedSize;
@@ -1038,7 +1038,7 @@ bool dng_big_table::DecodeFromBinary (dng_host &host,
                 {
                 return false;
                 }
-                
+
             if (uncompressedCache)
                 {
                 uncompressedCache->Reset (uncompressedBlock.Release ());
@@ -1055,42 +1055,42 @@ bool dng_big_table::DecodeFromBinary (dng_host &host,
                                uncompressedSize);
 
             stream.SetLittleEndian ();
-            
+
             stream.SetSniffer (host.Sniffer ());
-            
+
             if (!GetStream (stream))
                 {
                 return false;
                 }
 
             }
-            
+
         catch (dng_exception &except)
             {
-            
+
             if (host.IsTransientError (except.ErrorCode ()))
                 {
                 throw;
                 }
-                
+
             return false;
-            
+
             }
-            
+
         catch (...)
             {
-            
+
             return false;
-            
+
             }
-        
+
         }
-        
+
     // Simple uncompressed stream for this big table class.
-    
+
     else
         {
-        
+
         try
             {
 
@@ -1098,35 +1098,35 @@ bool dng_big_table::DecodeFromBinary (dng_host &host,
                                compressedSize);
 
             stream.SetLittleEndian ();
-                
+
             stream.SetSniffer (host.Sniffer ());
-            
+
             if (!GetStream (stream))
                 {
                 return false;
                 }
 
             }
-        
+
         catch (dng_exception &except)
             {
-            
+
             if (host.IsTransientError (except.ErrorCode ()))
                 {
                 throw;
                 }
-                
+
             return false;
-            
+
             }
-            
+
         catch (...)
             {
-            
+
             return false;
-            
+
             }
-        
+
         }
 
     // Force recomputation of fingerprint.
@@ -1134,7 +1134,7 @@ bool dng_big_table::DecodeFromBinary (dng_host &host,
     RecomputeFingerprint ();
 
     return true;
-    
+
     }
 
 /*****************************************************************************/
@@ -1145,7 +1145,7 @@ void dng_big_table::ASCIItoBinary (dng_memory_allocator &allocator,
                                    AutoPtr<dng_memory_block> &dBlock,
                                    uint32 &dCount)
     {
-    
+
     // This binary to text encoding is very similar to the Z85
     // encoding, but the exact character set has been adjusted to
     // encode more cleanly into XMP.
@@ -1209,9 +1209,9 @@ void dng_big_table::ASCIItoBinary (dng_memory_allocator &allocator,
         0xFF    // del
 
         };
-        
+
     dCount = 0;
-    
+
     uint32 maxDecodedSize = (sCount + 4) / 5 * 4;
 
     dBlock.Reset (allocator.Allocate (maxDecodedSize));
@@ -1320,13 +1320,13 @@ bool dng_big_table::DecodeFromString (dng_host &host,
     AutoPtr<dng_memory_block> block2;
 
     uint32 compressedSize = 0;
-    
+
     ASCIItoBinary (host.Allocator (),
                    block1.Get (),
                    block1.Length (),
                    block2,
                    compressedSize);
-                   
+
     // Then decode table from the binary data.
 
     return DecodeFromBinary (host,
@@ -1356,16 +1356,16 @@ dng_memory_block* dng_big_table::EncodeAsBinary (dng_memory_allocator &allocator
         block1.Reset (stream.AsMemoryBlock (allocator));
 
         }
-        
+
     // If we are not compressing this type, we are done.
-    
+
     if (!UseCompression ())
         {
-        
+
         compressedSize = block1->LogicalSize ();
-        
+
         return block1.Release ();
-        
+
         }
 
     // Compress the block.
@@ -1396,7 +1396,7 @@ dng_memory_block* dng_big_table::EncodeAsBinary (dng_memory_allocator &allocator
                                    block1->Buffer_uint8 (),
                                    uncompressedSize,
                                    Z_DEFAULT_COMPRESSION);
-                                  
+
         if (zResult != Z_OK)
             {
             ThrowMemoryFull ();
@@ -1407,18 +1407,18 @@ dng_memory_block* dng_big_table::EncodeAsBinary (dng_memory_allocator &allocator
         block1.Reset ();
 
         }
-        
+
     return block2.Release ();
 
     }
-        
+
 /*****************************************************************************/
 
 dng_memory_block* dng_big_table::EncodeAsString (dng_memory_allocator &allocator) const
     {
 
     // Get compressed binary data.
-    
+
     uint32 compressedSize;
 
     AutoPtr<dng_memory_block> block2 (EncodeAsBinary (allocator, compressedSize));
@@ -1435,12 +1435,12 @@ dng_memory_block* dng_big_table::EncodeAsString (dng_memory_allocator &allocator
 
         static const char *kEncodeTable =
             "0123456789"
-            "abcdefghij" 
-            "klmnopqrst" 
+            "abcdefghij"
+            "klmnopqrst"
             "uvwxyzABCD"
-            "EFGHIJKLMN" 
-            "OPQRSTUVWX" 
-            "YZ.-:+=^!/" 
+            "EFGHIJKLMN"
+            "OPQRSTUVWX"
+            "YZ.-:+=^!/"
             "*?`'|()[]{"
             "}@%$#";
 
@@ -1509,7 +1509,7 @@ dng_memory_block* dng_big_table::EncodeAsString (dng_memory_allocator &allocator
     return block3.Release ();
 
     }
-        
+
 /*****************************************************************************/
 
 bool dng_big_table::ExtractFromCache (const dng_fingerprint &fingerprint)
@@ -1525,9 +1525,9 @@ bool dng_big_table::ExtractFromCache (const dng_fingerprint &fingerprint)
         }
 
     return false;
-    
+
     }
-        
+
 /*****************************************************************************/
 
 #if qDNGUseXMP
@@ -1540,7 +1540,7 @@ bool dng_big_table::ReadTableFromXMP (const dng_xmp &xmp,
                                       dng_big_table_storage *storage,
                                       dng_abort_sniffer *sniffer)
     {
-    
+
     // See if we can skip reading the table data, and just grab from cache.
 
     if (ExtractFromCache (fingerprint))
@@ -1549,14 +1549,14 @@ bool dng_big_table::ReadTableFromXMP (const dng_xmp &xmp,
         return true;
 
         }
-        
+
     // Next see if we can get the table from the storage object.
-    
+
     if (storage && storage->ReadTable (*this, fingerprint, xmp.Allocator ()))
         {
-        
+
         return true;
-        
+
         }
 
     // Not in cache nor storage, so we need to read from XMP.
@@ -1564,52 +1564,52 @@ bool dng_big_table::ReadTableFromXMP (const dng_xmp &xmp,
     dng_host host (&xmp.Allocator (), sniffer);
 
     host.SniffForAbort ();
-        
+
     dng_string tablePath;
-    
+
     tablePath.Set ("Table_");
-    
+
     tablePath.Append (dng_xmp::EncodeFingerprint (fingerprint).Get ());
-    
+
     dng_string block1;
-    
+
     if (!xmp.GetString (ns,
                         tablePath.Get (),
                         block1))
         {
-        
+
         DNG_REPORT ("Missing big table data");
-        
+
         return false;
-        
+
         }
-        
+
     host.SniffForAbort ();
-        
+
     bool ok = DecodeFromString (host, block1);
 
     block1.Clear ();
-        
+
     host.SniffForAbort ();
-        
+
     // Validate fingerprint match. Only bother doing this if decoding
     // succeeded, otherwise we expect the fingerprint to be wrong and the
     // assert message is not helpful.
 
     if (ok)
         {
-    
+
         DNG_ASSERT (Fingerprint () == fingerprint,
                     "dng_big_table fingerprint mismatch");
 
         }
-    
+
     // It worked!
 
     return ok;
 
     }
-        
+
 /*****************************************************************************/
 
 bool dng_big_table::ReadFromXMP (const dng_xmp &xmp,
@@ -1618,16 +1618,16 @@ bool dng_big_table::ReadFromXMP (const dng_xmp &xmp,
                                  dng_big_table_storage &storage,
                                  dng_abort_sniffer *sniffer)
     {
-    
+
     dng_fingerprint fingerprint;
-    
+
     if (!xmp.GetFingerprint (ns, path, fingerprint))
         {
-        
+
         return false;
-        
+
         }
-        
+
     // See if we can skip reading the table data, and just grab from cache.
 
     if (ExtractFromCache (fingerprint))
@@ -1636,14 +1636,14 @@ bool dng_big_table::ReadFromXMP (const dng_xmp &xmp,
         return true;
 
         }
-        
+
     // Next see if we can get the table from the storage object.
-    
+
     if (storage.ReadTable (*this, fingerprint, xmp.Allocator ()))
         {
-        
+
         return true;
-        
+
         }
 
     // Read in the table data. We already checked the storage object
@@ -1651,21 +1651,21 @@ bool dng_big_table::ReadFromXMP (const dng_xmp &xmp,
 
     if (ReadTableFromXMP (xmp, ns, fingerprint, nullptr, sniffer))
         {
-        
+
         return true;
-        
+
         }
-        
+
     // Unable to find table data anywhere.  Notify storage object.
-    
+
     storage.MissingTable (fingerprint);
-    
+
     // Also make a note that this table is missing.
-    
+
     SetMissing ();
-        
+
     return false;
-    
+
     }
 
 /*****************************************************************************/
@@ -1675,44 +1675,44 @@ void dng_big_table::WriteToXMP (dng_xmp &xmp,
                                 const char *path,
                                 dng_big_table_storage &storage) const
     {
-        
+
     const dng_fingerprint &fingerprint = Fingerprint ();
-    
+
     if (!fingerprint.IsValid () || IsMissing ())
         {
-        
+
         xmp.Remove (ns, path);
-        
+
         return;
-        
+
         }
-    
+
     xmp.SetFingerprint (ns, path, fingerprint);
-    
+
     // See if we can just use the storage object to store the table.
-    
+
     if (storage.WriteTable (*this, fingerprint, xmp.Allocator ()))
         {
-        
+
         return;
-        
+
         }
-    
+
     dng_string tablePath;
-    
+
     tablePath.Set ("Table_");
-    
+
     tablePath.Append (dng_xmp::EncodeFingerprint (fingerprint).Get ());
-    
+
     if (xmp.Exists (ns, tablePath.Get ()))
         {
-        
+
         return;
-        
+
         }
-        
+
     AutoPtr<dng_memory_block> block;
-    
+
     block.Reset (EncodeAsString (xmp.Allocator ()));
 
     xmp.Set (ns,
@@ -1744,90 +1744,90 @@ void dng_big_table::WriteUncompressedStream (dng_stream &stream) const
 
 bool dng_big_table_dictionary::HasTable (const dng_fingerprint &fingerprint) const
     {
-    
+
     if (fMap.find (fingerprint) != fMap.end ())
         {
-        
+
         return true;
-        
+
         }
-    
+
     return false;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 bool dng_big_table_dictionary::GetTable (const dng_fingerprint &fingerprint,
                                          dng_ref_counted_block &block) const
     {
-    
+
     const auto it = fMap.find (fingerprint);
-    
+
     if (it != fMap.end ())
         {
-        
+
         block = it->second;
-        
+
         return true;
-        
+
         }
-    
+
     return false;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 void dng_big_table_dictionary::AddTable (const dng_fingerprint &fingerprint,
                                          const dng_ref_counted_block &block)
     {
-    
+
     if (fMap.find (fingerprint) == fMap.end ())
         {
-        
+
         fMap.insert (std::pair<dng_fingerprint,
                                dng_ref_counted_block> (fingerprint,
                                                        block));
-                                                       
+
         }
-    
+
     }
-    
+
 /*****************************************************************************/
 
 void dng_big_table_dictionary::CopyToDictionary
                                (dng_big_table_dictionary &dictionary) const
 
     {
-    
+
     for (auto it = fMap.cbegin (); it != fMap.cend (); ++it)
         {
-        
+
         dictionary.AddTable (it->first,
                              it->second);
-            
+
         }
-    
+
     }
-    
+
 /*****************************************************************************/
 
 dng_big_table_index::dng_big_table_index ()
-        
+
     :   fMap ()
-    
+
     {
-    
+
     }
 
 /*****************************************************************************/
 
 bool dng_big_table_index::HasEntry (const dng_fingerprint &fingerprint) const
     {
-    
+
     return fMap.find (fingerprint) != fMap.end ();
-    
+
     }
 
 /*****************************************************************************/
@@ -1836,21 +1836,21 @@ bool dng_big_table_index::GetEntry (const dng_fingerprint &fingerprint,
                                     uint32 &tableSize,
                                     uint64 &tableOffset) const
     {
-    
+
     auto it = fMap.find (fingerprint);
-    
+
     if (it != fMap.end ())
         {
-        
+
         tableSize   = it->second.fTableSize;
         tableOffset = it->second.fTableOffset;
-        
+
         return true;
-        
+
         }
-    
+
     return false;
-    
+
     }
 
 /*****************************************************************************/
@@ -1859,21 +1859,21 @@ void dng_big_table_index::AddEntry (const dng_fingerprint &fingerprint,
                                     uint32 tableSize,
                                     uint64 tableOffset)
     {
-    
+
     if (fMap.find (fingerprint) == fMap.end ())
         {
-        
+
         struct IndexEntry entry;
-        
+
         entry.fTableSize   = tableSize;
         entry.fTableOffset = tableOffset;
-        
+
         fMap.insert (std::pair<dng_fingerprint,
                                IndexEntry> (fingerprint, entry));
-        
-        
+
+
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -1883,20 +1883,20 @@ void dng_big_table_index::AddEntry (const dng_fingerprint &fingerprint,
 bool dng_big_table_group_index::GetEntry (const dng_fingerprint &groupDigest,
                                           dng_fingerprint &instanceDigest) const
     {
-    
+
     auto it = fMap.find (groupDigest);
-    
+
     if (it != fMap.end ())
         {
 
         instanceDigest = it->second;
-        
+
         return true;
-        
+
         }
-    
+
     return false;
-    
+
     }
 
 /*****************************************************************************/
@@ -1905,48 +1905,48 @@ bool dng_big_table_group_index::GetEntry (const dng_fingerprint &groupDigest,
 
 dng_big_table_storage::dng_big_table_storage ()
     {
-    
+
     }
 
 /*****************************************************************************/
 
 dng_big_table_storage::~dng_big_table_storage ()
     {
-    
+
     }
-    
+
 /*****************************************************************************/
 
 bool dng_big_table_storage::ReadTable (dng_big_table & /* table */,
                                        const dng_fingerprint & /* fingerprint */,
                                        dng_memory_allocator & /* allocator */)
     {
-    
+
     return false;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 bool dng_big_table_storage::WriteTable (const dng_big_table &table,
                                         const dng_fingerprint & /* fingerprint */,
                                         dng_memory_allocator & /* allocator */)
     {
-        
+
     if (table.IsEmbedNever ())
         {
         return true;
         }
-    
+
     return false;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 void dng_big_table_storage::MissingTable (const dng_fingerprint & /* fingerprint */)
     {
-    
+
     }
 
 /*****************************************************************************/
@@ -1954,9 +1954,9 @@ void dng_big_table_storage::MissingTable (const dng_fingerprint & /* fingerprint
 bool dng_big_table_storage::GroupToInstance (const dng_fingerprint & /* groupDigest */,
                                              dng_fingerprint & /* instanceDigest */) const
     {
-    
+
     return false;
-    
+
     }
 
 /*****************************************************************************/
@@ -2014,9 +2014,9 @@ void dng_look_table::Set (const dng_hue_sat_map &map,
 
     fData.fMap      = map;
     fData.fEncoding = encoding;
-    
+
     fData.ComputeMonochrome ();
-    
+
     RecomputeFingerprint ();
 
     }
@@ -2025,7 +2025,7 @@ void dng_look_table::Set (const dng_hue_sat_map &map,
 
 bool dng_look_table::IsValid () const
     {
-    
+
     if (IsMissing ())
         {
         return false;
@@ -2055,7 +2055,7 @@ bool dng_look_table::GetStream (dng_stream &stream)
         {
         return false;
         }
-        
+
     uint32 version = stream.Get_uint32 ();
 
     if (version != kLookTableVersion1 &&
@@ -2085,14 +2085,14 @@ bool dng_look_table::GetStream (dng_stream &stream)
     uint32 count = data.fMap.DeltasCount ();
 
     dng_hue_sat_map::HSBModify * deltas = data.fMap.GetDeltas ();
-    
+
     for (uint32 index = 0; index < count; index++)
         {
 
         deltas->fHueShift = stream.Get_real32 ();
         deltas->fSatScale = stream.Get_real32 ();
         deltas->fValScale = stream.Get_real32 ();
-        
+
         deltas++;
 
         }
@@ -2100,16 +2100,16 @@ bool dng_look_table::GetStream (dng_stream &stream)
     data.fMap.AssignNewUniqueRuntimeFingerprint ();
 
     data.fEncoding = stream.Get_uint32 ();
-    
+
     if (data.fEncoding != encoding_Linear &&
         data.fEncoding != encoding_sRGB)
         {
         ThrowBadFormat ("Unknown look table encoding");
         }
-        
+
     if (version != kLookTableVersion1)
         {
-        
+
         data.fMinAmount = stream.Get_real64 ();
         data.fMaxAmount = stream.Get_real64 ();
 
@@ -2117,15 +2117,15 @@ bool dng_look_table::GetStream (dng_stream &stream)
             {
             ThrowBadFormat ("Invalid min/max amount for look table");
             }
-        
+
         }
-        
+
     else
         {
-        
+
         data.fMinAmount = 1.0;
         data.fMaxAmount = 1.0;
-        
+
         }
 
     data.ComputeMonochrome ();
@@ -2134,9 +2134,9 @@ bool dng_look_table::GetStream (dng_stream &stream)
         {
         data.fFlags = stream.Get_uint32 ();
         }
-        
+
     fData = data;
-    
+
     return true;
 
     }
@@ -2150,9 +2150,9 @@ void dng_look_table::PutStream (dng_stream &stream,
     DNG_REQUIRE (IsValid (), "Invalid Look Table");
 
     stream.Put_uint32 (btt_LookTable);
-    
+
     uint32 version = kLookTableVersion1;
-    
+
     if (fData.fMinAmount != 1.0 ||
         fData.fMaxAmount != 1.0)
         {
@@ -2192,19 +2192,19 @@ void dng_look_table::PutStream (dng_stream &stream,
 
     if (version != kLookTableVersion1)
         {
-        
+
         stream.Put_real64 (fData.fMinAmount);
         stream.Put_real64 (fData.fMaxAmount);
 
         }
-        
+
     if (fData.fFlags != 0)
         {
-        
+
         stream.Put_uint32 (fData.fFlags);
-        
+
         }
-        
+
     }
 
 /*****************************************************************************/
@@ -2511,16 +2511,16 @@ bool dng_rgb_table::GetStream (dng_stream &stream)
         {
         ThrowBadFormat ("Invalid min/max amount for RGB table");
         }
-        
+
     data.ComputeMonochrome ();
 
     if (stream.Position () + 4 <= stream.Length ())
         {
         data.fFlags = stream.Get_uint32 ();
         }
-        
+
     fData = data;
-    
+
     return true;
 
     }
@@ -2540,7 +2540,7 @@ void dng_rgb_table::PutStream (dng_stream &stream,
     stream.Put_uint32 (fData.fDimensions);
 
     stream.Put_uint32 (fData.fDivisions);
-    
+
     uint16 nopValue [kMaxDivisions1D > kMaxDivisions3D_InMemory ? kMaxDivisions1D
                                                                 : kMaxDivisions3D_InMemory];
 
@@ -2608,11 +2608,11 @@ void dng_rgb_table::PutStream (dng_stream &stream,
 
     if (fData.fFlags != 0)
         {
-        
+
         stream.Put_uint32 (fData.fFlags);
-        
+
         }
-        
+
     }
 
 /*****************************************************************************/
@@ -2621,7 +2621,7 @@ void dng_rgb_table::PutStream (dng_stream &stream,
 
 dng_image_table_compression_info::~dng_image_table_compression_info ()
     {
-    
+
     }
 
 /*****************************************************************************/
@@ -2630,7 +2630,7 @@ void dng_image_table_compression_info::Compress (dng_host &host,
                                                  dng_stream &stream,
                                                  const dng_image &image) const
     {
-    
+
     dng_image_writer writer;
 
     writer.WriteTIFFWithProfile (host,
@@ -2642,7 +2642,7 @@ void dng_image_table_compression_info::Compress (dng_host &host,
                                  image.PixelType () == ttShort
                                      ? ccJPEG       // Lossless JPEG
                                      : ccDeflate);
-    
+
     }
 
 /*****************************************************************************/
@@ -2663,7 +2663,7 @@ void dng_image_table_jxl_compression_info::Compress (dng_host &host,
                                                      dng_stream &stream,
                                                      const dng_image &image) const
     {
-    
+
     DNG_REQUIRE (fEncodeSettings.Get (),
                  "Missing encode settings");
 
@@ -2696,10 +2696,10 @@ void dng_image_table_jxl_compression_info::Compress (dng_host &host,
                                  true,       // allow big tiff
                                  nullptr,    // gain map,
                                  fPreferHalfFloat);
-    
+
     #else
 
-    // Use JXL directly. 
+    // Use JXL directly.
 
     dng_jxl_color_space_info colorSpaceInfo;
 
@@ -2714,7 +2714,7 @@ void dng_image_table_jxl_compression_info::Compress (dng_host &host,
                     *fEncodeSettings);
 
     #endif
-    
+
     }
 
 /*****************************************************************************/
@@ -2757,7 +2757,7 @@ dng_image_table & dng_image_table::operator= (const dng_image_table &table)
     fCompressedData = table.fCompressedData;
 
     fCompressionType = table.fCompressionType;
-    
+
     return *this;
 
     }
@@ -2766,7 +2766,7 @@ dng_image_table & dng_image_table::operator= (const dng_image_table &table)
 
 dng_image_table::~dng_image_table ()
     {
-    
+
     }
 
 /*****************************************************************************/
@@ -2792,7 +2792,7 @@ bool dng_image_table::IsValid () const
 
 void dng_image_table::SetInvalid ()
     {
-    
+
     *this = dng_image_table ();
 
     RecomputeFingerprint ();
@@ -2805,7 +2805,7 @@ void dng_image_table::SetImage (const dng_image *image,
                                 const dng_image_table_compression_info *compressionInfo,
                                 dng_abort_sniffer *sniffer)
     {
-    
+
     fImage = std::shared_ptr<const dng_image> (image);
 
     fCompressedData.reset ();
@@ -2831,7 +2831,7 @@ void dng_image_table::SetImage (const std::shared_ptr<const dng_image> &image,
         fImage = image;
 
         fCompressedData.reset ();
-    
+
         if (compressionInfo && (compressionInfo->Type () > 0))
             CompressImage (*compressionInfo,
                            sniffer);
@@ -2846,9 +2846,9 @@ void dng_image_table::SetImage (const std::shared_ptr<const dng_image> &image,
 
 dng_host * dng_image_table::MakeHost (dng_abort_sniffer *sniffer) const
     {
-    
+
     return new dng_host (nullptr, sniffer);
-    
+
     }
 
 /*****************************************************************************/
@@ -2861,9 +2861,9 @@ dng_fingerprint dng_image_table::ComputeFingerprint () const
 
     if (fCompressedData)
         {
-        
+
         AutoPtr<dng_host> host (MakeHost (nullptr));
-        
+
         dng_memory_stream tempStream (host->Allocator ());
 
         PutStream (tempStream, true);
@@ -2871,27 +2871,27 @@ dng_fingerprint dng_image_table::ComputeFingerprint () const
         tempStream.Flush ();
 
         tempStream.SetReadPosition (0);
-        
+
         dng_md5_printer_stream stream;
 
         stream.SetLittleEndian ();
 
         tempStream.CopyToStream (stream,
                                  tempStream.Length ());
-        
+
         auto digest = stream.Result ();
 
         return digest;
-        
+
         }
 
     // Otherwise fingerprint the image itself (uncompressed case).
 
     if (fImage.get ())
         {
-        
+
         AutoPtr<dng_host> host (MakeHost (nullptr));
-        
+
         dng_md5_printer_stream stream;
 
         stream.SetLittleEndian ();
@@ -2904,7 +2904,7 @@ dng_fingerprint dng_image_table::ComputeFingerprint () const
         stream.Put_int32 (fImage->Bounds ().l);
         stream.Put_int32 (fImage->Bounds ().b);
         stream.Put_int32 (fImage->Bounds ().r);
-        
+
         stream.Put_uint32 (fImage->Planes ());
 
         stream.Put_uint32 (fImage->PixelType ());
@@ -2913,22 +2913,22 @@ dng_fingerprint dng_image_table::ComputeFingerprint () const
                                                     (*host,
                                                      *fImage,
                                                      fImage->PixelType ());
-                                                     
+
         stream.Put (imageDigest.data, 16);
 
         return stream.Result ();
 
         }
-    
+
     return dng_fingerprint ();
-    
+
     }
 
 /*****************************************************************************/
 
 static void CheckImageTableIFD (const dng_ifd &ifd)
     {
-    
+
     dng_rect bounds = ifd.Bounds ();
 
     if (bounds.ShortSide () < 1 ||
@@ -2959,9 +2959,9 @@ static void CheckImageTableIFD (const dng_ifd &ifd)
 
 bool dng_image_table::GetStream (dng_stream &stream)
     {
-    
+
     AutoPtr<dng_host> host (MakeHost (stream.Sniffer ()));
-    
+
     if (stream.Get_uint32 () != btt_ImageTable)
         {
         return false;
@@ -2971,20 +2971,20 @@ bool dng_image_table::GetStream (dng_stream &stream)
         {
         ThrowBadFormat ("Unknown image table version");
         }
-        
+
     dng_point imageTL;
-    
+
     imageTL.v = stream.Get_int32 ();
     imageTL.h = stream.Get_int32 ();
-    
+
     if (!stream.Data ())
         {
         ThrowProgramError ("Not a memory stream");
         }
-    
+
     dng_stream subStream ((uint8 *) stream.Data () + stream.Position (),
                           (uint32) (stream.Length () - stream.Position ()));
-                          
+
     subStream.SetSniffer (stream.Sniffer ());
 
     AutoPtr<dng_image> image;
@@ -3006,7 +3006,7 @@ bool dng_image_table::GetStream (dng_stream &stream)
             }
 
         CheckImageTableIFD (*jxlInfo.fIFD [0]);
-        
+
         subStream.SetReadPosition (0);
 
         dng_jxl_decoder decoder;
@@ -3018,7 +3018,7 @@ bool dng_image_table::GetStream (dng_stream &stream)
         image.Reset (decoder.fMainImage.Release ());
 
         fCompressionType = ccJXL;
-        
+
         }
 
     else
@@ -3027,7 +3027,7 @@ bool dng_image_table::GetStream (dng_stream &stream)
         // Read as TIFF.
 
         dng_info info;
-        
+
         info.Parse (*host, subStream);
 
         info.PostParse (*host);
@@ -3049,13 +3049,13 @@ bool dng_image_table::GetStream (dng_stream &stream)
         image.Reset (host->Make_dng_image (ifd.Bounds (),
                                            ifd.fSamplesPerPixel,
                                            ifd.PixelType ()));
-                                                   
+
         ifd.ReadImage (*host,
                        subStream,
                        *image);
 
         fCompressionType = ifd.fCompression;
-        
+
         } // JXL vs TIFF
 
     // Grab a copy of the (lossy) compressed data.
@@ -3068,22 +3068,22 @@ bool dng_image_table::GetStream (dng_stream &stream)
         fCompressedData.reset (subStream.AsMemoryBlock (host->Allocator ()));
 
         }
-        
+
     if (imageTL != dng_point (0, 0))
         {
-        
+
         AutoPtr<dng_image> tempImage (image->Clone ());
-        
+
         tempImage->Offset (imageTL);
-        
+
         image.Reset (tempImage.Release ());
-        
+
         }
-                      
+
     fImage = std::shared_ptr<const dng_image> (image.Release ());
-    
+
     return true;
-        
+
     }
 
 /*****************************************************************************/
@@ -3099,7 +3099,7 @@ void dng_image_table::PutStream (dng_stream &stream,
                          defaultInfo);
 
     }
-    
+
 /*****************************************************************************/
 
 void dng_image_table::PutCompressedStream (dng_stream &stream,
@@ -3108,44 +3108,44 @@ void dng_image_table::PutCompressedStream (dng_stream &stream,
     {
 
     AutoPtr<dng_host> host (MakeHost (stream.Sniffer ()));
-    
+
     stream.Put_uint32 (btt_ImageTable);
 
     stream.Put_uint32 (kImageTableVersion);
 
     stream.Put_int32 (fImage->Bounds ().t);
     stream.Put_int32 (fImage->Bounds ().l);
-    
+
     const dng_image *tiffImage = fImage.get ();
-    
+
     AutoPtr<dng_image> tempImage;
 
     if (tiffImage->Bounds ().TL () != dng_point (0, 0))
         {
-        
+
         tempImage.Reset (tiffImage->Clone ());
-        
+
         tempImage->Offset (dng_point (0, 0) - fImage->Bounds ().TL ());
-        
+
         tiffImage = tempImage.Get ();
-        
+
         }
-    
+
     // If we have compressed data, then just write that directly.
 
     if (fCompressedData)
         {
 
         // printf ("--- writing compressed\n");
-        
+
         stream.Put (fCompressedData->Buffer      (),
                     fCompressedData->LogicalSize ());
-        
+
         }
 
     // Otherwise use the provided compression info.
 
-    else 
+    else
         {
 
         dng_memory_stream tempStream (host->Allocator ());
@@ -3158,11 +3158,11 @@ void dng_image_table::PutCompressedStream (dng_stream &stream,
 
         if (info.Type () != 0)
             {
-            
+
             tempStream.SetReadPosition (0);
 
             fCompressedData.reset (tempStream.AsMemoryBlock (host->Allocator ()));
-            
+
             }
 
         tempStream.SetReadPosition (0);
@@ -3170,7 +3170,7 @@ void dng_image_table::PutCompressedStream (dng_stream &stream,
         tempStream.CopyToStream (stream, tempStream.Length ());
 
         }
-        
+
     }
 
 /*****************************************************************************/
@@ -3224,26 +3224,26 @@ void dng_image_table::CompressImage (const dng_image_table_compression_info &inf
 
 void dng_image_table::SetData (const dng_image_table_data &data)
     {
-    
+
     fImage           = data.fImage;
 
     fCompressedData  = data.fCompressedData;
 
     fCompressionType = data.fCompressionType;
-    
+
     }
 
 /*****************************************************************************/
 
 void dng_image_table::GetData (dng_image_table_data &data) const
     {
-    
+
     data.fImage           = fImage;
 
     data.fCompressedData  = fCompressedData;
 
     data.fCompressionType = fCompressionType;
-    
+
     }
 
 /*****************************************************************************/
@@ -3251,19 +3251,19 @@ void dng_image_table::GetData (dng_image_table_data &data) const
 /*****************************************************************************/
 
 dng_packed_image_table::dng_packed_image_table ()
-    
+
     :   dng_big_table (&gPackedImageTableCache)
-        
+
     {
-    
+
     }
-        
+
 /*****************************************************************************/
 
 dng_packed_image_table::dng_packed_image_table (const dng_packed_image_table &table)
 
     :   dng_big_table (table)
-        
+
     ,   fTableDigest  (table.fTableDigest)
     ,   fTable        (table.CloneTable ())
     ,   fBlock        (table.fBlock)
@@ -3271,9 +3271,9 @@ dng_packed_image_table::dng_packed_image_table (const dng_packed_image_table &ta
     ,   fSize         (table.fSize)
     ,   fPlanes       (table.fPlanes)
     ,   fPixelType    (table.fPixelType)
-        
+
     {
-    
+
     }
 
 /*****************************************************************************/
@@ -3291,7 +3291,7 @@ dng_packed_image_table & dng_packed_image_table::operator= (const dng_packed_ima
     fSize      = table.fSize;
     fPlanes    = table.fPlanes;
     fPixelType = table.fPixelType;
-            
+
     return *this;
 
     }
@@ -3300,11 +3300,11 @@ dng_packed_image_table & dng_packed_image_table::operator= (const dng_packed_ima
 
 const dng_image_table & dng_packed_image_table::Table () const
     {
-    
+
     DNG_REQUIRE (fTable, "Invalid table");
-    
+
     return *fTable;
-    
+
     }
 
 /*****************************************************************************/
@@ -3312,7 +3312,7 @@ const dng_image_table & dng_packed_image_table::Table () const
 bool dng_packed_image_table::IsValid () const
     {
 
-    return (fTableDigest.IsValid () && 
+    return (fTableDigest.IsValid () &&
             ((fTable && fTable->IsValid ()) || (fBlock != nullptr)));
 
     }
@@ -3321,43 +3321,43 @@ bool dng_packed_image_table::IsValid () const
 
 uint32 dng_packed_image_table::PackedBytes () const
     {
-            
+
     return fBlock ? fBlock->LogicalSize () : 0;
-            
+
     }
 
 /*****************************************************************************/
 
 dng_host * dng_packed_image_table::MakeHost (dng_abort_sniffer *sniffer) const
     {
-    
+
     return new dng_host (nullptr, sniffer);
-    
+
     }
 
 /*****************************************************************************/
 
 dng_image_table * dng_packed_image_table::MakeTable () const
     {
-    
+
     return new dng_image_table;
-    
+
     }
 
 /*****************************************************************************/
 
 dng_image_table * dng_packed_image_table::CloneTable () const
     {
-    
+
     return fTable ? (new dng_image_table (*fTable)) : nullptr;
-    
+
     }
 
 /*****************************************************************************/
 
 void dng_packed_image_table::Clear ()
     {
-            
+
     fTableDigest.Clear ();
 
     fTable.reset ();
@@ -3369,16 +3369,16 @@ void dng_packed_image_table::Clear ()
     fPlanes = 0;
 
     fPixelType = 0;
-            
+
     }
 
 /*****************************************************************************/
 
 void dng_packed_image_table::ClearPackedData ()
     {
-    
+
     fBlock.reset ();
-    
+
     }
 
 /*****************************************************************************/
@@ -3409,7 +3409,7 @@ void dng_packed_image_table::SetImage (const dng_image *image,
     ClearPackedData ();
 
     RecomputeFingerprint ();
-        
+
     }
 
 /*****************************************************************************/
@@ -3431,7 +3431,7 @@ void dng_packed_image_table::SetImage (const std::shared_ptr<const dng_image> &i
     fSize      = image->Size ();
     fPlanes    = image->Planes ();
     fPixelType = image->PixelType ();
-        
+
     AutoPtr<dng_image_table> table (MakeTable ());
 
     table->SetImage (image, compressionInfo, sniffer);
@@ -3443,7 +3443,7 @@ void dng_packed_image_table::SetImage (const std::shared_ptr<const dng_image> &i
     ClearPackedData ();
 
     RecomputeFingerprint ();
-        
+
     }
 
 /*****************************************************************************/
@@ -3455,7 +3455,7 @@ void dng_packed_image_table::Unpack (dng_abort_sniffer *sniffer)
                  "Cannot unpack invalid block");
 
     AutoPtr<dng_host> host (MakeHost (sniffer));
-            
+
     AutoPtr<dng_image_table> table (MakeTable ());
 
     if (!table->DecodeFromBinary (*host,
@@ -3464,16 +3464,16 @@ void dng_packed_image_table::Unpack (dng_abort_sniffer *sniffer)
         {
 
         ThrowBadFormat ("Could not Unpack block to cr_image_table");
-                
+
         }
 
     fTable.reset (table.Release ());
 
     if (fTable->Fingerprint () != fTableDigest)
         {
-                
+
         DNG_REPORT ("fTableDigest does not match table fingerprint");
-                
+
         }
 
     #if 0
@@ -3483,7 +3483,7 @@ void dng_packed_image_table::Unpack (dng_abort_sniffer *sniffer)
     #endif
 
     ClearPackedData ();
-            
+
     }
 
 /*****************************************************************************/
@@ -3550,7 +3550,7 @@ bool dng_packed_image_table::GetStream (dng_stream &stream)
         ThrowBadFormat ("Invalid pixel type in packed image table");
 
     // Read bytes of image table. Currently limit compressed image tables
-    // to 32-bit. 
+    // to 32-bit.
 
     const uint32 bytes = stream.Get_uint32 ();
 
@@ -3614,7 +3614,7 @@ void dng_packed_image_table::PutStream (dng_stream &stream,
 
         uint32 compressedSize = 0;
 
-        block.reset 
+        block.reset
             (fTable->EncodeAsBinary (host->Allocator (),
                                      compressedSize));
 
@@ -3633,14 +3633,14 @@ void dng_packed_image_table::PutStream (dng_stream &stream,
                 block->LogicalSize ());
 
     }
-        
+
 /*****************************************************************************/
 /*****************************************************************************/
 /*****************************************************************************/
 
 dng_masked_rgb_table::dng_masked_rgb_table ()
     {
-    
+
     }
 
 /*****************************************************************************/
@@ -3652,13 +3652,13 @@ dng_masked_rgb_table::dng_masked_rgb_table (dng_string tableSemanticName,
     :   fTableSemanticName (tableSemanticName)
 
     ,   fPixelType (pixelType)
-        
+
     ,   fTable (table)
-        
+
     {
 
     Validate ();
-    
+
     }
 
 /*****************************************************************************/
@@ -3676,7 +3676,7 @@ void dng_masked_rgb_table::Validate () const
     // Check PixelType.
 
     CheckPixelType (fPixelType);
-    
+
     // Check Divisions.
 
     CheckDivisions (fTable.Divisions ());
@@ -3699,7 +3699,7 @@ void dng_masked_rgb_table::Validate () const
                  "RGBTables must have dimension value of 3");
 
     // For now don't perform any validation on the table data itself.
-    
+
     }
 
 /*****************************************************************************/
@@ -3707,10 +3707,10 @@ void dng_masked_rgb_table::Validate () const
 static uint8 ColorPrimariesEnumToRGBTablesTagValue
     (dng_rgb_table::primaries_enum value)
     {
-    
+
     switch (value)
         {
-        
+
         case dng_rgb_table::primaries_sRGB:     return 0;
         case dng_rgb_table::primaries_Adobe:    return 1;
         case dng_rgb_table::primaries_P3:       return 2;
@@ -3720,21 +3720,21 @@ static uint8 ColorPrimariesEnumToRGBTablesTagValue
         default:
             ThrowProgramError ("unsupported primaries_enum value");
             break;
-        
+
         }
 
     return 0;                                // sRGB
-    
+
     }
 
 /*****************************************************************************/
 
 static dng_rgb_table::primaries_enum ColorPrimariesValueToEnum (uint32 x)
     {
-    
+
     switch (x)
         {
-        
+
         case 0: return dng_rgb_table::primaries_sRGB;
         case 1: return dng_rgb_table::primaries_Adobe;
         case 2: return dng_rgb_table::primaries_P3;
@@ -3746,32 +3746,32 @@ static dng_rgb_table::primaries_enum ColorPrimariesValueToEnum (uint32 x)
             ThrowProgramError ("unsupported ColorPrimaries value");
             break;
             }
-        
+
         }
 
     return dng_rgb_table::primaries_sRGB;
-    
+
     }
 
 /*****************************************************************************/
 
 static uint32 GamutExtensionEnumToRGBTablesTagValue (dng_rgb_table::gamut_enum value)
     {
-    
+
     switch (value)
         {
-        
+
         case dng_rgb_table::gamut_clip:   return 0;
         case dng_rgb_table::gamut_extend: return 1;
 
         default:
             ThrowProgramError ("unsupported gamut_enum value");
             break;
-        
+
         }
 
     return 1;                                // extend
-    
+
     }
 
 /*****************************************************************************/
@@ -3781,7 +3781,7 @@ static dng_rgb_table::gamut_enum GamutValueToEnum (uint32 x)
 
     switch (x)
         {
-        
+
         case 0: return dng_rgb_table::gamut_clip;
         case 1: return dng_rgb_table::gamut_extend;
 
@@ -3790,21 +3790,21 @@ static dng_rgb_table::gamut_enum GamutValueToEnum (uint32 x)
             ThrowProgramError ("Unexpected GamutExtension value");
             break;
             }
-            
+
         }
-    
+
     return dng_rgb_table::gamut_extend;
-    
+
     }
 
 /*****************************************************************************/
 
 static uint8 GammaEnumToRGBTablesTagValue (dng_rgb_table::gamma_enum value)
     {
-    
+
     switch (value)
         {
-        
+
         case dng_rgb_table::gamma_Linear:  return 0;
         case dng_rgb_table::gamma_sRGB:    return 1;
         case dng_rgb_table::gamma_1_8:     return 2;
@@ -3814,11 +3814,11 @@ static uint8 GammaEnumToRGBTablesTagValue (dng_rgb_table::gamma_enum value)
         default:
             ThrowProgramError ("unsupported gamma_enum value");
             break;
-        
+
         }
 
     return 1;                                // sRGB
-    
+
     }
 
 /*****************************************************************************/
@@ -3828,7 +3828,7 @@ static dng_rgb_table::gamma_enum GammaValueToEnum (uint32 x)
 
     switch (x)
         {
-        
+
         case 0: return dng_rgb_table::gamma_Linear;
         case 1: return dng_rgb_table::gamma_sRGB;
         case 2: return dng_rgb_table::gamma_1_8;
@@ -3840,11 +3840,11 @@ static dng_rgb_table::gamma_enum GammaValueToEnum (uint32 x)
             ThrowProgramError ("Unexpected GammaEncoding value");
             break;
             }
-            
+
         }
-    
+
     return dng_rgb_table::gamma_sRGB;
-    
+
     }
 
 /*****************************************************************************/
@@ -3856,7 +3856,7 @@ void dng_masked_rgb_table::CheckDivisions (uint32 divisions)
         {
         ThrowBadFormat ("Invalid Divisions in RGBTables");
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -3868,7 +3868,7 @@ void dng_masked_rgb_table::CheckPixelType (uint32 pixelType)
         {
         ThrowBadFormat ("Invalid PixelType in RGBTables");
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -3880,7 +3880,7 @@ void dng_masked_rgb_table::CheckGammaEncoding (dng_rgb_table::gamma_enum gamma)
         {
 
         // Enumerate the ones supported in the tag.
-        
+
         case dng_rgb_table::gamma_Linear:
         case dng_rgb_table::gamma_sRGB:
         case dng_rgb_table::gamma_1_8:
@@ -3892,33 +3892,33 @@ void dng_masked_rgb_table::CheckGammaEncoding (dng_rgb_table::gamma_enum gamma)
 
         default:
             ThrowBadFormat ("Unsupported GammaEncoding in RGBTables");
-            
+
         }
-    
+
     }
 
 /*****************************************************************************/
 
 void dng_masked_rgb_table::CheckColorPrimaries (dng_rgb_table::primaries_enum primaries)
     {
-    
+
     switch (primaries)
         {
-        
+
         // Enumerate the ones supported in the tag.
-        
+
         case dng_rgb_table::primaries_Adobe:
         case dng_rgb_table::primaries_P3:
         case dng_rgb_table::primaries_ProPhoto:
         case dng_rgb_table::primaries_Rec2020:
         case dng_rgb_table::primaries_sRGB:
             break;
-        
+
         // Reject everything else.
 
         default:
             ThrowBadFormat ("Unsupported ColorPrimaries in RGBTables");
-            
+
         }
 
     }
@@ -3927,21 +3927,21 @@ void dng_masked_rgb_table::CheckColorPrimaries (dng_rgb_table::primaries_enum pr
 
 void dng_masked_rgb_table::CheckGamutExtension (dng_rgb_table::gamut_enum gamut)
     {
-    
+
     switch (gamut)
         {
-        
+
         // Enumerate the ones supported in the tag.
-        
+
         case dng_rgb_table::gamut_clip:
         case dng_rgb_table::gamut_extend:
             break;
-        
+
         // Reject everything else.
 
         default:
             ThrowBadFormat ("Unsupported GamutExtension in RGBTables");
-            
+
         }
 
     }
@@ -3951,7 +3951,7 @@ void dng_masked_rgb_table::CheckGamutExtension (dng_rgb_table::gamut_enum gamut)
 void dng_masked_rgb_table::GetStream (dng_host &host,
                                       dng_stream &stream)
     {
-    
+
     // Read LengthTableSemanticName and TableSemanticName.
 
     uint16 nameLen = stream.Get_uint16 ();
@@ -3969,7 +3969,7 @@ void dng_masked_rgb_table::GetStream (dng_host &host,
     uint32 divisions = (uint32) stream.Get_uint8 ();
 
     CheckDivisions (divisions);
-    
+
     // Read PixelType.
 
     fPixelType = (uint32) stream.Get_uint8 ();
@@ -3991,7 +3991,7 @@ void dng_masked_rgb_table::GetStream (dng_host &host,
     auto primariesEnum = ColorPrimariesValueToEnum (primaries);
 
     CheckColorPrimaries (primariesEnum);
-    
+
     // Read GamutExtension.
 
     uint32 gamut = (uint32) stream.Get_uint8 ();
@@ -4025,14 +4025,14 @@ void dng_masked_rgb_table::GetStream (dng_host &host,
 
     stream.Get (fStoredData->Buffer (),
                 srcBytes);
-    
+
     if (fPixelType == 0)                     // u8
         {
 
         const uint8 *src = fStoredData->Buffer_uint8 ();
 
         constexpr uint16 scale8to16 = 257; // 65535 / 255
-        
+
         for (uint32 rIndex = 0; rIndex < divs; rIndex++)
             {
 
@@ -4055,12 +4055,12 @@ void dng_masked_rgb_table::GetStream (dng_host &host,
                 } // g
 
             } // r
-        
+
         }
 
     else if (fPixelType == 1)                // u16
         {
-        
+
         const uint16 *src = fStoredData->Buffer_uint16 ();
 
         for (uint32 rIndex = 0; rIndex < divs; rIndex++)
@@ -4085,7 +4085,7 @@ void dng_masked_rgb_table::GetStream (dng_host &host,
                 } // g
 
             } // r
-        
+
         }
 
     else if (fPixelType == 2)                // fp32
@@ -4096,7 +4096,7 @@ void dng_masked_rgb_table::GetStream (dng_host &host,
         const real32 *src = fStoredData->Buffer_real32 ();
 
         const real32 kScale = 65535.0f;
-        
+
         for (uint32 rIndex = 0; rIndex < divs; rIndex++)
             {
 
@@ -4119,14 +4119,14 @@ void dng_masked_rgb_table::GetStream (dng_host &host,
                 } // g
 
             } // r
-        
+
         }
 
     else
         {
-        
+
         ThrowProgramError ("Unexpected fPixelType");
-        
+
         }
 
     const uint32 kDimensions = 3;
@@ -4138,9 +4138,9 @@ void dng_masked_rgb_table::GetStream (dng_host &host,
     fTable.SetGamut (gamutEnum);
 
     fTable.SetGamma (gammaEnum);
-    
+
     fTable.SetPrimaries (primariesEnum);
-    
+
     }
 
 /*****************************************************************************/
@@ -4149,7 +4149,7 @@ void dng_masked_rgb_table::PutStream (dng_stream &stream) const
     {
 
     // LengthTableSemanticName.
-    
+
     uint32 len = fTableSemanticName.Length ();
 
     stream.Put_uint16 ((uint16) len);
@@ -4184,10 +4184,10 @@ void dng_masked_rgb_table::PutStream (dng_stream &stream) const
 
     if (fStoredData.get ())
         {
-        
+
         stream.Put (fStoredData->Buffer      (),
                     fStoredData->LogicalSize ());
-        
+
         }
 
     // Otherwise derive the data from the internal table representation.
@@ -4299,7 +4299,7 @@ void dng_masked_rgb_table::PutStream (dng_stream &stream) const
             }
 
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -4314,15 +4314,15 @@ void dng_masked_rgb_table::AddDigest (dng_md5_printer &printer) const
     // Name.
 
     uint32 nameLen = SemanticName ().Length ();
-    
+
     printer.Process (&nameLen,
                      (uint32) sizeof (nameLen));
 
     if (nameLen > 0)
         {
-        
+
         printer.Process (SemanticName ().Get (), nameLen);
-        
+
         }
 
     // Pixel type.
@@ -4331,12 +4331,12 @@ void dng_masked_rgb_table::AddDigest (dng_md5_printer &printer) const
                      (uint32) sizeof (fPixelType));
 
     // Table digest.
-    
+
     dng_fingerprint tableDigest = fTable.Fingerprint ();
 
     printer.Process (tableDigest.data,
                      sizeof (tableDigest.data));
-    
+
     }
 
 /*****************************************************************************/
@@ -4353,7 +4353,7 @@ void dng_masked_rgb_table_render_data::Initialize (const dng_negative &negative,
     auto maskedTablesReference = profile.ShareMaskedRGBTables ();
 
     const auto &tables = *maskedTablesReference;
-    
+
     if (tables.IsNOP ())
         return;
 
@@ -4400,7 +4400,7 @@ void dng_masked_rgb_table_render_data::Initialize (const dng_negative &negative,
         DNG_REQUIRE (table, "bad table");
 
         const auto &name = table->SemanticName ();
-        
+
         if (name.IsEmpty ())
             {
 
@@ -4413,32 +4413,32 @@ void dng_masked_rgb_table_render_data::Initialize (const dng_negative &negative,
                 {
 
                 dng_semantic_mask emptyMask;
-                
+
                 fMaskedTables.push_back
                     (std::make_pair (table, emptyMask));
-                
+
                 }
 
             #if qDebugMaskedRGBTableRender
-            
+
             printf ("table %d will be treated as background table\n",
                     debugIndex);
 
             #endif
-                
+
             }
 
         else
             {
-            
+
             // Check if we have a corresponding semantic mask.
 
             auto iter = smMap.find (name);
-            
+
             if (iter != smMap.end ())
                 {
-                
-                // Found it. Add it to the list. 
+
+                // Found it. Add it to the list.
 
                 fMaskedTables.push_back
                     (std::make_pair (table, iter->second));
@@ -4450,27 +4450,27 @@ void dng_masked_rgb_table_render_data::Initialize (const dng_negative &negative,
                         name.Get ());
 
                 #endif
-                
+
                 }
 
             #if qDebugMaskedRGBTableRender
 
             else
                 {
-                
+
                 printf ("table index %d -> semantic name '%s' not found among "
                         "negative's list of semantic masks -- ignoring",
                         debugIndex,
                         name.Get ());
-                            
+
                 }
 
             #endif
-            
+
             }
 
         ++debugIndex;
-        
+
         }
 
     // Find the background table index.
@@ -4512,11 +4512,11 @@ void dng_masked_rgb_table_render_data::Initialize (const dng_negative &negative,
 
 void dng_masked_rgb_table_render_data::PrepareRGBtoRGBTableData (dng_host &host)
     {
-    
+
     fMaskedTableData.clear ();
 
     fMaskedTableData.reserve (fMaskedTables.size ());
-    
+
     for (const auto &x : fMaskedTables)
         {
 
@@ -4524,17 +4524,17 @@ void dng_masked_rgb_table_render_data::PrepareRGBtoRGBTableData (dng_host &host)
             (host.Make_dng_rgb_to_rgb_table_data (x.first->Table ()));
 
         fMaskedTableData.push_back (ptr);
-        
+
         }
-    
+
     if (fBackgroundTable)
         {
 
         fBackgroundTableData.Reset
             (host.Make_dng_rgb_to_rgb_table_data (fBackgroundTable->Table ()));
-        
+
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -4569,7 +4569,7 @@ void dng_masked_rgb_table::Dump (uint32 indent) const
             fTable.Divisions ());
 
     const char *pixelTypeStrings [] = { "u8", "u16", "fp32" };
-    
+
     printf ("%s%-20s: %u (%s)\n",
             indentBuf,
             "PixelType",
@@ -4613,13 +4613,13 @@ void dng_masked_rgb_table::Dump (uint32 indent) const
 
     const char *gamutStrings [] =
         {
-        "clip", 
-        "extend",   
+        "clip",
+        "extend",
         };
 
     uint32 gamutTagValue =
         GamutExtensionEnumToRGBTablesTagValue (fTable.Gamut ());
-            
+
     printf ("%s%-20s: %u (%s)\n",
             indentBuf,
             "GamutExtension",
@@ -4631,9 +4631,9 @@ void dng_masked_rgb_table::Dump (uint32 indent) const
     const uint16 *samples = fTable.Samples ();
 
     bool doPrint = true;
-    
+
     uint32 linesPrinted = 0;
-    
+
     const uint8 *storedPtr = nullptr;
 
     if (fStoredData.get ())
@@ -4719,11 +4719,11 @@ void dng_masked_rgb_table::Dump (uint32 indent) const
 
     if (linesPrinted < divs * divs * divs)
         {
-        
+
         printf ("%s... %u entries omitted ...\n",
                 indentBuf,
                 (divs * divs * divs) - linesPrinted);
-        
+
         }
 
     }
@@ -4736,7 +4736,7 @@ void dng_masked_rgb_table::Dump (uint32 indent) const
 
 dng_masked_rgb_tables::dng_masked_rgb_tables ()
     {
-    
+
     }
 
 /*****************************************************************************/
@@ -4752,14 +4752,14 @@ dng_masked_rgb_tables::dng_masked_rgb_tables
     {
 
     Validate ();
-    
+
     }
 
 /*****************************************************************************/
 
 bool dng_masked_rgb_tables::IsNOP () const
     {
-    
+
     if (fTables.empty ())
         {
         return true;
@@ -4775,7 +4775,7 @@ void dng_masked_rgb_tables::Validate () const
     {
 
     // Check number of tables.
-    
+
     if (fTables.size () > kMaxTables)
         {
         ThrowBadFormat ("Too many tables in RGBTables");
@@ -4788,7 +4788,7 @@ void dng_masked_rgb_tables::Validate () const
 
     for (const auto &t : fTables)
         {
-        
+
         DNG_REQUIRE (t, "Invalid table pointer in RGBTables");
 
         t->Validate ();
@@ -4797,7 +4797,7 @@ void dng_masked_rgb_tables::Validate () const
             {
             ++numEmptyNames;
             }
-        
+
         }
 
     // There can be at most 1 table with an empty semantic name (i.e., at most
@@ -4805,12 +4805,12 @@ void dng_masked_rgb_tables::Validate () const
 
     if (numEmptyNames > 1)
         {
-        
+
         ThrowBadFormat ("Only one table in RGBTables can "
                         "have empty semantic name");
-        
+
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -4819,7 +4819,7 @@ void dng_masked_rgb_tables::AddDigest (dng_md5_printer &printer) const
     {
 
     // Header.
-    
+
     printer.Process ("dng_masked_rgb_tables", 21);
 
     // Number of tables.
@@ -4849,7 +4849,7 @@ void dng_masked_rgb_tables::PutStream (dng_stream &stream) const
     {
 
     // Write the number of tables.
-    
+
     stream.Put_uint32 ((uint32) fTables.size ());
 
     // Write the composite method.
@@ -4862,7 +4862,7 @@ void dng_masked_rgb_tables::PutStream (dng_stream &stream) const
         {
         t->PutStream (stream);
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -4898,7 +4898,7 @@ dng_masked_rgb_tables * dng_masked_rgb_tables::GetStream (dng_host &host,
 
     if (!isDraft)
         {
-        
+
         method = (composite_method) stream.Get_uint32 ();
 
         if (method != kWeightedSum &&
@@ -4906,7 +4906,7 @@ dng_masked_rgb_tables * dng_masked_rgb_tables::GetStream (dng_host &host,
             {
             ThrowBadFormat ("RGBTables: invalid composite method");
             }
-        
+
         }
 
     // Read each table.
@@ -4917,11 +4917,11 @@ dng_masked_rgb_tables * dng_masked_rgb_tables::GetStream (dng_host &host,
 
     for (auto &t : tables)
         {
-        
+
         t.reset (new dng_masked_rgb_table);
 
         t->GetStream (host, stream);
-        
+
         }
 
     // Done reading all the tables.
@@ -4930,7 +4930,7 @@ dng_masked_rgb_tables * dng_masked_rgb_tables::GetStream (dng_host &host,
                                       method);
 
     }
-        
+
 /*****************************************************************************/
 
 #if qDNGValidate
@@ -4946,13 +4946,13 @@ void dng_masked_rgb_tables::Dump () const
 
     for (size_t i = 0; i < fTables.size (); i++)
         {
-        
+
         printf ("Table %u:\n", (unsigned) i);
 
         fTables [i]->Dump (4);
-        
+
         }
-    
+
     }
 
 #endif  // qDNGValidate
@@ -5025,9 +5025,9 @@ dng_rgb_to_rgb_table_data::dng_rgb_to_rgb_table_data (dng_host &host,
 
     ,   fEncodeTable ()
     ,   fDecodeTable ()
-    
+
     {
-    
+
     // Find encode/decode matrix, if any.
 
         {
@@ -5193,7 +5193,7 @@ dng_rgb_to_rgb_table_data::dng_rgb_to_rgb_table_data (dng_host &host,
             }
 
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -5216,20 +5216,20 @@ void dng_rgb_to_rgb_table_data::Process_32 (dng_pixel_buffer &buffer,
     uint32 p0 = bufferStartPlane;
     uint32 p1 = bufferStartPlane + 1;
     uint32 p2 = bufferStartPlane + 2;
-        
+
     const real32 *mPtr = nullptr;
 
     int32 mRowStep = 0;
 
     if (optMaskBuffer)
         {
-        
+
         mPtr = optMaskBuffer->ConstPixel_real32 (dstArea.t,
                                                  dstArea.l,
                                                  optMaskPlane);
 
         mRowStep = optMaskBuffer->RowStep ();
-        
+
         }
 
     if (fTable.Dimensions () == 3)
@@ -5341,25 +5341,25 @@ void dng_rgb_to_rgb_table_data::AddDigest (dng_md5_printer &printer) const
 
 class MoveBigTablesToDictionaryContext
     {
-    
+
     public:
-    
+
         dng_xmp &fXMP;
-        
+
         dng_big_table_dictionary &fDictionary;
-        
+
     public:
-    
+
         MoveBigTablesToDictionaryContext (dng_xmp &xmp,
                                           dng_big_table_dictionary &dictionary)
-                                       
+
             :   fXMP (xmp)
             ,   fDictionary (dictionary)
-            
+
             {
-            
+
             }
-            
+
     };
 
 /*****************************************************************************/
@@ -5368,18 +5368,18 @@ static bool MoveBigTablesToDictionaryCallback (const char *ns,
                                                const char *path,
                                                void *callbackData)
     {
-    
+
     if (path == NULL || path [0] == 0)
         {
         return true;
         }
-        
+
     dng_string s;
-    
+
     s.Set (path);
-    
+
     // Check if ends with Table_ and 32 characters.
-            
+
     if (s.Length () < 38 ||
         strncmp (s.Get () + s.Length () - 38,
                  "Table_",
@@ -5387,80 +5387,80 @@ static bool MoveBigTablesToDictionaryCallback (const char *ns,
         {
         return true;
         }
-        
+
     // Make sure there is either nothing or a namespace before.
-        
+
     if (s.Length () >= 39 &&
         s.Get () [s.Length () - 39] != ':')
         {
         return true;
         }
-        
+
     // See if the last 32 characters are a valid fingerprint.
-        
+
     char fingerString [32];
-    
+
     memcpy (fingerString,
             s.Get () + s.Length () - 32,
             32);
-            
+
     dng_fingerprint fingerprint;
-            
+
     if (!fingerprint.FromUtf8HexString (fingerString))
         {
         return true;
         }
-        
+
     if (!fingerprint.IsValid ())
         {
         return true;
         }
-        
+
     MoveBigTablesToDictionaryContext *context =
                 (MoveBigTablesToDictionaryContext *) callbackData;
-                
+
     if (!context->fDictionary.HasTable (fingerprint))
         {
-        
+
         dng_string tableString;
-        
+
         if (context->fXMP.GetString (ns, path, tableString))
             {
-            
+
             AutoPtr<dng_memory_block> dBlock;
-            
+
             uint32 dCount = 0;
-            
+
             dng_big_table::ASCIItoBinary (context->fXMP.Allocator (),
                                           tableString.Get (),
                                           tableString.Length (),
                                           dBlock,
                                           dCount);
-                                          
+
             if (dCount)
                 {
-                
+
                 dng_ref_counted_block bigTableBlock (dCount);
-                
+
                 memcpy (bigTableBlock.Buffer (),
                         dBlock->Buffer (),
                         dCount);
-                        
+
                 context->fDictionary.AddTable (fingerprint,
                                                bigTableBlock);
-                
+
                 }
-            
+
             }
-        
+
         }
-        
+
     // Now remove the big table string from the xmp.
-        
+
     context->fXMP.Remove (ns, path);
-            
+
     return true;
-    
+
     }
 
 /*****************************************************************************/
@@ -5468,21 +5468,21 @@ static bool MoveBigTablesToDictionaryCallback (const char *ns,
 void MoveBigTablesToDictionary (dng_xmp &xmp,
                                 dng_big_table_dictionary &dictionary)
     {
-    
+
     MoveBigTablesToDictionaryContext context (xmp, dictionary);
-    
+
     xmp.IteratePaths (MoveBigTablesToDictionaryCallback,
                       (void *) &context,
                       XMP_NS_CRS,
                       nullptr,
                       true);
-    
+
     xmp.IteratePaths (MoveBigTablesToDictionaryCallback,
                       (void *) &context,
                       XMP_NS_CRSS,
                       nullptr,
                       true);
-    
+
     }
 
 /*****************************************************************************/
@@ -5493,101 +5493,101 @@ void DualParseXMP (dng_host &host,
                    const void *blockData,
                    uint32 blockSize)
     {
-        
+
     // Null pad XMP text so we can use string searching functions.
-    
+
     AutoPtr<dng_memory_block> tempBlock (host.Allocate (blockSize + 1));
-    
+
     memcpy (tempBlock->Buffer (),
             blockData,
             blockSize);
-            
+
     tempBlock->Buffer_uint8 () [blockSize] = 0;
-        
+
     char *blockString = tempBlock->Buffer_char ();
-    
+
     // Assume default namespace short names.  Since this is just
     // a performance optimization, don't worry about the rare case
     // of non-default namespace short names.
-    
+
     dng_string ns_crs  ("crs:");
     dng_string ns_crss ("crss:");
 
     // Search for big tables in XMP using fast search.
-        
+
     struct TableEntry
         {
-        
+
         // Fingerprint of found big table.
-        
+
         dng_fingerprint fFingerprint;
-        
+
         // Offset and byte count of big table data.
-        
+
         size_t          fDataOffset;
         size_t          fDataBytes;
-        
+
         // Offset and byte count of entire big table tag, including wrapper.
-        
+
         size_t          fWrapperOffset;
         size_t          fWrapperBytes;
-        
+
         };
-    
+
     std::vector<TableEntry> entries;
-    
+
         {
-        
+
         size_t offset = 0;
-        
+
         while (const char *search = strstr (blockString + offset, "Table_"))
             {
-            
+
             TableEntry entry;
-            
+
             // Is the search result followed by a valid hex encoded fingerprint?
-            
+
             if (search + 6 + 32 > blockString + blockSize)
                 {
                 break;      // Too near end of xmp block to even fit fingerprint
                 }
-                
+
             char fingerString [33];
-            
+
             memcpy (fingerString,
                     search + 6,
                     32);
-                    
+
             fingerString [32] = 0;
-                    
+
             if (!entry.fFingerprint.FromUtf8HexString (fingerString))
                 {
-                
+
                 // We did not find a table, so just start searching again just
                 // after the "Table_" string.
-                
+
                 offset = (search - blockString) + 6;
-                
+
                 continue;   // Not followed by valid fingerprint
-                
+
                 }
-                
+
             // Look for big tables in both the XMP_NS_CRS and XMP_NS_CRSS
             // namespaces.
-            
+
             bool foundTable = false;
-            
+
             for (uint32 nsIndex = 0; nsIndex < 2; nsIndex++)
                 {
-                
+
                 dng_string ns = (nsIndex == 0 ? ns_crs : ns_crss);
-                
+
                 int32 nsLength = ns.Length ();
-                    
+
                 // Look for compact mode tables.
                 // Example:
                 //     crs:Table_fingerprint="data"
-            
+
                 if (search >= blockString + nsLength + 1 &&
                     memcmp (search - nsLength, ns.Get (), nsLength) == 0 &&
                     (search [-nsLength - 1] == ' '  ||
@@ -5597,186 +5597,186 @@ void DualParseXMP (dng_host &host,
                     search + 6 + 32 + 2 < blockString + blockSize &&
                     memcmp (search + 6 + 32, "=\"", 2) == 0)
                     {
-                    
+
                     const char *dataStart = search + 6 + 32 + 2;
-                    
+
                     // Find termination
-                    
+
                     const char *endSearch = strstr (dataStart, "\"");
-                    
+
                     if (endSearch)
                         {
-                        
+
                         entry.fDataOffset = dataStart - blockString;
                         entry.fDataBytes  = endSearch - dataStart;
-                        
+
                         entry.fWrapperOffset = entry.fDataOffset - 2 - 32 - 6 - nsLength;
                         entry.fWrapperBytes  = entry.fDataBytes + nsLength + 6 + 32 + 2 + 1;
-                        
+
                         foundTable = true;
-                                 
+
                         break;
-                        
+
                         }
-                    
+
                     }
 
                 // Look for non-compact mode tables.
                 // Example:
                 //     <crs:Table_fingerprint>data</crs:Table_fingerprint>
-                
+
                 if (search >= blockString + nsLength + 1 &&
                     memcmp (search - nsLength, ns.Get (), nsLength) == 0 &&
                     search [-nsLength - 1] == '<' &&
                     search + 6 + 32 + 1 < blockString + blockSize &&
                     search [6 + 32] == '>')
                     {
-                    
+
                     const char *dataStart = search + 6 + 32 + 1;
-                    
+
                     dng_string endString ("</");
-                    
+
                     endString.Append (ns.Get ());
                     endString.Append ("Table_");
                     endString.Append (fingerString);
                     endString.Append (">");
-                                        
+
                     // Find termination
-                    
+
                     const char *endSearch = strstr (dataStart, endString.Get ());
-                    
+
                     if (endSearch)
                         {
-                        
+
                         entry.fDataOffset = dataStart - blockString;
                         entry.fDataBytes  = endSearch - dataStart;
-                        
+
                         entry.fWrapperOffset = entry.fDataOffset - 2 - 32 - 6 - nsLength;
                         entry.fWrapperBytes  = entry.fDataBytes + (nsLength + 6 + 32 + 2) * 2 + 1;
-                        
+
                         foundTable = true;
-                        
+
                         break;
-                        
+
                         }
-                    
+
                     }
-            
+
                 }
-                
+
             // We found a table, start search again after this table's wrapper.
-                
+
             if (foundTable)
                 {
-                
+
                 entries.push_back (entry);
-                
+
                 offset = entry.fWrapperOffset +
                          entry.fWrapperBytes;
-                         
+
                 }
-                                 
+
             // If we did not find a table, just start searching again just
             // after the "Table_" string.
-                
+
             else
                 {
-                
+
                 offset = (search - blockString) + 6;
-                
+
                 }
-            
+
             }
-            
+
         }
-        
+
     // Did we find any tables in our scan?
-    
+
     if (entries.size ())
         {
-        
+
         // Add any new tables to dictionary, and remove from xmp that will be passed
         // to parser.
-        
+
         size_t srcOffset = 0;
         size_t dstOffset = 0;
-        
+
         for (size_t index = 0; index < entries.size (); index++)
             {
-            
+
             if (!dictionary.HasTable (entries [index].fFingerprint))
                 {
-                
+
                 AutoPtr<dng_memory_block> dBlock;
-                
+
                 uint32 dCount = 0;
-                
+
                 dng_big_table::ASCIItoBinary (host.Allocator (),
                                               ((const char *) blockData) + entries [index].fDataOffset,
                                               (uint32) entries [index].fDataBytes,
                                               dBlock,
                                               dCount);
-                                              
+
                 if (dCount)
                     {
-                    
+
                     dng_ref_counted_block bigTableBlock (dCount);
-                    
+
                     memcpy (bigTableBlock.Buffer (),
                             dBlock->Buffer (),
                             dCount);
-                            
+
                     dictionary.AddTable (entries [index].fFingerprint,
                                          bigTableBlock);
-                    
+
                     }
-                
+
                 }
-                
+
             size_t copyBytes = entries [index].fWrapperOffset - srcOffset;
-                
+
             memcpy (blockString + dstOffset,
                     ((const char *) blockData) + srcOffset,
                     copyBytes);
-                    
+
             dstOffset += copyBytes;
-            
+
             srcOffset = entries [index].fWrapperOffset +
                         entries [index].fWrapperBytes;
-            
+
             }
-            
+
         // Copy bytes after last block.
-        
+
         memcpy (blockString + dstOffset,
                 ((const char *) blockData) + srcOffset,
                 blockSize - srcOffset);
-                
+
         dstOffset += blockSize - srcOffset;
-        
+
         // Parse the remaining XMP with the big table blocks removed.
-        
+
         xmp.Parse (host,
                    blockString,
                    (uint32) dstOffset);
-               
+
         }
-        
+
     // No tables founds, just parse the original XMP data.
-        
+
     else
         {
-        
+
         xmp.Parse (host,
                    blockData,
                    blockSize);
-               
+
         }
-        
+
     // Slow path, in case fast parser missed something.
-    
+
     MoveBigTablesToDictionary (xmp, dictionary);
-    
+
     }
 
 /*****************************************************************************/

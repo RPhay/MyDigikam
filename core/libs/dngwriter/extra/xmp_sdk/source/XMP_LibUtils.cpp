@@ -3,7 +3,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 // =================================================================================================
@@ -76,16 +76,16 @@ XMP_ReadWriteLock::XMP_ReadWriteLock() : beingWritten(false)
 {
     #if XMP_DebugBuild && HaveAtomicIncrDecr
         this->lockCount = 0;
-    
+
 #if 0 //changing type of XMP_AtomicCounter from int32_t to std::atomic<int32_t>
-    
+
         // Atomic counter must be 32 or 64 bits and naturally aligned.
         size_t counterSize = sizeof ( XMP_AtomicCounter );
         size_t counterOffset = XMP_OffsetOf ( XMP_ReadWriteLock, lockCount );
         XMP_Assert ( (counterSize == 4) || (counterSize == 8) );    // Counter must be 32 or 64 bits.
         XMP_Assert ( (counterOffset & (counterSize-1)) == 0 );      // Counter must be naturally aligned.
 #endif
-    
+
     #endif
     XMP_BasicRWLock_Initialize ( this->lock );
     #if TraceThreadLocks
@@ -128,7 +128,7 @@ void XMP_ReadWriteLock::Acquire ( bool forWriting )
     #if XMP_DebugBuild && HaveAtomicIncrDecr
         XMP_AtomicIncrement ( this->lockCount );
     #endif
-    
+
 
     #if TraceThreadLocks
         fprintf ( stderr, "Acquired lock %.8X for %s, count %d%s\n",
@@ -661,7 +661,7 @@ static XMP_Bool matchhere ( XMP_StringPtr regexp, XMP_StringPtr text ) {
                 return matchhere ( regexp+2, text+1 );
             else
                 return false;
-        }   
+        }
         else if ( regexp[1] == 'W' ) {
             if ( matchUpperCase(text) )
                 return matchhere ( regexp+2, text+1 );

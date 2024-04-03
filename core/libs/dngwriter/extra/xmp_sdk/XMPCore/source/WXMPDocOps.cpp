@@ -3,7 +3,7 @@
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the terms
-// of the Adobe license agreement accompanying it. If you have received this file from a source other 
+// of the Adobe license agreement accompanying it. If you have received this file from a source other
 // than Adobe, then your use, modification, or distribution of it requires the prior written permission
 // of Adobe.
 // =================================================================================================
@@ -113,7 +113,7 @@ WXMPDocOps_IncrementRefCount_1 ( XMPDocOpsRef xmpObjRef )
 
 void
 WXMPDocOps_DecrementRefCount_1 ( XMPDocOpsRef xmpObjRef )
-{   
+{
     WXMP_Result void_wResult;
     WXMP_Result * wResult = &void_wResult;  // ! Needed to "fool" the EnterWrapper macro.
     XMP_ENTER_ObjWrite ( XMPDocOps, "WXMPDocOps_DecrementRefCount_1" )
@@ -170,15 +170,15 @@ WXMPDocOps_SetJVM_1 ( JavaVM* jvm,
                              WXMP_Result * wResult )
 {
     XMP_ENTER_Static ( "WXMPDocOps_SetJVM_1" )
-        
+
         XMPDocOps::SetJVM ( jvm );
-        
+
     XMP_EXIT
 }
 
 #endif
 
-    
+
 
 // =================================================================================================
 // Class Method Wrappers
@@ -250,7 +250,7 @@ WXMPDocOps_BranchXMP_1 ( XMPDocOpsRef   xmpObjRef,
         XMPDocOps * derivedDoc  = WtoXMPDocOps_Ptr ( derivedDocRef );
         XMP_AutoLock docLock ( &derivedDoc->lock, kXMP_WriteLock, (derivedDoc != thiz) );
         XMPMeta *   derivedMeta = WtoXMPMeta_Ptr ( derivedMetaRef );
-        // AUDIT warning C6011: getting the address of the lock is save. 
+        // AUDIT warning C6011: getting the address of the lock is save.
         // Lock is only dereferenced in metaLock if derivedMeta != 0
         XMP_AutoLock metaLock ( &derivedMeta->lock, kXMP_WriteLock, (derivedMeta != 0) );
 

@@ -37,17 +37,17 @@
 template<class T>
 class AutoPtr: private dng_uncopyable
     {
-    
+
     private:
-    
+
         T *p_;
-        
+
     public:
 
         /// Construct an AutoPtr with no referent.
 
         AutoPtr () : p_ (0) { }
-    
+
         /// Construct an AutoPtr which owns the argument pointer.
         /// \param p pointer which constructed AutoPtr takes ownership of. p will be
         /// deleted on destruction or Reset unless Release is called first.
@@ -93,16 +93,16 @@ class AutoPtr: private dng_uncopyable
         /// an error to call this if the AutoPtr has NULL as its value.
 
         T &operator* () const { return *p_; }
-        
+
         /// Swap with another auto ptr.
-        
+
         friend inline void Swap (AutoPtr< T > &x, AutoPtr< T > &y)
             {
             T* temp = x.p_;
             x.p_ = y.p_;
             y.p_ = temp;
             }
-        
+
     };
 
 /*****************************************************************************/
@@ -110,10 +110,10 @@ class AutoPtr: private dng_uncopyable
 template<class T>
 AutoPtr<T>::~AutoPtr ()
     {
-    
+
     delete p_;
     p_ = 0;
-    
+
     }
 
 /*****************************************************************************/
@@ -131,14 +131,14 @@ T *AutoPtr<T>::Release ()
 template<class T>
 void AutoPtr<T>::Reset (T *p)
     {
-    
+
     if (p_ != p)
         {
         if (p_ != 0)
             delete p_;
         p_ = p;
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -146,13 +146,13 @@ void AutoPtr<T>::Reset (T *p)
 template<class T>
 void AutoPtr<T>::Reset ()
     {
-    
+
     if (p_ != 0)
         {
         delete p_;
         p_ = 0;
         }
-    
+
     }
 
 /*****************************************************************************/
@@ -177,11 +177,11 @@ class AutoArray: private dng_uncopyable
     {
 
     public:
-        
+
         /// Construct an AutoArray that refers to a null pointer.
 
         AutoArray () { }
-        
+
         /// Construct an AutoArray containing 'count' elements, which are
         /// default-constructed. If an out-of-memory condition occurs, a
         /// dng_exception with error code dng_error_memory is thrown.
@@ -223,7 +223,7 @@ class AutoArray: private dng_uncopyable
             else
                 return nullptr;
             }
-        
+
         const T *Get () const
             {
             if (fVector)
