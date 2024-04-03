@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-02 01:33+0000\n"
+"POT-Creation-Date: 2024-04-03 01:43+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -4155,7 +4155,7 @@ msgstr "단위"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:261
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "Thumbnail"
@@ -16185,7 +16185,7 @@ msgid "ExifTool reported an error"
 msgstr "메타데이터 템플릿 적용"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
 #, kde-format
 msgid "Success"
 msgstr "성공"
@@ -16595,95 +16595,95 @@ msgstr "%2 %1 달력 쪽 인쇄 중"
 msgid "Printing Complete"
 msgstr "인쇄 완료"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:89
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "변환"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:106
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:97
 #, kde-format
 msgctxt "@action:button"
 msgid "&Convert"
 msgstr "변환(&C)"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, kde-format
 msgid "The list does not contain any Raw files to process."
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgid "DNG Converter"
 msgstr "변환"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:418
 #, kde-format
 msgid "&Abort"
 msgstr "중단(&A)"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:428
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:419
 #, fuzzy, kde-format
 #| msgid "Raw file conversion failed."
 msgid "Abort the conversion of Raw files."
 msgstr "RAW 파일을 변환할 수 없습니다."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:432
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:423
 #, kde-format
 msgid "Con&vert"
 msgstr "변환(&V)"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:433
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:424
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start importing the specified images into the currently selected album."
 msgid "Start converting the Raw images using the current settings."
 msgstr "현재 선택한 앨범으로 선택한 이미지를 가져옵니다."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:457
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:448
 #, fuzzy, kde-format
 #| msgid "Failed to save image to %1"
 msgid "Failed to save image"
 msgstr "사진을 %1(으)로 저장할 수 없음"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:468
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:459
 #, fuzzy, kde-format
 #| msgid "Failed to open video encoder"
 msgid "Failed to move sidecar"
 msgstr "비디오 인코더를 열 수 없음"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:465
 #, fuzzy, kde-format
 #| msgid "Failed to save image to %1."
 msgid "Failed to save image."
 msgstr "이미지를 %1(으)로 저장할 수 없습니다."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:506
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:497
 #, fuzzy, kde-format
 #| msgid "Processing Failed"
 msgid "Process failed"
 msgstr "처리 실패"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:512
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:503
 #, fuzzy, kde-format
 msgid "Process Canceled"
 msgstr "속성"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:518
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:509
 #, fuzzy, kde-format
 #| msgid "Calendar support"
 msgid "File not supported"
 msgstr "달력 지원"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:524
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:515
 #, kde-format
 msgid "Internal error"
 msgstr "내부 오류"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:549
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:540
 #, kde-format
 msgid "Processing %1"
 msgstr "%1 처리 중"
@@ -16753,7 +16753,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "색 공간 변환기..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:112
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:104
 #, fuzzy, kde-format
 msgid "Cannot identify Raw image"
 msgstr ""
@@ -28555,7 +28555,7 @@ msgstr ""
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
-#: core/libs/facesengine/facedb/facedbaccess.cpp:238
+#: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, fuzzy, kde-format
 msgid ""
 "Error opening database backend.\n"
@@ -34674,17 +34674,17 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "도움말"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:275
+#: core/libs/dtrash/dtrashitemmodel.cpp:266
 #, kde-format
 msgid "Relative Path"
 msgstr "상대 경로"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:280
+#: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, kde-format
 msgid "Deletion Time"
 msgstr "삭제 시간"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:120
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBFaceVersion\" setting does not exist. The "
@@ -34692,7 +34692,7 @@ msgid ""
 "empty database. "
 msgstr ""
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:160
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:153
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -34701,7 +34701,7 @@ msgid ""
 "recent.) Please use the more recent version of digiKam that you used before."
 msgstr ""
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:191
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:184
 #, fuzzy, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -35382,82 +35382,82 @@ msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:70
+#: core/libs/iojobs/iojob.cpp:64
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:76
+#: core/libs/iojobs/iojob.cpp:71
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:103
+#: core/libs/iojobs/iojob.cpp:99
 #, fuzzy, kde-format
 #| msgid "Could not read image '%1'"
 msgid "Could not overwrite image %1"
 msgstr "사진 '%1'을(를) 불러올 수 없음"
 
-#: core/libs/iojobs/iojob.cpp:111
+#: core/libs/iojobs/iojob.cpp:107
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:139
+#: core/libs/iojobs/iojob.cpp:135
 #, fuzzy, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "폴더 %2에 같은 이름의 파일이 (%1) 존재합니다"
 
-#: core/libs/iojobs/iojob.cpp:169
+#: core/libs/iojobs/iojob.cpp:165
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:176
+#: core/libs/iojobs/iojob.cpp:172
 #, fuzzy, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr "열 수 없음: %1"
 
-#: core/libs/iojobs/iojob.cpp:188
+#: core/libs/iojobs/iojob.cpp:184
 #, fuzzy, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "열 수 없음: %1"
 
-#: core/libs/iojobs/iojob.cpp:194
+#: core/libs/iojobs/iojob.cpp:190
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:218
+#: core/libs/iojobs/iojob.cpp:214
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:226
 #, fuzzy, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "열 수 없음: %1"
 
-#: core/libs/iojobs/iojob.cpp:238
+#: core/libs/iojobs/iojob.cpp:234
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "열 수 없음: %1"
 
-#: core/libs/iojobs/iojob.cpp:243
+#: core/libs/iojobs/iojob.cpp:239
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "열 수 없음: %1"
 
-#: core/libs/iojobs/iojob.cpp:290
+#: core/libs/iojobs/iojob.cpp:286
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:298
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35465,7 +35465,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:310
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35473,24 +35473,24 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:331
+#: core/libs/iojobs/iojob.cpp:327
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:339
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:389
+#: core/libs/iojobs/iojob.cpp:385
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr ""
 "\"%1\"\n"
 "그림을 표시할 수 없습니다"
 
-#: core/libs/iojobs/iojob.cpp:399
+#: core/libs/iojobs/iojob.cpp:397
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "폴더 %2에 같은 이름의 파일이 (%1) 존재합니다"
@@ -35500,7 +35500,7 @@ msgstr "폴더 %2에 같은 이름의 파일이 (%1) 존재합니다"
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:492
+#: core/libs/iojobs/iojob.cpp:493
 #, fuzzy, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "열 수 없음: %1"
@@ -42202,6 +42202,12 @@ msgstr "사용자 정의 글꼴"
 #, kde-format
 msgid "Choose..."
 msgstr "선택..."
+
+#: core/libs/widgets/fonts/dfontselect.cpp:145
+#, fuzzy, kde-format
+#| msgid "Select a month"
+msgid "Select a Font"
+msgstr "월 선택"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
 #, kde-format

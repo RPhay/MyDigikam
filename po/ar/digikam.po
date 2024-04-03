@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-02 01:33+0000\n"
+"POT-Creation-Date: 2024-04-03 01:43+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -4260,7 +4260,7 @@ msgstr "الوحدة"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:261
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "Thumbnail"
@@ -15643,7 +15643,7 @@ msgid "ExifTool reported an error"
 msgstr "افتح محرّر قوالب البيانات الوصفيّة"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
 #, kde-format
 msgid "Success"
 msgstr "اكتمل"
@@ -16028,93 +16028,93 @@ msgstr "يطبع صفحة التّقويم لشهر %1 لعام %2"
 msgid "Printing Complete"
 msgstr "اكتملت الطّباعة"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:89
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, fuzzy, kde-format
 #| msgid "Convert to:"
 msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "حوّل إلى:"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:106
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:97
 #, kde-format
 msgctxt "@action:button"
 msgid "&Convert"
 msgstr "&حوّل"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:279
 #, kde-format
 msgid "The list does not contain any Raw files to process."
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
 #, fuzzy, kde-format
 #| msgid "Convert to:"
 msgid "DNG Converter"
 msgstr "حوّل إلى:"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:418
 #, kde-format
 msgid "&Abort"
 msgstr "أ&جهض"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:428
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:419
 #, fuzzy, kde-format
 #| msgid "Abort the current Raw image preview."
 msgid "Abort the conversion of Raw files."
 msgstr "أجهض معاينة الصّورة الخامّ الحاليّة."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:432
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:423
 #, kde-format
 msgid "Con&vert"
 msgstr "&حوّل"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:433
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:424
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgid "Start converting the Raw images using the current settings."
 msgstr "غيّر اسم ملفّ العنصر المحدّد حاليًّا."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:457
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:448
 #, kde-format
 msgid "Failed to save image"
 msgstr "فشل حفظ الصّورة"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:468
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:459
 #, fuzzy, kde-format
 #| msgid "Failed to open file."
 msgid "Failed to move sidecar"
 msgstr "فشل فتح الملفّ."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:465
 #, kde-format
 msgid "Failed to save image."
 msgstr "فشل حفظ الصّورة."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:506
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:497
 #, fuzzy, kde-format
 #| msgctxt "Success for image file number %1 out of %2"
 #| msgid "Processing file %1 / %2"
 msgid "Process failed"
 msgstr "يعالج الملفّ %1/ %2"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:512
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:503
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
 msgid "Process Canceled"
 msgstr "أُلغيت المعالجة..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:518
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:509
 #, fuzzy, kde-format
 msgid "File not supported"
 msgstr "خطي"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:524
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:515
 #, kde-format
 msgid "Internal error"
 msgstr "خطأ داخليّ"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:549
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:540
 #, kde-format
 msgid "Processing %1"
 msgstr "يعالج %1"
@@ -16174,7 +16174,7 @@ msgctxt "@action"
 msgid "DNG Converter..."
 msgstr "محوّل فضاءات الألوان..."
 
-#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:112
+#: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:104
 #, fuzzy, kde-format
 #| msgid "Cannot Save File"
 msgid "Cannot identify Raw image"
@@ -27915,7 +27915,7 @@ msgstr ""
 #: core/libs/database/coredb/coredbaccess.cpp:303
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:241
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
-#: core/libs/facesengine/facedb/facedbaccess.cpp:238
+#: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, kde-format
 msgid ""
 "Error opening database backend.\n"
@@ -34115,17 +34115,17 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "مساعدة"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:275
+#: core/libs/dtrash/dtrashitemmodel.cpp:266
 #, kde-format
 msgid "Relative Path"
 msgstr "المسار النّسبيّ"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:280
+#: core/libs/dtrash/dtrashitemmodel.cpp:271
 #, kde-format
 msgid "Deletion Time"
 msgstr "وقت الحذف"
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:127
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:120
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBFaceVersion\" setting does not exist. The "
@@ -34135,7 +34135,7 @@ msgstr ""
 "قاعدة البيانات غير صالحة: إعداد ”DBFaceVersion“ غير موجود. تعذّر التّحقّق من "
 "إصدارة مخطّط قاعدة البيانات الحاليّة. جرّب البدء بقاعدة بيانات فارغة."
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:160
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:153
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -34144,7 +34144,7 @@ msgid ""
 "recent.) Please use the more recent version of digiKam that you used before."
 msgstr ""
 
-#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:191
+#: core/libs/facesengine/facedb/facedbschemaupdater.cpp:184
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -34836,85 +34836,85 @@ msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:70
+#: core/libs/iojobs/iojob.cpp:64
 #, kde-format
 msgid "File/Folder %1 does not exist anymore"
 msgstr "لم يعد الملفّ/المجلّد %1 موجودًا"
 
-#: core/libs/iojobs/iojob.cpp:76
+#: core/libs/iojobs/iojob.cpp:71
 #, kde-format
 msgid "Album %1 does not exist anymore"
 msgstr "لم يعد الألبوم %1 موجودًا"
 
-#: core/libs/iojobs/iojob.cpp:103
+#: core/libs/iojobs/iojob.cpp:99
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgid "Could not overwrite image %1"
 msgstr "تعذّر فتح: %1"
 
-#: core/libs/iojobs/iojob.cpp:111
+#: core/libs/iojobs/iojob.cpp:107
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:139
+#: core/libs/iojobs/iojob.cpp:135
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
 msgstr "هناك ملفّ أو مجلّد له الاسم %1 في %2 بالفعل"
 
-#: core/libs/iojobs/iojob.cpp:169
+#: core/libs/iojobs/iojob.cpp:165
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "تعذّر نقل المجلّد %1 إلى الألبوم %2"
 
-#: core/libs/iojobs/iojob.cpp:176
+#: core/libs/iojobs/iojob.cpp:172
 #, fuzzy, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr "تعذّر نقل المجلّد %1 إلى الألبوم %2. نُسخ المجلّد إلى الألبوم %2"
 
-#: core/libs/iojobs/iojob.cpp:188
+#: core/libs/iojobs/iojob.cpp:184
 #, fuzzy, kde-format
 #| msgid "Could not move file %1 to album %2"
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "تعذّر نقل الملفّ %1 إلى الألبوم %2"
 
-#: core/libs/iojobs/iojob.cpp:194
+#: core/libs/iojobs/iojob.cpp:190
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "تعذّر نقل الملفّ %1 إلى الألبوم %2"
 
-#: core/libs/iojobs/iojob.cpp:218
+#: core/libs/iojobs/iojob.cpp:214
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "تعذّر نسخ المجلّد %1 إلى الألبوم %2"
 
-#: core/libs/iojobs/iojob.cpp:230
+#: core/libs/iojobs/iojob.cpp:226
 #, fuzzy, kde-format
 #| msgid "Could not copy file %1 to album %2"
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "تعذّر نسخ الملفّ %1 إلى الألبوم %2"
 
-#: core/libs/iojobs/iojob.cpp:238
+#: core/libs/iojobs/iojob.cpp:234
 #, fuzzy, kde-format
 #| msgid "Could not copy file %1 to album %2"
 msgid "Could not copy file %1 to folder %2"
 msgstr "تعذّر نسخ الملفّ %1 إلى الألبوم %2"
 
-#: core/libs/iojobs/iojob.cpp:243
+#: core/libs/iojobs/iojob.cpp:239
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "تعذّر نسخ الملفّ %1 إلى الألبوم %2"
 
-#: core/libs/iojobs/iojob.cpp:290
+#: core/libs/iojobs/iojob.cpp:286
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "لم يعد الملفّ/المجلّد %1 موجودًا"
 
-#: core/libs/iojobs/iojob.cpp:302
+#: core/libs/iojobs/iojob.cpp:298
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -34922,7 +34922,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:314
+#: core/libs/iojobs/iojob.cpp:310
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -34930,22 +34930,22 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:331
+#: core/libs/iojobs/iojob.cpp:327
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "تعذّرت إزالة الألبوم %1"
 
-#: core/libs/iojobs/iojob.cpp:343
+#: core/libs/iojobs/iojob.cpp:339
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "تعذّرت إزالة الصّورة %1"
 
-#: core/libs/iojobs/iojob.cpp:389
+#: core/libs/iojobs/iojob.cpp:385
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "تعذّر نقل المجلّد %1 إلى مهملات التّجميعة"
 
-#: core/libs/iojobs/iojob.cpp:399
+#: core/libs/iojobs/iojob.cpp:397
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "هناك صورة بنفس الاسم %1 بالفعل"
@@ -34955,7 +34955,7 @@ msgstr "هناك صورة بنفس الاسم %1 بالفعل"
 msgid "Image %1 could not be renamed"
 msgstr "تعذّرت إعادة تسمية الصّورة %1"
 
-#: core/libs/iojobs/iojob.cpp:492
+#: core/libs/iojobs/iojob.cpp:493
 #, fuzzy, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "فشل إلى قائمة ملفات بوصة 1"
@@ -41320,6 +41320,12 @@ msgstr "خطّ مخصّص"
 #, kde-format
 msgid "Choose..."
 msgstr "اختر..."
+
+#: core/libs/widgets/fonts/dfontselect.cpp:145
+#, fuzzy, kde-format
+#| msgid "Select a month"
+msgid "Select a Font"
+msgstr "اختر شهرًا"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
 #, kde-format
