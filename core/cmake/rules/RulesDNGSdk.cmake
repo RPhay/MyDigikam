@@ -39,6 +39,9 @@ endif()
 
 # --- For DNG SDK ----------------------------------------------------------------------
 
+# For details see dng_flags.h
+
+add_definitions(-DqDNGUseXMP=1)             # Enable XMP support
 add_definitions(-DqDNGXMPFiles=0)           # Minimum XMP-set
 add_definitions(-DqDNGXMPDocOps=0)          # Minimum XMP-set
 add_definitions(-DqDNGDebug=0)              # No debug code
