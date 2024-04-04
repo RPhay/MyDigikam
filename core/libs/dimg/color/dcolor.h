@@ -37,14 +37,7 @@ public:
     /**
      * Initialize with default value, fully transparent eight bit black
      */
-    DColor()
-        : m_red       (0),
-          m_green     (0),
-          m_blue      (0),
-          m_alpha     (0),
-          m_sixteenBit(false)
-    {
-    }
+    DColor() = default;
 
     /**
      * Read value from data. Equivalent to setColor()
@@ -200,12 +193,12 @@ public:
 
 private:
 
-    int  m_red;
-    int  m_green;
-    int  m_blue;
-    int  m_alpha;
+    int  m_red          = 0;
+    int  m_green        = 0;
+    int  m_blue         = 0;
+    int  m_alpha        = 0;
 
-    bool m_sixteenBit;
+    bool m_sixteenBit   = false;
 
 public:
 

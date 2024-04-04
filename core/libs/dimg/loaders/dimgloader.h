@@ -135,8 +135,8 @@ protected:
 
 protected:
 
-    DImg*     m_image;
-    LoadFlags m_loadFlags;
+    DImg*     m_image       = nullptr;
+    LoadFlags m_loadFlags   = LoadAll;
 
 private:
 

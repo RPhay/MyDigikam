@@ -27,8 +27,7 @@ namespace Digikam
 {
 
 DColor::DColor(const QColor& color, bool sixteenBit)
-    : m_alpha     (255),
-      m_sixteenBit(false)
+    : m_alpha(255)
 {
     // initialize as eight bit
 

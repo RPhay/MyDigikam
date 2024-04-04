@@ -75,7 +75,7 @@ public:
 
 public:
 
-    FilterAction();
+    FilterAction() = default;
     FilterAction(const QString& identifier, int version, Category category = ReproducibleFilter);
 
     bool isNull()                                                   const;
@@ -165,10 +165,10 @@ public:
 protected:
 
     /// NOTE: Value class, do not create a d-pointer
-    Category                 m_category;
+    Category                 m_category         = ReproducibleFilter;
     Flags                    m_flags;
     QString                  m_identifier;
-    int                      m_version;
+    int                      m_version          = 0;
     QString                  m_description;
     QString                  m_displayableName;
     QHash<QString, QVariant> m_params;

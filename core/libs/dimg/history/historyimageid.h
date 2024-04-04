@@ -75,7 +75,7 @@ public:
 public:
 
     /// Creates an invalid HistoryImageId
-    HistoryImageId();
+    HistoryImageId() = default;
 
     /// Creates an id with the given UUID and type
     explicit HistoryImageId(const QString& uuid, Type type = Current);
@@ -140,7 +140,7 @@ public:
 public:
 
     /// Type of this History Image Id
-    Type      m_type;
+    Type      m_type        = InvalidType;
 
     /**
      * A unique identifier for the referred file. This id shall be changed each time
@@ -161,7 +161,7 @@ public:
     QString   m_uniqueHash;
 
     /// The file size of the referred file
-    qlonglong m_fileSize;
+    qlonglong m_fileSize    = 0;
 
     /**
      * A unique identifier designating the _original image_ from which the referred
