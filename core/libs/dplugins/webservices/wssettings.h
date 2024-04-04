@@ -91,33 +91,33 @@ public:
 
 public:
 
-    Selection           selMode;             ///< Items selection mode
+    Selection           selMode             = EXPORT;           ///< Items selection mode
 
-    QList<QUrl>         inputImages;         ///< Selected items to upload.
+    QList<QUrl>         inputImages;                            ///< Selected items to upload.
 
-    bool                addFileProperties;
-    bool                imagesChangeProp;
+    bool                addFileProperties   = false;
+    bool                imagesChangeProp    = false;
 
-    bool                removeMetadata;
+    bool                removeMetadata      = false;
 
-    int                 imageCompression;
+    int                 imageCompression    = 75;
 
-    qint64              attLimitInMbytes;
+    qint64              attLimitInMbytes    = 17;
 
-    WebService          webService;
+    WebService          webService          = FLICKR;
 
     QString             userName;
 
-    QSettings*          oauthSettings;
-    O0SettingsStore*    oauthSettingsStore;
+    QSettings*          oauthSettings       = nullptr;
+    O0SettingsStore*    oauthSettingsStore  = nullptr;
 
-    QString             currentAlbumId;     ///< Selected album to upload to
+    QString             currentAlbumId;                         ///< Selected album to upload to
 
-    int                 imageSize;
+    int                 imageSize           = 1024;
 
-    ImageFormat         imageFormat;
+    ImageFormat         imageFormat         = JPEG;
 
-    QMap<QUrl, QUrl>    itemsList;          ///< Map of original item and attached item (can be resized).
+    QMap<QUrl, QUrl>    itemsList;                              ///< Map of original item and attached item (can be resized).
 };
 
 } // namespace Digikam

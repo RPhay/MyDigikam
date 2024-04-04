@@ -38,12 +38,12 @@ WebWidget::WebWidget(QWidget* const parent)
       d       (new Private())
 {
     d->parent = parent;
-
 }
 
-void WebWidget::closeEvent(QCloseEvent *event)
+void WebWidget::closeEvent(QCloseEvent* event)
 {
     Q_EMIT closeView(false);
+
     event->accept();
 }
 

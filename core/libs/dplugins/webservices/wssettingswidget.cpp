@@ -44,83 +44,54 @@ class Q_DECL_HIDDEN WSSettingsWidget::Private
 public:
 
     explicit Private(DInfoInterface* const interface, const QString& name)
-        : imgList           (nullptr),
-          uploadWidget      (nullptr),
-          toolName          (name),
-          headerLbl         (nullptr),
-          userNameDisplayLbl(nullptr),
-          changeUserBtn     (nullptr),
-          dlDimensionCoB    (nullptr),
-          settingsScrollArea(nullptr),
-          albumsCoB         (nullptr),
-          newAlbumBtn       (nullptr),
-          reloadAlbumsBtn   (nullptr),
-          originalChB       (nullptr),
-          resizeChB         (nullptr),
-          photoIdChB        (nullptr),
-          dimensionSpB      (nullptr),
-          imageQualitySpB   (nullptr),
-          mainLayout        (nullptr),
-          settingsBox       (nullptr),
-          settingsBoxLayout (nullptr),
-          albBox            (nullptr),
-          albumsBoxLayout   (nullptr),
-          optionsBox        (nullptr),
-          optionsBoxLayout  (nullptr),
-          uploadBox         (nullptr),
-          uploadBoxLayout   (nullptr),
-          sizeBox           (nullptr),
-          sizeBoxLayout     (nullptr),
-          accountBox        (nullptr),
-          accountBoxLayout  (nullptr),
-          iface             (interface),
-          progressBar       (nullptr)
+        : toolName(name),
+          iface   (interface)
     {
     }
 
-    DItemsList*                   imgList;
-    QWidget*                       uploadWidget;
+    DItemsList*                    imgList              = nullptr;
+    QWidget*                       uploadWidget         = nullptr;
     QString                        toolName;
     QString                        albumTitle;
 
-    QLabel*                        headerLbl;
-    QLabel*                        userNameDisplayLbl;
-    QPushButton*                   changeUserBtn;
-    QComboBox*                     dlDimensionCoB;
-    QScrollArea*                   settingsScrollArea;
+    QLabel*                        headerLbl            = nullptr;
+    QLabel*                        userNameDisplayLbl   = nullptr;
+    QPushButton*                   changeUserBtn        = nullptr;
+    QComboBox*                     dlDimensionCoB       = nullptr;
+    QScrollArea*                   settingsScrollArea   = nullptr;
 
-    QComboBox*                     albumsCoB;
-    QPushButton*                   newAlbumBtn;
-    QPushButton*                   reloadAlbumsBtn;
+    QComboBox*                     albumsCoB            = nullptr;
+    QPushButton*                   newAlbumBtn          = nullptr;
+    QPushButton*                   reloadAlbumsBtn      = nullptr;
 
-    QCheckBox*                     originalChB;
-    QCheckBox*                     resizeChB;
-    QCheckBox*                     photoIdChB;
-    QSpinBox*                      dimensionSpB;
-    QSpinBox*                      imageQualitySpB;
+    QCheckBox*                     originalChB          = nullptr;
+    QCheckBox*                     resizeChB            = nullptr;
+    QCheckBox*                     photoIdChB           = nullptr;
+    QSpinBox*                      dimensionSpB         = nullptr;
+    QSpinBox*                      imageQualitySpB      = nullptr;
 
-    QHBoxLayout*                   mainLayout;
+    QHBoxLayout*                   mainLayout           = nullptr;
 
-    QWidget*                       settingsBox;
-    QVBoxLayout*                   settingsBoxLayout;
+    QWidget*                       settingsBox          = nullptr;
+    QVBoxLayout*                   settingsBoxLayout    = nullptr;
 
-    QGroupBox*                     albBox;
-    QGridLayout*                   albumsBoxLayout;
+    QGroupBox*                     albBox               = nullptr;
+    QGridLayout*                   albumsBoxLayout      = nullptr;
 
-    QGroupBox*                     optionsBox;
-    QGridLayout*                   optionsBoxLayout;
+    QGroupBox*                     optionsBox           = nullptr;
+    QGridLayout*                   optionsBoxLayout     = nullptr;
 
-    QGroupBox*                     uploadBox;
-    QVBoxLayout*                   uploadBoxLayout;
+    QGroupBox*                     uploadBox            = nullptr;
+    QVBoxLayout*                   uploadBoxLayout      = nullptr;
 
-    QGroupBox*                     sizeBox;
-    QVBoxLayout*                   sizeBoxLayout;
+    QGroupBox*                     sizeBox              = nullptr;
+    QVBoxLayout*                   sizeBoxLayout        = nullptr;
 
-    QGroupBox*                     accountBox;
-    QGridLayout*                   accountBoxLayout;
+    QGroupBox*                     accountBox           = nullptr;
+    QGridLayout*                   accountBoxLayout     = nullptr;
 
-    DInfoInterface*                iface;
-    DProgressWdg*                  progressBar;
+    DInfoInterface*                iface                = nullptr;
+    DProgressWdg*                  progressBar          = nullptr;
 };
 
 WSSettingsWidget::WSSettingsWidget(QWidget* const parent,

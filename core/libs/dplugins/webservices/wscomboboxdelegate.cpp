@@ -206,6 +206,7 @@ void ComboBoxDelegate::slotCommitAndCloseEditor(int)
     // Emit the proper signals when editing has finished.
 
     QComboBox* const editor = qobject_cast<QComboBox*>(sender());
+
     Q_EMIT commitData(editor);
     Q_EMIT closeEditor(editor);
 }

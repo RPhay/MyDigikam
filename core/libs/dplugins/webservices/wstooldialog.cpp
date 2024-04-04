@@ -38,12 +38,7 @@ class Q_DECL_HIDDEN WSToolDialog::Private
 {
 public:
 
-    explicit Private()
-        : startButton    (nullptr),
-          mainWidget     (nullptr),
-          propagateReject(true)
-    {
-    }
+    Private() = default;
 
     QPushButton*      startButton       = nullptr;
     QWidget*          mainWidget        = nullptr;

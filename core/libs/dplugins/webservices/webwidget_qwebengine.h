@@ -41,7 +41,7 @@ public:
 
 protected:
 
-    void closeEvent(QCloseEvent *event) override;
+    void closeEvent(QCloseEvent* event) override;
 
 Q_SIGNALS:
 
