@@ -23,16 +23,9 @@
 namespace Digikam
 {
 
-HistoryImageId::HistoryImageId()
-    : m_type    (InvalidType),
-      m_fileSize(0)
-{
-}
-
 HistoryImageId::HistoryImageId(const QString& uuid, Type type)
-    : m_type    (type),
-      m_uuid    (uuid),
-      m_fileSize(0)
+    : m_type(type),
+      m_uuid(uuid)
 {
 }
 

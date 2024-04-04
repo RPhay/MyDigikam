@@ -18,12 +18,6 @@
 namespace Digikam
 {
 
-FilterAction::FilterAction()
-    : m_category(ReproducibleFilter),
-      m_version (0)
-{
-}
-
 FilterAction::FilterAction(const QString& identifier, int version, FilterAction::Category category)
     : m_category  (category),
       m_identifier(identifier),
