@@ -184,7 +184,7 @@ QDateTime TimeAdjustThread::readMetadataTimestamp(const QUrl& url) const
 {
     QScopedPointer<DMetadata> meta(new DMetadata);
 
-    if (!meta->load(url.toLocalFile()))
+    if (!meta->load(url.toLocalFile(), true))
     {
         return QDateTime();
     }
