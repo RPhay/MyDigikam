@@ -52,11 +52,11 @@ private Q_SLOTS:
 
 protected:
 
-    QDialogButtonBox* m_buttons;
+    QDialogButtonBox* m_buttons = nullptr;
 
 private:
 
-    DPlugin*          m_tool;
+    DPlugin*          m_tool    = nullptr;
 
     Q_DISABLE_COPY(DPluginDialog)
 };

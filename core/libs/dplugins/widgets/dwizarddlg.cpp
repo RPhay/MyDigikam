@@ -41,8 +41,7 @@ namespace Digikam
 {
 
 DWizardDlg::DWizardDlg(QWidget* const parent, const QString& objName)
-    : QWizard(parent),
-      m_tool (nullptr)
+    : QWizard(parent)
 {
     setWizardStyle(QWizard::ClassicStyle);
     setObjectName(objName);

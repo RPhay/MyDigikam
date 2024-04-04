@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
 
-    DPlugin* m_tool;
+    DPlugin* m_tool = nullptr;
 
     Q_DISABLE_COPY(DWizardDlg)
 };

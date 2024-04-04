@@ -43,32 +43,21 @@ class Q_DECL_HIDDEN DPreviewManager::Private
 {
 public:
 
-    explicit Private()
-      : busy            (false),
-        textLabel       (nullptr),
-        thumbLabel      (nullptr),
-        button          (nullptr),
-        progressCount   (0),
-        progressPix     (nullptr),
-        progressTimer   (nullptr),
-        progressLabel   (nullptr),
-        preview         (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool            busy;
+    bool            busy            = false;
 
-    QLabel*         textLabel;
-    QLabel*         thumbLabel;
+    QLabel*         textLabel       = nullptr;
+    QLabel*         thumbLabel      = nullptr;
 
-    QPushButton*    button;
+    QPushButton*    button          = nullptr;
 
-    int             progressCount;
-    DWorkingPixmap* progressPix;
-    QTimer*         progressTimer;
-    QLabel*         progressLabel;
+    int             progressCount   = 0;
+    DWorkingPixmap* progressPix     = nullptr;
+    QTimer*         progressTimer   = nullptr;
+    QLabel*         progressLabel   = nullptr;
 
-    DPreviewImage* preview;
+    DPreviewImage* preview          = nullptr;
 };
 
 DPreviewManager::DPreviewManager(QWidget* const parent)

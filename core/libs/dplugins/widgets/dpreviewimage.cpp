@@ -51,29 +51,19 @@ class Q_DECL_HIDDEN DSelectionItem::Private
 {
 public:
 
-    explicit Private()
-      : maxX        (0.0),
-        maxY        (0.0),
-        hasMaxX     (false),
-        hasMaxY     (false),
-        hasMax      (false),
-        invZoom     (1.0),
-        selMargin   (0.0),
-        showAnchors (true)
-    {
-    }
+    Private() = default;
 
     QPen        penDark;
     QPen        penLight;
     QPen        penAnchors;
     QRectF      rect;
-    qreal       maxX;
-    qreal       maxY;
-    bool        hasMaxX;
-    bool        hasMaxY;
-    bool        hasMax;
-    qreal       invZoom;
-    qreal       selMargin;
+    qreal       maxX                = 0.0;
+    qreal       maxY                = 0.0;
+    bool        hasMaxX             = false;
+    bool        hasMaxY             = false;
+    bool        hasMax              = false;
+    qreal       invZoom             = 1.0;
+    qreal       selMargin           = 0.0;
     QRectF      anchorTopLeft;
     QRectF      anchorTopRight;
     QRectF      anchorBottomLeft;
@@ -82,7 +72,7 @@ public:
     QLineF      anchorBottom;
     QLineF      anchorLeft;
     QLineF      anchorRight;
-    bool        showAnchors;
+    bool        showAnchors         = true;
 };
 
 DSelectionItem::DSelectionItem(const QRectF& rect)
@@ -427,47 +417,31 @@ public:
 public:
 
     explicit Private()
-        : mouseDragAction(NONE),
-          lastdx         (0),
-          lastdy         (0),
-          scene          (nullptr),
-          pixmapItem     (nullptr),
-          selection      (nullptr),
-          enableSelection(false),
-          mouseZone      (DSelectionItem::None),
-          zoomInAction   (nullptr),
-          zoomOutAction  (nullptr),
-          zoom2FitAction (nullptr),
-          toolBar        (nullptr),
-          highLightLeft  (nullptr),
-          highLightRight (nullptr),
-          highLightTop   (nullptr),
-          highLightBottom(nullptr),
-          highLightArea  (nullptr)
+        : mouseDragAction(NONE)
     {
     }
 
-    int                        lastdx;
-    int                        lastdy;
+    int                        lastdx           = 0;
+    int                        lastdy           = 0;
 
-    QGraphicsScene*            scene;
-    QGraphicsPixmapItem*       pixmapItem;
-    DSelectionItem*            selection;
-    bool                       enableSelection;
-    DSelectionItem::Intersects mouseZone;
+    QGraphicsScene*            scene            = nullptr;
+    QGraphicsPixmapItem*       pixmapItem       = nullptr;
+    DSelectionItem*            selection        = nullptr;
+    bool                       enableSelection  = false;
+    DSelectionItem::Intersects mouseZone        = DSelectionItem::None;
     QPointF                    lastMousePoint;
 
-    QAction*                   zoomInAction;
-    QAction*                   zoomOutAction;
-    QAction*                   zoom2FitAction;
+    QAction*                   zoomInAction     = nullptr;
+    QAction*                   zoomOutAction    = nullptr;
+    QAction*                   zoom2FitAction   = nullptr;
 
-    QToolBar*                  toolBar;
+    QToolBar*                  toolBar          = nullptr;
 
-    QGraphicsRectItem*         highLightLeft;
-    QGraphicsRectItem*         highLightRight;
-    QGraphicsRectItem*         highLightTop;
-    QGraphicsRectItem*         highLightBottom;
-    QGraphicsRectItem*         highLightArea;
+    QGraphicsRectItem*         highLightLeft    = nullptr;
+    QGraphicsRectItem*         highLightRight   = nullptr;
+    QGraphicsRectItem*         highLightTop     = nullptr;
+    QGraphicsRectItem*         highLightBottom  = nullptr;
+    QGraphicsRectItem*         highLightArea    = nullptr;
 };
 
 DPreviewImage::DPreviewImage(QWidget* const parent)

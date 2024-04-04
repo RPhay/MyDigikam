@@ -34,21 +34,15 @@ class Q_DECL_HIDDEN DSaveSettingsWidget::Private
 {
 public:
 
-    explicit Private()
-      : formatLabel     (nullptr),
-        grid            (nullptr),
-        formatComboBox  (nullptr),
-        conflictBox     (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*              formatLabel;
+    QLabel*              formatLabel    = nullptr;
 
-    QGridLayout*         grid;
+    QGridLayout*         grid           = nullptr;
 
-    QComboBox*           formatComboBox;
+    QComboBox*           formatComboBox = nullptr;
 
-    FileSaveConflictBox* conflictBox;
+    FileSaveConflictBox* conflictBox    = nullptr;
 };
 
 DSaveSettingsWidget::DSaveSettingsWidget(QWidget* const parent)

@@ -32,27 +32,18 @@ class Q_DECL_HIDDEN DWizardPage::Private
 {
 public:
 
-    explicit Private()
-      : isComplete      (true),
-        id              (-1),
-        leftView        (nullptr),
-        logo            (nullptr),
-        leftBottomPix   (nullptr),
-        hlay            (nullptr),
-        dlg             (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool         isComplete;
-    int          id;
+    bool         isComplete      = true;
+    int          id              = -1;
 
-    QWidget*     leftView;
-    QLabel*      logo;
-    QLabel*      leftBottomPix;
+    QWidget*     leftView        = nullptr;
+    QLabel*      logo            = nullptr;
+    QLabel*      leftBottomPix   = nullptr;
 
-    QHBoxLayout* hlay;
+    QHBoxLayout* hlay            = nullptr;
 
-    QWizard*     dlg;
+    QWizard*     dlg             = nullptr;
 };
 
 DWizardPage::DWizardPage(QWizard* const dlg, const QString& title)
