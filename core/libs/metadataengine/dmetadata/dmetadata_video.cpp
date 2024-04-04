@@ -1637,10 +1637,12 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
     if (!data.isEmpty())
     {
-        // Backport date in Exif and Iptc.
+        // Backport date in Xmp.
 
-        QDateTime dt = QDateTime::fromString(data, Qt::ISODate).toLocalTime();
-        setImageDateTime(dt, true);
+        QString xmpDateTimeFormat = QLatin1String("yyyy-MM-ddThh:mm:ss");
+        QDateTime dateTime        = QDateTime::fromString(data, Qt::ISODate).toLocalTime();
+        setXmpTagString("Xmp.exif.DateTimeOriginal", dateTime.toString(xmpDateTimeFormat));
+        setXmpTagString("Xmp.exif.DateTimeDigitized", dateTime.toString(xmpDateTimeFormat));
     }
 
     // --------------
