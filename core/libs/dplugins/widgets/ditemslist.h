@@ -180,7 +180,7 @@ private:
 
 private:
 
-    QTreeWidgetItem* m_itemDraged;
+    QTreeWidgetItem* m_itemDraged = nullptr;
 };
 
 // -------------------------------------------------------------------------

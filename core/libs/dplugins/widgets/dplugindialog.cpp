@@ -40,7 +40,7 @@ namespace Digikam
 {
 
 DPluginDialog::DPluginDialog(QWidget* const parent, const QString& objName)
-    : QDialog  (parent)
+    : QDialog(parent)
 {
     setObjectName(objName);
     setWindowFlags((windowFlags() & ~Qt::Dialog) |

@@ -20,8 +20,7 @@ namespace Digikam
 {
 
 DItemsListView::DItemsListView(DItemsList* const parent)
-    : QTreeWidget (parent),
-      m_itemDraged(nullptr)
+    : QTreeWidget(parent)
 {
     setRootIsDecorated(false);
     setItemsExpandable(false);

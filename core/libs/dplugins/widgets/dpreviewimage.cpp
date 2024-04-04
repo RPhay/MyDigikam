@@ -412,14 +412,11 @@ public:
         EXPANDORSHRINK,
         MOVESELECTION
     }
-    mouseDragAction;
+    mouseDragAction = NONE;
 
 public:
 
-    explicit Private()
-        : mouseDragAction(NONE)
-    {
-    }
+    Private() = default;
 
     int                        lastdx           = 0;
     int                        lastdy           = 0;
