@@ -1618,7 +1618,6 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                    (rmeta.contains(QLatin1String("com.android.manufacturer")))                                 ||
                    (rmeta.value(QLatin1String("com.apple.quicktime.make")) == QLatin1String("Canon"))          ||
                    (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("isom3gp4"))       ||
-                   (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("qt      "))       ||
                    (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("mp42avc1niko"))   ||
                    (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("isomiso2mp41"))   ||
                    (rmeta.value(QLatin1String("compatible_brands"))        == QLatin1String("XAVCmp42nrasiso6")))
