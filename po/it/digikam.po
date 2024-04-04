@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 01:43+0000\n"
-"PO-Revision-Date: 2024-03-22 21:08+0100\n"
+"POT-Creation-Date: 2024-04-04 01:44+0000\n"
+"PO-Revision-Date: 2024-04-01 12:43+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -4420,10 +4420,9 @@ msgstr "Decodificatori video"
 #: core/app/views/utils/componentsinfodlg.cpp:298
 #: core/libs/dialogs/libsinfodlg.cpp:533 core/libs/dialogs/libsinfodlg.cpp:539
 #: core/libs/dialogs/libsinfodlg.cpp:614
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "no entry"
-msgstr "Stato"
+msgstr "nessuna voce"
 
 #: core/app/views/utils/componentsinfodlg.cpp:229
 #, kde-format
@@ -6278,28 +6277,7 @@ msgid "ResNet50"
 msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "kind of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -6345,12 +6323,10 @@ msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
 #: core/utilities/maintenance/maintenancedlg.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate to:"
+#, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
-msgstr "Traduci in:"
+msgstr "Traduci tag in:"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -11681,7 +11657,7 @@ msgstr "Salvataggio delle modifiche -"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:662
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
+#: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -17836,7 +17812,7 @@ msgstr "Cartella di destinazione:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -20274,7 +20250,7 @@ msgstr "Cartella di destinazione:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Percorso di destinazione del risultato"
@@ -26225,7 +26201,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
-#: core/libs/dplugins/webservices/wslogindialog.cpp:89
+#: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
 msgstr "Password:"
@@ -34318,31 +34294,31 @@ msgctxt "@title"
 msgid "Properties"
 msgstr "Proprietà"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Nome"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:133
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Categorie"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
+#: core/libs/dplugins/setup/dpluginconfview.cpp:134
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Strumenti"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:137
+#: core/libs/dplugins/setup/dpluginconfview.cpp:135
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Descrizione"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:138
+#: core/libs/dplugins/setup/dpluginconfview.cpp:136
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Authors"
@@ -34353,19 +34329,19 @@ msgstr "Autori"
 msgid "Type-Mimes"
 msgstr "Tipi-MIME"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:80
+#: core/libs/dplugins/setup/dpluginsetup.cpp:70
 #, kde-format
 msgctxt "@action: search bar"
 msgid "Check All"
 msgstr "Attiva tutto"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:81
+#: core/libs/dplugins/setup/dpluginsetup.cpp:71
 #, kde-format
 msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "Pulisci"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:164
+#: core/libs/dplugins/setup/dpluginsetup.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin installed"
@@ -34373,13 +34349,13 @@ msgid_plural "%1 plugins installed"
 msgstr[0] "Un'estensione installata"
 msgstr[1] "%1 estensioni installate"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:168
+#: core/libs/dplugins/setup/dpluginsetup.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "No plugin installed"
 msgstr "Nessuna estensione installata"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:175
+#: core/libs/dplugins/setup/dpluginsetup.cpp:165
 #, kde-format
 msgctxt "@info: %1: number of plugins activated"
 msgid "(%1 activated)"
@@ -34387,7 +34363,7 @@ msgid_plural "(%1 activated)"
 msgstr[0] "(%1 attivata)"
 msgstr[1] "(%1 attivate)"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:190
+#: core/libs/dplugins/setup/dpluginsetup.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin found"
@@ -34395,33 +34371,33 @@ msgid_plural "%1 plugins found"
 msgstr[0] "Un'estensione trovata"
 msgstr[1] "%1 estensioni trovate"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:194
+#: core/libs/dplugins/setup/dpluginsetup.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "No plugin found"
 msgstr "Nessuna estensione trovata"
 
-#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:46
+#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:43
 #, kde-format
 msgid "Various"
 msgstr "Varie"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:86
+#: core/libs/dplugins/webservices/wslogindialog.cpp:81
 #, kde-format
 msgid "Login:"
 msgstr "Accesso:"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:100
+#: core/libs/dplugins/webservices/wslogindialog.cpp:95
 #, kde-format
 msgid "&Login"
 msgstr "&Accesso"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:103
+#: core/libs/dplugins/webservices/wslogindialog.cpp:98
 #, kde-format
 msgid "&Skip"
 msgstr "&Salta"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:165
+#: core/libs/dplugins/webservices/wslogindialog.cpp:160
 #, kde-format
 msgid "Password cannot be empty."
 msgstr "La password non può essere vuota."
@@ -34486,18 +34462,18 @@ msgctxt "@info"
 msgid "Location of the album that will be created (optional)."
 msgstr "Posizione dell'album che sarà creato (facoltativo)."
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "Scelta account"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
 #, kde-format
 msgid "Add another account"
 msgstr "Aggiungi un altro account"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:87
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:82
 #, kde-format
 msgid "Choose the %1 account to use for exporting images:"
 msgstr "Scegli l'account %1 da usare per l'esportazione delle immagini:"
@@ -61233,28 +61209,7 @@ msgstr ""
 "non assegnati</b>: analizza solamente gli elementi con tag non assegnati.</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "king of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -64619,16 +64574,7 @@ msgid "Download Error"
 msgstr "Errore nello scaricamento"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:228
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the download.\n"
-#| "\n"
-#| "File: %1\n"
-#| "\n"
-#| "%2\n"
-#| "\n"
-#| "You can try again with an alternative mirror server or continue the "
-#| "download on the next startup."
+#, kde-format
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -64644,8 +64590,7 @@ msgstr ""
 "\n"
 "%2\n"
 "\n"
-"Puoi ritentare con un server mirror alternativo o continuare lo scaricamento "
-"al prossimo avvio."
+"Puoi ritentare o continuare lo scaricamento al prossimo avvio."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:236
 #, kde-format

@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 01:43+0000\n"
+"POT-Creation-Date: 2024-04-04 01:44+0000\n"
 "PO-Revision-Date: 2024-03-17 12:41+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -12567,7 +12567,7 @@ msgstr "Gardando os cambios -"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:662
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
+#: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -19276,7 +19276,7 @@ msgstr "Cartafol de destino:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, fuzzy, kde-format
 #| msgid "Destination Folder"
 msgctxt "@title:window"
@@ -21915,7 +21915,7 @@ msgstr "Cartafol de destino:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Ruta de destino de saída"
@@ -28263,7 +28263,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
-#: core/libs/dplugins/webservices/wslogindialog.cpp:89
+#: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
 msgstr "Contrasinal:"
@@ -36776,35 +36776,35 @@ msgctxt "@title"
 msgid "Properties"
 msgstr "Propiedades"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Nome"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:133
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Categorías"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
+#: core/libs/dplugins/setup/dpluginconfview.cpp:134
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:137
+#: core/libs/dplugins/setup/dpluginconfview.cpp:135
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Descrición"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:138
+#: core/libs/dplugins/setup/dpluginconfview.cpp:136
 #, fuzzy, kde-format
 #| msgid "Authors"
 msgctxt "@title: Dplugin property"
@@ -36816,21 +36816,21 @@ msgstr "Autores"
 msgid "Type-Mimes"
 msgstr "Tipos MIME"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:80
+#: core/libs/dplugins/setup/dpluginsetup.cpp:70
 #, fuzzy, kde-format
 #| msgid "Check All"
 msgctxt "@action: search bar"
 msgid "Check All"
 msgstr "Marcalo todo"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:81
+#: core/libs/dplugins/setup/dpluginsetup.cpp:71
 #, fuzzy, kde-format
 #| msgid "Clear"
 msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "Limpar"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:164
+#: core/libs/dplugins/setup/dpluginsetup.cpp:154
 #, fuzzy, kde-format
 #| msgid "1 plugin installed"
 #| msgid_plural "%1 plugins installed"
@@ -36840,14 +36840,14 @@ msgid_plural "%1 plugins installed"
 msgstr[0] "Instalouse 1 complemento"
 msgstr[1] "Instaláronse %1 complementos"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:168
+#: core/libs/dplugins/setup/dpluginsetup.cpp:158
 #, fuzzy, kde-format
 #| msgid "No plugin installed"
 msgctxt "@info"
 msgid "No plugin installed"
 msgstr "Non se instalou ningún complemento"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:175
+#: core/libs/dplugins/setup/dpluginsetup.cpp:165
 #, fuzzy, kde-format
 #| msgctxt "%1: number of plugins activated"
 #| msgid "(%1 activated)"
@@ -36858,7 +36858,7 @@ msgid_plural "(%1 activated)"
 msgstr[0] "(%1 activado)"
 msgstr[1] "(%1 activados)"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:190
+#: core/libs/dplugins/setup/dpluginsetup.cpp:180
 #, fuzzy, kde-format
 #| msgid "1 plugin found"
 #| msgid_plural "%1 plugins found"
@@ -36868,34 +36868,34 @@ msgid_plural "%1 plugins found"
 msgstr[0] "Atopouse 1 complemento"
 msgstr[1] "Atopáronse %1 complementos"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:194
+#: core/libs/dplugins/setup/dpluginsetup.cpp:184
 #, fuzzy, kde-format
 #| msgid "No plugin found"
 msgctxt "@info"
 msgid "No plugin found"
 msgstr "Non se atopou ningún complemento"
 
-#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:46
+#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:43
 #, kde-format
 msgid "Various"
 msgstr "Diversos"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:86
+#: core/libs/dplugins/webservices/wslogindialog.cpp:81
 #, kde-format
 msgid "Login:"
 msgstr "Nome de usuaria:"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:100
+#: core/libs/dplugins/webservices/wslogindialog.cpp:95
 #, kde-format
 msgid "&Login"
 msgstr "&Acceder"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:103
+#: core/libs/dplugins/webservices/wslogindialog.cpp:98
 #, kde-format
 msgid "&Skip"
 msgstr "&Omitir"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:165
+#: core/libs/dplugins/webservices/wslogindialog.cpp:160
 #, kde-format
 msgid "Password cannot be empty."
 msgstr "O contrasinal non pode estar baleiro."
@@ -36970,19 +36970,19 @@ msgctxt "@info"
 msgid "Location of the album that will be created (optional)."
 msgstr "A localización do álbum que se vai crear (requirido)."
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:55
 #, fuzzy, kde-format
 #| msgid "Account Selector"
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "Selector de contas"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
 #, kde-format
 msgid "Add another account"
 msgstr "Engadir outra conta"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:87
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:82
 #, kde-format
 msgid "Choose the %1 account to use for exporting images:"
 msgstr "Escolla a conta de %1 para exportar as imaxes:"

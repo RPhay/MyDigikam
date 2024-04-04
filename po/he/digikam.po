@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 01:43+0000\n"
+"POT-Creation-Date: 2024-04-04 01:44+0000\n"
 "PO-Revision-Date: 2024-04-01 00:18+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -10906,7 +10906,7 @@ msgstr "שמירת תמונות"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:662
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
+#: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, fuzzy, kde-format
 #| msgid "Error"
 msgctxt "@title:window"
@@ -16722,7 +16722,7 @@ msgstr "תיאור"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -18991,7 +18991,7 @@ msgstr "תיאור"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, fuzzy, kde-format
 msgid "Output Destination Path"
 msgstr "אמצעי פלט"
@@ -24660,7 +24660,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
-#: core/libs/dplugins/webservices/wslogindialog.cpp:89
+#: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
 msgstr ""
@@ -32174,33 +32174,33 @@ msgctxt "@title"
 msgid "Properties"
 msgstr "מאפיינים"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "שם"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:133
 #, fuzzy, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "סיווג"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
+#: core/libs/dplugins/setup/dpluginconfview.cpp:134
 #, fuzzy, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "&כלים"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:137
+#: core/libs/dplugins/setup/dpluginconfview.cpp:135
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "תיאור"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:138
+#: core/libs/dplugins/setup/dpluginconfview.cpp:136
 #, fuzzy, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Authors"
@@ -32211,19 +32211,19 @@ msgstr "צלם"
 msgid "Type-Mimes"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:80
+#: core/libs/dplugins/setup/dpluginsetup.cpp:70
 #, fuzzy, kde-format
 msgctxt "@action: search bar"
 msgid "Check All"
 msgstr "בדיקת מרחב צבע"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:81
+#: core/libs/dplugins/setup/dpluginsetup.cpp:71
 #, fuzzy, kde-format
 msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "לוח-שנה"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:164
+#: core/libs/dplugins/setup/dpluginsetup.cpp:154
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "1 plugin installed"
@@ -32231,13 +32231,13 @@ msgid_plural "%1 plugins installed"
 msgstr[0] "תוספי KIPI"
 msgstr[1] "תוספי KIPI"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:168
+#: core/libs/dplugins/setup/dpluginsetup.cpp:158
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No plugin installed"
 msgstr "אין אפשרויות זמינות"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:175
+#: core/libs/dplugins/setup/dpluginsetup.cpp:165
 #, fuzzy, kde-format
 msgctxt "@info: %1: number of plugins activated"
 msgid "(%1 activated)"
@@ -32245,7 +32245,7 @@ msgid_plural "(%1 activated)"
 msgstr[0] "אין מסנן פעיל"
 msgstr[1] "אין מסנן פעיל"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:190
+#: core/libs/dplugins/setup/dpluginsetup.cpp:180
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "1 plugin found"
@@ -32253,33 +32253,33 @@ msgid_plural "%1 plugins found"
 msgstr[0] "מדריך תוספים KIPI"
 msgstr[1] "מדריך תוספים KIPI"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:194
+#: core/libs/dplugins/setup/dpluginsetup.cpp:184
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No plugin found"
 msgstr "מדריך תוספים KIPI"
 
-#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:46
+#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:43
 #, fuzzy, kde-format
 msgid "Various"
 msgstr "תמונה קודמת"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:86
+#: core/libs/dplugins/webservices/wslogindialog.cpp:81
 #, kde-format
 msgid "Login:"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:100
+#: core/libs/dplugins/webservices/wslogindialog.cpp:95
 #, kde-format
 msgid "&Login"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:103
+#: core/libs/dplugins/webservices/wslogindialog.cpp:98
 #, kde-format
 msgid "&Skip"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:165
+#: core/libs/dplugins/webservices/wslogindialog.cpp:160
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgid "Password cannot be empty."
@@ -32348,19 +32348,19 @@ msgctxt "@info"
 msgid "Location of the album that will be created (optional)."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:55
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "היפוך בחירה"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
 #, fuzzy, kde-format
 msgid "Add another account"
 msgstr "נקודות:"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:87
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:82
 #, kde-format
 msgid "Choose the %1 account to use for exporting images:"
 msgstr ""

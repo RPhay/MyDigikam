@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 01:43+0000\n"
-"PO-Revision-Date: 2024-03-17 20:45\n"
+"POT-Creation-Date: 2024-04-04 01:44+0000\n"
+"PO-Revision-Date: 2024-04-03 19:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1459,17 +1459,14 @@ msgid "Images found in %1"
 msgstr "在 %1 中找到的图像"
 
 #: core/app/main/digikamapp_config.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "You have chosen a bright color scheme. We switch to a dark icon theme. "
-#| "The icon theme is available after a restart of digiKam."
+#, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
 "adjusted on a Plasma 6 desktop. The icon theme is available after a restart "
 "of digiKam."
 msgstr ""
-"您选择了一套浅色主题，图标将自动切换为深色主题，并在下次重新启动 digiKam 时生"
-"效。"
+"digiKam 将切换为系统的图标主题。图标的颜色会在 Plasma 6 桌面环境中自动调整。"
+"重新启动 digiKam 即可使用新的图标主题。"
 
 #: core/app/main/digikamapp_config.cpp:128
 #: core/showfoto/main/showfoto_config.cpp:183
@@ -4269,10 +4266,9 @@ msgstr "视频解码器"
 #: core/app/views/utils/componentsinfodlg.cpp:298
 #: core/libs/dialogs/libsinfodlg.cpp:533 core/libs/dialogs/libsinfodlg.cpp:539
 #: core/libs/dialogs/libsinfodlg.cpp:614
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "no entry"
-msgstr "国家/地区"
+msgstr "没有条目"
 
 #: core/app/views/utils/componentsinfodlg.cpp:229
 #, kde-format
@@ -6002,28 +5998,7 @@ msgid "ResNet50"
 msgstr "ResNet50"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "kind of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -6058,12 +6033,10 @@ msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntags.cpp:107
 #: core/utilities/maintenance/maintenancedlg.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Translate to:"
+#, kde-format
 msgctxt "@label"
 msgid "Translate Tags to:"
-msgstr "翻译为："
+msgstr "翻译标签到："
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:47
 #, kde-format
@@ -11045,7 +11018,7 @@ msgstr "正在保存更改 -"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:662
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
+#: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -15327,11 +15300,9 @@ msgid "Failed to update file timestamp"
 msgstr "无法更新文件时间戳"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Apply Metadata: ExifTool reported an error."
+#, kde-format
 msgid "ExifTool reported an error"
-msgstr "应用元数据：ExifTool 报告了一个错误。"
+msgstr "ExifTool 报告了一个错误"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
@@ -16966,7 +16937,7 @@ msgstr "目标文件夹："
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -19281,7 +19252,7 @@ msgstr "目标文件夹："
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, kde-format
 msgid "Output Destination Path"
 msgstr "输出目标路径"
@@ -25066,7 +25037,7 @@ msgstr "显示在密码输入框旁的密码提示信息 (可选)。"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
-#: core/libs/dplugins/webservices/wslogindialog.cpp:89
+#: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
 msgstr "密码："
@@ -32747,31 +32718,31 @@ msgctxt "@title"
 msgid "Properties"
 msgstr "属性"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "名称"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:133
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "分类"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
+#: core/libs/dplugins/setup/dpluginconfview.cpp:134
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "工具"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:137
+#: core/libs/dplugins/setup/dpluginconfview.cpp:135
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "描述"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:138
+#: core/libs/dplugins/setup/dpluginconfview.cpp:136
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Authors"
@@ -32782,72 +32753,72 @@ msgstr "作者"
 msgid "Type-Mimes"
 msgstr "MIME 类型"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:80
+#: core/libs/dplugins/setup/dpluginsetup.cpp:70
 #, kde-format
 msgctxt "@action: search bar"
 msgid "Check All"
 msgstr "全部选中"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:81
+#: core/libs/dplugins/setup/dpluginsetup.cpp:71
 #, kde-format
 msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "清除"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:164
+#: core/libs/dplugins/setup/dpluginsetup.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin installed"
 msgid_plural "%1 plugins installed"
 msgstr[0] "已安装 %1 款插件"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:168
+#: core/libs/dplugins/setup/dpluginsetup.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "No plugin installed"
 msgstr "未安装插件"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:175
+#: core/libs/dplugins/setup/dpluginsetup.cpp:165
 #, kde-format
 msgctxt "@info: %1: number of plugins activated"
 msgid "(%1 activated)"
 msgid_plural "(%1 activated)"
 msgstr[0] "(已激活 %1 款)"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:190
+#: core/libs/dplugins/setup/dpluginsetup.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin found"
 msgid_plural "%1 plugins found"
 msgstr[0] "找到 %1 款插件"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:194
+#: core/libs/dplugins/setup/dpluginsetup.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "No plugin found"
 msgstr "未找到插件"
 
-#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:46
+#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:43
 #, kde-format
 msgid "Various"
 msgstr "多种"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:86
+#: core/libs/dplugins/webservices/wslogindialog.cpp:81
 #, kde-format
 msgid "Login:"
 msgstr "登录："
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:100
+#: core/libs/dplugins/webservices/wslogindialog.cpp:95
 #, kde-format
 msgid "&Login"
 msgstr "登录(&L)"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:103
+#: core/libs/dplugins/webservices/wslogindialog.cpp:98
 #, kde-format
 msgid "&Skip"
 msgstr "跳过(&S)"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:165
+#: core/libs/dplugins/webservices/wslogindialog.cpp:160
 #, kde-format
 msgid "Password cannot be empty."
 msgstr "密码不能为空。"
@@ -32912,18 +32883,18 @@ msgctxt "@info"
 msgid "Location of the album that will be created (optional)."
 msgstr "将要创建的相册的位置 (可选)。"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "账户选择器"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
 #, kde-format
 msgid "Add another account"
 msgstr "添加另一个账户"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:87
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:82
 #, kde-format
 msgid "Choose the %1 account to use for exporting images:"
 msgstr "选择用于导出图像的 %1 账户："
@@ -39170,7 +39141,7 @@ msgstr "点击或拖放照片到按钮以选择一张时钟照片"
 #: core/libs/timeadjust/timeadjustsettings.cpp:273
 #, kde-format
 msgid "Update timestamps with ExifTool"
-msgstr ""
+msgstr "使用 ExifTool 更新时间戳"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
 #, kde-format
@@ -40422,10 +40393,9 @@ msgid "Choose..."
 msgstr "选择..."
 
 #: core/libs/widgets/fonts/dfontselect.cpp:145
-#, fuzzy, kde-format
-#| msgid "Select a month"
+#, kde-format
 msgid "Select a Font"
-msgstr "选择月份"
+msgstr ""
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
 #, kde-format
@@ -58915,28 +58885,7 @@ msgstr ""
 "目。</p><p><b>仅扫描未指定品质项目</b>：仅扫描未分配品质标签的项目。</p>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:200
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
-#| "exceptional speed and efficiency. It enables you to swiftly evaluate the "
-#| "integration of smaller-scale object detection scenarios. It's designed "
-#| "for objects detections, capable of recognizing and extracting the "
-#| "location of objects within an image. The limitation on the number of "
-#| "recognizable objects is set to 80.</p><p><b>YOLOv5 XLarge</b>: as the "
-#| "previous one, this model is a neural network dedicated for more complex "
-#| "object detection requirements and showcases remarkable capabilities. "
-#| "Despite the additional complexity introducing more time-latency and "
-#| "computer resources, it's must be used for larger-scale object detection "
-#| "scenarios as it provides more accurate predictions at the expense of "
-#| "speed.</p><p><b>ResNet50</b>: this model is a specific type of "
-#| "convolutional neural network formed by stacking residual blocks commonly "
-#| "used to power computer vision applications as object detections. This "
-#| "king of design allows the training of very deep networks without "
-#| "encountering the vanishing gradient problem. Unlike YOLO, ResNet50 is "
-#| "primarily focused on image classification and does not provide object "
-#| "localization. It can recognize objects from a vast set of more than 1,000 "
-#| "classes, covering a wide range of objects, animals, and scenes.</p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p><b>YOLOv5 Nano</b>: this model is a neural network which offers "
@@ -62106,15 +62055,7 @@ msgid "Download Error"
 msgstr "下载错误"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:228
-#, fuzzy, kde-format
-#| msgid ""
-#| "An error occurred during the download.\n"
-#| "\n"
-#| "File: %1\n"
-#| "\n"
-#| "%2\n"
-#| "\n"
-#| "You can try again or continue the download at the next start."
+#, kde-format
 msgid ""
 "An error occurred during the download.\n"
 "\n"
@@ -65073,9 +65014,3 @@ msgstr "相册视图项目"
 #, kde-format
 msgid "Import Items"
 msgstr "导入视图项目"
-
-#, fuzzy
-#~| msgid "Alternative name"
-#~ msgctxt "@action:button"
-#~ msgid "Try Alternate"
-#~ msgstr "替代名称"

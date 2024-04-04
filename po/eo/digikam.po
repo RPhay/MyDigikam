@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 01:43+0000\n"
+"POT-Creation-Date: 2024-04-04 01:44+0000\n"
 "PO-Revision-Date: 2024-03-29 18:11+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -11435,7 +11435,7 @@ msgstr "Konservante ŝanĝojn -"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:662
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
+#: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -17519,7 +17519,7 @@ msgstr "Cela dosierujo:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -19922,7 +19922,7 @@ msgstr "Cela dosierujo:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Eligo Destinita Vojo"
@@ -25808,7 +25808,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
-#: core/libs/dplugins/webservices/wslogindialog.cpp:89
+#: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
 msgstr "Pasvorto:"
@@ -33745,31 +33745,31 @@ msgctxt "@title"
 msgid "Properties"
 msgstr "Ecoj"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Nomo"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:133
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Kategorioj"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
+#: core/libs/dplugins/setup/dpluginconfview.cpp:134
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Iloj"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:137
+#: core/libs/dplugins/setup/dpluginconfview.cpp:135
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Priskribo"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:138
+#: core/libs/dplugins/setup/dpluginconfview.cpp:136
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Authors"
@@ -33780,19 +33780,19 @@ msgstr "Aŭtoroj"
 msgid "Type-Mimes"
 msgstr "Tipo-Mimoj"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:80
+#: core/libs/dplugins/setup/dpluginsetup.cpp:70
 #, kde-format
 msgctxt "@action: search bar"
 msgid "Check All"
 msgstr "Kontroli Ĉion"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:81
+#: core/libs/dplugins/setup/dpluginsetup.cpp:71
 #, kde-format
 msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "Forigi"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:164
+#: core/libs/dplugins/setup/dpluginsetup.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin installed"
@@ -33800,13 +33800,13 @@ msgid_plural "%1 plugins installed"
 msgstr[0] "1 kromprogramo instalita"
 msgstr[1] "%1 kromprogramoj instalitaj"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:168
+#: core/libs/dplugins/setup/dpluginsetup.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "No plugin installed"
 msgstr "Neniu kromaĵo instalita"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:175
+#: core/libs/dplugins/setup/dpluginsetup.cpp:165
 #, kde-format
 msgctxt "@info: %1: number of plugins activated"
 msgid "(%1 activated)"
@@ -33814,7 +33814,7 @@ msgid_plural "(%1 activated)"
 msgstr[0] "(%1 aktivita)"
 msgstr[1] "(%1 aktivitaj)"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:190
+#: core/libs/dplugins/setup/dpluginsetup.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin found"
@@ -33822,33 +33822,33 @@ msgid_plural "%1 plugins found"
 msgstr[0] "1 kromaĵo trovita"
 msgstr[1] "%1 kromaĵoj trovitaj"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:194
+#: core/libs/dplugins/setup/dpluginsetup.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "No plugin found"
 msgstr "Neniu kromaĵo trovita"
 
-#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:46
+#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:43
 #, kde-format
 msgid "Various"
 msgstr "Diversaj"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:86
+#: core/libs/dplugins/webservices/wslogindialog.cpp:81
 #, kde-format
 msgid "Login:"
 msgstr "Ensaluti:"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:100
+#: core/libs/dplugins/webservices/wslogindialog.cpp:95
 #, kde-format
 msgid "&Login"
 msgstr "Ensa&luti"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:103
+#: core/libs/dplugins/webservices/wslogindialog.cpp:98
 #, kde-format
 msgid "&Skip"
 msgstr "&Salti"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:165
+#: core/libs/dplugins/webservices/wslogindialog.cpp:160
 #, kde-format
 msgid "Password cannot be empty."
 msgstr "Pasvorto ne povas esti malplena."
@@ -33913,18 +33913,18 @@ msgctxt "@info"
 msgid "Location of the album that will be created (optional)."
 msgstr "Loko de la albumo kiu estos kreita (laŭvola)."
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "Konto-Selektilo"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
 #, kde-format
 msgid "Add another account"
 msgstr "Aldoni alian konton"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:87
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:82
 #, kde-format
 msgid "Choose the %1 account to use for exporting images:"
 msgstr "Elektu la %1 konton por uzi por eksporti bildojn:"

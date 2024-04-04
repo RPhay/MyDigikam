@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 01:43+0000\n"
+"POT-Creation-Date: 2024-04-04 01:44+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -11000,7 +11000,7 @@ msgstr "छवियाँ सहेजें"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:662
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
+#: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, fuzzy, kde-format
 #| msgid "Error"
 msgctxt "@title:window"
@@ -16933,7 +16933,7 @@ msgstr "गंतव्य:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgctxt "@title:window"
@@ -19237,7 +19237,7 @@ msgstr "गंतव्य:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgid "Output Destination Path"
@@ -25026,7 +25026,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
-#: core/libs/dplugins/webservices/wslogindialog.cpp:89
+#: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
 msgstr ""
@@ -32553,34 +32553,34 @@ msgctxt "@title"
 msgid "Properties"
 msgstr "गुण"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "नाम"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:133
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "श्रेणियाँ"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
+#: core/libs/dplugins/setup/dpluginconfview.cpp:134
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "साधन"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:137
+#: core/libs/dplugins/setup/dpluginconfview.cpp:135
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "वर्णन"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:138
+#: core/libs/dplugins/setup/dpluginconfview.cpp:136
 #, fuzzy, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Authors"
@@ -32592,20 +32592,20 @@ msgstr "लेखकः"
 msgid "Type-Mimes"
 msgstr "फ़िल्टर इस्तेमाल करें"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:80
+#: core/libs/dplugins/setup/dpluginsetup.cpp:70
 #, fuzzy, kde-format
 #| msgid "Clear all"
 msgctxt "@action: search bar"
 msgid "Check All"
 msgstr "सभी साफ करें"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:81
+#: core/libs/dplugins/setup/dpluginsetup.cpp:71
 #, fuzzy, kde-format
 msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "कैलेन्डर"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:164
+#: core/libs/dplugins/setup/dpluginsetup.cpp:154
 #, fuzzy, kde-format
 #| msgid "1 Kipi plugin found"
 #| msgid_plural "%1 Kipi plugins found"
@@ -32615,7 +32615,7 @@ msgid_plural "%1 plugins installed"
 msgstr[0] "%1 किपि प्लगइन मिले"
 msgstr[1] "%1 किपि प्लगइन मिले"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:168
+#: core/libs/dplugins/setup/dpluginsetup.cpp:158
 #, fuzzy, kde-format
 #| msgid "1 Kipi plugin found"
 #| msgid_plural "%1 Kipi plugins found"
@@ -32623,7 +32623,7 @@ msgctxt "@info"
 msgid "No plugin installed"
 msgstr "%1 किपि प्लगइन मिले"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:175
+#: core/libs/dplugins/setup/dpluginsetup.cpp:165
 #, fuzzy, kde-format
 #| msgid "No active filter"
 msgctxt "@info: %1: number of plugins activated"
@@ -32632,7 +32632,7 @@ msgid_plural "(%1 activated)"
 msgstr[0] "कोई सक्रिय फ़िल्टर नहीं"
 msgstr[1] "कोई सक्रिय फ़िल्टर नहीं"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:190
+#: core/libs/dplugins/setup/dpluginsetup.cpp:180
 #, fuzzy, kde-format
 #| msgid "1 Kipi plugin found"
 #| msgid_plural "%1 Kipi plugins found"
@@ -32642,7 +32642,7 @@ msgid_plural "%1 plugins found"
 msgstr[0] "%1 किपि प्लगइन मिले"
 msgstr[1] "%1 किपि प्लगइन मिले"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:194
+#: core/libs/dplugins/setup/dpluginsetup.cpp:184
 #, fuzzy, kde-format
 #| msgid "1 Kipi plugin found"
 #| msgid_plural "%1 Kipi plugins found"
@@ -32650,27 +32650,27 @@ msgctxt "@info"
 msgid "No plugin found"
 msgstr "%1 किपि प्लगइन मिले"
 
-#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:46
+#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:43
 #, fuzzy, kde-format
 msgid "Various"
 msgstr "पिछला"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:86
+#: core/libs/dplugins/webservices/wslogindialog.cpp:81
 #, kde-format
 msgid "Login:"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:100
+#: core/libs/dplugins/webservices/wslogindialog.cpp:95
 #, kde-format
 msgid "&Login"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:103
+#: core/libs/dplugins/webservices/wslogindialog.cpp:98
 #, kde-format
 msgid "&Skip"
 msgstr ""
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:165
+#: core/libs/dplugins/webservices/wslogindialog.cpp:160
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgid "Password cannot be empty."
@@ -32743,19 +32743,19 @@ msgctxt "@info"
 msgid "Location of the album that will be created (optional)."
 msgstr "पाठ को दाईं ओर जमाएँ"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:55
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "चयन पलटें"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
 #, fuzzy, kde-format
 msgid "Add another account"
 msgstr "पिक्सेल्स:"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:87
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:82
 #, kde-format
 msgid "Choose the %1 account to use for exporting images:"
 msgstr ""

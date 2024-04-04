@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 01:43+0000\n"
+"POT-Creation-Date: 2024-04-04 01:44+0000\n"
 "PO-Revision-Date: 2024-03-29 21:26+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -11315,7 +11315,7 @@ msgstr "Zmeny sa ukladajú -"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:662
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
+#: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -17494,7 +17494,7 @@ msgstr "Cieľový priečinok:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, fuzzy, kde-format
 #| msgid "Destination Folder"
 msgctxt "@title:window"
@@ -19878,7 +19878,7 @@ msgstr "Cieľový priečinok:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, fuzzy, kde-format
 #| msgctxt "@title:column Output file name"
 #| msgid "Output"
@@ -25787,7 +25787,7 @@ msgstr "Zobrazenie pomôcky pri výzve na zadanie hesla (nepovinné)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
-#: core/libs/dplugins/webservices/wslogindialog.cpp:89
+#: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
 msgstr "Heslo:"
@@ -33853,31 +33853,31 @@ msgctxt "@title"
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Meno"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:133
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Kategórie"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
+#: core/libs/dplugins/setup/dpluginconfview.cpp:134
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Nástroje"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:137
+#: core/libs/dplugins/setup/dpluginconfview.cpp:135
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Popis"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:138
+#: core/libs/dplugins/setup/dpluginconfview.cpp:136
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Authors"
@@ -33888,19 +33888,19 @@ msgstr "Autori"
 msgid "Type-Mimes"
 msgstr "Typy MIME"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:80
+#: core/libs/dplugins/setup/dpluginsetup.cpp:70
 #, kde-format
 msgctxt "@action: search bar"
 msgid "Check All"
 msgstr "Začiarknuť všetko"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:81
+#: core/libs/dplugins/setup/dpluginsetup.cpp:71
 #, kde-format
 msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "Vyčistiť"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:164
+#: core/libs/dplugins/setup/dpluginsetup.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin installed"
@@ -33909,13 +33909,13 @@ msgstr[0] "1 nainštalovaný plugin"
 msgstr[1] "%1 nainštalované pluginy"
 msgstr[2] "%1 nainštalovaných pluginov"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:168
+#: core/libs/dplugins/setup/dpluginsetup.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "No plugin installed"
 msgstr "Žiaden plugin nie je nainštalovaný"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:175
+#: core/libs/dplugins/setup/dpluginsetup.cpp:165
 #, kde-format
 msgctxt "@info: %1: number of plugins activated"
 msgid "(%1 activated)"
@@ -33924,7 +33924,7 @@ msgstr[0] "(%1 aktivované)"
 msgstr[1] "(%1 aktivované)"
 msgstr[2] "(%1 aktivované)"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:190
+#: core/libs/dplugins/setup/dpluginsetup.cpp:180
 #, fuzzy, kde-format
 #| msgid "1 Kipi plugin found"
 #| msgid_plural "%1 Kipi plugins found"
@@ -33935,7 +33935,7 @@ msgstr[0] "Nájdený 1 zásuvný modul Kipi"
 msgstr[1] "Nájdené %1 zásuvné moduly Kipi"
 msgstr[2] "Nájdených %1 zásuvných modulov Kipi"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:194
+#: core/libs/dplugins/setup/dpluginsetup.cpp:184
 #, fuzzy, kde-format
 #| msgid "1 Kipi plugin found"
 #| msgid_plural "%1 Kipi plugins found"
@@ -33943,29 +33943,29 @@ msgctxt "@info"
 msgid "No plugin found"
 msgstr "Nájdený 1 zásuvný modul Kipi"
 
-#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:46
+#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:43
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Previous"
 msgid "Various"
 msgstr "Predchádzajúci"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:86
+#: core/libs/dplugins/webservices/wslogindialog.cpp:81
 #, kde-format
 msgid "Login:"
 msgstr "Prihlásenie:"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:100
+#: core/libs/dplugins/webservices/wslogindialog.cpp:95
 #, kde-format
 msgid "&Login"
 msgstr "&Prihlásenie"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:103
+#: core/libs/dplugins/webservices/wslogindialog.cpp:98
 #, kde-format
 msgid "&Skip"
 msgstr "Pre&skočiť"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:165
+#: core/libs/dplugins/webservices/wslogindialog.cpp:160
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgid "Password cannot be empty."
@@ -34032,19 +34032,19 @@ msgctxt "@info"
 msgid "Location of the album that will be created (optional)."
 msgstr "Umiestnenie novovytváraného albumu (nepovinné)."
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:55
 #, fuzzy, kde-format
 #| msgid "Account Selector"
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "Výber účtu"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
 #, kde-format
 msgid "Add another account"
 msgstr "Pridať ďalší účet"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:87
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:82
 #, kde-format
 msgid "Choose the %1 account to use for exporting images:"
 msgstr "Vyberte účet %1, ktorý sa použije na export obrázkov:"

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 01:43+0000\n"
-"PO-Revision-Date: 2024-04-02 09:17+0300\n"
+"POT-Creation-Date: 2024-04-04 01:44+0000\n"
+"PO-Revision-Date: 2024-04-03 12:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -11687,7 +11687,7 @@ msgstr "Збереження змін —"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:662
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
+#: core/libs/dplugins/webservices/wslogindialog.cpp:159
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
@@ -17846,7 +17846,7 @@ msgstr "Тека призначення:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:269
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -20290,7 +20290,7 @@ msgstr "Тека призначення:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:270
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Тека виведення даних"
@@ -26276,7 +26276,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
-#: core/libs/dplugins/webservices/wslogindialog.cpp:89
+#: core/libs/dplugins/webservices/wslogindialog.cpp:84
 #, kde-format
 msgid "Password:"
 msgstr "Пароль:"
@@ -34369,31 +34369,31 @@ msgctxt "@title"
 msgid "Properties"
 msgstr "Властивості"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:134
+#: core/libs/dplugins/setup/dpluginconfview.cpp:132
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
 msgstr "Назва"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:135
+#: core/libs/dplugins/setup/dpluginconfview.cpp:133
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Categories"
 msgstr "Категорії"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:136
+#: core/libs/dplugins/setup/dpluginconfview.cpp:134
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Tools"
 msgstr "Інструменти"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:137
+#: core/libs/dplugins/setup/dpluginconfview.cpp:135
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Description"
 msgstr "Опис"
 
-#: core/libs/dplugins/setup/dpluginconfview.cpp:138
+#: core/libs/dplugins/setup/dpluginconfview.cpp:136
 #, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Authors"
@@ -34404,19 +34404,19 @@ msgstr "Автори"
 msgid "Type-Mimes"
 msgstr "Типи MIME"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:80
+#: core/libs/dplugins/setup/dpluginsetup.cpp:70
 #, kde-format
 msgctxt "@action: search bar"
 msgid "Check All"
 msgstr "Позначити всі"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:81
+#: core/libs/dplugins/setup/dpluginsetup.cpp:71
 #, kde-format
 msgctxt "@action: search bar"
 msgid "Clear"
 msgstr "Спорожнити"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:164
+#: core/libs/dplugins/setup/dpluginsetup.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin installed"
@@ -34426,13 +34426,13 @@ msgstr[1] "Встановлено %1 додатки"
 msgstr[2] "Встановлено %1 додатків"
 msgstr[3] "Встановлено один додаток"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:168
+#: core/libs/dplugins/setup/dpluginsetup.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "No plugin installed"
 msgstr "Не встановлено жодного додатка"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:175
+#: core/libs/dplugins/setup/dpluginsetup.cpp:165
 #, kde-format
 msgctxt "@info: %1: number of plugins activated"
 msgid "(%1 activated)"
@@ -34442,7 +34442,7 @@ msgstr[1] "(задіяно: %1)"
 msgstr[2] "(задіяно: %1)"
 msgstr[3] "(задіяно: %1)"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:190
+#: core/libs/dplugins/setup/dpluginsetup.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin found"
@@ -34452,33 +34452,33 @@ msgstr[1] "Знайдено %1 додатки"
 msgstr[2] "Знайдено %1 додатків"
 msgstr[3] "Знайдено один додаток"
 
-#: core/libs/dplugins/setup/dpluginsetup.cpp:194
+#: core/libs/dplugins/setup/dpluginsetup.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "No plugin found"
 msgstr "Додатків не знайдено"
 
-#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:46
+#: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:43
 #, kde-format
 msgid "Various"
 msgstr "Інше"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:86
+#: core/libs/dplugins/webservices/wslogindialog.cpp:81
 #, kde-format
 msgid "Login:"
 msgstr "Користувач:"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:100
+#: core/libs/dplugins/webservices/wslogindialog.cpp:95
 #, kde-format
 msgid "&Login"
 msgstr "У&війти"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:103
+#: core/libs/dplugins/webservices/wslogindialog.cpp:98
 #, kde-format
 msgid "&Skip"
 msgstr "Проп&устити"
 
-#: core/libs/dplugins/webservices/wslogindialog.cpp:165
+#: core/libs/dplugins/webservices/wslogindialog.cpp:160
 #, kde-format
 msgid "Password cannot be empty."
 msgstr "Пароль не може бути порожнім."
@@ -34543,18 +34543,18 @@ msgctxt "@info"
 msgid "Location of the album that will be created (optional)."
 msgstr "Адреса альбому, який буде створено (необов'язкова)"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "Засіб вибору облікового запису"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
 #, kde-format
 msgid "Add another account"
 msgstr "Додати інший обліковий запис"
 
-#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:87
+#: core/libs/dplugins/webservices/wsselectuserdlg.cpp:82
 #, kde-format
 msgid "Choose the %1 account to use for exporting images:"
 msgstr "Виберіть обліковий запис %1 для експортування зображень:"
@@ -42383,10 +42383,9 @@ msgid "Choose..."
 msgstr "Вибрати…"
 
 #: core/libs/widgets/fonts/dfontselect.cpp:145
-#, fuzzy, kde-format
-#| msgid "Select a month"
+#, kde-format
 msgid "Select a Font"
-msgstr "Вибір місяця"
+msgstr "Виберіть шрифт"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
 #, kde-format
