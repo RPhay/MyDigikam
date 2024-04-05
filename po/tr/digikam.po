@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 01:44+0000\n"
+"POT-Creation-Date: 2024-04-05 01:39+0000\n"
 "PO-Revision-Date: 2024-04-03 06:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1226,7 +1226,7 @@ msgid "digiKam Properties"
 msgstr "digiKam Özellikleri"
 
 #: core/app/items/utils/tooltipfiller.cpp:460
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:228
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "Albüm:"
@@ -20326,7 +20326,7 @@ msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
-#: core/libs/dplugins/webservices/wssettings.cpp:128
+#: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "Jpeg"
@@ -20334,7 +20334,7 @@ msgstr "JPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
-#: core/libs/dplugins/webservices/wssettings.cpp:129
+#: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "Png"
@@ -21268,7 +21268,7 @@ msgstr "Önizle..."
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:155
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:126
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
@@ -23749,7 +23749,7 @@ msgstr "Bağlantılı bir öge halihazırda var."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:171
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:150
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:152
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:123
 #, kde-format
 msgid "Destination"
 msgstr "Hedef"
@@ -25580,7 +25580,7 @@ msgstr "Yeniden Yükle"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:209
 #, kde-format
 msgid "Reload album list"
 msgstr "Albüm listesini yeniden yükle"
@@ -25599,14 +25599,14 @@ msgstr "URL:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:213
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:184
 #, kde-format
 msgid "Change Account"
 msgstr "Hesap Değiştir"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:273
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Fotoğrafları karşıya yüklemeden önce yeniden boyutlandır"
@@ -25657,7 +25657,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:528
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:144
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:115
 #: core/libs/models/abstractalbummodel.cpp:464
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
@@ -26019,7 +26019,7 @@ msgstr ""
 "Tarayıcınızda SmugMug ana sayfasını açmak için tıklanabilir bir bağlantı."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:80
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:140
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:111
 #, kde-format
 msgid "Account"
 msgstr "Hesap"
@@ -26098,7 +26098,7 @@ msgid "Password for SmugMug album."
 msgstr "SmugMug albümü için parola."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
 #, kde-format
 msgid "New Album"
 msgstr "Yeni Albüm"
@@ -28832,7 +28832,7 @@ msgid "Migrate ->"
 msgstr "Göç Et ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/libs/dplugins/webservices/wstooldialog.cpp:105
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Cancel"
@@ -34074,98 +34074,98 @@ msgstr "Başka Bir Hesap Ekle"
 msgid "Choose the %1 account to use for exporting images:"
 msgstr "Görselleri dışa aktarmak için kullanılacak %1 hesabını seçin:"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:113
+#: core/libs/dplugins/webservices/wssettings.cpp:102
 #, kde-format
 msgctxt "Web Service: FLICKR"
 msgid "Flickr"
 msgstr "Flickr"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:114
+#: core/libs/dplugins/webservices/wssettings.cpp:103
 #, kde-format
 msgctxt "Web Service: DROPBOX"
 msgid "Dropbox"
 msgstr "Dropbox"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:115
+#: core/libs/dplugins/webservices/wssettings.cpp:104
 #, kde-format
 msgctxt "Web Service: IMGUR"
 msgid "Imgur"
 msgstr "Imgur"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:116
+#: core/libs/dplugins/webservices/wssettings.cpp:105
 #, kde-format
 msgctxt "Web Service: FACEBOOK"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:117
+#: core/libs/dplugins/webservices/wssettings.cpp:106
 #, kde-format
 msgctxt "Web Service: SMUGMUG"
 msgid "Smugmug"
 msgstr "Smugmug"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:118
+#: core/libs/dplugins/webservices/wssettings.cpp:107
 #, kde-format
 msgctxt "Web Service: GDRIVE"
 msgid "Google Drive"
 msgstr "Google Drive"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:119
+#: core/libs/dplugins/webservices/wssettings.cpp:108
 #, kde-format
 msgctxt "Web Service: GPHOTO"
 msgid "Google Photo"
 msgstr "Google Fotoğraflar"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:149
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:120
 #, kde-format
 msgid "Max Dimension"
 msgstr "En Büyük Boyut"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:176
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:147
 #, kde-format
 msgid "This is the list of images to upload to your %1 account."
 msgstr "Bu, %1 hesabınıza yüklenecek görsellerin listesidir."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:175
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr "Bu %1 ögesini tarayıcıda açmak için tıklanabilir bir bağlantıdır."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:181
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "Bu, şu anda oturum açmış olan %1 hesabıdır."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:212
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:183
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "Ad:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:215
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:186
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr "Aktarım için %1 Hesabını Değiştir"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:196
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 msgstr "Bu, seçili fotoğrafların yükleneceği/indirileceği %1 klasörüdür."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:205
 #, kde-format
 msgid "Create new %1 folder"
 msgstr "Yeni %1 Klasörü Oluştur"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:207
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "Yeniden Yükle"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:218
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
@@ -34174,92 +34174,92 @@ msgstr ""
 "Bu, görsellerin en büyük boyutudur. Bundan daha büyük görseller "
 "küçültülecektir."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:249
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
 #, kde-format
 msgid "Original Size"
 msgstr "Özgün Boyut"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:250
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:221
 #, kde-format
 msgid "1600 px"
 msgstr "1600 pks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:222
 #, kde-format
 msgid "1440 px"
 msgstr "1440 pks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:252
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
 #, kde-format
 msgid "1280 px"
 msgstr "1280 pks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:253
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:224
 #, kde-format
 msgid "1152 px"
 msgstr "1152 pks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:254
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid "1024 px"
 msgstr "1024 pks"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:231
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "Bu, %1 görsellerinin indirileceği konumdur."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:266
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:237
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr ""
 "Bunlar, karşıya yüklemeden önce fotoğraflara uygulanacak seçeneklerdir."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:269
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
 #, kde-format
 msgid "Upload original image file"
 msgstr "Özgün görsel dosyasını karşıya yükle"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:276
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
 #, kde-format
 msgid "Write the photo ID to the source image"
 msgstr "Kaynak görsele fotoğraf kimliğini yaz"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:277
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:248
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr ""
 "Karşıya yükleme sonrası fotoğraf kimliğini kaynak görsele üst veri olarak yaz"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:289
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr "En büyük boyut:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:297
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "JPEG kalitesi:"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:60
+#: core/libs/dplugins/webservices/wstooldialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "&Start"
 msgstr "&Başlat"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:103
+#: core/libs/dplugins/webservices/wstooldialog.cpp:98
 #: core/libs/onlineversion/onlineversiondlg.cpp:304
 #: core/libs/onlineversion/onlineversiondlg.cpp:481
 #, kde-format
 msgid "Close"
 msgstr "Kapat"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:105
+#: core/libs/dplugins/webservices/wstooldialog.cpp:100
 #, kde-format
 msgid "Close window"
 msgstr "Pencereyi kapat"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:112
+#: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #, kde-format
 msgid "Cancel current operation"
 msgstr "Geçerli işlemi iptal et"
@@ -34325,123 +34325,123 @@ msgctxt "@title:window"
 msgid "Select the Image File List to Save"
 msgstr "Kaydedilecek Görsel Dosyası Listesi Seç"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:40
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Thumbnail"
 msgstr "Küçük Görsel"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:41
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:40
 #: core/utilities/import/dialogs/cameramessagebox.cpp:139
 #, kde-format
 msgctxt "@title"
 msgid "File Name"
 msgstr "Dosya Adı"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:42
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:41
 #, kde-format
 msgctxt "@title"
 msgid "User1"
 msgstr "Kullanıcı1"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:43
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "User2"
 msgstr "Kullanıcı2"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:44
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "User3"
 msgstr "Kullanıcı3"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:45
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "User4"
 msgstr "Kullanıcı4"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:46
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "User5"
 msgstr "Kullanıcı5"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:47
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "User6"
 msgstr "Kullanıcı6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:68
 #, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Yardım"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
+#: core/libs/dplugins/widgets/dplugindialog.cpp:71
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Çevrimiçi El Kitabı..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:74
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #, kde-format
 msgid "About..."
 msgstr "Hakkında..."
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:527
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:498
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Yakınlaştır"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:528
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
 #, kde-format
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Yakınlaştır"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:534
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:505
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Uzaklaştır"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:535
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
 #, kde-format
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Uzaklaştır"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:541
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:512
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Ekrana Sığdır"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:542
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
 #, kde-format
 msgctxt "@info"
 msgid "Zoom to Fit"
 msgstr "Ekrana Sığdır"
 
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:162
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:180
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load image"
 msgstr "Görsel yüklenemedi"
 
-#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:64
+#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:58
 #, kde-format
 msgid "Output file format:"
 msgstr "Çıktı dosyası biçimi:"
 
-#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:66
+#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:60
 #, kde-format
 msgid ""
 "<p>Set the output file format to use here:</p><p><b>JPEG</b>: output the "
@@ -34465,7 +34465,7 @@ msgstr ""
 "çıktısını alın. Bu, kaliteyi kaybetmeden en büyük dosyaları oluşturur. "
 "Görsel sıkıştırılmaz.</p>"
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:64
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Help"

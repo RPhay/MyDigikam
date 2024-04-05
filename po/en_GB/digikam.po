@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 01:44+0000\n"
+"POT-Creation-Date: 2024-04-05 01:39+0000\n"
 "PO-Revision-Date: 2023-05-21 15:02+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1211,7 +1211,7 @@ msgid "digiKam Properties"
 msgstr "digiKam Properties"
 
 #: core/app/items/utils/tooltipfiller.cpp:460
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:228
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "Album:"
@@ -20180,7 +20180,7 @@ msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
-#: core/libs/dplugins/webservices/wssettings.cpp:128
+#: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "Jpeg"
@@ -20188,7 +20188,7 @@ msgstr "Jpeg"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
-#: core/libs/dplugins/webservices/wssettings.cpp:129
+#: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "Png"
@@ -21124,7 +21124,7 @@ msgstr "Preview..."
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:155
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:126
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
@@ -23606,7 +23606,7 @@ msgstr "A linked item already exists."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:171
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:150
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:152
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:123
 #, kde-format
 msgid "Destination"
 msgstr "Destination"
@@ -25424,7 +25424,7 @@ msgstr "Reload"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:209
 #, kde-format
 msgid "Reload album list"
 msgstr "Reload album list"
@@ -25443,14 +25443,14 @@ msgstr "URL:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:213
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:184
 #, kde-format
 msgid "Change Account"
 msgstr "Change Account"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:273
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Resize photos before uploading"
@@ -25501,7 +25501,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:528
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:144
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:115
 #: core/libs/models/abstractalbummodel.cpp:464
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
@@ -25861,7 +25861,7 @@ msgstr ""
 "This is a clickable link to open the SmugMug home page in a web browser."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:80
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:140
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:111
 #, kde-format
 msgid "Account"
 msgstr "Account"
@@ -25940,7 +25940,7 @@ msgid "Password for SmugMug album."
 msgstr "Password for SmugMug album."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
 #, kde-format
 msgid "New Album"
 msgstr "New Album"
@@ -28698,7 +28698,7 @@ msgid "Migrate ->"
 msgstr "Migrate ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/libs/dplugins/webservices/wstooldialog.cpp:105
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Cancel"
@@ -33936,80 +33936,80 @@ msgstr "Add another account"
 msgid "Choose the %1 account to use for exporting images:"
 msgstr "Choose the %1 account to use for exporting images:"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:113
+#: core/libs/dplugins/webservices/wssettings.cpp:102
 #, kde-format
 msgctxt "Web Service: FLICKR"
 msgid "Flickr"
 msgstr "Flickr"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:114
+#: core/libs/dplugins/webservices/wssettings.cpp:103
 #, kde-format
 msgctxt "Web Service: DROPBOX"
 msgid "Dropbox"
 msgstr "Dropbox"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:115
+#: core/libs/dplugins/webservices/wssettings.cpp:104
 #, kde-format
 msgctxt "Web Service: IMGUR"
 msgid "Imgur"
 msgstr "Imgur"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:116
+#: core/libs/dplugins/webservices/wssettings.cpp:105
 #, kde-format
 msgctxt "Web Service: FACEBOOK"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:117
+#: core/libs/dplugins/webservices/wssettings.cpp:106
 #, kde-format
 msgctxt "Web Service: SMUGMUG"
 msgid "Smugmug"
 msgstr "SmugMug"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:118
+#: core/libs/dplugins/webservices/wssettings.cpp:107
 #, kde-format
 msgctxt "Web Service: GDRIVE"
 msgid "Google Drive"
 msgstr "Google Drive"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:119
+#: core/libs/dplugins/webservices/wssettings.cpp:108
 #, kde-format
 msgctxt "Web Service: GPHOTO"
 msgid "Google Photo"
 msgstr "Google Photo"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:149
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:120
 #, kde-format
 msgid "Max Dimension"
 msgstr "Max Dimension"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:176
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:147
 #, kde-format
 msgid "This is the list of images to upload to your %1 account."
 msgstr "This is the list of images to upload to your %1 account."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:175
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr "This is a clickable link to open %1 in a browser."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:181
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "This is the %1 account that is currently logged in."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:212
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:183
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "Name:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:215
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:186
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr "Change %1 account for transfer"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:196
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
@@ -34018,18 +34018,18 @@ msgstr ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:205
 #, kde-format
 msgid "Create new %1 folder"
 msgstr "Create new %1 folder"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:207
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "Reload"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:218
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
@@ -34038,90 +34038,90 @@ msgstr ""
 "This is the maximum dimension of the images. Images larger than this will be "
 "scaled down."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:249
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
 #, kde-format
 msgid "Original Size"
 msgstr "Original Size"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:250
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:221
 #, kde-format
 msgid "1600 px"
 msgstr "1600 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:222
 #, kde-format
 msgid "1440 px"
 msgstr "1440 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:252
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
 #, kde-format
 msgid "1280 px"
 msgstr "1280 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:253
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:224
 #, kde-format
 msgid "1152 px"
 msgstr "1152 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:254
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid "1024 px"
 msgstr "1024 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:231
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "This is the location where %1 images will be downloaded."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:266
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:237
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr "These are the options that would be applied to photos before upload."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:269
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
 #, kde-format
 msgid "Upload original image file"
 msgstr "Upload original image file"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:276
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
 #, kde-format
 msgid "Write the photo ID to the source image"
 msgstr "Write the photo ID to the source image"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:277
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:248
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr "Write the photo ID as metadata in the source image after uploading."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:289
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr "Maximum Dimension:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:297
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "JPEG Quality:"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:60
+#: core/libs/dplugins/webservices/wstooldialog.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "&Start"
 msgstr "&Start"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:103
+#: core/libs/dplugins/webservices/wstooldialog.cpp:98
 #: core/libs/onlineversion/onlineversiondlg.cpp:304
 #: core/libs/onlineversion/onlineversiondlg.cpp:481
 #, kde-format
 msgid "Close"
 msgstr "Close"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:105
+#: core/libs/dplugins/webservices/wstooldialog.cpp:100
 #, kde-format
 msgid "Close window"
 msgstr "Close window"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:112
+#: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #, kde-format
 msgid "Cancel current operation"
 msgstr "Cancel current operation"
@@ -34187,123 +34187,123 @@ msgctxt "@title:window"
 msgid "Select the Image File List to Save"
 msgstr "Select the Image File List to Save"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:40
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Thumbnail"
 msgstr "Thumbnail"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:41
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:40
 #: core/utilities/import/dialogs/cameramessagebox.cpp:139
 #, kde-format
 msgctxt "@title"
 msgid "File Name"
 msgstr "File Name"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:42
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:41
 #, kde-format
 msgctxt "@title"
 msgid "User1"
 msgstr "User1"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:43
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "User2"
 msgstr "User2"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:44
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "User3"
 msgstr "User3"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:45
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "User4"
 msgstr "User4"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:46
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "User5"
 msgstr "User5"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:47
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "User6"
 msgstr "User6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:68
 #, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Help"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
+#: core/libs/dplugins/widgets/dplugindialog.cpp:71
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Online Handbook..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:74
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #, kde-format
 msgid "About..."
 msgstr "About..."
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:527
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:498
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:528
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
 #, kde-format
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:534
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:505
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Zoom Out"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:535
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
 #, kde-format
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Zoom Out"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:541
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:512
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Zoom to Fit"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:542
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
 #, kde-format
 msgctxt "@info"
 msgid "Zoom to Fit"
 msgstr "Zoom to Fit"
 
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:162
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:180
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load image"
 msgstr "Failed to load image"
 
-#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:64
+#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:58
 #, kde-format
 msgid "Output file format:"
 msgstr "Output file format:"
 
-#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:66
+#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:60
 #, kde-format
 msgid ""
 "<p>Set the output file format to use here:</p><p><b>JPEG</b>: output the "
@@ -34326,7 +34326,7 @@ msgstr ""
 "p><p><b>PPM</b>: output the processed image in PPM format. This generates "
 "the largest files, without losing quality. Image is not compressed.</p>"
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:64
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Help"

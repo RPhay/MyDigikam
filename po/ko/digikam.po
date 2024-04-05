@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 01:44+0000\n"
+"POT-Creation-Date: 2024-04-05 01:39+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1173,7 +1173,7 @@ msgid "digiKam Properties"
 msgstr "digiKam 속성"
 
 #: core/app/items/utils/tooltipfiller.cpp:460
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:228
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "앨범:"
@@ -20761,7 +20761,7 @@ msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
-#: core/libs/dplugins/webservices/wssettings.cpp:128
+#: core/libs/dplugins/webservices/wssettings.cpp:117
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "Jpeg"
@@ -20769,7 +20769,7 @@ msgstr "JPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
-#: core/libs/dplugins/webservices/wssettings.cpp:129
+#: core/libs/dplugins/webservices/wssettings.cpp:118
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "Png"
@@ -21684,7 +21684,7 @@ msgstr "미리 보기..."
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:155
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:126
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
@@ -24170,7 +24170,7 @@ msgstr "링크된 항목이 이미 존재합니다."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:171
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:150
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:152
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:123
 #, kde-format
 msgid "Destination"
 msgstr "대상"
@@ -26115,7 +26115,7 @@ msgstr "새로 고침"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:209
 #, kde-format
 msgid "Reload album list"
 msgstr "앨범 목록 새로 고침"
@@ -26136,14 +26136,14 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:213
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:184
 #, kde-format
 msgid "Change Account"
 msgstr "계정 변경"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:273
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "업로드하기 전에 크기 조정"
@@ -26195,7 +26195,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:528
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:144
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:115
 #: core/libs/models/abstractalbummodel.cpp:464
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
@@ -26568,7 +26568,7 @@ msgid ""
 msgstr "SmugMug 홈페이지를 브라우저에서 여는 클릭할 수 있는 링크입니다."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:80
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:140
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:111
 #, kde-format
 msgid "Account"
 msgstr "계정"
@@ -26647,7 +26647,7 @@ msgid "Password for SmugMug album."
 msgstr "SmugMug 앨범 암호입니다."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
 #, kde-format
 msgid "New Album"
 msgstr "새 앨범"
@@ -29239,7 +29239,7 @@ msgid "Migrate ->"
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/libs/dplugins/webservices/wstooldialog.cpp:105
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Cancel"
@@ -34263,170 +34263,170 @@ msgstr "다른 계정 추가"
 msgid "Choose the %1 account to use for exporting images:"
 msgstr "이미지 내보내기에 사용할 %1 계정 선택:"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:113
+#: core/libs/dplugins/webservices/wssettings.cpp:102
 #, kde-format
 msgctxt "Web Service: FLICKR"
 msgid "Flickr"
 msgstr "Flickr"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:114
+#: core/libs/dplugins/webservices/wssettings.cpp:103
 #, kde-format
 msgctxt "Web Service: DROPBOX"
 msgid "Dropbox"
 msgstr "Dropbox"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:115
+#: core/libs/dplugins/webservices/wssettings.cpp:104
 #, kde-format
 msgctxt "Web Service: IMGUR"
 msgid "Imgur"
 msgstr "Imgur"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:116
+#: core/libs/dplugins/webservices/wssettings.cpp:105
 #, kde-format
 msgctxt "Web Service: FACEBOOK"
 msgid "Facebook"
 msgstr "페이스북"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:117
+#: core/libs/dplugins/webservices/wssettings.cpp:106
 #, kde-format
 msgctxt "Web Service: SMUGMUG"
 msgid "Smugmug"
 msgstr "Smugmug"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:118
+#: core/libs/dplugins/webservices/wssettings.cpp:107
 #, kde-format
 msgctxt "Web Service: GDRIVE"
 msgid "Google Drive"
 msgstr "Google 드라이브"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:119
+#: core/libs/dplugins/webservices/wssettings.cpp:108
 #, kde-format
 msgctxt "Web Service: GPHOTO"
 msgid "Google Photo"
 msgstr "Google 포토"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:149
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:120
 #, kde-format
 msgid "Max Dimension"
 msgstr "최대 크기"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:176
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:147
 #, kde-format
 msgid "This is the list of images to upload to your %1 account."
 msgstr "%1 계정에 업로드할 사진 목록입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:175
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr "%1을(를) 브라우저에서 여는 클릭할 수 있는 링크입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:181
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "현재 로그인한 %1 계정입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:212
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:183
 #, kde-format
 msgctxt "account settings"
 msgid "Name:"
 msgstr "이름:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:215
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:186
 #, kde-format
 msgid "Change %1 account for transfer"
 msgstr "전송용 %1 계정 변경"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:196
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 msgstr "선택한 사진을 업로드 및 다운로드할 %1 폴더입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:205
 #, kde-format
 msgid "Create new %1 folder"
 msgstr "새 %1 폴더 만들기"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:207
 #, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "새로 고침"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:218
 #, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
 "scaled down."
 msgstr "사진 최대 크기입니다. 이 크기보다 더 큰 사진은 축소합니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:249
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
 #, kde-format
 msgid "Original Size"
 msgstr "원본 크기"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:250
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:221
 #, kde-format
 msgid "1600 px"
 msgstr "1600픽셀"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:222
 #, kde-format
 msgid "1440 px"
 msgstr "1440픽셀"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:252
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
 #, kde-format
 msgid "1280 px"
 msgstr "1280픽셀"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:253
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:224
 #, kde-format
 msgid "1152 px"
 msgstr "1152픽셀"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:254
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, kde-format
 msgid "1024 px"
 msgstr "1024픽셀"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:231
 #, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "%1 사진을 다운로드할 위치입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:266
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:237
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr "사진을 업로드하기 전에 적용할 옵션입니다."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:269
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
 #, kde-format
 msgid "Upload original image file"
 msgstr "원본 사진 파일 업로드"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:276
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
 #, fuzzy, kde-format
 msgid "Write the photo ID to the source image"
 msgstr "RAW 그림"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:277
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:248
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr ""
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:289
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, kde-format
 msgid "Maximum Dimension:"
 msgstr "최대 크기:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:297
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
 #, kde-format
 msgid "JPEG Quality:"
 msgstr "JPEG 품질:"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:60
+#: core/libs/dplugins/webservices/wstooldialog.cpp:55
 #, fuzzy, kde-format
 #| msgctxt "@action: button"
 #| msgid "&Start"
@@ -34434,19 +34434,19 @@ msgctxt "@action:button"
 msgid "&Start"
 msgstr "시작(&S)"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:103
+#: core/libs/dplugins/webservices/wstooldialog.cpp:98
 #: core/libs/onlineversion/onlineversiondlg.cpp:304
 #: core/libs/onlineversion/onlineversiondlg.cpp:481
 #, kde-format
 msgid "Close"
 msgstr "닫기"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:105
+#: core/libs/dplugins/webservices/wstooldialog.cpp:100
 #, kde-format
 msgid "Close window"
 msgstr "창 닫기"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:112
+#: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #, kde-format
 msgid "Cancel current operation"
 msgstr "현재 작업 취소"
@@ -34517,63 +34517,63 @@ msgctxt "@title:window"
 msgid "Select the Image File List to Save"
 msgstr "저장할 사진 파일 목록 선택"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:40
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:39
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgctxt "@title"
 msgid "Thumbnail"
 msgstr "축소판"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:41
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:40
 #: core/utilities/import/dialogs/cameramessagebox.cpp:139
 #, kde-format
 msgctxt "@title"
 msgid "File Name"
 msgstr "파일 이름"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:42
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:41
 #, fuzzy, kde-format
 #| msgid "User1"
 msgctxt "@title"
 msgid "User1"
 msgstr "사용자1"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:43
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:42
 #, fuzzy, kde-format
 #| msgid "User2"
 msgctxt "@title"
 msgid "User2"
 msgstr "사용자2"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:44
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:43
 #, fuzzy, kde-format
 #| msgid "User3"
 msgctxt "@title"
 msgid "User3"
 msgstr "사용자3"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:45
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:44
 #, fuzzy, kde-format
 #| msgid "User4"
 msgctxt "@title"
 msgid "User4"
 msgstr "사용자4"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:46
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:45
 #, fuzzy, kde-format
 #| msgid "User5"
 msgctxt "@title"
 msgid "User5"
 msgstr "사용자5"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:47
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:46
 #, fuzzy, kde-format
 #| msgid "User6"
 msgctxt "@title"
 msgid "User6"
 msgstr "사용자6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Help"
@@ -34581,70 +34581,70 @@ msgctxt "@action: button"
 msgid "Help"
 msgstr "도움말"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
+#: core/libs/dplugins/widgets/dplugindialog.cpp:71
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr "온라인 도움말..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:74
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #, fuzzy, kde-format
 #| msgctxt "@action: button"
 #| msgid "About..."
 msgid "About..."
 msgstr "정보..."
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:527
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:498
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "확대"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:528
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
 #, kde-format
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "확대"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:534
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:505
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "축소"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:535
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
 #, kde-format
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "축소"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:541
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:512
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "맞추기"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:542
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
 #, kde-format
 msgctxt "@info"
 msgid "Zoom to Fit"
 msgstr "맞추기"
 
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:162
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:180
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load image"
 msgstr "이미지를 불러올 수 없음"
 
-#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:64
+#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:58
 #, kde-format
 msgid "Output file format:"
 msgstr "출력 파일 형식:"
 
-#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:66
+#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:60
 #, kde-format
 msgid ""
 "<p>Set the output file format to use here:</p><p><b>JPEG</b>: output the "
@@ -34666,7 +34666,7 @@ msgstr ""
 "리한 사진을 PPM 형식으로 저장합니다. 품질 손실 없이 가장 큰 파일을 생성하며, "
 "압축하지 않습니다.</p>"
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:64
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Help"

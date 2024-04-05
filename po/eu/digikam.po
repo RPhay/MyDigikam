@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 01:44+0000\n"
+"POT-Creation-Date: 2024-04-05 01:39+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1218,7 +1218,7 @@ msgid "digiKam Properties"
 msgstr "digiKamen propietateak"
 
 #: core/app/items/utils/tooltipfiller.cpp:460
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:228
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "Albuma:"
@@ -20693,7 +20693,7 @@ msgstr "Trumoi-txoria"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:177
-#: core/libs/dplugins/webservices/wssettings.cpp:128
+#: core/libs/dplugins/webservices/wssettings.cpp:117
 #, fuzzy, kde-format
 msgctxt "Image format: JPEG"
 msgid "Jpeg"
@@ -20701,7 +20701,7 @@ msgstr "LibJPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:178
-#: core/libs/dplugins/webservices/wssettings.cpp:129
+#: core/libs/dplugins/webservices/wssettings.cpp:118
 #, fuzzy, kde-format
 #| msgid "Posing"
 msgctxt "Image format: PNG"
@@ -21633,7 +21633,7 @@ msgstr "Aurrez ikusi..."
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:155
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:126
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
@@ -24215,7 +24215,7 @@ msgstr "Estekatutako elementu bat badago lehendik ere."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:171
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:150
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:152
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:123
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgid "Destination"
@@ -26132,7 +26132,7 @@ msgstr "Birkargatu"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:136
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:238
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:209
 #, fuzzy, kde-format
 #| msgid "Load playlist"
 msgid "Reload album list"
@@ -26154,7 +26154,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:96
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:213
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:184
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgid "Change Account"
@@ -26162,7 +26162,7 @@ msgstr "Aldatu kontua"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:163
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:273
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:244
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Aldatu argazkien handiera zama-igo aurretik"
@@ -26216,7 +26216,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:528
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:144
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:115
 #: core/libs/models/abstractalbummodel.cpp:464
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
@@ -26593,7 +26593,7 @@ msgstr ""
 "web arakatzaile batean."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:80
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:140
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:111
 #, fuzzy, kde-format
 #| msgid "Amount:"
 msgid "Account"
@@ -26680,7 +26680,7 @@ msgid "Password for SmugMug album."
 msgstr "SmugMug albumaren pasahitza."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:129
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:232
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:203
 #, kde-format
 msgid "New Album"
 msgstr "Album berria"
@@ -29548,7 +29548,7 @@ msgid "Migrate ->"
 msgstr "Migratu ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/libs/dplugins/webservices/wstooldialog.cpp:105
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Cancel"
@@ -35122,81 +35122,81 @@ msgstr "Gehitu beste kontu bat"
 msgid "Choose the %1 account to use for exporting images:"
 msgstr "Hautatu irudiak esportatzeko erabili beharreko %1 kontua:"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:113
+#: core/libs/dplugins/webservices/wssettings.cpp:102
 #, fuzzy, kde-format
 msgctxt "Web Service: FLICKR"
 msgid "Flickr"
 msgstr "Flickr"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:114
+#: core/libs/dplugins/webservices/wssettings.cpp:103
 #, fuzzy, kde-format
 msgctxt "Web Service: DROPBOX"
 msgid "Dropbox"
 msgstr "Dropbox"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:115
+#: core/libs/dplugins/webservices/wssettings.cpp:104
 #, fuzzy, kde-format
 msgctxt "Web Service: IMGUR"
 msgid "Imgur"
 msgstr "Imgur"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:116
+#: core/libs/dplugins/webservices/wssettings.cpp:105
 #, fuzzy, kde-format
 msgctxt "Web Service: FACEBOOK"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:117
+#: core/libs/dplugins/webservices/wssettings.cpp:106
 #, fuzzy, kde-format
 msgctxt "Web Service: SMUGMUG"
 msgid "Smugmug"
 msgstr "Inportatu"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:118
+#: core/libs/dplugins/webservices/wssettings.cpp:107
 #, fuzzy, kde-format
 msgctxt "Web Service: GDRIVE"
 msgid "Google Drive"
 msgstr "Google Maps API V2"
 
-#: core/libs/dplugins/webservices/wssettings.cpp:119
+#: core/libs/dplugins/webservices/wssettings.cpp:108
 #, fuzzy, kde-format
 msgctxt "Web Service: GPHOTO"
 msgid "Google Photo"
 msgstr "Google Maps API V2"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:149
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:120
 #, fuzzy, kde-format
 msgid "Max Dimension"
 msgstr "Gehienezko dimentsioa"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:176
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:147
 #, kde-format
 msgid "This is the list of images to upload to your %1 account."
 msgstr "Hau da zure %1 kontura zama-igo beharreko irudien zerrenda."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:204
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:175
 #, fuzzy, kde-format
 msgid "This is a clickable link to open %1 in a browser."
 msgstr "Hau da %1 arakatzaile batean irekitzeko esteka klikagarria."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:210
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:181
 #, fuzzy, kde-format
 msgid "This is the %1 account that is currently logged in."
 msgstr "Hau da une honetan saio-hasita dago %1 kontua."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:212
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:183
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "account settings"
 msgid "Name:"
 msgstr "Izena:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:215
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:186
 #, fuzzy, kde-format
 msgid "Change %1 account for transfer"
 msgstr "Aldatu %1 kontua transferentziarako"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:196
 #, kde-format
 msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
@@ -35205,19 +35205,19 @@ msgstr ""
 "Hau da %1 karpeta nora/nondik hautatutako argazkiak zama-igoko/-jaitsiko "
 "diren."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:234
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:205
 #, fuzzy, kde-format
 #| msgid "Create new album"
 msgid "Create new %1 folder"
 msgstr "Sortu %1 karpeta berria"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:236
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:207
 #, fuzzy, kde-format
 msgctxt "album list"
 msgid "Reload"
 msgstr "Birzamatu"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:218
 #, fuzzy, kde-format
 msgid ""
 "This is the maximum dimension of the images. Images larger than this will be "
@@ -35226,76 +35226,76 @@ msgstr ""
 "Hau da irudien dimentsiorik handiena. Hori baino irudi handiagoei eskala "
 "txikituko zaie."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:249
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
 #, fuzzy, kde-format
 #| msgid "Original"
 msgid "Original Size"
 msgstr "Jatorrizko neurria"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:250
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:221
 #, fuzzy, kde-format
 msgid "1600 px"
 msgstr "1600 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:251
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:222
 #, fuzzy, kde-format
 msgid "1440 px"
 msgstr "1440 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:252
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:223
 #, fuzzy, kde-format
 msgid "1280 px"
 msgstr "1280 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:253
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:224
 #, fuzzy, kde-format
 msgid "1152 px"
 msgstr "1152 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:254
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:225
 #, fuzzy, kde-format
 msgid "1024 px"
 msgstr "1024 px"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:231
 #, fuzzy, kde-format
 msgid "This is the location where %1 images will be downloaded."
 msgstr "Hau da %1 irudiak zama-jaitsiko diren kokalekua."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:266
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:237
 #, kde-format
 msgid "These are the options that would be applied to photos before upload."
 msgstr "Hauek dira argazkiei zama-igo aurretik ezarriko litzaiekeen aukerak."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:269
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:240
 #, kde-format
 msgid "Upload original image file"
 msgstr "Zama-igo jatorrizko irudi-fitxategia"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:276
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:247
 #, fuzzy, kde-format
 #| msgid "Align text to the right"
 msgid "Write the photo ID to the source image"
 msgstr "Lerrokatu testua eskuinean"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:277
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:248
 #, kde-format
 msgid "Write the photo ID as metadata in the source image after uploading."
 msgstr "Idatzi IDa, jatorrizko irudian, metadatu gisa zama-igo ondoren."
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:289
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:260
 #, fuzzy, kde-format
 #| msgid "Dimensions:"
 msgid "Maximum Dimension:"
 msgstr "Dimentsiorik handiena:"
 
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:297
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:268
 #, fuzzy, kde-format
 #| msgid "JPEG quality:"
 msgid "JPEG Quality:"
 msgstr "JPEG kalitatea:"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:60
+#: core/libs/dplugins/webservices/wstooldialog.cpp:55
 #, fuzzy, kde-format
 #| msgctxt "Start index for custom range"
 #| msgid "Start:"
@@ -35303,7 +35303,7 @@ msgctxt "@action:button"
 msgid "&Start"
 msgstr "Hasiera:"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:103
+#: core/libs/dplugins/webservices/wstooldialog.cpp:98
 #: core/libs/onlineversion/onlineversiondlg.cpp:304
 #: core/libs/onlineversion/onlineversiondlg.cpp:481
 #, fuzzy, kde-format
@@ -35311,13 +35311,13 @@ msgstr "Hasiera:"
 msgid "Close"
 msgstr "Itxi"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:105
+#: core/libs/dplugins/webservices/wstooldialog.cpp:100
 #, fuzzy, kde-format
 #| msgid "Close view"
 msgid "Close window"
 msgstr "Itxi leihoa"
 
-#: core/libs/dplugins/webservices/wstooldialog.cpp:112
+#: core/libs/dplugins/webservices/wstooldialog.cpp:107
 #, fuzzy, kde-format
 msgid "Cancel current operation"
 msgstr "Utzi uneko eragiketa"
@@ -35391,14 +35391,14 @@ msgctxt "@title:window"
 msgid "Select the Image File List to Save"
 msgstr "Hautatu gorde beharreko irudi fitxategi zerrenda"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:40
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:39
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgctxt "@title"
 msgid "Thumbnail"
 msgstr "Koadro txikia"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:41
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:40
 #: core/utilities/import/dialogs/cameramessagebox.cpp:139
 #, fuzzy, kde-format
 #| msgid "File Name"
@@ -35406,49 +35406,49 @@ msgctxt "@title"
 msgid "File Name"
 msgstr "Fitxategi-izena"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:42
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:41
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User1"
 msgstr "Erabiltzailea:"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:43
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:42
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User2"
 msgstr "Erabiltzailea:"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:44
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:43
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User3"
 msgstr "Erabiltzailea:"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:45
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:44
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User4"
 msgstr "Erabiltzailea:"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:46
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:45
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User5"
 msgstr "Erabiltzailea:"
 
-#: core/libs/dplugins/widgets/ditemslist_view.cpp:47
+#: core/libs/dplugins/widgets/ditemslist_view.cpp:46
 #, fuzzy, kde-format
 #| msgid "User"
 msgctxt "@title"
 msgid "User6"
 msgstr "Erabiltzailea:"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Help"
@@ -35456,76 +35456,76 @@ msgctxt "@action: button"
 msgid "Help"
 msgstr "Laguntza"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
+#: core/libs/dplugins/widgets/dplugindialog.cpp:71
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Lerroko eskuliburua..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:74
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #, fuzzy, kde-format
 #| msgid "About"
 msgid "About..."
 msgstr "Honi buruz..."
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:527
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:498
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Handiagotu"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:528
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:499
 #, fuzzy, kde-format
 #| msgid "Zoom In"
 msgctxt "@info"
 msgid "Zoom In"
 msgstr "Handiagotu"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:534
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:505
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Txikiagotu"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:535
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:506
 #, fuzzy, kde-format
 #| msgid "Zoom Out"
 msgctxt "@info"
 msgid "Zoom Out"
 msgstr "Txikiagotu"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:541
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:512
 #, fuzzy, kde-format
 #| msgid "Zoom &AutoFit"
 msgctxt "@action"
 msgid "Zoom to Fit"
 msgstr "Doitzeko zooma"
 
-#: core/libs/dplugins/widgets/dpreviewimage.cpp:542
+#: core/libs/dplugins/widgets/dpreviewimage.cpp:513
 #, fuzzy, kde-format
 #| msgid "Zoom &AutoFit"
 msgctxt "@info"
 msgid "Zoom to Fit"
 msgstr "Doitzeko zooma"
 
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:162
-#: core/libs/dplugins/widgets/dpreviewmanager.cpp:180
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:151
+#: core/libs/dplugins/widgets/dpreviewmanager.cpp:169
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to load image"
 msgstr "Huts egin du irudia kargatzean"
 
-#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:64
+#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:58
 #, fuzzy, kde-format
 #| msgid "Output device profile:"
 msgid "Output file format:"
 msgstr "Irteerako fitxategi-formatua:"
 
-#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:66
+#: core/libs/dplugins/widgets/dsavesettingswidget.cpp:60
 #, fuzzy, kde-format
 msgid ""
 "<p>Set the output file format to use here:</p><p><b>JPEG</b>: output the "
@@ -35550,7 +35550,7 @@ msgstr ""
 "irudia PPM formatuan. Honek fitxategi handienak sortzen ditu, kalitate "
 "galerarik gabe. Irudia ez da konprimatzen.</p>"
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:64
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Help"
