@@ -102,6 +102,18 @@ void TimeAdjustTask::run()
 
         if (parser->exifToolAvailable())
         {
+            QScopedPointer<DMetadata> qmeta(new DMetadata);
+
+            if (qmeta->load(d->url.toLocalFile(), true))
+            {
+                QString qDate = qmeta->getXmpTagString("Xmp.video.DateTimeOriginal");
+
+                if (qDate.endsWith(QLatin1Char('Z')))
+                {
+                    adj = asDateTimeUTC(adj);
+                }
+            }
+
             if (!parser->changeTimestamps(d->url.toLocalFile(), adj))
             {
                 status |= TimeAdjustList::EXIF_TOOL_ERROR;

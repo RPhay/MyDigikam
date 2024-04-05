@@ -1649,6 +1649,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
         setXmpTagString("Xmp.exif.DateTimeDigitized", dateTime.toString(xmpDateTimeFormat));
         setXmpTagString("Xmp.exif.DateTimeOriginal", dateTime.toString(xmpDateTimeFormat));
+        setXmpTagString("Xmp.xmp.CreateDate", dateTime.toString(xmpDateTimeFormat));
     }
 
     // --------------

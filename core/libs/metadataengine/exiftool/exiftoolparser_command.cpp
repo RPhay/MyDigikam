@@ -302,8 +302,13 @@ bool ExifToolParser::changeTimestamps(const QString& path, const QDateTime& date
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-wm");
     cmdArgs << QByteArray("w");
-    cmdArgs << QByteArray("-api");
-    cmdArgs << QByteArray("QuickTimeUTC");
+
+    if (dateTime.timeSpec() == Qt::UTC)
+    {
+        cmdArgs << QByteArray("-api");
+        cmdArgs << QByteArray("QuickTimeUTC");
+    }
+
     cmdArgs << (QByteArray("-time:all=") +
                 dateTime.toString(QLatin1String("yyyy-MM-ddThh:mm:ss")).toLatin1());
 
