@@ -271,6 +271,7 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
     QGridLayout* const updateGBLayout = new QGridLayout(d->updateSettingsBox);
 
     d->updUseExifToolCheck      = new QCheckBox(i18n("Update timestamps with ExifTool"), d->updateSettingsBox);
+    d->updUseExifToolCheck->setToolTip(i18n("Use this option primarily with video files"));
     d->updIfAvailableCheck      = new QCheckBox(i18n("Update only existing timestamps"), d->updateSettingsBox);
     d->updFileModDateCheck      = new QCheckBox(i18n("File last modified"),              d->updateSettingsBox);
     d->updEXIFModDateCheck      = new QCheckBox(i18n("EXIF: created"),                   d->updateSettingsBox);
