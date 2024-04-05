@@ -41,10 +41,7 @@ class Q_DECL_HIDDEN AlbumWatch::Private
 {
 public:
 
-    explicit Private()
-      : dirWatch(nullptr)
-    {
-    }
+    Private() = default;
 
     bool             inBlackList(const QString& path) const;
     bool             inDirWatchParametersBlackList(const QFileInfo& info, const QString& path);
@@ -52,7 +49,7 @@ public:
 
 public:
 
-    QFileSystemWatcher* dirWatch;
+    QFileSystemWatcher* dirWatch = nullptr;
 
     DbEngineParameters  params;
     QStringList         fileNameBlackList;
@@ -147,7 +144,7 @@ QList<QDateTime> AlbumWatch::Private::buildDirectoryModList(const QFileInfo& dbF
 
 AlbumWatch::AlbumWatch(AlbumManager* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->dirWatch = new QFileSystemWatcher(this);
 

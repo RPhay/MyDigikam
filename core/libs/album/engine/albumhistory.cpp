@@ -63,23 +63,20 @@ class Q_DECL_HIDDEN HistoryItem
 {
 public:
 
-    HistoryItem()
-        : widget(nullptr)
-    {
-    };
+    HistoryItem() = default;
 
     HistoryItem(const QList<Album*>& a, QWidget* const w)
         : widget(w)
     {
         albums.append(a);
-    };
+    }
 
     HistoryItem(const QList<Album*>& a, QWidget* const w, const QHash<LabelsTreeView::Labels, QList<int> >& selectedLabels)
         : widget(w),
           labels(selectedLabels)
     {
         albums.append(a);
-    };
+    }
 
     bool operator==(const HistoryItem& item)
     {
@@ -92,7 +89,7 @@ public:
     }
 
     QList<Album*>                              albums;
-    QWidget*                                   widget;
+    QWidget*                                   widget  = nullptr;
     QHash<LabelsTreeView::Labels, QList<int> > labels;
 };
 
@@ -102,15 +99,13 @@ class Q_DECL_HIDDEN HistoryPosition
 {
 public:
 
-    HistoryPosition()
-    {
-    };
+    HistoryPosition() = default;
 
     HistoryPosition(const ItemInfo& c, const QList<ItemInfo>& s)
         : current(c),
           select (s)
     {
-    };
+    }
 
     bool operator==(const HistoryPosition& item)
     {
@@ -129,18 +124,14 @@ class Q_DECL_HIDDEN AlbumHistory::Private
 {
 public:
 
-    explicit Private()
-        : moving        (false),
-          blockSelection(false)
-    {
-    }
+    Private() = default;
 
     void forward(unsigned int steps = 1);
 
 public:
 
-    bool                                       moving;
-    bool                                       blockSelection;
+    bool                                       moving           = false;
+    bool                                       blockSelection   = false;
 
     QMutex                                     mutex;
 

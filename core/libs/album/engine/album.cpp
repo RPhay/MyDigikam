@@ -35,12 +35,9 @@ namespace Digikam
 {
 
 Album::Album(Album::Type type, int id, bool root)
-    : m_root            (root),
-      m_usedByLabelsTree(false),
-      m_albumInDeletion (false),
-      m_id              (id),
-      m_type            (type),
-      m_parent          (nullptr)
+    : m_root(root),
+      m_id  (id),
+      m_type(type)
 {
 }
 
@@ -236,24 +233,37 @@ int Album::globalID(Type type, int id)
     switch (type)
     {
         // Use the upper bits to create unique ids.
+
         case (PHYSICAL):
+        {
             return id;
+        }
 
         case (TAG):
+        {
             return (id | (1 << 27));
+        }
 
         case (DATE):
+        {
             return (id | (1 << 28));
+        }
 
         case (SEARCH):
+        {
             return (id | (1 << 29));
+        }
 
         case (FACE):
+        {
             return (id | (1 << 30));
+        }
 
         default:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unknown album type";
             return -1;
+        }
     }
 }
 
@@ -362,11 +372,8 @@ void Album::setUsedByLabelsTree(bool isUsed)
 int PAlbum::m_uniqueTrashId = -2;
 
 PAlbum::PAlbum(const QString& title)
-    : Album             (Album::PHYSICAL, 0, true),
-      m_isAlbumRootAlbum(false),
-      m_albumRootId     (-1),
-      m_parentPath      (QLatin1Char('/')),
-      m_iconId          (0)
+    : Album       (Album::PHYSICAL, 0, true),
+      m_parentPath(QLatin1Char('/'))
 {
     setTitle(title);
     m_path.clear();
@@ -376,34 +383,31 @@ PAlbum::PAlbum(int albumRoot, const QString& label)
     : Album             (Album::PHYSICAL, -1, false),
       m_isAlbumRootAlbum(true),
       m_albumRootId     (albumRoot),
-      m_parentPath      (QLatin1Char('/')),
-      m_iconId          (0)
+      m_parentPath      (QLatin1Char('/'))
 {
     // set the id to -1 (line above). AlbumManager may change that later.
+
     setTitle(label);
     m_path.clear();
 }
 
 PAlbum::PAlbum(int albumRoot, const QString& parentPath, const QString& title, int id)
     : Album             (Album::PHYSICAL, id, false),
-      m_isAlbumRootAlbum(false),
       m_albumRootId     (albumRoot),
       m_path            (title),
       m_parentPath      (parentPath + QLatin1Char('/')),
-      m_iconId          (0),
       m_date            (QDate::currentDate())
 {
     // If path is /holidays/2007, title is only "2007", path is "/holidays"
+
     setTitle(title);
 }
 
 PAlbum::PAlbum(const QString& parentPath, int albumRoot)
     : Album             (Album::PHYSICAL, m_uniqueTrashId--, false),
-      m_isAlbumRootAlbum(false),
       m_albumRootId     (albumRoot),
       m_path            (DTrash::TRASH_FOLDER),
-      m_parentPath      (parentPath + QLatin1Char('/')),
-      m_iconId          (0)
+      m_parentPath      (parentPath + QLatin1Char('/'))
 {
     setTitle(i18n("Trash"));
 }
@@ -514,9 +518,7 @@ QString PAlbum::folderPath() const
 // --------------------------------------------------------------------------
 
 TAlbum::TAlbum(const QString& title, int id, bool root)
-    : Album   (Album::TAG, id, root),
-      m_pid   (0),
-      m_iconId(0)
+    : Album(Album::TAG, id, root)
 {
     setTitle(title);
 }
@@ -663,8 +665,7 @@ CoreDbUrl DAlbum::databaseUrl() const
 // --------------------------------------------------------------------------
 
 SAlbum::SAlbum(const QString& title, int id, bool root)
-    : Album       (Album::SEARCH, id, root),
-      m_searchType(DatabaseSearch::UndefinedType)
+    : Album(Album::SEARCH, id, root)
 {
     setTitle(title);
 }
@@ -701,10 +702,14 @@ bool SAlbum::isNormalSearch() const
         case DatabaseSearch::KeywordSearch:
         case DatabaseSearch::AdvancedSearch:
         case DatabaseSearch::LegacyUrlSearch:
+        {
             return true;
+        }
 
         default:
+        {
             return false;
+        }
     }
 }
 
@@ -742,8 +747,10 @@ bool SAlbum::isTemporarySearch() const
 {
     if (isHaarSearch())
     {
-        return ((title() == getTemporaryHaarTitle(DatabaseSearch::HaarImageSearch))) ||
-                (title() == getTemporaryHaarTitle(DatabaseSearch::HaarSketchSearch));
+        return (
+                (title() == getTemporaryHaarTitle(DatabaseSearch::HaarImageSearch))) ||
+                (title() == getTemporaryHaarTitle(DatabaseSearch::HaarSketchSearch)
+               );
     }
 
     return (title() == getTemporaryTitle(m_searchType));
@@ -756,7 +763,9 @@ QString SAlbum::displayTitle() const
         switch (m_searchType)
         {
             case DatabaseSearch::TimeLineSearch:
+            {
                 return i18n("Current Timeline Search");
+            }
 
             case DatabaseSearch::HaarSearch:
             {
@@ -773,18 +782,26 @@ QString SAlbum::displayTitle() const
             }
 
             case DatabaseSearch::MapSearch:
+            {
                 return i18n("Current Map Search");
+            }
 
             case DatabaseSearch::KeywordSearch:
             case DatabaseSearch::AdvancedSearch:
             case DatabaseSearch::LegacyUrlSearch:
+            {
                 return i18n("Current Search");
+            }
 
             case DatabaseSearch::DuplicatesSearch:
+            {
                 return i18n("Current Duplicates Search");
+            }
 
             case DatabaseSearch::UndefinedType:
+            {
                 break;
+            }
         }
     }
 
@@ -796,25 +813,37 @@ QString SAlbum::getTemporaryTitle(DatabaseSearch::Type type, DatabaseSearch::Haa
     switch (type)
     {
         case DatabaseSearch::TimeLineSearch:
+        {
             return QLatin1String("_Current_Time_Line_Search_");
+        }
 
         case DatabaseSearch::HaarSearch:
+        {
             return getTemporaryHaarTitle(haarType);
+        }
 
         case DatabaseSearch::MapSearch:
+        {
             return QLatin1String("_Current_Map_Search_");
+        }
 
         case DatabaseSearch::KeywordSearch:
         case DatabaseSearch::AdvancedSearch:
         case DatabaseSearch::LegacyUrlSearch:
+        {
             return QLatin1String("_Current_Search_View_Search_");
+        }
 
         case DatabaseSearch::DuplicatesSearch:
+        {
             return QLatin1String("_Current_Duplicates_Search_");
+        }
 
         default:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Untreated temporary search type " << type;
             return QLatin1String("_Current_Unknown_Search_");
+        }
     }
 }
 
@@ -823,14 +852,20 @@ QString SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarSearchType haarType)
     switch (haarType)
     {
         case DatabaseSearch::HaarImageSearch:
+        {
             return QLatin1String("_Current_Fuzzy_Image_Search_");
+        }
 
         case DatabaseSearch::HaarSketchSearch:
+        {
             return QLatin1String("_Current_Fuzzy_Sketch_Search_");
+        }
 
         default:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Untreated temporary haar search type " << haarType;
             return QLatin1String("_Current_Unknown_Haar_Search_");
+        }
     }
 }
 

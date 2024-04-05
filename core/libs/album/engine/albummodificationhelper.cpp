@@ -50,17 +50,14 @@ class Q_DECL_HIDDEN AlbumModificationHelper::Private
 {
 public:
 
-    explicit Private()
-      : dialogParent(nullptr)
-    {
-    }
+    Private() = default;
 
-    QWidget*     dialogParent;
+    QWidget* dialogParent = nullptr;
 };
 
 AlbumModificationHelper::AlbumModificationHelper(QObject* const parent, QWidget* const dialogParent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->dialogParent = dialogParent;
 }

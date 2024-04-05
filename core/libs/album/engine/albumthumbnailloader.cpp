@@ -64,26 +64,17 @@ class Q_DECL_HIDDEN AlbumThumbnailLoader::Private
 {
 public:
 
-    explicit Private()
-      : iconSize            (ApplicationSettings::instance()->getTreeViewIconSize()),
-        faceSize            (ApplicationSettings::instance()->getTreeViewFaceSize()),
-        minBlendSize        (20),
-        iconTagThumbThread  (nullptr),
-        iconFaceThumbThread (nullptr),
-        iconAlbumThumbThread(nullptr),
-        fallBackIcon        (QIcon::fromTheme(QLatin1String("dialog-cancel")))
-    {
-    }
+    Private() = default;
 
-    int                                  iconSize;
-    int                                  faceSize;
-    int                                  minBlendSize;
+    int                                  iconSize               = ApplicationSettings::instance()->getTreeViewIconSize();
+    int                                  faceSize               = ApplicationSettings::instance()->getTreeViewFaceSize();
+    int                                  minBlendSize           = 20;
 
-    ThumbnailLoadThread*                 iconTagThumbThread;
-    ThumbnailLoadThread*                 iconFaceThumbThread;
-    ThumbnailLoadThread*                 iconAlbumThumbThread;
+    ThumbnailLoadThread*                 iconTagThumbThread     = nullptr;
+    ThumbnailLoadThread*                 iconFaceThumbThread    = nullptr;
+    ThumbnailLoadThread*                 iconAlbumThumbThread   = nullptr;
 
-    QIcon                                fallBackIcon;
+    QIcon                                fallBackIcon           = QIcon::fromTheme(QLatin1String("dialog-cancel"));
 
     IdAlbumMap                           idAlbumMap;
 
@@ -346,6 +337,7 @@ QPixmap AlbumThumbnailLoader::getFaceThumbnailDirectly(TAlbum* const album)
     if      (album->iconId() && (d->faceSize > d->minBlendSize))
     {
         // icon cached?
+
         AlbumThumbnailMap::const_iterator it = d->thumbnailMap.constFind(album->globalID());
 
         if (it != d->thumbnailMap.constEnd())

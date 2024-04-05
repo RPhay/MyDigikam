@@ -39,20 +39,16 @@ class Q_DECL_HIDDEN AlbumParser::Private
 {
 public:
 
-    explicit Private()
-      : cancel(false),
-        album(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool         cancel;
+    bool         cancel     = false;
     ItemInfoList infoList;
-    Album*       album;
+    Album*       album      = nullptr;
 };
 
 AlbumParser::AlbumParser(const ItemInfoList& infoList)
     : ProgressItem(nullptr, QLatin1String("AlbumParser"), QString(), QString(), true, true),
-      d(new Private)
+      d           (new Private)
 {
     d->infoList = infoList;
 
@@ -61,7 +57,7 @@ AlbumParser::AlbumParser(const ItemInfoList& infoList)
 
 AlbumParser::AlbumParser(Album* const album)
     : ProgressItem(nullptr, QLatin1String("AlbumParser"), QString(), QString(), true, true),
-      d(new Private)
+      d           (new Private)
 {
     d->album = album;
 

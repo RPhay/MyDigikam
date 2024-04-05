@@ -60,11 +60,11 @@ public:
 
     enum Type
     {
-        PHYSICAL=0, ///< A physical album type @see PAlbum
-        TAG,        ///< A tag      album type @see TAlbum
-        DATE,       ///< A date     album type @see DAlbum
-        SEARCH,     ///< A search   album type @see SAlbum
-        FACE        ///< A faces    album type @see FAlbum
+        PHYSICAL = 0, ///< A physical album type @see PAlbum
+        TAG,          ///< A tag      album type @see TAlbum
+        DATE,         ///< A date     album type @see DAlbum
+        SEARCH,       ///< A search   album type @see SAlbum
+        FACE          ///< A faces    album type @see FAlbum
     };
 
     /**
@@ -321,11 +321,11 @@ private:
 
 private:
 
-    bool                     m_root;
-    bool                     m_usedByLabelsTree;
-    volatile bool            m_albumInDeletion;
+    bool                     m_root                 = false;
+    bool                     m_usedByLabelsTree     = false;
+    volatile bool            m_albumInDeletion      = false;
 
-    int                      m_id;
+    int                      m_id                   = -1;
 
     QString                  m_name;
     QString                  m_title;
@@ -335,9 +335,9 @@ private:
     QList<Album*>            m_childCache;
     mutable QReadWriteLock   m_cacheLock;
 
-    Type                     m_type;
+    Type                     m_type                 = PHYSICAL;
 
-    Album*                   m_parent;
+    Album*                   m_parent               = nullptr;
 
     friend class AlbumManager;
 };
@@ -390,15 +390,15 @@ private:
      */
     static int m_uniqueTrashId;
 
-    bool       m_isAlbumRootAlbum;
+    bool       m_isAlbumRootAlbum   = false;
 
-    int        m_albumRootId;
+    int        m_albumRootId        = -1;
 
     QString    m_path;
     QString    m_parentPath;
     QString    m_category;
     QString    m_caption;
-    qlonglong  m_iconId;
+    qlonglong  m_iconId             = 0;
 
     QDate      m_date;
 
@@ -414,7 +414,7 @@ class DIGIKAM_GUI_EXPORT TAlbum : public Album
 {
 public:
 
-    TAlbum(const QString& title, int id, bool root=false);
+    TAlbum(const QString& title, int id, bool root = false);
     ~TAlbum() override;
 
     /**
@@ -437,10 +437,10 @@ public:
 
 private:
 
-    int       m_pid;
+    int       m_pid     = 0;
 
     QString   m_icon;
-    qlonglong m_iconId;
+    qlonglong m_iconId  = 0;
 
     friend class AlbumManager;
 };
@@ -462,7 +462,7 @@ public:
 
 public:
 
-    explicit DAlbum(const QDate& date, bool root=false, Range range=Month);
+    explicit DAlbum(const QDate& date, bool root = false, Range range = Month);
     ~DAlbum() override;
 
     QDate     date()        const;
@@ -473,7 +473,7 @@ private:
 
     static int m_uniqueID;
     QDate      m_date;
-    Range      m_range;
+    Range      m_range  = Month;
 
     friend class AlbumManager;
 };
@@ -487,7 +487,7 @@ class DIGIKAM_GUI_EXPORT SAlbum : public Album
 {
 public:
 
-    SAlbum(const QString& title, int id, bool root=false);
+    SAlbum(const QString& title, int id, bool root = false);
     ~SAlbum() override;
 
     CoreDbUrl            databaseUrl()        const override;
@@ -539,7 +539,7 @@ private:
 private:
 
     QString              m_query;
-    DatabaseSearch::Type m_searchType;
+    DatabaseSearch::Type m_searchType   = DatabaseSearch::UndefinedType;
 
     friend class AlbumManager;
 };
@@ -581,8 +581,8 @@ private:
 
 private:
 
-    Album* m_current;
-    Album* m_root;
+    Album* m_current    = nullptr;
+    Album* m_root       = nullptr;
 };
 
 } // namespace Digikam

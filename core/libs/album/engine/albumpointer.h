@@ -39,10 +39,7 @@ class AlbumPointer
 {
 public:
 
-    AlbumPointer()
-        : album(nullptr)
-    {
-    }
+    AlbumPointer() = default;
 
     // cppcheck-suppress noExplicitConstructor
     AlbumPointer(T* const a)                    // krazy:exclude=explicit
@@ -103,8 +100,9 @@ public:
 
 private:
 
+    Album* album = nullptr;
+
     friend class AlbumManager;
-    Album* album;
 };
 
 // ------------------------------------------------------------------------------------
@@ -115,9 +113,7 @@ class AlbumPointerList : public QList<AlbumPointer<T> >
 {
 public:
 
-    AlbumPointerList()
-    {
-    }
+    AlbumPointerList() = default;
 
     explicit AlbumPointerList(const AlbumPointerList<T>& list)
         : QList<AlbumPointer<T> >(list)
