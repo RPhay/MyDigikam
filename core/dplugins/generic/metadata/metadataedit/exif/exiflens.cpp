@@ -384,7 +384,7 @@ void EXIFLens::applyMetadata(const DMetadata& meta)
     if (d->focalLengthCheck->isChecked())
     {
         meta.convertToRational(d->focalLengthEdit->value(), &num, &den, 1);
-        meta.setExifTagRational("Exif.Photo.FocalLength", num, den);
+        meta.setExifTagURational("Exif.Photo.FocalLength", num, den);
     }
     else
         meta.removeExifTag("Exif.Photo.FocalLength");
@@ -405,12 +405,12 @@ void EXIFLens::applyMetadata(const DMetadata& meta)
     if (d->apertureCheck->isChecked())
     {
         meta.convertToRational(d->apertureCB->currentText().remove(0, 2).toDouble(), &num, &den, 1);
-        meta.setExifTagRational("Exif.Photo.FNumber", num, den);
+        meta.setExifTagURational("Exif.Photo.FNumber", num, den);
 
         double fnumber  = d->apertureCB->currentText().remove(0, 2).toDouble();
         double aperture = 2.0*(std::log(fnumber)/std::log(2.0));
         meta.convertToRational(aperture, &num, &den, 8);
-        meta.setExifTagRational("Exif.Photo.ApertureValue", num, den);
+        meta.setExifTagURational("Exif.Photo.ApertureValue", num, den);
     }
     else if (d->apertureCheck->isValid())
     {

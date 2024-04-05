@@ -673,6 +673,13 @@ public:
     bool setExifTagRational(const char* exifTagName, long int num, long int den) const;
 
     /**
+     * Set an Exif tag content using a unsigned rational value.
+     * 'num' and 'den' are the numerator and the denominator of the unsigned rational value.
+     * Return true if tag is set successfully.
+     */
+    bool setExifTagURational(const char* exifTagName, long int num, long int den) const;
+
+    /**
      * Get an Exif tag content like a bytes array. Return an empty bytes array if Exif
      * tag cannot be found.
      */

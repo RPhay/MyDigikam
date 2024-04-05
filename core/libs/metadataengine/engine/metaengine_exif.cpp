@@ -484,6 +484,28 @@ bool MetaEngine::setExifTagRational(const char* exifTagName, long int num, long 
     return false;
 }
 
+bool MetaEngine::setExifTagURational(const char* exifTagName, long int num, long int den) const
+{
+    QMutexLocker lock(&s_metaEngineMutex);
+
+    try
+    {
+        d->exifMetadata()[exifTagName] = Exiv2::URational(num, den);
+
+        return true;
+    }
+    catch (Exiv2::AnyError& e)
+    {
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Exif tag unsigned rational value into image with Exiv2:"), e);
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+    return false;
+}
+
 bool MetaEngine::setExifTagData(const char* exifTagName, const QByteArray& data) const
 {
     if (data.isEmpty())

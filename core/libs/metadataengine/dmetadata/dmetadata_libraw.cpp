@@ -194,7 +194,7 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
         if (identify->exposureIndex != -1.0F)
         {
             convertToRational(identify->exposureIndex, &num, &den, 8);
-            setExifTagRational("Exif.Photo.ExposureIndex", num, den);
+            setExifTagURational("Exif.Photo.ExposureIndex", num, den);
         }
 
         if (identify->dateTime.isValid())
@@ -205,19 +205,19 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
         if (identify->exposureTime != -1.0F)
         {
             convertToRationalSmallDenominator(identify->exposureTime, &num, &den);
-            setExifTagRational("Exif.Photo.ExposureTime", num, den);
+            setExifTagURational("Exif.Photo.ExposureTime", num, den);
         }
 
         if (identify->aperture != -1.0F)
         {
             convertToRational(identify->aperture, &num, &den, 8);
-            setExifTagRational("Exif.Photo.ApertureValue", num, den);
+            setExifTagURational("Exif.Photo.ApertureValue", num, den);
         }
 
         if (identify->focalLength != -1.0F)
         {
             convertToRational(identify->focalLength, &num, &den, 8);
-            setExifTagRational("Exif.Photo.FocalLength", num, den);
+            setExifTagURational("Exif.Photo.FocalLength", num, den);
         }
 
         if (identify->orientation != DRawInfo::ORIENTATION_NONE)

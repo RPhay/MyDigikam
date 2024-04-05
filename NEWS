@@ -61,7 +61,7 @@ BUGFIXES:
 039 ==> 484959 - Inconsistent metadata behavior between photo and video after adding a caption.
 040 ==> 484815 - After playing a video, pause command no longer has any effect on the others videos you preview until you preview a photo.
 041 ==> 484818 - Switching quickly between several videos leads to a segmentation fault.
-042 ==> 
+042 ==> 485009 - Exposure times greater or equal to 1 second are shown as a fraction in EXIF metadata view.
 043 ==> 
 044 ==> 
 045 ==> 

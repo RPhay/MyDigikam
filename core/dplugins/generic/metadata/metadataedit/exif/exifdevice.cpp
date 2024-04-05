@@ -761,8 +761,8 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
 
     if (d->exposureTimeCheck->isChecked())
     {
-        meta.setExifTagRational("Exif.Photo.ExposureTime", d->exposureTimeNumEdit->value(),
-                                                           d->exposureTimeDenEdit->value());
+        meta.setExifTagURational("Exif.Photo.ExposureTime", d->exposureTimeNumEdit->value(),
+                                                            d->exposureTimeDenEdit->value());
 
         double exposureTime = (double)(d->exposureTimeNumEdit->value()) /
                               (double)(d->exposureTimeDenEdit->value());
@@ -809,7 +809,7 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
         meta.setExifTagLong("Exif.Photo.ISOSpeedRatings", d->ISOSpeedCB->currentText().toLong());
 
         meta.convertToRational(d->ISOSpeedCB->currentText().toDouble(), &num, &den, 1);
-        meta.setExifTagRational("Exif.Photo.ExposureIndex", num, den);
+        meta.setExifTagURational("Exif.Photo.ExposureIndex", num, den);
     }
     else if (d->ISOSpeedCheck->isValid())
     {
