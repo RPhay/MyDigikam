@@ -390,7 +390,7 @@ void EXIFLens::applyMetadata(const DMetadata& meta)
         meta.removeExifTag("Exif.Photo.FocalLength");
 
     if (d->focalLength35mmCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.FocalLengthIn35mmFilm", d->focalLength35mmEdit->value());
+        meta.setExifTagUShort("Exif.Photo.FocalLengthIn35mmFilm", d->focalLength35mmEdit->value());
     else
         meta.removeExifTag("Exif.Photo.FocalLengthIn35mmFilm");
 

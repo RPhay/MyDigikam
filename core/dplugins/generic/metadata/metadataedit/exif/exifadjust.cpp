@@ -342,27 +342,27 @@ void EXIFAdjust::applyMetadata(const DMetadata& meta)
         meta.removeExifTag("Exif.Photo.BrightnessValue");
 
     if (d->gainControlCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.GainControl", d->gainControlCB->currentIndex());
+        meta.setExifTagUShort("Exif.Photo.GainControl", d->gainControlCB->currentIndex());
     else if (d->gainControlCheck->isValid())
         meta.removeExifTag("Exif.Photo.GainControl");
 
     if (d->contrastCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.Contrast", d->contrastCB->currentIndex());
+        meta.setExifTagUShort("Exif.Photo.Contrast", d->contrastCB->currentIndex());
     else if (d->contrastCheck->isValid())
         meta.removeExifTag("Exif.Photo.Contrast");
 
     if (d->saturationCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.Saturation", d->saturationCB->currentIndex());
+        meta.setExifTagUShort("Exif.Photo.Saturation", d->saturationCB->currentIndex());
     else if (d->saturationCheck->isValid())
         meta.removeExifTag("Exif.Photo.Saturation");
 
     if (d->sharpnessCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.Sharpness", d->sharpnessCB->currentIndex());
+        meta.setExifTagUShort("Exif.Photo.Sharpness", d->sharpnessCB->currentIndex());
     else if (d->sharpnessCheck->isValid())
         meta.removeExifTag("Exif.Photo.Sharpness");
 
     if (d->customRenderedCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.CustomRendered", d->customRenderedCB->currentIndex());
+        meta.setExifTagUShort("Exif.Photo.CustomRendered", d->customRenderedCB->currentIndex());
     else if (d->customRenderedCheck->isValid())
         meta.removeExifTag("Exif.Photo.CustomRendered");
 }

@@ -369,7 +369,7 @@ void EXIFLight::applyMetadata(const DMetadata& meta)
         else if (val == 20)
             val = 255;
 
-        meta.setExifTagLong("Exif.Photo.LightSource", val);
+        meta.setExifTagUShort("Exif.Photo.LightSource", val);
     }
     else if (d->lightSourceCheck->isValid())
     {
@@ -379,7 +379,7 @@ void EXIFLight::applyMetadata(const DMetadata& meta)
     if (d->flashModeCheck->isChecked())
     {
         long val = d->flashModeCB->currentIndex();
-        meta.setExifTagLong("Exif.Photo.Flash", d->flashModeMap[val].id());
+        meta.setExifTagUShort("Exif.Photo.Flash", d->flashModeMap[val].id());
     }
     else if (d->flashModeCheck->isValid())
     {
@@ -397,7 +397,7 @@ void EXIFLight::applyMetadata(const DMetadata& meta)
     }
 
     if (d->whiteBalanceCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.WhiteBalance", d->whiteBalanceCB->currentIndex());
+        meta.setExifTagUShort("Exif.Photo.WhiteBalance", d->whiteBalanceCB->currentIndex());
     else if (d->whiteBalanceCheck->isValid())
         meta.removeExifTag("Exif.Photo.WhiteBalance");
 }

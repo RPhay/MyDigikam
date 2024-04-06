@@ -115,7 +115,7 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         if (identify->focalLengthIn35mmFilm != -1)
         {
-            setExifTagLong("Exif.Photo.FocalLengthIn35mmFilm", identify->focalLengthIn35mmFilm);
+            setExifTagUShort("Exif.Photo.FocalLengthIn35mmFilm", identify->focalLengthIn35mmFilm);
         }
 
         if (identify->maxAperture != -1.0F)
@@ -131,22 +131,22 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
 
         if (identify->flashUsed != -1)
         {
-            setExifTagLong("Exif.Photo.Flash", identify->flashUsed);
+            setExifTagUShort("Exif.Photo.Flash", identify->flashUsed);
         }
 
         if (identify->meteringMode != -1)
         {
-            setExifTagLong("Exif.Image.MeteringMode", identify->meteringMode);
+            setExifTagUShort("Exif.Image.MeteringMode", identify->meteringMode);
         }
 
         if (identify->exposureProgram != -1)
         {
-            setExifTagLong("Exif.Photo.ExposureProgram", identify->exposureProgram);
+            setExifTagUShort("Exif.Photo.ExposureProgram", identify->exposureProgram);
         }
 
         if (identify->sensitivity != -1)
         {
-            setExifTagLong("Exif.Photo.ISOSpeedRatings", lroundf(identify->sensitivity));
+            setExifTagUShort("Exif.Photo.ISOSpeedRatings", lroundf(identify->sensitivity));
         }
 
         if (identify->baselineExposure != -999.0F)
@@ -257,7 +257,7 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
                 }
             }
 
-            setExifTagLong("Exif.Image.Orientation", orientation);
+            setExifTagUShort("Exif.Image.Orientation", orientation);
         }
 
         if (identify->imageSize.isValid())

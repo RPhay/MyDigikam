@@ -777,12 +777,12 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
     }
 
     if      (d->exposureProgramCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.ExposureProgram", d->exposureProgramCB->currentIndex());
+        meta.setExifTagUShort("Exif.Photo.ExposureProgram", d->exposureProgramCB->currentIndex());
     else if (d->exposureProgramCheck->isValid())
         meta.removeExifTag("Exif.Photo.ExposureProgram");
 
     if      (d->exposureModeCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.ExposureMode", d->exposureModeCB->currentIndex());
+        meta.setExifTagUShort("Exif.Photo.ExposureMode", d->exposureModeCB->currentIndex());
     else if (d->exposureModeCheck->isValid())
         meta.removeExifTag("Exif.Photo.ExposureMode");
 
@@ -799,14 +799,14 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
     if      (d->meteringModeCheck->isChecked())
     {
         long met = d->meteringModeCB->currentIndex();
-        meta.setExifTagLong("Exif.Photo.MeteringMode", (met > 6) ? 255 : met);
+        meta.setExifTagUShort("Exif.Photo.MeteringMode", (met > 6) ? 255 : met);
     }
     else if (d->meteringModeCheck->isValid())
         meta.removeExifTag("Exif.Photo.MeteringMode");
 
     if      (d->ISOSpeedCheck->isChecked())
     {
-        meta.setExifTagLong("Exif.Photo.ISOSpeedRatings", d->ISOSpeedCB->currentText().toLong());
+        meta.setExifTagUShort("Exif.Photo.ISOSpeedRatings", d->ISOSpeedCB->currentText().toLong());
 
         meta.convertToRational(d->ISOSpeedCB->currentText().toDouble(), &num, &den, 1);
         meta.setExifTagURational("Exif.Photo.ExposureIndex", num, den);
@@ -820,7 +820,7 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
     if      (d->sensingMethodCheck->isChecked())
     {
         long sem = d->sensingMethodCB->currentIndex();
-        meta.setExifTagLong("Exif.Photo.SensingMethod", sem > 4 ? sem+2 : sem+1);
+        meta.setExifTagUShort("Exif.Photo.SensingMethod", sem > 4 ? sem+2 : sem+1);
     }
     else if (d->sensingMethodCheck->isValid())
     {
@@ -828,12 +828,12 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
     }
 
     if      (d->sceneTypeCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.SceneCaptureType", d->sceneTypeCB->currentIndex());
+        meta.setExifTagUShort("Exif.Photo.SceneCaptureType", d->sceneTypeCB->currentIndex());
     else if (d->sceneTypeCheck->isValid())
         meta.removeExifTag("Exif.Photo.SceneCaptureType");
 
     if      (d->subjectDistanceTypeCheck->isChecked())
-        meta.setExifTagLong("Exif.Photo.SubjectDistanceRange", d->subjectDistanceTypeCB->currentIndex());
+        meta.setExifTagUShort("Exif.Photo.SubjectDistanceRange", d->subjectDistanceTypeCB->currentIndex());
     else if (d->subjectDistanceTypeCheck->isValid())
         meta.removeExifTag("Exif.Photo.SubjectDistanceRange");
 }
