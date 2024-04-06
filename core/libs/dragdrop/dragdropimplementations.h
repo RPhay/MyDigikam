@@ -36,7 +36,7 @@ public:
      * redirecting drag-and-drop support to a handler.
      * Include the macro DECLARE_Model_DRAG_DROP_METHODS in your derived QAbstractItemModel class.
      */
-    DragDropModelImplementation();
+    DragDropModelImplementation() = default;
     virtual ~DragDropModelImplementation();
 
     /**
@@ -91,7 +91,7 @@ public:
 
 protected:
 
-    AbstractItemDragDropHandler* m_dragDropHandler;
+    AbstractItemDragDropHandler* m_dragDropHandler = nullptr;
 
 private:
 

@@ -43,10 +43,6 @@ const QString DTrash::IMAGEID_JSON_KEY           = QLatin1String("imageid");
 
 // ----------------------------------------------
 
-DTrash::DTrash()
-{
-}
-
 bool DTrash::deleteImage(const QString& imagePath, const QDateTime& deleteTime)
 {
     QString collection = CollectionManager::instance()->albumRootPath(imagePath);

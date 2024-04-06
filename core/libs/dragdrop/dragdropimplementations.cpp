@@ -32,11 +32,6 @@ namespace Digikam
 
 // ------------ Model sample implementation -------------
 
-DragDropModelImplementation::DragDropModelImplementation()
-    : m_dragDropHandler(nullptr)
-{
-}
-
 DragDropModelImplementation::~DragDropModelImplementation()
 {
 }

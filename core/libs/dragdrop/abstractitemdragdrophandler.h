@@ -76,7 +76,7 @@ public:
 
 protected:
 
-    QAbstractItemModel* m_model;
+    QAbstractItemModel* m_model = nullptr;
 };
 
 } // namespace Digikam

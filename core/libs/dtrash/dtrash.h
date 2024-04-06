@@ -107,7 +107,7 @@ private:
 
 private:
 
-    DTrash();
+    DTrash() = default;
 };
 
 } // namespace Digikam

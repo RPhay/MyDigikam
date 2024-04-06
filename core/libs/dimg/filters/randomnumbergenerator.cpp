@@ -34,9 +34,12 @@ namespace Digikam
 
 NonDeterministicRandomData::NonDeterministicRandomData(int s)
 {
+
 #ifndef Q_OS_WIN
+
     {
         // Try urandom for UNIX platforms.
+
         QFile urandom(QLatin1String("/dev/urandom"));
 
         if (urandom.exists() && urandom.open(QIODevice::ReadOnly))
@@ -52,6 +55,7 @@ NonDeterministicRandomData::NonDeterministicRandomData(int s)
             urandom.close();
         }
     }
+
 #endif
 
     /*
@@ -85,20 +89,15 @@ public:
 
     enum
     {
-        // guaranteed constant initial seed, do not change
-        InitialSeed = 5489
+        InitialSeed = 5489  ///< guaranteed constant initial seed, do not change
     };
 
 public:
 
-    explicit Private()
-      : seed(InitialSeed),
-        engine(InitialSeed)
-    {
-    }
+    Private() = default;
 
-    quint32        seed;
-    QRandomGenerator engine;
+    quint32          seed   = InitialSeed;
+    QRandomGenerator engine = QRandomGenerator(InitialSeed);
 };
 
 RandomNumberGenerator::RandomNumberGenerator()

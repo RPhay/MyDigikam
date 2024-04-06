@@ -281,16 +281,16 @@ protected:
 
 protected:
 
-    int                 m_version;
+    int                 m_version           = 1;
 
-    bool                m_wasCancelled;
+    bool                m_wasCancelled      = false;
 
     /**
      * The progress span that a slave filter uses in the parent filter's progress.
      */
-    int                 m_progressBegin;
-    int                 m_progressSpan;
-    int                 m_progressCurrent;  ///< To prevent signals bombarding with progress indicator value in postProgress().
+    int                 m_progressBegin     = 0;
+    int                 m_progressSpan      = 0;
+    int                 m_progressCurrent   = 0;  ///< To prevent signals bombarding with progress indicator value in postProgress().
 
     /**
      * Filter name.
@@ -310,12 +310,12 @@ protected:
     /**
      * The current slave. Any filter might want to use another filter while processing.
      */
-    DImgThreadedFilter* m_slave;
+    DImgThreadedFilter* m_slave             = nullptr;
 
     /**
      * The master of this slave filter. Progress info will be routed to this one.
      */
-    DImgThreadedFilter* m_master;
+    DImgThreadedFilter* m_master            = nullptr;
 };
 
 } // namespace Digikam
