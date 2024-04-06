@@ -45,6 +45,7 @@ if [[ $MACOS_MAJOR -lt 11 && $MACOS_MINOR -lt 9 ]]; then
 fi
 
 if [[ ! -d /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX$MACOS_MAJOR.$MACOS_MINOR.sdk ]] ; then
+
     echo "XCode Target SDK $MACOS_MAJOR.$MACOS_MINOR as minimal version is not installed in /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs"
 
     if [[ ! -d $DOWNLOAD_DIR/macos-sdk.git ]] ; then

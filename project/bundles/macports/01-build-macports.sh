@@ -51,19 +51,7 @@ export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/q
 #################################################################################################
 # Check if /opt exists and standard Macports install path
 
-if [ -d "/opt" ] ; then
-
-    if [ -d "/opt/local" ] ; then
-
-        echo "---------- A standard Macports install exists on /opt/local."
-        echo "           To prevent wrong links from this bundle to this repository"
-        echo "           this one must be disabled (moving to /opt/local.back for ex)."
-        echo "---------- Aborting..."
-        exit;
-
-    fi
-
-else
+if [ ! -d "/opt" ] ; then
 
     echo "---------- /opt do not exist, creating"
 

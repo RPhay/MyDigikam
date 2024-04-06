@@ -16,7 +16,7 @@ set -e
 
 . ../common.sh
 StartScript
-CommonChecks
+ChecksRunAsRoot
 
 # Uninstall Macports packages
 

@@ -16,7 +16,7 @@ BUILDING_DIR="`pwd`/temp.build"
 ########################################################################
 
 # Target macOS architecture: "x86_64" for Intel 64 bits, or "arm64" for Apple Silicon 64 bits.
-ARCH_TARGET="x86_64"
+ARCH_TARGET="`uname -m`"
 
 if [[ $ARCH_TARGET = "x86_64" ]] ; then
 
@@ -50,7 +50,7 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
 elif [[ $ARCH_TARGET = "arm64" ]] ; then
 
     # Apple Silicon is supported since macOS BigSur
-    OSX_MIN_TARGET="11.0"
+    OSX_MIN_TARGET="11.3"
 
 else
 
@@ -58,6 +58,8 @@ else
     exit -1
 
 fi
+
+echo "Target Architecture: $ARCH_TARGET"
 
 # Directory to build and install Macports packages.
 INSTALL_PREFIX="/opt/digikam.org.$ARCH_TARGET"
