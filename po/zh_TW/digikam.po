@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 01:39+0000\n"
-"PO-Revision-Date: 2024-03-22 07:46+0900\n"
+"POT-Creation-Date: 2024-04-06 01:42+0000\n"
+"PO-Revision-Date: 2024-04-06 01:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -2834,9 +2834,9 @@ msgstr "全螢幕顯示"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:487
+#: core/libs/album/engine/album.cpp:491
 #: core/libs/album/manager/albummanager.cpp:173
-#: core/libs/album/treeview/albumselectiontreeview.cpp:266
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:178
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -2924,7 +2924,7 @@ msgid "No Tags Album"
 msgstr "沒有標籤的相簿"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:560
+#: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -15697,7 +15697,7 @@ msgid "Close window"
 msgstr "關閉視窗"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:309
+#: core/libs/timeadjust/timeadjustsettings.cpp:310
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Timestamps"
@@ -15705,7 +15705,7 @@ msgid "Timestamp Used"
 msgstr "時間"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:311
+#: core/libs/timeadjust/timeadjustsettings.cpp:312
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Timestamps"
@@ -26516,76 +26516,76 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw Raw 轉換"
 
-#: core/libs/album/engine/album.cpp:408
+#: core/libs/album/engine/album.cpp:412
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "垃圾桶"
 
-#: core/libs/album/engine/album.cpp:759
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "目前時間軸搜尋"
 
-#: core/libs/album/engine/album.cpp:765
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "目前的影像模糊搜尋"
 
-#: core/libs/album/engine/album.cpp:769
+#: core/libs/album/engine/album.cpp:778
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "目前的模糊速寫搜尋"
 
-#: core/libs/album/engine/album.cpp:776
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Map Search"
 msgstr "目前的地圖搜尋"
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:793
 #, kde-format
 msgid "Current Search"
 msgstr "目前搜尋"
 
-#: core/libs/album/engine/album.cpp:784
+#: core/libs/album/engine/album.cpp:798
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "目前的重複項目搜尋"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:241
+#: core/libs/album/engine/albummodificationhelper.cpp:238
 #, kde-format
 msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:254
+#: core/libs/album/engine/albummodificationhelper.cpp:251
 #, fuzzy, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
 "</p>"
 msgstr "刪除檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:286
+#: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "重新命名相簿 (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:290
+#: core/libs/album/engine/albummodificationhelper.cpp:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
 msgstr "重新命名相簿根 (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:293
+#: core/libs/album/engine/albummodificationhelper.cpp:290
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
 msgstr "輸入新的相簿名稱："
 
-#: core/libs/album/engine/albumparser.cpp:86
+#: core/libs/album/engine/albumparser.cpp:82
 #, kde-format
 msgid "Scanning albums"
 msgstr "掃描相簿中"
@@ -27117,38 +27117,38 @@ msgstr "右鍵功能表"
 msgid "Empty Trash"
 msgstr "清空垃圾桶"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:272
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Rating: "
 msgstr "評分："
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:289
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:282
 #, kde-format
 msgctxt "@info: rating label"
 msgid "No Rating"
 msgstr "無評等"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:305
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:298
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Colors: "
 msgstr "顏色："
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:314
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:308
 #, kde-format
 msgctxt "@info: color label name"
 msgid "No Color"
 msgstr "無顏色"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:318
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:314
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:471
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "紅色"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:320
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, kde-format
 msgctxt "@info: color label name"
@@ -27162,94 +27162,94 @@ msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "黃色"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:330
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:332
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "綠色"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "藍色"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:344
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "紫紅色"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:342
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "灰色"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:356
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "黑色"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:362
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
 msgstr "白色"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:366
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:381
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Picks: "
 msgstr "挑選："
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:375
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:391
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr "無挑選"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:379
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:397
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:308
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "已拒絕"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:403
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "待處理"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:387
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:409
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
 msgstr "已接受"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:452
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:477
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
 msgstr "已匯出旗標"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:456
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:481
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "旗標相簿"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -27257,56 +27257,56 @@ msgstr "旗標相簿"
 msgid "Expand Selected Nodes"
 msgstr "展開選取的節點"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, kde-format
 msgid "Expand all Albums"
 msgstr "展開所有相簿"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "遞迴折疊選取的項目"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:225
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "折疊所有相簿"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:228
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "尋找重複項目..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:231
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
 msgid "Scan for Faces"
 msgstr "掃描臉孔"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "修復隱藏項目"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:237
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "重新整理"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:302
+#: core/libs/album/treeview/albumselectiontreeview.cpp:286
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "掃描臉孔"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:303
+#: core/libs/album/treeview/albumselectiontreeview.cpp:287
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "要掃描子相簿嗎？"
 
-#: core/libs/album/treeview/labelstreeview.cpp:100
+#: core/libs/album/treeview/labelstreeview.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
@@ -35304,7 +35304,7 @@ msgstr "南非荷蘭語"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Amharic"
-msgstr ""
+msgstr "阿姆哈拉語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:337
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:485
@@ -35399,10 +35399,10 @@ msgstr "加泰羅尼亞語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:350
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:498
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Corsican"
-msgstr "科西嘉語 (法國)"
+msgstr "科西嘉語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:351
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:499
@@ -35437,7 +35437,7 @@ msgstr "德語"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dzongkha"
-msgstr ""
+msgstr "宗卡語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:356
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:504
@@ -35483,10 +35483,10 @@ msgstr "巴斯克語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:362
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:510
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Persian(farsi)"
-msgstr "波斯語 (伊朗)"
+msgstr "波斯語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:363
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:511
@@ -35694,17 +35694,17 @@ msgstr "柬埔寨與"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:392
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:540
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Kannada"
-msgstr "加拿大"
+msgstr "卡納達語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:393
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:541
 #, kde-format
 msgctxt "@info: country code"
 msgid "Korean"
-msgstr "韓語"
+msgstr "韓文"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:394
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:542
@@ -35718,7 +35718,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kurdish"
-msgstr ""
+msgstr "庫德語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:396
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:544
@@ -35774,7 +35774,7 @@ msgstr "馬達加斯加"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Maori"
-msgstr ""
+msgstr "毛利語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:404
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:552
@@ -35788,7 +35788,7 @@ msgstr "馬其頓語"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Malayalam"
-msgstr "馬來亞拉姆語"
+msgstr "馬拉雅拉姆語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:406
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:554
@@ -35873,7 +35873,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oriya"
-msgstr ""
+msgstr "歐利亞語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:418
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:566
@@ -35959,14 +35959,14 @@ msgstr "梵文 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sindhi"
-msgstr ""
+msgstr "信德語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:430
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:578
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sangho"
-msgstr ""
+msgstr "桑戈語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:431
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:579
@@ -35977,8 +35977,7 @@ msgstr "單視角"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:432
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:580
-#, fuzzy, kde-format
-#| msgid "Slovak"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Slovak"
 msgstr "斯洛伐克語"
@@ -36014,10 +36013,10 @@ msgstr "索馬利亞"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:437
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:585
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Albanian"
-msgstr "阿爾巴尼亞"
+msgstr "阿爾巴尼亞語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:438
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:586
@@ -36071,10 +36070,10 @@ msgstr "泰米爾語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:445
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:593
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Telugu"
-msgstr "泰盧固語 (印度)"
+msgstr "泰盧固語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:446
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:594
@@ -36144,10 +36143,10 @@ msgstr "東加"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:455
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:603
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Tatar"
-msgstr "卡達"
+msgstr "韃靼語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:456
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:604
@@ -36175,7 +36174,7 @@ msgstr "烏克蘭語"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Urdu"
-msgstr ""
+msgstr "烏爾都語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:460
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:608
@@ -36210,21 +36209,21 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Xhosa"
-msgstr ""
+msgstr "南非柯薩語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:465
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:613
 #, kde-format
 msgctxt "@info: country code"
 msgid "Yiddish"
-msgstr ""
+msgstr "意第緒語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:466
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:614
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: country code"
 msgid "Yoruba"
-msgstr "阿魯巴"
+msgstr "優魯巴語"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:467
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:615
@@ -36283,7 +36282,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "色彩旗標"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1386
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1408
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -37604,7 +37603,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:282
+#: core/libs/timeadjust/timeadjustsettings.cpp:283
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -40101,7 +40100,7 @@ msgid "File name timestamp"
 msgstr "檔名時間戳"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:180
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#: core/libs/timeadjust/timeadjustsettings.cpp:276
 #, kde-format
 msgid "File last modified"
 msgstr "檔案上次變更"
@@ -40112,25 +40111,25 @@ msgid "EXIF/IPTC/XMP"
 msgstr "EXIF/IPTC/XMP"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, kde-format
 msgid "EXIF: created"
 msgstr "EXIF：建立時間"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:191
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "EXIF: original"
 msgstr "EXIF：原始"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:192
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, kde-format
 msgid "EXIF: digitized"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:193
-#: core/libs/timeadjust/timeadjustsettings.cpp:280
+#: core/libs/timeadjust/timeadjustsettings.cpp:281
 #, fuzzy, kde-format
 #| msgid "Created:"
 msgid "IPTC: created"
@@ -40214,21 +40213,27 @@ msgid "Update timestamps with ExifTool"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
+#, fuzzy, kde-format
+#| msgid "Set this option to display the image file size."
+msgid "Use this option primarily with video files"
+msgstr "啟用這個選項會顯示影像檔案大小。"
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:280
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "EXIF：縮圖"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:281
+#: core/libs/timeadjust/timeadjustsettings.cpp:282
 #, kde-format
 msgid "XMP: Video"
 msgstr "XMP: 影片"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:310
+#: core/libs/timeadjust/timeadjustsettings.cpp:311
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr "時間戳調整"
@@ -43915,7 +43920,7 @@ msgstr "南非荷蘭語 (南非)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:44
 msgctxt "@info: country code"
 msgid "Amharic (Ethiopia)"
-msgstr "阿姆哈拉語 (衣索比亞)"
+msgstr "阿姆哈拉語（衣索比亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:45
 msgctxt "@info: country code"
@@ -43985,7 +43990,7 @@ msgstr "阿拉伯語 (茅利塔尼亞)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:58
 msgctxt "@info: country code"
 msgid "Arabic (Palestinian West Bank and Gaza)"
-msgstr ""
+msgstr "阿拉伯語（巴勒斯坦約旦河西岸與加薩）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:59
 msgctxt "@info: country code"
@@ -44040,12 +44045,12 @@ msgstr "阿薩姆語 (印度)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:69
 msgctxt "@info: country code"
 msgid "Azerbaijani (Republic of Azerbaijan)"
-msgstr ""
+msgstr "亞塞拜然語（亞塞拜然共和國）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:70
 msgctxt "@info: country code"
 msgid "Bashkir (Russia)"
-msgstr "巴什吉爾語 (俄羅斯)"
+msgstr "巴什吉爾語（俄羅斯）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:71
 msgctxt "@info: country code"
@@ -44112,7 +44117,7 @@ msgstr "加泰隆尼亞語 (法國)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:85
 msgctxt "@info: country code"
 msgid "Cebuano (Philippines)"
-msgstr "宿霧語 (菲律賓)"
+msgstr "宿霧語（菲律賓）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:86
 msgctxt "@info: country code"
@@ -44127,11 +44132,9 @@ msgid "Chamorro (Northern Mariana Islands)"
 msgstr "北馬里亞納群島 "
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:88
-#, fuzzy
-#| msgid "Corsican (France)"
 msgctxt "@info: country code"
 msgid "Corsican (France)"
-msgstr "科西嘉語 (法國)"
+msgstr "科西嘉語（法國）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:89
 msgctxt "@info: country code"
@@ -44201,35 +44204,29 @@ msgid "English (Antigua and Barbuda)"
 msgstr "英語 (安地卡及巴布達)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:102
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Anguilla)"
-msgstr "英語 (印度)"
+msgstr "英語（安圭拉）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:103
 msgctxt "@info: country code"
 msgid "English (American Samoa)"
-msgstr "英語 (美屬薩摩亞)"
+msgstr "英語（美屬薩摩亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:104
 msgctxt "@info: country code"
 msgid "English (Australia)"
-msgstr "英語 (澳大利亞)"
+msgstr "英語（澳大利亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:105
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Barbados)"
-msgstr "英語 (加拿大)"
+msgstr "英語（巴貝多）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:106
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Bermuda)"
-msgstr "英語 (印度)"
+msgstr "英語（百慕達）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:107
 #, fuzzy
@@ -44246,89 +44243,69 @@ msgid "English (Bahamas)"
 msgstr "英語 (加拿大)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:109
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Botswana)"
-msgstr "英語 (加拿大)"
+msgstr "英語（波札那）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:110
-#, fuzzy
-#| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (Belize)"
-msgstr "英語 (貝里斯)"
+msgstr "英語（貝里斯）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:111
 msgctxt "@info: country code"
 msgid "English (Canada)"
-msgstr "英語 (加拿大)"
+msgstr "英語（加拿大）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:112
 msgctxt "@info: country code"
 msgid "English (Caribbean)"
-msgstr "英語 (加勒比海)"
+msgstr "英語（加勒比海）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:113
-#, fuzzy
-#| msgid "English (Ireland)"
 msgctxt "@info: country code"
 msgid "English (Cook Islands)"
-msgstr "英語 (愛爾蘭)"
+msgstr "英語（庫克群島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:114
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Cameroon)"
-msgstr "英語 (加拿大)"
+msgstr "英語（喀麥隆）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:115
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Dominica)"
-msgstr "英語 (牙買加)"
+msgstr "英語（多明尼加）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:116
-#, fuzzy
-#| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Eritrea)"
-msgstr "英語 (加勒比海)"
+msgstr "英語（厄利垂亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:117
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Ethiopia)"
-msgstr "英語 (印度)"
+msgstr "英語（衣索比亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:118
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Fiji)"
-msgstr "英語 (印度)"
+msgstr "英語（斐濟）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:119
-#, fuzzy
-#| msgid "Falkland Islands"
 msgctxt "@info: country code"
 msgid "English (Falkland Islands)"
-msgstr "福克蘭群島"
+msgstr "英語（福克蘭群島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:120
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Micronesia)"
-msgstr "英語 (印度)"
+msgstr "英語（密克羅尼西亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:121
 msgctxt "@info: country code"
 msgid "English (United Kingdom)"
-msgstr "英語 (英國)"
+msgstr "英語（英國）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:122
 #, fuzzy
@@ -44345,11 +44322,9 @@ msgid "English (Ghana)"
 msgstr "英語 (加拿大)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:124
-#, fuzzy
-#| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "English (Gibraltar)"
-msgstr "英語 (澳大利亞)"
+msgstr "英語（直布羅陀）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:125
 #, fuzzy
@@ -44359,11 +44334,9 @@ msgid "English (Gambia)"
 msgstr "英語 (牙買加)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:126
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Guam)"
-msgstr "英語 (牙買加)"
+msgstr "英語（關島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:127
 #, fuzzy
@@ -44375,69 +44348,57 @@ msgstr "英語 (加拿大)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:128
 msgctxt "@info: country code"
 msgid "English (Ireland)"
-msgstr "英語 (愛爾蘭)"
+msgstr "英語（愛爾蘭）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:129
 msgctxt "@info: country code"
 msgid "English (Israel)"
-msgstr "英語 (以色列)"
+msgstr "英語（以色列）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:130
 msgctxt "@info: country code"
 msgid "English (India)"
-msgstr "英語 (印度)"
+msgstr "英語（印度）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:131
-#, fuzzy
-#| msgid "British Indian Ocean Territory"
 msgctxt "@info: country code"
 msgid "English (British Indian Ocean Territ)"
-msgstr "英屬印度洋領地"
+msgstr "英語（英屬印度洋領地）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:132
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Jamaica)"
-msgstr "英語 (牙買加)"
+msgstr "英語（牙買加）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:133
 msgctxt "@info: country code"
 msgid "English (Kenya)"
-msgstr "英語 (肯亞)"
+msgstr "英語（肯亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:134
 msgctxt "@info: country code"
 msgid "English (Kiribati)"
-msgstr "英語 (吉里巴斯)"
+msgstr "英語（吉里巴斯）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:135
-#, fuzzy
-#| msgid "English (United States)"
 msgctxt "@info: country code"
 msgid "English (St. Kitts-Nevis)"
-msgstr "英語 (美國)"
+msgstr "英語（聖基茨和尼維斯）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:136
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Cayman Islands)"
-msgstr "英語 (加拿大)"
+msgstr "英語（開曼群島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:137
-#, fuzzy
-#| msgid "English (South Africa)"
 msgctxt "@info: country code"
 msgid "English (St. Lucia)"
-msgstr "英語 (南非)"
+msgstr "英語（聖露西亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:138
-#, fuzzy
-#| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Liberia)"
-msgstr "英語 (加勒比海)"
+msgstr "英語（賴比瑞亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:139
 #, fuzzy
@@ -44447,32 +44408,24 @@ msgid "English (Lesotho)"
 msgstr "英語 (澳大利亞)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:140
-#, fuzzy
-#| msgid "Northern Mariana Islands"
 msgctxt "@info: country code"
 msgid "English (Northern Mariana Islands)"
-msgstr "北馬里亞納群島 "
+msgstr "英語（北馬里亞納群島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:141
-#, fuzzy
-#| msgid "English (United States)"
 msgctxt "@info: country code"
 msgid "English (Montserrat)"
-msgstr "英語 (美國)"
+msgstr "英語（蒙瑟拉特）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:142
-#, fuzzy
-#| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Malta)"
-msgstr "英語 (馬來西亞)"
+msgstr "英語（馬爾他）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:143
-#, fuzzy
-#| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Mauritius)"
-msgstr "英語 (馬來西亞)"
+msgstr "英語（模裡西斯）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:144
 #, fuzzy
@@ -44482,11 +44435,9 @@ msgid "English (Malawi)"
 msgstr "英語 (馬來西亞)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:145
-#, fuzzy
-#| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Malaysia)"
-msgstr "英語 (馬來西亞)"
+msgstr "英語（馬來西亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:146
 #, fuzzy
@@ -44496,25 +44447,19 @@ msgid "English (Namibia)"
 msgstr "英語 (牙買加)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:147
-#, fuzzy
-#| msgid "Norfolk Island"
 msgctxt "@info: country code"
 msgid "English (Norfolk Island)"
-msgstr "諾福克島"
+msgstr "英語（諾福克島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:148
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Nigeria)"
-msgstr "英語 (印度)"
+msgstr "英語（奈及利亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:149
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Nauru)"
-msgstr "英語 (印度)"
+msgstr "英語（諾魯）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:150
 #, fuzzy
@@ -44526,28 +44471,22 @@ msgstr "英語 (貝里斯)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:151
 msgctxt "@info: country code"
 msgid "English (New Zealand)"
-msgstr "英語 (紐西蘭)"
+msgstr "英語（紐西蘭）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:152
-#, fuzzy
-#| msgid "Papua New Guinea"
 msgctxt "@info: country code"
 msgid "English (Papua New Guinea)"
-msgstr "巴布亞紐幾內亞"
+msgstr "英語（巴布亞紐幾內亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:153
-#, fuzzy
-#| msgid "English (Philippines)"
 msgctxt "@info: country code"
 msgid "English (Philippines)"
-msgstr "英語 (菲律賓)"
+msgstr "英語（菲律賓）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:154
-#, fuzzy
-#| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Pakistan)"
-msgstr "英語 (加勒比海)"
+msgstr "英語（巴基斯坦）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:155
 #, fuzzy
@@ -44559,14 +44498,12 @@ msgstr "英語 (牙買加)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:156
 msgctxt "@info: country code"
 msgid "English (Puerto Rico)"
-msgstr "英語 (波多黎各)"
+msgstr "英語（波多黎各）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:157
-#, fuzzy
-#| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Palau)"
-msgstr "英語 (馬來西亞)"
+msgstr "英語（帛琉）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:158
 #, fuzzy
@@ -44576,60 +44513,44 @@ msgid "English (Rwanda)"
 msgstr "英語 (加拿大)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:159
-#, fuzzy
-#| msgid "Solomon Islands"
 msgctxt "@info: country code"
 msgid "English (Solomon Islands)"
-msgstr "索羅門群島"
+msgstr "英語（索羅門群島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:160
-#, fuzzy
-#| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (Seychelles)"
-msgstr "英語 (貝里斯)"
+msgstr "英語（塞席爾）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:161
-#, fuzzy
-#| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "English (Singapore)"
-msgstr "英語 (新加坡)"
+msgstr "英語（新加坡）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:162
-#, fuzzy
-#| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (St. Helena)"
-msgstr "英語 (貝里斯)"
+msgstr "英語（聖赫勒拿）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:163
-#, fuzzy
-#| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "English (Sierra Leone)"
-msgstr "英語 (新加坡)"
+msgstr "英語（獅子山）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:164
-#, fuzzy
-#| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Somalia)"
-msgstr "英語 (牙買加)"
+msgstr "英語（索馬利亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:165
-#, fuzzy
-#| msgid "English (New Zealand)"
 msgctxt "@info: country code"
 msgid "English (Swaziland)"
-msgstr "英語 (紐西蘭)"
+msgstr "英語（史瓦濟蘭）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:166
-#, fuzzy
-#| msgid "Turks and Caicos Islands"
 msgctxt "@info: country code"
 msgid "English (Turks and Caicos Islands)"
-msgstr "特克斯和凱科斯群島"
+msgstr "英語（特克斯和凱科斯群島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:167
 #, fuzzy
@@ -44639,11 +44560,9 @@ msgid "English (Tokelau)"
 msgstr "英語 (愛爾蘭)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:168
-#, fuzzy
-#| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Tonga)"
-msgstr "英語 (印度)"
+msgstr "英語（東加）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:169
 #, fuzzy
@@ -44653,37 +44572,29 @@ msgid "English (Trinidad)"
 msgstr "英語 (千里達)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:170
-#, fuzzy
-#| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Uganda)"
-msgstr "英語 (加拿大)"
+msgstr "英語（烏干達）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:171
 msgctxt "@info: country code"
 msgid "English (United States)"
-msgstr "英語 (美國)"
+msgstr "英語（美國）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:172
-#, fuzzy
-#| msgid "St. Vincent and the Grenadines"
 msgctxt "@info: country code"
 msgid "English (St. Vincent and the Grenadi)"
-msgstr "聖文森和格瑞那丁"
+msgstr "英語（聖文森和格瑞那丁）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:173
-#, fuzzy
-#| msgid "British Virgin Islands"
 msgctxt "@info: country code"
 msgid "English (British Virgin Islands)"
-msgstr "英屬維爾京群島 "
+msgstr "英語（英屬維爾京群島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:174
-#, fuzzy
-#| msgid "US Virgin Islands"
 msgctxt "@info: country code"
 msgid "English (U.S. Virgin Islands)"
-msgstr "美屬維京群島"
+msgstr "英語（美屬維京群島）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:175
 #, fuzzy
@@ -44700,11 +44611,9 @@ msgid "English (Western Samoa)"
 msgstr "英語 (澳大利亞)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:177
-#, fuzzy
-#| msgid "English (South Africa)"
 msgctxt "@info: country code"
 msgid "English (South Africa)"
-msgstr "英語 (南非)"
+msgstr "英語（南非）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:178
 #, fuzzy
@@ -44714,18 +44623,14 @@ msgid "English (Zambia)"
 msgstr "英語 (牙買加)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:179
-#, fuzzy
-#| msgid "English (Zimbabwe)"
 msgctxt "@info: country code"
 msgid "English (Zimbabwe)"
-msgstr "英語 (辛巴威)"
+msgstr "英語（辛巴威）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:180
-#, fuzzy
-#| msgid "Breton (France)"
 msgctxt "@info: country code"
 msgid "Esperanto (France)"
-msgstr "布列塔尼語 (法國)"
+msgstr "世界語（法國）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:181
 msgctxt "@info: country code"
@@ -44838,32 +44743,24 @@ msgid "Spanish (Venezuela)"
 msgstr "西班牙語 (委內瑞拉)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:203
-#, fuzzy
-#| msgid "Estonian (Estonia)"
 msgctxt "@info: country code"
 msgid "Estonian (Estonia)"
-msgstr "愛沙尼亞語 (愛沙尼亞)"
+msgstr "愛沙尼亞語（愛沙尼亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:204
-#, fuzzy
-#| msgid "Basque (Basque Country)"
 msgctxt "@info: country code"
 msgid "Basque (Basque Country)"
-msgstr "巴斯克語 (巴斯克地區)"
+msgstr "巴斯克語（巴斯克地區）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:205
-#, fuzzy
-#| msgid "Persian (Iran)"
 msgctxt "@info: country code"
 msgid "Persian (Iran)"
-msgstr "波斯語 (伊朗)"
+msgstr "波斯語（伊朗）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:206
-#, fuzzy
-#| msgid "Finnish (Finland)"
 msgctxt "@info: country code"
 msgid "Finnish (Finland)"
-msgstr "芬蘭語 (芬蘭)"
+msgstr "芬蘭語（芬蘭）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:207
 #, fuzzy
@@ -44873,11 +44770,9 @@ msgid "Filipino (Philippines)"
 msgstr "英語 (菲律賓)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:208
-#, fuzzy
-#| msgid "Fiji Islands"
 msgctxt "@info: country code"
 msgid "Fijian (Fiji)"
-msgstr "斐濟"
+msgstr "斐濟語（斐濟）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:209
 #, fuzzy
@@ -45214,47 +45109,37 @@ msgstr "阿拉伯語 (伊拉克)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:257
 msgctxt "@info: country code"
 msgid "Hawaiian (US state of Hawaii)"
-msgstr ""
+msgstr "夏威夷語（美國夏威夷州）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
-#, fuzzy
-#| msgid "Hebrew (Israel)"
 msgctxt "@info: country code"
 msgid "Modern Hebrew (Israel)"
-msgstr "希伯來語 (以色列)"
+msgstr "現代希伯來語（以色列）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:259
-#, fuzzy
-#| msgid "Hindi (India)"
 msgctxt "@info: country code"
 msgid "Hindi (India)"
-msgstr "印地語 (印度)"
+msgstr "印度語（印度）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:260
 msgctxt "@info: country code"
 msgid "Hmong (Laos)"
-msgstr ""
+msgstr "苗語（寮國）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:261
-#, fuzzy
-#| msgid "Croatian (Bosnia and Herzegovina, Latin)"
 msgctxt "@info: country code"
 msgid "Croatian (Bosnia and Herzegovina, Latin)"
-msgstr "克羅埃西亞語 (波斯尼亞和黑塞哥維那)"
+msgstr "克羅埃西亞語（波斯尼亞和黑塞哥維那，拉丁文字）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:262
-#, fuzzy
-#| msgid "Croatian (Croatia)"
 msgctxt "@info: country code"
 msgid "Croatian (Croatia)"
-msgstr "克羅埃西亞語 (克羅埃西亞)"
+msgstr "克羅埃西亞語（克羅埃西亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:263
-#, fuzzy
-#| msgid "Catalan (France)"
 msgctxt "@info: country code"
 msgid "Haitian Creole (France)"
-msgstr "加達朗語 (法國)"
+msgstr "海地克里奧文（法國）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:264
 #, fuzzy
@@ -45271,11 +45156,9 @@ msgid "Hungarian (Slovenia)"
 msgstr "斯洛維尼亞語 (斯洛維尼亞)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:266
-#, fuzzy
-#| msgid "Armenian (Armenia)"
 msgctxt "@info: country code"
 msgid "Armenian (Armenia)"
-msgstr "亞美尼亞語 (亞美尼亞)"
+msgstr "亞美尼亞語（亞美尼亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:267
 msgctxt "@info: country code"
@@ -45302,72 +45185,54 @@ msgid "Icelandic (Iceland)"
 msgstr "冰島語 (冰島)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:271
-#, fuzzy
-#| msgid "Italian (Switzerland)"
 msgctxt "@info: country code"
 msgid "Italian (Switzerland)"
-msgstr "義大利語 (瑞士)"
+msgstr "義大利語（瑞士）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:272
-#, fuzzy
-#| msgid "Croatian (Croatia)"
 msgctxt "@info: country code"
 msgid "Italian (Croatia)"
-msgstr "克羅埃西亞語 (克羅埃西亞)"
+msgstr "義大利語（克羅埃西亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:273
-#, fuzzy
-#| msgid "Italian (Italy)"
 msgctxt "@info: country code"
 msgid "Italian (Italy)"
-msgstr "義大利語 (義大利)"
+msgstr "義大利語（義大利）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:274
-#, fuzzy
-#| msgid "Slovenian (Slovenia)"
 msgctxt "@info: country code"
 msgid "Italian (Slovenia)"
-msgstr "斯洛維尼亞語 (斯洛維尼亞)"
+msgstr "義大利語（斯洛維尼亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:275
-#, fuzzy
-#| msgid "Catalan (Spain)"
 msgctxt "@info: country code"
 msgid "Italian (San Marino)"
-msgstr "加達朗語 (西班牙)"
+msgstr "義大利語（聖馬力諾）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:276
-#, fuzzy
-#| msgid "Hebrew (Israel)"
 msgctxt "@info: country code"
 msgid "Hebrew (Israel)"
-msgstr "希伯來語 (以色列)"
+msgstr "希伯來語（以色列）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:277
-#, fuzzy
-#| msgid "Japanese (Japan)"
 msgctxt "@info: country code"
 msgid "Japanese (Japan)"
-msgstr "日語 (日本)"
+msgstr "日語（日本）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:278
 msgctxt "@info: country code"
 msgid "Modern Javanese (Indonesia)"
-msgstr ""
+msgstr "現代爪哇語（印尼）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:279
-#, fuzzy
-#| msgid "(Indonesian)"
 msgctxt "@info: country code"
 msgid "Javanese (Indonesia)"
-msgstr "印尼語 (印尼)"
+msgstr "爪哇語（印尼）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:280
-#, fuzzy
-#| msgid "Georgian (Georgia)"
 msgctxt "@info: country code"
 msgid "Georgian (Georgia)"
-msgstr "喬治亞語 (喬治亞)"
+msgstr "喬治亞語（喬治亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:281
 #, fuzzy
@@ -45391,25 +45256,19 @@ msgid "Khmer (Cambodia)"
 msgstr "高棉語 (柬埔寨)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:284
-#, fuzzy
-#| msgid "Kannada (India)"
 msgctxt "@info: country code"
 msgid "Kannada (India)"
-msgstr "坎那達語 (印度)"
+msgstr "卡納達語（印度）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:285
-#, fuzzy
-#| msgid "Korean (South Korea)"
 msgctxt "@info: country code"
 msgid "Korean (South Korea)"
-msgstr "韓語 (南韓)"
+msgstr "韓文（南韓）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:286
-#, fuzzy
-#| msgid "Korean (South Korea)"
 msgctxt "@info: country code"
 msgid "Korean (North Korea)"
-msgstr "韓語 (南韓)"
+msgstr "韓文（北韓）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:287
 #, fuzzy
@@ -45426,11 +45285,9 @@ msgid "Cornish (United Kingdom)"
 msgstr "英語 (英國)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:289
-#, fuzzy
-#| msgid "Irish (Ireland)"
 msgctxt "@info: country code"
 msgid "Kurdish (Iran)"
-msgstr "愛爾蘭語 (愛爾蘭)"
+msgstr "庫德語（伊朗）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:290
 #, fuzzy
@@ -45494,11 +45351,9 @@ msgid "Meadow Mari (Russia)"
 msgstr "韃靼語 (俄羅斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:299
-#, fuzzy
-#| msgid "Maori (New Zealand)"
 msgctxt "@info: country code"
 msgid "Maori (New Zealand)"
-msgstr "毛利語 (紐西蘭)"
+msgstr "毛利語（紐西蘭）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:300
 #, fuzzy
@@ -45508,11 +45363,9 @@ msgid "Macedonian (Macedonia)"
 msgstr "馬其頓語 (馬其頓)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:301
-#, fuzzy
-#| msgid "Malayalam (India)"
 msgctxt "@info: country code"
 msgid "Malayalam (India)"
-msgstr "馬來亞拉姆語 (印度)"
+msgstr "馬拉雅拉姆語（印度）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:302
 msgctxt "@info: country code"
@@ -45571,7 +45424,7 @@ msgstr "馬爾他語 (馬爾他)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:310
 msgctxt "@info: country code"
 msgid "Burmese (Myanmar)"
-msgstr ""
+msgstr "緬甸語（緬甸）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:311
 #, fuzzy
@@ -45658,11 +45511,9 @@ msgid "Occitan (France)"
 msgstr "奧西坦語 (法國)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:323
-#, fuzzy
-#| msgid "Oriya (India)"
 msgctxt "@info: country code"
 msgid "Oriya (India)"
-msgstr "奧里亞語 (印度)"
+msgstr "歐利亞語（印度）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:324
 #, fuzzy
@@ -45778,18 +45629,14 @@ msgid "Sanskrit (India)"
 msgstr "梵文 (印度)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:341
-#, fuzzy
-#| msgid "Hindi (India)"
 msgctxt "@info: country code"
 msgid "Sindhi (India)"
-msgstr "印地語 (印度)"
+msgstr "信德語（印度）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:342
-#, fuzzy
-#| msgid "Urdu (Pakistan)"
 msgctxt "@info: country code"
 msgid "Sindhi (Pakistan)"
-msgstr "烏爾都語 (巴基斯坦)"
+msgstr "信德語（巴基斯坦）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:343
 #, fuzzy
@@ -45813,18 +45660,14 @@ msgid "Sami (Northern, Sweden)"
 msgstr "薩米語 (瑞典北部)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:346
-#, fuzzy
-#| msgid "Sinhala (Sri Lanka)"
 msgctxt "@info: country code"
 msgid "Sinhala (Sri Lanka)"
-msgstr "僧伽羅語 (斯里蘭卡)"
+msgstr "僧伽羅語（斯里蘭卡）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:347
-#, fuzzy
-#| msgid "Slovak (Slovakia)"
 msgctxt "@info: country code"
 msgid "Slovak (Slovakia)"
-msgstr "斯洛伐克語 (斯洛伐克)"
+msgstr "斯洛伐克語（斯洛伐克）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:348
 msgctxt "@info: country code"
@@ -45853,11 +45696,9 @@ msgid "Somali  (Somalia)"
 msgstr "阿拉伯語 (敘利亞)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:352
-#, fuzzy
-#| msgid "Albanian (Albania)"
 msgctxt "@info: country code"
 msgid "Albanian (Albania)"
-msgstr "阿爾巴尼亞語 (阿爾巴尼亞)"
+msgstr "阿爾巴尼亞語（阿爾巴尼亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:353
 #, fuzzy
@@ -45958,11 +45799,9 @@ msgid "Tamil (Singapore)"
 msgstr "英語 (新加坡)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:367
-#, fuzzy
-#| msgid "Telugu (India)"
 msgctxt "@info: country code"
 msgid "Telugu (India)"
-msgstr "泰盧固語 (印度)"
+msgstr "泰盧固語"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:368
 #, fuzzy
@@ -46040,11 +45879,9 @@ msgid "Turkish (Turkey)"
 msgstr "土耳其語 (土耳其)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:379
-#, fuzzy
-#| msgid "Tatar (Russia)"
 msgctxt "@info: country code"
 msgid "Tatar (Russia)"
-msgstr "韃靼語 (俄羅斯)"
+msgstr "韃靼語（俄羅斯）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:380
 #, fuzzy
@@ -46066,25 +45903,19 @@ msgid "Uighur (People's Republic of China)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:383
-#, fuzzy
-#| msgid "Ukrainian (Ukraine)"
 msgctxt "@info: country code"
 msgid "Ukrainian (Ukraine)"
-msgstr "烏克蘭語 (烏克蘭)"
+msgstr "烏克蘭語（烏克蘭）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:384
-#, fuzzy
-#| msgid "Urdu (India)"
 msgctxt "@info: country code"
 msgid "Urdu (India)"
-msgstr "烏爾都語 (印度)"
+msgstr "烏爾都語（印度）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:385
-#, fuzzy
-#| msgid "Urdu (Pakistan)"
 msgctxt "@info: country code"
 msgid "Urdu (Pakistan)"
-msgstr "烏爾都語 (巴基斯坦)"
+msgstr "烏爾都語（巴基斯坦）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:386
 #, fuzzy
@@ -46106,23 +45937,19 @@ msgid "Wolof (Senegal)"
 msgstr "渥魯夫語 (塞內加爾)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:389
-#, fuzzy
-#| msgid "isiXhosa Xhosa (South Africa)"
 msgctxt "@info: country code"
 msgid "IsiXhosa Xhosa (South Africa)"
-msgstr "科薩語 (南非)"
+msgstr "南非柯薩語（南非）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:390
 msgctxt "@info: country code"
 msgid "Yiddish (Germany)"
-msgstr ""
+msgstr "意第緒語（德國）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:391
-#, fuzzy
-#| msgid "Yoruba (Nigeria)"
 msgctxt "@info: country code"
 msgid "Yoruba (Nigeria)"
-msgstr "約魯巴語 (奈及利亞)"
+msgstr "優魯巴語（奈及利亞）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:392
 msgctxt "@info: country code"
@@ -46135,39 +45962,29 @@ msgid "Chinese (People's Republic of China)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:394
-#, fuzzy
-#| msgid "Chinese (Hong Kong SAR, PRC)"
 msgctxt "@info: country code"
 msgid "Chinese (Hong Kong SAR, People's Republic of China)"
-msgstr "中文 (香港特區, 中共)"
+msgstr "中文（香港特別行政區，中華人民共和國）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:395
-#, fuzzy
-#| msgid "Chinese (Macao SAR)"
 msgctxt "@info: country code"
 msgid "Chinese (Macao SAR)"
-msgstr "中文 (澳門特區)"
+msgstr "中文（澳門特別行政區）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:396
-#, fuzzy
-#| msgid "Chinese (Singapore)"
 msgctxt "@info: country code"
 msgid "Chinese (Singapore)"
-msgstr "中文 (新加坡)"
+msgstr "中文（新加坡）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:397
-#, fuzzy
-#| msgid "Chinese (Taiwan)"
 msgctxt "@info: country code"
 msgid "Chinese (Taiwan)"
-msgstr "中文 (臺灣)"
+msgstr "中文（臺灣）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:398
-#, fuzzy
-#| msgid "Chinese (Hong Kong SAR, PRC)"
 msgctxt "@info: country code"
 msgid "Simplified Chinese (People's Republic of China)"
-msgstr "中文 (香港特區, 中共)"
+msgstr "簡體中文（中華人民共和國）"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:399
 #, fuzzy
@@ -46177,229 +45994,197 @@ msgid "isiZulu Zulu (South Africa)"
 msgstr "祖魯語 (南非)"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:46
-#, fuzzy, kde-format
-#| msgid "Afghanistan"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Afghanistan"
 msgstr "阿富汗"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:47
-#, fuzzy, kde-format
-#| msgid "Albania"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Albania"
 msgstr "阿爾巴尼亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:48
-#, fuzzy, kde-format
-#| msgid "Algeria"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Algeria"
 msgstr "阿爾及利亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:49
-#, fuzzy, kde-format
-#| msgid "American Samoa"
+#, kde-format
 msgctxt "@info: country code"
 msgid "American Samoa"
 msgstr "美屬薩摩亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:50
-#, fuzzy, kde-format
-#| msgid "Andorra"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Andorra"
 msgstr "安道爾"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:51
 #: core/libs/widgets/metadata/utils/countryselector.cpp:53
-#, fuzzy, kde-format
-#| msgid "Angola"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Angola"
 msgstr "安哥拉"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:52
-#, fuzzy, kde-format
-#| msgid "Anguilla"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Anguilla"
 msgstr "安圭拉"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:54
-#, fuzzy, kde-format
-#| msgid "Antarctica"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Antarctica"
 msgstr "南極洲"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:55
-#, fuzzy, kde-format
-#| msgid "Antigua and Barbuda"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Antigua and Barbuda"
 msgstr "安地卡及巴布達"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:56
-#, fuzzy, kde-format
-#| msgid "Argentina"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Argentina"
 msgstr "阿根廷"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:57
-#, fuzzy, kde-format
-#| msgid "Armenia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Armenia"
 msgstr "亞美尼亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:58
-#, fuzzy, kde-format
-#| msgid "Aruba"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Aruba"
 msgstr "阿魯巴"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:59
-#, fuzzy, kde-format
-#| msgid "Australia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Australia"
 msgstr "澳大利亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:60
-#, fuzzy, kde-format
-#| msgid "Austria"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Austria"
 msgstr "奧地利"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:61
-#, fuzzy, kde-format
-#| msgid "Azerbaijan"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Azerbaijan"
 msgstr "亞塞拜然"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:62
-#, fuzzy, kde-format
-#| msgid "Bahamas"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bahamas"
 msgstr "巴哈馬"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:63
-#, fuzzy, kde-format
-#| msgid "Bahrain"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bahrain"
 msgstr "巴林"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:64
-#, fuzzy, kde-format
-#| msgid "Bangladesh"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bangladesh"
 msgstr "孟加拉"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:65
-#, fuzzy, kde-format
-#| msgid "Barbados"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Barbados"
 msgstr "巴貝多"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:66
-#, fuzzy, kde-format
-#| msgid "Belarus"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Belarus"
 msgstr "白俄羅斯"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:67
-#, fuzzy, kde-format
-#| msgid "Belgium"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Belgium"
 msgstr "比利時"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:68
-#, fuzzy, kde-format
-#| msgid "Belize"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Belize"
 msgstr "貝里斯"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:69
-#, fuzzy, kde-format
-#| msgid "Benin"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Benin"
 msgstr "貝南"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:70
-#, fuzzy, kde-format
-#| msgid "Bermuda"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bermuda"
 msgstr "百慕達"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:71
-#, fuzzy, kde-format
-#| msgid "Bhutan"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bhutan"
 msgstr "不丹"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:72
-#, fuzzy, kde-format
-#| msgid "Bolivia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bolivia"
 msgstr "玻利維亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:73
-#, fuzzy, kde-format
-#| msgid "Bosnia and Herzegovina"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bosnia and Herzegovina"
 msgstr "波斯尼亞和黑塞哥維那"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:74
-#, fuzzy, kde-format
-#| msgid "Botswana"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Botswana"
 msgstr "波紮那"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:75
-#, fuzzy, kde-format
-#| msgid "Bouvet Island"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bouvet Island"
 msgstr "布維島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:76
-#, fuzzy, kde-format
-#| msgid "Brazil"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Brazil"
 msgstr "巴西"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:77
-#, fuzzy, kde-format
-#| msgid "British Indian Ocean Territory"
+#, kde-format
 msgctxt "@info: country code"
 msgid "British Indian Ocean Territory"
 msgstr "英屬印度洋領地"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:78
-#, fuzzy, kde-format
-#| msgid "British Virgin Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "British Virgin Islands"
-msgstr "英屬維爾京群島 "
+msgstr "英屬維爾京群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:79
 #, fuzzy, kde-format
@@ -46409,480 +46194,412 @@ msgid "Brunei Darussalam"
 msgstr "汶萊"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:80
-#, fuzzy, kde-format
-#| msgid "Bulgaria"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Bulgaria"
 msgstr "保加利亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:81
-#, fuzzy, kde-format
-#| msgid "Burkina Faso"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Burkina Faso"
 msgstr "布吉納法索"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:82
-#, fuzzy, kde-format
-#| msgid "Burundi"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Burundi"
 msgstr "蒲隆地"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:83
-#, fuzzy, kde-format
-#| msgid "Cambodia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Cambodia"
 msgstr "柬埔寨"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:84
-#, fuzzy, kde-format
-#| msgid "Cameroon"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Cameroon"
 msgstr "喀麥隆"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:85
-#, fuzzy, kde-format
-#| msgid "Canada"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Canada"
 msgstr "加拿大"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:86
-#, fuzzy, kde-format
-#| msgid "Cape Verde"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Cape Verde"
 msgstr "維德角"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:87
-#, fuzzy, kde-format
-#| msgid "Cayman Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Cayman Islands"
 msgstr "開曼群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:88
-#, fuzzy, kde-format
-#| msgid "Central African Republic"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Central African Republic"
-msgstr "中非"
+msgstr "中非共和國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:89
-#, fuzzy, kde-format
-#| msgid "Chad"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Chad"
 msgstr "查德"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:90
-#, fuzzy, kde-format
-#| msgid "Chile"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Chile"
 msgstr "智利"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:91
-#, fuzzy, kde-format
-#| msgid "China"
+#, kde-format
 msgctxt "@info: country code"
 msgid "China"
 msgstr "中國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:92
-#, fuzzy, kde-format
-#| msgid "Christmas Island "
+#, kde-format
 msgctxt "@info: country code"
 msgid "Christmas Island "
 msgstr "聖誕島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:93
-#, fuzzy, kde-format
-#| msgid "Cocos Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Cocos Islands"
 msgstr "科科斯群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:94
-#, fuzzy, kde-format
-#| msgid "Colombia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Colombia"
 msgstr "哥倫比亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:95
-#, fuzzy, kde-format
-#| msgid "Comoros"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Comoros"
-msgstr "葛摩"
+msgstr "科摩羅"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:96
-#, fuzzy, kde-format
-#| msgid "Zaire"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Zaire"
 msgstr "薩伊"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:97
-#, fuzzy, kde-format
-#| msgid "Congo"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Congo"
 msgstr "剛果"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:98
-#, fuzzy, kde-format
-#| msgid "Cook Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Cook Islands"
 msgstr "庫克群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:99
-#, fuzzy, kde-format
-#| msgid "Costa Rica"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Costa Rica"
 msgstr "哥斯大黎加"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:100
-#, fuzzy, kde-format
-#| msgid "Ivory Coast"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Ivory Coast"
 msgstr "象牙海岸"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:101
-#, fuzzy, kde-format
-#| msgid "Cuba"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Cuba"
 msgstr "古巴"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:102
-#, fuzzy, kde-format
-#| msgid "Cyprus"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Cyprus"
 msgstr "賽普勒斯"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:103
-#, fuzzy, kde-format
-#| msgid "Czech"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Czechia"
-msgstr "捷克語"
+msgstr "捷克"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:104
-#, fuzzy, kde-format
-#| msgid "Denmark"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Denmark"
 msgstr "丹麥"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:105
-#, fuzzy, kde-format
-#| msgid "Djibouti"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Djibouti"
 msgstr "吉布地"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:106
-#, fuzzy, kde-format
-#| msgid "Dominica"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Dominica"
 msgstr "多米尼克"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:107
-#, fuzzy, kde-format
-#| msgid "Dominican Republic"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Dominican Republic"
-msgstr "多明尼加"
+msgstr "多明尼加共和國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:108
-#, fuzzy, kde-format
-#| msgid "Ecuador"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Ecuador"
 msgstr "厄瓜多"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:109
-#, fuzzy, kde-format
-#| msgid "Egypt"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Egypt"
 msgstr "埃及"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:110
-#, fuzzy, kde-format
-#| msgid "El Salvador"
+#, kde-format
 msgctxt "@info: country code"
 msgid "El Salvador"
 msgstr "薩爾瓦多"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:111
-#, fuzzy, kde-format
-#| msgid "Equatorial Guinea"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Equatorial Guinea"
 msgstr "赤道幾內亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:112
-#, fuzzy, kde-format
-#| msgid "Eritrea"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Eritrea"
 msgstr "厄利垂亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:113
-#, fuzzy, kde-format
-#| msgid "Estonia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Estonia"
 msgstr "愛沙尼亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:114
-#, fuzzy, kde-format
-#| msgid "Ethiopia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Ethiopia"
 msgstr "衣索比亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:115
-#, fuzzy, kde-format
-#| msgid "Faeroe Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Faeroe Islands"
 msgstr "法羅群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:116
-#, fuzzy, kde-format
-#| msgid "Falkland Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Falkland Islands"
 msgstr "福克蘭群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:117
-#, fuzzy, kde-format
-#| msgid "Fiji Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Fiji Islands"
-msgstr "斐濟"
+msgstr "斐濟群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:118
-#, fuzzy, kde-format
-#| msgid "Finland"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Finland"
 msgstr "芬蘭"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:119
-#, fuzzy, kde-format
-#| msgid "France"
+#, kde-format
 msgctxt "@info: country code"
 msgid "France"
 msgstr "法國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:120
-#, fuzzy, kde-format
-#| msgid "French Guiana"
+#, kde-format
 msgctxt "@info: country code"
 msgid "French Guiana"
 msgstr "法屬圭亞那"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:121
-#, fuzzy, kde-format
-#| msgid "French Polynesia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "French Polynesia"
 msgstr "法屬玻里尼西亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:122
-#, fuzzy, kde-format
-#| msgid "French Southern Territories"
+#, kde-format
 msgctxt "@info: country code"
 msgid "French Southern Territories"
 msgstr "法屬南部領土 "
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:123
-#, fuzzy, kde-format
-#| msgid "Gabon"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Gabon"
 msgstr "加彭"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:124
-#, fuzzy, kde-format
-#| msgid "Gambia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Gambia"
 msgstr "甘比亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:125
-#, fuzzy, kde-format
-#| msgid "Georgia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Georgia"
 msgstr "喬治亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:126
-#, fuzzy, kde-format
-#| msgid "Germany"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Germany"
 msgstr "德國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:127
-#, fuzzy, kde-format
-#| msgid "Ghana"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Ghana"
 msgstr "迦納"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:128
-#, fuzzy, kde-format
-#| msgid "Gibraltar"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Gibraltar"
 msgstr "直布羅陀"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:129
-#, fuzzy, kde-format
-#| msgid "Greece"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Greece"
 msgstr "希臘"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:130
-#, fuzzy, kde-format
-#| msgid "Greenland"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Greenland"
 msgstr "格陵蘭"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:131
-#, fuzzy, kde-format
-#| msgid "Grenada"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Grenada"
 msgstr "格瑞那達"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:132
-#, fuzzy, kde-format
-#| msgid "Guadaloupe"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Guadaloupe"
 msgstr "瓜達洛普"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:133
-#, fuzzy, kde-format
-#| msgid "Guam"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Guam"
 msgstr "關島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:134
-#, fuzzy, kde-format
-#| msgid "Guatemala"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Guatemala"
 msgstr "瓜地馬拉"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:135
-#, fuzzy, kde-format
-#| msgid "Guinea"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Guinea"
 msgstr "幾內亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:136
-#, fuzzy, kde-format
-#| msgid "Guinea-Bissau"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Guinea-Bissau"
 msgstr "幾內亞比紹"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:137
-#, fuzzy, kde-format
-#| msgid "Guyana"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Guyana"
 msgstr "蓋亞那"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:138
-#, fuzzy, kde-format
-#| msgid "Haiti"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Haiti"
 msgstr "海地"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:139
-#, fuzzy, kde-format
-#| msgid "Heard and McDonald Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Heard and McDonald Islands"
 msgstr "赫德和麥克唐納群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:140
-#, fuzzy, kde-format
-#| msgid "Vatican"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Vatican"
 msgstr "梵蒂岡"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:141
-#, fuzzy, kde-format
-#| msgid "Honduras"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Honduras"
 msgstr "宏都拉斯"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:142
-#, fuzzy, kde-format
-#| msgid "Hong Kong"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Hong Kong"
 msgstr "香港"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:143
-#, fuzzy, kde-format
-#| msgid "Croatia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Croatia"
 msgstr "克羅埃西亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:144
-#, fuzzy, kde-format
-#| msgid "Hungary"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Hungary"
 msgstr "匈牙利"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:145
-#, fuzzy, kde-format
-#| msgid "Iceland"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Iceland"
 msgstr "冰島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:146
-#, fuzzy, kde-format
-#| msgid "India"
+#, kde-format
 msgctxt "@info: country code"
 msgid "India"
 msgstr "印度"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:147
-#, fuzzy, kde-format
-#| msgid "Indonesia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Indonesia"
-msgstr "印度尼西亞"
+msgstr "印尼"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:148
 #, kde-format
@@ -46915,8 +46632,7 @@ msgid "Italy"
 msgstr "義大利"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:153
-#, fuzzy, kde-format
-#| msgid "Jamaica"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Jamaica"
 msgstr "牙買加"
@@ -46928,8 +46644,7 @@ msgid "Japan"
 msgstr "日本"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:155
-#, fuzzy, kde-format
-#| msgid "Jordan"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Jordan"
 msgstr "約旦"
@@ -46941,8 +46656,7 @@ msgid "Kazakhstan"
 msgstr "哈薩克"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:157
-#, fuzzy, kde-format
-#| msgid "Kenya"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Kenya"
 msgstr "肯亞"
@@ -46972,71 +46686,61 @@ msgid "Kuwait"
 msgstr "科威特"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:162
-#, fuzzy, kde-format
-#| msgid "Kyrgyz Republic"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Kyrgyz Republic"
 msgstr "吉爾吉斯"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:163
-#, fuzzy, kde-format
-#| msgid "Lao"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Lao"
 msgstr "寮國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:164
-#, fuzzy, kde-format
-#| msgid "Latvia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Latvia"
 msgstr "拉脫維亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:165
-#, fuzzy, kde-format
-#| msgid "Lebanon"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Lebanon"
 msgstr "黎巴嫩"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:166
-#, fuzzy, kde-format
-#| msgid "Lesotho"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Lesotho"
 msgstr "賴索托"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:167
-#, fuzzy, kde-format
-#| msgid "Liberia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Liberia"
 msgstr "賴比瑞亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:168
-#, fuzzy, kde-format
-#| msgid "Libyan Arab Jamahiriya"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Libyan Arab Jamahiriya"
 msgstr "利比亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:169
-#, fuzzy, kde-format
-#| msgid "Liechtenstein"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Liechtenstein"
 msgstr "列支敦斯登"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:170
-#, fuzzy, kde-format
-#| msgid "Lithuania"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Lithuania"
 msgstr "立陶宛"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:171
-#, fuzzy, kde-format
-#| msgid "Luxembourg"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Luxembourg"
 msgstr "盧森堡"
@@ -47048,22 +46752,19 @@ msgid "Macao"
 msgstr "澳門"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, fuzzy, kde-format
-#| msgid "Macedonia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Macedonia"
 msgstr "馬其頓"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
-#, fuzzy, kde-format
-#| msgid "Madagascar"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Madagascar"
 msgstr "馬達加斯加"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:175
-#, fuzzy, kde-format
-#| msgid "Malawi"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Malawi"
 msgstr "馬拉威"
@@ -47075,113 +46776,97 @@ msgid "Malaysia"
 msgstr "馬來西亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:177
-#, fuzzy, kde-format
-#| msgid "Maldives"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Maldives"
 msgstr "馬爾地夫"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:178
-#, fuzzy, kde-format
-#| msgid "Mali"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Mali"
 msgstr "馬利"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:179
-#, fuzzy, kde-format
-#| msgid "Malta"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Malta"
 msgstr "馬爾他"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:180
-#, fuzzy, kde-format
-#| msgid "Marshall Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Marshall Islands"
 msgstr "馬紹爾群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:181
-#, fuzzy, kde-format
-#| msgid "Martinique"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Martinique"
 msgstr "馬丁尼克"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:182
-#, fuzzy, kde-format
-#| msgid "Mauritania"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Mauritania"
 msgstr "茅利塔尼亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:183
-#, fuzzy, kde-format
-#| msgid "Mauritius"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Mauritius"
 msgstr "模裡西斯"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:184
-#, fuzzy, kde-format
-#| msgid "Mayotte"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Mayotte"
 msgstr "馬約特"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:185
-#, fuzzy, kde-format
-#| msgid "Mexico"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Mexico"
 msgstr "墨西哥"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:186
-#, fuzzy, kde-format
-#| msgid "Micronesia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Micronesia"
 msgstr "密克羅西尼亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:187
-#, fuzzy, kde-format
-#| msgid "Moldova"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Moldova"
 msgstr "摩爾多瓦"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:188
-#, fuzzy, kde-format
-#| msgid "Monaco"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Monaco"
 msgstr "摩納哥"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:189
-#, fuzzy, kde-format
-#| msgid "Mongolia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Mongolia"
 msgstr "蒙古"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montserrat"
 msgstr "蒙瑟拉特"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
-#, fuzzy, kde-format
-#| msgid "Morocco"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Morocco"
 msgstr "摩洛哥"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:192
-#, fuzzy, kde-format
-#| msgid "Mozambique"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Mozambique"
 msgstr "莫三比克"
@@ -47193,8 +46878,7 @@ msgid "Myanmar"
 msgstr "緬甸"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:194
-#, fuzzy, kde-format
-#| msgid "Namibia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Namibia"
 msgstr "納米比亞"
@@ -47206,8 +46890,7 @@ msgid "Nepal"
 msgstr "尼泊爾"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:197
-#, fuzzy, kde-format
-#| msgid "Netherlands Antilles"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Netherlands Antilles"
 msgstr "荷屬安地列斯"
@@ -47219,120 +46902,103 @@ msgid "Netherlands"
 msgstr "荷蘭"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:199
-#, fuzzy, kde-format
-#| msgid "New Caledonia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "New Caledonia"
 msgstr "新喀裡多尼亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:200
-#, fuzzy, kde-format
-#| msgid "New Zealand"
+#, kde-format
 msgctxt "@info: country code"
 msgid "New Zealand"
 msgstr "紐西蘭"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:201
-#, fuzzy, kde-format
-#| msgid "Nicaragua"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Nicaragua"
 msgstr "尼加拉瓜"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:202
-#, fuzzy, kde-format
-#| msgid "Niger"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Niger"
 msgstr "尼日"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:203
-#, fuzzy, kde-format
-#| msgid "Nigeria"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Nigeria"
 msgstr "奈及利亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:204
-#, fuzzy, kde-format
-#| msgid "Niue"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Niue"
 msgstr "紐埃"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:205
-#, fuzzy, kde-format
-#| msgid "Norfolk Island"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Norfolk Island"
 msgstr "諾福克島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:206
-#, fuzzy, kde-format
-#| msgid "Northern Mariana Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Northern Mariana Islands"
 msgstr "北馬里亞納群島 "
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:207
-#, fuzzy, kde-format
-#| msgid "Norway"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Norway"
 msgstr "挪威"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:208
-#, fuzzy, kde-format
-#| msgid "Oman"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Oman"
 msgstr "阿曼"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:209
-#, fuzzy, kde-format
-#| msgid "Pakistan"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Pakistan"
 msgstr "巴基斯坦"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:210
-#, fuzzy, kde-format
-#| msgid "Palau"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Palau"
 msgstr "帛琉"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:211
-#, fuzzy, kde-format
-#| msgid "Palestinian Territory"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Palestinian Territory"
 msgstr "巴勒斯坦領土 "
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:212
-#, fuzzy, kde-format
-#| msgid "Panama"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Panama"
 msgstr "巴拿馬"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:213
-#, fuzzy, kde-format
-#| msgid "Papua New Guinea"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Papua New Guinea"
 msgstr "巴布亞紐幾內亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:214
-#, fuzzy, kde-format
-#| msgid "Paraguay"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Paraguay"
 msgstr "巴拉圭"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:215
-#, fuzzy, kde-format
-#| msgid "Peru"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Peru"
 msgstr "秘魯"
@@ -47344,8 +47010,7 @@ msgid "Philippines"
 msgstr "菲律賓"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:217
-#, fuzzy, kde-format
-#| msgid "Pitcairn Island"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Pitcairn Island"
 msgstr "皮特凱恩島 "
@@ -47375,8 +47040,7 @@ msgid "Qatar"
 msgstr "卡達"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:222
-#, fuzzy, kde-format
-#| msgid "Reunion"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Reunion"
 msgstr "留尼旺"
@@ -47400,92 +47064,79 @@ msgid "Rwanda"
 msgstr "盧安達"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:226
-#, fuzzy, kde-format
-#| msgid "St. Helena"
+#, kde-format
 msgctxt "@info: country code"
 msgid "St. Helena"
 msgstr "聖赫勒拿"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:227
-#, fuzzy, kde-format
-#| msgid "St. Kitts and Nevis"
+#, kde-format
 msgctxt "@info: country code"
 msgid "St. Kitts and Nevis"
 msgstr "聖基茨和尼維斯"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:228
-#, fuzzy, kde-format
-#| msgid "St. Lucia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "St. Lucia"
 msgstr "聖露西亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:229
-#, fuzzy, kde-format
-#| msgid "St. Pierre and Miquelon"
+#, kde-format
 msgctxt "@info: country code"
 msgid "St. Pierre and Miquelon"
 msgstr "聖皮耳和密克隆"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:230
-#, fuzzy, kde-format
-#| msgid "St. Vincent and the Grenadines"
+#, kde-format
 msgctxt "@info: country code"
 msgid "St. Vincent and the Grenadines"
 msgstr "聖文森和格瑞那丁"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:231
-#, fuzzy, kde-format
-#| msgid "Samoa"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Samoa"
 msgstr "薩摩亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:232
-#, fuzzy, kde-format
-#| msgid "San Marino"
+#, kde-format
 msgctxt "@info: country code"
 msgid "San Marino"
 msgstr "聖馬利諾"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:233
-#, fuzzy, kde-format
-#| msgid "Sao Tome and Principe"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Sao Tome and Principe"
 msgstr "聖多美普林西比"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:234
-#, fuzzy, kde-format
-#| msgid "Saudi Arabia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Saudi Arabia"
 msgstr "沙烏地阿拉伯"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:235
-#, fuzzy, kde-format
-#| msgid "Senegal"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Senegal"
 msgstr "塞內加爾"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:236
-#, fuzzy, kde-format
-#| msgid "Serbian"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Serbia"
-msgstr "塞爾維亞語"
+msgstr "塞爾維亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:237
-#, fuzzy, kde-format
-#| msgid "Seychelles"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Seychelles"
 msgstr "塞席爾"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:238
-#, fuzzy, kde-format
-#| msgid "Sierra Leone"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Sierra Leone"
 msgstr "獅子山共和國"
@@ -47497,22 +47148,19 @@ msgid "Singapore"
 msgstr "新加坡"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:240
-#, fuzzy, kde-format
-#| msgid "Slovakia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Slovakia"
 msgstr "斯洛伐克"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:241
-#, fuzzy, kde-format
-#| msgid "Slovenia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Slovenia"
 msgstr "斯洛維尼亞"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:242
-#, fuzzy, kde-format
-#| msgid "Solomon Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Solomon Islands"
 msgstr "索羅門群島"
@@ -47530,22 +47178,19 @@ msgid "South Africa"
 msgstr "南非"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:245
-#, fuzzy, kde-format
-#| msgid "South Georgia and the South Sandwich Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "South Georgia and the South Sandwich Islands"
 msgstr "南喬治亞島和南桑威奇群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:246
-#, fuzzy, kde-format
-#| msgid "Spain"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Spain"
 msgstr "西班牙"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:247
-#, fuzzy, kde-format
-#| msgid "Sri Lanka"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Sri Lanka"
 msgstr "斯里蘭卡"
@@ -47557,22 +47202,19 @@ msgid "Sudan"
 msgstr "蘇丹"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:249
-#, fuzzy, kde-format
-#| msgid "Suriname"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Suriname"
 msgstr "蘇利南"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:250
-#, fuzzy, kde-format
-#| msgid "Svalbard & Jan Mayen Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Svalbard & Jan Mayen Islands"
 msgstr "斯瓦爾巴群島和揚馬延"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:251
-#, fuzzy, kde-format
-#| msgid "Swaziland"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Swaziland"
 msgstr "史瓦濟蘭"
@@ -47590,11 +47232,10 @@ msgid "Switzerland"
 msgstr "瑞士"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:254
-#, fuzzy, kde-format
-#| msgid "Syrian Arab Republic"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Syrian Arab Republic"
-msgstr "敘利亞"
+msgstr "敘利亞阿拉伯共和國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:255
 #, kde-format
@@ -47627,22 +47268,19 @@ msgid "Timor-Leste"
 msgstr "帝汶"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:260
-#, fuzzy, kde-format
-#| msgid "Togo"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Togo"
 msgstr "多哥"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:261
-#, fuzzy, kde-format
-#| msgid "Tokelau Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Tokelau Islands"
 msgstr "托克勞群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:263
-#, fuzzy, kde-format
-#| msgid "Trinidad and Tobago"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Trinidad and Tobago"
 msgstr "千里達"
@@ -47666,71 +47304,61 @@ msgid "Turkmenistan"
 msgstr "土庫曼"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:267
-#, fuzzy, kde-format
-#| msgid "Turks and Caicos Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Turks and Caicos Islands"
 msgstr "特克斯和凱科斯群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:268
-#, fuzzy, kde-format
-#| msgid "Tuvalu"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Tuvalu"
 msgstr "吐瓦魯"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:269
-#, fuzzy, kde-format
-#| msgid "US Virgin Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "US Virgin Islands"
 msgstr "美屬維京群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:270
-#, fuzzy, kde-format
-#| msgid "Uganda"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Uganda"
 msgstr "烏干達"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:271
-#, fuzzy, kde-format
-#| msgid "Ukraine"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Ukraine"
 msgstr "烏克蘭"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:272
-#, fuzzy, kde-format
-#| msgid "United Arab Emirates"
+#, kde-format
 msgctxt "@info: country code"
 msgid "United Arab Emirates"
 msgstr "阿拉伯聯合大公國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:273
-#, fuzzy, kde-format
-#| msgid "United Kingdom"
+#, kde-format
 msgctxt "@info: country code"
 msgid "United Kingdom"
 msgstr "英國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:274
-#, fuzzy, kde-format
-#| msgid "United States Minor Outlying Islands"
+#, kde-format
 msgctxt "@info: country code"
 msgid "United States Minor Outlying Islands"
 msgstr "美屬邊疆群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:275
-#, fuzzy, kde-format
-#| msgid "United States of America"
+#, kde-format
 msgctxt "@info: country code"
 msgid "United States of America"
 msgstr "美國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:276
-#, fuzzy, kde-format
-#| msgid "Uruguay, Eastern Republic of"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Uruguay, Eastern Republic of"
 msgstr "烏拉圭東岸共和國"
@@ -47760,29 +47388,25 @@ msgid "Viet Nam"
 msgstr "越南"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:281
-#, fuzzy, kde-format
-#| msgid "Wallis and Futuna Islands "
+#, kde-format
 msgctxt "@info: country code"
 msgid "Wallis and Futuna Islands "
 msgstr "瓦裡斯及福塔納群島"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:282
-#, fuzzy, kde-format
-#| msgid "Western Sahara"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Western Sahara"
 msgstr "西撒哈拉"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:283
-#, fuzzy, kde-format
-#| msgid "Yemen"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Yemen"
 msgstr "葉門"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:284
-#, fuzzy, kde-format
-#| msgid "Zambia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Zambia"
 msgstr "尚比亞"
@@ -47794,57 +47418,49 @@ msgid "Zimbabwe"
 msgstr "辛巴威"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:287
-#, fuzzy, kde-format
-#| msgid "United Nations"
+#, kde-format
 msgctxt "@info: country code"
 msgid "United Nations"
 msgstr "聯合國"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:288
-#, fuzzy, kde-format
-#| msgid "European Union"
+#, kde-format
 msgctxt "@info: country code"
 msgid "European Union"
 msgstr "歐洲聯盟"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:289
-#, fuzzy, kde-format
-#| msgid "Space"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Space"
 msgstr "太空"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:290
-#, fuzzy, kde-format
-#| msgid "At Sea"
+#, kde-format
 msgctxt "@info: country code"
 msgid "At Sea"
 msgstr "航海"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:291
-#, fuzzy, kde-format
-#| msgid "In Flight"
+#, kde-format
 msgctxt "@info: country code"
 msgid "In Flight"
 msgstr "飛航"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:292
-#, fuzzy, kde-format
-#| msgid "England"
+#, kde-format
 msgctxt "@info: country code"
 msgid "England"
 msgstr "英格蘭"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:293
-#, fuzzy, kde-format
-#| msgid "Scotland"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Scotland"
 msgstr "蘇格蘭"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:294
-#, fuzzy, kde-format
-#| msgid "Northern Ireland"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Northern Ireland"
 msgstr "北愛爾蘭"
@@ -47868,8 +47484,7 @@ msgid "Gaza"
 msgstr "加薩"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:298
-#, fuzzy, kde-format
-#| msgid "Jericho"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Jericho"
 msgstr "耶利哥"
@@ -48073,16 +47688,16 @@ msgid "Afrikaans"
 msgstr ""
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:109
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: language name"
 msgid "Albanian"
-msgstr "阿爾巴尼亞"
+msgstr "阿爾巴尼亞語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:112
 #, kde-format
 msgctxt "@info: language name"
 msgid "Amharic"
-msgstr ""
+msgstr "阿姆哈拉語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:115
 #, kde-format
@@ -48106,7 +47721,7 @@ msgstr "亞塞拜然語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Basque"
-msgstr ""
+msgstr "巴斯克語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:127
 #, kde-format
@@ -48154,7 +47769,7 @@ msgstr "廣東語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Cebuano"
-msgstr ""
+msgstr "宿霧語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:151
 #, kde-format
@@ -48169,14 +47784,13 @@ msgid "Chinese (Traditional)"
 msgstr "中文 (繁體)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:157
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: language name"
 msgid "Corsican"
-msgstr "科西嘉語 (法國)"
+msgstr "科西嘉語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:160
-#, fuzzy, kde-format
-#| msgid "Croatian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Croatian"
 msgstr "克羅埃西亞語"
@@ -48218,11 +47832,10 @@ msgid "Estonian"
 msgstr "愛沙尼亞語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:181
-#, fuzzy, kde-format
-#| msgid "Fiji Islands"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Fijian"
-msgstr "斐濟"
+msgstr "斐濟語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:184
 #, fuzzy, kde-format
@@ -48283,7 +47896,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: language name"
 msgid "Haitian Creole"
-msgstr ""
+msgstr "海地克里奧文"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:214
 #, kde-format
@@ -48319,7 +47932,7 @@ msgstr "北印度語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hmong"
-msgstr ""
+msgstr "苗語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:232
 #, kde-format
@@ -48373,7 +47986,7 @@ msgstr "爪哇語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kannada"
-msgstr "坎那達語"
+msgstr "卡納達語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:259
 #, kde-format
@@ -48409,7 +48022,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: language name"
 msgid "Korean"
-msgstr "韓語"
+msgstr "韓文"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:277
 #, kde-format
@@ -48421,7 +48034,7 @@ msgstr "庫德語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kyrgyz"
-msgstr ""
+msgstr "吉爾吉斯語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:283
 #, kde-format
@@ -48460,8 +48073,7 @@ msgid "Luxembourgish"
 msgstr "盧森堡語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:301
-#, fuzzy, kde-format
-#| msgid "Macedonian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Macedonian"
 msgstr "馬其頓語"
@@ -48482,25 +48094,25 @@ msgstr "馬來語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Malayalam"
-msgstr "馬來亞拉姆語"
+msgstr "馬拉雅拉姆語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:313
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: language name"
 msgid "Maltese"
-msgstr "馬爾他"
+msgstr "馬爾他語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:316
 #, kde-format
 msgctxt "@info: language name"
 msgid "Maori"
-msgstr ""
+msgstr "毛利語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:319
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: language name"
 msgid "Marathi"
-msgstr "馬拉塔語 (印度)"
+msgstr "馬拉提語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:322
 #, kde-format
@@ -48509,37 +48121,34 @@ msgid "Mari"
 msgstr ""
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:325
-#, fuzzy, kde-format
-#| msgid "Mongolian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Mongolian"
 msgstr "蒙古語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:328
-#, fuzzy, kde-format
-#| msgid "Myanmar"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Myanmar"
 msgstr "緬甸"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:331
-#, fuzzy, kde-format
-#| msgid "Nepali"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Nepali"
 msgstr "尼泊爾語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:334
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: language name"
 msgid "Norwegian"
-msgstr "喬治亞語"
+msgstr "挪威語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:337
 #, kde-format
 msgctxt "@info: language name"
 msgid "Oriya"
-msgstr ""
+msgstr "歐利亞語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:340
 #, kde-format
@@ -48557,14 +48166,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info: language name"
 msgid "Pashto"
-msgstr ""
+msgstr "普什圖語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:349
-#, fuzzy, kde-format
-#| msgid "Versions"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Persian"
-msgstr "版本"
+msgstr "波斯語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:352
 #, kde-format
@@ -48573,8 +48181,7 @@ msgid "Polish"
 msgstr "波蘭語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:355
-#, fuzzy, kde-format
-#| msgid "Portuguese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Portuguese"
 msgstr "葡萄牙語"
@@ -48604,8 +48211,7 @@ msgid "Russian"
 msgstr "俄語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:370
-#, fuzzy, kde-format
-#| msgid "Samoan"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Samoan"
 msgstr "薩摩亞語"
@@ -48614,21 +48220,19 @@ msgstr "薩摩亞語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Scots Gaelic"
-msgstr ""
+msgstr "蘇格蘭蓋爾語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:376
-#, fuzzy, kde-format
-#| msgid "Persian (Iran)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Serbian (Cyrillic)"
-msgstr "波斯語 (伊朗)"
+msgstr "塞爾維亞語（斯拉夫文字）"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:379
-#, fuzzy, kde-format
-#| msgid "Persian (Iran)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Serbian (Latin)"
-msgstr "波斯語 (伊朗)"
+msgstr "塞爾維亞語（拉丁文字）"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:382
 #, fuzzy, kde-format
@@ -48646,13 +48250,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sindhi"
-msgstr ""
+msgstr "信德語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:391
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sinhala"
-msgstr ""
+msgstr "僧伽羅語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:394
 #, kde-format
@@ -48667,10 +48271,10 @@ msgid "Slovenian"
 msgstr "斯洛維尼亞語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:400
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: language name"
 msgid "Somali"
-msgstr "索馬利亞"
+msgstr "索馬利亞語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:403
 #, kde-format
@@ -48731,7 +48335,7 @@ msgstr "韃靼語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Telugu"
-msgstr "特拉古語"
+msgstr "泰盧固語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:433
 #, kde-format
@@ -48781,7 +48385,7 @@ msgstr "烏克蘭語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Urdu"
-msgstr ""
+msgstr "烏爾都語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:457
 #, fuzzy, kde-format
@@ -48799,25 +48403,25 @@ msgstr "越南語"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Welsh"
-msgstr ""
+msgstr "威爾斯語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:466
 #, kde-format
 msgctxt "@info: language name"
 msgid "Xhosa"
-msgstr ""
+msgstr "南非柯薩語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:469
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yiddish"
-msgstr ""
+msgstr "意第緒語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:472
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: language name"
 msgid "Yoruba"
-msgstr "阿魯巴"
+msgstr "優魯巴語"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:475
 #, kde-format

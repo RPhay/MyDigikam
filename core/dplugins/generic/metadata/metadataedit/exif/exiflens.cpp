@@ -397,7 +397,7 @@ void EXIFLens::applyMetadata(const DMetadata& meta)
     if (d->digitalZoomRatioCheck->isChecked())
     {
         meta.convertToRational(d->digitalZoomRatioEdit->value(), &num, &den, 1);
-        meta.setExifTagRational("Exif.Photo.DigitalZoomRatio", num, den);
+        meta.setExifTagURational("Exif.Photo.DigitalZoomRatio", num, den);
     }
     else
         meta.removeExifTag("Exif.Photo.DigitalZoomRatio");
@@ -423,7 +423,7 @@ void EXIFLens::applyMetadata(const DMetadata& meta)
         double fnumber  = d->maxApertureCB->currentText().remove(0, 2).toDouble();
         double aperture = 2.0*(std::log(fnumber)/std::log(2.0));
         meta.convertToRational(aperture, &num, &den, 8);
-        meta.setExifTagRational("Exif.Photo.MaxApertureValue", num, den);
+        meta.setExifTagURational("Exif.Photo.MaxApertureValue", num, den);
     }
     else if (d->maxApertureCheck->isValid())
         meta.removeExifTag("Exif.Photo.MaxApertureValue");

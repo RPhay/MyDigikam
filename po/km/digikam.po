@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 01:39+0000\n"
+"POT-Creation-Date: 2024-04-06 01:42+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -3095,9 +3095,9 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:487
+#: core/libs/album/engine/album.cpp:491
 #: core/libs/album/manager/albummanager.cpp:173
-#: core/libs/album/treeview/albumselectiontreeview.cpp:266
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:178
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -3186,7 +3186,7 @@ msgid "No Tags Album"
 msgstr "គ្មាន​អាល់ប៊ុម​ឡើង"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:560
+#: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -16118,13 +16118,13 @@ msgid "Close window"
 msgstr "ទិដ្ឋភាព​បិទ​​​"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:309
+#: core/libs/timeadjust/timeadjustsettings.cpp:310
 #, kde-format
 msgid "Timestamp Used"
 msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:311
+#: core/libs/timeadjust/timeadjustsettings.cpp:312
 #, kde-format
 msgid "Timestamp Updated"
 msgstr ""
@@ -27051,57 +27051,57 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:408
+#: core/libs/album/engine/album.cpp:412
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:759
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "ស្វែងរក​បន្ទាត់​ពេលវេលា​បច្ចុប្បន្ន"
 
-#: core/libs/album/engine/album.cpp:765
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "ស្វែងរក​រូបភាព​ស្រពិចស្រពិល​​​​បច្ចុប្បន្ន"
 
-#: core/libs/album/engine/album.cpp:769
+#: core/libs/album/engine/album.cpp:778
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "ស្វែងរក​គំនូរព្រាង​ស្រពិចស្រពិល​បច្ចុប្បន្ន"
 
-#: core/libs/album/engine/album.cpp:776
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Map Search"
 msgstr "ស្វែងរក​ផែនទី​បច្ចុប្បន្ន"
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:793
 #, kde-format
 msgid "Current Search"
 msgstr "ស្វែងរក​បច្ចុប្បន្ន"
 
-#: core/libs/album/engine/album.cpp:784
+#: core/libs/album/engine/album.cpp:798
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "ស្វែងរក​ច្បាប់​ចម្លង​បច្ចុប្បន្ន"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:241
+#: core/libs/album/engine/albummodificationhelper.cpp:238
 #, kde-format
 msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:254
+#: core/libs/album/engine/albummodificationhelper.cpp:251
 #, fuzzy, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
 "</p>"
 msgstr "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:286
+#: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
@@ -27109,20 +27109,20 @@ msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "ប្ដូរ​ឈ្មោះ​អាល់ប៊ុម (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:290
+#: core/libs/album/engine/albummodificationhelper.cpp:287
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
 msgstr "ប្ដូរ​ឈ្មោះ​អាល់ប៊ុម (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:293
+#: core/libs/album/engine/albummodificationhelper.cpp:290
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
 msgstr "បញ្ចូល​ឈ្មោះ​អាល់ប៊ុម​ថ្មី ៖"
 
-#: core/libs/album/engine/albumparser.cpp:86
+#: core/libs/album/engine/albumparser.cpp:82
 #, fuzzy, kde-format
 #| msgid "Scanning Albums..."
 msgid "Scanning albums"
@@ -27671,32 +27671,32 @@ msgstr "ម៉ឺនុយ​បរិបទ"
 msgid "Empty Trash"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:272
 #, fuzzy, kde-format
 #| msgid "Saturation:"
 msgctxt "@info: generate album name for exporting"
 msgid "Rating: "
 msgstr "តិត្ថិភាព​ ៖​"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:289
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:282
 #, fuzzy, kde-format
 msgctxt "@info: rating label"
 msgid "No Rating"
 msgstr "តាម​ការ​វាយ​តម្លៃ"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:305
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:298
 #, fuzzy, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Colors: "
 msgstr "ពណ៌"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:314
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:308
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "No Color"
 msgstr "ពណ៌"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:318
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:314
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:471
 #, fuzzy, kde-format
 #| msgid "Undo/Redo"
@@ -27704,7 +27704,7 @@ msgctxt "@info: color label name"
 msgid "Red"
 msgstr "មិន​ធ្វើ​វិញ​​/​ធ្វើវិញ​"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:320
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
@@ -27718,14 +27718,14 @@ msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:330
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:332
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "ក្រិក​"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, fuzzy, kde-format
 #| msgid "Blue Jean"
@@ -27733,7 +27733,7 @@ msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "ក្រណាត់​​អំបោះ​ខៀវ"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:344
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, fuzzy, kde-format
 #| msgid "Argentina"
@@ -27741,14 +27741,14 @@ msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "អាហ្សង់ទីន"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:342
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:356
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
@@ -27756,33 +27756,33 @@ msgctxt "@info: color label name"
 msgid "Black"
 msgstr "ស៊ុម​ខ្មៅ..."
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:362
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, fuzzy, kde-format
 msgctxt "@info: color label name"
 msgid "White"
 msgstr "តុល្យភាព​ពណ៌​ស​ ៖​​"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:366
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:381
 #, fuzzy, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Picks: "
 msgstr "ឥដ្ឋ ២"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:375
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:391
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:379
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:397
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:308
 #, fuzzy, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "ជ្រើស​ធាតុ"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:403
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, fuzzy, kde-format
 #| msgid "Ascending"
@@ -27790,26 +27790,26 @@ msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "លំដាប់​ឡើង"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:387
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:409
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:452
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:477
 #, fuzzy, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
 msgstr "នាំចេញ"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:456
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:481
 #, fuzzy, kde-format
 msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "អាល់ប៊ុម​ថ្មី"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -27817,60 +27817,60 @@ msgstr "អាល់ប៊ុម​ថ្មី"
 msgid "Expand Selected Nodes"
 msgstr "ជ្រើស​គ្មាន"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Expand all Albums"
 msgstr "តាម​អាល់ប៊ុម"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "ក្រុម​ដែល​បាន​ជ្រើស​​នៅ​ទីនេះ"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:225
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Collapse all Albums"
 msgstr "តាម​អាល់ប៊ុម"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:228
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "រក​ច្បាប់​ចម្លង..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:231
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, fuzzy, kde-format
 #| msgid "Scan collection for faces"
 msgid "Scan for Faces"
 msgstr "វិភាគ​រក​សម្រាំង​សម្រាប់​មុខ"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, fuzzy, kde-format
 msgid "Repair hidden Items"
 msgstr "តម្រៀប​រូបភាព"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:237
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "ធ្វើ​ឲ្យស្រស់"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:302
+#: core/libs/album/treeview/albumselectiontreeview.cpp:286
 #, fuzzy, kde-format
 #| msgid "Scan collection for faces"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "វិភាគ​រក​សម្រាំង​សម្រាប់​មុខ"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:303
+#: core/libs/album/treeview/albumselectiontreeview.cpp:287
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:100
+#: core/libs/album/treeview/labelstreeview.cpp:92
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Labels"
@@ -36800,7 +36800,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "តុល្យភាព​ពណ៌"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1386
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1408
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -38159,7 +38159,7 @@ msgid "IPTC"
 msgstr ""
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:282
+#: core/libs/timeadjust/timeadjustsettings.cpp:283
 #, kde-format
 msgid "XMP"
 msgstr ""
@@ -40564,7 +40564,7 @@ msgid "File name timestamp"
 msgstr "ឯកសារ​​ទទេ ។​"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:180
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#: core/libs/timeadjust/timeadjustsettings.cpp:276
 #, fuzzy, kde-format
 msgid "File last modified"
 msgstr "រូបភាព​ចុងក្រោយ"
@@ -40575,27 +40575,27 @@ msgid "EXIF/IPTC/XMP"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "EXIF: created"
 msgstr "ធ្វើ​សម​កាល​កម្ម​កាលបរិច្ឆេទ​ការ​បង្កើត​ EXIF ​"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:191
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, fuzzy, kde-format
 #| msgid "Origin"
 msgid "EXIF: original"
 msgstr "ដើម​"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:192
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, kde-format
 msgid "EXIF: digitized"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:193
-#: core/libs/timeadjust/timeadjustsettings.cpp:280
+#: core/libs/timeadjust/timeadjustsettings.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "creation date of the image"
 #| msgid "Created:"
@@ -40680,23 +40680,28 @@ msgid "Update timestamps with ExifTool"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
+#, fuzzy, kde-format
+msgid "Use this option primarily with video files"
+msgstr "កំណត់​ជម្រើស​នេះ​ចំពោះ​ការ​កែ​រូបភាព​​ត្រូវ​បាន​អនុវត្ត ។"
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:280
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgid "EXIF: Thumbnail"
 msgstr "រូបភាព​តូច"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:281
+#: core/libs/timeadjust/timeadjustsettings.cpp:282
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgid "XMP: Video"
 msgstr "វីដេអូ"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:310
+#: core/libs/timeadjust/timeadjustsettings.cpp:311
 #, fuzzy, kde-format
 #| msgid "Pictures Adjustments"
 msgid "Timestamp Adjustments"
