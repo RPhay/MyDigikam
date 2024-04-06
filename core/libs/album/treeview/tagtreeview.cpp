@@ -26,8 +26,7 @@ namespace Digikam
 {
 
 TagTreeView::TagTreeView(QWidget* const parent, Flags flags)
-    : AbstractCheckableAlbumTreeView(parent, flags),
-      m_filteredModel               (nullptr)
+    : AbstractCheckableAlbumTreeView(parent, flags)
 {
     m_modificationHelper = new TagModificationHelper(this, this);
     setRootIsDecorated(true);

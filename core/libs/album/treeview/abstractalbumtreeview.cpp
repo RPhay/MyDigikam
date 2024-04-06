@@ -1185,10 +1185,12 @@ void AbstractAlbumTreeView::slotScrollBarValueChanged(int value)
 
 void AbstractAlbumTreeView::slotScrollBarActionTriggered(int action)
 {
-    if ((action == QAbstractSlider::SliderMove)        ||
+    if (
+        (action == QAbstractSlider::SliderMove)        ||
         (action == QAbstractSlider::SliderToMinimum)   ||
         (action == QAbstractSlider::SliderPageStepSub) ||
-        (action == QAbstractSlider::SliderSingleStepSub))
+        (action == QAbstractSlider::SliderSingleStepSub)
+       )
     {
         m_lastScrollBarValue = -1;
     }

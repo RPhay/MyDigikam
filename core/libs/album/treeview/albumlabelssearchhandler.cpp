@@ -56,21 +56,14 @@ class Q_DECL_HIDDEN AlbumLabelsSearchHandler::Private
 {
 public:
 
-    explicit Private()
-      : treeWidget                   (nullptr),
-        dbJobThread                  (nullptr),
-        restoringSelectionFromHistory(false),
-        currentXmlIsEmpty            (false),
-        albumForSelectedItems        (nullptr)
-    {
-    }
+    Private() = default;
 
-    LabelsTreeView*       treeWidget;
-    SearchesDBJobsThread* dbJobThread;
-    bool                  restoringSelectionFromHistory;
-    bool                  currentXmlIsEmpty;
+    LabelsTreeView*       treeWidget                    = nullptr;
+    SearchesDBJobsThread* dbJobThread                   = nullptr;
+    bool                  restoringSelectionFromHistory = false;
+    bool                  currentXmlIsEmpty             = false;
     QString               oldXml;
-    Album*                albumForSelectedItems;
+    Album*                albumForSelectedItems         = nullptr;
     QString               generatedAlbumName;
     QList<QUrl>           urlListForSelectedAlbum;
 };
@@ -311,47 +304,69 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
             switch (it.next())
             {
                 case NoColorLabel:
+                {
                     colorsString += i18nc("@info: color label name", "No Color");
                     break;
+                }
 
                 case RedLabel:
+                {
                     colorsString += i18nc("@info: color label name", "Red");
                     break;
+                }
 
                 case OrangeLabel:
+                {
                     colorsString += i18nc("@info: color label name", "Orange");
                     break;
+                }
 
                 case YellowLabel:
+                {
                     colorsString += i18nc("@info: color label name", "Yellow");
                     break;
+                }
 
                 case GreenLabel:
+                {
                     colorsString += i18nc("@info: color label name", "Green");
                     break;
+                }
 
                 case BlueLabel:
+                {
                     colorsString += i18nc("@info: color label name", "Blue");
                     break;
+                }
 
                 case MagentaLabel:
+                {
                     colorsString += i18nc("@info: color label name", "Magenta");
                     break;
+                }
 
                 case GrayLabel:
+                {
                     colorsString += i18nc("@info: color label name", "Gray");
                     break;
+                }
 
                 case BlackLabel:
+                {
                     colorsString += i18nc("@info: color label name", "Black");
                     break;
+                }
 
                 case WhiteLabel:
+                {
                     colorsString += i18nc("@info: color label name", "White");
                     break;
+                }
 
                 default:
+                {
                     break;
+                }
             }
 
             if (it.hasNext())
@@ -372,23 +387,33 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
             switch (it.next())
             {
                 case NoPickLabel:
+                {
                     picksString += i18nc("@info: pick label name", "No Pick");
                     break;
+                }
 
                 case RejectedLabel:
+                {
                     picksString += i18nc("@info: pick label name", "Rejected");
                     break;
+                }
 
                 case PendingLabel:
+                {
                     picksString += i18nc("@info: pick label name", "Pending");
                     break;
+                }
 
                 case AcceptedLabel:
+                {
                     picksString += i18nc("@info: pick label name", "Accepted");
                     break;
+                }
 
                 default:
+                {
                     break;
+                }
             }
 
             if (it.hasNext())

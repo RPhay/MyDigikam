@@ -33,16 +33,19 @@ public:
     explicit TagTreeView(QWidget* const parent = nullptr, Flags flags = DefaultFlags);
     ~TagTreeView() override;
 
-    TagModel* albumModel() const;
-
-    /// Contains only the tags filtered by properties - prefer to albumModel()
-    TagPropertiesFilterModel* filteredModel() const;
+    TagModel* albumModel()                          const;
 
     /**
-     * @brief currentAlbum     - even if multiple selection is enabled current
-     *                           Album can be only one, the last clicked item
-     *                          if you need selected items, see selectedAlbums()
-     *                          It's NOT the same as AlbumManager::currentAlbums()
+     * Contains only the tags filtered by properties - prefer to albumModel()
+     */
+    TagPropertiesFilterModel* filteredModel()       const;
+
+    /**
+     * @brief currentAlbum
+     * Even if multiple selection is enabled current
+     * Album can be only one, the last clicked item
+     * if you need selected items, see selectedAlbums()
+     * It's NOT the same as AlbumManager::currentAlbums()
      */
     TAlbum* currentAlbum() const;
 
@@ -69,8 +72,8 @@ Q_SIGNALS:
 
 protected:
 
-    TagPropertiesFilterModel* m_filteredModel;
-    TagModificationHelper*    m_modificationHelper;
+    TagPropertiesFilterModel* m_filteredModel       = nullptr;
+    TagModificationHelper*    m_modificationHelper  = nullptr;
 };
 
 } // namespace Digikam

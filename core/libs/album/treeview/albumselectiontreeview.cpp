@@ -81,42 +81,26 @@ class Q_DECL_HIDDEN AlbumSelectionTreeView::Private
 
 public:
 
-    explicit Private()
-      : enableToolTips          (false),
-        albumModificationHelper (nullptr),
-        toolTip                 (nullptr),
-        renameAction            (nullptr),
-        resetIconAction         (nullptr),
-        findDuplAction          (nullptr),
-        scanFacesAction         (nullptr),
-        repairHiddenAction      (nullptr),
-        rebuildThumbsAction     (nullptr),
-        expandSelected          (nullptr),
-        expandAllAlbums         (nullptr),
-        collapseSelected        (nullptr),
-        collapseAllAlbums       (nullptr),
-        contextMenuElement      (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                                      enableToolTips;
+    bool                                      enableToolTips            = false;
 
-    AlbumModificationHelper*                  albumModificationHelper;
-    AlbumViewToolTip*                         toolTip;
+    AlbumModificationHelper*                  albumModificationHelper   = nullptr;
+    AlbumViewToolTip*                         toolTip                   = nullptr;
 
-    QAction*                                  renameAction;
-    QAction*                                  resetIconAction;
-    QAction*                                  findDuplAction;
-    QAction*                                  scanFacesAction;
-    QAction*                                  repairHiddenAction;
-    QAction*                                  rebuildThumbsAction;
-    QAction*                                  expandSelected;
-    QAction*                                  expandAllAlbums;
-    QAction*                                  collapseSelected;
-    QAction*                                  collapseAllAlbums;
+    QAction*                                  renameAction              = nullptr;
+    QAction*                                  resetIconAction           = nullptr;
+    QAction*                                  findDuplAction            = nullptr;
+    QAction*                                  scanFacesAction           = nullptr;
+    QAction*                                  repairHiddenAction        = nullptr;
+    QAction*                                  rebuildThumbsAction       = nullptr;
+    QAction*                                  expandSelected            = nullptr;
+    QAction*                                  expandAllAlbums           = nullptr;
+    QAction*                                  collapseSelected          = nullptr;
+    QAction*                                  collapseAllAlbums         = nullptr;
 
     class AlbumSelectionTreeViewContextMenuElement;
-    AlbumSelectionTreeViewContextMenuElement* contextMenuElement;
+    AlbumSelectionTreeViewContextMenuElement* contextMenuElement        = nullptr;
 };
 
 // ----------------------------------------------------------------------------------------------------

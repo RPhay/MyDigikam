@@ -33,9 +33,7 @@ class Q_DECL_HIDDEN AbstractCheckableAlbumTreeView::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     static const QString configCheckedAlbumsEntry;
     static const QString configPartiallyCheckedAlbumsEntry;
@@ -100,14 +98,22 @@ void AbstractCheckableAlbumTreeView::middleButtonPressed(Album* a)
             switch (model->checkState(a))
             {
                 case Qt::Unchecked:
+                {
                     model->setCheckState(a, Qt::PartiallyChecked);
                     break;
+                }
+
                 case Qt::PartiallyChecked:
+                {
                     model->setCheckState(a, Qt::Checked);
                     break;
+                }
+
                 case Qt::Checked:
+                {
                     model->setCheckState(a, Qt::Unchecked);
                     break;
+                }
             }
         }
         else

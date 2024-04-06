@@ -53,26 +53,18 @@ class Q_DECL_HIDDEN LabelsTreeView::Private
 {
 public:
 
-    explicit Private()
-      : ratings             (nullptr),
-        picks               (nullptr),
-        colors              (nullptr),
-        isCheckableTreeView (false),
-        isLoadingState      (false),
-        iconSizeFromSetting (0)
-    {
-    }
+    Private() = default;
 
     QFont                      regularFont;
     QSize                      iconSize;
 
-    QTreeWidgetItem*           ratings;
-    QTreeWidgetItem*           picks;
-    QTreeWidgetItem*           colors;
+    QTreeWidgetItem*           ratings                      = nullptr;
+    QTreeWidgetItem*           picks                        = nullptr;
+    QTreeWidgetItem*           colors                       = nullptr;
 
-    bool                       isCheckableTreeView;
-    bool                       isLoadingState;
-    int                        iconSizeFromSetting;
+    bool                       isCheckableTreeView          = false;
+    bool                       isLoadingState               = false;
+    int                        iconSizeFromSetting          = 0;
 
     QHash<Labels, QList<int> > selectedLabels;
 
@@ -257,18 +249,26 @@ void LabelsTreeView::doLoadState()
         switch (parent)
         {
             case 1:
+            {
                 d->ratings->setExpanded(false);
                 break;
+            }
 
             case 2:
+            {
                 d->picks->setExpanded(false);
                 break;
+            }
 
             case 3:
+            {
                 d->colors->setExpanded(false);
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
 
