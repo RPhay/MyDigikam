@@ -34,8 +34,8 @@ class DIGIKAM_EXPORT DImgFilterGenerator
 {
 public:
 
-    DImgFilterGenerator()          {};
-    virtual ~DImgFilterGenerator() {};
+    DImgFilterGenerator()          = default;
+    virtual ~DImgFilterGenerator() = default;
 
     /// Returns a list with identifiers of supported filters
     virtual QStringList supportedFilters()                                  = 0;
@@ -70,9 +70,7 @@ public:
      * The class must provide two static methods, FilterIdentifier() and SupportedVersions().
      */
 
-    BasicDImgFilterGenerator()
-    {
-    }
+    BasicDImgFilterGenerator() = default;
 
     QStringList supportedFilters() override
     {

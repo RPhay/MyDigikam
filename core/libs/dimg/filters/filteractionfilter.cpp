@@ -36,12 +36,9 @@ class Q_DECL_HIDDEN FilterActionFilter::Private
 {
 public:
 
-    explicit Private()
-      : continueOnError(false)
-    {
-    }
+    Private() = default;
 
-    bool                continueOnError;
+    bool                continueOnError = false;
 
     QList<FilterAction> actions;
     QList<FilterAction> appliedActions;
@@ -51,7 +48,7 @@ public:
 
 FilterActionFilter::FilterActionFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
@@ -241,6 +238,7 @@ void FilterActionFilter::filterImage()
             }
 
             // compute
+
             filter->setupAndStartDirectly(img, this, (int)progress, (int)(progress + progressIncrement));
             img = filter->getTargetImage();
             d->appliedActions << filter->filterAction();

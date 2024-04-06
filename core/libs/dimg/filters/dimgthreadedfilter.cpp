@@ -29,9 +29,7 @@ namespace Digikam
 {
 
 DImgThreadedFilter::DImgThreadedFilter(QObject* const parent, const QString& name)
-    : DynamicThread(parent),
-      m_version(1),
-      m_wasCancelled(false)
+    : DynamicThread(parent)
 {
     setOriginalImage(DImg());
     setFilterName(name);
@@ -41,9 +39,7 @@ DImgThreadedFilter::DImgThreadedFilter(QObject* const parent, const QString& nam
 
 DImgThreadedFilter::DImgThreadedFilter(DImg* const orgImage, QObject* const parent,
                                        const QString& name)
-    : DynamicThread(parent),
-      m_version(1),
-      m_wasCancelled(false)
+    : DynamicThread(parent)
 {
     // remove meta data
 
@@ -56,9 +52,7 @@ DImgThreadedFilter::DImgThreadedFilter(DImg* const orgImage, QObject* const pare
 DImgThreadedFilter::DImgThreadedFilter(DImgThreadedFilter* const master, const DImg& orgImage,
                                        const DImg& destImage, int progressBegin, int progressEnd,
                                        const QString& name)
-    : m_version(1),
-      m_wasCancelled(false),
-      m_destImage(destImage)
+    : m_destImage(destImage)
 {
     setFilterName(name);
     setOriginalImage(orgImage);
@@ -175,6 +169,7 @@ void DImgThreadedFilter::startFilter()
     else  // No image data
     {
         Q_EMIT finished(false);
+
         qCDebug(DIGIKAM_DIMG_LOG) << m_name << "::No valid image data !!! ...";
     }
 }
@@ -208,6 +203,7 @@ void DImgThreadedFilter::startFilterDirectly()
     else  // No image data
     {
         Q_EMIT finished(false);
+
         qCDebug(DIGIKAM_DIMG_LOG) << m_name << "::No valid image data !!! ...";
     }
 }
@@ -248,6 +244,7 @@ void DImgThreadedFilter::postProgress(int progr)
     else if (m_progressCurrent != progr)
     {
         Q_EMIT progress(progr);
+
         m_progressCurrent = progr;
     }
 }

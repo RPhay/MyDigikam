@@ -54,7 +54,7 @@ public:
     /**
      * Create a filter performing no operation
      */
-    DImgBuiltinFilter();
+    DImgBuiltinFilter() = default;
 
     /**
      * Create a filter for the given action. If the action is not supported,
@@ -134,7 +134,7 @@ public:
 
 protected:
 
-    Type     m_type;
+    Type     m_type = NoOperation;
     QVariant m_arg;
 };
 

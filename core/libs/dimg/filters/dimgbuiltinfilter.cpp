@@ -25,11 +25,6 @@
 namespace Digikam
 {
 
-DImgBuiltinFilter::DImgBuiltinFilter()
-    : m_type(NoOperation)
-{
-}
-
 DImgBuiltinFilter::DImgBuiltinFilter(const FilterAction& action)
 {
     setAction(action);
@@ -256,6 +251,7 @@ FilterAction DImgBuiltinFilter::filterAction() const
             }
 
             action.addParameter(QLatin1String("angle"), angle);
+
             break;
         }
 
@@ -276,6 +272,7 @@ FilterAction DImgBuiltinFilter::filterAction() const
             action.addParameter(QLatin1String("y"),      r.y());
             action.addParameter(QLatin1String("width"),  r.width());
             action.addParameter(QLatin1String("height"), r.height());
+
             break;
         }
 
@@ -285,6 +282,7 @@ FilterAction DImgBuiltinFilter::filterAction() const
             QSize s = m_arg.toSize();
             action.addParameter(QLatin1String("width"),  s.width());
             action.addParameter(QLatin1String("height"), s.height());
+
             break;
         }
 
@@ -293,11 +291,13 @@ FilterAction DImgBuiltinFilter::filterAction() const
         {
             action = FilterAction(QLatin1String("transform:convertDepth"), 1);
             action.addParameter(QLatin1String("depth"), (m_type == ConvertTo8Bit) ? 8 : 16);
+
             break;
         }
     }
 
     action.setDisplayableName(displayableName());
+
     return action;
 }
 
