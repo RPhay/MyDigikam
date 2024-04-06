@@ -659,6 +659,11 @@ public:
     bool setExifTagLong(const char* exifTagName, long val) const;
 
     /**
+     * Set an Exif tag content using a unsigned short value. Return true if tag is set successfully.
+     */
+    bool setExifTagUShort(const char* exifTagName, unsigned int val) const;
+
+    /**
      * Get the 'component' index of an Exif tags content like a rational value.
      * 'num' and 'den' are the numerator and the denominator of the rational value.
      * Return true if Exif tag be found.
@@ -677,7 +682,7 @@ public:
      * 'num' and 'den' are the numerator and the denominator of the unsigned rational value.
      * Return true if tag is set successfully.
      */
-    bool setExifTagURational(const char* exifTagName, long int num, long int den) const;
+    bool setExifTagURational(const char* exifTagName, unsigned long int num, unsigned long int den) const;
 
     /**
      * Get an Exif tag content like a bytes array. Return an empty bytes array if Exif

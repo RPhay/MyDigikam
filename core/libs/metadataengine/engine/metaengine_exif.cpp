@@ -462,6 +462,28 @@ bool MetaEngine::setExifTagLong(const char* exifTagName, long val) const
     return false;
 }
 
+bool MetaEngine::setExifTagUShort(const char* exifTagName, unsigned int val) const
+{
+    QMutexLocker lock(&s_metaEngineMutex);
+
+    try
+    {
+        d->exifMetadata()[exifTagName] = static_cast<uint16_t>(val);     // krazy:exclude=typedefs
+
+        return true;
+    }
+    catch (Exiv2::AnyError& e)
+    {
+        d->printExiv2ExceptionError(QLatin1String("Cannot set Exif tag unsigned short value into image with Exiv2:"), e);
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+    return false;
+}
+
 bool MetaEngine::setExifTagRational(const char* exifTagName, long int num, long int den) const
 {
     QMutexLocker lock(&s_metaEngineMutex);
@@ -484,7 +506,7 @@ bool MetaEngine::setExifTagRational(const char* exifTagName, long int num, long 
     return false;
 }
 
-bool MetaEngine::setExifTagURational(const char* exifTagName, long int num, long int den) const
+bool MetaEngine::setExifTagURational(const char* exifTagName, unsigned long int num, unsigned long int den) const
 {
     QMutexLocker lock(&s_metaEngineMutex);
 
