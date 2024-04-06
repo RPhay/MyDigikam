@@ -62,7 +62,7 @@ BUGFIXES:
 040 ==> 484815 - After playing a video, pause command no longer has any effect on the others videos you preview until you preview a photo.
 041 ==> 484818 - Switching quickly between several videos leads to a segmentation fault.
 042 ==> 485009 - Exposure times greater or equal to 1 second are shown as a fraction in EXIF metadata view.
-043 ==> 
+043 ==> 458584 - Reverse Geocode information is not being updated correctly from external file edits.
 044 ==> 
 045 ==> 
 046 ==> 
