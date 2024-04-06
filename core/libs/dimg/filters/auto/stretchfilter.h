@@ -71,34 +71,22 @@ private:
 
     struct Q_DECL_HIDDEN double_packet
     {
-        double_packet()
-            : red  (0.0),
-              green(0.0),
-              blue (0.0),
-              alpha(0.0)
-        {
-        }
+        double_packet() = default;
 
-        double red;
-        double green;
-        double blue;
-        double alpha;
+        double red   = 0.0;
+        double green = 0.0;
+        double blue  = 0.0;
+        double alpha = 0.0;
     };
 
     struct Q_DECL_HIDDEN int_packet
     {
-       int_packet()
-            : red  (0),
-              green(0),
-              blue (0),
-              alpha(0)
-        {
-        }
+        int_packet() = default;
 
-        unsigned int red;
-        unsigned int green;
-        unsigned int blue;
-        unsigned int alpha;
+        unsigned int red   = 0;
+        unsigned int green = 0;
+        unsigned int blue  = 0;
+        unsigned int alpha = 0;
     };
 
     DImg m_refImage;

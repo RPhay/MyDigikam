@@ -37,7 +37,7 @@ EqualizeFilter::EqualizeFilter(QObject* const parent)
 
 EqualizeFilter::EqualizeFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("EqualizeFilter")),
-      m_refImage(*refImage)
+      m_refImage        (*refImage)
 {
     initFilter();
 }

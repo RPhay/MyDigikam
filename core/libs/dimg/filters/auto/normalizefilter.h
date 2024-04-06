@@ -71,9 +71,9 @@ private:
 
     struct Q_DECL_HIDDEN NormalizeParam
     {
-        unsigned short* lut;
-        double          min;
-        double          max;
+        unsigned short* lut = nullptr;
+        double          min = 0.0;
+        double          max = 0.0;
     };
 
     DImg m_refImage;

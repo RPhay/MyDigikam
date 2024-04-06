@@ -37,7 +37,7 @@ StretchFilter::StretchFilter(QObject* const parent)
 
 StretchFilter::StretchFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("StretchFilter")),
-      m_refImage(*refImage)
+      m_refImage        (*refImage)
 {
     initFilter();
 }
