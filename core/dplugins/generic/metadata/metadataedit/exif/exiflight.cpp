@@ -389,7 +389,7 @@ void EXIFLight::applyMetadata(const DMetadata& meta)
     if (d->flashEnergyCheck->isChecked())
     {
         meta.convertToRational(d->flashEnergyEdit->value(), &num, &den, 1);
-        meta.setExifTagRational("Exif.Photo.FlashEnergy", num, den);
+        meta.setExifTagURational("Exif.Photo.FlashEnergy", num, den);
     }
     else
     {

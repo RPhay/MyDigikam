@@ -121,7 +121,7 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
         if (identify->maxAperture != -1.0F)
         {
             convertToRational(identify->maxAperture, &num, &den, 8);
-            setExifTagRational("Exif.Image.MaxApertureValue", num, den);
+            setExifTagURational("Exif.Image.MaxApertureValue", num, den);
         }
 
         if (identify->serialNumber != 0)
