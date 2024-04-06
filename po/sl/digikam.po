@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 01:39+0000\n"
+"POT-Creation-Date: 2024-04-06 01:42+0000\n"
 "PO-Revision-Date: 2024-04-03 07:27+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -2917,9 +2917,9 @@ msgstr "Prikaži celozaslonsko"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:487
+#: core/libs/album/engine/album.cpp:491
 #: core/libs/album/manager/albummanager.cpp:173
-#: core/libs/album/treeview/albumselectiontreeview.cpp:266
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:178
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -3011,7 +3011,7 @@ msgid "No Tags Album"
 msgstr "Album brez značk"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:560
+#: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -15871,13 +15871,13 @@ msgid "Close window"
 msgstr "Zapri okno"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:309
+#: core/libs/timeadjust/timeadjustsettings.cpp:310
 #, kde-format
 msgid "Timestamp Used"
 msgstr "Uporabljeni časovni žigi"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:311
+#: core/libs/timeadjust/timeadjustsettings.cpp:312
 #, kde-format
 msgid "Timestamp Updated"
 msgstr "Posodobljeni časovni žig"
@@ -26670,43 +26670,43 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw pretvorba surove"
 
-#: core/libs/album/engine/album.cpp:408
+#: core/libs/album/engine/album.cpp:412
 #: core/libs/database/utils/ifaces/dio.cpp:893
 #, kde-format
 msgid "Trash"
 msgstr "Smeti"
 
-#: core/libs/album/engine/album.cpp:759
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Trenutno iskanje po časovnici"
 
-#: core/libs/album/engine/album.cpp:765
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Trenutno megleno iskanje slik"
 
-#: core/libs/album/engine/album.cpp:769
+#: core/libs/album/engine/album.cpp:778
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Trenutno megleno iskanje s skico"
 
-#: core/libs/album/engine/album.cpp:776
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Map Search"
 msgstr "Trenutno iskanje po zemljevidu"
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:793
 #, kde-format
 msgid "Current Search"
 msgstr "Trenutno iskanje"
 
-#: core/libs/album/engine/album.cpp:784
+#: core/libs/album/engine/album.cpp:798
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Trenutno iskanje dvojnikov"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:241
+#: core/libs/album/engine/albummodificationhelper.cpp:238
 #, kde-format
 msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
@@ -26715,7 +26715,7 @@ msgstr ""
 "<p>Album, ki ga želite izbrisati, vsebuje datoteke (%1), ki niso prikazane v "
 "digiKamu.</p><p>Ali želite nadaljevati?</p>"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:254
+#: core/libs/album/engine/albummodificationhelper.cpp:251
 #, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
@@ -26723,26 +26723,26 @@ msgid ""
 msgstr ""
 "<p>Album, ki ga želite izbrisati, ni prazen</p><p>Ali želite nadaljevati?</p>"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:286
+#: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Preimenuj album (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:290
+#: core/libs/album/engine/albummodificationhelper.cpp:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
 msgstr "Preimenuj album korena (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:293
+#: core/libs/album/engine/albummodificationhelper.cpp:290
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
 msgstr "Vnesite novo ime albuma:"
 
-#: core/libs/album/engine/albumparser.cpp:86
+#: core/libs/album/engine/albumparser.cpp:82
 #, kde-format
 msgid "Scanning albums"
 msgstr "Preiskovanje albumov"
@@ -27267,38 +27267,38 @@ msgstr "Vsebinski meni"
 msgid "Empty Trash"
 msgstr "Izprazni smeti"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:272
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Rating: "
 msgstr "Ocena: "
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:289
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:282
 #, kde-format
 msgctxt "@info: rating label"
 msgid "No Rating"
 msgstr "Brez ocene"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:305
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:298
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Colors: "
 msgstr "Barve: "
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:314
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:308
 #, kde-format
 msgctxt "@info: color label name"
 msgid "No Color"
 msgstr "Ni barve"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:318
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:314
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:471
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Rdeča"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:320
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, kde-format
 msgctxt "@info: color label name"
@@ -27312,94 +27312,94 @@ msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Rumena"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:330
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:332
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr "Zelena"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr "Modra"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:344
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Magenta"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:342
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Siva"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:356
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Črna"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:362
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
 msgstr "Bela"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:366
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:381
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Picks: "
 msgstr "Izbori: "
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:375
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:391
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr "Brez izbora"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:379
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:397
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:308
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Zavrnjeno"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:403
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "Še ne odločeno"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:387
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:409
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
 msgstr "Sprejeto"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:452
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:477
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
 msgstr "Izvožene oznake"
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:456
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:481
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Album z oznakami"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -27407,56 +27407,56 @@ msgstr "Album z oznakami"
 msgid "Expand Selected Nodes"
 msgstr "Razširi izbrana vozlišča"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Razširi vse albume"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Zloži izbrane rekurzivno"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:225
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Strni vse albume"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:228
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Najdi dvojnike..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:231
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Preišči za obrazi"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Popravi skrite predmete"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:237
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr "Osveži"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:302
+#: core/libs/album/treeview/albumselectiontreeview.cpp:286
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Preišči za obraze"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:303
+#: core/libs/album/treeview/albumselectiontreeview.cpp:287
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Ali naj se pregleda tudi pod-albume?"
 
-#: core/libs/album/treeview/labelstreeview.cpp:100
+#: core/libs/album/treeview/labelstreeview.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
@@ -36455,7 +36455,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Barvna oznaka"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1386
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1408
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -37828,7 +37828,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:282
+#: core/libs/timeadjust/timeadjustsettings.cpp:283
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -40484,7 +40484,7 @@ msgid "File name timestamp"
 msgstr "Časovni žig imena datoteke"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:180
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#: core/libs/timeadjust/timeadjustsettings.cpp:276
 #, kde-format
 msgid "File last modified"
 msgstr "Datoteka nazadnje spremenjena"
@@ -40495,25 +40495,25 @@ msgid "EXIF/IPTC/XMP"
 msgstr "EXIF/IPTC/XMP"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, kde-format
 msgid "EXIF: created"
 msgstr "EXIF: ustvarjena"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:191
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "EXIF: original"
 msgstr "EXIF: izvirnik"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:192
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, kde-format
 msgid "EXIF: digitized"
 msgstr "EXIF: predelava v digitalno"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:193
-#: core/libs/timeadjust/timeadjustsettings.cpp:280
+#: core/libs/timeadjust/timeadjustsettings.cpp:281
 #, kde-format
 msgid "IPTC: created"
 msgstr "Ustvarjeno: IPTC"
@@ -40591,21 +40591,27 @@ msgid "Update timestamps with ExifTool"
 msgstr "Posodobi časovne žige z ExifTool"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
+#, fuzzy, kde-format
+#| msgid "Set this option to display the image file size."
+msgid "Use this option primarily with video files"
+msgstr "Nastavite to možnost, da prikažete velikost slikovne datoteke."
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr "Posodobite samo obstoječe časovne žige"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:280
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "EXIF: Sličica"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:281
+#: core/libs/timeadjust/timeadjustsettings.cpp:282
 #, kde-format
 msgid "XMP: Video"
 msgstr "XMP: Video"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:310
+#: core/libs/timeadjust/timeadjustsettings.cpp:311
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr "Prilagoditve časovnih žigov"
