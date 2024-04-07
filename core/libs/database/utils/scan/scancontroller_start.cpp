@@ -264,6 +264,7 @@ void ScanController::beginFileMetadataWrite(const ItemInfo& info)
 {
     {
         // throw in a lock to synchronize with all parallel writing
+
         FileReadLocker locker(info.filePath());
     }
 

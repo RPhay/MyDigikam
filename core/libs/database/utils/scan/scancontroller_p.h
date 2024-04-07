@@ -101,8 +101,7 @@ class Q_DECL_HIDDEN ScanController::Private
 {
 public:
 
-    explicit Private();
-
+    Private() = default;
 
     QPixmap albumPixmap();
     QPixmap rootPixmap();
@@ -114,51 +113,51 @@ public:
 
 public:
 
-    bool                            running;
-    bool                            needsInitialization;
-    bool                            needsCompleteScan;
-    bool                            needsUpdateUniqueHash;
-    bool                            idle;
+    bool                            running                 = false;
+    bool                            needsInitialization     = false;
+    bool                            needsCompleteScan       = false;
+    bool                            needsUpdateUniqueHash   = false;
+    bool                            idle                    = false;
 
-    int                             scanSuspended;
+    int                             scanSuspended           = 0;
 
     QStringList                     scanTasks;
 
     QStringList                     completeScanDeferredAlbums;
-    bool                            deferFileScanning;
-    bool                            finishScanAllowed;
+    bool                            deferFileScanning       = false;
+    bool                            finishScanAllowed       = true;
 
     QMutex                          mutex;
     QWaitCondition                  condVar;
 
-    bool                            continueInitialization;
-    bool                            continueScan;
-    bool                            continuePartialScan;
+    bool                            continueInitialization  = false;
+    bool                            continueScan            = false;
+    bool                            continuePartialScan     = false;
 
-    bool                            fileWatchInstalled;
+    bool                            fileWatchInstalled      = false;
 
-    QEventLoop*                     eventLoop;
+    QEventLoop*                     eventLoop               = nullptr;
 
-    QTimer*                         showTimer;
-    QTimer*                         relaxedTimer;
-    QTimer*                         externalTimer;
+    QTimer*                         showTimer               = nullptr;
+    QTimer*                         relaxedTimer            = nullptr;
+    QTimer*                         externalTimer           = nullptr;
 
     QPixmap                         albumPix;
     QPixmap                         rootPix;
     QPixmap                         actionPix;
     QPixmap                         errorPix;
 
-    CollectionScannerHintContainer* hints;
+    CollectionScannerHintContainer* hints                   = nullptr;
 
     QDateTime                       lastHintAdded;
 
-    DProgressDlg*                   progressDialog;
+    DProgressDlg*                   progressDialog          = nullptr;
 
     ScanController::Advice          advice;
 
-    bool                            needTotalFiles;
-    bool                            performFastScan;
-    int                             totalFilesToScan;
+    bool                            needTotalFiles          = false;
+    bool                            performFastScan         = true;
+    int                             totalFilesToScan        = 0;
 
     QList<qlonglong>                newIdsList;
 };

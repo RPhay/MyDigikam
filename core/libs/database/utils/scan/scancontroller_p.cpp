@@ -32,32 +32,6 @@ bool SimpleCollectionScannerObserver::continueQuery()
 
 // ------------------------------------------------------------------------------
 
-ScanController::Private::Private()
-    : running               (false),
-      needsInitialization   (false),
-      needsCompleteScan     (false),
-      needsUpdateUniqueHash (false),
-      idle                  (false),
-      scanSuspended         (0),
-      deferFileScanning     (false),
-      finishScanAllowed     (true),
-      continueInitialization(false),
-      continueScan          (false),
-      continuePartialScan   (false),
-      fileWatchInstalled    (false),
-      eventLoop             (nullptr),
-      showTimer             (nullptr),
-      relaxedTimer          (nullptr),
-      externalTimer         (nullptr),
-      hints                 (CollectionScanner::createHintContainer()),
-      progressDialog        (nullptr),
-      advice                (ScanController::Success),
-      needTotalFiles        (false),
-      performFastScan       (true),
-      totalFilesToScan      (0)
-{
-}
-
 QPixmap ScanController::Private::albumPixmap()
 {
     if (albumPix.isNull())
@@ -114,7 +88,7 @@ void ScanController::Private::garbageCollectHints(bool setAccessTime)
 
     if (idle                    &&
         lastHintAdded.isValid() &&
-        (lastHintAdded.secsTo(current) > (5*60)))
+        (lastHintAdded.secsTo(current) > (5 * 60)))
     {
         hints->clear();
     }

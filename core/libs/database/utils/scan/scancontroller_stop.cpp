@@ -56,6 +56,7 @@ void ScanController::cancelAllAndSuspendCollectionScan()
     d->relaxedTimer->stop();
 
     // like suspendCollectionScan
+
     d->scanSuspended++;
 
     while (!d->idle)
@@ -78,16 +79,22 @@ void ScanController::finishedSchemaUpdate(UpdateResult result)
     switch (result)
     {
         case InitializationObserver::UpdateSuccess:
+        {
             d->advice = Success;
             break;
+        }
 
         case InitializationObserver::UpdateError:
+        {
             d->advice = ContinueWithoutDatabase;
             break;
+        }
 
         case InitializationObserver::UpdateErrorMustAbort:
+        {
             d->advice = AbortImmediately;
             break;
+        }
     }
 }
 

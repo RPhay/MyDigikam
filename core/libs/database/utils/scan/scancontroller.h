@@ -75,7 +75,7 @@ public:
     protected:
 
         ItemInfo m_info;
-        bool     m_changed;
+        bool     m_changed = false;
     };
 
 public:

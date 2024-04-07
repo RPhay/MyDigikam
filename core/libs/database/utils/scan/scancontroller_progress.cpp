@@ -27,6 +27,7 @@ void ScanController::slotTotalFilesToScan(int count)
     }
 
     d->totalFilesToScan += count;
+
     Q_EMIT totalFilesToScan(d->totalFilesToScan);
 }
 

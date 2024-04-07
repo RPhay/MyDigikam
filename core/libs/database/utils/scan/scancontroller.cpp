@@ -20,8 +20,7 @@ namespace Digikam
 {
 
 ScanController::FileMetadataWrite::FileMetadataWrite(const ItemInfo& info)
-    : m_info   (info),
-      m_changed(false)
+    : m_info(info)
 {
     ScanController::instance()->beginFileMetadataWrite(info);
 }
