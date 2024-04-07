@@ -128,7 +128,7 @@ private:
 
 private:
 
-    int                m_processingCount;
+    int                m_processingCount    = 0;
     QMap<QString, int> m_trashCounterMap;
     QMutex             m_trashCounterMutex;
 

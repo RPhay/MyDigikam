@@ -50,7 +50,9 @@ SyncJob::SyncJob()
 SyncJob::~SyncJob()
 {
     delete d->thumbnail;
+
     d->thumbnail = nullptr;
+
     delete d;
 }
 
