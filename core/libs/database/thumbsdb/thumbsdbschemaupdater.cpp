@@ -49,25 +49,18 @@ class Q_DECL_HIDDEN ThumbsDbSchemaUpdater::Private
 
 public:
 
-    explicit Private()
-      : setError              (false),
-        currentVersion        (0),
-        currentRequiredVersion(0),
-        dbAccess              (nullptr),
-        observer              (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    bool                     setError;
+    bool                     setError               = false;
 
-    int                      currentVersion;
-    int                      currentRequiredVersion;
+    int                      currentVersion         = 0;
+    int                      currentRequiredVersion = 0;
 
-    ThumbsDbAccess*          dbAccess;
+    ThumbsDbAccess*          dbAccess               = nullptr;
 
-    InitializationObserver*  observer;
+    InitializationObserver*  observer               = nullptr;
 };
 
 ThumbsDbSchemaUpdater::ThumbsDbSchemaUpdater(ThumbsDbAccess* const dbAccess)
@@ -247,6 +240,7 @@ bool ThumbsDbSchemaUpdater::createDatabase()
     {
         d->currentVersion         = schemaVersion();
         d->currentRequiredVersion = 1;
+
         return true;
     }
     else
@@ -289,6 +283,7 @@ bool ThumbsDbSchemaUpdater::updateV2ToV3()
     if (!d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("UpdateThumbnailsDBSchemaFromV2ToV3"))))
     {
         qCDebug(DIGIKAM_THUMBSDB_LOG) << "Thumbs database: schema upgrade from V2 to V3 failed!";
+
         return false;
     }
 

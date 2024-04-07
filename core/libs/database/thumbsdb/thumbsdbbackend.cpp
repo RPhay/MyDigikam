@@ -48,6 +48,7 @@ bool ThumbsDbBackend::initSchema(ThumbsDbSchemaUpdater* const updater)
     if (updater->update())
     {
         d->status = OpenSchemaChecked;
+
         return true;
     }
 

@@ -42,24 +42,15 @@ class Q_DECL_HIDDEN ThumbsDbAccessStaticPriv
 {
 public:
 
-    explicit ThumbsDbAccessStaticPriv()
-        : backend     (nullptr),
-          db          (nullptr),
-          initializing(false)
-    {
-    }
+    ThumbsDbAccessStaticPriv() = default;
 
-    ~ThumbsDbAccessStaticPriv()
-    {
-    };
-
-    ThumbsDbBackend*   backend;
-    ThumbsDb*          db;
+    ThumbsDbBackend*   backend      = nullptr;
+    ThumbsDb*          db           = nullptr;
     DbEngineParameters parameters;
     DbEngineLocking    lock;
     QString            lastError;
 
-    bool               initializing;
+    bool               initializing = false;
 };
 
 ThumbsDbAccessStaticPriv* ThumbsDbAccess::d = nullptr;
@@ -95,7 +86,7 @@ public:
 
 public:
 
-    ThumbsDbAccessStaticPriv* const d;
+    ThumbsDbAccessStaticPriv* const d = nullptr;
 };
 
 // -----------------------------------------------------------------------------
@@ -216,6 +207,7 @@ void ThumbsDbAccess::setParameters(const DbEngineParameters& parameters)
     {
         delete d->db;
         delete d->backend;
+
         d->backend = new ThumbsDbBackend(&d->lock);
         d->db      = new ThumbsDb(d->backend);
     }
@@ -272,6 +264,7 @@ bool ThumbsDbAccess::checkReadyForUse(InitializationObserver* const observer)
         qCWarning(DIGIKAM_THUMBSDB_LOG) << "Thumbs database: cannot process schema initialization";
 
         d->initializing = false;
+
         return false;
     }
 
@@ -299,12 +292,14 @@ void ThumbsDbAccess::cleanUpDatabase()
         if (d->backend)
         {
             d->backend->close();
+
             delete d->db;
             delete d->backend;
         }
     }
 
     delete d;
+
     d = nullptr;
 }
 
