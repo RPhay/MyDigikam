@@ -147,13 +147,13 @@ public:
     QPixmap                         actionPix;
     QPixmap                         errorPix;
 
-    CollectionScannerHintContainer* hints                   = nullptr;
+    CollectionScannerHintContainer* hints                   = CollectionScanner::createHintContainer();
 
     QDateTime                       lastHintAdded;
 
     DProgressDlg*                   progressDialog          = nullptr;
 
-    ScanController::Advice          advice;
+    ScanController::Advice          advice                  = ScanController::Success;
 
     bool                            needTotalFiles          = false;
     bool                            performFastScan         = true;
