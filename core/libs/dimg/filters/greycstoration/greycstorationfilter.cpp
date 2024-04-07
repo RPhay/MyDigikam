@@ -46,6 +46,8 @@
 #   pragma GCC diagnostic ignored "-Wmisleading-indentation"
 #   pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #   pragma GCC diagnostic ignored "-Wdate-time"
+#   pragma GCC diagnostic ignored "-Woverflow"
+#   pragma GCC diagnostic ignored "-Wtype-limits"
 #endif
 
 #if defined(Q_CC_CLANG)
@@ -88,13 +90,7 @@ class Q_DECL_HIDDEN GreycstorationFilter::Private
 
 public:
 
-    explicit Private()
-      : gfact             (1.0),
-        computationThreads(2),
-        mode              (GreycstorationFilter::Restore),
-        threadManager     (new CImg<>::GreycstorationThreadManager)
-    {
-    }
+    Private() = default;
 
     ~Private()
     {
@@ -103,20 +99,27 @@ public:
 
 public:
 
-    float                                gfact;
+    float                                gfact              = 1.0F;
 
-    int                                  computationThreads;  // Number of threads used by CImg during computation.
-    int                                  mode;                // The interface running mode.
+    /**
+     * Number of threads used by CImg during computation.
+     */
+    int                                  computationThreads = 2;
+
+    /**
+     * The interface running mode.
+     */
+    int                                  mode               = GreycstorationFilter::Restore;
 
     QSize                                newSize;
-    QImage                               inPaintingMask;      // Mask for inpainting.
+    QImage                               inPaintingMask;    ///< Mask for inpainting.
 
-    GreycstorationContainer              settings;            // Current Greycstoraion algorithm settings.
+    GreycstorationContainer              settings;          ///< Current Greycstoraion algorithm settings.
 
-    CImg<>                               img;                 // Main image.
-    CImg<uchar>                          mask;                // The mask used with inpaint or resize mode
+    CImg<>                               img;               ///< Main image.
+    CImg<uchar>                          mask;              ///< The mask used with inpaint or resize mode
 
-    CImg<>::GreycstorationThreadManager* threadManager;
+    CImg<>::GreycstorationThreadManager* threadManager      = new CImg<>::GreycstorationThreadManager;
 };
 
 GreycstorationFilter::GreycstorationFilter(QObject* const parent)
@@ -148,6 +151,7 @@ GreycstorationFilter::GreycstorationFilter(DImg* const orgImage,
 GreycstorationFilter::~GreycstorationFilter()
 {
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     this->cancelFilter();
 
     delete d;
@@ -271,23 +275,32 @@ void GreycstorationFilter::filterImage()
         switch (d->mode)
         {
             case Restore:
+            {
                 restoration();
                 break;
+            }
 
             case InPainting:
+            {
                 inpainting();
                 break;
+            }
 
             case Resize:
+            {
                 resize();
                 break;
+            }
 
             case SimpleResize:
+            {
                 simpleResize();
                 break;
+            }
         }
 
         // harvest
+
         d->threadManager->finish();
     }
     catch (...)        // Everything went wrong.
@@ -355,14 +368,19 @@ void GreycstorationFilter::restoration()
         // This function will start a thread running one iteration of the GREYCstoration filter.
         // It returns immediately, so you can do what you want after (update a progress bar for
         // instance).
+
         d->threadManager->start(d->img, d->settings.amplitude,
                                 d->settings.sharpness,
                                 d->settings.anisotropy,
                                 d->settings.alpha,
                                 d->settings.sigma,
+
 #ifdef GREYSTORATION_USING_GFACT
+
                                 d->gfact,
+
 #endif
+
                                 d->settings.dl,
                                 d->settings.da,
                                 d->settings.gaussPrec,
@@ -402,6 +420,7 @@ void GreycstorationFilter::inpainting()
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Inpainting image: mask is null!";
         stop();
+
         return;
     }
 
@@ -410,15 +429,20 @@ void GreycstorationFilter::inpainting()
         // This function will start a thread running one iteration of the GREYCstoration filter.
         // It returns immediately, so you can do what you want after (update a progress bar for
         // instance).
+
         d->threadManager->start(d->img, &d->mask,
                                 d->settings.amplitude,
                                 d->settings.sharpness,
                                 d->settings.anisotropy,
                                 d->settings.alpha,
                                 d->settings.sigma,
+
 #ifdef GREYSTORATION_USING_GFACT
+
                                 d->gfact,
+
 #endif
+
                                 d->settings.dl,
                                 d->settings.da,
                                 d->settings.gaussPrec,
@@ -458,15 +482,20 @@ void GreycstorationFilter::resize()
         // This function will start a thread running one iteration of the GREYCstoration filter.
         // It returns immediately, so you can do what you want after (update a progress bar for
         // instance).
+
         d->threadManager->start(d->img, &d->mask,
                                 d->settings.amplitude,
                                 d->settings.sharpness,
                                 d->settings.anisotropy,
                                 d->settings.alpha,
                                 d->settings.sigma,
+
 #ifdef GREYSTORATION_USING_GFACT
+
                                 d->gfact,
+
 #endif
+
                                 d->settings.dl,
                                 d->settings.da,
                                 d->settings.gaussPrec,
@@ -512,6 +541,7 @@ void GreycstorationFilter::iterationLoop(uint iter)
 
             // Update the progress bar in dialog. We simply compute the global
             // progression index (including all iterations).
+
             p = (uint)((iter * 100 + progress) / d->settings.nbIter);
 
             if (p > mp)

@@ -43,72 +43,42 @@ class Q_DECL_HIDDEN GreycstorationSettings::Private
 
 public:
 
-    explicit Private()
-      : alphaLabel          (nullptr),
-        amplitudeLabel      (nullptr),
-        anisotropyLabel     (nullptr),
-        btileLabel          (nullptr),
-        daLabel             (nullptr),
-        dlLabel             (nullptr),
-        gaussianPrecLabel   (nullptr),
-        interpolationLabel  (nullptr),
-        iterationLabel      (nullptr),
-        sharpnessLabel      (nullptr),
-        sigmaLabel          (nullptr),
-        tileLabel           (nullptr),
-        advancedPage        (nullptr),
-        generalPage         (nullptr),
-        fastApproxCBox      (nullptr),
-        parent              (nullptr),
-        interpolationBox    (nullptr),
-        alphaInput          (nullptr),
-        amplitudeInput      (nullptr),
-        anisotropyInput     (nullptr),
-        daInput             (nullptr),
-        dlInput             (nullptr),
-        gaussianPrecInput   (nullptr),
-        sharpnessInput      (nullptr),
-        sigmaInput          (nullptr),
-        btileInput          (nullptr),
-        iterationInput      (nullptr),
-        tileInput           (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*          alphaLabel;
-    QLabel*          amplitudeLabel;
-    QLabel*          anisotropyLabel;
-    QLabel*          btileLabel;
-    QLabel*          daLabel;
-    QLabel*          dlLabel;
-    QLabel*          gaussianPrecLabel;
-    QLabel*          interpolationLabel;
-    QLabel*          iterationLabel;
-    QLabel*          sharpnessLabel;
-    QLabel*          sigmaLabel;
-    QLabel*          tileLabel;
+    QLabel*          alphaLabel         = nullptr;
+    QLabel*          amplitudeLabel     = nullptr;
+    QLabel*          anisotropyLabel    = nullptr;
+    QLabel*          btileLabel         = nullptr;
+    QLabel*          daLabel            = nullptr;
+    QLabel*          dlLabel            = nullptr;
+    QLabel*          gaussianPrecLabel  = nullptr;
+    QLabel*          interpolationLabel = nullptr;
+    QLabel*          iterationLabel     = nullptr;
+    QLabel*          sharpnessLabel     = nullptr;
+    QLabel*          sigmaLabel         = nullptr;
+    QLabel*          tileLabel          = nullptr;
 
-    QWidget*         advancedPage;
-    QWidget*         generalPage;
+    QWidget*         advancedPage       = nullptr;
+    QWidget*         generalPage        = nullptr;
 
-    QCheckBox*       fastApproxCBox;
+    QCheckBox*       fastApproxCBox     = nullptr;
 
-    QTabWidget*      parent;
+    QTabWidget*      parent             = nullptr;
 
-    DComboBox*       interpolationBox;
+    DComboBox*       interpolationBox   = nullptr;
 
-    DDoubleNumInput* alphaInput;
-    DDoubleNumInput* amplitudeInput;
-    DDoubleNumInput* anisotropyInput;
-    DDoubleNumInput* daInput;
-    DDoubleNumInput* dlInput;
-    DDoubleNumInput* gaussianPrecInput;
-    DDoubleNumInput* sharpnessInput;
-    DDoubleNumInput* sigmaInput;
+    DDoubleNumInput* alphaInput         = nullptr;
+    DDoubleNumInput* amplitudeInput     = nullptr;
+    DDoubleNumInput* anisotropyInput    = nullptr;
+    DDoubleNumInput* daInput            = nullptr;
+    DDoubleNumInput* dlInput            = nullptr;
+    DDoubleNumInput* gaussianPrecInput  = nullptr;
+    DDoubleNumInput* sharpnessInput     = nullptr;
+    DDoubleNumInput* sigmaInput         = nullptr;
 
-    DIntNumInput*    btileInput;
-    DIntNumInput*    iterationInput;
-    DIntNumInput*    tileInput;
+    DIntNumInput*    btileInput         = nullptr;
+    DIntNumInput*    iterationInput     = nullptr;
+    DIntNumInput*    tileInput          = nullptr;
 };
 
 GreycstorationSettings::GreycstorationSettings(QTabWidget* const parent)

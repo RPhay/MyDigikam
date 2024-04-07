@@ -45,14 +45,8 @@ public:
 
 public:
 
-    explicit GreycstorationContainer()
-    {
-        setRestorationDefaultSettings();
-    };
-
-    ~GreycstorationContainer()
-    {
-    };
+    GreycstorationContainer()  = default;
+    ~GreycstorationContainer() = default;
 
     void setRestorationDefaultSettings()
     {
@@ -64,15 +58,15 @@ public:
         nbIter     = 1;
         interp     = NearestNeighbor;
 
-        amplitude  = 60.0;
+        amplitude  = 60.0F;
         sharpness  = 0.7F;
         anisotropy = 0.3F;
         alpha      = 0.6F;
         sigma      = 1.1F;
-        gaussPrec  = 2.0;
+        gaussPrec  = 2.0F;
         dl         = 0.8F;
-        da         = 30.0;
-    };
+        da         = 30.0F;
+    }
 
     void setInpaintingDefaultSettings()
     {
@@ -84,15 +78,15 @@ public:
         nbIter     = 30;
         interp     = NearestNeighbor;
 
-        amplitude  = 20.0;
+        amplitude  = 20.0F;
         sharpness  = 0.3F;
-        anisotropy = 1.0;
+        anisotropy = 1.0F;
         alpha      = 0.8F;
-        sigma      = 2.0;
-        gaussPrec  = 2.0;
+        sigma      = 2.0F;
+        gaussPrec  = 2.0F;
         dl         = 0.8F;
-        da         = 30.0;
-    };
+        da         = 30.0F;
+    }
 
     void setResizeDefaultSettings()
     {
@@ -104,34 +98,34 @@ public:
         nbIter     = 3;
         interp     = NearestNeighbor;
 
-        amplitude  = 20.0;
+        amplitude  = 20.0F;
         sharpness  = 0.2F;
         anisotropy = 0.9F;
         alpha      = 0.1F;
-        sigma      = 1.5;
-        gaussPrec  = 2.0;
+        sigma      = 1.5F;
+        gaussPrec  = 2.0F;
         dl         = 0.8F;
-        da         = 30.0;
-    };
+        da         = 30.0F;
+    }
 
 public:
 
-    bool  fastApprox;
+    bool  fastApprox    = true;
 
-    int   tile;
-    int   btile;
+    int   tile          = 256;
+    int   btile         = 4;
 
-    uint  nbIter;
-    uint  interp;
+    uint  nbIter        = 1;
+    uint  interp        = NearestNeighbor;
 
-    float amplitude;
-    float sharpness;
-    float anisotropy;
-    float alpha;
-    float sigma;
-    float gaussPrec;
-    float dl;
-    float da;
+    float amplitude     = 60.0F;
+    float sharpness     = 0.7F;
+    float anisotropy    = 0.3F;
+    float alpha         = 0.6F;
+    float sigma         = 1.1F;
+    float gaussPrec     = 2.0F;
+    float dl            = 0.6F;
+    float da            = 30.0F;
 };
 
 // --------------------------------------------------------------------------
