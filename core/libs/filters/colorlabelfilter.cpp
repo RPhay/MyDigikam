@@ -49,24 +49,23 @@ QList<TAlbum*> ColorLabelFilter::getCheckedColorLabelTags()
     QList<TAlbum*> list;
     int tagId   = 0;
     TAlbum* tag = nullptr;
-qCDebug(DIGIKAM_GENERAL_LOG) << "Color label tag ids:" << TagsCache::instance()->colorLabelTags();
+
     Q_FOREACH (const ColorLabel& cl, colorLabels())
     {
         tagId = TagsCache::instance()->tagForColorLabel(cl);
         tag   = AlbumManager::instance()->findTAlbum(tagId);
-qCDebug(DIGIKAM_GENERAL_LOG) << "Color label:" << cl << "Found tag id:" << tagId << "TAlbum:" << tag;
-        if (tagId)
+
+        if (tagId && tag)
         {
             list.append(tag);
         }
     }
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Color label albums:" << list;
+
     return list;
 }
 
 void ColorLabelFilter::slotColorLabelSelectionChanged()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Color label selection changed:" << colorLabels();
     Q_EMIT signalColorLabelSelectionChanged(colorLabels());
 }
 
