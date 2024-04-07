@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 01:42+0000\n"
-"PO-Revision-Date: 2024-04-03 10:26+0200\n"
+"POT-Creation-Date: 2024-04-07 01:41+0000\n"
+"PO-Revision-Date: 2024-04-06 15:14+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -31756,12 +31756,12 @@ msgstr "Onbekend filter"
 msgid "Color Negative Inverter"
 msgstr "Inverter voor kleurennegatieven"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:193
+#: core/libs/dimg/filters/filteractionfilter.cpp:190
 #, kde-format
 msgid "Built-in transformation not supported"
 msgstr "Ingebouwde transformaties niet ondersteund"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:215
+#: core/libs/dimg/filters/filteractionfilter.cpp:212
 #, kde-format
 msgid "Filter identifier or version is not supported"
 msgstr "Filter-identifier of versie wordt niet ondersteund"
@@ -36795,7 +36795,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Kleurlabel"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1408
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1430
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -40899,10 +40899,9 @@ msgid "Update timestamps with ExifTool"
 msgstr "Tijdstippen bijwerken met ExifTool"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image file size."
+#, kde-format
 msgid "Use this option primarily with video files"
-msgstr "Activeer deze optie om de grootte van het afbeeldingsbestand te tonen."
+msgstr "Deze optie primair gebruiken met videobestanden."
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, kde-format
