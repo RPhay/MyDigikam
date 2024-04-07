@@ -57,8 +57,8 @@ class Q_DECL_HIDDEN TagsCache::Private
 {
 public:
 
-    explicit Private(TagsCache* const q)
-        : q(q)
+    explicit Private(TagsCache* const qq)
+        : q(qq)
     {
     }
 

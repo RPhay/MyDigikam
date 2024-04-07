@@ -28,14 +28,8 @@
 namespace Digikam
 {
 
-TagRegion::TagRegion()
-    : m_type(Invalid)
-{
-}
-
 TagRegion::TagRegion(const QString& descriptor)
-    : m_value(descriptor),
-      m_type (Invalid)
+    : m_value(descriptor)
 {
     QString xmlStartDocument = QLatin1String("<?xml version=\"1.0\"?>");
     QXmlStreamReader reader(xmlStartDocument + descriptor);

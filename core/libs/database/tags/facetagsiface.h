@@ -54,7 +54,7 @@ public:
 
 public:
 
-    FaceTagsIface();
+    FaceTagsIface() = default;
     FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region);
     FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId, const TagRegion& region);
 
@@ -148,9 +148,9 @@ public:
 
 protected:
 
-    Type      m_type;
-    qlonglong m_imageId;
-    int       m_tagId;
+    Type      m_type    = InvalidFace;
+    qlonglong m_imageId = 0;
+    int       m_tagId   = 0;
     TagRegion m_region;
 };
 

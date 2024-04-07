@@ -29,13 +29,6 @@
 namespace Digikam
 {
 
-FaceTagsIface::FaceTagsIface()
-    : m_type   (InvalidFace),
-      m_imageId(0),
-      m_tagId  (0)
-{
-}
-
 FaceTagsIface::FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region)
     : m_type   (type),
       m_imageId(imageId),

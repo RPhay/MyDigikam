@@ -55,7 +55,7 @@ public:
     /**
      * Construct an invalid region.
      */
-    TagRegion();
+    TagRegion() = default;
 
     /**
      * Construct with the textual descriptor.
@@ -144,7 +144,7 @@ public:
 protected:
 
     QVariant m_value;
-    Type     m_type;
+    Type     m_type = Invalid;
 };
 
 QDebug DIGIKAM_EXPORT operator<<(QDebug dbg, const TagRegion& r);
