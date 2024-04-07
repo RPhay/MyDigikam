@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 01:42+0000\n"
+"POT-Creation-Date: 2024-04-07 01:41+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -30141,12 +30141,12 @@ msgstr "अज्ञात त्रुटि"
 msgid "Color Negative Inverter"
 msgstr ""
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:193
+#: core/libs/dimg/filters/filteractionfilter.cpp:190
 #, kde-format
 msgid "Built-in transformation not supported"
 msgstr ""
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:215
+#: core/libs/dimg/filters/filteractionfilter.cpp:212
 #, fuzzy, kde-format
 msgid "Filter identifier or version is not supported"
 msgstr "लक्ष्य छवि फाइल ढाँचा \"%1\" समर्थन गर्दैन ।"
@@ -34991,7 +34991,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "रङ गहिराइ:"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1408
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1430
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

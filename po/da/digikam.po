@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 01:42+0000\n"
+"POT-Creation-Date: 2024-04-07 01:41+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -33115,12 +33115,12 @@ msgstr "Ukendt filter"
 msgid "Color Negative Inverter"
 msgstr "Invertering af farvenegativ"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:193
+#: core/libs/dimg/filters/filteractionfilter.cpp:190
 #, kde-format
 msgid "Built-in transformation not supported"
 msgstr "Indbygget transformation er ikke understøttet"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:215
+#: core/libs/dimg/filters/filteractionfilter.cpp:212
 #, kde-format
 msgid "Filter identifier or version is not supported"
 msgstr "Filteridentifikator eller -version er ikke understøttet"
@@ -38530,7 +38530,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Farveetiket"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1408
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1430
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

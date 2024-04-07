@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 01:42+0000\n"
-"PO-Revision-Date: 2024-04-03 12:41+0300\n"
+"POT-Creation-Date: 2024-04-07 01:41+0000\n"
+"PO-Revision-Date: 2024-04-06 08:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -31893,12 +31893,12 @@ msgstr "Невідомий фільтр"
 msgid "Color Negative Inverter"
 msgstr "Інвертор кольорових негативів"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:193
+#: core/libs/dimg/filters/filteractionfilter.cpp:190
 #, kde-format
 msgid "Built-in transformation not supported"
 msgstr "Підтримки вбудованих перетворень не передбачено"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:215
+#: core/libs/dimg/filters/filteractionfilter.cpp:212
 #, kde-format
 msgid "Filter identifier or version is not supported"
 msgstr ""
@@ -36947,7 +36947,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Позначка кольору"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1408
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1430
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -41123,10 +41123,9 @@ msgid "Update timestamps with ExifTool"
 msgstr "Оновити часові позначки за допомогою ExifTool"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image file size."
+#, kde-format
 msgid "Use this option primarily with video files"
-msgstr "Позначте цей пункт, щоб показувати розмір файла зображення."
+msgstr "Цей параметр використовують, в основному, для відеофайлів"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, kde-format

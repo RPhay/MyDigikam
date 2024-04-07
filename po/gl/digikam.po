@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 01:42+0000\n"
+"POT-Creation-Date: 2024-04-07 01:41+0000\n"
 "PO-Revision-Date: 2024-03-17 12:41+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -34147,12 +34147,12 @@ msgstr "Filtro descoñecido"
 msgid "Color Negative Inverter"
 msgstr "Inversor de negativo de cor"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:193
+#: core/libs/dimg/filters/filteractionfilter.cpp:190
 #, kde-format
 msgid "Built-in transformation not supported"
 msgstr "Non se admite realizar a transformación incorporada"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:215
+#: core/libs/dimg/filters/filteractionfilter.cpp:212
 #, kde-format
 msgid "Filter identifier or version is not supported"
 msgstr "Non se permiten o identificador do filtro ou a versión"
@@ -39584,7 +39584,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Etiqueta de cores"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1408
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1430
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

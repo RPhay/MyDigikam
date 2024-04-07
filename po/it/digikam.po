@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 01:42+0000\n"
-"PO-Revision-Date: 2024-04-01 12:43+0200\n"
+"POT-Creation-Date: 2024-04-07 01:41+0000\n"
+"PO-Revision-Date: 2024-04-06 20:48+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -16110,11 +16110,9 @@ msgid "Failed to update file timestamp"
 msgstr "Aggiornamento di data e ora del file non riuscito"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Apply Metadata: ExifTool reported an error."
+#, kde-format
 msgid "ExifTool reported an error"
-msgstr "Applica i metadati: ExifTool ha segnalato un errore."
+msgstr "ExifTool ha segnalato un errore"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
@@ -31800,12 +31798,12 @@ msgstr "Filtro sconosciuto"
 msgid "Color Negative Inverter"
 msgstr "Invertitore a colore negativo"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:193
+#: core/libs/dimg/filters/filteractionfilter.cpp:190
 #, kde-format
 msgid "Built-in transformation not supported"
 msgstr "Trasformazione integrata non supportata"
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:215
+#: core/libs/dimg/filters/filteractionfilter.cpp:212
 #, kde-format
 msgid "Filter identifier or version is not supported"
 msgstr "Il filtro identificativo o la versione non è supportato"
@@ -36867,7 +36865,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Etichetta colorata"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1408
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1430
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -40978,14 +40976,12 @@ msgstr ""
 #: core/libs/timeadjust/timeadjustsettings.cpp:273
 #, kde-format
 msgid "Update timestamps with ExifTool"
-msgstr ""
+msgstr "Aggiorna date e ore con ExifTool"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image file size."
+#, kde-format
 msgid "Use this option primarily with video files"
-msgstr ""
-"Abilita questa opzione per visualizzare la dimensione del file dell'immagine."
+msgstr "Usa questa opzione principalmente con i file video"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, kde-format
@@ -42257,10 +42253,9 @@ msgid "Choose..."
 msgstr "Scegli..."
 
 #: core/libs/widgets/fonts/dfontselect.cpp:145
-#, fuzzy, kde-format
-#| msgid "Select a month"
+#, kde-format
 msgid "Select a Font"
-msgstr "Seleziona un mese"
+msgstr "Seleziona un carattere"
 
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
 #, kde-format
