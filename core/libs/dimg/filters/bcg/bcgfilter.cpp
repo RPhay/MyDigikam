@@ -33,14 +33,10 @@ class Q_DECL_HIDDEN BCGFilter::Private
 {
 public:
 
-    explicit Private()
-    {
-        memset(map,   0, sizeof(map));
-        memset(map16, 0, sizeof(map16));
-    }
+    Private() = default;
 
-    int          map[256];
-    int          map16[65536];
+    int          map[256]       = { 0 };
+    int          map16[65536]   = { 0 };
 
     BCGContainer settings;
 };
@@ -200,22 +196,30 @@ void BCGFilter::applyBCG(uchar* const bits, uint width, uint height, bool sixtee
             switch (d->settings.channel)
             {
                 case BlueChannel:
+                {
                     data[0] = CLAMP0255(d->map[data[0]]);
                     break;
+                }
 
                 case GreenChannel:
+                {
                     data[1] = CLAMP0255(d->map[data[1]]);
                     break;
+                }
 
                 case RedChannel:
+                {
                     data[2] = CLAMP0255(d->map[data[2]]);
                     break;
+                }
 
                 default:      // all channels
+                {
                     data[0] = CLAMP0255(d->map[data[0]]);
                     data[1] = CLAMP0255(d->map[data[1]]);
                     data[2] = CLAMP0255(d->map[data[2]]);
                     break;
+                }
             }
 
             data += 4;
@@ -237,22 +241,30 @@ void BCGFilter::applyBCG(uchar* const bits, uint width, uint height, bool sixtee
             switch (d->settings.channel)
             {
                 case BlueChannel:
+                {
                     data[0] = CLAMP065535(d->map16[data[0]]);
                     break;
+                }
 
                 case GreenChannel:
+                {
                     data[1] = CLAMP065535(d->map16[data[1]]);
                     break;
+                }
 
                 case RedChannel:
+                {
                     data[2] = CLAMP065535(d->map16[data[2]]);
                     break;
+                }
 
                 default:      // all channels
+                {
                     data[0] = CLAMP065535(d->map16[data[0]]);
                     data[1] = CLAMP065535(d->map16[data[1]]);
                     data[2] = CLAMP065535(d->map16[data[2]]);
                     break;
+                }
             }
 
             data += 4;

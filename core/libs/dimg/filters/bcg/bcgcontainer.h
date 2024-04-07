@@ -24,6 +24,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -35,7 +36,7 @@ class DIGIKAM_EXPORT BCGContainer
 
 public:
 
-    explicit BCGContainer();
+    BCGContainer() = default;
 
     bool isDefault()                                                                  const;
     bool operator==(const BCGContainer& other)                                        const;
@@ -47,11 +48,11 @@ public:
 
 public:
 
-    int    channel;
+    int    channel    = LuminosityChannel;
 
-    double brightness;
-    double contrast;
-    double gamma;
+    double brightness = 0.0;
+    double contrast   = 0.0;
+    double gamma      = 1.0;
 };
 
 } // namespace Digikam

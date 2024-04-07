@@ -44,21 +44,16 @@ class Q_DECL_HIDDEN BCGSettings::Private
 {
 public:
 
-    explicit Private()
-      : bInput(nullptr),
-        cInput(nullptr),
-        gInput(nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configBrightnessAdjustmentEntry;
     static const QString configContrastAdjustmentEntry;
     static const QString configGammaAdjustmentEntry;
 
-    DIntNumInput*        bInput;
-    DIntNumInput*        cInput;
+    DIntNumInput*        bInput = nullptr;
+    DIntNumInput*        cInput = nullptr;
 
-    DDoubleNumInput*     gInput;
+    DDoubleNumInput*     gInput = nullptr;
 };
 
 const QString BCGSettings::Private::configBrightnessAdjustmentEntry(QLatin1String("BrightnessAdjustment"));

@@ -24,14 +24,6 @@
 namespace Digikam
 {
 
-BCGContainer::BCGContainer()
-  : channel    (LuminosityChannel),
-    brightness (0.0),
-    contrast   (0.0),
-    gamma      (1.0)
-{
-}
-
 bool BCGContainer::isDefault() const
 {
     return (*this == BCGContainer());
