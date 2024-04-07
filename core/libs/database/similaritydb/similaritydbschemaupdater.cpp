@@ -50,25 +50,18 @@ class Q_DECL_HIDDEN SimilarityDbSchemaUpdater::Private
 
 public:
 
-    explicit Private()
-      : setError(false),
-        currentVersion(0),
-        currentRequiredVersion(0),
-        dbAccess(nullptr),
-        observer(nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    bool                    setError;
+    bool                    setError                = false;
 
-    int                     currentVersion;
-    int                     currentRequiredVersion;
+    int                     currentVersion          = 0;
+    int                     currentRequiredVersion  = 0;
 
-    SimilarityDbAccess*     dbAccess;
+    SimilarityDbAccess*     dbAccess                = nullptr;
 
-    InitializationObserver* observer;
+    InitializationObserver* observer                = nullptr;
 };
 
 SimilarityDbSchemaUpdater::SimilarityDbSchemaUpdater(SimilarityDbAccess* const dbAccess)
@@ -87,6 +80,7 @@ bool SimilarityDbSchemaUpdater::update()
     bool success = startUpdates();
 
     // even on failure, try to set current version - it may have incremented
+
     if (d->currentVersion)
     {
         d->dbAccess->db()->setSetting(QLatin1String("DBSimilarityVersion"),
@@ -110,11 +104,13 @@ void SimilarityDbSchemaUpdater::setObserver(InitializationObserver* const observ
 bool SimilarityDbSchemaUpdater::startUpdates()
 {
     // First step: do we have an empty database?
+
     QStringList tables = d->dbAccess->backend()->tables();
 
     if (tables.contains(QLatin1String("SimilaritySettings"), Qt::CaseInsensitive))
     {
         // Find out schema version of db file
+
         QString version         = d->dbAccess->db()->getSetting(QLatin1String("DBSimilarityVersion"));
         QString versionRequired = d->dbAccess->db()->getSetting(QLatin1String("DBSimilarityVersionRequired"));
 
@@ -122,6 +118,7 @@ bool SimilarityDbSchemaUpdater::startUpdates()
                                           << version;
 
         // mini schema update
+
         if (version.isEmpty() && d->dbAccess->parameters().isSQLite())
         {
             version = d->dbAccess->db()->getSetting(QLatin1String("DBVersion"));
@@ -134,6 +131,7 @@ bool SimilarityDbSchemaUpdater::startUpdates()
         }
 
         // We absolutely require the DBSimilarityVersion setting
+
         if (version.isEmpty())
         {
             // Something is damaged. Give up.
@@ -158,14 +156,17 @@ bool SimilarityDbSchemaUpdater::startUpdates()
 
         // current version describes the current state of the schema in the db,
         // schemaVersion is the version required by the program.
+
         d->currentVersion = version.toInt();
 
         if (d->currentVersion > schemaVersion())
         {
             // trying to open a database with a more advanced than this SimilarityDbSchemaUpdater supports
+
             if (!versionRequired.isEmpty() && versionRequired.toInt() <= schemaVersion())
             {
                 // version required may be less than current version
+
                 return true;
             }
             else
@@ -197,6 +198,7 @@ bool SimilarityDbSchemaUpdater::startUpdates()
         DbEngineParameters parameters = d->dbAccess->parameters();
 
         // No legacy handling: start with a fresh db
+
         if (!createDatabase())
         {
             QString errorMsg = i18n("Failed to create tables in database.\n ") +
@@ -225,6 +227,7 @@ bool SimilarityDbSchemaUpdater::createDatabase()
     {
         d->currentVersion         = schemaVersion();
         d->currentRequiredVersion = 1;
+
         return true;
     }
     else
@@ -264,6 +267,7 @@ bool SimilarityDbSchemaUpdater::makeUpdates()
 bool SimilarityDbSchemaUpdater::updateV1ToV2()
 {
     // Do nothing for now.
+
     return true;
 }
 

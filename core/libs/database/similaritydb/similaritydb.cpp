@@ -30,12 +30,9 @@ class Q_DECL_HIDDEN SimilarityDb::Private
 
 public:
 
-    explicit Private() :
-        db(nullptr)
-    {
-    }
+    Private() = default;
 
-    SimilarityDbBackend* db;
+    SimilarityDbBackend* db = nullptr;
 };
 
 SimilarityDb::SimilarityDb(SimilarityDbBackend* const backend)

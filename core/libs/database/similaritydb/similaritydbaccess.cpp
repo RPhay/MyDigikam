@@ -43,24 +43,15 @@ class Q_DECL_HIDDEN SimilarityDbAccessStaticPriv
 {
 public:
 
-    SimilarityDbAccessStaticPriv()
-        : backend     (nullptr),
-          db          (nullptr),
-          initializing(false)
-    {
-    }
+    SimilarityDbAccessStaticPriv() = default;
 
-    ~SimilarityDbAccessStaticPriv()
-    {
-    };
-
-    SimilarityDbBackend* backend;
-    SimilarityDb*        db;
+    SimilarityDbBackend* backend        = nullptr;
+    SimilarityDb*        db             = nullptr;
     DbEngineParameters   parameters;
     DbEngineLocking      lock;
     QString              lastError;
 
-    bool                 initializing;
+    bool                 initializing   = false;
 };
 
 SimilarityDbAccessStaticPriv* SimilarityDbAccess::d = nullptr;
@@ -206,6 +197,7 @@ void SimilarityDbAccess::setParameters(const DbEngineParameters& parameters)
     {
         delete d->db;
         delete d->backend;
+
         d->backend = new SimilarityDbBackend(&d->lock);
         d->db      = new SimilarityDb(d->backend);
     }
@@ -262,6 +254,7 @@ bool SimilarityDbAccess::checkReadyForUse(InitializationObserver* const observer
         qCWarning(DIGIKAM_SIMILARITYDB_LOG) << "Similarity database: cannot process schema initialization";
 
         d->initializing = false;
+
         return false;
     }
 
@@ -289,12 +282,14 @@ void SimilarityDbAccess::cleanUpDatabase()
         if (d->backend)
         {
             d->backend->close();
+
             delete d->db;
             delete d->backend;
         }
     }
 
     delete d;
+
     d = nullptr;
 }
 
