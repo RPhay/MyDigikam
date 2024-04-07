@@ -361,6 +361,7 @@ void SearchesJob::runFindDuplicates()
         qCDebug(DIGIKAM_DBJOB_LOG) << "No image ids passed for duplicates search";
 
         Q_EMIT signalDuplicatesResults(HaarIface::DuplicatesResultsMap());
+
         return;
     }
 
@@ -371,6 +372,7 @@ void SearchesJob::runFindDuplicates()
         qCDebug(DIGIKAM_DBJOB_LOG) << "Invalid HaarIface pointer";
 
         Q_EMIT signalDuplicatesResults(HaarIface::DuplicatesResultsMap());
+
         return;
     }
 

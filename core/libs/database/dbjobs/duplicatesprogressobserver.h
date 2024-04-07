@@ -37,7 +37,7 @@ public:
 
 private:
 
-    SearchesJob* m_job;
+    SearchesJob* m_job = nullptr;
 
 private:
 

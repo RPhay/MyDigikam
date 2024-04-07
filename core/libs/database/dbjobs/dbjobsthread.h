@@ -174,9 +174,9 @@ Q_SIGNALS:
 private:
     HaarIface::DuplicatesResultsMap m_results;
     QScopedPointer<HaarIface>       m_haarIface;
-    bool                            m_isAlbumUpdate;
-    int                             m_processedImages;
-    int                             m_totalImages2Scan;
+    bool                            m_isAlbumUpdate     = false;
+    int                             m_processedImages   = 0;
+    int                             m_totalImages2Scan  = 0;
 };
 
 // ---------------------------------------------

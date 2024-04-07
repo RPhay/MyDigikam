@@ -201,10 +201,7 @@ void GPSDBJobsThread::GPSListing(const GPSDBJobInfo& info)
 // -------------------------------------------------
 
 SearchesDBJobsThread::SearchesDBJobsThread(QObject* const parent)
-    : DBJobsThread(parent),
-      m_isAlbumUpdate(false),
-      m_processedImages(0),
-      m_totalImages2Scan(0)
+    : DBJobsThread(parent)
 {
 }
 
@@ -231,9 +228,11 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
         QSet<qlonglong>::const_iterator end   = info.imageIds().constBegin();
 
         // Split job on multiple threads
+
         for (int i = 0; i < threadsCount; ++i)
         {
             // The last thread should read until the end of the list.
+
             if (i == threadsCount - 1)
             {
                 end = info.imageIds().constEnd();
@@ -241,7 +240,8 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
             else
             {
                 // TODO: port to std::advance https://en.cppreference.com/w/cpp/iterator/advance
-                for (int j = 0; end != info.imageIds().constEnd() && j < images2ScanPerThread; ++j, ++end);
+
+                for (int j = 0; ((end != info.imageIds().constEnd()) && (j < images2ScanPerThread)) ; ++j, ++end);
             }
 
             SearchesJob* const job = new SearchesJob(info, begin, end, m_haarIface.data());

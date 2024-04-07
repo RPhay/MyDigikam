@@ -44,13 +44,13 @@ public:
 
 protected:
 
-    explicit DBJobInfo();
+    DBJobInfo() = default;
 
 private:
 
-    bool m_folders;
-    bool m_listAvailableImagesOnly;
-    bool m_recursive;
+    bool m_folders                  = false;
+    bool m_listAvailableImagesOnly  = false;
+    bool m_recursive                = false;
 };
 
 // ---------------------------------------------
@@ -69,7 +69,7 @@ public:
 
 private:
 
-    int     m_albumRootId;
+    int     m_albumRootId = -1;
     QString m_album;
 };
 
@@ -92,7 +92,7 @@ public:
 
 private:
 
-    bool       m_faceFolders;
+    bool       m_faceFolders = false;
     QString    m_specialTag;
     QList<int> m_tagsIds;
 };
@@ -122,11 +122,11 @@ public:
 
 private:
 
-    bool  m_directQuery;
-    qreal m_lat1;
-    qreal m_lng1;
-    qreal m_lat2;
-    qreal m_lng2;
+    bool  m_directQuery = false;
+    qreal m_lat1        = 0.0;
+    qreal m_lng1        = 0.0;
+    qreal m_lat2        = 0.0;
+    qreal m_lng2        = 0.0;
 };
 
 // ---------------------------------------------
@@ -161,15 +161,15 @@ public:
 
 public:
 
-    bool                         m_duplicates;
-    bool                         m_albumUpdate;
-    int                          m_searchResultRestriction;
+    bool                         m_duplicates               = false;
+    bool                         m_albumUpdate              = false;
+    int                          m_searchResultRestriction  = 0;
     QList<int>                   m_searchIds;
     QSet<qlonglong>              m_imageIds;
-    double                       m_minThreshold;
-    double                       m_maxThreshold;
-    QSet<qlonglong>              m_refImageIds; // Image ids of the reference images if duplicates are available
-    HaarIface::RefImageSelMethod m_refImageSelectionMethod;
+    double                       m_minThreshold             = 0.4;
+    double                       m_maxThreshold             = 1.0;
+    QSet<qlonglong>              m_refImageIds;             ///< Image ids of the reference images if duplicates are available
+    HaarIface::RefImageSelMethod m_refImageSelectionMethod  = HaarIface::RefImageSelMethod::OlderOrLarger;
 };
 
 // ---------------------------------------------

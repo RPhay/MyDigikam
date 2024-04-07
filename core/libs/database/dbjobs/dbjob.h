@@ -197,7 +197,7 @@ private:
     SearchesDBJobInfo                m_jobInfo;
     QSet<qlonglong>::const_iterator  m_begin;
     QSet<qlonglong>::const_iterator  m_end;
-    HaarIface*                       m_iface;
+    HaarIface*                       m_iface = nullptr;
 
 private:
 

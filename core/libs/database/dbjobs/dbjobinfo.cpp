@@ -17,13 +17,6 @@
 namespace Digikam
 {
 
-DBJobInfo::DBJobInfo()
-    : m_folders                (false),
-      m_listAvailableImagesOnly(false),
-      m_recursive              (false)
-{
-}
-
 void DBJobInfo::setFoldersJob()
 {
     m_folders = true;
@@ -57,8 +50,7 @@ bool DBJobInfo::isRecursive() const
 // ---------------------------------------------
 
 AlbumsDBJobInfo::AlbumsDBJobInfo()
-    : DBJobInfo    (),
-      m_albumRootId(-1)
+    : DBJobInfo()
 {
 }
 
@@ -85,8 +77,7 @@ QString AlbumsDBJobInfo::album()
 // ---------------------------------------------
 
 TagsDBJobInfo::TagsDBJobInfo()
-    : DBJobInfo    (),
-      m_faceFolders(false)
+    : DBJobInfo()
 {
 }
 
@@ -123,12 +114,7 @@ QList<int> TagsDBJobInfo::tagsIds() const
 // ---------------------------------------------
 
 GPSDBJobInfo::GPSDBJobInfo()
-    : DBJobInfo    (),
-      m_directQuery(false),
-      m_lat1       (0),
-      m_lng1       (0),
-      m_lat2       (0),
-      m_lng2       (0)
+    : DBJobInfo()
 {
 }
 
@@ -185,14 +171,8 @@ qreal GPSDBJobInfo::lng2() const
 // ---------------------------------------------
 
 SearchesDBJobInfo::SearchesDBJobInfo(QList<int>&& searchIds)
-    : DBJobInfo                 (),
-      m_duplicates              (false),
-      m_albumUpdate             (false),
-      m_searchResultRestriction (0),
-      m_searchIds               (std::move(searchIds)),
-      m_minThreshold            (0.4),
-      m_maxThreshold            (1),
-      m_refImageSelectionMethod (HaarIface::RefImageSelMethod::OlderOrLarger)
+    : DBJobInfo  (),
+      m_searchIds(std::move(searchIds))
 {
 }
 
@@ -203,10 +183,7 @@ SearchesDBJobInfo::SearchesDBJobInfo(QSet<qlonglong>&& imageIds,
     : DBJobInfo                 (),
       m_duplicates              (true),
       m_albumUpdate             (isAlbumUpdate),
-      m_searchResultRestriction (0),
       m_imageIds                (std::move(imageIds)),
-      m_minThreshold            (0.4),
-      m_maxThreshold            (1),
       m_refImageIds             (std::move(refImageIds)),
       m_refImageSelectionMethod (referenceSelectionMethod)
 {
