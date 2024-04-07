@@ -86,7 +86,7 @@ bool HistoryVertexProperties::alwaysMarkedAs(HistoryImageId::Type type) const
 
 bool HistoryVertexProperties::operator==(const QString& id) const
 {
-    return uuid == id;
+    return (uuid == id);
 }
 
 bool HistoryVertexProperties::operator==(const ItemInfo& info) const

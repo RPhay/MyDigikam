@@ -76,7 +76,7 @@ public:
 
 public:
 
-    HistoryTreeItem*        parent;
+    HistoryTreeItem*        parent = nullptr;
     QList<HistoryTreeItem*> children;
 
 private:
@@ -251,8 +251,8 @@ class Q_DECL_HIDDEN LessThanOnVertexItemInfo
 {
 public:
 
-    LessThanOnVertexItemInfo(const HistoryGraph& graph, ItemInfoLessThan imageInfoLessThan)
-        : graph            (graph),
+    LessThanOnVertexItemInfo(const HistoryGraph& gg, ItemInfoLessThan imageInfoLessThan)
+        : graph            (gg),
           imageInfoLessThan(imageInfoLessThan)
     {
     }

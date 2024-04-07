@@ -97,9 +97,9 @@ public:
     typedef Value                                data_type;
     typedef typename std::pair<const Key, Value> value_type;
 
-    QMapForAdaptors()
-    {
-    }
+public:
+
+    QMapForAdaptors() = default;
 };
 
 /**
@@ -176,8 +176,8 @@ public:
         }
 
         // cppcheck-suppress noExplicitConstructor
-        Vertex(const vertex_t& v)    // krazy:exclude=explicit
-            : v(v)
+        Vertex(const vertex_t& vv)    // krazy:exclude=explicit
+            : v(vv)
         {
         }
 
@@ -217,10 +217,7 @@ public:
     {
     public:
 
-        Edge()
-            : null(true)
-        {
-        }
+        Edge() = default;
 
         // cppcheck-suppress noExplicitConstructor
         Edge(const edge_t& e)    // krazy:exclude=explicit
@@ -272,7 +269,7 @@ public:
         edge_t e;
 
         /// there is not null_edge, we must emulate it
-        bool   null;
+        bool   null = true;
     };
 
 public:
@@ -288,8 +285,8 @@ public:
 
 public:
 
-    explicit Graph(MeaningOfDirection direction = ParentToChild)
-        : direction(direction)
+    explicit Graph(MeaningOfDirection dir = ParentToChild)
+        : direction(dir)
     {
     }
 
@@ -1476,8 +1473,8 @@ protected:
         {
         protected:
 
-            explicit CommonVisitor(GraphSearch* const q)
-                : q(q)
+            explicit CommonVisitor(GraphSearch* const qq)
+                : q(qq)
             {
             }
 
@@ -1486,7 +1483,7 @@ protected:
                 q->vertices << v;
             }
 
-            GraphSearch* const q;
+            GraphSearch* const q = nullptr;
         };
 
         class DepthFirstSearchVisitor : public boost::default_dfs_visitor,
@@ -1534,8 +1531,8 @@ protected:
 
         public:
 
-            lessThanMapEdgeToTarget(const GraphType& g, VertexLessThan vertexLessThan)
-              : g             (g),
+            lessThanMapEdgeToTarget(const GraphType& gg, VertexLessThan vertexLessThan)
+              : g             (gg),
                 vertexLessThan(vertexLessThan)
             {
             }
