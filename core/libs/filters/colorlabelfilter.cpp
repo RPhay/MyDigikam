@@ -55,18 +55,17 @@ QList<TAlbum*> ColorLabelFilter::getCheckedColorLabelTags()
         tagId = TagsCache::instance()->tagForColorLabel(cl);
         tag   = AlbumManager::instance()->findTAlbum(tagId);
 
-        if (tagId)
+        if (tagId && tag)
         {
             list.append(tag);
         }
     }
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Color label albums:" << list;
+
     return list;
 }
 
 void ColorLabelFilter::slotColorLabelSelectionChanged()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Color label selection changed:" << colorLabels();
     Q_EMIT signalColorLabelSelectionChanged(colorLabels());
 }
 

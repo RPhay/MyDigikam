@@ -439,34 +439,34 @@ void FilterSideBarWidget::checkFilterChanges()
             }
         }
 
-        Q_FOREACH (TAlbum* const tag, d->colorLabelFilter->getCheckedColorLabelTags())
-        {
-            if (tag)
-            {
-                clTagIds << tag->id();
-            }
-        }
-
-        Q_FOREACH (TAlbum* const tag, d->pickLabelFilter->getCheckedPickLabelTags())
-        {
-            if (tag)
-            {
-                plTagIds << tag->id();
-            }
-        }
-
         if (d->withoutFaceCheckBox->isChecked())
         {
             excludedTagIds << FaceTags::allPersonTags();
         }
     }
 
+    Q_FOREACH (TAlbum* const tag, d->colorLabelFilter->getCheckedColorLabelTags())
+    {
+        if (tag)
+        {
+            clTagIds << tag->id();
+        }
+    }
+
+    Q_FOREACH (TAlbum* const tag, d->pickLabelFilter->getCheckedPickLabelTags())
+    {
+        if (tag)
+        {
+            plTagIds << tag->id();
+        }
+    }
+
     Q_EMIT signalTagFilterChanged(includedTagIds,
-                                excludedTagIds,
-                                d->tagMatchCond,
-                                showUntagged,
-                                clTagIds,
-                                plTagIds);
+                                  excludedTagIds,
+                                  d->tagMatchCond,
+                                  showUntagged,
+                                  clTagIds,
+                                  plTagIds);
 }
 
 void FilterSideBarWidget::setConfigGroup(const KConfigGroup& group)
