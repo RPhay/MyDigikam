@@ -73,63 +73,36 @@ class Q_DECL_HIDDEN DatabaseSettingsWidget::Private
 
 public:
 
-    explicit Private()
-      : mysqlCmdBox             (nullptr),
-        dbNameCore              (nullptr),
-        dbNameFace              (nullptr),
-        dbNameSimilarity        (nullptr),
-        hostName                (nullptr),
-        connectOpts             (nullptr),
-        userName                (nullptr),
-        password                (nullptr),
-        hostPort                (nullptr),
-        dbType                  (nullptr),
-        dbPathLabel             (nullptr),
-        dbThumbsLabel           (nullptr),
-        walLabel                (nullptr),
-        sqlInit                 (nullptr),
-        expertSettings          (nullptr),
-        dbNoticeBox             (nullptr),
-        dbDetailsBox            (nullptr),
-        tab                     (nullptr),
-        dbPathEdit              (nullptr),
-        dbNameThumbs            (nullptr),
-        walModeCheck            (nullptr),
-        dbBinariesWidget        (nullptr),
-        ignoreDirectoriesBox    (nullptr),
-        ignoreDirectoriesEdit   (nullptr),
-        ignoreDirectoriesLabel  (nullptr)
-    {
-    }
+    Private() = default;
 
-    DVBox*             mysqlCmdBox;
+    DVBox*             mysqlCmdBox              = nullptr;
 
-    QLineEdit*         dbNameCore;
-    QLineEdit*         dbNameFace;
-    QLineEdit*         dbNameSimilarity;
-    QLineEdit*         hostName;
-    QLineEdit*         connectOpts;
-    QLineEdit*         userName;
-    QLineEdit*         password;
+    QLineEdit*         dbNameCore               = nullptr;
+    QLineEdit*         dbNameFace               = nullptr;
+    QLineEdit*         dbNameSimilarity         = nullptr;
+    QLineEdit*         hostName                 = nullptr;
+    QLineEdit*         connectOpts              = nullptr;
+    QLineEdit*         userName                 = nullptr;
+    QLineEdit*         password                 = nullptr;
 
-    QSpinBox*          hostPort;
+    QSpinBox*          hostPort                 = nullptr;
 
-    QComboBox*         dbType;
-    QLabel*            dbPathLabel;
-    QLabel*            dbThumbsLabel;
-    QLabel*            walLabel;
-    QTextBrowser*      sqlInit;
-    QGroupBox*         expertSettings;
-    QGroupBox*         dbNoticeBox;
-    QGroupBox*         dbDetailsBox;
-    QTabWidget*        tab;
+    QComboBox*         dbType                   = nullptr;
+    QLabel*            dbPathLabel              = nullptr;
+    QLabel*            dbThumbsLabel            = nullptr;
+    QLabel*            walLabel                 = nullptr;
+    QTextBrowser*      sqlInit                  = nullptr;
+    QGroupBox*         expertSettings           = nullptr;
+    QGroupBox*         dbNoticeBox              = nullptr;
+    QGroupBox*         dbDetailsBox             = nullptr;
+    QTabWidget*        tab                      = nullptr;
 
-    DFileSelector*     dbPathEdit;
-    DFileSelector*     dbNameThumbs;
+    DFileSelector*     dbPathEdit               = nullptr;
+    DFileSelector*     dbNameThumbs             = nullptr;
 
-    QCheckBox*         walModeCheck;
+    QCheckBox*         walModeCheck             = nullptr;
 
-    DBinarySearch*     dbBinariesWidget;
+    DBinarySearch*     dbBinariesWidget         = nullptr;
 
     MysqlUpgradeBinary mysqlUpgradeBin;
     MysqlServerBinary  mysqlServerBin;
@@ -140,9 +113,9 @@ public:
 
     QMap<int, int>     dbTypeMap;
 
-    QGroupBox*         ignoreDirectoriesBox;
-    QLineEdit*         ignoreDirectoriesEdit;
-    QLabel*            ignoreDirectoriesLabel;
+    QGroupBox*         ignoreDirectoriesBox     = nullptr;
+    QLineEdit*         ignoreDirectoriesEdit    = nullptr;
+    QLabel*            ignoreDirectoriesLabel   = nullptr;
 };
 
 } // namespace Digikam

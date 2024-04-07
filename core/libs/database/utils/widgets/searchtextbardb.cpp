@@ -40,12 +40,9 @@ class Q_DECL_HIDDEN SearchTextBarDb::Private
 {
 public:
 
-    explicit Private()
-      : filterModel(nullptr)
-    {
-    }
+    Private() = default;
 
-    QPointer<AlbumFilterModel> filterModel;
+    QPointer<AlbumFilterModel> filterModel = nullptr;
 };
 
 SearchTextBarDb::SearchTextBarDb(QWidget* const parent, const QString& name, const QString& msg)

@@ -51,9 +51,7 @@ class Q_DECL_HIDDEN DatabaseCopyThread::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     DbEngineParameters fromDbEngineParameters;
     DbEngineParameters toDbEngineParameters;
@@ -88,28 +86,17 @@ class Q_DECL_HIDDEN DatabaseMigrationDialog::Private
 {
 public:
 
-    explicit Private()
-      : fromDatabaseSettingsWidget  (nullptr),
-        toDatabaseSettingsWidget    (nullptr),
-        migrateButton               (nullptr),
-        cancelButton                (nullptr),
-        overallStepTitle            (nullptr),
-        progressBar                 (nullptr),
-        progressBarSmallStep        (nullptr),
-        buttons                     (nullptr),
-        copyThread                  (nullptr)
-    {
-    }
+    Private() = default;
 
-    DatabaseSettingsWidget* fromDatabaseSettingsWidget;
-    DatabaseSettingsWidget* toDatabaseSettingsWidget;
-    QPushButton*            migrateButton;
-    QPushButton*            cancelButton;
-    QLabel*                 overallStepTitle;
-    QProgressBar*           progressBar;
-    QProgressBar*           progressBarSmallStep;
-    QDialogButtonBox*       buttons;
-    DatabaseCopyThread*     copyThread;
+    DatabaseSettingsWidget* fromDatabaseSettingsWidget  = nullptr;
+    DatabaseSettingsWidget* toDatabaseSettingsWidget    = nullptr;
+    QPushButton*            migrateButton               = nullptr;
+    QPushButton*            cancelButton                = nullptr;
+    QLabel*                 overallStepTitle            = nullptr;
+    QProgressBar*           progressBar                 = nullptr;
+    QProgressBar*           progressBarSmallStep        = nullptr;
+    QDialogButtonBox*       buttons                     = nullptr;
+    DatabaseCopyThread*     copyThread                  = nullptr;
 };
 
 DatabaseMigrationDialog::DatabaseMigrationDialog(QWidget* const parent)
@@ -122,6 +109,7 @@ DatabaseMigrationDialog::DatabaseMigrationDialog(QWidget* const parent)
 DatabaseMigrationDialog::~DatabaseMigrationDialog()
 {
     d->copyThread->wait();
+
     delete d;
 }
 
@@ -274,19 +262,25 @@ void DatabaseMigrationDialog::slotHandleFinish(int finishState, const QString& e
     switch (finishState)
     {
         case CoreDbCopyManager::failed:
+        {
             QMessageBox::critical(this, qApp->applicationName(), errorMsg);
             slotUnlockInputFields();
             break;
+        }
 
         case CoreDbCopyManager::success:
+        {
             QMessageBox::information(this, qApp->applicationName(), i18n("Database copied successfully."));
             slotUnlockInputFields();
             break;
+        }
 
         case CoreDbCopyManager::canceled:
+        {
             QMessageBox::information(this, qApp->applicationName(), i18n("Database conversion canceled."));
             slotUnlockInputFields();
             break;
+        }
     }
 }
 

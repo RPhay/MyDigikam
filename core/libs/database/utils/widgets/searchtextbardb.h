@@ -40,7 +40,7 @@ public:
 
     explicit SearchTextBarDb(QWidget* const parent,
                              const QString& name,
-                             const QString& msg=QString());
+                             const QString& msg = QString());
     ~SearchTextBarDb() override;
 
     /**
