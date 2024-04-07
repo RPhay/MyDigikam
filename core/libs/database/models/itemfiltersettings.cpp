@@ -410,7 +410,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
                 matchCL = containsNoneOfExcept(tagIds, TagsCache::instance()->colorLabelTags(), noColorLabelTagId);
             }
         }
-
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Color label match:" << matchCL;
         match &= matchCL;
     }
 
