@@ -107,7 +107,7 @@ protected:
 
 protected:
 
-    ImageSortFilterModel* m_chainedModel;
+    ImageSortFilterModel* m_chainedModel = nullptr;
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -269,7 +269,7 @@ public:
 
 protected:
 
-    ItemFilterModelPrivate* const d_ptr;
+    ItemFilterModelPrivate* const d_ptr = nullptr;
 
 protected:
 

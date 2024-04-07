@@ -76,7 +76,7 @@ public:
 
 public:
 
-    explicit ItemSortSettings();
+    ItemSortSettings() = default;
 
     bool operator==(const ItemSortSettings& other) const;
 
@@ -220,19 +220,19 @@ public:
 
 public:
 
-    CategorizationMode   categorizationMode;
-    SortOrder            categorizationSortOrder;
+    CategorizationMode   categorizationMode             = NoCategories;
+    SortOrder            categorizationSortOrder        = DefaultOrder;
 
     /// Only Ascending or Descending, never DefaultOrder
-    Qt::SortOrder        currentCategorizationSortOrder;
-    Qt::CaseSensitivity  categorizationCaseSensitivity;
+    Qt::SortOrder        currentCategorizationSortOrder = Qt::AscendingOrder;
+    Qt::CaseSensitivity  categorizationCaseSensitivity  = Qt::CaseSensitive;
 
-    SortRole             sortRole;
-    SortOrder            sortOrder;
-    bool                 strTypeNatural;
+    SortRole             sortRole                       = SortByFileName;
+    SortOrder            sortOrder                      = DefaultOrder;
+    bool                 strTypeNatural                 = true;
 
-    Qt::SortOrder        currentSortOrder;
-    Qt::CaseSensitivity  sortCaseSensitivity;
+    Qt::SortOrder        currentSortOrder               = Qt::AscendingOrder;
+    Qt::CaseSensitivity  sortCaseSensitivity            = Qt::CaseSensitive;
 };
 
 } // namespace Digikam

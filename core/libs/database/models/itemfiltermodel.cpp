@@ -37,8 +37,7 @@ namespace Digikam
 {
 
 ImageSortFilterModel::ImageSortFilterModel(QObject* const parent)
-    : DCategorizedSortFilterProxyModel(parent),
-      m_chainedModel                  (nullptr)
+    : DCategorizedSortFilterProxyModel(parent)
 {
 }
 
@@ -726,6 +725,7 @@ void ItemFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& /*parent*/, in
 void ItemFilterModel::addPrepareHook(ItemFilterModelPrepareHook* const hook)
 {
     Q_D(ItemFilterModel);
+
     QMutexLocker lock(&d->mutex);
     d->prepareHooks << hook;
 }
@@ -733,6 +733,7 @@ void ItemFilterModel::addPrepareHook(ItemFilterModelPrepareHook* const hook)
 void ItemFilterModel::removePrepareHook(ItemFilterModelPrepareHook* const hook)
 {
     Q_D(ItemFilterModel);
+
     QMutexLocker lock(&d->mutex);
     d->prepareHooks.removeAll(hook);
 }
@@ -742,6 +743,7 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
     if (!checkVersion(package))
     {
         Q_EMIT discarded(package);
+
         return;
     }
 
@@ -771,6 +773,7 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
     if (!checkVersion(package))
     {
         Q_EMIT discarded(package);
+
         return;
     }
 
@@ -808,6 +811,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
     if (!checkVersion(package))
     {
         Q_EMIT discarded(package);
+
         return;
     }
 
@@ -894,6 +898,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
 void ItemFilterModel::setItemSortSettings(const ItemSortSettings& sorter)
 {
     Q_D(ItemFilterModel);
+
     d->sorter = sorter;
     setCategorizedModel(d->sorter.categorizationMode != ItemSortSettings::NoCategories);
     invalidate();
@@ -902,6 +907,7 @@ void ItemFilterModel::setItemSortSettings(const ItemSortSettings& sorter)
 void ItemFilterModel::setCategorizationMode(ItemSortSettings::CategorizationMode mode)
 {
     Q_D(ItemFilterModel);
+
     d->sorter.setCategorizationMode(mode);
     setItemSortSettings(d->sorter);
 }
@@ -909,6 +915,7 @@ void ItemFilterModel::setCategorizationMode(ItemSortSettings::CategorizationMode
 void ItemFilterModel::setCategorizationSortOrder(ItemSortSettings::SortOrder order)
 {
     Q_D(ItemFilterModel);
+
     d->sorter.setCategorizationSortOrder(order);
     setItemSortSettings(d->sorter);
 }
@@ -916,6 +923,7 @@ void ItemFilterModel::setCategorizationSortOrder(ItemSortSettings::SortOrder ord
 void ItemFilterModel::setSortRole(ItemSortSettings::SortRole role)
 {
     Q_D(ItemFilterModel);
+
     d->sorter.setSortRole(role);
     setItemSortSettings(d->sorter);
 }
@@ -923,6 +931,7 @@ void ItemFilterModel::setSortRole(ItemSortSettings::SortRole role)
 void ItemFilterModel::setSortOrder(ItemSortSettings::SortOrder order)
 {
     Q_D(ItemFilterModel);
+
     d->sorter.setSortOrder(order);
     setItemSortSettings(d->sorter);
 }
@@ -930,6 +939,7 @@ void ItemFilterModel::setSortOrder(ItemSortSettings::SortOrder order)
 void ItemFilterModel::setStringTypeNatural(bool natural)
 {
     Q_D(ItemFilterModel);
+
     d->sorter.setStringTypeNatural(natural);
     setItemSortSettings(d->sorter);
 }

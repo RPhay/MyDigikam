@@ -27,21 +27,6 @@ namespace Digikam
 {
 
 ItemFilterModel::ItemFilterModelPrivate::ItemFilterModelPrivate()
-    : imageModel         (nullptr),
-      version            (0),
-      lastDiscardVersion (0),
-      lastFilteredVersion(0),
-      sentOut            (0),
-      sentOutForReAdd    (0),
-      updateFilterTimer  (nullptr),
-      needPrepare        (false),
-      needPrepareComments(false),
-      needPrepareTags    (false),
-      needPrepareGroups  (false),
-      preparer           (nullptr),
-      filterer           (nullptr),
-      hasOneMatch        (false),
-      hasOneMatchForText (false)
 {
     setupWorkers();
 }
@@ -58,9 +43,9 @@ ItemFilterModel::ItemFilterModelPrivate::~ItemFilterModelPrivate()
     delete filterer;
 }
 
-void ItemFilterModel::ItemFilterModelPrivate::init(ItemFilterModel* _q)
+void ItemFilterModel::ItemFilterModelPrivate::init(ItemFilterModel* qq)
 {
-    q = _q;
+    q = qq;
 
     updateFilterTimer = new QTimer(this);
     updateFilterTimer->setSingleShot(true);
@@ -134,7 +119,7 @@ void ItemFilterModel::ItemFilterModelPrivate::infosToProcess(const QList<ItemInf
         preparer->schedule();
     }
 
-    Q_ASSERT(extraValues.isEmpty() || infos.size() == extraValues.size());
+    Q_ASSERT(extraValues.isEmpty() || (infos.size() == extraValues.size()));
 
     // prepare and filter in chunks
 

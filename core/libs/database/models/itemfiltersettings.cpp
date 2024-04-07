@@ -168,14 +168,16 @@ bool ItemFilterSettings::isFilteringInternally() const
 
 bool ItemFilterSettings::isFiltering() const
 {
-    return (isFilteringByDay()         ||
+    return (
+            isFilteringByDay()         ||
             isFilteringByTags()        ||
             isFilteringByText()        ||
             isFilteringByRating()      ||
             isFilteringByTypeMime()    ||
             isFilteringByColorLabels() ||
             isFilteringByPickLabels()  ||
-            isFilteringByGeolocation());
+            isFilteringByGeolocation()
+           );
 }
 
 void ItemFilterSettings::setDayFilter(const QList<QDateTime>& days)
@@ -981,8 +983,10 @@ GroupItemFilterSettings::GroupItemFilterSettings()
 
 bool GroupItemFilterSettings::operator==(const GroupItemFilterSettings& other) const
 {
-    return ((m_allOpen    == other.m_allOpen) &&
-            (m_openGroups == other.m_openGroups));
+    return (
+            (m_allOpen    == other.m_allOpen) &&
+            (m_openGroups == other.m_openGroups)
+           );
 }
 
 bool GroupItemFilterSettings::matches(const ItemInfo& info) const

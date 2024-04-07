@@ -30,14 +30,10 @@ class Q_DECL_HIDDEN ItemVersionsModel::Private
 {
 public:
 
-    explicit Private()
-      : data     (nullptr),
-        paintTree(false)
-    {
-    }
+    Private() = default;
 
     /// Complete paths with filenames and tree level
-    QList<QPair<QString, int> >* data;
+    QList<QPair<QString, int> >* data       = nullptr;
 
     /// This is for delegate to paint it as selected
     QString                      currentSelectedImage;
@@ -45,7 +41,7 @@ public:
     /** If true, the delegate will paint items as a tree
      *  if false, it will be painted as a list
      */
-    bool                         paintTree;
+    bool                         paintTree  = false;
 };
 
 ItemVersionsModel::ItemVersionsModel(QObject* const parent)
@@ -70,7 +66,7 @@ Qt::ItemFlags ItemVersionsModel::flags(const QModelIndex& index) const
         return Qt::NoItemFlags;
     }
 
-    return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+    return (Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 }
 
 QVariant ItemVersionsModel::data(const QModelIndex& index, int role) const

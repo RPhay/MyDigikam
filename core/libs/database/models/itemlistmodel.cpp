@@ -47,16 +47,22 @@ void ItemListModel::slotCollectionImageChange(const CollectionImageChangeset& ch
     switch (changeset.operation())
     {
         case CollectionImageChangeset::Added:
+        {
             break;
+        }
 
         case CollectionImageChangeset::Deleted:
         case CollectionImageChangeset::Removed:
         case CollectionImageChangeset::RemovedAll:
+        {
             removeItemInfos(ItemInfoList(changeset.ids()));
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 

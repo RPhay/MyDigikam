@@ -51,7 +51,7 @@ Q_SIGNALS:
 
 protected:
 
-    ItemFilterModel::ItemFilterModelPrivate* d;
+    ItemFilterModel::ItemFilterModelPrivate* d = nullptr;
 };
 
 // -----------------------------------------------------------------------------------------

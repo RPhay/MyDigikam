@@ -68,9 +68,7 @@ public:
 
 public:
 
-    SearchTextFilterSettings()
-    {
-    }
+    SearchTextFilterSettings() = default;
 
     explicit SearchTextFilterSettings(const SearchTextSettings& settings)
     {

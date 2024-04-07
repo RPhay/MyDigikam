@@ -45,11 +45,7 @@ class ItemFilterModelTodoPackage
 {
 public:
 
-    ItemFilterModelTodoPackage()
-        : version   (0),
-          isForReAdd(false)
-    {
-    }
+    ItemFilterModelTodoPackage() = default;
 
     ItemFilterModelTodoPackage(const QVector<ItemInfo>& infos,
                                const QVector<QVariant>& extraValues,
@@ -64,8 +60,8 @@ public:
 
     QVector<ItemInfo>      infos;
     QVector<QVariant>      extraValues;
-    unsigned int           version;
-    bool                   isForReAdd;
+    unsigned int           version      = 0;
+    bool                   isForReAdd   = false;
     QHash<qlonglong, bool> filterResults;
 };
 
@@ -83,45 +79,45 @@ public:
     ItemFilterModelPrivate();
     ~ItemFilterModelPrivate() override;
 
-    void init(ItemFilterModel* q);
+    void init(ItemFilterModel* qq);
     void setupWorkers();
     void infosToProcess(const QList<ItemInfo>& infos);
     void infosToProcess(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues, bool forReAdd = true);
 
 public:
 
-    ItemFilterModel*                   q;
+    ItemFilterModel*                   q                    = nullptr;
 
-    ItemModel*                         imageModel;
+    ItemModel*                         imageModel           = nullptr;
 
     ItemFilterSettings                 filter;
     ItemSortSettings                   sorter;
     VersionItemFilterSettings          versionFilter;
     GroupItemFilterSettings            groupFilter;
 
-    volatile unsigned int              version;
-    unsigned int                       lastDiscardVersion;
-    unsigned int                       lastFilteredVersion;
-    int                                sentOut;
-    int                                sentOutForReAdd;
+    volatile unsigned int              version              = 0;
+    unsigned int                       lastDiscardVersion   = 0;
+    unsigned int                       lastFilteredVersion  = 0;
+    int                                sentOut              = 0;
+    int                                sentOutForReAdd      = 0;
 
-    QTimer*                            updateFilterTimer;
+    QTimer*                            updateFilterTimer    = nullptr;
 
-    bool                               needPrepare;
-    bool                               needPrepareComments;
-    bool                               needPrepareTags;
-    bool                               needPrepareGroups;
+    bool                               needPrepare          = false;
+    bool                               needPrepareComments  = false;
+    bool                               needPrepareTags      = false;
+    bool                               needPrepareGroups    = false;
 
     QMutex                             mutex;
     ItemFilterSettings                 filterCopy;
     VersionItemFilterSettings          versionFilterCopy;
     GroupItemFilterSettings            groupFilterCopy;
-    ItemFilterModelPreparer*           preparer;
-    ItemFilterModelFilterer*           filterer;
+    ItemFilterModelPreparer*           preparer             = nullptr;
+    ItemFilterModelFilterer*           filterer             = nullptr;
 
     QHash<qlonglong, bool>             filterResults;
-    bool                               hasOneMatch;
-    bool                               hasOneMatchForText;
+    bool                               hasOneMatch          = false;
+    bool                               hasOneMatchForText   = false;
 
     QList<ItemFilterModelPrepareHook*> prepareHooks;
 

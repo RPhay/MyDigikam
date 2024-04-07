@@ -32,31 +32,26 @@ class Q_DECL_HIDDEN ItemThumbnailModel::Private
 {
 public:
 
-    explicit Private()
-      : displayWidget      (nullptr),
-        loadingThread      (nullptr),
-        storageThread      (nullptr),
-        preloadThread      (nullptr),
-        thumbSize          (0),
-        lastGlobalThumbSize(0),
-        preloadThumbSize   (0),
-        emitDataChanged    (true)
+    Private()
+        : thumbSize          (0),
+          lastGlobalThumbSize(0),
+          preloadThumbSize   (0)
     {
         staticListContainingThumbnailRole << ItemModel::ThumbnailRole;
     }
 
-    QWidget*               displayWidget;
+    QWidget*               displayWidget    = nullptr;
 
-    ThumbnailLoadThread*   loadingThread;
-    ThumbnailLoadThread*   storageThread;
-    ThumbnailLoadThread*   preloadThread;
+    ThumbnailLoadThread*   loadingThread    = nullptr;
+    ThumbnailLoadThread*   storageThread    = nullptr;
+    ThumbnailLoadThread*   preloadThread    = nullptr;
     ThumbnailSize          thumbSize;
     ThumbnailSize          lastGlobalThumbSize;
     ThumbnailSize          preloadThumbSize;
     QRect                  detailRect;
     QVector<int>           staticListContainingThumbnailRole;
 
-    bool                   emitDataChanged;
+    bool                   emitDataChanged  = true;
 
 public:
 

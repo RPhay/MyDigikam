@@ -29,19 +29,6 @@
 namespace Digikam
 {
 
-ItemSortSettings::ItemSortSettings()
-    : categorizationMode            (NoCategories),
-      categorizationSortOrder       (DefaultOrder),
-      currentCategorizationSortOrder(Qt::AscendingOrder),
-      categorizationCaseSensitivity (Qt::CaseSensitive),
-      sortRole                      (SortByFileName),
-      sortOrder                     (DefaultOrder),
-      strTypeNatural                (true),
-      currentSortOrder              (Qt::AscendingOrder),
-      sortCaseSensitivity           (Qt::CaseSensitive)
-{
-}
-
 bool ItemSortSettings::operator==(const ItemSortSettings& other) const
 {
     return (
