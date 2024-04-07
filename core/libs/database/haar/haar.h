@@ -272,8 +272,8 @@ class Calculator
 
 public:
 
-    explicit Calculator();
-    ~Calculator();
+    Calculator()  = default;
+    ~Calculator() = default;
 
     int  calcHaar(ImageData* const imageData, SignatureData* const sigData);
 

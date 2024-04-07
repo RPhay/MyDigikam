@@ -97,7 +97,7 @@ class Q_DECL_HIDDEN HaarIface::Private
 public:
 
     explicit Private();
-    ~Private();
+    ~Private() = default;
 
 public:
 

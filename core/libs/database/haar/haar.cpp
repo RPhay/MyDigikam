@@ -159,14 +159,6 @@ WeightBin::WeightBin()
 
 // --------------------------------------------------------------------
 
-Calculator::Calculator()
-{
-}
-
-Calculator::~Calculator()
-{
-}
-
 /**
  * Do the Haar tensorial 2d transform itself.
  * Here input is RGB data [0..255] in Unit arrays

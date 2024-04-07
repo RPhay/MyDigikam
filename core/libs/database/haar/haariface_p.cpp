@@ -97,10 +97,6 @@ HaarIface::Private::Private()
 {
 }
 
-HaarIface::Private::~Private()
-{
-}
-
 void HaarIface::Private::rebuildSignatureCache(const QSet<qlonglong>& imageIds)
 {
     m_signatureCache.reset(new SignatureCache);
