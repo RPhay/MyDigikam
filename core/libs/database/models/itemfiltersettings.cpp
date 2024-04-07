@@ -410,7 +410,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
                 matchCL = containsNoneOfExcept(tagIds, TagsCache::instance()->colorLabelTags(), noColorLabelTagId);
             }
         }
-        if (matchCL) qCDebug(DIGIKAM_GENERAL_LOG) << "Color label match:" << info.name();
+
         match &= matchCL;
     }
 
@@ -810,7 +810,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
     // -- filter by URL-whitelists ------------------------------------------------
     // NOTE: whitelists are always AND for now.
-    if (match) qCDebug(DIGIKAM_GENERAL_LOG) << "Match complete:" << info.name();
+
     if (match)
     {
         const QUrl url = info.fileUrl();
