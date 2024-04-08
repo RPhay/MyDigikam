@@ -64,7 +64,7 @@ BUGFIXES:
 041 ==> 484818 - Switching quickly between several videos leads to a segmentation fault.
 042 ==> 485009 - Exposure times greater or equal to 1 second are shown as a fraction in EXIF metadata view.
 043 ==> 458584 - Reverse Geocode information is not being updated correctly from external file edits.
-044 ==> 
+044 ==> 485157 - Filter for Color or Pick Labels can not be activated.
 045 ==> 
 046 ==> 
 047 ==> 
