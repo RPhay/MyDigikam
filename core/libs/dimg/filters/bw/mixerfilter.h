@@ -32,48 +32,29 @@ class DIGIKAM_EXPORT MixerContainer
 
 public:
 
-    explicit MixerContainer()
-      : bPreserveLum    (true),
-        bMonochrome     (false),
-        redRedGain      (1.0),
-        redGreenGain    (0.0),
-        redBlueGain     (0.0),
-        greenRedGain    (0.0),
-        greenGreenGain  (1.0),
-        greenBlueGain   (0.0),
-        blueRedGain     (0.0),
-        blueGreenGain   (0.0),
-        blueBlueGain    (1.0),
-        blackRedGain    (1.0),
-        blackGreenGain  (0.0),
-        blackBlueGain   (0.0)
-    {
-    };
-
-    ~MixerContainer()
-    {
-    };
+    MixerContainer()  = default;
+    ~MixerContainer() = default;
 
 public:
 
-    bool   bPreserveLum;
-    bool   bMonochrome;
+    bool   bPreserveLum     = true;
+    bool   bMonochrome      = false;
 
     // Standard settings.
-    double redRedGain;
-    double redGreenGain;
-    double redBlueGain;
-    double greenRedGain;
-    double greenGreenGain;
-    double greenBlueGain;
-    double blueRedGain;
-    double blueGreenGain;
-    double blueBlueGain;
+    double redRedGain       = 1.0;
+    double redGreenGain     = 0.0;
+    double redBlueGain      = 0.0;
+    double greenRedGain     = 0.0;
+    double greenGreenGain   = 1.0;
+    double greenBlueGain    = 0.0;
+    double blueRedGain      = 0.0;
+    double blueGreenGain    = 0.0;
+    double blueBlueGain     = 1.0;
 
     // Monochrome settings.
-    double blackRedGain;
-    double blackGreenGain;
-    double blackBlueGain;
+    double blackRedGain     = 1.0;
+    double blackGreenGain   = 0.0;
+    double blackBlueGain    = 0.0;
 };
 
 // -----------------------------------------------------------------------------------------------

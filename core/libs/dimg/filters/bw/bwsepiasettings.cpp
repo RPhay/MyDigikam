@@ -64,16 +64,7 @@ public:
 
 public:
 
-    explicit Private() :
-        bwFilters(nullptr),
-        bwFilm(nullptr),
-        bwTone(nullptr),
-        tab(nullptr),
-        cInput(nullptr),
-        strengthInput(nullptr),
-        curvesBox(nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString       configSettingsTabEntry;
     static const QString       configBWFilterEntry;
@@ -83,16 +74,16 @@ public:
     static const QString       configStrengthAdjustmentEntry;
     static const QString       configCurveEntry;
 
-    PreviewList*               bwFilters;
-    PreviewList*               bwFilm;
-    PreviewList*               bwTone;
+    PreviewList*               bwFilters        = nullptr;
+    PreviewList*               bwFilm           = nullptr;
+    PreviewList*               bwTone           = nullptr;
 
-    DExpanderBoxExclusive*     tab;
+    DExpanderBoxExclusive*     tab              = nullptr;
 
-    DIntNumInput*              cInput;
-    DIntNumInput*              strengthInput;
+    DIntNumInput*              cInput           = nullptr;
+    DIntNumInput*              strengthInput    = nullptr;
 
-    CurvesBox*                 curvesBox;
+    CurvesBox*                 curvesBox        = nullptr;
 
     DImg                       thumbImage;
 
@@ -123,7 +114,7 @@ PreviewListItem* BWSepiaSettings::Private::addItem(PreviewList* const list,
 
 BWSepiaSettings::BWSepiaSettings(QWidget* const parent, DImg* const img)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     if (!img->isNull())
     {
@@ -564,7 +555,8 @@ void BWSepiaSettings::loadSettings()
         d->curvesBox->curves()->setCurveType(d->curvesBox->channel(), ImageCurves::CURVE_SMOOTH);
         d->curvesBox->reset();
 
-        // TODO cant we use the kconfig mechanisms provided by CurveWidget here?
+        // TODO: cant we use the kconfig mechanisms provided by CurveWidget here?
+
         QPoint disable = ImageCurves::getDisabledValue();
         QPoint p;
 
@@ -617,7 +609,7 @@ void BWSepiaSettings::saveAsSettings()
         stream << d->bwTone->currentId() << "\n";
         stream << d->cInput->value() << "\n";
 
-        // TODO cant we use the kconfig mechanisms provided by CurveWidget here?
+        // TODO: cant we use the kconfig mechanisms provided by CurveWidget here?
 
         for (int j = 0 ; j < ImageCurves::NUM_POINTS ; ++j)
         {

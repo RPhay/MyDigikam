@@ -34,26 +34,17 @@ class Q_DECL_HIDDEN BWSepiaFilter::Private
 {
 public:
 
-    explicit Private()
-      : redAttn  (0.0),
-        greenAttn(0.0),
-        blueAttn (0.0),
-        redMult  (0.0),
-        greenMult(0.0),
-        blueMult (0.0),
-        settings (false)
-    {
-    }
+    Private() = default;
 
     /// Color filter attenuation in percents.
-    double           redAttn;
-    double           greenAttn;
-    double           blueAttn;
+    double           redAttn    = 0.0;
+    double           greenAttn  = 0.0;
+    double           blueAttn   = 0.0;
 
     /// Channel mixer color multiplier.
-    double           redMult;
-    double           greenMult;
-    double           blueMult;
+    double           redMult    = 0.0;
+    double           greenMult  = 0.0;
+    double           blueMult   = 0.0;
 
     BWSepiaContainer settings;
 };

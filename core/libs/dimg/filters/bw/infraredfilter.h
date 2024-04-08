@@ -30,26 +30,17 @@ class DIGIKAM_EXPORT InfraredContainer
 
 public:
 
-    explicit InfraredContainer()
-        : sensibility(200),
-          redGain    (0.4),
-          greenGain  (2.1),
-          blueGain   (-0.8)
-    {
-    };
-
-    ~InfraredContainer()
-    {
-    };
+    InfraredContainer()  = default;
+    ~InfraredContainer() = default;
 
 public:
 
     /// Sensibility: 200..2600 ISO
-    int    sensibility;
+    int    sensibility  = 200;
 
-    double redGain;
-    double greenGain;
-    double blueGain;
+    double redGain      = 0.4;
+    double greenGain    = 2.1;
+    double blueGain     = -0.8;
 };
 
 // ---------------------------------------------------------------------------

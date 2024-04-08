@@ -32,22 +32,14 @@ class DIGIKAM_EXPORT TonalityContainer
 
 public:
 
-    explicit TonalityContainer()
-      : redMask  (0),
-        greenMask(0),
-        blueMask (0)
-    {
-    };
-
-    ~TonalityContainer()
-    {
-    };
+    TonalityContainer()  = default;
+    ~TonalityContainer() = default;
 
 public:
 
-    int redMask;
-    int greenMask;
-    int blueMask;
+    int redMask     = 0;
+    int greenMask   = 0;
+    int blueMask    = 0;
 };
 
 // -----------------------------------------------------------------------------------------------

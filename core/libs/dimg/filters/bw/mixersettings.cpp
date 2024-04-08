@@ -51,20 +51,7 @@ class Q_DECL_HIDDEN MixerSettings::Private
 {
 public:
 
-    explicit Private()
-      : currentChannel      (RedChannel),
-        monochromeTips      (nullptr),
-        totalPercents       (nullptr),
-        outChannelLabel     (nullptr),
-        resetButton         (nullptr),
-        preserveLuminosity  (nullptr),
-        monochrome          (nullptr),
-        outChannelCB        (nullptr),
-        redGain             (nullptr),
-        greenGain           (nullptr),
-        blueGain            (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString  configMonochromeEntry;
     static const QString  configPreserveLuminosityEntry;
@@ -81,24 +68,24 @@ public:
     static const QString  configBlackGreenGainEntry;
     static const QString  configBlackBlueGainEntry;
 
-    int                   currentChannel;
+    int                   currentChannel     = RedChannel;
 
-    QLabel*               monochromeTips;
-    QLabel*               totalPercents;
-    QLabel*               outChannelLabel;
+    QLabel*               monochromeTips     = nullptr;
+    QLabel*               totalPercents      = nullptr;
+    QLabel*               outChannelLabel    = nullptr;
 
-    QPushButton*          resetButton;
+    QPushButton*          resetButton        = nullptr;
 
-    QCheckBox*            preserveLuminosity;
-    QCheckBox*            monochrome;
+    QCheckBox*            preserveLuminosity = nullptr;
+    QCheckBox*            monochrome         = nullptr;
 
-    QComboBox*            outChannelCB;
+    QComboBox*            outChannelCB       = nullptr;
 
     MixerContainer        mixerSettings;
 
-    DDoubleNumInput*      redGain;
-    DDoubleNumInput*      greenGain;
-    DDoubleNumInput*      blueGain;
+    DDoubleNumInput*      redGain            = nullptr;
+    DDoubleNumInput*      greenGain          = nullptr;
+    DDoubleNumInput*      blueGain           = nullptr;
 };
 
 const QString MixerSettings::Private::configMonochromeEntry(QLatin1String("Monochrome"));
@@ -123,7 +110,7 @@ MixerSettings::MixerSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(this);
 
@@ -437,6 +424,7 @@ void MixerSettings::slotMonochromeActived(bool mono)
 void MixerSettings::slotLuminosityChanged(bool lum)
 {
     d->mixerSettings.bPreserveLum = lum;
+
     Q_EMIT signalSettingsChanged();
 }
 
