@@ -32,27 +32,17 @@ class Q_DECL_HIDDEN CBFilter::Private
 {
 public:
 
-    explicit Private()
-    {
-        memset(&redMap,     0, sizeof(redMap));
-        memset(&greenMap,   0, sizeof(greenMap));
-        memset(&blueMap,    0, sizeof(blueMap));
-        memset(&alphaMap,   0, sizeof(alphaMap));
-        memset(&redMap16,   0, sizeof(redMap16));
-        memset(&greenMap16, 0, sizeof(greenMap16));
-        memset(&blueMap16,  0, sizeof(blueMap16));
-        memset(&alphaMap16, 0, sizeof(alphaMap16));
-    }
+    Private() = default;
 
-    int         redMap[256];
-    int         greenMap[256];
-    int         blueMap[256];
-    int         alphaMap[256];
+    int         redMap[256]         = { 0 };
+    int         greenMap[256]       = { 0 };
+    int         blueMap[256]        = { 0 };
+    int         alphaMap[256]       = { 0 };
 
-    int         redMap16[65536];
-    int         greenMap16[65536];
-    int         blueMap16[65536];
-    int         alphaMap16[65536];
+    int         redMap16[65536]     = { 0 };
+    int         greenMap16[65536]   = { 0 };
+    int         blueMap16[65536]    = { 0 };
+    int         alphaMap16[65536]   = { 0 };
 
     CBContainer settings;
 };

@@ -44,20 +44,15 @@ class Q_DECL_HIDDEN CBSettings::Private
 {
 public:
 
-    explicit Private()
-      : rInput(nullptr),
-        gInput(nullptr),
-        bInput(nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configRedAdjustmentEntry;
     static const QString configGreenAdjustmentEntry;
     static const QString configBlueAdjustmentEntry;
 
-    DIntNumInput*        rInput;
-    DIntNumInput*        gInput;
-    DIntNumInput*        bInput;
+    DIntNumInput*        rInput = nullptr;
+    DIntNumInput*        gInput = nullptr;
+    DIntNumInput*        bInput = nullptr;
 };
 
 const QString CBSettings::Private::configRedAdjustmentEntry(QLatin1String("RedAdjustment"));
@@ -71,7 +66,7 @@ CBSettings::CBSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing          = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                      QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid    = new QGridLayout(parent);
 
@@ -167,9 +162,11 @@ void CBSettings::setSettings(const CBContainer& settings)
 void CBSettings::resetToDefault()
 {
     blockSignals(true);
+
     d->rInput->slotReset();
     d->gInput->slotReset();
     d->bInput->slotReset();
+
     blockSignals(false);
 }
 

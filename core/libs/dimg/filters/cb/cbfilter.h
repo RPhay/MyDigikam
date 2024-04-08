@@ -32,26 +32,16 @@ class DIGIKAM_EXPORT CBContainer
 
 public:
 
-    explicit CBContainer()
-      : red  (1.0),
-        green(1.0),
-        blue (1.0),
-        alpha(1.0),
-        gamma(1.0)
-    {
-    };
-
-    ~CBContainer()
-    {
-    };
+    CBContainer()  = default;
+    ~CBContainer() = default;
 
 public:
 
-    double red;
-    double green;
-    double blue;
-    double alpha;
-    double gamma;
+    double red   = 1.0;
+    double green = 1.0;
+    double blue  = 1.0;
+    double alpha = 1.0;
+    double gamma = 1.0;
 };
 
 // -----------------------------------------------------------------------------------------------
