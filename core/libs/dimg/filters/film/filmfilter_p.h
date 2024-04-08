@@ -29,13 +29,7 @@ public:
     explicit FilmProfile(double rdm = 0.0, double gdm = 0.0, double bdm = 0.0)
         : redDmax  (rdm),
           greenDmax(gdm),
-          blueDmax (bdm),
-          rBalance (1.0),
-          gBalance (1.0),
-          bBalance (1.0),
-          wpRed    (1.0),
-          wpGreen  (1.0),
-          wpBlue   (1.0)
+          blueDmax (bdm)
     {
     }
 
@@ -44,16 +38,24 @@ public:
         switch (channel)
         {
             case RedChannel:
+            {
                 return redDmax;
+            }
 
             case GreenChannel:
+            {
                 return greenDmax;
+            }
 
             case BlueChannel:
+            {
                 return blueDmax;
+            }
 
             default:
+            {
                 return 0.0;
+            }
         }
     }
 
@@ -71,16 +73,24 @@ public:
         switch (channel)
         {
             case RedChannel:
+            {
                 return rBalance;
+            }
 
             case GreenChannel:
+            {
                 return gBalance;
+            }
 
             case BlueChannel:
+            {
                 return bBalance;
+            }
 
             default:
+            {
                 return 1.0;
+            }
         }
     }
 
@@ -98,28 +108,36 @@ public:
         switch (channel)
         {
             case RedChannel:
+            {
                 return wpRed;
+            }
 
             case GreenChannel:
+            {
                 return wpGreen;
+            }
 
             case BlueChannel:
+            {
                 return wpBlue;
+            }
 
             default:
+            {
                 return 1.0;
+            }
         }
     }
 
 private:
 
-    double redDmax;
-    double greenDmax;
-    double blueDmax;
+    double redDmax      = 1.0;
+    double greenDmax    = 1.0;
+    double blueDmax     = 1.0;
 
-    double rBalance;
-    double gBalance;
-    double bBalance;
+    double rBalance     = 1.0;
+    double gBalance     = 1.0;
+    double bBalance     = 1.0;
 
     double wpRed;
     double wpGreen;
@@ -132,28 +150,16 @@ class Q_DECL_HIDDEN FilmContainer::Private
 {
 public:
 
-    explicit Private()
-        : gamma       (1.0),
-          exposure    (1.0),
-          sixteenBit  (false),
-          profile     (FilmProfile(1.0, 1.0, 1.0)),
-          cnType      (CNNeutral),
-          whitePoint  (DColor(QColor("white"), false)),
-          applyBalance(true)
-    {
-    }
+    Private()  = default;
+    ~Private() = default;
 
-    ~Private()
-    {
-    }
-
-    double        gamma;
-    double        exposure;
-    bool          sixteenBit;
-    FilmProfile   profile;
-    CNFilmProfile cnType;
-    DColor        whitePoint;
-    bool          applyBalance;
+    double        gamma         = 1.0;
+    double        exposure      = 1.0;
+    bool          sixteenBit    = false;
+    FilmProfile   profile       = FilmProfile(1.0, 1.0, 1.0);
+    CNFilmProfile cnType        = CNNeutral;
+    DColor        whitePoint    = DColor(QColor("white"), false);
+    bool          applyBalance  = true;
 };
 
 // ------------------------------------------------------------------
@@ -162,13 +168,8 @@ class Q_DECL_HIDDEN FilmFilter::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
-
-    ~Private()
-    {
-    }
+    Private()  = default;
+    ~Private() = default;
 
     FilmContainer film;
 };

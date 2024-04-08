@@ -85,129 +85,191 @@ void FilmContainer::setCNType(CNFilmProfile profile)
     switch (profile)
     {
         default:
+        {
             d->profile = FilmProfile(1.0, 1.0, 1.0);
             d->cnType = CNNeutral;
             break;
+        }
 
         case CNKodakGold100:
+        {
             d->profile = FilmProfile(1.53, 2.00, 2.40); // check
             break;
+        }
 
         case CNKodakGold200:
+        {
             d->profile = FilmProfile(1.53, 2.00, 2.40); // check
             break;
+        }
 
         case CNKodakEktar100:
+        {
             d->profile = FilmProfile(1.40, 1.85, 2.34);
             break;
+        }
 
         case CNKodakProfessionalPortra160NC:
+        {
             d->profile = FilmProfile(1.49, 1.96, 2.46); // check
             break;
+        }
 
         case CNKodakProfessionalPortra160VC:
+        {
             d->profile = FilmProfile(1.56, 2.03, 2.55); // check
             break;
+        }
 
         case CNKodakProfessionalPortra400NC:
+        {
             d->profile = FilmProfile(1.69, 2.15, 2.69); // check
             break;
+        }
 
         case CNKodakProfessionalPortra400VC:
+        {
             d->profile = FilmProfile(1.78, 2.21, 2.77); // check
             break;
+        }
 
         case CNKodakProfessionalPortra800Box:
+        {
             d->profile = FilmProfile(1.89, 2.29, 2.89); // check
             break;
+        }
 
         case CNKodakProfessionalPortra800P1:
+        {
             d->profile = FilmProfile(1.53, 2.01, 2.46); // check
             break;
+        }
 
         case CNKodakProfessionalPortra800P2:
+        {
             d->profile = FilmProfile(1.74, 2.22, 2.64); // check
             break;
+        }
 
         case CNKodakProfessionalNewPortra160:
+        {
             d->profile = FilmProfile(1.41, 1.88, 2.32);
             break;
+        }
 
         case CNKodakProfessionalNewPortra400:
+        {
             d->profile = FilmProfile(1.69, 2.15, 2.68); // check
             break;
+        }
 
         case CNKodakFarbwelt100:
+        {
             d->profile = FilmProfile(1.86, 2.33, 2.77); // fix, check
             break;
+        }
 
         case CNKodakFarbwelt200:
+        {
             d->profile = FilmProfile(1.55, 2.03, 2.42); // check
             break;
+        }
 
         case CNKodakFarbwelt400:
+        {
             d->profile = FilmProfile(1.93, 2.43, 2.95); // fix, check
             break;
+        }
 
         case CNKodakRoyalGold400:
+        {
             d->profile = FilmProfile(2.24, 2.76, 3.27); // fix, check
             break;
+        }
 
         case CNAgfaphotoVistaPlus200:
+        {
             d->profile = FilmProfile(1.70, 2.13, 2.50);
             break;
+        }
 
         case CNAgfaphotoVistaPlus400:
+        {
             d->profile = FilmProfile(1.86, 2.35, 2.67); // fix, check
             break;
+        }
 
         case CNFujicolorPro160S:
+        {
             d->profile = FilmProfile(1.73, 2.27, 2.53); // fix, check
             break;
+        }
 
         case CNFujicolorPro160C:
+        {
             d->profile = FilmProfile(1.96, 2.46, 2.69); // fix, check
             break;
+        }
 
         case CNFujicolorNPL160:
+        {
             d->profile = FilmProfile(2.13, 2.36, 2.92); // fix, check
             break;
+        }
 
         case CNFujicolorPro400H:
+        {
             d->profile = FilmProfile(1.95, 2.37, 2.62); // fix, check
             break;
+        }
 
         case CNFujicolorPro800Z:
+        {
             d->profile = FilmProfile(2.12, 2.37, 2.56); // fix, check
             break;
+        }
 
         case CNFujicolorSuperiaReala:
+        {
             d->profile = FilmProfile(1.79, 2.14, 2.49); // check
             break;
+        }
 
         case CNFujicolorSuperia100:
+        {
             d->profile = FilmProfile(2.02, 2.46, 2.81); // fix, check
             break;
+        }
 
         case CNFujicolorSuperia200:
+        {
             d->profile = FilmProfile(2.11, 2.50, 2.79); // check
             break;
+        }
 
         case CNFujicolorSuperiaXtra400:
+        {
             d->profile = FilmProfile(2.11, 2.58, 2.96); // check
             break;
+        }
 
         case CNFujicolorSuperiaXtra800:
+        {
             d->profile = FilmProfile(2.44, 2.83, 3.18); // fix, check
             break;
+        }
 
         case CNFujicolorTrueDefinition400:
+        {
             d->profile = FilmProfile(1.93, 2.21, 2.39); // fix, check
             break;
+        }
 
         case CNFujicolorSuperia1600:
+        {
             d->profile = FilmProfile(2.35, 2.68, 2.96); // fix, check
             break;
+        }
     }
 }
 
@@ -233,19 +295,28 @@ int FilmContainer::whitePointForChannel(int ch) const
     switch (ch)
     {
         case RedChannel:
+        {
             return d->whitePoint.red();
+        }
 
         case GreenChannel:
+        {
             return d->whitePoint.green();
+        }
 
         case BlueChannel:
+        {
             return d->whitePoint.blue();
+        }
 
         default:
+        {
             return max;
+        }
     }
 
     // not reached
+
     return max;
 }
 
