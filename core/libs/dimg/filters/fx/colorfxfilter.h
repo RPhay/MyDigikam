@@ -35,25 +35,15 @@ class DIGIKAM_EXPORT ColorFXContainer
 
 public:
 
-    explicit ColorFXContainer()
-      : colorFXType (0),            ///< ColorFXFilter::Solarize
-        level       (0),
-        iterations  (2),
-        intensity   (100),
-        path        (QString())
-    {
-    };
-
-    ~ColorFXContainer()
-    {
-    };
+    ColorFXContainer()  = default;
+    ~ColorFXContainer() = default;
 
 public:
 
-    int     colorFXType;
-    int     level;
-    int     iterations;
-    int     intensity;
+    int     colorFXType = 0;                ///< ColorFXFilter::Solarize
+    int     level       = 0;
+    int     iterations  = 2;
+    int     intensity   = 100;
     QString path;
 };
 
@@ -123,8 +113,8 @@ private:
 private:
 
     ColorFXContainer m_settings;
-    quint16*         m_lutTable;     ///< RGBA, A is unused
-    int              m_lutTableSize; ///< all axis are of this size
+    quint16*         m_lutTable     = nullptr;      ///< RGBA, A is unused
+    int              m_lutTableSize = 0;            ///< all axis are of this size
 };
 
 } // namespace Digikam

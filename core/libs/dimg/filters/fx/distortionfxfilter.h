@@ -57,60 +57,36 @@ public:
 
 private:
 
-    struct Q_DECL_HIDDEN Args
+    class Q_DECL_HIDDEN Args
     {
-        explicit Args()
-          : start(0),
-            stop(0),
-            h(0),
-            w(0),
-            orgImage(nullptr),
-            destImage(nullptr),
-            Coeff(0.0),
-            AntiAlias(false),
-            dist(0),
-            Horizontal(false),
-            Vertical(false),
-            Factor(0),
-            Amplitude(0),
-            Frequency(0),
-            Mode(false),
-            X(0),
-            Y(0),
-            Phase(0.0),
-            WavesType(false),
-            FillSides(false),
-            Type(false),
-            WSize(0),
-            HSize(0),
-            Random(0)
-        {
-        }
+    public:
 
-        int    start;
-        int    stop;
-        int    h;
-        int    w;
-        DImg*  orgImage;
-        DImg*  destImage;
-        double Coeff;
-        bool   AntiAlias;
-        int    dist;
-        bool   Horizontal;
-        bool   Vertical;
-        int    Factor;
-        int    Amplitude;
-        int    Frequency;
-        bool   Mode;
-        int    X;
-        int    Y;
-        double Phase;
-        bool   WavesType;
-        bool   FillSides;
-        bool   Type;
-        int    WSize;
-        int    HSize;
-        int    Random;
+        Args() = default;
+
+        int    start        = 0;
+        int    stop         = 0;
+        int    h            = 0;
+        int    w            = 0;
+        DImg*  orgImage     = nullptr;
+        DImg*  destImage    = nullptr;
+        double Coeff        = 0.0;
+        bool   AntiAlias    = false;
+        int    dist         = 0;
+        bool   Horizontal   = false;
+        bool   Vertical     = false;
+        int    Factor       = 0;
+        int    Amplitude    = 0;
+        int    Frequency    = 0;
+        bool   Mode         = false;
+        int    X            = 0;
+        int    Y            = 0;
+        double Phase        = 0.0;
+        bool   WavesType    = false;
+        bool   FillSides    = false;
+        bool   Type         = false;
+        int    WSize        = 0;
+        int    HSize        = 0;
+        int    Random       = 0;
     };
 
 public:
@@ -119,7 +95,7 @@ public:
     explicit DistortionFXFilter(DImg* const orgImage, QObject* const parent = nullptr, int effectType=0,
                                 int level=0, int iteration=0, bool antialiasing=true);
 
-    ~DistortionFXFilter() override;
+    ~DistortionFXFilter()                                                     override;
 
     static QString          FilterIdentifier()
     {
@@ -138,12 +114,12 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
     void                    readParameters(const FilterAction& action)        override;
 
@@ -153,24 +129,24 @@ private:
     void filterImage()                                                        override;
 
     // Backported from ImageProcessing version 2
-    void fisheye(DImg* orgImage, DImg* destImage, double Coeff, bool AntiAlias=true);
+    void fisheye(DImg* orgImage, DImg* destImage, double Coeff, bool AntiAlias = true);
     void fisheyeMultithreaded(const Args& prm);
 
-    void twirl(DImg* orgImage, DImg* destImage, int dist, bool AntiAlias=true);
+    void twirl(DImg* orgImage, DImg* destImage, int dist, bool AntiAlias = true);
     void twirlMultithreaded(const Args& prm);
 
     void cilindrical(DImg* orgImage, DImg* destImage, double Coeff,
-                     bool Horizontal, bool Vertical, bool AntiAlias=true);
+                     bool Horizontal, bool Vertical, bool AntiAlias = true);
     void cilindricalMultithreaded(const Args& prm);
 
-    void multipleCorners(DImg* orgImage, DImg* destImage, int Factor, bool AntiAlias=true);
+    void multipleCorners(DImg* orgImage, DImg* destImage, int Factor, bool AntiAlias = true);
     void multipleCornersMultithreaded(const Args& prm);
 
-    void polarCoordinates(DImg* orgImage, DImg* destImage, bool Type, bool AntiAlias=true);
+    void polarCoordinates(DImg* orgImage, DImg* destImage, bool Type, bool AntiAlias = true);
     void polarCoordinatesMultithreaded(const Args& prm);
 
     void circularWaves(DImg* orgImage, DImg* destImage, int X, int Y, double Amplitude,
-                       double Frequency, double Phase, bool WavesType, bool AntiAlias=true);
+                       double Frequency, double Phase, bool WavesType, bool AntiAlias = true);
     void circularWavesMultithreaded(const Args& prm);
 
     // Backported from ImageProcessing version 1

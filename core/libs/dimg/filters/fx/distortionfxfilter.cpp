@@ -57,16 +57,16 @@ public:
     {
     }
 
-    bool                   antiAlias;
+    bool                   antiAlias     = false;
 
-    int                    level;
-    int                    iteration;
-    int                    effectType;
-    quint32                randomSeed;
+    int                    level         = 0;
+    int                    iteration     = 0;
+    int                    effectType    = 0;
+    quint32                randomSeed    = 0;
 
     RandomNumberGenerator generator;
 
-    int                   globalProgress;
+    int                   globalProgress = 0;
 
     QMutex                lock;
     QMutex                lock2;   // RandomNumberGenerator is not re-entrant (dixit Boost lib)
@@ -74,7 +74,7 @@ public:
 
 DistortionFXFilter::DistortionFXFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
@@ -82,7 +82,7 @@ DistortionFXFilter::DistortionFXFilter(QObject* const parent)
 DistortionFXFilter::DistortionFXFilter(DImg* const orgImage, QObject* const parent, int effectType,
                                        int level, int iteration, bool antialiaqSing)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("DistortionFX")),
-      d(new Private)
+      d                 (new Private)
 {
     d->effectType = effectType;
     d->level      = level;
@@ -113,68 +113,100 @@ void DistortionFXFilter::filterImage()
     switch (d->effectType)
     {
         case FishEye:
+        {
             fisheye(&m_orgImage, &m_destImage, (double)(l / 5.0), d->antiAlias);
             break;
+        }
 
         case Twirl:
+        {
             twirl(&m_orgImage, &m_destImage, l, d->antiAlias);
             break;
+        }
 
         case CilindricalHor:
+        {
             cilindrical(&m_orgImage, &m_destImage, (double)l, true, false, d->antiAlias);
             break;
+        }
 
         case CilindricalVert:
+        {
             cilindrical(&m_orgImage, &m_destImage, (double)l, false, true, d->antiAlias);
             break;
+        }
 
         case CilindricalHV:
+        {
             cilindrical(&m_orgImage, &m_destImage, (double)l, true, true, d->antiAlias);
             break;
+        }
 
         case Caricature:
+        {
             fisheye(&m_orgImage, &m_destImage, (double)(-l / 5.0), d->antiAlias);
             break;
+        }
 
         case MultipleCorners:
+        {
             multipleCorners(&m_orgImage, &m_destImage, l, d->antiAlias);
             break;
+        }
 
         case WavesHorizontal:
+        {
             waves(&m_orgImage, &m_destImage, l, f, true, true);
             break;
+        }
 
         case WavesVertical:
+        {
             waves(&m_orgImage, &m_destImage, l, f, true, false);
             break;
+        }
 
         case BlockWaves1:
+        {
             blockWaves(&m_orgImage, &m_destImage, l, f, false);
             break;
+        }
 
         case BlockWaves2:
+        {
             blockWaves(&m_orgImage, &m_destImage, l, f, true);
             break;
+        }
 
         case CircularWaves1:
+        {
             circularWaves(&m_orgImage, &m_destImage, w / 2, h / 2, (double)l, (double)f, 0.0, false, d->antiAlias);
             break;
+        }
 
         case CircularWaves2:
+        {
             circularWaves(&m_orgImage, &m_destImage, w / 2, h / 2, (double)l, (double)f, 25.0, true, d->antiAlias);
             break;
+        }
 
         case PolarCoordinates:
+        {
             polarCoordinates(&m_orgImage, &m_destImage, true, d->antiAlias);
             break;
+        }
 
         case UnpolarCoordinates:
+        {
             polarCoordinates(&m_orgImage, &m_destImage, false, d->antiAlias);
             break;
+        }
 
         case Tile:
+        {
             tile(&m_orgImage, &m_destImage, 210 - f, 210 - f, l);
             break;
+        }
     }
 }
 
@@ -305,9 +337,12 @@ void DistortionFXFilter::fisheye(DImg* orgImage, DImg* destImage, double Coeff, 
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)(h) * 100.0) / orgImage->height());
 
         if (progress % 5 == 0)
@@ -346,8 +381,11 @@ void DistortionFXFilter::twirlMultithreaded(const Args& prm)
     }
 
     // the angle step is dist divided by 10000
+
     double lfAngleStep = prm.dist / 10000.0;
+
     // now, we get the minimum radius
+
     double lfRadMax    = (double)qMax(Width, Height) / 2.0;
 
     double th          = lfYScale * (double)(prm.h - nHalfH);
@@ -357,19 +395,27 @@ void DistortionFXFilter::twirlMultithreaded(const Args& prm)
         tw = lfXScale * (double)(w - nHalfW);
 
         // now, we get the distance
+
         lfCurrentRadius = qSqrt(th * th + tw * tw);
 
         // if distance is less than maximum radius...
+
         if (lfCurrentRadius < lfRadMax)
         {
             // we find the angle from the center
+
             lfAngle = qAtan2(th, tw);
+
             // we get the accumulated angle
+
             lfAngleSum = lfAngleStep * (-1.0 * (lfCurrentRadius - lfRadMax));
+
             // ok, we sum angle with accumulated to find a new angle
+
             lfNewAngle = lfAngle + lfAngleSum;
 
             // now we find the exact position's x and y
+
             nw = (double)nHalfW + qCos(lfNewAngle) * (lfCurrentRadius / lfXScale);
             nh = (double)nHalfH + qSin(lfNewAngle) * (lfCurrentRadius / lfYScale);
 
@@ -378,6 +424,7 @@ void DistortionFXFilter::twirlMultithreaded(const Args& prm)
         else
         {
             // copy pixel
+
             offset = getOffset(Width, w, prm.h, bytesDepth);
             color.setColor(data + offset, sixteenBit);
             color.setPixel(pResBits + offset);
@@ -443,9 +490,12 @@ void DistortionFXFilter::twirl(DImg* orgImage, DImg* destImage, int dist, bool A
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 100.0) / orgImage->height());
 
         if (progress % 5 == 0)
@@ -485,6 +535,7 @@ void DistortionFXFilter::cilindricalMultithreaded(const Args& prm)
     for (int w = prm.start; runningFlag() && (w < prm.stop); ++w)
     {
         // we find the distance from the center
+
         nh = qFabs((double)(prm.h - nHalfH));
         nw = qFabs((double)(w - nHalfW));
 
@@ -547,6 +598,7 @@ void DistortionFXFilter::cilindrical(DImg* orgImage, DImg* destImage, double Coe
     int progress;
 
     // initial copy
+
     memcpy(destImage->bits(), orgImage->bits(), orgImage->numBytes());
 
     QList<int> vals = multithreadedSteps(orgImage->width());
@@ -587,9 +639,12 @@ void DistortionFXFilter::cilindrical(DImg* orgImage, DImg* destImage, double Coe
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 100.0) / orgImage->height());
 
         if (progress % 5 == 0)
@@ -618,18 +673,24 @@ void DistortionFXFilter::multipleCornersMultithreaded(const Args& prm)
     for (int w = prm.start; runningFlag() && (w < prm.stop); ++w)
     {
         // we find the distance from the center
+
         nh = nHalfH - prm.h;
         nw = nHalfW - w;
 
         // now, we get the distance
+
         lfCurrentRadius = qSqrt(nh * nh + nw * nw);
+
         // we find the angle from the center
+
         lfAngle = qAtan2(nh, nw) * (double)prm.Factor;
 
         // ok, we sum angle with accumulated to find a new angle
+
         lfNewRadius = lfCurrentRadius * lfCurrentRadius / lfRadMax;
 
         // now we find the exact position's x and y
+
         nw = (double)nHalfW - (qCos(lfAngle) * lfNewRadius);
         nh = (double)nHalfH - (qSin(lfAngle) * lfNewRadius);
 
@@ -695,9 +756,12 @@ void DistortionFXFilter::multipleCorners(DImg* orgImage, DImg* destImage, int Fa
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 100.0) / orgImage->height());
 
         if (progress % 5 == 0)
@@ -723,6 +787,7 @@ void DistortionFXFilter::wavesHorizontalMultithreaded(const Args& prm)
         }
 
         // Update the progress bar in dialog.
+
         progress = (int)( ( (double)h * (100.0 / QThreadPool::globalInstance()->maxThreadCount()) ) / (prm.stop - prm.start));
 
         if ((progress % 5 == 0) && (progress > oldProgress))
@@ -752,6 +817,7 @@ void DistortionFXFilter::wavesVerticalMultithreaded(const Args& prm)
         }
 
         // Update the progress bar in dialog.
+
         progress = (int)( ( (double)w * (100.0 / QThreadPool::globalInstance()->maxThreadCount()) ) / (prm.stop - prm.start));
 
         if ((progress % 5 == 0) && (progress > oldProgress))
@@ -826,7 +892,9 @@ void DistortionFXFilter::waves(DImg* orgImage, DImg* destImage,
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
     }
     else
     {
@@ -855,7 +923,9 @@ void DistortionFXFilter::waves(DImg* orgImage, DImg* destImage,
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
     }
 }
 
@@ -896,8 +966,11 @@ void DistortionFXFilter::blockWavesMultithreaded(const Args& prm)
         offsetOther = getOffsetAdjusted(Width, Height, (int)nw, (int)nh, bytesDepth);
 
         // read color
+
         color.setColor(data + offsetOther, sixteenBit);
+
         // write color to destination
+
         color.setPixel(pResBits + offset);
     }
 }
@@ -964,9 +1037,12 @@ void DistortionFXFilter::blockWaves(DImg* orgImage, DImg* destImage,
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)w * 100.0) / orgImage->width());
 
         if (progress % 5 == 0)
@@ -1080,9 +1156,12 @@ void DistortionFXFilter::circularWaves(DImg* orgImage, DImg* destImage, int X, i
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 100.0) / orgImage->height());
 
         if (progress % 5 == 0)
@@ -1128,11 +1207,15 @@ void DistortionFXFilter::polarCoordinatesMultithreaded(const Args& prm)
         if (prm.Type)
         {
             // now, we get the distance
+
             lfRadius = qSqrt(th * th + tw * tw);
+
             // we find the angle from the center
+
             lfAngle = qAtan2(tw, th);
 
             // now we find the exact position's x and y
+
             nh = lfRadius * (double) Height / lfRadMax;
             nw =  lfAngle * (double)  Width / (2 * M_PI);
 
@@ -1201,9 +1284,12 @@ void DistortionFXFilter::polarCoordinates(DImg* orgImage, DImg* destImage, bool 
         }
 
         Q_FOREACH (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)h * 100.0) / orgImage->height());
 
         if (progress % 5 == 0)
@@ -1229,6 +1315,7 @@ void DistortionFXFilter::tileMultithreaded(const Args& prm)
         }
 
         // Update the progress bar in dialog.
+
         progress = (int)( ( (double)h * (100.0 / QThreadPool::globalInstance()->maxThreadCount()) ) / (prm.stop - prm.start));
 
         if ((progress % 5 == 0) && (progress > oldProgress))
@@ -1308,7 +1395,9 @@ void DistortionFXFilter::tile(DImg* orgImage, DImg* destImage,
     }
 
     Q_FOREACH (QFuture<void> t, tasks)
+    {
         t.waitForFinished();
+    }
 }
 
 /*
@@ -1342,10 +1431,15 @@ void DistortionFXFilter::setPixelFromOther(int Width, int Height, bool sixteenBi
     else
     {
         // we get the position adjusted
+
         int offsetOther = getOffsetAdjusted(Width, Height, (int)nw, (int)nh, bytesDepth);
+
         // read color
+
         color.setColor(data + offsetOther, sixteenBit);
+
         // write color to destination
+
         color.setPixel(pResBits + offset);
     }
 }

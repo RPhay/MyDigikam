@@ -40,9 +40,7 @@ namespace Digikam
 {
 
 ColorFXFilter::ColorFXFilter(QObject* const parent)
-    : DImgThreadedFilter(parent),
-      m_lutTable        (nullptr),
-      m_lutTableSize    (0)
+    : DImgThreadedFilter(parent)
 {
     initFilter();
 }
@@ -51,9 +49,7 @@ ColorFXFilter::ColorFXFilter(DImg* const orgImage,
                              QObject* const parent,
                              const ColorFXContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("ColorFX")),
-      m_settings    (settings),
-      m_lutTable    (nullptr),
-      m_lutTableSize(0)
+      m_settings    (settings)
 {
     loadLut3D(m_settings.path);
 
@@ -80,25 +76,35 @@ void ColorFXFilter::filterImage()
     switch (m_settings.colorFXType)
     {
         case Solarize:
+        {
             solarize(&m_orgImage, &m_destImage, m_settings.level);
             break;
+        }
 
         case Vivid:
+        {
             vivid(&m_orgImage, &m_destImage, m_settings.level);
             break;
+        }
 
         case Neon:
+        {
             neon(&m_orgImage, &m_destImage, m_settings.level, m_settings.iterations);
             break;
+        }
 
         case FindEdges:
+        {
             findEdges(&m_orgImage, &m_destImage, m_settings.level, m_settings.iterations);
             break;
+        }
 
         case Lut3D:
+        {
             applyLut3D();
             m_destImage = m_orgImage;
             break;
+        }
     }
 }
 

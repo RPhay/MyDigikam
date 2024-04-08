@@ -46,16 +46,7 @@ class Q_DECL_HIDDEN ColorFXSettings::Private
 {
 public:
 
-    explicit Private()
-      : stack           (nullptr),
-        effectType      (nullptr),
-        levelInput      (nullptr),
-        iterationInput  (nullptr),
-        intensityInput  (nullptr),
-        iterationLabel  (nullptr),
-        correctionTools (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configEffectTypeEntry;
     static const QString configLevelAdjustmentEntry;
@@ -63,17 +54,17 @@ public:
     static const QString configLut3DFilterEntry;
     static const QString configLut3DIntensityEntry;
 
-    QStackedWidget* stack;
+    QStackedWidget* stack           = nullptr;
 
-    DComboBox*      effectType;
+    DComboBox*      effectType      = nullptr;
 
-    DIntNumInput*   levelInput;
-    DIntNumInput*   iterationInput;
-    DIntNumInput*   intensityInput;
+    DIntNumInput*   levelInput      = nullptr;
+    DIntNumInput*   iterationInput  = nullptr;
+    DIntNumInput*   intensityInput  = nullptr;
 
-    QLabel*         iterationLabel;
+    QLabel*         iterationLabel  = nullptr;
 
-    PreviewList*    correctionTools;
+    PreviewList*    correctionTools = nullptr;
 
     QStringList     luts;
 };
@@ -243,21 +234,26 @@ void ColorFXSettings::slotEffectTypeChanged(int type)
     switch (type)
     {
         case ColorFXFilter::Solarize:
+        {
             d->levelInput->setRange(0, 100, 1);
             d->levelInput->setValue(20);
             d->iterationInput->setEnabled(false);
             d->iterationLabel->setEnabled(false);
             break;
+        }
 
         case ColorFXFilter::Vivid:
+        {
             d->levelInput->setRange(0, 50, 1);
             d->levelInput->setValue(5);
             d->iterationInput->setEnabled(false);
             d->iterationLabel->setEnabled(false);
             break;
+        }
 
         case ColorFXFilter::Neon:
         case ColorFXFilter::FindEdges:
+        {
             d->levelInput->setRange(0, 5, 1);
             d->levelInput->setValue(3);
             d->iterationInput->setEnabled(true);
@@ -265,6 +261,7 @@ void ColorFXSettings::slotEffectTypeChanged(int type)
             d->iterationInput->setRange(0, 5, 1);
             d->iterationInput->setValue(2);
             break;
+        }
     }
 
     d->iterationInput->blockSignals(false);
