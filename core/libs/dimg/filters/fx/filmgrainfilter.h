@@ -32,30 +32,8 @@ class DIGIKAM_EXPORT FilmGrainContainer
 
 public:
 
-    FilmGrainContainer()
-      : grainSize(1),
-        photoDistribution(false),
-        addLuminanceNoise(true),
-        lumaIntensity(25),
-        lumaShadows(-100),
-        lumaMidtones(0),
-        lumaHighlights(-100),
-        addChrominanceBlueNoise(false),
-        chromaBlueIntensity(25),
-        chromaBlueShadows(-100),
-        chromaBlueMidtones(0),
-        chromaBlueHighlights(-100),
-        addChrominanceRedNoise(false),
-        chromaRedIntensity(25),
-        chromaRedShadows(-100),
-        chromaRedMidtones(0),
-        chromaRedHighlights(-100)
-    {
-    };
-
-    ~FilmGrainContainer()
-    {
-    };
+    FilmGrainContainer()  = default;
+    ~FilmGrainContainer() = default;
 
     bool isDirty() const
     {
@@ -64,26 +42,26 @@ public:
 
 public:
 
-    int  grainSize;
-    bool photoDistribution;
+    int  grainSize                  = 1;
+    bool photoDistribution          = false;
 
-    bool addLuminanceNoise;
-    int  lumaIntensity;
-    int  lumaShadows;
-    int  lumaMidtones;
-    int  lumaHighlights;
+    bool addLuminanceNoise          = true;
+    int  lumaIntensity              = 25;
+    int  lumaShadows                = -100;
+    int  lumaMidtones               = 0;
+    int  lumaHighlights             = -100;
 
-    bool addChrominanceBlueNoise;
-    int  chromaBlueIntensity;
-    int  chromaBlueShadows;
-    int  chromaBlueMidtones;
-    int  chromaBlueHighlights;
+    bool addChrominanceBlueNoise    = false;
+    int  chromaBlueIntensity        = 25;
+    int  chromaBlueShadows          = -100;
+    int  chromaBlueMidtones         = 0;
+    int  chromaBlueHighlights       = -100;
 
-    bool addChrominanceRedNoise;
-    int  chromaRedIntensity;
-    int  chromaRedShadows;
-    int  chromaRedMidtones;
-    int  chromaRedHighlights;
+    bool addChrominanceRedNoise     = false;
+    int  chromaRedIntensity         = 25;
+    int  chromaRedShadows           = -100;
+    int  chromaRedMidtones          = 0;
+    int  chromaRedHighlights        = -100;
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -95,12 +73,16 @@ class DIGIKAM_EXPORT FilmGrainFilter : public DImgThreadedFilter
 public:
 
     explicit FilmGrainFilter(QObject* const parent = nullptr);
-    explicit FilmGrainFilter(DImg* const orgImage, QObject* const parent = nullptr, const FilmGrainContainer& settings=FilmGrainContainer());
-    // Constructor for slave mode: execute immediately in current thread with specified master filter
+    explicit FilmGrainFilter(DImg* const orgImage, QObject* const parent = nullptr,
+                             const FilmGrainContainer& settings = FilmGrainContainer());
+
+    /**
+     * Constructor for slave mode: execute immediately in current thread with specified master filter.
+     */
     explicit FilmGrainFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
-                             int progressBegin=0, int progressEnd=100,
-                             const FilmGrainContainer& settings=FilmGrainContainer());
-    ~FilmGrainFilter() override;
+                             int progressBegin = 0, int progressEnd = 100,
+                             const FilmGrainContainer& settings = FilmGrainContainer());
+    ~FilmGrainFilter()                                                        override;
 
 
     static QString          FilterIdentifier()
@@ -122,12 +104,12 @@ public:
 
     void                    readParameters(const FilterAction& action)        override;
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
 private:
 

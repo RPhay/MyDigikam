@@ -46,37 +46,7 @@ class Q_DECL_HIDDEN FilmGrainSettings::Private
 {
 public:
 
-    explicit Private()
-      : sizeLabel(nullptr),
-        label1(nullptr),
-        label2(nullptr),
-        label3(nullptr),
-        label4(nullptr),
-        label5(nullptr),
-        label6(nullptr),
-        label7(nullptr),
-        label8(nullptr),
-        label9(nullptr),
-        label10(nullptr),
-        label11(nullptr),
-        label12(nullptr),
-        photoDistribution(nullptr),
-        grainSizeInput(nullptr),
-        intensityLumInput(nullptr),
-        shadowsLumInput(nullptr),
-        midtonesLumInput(nullptr),
-        highlightsLumInput(nullptr),
-        intensityChromaBlueInput(nullptr),
-        shadowsChromaBlueInput(nullptr),
-        midtonesChromaBlueInput(nullptr),
-        highlightsChromaBlueInput(nullptr),
-        intensityChromaRedInput(nullptr),
-        shadowsChromaRedInput(nullptr),
-        midtonesChromaRedInput(nullptr),
-        highlightsChromaRedInput(nullptr),
-        expanderBox(nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configGrainSizeEntry;
     static const QString configPhotoDistributionEntry;
@@ -96,37 +66,37 @@ public:
     static const QString configMidtonesChromaRedAdjustmentEntry;
     static const QString configHighlightsChromaRedAdjustmentEntry;
 
-    QLabel*              sizeLabel;
-    QLabel*              label1;
-    QLabel*              label2;
-    QLabel*              label3;
-    QLabel*              label4;
-    QLabel*              label5;
-    QLabel*              label6;
-    QLabel*              label7;
-    QLabel*              label8;
-    QLabel*              label9;
-    QLabel*              label10;
-    QLabel*              label11;
-    QLabel*              label12;
+    QLabel*              sizeLabel                  = nullptr;
+    QLabel*              label1                     = nullptr;
+    QLabel*              label2                     = nullptr;
+    QLabel*              label3                     = nullptr;
+    QLabel*              label4                     = nullptr;
+    QLabel*              label5                     = nullptr;
+    QLabel*              label6                     = nullptr;
+    QLabel*              label7                     = nullptr;
+    QLabel*              label8                     = nullptr;
+    QLabel*              label9                     = nullptr;
+    QLabel*              label10                    = nullptr;
+    QLabel*              label11                    = nullptr;
+    QLabel*              label12                    = nullptr;
 
-    QCheckBox*           photoDistribution;
+    QCheckBox*           photoDistribution          = nullptr;
 
-    DIntNumInput*        grainSizeInput;
-    DIntNumInput*        intensityLumInput;
-    DIntNumInput*        shadowsLumInput;
-    DIntNumInput*        midtonesLumInput;
-    DIntNumInput*        highlightsLumInput;
-    DIntNumInput*        intensityChromaBlueInput;
-    DIntNumInput*        shadowsChromaBlueInput;
-    DIntNumInput*        midtonesChromaBlueInput;
-    DIntNumInput*        highlightsChromaBlueInput;
-    DIntNumInput*        intensityChromaRedInput;
-    DIntNumInput*        shadowsChromaRedInput;
-    DIntNumInput*        midtonesChromaRedInput;
-    DIntNumInput*        highlightsChromaRedInput;
+    DIntNumInput*        grainSizeInput             = nullptr;
+    DIntNumInput*        intensityLumInput          = nullptr;
+    DIntNumInput*        shadowsLumInput            = nullptr;
+    DIntNumInput*        midtonesLumInput           = nullptr;
+    DIntNumInput*        highlightsLumInput         = nullptr;
+    DIntNumInput*        intensityChromaBlueInput   = nullptr;
+    DIntNumInput*        shadowsChromaBlueInput     = nullptr;
+    DIntNumInput*        midtonesChromaBlueInput    = nullptr;
+    DIntNumInput*        highlightsChromaBlueInput  = nullptr;
+    DIntNumInput*        intensityChromaRedInput    = nullptr;
+    DIntNumInput*        shadowsChromaRedInput      = nullptr;
+    DIntNumInput*        midtonesChromaRedInput     = nullptr;
+    DIntNumInput*        highlightsChromaRedInput   = nullptr;
 
-    DExpanderBox*        expanderBox;
+    DExpanderBox*        expanderBox                = nullptr;
 };
 
 const QString FilmGrainSettings::Private::configGrainSizeEntry(QLatin1String("GrainSizeEntry"));
@@ -151,12 +121,12 @@ const QString FilmGrainSettings::Private::configHighlightsChromaRedAdjustmentEnt
 
 FilmGrainSettings::FilmGrainSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
-    QGridLayout* const grid = new QGridLayout(parent);
+    QGridLayout* const grid   = new QGridLayout(parent);
 
     // -------------------------------------------------------------
 
@@ -466,6 +436,7 @@ FilmGrainContainer FilmGrainSettings::settings() const
     prm.chromaRedShadows        = d->shadowsChromaRedInput->value();
     prm.chromaRedMidtones       = d->midtonesChromaRedInput->value();
     prm.chromaRedHighlights     = d->highlightsChromaRedInput->value();
+
     return prm;
 }
 

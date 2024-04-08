@@ -106,6 +106,7 @@ void EmbossFilter::embossMultithreaded(uint start, uint stop, uint h, double Dep
         }
 
         // Overwrite RGB values to destination. Alpha remains unchanged.
+
         color.setRed(gray);
         color.setGreen(gray);
         color.setBlue(gray);
@@ -116,6 +117,7 @@ void EmbossFilter::embossMultithreaded(uint start, uint stop, uint h, double Dep
 void EmbossFilter::filterImage()
 {
     // Initial copy
+
     memcpy(m_destImage.bits(), m_orgImage.bits(), m_destImage.numBytes());
 
     double Depth = m_depth / 10.0;

@@ -43,19 +43,13 @@ class Q_DECL_HIDDEN RainDropFilter::Private
 
 public:
 
-    explicit Private()
-      : drop(80),
-        amount(150),
-        coeff(30),
-        selection(QRect(0, 0, 0, 0))
-    {
-    }
+    Private() = default;
 
-    int                   drop;
-    int                   amount;
-    int                   coeff;
+    int                   drop      = 80;
+    int                   amount    = 150;
+    int                   coeff     = 30;
 
-    QRect                 selection;
+    QRect                 selection = QRect(0, 0, 0, 0);
 
     RandomNumberGenerator generator;
 
@@ -64,7 +58,7 @@ public:
 
 RainDropFilter::RainDropFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
@@ -72,7 +66,7 @@ RainDropFilter::RainDropFilter(QObject* const parent)
 RainDropFilter::RainDropFilter(DImg* const orgImage, QObject* const parent, int drop,
                                int amount, int coeff, const QRect& selection)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("RainDrop")),
-      d(new Private)
+      d                 (new Private)
 {
     d->drop      = drop;
     d->amount    = amount;

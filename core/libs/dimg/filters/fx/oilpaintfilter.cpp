@@ -41,31 +41,26 @@ class Q_DECL_HIDDEN OilPaintFilter::Private
 {
 public:
 
-    explicit Private()
-      : brushSize(1),
-        smoothness(30),
-        globalProgress(0)
-    {
-    }
+    Private() = default;
 
-    int    brushSize;
-    int    smoothness;
+    int    brushSize        = 1;
+    int    smoothness       = 30;
 
-    int    globalProgress;
+    int    globalProgress   = 0;
 
     QMutex lock;
 };
 
 OilPaintFilter::OilPaintFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 OilPaintFilter::OilPaintFilter(DImg* const orgImage, QObject* const parent, int brushSize, int smoothness)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("OilPaintFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     d->brushSize  = brushSize;
     d->smoothness = smoothness;
@@ -196,6 +191,7 @@ DColor OilPaintFilter::MostFrequentColor(DImg& src, int X, int Y, int Radius, in
     Height       = (int)src.height();
 
     // Erase the array
+
     memset(intensityCount, 0, (Intensity + 1) * sizeof(uchar));
 
     for (w = X - Radius ; w <= X + Radius ; ++w)
@@ -244,9 +240,11 @@ DColor OilPaintFilter::MostFrequentColor(DImg& src, int X, int Y, int Radius, in
     }
 
     // get Alpha channel value from original (unchanged)
+
     mostFrequentColor = src.getPixelColor(X, Y);
 
     // Overwrite RGB values to destination.
+
     mostFrequentColor.setRed(averageColorR[I]   / MaxInstance);
     mostFrequentColor.setGreen(averageColorG[I] / MaxInstance);
     mostFrequentColor.setBlue(averageColorB[I]  / MaxInstance);
@@ -254,9 +252,10 @@ DColor OilPaintFilter::MostFrequentColor(DImg& src, int X, int Y, int Radius, in
     return mostFrequentColor;
 }
 
-/** Function to calculate the color intensity and return the luminance (Y)
-  * component of YIQ color model.
-  */
+/**
+ * Function to calculate the color intensity and return the luminance (Y)
+ * component of YIQ color model.
+ */
 double OilPaintFilter::GetIntensity(uint Red, uint Green, uint Blue)
 {
     return (Red * 0.3 + Green * 0.59 + Blue * 0.11);

@@ -49,25 +49,18 @@ public:
 
 public:
 
-    explicit Private()
-      : div(0.0),
-        leadLumaNoise(1.0),
-        leadChromaBlueNoise(1.0),
-        leadChromaRedNoise(1.0),
-        globalProgress(0)
-    {
-    }
+    Private() = default;
 
-    double                div;
-    double                leadLumaNoise;
-    double                leadChromaBlueNoise;
-    double                leadChromaRedNoise;
+    double                div                   = 0.0;
+    double                leadLumaNoise         = 1.0;
+    double                leadChromaBlueNoise   = 1.0;
+    double                leadChromaRedNoise    = 1.0;
 
     FilmGrainContainer    settings;
 
     RandomNumberGenerator generator;
 
-    int                   globalProgress;
+    int                   globalProgress        = 0;
 
     QMutex                lock;
     QMutex                lock2; // RandomNumberGenerator is not re-entrant (dixit Boost lib)
@@ -75,14 +68,14 @@ public:
 
 FilmGrainFilter::FilmGrainFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 FilmGrainFilter::FilmGrainFilter(DImg* const orgImage, QObject* const parent, const FilmGrainContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("FilmGrain")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     initFilter();
@@ -94,7 +87,7 @@ FilmGrainFilter::FilmGrainFilter(DImgThreadedFilter* const parentFilter,
                                  const FilmGrainContainer& settings)
     : DImgThreadedFilter(parentFilter, orgImage, destImage, progressBegin, progressEnd,
                          parentFilter->filterName() + QLatin1String(": FilmGrain")),
-    d(new Private)
+    d                   (new Private)
 {
     d->settings = settings;
     this->filterImage();
@@ -125,11 +118,13 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
     uint    progress=0, oldProgress=0, posX, posY;
 
     // Reference point noise adjustments.
+
     double refLumaNoise       = 0.0, refLumaRange       = 0.0;
     double refChromaBlueNoise = 0.0, refChromaBlueRange = 0.0;
     double refChromaRedNoise  = 0.0, refChromaRedRange  = 0.0;
 
     // Current matrix point noise adjustments.
+
     double matLumaNoise       = 0.0, matLumaRange       = 0.0;
     double matChromaBlueNoise = 0.0, matChromaBlueRange = 0.0;
     double matChromaRedNoise  = 0.0, matChromaRedRange  = 0.0;
@@ -229,10 +224,12 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
  */
 void FilmGrainFilter::filterImage()
 {
-    if ((d->settings.lumaIntensity <= 0)       ||
+    if (
+        (d->settings.lumaIntensity <= 0)       ||
         (d->settings.chromaBlueIntensity <= 0) ||
         (d->settings.chromaRedIntensity <= 0)  ||
-        !d->settings.isDirty())
+        !d->settings.isDirty()
+       )
     {
         m_destImage = m_orgImage;
         return;
@@ -326,16 +323,22 @@ void FilmGrainFilter::adjustYCbCr(DColor& col, double range, double nRand, int c
     switch (channel)
     {
         case Private::Luma:
+        {
             y  = CLAMP(y  + (nRand + n2) / d->div, 0.0, 1.0);
             break;
+        }
 
         case Private::ChromaBlue:
+        {
             cb = CLAMP(cb + (nRand + n2) / d->div, 0.0, 1.0);
             break;
+        }
 
         default:       // ChromaRed
+        {
             cr = CLAMP(cr + (nRand + n2) / d->div, 0.0, 1.0);
             break;
+        }
     }
 
     col.setYCbCr(y, cb, cr, col.sixteenBit());
@@ -364,6 +367,7 @@ double FilmGrainFilter::randomizeGauss(double sigma)
     double u = - d->generator.number(-1.0, 0.0); // exclude 0
     double v = d->generator.number(0.0, 1.0);
     d->lock2.unlock();
+
     return (sigma * sqrt(-2 * log(u)) * cos(2 * M_PI * v));
 }
 
@@ -393,11 +397,11 @@ double FilmGrainFilter::interpolate(int shadows, int midtones, int highlights, c
     double y, cb, cr;
     col.getYCbCr(&y, &cb, &cr);
 
-    if (y >= 0.0 && y <= 0.5)
+    if      ((y >= 0.0) && (y <= 0.5))
     {
         return (s + 2 * (m - s) * y);
     }
-    else if (y >= 0.5 && y <= 1.0)
+    else if ((y >= 0.5) && (y <= 1.0))
     {
         return (2 * (h - m) * y + 2 * m - h);
     }

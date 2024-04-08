@@ -33,8 +33,9 @@ class DIGIKAM_EXPORT OilPaintFilter : public DImgThreadedFilter
 public:
 
     explicit OilPaintFilter(QObject* const parent = nullptr);
-    explicit OilPaintFilter(DImg* const orgImage, QObject* const parent = nullptr, int brushSize=1, int smoothness=30);
-    ~OilPaintFilter() override;
+    explicit OilPaintFilter(DImg* const orgImage, QObject* const parent = nullptr,
+                            int brushSize = 1, int smoothness = 30);
+    ~OilPaintFilter()                                                         override;
 
     static QString          FilterIdentifier()
     {
@@ -53,12 +54,12 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

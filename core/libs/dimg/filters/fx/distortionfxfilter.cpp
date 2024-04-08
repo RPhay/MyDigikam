@@ -47,17 +47,9 @@ class Q_DECL_HIDDEN DistortionFXFilter::Private
 {
 public:
 
-    explicit Private()
-      : antiAlias(true),
-        level(0),
-        iteration(0),
-        effectType(0),
-        randomSeed(0),
-        globalProgress(0)
-    {
-    }
+    Private() = default;
 
-    bool                   antiAlias     = false;
+    bool                   antiAlias     = true;
 
     int                    level         = 0;
     int                    iteration     = 0;

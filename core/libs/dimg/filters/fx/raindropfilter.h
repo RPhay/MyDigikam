@@ -35,30 +35,21 @@ class DIGIKAM_EXPORT RainDropFilter : public DImgThreadedFilter
 
 private:
 
-    struct Q_DECL_HIDDEN Args
+    class Q_DECL_HIDDEN Args
     {
-        explicit Args()
-            : start(0),
-              stop(0),
-              orgImage(nullptr),
-              destImage(nullptr),
-              MinDropSize(0),
-              MaxDropSize(0),
-              Coeff(0),
-              bLimitRange(false),
-              pStatusBits(nullptr)
-        {
-        }
+    public:
 
-        uint   start;
-        uint   stop;
-        DImg*  orgImage;
-        DImg*  destImage;
-        int    MinDropSize;
-        int    MaxDropSize;
-        int    Coeff;
-        bool   bLimitRange;
-        uchar* pStatusBits;
+        Args() = default;
+
+        uint   start        = 0;
+        uint   stop         = 0;
+        DImg*  orgImage     = nullptr;
+        DImg*  destImage    = nullptr;
+        int    MinDropSize  = 0;
+        int    MaxDropSize  = 0;
+        int    Coeff        = 0;
+        bool   bLimitRange  = false;
+        uchar* pStatusBits  = nullptr;
     };
 
 public:
@@ -66,11 +57,11 @@ public:
     explicit RainDropFilter(QObject* const parent = nullptr);
     explicit RainDropFilter(DImg* const orgImage,
                             QObject* const parent = nullptr,
-                            int drop=80,
-                            int amount=150,
-                            int coeff=30,
-                            const QRect& selection=QRect(0, 0, 0, 0));
-    ~RainDropFilter() override;
+                            int drop = 80,
+                            int amount = 150,
+                            int coeff = 30,
+                            const QRect& selection = QRect(0, 0, 0, 0));
+    ~RainDropFilter()                                                         override;
 
     static QString          FilterIdentifier()
     {
@@ -89,12 +80,12 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
     void                    readParameters(const FilterAction& action)        override;
 
