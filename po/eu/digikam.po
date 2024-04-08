@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-07 01:41+0000\n"
+"POT-Creation-Date: 2024-04-08 01:43+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3292,7 +3292,7 @@ msgid "Selection"
 msgstr "Hautapena"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -12470,7 +12470,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:85
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:350
 #, kde-format
 msgid "Contrast:"
@@ -27142,26 +27142,26 @@ msgid "Generate a Raw image preview using current settings."
 msgstr "Sortu irudi gordinaren aurrebista uneko ezarpenak erabiliz."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:200
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:79
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
 #, kde-format
 msgid "Brightness:"
 msgstr "Distira:"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:204
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:83
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
 #, kde-format
 msgid "Set here the brightness adjustment of the image."
 msgstr "Ezarri hemen irudiaren distiraren doiketa."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:89
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:356
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "Ezarri hemen irudiaren kontrastearen doiketa."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:212
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:86
 #, kde-format
 msgid "Gamma:"
 msgstr "Gamma:"
@@ -27278,7 +27278,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Kolore-espazioaren bihurketa"
 
 #: core/libs/album/engine/album.cpp:412
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:891
 #, kde-format
 msgid "Trash"
 msgstr "Zakarrontzia"
@@ -27907,7 +27907,7 @@ msgid "Context menu"
 msgstr "Testuinguruko menua"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:901
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Trash"
@@ -28751,8 +28751,8 @@ msgid "Shared directory mounted at \"%1\""
 msgstr "Partekatutako direktorioa <b>%1</b>(e)an muntatu da"
 
 #: core/libs/database/coredb/coredbaccess.cpp:303
-#: core/libs/database/similaritydb/similaritydbaccess.cpp:241
-#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
+#: core/libs/database/similaritydb/similaritydbaccess.cpp:233
+#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
 #: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, kde-format
 msgid ""
@@ -28839,8 +28839,8 @@ msgstr ""
 "formatua berriegia) Erabili lehen erabilia duzun digiKamen bertsio berriagoa."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:326
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -29200,7 +29200,7 @@ msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
 msgstr "RAW irudi fitxategia (%1)"
 
-#: core/libs/database/models/itemfiltermodel.cpp:385
+#: core/libs/database/models/itemfiltermodel.cpp:384
 #, fuzzy, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
@@ -29208,25 +29208,25 @@ msgid_plural "%1 Faces"
 msgstr[0] "Bat ere ez hautatu"
 msgstr[1] "Bat ere ez hautatu"
 
-#: core/libs/database/models/itemfiltermodel.cpp:388
+#: core/libs/database/models/itemfiltermodel.cpp:387
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgctxt "@item: filter model"
 msgid "No face"
 msgstr "Pas de flash"
 
-#: core/libs/database/models/itemfiltermodel.cpp:399
+#: core/libs/database/models/itemfiltermodel.cpp:398
 #, fuzzy, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Berretsita"
 
-#: core/libs/database/models/itemversionsmodel.cpp:95
+#: core/libs/database/models/itemversionsmodel.cpp:91
 #, kde-format
 msgid "No image selected"
 msgstr "Ez da irudirik hautatu"
 
-#: core/libs/database/models/itemversionsmodel.cpp:120
+#: core/libs/database/models/itemversionsmodel.cpp:116
 #, kde-format
 msgid "This is the original image"
 msgstr "Hau da jatorrizko irudia"
@@ -29350,7 +29350,7 @@ msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
 "%1<p>Exekutagarria: %2</p><p>Argumentuak: %3</p><p>Prozesatze errorea: %4</p>"
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:143
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:141
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBSimilarityVersion\" setting does not "
@@ -29361,8 +29361,8 @@ msgstr ""
 "existitzen. Uneko datu-basearen eskemaren bertsioa ezin da egiaztatu. Saiatu "
 "datu-base huts batekin hasten."
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:173
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:177
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:174
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:170
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -29400,7 +29400,7 @@ msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
 msgstr "Ez ikusi eginda"
 
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:145
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:138
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBThumbnailsVersion\" setting does not "
@@ -29411,13 +29411,13 @@ msgstr ""
 "existitzen. Uneko datu-basearen eskemaren bertsioa ezin da egiaztatu. Saiatu "
 "datu-base huts batekin."
 
-#: core/libs/database/utils/ifaces/dio.cpp:346
+#: core/libs/database/utils/ifaces/dio.cpp:344
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Irudi berriaren fitxategi-izena"
 
-#: core/libs/database/utils/ifaces/dio.cpp:347
+#: core/libs/database/utils/ifaces/dio.cpp:345
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29430,78 +29430,78 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:354
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Gainidatzi automatikoki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Gainidatzi automatikoki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Gainidatzi automatikoki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:857
+#: core/libs/database/utils/ifaces/dio.cpp:855
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopiatu albuma"
 
-#: core/libs/database/utils/ifaces/dio.cpp:862
+#: core/libs/database/utils/ifaces/dio.cpp:860
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopiatu irudiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:868
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopiatu fitxategiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:873
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Move Album"
 msgstr "Mugitu albuma"
 
-#: core/libs/database/utils/ifaces/dio.cpp:878
+#: core/libs/database/utils/ifaces/dio.cpp:876
 #, kde-format
 msgid "Move Images"
 msgstr "Mugitu irudiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:881
 #, kde-format
 msgid "Move Files"
 msgstr "Mugitu fitxategiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:896
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Restore Trash"
 msgstr "Leheneratu"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:119
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Datu-basea hasieratzen..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:143
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>Bildumak aztertzen. Itxoin mesedez...</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -29515,13 +29515,13 @@ msgstr ""
 "Honek azterketaren aurrerapena erakusten du. Aztertu bitartean, diskoan "
 "dauden fitxategi guztiak datu-base batean erregistratzen dira."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:264
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "Bilduma aztertzen"
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -29542,59 +29542,59 @@ msgstr "Kendutako albumen bila aztertzen..."
 msgid "Scanning images in individual albums..."
 msgstr "Irudiak aztertzen banakako albumetan..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:136
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:124
 #, kde-format
 msgid "Migrate ->"
 msgstr "Migratu ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Cancel"
 msgstr "Utzi"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
 #, kde-format
 msgid "Progress Information"
 msgstr "Aurrerapenaren informazioa"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:149
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
 #, kde-format
 msgid "Step Progress"
 msgstr "Urratsaren aurrerapena"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:150
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:138
 #, kde-format
 msgid "Overall Progress"
 msgstr "Aurrerapen orokorra"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:221
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:209
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "Datu-base mota edo kokalekua ezberdina izan behar da!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "Barneko zerbitzaria behin baino ezin da erabili!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:237
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "Barneko zerbitzaria erabili gabe dago eta ez dago aktibo!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:273
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Datu-base kopiatze arrakastatsua."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:287
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Datu-base bihurketa bertan behera utzi da."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "Urratsaren aurrerapena (%1)"
@@ -30978,12 +30978,12 @@ msgstr "Berdintze automatikoa"
 msgid "Auto Normalize"
 msgstr "Normaltze automatikoa"
 
-#: core/libs/dimg/filters/bcg/bcgfilter.cpp:89
+#: core/libs/dimg/filters/bcg/bcgfilter.cpp:85
 #, kde-format
 msgid "Brightness / Contrast / Gamma Filter"
 msgstr "Distira / Kontrastea / Gamma iragazkia"
 
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:96
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
 #, kde-format
 msgid "Set here the gamma adjustment of the image."
 msgstr "Ezarri hemen irudiaren gamma doiketaren balioa."
@@ -32676,24 +32676,24 @@ msgstr "Olio margoa"
 msgid "Rain Drops Effect"
 msgstr "Euri tanta"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:158
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:162
 #, fuzzy, kde-format
 msgid "Greycstoration Filter"
 msgstr "Iragazki berdea"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:126
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:96
 #, fuzzy, kde-format
 #| msgid "General"
 msgctxt "@title: general settings"
 msgid "General"
 msgstr "Orokorra"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:128
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:98
 #, kde-format
 msgid "Detail preservation:"
 msgstr "Xehetasunak gordetzea:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:102
 #, kde-format
 msgid ""
 "Preservation of details to set the sharpening level of the small features in "
@@ -32702,12 +32702,12 @@ msgstr ""
 "Helburuko irudiaren eginbide txikien zorroztasun-maila ezartzeko gordeko "
 "diren xehetasunak. Balio altuek xehetasun zorrotzak uzten dituzte."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:136
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:106
 #, kde-format
 msgid "Anisotropy:"
 msgstr "Anisotropia:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:140
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:110
 #, kde-format
 msgid ""
 "Anisotropic (directional) modifier of the details. Keep it small for "
@@ -32716,12 +32716,12 @@ msgstr ""
 "Xehetasunen anisotropiaren (norabidekoa) aldatzailea. Mantendu txiki Gauss-"
 "en zaratarentzako."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:143
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:113
 #, kde-format
 msgid "Smoothing:"
 msgstr "Leuntasuna:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:147
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:117
 #, kde-format
 msgid ""
 "Total smoothing power: if the Detail Factor sets the relative smoothing and "
@@ -32732,12 +32732,12 @@ msgstr ""
 "ezartzen badu, eta Anisotropiaren faktoreak norabidea, leuntasunaren "
 "faktoreak efektu orokorra ezartzen du."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:151
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:121
 #, kde-format
 msgid "Regularity:"
 msgstr "Uniformetasuna:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:155
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:125
 #, kde-format
 msgid ""
 "This value controls the evenness of smoothing to the image. Do not use a "
@@ -32746,39 +32746,39 @@ msgstr ""
 "Irudiaren leuntasunaren uniformetasuna kontrolatzen du.Ez erabili balio "
 "alturik hemen, bestela helburuko irudia erabat lausotuko baita."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:159
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:129
 #, kde-format
 msgid "Iterations:"
 msgstr "Iterazioak:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
 #, kde-format
 msgid "Sets the number of times the filter is applied to the image."
 msgstr "Ezarri zenbat aldiz aplikatuko den iragazkia irudiari."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:164
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:134
 #, kde-format
 msgid "Noise:"
 msgstr "Zarata:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:168
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:138
 #, kde-format
 msgid "Sets the noise scale."
 msgstr "Ezarri zarataren eskala."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:190
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:160
 #, fuzzy, kde-format
 #| msgid "Advanced Settings"
 msgctxt "@title"
 msgid "Advanced Settings"
 msgstr "Ezarpen aurreratuak"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:192
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
 #, kde-format
 msgid "Angular step:"
 msgstr "Urrats angeluarra:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:166
 #, kde-format
 msgid ""
 "Set here the angular integration step (in degrees) analogous to anisotropy."
@@ -32786,83 +32786,83 @@ msgstr ""
 "Ezarri anisotropiari analogoa den integrazio angeluarraren urratsa "
 "(gradutan)."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:169
 #, kde-format
 msgid "Integral step:"
 msgstr "Urrats integrala:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:203
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:173
 #, kde-format
 msgid "Set here the spatial integral step."
 msgstr "Ezarri urrats integral espaziala."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:205
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:175
 #, kde-format
 msgid "Gaussian:"
 msgstr "Gauss:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:209
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:179
 #, kde-format
 msgid "Set here the precision of the Gaussian function."
 msgstr "Ezarri Gauss-en funtzioaren zehaztasuna."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:211
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:181
 #, kde-format
 msgid "Tile size:"
 msgstr "Lauzaren tamaina:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:214
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:184
 #, kde-format
 msgid "Sets the tile size."
 msgstr "Ezarri lauzaren tamaina."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:216
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:186
 #, kde-format
 msgid "Tile border:"
 msgstr "Lauzaren ertza:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:219
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:189
 #, kde-format
 msgid "Sets the size of each tile border."
 msgstr "Ezarri lauzako ertz bakoitzaren tamaina."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:221
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:191
 #, kde-format
 msgid "Interpolation:"
 msgstr "Interpolazioa:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:223
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:193
 #, fuzzy, kde-format
 #| msgid "Nearest Neighbor"
 msgctxt "@item: interpolation"
 msgid "Nearest Neighbor"
 msgstr "Inguruko gertuena"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:224
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:194
 #, fuzzy, kde-format
 #| msgid "Linear"
 msgctxt "@item: interpolation"
 msgid "Linear"
 msgstr "Lineala"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:225
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:195
 #, fuzzy, kde-format
 #| msgid "Runge-Kutta"
 msgctxt "@item: interpolation"
 msgid "Runge-Kutta"
 msgstr "Runge-Kutta"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:226
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
 #, kde-format
 msgid "Select the right interpolation method for the desired image quality."
 msgstr "Hautatu interpolazioaren metodo egokia irudiaren kalitatearentzako."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:229
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
 #, kde-format
 msgid "Fast approximation"
 msgstr "Hurbilketa azkarra"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:230
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:200
 #, kde-format
 msgid "Enable fast approximation when rendering images."
 msgstr "Gaitu hurbilketa azkarra irudiak errendatzean."

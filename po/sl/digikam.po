@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-07 01:41+0000\n"
+"POT-Creation-Date: 2024-04-08 01:43+0000\n"
 "PO-Revision-Date: 2024-04-06 08:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3310,7 +3310,7 @@ msgid "Selection"
 msgstr "Izbor"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -12473,7 +12473,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:85
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:350
 #, kde-format
 msgid "Contrast:"
@@ -26529,26 +26529,26 @@ msgid "Generate a Raw image preview using current settings."
 msgstr "Ustvari predogled slike RAW z uporabo trenutnih nastavitev."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:200
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:79
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
 #, kde-format
 msgid "Brightness:"
 msgstr "Svetlost:"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:204
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:83
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
 #, kde-format
 msgid "Set here the brightness adjustment of the image."
 msgstr "Tukaj nastavite prilagoditev svetlosti slike."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:89
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:356
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "Tukaj nastavite prilagoditev kontrasta slike."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:212
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:86
 #, kde-format
 msgid "Gamma:"
 msgstr "Gama:"
@@ -26671,7 +26671,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw pretvorba surove"
 
 #: core/libs/album/engine/album.cpp:412
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:891
 #, kde-format
 msgid "Trash"
 msgstr "Smeti"
@@ -27262,7 +27262,7 @@ msgid "Context menu"
 msgstr "Vsebinski meni"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:901
 #, kde-format
 msgid "Empty Trash"
 msgstr "Izprazni smeti"
@@ -28021,8 +28021,8 @@ msgid "Shared directory mounted at \"%1\""
 msgstr "Deljena mapa priklopljena na \"%1\""
 
 #: core/libs/database/coredb/coredbaccess.cpp:303
-#: core/libs/database/similaritydb/similaritydbaccess.cpp:241
-#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
+#: core/libs/database/similaritydb/similaritydbaccess.cpp:233
+#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
 #: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, kde-format
 msgid ""
@@ -28110,8 +28110,8 @@ msgstr ""
 "kot ste jo uporabljali prej. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:326
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -28464,7 +28464,7 @@ msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
 msgstr "Slikovna datoteka RAW (%1)"
 
-#: core/libs/database/models/itemfiltermodel.cpp:385
+#: core/libs/database/models/itemfiltermodel.cpp:384
 #, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
@@ -28474,24 +28474,24 @@ msgstr[1] "%1 obraza"
 msgstr[2] "%1 obrazi"
 msgstr[3] "%1 obrazov"
 
-#: core/libs/database/models/itemfiltermodel.cpp:388
+#: core/libs/database/models/itemfiltermodel.cpp:387
 #, kde-format
 msgctxt "@item: filter model"
 msgid "No face"
 msgstr "Ni obraza"
 
-#: core/libs/database/models/itemfiltermodel.cpp:399
+#: core/libs/database/models/itemfiltermodel.cpp:398
 #, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Potrjeno"
 
-#: core/libs/database/models/itemversionsmodel.cpp:95
+#: core/libs/database/models/itemversionsmodel.cpp:91
 #, kde-format
 msgid "No image selected"
 msgstr "Ni izbrane slike"
 
-#: core/libs/database/models/itemversionsmodel.cpp:120
+#: core/libs/database/models/itemversionsmodel.cpp:116
 #, kde-format
 msgid "This is the original image"
 msgstr "To je izvorna slika"
@@ -28606,7 +28606,7 @@ msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
 "%1<p>Izvedljiva datoteka: %2</p><p>Argument: %3</p><p>Napaka obdelave: %4</p>"
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:143
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:141
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBSimilarityVersion\" setting does not "
@@ -28617,8 +28617,8 @@ msgstr ""
 "obstaja. Trenutne različice sheme podatkovne zbirke ni mogoče preveriti. "
 "Poskusite začeti s prazno podatkovno zbirko. "
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:173
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:177
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:174
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:170
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28656,7 +28656,7 @@ msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
 msgstr "Prezrto"
 
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:145
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:138
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBThumbnailsVersion\" setting does not "
@@ -28667,13 +28667,13 @@ msgstr ""
 "obstaja. Trenutne različice sheme podatkovne zbirke ni mogoče preveriti. "
 "Poskusite začeti s prazno podatkovno zbirko. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:346
+#: core/libs/database/utils/ifaces/dio.cpp:344
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Spor imen datotek"
 
-#: core/libs/database/utils/ifaces/dio.cpp:347
+#: core/libs/database/utils/ifaces/dio.cpp:345
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28694,72 +28694,72 @@ msgstr ""
 "Samodejni prepis: datoteke v konfliktu bodo prepisane.\n"
 "Samodejni preskok: datoteke v konfliktu bodo preskočene."
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:354
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Samodejno preimenuj"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Samodejno prepiši"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Samodejno preskoči"
 
-#: core/libs/database/utils/ifaces/dio.cpp:857
+#: core/libs/database/utils/ifaces/dio.cpp:855
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopiraj album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:862
+#: core/libs/database/utils/ifaces/dio.cpp:860
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopiraj slike"
 
-#: core/libs/database/utils/ifaces/dio.cpp:868
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopiraj datoteke"
 
-#: core/libs/database/utils/ifaces/dio.cpp:873
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Move Album"
 msgstr "Premakni album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:878
+#: core/libs/database/utils/ifaces/dio.cpp:876
 #, kde-format
 msgid "Move Images"
 msgstr "Premakni slike"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:881
 #, kde-format
 msgid "Move Files"
 msgstr "Premakni datoteke"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:896
 #, kde-format
 msgid "Restore Trash"
 msgstr "Obnovi smeti"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:119
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Osnovanje podatkovne zbirke..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Preiskovanje zbirk, počakajte..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28771,13 +28771,13 @@ msgstr ""
 "disku vpisane v podatkovno zbirko. Opomba: ta dialog se lahko pojavi "
 "samodejno, če prejšnje preiskovanje zbirk ni bilo v celoti dokončano."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:264
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "Preiskovanje zbirke"
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -28798,59 +28798,59 @@ msgstr "Preiskovanje za odstranjenimi albumi ..."
 msgid "Scanning images in individual albums..."
 msgstr "Preiskovanje slik v individualnih albumih ..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:136
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:124
 #, kde-format
 msgid "Migrate ->"
 msgstr "Preseli ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
 #, kde-format
 msgid "Progress Information"
 msgstr "Podrobnosti o napredku"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:149
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
 #, kde-format
 msgid "Step Progress"
 msgstr "Korak napredka"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:150
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:138
 #, kde-format
 msgid "Overall Progress"
 msgstr "Skupni napredek"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:221
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:209
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "Vrsta ali lokacija baze podatkov morata biti različni!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "Notranji strežnik je mogoče uporabiti samo enkrat!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:237
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "Notranji strežnik se ne uporablja in ni aktiven!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:273
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Podatkovna zbirka je bila uspešno kopirana."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:287
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Pretvorba podatkovne zbirke je bila preklicana."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "Korak napredka (%1)"
@@ -30175,12 +30175,12 @@ msgstr "Samodejno uravnaj"
 msgid "Auto Normalize"
 msgstr "Samodejno normaliziraj"
 
-#: core/libs/dimg/filters/bcg/bcgfilter.cpp:89
+#: core/libs/dimg/filters/bcg/bcgfilter.cpp:85
 #, kde-format
 msgid "Brightness / Contrast / Gamma Filter"
 msgstr "Filter za svetlost/kontrast/gamo"
 
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:96
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
 #, kde-format
 msgid "Set here the gamma adjustment of the image."
 msgstr "Tukaj nastavite prilagoditev game slike."
@@ -31776,23 +31776,23 @@ msgstr "Učinek oljne slike"
 msgid "Rain Drops Effect"
 msgstr "Učinek dežnih kapljic"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:158
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:162
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Filter Greycstoration"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:126
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:96
 #, kde-format
 msgctxt "@title: general settings"
 msgid "General"
 msgstr "Splošno"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:128
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:98
 #, kde-format
 msgid "Detail preservation:"
 msgstr "Ohranitev podrobnosti:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:102
 #, kde-format
 msgid ""
 "Preservation of details to set the sharpening level of the small features in "
@@ -31801,12 +31801,12 @@ msgstr ""
 "Ohranitev podrobnosti za nastavitev ravni ostrenja majhnih podrobnosti v "
 "ciljni sliki. Višje vrednosti puščajo podrobnosti ostre."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:136
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:106
 #, kde-format
 msgid "Anisotropy:"
 msgstr "Anizotropija:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:140
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:110
 #, kde-format
 msgid ""
 "Anisotropic (directional) modifier of the details. Keep it small for "
@@ -31815,12 +31815,12 @@ msgstr ""
 "Anizotropični (smerni) spremenilnik podrobnosti. Naj bo majhen za Gaussov "
 "šum."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:143
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:113
 #, kde-format
 msgid "Smoothing:"
 msgstr "Glajenje:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:147
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:117
 #, kde-format
 msgid ""
 "Total smoothing power: if the Detail Factor sets the relative smoothing and "
@@ -31830,12 +31830,12 @@ msgstr ""
 "Celotna moč glajenja: če faktor podrobnosti nastavi relativno glajenje in "
 "faktor anizotropije smer, potem faktor glajenja nastavi splošni učinek."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:151
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:121
 #, kde-format
 msgid "Regularity:"
 msgstr "Rednost:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:155
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:125
 #, kde-format
 msgid ""
 "This value controls the evenness of smoothing to the image. Do not use a "
@@ -31844,38 +31844,38 @@ msgstr ""
 "Ta vrednost nadzira enakomernost glajenja slike. Tukaj ne uporabljajte "
 "visokih vrednosti, ali pa bo ciljna slika popolnoma zabrisana."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:159
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:129
 #, kde-format
 msgid "Iterations:"
 msgstr "Ponovitve:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
 #, kde-format
 msgid "Sets the number of times the filter is applied to the image."
 msgstr "Nastavi kolikokrat bo filter uveljavljen na sliko."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:164
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:134
 #, kde-format
 msgid "Noise:"
 msgstr "Šum:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:168
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:138
 #, kde-format
 msgid "Sets the noise scale."
 msgstr "Nastavi merilo šuma."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:190
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "Advanced Settings"
 msgstr "Napredne nastavitve"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:192
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
 #, kde-format
 msgid "Angular step:"
 msgstr "Kotni korak:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:166
 #, kde-format
 msgid ""
 "Set here the angular integration step (in degrees) analogous to anisotropy."
@@ -31883,80 +31883,80 @@ msgstr ""
 "Tukaj nastavite korak kotne integracije (v stopinjah), ki je analogen "
 "anizotropiji."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:169
 #, kde-format
 msgid "Integral step:"
 msgstr "Integralni korak:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:203
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:173
 #, kde-format
 msgid "Set here the spatial integral step."
 msgstr "Tukaj nastavite prostorski integralni korak."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:205
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:175
 #, kde-format
 msgid "Gaussian:"
 msgstr "Po Gaussu:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:209
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:179
 #, kde-format
 msgid "Set here the precision of the Gaussian function."
 msgstr "Tukaj nastavite natančnost funkcije po Gaussu."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:211
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:181
 #, kde-format
 msgid "Tile size:"
 msgstr "Velikost ploščic:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:214
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:184
 #, kde-format
 msgid "Sets the tile size."
 msgstr "Nastavi velikost ploščic."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:216
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:186
 #, kde-format
 msgid "Tile border:"
 msgstr "Obroba ploščice:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:219
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:189
 #, kde-format
 msgid "Sets the size of each tile border."
 msgstr "Nastavi velikost vsake obrobe ploščice."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:221
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:191
 #, kde-format
 msgid "Interpolation:"
 msgstr "Interpolacija:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:223
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:193
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Nearest Neighbor"
 msgstr "Najbližji sosed"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:224
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:194
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Linear"
 msgstr "Premo"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:225
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:195
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Runge-Kutta"
 msgstr "Runge-Kutta"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:226
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
 #, kde-format
 msgid "Select the right interpolation method for the desired image quality."
 msgstr "Izberite pravi način interpolacije za želeno kakovost slike."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:229
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
 #, kde-format
 msgid "Fast approximation"
 msgstr "Hitri približek"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:230
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:200
 #, kde-format
 msgid "Enable fast approximation when rendering images."
 msgstr "Omogoči hitri približek med izrisovanjem slike."

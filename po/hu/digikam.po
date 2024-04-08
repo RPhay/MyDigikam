@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-07 01:41+0000\n"
+"POT-Creation-Date: 2024-04-08 01:43+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3242,7 +3242,7 @@ msgid "Selection"
 msgstr "Kijelölés"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -12136,7 +12136,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:85
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:350
 #, kde-format
 msgid "Contrast:"
@@ -25780,26 +25780,26 @@ msgid "Generate a Raw image preview using current settings."
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:200
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:79
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
 #, kde-format
 msgid "Brightness:"
 msgstr "Világosság:"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:204
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:83
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
 #, kde-format
 msgid "Set here the brightness adjustment of the image."
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:89
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:356
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:212
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:86
 #, kde-format
 msgid "Gamma:"
 msgstr "Gamma:"
@@ -25915,7 +25915,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Nyers átalakítás"
 
 #: core/libs/album/engine/album.cpp:412
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:891
 #, kde-format
 msgid "Trash"
 msgstr "Lomtár"
@@ -26450,7 +26450,7 @@ msgid "Context menu"
 msgstr "Környezet menü"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:901
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -27200,8 +27200,8 @@ msgid "Shared directory mounted at \"%1\""
 msgstr ""
 
 #: core/libs/database/coredb/coredbaccess.cpp:303
-#: core/libs/database/similaritydb/similaritydbaccess.cpp:241
-#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
+#: core/libs/database/similaritydb/similaritydbaccess.cpp:233
+#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
 #: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, kde-format
 msgid ""
@@ -27273,8 +27273,8 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:326
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -27572,7 +27572,7 @@ msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
 msgstr "RAW képfájl (%1)"
 
-#: core/libs/database/models/itemfiltermodel.cpp:385
+#: core/libs/database/models/itemfiltermodel.cpp:384
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect faces"
@@ -27582,24 +27582,24 @@ msgid_plural "%1 Faces"
 msgstr[0] "Arcok felismerése"
 msgstr[1] "Arcok felismerése"
 
-#: core/libs/database/models/itemfiltermodel.cpp:388
+#: core/libs/database/models/itemfiltermodel.cpp:387
 #, kde-format
 msgctxt "@item: filter model"
 msgid "No face"
 msgstr ""
 
-#: core/libs/database/models/itemfiltermodel.cpp:399
+#: core/libs/database/models/itemfiltermodel.cpp:398
 #, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "Elfogadva"
 
-#: core/libs/database/models/itemversionsmodel.cpp:95
+#: core/libs/database/models/itemversionsmodel.cpp:91
 #, kde-format
 msgid "No image selected"
 msgstr "Nincs kép kijelölve"
 
-#: core/libs/database/models/itemversionsmodel.cpp:120
+#: core/libs/database/models/itemversionsmodel.cpp:116
 #, kde-format
 msgid "This is the original image"
 msgstr "Ez az eredeti kép"
@@ -27705,7 +27705,7 @@ msgstr "Az adatbázis-kiszolgáló nem indítható el."
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:143
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:141
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBSimilarityVersion\" setting does not "
@@ -27713,8 +27713,8 @@ msgid ""
 "with an empty database. "
 msgstr "Hasonlóság"
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:173
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:177
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:174
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:170
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -27747,7 +27747,7 @@ msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
 msgstr "Kihagyva"
 
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:145
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:138
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBThumbnailsVersion\" setting does not "
@@ -27755,14 +27755,14 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:346
+#: core/libs/database/utils/ifaces/dio.cpp:344
 #, fuzzy, kde-format
 #| msgid "File conflict"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Fájl ütközés"
 
-#: core/libs/database/utils/ifaces/dio.cpp:347
+#: core/libs/database/utils/ifaces/dio.cpp:345
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -27775,75 +27775,75 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:354
 #, fuzzy, kde-format
 #| msgid "Rename automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Nevezze át automatikusan"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Automatikus felülírás"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 #| msgid "Rename automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Nevezze át automatikusan"
 
-#: core/libs/database/utils/ifaces/dio.cpp:857
+#: core/libs/database/utils/ifaces/dio.cpp:855
 #, kde-format
 msgid "Copy Album"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:862
+#: core/libs/database/utils/ifaces/dio.cpp:860
 #, kde-format
 msgid "Copy Images"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:868
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Copy Files"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:873
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Move Album"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:878
+#: core/libs/database/utils/ifaces/dio.cpp:876
 #, kde-format
 msgid "Move Images"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:881
 #, kde-format
 msgid "Move Files"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:896
 #, kde-format
 msgid "Restore Trash"
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:119
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Gyűjtemények beolvasása, kérjük, várjon ..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27852,13 +27852,13 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:264
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "Gyűjtemény vizsgálata"
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -27879,59 +27879,59 @@ msgstr "Eltávolított albumok vizsgálata…"
 msgid "Scanning images in individual albums..."
 msgstr "Képek vizsgálata önálló albumokban…"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:136
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:124
 #, kde-format
 msgid "Migrate ->"
 msgstr "Migrálás ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Cancel"
 msgstr "Mégsem"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
 #, kde-format
 msgid "Progress Information"
 msgstr "Folyamat információ"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:149
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
 #, kde-format
 msgid "Step Progress"
 msgstr "Lépés előrehaladása"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:150
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:138
 #, kde-format
 msgid "Overall Progress"
 msgstr "Teljes folyamat"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:221
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:209
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:237
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:273
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Az adatbázis másolása sikeresen megtörtént."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:287
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Az adatbázis konvertálása megszakítva."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr ""
@@ -29136,12 +29136,12 @@ msgstr "Automatikus kiegyenlítés"
 msgid "Auto Normalize"
 msgstr "Automatikus normalizálás"
 
-#: core/libs/dimg/filters/bcg/bcgfilter.cpp:89
+#: core/libs/dimg/filters/bcg/bcgfilter.cpp:85
 #, kde-format
 msgid "Brightness / Contrast / Gamma Filter"
 msgstr "Fényerő / Kontraszt / Gamma szűrő"
 
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:96
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
 #, kde-format
 msgid "Set here the gamma adjustment of the image."
 msgstr ""
@@ -30644,47 +30644,47 @@ msgstr "Olajfestés hatás"
 msgid "Rain Drops Effect"
 msgstr "Esőcsepp hatás"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:158
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:162
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Greycstoration-szűrő"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:126
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:96
 #, kde-format
 msgctxt "@title: general settings"
 msgid "General"
 msgstr "Általános"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:128
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:98
 #, kde-format
 msgid "Detail preservation:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:102
 #, kde-format
 msgid ""
 "Preservation of details to set the sharpening level of the small features in "
 "the target image. Higher values leave details sharp."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:136
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:106
 #, kde-format
 msgid "Anisotropy:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:140
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:110
 #, kde-format
 msgid ""
 "Anisotropic (directional) modifier of the details. Keep it small for "
 "Gaussian noise."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:143
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:113
 #, kde-format
 msgid "Smoothing:"
 msgstr "Simítás:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:147
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:117
 #, kde-format
 msgid ""
 "Total smoothing power: if the Detail Factor sets the relative smoothing and "
@@ -30692,129 +30692,129 @@ msgid ""
 "effect."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:151
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:121
 #, kde-format
 msgid "Regularity:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:155
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:125
 #, kde-format
 msgid ""
 "This value controls the evenness of smoothing to the image. Do not use a "
 "high value here, or the target image will be completely blurred."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:159
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:129
 #, kde-format
 msgid "Iterations:"
 msgstr "Iterációk:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
 #, kde-format
 msgid "Sets the number of times the filter is applied to the image."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:164
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:134
 #, kde-format
 msgid "Noise:"
 msgstr "Zaj:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:168
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:138
 #, kde-format
 msgid "Sets the noise scale."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:190
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "Advanced Settings"
 msgstr "További beállítások"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:192
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
 #, kde-format
 msgid "Angular step:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:166
 #, kde-format
 msgid ""
 "Set here the angular integration step (in degrees) analogous to anisotropy."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:169
 #, kde-format
 msgid "Integral step:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:203
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:173
 #, kde-format
 msgid "Set here the spatial integral step."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:205
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:175
 #, kde-format
 msgid "Gaussian:"
 msgstr "Gauss-féle:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:209
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:179
 #, kde-format
 msgid "Set here the precision of the Gaussian function."
 msgstr "Adja meg itt a Gauss-függvény pontosságát."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:211
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:181
 #, kde-format
 msgid "Tile size:"
 msgstr "Csempeméret:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:214
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:184
 #, kde-format
 msgid "Sets the tile size."
 msgstr "Megadja a csempe méretét."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:216
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:186
 #, kde-format
 msgid "Tile border:"
 msgstr "Csempeszegély:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:219
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:189
 #, kde-format
 msgid "Sets the size of each tile border."
 msgstr "Megadja az egyes csempék szegélyének méretét."
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:221
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:191
 #, kde-format
 msgid "Interpolation:"
 msgstr "Interpoláció:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:223
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:193
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Nearest Neighbor"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:224
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:194
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Linear"
 msgstr "Elsőfokú"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:225
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:195
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Runge-Kutta"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:226
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
 #, kde-format
 msgid "Select the right interpolation method for the desired image quality."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:229
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
 #, kde-format
 msgid "Fast approximation"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:230
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:200
 #, kde-format
 msgid "Enable fast approximation when rendering images."
 msgstr ""

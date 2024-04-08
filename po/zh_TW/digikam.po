@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-07 01:41+0000\n"
+"POT-Creation-Date: 2024-04-08 01:43+0000\n"
 "PO-Revision-Date: 2024-04-06 01:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3209,7 +3209,7 @@ msgid "Selection"
 msgstr "選擇區域"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -12085,7 +12085,7 @@ msgstr "在這裡設定相機拍攝圖片時使用的整體影像增益調整度
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:85
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:350
 #, kde-format
 msgid "Contrast:"
@@ -26384,26 +26384,26 @@ msgid "Generate a Raw image preview using current settings."
 msgstr "使用目前設定值生成 Raw 影像的預覽。"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:200
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:79
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
 #, kde-format
 msgid "Brightness:"
 msgstr "亮度："
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:204
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:83
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
 #, kde-format
 msgid "Set here the brightness adjustment of the image."
 msgstr "在這裡設定影像的亮度調整。"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:89
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:356
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "在這裡設定影像的對比調整。"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:212
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:86
 #, kde-format
 msgid "Gamma:"
 msgstr "伽瑪："
@@ -26517,7 +26517,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw Raw 轉換"
 
 #: core/libs/album/engine/album.cpp:412
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:891
 #, kde-format
 msgid "Trash"
 msgstr "垃圾桶"
@@ -27112,7 +27112,7 @@ msgid "Context menu"
 msgstr "右鍵功能表"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:901
 #, kde-format
 msgid "Empty Trash"
 msgstr "清空垃圾桶"
@@ -27859,8 +27859,8 @@ msgid "Shared directory mounted at \"%1\""
 msgstr "已分享掛載在 <filename>%1</filename> 的目錄"
 
 #: core/libs/database/coredb/coredbaccess.cpp:303
-#: core/libs/database/similaritydb/similaritydbaccess.cpp:241
-#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
+#: core/libs/database/similaritydb/similaritydbaccess.cpp:233
+#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
 #: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, kde-format
 msgid ""
@@ -27946,8 +27946,8 @@ msgstr ""
 "新的版本。"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:326
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -28315,31 +28315,31 @@ msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
 msgstr "RAW 影像檔案 (%1)"
 
-#: core/libs/database/models/itemfiltermodel.cpp:385
+#: core/libs/database/models/itemfiltermodel.cpp:384
 #, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
 msgid_plural "%1 Faces"
 msgstr[0] "%1 個臉孔"
 
-#: core/libs/database/models/itemfiltermodel.cpp:388
+#: core/libs/database/models/itemfiltermodel.cpp:387
 #, kde-format
 msgctxt "@item: filter model"
 msgid "No face"
 msgstr "沒有臉孔"
 
-#: core/libs/database/models/itemfiltermodel.cpp:399
+#: core/libs/database/models/itemfiltermodel.cpp:398
 #, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "已確認"
 
-#: core/libs/database/models/itemversionsmodel.cpp:95
+#: core/libs/database/models/itemversionsmodel.cpp:91
 #, kde-format
 msgid "No image selected"
 msgstr "沒有選擇影像"
 
-#: core/libs/database/models/itemversionsmodel.cpp:120
+#: core/libs/database/models/itemversionsmodel.cpp:116
 #, kde-format
 msgid "This is the original image"
 msgstr "這是原始影像"
@@ -28466,7 +28466,7 @@ msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
 "資料庫處理在初始化校正期間意外地停止。<p>可執行檔：%1</p>”<p>處理錯誤：%2</p>"
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:143
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:141
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBSimilarityVersion\" setting does not "
@@ -28476,8 +28476,8 @@ msgstr ""
 "資料庫無效：\"DBSimilarityVersion\" 設定值不存在。無法校驗目前的資料庫網要版"
 "本。試著以空白資料庫啟動。"
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:173
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:177
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:174
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:170
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28513,7 +28513,7 @@ msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
 msgstr "忽略"
 
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:145
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:138
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBThumbnailsVersion\" setting does not "
@@ -28523,13 +28523,13 @@ msgstr ""
 "此資料庫無效：此 \"DBThumbnailsVersion\" 設定值不存在。無法校驗目前的資料庫網"
 "要版本。試著以空白資料庫啟動。"
 
-#: core/libs/database/utils/ifaces/dio.cpp:346
+#: core/libs/database/utils/ifaces/dio.cpp:344
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "檔案衝突"
 
-#: core/libs/database/utils/ifaces/dio.cpp:347
+#: core/libs/database/utils/ifaces/dio.cpp:345
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28542,72 +28542,72 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:354
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "自動重新命名"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "自動覆寫"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "自動略過"
 
-#: core/libs/database/utils/ifaces/dio.cpp:857
+#: core/libs/database/utils/ifaces/dio.cpp:855
 #, kde-format
 msgid "Copy Album"
 msgstr "複製相簿"
 
-#: core/libs/database/utils/ifaces/dio.cpp:862
+#: core/libs/database/utils/ifaces/dio.cpp:860
 #, kde-format
 msgid "Copy Images"
 msgstr "複製影像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:868
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Copy Files"
 msgstr "複製檔案"
 
-#: core/libs/database/utils/ifaces/dio.cpp:873
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Move Album"
 msgstr "移動相簿"
 
-#: core/libs/database/utils/ifaces/dio.cpp:878
+#: core/libs/database/utils/ifaces/dio.cpp:876
 #, kde-format
 msgid "Move Images"
 msgstr "移動影像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:881
 #, kde-format
 msgid "Move Files"
 msgstr "移動檔案"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:896
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "修復"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:119
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "正在初始化資料庫..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "正在掃描收藏，請稍候..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -28619,13 +28619,13 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr "這裡顯示掃描進度。在掃描時磁碟上的所有檔案都會登記註冊在資料庫裡。"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:264
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "掃描收藏中"
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -28646,59 +28646,59 @@ msgstr "正在掃描已刪除的相簿..."
 msgid "Scanning images in individual albums..."
 msgstr "正在掃描個人相簿中的影像..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:136
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:124
 #, kde-format
 msgid "Migrate ->"
 msgstr "遷移 ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Cancel"
 msgstr "取消"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
 #, kde-format
 msgid "Progress Information"
 msgstr "進度資訊"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:149
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
 #, kde-format
 msgid "Step Progress"
 msgstr "階段進度"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:150
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:138
 #, kde-format
 msgid "Overall Progress"
 msgstr "整體進度"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:221
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:209
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:237
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:273
 #, kde-format
 msgid "Database copied successfully."
 msgstr "資料庫已成功複製。"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:287
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "資料庫轉換已取消。"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "階段進度 (%1)"
@@ -29963,12 +29963,12 @@ msgstr "自動等化"
 msgid "Auto Normalize"
 msgstr "自動標準化"
 
-#: core/libs/dimg/filters/bcg/bcgfilter.cpp:89
+#: core/libs/dimg/filters/bcg/bcgfilter.cpp:85
 #, kde-format
 msgid "Brightness / Contrast / Gamma Filter"
 msgstr "亮度 / 對比 / 伽瑪濾鏡"
 
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:96
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
 #, kde-format
 msgid "Set here the gamma adjustment of the image."
 msgstr "在這裡設定影像的伽瑪調整。"
@@ -31587,23 +31587,23 @@ msgstr "油畫效果"
 msgid "Rain Drops Effect"
 msgstr "雨滴效果"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:158
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:162
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Greycstoration 濾鏡"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:126
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:96
 #, kde-format
 msgctxt "@title: general settings"
 msgid "General"
 msgstr "一般"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:128
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:98
 #, kde-format
 msgid "Detail preservation:"
 msgstr "細節保留："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:102
 #, kde-format
 msgid ""
 "Preservation of details to set the sharpening level of the small features in "
@@ -31611,24 +31611,24 @@ msgid ""
 msgstr ""
 "細節的保留程度可設定目標影像中小特徵的銳利等級。較高的數值會留下細節銳利。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:136
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:106
 #, kde-format
 msgid "Anisotropy:"
 msgstr "各向異性："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:140
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:110
 #, kde-format
 msgid ""
 "Anisotropic (directional) modifier of the details. Keep it small for "
 "Gaussian noise."
 msgstr "細節的各向異性 (方向性) 修飾器。維持小程度的高斯雜訊。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:143
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:113
 #, kde-format
 msgid "Smoothing:"
 msgstr "平滑化："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:147
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:117
 #, kde-format
 msgid ""
 "Total smoothing power: if the Detail Factor sets the relative smoothing and "
@@ -31638,12 +31638,12 @@ msgstr ""
 "總體平滑強度：如果細節係數設定為相對平滑和各向異性係數方向，平滑係數則會設定"
 "為整體效果。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:151
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:121
 #, kde-format
 msgid "Regularity:"
 msgstr "勻稱："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:155
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:125
 #, kde-format
 msgid ""
 "This value controls the evenness of smoothing to the image. Do not use a "
@@ -31652,117 +31652,117 @@ msgstr ""
 "這個數值可控制影像平滑的平順程度。這裡不要使用高數值，否則目標影像會變得完全"
 "模糊不清。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:159
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:129
 #, kde-format
 msgid "Iterations:"
 msgstr "重複："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
 #, kde-format
 msgid "Sets the number of times the filter is applied to the image."
 msgstr "設定套用到影像的濾鏡執行次數。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:164
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:134
 #, kde-format
 msgid "Noise:"
 msgstr "雜訊："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:168
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:138
 #, kde-format
 msgid "Sets the noise scale."
 msgstr "設定雜訊比例。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:190
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "Advanced Settings"
 msgstr "進階設定"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:192
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
 #, kde-format
 msgid "Angular step:"
 msgstr "角度步進："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:166
 #, kde-format
 msgid ""
 "Set here the angular integration step (in degrees) analogous to anisotropy."
 msgstr "在這裡設定角度積分階數 (單位為度) 類似於各向異性。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:169
 #, kde-format
 msgid "Integral step:"
 msgstr "積分階數："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:203
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:173
 #, kde-format
 msgid "Set here the spatial integral step."
 msgstr "在這裡設定空間積分的階數。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:205
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:175
 #, kde-format
 msgid "Gaussian:"
 msgstr "高斯模糊："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:209
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:179
 #, kde-format
 msgid "Set here the precision of the Gaussian function."
 msgstr "在這裡設定高斯方程式的精確度。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:211
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:181
 #, kde-format
 msgid "Tile size:"
 msgstr "拼貼大小："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:214
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:184
 #, kde-format
 msgid "Sets the tile size."
 msgstr "設定拼貼大小。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:216
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:186
 #, kde-format
 msgid "Tile border:"
 msgstr "拼貼邊框："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:219
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:189
 #, kde-format
 msgid "Sets the size of each tile border."
 msgstr "設定每個拼貼邊框的大小。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:221
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:191
 #, kde-format
 msgid "Interpolation:"
 msgstr "內插法："
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:223
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:193
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Nearest Neighbor"
 msgstr "最近相鄰內插法"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:224
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:194
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Linear"
 msgstr "線性內插法"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:225
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:195
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Runge-Kutta"
 msgstr "Runge-Kutta 內插法"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:226
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
 #, kde-format
 msgid "Select the right interpolation method for the desired image quality."
 msgstr "選擇所需影像品質的正確內差法。"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:229
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
 #, kde-format
 msgid "Fast approximation"
 msgstr "快速逼近法"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:230
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:200
 #, kde-format
 msgid "Enable fast approximation when rendering images."
 msgstr "演算影像時啟用快速逼近法。"

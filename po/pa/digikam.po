@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-07 01:41+0000\n"
+"POT-Creation-Date: 2024-04-08 01:43+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -3448,7 +3448,7 @@ msgid "Selection"
 msgstr "ਚੋਣ"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -12354,7 +12354,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:85
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:350
 #, kde-format
 msgid "Contrast:"
@@ -26490,26 +26490,26 @@ msgid "Generate a Raw image preview using current settings."
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:200
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:79
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
 #, kde-format
 msgid "Brightness:"
 msgstr "ਚਮਕ:"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:204
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:83
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
 #, kde-format
 msgid "Set here the brightness adjustment of the image."
 msgstr "ਚਿੱਤਰ ਦੀ ਚਮਕ ਅਡਜੱਸਟਮੈਂਟ ਇੱਥੇ ਕਰੋ।"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:89
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:356
 #, fuzzy, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "<p>ਇੱਥੇ ਚਿੱਤਰ ਦੇ ਦੁਆਲੇ ਲੱਗਣ ਵਾਲੇ ਹਾਸ਼ੀਏ ਦੀ ਕਿਸਮ ਦੀ ਚੋਣ ਕਰੋ।"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:212
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:86
 #, kde-format
 msgid "Gamma:"
 msgstr "ਗਾਮਾ:"
@@ -26623,7 +26623,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "ਰੰਗ ਥਾਂ"
 
 #: core/libs/album/engine/album.cpp:412
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/database/utils/ifaces/dio.cpp:891
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -27188,7 +27188,7 @@ msgid "Context menu"
 msgstr "ਪਰਸੰਗ ਮੇਨੂ"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:901
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -27971,8 +27971,8 @@ msgid "Shared directory mounted at \"%1\""
 msgstr ""
 
 #: core/libs/database/coredb/coredbaccess.cpp:303
-#: core/libs/database/similaritydb/similaritydbaccess.cpp:241
-#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
+#: core/libs/database/similaritydb/similaritydbaccess.cpp:233
+#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
 #: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, fuzzy, kde-format
 #| msgid ""
@@ -28059,8 +28059,8 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:326
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -28359,7 +28359,7 @@ msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
 msgstr "RAW ਚਿੱਤਰ ਫਾਇਲ (%1)"
 
-#: core/libs/database/models/itemfiltermodel.cpp:385
+#: core/libs/database/models/itemfiltermodel.cpp:384
 #, fuzzy, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
@@ -28367,26 +28367,26 @@ msgid_plural "%1 Faces"
 msgstr[0] "ਕੋਈ ਨਾ ਚੁਣੋ"
 msgstr[1] "ਕੋਈ ਨਾ ਚੁਣੋ"
 
-#: core/libs/database/models/itemfiltermodel.cpp:388
+#: core/libs/database/models/itemfiltermodel.cpp:387
 #, fuzzy, kde-format
 #| msgid "No flash"
 msgctxt "@item: filter model"
 msgid "No face"
 msgstr "ਫਲੈਸ਼ ਨਹੀਂ"
 
-#: core/libs/database/models/itemfiltermodel.cpp:399
+#: core/libs/database/models/itemfiltermodel.cpp:398
 #, fuzzy, kde-format
 #| msgid "Confirm"
 msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr "ਪੁਸ਼ਟੀ"
 
-#: core/libs/database/models/itemversionsmodel.cpp:95
+#: core/libs/database/models/itemversionsmodel.cpp:91
 #, kde-format
 msgid "No image selected"
 msgstr "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣਿਆ"
 
-#: core/libs/database/models/itemversionsmodel.cpp:120
+#: core/libs/database/models/itemversionsmodel.cpp:116
 #, kde-format
 msgid "This is the original image"
 msgstr "ਇਹ ਅਸਲੀ ਚਿੱਤਰ ਹੈ"
@@ -28491,7 +28491,7 @@ msgstr "ਡਾਟਾਬੇਸ ਸਰਵਰ ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤ�
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:143
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:141
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBSimilarityVersion\" setting does not "
@@ -28499,8 +28499,8 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:173
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:177
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:174
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:170
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28535,7 +28535,7 @@ msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
 msgstr "ਮਾਨੀਟਰ ਪਰੋਫਾਇਲ:"
 
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:145
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:138
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBThumbnailsVersion\" setting does not "
@@ -28543,13 +28543,13 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:346
+#: core/libs/database/utils/ifaces/dio.cpp:344
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "ਫਾਇਲ ਨਾਂ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:347
+#: core/libs/database/utils/ifaces/dio.cpp:345
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28562,83 +28562,83 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:354
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "ਆਟੋਮੈਟਿਕ ਉੱਤੇ ਲਿਖੋ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "ਆਟੋਮੈਟਿਕ ਉੱਤੇ ਲਿਖੋ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "ਆਟੋਮੈਟਿਕ ਉੱਤੇ ਲਿਖੋ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:857
+#: core/libs/database/utils/ifaces/dio.cpp:855
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Copy Album"
 msgstr "ਮੇਰੀਆਂ ਐਲਬਮਾਂ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:862
+#: core/libs/database/utils/ifaces/dio.cpp:860
 #, fuzzy, kde-format
 #| msgid "Add Images..."
 msgid "Copy Images"
 msgstr "ਚਿੱਤਰ ਸ਼ਾਮਲ..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:868
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy Files"
 msgstr "ਇੱਥੇ ਕਾਪੀ ਕਰੋ(&C)"
 
-#: core/libs/database/utils/ifaces/dio.cpp:873
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "ਐਲਬਮ ਵਿੱਚ ਭੇਜੋ(&M)..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:878
+#: core/libs/database/utils/ifaces/dio.cpp:876
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "ਚਿੱਤਰ ਸੰਭਾਲੋ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:881
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "ਮੂਵੀ ਫਾਇਲਾਂ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:896
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "ਰੀ-ਸਟੋਰੇਸ਼ਨ"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:119
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "ਡਾਟਾਬੇਸ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:143
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>ਭੰਡਾਰ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ, ਉਡੀਕੋ ਜੀ...</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -28652,13 +28652,13 @@ msgstr ""
 "ਇਹ ਜਾਂਚ ਨੂੰ ਵੇਖਾਉਦਾ ਹੈ, ਜੋ ਕਿ ਹਾਲੀਂ ਜਾਰੀ ਹੈ। ਜਾਂਚ ਦੌਰਾਨ, ਡਿਸਕ ਉੱਤੇ ਮੌਜੂਦ ਸਭ ਫਾਇਲਾਂ ਨੂੰ ਇੱਕ "
 "ਡਾਟਾਬੇਸ 'ਚ ਜੋੜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:264
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "ਭੰਡਾਰ ਦੀ ਖੋਜ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -28679,59 +28679,59 @@ msgstr "ਹਟਾਈਆਂ ਗਈਆਂ ਐਲਬਮਾਂ ਲਈ ਜਾਂਚ �
 msgid "Scanning images in individual albums..."
 msgstr "ਅੱਡ ਅੱਡ ਐਲਬਮਾਂ ਲਈ ਚਿੱਤਰ ਖੋਜੇ ਜਾ ਰਹੇ ਹਨ..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:136
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:124
 #, kde-format
 msgid "Migrate ->"
 msgstr "ਮਾਈਗਰੇਟ ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Cancel"
 msgstr "ਰੱਦ ਕਰੋ"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
 #, kde-format
 msgid "Progress Information"
 msgstr "ਤਰੱਕੀ ਜਾਣਕਾਰੀ"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:149
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
 #, fuzzy, kde-format
 msgid "Step Progress"
 msgstr "ਬੈਂਚ ਪਰੋਸੈੱਸ"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:150
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:138
 #, kde-format
 msgid "Overall Progress"
 msgstr "ਕੁੱਲ ਤਰੱਕੀ"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:221
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:209
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:237
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:273
 #, kde-format
 msgid "Database copied successfully."
 msgstr "ਡਾਟਾਬੇਸ ਠੀਕ ਤਰ੍ਹਾਂ ਕਾਪੀ ਹੋ ਗਿਆ।"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:287
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
 #, kde-format
 msgid "Database conversion canceled."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr ""
@@ -29989,12 +29989,12 @@ msgstr "ਸਮੀਕਰਨ"
 msgid "Auto Normalize"
 msgstr "ਇਕਸਾਰ"
 
-#: core/libs/dimg/filters/bcg/bcgfilter.cpp:89
+#: core/libs/dimg/filters/bcg/bcgfilter.cpp:85
 #, fuzzy, kde-format
 msgid "Brightness / Contrast / Gamma Filter"
 msgstr "ਚਮਕ / ਭਿੰਨਤਾ / ਗਾਮਾ"
 
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:96
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
 #, kde-format
 msgid "Set here the gamma adjustment of the image."
 msgstr "ਚਿੱਤਰ ਦੇ ਗਾਮਾ ਦੀ ਅਡਜੱਸਟਮੈਂਟ ਇੱਥੇ ਕਰੋ।"
@@ -31544,48 +31544,48 @@ msgstr "ਤੇਲ ਪੇਂਟ"
 msgid "Rain Drops Effect"
 msgstr "ਕਣੀ"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:158
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:162
 #, fuzzy, kde-format
 msgid "Greycstoration Filter"
 msgstr "ਹਰਾ ਫਿਲਟਰ"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:126
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:96
 #, fuzzy, kde-format
 #| msgid "General"
 msgctxt "@title: general settings"
 msgid "General"
 msgstr "ਸਧਾਰਨ"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:128
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:98
 #, kde-format
 msgid "Detail preservation:"
 msgstr "ਵੇਰਵਾ ਸੁਰੱਖਿਅਤ:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:102
 #, kde-format
 msgid ""
 "Preservation of details to set the sharpening level of the small features in "
 "the target image. Higher values leave details sharp."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:136
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:106
 #, kde-format
 msgid "Anisotropy:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:140
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:110
 #, kde-format
 msgid ""
 "Anisotropic (directional) modifier of the details. Keep it small for "
 "Gaussian noise."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:143
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:113
 #, kde-format
 msgid "Smoothing:"
 msgstr "ਮੁਲਾਇਮ:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:147
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:117
 #, kde-format
 msgid ""
 "Total smoothing power: if the Detail Factor sets the relative smoothing and "
@@ -31593,133 +31593,133 @@ msgid ""
 "effect."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:151
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:121
 #, kde-format
 msgid "Regularity:"
 msgstr "ਨਿਯਮਿਤ:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:155
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:125
 #, kde-format
 msgid ""
 "This value controls the evenness of smoothing to the image. Do not use a "
 "high value here, or the target image will be completely blurred."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:159
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:129
 #, kde-format
 msgid "Iterations:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
 #, kde-format
 msgid "Sets the number of times the filter is applied to the image."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:164
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:134
 #, kde-format
 msgid "Noise:"
 msgstr "ਨੋਵਾਇਸ:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:168
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:138
 #, kde-format
 msgid "Sets the noise scale."
 msgstr "ਨੋਵਾਇਸ ਸਕੇਲ ਸੈੱਟ ਕਰੋ।"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:190
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:160
 #, fuzzy, kde-format
 #| msgid "Advanced Settings"
 msgctxt "@title"
 msgid "Advanced Settings"
 msgstr "ਤਕਨੀਕੀ ਸੈਟਿੰਗ"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:192
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
 #, kde-format
 msgid "Angular step:"
 msgstr "ਕੋਣੀ ਸਟੈਪ:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:166
 #, kde-format
 msgid ""
 "Set here the angular integration step (in degrees) analogous to anisotropy."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:169
 #, kde-format
 msgid "Integral step:"
 msgstr "ਇੰਟੀਗਰਲ ਸਟੈਪ:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:203
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:173
 #, kde-format
 msgid "Set here the spatial integral step."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:205
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:175
 #, kde-format
 msgid "Gaussian:"
 msgstr "Gaussian:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:209
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:179
 #, kde-format
 msgid "Set here the precision of the Gaussian function."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:211
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:181
 #, kde-format
 msgid "Tile size:"
 msgstr "ਟਾਈਲ ਅਕਾਰ:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:214
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:184
 #, kde-format
 msgid "Sets the tile size."
 msgstr "ਟਾਈਲ ਸਾਈਜ਼ ਸੈੱਟ ਕਰੋ।"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:216
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:186
 #, kde-format
 msgid "Tile border:"
 msgstr "ਟਾਈਲ ਹਾਸ਼ੀਆ:"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:219
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:189
 #, kde-format
 msgid "Sets the size of each tile border."
 msgstr "ਹਰੇਕ ਟਾਈਲ ਬਾਰਡਰ ਦਾ ਸਾਈਜ਼ ਸੈੱਟ ਕਰੋ।"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:221
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:191
 #, kde-format
 msgid "Interpolation:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:223
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:193
 #, fuzzy, kde-format
 #| msgid "Nearest Neighbor"
 msgctxt "@item: interpolation"
 msgid "Nearest Neighbor"
 msgstr "ਸਭ ਤੋਂ ਨੇੜਲਾ ਗੁਆਂਢੀ"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:224
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:194
 #, fuzzy, kde-format
 #| msgid "Linear"
 msgctxt "@item: interpolation"
 msgid "Linear"
 msgstr "ਲੀਨੀਅਰ"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:225
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:195
 #, fuzzy, kde-format
 #| msgid "Runge-Kutta"
 msgctxt "@item: interpolation"
 msgid "Runge-Kutta"
 msgstr "ਰੰਗਾ ਕੁੱਤਾ"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:226
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
 #, kde-format
 msgid "Select the right interpolation method for the desired image quality."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:229
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
 #, kde-format
 msgid "Fast approximation"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:230
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:200
 #, kde-format
 msgid "Enable fast approximation when rendering images."
 msgstr ""
