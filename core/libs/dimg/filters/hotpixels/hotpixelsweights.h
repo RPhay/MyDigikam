@@ -33,7 +33,7 @@ class DIGIKAM_EXPORT HotPixelsWeights
 
 public:
 
-    HotPixelsWeights();
+    HotPixelsWeights() = default;
     HotPixelsWeights(const HotPixelsWeights& w);
     ~HotPixelsWeights();
 
@@ -75,12 +75,12 @@ private:
 
 private:
 
-    unsigned int  m_height;
-    unsigned int  m_width;
-    unsigned int  m_coefficientNumber;
-    bool          m_twoDim;
-    unsigned int  m_polynomeOrder;
-    double** *    m_weightMatrices;     ///< Stores a list of weight matrices
+    unsigned int  m_height              = 0;
+    unsigned int  m_width               = 0;
+    unsigned int  m_coefficientNumber   = 0;
+    bool          m_twoDim              = false;
+    unsigned int  m_polynomeOrder       = 0;
+    double** *    m_weightMatrices      = nullptr;     ///< Stores a list of weight matrices
     QList<QPoint> m_positions;
 };
 

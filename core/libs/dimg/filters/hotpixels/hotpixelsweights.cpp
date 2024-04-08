@@ -26,25 +26,7 @@
 namespace Digikam
 {
 
-HotPixelsWeights::HotPixelsWeights()
-    : m_height           (0),
-      m_width            (0),
-      m_coefficientNumber(0),
-      m_twoDim           (false),
-      m_polynomeOrder    (0),
-      m_weightMatrices   (nullptr),
-      m_positions        (QList<QPoint>())
-{
-}
-
 HotPixelsWeights::HotPixelsWeights(const HotPixelsWeights& w)
-    : m_height           (0),
-      m_width            (0),
-      m_coefficientNumber(0),
-      m_twoDim           (false),
-      m_polynomeOrder    (0),
-      m_weightMatrices   (nullptr),
-      m_positions        (QList<QPoint>())
 {
     (*this) = w;
 }
