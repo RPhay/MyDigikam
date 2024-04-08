@@ -40,13 +40,12 @@ namespace Digikam
 EmbossFilter::EmbossFilter(QObject* const parent)
     : DImgThreadedFilter(parent)
 {
-    m_depth = 30;
     initFilter();
 }
 
 EmbossFilter::EmbossFilter(DImg* const orgImage, QObject* const parent, int depth)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("Emboss")),
-      m_depth(depth)
+      m_depth           (depth)
 {
     initFilter();
 }

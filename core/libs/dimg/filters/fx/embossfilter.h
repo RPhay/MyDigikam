@@ -74,7 +74,7 @@ private:
 
 private:
 
-    int m_depth;
+    int m_depth = 30;
 };
 
 } // namespace Digikam

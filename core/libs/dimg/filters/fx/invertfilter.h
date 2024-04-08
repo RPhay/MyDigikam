@@ -35,7 +35,7 @@ public:
 
     // Constructor for slave mode: execute immediately in current thread with specified master filter
     explicit InvertFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, DImg& destImage,
-                          int progressBegin=0, int progressEnd=100);
+                          int progressBegin = 0, int progressEnd = 100);
 
     ~InvertFilter() override;
 
@@ -60,12 +60,12 @@ public:
 
     void                    readParameters(const FilterAction& action)        override;
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
 
 private:
 
