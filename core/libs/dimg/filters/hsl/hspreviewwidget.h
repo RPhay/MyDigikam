@@ -35,7 +35,7 @@ class DIGIKAM_EXPORT HSPreviewWidget : public QWidget
 public:
 
     explicit HSPreviewWidget(QWidget* const parent = nullptr);
-    ~HSPreviewWidget() override;
+    ~HSPreviewWidget()              override;
 
     void setHS(double hue, double sat);
 

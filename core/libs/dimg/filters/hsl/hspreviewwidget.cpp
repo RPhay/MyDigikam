@@ -34,24 +34,19 @@ class Q_DECL_HIDDEN HSPreviewWidget::Private
 
 public:
 
-    explicit Private()
-      : xBorder(0),
-        hue(0.0),
-        sat(0.0)
-    {
-    }
+    Private() = default;
 
-    int     xBorder;
+    int     xBorder = 0;
 
-    double  hue;
-    double  sat;
+    double  hue     = 0.0;
+    double  sat     = 0.0;
 
     QPixmap pixmap;
 };
 
 HSPreviewWidget::HSPreviewWidget(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->xBorder = style()->pixelMetric(QStyle::PM_DefaultFrameWidth);
     setAttribute(Qt::WA_DeleteOnClose);

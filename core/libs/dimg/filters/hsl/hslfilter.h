@@ -31,24 +31,15 @@ class DIGIKAM_EXPORT HSLContainer
 
 public:
 
-    explicit HSLContainer()
-      : hue       (0.0),
-        saturation(0.0),
-        vibrance  (0.0),
-        lightness (0.0)
-    {
-    };
-
-    ~HSLContainer()
-    {
-    };
+    HSLContainer()  = default;
+    ~HSLContainer() = default;
 
 public:
 
-    double hue;
-    double saturation;
-    double vibrance;
-    double lightness;
+    double hue          = 0.0;
+    double saturation   = 0.0;
+    double vibrance     = 0.0;
+    double lightness    = 0.0;
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -60,7 +51,8 @@ class DIGIKAM_EXPORT HSLFilter : public DImgThreadedFilter
 public:
 
     explicit HSLFilter(QObject* const parent = nullptr);
-    explicit HSLFilter(DImg* const orgImage, QObject* const parent = nullptr, const HSLContainer& settings = HSLContainer());
+    explicit HSLFilter(DImg* const orgImage, QObject* const parent = nullptr,
+                       const HSLContainer& settings = HSLContainer());
     ~HSLFilter()                                           override;
 
     static QString FilterIdentifier()

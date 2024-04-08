@@ -33,23 +33,15 @@ class Q_DECL_HIDDEN HSLFilter::Private
 {
 public:
 
-    explicit Private()
-    {
-        memset(&htransfer,   0, sizeof(htransfer));
-        memset(&ltransfer,   0, sizeof(ltransfer));
-        memset(&stransfer,   0, sizeof(stransfer));
-        memset(&htransfer16, 0, sizeof(htransfer16));
-        memset(&ltransfer16, 0, sizeof(ltransfer16));
-        memset(&stransfer16, 0, sizeof(stransfer16));
-    }
+    Private() = default;
 
-    int          htransfer[256];
-    int          ltransfer[256];
-    int          stransfer[256];
+    int          htransfer[256]     = { 0 };
+    int          ltransfer[256]     = { 0 };
+    int          stransfer[256]     = { 0 };
 
-    int          htransfer16[65536];
-    int          ltransfer16[65536];
-    int          stransfer16[65536];
+    int          htransfer16[65536] = { 0 };
+    int          ltransfer16[65536] = { 0 };
+    int          stransfer16[65536] = { 0 };
 
     HSLContainer settings;
 };

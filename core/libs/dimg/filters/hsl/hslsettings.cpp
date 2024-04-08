@@ -43,29 +43,21 @@ class Q_DECL_HIDDEN HSLSettings::Private
 {
 public:
 
-    explicit Private()
-      : HSSelector(nullptr),
-        hInput(nullptr),
-        sInput(nullptr),
-        vInput(nullptr),
-        lInput(nullptr),
-        HSPreview(nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString    configHueAdjustmentEntry;
     static const QString    configSaturationAdjustmentEntry;
     static const QString    configVibranceAdjustmentEntry;
     static const QString    configLighnessAdjustmentEntry;
 
-    DHueSaturationSelector* HSSelector;
+    DHueSaturationSelector* HSSelector  = nullptr;
 
-    DDoubleNumInput*        hInput;
-    DDoubleNumInput*        sInput;
-    DDoubleNumInput*        vInput;
-    DDoubleNumInput*        lInput;
+    DDoubleNumInput*        hInput      = nullptr;
+    DDoubleNumInput*        sInput      = nullptr;
+    DDoubleNumInput*        vInput      = nullptr;
+    DDoubleNumInput*        lInput      = nullptr;
 
-    HSPreviewWidget*        HSPreview;
+    HSPreviewWidget*        HSPreview   = nullptr;
 };
 
 const QString HSLSettings::Private::configHueAdjustmentEntry(QLatin1String("HueAdjustment"));
@@ -80,7 +72,7 @@ HSLSettings::HSLSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QGridLayout* const grid = new QGridLayout(parent);
 
     d->HSSelector = new DHueSaturationSelector();
