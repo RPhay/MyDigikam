@@ -25,6 +25,7 @@
 
 #include "digikam_globals.h"
 #include "digikam_export.h"
+#include "imagecurves.h"
 
 namespace Digikam
 {
@@ -41,7 +42,7 @@ public:
      * Initially, the values are empty.
      * Call initialize() before adjusting values manually.
      */
-    CurvesContainer();
+    CurvesContainer() = default;
     CurvesContainer(int type, bool sixteenBit);
 
     /**
@@ -74,10 +75,10 @@ public:
      *  Smooth : QPolygon have size of 18 points.
      *  Free   : QPolygon have size of 255 or 65535 values.
      */
-    int                     curvesType;
+    int                     curvesType = ImageCurves::CURVE_SMOOTH;
     QPolygon                values[ColorChannels];
 
-    bool                    sixteenBit;
+    bool                    sixteenBit = false;
 };
 
 } // namespace Digikam

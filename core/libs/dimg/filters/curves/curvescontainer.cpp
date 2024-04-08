@@ -16,17 +16,10 @@
 // Local includes
 
 #include "curvescontainer.h"
-#include "imagecurves.h"
 #include "filteraction.h"
 
 namespace Digikam
 {
-
-CurvesContainer::CurvesContainer()
-    : curvesType(ImageCurves::CURVE_SMOOTH),
-      sixteenBit(false)
-{
-}
 
 CurvesContainer::CurvesContainer(int type, bool sixteenBit)
     : curvesType((ImageCurves::CurveType)type),
@@ -100,6 +93,7 @@ void CurvesContainer::initialize()
             }
 
             // First and last points init.
+
             values[i].setPoint(0, 0, 0);
             values[i].setPoint(ImageCurves::NUM_POINTS - 1, segmentMax, segmentMax);
         }

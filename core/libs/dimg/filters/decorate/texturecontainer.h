@@ -55,8 +55,8 @@ public:
 
 public:
 
-    explicit TextureContainer();
-    ~TextureContainer();
+    TextureContainer()  = default;
+    ~TextureContainer() = default;
 
     static QString getTexturePath(int texture);
 

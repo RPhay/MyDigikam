@@ -41,7 +41,8 @@ public:
      * Constructor using settings to preserve aspect ratio of image.
      */
     explicit BorderFilter(QObject* const parent = nullptr);
-    explicit BorderFilter(DImg* orgImage, QObject* const parent = nullptr, const BorderContainer& settings = BorderContainer());
+    explicit BorderFilter(DImg* orgImage, QObject* const parent = nullptr,
+                          const BorderContainer& settings = BorderContainer());
     ~BorderFilter()                                           override;
 
     static QString FilterIdentifier()

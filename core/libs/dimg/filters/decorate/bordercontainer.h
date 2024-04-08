@@ -60,36 +60,36 @@ public:
 
 public:
 
-    explicit BorderContainer();
-    ~BorderContainer();
+    BorderContainer()  = default;
+    ~BorderContainer() = default;
 
     static QString getBorderPath(int border);
 
 public:
 
-    bool    preserveAspectRatio;
+    bool    preserveAspectRatio     = true;
 
-    int     orgWidth;
-    int     orgHeight;
+    int     orgWidth                = 0;
+    int     orgHeight               = 0;
 
-    int     borderType;
+    int     borderType              = 0;
 
-    int     borderWidth1;
-    int     borderWidth2;
-    int     borderWidth3;
-    int     borderWidth4;
+    int     borderWidth1            = 0;
+    int     borderWidth2            = 0;
+    int     borderWidth3            = 0;
+    int     borderWidth4            = 0;
 
-    double  borderPercent;
+    double  borderPercent           = 0.1;
 
     QString borderPath;
 
-    QColor  solidColor;
-    QColor  niepceBorderColor;
-    QColor  niepceLineColor;
-    QColor  bevelUpperLeftColor;
-    QColor  bevelLowerRightColor;
-    QColor  decorativeFirstColor;
-    QColor  decorativeSecondColor;
+    QColor  solidColor              = QColor(0, 0, 0);
+    QColor  niepceBorderColor       = QColor(255, 255, 255);
+    QColor  niepceLineColor         = QColor(0, 0, 0);
+    QColor  bevelUpperLeftColor     = QColor(192, 192, 192);
+    QColor  bevelLowerRightColor    = QColor(128, 128, 128);
+    QColor  decorativeFirstColor    = QColor(0, 0, 0);
+    QColor  decorativeSecondColor   = QColor(0, 0, 0);
 };
 
 } // namespace Digikam

@@ -23,14 +23,6 @@
 namespace Digikam
 {
 
-TextureContainer::TextureContainer()
-{
-}
-
-TextureContainer::~TextureContainer()
-{
-}
-
 QString TextureContainer::getTexturePath(int texture)
 {
     QString pattern;

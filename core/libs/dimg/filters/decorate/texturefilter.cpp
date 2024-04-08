@@ -205,6 +205,7 @@ void TextureFilter::filterImage()
         }
 
         // Update progress bar in dialog.
+
         progress = (int)(50.0 + ((double) x * 50.0) / w);
 
         if ((progress % 5) == 0)
