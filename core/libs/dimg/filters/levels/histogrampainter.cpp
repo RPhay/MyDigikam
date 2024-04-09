@@ -44,18 +44,7 @@ class Q_DECL_HIDDEN HistogramPainter::Private
 
 public:
 
-    explicit Private()
-      : histogram           (nullptr),
-        widgetToInitFrom    (nullptr),
-        scale               (LogScaleHistogram),
-        channelType         (LuminosityChannel),
-        highlightSelection  (false),
-        selectionMin        (0.0),
-        selectionMax        (0.0),
-        showColorGuide      (false),
-        showXGrid           (true)
-    {
-    }
+    Private() = default;
 
 public:
 
@@ -69,7 +58,7 @@ public:
         switch (scale)
         {
             case LinScaleHistogram:
-
+            {
                 switch (channelType)
                 {
                     case GreenChannel:
@@ -77,11 +66,14 @@ public:
                     case RedChannel:
                     case AlphaChannel:
                     case LuminosityChannel:
+                    {
                         max = qMin(histogram->getMaximum(channelType, startSeg, endSeg) / HISTOGRAM_CALC_CUTOFF_HEIGHT,
                                    histogram->getMaximum(channelType, 0, segments - 1));
                         break;
+                    }
 
                     case ColorChannels:
+                    {
                         max = qMin(qMax(qMax(histogram->getMaximum(RedChannel, startSeg, endSeg),
                                              histogram->getMaximum(GreenChannel, startSeg, endSeg)),
                                         histogram->getMaximum(BlueChannel, startSeg, endSeg)) / HISTOGRAM_CALC_CUTOFF_HEIGHT,
@@ -89,18 +81,22 @@ public:
                                              histogram->getMaximum(GreenChannel, 0, segments - 1)),
                                         histogram->getMaximum(BlueChannel, 0, segments - 1)));
                         break;
+                    }
 
                     default:
+                    {
                         qCDebug(DIGIKAM_DIMG_LOG) << "Untreated channel type " << channelType << ". Using luminosity as default.";
                         max = qMin(histogram->getMaximum(LuminosityChannel, startSeg, endSeg) / HISTOGRAM_CALC_CUTOFF_HEIGHT,
                                    histogram->getMaximum(LuminosityChannel, 0, segments - 1));
                         break;
+                    }
                 }
 
                 break;
+            }
 
             case LogScaleHistogram:
-
+            {
                 switch (channelType)
                 {
                     case GreenChannel:
@@ -108,19 +104,25 @@ public:
                     case RedChannel:
                     case AlphaChannel:
                     case LuminosityChannel:
+                    {
                         max = histogram->getMaximum(channelType, 0, segments - 1);
                         break;
+                    }
 
                     case ColorChannels:
+                    {
                         max = qMax(qMax(histogram->getMaximum(RedChannel, 0, segments - 1),
                                         histogram->getMaximum(GreenChannel, 0, segments - 1)),
                                    histogram->getMaximum(BlueChannel, 0, segments - 1));
                         break;
+                    }
 
                     default:
+                    {
                         qCDebug(DIGIKAM_DIMG_LOG) << "Untreated channel type " << channelType << ". Using luminosity as default.";
                         max = histogram->getMaximum(LuminosityChannel, 0, segments - 1);
                         break;
+                    }
                 }
 
                 if (max > 0.0)
@@ -133,10 +135,13 @@ public:
                 }
 
                 break;
+            }
 
             default:
+            {
                 qCDebug(DIGIKAM_DIMG_LOG) << "Untreated histogram scale " << scale << ". Using linear as default.";
                 break;
+            }
         }
 
         return max;
@@ -216,6 +221,7 @@ public:
         for (int x = 1 ; x < (wWidth - 1) ; ++x)
         {
             // calculate histogram segments included in this single pixel line
+
             int startSegment = 0;
             int endSegment   = 0;
             calculateSegmentsForIndex(x - 1, wWidth - 2, startSegment, endSegment);
@@ -244,24 +250,32 @@ public:
         switch (channelType)
         {
             case GreenChannel:
+            {
                 pColor = QColor(63, 255, 63);
                 bColor = QColor(0, 192, 0);
                 break;
+            }
 
             case BlueChannel:
+            {
                 pColor = QColor(63, 63, 255);
                 bColor = QColor(0, 0, 192);
                 break;
+            }
 
             case RedChannel:
+            {
                 pColor = QColor(255, 63, 63);
                 bColor = QColor(192, 0, 0);
                 break;
+            }
 
             default:
+            {
                 pColor = palette.color(QPalette::Active,   QPalette::WindowText);
                 bColor = palette.color(QPalette::Inactive, QPalette::WindowText);
                 break;
+            }
         }
 
         p2.setPen(QPen(pColor, 1, Qt::SolidLine));
@@ -310,6 +324,7 @@ public:
         for (int x = 1 ; x < (wWidth - 1) ; ++x)
         {
             // calculate histogram segments included in this single pixel line
+
             int startSegment = 0;
             int endSegment   = 0;
             calculateSegmentsForIndex(x - 1, wWidth - 2, startSegment, endSegment);
@@ -394,9 +409,11 @@ public:
     {
         for (int x = 0; x < bufferPixmap.width(); ++x)
         {
-            if ((x == bufferPixmap.width() / 4) ||
+            if (
+                (x == bufferPixmap.width() / 4) ||
                 (x == bufferPixmap.width() / 2) ||
-                (x == 3 * bufferPixmap.width() / 4))
+                (x == 3 * bufferPixmap.width() / 4)
+               )
             {
                 p1.setPen(QPen(palette.color(QPalette::Active, QPalette::Base), 1, Qt::SolidLine));
                 p1.drawLine(x, bufferPixmap.height(), x, 0);
@@ -505,20 +522,20 @@ public:
 
 public:
 
-    ImageHistogram*   histogram;
+    ImageHistogram*   histogram             = nullptr;
     QPainter          painter;
-    QWidget*          widgetToInitFrom;
+    QWidget*          widgetToInitFrom      = nullptr;
     QPalette          palette;
 
     // rendering settings
 
-    HistogramScale    scale;
-    ChannelType       channelType;
-    bool              highlightSelection;
-    double            selectionMin;
-    double            selectionMax;
-    bool              showColorGuide;
-    bool              showXGrid;
+    HistogramScale    scale                 = LogScaleHistogram;
+    ChannelType       channelType           = LuminosityChannel;
+    bool              highlightSelection    = false;
+    double            selectionMin          = 0.0;
+    double            selectionMax          = 0.0;
+    bool              showColorGuide        = false;
+    bool              showXGrid             = true;
     DColor            colorGuide;
 };
 

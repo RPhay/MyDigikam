@@ -47,9 +47,9 @@ public:
      */
     HistogramWidget(int w, int h,                           // Widget size.
                     QWidget* const parent = nullptr,
-                    bool selectMode=true,
-                    bool showProgress=true,
-                    bool statisticsVisible=false);
+                    bool selectMode = true,
+                    bool showProgress = true,
+                    bool statisticsVisible = false);
 
     ~HistogramWidget() override;
 
@@ -62,13 +62,13 @@ public:
      * Update full image histogram data methods.
      */
     void updateData(const DImg& img,                        // full image data.
-                    const DImg& sel=DImg(),                 // selection image data
-                    bool showProgress=true);
+                    const DImg& sel = DImg(),               // selection image data
+                    bool showProgress = true);
 
     /**
      * Update image selection histogram data methods.
      */
-    void updateSelectionData(const DImg& sel, bool showProgress=true);
+    void updateSelectionData(const DImg& sel, bool showProgress = true);
 
     void setDataLoading();
     void setLoadingFailed();

@@ -58,61 +58,41 @@ public:
 
 public:
 
-    explicit Private()
-        : sixteenBits       (false),
-          guideVisible      (false),
-          statisticsVisible (false),
-          inSelected        (false),
-          selectMode        (false),
-          showProgress      (false),
-          renderingType     (FullImageHistogram),
-          range             (255),
-          state             (HistogramNone),
-          channelType       (LuminosityChannel),
-          scaleType         (LogScaleHistogram),
-          imageHistogram    (nullptr),
-          selectionHistogram(nullptr),
-          xmin              (0),
-          xminOrg           (0),
-          xmax              (0),
-          animationState    (0),
-          animation         (nullptr),
-          progressPix       (nullptr),
-          histogramPainter  (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    bool                             sixteenBits;
-    bool                             guideVisible;           ///< Display color guide.
-    bool                             statisticsVisible;      ///< Display tooltip histogram statistics.
-    bool                             inSelected;
-    bool                             selectMode;             ///< If true, a part of the histogram can be selected !
-    bool                             showProgress;           ///< If true, a message will be displayed during histogram computation,
-                                                             ///< else nothing (limit flicker effect in widget especially for small
-                                                             ///< image/computation time).
-    int                              renderingType;          ///< Using full image or image selection for histogram rendering.
-    int                              range;
-    HistogramState                   state;                  ///< Clear drawing zone with message.
+    bool                             sixteenBits        = false;
+    bool                             guideVisible       = false;                ///< Display color guide.
+    bool                             statisticsVisible  = false;                ///< Display tooltip histogram statistics.
+    bool                             inSelected         = false;
+    bool                             selectMode         = false;                ///< If true, a part of the histogram can be selected !
+    bool                             showProgress       = false;                ///< If true, a message will be displayed during histogram computation,
+                                                                                ///< else nothing (limit flicker effect in widget especially for small
+                                                                                ///< image/computation time).
 
-    ChannelType                      channelType;            ///< Channel type to draw
-    HistogramScale                   scaleType;              ///< Scale to use for drawing
-    ImageHistogram*                  imageHistogram;         ///< Full image
-    ImageHistogram*                  selectionHistogram;     ///< Image selection
+    int                              renderingType      = FullImageHistogram;   ///< Using full image or image selection for histogram rendering.
+    int                              range              = 255;
+    HistogramState                   state              = HistogramNone;        ///< Clear drawing zone with message.
+
+    ChannelType                      channelType        = LuminosityChannel;    ///< Channel type to draw
+    HistogramScale                   scaleType          = LogScaleHistogram;    ///< Scale to use for drawing
+    ImageHistogram*                  imageHistogram     = nullptr;              ///< Full image
+    ImageHistogram*                  selectionHistogram = nullptr;              ///< Image selection
 
     // Current selection information.
-    double                           xmin;
-    double                           xminOrg;
-    double                           xmax;
 
-    int                              animationState;
-    QPropertyAnimation*              animation;
-    DWorkingPixmap*                  progressPix;
+    double                           xmin               = 0;
+    double                           xminOrg            = 0;
+    double                           xmax               = 0;
+
+    int                              animationState     = 0;
+    QPropertyAnimation*              animation          = nullptr;
+    DWorkingPixmap*                  progressPix        = nullptr;
 
     DColor                           colorGuide;
 
-    HistogramPainter*                histogramPainter;
+    HistogramPainter*                histogramPainter   = nullptr;
 };
 
 HistogramWidget::HistogramWidget(int w, int h,
@@ -384,6 +364,7 @@ void HistogramWidget::slotCalculationAboutToStart()
 void HistogramWidget::slotCalculationFinished(bool success)
 {
     // only react to the histogram that the user is currently waiting for
+
     if (QObject::sender() != currentHistogram())
     {
         return;
@@ -446,11 +427,12 @@ void HistogramWidget::paintEvent(QPaintEvent*)
     // or loading, but no message shall be drawn:
     // Drawing grayed frame.
 
-    if (!isEnabled()                                                                            ||
-        (d->state == HistogramWidget::Private::HistogramNone)                                   ||
-        (!d->showProgress && ((d->state == HistogramWidget::Private::HistogramStarted)          ||
-                              (d->state == HistogramWidget::Private::HistogramDataLoading)))
-       )
+    if     (
+            !isEnabled()                                                                            ||
+            (d->state == HistogramWidget::Private::HistogramNone)                                   ||
+            (!d->showProgress && ((d->state == HistogramWidget::Private::HistogramStarted)          ||
+                                  (d->state == HistogramWidget::Private::HistogramDataLoading)))
+           )
     {
         QPainter p1(this);
         p1.fillRect(0, 0, width(), height(), palette().color(QPalette::Disabled, QPalette::Window));
@@ -466,7 +448,8 @@ void HistogramWidget::paintEvent(QPaintEvent*)
 
         return;
     }
-    else if (d->showProgress &&
+    else if (
+             d->showProgress &&
              ((d->state == HistogramWidget::Private::HistogramStarted)      ||
               (d->state == HistogramWidget::Private::HistogramDataLoading))
             )

@@ -32,28 +32,17 @@ class DIGIKAM_EXPORT LevelsContainer
 
 public:
 
-    explicit LevelsContainer()
-    {
-        for (int i = 0 ; i < 5 ; ++i)
-        {
-            lInput[i]  = 0;
-            hInput[i]  = 65535;
-            lOutput[i] = 0;
-            hOutput[i] = 65535;
-            gamma[i]   = 1.0;
-        }
-    };
-
+    LevelsContainer()  = default;
     ~LevelsContainer() = default;
 
 public:
 
-    int    lInput[5];
-    int    hInput[5];
-    int    lOutput[5];
-    int    hOutput[5];
+    int    lInput[5]    = { 0     };
+    int    hInput[5]    = { 65535 };
+    int    lOutput[5]   = { 0     };
+    int    hOutput[5]   = { 65535 };
 
-    double gamma[5];
+    double gamma[5]     = { 1.0   };
 };
 
 // --------------------------------------------------------------------------------
@@ -67,13 +56,13 @@ public:
     explicit LevelsFilter(QObject* const parent = nullptr);
     explicit LevelsFilter(DImg* const orgImage,
                           QObject* const parent = nullptr,
-                          const LevelsContainer& settings=LevelsContainer());
+                          const LevelsContainer& settings = LevelsContainer());
     explicit LevelsFilter(const LevelsContainer& settings,
                           DImgThreadedFilter* const master,
                           const DImg& orgImage,
                           DImg& destImage,
-                          int progressBegin=0,
-                          int progressEnd=100);
+                          int progressBegin = 0,
+                          int progressEnd = 100);
     ~LevelsFilter() override;
 
     static QString          FilterIdentifier()
