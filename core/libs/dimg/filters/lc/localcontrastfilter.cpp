@@ -39,7 +39,7 @@ public:
     Private() = default;
 
     /// preprocessed values
-    float                  current_process_power_value = 20.0;
+    float                  current_process_power_value = 20.0F;
 
     LocalContrastContainer par;
 
@@ -700,40 +700,52 @@ void LocalContrastFilter::hsv2rgb(const float& h, const float& s, const float& v
     switch (hi)
     {
         case 0:
-            r = v ;
-            g = t ;
+        {
+            r = v;
+            g = t;
             b = p;
             break;
+        }
 
         case 1:
-            r = q ;
-            g = v ;
+        {
+            r = q;
+            g = v;
             b = p;
             break;
+        }
 
         case 2:
-            r = p ;
-            g = v ;
+        {
+            r = p;
+            g = v;
             b = t;
             break;
+        }
 
         case 3:
-            r = p ;
-            g = q ;
+        {
+            r = p;
+            g = q;
             b = v;
             break;
+        }
 
         case 4:
-            r = t ;
+        {
+            r = t;
             g = p;
             b = v;
             break;
+        }
 
         case 5:
-            r = v ;
-            g = p ;
+        {
+            r = v;
+            g = p;
             b = q;
             break;
+        }
     }
 }
 

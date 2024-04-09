@@ -33,21 +33,8 @@ namespace Digikam
 {
 
 LocalContrastContainer::LocalContrastContainer()
-    : stretchContrast(true),
-      lowSaturation  (100),
-      highSaturation (100),
-      functionId     (0)
 {
-    for (int i = 0 ; i < TONEMAPPING_MAX_STAGES ; ++i)
-    {
-        stage[i].enabled = (i == 0);
-        stage[i].power   = 30.0;
-        stage[i].blur    = 80.0;
-    }
-}
-
-LocalContrastContainer::~LocalContrastContainer()
-{
+    stage[0].enabled = true;
 }
 
 double LocalContrastContainer::getPower(int nstage) const

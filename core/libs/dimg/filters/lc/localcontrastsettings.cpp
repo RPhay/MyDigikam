@@ -56,30 +56,7 @@ class Q_DECL_HIDDEN LocalContrastSettings::Private
 
 public:
 
-    explicit Private()
-      : stretchContrastCheck(nullptr),
-        label4              (nullptr),
-        label5              (nullptr),
-        label6              (nullptr),
-        label7              (nullptr),
-        label8              (nullptr),
-        label9              (nullptr),
-        label10             (nullptr),
-        label11             (nullptr),
-        lowSaturationInput  (nullptr),
-        highSaturationInput (nullptr),
-        functionInput       (nullptr),
-        powerInput1         (nullptr),
-        blurInput1          (nullptr),
-        powerInput2         (nullptr),
-        blurInput2          (nullptr),
-        powerInput3         (nullptr),
-        blurInput3          (nullptr),
-        powerInput4         (nullptr),
-        blurInput4          (nullptr),
-        expanderBox         (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString  configLowSaturationEntry;
     static const QString  configHighSaturationEntry;
@@ -99,32 +76,32 @@ public:
     static const QString  configStageFourEntry;
     static const QString  configFunctionInputEntry;
 
-    QCheckBox*            stretchContrastCheck;
+    QCheckBox*            stretchContrastCheck  = nullptr;
 
-    QLabel*               label4;
-    QLabel*               label5;
-    QLabel*               label6;
-    QLabel*               label7;
-    QLabel*               label8;
-    QLabel*               label9;
-    QLabel*               label10;
-    QLabel*               label11;
+    QLabel*               label4                = nullptr;
+    QLabel*               label5                = nullptr;
+    QLabel*               label6                = nullptr;
+    QLabel*               label7                = nullptr;
+    QLabel*               label8                = nullptr;
+    QLabel*               label9                = nullptr;
+    QLabel*               label10               = nullptr;
+    QLabel*               label11               = nullptr;
 
-    DIntNumInput*         lowSaturationInput;
-    DIntNumInput*         highSaturationInput;
+    DIntNumInput*         lowSaturationInput    = nullptr;
+    DIntNumInput*         highSaturationInput   = nullptr;
 
-    DComboBox*            functionInput;
+    DComboBox*            functionInput         = nullptr;
 
-    DDoubleNumInput*      powerInput1;
-    DDoubleNumInput*      blurInput1;
-    DDoubleNumInput*      powerInput2;
-    DDoubleNumInput*      blurInput2;
-    DDoubleNumInput*      powerInput3;
-    DDoubleNumInput*      blurInput3;
-    DDoubleNumInput*      powerInput4;
-    DDoubleNumInput*      blurInput4;
+    DDoubleNumInput*      powerInput1           = nullptr;
+    DDoubleNumInput*      blurInput1            = nullptr;
+    DDoubleNumInput*      powerInput2           = nullptr;
+    DDoubleNumInput*      blurInput2            = nullptr;
+    DDoubleNumInput*      powerInput3           = nullptr;
+    DDoubleNumInput*      blurInput3            = nullptr;
+    DDoubleNumInput*      powerInput4           = nullptr;
+    DDoubleNumInput*      blurInput4            = nullptr;
 
-    DExpanderBox*         expanderBox;
+    DExpanderBox*         expanderBox           = nullptr;
 };
 
 const QString LocalContrastSettings::Private::configLowSaturationEntry(QLatin1String("LowSaturation"));

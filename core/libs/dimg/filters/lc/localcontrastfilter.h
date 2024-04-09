@@ -38,28 +38,20 @@ class DIGIKAM_EXPORT LocalContrastFilter : public DImgThreadedFilter
 
 private:
 
-    struct Q_DECL_HIDDEN Args
+    class Q_DECL_HIDDEN Args
     {
-        explicit Args()
-            : start          (0),
-              stop           (0),
-              a              (0.0),
-              data           (nullptr),
-              sizex          (0),
-              sizey          (0),
-              blur           (0.0),
-              denormal_remove(0.0)
-        {
-        }
+    public:
 
-        uint   start;
-        uint   stop;
-        float  a;
-        float* data;
-        int    sizex;
-        int    sizey;
-        float  blur;
-        float  denormal_remove;
+        Args() = default;
+
+        uint   start            = 0;
+        uint   stop             = 0;
+        float  a                = 0.0F;
+        float* data             = nullptr;
+        int    sizex            = 0;
+        int    sizey            = 0;
+        float  blur             = 0.0F;
+        float  denormal_remove  = 0.0F;
     };
 
 public:

@@ -31,25 +31,25 @@ class DIGIKAM_EXPORT LocalContrastContainer
 
 public:
 
-    explicit LocalContrastContainer();
-    ~LocalContrastContainer();
+    LocalContrastContainer();
+    ~LocalContrastContainer() = default;
 
     double getPower(int nstage)  const;
     double getBlur(int nstage)   const;
 
 public:
 
-    bool stretchContrast;
+    bool stretchContrast    = true;
 
-    int  lowSaturation;
-    int  highSaturation;
-    int  functionId;
+    int  lowSaturation      = 100;
+    int  highSaturation     = 100;
+    int  functionId         = 0;
 
     struct
     {
-        bool  enabled;
-        double power;
-        double blur;
+        bool   enabled  = false;
+        double power    = 30.0;
+        double blur     = 80.0;
     }
     stage[TONEMAPPING_MAX_STAGES];
 };
