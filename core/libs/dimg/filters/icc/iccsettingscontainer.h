@@ -25,6 +25,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "icctransform.h"
 
 class KConfigGroup;
 
@@ -78,8 +79,8 @@ public:
 
 public:
 
-    explicit ICCSettingsContainer();
-    ~ICCSettingsContainer() {};
+    ICCSettingsContainer()  = default;
+    ~ICCSettingsContainer() = default;
 
     void readFromConfig(KConfigGroup& group);
     void writeToConfig(KConfigGroup& group)                 const;
@@ -88,36 +89,36 @@ public:
 
 public:
 
-    bool     enableCM;
+    bool     enableCM                       = true;
 
     QString  iccFolder;
 
     QString  workspaceProfile;
 
-    Behavior defaultMismatchBehavior;
-    Behavior defaultMissingProfileBehavior;
-    Behavior defaultUncalibratedBehavior;
+    Behavior defaultMismatchBehavior        = EmbeddedToWorkspace;
+    Behavior defaultMissingProfileBehavior  = SRGBToWorkspace;
+    Behavior defaultUncalibratedBehavior    = AutoToWorkspace;
 
-    Behavior lastMismatchBehavior;
-    Behavior lastMissingProfileBehavior;
-    Behavior lastUncalibratedBehavior;
+    Behavior lastMismatchBehavior           = EmbeddedToWorkspace;
+    Behavior lastMissingProfileBehavior     = SRGBToWorkspace;
+    Behavior lastUncalibratedBehavior       = AutoToWorkspace;
     QString  lastSpecifiedAssignProfile;
     QString  lastSpecifiedInputProfile;
 
-    bool     useManagedView;
-    bool     useManagedPreviews;
+    bool     useManagedView                 = true;
+    bool     useManagedPreviews             = true;
     QString  monitorProfile;
 
     QString  defaultInputProfile;
     QString  defaultProofProfile;
 
-    bool     useBPC;
-    int      renderingIntent;
+    bool     useBPC                         = true;
+    int      renderingIntent                = IccTransform::Perceptual;
 
     /// Settings specific for soft proofing
-    int      proofingRenderingIntent;
-    int      doGamutCheck;
-    QColor   gamutCheckMaskColor;
+    int      proofingRenderingIntent        = IccTransform::AbsoluteColorimetric;
+    bool     doGamutCheck                   = false;
+    QColor   gamutCheckMaskColor            = QColor(126, 255, 255);
 
 private:
 

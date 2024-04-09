@@ -340,6 +340,7 @@ void IccSettings::setSettings(const ICCSettingsContainer& settings)
     }
 
     d->writeToConfig();
+
     Q_EMIT signalSettingsChanged();
     Q_EMIT signalICCSettingsChanged(settings, old);
 }

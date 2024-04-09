@@ -40,14 +40,7 @@ class Q_DECL_HIDDEN TransformDescription
 {
 public:
 
-    TransformDescription()
-      : inputFormat     (0),
-        outputFormat    (0),
-        intent          (INTENT_PERCEPTUAL),
-        transformFlags  (0),
-        proofIntent     (INTENT_ABSOLUTE_COLORIMETRIC)
-    {
-    }
+    TransformDescription() = default;
 
     bool operator==(const TransformDescription& other) const
     {
@@ -66,33 +59,23 @@ public:
 public:
 
     IccProfile inputProfile;
-    int        inputFormat;
+    int        inputFormat      = 0;
     IccProfile outputProfile;
-    int        outputFormat;
-    int        intent;
-    int        transformFlags;
+    int        outputFormat     = 0;
+    int        intent           = INTENT_PERCEPTUAL;
+    int        transformFlags   = 0;
     IccProfile proofProfile;
-    int        proofIntent;
+    int        proofIntent      = INTENT_ABSOLUTE_COLORIMETRIC;
 };
 
 class Q_DECL_HIDDEN IccTransform::Private : public QSharedData
 {
 public:
 
-    explicit Private()
-      : intent         (IccTransform::Perceptual),
-        proofIntent    (IccTransform::AbsoluteColorimetric),
-        useBPC         (false),
-        checkGamut     (false),
-        doNotEmbed     (false),
-        checkGamutColor(QColor(126, 255, 255)),
-        handle         (nullptr)
-    {
-    }
+    Private() = default;
 
     explicit Private(const Private& other)
-        : QSharedData(other),
-          handle     (nullptr)
+        : QSharedData(other)
     {
         operator=(other);
     }
@@ -182,12 +165,12 @@ public:
 
 public:
 
-    IccTransform::RenderingIntent intent;
-    IccTransform::RenderingIntent proofIntent;
-    bool                          useBPC;
-    bool                          checkGamut;
-    bool                          doNotEmbed;
-    QColor                        checkGamutColor;
+    IccTransform::RenderingIntent intent            = IccTransform::Perceptual;
+    IccTransform::RenderingIntent proofIntent       = IccTransform::AbsoluteColorimetric;
+    bool                          useBPC            = false;
+    bool                          checkGamut        = false;
+    bool                          doNotEmbed        = false;
+    QColor                        checkGamutColor   = QColor(126, 255, 255);
 
     IccProfile                    embeddedProfile;
     IccProfile                    inputProfile;
@@ -195,7 +178,7 @@ public:
     IccProfile                    proofProfile;
     IccProfile                    builtinProfile;
 
-    cmsHTRANSFORM                 handle;
+    cmsHTRANSFORM                 handle            = nullptr;
     TransformDescription          currentDescription;
 };
 
@@ -406,19 +389,29 @@ static int renderingIntentToLcmsIntent(IccTransform::RenderingIntent intent)
     switch (intent)
     {
         case IccTransform::Perceptual:
+        {
             return INTENT_PERCEPTUAL;
+        }
 
         case IccTransform::RelativeColorimetric:
+        {
             return INTENT_RELATIVE_COLORIMETRIC;
+        }
 
         case IccTransform::Saturation:
+        {
             return INTENT_SATURATION;
+        }
 
         case IccTransform::AbsoluteColorimetric:
+        {
             return INTENT_ABSOLUTE_COLORIMETRIC;
+        }
 
         default:
+        {
             return INTENT_PERCEPTUAL;
+        }
     }
 }
 
@@ -446,13 +439,21 @@ TransformDescription IccTransform::getDescription(const DImg& image)
         switch (dkCmsGetColorSpace(description.inputProfile))
         {
             case icSigGrayData:
+            {
                 description.inputFormat = TYPE_GRAYA_16;
                 break;
+            }
+
             case icSigCmykData:
+            {
                 description.inputFormat = TYPE_CMYK_16;
                 break;
+            }
+
             default:
+            {
                 description.inputFormat = TYPE_BGRA_16;
+            }
         }
 */
 
@@ -660,9 +661,11 @@ bool IccTransform::apply(DImg& image, DImgLoaderObserver* const observer)
 
 bool IccTransform::apply(QImage& qimage)
 {
-    if ((qimage.format() != QImage::Format_RGB32)  &&
+    if (
+        (qimage.format() != QImage::Format_RGB32)  &&
         (qimage.format() != QImage::Format_ARGB32) &&
-        (qimage.format() != QImage::Format_ARGB32_Premultiplied))
+        (qimage.format() != QImage::Format_ARGB32_Premultiplied)
+       )
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Unsupported QImage format" << qimage.format();
         return false;

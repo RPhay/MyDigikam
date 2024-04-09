@@ -45,15 +45,14 @@ class Q_DECL_HIDDEN IccProfilesSettings::Private
 {
 public:
 
-    explicit Private()
-      : profilesBox(nullptr)
+    Private()
     {
         favoriteProfiles.setMaxCost(10);
     }
 
     static const QString  configRecentlyUsedProfilesEntry;
     QCache<QString, bool> favoriteProfiles;
-    IccProfilesComboBox*  profilesBox;
+    IccProfilesComboBox*  profilesBox = nullptr;
 };
 
 const QString IccProfilesSettings::Private::configRecentlyUsedProfilesEntry(QLatin1String("Recently Used Profiles"));

@@ -38,15 +38,10 @@ class Q_DECL_HIDDEN IccProfile::Private : public QSharedData
 {
 public:
 
-    explicit Private()
-      : type  (IccProfile::InvalidType),
-        handle(nullptr)
-    {
-    }
+    Private() = default;
 
     explicit Private(const Private& other)
-        : QSharedData(other),
-          handle     (nullptr)
+        : QSharedData(other)
     {
         operator = (other);
     }
@@ -84,9 +79,9 @@ public:
     QString                 filePath;
     QString                 description;
 
-    IccProfile::ProfileType type;
+    IccProfile::ProfileType type            = IccProfile::InvalidType;
 
-    cmsHPROFILE             handle;
+    cmsHPROFILE             handle          = nullptr;
 };
 
 // ----------------------------------------------------------------------------------
@@ -95,9 +90,7 @@ class Q_DECL_HIDDEN IccProfileStatic
 {
 public:
 
-    IccProfileStatic()
-    {
-    }
+    IccProfileStatic() = default;
 
     QMutex  lcmsMutex;
     QString adobeRGBPath;
@@ -411,35 +404,51 @@ IccProfile::ProfileType IccProfile::type()
     {
         case icSigInputClass:
         case 0x6e6b7066:        ///< 'nkbf', proprietary in Nikon profiles
+        {
             d->type = Input;
             break;
+        }
 
         case icSigDisplayClass:
+        {
             d->type = Display;
             break;
+        }
 
         case icSigOutputClass:
+        {
             d->type = Output;
             break;
+        }
 
         case icSigColorSpaceClass:
+        {
             d->type = ColorSpace;
             break;
+        }
 
         case icSigLinkClass:
+        {
             d->type = DeviceLink;
             break;
+        }
 
         case icSigAbstractClass:
+        {
             d->type = Abstract;
             break;
+        }
 
         case icSigNamedColorClass:
+        {
             d->type = NamedColor;
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     return d->type;

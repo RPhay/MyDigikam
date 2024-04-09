@@ -86,6 +86,7 @@ ICCSettingsContainer IccSettings::Private::readFromConfig() const
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroup);
     s.readFromConfig(group);
+
     return s;
 }
 
