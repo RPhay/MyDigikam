@@ -34,7 +34,7 @@ class DIGIKAM_EXPORT RedEyeCorrectionContainer
 
 public:
 
-    explicit RedEyeCorrectionContainer();
+    RedEyeCorrectionContainer() = default;;
 
     bool isDefault()                                            const;
     bool operator==(const RedEyeCorrectionContainer& other)     const;
@@ -47,7 +47,7 @@ public:
 
 public:
 
-    double m_redToAvgRatio;
+    double m_redToAvgRatio = 2.1;
 };
 
 } // namespace Digikam

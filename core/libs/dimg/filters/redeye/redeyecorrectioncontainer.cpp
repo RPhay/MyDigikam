@@ -21,11 +21,6 @@
 namespace Digikam
 {
 
-RedEyeCorrectionContainer::RedEyeCorrectionContainer()
-    : m_redToAvgRatio(2.1)
-{
-}
-
 bool RedEyeCorrectionContainer::isDefault() const
 {
     return (*this == RedEyeCorrectionContainer());

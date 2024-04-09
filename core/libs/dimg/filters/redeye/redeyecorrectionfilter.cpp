@@ -40,9 +40,7 @@ class Q_DECL_HIDDEN RedEyeCorrectionFilter::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     FaceDetector                   facedetector;
     static RedEye::ShapePredictor* sp;
@@ -265,6 +263,7 @@ FilterAction RedEyeCorrectionFilter::filterAction()
 {
     DefaultFilterAction<RedEyeCorrectionFilter> action;
     d->settings.writeToFilterAction(action);
+
     return action;
 }
 

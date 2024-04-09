@@ -45,14 +45,11 @@ class Q_DECL_HIDDEN RedEyeCorrectionSettings::Private
 {
 public:
 
-    explicit Private()
-      : redtoavgratioInput(nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString configRedToAvgRatioAdjustmentEntry;
 
-    DDoubleNumInput* redtoavgratioInput;
+    DDoubleNumInput* redtoavgratioInput = nullptr;
 };
 
 const QString RedEyeCorrectionSettings::Private::configRedToAvgRatioAdjustmentEntry(QLatin1String("RedToAvgRatioAdjustment"));
