@@ -43,7 +43,6 @@ namespace Digikam
  * The new region is placed so that the requested pixel is positioned
  * at [LensDistortionPixelAccessXOffset, LensDistortionPixelAccessYOffset] in the region.
  */
-
 class DIGIKAM_EXPORT LensDistortionPixelAccess
 {
 
@@ -65,20 +64,20 @@ protected:
 
 private:
 
-    DImg* m_image;
+    DImg* m_image                                       = nullptr;
 
-    DImg* m_buffer[LensDistortionPixelAccessRegions];
+    DImg* m_buffer[LensDistortionPixelAccessRegions]    = { nullptr };
 
-    int   m_width;
-    int   m_height;
-    int   m_depth;
-    int   m_imageWidth;
-    int   m_imageHeight;
-    bool  m_sixteenBit;
-    int   m_tileMinX[LensDistortionPixelAccessRegions];
-    int   m_tileMaxX[LensDistortionPixelAccessRegions];
-    int   m_tileMinY[LensDistortionPixelAccessRegions];
-    int   m_tileMaxY[LensDistortionPixelAccessRegions];
+    int   m_width                                       = 0;
+    int   m_height                                      = 0;
+    int   m_depth                                       = 8;
+    int   m_imageWidth                                  = 0;
+    int   m_imageHeight                                 = 0;
+    bool  m_sixteenBit                                  = false;
+    int   m_tileMinX[LensDistortionPixelAccessRegions]  = { 0 };
+    int   m_tileMaxX[LensDistortionPixelAccessRegions]  = { 0 };
+    int   m_tileMinY[LensDistortionPixelAccessRegions]  = { 0 };
+    int   m_tileMaxY[LensDistortionPixelAccessRegions]  = { 0 };
 };
 
 } // namespace Digikam

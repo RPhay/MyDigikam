@@ -29,31 +29,19 @@ class DIGIKAM_EXPORT AntiVignettingContainer
 
 public:
 
-    explicit AntiVignettingContainer()
-      : addvignetting(true),
-        density      (2.0),
-        power        (1.0),
-        innerradius  (1.0),
-        outerradius  (1.0),
-        xshift       (0.0),
-        yshift       (0.0)
-    {
-    };
-
-    ~AntiVignettingContainer()
-    {
-    };
+    AntiVignettingContainer()  = default;
+    ~AntiVignettingContainer() = default;
 
 public:
 
-    bool   addvignetting;
+    bool   addvignetting    = true;
 
-    double density;
-    double power;
-    double innerradius;
-    double outerradius;
-    double xshift;
-    double yshift;
+    double density          = 2.0;
+    double power            = 1.0;
+    double innerradius      = 1.0;
+    double outerradius      = 1.0;
+    double xshift           = 0.0;
+    double yshift           = 0.0;
 };
 
 // -----------------------------------------------------------------------------------------------

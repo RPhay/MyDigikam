@@ -47,17 +47,7 @@ class Q_DECL_HIDDEN AntiVignettingSettings::Private
 {
 public:
 
-    explicit Private()
-      : addVignettingCheck  (nullptr),
-        maskPreviewLabel    (nullptr),
-        densityInput        (nullptr),
-        powerInput          (nullptr),
-        innerRadiusInput    (nullptr),
-        outerRadiusInput    (nullptr),
-        xOffsetInput        (nullptr),
-        yOffsetInput        (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString  configAddVignettingAdjustmentEntry;
     static const QString  configDensityAdjustmentEntry;
@@ -68,16 +58,16 @@ public:
     static const QString  configXOffsetEntry;
     static const QString  configYOffsetEntry;
 
-    QCheckBox*            addVignettingCheck;
+    QCheckBox*            addVignettingCheck    = nullptr;
 
-    QLabel*               maskPreviewLabel;
+    QLabel*               maskPreviewLabel      = nullptr;
 
-    DDoubleNumInput*      densityInput;
-    DDoubleNumInput*      powerInput;
-    DDoubleNumInput*      innerRadiusInput;
-    DDoubleNumInput*      outerRadiusInput;
-    DDoubleNumInput*      xOffsetInput;
-    DDoubleNumInput*      yOffsetInput;
+    DDoubleNumInput*      densityInput          = nullptr;
+    DDoubleNumInput*      powerInput            = nullptr;
+    DDoubleNumInput*      innerRadiusInput      = nullptr;
+    DDoubleNumInput*      outerRadiusInput      = nullptr;
+    DDoubleNumInput*      xOffsetInput          = nullptr;
+    DDoubleNumInput*      yOffsetInput          = nullptr;
 };
 
 const QString AntiVignettingSettings::Private::configAddVignettingAdjustmentEntry(QLatin1String("AddVignettingAdjustment"));
@@ -96,7 +86,7 @@ AntiVignettingSettings::AntiVignettingSettings(QWidget* parent)
       d      (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(parent);
 
@@ -178,16 +168,16 @@ AntiVignettingSettings::AntiVignettingSettings(QWidget* parent)
 
     // -------------------------------------------------------------
 
-    grid->addWidget(d->maskPreviewLabel,   0, 0, 1, 3);
-    grid->addWidget(label1,                1, 0, 1, 3);
-    grid->addWidget(d->densityInput,       2, 0, 1, 3);
-    grid->addWidget(label2,                3, 0, 1, 3);
-    grid->addWidget(d->powerInput,         4, 0, 1, 3);
-    grid->addWidget(label3,                5, 0, 1, 3);
-    grid->addWidget(d->innerRadiusInput,   6, 0, 1, 3);
-    grid->addWidget(label4,                7, 0, 1, 3);
-    grid->addWidget(d->outerRadiusInput,   8, 0, 1, 3);
-    grid->addWidget(label5,                9, 0, 1, 3);
+    grid->addWidget(d->maskPreviewLabel,    0, 0, 1, 3);
+    grid->addWidget(label1,                 1, 0, 1, 3);
+    grid->addWidget(d->densityInput,        2, 0, 1, 3);
+    grid->addWidget(label2,                 3, 0, 1, 3);
+    grid->addWidget(d->powerInput,          4, 0, 1, 3);
+    grid->addWidget(label3,                 5, 0, 1, 3);
+    grid->addWidget(d->innerRadiusInput,    6, 0, 1, 3);
+    grid->addWidget(label4,                 7, 0, 1, 3);
+    grid->addWidget(d->outerRadiusInput,    8, 0, 1, 3);
+    grid->addWidget(label5,                 9, 0, 1, 3);
     grid->addWidget(d->xOffsetInput,       10, 0, 1, 3);
     grid->addWidget(label6,                11, 0, 1, 3);
     grid->addWidget(d->yOffsetInput,       12, 0, 1, 3);

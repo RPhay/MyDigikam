@@ -38,7 +38,7 @@ LensDistortionPixelAccess::LensDistortionPixelAccess(DImg* srcImage)
         m_buffer[i]   = new DImg(m_image->copy(0, 0, m_width, m_height));
 
         m_tileMinX[i] = 1;
-        m_tileMaxX[i] = m_width - 2;
+        m_tileMaxX[i] = m_width  - 2;
         m_tileMinY[i] = 1;
         m_tileMaxY[i] = m_height - 2;
     }

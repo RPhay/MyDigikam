@@ -32,11 +32,11 @@ class DIGIKAM_EXPORT LensDistortionFilter : public DImgThreadedFilter
 public:
 
     explicit LensDistortionFilter(QObject* const parent = nullptr);
-    explicit LensDistortionFilter(DImg* const orgImage, QObject* const parent = nullptr, double main=0.0,
-                                  double edge=0.0, double rescale=0.0, double brighten=0.0,
-                                  int center_x=0, int center_y=0);
+    explicit LensDistortionFilter(DImg* const orgImage, QObject* const parent = nullptr, double main = 0.0,
+                                  double edge = 0.0, double rescale = 0.0, double brighten = 0.0,
+                                  int center_x = 0, int center_y = 0);
 
-    ~LensDistortionFilter() override;
+    ~LensDistortionFilter()                                                   override;
 
     static QString          FilterIdentifier()
     {
@@ -55,12 +55,12 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:
@@ -69,13 +69,13 @@ private:
 
 private:
 
-    int    m_centre_x;
-    int    m_centre_y;
+    int    m_centre_x = 0;
+    int    m_centre_y = 0;
 
-    double m_main;
-    double m_edge;
-    double m_rescale;
-    double m_brighten;
+    double m_main     = 0.0;
+    double m_edge     = 0.0;
+    double m_rescale  = 0.0;
+    double m_brighten = 0.0;
 };
 
 } // namespace Digikam
