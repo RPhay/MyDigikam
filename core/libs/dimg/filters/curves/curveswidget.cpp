@@ -123,7 +123,7 @@ public:
 
         closestPoint = 0;
 
-        for (int i = 0 ; i < ImageCurves::NUM_POINTS ; ++i)
+        for (int i = 0 ; i < ImageCurves::NUMBER_OF_POINTS ; ++i)
         {
             int xcurvepoint = curves->getCurvePointX(channelType, i);
 
@@ -234,7 +234,7 @@ public:
             p1.setPen(QPen(Qt::red, 3, Qt::SolidLine));
             p1.setRenderHint(QPainter::Antialiasing);
 
-            for (int p = 0 ; p < ImageCurves::NUM_POINTS ; ++p)
+            for (int p = 0 ; p < ImageCurves::NUMBER_OF_POINTS ; ++p)
             {
                 QPoint curvePoint = curves->getCurvePoint(channelType, p);
 
@@ -381,7 +381,7 @@ void CurvesWidget::saveCurve(KConfigGroup& group, const QString& prefix)
         group.writeEntry(Private::getChannelTypeOption(prefix, channel),
                          (int) curves()->getCurveType(channel));
 
-        for (int point = 0 ; point <= ImageCurves::NUM_POINTS ; ++point)
+        for (int point = 0 ; point <= ImageCurves::NUMBER_OF_POINTS ; ++point)
         {
             QPoint p = curves()->getCurvePoint(channel, point);
 
@@ -413,7 +413,7 @@ void CurvesWidget::restoreCurve(KConfigGroup& group, const QString& prefix)
                                    Private::getChannelTypeOption(
                                        prefix, channel), 0));
 
-        for (int point = 0 ; point <= ImageCurves::NUM_POINTS ; ++point)
+        for (int point = 0 ; point <= ImageCurves::NUMBER_OF_POINTS ; ++point)
         {
             QPoint p = group.readEntry(Private::getPointOption(prefix,
                                                                channel, point),
@@ -693,7 +693,7 @@ void CurvesWidget::mousePressEvent(QMouseEvent* e)
 
             d->rightMost = d->imageHistogram->getHistogramSegments();
 
-            for (int i = closest_point + 1 ; i < ImageCurves::NUM_POINTS ; ++i)
+            for (int i = closest_point + 1 ; i < ImageCurves::NUMBER_OF_POINTS ; ++i)
             {
                 if (d->curves->getCurvePointX(d->channelType, i) != -1)
                 {

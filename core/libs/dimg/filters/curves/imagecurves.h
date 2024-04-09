@@ -40,7 +40,7 @@ public:
     /**
      * The max number of points contained in a curve.
      */
-    static const int NUM_POINTS       = 17;
+    static const int NUMBER_OF_POINTS       = 17;
 
     /**
      * Number of channels in a curve.

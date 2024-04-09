@@ -85,9 +85,9 @@ void CurvesContainer::initialize()
     {
         for (int i = 0 ; i < ColorChannels ; ++i)
         {
-            values[i].resize(ImageCurves::NUM_POINTS);
+            values[i].resize(ImageCurves::NUMBER_OF_POINTS);
 
-            for (int j = 1 ; j < (ImageCurves::NUM_POINTS - 1) ; ++j)
+            for (int j = 1 ; j < (ImageCurves::NUMBER_OF_POINTS - 1) ; ++j)
             {
                 values[i].setPoint(j, -1, -1);
             }
@@ -95,7 +95,7 @@ void CurvesContainer::initialize()
             // First and last points init.
 
             values[i].setPoint(0, 0, 0);
-            values[i].setPoint(ImageCurves::NUM_POINTS - 1, segmentMax, segmentMax);
+            values[i].setPoint(ImageCurves::NUMBER_OF_POINTS - 1, segmentMax, segmentMax);
         }
     }
 }

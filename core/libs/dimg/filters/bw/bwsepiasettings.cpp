@@ -560,7 +560,7 @@ void BWSepiaSettings::loadSettings()
         QPoint disable = ImageCurves::getDisabledValue();
         QPoint p;
 
-        for (int j = 0 ; j < ImageCurves::NUM_POINTS ; ++j)
+        for (int j = 0 ; j < ImageCurves::NUMBER_OF_POINTS ; ++j)
         {
             p.setX(stream.readLine().toInt());
             p.setY(stream.readLine().toInt());
@@ -611,7 +611,7 @@ void BWSepiaSettings::saveAsSettings()
 
         // TODO: cant we use the kconfig mechanisms provided by CurveWidget here?
 
-        for (int j = 0 ; j < ImageCurves::NUM_POINTS ; ++j)
+        for (int j = 0 ; j < ImageCurves::NUMBER_OF_POINTS ; ++j)
         {
             QPoint p = d->curvesBox->curves()->getCurvePoint(LuminosityChannel, j);
 
