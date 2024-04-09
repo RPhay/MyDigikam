@@ -31,24 +31,18 @@ class DIGIKAM_EXPORT SharpenFilter : public DImgThreadedFilter
 
 private:
 
-    struct Q_DECL_HIDDEN Args
+    class Q_DECL_HIDDEN Args
     {
-        explicit Args()
-          : start(0),
-            stop(0),
-            y(0),
-            kernelWidth(0),
-            normal_kernel(nullptr),
-            halfKernelWidth(0)
-        {
-        }
+    public:
 
-        uint    start;
-        uint    stop;
-        uint    y;
-        long    kernelWidth;
-        double* normal_kernel;
-        long    halfKernelWidth;
+        Args() = default;
+
+        uint    start           = 0;
+        uint    stop            = 0;
+        uint    y               = 0;
+        long    kernelWidth     = 0;
+        double* normal_kernel   = nullptr;
+        long    halfKernelWidth = 0;
     };
 
 public:
@@ -60,9 +54,9 @@ public:
      * Constructor for slave mode: execute immediately in current thread with specified master filter
      */
     SharpenFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
-                  int progressBegin=0, int progressEnd=100, double radius=0.0, double sigma=1.0);
+                  int progressBegin = 0, int progressEnd = 100, double radius = 0.0, double sigma = 1.0);
 
-    ~SharpenFilter() override;
+    ~SharpenFilter()                                                          override;
 
     static QString          FilterIdentifier()
     {
@@ -81,12 +75,12 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
     void                    readParameters(const FilterAction& action)        override;
 
 
@@ -104,8 +98,8 @@ private:
 
 private:
 
-    double m_radius;
-    double m_sigma;
+    double m_radius = 0.0;
+    double m_sigma  = 1.0;
 };
 
 } // namespace Digikam

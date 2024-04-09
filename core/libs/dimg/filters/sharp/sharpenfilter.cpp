@@ -39,9 +39,6 @@ namespace Digikam
 SharpenFilter::SharpenFilter(QObject* const parent)
     : DImgThreadedFilter(parent)
 {
-    m_radius = 0.0;
-    m_sigma  = 1.0;
-
     initFilter();
 }
 

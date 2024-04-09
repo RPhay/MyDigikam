@@ -74,10 +74,10 @@ private:
 
 private:
 
-    double m_radius;
-    double m_amount;
-    double m_threshold;
-    bool   m_luma;
+    double m_radius     = 1.0;
+    double m_amount     = 1.0;
+    double m_threshold  = 0.05;
+    bool   m_luma       = false;
 };
 
 } // namespace Digikam

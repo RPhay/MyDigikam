@@ -38,11 +38,7 @@ namespace Digikam
 {
 
 UnsharpMaskFilter::UnsharpMaskFilter(QObject* const parent)
-    : DImgThreadedFilter(parent),
-      m_radius          (1),
-      m_amount          (1.0),
-      m_threshold       (0.05),
-      m_luma            (false)
+    : DImgThreadedFilter(parent)
 {
     initFilter();
 }

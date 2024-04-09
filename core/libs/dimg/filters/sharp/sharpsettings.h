@@ -42,44 +42,28 @@ public:
 
 public:
 
-    explicit SharpContainer()
-      : method       (SimpleSharp),
-        ssRadius     (0),
-        umRadius     (1.0),
-        umAmount     (1.0),
-        umThreshold  (0.05),
-        umLumaOnly   (false),
-        rfRadius     (1.0),
-        rfCorrelation(0.5),
-        rfNoise      (0.03),
-        rfGauss      (0.0),
-        rfMatrix     (5)
-    {
-    };
-
-    ~SharpContainer()
-    {
-    };
+    SharpContainer()  = default;
+    ~SharpContainer() = default;
 
 public:
 
-    int    method;      ///< Store SharpingMethods value
+    int    method           = SimpleSharp;      ///< Store SharpingMethods value
 
     /// Simple sharp
-    int    ssRadius;
+    int    ssRadius         = 0;
 
     /// Unsharp mask
-    double umRadius;
-    double umAmount;
-    double umThreshold;
-    bool   umLumaOnly;
+    double umRadius         = 1.0;
+    double umAmount         = 1.0;
+    double umThreshold      = 0.05;
+    bool   umLumaOnly       = false;
 
     /// Refocus
-    double rfRadius;
-    double rfCorrelation;
-    double rfNoise;
-    double rfGauss;
-    int    rfMatrix;
+    double rfRadius         = 1.0;
+    double rfCorrelation    = 0.5;
+    double rfNoise          = 0.03;
+    double rfGauss          = 0.0;
+    int    rfMatrix         = 5;
 };
 
 // -----------------------------------------------------------------------------------------------
