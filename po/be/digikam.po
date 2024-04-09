@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-08 01:43+0000\n"
+"POT-Creation-Date: 2024-04-09 01:43+0000\n"
 "PO-Revision-Date: 2022-09-09 12:18\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -7688,7 +7688,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:669
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:370
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:361
 #, kde-format
 msgid "Film"
 msgstr "Плёнка"
@@ -11745,7 +11745,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:350
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
 #, kde-format
 msgid "Contrast:"
 msgstr "Кантраснасць:"
@@ -11777,7 +11777,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:219
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:102
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:94
 #, kde-format
 msgid "Saturation:"
 msgstr "Насычанасць:"
@@ -17184,7 +17184,7 @@ msgstr "Струмень"
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:215
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:261
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:75
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:117
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:108
 #, kde-format
 msgctxt "@label"
 msgid "Type:"
@@ -25141,7 +25141,7 @@ msgstr "Увядзіце значэнне карэкцыі для яркасці
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:356
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:347
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "Увядзіце значэнне карэкцыі для кантраснасці выявы."
@@ -25175,7 +25175,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:260
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:345
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:336
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Гэта крывая для наладжвання агульнай асветленасці выявы"
@@ -28620,28 +28620,28 @@ msgstr "Яркасць / Кантраст / Фільтр гамы"
 msgid "Set here the gamma adjustment of the image."
 msgstr "Увядзіце значэнне карэкцыі для гамы выявы."
 
-#: core/libs/dimg/filters/bw/bwsepiafilter.cpp:84
+#: core/libs/dimg/filters/bw/bwsepiafilter.cpp:75
 #, kde-format
 msgid "Black & White / Sepia Filter"
 msgstr "Фільтр чорнага і белага / Сепія"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:150
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:141
 #, kde-format
 msgctxt "generic black and white film"
 msgid "Generic"
 msgstr "Звычайны"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:151
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:142
 #, kde-format
 msgid "<b>Generic</b>:<p>Simulate a generic black and white film.</p>"
 msgstr "<b>Звычайны</b>:<p>Імітуе звычайную чорна-белую плёнку.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:154
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:145
 #, kde-format
 msgid "Agfa 200X"
 msgstr "Agfa 200X"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:155
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:146
 #, kde-format
 msgid ""
 "<b>Agfa 200X</b>:<p>Simulate the Agfa 200X black and white film at 200 ISO.</"
@@ -28650,12 +28650,12 @@ msgstr ""
 "<b>Agfa 200X</b>:<p> Імітуе чорна-белую плёнку Agfa 200X (адчувальнасць 200 "
 "ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:158
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:149
 #, kde-format
 msgid "Agfa Pan 25"
 msgstr "Agfa Pan 25"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:159
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:150
 #, kde-format
 msgid ""
 "<b>Agfa Pan 25</b>:<p>Simulate the Agfa Pan black and white film at 25 ISO.</"
@@ -28664,12 +28664,12 @@ msgstr ""
 "<b>Agfa Pan 25</b>:<p> Імітуе чорна-белую плёнку Agfa 25 (адчувальнасць 25 "
 "ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:162
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:153
 #, kde-format
 msgid "Agfa Pan 100"
 msgstr "Agfa Pan 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:163
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:154
 #, kde-format
 msgid ""
 "<b>Agfa Pan 100</b>:<p>Simulate the Agfa Pan black and white film at 100 ISO."
@@ -28678,12 +28678,12 @@ msgstr ""
 "<b>Agfa Pan 100</b>:<p> Імітуе чорна-белую плёнку Agfa 100 (адчувальнасць "
 "100 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:166
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:157
 #, kde-format
 msgid "Agfa Pan 400"
 msgstr "Agfa Pan 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:167
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:158
 #, kde-format
 msgid ""
 "<b>Agfa Pan 400</b>:<p>Simulate the Agfa Pan black and white film at 400 ISO."
@@ -28692,12 +28692,12 @@ msgstr ""
 "<b>Agfa Pan 400</b>:<p> Імітуе чорна-белую плёнку Agfa 400 (адчувальнасць "
 "400 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:170
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:161
 #, kde-format
 msgid "Ilford Delta 100"
 msgstr "Ilford Delta 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:171
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:162
 #, kde-format
 msgid ""
 "<b>Ilford Delta 100</b>:<p>Simulate the Ilford Delta black and white film at "
@@ -28706,12 +28706,12 @@ msgstr ""
 "<b>Ilford Delta 100</b>:<p> Імітуе чорна-белую плёнку Ilford Delta "
 "(адчувальнасць 100 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:174
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:165
 #, kde-format
 msgid "Ilford Delta 400"
 msgstr "Ilford Delta 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:175
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:166
 #, kde-format
 msgid ""
 "<b>Ilford Delta 400</b>:<p>Simulate the Ilford Delta black and white film at "
@@ -28720,12 +28720,12 @@ msgstr ""
 "<b>Ilford Delta 400</b>:<p> Імітуе чорна-белую плёнку Ilford Delta "
 "(адчувальнасць 400 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:178
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:169
 #, kde-format
 msgid "Ilford Delta 400 Pro 3200"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:179
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:170
 #, kde-format
 msgid ""
 "<b>Ilford Delta 400 Pro 3200</b>:<p>Simulate the Ilford Delta 400 Pro black "
@@ -28734,12 +28734,12 @@ msgstr ""
 "<b>Ilford Delta 400 Pro 3200</b>:<p> Імітуе чорна-белую плёнку Ilford Delta "
 "400 Pro (адчувальнасць 3200 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:182
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:173
 #, kde-format
 msgid "Ilford FP4 Plus"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:183
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:174
 #, kde-format
 msgid ""
 "<b>Ilford FP4 Plus</b>:<p>Simulate the Ilford FP4 Plus black and white film "
@@ -28748,12 +28748,12 @@ msgstr ""
 "<b>Ilford FP4 Plus</b>:<p> Імітуе чорна-белую плёнку Ilford FP4 Plus "
 "(адчувальнасць 125 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:186
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:177
 #, kde-format
 msgid "Ilford HP5 Plus"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:187
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:178
 #, kde-format
 msgid ""
 "<b>Ilford HP5 Plus</b>:<p>Simulate the Ilford HP5 Plus black and white film "
@@ -28762,12 +28762,12 @@ msgstr ""
 "<b>Ilford HP5 Plus</b>:<p> Імітуе чорна-белую плёнку Ilford HP5 Plus "
 "(адчувальнасць 400 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:190
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:181
 #, kde-format
 msgid "Ilford PanF Plus"
 msgstr "Ilford PanF Plus"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:191
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:182
 #, kde-format
 msgid ""
 "<b>Ilford PanF Plus</b>:<p>Simulate the Ilford PanF Plus black and white "
@@ -28776,12 +28776,12 @@ msgstr ""
 "<b>Ilford PanF Plus</b>:<p> Імітуе чорна-белую плёнку Ilford PanF Plus "
 "(адчувальнасць 50 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:194
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:185
 #, kde-format
 msgid "Ilford XP2 Super"
 msgstr "Ilford XP2 Super"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:195
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:186
 #, kde-format
 msgid ""
 "<b>Ilford XP2 Super</b>:<p>Simulate the Ilford XP2 Super black and white "
@@ -28790,12 +28790,12 @@ msgstr ""
 "<b>Ilford XP2 Super</b>:<p> Імітуе чорна-белую плёнку Ilford XP2 Super "
 "(адчувальнасць 400 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:198
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:189
 #, kde-format
 msgid "Kodak Tmax 100"
 msgstr "Kodak Tmax 100"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:199
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:190
 #, kde-format
 msgid ""
 "<b>Kodak Tmax 100</b>:<p>Simulate the Kodak Tmax black and white film at 100 "
@@ -28804,12 +28804,12 @@ msgstr ""
 "<b>Kodak Tmax 100</b>:<p> Імітуе чорна-белую плёнку Kodak Tmax Plus "
 "(адчувальнасць 100 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:202
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:193
 #, kde-format
 msgid "Kodak Tmax 400"
 msgstr "Kodak Tmax 400"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:203
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:194
 #, kde-format
 msgid ""
 "<b>Kodak Tmax 400</b>:<p>Simulate the Kodak Tmax black and white film at 400 "
@@ -28818,12 +28818,12 @@ msgstr ""
 "<b>Kodak Tmax 400</b>:<p> Імітуе чорна-белую плёнку Kodak Tmax Plus "
 "(адчувальнасць 400 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:206
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:197
 #, kde-format
 msgid "Kodak TriX"
 msgstr "Kodak TriX"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:207
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:198
 #, kde-format
 msgid ""
 "<b>Kodak TriX</b>:<p>Simulate the Kodak TriX black and white film at 400 ISO."
@@ -28832,12 +28832,12 @@ msgstr ""
 "<b>Kodak Trix</b>:<p> Імітуе чорна-белую плёнку Kodak TriX Plus "
 "(адчувальнасць 400 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:212
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:203
 #, kde-format
 msgid "Ilford SPX 200 (Infrared)"
 msgstr "Ilford SPX 200 (інфрачырвоная)"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:213
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:204
 #, kde-format
 msgid ""
 "<b>Ilford SPX 200</b>:<p>Simulate the Ilford SPX infrared film at 200 ISO.</"
@@ -28846,12 +28846,12 @@ msgstr ""
 "<b>Ilford SPX 200</b>:<p> Імітуе інфрачырвоную плёнку Ilford SPX "
 "(адчувальнасць 200 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:216
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:207
 #, kde-format
 msgid "Ilford SPX 400 (Infrared)"
 msgstr "Ilford SPX 400 (інфрачырвоная)"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:217
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:208
 #, kde-format
 msgid ""
 "<b>Ilford SPX 400</b>:<p>Simulate the Ilford SPX infrared film at 400 ISO.</"
@@ -28860,12 +28860,12 @@ msgstr ""
 "<b>Ilford SPX 400</b>:<p> Імітуе інфрачырвоную плёнку Ilford SPX "
 "(адчувальнасць 400 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:220
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:211
 #, kde-format
 msgid "Ilford SPX 800 (Infrared)"
 msgstr "Ilford SPX 800 (інфрачырвоная)"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:221
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:212
 #, kde-format
 msgid ""
 "<b>Ilford SPX 800</b>:<p>Simulate the Ilford SPX infrared film at 800 ISO.</"
@@ -28874,22 +28874,22 @@ msgstr ""
 "<b>Ilford SPX 800</b>:<p> Імітуе інфрачырвоную плёнку Ilford SPX "
 "(адчувальнасць 800 ISO).</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:224
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:215
 #, kde-format
 msgid "Kodak HIE (Infrared)"
 msgstr "Kodak HIE  (інфрачырвоная)"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:225
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:216
 #, kde-format
 msgid "<b>Kodak HIE</b>:<p>Simulate the Kodak HIE infrared film.</p>"
 msgstr "<b>Kodak HIE</b>:<p> Імітуе інфрачырвоную плёнку Kodak HIE.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:234
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:225
 #, kde-format
 msgid "No Lens Filter"
 msgstr "Без светлавога фільтра"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:235
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:226
 #, kde-format
 msgid ""
 "<b>No Lens Filter</b>:<p>Do not apply a lens filter when rendering the image."
@@ -28898,13 +28898,13 @@ msgstr ""
 "<b>Без светлавога фільтра</b>:<p>Не ўжываць светлавы фільтр пры апрацоўванні "
 "выяў.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:238
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:324
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:229
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:315
 #, kde-format
 msgid "Green Filter"
 msgstr "Зялёны фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:239
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:230
 #, kde-format
 msgid ""
 "<b>Black & White with Green Filter</b>:<p>Simulate black and white film "
@@ -28915,12 +28915,12 @@ msgstr ""
 "якой выкарыстоўваўся зялёны светлавы фільтр. Фільтр рэкамендавана "
 "выкарыстоўваць ва ўсіх сцэнах, за выключэннем неба.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:244
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:235
 #, kde-format
 msgid "Orange Filter"
 msgstr "Аранжавы фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:245
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:236
 #, kde-format
 msgid ""
 "<b>Black & White with Orange Filter</b>:<p>Simulate black and white film "
@@ -28931,12 +28931,12 @@ msgstr ""
 "экспазіцыі якой выкарыстоўваўся аранжавы светлавы фільтр. Фільтр "
 "рэкамендавана выкарыстоўваць у марскіх і паветраных сцэнах.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:250
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:241
 #, kde-format
 msgid "Red Filter"
 msgstr "Чырвоны фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:251
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:242
 #, kde-format
 msgid ""
 "<b>Black & White with Red Filter</b>:<p>Simulate black and white film "
@@ -28947,12 +28947,12 @@ msgstr ""
 "якой выкарыстоўваўся чырвоны светлавы фільтр. Фільтр выкарыстоўваецца пры "
 "стварэнні незвычайных нябесных эфектаў і імітацыі начной здымкі.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:256
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:247
 #, kde-format
 msgid "Yellow Filter"
 msgstr "Жоўты фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:257
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:248
 #, kde-format
 msgid ""
 "<b>Black & White with Yellow Filter</b>:<p>Simulate black and white film "
@@ -28960,12 +28960,12 @@ msgid ""
 "and improves contrast. Ideal for landscapes.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:262
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:253
 #, kde-format
 msgid "Yellow-Green Filter"
 msgstr "Жоўта-зялёны фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:263
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:254
 #, kde-format
 msgid ""
 "<b>Black & White with Yellow-Green Filter</b>:<p>Simulate black and white "
@@ -28976,12 +28976,12 @@ msgid ""
 "filter is highly effective for indoor portraits under tungsten lighting.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:270
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:261
 #, kde-format
 msgid "Blue Filter"
 msgstr "Блакітны фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:271
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:262
 #, kde-format
 msgid ""
 "<b>Black & White with Blue Filter</b>:<p>Simulate black and white film "
@@ -28989,32 +28989,32 @@ msgid ""
 "transfer and contrast effects.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:276
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:267
 #, kde-format
 msgid "Strength:"
 msgstr "Інтэнсіўнасць:"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:282
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:273
 #, kde-format
 msgid "Here, set the strength adjustment of the lens filter."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:293
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:284
 #, kde-format
 msgid "No Tone Filter"
 msgstr "Без фільтра"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:294
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:285
 #, kde-format
 msgid "<b>No Tone Filter</b>:<p>Do not apply a tone filter to the image.</p>"
 msgstr "<b>Без фільтра</b>:<p>Да выявы не ўжываецца фільтр.</p>"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:297
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:288
 #, kde-format
 msgid "Sepia Filter"
 msgstr "Сепія"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:298
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:289
 #, kde-format
 msgid ""
 "<b>Black & White with Sepia Tone</b>:<p>Gives a warm highlight and mid-tone "
@@ -29022,101 +29022,101 @@ msgid ""
 "of bleaching a print and re-developing in a sepia toner.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:303
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:294
 #, kde-format
 msgid "Brown Filter"
 msgstr "Карычневы фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:304
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:295
 #, kde-format
 msgid ""
 "<b>Black & White with Brown Tone</b>:<p>This filter is more neutral than the "
 "Sepia Tone filter.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:308
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:299
 #, kde-format
 msgid "Cold Filter"
 msgstr "Халодны фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:309
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:300
 #, kde-format
 msgid ""
 "<b>Black & White with Cold Tone</b>:<p>Start subtly and replicate printing "
 "on a cold tone black and white paper such as a bromide enlarging paper.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:314
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:305
 #, kde-format
 msgid "Selenium Filter"
 msgstr "Селенавы фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:315
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:306
 #, kde-format
 msgid ""
 "<b>Black & White with Selenium Tone</b>:<p>This effect replicates "
 "traditional selenium chemical toning done in the darkroom.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:319
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:310
 #, kde-format
 msgid "Platinum Filter"
 msgstr "Плацінавы фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:320
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:311
 #, kde-format
 msgid ""
 "<b>Black & White with Platinum Tone</b>:<p>This effect replicates "
 "traditional platinum chemical toning done in the darkroom.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:325
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:316
 #, kde-format
 msgid ""
 "<b>Black & White with greenish tint</b>:<p>This effect is also known as "
 "Verdante.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:372
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:363
 #, kde-format
 msgid "Lens Filters"
 msgstr "Светлавы фільтр"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:374
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:365
 #, kde-format
 msgid "Tone"
 msgstr "Замалёўка"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:376
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:367
 #, kde-format
 msgid "Luminosity"
 msgstr "Асветленасць"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:520
 #, fuzzy, kde-format
 #| msgid "Black & White Settings File to Load"
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "Загрузка налад чорна-белага фільтра"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:547
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:538
 #, kde-format
 msgid "\"%1\" is not a Black & White settings text file."
 msgstr "\"%1\" не ёсць тэкставым файлам з наладамі чорна-белага фільтра."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:592
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:584
 #, kde-format
 msgid "Cannot load settings from the Black & White text file."
 msgstr "Не атрымалася загрузіць налады з тэкставага файла."
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:592
 #, fuzzy, kde-format
 #| msgid "Black & White Settings File to Save"
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr "Захаванне налад чорна-белага фільтра"
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:631
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
 msgstr "Не атрымалася захаваць налады чорна-белага фільтра ў тэкставы файл."
@@ -29131,37 +29131,37 @@ msgstr "Інфрачырвоны фільтр"
 msgid "Channel Mixer Tool"
 msgstr "Мікшар каналаў"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:130
+#: core/libs/dimg/filters/bw/mixersettings.cpp:117
 #, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr "Канал вываду:"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:132
+#: core/libs/dimg/filters/bw/mixersettings.cpp:119
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr "Чырвоны"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:133
+#: core/libs/dimg/filters/bw/mixersettings.cpp:120
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr "Зялёны"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:121
 #, kde-format
 msgctxt "@item: color"
 msgid "Blue"
 msgstr "Сіні"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:136
+#: core/libs/dimg/filters/bw/mixersettings.cpp:123
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr "Чырвоны (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:141
+#: core/libs/dimg/filters/bw/mixersettings.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
@@ -29169,13 +29169,13 @@ msgstr ""
 "Вызначыць узровень чырвонага колеру ў адсотках адносна ўзроўню бягучага "
 "канала."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:144
+#: core/libs/dimg/filters/bw/mixersettings.cpp:131
 #, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr "Зялёны (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:149
+#: core/libs/dimg/filters/bw/mixersettings.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
@@ -29183,51 +29183,51 @@ msgstr ""
 "Вызначыць узровень зялёнага колеру ў адсотках адносна ўзроўню бягучага "
 "канала."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:152
+#: core/libs/dimg/filters/bw/mixersettings.cpp:139
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr "Сіні (%):"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:157
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr ""
 "Вызначыць узровень сіняга колеру ў адсотках адносна ўзроўню бягучага канала."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:162
+#: core/libs/dimg/filters/bw/mixersettings.cpp:149
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "&Скінуць"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:164
+#: core/libs/dimg/filters/bw/mixersettings.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Reset color channels' gains settings from the currently selected channel."
 msgstr "Скінуць налады бягучага канала."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:172
+#: core/libs/dimg/filters/bw/mixersettings.cpp:159
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr "Захоўваць асветленасць"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:173
+#: core/libs/dimg/filters/bw/mixersettings.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option is you want preserve the image luminosity."
 msgstr "Уключыце гэты параметр, каб захоўваць асветленасць выявы."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:178
+#: core/libs/dimg/filters/bw/mixersettings.cpp:165
 #, kde-format
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr "Манахромны рэжым"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:180
+#: core/libs/dimg/filters/bw/mixersettings.cpp:167
 #, kde-format
 msgctxt "@info: help"
 msgid ""
@@ -29238,13 +29238,13 @@ msgid ""
 "Note: in this mode, the histogram will display only luminosity values."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:351
+#: core/libs/dimg/filters/bw/mixersettings.cpp:338
 #, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr "Агулам: %1 (%)"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:545
+#: core/libs/dimg/filters/bw/mixersettings.cpp:533
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Select Gimp Gains Mixer File to Load"
@@ -29252,13 +29252,13 @@ msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Абярыце файл змешвання каналаў GIMP для загрузкі"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:625
+#: core/libs/dimg/filters/bw/mixersettings.cpp:613
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr "Не атрымалася загрузіць налады з файла змешвання каналаў."
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:635
+#: core/libs/dimg/filters/bw/mixersettings.cpp:623
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Gimp Gains Mixer File to Save"
@@ -29266,7 +29266,7 @@ msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "Абярыце файл змешвання каналаў GIMP для захавання"
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:714
+#: core/libs/dimg/filters/bw/mixersettings.cpp:702
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
@@ -29277,60 +29277,60 @@ msgstr ""
 msgid "Tonality Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbfilter.cpp:102
+#: core/libs/dimg/filters/cb/cbfilter.cpp:92
 #, kde-format
 msgid "Color Balance Tool"
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:78
+#: core/libs/dimg/filters/cb/cbsettings.cpp:73
 #, kde-format
 msgctxt "@label: color"
 msgid "Cyan"
 msgstr "Марской хвалі"
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:84
+#: core/libs/dimg/filters/cb/cbsettings.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid "Set here the cyan/red color adjustment of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:86
+#: core/libs/dimg/filters/cb/cbsettings.cpp:81
 #, kde-format
 msgctxt "@label: color"
 msgid "Red"
 msgstr "Чырвоны"
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:91
+#: core/libs/dimg/filters/cb/cbsettings.cpp:86
 #, kde-format
 msgctxt "@label: color"
 msgid "Magenta"
 msgstr "Пурпуровы"
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:97
+#: core/libs/dimg/filters/cb/cbsettings.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid "Set here the magenta/green color adjustment of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:99
+#: core/libs/dimg/filters/cb/cbsettings.cpp:94
 #, kde-format
 msgctxt "@label: color"
 msgid "Green"
 msgstr "Зялёны"
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:104
+#: core/libs/dimg/filters/cb/cbsettings.cpp:99
 #, kde-format
 msgctxt "@label: color"
 msgid "Yellow"
 msgstr "Жоўты"
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:107
+#: core/libs/dimg/filters/cb/cbsettings.cpp:102
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue"
 msgstr "Сіні"
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:113
+#: core/libs/dimg/filters/cb/cbsettings.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Set here the yellow/blue color adjustment of the image."
@@ -29839,7 +29839,7 @@ msgstr "Пераўтварыць глыбіню колеру"
 msgid "Unknown filter"
 msgstr "Невядомы фільтр"
 
-#: core/libs/dimg/filters/film/filmfilter.cpp:396
+#: core/libs/dimg/filters/film/filmfilter.cpp:467
 #, kde-format
 msgid "Color Negative Inverter"
 msgstr ""
@@ -29869,42 +29869,42 @@ msgstr "Фільтр размыцця"
 msgid "Charcoal Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxfilter.cpp:75
+#: core/libs/dimg/filters/fx/colorfxfilter.cpp:71
 #, kde-format
 msgid "Color FX Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:119
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:110
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Solarize"
 msgstr "Салярызацыя"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:120
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:111
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Vivid"
 msgstr "Яркі"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:121
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:112
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Neon"
 msgstr "Неон"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:122
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:113
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Find Edges"
 msgstr "Знайсці краі"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:123
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:114
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Lut3D"
 msgstr "Lut3D"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:126
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:117
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29918,25 +29918,25 @@ msgid ""
 "\"Lut3D\": coloring images with Lut3D filters"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:150
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:141
 #, kde-format
 msgctxt "@label: level of the effect"
 msgid "Level:"
 msgstr "Узровень:"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:154
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Set here the level of the effect."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:156
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:147
 #, kde-format
 msgctxt "@label"
 msgid "Iteration:"
 msgstr "Праходы:"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:160
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29944,208 +29944,208 @@ msgid ""
 "Edges effects."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:192
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:183
 #, kde-format
 msgctxt "@label"
 msgid "Intensity:"
 msgstr "Насычанасць:"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:196
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:187
 #, kde-format
 msgctxt "@info"
 msgid "Set here the intensity of the filter."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:376
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:373
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Bleach"
 msgstr "Абясколерванне"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:380
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:377
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Blue Crush"
 msgstr "Сцісканне сіняга"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:384
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:381
 #, kde-format
 msgctxt "@info: effect type"
 msgid "BW Contrast"
 msgstr "Кантрасны ч/б"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:388
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:385
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Instant"
 msgstr "Імгненна"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:392
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:389
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Original"
 msgstr "Арыгінал"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:396
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:393
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Punch"
 msgstr "Дзіркакол"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:400
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:397
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Summer"
 msgstr "Лета"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:404
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:401
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Tokyo"
 msgstr "Токіа"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:408
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:405
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Vintage"
 msgstr "Вінтаж"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:412
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:409
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Washout"
 msgstr "Размыццё"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:416
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:413
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Washout Color"
 msgstr "Размыццё колеру"
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:420
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:417
 #, kde-format
 msgctxt "@info: effect type"
 msgid "X Process"
 msgstr "Працэс Х"
 
-#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:103
+#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:95
 #, kde-format
 msgid "Distortion Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/embossfilter.cpp:61
+#: core/libs/dimg/filters/fx/embossfilter.cpp:60
 #, kde-format
 msgid "Emboss Effect"
 msgstr "Эфект ціснення"
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:111
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:104
 #, kde-format
 msgid "Film Grain Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:166
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:136
 #, kde-format
 msgid "Grain Size:"
 msgstr "Памер зерня:"
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:170
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:140
 #, kde-format
 msgid "Set here the graininess size of film."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:172
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:142
 #, kde-format
 msgid "Photographic Distribution"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:173
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:143
 #, kde-format
 msgid ""
 "Set on this option to render grain using a photon statistic distribution. "
 "This require more computation and can take a while."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:186
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:233
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:280
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:156
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:203
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:250
 #, kde-format
 msgid "Intensity:"
 msgstr "Насычанасць:"
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:190
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:160
 #, kde-format
 msgid ""
 "Set here the film ISO-sensitivity to use for simulating the film graininess."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:195
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:242
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:289
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:165
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:212
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:259
 #, kde-format
 msgid "Shadows:"
 msgstr "Цені:"
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:199
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:246
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:293
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:169
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:216
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:263
 #, kde-format
 msgid "Set how much the filter affects highlights."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:203
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:250
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:297
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:173
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:220
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:267
 #, kde-format
 msgid "Midtones:"
 msgstr "Паўтоны:"
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:207
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:254
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:301
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:177
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:224
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:271
 #, kde-format
 msgid "Set how much the filter affects midtones."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:211
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:258
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:305
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:181
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:228
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:275
 #, kde-format
 msgid "Highlights:"
 msgstr "Падсвятленне:"
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:215
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:262
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:309
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:185
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:232
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:279
 #, kde-format
 msgid "Set how much the filter affects shadows."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:237
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:207
 #, kde-format
 msgid "Set here the film sensitivity to use for simulating the CCD blue noise."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:284
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:254
 #, kde-format
 msgid "Set here the film sensitivity to use for simulating the CCD red noise."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:328
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:298
 #, kde-format
 msgid "Common Settings"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:331
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:301
 #, kde-format
 msgid "Luminance Noise"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:334
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:304
 #, kde-format
 msgid "Chrominance Blue Noise"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:337
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:307
 #, kde-format
 msgid "Chrominance Red Noise"
 msgstr ""
@@ -30155,12 +30155,12 @@ msgstr ""
 msgid "Invert Effect"
 msgstr "Эфект інверсіі"
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:84
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:79
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:95
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:89
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr ""
@@ -30457,54 +30457,54 @@ msgstr "Чорная рамка"
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslfilter.cpp:82
+#: core/libs/dimg/filters/hsl/hslfilter.cpp:74
 #, kde-format
 msgid "Hue / Saturation / Lightness Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:87
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:79
 #, kde-format
 msgid "Select the hue and saturation adjustments of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:91
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:83
 #, kde-format
 msgid "You can see here a color preview of the hue and saturation adjustments."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:95
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:87
 #, kde-format
 msgid "Hue:"
 msgstr "Тон:"
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:100
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:92
 #, kde-format
 msgid "Set here the hue adjustment of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:107
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:99
 #, kde-format
 msgid "Set here the saturation adjustment of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:109
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:101
 #, kde-format
 msgid "Vibrance:"
 msgstr "Маляўнічасць:"
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:114
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:106
 #, kde-format
 msgid ""
 "Set here the vibrance adjustment of the image.Vibrance performs selective "
 "saturation on less saturated colors and avoiding skin tones."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:117
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:109
 #, kde-format
 msgid "Lightness:"
 msgstr "Святло:"
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:122
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:114
 #, kde-format
 msgid "Set here the lightness adjustment of the image."
 msgstr ""
