@@ -36,32 +36,24 @@ class Q_DECL_HIDDEN ShearFilter::Private
 {
 public:
 
-    explicit Private()
-      : antiAlias(true),
-        orgW(0),
-        orgH(0),
-        hAngle(0),
-        vAngle(0),
-        backgroundColor(Qt::black)
-    {
-    }
+    Private() = default;
 
-    bool   antiAlias;
+    bool   antiAlias        = true;
 
-    int    orgW;
-    int    orgH;
+    int    orgW             = 0;
+    int    orgH             = 0;
 
-    float  hAngle;
-    float  vAngle;
+    float  hAngle           = 0.0F;
+    float  vAngle           = 0.0F;
 
-    QColor backgroundColor;
+    QColor backgroundColor  = Qt::black;
 
     QSize  newSize;
 };
 
 ShearFilter::ShearFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
@@ -69,7 +61,7 @@ ShearFilter::ShearFilter(QObject* const parent)
 ShearFilter::ShearFilter(DImg* const orgImage, QObject* const parent, float hAngle, float vAngle,
                          bool antialiasing, const QColor& backgroundColor, int orgW, int orgH)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("sheartool")),
-      d(new Private)
+      d                 (new Private)
 {
     d->hAngle          = hAngle;
     d->vAngle          = vAngle;

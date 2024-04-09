@@ -64,22 +64,34 @@ static LqrEnergyFuncBuiltinType toLqrEnergy(ContentAwareContainer::EnergyFunctio
     {
         case ContentAwareContainer::GradientNorm:
         default:
+        {
             return LQR_EF_GRAD_NORM;
+        }
 
         case ContentAwareContainer::SumOfAbsoluteValues:
+        {
             return LQR_EF_GRAD_SUMABS;
+        }
 
         case ContentAwareContainer::XAbsoluteValue:
+        {
             return LQR_EF_GRAD_XABS;
+        }
 
         case ContentAwareContainer::LumaGradientNorm:
+        {
             return LQR_EF_LUMA_GRAD_NORM;
+        }
 
         case ContentAwareContainer::LumaSumOfAbsoluteValues:
+        {
             return LQR_EF_LUMA_GRAD_SUMABS;
+        }
 
         case ContentAwareContainer::LumaXAbsoluteValue:
+        {
             return LQR_EF_LUMA_GRAD_XABS;
+        }
     }
 }
 
@@ -89,10 +101,14 @@ static LqrResizeOrder toLqrOrder(Qt::Orientation direction)
     {
         case Qt::Horizontal:
         default:
+        {
             return LQR_RES_ORDER_HOR;
+        }
 
         case Qt::Vertical:
+        {
             return LQR_RES_ORDER_VERT;
+        }
     }
 }
 
@@ -102,29 +118,25 @@ class Q_DECL_HIDDEN ContentAwareFilter::Private
 {
 public:
 
-    explicit Private()
-      : carver(nullptr),
-        progress(nullptr)
-    {
-    }
+    Private() = default;
 
     ContentAwareContainer settings;
 
-    LqrCarver*            carver;
-    LqrProgress*          progress;
+    LqrCarver*            carver    = nullptr;
+    LqrProgress*          progress  = nullptr;
 
 };
 
 ContentAwareFilter::ContentAwareFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 ContentAwareFilter::ContentAwareFilter(DImg* const orgImage, QObject* const parent, const ContentAwareContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("ContentAwareFilter")),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 
@@ -273,7 +285,7 @@ void ContentAwareFilter::filterImage()
 
 void ContentAwareFilter::progressCallback(int progress)
 {
-    if (progress % 5 == 0)
+    if ((progress % 5) == 0)
     {
         postProgress(progress);
     }
@@ -299,12 +311,12 @@ bool ContentAwareFilter::isSkinTone(const DColor& color)
     double B = color.blue()  / 255.0;
     double S = R + G + B;
 
-    return(
-           ((B / G)             < 1.249) &&
-           ((S / 3.0 * R)       > 0.696) &&
-           ((1.0 / 3.0 - B / S) > 0.014) &&
-           ((G / (3.0 * S))     < 0.108)
-          );
+    return (
+            ((B / G)             < 1.249) &&
+            ((S / 3.0 * R)       > 0.696) &&
+            ((1.0 / 3.0 - B / S) > 0.014) &&
+            ((G / (3.0 * S))     < 0.108)
+           );
 }
 
 void ContentAwareFilter::buildSkinToneBias()

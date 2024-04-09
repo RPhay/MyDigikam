@@ -43,33 +43,22 @@ public:
 
 public:
 
-    FreeRotationContainer()
-      : antiAlias(true),
-        autoCrop(NoAutoCrop),
-        orgW(0),
-        orgH(0),
-        angle(0.0),
-        backgroundColor(Qt::black)
-    {
-    };
-
-    ~FreeRotationContainer()
-    {
-    };
+    FreeRotationContainer()  = default;
+    ~FreeRotationContainer() = default;
 
 public:
 
-    bool   antiAlias;
+    bool   antiAlias        = true;
 
-    int    autoCrop;
-    int    orgW;
-    int    orgH;
+    int    autoCrop         = NoAutoCrop;
+    int    orgW             = 0;
+    int    orgH             = 0;
 
-    double angle;
+    double angle            = 0.0;
 
     QSize  newSize;
 
-    QColor backgroundColor;
+    QColor backgroundColor  = Qt::black;
 };
 
 // -----------------------------------------------------------------------------------------
@@ -82,9 +71,9 @@ public:
 
     explicit FreeRotationFilter(QObject* const parent = nullptr);
     explicit FreeRotationFilter(DImg* const orgImage, QObject* const parent = nullptr,
-                                const FreeRotationContainer& settings=FreeRotationContainer());
+                                const FreeRotationContainer& settings = FreeRotationContainer());
 
-    ~FreeRotationFilter() override;
+    ~FreeRotationFilter()                                                     override;
 
     QSize getNewSize() const;
 
@@ -108,12 +97,12 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

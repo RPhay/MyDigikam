@@ -37,9 +37,9 @@ class DIGIKAM_EXPORT ShearFilter : public DImgThreadedFilter
 public:
 
     explicit ShearFilter(QObject* const parent = nullptr);
-    explicit ShearFilter(DImg* const orgImage, QObject* const parent = nullptr, float hAngle=0.0, float vAngle=0.0,
-                         bool antialiasing=true, const QColor& backgroundColor=Qt::black, int orgW=0, int orgH=0);
-    ~ShearFilter() override;
+    explicit ShearFilter(DImg* const orgImage, QObject* const parent = nullptr, float hAngle = 0.0, float vAngle = 0.0,
+                         bool antialiasing = true, const QColor& backgroundColor = Qt::black, int orgW = 0, int orgH = 0);
+    ~ShearFilter()                                                            override;
 
     QSize getNewSize() const;
 
@@ -60,12 +60,12 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

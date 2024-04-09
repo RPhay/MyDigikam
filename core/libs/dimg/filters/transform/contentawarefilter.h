@@ -48,38 +48,25 @@ public:
 
 public:
 
-    ContentAwareContainer()
-      : preserve_skin_tones(false),
-        width(0),
-        height(0),
-        step(1),
-        side_switch_freq(4),
-        rigidity(0.0),
-        func(GradientNorm),
-        resize_order(Qt::Horizontal)
-    {
-    };
-
-    ~ContentAwareContainer()
-    {
-    };
+    ContentAwareContainer()  = default;
+    ~ContentAwareContainer() = default;
 
 public:
 
-    bool            preserve_skin_tones;
+    bool            preserve_skin_tones = false;
 
-    uint            width;
-    uint            height;
+    uint            width               = 0;
+    uint            height              = 0;
 
-    int             step;
-    int             side_switch_freq;
+    int             step                = 1;
+    int             side_switch_freq    = 4;
 
-    double          rigidity;
+    double          rigidity            = 0.0;
 
     QImage          mask;
 
-    EnergyFunction  func;
-    Qt::Orientation resize_order;
+    EnergyFunction  func                = GradientNorm;
+    Qt::Orientation resize_order        = Qt::Horizontal;
 };
 
 // -----------------------------------------------------------------------------------------
@@ -94,7 +81,7 @@ public:
     explicit ContentAwareFilter(DImg* const orgImage,
                                 QObject* const parent = nullptr,
                                 const ContentAwareContainer& settings = ContentAwareContainer());
-    ~ContentAwareFilter() override;
+    ~ContentAwareFilter()                                                     override;
 
     void progressCallback(int progress);
 
@@ -115,12 +102,12 @@ public:
         return 1;
     }
 
-    QString         filterIdentifier()                          const override
+    QString         filterIdentifier()                                  const override
     {
         return FilterIdentifier();
     }
 
-    FilterAction    filterAction()                                    override;
+    FilterAction    filterAction()                                            override;
     void                    readParameters(const FilterAction& action)        override;
 
 private:

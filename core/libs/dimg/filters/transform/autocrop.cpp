@@ -439,11 +439,15 @@ QRect AutoCrop::spiralClockwiseTraversal(const QImage& source, int topCrop, int 
 
         counter++;
 
-        if ((fixbottommargin == true) &&
+        if (
+            (fixbottommargin == true) &&
             (fixtopmargin    == true) &&
             (fixleftmargin   == true) &&
-            (fixrightmargin  == true))
+            (fixrightmargin  == true)
+           )
+        {
             break;
+        }
     }
 
 //    qCDebug(DIGIKAM_DIMG_LOG) << "Count     : " << count;
@@ -517,7 +521,7 @@ void AutoCrop::startAnalyse()
     int rightRow     = -1;
     int rightColumn  = -1;
     QColor c;
-    int i,j;
+    int i, j;
 
     postProgress(5);
 
@@ -585,7 +589,8 @@ void AutoCrop::startAnalyse()
             }
             else
             {
-                //we have found our pixel
+                // we have found our pixel
+
                 rightRow    = j;
                 rightColumn = i;
                 break;
@@ -612,7 +617,8 @@ void AutoCrop::startAnalyse()
             }
             else
             {
-                //we have found our pixel
+                // we have found our pixel
+
                 topRow    = i;
                 topColumn = j;
                 breakflag = 1;
@@ -645,7 +651,8 @@ void AutoCrop::startAnalyse()
             }
             else
             {
-                //we have found our pixel
+                // we have found our pixel
+
                 bottomRow    = i;
                 bottomColumn = j;
                 breakflag    = 1;

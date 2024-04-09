@@ -34,23 +34,21 @@ class Q_DECL_HIDDEN FreeRotationFilter::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     FreeRotationContainer settings;
 };
 
 FreeRotationFilter::FreeRotationFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
-      d(new Private)
+      d                 (new Private)
 {
     initFilter();
 }
 
 FreeRotationFilter::FreeRotationFilter(DImg* const orgImage, QObject* const parent, const FreeRotationContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("FreeRotation")),
-      d(new Private)
+      d                 (new Private)
 {
     d->settings = settings;
     initFilter();
@@ -85,10 +83,12 @@ double FreeRotationFilter::calculateAngle(const QPoint& p1, const QPoint& p2)
     // check for invalid points. This should have been handled by the calling method,
     // but we want to be really sure here
 
-    if ((p1.x() < 0) ||
+    if (
+        (p1.x() < 0) ||
         (p1.y() < 0) ||
         (p2.x() < 0) ||
-        (p2.y() < 0))
+        (p2.y() < 0)
+       )
     {
         return 0.0;
     }
