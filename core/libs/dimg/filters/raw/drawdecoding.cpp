@@ -35,8 +35,8 @@ public:
 
     DRawDecoderSettingsWriter(const DRawDecoderSettings& settings, FilterAction& action, const QString& prefix = QString())
         : settings(settings),
-          action(action),
-          prefix(prefix)
+          action  (action),
+          prefix  (prefix)
     {
         timeOptimizedSettings.optimizeTimeLoading();
     }
@@ -302,10 +302,6 @@ DRawDecoding::DRawDecoding(const DRawDecoderSettings& prm)
     resetPostProcessingSettings();
 }
 
-DRawDecoding::~DRawDecoding()
-{
-}
-
 void DRawDecoding::optimizeTimeLoading()
 {
     rawPrm.optimizeTimeLoading();
@@ -321,9 +317,11 @@ void DRawDecoding::resetPostProcessingSettings()
 
 bool DRawDecoding::postProcessingSettingsIsDirty() const
 {
-    return !((bcg == BCGContainer()) &&
+    return !(
+             (bcg == BCGContainer()) &&
              (wb  == WBContainer())  &&
-             curvesAdjust.isEmpty());
+             curvesAdjust.isEmpty()
+            );
 }
 
 bool DRawDecoding::operator==(const DRawDecoding& other) const

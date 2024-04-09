@@ -62,11 +62,11 @@ public:
                         DImgThreadedFilter* const master,
                         const DImg& orgImage,
                         const DImg& destImage,
-                        int progressBegin=0,
-                        int progressEnd=100,
-                        const QString& name=QString());
+                        int progressBegin = 0,
+                        int progressEnd = 100,
+                        const QString& name = QString());
 
-    ~RawProcessingFilter() override;
+    ~RawProcessingFilter()                                            override;
 
     /**
      * Set the raw decoding settings. The post processing is carried out here,
@@ -116,8 +116,8 @@ public:
 
 protected:
 
-    void postProgress(int);                                            // not virtual
-    bool continueQuery()                                        const; // not virtual
+    void postProgress(int);                                     // not virtual
+    bool continueQuery()                                 const; // not virtual
 
     void filterImage()                                         override;
 
@@ -125,7 +125,7 @@ protected:
 
     DRawDecoding        m_settings;
     IccProfile          m_customOutputProfile;
-    DImgLoaderObserver* m_observer;
+    DImgLoaderObserver* m_observer  = nullptr;
 };
 
 } // namespace Digikam

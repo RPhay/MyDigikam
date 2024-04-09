@@ -30,15 +30,13 @@ namespace Digikam
 {
 
 RawProcessingFilter::RawProcessingFilter(QObject* const parent)
-    : DImgThreadedFilter(parent),
-      m_observer(nullptr)
+    : DImgThreadedFilter(parent)
 {
 }
 
 RawProcessingFilter::RawProcessingFilter(DImg* const orgImage, QObject* const parent,
                                          const DRawDecoding& settings, const QString& name)
-    : DImgThreadedFilter(orgImage, parent, name),
-      m_observer(nullptr)
+    : DImgThreadedFilter(orgImage, parent, name)
 {
     setSettings(settings);
     initFilter();
@@ -47,12 +45,12 @@ RawProcessingFilter::RawProcessingFilter(DImg* const orgImage, QObject* const pa
 RawProcessingFilter::RawProcessingFilter(const DRawDecoding& settings,
                                          DImgThreadedFilter* const master, const DImg& orgImage, const DImg& destImage,
                                          int progressBegin, int progressEnd, const QString& name)
-    : DImgThreadedFilter(master, orgImage, destImage, progressBegin, progressEnd, name),
-      m_observer(nullptr)
+    : DImgThreadedFilter(master, orgImage, destImage, progressBegin, progressEnd, name)
 {
     setSettings(settings);
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     this->filterImage();
 }
 
