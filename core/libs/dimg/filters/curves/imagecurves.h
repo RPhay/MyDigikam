@@ -40,17 +40,17 @@ public:
     /**
      * The max number of points contained in a curve.
      */
-    const static int NUM_POINTS       = 17;
+    static const int NUM_POINTS       = 17;
 
     /**
      * Number of channels in a curve.
      */
-    const static int NUM_CHANNELS     = 5;
+    static const int NUM_CHANNELS     = 5;
 
     /**
      * Curve points have to multiplied with this value for 16 bit images.
      */
-    const static int MULTIPLIER_16BIT = 255;
+    static const int MULTIPLIER_16BIT = 255;
 
     enum CurveType
     {
