@@ -81,6 +81,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/bcg/bcgcontainer.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/wb/wbcontainer.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/curves/curvescontainer.h
+              ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/curves/imagecurves.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/raw/drawdecoding.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine.h
