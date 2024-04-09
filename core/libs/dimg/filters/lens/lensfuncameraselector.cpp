@@ -53,79 +53,46 @@ class Q_DECL_HIDDEN LensFunCameraSelector::Private
 {
 public:
 
-    explicit Private()
-        : passiveMetadataUsage  (false),
-          metadataUsage         (nullptr),
-          metadataResult        (nullptr),
-          makeLabel             (nullptr),
-          modelLabel            (nullptr),
-          lensLabel             (nullptr),
-          focalLabel            (nullptr),
-          aperLabel             (nullptr),
-          distLabel             (nullptr),
-          configUseMetadata     (QLatin1String("UseMetadata")),
-          configCameraModel     (QLatin1String("CameraModel")),
-          configCameraMake      (QLatin1String("CameraMake")),
-          configLensModel       (QLatin1String("LensModel")),
-          configSubjectDistance (QLatin1String("SubjectDistance")),
-          configFocalLength     (QLatin1String("FocalLength")),
-          configCropFactor      (QLatin1String("CropFactor")),
-          configAperture        (QLatin1String("Aperture")),
-          redStyle              (QLatin1String("QLabel {color: red;}")),
-          orangeStyle           (QLatin1String("QLabel {color: orange;}")),
-          greenStyle            (QLatin1String("QLabel {color: green;}")),
-          lensDescription       (nullptr),
-          makeDescription       (nullptr),
-          modelDescription      (nullptr),
-          make                  (nullptr),
-          model                 (nullptr),
-          lens                  (nullptr),
-          focal                 (nullptr),
-          aperture              (nullptr),
-          distance              (nullptr),
-          metadata              (nullptr),
-          iface                 (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                passiveMetadataUsage;
+    bool                passiveMetadataUsage    = false;
 
-    QCheckBox*          metadataUsage;
-    QLabel*             metadataResult;
-    QLabel*             makeLabel;
-    QLabel*             modelLabel;
-    QLabel*             lensLabel;
-    QLabel*             focalLabel;
-    QLabel*             aperLabel;
-    QLabel*             distLabel;
+    QCheckBox*          metadataUsage           = nullptr;
+    QLabel*             metadataResult          = nullptr;
+    QLabel*             makeLabel               = nullptr;
+    QLabel*             modelLabel              = nullptr;
+    QLabel*             lensLabel               = nullptr;
+    QLabel*             focalLabel              = nullptr;
+    QLabel*             aperLabel               = nullptr;
+    QLabel*             distLabel               = nullptr;
 
-    const QString       configUseMetadata;
-    const QString       configCameraModel;
-    const QString       configCameraMake;
-    const QString       configLensModel;
-    const QString       configSubjectDistance;
-    const QString       configFocalLength;
-    const QString       configCropFactor;
-    const QString       configAperture;
-    const QString       redStyle;
-    const QString       orangeStyle;
-    const QString       greenStyle;
+    const QString       configUseMetadata       = QLatin1String("UseMetadata");
+    const QString       configCameraModel       = QLatin1String("CameraModel");
+    const QString       configCameraMake        = QLatin1String("CameraMake");
+    const QString       configLensModel         = QLatin1String("LensModel");
+    const QString       configSubjectDistance   = QLatin1String("SubjectDistance");
+    const QString       configFocalLength       = QLatin1String("FocalLength");
+    const QString       configCropFactor        = QLatin1String("CropFactor");
+    const QString       configAperture          = QLatin1String("Aperture");
+    const QString       redStyle                = QLatin1String("QLabel {color: red;}");
+    const QString       orangeStyle             = QLatin1String("QLabel {color: orange;}");
+    const QString       greenStyle              = QLatin1String("QLabel {color: green;}");
 
-    DAdjustableLabel*   lensDescription;
-    DAdjustableLabel*   makeDescription;
-    DAdjustableLabel*   modelDescription;
+    DAdjustableLabel*   lensDescription         = nullptr;
+    DAdjustableLabel*   makeDescription         = nullptr;
+    DAdjustableLabel*   modelDescription        = nullptr;
 
-    SqueezedComboBox*   make;
-    SqueezedComboBox*   model;
-    SqueezedComboBox*   lens;
+    SqueezedComboBox*   make                    = nullptr;
+    SqueezedComboBox*   model                   = nullptr;
+    SqueezedComboBox*   lens                    = nullptr;
 
-    DDoubleNumInput*    focal;
-    DDoubleNumInput*    aperture;
-    DDoubleNumInput*    distance;
+    DDoubleNumInput*    focal                   = nullptr;
+    DDoubleNumInput*    aperture                = nullptr;
+    DDoubleNumInput*    distance                = nullptr;
 
-    DMetadata*          metadata;
+    DMetadata*          metadata                = nullptr;
 
-    LensFunIface*       iface;
+    LensFunIface*       iface                   = nullptr;
 };
 
 LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
@@ -219,7 +186,7 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
     grid->addWidget(d->distLabel,  9, 0, 1, 1);
     grid->addWidget(d->distance,   9, 1, 1, 2);
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->setContentsMargins(QMargins());
 
     connect(d->metadataUsage, SIGNAL(toggled(bool)),
@@ -795,6 +762,7 @@ void LensFunCameraSelector::slotLensSelected()
     }
 
     d->iface->setSettings(settings);
+
     Q_EMIT signalLensSettingsChanged();
 }
 
@@ -804,6 +772,7 @@ void LensFunCameraSelector::slotFocalChanged()
     settings.focalLength      = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
                                                                                          : d->focal->value();
     d->iface->setSettings(settings);
+
     Q_EMIT signalLensSettingsChanged();
 }
 
@@ -813,6 +782,7 @@ void LensFunCameraSelector::slotApertureChanged()
     settings.aperture         = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
                                                                                          : d->aperture->value();
     d->iface->setSettings(settings);
+
     Q_EMIT signalLensSettingsChanged();
 }
 
@@ -822,6 +792,7 @@ void LensFunCameraSelector::slotDistanceChanged()
     settings.subjectDistance  = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
                                                                                          : d->distance->value();
     d->iface->setSettings(settings);
+
     Q_EMIT signalLensSettingsChanged();
 }
 
