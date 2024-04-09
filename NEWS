@@ -66,7 +66,7 @@ BUGFIXES:
 043 ==> 458584 - Reverse Geocode information is not being updated correctly from external file edits.
 044 ==> 485157 - Filter for Color or Pick Labels can not be activated.
 045 ==> 485282 - Customizing "Open with" 'command' no more available in Digikam git version.
-046 ==> 
+046 ==> 485246 - Main photo view shows original and all versions of edited photos even when the corresponding settings are disabled.
 047 ==> 
 048 ==> 
 049 ==> 
