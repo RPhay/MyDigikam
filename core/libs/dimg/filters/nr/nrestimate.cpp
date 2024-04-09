@@ -45,19 +45,13 @@ class Q_DECL_HIDDEN NREstimate::Private
 {
 public:
 
-    explicit Private()
-    {
-        for (int c = 0 ; c < 3 ; ++c)
-        {
-            fimg[c] = nullptr;
-        }
-    }
+    Private() = default;
 
     NRContainer prm;
 
     QString     path;                   ///< Path to host log files.
 
-    float*      fimg[3];
+    float*      fimg[3]         = { nullptr };
     const uint  clusterCount    = 30;
     const uint  size            = 512;   ///< Size of squared original image.
 };

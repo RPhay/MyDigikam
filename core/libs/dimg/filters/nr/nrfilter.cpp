@@ -34,20 +34,6 @@
 namespace Digikam
 {
 
-NRContainer::NRContainer()
-{
-    thresholds[0] = 1.2;     ///< Y
-    thresholds[1] = 1.2;     ///< Cr
-    thresholds[2] = 1.2;     ///< Cb
-    softness[0]   = 0.9;     ///< Y
-    softness[1]   = 0.9;     ///< Cr
-    softness[2]   = 0.9;     ///< Cb
-}
-
-NRContainer::~NRContainer()
-{
-}
-
 QDebug operator<<(QDebug dbg, const NRContainer& inf)
 {
     dbg.nospace() << "Y Threshold: "
@@ -72,17 +58,10 @@ class Q_DECL_HIDDEN NRFilter::Private
 {
 public:
 
-    explicit Private()
-    {
-        for (int c = 0 ; c < 3; ++c)
-        {
-            fimg[c]   = nullptr;
-            buffer[c] = nullptr;
-        }
-    }
+    Private() = default;
 
-    float*      fimg[3];
-    float*      buffer[3];
+    float*      fimg[3]     = { nullptr };
+    float*      buffer[3]   = { nullptr };
 
     NRContainer settings;
 };
