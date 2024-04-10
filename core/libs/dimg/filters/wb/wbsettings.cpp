@@ -76,32 +76,7 @@ public:
 
 public:
 
-    explicit Private()
-      : DefaultTemperature      (DaylightD65),
-        pickTemperature         (nullptr),
-        autoAdjustExposure      (nullptr),
-        adjTemperatureLabel     (nullptr),
-        temperaturePresetLabel  (nullptr),
-        darkLabel               (nullptr),
-        blackLabel              (nullptr),
-        mainExposureLabel       (nullptr),
-        fineExposureLabel       (nullptr),
-        gammaLabel              (nullptr),
-        saturationLabel         (nullptr),
-        greenLabel              (nullptr),
-        exposureLabel           (nullptr),
-        temperatureLabel        (nullptr),
-        temperaturePresetCB     (nullptr),
-        temperatureInput        (nullptr),
-        darkInput               (nullptr),
-        blackInput              (nullptr),
-        mainExposureInput       (nullptr),
-        fineExposureInput       (nullptr),
-        gammaInput              (nullptr),
-        saturationInput         (nullptr),
-        greenInput              (nullptr)
-    {
-    }
+    Private() = default;
 
     QString addTemperatureDescription(const QString& desc, TemperaturePreset preset) const
     {
@@ -131,33 +106,35 @@ public:
     static const QString    configGreenInputEntry;
     static const QString    configTemperatureInputEntry;
 
-    const int               DefaultTemperature;
+public:
 
-    QToolButton*            pickTemperature;
-    QToolButton*            autoAdjustExposure;
+    const int               DefaultTemperature      = DaylightD65;
 
-    QLabel*                 adjTemperatureLabel;
-    QLabel*                 temperaturePresetLabel;
-    QLabel*                 darkLabel;
-    QLabel*                 blackLabel;
-    QLabel*                 mainExposureLabel;
-    QLabel*                 fineExposureLabel;
-    QLabel*                 gammaLabel;
-    QLabel*                 saturationLabel;
-    QLabel*                 greenLabel;
-    QLabel*                 exposureLabel;
-    QLabel*                 temperatureLabel;
+    QToolButton*            pickTemperature         = nullptr;
+    QToolButton*            autoAdjustExposure      = nullptr;
 
-    DComboBox*              temperaturePresetCB;
+    QLabel*                 adjTemperatureLabel     = nullptr;
+    QLabel*                 temperaturePresetLabel  = nullptr;
+    QLabel*                 darkLabel               = nullptr;
+    QLabel*                 blackLabel              = nullptr;
+    QLabel*                 mainExposureLabel       = nullptr;
+    QLabel*                 fineExposureLabel       = nullptr;
+    QLabel*                 gammaLabel              = nullptr;
+    QLabel*                 saturationLabel         = nullptr;
+    QLabel*                 greenLabel              = nullptr;
+    QLabel*                 exposureLabel           = nullptr;
+    QLabel*                 temperatureLabel        = nullptr;
 
-    DDoubleNumInput*        temperatureInput;
-    DDoubleNumInput*        darkInput;
-    DDoubleNumInput*        blackInput;
-    DDoubleNumInput*        mainExposureInput;
-    DDoubleNumInput*        fineExposureInput;
-    DDoubleNumInput*        gammaInput;
-    DDoubleNumInput*        saturationInput;
-    DDoubleNumInput*        greenInput;
+    DComboBox*              temperaturePresetCB     = nullptr;
+
+    DDoubleNumInput*        temperatureInput        = nullptr;
+    DDoubleNumInput*        darkInput               = nullptr;
+    DDoubleNumInput*        blackInput              = nullptr;
+    DDoubleNumInput*        mainExposureInput       = nullptr;
+    DDoubleNumInput*        fineExposureInput       = nullptr;
+    DDoubleNumInput*        gammaInput              = nullptr;
+    DDoubleNumInput*        saturationInput         = nullptr;
+    DDoubleNumInput*        greenInput              = nullptr;
 };
 
 const QString WBSettings::Private::configDarkInputEntry(QLatin1String("Dark"));

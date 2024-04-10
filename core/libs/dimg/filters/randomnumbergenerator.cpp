@@ -26,9 +26,6 @@
 
 #include <random>
 
-// Local includes
-
-
 namespace Digikam
 {
 

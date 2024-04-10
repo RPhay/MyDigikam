@@ -40,18 +40,7 @@ class Q_DECL_HIDDEN CoreDbWatch::Private
 {
 public:
 
-    explicit Private()
-      :  mode       (CoreDbWatch::DatabaseSlave)
-
-#ifdef HAVE_DBUS
-
-        ,adaptor    (nullptr)
-        ,slaveThread(nullptr)
-
-#endif
-
-    {
-    }
+    Private() = default;
 
 #ifdef HAVE_DBUS
 
@@ -77,15 +66,14 @@ public:
 
 public:
 
-
-    CoreDbWatch::DatabaseMode   mode;
+    CoreDbWatch::DatabaseMode   mode            = CoreDbWatch::DatabaseSlave;
     QString                     databaseId;
     QString                     applicationId;
 
 #ifdef HAVE_DBUS
 
-    CoreDbWatchAdaptor*         adaptor;
-    DBusSignalListenerThread*   slaveThread;
+    CoreDbWatchAdaptor*         adaptor         = nullptr;
+    DBusSignalListenerThread*   slaveThread     = nullptr;
 
 #endif
 
@@ -238,6 +226,7 @@ void CoreDbWatch::initializeRemote(DatabaseMode mode)
     }
 
     // Do this as a favor for CollectionManager, we may not exist at time of its creation
+
     connect(this, SIGNAL(albumRootChange(AlbumRootChangeset)),
             CollectionManager::instance(), SLOT(slotAlbumRootChange(AlbumRootChangeset)));
 }
@@ -432,8 +421,8 @@ void CoreDbWatch::slotTagChangeDBus(const QString& databaseIdentifier,
 }
 
 void CoreDbWatch::slotAlbumRootChangeDBus(const QString& databaseIdentifier,
-        const QString& applicationIdentifier,
-        const AlbumRootChangeset& changeset)
+                                          const QString& applicationIdentifier,
+                                          const AlbumRootChangeset& changeset)
 {
     if ((applicationIdentifier != d->applicationId) &&
         (databaseIdentifier    == d->databaseId))

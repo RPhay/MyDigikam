@@ -22,21 +22,6 @@
 namespace Digikam
 {
 
-/**
- * Neutral color temperature settings.
- */
-WBContainer::WBContainer()
-    : black         (0.0),
-      expositionMain(0.0),
-      expositionFine(0.0),
-      temperature   (6500.0),
-      green         (1.0),
-      dark          (0.0),
-      gamma         (1.0),
-      saturation    (1.0)
-{
-}
-
 bool WBContainer::isDefault() const
 {
     return (*this == WBContainer());

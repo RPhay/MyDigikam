@@ -35,7 +35,7 @@ class DIGIKAM_EXPORT WBContainer
 
 public:
 
-    WBContainer();
+    WBContainer() = default;
 
     bool   isDefault()                                            const;
     bool   operator==(const WBContainer& other)                   const;
@@ -48,14 +48,18 @@ public:
 
 public:
 
-    double black;
-    double expositionMain;
-    double expositionFine;
-    double temperature;
-    double green;
-    double dark;
-    double gamma;
-    double saturation;
+    /**
+     * Neutral color temperature settings.
+     */
+
+    double black            = 0.0;
+    double expositionMain   = 0.0;
+    double expositionFine   = 0.0;
+    double temperature      = 6500.0;
+    double green            = 1.0;
+    double dark             = 0.0;
+    double gamma            = 1.0;
+    double saturation       = 1.0;
 };
 
 } // namespace Digikam

@@ -35,30 +35,17 @@ class Q_DECL_HIDDEN WBFilter::Private
 {
 public:
 
-    explicit Private()
-      : BP    (0),
-        WP    (0),
-        rgbMax(0),
-        mr    (1.0),
-        mg    (1.0),
-        mb    (1.0)
-    {
+    Private() = default;
 
-        for (int i = 0 ; i < 65536 ; ++i)
-        {
-            curve[i] = 0.0;
-        }
-    }
+    int    BP           = 0;
+    int    WP           = 0;
 
-    int    BP;
-    int    WP;
+    uint   rgbMax       = 0;
 
-    uint   rgbMax;
-
-    double curve[65536];
-    double mr;
-    double mg;
-    double mb;
+    double curve[65536] = { 0.0 };
+    double mr           = 1.0;
+    double mg           = 1.0;
+    double mb           = 1.0;
 };
 
 WBFilter::WBFilter(QObject* const parent)

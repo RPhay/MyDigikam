@@ -176,8 +176,8 @@ public:
 
 private:
 
-    CoreDbWatch*          q;
-    CoreDbWatch::Private* d;
+    CoreDbWatch*          const q = nullptr;
+    CoreDbWatch::Private* const d = nullptr;
 };
 
 #endif
