@@ -45,7 +45,6 @@ set(libdatabasecore_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbengineconfigloader.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbengineconfig.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbengineactiontype.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbengineerrorhandler.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbengineguierrorhandler.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbengineparameters.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dbenginebackend.cpp

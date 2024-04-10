@@ -44,7 +44,7 @@ public:
 
 public:
 
-    bool                                  isValid;
+    bool                                  isValid = false;
     QString                               errorMessage;
     QMap<QString, DbEngineConfigSettings> databaseConfigs;
 };
