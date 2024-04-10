@@ -60,7 +60,7 @@ if(MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
-        GIT_TAG v0.8.2
+        GIT_TAG v0.10.2
 
         CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
                           cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
@@ -84,7 +84,7 @@ elseif(APPLE)
         # To use official release tarball
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
-        GIT_TAG v0.8.2
+        GIT_TAG v0.10.2
 
         CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
                           cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
@@ -106,7 +106,7 @@ else() # Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
-        GIT_TAG v0.8.2
+        GIT_TAG v0.10.2
 
         CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
                           $(CMAKE_COMMAND) . -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_libjxl}
