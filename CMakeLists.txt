@@ -54,11 +54,6 @@ project(digikam
         VERSION ${DIGIKAM_VERSION_SHORT}
         LANGUAGES CXX C)
 
-# Settings from ECM
-set(CMAKE_CXX_STANDARD          20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS        OFF)
-
 message(STATUS "----------------------------------------------------------------------------------")
 message(STATUS "Starting CMake configuration for ${PROJECT_NAME}")
 message(STATUS "")
@@ -83,6 +78,15 @@ if(Qt6_FOUND)
 else()
     set(ECM_MIN_VERSION "5.55.0")
 endif()
+
+if ("${QT_VERSION}" VERSION_GREATER 6.6.99)
+    set(CMAKE_CXX_STANDARD      20)
+else()
+    set(CMAKE_CXX_STANDARD      17)
+endif()
+
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS        OFF)
 
 ### ECM setup #########################################################################################################
 
