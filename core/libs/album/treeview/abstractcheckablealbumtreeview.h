@@ -30,27 +30,32 @@ class AbstractCheckableAlbumTreeView : public AbstractCountingAlbumTreeView
 
 public:
 
-    /// Models of these view _can_ be checkable, they need _not_. You need to enable it on the model.
+    /**
+     * Models of these view _can_ be checkable, they need _not_. You need to enable it on the model.
+     */
 
     explicit AbstractCheckableAlbumTreeView(QWidget* const parent, Flags flags);
+    ~AbstractCheckableAlbumTreeView()                                     override;
 
-    ~AbstractCheckableAlbumTreeView() override;
+    /**
+     * Manage check state through the model directly.
+     */
+    AbstractCheckableAlbumModel* albumModel()                       const;
+    CheckableAlbumFilterModel* albumFilterModel()                   const;
 
-    /// Manage check state through the model directly
-    AbstractCheckableAlbumModel* albumModel()     const;
-    CheckableAlbumFilterModel* albumFilterModel() const;
-
-    AbstractCheckableAlbumModel* checkableModel() const
+    AbstractCheckableAlbumModel* checkableModel()                   const
     {
         return albumModel();
     }
 
-    CheckableAlbumFilterModel* checkableAlbumFilterModel() const
+    CheckableAlbumFilterModel* checkableAlbumFilterModel()          const
     {
         return albumFilterModel();
     }
 
-    /// Enable checking on middle mouse button click (default: on)
+    /**
+     * Enable checking on middle mouse button click (default: on).
+     */
     void setCheckOnMiddleClick(bool doThat);
 
     /**
@@ -58,7 +63,7 @@ public:
      *
      * @return true if restoring check state is active
      */
-    bool isRestoreCheckState() const;
+    bool isRestoreCheckState()                                      const;
 
     /**
      * Set whether to restore check state or not.
@@ -67,13 +72,13 @@ public:
      */
     void setRestoreCheckState(bool restore);
 
-    void doLoadState() override;
-    void doSaveState() override;
+    void doLoadState()                                                    override;
+    void doSaveState()                                                    override;
 
 protected:
 
-    void middleButtonPressed(Album* a) override;
-    void rowsInserted(const QModelIndex& parent, int start, int end) override;
+    void middleButtonPressed(Album* a)                                    override;
+    void rowsInserted(const QModelIndex& parent, int start, int end)      override;
 
 private:
 
@@ -83,7 +88,7 @@ private:
 private:
 
     class Private;
-    Private* d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

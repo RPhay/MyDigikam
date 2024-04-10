@@ -80,17 +80,7 @@ public:
 
 public:
 
-    explicit NamespaceEntry()
-      : nsType          (TAGS),
-        subspace        (XMP),
-        isDefault       (true),
-        isDisabled      (false),
-        index           (-1),
-        tagPaths        (TAGPATH),
-        specialOpts     (NO_OPTS),
-        secondNameOpts  (NO_OPTS)
-    {
-    }
+    NamespaceEntry() = default;
 
     NamespaceEntry(const NamespaceEntry& other)
       : nsType          (other.nsType),
@@ -108,9 +98,7 @@ public:
     {
     }
 
-    ~NamespaceEntry()
-    {
-    }
+    ~NamespaceEntry() = default;
 
 public:
 
@@ -123,18 +111,18 @@ public:
 
 public:
 
-    NamespaceType  nsType;
-    NsSubspace     subspace;
-    bool           isDefault;
-    bool           isDisabled;
-    int            index;
+    NamespaceType  nsType           = TAGS;
+    NsSubspace     subspace         = XMP;
+    bool           isDefault        = true;
+    bool           isDisabled       = false;
+    int            index            = -1;
 
     /**
      * Tag Options
      */
     QString        namespaceName;
     QString        alternativeName;
-    TagType        tagPaths;
+    TagType        tagPaths         = TAGPATH;
     QString        separator;
 
     /**
@@ -142,8 +130,8 @@ public:
      */
     QList<int>     convertRatio;
 
-    SpecialOptions specialOpts;
-    SpecialOptions secondNameOpts;
+    SpecialOptions specialOpts      = NO_OPTS;
+    SpecialOptions secondNameOpts   = NO_OPTS;
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.
@@ -201,7 +189,7 @@ private:
 private:
 
     class Private;
-    Private* d;
+    Private* const d = nullptr;
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.

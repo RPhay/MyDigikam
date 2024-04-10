@@ -23,6 +23,7 @@
 
 namespace Digikam
 {
+
 FacialRecognitionWrapper::Private* FacialRecognitionWrapper::d = nullptr;
 
 FacialRecognitionWrapper::FacialRecognitionWrapper()

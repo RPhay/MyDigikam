@@ -34,6 +34,7 @@ namespace Digikam
 class NormalSearchTreeView : public EditableSearchTreeView
 {
     Q_OBJECT
+
 public:
 
     /**
@@ -75,7 +76,7 @@ protected:
 private:
 
     class Private;
-    Private* d;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

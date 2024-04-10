@@ -305,7 +305,7 @@ private:
 private:
 
     class Private;
-    Private* d;
+    Private* d = nullptr;
 };
 
 } // namespace Digikam
