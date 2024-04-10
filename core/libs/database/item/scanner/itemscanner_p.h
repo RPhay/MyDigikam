@@ -34,6 +34,7 @@
 #include "coredburl.h"
 #include "coredbaccess.h"
 #include "coredb.h"
+#include "coredboperationgroup.h"
 #include "similaritydbaccess.h"
 #include "similaritydb.h"
 #include "collectionlocation.h"

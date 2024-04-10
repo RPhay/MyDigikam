@@ -132,7 +132,7 @@ void ItemScanner::tagItemHistoryGraph(qlonglong id)
 
     // Load relation cloud, history of info and of all leaves of the tree into the graph, fully resolved
 
-    ItemHistoryGraph graph    = ItemHistoryGraph::fromInfo(info, ItemHistoryGraph::LoadAll, ItemHistoryGraph::NoProcessing);
+    ItemHistoryGraph graph     = ItemHistoryGraph::fromInfo(info, ItemHistoryGraph::LoadAll, ItemHistoryGraph::NoProcessing);
     qCDebug(DIGIKAM_DATABASE_LOG) << graph;
 
     int originalVersionTag     = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
@@ -143,11 +143,14 @@ void ItemScanner::tagItemHistoryGraph(qlonglong id)
 
     // Remove all relevant tags
 
-    CoreDbAccess().db()->removeTagsFromItems(graph.allImageIds(),
-                                             QList<int>() << originalVersionTag
-                                                          << currentVersionTag
-                                                          << intermediateVersionTag
-                                                          << needTaggingTag);
+    {
+        CoreDbOperationGroup group;
+        CoreDbAccess().db()->removeTagsFromItems(graph.allImageIds(),
+                                                 QList<int>() << originalVersionTag
+                                                              << currentVersionTag
+                                                              << intermediateVersionTag
+                                                              << needTaggingTag);
+    }
 
     if (!graph.hasEdges())
     {
