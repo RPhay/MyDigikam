@@ -30,6 +30,8 @@ add_executable(filemediaserver_cli
                ${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/mediaserver/upnpsdk/Platinum/Source/Tests/FileMediaServer/FileMediaServerTest.cpp
 )
 
+set_property(TARGET filemediaserver_cli PROPERTY CXX_STANDARD 17)
+
 target_link_libraries(filemediaserver_cli
 
                       digikamcore
