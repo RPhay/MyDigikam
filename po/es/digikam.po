@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-09 01:43+0000\n"
+"POT-Creation-Date: 2024-04-10 01:43+0000\n"
 "PO-Revision-Date: 2024-04-06 20:58+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1127,7 +1127,7 @@ msgid "Make/Model:"
 msgstr "Fabricante/Modelo:"
 
 #: core/app/items/utils/tooltipfiller.cpp:164
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:169
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:136
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:139
 #: core/utilities/import/items/importtooltipfiller.cpp:137
 #, kde-format
@@ -8336,7 +8336,7 @@ msgid "Invert"
 msgstr "Invertir"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:118
-#: core/libs/dimg/filters/icc/iccprofilesettings.cpp:72
+#: core/libs/dimg/filters/icc/iccprofilesettings.cpp:71
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:278
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:294
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:484
@@ -9156,7 +9156,7 @@ msgid "Restoration..."
 msgstr "Restauración..."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
-#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:88
+#: core/libs/dimg/filters/sharp/sharpenfilter.cpp:85
 #, kde-format
 msgid "Sharpen"
 msgstr "Enfocar"
@@ -10464,7 +10464,7 @@ msgid "Settings"
 msgstr "Preferencias"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:346
-#: core/libs/dimg/filters/transform/freerotationfilter.cpp:67
+#: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
 #, kde-format
 msgid "Free Rotation"
 msgstr "Rotación libre"
@@ -11309,7 +11309,7 @@ msgstr ""
 "para hacer ajustes finos."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:153
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:104
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:97
 #, kde-format
 msgid "Anti-Aliasing"
 msgstr "Suavizado de bordes"
@@ -11325,7 +11325,7 @@ msgstr ""
 "desenfocada."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:328
-#: core/libs/dimg/filters/transform/shearfilter.cpp:91
+#: core/libs/dimg/filters/transform/shearfilter.cpp:83
 #, kde-format
 msgid "Shear Tool"
 msgstr "Herramienta de inclinación"
@@ -21748,7 +21748,7 @@ msgstr "Color de letra:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:154
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:118
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:111
 #, kde-format
 msgid "Background color:"
 msgstr "Color de fondo:"
@@ -32517,12 +32517,12 @@ msgstr "Luminosidad:"
 msgid "Set here the lightness adjustment of the image."
 msgstr "Establezca el ajuste de luminosidad de la imagen."
 
-#: core/libs/dimg/filters/icc/iccprofilesettings.cpp:67
+#: core/libs/dimg/filters/icc/iccprofilesettings.cpp:66
 #, kde-format
 msgid "Convert to:"
 msgstr "Convertir a:"
 
-#: core/libs/dimg/filters/icc/iccprofilesettings.cpp:70
+#: core/libs/dimg/filters/icc/iccprofilesettings.cpp:69
 #, kde-format
 msgid "Select the profile of the color space to convert to."
 msgstr ""
@@ -32543,24 +32543,24 @@ msgstr "Resultado de perfil de color «%1» no disponible"
 msgid "Local Contrast Filter"
 msgstr "Filtro de contraste local"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:161
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:138
 #, kde-format
 msgid "Function:"
 msgstr "Función:"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:163
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:140
 #, kde-format
 msgctxt "@item: function type"
 msgid "Power"
 msgstr "Potencia"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:164
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:141
 #, kde-format
 msgctxt "@item: function type"
 msgid "Linear"
 msgstr "Lineal"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:166
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:143
 #, kde-format
 msgid ""
 "<b>Function</b>: This function combines the original RGB channels with the "
@@ -32576,12 +32576,12 @@ msgstr ""
 "la desenfocada donde son bajos, haciendo el efecto inverso en los valores "
 "elevados."
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:174
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:151
 #, kde-format
 msgid "Stretch contrast"
 msgstr "Estirar el contraste"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:175
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:152
 #, kde-format
 msgid ""
 "<b>Stretch contrast</b>: This stretches the contrast of the original image. "
@@ -32590,12 +32590,12 @@ msgstr ""
 "<b>Estirar el contraste</b>: esto alarga/encoge la gama de contraste da "
 "imagen original. Se aplica antes del proceso de mapeo de tonos."
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:181
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:158
 #, kde-format
 msgid "Highlights saturation:"
 msgstr "Saturación de tonos claros:"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:186
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:163
 #, kde-format
 msgid ""
 "<b>Highlights saturation</b>: Usually the (perceived) saturation is "
@@ -32606,12 +32606,12 @@ msgstr ""
 "aumentada. El usuario puede optar por reducir la saturación de los tonos "
 "claros y de las sombras de la imagen con estos parámetros."
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:192
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:169
 #, kde-format
 msgid "Shadow saturation:"
 msgstr "Saturación de las sombras:"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:197
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:174
 #, kde-format
 msgid ""
 "<b>Shadow saturation</b>: Usually the (perceived) saturation is increased. "
@@ -32622,34 +32622,34 @@ msgstr ""
 "aumentada. El usuario puede optar por reducir la saturación de los tonos "
 "claros y de las sombras de la imagen con estos parámetros."
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:220
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:251
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:282
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:313
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:197
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:228
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:259
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:290
 #, kde-format
 msgid "Power:"
 msgstr "Potencia:"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:225
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:256
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:287
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:318
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:202
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:233
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:264
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:295
 #, kde-format
 msgid "<b>Power</b>: How strong the effect is applied."
 msgstr "<b>Fuerza</b>: Con cuánta fuerza se aplica el efecto."
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:229
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:260
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:291
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:322
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:206
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:237
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:268
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:299
 #, kde-format
 msgid "Blur:"
 msgstr "Desenfoque:"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:234
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:265
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:296
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:327
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:211
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:242
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:273
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:304
 #, kde-format
 msgid ""
 "<b>Blur</b>: How strong the image is blurred before combining with the "
@@ -32658,60 +32658,60 @@ msgstr ""
 "<b>Desenfoque</b>: como de intenso es el desenfoque de la imagen antes de "
 "combinar la imagen original con la función de mapeo de tonos."
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:341
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:318
 #, kde-format
 msgid "General settings"
 msgstr "Preferencias generales"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:343
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:320
 #, kde-format
 msgid "Stage 1"
 msgstr "Etapa 1"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:345
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:322
 #, kde-format
 msgid "Stage 2"
 msgstr "Etapa 2"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:347
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:324
 #, kde-format
 msgid "Stage 3"
 msgstr "Etapa 3"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:349
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:326
 #, kde-format
 msgid "Stage 4"
 msgstr "Etapa 4"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:637
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:614
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Load"
 msgstr ""
 "Archivo a cargar con las preferencias del contraste local de las fotografías"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:655
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:632
 #, kde-format
 msgid "\"%1\" is not a Photograph Local Contrast settings text file."
 msgstr ""
 "«%1» no es un archivo de texto con las preferencias del contraste local de "
 "las fotografías."
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:683
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:660
 #, kde-format
 msgid "Cannot load settings from the Photograph Local Contrast text file."
 msgstr ""
 "No se puede cargar con las preferencias del contraste local de las "
 "fotografías."
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:691
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:668
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Save"
 msgstr ""
 "Archivo a guardar con las preferencias del contraste local de las fotografías"
 
-#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:727
+#: core/libs/dimg/filters/lc/localcontrastsettings.cpp:704
 #, kde-format
 msgid "Cannot save settings to the Photograph Local Contrast text file."
 msgstr ""
@@ -32722,12 +32722,12 @@ msgstr ""
 msgid "Anti-Vignetting Tool"
 msgstr "Herramienta antiviñeteado"
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:103
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:93
 #, kde-format
 msgid "Add vignetting"
 msgstr "Añadir viñeteado"
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:104
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:94
 #, kde-format
 msgid ""
 "This option adds vignetting to the image instead of removing it. Use it for "
@@ -32736,7 +32736,7 @@ msgstr ""
 "Esta opción añade viñeteado a la imagen en lugar de eliminarlo. Úsela para "
 "efectos creativos."
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:113
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:103
 #, kde-format
 msgid ""
 "You can see here a thumbnail preview of the anti-vignetting mask applied to "
@@ -32745,13 +32745,13 @@ msgstr ""
 "Aquí se muestra una vista previa en miniatura de la máscara antiviñeteado "
 "aplicada a la imagen."
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:118
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:108
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:181
 #, kde-format
 msgid "Amount:"
 msgstr "Cantidad:"
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:123
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:113
 #, kde-format
 msgid ""
 "This value controls the degree of intensity of the filter at its point of "
@@ -32760,12 +32760,12 @@ msgstr ""
 "Este valor controla el grado de intensidad del filtro en su punto de máxima "
 "densidad."
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:128
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:118
 #, kde-format
 msgid "Feather:"
 msgstr "Pluma:"
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:133
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:123
 #, kde-format
 msgid ""
 "This value is used as the exponent controlling the fall-off in density from "
@@ -32774,12 +32774,12 @@ msgstr ""
 "Este valor se usa como el exponente para controlar la caída de densidad "
 "desde el centro del filtro al círculo exterior."
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:139
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:129
 #, kde-format
 msgid "Inner Radius:"
 msgstr "Radio interior:"
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:144
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:134
 #, kde-format
 msgid ""
 "This value is the radius of the inner circle of the filter. In the inner "
@@ -32790,12 +32790,12 @@ msgstr ""
 "interior, la imagen se preserva. Se expresa como un múltiplo del radio "
 "exterior del filtro."
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:150
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:140
 #, kde-format
 msgid "Outer Radius:"
 msgstr "Radio exterior:"
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:155
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:145
 #, kde-format
 msgid ""
 "This value is the radius of the outer circle of the filter. Outside the "
@@ -32806,43 +32806,43 @@ msgstr ""
 "exterior, el efecto del filtro está en su máximo. Se expresa como un "
 "múltiplo de la diagonal de la imagen."
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:161
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:151
 #, kde-format
 msgid "X offset:"
 msgstr "Desplazamiento en X:"
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:166
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:156
 #, kde-format
 msgid "X offset "
 msgstr "Desplazamiento en X"
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:170
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:160
 #, kde-format
 msgid "Y offset:"
 msgstr "Desplazamiento en Y:"
 
-#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:175
+#: core/libs/dimg/filters/lens/antivignettingsettings.cpp:165
 #, kde-format
 msgid "Y offset "
 msgstr "Desplazamiento en Y"
 
-#: core/libs/dimg/filters/lens/lensdistortionfilter.cpp:67
+#: core/libs/dimg/filters/lens/lensdistortionfilter.cpp:61
 #, kde-format
 msgid "Lens Distortion Tool"
 msgstr "Herramienta de distorsión lenticular"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:139
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:106
 #, kde-format
 msgid "Use Metadata"
 msgstr "Usar metadatos"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:145
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:112
 #, kde-format
 msgctxt "camera make"
 msgid "Make:"
 msgstr "Fabricante:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:150
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:117
 #, kde-format
 msgid ""
 "This is the camera maker description string found in image meta-data. This "
@@ -32853,13 +32853,13 @@ msgstr ""
 "metadatos de la imagen. Se usará para encontrar informaciones pertinentes "
 "sobre la cámara desde la base de datos de Lensfun."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:157
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:124
 #, kde-format
 msgctxt "camera model"
 msgid "Model:"
 msgstr "Modelo:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:162
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:129
 #, kde-format
 msgid ""
 "This is the camera model description string found in image meta-data. This "
@@ -32870,7 +32870,7 @@ msgstr ""
 "metadatos de la imagen. Se usará para encontrar informaciones pertinentes "
 "sobre la cámara desde la base de datos de Lensfun."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:177
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:144
 #, kde-format
 msgid ""
 "This is the lens description string found in image meta-data. This one is "
@@ -32880,7 +32880,7 @@ msgstr ""
 "metadatos de la imagen. Se usará para encontrar informaciones pertinentes "
 "sobre el objetivo desde la base de datos de Lensfun."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:186
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:153
 #, kde-format
 msgid ""
 "Set this option to try to guess the right camera/lens settings from the "
@@ -32889,37 +32889,37 @@ msgstr ""
 "Marque esta opción para tratar de adivinar la configuración correcta de la "
 "cámara o del objetivo desde los metadatos de la imagen (como EXIF o XMP)."
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:189
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:156
 #, kde-format
 msgid "Focal Length (mm):"
 msgstr "Distancia focal (mm):"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:190
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:157
 #, kde-format
 msgid "Aperture:"
 msgstr "Apertura:"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:191
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:158
 #, kde-format
 msgid "Subject Distance (m):"
 msgstr "Distancia al sujeto (m):"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:420
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:387
 #, kde-format
 msgid "(no metadata available)"
 msgstr "(metadatos no disponibles)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:427
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:394
 #, kde-format
 msgid "(no match found)"
 msgstr "(no se encontró)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:434
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:401
 #, kde-format
 msgid "(partial match found)"
 msgstr "(hay coincidencia parcial)"
 
-#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:441
+#: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:408
 #, kde-format
 msgid "(exact match found)"
 msgstr "(hay coincidencia)"
@@ -33205,25 +33205,25 @@ msgstr ""
 "corresponde con la transparencia y está permitido por ciertos formatos de "
 "imagen como PNG o TIF."
 
-#: core/libs/dimg/filters/levels/histogrampainter.cpp:468
+#: core/libs/dimg/filters/levels/histogrampainter.cpp:485
 #, kde-format
 msgctxt "@info: guide position on histogram"
 msgid "x:%1"
 msgstr "x:%1"
 
-#: core/libs/dimg/filters/levels/histogramwidget.cpp:492
+#: core/libs/dimg/filters/levels/histogramwidget.cpp:475
 #, kde-format
 msgctxt "@info: histogram"
 msgid "Loading image..."
 msgstr "Cargando imagen..."
 
-#: core/libs/dimg/filters/levels/histogramwidget.cpp:497
+#: core/libs/dimg/filters/levels/histogramwidget.cpp:480
 #, kde-format
 msgctxt "@info: histogram"
 msgid "Histogram calculation..."
 msgstr "Cálculo del histograma..."
 
-#: core/libs/dimg/filters/levels/histogramwidget.cpp:514
+#: core/libs/dimg/filters/levels/histogramwidget.cpp:497
 #, kde-format
 msgctxt "@info: histogram"
 msgid ""
@@ -33235,37 +33235,37 @@ msgstr ""
 "histograma\n"
 "ha fallado."
 
-#: core/libs/dimg/filters/levels/histogramwidget.cpp:575
+#: core/libs/dimg/filters/levels/histogramwidget.cpp:558
 #, kde-format
 msgctxt "@info: histogram properties"
 msgid "Mean:"
 msgstr "Media:"
 
-#: core/libs/dimg/filters/levels/histogramwidget.cpp:579
+#: core/libs/dimg/filters/levels/histogramwidget.cpp:562
 #, kde-format
 msgctxt "@info: histogram properties"
 msgid "Pixels:"
 msgstr "Píxeles:"
 
-#: core/libs/dimg/filters/levels/histogramwidget.cpp:583
+#: core/libs/dimg/filters/levels/histogramwidget.cpp:566
 #, kde-format
 msgctxt "@info: histogram properties"
 msgid "Std dev.:"
 msgstr "Desv. est.:"
 
-#: core/libs/dimg/filters/levels/histogramwidget.cpp:587
+#: core/libs/dimg/filters/levels/histogramwidget.cpp:570
 #, kde-format
 msgctxt "@info: histogram properties"
 msgid "Count:"
 msgstr "Cantidad:"
 
-#: core/libs/dimg/filters/levels/histogramwidget.cpp:591
+#: core/libs/dimg/filters/levels/histogramwidget.cpp:574
 #, kde-format
 msgctxt "@info: histogram properties"
 msgid "Median:"
 msgstr "Mediana:"
 
-#: core/libs/dimg/filters/levels/histogramwidget.cpp:595
+#: core/libs/dimg/filters/levels/histogramwidget.cpp:578
 #, kde-format
 msgctxt "@info: histogram properties"
 msgid "Percent:"
@@ -33276,7 +33276,7 @@ msgstr "Porcentaje:"
 msgid "Levels Adjust Tool"
 msgstr "Herramienta de ajuste de niveles"
 
-#: core/libs/dimg/filters/nr/nrfilter.cpp:147
+#: core/libs/dimg/filters/nr/nrfilter.cpp:126
 #, kde-format
 msgid "Noise Reduction Filter"
 msgstr "Filtro de reducción de ruido"
@@ -33382,22 +33382,22 @@ msgstr ""
 "No es posible guardar la configuración en el archivo de reducción de ruido "
 "de las fotografías."
 
-#: core/libs/dimg/filters/raw/rawprocessingfilter.cpp:66
+#: core/libs/dimg/filters/raw/rawprocessingfilter.cpp:64
 #, kde-format
 msgid "Raw Conversion"
 msgstr "Conversión RAW"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:95
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:93
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Filtro de corrección de ojos rojos"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionsettings.cpp:71
+#: core/libs/dimg/filters/redeye/redeyecorrectionsettings.cpp:68
 #, kde-format
 msgid "Red Level:"
 msgstr "Nivel de rojo:"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionsettings.cpp:75
+#: core/libs/dimg/filters/redeye/redeyecorrectionsettings.cpp:72
 #, kde-format
 msgid "Set here the reducing level of red to the average of blue and green."
 msgstr "Defina aquí el nivel de rojo a reducir a la media de azul y verde."
@@ -33603,22 +33603,22 @@ msgstr ""
 "No se pueden guardar las preferencias en el archivo de texto de reenfoque de "
 "fotografías."
 
-#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:72
+#: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:68
 #, kde-format
 msgid "Unsharp Mask Tool"
 msgstr "Herramienta de máscara de desenfoque"
 
-#: core/libs/dimg/filters/transform/contentawarefilter.cpp:201
+#: core/libs/dimg/filters/transform/contentawarefilter.cpp:213
 #, kde-format
 msgid "Content-Aware Filter"
 msgstr "Filtro en función del contenido"
 
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:89
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:82
 #, kde-format
 msgid "Main angle:"
 msgstr "Ángulo principal:"
 
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:93
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:86
 #, kde-format
 msgid ""
 "An angle in degrees by which to rotate the image. A positive angle rotates "
@@ -33627,12 +33627,12 @@ msgstr ""
 "Ángulo en grados que se girará la imagen. Un ángulo positivo rota la imagen "
 "en sentido horario; un ángulo negativo la gira en sentido antihorario."
 
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:97
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:90
 #, kde-format
 msgid "Fine angle:"
 msgstr "Ángulo fino:"
 
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:101
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:94
 #, kde-format
 msgid ""
 "This value in degrees will be added to main angle value to set fine target "
@@ -33641,7 +33641,7 @@ msgstr ""
 "Este valor en grados se añadirá al ángulo principal para configurar el "
 "ángulo fino de destino."
 
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:105
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:98
 #, kde-format
 msgid ""
 "Enable this option to apply the anti-aliasing filter to the rotated image. "
@@ -33650,28 +33650,28 @@ msgstr ""
 "Active esta opción para procesar la imagen rotada con el filtro de suavizado "
 "de bordes. Para suavizar la imagen destino, se desenfocará un poco."
 
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:109
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:102
 #, kde-format
 msgid "Auto-crop:"
 msgstr "Recorte automático:"
 
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:111
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:104
 #, kde-format
 msgctxt "no autocrop"
 msgid "None"
 msgstr "Ninguna"
 
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:112
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:105
 #, kde-format
 msgid "Widest Area"
 msgstr "Área más ancha"
 
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:113
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:106
 #, kde-format
 msgid "Largest Area"
 msgstr "Área más grande"
 
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:115
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:108
 #, kde-format
 msgid ""
 "Select the method to process image auto-cropping to remove black frames "

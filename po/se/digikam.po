@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 01:39+0000\n"
+"POT-Creation-Date: 2024-04-09 01:43+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -2783,9 +2783,9 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:487
+#: core/libs/album/engine/album.cpp:491
 #: core/libs/album/manager/albummanager.cpp:173
-#: core/libs/album/treeview/albumselectiontreeview.cpp:266
+#: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:178
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -2873,7 +2873,7 @@ msgid "No Tags Album"
 msgstr ""
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:560
+#: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3150,7 +3150,7 @@ msgid "Selection"
 msgstr ""
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:888
+#: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
 #, kde-format
@@ -7523,7 +7523,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:669
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:370
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:361
 #, kde-format
 msgid "Film"
 msgstr ""
@@ -11548,8 +11548,8 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:85
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:350
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
 #, kde-format
 msgid "Contrast:"
 msgstr ""
@@ -11581,7 +11581,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:219
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:102
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:94
 #, kde-format
 msgid "Saturation:"
 msgstr ""
@@ -14804,13 +14804,13 @@ msgid "Close window"
 msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:309
+#: core/libs/timeadjust/timeadjustsettings.cpp:310
 #, kde-format
 msgid "Timestamp Used"
 msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:311
+#: core/libs/timeadjust/timeadjustsettings.cpp:312
 #, kde-format
 msgid "Timestamp Updated"
 msgstr ""
@@ -16957,7 +16957,7 @@ msgstr ""
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:215
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:261
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:75
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:117
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:108
 #, kde-format
 msgctxt "@label"
 msgid "Type:"
@@ -24781,26 +24781,26 @@ msgid "Generate a Raw image preview using current settings."
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:200
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:79
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
 #, kde-format
 msgid "Brightness:"
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:204
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:83
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
 #, kde-format
 msgid "Set here the brightness adjustment of the image."
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:89
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:356
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:347
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:212
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:86
 #, kde-format
 msgid "Gamma:"
 msgstr ""
@@ -24828,7 +24828,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:260
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:345
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:336
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr ""
@@ -24913,76 +24913,76 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:408
-#: core/libs/database/utils/ifaces/dio.cpp:893
+#: core/libs/album/engine/album.cpp:412
+#: core/libs/database/utils/ifaces/dio.cpp:891
 #, kde-format
 msgid "Trash"
 msgstr "Ruskalihtti"
 
-#: core/libs/album/engine/album.cpp:759
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Timeline Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:765
+#: core/libs/album/engine/album.cpp:774
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:769
+#: core/libs/album/engine/album.cpp:778
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:776
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Map Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:793
 #, kde-format
 msgid "Current Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:784
+#: core/libs/album/engine/album.cpp:798
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:241
+#: core/libs/album/engine/albummodificationhelper.cpp:238
 #, kde-format
 msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:254
+#: core/libs/album/engine/albummodificationhelper.cpp:251
 #, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
 "</p>"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:286
+#: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:290
+#: core/libs/album/engine/albummodificationhelper.cpp:287
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:293
+#: core/libs/album/engine/albummodificationhelper.cpp:290
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:142
 #, kde-format
 msgid "Enter new album name:"
 msgstr ""
 
-#: core/libs/album/engine/albumparser.cpp:86
+#: core/libs/album/engine/albumparser.cpp:82
 #, kde-format
 msgid "Scanning albums"
 msgstr ""
@@ -25431,43 +25431,43 @@ msgid "Context menu"
 msgstr ""
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1103
-#: core/libs/database/utils/ifaces/dio.cpp:903
+#: core/libs/database/utils/ifaces/dio.cpp:901
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:272
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Rating: "
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:289
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:282
 #, kde-format
 msgctxt "@info: rating label"
 msgid "No Rating"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:305
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:298
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Colors: "
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:314
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:308
 #, kde-format
 msgctxt "@info: color label name"
 msgid "No Color"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:318
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:314
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:471
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:320
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:477
 #, kde-format
 msgctxt "@info: color label name"
@@ -25481,94 +25481,94 @@ msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:330
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:332
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:489
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Green"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:334
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:495
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Blue"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:344
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:501
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:342
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:507
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:356
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:513
 #, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:362
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:519
 #, kde-format
 msgctxt "@info: color label name"
 msgid "White"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:366
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:381
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Picks: "
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:375
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:391
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "No Pick"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:379
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:397
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:308
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:403
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:314
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:387
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:409
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:320
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:452
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:477
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
 msgstr ""
 
-#: core/libs/album/treeview/albumlabelssearchhandler.cpp:456
+#: core/libs/album/treeview/albumlabelssearchhandler.cpp:481
 #, kde-format
 msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:216
+#: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:128
@@ -25576,56 +25576,56 @@ msgstr ""
 msgid "Expand Selected Nodes"
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:203
 #, kde-format
 msgid "Expand all Albums"
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:206
 #: core/libs/tags/widgets/tagfolderview.cpp:133
 #: core/libs/tags/widgets/tagfolderview.cpp:236
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:225
+#: core/libs/album/treeview/albumselectiontreeview.cpp:209
 #, kde-format
 msgid "Collapse all Albums"
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:228
+#: core/libs/album/treeview/albumselectiontreeview.cpp:212
 #: core/libs/tags/widgets/tagfolderview.cpp:64
 #, kde-format
 msgid "Find Duplicates..."
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:231
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #, kde-format
 msgid "Scan for Faces"
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
 msgid "Repair hidden Items"
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:237
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #, kde-format
 msgid "Refresh"
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:302
+#: core/libs/album/treeview/albumselectiontreeview.cpp:286
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:303
+#: core/libs/album/treeview/albumselectiontreeview.cpp:287
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
 
-#: core/libs/album/treeview/labelstreeview.cpp:100
+#: core/libs/album/treeview/labelstreeview.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
@@ -26153,8 +26153,8 @@ msgid "Shared directory mounted at \"%1\""
 msgstr ""
 
 #: core/libs/database/coredb/coredbaccess.cpp:303
-#: core/libs/database/similaritydb/similaritydbaccess.cpp:241
-#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:251
+#: core/libs/database/similaritydb/similaritydbaccess.cpp:233
+#: core/libs/database/thumbsdb/thumbsdbaccess.cpp:243
 #: core/libs/facesengine/facedb/facedbaccess.cpp:230
 #, kde-format
 msgid ""
@@ -26226,8 +26226,8 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:326
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:207
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
 msgid ""
 "Failed to create tables in database.\n"
@@ -26517,7 +26517,7 @@ msgctxt "RAW image file (), the parentheses contain the file suffix, like MRW"
 msgid "RAW image file (%1)"
 msgstr ""
 
-#: core/libs/database/models/itemfiltermodel.cpp:385
+#: core/libs/database/models/itemfiltermodel.cpp:384
 #, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
@@ -26525,24 +26525,24 @@ msgid_plural "%1 Faces"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/database/models/itemfiltermodel.cpp:388
+#: core/libs/database/models/itemfiltermodel.cpp:387
 #, kde-format
 msgctxt "@item: filter model"
 msgid "No face"
 msgstr ""
 
-#: core/libs/database/models/itemfiltermodel.cpp:399
+#: core/libs/database/models/itemfiltermodel.cpp:398
 #, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
 msgstr ""
 
-#: core/libs/database/models/itemversionsmodel.cpp:95
+#: core/libs/database/models/itemversionsmodel.cpp:91
 #, kde-format
 msgid "No image selected"
 msgstr ""
 
-#: core/libs/database/models/itemversionsmodel.cpp:120
+#: core/libs/database/models/itemversionsmodel.cpp:116
 #, kde-format
 msgid "This is the original image"
 msgstr ""
@@ -26643,7 +26643,7 @@ msgstr ""
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:143
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:141
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBSimilarityVersion\" setting does not "
@@ -26651,8 +26651,8 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:173
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:177
+#: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:174
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:170
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -26685,7 +26685,7 @@ msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
 msgstr ""
 
-#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:145
+#: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:138
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBThumbnailsVersion\" setting does not "
@@ -26693,13 +26693,13 @@ msgid ""
 "with an empty database. "
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:346
+#: core/libs/database/utils/ifaces/dio.cpp:344
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:347
+#: core/libs/database/utils/ifaces/dio.cpp:345
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -26712,72 +26712,72 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:356
+#: core/libs/database/utils/ifaces/dio.cpp:354
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:358
+#: core/libs/database/utils/ifaces/dio.cpp:356
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:360
+#: core/libs/database/utils/ifaces/dio.cpp:358
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:857
+#: core/libs/database/utils/ifaces/dio.cpp:855
 #, kde-format
 msgid "Copy Album"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:862
+#: core/libs/database/utils/ifaces/dio.cpp:860
 #, kde-format
 msgid "Copy Images"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:868
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Copy Files"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:873
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Move Album"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:878
+#: core/libs/database/utils/ifaces/dio.cpp:876
 #, kde-format
 msgid "Move Images"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:883
+#: core/libs/database/utils/ifaces/dio.cpp:881
 #, kde-format
 msgid "Move Files"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:898
+#: core/libs/database/utils/ifaces/dio.cpp:896
 #, kde-format
 msgid "Restore Trash"
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:119
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -26786,13 +26786,13 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:264
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -26813,59 +26813,59 @@ msgstr ""
 msgid "Scanning images in individual albums..."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:136
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:124
 #, kde-format
 msgid "Migrate ->"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
 #, kde-format
 msgid "Cancel"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:128
 #, kde-format
 msgid "Progress Information"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:149
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
 #, kde-format
 msgid "Step Progress"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:150
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:138
 #, kde-format
 msgid "Overall Progress"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:221
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:209
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:228
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:237
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:273
 #, kde-format
 msgid "Database copied successfully."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:287
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:280
 #, kde-format
 msgid "Database conversion canceled."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:296
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:290
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr ""
@@ -28030,265 +28030,265 @@ msgstr ""
 msgid "Auto Normalize"
 msgstr ""
 
-#: core/libs/dimg/filters/bcg/bcgfilter.cpp:89
+#: core/libs/dimg/filters/bcg/bcgfilter.cpp:85
 #, kde-format
 msgid "Brightness / Contrast / Gamma Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bcg/bcgsettings.cpp:96
+#: core/libs/dimg/filters/bcg/bcgsettings.cpp:91
 #, kde-format
 msgid "Set here the gamma adjustment of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiafilter.cpp:84
+#: core/libs/dimg/filters/bw/bwsepiafilter.cpp:75
 #, kde-format
 msgid "Black & White / Sepia Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:150
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:141
 #, kde-format
 msgctxt "generic black and white film"
 msgid "Generic"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:151
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:142
 #, kde-format
 msgid "<b>Generic</b>:<p>Simulate a generic black and white film.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:154
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:145
 #, kde-format
 msgid "Agfa 200X"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:155
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:146
 #, kde-format
 msgid ""
 "<b>Agfa 200X</b>:<p>Simulate the Agfa 200X black and white film at 200 ISO.</"
 "p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:158
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:149
 #, kde-format
 msgid "Agfa Pan 25"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:159
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:150
 #, kde-format
 msgid ""
 "<b>Agfa Pan 25</b>:<p>Simulate the Agfa Pan black and white film at 25 ISO.</"
 "p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:162
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:153
 #, kde-format
 msgid "Agfa Pan 100"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:163
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:154
 #, kde-format
 msgid ""
 "<b>Agfa Pan 100</b>:<p>Simulate the Agfa Pan black and white film at 100 ISO."
 "</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:166
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:157
 #, kde-format
 msgid "Agfa Pan 400"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:167
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:158
 #, kde-format
 msgid ""
 "<b>Agfa Pan 400</b>:<p>Simulate the Agfa Pan black and white film at 400 ISO."
 "</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:170
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:161
 #, kde-format
 msgid "Ilford Delta 100"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:171
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:162
 #, kde-format
 msgid ""
 "<b>Ilford Delta 100</b>:<p>Simulate the Ilford Delta black and white film at "
 "100 ISO.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:174
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:165
 #, kde-format
 msgid "Ilford Delta 400"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:175
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:166
 #, kde-format
 msgid ""
 "<b>Ilford Delta 400</b>:<p>Simulate the Ilford Delta black and white film at "
 "400 ISO.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:178
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:169
 #, kde-format
 msgid "Ilford Delta 400 Pro 3200"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:179
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:170
 #, kde-format
 msgid ""
 "<b>Ilford Delta 400 Pro 3200</b>:<p>Simulate the Ilford Delta 400 Pro black "
 "and white film at 3200 ISO.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:182
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:173
 #, kde-format
 msgid "Ilford FP4 Plus"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:183
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:174
 #, kde-format
 msgid ""
 "<b>Ilford FP4 Plus</b>:<p>Simulate the Ilford FP4 Plus black and white film "
 "at 125 ISO.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:186
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:177
 #, kde-format
 msgid "Ilford HP5 Plus"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:187
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:178
 #, kde-format
 msgid ""
 "<b>Ilford HP5 Plus</b>:<p>Simulate the Ilford HP5 Plus black and white film "
 "at 400 ISO.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:190
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:181
 #, kde-format
 msgid "Ilford PanF Plus"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:191
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:182
 #, kde-format
 msgid ""
 "<b>Ilford PanF Plus</b>:<p>Simulate the Ilford PanF Plus black and white "
 "film at 50 ISO.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:194
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:185
 #, kde-format
 msgid "Ilford XP2 Super"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:195
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:186
 #, kde-format
 msgid ""
 "<b>Ilford XP2 Super</b>:<p>Simulate the Ilford XP2 Super black and white "
 "film at 400 ISO.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:198
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:189
 #, kde-format
 msgid "Kodak Tmax 100"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:199
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:190
 #, kde-format
 msgid ""
 "<b>Kodak Tmax 100</b>:<p>Simulate the Kodak Tmax black and white film at 100 "
 "ISO.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:202
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:193
 #, kde-format
 msgid "Kodak Tmax 400"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:203
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:194
 #, kde-format
 msgid ""
 "<b>Kodak Tmax 400</b>:<p>Simulate the Kodak Tmax black and white film at 400 "
 "ISO.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:206
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:197
 #, kde-format
 msgid "Kodak TriX"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:207
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:198
 #, kde-format
 msgid ""
 "<b>Kodak TriX</b>:<p>Simulate the Kodak TriX black and white film at 400 ISO."
 "</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:212
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:203
 #, kde-format
 msgid "Ilford SPX 200 (Infrared)"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:213
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:204
 #, kde-format
 msgid ""
 "<b>Ilford SPX 200</b>:<p>Simulate the Ilford SPX infrared film at 200 ISO.</"
 "p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:216
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:207
 #, kde-format
 msgid "Ilford SPX 400 (Infrared)"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:217
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:208
 #, kde-format
 msgid ""
 "<b>Ilford SPX 400</b>:<p>Simulate the Ilford SPX infrared film at 400 ISO.</"
 "p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:220
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:211
 #, kde-format
 msgid "Ilford SPX 800 (Infrared)"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:221
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:212
 #, kde-format
 msgid ""
 "<b>Ilford SPX 800</b>:<p>Simulate the Ilford SPX infrared film at 800 ISO.</"
 "p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:224
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:215
 #, kde-format
 msgid "Kodak HIE (Infrared)"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:225
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:216
 #, kde-format
 msgid "<b>Kodak HIE</b>:<p>Simulate the Kodak HIE infrared film.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:234
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:225
 #, kde-format
 msgid "No Lens Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:235
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:226
 #, kde-format
 msgid ""
 "<b>No Lens Filter</b>:<p>Do not apply a lens filter when rendering the image."
 "</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:238
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:324
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:229
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:315
 #, kde-format
 msgid "Green Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:239
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:230
 #, kde-format
 msgid ""
 "<b>Black & White with Green Filter</b>:<p>Simulate black and white film "
@@ -28296,12 +28296,12 @@ msgid ""
 "especially portraits photographed against the sky.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:244
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:235
 #, kde-format
 msgid "Orange Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:245
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:236
 #, kde-format
 msgid ""
 "<b>Black & White with Orange Filter</b>:<p>Simulate black and white film "
@@ -28309,12 +28309,12 @@ msgid ""
 "and aerial photography.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:250
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:241
 #, kde-format
 msgid "Red Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:251
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:242
 #, kde-format
 msgid ""
 "<b>Black & White with Red Filter</b>:<p>Simulate black and white film "
@@ -28322,12 +28322,12 @@ msgid ""
 "simulates moonlight scenes in the daytime.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:256
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:247
 #, kde-format
 msgid "Yellow Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:257
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:248
 #, kde-format
 msgid ""
 "<b>Black & White with Yellow Filter</b>:<p>Simulate black and white film "
@@ -28335,12 +28335,12 @@ msgid ""
 "and improves contrast. Ideal for landscapes.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:262
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:253
 #, kde-format
 msgid "Yellow-Green Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:263
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:254
 #, kde-format
 msgid ""
 "<b>Black & White with Yellow-Green Filter</b>:<p>Simulate black and white "
@@ -28351,12 +28351,12 @@ msgid ""
 "filter is highly effective for indoor portraits under tungsten lighting.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:270
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:261
 #, kde-format
 msgid "Blue Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:271
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:262
 #, kde-format
 msgid ""
 "<b>Black & White with Blue Filter</b>:<p>Simulate black and white film "
@@ -28364,32 +28364,32 @@ msgid ""
 "transfer and contrast effects.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:276
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:267
 #, kde-format
 msgid "Strength:"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:282
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:273
 #, kde-format
 msgid "Here, set the strength adjustment of the lens filter."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:293
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:284
 #, kde-format
 msgid "No Tone Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:294
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:285
 #, kde-format
 msgid "<b>No Tone Filter</b>:<p>Do not apply a tone filter to the image.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:297
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:288
 #, kde-format
 msgid "Sepia Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:298
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:289
 #, kde-format
 msgid ""
 "<b>Black & White with Sepia Tone</b>:<p>Gives a warm highlight and mid-tone "
@@ -28397,99 +28397,99 @@ msgid ""
 "of bleaching a print and re-developing in a sepia toner.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:303
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:294
 #, kde-format
 msgid "Brown Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:304
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:295
 #, kde-format
 msgid ""
 "<b>Black & White with Brown Tone</b>:<p>This filter is more neutral than the "
 "Sepia Tone filter.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:308
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:299
 #, kde-format
 msgid "Cold Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:309
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:300
 #, kde-format
 msgid ""
 "<b>Black & White with Cold Tone</b>:<p>Start subtly and replicate printing "
 "on a cold tone black and white paper such as a bromide enlarging paper.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:314
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:305
 #, kde-format
 msgid "Selenium Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:315
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:306
 #, kde-format
 msgid ""
 "<b>Black & White with Selenium Tone</b>:<p>This effect replicates "
 "traditional selenium chemical toning done in the darkroom.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:319
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:310
 #, kde-format
 msgid "Platinum Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:320
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:311
 #, kde-format
 msgid ""
 "<b>Black & White with Platinum Tone</b>:<p>This effect replicates "
 "traditional platinum chemical toning done in the darkroom.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:325
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:316
 #, kde-format
 msgid ""
 "<b>Black & White with greenish tint</b>:<p>This effect is also known as "
 "Verdante.</p>"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:372
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:363
 #, kde-format
 msgid "Lens Filters"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:374
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:365
 #, kde-format
 msgid "Tone"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:376
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:367
 #, kde-format
 msgid "Luminosity"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:520
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:547
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:538
 #, kde-format
 msgid "\"%1\" is not a Black & White settings text file."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:592
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:584
 #, kde-format
 msgid "Cannot load settings from the Black & White text file."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:592
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
+#: core/libs/dimg/filters/bw/bwsepiasettings.cpp:631
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
 msgstr ""
@@ -28504,98 +28504,98 @@ msgstr ""
 msgid "Channel Mixer Tool"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:130
+#: core/libs/dimg/filters/bw/mixersettings.cpp:117
 #, kde-format
 msgctxt "@label"
 msgid "Output Channel:"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:132
+#: core/libs/dimg/filters/bw/mixersettings.cpp:119
 #, kde-format
 msgctxt "@item: color"
 msgid "Red"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:133
+#: core/libs/dimg/filters/bw/mixersettings.cpp:120
 #, kde-format
 msgctxt "@item: color"
 msgid "Green"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:134
+#: core/libs/dimg/filters/bw/mixersettings.cpp:121
 #, kde-format
 msgctxt "@item: color"
 msgid "Blue"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:136
+#: core/libs/dimg/filters/bw/mixersettings.cpp:123
 #, kde-format
 msgctxt "@label: color"
 msgid "Red (%):"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:141
+#: core/libs/dimg/filters/bw/mixersettings.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "Select the red color gain, as a percentage, for the current channel."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:144
+#: core/libs/dimg/filters/bw/mixersettings.cpp:131
 #, kde-format
 msgctxt "@label: color"
 msgid "Green (%):"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:149
+#: core/libs/dimg/filters/bw/mixersettings.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid "Select the green color gain, as a percentage, for the current channel."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:152
+#: core/libs/dimg/filters/bw/mixersettings.cpp:139
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue (%):"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:157
+#: core/libs/dimg/filters/bw/mixersettings.cpp:144
 #, kde-format
 msgctxt "@info"
 msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:162
+#: core/libs/dimg/filters/bw/mixersettings.cpp:149
 #, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:164
+#: core/libs/dimg/filters/bw/mixersettings.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Reset color channels' gains settings from the currently selected channel."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:172
+#: core/libs/dimg/filters/bw/mixersettings.cpp:159
 #, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:173
+#: core/libs/dimg/filters/bw/mixersettings.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option is you want preserve the image luminosity."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:178
+#: core/libs/dimg/filters/bw/mixersettings.cpp:165
 #, kde-format
 msgctxt "@option: color"
 msgid "Monochrome"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:180
+#: core/libs/dimg/filters/bw/mixersettings.cpp:167
 #, kde-format
 msgctxt "@info: help"
 msgid ""
@@ -28606,31 +28606,31 @@ msgid ""
 "Note: in this mode, the histogram will display only luminosity values."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:351
+#: core/libs/dimg/filters/bw/mixersettings.cpp:338
 #, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:545
+#: core/libs/dimg/filters/bw/mixersettings.cpp:533
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:625
+#: core/libs/dimg/filters/bw/mixersettings.cpp:613
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the Gains Mixer text file."
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:635
+#: core/libs/dimg/filters/bw/mixersettings.cpp:623
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr ""
 
-#: core/libs/dimg/filters/bw/mixersettings.cpp:714
+#: core/libs/dimg/filters/bw/mixersettings.cpp:702
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
@@ -28641,60 +28641,60 @@ msgstr ""
 msgid "Tonality Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbfilter.cpp:102
+#: core/libs/dimg/filters/cb/cbfilter.cpp:92
 #, kde-format
 msgid "Color Balance Tool"
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:78
+#: core/libs/dimg/filters/cb/cbsettings.cpp:73
 #, kde-format
 msgctxt "@label: color"
 msgid "Cyan"
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:84
+#: core/libs/dimg/filters/cb/cbsettings.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid "Set here the cyan/red color adjustment of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:86
+#: core/libs/dimg/filters/cb/cbsettings.cpp:81
 #, kde-format
 msgctxt "@label: color"
 msgid "Red"
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:91
+#: core/libs/dimg/filters/cb/cbsettings.cpp:86
 #, kde-format
 msgctxt "@label: color"
 msgid "Magenta"
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:97
+#: core/libs/dimg/filters/cb/cbsettings.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid "Set here the magenta/green color adjustment of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:99
+#: core/libs/dimg/filters/cb/cbsettings.cpp:94
 #, kde-format
 msgctxt "@label: color"
 msgid "Green"
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:104
+#: core/libs/dimg/filters/cb/cbsettings.cpp:99
 #, kde-format
 msgctxt "@label: color"
 msgid "Yellow"
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:107
+#: core/libs/dimg/filters/cb/cbsettings.cpp:102
 #, kde-format
 msgctxt "@label: color"
 msgid "Blue"
 msgstr ""
 
-#: core/libs/dimg/filters/cb/cbsettings.cpp:113
+#: core/libs/dimg/filters/cb/cbsettings.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Set here the yellow/blue color adjustment of the image."
@@ -29197,17 +29197,17 @@ msgstr ""
 msgid "Unknown filter"
 msgstr ""
 
-#: core/libs/dimg/filters/film/filmfilter.cpp:396
+#: core/libs/dimg/filters/film/filmfilter.cpp:467
 #, kde-format
 msgid "Color Negative Inverter"
 msgstr ""
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:193
+#: core/libs/dimg/filters/filteractionfilter.cpp:190
 #, kde-format
 msgid "Built-in transformation not supported"
 msgstr ""
 
-#: core/libs/dimg/filters/filteractionfilter.cpp:215
+#: core/libs/dimg/filters/filteractionfilter.cpp:212
 #, kde-format
 msgid "Filter identifier or version is not supported"
 msgstr ""
@@ -29227,42 +29227,42 @@ msgstr ""
 msgid "Charcoal Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxfilter.cpp:75
+#: core/libs/dimg/filters/fx/colorfxfilter.cpp:71
 #, kde-format
 msgid "Color FX Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:119
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:110
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Solarize"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:120
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:111
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Vivid"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:121
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:112
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Neon"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:122
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:113
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Find Edges"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:123
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:114
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Lut3D"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:126
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:117
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29276,25 +29276,25 @@ msgid ""
 "\"Lut3D\": coloring images with Lut3D filters"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:150
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:141
 #, kde-format
 msgctxt "@label: level of the effect"
 msgid "Level:"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:154
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Set here the level of the effect."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:156
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:147
 #, kde-format
 msgctxt "@label"
 msgid "Iteration:"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:160
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29302,208 +29302,208 @@ msgid ""
 "Edges effects."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:192
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:183
 #, kde-format
 msgctxt "@label"
 msgid "Intensity:"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:196
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:187
 #, kde-format
 msgctxt "@info"
 msgid "Set here the intensity of the filter."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:376
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:373
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Bleach"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:380
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:377
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Blue Crush"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:384
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:381
 #, kde-format
 msgctxt "@info: effect type"
 msgid "BW Contrast"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:388
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:385
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Instant"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:392
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:389
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Original"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:396
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:393
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Punch"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:400
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:397
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Summer"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:404
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:401
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Tokyo"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:408
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:405
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Vintage"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:412
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:409
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Washout"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:416
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:413
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Washout Color"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/colorfxsettings.cpp:420
+#: core/libs/dimg/filters/fx/colorfxsettings.cpp:417
 #, kde-format
 msgctxt "@info: effect type"
 msgid "X Process"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:103
+#: core/libs/dimg/filters/fx/distortionfxfilter.cpp:95
 #, kde-format
 msgid "Distortion Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/embossfilter.cpp:61
+#: core/libs/dimg/filters/fx/embossfilter.cpp:60
 #, kde-format
 msgid "Emboss Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:111
+#: core/libs/dimg/filters/fx/filmgrainfilter.cpp:104
 #, kde-format
 msgid "Film Grain Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:166
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:136
 #, kde-format
 msgid "Grain Size:"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:170
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:140
 #, kde-format
 msgid "Set here the graininess size of film."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:172
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:142
 #, kde-format
 msgid "Photographic Distribution"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:173
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:143
 #, kde-format
 msgid ""
 "Set on this option to render grain using a photon statistic distribution. "
 "This require more computation and can take a while."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:186
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:233
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:280
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:156
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:203
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:250
 #, kde-format
 msgid "Intensity:"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:190
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:160
 #, kde-format
 msgid ""
 "Set here the film ISO-sensitivity to use for simulating the film graininess."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:195
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:242
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:289
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:165
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:212
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:259
 #, kde-format
 msgid "Shadows:"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:199
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:246
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:293
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:169
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:216
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:263
 #, kde-format
 msgid "Set how much the filter affects highlights."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:203
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:250
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:297
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:173
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:220
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:267
 #, kde-format
 msgid "Midtones:"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:207
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:254
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:301
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:177
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:224
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:271
 #, kde-format
 msgid "Set how much the filter affects midtones."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:211
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:258
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:305
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:181
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:228
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:275
 #, kde-format
 msgid "Highlights:"
 msgstr "Merke"
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:215
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:262
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:309
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:185
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:232
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:279
 #, kde-format
 msgid "Set how much the filter affects shadows."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:237
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:207
 #, kde-format
 msgid "Set here the film sensitivity to use for simulating the CCD blue noise."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:284
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:254
 #, kde-format
 msgid "Set here the film sensitivity to use for simulating the CCD red noise."
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:328
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:298
 #, kde-format
 msgid "Common Settings"
 msgstr "Gohččunheivehusat"
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:331
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:301
 #, kde-format
 msgid "Luminance Noise"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:334
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:304
 #, kde-format
 msgid "Chrominance Blue Noise"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:337
+#: core/libs/dimg/filters/fx/filmgrainsettings.cpp:307
 #, kde-format
 msgid "Chrominance Red Noise"
 msgstr ""
@@ -29513,57 +29513,57 @@ msgstr ""
 msgid "Invert Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:84
+#: core/libs/dimg/filters/fx/oilpaintfilter.cpp:79
 #, kde-format
 msgid "Oil Painter Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/fx/raindropfilter.cpp:95
+#: core/libs/dimg/filters/fx/raindropfilter.cpp:89
 #, kde-format
 msgid "Rain Drops Effect"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:158
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:162
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:126
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:96
 #, kde-format
 msgctxt "@title: general settings"
 msgid "General"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:128
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:98
 #, kde-format
 msgid "Detail preservation:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:102
 #, kde-format
 msgid ""
 "Preservation of details to set the sharpening level of the small features in "
 "the target image. Higher values leave details sharp."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:136
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:106
 #, kde-format
 msgid "Anisotropy:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:140
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:110
 #, kde-format
 msgid ""
 "Anisotropic (directional) modifier of the details. Keep it small for "
 "Gaussian noise."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:143
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:113
 #, kde-format
 msgid "Smoothing:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:147
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:117
 #, kde-format
 msgid ""
 "Total smoothing power: if the Detail Factor sets the relative smoothing and "
@@ -29571,129 +29571,129 @@ msgid ""
 "effect."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:151
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:121
 #, kde-format
 msgid "Regularity:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:155
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:125
 #, kde-format
 msgid ""
 "This value controls the evenness of smoothing to the image. Do not use a "
 "high value here, or the target image will be completely blurred."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:159
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:129
 #, kde-format
 msgid "Iterations:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:132
 #, kde-format
 msgid "Sets the number of times the filter is applied to the image."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:164
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:134
 #, kde-format
 msgid "Noise:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:168
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:138
 #, kde-format
 msgid "Sets the noise scale."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:190
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "Advanced Settings"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:192
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
 #, kde-format
 msgid "Angular step:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:166
 #, kde-format
 msgid ""
 "Set here the angular integration step (in degrees) analogous to anisotropy."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:169
 #, kde-format
 msgid "Integral step:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:203
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:173
 #, kde-format
 msgid "Set here the spatial integral step."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:205
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:175
 #, kde-format
 msgid "Gaussian:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:209
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:179
 #, kde-format
 msgid "Set here the precision of the Gaussian function."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:211
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:181
 #, kde-format
 msgid "Tile size:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:214
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:184
 #, kde-format
 msgid "Sets the tile size."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:216
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:186
 #, kde-format
 msgid "Tile border:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:219
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:189
 #, kde-format
 msgid "Sets the size of each tile border."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:221
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:191
 #, kde-format
 msgid "Interpolation:"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:223
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:193
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Nearest Neighbor"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:224
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:194
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Linear"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:225
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:195
 #, kde-format
 msgctxt "@item: interpolation"
 msgid "Runge-Kutta"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:226
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:196
 #, kde-format
 msgid "Select the right interpolation method for the desired image quality."
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:229
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
 #, kde-format
 msgid "Fast approximation"
 msgstr ""
 
-#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:230
+#: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:200
 #, kde-format
 msgid "Enable fast approximation when rendering images."
 msgstr ""
@@ -29814,54 +29814,54 @@ msgstr ""
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslfilter.cpp:82
+#: core/libs/dimg/filters/hsl/hslfilter.cpp:74
 #, kde-format
 msgid "Hue / Saturation / Lightness Filter"
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:87
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:79
 #, kde-format
 msgid "Select the hue and saturation adjustments of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:91
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:83
 #, kde-format
 msgid "You can see here a color preview of the hue and saturation adjustments."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:95
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:87
 #, kde-format
 msgid "Hue:"
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:100
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:92
 #, kde-format
 msgid "Set here the hue adjustment of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:107
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:99
 #, kde-format
 msgid "Set here the saturation adjustment of the image."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:109
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:101
 #, kde-format
 msgid "Vibrance:"
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:114
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:106
 #, kde-format
 msgid ""
 "Set here the vibrance adjustment of the image.Vibrance performs selective "
 "saturation on less saturated colors and avoiding skin tones."
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:117
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:109
 #, kde-format
 msgid "Lightness:"
 msgstr ""
 
-#: core/libs/dimg/filters/hsl/hslsettings.cpp:122
+#: core/libs/dimg/filters/hsl/hslsettings.cpp:114
 #, kde-format
 msgid "Set here the lightness adjustment of the image."
 msgstr ""
@@ -33962,7 +33962,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr ""
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1386
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1430
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -35239,7 +35239,7 @@ msgid "IPTC"
 msgstr ""
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:282
+#: core/libs/timeadjust/timeadjustsettings.cpp:283
 #, kde-format
 msgid "XMP"
 msgstr ""
@@ -37557,7 +37557,7 @@ msgid "File name timestamp"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:180
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#: core/libs/timeadjust/timeadjustsettings.cpp:276
 #, kde-format
 msgid "File last modified"
 msgstr ""
@@ -37568,25 +37568,25 @@ msgid "EXIF/IPTC/XMP"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, kde-format
 msgid "EXIF: created"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:191
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "EXIF: original"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:192
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, kde-format
 msgid "EXIF: digitized"
 msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:193
-#: core/libs/timeadjust/timeadjustsettings.cpp:280
+#: core/libs/timeadjust/timeadjustsettings.cpp:281
 #, kde-format
 msgid "IPTC: created"
 msgstr ""
@@ -37664,20 +37664,25 @@ msgstr ""
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
 #, kde-format
+msgid "Use this option primarily with video files"
+msgstr ""
+
+#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#, kde-format
 msgid "Update only existing timestamps"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:280
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:281
+#: core/libs/timeadjust/timeadjustsettings.cpp:282
 #, kde-format
 msgid "XMP: Video"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:310
+#: core/libs/timeadjust/timeadjustsettings.cpp:311
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr ""
