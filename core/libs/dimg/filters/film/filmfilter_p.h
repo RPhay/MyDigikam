@@ -139,9 +139,9 @@ private:
     double gBalance     = 1.0;
     double bBalance     = 1.0;
 
-    double wpRed;
-    double wpGreen;
-    double wpBlue;
+    double wpRed        = 1.0;
+    double wpGreen      = 1.0;
+    double wpBlue       = 1.0;
 };
 
 // --------------------------------------------------------------------------------------------------------
