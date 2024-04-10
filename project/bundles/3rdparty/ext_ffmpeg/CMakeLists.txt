@@ -64,8 +64,8 @@ endif()
 
 ExternalProject_Add(ext_ffmpeg
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://ffmpeg.org/releases/ffmpeg-4.4.4.tar.xz
-    URL_MD5 cce7aaaed2b4c202999a8d79a69f3ecc
+    URL https://ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz
+    URL_MD5 341d719415b7f95bb59f5016f2864ac6
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure ${FFmpeg_Conf}
     UPDATE_COMMAND ""
