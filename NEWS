@@ -67,8 +67,8 @@ BUGFIXES:
 044 ==> 485157 - Filter for Color or Pick Labels can not be activated.
 045 ==> 485282 - Customizing "Open with" 'command' no more available in Digikam git version.
 046 ==> 485246 - Main photo view shows original and all versions of edited photos even when the corresponding settings are disabled.
-047 ==> 
-048 ==> 
+047 ==> 484946 - FTBFS with Qt 6.7.
+048 ==> 485131 - Compilation failed with Qt 6.7.0.
 049 ==> 
 050 ==> 
 051 ==> 
