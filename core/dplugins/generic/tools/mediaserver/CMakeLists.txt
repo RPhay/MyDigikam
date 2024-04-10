@@ -160,7 +160,9 @@ endif()
 file(GLOB_RECURSE upnpsdk_headers ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/*.h)
 
 foreach(_file ${upnpsdk_headers})
+
     set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+
 endforeach()
 
 set(libmediaserver_SRCS
@@ -173,6 +175,7 @@ set(libmediaserver_SRCS
 
 # For Unit-tests and plugin
 add_library(mediaserverbackend STATIC ${libmediaserver_SRCS})
+set_property(TARGET mediaserverbackend PROPERTY CXX_STANDARD 17)
 
 if(MSVC)
 
@@ -191,12 +194,14 @@ target_link_libraries(mediaserverbackend
 )
 
 if(WIN32)
+
     target_link_libraries(mediaserverbackend
                           PRIVATE
                           # Defined in RulesWindows.cmake
                           ${WSOCK32_LIBRARY}
                           ${WS2_32_LIBRARY}
     )
+
 endif()
 
 # ---------------------------------------------------------------------------------------------------
