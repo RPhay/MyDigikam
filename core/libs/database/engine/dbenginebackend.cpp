@@ -41,13 +41,6 @@
 namespace Digikam
 {
 
-DbEngineLocking::DbEngineLocking()
-    : lockCount(0) // create a recursive mutex
-{
-}
-
-// -----------------------------------------------------------------------------------------
-
 BdEngineBackendPrivate::BusyWaiter::BusyWaiter(BdEngineBackendPrivate* const d)
     : AbstractWaitingUnlocker(d, &d->busyWaitMutex, &d->busyWaitCondVar)
 {
@@ -61,12 +54,6 @@ BdEngineBackendPrivate::ErrorLocker::ErrorLocker(BdEngineBackendPrivate* const d
 }
 
 // -----------------------------------------------------------------------------------------
-
-DbEngineThreadData::DbEngineThreadData()
-    : valid           (0),
-      transactionCount(0)
-{
-}
 
 DbEngineThreadData::~DbEngineThreadData()
 {
@@ -106,14 +93,7 @@ void DbEngineThreadData::closeDatabase()
 }
 
 BdEngineBackendPrivate::BdEngineBackendPrivate(BdEngineBackend* const backend)
-    : currentValidity         (0),
-      isInTransaction         (false),
-      status                  (BdEngineBackend::Unavailable),
-      lock                    (nullptr),
-      operationStatus         (BdEngineBackend::ExecuteNormal),
-      errorLockOperationStatus(BdEngineBackend::ExecuteNormal),
-      errorHandler            (nullptr),
-      q                       (backend)
+    : q(backend)
 {
 }
 
@@ -134,12 +114,14 @@ void BdEngineBackendPrivate::init(const QString& name, DbEngineLocking* const l)
     qRegisterMetaType<QSqlError>();
 }
 
-// "A connection can only be used from within the thread that created it.
-//  Moving connections between threads or creating queries from a different thread is not supported."
-// => one QSqlDatabase object per thread.
-// The main class' open/close methods only interact with the "firstDatabase" object.
-// When another thread requests a DB, a new connection is opened and closed at
-// finishing of the thread.
+/**
+ * "A connection can only be used from within the thread that created it.
+ *  Moving connections between threads or creating queries from a different thread is not supported."
+ * => one QSqlDatabase object per thread.
+ * The main class' open/close methods only interact with the "firstDatabase" object.
+ * When another thread requests a DB, a new connection is opened and closed at
+ * finishing of the thread.
+ */
 QSqlDatabase BdEngineBackendPrivate::databaseForThread()
 {
     DbEngineThreadData* threadData = nullptr;
@@ -553,9 +535,8 @@ void BdEngineBackendPrivate::connectionErrorAbortQueries()
 
 // -----------------------------------------------------------------------------------------
 
-BdEngineBackendPrivate::AbstractUnlocker::AbstractUnlocker(BdEngineBackendPrivate* const d)
-    : count(0),
-      d    (d)
+BdEngineBackendPrivate::AbstractUnlocker::AbstractUnlocker(BdEngineBackendPrivate* const dd)
+    : d(dd)
 {
     // Why two mutexes? The main mutex is recursive and won't work with a condvar.
 
@@ -670,6 +651,7 @@ BdEngineBackend::BdEngineBackend(const QString& backendName,
 BdEngineBackend::~BdEngineBackend()
 {
     Q_D(BdEngineBackend);
+
     close();
 
     delete d;
@@ -685,6 +667,7 @@ DbEngineConfigSettings BdEngineBackend::configElement() const
 DbEngineAction BdEngineBackend::getDBAction(const QString& actionName) const
 {
     Q_D(const BdEngineBackend);
+
     DbEngineAction action = configElement().sqlStatements.value(actionName);
 
     if (action.name.isNull())
@@ -961,6 +944,7 @@ bool BdEngineBackend::open(const DbEngineParameters& parameters)
 void BdEngineBackend::close()
 {
     Q_D(BdEngineBackend);
+
     d->closeDatabaseForThread();
     d->status = Unavailable;
 }

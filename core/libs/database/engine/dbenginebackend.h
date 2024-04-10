@@ -43,12 +43,12 @@ class DIGIKAM_EXPORT DbEngineLocking
 {
 public:
 
-    explicit DbEngineLocking();
+    DbEngineLocking() = default;
 
 public:
 
     QRecursiveMutex mutex;
-    int             lockCount;
+    int             lockCount = 0;  ///< create a recursive mutex
 };
 
 // -----------------------------------------------------------------
@@ -154,10 +154,7 @@ public:
     {
     public:
 
-        QueryState()
-            : value(BdEngineBackend::NoErrors)
-        {
-        }
+        QueryState() = default;
 
         explicit QueryState(const QueryStateEnum value)    // krazy:exclude=explicit
             : value(value)
@@ -176,7 +173,7 @@ public:
 
     private:
 
-        QueryStateEnum value;
+        QueryStateEnum value = BdEngineBackend::NoErrors;
     };
 
 public:
@@ -540,7 +537,7 @@ public:
 
 protected:
 
-    BdEngineBackendPrivate* const d_ptr;
+    BdEngineBackendPrivate* const d_ptr = nullptr;
 
 private:
 

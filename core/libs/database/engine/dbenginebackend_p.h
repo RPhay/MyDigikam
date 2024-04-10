@@ -39,15 +39,15 @@ class Q_DECL_HIDDEN DbEngineThreadData
 {
 public:
 
-    explicit DbEngineThreadData();
+    DbEngineThreadData() = default;
     ~DbEngineThreadData();
 
     void closeDatabase();
 
 public:
 
-    int       valid;
-    int       transactionCount;
+    int       valid             = 0;
+    int       transactionCount  = 0;
     QString   connectionName;
     QSqlError lastError;
 };
@@ -107,28 +107,28 @@ public:
      * This compares to DbEngineThreadData's valid.
      * If currentValidity is increased and > valid, the db is marked as invalid
      */
-    int                                       currentValidity;
+    int                                       currentValidity           = 0;
 
-    bool                                      isInTransaction;
+    bool                                      isInTransaction           = false;
 
     QString                                   backendName;
 
     DbEngineParameters                        parameters;
 
-    BdEngineBackend::Status                   status;
+    BdEngineBackend::Status                   status                    = BdEngineBackend::Unavailable;
 
-    DbEngineLocking*                          lock;
+    DbEngineLocking*                          lock                      = nullptr;
 
-    BdEngineBackend::QueryOperationStatus     operationStatus;
+    BdEngineBackend::QueryOperationStatus     operationStatus           = BdEngineBackend::ExecuteNormal;
 
     QMutex                                    errorLockMutex;
     QWaitCondition                            errorLockCondVar;
-    BdEngineBackend::QueryOperationStatus     errorLockOperationStatus;
+    BdEngineBackend::QueryOperationStatus     errorLockOperationStatus  = BdEngineBackend::ExecuteNormal;
 
     QMutex                                    busyWaitMutex;
     QWaitCondition                            busyWaitCondVar;
 
-    DbEngineErrorHandler*                     errorHandler;
+    DbEngineErrorHandler*                     errorHandler              = nullptr;
 
 public:
 
@@ -136,15 +136,15 @@ public:
     {
     public:
 
-        explicit AbstractUnlocker(BdEngineBackendPrivate* const d);
+        explicit AbstractUnlocker(BdEngineBackendPrivate* const dd);
         ~AbstractUnlocker();
 
         void finishAcquire();
 
     protected:
 
-        int                           count;
-        BdEngineBackendPrivate* const d = nullptr;
+        int                           count = 0;
+        BdEngineBackendPrivate* const d     = nullptr;
     };
 
     friend class AbstractUnlocker;
@@ -164,8 +164,8 @@ public:
 
     protected:
 
-        QMutex*         const mutex;
-        QWaitCondition* const condVar;
+        QMutex*         const mutex     = nullptr;
+        QWaitCondition* const condVar   = nullptr;
     };
 
     // ------------------------------------------------------------------
@@ -189,7 +189,7 @@ public:
 
 public:
 
-    BdEngineBackend* const q;
+    BdEngineBackend* const q = nullptr;
 };
 
 } // namespace Digikam
