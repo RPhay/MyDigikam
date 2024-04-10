@@ -81,13 +81,6 @@ QString DbEngineParameters::serverPrivatePath()
                                             QLatin1String("/digikam/");
 }
 
-DbEngineParameters::DbEngineParameters()
-    : port          (-1),
-      walMode       (false),
-      internalServer(false)
-{
-}
-
 DbEngineParameters::DbEngineParameters(const QString& _type,
                                        const QString& _databaseNameCore,
                                        const QString& _connectOptions,

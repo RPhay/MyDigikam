@@ -59,7 +59,7 @@ public:
                        const QString& _internalServerMysqlServerCmd = QString(),
                        const QString& _internalServerMysqlUpgradeCmd = QString());
 
-    DbEngineParameters();
+    DbEngineParameters() = default;;
 
     /**
      * QUrl helpers.
@@ -197,9 +197,9 @@ public:
     QString databaseNameCore;
     QString connectOptions;
     QString hostName;
-    int     port;
-    bool    walMode;
-    bool    internalServer;
+    int     port            = -1;
+    bool    walMode         = false;
+    bool    internalServer  = false;
     QString userName;
     QString password;
 
