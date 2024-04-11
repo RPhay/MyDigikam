@@ -155,8 +155,9 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 #endif
 
     {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Jpeg Loader: setjmp called";
         jpeg_destroy_decompress(&cinfo);
-
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Jpeg Loader: jpeg_destroy_decompress";
         if (!cleanupData->dest ||
             !cleanupData->size.isValid())
         {
