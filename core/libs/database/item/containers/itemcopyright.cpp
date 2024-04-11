@@ -52,7 +52,7 @@ public:
 
 private:
 
-    ItemCopyright*       object;
+    ItemCopyright*       object = nullptr;
 
 public:
 
@@ -62,20 +62,12 @@ public:
 // -------------------------------------------------------------------------------------------
 
 ItemCopyright::ItemCopyright(qlonglong imageid)
-    : m_id   (imageid),
-      m_cache(nullptr)
-{
-}
-
-ItemCopyright::ItemCopyright()
-    : m_id   (0),
-      m_cache(nullptr)
+    : m_id(imageid)
 {
 }
 
 ItemCopyright::ItemCopyright(const ItemCopyright& other)
-    : m_id   (other.m_id),
-      m_cache(nullptr)
+    : m_id(other.m_id)
 {
     // the cache is only short-lived, to keep complexity low
 }

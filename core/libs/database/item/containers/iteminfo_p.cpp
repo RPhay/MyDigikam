@@ -25,31 +25,48 @@ MetadataInfo::Field DatabaseVideoMetadataFieldsToMetadataInfoField(const Databas
     switch (videoMetadataField)
     {
         case DatabaseFields::AspectRatio:
+        {
             return MetadataInfo::AspectRatio;
+        }
 
         case DatabaseFields::AudioBitRate:
+        {
             return MetadataInfo::AudioBitRate;
+        }
 
         case DatabaseFields::AudioChannelType:
+        {
             return MetadataInfo::AudioChannelType;
+        }
 
         case DatabaseFields::AudioCodec:
+        {
             return MetadataInfo::AudioCodec;
+        }
 
         case DatabaseFields::Duration:
+        {
             return MetadataInfo::Duration;
+        }
 
         case DatabaseFields::FrameRate:
+        {
             return MetadataInfo::FrameRate;
+        }
 
         case DatabaseFields::VideoCodec:
+        {
             return MetadataInfo::VideoCodec;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     /// @todo Invalid request...
+
     return MetadataInfo::Field();
 }
 
@@ -58,58 +75,93 @@ MetadataInfo::Field DatabaseImageMetadataFieldsToMetadataInfoField(const Databas
     switch (imageMetadataField)
     {
         case DatabaseFields::Make:
+        {
             return MetadataInfo::Make;
+        }
 
         case DatabaseFields::Model:
+        {
             return MetadataInfo::Model;
+        }
 
         case DatabaseFields::Lens:
+        {
             return MetadataInfo::Lens;
+        }
 
         case DatabaseFields::Aperture:
+        {
             return MetadataInfo::Aperture;
+        }
 
         case DatabaseFields::FocalLength:
+        {
             return MetadataInfo::FocalLength;
+        }
 
         case DatabaseFields::FocalLength35:
+        {
             return MetadataInfo::FocalLengthIn35mm;
+        }
 
         case DatabaseFields::ExposureTime:
+        {
             return MetadataInfo::ExposureTime;
+        }
 
         case DatabaseFields::ExposureProgram:
+        {
             return MetadataInfo::ExposureProgram;
+        }
 
         case DatabaseFields::ExposureMode:
+        {
             return MetadataInfo::ExposureMode;
+        }
 
         case DatabaseFields::Sensitivity:
+        {
             return MetadataInfo::Sensitivity;
+        }
 
         case DatabaseFields::FlashMode:
+        {
             return MetadataInfo::FlashMode;
+        }
 
         case DatabaseFields::WhiteBalance:
+        {
             return MetadataInfo::WhiteBalance;
+        }
 
         case DatabaseFields::WhiteBalanceColorTemperature:
+        {
             return MetadataInfo::WhiteBalanceColorTemperature;
+        }
 
         case DatabaseFields::MeteringMode:
+        {
             return MetadataInfo::MeteringMode;
+        }
 
         case DatabaseFields::SubjectDistance:
+        {
             return MetadataInfo::SubjectDistance;
+        }
 
         case DatabaseFields::SubjectDistanceCategory:
+        {
             return MetadataInfo::SubjectDistanceCategory;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     /// @todo Invalid request...
+
     return MetadataInfo::Field();
 }
 

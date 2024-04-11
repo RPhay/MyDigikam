@@ -34,6 +34,7 @@ class AlbumShortInfo;
 class ItemInfoData;
 
 // NOTE: No need to EXPORT this class
+
 class ItemInfoCache : public QObject
 {
     Q_OBJECT
@@ -41,7 +42,7 @@ class ItemInfoCache : public QObject
 public:
 
     ItemInfoCache();
-    ~ItemInfoCache() override;
+    ~ItemInfoCache() override = default;
 
     /**
      * Return an ItemInfoData object for the given image id.
@@ -106,8 +107,8 @@ private:
     QMultiHash<QString, QExplicitlySharedDataPointer<ItemInfoData> > m_nameHash;
     QHash<qlonglong, QExplicitlySharedDataPointer<ItemInfoData> >    m_infoHash;
     QHash<qlonglong, QString>                                        m_dataHash;
-    volatile bool                                                    m_needUpdateAlbums;
-    volatile bool                                                    m_needUpdateGrouped;
+    volatile bool                                                    m_needUpdateAlbums     = true;
+    volatile bool                                                    m_needUpdateGrouped    = true;
     QList<qlonglong>                                                 m_grouped;
     QList<AlbumShortInfo>                                            m_albums;
 };

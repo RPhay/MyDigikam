@@ -84,7 +84,7 @@ class ItemInfoData : public QSharedData
 public:
 
     explicit ItemInfoData();
-    ~ItemInfoData();
+    ~ItemInfoData() = default;
 
 public:
 
@@ -149,6 +149,7 @@ public:
 
     // These two are initially true because we assume the data is there.
     // Once we query the data and find out it is missing, we set them to false.
+
     bool                                     hasVideoMetadata           : 1;
     bool                                     hasImageMetadata           : 1;
 

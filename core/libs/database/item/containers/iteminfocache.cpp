@@ -29,8 +29,6 @@ namespace Digikam
 {
 
 ItemInfoCache::ItemInfoCache()
-    : m_needUpdateAlbums(true),
-      m_needUpdateGrouped(true)
 {
     qRegisterMetaType<ItemInfo>("ItemInfo");
     qRegisterMetaType<ItemInfoList>("ItemInfoList");
@@ -51,13 +49,9 @@ ItemInfoCache::ItemInfoCache()
             Qt::DirectConnection);
 }
 
-ItemInfoCache::~ItemInfoCache()
-{
-}
-
 static bool lessThanForAlbumShortInfo(const AlbumShortInfo& first, const AlbumShortInfo& second)
 {
-    return first.id < second.id;
+    return (first.id < second.id);
 }
 
 void ItemInfoCache::checkAlbums()
@@ -86,6 +80,7 @@ int ItemInfoCache::getImageGroupedCount(qlonglong id)
     }
 
     ItemInfoReadLocker lock;
+
     return m_grouped.count(id);
 }
 
@@ -401,11 +396,15 @@ void ItemInfoCache::slotAlbumChange(const AlbumChangeset& changeset)
         case AlbumChangeset::Deleted:
         case AlbumChangeset::Renamed:
         case AlbumChangeset::PropertiesChanged:
+        {
             m_needUpdateAlbums = true;
             break;
+        }
 
         case AlbumChangeset::Unknown:
+        {
             break;
+        }
     }
 }
 

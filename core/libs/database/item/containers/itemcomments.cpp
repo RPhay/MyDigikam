@@ -30,11 +30,7 @@ class Q_DECL_HIDDEN ItemComments::Private : public QSharedData
 {
 public:
 
-    explicit Private()
-      : id    (-1),
-        unique(ItemComments::UniquePerLanguage)
-    {
-    }
+    Private() = default;
 
     void init(const CoreDbAccess& access, qlonglong imageId)
     {
@@ -136,12 +132,12 @@ public:
 
 public:
 
-    qlonglong                     id;
-    QList<CommentInfo>            infos;
-    QSet<int>                     dirtyIndices;
-    QSet<int>                     newIndices;
-    QSet<int>                     idsToRemove;
-    ItemComments::UniqueBehavior unique;
+    qlonglong                    id             = -1;
+    QList<CommentInfo>           infos;
+    QSet<int>                    dirtyIndices;
+    QSet<int>                    newIndices;
+    QSet<int>                    idsToRemove;
+    ItemComments::UniqueBehavior unique         = ItemComments::UniquePerLanguage;
 };
 
 ItemComments::ItemComments()

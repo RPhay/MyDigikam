@@ -45,7 +45,9 @@ qlonglong ItemInfo::groupImageId() const
     RETURN_IF_CACHED(groupImage)
 
     QList<qlonglong> ids = CoreDbAccess().db()->getImagesRelatedFrom(m_data->id, DatabaseRelation::Grouped);
+
     // list size should be 0 or 1
+
     int groupImage       = ids.isEmpty() ? -1 : ids.first();
 
     ItemInfoWriteLocker lock;

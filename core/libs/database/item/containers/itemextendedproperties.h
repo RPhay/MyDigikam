@@ -41,7 +41,7 @@ public:
     /**
      * Create a null ItemExtendedProperties object
      */
-    ItemExtendedProperties();
+    ItemExtendedProperties() = default;
 
     /**
      * Return the Intellectual Genre.
@@ -117,7 +117,7 @@ protected:
 
 protected:
 
-    qlonglong m_id;
+    qlonglong m_id = 0;
 };
 
 } // namespace Digikam

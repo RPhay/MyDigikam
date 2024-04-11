@@ -32,6 +32,7 @@ namespace Digikam
 typedef QSharedDataPointer<ItemTagPairPriv> ItemTagPairPrivSharedPointer;
 
 // NOTE: do not use Q_DECL_HIDDEN hidden here to prevent export symbols warnings under Windows.
+
 class ItemTagPairPriv : public QSharedData
 {
 
@@ -39,12 +40,7 @@ public:
 
     static ItemTagPairPrivSharedPointer createGuarded(qlonglong imageId, int tagId);
 
-    ItemTagPairPriv()
-      : tagId(-1),
-        isAssigned(false),
-        propertiesLoaded(false)
-    {
-    }
+    ItemTagPairPriv() = default;
 
     bool isNull() const;
     void init(const ItemInfo& info, int tagId);
@@ -53,9 +49,9 @@ public:
 public:
 
     ItemInfo                    info;
-    int                         tagId;
-    bool                        isAssigned;
-    bool                        propertiesLoaded;
+    int                         tagId               = -1;
+    bool                        isAssigned          = false;
+    bool                        propertiesLoaded    = false;
     QMultiMap<QString, QString> properties;
 };
 
@@ -80,6 +76,7 @@ ItemTagPairPrivSharedPointer ItemTagPairPriv::createGuarded(qlonglong imageId, i
     if ((imageId <= 0) || (tagId <= 0))
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Attempt to create invalid tag pair image id" << imageId << "tag id" << tagId;
+
         return *imageTagPairPrivSharedNull;
     }
 
@@ -125,6 +122,10 @@ ItemTagPair::ItemTagPair()
 {
 }
 
+ItemTagPair::~ItemTagPair()
+{
+}
+
 ItemTagPair::ItemTagPair(qlonglong imageId, int tagId)
     : d(ItemTagPairPriv::createGuarded(imageId, tagId))
 {
@@ -139,10 +140,6 @@ ItemTagPair::ItemTagPair(const ItemInfo& info, int tagId)
 
 ItemTagPair::ItemTagPair(const ItemTagPair& other)
     : d(other.d)
-{
-}
-
-ItemTagPair::~ItemTagPair()
 {
 }
 
@@ -295,6 +292,7 @@ void ItemTagPair::setProperty(const QString& key, const QString& value)
     d->checkProperties();
 
     // for single entries in db, this can of course be optimized using a single UPDATE WHERE
+
     removeProperties(key);
     d->properties.replace(key, value);
     CoreDbAccess().db()->addImageTagProperty(d->info.id(), d->tagId, key, value);

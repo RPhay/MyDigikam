@@ -32,11 +32,6 @@ ItemExtendedProperties::ItemExtendedProperties(qlonglong imageid)
 {
 }
 
-ItemExtendedProperties::ItemExtendedProperties()
-    : m_id(0)
-{
-}
-
 QString ItemExtendedProperties::intellectualGenre()
 {
     return readProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreIntellectualGenre));
@@ -70,6 +65,7 @@ void ItemExtendedProperties::removeJobId()
 double ItemExtendedProperties::similarityTo(const qlonglong imageId)
 {
     // TODO: extend for additional algorithms
+
     double similarity = SimilarityDbAccess().db()->getImageSimilarity(m_id, imageId);
 
     return (similarity > 0) ? similarity : 0.0;
@@ -78,12 +74,14 @@ double ItemExtendedProperties::similarityTo(const qlonglong imageId)
 void ItemExtendedProperties::setSimilarityTo(const qlonglong imageId, const double value)
 {
     // TODO: extend for additional algorithms
+
     SimilarityDbAccess().db()->setImageSimilarity(m_id, imageId, value);
 }
 
 void ItemExtendedProperties::removeSimilarityTo(const qlonglong imageId)
 {
     // TODO: extend for additional algorithms
+
     SimilarityDbAccess().db()->removeImageSimilarity(m_id, imageId);
 }
 

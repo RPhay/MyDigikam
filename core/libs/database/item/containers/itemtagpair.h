@@ -53,6 +53,7 @@ public:
     ItemTagPair(const ItemInfo& info, int tagId);
 
     ~ItemTagPair();
+
     ItemTagPair(const ItemTagPair& other);
     ItemTagPair& operator=(const ItemTagPair& other);
 

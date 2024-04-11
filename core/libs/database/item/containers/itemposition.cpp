@@ -29,13 +29,7 @@ class Q_DECL_HIDDEN ItemPositionPriv : public QSharedData
 
 public:
 
-    ItemPositionPriv()
-      : empty       (true),
-        // NOTE: Do not initialize the QVariants here, they are expected to be null
-        imageId     (-1),
-        dirtyFields (DatabaseFields::ItemPositionsNone)
-    {
-    }
+    ItemPositionPriv() = default;
 
     void resetData()
     {
@@ -56,7 +50,7 @@ public:
 
 public:
 
-    bool                           empty;
+    bool                           empty            = true;
 
     QVariant                       latitudeNumber;
     QVariant                       longitudeNumber;
@@ -66,13 +60,13 @@ public:
     QVariant                       roll;
     QVariant                       accuracy;
 
-    qlonglong                      imageId;
+    qlonglong                      imageId          = -1;  ///< NOTE: Do not initialize the QVariants here, they are expected to be null
 
     QString                        description;
     QString                        latitude;
     QString                        longitude;
 
-    DatabaseFields::ItemPositions  dirtyFields;
+    DatabaseFields::ItemPositions  dirtyFields      = DatabaseFields::ItemPositionsNone;
 };
 
 void ItemPositionPriv::init(const CoreDbAccess& access, qlonglong id)

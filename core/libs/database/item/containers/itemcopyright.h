@@ -53,7 +53,7 @@ public:
     /**
      * Create a null ItemCopyright object
      */
-    ItemCopyright();
+    ItemCopyright() = default;
 
     ItemCopyright(const ItemCopyright& other);
     ~ItemCopyright();
@@ -312,8 +312,8 @@ protected:
 
     friend class ItemCopyrightCache;
 
-    qlonglong           m_id;
-    ItemCopyrightCache* m_cache;
+    qlonglong           m_id    = 0;
+    ItemCopyrightCache* m_cache = nullptr;
 };
 
 } // namespace Digikam

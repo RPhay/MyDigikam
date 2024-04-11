@@ -106,8 +106,4 @@ ItemInfoData::ItemInfoData()
 {
 }
 
-ItemInfoData::~ItemInfoData()
-{
-}
-
 } // namespace Digikam
