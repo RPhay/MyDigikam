@@ -32,6 +32,7 @@
 #include "coredburl.h"
 #include "coredbalbuminfo.h"
 #include "iteminfocache.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -83,79 +84,79 @@ class ItemInfoData : public QSharedData
 {
 public:
 
-    explicit ItemInfoData();
+    ItemInfoData()  = default;
     ~ItemInfoData() = default;
 
 public:
 
-    qlonglong                                id;
-    qlonglong                                currentReferenceImage;
-    int                                      albumId;
-    int                                      albumRootId;
+    qlonglong                                id                         = -1;
+    qlonglong                                currentReferenceImage      = -1;
+    int                                      albumId                    = -1;
+    int                                      albumRootId                = -1;
     QString                                  name;
 
     QString                                  defaultComment;
     QString                                  defaultTitle;
-    quint8                                   pickLabel;
-    quint8                                   colorLabel;
-    qint8                                    rating;
-    DatabaseItem::Category                   category;
+    quint8                                   pickLabel                  = NoPickLabel;
+    quint8                                   colorLabel                 = NoColorLabel;
+    qint8                                    rating                     = -1;
+    DatabaseItem::Category                   category                   = DatabaseItem::UndefinedCategory;
     QString                                  format;
     QDateTime                                creationDate;
     QDateTime                                modificationDate;
-    int                                      orientation;
-    qlonglong                                fileSize;
-    qlonglong                                manualOrder;
+    int                                      orientation                = 0;
+    qlonglong                                fileSize                   = 0;
+    qlonglong                                manualOrder                = 0;
     QString                                  uniqueHash;
     QSize                                    imageSize;
     QList<int>                               tagIds;
-    int                                      faceCount;
-    int                                      unconfirmedFaceCount;
+    int                                      faceCount                  = 0;
+    int                                      unconfirmedFaceCount       = 0;
     QMap<QString, QString>                   faceSuggestions;
 
-    double                                   longitude;
-    double                                   latitude;
-    double                                   altitude;
-    double                                   currentSimilarity;
+    double                                   longitude                  = 0;
+    double                                   latitude                   = 0;
+    double                                   altitude                   = 0;
+    double                                   currentSimilarity          = 0.0;
 
     //! group leader, if the image is grouped
-    qlonglong                                groupImage;
+    qlonglong                                groupImage                 = -1;
 
-    bool                                     hasCoordinates             : 1;
-    bool                                     hasAltitude                : 1;
+    bool                                     hasCoordinates             = false;
+    bool                                     hasAltitude                = false;
 
-    bool                                     defaultTitleCached         : 1;
-    bool                                     defaultCommentCached       : 1;
-    bool                                     pickLabelCached            : 1;
-    bool                                     colorLabelCached           : 1;
-    bool                                     ratingCached               : 1;
-    bool                                     categoryCached             : 1;
-    bool                                     formatCached               : 1;
-    bool                                     creationDateCached         : 1;
-    bool                                     modificationDateCached     : 1;
-    bool                                     orientationCached          : 1;
-    bool                                     fileSizeCached             : 1;
-    bool                                     manualOrderCached          : 1;
-    bool                                     uniqueHashCached           : 1;
-    bool                                     imageSizeCached            : 1;
-    bool                                     tagIdsCached               : 1;
-    bool                                     positionsCached            : 1;
-    bool                                     groupImageCached           : 1;
-    bool                                     unconfirmedFaceCountCached : 1;
-    bool                                     faceSuggestionsCached      : 1;
-    bool                                     faceCountCached            : 1;
+    bool                                     defaultTitleCached         = false;
+    bool                                     defaultCommentCached       = false;
+    bool                                     pickLabelCached            = false;
+    bool                                     colorLabelCached           = false;
+    bool                                     ratingCached               = false;
+    bool                                     categoryCached             = false;
+    bool                                     formatCached               = false;
+    bool                                     creationDateCached         = false;
+    bool                                     modificationDateCached     = false;
+    bool                                     orientationCached          = false;
+    bool                                     fileSizeCached             = false;
+    bool                                     manualOrderCached          = false;
+    bool                                     uniqueHashCached           = false;
+    bool                                     imageSizeCached            = false;
+    bool                                     tagIdsCached               = false;
+    bool                                     positionsCached            = false;
+    bool                                     groupImageCached           = false;
+    bool                                     unconfirmedFaceCountCached = false;
+    bool                                     faceSuggestionsCached      = false;
+    bool                                     faceCountCached            = false;
 
-    bool                                     invalid                    : 1;
+    bool                                     invalid                    = false;
 
     // These two are initially true because we assume the data is there.
     // Once we query the data and find out it is missing, we set them to false.
 
-    bool                                     hasVideoMetadata           : 1;
-    bool                                     hasImageMetadata           : 1;
+    bool                                     hasVideoMetadata           = true;
+    bool                                     hasImageMetadata           = true;
 
 
-    DatabaseFields::VideoMetadataMinSizeType videoMetadataCached;
-    DatabaseFields::ImageMetadataMinSizeType imageMetadataCached;
+    DatabaseFields::VideoMetadataMinSizeType videoMetadataCached        = DatabaseFields::VideoMetadataNone;
+    DatabaseFields::ImageMetadataMinSizeType imageMetadataCached        = DatabaseFields::ImageMetadataNone;
 
     typedef DatabaseFields::Hash<QVariant>   DatabaseFieldsHashRaw;
     DatabaseFieldsHashRaw                    databaseFieldsHashRaw;

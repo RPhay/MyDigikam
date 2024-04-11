@@ -20,10 +20,6 @@
 
 #include <QHash>
 
-// Local includes
-
-#include "digikam_globals.h"
-
 namespace Digikam
 {
 
@@ -46,64 +42,6 @@ void ItemInfoStatic::destroy()
 ItemInfoCache* ItemInfoStatic::cache()
 {
     return &m_instance->m_cache;
-}
-
-// ---------------------------------------------------------------
-
-ItemInfoData::ItemInfoData()
-    : id                        (-1),
-      currentReferenceImage     (-1),
-      albumId                   (-1),
-      albumRootId               (-1),
-
-      pickLabel                 (NoPickLabel),
-      colorLabel                (NoColorLabel),
-      rating                    (-1),
-      category                  (DatabaseItem::UndefinedCategory),
-      orientation               (0),
-      fileSize                  (0),
-      manualOrder               (0),
-      faceCount                 (0),
-      unconfirmedFaceCount      (0),
-
-      longitude                 (0),
-      latitude                  (0),
-      altitude                  (0),
-      currentSimilarity         (0.0),
-
-      groupImage                (-1),
-
-      hasCoordinates            (false),
-      hasAltitude               (false),
-
-      defaultTitleCached        (false),
-      defaultCommentCached      (false),
-      pickLabelCached           (false),
-      colorLabelCached          (false),
-      ratingCached              (false),
-      categoryCached            (false),
-      formatCached              (false),
-      creationDateCached        (false),
-      modificationDateCached    (false),
-      orientationCached         (false),
-      fileSizeCached            (false),
-      manualOrderCached         (false),
-      uniqueHashCached          (false),
-      imageSizeCached           (false),
-      tagIdsCached              (false),
-      positionsCached           (false),
-      groupImageCached          (false),
-      unconfirmedFaceCountCached(false),
-      faceSuggestionsCached     (false),
-      faceCountCached           (false),
-
-      invalid                   (false),
-
-      hasVideoMetadata          (true),
-      hasImageMetadata          (true),
-      videoMetadataCached       (DatabaseFields::VideoMetadataNone),
-      imageMetadataCached       (DatabaseFields::ImageMetadataNone)
-{
 }
 
 } // namespace Digikam
