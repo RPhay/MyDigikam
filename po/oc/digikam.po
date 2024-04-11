@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 01:43+0000\n"
+"POT-Creation-Date: 2024-04-11 01:41+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -31953,218 +31953,218 @@ msgid ""
 "around a rotated image here."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbfilter.cpp:102
+#: core/libs/dimg/filters/wb/wbfilter.cpp:89
 #, kde-format
 msgid "White Balance Tool"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:183
+#: core/libs/dimg/filters/wb/wbsettings.cpp:160
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title: WB"
 msgid "Color Temperature"
 msgstr "Colors"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:186
+#: core/libs/dimg/filters/wb/wbsettings.cpp:163
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Adjustment:"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:191
+#: core/libs/dimg/filters/wb/wbsettings.cpp:168
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the white balance color temperature in Kelvin."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:193
+#: core/libs/dimg/filters/wb/wbsettings.cpp:170
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Preset:"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:195
+#: core/libs/dimg/filters/wb/wbsettings.cpp:172
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Candle"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:196
+#: core/libs/dimg/filters/wb/wbsettings.cpp:173
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "40W Lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:197
+#: core/libs/dimg/filters/wb/wbsettings.cpp:174
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "100W Lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:198
+#: core/libs/dimg/filters/wb/wbsettings.cpp:175
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "200W Lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:199
+#: core/libs/dimg/filters/wb/wbsettings.cpp:176
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Sunrise"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:200
+#: core/libs/dimg/filters/wb/wbsettings.cpp:177
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Studio Lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:201
+#: core/libs/dimg/filters/wb/wbsettings.cpp:178
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Moonlight"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:202
+#: core/libs/dimg/filters/wb/wbsettings.cpp:179
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Neutral"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:203
+#: core/libs/dimg/filters/wb/wbsettings.cpp:180
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D50"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:204
+#: core/libs/dimg/filters/wb/wbsettings.cpp:181
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Photo Flash"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:205
+#: core/libs/dimg/filters/wb/wbsettings.cpp:182
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Sun"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:206
+#: core/libs/dimg/filters/wb/wbsettings.cpp:183
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Xenon Lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:207
+#: core/libs/dimg/filters/wb/wbsettings.cpp:184
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D65"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:208
+#: core/libs/dimg/filters/wb/wbsettings.cpp:185
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@item: WB temperature preset"
 msgid "None"
 msgstr "Pas cap"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:211
+#: core/libs/dimg/filters/wb/wbsettings.cpp:188
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Select the white balance color temperature preset to use."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:212
+#: core/libs/dimg/filters/wb/wbsettings.cpp:189
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "candle light"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:213
+#: core/libs/dimg/filters/wb/wbsettings.cpp:190
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "40 Watt incandescent lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:214
+#: core/libs/dimg/filters/wb/wbsettings.cpp:191
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "100 Watt incandescent lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:215
+#: core/libs/dimg/filters/wb/wbsettings.cpp:192
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "200 Watt incandescent lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:216
+#: core/libs/dimg/filters/wb/wbsettings.cpp:193
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "sunrise or sunset light"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:217
+#: core/libs/dimg/filters/wb/wbsettings.cpp:194
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "tungsten lamp used in photo studio or light at 1 hour from dusk/dawn"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:219
+#: core/libs/dimg/filters/wb/wbsettings.cpp:196
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "moon light"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:220
+#: core/libs/dimg/filters/wb/wbsettings.cpp:197
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "neutral color temperature"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:221
+#: core/libs/dimg/filters/wb/wbsettings.cpp:198
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "sunny daylight around noon"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:222
+#: core/libs/dimg/filters/wb/wbsettings.cpp:199
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "electronic photo flash"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:223
+#: core/libs/dimg/filters/wb/wbsettings.cpp:200
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "effective sun temperature"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:224
+#: core/libs/dimg/filters/wb/wbsettings.cpp:201
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "xenon lamp or light arc"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:225
+#: core/libs/dimg/filters/wb/wbsettings.cpp:202
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "overcast sky light"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:226
+#: core/libs/dimg/filters/wb/wbsettings.cpp:203
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "no preset value"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:232
+#: core/libs/dimg/filters/wb/wbsettings.cpp:209
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Temperature tone color picker."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:233
+#: core/libs/dimg/filters/wb/wbsettings.cpp:210
 #, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -32172,88 +32172,88 @@ msgid ""
 "the white color balance temperature and green component."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:241
+#: core/libs/dimg/filters/wb/wbsettings.cpp:218
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Black point:"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:245
+#: core/libs/dimg/filters/wb/wbsettings.cpp:222
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the black level value."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:248
+#: core/libs/dimg/filters/wb/wbsettings.cpp:225
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Shadows:"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:253
+#: core/libs/dimg/filters/wb/wbsettings.cpp:230
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the shadow noise suppression level."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:255
+#: core/libs/dimg/filters/wb/wbsettings.cpp:232
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "@label: WB settings"
 msgid "Saturation:"
 msgstr "እንደገና አስጀምሩ"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:260
+#: core/libs/dimg/filters/wb/wbsettings.cpp:237
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the saturation value."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:262
+#: core/libs/dimg/filters/wb/wbsettings.cpp:239
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Gamma:"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:267
+#: core/libs/dimg/filters/wb/wbsettings.cpp:244
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the gamma correction value."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:269
+#: core/libs/dimg/filters/wb/wbsettings.cpp:246
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Green:"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:274
+#: core/libs/dimg/filters/wb/wbsettings.cpp:251
 #, kde-format
 msgctxt "@info: WB settings"
 msgid ""
 "Set here the green component to control the magenta color cast removal level."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:282
+#: core/libs/dimg/filters/wb/wbsettings.cpp:259
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Exposure Compensation"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:285
+#: core/libs/dimg/filters/wb/wbsettings.cpp:262
 #, fuzzy, kde-format
 #| msgid "Main"
 msgctxt "@label: WB settings"
 msgid "Main:"
 msgstr "Principal"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:288
+#: core/libs/dimg/filters/wb/wbsettings.cpp:265
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Auto exposure adjustments"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:289
+#: core/libs/dimg/filters/wb/wbsettings.cpp:266
 #, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -32261,19 +32261,19 @@ msgid ""
 "values."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:295
+#: core/libs/dimg/filters/wb/wbsettings.cpp:272
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the main exposure compensation value in E.V."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:297
+#: core/libs/dimg/filters/wb/wbsettings.cpp:274
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Fine:"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:302
+#: core/libs/dimg/filters/wb/wbsettings.cpp:279
 #, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -32281,31 +32281,31 @@ msgid ""
 "fine exposure adjustment."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:522
+#: core/libs/dimg/filters/wb/wbsettings.cpp:499
 #, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:540
+#: core/libs/dimg/filters/wb/wbsettings.cpp:517
 #, kde-format
 msgctxt "@info"
 msgid "\"%1\" is not a White Color Balance settings text file."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:561
+#: core/libs/dimg/filters/wb/wbsettings.cpp:538
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the White Color Balance text file."
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:569
+#: core/libs/dimg/filters/wb/wbsettings.cpp:546
 #, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:596
+#: core/libs/dimg/filters/wb/wbsettings.cpp:573
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the White Color Balance text file."

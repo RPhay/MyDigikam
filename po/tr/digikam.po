@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 01:43+0000\n"
+"POT-Creation-Date: 2024-04-11 01:41+0000\n"
 "PO-Revision-Date: 2024-04-06 13:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -33289,156 +33289,156 @@ msgstr ""
 "Döndürülmüş bir görselin çevresindeki siyah çerçeveleri kaldırmak için "
 "görselin kendiliğinden kırpma işlemini işleme yöntemini burada seçin."
 
-#: core/libs/dimg/filters/wb/wbfilter.cpp:102
+#: core/libs/dimg/filters/wb/wbfilter.cpp:89
 #, kde-format
 msgid "White Balance Tool"
 msgstr "Beyaz Dengesi Aracı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:183
+#: core/libs/dimg/filters/wb/wbsettings.cpp:160
 #, kde-format
 msgctxt "@title: WB"
 msgid "Color Temperature"
 msgstr "Renk Sıcaklığı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:186
+#: core/libs/dimg/filters/wb/wbsettings.cpp:163
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Adjustment:"
 msgstr "Ayarlama:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:191
+#: core/libs/dimg/filters/wb/wbsettings.cpp:168
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the white balance color temperature in Kelvin."
 msgstr "Burada beyaz dengesi renk sıcaklığını Kelvin türünden ayarlayın."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:193
+#: core/libs/dimg/filters/wb/wbsettings.cpp:170
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Preset:"
 msgstr "Önayar:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:195
+#: core/libs/dimg/filters/wb/wbsettings.cpp:172
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Candle"
 msgstr "Mum"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:196
+#: core/libs/dimg/filters/wb/wbsettings.cpp:173
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "40W Lamp"
 msgstr "40 W Lamba"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:197
+#: core/libs/dimg/filters/wb/wbsettings.cpp:174
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "100W Lamp"
 msgstr "100 W Lamba"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:198
+#: core/libs/dimg/filters/wb/wbsettings.cpp:175
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "200W Lamp"
 msgstr "200 W Lamba"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:199
+#: core/libs/dimg/filters/wb/wbsettings.cpp:176
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Sunrise"
 msgstr "Gündoğumu"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:200
+#: core/libs/dimg/filters/wb/wbsettings.cpp:177
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Studio Lamp"
 msgstr "Stüdyo Lambası"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:201
+#: core/libs/dimg/filters/wb/wbsettings.cpp:178
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Moonlight"
 msgstr "Ay Işığı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:202
+#: core/libs/dimg/filters/wb/wbsettings.cpp:179
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Neutral"
 msgstr "Nötr"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:203
+#: core/libs/dimg/filters/wb/wbsettings.cpp:180
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D50"
 msgstr "Gün Işığı D50"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:204
+#: core/libs/dimg/filters/wb/wbsettings.cpp:181
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Photo Flash"
 msgstr "Fotoğraf Flaşı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:205
+#: core/libs/dimg/filters/wb/wbsettings.cpp:182
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Sun"
 msgstr "Güneş"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:206
+#: core/libs/dimg/filters/wb/wbsettings.cpp:183
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Xenon Lamp"
 msgstr "Zenon Lamba"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:207
+#: core/libs/dimg/filters/wb/wbsettings.cpp:184
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D65"
 msgstr "Gün Işığı D65"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:208
+#: core/libs/dimg/filters/wb/wbsettings.cpp:185
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "None"
 msgstr "Yok"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:211
+#: core/libs/dimg/filters/wb/wbsettings.cpp:188
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Select the white balance color temperature preset to use."
 msgstr "Kullanılacak beyaz dengesi renk sıcaklığı önayarını seçin."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:212
+#: core/libs/dimg/filters/wb/wbsettings.cpp:189
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "candle light"
 msgstr "mum ışığı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:213
+#: core/libs/dimg/filters/wb/wbsettings.cpp:190
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "40 Watt incandescent lamp"
 msgstr "40 Watt parlak lamba"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:214
+#: core/libs/dimg/filters/wb/wbsettings.cpp:191
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "100 Watt incandescent lamp"
 msgstr "100 Watt parlak lamba"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:215
+#: core/libs/dimg/filters/wb/wbsettings.cpp:192
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "200 Watt incandescent lamp"
 msgstr "200 Watt parlak lamba"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:216
+#: core/libs/dimg/filters/wb/wbsettings.cpp:193
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "sunrise or sunset light"
 msgstr "gündoğumu veya günbatımı ışığı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:217
+#: core/libs/dimg/filters/wb/wbsettings.cpp:194
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "tungsten lamp used in photo studio or light at 1 hour from dusk/dawn"
@@ -33446,61 +33446,61 @@ msgstr ""
 "fotoğraf stüdyosunda kullanılan tungsten lamba veya alacakaranlıktan/tandan "
 "1 saat sonra ışık"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:219
+#: core/libs/dimg/filters/wb/wbsettings.cpp:196
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "moon light"
 msgstr "ay ışığı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:220
+#: core/libs/dimg/filters/wb/wbsettings.cpp:197
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "neutral color temperature"
 msgstr "nötr renk sıcaklığı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:221
+#: core/libs/dimg/filters/wb/wbsettings.cpp:198
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "sunny daylight around noon"
 msgstr "öğlen civarı güneşli gün ışığı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:222
+#: core/libs/dimg/filters/wb/wbsettings.cpp:199
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "electronic photo flash"
 msgstr "elektronik foto flaş"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:223
+#: core/libs/dimg/filters/wb/wbsettings.cpp:200
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "effective sun temperature"
 msgstr "etkili güneş sıcaklığı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:224
+#: core/libs/dimg/filters/wb/wbsettings.cpp:201
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "xenon lamp or light arc"
 msgstr "zenon lambası veya ışık yayı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:225
+#: core/libs/dimg/filters/wb/wbsettings.cpp:202
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "overcast sky light"
 msgstr "bulutlu gökyüzü ışığı"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:226
+#: core/libs/dimg/filters/wb/wbsettings.cpp:203
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "no preset value"
 msgstr "önceden ayarlı değer yok"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:232
+#: core/libs/dimg/filters/wb/wbsettings.cpp:209
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Temperature tone color picker."
 msgstr "Sıcaklık tonu renk seçicisi."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:233
+#: core/libs/dimg/filters/wb/wbsettings.cpp:210
 #, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -33510,61 +33510,61 @@ msgstr ""
 "Bu düğmeyle beyaz renk dengesi sıcaklığını ve yeşil bileşeni ayarlamak için "
 "kullanılan özgün görselden renk seçebilirsiniz."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:241
+#: core/libs/dimg/filters/wb/wbsettings.cpp:218
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Black point:"
 msgstr "Siyah nokta:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:245
+#: core/libs/dimg/filters/wb/wbsettings.cpp:222
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the black level value."
 msgstr "Siyah düzeyi değerini burada ayarlayın."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:248
+#: core/libs/dimg/filters/wb/wbsettings.cpp:225
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Shadows:"
 msgstr "Gölgeler:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:253
+#: core/libs/dimg/filters/wb/wbsettings.cpp:230
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the shadow noise suppression level."
 msgstr "Gölge gürültüsü bastırma düzeyini burada ayarlayın."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:255
+#: core/libs/dimg/filters/wb/wbsettings.cpp:232
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Saturation:"
 msgstr "Doygunluk:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:260
+#: core/libs/dimg/filters/wb/wbsettings.cpp:237
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the saturation value."
 msgstr "Doygunluk değerini burada ayarlayın."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:262
+#: core/libs/dimg/filters/wb/wbsettings.cpp:239
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Gamma:"
 msgstr "Gama:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:267
+#: core/libs/dimg/filters/wb/wbsettings.cpp:244
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the gamma correction value."
 msgstr "Gama düzeltme değerini burada ayarlayın."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:269
+#: core/libs/dimg/filters/wb/wbsettings.cpp:246
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Green:"
 msgstr "Yeşil:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:274
+#: core/libs/dimg/filters/wb/wbsettings.cpp:251
 #, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -33573,25 +33573,25 @@ msgstr ""
 "Mor renkli gölge giderme düzeyini denetlemek için yeşil bileşeni burada "
 "ayarlayın."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:282
+#: core/libs/dimg/filters/wb/wbsettings.cpp:259
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Exposure Compensation"
 msgstr "Pozlama Telafisi"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:285
+#: core/libs/dimg/filters/wb/wbsettings.cpp:262
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Main:"
 msgstr "Ana:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:288
+#: core/libs/dimg/filters/wb/wbsettings.cpp:265
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Auto exposure adjustments"
 msgstr "Kendiliğinden pozlama ayarlamaları"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:289
+#: core/libs/dimg/filters/wb/wbsettings.cpp:266
 #, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -33601,19 +33601,19 @@ msgstr ""
 "Bu düğmeyle pozlama ve siyah nokta değerlerini kendiliğinden "
 "ayarlayabilirsiniz."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:295
+#: core/libs/dimg/filters/wb/wbsettings.cpp:272
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the main exposure compensation value in E.V."
 msgstr "E.V.'deki ana pozlama telafisi değerini burada ayarlayın."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:297
+#: core/libs/dimg/filters/wb/wbsettings.cpp:274
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Fine:"
 msgstr "İnce ayar:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:302
+#: core/libs/dimg/filters/wb/wbsettings.cpp:279
 #, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -33623,31 +33623,31 @@ msgstr ""
 "E.V'deki bu değer, ince pozlama ayarını yapmak için ana pozlama telafisi "
 "değerine eklenecektir."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:522
+#: core/libs/dimg/filters/wb/wbsettings.cpp:499
 #, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr "Yüklenecek Beyaz Renk Dengesi Ayarları Dosyası"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:540
+#: core/libs/dimg/filters/wb/wbsettings.cpp:517
 #, kde-format
 msgctxt "@info"
 msgid "\"%1\" is not a White Color Balance settings text file."
 msgstr "\"%1\" beyaz renk dengesi ayarları metin dosyası değil."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:561
+#: core/libs/dimg/filters/wb/wbsettings.cpp:538
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load settings from the White Color Balance text file."
 msgstr "Beyaz renk dengesi metin dosyasından ayarlar yüklenemiyor."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:569
+#: core/libs/dimg/filters/wb/wbsettings.cpp:546
 #, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr "Kaydedilecek Beyaz Renk Dengesi Ayarları Dosyası"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:596
+#: core/libs/dimg/filters/wb/wbsettings.cpp:573
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save settings to the White Color Balance text file."

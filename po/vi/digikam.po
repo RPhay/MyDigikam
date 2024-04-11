@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 01:43+0000\n"
+"POT-Creation-Date: 2024-04-11 01:41+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -32296,235 +32296,235 @@ msgstr ""
 "<p>Ở đây hãy chọn phương pháp xử lí cách xén tự động ảnh để gỡ bỏ khung màu "
 "đen nằm chung quanh ảnh được xoay."
 
-#: core/libs/dimg/filters/wb/wbfilter.cpp:102
+#: core/libs/dimg/filters/wb/wbfilter.cpp:89
 #, fuzzy, kde-format
 msgid "White Balance Tool"
 msgstr "Cán cân trắng"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:183
+#: core/libs/dimg/filters/wb/wbsettings.cpp:160
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@title: WB"
 msgid "Color Temperature"
 msgstr "Miền màu"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:186
+#: core/libs/dimg/filters/wb/wbsettings.cpp:163
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgctxt "@label: WB settings"
 msgid "Adjustment:"
 msgstr "Điều chỉnh:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:191
+#: core/libs/dimg/filters/wb/wbsettings.cpp:168
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the white balance color temperature in Kelvin."
 msgstr "<p>Ở đây hãy đặt nhiệt độ màu cán cân tráng theo độ Kelvin."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:193
+#: core/libs/dimg/filters/wb/wbsettings.cpp:170
 #, fuzzy, kde-format
 #| msgid "Preset:"
 msgctxt "@label: WB settings"
 msgid "Preset:"
 msgstr "Định sẵn:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:195
+#: core/libs/dimg/filters/wb/wbsettings.cpp:172
 #, fuzzy, kde-format
 #| msgid "Candle"
 msgctxt "@item: WB temperature preset"
 msgid "Candle"
 msgstr "Cây nến"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:196
+#: core/libs/dimg/filters/wb/wbsettings.cpp:173
 #, fuzzy, kde-format
 #| msgid "40W Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "40W Lamp"
 msgstr "Đèn 40W"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:197
+#: core/libs/dimg/filters/wb/wbsettings.cpp:174
 #, fuzzy, kde-format
 #| msgid "100W Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "100W Lamp"
 msgstr "Đèn 100W"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:198
+#: core/libs/dimg/filters/wb/wbsettings.cpp:175
 #, fuzzy, kde-format
 #| msgid "200W Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "200W Lamp"
 msgstr "Đèn 200W"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:199
+#: core/libs/dimg/filters/wb/wbsettings.cpp:176
 #, fuzzy, kde-format
 #| msgid "Sunrise"
 msgctxt "@item: WB temperature preset"
 msgid "Sunrise"
 msgstr "Rạng đông"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:200
+#: core/libs/dimg/filters/wb/wbsettings.cpp:177
 #, fuzzy, kde-format
 #| msgid "Studio Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "Studio Lamp"
 msgstr "Đèn xưởng vẽ"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:201
+#: core/libs/dimg/filters/wb/wbsettings.cpp:178
 #, fuzzy, kde-format
 #| msgid "Moonlight"
 msgctxt "@item: WB temperature preset"
 msgid "Moonlight"
 msgstr "Ánh trăng"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:202
+#: core/libs/dimg/filters/wb/wbsettings.cpp:179
 #, fuzzy, kde-format
 #| msgid "Neutral"
 msgctxt "@item: WB temperature preset"
 msgid "Neutral"
 msgstr "Trung lập"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:203
+#: core/libs/dimg/filters/wb/wbsettings.cpp:180
 #, fuzzy, kde-format
 #| msgid "Daylight D50"
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D50"
 msgstr "Ánh nắng ban ngày D50"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:204
+#: core/libs/dimg/filters/wb/wbsettings.cpp:181
 #, fuzzy, kde-format
 #| msgid "Photo Flash"
 msgctxt "@item: WB temperature preset"
 msgid "Photo Flash"
 msgstr "Nháp ảnh chụp"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:205
+#: core/libs/dimg/filters/wb/wbsettings.cpp:182
 #, fuzzy, kde-format
 #| msgid "Sun"
 msgctxt "@item: WB temperature preset"
 msgid "Sun"
 msgstr "Mặt trời"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:206
+#: core/libs/dimg/filters/wb/wbsettings.cpp:183
 #, fuzzy, kde-format
 #| msgid "Xenon Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "Xenon Lamp"
 msgstr "Đèn xenon"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:207
+#: core/libs/dimg/filters/wb/wbsettings.cpp:184
 #, fuzzy, kde-format
 #| msgid "Daylight D65"
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D65"
 msgstr "Ánh nắng ban ngày D65"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:208
+#: core/libs/dimg/filters/wb/wbsettings.cpp:185
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@item: WB temperature preset"
 msgid "None"
 msgstr "Không có"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:211
+#: core/libs/dimg/filters/wb/wbsettings.cpp:188
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid "Select the white balance color temperature preset to use."
 msgstr "<p>Ở đây hãy đặt nhiệt độ màu cán cân tráng theo độ Kelvin."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:212
+#: core/libs/dimg/filters/wb/wbsettings.cpp:189
 #, fuzzy, kde-format
 msgctxt "@item: WB settings"
 msgid "candle light"
 msgstr "  Phải trên:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:213
+#: core/libs/dimg/filters/wb/wbsettings.cpp:190
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "40 Watt incandescent lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:214
+#: core/libs/dimg/filters/wb/wbsettings.cpp:191
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "100 Watt incandescent lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:215
+#: core/libs/dimg/filters/wb/wbsettings.cpp:192
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "200 Watt incandescent lamp"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:216
+#: core/libs/dimg/filters/wb/wbsettings.cpp:193
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "sunrise or sunset light"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:217
+#: core/libs/dimg/filters/wb/wbsettings.cpp:194
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "tungsten lamp used in photo studio or light at 1 hour from dusk/dawn"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:219
+#: core/libs/dimg/filters/wb/wbsettings.cpp:196
 #, fuzzy, kde-format
 msgctxt "@item: WB settings"
 msgid "moon light"
 msgstr "Ánh trăng"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:220
+#: core/libs/dimg/filters/wb/wbsettings.cpp:197
 #, fuzzy, kde-format
 msgctxt "@item: WB settings"
 msgid "neutral color temperature"
 msgstr "<p>Ở đây hãy đặt nhiệt độ màu cán cân tráng theo độ Kelvin."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:221
+#: core/libs/dimg/filters/wb/wbsettings.cpp:198
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "sunny daylight around noon"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:222
+#: core/libs/dimg/filters/wb/wbsettings.cpp:199
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "electronic photo flash"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:223
+#: core/libs/dimg/filters/wb/wbsettings.cpp:200
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "effective sun temperature"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:224
+#: core/libs/dimg/filters/wb/wbsettings.cpp:201
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "xenon lamp or light arc"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:225
+#: core/libs/dimg/filters/wb/wbsettings.cpp:202
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "overcast sky light"
 msgstr ""
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:226
+#: core/libs/dimg/filters/wb/wbsettings.cpp:203
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgctxt "@item: WB settings"
 msgid "no preset value"
 msgstr "&Chép vào đây"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:232
+#: core/libs/dimg/filters/wb/wbsettings.cpp:209
 #, fuzzy, kde-format
 #| msgid "Temperature tone color picker."
 msgctxt "@info: WB settings"
 msgid "Temperature tone color picker."
 msgstr "Bộ chọn lọc sắc màu nhiệt độ."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:233
+#: core/libs/dimg/filters/wb/wbsettings.cpp:210
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -32534,66 +32534,66 @@ msgstr ""
 "<p>Bằng cái nút này, bạn có thể kén màu từ ảnh gốc được dùng để đặt nhiệt độ "
 "cán cân màu trắng và thành phần màu lục."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:241
+#: core/libs/dimg/filters/wb/wbsettings.cpp:218
 #, fuzzy, kde-format
 #| msgid "Black point:"
 msgctxt "@label: WB settings"
 msgid "Black point:"
 msgstr "Điểm đen:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:245
+#: core/libs/dimg/filters/wb/wbsettings.cpp:222
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the black level value."
 msgstr "<p>Ở đây hãy đặt giá trị cấp màu đen."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:248
+#: core/libs/dimg/filters/wb/wbsettings.cpp:225
 #, fuzzy, kde-format
 #| msgid "Shadows:"
 msgctxt "@label: WB settings"
 msgid "Shadows:"
 msgstr "Bóng:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:253
+#: core/libs/dimg/filters/wb/wbsettings.cpp:230
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the shadow noise suppression level."
 msgstr "<p>Ở đây hãy đặt cấp thu hồi nhiễu bóng."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:255
+#: core/libs/dimg/filters/wb/wbsettings.cpp:232
 #, fuzzy, kde-format
 #| msgid "Saturation:"
 msgctxt "@label: WB settings"
 msgid "Saturation:"
 msgstr "Độ bão hoà:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:260
+#: core/libs/dimg/filters/wb/wbsettings.cpp:237
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the saturation value."
 msgstr "<p>Ở đây hãy đặt giá trị độ bão hoà."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:262
+#: core/libs/dimg/filters/wb/wbsettings.cpp:239
 #, fuzzy, kde-format
 #| msgid "Gamma:"
 msgctxt "@label: WB settings"
 msgid "Gamma:"
 msgstr "Gamma (γ):"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:267
+#: core/libs/dimg/filters/wb/wbsettings.cpp:244
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the gamma correction value."
 msgstr "<p>Ở đây hãy đặt giá trị sửa chữa gamma."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:269
+#: core/libs/dimg/filters/wb/wbsettings.cpp:246
 #, fuzzy, kde-format
 #| msgid "Green:"
 msgctxt "@label: WB settings"
 msgid "Green:"
 msgstr "Lục:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:274
+#: core/libs/dimg/filters/wb/wbsettings.cpp:251
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -32601,26 +32601,26 @@ msgid ""
 msgstr ""
 "<p>Ở đây hãy đặt thành phần màu lục để đặt cáp gỡ bỏ ánh lên màu đỏ tươi."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:282
+#: core/libs/dimg/filters/wb/wbsettings.cpp:259
 #, fuzzy, kde-format
 msgctxt "@label: WB settings"
 msgid "Exposure Compensation"
 msgstr "Tự động phơi nắng"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:285
+#: core/libs/dimg/filters/wb/wbsettings.cpp:262
 #, fuzzy, kde-format
 msgctxt "@label: WB settings"
 msgid "Main:"
 msgstr "Chính:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:288
+#: core/libs/dimg/filters/wb/wbsettings.cpp:265
 #, fuzzy, kde-format
 #| msgid "Auto exposure adjustments"
 msgctxt "@info: WB settings"
 msgid "Auto exposure adjustments"
 msgstr "Điều chỉnh phơi nắng tự động"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:289
+#: core/libs/dimg/filters/wb/wbsettings.cpp:266
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -32630,19 +32630,19 @@ msgstr ""
 "<p>Bằng cái nút này, bạn có thể điều chỉnh tự động giá trị Phơi nắng và Điểm "
 "đen."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:295
+#: core/libs/dimg/filters/wb/wbsettings.cpp:272
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the main exposure compensation value in E.V."
 msgstr "<p>Ở đây hãy đặt giá trị bù về phơi nắng chính theo E.V."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:297
+#: core/libs/dimg/filters/wb/wbsettings.cpp:274
 #, fuzzy, kde-format
 msgctxt "@label: WB settings"
 msgid "Fine:"
 msgstr "Ít:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:302
+#: core/libs/dimg/filters/wb/wbsettings.cpp:279
 #, fuzzy, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -32652,35 +32652,35 @@ msgstr ""
 "<p>Giá trị này (theo E.V.) sẽ được thêm vào giá trị bù về phơi nắng chính để "
 "đặt độ điều chỉnh phơi nắng kiểu ít."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:522
+#: core/libs/dimg/filters/wb/wbsettings.cpp:499
 #, fuzzy, kde-format
 #| msgid "White Color Balance Settings File to Load"
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr "Tệp thiết lập cán cân màu tráng cần tải"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:540
+#: core/libs/dimg/filters/wb/wbsettings.cpp:517
 #, fuzzy, kde-format
 #| msgid "\"%1\" is not a White Color Balance settings text file."
 msgctxt "@info"
 msgid "\"%1\" is not a White Color Balance settings text file."
 msgstr "« %1 » không phải là một tệp văn bản thiết lập cán cân màu trắng."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:561
+#: core/libs/dimg/filters/wb/wbsettings.cpp:538
 #, fuzzy, kde-format
 #| msgid "Cannot load settings from the White Color Balance text file."
 msgctxt "@info"
 msgid "Cannot load settings from the White Color Balance text file."
 msgstr "Không thể tải thiết lập từ tệp văn bản cán cân màu trắng."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:569
+#: core/libs/dimg/filters/wb/wbsettings.cpp:546
 #, fuzzy, kde-format
 #| msgid "White Color Balance Settings File to Save"
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr "Tệp thiết lập cán cân màu tráng cần lưu"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:596
+#: core/libs/dimg/filters/wb/wbsettings.cpp:573
 #, fuzzy, kde-format
 #| msgid "Cannot save settings to the White Color Balance text file."
 msgctxt "@info"

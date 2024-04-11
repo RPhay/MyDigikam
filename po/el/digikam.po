@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 01:43+0000\n"
+"POT-Creation-Date: 2024-04-11 01:41+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -35199,180 +35199,180 @@ msgstr ""
 "Επιλέξτε εδώ τη μέθοδο επεξεργασίας αυτόματης περικοπής για την αφαίρεση των "
 "μαύρων πλαισίων γύρω από την περιστραμμένη εικόνα."
 
-#: core/libs/dimg/filters/wb/wbfilter.cpp:102
+#: core/libs/dimg/filters/wb/wbfilter.cpp:89
 #, kde-format
 msgid "White Balance Tool"
 msgstr "Εργαλείο ισορροπίας λευκού"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:183
+#: core/libs/dimg/filters/wb/wbsettings.cpp:160
 #, fuzzy, kde-format
 #| msgid "neutral color temperature"
 msgctxt "@title: WB"
 msgid "Color Temperature"
 msgstr "ουδέτερη χρωματική θερμοκρασία"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:186
+#: core/libs/dimg/filters/wb/wbsettings.cpp:163
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgctxt "@label: WB settings"
 msgid "Adjustment:"
 msgstr "Προσαρμογή:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:191
+#: core/libs/dimg/filters/wb/wbsettings.cpp:168
 #, fuzzy, kde-format
 #| msgid "Set here the white balance color temperature in Kelvin."
 msgctxt "@info: WB settings"
 msgid "Set here the white balance color temperature in Kelvin."
 msgstr "Καθορίστε εδώ τη θερμοκρασία λευκού χρώματος σε βαθμούς Kelvin."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:193
+#: core/libs/dimg/filters/wb/wbsettings.cpp:170
 #, fuzzy, kde-format
 #| msgid "Preset:"
 msgctxt "@label: WB settings"
 msgid "Preset:"
 msgstr "Προκαθορισμένο:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:195
+#: core/libs/dimg/filters/wb/wbsettings.cpp:172
 #, fuzzy, kde-format
 #| msgid "Candle"
 msgctxt "@item: WB temperature preset"
 msgid "Candle"
 msgstr "Κερί"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:196
+#: core/libs/dimg/filters/wb/wbsettings.cpp:173
 #, fuzzy, kde-format
 #| msgid "40W Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "40W Lamp"
 msgstr "Λάμπα 40W"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:197
+#: core/libs/dimg/filters/wb/wbsettings.cpp:174
 #, fuzzy, kde-format
 #| msgid "100W Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "100W Lamp"
 msgstr "Λάμπα 100W"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:198
+#: core/libs/dimg/filters/wb/wbsettings.cpp:175
 #, fuzzy, kde-format
 #| msgid "200W Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "200W Lamp"
 msgstr "Λάμπα 200W"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:199
+#: core/libs/dimg/filters/wb/wbsettings.cpp:176
 #, fuzzy, kde-format
 #| msgid "Sunrise"
 msgctxt "@item: WB temperature preset"
 msgid "Sunrise"
 msgstr "Ανατολή"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:200
+#: core/libs/dimg/filters/wb/wbsettings.cpp:177
 #, fuzzy, kde-format
 #| msgid "Studio Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "Studio Lamp"
 msgstr "Λάμπα στούντιο"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:201
+#: core/libs/dimg/filters/wb/wbsettings.cpp:178
 #, fuzzy, kde-format
 #| msgid "Moonlight"
 msgctxt "@item: WB temperature preset"
 msgid "Moonlight"
 msgstr "Σεληνόφως"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:202
+#: core/libs/dimg/filters/wb/wbsettings.cpp:179
 #, fuzzy, kde-format
 #| msgid "Neutral"
 msgctxt "@item: WB temperature preset"
 msgid "Neutral"
 msgstr "Ουδέτερο"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:203
+#: core/libs/dimg/filters/wb/wbsettings.cpp:180
 #, fuzzy, kde-format
 #| msgid "Daylight D50"
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D50"
 msgstr "Φως ημέρας D50"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:204
+#: core/libs/dimg/filters/wb/wbsettings.cpp:181
 #, fuzzy, kde-format
 #| msgid "Photo Flash"
 msgctxt "@item: WB temperature preset"
 msgid "Photo Flash"
 msgstr "Φωτο φλας"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:205
+#: core/libs/dimg/filters/wb/wbsettings.cpp:182
 #, fuzzy, kde-format
 #| msgid "Sun"
 msgctxt "@item: WB temperature preset"
 msgid "Sun"
 msgstr "Ήλιος"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:206
+#: core/libs/dimg/filters/wb/wbsettings.cpp:183
 #, fuzzy, kde-format
 #| msgid "Xenon Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "Xenon Lamp"
 msgstr "Λάμπα ξένου"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:207
+#: core/libs/dimg/filters/wb/wbsettings.cpp:184
 #, fuzzy, kde-format
 #| msgid "Daylight D65"
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D65"
 msgstr "Φως ημέρας D65"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:208
+#: core/libs/dimg/filters/wb/wbsettings.cpp:185
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@item: WB temperature preset"
 msgid "None"
 msgstr "Καθόλου"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:211
+#: core/libs/dimg/filters/wb/wbsettings.cpp:188
 #, fuzzy, kde-format
 #| msgid "Select the white balance color temperature preset to use."
 msgctxt "@info: WB settings"
 msgid "Select the white balance color temperature preset to use."
 msgstr "Καθορίστε εδώ την τιμή θερμοκρασίας λευκού χρώματος."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:212
+#: core/libs/dimg/filters/wb/wbsettings.cpp:189
 #, fuzzy, kde-format
 #| msgid "candle light"
 msgctxt "@item: WB settings"
 msgid "candle light"
 msgstr "φως κηροπήγιου"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:213
+#: core/libs/dimg/filters/wb/wbsettings.cpp:190
 #, fuzzy, kde-format
 #| msgid "40 Watt incandescent lamp"
 msgctxt "@item: WB settings"
 msgid "40 Watt incandescent lamp"
 msgstr "40 Watt λάμπα πυρακτώσεως"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:214
+#: core/libs/dimg/filters/wb/wbsettings.cpp:191
 #, fuzzy, kde-format
 #| msgid "100 Watt incandescent lamp"
 msgctxt "@item: WB settings"
 msgid "100 Watt incandescent lamp"
 msgstr "100 Watt λάμπα πυρακτώσεως"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:215
+#: core/libs/dimg/filters/wb/wbsettings.cpp:192
 #, fuzzy, kde-format
 #| msgid "200 Watt incandescent lamp"
 msgctxt "@item: WB settings"
 msgid "200 Watt incandescent lamp"
 msgstr "200 Watt λάμπα πυρακτώσεως"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:216
+#: core/libs/dimg/filters/wb/wbsettings.cpp:193
 #, fuzzy, kde-format
 #| msgid "sunrise or sunset light"
 msgctxt "@item: WB settings"
 msgid "sunrise or sunset light"
 msgstr "φωτισμός αυγή ή ηλιοβασίλεμα"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:217
+#: core/libs/dimg/filters/wb/wbsettings.cpp:194
 #, fuzzy, kde-format
 #| msgid "tungsten lamp used in photo studio or light at 1 hour from dusk/dawn"
 msgctxt "@item: WB settings"
@@ -35381,70 +35381,70 @@ msgstr ""
 "λάμπα θερμού φωτός για στούντιο φωτογραφίας ή για φωτισμό 1 ώρα πριν από "
 "βράδυ/αυγή"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:219
+#: core/libs/dimg/filters/wb/wbsettings.cpp:196
 #, fuzzy, kde-format
 #| msgid "moon light"
 msgctxt "@item: WB settings"
 msgid "moon light"
 msgstr "σεληνόφως"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:220
+#: core/libs/dimg/filters/wb/wbsettings.cpp:197
 #, fuzzy, kde-format
 #| msgid "neutral color temperature"
 msgctxt "@item: WB settings"
 msgid "neutral color temperature"
 msgstr "ουδέτερη χρωματική θερμοκρασία"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:221
+#: core/libs/dimg/filters/wb/wbsettings.cpp:198
 #, fuzzy, kde-format
 #| msgid "sunny daylight around noon"
 msgctxt "@item: WB settings"
 msgid "sunny daylight around noon"
 msgstr "μεσημεριανή λιακάδα"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:222
+#: core/libs/dimg/filters/wb/wbsettings.cpp:199
 #, fuzzy, kde-format
 #| msgid "electronic photo flash"
 msgctxt "@item: WB settings"
 msgid "electronic photo flash"
 msgstr "ηλεκτρονικό φωτο φλας"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:223
+#: core/libs/dimg/filters/wb/wbsettings.cpp:200
 #, fuzzy, kde-format
 #| msgid "effective sun temperature"
 msgctxt "@item: WB settings"
 msgid "effective sun temperature"
 msgstr "εικονική ηλιακή θερμοκρασία"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:224
+#: core/libs/dimg/filters/wb/wbsettings.cpp:201
 #, fuzzy, kde-format
 #| msgid "xenon lamp or light arc"
 msgctxt "@item: WB settings"
 msgid "xenon lamp or light arc"
 msgstr "λάμπα ξένον ή τόξου"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:225
+#: core/libs/dimg/filters/wb/wbsettings.cpp:202
 #, fuzzy, kde-format
 #| msgid "overcast sky light"
 msgctxt "@item: WB settings"
 msgid "overcast sky light"
 msgstr "νεφελώδης ουρανός"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:226
+#: core/libs/dimg/filters/wb/wbsettings.cpp:203
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgctxt "@item: WB settings"
 msgid "no preset value"
 msgstr "καμία προκαθορισμένη τιμή"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:232
+#: core/libs/dimg/filters/wb/wbsettings.cpp:209
 #, fuzzy, kde-format
 #| msgid "Temperature tone color picker."
 msgctxt "@info: WB settings"
 msgid "Temperature tone color picker."
 msgstr "Επιλογέας χρώματος τόνου θερμοκρασίας."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:233
+#: core/libs/dimg/filters/wb/wbsettings.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "With this button, you can pick the color from the original image used to "
@@ -35458,70 +35458,70 @@ msgstr ""
 "θα χρησιμοποιηθεί για να ορίσει τη θερμοκρασία του λευκού χρώματος και του "
 "πράσινου συστατικού."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:241
+#: core/libs/dimg/filters/wb/wbsettings.cpp:218
 #, fuzzy, kde-format
 #| msgid "Black point:"
 msgctxt "@label: WB settings"
 msgid "Black point:"
 msgstr "Μαύρο σημείο:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:245
+#: core/libs/dimg/filters/wb/wbsettings.cpp:222
 #, fuzzy, kde-format
 #| msgid "Set here the black level value."
 msgctxt "@info: WB settings"
 msgid "Set here the black level value."
 msgstr "Καθορίστε εδώ την τιμή επιπέδου του μαύρου."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:248
+#: core/libs/dimg/filters/wb/wbsettings.cpp:225
 #, fuzzy, kde-format
 #| msgid "Shadows:"
 msgctxt "@label: WB settings"
 msgid "Shadows:"
 msgstr "Σκιές:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:253
+#: core/libs/dimg/filters/wb/wbsettings.cpp:230
 #, fuzzy, kde-format
 #| msgid "Set here the shadow noise suppression level."
 msgctxt "@info: WB settings"
 msgid "Set here the shadow noise suppression level."
 msgstr "Καθορίστε εδώ το επίπεδο καταστολής θορύβου των σκιών."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:255
+#: core/libs/dimg/filters/wb/wbsettings.cpp:232
 #, fuzzy, kde-format
 #| msgid "Saturation:"
 msgctxt "@label: WB settings"
 msgid "Saturation:"
 msgstr "Κορεσμός:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:260
+#: core/libs/dimg/filters/wb/wbsettings.cpp:237
 #, fuzzy, kde-format
 #| msgid "Set here the saturation value."
 msgctxt "@info: WB settings"
 msgid "Set here the saturation value."
 msgstr "Καθορίστε εδώ την τιμή κορεσμού."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:262
+#: core/libs/dimg/filters/wb/wbsettings.cpp:239
 #, fuzzy, kde-format
 #| msgid "Gamma:"
 msgctxt "@label: WB settings"
 msgid "Gamma:"
 msgstr "Γάμμα:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:267
+#: core/libs/dimg/filters/wb/wbsettings.cpp:244
 #, fuzzy, kde-format
 #| msgid "Set here the gamma correction value."
 msgctxt "@info: WB settings"
 msgid "Set here the gamma correction value."
 msgstr "Καθορίστε εδώ την τιμή διόρθωσης γάμμα."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:269
+#: core/libs/dimg/filters/wb/wbsettings.cpp:246
 #, fuzzy, kde-format
 #| msgid "Green:"
 msgctxt "@label: WB settings"
 msgid "Green:"
 msgstr "Πράσινο:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:274
+#: core/libs/dimg/filters/wb/wbsettings.cpp:251
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the green component to control the magenta color cast removal "
@@ -35533,14 +35533,14 @@ msgstr ""
 "Καθορίστε εδώ το πράσινο συστατικό για τον έλεγχο του επιπέδου αφαίρεσης του "
 "χρώματος ματζέντα."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:282
+#: core/libs/dimg/filters/wb/wbsettings.cpp:259
 #, fuzzy, kde-format
 #| msgid "Exposure correction."
 msgctxt "@label: WB settings"
 msgid "Exposure Compensation"
 msgstr "Διόρθωση έκθεσης."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:285
+#: core/libs/dimg/filters/wb/wbsettings.cpp:262
 #, fuzzy, kde-format
 #| msgctxt "value for amount of distortion"
 #| msgid "Main:"
@@ -35548,14 +35548,14 @@ msgctxt "@label: WB settings"
 msgid "Main:"
 msgstr "Κύριο:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:288
+#: core/libs/dimg/filters/wb/wbsettings.cpp:265
 #, fuzzy, kde-format
 #| msgid "Auto exposure adjustments"
 msgctxt "@info: WB settings"
 msgid "Auto exposure adjustments"
 msgstr "Αυτόματες ρυθμίσεις έκθεσης"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:289
+#: core/libs/dimg/filters/wb/wbsettings.cpp:266
 #, fuzzy, kde-format
 #| msgid ""
 #| "With this button, you can automatically adjust Exposure and Black Point "
@@ -35568,14 +35568,14 @@ msgstr ""
 "Με αυτό το κουμπί, μπορείτε αυτόματα να ρυθμίσετε τις τιμές έκθεσης και "
 "μαύρου σημείου."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:295
+#: core/libs/dimg/filters/wb/wbsettings.cpp:272
 #, fuzzy, kde-format
 #| msgid "Set here the main exposure compensation value in E.V."
 msgctxt "@info: WB settings"
 msgid "Set here the main exposure compensation value in E.V."
 msgstr "Καθορίστε εδώ την τιμή επανόρθωσης της έκθεσης σε E.V."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:297
+#: core/libs/dimg/filters/wb/wbsettings.cpp:274
 #, fuzzy, kde-format
 #| msgctxt "fine exposure adjustment"
 #| msgid "Fine:"
@@ -35583,7 +35583,7 @@ msgctxt "@label: WB settings"
 msgid "Fine:"
 msgstr "Λεπτομερής:"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:302
+#: core/libs/dimg/filters/wb/wbsettings.cpp:279
 #, fuzzy, kde-format
 #| msgid ""
 #| "This value in E.V will be added to main exposure compensation value to "
@@ -35596,21 +35596,21 @@ msgstr ""
 "Αυτή η τιμή (σε E.V) θα προστεθεί στην κύρια τιμή επανόρθωσης της έκθεσης "
 "για τον ορισμό της ρύθμισης λεπτομέρειας έκθεσης."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:522
+#: core/libs/dimg/filters/wb/wbsettings.cpp:499
 #, fuzzy, kde-format
 #| msgid "White Color Balance Settings File to Load"
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr "Αρχείο για φόρτωση ρυθμίσεων ισορροπίας λευκού χρώματος"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:540
+#: core/libs/dimg/filters/wb/wbsettings.cpp:517
 #, fuzzy, kde-format
 #| msgid "\"%1\" is not a White Color Balance settings text file."
 msgctxt "@info"
 msgid "\"%1\" is not a White Color Balance settings text file."
 msgstr "Το \"%1\" δεν είναι αρχείο ρυθμίσεων ισορροπίας λευκού χρώματος."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:561
+#: core/libs/dimg/filters/wb/wbsettings.cpp:538
 #, fuzzy, kde-format
 #| msgid "Cannot load settings from the White Color Balance text file."
 msgctxt "@info"
@@ -35619,14 +35619,14 @@ msgstr ""
 "Αδυναμία φόρτωσης ρυθμίσεων από το αρχείο ρυθμίσεων ισορροπίας λευκού "
 "χρώματος."
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:569
+#: core/libs/dimg/filters/wb/wbsettings.cpp:546
 #, fuzzy, kde-format
 #| msgid "White Color Balance Settings File to Save"
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr "Αρχείο ρυθμίσεων ισορροπίας λευκού χρώματος για αποθήκευση"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:596
+#: core/libs/dimg/filters/wb/wbsettings.cpp:573
 #, fuzzy, kde-format
 #| msgid "Cannot save settings to the White Color Balance text file."
 msgctxt "@info"

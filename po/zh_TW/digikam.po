@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 01:43+0000\n"
+"POT-Creation-Date: 2024-04-11 01:41+0000\n"
 "PO-Revision-Date: 2024-04-06 01:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -33041,248 +33041,248 @@ msgid ""
 "around a rotated image here."
 msgstr "在這裡選擇要處理影像自動裁剪的方式，以移除旋轉後影像周圍的黑色區塊。"
 
-#: core/libs/dimg/filters/wb/wbfilter.cpp:102
+#: core/libs/dimg/filters/wb/wbfilter.cpp:89
 #, kde-format
 msgid "White Balance Tool"
 msgstr "白平衡工具"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:183
+#: core/libs/dimg/filters/wb/wbsettings.cpp:160
 #, fuzzy, kde-format
 #| msgid "neutral color temperature"
 msgctxt "@title: WB"
 msgid "Color Temperature"
 msgstr "中性色溫"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:186
+#: core/libs/dimg/filters/wb/wbsettings.cpp:163
 #, fuzzy, kde-format
 #| msgid "Adjustment:"
 msgctxt "@label: WB settings"
 msgid "Adjustment:"
 msgstr "調整："
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:191
+#: core/libs/dimg/filters/wb/wbsettings.cpp:168
 #, fuzzy, kde-format
 #| msgid "Set here the white balance color temperature in Kelvin."
 msgctxt "@info: WB settings"
 msgid "Set here the white balance color temperature in Kelvin."
 msgstr "在這裡設定白平衡色溫，單位為絕對溫度。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:193
+#: core/libs/dimg/filters/wb/wbsettings.cpp:170
 #, fuzzy, kde-format
 #| msgid "Preset:"
 msgctxt "@label: WB settings"
 msgid "Preset:"
 msgstr "預設："
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:195
+#: core/libs/dimg/filters/wb/wbsettings.cpp:172
 #, fuzzy, kde-format
 #| msgid "Candle"
 msgctxt "@item: WB temperature preset"
 msgid "Candle"
 msgstr "蠟燭"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:196
+#: core/libs/dimg/filters/wb/wbsettings.cpp:173
 #, fuzzy, kde-format
 #| msgid "40W Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "40W Lamp"
 msgstr "40W 照明燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:197
+#: core/libs/dimg/filters/wb/wbsettings.cpp:174
 #, fuzzy, kde-format
 #| msgid "100W Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "100W Lamp"
 msgstr "100W 照明燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:198
+#: core/libs/dimg/filters/wb/wbsettings.cpp:175
 #, fuzzy, kde-format
 #| msgid "200W Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "200W Lamp"
 msgstr "200W 照明燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:199
+#: core/libs/dimg/filters/wb/wbsettings.cpp:176
 #, fuzzy, kde-format
 #| msgid "Sunrise"
 msgctxt "@item: WB temperature preset"
 msgid "Sunrise"
 msgstr "日出"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:200
+#: core/libs/dimg/filters/wb/wbsettings.cpp:177
 #, fuzzy, kde-format
 #| msgid "Studio Lamp"
 msgctxt "@item: WB temperature preset"
 msgid "Studio Lamp"
 msgstr "攝影棚燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:201
+#: core/libs/dimg/filters/wb/wbsettings.cpp:178
 #, fuzzy, kde-format
 #| msgid "Moonlight"
 msgctxt "@item: WB temperature preset"
 msgid "Moonlight"
 msgstr "月光"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:202
+#: core/libs/dimg/filters/wb/wbsettings.cpp:179
 #, fuzzy, kde-format
 #| msgid "Neutral"
 msgctxt "@item: WB temperature preset"
 msgid "Neutral"
 msgstr "中性"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:203
+#: core/libs/dimg/filters/wb/wbsettings.cpp:180
 #, fuzzy, kde-format
 #| msgid "Daylight D50"
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D50"
 msgstr "晝光 D50"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:204
+#: core/libs/dimg/filters/wb/wbsettings.cpp:181
 #, fuzzy, kde-format
 #| msgid "Photo Flash"
 msgctxt "@item: WB temperature preset"
 msgid "Photo Flash"
 msgstr "閃光燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:205
+#: core/libs/dimg/filters/wb/wbsettings.cpp:182
 #, fuzzy, kde-format
 #| msgid "Sun"
 msgctxt "@item: WB temperature preset"
 msgid "Sun"
 msgstr "陽光"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:206
+#: core/libs/dimg/filters/wb/wbsettings.cpp:183
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Xenon Lamp"
 msgstr "氙氣燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:207
+#: core/libs/dimg/filters/wb/wbsettings.cpp:184
 #, fuzzy, kde-format
 #| msgid "Daylight D65"
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D65"
 msgstr "晝光 D65"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:208
+#: core/libs/dimg/filters/wb/wbsettings.cpp:185
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "None"
 msgstr "無"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:211
+#: core/libs/dimg/filters/wb/wbsettings.cpp:188
 #, fuzzy, kde-format
 #| msgid "Select the white balance color temperature preset to use."
 msgctxt "@info: WB settings"
 msgid "Select the white balance color temperature preset to use."
 msgstr "選擇要使用的白平衡色溫預設值。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:212
+#: core/libs/dimg/filters/wb/wbsettings.cpp:189
 #, fuzzy, kde-format
 #| msgid "candle light"
 msgctxt "@item: WB settings"
 msgid "candle light"
 msgstr "燭光"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:213
+#: core/libs/dimg/filters/wb/wbsettings.cpp:190
 #, fuzzy, kde-format
 #| msgid "40 Watt incandescent lamp"
 msgctxt "@item: WB settings"
 msgid "40 Watt incandescent lamp"
 msgstr "40 瓦白熾燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:214
+#: core/libs/dimg/filters/wb/wbsettings.cpp:191
 #, fuzzy, kde-format
 #| msgid "100 Watt incandescent lamp"
 msgctxt "@item: WB settings"
 msgid "100 Watt incandescent lamp"
 msgstr "100 瓦白熾燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:215
+#: core/libs/dimg/filters/wb/wbsettings.cpp:192
 #, fuzzy, kde-format
 #| msgid "200 Watt incandescent lamp"
 msgctxt "@item: WB settings"
 msgid "200 Watt incandescent lamp"
 msgstr "200 瓦白熾燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:216
+#: core/libs/dimg/filters/wb/wbsettings.cpp:193
 #, fuzzy, kde-format
 #| msgid "sunrise or sunset light"
 msgctxt "@item: WB settings"
 msgid "sunrise or sunset light"
 msgstr "日出或落日餘暉"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:217
+#: core/libs/dimg/filters/wb/wbsettings.cpp:194
 #, fuzzy, kde-format
 #| msgid "tungsten lamp used in photo studio or light at 1 hour from dusk/dawn"
 msgctxt "@item: WB settings"
 msgid "tungsten lamp used in photo studio or light at 1 hour from dusk/dawn"
 msgstr "鎢絲燈被用在攝影棚或黃昏/黎明 1 小時的光線"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:219
+#: core/libs/dimg/filters/wb/wbsettings.cpp:196
 #, fuzzy, kde-format
 #| msgid "moon light"
 msgctxt "@item: WB settings"
 msgid "moon light"
 msgstr "月光"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:220
+#: core/libs/dimg/filters/wb/wbsettings.cpp:197
 #, fuzzy, kde-format
 #| msgid "neutral color temperature"
 msgctxt "@item: WB settings"
 msgid "neutral color temperature"
 msgstr "中性色溫"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:221
+#: core/libs/dimg/filters/wb/wbsettings.cpp:198
 #, fuzzy, kde-format
 #| msgid "sunny daylight around noon"
 msgctxt "@item: WB settings"
 msgid "sunny daylight around noon"
 msgstr "中午時分陽光"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:222
+#: core/libs/dimg/filters/wb/wbsettings.cpp:199
 #, fuzzy, kde-format
 #| msgid "electronic photo flash"
 msgctxt "@item: WB settings"
 msgid "electronic photo flash"
 msgstr "電子閃光燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:223
+#: core/libs/dimg/filters/wb/wbsettings.cpp:200
 #, fuzzy, kde-format
 #| msgid "effective sun temperature"
 msgctxt "@item: WB settings"
 msgid "effective sun temperature"
 msgstr "有效日溫"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:224
+#: core/libs/dimg/filters/wb/wbsettings.cpp:201
 #, fuzzy, kde-format
 #| msgid "xenon lamp or light arc"
 msgctxt "@item: WB settings"
 msgid "xenon lamp or light arc"
 msgstr "氙燈或弧光燈"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:225
+#: core/libs/dimg/filters/wb/wbsettings.cpp:202
 #, fuzzy, kde-format
 #| msgid "overcast sky light"
 msgctxt "@item: WB settings"
 msgid "overcast sky light"
 msgstr "陰天光線"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:226
+#: core/libs/dimg/filters/wb/wbsettings.cpp:203
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgctxt "@item: WB settings"
 msgid "no preset value"
 msgstr "無預設值"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:232
+#: core/libs/dimg/filters/wb/wbsettings.cpp:209
 #, fuzzy, kde-format
 #| msgid "Temperature tone color picker."
 msgctxt "@info: WB settings"
 msgid "Temperature tone color picker."
 msgstr "溫度色調取色器。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:233
+#: core/libs/dimg/filters/wb/wbsettings.cpp:210
 #, kde-format
 msgctxt "@info: WB settings"
 msgid ""
@@ -33290,70 +33290,70 @@ msgid ""
 "the white color balance temperature and green component."
 msgstr "按這個按鈕，您可以從原始影像中點取用來設定白平衡溫度和綠色元件的顏色。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:241
+#: core/libs/dimg/filters/wb/wbsettings.cpp:218
 #, fuzzy, kde-format
 #| msgid "Black point:"
 msgctxt "@label: WB settings"
 msgid "Black point:"
 msgstr "最暗點："
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:245
+#: core/libs/dimg/filters/wb/wbsettings.cpp:222
 #, fuzzy, kde-format
 #| msgid "Set here the black level value."
 msgctxt "@info: WB settings"
 msgid "Set here the black level value."
 msgstr "在這裡設定黑階值。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:248
+#: core/libs/dimg/filters/wb/wbsettings.cpp:225
 #, fuzzy, kde-format
 #| msgid "Shadows:"
 msgctxt "@label: WB settings"
 msgid "Shadows:"
 msgstr "陰影："
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:253
+#: core/libs/dimg/filters/wb/wbsettings.cpp:230
 #, fuzzy, kde-format
 #| msgid "Set here the shadow noise suppression level."
 msgctxt "@info: WB settings"
 msgid "Set here the shadow noise suppression level."
 msgstr "在這裡設定暗部雜訊的抑制等級。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:255
+#: core/libs/dimg/filters/wb/wbsettings.cpp:232
 #, fuzzy, kde-format
 #| msgid "Saturation:"
 msgctxt "@label: WB settings"
 msgid "Saturation:"
 msgstr "飽和度："
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:260
+#: core/libs/dimg/filters/wb/wbsettings.cpp:237
 #, fuzzy, kde-format
 #| msgid "Set here the saturation value."
 msgctxt "@info: WB settings"
 msgid "Set here the saturation value."
 msgstr "在這裡設定飽和度值。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:262
+#: core/libs/dimg/filters/wb/wbsettings.cpp:239
 #, fuzzy, kde-format
 #| msgid "Gamma:"
 msgctxt "@label: WB settings"
 msgid "Gamma:"
 msgstr "伽瑪："
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:267
+#: core/libs/dimg/filters/wb/wbsettings.cpp:244
 #, fuzzy, kde-format
 #| msgid "Set here the gamma correction value."
 msgctxt "@info: WB settings"
 msgid "Set here the gamma correction value."
 msgstr "在這裡設定伽瑪校正值。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:269
+#: core/libs/dimg/filters/wb/wbsettings.cpp:246
 #, fuzzy, kde-format
 #| msgid "Green:"
 msgctxt "@label: WB settings"
 msgid "Green:"
 msgstr "綠："
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:274
+#: core/libs/dimg/filters/wb/wbsettings.cpp:251
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the green component to control the magenta color cast removal "
@@ -33363,14 +33363,14 @@ msgid ""
 "Set here the green component to control the magenta color cast removal level."
 msgstr "在這裡設定綠色元件以控制洋紅色偏去除等級。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:282
+#: core/libs/dimg/filters/wb/wbsettings.cpp:259
 #, fuzzy, kde-format
 #| msgid "Exposure correction."
 msgctxt "@label: WB settings"
 msgid "Exposure Compensation"
 msgstr "曝光修正。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:285
+#: core/libs/dimg/filters/wb/wbsettings.cpp:262
 #, fuzzy, kde-format
 #| msgctxt "value for amount of distortion"
 #| msgid "Main:"
@@ -33378,14 +33378,14 @@ msgctxt "@label: WB settings"
 msgid "Main:"
 msgstr "主要："
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:288
+#: core/libs/dimg/filters/wb/wbsettings.cpp:265
 #, fuzzy, kde-format
 #| msgid "Auto exposure adjustments"
 msgctxt "@info: WB settings"
 msgid "Auto exposure adjustments"
 msgstr "自動曝光調整"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:289
+#: core/libs/dimg/filters/wb/wbsettings.cpp:266
 #, fuzzy, kde-format
 #| msgid ""
 #| "With this button, you can automatically adjust Exposure and Black Point "
@@ -33396,14 +33396,14 @@ msgid ""
 "values."
 msgstr "按這個按鈕，您可以自動調整曝光和最暗點數值。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:295
+#: core/libs/dimg/filters/wb/wbsettings.cpp:272
 #, fuzzy, kde-format
 #| msgid "Set here the main exposure compensation value in E.V."
 msgctxt "@info: WB settings"
 msgid "Set here the main exposure compensation value in E.V."
 msgstr "在這裡設定主要曝光補償值，單位為 E.V。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:297
+#: core/libs/dimg/filters/wb/wbsettings.cpp:274
 #, fuzzy, kde-format
 #| msgctxt "fine exposure adjustment"
 #| msgid "Fine:"
@@ -33411,7 +33411,7 @@ msgctxt "@label: WB settings"
 msgid "Fine:"
 msgstr "精細："
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:302
+#: core/libs/dimg/filters/wb/wbsettings.cpp:279
 #, fuzzy, kde-format
 #| msgid ""
 #| "This value in E.V will be added to main exposure compensation value to "
@@ -33422,35 +33422,35 @@ msgid ""
 "fine exposure adjustment."
 msgstr "這項數值 (單位為 E.V) 會被加到主要曝光補償值以設定精細曝光調整。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:522
+#: core/libs/dimg/filters/wb/wbsettings.cpp:499
 #, fuzzy, kde-format
 #| msgid "White Color Balance Settings File to Load"
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr "要載入的白平衡設定檔"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:540
+#: core/libs/dimg/filters/wb/wbsettings.cpp:517
 #, fuzzy, kde-format
 #| msgid "\"%1\" is not a White Color Balance settings text file."
 msgctxt "@info"
 msgid "\"%1\" is not a White Color Balance settings text file."
 msgstr "「%1」不是白平衡設定值純文字檔。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:561
+#: core/libs/dimg/filters/wb/wbsettings.cpp:538
 #, fuzzy, kde-format
 #| msgid "Cannot load settings from the White Color Balance text file."
 msgctxt "@info"
 msgid "Cannot load settings from the White Color Balance text file."
 msgstr "無法從白平衡純文字檔載入設定值。"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:569
+#: core/libs/dimg/filters/wb/wbsettings.cpp:546
 #, fuzzy, kde-format
 #| msgid "White Color Balance Settings File to Save"
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr "要儲存的白平衡設定檔"
 
-#: core/libs/dimg/filters/wb/wbsettings.cpp:596
+#: core/libs/dimg/filters/wb/wbsettings.cpp:573
 #, fuzzy, kde-format
 #| msgid "Cannot save settings to the White Color Balance text file."
 msgctxt "@info"
