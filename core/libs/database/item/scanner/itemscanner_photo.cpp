@@ -27,58 +27,132 @@ QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
         // Copyright table                                     krazy:exclude=copyright
 
         case MetadataInfo::IptcCoreCopyrightNotice:
+        {
             return QLatin1String("copyrightNotice");        // krazy:exclude=copyright
+        }
+
         case MetadataInfo::IptcCoreCreator:
+        {
             return QLatin1String("creator");
+        }
+
         case MetadataInfo::IptcCoreProvider:
+        {
             return QLatin1String("provider");
+        }
+
         case MetadataInfo::IptcCoreRightsUsageTerms:
+        {
             return QLatin1String("rightsUsageTerms");
+        }
+
         case MetadataInfo::IptcCoreSource:
+        {
             return QLatin1String("source");
+        }
+
         case MetadataInfo::IptcCoreCreatorJobTitle:
+        {
             return QLatin1String("creatorJobTitle");
+        }
+
         case MetadataInfo::IptcCoreInstructions:
+        {
             return QLatin1String("instructions");
+        }
 
         // ImageProperties table
 
         case MetadataInfo::IptcCoreCountryCode:
+        {
             return QLatin1String("countryCode");
+        }
+
         case MetadataInfo::IptcCoreCountry:
+        {
             return QLatin1String("country");
+        }
+
         case MetadataInfo::IptcCoreCity:
+        {
             return QLatin1String("city");
+        }
+
         case MetadataInfo::IptcCoreLocation:
+        {
             return QLatin1String("location");
+        }
+
         case MetadataInfo::IptcCoreProvinceState:
+        {
             return QLatin1String("provinceState");
+        }
+
         case MetadataInfo::IptcCoreIntellectualGenre:
+        {
             return QLatin1String("intellectualGenre");
+        }
+
         case MetadataInfo::IptcCoreJobID:
+        {
             return QLatin1String("jobId");
+        }
+
         case MetadataInfo::IptcCoreScene:
+        {
             return QLatin1String("scene");
+        }
+
         case MetadataInfo::IptcCoreSubjectCode:
+        {
             return QLatin1String("subjectCode");
+        }
+
         case MetadataInfo::IptcCoreContactInfoCity:
+        {
             return QLatin1String("creatorContactInfo.city");
+        }
+
         case MetadataInfo::IptcCoreContactInfoCountry:
+        {
             return QLatin1String("creatorContactInfo.country");
+        }
+
         case MetadataInfo::IptcCoreContactInfoAddress:
+        {
             return QLatin1String("creatorContactInfo.address");
+        }
+
         case MetadataInfo::IptcCoreContactInfoPostalCode:
+        {
             return QLatin1String("creatorContactInfo.postalCode");
+        }
+
         case MetadataInfo::IptcCoreContactInfoProvinceState:
+        {
             return QLatin1String("creatorContactInfo.provinceState");
+        }
+
         case MetadataInfo::IptcCoreContactInfoEmail:
+        {
             return QLatin1String("creatorContactInfo.email");
+        }
+
         case MetadataInfo::IptcCoreContactInfoPhone:
+        {
             return QLatin1String("creatorContactInfo.phone");
+        }
+
         case MetadataInfo::IptcCoreContactInfoWebUrl:
+        {
             return QLatin1String("creatorContactInfo.webUrl");
+        }
+
         default:
+        {
             return QString();
+        }
+
     }
 }
 
@@ -89,17 +163,35 @@ QString ItemScanner::detectImageFormat() const
     switch (dimgFormat)
     {
         case DImg::JPEG:
+        {
             return QLatin1String("JPG");
+        }
+
         case DImg::PNG:
+        {
             return QLatin1String("PNG");
+        }
+
         case DImg::TIFF:
+        {
             return QLatin1String("TIFF");
+        }
+
         case DImg::JP2K:
+        {
             return QLatin1String("JP2");
+        }
+
         case DImg::PGF:
+        {
             return QLatin1String("PGF");
+        }
+
         case DImg::HEIF:
+        {
             return QLatin1String("HEIF");
+        }
+
         case DImg::RAW:
         {
             QString format = QLatin1String("RAW-");
@@ -193,9 +285,11 @@ void ItemScanner::scanItemComments()
     CaptionsMap captions = d->metadata->getItemComments();
     CaptionsMap titles   = d->metadata->getItemTitles();
 
-    if (titles.isEmpty()            &&
+    if (
+        titles.isEmpty()            &&
         captions.isEmpty()          &&
-        !hasValidField(metadataInfos))
+        !hasValidField(metadataInfos)
+       )
     {
         return;
     }

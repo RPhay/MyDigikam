@@ -18,24 +18,6 @@
 namespace Digikam
 {
 
-ItemScannerCommit::ItemScannerCommit()
-    : operation(NoOp),
-      copyImageAttributesId(-1),
-      commitItemInformation(false),
-      commitImageMetadata  (false),
-      commitVideoMetadata  (false),
-      commitItemPosition   (false),
-      commitItemComments   (false),
-      commitItemCopyright  (false),
-      commitFaces          (false),
-      commitIPTCCore       (false),
-      hasColorTag          (false),
-      hasPickTag           (false)
-{
-}
-
-// ---------------------------------------------------------------------------------------
-
 LessThanByProximityToSubject::LessThanByProximityToSubject(const ItemInfo& subject)
     : subject(subject)
 {
@@ -113,12 +95,7 @@ bool LessThanByProximityToSubject::operator()(const ItemInfo& a, const ItemInfo&
 // ---------------------------------------------------------------------------
 
 ItemScanner::Private::Private()
-    : hasImage            (false),
-      hasMetadata         (false),
-      loadedFromDisk      (false),
-      metadata            (new DMetadata),
-      scanMode            (ModifiedScan),
-      hasHistoryToResolve(false)
+    : metadata(new DMetadata)
 {
     timer.start();
 }

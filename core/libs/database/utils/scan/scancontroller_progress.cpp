@@ -45,7 +45,9 @@ void ScanController::slotScannedFiles(int scanned)
     }
 }
 
-/// implementing InitializationObserver
+/**
+ * Implementing InitializationObserver.
+ */
 void ScanController::moreSchemaUpdateSteps(int numberOfSteps)
 {
     // not from main thread
@@ -54,7 +56,9 @@ void ScanController::moreSchemaUpdateSteps(int numberOfSteps)
     Q_EMIT incrementProgressDialog(numberOfSteps);
 }
 
-/// implementing InitializationObserver
+/**
+ * Implementing InitializationObserver.
+ */
 void ScanController::schemaUpdateProgress(const QString& message, int numberOfSteps)
 {
     // not from main thread
@@ -73,7 +77,9 @@ void ScanController::slotProgressFromInitialization(const QString& message, int 
     }
 }
 
-/// implementing InitializationObserver
+/**
+ * Implementing InitializationObserver.
+ */
 void ScanController::error(const QString& errorMessage)
 {
     // not from main thread

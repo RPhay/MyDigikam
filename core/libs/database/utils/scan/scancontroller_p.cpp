@@ -86,9 +86,11 @@ void ScanController::Private::garbageCollectHints(bool setAccessTime)
 {
     QDateTime current = QDateTime::currentDateTime();
 
-    if (idle                    &&
+    if (
+        idle                    &&
         lastHintAdded.isValid() &&
-        (lastHintAdded.secsTo(current) > (5 * 60)))
+        (lastHintAdded.secsTo(current) > (5 * 60))
+       )
     {
         hints->clear();
     }

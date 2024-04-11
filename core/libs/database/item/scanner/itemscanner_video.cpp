@@ -130,9 +130,11 @@ void ItemScanner::scanVideoInformation()
 {
     d->commit.commitItemInformation = true;
 
-    if ((d->scanMode == NewScan) ||
+    if (
+        (d->scanMode == NewScan) ||
         (d->scanMode == Rescan)  ||
-        (d->scanMode == CleanScan))
+        (d->scanMode == CleanScan)
+       )
     {
         MetadataFields fields;
         fields << MetadataInfo::Rating

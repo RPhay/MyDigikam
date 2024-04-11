@@ -124,7 +124,9 @@ void ScanController::setInitializationMessage()
     }
 }
 
-/// implementing InitializationObserver
+/**
+ * Implementing InitializationObserver
+ */
 bool ScanController::continueQuery()
 {
     // not from main thread
@@ -192,7 +194,8 @@ void ScanController::run()
             else if (!d->completeScanDeferredAlbums.isEmpty() && d->finishScanAllowed && !d->scanSuspended)
             {
                 // d->completeScanDeferredAlbums is only accessed from the thread, no need to copy
-                doFinishScan  = true;
+   
+             doFinishScan  = true;
             }
             else if (!d->scanTasks.isEmpty() && !d->scanSuspended)
             {
@@ -304,7 +307,9 @@ void ScanController::run()
     }
 }
 
-/// (also implementing InitializationObserver)
+/**
+ * Also implementing InitializationObserver.
+ */
 void ScanController::connectCollectionScanner(CollectionScanner* const scanner)
 {
     scanner->setSignalsEnabled(true);

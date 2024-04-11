@@ -68,24 +68,24 @@ public:
 
 public:
 
-    ItemScannerCommit();
+    ItemScannerCommit() = default;
 
 public:
 
-    Operation                        operation;
+    Operation                        operation              = NoOp;
 
-    qlonglong                        copyImageAttributesId;
+    qlonglong                        copyImageAttributesId  = -1;
 
-    bool                             commitItemInformation;
-    bool                             commitImageMetadata;
-    bool                             commitVideoMetadata;
-    bool                             commitItemPosition;
-    bool                             commitItemComments;
-    bool                             commitItemCopyright;
-    bool                             commitFaces;
-    bool                             commitIPTCCore;
-    bool                             hasColorTag;
-    bool                             hasPickTag;
+    bool                             commitItemInformation  = false;
+    bool                             commitImageMetadata    = false;
+    bool                             commitVideoMetadata    = false;
+    bool                             commitItemPosition     = false;
+    bool                             commitItemComments     = false;
+    bool                             commitItemCopyright    = false;
+    bool                             commitFaces            = false;
+    bool                             commitIPTCCore         = false;
+    bool                             hasColorTag            = false;
+    bool                             hasPickTag             = false;
 
     DatabaseFields::ItemInformation  imageInformationFields;
     QVariantList                     imageInformationInfos;
@@ -133,18 +133,18 @@ public:
 
 public:
 
-    bool                   hasImage;
-    bool                   hasMetadata;
-    bool                   loadedFromDisk;
+    bool                   hasImage             = false;
+    bool                   hasMetadata          = false;
+    bool                   loadedFromDisk       = false;
 
     QFileInfo              fileInfo;
 
-    DMetadata*             metadata;
+    DMetadata*             metadata             = nullptr;
     DImg                   img;
     ItemScanInfo           scanInfo;
-    ItemScanner::ScanMode  scanMode;
+    ItemScanner::ScanMode  scanMode             = ModifiedScan;
 
-    bool                   hasHistoryToResolve;
+    bool                   hasHistoryToResolve  = false;
 
     ItemScannerCommit      commit;
 

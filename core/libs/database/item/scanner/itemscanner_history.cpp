@@ -20,7 +20,7 @@ namespace Digikam
 
 void ItemScanner::scanImageHistory()
 {
-    /** Stage 1 of history scanning */
+    // Stage 1 of history scanning.
 
     d->commit.historyXml = d->metadata->getItemHistory();
     d->commit.uuid       = d->metadata->getItemUniqueId();
@@ -62,13 +62,14 @@ void ItemScanner::scanImageHistoryIfModified()
 bool ItemScanner::resolveImageHistory(qlonglong id, QList<qlonglong>* needTaggingIds)
 {
     ImageHistoryEntry history = CoreDbAccess().db()->getItemHistory(id);
+
     return resolveImageHistory(id, history.history, needTaggingIds);
 }
 
 bool ItemScanner::resolveImageHistory(qlonglong imageId, const QString& historyXml,
                                        QList<qlonglong>* needTaggingIds)
 {
-    /** Stage 2 of history scanning */
+    // Stage 2 of history scanning.
 
     if (historyXml.isNull())
     {
@@ -119,7 +120,7 @@ bool ItemScanner::resolveImageHistory(qlonglong imageId, const QString& historyX
 
 void ItemScanner::tagItemHistoryGraph(qlonglong id)
 {
-    /** Stage 3 of history scanning */
+    // Stage 3 of history scanning.
 
     ItemInfo info(id);
 
@@ -158,6 +159,7 @@ void ItemScanner::tagItemHistoryGraph(qlonglong id)
     }
 
     // get category info
+
     QList<qlonglong>                                       originals, intermediates, currents;
     QHash<ItemInfo, HistoryImageId::Types>                 grpTypes = graph.categorize();
     QHash<ItemInfo, HistoryImageId::Types>::const_iterator it;
