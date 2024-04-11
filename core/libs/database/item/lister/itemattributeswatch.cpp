@@ -68,10 +68,12 @@ void ItemAttributesWatch::slotImageChange(const ImageChangeset& changeset)
 {
     DatabaseFields::Set set = changeset.changes();
 
-    if ((set & DatabaseFields::ItemCommentsAll)  ||
+    if (
+        (set & DatabaseFields::ItemCommentsAll)  ||
         (set & DatabaseFields::CreationDate)     ||
         (set & DatabaseFields::ModificationDate) ||
-        (set & DatabaseFields::Rating))
+        (set & DatabaseFields::Rating)
+       )
     {
         Q_FOREACH (const qlonglong& imageId, changeset.ids())
         {

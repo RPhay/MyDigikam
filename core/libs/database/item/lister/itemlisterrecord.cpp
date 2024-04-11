@@ -18,18 +18,6 @@
 namespace Digikam
 {
 
-ItemListerRecord::ItemListerRecord()
-    : albumID                         (-1),
-      albumRootID                     (-1),
-      rating                          (-1),
-      fileSize                        (-1),
-      imageID                         (-1),
-      currentFuzzySearchReferenceImage(-1),
-      currentSimilarity               (0.0),
-      category                        (DatabaseItem::UndefinedCategory)
-{
-}
-
 bool ItemListerRecord::operator==(const ItemListerRecord& record) const
 {
     return (imageID == record.imageID);

@@ -40,21 +40,21 @@ class DIGIKAM_DATABASE_EXPORT ItemListerRecord
 
 public:
 
-    explicit ItemListerRecord();
+    ItemListerRecord() = default;
 
     bool operator==(const ItemListerRecord& record) const;
 
 public:
 
-    int                    albumID;
-    int                    albumRootID;
-    int                    rating;
+    int                    albumID                          = -1;
+    int                    albumRootID                      = -1;
+    int                    rating                           = -1;
 
-    qlonglong              fileSize;
-    qlonglong              imageID;
-    qlonglong              currentFuzzySearchReferenceImage;
+    qlonglong              fileSize                         = -1;
+    qlonglong              imageID                          = -1;
+    qlonglong              currentFuzzySearchReferenceImage = -1;
 
-    double                 currentSimilarity;
+    double                 currentSimilarity                = 0.0;
 
     QString                format;
     QString                name;
@@ -64,7 +64,7 @@ public:
 
     QSize                  imageSize;
 
-    DatabaseItem::Category category;
+    DatabaseItem::Category category                         = DatabaseItem::UndefinedCategory;
 
     QList<QVariant>        extraValues;
 };

@@ -72,16 +72,12 @@ class Q_DECL_HIDDEN ItemLister::Private
 
 public:
 
-    explicit Private()
-      : recursive              (true),
-        listOnlyAvailableImages(true)
-    {
-    }
+    Private() = default;
 
 public:
 
-    bool recursive;
-    bool listOnlyAvailableImages;
+    bool recursive                  = true;
+    bool listOnlyAvailableImages    = true;
 };
 
 } // namespace Digikam

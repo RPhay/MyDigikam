@@ -22,11 +22,6 @@
 namespace Digikam
 {
 
-ItemListerValueListReceiver::ItemListerValueListReceiver()
-    : hasError(false)
-{
-}
-
 void ItemListerValueListReceiver::error(const QString&)
 {
     hasError = true;
@@ -62,13 +57,12 @@ void ItemListerJobReceiver::error(const QString& errMsg)
 
 ItemListerJobPartsSendingReceiver::ItemListerJobPartsSendingReceiver(DBJob* const job, int limit)
     : ItemListerJobReceiver(job),
-      m_limit              (limit),
-      m_count              (0)
+      m_limit              (limit)
 {
 
 }
 
-void ItemListerJobPartsSendingReceiver::receive(const ItemListerRecord &record)
+void ItemListerJobPartsSendingReceiver::receive(const ItemListerRecord& record)
 {
     ItemListerJobReceiver::receive(record);
 

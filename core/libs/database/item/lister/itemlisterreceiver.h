@@ -53,7 +53,7 @@ class DIGIKAM_DATABASE_EXPORT ItemListerValueListReceiver : public ItemListerRec
 {
 public:
 
-    explicit ItemListerValueListReceiver();
+    ItemListerValueListReceiver() = default;
 
     void receive(const ItemListerRecord& record) override;
     void error(const QString& errMsg)            override;
@@ -61,7 +61,7 @@ public:
 public:
 
     QList<ItemListerRecord> records;
-    bool                    hasError;
+    bool                    hasError = false;
 
 private:
 
@@ -81,7 +81,7 @@ public:
 
 protected:
 
-    DBJob* const m_job;
+    DBJob* const m_job = nullptr;
 
 private:
 
@@ -100,8 +100,8 @@ public:
 
 protected:
 
-    int m_limit;
-    int m_count;
+    int m_limit = 0;
+    int m_count = 0;
 
 private:
 
@@ -123,8 +123,8 @@ public:
 
 protected:
 
-    int m_maxLimit;
-    int m_increment;
+    int m_maxLimit  = 0;
+    int m_increment = 0;
 
 private:
 
