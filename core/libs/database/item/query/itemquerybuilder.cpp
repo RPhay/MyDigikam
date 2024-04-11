@@ -36,8 +36,6 @@ ItemQueryBuilder::ItemQueryBuilder()
         m_shortMonths[i-1] = QLocale().standaloneMonthName(i, QLocale::ShortFormat).toLower();
         m_longMonths[i-1]  = QLocale().standaloneMonthName(i, QLocale::LongFormat).toLower();
     }
-
-    m_imageTagPropertiesJoined = false;
 }
 
 void ItemQueryBuilder::setImageTagPropertiesJoined(bool isJoined)
@@ -48,6 +46,7 @@ void ItemQueryBuilder::setImageTagPropertiesJoined(bool isJoined)
 QString ItemQueryBuilder::buildQuery(const QString& q, QList<QVariant> *boundValues, ItemQueryPostHooks* const hooks) const
 {
     // Handle legacy query descriptions
+
     if (q.startsWith(QLatin1String("digikamsearch:")))
     {
         return buildQueryFromUrl(QUrl(q), boundValues);
@@ -108,6 +107,7 @@ void ItemQueryBuilder::buildGroup(QString& sql, SearchXmlCachingReader& reader,
         }
 
         // subgroup
+
         if (reader.isGroupElement())
         {
             hasContent = true;
@@ -148,6 +148,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     FieldQueryBuilder fieldQuery(sql, reader, boundValues, hooks, relation);
 
     // First catch all noeffect fields. Those are only used for message passing when no Signal-Slot-communication is possible
+
     if      (name.startsWith(QLatin1String("noeffect_")))
     {
         return false;
@@ -300,6 +301,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
         else if (relation == SearchXml::AllOf)
         {
             // there must be an entry in ImageTags for every given tag id
+
             QList<int> ids = reader.valueToIntOrIntList();
 
             bool firstCondition = true;
@@ -413,7 +415,8 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             int pageOrientation = reader.valueToInt();
 
             // "1" is landscape, "2" is portrait, "3" is landscape regardless of Exif, "4" is portrait regardless of Exif
-            if (pageOrientation == 1)
+
+            if      (pageOrientation == 1)
             {
                 sql += QString::fromUtf8(" ( (ImageInformation.orientation <= ? AND ImageInformation.width >= ImageInformation.height) "
                        "  OR (ImageInformation.orientation >= ? AND ImageInformation.width <= ImageInformation.height) ) ");
@@ -428,6 +431,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             else if (pageOrientation == 3 || pageOrientation == 4)
             {
                 // ignoring Exif orientation
+
                 sql += QString::fromUtf8(" ( ImageInformation.width ");
                 ItemQueryBuilder::addSqlRelation(sql, pageOrientation == 3 ? SearchXml::GreaterThanOrEqual : SearchXml::LessThanOrEqual);
                 sql += QString::fromUtf8(" ImageInformation.height) ");
@@ -554,6 +558,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     else if (name == QLatin1String("videoaudiobitrate"))
     {
         //fieldQuery.addIntField("VideoMetadata.audioBitRate");
+
         QList<int> values = reader.valueToIntList();
 
         if (values.size() != 2)
@@ -652,6 +657,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     else if (name == QLatin1String("videoframerate"))
     {
         //fieldQuery.addChoiceStringField("VideoMetadata.frameRate");
+
         QList<double> values = reader.valueToDoubleList();
 
         if (values.size() != 2)
@@ -1043,6 +1049,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
         if ((relation == SearchXml::Equal) || (relation == SearchXml::InTree))
         {
             // First, read attributes
+
             QStringView tagAttribute = reader.attributes().value(QLatin1String("tagid"));
             int tagId                = 0;
 
@@ -1052,6 +1059,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             }
 
             // read values: one or two strings
+
             QStringList values = reader.valueToStringOrStringList();
 
             if ((values.size() < 1) || (values.size() > 2))

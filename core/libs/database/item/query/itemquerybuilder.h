@@ -69,7 +69,7 @@ protected:
 
     QString m_longMonths[12];
     QString m_shortMonths[12];
-    bool    m_imageTagPropertiesJoined;
+    bool    m_imageTagPropertiesJoined = false;
 };
 
 } // namespace Digikam

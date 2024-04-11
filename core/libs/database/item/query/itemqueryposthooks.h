@@ -31,7 +31,9 @@ class Q_DECL_HIDDEN ItemQueryPostHook
 {
 public:
 
-    /// This is the single hook, ItemQueryPostHookS is the container
+    /**
+     * This is the single hook, ItemQueryPostHookS is the container.
+     */
     ItemQueryPostHook()          = default;
     virtual ~ItemQueryPostHook() = default;
 
@@ -51,7 +53,7 @@ class DIGIKAM_DATABASE_EXPORT ItemQueryPostHooks
 {
 public:
 
-    explicit ItemQueryPostHooks();
+    ItemQueryPostHooks() = default;
     ~ItemQueryPostHooks();
 
     /**

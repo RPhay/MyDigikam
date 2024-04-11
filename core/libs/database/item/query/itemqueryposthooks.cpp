@@ -22,10 +22,6 @@
 namespace Digikam
 {
 
-ItemQueryPostHooks::ItemQueryPostHooks()
-{
-}
-
 ItemQueryPostHooks::~ItemQueryPostHooks()
 {
     Q_FOREACH (ItemQueryPostHook* const hook, m_postHooks)

@@ -19,13 +19,6 @@
 namespace Digikam
 {
 
-RuleTypeForConversion::RuleTypeForConversion()
-    : op(SearchXml::Equal)
-{
-}
-
-// -------------------------------------------------------------------
-
 QString SubQueryBuilder::build(enum SKey key,
                                enum SOperator op,
                                const QString& passedVal,
@@ -211,6 +204,7 @@ QString SubQueryBuilder::build(enum SKey key,
 
     // special case for imagedate. If the key is imagedate and the operator is EQ,
     // we need to split it into two rules
+
     if ((key == IMAGEDATE) && (op == EQ))
     {
         QDate date = QDate::fromString(val, Qt::ISODate);

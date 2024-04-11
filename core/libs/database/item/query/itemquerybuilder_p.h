@@ -50,10 +50,10 @@ class Q_DECL_HIDDEN RuleTypeForConversion
 {
 public:
 
-    RuleTypeForConversion();
+    RuleTypeForConversion() = default;
 
     QString             key;
-    SearchXml::Relation op;
+    SearchXml::Relation op   = SearchXml::Equal;
     QString             val;
 };
 
@@ -93,7 +93,7 @@ class Q_DECL_HIDDEN RuleType
 public:
 
     SKey      key;
-    SOperator op;
+    SOperator op = EQ;
     QString   val;
 };
 
