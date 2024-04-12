@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 01:41+0000\n"
+"POT-Creation-Date: 2024-04-12 01:40+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -27871,13 +27871,13 @@ msgctxt "@info"
 msgid "Initializing database..."
 msgstr "डाटाबेस पढ़त हे"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:143
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "हाल के आपरेसन ल खारिज करत हे. किरपा करके, अगोरव..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:145
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27886,13 +27886,13 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "संग्रह जोड़व"
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -33463,61 +33463,61 @@ msgstr "हर एक फाइल मं मेटाडाटा लिखव"
 msgid "Revising Exif Orientation tags"
 msgstr "एक्जिफ दिसा टैग पुनरावलोकन करत हे, किरपा करके, अगोरव..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:81
+#: core/libs/fileactionmanager/fileactionmngr.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:131
+#: core/libs/fileactionmanager/fileactionmngr.cpp:130
 #, fuzzy, kde-format
 msgid "Assigning image tags"
 msgstr "फोटू टैग आबंटित करत हे. किरपा करके, अगोरव..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:153
+#: core/libs/fileactionmanager/fileactionmngr.cpp:152
 #, fuzzy, kde-format
 msgid "Removing image tags"
 msgstr "फाइल नाम बदले के विकल्प"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:170
+#: core/libs/fileactionmanager/fileactionmngr.cpp:169
 #, fuzzy, kde-format
 msgid "Assigning image pick label"
 msgstr "फोटू टैग आबंटित करत हे. किरपा करके, अगोरव..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:176
 #, fuzzy, kde-format
 msgid "Assigning image color label"
 msgstr "फोटू टैग आबंटित करत हे. किरपा करके, अगोरव..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:189
+#: core/libs/fileactionmanager/fileactionmngr.cpp:188
 #, fuzzy, kde-format
 msgid "Assigning image ratings"
 msgstr "फोटू दरजा आबंटित करत हे. किरपा करके, अगोरव..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
-#: core/libs/fileactionmanager/fileactionmngr.cpp:208
-#: core/libs/fileactionmanager/fileactionmngr.cpp:220
+#: core/libs/fileactionmanager/fileactionmngr.cpp:195
+#: core/libs/fileactionmanager/fileactionmngr.cpp:207
+#: core/libs/fileactionmanager/fileactionmngr.cpp:219
 #, fuzzy, kde-format
 msgid "Editing group"
 msgstr "पहिली फोटू"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:226
 #, fuzzy, kde-format
 msgid "Updating orientation in database"
 msgstr "<b>फिंगरप्रिंट डाटाबेस ल अपडेट करत हे. किरपा करके, अगोरव...</b>"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:245
-#: core/libs/fileactionmanager/fileactionmngr.cpp:263
+#: core/libs/fileactionmanager/fileactionmngr.cpp:244
+#: core/libs/fileactionmanager/fileactionmngr.cpp:262
 #, fuzzy, kde-format
 msgid "Applying metadata"
 msgstr "मेटाडाटा सहेजव"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:269
 #, fuzzy, kde-format
 msgid "Rotating images"
 msgstr "फोटू चुनव"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:286
+#: core/libs/fileactionmanager/fileactionmngr.cpp:285
 #, fuzzy, kde-format
 msgid "Copying attributes"
 msgstr "सहयोग देव..."
