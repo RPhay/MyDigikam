@@ -33,7 +33,7 @@ class AlbumModelDragDropHandler : public QObject
 public:
 
     explicit AlbumModelDragDropHandler(AbstractAlbumModel* model);
-    ~AlbumModelDragDropHandler()          override;
+    ~AlbumModelDragDropHandler() override = default;
 
     AbstractAlbumModel* model()     const;
 
@@ -73,7 +73,7 @@ public:
 
 protected:
 
-    AbstractAlbumModel* m_model;
+    AbstractAlbumModel* m_model = nullptr;
 };
 
 } // namespace Digikam

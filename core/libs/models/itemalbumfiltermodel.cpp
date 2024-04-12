@@ -39,16 +39,12 @@ class Q_DECL_HIDDEN ItemAlbumFilterModelPrivate : public ItemFilterModel::ItemFi
 
 public:
 
-    ItemAlbumFilterModelPrivate()
-      : delayedAlbumNamesTimer(nullptr),
-        delayedTagNamesTimer  (nullptr)
-    {
-    }
+    ItemAlbumFilterModelPrivate() = default;
 
     QHash<int, QString> tagNamesHash;
     QHash<int, QString> albumNamesHash;
-    QTimer*             delayedAlbumNamesTimer;
-    QTimer*             delayedTagNamesTimer;
+    QTimer*             delayedAlbumNamesTimer  = nullptr;
+    QTimer*             delayedTagNamesTimer    = nullptr;
 
 private:
 

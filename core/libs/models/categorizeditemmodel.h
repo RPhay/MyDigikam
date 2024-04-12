@@ -136,8 +136,8 @@ protected:
 
 protected:
 
-    MenuCategoryMode                  m_mode;
-    DCategorizedSortFilterProxyModel* m_filterModel;
+    MenuCategoryMode                  m_mode        = (MenuCategoryMode)(ToplevelMenuCategory | SortCategoriesAlphabetically);
+    DCategorizedSortFilterProxyModel* m_filterModel = nullptr;
 };
 
 } // namespace Digikam

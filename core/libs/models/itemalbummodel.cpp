@@ -43,31 +43,23 @@ class Q_DECL_HIDDEN ItemAlbumModel::Private
 {
 public:
 
-    explicit Private()
-      : jobThread               (nullptr),
-        incrementalTimer        (nullptr),
-        recurseAlbums           (false),
-        recurseTags             (false),
-        listOnlyAvailableImages (false),
-        extraValueJob           (false)
-    {
-    }
+    Private() = default;
 
     QList<Album*>     currentAlbums;
-    DBJobsThread*     jobThread;
-    QTimer*           incrementalTimer;
+    DBJobsThread*     jobThread                 = nullptr;
+    QTimer*           incrementalTimer          = nullptr;
 
-    bool              recurseAlbums;
-    bool              recurseTags;
-    bool              listOnlyAvailableImages;
+    bool              recurseAlbums             = false;
+    bool              recurseTags               = false;
+    bool              listOnlyAvailableImages   = false;
     QString           specialListing;
 
-    bool              extraValueJob;
+    bool              extraValueJob             = false;
 };
 
 ItemAlbumModel::ItemAlbumModel(QWidget* const parent)
     : ItemThumbnailModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
     qRegisterMetaType<QList<ItemListerRecord>>("QList<ItemListerRecord>");
 
@@ -657,7 +649,7 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
                 switch ((*it)->type())
                 {
                     case Album::PHYSICAL:
-
+                    {
                         // that's easy: try if our album is affected
 
                         doRefresh = changeset.containsAlbum((*it)->id());
@@ -677,6 +669,7 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
                         }
 
                         break;
+                    }
 
                     default:
                     {
@@ -693,7 +686,7 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
             case CollectionImageChangeset::Deleted:
             case CollectionImageChangeset::Removed:
             case CollectionImageChangeset::RemovedAll:
-
+            {
                 // is one of our images affected?
 
                 Q_FOREACH (const qlonglong& id, changeset.ids())
@@ -708,6 +701,7 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
                 }
 
                 break;
+            }
 
             default:
             {

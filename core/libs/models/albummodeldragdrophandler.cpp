@@ -31,10 +31,6 @@ AlbumModelDragDropHandler::AlbumModelDragDropHandler(AbstractAlbumModel* model)
 {
 }
 
-AlbumModelDragDropHandler::~AlbumModelDragDropHandler()
-{
-}
-
 AbstractAlbumModel* AlbumModelDragDropHandler::model() const
 {
     return m_model;
