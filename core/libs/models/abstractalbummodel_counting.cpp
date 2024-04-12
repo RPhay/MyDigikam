@@ -23,12 +23,9 @@ class Q_DECL_HIDDEN AbstractCountingAlbumModel::Private
 {
 public:
 
-    explicit Private()
-      : showCount(false)
-    {
-    }
+    Private() = default;
 
-    bool            showCount;
+    bool            showCount       = false;
     QHash<int, int> countHash;
     QHash<int, int> countHashReady;
     QSet<int>       includeChildrenAlbums;
@@ -39,7 +36,7 @@ AbstractCountingAlbumModel::AbstractCountingAlbumModel(Album::Type albumType,
                                                        RootAlbumBehavior rootBehavior,
                                                        QObject* const parent)
     : AbstractSpecificAlbumModel(albumType, rootAlbum, rootBehavior, parent),
-      d(new Private)
+      d                         (new Private)
 {
 }
 

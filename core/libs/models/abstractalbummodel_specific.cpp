@@ -49,6 +49,7 @@ QString AbstractSpecificAlbumModel::columnHeader() const
 void AbstractSpecificAlbumModel::setColumnHeader(const QString& header)
 {
     m_columnHeader = header;
+
     Q_EMIT headerDataChanged(Qt::Horizontal, 0, 0);
 }
 
@@ -95,6 +96,7 @@ void AbstractSpecificAlbumModel::emitDataChangedForChildren(Album* album)
             // Q_EMIT signal for child
 
             QModelIndex index = indexForAlbum(child);
+
             Q_EMIT dataChanged(index, index);
         }
     }

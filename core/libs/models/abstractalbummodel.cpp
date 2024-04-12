@@ -23,30 +23,19 @@ class Q_DECL_HIDDEN AbstractAlbumModel::Private
 {
 public:
 
-    explicit Private()
-        : rootAlbum         (nullptr),
-          addingAlbum       (nullptr),
-          type              (Album::PHYSICAL),
-          dragDropHandler   (nullptr),
-          rootBehavior      (AbstractAlbumModel::IncludeRootAlbum),
-          removingAlbum     (0),
-          itemDrag          (true),
-          itemDrop          (true),
-          isFaceTagModel    (false)
-    {
-    }
+    Private() = default;
 
-    Album*                                rootAlbum;
-    Album*                                addingAlbum;
-    Album::Type                           type;
-    AlbumModelDragDropHandler*            dragDropHandler;
-    AbstractAlbumModel::RootAlbumBehavior rootBehavior;
+    Album*                                rootAlbum         = nullptr;
+    Album*                                addingAlbum       = nullptr;
+    Album::Type                           type              = Album::PHYSICAL;
+    AlbumModelDragDropHandler*            dragDropHandler   = nullptr;
+    AbstractAlbumModel::RootAlbumBehavior rootBehavior      = AbstractAlbumModel::IncludeRootAlbum;
 
-    quintptr                              removingAlbum;
+    quintptr                              removingAlbum     = 0;
 
-    bool                                  itemDrag;
-    bool                                  itemDrop;
-    bool                                  isFaceTagModel;
+    bool                                  itemDrag          = true;
+    bool                                  itemDrop          = true;
+    bool                                  isFaceTagModel    = false;
 
     QModelIndex                           dropIndex;
 };
@@ -122,39 +111,63 @@ QVariant AbstractAlbumModel::albumData(Album* a, int role) const
     switch (role)
     {
         case Qt::DisplayRole:
+        {
             return a->title();
+        }
 
         case Qt::ToolTipRole:
+        {
             return a->title();
+        }
 
         case Qt::DecorationRole:
-            // reimplement in subclasses
+        {
+            // reimplemented in subclasses
+
             return decorationRoleData(a);
+        }
 
         case Qt::FontRole:
+        {
             return fontRoleData(a);
+        }
 
         case AlbumTitleRole:
+        {
             return a->title();
+        }
 
         case AlbumTypeRole:
+        {
             return a->type();
+        }
 
         case AlbumPointerRole:
+        {
             return QVariant::fromValue(a);
+        }
 
         case AlbumIdRole:
+        {
             return a->id();
+        }
 
         case AlbumGlobalIdRole:
+        {
             return a->globalID();
+        }
 
         case AlbumSortRole:
-            // reimplement in subclass
+        {
+            // reimplemented in subclass
+
             return sortRoleData(a);
+        }
 
         default:
+        {
             return QVariant();
+        }
     }
 }
 
@@ -175,6 +188,7 @@ int AbstractAlbumModel::rowCount(const QModelIndex& parent) const
     if (parent.isValid())
     {
         Album* const a = static_cast<Album*>(parent.internalPointer());
+
         return a->childCount();
     }
     else
@@ -288,6 +302,7 @@ QModelIndex AbstractAlbumModel::parent(const QModelIndex& index) const
     if (index.isValid())
     {
         Album* const a = static_cast<Album*>(index.internalPointer());
+
         return indexForAlbum(a->parent());
     }
 
@@ -496,6 +511,7 @@ void AbstractAlbumModel::slotAlbumAboutToBeAdded(Album* album, Album* parent, Al
     if (album->isRoot() && d->rootBehavior == IgnoreRootAlbum)
     {
         d->rootAlbum = album;
+
         return;
     }
 
@@ -545,6 +561,7 @@ void AbstractAlbumModel::slotAlbumAboutToBeDeleted(Album* album)
     {
         albumCleared(album);
         d->rootAlbum = nullptr;
+
         return;
     }
 
@@ -585,6 +602,7 @@ void AbstractAlbumModel::slotAlbumIconChanged(Album* album)
     }
 
     QModelIndex index = indexForAlbum(album);
+
     Q_EMIT dataChanged(index, index);
 }
 
@@ -596,6 +614,7 @@ void AbstractAlbumModel::slotAlbumRenamed(Album* album)
     }
 
     QModelIndex index = indexForAlbum(album);
+
     Q_EMIT dataChanged(index, index);
 }
 

@@ -26,10 +26,7 @@ public:
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
     explicit Private()
-        : extraFlags                          (),
-          rootIsCheckable                     (true),
-          addExcludeTristate                  (false),
-          recursive                           (false),
+        : extraFlags                          (),                       // why this difference between Qt5 and 6 ?
           staticVectorContainingCheckStateRole(1, Qt::CheckStateRole)
 
     {
@@ -39,9 +36,6 @@ public:
 
     explicit Private()
         : extraFlags                          (nullptr),
-          rootIsCheckable                     (true),
-          addExcludeTristate                  (false),
-          recursive                           (false),
           staticVectorContainingCheckStateRole(1, Qt::CheckStateRole)
 
     {
@@ -50,9 +44,9 @@ public:
 #endif
 
     Qt::ItemFlags                 extraFlags;
-    bool                          rootIsCheckable;
-    bool                          addExcludeTristate;
-    bool                          recursive;
+    bool                          rootIsCheckable       = true;
+    bool                          addExcludeTristate    = false;
+    bool                          recursive             = false;
     QHash<Album*, Qt::CheckState> checkedAlbums;
 
     QVector<int> staticVectorContainingCheckStateRole;
@@ -63,7 +57,7 @@ AbstractCheckableAlbumModel::AbstractCheckableAlbumModel(Album::Type albumType,
                                                          RootAlbumBehavior rootBehavior,
                                                          QObject* const parent)
     : AbstractCountingAlbumModel(albumType, rootAlbum, rootBehavior, parent),
-      d(new Private)
+      d                         (new Private)
 {
     setup();
 }

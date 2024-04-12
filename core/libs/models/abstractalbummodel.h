@@ -466,8 +466,11 @@ protected:
 
     QVariant albumData(Album* a, int role)                                                 const override;
     Qt::ItemFlags flags(const QModelIndex& index)                                          const override;
-    // Do not call this function directly, use the setData(..., bool recursive)
-	bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)       override;
+
+    /**
+     * NOTE: Do not call this function directly, use the setData(..., bool recursive)
+     */
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)       override;
     bool setData(const QModelIndex& index, const QVariant& value, int role, bool recursive);
 
     void albumCleared(Album* album)                                                              override;
