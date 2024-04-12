@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 01:41+0000\n"
+"POT-Creation-Date: 2024-04-12 01:40+0000\n"
 "PO-Revision-Date: 2024-04-06 09:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -29049,13 +29049,13 @@ msgctxt "@info"
 msgid "Initializing database..."
 msgstr "S'està inicialitzant la base de dades..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:143
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "S'estan explorant les col·leccions, si us plau, espereu..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:145
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29068,13 +29068,13 @@ msgstr ""
 "aparèixer automàticament si no s'ha completat una exploració anterior de les "
 "col·leccions."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "S'està explorant la col·lecció"
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -34902,61 +34902,61 @@ msgstr "S'estan escrivint les metadades als fitxers"
 msgid "Revising Exif Orientation tags"
 msgstr "S'estan revisant les etiquetes d'orientació Exif"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:81
+#: core/libs/fileactionmanager/fileactionmngr.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "S'estan finalitzant les tasques"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:131
+#: core/libs/fileactionmanager/fileactionmngr.cpp:130
 #, kde-format
 msgid "Assigning image tags"
 msgstr "S'estan assignant les etiquetes a les imatges"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:153
+#: core/libs/fileactionmanager/fileactionmngr.cpp:152
 #, kde-format
 msgid "Removing image tags"
 msgstr "S'estan suprimint les etiquetes de les imatges"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:170
+#: core/libs/fileactionmanager/fileactionmngr.cpp:169
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "S'està assignant el rètol de selecció a les imatges"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:176
 #, kde-format
 msgid "Assigning image color label"
 msgstr "S'està assignant el rètol de color a les imatges"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:189
+#: core/libs/fileactionmanager/fileactionmngr.cpp:188
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "S'estan assignant les valoracions a les imatges"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
-#: core/libs/fileactionmanager/fileactionmngr.cpp:208
-#: core/libs/fileactionmanager/fileactionmngr.cpp:220
+#: core/libs/fileactionmanager/fileactionmngr.cpp:195
+#: core/libs/fileactionmanager/fileactionmngr.cpp:207
+#: core/libs/fileactionmanager/fileactionmngr.cpp:219
 #, kde-format
 msgid "Editing group"
 msgstr "S'està editant el grup"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:226
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "S'està actualitzant l'orientació a la base de dades"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:245
-#: core/libs/fileactionmanager/fileactionmngr.cpp:263
+#: core/libs/fileactionmanager/fileactionmngr.cpp:244
+#: core/libs/fileactionmanager/fileactionmngr.cpp:262
 #, kde-format
 msgid "Applying metadata"
 msgstr "S'estan aplicant les metadades"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:269
 #, kde-format
 msgid "Rotating images"
 msgstr "S'estan girant les imatges"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:286
+#: core/libs/fileactionmanager/fileactionmngr.cpp:285
 #, kde-format
 msgid "Copying attributes"
 msgstr "S'estan copiant els atributs"

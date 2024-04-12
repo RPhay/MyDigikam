@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 01:41+0000\n"
+"POT-Creation-Date: 2024-04-12 01:40+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -29089,14 +29089,14 @@ msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Bunachar sonraí á thúsú..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:143
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>Bailiúcháin á scanadh, fan go fóill...</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:145
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29105,13 +29105,13 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -34756,61 +34756,61 @@ msgstr "Meiteashonraí á scríobh i gcomhaid"
 msgid "Revising Exif Orientation tags"
 msgstr "Clibeanna Treoshuímh Exif á n-athrú"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:81
+#: core/libs/fileactionmanager/fileactionmngr.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "Tascanna á gcur i gcrích"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:131
+#: core/libs/fileactionmanager/fileactionmngr.cpp:130
 #, kde-format
 msgid "Assigning image tags"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:153
+#: core/libs/fileactionmanager/fileactionmngr.cpp:152
 #, kde-format
 msgid "Removing image tags"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:170
+#: core/libs/fileactionmanager/fileactionmngr.cpp:169
 #, kde-format
 msgid "Assigning image pick label"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:176
 #, kde-format
 msgid "Assigning image color label"
 msgstr "Lipéad datha á chur leis an íomhá"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:189
+#: core/libs/fileactionmanager/fileactionmngr.cpp:188
 #, kde-format
 msgid "Assigning image ratings"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
-#: core/libs/fileactionmanager/fileactionmngr.cpp:208
-#: core/libs/fileactionmanager/fileactionmngr.cpp:220
+#: core/libs/fileactionmanager/fileactionmngr.cpp:195
+#: core/libs/fileactionmanager/fileactionmngr.cpp:207
+#: core/libs/fileactionmanager/fileactionmngr.cpp:219
 #, kde-format
 msgid "Editing group"
 msgstr "Grúpa á chur in eagar"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:226
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "Treoshuíomh á nuashonrú sa bhunachar sonraí"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:245
-#: core/libs/fileactionmanager/fileactionmngr.cpp:263
+#: core/libs/fileactionmanager/fileactionmngr.cpp:244
+#: core/libs/fileactionmanager/fileactionmngr.cpp:262
 #, kde-format
 msgid "Applying metadata"
 msgstr "Meiteashonraí á gcur i bhfeidhm"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:269
 #, kde-format
 msgid "Rotating images"
 msgstr "Íomhánna á rothlú"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:286
+#: core/libs/fileactionmanager/fileactionmngr.cpp:285
 #, kde-format
 msgid "Copying attributes"
 msgstr ""

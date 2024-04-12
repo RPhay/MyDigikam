@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 01:41+0000\n"
+"POT-Creation-Date: 2024-04-12 01:40+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -29172,13 +29172,13 @@ msgctxt "@info"
 msgid "Initializing database..."
 msgstr "A inicializar a base de dados..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:143
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "A analisar as colecções, espere por favor..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:145
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29191,13 +29191,13 @@ msgstr ""
 "aparecer automaticamente se uma análise anterior não tiver terminado por "
 "completo."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "A analisar a colecção"
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -34996,61 +34996,61 @@ msgstr "A gravar os meta-dados nos ficheiros"
 msgid "Revising Exif Orientation tags"
 msgstr "A rever as marcas de orientação do EXIF"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:81
+#: core/libs/fileactionmanager/fileactionmngr.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "A terminar as tarefas"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:131
+#: core/libs/fileactionmanager/fileactionmngr.cpp:130
 #, kde-format
 msgid "Assigning image tags"
 msgstr "A atribuir as marcas às imagens"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:153
+#: core/libs/fileactionmanager/fileactionmngr.cpp:152
 #, kde-format
 msgid "Removing image tags"
 msgstr "A remover as marcas das imagens"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:170
+#: core/libs/fileactionmanager/fileactionmngr.cpp:169
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "A atribuir a legenda recolhida às imagens"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:176
 #, kde-format
 msgid "Assigning image color label"
 msgstr "A atribuir a legenda de cores às imagens"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:189
+#: core/libs/fileactionmanager/fileactionmngr.cpp:188
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "A atribuir as classificações às imagens"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
-#: core/libs/fileactionmanager/fileactionmngr.cpp:208
-#: core/libs/fileactionmanager/fileactionmngr.cpp:220
+#: core/libs/fileactionmanager/fileactionmngr.cpp:195
+#: core/libs/fileactionmanager/fileactionmngr.cpp:207
+#: core/libs/fileactionmanager/fileactionmngr.cpp:219
 #, kde-format
 msgid "Editing group"
 msgstr "A editar o grupo"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:226
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "A actualizar a orientação na base de dados"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:245
-#: core/libs/fileactionmanager/fileactionmngr.cpp:263
+#: core/libs/fileactionmanager/fileactionmngr.cpp:244
+#: core/libs/fileactionmanager/fileactionmngr.cpp:262
 #, kde-format
 msgid "Applying metadata"
 msgstr "A aplicar os meta-dados"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:269
 #, kde-format
 msgid "Rotating images"
 msgstr "A rodar as imagens"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:286
+#: core/libs/fileactionmanager/fileactionmngr.cpp:285
 #, kde-format
 msgid "Copying attributes"
 msgstr "A copiar os atributos"

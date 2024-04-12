@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 01:41+0000\n"
+"POT-Creation-Date: 2024-04-12 01:40+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -27692,13 +27692,13 @@ msgctxt "@info"
 msgid "Initializing database..."
 msgstr "डाटाबेस पढ़ा जा रहा है"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:143
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "वस्तुओं के लिए स्कैन किया जा रहा है. कृपया इंतजार करें..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:145
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27707,13 +27707,13 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "संग्रह से"
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -33216,61 +33216,61 @@ msgstr "प्रत्येक फ़ाइल में मेटाडाट
 msgid "Revising Exif Orientation tags"
 msgstr "एक्जिफ दिशा टैग पुनरावलोकन किया जा रहा है, कृपया इंतज़ार करें..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:81
+#: core/libs/fileactionmanager/fileactionmngr.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:131
+#: core/libs/fileactionmanager/fileactionmngr.cpp:130
 #, fuzzy, kde-format
 msgid "Assigning image tags"
 msgstr "छवि टैग आबंटित किया जा रहा है. कृपया प्रतीक्षा करें..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:153
+#: core/libs/fileactionmanager/fileactionmngr.cpp:152
 #, fuzzy, kde-format
 msgid "Removing image tags"
 msgstr "इंटरफ़ेस विकल्प"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:170
+#: core/libs/fileactionmanager/fileactionmngr.cpp:169
 #, fuzzy, kde-format
 msgid "Assigning image pick label"
 msgstr "छवि टैग आबंटित किया जा रहा है. कृपया प्रतीक्षा करें..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:176
 #, fuzzy, kde-format
 msgid "Assigning image color label"
 msgstr "छवि टैग आबंटित किया जा रहा है. कृपया प्रतीक्षा करें..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:189
+#: core/libs/fileactionmanager/fileactionmngr.cpp:188
 #, fuzzy, kde-format
 msgid "Assigning image ratings"
 msgstr "छवि दरजा आबंटित किया जा रहा है. कृपया प्रतीक्षा करें..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
-#: core/libs/fileactionmanager/fileactionmngr.cpp:208
-#: core/libs/fileactionmanager/fileactionmngr.cpp:220
+#: core/libs/fileactionmanager/fileactionmngr.cpp:195
+#: core/libs/fileactionmanager/fileactionmngr.cpp:207
+#: core/libs/fileactionmanager/fileactionmngr.cpp:219
 #, fuzzy, kde-format
 msgid "Editing group"
 msgstr "प्रथम छवि"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:226
 #, fuzzy, kde-format
 msgid "Updating orientation in database"
 msgstr "वस्तुओं अद्यतन किया जा रहा है. कृपया इंतजार करें..."
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:245
-#: core/libs/fileactionmanager/fileactionmngr.cpp:263
+#: core/libs/fileactionmanager/fileactionmngr.cpp:244
+#: core/libs/fileactionmanager/fileactionmngr.cpp:262
 #, fuzzy, kde-format
 msgid "Applying metadata"
 msgstr "मेटाडाटा"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:269
 #, fuzzy, kde-format
 msgid "Rotating images"
 msgstr "छवियाँ सहेजें"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:286
+#: core/libs/fileactionmanager/fileactionmngr.cpp:285
 #, kde-format
 msgid "Copying attributes"
 msgstr ""

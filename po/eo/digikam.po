@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 01:41+0000\n"
+"POT-Creation-Date: 2024-04-12 01:40+0000\n"
 "PO-Revision-Date: 2024-03-29 18:11+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -28644,13 +28644,13 @@ msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Komencante datumbazon..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:143
+#: core/libs/database/utils/scan/scancontroller.cpp:145
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Skanante kolektojn, bonvolu atendi..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:145
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28662,13 +28662,13 @@ msgstr ""
 "disko estas registritaj en datumbazo. Noto: ĉi tiu dialogo povas aperi "
 "aŭtomate se antaŭa skanado de kolektoj ne estis plene kompletigita."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "Skananta kolekto"
 
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:88
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/tags/widgets/tageditdlg.cpp:536
 #, kde-format
 msgid "Error"
@@ -34384,61 +34384,61 @@ msgstr "Skribante metadatenojn al dosieroj"
 msgid "Revising Exif Orientation tags"
 msgstr "Reviziante Exif-Orientajn etikedojn"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:81
+#: core/libs/fileactionmanager/fileactionmngr.cpp:80
 #, kde-format
 msgctxt "@label"
 msgid "Finishing tasks"
 msgstr "Finaj taskoj"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:131
+#: core/libs/fileactionmanager/fileactionmngr.cpp:130
 #, kde-format
 msgid "Assigning image tags"
 msgstr "Asignante bildajn etikedojn"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:153
+#: core/libs/fileactionmanager/fileactionmngr.cpp:152
 #, kde-format
 msgid "Removing image tags"
 msgstr "Forigante bildajn etikedojn"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:170
+#: core/libs/fileactionmanager/fileactionmngr.cpp:169
 #, kde-format
 msgid "Assigning image pick label"
 msgstr "Asignante bildo-elekto-etikedon"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:177
+#: core/libs/fileactionmanager/fileactionmngr.cpp:176
 #, kde-format
 msgid "Assigning image color label"
 msgstr "Asigni bildan koloran etikedon"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:189
+#: core/libs/fileactionmanager/fileactionmngr.cpp:188
 #, kde-format
 msgid "Assigning image ratings"
 msgstr "Asigni bildajn taksojn"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:196
-#: core/libs/fileactionmanager/fileactionmngr.cpp:208
-#: core/libs/fileactionmanager/fileactionmngr.cpp:220
+#: core/libs/fileactionmanager/fileactionmngr.cpp:195
+#: core/libs/fileactionmanager/fileactionmngr.cpp:207
+#: core/libs/fileactionmanager/fileactionmngr.cpp:219
 #, kde-format
 msgid "Editing group"
 msgstr "Redakta grupo"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:227
+#: core/libs/fileactionmanager/fileactionmngr.cpp:226
 #, kde-format
 msgid "Updating orientation in database"
 msgstr "Ĝisdatigi orientiĝon en datumbazo"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:245
-#: core/libs/fileactionmanager/fileactionmngr.cpp:263
+#: core/libs/fileactionmanager/fileactionmngr.cpp:244
+#: core/libs/fileactionmanager/fileactionmngr.cpp:262
 #, kde-format
 msgid "Applying metadata"
 msgstr "Aplikante metadatenojn"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:270
+#: core/libs/fileactionmanager/fileactionmngr.cpp:269
 #, kde-format
 msgid "Rotating images"
 msgstr "Rotaciantaj bildoj"
 
-#: core/libs/fileactionmanager/fileactionmngr.cpp:286
+#: core/libs/fileactionmanager/fileactionmngr.cpp:285
 #, kde-format
 msgid "Copying attributes"
 msgstr "Kopiado de atributoj"
