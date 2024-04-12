@@ -73,7 +73,7 @@ BUGFIXES:
 050 ==> 478222 - AppImage 8.2.0 fails to start on Ubuntu 20.04: CXXABI_1.3.13, GLIBCXX_3.4.29 and GLIBCXX_3.4.30 not found.
 051 ==> 478805 - GPG key file of digikamdeveloper@gmail.com comes with bad signature.
 052 ==> 461616 - Keyboard shortcuts override text input boxes.
-053 ==> 
+053 ==> 459480 - User login to flickr not working - cannot load page.
 054 ==> 
 055 ==> 
 056 ==> 
