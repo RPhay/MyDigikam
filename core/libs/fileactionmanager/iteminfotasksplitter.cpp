@@ -27,10 +27,6 @@ ItemInfoTaskSplitter::ItemInfoTaskSplitter(const FileActionItemInfoList& list)
     m_n       = qMax(1, list.size() / parts);
 }
 
-ItemInfoTaskSplitter::~ItemInfoTaskSplitter()
-{
-}
-
 FileActionItemInfoList ItemInfoTaskSplitter::next()
 {
     QList<ItemInfo> list;
@@ -45,6 +41,7 @@ FileActionItemInfoList ItemInfoTaskSplitter::next()
         list.reserve(m_n);
 
         // qCopy does not work with QList
+
         for (int i = 0 ;  i < m_n ; ++i)
         {
             list << at(i);

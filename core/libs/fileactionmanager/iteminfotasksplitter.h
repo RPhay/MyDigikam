@@ -27,14 +27,14 @@ class ItemInfoTaskSplitter : public FileActionItemInfoList
 public:
 
     explicit ItemInfoTaskSplitter(const FileActionItemInfoList& list);
-    ~ItemInfoTaskSplitter();
+    ~ItemInfoTaskSplitter() = default;
 
     FileActionItemInfoList next();
     bool hasNext() const;
 
 protected:
 
-    int m_n;
+    int m_n = 1;
 };
 
 } // namespace Digikam
