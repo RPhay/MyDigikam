@@ -25,12 +25,9 @@ class Q_DECL_HIDDEN NetworkManager::Private
 {
 public:
 
-    explicit Private()
-      : networkManager(nullptr)
-    {
-    }
+    Private() = default;
 
-    QNetworkAccessManager* networkManager;
+    QNetworkAccessManager* networkManager = nullptr;
 };
 
 // -----------------------------------------------------------------------------------------------

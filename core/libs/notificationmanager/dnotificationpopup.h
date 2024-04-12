@@ -274,7 +274,9 @@ public:
                                        const QPixmap& icon, WId parent, int timeout = -1,
                                        const QPoint& p = QPoint());
 
-    // we create an overloaded version of show()
+    /**
+     * we create an overloaded version of show()
+     */
     using QFrame::show;
 
 public Q_SLOTS:

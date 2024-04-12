@@ -49,18 +49,10 @@ class Q_DECL_HIDDEN DNotificationPopup::Private
 {
 public:
 
-    explicit Private(DNotificationPopup* const q, WId winId)
-        : q         (q),
-          popupStyle(DEFAULT_POPUP_TYPE),
+    explicit Private(DNotificationPopup* const qq, WId winId)
+        : q         (qq),
           window    (winId),
-          msgView   (nullptr),
-          topLayout (nullptr),
-          hideDelay (DEFAULT_POPUP_TIME),
-          hideTimer (new QTimer(q)),
-          ttlIcon   (nullptr),
-          ttl       (nullptr),
-          msg       (nullptr),
-          autoDelete(false)
+          hideTimer (new QTimer(q))
     {
         q->setWindowFlags(POPUP_FLAGS);
         q->setFrameStyle(QFrame::Box | QFrame::Plain);
@@ -85,24 +77,24 @@ public:
 
 public:
 
-    DNotificationPopup* q;
+    DNotificationPopup* q               = nullptr;
 
-    int                 popupStyle;
+    int                 popupStyle      = DEFAULT_POPUP_TYPE;
     QPolygon            surround;
     QPoint              anchor;
     QPoint              fixedPosition;
 
     WId                 window;
-    QWidget*            msgView;
-    QBoxLayout*         topLayout;
-    int                 hideDelay;
-    QTimer*             hideTimer;
+    QWidget*            msgView         = nullptr;
+    QBoxLayout*         topLayout       = nullptr;
+    int                 hideDelay       = DEFAULT_POPUP_TIME;
+    QTimer*             hideTimer       = nullptr;
 
-    QLabel*             ttlIcon;
-    QLabel*             ttl;
-    QLabel*             msg;
+    QLabel*             ttlIcon         = nullptr;
+    QLabel*             ttl             = nullptr;
+    QLabel*             msg             = nullptr;
 
-    bool                autoDelete;
+    bool                autoDelete      = false;
 
     /**
      * Updates the transparency mask. Unused if PopupStyle == Boxed

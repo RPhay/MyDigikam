@@ -51,21 +51,21 @@ public:
 
 public:
 
-    DNotificationWidget*             q;
-    QFrame*                          content;
-    QLabel*                          iconLabel;
-    QLabel*                          textLabel;
-    QToolButton*                     closeButton;
-    QTimeLine*                       timeLine;
-    QTimer*                          timer;
+    DNotificationWidget*             q                  = nullptr;
+    QFrame*                          content            = nullptr;
+    QLabel*                          iconLabel          = nullptr;
+    QLabel*                          textLabel          = nullptr;
+    QToolButton*                     closeButton        = nullptr;
+    QTimeLine*                       timeLine           = nullptr;
+    QTimer*                          timer              = nullptr;
     QIcon                            icon;
     QString                          text;
 
-    DNotificationWidget::MessageType messageType;
-    bool                             wordWrap;
+    DNotificationWidget::MessageType messageType        = DNotificationWidget::Information;
+    bool                             wordWrap           = false;
     QList<QToolButton*>              buttons;
     QPixmap                          contentSnapShot;
-    int                              delay;
+    int                              delay              = -1;
 
 private Q_SLOTS:
 

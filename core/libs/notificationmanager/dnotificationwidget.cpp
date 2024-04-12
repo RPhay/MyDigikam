@@ -121,20 +121,28 @@ void DNotificationWidget::setMessageType(DNotificationWidget::MessageType type)
     switch (type)
     {
         case Positive:
+        {
             bg1.setRgb(0, 110,  40); // values taken from kcolorscheme.cpp (Positive)
             break;
+        }
 
         case Information:
+        {
             bg1 = palette().highlight().color();
             break;
+        }
 
         case Warning:
+        {
             bg1.setRgb(176, 128, 0); // values taken from kcolorscheme.cpp (Neutral)
             break;
+        }
 
         case Error:
+        {
             bg1.setRgb(191, 3, 3);   // values taken from kcolorscheme.cpp (Negative)
             break;
+        }
     }
 
     // Colors
@@ -282,6 +290,7 @@ void DNotificationWidget::animatedShow()
     if (!style()->styleHint(QStyle::SH_Widget_Animate, nullptr, this))
     {
         show();
+
         Q_EMIT showAnimationFinished();
 
         return;
@@ -310,6 +319,7 @@ void DNotificationWidget::animatedHide()
     if (!style()->styleHint(QStyle::SH_Widget_Animate, nullptr, this))
     {
         hide();
+
         Q_EMIT hideAnimationFinished();
 
         return;
