@@ -20,9 +20,7 @@ namespace Digikam
 {
 
 SearchFilterModel::SearchFilterModel(QObject* const parent)
-    : CheckableAlbumFilterModel(parent),
-      m_searchType             (-1),
-      m_listTemporary          (false)
+    : CheckableAlbumFilterModel(parent)
 {
 }
 

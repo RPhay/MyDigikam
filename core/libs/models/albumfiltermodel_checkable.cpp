@@ -20,9 +20,7 @@ namespace Digikam
 {
 
 CheckableAlbumFilterModel::CheckableAlbumFilterModel(QObject* const parent)
-    : AlbumFilterModel        (parent),
-      m_filterChecked         (false),
-      m_filterPartiallyChecked(false)
+    : AlbumFilterModel(parent)
 {
 }
 

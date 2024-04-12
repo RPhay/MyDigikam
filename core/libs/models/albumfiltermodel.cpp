@@ -21,8 +21,6 @@ namespace Digikam
 
 AlbumFilterModel::AlbumFilterModel(QObject* const parent)
     : QSortFilterProxyModel(parent),
-      m_filterBehavior     (FullFiltering),
-      m_chainedModel       (nullptr),
       m_parent             (parent)
 {
     setSortRole(AbstractAlbumModel::AlbumSortRole);

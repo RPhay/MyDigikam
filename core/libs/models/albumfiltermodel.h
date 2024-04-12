@@ -269,10 +269,10 @@ private:
 
 protected:
 
-    FilterBehavior             m_filterBehavior;
+    FilterBehavior             m_filterBehavior = FullFiltering;
     SearchTextSettings         m_settings;
-    QPointer<AlbumFilterModel> m_chainedModel;
-    QObject*                   m_parent;
+    QPointer<AlbumFilterModel> m_chainedModel   = nullptr;
+    QObject*                   m_parent         = nullptr;
 };
 
 // -----------------------------------------------------------------------------------
@@ -305,8 +305,8 @@ protected:
 
 protected:
 
-    bool m_filterChecked;
-    bool m_filterPartiallyChecked;
+    bool m_filterChecked            = false;
+    bool m_filterPartiallyChecked   = false;
 };
 
 // -----------------------------------------------------------------------------------
@@ -354,8 +354,8 @@ protected:
 
 protected:
 
-    int  m_searchType;
-    bool m_listTemporary;
+    int  m_searchType       = -1;
+    bool m_listTemporary    = false;
 };
 
 // -----------------------------------------------------------------------------------

@@ -34,6 +34,7 @@ void TagsManagerFilterModel::setQuickListTags(const QList<int>& tags)
     }
 
     invalidateFilter();
+
     Q_EMIT signalFilterChanged();
 }
 
