@@ -39,20 +39,14 @@ class Q_DECL_HIDDEN RatingFilterWidget::Private
 {
 public:
 
-    explicit Private()
-      : dirty         (false),
-        ratingTracker (nullptr),
-        filterCond    (ItemFilterSettings::GreaterEqualCondition),
-        excludeUnrated(0)
-    {
-    }
+    Private() = default;
 
-    bool                                dirty;
+    bool                                dirty           = false;
 
-    DCursorTracker*                     ratingTracker;
+    DCursorTracker*                     ratingTracker   = nullptr;
 
-    ItemFilterSettings::RatingCondition filterCond;
-    bool                                excludeUnrated;
+    ItemFilterSettings::RatingCondition filterCond      = ItemFilterSettings::GreaterEqualCondition;
+    bool                                excludeUnrated  = false;
 };
 
 RatingFilterWidget::RatingFilterWidget(QWidget* const parent)
@@ -68,6 +62,7 @@ RatingFilterWidget::RatingFilterWidget(QWidget* const parent)
                       "set rating filter conditions."));
 
     // To dispatch signal from parent widget with filter condition.
+
     connect(this, SIGNAL(signalRatingChanged(int)),
             this, SLOT(slotRatingChanged()));
 }
@@ -208,29 +203,19 @@ class Q_DECL_HIDDEN RatingFilter::Private
 {
 public:
 
-    explicit Private()
-      : optionsBtn    (nullptr),
-        noRatingBtn   (nullptr),
-        geCondAction  (nullptr),
-        eqCondAction  (nullptr),
-        leCondAction  (nullptr),
-        excludeUnrated(nullptr),
-        optionsMenu   (nullptr),
-        ratingWidget  (nullptr)
-    {
-    }
+    Private() = default;
 
-    QToolButton*        optionsBtn;
-    QToolButton*        noRatingBtn;
+    QToolButton*        optionsBtn      = nullptr;
+    QToolButton*        noRatingBtn     = nullptr;
 
-    QAction*            geCondAction;
-    QAction*            eqCondAction;
-    QAction*            leCondAction;
-    QAction*            excludeUnrated;
+    QAction*            geCondAction    = nullptr;
+    QAction*            eqCondAction    = nullptr;
+    QAction*            leCondAction    = nullptr;
+    QAction*            excludeUnrated  = nullptr;
 
-    QMenu*              optionsMenu;
+    QMenu*              optionsMenu     = nullptr;
 
-    RatingFilterWidget* ratingWidget;
+    RatingFilterWidget* ratingWidget    = nullptr;
 };
 
 RatingFilter::RatingFilter(QWidget* const parent)
@@ -366,6 +351,7 @@ void RatingFilter::slotNoRatingToggled(bool checked)
         d->ratingWidget->blockSignals(true);
         d->ratingWidget->setRating(0);
         d->ratingWidget->blockSignals(false);
+
         Q_EMIT signalRatingFilterChanged(0, ItemFilterSettings::LessEqualCondition, false);
     }
     else

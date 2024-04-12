@@ -31,41 +31,28 @@ class Q_DECL_HIDDEN TextFilter::Private
 {
 public:
 
-    explicit Private()
-      : itemNameAction       (nullptr),
-        itemTitleAction      (nullptr),
-        itemCommentAction    (nullptr),
-        tagNameAction        (nullptr),
-        albumNameAction      (nullptr),
-        itemAspectRatioAction(nullptr),
-        itemPixelSizeAction  (nullptr),
-        clearAllAction       (nullptr),
-        selAllAction         (nullptr),
-        optionsBtn           (nullptr),
-        optionsMenu          (nullptr),
-        searchTextBar        (nullptr)
-    {
-    }
+    Private() = default;
 
-    QAction*       itemNameAction;
-    QAction*       itemTitleAction;
-    QAction*       itemCommentAction;
-    QAction*       tagNameAction;
-    QAction*       albumNameAction;
-    QAction*       itemAspectRatioAction;
-    QAction*       itemPixelSizeAction;
-    QAction*       clearAllAction;
-    QAction*       selAllAction;
+    QAction*       itemNameAction           = nullptr;
+    QAction*       itemTitleAction          = nullptr;
+    QAction*       itemCommentAction        = nullptr;
+    QAction*       tagNameAction            = nullptr;
+    QAction*       albumNameAction          = nullptr;
+    QAction*       itemAspectRatioAction    = nullptr;
+    QAction*       itemPixelSizeAction      = nullptr;
+    QAction*       clearAllAction           = nullptr;
+    QAction*       selAllAction             = nullptr;
 
-    QToolButton*   optionsBtn;
+    QToolButton*   optionsBtn               = nullptr;
 
-    QMenu*         optionsMenu;
+    QMenu*         optionsMenu              = nullptr;
 
-    SearchTextBar* searchTextBar;
+    SearchTextBar* searchTextBar            = nullptr;
 };
 
 TextFilter::TextFilter(QWidget* const parent)
-    : DHBox(parent), d(new Private)
+    : DHBox(parent),
+      d    (new Private)
 {
     d->searchTextBar = new SearchTextBar(this, QLatin1String("AlbumIconViewFilterSearchTextBar"));
     d->searchTextBar->setTextQueryCompletion(true);
@@ -129,26 +116,32 @@ SearchTextFilterSettings::TextFilterFields TextFilter::searchTextFields()
     {
         fields |= SearchTextFilterSettings::ImageName;
     }
+
     if (d->itemTitleAction->isChecked())
     {
         fields |= SearchTextFilterSettings::ImageTitle;
     }
+
     if (d->itemCommentAction->isChecked())
     {
         fields |= SearchTextFilterSettings::ImageComment;
     }
+
     if (d->tagNameAction->isChecked())
     {
         fields |= SearchTextFilterSettings::TagName;
     }
+
     if (d->albumNameAction->isChecked())
     {
         fields |= SearchTextFilterSettings::AlbumName;
     }
+
     if (d->itemAspectRatioAction->isChecked())
     {
         fields |= SearchTextFilterSettings::ImageAspectRatio;
     }
+
     if (d->itemPixelSizeAction->isChecked())
     {
         fields |= SearchTextFilterSettings::ImagePixelSize;
@@ -185,6 +178,7 @@ void TextFilter::slotSearchFieldsChanged(QAction* action)
     {
         checkMenuActions(false);
     }
+
     if (action == d->selAllAction)
     {
         checkMenuActions(true);

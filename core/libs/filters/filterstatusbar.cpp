@@ -46,30 +46,24 @@ public:
 
 public:
 
-    explicit Private()
-      : status     (None),
-        info       (nullptr),
-        resetBtn   (nullptr),
-        settingsBtn(nullptr)
-    {
-    }
+    Private() = default;
 
-    int               status;
+    int               status        = None;
 
-    DAdjustableLabel* info;
-    QToolButton*      resetBtn;
-    QToolButton*      settingsBtn;
+    DAdjustableLabel* info          = nullptr;
+    QToolButton*      resetBtn      = nullptr;
+    QToolButton*      settingsBtn   = nullptr;
 
     ItemFilterSettings settings;
 };
 
 FilterStatusBar::FilterStatusBar(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QHBoxLayout* const vlay = new QHBoxLayout(this);
 
-    d->info        = new DAdjustableLabel(this);
+    d->info                 = new DAdjustableLabel(this);
     d->info->setContextMenuPolicy(Qt::NoContextMenu);
     d->info->setAutoFillBackground(true);
     d->info->setFocusPolicy(Qt::NoFocus);
@@ -193,15 +187,23 @@ void FilterStatusBar::slotFilterMatches(bool match)
     switch (d->status)
     {
         case Private::NotMatch:
+        {
             pal.setColor(backgroundRole(), QColor(220, 140, 140));
             pal.setColor(foregroundRole(), Qt::black);
             break;
+        }
+
         case Private::Match:
+        {
             pal.setColor(backgroundRole(), QColor(140, 220, 140));
             pal.setColor(foregroundRole(), Qt::black);
             break;
+        }
+
         default: // Private::None
+        {
             break;
+        }
     }
 
     d->info->setPalette(pal);

@@ -45,8 +45,9 @@ GeolocationFilter::~GeolocationFilter()
 void GeolocationFilter::setGeolocationFilter(const ItemFilterSettings::GeolocationCondition& condition)
 {
     // findData does not seem to work...
-//     const int newIndex = findData(QVariant::fromValue<ItemFilterSettings::GeolocationCondition>(condition));
-
+/*
+    const int newIndex = findData(QVariant::fromValue<ItemFilterSettings::GeolocationCondition>(condition));
+*/
     for (int i = 0 ; i < count() ; ++i)
     {
         const ItemFilterSettings::GeolocationCondition currentdata = itemData(i).value<ItemFilterSettings::GeolocationCondition>();
@@ -54,7 +55,9 @@ void GeolocationFilter::setGeolocationFilter(const ItemFilterSettings::Geolocati
         if (currentdata == condition)
         {
             setCurrentIndex(i);
+
             Q_EMIT signalFilterChanged(condition);
+
             break;
         }
     }

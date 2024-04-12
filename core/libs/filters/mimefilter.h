@@ -40,13 +40,13 @@ public:
         PNGFiles,
         TIFFiles,
         PGFFiles,
-        HEIFFiles,           // HEVC H265 compression based containers.
+        HEIFFiles,           ///< HEVC H265 compression based containers.
         AVIFFiles,
         DNGFiles,
-        RAWFiles,            // All Raw file formats such as nef, cr2, arw, pef, etc..
+        RAWFiles,            ///< All Raw file formats such as nef, cr2, arw, pef, etc..
         MoviesFiles,
         AudioFiles,
-        RasterGraphics       // PSD, XCF, etc...
+        RasterGraphics       ///< PSD, XCF, etc...
     };
 
 public:

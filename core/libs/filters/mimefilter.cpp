@@ -57,6 +57,7 @@ MimeFilter::~MimeFilter()
 void MimeFilter::setMimeFilter(int filter)
 {
     setCurrentIndex(filter);
+
     Q_EMIT activated(filter);
 }
 
