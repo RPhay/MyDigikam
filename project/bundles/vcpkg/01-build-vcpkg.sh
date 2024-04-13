@@ -38,6 +38,10 @@ RegisterRemoteServers
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
+# See https://bugs.kde.org/show_bug.cgi?id=484237#c11
+set(VCPKG_C_FLAGS "/EHa ${VCPKG_C_FLAGS}")
+set(VCPKG_CXX_FLAGS "/EHa ${VCPKG_C_FLAGS}")
+
 ###############################################################################################
 # Check if a previous bundle already exist
 
