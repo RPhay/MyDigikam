@@ -48,26 +48,8 @@ class Q_DECL_HIDDEN TagCompleter::Private : public TaggingActionFactory::Constra
 {
 public:
 
-    explicit Private()
-
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-
-      : model          (nullptr),
-        supportingModel(nullptr),
-
-#else
-
-      : supportingModel(nullptr),
-
-#endif
-
-        filterModel    (nullptr)
-    {
-    }
-
-    ~Private() override
-    {
-    }
+    Private()           = default;
+    ~Private() override = default;
 
     QModelIndex indexForAlbum(int id)
     {
@@ -94,12 +76,12 @@ public:
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
-    QStandardItemModel*  model;
+    QStandardItemModel*  model              = nullptr;
 
 #endif
 
-    TagModel*            supportingModel;
-    AlbumFilterModel*    filterModel;
+    TagModel*            supportingModel    = nullptr;
+    AlbumFilterModel*    filterModel        = nullptr;
 };
 
 TagCompleter::TagCompleter(QObject* const parent)

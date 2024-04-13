@@ -89,6 +89,7 @@ void TagMngrTreeView::contextMenuEvent(QContextMenuEvent* event)
     setContexMenuItems(cmhelper, items);
 
     QAction* const choice = cmhelper.exec(QCursor::pos());
+
     Q_UNUSED(choice);
     Q_UNUSED(event);
 }
@@ -97,6 +98,7 @@ void TagMngrTreeView::setAlbumFilterModel(TagsManagerFilterModel* const filtered
                                           CheckableAlbumFilterModel* const filterModel)
 {
     Q_UNUSED(filterModel);
+
     m_tfilteredModel = filteredModel;
     albumFilterModel()->setSourceFilterModel(m_tfilteredModel);
 }

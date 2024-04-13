@@ -17,12 +17,6 @@
 namespace Digikam
 {
 
-TaggingAction::TaggingAction()
-    : m_type (NoAction),
-      m_tagId(-1)
-{
-}
-
 TaggingAction::TaggingAction(int tagId)
     : m_type (AssignTag),
       m_tagId(tagId)

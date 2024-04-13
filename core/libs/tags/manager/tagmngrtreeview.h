@@ -74,7 +74,7 @@ protected:
 
 protected:
 
-    TagsManagerFilterModel* m_tfilteredModel;
+    TagsManagerFilterModel* m_tfilteredModel = nullptr;
 
 private:
 

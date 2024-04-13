@@ -499,7 +499,7 @@ void TagsActionMngr::slotAssignFromShortcut()
         return;
     }
 
-    // Q_EMIT signal to DInfoInterface to broadcast to another component:
+    // Emit signal to DInfoInterface to broadcast to another component:
 
     Q_EMIT signalShortcutPressed(action->objectName(), val);
 }

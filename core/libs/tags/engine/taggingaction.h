@@ -44,7 +44,7 @@ public:
     /**
      * Create a NoAction
      */
-    TaggingAction();
+    TaggingAction() = default;
 
     /**
      * Assign the existing tag with given id
@@ -74,8 +74,8 @@ public:
 
 protected:
 
-    Type    m_type;
-    int     m_tagId;
+    Type    m_type      = NoAction;
+    int     m_tagId     = -1;
     QString m_tagName;
 };
 

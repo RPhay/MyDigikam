@@ -342,14 +342,14 @@ QRect TagToggleMenuWidget::checkIndicatorSize(QStyleOption* option) const
 // ------------------------------------------------------------------------
 
 TagToggleAction::TagToggleAction(const QString& text, QObject* const parent)
-    : QWidgetAction   (parent)
+    : QWidgetAction(parent)
 {
     setText(text);
     setCheckable(true);
 }
 
 TagToggleAction::TagToggleAction(const QIcon& icon, const QString& text, QObject* const parent)
-    : QWidgetAction   (parent)
+    : QWidgetAction(parent)
 {
     setIcon(icon);
     setText(text);
