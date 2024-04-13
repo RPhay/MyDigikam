@@ -46,7 +46,7 @@ OsxCodeName
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
-export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt5/bin:$ORIG_PATH
+export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:/$INSTALL_PREFIX/libexec/qt5/bin:$ORIG_PATH:/$INSTALL_PREFIX/libexec/gnubin
 
 #################################################################################################
 # Check if /opt exists and standard Macports install path
@@ -250,6 +250,10 @@ fi
 
 echo -e "MariaDB Variant=$MP_MARIADB_VARIANT\n"
 
+# To fix broken ports with m4 tool detection.
+port install m4
+cp $INSTALL_PREFIX/libexec/gnubin/m4 $INSTALL_PREFIX/bin/
+
 port install \
              cctools +xcode \
              cmake \
@@ -257,11 +261,8 @@ port install \
              libpng \
              jpeg \
              tiff \
-             boost \
              eigen3 \
              gettext \
-             libusb \
-             libgphoto2 \
              jasper \
              lcms2 \
              expat \
@@ -306,6 +307,9 @@ port activate boost
 
 # port broken since a while. check later
 #             sane-backends \
+# m4 tool detection problem
+#             libusb \
+#             libgphoto2 \
 
 echo -e "\n"
 
@@ -350,6 +354,7 @@ if [[ $DK_QTWEBENGINE = 0 ]] ; then
     cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES
 fi
 
+cmake --build . --config RelWithDebInfo --target ext_boost       -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_imagemagick -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_libjxl      -- -j$CPU_CORES
