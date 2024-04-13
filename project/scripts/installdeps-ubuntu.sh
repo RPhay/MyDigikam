@@ -234,6 +234,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libyaml-perl"                       # For static analysis
                    "libjson-perl"                       # For static analysis
                    "llvm"                               # For static analysis
+                   "libomp-dev"                         # For static analysis
                    "clazy"                              # For static analysis
                    "libclang-dev"                       # For static analysis
                    "doxygen"                            # For API doc
