@@ -44,30 +44,19 @@ class Q_DECL_HIDDEN VersionsDelegate::Private
 {
 public:
 
-    explicit Private()
-        : categoryExtraSpacing  (6),
-          filterItemExtraSpacing(4),
-          animationState        (0),
-          animation             (nullptr),
-          workingPixmap         (nullptr),
-          categoryDrawer        (nullptr),
-          thumbnailSize         (64),
-          thumbsWaitingFor      (0),
-          inSizeHint            (false)
-    {
-    }
+    Private() = default;
 
-    const int                     categoryExtraSpacing;
-    const int                     filterItemExtraSpacing;
+    const int                     categoryExtraSpacing      = 6;
+    const int                     filterItemExtraSpacing    = 4;
 
-    int                           animationState;
-    QPropertyAnimation*           animation;
-    DWorkingPixmap*               workingPixmap;
-    DCategoryDrawer*              categoryDrawer;
-    int                           thumbnailSize;
+    int                           animationState            = 0;
+    QPropertyAnimation*           animation                 = nullptr;
+    DWorkingPixmap*               workingPixmap             = nullptr;
+    DCategoryDrawer*              categoryDrawer            = nullptr;
+    int                           thumbnailSize             = 64;
 
-    int                           thumbsWaitingFor;
-    bool                          inSizeHint;
+    int                           thumbsWaitingFor          = 0;
+    bool                          inSizeHint                = false;
 
 public:
 

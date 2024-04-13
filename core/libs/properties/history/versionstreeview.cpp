@@ -51,8 +51,7 @@ public:
 public:
 
     explicit ToolTip(QAbstractItemView* const view)
-        : ItemViewToolTip(view),
-          m_mode         (InvalidMode)
+        : ItemViewToolTip(view)
     {
     }
 
@@ -93,17 +92,13 @@ protected:
 
 protected:
 
-    Mode m_mode;
+    Mode m_mode = InvalidMode;
 };
 
 // --------------------------------------------------------------------------------------------------------------------------
 
 VersionsTreeView::VersionsTreeView(QWidget* const parent)
-    : QTreeView        (parent),
-      m_delegate       (nullptr),
-      m_dragDropHandler(nullptr),
-      m_showToolTip    (false),
-      m_toolTip        (nullptr)
+    : QTreeView(parent)
 {
     m_delegate = new VersionsDelegate(this);
     setItemDelegate(m_delegate);

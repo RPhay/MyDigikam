@@ -66,49 +66,30 @@ class Q_DECL_HIDDEN ItemPropertiesGPSTab::Private
 
 public:
 
-    explicit Private()
-      : altLabel                    (nullptr),
-        latLabel                    (nullptr),
-        lonLabel                    (nullptr),
-        dateLabel                   (nullptr),
-        mapView                     (nullptr),
-        detailsBtn                  (nullptr),
-        detailsCombo                (nullptr),
-        altitude                    (nullptr),
-        latitude                    (nullptr),
-        longitude                   (nullptr),
-        date                        (nullptr),
-        map                         (nullptr),
-        itemMarkerTiler             (nullptr),
-        itemModel                   (nullptr),
-        gpsModelHelper              (nullptr),
-        gpsItemInfoSorter           (nullptr),
-        boundariesShouldBeAdjusted  (false)
-    {
-    }
+    Private() = default;
 
-    QLabel*                    altLabel;
-    QLabel*                    latLabel;
-    QLabel*                    lonLabel;
-    QLabel*                    dateLabel;
+    QLabel*                    altLabel                     = nullptr;
+    QLabel*                    latLabel                     = nullptr;
+    QLabel*                    lonLabel                     = nullptr;
+    QLabel*                    dateLabel                    = nullptr;
 
-    QStackedWidget*            mapView;
-    QToolButton*               detailsBtn;
-    QComboBox*                 detailsCombo;
+    QStackedWidget*            mapView                      = nullptr;
+    QToolButton*               detailsBtn                   = nullptr;
+    QComboBox*                 detailsCombo                 = nullptr;
 
-    DAdjustableLabel*          altitude;
-    DAdjustableLabel*          latitude;
-    DAdjustableLabel*          longitude;
-    DAdjustableLabel*          date;
+    DAdjustableLabel*          altitude                     = nullptr;
+    DAdjustableLabel*          latitude                     = nullptr;
+    DAdjustableLabel*          longitude                    = nullptr;
+    DAdjustableLabel*          date                         = nullptr;
 
-    MapWidget*                 map;
-    ItemMarkerTiler*           itemMarkerTiler;
+    MapWidget*                 map                          = nullptr;
+    ItemMarkerTiler*           itemMarkerTiler              = nullptr;
     GPSItemInfo::List          gpsInfoList;
 
-    QStandardItemModel*        itemModel;
-    ItemGPSModelHelper*        gpsModelHelper;
-    GPSItemInfoSorter*         gpsItemInfoSorter;
-    bool                       boundariesShouldBeAdjusted;
+    QStandardItemModel*        itemModel                    = nullptr;
+    ItemGPSModelHelper*        gpsModelHelper               = nullptr;
+    GPSItemInfoSorter*         gpsItemInfoSorter            = nullptr;
+    bool                       boundariesShouldBeAdjusted   = false;
 };
 
 ItemPropertiesGPSTab::ItemPropertiesGPSTab(QWidget* const parent)

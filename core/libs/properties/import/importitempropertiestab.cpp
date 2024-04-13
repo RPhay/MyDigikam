@@ -42,131 +42,71 @@ class Q_DECL_HIDDEN ImportItemPropertiesTab::Private
 {
 public:
 
-    explicit Private()
-      : file                        (nullptr),
-        folder                      (nullptr),
-        date                        (nullptr),
-        size                        (nullptr),
-        isReadable                  (nullptr),
-        isWritable                  (nullptr),
-        mime                        (nullptr),
-        dimensions                  (nullptr),
-        ratio                       (nullptr),
-        newFileName                 (nullptr),
-        downloaded                  (nullptr),
-        make                        (nullptr),
-        model                       (nullptr),
-        photoDate                   (nullptr),
-        lens                        (nullptr),
-        aperture                    (nullptr),
-        focalLength                 (nullptr),
-        exposureTime                (nullptr),
-        sensitivity                 (nullptr),
-        exposureMode                (nullptr),
-        flash                       (nullptr),
-        whiteBalance                (nullptr),
-        labelFile                   (nullptr),
-        labelFolder                 (nullptr),
-        labelFileIsReadable         (nullptr),
-        labelFileIsWritable         (nullptr),
-        labelFileDate               (nullptr),
-        labelFileSize               (nullptr),
-        labelImageMime              (nullptr),
-        labelImageDimensions        (nullptr),
-        labelImageRatio             (nullptr),
-        labelNewFileName            (nullptr),
-        labelAlreadyDownloaded      (nullptr),
-        labelPhotoMake              (nullptr),
-        labelPhotoModel             (nullptr),
-        labelPhotoDateTime          (nullptr),
-        labelPhotoLens              (nullptr),
-        labelPhotoAperture          (nullptr),
-        labelPhotoFocalLength       (nullptr),
-        labelPhotoExposureTime      (nullptr),
-        labelPhotoSensitivity       (nullptr),
-        labelPhotoExposureMode      (nullptr),
-        labelPhotoFlash             (nullptr),
-        labelPhotoWhiteBalance      (nullptr),
-        aspectRatio                 (nullptr),
-        duration                    (nullptr),
-        frameRate                   (nullptr),
-        videoCodec                  (nullptr),
-        audioBitRate                (nullptr),
-        audioChannelType            (nullptr),
-        audioCodec                  (nullptr),
-        labelVideoAspectRatio       (nullptr),
-        labelVideoDuration          (nullptr),
-        labelVideoFrameRate         (nullptr),
-        labelVideoVideoCodec        (nullptr),
-        labelVideoAudioBitRate      (nullptr),
-        labelVideoAudioChannelType  (nullptr),
-        labelVideoAudioCodec        (nullptr)
-    {
-    }
+    Private() = default;
 
-    DTextLabelName*  file;
-    DTextLabelName*  folder;
-    DTextLabelName*  date;
-    DTextLabelName*  size;
-    DTextLabelName*  isReadable;
-    DTextLabelName*  isWritable;
-    DTextLabelName*  mime;
-    DTextLabelName*  dimensions;
-    DTextLabelName*  ratio;
-    DTextLabelName*  newFileName;
-    DTextLabelName*  downloaded;
+    DTextLabelName*  file                       = nullptr;
+    DTextLabelName*  folder                     = nullptr;
+    DTextLabelName*  date                       = nullptr;
+    DTextLabelName*  size                       = nullptr;
+    DTextLabelName*  isReadable                 = nullptr;
+    DTextLabelName*  isWritable                 = nullptr;
+    DTextLabelName*  mime                       = nullptr;
+    DTextLabelName*  dimensions                 = nullptr;
+    DTextLabelName*  ratio                      = nullptr;
+    DTextLabelName*  newFileName                = nullptr;
+    DTextLabelName*  downloaded                 = nullptr;
 
-    DTextLabelName*  make;
-    DTextLabelName*  model;
-    DTextLabelName*  photoDate;
-    DTextLabelName*  lens;
-    DTextLabelName*  aperture;
-    DTextLabelName*  focalLength;
-    DTextLabelName*  exposureTime;
-    DTextLabelName*  sensitivity;
-    DTextLabelName*  exposureMode;
-    DTextLabelName*  flash;
-    DTextLabelName*  whiteBalance;
+    DTextLabelName*  make                       = nullptr;
+    DTextLabelName*  model                      = nullptr;
+    DTextLabelName*  photoDate                  = nullptr;
+    DTextLabelName*  lens                       = nullptr;
+    DTextLabelName*  aperture                   = nullptr;
+    DTextLabelName*  focalLength                = nullptr;
+    DTextLabelName*  exposureTime               = nullptr;
+    DTextLabelName*  sensitivity                = nullptr;
+    DTextLabelName*  exposureMode               = nullptr;
+    DTextLabelName*  flash                      = nullptr;
+    DTextLabelName*  whiteBalance               = nullptr;
 
-    DTextLabelValue* labelFile;
-    DTextLabelValue* labelFolder;
-    DTextLabelValue* labelFileIsReadable;
-    DTextLabelValue* labelFileIsWritable;
-    DTextLabelValue* labelFileDate;
-    DTextLabelValue* labelFileSize;
-    DTextLabelValue* labelImageMime;
-    DTextLabelValue* labelImageDimensions;
-    DTextLabelValue* labelImageRatio;
-    DTextLabelValue* labelNewFileName;
-    DTextLabelValue* labelAlreadyDownloaded;
+    DTextLabelValue* labelFile                  = nullptr;
+    DTextLabelValue* labelFolder                = nullptr;
+    DTextLabelValue* labelFileIsReadable        = nullptr;
+    DTextLabelValue* labelFileIsWritable        = nullptr;
+    DTextLabelValue* labelFileDate              = nullptr;
+    DTextLabelValue* labelFileSize              = nullptr;
+    DTextLabelValue* labelImageMime             = nullptr;
+    DTextLabelValue* labelImageDimensions       = nullptr;
+    DTextLabelValue* labelImageRatio            = nullptr;
+    DTextLabelValue* labelNewFileName           = nullptr;
+    DTextLabelValue* labelAlreadyDownloaded     = nullptr;
 
-    DTextLabelValue* labelPhotoMake;
-    DTextLabelValue* labelPhotoModel;
-    DTextLabelValue* labelPhotoDateTime;
-    DTextLabelValue* labelPhotoLens;
-    DTextLabelValue* labelPhotoAperture;
-    DTextLabelValue* labelPhotoFocalLength;
-    DTextLabelValue* labelPhotoExposureTime;
-    DTextLabelValue* labelPhotoSensitivity;
-    DTextLabelValue* labelPhotoExposureMode;
-    DTextLabelValue* labelPhotoFlash;
-    DTextLabelValue* labelPhotoWhiteBalance;
+    DTextLabelValue* labelPhotoMake             = nullptr;
+    DTextLabelValue* labelPhotoModel            = nullptr;
+    DTextLabelValue* labelPhotoDateTime         = nullptr;
+    DTextLabelValue* labelPhotoLens             = nullptr;
+    DTextLabelValue* labelPhotoAperture         = nullptr;
+    DTextLabelValue* labelPhotoFocalLength      = nullptr;
+    DTextLabelValue* labelPhotoExposureTime     = nullptr;
+    DTextLabelValue* labelPhotoSensitivity      = nullptr;
+    DTextLabelValue* labelPhotoExposureMode     = nullptr;
+    DTextLabelValue* labelPhotoFlash            = nullptr;
+    DTextLabelValue* labelPhotoWhiteBalance     = nullptr;
 
-    DTextLabelName*  aspectRatio;
-    DTextLabelName*  duration;
-    DTextLabelName*  frameRate;
-    DTextLabelName*  videoCodec;
-    DTextLabelName*  audioBitRate;
-    DTextLabelName*  audioChannelType;
-    DTextLabelName*  audioCodec;
+    DTextLabelName*  aspectRatio                = nullptr;
+    DTextLabelName*  duration                   = nullptr;
+    DTextLabelName*  frameRate                  = nullptr;
+    DTextLabelName*  videoCodec                 = nullptr;
+    DTextLabelName*  audioBitRate               = nullptr;
+    DTextLabelName*  audioChannelType           = nullptr;
+    DTextLabelName*  audioCodec                 = nullptr;
 
-    DTextLabelValue* labelVideoAspectRatio;
-    DTextLabelValue* labelVideoDuration;
-    DTextLabelValue* labelVideoFrameRate;
-    DTextLabelValue* labelVideoVideoCodec;
-    DTextLabelValue* labelVideoAudioBitRate;
-    DTextLabelValue* labelVideoAudioChannelType;
-    DTextLabelValue* labelVideoAudioCodec;
+    DTextLabelValue* labelVideoAspectRatio      = nullptr;
+    DTextLabelValue* labelVideoDuration         = nullptr;
+    DTextLabelValue* labelVideoFrameRate        = nullptr;
+    DTextLabelValue* labelVideoVideoCodec       = nullptr;
+    DTextLabelValue* labelVideoAudioBitRate     = nullptr;
+    DTextLabelValue* labelVideoAudioChannelType = nullptr;
+    DTextLabelValue* labelVideoAudioCodec       = nullptr;
 };
 
 ImportItemPropertiesTab::ImportItemPropertiesTab(QWidget* const parent)
@@ -179,7 +119,7 @@ ImportItemPropertiesTab::ImportItemPropertiesTab(QWidget* const parent)
     // --------------------------------------------------
 
     const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QWidget* w1               = new QWidget(this);
     QGridLayout* glay1        = new QGridLayout(w1);

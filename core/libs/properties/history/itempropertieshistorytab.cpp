@@ -63,20 +63,13 @@ class Q_DECL_HIDDEN ItemPropertiesHistoryTab::Private
 {
 public:
 
-    explicit Private()
-      : view       (nullptr),
-        model      (nullptr),
-        layout     (nullptr),
-        delegate   (nullptr),
-        headerLabel(nullptr)
-    {
-    }
+    Private() = default;
 
-    QTreeView*                      view;
-    ItemFiltersHistoryModel*        model;
-    QGridLayout*                    layout;
-    ItemFiltersHistoryItemDelegate* delegate;
-    QLabel*                         headerLabel;
+    QTreeView*                      view        = nullptr;
+    ItemFiltersHistoryModel*        model       = nullptr;
+    QGridLayout*                    layout      = nullptr;
+    ItemFiltersHistoryItemDelegate* delegate    = nullptr;
+    QLabel*                         headerLabel = nullptr;
 };
 
 ItemPropertiesHistoryTab::ItemPropertiesHistoryTab(QWidget* const parent)

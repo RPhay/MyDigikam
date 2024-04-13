@@ -66,10 +66,10 @@ protected:
 
     class ToolTip;
 
-    VersionsDelegate*            m_delegate;
-    AbstractItemDragDropHandler* m_dragDropHandler;
-    bool                         m_showToolTip;
-    ToolTip*                     m_toolTip;
+    VersionsDelegate*            m_delegate         = nullptr;
+    AbstractItemDragDropHandler* m_dragDropHandler  = nullptr;
+    bool                         m_showToolTip      = false;
+    ToolTip*                     m_toolTip          = nullptr;
 
 private:
 

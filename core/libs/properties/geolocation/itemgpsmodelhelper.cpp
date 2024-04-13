@@ -22,16 +22,11 @@ class Q_DECL_HIDDEN ItemGPSModelHelper::Private
 {
 public:
 
-    explicit Private()
-      : itemModel          (nullptr),
-        itemSelectionModel (nullptr),
-        thumbnailLoadThread(nullptr)
-    {
-    }
+    Private() = default;
 
-    QStandardItemModel*  itemModel;
-    QItemSelectionModel* itemSelectionModel;
-    ThumbnailLoadThread* thumbnailLoadThread;
+    QStandardItemModel*  itemModel              = nullptr;
+    QItemSelectionModel* itemSelectionModel     = nullptr;
+    ThumbnailLoadThread* thumbnailLoadThread    = nullptr;
 };
 
 ItemGPSModelHelper::ItemGPSModelHelper(QStandardItemModel* const itemModel, QObject* const parent)

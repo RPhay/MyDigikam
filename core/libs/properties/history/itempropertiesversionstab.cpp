@@ -46,14 +46,10 @@ class Q_DECL_HIDDEN ItemPropertiesVersionsTab::Private
 {
 public:
 
-    explicit Private()
-      : versionsWidget      (nullptr),
-        filtersHistoryWidget(nullptr)
-    {
-    }
+    Private() = default;
 
-    VersionsWidget*       versionsWidget;
-    FiltersHistoryWidget* filtersHistoryWidget;
+    VersionsWidget*       versionsWidget        = nullptr;
+    FiltersHistoryWidget* filtersHistoryWidget  = nullptr;
     DImageHistory         history;
     ItemInfo              info;
 

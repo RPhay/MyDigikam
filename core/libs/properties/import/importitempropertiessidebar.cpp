@@ -44,45 +44,30 @@ class Q_DECL_HIDDEN ImportItemPropertiesSideBarImport::Private
 {
 public:
 
-    explicit Private()
-      : dirtyMetadataTab    (false),
-        dirtyCameraItemTab  (false),
-        dirtyGpsTab         (false),
-        metaData            (nullptr),
+    Private() = default;
 
-#ifdef HAVE_GEOLOCATION
+    bool                       dirtyMetadataTab     = false;
+    bool                       dirtyCameraItemTab   = false;
+    bool                       dirtyGpsTab          = false;
 
-        gpsTab              (nullptr),
-
-#endif // HAVE_GEOLOCATION
-
-        metadataTab         (nullptr),
-        cameraItemTab       (nullptr)
-    {
-    }
-
-    bool                       dirtyMetadataTab;
-    bool                       dirtyCameraItemTab;
-    bool                       dirtyGpsTab;
-
-    DMetadata*                 metaData;
+    DMetadata*                 metaData             = nullptr;
 
     CamItemInfo                itemInfo;
 
 #ifdef HAVE_GEOLOCATION
 
-    ItemPropertiesGPSTab*      gpsTab;
+    ItemPropertiesGPSTab*      gpsTab               = nullptr;
 
 #endif // HAVE_GEOLOCATION
 
-    ItemPropertiesMetadataTab* metadataTab;
-    ImportItemPropertiesTab*   cameraItemTab;
+    ItemPropertiesMetadataTab* metadataTab          = nullptr;
+    ImportItemPropertiesTab*   cameraItemTab        = nullptr;
 };
 
 ImportItemPropertiesSideBarImport::ImportItemPropertiesSideBarImport(QWidget* const parent,
-                                                         SidebarSplitter* const splitter,
-                                                         Qt::Edge side,
-                                                         bool mimimizedDefault)
+                                                                     SidebarSplitter* const splitter,
+                                                                     Qt::Edge side,
+                                                                     bool mimimizedDefault)
     : Sidebar(parent, splitter, side, mimimizedDefault),
       d      (new Private)
 {

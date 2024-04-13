@@ -202,8 +202,7 @@ ActionVersionsOverlay::ActionVersionsOverlay(QObject* const parent, const QIcon&
     : HoverButtonDelegateOverlay(parent),
       m_icon                    (icon),
       m_text                    (text),
-      m_tip                     (tip),
-      m_referenceModel          (nullptr)
+      m_tip                     (tip)
 {
 }
 
@@ -251,6 +250,7 @@ void ActionVersionsOverlay::updateButton(const QModelIndex& index)
 void ActionVersionsOverlay::slotClicked(bool checked)
 {
     Q_UNUSED(checked);
+
     QModelIndex index = button()->index();
 
     if (index.isValid())
