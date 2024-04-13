@@ -57,7 +57,7 @@ private:
 
 private:
 
-    QWidget* mAlignWidget;
+    QWidget* mAlignWidget = nullptr;
 };
 
 } // namespace Digikam

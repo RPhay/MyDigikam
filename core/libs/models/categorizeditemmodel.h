@@ -136,7 +136,7 @@ protected:
 
 protected:
 
-    MenuCategoryMode                  m_mode        = (MenuCategoryMode)(ToplevelMenuCategory | SortCategoriesAlphabetically);
+    MenuCategoryMode                  m_mode        = MenuCategoryMode(ToplevelMenuCategory | SortCategoriesAlphabetically);
     DCategorizedSortFilterProxyModel* m_filterModel = nullptr;
 };
 

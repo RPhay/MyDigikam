@@ -55,41 +55,27 @@ public:
 
 public:
 
-    explicit Private()
-      : mode(None),
-        bShowButton(true),
-        pProgressBar(nullptr),
-        pLabel(nullptr),
-        pButton(nullptr),
-        box(nullptr),
-        stack(nullptr),
-        currentItem(nullptr),
-        progressView(nullptr),
-        delayTimer(nullptr),
-        busyTimer(nullptr),
-        cleanTimer(nullptr)
-    {
-    }
+    Private() = default;
 
-    uint            mode;
-    bool            bShowButton;
+    uint            mode            = None;
+    bool            bShowButton     = true;
 
-    QProgressBar*   pProgressBar;
-    QLabel*         pLabel;
-    QPushButton*    pButton;
+    QProgressBar*   pProgressBar    = nullptr;
+    QLabel*         pLabel          = nullptr;
+    QPushButton*    pButton         = nullptr;
 
-    QBoxLayout*     box;
-    QStackedWidget* stack;
-    ProgressItem*   currentItem;
-    ProgressView*   progressView;
-    QTimer*         delayTimer;
-    QTimer*         busyTimer;
-    QTimer*         cleanTimer;
+    QBoxLayout*     box             = nullptr;
+    QStackedWidget* stack           = nullptr;
+    ProgressItem*   currentItem     = nullptr;
+    ProgressView*   progressView    = nullptr;
+    QTimer*         delayTimer      = nullptr;
+    QTimer*         busyTimer       = nullptr;
+    QTimer*         cleanTimer      = nullptr;
 };
 
 StatusbarProgressWidget::StatusbarProgressWidget(ProgressView* const progressView, QWidget* const parent, bool button)
     : QFrame(parent),
-      d(new Private)
+      d     (new Private)
 {
     d->progressView = progressView;
     d->bShowButton  = button;
@@ -256,7 +242,7 @@ void StatusbarProgressWidget::slotProgressItemCompleted(ProgressItem* item)
 
     connectSingleItem(); // if going back to 1 item
 
-    if (ProgressManager::instance()->isEmpty())
+    if      (ProgressManager::instance()->isEmpty())
     {
         // No item
         // Done. In 5s the progress-widget will close, then we can clean up the statusbar
@@ -382,7 +368,9 @@ void StatusbarProgressWidget::slotClean()
     if (ProgressManager::instance()->isEmpty())
     {
         d->pProgressBar->setValue(0);
-        //d->pLabel->clear();
+/*
+        d->pLabel->clear();
+*/
         d->mode = Private::None;
         setMode();
     }

@@ -44,31 +44,24 @@ public:
         ProgressBar
     };
 
-    explicit Private()
-      : notify(false),
-        progressWidget(nullptr),
-        cancelButton(nullptr),
-        progressBar(nullptr),
-        textLabel(nullptr)
-    {
-    }
+    Private() = default;
 
     // For Progress Manager item
-    bool                notify;
+    bool                notify          = false;
     QString             progressId;
     QString             title;
     QIcon               icon;
 
-    QWidget*            progressWidget;
-    QPushButton*        cancelButton;
-    QProgressBar*       progressBar;
+    QWidget*            progressWidget  = nullptr;
+    QPushButton*        cancelButton    = nullptr;
+    QProgressBar*       progressBar     = nullptr;
 
-    DAdjustableLabel*   textLabel;
+    DAdjustableLabel*   textLabel       = nullptr;
 };
 
 StatusProgressBar::StatusProgressBar(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setFocusPolicy(Qt::NoFocus);
@@ -187,7 +180,7 @@ void StatusProgressBar::setProgressText(const QString& text)
 
 void StatusProgressBar::setProgressBarMode(int mode, const QString& text)
 {
-    if (mode == TextMode)
+    if      (mode == TextMode)
     {
         setCurrentIndex(Private::TextLabel);
         setProgressValue(0);

@@ -36,20 +36,16 @@ class Q_DECL_HIDDEN WorkingWidget::Private
 
 public:
 
-    explicit Private()
-        : pixmaps(nullptr),
-          currentPixmap(0)
-    {
-    }
+    Private() = default;
 
-    DWorkingPixmap* pixmaps;
-    int             currentPixmap;
+    DWorkingPixmap* pixmaps         = nullptr;
+    int             currentPixmap   = 0;
     QTimer          timer;
 };
 
 WorkingWidget::WorkingWidget(QWidget* const parent)
     : QLabel(parent),
-      d(new Private)
+      d     (new Private)
 {
     d->pixmaps = new DWorkingPixmap(this);
 

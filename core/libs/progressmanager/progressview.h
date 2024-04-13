@@ -45,8 +45,10 @@ public:
     void setLabel(const QString&);
     void setThumbnail(const QPixmap&);
 
-    // NOTE: the given text is interpreted as RichText, so you might need to
-    // use .toHtmlEscaped() it before passing
+    /**
+     * NOTE: the given text is interpreted as RichText, so you might need to
+     * use .toHtmlEscaped() it before passing
+     */
     void setStatus(const QString&);
 
     void setTotalSteps( int totalSteps );
@@ -55,8 +57,10 @@ public:
 
     void addSubTransaction(ProgressItem* const item);
 
-    // The progressitem is deleted immediately, we take 5s to go out,
-    // so better not use mItem during this time.
+    /**
+     * The progressitem is deleted immediately, we take 5s to go out,
+     * so better not use mItem during this time.
+     */
     void setItemComplete();
 
 public Q_SLOTS:
@@ -99,7 +103,7 @@ protected:
 
 private:
 
-    DVBox* m_bigBox;
+    DVBox* m_bigBox = nullptr;
 };
 
 // --------------------------------------------------------------------------------

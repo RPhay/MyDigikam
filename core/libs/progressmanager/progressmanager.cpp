@@ -47,36 +47,24 @@ public:
 
 public:
 
-    explicit Private()
-      : waitingForKids      (false),
-        canceled            (false),
-        usesBusyIndicator   (false),
-        canBeCanceled       (false),
-        hasThumb            (false),
-        showAtStart         (false),
-        progress            (0),
-        total               (0),
-        completed           (0),
-        parent              (nullptr)
-    {
-    }
+    Private() = default;
 
-    volatile bool   waitingForKids;
-    volatile bool   canceled;
-    bool            usesBusyIndicator;
-    bool            canBeCanceled;
-    bool            hasThumb;
-    bool            showAtStart;   // Force to show progress item when it's add in progress manager
+    volatile bool   waitingForKids      = false;
+    volatile bool   canceled            = false;
+    bool            usesBusyIndicator   = false;
+    bool            canBeCanceled       = false;
+    bool            hasThumb            = false;
+    bool            showAtStart         = false;   // Force to show progress item when it's add in progress manager
 
-    QAtomicInt      progress;
-    QAtomicInt      total;
-    QAtomicInt      completed;
+    QAtomicInt      progress            = 0;
+    QAtomicInt      total               = 0;
+    QAtomicInt      completed           = 0;
 
     QString         id;
     QString         label;
     QString         status;
 
-    ProgressItem*   parent;
+    ProgressItem*   parent              = nullptr;
     ProgressItemMap children;
 };
 
@@ -136,7 +124,7 @@ void ProgressItem::removeChild(ProgressItem* const kiddo)
 
     // in case we were waiting for the last kid to go away, now is the time
 
-    if (d->children.count() == 0 && d->waitingForKids)
+    if ((d->children.count() == 0) && d->waitingForKids)
     {
         Q_EMIT progressItemCompleted(this);
     }
@@ -176,18 +164,21 @@ void ProgressItem::cancel()
 void ProgressItem::setLabel(const QString& v)
 {
     d->label = v;
+
     Q_EMIT progressItemLabel(this, d->label);
 }
 
 void ProgressItem::setStatus(const QString& v)
 {
     d->status = v;
+
     Q_EMIT progressItemStatus(this, d->status);
 }
 
 void ProgressItem::setUsesBusyIndicator(bool useBusyIndicator)
 {
     d->usesBusyIndicator = useBusyIndicator;
+
     Q_EMIT progressItemUsesBusyIndicator(this, useBusyIndicator);
 }
 
@@ -203,6 +194,7 @@ void ProgressItem::setThumbnail(const QIcon& icon)
     if (icon.isNull())
     {
         Q_EMIT progressItemThumbnail(this, QIcon::fromTheme(QLatin1String("image-missing")).pixmap(iconSize));
+
         return;
     }
 
@@ -221,6 +213,7 @@ void ProgressItem::reset()
 void ProgressItem::setProgress(unsigned int v)
 {
     d->progress.fetchAndStoreOrdered(v);
+
     Q_EMIT progressItemProgress(this, v);
 }
 
@@ -335,11 +328,7 @@ class Q_DECL_HIDDEN ProgressManager::Private
 {
 public:
 
-    explicit Private()
-        : uID        (1000),
-          waitingLoop(nullptr)
-    {
-    }
+    Private() = default;
 
     void addItem(ProgressItem* const t, ProgressItem* const parent);
     void removeItem(ProgressItem* const t);
@@ -348,9 +337,9 @@ public:
 
     QMutex                        mutex;
     QHash<QString, ProgressItem*> transactions;
-    QAtomicInt                    uID;
+    QAtomicInt                    uID           = 1000;
 
-    QEventLoop*                   waitingLoop;
+    QEventLoop*                   waitingLoop   = nullptr;
 };
 
 Q_GLOBAL_STATIC(ProgressManagerCreator, creator)
@@ -551,6 +540,7 @@ void ProgressManager::slotTransactionCompleted(ProgressItem* item)
 void ProgressManager::slotTransactionCompletedDeferred(ProgressItem* item)
 {
     Q_EMIT progressItemCompleted(item);
+
     item->deleteLater();
 }
 

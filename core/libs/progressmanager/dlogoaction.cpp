@@ -44,28 +44,22 @@ class Q_DECL_HIDDEN DLogoAction::Private
 {
 public:
 
-    explicit Private()
-      : alignOnright(true),
-        progressCount(0),
-        progressTimer(nullptr),
-        urlLabel(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool          alignOnright;
+    bool          alignOnright      = true;
 
-    int           progressCount;         ///< Position of animation.
+    int           progressCount     = 0;         ///< Position of animation.
 
-    QTimer*       progressTimer;
+    QTimer*       progressTimer     = nullptr;
 
     QPixmap       progressPixmap;
 
-    DActiveLabel* urlLabel;
+    DActiveLabel* urlLabel          = nullptr;
 };
 
 DLogoAction::DLogoAction(QObject* const parent, bool alignOnright)
     : QWidgetAction(parent),
-      d(new Private)
+      d            (new Private)
 {
     setText(QLatin1String("digikam.org"));
 

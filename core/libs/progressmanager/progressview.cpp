@@ -145,33 +145,23 @@ class Q_DECL_HIDDEN TransactionItem::Private
 {
 public:
 
-    explicit Private()
-      : maxLabelWidth(650),
-        progress     (nullptr),
-        cancelButton (nullptr),
-        itemLabel    (nullptr),
-        itemStatus   (nullptr),
-        itemThumb    (nullptr),
-        frame        (nullptr),
-        item         (nullptr)
-    {
-    }
+    Private() = default;
 
-    const int     maxLabelWidth;
+    const int     maxLabelWidth = 650;
 
-    QProgressBar* progress;
-    QPushButton*  cancelButton;
-    QLabel*       itemLabel;
-    QLabel*       itemStatus;
-    QLabel*       itemThumb;
-    QFrame*       frame;
+    QProgressBar* progress      = nullptr;
+    QPushButton*  cancelButton  = nullptr;
+    QLabel*       itemLabel     = nullptr;
+    QLabel*       itemStatus    = nullptr;
+    QLabel*       itemThumb     = nullptr;
+    QFrame*       frame         = nullptr;
 
-    ProgressItem* item;
+    ProgressItem* item          = nullptr;
 };
 
 TransactionItem::TransactionItem(QWidget* const parent, ProgressItem* const item, bool first)
     : DVBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     d->item  = item;
     setSpacing(2);
@@ -297,16 +287,11 @@ class Q_DECL_HIDDEN ProgressView::Private
 {
 public:
 
-    explicit Private()
-      : wasLastShown(false),
-        scrollView  (nullptr),
-        previousItem(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                                        wasLastShown;
-    TransactionItemView*                        scrollView;
-    TransactionItem*                            previousItem;
+    bool                                        wasLastShown    = false;
+    TransactionItemView*                        scrollView      = nullptr;
+    TransactionItem*                            previousItem    = nullptr;
     QMap<const ProgressItem*, TransactionItem*> transactionsToListviewItems;
 };
 
@@ -523,6 +508,7 @@ void ProgressView::slotClose()
 void ProgressView::setVisible(bool b)
 {
     OverlayWidget::setVisible(b);
+
     Q_EMIT visibilityChanged(b);
 }
 

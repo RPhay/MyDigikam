@@ -30,9 +30,7 @@ class Q_DECL_HIDDEN DProgressWdg::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    explicit Private() = default;
 
     ProgressItem* findProgressItem() const
     {
@@ -46,7 +44,7 @@ public:
 
 DProgressWdg::DProgressWdg(QWidget* const parent)
     : QProgressBar(parent),
-      d(new Private)
+      d           (new Private)
 {
     connect(this, &DProgressWdg::valueChanged,
             this, &DProgressWdg::slotValueChanged);
