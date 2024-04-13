@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 01:40+0000\n"
+"POT-Creation-Date: 2024-04-13 01:43+0000\n"
 "PO-Revision-Date: 2024-01-02 20:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -25716,7 +25716,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:115
-#: core/libs/models/abstractalbummodel.cpp:464
+#: core/libs/models/abstractalbummodel.cpp:479
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:43
@@ -34746,7 +34746,7 @@ msgstr[0] "1 plik oczekuje na synchronizację"
 msgstr[1] "%1 pliki oczekują na synchronizację"
 msgstr[2] "%1 plików oczekuje na synchronizację"
 
-#: core/libs/filters/filterstatusbar.cpp:76
+#: core/libs/filters/filterstatusbar.cpp:70
 #, kde-format
 msgid ""
 "Background color indicates the global image filter status, encompassing all "
@@ -34773,72 +34773,72 @@ msgstr ""
 "ustawienia filtrów.\n"
 "Naciśnij przycisk ustawienia z prawej strony, aby otworzyć panel filtrów."
 
-#: core/libs/filters/filterstatusbar.cpp:87
+#: core/libs/filters/filterstatusbar.cpp:81
 #, kde-format
 msgid "Reset all active filters"
 msgstr "Wyzeruj wszystkie włączone filtry"
 
-#: core/libs/filters/filterstatusbar.cpp:93
+#: core/libs/filters/filterstatusbar.cpp:87
 #, kde-format
 msgid "Open filter settings panel"
 msgstr "Otwórz panel ustawień filtra"
 
-#: core/libs/filters/filterstatusbar.cpp:124
+#: core/libs/filters/filterstatusbar.cpp:118
 #, kde-format
 msgid "<br/><nobr><i>Text</i></nobr>"
 msgstr "<br/><nobr><i>Tekst</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:129
+#: core/libs/filters/filterstatusbar.cpp:123
 #, kde-format
 msgid "<br/><nobr><i>Mime Type</i></nobr>"
 msgstr "<br/><nobr><i>Typ Mime</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:134
+#: core/libs/filters/filterstatusbar.cpp:128
 #, kde-format
 msgid "<br/><nobr><i>Geolocation</i></nobr>"
 msgstr "<br/><nobr><i>Geopołożenie</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:139
+#: core/libs/filters/filterstatusbar.cpp:133
 #, kde-format
 msgid "<br/><nobr><i>Rating</i></nobr>"
 msgstr "<br/><nobr><i>Ocena</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:144
+#: core/libs/filters/filterstatusbar.cpp:138
 #, kde-format
 msgid "<br/><nobr><i>Pick Labels</i></nobr>"
 msgstr "<br/><nobr><i>Etykiety wyboru</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:149
+#: core/libs/filters/filterstatusbar.cpp:143
 #, kde-format
 msgid "<br/><nobr><i>Color Labels</i></nobr>"
 msgstr "<br/><nobr><i>Etykiety kolorowe</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:154
+#: core/libs/filters/filterstatusbar.cpp:148
 #, kde-format
 msgid "<br/><nobr><i>Tags</i></nobr>"
 msgstr "<br/><nobr><i>Znaczniki</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:159
+#: core/libs/filters/filterstatusbar.cpp:153
 #, kde-format
 msgid "<nobr><b>Active filters:</b></nobr>"
 msgstr "<nobr><b>Używane filtry:</b></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:163
+#: core/libs/filters/filterstatusbar.cpp:157
 #, kde-format
 msgid "<nobr><b>Active filter:</b></nobr>"
 msgstr "<nobr><b>Używany filtr:</b></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:170
+#: core/libs/filters/filterstatusbar.cpp:164
 #, kde-format
 msgid "No active filter"
 msgstr "Nie używasz filtrów"
 
-#: core/libs/filters/filterstatusbar.cpp:179
+#: core/libs/filters/filterstatusbar.cpp:173
 #, kde-format
 msgid "One active filter"
 msgstr "Jeden włączony filtr"
 
-#: core/libs/filters/filterstatusbar.cpp:183
+#: core/libs/filters/filterstatusbar.cpp:177
 #, kde-format
 msgid "1 active filter"
 msgid_plural "%1 active filters"
@@ -34975,7 +34975,7 @@ msgstr ""
 "rastrowa\" są formatami plików edytorów grafiki rastrowej, takich jak "
 "Photoshop, The Gimp, Krita, itp."
 
-#: core/libs/filters/ratingfilter.cpp:66
+#: core/libs/filters/ratingfilter.cpp:60
 #, kde-format
 msgid ""
 "Select the rating value used to filter albums' contents. Use the context pop-"
@@ -34984,57 +34984,57 @@ msgstr ""
 "Wybierz wartość oceny używanej do odfiltrowania treści albumów. Użyj menu "
 "podręcznego, aby ustawić warunki filtra ocen."
 
-#: core/libs/filters/ratingfilter.cpp:182
+#: core/libs/filters/ratingfilter.cpp:177
 #, kde-format
 msgid "Rating greater than or equal to %1."
 msgstr "Ocena większa lub równa %1."
 
-#: core/libs/filters/ratingfilter.cpp:188
+#: core/libs/filters/ratingfilter.cpp:183
 #, kde-format
 msgid "Rating equal to %1."
 msgstr "Ocena równa %1."
 
-#: core/libs/filters/ratingfilter.cpp:194
+#: core/libs/filters/ratingfilter.cpp:189
 #, kde-format
 msgid "Rating less than or equal to %1."
 msgstr "Ocenia mniejsza lub równa %1."
 
-#: core/libs/filters/ratingfilter.cpp:244
+#: core/libs/filters/ratingfilter.cpp:229
 #, kde-format
 msgid "Items Without Rating"
 msgstr "Rzeczy bez oceny"
 
-#: core/libs/filters/ratingfilter.cpp:248
+#: core/libs/filters/ratingfilter.cpp:233
 #, kde-format
 msgid "Rating Filter Options"
 msgstr "Ustawienia filtra ocen"
 
-#: core/libs/filters/ratingfilter.cpp:253
+#: core/libs/filters/ratingfilter.cpp:238
 #, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr "Więcej lub równe"
 
-#: core/libs/filters/ratingfilter.cpp:255
+#: core/libs/filters/ratingfilter.cpp:240
 #, kde-format
 msgid "Equals Condition"
 msgstr "Równe"
 
-#: core/libs/filters/ratingfilter.cpp:257
+#: core/libs/filters/ratingfilter.cpp:242
 #, kde-format
 msgid "Less Than or Equals Condition"
 msgstr "Mniej lub równe"
 
-#: core/libs/filters/ratingfilter.cpp:260
+#: core/libs/filters/ratingfilter.cpp:245
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr "Wyklucz rzeczy bez oceny"
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:59
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr "Szybki filtr tekstowy (szukaj)"
 
-#: core/libs/filters/textfilter.cpp:73
+#: core/libs/filters/textfilter.cpp:60
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
@@ -35043,57 +35043,57 @@ msgstr ""
 "Wprowadź wzorce znajdywania, aby szybko odfiltrować ten widok pod kątem nazw "
 "plików, podpisów (komentarzy) i znaczników"
 
-#: core/libs/filters/textfilter.cpp:77
+#: core/libs/filters/textfilter.cpp:64
 #, kde-format
 msgid "Text Search Fields"
 msgstr "Pola wyszukiwania tekstu"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:67
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr "Określa, które pola wyszukiwać pod kątem tekstu w nim."
 
-#: core/libs/filters/textfilter.cpp:83
+#: core/libs/filters/textfilter.cpp:70
 #, kde-format
 msgid "Item Name"
 msgstr "Nazwa rzeczy"
 
-#: core/libs/filters/textfilter.cpp:85
+#: core/libs/filters/textfilter.cpp:72
 #, kde-format
 msgid "Item Title"
 msgstr "Tytuł rzeczy"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:74
 #, kde-format
 msgid "Item Comment"
 msgstr "Uwagi do rzeczy"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:76
 #, kde-format
 msgid "Tag Name"
 msgstr "Nazwa znacznika"
 
-#: core/libs/filters/textfilter.cpp:91
+#: core/libs/filters/textfilter.cpp:78
 #, kde-format
 msgid "Album Name"
 msgstr "Nazwa albumu"
 
-#: core/libs/filters/textfilter.cpp:93
+#: core/libs/filters/textfilter.cpp:80
 #, kde-format
 msgid "Item Aspect Ratio"
 msgstr "Współczynnik kształtu rzeczy"
 
-#: core/libs/filters/textfilter.cpp:95
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Item Pixel Size"
 msgstr "Rozmiar piksela rzeczy"
 
-#: core/libs/filters/textfilter.cpp:98
+#: core/libs/filters/textfilter.cpp:85
 #, kde-format
 msgid "Clear All"
 msgstr "Wyczyść wszystko"
 
-#: core/libs/filters/textfilter.cpp:100
+#: core/libs/filters/textfilter.cpp:87
 #, kde-format
 msgid "Select All"
 msgstr "Zaznacz wszystko"
@@ -36621,12 +36621,12 @@ msgstr[0] " (%1 nowy)"
 msgstr[1] " (%1 nowe)"
 msgstr[2] " (%1 nowych)"
 
-#: core/libs/notificationmanager/dnotificationwidget_p.cpp:89
+#: core/libs/notificationmanager/dnotificationwidget_p.cpp:80
 #, kde-format
 msgid "&Close"
 msgstr "&Zamknij"
 
-#: core/libs/notificationmanager/dnotificationwidget_p.cpp:90
+#: core/libs/notificationmanager/dnotificationwidget_p.cpp:81
 #, kde-format
 msgid "Close message"
 msgstr "Zamknij wiadomość"
