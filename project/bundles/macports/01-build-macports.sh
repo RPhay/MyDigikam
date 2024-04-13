@@ -193,15 +193,15 @@ macosx_deployment_target $OSX_MIN_TARGET
 build_arch $ARCH_TARGET
 EOF
 
-    if [[ $ARCH_TARGET = "arm64" ]] ; then
-
-        # No need to build with both architectures embeded (x86 and ARM) for Apple Silicon target
-
-        cat << EOF >> "$INSTALL_PREFIX/etc/macports/variants.conf"
-+universal
-EOF
-
-    fi
+#    if [[ $ARCH_TARGET = "arm64" ]] ; then
+#
+#         Build with both architectures embeded (x86 and ARM) for Apple Silicon target
+#
+#        cat << EOF >> "$INSTALL_PREFIX/etc/macports/variants.conf"
+#+universal
+#EOF
+#
+#    fi
 
 fi
 
