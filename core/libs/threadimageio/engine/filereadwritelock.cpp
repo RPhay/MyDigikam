@@ -39,12 +39,7 @@ class Q_DECL_HIDDEN FileReadWriteLockPriv
 public:
 
     explicit FileReadWriteLockPriv(const QString& filePath)
-        : filePath          (filePath),
-          ref               (0),
-          waitingReaders    (0),
-          waitingWriters    (0),
-          accessCount       (0),
-          writer            (nullptr)
+        : filePath(filePath)
     {
     }
 
@@ -59,12 +54,12 @@ public:
 public:
 
     QString                filePath;
-    int                    ref;
-    int                    waitingReaders;
-    int                    waitingWriters;
+    int                    ref              = 0;
+    int                    waitingReaders   = 0;
+    int                    waitingWriters   = 0;
 
-    int                    accessCount;
-    Qt::HANDLE             writer;
+    int                    accessCount      = 0;
+    Qt::HANDLE             writer           = nullptr;
     QHash<Qt::HANDLE, int> readers;
 };
 

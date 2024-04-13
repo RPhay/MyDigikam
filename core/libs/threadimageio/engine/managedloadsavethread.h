@@ -192,8 +192,8 @@ protected:
 
 protected:
 
-    LoadingPolicy     m_loadingPolicy;
-    TerminationPolicy m_terminationPolicy;
+    LoadingPolicy     m_loadingPolicy       = LoadingPolicyAppend;
+    TerminationPolicy m_terminationPolicy   = TerminationPolicyTerminateLoading;
 
 private:
 
