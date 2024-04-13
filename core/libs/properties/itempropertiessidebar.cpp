@@ -52,14 +52,7 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
                                              SidebarSplitter* const splitter,
                                              Qt::Edge side,
                                              bool mimimizedDefault)
-    : Sidebar             (parent, splitter, side, mimimizedDefault),
-      m_dirtyPropertiesTab(false),
-      m_dirtyMetadataTab  (false),
-      m_dirtyColorTab     (false),
-      m_dirtyGpsTab       (false),
-      m_dirtyHistoryTab   (false),
-      m_currentRect       (QRect()),
-      m_image             (nullptr)
+    : Sidebar(parent, splitter, side, mimimizedDefault)
 {
     m_propertiesStackedView  = new QStackedWidget(parent);
     m_propertiesTab          = new ItemPropertiesTab(parent);
@@ -98,10 +91,6 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
 
     connect(this, &ItemPropertiesSideBar::signalChangedTab,
             this, &ItemPropertiesSideBar::slotChangedTab);
-}
-
-ItemPropertiesSideBar::~ItemPropertiesSideBar()
-{
 }
 
 void ItemPropertiesSideBar::itemChanged(const QUrl& url, const QRect& rect, DImg* const img)

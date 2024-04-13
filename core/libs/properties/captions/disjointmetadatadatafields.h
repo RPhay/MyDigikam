@@ -55,51 +55,25 @@ public:
 
 public:
 
-    DisjointMetadataDataFields()
-        : dateTimeChanged   (false),
-          titlesChanged     (false),
-          commentsChanged   (false),
-          pickLabelChanged  (false),
-          colorLabelChanged (false),
-          ratingChanged     (false),
-          templateChanged   (false),
-          tagsChanged       (false),
-          withoutTags       (false),
-          pickLabel         (-1),
-          highestPickLabel  (-1),
-          colorLabel        (-1),
-          highestColorLabel (-1),
-          rating            (-1),
-          highestRating     (-1),
-          count             (0),
-          dateTimeStatus    (MetadataInvalid),
-          titlesStatus      (MetadataInvalid),
-          commentsStatus    (MetadataInvalid),
-          pickLabelStatus   (MetadataInvalid),
-          colorLabelStatus  (MetadataInvalid),
-          ratingStatus      (MetadataInvalid),
-          templateStatus    (MetadataInvalid),
-          invalid           (false)
-    {
-    }
+    DisjointMetadataDataFields() = default;
 
-    bool              dateTimeChanged;
-    bool              titlesChanged;
-    bool              commentsChanged;
-    bool              pickLabelChanged;
-    bool              colorLabelChanged;
-    bool              ratingChanged;
-    bool              templateChanged;
-    bool              tagsChanged;
-    bool              withoutTags;
+    bool              dateTimeChanged   = false;
+    bool              titlesChanged     = false;
+    bool              commentsChanged   = false;
+    bool              pickLabelChanged  = false;
+    bool              colorLabelChanged = false;
+    bool              ratingChanged     = false;
+    bool              templateChanged   = false;
+    bool              tagsChanged       = false;
+    bool              withoutTags       = false;
 
-    int               pickLabel;
-    int               highestPickLabel;
-    int               colorLabel;
-    int               highestColorLabel;
-    int               rating;
-    int               highestRating;
-    int               count;
+    int               pickLabel         = -1;
+    int               highestPickLabel  = -1;
+    int               colorLabel        = -1;
+    int               highestColorLabel = -1;
+    int               rating            = -1;
+    int               highestRating     = -1;
+    int               count             = 0;
 
     QDateTime         dateTime;
     QDateTime         lastDateTime;
@@ -113,16 +87,16 @@ public:
 
     QStringList       tagList;
 
-    Status            dateTimeStatus;
-    Status            titlesStatus;
-    Status            commentsStatus;
-    Status            pickLabelStatus;
-    Status            colorLabelStatus;
-    Status            ratingStatus;
-    Status            templateStatus;
+    Status            dateTimeStatus    = MetadataInvalid;
+    Status            titlesStatus      = MetadataInvalid;
+    Status            commentsStatus    = MetadataInvalid;
+    Status            pickLabelStatus   = MetadataInvalid;
+    Status            colorLabelStatus  = MetadataInvalid;
+    Status            ratingStatus      = MetadataInvalid;
+    Status            templateStatus    = MetadataInvalid;
 
     QList<int>        tagIds;
-    bool              invalid;
+    bool              invalid           = false;
 };
 
 } // namespace Digikam

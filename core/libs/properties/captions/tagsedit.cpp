@@ -53,30 +53,18 @@ class Q_DECL_HIDDEN TagsEdit::Private
 {
 public:
 
-    explicit Private()
-      : togglingTagsSearchSettings  (false),
-        ignoreTagChanges            (false),
-        recentTagsBtn               (nullptr),
-        assignedTagsBtn             (nullptr),
-        openTagMngr                 (nullptr),
-        tagsSearchBar               (nullptr),
-        newTagEdit                  (nullptr),
-        tagCheckView                (nullptr),
-        tagModel                    (nullptr),
-        hub                         (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                 togglingTagsSearchSettings;
-    bool                 ignoreTagChanges;
-    QToolButton*         recentTagsBtn;
-    QToolButton*         assignedTagsBtn;
-    QPushButton*         openTagMngr;
-    SearchTextBarDb*     tagsSearchBar;
-    AddTagsLineEdit*     newTagEdit;
-    TagCheckView*        tagCheckView;
-    TagModel*            tagModel;
-    DisjointMetadata*    hub;
+    bool                 togglingTagsSearchSettings = false;
+    bool                 ignoreTagChanges           = false;
+    QToolButton*         recentTagsBtn              = nullptr;
+    QToolButton*         assignedTagsBtn            = nullptr;
+    QPushButton*         openTagMngr                = nullptr;
+    SearchTextBarDb*     tagsSearchBar              = nullptr;
+    AddTagsLineEdit*     newTagEdit                 = nullptr;
+    TagCheckView*        tagCheckView               = nullptr;
+    TagModel*            tagModel                   = nullptr;
+    DisjointMetadata*    hub                        = nullptr;
 };
 
 TagsEdit::TagsEdit(DisjointMetadata* const hub, QWidget* const parent)

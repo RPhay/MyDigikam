@@ -26,7 +26,6 @@ endif()
 set(libitemproperties_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiessidebar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiestab.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiestab_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiestab_helpers.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiestab_setters.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itemselectionpropertiestab.cpp

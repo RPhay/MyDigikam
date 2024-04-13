@@ -52,70 +52,70 @@ class Q_DECL_HIDDEN ItemPropertiesTab::Private
 {
 public:
 
-    explicit Private();
-    ~Private();
+    Private()  = default;
+    ~Private() = default;
 
-    DTextLabelName*    caption;
-    DTextLabelName*    title;
-    DTextLabelName*    pickLabel;
-    DTextLabelName*    colorLabel;
-    DTextLabelName*    rating;
-    DTextLabelName*    tags;
-    DTextLabelName*    peoples;
-    DTextLabelName*    versionned;
-    DTextLabelName*    grouped;
+    DTextLabelName*    caption                      = nullptr;
+    DTextLabelName*    title                        = nullptr;
+    DTextLabelName*    pickLabel                    = nullptr;
+    DTextLabelName*    colorLabel                   = nullptr;
+    DTextLabelName*    rating                       = nullptr;
+    DTextLabelName*    tags                         = nullptr;
+    DTextLabelName*    peoples                      = nullptr;
+    DTextLabelName*    versionned                   = nullptr;
+    DTextLabelName*    grouped                      = nullptr;
 
-    DTextLabelValue*   labelFile;
-    DTextLabelValue*   labelFolder;
-    DTextLabelValue*   labelSymlink;
-    DTextLabelValue*   labelFileModifiedDate;
-    DTextLabelValue*   labelFileSize;
-    DTextLabelValue*   labelFileOwner;
-    DTextLabelValue*   labelFilePermissions;
+    DTextLabelValue*   labelFile                    = nullptr;
+    DTextLabelValue*   labelFolder                  = nullptr;
+    DTextLabelValue*   labelSymlink                 = nullptr;
+    DTextLabelValue*   labelFileModifiedDate        = nullptr;
+    DTextLabelValue*   labelFileSize                = nullptr;
+    DTextLabelValue*   labelFileOwner               = nullptr;
+    DTextLabelValue*   labelFilePermissions         = nullptr;
 
-    DTextLabelValue*   labelImageMime;
-    DTextLabelValue*   labelImageDimensions;
-    DTextLabelValue*   labelImageRatio;
-    DTextLabelValue*   labelImageBitDepth;
-    DTextLabelValue*   labelImageColorMode;
-    DTextLabelValue*   labelHasSidecar;
-    DTextLabelValue*   labelHasGPSInfo;
-    DTextLabelValue*   labelVersionnedInfo;
-    DTextLabelValue*   labelGroupedInfo;
+    DTextLabelValue*   labelImageMime               = nullptr;
+    DTextLabelValue*   labelImageDimensions         = nullptr;
+    DTextLabelValue*   labelImageRatio              = nullptr;
+    DTextLabelValue*   labelImageBitDepth           = nullptr;
+    DTextLabelValue*   labelImageColorMode          = nullptr;
+    DTextLabelValue*   labelHasSidecar              = nullptr;
+    DTextLabelValue*   labelHasGPSInfo              = nullptr;
+    DTextLabelValue*   labelVersionnedInfo          = nullptr;
+    DTextLabelValue*   labelGroupedInfo             = nullptr;
 
-    DTextLabelValue*   labelPhotoMake;
-    DTextLabelValue*   labelPhotoModel;
-    DTextLabelValue*   labelPhotoDateTime;
-    DTextLabelValue*   labelPhotoLens;
-    DTextLabelValue*   labelPhotoAperture;
-    DTextLabelValue*   labelPhotoFocalLength;
-    DTextLabelValue*   labelPhotoExposureTime;
-    DTextLabelValue*   labelPhotoSensitivity;
-    DTextLabelValue*   labelPhotoExposureMode;
-    DTextLabelValue*   labelPhotoFlash;
-    DTextLabelValue*   labelPhotoWhiteBalance;
+    DTextLabelValue*   labelPhotoMake               = nullptr;
+    DTextLabelValue*   labelPhotoModel              = nullptr;
+    DTextLabelValue*   labelPhotoDateTime           = nullptr;
+    DTextLabelValue*   labelPhotoLens               = nullptr;
+    DTextLabelValue*   labelPhotoAperture           = nullptr;
+    DTextLabelValue*   labelPhotoFocalLength        = nullptr;
+    DTextLabelValue*   labelPhotoExposureTime       = nullptr;
+    DTextLabelValue*   labelPhotoSensitivity        = nullptr;
+    DTextLabelValue*   labelPhotoExposureMode       = nullptr;
+    DTextLabelValue*   labelPhotoFlash              = nullptr;
+    DTextLabelValue*   labelPhotoWhiteBalance       = nullptr;
 
     // NOTE: special case for the caption and title. See bug #460134
-    QLabel*            labelCaption;
-    QLabel*            labelTitle;
+    QLabel*            labelCaption                 = nullptr;
+    QLabel*            labelTitle                   = nullptr;
 
-    QLabel*            labelTags;
-    QLabel*            labelPeoples;
+    QLabel*            labelTags                    = nullptr;
+    QLabel*            labelPeoples                 = nullptr;
 
-    QLabel*            labelLocation;
-    QLabel*            labelRights;
+    QLabel*            labelLocation                = nullptr;
+    QLabel*            labelRights                  = nullptr;
 
-    DTextLabelValue*   labelPickLabel;
-    DTextLabelValue*   labelColorLabel;
-    DTextLabelValue*   labelRating;
+    DTextLabelValue*   labelPickLabel               = nullptr;
+    DTextLabelValue*   labelColorLabel              = nullptr;
+    DTextLabelValue*   labelRating                  = nullptr;
 
-    DTextLabelValue*   labelVideoAspectRatio;
-    DTextLabelValue*   labelVideoDuration;
-    DTextLabelValue*   labelVideoFrameRate;
-    DTextLabelValue*   labelVideoVideoCodec;
-    DTextLabelValue*   labelVideoAudioBitRate;
-    DTextLabelValue*   labelVideoAudioChannelType;
-    DTextLabelValue*   labelVideoAudioCodec;
+    DTextLabelValue*   labelVideoAspectRatio        = nullptr;
+    DTextLabelValue*   labelVideoDuration           = nullptr;
+    DTextLabelValue*   labelVideoFrameRate          = nullptr;
+    DTextLabelValue*   labelVideoVideoCodec         = nullptr;
+    DTextLabelValue*   labelVideoAudioBitRate       = nullptr;
+    DTextLabelValue*   labelVideoAudioChannelType   = nullptr;
+    DTextLabelValue*   labelVideoAudioCodec         = nullptr;
 
     DToolTipStyleSheet cnt;
 };

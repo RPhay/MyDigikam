@@ -23,35 +23,7 @@ namespace Digikam
 {
 
 ItemDescEditTab::Private::Private(ItemDescEditTab* const tab)
-    : modified                    (false),
-      ignoreItemAttributesWatch   (false),
-      revertBtn                   (nullptr),
-      moreMenu                    (nullptr),
-      applyBtn                    (nullptr),
-      moreButton                  (nullptr),
-      applyToAllVersionsButton    (nullptr),
-      lastSelectedWidget          (nullptr),
-      titleEdit                   (nullptr),
-      captionsEdit                (nullptr),
-      dateTimeEdit                (nullptr),
-      tabWidget                   (nullptr),
-      templateSelector            (nullptr),
-      templateViewer              (nullptr),
-      ratingWidget                (nullptr),
-      colorLabelSelector          (nullptr),
-      pickLabelSelector           (nullptr),
-      hub                         (nullptr),
-      metadataChangeTimer         (nullptr),
-      togglingTagsSearchSettings  (false),
-      ignoreTagChanges            (false),
-      recentTagsBtn               (nullptr),
-      assignedTagsBtn             (nullptr),
-      openTagMngr                 (nullptr),
-      tagsSearchBar               (nullptr),
-      newTagEdit                  (nullptr),
-      tagCheckView                (nullptr),
-      tagModel                    (nullptr),
-      q                           (tab)
+    : q(tab)
 {
     spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));

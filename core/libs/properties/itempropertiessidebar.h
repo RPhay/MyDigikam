@@ -54,7 +54,7 @@ public:
                                    SidebarSplitter* const splitter,
                                    Qt::Edge side = Qt::LeftEdge,
                                    bool mimimizedDefault = false);
-    ~ItemPropertiesSideBar() override;
+    ~ItemPropertiesSideBar() override = default;
 
     virtual void itemChanged(const QUrl& url, const QRect& rect = QRect(), DImg* const img = nullptr);
 
@@ -89,28 +89,28 @@ protected:
 
 protected:
 
-    bool                        m_dirtyPropertiesTab;
-    bool                        m_dirtyMetadataTab;
-    bool                        m_dirtyColorTab;
-    bool                        m_dirtyGpsTab;
-    bool                        m_dirtyHistoryTab;
+    bool                        m_dirtyPropertiesTab        = false;
+    bool                        m_dirtyMetadataTab          = false;
+    bool                        m_dirtyColorTab             = false;
+    bool                        m_dirtyGpsTab               = false;
+    bool                        m_dirtyHistoryTab           = false;
 
     QRect                       m_currentRect;
 
     QUrl                        m_currentURL;
 
-    DImg*                       m_image;
+    DImg*                       m_image                     = nullptr;
 
-    QStackedWidget*             m_propertiesStackedView;
+    QStackedWidget*             m_propertiesStackedView     = nullptr;
 
-    ItemPropertiesTab*          m_propertiesTab;
-    ItemSelectionPropertiesTab* m_selectionPropertiesTab;
-    ItemPropertiesMetadataTab*  m_metadataTab;
-    ItemPropertiesColorsTab*    m_colorTab;
+    ItemPropertiesTab*          m_propertiesTab             = nullptr;
+    ItemSelectionPropertiesTab* m_selectionPropertiesTab    = nullptr;
+    ItemPropertiesMetadataTab*  m_metadataTab               = nullptr;
+    ItemPropertiesColorsTab*    m_colorTab                  = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
-    ItemPropertiesGPSTab*       m_gpsTab;
+    ItemPropertiesGPSTab*       m_gpsTab                    = nullptr;
 
 #endif // HAVE_GEOLOCATION
 

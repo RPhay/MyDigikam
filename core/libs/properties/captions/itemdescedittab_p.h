@@ -89,54 +89,54 @@ public:
 
 public:
 
-    bool                 modified;
-    bool                 ignoreItemAttributesWatch;
+    bool                 modified                   = false;
+    bool                 ignoreItemAttributesWatch  = false;
 
-    QToolButton*         revertBtn;
+    QToolButton*         revertBtn                  = nullptr;
 
-    QMenu*               moreMenu;
+    QMenu*               moreMenu                   = nullptr;
 
-    QPushButton*         applyBtn;
-    QPushButton*         moreButton;
-    QPushButton*         applyToAllVersionsButton;
+    QPushButton*         applyBtn                   = nullptr;
+    QPushButton*         moreButton                 = nullptr;
+    QPushButton*         applyToAllVersionsButton   = nullptr;
 
-    QWidget*             lastSelectedWidget;
+    QWidget*             lastSelectedWidget         = nullptr;
 
-    AltLangStrEdit*      titleEdit;
+    AltLangStrEdit*      titleEdit                  = nullptr;
 
-    CaptionEdit*         captionsEdit;
+    CaptionEdit*         captionsEdit               = nullptr;
 
-    DDateTimeEdit*       dateTimeEdit;
+    DDateTimeEdit*       dateTimeEdit               = nullptr;
 
-    QTabWidget*          tabWidget;
+    QTabWidget*          tabWidget                  = nullptr;
 
     ItemInfoList         currInfos;
 
-    TemplateSelector*    templateSelector;
-    TemplateViewer*      templateViewer;
+    TemplateSelector*    templateSelector           = nullptr;
+    TemplateViewer*      templateViewer             = nullptr;
 
-    RatingWidget*        ratingWidget;
-    ColorLabelSelector*  colorLabelSelector;
-    PickLabelSelector*   pickLabelSelector;
+    RatingWidget*        ratingWidget               = nullptr;
+    ColorLabelSelector*  colorLabelSelector         = nullptr;
+    PickLabelSelector*   pickLabelSelector          = nullptr;
 
-    DisjointMetadata*    hub;
+    DisjointMetadata*    hub                        = nullptr;
 
-    QTimer*              metadataChangeTimer;
+    QTimer*              metadataChangeTimer        = nullptr;
     QList<int>           metadataChangeIds;
 
-    int                  spacing;
+    int                  spacing                    = 0;
 
     // ---
 
-    bool                 togglingTagsSearchSettings;
-    bool                 ignoreTagChanges;
-    QToolButton*         recentTagsBtn;
-    QToolButton*         assignedTagsBtn;
-    QPushButton*         openTagMngr;
-    SearchTextBarDb*     tagsSearchBar;
-    AddTagsLineEdit*     newTagEdit;
-    TagCheckView*        tagCheckView;
-    TagModel*            tagModel;
+    bool                 togglingTagsSearchSettings = false;
+    bool                 ignoreTagChanges           = false;
+    QToolButton*         recentTagsBtn              = nullptr;
+    QToolButton*         assignedTagsBtn            = nullptr;
+    QPushButton*         openTagMngr                = nullptr;
+    SearchTextBarDb*     tagsSearchBar              = nullptr;
+    AddTagsLineEdit*     newTagEdit                 = nullptr;
+    TagCheckView*        tagCheckView               = nullptr;
+    TagModel*            tagModel                   = nullptr;
 
 public:
 

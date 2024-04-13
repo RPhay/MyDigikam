@@ -67,7 +67,7 @@ public:
 
 public:
 
-    explicit Private() = default;
+    Private() = default;
 
 public:
 

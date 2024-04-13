@@ -30,15 +30,11 @@ class Q_DECL_HIDDEN CaptionEdit::Private
 {
 public:
 
-    explicit Private()
-      : altLangStrEdit(nullptr),
-        authorEdit    (nullptr)
-    {
-    }
+    Private() = default;
 
-    AltLangStrEdit* altLangStrEdit;
+    AltLangStrEdit* altLangStrEdit  = nullptr;
 
-    QLineEdit*      authorEdit;
+    QLineEdit*      authorEdit      = nullptr;
 
     CaptionsMap     captionsValues;
 
