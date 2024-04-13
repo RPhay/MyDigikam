@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 01:40+0000\n"
+"POT-Creation-Date: 2024-04-13 01:43+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -25176,7 +25176,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:115
-#: core/libs/models/abstractalbummodel.cpp:464
+#: core/libs/models/abstractalbummodel.cpp:479
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:43
@@ -34141,7 +34141,7 @@ msgstr[0] "Lietot melnā punkta kompensāciju"
 msgstr[1] "Lietot melnā punkta kompensāciju"
 msgstr[2] "Lietot melnā punkta kompensāciju"
 
-#: core/libs/filters/filterstatusbar.cpp:76
+#: core/libs/filters/filterstatusbar.cpp:70
 #, fuzzy, kde-format
 msgid ""
 "Background color indicates the global image filter status, encompassing all "
@@ -34164,72 +34164,72 @@ msgstr ""
 "\n"
 "Nospiežot šeit ar peli, tiks atstatīti visi filtri."
 
-#: core/libs/filters/filterstatusbar.cpp:87
+#: core/libs/filters/filterstatusbar.cpp:81
 #, kde-format
 msgid "Reset all active filters"
 msgstr "Atiestatīt visus aktīvos filtrus"
 
-#: core/libs/filters/filterstatusbar.cpp:93
+#: core/libs/filters/filterstatusbar.cpp:87
 #, kde-format
 msgid "Open filter settings panel"
 msgstr "Atvērt filtru iestatījumu paneli"
 
-#: core/libs/filters/filterstatusbar.cpp:124
+#: core/libs/filters/filterstatusbar.cpp:118
 #, kde-format
 msgid "<br/><nobr><i>Text</i></nobr>"
 msgstr "<br/><nobr><i>Teksts</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:129
+#: core/libs/filters/filterstatusbar.cpp:123
 #, kde-format
 msgid "<br/><nobr><i>Mime Type</i></nobr>"
 msgstr "<br/><nobr><i>Mime tips</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:134
+#: core/libs/filters/filterstatusbar.cpp:128
 #, fuzzy, kde-format
 msgid "<br/><nobr><i>Geolocation</i></nobr>"
 msgstr "<br/><nobr><i>Vērtējums</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:139
+#: core/libs/filters/filterstatusbar.cpp:133
 #, kde-format
 msgid "<br/><nobr><i>Rating</i></nobr>"
 msgstr "<br/><nobr><i>Vērtējums</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:144
+#: core/libs/filters/filterstatusbar.cpp:138
 #, kde-format
 msgid "<br/><nobr><i>Pick Labels</i></nobr>"
 msgstr "<br/><nobr><i>Atlases iezīmes</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:149
+#: core/libs/filters/filterstatusbar.cpp:143
 #, fuzzy, kde-format
 msgid "<br/><nobr><i>Color Labels</i></nobr>"
 msgstr "<br/><nobr><i>Tagi</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:154
+#: core/libs/filters/filterstatusbar.cpp:148
 #, kde-format
 msgid "<br/><nobr><i>Tags</i></nobr>"
 msgstr "<br/><nobr><i>Tagi</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:159
+#: core/libs/filters/filterstatusbar.cpp:153
 #, kde-format
 msgid "<nobr><b>Active filters:</b></nobr>"
 msgstr "<nobr><b>Aktīvi filtri</b></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:163
+#: core/libs/filters/filterstatusbar.cpp:157
 #, kde-format
 msgid "<nobr><b>Active filter:</b></nobr>"
 msgstr "<nobr><b>Aktīvs filtrs</b></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:170
+#: core/libs/filters/filterstatusbar.cpp:164
 #, kde-format
 msgid "No active filter"
 msgstr "Nav aktīva filtra"
 
-#: core/libs/filters/filterstatusbar.cpp:179
+#: core/libs/filters/filterstatusbar.cpp:173
 #, fuzzy, kde-format
 msgid "One active filter"
 msgstr "Nav aktīva filtra"
 
-#: core/libs/filters/filterstatusbar.cpp:183
+#: core/libs/filters/filterstatusbar.cpp:177
 #, fuzzy, kde-format
 msgid "1 active filter"
 msgid_plural "%1 active filters"
@@ -34367,7 +34367,7 @@ msgid ""
 "The Gimp, Krita, etc."
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:66
+#: core/libs/filters/ratingfilter.cpp:60
 #, fuzzy, kde-format
 msgid ""
 "Select the rating value used to filter albums' contents. Use the context pop-"
@@ -34376,58 +34376,58 @@ msgstr ""
 "Šeit var norādīt vērtējuma vērtību, pēc kuras filtrēt albuma saturu. Ar "
 "konteksta izvēlni var mainīt vērtējuma filtra nosacījumu."
 
-#: core/libs/filters/ratingfilter.cpp:182
+#: core/libs/filters/ratingfilter.cpp:177
 #, kde-format
 msgid "Rating greater than or equal to %1."
 msgstr "Vērtējums lielāks vai vienāds ar %1."
 
-#: core/libs/filters/ratingfilter.cpp:188
+#: core/libs/filters/ratingfilter.cpp:183
 #, kde-format
 msgid "Rating equal to %1."
 msgstr "Vērtējums vienāds ar %1."
 
-#: core/libs/filters/ratingfilter.cpp:194
+#: core/libs/filters/ratingfilter.cpp:189
 #, kde-format
 msgid "Rating less than or equal to %1."
 msgstr "Vērtējums mazāks vai vienāds ar %1."
 
-#: core/libs/filters/ratingfilter.cpp:244
+#: core/libs/filters/ratingfilter.cpp:229
 #, fuzzy, kde-format
 #| msgid "Exclude Items Without Rating"
 msgid "Items Without Rating"
 msgstr "Neiekļaut attēlus bez vērtējuma"
 
-#: core/libs/filters/ratingfilter.cpp:248
+#: core/libs/filters/ratingfilter.cpp:233
 #, fuzzy, kde-format
 msgid "Rating Filter Options"
 msgstr "Vērtējuma filtrs"
 
-#: core/libs/filters/ratingfilter.cpp:253
+#: core/libs/filters/ratingfilter.cpp:238
 #, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr "'Lielāks nekā' vai 'vienāds ar' nosacījums"
 
-#: core/libs/filters/ratingfilter.cpp:255
+#: core/libs/filters/ratingfilter.cpp:240
 #, kde-format
 msgid "Equals Condition"
 msgstr "'Vienāds ar' nosacījums"
 
-#: core/libs/filters/ratingfilter.cpp:257
+#: core/libs/filters/ratingfilter.cpp:242
 #, kde-format
 msgid "Less Than or Equals Condition"
 msgstr "'Mazāks nekā' vai 'vienāds ar' nosacījums"
 
-#: core/libs/filters/ratingfilter.cpp:260
+#: core/libs/filters/ratingfilter.cpp:245
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr "Neiekļaut attēlus bez vērtējuma"
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:59
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr "Ātrais teksta filtrs (meklēšana)"
 
-#: core/libs/filters/textfilter.cpp:73
+#: core/libs/filters/textfilter.cpp:60
 #, fuzzy, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
@@ -34436,57 +34436,57 @@ msgstr ""
 "Ievadiet teksta paraugu, lai ātri filtrētu šo skatu pēc failu nosaukumiem, "
 "aprakstiem (komentāriem) un tagiem"
 
-#: core/libs/filters/textfilter.cpp:77
+#: core/libs/filters/textfilter.cpp:64
 #, fuzzy, kde-format
 msgid "Text Search Fields"
 msgstr "Manas meklēšanas"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:67
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:83
+#: core/libs/filters/textfilter.cpp:70
 #, kde-format
 msgid "Item Name"
 msgstr "Faila nosaukumā"
 
-#: core/libs/filters/textfilter.cpp:85
+#: core/libs/filters/textfilter.cpp:72
 #, kde-format
 msgid "Item Title"
 msgstr "Nosaukumā"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:74
 #, kde-format
 msgid "Item Comment"
 msgstr "Komentārā"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:76
 #, kde-format
 msgid "Tag Name"
 msgstr "Taga nosaukumā"
 
-#: core/libs/filters/textfilter.cpp:91
+#: core/libs/filters/textfilter.cpp:78
 #, kde-format
 msgid "Album Name"
 msgstr "Albuma nosaukumā"
 
-#: core/libs/filters/textfilter.cpp:93
+#: core/libs/filters/textfilter.cpp:80
 #, kde-format
 msgid "Item Aspect Ratio"
 msgstr "Malu attiecībā"
 
-#: core/libs/filters/textfilter.cpp:95
+#: core/libs/filters/textfilter.cpp:82
 #, kde-format
 msgid "Item Pixel Size"
 msgstr "Pikseļa izmērā"
 
-#: core/libs/filters/textfilter.cpp:98
+#: core/libs/filters/textfilter.cpp:85
 #, kde-format
 msgid "Clear All"
 msgstr "Notīrīt visu"
 
-#: core/libs/filters/textfilter.cpp:100
+#: core/libs/filters/textfilter.cpp:87
 #, kde-format
 msgid "Select All"
 msgstr "Atlasīt visus"
@@ -36046,12 +36046,12 @@ msgstr[0] " (%1 jauna)"
 msgstr[1] " (%1 jaunas)"
 msgstr[2] "(%1 jaunas)"
 
-#: core/libs/notificationmanager/dnotificationwidget_p.cpp:89
+#: core/libs/notificationmanager/dnotificationwidget_p.cpp:80
 #, fuzzy, kde-format
 msgid "&Close"
 msgstr "&Aizvērt"
 
-#: core/libs/notificationmanager/dnotificationwidget_p.cpp:90
+#: core/libs/notificationmanager/dnotificationwidget_p.cpp:81
 #, kde-format
 msgid "Close message"
 msgstr "Aizvērt ziņojumu"

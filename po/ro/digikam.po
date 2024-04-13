@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 01:40+0000\n"
+"POT-Creation-Date: 2024-04-13 01:43+0000\n"
 "PO-Revision-Date: 2024-02-24 15:47+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -25616,7 +25616,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:112
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:115
-#: core/libs/models/abstractalbummodel.cpp:464
+#: core/libs/models/abstractalbummodel.cpp:479
 #: core/utilities/searchwindow/searchfields_createfield.cpp:27
 #: core/utilities/searchwindow/searchfields_createfield.cpp:35
 #: core/utilities/searchwindow/searchfields_createfield.cpp:43
@@ -34519,7 +34519,7 @@ msgstr[0] "Resincronizare completă din nou"
 msgstr[1] "Resincronizare completă din nou"
 msgstr[2] "Resincronizare completă din nou"
 
-#: core/libs/filters/filterstatusbar.cpp:76
+#: core/libs/filters/filterstatusbar.cpp:70
 #, kde-format
 msgid ""
 "Background color indicates the global image filter status, encompassing all "
@@ -34534,72 +34534,72 @@ msgid ""
 "Press the Settings button from the right side to open the filters panel."
 msgstr ""
 
-#: core/libs/filters/filterstatusbar.cpp:87
+#: core/libs/filters/filterstatusbar.cpp:81
 #, kde-format
 msgid "Reset all active filters"
 msgstr "Reinițializează toate filtrele active"
 
-#: core/libs/filters/filterstatusbar.cpp:93
+#: core/libs/filters/filterstatusbar.cpp:87
 #, fuzzy, kde-format
 msgid "Open filter settings panel"
 msgstr "Configurări generale"
 
-#: core/libs/filters/filterstatusbar.cpp:124
+#: core/libs/filters/filterstatusbar.cpp:118
 #, kde-format
 msgid "<br/><nobr><i>Text</i></nobr>"
 msgstr "<br/><nobr><i>Text</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:129
+#: core/libs/filters/filterstatusbar.cpp:123
 #, kde-format
 msgid "<br/><nobr><i>Mime Type</i></nobr>"
 msgstr "<br/><nobr><i>Tip MIME</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:134
+#: core/libs/filters/filterstatusbar.cpp:128
 #, kde-format
 msgid "<br/><nobr><i>Geolocation</i></nobr>"
 msgstr "<br/><nobr><i>Geolocalizare</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:139
+#: core/libs/filters/filterstatusbar.cpp:133
 #, kde-format
 msgid "<br/><nobr><i>Rating</i></nobr>"
 msgstr "<br/><nobr><i>Evaluare</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:144
+#: core/libs/filters/filterstatusbar.cpp:138
 #, fuzzy, kde-format
 msgid "<br/><nobr><i>Pick Labels</i></nobr>"
 msgstr "<br/><nobr><i>Etichete</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:149
+#: core/libs/filters/filterstatusbar.cpp:143
 #, fuzzy, kde-format
 msgid "<br/><nobr><i>Color Labels</i></nobr>"
 msgstr "<br/><nobr><i>Etichete</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:154
+#: core/libs/filters/filterstatusbar.cpp:148
 #, kde-format
 msgid "<br/><nobr><i>Tags</i></nobr>"
 msgstr "<br/><nobr><i>Marcaje</i></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:159
+#: core/libs/filters/filterstatusbar.cpp:153
 #, kde-format
 msgid "<nobr><b>Active filters:</b></nobr>"
 msgstr "<nobr><b>Filtrele active:</b></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:163
+#: core/libs/filters/filterstatusbar.cpp:157
 #, kde-format
 msgid "<nobr><b>Active filter:</b></nobr>"
 msgstr "<nobr><b>Filtrul activ:</b></nobr>"
 
-#: core/libs/filters/filterstatusbar.cpp:170
+#: core/libs/filters/filterstatusbar.cpp:164
 #, kde-format
 msgid "No active filter"
 msgstr "Nici un filtru activ"
 
-#: core/libs/filters/filterstatusbar.cpp:179
+#: core/libs/filters/filterstatusbar.cpp:173
 #, kde-format
 msgid "One active filter"
 msgstr "Un filtru activ"
 
-#: core/libs/filters/filterstatusbar.cpp:183
+#: core/libs/filters/filterstatusbar.cpp:177
 #, kde-format
 msgid "1 active filter"
 msgid_plural "%1 active filters"
@@ -34739,7 +34739,7 @@ msgid ""
 "The Gimp, Krita, etc."
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:66
+#: core/libs/filters/ratingfilter.cpp:60
 #, fuzzy, kde-format
 msgid ""
 "Select the rating value used to filter albums' contents. Use the context pop-"
@@ -34749,115 +34749,115 @@ msgstr ""
 "Utilizați meniul contextual pentru a defini condițiile de evaluare ale "
 "filtrului."
 
-#: core/libs/filters/ratingfilter.cpp:182
+#: core/libs/filters/ratingfilter.cpp:177
 #, kde-format
 msgid "Rating greater than or equal to %1."
 msgstr "Evaluare superioară sau egală cu %1."
 
-#: core/libs/filters/ratingfilter.cpp:188
+#: core/libs/filters/ratingfilter.cpp:183
 #, kde-format
 msgid "Rating equal to %1."
 msgstr "Evaluare egală cu %1."
 
-#: core/libs/filters/ratingfilter.cpp:194
+#: core/libs/filters/ratingfilter.cpp:189
 #, kde-format
 msgid "Rating less than or equal to %1."
 msgstr "Evaluare inferioară sau egală cu %1."
 
-#: core/libs/filters/ratingfilter.cpp:244
+#: core/libs/filters/ratingfilter.cpp:229
 #, fuzzy, kde-format
 #| msgid "Images Without Tags"
 msgid "Items Without Rating"
 msgstr "Imagini fără etichete"
 
-#: core/libs/filters/ratingfilter.cpp:248
+#: core/libs/filters/ratingfilter.cpp:233
 #, fuzzy, kde-format
 msgid "Rating Filter Options"
 msgstr "Filtru de evaluare"
 
-#: core/libs/filters/ratingfilter.cpp:253
+#: core/libs/filters/ratingfilter.cpp:238
 #, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr "Condiție de superioritate sau egalitate"
 
-#: core/libs/filters/ratingfilter.cpp:255
+#: core/libs/filters/ratingfilter.cpp:240
 #, kde-format
 msgid "Equals Condition"
 msgstr "Condiție de egalitate"
 
-#: core/libs/filters/ratingfilter.cpp:257
+#: core/libs/filters/ratingfilter.cpp:242
 #, kde-format
 msgid "Less Than or Equals Condition"
 msgstr "Condiție de inferioritate sau egalitate"
 
-#: core/libs/filters/ratingfilter.cpp:260
+#: core/libs/filters/ratingfilter.cpp:245
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:72
+#: core/libs/filters/textfilter.cpp:59
 #, kde-format
 msgid "Text quick filter (search)"
 msgstr "Filtru de text rapid (căutare)"
 
-#: core/libs/filters/textfilter.cpp:73
+#: core/libs/filters/textfilter.cpp:60
 #, kde-format
 msgid ""
 "Enter search patterns to quickly filter this view on item names, captions "
 "(comments), and tags"
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:77
+#: core/libs/filters/textfilter.cpp:64
 #, fuzzy, kde-format
 msgid "Text Search Fields"
 msgstr "Căutările mele"
 
-#: core/libs/filters/textfilter.cpp:80
+#: core/libs/filters/textfilter.cpp:67
 #, kde-format
 msgid "Defines which fields to search for the text in."
 msgstr ""
 
-#: core/libs/filters/textfilter.cpp:83
+#: core/libs/filters/textfilter.cpp:70
 #, fuzzy, kde-format
 msgid "Item Name"
 msgstr "Denumirea noii imagini"
 
-#: core/libs/filters/textfilter.cpp:85
+#: core/libs/filters/textfilter.cpp:72
 #, fuzzy, kde-format
 msgid "Item Title"
 msgstr "Fișiere imagine"
 
-#: core/libs/filters/textfilter.cpp:87
+#: core/libs/filters/textfilter.cpp:74
 #, fuzzy, kde-format
 msgid "Item Comment"
 msgstr "Comentarii importate"
 
-#: core/libs/filters/textfilter.cpp:89
+#: core/libs/filters/textfilter.cpp:76
 #, fuzzy, kde-format
 msgid "Tag Name"
 msgstr "După nume"
 
-#: core/libs/filters/textfilter.cpp:91
+#: core/libs/filters/textfilter.cpp:78
 #, fuzzy, kde-format
 msgid "Album Name"
 msgstr "&Data albumului:"
 
-#: core/libs/filters/textfilter.cpp:93
+#: core/libs/filters/textfilter.cpp:80
 #, fuzzy, kde-format
 msgid "Item Aspect Ratio"
 msgstr "Raportul aspectului:"
 
-#: core/libs/filters/textfilter.cpp:95
+#: core/libs/filters/textfilter.cpp:82
 #, fuzzy, kde-format
 msgid "Item Pixel Size"
 msgstr "Mărimea fișierului imagine"
 
-#: core/libs/filters/textfilter.cpp:98
+#: core/libs/filters/textfilter.cpp:85
 #, fuzzy, kde-format
 msgid "Clear All"
 msgstr "Curăță tot"
 
-#: core/libs/filters/textfilter.cpp:100
+#: core/libs/filters/textfilter.cpp:87
 #, kde-format
 msgid "Select All"
 msgstr "Selectează tot"
@@ -36430,13 +36430,13 @@ msgstr[0] " (%1)"
 msgstr[1] " (%1)"
 msgstr[2] " (%1)"
 
-#: core/libs/notificationmanager/dnotificationwidget_p.cpp:89
+#: core/libs/notificationmanager/dnotificationwidget_p.cpp:80
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgid "&Close"
 msgstr "În&chide"
 
-#: core/libs/notificationmanager/dnotificationwidget_p.cpp:90
+#: core/libs/notificationmanager/dnotificationwidget_p.cpp:81
 #, fuzzy, kde-format
 msgid "Close message"
 msgstr "Închide vizualizarea"
