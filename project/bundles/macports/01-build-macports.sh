@@ -252,7 +252,10 @@ echo -e "MariaDB Variant=$MP_MARIADB_VARIANT\n"
 
 # To fix broken ports with m4 tool detection.
 port install m4
-cp $INSTALL_PREFIX/libexec/gnubin/m4 $INSTALL_PREFIX/bin/
+
+if [ ! -f $INSTALL_PREFIX/bin/m4 ] ; then
+    cp -f $INSTALL_PREFIX/libexec/gnubin/m4 $INSTALL_PREFIX/bin/
+fi
 
 port install \
              cctools +xcode \
@@ -286,7 +289,7 @@ port install \
              qt5-qttools \
              qt5-qttranslations \
              qt5-qtimageformats \
-             qt5-qtmultimedia
+             qt5-qtmultimedia \
              qt5-qtnetworkauth \
              qt5-sqlite-plugin \
              qt5-mysql-plugin $MP_MARIADB_VARIANT
