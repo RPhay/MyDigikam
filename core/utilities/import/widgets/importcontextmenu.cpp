@@ -17,6 +17,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QAction>
 #include <QIcon>
 #include <QMimeType>
@@ -62,6 +63,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "importui.h"
 #include "picklabelwidget.h"
 #include "colorlabelwidget.h"
