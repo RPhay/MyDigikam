@@ -48,7 +48,7 @@ private:
 private:
 
     QImage            m_qimage;
-    ThumbnailCreator* m_creator;
+    ThumbnailCreator* m_creator = nullptr;
 
 private:
 

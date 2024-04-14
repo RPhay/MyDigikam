@@ -269,6 +269,7 @@ bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
         if (emitSignal)
         {
             load(description);
+
             Q_EMIT signalThumbnailLoaded(description, QPixmap(*pix));
         }
 
@@ -504,6 +505,7 @@ void ThumbnailLoadThread::thumbnailLoaded(const LoadingDescription& loadingDescr
     if (!d->notifiedForResults)
     {
         d->notifiedForResults = true;
+
         Q_EMIT thumbnailsAvailable();
     }
 }

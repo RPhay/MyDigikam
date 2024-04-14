@@ -24,11 +24,6 @@ namespace Digikam
 static const QString s_configUseLargeThumbsEntry(QLatin1String("Use Large Thumbs"));
 static bool          s_useLargeThumbs = false;
 
-ThumbnailSize::ThumbnailSize()
-{
-    m_Size = Medium;
-}
-
 ThumbnailSize::ThumbnailSize(int size)
 {
     m_Size = size;
@@ -37,10 +32,6 @@ ThumbnailSize::ThumbnailSize(int size)
 ThumbnailSize::ThumbnailSize(const ThumbnailSize& thumbsize)
 {
     m_Size = thumbsize.m_Size;
-}
-
-ThumbnailSize::~ThumbnailSize()
-{
 }
 
 ThumbnailSize& ThumbnailSize::operator=(const ThumbnailSize& thumbsize)

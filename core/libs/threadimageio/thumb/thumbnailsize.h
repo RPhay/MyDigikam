@@ -55,11 +55,11 @@ public:
 
 public:
 
-    ThumbnailSize();
+    ThumbnailSize()  = default;
     explicit ThumbnailSize(int size);
     ThumbnailSize(const ThumbnailSize& thumbsize);
 
-    ~ThumbnailSize();
+    ~ThumbnailSize() = default;
 
     ThumbnailSize& operator=(const ThumbnailSize& thumbsize);
     bool operator==(const ThumbnailSize& thumbsize) const;
@@ -77,7 +77,7 @@ public:
 
 private:
 
-    int  m_Size;
+    int  m_Size = Medium;
 };
 
 } // namespace Digikam

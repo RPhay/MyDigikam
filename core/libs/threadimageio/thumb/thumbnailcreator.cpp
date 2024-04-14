@@ -19,24 +19,6 @@
 namespace Digikam
 {
 
-ThumbnailIdentifier::ThumbnailIdentifier()
-    : id(0)
-{
-}
-
-ThumbnailIdentifier::ThumbnailIdentifier(const QString& filePath)
-    : filePath(filePath),
-      id      (0)
-{
-}
-
-ThumbnailInfo::ThumbnailInfo()
-    : fileSize       (0),
-      isAccessible   (false),
-      orientationHint(DMetadata::ORIENTATION_UNSPECIFIED)
-{
-}
-
 ThumbnailCreator::ThumbnailCreator(StorageMethod method)
     : d(new Private)
 {
