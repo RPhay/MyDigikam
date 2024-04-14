@@ -660,11 +660,21 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
             // --------------
 
-#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 18, 0)
+#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(60, 29, 100)
+
+            const AVPacketSideData* const sd = av_packet_side_data_get(codec->coded_side_data,
+                                                                       codec->nb_coded_side_data,
+                                                                       AV_PKT_DATA_DISPLAYMATRIX);
+            quint8* const sideData = sd ? sd->data : nullptr;
+
+#elif LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 18, 0)
 
             quint8* const sideData = reinterpret_cast<quint8*>(av_stream_get_side_data(stream,
                                                                                        AV_PKT_DATA_DISPLAYMATRIX,
                                                                                        nullptr));
+#endif
+
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(55, 18, 0)
 
             if (sideData)
             {
