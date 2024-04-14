@@ -33,7 +33,6 @@
 extern "C"
 {
 #include <sys/types.h>
-#include <setjmp.h>
 #include <jpeglib.h>
 }
 
@@ -92,30 +91,14 @@ namespace JPEGUtils
 
 // To manage Errors/Warnings handling provide by libjpeg
 
-struct jpegutils_jpeg_error_mgr : public jpeg_error_mgr
-{
-    jmp_buf setjmp_buffer;
-};
-
 static void jpegutils_jpeg_error_exit(j_common_ptr cinfo)
 {
-    jpegutils_jpeg_error_mgr* myerr = static_cast<jpegutils_jpeg_error_mgr*>(cinfo->err);
-
     char buffer[JMSG_LENGTH_MAX];
     (*cinfo->err->format_message)(cinfo, buffer);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Jpegutils error, aborting operation:" << buffer;
 
-#ifdef __MINGW32__  // krazy:exclude=cpp
-
-    __builtin_longjmp(myerr->setjmp_buffer, 1);
-
-#else
-
-    longjmp(myerr->setjmp_buffer, 1);
-
-#endif
-
+    throw std::runtime_error(buffer);
 }
 
 static void jpegutils_jpeg_emit_message(j_common_ptr cinfo, int msg_level)
@@ -163,9 +146,8 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
         return false;
     }
 
-    struct jpeg_decompress_struct   cinfo;
-
-    struct jpegutils_jpeg_error_mgr jerr;
+    struct jpeg_decompress_struct cinfo;
+    struct jpeg_error_mgr         jerr;
 
     // JPEG error handling - thanks to Marcus Meissner
 
@@ -174,184 +156,179 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     cinfo.err->emit_message   = jpegutils_jpeg_emit_message;
     cinfo.err->output_message = jpegutils_jpeg_output_message;
 
-#ifdef __MINGW32__  // krazy:exclude=cpp
-
-    if (__builtin_setjmp(jerr.setjmp_buffer))
-
-#else
-
-    if (setjmp(jerr.setjmp_buffer))
-
-#endif
-
+    try
     {
-        jpeg_destroy_decompress(&cinfo);
-        fclose(inFile);
-        return false;
-    }
+        jpeg_create_decompress(&cinfo);
+        jpeg_stdio_src(&cinfo, inFile);
+        jpeg_read_header(&cinfo, true);
 
-    jpeg_create_decompress(&cinfo);
-    jpeg_stdio_src(&cinfo, inFile);
-    jpeg_read_header(&cinfo, true);
+        int imgSize = qMax(cinfo.image_width, cinfo.image_height);
+        int scale   = 1;
 
-    int imgSize = qMax(cinfo.image_width, cinfo.image_height);
-    int scale   = 1;
+        // libjpeg supports 1/1, 1/2, 1/4, 1/8
 
-    // libjpeg supports 1/1, 1/2, 1/4, 1/8
+        while (maximumSize*scale*2 <= imgSize)
+        {
+            scale *= 2;
+        }
 
-    while (maximumSize*scale*2 <= imgSize)
-    {
-        scale *= 2;
-    }
-
-    if (scale > 8)
-    {
-        scale = 8;
-    }
+        if (scale > 8)
+        {
+            scale = 8;
+        }
 /*
-    cinfo.scale_num = 1;
-    cinfo.scale_denom = scale;
+        cinfo.scale_num = 1;
+        cinfo.scale_denom = scale;
 */
-    cinfo.scale_denom *= scale;
+        cinfo.scale_denom *= scale;
 
-    switch (cinfo.jpeg_color_space)
-    {
-        case JCS_UNKNOWN:
+        switch (cinfo.jpeg_color_space)
         {
-            break;
+            case JCS_UNKNOWN:
+            {
+                break;
+            }
+
+            case JCS_GRAYSCALE:
+            case JCS_RGB:
+            case JCS_YCbCr:
+            {
+                cinfo.out_color_space = JCS_RGB;
+                break;
+            }
+
+            case JCS_CMYK:
+            case JCS_YCCK:
+            {
+                cinfo.out_color_space = JCS_CMYK;
+                break;
+            }
+
+            default:
+            {
+                break;
+            }
         }
 
-        case JCS_GRAYSCALE:
-        case JCS_RGB:
-        case JCS_YCbCr:
-        {
-            cinfo.out_color_space = JCS_RGB;
-            break;
-        }
+        jpeg_start_decompress(&cinfo);
 
-        case JCS_CMYK:
-        case JCS_YCCK:
-        {
-            cinfo.out_color_space = JCS_CMYK;
-            break;
-        }
+        QImage img;
 
-        default:
-        {
-            break;
-        }
-    }
+        // We only take RGB with 1 or 3 components, or CMYK with 4 components
 
-    jpeg_start_decompress(&cinfo);
-
-    QImage img;
-
-    // We only take RGB with 1 or 3 components, or CMYK with 4 components
-
-    if (!(
-           (
-            (cinfo.out_color_space    == JCS_RGB)  &&
-            ((cinfo.output_components == 3) || (cinfo.output_components == 1))
-           ) ||
-           (
-            (cinfo.out_color_space    == JCS_CMYK) &&
-            (cinfo.output_components  == 4)
+        if (!(
+               (
+                 (cinfo.out_color_space    == JCS_RGB)  &&
+                 ((cinfo.output_components == 3) || (cinfo.output_components == 1))
+               ) ||
+               (
+                 (cinfo.out_color_space    == JCS_CMYK) &&
+                 (cinfo.output_components  == 4)
+               )
+             )
            )
-       ))
+        {
+            jpeg_destroy_decompress(&cinfo);
+            fclose(inFile);
+
+            return false;
+        }
+
+        switch (cinfo.output_components)
+        {
+            case 3:
+            case 4:
+            {
+                img = QImage(cinfo.output_width, cinfo.output_height, QImage::Format_RGB32);
+                break;
+            }
+
+            case 1: // B&W image
+            {
+                img = QImage(cinfo.output_width, cinfo.output_height, QImage::Format_Indexed8);
+                img.setColorCount(256);
+
+                for (int i = 0 ; i < 256 ; ++i)
+                {
+                    img.setColor(i, qRgb(i, i, i));
+                }
+
+                break;
+            }
+        }
+
+        uchar* const data = img.bits();
+        int bpl           = img.bytesPerLine();
+
+        while (cinfo.output_scanline < cinfo.output_height)
+        {
+            uchar* d = data + cinfo.output_scanline * bpl;
+            jpeg_read_scanlines(&cinfo, &d, 1);
+        }
+
+        jpeg_finish_decompress(&cinfo);
+
+        if (cinfo.output_components == 3)
+        {
+            // Expand 24->32 bpp.
+
+            for (uint j = 0 ; j < cinfo.output_height ; ++j)
+            {
+                uchar* in       = img.scanLine(j) + cinfo.output_width * 3;
+                QRgb* const out = reinterpret_cast<QRgb*>(img.scanLine(j));
+
+                for (uint i = cinfo.output_width ; --i ; )
+                {
+                    in    -= 3;
+                    out[i] = qRgb(in[0], in[1], in[2]);
+                }
+            }
+        }
+        else if (cinfo.out_color_space == JCS_CMYK)
+        {
+            for (uint j = 0 ; j < cinfo.output_height ; ++j)
+            {
+                uchar* in       = img.scanLine(j) + cinfo.output_width * 4;
+                QRgb* const out = reinterpret_cast<QRgb*>(img.scanLine(j));
+
+                for (uint i = cinfo.output_width ; --i ; )
+                {
+                    in    -= 4;
+                    int k  = in[3];
+                    out[i] = qRgb(k * in[0] / 255, k * in[1] / 255, k * in[2] / 255);
+                }
+            }
+        }
+
+        if      (cinfo.density_unit == 1)
+        {
+            img.setDotsPerMeterX(int(100. * cinfo.X_density / 2.54));
+            img.setDotsPerMeterY(int(100. * cinfo.Y_density / 2.54));
+        }
+        else if (cinfo.density_unit == 2)
+        {
+            img.setDotsPerMeterX(int(100. * cinfo.X_density));
+            img.setDotsPerMeterY(int(100. * cinfo.Y_density));
+        }
+/*
+        int newMax = qMax(cinfo.output_width, cinfo.output_height);
+        int newx   = maximumSize*cinfo.output_width  / newMax;
+        int newy   = maximumSize*cinfo.output_height / newMax;
+*/
+        jpeg_destroy_decompress(&cinfo);
+        fclose(inFile);
+
+        image = img;
+
+        return true;
+    }
+    catch (std::runtime_error &)
     {
         jpeg_destroy_decompress(&cinfo);
         fclose(inFile);
 
         return false;
     }
-
-    switch (cinfo.output_components)
-    {
-        case 3:
-        case 4:
-        {
-            img = QImage(cinfo.output_width, cinfo.output_height, QImage::Format_RGB32);
-            break;
-        }
-
-        case 1: // B&W image
-        {
-            img = QImage(cinfo.output_width, cinfo.output_height, QImage::Format_Indexed8);
-            img.setColorCount(256);
-
-            for (int i = 0 ; i < 256 ; ++i)
-            {
-                img.setColor(i, qRgb(i, i, i));
-            }
-
-            break;
-        }
-    }
-
-    uchar* const data = img.bits();
-    int bpl           = img.bytesPerLine();
-
-    while (cinfo.output_scanline < cinfo.output_height)
-    {
-        uchar* d = data + cinfo.output_scanline * bpl;
-        jpeg_read_scanlines(&cinfo, &d, 1);
-    }
-
-    jpeg_finish_decompress(&cinfo);
-
-    if (cinfo.output_components == 3)
-    {
-        // Expand 24->32 bpp.
-
-        for (uint j = 0 ; j < cinfo.output_height ; ++j)
-        {
-            uchar* in       = img.scanLine(j) + cinfo.output_width * 3;
-            QRgb* const out = reinterpret_cast<QRgb*>(img.scanLine(j));
-
-            for (uint i = cinfo.output_width ; --i ; )
-            {
-                in    -= 3;
-                out[i] = qRgb(in[0], in[1], in[2]);
-            }
-        }
-    }
-    else if (cinfo.out_color_space == JCS_CMYK)
-    {
-        for (uint j = 0 ; j < cinfo.output_height ; ++j)
-        {
-            uchar* in       = img.scanLine(j) + cinfo.output_width * 4;
-            QRgb* const out = reinterpret_cast<QRgb*>(img.scanLine(j));
-
-            for (uint i = cinfo.output_width ; --i ; )
-            {
-                in    -= 4;
-                int k  = in[3];
-                out[i] = qRgb(k * in[0] / 255, k * in[1] / 255, k * in[2] / 255);
-            }
-        }
-    }
-
-    if      (cinfo.density_unit == 1)
-    {
-        img.setDotsPerMeterX(int(100. * cinfo.X_density / 2.54));
-        img.setDotsPerMeterY(int(100. * cinfo.Y_density / 2.54));
-    }
-    else if (cinfo.density_unit == 2)
-    {
-        img.setDotsPerMeterX(int(100. * cinfo.X_density));
-        img.setDotsPerMeterY(int(100. * cinfo.Y_density));
-    }
-/*
-    int newMax = qMax(cinfo.output_width, cinfo.output_height);
-    int newx   = maximumSize*cinfo.output_width  / newMax;
-    int newy   = maximumSize*cinfo.output_height / newMax;
-*/
-    jpeg_destroy_decompress(&cinfo);
-    fclose(inFile);
-
-    image = img;
-
-    return true;
 }
 
 JpegRotator::JpegRotator(const QString& file)
@@ -645,51 +622,6 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
 
 bool JpegRotator::performJpegTransform(TransformAction action, const QString& src, const QString& dest)
 {
-    JCOPY_OPTION copyoption         = JCOPYOPT_ALL;
-    jpeg_transform_info transformoption;
-
-    transformoption.force_grayscale = false;
-    transformoption.trim            = false;
-
-#if (JPEG_LIB_VERSION >= 80)
-
-    // we need to initialize a few more parameters, see bug 274947
-
-    transformoption.perfect         = true;   // See bug 320107 : we need perfect transform here.
-    transformoption.crop            = false;
-
-#endif // (JPEG_LIB_VERSION >= 80)
-
-    // NOTE : Cast is fine here. See metaengine_rotation.h for details.
-
-    transformoption.transform       = (JXFORM_CODE)action;
-
-    if (transformoption.transform == JXFORM_NONE)
-    {
-        return true;
-    }
-
-    // A transformation must be done.
-
-    struct jpeg_decompress_struct srcinfo;
-    struct jpeg_compress_struct   dstinfo;
-    struct jpegutils_jpeg_error_mgr jsrcerr, jdsterr;
-    jvirt_barray_ptr* src_coef_arrays = nullptr;
-    jvirt_barray_ptr* dst_coef_arrays = nullptr;
-
-    // Initialize the JPEG decompression object with default error handling
-
-    srcinfo.err                       = jpeg_std_error(&jsrcerr);
-    srcinfo.err->error_exit           = jpegutils_jpeg_error_exit;
-    srcinfo.err->emit_message         = jpegutils_jpeg_emit_message;
-    srcinfo.err->output_message       = jpegutils_jpeg_output_message;
-
-    // Initialize the JPEG compression object with default error handling
-
-    dstinfo.err                       = jpeg_std_error(&jdsterr);
-    dstinfo.err->error_exit           = jpegutils_jpeg_error_exit;
-    dstinfo.err->emit_message         = jpegutils_jpeg_emit_message;
-    dstinfo.err->output_message       = jpegutils_jpeg_output_message;
 
 #ifdef Q_OS_WIN
 
@@ -726,49 +658,136 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
         return false;
     }
 
-    if (setjmp(jsrcerr.setjmp_buffer) || setjmp(jdsterr.setjmp_buffer))
-    {
-        jpeg_destroy_decompress(&srcinfo);
-        jpeg_destroy_compress(&dstinfo);
-        fclose(input_file);
-        fclose(output_file);
+    JCOPY_OPTION copyoption         = JCOPYOPT_ALL;
+    jpeg_transform_info transformoption;
 
-        return false;
-    }
-
-    jpeg_create_decompress(&srcinfo);
-    jpeg_create_compress(&dstinfo);
-
-    jpeg_stdio_src(&srcinfo, input_file);
-    jcopy_markers_setup(&srcinfo, copyoption);
-
-    (void) jpeg_read_header(&srcinfo, true);
-
-    // Read original size initially
-
-    if (!m_originalSize.isValid())
-    {
-        m_originalSize = QSize(srcinfo.image_width, srcinfo.image_height);
-    }
+    transformoption.force_grayscale = false;
+    transformoption.trim            = false;
 
 #if (JPEG_LIB_VERSION >= 80)
 
-    if (!jtransform_request_workspace(&srcinfo, &transformoption))
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: Transformation is not perfect";
-        jpeg_destroy_decompress(&srcinfo);
-        jpeg_destroy_compress(&dstinfo);
-        fclose(input_file);
-        fclose(output_file);
+    // we need to initialize a few more parameters, see bug 274947
 
-        return false;
+    transformoption.perfect         = true;   // See bug 320107 : we need perfect transform here.
+    transformoption.crop            = false;
+
+#endif // (JPEG_LIB_VERSION >= 80)
+
+    // NOTE : Cast is fine here. See metaengine_rotation.h for details.
+
+    transformoption.transform       = (JXFORM_CODE)action;
+
+    if (transformoption.transform == JXFORM_NONE)
+    {
+        return true;
     }
+
+    // A transformation must be done.
+
+    struct jpeg_decompress_struct srcinfo;
+    struct jpeg_compress_struct   dstinfo;
+    struct jpeg_error_mgr         jsrcerr, jdsterr;
+    jvirt_barray_ptr* src_coef_arrays = nullptr;
+    jvirt_barray_ptr* dst_coef_arrays = nullptr;
+
+    // Initialize the JPEG decompression object with default error handling
+
+    srcinfo.err                       = jpeg_std_error(&jsrcerr);
+    srcinfo.err->error_exit           = jpegutils_jpeg_error_exit;
+    srcinfo.err->emit_message         = jpegutils_jpeg_emit_message;
+    srcinfo.err->output_message       = jpegutils_jpeg_output_message;
+
+    // Initialize the JPEG compression object with default error handling
+
+    dstinfo.err                       = jpeg_std_error(&jdsterr);
+    dstinfo.err->error_exit           = jpegutils_jpeg_error_exit;
+    dstinfo.err->emit_message         = jpegutils_jpeg_emit_message;
+    dstinfo.err->output_message       = jpegutils_jpeg_output_message;
+
+    try
+    {
+        jpeg_create_decompress(&srcinfo);
+        jpeg_create_compress(&dstinfo);
+
+        jpeg_stdio_src(&srcinfo, input_file);
+        jcopy_markers_setup(&srcinfo, copyoption);
+
+        (void) jpeg_read_header(&srcinfo, true);
+
+        // Read original size initially
+
+        if (!m_originalSize.isValid())
+        {
+            m_originalSize = QSize(srcinfo.image_width, srcinfo.image_height);
+        }
+
+#if (JPEG_LIB_VERSION >= 80)
+
+        if (!jtransform_request_workspace(&srcinfo, &transformoption))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: Transformation is not perfect";
+            jpeg_destroy_decompress(&srcinfo);
+            jpeg_destroy_compress(&dstinfo);
+            fclose(input_file);
+            fclose(output_file);
+
+            return false;
+        }
 
 #else
 
-    if (((srcinfo.image_width % 8) != 0) || ((srcinfo.image_height % 8) != 0))
+        if (((srcinfo.image_width % 8) != 0) || ((srcinfo.image_height % 8) != 0))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: Transformation is not perfect";
+            jpeg_destroy_decompress(&srcinfo);
+            jpeg_destroy_compress(&dstinfo);
+            fclose(input_file);
+            fclose(output_file);
+
+            return false;
+        }
+
+        jtransform_request_workspace(&srcinfo, &transformoption);
+
+#endif
+
+        // Read source file as DCT coefficients
+
+        src_coef_arrays         = jpeg_read_coefficients(&srcinfo);
+
+        // Initialize destination compression parameters from source values
+
+        jpeg_copy_critical_parameters(&srcinfo, &dstinfo);
+        dst_coef_arrays         = jtransform_adjust_parameters(&srcinfo, &dstinfo, src_coef_arrays, &transformoption);
+
+        // Specify data destination for compression
+
+        jpeg_stdio_dest(&dstinfo, output_file);
+
+        // Start compressor (note no image data is actually written here)
+
+        dstinfo.optimize_coding = true;
+        jpeg_write_coefficients(&dstinfo, dst_coef_arrays);
+
+        // Copy to the output file any extra markers that we want to preserve
+
+        jcopy_markers_execute(&srcinfo, &dstinfo, copyoption);
+        jtransform_execute_transformation(&srcinfo, &dstinfo, src_coef_arrays, &transformoption);
+
+        // Finish compression and release memory
+
+        jpeg_finish_compress(&dstinfo);
+        jpeg_destroy_compress(&dstinfo);
+        (void) jpeg_finish_decompress(&srcinfo);
+        jpeg_destroy_decompress(&srcinfo);
+
+        fclose(input_file);
+        fclose(output_file);
+
+        return true;
+    }
+    catch (std::runtime_error &)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: Transformation is not perfect";
         jpeg_destroy_decompress(&srcinfo);
         jpeg_destroy_compress(&dstinfo);
         fclose(input_file);
@@ -776,45 +795,6 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
         return false;
     }
-
-    jtransform_request_workspace(&srcinfo, &transformoption);
-
-#endif
-
-    // Read source file as DCT coefficients
-
-    src_coef_arrays         = jpeg_read_coefficients(&srcinfo);
-
-    // Initialize destination compression parameters from source values
-
-    jpeg_copy_critical_parameters(&srcinfo, &dstinfo);
-    dst_coef_arrays         = jtransform_adjust_parameters(&srcinfo, &dstinfo, src_coef_arrays, &transformoption);
-
-    // Specify data destination for compression
-
-    jpeg_stdio_dest(&dstinfo, output_file);
-
-    // Start compressor (note no image data is actually written here)
-
-    dstinfo.optimize_coding = true;
-    jpeg_write_coefficients(&dstinfo, dst_coef_arrays);
-
-    // Copy to the output file any extra markers that we want to preserve
-
-    jcopy_markers_execute(&srcinfo, &dstinfo, copyoption);
-    jtransform_execute_transformation(&srcinfo, &dstinfo, src_coef_arrays, &transformoption);
-
-    // Finish compression and release memory
-
-    jpeg_finish_compress(&dstinfo);
-    jpeg_destroy_compress(&dstinfo);
-    (void) jpeg_finish_decompress(&srcinfo);
-    jpeg_destroy_decompress(&srcinfo);
-
-    fclose(input_file);
-    fclose(output_file);
-
-    return true;
 }
 
 bool jpegConvert(const QString& src, const QString& dest, const QString& documentName, const QString& format)
@@ -974,8 +954,8 @@ int getJpegQuality(const QString& file)
         return quality;
     }
 
-    struct jpeg_decompress_struct   jpeg_info;
-    struct jpegutils_jpeg_error_mgr jerr;
+    struct jpeg_decompress_struct jpeg_info;
+    struct jpeg_error_mgr         jerr;
 
     // Initialize the JPEG decompression object with default error handling
 
@@ -984,146 +964,149 @@ int getJpegQuality(const QString& file)
     jpeg_info.err->emit_message   = jpegutils_jpeg_emit_message;
     jpeg_info.err->output_message = jpegutils_jpeg_output_message;
 
-    if (setjmp(jerr.setjmp_buffer))
+    try
+    {
+        jpeg_create_decompress(&jpeg_info);
+        jpeg_stdio_src(&jpeg_info, inFile);
+        jpeg_read_header(&jpeg_info, true);
+        jpeg_start_decompress(&jpeg_info);
+
+        // https://subversion.imagemagick.org/subversion/ImageMagick/trunk/coders/jpeg.c
+        // Determine the JPEG compression quality from the quantization tables.
+
+        long value;
+        long i, j;
+        long sum = 0;
+
+        for (i = 0 ; i < NUM_QUANT_TBLS ; ++i)
+        {
+            if (jpeg_info.quant_tbl_ptrs[i] != nullptr)
+            {
+                for (j = 0 ; j < DCTSIZE2 ; ++j)
+                {
+                    sum += jpeg_info.quant_tbl_ptrs[i]->quantval[j];
+                }
+            }
+        }
+
+        if ((jpeg_info.quant_tbl_ptrs[0] != nullptr) &&
+            (jpeg_info.quant_tbl_ptrs[1] != nullptr))
+        {
+            long hash[101] =
+                {
+                    1020, 1015,  932,  848,  780,  735,  702,  679,  660,  645,
+                    632,  623,  613,  607,  600,  594,  589,  585,  581,  571,
+                    555,  542,  529,  514,  494,  474,  457,  439,  424,  410,
+                    397,  386,  373,  364,  351,  341,  334,  324,  317,  309,
+                    299,  294,  287,  279,  274,  267,  262,  257,  251,  247,
+                    243,  237,  232,  227,  222,  217,  213,  207,  202,  198,
+                    192,  188,  183,  177,  173,  168,  163,  157,  153,  148,
+                    143,  139,  132,  128,  125,  119,  115,  108,  104,   99,
+                    94,   90,   84,   79,   74,   70,   64,   59,   55,   49,
+                    45,   40,   34,   30,   25,   20,   15,   11,    6,    4,
+                        0
+                },
+                sums[101] =
+                {
+                    32640, 32635, 32266, 31495, 30665, 29804, 29146, 28599, 28104,
+                    27670, 27225, 26725, 26210, 25716, 25240, 24789, 24373, 23946,
+                    23572, 22846, 21801, 20842, 19949, 19121, 18386, 17651, 16998,
+                    16349, 15800, 15247, 14783, 14321, 13859, 13535, 13081, 12702,
+                    12423, 12056, 11779, 11513, 11135, 10955, 10676, 10392, 10208,
+                    9928,  9747,  9564,  9369,  9193,  9017,  8822,  8639,  8458,
+                    8270,  8084,  7896,  7710,  7527,  7347,  7156,  6977,  6788,
+                    6607,  6422,  6236,  6054,  5867,  5684,  5495,  5305,  5128,
+                    4945,  4751,  4638,  4442,  4248,  4065,  3888,  3698,  3509,
+                    3326,  3139,  2957,  2775,  2586,  2405,  2216,  2037,  1846,
+                    1666,  1483,  1297,  1109,   927,   735,   554,   375,   201,
+                    128,     0
+                };
+
+            value = (long)(jpeg_info.quant_tbl_ptrs[0]->quantval[2]  +
+                        jpeg_info.quant_tbl_ptrs[0]->quantval[53] +
+                        jpeg_info.quant_tbl_ptrs[1]->quantval[0]  +
+                        jpeg_info.quant_tbl_ptrs[1]->quantval[DCTSIZE2 - 1]);
+
+            for (i = 0 ; i < 100 ; ++i)
+            {
+                if ((value < hash[i]) && (sum < sums[i]))
+                {
+                    continue;
+                }
+
+                if (((value <= hash[i]) && (sum <= sums[i])) || (i >= 50))
+                {
+                    quality = i + 1;
+                }
+
+                break;
+            }
+        }
+        else if (jpeg_info.quant_tbl_ptrs[0] != nullptr)
+        {
+            long hash[101] =
+                {
+                    510,  505,  422,  380,  355,  338,  326,  318,  311,  305,
+                    300,  297,  293,  291,  288,  286,  284,  283,  281,  280,
+                    279,  278,  277,  273,  262,  251,  243,  233,  225,  218,
+                    211,  205,  198,  193,  186,  181,  177,  172,  168,  164,
+                    158,  156,  152,  148,  145,  142,  139,  136,  133,  131,
+                    129,  126,  123,  120,  118,  115,  113,  110,  107,  105,
+                    102,  100,   97,   94,   92,   89,   87,   83,   81,   79,
+                    76,   74,   70,   68,   66,   63,   61,   57,   55,   52,
+                    50,   48,   44,   42,   39,   37,   34,   31,   29,   26,
+                    24,   21,   18,   16,   13,   11,    8,    6,    3,    2,
+                    0
+                },
+                sums[101] =
+                {
+                    16320, 16315, 15946, 15277, 14655, 14073, 13623, 13230, 12859,
+                    12560, 12240, 11861, 11456, 11081, 10714, 10360, 10027,  9679,
+                    9368,  9056,  8680,  8331,  7995,  7668,  7376,  7084,  6823,
+                    6562,  6345,  6125,  5939,  5756,  5571,  5421,  5240,  5086,
+                    4976,  4829,  4719,  4616,  4463,  4393,  4280,  4166,  4092,
+                    3980,  3909,  3835,  3755,  3688,  3621,  3541,  3467,  3396,
+                    3323,  3247,  3170,  3096,  3021,  2952,  2874,  2804,  2727,
+                    2657,  2583,  2509,  2437,  2362,  2290,  2211,  2136,  2068,
+                    1996,  1915,  1858,  1773,  1692,  1620,  1552,  1477,  1398,
+                    1326,  1251,  1179,  1109,  1031,   961,   884,   814,   736,
+                    667,   592,   518,   441,   369,   292,   221,   151,    86,
+                        64,     0
+                };
+
+            value = (long)(jpeg_info.quant_tbl_ptrs[0]->quantval[2] +
+                        jpeg_info.quant_tbl_ptrs[0]->quantval[53]);
+
+            for (i = 0 ; i < 100 ; ++i)
+            {
+                if ((value < hash[i]) && (sum < sums[i]))
+                {
+                    continue;
+                }
+
+                if (((value <= hash[i]) && (sum <= sums[i])) || (i >= 50))
+                {
+                    quality = i + 1;
+                }
+
+                break;
+            }
+        }
+
+        jpeg_destroy_decompress(&jpeg_info);
+        fclose(inFile);
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "JPEG Quality: " << quality << " File: " << file;
+
+        return quality;
+    }
+    catch (std::runtime_error &)
     {
         jpeg_destroy_decompress(&jpeg_info);
         fclose(inFile);
+
         return quality;
     }
-
-    jpeg_create_decompress(&jpeg_info);
-    jpeg_stdio_src(&jpeg_info, inFile);
-    jpeg_read_header(&jpeg_info, true);
-    jpeg_start_decompress(&jpeg_info);
-
-    // https://subversion.imagemagick.org/subversion/ImageMagick/trunk/coders/jpeg.c
-    // Determine the JPEG compression quality from the quantization tables.
-
-    long value;
-    long i, j;
-    long sum = 0;
-
-    for (i = 0 ; i < NUM_QUANT_TBLS ; ++i)
-    {
-        if (jpeg_info.quant_tbl_ptrs[i] != nullptr)
-        {
-            for (j = 0 ; j < DCTSIZE2 ; ++j)
-            {
-                sum += jpeg_info.quant_tbl_ptrs[i]->quantval[j];
-            }
-        }
-     }
-
-    if ((jpeg_info.quant_tbl_ptrs[0] != nullptr) &&
-        (jpeg_info.quant_tbl_ptrs[1] != nullptr))
-    {
-        long hash[101] =
-             {
-                 1020, 1015,  932,  848,  780,  735,  702,  679,  660,  645,
-                  632,  623,  613,  607,  600,  594,  589,  585,  581,  571,
-                  555,  542,  529,  514,  494,  474,  457,  439,  424,  410,
-                  397,  386,  373,  364,  351,  341,  334,  324,  317,  309,
-                  299,  294,  287,  279,  274,  267,  262,  257,  251,  247,
-                  243,  237,  232,  227,  222,  217,  213,  207,  202,  198,
-                  192,  188,  183,  177,  173,  168,  163,  157,  153,  148,
-                  143,  139,  132,  128,  125,  119,  115,  108,  104,   99,
-                   94,   90,   84,   79,   74,   70,   64,   59,   55,   49,
-                   45,   40,   34,   30,   25,   20,   15,   11,    6,    4,
-                    0
-             },
-             sums[101] =
-             {
-                 32640, 32635, 32266, 31495, 30665, 29804, 29146, 28599, 28104,
-                 27670, 27225, 26725, 26210, 25716, 25240, 24789, 24373, 23946,
-                 23572, 22846, 21801, 20842, 19949, 19121, 18386, 17651, 16998,
-                 16349, 15800, 15247, 14783, 14321, 13859, 13535, 13081, 12702,
-                 12423, 12056, 11779, 11513, 11135, 10955, 10676, 10392, 10208,
-                  9928,  9747,  9564,  9369,  9193,  9017,  8822,  8639,  8458,
-                  8270,  8084,  7896,  7710,  7527,  7347,  7156,  6977,  6788,
-                  6607,  6422,  6236,  6054,  5867,  5684,  5495,  5305,  5128,
-                  4945,  4751,  4638,  4442,  4248,  4065,  3888,  3698,  3509,
-                  3326,  3139,  2957,  2775,  2586,  2405,  2216,  2037,  1846,
-                  1666,  1483,  1297,  1109,   927,   735,   554,   375,   201,
-                   128,     0
-             };
-
-        value = (long)(jpeg_info.quant_tbl_ptrs[0]->quantval[2]  +
-                       jpeg_info.quant_tbl_ptrs[0]->quantval[53] +
-                       jpeg_info.quant_tbl_ptrs[1]->quantval[0]  +
-                       jpeg_info.quant_tbl_ptrs[1]->quantval[DCTSIZE2 - 1]);
-
-        for (i = 0 ; i < 100 ; ++i)
-        {
-            if ((value < hash[i]) && (sum < sums[i]))
-            {
-                continue;
-            }
-
-            if (((value <= hash[i]) && (sum <= sums[i])) || (i >= 50))
-            {
-                quality = i + 1;
-            }
-
-            break;
-        }
-    }
-    else if (jpeg_info.quant_tbl_ptrs[0] != nullptr)
-    {
-        long hash[101] =
-             {
-                 510,  505,  422,  380,  355,  338,  326,  318,  311,  305,
-                 300,  297,  293,  291,  288,  286,  284,  283,  281,  280,
-                 279,  278,  277,  273,  262,  251,  243,  233,  225,  218,
-                 211,  205,  198,  193,  186,  181,  177,  172,  168,  164,
-                 158,  156,  152,  148,  145,  142,  139,  136,  133,  131,
-                 129,  126,  123,  120,  118,  115,  113,  110,  107,  105,
-                 102,  100,   97,   94,   92,   89,   87,   83,   81,   79,
-                  76,   74,   70,   68,   66,   63,   61,   57,   55,   52,
-                  50,   48,   44,   42,   39,   37,   34,   31,   29,   26,
-                  24,   21,   18,   16,   13,   11,    8,    6,    3,    2,
-                   0
-             },
-             sums[101] =
-             {
-                 16320, 16315, 15946, 15277, 14655, 14073, 13623, 13230, 12859,
-                 12560, 12240, 11861, 11456, 11081, 10714, 10360, 10027,  9679,
-                  9368,  9056,  8680,  8331,  7995,  7668,  7376,  7084,  6823,
-                  6562,  6345,  6125,  5939,  5756,  5571,  5421,  5240,  5086,
-                  4976,  4829,  4719,  4616,  4463,  4393,  4280,  4166,  4092,
-                  3980,  3909,  3835,  3755,  3688,  3621,  3541,  3467,  3396,
-                  3323,  3247,  3170,  3096,  3021,  2952,  2874,  2804,  2727,
-                  2657,  2583,  2509,  2437,  2362,  2290,  2211,  2136,  2068,
-                  1996,  1915,  1858,  1773,  1692,  1620,  1552,  1477,  1398,
-                  1326,  1251,  1179,  1109,  1031,   961,   884,   814,   736,
-                   667,   592,   518,   441,   369,   292,   221,   151,    86,
-                    64,     0
-             };
-
-        value = (long)(jpeg_info.quant_tbl_ptrs[0]->quantval[2] +
-                       jpeg_info.quant_tbl_ptrs[0]->quantval[53]);
-
-        for (i = 0 ; i < 100 ; ++i)
-        {
-            if ((value < hash[i]) && (sum < sums[i]))
-            {
-                continue;
-            }
-
-            if (((value <= hash[i]) && (sum <= sums[i])) || (i >= 50))
-            {
-                quality = i + 1;
-            }
-
-            break;
-        }
-    }
-
-    jpeg_destroy_decompress(&jpeg_info);
-    fclose(inFile);
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "JPEG Quality: " << quality << " File: " << file;
-
-    return quality;
 }
 
 } // namespace JPEGUtils
