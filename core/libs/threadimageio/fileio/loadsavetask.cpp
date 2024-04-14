@@ -32,10 +32,6 @@ LoadSaveTask::LoadSaveTask(LoadSaveThread* const thread)
 {
 }
 
-LoadSaveTask::~LoadSaveTask()
-{
-}
-
 // --------------------------------------------------------------------------------------------
 
 LoadingTask::LoadingTask(LoadSaveThread* const thread,
@@ -44,10 +40,6 @@ LoadingTask::LoadingTask(LoadSaveThread* const thread,
     : LoadSaveTask        (thread),
       m_loadingDescription(description),
       m_loadingTaskStatus (loadingTaskStatus)
-{
-}
-
-LoadingTask::~LoadingTask()
 {
 }
 
@@ -110,9 +102,8 @@ void LoadingTask::setStatus(LoadingTaskStatus status)
 
 SharedLoadingTask::SharedLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description,
                                      LoadSaveThread::AccessMode mode, LoadingTaskStatus loadingTaskStatus)
-    : LoadingTask  (thread, description, loadingTaskStatus),
-      m_completed  (false),
-      m_accessMode (mode)
+    : LoadingTask (thread, description, loadingTaskStatus),
+      m_accessMode(mode)
 {
     if (m_accessMode == LoadSaveThread::AccessModeRead && needsPostProcessing())
     {
@@ -473,8 +464,7 @@ SavingTask::SavingTask(LoadSaveThread* const thread,
     : LoadSaveTask(thread),
         m_filePath(filePath),
         m_format(format),
-        m_img(img),
-        m_savingTaskStatus(SavingTaskStatusSaving)
+        m_img(img)
 {
 }
 

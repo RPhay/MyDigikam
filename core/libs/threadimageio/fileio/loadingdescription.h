@@ -91,7 +91,7 @@ public:
 
     public:
 
-        explicit PreviewParameters();
+        PreviewParameters() = default;
 
         bool onlyPregenerate()                          const;
         bool onlyFromStorage()                          const;
@@ -100,9 +100,9 @@ public:
 
     public:
 
-        PreviewType     type;
-        int             size;
-        PreviewFlags    flags;
+        PreviewType     type            = NoPreview;
+        int             size            = 0;
+        PreviewFlags    flags           = NoFlags;
         PreviewSettings previewSettings;
         QVariant        extraParameter;
         QVariant        storageReference;
@@ -114,10 +114,7 @@ public:
     {
     public:
 
-        explicit PostProcessingParameters()
-        {
-            colorManagement = NoColorConversion;
-        }
+        PostProcessingParameters() = default;
 
     public:
 
@@ -135,7 +132,7 @@ public:
 
     public:
 
-        ColorManagementSettings colorManagement;
+        ColorManagementSettings colorManagement = NoColorConversion;
         QVariant                iccData;
     };
 
@@ -244,7 +241,7 @@ public:
 
     QString                  filePath;
     DRawDecoding             rawDecodingSettings;
-    RawDecodingHint          rawDecodingHint;
+    RawDecodingHint          rawDecodingHint            = RawDecodingDefaultSettings;
     PreviewParameters        previewParameters;
     PostProcessingParameters postProcessingParameters;
 };

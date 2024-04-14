@@ -33,26 +33,6 @@
 namespace Digikam
 {
 
-LoadingProcessListener::LoadingProcessListener()
-{
-}
-
-LoadingProcessListener::~LoadingProcessListener()
-{
-}
-
-// -----------------------------------------------------------------------------------
-
-LoadingProcess::LoadingProcess()
-{
-}
-
-LoadingProcess::~LoadingProcess()
-{
-}
-
-// -----------------------------------------------------------------------------------
-
 class Q_DECL_HIDDEN LoadingCache::Private
 {
 public:
@@ -376,9 +356,11 @@ void LoadingCache::notifyFileChanged(const QString& filePath, bool notify)
 
 void LoadingCache::iccSettingsChanged(const ICCSettingsContainer& current, const ICCSettingsContainer& previous)
 {
-    if ((current.enableCM           != previous.enableCM)           ||
+    if (
+        (current.enableCM           != previous.enableCM)           ||
         (current.useManagedPreviews != previous.useManagedPreviews) ||
-        (current.monitorProfile     != previous.monitorProfile))
+        (current.monitorProfile     != previous.monitorProfile)
+       )
     {
         LoadingCache::CacheLock lock(this);
         removeImages();
@@ -387,11 +369,6 @@ void LoadingCache::iccSettingsChanged(const ICCSettingsContainer& current, const
 }
 
 //---------------------------------------------------------------------------------------------------
-
-LoadingCacheFileWatch::LoadingCacheFileWatch()
-    : m_cache(nullptr)
-{
-}
 
 LoadingCacheFileWatch::~LoadingCacheFileWatch()
 {
@@ -436,8 +413,10 @@ void LoadingCacheFileWatch::checkFileWatch(const QString& filePath)
         QFileInfo info(filePath);
         QPair<qint64, QDateTime> pair = m_watchHash.value(filePath);
 
-        if ((info.size()         != pair.first) ||
-            (info.lastModified() != pair.second))
+        if (
+            (info.size()         != pair.first) ||
+            (info.lastModified() != pair.second)
+           )
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingCache file dirty:" << filePath;
 

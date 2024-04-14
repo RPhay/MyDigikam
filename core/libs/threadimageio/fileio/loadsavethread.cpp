@@ -26,26 +26,6 @@
 namespace Digikam
 {
 
-LoadSaveNotifier::LoadSaveNotifier()
-{
-}
-
-LoadSaveNotifier::~LoadSaveNotifier()
-{
-}
-
-// --------------------------------------------------------------------------------
-
-LoadSaveFileInfoProvider::LoadSaveFileInfoProvider()
-{
-}
-
-LoadSaveFileInfoProvider::~LoadSaveFileInfoProvider()
-{
-}
-
-// --------------------------------------------------------------------------------
-
 class Q_DECL_HIDDEN LoadSaveThread::Private
 {
 public:
@@ -57,12 +37,12 @@ public:
     {
     }
 
-    bool                             running;
-    bool                             blockNotification;
+    bool                             running            = true;
+    bool                             blockNotification  = false;
 
     QTime                            notificationTime;
 
-    LoadSaveTask*                    lastTask;
+    LoadSaveTask*                    lastTask           = nullptr;
 
     static LoadSaveFileInfoProvider* infoProvider;
 };
@@ -72,10 +52,8 @@ LoadSaveFileInfoProvider* LoadSaveThread::Private::infoProvider = nullptr;
 //---------------------------------------------------------------------------------------------------
 
 LoadSaveThread::LoadSaveThread(QObject* const parent)
-    : DynamicThread       (parent),
-      m_currentTask       (nullptr),
-      m_notificationPolicy(NotificationPolicyTimeLimited),
-      d                   (new Private)
+    : DynamicThread(parent),
+      d            (new Private)
 {
 }
 
@@ -168,18 +146,21 @@ void LoadSaveThread::taskHasFinished()
 void LoadSaveThread::imageStartedLoading(const LoadingDescription& loadingDescription)
 {
     notificationReceived();
+
     Q_EMIT signalImageStartedLoading(loadingDescription);
 }
 
 void LoadSaveThread::loadingProgress(const LoadingDescription& loadingDescription, float progress)
 {
     notificationReceived();
+
     Q_EMIT signalLoadingProgress(loadingDescription, progress);
 }
 
 void LoadSaveThread::imageLoaded(const LoadingDescription& loadingDescription, const DImg& img)
 {
     notificationReceived();
+
     Q_EMIT signalImageLoaded(loadingDescription, img);
 }
 
@@ -187,30 +168,35 @@ void LoadSaveThread::moreCompleteLoadingAvailable(const LoadingDescription& oldL
                                                   const LoadingDescription& newLoadingDescription)
 {
     notificationReceived();
+
     Q_EMIT signalMoreCompleteLoadingAvailable(oldLoadingDescription, newLoadingDescription);
 }
 
 void LoadSaveThread::imageStartedSaving(const QString& filePath)
 {
     notificationReceived();
+
     Q_EMIT signalImageStartedSaving(filePath);
 }
 
 void LoadSaveThread::savingProgress(const QString& filePath, float progress)
 {
     notificationReceived();
+
     Q_EMIT signalSavingProgress(filePath, progress);
 }
 
 void LoadSaveThread::imageSaved(const QString& filePath, bool success)
 {
     notificationReceived();
+
     Q_EMIT signalImageSaved(filePath, success);
 }
 
 void LoadSaveThread::thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img)
 {
     notificationReceived();
+
     Q_EMIT signalThumbnailLoaded(loadingDescription, img);
 }
 

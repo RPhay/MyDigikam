@@ -46,7 +46,7 @@ public:
 public:
 
     explicit LoadSaveTask(LoadSaveThread* const thread);
-    virtual ~LoadSaveTask();
+    virtual ~LoadSaveTask() = default;
 
 public:
 
@@ -58,7 +58,7 @@ public:
 
 protected:
 
-    LoadSaveThread* m_thread;
+    LoadSaveThread* m_thread = nullptr;
 
 private:
 
@@ -86,7 +86,7 @@ public:
     explicit LoadingTask(LoadSaveThread* const thread,
                          const LoadingDescription& description,
                          LoadingTaskStatus loadingTaskStatus = LoadingTaskStatusLoading);
-    ~LoadingTask() override;
+    ~LoadingTask() override = default;
 
     LoadingTaskStatus status()                     const;
     QString filePath()                             const;
@@ -108,7 +108,7 @@ public:
 protected:
 
     LoadingDescription         m_loadingDescription;
-    volatile LoadingTaskStatus m_loadingTaskStatus;
+    volatile LoadingTaskStatus m_loadingTaskStatus = LoadingTaskStatusLoading;
 
 private:
 
@@ -157,8 +157,8 @@ public:
 
 protected:
 
-    volatile bool                  m_completed;
-    LoadSaveThread::AccessMode     m_accessMode;
+    volatile bool                  m_completed  = false;
+    LoadSaveThread::AccessMode     m_accessMode = LoadSaveThread::AccessModeReadWrite;
     QList<LoadingProcessListener*> m_listeners;
     DImg                           m_img;
 
@@ -207,7 +207,7 @@ private:
     QString                   m_filePath;
     QString                   m_format;
     DImg                      m_img;
-    volatile SavingTaskStatus m_savingTaskStatus;
+    volatile SavingTaskStatus m_savingTaskStatus = SavingTaskStatusSaving;
 
 private:
 
