@@ -31,7 +31,7 @@ IF(MSVC)
         ALWAYS 0
     )
 
-ELSE IF(APPLE)
+ELSEIF(APPLE)
 
     INCLUDE("config-qt6-macos.cmake")
 
