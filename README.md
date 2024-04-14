@@ -1,22 +1,15 @@
 ![](https://c1.staticflickr.com/1/822/26082076957_5ff0796a99_o.png) digiKam - Professional Photo Management with the Power of Open Source
 
-<!-- 
-TODO: more badges to plug when available
-https://invent.kde.org/graphics/digikam/badges/master/coverage.svg
-https://invent.kde.org/graphics/digikam/-/badges/release.svg
--->
-
 | CI Job        | Status                                                                                                                                                                                                  |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Gitlab Builds | [![Gitlab Builds Status](https://invent.kde.org/graphics/digikam/badges/master/pipeline.svg)](https://invent.kde.org/graphics/digikam/-/pipelines)                                                      |
-| Flatpak Build | [![FlatPak Build Status](https://binary-factory.kde.org/view/Flatpak/job/Digikam_x86_64_flatpak/badge/icon)](https://binary-factory.kde.org/view/Flatpak/job/Digikam_x86_64_flatpak/)                   |
 | Coverity Scan | [![Coverity Scan Status](https://scan.coverity.com/projects/285/badge.svg)](https://scan.coverity.com/projects/digikam)                                                                                 |
 
 If you are reading this on Github, be aware that this is just a mirror. Our real code repository [is located here](https://invent.kde.org/graphics/digikam)
 
 Developers, if you want to contribute, see the online [API documentation here](https://www.digikam.org/api)
 
-NOTE: master branch support Qt5 and Qt6 frameworks and is dedicated to 8.x and later release.
+NOTE: this project support Qt5 and Qt6 frameworks.
 
 # About
 
