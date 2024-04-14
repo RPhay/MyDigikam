@@ -311,10 +311,15 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
             // We only take RGB with 1 or 3 components, or CMYK with 4 components
 
-            if (
-                !(
-                   ((cinfo.out_color_space == JCS_RGB)  && ((cinfo.output_components == 3) || (cinfo.output_components == 1))) ||
-                   ((cinfo.out_color_space == JCS_CMYK) &&  (cinfo.output_components == 4))
+            if (!(
+                   (
+                     (cinfo.out_color_space    == JCS_RGB)  &&
+                     ((cinfo.output_components == 3) || (cinfo.output_components == 1))
+                   ) ||
+                   (
+                     (cinfo.out_color_space    == JCS_CMYK) &&
+                     (cinfo.output_components  == 4)
+                   )
                  )
                )
             {
