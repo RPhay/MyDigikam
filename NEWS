@@ -75,7 +75,7 @@ BUGFIXES:
 052 ==> 461616 - Keyboard shortcuts override text input boxes.
 053 ==> 459480 - User login to flickr not working - cannot load page.
 054 ==> 484237 - 8.3.0: Crash when generating fingerprints on Windows 11.
-055 ==> 
+055 ==> 485443 - Cross-hair appears momentarily and disappears until programme reload then same again.
 056 ==> 
 057 ==> 
 058 ==> 
