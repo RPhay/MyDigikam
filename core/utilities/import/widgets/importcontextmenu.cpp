@@ -71,6 +71,11 @@
 #include "fileactionmngr.h"
 #include "dservicemenu.h"
 
+#ifdef Q_OS_WIN
+#   include <windows.h>
+#   include <shellapi.h>
+#endif
+
 namespace Digikam
 {
 
