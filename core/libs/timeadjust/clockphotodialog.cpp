@@ -54,22 +54,16 @@ class Q_DECL_HIDDEN ClockPhotoDialog::Private
 
 public:
 
-    explicit Private()
-      : buttons       (nullptr),
-        calendar      (nullptr),
-        dtLabel       (nullptr),
-        previewManager(nullptr)
-    {
-    }
+    Private() = default;
 
     DeltaTime         deltaValues;
 
-    QDialogButtonBox* buttons;
-    QDateTimeEdit*    calendar;
+    QDialogButtonBox* buttons           = nullptr;
+    QDateTimeEdit*    calendar          = nullptr;
     QDateTime         photoDateTime;
-    QLabel*           dtLabel;
+    QLabel*           dtLabel           = nullptr;
 
-    GraphicsDImgView* previewManager;
+    GraphicsDImgView* previewManager    = nullptr;
 };
 
 ClockPhotoDialog::ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl)

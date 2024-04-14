@@ -85,7 +85,7 @@ protected:
     /**
      * You can use this boolean in your implementation to know if job must be canceled.
      */
-    bool m_cancel;
+    bool m_cancel = false;
 };
 
 /**

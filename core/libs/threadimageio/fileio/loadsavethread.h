@@ -42,8 +42,8 @@ class DIGIKAM_EXPORT LoadSaveNotifier
 {
 public:
 
-    LoadSaveNotifier();
-    virtual ~LoadSaveNotifier();
+    LoadSaveNotifier()          = default;
+    virtual ~LoadSaveNotifier() = default;
 
     virtual void imageStartedLoading(const LoadingDescription& loadingDescription)                  = 0;
     virtual void loadingProgress(const LoadingDescription& loadingDescription, float progress)      = 0;
@@ -66,8 +66,8 @@ class DIGIKAM_EXPORT LoadSaveFileInfoProvider
 {
 public:
 
-    LoadSaveFileInfoProvider();
-    virtual ~LoadSaveFileInfoProvider();
+    LoadSaveFileInfoProvider()          = default;
+    virtual ~LoadSaveFileInfoProvider() = default;
 
     /**
      * Gives a hint at the orientation of the image.
@@ -232,9 +232,9 @@ protected:
 
     QList<LoadSaveTask*> m_todo;
 
-    LoadSaveTask*        m_currentTask;
+    LoadSaveTask*        m_currentTask          = nullptr;
 
-    NotificationPolicy   m_notificationPolicy;
+    NotificationPolicy   m_notificationPolicy   = NotificationPolicyTimeLimited;
 
 private:
 

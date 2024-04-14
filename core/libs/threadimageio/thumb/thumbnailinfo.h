@@ -23,6 +23,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "dmetadata.h"
 
 namespace Digikam
 {
@@ -31,8 +32,12 @@ class DIGIKAM_EXPORT ThumbnailIdentifier
 {
 public:
 
-    ThumbnailIdentifier();
-    explicit ThumbnailIdentifier(const QString& filePath);
+    ThumbnailIdentifier() = default;
+
+    explicit ThumbnailIdentifier(const QString& path)
+        : filePath(path)
+    {
+    }
 
     /**
      * The file path from which the thumbnail shall be generated
@@ -42,30 +47,28 @@ public:
     /**
      * The database id, which needs to be translated to uniqueHash + fileSize
      */
-    qlonglong id;
+    qlonglong id = 0;
 };
 
 class DIGIKAM_EXPORT ThumbnailInfo : public ThumbnailIdentifier
 {
 public:
 
-    explicit ThumbnailInfo();
-    ~ThumbnailInfo()
-    {
-    };
+    ThumbnailInfo()  = default;
+    ~ThumbnailInfo() = default;
 
     /**
      * If available, the uniqueHash + fileSize pair for identification
      * of the original file by content.
      */
     QString   uniqueHash;
-    qlonglong fileSize;
+    qlonglong fileSize      = 0;
 
     /**
      * If the original file is at all accessible on disk.
      * May be false if a file on a removable device is used.
      */
-    bool      isAccessible;
+    bool      isAccessible  = false;
 
     /**
      * The modification date of the original file.
@@ -78,7 +81,7 @@ public:
      * This can be used to supersede the Exif information in the file.
      * Will not be used if DMetadata::ORIENTATION_UNSPECIFIED (default value)
      */
-    int       orientationHint;
+    int       orientationHint = DMetadata::ORIENTATION_UNSPECIFIED;
 
     /**
      * The file name (the name, not the directory)
@@ -103,15 +106,10 @@ class DIGIKAM_EXPORT ThumbnailInfoProvider
 {
 public:
 
-    explicit ThumbnailInfoProvider()
-    {
-    };
+    ThumbnailInfoProvider()          = default;
+    virtual ~ThumbnailInfoProvider() = default;
 
-    virtual ~ThumbnailInfoProvider()
-    {
-    };
-
-    virtual ThumbnailInfo thumbnailInfo(const ThumbnailIdentifier&)=0;
+    virtual ThumbnailInfo thumbnailInfo(const ThumbnailIdentifier&) = 0;
 
 private:
 

@@ -45,58 +45,36 @@ class Q_DECL_HIDDEN TemplatePanel::Private
 
 public:
 
-    explicit Private()
-      : authorsEdit                 (nullptr),
-        authorsPositionEdit         (nullptr),
-        creditEdit                  (nullptr),
-        sourceEdit                  (nullptr),
-        instructionsEdit            (nullptr),
-        copyrightEdit               (nullptr),
-        rightUsageEdit              (nullptr),
-        locationCountryCodeEdit     (nullptr),
-        locationProvinceStateEdit   (nullptr),
-        locationCityEdit            (nullptr),
-        locationSublocationEdit     (nullptr),
-        contactCityEdit             (nullptr),
-        contactCountryEdit          (nullptr),
-        contactAddressEdit          (nullptr),
-        contactPostalCodeEdit       (nullptr),
-        contactProvinceStateEdit    (nullptr),
-        contactEmailEdit            (nullptr),
-        contactPhoneEdit            (nullptr),
-        contactWebUrlEdit           (nullptr),
-        subjects                    (nullptr)
-    {
-    }
+    Private() = default;
 
     /// Rights template information panel.
-    QLineEdit*       authorsEdit;
-    DTextEdit*       authorsPositionEdit;
-    DTextEdit*       creditEdit;
-    DTextEdit*       sourceEdit;
-    DTextEdit*       instructionsEdit;
+    QLineEdit*       authorsEdit                = nullptr;
+    DTextEdit*       authorsPositionEdit        = nullptr;
+    DTextEdit*       creditEdit                 = nullptr;
+    DTextEdit*       sourceEdit                 = nullptr;
+    DTextEdit*       instructionsEdit           = nullptr;
 
-    AltLangStrEdit*  copyrightEdit;
-    AltLangStrEdit*  rightUsageEdit;
+    AltLangStrEdit*  copyrightEdit              = nullptr;
+    AltLangStrEdit*  rightUsageEdit             = nullptr;
 
     /// Location template information panel.
-    CountrySelector* locationCountryCodeEdit;
-    QLineEdit*       locationProvinceStateEdit;
-    QLineEdit*       locationCityEdit;
-    QLineEdit*       locationSublocationEdit;
+    CountrySelector* locationCountryCodeEdit    = nullptr;
+    QLineEdit*       locationProvinceStateEdit  = nullptr;
+    QLineEdit*       locationCityEdit           = nullptr;
+    QLineEdit*       locationSublocationEdit    = nullptr;
 
     /// Contact template information panel.
-    QLineEdit*       contactCityEdit;
-    QLineEdit*       contactCountryEdit;
-    QLineEdit*       contactAddressEdit;
-    QLineEdit*       contactPostalCodeEdit;
-    QLineEdit*       contactProvinceStateEdit;
-    QLineEdit*       contactEmailEdit;
-    QLineEdit*       contactPhoneEdit;
-    QLineEdit*       contactWebUrlEdit;
+    QLineEdit*       contactCityEdit            = nullptr;
+    QLineEdit*       contactCountryEdit         = nullptr;
+    QLineEdit*       contactAddressEdit         = nullptr;
+    QLineEdit*       contactPostalCodeEdit      = nullptr;
+    QLineEdit*       contactProvinceStateEdit   = nullptr;
+    QLineEdit*       contactEmailEdit           = nullptr;
+    QLineEdit*       contactPhoneEdit           = nullptr;
+    QLineEdit*       contactWebUrlEdit          = nullptr;
 
     //// Subjects template information panel.
-    SubjectEdit*     subjects;
+    SubjectEdit*     subjects                   = nullptr;
 };
 
 TemplatePanel::TemplatePanel(QWidget* const parent)

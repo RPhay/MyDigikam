@@ -30,15 +30,15 @@ class VideoFrame
 {
 public:
 
-    VideoFrame();
+    VideoFrame()  = default;
     VideoFrame(int width, int height, int lineSize);
-    ~VideoFrame();
+    ~VideoFrame() = default;
 
 public:
 
-    quint32         width;
-    quint32         height;
-    quint32         lineSize;
+    quint32         width       = 0;
+    quint32         height      = 0;
+    quint32         lineSize    = 0;
     QVector<quint8> frameData;
 };
 
@@ -48,8 +48,8 @@ class VideoThumbWriter
 {
 public:
 
-    explicit VideoThumbWriter();
-    ~VideoThumbWriter();
+    VideoThumbWriter()  = default;
+    ~VideoThumbWriter() = default;
 
     void writeFrame(VideoFrame& frame, QImage& image);
 

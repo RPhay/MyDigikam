@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-13 01:43+0000\n"
+"POT-Creation-Date: 2024-04-14 01:36+0000\n"
 "PO-Revision-Date: 2024-04-06 08:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -6660,7 +6660,7 @@ msgstr ""
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:96
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:348
-#: core/libs/template/templateviewer.cpp:145
+#: core/libs/template/templateviewer.cpp:104
 #, kde-format
 msgid "Position:"
 msgstr "Посада:"
@@ -14054,8 +14054,8 @@ msgstr "Тут ви можете ввести ім'я автора підпис�
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
-#: core/libs/template/templatepanel.cpp:151
-#: core/libs/template/templateviewer.cpp:149
+#: core/libs/template/templatepanel.cpp:129
+#: core/libs/template/templateviewer.cpp:108
 #, kde-format
 msgid "Copyright:"
 msgstr "Авторські права:"
@@ -14098,8 +14098,8 @@ msgstr "Тут ви можете вказати посаду автора."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:99
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
-#: core/libs/template/templatepanel.cpp:137
-#: core/libs/template/templateviewer.cpp:147
+#: core/libs/template/templatepanel.cpp:115
+#: core/libs/template/templateviewer.cpp:106
 #, kde-format
 msgid "Credit:"
 msgstr "Подяка:"
@@ -14778,10 +14778,10 @@ msgstr "Тут ви можете встановити повну назву кр
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:151
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:184
-#: core/libs/template/templatepanel.cpp:239
-#: core/libs/template/templatepanel.cpp:303
-#: core/libs/template/templateviewer.cpp:173
-#: core/libs/template/templateviewer.cpp:197
+#: core/libs/template/templatepanel.cpp:217
+#: core/libs/template/templatepanel.cpp:281
+#: core/libs/template/templateviewer.cpp:132
+#: core/libs/template/templateviewer.cpp:156
 #, kde-format
 msgid "City:"
 msgstr "Місто:"
@@ -14801,8 +14801,8 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:195
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:191
-#: core/libs/template/templatepanel.cpp:249
-#: core/libs/template/templateviewer.cpp:175
+#: core/libs/template/templatepanel.cpp:227
+#: core/libs/template/templateviewer.cpp:134
 #, kde-format
 msgid "Sublocation:"
 msgstr "Точне розташування:"
@@ -14824,9 +14824,9 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:205
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:156
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:198
-#: core/libs/template/templatepanel.cpp:259
-#: core/libs/template/templateviewer.cpp:177
-#: core/libs/template/templateviewer.cpp:199
+#: core/libs/template/templatepanel.cpp:237
+#: core/libs/template/templateviewer.cpp:136
+#: core/libs/template/templateviewer.cpp:158
 #, kde-format
 msgid "State/Province:"
 msgstr "Регіон:"
@@ -14848,10 +14848,10 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:215
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:161
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:205
-#: core/libs/template/templatepanel.cpp:269
-#: core/libs/template/templatepanel.cpp:313
-#: core/libs/template/templateviewer.cpp:179
-#: core/libs/template/templateviewer.cpp:201
+#: core/libs/template/templatepanel.cpp:247
+#: core/libs/template/templatepanel.cpp:291
+#: core/libs/template/templateviewer.cpp:138
+#: core/libs/template/templateviewer.cpp:160
 #, kde-format
 msgid "Country:"
 msgstr "Країна:"
@@ -15278,7 +15278,7 @@ msgid "Sync Exif Copyright"
 msgstr "Синхронізувати авторські права EXIF"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:115
-#: core/libs/template/templatepanel.cpp:174
+#: core/libs/template/templatepanel.cpp:152
 #, kde-format
 msgid "Right Usage Terms:"
 msgstr "Умови належного використання:"
@@ -15305,8 +15305,8 @@ msgid "Creator Title:"
 msgstr "Звання автора:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:123
-#: core/libs/template/templatepanel.cpp:415
-#: core/libs/template/templateviewer.cpp:228
+#: core/libs/template/templatepanel.cpp:393
+#: core/libs/template/templateviewer.cpp:187
 #, kde-format
 msgid "Contact"
 msgstr "Контакти"
@@ -15323,8 +15323,8 @@ msgid "Set here the contact e-mail."
 msgstr "Тут ви можете встановити адресу електронної пошти для контактів."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
-#: core/libs/template/templatepanel.cpp:373
-#: core/libs/template/templateviewer.cpp:207
+#: core/libs/template/templatepanel.cpp:351
+#: core/libs/template/templateviewer.cpp:166
 #, kde-format
 msgid "URL:"
 msgstr "URL:"
@@ -15335,8 +15335,8 @@ msgid "Set here the contact URL."
 msgstr "Тут ви можете встановити адресу URL для контактів."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:136
-#: core/libs/template/templatepanel.cpp:363
-#: core/libs/template/templateviewer.cpp:203
+#: core/libs/template/templatepanel.cpp:341
+#: core/libs/template/templateviewer.cpp:162
 #, kde-format
 msgid "Phone:"
 msgstr "Телефон:"
@@ -24872,8 +24872,8 @@ msgid "Date"
 msgstr "Дата"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/template/templatepanel.cpp:297
-#: core/libs/template/templateviewer.cpp:188
+#: core/libs/template/templatepanel.cpp:275
+#: core/libs/template/templateviewer.cpp:147
 #, kde-format
 msgid "Location"
 msgstr "Місце"
@@ -27800,7 +27800,7 @@ msgid "Labels Album"
 msgstr "Альбом з позначками"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
-#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagmngrtreeview.cpp:155
 #: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
@@ -37403,47 +37403,47 @@ msgstr "Помилка під час обробки контрольної су�
 msgid "Cannot open target file."
 msgstr "Не вдалося відкрити файл даних."
 
-#: core/libs/progressmanager/dlogoaction.cpp:144
+#: core/libs/progressmanager/dlogoaction.cpp:138
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "Відвідайте сайт проєкту digiKam"
 
-#: core/libs/progressmanager/progressmanager.cpp:170
+#: core/libs/progressmanager/progressmanager.cpp:158
 #, kde-format
 msgid "Aborting..."
 msgstr "Переривання…"
 
-#: core/libs/progressmanager/progressview.cpp:212
+#: core/libs/progressmanager/progressview.cpp:202
 #, kde-format
 msgid "Cancel this operation."
 msgstr "Скасувати цю дію."
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:155
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:141
 #, kde-format
 msgid "Open detailed progress dialog"
 msgstr "Відкрити вікно з подробицями поступу"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:161
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:147
 #, kde-format
 msgid "No active process"
 msgstr "Немає активних завдань"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:419
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:407
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "Ховати вікно з подробицями поступу"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:425
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:413
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "Показувати вікно з подробицями поступу"
 
-#: core/libs/properties/captions/captionedit.cpp:54
+#: core/libs/properties/captions/captionedit.cpp:50
 #, kde-format
 msgid "Captions: "
 msgstr "Підписи: "
 
-#: core/libs/properties/captions/captionedit.cpp:58
+#: core/libs/properties/captions/captionedit.cpp:54
 #, kde-format
 msgid "Enter caption author name here."
 msgstr "Введіть сюди підпис з іменем автора."
@@ -37716,28 +37716,28 @@ msgctxt "@title"
 msgid "Information"
 msgstr "Інформація"
 
-#: core/libs/properties/captions/itemdescedittab_p.cpp:238
+#: core/libs/properties/captions/itemdescedittab_p.cpp:210
 #, kde-format
 msgctxt "@info"
 msgid "Selected items have different text here."
 msgstr "Позначені записи мають тут різні тексти."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:104
+#: core/libs/properties/captions/tagsedit.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
 msgstr "Відкрити вікно керування мітками"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:110
+#: core/libs/properties/captions/tagsedit.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
 msgstr "Тут вкажіть мітку."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:111
+#: core/libs/properties/captions/tagsedit.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -37750,27 +37750,27 @@ msgstr ""
 "для створення декількох ієрархій міток одночасно."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:128
+#: core/libs/properties/captions/tagsedit.cpp:116
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
 msgstr "Мітки вже призначено"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:134
+#: core/libs/properties/captions/tagsedit.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
 msgstr "Недавні мітки"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
-#: core/libs/properties/captions/tagsedit.cpp:292
+#: core/libs/properties/captions/tagsedit.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "Немає недавно призначених міток"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:125
 #, kde-format
 msgid ""
 "No Geolocation\n"
@@ -37781,80 +37781,80 @@ msgstr ""
 "даних\n"
 "геопозиціювання"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:156
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:137
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>Висота</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:157
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>Широта</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:158
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>Довгота</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:159
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>Дата</b>:"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:182
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:163
 #, kde-format
 msgid "See more information on the Internet"
 msgstr "Докладніше про це можна дізнатися з інтернету"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:410
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:391
 #, kde-format
 msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
 msgstr "Не визначено"
 
-#: core/libs/properties/history/itempropertieshistorytab.cpp:92
+#: core/libs/properties/history/itempropertieshistorytab.cpp:85
 #: core/libs/widgets/history/filtershistorywidget.cpp:90
 #, kde-format
 msgid "Used filters"
 msgstr "Використані фільтри"
 
-#: core/libs/properties/history/itempropertieshistorytab.cpp:128
+#: core/libs/properties/history/itempropertieshistorytab.cpp:121
 #: core/libs/widgets/history/filtershistorywidget.cpp:127
 #, kde-format
 msgid "Remove filter"
 msgstr "Вилучити фільтр"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:70
+#: core/libs/properties/history/itempropertiesversionstab.cpp:66
 #, kde-format
 msgctxt "@title"
 msgid "Versions"
 msgstr "Версії"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:73
+#: core/libs/properties/history/itempropertiesversionstab.cpp:69
 #, kde-format
 msgctxt "@title"
 msgid "Used Filters"
 msgstr "Використані фільтри"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:153
+#: core/libs/properties/history/itempropertiesversionstab.cpp:149
 #, kde-format
 msgctxt "@action: open image"
 msgid "Open"
 msgstr "Відкрити"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:154
+#: core/libs/properties/history/itempropertiesversionstab.cpp:150
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open file"
 msgstr "Відкрити файл"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:163
+#: core/libs/properties/history/itempropertiesversionstab.cpp:159
 #, kde-format
 msgctxt "@action: go to album"
 msgid "Go To Albums"
 msgstr "Перейти до альбомів"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:164
+#: core/libs/properties/history/itempropertiesversionstab.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Go to the album of this image"
@@ -37872,78 +37872,78 @@ msgctxt "@info:tooltip"
 msgid "Show item permanently"
 msgstr "Назавжди показати пункт"
 
-#: core/libs/properties/import/importitempropertiessidebar.cpp:92
+#: core/libs/properties/import/importitempropertiessidebar.cpp:77
 #, kde-format
 msgid "Properties"
 msgstr "Властивості"
 
-#: core/libs/properties/import/importitempropertiessidebar.cpp:93
+#: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:431
 #: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
 msgstr "Метадані"
 
-#: core/libs/properties/import/importitempropertiessidebar.cpp:98
+#: core/libs/properties/import/importitempropertiessidebar.cpp:83
 #, kde-format
 msgid "Geolocation"
 msgstr "Географічне розташування"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:187
+#: core/libs/properties/import/importitempropertiestab.cpp:127
 #, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
 msgstr "Файл: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:188
+#: core/libs/properties/import/importitempropertiestab.cpp:128
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "Тека: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:189
+#: core/libs/properties/import/importitempropertiestab.cpp:129
 #: core/libs/properties/itempropertiestab.cpp:38
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
 msgstr "Дата: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:190
+#: core/libs/properties/import/importitempropertiestab.cpp:130
 #: core/libs/properties/itempropertiestab.cpp:39
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
 msgstr "Розмір: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:191
+#: core/libs/properties/import/importitempropertiestab.cpp:131
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Readable: "
 msgstr "Читання: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:192
+#: core/libs/properties/import/importitempropertiestab.cpp:132
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Writable: "
 msgstr "Запис: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:193
+#: core/libs/properties/import/importitempropertiestab.cpp:133
 #: core/libs/properties/itempropertiestab.cpp:87
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "Тип: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:194
+#: core/libs/properties/import/importitempropertiestab.cpp:134
 #: core/libs/properties/itempropertiestab.cpp:88
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
 msgstr "Розміри: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:195
-#: core/libs/properties/import/importitempropertiestab.cpp:303
+#: core/libs/properties/import/importitempropertiestab.cpp:135
+#: core/libs/properties/import/importitempropertiestab.cpp:243
 #: core/libs/properties/itempropertiestab.cpp:89
 #: core/libs/properties/itempropertiestab.cpp:187
 #, kde-format
@@ -37951,179 +37951,179 @@ msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
 msgstr "Співвідношення розмірів: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:196
+#: core/libs/properties/import/importitempropertiestab.cpp:136
 #, kde-format
 msgctxt "@label: item properties"
 msgid "New Name: "
 msgstr "Нова назва: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:197
+#: core/libs/properties/import/importitempropertiestab.cpp:137
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Downloaded: "
 msgstr "Отримано: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:238
+#: core/libs/properties/import/importitempropertiestab.cpp:178
 #, kde-format
 msgctxt "@title"
 msgid "Camera File Properties"
 msgstr "Властивості файла фотоапарата"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:245
+#: core/libs/properties/import/importitempropertiestab.cpp:185
 #: core/libs/properties/itempropertiestab.cpp:131
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr "Виробник: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:246
+#: core/libs/properties/import/importitempropertiestab.cpp:186
 #: core/libs/properties/itempropertiestab.cpp:132
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
 msgstr "Модель: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:247
+#: core/libs/properties/import/importitempropertiestab.cpp:187
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr "Створено: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:248
+#: core/libs/properties/import/importitempropertiestab.cpp:188
 #: core/libs/properties/itempropertiestab.cpp:133
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr "Об'єктив: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:249
+#: core/libs/properties/import/importitempropertiestab.cpp:189
 #: core/libs/properties/itempropertiestab.cpp:134
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr "Апертура: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:250
+#: core/libs/properties/import/importitempropertiestab.cpp:190
 #: core/libs/properties/itempropertiestab.cpp:135
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr "Фокусна відстань: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:251
+#: core/libs/properties/import/importitempropertiestab.cpp:191
 #: core/libs/properties/itempropertiestab.cpp:136
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr "Експозиція: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:252
+#: core/libs/properties/import/importitempropertiestab.cpp:192
 #: core/libs/properties/itempropertiestab.cpp:137
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "Чутливість: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:253
+#: core/libs/properties/import/importitempropertiestab.cpp:193
 #: core/libs/properties/itempropertiestab.cpp:138
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr "Режим/програма: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:254
+#: core/libs/properties/import/importitempropertiestab.cpp:194
 #: core/libs/properties/itempropertiestab.cpp:139
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "Спалах: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:255
+#: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/itempropertiestab.cpp:140
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
 msgstr "Баланс білого: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:296
+#: core/libs/properties/import/importitempropertiestab.cpp:236
 #, kde-format
 msgctxt "@title"
 msgid "Photograph Properties"
 msgstr "Властивості фотографії"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:304
+#: core/libs/properties/import/importitempropertiestab.cpp:244
 #: core/libs/properties/itempropertiestab.cpp:191
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "Бітова швидкість звуку: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:305
+#: core/libs/properties/import/importitempropertiestab.cpp:245
 #: core/libs/properties/itempropertiestab.cpp:192
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr "Тип каналів звуку: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:306
+#: core/libs/properties/import/importitempropertiestab.cpp:246
 #: core/libs/properties/itempropertiestab.cpp:193
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr "Аудіокодек: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:307
+#: core/libs/properties/import/importitempropertiestab.cpp:247
 #: core/libs/properties/itempropertiestab.cpp:188
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "Тривалість: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:308
+#: core/libs/properties/import/importitempropertiestab.cpp:248
 #: core/libs/properties/itempropertiestab.cpp:189
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "Частота кадрів: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:309
+#: core/libs/properties/import/importitempropertiestab.cpp:249
 #: core/libs/properties/itempropertiestab.cpp:190
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
 msgstr "Відеокодек: "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:338
+#: core/libs/properties/import/importitempropertiestab.cpp:278
 #, kde-format
 msgctxt "@title"
 msgid "Audio/Video Properties"
 msgstr "Властивості відео та звуку"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:393
+#: core/libs/properties/import/importitempropertiestab.cpp:333
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unknown"
 msgstr "невідоме"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:394
+#: core/libs/properties/import/importitempropertiestab.cpp:334
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unchanged"
 msgstr "без змін"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:395
-#: core/libs/properties/itempropertiessidebar.cpp:218
+#: core/libs/properties/import/importitempropertiestab.cpp:335
+#: core/libs/properties/itempropertiessidebar.cpp:207
 #: core/libs/properties/itempropertiessidebardb.cpp:633
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
 msgstr "недоступне"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:408
-#: core/libs/properties/import/importitempropertiestab.cpp:423
-#: core/libs/properties/import/importitempropertiestab.cpp:511
-#: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebar.cpp:282
+#: core/libs/properties/import/importitempropertiestab.cpp:348
+#: core/libs/properties/import/importitempropertiestab.cpp:363
+#: core/libs/properties/import/importitempropertiestab.cpp:451
+#: core/libs/properties/itempropertiessidebar.cpp:268
+#: core/libs/properties/itempropertiessidebar.cpp:271
 #: core/libs/properties/itempropertiessidebardb.cpp:691
 #: core/libs/properties/itempropertiessidebardb.cpp:693
 #: core/libs/properties/itempropertiessidebardb.cpp:796
@@ -38134,11 +38134,11 @@ msgctxt "@info: item properties"
 msgid "No"
 msgstr "Ні"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:412
-#: core/libs/properties/import/importitempropertiestab.cpp:427
-#: core/libs/properties/import/importitempropertiestab.cpp:507
-#: core/libs/properties/itempropertiessidebar.cpp:278
-#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/import/importitempropertiestab.cpp:352
+#: core/libs/properties/import/importitempropertiestab.cpp:367
+#: core/libs/properties/import/importitempropertiestab.cpp:447
+#: core/libs/properties/itempropertiessidebar.cpp:267
+#: core/libs/properties/itempropertiessidebar.cpp:270
 #: core/libs/properties/itempropertiessidebardb.cpp:690
 #: core/libs/properties/itempropertiessidebardb.cpp:692
 #: core/libs/properties/itempropertiessidebardb.cpp:795
@@ -38148,31 +38148,31 @@ msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "Так"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:441
+#: core/libs/properties/import/importitempropertiestab.cpp:381
 #, kde-format
 msgctxt "@info: item size"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:448
+#: core/libs/properties/import/importitempropertiestab.cpp:388
 #, kde-format
 msgctxt "@label"
 msgid "RAW Image"
 msgstr "Зображення RAW"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:488
+#: core/libs/properties/import/importitempropertiestab.cpp:428
 #, kde-format
 msgctxt "@info: item resolution"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1⨯%2 (%3Мпк)"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:554
+#: core/libs/properties/import/importitempropertiestab.cpp:494
 #, kde-format
 msgctxt "@info: focal length"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:559
+#: core/libs/properties/import/importitempropertiestab.cpp:499
 #, kde-format
 msgctxt "@label"
 msgid "%1 ISO"
@@ -38339,31 +38339,31 @@ msgstr "IPTC"
 msgid "XMP"
 msgstr "XMP"
 
-#: core/libs/properties/itempropertiessidebar.cpp:80
+#: core/libs/properties/itempropertiessidebar.cpp:73
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Properties"
 msgstr "Властивості"
 
-#: core/libs/properties/itempropertiessidebar.cpp:81
+#: core/libs/properties/itempropertiessidebar.cpp:74
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Metadata"
 msgstr "Метадані"
 
-#: core/libs/properties/itempropertiessidebar.cpp:82
+#: core/libs/properties/itempropertiessidebar.cpp:75
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Colors"
 msgstr "Кольори"
 
-#: core/libs/properties/itempropertiessidebar.cpp:87
+#: core/libs/properties/itempropertiessidebar.cpp:80
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Map"
 msgstr "Карта"
 
-#: core/libs/properties/itempropertiessidebar.cpp:243
+#: core/libs/properties/itempropertiessidebar.cpp:232
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
 #: core/showfoto/stackview/showfotostackviewitem.cpp:70
 #, kde-format
@@ -38371,14 +38371,14 @@ msgctxt "@info: item properties"
 msgid "RAW Image"
 msgstr "Зображення RAW"
 
-#: core/libs/properties/itempropertiessidebar.cpp:246
+#: core/libs/properties/itempropertiessidebar.cpp:235
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Uncalibrated"
 msgstr "Некалібрована"
 
-#: core/libs/properties/itempropertiessidebar.cpp:261
-#: core/libs/properties/itempropertiessidebar.cpp:268
+#: core/libs/properties/itempropertiessidebar.cpp:250
+#: core/libs/properties/itempropertiessidebar.cpp:257
 #: core/libs/properties/itempropertiessidebardb.cpp:667
 #: core/libs/properties/itempropertiessidebardb.cpp:680
 #, kde-format
@@ -38386,27 +38386,27 @@ msgctxt "@info: item properties"
 msgid "Unknown"
 msgstr "Невідомо"
 
-#: core/libs/properties/itempropertiessidebar.cpp:262
+#: core/libs/properties/itempropertiessidebar.cpp:251
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Мпк)"
 
-#: core/libs/properties/itempropertiessidebar.cpp:277
+#: core/libs/properties/itempropertiessidebar.cpp:266
 #: core/libs/properties/itempropertiessidebardb.cpp:689
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 біт/піксель"
 
-#: core/libs/properties/itempropertiessidebar.cpp:313
+#: core/libs/properties/itempropertiessidebar.cpp:302
 #: core/libs/properties/itempropertiessidebardb.cpp:723
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/itempropertiessidebar.cpp:318
+#: core/libs/properties/itempropertiessidebar.cpp:307
 #: core/libs/properties/itempropertiessidebardb.cpp:728
 #, kde-format
 msgctxt "@info: item properties"
@@ -39904,43 +39904,43 @@ msgstr "Додати до списку"
 msgid "Add selected tags to Quick Access List"
 msgstr "Додати позначені мітки до списку швидкого доступу"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:135
+#: core/libs/tags/manager/tagmngrtreeview.cpp:137
 #, kde-format
 msgid "Delete Tags"
 msgstr "Вилучити мітки"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:143
+#: core/libs/tags/manager/tagmngrtreeview.cpp:145
 #: core/libs/tags/manager/tagsmanager.cpp:698
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Редагувати заголовок мітки"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:147
+#: core/libs/tags/manager/tagmngrtreeview.cpp:149
 #: core/libs/tags/manager/tagsmanager.cpp:702
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Скинути піктограму мітки"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:150
+#: core/libs/tags/manager/tagmngrtreeview.cpp:152
 #: core/libs/tags/manager/tagsmanager.cpp:711
 #, kde-format
 msgid "Invert Selection"
 msgstr "Інвертувати вибір"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagmngrtreeview.cpp:158
 #: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Розгорнути ієрархію міток"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagmngrtreeview.cpp:161
 #: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Згорнути ієрархію міток"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagmngrtreeview.cpp:164
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Remove Tag from Images"
@@ -40493,12 +40493,12 @@ msgctxt "@title: template properties"
 msgid "Authors"
 msgstr "Автори"
 
-#: core/libs/template/templatepanel.cpp:111
+#: core/libs/template/templatepanel.cpp:89
 #, kde-format
 msgid "Author Names:"
 msgstr "Імена авторів:"
 
-#: core/libs/template/templatepanel.cpp:114
+#: core/libs/template/templatepanel.cpp:92
 #, kde-format
 msgid ""
 "Enter the names of the photograph's creators. Use semi-colons as separator "
@@ -40507,7 +40507,7 @@ msgstr ""
 "Введіть у це поле імена всіх авторів. Окремі імена слід розділяти крапками з "
 "комою."
 
-#: core/libs/template/templatepanel.cpp:116
+#: core/libs/template/templatepanel.cpp:94
 #, kde-format
 msgid ""
 "<p>This field should contain the names of the persons who created the "
@@ -40525,17 +40525,17 @@ msgstr ""
 "зможе змінити.</p><p>Декілька імен у списку слід відокремлювати <b>крапками "
 "з комою</b>.</p><p> У IPTC довжину цього поля обмежено 32 символами.</p>"
 
-#: core/libs/template/templatepanel.cpp:125
+#: core/libs/template/templatepanel.cpp:103
 #, kde-format
 msgid "Authors' Positions:"
 msgstr "Посади авторів:"
 
-#: core/libs/template/templatepanel.cpp:127
+#: core/libs/template/templatepanel.cpp:105
 #, kde-format
 msgid "Enter the job titles of the authors here."
 msgstr "Введіть професійні звання авторів."
 
-#: core/libs/template/templatepanel.cpp:129
+#: core/libs/template/templatepanel.cpp:107
 #, kde-format
 msgid ""
 "<p>This field should contain the job titles of the authors. Examples might "
@@ -40549,12 +40549,12 @@ msgstr ""
 "відповідає полю автора, його слід також заповнити.</p><p>У IPTC довжину "
 "цього поля обмежено 32 символами.</p>"
 
-#: core/libs/template/templatepanel.cpp:139
+#: core/libs/template/templatepanel.cpp:117
 #, kde-format
 msgid "Enter the photograph credit here."
 msgstr "Введіть подяку фотографу."
 
-#: core/libs/template/templatepanel.cpp:141
+#: core/libs/template/templatepanel.cpp:119
 #, kde-format
 msgid ""
 "<p>(synonymous to Provider): Use the Provider field to identify who is "
@@ -40573,7 +40573,7 @@ msgstr ""
 "слід зазначити групу (агенцію), яку до цього залучено.</p><p>У IPTC довжину "
 "цього поля обмежено 32 символами.</p>"
 
-#: core/libs/template/templatepanel.cpp:153
+#: core/libs/template/templatepanel.cpp:131
 #, kde-format
 msgid ""
 "Enter the copyright notice to identify the current owner(s) of the copyright "
@@ -40582,7 +40582,7 @@ msgstr ""
 "У це поле слід ввести повідомлення про авторські права, потрібні для "
 "визначення поточного власника (власників) авторських прав."
 
-#: core/libs/template/templatepanel.cpp:154
+#: core/libs/template/templatepanel.cpp:132
 #, kde-format
 msgid ""
 "<p>The Copyright Notice should contain any necessary copyright notice for "
@@ -40631,14 +40631,14 @@ msgstr ""
 "повідомлень про авторські права з використанням декількох мов.</p><p>У IPTC "
 "довжину цього поля обмежено 128 символами.</p>"
 
-#: core/libs/template/templatepanel.cpp:176
+#: core/libs/template/templatepanel.cpp:154
 #, kde-format
 msgid ""
 "Enter the list of instructions on how a resource can be legally used here."
 msgstr ""
 "У це поле слід ввести список настанов щодо законного використання даних."
 
-#: core/libs/template/templatepanel.cpp:177
+#: core/libs/template/templatepanel.cpp:155
 #, kde-format
 msgid ""
 "<p>The Right Usage Terms field should be used to list instructions on how a "
@@ -40651,19 +40651,19 @@ msgstr ""
 "рядків повідомлень про умови належного використання декількома мовами.</"
 "p><p>Цього поля не передбачено у IPTC.</p>"
 
-#: core/libs/template/templatepanel.cpp:185
-#: core/libs/template/templateviewer.cpp:153
+#: core/libs/template/templatepanel.cpp:163
+#: core/libs/template/templateviewer.cpp:112
 #, kde-format
 msgctxt "@label: template properties"
 msgid "Source:"
 msgstr "Джерело:"
 
-#: core/libs/template/templatepanel.cpp:187
+#: core/libs/template/templatepanel.cpp:165
 #, kde-format
 msgid "Enter the original owner of the photograph here."
 msgstr "Введіть ім'я або назву власника оригіналу фотографії."
 
-#: core/libs/template/templatepanel.cpp:189
+#: core/libs/template/templatepanel.cpp:167
 #, kde-format
 msgid ""
 "<p>The Source field should be used to identify the original owner or "
@@ -40688,18 +40688,18 @@ msgstr ""
 "відрізнятися від Творця і імен, зазначених у повідомленні про авторські "
 "права.</p><p>У IPTC довжину цього поля обмежено 32 символами.</p>"
 
-#: core/libs/template/templatepanel.cpp:201
-#: core/libs/template/templateviewer.cpp:155
+#: core/libs/template/templatepanel.cpp:179
+#: core/libs/template/templateviewer.cpp:114
 #, kde-format
 msgid "Instructions:"
 msgstr "Настанови:"
 
-#: core/libs/template/templatepanel.cpp:203
+#: core/libs/template/templatepanel.cpp:181
 #, kde-format
 msgid "Enter the editorial notice here."
 msgstr "Введіть редакторське зауваження."
 
-#: core/libs/template/templatepanel.cpp:205
+#: core/libs/template/templatepanel.cpp:183
 #, kde-format
 msgid ""
 "<p>The Instructions field should be used to list editorial instructions "
@@ -40710,18 +40710,18 @@ msgstr ""
 "настанов щодо використання фотографії.</p><p>У IPTC об'єм даних цього поля "
 "обмежено 256 символами.</p>"
 
-#: core/libs/template/templatepanel.cpp:231
-#: core/libs/template/templateviewer.cpp:168
+#: core/libs/template/templatepanel.cpp:209
+#: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr "Права"
 
-#: core/libs/template/templatepanel.cpp:242
+#: core/libs/template/templatepanel.cpp:220
 #, kde-format
 msgid "Enter the city of contents here."
 msgstr "Введіть тут місто, де було зроблено знімок."
 
-#: core/libs/template/templatepanel.cpp:244
+#: core/libs/template/templatepanel.cpp:222
 #, kde-format
 msgid ""
 "<p>This field should contain the name of the city where the photograph was "
@@ -40729,24 +40729,24 @@ msgid ""
 msgstr ""
 "<p>У цьому полі слід вказати назву району міста, де було зроблено знімок.</p>"
 
-#: core/libs/template/templatepanel.cpp:252
+#: core/libs/template/templatepanel.cpp:230
 #, kde-format
 msgid "Enter the city sublocation of contents here."
 msgstr "Введіть тут район, де було зроблено знімок."
 
-#: core/libs/template/templatepanel.cpp:254
+#: core/libs/template/templatepanel.cpp:232
 #, kde-format
 msgid ""
 "<p>This field should contain the sublocation of the city where the "
 "photograph was taken.</p>"
 msgstr "<p>У цьому полі слід вказати район міста, де було зроблено знімок.</p>"
 
-#: core/libs/template/templatepanel.cpp:262
+#: core/libs/template/templatepanel.cpp:240
 #, kde-format
 msgid "Enter the province or state of contents here."
 msgstr "Введіть тут область, де було зроблено знімок."
 
-#: core/libs/template/templatepanel.cpp:264
+#: core/libs/template/templatepanel.cpp:242
 #, kde-format
 msgid ""
 "<p>This field should contain the province or state where the photograph was "
@@ -40755,66 +40755,66 @@ msgstr ""
 "<p>У цьому полі має бути вказано область (провінцію, штат), де було зроблено "
 "знімок.</p>"
 
-#: core/libs/template/templatepanel.cpp:272
+#: core/libs/template/templatepanel.cpp:250
 #, kde-format
 msgid "<p>Select here the country where the photograph was taken.</p>"
 msgstr "<p>Тут ви можете вказати країну, де було зроблено знімок.</p>"
 
-#: core/libs/template/templatepanel.cpp:306
+#: core/libs/template/templatepanel.cpp:284
 #, kde-format
 msgid "Enter the city name of the lead author here."
 msgstr "Введіть сюди назву міста основного автора."
 
-#: core/libs/template/templatepanel.cpp:308
+#: core/libs/template/templatepanel.cpp:286
 #, kde-format
 msgid ""
 "<p>This field should contain the city name where the lead author lives.</p>"
 msgstr ""
 "<p>У цьому полі слід вказати назву міста, де мешкає основний автор.</p>"
 
-#: core/libs/template/templatepanel.cpp:316
+#: core/libs/template/templatepanel.cpp:294
 #, kde-format
 msgid "Enter the country name of the lead author here."
 msgstr "Введіть сюди назву країни основного автора."
 
-#: core/libs/template/templatepanel.cpp:318
+#: core/libs/template/templatepanel.cpp:296
 #, kde-format
 msgid ""
 "<p>This field should contain the country name where the lead author lives.</"
 "p>"
 msgstr "<p>У цьому полі слід вказати назву країни, де мешкає автор.</p>"
 
-#: core/libs/template/templatepanel.cpp:323
-#: core/libs/template/templateviewer.cpp:193
+#: core/libs/template/templatepanel.cpp:301
+#: core/libs/template/templateviewer.cpp:152
 #, kde-format
 msgctxt "@label: template properties"
 msgid "Address:"
 msgstr "Адреса:"
 
-#: core/libs/template/templatepanel.cpp:326
+#: core/libs/template/templatepanel.cpp:304
 #, kde-format
 msgid "Enter the address of the lead author here."
 msgstr "Введіть сюди поштову адресу основного автора."
 
-#: core/libs/template/templatepanel.cpp:328
+#: core/libs/template/templatepanel.cpp:306
 #, kde-format
 msgid ""
 "<p>This field should contain the address where the lead author lives.</p>"
 msgstr ""
 "<p>У цьому полі слід вказати адресу, за якою мешкає основний автор.</p>"
 
-#: core/libs/template/templatepanel.cpp:333
-#: core/libs/template/templateviewer.cpp:195
+#: core/libs/template/templatepanel.cpp:311
+#: core/libs/template/templateviewer.cpp:154
 #, kde-format
 msgid "Postal Code:"
 msgstr "Поштовий код:"
 
-#: core/libs/template/templatepanel.cpp:336
+#: core/libs/template/templatepanel.cpp:314
 #, kde-format
 msgid "Enter the postal code of the lead author here."
 msgstr "Введіть сюди поштовий код місця мешкання основного автора."
 
-#: core/libs/template/templatepanel.cpp:338
+#: core/libs/template/templatepanel.cpp:316
 #, kde-format
 msgid ""
 "<p>This field should contain the postal code where the lead author lives.</p>"
@@ -40822,78 +40822,78 @@ msgstr ""
 "<p>У цьому полі слід вказати поштовий код місця, де мешкає основний автор.</"
 "p>"
 
-#: core/libs/template/templatepanel.cpp:343
+#: core/libs/template/templatepanel.cpp:321
 #, kde-format
 msgid "Province:"
 msgstr "Область:"
 
-#: core/libs/template/templatepanel.cpp:346
+#: core/libs/template/templatepanel.cpp:324
 #, kde-format
 msgid "Enter the province of the lead author here."
 msgstr "Введіть сюди область, де мешкає основний автор."
 
-#: core/libs/template/templatepanel.cpp:348
+#: core/libs/template/templatepanel.cpp:326
 #, kde-format
 msgid ""
 "<p>This field should contain the province where the lead author lives.</p>"
 msgstr ""
 "<p>У цьому полі слід вказати назву провінції, де мешкає основний автор.</p>"
 
-#: core/libs/template/templatepanel.cpp:353
-#: core/libs/template/templateviewer.cpp:205
+#: core/libs/template/templatepanel.cpp:331
+#: core/libs/template/templateviewer.cpp:164
 #, kde-format
 msgctxt "@label: template properties"
 msgid "Email:"
 msgstr "Ел. пошта:"
 
-#: core/libs/template/templatepanel.cpp:356
+#: core/libs/template/templatepanel.cpp:334
 #, kde-format
 msgid "Enter the email of the lead author here."
 msgstr "Введіть сюди адресу електронної пошти основного автора."
 
-#: core/libs/template/templatepanel.cpp:358
+#: core/libs/template/templatepanel.cpp:336
 #, kde-format
 msgid "<p>This field should contain the email of the lead author.</p>"
 msgstr ""
 "<p>У цьому полі слід вказати адресу електронної пошти основного автора.</p>"
 
-#: core/libs/template/templatepanel.cpp:366
+#: core/libs/template/templatepanel.cpp:344
 #, kde-format
 msgid "Enter the phone number of the lead author here."
 msgstr "Введіть сюди номер телефону основного автора."
 
-#: core/libs/template/templatepanel.cpp:368
+#: core/libs/template/templatepanel.cpp:346
 #, kde-format
 msgid "<p>This field should contain the phone number of the lead author.</p>"
 msgstr "<p>У цьому полі слід вказати номер телефону основного автора.</p>"
 
-#: core/libs/template/templatepanel.cpp:376
+#: core/libs/template/templatepanel.cpp:354
 #, kde-format
 msgid "Enter the web site URL of the lead author here."
 msgstr "Введіть сюди адресу вебсайта основного автора."
 
-#: core/libs/template/templatepanel.cpp:378
+#: core/libs/template/templatepanel.cpp:356
 #, kde-format
 msgid "<p>This field should contain the web site URL of the lead author.</p>"
 msgstr "<p>У цьому полі слід вказати адресу сайта основного автора.</p>"
 
-#: core/libs/template/templatepanel.cpp:429
-#: core/libs/template/templateviewer.cpp:236
+#: core/libs/template/templatepanel.cpp:407
+#: core/libs/template/templateviewer.cpp:195
 #, kde-format
 msgid "Subjects"
 msgstr "Теми"
 
-#: core/libs/template/templateselector.cpp:64
+#: core/libs/template/templateselector.cpp:59
 #, kde-format
 msgid "Template: "
 msgstr "Шаблон: "
 
-#: core/libs/template/templateselector.cpp:68
+#: core/libs/template/templateselector.cpp:63
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "Відкрити вікно редактора шаблонів метаданих"
 
-#: core/libs/template/templateselector.cpp:69
+#: core/libs/template/templateselector.cpp:64
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -40908,22 +40908,22 @@ msgstr ""
 "шаблонів, які керуються digiKam. Вибір однієї з них відповідним чином "
 "змінить дані.</p>"
 
-#: core/libs/template/templateselector.cpp:108
+#: core/libs/template/templateselector.cpp:103
 #, kde-format
 msgid "To remove"
 msgstr "Вилучити"
 
-#: core/libs/template/templateselector.cpp:109
+#: core/libs/template/templateselector.cpp:104
 #, kde-format
 msgid "Do not change"
 msgstr "Не змінювати"
 
-#: core/libs/template/templateviewer.cpp:143
+#: core/libs/template/templateviewer.cpp:102
 #, kde-format
 msgid "Names:"
 msgstr "Імена:"
 
-#: core/libs/template/templateviewer.cpp:151
+#: core/libs/template/templateviewer.cpp:110
 #, kde-format
 msgid "Usages:"
 msgstr "Призначення:"

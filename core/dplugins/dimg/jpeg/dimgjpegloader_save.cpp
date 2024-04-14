@@ -59,9 +59,8 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    struct jpeg_compress_struct  cinfo;
-
-    struct dimg_jpeg_error_mgr jerr;
+    struct jpeg_compress_struct cinfo;
+    struct jpeg_error_mgr       jerr;
 
     // -------------------------------------------------------------------
     // JPEG error handling.
@@ -71,7 +70,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     cinfo.err->emit_message   = dimg_jpeg_emit_message;
     cinfo.err->output_message = dimg_jpeg_output_message;
 
-    // setjmp-save cleanup
+    // try/catch cleanup
 
     class Q_DECL_HIDDEN CleanupData
     {
@@ -114,241 +113,234 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     CleanupData* const cleanupData = new CleanupData;
     cleanupData->setFile(file);
 
-    // If an error occurs during writing, libjpeg will jump here
+    try
+    {
+        // -------------------------------------------------------------------
+        // Set JPEG compressor instance
 
-#ifdef __MINGW32__  // krazy:exclude=cpp
+        jpeg_create_compress(&cinfo);
+        jpeg_stdio_dest(&cinfo, file);
 
-    if (__builtin_setjmp(jerr.setjmp_buffer))
+        uint&              w   = imageWidth();
+        uint&              h   = imageHeight();
+        unsigned char*& data   = imageData();
 
-#else
+        // Size of image.
 
-    if (setjmp(jerr.setjmp_buffer))
+        cinfo.image_width      = w;
+        cinfo.image_height     = h;
 
-#endif
+        // Color components of image in RGB.
+
+        cinfo.input_components = 3;
+        cinfo.in_color_space   = JCS_RGB;
+
+        QVariant qualityAttr   = imageGetAttribute(QLatin1String("quality"));
+        int quality            = qualityAttr.isValid() ? qualityAttr.toInt() : 90;
+
+        if (quality < 0)
+        {
+            quality = 90;
+        }
+
+        if (quality > 100)
+        {
+            quality = 100;
+        }
+
+        QVariant subSamplingAttr = imageGetAttribute(QLatin1String("subsampling"));
+        int subsampling          = subSamplingAttr.isValid() ? subSamplingAttr.toInt() : 1;  // Medium
+
+        jpeg_set_defaults(&cinfo);
+
+        // bug #149578: set horizontal and vertical chroma subsampling factor to encoder.
+        // See this page for details: https://en.wikipedia.org/wiki/Chroma_subsampling
+
+        switch (subsampling)
+        {
+            case 1:  // 2x1, 1x1, 1x1 (4:2:2)
+            {
+                qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:2:2";
+                cinfo.comp_info[0].h_samp_factor = 2;
+                cinfo.comp_info[0].v_samp_factor = 1;
+                cinfo.comp_info[1].h_samp_factor = 1;
+                cinfo.comp_info[1].v_samp_factor = 1;
+                cinfo.comp_info[2].h_samp_factor = 1;
+                cinfo.comp_info[2].v_samp_factor = 1;
+                break;
+            }
+
+            case 2:  // 2x2, 1x1, 1x1 (4:2:0)
+            {
+                qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:2:0";
+                cinfo.comp_info[0].h_samp_factor = 2;
+                cinfo.comp_info[0].v_samp_factor = 2;
+                cinfo.comp_info[1].h_samp_factor = 1;
+                cinfo.comp_info[1].v_samp_factor = 1;
+                cinfo.comp_info[2].h_samp_factor = 1;
+                cinfo.comp_info[2].v_samp_factor = 1;
+                break;
+            }
+
+            case 3:  // 4x1, 1x1, 1x1 (4:1:1)
+            {
+                qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:1:1";
+                cinfo.comp_info[0].h_samp_factor = 4;
+                cinfo.comp_info[0].v_samp_factor = 1;
+                cinfo.comp_info[1].h_samp_factor = 1;
+                cinfo.comp_info[1].v_samp_factor = 1;
+                cinfo.comp_info[2].h_samp_factor = 1;
+                cinfo.comp_info[2].v_samp_factor = 1;
+                break;
+            }
+
+            default: // 1x1, 1x1, 1x1 (4:4:4)
+            {
+                qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:4:4";
+                cinfo.comp_info[0].h_samp_factor = 1;
+                cinfo.comp_info[0].v_samp_factor = 1;
+                cinfo.comp_info[1].h_samp_factor = 1;
+                cinfo.comp_info[1].v_samp_factor = 1;
+                cinfo.comp_info[2].h_samp_factor = 1;
+                cinfo.comp_info[2].v_samp_factor = 1;
+                break;
+            }
+        }
+
+        jpeg_set_quality(&cinfo, quality, boolean(true));
+        jpeg_start_compress(&cinfo, boolean(true));
+
+        qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG quality compression value: " << quality;
+
+        if (observer)
+        {
+            observer->progressInfo(0.1F);
+        }
+
+        // -------------------------------------------------------------------
+        // Write ICC profile.
+
+        QByteArray profile_rawdata = m_image->getIccProfile().data();
+
+        if (!profile_rawdata.isEmpty())
+        {
+            purgeExifWorkingColorSpace();
+            write_icc_profile(&cinfo, (JOCTET*)profile_rawdata.data(), profile_rawdata.size());
+        }
+
+        if (observer)
+        {
+            observer->progressInfo(0.2F);
+        }
+
+        // -------------------------------------------------------------------
+        // Write Image data.
+
+        uchar* line       = new uchar[w * 3];
+        uchar* dstPtr     = nullptr;
+        uint   checkPoint = 0;
+        cleanupData->setLine(line);
+
+        if (!imageSixteenBit())     // 8 bits image.
+        {
+            uchar* srcPtr = data;
+
+            for (uint j = 0 ; j < h ; ++j)
+            {
+
+                if (observer && j == checkPoint)
+                {
+                    checkPoint += granularity(observer, h, 0.8F);
+
+                    if (!observer->continueQuery())
+                    {
+                        jpeg_destroy_compress(&cinfo);
+                        delete cleanupData;
+
+                        return false;
+                    }
+
+                    // use 0-20% for pseudo-progress, now fill 20-100%
+
+                    observer->progressInfo(0.2F + (0.8F * (((float)j) / ((float)h))));
+                }
+
+                dstPtr = line;
+
+                for (uint i = 0 ; i < w ; ++i)
+                {
+                    dstPtr[2] = srcPtr[0];  // Blue
+                    dstPtr[1] = srcPtr[1];  // Green
+                    dstPtr[0] = srcPtr[2];  // Red
+
+                    srcPtr   += 4;
+                    dstPtr   += 3;
+                }
+
+                jpeg_write_scanlines(&cinfo, &line, 1);
+            }
+        }
+        else
+        {
+            unsigned short* srcPtr = reinterpret_cast<unsigned short*>(data);
+
+            for (uint j = 0 ; j < h ; ++j)
+            {
+
+                if (observer && j == checkPoint)
+                {
+                    checkPoint += granularity(observer, h, 0.8F);
+
+                    if (!observer->continueQuery())
+                    {
+                        jpeg_destroy_compress(&cinfo);
+                        delete cleanupData;
+
+                        return false;
+                    }
+
+                    // use 0-20% for pseudo-progress, now fill 20-100%
+
+                    observer->progressInfo(0.2F + (0.8F * (((float)j) / ((float)h))));
+                }
+
+                dstPtr = line;
+
+                for (uint i = 0 ; i < w ; ++i)
+                {
+                    dstPtr[2] = (srcPtr[0] * 255UL) / 65535UL;  // Blue
+                    dstPtr[1] = (srcPtr[1] * 255UL) / 65535UL;  // Green
+                    dstPtr[0] = (srcPtr[2] * 255UL) / 65535UL;  // Red
+
+                    srcPtr   += 4;
+                    dstPtr   += 3;
+                }
+
+                jpeg_write_scanlines(&cinfo, &line, 1);
+            }
+        }
+
+        cleanupData->deleteLine();
+
+        // -------------------------------------------------------------------
+
+        jpeg_finish_compress(&cinfo);
+        jpeg_destroy_compress(&cinfo);
+        delete cleanupData;
+
+        imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("JPG"));
+
+        saveMetadata(filePath);
+
+        return true;
+    }
+    catch( std::runtime_error &)
     {
         jpeg_destroy_compress(&cinfo);
         delete cleanupData;
+
         return false;
     }
-
-    // -------------------------------------------------------------------
-    // Set JPEG compressor instance
-
-    jpeg_create_compress(&cinfo);
-    jpeg_stdio_dest(&cinfo, file);
-
-    uint&              w   = imageWidth();
-    uint&              h   = imageHeight();
-    unsigned char*& data   = imageData();
-
-    // Size of image.
-
-    cinfo.image_width      = w;
-    cinfo.image_height     = h;
-
-    // Color components of image in RGB.
-
-    cinfo.input_components = 3;
-    cinfo.in_color_space   = JCS_RGB;
-
-    QVariant qualityAttr   = imageGetAttribute(QLatin1String("quality"));
-    int quality            = qualityAttr.isValid() ? qualityAttr.toInt() : 90;
-
-    if (quality < 0)
-    {
-        quality = 90;
-    }
-
-    if (quality > 100)
-    {
-        quality = 100;
-    }
-
-    QVariant subSamplingAttr = imageGetAttribute(QLatin1String("subsampling"));
-    int subsampling          = subSamplingAttr.isValid() ? subSamplingAttr.toInt() : 1;  // Medium
-
-    jpeg_set_defaults(&cinfo);
-
-    // bug #149578: set horizontal and vertical chroma subsampling factor to encoder.
-    // See this page for details: https://en.wikipedia.org/wiki/Chroma_subsampling
-
-    switch (subsampling)
-    {
-        case 1:  // 2x1, 1x1, 1x1 (4:2:2)
-        {
-            qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:2:2";
-            cinfo.comp_info[0].h_samp_factor = 2;
-            cinfo.comp_info[0].v_samp_factor = 1;
-            cinfo.comp_info[1].h_samp_factor = 1;
-            cinfo.comp_info[1].v_samp_factor = 1;
-            cinfo.comp_info[2].h_samp_factor = 1;
-            cinfo.comp_info[2].v_samp_factor = 1;
-            break;
-        }
-
-        case 2:  // 2x2, 1x1, 1x1 (4:2:0)
-        {
-            qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:2:0";
-            cinfo.comp_info[0].h_samp_factor = 2;
-            cinfo.comp_info[0].v_samp_factor = 2;
-            cinfo.comp_info[1].h_samp_factor = 1;
-            cinfo.comp_info[1].v_samp_factor = 1;
-            cinfo.comp_info[2].h_samp_factor = 1;
-            cinfo.comp_info[2].v_samp_factor = 1;
-            break;
-        }
-
-        case 3:  // 4x1, 1x1, 1x1 (4:1:1)
-        {
-            qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:1:1";
-            cinfo.comp_info[0].h_samp_factor = 4;
-            cinfo.comp_info[0].v_samp_factor = 1;
-            cinfo.comp_info[1].h_samp_factor = 1;
-            cinfo.comp_info[1].v_samp_factor = 1;
-            cinfo.comp_info[2].h_samp_factor = 1;
-            cinfo.comp_info[2].v_samp_factor = 1;
-            break;
-        }
-
-        default: // 1x1, 1x1, 1x1 (4:4:4)
-        {
-            qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:4:4";
-            cinfo.comp_info[0].h_samp_factor = 1;
-            cinfo.comp_info[0].v_samp_factor = 1;
-            cinfo.comp_info[1].h_samp_factor = 1;
-            cinfo.comp_info[1].v_samp_factor = 1;
-            cinfo.comp_info[2].h_samp_factor = 1;
-            cinfo.comp_info[2].v_samp_factor = 1;
-            break;
-        }
-    }
-
-    jpeg_set_quality(&cinfo, quality, boolean(true));
-    jpeg_start_compress(&cinfo, boolean(true));
-
-    qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG quality compression value: " << quality;
-
-    if (observer)
-    {
-        observer->progressInfo(0.1F);
-    }
-
-    // -------------------------------------------------------------------
-    // Write ICC profile.
-
-    QByteArray profile_rawdata = m_image->getIccProfile().data();
-
-    if (!profile_rawdata.isEmpty())
-    {
-        purgeExifWorkingColorSpace();
-        write_icc_profile(&cinfo, (JOCTET*)profile_rawdata.data(), profile_rawdata.size());
-    }
-
-    if (observer)
-    {
-        observer->progressInfo(0.2F);
-    }
-
-    // -------------------------------------------------------------------
-    // Write Image data.
-
-    uchar* line       = new uchar[w * 3];
-    uchar* dstPtr     = nullptr;
-    uint   checkPoint = 0;
-    cleanupData->setLine(line);
-
-    if (!imageSixteenBit())     // 8 bits image.
-    {
-        uchar* srcPtr = data;
-
-        for (uint j = 0 ; j < h ; ++j)
-        {
-
-            if (observer && j == checkPoint)
-            {
-                checkPoint += granularity(observer, h, 0.8F);
-
-                if (!observer->continueQuery())
-                {
-                    jpeg_destroy_compress(&cinfo);
-                    delete cleanupData;
-
-                    return false;
-                }
-
-                // use 0-20% for pseudo-progress, now fill 20-100%
-
-                observer->progressInfo(0.2F + (0.8F * (((float)j) / ((float)h))));
-            }
-
-            dstPtr = line;
-
-            for (uint i = 0 ; i < w ; ++i)
-            {
-                dstPtr[2] = srcPtr[0];  // Blue
-                dstPtr[1] = srcPtr[1];  // Green
-                dstPtr[0] = srcPtr[2];  // Red
-
-                srcPtr   += 4;
-                dstPtr   += 3;
-            }
-
-            jpeg_write_scanlines(&cinfo, &line, 1);
-        }
-    }
-    else
-    {
-        unsigned short* srcPtr = reinterpret_cast<unsigned short*>(data);
-
-        for (uint j = 0 ; j < h ; ++j)
-        {
-
-            if (observer && j == checkPoint)
-            {
-                checkPoint += granularity(observer, h, 0.8F);
-
-                if (!observer->continueQuery())
-                {
-                    jpeg_destroy_compress(&cinfo);
-                    delete cleanupData;
-
-                    return false;
-                }
-
-                // use 0-20% for pseudo-progress, now fill 20-100%
-
-                observer->progressInfo(0.2F + (0.8F * (((float)j) / ((float)h))));
-            }
-
-            dstPtr = line;
-
-            for (uint i = 0 ; i < w ; ++i)
-            {
-                dstPtr[2] = (srcPtr[0] * 255UL) / 65535UL;  // Blue
-                dstPtr[1] = (srcPtr[1] * 255UL) / 65535UL;  // Green
-                dstPtr[0] = (srcPtr[2] * 255UL) / 65535UL;  // Red
-
-                srcPtr   += 4;
-                dstPtr   += 3;
-            }
-
-            jpeg_write_scanlines(&cinfo, &line, 1);
-        }
-    }
-
-    cleanupData->deleteLine();
-
-    // -------------------------------------------------------------------
-
-    jpeg_finish_compress(&cinfo);
-    jpeg_destroy_compress(&cinfo);
-    delete cleanupData;
-
-    imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("JPG"));
-
-    saveMetadata(filePath);
-
-    return true;
 }
 
 } // namespace DigikamJPEGDImgPlugin

@@ -34,12 +34,7 @@ namespace Digikam
 {
 
 PreviewLoadingTask::PreviewLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description)
-    : SharedLoadingTask       (thread, description, LoadSaveThread::AccessModeRead, LoadingTaskStatusLoading),
-      m_fromRawEmbeddedPreview(false)
-{
-}
-
-PreviewLoadingTask::~PreviewLoadingTask()
+    : SharedLoadingTask(thread, description, LoadSaveThread::AccessModeRead, LoadingTaskStatusLoading)
 {
 }
 
@@ -550,8 +545,10 @@ void PreviewLoadingTask::convertQImageToDImg()
 
     if ((format == DImg::RAW) && !m_fromRawEmbeddedPreview)
     {
-        if (((m_img.width() < m_img.height()) && (orgSize.width() > orgSize.height())) ||
-            ((m_img.width() > m_img.height()) && (orgSize.width() < orgSize.height())))
+        if (
+            ((m_img.width() < m_img.height()) && (orgSize.width() > orgSize.height())) ||
+            ((m_img.width() > m_img.height()) && (orgSize.width() < orgSize.height()))
+           )
         {
             orgSize.transpose();
         }
@@ -586,7 +583,10 @@ bool PreviewLoadingTask::loadImagePreview(int sizeLimit)
 
     if (metadata->getItemPreview(previewImage))
     {
-        if ((sizeLimit == -1) || (qMax(previewImage.width(), previewImage.height()) > sizeLimit))
+        if (
+            (sizeLimit == -1) ||
+            (qMax(previewImage.width(), previewImage.height()) > sizeLimit)
+           )
         {
             m_qimage = previewImage;
             return true;
@@ -603,7 +603,10 @@ bool PreviewLoadingTask::loadImagePreview(int sizeLimit)
 
     if (img.load(m_loadingDescription.filePath, loadFlags, this))
     {
-        if ((sizeLimit == -1) || (qMax(img.width(), img.height()) > (uint)sizeLimit))
+        if (
+            (sizeLimit == -1) ||
+            (qMax(img.width(), img.height()) > (uint)sizeLimit)
+           )
         {
             m_qimage = img.copyQImage();
             return true;

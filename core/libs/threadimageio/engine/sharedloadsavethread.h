@@ -29,7 +29,7 @@ class DIGIKAM_EXPORT SharedLoadSaveThread : public ManagedLoadSaveThread
 public:
 
     explicit SharedLoadSaveThread(QObject* const parent = nullptr);
-    ~SharedLoadSaveThread() override;
+    ~SharedLoadSaveThread() override = default;
 
     void load(const LoadingDescription& description,
               AccessMode mode,

@@ -37,7 +37,7 @@ public:
      * several identical workers objects.
      * See ParallelAdapter for guidance how to use it.
      */
-    explicit ParallelWorkers();
+    ParallelWorkers() = default;
     virtual ~ParallelWorkers();
 
     /**
@@ -103,10 +103,10 @@ protected:
 protected:
 
     QList<WorkerObject*>   m_workers;
-    int                    m_currentIndex;
-    QMetaObject*           m_replacementMetaObject;
+    int                    m_currentIndex           = 0;
+    QMetaObject*           m_replacementMetaObject  = nullptr;
 
-    StaticMetacallFunction m_originalStaticMetacall;
+    StaticMetacallFunction m_originalStaticMetacall = nullptr;
 
 private:
 
@@ -119,7 +119,8 @@ private:
 
 template <class A>
 
-class ParallelAdapter : public A, public ParallelWorkers
+class ParallelAdapter : public A,
+                        public ParallelWorkers
 {
 public:
 
@@ -133,13 +134,8 @@ public:
      * For outbound connections (signals emitted from the WorkerObject),
      * use ParallelAdapter's connect to have a connection from all added WorkerObjects.
      */
-    explicit ParallelAdapter()
-    {
-    }
-
-    ~ParallelAdapter()                                                   override
-    {
-    }
+    ParallelAdapter()                                                             = default;
+    ~ParallelAdapter()                                                   override = default;
 
     void add(A* const worker)
     {

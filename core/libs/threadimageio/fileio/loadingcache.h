@@ -34,8 +34,9 @@ class LoadingProcessListener
 {
 public:
 
-    LoadingProcessListener();
-    virtual ~LoadingProcessListener();
+    LoadingProcessListener()          = default;
+    virtual ~LoadingProcessListener() = default;
+
     virtual bool querySendNotifyEvent()                                                     const = 0;
     virtual void setResult(const LoadingDescription& loadingDescription, const DImg& img)         = 0;
     virtual LoadSaveNotifier* loadSaveNotifier()                                            const = 0;
@@ -54,8 +55,9 @@ class LoadingProcess
 {
 public:
 
-    LoadingProcess();
-    virtual ~LoadingProcess();
+    LoadingProcess()          = default;
+    virtual ~LoadingProcess() = default;
+
     virtual bool completed()                                                                             const = 0;
     virtual QString cacheKey()                                                                           const = 0;
     virtual void addListener(LoadingProcessListener* const listener)                                           = 0;
@@ -77,7 +79,7 @@ class DIGIKAM_EXPORT LoadingCacheFileWatch : public QObject
 
 public:
 
-    LoadingCacheFileWatch();
+    LoadingCacheFileWatch() = default;
     ~LoadingCacheFileWatch() override;
 
     void addedImage(const QString& filePath);
@@ -99,7 +101,7 @@ protected:
     friend class LoadingCache;
 
     QHash<QString, QPair<qint64, QDateTime> > m_watchHash;
-    class LoadingCache*                       m_cache;
+    class LoadingCache*                       m_cache = nullptr;
 
 private:
 

@@ -39,39 +39,39 @@ class Q_DECL_HIDDEN VideoThumbDecoder::Private
 {
 public:
 
-    explicit Private();
-    ~Private();
+    Private()  = default;
+    ~Private() = default;
 
 public:
 
-    int                videoStream;
-    AVFormatContext*   pFormatContext;
-    AVCodecContext*    pVideoCodecContext;
-    AVCodecParameters* pVideoCodecParameters;
+    int                videoStream              = -1;
+    AVFormatContext*   pFormatContext           = nullptr;
+    AVCodecContext*    pVideoCodecContext       = nullptr;
+    AVCodecParameters* pVideoCodecParameters    = nullptr;
 
 #ifndef HAVE_FFMPEG_VERSION5
 
-    AVCodec*           pVideoCodec;
+    AVCodec*           pVideoCodec              = nullptr;
 
 #else // ffmpeg >= 5
 
-    const AVCodec*     pVideoCodec;
+    const AVCodec*     pVideoCodec              = nullptr;
 
 #endif
 
-    AVStream*          pVideoStream;
-    AVFrame*           pFrame;
-    quint8*            pFrameBuffer;
-    AVPacket*          pPacket;
-    bool               allowSeek;
-    bool               initialized;
-    AVFilterContext*   bufferSinkContext;
-    AVFilterContext*   bufferSourceContext;
-    AVFilterGraph*     filterGraph;
-    AVFrame*           filterFrame;
-    int                lastWidth;
-    int                lastHeight;
-    enum AVPixelFormat lastPixfmt;
+    AVStream*          pVideoStream             = nullptr;
+    AVFrame*           pFrame                   = nullptr;
+    quint8*            pFrameBuffer             = nullptr;
+    AVPacket*          pPacket                  = nullptr;
+    bool               allowSeek                = true;
+    bool               initialized              = false;
+    AVFilterContext*   bufferSinkContext        = nullptr;
+    AVFilterContext*   bufferSourceContext      = nullptr;
+    AVFilterGraph*     filterGraph              = nullptr;
+    AVFrame*           filterFrame              = nullptr;
+    int                lastWidth                = 0;
+    int                lastHeight               = 0;
+    enum AVPixelFormat lastPixfmt               = AV_PIX_FMT_NONE;
 
 public:
 

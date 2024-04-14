@@ -226,7 +226,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "clang-tidy"                         # For static analysis
                    "clang-tools"                        # For static analysis
                    "libasan4"                           # For static analysis
-                   "openjdk-18-jre"                     # For static analysis
+                   "default-jdk"                        # For static analysis
                    "libsaxonhe-java"                    # For static analysis
                    "libxml-perl"                        # For static analysis
                    "libxml-libxml-perl"                 # For static analysis
@@ -234,6 +234,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libyaml-perl"                       # For static analysis
                    "libjson-perl"                       # For static analysis
                    "llvm"                               # For static analysis
+                   "libomp-dev"                         # For static analysis
                    "clazy"                              # For static analysis
                    "libclang-dev"                       # For static analysis
                    "doxygen"                            # For API doc

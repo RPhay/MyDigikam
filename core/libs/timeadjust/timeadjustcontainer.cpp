@@ -25,32 +25,6 @@
 namespace Digikam
 {
 
-TimeAdjustContainer::TimeAdjustContainer()
-    : customDate    (QDateTime::currentDateTime()),
-      customTime    (QDateTime::currentDateTime()),
-      adjustmentTime(QDateTime()),
-      updUseExifTool(false),
-      updIfAvailable(true),
-      updEXIFModDate(false),
-      updEXIFOriDate(false),
-      updEXIFDigDate(false),
-      updEXIFThmDate(false),
-      updIPTCDate   (false),
-      updXMPVideo   (false),
-      updXMPDate    (false),
-      updFileModDate(false),
-      dateSource    (APPDATE),
-      metadataSource(EXIFIPTCXMP),
-      fileDateSource(FILELASTMOD),
-      adjustmentType(COPYVALUE),
-      adjustmentDays(0)
-{
-}
-
-TimeAdjustContainer::~TimeAdjustContainer()
-{
-}
-
 bool TimeAdjustContainer::atLeastOneUpdateToProcess() const
 {
     return (
@@ -78,12 +52,16 @@ QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTi
     switch (adjustmentType)
     {
         case ADDVALUE:
+        {
             sign = 1;
             break;
+        }
 
         case SUBVALUE:
+        {
             sign = -1;
             break;
+        }
 
         case INTERVAL:
         {
@@ -91,8 +69,11 @@ QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTi
 
             return newTime;
         }
+
         default: // COPYVALUE
+        {
             return originalTime;
+        }
     }
 
     newTime = newTime.addSecs(sign * seconds);
@@ -231,30 +212,6 @@ QMap<QString, bool> TimeAdjustContainer::getDateTimeTagsMap() const
     tagsMap.insert(QLatin1String("Xmp.xmpDM.shotDate"),            updXMPVideo);
 
     return tagsMap;
-}
-// -------------------------------------------------------------------
-
-DeltaTime::DeltaTime()
-    : deltaNegative(false),
-      deltaDays    (0),
-      deltaHours   (0),
-      deltaMinutes (0),
-      deltaSeconds (0)
-{
-}
-
-DeltaTime::~DeltaTime()
-{
-}
-
-bool DeltaTime::isNull() const
-{
-    return (
-            (deltaDays    == 0) &&
-            (deltaHours   == 0) &&
-            (deltaMinutes == 0) &&
-            (deltaSeconds == 0)
-           );
 }
 
 } // namespace Digikam

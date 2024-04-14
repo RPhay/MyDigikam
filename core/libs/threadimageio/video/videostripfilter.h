@@ -30,8 +30,8 @@ class DIGIKAM_EXPORT VideoStripFilter
 {
 public:
 
-    explicit VideoStripFilter();
-    ~VideoStripFilter();
+    VideoStripFilter()  = default;
+    ~VideoStripFilter() = default;
 
     void process(VideoFrame& videoFrame);
 

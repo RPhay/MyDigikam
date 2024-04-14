@@ -24,21 +24,16 @@
 namespace Digikam
 {
 
-LoadingDescription::PreviewParameters::PreviewParameters()
-    : type (NoPreview),
-      size (0),
-      flags(NoFlags)
-{
-}
-
 bool LoadingDescription::PreviewParameters::operator==(const PreviewParameters& other) const
 {
-    return ((type             == other.type)            &&
+    return (
+            (type             == other.type)            &&
             (size             == other.size)            &&
             (flags            == other.flags)           &&
             (previewSettings  == other.previewSettings) &&
             (extraParameter   == other.extraParameter)  &&
-            (storageReference == other.storageReference));
+            (storageReference == other.storageReference)
+           );
 }
 
 bool LoadingDescription::PreviewParameters::onlyPregenerate() const
@@ -94,20 +89,18 @@ IccProfile LoadingDescription::PostProcessingParameters::profile() const
 // ----------------------------------------------------------------------------
 
 LoadingDescription::LoadingDescription()
-    : filePath                  (QString()),
-      rawDecodingSettings       (DRawDecoding()),
-      rawDecodingHint           (RawDecodingDefaultSettings),
-      previewParameters         (PreviewParameters()),
-      postProcessingParameters  (PostProcessingParameters())
+    : filePath                (QString()),
+      rawDecodingSettings     (DRawDecoding()),
+      previewParameters       (PreviewParameters()),
+      postProcessingParameters(PostProcessingParameters())
 {
 }
 
 LoadingDescription::LoadingDescription(const QString& filePath,
                                        ColorManagementSettings cm)
-    : filePath              (filePath),
-      rawDecodingSettings   (DRawDecoding()),
-      rawDecodingHint       (RawDecodingDefaultSettings),
-      previewParameters     (PreviewParameters())
+    : filePath           (filePath),
+      rawDecodingSettings(DRawDecoding()),
+      previewParameters  (PreviewParameters())
 {
       postProcessingParameters.colorManagement = cm;
 }
@@ -116,10 +109,10 @@ LoadingDescription::LoadingDescription(const QString& filePath,
                                        const DRawDecoding& settings,
                                        RawDecodingHint hint,
                                        ColorManagementSettings cm)
-    : filePath              (filePath),
-      rawDecodingSettings   (settings),
-      rawDecodingHint       (hint),
-      previewParameters     (PreviewParameters())
+    : filePath           (filePath),
+      rawDecodingSettings(settings),
+      rawDecodingHint    (hint),
+      previewParameters  (PreviewParameters())
 {
       postProcessingParameters.colorManagement = cm;
 }
@@ -129,9 +122,8 @@ LoadingDescription::LoadingDescription(const QString& filePath,
                                        int size,
                                        ColorManagementSettings cm,
                                        LoadingDescription::PreviewParameters::PreviewType type)
-    : filePath(filePath),
-      rawDecodingSettings(DRawDecoding()),
-      rawDecodingHint(RawDecodingDefaultSettings)
+    : filePath           (filePath),
+      rawDecodingSettings(DRawDecoding())
 {
     previewParameters.type                   = type;
     previewParameters.size                   = size;

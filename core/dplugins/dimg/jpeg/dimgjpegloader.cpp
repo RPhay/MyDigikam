@@ -46,23 +46,12 @@ namespace DigikamJPEGDImgPlugin
 
 void DImgJPEGLoader::dimg_jpeg_error_exit(j_common_ptr cinfo)
 {
-    dimg_jpeg_error_mgr* const myerr = static_cast<dimg_jpeg_error_mgr*>(cinfo->err);
-
     char buffer[JMSG_LENGTH_MAX];
     (*cinfo->err->format_message)(cinfo, buffer);
 
     qCWarning(DIGIKAM_DIMG_LOG_JPEG) << buffer;
 
-#ifdef __MINGW32__  // krazy:exclude=cpp
-
-    __builtin_longjmp(myerr->setjmp_buffer, 1);
-
-#else
-
-    longjmp(myerr->setjmp_buffer, 1);
-
-#endif
-
+    throw std::runtime_error(buffer);
 }
 
 void DImgJPEGLoader::dimg_jpeg_emit_message(j_common_ptr cinfo, int msg_level)

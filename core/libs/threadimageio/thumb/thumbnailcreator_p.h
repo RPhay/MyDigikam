@@ -75,10 +75,7 @@ class ThumbnailImage
 {
 public:
 
-    explicit ThumbnailImage()
-      : exifOrientation(DMetadata::ORIENTATION_UNSPECIFIED)
-    {
-    }
+    ThumbnailImage() = default;
 
     bool isNull() const
     {
@@ -88,7 +85,7 @@ public:
 public:
 
     QImage qimage;
-    int    exifOrientation;
+    int    exifOrientation  = DMetadata::ORIENTATION_UNSPECIFIED;
 };
 
 // -------------------------------------------------------------------
@@ -97,47 +94,39 @@ class Q_DECL_HIDDEN ThumbnailCreator::Private
 {
 public:
 
-    explicit Private()
-      : exifRotate          (true),
-        removeAlphaChannel  (true),
-        onlyLargeThumbnails (false),
-        thumbnailStorage    (ThumbnailCreator::FreeDesktopStandard),
-        infoProvider        (nullptr),
-        dbIdForReplacement  (-1),
-        thumbnailSize       (0),
-        digiKamFingerPrint  (QLatin1String("Digikam Thumbnail Generator")), // Used internally as PNG metadata. Do not use i18n.
-        observer            (nullptr)
+    Private()
     {
         fastRawSettings.optimizeTimeLoading();
         fastRawSettings.rawPrm.halfSizeColorImage = true;
         fastRawSettings.rawPrm.sixteenBitsImage   = false;
     }
 
-    bool                            exifRotate;
-    bool                            removeAlphaChannel;
-    bool                            onlyLargeThumbnails;
+    int storageSize() const;
 
-    ThumbnailCreator::StorageMethod thumbnailStorage;
-    ThumbnailInfoProvider*          infoProvider;
-    int                             dbIdForReplacement;
+public:
 
-    int                             thumbnailSize;
+    bool                            exifRotate          = true;
+    bool                            removeAlphaChannel  = true;
+    bool                            onlyLargeThumbnails = false;
+
+    ThumbnailCreator::StorageMethod thumbnailStorage    = ThumbnailCreator::FreeDesktopStandard;
+    ThumbnailInfoProvider*          infoProvider        = nullptr;
+    int                             dbIdForReplacement  = -1;
+
+    int                             thumbnailSize       = 0;
 
     QString                         error;
     QString                         bigThumbPath;
     QString                         smallThumbPath;
 
-    QString                         digiKamFingerPrint;
+    // Used internally as PNG metadata. Do not use i18n.
+    QString                         digiKamFingerPrint  = QLatin1String("Digikam Thumbnail Generator");
 
     QImage                          alphaImage;
 
-    DImgLoaderObserver*             observer;
+    DImgLoaderObserver*             observer            = nullptr;
     DRawDecoding                    rawSettings;
     DRawDecoding                    fastRawSettings;
-
-public:
-
-    int                             storageSize() const;
 };
 
 } // namespace Digikam

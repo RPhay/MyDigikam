@@ -79,9 +79,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
             if (qimage.isNull() && !ext.isEmpty())
             {
-                if      ((ext == QLatin1String("JPEG")) ||
+                if      (
+                         (ext == QLatin1String("JPEG")) ||
                          (ext == QLatin1String("JPG"))  ||
-                         (ext == QLatin1String("JPE")))
+                         (ext == QLatin1String("JPE"))
+                        )
                 {
                     if (colorManage)
                     {
@@ -96,9 +98,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
                     failedAtJPEGScaled = qimage.isNull();
                 }
-                else if ((ext == QLatin1String("PNG"))  ||
+                else if (
+                         (ext == QLatin1String("PNG"))  ||
                          (ext == QLatin1String("TIFF")) ||
-                         (ext == QLatin1String("TIF")))
+                         (ext == QLatin1String("TIF"))
+                        )
                 {
                     // Use DImg load scaled mode
 
@@ -292,8 +296,10 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
         {
             qimage = exifRotate(qimage, exifOrientation(info, metadata, true, false));
 
-            if (((qimage.width() < qimage.height()) && (orgSize.width() > orgSize.height())) ||
-                ((qimage.width() > qimage.height()) && (orgSize.width() < orgSize.height())))
+            if (
+                ((qimage.width() < qimage.height()) && (orgSize.width() > orgSize.height())) ||
+                ((qimage.width() > qimage.height()) && (orgSize.width() < orgSize.height()))
+               )
             {
                 orgSize.transpose();
             }

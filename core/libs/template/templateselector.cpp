@@ -41,18 +41,13 @@ class Q_DECL_HIDDEN TemplateSelector::Private
 {
 public:
 
-    explicit Private()
-      : label        (nullptr),
-        setupButton  (nullptr),
-        templateCombo(nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*           label;
+    QLabel*           label             = nullptr;
 
-    QToolButton*      setupButton;
+    QToolButton*      setupButton       = nullptr;
 
-    SqueezedComboBox* templateCombo;
+    SqueezedComboBox* templateCombo     = nullptr;
 
     Template          metadataTemplate;
 };

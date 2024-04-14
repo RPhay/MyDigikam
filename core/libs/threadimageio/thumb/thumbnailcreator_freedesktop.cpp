@@ -37,7 +37,8 @@ ThumbnailInfo ThumbnailCreator::fileThumbnailInfo(const QString& path)
     QMimeDatabase mimeDB;
     QString mimeType(mimeDB.mimeTypeForFile(path).name());
 
-    if      (mimeType.startsWith(QLatin1String("image/")) ||
+    if      (
+             mimeType.startsWith(QLatin1String("image/")) ||
              (suffix == QLatin1String("PGF"))             ||
              (suffix == QLatin1String("JXL"))             ||
              (suffix == QLatin1String("AVIF"))            ||
@@ -45,7 +46,8 @@ ThumbnailInfo ThumbnailCreator::fileThumbnailInfo(const QString& path)
              (suffix == QLatin1String("CR3"))             ||
              (suffix == QLatin1String("HIF"))             ||
              (suffix == QLatin1String("HEIC"))            ||
-             (suffix == QLatin1String("HEIF")))
+             (suffix == QLatin1String("HEIF"))
+            )
     {
         info.mimeType = QLatin1String("image");
     }

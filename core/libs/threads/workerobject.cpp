@@ -34,22 +34,15 @@ class Q_DECL_HIDDEN WorkerObject::Private
 {
 public:
 
-    Private()
-      : state           (WorkerObject::Inactive),
-        eventLoop       (nullptr),
-        runnable        (nullptr),
-        inDestruction   (false),
-        priority        (QThread::InheritPriority)
-    {
-    }
+    Private() = default;
 
-    volatile WorkerObject::State state;
+    volatile WorkerObject::State state          = WorkerObject::Inactive;
     QMutex                       mutex;
     QWaitCondition               condVar;
-    QEventLoop*                  eventLoop;
-    WorkerObjectRunnable*        runnable;
-    bool                         inDestruction;
-    QThread::Priority            priority;
+    QEventLoop*                  eventLoop      = nullptr;
+    WorkerObjectRunnable*        runnable       = nullptr;
+    bool                         inDestruction  = false;
+    QThread::Priority            priority       = QThread::InheritPriority;
 };
 
 WorkerObject::WorkerObject()

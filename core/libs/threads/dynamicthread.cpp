@@ -31,19 +31,11 @@ class Q_DECL_HIDDEN DynamicThread::Private : public QRunnable
 {
 public:
 
-    explicit Private(DynamicThread* const q)
-        : q                 (q),
-          assignedThread    (nullptr),
-          running           (true),
-          emitSignals       (false),
-          inDestruction     (false),
-          threadRequested   (false),
-          state             (DynamicThread::Inactive),
-          priority          (QThread::InheritPriority),
-          previousPriority  (QThread::InheritPriority)
+    explicit Private(DynamicThread* const qq)
+        : q(qq)
     {
         setAutoDelete(false);
-    };
+    }
 
     void run() override;
 
@@ -53,18 +45,18 @@ public:
 
 public:
 
-    DynamicThread* const          q;
-    QThread*                      assignedThread;
+    DynamicThread* const          q                 = nullptr;
+    QThread*                      assignedThread    = nullptr;
 
-    volatile bool                 running;
-    volatile bool                 emitSignals;
-    volatile bool                 inDestruction;
-    volatile bool                 threadRequested;
+    volatile bool                 running           = true;
+    volatile bool                 emitSignals       = false;
+    volatile bool                 inDestruction     = false;
+    volatile bool                 threadRequested   = false;
 
-    volatile DynamicThread::State state;
+    volatile DynamicThread::State state             = DynamicThread::Inactive;
 
-    QThread::Priority             priority;
-    QThread::Priority             previousPriority;
+    QThread::Priority             priority          = QThread::InheritPriority;
+    QThread::Priority             previousPriority  = QThread::InheritPriority;
 
     QMutex                        mutex;
     QWaitCondition                condVar;
@@ -226,7 +218,11 @@ DynamicThread::State DynamicThread::state() const
 
 bool DynamicThread::isRunning() const
 {
-    return ((d->state == Scheduled) || (d->state == Running) || (d->state == Deactivating));
+    return (
+            (d->state == Scheduled) ||
+            (d->state == Running)   ||
+            (d->state == Deactivating)
+           );
 }
 
 QMutex* DynamicThread::threadMutex() const

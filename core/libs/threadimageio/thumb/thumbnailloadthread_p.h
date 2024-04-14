@@ -68,13 +68,7 @@ class Q_DECL_HIDDEN ThumbnailLoadThreadStaticPriv
 {
 public:
 
-    explicit ThumbnailLoadThreadStaticPriv()
-      : firstThreadCreated  (false),
-        storageMethod       (ThumbnailCreator::FreeDesktopStandard),
-        provider            (nullptr),
-        profile             (IccProfile::sRGB())
-    {
-    }
+    ThumbnailLoadThreadStaticPriv() = default;
 
     ~ThumbnailLoadThreadStaticPriv()
     {
@@ -83,11 +77,11 @@ public:
 
 public:
 
-    bool                            firstThreadCreated;
+    bool                            firstThreadCreated  = false;
 
-    ThumbnailCreator::StorageMethod storageMethod;
-    ThumbnailInfoProvider*          provider;
-    IccProfile                      profile;
+    ThumbnailCreator::StorageMethod storageMethod       = ThumbnailCreator::FreeDesktopStandard;
+    ThumbnailInfoProvider*          provider            = nullptr;
+    IccProfile                      profile             = IccProfile::sRGB();
 };
 
 // -------------------------------------------------------------------
@@ -97,24 +91,16 @@ class Q_DECL_HIDDEN ThumbnailLoadThread::Private
 
 public:
 
-    explicit Private()
-      : wantPixmap          (true),
-        highlight           (true),
-        sendSurrogate       (true),
-        notifiedForResults  (false),
-        size                (ThumbnailSize::maxThumbsSize()),
-        creator             (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                               wantPixmap;
-    bool                               highlight;
-    bool                               sendSurrogate;
-    bool                               notifiedForResults;
+    bool                               wantPixmap           = true;
+    bool                               highlight            = true;
+    bool                               sendSurrogate        = true;
+    bool                               notifiedForResults   = false;
 
-    int                                size;
+    int                                size                 = ThumbnailSize::maxThumbsSize();
 
-    ThumbnailCreator*                  creator;
+    ThumbnailCreator*                  creator              = nullptr;
 
     QHash<QString, ThumbnailResult>    collectedResults;
     QMutex                             resultsMutex;
@@ -156,8 +142,7 @@ public:
     public:
 
         explicit CatcherResult(const LoadingDescription& d)
-            : description(d),
-              received   (false)
+            : description(d)
         {
         }
 
@@ -172,27 +157,22 @@ public:
 
         QImage             image;
         LoadingDescription description;
-        bool               received;
+        bool               received     = false;
     };
 
 public:
 
-    explicit Private()
-      : state (Inactive),
-        active(true),
-        thread(nullptr)
-    {
-    }
+    Private() = default;
 
     void reset();
     void harvest(const LoadingDescription& description, const QImage& image);
 
 public:
 
-    CatcherState                  state;
+    CatcherState                  state     = Inactive;
 
-    bool                          active;
-    ThumbnailLoadThread*          thread;
+    bool                          active    = true;
+    ThumbnailLoadThread*          thread    = nullptr;
     QList<Private::CatcherResult> tasks;
     QList<Private::CatcherResult> intermediate;
 

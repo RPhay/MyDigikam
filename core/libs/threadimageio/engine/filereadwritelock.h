@@ -46,7 +46,7 @@ public:
 
 private:
 
-    FileReadWriteLockPriv* d;
+    FileReadWriteLockPriv* d = nullptr;
 };
 
 // ----------------------------------------------------------------------
@@ -60,7 +60,7 @@ public:
 
 private:
 
-    FileReadWriteLockPriv* d;
+    FileReadWriteLockPriv* d = nullptr;
 };
 
 // ----------------------------------------------------------------------
@@ -74,7 +74,7 @@ public:
 
 private:
 
-    FileReadWriteLockPriv* d;
+    FileReadWriteLockPriv* d = nullptr;
 };
 
 // ----------------------------------------------------------------------
@@ -100,6 +100,8 @@ private:
 
     // Disable
     SafeTemporaryFile(QObject*) = delete;
+
+private:
 
     QString m_templ;
 };

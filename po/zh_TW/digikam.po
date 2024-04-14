@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-13 01:43+0000\n"
+"POT-Creation-Date: 2024-04-14 01:36+0000\n"
 "PO-Revision-Date: 2024-04-06 01:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -6378,7 +6378,7 @@ msgstr "剖析影像中的黑洞邊框，自動計算裁剪區域的設定。"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:96
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:348
-#: core/libs/template/templateviewer.cpp:145
+#: core/libs/template/templateviewer.cpp:104
 #, kde-format
 msgid "Position:"
 msgstr "位置："
@@ -13480,8 +13480,8 @@ msgstr "輸入標題作者的姓名。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
-#: core/libs/template/templatepanel.cpp:151
-#: core/libs/template/templateviewer.cpp:149
+#: core/libs/template/templatepanel.cpp:129
+#: core/libs/template/templateviewer.cpp:108
 #, kde-format
 msgid "Copyright:"
 msgstr "著作權："
@@ -13526,8 +13526,8 @@ msgstr "在這裡設定內容創作者的職稱。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:99
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
-#: core/libs/template/templatepanel.cpp:137
-#: core/libs/template/templateviewer.cpp:147
+#: core/libs/template/templatepanel.cpp:115
+#: core/libs/template/templateviewer.cpp:106
 #, kde-format
 msgid "Credit:"
 msgstr "授權："
@@ -14257,10 +14257,10 @@ msgstr "在這裡設定內容引用的國家完整名稱。"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:151
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:184
-#: core/libs/template/templatepanel.cpp:239
-#: core/libs/template/templatepanel.cpp:303
-#: core/libs/template/templateviewer.cpp:173
-#: core/libs/template/templateviewer.cpp:197
+#: core/libs/template/templatepanel.cpp:217
+#: core/libs/template/templatepanel.cpp:281
+#: core/libs/template/templateviewer.cpp:132
+#: core/libs/template/templateviewer.cpp:156
 #, kde-format
 msgid "City:"
 msgstr "城市："
@@ -14282,8 +14282,8 @@ msgstr "在這裡設定內容來源的城市。這個欄位限制為 32 個 ASCI
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:195
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:191
-#: core/libs/template/templatepanel.cpp:249
-#: core/libs/template/templateviewer.cpp:175
+#: core/libs/template/templatepanel.cpp:227
+#: core/libs/template/templateviewer.cpp:134
 #, kde-format
 msgid "Sublocation:"
 msgstr "轄區："
@@ -14307,9 +14307,9 @@ msgstr "在這裡設定內容所在的城市。這個欄位限制為 32 個 ASCI
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:205
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:156
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:198
-#: core/libs/template/templatepanel.cpp:259
-#: core/libs/template/templateviewer.cpp:177
-#: core/libs/template/templateviewer.cpp:199
+#: core/libs/template/templatepanel.cpp:237
+#: core/libs/template/templateviewer.cpp:136
+#: core/libs/template/templateviewer.cpp:158
 #, kde-format
 msgid "State/Province:"
 msgstr "州/省："
@@ -14333,10 +14333,10 @@ msgstr "在這裡設定內容來源的省份或州。這個欄位限制為 32 �
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:215
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:161
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:205
-#: core/libs/template/templatepanel.cpp:269
-#: core/libs/template/templatepanel.cpp:313
-#: core/libs/template/templateviewer.cpp:179
-#: core/libs/template/templateviewer.cpp:201
+#: core/libs/template/templatepanel.cpp:247
+#: core/libs/template/templatepanel.cpp:291
+#: core/libs/template/templateviewer.cpp:138
+#: core/libs/template/templateviewer.cpp:160
 #, kde-format
 msgid "Country:"
 msgstr "國家："
@@ -14782,7 +14782,7 @@ msgid "Sync Exif Copyright"
 msgstr "同步 EXIF 註解"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:115
-#: core/libs/template/templatepanel.cpp:174
+#: core/libs/template/templatepanel.cpp:152
 #, kde-format
 msgid "Right Usage Terms:"
 msgstr "使用條款："
@@ -14814,8 +14814,8 @@ msgid "Creator Title:"
 msgstr "投影"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:123
-#: core/libs/template/templatepanel.cpp:415
-#: core/libs/template/templateviewer.cpp:228
+#: core/libs/template/templatepanel.cpp:393
+#: core/libs/template/templateviewer.cpp:187
 #, kde-format
 msgid "Contact"
 msgstr "連絡資料"
@@ -14832,8 +14832,8 @@ msgid "Set here the contact e-mail."
 msgstr "在這裡設定連絡的電子信箱。"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
-#: core/libs/template/templatepanel.cpp:373
-#: core/libs/template/templateviewer.cpp:207
+#: core/libs/template/templatepanel.cpp:351
+#: core/libs/template/templateviewer.cpp:166
 #, kde-format
 msgid "URL:"
 msgstr "網址："
@@ -14844,8 +14844,8 @@ msgid "Set here the contact URL."
 msgstr "在這裡設定連絡的網址。"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:136
-#: core/libs/template/templatepanel.cpp:363
-#: core/libs/template/templateviewer.cpp:203
+#: core/libs/template/templatepanel.cpp:341
+#: core/libs/template/templateviewer.cpp:162
 #, kde-format
 msgid "Phone:"
 msgstr "電話："
@@ -24340,8 +24340,8 @@ msgid "Date"
 msgstr "日期"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/template/templatepanel.cpp:297
-#: core/libs/template/templateviewer.cpp:188
+#: core/libs/template/templatepanel.cpp:275
+#: core/libs/template/templateviewer.cpp:147
 #, kde-format
 msgid "Location"
 msgstr "地點"
@@ -27250,7 +27250,7 @@ msgid "Labels Album"
 msgstr "旗標相簿"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
-#: core/libs/tags/manager/tagmngrtreeview.cpp:153
+#: core/libs/tags/manager/tagmngrtreeview.cpp:155
 #: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:128
 #, kde-format
@@ -36668,47 +36668,47 @@ msgstr "剖析錯誤：%1"
 msgid "Cannot open target file."
 msgstr "無法儲存「%1」檔案"
 
-#: core/libs/progressmanager/dlogoaction.cpp:144
+#: core/libs/progressmanager/dlogoaction.cpp:138
 #, kde-format
 msgid "Visit digiKam project website"
 msgstr "造訪 digiKam 專案網站"
 
-#: core/libs/progressmanager/progressmanager.cpp:170
+#: core/libs/progressmanager/progressmanager.cpp:158
 #, kde-format
 msgid "Aborting..."
 msgstr "取消中..."
 
-#: core/libs/progressmanager/progressview.cpp:212
+#: core/libs/progressmanager/progressview.cpp:202
 #, kde-format
 msgid "Cancel this operation."
 msgstr "取消這個動作。"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:155
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:141
 #, kde-format
 msgid "Open detailed progress dialog"
 msgstr "開啟詳情進度視窗"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:161
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:147
 #, kde-format
 msgid "No active process"
 msgstr "沒有進行中的行程"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:419
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:407
 #, kde-format
 msgid "Hide detailed progress window"
 msgstr "隱藏詳情進度視窗"
 
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:425
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:413
 #, kde-format
 msgid "Show detailed progress window"
 msgstr "顯示詳情進度對視窗"
 
-#: core/libs/properties/captions/captionedit.cpp:54
+#: core/libs/properties/captions/captionedit.cpp:50
 #, kde-format
 msgid "Captions: "
 msgstr "標題描述："
 
-#: core/libs/properties/captions/captionedit.cpp:58
+#: core/libs/properties/captions/captionedit.cpp:54
 #, kde-format
 msgid "Enter caption author name here."
 msgstr "在這裡輸入標題描述作者名稱。"
@@ -36982,7 +36982,7 @@ msgctxt "@title"
 msgid "Information"
 msgstr "資訊"
 
-#: core/libs/properties/captions/itemdescedittab_p.cpp:238
+#: core/libs/properties/captions/itemdescedittab_p.cpp:210
 #, fuzzy, kde-format
 #| msgid "Select item language here."
 msgctxt "@info"
@@ -36990,21 +36990,21 @@ msgid "Selected items have different text here."
 msgstr "在這裡選擇項目語言。"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:104
+#: core/libs/properties/captions/tagsedit.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
 msgstr "開啟標籤管理員"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:110
+#: core/libs/properties/captions/tagsedit.cpp:98
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
 msgstr "在這裡輸入新的標籤..."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:111
+#: core/libs/properties/captions/tagsedit.cpp:99
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -37016,28 +37016,28 @@ msgstr ""
 "時建立多個的層級。"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:128
+#: core/libs/properties/captions/tagsedit.cpp:116
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
 msgstr "標籤已指定"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:134
+#: core/libs/properties/captions/tagsedit.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
 msgstr "最近的標籤"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
-#: core/libs/properties/captions/tagsedit.cpp:292
+#: core/libs/properties/captions/tagsedit.cpp:280
 #, fuzzy, kde-format
 #| msgid "No Recently Assigned Tags"
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "無最近指定的標籤"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:125
 #, fuzzy, kde-format
 #| msgid "Position Information (GPS)"
 msgid ""
@@ -37046,82 +37046,82 @@ msgid ""
 "Available"
 msgstr "位置資訊（GPS）"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:156
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:137
 #, kde-format
 msgid "<b>Altitude</b>:"
 msgstr "<b>海拔</b>："
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:157
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:138
 #, kde-format
 msgid "<b>Latitude</b>:"
 msgstr "<b>緯度</b>："
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:158
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
 #, kde-format
 msgid "<b>Longitude</b>:"
 msgstr "<b>經度</b>："
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:159
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:140
 #, kde-format
 msgid "<b>Date</b>:"
 msgstr "<b>日期</b>："
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:182
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:163
 #, kde-format
 msgid "See more information on the Internet"
 msgstr "在網際網路尋找更多的資訊"
 
-#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:410
+#: core/libs/properties/geolocation/itempropertiesgpstab.cpp:391
 #, fuzzy, kde-format
 #| msgid "Not defined"
 msgctxt "@label: no GPS coordinates"
 msgid "Undefined"
 msgstr "未定義"
 
-#: core/libs/properties/history/itempropertieshistorytab.cpp:92
+#: core/libs/properties/history/itempropertieshistorytab.cpp:85
 #: core/libs/widgets/history/filtershistorywidget.cpp:90
 #, kde-format
 msgid "Used filters"
 msgstr "已使用濾鏡"
 
-#: core/libs/properties/history/itempropertieshistorytab.cpp:128
+#: core/libs/properties/history/itempropertieshistorytab.cpp:121
 #: core/libs/widgets/history/filtershistorywidget.cpp:127
 #, kde-format
 msgid "Remove filter"
 msgstr "移除濾鏡"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:70
+#: core/libs/properties/history/itempropertiesversionstab.cpp:66
 #, kde-format
 msgctxt "@title"
 msgid "Versions"
 msgstr "版本"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:73
+#: core/libs/properties/history/itempropertiesversionstab.cpp:69
 #, kde-format
 msgctxt "@title"
 msgid "Used Filters"
 msgstr "已使用濾鏡"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:153
+#: core/libs/properties/history/itempropertiesversionstab.cpp:149
 #, kde-format
 msgctxt "@action: open image"
 msgid "Open"
 msgstr "開啟"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:154
+#: core/libs/properties/history/itempropertiesversionstab.cpp:150
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open file"
 msgstr "開啟檔案"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:163
+#: core/libs/properties/history/itempropertiesversionstab.cpp:159
 #, fuzzy, kde-format
 #| msgid "Go To Albums"
 msgctxt "@action: go to album"
 msgid "Go To Albums"
 msgstr "前往相簿"
 
-#: core/libs/properties/history/itempropertiesversionstab.cpp:164
+#: core/libs/properties/history/itempropertiesversionstab.cpp:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Go to the album of this image"
@@ -37139,78 +37139,78 @@ msgctxt "@info:tooltip"
 msgid "Show item permanently"
 msgstr "永久顯示此項目"
 
-#: core/libs/properties/import/importitempropertiessidebar.cpp:92
+#: core/libs/properties/import/importitempropertiessidebar.cpp:77
 #, kde-format
 msgid "Properties"
 msgstr "屬性"
 
-#: core/libs/properties/import/importitempropertiessidebar.cpp:93
+#: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:431
 #: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
 msgstr "中繼資料"
 
-#: core/libs/properties/import/importitempropertiessidebar.cpp:98
+#: core/libs/properties/import/importitempropertiessidebar.cpp:83
 #, kde-format
 msgid "Geolocation"
 msgstr "地理位置"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:187
+#: core/libs/properties/import/importitempropertiestab.cpp:127
 #, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
 msgstr "檔案："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:188
+#: core/libs/properties/import/importitempropertiestab.cpp:128
 #: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "資料夾："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:189
+#: core/libs/properties/import/importitempropertiestab.cpp:129
 #: core/libs/properties/itempropertiestab.cpp:38
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
 msgstr "日期："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:190
+#: core/libs/properties/import/importitempropertiestab.cpp:130
 #: core/libs/properties/itempropertiestab.cpp:39
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
 msgstr "大小："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:191
+#: core/libs/properties/import/importitempropertiestab.cpp:131
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Readable: "
 msgstr "可讀取："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:192
+#: core/libs/properties/import/importitempropertiestab.cpp:132
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Writable: "
 msgstr "可寫入："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:193
+#: core/libs/properties/import/importitempropertiestab.cpp:133
 #: core/libs/properties/itempropertiestab.cpp:87
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "類型："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:194
+#: core/libs/properties/import/importitempropertiestab.cpp:134
 #: core/libs/properties/itempropertiestab.cpp:88
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
 msgstr "尺寸："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:195
-#: core/libs/properties/import/importitempropertiestab.cpp:303
+#: core/libs/properties/import/importitempropertiestab.cpp:135
+#: core/libs/properties/import/importitempropertiestab.cpp:243
 #: core/libs/properties/itempropertiestab.cpp:89
 #: core/libs/properties/itempropertiestab.cpp:187
 #, kde-format
@@ -37218,179 +37218,179 @@ msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
 msgstr "外觀比例："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:196
+#: core/libs/properties/import/importitempropertiestab.cpp:136
 #, kde-format
 msgctxt "@label: item properties"
 msgid "New Name: "
 msgstr "新名稱："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:197
+#: core/libs/properties/import/importitempropertiestab.cpp:137
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Downloaded: "
 msgstr "已下載："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:238
+#: core/libs/properties/import/importitempropertiestab.cpp:178
 #, kde-format
 msgctxt "@title"
 msgid "Camera File Properties"
 msgstr "相機檔案屬性"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:245
+#: core/libs/properties/import/importitempropertiestab.cpp:185
 #: core/libs/properties/itempropertiestab.cpp:131
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr "製造商："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:246
+#: core/libs/properties/import/importitempropertiestab.cpp:186
 #: core/libs/properties/itempropertiestab.cpp:132
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
 msgstr "型號："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:247
+#: core/libs/properties/import/importitempropertiestab.cpp:187
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr "建立時間："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:248
+#: core/libs/properties/import/importitempropertiestab.cpp:188
 #: core/libs/properties/itempropertiestab.cpp:133
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr "鏡頭："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:249
+#: core/libs/properties/import/importitempropertiestab.cpp:189
 #: core/libs/properties/itempropertiestab.cpp:134
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr "光圈："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:250
+#: core/libs/properties/import/importitempropertiestab.cpp:190
 #: core/libs/properties/itempropertiestab.cpp:135
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr "焦距："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:251
+#: core/libs/properties/import/importitempropertiestab.cpp:191
 #: core/libs/properties/itempropertiestab.cpp:136
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr "曝光："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:252
+#: core/libs/properties/import/importitempropertiestab.cpp:192
 #: core/libs/properties/itempropertiestab.cpp:137
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "靈敏度："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:253
+#: core/libs/properties/import/importitempropertiestab.cpp:193
 #: core/libs/properties/itempropertiestab.cpp:138
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr "模式/程式："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:254
+#: core/libs/properties/import/importitempropertiestab.cpp:194
 #: core/libs/properties/itempropertiestab.cpp:139
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "閃光燈："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:255
+#: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/itempropertiestab.cpp:140
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
 msgstr "白平衡："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:296
+#: core/libs/properties/import/importitempropertiestab.cpp:236
 #, kde-format
 msgctxt "@title"
 msgid "Photograph Properties"
 msgstr "相片屬性"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:304
+#: core/libs/properties/import/importitempropertiestab.cpp:244
 #: core/libs/properties/itempropertiestab.cpp:191
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "音訊位元率："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:305
+#: core/libs/properties/import/importitempropertiestab.cpp:245
 #: core/libs/properties/itempropertiestab.cpp:192
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr "聲道型態："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:306
+#: core/libs/properties/import/importitempropertiestab.cpp:246
 #: core/libs/properties/itempropertiestab.cpp:193
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr "音訊編碼器："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:307
+#: core/libs/properties/import/importitempropertiestab.cpp:247
 #: core/libs/properties/itempropertiestab.cpp:188
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "持續時間："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:308
+#: core/libs/properties/import/importitempropertiestab.cpp:248
 #: core/libs/properties/itempropertiestab.cpp:189
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "影格率："
 
-#: core/libs/properties/import/importitempropertiestab.cpp:309
+#: core/libs/properties/import/importitempropertiestab.cpp:249
 #: core/libs/properties/itempropertiestab.cpp:190
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
 msgstr "視訊編碼器： "
 
-#: core/libs/properties/import/importitempropertiestab.cpp:338
+#: core/libs/properties/import/importitempropertiestab.cpp:278
 #, kde-format
 msgctxt "@title"
 msgid "Audio/Video Properties"
 msgstr "音訊/視訊屬性"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:393
+#: core/libs/properties/import/importitempropertiestab.cpp:333
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unknown"
 msgstr "不明"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:394
+#: core/libs/properties/import/importitempropertiestab.cpp:334
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unchanged"
 msgstr "未變更"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:395
-#: core/libs/properties/itempropertiessidebar.cpp:218
+#: core/libs/properties/import/importitempropertiestab.cpp:335
+#: core/libs/properties/itempropertiessidebar.cpp:207
 #: core/libs/properties/itempropertiessidebardb.cpp:633
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
 msgstr "無法使用"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:408
-#: core/libs/properties/import/importitempropertiestab.cpp:423
-#: core/libs/properties/import/importitempropertiestab.cpp:511
-#: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebar.cpp:282
+#: core/libs/properties/import/importitempropertiestab.cpp:348
+#: core/libs/properties/import/importitempropertiestab.cpp:363
+#: core/libs/properties/import/importitempropertiestab.cpp:451
+#: core/libs/properties/itempropertiessidebar.cpp:268
+#: core/libs/properties/itempropertiessidebar.cpp:271
 #: core/libs/properties/itempropertiessidebardb.cpp:691
 #: core/libs/properties/itempropertiessidebardb.cpp:693
 #: core/libs/properties/itempropertiessidebardb.cpp:796
@@ -37401,11 +37401,11 @@ msgctxt "@info: item properties"
 msgid "No"
 msgstr "否"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:412
-#: core/libs/properties/import/importitempropertiestab.cpp:427
-#: core/libs/properties/import/importitempropertiestab.cpp:507
-#: core/libs/properties/itempropertiessidebar.cpp:278
-#: core/libs/properties/itempropertiessidebar.cpp:281
+#: core/libs/properties/import/importitempropertiestab.cpp:352
+#: core/libs/properties/import/importitempropertiestab.cpp:367
+#: core/libs/properties/import/importitempropertiestab.cpp:447
+#: core/libs/properties/itempropertiessidebar.cpp:267
+#: core/libs/properties/itempropertiessidebar.cpp:270
 #: core/libs/properties/itempropertiessidebardb.cpp:690
 #: core/libs/properties/itempropertiessidebardb.cpp:692
 #: core/libs/properties/itempropertiessidebardb.cpp:795
@@ -37415,31 +37415,31 @@ msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:441
+#: core/libs/properties/import/importitempropertiestab.cpp:381
 #, kde-format
 msgctxt "@info: item size"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:448
+#: core/libs/properties/import/importitempropertiestab.cpp:388
 #, kde-format
 msgctxt "@label"
 msgid "RAW Image"
 msgstr "RAW 影像"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:488
+#: core/libs/properties/import/importitempropertiestab.cpp:428
 #, kde-format
 msgctxt "@info: item resolution"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2（%3 百萬畫素）"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:554
+#: core/libs/properties/import/importitempropertiestab.cpp:494
 #, kde-format
 msgctxt "@info: focal length"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/import/importitempropertiestab.cpp:559
+#: core/libs/properties/import/importitempropertiestab.cpp:499
 #, kde-format
 msgctxt "@label"
 msgid "%1 ISO"
@@ -37608,31 +37608,31 @@ msgstr "IPTC"
 msgid "XMP"
 msgstr "XMP"
 
-#: core/libs/properties/itempropertiessidebar.cpp:80
+#: core/libs/properties/itempropertiessidebar.cpp:73
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Properties"
 msgstr "屬性"
 
-#: core/libs/properties/itempropertiessidebar.cpp:81
+#: core/libs/properties/itempropertiessidebar.cpp:74
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Metadata"
 msgstr "中繼資料"
 
-#: core/libs/properties/itempropertiessidebar.cpp:82
+#: core/libs/properties/itempropertiessidebar.cpp:75
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Colors"
 msgstr "顏色"
 
-#: core/libs/properties/itempropertiessidebar.cpp:87
+#: core/libs/properties/itempropertiessidebar.cpp:80
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Map"
 msgstr "地圖"
 
-#: core/libs/properties/itempropertiessidebar.cpp:243
+#: core/libs/properties/itempropertiessidebar.cpp:232
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
 #: core/showfoto/stackview/showfotostackviewitem.cpp:70
 #, fuzzy, kde-format
@@ -37641,15 +37641,15 @@ msgctxt "@info: item properties"
 msgid "RAW Image"
 msgstr "原始影像"
 
-#: core/libs/properties/itempropertiessidebar.cpp:246
+#: core/libs/properties/itempropertiessidebar.cpp:235
 #, fuzzy, kde-format
 #| msgid "Uncalibrated"
 msgctxt "@info: item properties"
 msgid "Uncalibrated"
 msgstr "未經校準"
 
-#: core/libs/properties/itempropertiessidebar.cpp:261
-#: core/libs/properties/itempropertiessidebar.cpp:268
+#: core/libs/properties/itempropertiessidebar.cpp:250
+#: core/libs/properties/itempropertiessidebar.cpp:257
 #: core/libs/properties/itempropertiessidebardb.cpp:667
 #: core/libs/properties/itempropertiessidebardb.cpp:680
 #, fuzzy, kde-format
@@ -37658,13 +37658,13 @@ msgctxt "@info: item properties"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/properties/itempropertiessidebar.cpp:262
+#: core/libs/properties/itempropertiessidebar.cpp:251
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2（%3 百萬畫素）"
 
-#: core/libs/properties/itempropertiessidebar.cpp:277
+#: core/libs/properties/itempropertiessidebar.cpp:266
 #: core/libs/properties/itempropertiessidebardb.cpp:689
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
@@ -37672,14 +37672,14 @@ msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
-#: core/libs/properties/itempropertiessidebar.cpp:313
+#: core/libs/properties/itempropertiessidebar.cpp:302
 #: core/libs/properties/itempropertiessidebardb.cpp:723
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/properties/itempropertiessidebar.cpp:318
+#: core/libs/properties/itempropertiessidebar.cpp:307
 #: core/libs/properties/itempropertiessidebardb.cpp:728
 #, kde-format
 msgctxt "@info: item properties"
@@ -39019,43 +39019,43 @@ msgstr "新增到清單"
 msgid "Add selected tags to Quick Access List"
 msgstr "將選取的標籤新增到快速存取清單中"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:135
+#: core/libs/tags/manager/tagmngrtreeview.cpp:137
 #, kde-format
 msgid "Delete Tags"
 msgstr "刪除標籤"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:143
+#: core/libs/tags/manager/tagmngrtreeview.cpp:145
 #: core/libs/tags/manager/tagsmanager.cpp:698
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "編輯標籤標題"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:147
+#: core/libs/tags/manager/tagmngrtreeview.cpp:149
 #: core/libs/tags/manager/tagsmanager.cpp:702
 #: core/libs/tags/widgets/tagfolderview.cpp:63
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "重設標籤圖示"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:150
+#: core/libs/tags/manager/tagmngrtreeview.cpp:152
 #: core/libs/tags/manager/tagsmanager.cpp:711
 #, kde-format
 msgid "Invert Selection"
 msgstr "反相選擇"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:156
+#: core/libs/tags/manager/tagmngrtreeview.cpp:158
 #: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "展開標籤樹狀圖"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:159
+#: core/libs/tags/manager/tagmngrtreeview.cpp:161
 #: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "折疊標籤樹狀圖"
 
-#: core/libs/tags/manager/tagmngrtreeview.cpp:162
+#: core/libs/tags/manager/tagmngrtreeview.cpp:164
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Remove Tag from Images"
@@ -39551,19 +39551,19 @@ msgctxt "@title: template properties"
 msgid "Authors"
 msgstr "作者"
 
-#: core/libs/template/templatepanel.cpp:111
+#: core/libs/template/templatepanel.cpp:89
 #, kde-format
 msgid "Author Names:"
 msgstr "作者姓名："
 
-#: core/libs/template/templatepanel.cpp:114
+#: core/libs/template/templatepanel.cpp:92
 #, kde-format
 msgid ""
 "Enter the names of the photograph's creators. Use semi-colons as separator "
 "here."
 msgstr "在這裡輸入相片創作者的姓名。用分號在不同作者之間作區隔。"
 
-#: core/libs/template/templatepanel.cpp:116
+#: core/libs/template/templatepanel.cpp:94
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This field should contain the names of the persons who created the "
@@ -39587,17 +39587,17 @@ msgstr ""
 "改。<p>使用<b>分號作為區隔</b>來輸入多個名稱。</p><p>若用 IPTC, 這欄位限制為 "
 "32 個 ASCII 字元。</p>"
 
-#: core/libs/template/templatepanel.cpp:125
+#: core/libs/template/templatepanel.cpp:103
 #, kde-format
 msgid "Authors' Positions:"
 msgstr "作者職位："
 
-#: core/libs/template/templatepanel.cpp:127
+#: core/libs/template/templatepanel.cpp:105
 #, kde-format
 msgid "Enter the job titles of the authors here."
 msgstr "在這裡輸入作者的工作職稱。"
 
-#: core/libs/template/templatepanel.cpp:129
+#: core/libs/template/templatepanel.cpp:107
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This field should contain the job titles of the authors. Examples "
@@ -39616,12 +39616,12 @@ msgstr ""
 "商業攝影師。由於這是作者欄位的修飾詞，故在作者欄位也必須填寫。</p><p>若用 "
 "IPTC，這欄位限制為 32 個 ASCII 字元。</p>"
 
-#: core/libs/template/templatepanel.cpp:139
+#: core/libs/template/templatepanel.cpp:117
 #, kde-format
 msgid "Enter the photograph credit here."
 msgstr "在這裡輸入相片授權。"
 
-#: core/libs/template/templatepanel.cpp:141
+#: core/libs/template/templatepanel.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>(synonymous to Provider): Use the Provider field to identify who is "
@@ -39647,14 +39647,14 @@ msgstr ""
 "業攝影照片，那麼參與提供影像的集團 (機構) 應該列在這裡。</p><p>若用 IPTC，這"
 "欄位限制為 32 個 ASCII 字元。</p>"
 
-#: core/libs/template/templatepanel.cpp:153
+#: core/libs/template/templatepanel.cpp:131
 #, kde-format
 msgid ""
 "Enter the copyright notice to identify the current owner(s) of the copyright "
 "here."
 msgstr "在這裡輸入著作權聲明來說明著作權的目前擁有者。"
 
-#: core/libs/template/templatepanel.cpp:154
+#: core/libs/template/templatepanel.cpp:132
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The Copyright Notice should contain any necessary copyright notice for "
@@ -39717,13 +39717,13 @@ msgstr ""
 "「保留所有權利 (all rights reserved)」加入。</p><p>若用 XMP，您可加入多條不同"
 "語言的著作權字串。</p><p>若用 IPTC，這欄位限制為 128 個 ASCII 字元。</p>"
 
-#: core/libs/template/templatepanel.cpp:176
+#: core/libs/template/templatepanel.cpp:154
 #, kde-format
 msgid ""
 "Enter the list of instructions on how a resource can be legally used here."
 msgstr "在這裡輸入資源合法使用的須知清單。"
 
-#: core/libs/template/templatepanel.cpp:177
+#: core/libs/template/templatepanel.cpp:155
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The Right Usage Terms field should be used to list instructions on how "
@@ -39739,20 +39739,20 @@ msgstr ""
 "<p>使用條款欄位應用於列舉資源合法使用須知。<p>若用 XMP，您可以加入多條不同語"
 "言的使用條款字串。</p><p>若用 IPTC 則這個資料夾不存在。</p>"
 
-#: core/libs/template/templatepanel.cpp:185
-#: core/libs/template/templateviewer.cpp:153
+#: core/libs/template/templatepanel.cpp:163
+#: core/libs/template/templateviewer.cpp:112
 #, fuzzy, kde-format
 #| msgid "Source:"
 msgctxt "@label: template properties"
 msgid "Source:"
 msgstr "來源："
 
-#: core/libs/template/templatepanel.cpp:187
+#: core/libs/template/templatepanel.cpp:165
 #, kde-format
 msgid "Enter the original owner of the photograph here."
 msgstr "在這裡輸入相片的原擁有者。"
 
-#: core/libs/template/templatepanel.cpp:189
+#: core/libs/template/templatepanel.cpp:167
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The Source field should be used to identify the original owner or "
@@ -39785,18 +39785,18 @@ msgstr ""
 "可能會與創作者、著作權聲明上的姓名不同。</p><p>若用 IPTC，這欄位限制為 32 個 "
 "ASCII 字元。</p>"
 
-#: core/libs/template/templatepanel.cpp:201
-#: core/libs/template/templateviewer.cpp:155
+#: core/libs/template/templatepanel.cpp:179
+#: core/libs/template/templateviewer.cpp:114
 #, kde-format
 msgid "Instructions:"
 msgstr "須知："
 
-#: core/libs/template/templatepanel.cpp:203
+#: core/libs/template/templatepanel.cpp:181
 #, kde-format
 msgid "Enter the editorial notice here."
 msgstr "在這裡輸入編輯注意事項。"
 
-#: core/libs/template/templatepanel.cpp:205
+#: core/libs/template/templatepanel.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The Instructions field should be used to list editorial instructions "
@@ -39810,182 +39810,182 @@ msgstr ""
 "<p>須知欄位應用於列舉關於相片使用的編輯說明。</p><p>若用 IPTC，這欄位限制為 "
 "256 個 ASCII 字元。</p>"
 
-#: core/libs/template/templatepanel.cpp:231
-#: core/libs/template/templateviewer.cpp:168
+#: core/libs/template/templatepanel.cpp:209
+#: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr "所有權"
 
-#: core/libs/template/templatepanel.cpp:242
+#: core/libs/template/templatepanel.cpp:220
 #, kde-format
 msgid "Enter the city of contents here."
 msgstr "在這裡輸入內容的城市。"
 
-#: core/libs/template/templatepanel.cpp:244
+#: core/libs/template/templatepanel.cpp:222
 #, kde-format
 msgid ""
 "<p>This field should contain the name of the city where the photograph was "
 "taken.</p>"
 msgstr "<p>這欄位應含有相片拍攝的城市名稱。</p>"
 
-#: core/libs/template/templatepanel.cpp:252
+#: core/libs/template/templatepanel.cpp:230
 #, kde-format
 msgid "Enter the city sublocation of contents here."
 msgstr "在這裡輸入內容的轄區。"
 
-#: core/libs/template/templatepanel.cpp:254
+#: core/libs/template/templatepanel.cpp:232
 #, kde-format
 msgid ""
 "<p>This field should contain the sublocation of the city where the "
 "photograph was taken.</p>"
 msgstr "<p>這欄位應含有相片拍攝的城市管轄區。</p>"
 
-#: core/libs/template/templatepanel.cpp:262
+#: core/libs/template/templatepanel.cpp:240
 #, kde-format
 msgid "Enter the province or state of contents here."
 msgstr "在這裡輸入內容的省份或州。"
 
-#: core/libs/template/templatepanel.cpp:264
+#: core/libs/template/templatepanel.cpp:242
 #, kde-format
 msgid ""
 "<p>This field should contain the province or state where the photograph was "
 "taken.</p>"
 msgstr "<p>這欄位應含有相片拍攝的省份或州。</p>"
 
-#: core/libs/template/templatepanel.cpp:272
+#: core/libs/template/templatepanel.cpp:250
 #, kde-format
 msgid "<p>Select here the country where the photograph was taken.</p>"
 msgstr "<p>在這裡選擇相片拍攝的國家。</p>"
 
-#: core/libs/template/templatepanel.cpp:306
+#: core/libs/template/templatepanel.cpp:284
 #, kde-format
 msgid "Enter the city name of the lead author here."
 msgstr "在這裡輸入主要作者的城市名稱。"
 
-#: core/libs/template/templatepanel.cpp:308
+#: core/libs/template/templatepanel.cpp:286
 #, kde-format
 msgid ""
 "<p>This field should contain the city name where the lead author lives.</p>"
 msgstr "<p>這欄位應含有主要作者居住的城市名稱。</p>"
 
-#: core/libs/template/templatepanel.cpp:316
+#: core/libs/template/templatepanel.cpp:294
 #, kde-format
 msgid "Enter the country name of the lead author here."
 msgstr "在這裡輸入主要作者的國家名稱。"
 
-#: core/libs/template/templatepanel.cpp:318
+#: core/libs/template/templatepanel.cpp:296
 #, kde-format
 msgid ""
 "<p>This field should contain the country name where the lead author lives.</"
 "p>"
 msgstr "<p>這欄位應含有主要作者居住的國家名稱。</p>"
 
-#: core/libs/template/templatepanel.cpp:323
-#: core/libs/template/templateviewer.cpp:193
+#: core/libs/template/templatepanel.cpp:301
+#: core/libs/template/templateviewer.cpp:152
 #, fuzzy, kde-format
 #| msgid "Address:"
 msgctxt "@label: template properties"
 msgid "Address:"
 msgstr "地址："
 
-#: core/libs/template/templatepanel.cpp:326
+#: core/libs/template/templatepanel.cpp:304
 #, kde-format
 msgid "Enter the address of the lead author here."
 msgstr "在這裡輸入主要作者的住址。"
 
-#: core/libs/template/templatepanel.cpp:328
+#: core/libs/template/templatepanel.cpp:306
 #, kde-format
 msgid ""
 "<p>This field should contain the address where the lead author lives.</p>"
 msgstr "<p>這欄位應含有主要作者居住的地址。</p>"
 
-#: core/libs/template/templatepanel.cpp:333
-#: core/libs/template/templateviewer.cpp:195
+#: core/libs/template/templatepanel.cpp:311
+#: core/libs/template/templateviewer.cpp:154
 #, kde-format
 msgid "Postal Code:"
 msgstr "郵遞區號："
 
-#: core/libs/template/templatepanel.cpp:336
+#: core/libs/template/templatepanel.cpp:314
 #, kde-format
 msgid "Enter the postal code of the lead author here."
 msgstr "在這裡輸入主要作者的郵遞區號。"
 
-#: core/libs/template/templatepanel.cpp:338
+#: core/libs/template/templatepanel.cpp:316
 #, kde-format
 msgid ""
 "<p>This field should contain the postal code where the lead author lives.</p>"
 msgstr "<p>這欄位應含有主要作者居住的郵遞區號。</p>"
 
-#: core/libs/template/templatepanel.cpp:343
+#: core/libs/template/templatepanel.cpp:321
 #, kde-format
 msgid "Province:"
 msgstr "興趣："
 
-#: core/libs/template/templatepanel.cpp:346
+#: core/libs/template/templatepanel.cpp:324
 #, kde-format
 msgid "Enter the province of the lead author here."
 msgstr "在這裡輸入主要作者的興趣。"
 
-#: core/libs/template/templatepanel.cpp:348
+#: core/libs/template/templatepanel.cpp:326
 #, kde-format
 msgid ""
 "<p>This field should contain the province where the lead author lives.</p>"
 msgstr "<p>這欄位應含有主要作者的興趣。</p>"
 
-#: core/libs/template/templatepanel.cpp:353
-#: core/libs/template/templateviewer.cpp:205
+#: core/libs/template/templatepanel.cpp:331
+#: core/libs/template/templateviewer.cpp:164
 #, kde-format
 msgctxt "@label: template properties"
 msgid "Email:"
 msgstr "電子信箱："
 
-#: core/libs/template/templatepanel.cpp:356
+#: core/libs/template/templatepanel.cpp:334
 #, kde-format
 msgid "Enter the email of the lead author here."
 msgstr "在這裡輸入主要作者的電子信箱。"
 
-#: core/libs/template/templatepanel.cpp:358
+#: core/libs/template/templatepanel.cpp:336
 #, kde-format
 msgid "<p>This field should contain the email of the lead author.</p>"
 msgstr "<p>這欄位應含有主要作者的電子信箱。</p>"
 
-#: core/libs/template/templatepanel.cpp:366
+#: core/libs/template/templatepanel.cpp:344
 #, kde-format
 msgid "Enter the phone number of the lead author here."
 msgstr "在這裡輸入主要作者的電話號碼。"
 
-#: core/libs/template/templatepanel.cpp:368
+#: core/libs/template/templatepanel.cpp:346
 #, kde-format
 msgid "<p>This field should contain the phone number of the lead author.</p>"
 msgstr "<p>這欄位應含有主要作者的電話號碼。</p>"
 
-#: core/libs/template/templatepanel.cpp:376
+#: core/libs/template/templatepanel.cpp:354
 #, kde-format
 msgid "Enter the web site URL of the lead author here."
 msgstr "在這裡輸入主要作者的網站網址。"
 
-#: core/libs/template/templatepanel.cpp:378
+#: core/libs/template/templatepanel.cpp:356
 #, kde-format
 msgid "<p>This field should contain the web site URL of the lead author.</p>"
 msgstr "<p>這欄位應含有主要作者的網站網址。</p>"
 
-#: core/libs/template/templatepanel.cpp:429
-#: core/libs/template/templateviewer.cpp:236
+#: core/libs/template/templatepanel.cpp:407
+#: core/libs/template/templateviewer.cpp:195
 #, kde-format
 msgid "Subjects"
 msgstr "主題"
 
-#: core/libs/template/templateselector.cpp:64
+#: core/libs/template/templateselector.cpp:59
 #, kde-format
 msgid "Template: "
 msgstr "範本："
 
-#: core/libs/template/templateselector.cpp:68
+#: core/libs/template/templateselector.cpp:63
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "開啟中繼資料範本編輯器"
 
-#: core/libs/template/templateselector.cpp:69
+#: core/libs/template/templateselector.cpp:64
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -39998,22 +39998,22 @@ msgstr ""
 "範本。</p><p><b>不變更</b>：不動範本資訊。</p><p>全部其他數值是由 digiKam 管"
 "理的範本標題。選擇一個同樣會指定資訊。</p>"
 
-#: core/libs/template/templateselector.cpp:108
+#: core/libs/template/templateselector.cpp:103
 #, kde-format
 msgid "To remove"
 msgstr "移除"
 
-#: core/libs/template/templateselector.cpp:109
+#: core/libs/template/templateselector.cpp:104
 #, kde-format
 msgid "Do not change"
 msgstr "不變更"
 
-#: core/libs/template/templateviewer.cpp:143
+#: core/libs/template/templateviewer.cpp:102
 #, kde-format
 msgid "Names:"
 msgstr "姓名："
 
-#: core/libs/template/templateviewer.cpp:151
+#: core/libs/template/templateviewer.cpp:110
 #, kde-format
 msgid "Usages:"
 msgstr "用途："

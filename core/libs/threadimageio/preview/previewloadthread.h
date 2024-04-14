@@ -36,7 +36,7 @@ public:
      * always stops any previous tasks and loads the new task as soon as possible.
      */
     explicit PreviewLoadThread(QObject* const parent = nullptr);
-    ~PreviewLoadThread() override;
+    ~PreviewLoadThread() override = default;
 
     /**
      * Load a preview that is optimized for fast loading.
@@ -109,7 +109,7 @@ protected:
 
 protected:
 
-    QWidget* m_displayingWidget;
+    QWidget* m_displayingWidget = nullptr;
 
 private:
 

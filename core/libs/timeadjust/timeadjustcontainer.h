@@ -74,10 +74,12 @@ public:
 
 public:
 
-    TimeAdjustContainer();
-    ~TimeAdjustContainer();
+    TimeAdjustContainer()  = default;
+    ~TimeAdjustContainer() = default;
 
-    /// Check if at least one option is selected
+    /**
+     * Check if at least one option is selected
+     */
     bool atLeastOneUpdateToProcess()                                const;
 
     QDateTime calculateAdjustedDate(const QDateTime& originalTime, int index = 0);
@@ -86,26 +88,26 @@ public:
 
 public:
 
-    QDateTime customDate;
-    QDateTime customTime;
-    QDateTime adjustmentTime;
+    QDateTime customDate        = QDateTime::currentDateTime();
+    QDateTime customTime        = QDateTime::currentDateTime();
+    QDateTime adjustmentTime    = QDateTime();
 
-    bool      updUseExifTool;
-    bool      updIfAvailable;
-    bool      updEXIFModDate;
-    bool      updEXIFOriDate;
-    bool      updEXIFDigDate;
-    bool      updEXIFThmDate;
-    bool      updIPTCDate;
-    bool      updXMPVideo;
-    bool      updXMPDate;
-    bool      updFileModDate;
+    bool      updUseExifTool    = false;
+    bool      updIfAvailable    = true;
+    bool      updEXIFModDate    = false;
+    bool      updEXIFOriDate    = false;
+    bool      updEXIFDigDate    = false;
+    bool      updEXIFThmDate    = false;
+    bool      updIPTCDate       = false;
+    bool      updXMPVideo       = false;
+    bool      updXMPDate        = false;
+    bool      updFileModDate    = false;
 
-    int       dateSource;
-    int       metadataSource;
-    int       fileDateSource;
-    int       adjustmentType;
-    int       adjustmentDays;
+    int       dateSource        = APPDATE;
+    int       metadataSource    = EXIFIPTCXMP;
+    int       fileDateSource    = FILELASTMOD;
+    int       adjustmentType    = COPYVALUE;
+    int       adjustmentDays    = 0;
 };
 
 // -------------------------------------------------------------------
@@ -118,21 +120,30 @@ class DeltaTime
 
 public:
 
-    explicit DeltaTime();
+    DeltaTime()  = default;
+    ~DeltaTime() = default;
 
-    ~DeltaTime();
-
-    /// Check if at least one option is selected
-    bool isNull() const;
+    /**
+     * Check if at least one option is selected.
+     */
+    bool isNull() const
+    {
+        return (
+                (deltaDays    == 0) &&
+                (deltaHours   == 0) &&
+                (deltaMinutes == 0) &&
+                (deltaSeconds == 0)
+               );
+    }
 
 public:
 
-    bool deltaNegative;
+    bool deltaNegative  = false;
 
-    int  deltaDays;
-    int  deltaHours;
-    int  deltaMinutes;
-    int  deltaSeconds;
+    int  deltaDays      = 0;
+    int  deltaHours     = 0;
+    int  deltaMinutes   = 0;
+    int  deltaSeconds   = 0;
 };
 
 } // namespace Digikam

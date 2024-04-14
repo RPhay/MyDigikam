@@ -39,98 +39,57 @@ class Q_DECL_HIDDEN TemplateViewer::Private
 {
 public:
 
-    explicit Private()
-      : names                       (nullptr),
-        position                    (nullptr),
-        credit                      (nullptr),
-        copyright                   (nullptr),
-        usages                      (nullptr),
-        source                      (nullptr),
-        instructions                (nullptr),
-        namesList                   (nullptr),
-        labelPosition               (nullptr),
-        labelCredit                 (nullptr),
-        labelCopyright              (nullptr),
-        labelUsages                 (nullptr),
-        labelSource                 (nullptr),
-        labelInstructions           (nullptr),
-        locationCountry             (nullptr),
-        locationProvinceState       (nullptr),
-        locationCity                (nullptr),
-        locationSublocation         (nullptr),
-        labelLocationCountry        (nullptr),
-        labelLocationProvinceState  (nullptr),
-        labelLocationCity           (nullptr),
-        labelLocationSublocation    (nullptr),
-        contactCity                 (nullptr),
-        contactCountry              (nullptr),
-        contactAddress              (nullptr),
-        contactPostalCode           (nullptr),
-        contactProvinceState        (nullptr),
-        contactEmail                (nullptr),
-        contactPhone                (nullptr),
-        contactWebUrl               (nullptr),
-        labelContactCity            (nullptr),
-        labelContactCountry         (nullptr),
-        labelContactAddress         (nullptr),
-        labelContactPostalCode      (nullptr),
-        labelContactProvinceState   (nullptr),
-        labelContactPhone           (nullptr),
-        labelContactEmail           (nullptr),
-        labelContactWebUrl          (nullptr),
-        subjectsList                (nullptr)
-    {
-    }
+    Private() = default;
 
     /// IPTC Rights info.
-    DTextLabelName*  names;
-    DTextLabelName*  position;
-    DTextLabelName*  credit;
-    DTextLabelName*  copyright;
-    DTextLabelName*  usages;
-    DTextLabelName*  source;
-    DTextLabelName*  instructions;
+    DTextLabelName*  names                      = nullptr;
+    DTextLabelName*  position                   = nullptr;
+    DTextLabelName*  credit                     = nullptr;
+    DTextLabelName*  copyright                  = nullptr;
+    DTextLabelName*  usages                     = nullptr;
+    DTextLabelName*  source                     = nullptr;
+    DTextLabelName*  instructions               = nullptr;
 
-    DTextList*       namesList;
-    DTextBrowser*    labelPosition;
-    DTextBrowser*    labelCredit;
-    DTextBrowser*    labelCopyright;
-    DTextBrowser*    labelUsages;
-    DTextBrowser*    labelSource;
-    DTextBrowser*    labelInstructions;
+    DTextList*       namesList                  = nullptr;
+    DTextBrowser*    labelPosition              = nullptr;
+    DTextBrowser*    labelCredit                = nullptr;
+    DTextBrowser*    labelCopyright             = nullptr;
+    DTextBrowser*    labelUsages                = nullptr;
+    DTextBrowser*    labelSource                = nullptr;
+    DTextBrowser*    labelInstructions          = nullptr;
 
     /// IPTC Location info.
-    DTextLabelName*  locationCountry;
-    DTextLabelName*  locationProvinceState;
-    DTextLabelName*  locationCity;
-    DTextLabelName*  locationSublocation;
+    DTextLabelName*  locationCountry            = nullptr;
+    DTextLabelName*  locationProvinceState      = nullptr;
+    DTextLabelName*  locationCity               = nullptr;
+    DTextLabelName*  locationSublocation        = nullptr;
 
-    DTextBrowser*    labelLocationCountry;
-    DTextBrowser*    labelLocationProvinceState;
-    DTextBrowser*    labelLocationCity;
-    DTextBrowser*    labelLocationSublocation;
+    DTextBrowser*    labelLocationCountry       = nullptr;
+    DTextBrowser*    labelLocationProvinceState = nullptr;
+    DTextBrowser*    labelLocationCity          = nullptr;
+    DTextBrowser*    labelLocationSublocation   = nullptr;
 
     /// IPTC Contact info.
-    DTextLabelName*  contactCity;
-    DTextLabelName*  contactCountry;
-    DTextLabelName*  contactAddress;
-    DTextLabelName*  contactPostalCode;
-    DTextLabelName*  contactProvinceState;
-    DTextLabelName*  contactEmail;
-    DTextLabelName*  contactPhone;
-    DTextLabelName*  contactWebUrl;
+    DTextLabelName*  contactCity                = nullptr;
+    DTextLabelName*  contactCountry             = nullptr;
+    DTextLabelName*  contactAddress             = nullptr;
+    DTextLabelName*  contactPostalCode          = nullptr;
+    DTextLabelName*  contactProvinceState       = nullptr;
+    DTextLabelName*  contactEmail               = nullptr;
+    DTextLabelName*  contactPhone               = nullptr;
+    DTextLabelName*  contactWebUrl              = nullptr;
 
-    DTextBrowser*    labelContactCity;
-    DTextBrowser*    labelContactCountry;
-    DTextBrowser*    labelContactAddress;
-    DTextBrowser*    labelContactPostalCode;
-    DTextBrowser*    labelContactProvinceState;
-    DTextBrowser*    labelContactPhone;
-    QLabel*          labelContactEmail;
-    QLabel*          labelContactWebUrl;
+    DTextBrowser*    labelContactCity           = nullptr;
+    DTextBrowser*    labelContactCountry        = nullptr;
+    DTextBrowser*    labelContactAddress        = nullptr;
+    DTextBrowser*    labelContactPostalCode     = nullptr;
+    DTextBrowser*    labelContactProvinceState  = nullptr;
+    DTextBrowser*    labelContactPhone          = nullptr;
+    QLabel*          labelContactEmail          = nullptr;
+    QLabel*          labelContactWebUrl         = nullptr;
 
     /// IPTC Subjects info.
-    DTextList*       subjectsList;
+    DTextList*       subjectsList               = nullptr;
 };
 
 TemplateViewer::TemplateViewer(QWidget* const parent)
