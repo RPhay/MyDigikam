@@ -53,83 +53,50 @@ class Q_DECL_HIDDEN TimeAdjustSettings::Private
 
 public:
 
-    explicit Private()
-      : useSettingsBox          (nullptr),
-        adjustSettingsBox       (nullptr),
-        updateSettingsBox       (nullptr),
-        useButtonGroup          (nullptr),
-        useApplDateBtn          (nullptr),
-        useFileDateBtn          (nullptr),
-        useFileNameBtn          (nullptr),
-        useMetaDateBtn          (nullptr),
-        useCustomDateBtn        (nullptr),
-        updUseExifToolCheck     (nullptr),
-        updIfAvailableCheck     (nullptr),
-        updFileModDateCheck     (nullptr),
-        updEXIFModDateCheck     (nullptr),
-        updEXIFOriDateCheck     (nullptr),
-        updEXIFDigDateCheck     (nullptr),
-        updEXIFThmDateCheck     (nullptr),
-        updIPTCDateCheck        (nullptr),
-        updXMPVideoCheck        (nullptr),
-        updXMPDateCheck         (nullptr),
-        useFileDateTypeChooser  (nullptr),
-        useMetaDateTypeChooser  (nullptr),
-        adjTypeChooser          (nullptr),
-        useApplDateLbl          (nullptr),
-        adjDaysLabel            (nullptr),
-        adjDaysInput            (nullptr),
-        adjDetByClockPhotoBtn   (nullptr),
-        useCustDateInput        (nullptr),
-        useCustTimeInput        (nullptr),
-        adjTimeInput            (nullptr),
-        useCustomDateTodayBtn   (nullptr),
-        settingsExpander        (nullptr)
-    {
-    }
+    Private() = default;
 
-    QWidget*               useSettingsBox;
-    QWidget*               adjustSettingsBox;
-    QWidget*               updateSettingsBox;
+    QWidget*               useSettingsBox           = nullptr;
+    QWidget*               adjustSettingsBox        = nullptr;
+    QWidget*               updateSettingsBox        = nullptr;
 
-    QButtonGroup*          useButtonGroup;
+    QButtonGroup*          useButtonGroup           = nullptr;
 
-    QRadioButton*          useApplDateBtn;
-    QRadioButton*          useFileDateBtn;
-    QRadioButton*          useFileNameBtn;
-    QRadioButton*          useMetaDateBtn;
-    QRadioButton*          useCustomDateBtn;
+    QRadioButton*          useApplDateBtn           = nullptr;
+    QRadioButton*          useFileDateBtn           = nullptr;
+    QRadioButton*          useFileNameBtn           = nullptr;
+    QRadioButton*          useMetaDateBtn           = nullptr;
+    QRadioButton*          useCustomDateBtn         = nullptr;
 
-    QCheckBox*             updUseExifToolCheck;
-    QCheckBox*             updIfAvailableCheck;
-    QCheckBox*             updFileModDateCheck;
-    QCheckBox*             updEXIFModDateCheck;
-    QCheckBox*             updEXIFOriDateCheck;
-    QCheckBox*             updEXIFDigDateCheck;
-    QCheckBox*             updEXIFThmDateCheck;
-    QCheckBox*             updIPTCDateCheck;
-    QCheckBox*             updXMPVideoCheck;
-    QCheckBox*             updXMPDateCheck;
+    QCheckBox*             updUseExifToolCheck      = nullptr;
+    QCheckBox*             updIfAvailableCheck      = nullptr;
+    QCheckBox*             updFileModDateCheck      = nullptr;
+    QCheckBox*             updEXIFModDateCheck      = nullptr;
+    QCheckBox*             updEXIFOriDateCheck      = nullptr;
+    QCheckBox*             updEXIFDigDateCheck      = nullptr;
+    QCheckBox*             updEXIFThmDateCheck      = nullptr;
+    QCheckBox*             updIPTCDateCheck         = nullptr;
+    QCheckBox*             updXMPVideoCheck         = nullptr;
+    QCheckBox*             updXMPDateCheck          = nullptr;
 
-    QComboBox*             useFileDateTypeChooser;
-    QComboBox*             useMetaDateTypeChooser;
-    QComboBox*             adjTypeChooser;
+    QComboBox*             useFileDateTypeChooser   = nullptr;
+    QComboBox*             useMetaDateTypeChooser   = nullptr;
+    QComboBox*             adjTypeChooser           = nullptr;
 
-    QLabel*                useApplDateLbl;
-    QLabel*                adjDaysLabel;
+    QLabel*                useApplDateLbl           = nullptr;
+    QLabel*                adjDaysLabel             = nullptr;
 
-    QSpinBox*              adjDaysInput;
+    QSpinBox*              adjDaysInput             = nullptr;
 
-    DetByClockPhotoButton* adjDetByClockPhotoBtn;
+    DetByClockPhotoButton* adjDetByClockPhotoBtn    = nullptr;
 
-    QDateEdit*             useCustDateInput;
+    QDateEdit*             useCustDateInput         = nullptr;
 
-    QTimeEdit*             useCustTimeInput;
-    QTimeEdit*             adjTimeInput;
+    QTimeEdit*             useCustTimeInput         = nullptr;
+    QTimeEdit*             adjTimeInput             = nullptr;
 
-    QToolButton*           useCustomDateTodayBtn;
+    QToolButton*           useCustomDateTodayBtn    = nullptr;
 
-    DExpanderBox*          settingsExpander;
+    DExpanderBox*          settingsExpander         = nullptr;
 
     QUrl                   currentItemUrl;
 };
