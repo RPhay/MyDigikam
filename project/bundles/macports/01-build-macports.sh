@@ -285,6 +285,7 @@ port install jpeg
 port install tiff
 port install eigen3
 port install gettext
+port install wget +ssl
 port install jasper
 port install lcms2
 port install expat
@@ -295,6 +296,11 @@ port install bison
 port install py38-lxml
 port install x265
 port install libde265
+port install libfdk-aac
+port install lame
+port install speex
+port install libtheora
+port install xvid
 
 cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
@@ -311,8 +317,20 @@ cmake $ORIG_WD/../3rdparty \
 cmake --build . --config RelWithDebInfo --target ext_heif       -- -j$CPU_CORES
 
 port install aom
-port install ffmpeg
-port install wget +ssl
+
+cmake $ORIG_WD/../3rdparty \
+       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
+       -DINSTALL_ROOT=$INSTALL_PREFIX \
+       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -DKA_VERSION=$DK_KA_VERSION \
+       -DKP_VERSION=$DK_KP_VERSION \
+       -DKDE_VERSION=$DK_KDE_VERSION \
+       -DENABLE_QTVERSION=$DK_QTVERSION \
+       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+       -DARCH_TARGET=$ARCH_TARGET \
+       -Wno-dev
+
+cmake --build . --config RelWithDebInfo --target ext_ffmpeg       -- -j$CPU_CORES
 
 if [[ $DK_QTVERSION = 5 ]] ; then
 
