@@ -18,10 +18,8 @@
 // Qt includes
 
 #include <QDir>
-#include <QAction>
 #include <QIcon>
-#include <QMimeType>
-#include <QMimeDatabase>
+#include <QAction>
 
 // KDE includes
 
