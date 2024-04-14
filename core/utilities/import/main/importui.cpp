@@ -2441,7 +2441,7 @@ void ImportUI::postProcessAfterDownload()
         d->waitAutoRotate = true;
 
         connect(tool, &NewItemsFinder::signalComplete,
-                this, [=]()
+                this, [this, renamedItemsList]()
             {
                 ItemInfoList infoList;
 

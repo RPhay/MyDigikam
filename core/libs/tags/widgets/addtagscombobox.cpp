@@ -71,7 +71,7 @@ AddTagsComboBox::AddTagsComboBox(QWidget* const parent)
             this, SLOT(slotLineEditActionSelected(TaggingAction)));
 
     connect(d->lineEdit->completer(), QOverload<const QString&>::of(&QCompleter::highlighted),
-            this, [=](const QString& text)
+            this, [this](const QString& text)
             {
                 d->lineEdit->setText(text);
             }

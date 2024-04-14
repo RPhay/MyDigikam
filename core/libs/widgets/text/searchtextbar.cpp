@@ -99,14 +99,14 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
             d->searchTimer, SLOT(start()));
 
     connect(d->completer, QOverload<>::of(&ModelCompleter::signalActivated),
-            this, [=]()
+            this, [this]()
         {
             Q_EMIT completerActivated();
         }
     );
 
     connect(d->completer, QOverload<const int>::of(&ModelCompleter::signalHighlighted),
-            this, [=](const int albumId)
+            this, [this](const int albumId)
         {
             Q_EMIT completerHighlighted(albumId);
         }
