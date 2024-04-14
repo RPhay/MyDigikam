@@ -36,14 +36,6 @@
 #   pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
-#include <kservice_version.h>
-
-#if KSERVICE_VERSION > QT_VERSION_CHECK(5, 81, 0)
-#   include <kapplicationtrader.h>
-#else
-#   include <kmimetypetrader.h>
-#endif
-
 #include <klocalizedstring.h>
 #include <kactioncollection.h>
 
