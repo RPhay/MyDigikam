@@ -23,32 +23,6 @@
 namespace Digikam
 {
 
-VideoThumbDecoder::Private::Private()
-    : videoStream           (-1),
-      pFormatContext        (nullptr),
-      pVideoCodecContext    (nullptr),
-      pVideoCodecParameters (nullptr),
-      pVideoCodec           (nullptr),
-      pVideoStream          (nullptr),
-      pFrame                (nullptr),
-      pFrameBuffer          (nullptr),
-      pPacket               (nullptr),
-      allowSeek             (true),
-      initialized           (false),
-      bufferSinkContext     (nullptr),
-      bufferSourceContext   (nullptr),
-      filterGraph           (nullptr),
-      filterFrame           (nullptr),
-      lastWidth             (0),
-      lastHeight            (0),
-      lastPixfmt            (AV_PIX_FMT_NONE)
-{
-}
-
-VideoThumbDecoder::Private::~Private()
-{
-}
-
 void VideoThumbDecoder::Private::createAVFrame(AVFrame** const avFrame,
                                           quint8** const frameBuffer,
                                           int width,
@@ -284,10 +258,12 @@ bool VideoThumbDecoder::Private::processFilterGraph(AVFrame* const dst,
                                                enum AVPixelFormat pixfmt,
                                                int width, int height)
 {
-    if (!filterGraph           ||
+    if (
+        !filterGraph           ||
         (width  != lastWidth)  ||
         (height != lastHeight) ||
-        (pixfmt != lastPixfmt))
+        (pixfmt != lastPixfmt)
+       )
     {
 
         if (!initFilterGraph(pixfmt, width, height))

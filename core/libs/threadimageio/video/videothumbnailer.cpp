@@ -48,16 +48,14 @@ public:
 
     public:
 
-        explicit Histogram()
+        Histogram()
         {
             memset(r, 0, 255 * sizeof(T));
             memset(g, 0, 255 * sizeof(T));
             memset(b, 0, 255 * sizeof(T));
         }
 
-        ~Histogram()
-        {
-        }
+        ~Histogram() = default;
 
     public:
 
@@ -68,16 +66,7 @@ public:
 
 public:
 
-    explicit Private()
-      : thumbnailSize       (256),
-        seekPercentage      (10),
-        overlayFilmStrip    (false),
-        workAroundIssues    (false),
-        maintainAspectRatio (true),
-        smartFrameSelection (false),
-        SMART_FRAME_ATTEMPTS(25)
-    {
-    }
+    Private() = default;
 
     void generateHistogram(const VideoFrame& videoFrame, Histogram<int>& histogram);
     int  getBestThumbnailIndex(std::vector<VideoFrame>& videoFrames,
@@ -85,16 +74,16 @@ public:
 
 public:
 
-    int                        thumbnailSize;
-    quint16                    seekPercentage;
-    bool                       overlayFilmStrip;
-    bool                       workAroundIssues;
-    bool                       maintainAspectRatio;
-    bool                       smartFrameSelection;
+    int                        thumbnailSize        = 256;
+    quint16                    seekPercentage       = 10;
+    bool                       overlayFilmStrip     = false;
+    bool                       workAroundIssues     = false;
+    bool                       maintainAspectRatio  = true;
+    bool                       smartFrameSelection  = false;
     QString                    seekTime;
     QVector<VideoStripFilter*> filters;
 
-    const int                  SMART_FRAME_ATTEMPTS;
+    const int                  SMART_FRAME_ATTEMPTS = 25;
 };
 
 VideoThumbnailer::VideoThumbnailer()
@@ -122,7 +111,8 @@ VideoThumbnailer::~VideoThumbnailer()
 void VideoThumbnailer::setSeekPercentage(int percentage)
 {
     d->seekTime.clear();
-    d->seekPercentage = (percentage > 95) ? 95 : percentage;
+    d->seekPercentage = (percentage > 95) ? 95
+                                          : percentage;
 }
 
 void VideoThumbnailer::setSeekTime(const QString& seekTime)
@@ -278,6 +268,7 @@ int VideoThumbnailer::Private::getBestThumbnailIndex(vector<VideoFrame>& videoFr
                                                      const vector<Private::Histogram<int> >& histograms)
 {
     Q_UNUSED(videoFrames);
+
     Private::Histogram<float> avgHistogram;
 
     for (size_t i = 0 ; i < histograms.size() ; ++i)

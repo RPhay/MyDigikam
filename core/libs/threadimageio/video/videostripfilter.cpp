@@ -621,14 +621,6 @@ static const quint8* determineFilmStrip(quint32 videoWidth, quint32& videoStripW
     return videoStrip64;
 }
 
-VideoStripFilter::VideoStripFilter()
-{
-}
-
-VideoStripFilter::~VideoStripFilter()
-{
-}
-
 void VideoStripFilter::process(VideoFrame& videoFrame)
 {
     quint32 videoStripWidth      = 0;
