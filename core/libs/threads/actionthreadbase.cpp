@@ -32,8 +32,7 @@ namespace Digikam
 
 ActionJob::ActionJob(QObject* const parent)
     : QObject  (parent),
-      QRunnable(),
-      m_cancel (false)
+      QRunnable()
 {
     setAutoDelete(false);
 }
@@ -54,13 +53,9 @@ class Q_DECL_HIDDEN ActionThreadBase::Private
 {
 public:
 
-    explicit Private()
-      : running(false),
-        pool   (nullptr)
-    {
-    }
+    Private() = default;
 
-    volatile bool       running;
+    volatile bool       running = false;
 
     QWaitCondition      condVarJobs;
     QMutex              mutex;
@@ -69,7 +64,7 @@ public:
     ActionJobCollection pending;
     ActionJobCollection processed;
 
-    QThreadPool*        pool;
+    QThreadPool*        pool    = nullptr;
 };
 
 ActionThreadBase::ActionThreadBase(QObject* const parent)

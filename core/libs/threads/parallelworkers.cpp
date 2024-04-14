@@ -32,13 +32,6 @@
 namespace Digikam
 {
 
-ParallelWorkers::ParallelWorkers()
-    : m_currentIndex          (0),
-      m_replacementMetaObject (nullptr),
-      m_originalStaticMetacall(nullptr)
-{
-}
-
 ParallelWorkers::~ParallelWorkers()
 {
     Q_FOREACH (WorkerObject* const object, m_workers)

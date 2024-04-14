@@ -40,8 +40,7 @@ class Q_DECL_HIDDEN ParkingThread : public QThread
 public:
 
     explicit ParkingThread(QObject* const parent = nullptr)
-        : QThread(parent),
-          running(true)
+        : QThread(parent)
     {
         start();
     }
@@ -129,7 +128,7 @@ public:
 
 public:
 
-    volatile bool                     running;
+    volatile bool                     running   = true;
     typedef QPair<QObject*, QThread*> TodoPair;
     QMutex                            mutex;
     QWaitCondition                    condVar;
@@ -146,8 +145,8 @@ public:
 
 protected:
 
-    WorkerObject*  object;
-    ParkingThread* parkingThread;
+    WorkerObject*  object           = nullptr;
+    ParkingThread* parkingThread    = nullptr;
 
 protected:
 
@@ -224,21 +223,17 @@ class Q_DECL_HIDDEN ThreadManager::Private
 {
 public:
 
-    Private()
-      : parkingThread(nullptr),
-        pool         (nullptr)
-    {
-    }
-
-    ParkingThread* parkingThread;
-    QThreadPool*   pool;
-
-public:
+    Private() = default;
 
     void changeMaxThreadCount(int diff)
     {
         pool->setMaxThreadCount(pool->maxThreadCount() + diff);
     }
+
+public:
+
+    ParkingThread* parkingThread    = nullptr;
+    QThreadPool*   pool             = nullptr;
 };
 
 // -------------------------------------------------------------------------------------------------
