@@ -35,6 +35,10 @@ AppendVCPKGPaths
 
 ORIG_WD="`pwd`"
 
+# See https://bugs.kde.org/show_bug.cgi?id=484237#c11
+set(VCPKG_CXX_FLAGS "/EHa ${VCPKG_CXX_FLAGS}")
+set(VCPKG_C_FLAGS "/EHa ${VCPKG_C_FLAGS}")
+
 #################################################################################################
 
 if [ ! -d $BUILDING_DIR/dk_cmake ] ; then
