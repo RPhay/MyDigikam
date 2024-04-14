@@ -136,7 +136,7 @@ elseif(APPLE)
         GIT_TAG 4.9.0
 
         CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_opencv} RelWithDebInfo x86_64 "${BASH_OPTIONS}"
+                          <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_opencv} RelWithDebInfo ${ARCH_TARGET} "${BASH_OPTIONS}"
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

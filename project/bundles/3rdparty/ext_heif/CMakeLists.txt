@@ -64,7 +64,7 @@ elseif(APPLE)
                           cd <SOURCE_DIR> &&
                           <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} heif &&
                           cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_ext_heif} RelWithDebInfo x86_64 ${Heif_conf}
+                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_ext_heif} RelWithDebInfo ${ARCH_TARGET} ${Heif_conf}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

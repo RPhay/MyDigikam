@@ -66,7 +66,7 @@ elseif(APPLE)
         GIT_TAG v1.0.4
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_libavif} RelWithDebInfo x86_64 ${BASH_OPTIONS_AVIF}
+                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_libavif} RelWithDebInfo ${ARCH_TARGET} ${BASH_OPTIONS_AVIF}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 

@@ -223,6 +223,26 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 fi
 
 #################################################################################################
+
+# Create the build dir for the 3rdparty deps
+
+if [ ! -d $BUILDING_DIR ] ; then
+
+    mkdir $BUILDING_DIR
+
+fi
+
+if [ ! -d $DOWNLOAD_DIR ] ; then
+
+    mkdir $DOWNLOAD_DIR
+
+fi
+
+cd $BUILDING_DIR
+
+rm -rf $BUILDING_DIR/* || true
+
+#################################################################################################
 # Dependencies build and installation
 
 echo -e "\n"
@@ -257,29 +277,42 @@ if [ ! -f $INSTALL_PREFIX/bin/m4 ] ; then
     cp -f $INSTALL_PREFIX/libexec/gnubin/m4 $INSTALL_PREFIX/bin/
 fi
 
-port install \
-             cctools +xcode \
-             cmake \
-             ccache \
-             libpng \
-             jpeg \
-             tiff \
-             eigen3 \
-             gettext \
-             jasper \
-             lcms2 \
-             expat \
-             libxml2 \
-             libxslt \
-             libical \
-             bison \
-             py38-lxml \
-             x265 \
-             libde265 \
-             libheif \
-             aom \
-             ffmpeg \
-             wget +ssl
+port install cctools +xcode
+port install cmake
+port install ccache
+port install libpng
+port install jpeg
+port install tiff
+port install eigen3
+port install gettext
+port install jasper
+port install lcms2
+port install expat
+port install libxml2
+port install libxslt
+port install libical
+port install bison
+port install py38-lxml
+port install x265
+port install libde265
+
+cmake $ORIG_WD/../3rdparty \
+       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
+       -DINSTALL_ROOT=$INSTALL_PREFIX \
+       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -DKA_VERSION=$DK_KA_VERSION \
+       -DKP_VERSION=$DK_KP_VERSION \
+       -DKDE_VERSION=$DK_KDE_VERSION \
+       -DENABLE_QTVERSION=$DK_QTVERSION \
+       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+       -DARCH_TARGET=$ARCH_TARGET \
+       -Wno-dev
+
+cmake --build . --config RelWithDebInfo --target ext_heif       -- -j$CPU_CORES
+
+port install aom
+port install ffmpeg
+port install wget +ssl
 
 if [[ $DK_QTVERSION = 5 ]] ; then
 
@@ -320,34 +353,6 @@ fi
 #             libusb \
 #             libgphoto2 \
 
-echo -e "\n"
-
-echo -e "---------- Compilation logs of Macports packages with suspicious installation\n"
-find $INSTALL_PREFIX/var/macports/logs/ -name main.log
-echo -e "\n----------"
-
-echo -e "\n"
-
-#################################################################################################
-
-# Create the build dir for the 3rdparty deps
-
-if [ ! -d $BUILDING_DIR ] ; then
-
-    mkdir $BUILDING_DIR
-
-fi
-
-if [ ! -d $DOWNLOAD_DIR ] ; then
-
-    mkdir $DOWNLOAD_DIR
-
-fi
-
-cd $BUILDING_DIR
-
-rm -rf $BUILDING_DIR/* || true
-
 cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
@@ -357,6 +362,7 @@ cmake $ORIG_WD/../3rdparty \
        -DKDE_VERSION=$DK_KDE_VERSION \
        -DENABLE_QTVERSION=$DK_QTVERSION \
        -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+       -DARCH_TARGET=$ARCH_TARGET \
        -Wno-dev
 
 if [[ $DK_QTVERSION = 6 ]] ; then
