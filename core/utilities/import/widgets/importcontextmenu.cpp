@@ -88,6 +88,7 @@ public:
 
     QMap<int, QAction*>          queueActions;
     QMap<QString, KService::Ptr> servicesMap;
+    QMap<QString, DServiceInfo>  newServicesMap;
 
     ImportFilterModel*           importFilterModel   = nullptr;
 
@@ -184,105 +185,132 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 {
     setSelectedItems(selectedItems);
 
-    // This code is inspired by KonqMenuActions:
-    // kdebase/apps/lib/konq/konq_menuactions.cpp
-
-    QStringList    mimeTypes;
-    KService::List offers;
-
-    Q_FOREACH (const QUrl& item, d->selectedItems)
+    if (!ImportUI::instance()->cameraUseUMSDriver())
     {
-        const QString mimeType = QMimeDatabase().mimeTypeForFile(item.toLocalFile(), QMimeDatabase::MatchExtension).name();
-
-        if (!mimeTypes.contains(mimeType))
-        {
-            mimeTypes << mimeType;
-        }
+        return;
     }
 
-    if (!mimeTypes.isEmpty())
-    {
-        // Query trader
+#ifdef Q_OS_MAC
 
-        const QString firstMimeType      = mimeTypes.takeFirst();
-        const QString constraintTemplate = QString::fromUtf8("'%1' in ServiceTypes");
-        QStringList   constraints;
+    QList<QUrl> appUrls = DServiceMenu::MacApplicationsForFiles(selectedItems);
 
-        Q_FOREACH (const QString& mimeType, mimeTypes)
-        {
-            constraints << constraintTemplate.arg(mimeType);
-        }
-
-#if KSERVICE_VERSION > QT_VERSION_CHECK(5, 81, 0)
-
-        offers = KApplicationTrader::queryByMimeType(firstMimeType);
-
-#else
-
-        offers = KMimeTypeTrader::self()->query(firstMimeType,
-                                                QLatin1String("Application"),
-                                                constraints.join(QLatin1String(" and ")));
-
-#endif
-
-        // remove duplicate service entries
-
-        QSet<QString> seenApps;
-
-        for (KService::List::iterator it = offers.begin() ; it != offers.end() ; )
-        {
-            const QString appName((*it)->name());
-
-            if (!seenApps.contains(appName))
-            {
-                seenApps.insert(appName);
-                ++it;
-            }
-            else
-            {
-                it = offers.erase(it);
-            }
-        }
-    }
-
-    if      (!offers.isEmpty() && ImportUI::instance()->cameraUseUMSDriver())
+    if (!appUrls.isEmpty())
     {
         QMenu* const servicesMenu    = new QMenu(d->parent);
         qDeleteAll(servicesMenu->actions());
 
         QAction* const serviceAction = servicesMenu->menuAction();
-        serviceAction->setText(i18nc("@title:menu open with desktop application", "Open With"));
+        serviceAction->setText(i18nc("@action: context menu", "Open With"));
 
-        Q_FOREACH (KService::Ptr service, offers)
+        Q_FOREACH (const QUrl& aurl, appUrls)
         {
-            QString name          = service->name().replace(QLatin1Char('&'), QLatin1String("&&"));
-            QAction* const action = servicesMenu->addAction(name);
-            action->setIcon(QIcon::fromTheme(service->icon()));
-            action->setData(service->name());
-            d->servicesMap[name] = service;
+            QAction* const action = servicesMenu->addAction(DServiceMenu::MacApplicationBundleName(aurl));
+            action->setIcon(DServiceMenu::MacApplicationBundleIcon(aurl));
+            action->setData(aurl);
         }
-
-#ifdef HAVE_KIO
-
-        servicesMenu->addSeparator();
-        servicesMenu->addAction(i18nc("@item:inmenu open with other application", "Other..."));
 
         addAction(serviceAction);
 
         connect(servicesMenu, SIGNAL(triggered(QAction*)),
                 this, SLOT(slotOpenWith(QAction*)));
     }
-    else if (ImportUI::instance()->cameraUseUMSDriver())
+
+#else // LINUX and WINDOWS
+
+#   ifdef HAVE_KIO
+
+    KService::List offers = DServiceMenu::servicesForOpenWith(selectedItems);
+
+    if (!offers.isEmpty())
     {
-        QAction* const serviceAction = new QAction(i18nc("@title:menu", "Open With..."), this);
+        QMenu* const servicesMenu    = new QMenu(d->parent);
+        qDeleteAll(servicesMenu->actions());
+
+        QAction* const serviceAction = servicesMenu->menuAction();
+        serviceAction->setText(i18nc("@action: context menu", "Open With"));
+
+        Q_FOREACH (const KService::Ptr& service, offers)
+        {
+            QString name          = service->name().replace(QLatin1Char('&'), QLatin1String("&&"));
+            QAction* const action = servicesMenu->addAction(name);
+            action->setIcon(QIcon::fromTheme(service->icon()));
+            action->setData(service->name());
+            d->servicesMap[name]  = service;
+        }
+
+        servicesMenu->addSeparator();
+        servicesMenu->addAction(i18nc("@action: open item with other application", "Other..."));
+
+        addAction(serviceAction);
+
+        connect(servicesMenu, SIGNAL(triggered(QAction*)),
+                this, SLOT(slotOpenWith(QAction*)));
+    }
+    else
+    {
+        QAction* const serviceAction = new QAction(i18nc("@action: context menu", "Open With..."), this);
         addAction(serviceAction);
 
         connect(serviceAction, SIGNAL(triggered()),
                 this, SLOT(slotOpenWith()));
-
-#endif // HAVE_KIO
-
     }
+
+#   else
+
+    QList<DServiceInfo> offers = DServiceMenu::servicesForOpen(selectedItems);
+
+    if (!offers.isEmpty())
+    {
+        QMenu* const servicesMenu    = new QMenu(d->parent);
+        qDeleteAll(servicesMenu->actions());
+
+        QAction* const serviceAction = servicesMenu->menuAction();
+        serviceAction->setText(i18nc("@action: context menu", "Open With"));
+
+        Q_FOREACH (const DServiceInfo& sinfo, offers)
+        {
+            QAction* const action = servicesMenu->addAction(sinfo.name);
+            action->setIcon(DServiceMenu::getIconFromService(sinfo));
+            action->setData(sinfo.name);
+            d->newServicesMap[sinfo.name] = sinfo;
+        }
+
+#   ifdef Q_OS_WIN
+
+        if (selectedItems.size() == 1)
+        {
+            servicesMenu->addSeparator();
+            servicesMenu->addAction(i18nc("@action: open item with other application", "Other..."));
+        }
+
+#   endif // Q_OS_WIN
+
+        addAction(serviceAction);
+
+        connect(servicesMenu, SIGNAL(triggered(QAction*)),
+                this, SLOT(slotOpenWith(QAction*)));
+    }
+
+#   ifdef Q_OS_WIN
+
+    else
+    {
+        if (selectedItems.size() == 1)
+        {
+            QAction* const serviceAction = new QAction(i18nc("@action: context menu", "Open With..."), this);
+            addAction(serviceAction);
+
+            connect(serviceAction, SIGNAL(triggered()),
+                    this, SLOT(slotOpenWith()));
+        }
+    }
+
+#   endif // Q_OS_WIN
+
+#   endif // HAVE_KIO
+
+#endif // Q_OS_MAC
+
 }
 
 void ImportContextMenuHelper::slotOpenWith()
@@ -294,12 +322,24 @@ void ImportContextMenuHelper::slotOpenWith()
 
 void ImportContextMenuHelper::slotOpenWith(QAction* action)
 {
-    KService::Ptr service;
+#ifdef Q_OS_MAC
+
     QList<QUrl> list = d->selectedItems;
+    QUrl aurl        = action ? action->data().toUrl() : QUrl();
 
-    QString name = action ? action->data().toString() : QString();
+    if (!aurl.isEmpty())
+    {
+        DServiceMenu::MacOpenFilesWithApplication(list, aurl);
+    }
 
-#ifdef HAVE_KIO
+#else // LINUX and WINDOWS
+
+    QList<QUrl> list = d->selectedItems;
+    QString name     = action ? action->data().toString() : QString();
+
+#   ifdef HAVE_KIO
+
+    KService::Ptr service;
 
     if (name.isEmpty())
     {
@@ -329,14 +369,45 @@ void ImportContextMenuHelper::slotOpenWith(QAction* action)
         delete dlg;
     }
     else
-
-#endif // HAVE_KIO
-
     {
         service = d->servicesMap[name];
     }
 
     DServiceMenu::runFiles(service, list);
+
+#   else
+
+    if (name.isEmpty())
+    {
+
+#   ifdef Q_OS_WIN
+
+        // See Bug #380065 for details.
+
+        if (list.size() == 1)
+        {
+            SHELLEXECUTEINFO sei = {};
+            sei.cbSize           = sizeof(sei);
+            sei.fMask            = SEE_MASK_INVOKEIDLIST | SEE_MASK_NOASYNC;
+            sei.nShow            = SW_SHOWNORMAL;
+            sei.lpVerb           = (LPCWSTR)QString::fromLatin1("openas").utf16();
+            sei.lpFile           = (LPCWSTR)QDir::toNativeSeparators(list.first().toLocalFile()).utf16();
+            ShellExecuteEx(&sei);
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "ShellExecuteEx::openas return code:" << GetLastError();
+        }
+
+#   endif // Q_OS_WIN
+
+        return;
+    }
+
+    DServiceMenu::runFiles(d->newServicesMap[name], list);
+
+#   endif // HAVE_KIO
+
+#endif // Q_OS_MAC
+
 }
 
 void ImportContextMenuHelper::addRotateMenu(itemIds& /*ids*/)
