@@ -322,7 +322,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
 
         return true;
     }
-    catch (std::runtime_error &)
+    catch (std::runtime_error&)
     {
         jpeg_destroy_decompress(&cinfo);
         fclose(inFile);
@@ -786,7 +786,7 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
         return true;
     }
-    catch (std::runtime_error &)
+    catch (std::runtime_error&)
     {
         jpeg_destroy_decompress(&srcinfo);
         jpeg_destroy_compress(&dstinfo);
@@ -1100,7 +1100,7 @@ int getJpegQuality(const QString& file)
 
         return quality;
     }
-    catch (std::runtime_error &)
+    catch (std::runtime_error&)
     {
         jpeg_destroy_decompress(&jpeg_info);
         fclose(inFile);
