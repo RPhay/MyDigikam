@@ -34,7 +34,7 @@ public:
 
     explicit PreviewLoadingTask(LoadSaveThread* const thread,
                                 const LoadingDescription& description);
-    ~PreviewLoadingTask() override;
+    ~PreviewLoadingTask() override = default;
 
     void execute()        override;
 
@@ -51,7 +51,7 @@ private:
 private:
 
     QImage m_qimage;
-    bool   m_fromRawEmbeddedPreview;
+    bool   m_fromRawEmbeddedPreview = false;
 
 private:
 

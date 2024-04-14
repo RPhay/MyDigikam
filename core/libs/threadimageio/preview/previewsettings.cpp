@@ -18,13 +18,8 @@ namespace Digikam
 {
 
 PreviewSettings::PreviewSettings(Quality quality, RawLoading rawLoading)
-    : quality          (quality),
-      rawLoading       (rawLoading),
-      convertToEightBit(false)
-{
-}
-
-PreviewSettings::~PreviewSettings()
+    : quality   (quality),
+      rawLoading(rawLoading)
 {
 }
 

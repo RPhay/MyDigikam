@@ -60,7 +60,7 @@ public:
 
     explicit PreviewSettings(Quality quality = HighQualityPreview,
                              RawLoading rawLoading = RawPreviewAutomatic);
-    ~PreviewSettings();
+    ~PreviewSettings() = default;
 
     bool operator==(const PreviewSettings& other) const;
 
@@ -73,7 +73,7 @@ public:
 
     Quality    quality;
     RawLoading rawLoading;
-    bool       convertToEightBit;
+    bool       convertToEightBit = false;
 };
 
 } // namespace Digikam

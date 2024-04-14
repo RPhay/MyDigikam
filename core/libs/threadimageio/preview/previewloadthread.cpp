@@ -24,14 +24,9 @@ namespace Digikam
 {
 
 PreviewLoadThread::PreviewLoadThread(QObject* const parent)
-    : ManagedLoadSaveThread(parent),
-      m_displayingWidget   (nullptr)
+    : ManagedLoadSaveThread(parent)
 {
-    m_loadingPolicy = LoadingPolicyFirstRemovePrevious;
-}
-
-PreviewLoadThread::~PreviewLoadThread()
-{
+      m_loadingPolicy = LoadingPolicyFirstRemovePrevious;
 }
 
 LoadingDescription PreviewLoadThread::createLoadingDescription(const QString& filePath, const PreviewSettings& settings, int size)
