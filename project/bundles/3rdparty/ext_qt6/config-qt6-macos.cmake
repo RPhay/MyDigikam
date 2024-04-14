@@ -1,6 +1,6 @@
 ################################################################################
 #
-# Script to build Qt 6 - config for Linux
+# Script to build Qt 6 - config for MacOS
 # See option details on configure-help text file
 #
 # Copyright (c) 2015-2024 by Gilles Caulier  <caulier dot gilles at gmail dot com>
@@ -24,7 +24,6 @@ LIST(APPEND QT_CONFIG
             -sql-sqlite                       # Compile Sqlite SQL plugin
             -fontconfig
             -system-freetype                  # Use system font rendering lib https://doc.qt.io/qt-5/qtgui-attribution-freetype.html
-            -openssl-linked                   # Use last ssl libraries previously compiled as static.
             -system-zlib                      # Do not share the internal zlib and promote system lib instead to prevent mixed versions in client area.
             -icu
 
@@ -49,7 +48,6 @@ LIST(APPEND QT_CONFIG
 
             -qt-pcre
             -qt-harfbuzz
-            -xcb
 
             # Qt components to disable
             # https://doc.qt.io/qt-6/qtmodules.html
@@ -87,5 +85,5 @@ LIST(APPEND QT_CONFIG
             -skip qtwebglplugin               # No need browser OpenGL extention support
 )
 
-MESSAGE(STATUS "Use Linux configuration:")
+MESSAGE(STATUS "Use MacOS configuration:")
 MESSAGE(STATUS ${QT_CONFIG})

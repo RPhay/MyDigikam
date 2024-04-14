@@ -103,7 +103,7 @@ DK_KA_VERSION="23.08.4"
 DK_KDE_VERSION="5.114"
 
 # Qt version to use in bundle and provided by Macports.
-DK_QTVERSION="5"
+DK_QTVERSION="6"
 
 # Mariadb version to install for Qt QSL plugin.
 # Left empty to use current 5.x from Macports

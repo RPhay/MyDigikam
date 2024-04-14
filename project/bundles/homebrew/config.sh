@@ -87,7 +87,7 @@ DK_KP_VERSION="5.27.8"
 # See official release here: https://download.kde.org/stable/release-service/
 DK_KA_VERSION="23.08.1"
 
-# Qt version to use in bundle and provided by Macports.
+# Qt version to use in bundle and provided by Homebrew.
 DK_QTVERSION="6"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.

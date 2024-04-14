@@ -31,6 +31,25 @@ IF(MSVC)
         ALWAYS 0
     )
 
+ELSE IF(APPLE)
+
+    INCLUDE("config-qt6-macos.cmake")
+
+    ExternalProject_Add(ext_qt6
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+
+        URL ${QT_URL}
+        URL_MD5 ${QT_HASH}
+
+        CONFIGURE_COMMAND <SOURCE_DIR>/configure ${QT_CONFIG}
+
+        BUILD_COMMAND ${BUILD_CLI}
+
+        UPDATE_COMMAND ""
+        BUILD_IN_SOURCE 1
+        ALWAYS 0
+    )
+
 ELSE()
 
     # Linux with G++ compiler

@@ -279,34 +279,40 @@ port install \
              libheif \
              aom \
              ffmpeg \
-             wget +ssl \
-             qt5-qtbase \
-             qt5-qtdeclarative \
-             qt5-qtmacextras \
-             qt5-qtquickcontrols \
-             qt5-qtxmlpatterns \
-             qt5-qtsvg \
-             qt5-qttools \
-             qt5-qttranslations \
-             qt5-qtimageformats \
-             qt5-qtmultimedia \
-             qt5-qtnetworkauth \
-             qt5-sqlite-plugin \
-             qt5-mysql-plugin $MP_MARIADB_VARIANT
+             wget +ssl
 
-port deactivate boost
+if [[ $DK_QTVERSION = 5 ]] ; then
 
-if [[ $DK_QTWEBENGINE = 1 ]] ; then
+    port install \
+             qt$DK_QTVERSION-qtbase \
+             qt$DK_QTVERSION-qtdeclarative \
+             qt$DK_QTVERSION-qtmacextras \
+             qt$DK_QTVERSION-qtquickcontrols \
+             qt$DK_QTVERSION-qtxmlpatterns \
+             qt$DK_QTVERSION-qtsvg \
+             qt$DK_QTVERSION-qttools \
+             qt$DK_QTVERSION-qttranslations \
+             qt$DK_QTVERSION-qtimageformats \
+             qt$DK_QTVERSION-qtmultimedia \
+             qt$DK_QTVERSION-qtnetworkauth \
+             qt$DK_QTVERSION-sqlite-plugin \
+             qt$DK_QTVERSION-mysql-plugin $MP_MARIADB_VARIANT
 
-    port install qt5-qtwebengine
+    if [[ $DK_QTWEBENGINE = 1 ]] ; then
+
+        port install qt$DK_QTVERSION-qtwebengine
+
+    else
+
+        port install qt$DK_QTVERSION-qtwebkit
+
+    fi
 
 else
 
-    port install qt5-qtwebkit
+    port install mariadb
 
 fi
-
-port activate boost
 
 # port broken since a while. check later
 #             sane-backends \
@@ -353,8 +359,10 @@ cmake $ORIG_WD/../3rdparty \
        -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
-if [[ $DK_QTWEBENGINE = 0 ]] ; then
-    cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES
+if [[ $DK_QTVERSION = 6 ]] ; then
+
+    cmake --build . --config RelWithDebInfo --target ext_qt6     -- -j$CPU_CORES
+
 fi
 
 cmake --build . --config RelWithDebInfo --target ext_boost       -- -j$CPU_CORES
