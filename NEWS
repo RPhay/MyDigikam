@@ -74,7 +74,7 @@ BUGFIXES:
 051 ==> 478805 - GPG key file of digikamdeveloper@gmail.com comes with bad signature.
 052 ==> 461616 - Keyboard shortcuts override text input boxes.
 053 ==> 459480 - User login to flickr not working - cannot load page.
-054 ==> 
+054 ==> 484237 - 8.3.0: Crash when generating fingerprints on Windows 11.
 055 ==> 
 056 ==> 
 057 ==> 
