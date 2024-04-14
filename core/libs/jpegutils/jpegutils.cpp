@@ -96,7 +96,7 @@ static void jpegutils_jpeg_error_exit(j_common_ptr cinfo)
     char buffer[JMSG_LENGTH_MAX];
     (*cinfo->err->format_message)(cinfo, buffer);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Jpegutils error, aborting operation:" << buffer;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Jpegutils error:" << buffer;
 
     throw std::runtime_error(buffer);
 }
