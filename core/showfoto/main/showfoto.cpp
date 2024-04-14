@@ -59,7 +59,7 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 #ifdef HAVE_GEOLOCATION
 
     connect(Digikam::GeolocationSettings::instance(), &Digikam::GeolocationSettings::signalSetupGeolocation,
-            this, [=](int tab)
+            this, [this](int tab)
         {
             ShowfotoSetup::execGeolocation(this, tab);
         }
@@ -68,7 +68,7 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 #endif
 
     connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
-            this, [=]()
+            this, [this]()
         {
             ShowfotoSetup::execLocalize(this);
         }

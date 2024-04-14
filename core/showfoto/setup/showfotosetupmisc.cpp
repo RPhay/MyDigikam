@@ -209,7 +209,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     QPushButton* const updateNow = new QPushButton(i18n("Check now..."), updateHbox2);
 
     connect(updateNow, &QPushButton::pressed,
-            this, [=]()
+            this, [this, parent]()
         {
             if (parent)
             {

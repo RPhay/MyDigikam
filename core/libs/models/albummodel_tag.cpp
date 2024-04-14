@@ -120,9 +120,9 @@ void TagModel::activateFaceTagModel()
                this, SLOT(setCountHash(QHash<int,int>)));
 
     connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
-            this, [=](const QHash<int, int>& faceCount,
-                      const QHash<int, int>& uFaceCount,
-                      const QList<int>& toUpdatedFaces)
+            this, [this](const QHash<int, int>& faceCount,
+                         const QHash<int, int>& uFaceCount,
+                         const QList<int>& toUpdatedFaces)
         {
             setCountHash(faceCount);
             m_unconfirmedFaceCount = uFaceCount;

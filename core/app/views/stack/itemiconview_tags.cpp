@@ -121,7 +121,7 @@ void ItemIconView::slotRemoveTag(int tagID)
      */
     if (!FaceTags::isSystemPersonTagId(tagID))
     {
-        QTimer::singleShot(200, this, [=]()
+        QTimer::singleShot(200, this, [this, tagID]()
             {
                 int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagID,
                                                                                   ImageTagPropertyName::tagRegion());

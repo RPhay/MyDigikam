@@ -72,7 +72,7 @@ TagFolderView::TagFolderView(QWidget* const parent, TagModel* const model)
     if (model->isFaceTagModel())
     {
         connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
-                this, [=]()
+                this, [this]()
             {
                 filteredModel()->sort(0, filteredModel()->sortOrder());
             }

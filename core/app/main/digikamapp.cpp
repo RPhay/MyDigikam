@@ -84,7 +84,7 @@ DigikamApp::DigikamApp()
 #ifdef HAVE_GEOLOCATION
 
     connect(GeolocationSettings::instance(), &GeolocationSettings::signalSetupGeolocation,
-            this, [=](int tab)
+            this, [this](int tab)
         {
             Setup::execGeolocation(this, tab);
         }
@@ -95,7 +95,7 @@ DigikamApp::DigikamApp()
 #endif
 
     connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
-            this, [=]()
+            this, [this]()
         {
             Setup::execLocalize(this);
         }
