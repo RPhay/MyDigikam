@@ -598,7 +598,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
         return true;
     }
-    catch (std::runtime_error &)
+    catch (std::runtime_error&)
     {
         jpeg_destroy_decompress(&cinfo);
 
