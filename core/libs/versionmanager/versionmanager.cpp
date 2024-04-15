@@ -36,9 +36,9 @@ class Q_DECL_HIDDEN VersionNameCreator
 {
 public:
 
-    VersionNameCreator(const VersionFileInfo& loadedFile,
-                       const DImageHistory& resolvedInitialHistory,
-                       const DImageHistory& currentHistory,
+    VersionNameCreator(const VersionFileInfo& lFile,
+                       const DImageHistory& rInitHisto,
+                       const DImageHistory& cHisto,
                        VersionManager* const qq);
 
     void checkNeedNewVersion();
@@ -81,18 +81,18 @@ public:
     VersionManager* const  q                        = nullptr;
 };
 
-VersionNameCreator::VersionNameCreator(const VersionFileInfo& loadedFile,
-                                       const DImageHistory& resolvedInitialHistory,
-                                       const DImageHistory& currentHistory,
+VersionNameCreator::VersionNameCreator(const VersionFileInfo& lFile,
+                                       const DImageHistory& rInitHisto,
+                                       const DImageHistory& cHisto,
                                        VersionManager* const qq)
     : m_settings              (qq->settings()),
-      m_loadedFile            (loadedFile),
-      m_resolvedInitialHistory(resolvedInitialHistory),
-      m_currentHistory        (currentHistory),
+      m_loadedFile            (lFile),
+      m_resolvedInitialHistory(rInitHisto),
+      m_currentHistory        (cHisto),
       q                       (qq)
 {
-    m_loadedFile.format   = loadedFile.format.toUpper();
-    m_fromRaw             = (loadedFile.format.startsWith(QLatin1String("RAW"))); // also accept RAW-... format
+    m_loadedFile.format   = lFile.format.toUpper();
+    m_fromRaw             = (lFile.format.startsWith(QLatin1String("RAW"))); // also accept RAW-... format
     m_version             = q->namingScheme()->initialCounter();
     m_intermediateCounter = q->namingScheme()->initialCounter();
 }
@@ -107,10 +107,10 @@ void VersionNameCreator::checkNeedNewVersion()
                                  << m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Intermediate)
                                  << m_fromRaw << q->workspaceFileFormats().contains(m_loadedFile.format);
 
-    if       (
-              !m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Original) &&
-              !m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Intermediate)
-             )
+    if      (
+             !m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Original) &&
+             !m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Intermediate)
+            )
     {
         m_newVersion = true;
     }

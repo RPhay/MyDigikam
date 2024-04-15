@@ -61,21 +61,6 @@ class DIGIKAM_EXPORT VersionFileOperation
 {
 public:
 
-    /** This class describes an operation necessary for storing an
-     *  image under version control.
-     *  The loadedFile and current history is given to the VersionManager.
-     *  The saveFile is the destination of the save operation.
-     *  If the loadedFile shall be moved to an intermediate,
-     *  the name is given in intermediateForLoadedFile.
-     *  The intermediates map may contain name of intermediates
-     *  to save the state after action i of the history
-     *  (initialResolvedHistory.size() <= i < currentHistory.size() - 1).
-     */
-
-    explicit VersionFileOperation() = default;
-
-public:
-
     enum Task
     {
         /// saveFile is a new file. Excludes Replace.
@@ -97,6 +82,26 @@ public:
 
 public:
 
+    /** This class describes an operation necessary for storing an
+     *  image under version control.
+     *  The loadedFile and current history is given to the VersionManager.
+     *  The saveFile is the destination of the save operation.
+     *  If the loadedFile shall be moved to an intermediate,
+     *  the name is given in intermediateForLoadedFile.
+     *  The intermediates map may contain name of intermediates
+     *  to save the state after action i of the history
+     *  (initialResolvedHistory.size() <= i < currentHistory.size() - 1).
+     */
+
+    explicit VersionFileOperation() = default;
+
+    /**
+     * Returns a list with all saving locations, for main result or intermediates
+     */
+    QStringList                allFilePaths() const;
+
+public:
+
     Tasks                      tasks;
 
     VersionFileInfo            loadedFile;
@@ -106,11 +111,6 @@ public:
     VersionFileInfo            intermediateForLoadedFile;
 
     QMap<int, VersionFileInfo> intermediates;
-
-    /**
-     * Returns a list with all saving locations, for main result or intermediates
-     */
-    QStringList                allFilePaths() const;
 };
 
 } // namespace Digikam
