@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-14 01:36+0000\n"
+"POT-Creation-Date: 2024-04-15 01:35+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -735,6 +735,9 @@ msgstr "%1 एलबम चुने गे"
 #: core/app/items/utils/contextmenuhelper_services.cpp:35
 #: core/app/items/utils/contextmenuhelper_services.cpp:62
 #: core/app/items/utils/contextmenuhelper_services.cpp:100
+#: core/utilities/import/widgets/importcontextmenu.cpp:200
+#: core/utilities/import/widgets/importcontextmenu.cpp:227
+#: core/utilities/import/widgets/importcontextmenu.cpp:265
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action: context menu"
@@ -743,6 +746,8 @@ msgstr "एखर साथ खोलव"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:74
 #: core/app/items/utils/contextmenuhelper_services.cpp:115
+#: core/utilities/import/widgets/importcontextmenu.cpp:239
+#: core/utilities/import/widgets/importcontextmenu.cpp:280
 #, fuzzy, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
@@ -750,6 +755,8 @@ msgstr "कतरें..."
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:83
 #: core/app/items/utils/contextmenuhelper_services.cpp:132
+#: core/utilities/import/widgets/importcontextmenu.cpp:248
+#: core/utilities/import/widgets/importcontextmenu.cpp:297
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."
@@ -2732,7 +2739,7 @@ msgstr "मुख्य औजार पट्टी"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
 #: core/libs/album/manager/albummanager_talbum.cpp:979
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:131
 #, kde-format
 msgid "digiKam"
 msgstr "डिजीकैम"
@@ -15413,13 +15420,13 @@ msgid "Close window"
 msgstr "पास से दृस्य"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:310
+#: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, kde-format
 msgid "Timestamp Used"
 msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:312
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, kde-format
 msgid "Timestamp Updated"
 msgstr ""
@@ -36768,7 +36775,7 @@ msgid "IPTC"
 msgstr "आईपीटीसी"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:283
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, kde-format
 msgid "XMP"
 msgstr "एक्सएमपी"
@@ -39056,12 +39063,12 @@ msgstr "नाम:"
 msgid "Usages:"
 msgstr "टैग्स:"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:218
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
 msgid "No or invalid size specified"
 msgstr "आकार या तो अवैध हे या नइ दे गे हे"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:327
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:309
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "छोटेफोटू नल (नइ) हे"
@@ -39072,7 +39079,7 @@ msgstr "छोटेफोटू नल (नइ) हे"
 msgid "File does not exist or is not a file"
 msgstr "चुने गे फोल्डर नइ मिलत हे, या पढ़े नइ जा सके हे"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:213
+#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:217
 #, kde-format
 msgid "Cannot create thumbnail for %1"
 msgstr "%1 बर छोटेफोटू बनाय नइ जा सके"
@@ -39088,18 +39095,18 @@ msgstr "डाटाबेस मं टैग जोड़े मं फेल"
 msgid "Error message: %1"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:83
+#: core/libs/timeadjust/clockphotodialog.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:90
+#: core/libs/timeadjust/clockphotodialog.cpp:84
 #, kde-format
 msgid "Load different photo"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:98
+#: core/libs/timeadjust/clockphotodialog.cpp:92
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -39108,174 +39115,174 @@ msgid ""
 "from this setting."
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:173
+#: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:189
+#: core/libs/timeadjust/clockphotodialog.cpp:183
 #, fuzzy, kde-format
 #| msgid "Creation date and time"
 msgid "The clock date and time:"
 msgstr "तैयार करे के तारीक अउ समय"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:241
+#: core/libs/timeadjust/clockphotodialog.cpp:235
 #, fuzzy, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "अपलोड करे बर फोटू चुनव"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:168
+#: core/libs/timeadjust/timeadjustsettings.cpp:135
 #, kde-format
 msgid "Showfoto"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:171
+#: core/libs/timeadjust/timeadjustsettings.cpp:138
 #, kde-format
 msgid "%1 timestamp"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:176
+#: core/libs/timeadjust/timeadjustsettings.cpp:143
 #, fuzzy, kde-format
 msgid "File name timestamp"
 msgstr "फाइल नाम"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:180
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:147
+#: core/libs/timeadjust/timeadjustsettings.cpp:243
 #, fuzzy, kde-format
 msgid "File last modified"
 msgstr "फ्लैस मोड"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:189
+#: core/libs/timeadjust/timeadjustsettings.cpp:156
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:157
+#: core/libs/timeadjust/timeadjustsettings.cpp:244
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "EXIF: created"
 msgstr "एक्सिफ बनाए के तारीक सिंक करव"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:191
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:158
+#: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, fuzzy, kde-format
 #| msgid "Original"
 msgid "EXIF: original"
 msgstr "असली"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:192
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:159
+#: core/libs/timeadjust/timeadjustsettings.cpp:246
 #, kde-format
 msgid "EXIF: digitized"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:193
-#: core/libs/timeadjust/timeadjustsettings.cpp:281
+#: core/libs/timeadjust/timeadjustsettings.cpp:160
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, fuzzy, kde-format
 #| msgid "Created:"
 msgid "IPTC: created"
 msgstr "सृजितः"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:194
+#: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, fuzzy, kde-format
 msgid "XMP: created"
 msgstr "निर्मित : %1"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:195
+#: core/libs/timeadjust/timeadjustsettings.cpp:162
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "EXIF: created (fuzzy)"
 msgstr "एक्सिफ बनाए के तारीक सिंक करव"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:196
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
 #, fuzzy, kde-format
 #| msgid "Original"
 msgid "EXIF: original (fuzzy)"
 msgstr "असली"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:197
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:207
+#: core/libs/timeadjust/timeadjustsettings.cpp:174
 #, fuzzy, kde-format
 #| msgid "Start with current image"
 msgid "Reset to current date"
 msgstr "अभी हाल फोटू के साथ चालू करव"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:239
+#: core/libs/timeadjust/timeadjustsettings.cpp:206
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "इहां नकल करव (&C)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:240
+#: core/libs/timeadjust/timeadjustsettings.cpp:207
 #, fuzzy, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "जोड़व (&A)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:241
+#: core/libs/timeadjust/timeadjustsettings.cpp:208
 #, fuzzy, kde-format
 #| msgid "Abstract"
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "सार"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:212
 #, fuzzy, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "क्छेपकः"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:218
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "अवकास"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:254
+#: core/libs/timeadjust/timeadjustsettings.cpp:221
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:255
+#: core/libs/timeadjust/timeadjustsettings.cpp:222
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:273
+#: core/libs/timeadjust/timeadjustsettings.cpp:240
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:274
+#: core/libs/timeadjust/timeadjustsettings.cpp:241
 #, fuzzy, kde-format
 #| msgid "Set this option to display the image file size."
 msgid "Use this option primarily with video files"
 msgstr "फोटू फाइल आकार प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#: core/libs/timeadjust/timeadjustsettings.cpp:242
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:280
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, fuzzy, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "छोटेफोटू देखाव"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:282
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, fuzzy, kde-format
 msgid "XMP: Video"
 msgstr "दृस्य"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:311
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, fuzzy, kde-format
 #| msgid "Pictures Adjustments"
 msgid "Timestamp Adjustments"
@@ -59359,26 +59366,7 @@ msgctxt "@info Storage"
 msgid "Require:"
 msgstr "जरूरी:"
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:254
-#, fuzzy, kde-format
-#| msgid "Open With"
-msgctxt "@title:menu open with desktop application"
-msgid "Open With"
-msgstr "एखर साथ खोलव"
-
-#: core/utilities/import/widgets/importcontextmenu.cpp:268
-#, fuzzy, kde-format
-msgctxt "@item:inmenu open with other application"
-msgid "Other..."
-msgstr "कतरें..."
-
-#: core/utilities/import/widgets/importcontextmenu.cpp:277
-#, fuzzy, kde-format
-msgctxt "@title:menu"
-msgid "Open With..."
-msgstr "एखर साथ खोलव"
-
-#: core/utilities/import/widgets/importcontextmenu.cpp:423
+#: core/utilities/import/widgets/importcontextmenu.cpp:491
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"
@@ -65920,6 +65908,22 @@ msgstr "एल्बम"
 #, fuzzy, kde-format
 msgid "Import Items"
 msgstr "फोटू छांटव (&S)"
+
+#, fuzzy
+#~| msgid "Open With"
+#~ msgctxt "@title:menu open with desktop application"
+#~ msgid "Open With"
+#~ msgstr "एखर साथ खोलव"
+
+#, fuzzy
+#~ msgctxt "@item:inmenu open with other application"
+#~ msgid "Other..."
+#~ msgstr "कतरें..."
+
+#, fuzzy
+#~ msgctxt "@title:menu"
+#~ msgid "Open With..."
+#~ msgstr "एखर साथ खोलव"
 
 #, fuzzy
 #~ msgctxt "@action:button"

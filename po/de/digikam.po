@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-14 01:36+0000\n"
+"POT-Creation-Date: 2024-04-15 01:35+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -693,6 +693,9 @@ msgstr "Ausgewählte Gruppe auflösen"
 #: core/app/items/utils/contextmenuhelper_services.cpp:35
 #: core/app/items/utils/contextmenuhelper_services.cpp:62
 #: core/app/items/utils/contextmenuhelper_services.cpp:100
+#: core/utilities/import/widgets/importcontextmenu.cpp:200
+#: core/utilities/import/widgets/importcontextmenu.cpp:227
+#: core/utilities/import/widgets/importcontextmenu.cpp:265
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With"
@@ -700,6 +703,8 @@ msgstr "Öffnen mit"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:74
 #: core/app/items/utils/contextmenuhelper_services.cpp:115
+#: core/utilities/import/widgets/importcontextmenu.cpp:239
+#: core/utilities/import/widgets/importcontextmenu.cpp:280
 #, kde-format
 msgctxt "@action: open item with other application"
 msgid "Other..."
@@ -707,6 +712,8 @@ msgstr "Weitere ..."
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:83
 #: core/app/items/utils/contextmenuhelper_services.cpp:132
+#: core/utilities/import/widgets/importcontextmenu.cpp:248
+#: core/utilities/import/widgets/importcontextmenu.cpp:297
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open With..."
@@ -2648,7 +2655,7 @@ msgstr "Standard-Werkzeugleiste"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
 #: core/libs/album/manager/albummanager_talbum.cpp:979
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:131
 #, kde-format
 msgid "digiKam"
 msgstr "digiKam"
@@ -16061,13 +16068,13 @@ msgid "Close window"
 msgstr "Fenster schließen"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:310
+#: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, kde-format
 msgid "Timestamp Used"
 msgstr "Verwendeter Zeitstempel"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:312
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, kde-format
 msgid "Timestamp Updated"
 msgstr "Zeitstempel aktualisiert"
@@ -38307,7 +38314,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:283
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -40901,12 +40908,12 @@ msgstr "Namen:"
 msgid "Usages:"
 msgstr "Verwendungen:"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:218
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
 msgid "No or invalid size specified"
 msgstr "Es wurde eine ungültige oder gar keine Größe angegeben."
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:327
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:309
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Keine Vorschau vorhanden"
@@ -40916,7 +40923,7 @@ msgstr "Keine Vorschau vorhanden"
 msgid "File does not exist or is not a file"
 msgstr "Die Datei existiert nicht oder ist keine Datei"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:213
+#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:217
 #, kde-format
 msgid "Cannot create thumbnail for %1"
 msgstr "Das Vorschaubild für %1 lässt sich nicht erstellen."
@@ -40932,18 +40939,18 @@ msgstr "Initialisierung der Vorschaubilder-Datenbank ist fehlgeschlagen"
 msgid "Error message: %1"
 msgstr "Fehlermeldung: %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:83
+#: core/libs/timeadjust/clockphotodialog.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Zeitunterschied ermitteln mit Hilfe eines Referenzfotos"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:90
+#: core/libs/timeadjust/clockphotodialog.cpp:84
 #, kde-format
 msgid "Load different photo"
 msgstr "Anderes Foto laden"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:98
+#: core/libs/timeadjust/clockphotodialog.cpp:92
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -40955,137 +40962,137 @@ msgstr ""
 "hier als Referenzfoto laden. Durch Ändern der ausgelesenen Zeitangabe wird "
 "der anzuwendenden Wert für die Korrektur der Kamera-Uhr ermittelt."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:173
+#: core/libs/timeadjust/clockphotodialog.cpp:167
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr ""
 "<font color=\"red\"><b>Zeitangabe für Bild %1 kann nicht geladen werden.</"
 "b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:189
+#: core/libs/timeadjust/clockphotodialog.cpp:183
 #, kde-format
 msgid "The clock date and time:"
 msgstr "Datum und Uhrzeit:"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:241
+#: core/libs/timeadjust/clockphotodialog.cpp:235
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "Wählen Sie ein Bild als Referenzfoto mit Zeitangabe"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:168
+#: core/libs/timeadjust/timeadjustsettings.cpp:135
 #, kde-format
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:171
+#: core/libs/timeadjust/timeadjustsettings.cpp:138
 #, kde-format
 msgid "%1 timestamp"
 msgstr "%1-Zeitstempel"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:176
+#: core/libs/timeadjust/timeadjustsettings.cpp:143
 #, kde-format
 msgid "File name timestamp"
 msgstr "Zeitstempel aus Dateinamen:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:180
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:147
+#: core/libs/timeadjust/timeadjustsettings.cpp:243
 #, kde-format
 msgid "File last modified"
 msgstr "Änderungsdatum der Datei"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:189
+#: core/libs/timeadjust/timeadjustsettings.cpp:156
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr "Exif/IPTC/XMP"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:157
+#: core/libs/timeadjust/timeadjustsettings.cpp:244
 #, kde-format
 msgid "EXIF: created"
 msgstr "Exif: Änderungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:191
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:158
+#: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, kde-format
 msgid "EXIF: original"
 msgstr "Exif: Erstellungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:192
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:159
+#: core/libs/timeadjust/timeadjustsettings.cpp:246
 #, kde-format
 msgid "EXIF: digitized"
 msgstr "Exif: Digitalisierungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:193
-#: core/libs/timeadjust/timeadjustsettings.cpp:281
+#: core/libs/timeadjust/timeadjustsettings.cpp:160
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, kde-format
 msgid "IPTC: created"
 msgstr "IPTC: Änderungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:194
+#: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "XMP: created"
 msgstr "XMP: Änderungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:195
+#: core/libs/timeadjust/timeadjustsettings.cpp:162
 #, fuzzy, kde-format
 #| msgid "EXIF: created"
 msgid "EXIF: created (fuzzy)"
 msgstr "Exif: Änderungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:196
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
 #, fuzzy, kde-format
 #| msgid "EXIF: original"
 msgid "EXIF: original (fuzzy)"
 msgstr "Exif: Erstellungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:197
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
 #, fuzzy, kde-format
 #| msgid "EXIF: digitized"
 msgid "EXIF: digitized (fuzzy)"
 msgstr "Exif: Digitalisierungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:207
+#: core/libs/timeadjust/timeadjustsettings.cpp:174
 #, kde-format
 msgid "Reset to current date"
 msgstr "Auf aktuelles Datum zurücksetzen"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:239
+#: core/libs/timeadjust/timeadjustsettings.cpp:206
 #, kde-format
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "Wert übernehmen"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:240
+#: core/libs/timeadjust/timeadjustsettings.cpp:207
 #, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "Wert erhöhen"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:241
+#: core/libs/timeadjust/timeadjustsettings.cpp:208
 #, kde-format
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "Wert verringern"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:212
 #, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "Intervall bilden"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:218
 #, kde-format
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "Tage"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:254
+#: core/libs/timeadjust/timeadjustsettings.cpp:221
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr "Zeitunterschied ermitteln mit Hilfe eines Referenzfotos"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:255
+#: core/libs/timeadjust/timeadjustsettings.cpp:222
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
@@ -41093,34 +41100,34 @@ msgstr ""
 "Klicken Sie hier zur Auswahl des Bildes oder ziehen Sie ein Bild und legen "
 "es hier ab"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:273
+#: core/libs/timeadjust/timeadjustsettings.cpp:240
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:274
+#: core/libs/timeadjust/timeadjustsettings.cpp:241
 #, fuzzy, kde-format
 #| msgid "Set this option to display the image file size."
 msgid "Use this option primarily with video files"
 msgstr ""
 "Benutzen Sie diese Einstellung, um die Dateigröße des Bildes anzuzeigen."
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#: core/libs/timeadjust/timeadjustsettings.cpp:242
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr "Nur vorhandene Zeitstempel aktualisieren"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:280
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "Exif: Vorschaubild"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:282
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, kde-format
 msgid "XMP: Video"
 msgstr "XMP: Video"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:311
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr "Zeitstempel-Anpassungen"
@@ -61606,25 +61613,7 @@ msgctxt "@info Storage"
 msgid "Require:"
 msgstr "Benötigt:"
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:254
-#, kde-format
-msgctxt "@title:menu open with desktop application"
-msgid "Open With"
-msgstr "Öffnen mit"
-
-#: core/utilities/import/widgets/importcontextmenu.cpp:268
-#, kde-format
-msgctxt "@item:inmenu open with other application"
-msgid "Other..."
-msgstr "Weitere ..."
-
-#: core/utilities/import/widgets/importcontextmenu.cpp:277
-#, kde-format
-msgctxt "@title:menu"
-msgid "Open With..."
-msgstr "Öffnen mit ..."
-
-#: core/utilities/import/widgets/importcontextmenu.cpp:423
+#: core/utilities/import/widgets/importcontextmenu.cpp:491
 #, kde-format
 msgctxt "@title:menu"
 msgid "Assign Labels"
@@ -68962,6 +68951,18 @@ msgstr "Albumeinträge"
 #, kde-format
 msgid "Import Items"
 msgstr "Einträge importieren "
+
+#~ msgctxt "@title:menu open with desktop application"
+#~ msgid "Open With"
+#~ msgstr "Öffnen mit"
+
+#~ msgctxt "@item:inmenu open with other application"
+#~ msgid "Other..."
+#~ msgstr "Weitere ..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Open With..."
+#~ msgstr "Öffnen mit ..."
 
 #, fuzzy
 #~| msgid "Alternative name"

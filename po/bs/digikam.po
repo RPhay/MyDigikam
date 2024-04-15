@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-14 01:36+0000\n"
+"POT-Creation-Date: 2024-04-15 01:35+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -799,6 +799,9 @@ msgstr "Razgrupiši odabrano"
 #: core/app/items/utils/contextmenuhelper_services.cpp:35
 #: core/app/items/utils/contextmenuhelper_services.cpp:62
 #: core/app/items/utils/contextmenuhelper_services.cpp:100
+#: core/utilities/import/widgets/importcontextmenu.cpp:200
+#: core/utilities/import/widgets/importcontextmenu.cpp:227
+#: core/utilities/import/widgets/importcontextmenu.cpp:265
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action: context menu"
@@ -807,6 +810,8 @@ msgstr "Otvori pomoću"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:74
 #: core/app/items/utils/contextmenuhelper_services.cpp:115
+#: core/utilities/import/widgets/importcontextmenu.cpp:239
+#: core/utilities/import/widgets/importcontextmenu.cpp:280
 #, fuzzy, kde-format
 #| msgid "Other..."
 msgctxt "@action: open item with other application"
@@ -815,6 +820,8 @@ msgstr "Ostalo..."
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:83
 #: core/app/items/utils/contextmenuhelper_services.cpp:132
+#: core/utilities/import/widgets/importcontextmenu.cpp:248
+#: core/utilities/import/widgets/importcontextmenu.cpp:297
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: context menu"
@@ -2966,7 +2973,7 @@ msgstr "Glavna alatna traka"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
 #: core/libs/album/manager/albummanager_talbum.cpp:979
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:131
 #, kde-format
 msgid "digiKam"
 msgstr "digiKam"
@@ -16873,7 +16880,7 @@ msgid "Close window"
 msgstr "Blizak pogled"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:310
+#: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Timestamps"
@@ -16881,7 +16888,7 @@ msgid "Timestamp Used"
 msgstr "Vremenske oznake"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:312
+#: core/libs/timeadjust/timeadjustsettings.cpp:279
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Timestamps"
@@ -40233,7 +40240,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:283
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -42815,12 +42822,12 @@ msgstr "Imena:"
 msgid "Usages:"
 msgstr "Upotrebe:"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:218
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
 msgid "No or invalid size specified"
 msgstr "Određena je nepostojeća ili nepravilna veličina"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:327
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:309
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Umanjena slika je prazna"
@@ -42831,7 +42838,7 @@ msgstr "Umanjena slika je prazna"
 msgid "File does not exist or is not a file"
 msgstr "Selektovani folder ne postoji ili se ne može učitati."
 
-#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:213
+#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:217
 #, kde-format
 msgid "Cannot create thumbnail for %1"
 msgstr "Ne mogu da napravim umanjeni prikaz za %1"
@@ -42848,18 +42855,18 @@ msgstr "Neuspješna inicijalizacija baze podataka o umanjenim prikazima"
 msgid "Error message: %1"
 msgstr "Poruka greške: %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:83
+#: core/libs/timeadjust/clockphotodialog.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:90
+#: core/libs/timeadjust/clockphotodialog.cpp:84
 #, kde-format
 msgid "Load different photo"
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:98
+#: core/libs/timeadjust/clockphotodialog.cpp:92
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -42868,186 +42875,186 @@ msgid ""
 "from this setting."
 msgstr ""
 
-#: core/libs/timeadjust/clockphotodialog.cpp:173
+#: core/libs/timeadjust/clockphotodialog.cpp:167
 #, fuzzy, kde-format
 #| msgid "<qt><p><font color=\"red\"><b>Error:</b> %1</font></p></qt>"
 msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgstr "<qt><p><font color=\"red\"><b>Greška:</b> %1</font></p></qt>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:189
+#: core/libs/timeadjust/clockphotodialog.cpp:183
 #, fuzzy, kde-format
 #| msgid "Creation date and time"
 msgid "The clock date and time:"
 msgstr "Datum i vrijeme stvaranja"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:241
+#: core/libs/timeadjust/clockphotodialog.cpp:235
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
 msgid "Select Image to Extract Clock Photo"
 msgstr "Izaberite sliku za postavljanje"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:168
+#: core/libs/timeadjust/timeadjustsettings.cpp:135
 #, kde-format
 msgid "Showfoto"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:171
+#: core/libs/timeadjust/timeadjustsettings.cpp:138
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Timestamps"
 msgid "%1 timestamp"
 msgstr "Vremenske oznake"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:176
+#: core/libs/timeadjust/timeadjustsettings.cpp:143
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgid "File name timestamp"
 msgstr "Ime datoteke filtera:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:180
-#: core/libs/timeadjust/timeadjustsettings.cpp:276
+#: core/libs/timeadjust/timeadjustsettings.cpp:147
+#: core/libs/timeadjust/timeadjustsettings.cpp:243
 #, fuzzy, kde-format
 #| msgid "Last modified"
 msgid "File last modified"
 msgstr "Posljednja izmjena"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:189
+#: core/libs/timeadjust/timeadjustsettings.cpp:156
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:190
-#: core/libs/timeadjust/timeadjustsettings.cpp:277
+#: core/libs/timeadjust/timeadjustsettings.cpp:157
+#: core/libs/timeadjust/timeadjustsettings.cpp:244
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "EXIF: created"
 msgstr "Sinhronizuj EXIF datum stvaranja"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:191
-#: core/libs/timeadjust/timeadjustsettings.cpp:278
+#: core/libs/timeadjust/timeadjustsettings.cpp:158
+#: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, fuzzy, kde-format
 #| msgid "Origin"
 msgid "EXIF: original"
 msgstr "Porijeklo"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:192
-#: core/libs/timeadjust/timeadjustsettings.cpp:279
+#: core/libs/timeadjust/timeadjustsettings.cpp:159
+#: core/libs/timeadjust/timeadjustsettings.cpp:246
 #, kde-format
 msgid "EXIF: digitized"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:193
-#: core/libs/timeadjust/timeadjustsettings.cpp:281
+#: core/libs/timeadjust/timeadjustsettings.cpp:160
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, fuzzy, kde-format
 #| msgctxt "creation date of the image"
 #| msgid "Created:"
 msgid "IPTC: created"
 msgstr "Napravljeno:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:194
+#: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, fuzzy, kde-format
 #| msgctxt "date of image creation"
 #| msgid "created: %1"
 msgid "XMP: created"
 msgstr "kreirano: %1"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:195
+#: core/libs/timeadjust/timeadjustsettings.cpp:162
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "EXIF: created (fuzzy)"
 msgstr "Sinhronizuj EXIF datum stvaranja"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:196
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
 #, fuzzy, kde-format
 #| msgid "Origin"
 msgid "EXIF: original (fuzzy)"
 msgstr "Porijeklo"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:197
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:207
+#: core/libs/timeadjust/timeadjustsettings.cpp:174
 #, fuzzy, kde-format
 #| msgid "Start with current image"
 msgid "Reset to current date"
 msgstr "Počni sa trenutnom slikom"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:239
+#: core/libs/timeadjust/timeadjustsettings.cpp:206
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "nema postavljene vrijednosti"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:240
+#: core/libs/timeadjust/timeadjustsettings.cpp:207
 #, fuzzy, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "&Dodaj"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:241
+#: core/libs/timeadjust/timeadjustsettings.cpp:208
 #, fuzzy, kde-format
 #| msgid "Abstract"
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "Apstraktno"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:212
 #, fuzzy, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "Interpolacija:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:218
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "Odmori"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:254
+#: core/libs/timeadjust/timeadjustsettings.cpp:221
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:255
+#: core/libs/timeadjust/timeadjustsettings.cpp:222
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:273
+#: core/libs/timeadjust/timeadjustsettings.cpp:240
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:274
+#: core/libs/timeadjust/timeadjustsettings.cpp:241
 #, fuzzy, kde-format
 #| msgid "Set this option to display the image file size."
 msgid "Use this option primarily with video files"
 msgstr "Postavite ovu opciju za prikaz veličine datoteke slike."
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:275
+#: core/libs/timeadjust/timeadjustsettings.cpp:242
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:280
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgid "EXIF: Thumbnail"
 msgstr "Sličica"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:282
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgid "XMP: Video"
 msgstr "Video snimci"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:311
+#: core/libs/timeadjust/timeadjustsettings.cpp:278
 #, fuzzy, kde-format
 #| msgid "Pictures Adjustments"
 msgid "Timestamp Adjustments"
@@ -64590,27 +64597,7 @@ msgctxt "@info Storage"
 msgid "Require:"
 msgstr "Potrebno:"
 
-#: core/utilities/import/widgets/importcontextmenu.cpp:254
-#, fuzzy, kde-format
-#| msgid "Open With"
-msgctxt "@title:menu open with desktop application"
-msgid "Open With"
-msgstr "Otvori pomoću"
-
-#: core/utilities/import/widgets/importcontextmenu.cpp:268
-#, fuzzy, kde-format
-#| msgid "Other..."
-msgctxt "@item:inmenu open with other application"
-msgid "Other..."
-msgstr "Ostalo..."
-
-#: core/utilities/import/widgets/importcontextmenu.cpp:277
-#, kde-format
-msgctxt "@title:menu"
-msgid "Open With..."
-msgstr "Otvori pomoću..."
-
-#: core/utilities/import/widgets/importcontextmenu.cpp:423
+#: core/utilities/import/widgets/importcontextmenu.cpp:491
 #, fuzzy, kde-format
 #| msgid "Assign Labels"
 msgctxt "@title:menu"
@@ -72177,6 +72164,22 @@ msgstr "Predmeti albuma"
 #, kde-format
 msgid "Import Items"
 msgstr "Uvozni predmeti"
+
+#, fuzzy
+#~| msgid "Open With"
+#~ msgctxt "@title:menu open with desktop application"
+#~ msgid "Open With"
+#~ msgstr "Otvori pomoću"
+
+#, fuzzy
+#~| msgid "Other..."
+#~ msgctxt "@item:inmenu open with other application"
+#~ msgid "Other..."
+#~ msgstr "Ostalo..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Open With..."
+#~ msgstr "Otvori pomoću..."
 
 #, fuzzy
 #~ msgctxt "@action:button"
