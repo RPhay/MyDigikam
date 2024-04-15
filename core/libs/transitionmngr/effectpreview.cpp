@@ -33,18 +33,13 @@ class Q_DECL_HIDDEN EffectPreview::Private
 {
 public:
 
-    explicit Private()
-      : mngr       (nullptr),
-        curEffect  (EffectMngr::None),
-        previewSize(QSize(192, 144))
-    {
-    }
+    Private() = default;
 
     QTimer                 restartTimer;
     QTimer                 effTimer;
-    EffectMngr*            mngr;
-    EffectMngr::EffectType curEffect;
-    QSize                  previewSize;
+    EffectMngr*            mngr         = nullptr;
+    EffectMngr::EffectType curEffect    = EffectMngr::None;
+    QSize                  previewSize  = QSize(192, 144);
 };
 
 EffectPreview::EffectPreview(QWidget* const parent)

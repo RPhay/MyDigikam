@@ -38,6 +38,7 @@ QImage FrameUtils::makeFramedImage(const QString& file, const QSize& outSize)
         qCDebug(DIGIKAM_GENERAL_LOG) << "Load frame from" << file;
 
         // The Raw decoding settings for DImg loader.
+
         DRawDecoderSettings settings;
         settings.halfSizeColorImage    = false;
         settings.sixteenBitsImage      = false;

@@ -43,18 +43,12 @@ public:
 
 public:
 
-    explicit Private()
-      : eff_isRunning(false),
-        eff_curEffect(EffectMngr::None),
-        eff_step(0),
-        eff_imgFrames(125)
+    Private()
     {
         registerEffects();
     }
 
-    ~Private()
-    {
-    }
+    ~Private() = default;
 
     QMap<EffectMngr::EffectType, EffectMethod>    eff_effectList;
 
@@ -62,11 +56,11 @@ public:
     QImage                                        eff_curFrame;
     QSize                                         eff_outSize;
 
-    bool                                          eff_isRunning;
-    EffectMngr::EffectType                        eff_curEffect;
+    bool                                          eff_isRunning = false;
+    EffectMngr::EffectType                        eff_curEffect = EffectMngr::None;
 
-    int                                           eff_step;
-    int                                           eff_imgFrames;
+    int                                           eff_step      = 0;
+    int                                           eff_imgFrames = 125;
 
 public:
 

@@ -43,40 +43,9 @@ public:
 
 public:
 
-    explicit Private()
-      : eff_isRunning    (false),
-        eff_curTransition(TransitionMngr::None),
-        eff_x            (0),
-        eff_y            (0),
-        eff_w            (0),
-        eff_h            (0),
-        eff_dx           (0),
-        eff_dy           (0),
-        eff_ix           (0),
-        eff_iy           (0),
-        eff_i            (0),
-        eff_j            (0),
-        eff_subType      (0),
-        eff_x0           (0),
-        eff_y0           (0),
-        eff_x1           (0),
-        eff_y1           (0),
-        eff_wait         (0),
-        eff_fx           (0),
-        eff_fy           (0),
-        eff_alpha        (0),
-        eff_fd           (0),
-        eff_intArray     (nullptr),
-        eff_pdone        (0),
-        eff_pixelMatrix  (nullptr),
-        eff_pa           (QPolygon(4)),
-        eff_px           (0),
-        eff_py           (0),
-        eff_psx          (0),
-        eff_psy          (0)
+    Private()
     {
         registerTransitions();
-        randomGenerator = QRandomGenerator::global();
     }
 
     ~Private()
@@ -87,6 +56,7 @@ public:
         }
     }
 
+
     QMap<TransitionMngr::TransType, TransMethod>  eff_transList;
 
     QImage                                        eff_inImage;
@@ -94,41 +64,42 @@ public:
     QImage                                        eff_curFrame;
     QSize                                         eff_outSize;
 
-    bool                                          eff_isRunning;
-    TransitionMngr::TransType                     eff_curTransition;
+    bool                                          eff_isRunning         = false;
+    TransitionMngr::TransType                     eff_curTransition     = TransitionMngr::None;
 
     // values for state of various transitions:
-    int                                           eff_x;
-    int                                           eff_y;
-    int                                           eff_w;
-    int                                           eff_h;
-    int                                           eff_dx;
-    int                                           eff_dy;
-    int                                           eff_ix;
-    int                                           eff_iy;
-    int                                           eff_i;
-    int                                           eff_j;
-    int                                           eff_subType;
-    int                                           eff_x0;
-    int                                           eff_y0;
-    int                                           eff_x1;
-    int                                           eff_y1;
-    int                                           eff_wait;
-    double                                        eff_fx;
-    double                                        eff_fy;
-    double                                        eff_alpha;
-    double                                        eff_fd;
-    int*                                          eff_intArray;
-    bool                                          eff_pdone;
-    bool**                                        eff_pixelMatrix;
+    int                                           eff_x                 = 0;
+    int                                           eff_y                 = 0;
+    int                                           eff_w                 = 0;
+    int                                           eff_h                 = 0;
+    int                                           eff_dx                = 0;
+    int                                           eff_dy                = 0;
+    int                                           eff_ix                = 0;
+    int                                           eff_iy                = 0;
+    int                                           eff_i                 = 0;
+    int                                           eff_j                 = 0;
+    int                                           eff_subType           = 0;
+    int                                           eff_x0                = 0;
+    int                                           eff_y0                = 0;
+    int                                           eff_x1                = 0;
+    int                                           eff_y1                = 0;
+    int                                           eff_wait              = 0;
+    double                                        eff_fx                = 0;
+    double                                        eff_fy                = 0;
+    double                                        eff_alpha             = 0;
+    double                                        eff_fd                = 0;
+
+    int*                                          eff_intArray          = nullptr;
+    bool                                          eff_pdone             = false;
+    bool**                                        eff_pixelMatrix       = nullptr;
 
     //static
-    QPolygon                                      eff_pa;
+    QPolygon                                      eff_pa                = QPolygon(4);
 
-    int                                           eff_px;
-    int                                           eff_py;
-    int                                           eff_psx;
-    int                                           eff_psy;
+    int                                           eff_px                = 0;
+    int                                           eff_py                = 0;
+    int                                           eff_psx               = 0;
+    int                                           eff_psy               = 0;
 
 public:
 
@@ -180,7 +151,7 @@ private:
 
 private:
 
-    QRandomGenerator* randomGenerator = nullptr;
+    QRandomGenerator* randomGenerator = QRandomGenerator::global();
 };
 
 } // namespace Digikam

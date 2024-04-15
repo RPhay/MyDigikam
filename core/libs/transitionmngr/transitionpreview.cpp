@@ -33,18 +33,13 @@ class Q_DECL_HIDDEN TransitionPreview::Private
 {
 public:
 
-    explicit Private()
-      : mngr         (nullptr),
-        curTransition(TransitionMngr::None),
-        previewSize  (QSize(192, 144))
-    {
-    }
+    Private() = default;
 
     QTimer                    restartTimer;
     QTimer                    transTimer;
-    TransitionMngr*           mngr;
-    TransitionMngr::TransType curTransition;
-    QSize                     previewSize;
+    TransitionMngr*           mngr              = nullptr;
+    TransitionMngr::TransType curTransition     = TransitionMngr::None;
+    QSize                     previewSize       = QSize(192, 144);
 };
 
 TransitionPreview::TransitionPreview(QWidget* const parent)
