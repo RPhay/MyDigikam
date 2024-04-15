@@ -80,8 +80,8 @@ private:
 
 private:
 
-    class VersionManagerPriv;
-    VersionManagerPriv* const d;
+    class Private;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

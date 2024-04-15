@@ -36,21 +36,19 @@ class DIGIKAM_EXPORT VersionFileInfo
 {
 public:
 
-    explicit VersionFileInfo()
-    {
-    }
+    explicit VersionFileInfo() = default;
 
     VersionFileInfo(const QString& path, const QString& fileName, const QString& format)
-        : path(path),
+        : path    (path),
           fileName(fileName),
-          format(format)
+          format  (format)
     {
     }
 
-    bool    isNull() const;
+    bool    isNull()   const;
 
     QString filePath() const;
-    QUrl    fileUrl() const;
+    QUrl    fileUrl()  const;
 
     QString path;
     QString fileName;
@@ -74,9 +72,7 @@ public:
      *  (initialResolvedHistory.size() <= i < currentHistory.size() - 1).
      */
 
-    explicit VersionFileOperation()
-    {
-    }
+    explicit VersionFileOperation() = default;
 
 public:
 
@@ -84,12 +80,16 @@ public:
     {
         /// saveFile is a new file. Excludes Replace.
         NewFile            = 1 << 0,
+
         /// loadedFile and saveFile are the same - replace. Excludes NewFile.
         Replace            = 1 << 1,
+
         /// Similar to Replace, but the new file name differs from the old one, which should be removed
         SaveAndDelete      = 1 << 2,
+
         /// Move loadedFile to loadedFileToIntermediate
         MoveToIntermediate = 1 << 3,
+
         /// Store additional snapshots from within history
         StoreIntermediates = 1 << 4
     };

@@ -49,15 +49,6 @@ const QString VersionManagerSettingsConfig::configViewShowOriginal(QLatin1String
 const QString VersionManagerSettingsConfig::configAutoSaveWhenClosingEditor(QLatin1String("Auto-Save When Closing Editor"));
 const QString VersionManagerSettingsConfig::configVersionStorageFormat(QLatin1String("Saving Format for Versions"));
 
-VersionManagerSettings::VersionManagerSettings()
-    : enabled                 (true),
-      saveIntermediateVersions(NoIntermediates),
-      showInViewFlags         (ShowOriginal),
-      editorClosingMode       (AlwaysAsk),
-      format                  (QLatin1String("JPG"))
-{
-}
-
 void VersionManagerSettings::readFromConfig(const KConfigGroup& group)
 {
     enabled                     = group.readEntry(VersionManagerSettingsConfig::configEnabled, true);

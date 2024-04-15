@@ -34,7 +34,7 @@ bool VersionFileInfo::isNull() const
 
 QString VersionFileInfo::filePath() const
 {
-    return path + QLatin1Char('/') + fileName;
+    return (path + QLatin1Char('/') + fileName);
 }
 
 QUrl VersionFileInfo::fileUrl() const

@@ -59,21 +59,21 @@ public:
 
 public:
 
-    VersionManagerSettings();
+    VersionManagerSettings() = default;
 
     void readFromConfig(const KConfigGroup& group);
     void writeToConfig(KConfigGroup& group) const;
 
 public:
 
-    bool                 enabled;
+    bool                 enabled                    = true;
 
-    IntermediateBehavior saveIntermediateVersions;
-    ShowInViewFlags      showInViewFlags;
-    EditorClosingMode    editorClosingMode;
+    IntermediateBehavior saveIntermediateVersions   = NoIntermediates;
+    ShowInViewFlags      showInViewFlags            = ShowOriginal;
+    EditorClosingMode    editorClosingMode          = AlwaysAsk;
 
     /// Image format string as defined for database, in upper case
-    QString              format;
+    QString              format                     = QLatin1String("JPG");
 };
 
 } // namespace Digikam

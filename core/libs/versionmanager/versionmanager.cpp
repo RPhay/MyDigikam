@@ -37,8 +37,9 @@ class Q_DECL_HIDDEN VersionNameCreator
 public:
 
     VersionNameCreator(const VersionFileInfo& loadedFile,
-                       const DImageHistory& m_resolvedInitialHistory, const DImageHistory& m_currentHistory,
-                       VersionManager* const q);
+                       const DImageHistory& resolvedInitialHistory,
+                       const DImageHistory& currentHistory,
+                       VersionManager* const qq);
 
     void checkNeedNewVersion();
     void fork();
@@ -69,30 +70,29 @@ public:
     const DImageHistory    m_resolvedInitialHistory;
     const DImageHistory    m_currentHistory;
 
-    bool                   m_fromRaw;
-    bool                   m_newVersion;
+    bool                   m_fromRaw                = false;
+    bool                   m_newVersion             = false;
 
     QVariant               m_version;
     QVariant               m_intermediateCounter;
     QString                m_baseName;
     QString                m_intermediatePath;
 
-    VersionManager* const  q;
+    VersionManager* const  q                        = nullptr;
 };
 
 VersionNameCreator::VersionNameCreator(const VersionFileInfo& loadedFile,
-                                       const DImageHistory& m_resolvedInitialHistory,
-                                       const DImageHistory& m_currentHistory,
-                                       VersionManager* const q)
-    : m_settings(q->settings()),
-      m_loadedFile(loadedFile),
-      m_resolvedInitialHistory(m_resolvedInitialHistory),
-      m_currentHistory(m_currentHistory),
-      m_fromRaw(false),
-      m_newVersion(false), q(q)
+                                       const DImageHistory& resolvedInitialHistory,
+                                       const DImageHistory& currentHistory,
+                                       VersionManager* const qq)
+    : m_settings              (qq->settings()),
+      m_loadedFile            (loadedFile),
+      m_resolvedInitialHistory(resolvedInitialHistory),
+      m_currentHistory        (currentHistory),
+      q                       (qq)
 {
-    m_loadedFile.format   = m_loadedFile.format.toUpper();
-    m_fromRaw             = (m_loadedFile.format.startsWith(QLatin1String("RAW"))); // also accept RAW-... format
+    m_loadedFile.format   = loadedFile.format.toUpper();
+    m_fromRaw             = (loadedFile.format.startsWith(QLatin1String("RAW"))); // also accept RAW-... format
     m_version             = q->namingScheme()->initialCounter();
     m_intermediateCounter = q->namingScheme()->initialCounter();
 }
@@ -107,14 +107,17 @@ void VersionNameCreator::checkNeedNewVersion()
                                  << m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Intermediate)
                                  << m_fromRaw << q->workspaceFileFormats().contains(m_loadedFile.format);
 
-    if       (!m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Original) &&
-              !m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Intermediate))
+    if       (
+              !m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Original) &&
+              !m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Intermediate)
+             )
     {
         m_newVersion = true;
     }
     else if (m_fromRaw || !q->workspaceFileFormats().contains(m_loadedFile.format))
     {
         // We check the loaded format: If it is not one of the workspace formats, or even raw, we need a new version
+
         m_newVersion = true;
     }
     else
@@ -186,8 +189,10 @@ void VersionNameCreator::setSaveFileName()
         int extSize    = m_loadedFile.fileName.size() - lastDot - 1;
         QString suffix = m_loadedFile.fileName.right(extSize).toUpper();
 
-        if (((suffix == QLatin1String("TIF"))  && tifFormat) ||
-            ((suffix == QLatin1String("JPEG")) && jpgFormat))
+        if (
+            ((suffix == QLatin1String("TIF"))  && tifFormat) ||
+            ((suffix == QLatin1String("JPEG")) && jpgFormat)
+           )
         {
             m_result.format = suffix;
         }
@@ -268,8 +273,10 @@ void VersionNameCreator::checkIntermediates()
                                  << "save after raw" << bool(m_settings.saveIntermediateVersions & VersionManagerSettings::AfterRawConversion)
                                  << "save when not repro" << bool(m_settings.saveIntermediateVersions & VersionManagerSettings::WhenNotReproducible);
 
-    if ((m_settings.saveIntermediateVersions & VersionManagerSettings::AfterEachSession) &&
-        (m_operation.tasks & VersionFileOperation::Replace))
+    if (
+        (m_settings.saveIntermediateVersions & VersionManagerSettings::AfterEachSession) &&
+        (m_operation.tasks & VersionFileOperation::Replace)
+       )
     {
         // We want a snapshot after each session. The main file will be overwritten by the current state.
         // So we consider the current file as snapshot of the last session and move
@@ -295,6 +302,7 @@ void VersionNameCreator::checkIntermediates()
     if (lastStep < firstStep)
     {
         // only a single editing step, or even "backwards" in history (possible with redo)
+
         return;
     }
 
@@ -313,6 +321,7 @@ void VersionNameCreator::checkIntermediates()
             if (DImgFilterManager::instance()->isRawConversion(m_currentHistory.action(i).identifier()))
             {
                 rawConversionStep = i;
+
                 // break? multiple raw conversion steps??
             }
         }
@@ -334,12 +343,16 @@ void VersionNameCreator::checkIntermediates()
             switch (m_currentHistory.action(i).category())
             {
                 case FilterAction::ReproducibleFilter:
+                {
                     break;
+                }
 
                 case FilterAction::ComplexFilter:
                 case FilterAction::DocumentedHistory:
+                {
                     m_operation.intermediates.insert(i, VersionFileInfo());
                     break;
+                }
             }
         }
     }
@@ -449,17 +462,14 @@ void VersionNameCreator::addFileSuffix(QString& fileName, const QString& format,
 
 // ------------------------------------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN VersionManager::VersionManagerPriv
+class Q_DECL_HIDDEN VersionManager::Private
 {
 public:
 
-    VersionManagerPriv()
-    {
-        scheme = nullptr;
-    }
+    Private() = default;
 
     VersionManagerSettings     settings;
-    VersionNamingScheme*       scheme;
+    VersionNamingScheme*       scheme           = nullptr;
 
     DefaultVersionNamingScheme defaultScheme;
 };
@@ -467,7 +477,7 @@ public:
 // ------------------------------------------------------------------------------------------------------
 
 VersionManager::VersionManager()
-    : d(new VersionManagerPriv)
+    : d(new Private)
 {
 }
 
@@ -510,7 +520,7 @@ VersionFileOperation VersionManager::operation(FileNameType request, const Versi
 {
     VersionNameCreator name(loadedFile, initialResolvedHistory, currentHistory, this);
 
-    if (request == CurrentVersionName)
+    if      (request == CurrentVersionName)
     {
         name.checkNeedNewVersion();
     }
