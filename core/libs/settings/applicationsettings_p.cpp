@@ -114,6 +114,7 @@ const QString ApplicationSettings::Private::configShowPermanentDeleteDialogEntry
 const QString ApplicationSettings::Private::configApplySidebarChangesDirectlyEntry(QLatin1String("Apply Sidebar Changes Directly"));
 const QString ApplicationSettings::Private::configUseNativeFileDialogEntry(QLatin1String("Use Native File Dialog"));
 const QString ApplicationSettings::Private::configDrawFramesToGroupedEntry(QLatin1String("Draw Frames To Grouped Items"));
+const QString ApplicationSettings::Private::configSelectFirstAlbumItemEntry(QLatin1String("Select First Album Item"));
 const QString ApplicationSettings::Private::configExpandNewCurrentItemEntry(QLatin1String("Expand New Current Item On Click"));
 const QString ApplicationSettings::Private::configScrollItemToCenterEntry(QLatin1String("Scroll Current Item To Center"));
 const QString ApplicationSettings::Private::configShowOnlyPersonTagsInPeopleSidebarEntry(QLatin1String("Show Only Face Tags For Assigning Name"));
@@ -159,7 +160,8 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       sidebarApplyDirectly                              (false),
       useNativeFileDialog                               (false),
       drawFramesToGrouped                               (true),
-      expandNewCurrentItem                              (false),
+      selectFirstAlbumItem                              (true),
+      expandNewCurrentItem                              (true),
       scrollItemToCenter                                (false),
       showOnlyPersonTagsInPeopleSidebar                 (false),
       detectFacesInNewImages                            (false),
@@ -301,6 +303,7 @@ void ApplicationSettings::Private::init()
     sidebarApplyDirectly                              = false;
     useNativeFileDialog                               = false;
     drawFramesToGrouped                               = true;
+    selectFirstAlbumItem                              = true;
     expandNewCurrentItem                              = true;
     scrollItemToCenter                                = false;
     showOnlyPersonTagsInPeopleSidebar                 = false;

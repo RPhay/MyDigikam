@@ -281,6 +281,7 @@ int DigikamItemView::fitToWidthIcons()
 void DigikamItemView::slotSetupChanged()
 {
     imageFilterModel()->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
+    setInitialSelectedItem(ApplicationSettings::instance()->getSelectFirstAlbumItem());
     setToolTipEnabled(ApplicationSettings::instance()->showToolTipsIsValid());
     setFont(ApplicationSettings::instance()->getIconViewFont());
 

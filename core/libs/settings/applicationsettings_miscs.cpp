@@ -132,6 +132,16 @@ bool ApplicationSettings::getDrawFramesToGrouped() const
     return d->drawFramesToGrouped;
 }
 
+void ApplicationSettings::setSelectFirstAlbumItem(bool val)
+{
+    d->selectFirstAlbumItem = val;
+}
+
+bool ApplicationSettings::getSelectFirstAlbumItem() const
+{
+    return d->selectFirstAlbumItem;
+}
+
 void ApplicationSettings::setExpandNewCurrentItem(bool val)
 {
     d->expandNewCurrentItem = val;

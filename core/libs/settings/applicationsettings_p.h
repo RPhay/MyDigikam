@@ -103,6 +103,7 @@ public:
     static const QString configSidebarTitleStyleEntry;
     static const QString configUseNativeFileDialogEntry;
     static const QString configDrawFramesToGroupedEntry;
+    static const QString configSelectFirstAlbumItemEntry;
     static const QString configExpandNewCurrentItemEntry;
     static const QString configScrollItemToCenterEntry;
     static const QString configShowOnlyPersonTagsInPeopleSidebarEntry;
@@ -205,6 +206,8 @@ public:
     bool                                         useNativeFileDialog;
     /// grouped item draw setting
     bool                                         drawFramesToGrouped;
+    /// select first item setting
+    bool                                         selectFirstAlbumItem;
     /// expand item setting
     bool                                         expandNewCurrentItem;
     /// item center setting

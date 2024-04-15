@@ -89,6 +89,7 @@ public:
     QCheckBox*                sidebarApplyDirectlyCheck                 = nullptr;
     QCheckBox*                useNativeFileDialogCheck                  = nullptr;
     QCheckBox*                drawFramesToGroupedCheck                  = nullptr;
+    QCheckBox*                selectFirstAlbumItemCheck                 = nullptr;
     QCheckBox*                expandNewCurrentItemCheck                 = nullptr;
     QCheckBox*                scrollItemToCenterCheck                   = nullptr;
     QCheckBox*                showOnlyPersonTagsInPeopleSidebarCheck    = nullptr;

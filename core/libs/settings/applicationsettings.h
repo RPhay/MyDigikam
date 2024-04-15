@@ -425,6 +425,9 @@ public:
     void setDrawFramesToGrouped(bool val);
     bool getDrawFramesToGrouped() const;
 
+    void setSelectFirstAlbumItem(bool val);
+    bool getSelectFirstAlbumItem() const;
+
     void setExpandNewCurrentItem(bool val);
     bool getExpandNewCurrentItem() const;
 

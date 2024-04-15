@@ -56,8 +56,9 @@ public:
     int                        scrollStepFactor             = 10;
 
     QMouseEvent*               currentMouseEvent            = nullptr;
+    bool                       initialSelectedItem          = true;
     bool                       ensureOneSelectedItem        = false;
-    bool                       ensureInitialSelectedItem    = false;
+    bool                       ensureInitialSelectedItem    = true;
     bool                       scrollCurrentToCenter        = false;
     Qt::MouseButton            mouseButtonPressed           = Qt::NoButton;
     QPersistentModelIndex      hintAtSelectionIndex;
@@ -455,7 +456,7 @@ void ItemViewCategorized::reset()
     Q_EMIT selectionChanged();
     Q_EMIT selectionCleared();
 
-    d->ensureInitialSelectedItem = true;
+    d->ensureInitialSelectedItem = d->initialSelectedItem;
     d->hintAtScrollPosition      = QModelIndex();
     d->hintAtSelectionIndex      = QModelIndex();
     d->hintAtSelectionRow        = -1;
@@ -636,11 +637,10 @@ void ItemViewCategorized::ensureSelectionAfterChanges()
 {
     if      (d->ensureInitialSelectedItem && model()->rowCount())
     {
-        // Ensure the item (0,0) is selected, if the model was reset previously
+        // Ensure the item (0, 0) is selected, if the model was reset previously
         // and the user did not change the selection since reset.
-        // Caveat: Item at (0,0) may have changed.
+        // Caveat: Item at (0, 0) may have changed.
 
-        bool hadInitial              = d->ensureInitialSelectedItem;
         d->ensureInitialSelectedItem = false;
         d->ensureOneSelectedItem     = false;
         QModelIndex index            = model()->index(0, 0);
@@ -652,15 +652,11 @@ void ItemViewCategorized::ensureSelectionAfterChanges()
 
             // we want ensureInitial set to false if and only if the selection
             // is done from any other place than the previous line (i.e., by user action)
-            // Effect: we select whatever is the current index(0,0)
+            // Effect: we select whatever is the current index(0, 0)
             // TODO: cppcheck report here that hadInitial condition is always true.
             //       This code must be refactored later.
 
-            // cppcheck-suppress knownConditionTrueFalse
-            if (hadInitial)
-            {
-                d->ensureInitialSelectedItem = true;
-            }
+            d->ensureInitialSelectedItem = true;
         }
     }
     else if (d->ensureOneSelectedItem)
@@ -1152,6 +1148,11 @@ QPixmap ItemViewCategorized::pixmapForDrag(const QList<QModelIndex>& indexes) co
     option.rect                 = viewport()->rect();
 
     return d->delegate->pixmapForDrag(option, indexes);
+}
+
+void ItemViewCategorized::setInitialSelectedItem(bool enabled)
+{
+    d->initialSelectedItem = enabled;
 }
 
 void ItemViewCategorized::setScrollCurrentToCenter(bool enabled)

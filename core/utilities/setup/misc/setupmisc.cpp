@@ -89,6 +89,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                      "This option does not clean up other databases as the thumbnails or recognition db.\n"
                                      "For clean up routines for other databases, please use the maintenance."));
 
+    d->selectFirstAlbumItemCheck              = new QCheckBox(i18n("Select the first item from the album when it opens"), behaviourPanel);
     d->expandNewCurrentItemCheck              = new QCheckBox(i18n("Expand current tree item with a single mouse click"), behaviourPanel);
     d->scrollItemToCenterCheck                = new QCheckBox(i18n("Scroll current item to center of thumbbar"), behaviourPanel);
     d->showOnlyPersonTagsInPeopleSidebarCheck = new QCheckBox(i18n("Show only face tags for assigning names in people sidebar"), behaviourPanel);
@@ -171,14 +172,15 @@ SetupMisc::SetupMisc(QWidget* const parent)
     layout->addWidget(d->showPermanentDeleteDialogCheck,          6, 0, 1, 4);
     layout->addWidget(d->sidebarApplyDirectlyCheck,               7, 0, 1, 4);
     layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck,  8, 0, 1, 4);
-    layout->addWidget(d->expandNewCurrentItemCheck,               9, 0, 1, 4);
-    layout->addWidget(d->scrollItemToCenterCheck,                10, 0, 1, 4);
-    layout->addWidget(albumDateSourceHbox,                       11, 0, 1, 4);
-    layout->addWidget(stringComparisonHbox,                      12, 0, 1, 4);
-    layout->addWidget(minSimilarityBoundHbox,                    13, 0, 1, 4);
-    layout->addWidget(upOptionsGroup,                            14, 0, 1, 4);
+    layout->addWidget(d->selectFirstAlbumItemCheck,               9, 0, 1, 4);
+    layout->addWidget(d->expandNewCurrentItemCheck,              10, 0, 1, 4);
+    layout->addWidget(d->scrollItemToCenterCheck,                11, 0, 1, 4);
+    layout->addWidget(albumDateSourceHbox,                       12, 0, 1, 4);
+    layout->addWidget(stringComparisonHbox,                      13, 0, 1, 4);
+    layout->addWidget(minSimilarityBoundHbox,                    14, 0, 1, 4);
+    layout->addWidget(upOptionsGroup,                            15, 0, 1, 4);
     layout->setColumnStretch(3, 10);
-    layout->setRowStretch(15, 10);
+    layout->setRowStretch(16, 10);
 
     // --------------------------------------------------------
 
@@ -435,6 +437,7 @@ void SetupMisc::applySettings()
     settings->setCleanAtStart(d->cleanAtStart->isChecked());
     settings->setUseNativeFileDialog(d->useNativeFileDialogCheck->isChecked());
     settings->setDrawFramesToGrouped(d->drawFramesToGroupedCheck->isChecked());
+    settings->setSelectFirstAlbumItem(d->selectFirstAlbumItemCheck->isChecked());
     settings->setExpandNewCurrentItem(d->expandNewCurrentItemCheck->isChecked());
     settings->setScrollItemToCenter(d->scrollItemToCenterCheck->isChecked());
     settings->setShowOnlyPersonTagsInPeopleSidebar(d->showOnlyPersonTagsInPeopleSidebarCheck->isChecked());
@@ -495,6 +498,7 @@ void SetupMisc::readSettings()
     d->cleanAtStart->setChecked(settings->getCleanAtStart());
     d->useNativeFileDialogCheck->setChecked(settings->getUseNativeFileDialog());
     d->drawFramesToGroupedCheck->setChecked(settings->getDrawFramesToGrouped());
+    d->selectFirstAlbumItemCheck->setChecked(settings->getSelectFirstAlbumItem());
     d->expandNewCurrentItemCheck->setChecked(settings->getExpandNewCurrentItem());
     d->scrollItemToCenterCheck->setChecked(settings->getScrollItemToCenter());
     d->showOnlyPersonTagsInPeopleSidebarCheck->setChecked(settings->showOnlyPersonTagsInPeopleSidebar());

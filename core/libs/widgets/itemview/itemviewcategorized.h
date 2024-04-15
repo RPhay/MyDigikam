@@ -54,6 +54,11 @@ public:
     void awayFromSelection();
 
     /**
+     * Ensure a initial selected item.
+     */
+    void setInitialSelectedItem(bool enabled);
+
+    /**
      * Scroll automatically the current index to center of the view.
      */
     void setScrollCurrentToCenter(bool enabled);
