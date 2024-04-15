@@ -89,7 +89,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
                                      "This option does not clean up other databases as the thumbnails or recognition db.\n"
                                      "For clean up routines for other databases, please use the maintenance."));
 
-    d->selectFirstAlbumItemCheck              = new QCheckBox(i18n("Select the first item from the album when it opens"), behaviourPanel);
+    d->selectFirstAlbumItemCheck              = new QCheckBox(i18n("Initially select the first item in the album"), behaviourPanel);
     d->expandNewCurrentItemCheck              = new QCheckBox(i18n("Expand current tree item with a single mouse click"), behaviourPanel);
     d->scrollItemToCenterCheck                = new QCheckBox(i18n("Scroll current item to center of thumbbar"), behaviourPanel);
     d->showOnlyPersonTagsInPeopleSidebarCheck = new QCheckBox(i18n("Show only face tags for assigning names in people sidebar"), behaviourPanel);
