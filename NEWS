@@ -77,7 +77,7 @@ BUGFIXES:
 054 ==> 484237 - 8.3.0: Crash when generating fingerprints on Windows 11.
 055 ==> 485443 - Cross-hair appears momentarily and disappears until programme reload then same again.
 056 ==> 485332 - Some images were not correlated even though GPS coordinates were available for the time they were taken.
-057 ==> 
+057 ==> 485593 - Map view cannot zoom in far enough to be useful.
 058 ==> 
 059 ==> 
 060 ==> 
