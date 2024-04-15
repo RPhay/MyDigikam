@@ -60,23 +60,23 @@ protected:
 
 public:
 
-    VersionManagerSettings m_settings;
+    VersionManagerSettings settings;
 
-    VersionFileInfo        m_result;
-    VersionFileInfo        m_loadedFile;
+    VersionFileInfo        result;
+    VersionFileInfo        loadedFile;
 
-    VersionFileOperation   m_operation;
+    VersionFileOperation   operation;
 
-    const DImageHistory    m_resolvedInitialHistory;
-    const DImageHistory    m_currentHistory;
+    const DImageHistory    resolvedInitialHistory;
+    const DImageHistory    currentHistory;
 
-    bool                   m_fromRaw                = false;
-    bool                   m_newVersion             = false;
+    bool                   fromRaw                  = false;
+    bool                   newVersion               = false;
 
-    QVariant               m_version;
-    QVariant               m_intermediateCounter;
-    QString                m_baseName;
-    QString                m_intermediatePath;
+    QVariant               version;
+    QVariant               intermediateCounter;
+    QString                baseName;
+    QString                intermediatePath;
 
     VersionManager* const  q                        = nullptr;
 };
@@ -85,16 +85,16 @@ VersionNameCreator::VersionNameCreator(const VersionFileInfo& lFile,
                                        const DImageHistory& rInitHisto,
                                        const DImageHistory& cHisto,
                                        VersionManager* const qq)
-    : m_settings              (qq->settings()),
-      m_loadedFile            (lFile),
-      m_resolvedInitialHistory(rInitHisto),
-      m_currentHistory        (cHisto),
+    : settings              (qq->settings()),
+      loadedFile            (lFile),
+      resolvedInitialHistory(rInitHisto),
+      currentHistory        (cHisto),
       q                       (qq)
 {
-    m_loadedFile.format   = lFile.format.toUpper();
-    m_fromRaw             = (lFile.format.startsWith(QLatin1String("RAW"))); // also accept RAW-... format
-    m_version             = q->namingScheme()->initialCounter();
-    m_intermediateCounter = q->namingScheme()->initialCounter();
+    loadedFile.format   = lFile.format.toUpper();
+    fromRaw             = (lFile.format.startsWith(QLatin1String("RAW"))); // also accept RAW-... format
+    version             = q->namingScheme()->initialCounter();
+    intermediateCounter = q->namingScheme()->initialCounter();
 }
 
 void VersionNameCreator::checkNeedNewVersion()
@@ -103,163 +103,163 @@ void VersionNameCreator::checkNeedNewVersion()
     // The resolved initial history contains only referred files found in the collection
     // Note: The loaded file will have type Current
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Original)
-                                 << m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Intermediate)
-                                 << m_fromRaw << q->workspaceFileFormats().contains(m_loadedFile.format);
+    qCDebug(DIGIKAM_GENERAL_LOG) << resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Original)
+                                 << resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Intermediate)
+                                 << fromRaw << q->workspaceFileFormats().contains(loadedFile.format);
 
     if      (
-             !m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Original) &&
-             !m_resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Intermediate)
+             !resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Original) &&
+             !resolvedInitialHistory.hasReferredImageOfType(HistoryImageId::Intermediate)
             )
     {
-        m_newVersion = true;
+        newVersion = true;
     }
-    else if (m_fromRaw || !q->workspaceFileFormats().contains(m_loadedFile.format))
+    else if (fromRaw || !q->workspaceFileFormats().contains(loadedFile.format))
     {
         // We check the loaded format: If it is not one of the workspace formats, or even raw, we need a new version
 
-        m_newVersion = true;
+        newVersion = true;
     }
     else
     {
-        m_newVersion = false;
+        newVersion = false;
     }
 }
 
 void VersionNameCreator::fork()
 {
-    m_newVersion = true;
+    newVersion = true;
 }
 
 void VersionNameCreator::setSaveDirectory()
 {
-    m_result.path      = q->namingScheme()->directory(m_loadedFile.path, m_loadedFile.fileName);
-    m_intermediatePath = q->namingScheme()->directory(m_loadedFile.path, m_loadedFile.fileName);
+    result.path      = q->namingScheme()->directory(loadedFile.path, loadedFile.fileName);
+    intermediatePath = q->namingScheme()->directory(loadedFile.path, loadedFile.fileName);
 }
 
 void VersionNameCreator::setSaveDirectory(const QString& path)
 {
-    m_result.path      = path;
-    m_intermediatePath = path;
+    result.path      = path;
+    intermediatePath = path;
 }
 
 void VersionNameCreator::setSaveFormat()
 {
-    m_result.format = m_settings.format;
+    result.format = settings.format;
 /*
-    if (m_fromRaw)
+    if (fromRaw)
     {
-        m_result.format = m_settings.formatForStoringRAW;
+        result.format = settings.formatForStoringRAW;
     }
     else
     {
-        m_result.format = m_settings.formatForStoringSubversions;
+        result.format = settings.formatForStoringSubversions;
     }
 */
 }
 
 void VersionNameCreator::setSaveFormat(const QString& override)
 {
-    m_result.format = override;
+    result.format = override;
 }
 
 void VersionNameCreator::setSaveFileName()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "need new version" << m_newVersion;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "need new version" << newVersion;
 
     VersionNamingScheme* const scheme = q->namingScheme();
 
-    // initialize m_baseName, m_version, and m_intermediateCounter for intermediates
+    // initialize baseName, version, and intermediateCounter for intermediates
 
-    m_baseName                        = scheme->baseName(m_loadedFile.path,
-                                                         m_loadedFile.fileName,
-                                                         &m_version,
-                                                         &m_intermediateCounter);
+    baseName                        = scheme->baseName(loadedFile.path,
+                                                         loadedFile.fileName,
+                                                         &version,
+                                                         &intermediateCounter);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "analyzing file" << m_loadedFile.fileName << m_version << m_intermediateCounter;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "analyzing file" << loadedFile.fileName << version << intermediateCounter;
 
     // Update the result format for TIFF and JPG to the existing original suffix in short or long format.
 
-    int lastDot          = m_loadedFile.fileName.lastIndexOf(QLatin1Char('.'));
-    const bool tifFormat = (m_result.format == QLatin1String("TIFF"));
-    const bool jpgFormat = (m_result.format == QLatin1String("JPG"));
+    int lastDot          = loadedFile.fileName.lastIndexOf(QLatin1Char('.'));
+    const bool tifFormat = (result.format == QLatin1String("TIFF"));
+    const bool jpgFormat = (result.format == QLatin1String("JPG"));
 
     if ((lastDot != -1) && (tifFormat || jpgFormat))
     {
-        int extSize    = m_loadedFile.fileName.size() - lastDot - 1;
-        QString suffix = m_loadedFile.fileName.right(extSize).toUpper();
+        int extSize    = loadedFile.fileName.size() - lastDot - 1;
+        QString suffix = loadedFile.fileName.right(extSize).toUpper();
 
         if (
             ((suffix == QLatin1String("TIF"))  && tifFormat) ||
             ((suffix == QLatin1String("JPEG")) && jpgFormat)
            )
         {
-            m_result.format = suffix;
+            result.format = suffix;
         }
     }
 
-    if (!m_newVersion)
+    if (!newVersion)
     {
-        m_result.fileName = m_loadedFile.fileName;
+        result.fileName = loadedFile.fileName;
 
-        if (m_loadedFile.format != m_result.format)
+        if (loadedFile.format != result.format)
         {
-            setFileSuffix(m_result.fileName, m_result.format);
+            setFileSuffix(result.fileName, result.format);
         }
     }
     else
     {
-        QDir dirInfo(m_result.path);
+        QDir dirInfo(result.path);
 
         // To find the right number for the new version, go through all the items in the given dir,
         // the version number won't be bigger than count()
 
         for (uint i = 0 ; i <= dirInfo.count() ; ++i)
         {
-            QString suggestedName = scheme->versionFileName(m_result.path, m_baseName, m_version);
+            QString suggestedName = scheme->versionFileName(result.path, baseName, version);
 
             // Note: Always give a hard guarantee that the file does not exist
 
             if (dirInfo.entryList(QStringList() << suggestedName + QLatin1String(".*"), QDir::Files).isEmpty())
             {
-                m_result.fileName = suggestedName;
-                addFileSuffix(m_result.fileName, m_result.format, m_loadedFile.fileName);
+                result.fileName = suggestedName;
+                addFileSuffix(result.fileName, result.format, loadedFile.fileName);
                 break;
             }
 
             // increment for next attempt
 
-            m_version = scheme->incrementedCounter(m_version);
+            version = scheme->incrementedCounter(version);
         }
     }
 }
 
 void VersionNameCreator::setSaveFileName(const QString& fileName)
 {
-    m_result.fileName = fileName;
-    m_baseName        = fileName.section(QLatin1Char('.'), 0, 0);
+    result.fileName = fileName;
+    baseName        = fileName.section(QLatin1Char('.'), 0, 0);
 
-    // m_version remains unknown
+    // version remains unknown
 }
 
 void VersionNameCreator::initOperation()
 {
-    m_operation.loadedFile = m_loadedFile;
-    m_operation.saveFile   = m_result;
+    operation.loadedFile = loadedFile;
+    operation.saveFile   = result;
 
-    if (m_newVersion)
+    if (newVersion)
     {
-        m_operation.tasks |= VersionFileOperation::NewFile;
+        operation.tasks |= VersionFileOperation::NewFile;
     }
     else
     {
-        if (m_result.fileName == m_loadedFile.fileName)
+        if (result.fileName == loadedFile.fileName)
         {
-            m_operation.tasks |= VersionFileOperation::Replace;
+            operation.tasks |= VersionFileOperation::Replace;
         }
         else
         {
-            m_operation.tasks |= VersionFileOperation::SaveAndDelete;
+            operation.tasks |= VersionFileOperation::SaveAndDelete;
         }
     }
 }
@@ -268,35 +268,35 @@ void VersionNameCreator::checkIntermediates()
 {
     // call when task has been determined
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Will replace" << bool(m_operation.tasks & VersionFileOperation::Replace)
-                                 << "save after each session" << bool(m_settings.saveIntermediateVersions & VersionManagerSettings::AfterEachSession)
-                                 << "save after raw" << bool(m_settings.saveIntermediateVersions & VersionManagerSettings::AfterRawConversion)
-                                 << "save when not repro" << bool(m_settings.saveIntermediateVersions & VersionManagerSettings::WhenNotReproducible);
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Will replace" << bool(operation.tasks & VersionFileOperation::Replace)
+                                 << "save after each session" << bool(settings.saveIntermediateVersions & VersionManagerSettings::AfterEachSession)
+                                 << "save after raw" << bool(settings.saveIntermediateVersions & VersionManagerSettings::AfterRawConversion)
+                                 << "save when not repro" << bool(settings.saveIntermediateVersions & VersionManagerSettings::WhenNotReproducible);
 
     if (
-        (m_settings.saveIntermediateVersions & VersionManagerSettings::AfterEachSession) &&
-        (m_operation.tasks & VersionFileOperation::Replace)
+        (settings.saveIntermediateVersions & VersionManagerSettings::AfterEachSession) &&
+        (operation.tasks & VersionFileOperation::Replace)
        )
     {
         // We want a snapshot after each session. The main file will be overwritten by the current state.
         // So we consider the current file as snapshot of the last session and move
         // it to an intermediate before it is overwritten
 
-        m_operation.tasks |= VersionFileOperation::MoveToIntermediate;
-        m_operation.intermediateForLoadedFile = nextIntermediate(m_loadedFile.format);
+        operation.tasks |= VersionFileOperation::MoveToIntermediate;
+        operation.intermediateForLoadedFile = nextIntermediate(loadedFile.format);
 
         // this amounts to storing firstStep - 1
     }
 
     // These are, inclusively, the first and last step the state after which we may have to store.
-    // m_resolvedInitialHistory.size() - 1 is the loaded file
-    // m_currentHistory.size() - 1 is the current version
+    // resolvedInitialHistory.size() - 1 is the loaded file
+    // currentHistory.size() - 1 is the current version
 
-    int firstStep = m_resolvedInitialHistory.size();
-    int lastStep  = m_currentHistory.size() - 2; // index of last but one entry
+    int firstStep = resolvedInitialHistory.size();
+    int lastStep  = currentHistory.size() - 2; // index of last but one entry
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "initial history" << m_resolvedInitialHistory.size()
-                                 << "current history" << m_currentHistory.size()
+    qCDebug(DIGIKAM_GENERAL_LOG) << "initial history" << resolvedInitialHistory.size()
+                                 << "current history" << currentHistory.size()
                                  << "first step" << firstStep << "last step" << lastStep;
 
     if (lastStep < firstStep)
@@ -312,13 +312,13 @@ void VersionNameCreator::checkIntermediates()
         firstStep = 1;
     }
 
-    if (m_settings.saveIntermediateVersions & VersionManagerSettings::AfterRawConversion)
+    if (settings.saveIntermediateVersions & VersionManagerSettings::AfterRawConversion)
     {
         int rawConversionStep = -1;
 
         for (int i = firstStep ; i <= lastStep ; ++i)
         {
-            if (DImgFilterManager::instance()->isRawConversion(m_currentHistory.action(i).identifier()))
+            if (DImgFilterManager::instance()->isRawConversion(currentHistory.action(i).identifier()))
             {
                 rawConversionStep = i;
 
@@ -328,19 +328,19 @@ void VersionNameCreator::checkIntermediates()
 
         if (rawConversionStep != -1)
         {
-            m_operation.intermediates.insert(rawConversionStep, VersionFileInfo());
+            operation.intermediates.insert(rawConversionStep, VersionFileInfo());
         }
     }
 
-    if (m_settings.saveIntermediateVersions & VersionManagerSettings::WhenNotReproducible)
+    if (settings.saveIntermediateVersions & VersionManagerSettings::WhenNotReproducible)
     {
         for (int i = firstStep ; i <= lastStep ; ++i)
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "step" << i
                                          << "is reproducible"
-                                         << (m_currentHistory.action(i).category() == FilterAction::ReproducibleFilter);
+                                         << (currentHistory.action(i).category() == FilterAction::ReproducibleFilter);
 
-            switch (m_currentHistory.action(i).category())
+            switch (currentHistory.action(i).category())
             {
                 case FilterAction::ReproducibleFilter:
                 {
@@ -350,26 +350,26 @@ void VersionNameCreator::checkIntermediates()
                 case FilterAction::ComplexFilter:
                 case FilterAction::DocumentedHistory:
                 {
-                    m_operation.intermediates.insert(i, VersionFileInfo());
+                    operation.intermediates.insert(i, VersionFileInfo());
                     break;
                 }
             }
         }
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Save intermediates after steps" << m_operation.intermediates.keys();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Save intermediates after steps" << operation.intermediates.keys();
 
-    if (!m_operation.intermediates.isEmpty())
+    if (!operation.intermediates.isEmpty())
     {
-        m_operation.tasks |= VersionFileOperation::StoreIntermediates;
+        operation.tasks |= VersionFileOperation::StoreIntermediates;
 
         // now all steps are available, already ordered thanks to QMap. Just fill in the empty VersionFileInfos.
 
         QMap<int,VersionFileInfo>::iterator it;
 
-        for (it = m_operation.intermediates.begin() ; it != m_operation.intermediates.end() ; ++it)
+        for (it = operation.intermediates.begin() ; it != operation.intermediates.end() ; ++it)
         {
-            it.value() = nextIntermediate(m_result.format);
+            it.value() = nextIntermediate(result.format);
         }
     }
 }
@@ -379,19 +379,19 @@ VersionFileInfo VersionNameCreator::nextIntermediate(const QString& format)
     VersionNamingScheme* const scheme = q->namingScheme();
 
     VersionFileInfo intermediate;
-    intermediate.path                 = m_intermediatePath;
+    intermediate.path                 = intermediatePath;
     intermediate.format               = format;
 
-    QDir dirInfo(m_intermediatePath);
+    QDir dirInfo(intermediatePath);
 
     for (uint i = 0 ; i <= dirInfo.count() ; ++i)
     {
-        QString suggestedName = scheme->intermediateFileName(m_intermediatePath, m_baseName,
-                                                             m_version, m_intermediateCounter);
+        QString suggestedName = scheme->intermediateFileName(intermediatePath, baseName,
+                                                             version, intermediateCounter);
 
         // it is important to increment before returning - we may have to produce a number of files
 
-        m_intermediateCounter = scheme->incrementedCounter(m_intermediateCounter);
+        intermediateCounter = scheme->incrementedCounter(intermediateCounter);
 
         // Note: Always give a hard guarantee that the file does not exist
 
@@ -535,7 +535,7 @@ VersionFileOperation VersionManager::operation(FileNameType request, const Versi
     name.initOperation();
     name.checkIntermediates();
 
-    return name.m_operation;
+    return name.operation;
 }
 
 VersionFileOperation VersionManager::operationNewVersionInFormat(const VersionFileInfo& loadedFile,
@@ -552,7 +552,7 @@ VersionFileOperation VersionManager::operationNewVersionInFormat(const VersionFi
     name.initOperation();
     name.checkIntermediates();
 
-    return name.m_operation;
+    return name.operation;
 }
 
 VersionFileOperation VersionManager::operationNewVersionAs(const VersionFileInfo& loadedFile,
@@ -569,7 +569,7 @@ VersionFileOperation VersionManager::operationNewVersionAs(const VersionFileInfo
     name.initOperation();
     name.checkIntermediates();
 
-    return name.m_operation;
+    return name.operation;
 }
 
 QString VersionManager::toplevelDirectory(const QString& path)
