@@ -169,11 +169,11 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 
     echo "---------- Configuring MacPorts"
 
-    ./configure --prefix="$INSTALL_PREFIX" \
+    ./configure --prefix="$INSTALL_PREFIX"                             \
                 --with-applications-dir="$INSTALL_PREFIX/Applications" \
-                --with-no-root-privileges \
-                --with-install-user="$(id -n -u)" \
-                --with-install-group="$(id -n -g)" 
+                --with-no-root-privileges                              \
+                --with-install-user="$(id -n -u)"                      \
+                --with-install-group="$(id -n -g)"
 
     echo -e "\n\n"
 
@@ -195,7 +195,7 @@ EOF
 
 #    if [[ $ARCH_TARGET = "arm64" ]] ; then
 #
-#         Build with both architectures embeded (x86 and ARM) for Apple Silicon target
+#        # Build with both architectures embeded (x86 and ARM) for Apple Silicon target
 #
 #        cat << EOF >> "$INSTALL_PREFIX/etc/macports/variants.conf"
 #+universal
@@ -224,7 +224,7 @@ fi
 
 #################################################################################################
 
-# Create the build dir for the 3rdparty deps
+# Create the build dir for the 3rdparty deps compiled with CMake
 
 if [ ! -d $BUILDING_DIR ] ; then
 
@@ -248,7 +248,7 @@ rm -rf $BUILDING_DIR/* || true
 echo -e "\n"
 echo "---------- Building digiKam dependencies with Macports"
 
-# With OSX less than El Capitan, we need a more recent Clang compiler than one provided by XCode.
+# With MacOS less than El Capitan, we need a more recent Clang compiler than one provided by XCode.
 # This only concern x86_64 architecture.
 
 if [[ $MAJOR_OSX_VERSION -lt 11 && $MINOR_OSX_VERSION -lt 10 ]]; then
@@ -271,10 +271,13 @@ fi
 echo -e "MariaDB Variant=$MP_MARIADB_VARIANT\n"
 
 # To fix broken ports with m4 tool detection.
+
 port install m4
 
 if [ ! -f $INSTALL_PREFIX/bin/m4 ] ; then
+
     cp -f $INSTALL_PREFIX/libexec/gnubin/m4 $INSTALL_PREFIX/bin/
+
 fi
 
 port install cctools +xcode
@@ -301,22 +304,12 @@ port install lame
 port install speex
 port install libtheora
 port install xvid
-
-cmake $ORIG_WD/../3rdparty \
-       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
-       -DINSTALL_ROOT=$INSTALL_PREFIX \
-       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-       -DKA_VERSION=$DK_KA_VERSION \
-       -DKP_VERSION=$DK_KP_VERSION \
-       -DKDE_VERSION=$DK_KDE_VERSION \
-       -DENABLE_QTVERSION=$DK_QTVERSION \
-       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
-       -DARCH_TARGET=$ARCH_TARGET \
-       -Wno-dev
-
-cmake --build . --config RelWithDebInfo --target ext_heif       -- -j$CPU_CORES
-
 port install aom
+port install libusb
+port install libgphoto2
+
+# port broken since a while. check later
+# port install sane-backends
 
 cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
@@ -330,24 +323,24 @@ cmake $ORIG_WD/../3rdparty \
        -DARCH_TARGET=$ARCH_TARGET \
        -Wno-dev
 
-cmake --build . --config RelWithDebInfo --target ext_ffmpeg       -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_heif      -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ffmpeg    -- -j$CPU_CORES
 
 if [[ $DK_QTVERSION = 5 ]] ; then
 
-    port install \
-             qt$DK_QTVERSION-qtbase \
-             qt$DK_QTVERSION-qtdeclarative \
-             qt$DK_QTVERSION-qtmacextras \
-             qt$DK_QTVERSION-qtquickcontrols \
-             qt$DK_QTVERSION-qtxmlpatterns \
-             qt$DK_QTVERSION-qtsvg \
-             qt$DK_QTVERSION-qttools \
-             qt$DK_QTVERSION-qttranslations \
-             qt$DK_QTVERSION-qtimageformats \
-             qt$DK_QTVERSION-qtmultimedia \
-             qt$DK_QTVERSION-qtnetworkauth \
-             qt$DK_QTVERSION-sqlite-plugin \
-             qt$DK_QTVERSION-mysql-plugin $MP_MARIADB_VARIANT
+    port install qt$DK_QTVERSION-qtbase
+    port install qt$DK_QTVERSION-qtdeclarative
+    port install qt$DK_QTVERSION-qtmacextras
+    port install qt$DK_QTVERSION-qtquickcontrols
+    port install qt$DK_QTVERSION-qtxmlpatterns
+    port install qt$DK_QTVERSION-qtsvg
+    port install qt$DK_QTVERSION-qttools
+    port install qt$DK_QTVERSION-qttranslations
+    port install qt$DK_QTVERSION-qtimageformats
+    port install qt$DK_QTVERSION-qtmultimedia
+    port install qt$DK_QTVERSION-qtnetworkauth
+    port install qt$DK_QTVERSION-sqlite-plugin
+    port install qt$DK_QTVERSION-mysql-plugin $MP_MARIADB_VARIANT
 
     if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
@@ -361,29 +354,21 @@ if [[ $DK_QTVERSION = 5 ]] ; then
 
 else
 
-    port install mariadb
+    # Qt6
 
-fi
+    port install mysql57
 
-# port broken since a while. check later
-#             sane-backends \
-# m4 tool detection problem
-#             libusb \
-#             libgphoto2 \
-
-cmake $ORIG_WD/../3rdparty \
-       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
-       -DINSTALL_ROOT=$INSTALL_PREFIX \
-       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-       -DKA_VERSION=$DK_KA_VERSION \
-       -DKP_VERSION=$DK_KP_VERSION \
-       -DKDE_VERSION=$DK_KDE_VERSION \
-       -DENABLE_QTVERSION=$DK_QTVERSION \
-       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
-       -DARCH_TARGET=$ARCH_TARGET \
-       -Wno-dev
-
-if [[ $DK_QTVERSION = 6 ]] ; then
+    cmake $ORIG_WD/../3rdparty \
+           -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
+           -DINSTALL_ROOT=$INSTALL_PREFIX \
+           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+           -DKA_VERSION=$DK_KA_VERSION \
+           -DKP_VERSION=$DK_KP_VERSION \
+           -DKDE_VERSION=$DK_KDE_VERSION \
+           -DENABLE_QTVERSION=$DK_QTVERSION \
+           -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+           -DARCH_TARGET=$ARCH_TARGET \
+           -Wno-dev
 
     cmake --build . --config RelWithDebInfo --target ext_qt6     -- -j$CPU_CORES
 
