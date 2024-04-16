@@ -28,6 +28,7 @@
 
 #include "photoinfocontainer.h"
 #include "videoinfocontainer.h"
+#include "digikam_globals.h"
 #include "digikam_export.h"
 
 class QDataStream;
@@ -52,8 +53,8 @@ public:
 
 public:
 
-    explicit CamItemInfo();
-    ~CamItemInfo();
+    CamItemInfo()  = default;
+    ~CamItemInfo() = default;
 
     /**
      * Return true if all member in this container are null.
@@ -78,36 +79,36 @@ public:
 public:
 
     /// Static values taken from camera.
-    qint64             size;                 ///< Camera file size in bytes.
+    qint64             size             = -1;               ///< Camera file size in bytes.
 
-    int                width;                ///< Image width in pixels
-    int                height;               ///< Image height in pixels
-    int                readPermissions;      ///< Read permission of camera file
-    int                writePermissions;     ///< Write permission of camera file
+    int                width            = -1;               ///< Image width in pixels
+    int                height           = -1;               ///< Image height in pixels
+    int                readPermissions  = -1;               ///< Read permission of camera file
+    int                writePermissions = -1;               ///< Write permission of camera file
 
-    QString            name;                 ///< File name in camera file-system
-    QString            folder;               ///< Folder path to access to file in camera
-    QString            mime;                 ///< Type mime of camera file
+    QString            name;                                ///< File name in camera file-system
+    QString            folder;                              ///< Folder path to access to file in camera
+    QString            mime;                                ///< Type mime of camera file
 
-    QDateTime          ctime;                ///< Created time stamp of camera file
+    QDateTime          ctime;                               ///< Created time stamp of camera file
 
-    PhotoInfoContainer photoInfo;            ///< Photo Info from camera file (get from file metadata)
+    PhotoInfoContainer photoInfo;                           ///< Photo Info from camera file (get from file metadata)
 
     /// Variable values depending of user actions.
-    int                downloaded;           ///< Download status of camera file. See DownloadStatus enum for details
-    QString            downloadName;         ///< Preview of the file-name to use during download from camera
+    int                downloaded       = DownloadUnknown;  ///< Download status of camera file. See DownloadStatus enum for details
+    QString            downloadName;                        ///< Preview of the file-name to use during download from camera
 
     /// Unique image id
-    qlonglong          id;
+    qlonglong          id               = -1;
 
-    int                rating;               ///< Pre-rating value of camera file.
+    int                rating           = NoRating;         ///< Pre-rating value of camera file.
 
-    int                pickLabel;            ///< Pre-picklabel value of camera file.
+    int                pickLabel        = NoPickLabel;      ///< Pre-picklabel value of camera file.
 
-    int                colorLabel;           ///< Pre-picklabel value of camera file.
+    int                colorLabel       = NoColorLabel;     ///< Pre-picklabel value of camera file.
 
-    QList<int>         tagIds;               ///< Pre-tags ids of camera file.
-    bool               previewPossible;
+    QList<int>         tagIds;                              ///< Pre-tags ids of camera file.
+    bool               previewPossible  = false;
 };
 
 QDataStream& operator<<(QDataStream&, const CamItemInfo&);

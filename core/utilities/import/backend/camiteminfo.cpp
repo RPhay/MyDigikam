@@ -22,44 +22,27 @@
 namespace Digikam
 {
 
-CamItemInfo::CamItemInfo()
-    : size              (-1),
-      width             (-1),
-      height            (-1),
-      readPermissions   (-1),
-      writePermissions  (-1),
-      downloaded        (DownloadUnknown),
-      id                (-1),
-      rating            (0),
-      pickLabel         (0),
-      colorLabel        (0),
-      previewPossible   (false)
-{
-}
-
-CamItemInfo::~CamItemInfo()
-{
-}
-
 bool CamItemInfo::isNull() const
 {
-    return (size             == -1)              &&
+    return(
+           (size             == -1)              &&
            (width            == -1)              &&
            (height           == -1)              &&
            (readPermissions  == -1)              &&
            (writePermissions == -1)              &&
            (downloaded       == DownloadUnknown) &&
            (id               == -1)              &&
-           (rating           == 0)               &&
-           (pickLabel        == 0)               &&
-           (colorLabel       == 0)               &&
+           (rating           == NoRating)        &&
+           (pickLabel        == NoPickLabel)     &&
+           (colorLabel       == NoColorLabel)    &&
            name.isNull()                         &&
            folder.isNull()                       &&
            mime.isNull()                         &&
            ctime.isNull()                        &&
            photoInfo.isNull()                    &&
            downloadName.isNull()                 &&
-           tagIds.isEmpty();
+           tagIds.isEmpty()
+          );
 }
 
 QUrl CamItemInfo::url() const

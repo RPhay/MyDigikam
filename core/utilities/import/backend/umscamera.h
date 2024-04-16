@@ -39,7 +39,7 @@ class UMSCamera : public DKCamera
 public:
 
     explicit UMSCamera(const QString& title, const QString& model, const QString& port, const QString& path);
-    ~UMSCamera()                                                                                                    override;
+    ~UMSCamera()                                                                                                    override = default;
 
     QByteArray                 cameraMD5ID()                                                                        override;
     DKCamera::CameraDriverType cameraDriverType()                                                                   override;
@@ -80,7 +80,7 @@ private:
 
 private:
 
-    bool m_cancel;
+    bool m_cancel = false;
 
 private:
 

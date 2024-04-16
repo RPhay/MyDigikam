@@ -47,7 +47,7 @@ public:
 public:
 
     explicit DKCamera(const QString& title, const QString& model, const QString& port, const QString& path);
-    ~DKCamera() override;
+    ~DKCamera() override = default;
 
 public:
 
@@ -106,13 +106,13 @@ protected:
 
 protected:
 
-    bool    m_thumbnailSupport;
-    bool    m_deleteSupport;
-    bool    m_uploadSupport;
-    bool    m_mkDirSupport;
-    bool    m_delDirSupport;
-    bool    m_captureImageSupport;
-    bool    m_captureImagePreviewSupport;
+    bool    m_thumbnailSupport              = false;
+    bool    m_deleteSupport                 = false;
+    bool    m_uploadSupport                 = false;
+    bool    m_mkDirSupport                  = false;
+    bool    m_delDirSupport                 = false;
+    bool    m_captureImageSupport           = false;
+    bool    m_captureImagePreviewSupport    = false;
 
     QString m_imageFilter;
     QString m_movieFilter;

@@ -64,14 +64,9 @@ namespace Digikam
 
 UMSCamera::UMSCamera(const QString& title, const QString& model,
                      const QString& port, const QString& path)
-    : DKCamera(title, model, port, path),
-      m_cancel(false)
+    : DKCamera(title, model, port, path)
 {
     getUUIDFromSolid();
-}
-
-UMSCamera::~UMSCamera()
-{
 }
 
 /// Method not supported by UMS camera.

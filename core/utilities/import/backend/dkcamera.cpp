@@ -26,13 +26,6 @@ namespace Digikam
 
 DKCamera::DKCamera(const QString& title, const QString& model, const QString& port, const QString& path)
     : QObject                       (),
-      m_thumbnailSupport            (false),
-      m_deleteSupport               (false),
-      m_uploadSupport               (false),
-      m_mkDirSupport                (false),
-      m_delDirSupport               (false),
-      m_captureImageSupport         (false),
-      m_captureImagePreviewSupport  (false),
       m_model                       (model),
       m_port                        (port),
       m_path                        (path),
@@ -47,10 +40,6 @@ DKCamera::DKCamera(const QString& title, const QString& model, const QString& po
     m_movieFilter                       = m_movieFilter.toLower();
     m_audioFilter                       = m_audioFilter.toLower();
     m_rawFilter                         = m_rawFilter.toLower();
-}
-
-DKCamera::~DKCamera()
-{
 }
 
 QString DKCamera::title() const
