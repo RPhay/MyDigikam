@@ -6,6 +6,12 @@
 
 APPLY_COMMON_POLICIES()
 
+if(JXL_FOUND)
+
+    set(LIB_DNG libdng)
+
+endif()
+
 include_directories(${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
@@ -64,18 +70,11 @@ macro(LIBRAW_BUILD_SAMPLES)
 
                           libraw
                           PNG::PNG                          # For zlib
+                          ${LIB_DNG}
 
                           ${COMMON_TEST_LINK}
     )
 
-    if(JXL_FOUND)
-
-        target_compile_definitions(${_target}_cli
-                                   PRIVATE
-                                   libdng
-        )
-
-    endif()
 
     if(WIN32)
 
