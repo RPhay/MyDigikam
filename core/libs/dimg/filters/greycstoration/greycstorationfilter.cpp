@@ -48,6 +48,7 @@
 #   pragma GCC diagnostic ignored "-Wdate-time"
 #   pragma GCC diagnostic ignored "-Woverflow"
 #   pragma GCC diagnostic ignored "-Wtype-limits"
+#   pragma GCC diagnostic ignored "-Wvolatile"
 #endif
 
 #if defined(Q_CC_CLANG)
