@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-15 01:35+0000\n"
+"POT-Creation-Date: 2024-04-16 01:47+0000\n"
 "PO-Revision-Date: 2024-04-06 01:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -21982,7 +21982,7 @@ msgid "Slideshow"
 msgstr "投影片放映"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:440
+#: core/libs/settings/applicationsettings_miscs.cpp:450
 #, kde-format
 msgid "Slideshow"
 msgstr "投影片放映"
@@ -37152,7 +37152,7 @@ msgid "Properties"
 msgstr "屬性"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:431
+#: core/libs/settings/applicationsettings_miscs.cpp:441
 #: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
@@ -38734,138 +38734,138 @@ msgstr "Phase One 數位相機 RAW 影像格式"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "編籤圖像檔案格式 (版本 5.0)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:401
+#: core/libs/settings/applicationsettings_miscs.cpp:411
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:403
+#: core/libs/settings/applicationsettings_miscs.cpp:413
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
 msgid "Remember choice for this operation"
 msgstr "取消這個動作。"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:434
+#: core/libs/settings/applicationsettings_miscs.cpp:444
 #: core/utilities/lighttable/lighttablewindow.cpp:48
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "數位光桌"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:437
+#: core/libs/settings/applicationsettings_miscs.cpp:447
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "批次佇列管理器"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:443
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #, fuzzy, kde-format
 #| msgid "File Renaming"
 msgid "Renaming"
 msgstr "檔案重新命名"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:446
+#: core/libs/settings/applicationsettings_miscs.cpp:456
 #, kde-format
 msgid "Import/Export tools"
 msgstr "匯入/匯出工具"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:449
+#: core/libs/settings/applicationsettings_miscs.cpp:459
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:461
+#: core/libs/settings/applicationsettings_miscs.cpp:471
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:464
+#: core/libs/settings/applicationsettings_miscs.cpp:474
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "正在將項目加入到數位光桌"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:467
+#: core/libs/settings/applicationsettings_miscs.cpp:477
 #, fuzzy, kde-format
 #| msgid "Add Crop tool to Batch Queue Manager;"
 msgid "Adding items to the Batch Queue Manager"
 msgstr "批次佇列管理員中加入裁切工具；"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:470
+#: core/libs/settings/applicationsettings_miscs.cpp:480
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "在投影片放映開啟項目"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:483
 #, fuzzy, kde-format
 #| msgid "Renaming images"
 msgid "Renaming items"
 msgstr "重新命名影像"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:476
+#: core/libs/settings/applicationsettings_miscs.cpp:486
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:479
+#: core/libs/settings/applicationsettings_miscs.cpp:489
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:268
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, fuzzy, kde-format
 #| msgid "Category"
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "類別"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "旅遊"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "渡假"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, fuzzy, kde-format
 #| msgid "Friends"
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "朋友"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "自然"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, fuzzy, kde-format
 #| msgid "Party"
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "聚會"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:276
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "待辦"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:277
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -49578,37 +49578,37 @@ msgid "Set this option to indicate if image has geolocation information."
 msgstr "啟用這個選項會顯示影像外觀比例。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:180
-#: core/utilities/setup/misc/setupmisc.cpp:93
+#: core/utilities/setup/misc/setupmisc.cpp:94
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:189
-#: core/utilities/setup/misc/setupmisc.cpp:115
+#: core/utilities/setup/misc/setupmisc.cpp:116
 #, kde-format
 msgid "Updates"
 msgstr "更新"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:193
-#: core/utilities/setup/misc/setupmisc.cpp:119
+#: core/utilities/setup/misc/setupmisc.cpp:120
 #, kde-format
 msgid "Check for new version:"
 msgstr "檢查新版本："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:195
-#: core/utilities/setup/misc/setupmisc.cpp:121
+#: core/utilities/setup/misc/setupmisc.cpp:122
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "只使用穩定版"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:196
-#: core/utilities/setup/misc/setupmisc.cpp:122
+#: core/utilities/setup/misc/setupmisc.cpp:123
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "每週預先釋出版"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:197
-#: core/utilities/setup/misc/setupmisc.cpp:123
+#: core/utilities/setup/misc/setupmisc.cpp:124
 #, kde-format
 msgid ""
 "Set this option to configure which kind of new versions must be check for "
@@ -49619,13 +49619,13 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:202
-#: core/utilities/setup/misc/setupmisc.cpp:128
+#: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:203
-#: core/utilities/setup/misc/setupmisc.cpp:129
+#: core/utilities/setup/misc/setupmisc.cpp:130
 #, kde-format
 msgid ""
 "If this option is enabled, a version including debug symbols will be used "
@@ -49635,26 +49635,26 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:208
-#: core/utilities/setup/misc/setupmisc.cpp:134
+#: core/utilities/setup/misc/setupmisc.cpp:135
 #, kde-format
 msgid "Last check: %1"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:209
-#: core/utilities/setup/misc/setupmisc.cpp:135
+#: core/utilities/setup/misc/setupmisc.cpp:136
 #, kde-format
 msgid "Check now..."
 msgstr "現在檢查..."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:237
-#: core/utilities/setup/misc/setupmisc.cpp:190
+#: core/utilities/setup/misc/setupmisc.cpp:192
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "行為"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:244
-#: core/utilities/setup/misc/setupmisc.cpp:197
+#: core/utilities/setup/misc/setupmisc.cpp:199
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "啟動時顯示軟體資訊畫面(&S)"
@@ -49665,19 +49665,19 @@ msgid "Use native file dialogs from the system"
 msgstr "使用系統內建的檔案對話框"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:248
-#: core/utilities/setup/misc/setupmisc.cpp:202
+#: core/utilities/setup/misc/setupmisc.cpp:204
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "側邊欄分頁標題："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:250
-#: core/utilities/setup/misc/setupmisc.cpp:204
+#: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "僅作用中的分頁"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:251
-#: core/utilities/setup/misc/setupmisc.cpp:205
+#: core/utilities/setup/misc/setupmisc.cpp:207
 #, kde-format
 msgid "For All Tabs"
 msgstr "全部標籤"
@@ -49688,128 +49688,128 @@ msgid "Set this option to configure how sidebars tab title are visible."
 msgstr "設定這個選項可設定側邊欄分頁標題的顯示方式。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:255
-#: core/utilities/setup/misc/setupmisc.cpp:210
+#: core/utilities/setup/misc/setupmisc.cpp:212
 #, kde-format
 msgid "Widget style:"
 msgstr "元件樣式："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc.cpp:212
+#: core/utilities/setup/misc/setupmisc.cpp:214
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "設定此選項以選擇預設視窗裝飾與外觀。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:279
-#: core/utilities/setup/misc/setupmisc.cpp:234
+#: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "圖示主題（重啟後生效）："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:281
-#: core/utilities/setup/misc/setupmisc.cpp:236
+#: core/utilities/setup/misc/setupmisc.cpp:238
 #, fuzzy, kde-format
 #| msgid "Set this option to choose the default window decoration and looks."
 msgid "Set this option to choose the default icon theme."
 msgstr "設定此選項以選擇預設視窗裝飾與外觀。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:285
-#: core/utilities/setup/misc/setupmisc.cpp:240
+#: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:286
-#: core/utilities/setup/misc/setupmisc.cpp:241
+#: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:287
-#: core/utilities/setup/misc/setupmisc.cpp:242
+#: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze Dark"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:288
-#: core/utilities/setup/misc/setupmisc.cpp:243
+#: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:289
-#: core/utilities/setup/misc/setupmisc.cpp:244
+#: core/utilities/setup/misc/setupmisc.cpp:246
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:290
-#: core/utilities/setup/misc/setupmisc.cpp:245
+#: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Humanity"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:291
-#: core/utilities/setup/misc/setupmisc.cpp:246
+#: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
-#: core/utilities/setup/misc/setupmisc.cpp:269
+#: core/utilities/setup/misc/setupmisc.cpp:271
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "使用系統圖示主題"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:321
-#: core/utilities/setup/misc/setupmisc.cpp:276
+#: core/utilities/setup/misc/setupmisc.cpp:278
 #, kde-format
 msgid "Application font:"
 msgstr "應用程式字型："
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:322
-#: core/utilities/setup/misc/setupmisc.cpp:277
+#: core/utilities/setup/misc/setupmisc.cpp:279
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in tooltips."
 msgid "Select here the font used to display text in whole application."
 msgstr "選擇在工具提示上顯示文字使用的字型"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
-#: core/utilities/setup/misc/setupmisc.cpp:292
+#: core/utilities/setup/misc/setupmisc.cpp:294
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "外觀"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:344
-#: core/utilities/setup/misc/setupmisc.cpp:359
+#: core/utilities/setup/misc/setupmisc.cpp:361
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:350
-#: core/utilities/setup/misc/setupmisc.cpp:365
+#: core/utilities/setup/misc/setupmisc.cpp:367
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "本地化"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:356
-#: core/utilities/setup/misc/setupmisc.cpp:371
+#: core/utilities/setup/misc/setupmisc.cpp:373
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "系統"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:388
-#: core/utilities/setup/misc/setupmisc.cpp:404
+#: core/utilities/setup/misc/setupmisc.cpp:406
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -65677,20 +65677,25 @@ msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:92
 #, kde-format
+msgid "Initially select the first item in the album"
+msgstr ""
+
+#: core/utilities/setup/misc/setupmisc.cpp:93
+#, kde-format
 msgid "Expand current tree item with a single mouse click"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:94
+#: core/utilities/setup/misc/setupmisc.cpp:95
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:100
+#: core/utilities/setup/misc/setupmisc.cpp:101
 #, kde-format
 msgid "Lower bound for minimum similarity:"
 msgstr "最低相似度的低值："
 
-#: core/utilities/setup/misc/setupmisc.cpp:106
+#: core/utilities/setup/misc/setupmisc.cpp:107
 #, kde-format
 msgid ""
 "Select here the lower bound of the minimum similarity threshold for fuzzy "
@@ -65700,17 +65705,17 @@ msgstr ""
 "在此選擇模糊與重複項目搜尋時所使用的最低相似度閥值。預設值是 40。選擇低於 40 "
 "的值會讓搜尋變得<b>非常</b>慢。"
 
-#: core/utilities/setup/misc/setupmisc.cpp:198
+#: core/utilities/setup/misc/setupmisc.cpp:200
 #, kde-format
 msgid "Use native file dialogs from system"
 msgstr "使用系統內建的檔案對話框"
 
-#: core/utilities/setup/misc/setupmisc.cpp:199
+#: core/utilities/setup/misc/setupmisc.cpp:201
 #, kde-format
 msgid "Draw frames around grouped items"
 msgstr "在已分組的項目週遭繪製框線"
 
-#: core/utilities/setup/misc/setupmisc.cpp:206
+#: core/utilities/setup/misc/setupmisc.cpp:208
 #, kde-format
 msgid ""
 "Set this option to configure how sidebar tab titles are visible. Use \"Only "
@@ -65718,12 +65723,12 @@ msgid ""
 "laptop computer."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:299
+#: core/utilities/setup/misc/setupmisc.cpp:301
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:300
+#: core/utilities/setup/misc/setupmisc.cpp:302
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br/>are performed only on "
@@ -65732,25 +65737,25 @@ msgid ""
 "operation is executed."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:306
+#: core/utilities/setup/misc/setupmisc.cpp:308
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "否"
 
-#: core/utilities/setup/misc/setupmisc.cpp:307
+#: core/utilities/setup/misc/setupmisc.cpp:309
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "是"
 
-#: core/utilities/setup/misc/setupmisc.cpp:308
+#: core/utilities/setup/misc/setupmisc.cpp:310
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "詢問"
 
-#: core/utilities/setup/misc/setupmisc.cpp:351
+#: core/utilities/setup/misc/setupmisc.cpp:353
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"

@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-15 01:35+0000\n"
+"POT-Creation-Date: 2024-04-16 01:47+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -23613,7 +23613,7 @@ msgid "Slideshow"
 msgstr "Slajd-šou"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:440
+#: core/libs/settings/applicationsettings_miscs.cpp:450
 #, kde-format
 msgid "Slideshow"
 msgstr "Slajd-šou"
@@ -39723,7 +39723,7 @@ msgid "Properties"
 msgstr "Svojstva"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:431
+#: core/libs/settings/applicationsettings_miscs.cpp:441
 #: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
@@ -41386,139 +41386,139 @@ msgstr "Označeni Format Datoteke (verzija 5.0)"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Označeni Format Datoteke (verzija 5.0)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:401
+#: core/libs/settings/applicationsettings_miscs.cpp:411
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:403
+#: core/libs/settings/applicationsettings_miscs.cpp:413
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
 msgid "Remember choice for this operation"
 msgstr "Prekini ovu operaciju."
 
-#: core/libs/settings/applicationsettings_miscs.cpp:434
+#: core/libs/settings/applicationsettings_miscs.cpp:444
 #: core/utilities/lighttable/lighttablewindow.cpp:48
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Svjetlosni Pregled"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:437
+#: core/libs/settings/applicationsettings_miscs.cpp:447
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Upravljač redom procesa"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:443
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #, fuzzy, kde-format
 #| msgid "File Renaming"
 msgid "Renaming"
 msgstr "Preimenovanje datoteke"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:446
+#: core/libs/settings/applicationsettings_miscs.cpp:456
 #, fuzzy, kde-format
 msgid "Import/Export tools"
 msgstr "Borovina"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:449
+#: core/libs/settings/applicationsettings_miscs.cpp:459
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:461
+#: core/libs/settings/applicationsettings_miscs.cpp:471
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:464
+#: core/libs/settings/applicationsettings_miscs.cpp:474
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgid "Adding items to the Light Table"
 msgstr "Dodaj na Svjetlosni Pregled"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:467
+#: core/libs/settings/applicationsettings_miscs.cpp:477
 #, fuzzy, kde-format
 #| msgid "Add Crop tool to Batch Queue Manager;"
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Dodaj alatku za rezanje u Batch Queue Manager;"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:470
+#: core/libs/settings/applicationsettings_miscs.cpp:480
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:473
+#: core/libs/settings/applicationsettings_miscs.cpp:483
 #, fuzzy, kde-format
 #| msgid "Renaming images"
 msgid "Renaming items"
 msgstr "Preimenovanje slika"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:476
+#: core/libs/settings/applicationsettings_miscs.cpp:486
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:479
+#: core/libs/settings/applicationsettings_miscs.cpp:489
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:268
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, fuzzy, kde-format
 #| msgid "Category"
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Kategorija"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Putovanja"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Odmori"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, fuzzy, kde-format
 #| msgid "Friends"
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Prijatelji"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Priroda"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, fuzzy, kde-format
 #| msgid "Party"
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Žurke"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:276
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Za uraditi"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:277
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@item: album categories"
@@ -53387,13 +53387,13 @@ msgstr ""
 "Postavite ovu opciju da ukaže da li slika ima geolokacijske informacije."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:180
-#: core/utilities/setup/misc/setupmisc.cpp:93
+#: core/utilities/setup/misc/setupmisc.cpp:94
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:189
-#: core/utilities/setup/misc/setupmisc.cpp:115
+#: core/utilities/setup/misc/setupmisc.cpp:116
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
 #| msgid "Updates"
@@ -53401,7 +53401,7 @@ msgid "Updates"
 msgstr "Nadogradnje"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:193
-#: core/utilities/setup/misc/setupmisc.cpp:119
+#: core/utilities/setup/misc/setupmisc.cpp:120
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@action Save changes to a newly created version, specifying the filename "
@@ -53411,14 +53411,14 @@ msgid "Check for new version:"
 msgstr "Sačuvajte novu verziju kao..."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:195
-#: core/utilities/setup/misc/setupmisc.cpp:121
+#: core/utilities/setup/misc/setupmisc.cpp:122
 #, fuzzy, kde-format
 #| msgid "Only For Active Tab"
 msgid "Only For Stable Releases"
 msgstr "Samo za aktivni tab"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:196
-#: core/utilities/setup/misc/setupmisc.cpp:122
+#: core/utilities/setup/misc/setupmisc.cpp:123
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Press Release"
@@ -53426,7 +53426,7 @@ msgid "Weekly Pre-Releases"
 msgstr "Objava"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:197
-#: core/utilities/setup/misc/setupmisc.cpp:123
+#: core/utilities/setup/misc/setupmisc.cpp:124
 #, kde-format
 msgid ""
 "Set this option to configure which kind of new versions must be check for "
@@ -53437,13 +53437,13 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:202
-#: core/utilities/setup/misc/setupmisc.cpp:128
+#: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:203
-#: core/utilities/setup/misc/setupmisc.cpp:129
+#: core/utilities/setup/misc/setupmisc.cpp:130
 #, kde-format
 msgid ""
 "If this option is enabled, a version including debug symbols will be used "
@@ -53453,13 +53453,13 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:208
-#: core/utilities/setup/misc/setupmisc.cpp:134
+#: core/utilities/setup/misc/setupmisc.cpp:135
 #, kde-format
 msgid "Last check: %1"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:209
-#: core/utilities/setup/misc/setupmisc.cpp:135
+#: core/utilities/setup/misc/setupmisc.cpp:136
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@action Save changes to a newly created version, specifying the filename "
@@ -53469,7 +53469,7 @@ msgid "Check now..."
 msgstr "Sačuvajte novu verziju kao..."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:237
-#: core/utilities/setup/misc/setupmisc.cpp:190
+#: core/utilities/setup/misc/setupmisc.cpp:192
 #, fuzzy, kde-format
 #| msgid "Behavior"
 msgctxt "@title:tab"
@@ -53477,7 +53477,7 @@ msgid "Behaviour"
 msgstr "Ponašanje"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:244
-#: core/utilities/setup/misc/setupmisc.cpp:197
+#: core/utilities/setup/misc/setupmisc.cpp:199
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "Prikaži &početni ekran pri pokretanju"
@@ -53489,19 +53489,19 @@ msgid "Use native file dialogs from the system"
 msgstr "Ukloni trenutno odabranu vrijednost sa liste"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:248
-#: core/utilities/setup/misc/setupmisc.cpp:202
+#: core/utilities/setup/misc/setupmisc.cpp:204
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Naziv kartice bočne trake :"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:250
-#: core/utilities/setup/misc/setupmisc.cpp:204
+#: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Samo za aktivni tab"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:251
-#: core/utilities/setup/misc/setupmisc.cpp:205
+#: core/utilities/setup/misc/setupmisc.cpp:207
 #, kde-format
 msgid "For All Tabs"
 msgstr "Za sve tabove"
@@ -53514,32 +53514,32 @@ msgstr ""
 "traka."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:255
-#: core/utilities/setup/misc/setupmisc.cpp:210
+#: core/utilities/setup/misc/setupmisc.cpp:212
 #, kde-format
 msgid "Widget style:"
 msgstr "Stil grafičke kontrole:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:257
-#: core/utilities/setup/misc/setupmisc.cpp:212
+#: core/utilities/setup/misc/setupmisc.cpp:214
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "Postavite ovu opciju da izaberete zadanu dekoraciju i izgled prozora."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:279
-#: core/utilities/setup/misc/setupmisc.cpp:234
+#: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:281
-#: core/utilities/setup/misc/setupmisc.cpp:236
+#: core/utilities/setup/misc/setupmisc.cpp:238
 #, fuzzy, kde-format
 #| msgid "Set this option to choose the default window decoration and looks."
 msgid "Set this option to choose the default icon theme."
 msgstr "Postavite ovu opciju da izaberete zadanu dekoraciju i izgled prozora."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:285
-#: core/utilities/setup/misc/setupmisc.cpp:240
+#: core/utilities/setup/misc/setupmisc.cpp:242
 #, fuzzy, kde-format
 #| msgid "Kuwait"
 msgctxt "icon theme"
@@ -53547,28 +53547,28 @@ msgid "Adwaita"
 msgstr "Kuvajt"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:286
-#: core/utilities/setup/misc/setupmisc.cpp:241
+#: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:287
-#: core/utilities/setup/misc/setupmisc.cpp:242
+#: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:288
-#: core/utilities/setup/misc/setupmisc.cpp:243
+#: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:289
-#: core/utilities/setup/misc/setupmisc.cpp:244
+#: core/utilities/setup/misc/setupmisc.cpp:246
 #, fuzzy, kde-format
 #| msgid "Luminance"
 msgctxt "icon theme"
@@ -53576,34 +53576,34 @@ msgid "Ambiance"
 msgstr "Osvjetljenje"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:290
-#: core/utilities/setup/misc/setupmisc.cpp:245
+#: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:291
-#: core/utilities/setup/misc/setupmisc.cpp:246
+#: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
-#: core/utilities/setup/misc/setupmisc.cpp:269
+#: core/utilities/setup/misc/setupmisc.cpp:271
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:321
-#: core/utilities/setup/misc/setupmisc.cpp:276
+#: core/utilities/setup/misc/setupmisc.cpp:278
 #, fuzzy, kde-format
 #| msgid "Supplication:"
 msgid "Application font:"
 msgstr "Preklinjanje:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:322
-#: core/utilities/setup/misc/setupmisc.cpp:277
+#: core/utilities/setup/misc/setupmisc.cpp:279
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in tooltips."
 msgid "Select here the font used to display text in whole application."
@@ -53611,7 +53611,7 @@ msgstr ""
 "Ovdje postavite veličinu koja će se koristiti za prikaz teksta u savjetima."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:336
-#: core/utilities/setup/misc/setupmisc.cpp:292
+#: core/utilities/setup/misc/setupmisc.cpp:294
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@title:tab"
@@ -53619,14 +53619,14 @@ msgid "Appearance"
 msgstr "Referenca:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:344
-#: core/utilities/setup/misc/setupmisc.cpp:359
+#: core/utilities/setup/misc/setupmisc.cpp:361
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:350
-#: core/utilities/setup/misc/setupmisc.cpp:365
+#: core/utilities/setup/misc/setupmisc.cpp:367
 #, fuzzy, kde-format
 #| msgid "Normalize"
 msgctxt "@title:tab"
@@ -53634,7 +53634,7 @@ msgid "Localize"
 msgstr "Normalizuj"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:356
-#: core/utilities/setup/misc/setupmisc.cpp:371
+#: core/utilities/setup/misc/setupmisc.cpp:373
 #, fuzzy, kde-format
 #| msgid "System Font"
 msgctxt "@title:tab"
@@ -53642,7 +53642,7 @@ msgid "System"
 msgstr "Sistemski font"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:388
-#: core/utilities/setup/misc/setupmisc.cpp:404
+#: core/utilities/setup/misc/setupmisc.cpp:406
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -70757,20 +70757,25 @@ msgstr ""
 
 #: core/utilities/setup/misc/setupmisc.cpp:92
 #, kde-format
+msgid "Initially select the first item in the album"
+msgstr ""
+
+#: core/utilities/setup/misc/setupmisc.cpp:93
+#, kde-format
 msgid "Expand current tree item with a single mouse click"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:94
+#: core/utilities/setup/misc/setupmisc.cpp:95
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:100
+#: core/utilities/setup/misc/setupmisc.cpp:101
 #, kde-format
 msgid "Lower bound for minimum similarity:"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:106
+#: core/utilities/setup/misc/setupmisc.cpp:107
 #, kde-format
 msgid ""
 "Select here the lower bound of the minimum similarity threshold for fuzzy "
@@ -70778,19 +70783,19 @@ msgid ""
 "than 40 can make the search <b>really</b> slow."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:198
+#: core/utilities/setup/misc/setupmisc.cpp:200
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Use native file dialogs from system"
 msgstr "Ukloni trenutno odabranu vrijednost sa liste"
 
-#: core/utilities/setup/misc/setupmisc.cpp:199
+#: core/utilities/setup/misc/setupmisc.cpp:201
 #, fuzzy, kde-format
 #| msgid "Preview grouped items"
 msgid "Draw frames around grouped items"
 msgstr "Pregled grupnih stavki"
 
-#: core/utilities/setup/misc/setupmisc.cpp:206
+#: core/utilities/setup/misc/setupmisc.cpp:208
 #, kde-format
 msgid ""
 "Set this option to configure how sidebar tab titles are visible. Use \"Only "
@@ -70798,12 +70803,12 @@ msgid ""
 "laptop computer."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:299
+#: core/utilities/setup/misc/setupmisc.cpp:301
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:300
+#: core/utilities/setup/misc/setupmisc.cpp:302
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br/>are performed only on "
@@ -70812,27 +70817,27 @@ msgid ""
 "operation is executed."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:306
+#: core/utilities/setup/misc/setupmisc.cpp:308
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "Ne"
 
-#: core/utilities/setup/misc/setupmisc.cpp:307
+#: core/utilities/setup/misc/setupmisc.cpp:309
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "Da"
 
-#: core/utilities/setup/misc/setupmisc.cpp:308
+#: core/utilities/setup/misc/setupmisc.cpp:310
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:351
+#: core/utilities/setup/misc/setupmisc.cpp:353
 #, fuzzy, kde-format
 #| msgid "Group"
 msgctxt "@title:tab"
