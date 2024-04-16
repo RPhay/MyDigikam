@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=DxO Photolab 6
+Exec="%ProgramFiles%/DxO/DxO PhotoLab 6/DxO.PhotoLab.exe" %f
+Icon="%ProgramFiles%/DxO/DxO PhotoLab 6/DxO.PhotoLab.exe"
+MimeType=image/jpg;image/raw
