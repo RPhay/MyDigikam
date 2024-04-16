@@ -29,11 +29,6 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:core_dpluginsinterface_obj>
             $<TARGET_OBJECTS:core_libwso2_obj>
 
-            $<TARGET_OBJECTS:core_libmd5_obj>
-            $<TARGET_OBJECTS:core_libxmp_obj>
-            $<TARGET_OBJECTS:core_libdng_obj>
-            $<TARGET_OBJECTS:core_dngwriter_obj>
-
             # widgets
             $<TARGET_OBJECTS:core_digikamwidgets_obj>
             $<TARGET_OBJECTS:core_digikamdialogs_obj>
@@ -51,6 +46,20 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:core_digikamfacesengine_obj>
             $<TARGET_OBJECTS:core_videotoolscommon_obj>
 )
+
+if(JXL_FOUND)
+
+    # DNG support
+
+    set(DIGIKAMCORE_OBJECTS
+        ${DIGIKAMCORE_OBJECTS}
+        $<TARGET_OBJECTS:core_libmd5_obj>
+        $<TARGET_OBJECTS:core_libxmp_obj>
+        $<TARGET_OBJECTS:core_libdng_obj>
+        $<TARGET_OBJECTS:core_dngwriter_obj>
+    )
+
+endif()
 
 if(ENABLE_MEDIAPLAYER)
 
@@ -156,7 +165,6 @@ target_link_libraries(digikamcore
 
                       ${CMAKE_THREAD_LIBS_INIT}
                       ${EXPAT_LIBRARY}
-                      ${JXL_LIBRARIES}
 
                       ${LCMS2_LIBRARIES} # filters
 
@@ -174,6 +182,15 @@ target_link_libraries(digikamcore
                       opencv_ml
                       opencv_flann
 )
+
+if(JXL_FOUND)
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          ${JXL_LIBRARIES}
+    )
+
+endif()
 
 if(LibExiv2_FOUND)
 

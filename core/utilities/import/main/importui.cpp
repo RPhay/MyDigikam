@@ -159,11 +159,15 @@ void ImportUI::setupUserArea()
     d->advBox->addItem(d->advancedSettings, QIcon::fromTheme(QLatin1String("system-run")), i18nc("@item", "On the Fly Operations (JPEG only)"),
                        QLatin1String("OnFlyBox"), true);
 
+#ifdef HAVE_JXL
+
     // -- DNG convert options --------------------------------------------------
 
     d->dngConvertSettings = new DNGConvertSettings(d->advBox);
     d->advBox->addItem(d->dngConvertSettings, QIcon::fromTheme(QLatin1String("image-x-adobe-dng")), i18nc("@item", "DNG Convert Options"),
                        QLatin1String("DNGSettings"), false);
+
+#endif
 
     // -- Scripting options ----------------------------------------------------
 
@@ -584,8 +588,12 @@ void ImportUI::setupConnections()
     connect(d->advancedSettings, SIGNAL(signalDownloadNameChanged()),
             this, SLOT(slotUpdateRenamePreview()));
 
+#ifdef HAVE_JXL
+
     connect(d->dngConvertSettings, SIGNAL(signalDownloadNameChanged()),
             this, SLOT(slotUpdateRenamePreview()));
+
+#endif
 
     connect(d->historyView, SIGNAL(signalEntryClicked(QVariant)),
             this, SLOT(slotHistoryEntryClicked(QVariant)));
@@ -792,7 +800,13 @@ void ImportUI::readSettings()
     d->showLogAction->setChecked(group.readEntry(QLatin1String("ShowLog"), false));
     d->albumCustomizer->readSettings(group);
     d->advancedSettings->readSettings(group);
+
+#ifdef HAVE_JXL
+
     d->dngConvertSettings->readSettings(group);
+
+#endif
+
     d->scriptingSettings->readSettings(group);
 
     d->advBox->readSettings(group);
@@ -812,7 +826,13 @@ void ImportUI::saveSettings()
     group.writeEntry(QLatin1String("ShowLog"), d->showLogAction->isChecked());
     d->albumCustomizer->saveSettings(group);
     d->advancedSettings->saveSettings(group);
+
+#ifdef HAVE_JXL
+
     d->dngConvertSettings->saveSettings(group);
+
+#endif
+
     d->scriptingSettings->saveSettings(group);
 
     d->advBox->writeSettings(group);
@@ -842,8 +862,15 @@ QString ImportUI::cameraTitle() const
 DownloadSettings ImportUI::downloadSettings() const
 {
     DownloadSettings settings = d->advancedSettings->settings();
+
+#ifdef HAVE_JXL
+
     d->dngConvertSettings->settings(&settings);
+
+#endif
+
     d->scriptingSettings->settings(&settings);
+
     return settings;
 }
 
@@ -1661,6 +1688,9 @@ void ImportUI::slotUpdateRenamePreview()
             newName = newName + QLatin1Char('.') + settings.losslessFormat.toLower();
         }
     }
+
+#ifdef HAVE_JXL
+
     else if (settings.convertDng && info.mime == QLatin1String("image/x-raw"))
     {
         QFileInfo     fi(newName);
@@ -1688,6 +1718,8 @@ void ImportUI::slotUpdateRenamePreview()
             newName = newName + QLatin1Char('.') + QLatin1String("dng");
         }
     }
+
+#endif
 
     CamItemInfo& refInfo = d->view->camItemInfoRef(info.folder, info.name);
 
@@ -1839,12 +1871,18 @@ void ImportUI::itemsSelectionSizeInfo(qint64& fSizeBytes, qint64& dSizeBytes)
                     dSizeBytes += size;
                 }
             }
+
+#ifdef HAVE_JXL
+
             else if (settings.convertDng && info.mime == QLatin1String("image/x-raw"))
             {
                 // Estimated size is around 2 x original size when RAW=>DNG.
 
                 dSizeBytes += size * 2;
             }
+
+#endif
+
             else
             {
                 dSizeBytes += size;

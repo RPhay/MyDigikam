@@ -43,12 +43,19 @@ endif()
 add_definitions(-DUSE_LCMS2)
 
 if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+
     add_definitions (-DCMS_NO_REGISTER_KEYWORD)
+
 endif()
 
-# Flag to compile with DNG SDK for special DNG files decoding. See README.DNGSDK.txt
+if(JXL_FOUND)
 
-add_definitions(-DUSE_DNGSDK)
+    # Flag to compile with DNG SDK for special DNG files decoding. See README.DNGSDK.txt
+
+    add_definitions(-DUSE_DNGSDK)
+    include_directories(${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk)
+
+endif()
 
 # Flag to compile with Zlib support for FP DNG.
 
@@ -87,7 +94,6 @@ include_directories(${CMAKE_BINARY_DIR}/core/libs/rawengine/libraw/
                     ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/
                     ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/libraw
                     ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/internal
-                    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk
 )
 
 set(libraw_LIB_SRCS

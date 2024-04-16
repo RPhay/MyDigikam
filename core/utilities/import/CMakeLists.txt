@@ -20,11 +20,15 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLU
 )
 
 if(KF${QT_VERSION_MAJOR}KIO_FOUND)
+
     include_directories($<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::KIOWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+
 endif()
 
 if(Gphoto2_FOUND)
+
     include_directories(${GPHOTO2_INCLUDE_DIRS})
+
 endif()
 
 set(libimportuibackend_SRCS
@@ -54,7 +58,6 @@ set(libimportui_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/importfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/importfiltercombobox.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/importcontextmenu.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dngconvertsettings.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/models/importimagemodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/models/importthumbnailmodel.cpp
@@ -81,6 +84,15 @@ set(libimportui_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/main/importui.cpp
 )
+
+if(JXL_FOUND)
+
+    set(libimportui_SRCS
+        ${libimportui_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dngconvertsettings.cpp
+    )
+
+endif()
 
 # Used by digikamgui
 add_library(gui_importuibackend_obj OBJECT ${libimportuibackend_SRCS})

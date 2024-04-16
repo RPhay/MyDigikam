@@ -63,11 +63,19 @@ macro(LIBRAW_BUILD_SAMPLES)
     target_link_libraries(${_target}_cli
 
                           libraw
-                          libdng
                           PNG::PNG                          # For zlib
 
                           ${COMMON_TEST_LINK}
     )
+
+    if(JXL_FOUND)
+
+        target_compile_definitions(${_target}_cli
+                                   PRIVATE
+                                   libdng
+        )
+
+    endif()
 
     if(WIN32)
 

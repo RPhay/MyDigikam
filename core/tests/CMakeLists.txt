@@ -150,7 +150,6 @@ add_subdirectory(autotagassignment)
 add_subdirectory(albummodel)                    # Unit-test based on ModelTest
 add_subdirectory(database)                      # Some unit-tests based on ModelTest
 add_subdirectory(dimg)
-add_subdirectory(dngwriter)
 add_subdirectory(dplugins)
 add_subdirectory(facesengine)
 add_subdirectory(fileio)
@@ -170,10 +169,22 @@ add_subdirectory(webservices)
 add_subdirectory(widgets)
 add_subdirectory(video)
 
+if(JXL_FOUND)
+
+    # DNG support
+
+    add_subdirectory(dngwriter)
+
+endif()
+
 if(ENABLE_GEOLOCATION)
+
     add_subdirectory(geolocation)               # Some unit-tests based on ModelTest
+
 endif()
 
 if(FLEX_FOUND AND BISON_FOUND AND KF${QT_VERSION_MAJOR}ThreadWeaver_FOUND)
+
     add_subdirectory(panorama)
+
 endif()

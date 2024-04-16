@@ -16,6 +16,7 @@ RawEngine: Update internal libraw to last 20240330 snapshot. New supported camer
            Multiple DJI and Skydio drones.
            Multiple smartphones with DNG format recorded.
 DNGWriter: Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.
+           Add optional libjxl dependency to compile DNG support.
 Bundles:   Update Exiftool to last 12.82.
 
 *****************************************************************************************************

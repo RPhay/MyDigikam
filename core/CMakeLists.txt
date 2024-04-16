@@ -227,6 +227,7 @@ MACRO_BOOL_TO_01(ENABLE_DRMINGW                                 HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_FOUND                              HAVE_IMAGE_MAGICK)
 MACRO_BOOL_TO_01(HEIF_FOUND                                     HAVE_HEIF)
 MACRO_BOOL_TO_01(X265_FOUND                                     HAVE_X265)
+MACRO_BOOL_TO_01(JXL_FOUND                                      HAVE_JXL)
 MACRO_BOOL_TO_01(Qt5XmlPatterns_FOUND                           HAVE_QTXMLPATTERNS)
 MACRO_BOOL_TO_01(CCACHE_FOUND                                   HAVE_CCACHE)
 
@@ -269,7 +270,6 @@ endif()
 
 PRINT_LIBRARY_STATUS("libexpat"      "https://libexpat.github.io"                        "(version >= 2.0.0)"                 EXPAT_FOUND)
 PRINT_LIBRARY_STATUS("libjpeg"       "https://github.com/libjpeg-turbo/libjpeg-turbo"    "(version >= 6b)"                    JPEG_FOUND)
-PRINT_LIBRARY_STATUS("libjpegxl"     "https://github.com/libjxl/libjxl"                  "(version >= 0.7)"                   JXL_FOUND)
 PRINT_LIBRARY_STATUS("libkde"        "https://invent.kde.org/frameworks/"                "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"    KF${QT_VERSION_MAJOR}_FOUND)
 PRINT_LIBRARY_STATUS("liblcms"       "https://github.com/mm2/Little-CMS"                 "(version >= 2.0.0)"                 LCMS2_FOUND)
 PRINT_LIBRARY_STATUS("libopencv"     "https://github.com/opencv/opencv"                  "(version >= ${OPENCV_MIN_VERSION})" OpenCV_FOUND)
@@ -289,6 +289,7 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libimagemagick"    "https://github.com/ImageMagic
 PRINT_OPTIONAL_LIBRARY_STATUS("libeigen3"         "https://github.com/eigenteam/eigen-git-mirror"                   "(version >= 3.0.0)"                    "digiKam will be compiled without Refocus tool support."                      Eigen3_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libgphoto2"        "https://github.com/gphoto/libgphoto2"                            "(version >= 2.4.0)"                    "digiKam will be compiled without GPhoto2 camera drivers support."            Gphoto2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libjasper"         "https://github.com/mdadams/jasper"                               "(version >= 1.7.0)"                    "digiKam will be compiled without JPEG2000 support."                          Jasper_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libjpegxl"         "https://github.com/libjxl/libjxl"                                "(version >= 0.7)"                      "digiKam will be compiled without DNG support."                               JXL_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libkcalendarcore"  "https://invent.kde.org/frameworks/kcalendarcore"                 "(version >= ${CALENDAR_MIN_VERSION})"  "digiKam will be compiled without advanced calendar support."                 KF${QT_VERSION_MAJOR}CalendarCore_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libkfilemetadata"  "https://invent.kde.org/frameworks/kfilemetadata"                 "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without KDE desktop file metadata support."         KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libkiconthemes"    "https://invent.kde.org/frameworks/kiconthemes"                   "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without KDE desktop icon themes support."           KF${QT_VERSION_MAJOR}IconThemes_FOUND)
@@ -321,7 +322,6 @@ if(Boost_FOUND                          AND
    (LibExiv2_FOUND OR exiv2_FOUND)      AND
    EXPAT_FOUND                          AND
    JPEG_FOUND                           AND
-   JXL_FOUND                            AND
    KF${QT_VERSION_MAJOR}_FOUND          AND
    LCMS2_FOUND                          AND
    OpenCV_FOUND                         AND

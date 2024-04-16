@@ -12,7 +12,6 @@ add_subdirectory(jalbum)
 add_subdirectory(mediaserver)
 add_subdirectory(mjpegstream)
 add_subdirectory(wallpaper)
-add_subdirectory(dngconverter)      # NOTE: for Showfoto only
 add_subdirectory(ocrtextconverter)
 add_subdirectory(videoslideshow)
 
@@ -28,3 +27,8 @@ if(FLEX_FOUND AND BISON_FOUND AND KF${QT_VERSION_MAJOR}ThreadWeaver_FOUND)
 
 endif()
 
+if(JXL_FOUND)
+
+    add_subdirectory(dngconverter)      # NOTE: for Showfoto only
+
+endif()

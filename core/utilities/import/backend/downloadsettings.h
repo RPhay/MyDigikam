@@ -23,7 +23,10 @@
 // Local includes
 
 #include "digikam_globals.h"
-#include "dngwriter.h"
+
+#ifdef HAVE_JXL
+#   include "dngwriter.h"
+#endif
 
 namespace Digikam
 {
@@ -33,32 +36,16 @@ class DownloadSettings
 
 public:
 
-    DownloadSettings()
-      : autoRotate  (true),
-        fixDateTime (false),
-        convertJpeg (false),
-        documentName(false),
-        backupRaw   (false),
-        convertDng  (false),
-        compressDng (true),
-        previewMode (DNGWriter::FULL_SIZE),
-        rating      (NoRating),
-        pickLabel   (NoPickLabel),
-        colorLabel  (NoColorLabel)
-    {
-    };
-
-    ~DownloadSettings()
-    {
-    };
+    DownloadSettings()  = default;
+    ~DownloadSettings() = default;
 
 public:
 
     /// Settings from AdvancedSettings widget
-    bool       autoRotate;
-    bool       fixDateTime;
-    bool       convertJpeg;
-    bool       documentName;
+    bool       autoRotate       = true;
+    bool       fixDateTime      = false;
+    bool       convertJpeg      = false;
+    bool       documentName     = false;
 
     QDateTime  newDateTime;
 
@@ -76,23 +63,27 @@ public:
     /// Mime type from file to download
     QString    mime;
 
+#ifdef HAVE_JXL
+
     /// Settings from DNG convert widget
-    bool       backupRaw;
-    bool       convertDng;
-    bool       compressDng;
-    int        previewMode;
+    bool       convertDng       = false;
+    bool       backupRaw        = false;
+    bool       compressDng      = true;
+    int        previewMode      = DNGWriter::FULL_SIZE;
+
+#endif
 
     /// Settings from ScriptingSettings widget
     QString    script;
 
     /// Pre-rating of each camera file
-    int        rating;
+    int        rating           = NoRating;
 
     /// Pre-pickLabel of each camera file
-    int        pickLabel;
+    int        pickLabel        = NoPickLabel;
 
     /// Pre-colorLabel of each camera file
-    int        colorLabel;
+    int        colorLabel       = NoColorLabel;
 
     /// Pre-tags of each camera file
     QList<int> tagIds;

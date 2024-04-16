@@ -5,7 +5,6 @@
 #
 
 add_subdirectory(converttoavif)
-add_subdirectory(converttodng)
 add_subdirectory(converttojpeg)
 add_subdirectory(converttojxl)
 add_subdirectory(converttopng)
@@ -13,10 +12,20 @@ add_subdirectory(converttopgf)
 add_subdirectory(converttotiff)
 add_subdirectory(converttowebp)
 
+if(JXL_FOUND)
+
+    add_subdirectory(converttodng)
+
+endif()
+
 if(Jasper_FOUND)
+
     add_subdirectory(converttojp2)
+
 endif()
 
 if(X265_FOUND)
+
     add_subdirectory(converttoheif)
+
 endif()

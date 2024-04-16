@@ -51,6 +51,9 @@
 /* Define to 1 if Jasper shared library is installed */
 #cmakedefine HAVE_JASPER 1
 
+/* Define to 1 if libjxl shared library is installed */
+#cmakedefine HAVE_JXL 1
+
 /* Define to 1 if libgphoto2 2.5 shared library is installed */
 #cmakedefine HAVE_GPHOTO25 1
 

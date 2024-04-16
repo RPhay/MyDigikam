@@ -595,10 +595,16 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             QString   templateTitle  = cmd->map[QLatin1String("template")].toString();
             bool      convertJpeg    = cmd->map[QLatin1String("convertJpeg")].toBool();
             QString   losslessFormat = cmd->map[QLatin1String("losslessFormat")].toString();
-            bool      backupRaw      = cmd->map[QLatin1String("backupRaw")].toBool();
+
+#ifdef HAVE_JXL
+
             bool      convertDng     = cmd->map[QLatin1String("convertDng")].toBool();
+            bool      backupRaw      = cmd->map[QLatin1String("backupRaw")].toBool();
             bool      compressDng    = cmd->map[QLatin1String("compressDng")].toBool();
             int       previewMode    = cmd->map[QLatin1String("previewMode")].toInt();
+
+#endif
+
             QString   script         = cmd->map[QLatin1String("script")].toString();
             int       pickLabel      = cmd->map[QLatin1String("pickLabel")].toInt();
             int       colorLabel     = cmd->map[QLatin1String("colorLabel")].toInt();
@@ -735,6 +741,9 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                     }
                 }
             }
+
+#ifdef HAVE_JXL
+
             else if (convertDng && (mime == QLatin1String("image/x-raw")))
             {
                 qCDebug(DIGIKAM_IMPORTUI_LOG) << "Convert to DNG: " << file;
@@ -788,6 +797,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                 }
             }
 
+#endif
             // Run script
 
             if (!script.isEmpty())
@@ -1266,10 +1276,16 @@ void CameraController::download(const DownloadSettings& downloadSettings)
     cmd->map.insert(QLatin1String("template"),          QVariant(downloadSettings.templateTitle));
     cmd->map.insert(QLatin1String("convertJpeg"),       QVariant(downloadSettings.convertJpeg));
     cmd->map.insert(QLatin1String("losslessFormat"),    QVariant(downloadSettings.losslessFormat));
-    cmd->map.insert(QLatin1String("backupRaw"),         QVariant(downloadSettings.backupRaw));
+
+#ifdef HAVE_JXL
+
     cmd->map.insert(QLatin1String("convertDng"),        QVariant(downloadSettings.convertDng));
+    cmd->map.insert(QLatin1String("backupRaw"),         QVariant(downloadSettings.backupRaw));
     cmd->map.insert(QLatin1String("compressDng"),       QVariant(downloadSettings.compressDng));
     cmd->map.insert(QLatin1String("previewMode"),       QVariant(downloadSettings.previewMode));
+
+#endif
+
     cmd->map.insert(QLatin1String("script"),            QVariant(downloadSettings.script));
     cmd->map.insert(QLatin1String("pickLabel"),         QVariant(downloadSettings.pickLabel));
     cmd->map.insert(QLatin1String("colorLabel"),        QVariant(downloadSettings.colorLabel));

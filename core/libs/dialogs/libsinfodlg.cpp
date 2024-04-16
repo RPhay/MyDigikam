@@ -46,10 +46,13 @@
 #include "pgfutils.h"
 #include "digikam-lcms.h"
 #include "metaengine.h"
-#include "dngwriter.h"
 #include "exiftoolparser.h"
 #include "loadingcache.h"
 #include "itempropertiestab.h"
+
+#ifdef HAVE_JXL
+#   include "dngwriter.h"
+#endif
 
 #ifdef HAVE_LENSFUN
 #   include "lensfuniface.h"
@@ -361,11 +364,20 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "LibPGF") <<                         PGFUtils::libPGFVersion());
 
+#ifdef HAVE_JXL
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "XMP SDK") <<                        DNGWriter::xmpSdkVersion());
 
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "DNG SDK") <<                        DNGWriter::dngSdkVersion());
+
+#else
+
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "DNG support") <<                    SUPPORTED_NO);
+
+#endif
 
 #ifdef HAVE_JASPER
 

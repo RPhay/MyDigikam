@@ -27,7 +27,6 @@ add_subdirectory(dimg)
 add_subdirectory(dragdrop)
 add_subdirectory(metadataengine)
 add_subdirectory(database)
-add_subdirectory(dngwriter)
 add_subdirectory(dtrash)
 add_subdirectory(facesengine)
 add_subdirectory(iojobs)
@@ -56,3 +55,9 @@ add_subdirectory(tags)
 add_subdirectory(transitionmngr)
 add_subdirectory(timeadjust)
 add_subdirectory(video)
+
+if(JXL_FOUND)
+
+    add_subdirectory(dngwriter)
+
+endif()

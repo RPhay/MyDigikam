@@ -136,12 +136,15 @@
 #include "importfiltercombobox.h"
 #include "albumcustomizer.h"
 #include "advancedsettings.h"
-#include "dngconvertsettings.h"
 #include "scriptingsettings.h"
 #include "filterstatusbar.h"
 #include "dnotificationwidget.h"
 #include "dfileoperations.h"
 #include "setupcamera.h"
+
+#ifdef HAVE_JXL
+#   include "dngconvertsettings.h"
+#endif
 
 namespace Digikam
 {
@@ -216,7 +219,13 @@ public:
         renameCustomizer                (nullptr),
         albumCustomizer                 (nullptr),
         advancedSettings                (nullptr),
+
+#ifdef HAVE_JXL
+
         dngConvertSettings              (nullptr),
+
+#endif
+
         scriptingSettings               (nullptr),
         filterStatusBar                 (nullptr),
         rightSideBar                    (nullptr),
@@ -322,7 +331,13 @@ public:
     RenameCustomizer*                        renameCustomizer;
     AlbumCustomizer*                         albumCustomizer;
     AdvancedSettings*                        advancedSettings;
+
+#ifdef HAVE_JXL
+
     DNGConvertSettings*                      dngConvertSettings;
+
+#endif
+
     ScriptingSettings*                       scriptingSettings;
 
     FilterStatusBar*                         filterStatusBar;
