@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Irfan View 32-bit
+Exec=%ProgramFiles(x86)%/IrfanView/i_view32.exe %f
+Icon=%ProgramFiles(x86)%/IrfanView/i_view32.exe
+MimeType=image/jpg;image/bmp;image/png
