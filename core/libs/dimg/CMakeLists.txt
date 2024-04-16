@@ -158,6 +158,7 @@ if(GLIB2_FOUND)
         ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_vmap_list.c
     )
 
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/)
     include_directories(${GLIB2_INCLUDE_DIR})
 
 endif()

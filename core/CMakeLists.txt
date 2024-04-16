@@ -461,6 +461,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
         string(REGEX MATCH "rawengine/libraw/" _item_libraw     ${var})
         string(REGEX MATCH "/QtAVPlayer"       _item_qtavplayer ${var})
         string(REGEX MATCH "/qtmm"             _item_qtmm       ${var})
+        string(REGEX MATCH "/lqr"              _item_lqr        ${var})
 
         if(
            _item_libjpeg    STREQUAL "" AND
@@ -471,7 +472,8 @@ if(DIGIKAM_CAN_BE_COMPILED)
            _item_libpgf     STREQUAL "" AND
            _item_libraw     STREQUAL "" AND
            _item_qtavplayer STREQUAL "" AND
-           _item_qtmm       STREQUAL ""
+           _item_qtmm       STREQUAL "" AND
+           _item_lqr        STREQUAL ""
           )
 
             list(APPEND DK_LOCAL_INCLUDES ${var})
