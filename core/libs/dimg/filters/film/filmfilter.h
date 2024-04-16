@@ -77,7 +77,7 @@ public:
     public:
 
         explicit ListItem(const QString& text, QListWidget* const parent, CNFilmProfile type)
-            : QListWidgetItem(text, parent, type + QListWidgetItem::UserType)
+            : QListWidgetItem(text, parent, (int)QListWidgetItem::UserType + (int)type)
         {
         }
 
