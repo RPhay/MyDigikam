@@ -23,6 +23,7 @@
 #   pragma GCC diagnostic ignored "-Wnon-virtual-dtor"
 #   pragma GCC diagnostic ignored "-Woverloaded-virtual"
 #   pragma GCC diagnostic ignored "-Wcast-align"
+#   pragma GCC diagnostic ignored "-Wdeprecated-enum-enum-conversion"
 #endif
 
 #if defined(__APPLE__) && defined(__clang__)
