@@ -49,9 +49,9 @@ class DIGIKAM_EXPORT DSelector : public QAbstractSlider
 
 public:
 
-    explicit DSelector(QWidget *parent = nullptr);
+    explicit DSelector(QWidget* const parent = nullptr);
     explicit DSelector(Qt::Orientation o, QWidget* const parent = nullptr);
-    ~DSelector() override;
+    ~DSelector()                            override;
 
     /**
      * @return the rectangle on which subclasses should draw.
@@ -87,7 +87,9 @@ protected:
      *
      * Draw only within contentsRect().
      */
-    virtual void drawContents(QPainter*) {};
+    virtual void drawContents(QPainter*)
+    {
+    };
 
     /**
      * Override this function to draw the cursor which
@@ -128,7 +130,7 @@ public:
 
     explicit DColorValueSelector(QWidget* const parent = nullptr);
     explicit DColorValueSelector(Qt::Orientation o, QWidget* const parent = nullptr);
-    ~DColorValueSelector() override;
+    ~DColorValueSelector()          override;
 
     /**
      * Updates the widget's contents.

@@ -33,18 +33,15 @@ class Q_DECL_HIDDEN DColorSelector::Private
 {
 public:
 
-    explicit Private()
-      : alpha(false)
-    {
-    }
+    Private() = default;
 
     QColor color;
-    bool   alpha;
+    bool   alpha    = false;
 };
 
 DColorSelector::DColorSelector(QWidget* const parent)
     : QPushButton(parent),
-      d(new Private)
+      d          (new Private)
 {
     connect(this, SIGNAL(clicked()),
             this, SLOT(slotBtnClicked()));

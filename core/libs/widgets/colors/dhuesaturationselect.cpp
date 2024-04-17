@@ -34,17 +34,8 @@ class Q_DECL_HIDDEN DPointSelect::Private
 {
 public:
 
-    explicit Private(DPointSelect* const q):
-        q(q),
-        px(0),
-        py(0),
-        xPos(0),
-        yPos(0),
-        minX(0),
-        maxX(100),
-        minY(0),
-        maxY(100),
-        m_markerColor(Qt::white)
+    explicit Private(DPointSelect* const qq)
+        : q(qq)
     {
     }
 
@@ -52,16 +43,16 @@ public:
 
 public:
 
-    DPointSelect* q;
-    int           px;
-    int           py;
-    int           xPos;
-    int           yPos;
-    int           minX;
-    int           maxX;
-    int           minY;
-    int           maxY;
-    QColor        m_markerColor;
+    DPointSelect* q             = nullptr;
+    int           px            = 0;
+    int           py            = 0;
+    int           xPos          = 0;
+    int           yPos          = 0;
+    int           minX          = 0;
+    int           maxX          = 100;
+    int           minY          = 0;
+    int           maxY          = 100;
+    QColor        m_markerColor = Qt::white;
 };
 
 void DPointSelect::Private::setValues(int _xPos, int _yPos)
@@ -89,9 +80,11 @@ void DPointSelect::Private::setValues(int _xPos, int _yPos)
     }
 
     Q_ASSERT(maxX != minX);
+
     int xp = w + (q->width() - 2 * w) * xPos / (maxX - minX);
 
     Q_ASSERT(maxY != minY);
+
     int yp = q->height() - w - (q->height() - 2 * w) * yPos / (maxY - minY);
 
     q->setPosition(xp, yp);
@@ -99,7 +92,7 @@ void DPointSelect::Private::setValues(int _xPos, int _yPos)
 
 DPointSelect::DPointSelect(QWidget* const parent)
     : QWidget(parent),
-      d(new Private(this))
+      d      (new Private(this))
 {
 }
 
@@ -288,34 +281,30 @@ class Q_DECL_HIDDEN DHueSaturationSelector::Private
 {
 public:
 
-    explicit Private(DHueSaturationSelector* const q)
-        : q(q),
-          mode(ChooserClassic),
-          hue(0),
-          saturation(0),
-          color(0)
+    explicit Private(DHueSaturationSelector* const qq)
+        : q(qq)
     {
     }
 
-    DHueSaturationSelector* q;
+    DHueSaturationSelector* q           = nullptr;
     QPixmap                 pixmap;
 
     /**
      * Stores the chooser mode
      */
-    DColorChooserMode       mode;
+    DColorChooserMode       mode        = ChooserClassic;
 
     /**
      * Stores the values for hue, saturation and luminosity
      */
-    int                     hue;
-    int                     saturation;
-    int                     color;
+    int                     hue         = 0;
+    int                     saturation  = 0;
+    int                     color       = 0;
 };
 
 DHueSaturationSelector::DHueSaturationSelector(QWidget* const parent)
     : DPointSelect(parent),
-      d(new Private(this))
+      d           (new Private(this))
 {
     setChooserMode(ChooserClassic);
 }
@@ -339,12 +328,16 @@ void DHueSaturationSelector::setChooserMode(DColorChooserMode chooserMode)
     {
         case ChooserSaturation:
         case ChooserValue:
+        {
             x = 359;
             break;
+        }
 
         default:
+        {
             x = 255;
             break;
+        }
     }
 
     setRange(0, 0, x, y);
