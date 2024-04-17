@@ -80,6 +80,7 @@ krazy2all --export xml \
           --strict all \
           --priority all \
           --verbose \
+          --check-set kde5,foss \
           --exclude qclasses,license \
           --exclude-types qml,python,qdoc,perl \
           --topdir ../../ \

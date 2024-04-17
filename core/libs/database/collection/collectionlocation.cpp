@@ -17,14 +17,6 @@
 namespace Digikam
 {
 
-CollectionLocation::CollectionLocation()
-    : m_id             (-1),
-      m_status         (LocationNull),
-      m_type           (VolumeHardWired),
-      m_caseSensitivity(UnknownCaseSensitivity)
-{
-}
-
 int CollectionLocation::id() const
 {
     return m_id;
