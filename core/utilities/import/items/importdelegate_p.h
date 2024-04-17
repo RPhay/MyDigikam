@@ -37,21 +37,12 @@ class Q_DECL_HIDDEN ImportDelegate::ImportDelegatePrivate : public ItemViewImpor
 {
 public:
 
-    explicit ImportDelegatePrivate()
-      : contentWidth        (0),
-        drawImageFormat     (false),
-        drawCoordinates     (false),
-        drawFocusFrame      (true),
-        drawMouseOverFrame  (true),
-        ratingOverThumbnail (false),
-        categoryDrawer      (nullptr),
-        currentView         (nullptr),
-        currentModel        (nullptr)
+    ImportDelegatePrivate()
     {
         actualPixmapRectCache.setMaxCost(250);
     }
 
-    int                    contentWidth;
+    int                    contentWidth             = 0;
 
     QRect                  dateRect;
     QRect                  pixmapRect;
@@ -70,17 +61,17 @@ public:
     QRect                  pickLabelRect;
     QRect                  groupRect;
 
-    bool                   drawImageFormat;
-    bool                   drawCoordinates;
-    bool                   drawFocusFrame;
-    bool                   drawMouseOverFrame;
-    bool                   ratingOverThumbnail;
+    bool                   drawImageFormat          = false;
+    bool                   drawCoordinates          = false;
+    bool                   drawFocusFrame           = true;
+    bool                   drawMouseOverFrame       = true;
+    bool                   ratingOverThumbnail      = false;
 
     QCache<int, QRect>     actualPixmapRectCache;
-    ImportCategoryDrawer*  categoryDrawer;
+    ImportCategoryDrawer*  categoryDrawer           = nullptr;
 
-    ImportCategorizedView* currentView;
-    QAbstractItemModel*    currentModel;
+    ImportCategorizedView* currentView              = nullptr;
+    QAbstractItemModel*    currentModel             = nullptr;
 
 public:
 
@@ -93,19 +84,18 @@ class Q_DECL_HIDDEN ImportThumbnailDelegatePrivate : public ImportDelegate::Impo
 {
 public:
 
-    explicit ImportThumbnailDelegatePrivate()
-       : flow(QListView::LeftToRight)
+    ImportThumbnailDelegatePrivate()
     {
-        drawFocusFrame      = false;       // switch off drawing of frames
+        drawFocusFrame      = false;       ///< switch off drawing of frames
         drawMouseOverFrame  = false;
-        ratingOverThumbnail = true;        // switch off composing rating over background
+        ratingOverThumbnail = true;        ///< switch off composing rating over background
     }
 
     void init(ImportThumbnailDelegate* const q);
 
 public:
 
-    QListView::Flow flow;
+    QListView::Flow flow     = QListView::LeftToRight;
     QRect           viewSize;
 };
 
@@ -115,7 +105,7 @@ class Q_DECL_HIDDEN ImportNormalDelegatePrivate : public ImportDelegate::ImportD
 {
 public:
 
-    explicit ImportNormalDelegatePrivate() {};
+    ImportNormalDelegatePrivate() = default;
     ~ImportNormalDelegatePrivate() override;
 
     void init(ImportNormalDelegate* const q, ImportCategorizedView* const parent);

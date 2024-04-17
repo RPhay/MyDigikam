@@ -41,7 +41,7 @@ class Q_DECL_HIDDEN ItemViewImportDelegatePrivate
 {
 public:
 
-    explicit ItemViewImportDelegatePrivate();
+    ItemViewImportDelegatePrivate();
     virtual ~ItemViewImportDelegatePrivate() = default;
 
     void init(ItemViewImportDelegate* const _q, QWidget* const _widget);
@@ -53,7 +53,7 @@ public:
 
 public:
 
-    int                       spacing;
+    int                       spacing       = 0;
     QSize                     gridSize;
 
     QRect                     rect;
@@ -61,7 +61,7 @@ public:
 
     QPixmap                   regPixmap;
     QPixmap                   selPixmap;
-    QVector<QPixmap>          ratingPixmaps;
+    QVector<QPixmap>          ratingPixmaps = QVector<QPixmap>(10);
 
     QFont                     font;
     QFont                     fontReg;
@@ -71,21 +71,21 @@ public:
     QPolygon                  starPolygon;
     QSize                     starPolygonSize;
 
-    ThumbnailSize             thumbSize;
+    ThumbnailSize             thumbSize     = ThumbnailSize(0);
 
     QPersistentModelIndex     editingRating;
 
-    ItemViewImportDelegate*   q;
-
-    QWidget*                  displayWidget;
+    QWidget*                  displayWidget = nullptr;
 
     QRect                     oneRowRegRect;
     QRect                     oneRowComRect;
     QRect                     oneRowXtraRect;
 
     /// constant values for drawing
-    int                       radius;
-    int                       margin;
+    int                       radius        = 3;
+    int                       margin        = 5;
+
+    ItemViewImportDelegate*   q             = nullptr;
 
 private:
 

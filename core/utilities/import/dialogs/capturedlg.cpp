@@ -40,23 +40,16 @@ class Q_DECL_HIDDEN CaptureDlg::Private
 {
 public:
 
-    explicit Private()
-      : stopPreview  (false),
-        timer        (nullptr),
-        buttons      (nullptr),
-        controller   (nullptr),
-        captureWidget(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool              stopPreview;
+    bool              stopPreview   = false;
 
-    QTimer*           timer;
-    QDialogButtonBox* buttons;
+    QTimer*           timer         = nullptr;
+    QDialogButtonBox* buttons       = nullptr;
 
-    CameraController* controller;
+    CameraController* controller    = nullptr;
 
-    CaptureWidget*    captureWidget;
+    CaptureWidget*    captureWidget = nullptr;
 };
 
 CaptureDlg::CaptureDlg(QWidget* const parent,

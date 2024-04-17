@@ -40,16 +40,8 @@ namespace Digikam
 {
 
 ItemViewImportDelegatePrivate::ItemViewImportDelegatePrivate()
-    : spacing      (0),
-      thumbSize    (ThumbnailSize(0)),
-      q            (nullptr),
-      displayWidget(nullptr),
-      radius       (3),       // painting constants
-      margin       (5)
 {
     makeStarPolygon();
-
-    ratingPixmaps = QVector<QPixmap>(10);
 }
 
 void ItemViewImportDelegatePrivate::init(ItemViewImportDelegate* const _q, QWidget* const _widget)
@@ -79,13 +71,15 @@ void ItemViewImportDelegatePrivate::makeStarPolygon()
 // ---- ItemViewImportDelegate -----------------------------------------------
 
 ItemViewImportDelegate::ItemViewImportDelegate(QWidget* const parent)
-    : DItemDelegate(parent), d_ptr(new ItemViewImportDelegatePrivate)
+    : DItemDelegate(parent),
+      d_ptr        (new ItemViewImportDelegatePrivate)
 {
     d_ptr->init(this, parent);
 }
 
 ItemViewImportDelegate::ItemViewImportDelegate(ItemViewImportDelegatePrivate& dd, QWidget* const parent)
-    : DItemDelegate(parent), d_ptr(&dd)
+    : DItemDelegate(parent),
+      d_ptr        (&dd)
 {
     d_ptr->init(this, parent);
 }
@@ -198,7 +192,8 @@ bool ItemViewImportDelegate::acceptsToolTip(const QPoint&, const QRect& visualRe
     return true;
 }
 
-bool ItemViewImportDelegate::acceptsActivation(const QPoint& , const QRect& visualRect, const QModelIndex&, QRect* retRect) const
+bool ItemViewImportDelegate::acceptsActivation(const QPoint&, const QRect& visualRect,
+                                               const QModelIndex&, QRect* retRect) const
 {
     if (retRect)
     {
@@ -261,7 +256,9 @@ void ItemViewImportDelegate::invalidatePaintingCache()
     Q_EMIT visualChange();
 }
 
-QRect ItemViewImportDelegate::drawThumbnail(QPainter* p, const QRect& thumbRect, const QPixmap& background,
+QRect ItemViewImportDelegate::drawThumbnail(QPainter* p,
+                                            const QRect& thumbRect,
+                                            const QPixmap& background,
                                             const QPixmap& thumbnail) const
 {
     p->drawPixmap(0, 0, background);
@@ -292,8 +289,11 @@ QRect ItemViewImportDelegate::drawThumbnail(QPainter* p, const QRect& thumbRect,
     return actualPixmapRect;
 }
 
-void ItemViewImportDelegate::drawRating(QPainter* p, const QModelIndex& index, const QRect& ratingRect,
-                                       int rating, bool isSelected) const
+void ItemViewImportDelegate::drawRating(QPainter* p,
+                                        const QModelIndex& index,
+                                        const QRect& ratingRect,
+                                        int rating,
+                                        bool isSelected) const
 {
     Q_D(const ItemViewImportDelegate);
 
@@ -384,8 +384,10 @@ void ItemViewImportDelegate::drawFileSize(QPainter* p, const QRect& r, qlonglong
     p->drawText(r, Qt::AlignCenter, ItemPropertiesTab::humanReadableBytesCount(bytes));
 }
 
-void ItemViewImportDelegate::drawTags(QPainter* p, const QRect& r, const QString& tagsString,
-                                     bool isSelected) const
+void ItemViewImportDelegate::drawTags(QPainter* p,
+                                      const QRect& r,
+                                      const QString& tagsString,
+                                      bool isSelected) const
 {
     Q_D(const ItemViewImportDelegate);
 
@@ -421,8 +423,10 @@ void ItemViewImportDelegate::drawPickLabelIcon(QPainter* p, const QRect& r, int 
     }
 }
 
-void ItemViewImportDelegate::drawColorLabelRect(QPainter* p, const QStyleOptionViewItem& option,
-                                                bool isSelected, int colorId) const
+void ItemViewImportDelegate::drawColorLabelRect(QPainter* p,
+                                                const QStyleOptionViewItem& option,
+                                                bool isSelected,
+                                                int colorId) const
 {
     Q_D(const ItemViewImportDelegate);
     Q_UNUSED(option);
@@ -501,7 +505,8 @@ void ItemViewImportDelegate::drawLockIndicator(QPainter* p, const QRect& r, int 
     p->setOpacity(op);
 }
 
-void ItemViewImportDelegate::drawFocusRect(QPainter* p, const QStyleOptionViewItem& option,
+void ItemViewImportDelegate::drawFocusRect(QPainter* p,
+                                           const QStyleOptionViewItem& option,
                                            bool isSelected) const
 {
     Q_D(const ItemViewImportDelegate);
@@ -515,8 +520,10 @@ void ItemViewImportDelegate::drawFocusRect(QPainter* p, const QStyleOptionViewIt
     }
 }
 
-void ItemViewImportDelegate::drawGroupIndicator(QPainter* p, const QRect& r,
-                                                int numberOfGroupedImages, bool open) const
+void ItemViewImportDelegate::drawGroupIndicator(QPainter* p,
+                                                const QRect& r,
+                                                int numberOfGroupedImages,
+                                                bool open) const
 {
     if (numberOfGroupedImages)
     {
@@ -662,7 +669,7 @@ void ItemViewImportDelegate::prepareRatingPixmaps(bool composeOverBackground)
         basePix    = basePix.scaled(d->ratingRect.size() * dpr);
         basePix.setDevicePixelRatio(dpr);
 
-        for (int rating = 1; rating <= 5; ++rating)
+        for (int rating = 1 ; rating <= 5 ; ++rating)
         {
             // we store first the 5 regular, then the 5 selected pixmaps, for simplicity
 

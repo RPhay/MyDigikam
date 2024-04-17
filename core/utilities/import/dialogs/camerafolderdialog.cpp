@@ -45,16 +45,12 @@ class Q_DECL_HIDDEN CameraFolderDialog::Private
 {
 public:
 
-    explicit Private()
-      : buttons   (nullptr),
-        folderView(nullptr)
-    {
-    }
+    Private() = default;
 
     QString           rootPath;
-    QDialogButtonBox* buttons;
+    QDialogButtonBox* buttons       = nullptr;
 
-    CameraFolderView* folderView;
+    CameraFolderView* folderView    = nullptr;
 };
 
 CameraFolderDialog::CameraFolderDialog(QWidget* const parent, const QMap<QString, int>& map,

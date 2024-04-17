@@ -48,13 +48,13 @@ public:
     QRect         rect()                                                              const;
 
     QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)      const override;
-    QSize gridSize() const override;
+    QSize gridSize()                                                                  const override;
 
     /// reimplemented from DItemDelegate
 
-    void setThumbnailSize(const ThumbnailSize& thumbSize) override;
-    void setSpacing(int spacing) override;
-    void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
+    void setThumbnailSize(const ThumbnailSize& thumbSize)                                   override;
+    void setSpacing(int spacing)                                                            override;
+    void setDefaultViewOptions(const QStyleOptionViewItem& option)                          override;
     bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
                         const QModelIndex& index, QRect* tooltipRect = nullptr)       const override;
     bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
@@ -126,9 +126,9 @@ protected:
     void prepareRatingPixmaps(bool composeOverBackground = true);
 
     /// Returns the relevant pixmap from the cached rating pixmaps
-    QPixmap ratingPixmap(int rating, bool selected) const;
+    QPixmap ratingPixmap(int rating, bool selected)                                                               const;
 
-    QAbstractItemDelegate* asDelegate() override;
+    QAbstractItemDelegate* asDelegate()                                                                                 override;
 
     /// reimplement these in subclasses
     virtual void invalidatePaintingCache();
@@ -136,7 +136,7 @@ protected:
 
 protected:
 
-    ItemViewImportDelegatePrivate* const d_ptr;
+    ItemViewImportDelegatePrivate* const d_ptr = nullptr;
     ItemViewImportDelegate(ItemViewImportDelegatePrivate& dd, QWidget* const parent);
 
 private:

@@ -37,17 +37,13 @@ class Q_DECL_HIDDEN ImportCategoryDrawer::Private
 {
 public:
 
-    explicit Private()
-      : lowerSpacing(0),
-        view        (nullptr)
-    {
-    }
+    Private() = default;
 
     QFont                  font;
     QRect                  rect;
     QPixmap                pixmap;
-    int                    lowerSpacing;
-    ImportCategorizedView* view;
+    int                    lowerSpacing = 0;
+    ImportCategorizedView* view         = nullptr;
 };
 
 ImportCategoryDrawer::ImportCategoryDrawer(ImportCategorizedView* const parent)
@@ -145,19 +141,27 @@ void ImportCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole
     switch (mode)
     {
         case CamItemSortSettings::NoCategories:
+        {
             break;
+        }
 
         case CamItemSortSettings::CategoryByFolder:
+        {
             viewHeaderText(index, &header, &subLine);
             break;
+        }
 
         case CamItemSortSettings::CategoryByFormat:
+        {
             textForFormat(index, &header, &subLine);
             break;
+        }
 
         case CamItemSortSettings::CategoryByDate:
+        {
             textForDate(index, &header, &subLine);
             break;
+        }
     }
 
     p->setPen(qApp->palette().color(QPalette::HighlightedText));
@@ -180,7 +184,7 @@ void ImportCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole
 
 void ImportCategoryDrawer::viewHeaderText(const QModelIndex& index, QString* header, QString* subLine) const
 {
-    ImportItemModel* sourceModel = index.data(ImportItemModel::ImportItemModelPointerRole).value<ImportItemModel*>();
+    ImportItemModel* const sourceModel = index.data(ImportItemModel::ImportItemModelPointerRole).value<ImportItemModel*>();
 
     if (!sourceModel)
     {

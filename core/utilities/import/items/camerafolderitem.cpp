@@ -22,14 +22,10 @@ class Q_DECL_HIDDEN CameraFolderItem::Private
 {
 public:
 
-    explicit Private()
-      : virtualFolder(true),
-        count        (0)
-    {
-    }
+    Private() = default;
 
-    bool    virtualFolder;
-    int     count;
+    bool    virtualFolder   = true;
+    int     count           = 0;
 
     QString folderName;
     QString folderPath;

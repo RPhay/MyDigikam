@@ -78,6 +78,7 @@ ImportDelegate::~ImportDelegate()
 void ImportDelegate::setView(ImportCategorizedView* view)
 {
     Q_D(ImportDelegate);
+
     setViewOnAllOverlays(view);
 
     if (d->currentView)
@@ -111,7 +112,8 @@ void ImportDelegate::setModel(QAbstractItemModel* model)
 
     if (d->currentModel)
     {
-        disconnect(d->currentModel, nullptr, this, nullptr);
+        disconnect(d->currentModel, nullptr,
+                   this, nullptr);
     }
 
     d->currentModel = model;
@@ -150,6 +152,7 @@ void ImportDelegate::setSpacing(int spacing)
 ImportCategoryDrawer* ImportDelegate::categoryDrawer() const
 {
     Q_D(const ImportDelegate);
+
     return d->categoryDrawer;
 }
 
@@ -164,42 +167,49 @@ QRect ImportDelegate::commentsRect() const
 QRect ImportDelegate::tagsRect() const
 {
     Q_D(const ImportDelegate);
+
     return d->tagRect;
 }
 
 QRect ImportDelegate::pixmapRect() const
 {
     Q_D(const ImportDelegate);
+
     return d->pixmapRect;
 }
 
 QRect ImportDelegate::imageInformationRect() const
 {
     Q_D(const ImportDelegate);
+
     return d->imageInformationRect;
 }
 
 QRect ImportDelegate::groupIndicatorRect() const
 {
     Q_D(const ImportDelegate);
+
     return d->groupRect;
 }
 
 QRect ImportDelegate::downloadIndicatorRect() const
 {
     Q_D(const ImportDelegate);
+
     return d->downloadRect;
 }
 
 QRect ImportDelegate::lockIndicatorRect() const
 {
     Q_D(const ImportDelegate);
+
     return d->lockRect;
 }
 
 QRect ImportDelegate::coordinatesIndicatorRect() const
 {
     Q_D(const ImportDelegate);
+
     return d->coordinatesRect;
 }
 
@@ -223,12 +233,14 @@ QPixmap ImportDelegate::retrieveThumbnailPixmap(const QModelIndex& index, int th
 QPixmap ImportDelegate::thumbnailPixmap(const QModelIndex& index) const
 {
     Q_D(const ImportDelegate);
+
     return retrieveThumbnailPixmap(index, d->thumbSize.size());
 }
 
 void ImportDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
     Q_D(const ImportDelegate);
+
     CamItemInfo info = ImportItemModel::retrieveCamItemInfo(index);
 
     if (info.isNull())
@@ -436,6 +448,7 @@ void ImportDelegate::invalidatePaintingCache()
 void ImportDelegate::updateContentWidth()
 {
     Q_D(ImportDelegate);
+
     d->contentWidth = d->thumbSize.size() + 2*d->radius;
 }
 
@@ -477,6 +490,7 @@ void ImportDelegate::updateSizeRectsAndPixmaps()
 void ImportDelegate::clearCaches()
 {
     Q_D(ImportDelegate);
+
     ItemViewImportDelegate::clearCaches();
     d->actualPixmapRectCache.clear();
 }
@@ -484,12 +498,14 @@ void ImportDelegate::clearCaches()
 void ImportDelegate::clearModelDataCaches()
 {
     Q_D(ImportDelegate);
+
     d->actualPixmapRectCache.clear();
 }
 
 void ImportDelegate::modelChanged()
 {
     Q_D(ImportDelegate);
+
     clearModelDataCaches();
     setModel(d->currentView ? d->currentView->model() : nullptr);
 }
@@ -520,6 +536,7 @@ QRect ImportDelegate::actualPixmapRect(const QModelIndex& index) const
 void ImportDelegate::updateActualPixmapRect(const QModelIndex& index, const QRect& rect)
 {
     Q_D(ImportDelegate);
+
     QRect* const old = d->actualPixmapRectCache.object(index.row());
 
     if (!old || (*old != rect))
@@ -602,6 +619,7 @@ ImportThumbnailDelegate::ImportThumbnailDelegate(ImportCategorizedView* const pa
     : ImportDelegate(*new ImportThumbnailDelegatePrivate, parent)
 {
     Q_D(ImportThumbnailDelegate);
+
     d->init(this);
 }
 
@@ -612,6 +630,7 @@ ImportThumbnailDelegate::~ImportThumbnailDelegate()
 void ImportThumbnailDelegate::setFlow(QListView::Flow flow)
 {
     Q_D(ImportThumbnailDelegate);
+
     d->flow = flow;
 }
 
@@ -650,6 +669,7 @@ bool ImportThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect& 
 void ImportThumbnailDelegate::updateContentWidth()
 {
     Q_D(ImportThumbnailDelegate);
+
     int maxSize;
 
     if (d->flow == QListView::LeftToRight)
@@ -730,6 +750,7 @@ ImportNormalDelegate::ImportNormalDelegate(ImportCategorizedView* const parent)
     : ImportDelegate(*new ImportNormalDelegatePrivate, parent)
 {
     Q_D(ImportNormalDelegate);
+
     d->init(this, parent);
 }
 
@@ -738,6 +759,7 @@ ImportNormalDelegate::ImportNormalDelegate(ImportNormalDelegatePrivate& dd, Impo
 {
 
     Q_D(ImportNormalDelegate);
+
     d->init(this, parent);
 }
 

@@ -52,7 +52,7 @@ CameraInfoDialog::CameraInfoDialog(QWidget* const parent,
 
     // ----------------------------------------------------------
 
-    QTextEdit* const summaryView = new QTextEdit(this);
+    QTextEdit* const summaryView    = new QTextEdit(this);
     summaryView->setWordWrapMode(QTextOption::WordWrap);
     summaryView->setPlainText(summary);
     summaryView->setReadOnly(true);
@@ -60,7 +60,7 @@ CameraInfoDialog::CameraInfoDialog(QWidget* const parent,
 
     // ----------------------------------------------------------
 
-    QTextEdit* const manualView  = new QTextEdit(this);
+    QTextEdit* const manualView     = new QTextEdit(this);
     manualView->setWordWrapMode(QTextOption::WordWrap);
     manualView->setPlainText(manual);
     manualView->setReadOnly(true);
@@ -68,7 +68,7 @@ CameraInfoDialog::CameraInfoDialog(QWidget* const parent,
 
     // ----------------------------------------------------------
 
-    QTextEdit* const aboutView   = new QTextEdit(this);
+    QTextEdit* const aboutView      = new QTextEdit(this);
     aboutView->setWordWrapMode(QTextOption::WordWrap);
     aboutView->setPlainText(about);
     aboutView->setReadOnly(true);
@@ -76,7 +76,7 @@ CameraInfoDialog::CameraInfoDialog(QWidget* const parent,
 
     // ----------------------------------------------------------
 
-    QVBoxLayout* const vbx       = new QVBoxLayout(this);
+    QVBoxLayout* const vbx          = new QVBoxLayout(this);
     vbx->addWidget(tab);
     vbx->addWidget(buttons);
     setLayout(vbx);
@@ -86,10 +86,6 @@ CameraInfoDialog::CameraInfoDialog(QWidget* const parent,
 
     connect(buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
             this, SLOT(slotHelp()));
-}
-
-CameraInfoDialog::~CameraInfoDialog()
-{
 }
 
 void CameraInfoDialog::slotHelp()

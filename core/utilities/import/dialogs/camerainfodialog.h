@@ -34,7 +34,7 @@ public:
                      const QString& summary,
                      const QString& manual,
                      const QString& about);
-    ~CameraInfoDialog() override;
+    ~CameraInfoDialog() override = default;
 
 private Q_SLOTS:
 

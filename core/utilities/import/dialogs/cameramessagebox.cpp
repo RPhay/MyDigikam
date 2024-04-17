@@ -49,12 +49,9 @@ class Q_DECL_HIDDEN CameraItem::Private
 
 public:
 
-    explicit Private()
-      : hasThumb(false)
-    {
-    }
+    Private() = default;
 
-    bool        hasThumb;
+    bool        hasThumb    = false;
 
     CamItemInfo info;
 };
@@ -114,15 +111,11 @@ class Q_DECL_HIDDEN CameraItemList::Private
 
 public:
 
-    explicit Private()
-        : iconSize(64),
-          ctrl    (nullptr)
-    {
-    }
+    Private() = default;
 
-    const int         iconSize;
+    const int         iconSize  = 64;
 
-    CameraThumbsCtrl* ctrl;
+    CameraThumbsCtrl* ctrl      = nullptr;
 };
 
 CameraItemList::CameraItemList(QWidget* const parent)

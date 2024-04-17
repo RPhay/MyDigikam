@@ -39,21 +39,21 @@ class ImportDelegate : public ItemViewImportDelegate
 public:
 
     explicit ImportDelegate(QWidget* const parent);
-    ~ImportDelegate() override;
+    ~ImportDelegate()                                                                                  override;
 
     void setView(ImportCategorizedView* view);
 
-    ImportCategoryDrawer* categoryDrawer()           const;
+    ImportCategoryDrawer* categoryDrawer()                                                       const;
 
 /*
-    QRect commentsRect()                             const;
+    QRect commentsRect()                                                                         const;
 */
-    QRect tagsRect()                                 const;
-    QRect actualPixmapRect(const QModelIndex& index) const;
-    QRect groupIndicatorRect()                       const;
-    QRect downloadIndicatorRect()                    const;
-    QRect lockIndicatorRect()                        const;
-    QRect coordinatesIndicatorRect()                 const;
+    QRect tagsRect()                                                                             const;
+    QRect actualPixmapRect(const QModelIndex& index)                                             const;
+    QRect groupIndicatorRect()                                                                   const;
+    QRect downloadIndicatorRect()                                                                const;
+    QRect lockIndicatorRect()                                                                    const;
+    QRect coordinatesIndicatorRect()                                                             const;
 
     int calculatethumbSizeToFit(int ws);
 

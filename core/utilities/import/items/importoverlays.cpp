@@ -443,7 +443,7 @@ void ImportRotateOverlayButton::updateToolTip()
 
 ImportRotateOverlay::ImportRotateOverlay(ImportRotateOverlayDirection dir, QObject* const parent)
     : HoverButtonDelegateOverlay(parent),
-      m_direction(dir)
+      m_direction               (dir)
 {
 }
 
@@ -487,6 +487,7 @@ void ImportRotateOverlay::slotClicked()
 bool ImportRotateOverlay::checkIndex(const QModelIndex& index) const
 {
     CamItemInfo info = ImportItemModel::retrieveCamItemInfo(index);
+
     return (info.mime.contains(QLatin1String("image/")));
 }
 
