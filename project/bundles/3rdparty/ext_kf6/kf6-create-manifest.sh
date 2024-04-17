@@ -12,6 +12,10 @@ set -e
 set -C
 
 ORIG_WD="`pwd`"
+
+. $ORIG_WD/common.sh
+. $ORIG_WD/config.sh
+
 KF6_GITREV_LST=$ORIG_WD/data/kf6_manifest.txt
 
 echo "List git sub-module revisions in $KF6_GITREV_LST"
