@@ -82,7 +82,7 @@ void DTextEdit::Private::init(DTextEdit* const parent)
     // Mimic QLineEdit
 
     QObject::connect(parent, &QTextEdit::textChanged,
-                     parent, [=]()
+                     parent, [this, parent]()
         {
             if (clearBtnEnable && (lines == 1))
             {
@@ -119,7 +119,7 @@ void DPlainTextEdit::Private::init(DPlainTextEdit* const parent)
         parent->setLocalizeSettings(config->settings());
 
         QObject::connect(config, &LocalizeSettings::signalSettingsChanged,
-                         parent, [=]()
+                         parent, [parent, config]()
             {
                 parent->setLocalizeSettings(config->settings());
             }
@@ -139,7 +139,7 @@ void DPlainTextEdit::Private::init(DPlainTextEdit* const parent)
     // Mimic QLineEdit
 
     QObject::connect(parent, &QPlainTextEdit::textChanged,
-                     parent, [=]()
+                     parent, [this, parent]()
         {
             if (clearBtnEnable && (lines == 1))
             {
