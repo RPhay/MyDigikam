@@ -32,7 +32,7 @@ class ImportIconView : public ImportCategorizedView
 public:
 
     explicit ImportIconView(QWidget* const parent = nullptr);
-    ~ImportIconView() override;
+    ~ImportIconView()                                                             override;
 
     ItemViewUtilities* utilities() const;
 
@@ -41,7 +41,7 @@ public:
     CamItemInfo  camItemInfo(const QString& folder, const QString& file);
     CamItemInfo& camItemInfoRef(const QString& folder, const QString& file);
 
-    void setThumbnailSize(const ThumbnailSize& size) override;
+    void setThumbnailSize(const ThumbnailSize& size)                              override;
 
 public Q_SLOTS:
 

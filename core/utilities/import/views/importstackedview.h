@@ -113,11 +113,11 @@ public:
     void   setZoomFactor(double z);
     void   setZoomFactorSnapped(double z);
 
-    bool   maxZoom()    const;
-    bool   minZoom()    const;
-    double zoomFactor() const;
-    double zoomMin()    const;
-    double zoomMax()    const;
+    bool   maxZoom()                        const;
+    bool   minZoom()                        const;
+    double zoomFactor()                     const;
+    double zoomMin()                        const;
+    double zoomMax()                        const;
 
 Q_SIGNALS:
 

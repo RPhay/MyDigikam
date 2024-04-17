@@ -31,22 +31,17 @@ class Q_DECL_HIDDEN CameraFolderView::Private
 {
 public:
 
-    explicit Private()
-      : cameraName(QLatin1String("Camera")),
-        virtualFolder(nullptr),
-        rootFolder(nullptr)
-    {
-    }
+    Private() = default;
 
-    QString           cameraName;
+    QString           cameraName    = QLatin1String("Camera");
 
-    CameraFolderItem* virtualFolder;
-    CameraFolderItem* rootFolder;
+    CameraFolderItem* virtualFolder = nullptr;
+    CameraFolderItem* rootFolder    = nullptr;
 };
 
 CameraFolderView::CameraFolderView(QWidget* const parent)
     : QTreeWidget(parent),
-      d(new Private)
+      d          (new Private)
 {
     setColumnCount(1);
     setRootIsDecorated(false);

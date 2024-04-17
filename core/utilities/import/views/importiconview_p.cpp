@@ -19,16 +19,7 @@ namespace Digikam
 {
 
 ImportIconView::Private::Private(ImportIconView* const qq)
-    : utilities(nullptr),
-      normalDelegate(nullptr),
-      overlaysActive(false),
-      rotateLeftOverlay(nullptr),
-      rotateRightOverlay(nullptr),
-      q_ptr(qq)
-{
-}
-
-ImportIconView::Private::~Private()
+    : q_ptr(qq)
 {
 }
 

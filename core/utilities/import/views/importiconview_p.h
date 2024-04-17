@@ -40,23 +40,23 @@ class Q_DECL_HIDDEN ImportIconView::Private : public QObject
 public:
 
     explicit Private(ImportIconView* const qq);
-    ~Private() override;
+    ~Private() override = default;
 
     void updateOverlays();
 
 public:
 
-    ItemViewUtilities*     utilities;
-    ImportNormalDelegate*  normalDelegate;
+    ItemViewUtilities*     utilities            = nullptr;
+    ImportNormalDelegate*  normalDelegate       = nullptr;
 
-    bool                   overlaysActive;
+    bool                   overlaysActive       = false;
 
-    ImportRotateOverlay*   rotateLeftOverlay;
-    ImportRotateOverlay*   rotateRightOverlay;
+    ImportRotateOverlay*   rotateLeftOverlay    = nullptr;
+    ImportRotateOverlay*   rotateRightOverlay   = nullptr;
 
 private:
 
-    ImportIconView*        q_ptr;
+    ImportIconView*        q_ptr                = nullptr;
 };
 
 } // namespace Digikam

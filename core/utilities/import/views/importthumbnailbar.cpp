@@ -31,19 +31,15 @@ class Q_DECL_HIDDEN ImportThumbnailBar::Private
 {
 public:
 
-    explicit Private()
-      : scrollPolicy(Qt::ScrollBarAlwaysOn),
-        duplicatesFilter(nullptr)
-    {
-    }
+    Private() = default;
 
-    Qt::ScrollBarPolicy            scrollPolicy;
-    NoDuplicatesImportFilterModel* duplicatesFilter;
+    Qt::ScrollBarPolicy            scrollPolicy     = Qt::ScrollBarAlwaysOn;
+    NoDuplicatesImportFilterModel* duplicatesFilter = nullptr;
 };
 
 ImportThumbnailBar::ImportThumbnailBar(QWidget* const parent)
     : ImportCategorizedView(parent),
-      d(new Private())
+      d                    (new Private())
 {
     setItemDelegate(new ImportThumbnailDelegate(this));
     setSpacing(3);

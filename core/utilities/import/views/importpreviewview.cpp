@@ -48,10 +48,6 @@ public:
 
     explicit ImportPreviewViewItem(ImportPreviewView* const view)
         : m_view (view)
-/*
-        FIXME
-        , m_group(0)
-*/
     {
         setAcceptHoverEvents(true);
     }
@@ -113,10 +109,10 @@ public:
 
 protected:
 
-    ImportPreviewView*  m_view;
+    ImportPreviewView*  m_view  = nullptr;
 /*
     FIXME
-    FaceGroup*          m_group;
+    FaceGroup*          m_group = nullptr;
 */
     CamItemInfo         m_info;
 };
@@ -127,50 +123,30 @@ class Q_DECL_HIDDEN ImportPreviewView::Private
 {
 public:
 
-    explicit Private()
-      : fullSize            (false),
-        scale               (1.0),
-        isValid             (false),
-        mode                (ImportPreviewView::IconViewPreview),
-        item                (nullptr),
-        escapePreviewAction (nullptr),
-        prevAction          (nullptr),
-        nextAction          (nullptr),
-        rotLeftAction       (nullptr),
-        rotRightAction      (nullptr),
-        toolBar             (nullptr)
-    {
-/*
-        FIXME
-        peopleTagsShown      = false;
-        peopleToggleAction   = 0;
-        addPersonAction      = 0;
-        faceGroup            = 0;
-*/
-    }
+    Private() = default;
 
-    bool                    fullSize;
-    double                  scale;
-    bool                    isValid;
+    bool                    fullSize            = false;
+    double                  scale               = 1.0;
+    bool                    isValid             = false;
 
-    ImportPreviewView::Mode mode;
+    ImportPreviewView::Mode mode                = ImportPreviewView::IconViewPreview;
 
-    ImportPreviewViewItem*  item;
+    ImportPreviewViewItem*  item                = nullptr;
 
-    QAction*                escapePreviewAction;
-    QAction*                prevAction;
-    QAction*                nextAction;
-    QAction*                rotLeftAction;
-    QAction*                rotRightAction;
+    QAction*                escapePreviewAction = nullptr;
+    QAction*                prevAction          = nullptr;
+    QAction*                nextAction          = nullptr;
+    QAction*                rotLeftAction       = nullptr;
+    QAction*                rotRightAction      = nullptr;
 
-    QToolBar*               toolBar;
+    QToolBar*               toolBar             = nullptr;
 /*
     FIXME
-    bool                    peopleTagsShown;
-    QAction*                peopleToggleAction;
-    QAction*                addPersonAction;
-    QAction*                forgetFacesAction;
-    FaceGroup*              faceGroup;
+    bool                    peopleTagsShown     = false;
+    QAction*                peopleToggleAction  = nullptr;
+    QAction*                addPersonAction     = nullptr;
+    QAction*                forgetFacesAction   = nullptr;
+    FaceGroup*              faceGroup           = nullptr;
 */
 };
 
@@ -293,6 +269,7 @@ void ImportPreviewView::reload()
 void ImportPreviewView::camItemLoaded()
 {
     Q_EMIT signalPreviewLoaded(true);
+
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
 /*
@@ -304,6 +281,7 @@ void ImportPreviewView::camItemLoaded()
 void ImportPreviewView::camItemLoadingFailed()
 {
     Q_EMIT signalPreviewLoaded(false);
+
     d->rotLeftAction->setEnabled(false);
     d->rotRightAction->setEnabled(false);
 /*

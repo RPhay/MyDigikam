@@ -40,7 +40,7 @@ namespace Digikam
 
 ImportIconView::ImportIconView(QWidget* const parent)
     : ImportCategorizedView(parent),
-      d(new Private(this))
+      d                    (new Private(this))
 {
     ImportThumbnailModel* const model    = new ImportThumbnailModel(this);
     ImportFilterModel* const filterModel = new ImportFilterModel(this);
@@ -194,6 +194,7 @@ void ImportIconView::rename()
     {
         QPointer<AdvancedRenameProcessDialog> dlg2 = new AdvancedRenameProcessDialog(newNamesList);
         dlg2->exec();
+
         delete dlg2;
     }
 }

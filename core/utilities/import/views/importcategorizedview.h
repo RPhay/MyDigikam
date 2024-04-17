@@ -38,7 +38,7 @@ class DIGIKAM_GUI_EXPORT ImportCategorizedView : public ItemViewCategorized
 public:
 
     explicit ImportCategorizedView(QWidget* const parent = nullptr);
-    ~ImportCategorizedView() override;
+    ~ImportCategorizedView()                                        override;
 
     void setModels(ImportItemModel* model,
                    ImportSortFilterModel* filterModel);

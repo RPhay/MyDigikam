@@ -27,14 +27,10 @@ class Q_DECL_HIDDEN FreeSpaceToolTip::Private
 {
 public:
 
-    explicit Private()
-      : parent(nullptr)
-    {
-    }
+    Private() = default;
 
     QString  tip;
-
-    QWidget* parent;
+    QWidget* parent = nullptr;
 };
 
 FreeSpaceToolTip::FreeSpaceToolTip(QWidget* const parent)

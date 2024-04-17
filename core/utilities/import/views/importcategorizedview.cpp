@@ -64,28 +64,19 @@ class Q_DECL_HIDDEN ImportCategorizedView::Private
 {
 public:
 
-    explicit Private()
-      : model            (nullptr),
-        filterModel      (nullptr),
-        delegate         (nullptr),
-        showToolTip      (false),
-        scrollToItemId   (0),
-        delayedEnterTimer(nullptr),
-        currentMouseEvent(nullptr)
-    {
-    }
+    Private() = default;
 
-    ImportItemModel*       model;
-    ImportSortFilterModel* filterModel;
+    ImportItemModel*       model                = nullptr;
+    ImportSortFilterModel* filterModel          = nullptr;
 
-    ImportDelegate*        delegate;
-    bool                   showToolTip;
+    ImportDelegate*        delegate             = nullptr;
+    bool                   showToolTip          = false;
 
-    qlonglong              scrollToItemId;
+    qlonglong              scrollToItemId       = 0;
 
-    QTimer*                delayedEnterTimer;
+    QTimer*                delayedEnterTimer    = nullptr;
 
-    QMouseEvent*           currentMouseEvent;
+    QMouseEvent*           currentMouseEvent    = nullptr;
 };
 
 ImportCategorizedView::ImportCategorizedView(QWidget* const parent)

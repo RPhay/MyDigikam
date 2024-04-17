@@ -137,6 +137,7 @@ QString CameraNameHelper::extractCameraNameToken(const QString& cameraName, Toke
             return mode;
         }
     }
+
     return ((tokenID == VendorAndProduct) ? cameraName.simplified()
                                           : QLatin1String(""));
 }
@@ -173,10 +174,15 @@ bool CameraNameHelper::sameDevices(const QString& deviceA, const QString& device
     QString modeB                 = extractCameraNameToken(deviceB, Mode);
     QRegularExpressionMatch match = REGEXP_MODES.match(modeA);
     bool isModeAValid             = match.hasMatch();
-    modeA                         = isModeAValid ? match.captured(1).simplified().toLower() : QLatin1String("");
+
+    modeA                         = isModeAValid ? match.captured(1).simplified().toLower()
+                                                 : QLatin1String("");
+
     match                         = REGEXP_MODES.match(modeB);
     bool isModeBValid             = match.hasMatch();
-    modeB                         = isModeBValid ? match.captured(1).simplified().toLower() : QLatin1String("");
+
+    modeB                         = isModeBValid ? match.captured(1).simplified().toLower()
+                                                 : QLatin1String("");
 
     if ((isModeAValid != isModeBValid) || (modeA != modeB))
     {

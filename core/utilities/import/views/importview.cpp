@@ -51,58 +51,36 @@ class Q_DECL_HIDDEN ImportView::Private
 {
 public:
 
-    explicit Private()
-      : thumbSize     (ThumbnailSize::Medium),
-        dockArea      (nullptr),
-        splitter      (nullptr),
-        selectionTimer(nullptr),
-        thumbSizeTimer(nullptr),
-        parent        (nullptr),
-        iconView      (nullptr),
-
-#ifdef HAVE_GEOLOCATION
-
-        mapView(nullptr),
-
-#endif // HAVE_GEOLOCATION
-
-        stackedView(nullptr),
-        lastViewMode(ImportStackedView::PreviewCameraMode)
-/*
-        FIXME
-        , filterWidget(0)
-*/
-    {
-    }
+    Private() = default;
 
     void addPageUpDownActions(ImportView* const q, QWidget* const w);
 
 public:
 
-    int                                thumbSize;
+    int                                thumbSize        = ThumbnailSize::Medium;
 
-    QMainWindow*                       dockArea;
+    QMainWindow*                       dockArea         = nullptr;
 
-    SidebarSplitter*                   splitter;
+    SidebarSplitter*                   splitter         = nullptr;
 
-    QTimer*                            selectionTimer;
-    QTimer*                            thumbSizeTimer;
+    QTimer*                            selectionTimer   = nullptr;
+    QTimer*                            thumbSizeTimer   = nullptr;
 
-    ImportUI*                          parent;
+    ImportUI*                          parent           = nullptr;
 
-    ImportIconView*                    iconView;
+    ImportIconView*                    iconView         = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
-    MapWidgetView*                     mapView;
+    MapWidgetView*                     mapView          = nullptr;
 
 #endif // HAVE_GEOLOCATION
 
-    ImportStackedView*                 stackedView;
-    ImportStackedView::StackedViewMode lastViewMode;
+    ImportStackedView*                 stackedView      = nullptr;
+    ImportStackedView::StackedViewMode lastViewMode     = ImportStackedView::PreviewCameraMode;
 /*
     FIXME
-    FilterSideBarWidget*               filterWidget;
+    FilterSideBarWidget*               filterWidget     = nullptr;
 */
 };
 
@@ -119,7 +97,7 @@ void ImportView::Private::addPageUpDownActions(ImportView* const q, QWidget* con
 
 ImportView::ImportView(ImportUI* const ui, QWidget* const parent)
     : DHBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     d->parent   = static_cast<ImportUI*>(ui);
     d->splitter = new SidebarSplitter;
@@ -458,6 +436,7 @@ void ImportView::slotDispatchImageSelected()
     if (list.isEmpty())
     {
         d->stackedView->setPreviewItem();
+
         Q_EMIT signalImageSelected(list, allImages);
         Q_EMIT signalNewSelection(false);
         Q_EMIT signalNoCurrentItem();
@@ -473,8 +452,10 @@ void ImportView::slotDispatchImageSelected()
             nextInfo     = d->iconView->nextInfo(list.first());
         }
 
-        if ((viewMode() != ImportStackedView::PreviewCameraMode) &&
-            (viewMode() != ImportStackedView::MapWidgetMode))
+        if (
+            (viewMode() != ImportStackedView::PreviewCameraMode) &&
+            (viewMode() != ImportStackedView::MapWidgetMode)
+           )
         {
             d->stackedView->setPreviewItem(list.first(), previousInfo, nextInfo);
         }
@@ -502,6 +483,7 @@ void ImportView::setZoomFactor(double zoom)
 void ImportView::slotZoomFactorChanged(double zoom)
 {
     toggleZoomActions();
+
     Q_EMIT signalZoomChanged(zoom);
 }
 
@@ -591,6 +573,7 @@ void ImportView::slotZoomIn()
     {
         setThumbSize(d->thumbSize + ThumbnailSize::Step);
         toggleZoomActions();
+
         Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (viewMode() == ImportStackedView::PreviewImageMode)
@@ -605,6 +588,7 @@ void ImportView::slotZoomOut()
     {
         setThumbSize(d->thumbSize - ThumbnailSize::Step);
         toggleZoomActions();
+
         Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (viewMode() == ImportStackedView::PreviewImageMode)
@@ -628,6 +612,7 @@ void ImportView::slotFitToWindow()
         int nts = d->iconView->fitToWidthIcons();
         setThumbSize(nts);
         toggleZoomActions();
+
         Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (viewMode() == ImportStackedView::PreviewImageMode)
@@ -707,9 +692,14 @@ void ImportView::slotTogglePreviewMode(const CamItemInfo& info, bool downloadPre
         return;
     }
 
-    if (((viewMode() == ImportStackedView::PreviewCameraMode) ||
-         (viewMode() == ImportStackedView::MapWidgetMode) || downloadPreview) &&
-         !info.isNull())
+    if (
+        (
+         (viewMode() == ImportStackedView::PreviewCameraMode) ||
+         (viewMode() == ImportStackedView::MapWidgetMode)     ||
+         downloadPreview
+        ) &&
+        !info.isNull()
+       )
     {
         d->lastViewMode      = viewMode();
         CamItemInfo previous = CamItemInfo();
@@ -743,30 +733,44 @@ void ImportView::slotViewModeChanged()
     switch (viewMode())
     {
         case ImportStackedView::PreviewCameraMode:
+        {
             Q_EMIT signalSwitchedToIconView();
             Q_EMIT signalThumbSizeChanged(d->iconView->thumbnailSize().size());
+
             break;
+        }
 
         case ImportStackedView::PreviewImageMode:
+        {
             Q_EMIT signalSwitchedToPreview();
+
             slotZoomFactorChanged(d->stackedView->zoomFactor());
             break;
+        }
+
 /* TODO
         case ImportStackedView::WelcomePageMode:
+        {
             Q_EMIT signalSwitchedToIconView();
             break;
+        }
 */
 
         case ImportStackedView::MediaPlayerMode:
+        {
             Q_EMIT signalSwitchedToPreview();
+
             break;
+        }
 
         case ImportStackedView::MapWidgetMode:
+        {
             Q_EMIT signalSwitchedToMapView();
 
             // TODO: connect map view's zoom buttons to main status bar zoom buttons
 
             break;
+        }
     }
 }
 

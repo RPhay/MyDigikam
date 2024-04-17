@@ -40,56 +40,34 @@ class Q_DECL_HIDDEN ImportStackedView::Private
 
 public:
 
-    explicit Private()
-      : dockArea(nullptr),
-        splitter(nullptr),
-        thumbBar(nullptr),
-        thumbBarDock(nullptr),
-        importIconView(nullptr),
-        importPreviewView(nullptr),
+    Private() = default;
+
+    QMainWindow*        dockArea            = nullptr;
+    QSplitter*          splitter            = nullptr;
+
+    ImportThumbnailBar* thumbBar            = nullptr;
+    ThumbBarDock*       thumbBarDock        = nullptr;
+    ImportIconView*     importIconView      = nullptr;
+    ImportPreviewView*  importPreviewView   = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
-        mapWidgetView(nullptr),
+    MapWidgetView*      mapWidgetView       = nullptr;
 
 #endif // HAVE_GEOLOCATION
 
 #ifdef HAVE_MEDIAPLAYER
 
-        mediaPlayerView(nullptr),
+    MediaPlayerView*    mediaPlayerView     = nullptr; ///< Reuse of albumgui mediaplayer view.
 
 #endif // HAVE_MEDIAPLAYER
 
-        syncingSelection(false)
-    {
-    }
-
-    QMainWindow*        dockArea;
-    QSplitter*          splitter;
-
-    ImportThumbnailBar* thumbBar;
-    ThumbBarDock*       thumbBarDock;
-    ImportIconView*     importIconView;
-    ImportPreviewView*  importPreviewView;
-
-#ifdef HAVE_GEOLOCATION
-
-    MapWidgetView*      mapWidgetView;
-
-#endif // HAVE_GEOLOCATION
-
-#ifdef HAVE_MEDIAPLAYER
-
-    MediaPlayerView*    mediaPlayerView; ///< Reuse of albumgui mediaplayer view.
-
-#endif // HAVE_MEDIAPLAYER
-
-    bool                syncingSelection;
+    bool                syncingSelection    = false;
 };
 
 ImportStackedView::ImportStackedView(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     d->importIconView    = new ImportIconView(this);
     d->importPreviewView = new ImportPreviewView(this);
@@ -272,19 +250,25 @@ MediaPlayerView* ImportStackedView::mediaPlayerView() const
 
 bool ImportStackedView::isInSingleFileMode() const
 {
-    return ((currentIndex() == PreviewImageMode) || (currentIndex() == MediaPlayerMode));
+    return (
+            (currentIndex() == PreviewImageMode) ||
+            (currentIndex() == MediaPlayerMode)
+           );
 }
 
 bool ImportStackedView::isInMultipleFileMode() const
 {
-    return ((currentIndex() == PreviewCameraMode) || (currentIndex() == MapWidgetMode));
+    return (
+            (currentIndex() == PreviewCameraMode) ||
+            (currentIndex() == MapWidgetMode)
+           );
 }
 
 void ImportStackedView::setPreviewItem(const CamItemInfo& info, const CamItemInfo& previous, const CamItemInfo& next)
 {
     if (info.isNull())
     {
-        if (viewMode() == MediaPlayerMode)
+        if      (viewMode() == MediaPlayerMode)
         {
 
 #ifdef HAVE_MEDIAPLAYER
