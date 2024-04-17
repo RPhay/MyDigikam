@@ -188,7 +188,7 @@ protected:
 
 protected:
 
-    ImportRotateOverlayDirection const m_direction = ImportRotateOverlayLeft;
+    ImportRotateOverlayDirection const m_direction;
 };
 
 // --------------------------------------------------------------------
@@ -227,7 +227,7 @@ private Q_SLOTS:
 
 private:
 
-    ImportRotateOverlayDirection const m_direction = ImportRotateOverlayLeft;
+    ImportRotateOverlayDirection const m_direction;
 };
 
 } // namespace Digikam
