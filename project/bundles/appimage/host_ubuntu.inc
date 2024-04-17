@@ -148,10 +148,8 @@ optional_packages=("ruby"                               # For i18n extraction
                    "patchelf"
                    "dpkg"
                    "clang"
-                   "python2"
                    "python3"
                    "python3-lxml"
-                   "python-is-python2"
                    "libboost-all-dev"
                    "libgphoto2-dev"
                    "libsane-dev"
@@ -213,6 +211,20 @@ for pkg in ${optional_packages[@]}; do
     sudo apt-get install -y ${pkg}
     echo "-------------------------------------------------------------------"
 done
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    optional_packages_qt5=(
+                           "python2"
+                           "python-is-python2"
+                          )
+
+    for pkg in ${optional_packages_qt5[@]}; do
+        sudo apt-get install -y ${pkg}
+        echo "-------------------------------------------------------------------"
+    done
+
+fi
 
 # Install more recent version of NodeJs for QtWebEngine.
 # https://learnubuntu.com/update-node-js/

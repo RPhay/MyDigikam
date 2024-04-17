@@ -20,10 +20,10 @@ DK_VERSION=master
 #DK_VERSION=gsoc21-qt6-port
 
 # Absolute path where are downloaded all tarballs to compile.
-DOWNLOAD_DIR="/d"
+DOWNLOAD_DIR="/mnt/data/d"
 
 # Absolute path where are compiled all tarballs
-BUILDING_DIR="/b/$DK_VERSION"
+BUILDING_DIR="/mnt/data/b/$DK_VERSION"
 
 # Absolute path where are installed all software components
 INSTALL_DIR="/usr"
@@ -47,7 +47,7 @@ DK_BUILDTEMP=$BUILDING_DIR/dktemp
 # - 6:    stable Qt6 release.
 
 #DK_QTVERSION="6"
-DK_QTVERSION="5"
+DK_QTVERSION="6"
 
 # KDE Plasma version.
 # See official release here: https://download.kde.org/stable/plasma/
