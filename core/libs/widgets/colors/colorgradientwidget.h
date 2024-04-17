@@ -33,14 +33,15 @@ class DIGIKAM_EXPORT ColorGradientWidget : public QWidget
 
 public:
 
-    explicit ColorGradientWidget(Qt::Orientation orientation, int size, QWidget* const parent = nullptr);
-    ~ColorGradientWidget() override;
+    explicit ColorGradientWidget(Qt::Orientation orientation, int size,
+                                 QWidget* const parent = nullptr);
+    ~ColorGradientWidget()          override;
 
     void setColors(const QColor& col1, const QColor& col2);
 
 protected:
 
-    void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*)   override;
 
 private:
 

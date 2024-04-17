@@ -27,22 +27,34 @@ qreal getComponentValue(const QColor& color, DColorChooserMode chooserMode)
     switch (chooserMode)
     {
         case ChooserRed:
+        {
             return color.redF();
+        }
 
         case ChooserGreen:
+        {
             return color.greenF();
+        }
 
         case ChooserBlue:
+        {
             return color.blueF();
+        }
 
         case ChooserHue:
+        {
             return color.hueF();
+        }
 
         case ChooserSaturation:
+        {
             return color.saturationF();
+        }
 
         default:
+        {
             return color.valueF();
+        }
     }
 }
 

@@ -27,12 +27,9 @@ class Q_DECL_HIDDEN ColorGradientWidget::Private
 
 public:
 
-    explicit Private()
-      : orientation(Qt::Horizontal)
-    {
-    }
+    Private() = default;
 
-    Qt::Orientation orientation;
+    Qt::Orientation orientation = Qt::Horizontal;
 
     QColor          color1;
     QColor          color2;
@@ -42,7 +39,7 @@ ColorGradientWidget::ColorGradientWidget(Qt::Orientation orientation,
                                          int size,
                                          QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->orientation = orientation;
     d->color1.setRgb(0, 0, 0);

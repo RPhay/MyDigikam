@@ -37,7 +37,7 @@ class DIGIKAM_EXPORT DColorSelector : public QPushButton
 public:
 
     explicit DColorSelector(QWidget* const parent = nullptr);
-    ~DColorSelector() override;
+    ~DColorSelector()               override;
 
     void setColor(const QColor& color);
     QColor color() const;
@@ -54,7 +54,7 @@ private Q_SLOTS:
 
 private:
 
-    void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*)   override;
 
 private:
 

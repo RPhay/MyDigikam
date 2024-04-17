@@ -42,7 +42,7 @@ public:
      * has a value range of [0..100] in both directions.
      */
     explicit DPointSelect(QWidget* const parent);
-    ~DPointSelect() override;
+    ~DPointSelect()                         override;
 
     /**
      * Sets the current values in horizontal and
@@ -111,7 +111,9 @@ protected:
      *
      * Draw within contentsRect() only.
      */
-    virtual void drawContents(QPainter*) {};
+    virtual void drawContents(QPainter*)
+    {
+    };
 
     /**
      * Override this function to draw the marker which
@@ -119,10 +121,10 @@ protected:
      */
     virtual void drawMarker(QPainter* p, int xp, int yp);
 
-    void paintEvent(QPaintEvent* e) override;
-    void mousePressEvent(QMouseEvent* e) override;
-    void mouseMoveEvent(QMouseEvent* e) override;
-    void wheelEvent(QWheelEvent*) override;
+    void paintEvent(QPaintEvent* e)         override;
+    void mousePressEvent(QMouseEvent* e)    override;
+    void mouseMoveEvent(QMouseEvent* e)     override;
+    void wheelEvent(QWheelEvent*)           override;
 
     /**
      * Converts a pixel position to its corresponding values.
@@ -159,7 +161,7 @@ public:
     /**
      * Destructor.
      */
-    ~DHueSaturationSelector() override;
+    ~DHueSaturationSelector()                   override;
 
     /**
      * Sets the chooser mode. The allowed modes are defined
@@ -231,14 +233,14 @@ protected:
      * which is used for buffering.
      */
     virtual void drawPalette(QPixmap* pixmap);
-    void resizeEvent(QResizeEvent*) override;
+    void resizeEvent(QResizeEvent*)             override;
 
     /**
      * Reimplemented from DPointSelect. This drawing is
      * buffered in a pixmap here. As real drawing
      * routine, drawPalette() is used.
      */
-    void drawContents(QPainter* painter) override;
+    void drawContents(QPainter* painter)        override;
 
 private:
 

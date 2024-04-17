@@ -34,28 +34,23 @@ class Q_DECL_HIDDEN DSelector::Private
 {
 public:
 
-    explicit Private()
-      : arrowsize(5),
-        m_indent(true),
-        arrowPE(QStyle::PE_IndicatorArrowLeft)
-    {
-    }
+    Private() = default;
 
-    const int                arrowsize;
-    bool                     m_indent;
-    QStyle::PrimitiveElement arrowPE;
+    const int                arrowsize  = 5;
+    bool                     m_indent   = true;
+    QStyle::PrimitiveElement arrowPE    = QStyle::PE_IndicatorArrowLeft;
 };
 
 DSelector::DSelector(QWidget* const parent)
     : QAbstractSlider(parent),
-      d(new Private)
+      d              (new Private)
 {
     setOrientation(Qt::Horizontal);
 }
 
 DSelector::DSelector(Qt::Orientation o, QWidget* const parent)
     : QAbstractSlider(parent),
-      d(new Private)
+      d              (new Private)
 {
     setOrientation(o);
 
@@ -245,6 +240,7 @@ void DSelector::setArrowDirection(Qt::ArrowType direction)
     switch (direction)
     {
         case Qt::UpArrow:
+        {
             if (orientation() == Qt::Horizontal)
             {
                 d->arrowPE = QStyle::PE_IndicatorArrowUp;
@@ -253,9 +249,12 @@ void DSelector::setArrowDirection(Qt::ArrowType direction)
             {
                 d->arrowPE = QStyle::PE_IndicatorArrowLeft;
             }
+
             break;
+        }
 
         case Qt::DownArrow:
+        {
             if (orientation() == Qt::Horizontal)
             {
                 d->arrowPE = QStyle::PE_IndicatorArrowDown;
@@ -264,9 +263,12 @@ void DSelector::setArrowDirection(Qt::ArrowType direction)
             {
                 d->arrowPE = QStyle::PE_IndicatorArrowRight;
             }
+
             break;
+        }
 
         case Qt::LeftArrow:
+        {
             if (orientation() == Qt::Vertical)
             {
                 d->arrowPE = QStyle::PE_IndicatorArrowLeft;
@@ -275,9 +277,12 @@ void DSelector::setArrowDirection(Qt::ArrowType direction)
             {
                 d->arrowPE = QStyle::PE_IndicatorArrowDown;
             }
+
             break;
+        }
 
         case Qt::RightArrow:
+        {
             if (orientation() == Qt::Vertical)
             {
                 d->arrowPE = QStyle::PE_IndicatorArrowRight;
@@ -286,10 +291,14 @@ void DSelector::setArrowDirection(Qt::ArrowType direction)
             {
                 d->arrowPE = QStyle::PE_IndicatorArrowUp;
             }
+
             break;
+        }
 
         case Qt::NoArrow:
+        {
             break;
+        }
     }
 }
 
@@ -298,21 +307,25 @@ Qt::ArrowType DSelector::arrowDirection() const
     switch (d->arrowPE)
     {
         case QStyle::PE_IndicatorArrowUp:
+        {
             return Qt::UpArrow;
-            break;
+        }
 
         case QStyle::PE_IndicatorArrowDown:
+        {
             return Qt::DownArrow;
-            break;
+        }
 
         case QStyle::PE_IndicatorArrowRight:
+        {
             return Qt::RightArrow;
-            break;
+        }
 
         case QStyle::PE_IndicatorArrowLeft:
         default:
+        {
             return Qt::LeftArrow;
-            break;
+        }
     }
 }
 
@@ -344,33 +357,29 @@ class Q_DECL_HIDDEN DColorValueSelector::Private
 {
 public:
 
-    explicit Private(DColorValueSelector* const q)
-        : q(q),
-          hue(0),
-          saturation(0),
-          color(0),
-          mode(ChooserClassic)
+    explicit Private(DColorValueSelector* const qq)
+        : q(qq)
     {
     }
 
-    DColorValueSelector* q;
-    int                  hue;
-    int                  saturation;
-    int                  color;
-    DColorChooserMode    mode;
+    DColorValueSelector* q          = nullptr;
+    int                  hue        = 0;
+    int                  saturation = 0;
+    int                  color      = 0;
+    DColorChooserMode    mode       = ChooserClassic;
     QPixmap              pixmap;
 };
 
 DColorValueSelector::DColorValueSelector(QWidget* const parent)
     : DSelector(Qt::Vertical, parent),
-      d(new Private(this))
+      d        (new Private(this))
 {
     setRange(0, 255);
 }
 
 DColorValueSelector::DColorValueSelector(Qt::Orientation o, QWidget* const parent)
     : DSelector(o, parent),
-      d(new Private(this))
+      d        (new Private(this))
 {
     setRange(0, 255);
 }

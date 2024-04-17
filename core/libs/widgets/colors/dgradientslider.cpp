@@ -40,34 +40,26 @@ public:
 
 public:
 
-    explicit Private()
-      : showMiddleCursor(false),
-        leftCursor(0.0),
-        middleCursor(0.5),
-        rightCursor(1.0),
-        leftColor(Qt::black),
-        rightColor(Qt::white),
-        parent(nullptr),
-        activeCursor(NoCursor)
+    Private()
     {
         middleColor.setRgb((leftColor.red()   + rightColor.red())   / 2,
                            (leftColor.green() + rightColor.green()) / 2,
                            (leftColor.blue()  + rightColor.blue())  / 2);
     }
 
-    bool             showMiddleCursor;
+    bool             showMiddleCursor   = false;
 
-    double           leftCursor;
-    double           middleCursor;
-    double           rightCursor;
+    double           leftCursor         = 0.0;
+    double           middleCursor       = 0.5;
+    double           rightCursor        = 1.0;
 
-    QColor           leftColor;
-    QColor           rightColor;
+    QColor           leftColor          = Qt::black;
+    QColor           rightColor         = Qt::white;
     QColor           middleColor;
 
-    DGradientSlider* parent;
+    DGradientSlider* parent             = nullptr;
 
-    Cursor           activeCursor;
+    Cursor           activeCursor       = NoCursor;
 
 public:
 
@@ -94,7 +86,7 @@ public:
 
 DGradientSlider::DGradientSlider(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->parent = this;
 
@@ -224,19 +216,27 @@ void DGradientSlider::mouseMoveEvent(QMouseEvent* e)
     switch (d->activeCursor)
     {
         case Private::LeftCursor:
+        {
             setLeftValue(v);
             break;
+        }
 
         case Private::MiddleCursor:
+        {
             setMiddleValue(v);
             break;
+        }
 
         case Private::RightCursor:
+        {
             setRightValue(v);
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 
@@ -283,6 +283,7 @@ void DGradientSlider::setRightValue(double v)
         adjustMiddleValue(d->leftCursor, v);
         d->rightCursor = v;
         update();
+
         Q_EMIT rightValueChanged(v);
         Q_EMIT middleValueChanged(d->middleCursor);
     }
@@ -297,6 +298,7 @@ void DGradientSlider::setLeftValue(double v)
         adjustMiddleValue(v, d->rightCursor);
         d->leftCursor = v;
         update();
+
         Q_EMIT leftValueChanged(v);
         Q_EMIT middleValueChanged(d->middleCursor);
     }
@@ -308,6 +310,7 @@ void DGradientSlider::setMiddleValue(double v)
     {
         d->middleCursor = v;
         update();
+
         Q_EMIT middleValueChanged(v);
     }
 }
