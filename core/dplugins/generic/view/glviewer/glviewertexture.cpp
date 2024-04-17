@@ -38,23 +38,7 @@ class Q_DECL_HIDDEN GLViewerTexture::Private
 {
 public:
 
-    explicit Private()
-      : rdx          (0.0),
-        rdy          (0.0),
-        z            (0.0),
-        ux           (0.0),
-        uy           (0.0),
-        rtx          (0.0),
-        rty          (0.0),
-        vtop         (0.0),
-        vbottom      (0.0),
-        vleft        (0.0),
-        vright       (0.0),
-        display_x    (0),
-        display_y    (0),
-        rotate_idx   (0),
-        iface        (nullptr),
-        displayWidget(nullptr)
+    Private()
     {
         rotate_list[0] = DMetadata::ORIENTATION_ROT_90;
         rotate_list[1] = DMetadata::ORIENTATION_ROT_180;
@@ -62,17 +46,27 @@ public:
         rotate_list[3] = DMetadata::ORIENTATION_ROT_180;
     }
 
-    float                       rdx, rdy, z, ux, uy, rtx, rty;
-    float                       vtop, vbottom, vleft, vright;
-    int                         display_x, display_y;
+    float                       rdx                 = 0.0F;
+    float                       rdy                 = 0.0F;
+    float                       z                   = 0.0F;
+    float                       ux                  = 0.0F;
+    float                       uy                  = 0.0F;
+    float                       rtx                 = 0.0F;
+    float                       rty                 = 0.0F;
+    float                       vtop                = 0.0F;
+    float                       vbottom             = 0.0F;
+    float                       vleft               = 0.0F;
+    float                       vright              = 0.0F;
+    int                         display_x           = 0;
+    int                         display_y           = 0;
     QString                     filename;
     QImage                      qimage;
     QImage                      fimage;
     DMetadata::ImageOrientation rotate_list[4];
-    int                         rotate_idx;
+    int                         rotate_idx          = 0;
     IccProfile                  iccProfile;
-    DInfoInterface*             iface;
-    QWidget*                    displayWidget;
+    DInfoInterface*             iface               = nullptr;
+    QWidget*                    displayWidget       = nullptr;
 
 private:
 
