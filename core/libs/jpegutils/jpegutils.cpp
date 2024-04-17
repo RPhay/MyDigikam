@@ -622,6 +622,31 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
 
 bool JpegRotator::performJpegTransform(TransformAction action, const QString& src, const QString& dest)
 {
+    JCOPY_OPTION copyoption         = JCOPYOPT_ALL;
+    jpeg_transform_info transformoption;
+
+    transformoption.force_grayscale = false;
+    transformoption.trim            = false;
+
+#if (JPEG_LIB_VERSION >= 80)
+
+    // we need to initialize a few more parameters, see bug 274947
+
+    transformoption.perfect         = true;   // See bug 320107 : we need perfect transform here.
+    transformoption.crop            = false;
+
+#endif // (JPEG_LIB_VERSION >= 80)
+
+    // NOTE : Cast is fine here. See metaengine_rotation.h for details.
+
+    transformoption.transform       = (JXFORM_CODE)action;
+
+    if (transformoption.transform == JXFORM_NONE)
+    {
+        return true;
+    }
+
+    // A transformation must be done.
 
 #ifdef Q_OS_WIN
 
@@ -657,32 +682,6 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
         return false;
     }
-
-    JCOPY_OPTION copyoption         = JCOPYOPT_ALL;
-    jpeg_transform_info transformoption;
-
-    transformoption.force_grayscale = false;
-    transformoption.trim            = false;
-
-#if (JPEG_LIB_VERSION >= 80)
-
-    // we need to initialize a few more parameters, see bug 274947
-
-    transformoption.perfect         = true;   // See bug 320107 : we need perfect transform here.
-    transformoption.crop            = false;
-
-#endif // (JPEG_LIB_VERSION >= 80)
-
-    // NOTE : Cast is fine here. See metaengine_rotation.h for details.
-
-    transformoption.transform       = (JXFORM_CODE)action;
-
-    if (transformoption.transform == JXFORM_NONE)
-    {
-        return true;
-    }
-
-    // A transformation must be done.
 
     struct jpeg_decompress_struct srcinfo;
     struct jpeg_compress_struct   dstinfo;
