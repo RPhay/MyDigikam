@@ -35,8 +35,8 @@ class Filter
 {
 public:
 
-    explicit Filter();
-    ~Filter();
+    Filter()  = default;
+    ~Filter() = default;
 
     QString toString();
     void    fromString(const QString& filter);

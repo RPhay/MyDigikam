@@ -76,7 +76,7 @@ class Q_DECL_HIDDEN ImportContextMenuHelper::Private
 public:
 
     explicit Private(ImportContextMenuHelper* const qq)
-        : q         (qq)
+        : q(qq)
     {
     }
 

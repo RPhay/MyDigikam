@@ -37,7 +37,7 @@ public:
     explicit ImportFilterComboBox(QWidget* const parent);
     ~ImportFilterComboBox() override;
 
-    Filter* currentFilter();
+    Filter* currentFilter() const;
     void saveSettings();
     void updateFilter();
 

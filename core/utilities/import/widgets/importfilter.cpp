@@ -28,14 +28,6 @@
 namespace Digikam
 {
 
-Filter::Filter()
-{
-}
-
-Filter::~Filter()
-{
-}
-
 QString Filter::toString()
 {
     return (

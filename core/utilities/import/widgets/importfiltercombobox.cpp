@@ -45,7 +45,7 @@ class Q_DECL_HIDDEN ImportFilterComboBox::Private
 {
 public:
 
-    explicit Private()
+    Private()
     {
         createFilters();
     }
@@ -108,7 +108,7 @@ ImportFilterComboBox::~ImportFilterComboBox()
     delete d;
 }
 
-Filter* ImportFilterComboBox::currentFilter()
+Filter* ImportFilterComboBox::currentFilter() const
 {
     Filter* const filter = d->filters.value(d->currentFilter);
 
