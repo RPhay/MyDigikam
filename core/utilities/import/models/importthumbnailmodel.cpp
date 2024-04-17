@@ -74,7 +74,11 @@ void ImportThumbnailModel::setEmitDataChanged(bool emitSignal)
 
 QVariant ImportThumbnailModel::data(const QModelIndex& index, int role) const
 {
-    if ((role == ThumbnailRole) && d->thumbsCtrl && index.isValid())
+    if (
+        (role == ThumbnailRole) &&
+        d->thumbsCtrl           &&
+        index.isValid()
+       )
     {
         CamItemInfo info = camItemInfo(index);
         QString     path = info.url().toLocalFile();

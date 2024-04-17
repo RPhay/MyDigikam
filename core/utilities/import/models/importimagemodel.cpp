@@ -267,6 +267,7 @@ int ImportItemModel::numberOfIndexesForCamItemId(qlonglong id) const
 }
 
 // static method
+
 CamItemInfo ImportItemModel::retrieveCamItemInfo(const QModelIndex& index)
 {
     if (!index.isValid())
@@ -286,6 +287,7 @@ CamItemInfo ImportItemModel::retrieveCamItemInfo(const QModelIndex& index)
 }
 
 // static method
+
 qlonglong ImportItemModel::retrieveCamItemId(const QModelIndex& index)
 {
     if (!index.isValid())
@@ -521,6 +523,7 @@ void ImportItemModel::emitDataChangedForAll()
 
     QModelIndex first = createIndex(0, 0);
     QModelIndex last  = createIndex(d->infos.size() - 1, 0);
+
     Q_EMIT dataChanged(first, last);
 }
 

@@ -60,8 +60,8 @@ public:
 
 public:
 
-    CamItemSortSettings();
-    ~CamItemSortSettings();
+    CamItemSortSettings()  = default;
+    ~CamItemSortSettings() = default;
 
     bool operator==(const CamItemSortSettings& other) const;
 
@@ -96,7 +96,10 @@ public:
     void setCategorizationMode(CategorizationMode mode);
     void setCategorizationSortOrder(SortOrder order);
 
-    bool isCategorized() const { return categorizationMode >= CategoryByFolder; }
+    bool isCategorized() const
+    {
+         return (categorizationMode >= CategoryByFolder);
+    }
 
     void setSortRole(SortRole role);
     void setSortOrder(SortOrder order);
@@ -176,20 +179,20 @@ public:
 
 public:
 
-    CategorizationMode   categorizationMode;
-    SortOrder            categorizationSortOrder;
+    CategorizationMode   categorizationMode             = NoCategories;
+    SortOrder            categorizationSortOrder        = DefaultOrder;
 
     /// Only Ascending or Descending, never be DefaultOrder
-    Qt::SortOrder        currentCategorizationSortOrder;
-    Qt::CaseSensitivity  categorizationCaseSensitivity;
+    Qt::SortOrder        currentCategorizationSortOrder = Qt::AscendingOrder;
+    Qt::CaseSensitivity  categorizationCaseSensitivity  = Qt::CaseSensitive;
 
     /// Camera Items Sorting
-    SortOrder            sortOrder;
-    SortRole             sortRole;
-    bool                 strTypeNatural;
+    SortOrder            sortOrder                      = DefaultOrder;
+    SortRole             sortRole                       = SortByFileName;
+    bool                 strTypeNatural                 = true;
 
-    Qt::SortOrder        currentSortOrder;
-    Qt::CaseSensitivity  sortCaseSensitivity;
+    Qt::SortOrder        currentSortOrder               = Qt::AscendingOrder;
+    Qt::CaseSensitivity  sortCaseSensitivity            = Qt::CaseSensitive;
 };
 
 } // namespace Digikam

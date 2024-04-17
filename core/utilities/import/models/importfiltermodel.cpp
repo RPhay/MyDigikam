@@ -23,12 +23,7 @@ namespace Digikam
 {
 
 ImportSortFilterModel::ImportSortFilterModel(QObject* const parent)
-    : DCategorizedSortFilterProxyModel(parent),
-      m_chainedModel                  (nullptr)
-{
-}
-
-ImportSortFilterModel::~ImportSortFilterModel()
+    : DCategorizedSortFilterProxyModel(parent)
 {
 }
 

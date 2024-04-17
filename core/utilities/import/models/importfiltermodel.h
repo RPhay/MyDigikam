@@ -37,7 +37,7 @@ class ImportSortFilterModel : public DCategorizedSortFilterProxyModel
 public:
 
     explicit ImportSortFilterModel(QObject* const parent = nullptr);
-    ~ImportSortFilterModel()                                                                      override;
+    ~ImportSortFilterModel()                                                                      override = default;
 
     void setSourceImportModel(ImportItemModel* const sourceModel);
     ImportItemModel* sourceImportModel()                                                    const;

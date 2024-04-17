@@ -25,23 +25,6 @@
 namespace Digikam
 {
 
-CamItemSortSettings::CamItemSortSettings()
-    : categorizationMode            (NoCategories),
-      categorizationSortOrder       (DefaultOrder),
-      currentCategorizationSortOrder(Qt::AscendingOrder),
-      categorizationCaseSensitivity (Qt::CaseSensitive),
-      sortOrder                     (DefaultOrder),
-      sortRole                      (SortByFileName),
-      strTypeNatural                (true),
-      currentSortOrder              (Qt::AscendingOrder),
-      sortCaseSensitivity           (Qt::CaseSensitive)
-{
-}
-
-CamItemSortSettings::~CamItemSortSettings()
-{
-}
-
 bool CamItemSortSettings::operator ==(const CamItemSortSettings& other) const
 {
     return (

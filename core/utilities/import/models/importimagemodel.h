@@ -65,7 +65,7 @@ public:
 public:
 
     explicit ImportItemModel(QObject* const parent = nullptr);
-    ~ImportItemModel() override;
+    ~ImportItemModel()                                                     override;
 
     /**
      * Used to set the camera controller, and connect with it.
@@ -95,9 +95,9 @@ public:
      * the given row (parent is the invalid QModelIndex, column is 0).
      * Note that camItemInfoRef must not be called with an invalid index as it will crash.
      */
-    CamItemInfo  camItemInfo(int row)    const;
-    CamItemInfo& camItemInfoRef(int row) const;
-    qlonglong    camItemId(int row)      const;
+    CamItemInfo  camItemInfo(int row)                                const;
+    CamItemInfo& camItemInfoRef(int row)                             const;
+    qlonglong    camItemId(int row)                                  const;
 
     /**
      * Return the index of a given CamItemInfo, if it exists in the model.
@@ -112,10 +112,10 @@ public:
      * the given file url. In case of multiple occurrences of the same file, the simpler
      * overrides returns any one found first, use the QList methods to retrieve all occurrences.
      */
-    QModelIndex        indexForUrl(const QUrl& fileUrl)   const;
-    QList<QModelIndex> indexesForUrl(const QUrl& fileUrl) const;
-    CamItemInfo        camItemInfo(const QUrl& fileUrl)   const;
-    QList<CamItemInfo> camItemInfos(const QUrl& fileUrl)  const;
+    QModelIndex        indexForUrl(const QUrl& fileUrl)               const;
+    QList<QModelIndex> indexesForUrl(const QUrl& fileUrl)             const;
+    CamItemInfo        camItemInfo(const QUrl& fileUrl)               const;
+    QList<CamItemInfo> camItemInfos(const QUrl& fileUrl)              const;
 
     /**
      * Clears the CamItemInfos and resets the model.
