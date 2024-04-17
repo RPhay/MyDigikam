@@ -128,7 +128,7 @@ nslookup scan.coverity.com
 
 SECONDS=0
 
-# Step 1: Initialize a build. Fetch a cloud upload url.
+echo "Initialize the build and fetch a Coverity cloud upload url."
 
 curl -X POST \
      -d version="git" \
@@ -139,33 +139,33 @@ curl -X POST \
      https://scan.coverity.com/projects/285/builds/init \
      | tee response
 
-# Step 2: Store response data to use in later stages.
+echo "Store Coverity response data to use in later stages."
 
 upload_url=$(jq -r '.url' response)
 build_id=$(jq -r '.build_id' response)
 
-# Step 3: Upload the tarball to the Cloud.
+echo "Upload the tarball to the Coverity loud. This can take a while..."
 
 curl -X PUT \
      --progress-bar \
      --header 'Content-Type: application/json' \
-     --upload-file myproject.tgz \
+     --upload-file $ORIG_WD/../../build.coverity/myproject.tgz \
      $upload_url
 
 RVAL=$?
 
 if [[ $RVAL == 0 ]] ; then
 
-    # Step 4: Trigger the build on Scan.
+    echo "Trigger the build on Coverity-Scan on-line analyzer."
 
     curl -X PUT \
          -d token=$DKCoverityToken \
          https://scan.coverity.com/projects/285/builds/$build_id/enqueue
 
     echo ""
-    echo "Done. Coverity Scan tarball 'myproject.tgz' is uploaded."
+    echo "Done. Coverity Scan tarball 'myproject.tgz' is uploaded and registered."
     echo "That took approximately $SECONDS seconds to upload."
-    echo "File will be post processed for analyse. A mail notification will be send to digikam-devel@kde.org."
+    echo "File will be post processed for analyze. A mail notification will be send to digikam-devel@kde.org when done."
 
     rm -fr $ORIG_WD/../../build.coverity
 
