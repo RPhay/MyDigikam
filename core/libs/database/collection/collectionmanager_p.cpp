@@ -17,10 +17,8 @@
 namespace Digikam
 {
 
-CollectionManager::Private::Private(CollectionManager* const s)
-    : changingDB  (false),
-      watchEnabled(false),
-      s           (s)
+CollectionManager::Private::Private(CollectionManager* const ss)
+    : s(ss)
 {
     QObject::connect(s, SIGNAL(triggerUpdateVolumesList()),
                      s, SLOT(slotTriggerUpdateVolumesList()),
@@ -40,7 +38,7 @@ QList<SolidVolumeInfo> CollectionManager::Private::listVolumes()
     }
     else
     {
-        // Q_EMIT a blocking queued signal to move call to main thread
+        // Emit a blocking queued signal to move call to main thread
 
         Q_EMIT s->triggerUpdateVolumesList();
 
@@ -394,8 +392,10 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
             QUrl otherUrl(otherLocation->identifier);
 
-            if ((otherUrl.scheme() == QLatin1String("volumeid")) &&
-                (QUrlQuery(otherUrl).queryItemValue(QLatin1String("label")) == queryItem))
+            if (
+                (otherUrl.scheme() == QLatin1String("volumeid"))    &&
+                (QUrlQuery(otherUrl).queryItemValue(QLatin1String("label")) == queryItem)
+               )
             {
                 hasOtherLocation = true;
                 break;

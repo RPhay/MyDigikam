@@ -135,7 +135,7 @@ QString CollectionManager::album(const QString& filePath)
 
         QString album = filePath.mid(rootPath.length());
 
-        if (album.isEmpty() ||( album == QLatin1String("/")))
+        if      (album.isEmpty() ||( album == QLatin1String("/")))
         {
             return QLatin1String("/");
         }
@@ -215,8 +215,10 @@ void CollectionManager::slotAlbumRootChange(const AlbumRootChangeset& changeset)
     {
         case AlbumRootChangeset::Added:
         case AlbumRootChangeset::Deleted:
+        {
             updateLocations();
             break;
+        }
 
         case AlbumRootChangeset::PropertiesChanged:
         {
@@ -253,7 +255,9 @@ void CollectionManager::slotAlbumRootChange(const AlbumRootChangeset& changeset)
         }
 
         case AlbumRootChangeset::Unknown:
+        {
             break;
+        }
     }
 }
 

@@ -210,7 +210,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         Q_EMIT locationPropertiesChanged(*albumLoc);
     }
 
-    // Do not Q_EMIT the locationAdded signal here, it is done in updateLocations()
+    // Do not emit the locationAdded signal here, it is done in updateLocations()
 
     updateLocations();
 
@@ -275,7 +275,7 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
 
     if (!volume.isNull())
     {
-        if (!volume.uuid.isEmpty())
+        if      (!volume.uuid.isEmpty())
         {
             if (volume.isRemovable)
             {
@@ -515,7 +515,7 @@ void CollectionManager::removeLocation(const CollectionLocation& location)
     scanner.safelyRemoveAlbums(albumIds);
     access.db()->deleteAlbumRoot(albumLoc->id());
 
-    // Do not Q_EMIT the locationRemoved signal here, it is done in updateLocations()
+    // Do not emit the locationRemoved signal here, it is done in updateLocations()
 
     updateLocations();
 }
@@ -531,8 +531,10 @@ QList<CollectionLocation> CollectionManager::checkHardWiredLocations()
     {
         // Hardwired and unavailable?
 
-        if ((location->type()   == CollectionLocation::VolumeHardWired) &&
-            (location->status() == CollectionLocation::LocationUnavailable))
+        if (
+            (location->type()   == CollectionLocation::VolumeHardWired)     &&
+            (location->status() == CollectionLocation::LocationUnavailable)
+           )
         {
             disappearedLocations << *location;
         }
@@ -939,7 +941,7 @@ void CollectionManager::updateLocations()
         d->locations = newLocations;
     }
 
-    // Q_EMIT deleted old locations
+    // Emit deleted old locations
 
     Q_FOREACH (AlbumRootLocation* const location, oldLocations)
     {
@@ -951,7 +953,7 @@ void CollectionManager::updateLocations()
         delete location;
     }
 
-    // Q_EMIT status changes (and new locations)
+    // Emit status changes (and new locations)
 
     int i = 0;
 

@@ -71,11 +71,7 @@ class Q_DECL_HIDDEN AlbumRootLocation : public CollectionLocation
 
 public:
 
-    AlbumRootLocation()
-      : available(false),
-        hidden   (false)
-    {
-    }
+    AlbumRootLocation() = default;
 
     explicit AlbumRootLocation(const AlbumRootInfo& info)
     {
@@ -85,8 +81,10 @@ public:
         QString path      = info.specificPath;
         m_caseSensitivity = (CaseSensitivity)info.caseSensitivity;
 
-        if ((path != QLatin1String("/")) &&
-            path.endsWith(QLatin1Char('/')))
+        if (
+            (path != QLatin1String("/"))    &&
+            path.endsWith(QLatin1Char('/'))
+           )
         {
             path.chop(1);
         }
@@ -172,8 +170,8 @@ public:
 public:
 
     QString specificPath;
-    bool    available;
-    bool    hidden;
+    bool    available   = false;
+    bool    hidden      = false;
 };
 
 // -------------------------------------------------
@@ -183,12 +181,7 @@ class Q_DECL_HIDDEN SolidVolumeInfo
 
 public:
 
-    SolidVolumeInfo()
-        : isRemovable  (false),
-          isOpticalDisc(false),
-          isMounted    (false)
-    {
-    }
+    SolidVolumeInfo() = default;
 
     bool isNull() const
     {
@@ -197,13 +190,13 @@ public:
 
 public:
 
-    QString udi;            ///< Solid device UDI of the StorageAccess device
-    QString path;           ///< mount path of volume, with trailing slash
-    QString uuid;           ///< UUID as from Solid
-    QString label;          ///< volume label (think of CDs)
-    bool    isRemovable;    ///< may be removed
-    bool    isOpticalDisc;  ///< is an optical disk device as CD/DVD/BR
-    bool    isMounted;      ///< is mounted on File System.
+    QString udi;                        ///< Solid device UDI of the StorageAccess device
+    QString path;                       ///< mount path of volume, with trailing slash
+    QString uuid;                       ///< UUID as from Solid
+    QString label;                      ///< volume label (think of CDs)
+    bool    isRemovable     = false;    ///< may be removed
+    bool    isOpticalDisc   = false;    ///< is an optical disk device as CD/DVD/BR
+    bool    isMounted       = false;    ///< is mounted on File System.
 };
 
 // -------------------------------------------------
@@ -213,7 +206,7 @@ class Q_DECL_HIDDEN CollectionManager::Private
 
 public:
 
-    explicit Private(CollectionManager* const s);
+    explicit Private(CollectionManager* const ss);
 
     /// hack for Solid's threading problems
     QList<SolidVolumeInfo> actuallyListVolumes();
@@ -270,10 +263,10 @@ public:
 
     QReadWriteLock                lock;
     QMap<int, AlbumRootLocation*> locations;
-    bool                          changingDB;
+    bool                          changingDB    = false;
     QStringList                   udisToWatch;
-    bool                          watchEnabled;
-    CollectionManager*            s;
+    bool                          watchEnabled  = false;
+    CollectionManager*            s             = nullptr;
 };
 
 // -------------------------------------------------

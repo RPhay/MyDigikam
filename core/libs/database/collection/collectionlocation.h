@@ -117,7 +117,7 @@ public:
 
 public:
 
-    CollectionLocation();
+    CollectionLocation() = default;
 
     /**
      * The id uniquely identifying this collection
@@ -177,12 +177,12 @@ public:
 
 protected:
 
-    int             m_id;
+    int             m_id                = -1;
     QString         m_label;
-    Status          m_status;
-    Type            m_type;
+    Status          m_status            = LocationNull;
+    Type            m_type              = VolumeHardWired;
     QString         m_path;
-    CaseSensitivity m_caseSensitivity;
+    CaseSensitivity m_caseSensitivity   = UnknownCaseSensitivity;
 
 };
 
