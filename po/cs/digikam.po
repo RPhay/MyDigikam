@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 01:47+0000\n"
+"POT-Creation-Date: 2024-04-17 01:44+0000\n"
 "PO-Revision-Date: 2023-11-21 15:39+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -4301,8 +4301,8 @@ msgstr "Dekodéry videa"
 #: core/app/views/utils/componentsinfodlg.cpp:263
 #: core/app/views/utils/componentsinfodlg.cpp:280
 #: core/app/views/utils/componentsinfodlg.cpp:298
-#: core/libs/dialogs/libsinfodlg.cpp:533 core/libs/dialogs/libsinfodlg.cpp:539
-#: core/libs/dialogs/libsinfodlg.cpp:614
+#: core/libs/dialogs/libsinfodlg.cpp:545 core/libs/dialogs/libsinfodlg.cpp:551
+#: core/libs/dialogs/libsinfodlg.cpp:626
 #, kde-format
 msgid "no entry"
 msgstr ""
@@ -28707,7 +28707,7 @@ msgstr "<i>Vzorkovací frekvence:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Video kodek:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:173
+#: core/libs/dialogs/infodlg.cpp:62 core/libs/dialogs/libsinfodlg.cpp:176
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -28731,67 +28731,67 @@ msgstr ""
 msgid "Items List"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:176
+#: core/libs/dialogs/libsinfodlg.cpp:179
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Ano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:177
+#: core/libs/dialogs/libsinfodlg.cpp:180
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:191
+#: core/libs/dialogs/libsinfodlg.cpp:194
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Vlastnosti"
 
-#: core/libs/dialogs/libsinfodlg.cpp:220
+#: core/libs/dialogs/libsinfodlg.cpp:223
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Knihovny"
 
-#: core/libs/dialogs/libsinfodlg.cpp:332
+#: core/libs/dialogs/libsinfodlg.cpp:335
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: core/libs/dialogs/libsinfodlg.cpp:424
+#: core/libs/dialogs/libsinfodlg.cpp:436
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: core/libs/dialogs/libsinfodlg.cpp:452
+#: core/libs/dialogs/libsinfodlg.cpp:464
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:486
+#: core/libs/dialogs/libsinfodlg.cpp:498
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Nastavení openCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:685
+#: core/libs/dialogs/libsinfodlg.cpp:697
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:690
+#: core/libs/dialogs/libsinfodlg.cpp:702
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:695
+#: core/libs/dialogs/libsinfodlg.cpp:707
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -30633,7 +30633,7 @@ msgstr "Efekt olejomalba"
 msgid "Rain Drops Effect"
 msgstr "Efekt dešťové kapky"
 
-#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:162
+#: core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp:163
 #, kde-format
 msgid "Greycstoration Filter"
 msgstr "Filtr Greycstoration"
@@ -35930,7 +35930,7 @@ msgid "Description"
 msgstr "Popis"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1904
+#: core/utilities/import/main/importui.cpp:1942
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -56391,7 +56391,7 @@ msgstr ""
 "podsvětlení obrázku."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:494
-#: core/utilities/import/main/importui.cpp:488
+#: core/utilities/import/main/importui.cpp:492
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
@@ -56452,8 +56452,8 @@ msgid "Rotate Right"
 msgstr "Rotovat vpravo"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:583
-#: core/utilities/import/main/importui.cpp:530
-#: core/utilities/import/main/importui.cpp:767
+#: core/utilities/import/main/importui.cpp:534
+#: core/utilities/import/main/importui.cpp:775
 #, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -57007,94 +57007,94 @@ msgstr "Chyba při získávání náhledu pro <filename>%1</filename>"
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Nelze získat metadata pro <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:626
-#: core/utilities/import/backend/cameracontroller.cpp:993
-#: core/utilities/import/main/importui.cpp:2419
+#: core/utilities/import/backend/cameracontroller.cpp:632
+#: core/utilities/import/backend/cameracontroller.cpp:1003
+#: core/utilities/import/main/importui.cpp:2457
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Nelze stáhnout soubor <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:724
+#: core/utilities/import/backend/cameracontroller.cpp:730
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Nelze převést soubor <filename>%1</filename> do JPEG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:769
+#: core/utilities/import/backend/cameracontroller.cpp:778
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Nelze převést soubor <filename>%1</filename> do DNG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:786
+#: core/utilities/import/backend/cameracontroller.cpp:795
 #, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:805
+#: core/utilities/import/backend/cameracontroller.cpp:815
 #, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Nelze otevřít skript pro <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:879
+#: core/utilities/import/backend/cameracontroller.cpp:889
 #, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Čas uživatelskému skriptu <filename>%1</filename> vypršel"
 
-#: core/utilities/import/backend/cameracontroller.cpp:886
+#: core/utilities/import/backend/cameracontroller.cpp:896
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Nelze spustit skript pro <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1001
+#: core/utilities/import/backend/cameracontroller.cpp:1011
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Nelze stáhnout soubor <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1005
+#: core/utilities/import/backend/cameracontroller.cpp:1015
 #, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "Nelze stáhnout soubor <b>%1</b>. Přejete si pokračovat?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1022
+#: core/utilities/import/backend/cameracontroller.cpp:1032
 #, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Chyba při odesílání <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1030
+#: core/utilities/import/backend/cameracontroller.cpp:1040
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Nelze odeslat soubor <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1034
+#: core/utilities/import/backend/cameracontroller.cpp:1044
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "Nelze odeslat soubor <b>%1</b>. Přejete si pokračovat?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1049
+#: core/utilities/import/backend/cameracontroller.cpp:1059
 #, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Nelze smazat soubor <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1057
+#: core/utilities/import/backend/cameracontroller.cpp:1067
 #, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Nelze smazat soubor <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1061
+#: core/utilities/import/backend/cameracontroller.cpp:1071
 #, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "Nelze smazat soubor <b>%1</b>. Přejete si pokračovat?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1077
+#: core/utilities/import/backend/cameracontroller.cpp:1087
 #, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Nelze uzamknout <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1085
+#: core/utilities/import/backend/cameracontroller.cpp:1095
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr ""
 
-#: core/utilities/import/backend/cameracontroller.cpp:1089
+#: core/utilities/import/backend/cameracontroller.cpp:1099
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
@@ -57157,7 +57157,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "ne"
 
-#: core/utilities/import/backend/umscamera.cpp:571
+#: core/utilities/import/backend/umscamera.cpp:566
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57168,7 +57168,7 @@ msgstr ""
 "Ovladač pro \"fotoaparát\" připojený přes USB/IEEE1394 nebo čtečku karet.\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:578
+#: core/utilities/import/backend/umscamera.cpp:573
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -57186,7 +57186,7 @@ msgstr ""
 "UUID: \"%5\"\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:586
+#: core/utilities/import/backend/umscamera.cpp:581
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -57206,29 +57206,29 @@ msgstr ""
 "Vymazat adresáře: \"%6\"\n"
 "\n"
 
+#: core/utilities/import/backend/umscamera.cpp:587
+#: core/utilities/import/backend/umscamera.cpp:588
+#: core/utilities/import/backend/umscamera.cpp:589
+#: core/utilities/import/backend/umscamera.cpp:590
+#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
-#: core/utilities/import/backend/umscamera.cpp:593
-#: core/utilities/import/backend/umscamera.cpp:594
-#: core/utilities/import/backend/umscamera.cpp:595
-#: core/utilities/import/backend/umscamera.cpp:596
-#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "ano"
 
+#: core/utilities/import/backend/umscamera.cpp:587
+#: core/utilities/import/backend/umscamera.cpp:588
+#: core/utilities/import/backend/umscamera.cpp:589
+#: core/utilities/import/backend/umscamera.cpp:590
+#: core/utilities/import/backend/umscamera.cpp:591
 #: core/utilities/import/backend/umscamera.cpp:592
-#: core/utilities/import/backend/umscamera.cpp:593
-#: core/utilities/import/backend/umscamera.cpp:594
-#: core/utilities/import/backend/umscamera.cpp:595
-#: core/utilities/import/backend/umscamera.cpp:596
-#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "ne"
 
-#: core/utilities/import/backend/umscamera.cpp:603
+#: core/utilities/import/backend/umscamera.cpp:598
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57238,7 +57238,7 @@ msgstr ""
 "Pro více informací o ovladači \"připojeného fotoaparátu\" si prosím přečtěte "
 "oddíl \"podporované digitální fotoaparáty\" v dokumentaci digiKamu."
 
-#: core/utilities/import/backend/umscamera.cpp:611
+#: core/utilities/import/backend/umscamera.cpp:606
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57370,367 +57370,367 @@ msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "Operace za běhu (pouze JPEG)"
 
-#: core/utilities/import/main/importui.cpp:165
+#: core/utilities/import/main/importui.cpp:167
 #, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "Volby převodu do DNG"
 
-#: core/utilities/import/main/importui.cpp:171
+#: core/utilities/import/main/importui.cpp:175
 #, kde-format
 msgctxt "@item"
 msgid "Scripting"
 msgstr "Skriptování"
 
-#: core/utilities/import/main/importui.cpp:175
+#: core/utilities/import/main/importui.cpp:179
 #, kde-format
 msgctxt "@title"
 msgid "Settings"
 msgstr "Nastavení"
 
-#: core/utilities/import/main/importui.cpp:190
+#: core/utilities/import/main/importui.cpp:194
 #, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: core/utilities/import/main/importui.cpp:197
+#: core/utilities/import/main/importui.cpp:201
 #, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "Informace"
 
-#: core/utilities/import/main/importui.cpp:204
+#: core/utilities/import/main/importui.cpp:208
 #, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "Zachytávat"
 
-#: core/utilities/import/main/importui.cpp:216
+#: core/utilities/import/main/importui.cpp:220
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: core/utilities/import/main/importui.cpp:224
+#: core/utilities/import/main/importui.cpp:228
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "Zrušit výběr"
 
-#: core/utilities/import/main/importui.cpp:232
+#: core/utilities/import/main/importui.cpp:236
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "Obrátit výběr"
 
-#: core/utilities/import/main/importui.cpp:240
+#: core/utilities/import/main/importui.cpp:244
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "Vybrat nové položky"
 
-#: core/utilities/import/main/importui.cpp:247
+#: core/utilities/import/main/importui.cpp:251
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "Vybrat zamknuté položky"
 
-#: core/utilities/import/main/importui.cpp:255
+#: core/utilities/import/main/importui.cpp:259
 #, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "Stáhnout"
 
-#: core/utilities/import/main/importui.cpp:260
+#: core/utilities/import/main/importui.cpp:264
 #, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "Stáhnout nové"
 
-#: core/utilities/import/main/importui.cpp:270
+#: core/utilities/import/main/importui.cpp:274
 #, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "Stáhnout vybrané"
 
-#: core/utilities/import/main/importui.cpp:277
+#: core/utilities/import/main/importui.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "Stáhnout vše"
 
-#: core/utilities/import/main/importui.cpp:285
+#: core/utilities/import/main/importui.cpp:289
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "Stáhnout/smazat nové"
 
-#: core/utilities/import/main/importui.cpp:293
+#: core/utilities/import/main/importui.cpp:297
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "Stáhnout/smazat vybrané"
 
-#: core/utilities/import/main/importui.cpp:301
+#: core/utilities/import/main/importui.cpp:305
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "Stáhnout/smazat vše"
 
-#: core/utilities/import/main/importui.cpp:308
+#: core/utilities/import/main/importui.cpp:312
 #, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "Odeslat..."
 
-#: core/utilities/import/main/importui.cpp:316
+#: core/utilities/import/main/importui.cpp:320
 #, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "Přepnout zámek"
 
-#: core/utilities/import/main/importui.cpp:324
+#: core/utilities/import/main/importui.cpp:328
 #, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "Označit jako staženo"
 
-#: core/utilities/import/main/importui.cpp:331
+#: core/utilities/import/main/importui.cpp:335
 #, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "Smazat"
 
-#: core/utilities/import/main/importui.cpp:336
+#: core/utilities/import/main/importui.cpp:340
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "Smazat vybrané"
 
-#: core/utilities/import/main/importui.cpp:344
+#: core/utilities/import/main/importui.cpp:348
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "Smazat vše"
 
-#: core/utilities/import/main/importui.cpp:350
+#: core/utilities/import/main/importui.cpp:354
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "Smazat nové"
 
-#: core/utilities/import/main/importui.cpp:358
+#: core/utilities/import/main/importui.cpp:362
 #, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "Pohledy"
 
-#: core/utilities/import/main/importui.cpp:362
+#: core/utilities/import/main/importui.cpp:366
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Náhledy"
 
-#: core/utilities/import/main/importui.cpp:369
+#: core/utilities/import/main/importui.cpp:373
 #, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "Náhled položky"
 
-#: core/utilities/import/main/importui.cpp:378
+#: core/utilities/import/main/importui.cpp:382
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "Mapa"
 
-#: core/utilities/import/main/importui.cpp:389
+#: core/utilities/import/main/importui.cpp:393
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "&Seřadit položky"
 
-#: core/utilities/import/main/importui.cpp:390
+#: core/utilities/import/main/importui.cpp:394
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr "Hodnota, podle které jsou položky v pohledu s náhledy seřazeny"
 
-#: core/utilities/import/main/importui.cpp:394
+#: core/utilities/import/main/importui.cpp:398
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "Podle názvu"
 
-#: core/utilities/import/main/importui.cpp:395
+#: core/utilities/import/main/importui.cpp:399
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "Podle umístění"
 
-#: core/utilities/import/main/importui.cpp:396
+#: core/utilities/import/main/importui.cpp:400
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "Podle data"
 
-#: core/utilities/import/main/importui.cpp:397
+#: core/utilities/import/main/importui.cpp:401
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "Podle velikosti"
 
-#: core/utilities/import/main/importui.cpp:398
+#: core/utilities/import/main/importui.cpp:402
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "Podle hodnocení"
 
-#: core/utilities/import/main/importui.cpp:399
+#: core/utilities/import/main/importui.cpp:403
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "Podle stavu stahování"
 
-#: core/utilities/import/main/importui.cpp:423
+#: core/utilities/import/main/importui.cpp:427
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "Způsob řazení p&oložek"
 
-#: core/utilities/import/main/importui.cpp:424
+#: core/utilities/import/main/importui.cpp:428
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr "Určuje, zda mají být položky seřazeny vzestupně nebo sestupně."
 
-#: core/utilities/import/main/importui.cpp:428
+#: core/utilities/import/main/importui.cpp:432
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "Vzestupně"
 
-#: core/utilities/import/main/importui.cpp:430
+#: core/utilities/import/main/importui.cpp:434
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Sestupně"
 
-#: core/utilities/import/main/importui.cpp:442
+#: core/utilities/import/main/importui.cpp:446
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "&Seskupit položky"
 
-#: core/utilities/import/main/importui.cpp:443
+#: core/utilities/import/main/importui.cpp:447
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr "Kategorie ve kterých jsou zobrazeny položky v zobrazení náhledů"
 
-#: core/utilities/import/main/importui.cpp:447
+#: core/utilities/import/main/importui.cpp:451
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Nesetříděný seznam"
 
-#: core/utilities/import/main/importui.cpp:448
+#: core/utilities/import/main/importui.cpp:452
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "Podle složky"
 
-#: core/utilities/import/main/importui.cpp:449
+#: core/utilities/import/main/importui.cpp:453
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "Podle formátu"
 
-#: core/utilities/import/main/importui.cpp:450
+#: core/utilities/import/main/importui.cpp:454
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "Podle data"
 
-#: core/utilities/import/main/importui.cpp:476
+#: core/utilities/import/main/importui.cpp:480
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "Přizpůsobit &oknu"
 
-#: core/utilities/import/main/importui.cpp:481
+#: core/utilities/import/main/importui.cpp:485
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Zvětšení na 100%"
 
-#: core/utilities/import/main/importui.cpp:499
+#: core/utilities/import/main/importui.cpp:503
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Zobrazit historii"
 
-#: core/utilities/import/main/importui.cpp:505
+#: core/utilities/import/main/importui.cpp:509
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Zobrazit panel náhledů"
 
-#: core/utilities/import/main/importui.cpp:537
+#: core/utilities/import/main/importui.cpp:541
 #, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "Zkusit znovu"
 
-#: core/utilities/import/main/importui.cpp:756
+#: core/utilities/import/main/importui.cpp:764
 #, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "Ukončit náhledový režim"
 
-#: core/utilities/import/main/importui.cpp:761
+#: core/utilities/import/main/importui.cpp:769
 #, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "Následující obrázek"
 
-#: core/utilities/import/main/importui.cpp:773
+#: core/utilities/import/main/importui.cpp:781
 #, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "První obrázek"
 
-#: core/utilities/import/main/importui.cpp:778
+#: core/utilities/import/main/importui.cpp:786
 #, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "Poslední obrázek"
 
-#: core/utilities/import/main/importui.cpp:860
+#: core/utilities/import/main/importui.cpp:887
 #, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Ruším aktuální operaci, prosím čekejte..."
 
-#: core/utilities/import/main/importui.cpp:915
+#: core/utilities/import/main/importui.cpp:942
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "Přejete si zavřít dialogové okno a zrušit probíhající operaci?"
 
-#: core/utilities/import/main/importui.cpp:925
+#: core/utilities/import/main/importui.cpp:952
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Odpojuji fotoaparát, prosím čekejte..."
 
-#: core/utilities/import/main/importui.cpp:1000
+#: core/utilities/import/main/importui.cpp:1027
 #, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Připraven"
 
-#: core/utilities/import/main/importui.cpp:1057
+#: core/utilities/import/main/importui.cpp:1084
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57740,13 +57740,13 @@ msgstr ""
 "Nešlo se připojit k fotoaparátu. Ujistěte se prosím, že je správně připojený "
 "a zapnutý."
 
-#: core/utilities/import/main/importui.cpp:1151
+#: core/utilities/import/main/importui.cpp:1178
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Vybrat obrázek k odeslání"
 
-#: core/utilities/import/main/importui.cpp:1186
+#: core/utilities/import/main/importui.cpp:1213
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57760,7 +57760,7 @@ msgstr ""
 "Požadované místo: %1 \n"
 "Dostupné místo: %2"
 
-#: core/utilities/import/main/importui.cpp:1241
+#: core/utilities/import/main/importui.cpp:1268
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57770,13 +57770,13 @@ msgstr ""
 "Složka ve fotoaparátu \"%1\" už obsahuje položku \"%2\".\n"
 "Zadejte prosím nový název souboru (bez přípony):"
 
-#: core/utilities/import/main/importui.cpp:1245
+#: core/utilities/import/main/importui.cpp:1272
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Soubor již existuje"
 
-#: core/utilities/import/main/importui.cpp:1312
+#: core/utilities/import/main/importui.cpp:1339
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57786,7 +57786,7 @@ msgstr ""
 "Uživatelský formát data vašeho cílového alba je neplatný. Zkontrolujte "
 "prosím nastavení..."
 
-#: core/utilities/import/main/importui.cpp:1351
+#: core/utilities/import/main/importui.cpp:1378
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57798,7 +57798,7 @@ msgstr ""
 "fotoaparátu není dostupná. Prosím, zvolte jinou sbírku v dialogu nastavení "
 "fotoaparátu."
 
-#: core/utilities/import/main/importui.cpp:1360
+#: core/utilities/import/main/importui.cpp:1387
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57808,7 +57808,7 @@ msgstr ""
 "Vaše výchozí cílové album, nastavené pro stahování z fotoaparátu není "
 "dostupné. Prosím, zvolte jiné album v dialogu nastavení fotoaparátu."
 
-#: core/utilities/import/main/importui.cpp:1385
+#: core/utilities/import/main/importui.cpp:1412
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57818,7 +57818,7 @@ msgstr ""
 "Vyberte prosím cílové album z knihovny digiKamu, do nějž se mají importovat "
 "obrázky z fotoaparátu."
 
-#: core/utilities/import/main/importui.cpp:1416
+#: core/utilities/import/main/importui.cpp:1443
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57826,17 +57826,17 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1470
+#: core/utilities/import/main/importui.cpp:1497
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Nezdařilo se posunutí souboru Sidecar pro <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1477
+#: core/utilities/import/main/importui.cpp:1504
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Nezdařilo se přesunutí souboru pro <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1901
+#: core/utilities/import/main/importui.cpp:1939
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57848,7 +57848,7 @@ msgstr ""
 "položky nebudou smazány. Pokud si je přesto přejete vymazat, odemkněte je "
 "prosím a zkuste to znovu."
 
-#: core/utilities/import/main/importui.cpp:1912
+#: core/utilities/import/main/importui.cpp:1950
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57872,19 +57872,19 @@ msgstr[2] ""
 "Smazané soubory nelze obnovit.\n"
 "Jste si jisti?"
 
-#: core/utilities/import/main/importui.cpp:1922
+#: core/utilities/import/main/importui.cpp:1960
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Varování"
 
-#: core/utilities/import/main/importui.cpp:1966
+#: core/utilities/import/main/importui.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Nedostatek místa na disku"
 
-#: core/utilities/import/main/importui.cpp:1967
+#: core/utilities/import/main/importui.cpp:2005
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57904,8 +57904,8 @@ msgstr ""
 "\n"
 "Přesto zkusit?"
 
-#: core/utilities/import/main/importui.cpp:2232
-#: core/utilities/import/main/importui.cpp:2260
+#: core/utilities/import/main/importui.cpp:2270
+#: core/utilities/import/main/importui.cpp:2298
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -57914,13 +57914,13 @@ msgstr[0] "Není vybrána žádná položka (%1 položka)"
 msgstr[1] "Není vybrána žádná položka (%1 položky)"
 msgstr[2] "Není vybrána žádná položka (%1 položek)"
 
-#: core/utilities/import/main/importui.cpp:2252
+#: core/utilities/import/main/importui.cpp:2290
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "\"%1\" (%2 z %3)"
 
-#: core/utilities/import/main/importui.cpp:2271
+#: core/utilities/import/main/importui.cpp:2309
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -57929,22 +57929,22 @@ msgstr[0] "%1/%2 položka vybrána"
 msgstr[1] "%1/%2 položky vybrány"
 msgstr[2] "%1/%2 položek vybráno"
 
-#: core/utilities/import/main/importui.cpp:2354
+#: core/utilities/import/main/importui.cpp:2392
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Přeskočen soubor <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2376
+#: core/utilities/import/main/importui.cpp:2414
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Přejmenovat soubor na <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2399
+#: core/utilities/import/main/importui.cpp:2437
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Nezdařilo se uložení souboru Sidecar pro <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2476
+#: core/utilities/import/main/importui.cpp:2514
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -57954,19 +57954,19 @@ msgstr ""
 "Stahování obrázků dokončeno, můžete odpojit váš fotoaparát, zatímco obrázky "
 "jsou automaticky otáčeny"
 
-#: core/utilities/import/main/importui.cpp:2484
+#: core/utilities/import/main/importui.cpp:2522
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Stahování obrázků bylo dokončeno"
 
-#: core/utilities/import/main/importui.cpp:2510
+#: core/utilities/import/main/importui.cpp:2548
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Soubor se stejným názvem (\"%1) již ve složce \"%2\" existuje."
 
-#: core/utilities/import/main/importui.cpp:2523
+#: core/utilities/import/main/importui.cpp:2561
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
