@@ -44,11 +44,6 @@ bool s_modificationDateEquals(const QDateTime& a, const QDateTime& b)
 
 // --------------------------------------------------------------------
 
-NewlyAppearedFile::NewlyAppearedFile()
-    : albumId(0)
-{
-}
-
 NewlyAppearedFile::NewlyAppearedFile(int albumId, const QString& fileName)
     : albumId (albumId),
       fileName(fileName)
@@ -58,7 +53,7 @@ NewlyAppearedFile::NewlyAppearedFile(int albumId, const QString& fileName)
 bool NewlyAppearedFile::operator==(const NewlyAppearedFile& other) const
 {
     return (
-            (albumId  == other.albumId) &&
+            (albumId  == other.albumId ) &&
             (fileName == other.fileName)
            );
 }
@@ -217,18 +212,6 @@ void CollectionScannerHintContainerImplementation::clear()
 }
 
 // --------------------------------------------------------------------
-
-CollectionScanner::Private::Private()
-    : wantSignals         (false),
-      needTotalFiles      (false),
-      performFastScan     (true),
-      hints               (nullptr),
-      updatingHashHint    (false),
-      recordHistoryIds    (false),
-      deferredFileScanning(false),
-      observer            (nullptr)
-{
-}
 
 void CollectionScanner::Private::resetRemovedItemsTime()
 {

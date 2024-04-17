@@ -682,9 +682,11 @@ int CollectionScanner::countItemsInFolder(const QString& directory)
 
     for (fi = list.constBegin() ; fi != list.constEnd() ; ++fi)
     {
-        if (fi->isDir()                            &&
+        if (
+            fi->isDir()                            &&
             (fi->fileName() != QLatin1String(".")) &&
-            (fi->fileName() != QLatin1String("..")))
+            (fi->fileName() != QLatin1String(".."))
+           )
         {
             items += countItemsInFolder( fi->filePath() );
         }

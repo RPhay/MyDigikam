@@ -23,6 +23,7 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
+
 #ifndef Q_CC_MSVC
 #   include <unistd.h>
 #endif
@@ -74,14 +75,14 @@ class Q_DECL_HIDDEN NewlyAppearedFile
 
 public:
 
-    NewlyAppearedFile();
+    NewlyAppearedFile() = default;
     NewlyAppearedFile(int albumId, const QString& fileName);
 
     bool operator==(const NewlyAppearedFile& other) const;
 
 public:
 
-    int     albumId;
+    int     albumId = 0;
     QString fileName;
 };
 
@@ -89,7 +90,7 @@ public:
 
 inline uint qHash(const NewlyAppearedFile& file)
 {
-    return ::qHash(file.albumId) ^ ::qHash(file.fileName);
+    return (::qHash(file.albumId) ^ ::qHash(file.fileName));
 }
 
 // --------------------------------------------------------------------
@@ -131,7 +132,7 @@ class Q_DECL_HIDDEN CollectionScanner::Private
 
 public:
 
-    explicit Private();
+    Private() = default;
 
 public:
 
@@ -152,27 +153,27 @@ public:
     QSet<QString>                                 ignoreDirectory;
 
     QList<int>                                    scannedAlbums;
-    bool                                          wantSignals;
-    bool                                          needTotalFiles;
-    bool                                          performFastScan;
+    bool                                          wantSignals               = false;
+    bool                                          needTotalFiles            = false;
+    bool                                          performFastScan           = true;
 
     QDateTime                                     removedItemsTime;
 
-    CollectionScannerHintContainerImplementation* hints;
+    CollectionScannerHintContainerImplementation* hints                     = nullptr;
     QHash<int, int>                               establishedSourceAlbums;
-    bool                                          updatingHashHint;
+    bool                                          updatingHashHint          = false;
 
-    bool                                          recordHistoryIds;
+    bool                                          recordHistoryIds          = false;
     QSet<qlonglong>                               needResolveHistorySet;
     QSet<qlonglong>                               needTaggingHistorySet;
 
-    bool                                          deferredFileScanning;
+    bool                                          deferredFileScanning      = false;
     QSet<QString>                                 deferredAlbumPaths;
 
     QHash<QString, QDateTime>                     albumDateCache;
     QList<qlonglong>                              newIdsList;
 
-    CollectionScannerObserver*                    observer;
+    CollectionScannerObserver*                    observer                  = nullptr;
 };
 
 } // namespace Digikam

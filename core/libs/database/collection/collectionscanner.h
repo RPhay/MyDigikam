@@ -78,7 +78,7 @@ public:
 
 public:
 
-    explicit CollectionScanner();
+    CollectionScanner();
     ~CollectionScanner() override;
 
     //@{

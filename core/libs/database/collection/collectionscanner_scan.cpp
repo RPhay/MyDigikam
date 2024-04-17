@@ -412,13 +412,17 @@ qlonglong CollectionScanner::scanFile(const QFileInfo& fi, int albumId, qlonglon
         {
             case NormalScan:
             case ModifiedScan:
+            {
                 imageId = scanNewFile(fi, albumId);
                 break;
+            }
 
             case Rescan:
             case CleanScan:
+            {
                 imageId = scanNewFileFullScan(fi, albumId);
                 break;
+            }
         }
     }
     else
@@ -428,20 +432,28 @@ qlonglong CollectionScanner::scanFile(const QFileInfo& fi, int albumId, qlonglon
         switch (mode)
         {
             case NormalScan:
+            {
                 scanFileNormal(fi, scanInfo);
                 break;
+            }
 
             case ModifiedScan:
+            {
                 scanModifiedFile(fi, scanInfo);
                 break;
+            }
 
             case Rescan:
+            {
                 rescanFile(fi, scanInfo);
                 break;
+            }
 
             case CleanScan:
+            {
                 cleanScanFile(fi, scanInfo);
                 break;
+            }
         }
     }
 
@@ -544,6 +556,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
         if (d->wantSignals && counter && (counter % 10 == 0))
         {
             Q_EMIT scannedFiles(counter);
+
             counter = 0;
         }
 
@@ -761,6 +774,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
             if (d->wantSignals && counter && (counter % 100 == 0))
             {
                 Q_EMIT scannedFiles(counter);
+
                 counter = 0;
             }
 
@@ -847,11 +861,12 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                     }
                 }
 
-                // Q_EMIT signals for scanned files with much higher granularity
+                // Emit signals for scanned files with much higher granularity
 
                 if (d->wantSignals && counter && (counter % 2 == 0))
                 {
                     Q_EMIT scannedFiles(counter);
+
                     counter = 0;
                 }
             }
@@ -1283,7 +1298,7 @@ bool CollectionScanner::databaseInitialScanDone()
 {
     CoreDbAccess access;
 
-    return !access.db()->getSetting(QLatin1String("Scanned")).isEmpty();
+    return (!access.db()->getSetting(QLatin1String("Scanned")).isEmpty());
 }
 
 } // namespace Digikam

@@ -47,7 +47,7 @@ void CollectionScanner::setPerformFastScan(bool on)
 
 CollectionScannerHintContainer* CollectionScanner::createHintContainer()
 {
-    return new CollectionScannerHintContainerImplementation;
+    return (new CollectionScannerHintContainerImplementation);
 }
 
 void CollectionScanner::setHintContainer(CollectionScannerHintContainer* const container)
