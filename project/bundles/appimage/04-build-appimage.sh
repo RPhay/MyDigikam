@@ -571,8 +571,7 @@ fi
 
 if [[ $DK_QTVERSION == 5 ]] ; then
 
-    # No prefix for the Qt5 version.
-    QT_SUF=""
+    QT_SUF="-Qt5"
 
 else
 
@@ -664,7 +663,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older bundle AppImage files from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-x86-64*$DEBUG_SUF.appimage*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-x86-64$QT_SUF*$DEBUG_SUF.appimage*"
 
     echo -e "---------- Upload new bundle AppImage files to files.kde.org repository \n"
 
