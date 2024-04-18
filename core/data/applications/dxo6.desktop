@@ -1,6 +1,13 @@
 [Desktop Entry]
 Type=Application
 Name=DxO Photolab 6
+Name[ca]=DxO Photolab 6
+Name[es]=DxO Photolab 6
+Name[nl]=DxO Photolab 6
+Name[sl]=DxO Photolab 6
+Name[tr]=DxO Photolab 6
+Name[uk]=DxO Photolab 6
+Name[x-test]=xxDxO Photolab 6xx
 Exec="%ProgramFiles%/DxO/DxO PhotoLab 6/DxO.PhotoLab.exe" %f
 Icon="%ProgramFiles%/DxO/DxO PhotoLab 6/DxO.PhotoLab.exe"
 MimeType=image/jpg;image/raw

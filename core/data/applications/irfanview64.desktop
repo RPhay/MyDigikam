@@ -1,6 +1,13 @@
 [Desktop Entry]
 Type=Application
 Name=Irfan View 64-bit
+Name[ca]=Irfan View de 64 bits
+Name[es]=Irfan View de 64 bits
+Name[nl]=Irfan View 64-bit
+Name[sl]=Irfan View 64-bit
+Name[tr]=IrfanView 64 bit
+Name[uk]=64-бітовий Irfan View
+Name[x-test]=xxIrfan View 64-bitxx
 Exec=%ProgramFiles%/IrfanView/i_view64.exe %f
 Icon=%ProgramFiles%/IrfanView/i_view64.exe
 MimeType=image/jpg;image/bmp;image/png
