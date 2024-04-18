@@ -30,14 +30,7 @@ class Q_DECL_HIDDEN StateSavingObject::Private
 {
 public:
 
-    explicit Private()
-      : host    (nullptr),
-        group   (),
-        prefix  (),
-        groupSet(false),
-        depth   (StateSavingObject::INSTANCE)
-    {
-    }
+    Private() = default;
 
     inline KConfigGroup getGroupFromObjectName()
     {
@@ -130,11 +123,11 @@ public:
 
 public:
 
-    QObject*                            host;
+    QObject*                            host        = nullptr;
     KConfigGroup                        group;
     QString                             prefix;
-    bool                                groupSet;
-    StateSavingObject::StateSavingDepth depth;
+    bool                                groupSet    = false;
+    StateSavingObject::StateSavingDepth depth       = StateSavingObject::INSTANCE;
 };
 
 StateSavingObject::StateSavingObject(QObject* const host)

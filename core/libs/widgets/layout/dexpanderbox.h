@@ -150,7 +150,7 @@ class DIGIKAM_EXPORT DArrowClickLabel : public QWidget
 public:
 
     explicit DArrowClickLabel(QWidget* const parent = nullptr);
-    ~DArrowClickLabel()                               override;
+    ~DArrowClickLabel()                               override = default;
 
     void setArrowType(Qt::ArrowType arrowType);
     Qt::ArrowType arrowType()                   const;
@@ -169,9 +169,9 @@ protected:
 
 protected:
 
-    Qt::ArrowType m_arrowType;
-    int           m_size;
-    int           m_margin;
+    Qt::ArrowType m_arrowType   = Qt::DownArrow;
+    int           m_size        = 8;
+    int           m_margin      = 2;
 };
 
 // -------------------------------------------------------------------------
@@ -337,7 +337,7 @@ class DIGIKAM_EXPORT DExpanderBoxExclusive : public DExpanderBox
 public:
 
     explicit DExpanderBoxExclusive(QWidget* const parent = nullptr);
-    ~DExpanderBoxExclusive()   override;
+    ~DExpanderBoxExclusive()   override = default;;
 
     /**
      * Show one expander open at most
@@ -351,7 +351,7 @@ private Q_SLOTS:
 
 private:
 
-    bool m_toolbox;
+    bool m_toolbox  = true;
 };
 
 } // namespace Digikam

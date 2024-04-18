@@ -88,7 +88,7 @@ public:
 public:
 
     explicit ThumbBarDock(QWidget* const parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
-    ~ThumbBarDock()                                                       override;
+    ~ThumbBarDock()                                                       override = default;
 
     /**
      * Measure the orientation and size of the widget and adjust the containing
@@ -127,7 +127,7 @@ public Q_SLOTS:
 
 private:
 
-    Visibility m_visible;
+    Visibility m_visible = SHOULD_BE_SHOWN;
 };
 
 } // namespace Digikam

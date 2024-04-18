@@ -34,14 +34,10 @@ class Q_DECL_HIDDEN DragHandle::Private
 
 public:
 
-    explicit Private()
-      : parent     (nullptr),
-        currentArea(Qt::LeftDockWidgetArea)
-    {
-    }
+    Private() = default;
 
-    QDockWidget*       parent;
-    Qt::DockWidgetArea currentArea;
+    QDockWidget*       parent       = nullptr;
+    Qt::DockWidgetArea currentArea  = Qt::LeftDockWidgetArea;
 };
 
 DragHandle::DragHandle(QDockWidget* const parent)
@@ -79,7 +75,10 @@ void DragHandle::paintEvent(QPaintEvent*)
     // If the thumbnail bar is laid out horizontally, the state should be set
     // to horizontal to draw the handle in the proper orientation.
 
-    if ((d->currentArea == Qt::LeftDockWidgetArea) || (d->currentArea == Qt::RightDockWidgetArea))
+    if (
+        (d->currentArea == Qt::LeftDockWidgetArea) ||
+        (d->currentArea == Qt::RightDockWidgetArea)
+       )
     {
         opt.rect = QRect(opt.rect.x(), opt.rect.y(),
                          d->parent->width(),
@@ -107,7 +106,10 @@ void DragHandle::dockLocationChanged(Qt::DockWidgetArea area)
     // present when the thumbbar orientation is horizontal, absent when it is
     // vertical(!)
 
-    if ((d->currentArea == Qt::LeftDockWidgetArea) || (d->currentArea == Qt::RightDockWidgetArea))
+    if (
+        (d->currentArea == Qt::LeftDockWidgetArea) ||
+        (d->currentArea == Qt::RightDockWidgetArea)
+       )
     {
         d->parent->setFeatures(d->parent->features() & ~QDockWidget::DockWidgetVerticalTitleBar);
     }
@@ -126,7 +128,10 @@ QSize DragHandle::sizeHint() const
     int margin          = style->pixelMetric(QStyle::PM_ToolBarItemMargin) +
                           style->pixelMetric(QStyle::PM_ToolBarFrameWidth);
 
-    if ((d->currentArea == Qt::LeftDockWidgetArea) || (d->currentArea == Qt::RightDockWidgetArea))
+    if (
+        (d->currentArea == Qt::LeftDockWidgetArea) ||
+        (d->currentArea == Qt::RightDockWidgetArea)
+       )
     {
         return QSize(d->parent->width(), handleWidth + 2*margin);
     }
@@ -144,17 +149,12 @@ QSize DragHandle::minimumSizeHint() const
 // ----------------------------------------------------------------------------
 
 ThumbBarDock::ThumbBarDock(QWidget* const parent, Qt::WindowFlags flags)
-    : QDockWidget(parent, flags),
-      m_visible  (SHOULD_BE_SHOWN)
+    : QDockWidget(parent, flags)
 {
     // Use a DragHandle as title bar widget.
 
     setTitleBarWidget(new DragHandle(this));
     setContextMenuPolicy(Qt::PreventContextMenu);
-}
-
-ThumbBarDock::~ThumbBarDock()
-{
 }
 
 void ThumbBarDock::reInitialize()
@@ -163,7 +163,9 @@ void ThumbBarDock::reInitialize()
     // orientation and size.
 
     QMainWindow* const parent = qobject_cast<QMainWindow*>(parentWidget());
+
     Q_EMIT dockLocationChanged(parent->dockWidgetArea(this));
+
     widget()->resize(size());
     update();
 }
@@ -334,17 +336,17 @@ QPixmap ThumbBarDock::generateFuzzyRectForGroup(const QSize& size, const QColor&
     // Rotate first border right by 4 degrees
 
     rm.rotate(4);
-    border1 = border1.transformed(rm, Qt::SmoothTransformation);
+    border1         = border1.transformed(rm, Qt::SmoothTransformation);
 
     // Rotate second border left by 4 degrees
 
     rm.rotate(-8);
-    border2 = border2.transformed(rm, Qt::SmoothTransformation);
+    border2         = border2.transformed(rm, Qt::SmoothTransformation);
 
     // Combine both borders
 
-    int width  = qMax(border1.size().width(), border2.size().width());
-    int height = qMax(border1.size().height(), border2.size().height());
+    int width       = qMax(border1.size().width(), border2.size().width());
+    int height      = qMax(border1.size().height(), border2.size().height());
 
     QPixmap result(QSize(width, height));
     result.fill(Qt::transparent); // force alpha channel

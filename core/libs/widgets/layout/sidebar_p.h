@@ -53,12 +53,12 @@ class Q_DECL_HIDDEN DMultiTabBarFrame::Private
 {
 public:
 
-    explicit Private();
+    Private() = default;
 
-    QBoxLayout*             mainLayout;
+    QBoxLayout*             mainLayout  = nullptr;
     QList<DMultiTabBarTab*> tabs;
-    Qt::Edge                position;
-    DMultiTabBar::TextStyle style;
+    Qt::Edge                position    = Qt::LeftEdge;
+    DMultiTabBar::TextStyle style       = DMultiTabBar::AllIconsText;
 };
 
 // -------------------------------------------------------------------------------------
@@ -67,10 +67,10 @@ class Q_DECL_HIDDEN DMultiTabBarTab::Private
 {
 public:
 
-    explicit Private();
+    Private() = default;
 
-    Qt::Edge                position;
-    DMultiTabBar::TextStyle style;
+    Qt::Edge                position    = Qt::LeftEdge;
+    DMultiTabBar::TextStyle style       = DMultiTabBar::AllIconsText;
 };
 
 // -------------------------------------------------------------------------------------
@@ -79,13 +79,13 @@ class Q_DECL_HIDDEN DMultiTabBar::Private
 {
 public:
 
-    explicit Private();
+    Private() = default;
 
-    DMultiTabBarFrame*         internal;
-    QBoxLayout*                layout;
-    QFrame*                    btnTabSep;
+    DMultiTabBarFrame*         internal     = nullptr;
+    QBoxLayout*                layout       = nullptr;
+    QFrame*                    btnTabSep    = nullptr;
     QList<DMultiTabBarButton*> buttons;
-    Qt::Edge                   position;
+    Qt::Edge                   position     = Qt::LeftEdge;
 };
 
 // -------------------------------------------------------------------------------------
@@ -94,11 +94,16 @@ class Q_DECL_HIDDEN SidebarState
 {
 public:
 
-    SidebarState();
-    SidebarState(QWidget* const w, int size);
+    SidebarState()  = default;
 
-    QWidget* activeWidget;
-    int      size;
+    SidebarState(QWidget* const w, int size)
+        : activeWidget(w),
+          size        (size)
+    {
+    }
+
+    QWidget* activeWidget   = nullptr;
+    int      size           = 0;
 };
 
 // -------------------------------------------------------------------------------------
@@ -108,32 +113,32 @@ class Q_DECL_HIDDEN Sidebar::Private
 
 public:
 
-    explicit Private();
+    Private() = default;
 
-    bool                          minimizedDefault;
-    bool                          minimized;
+    bool                          minimizedDefault          = false;
+    bool                          minimized                 = false;
 
     /**
      * Backup of shrinked status before backup(), restored by restore()
      * NOTE: when sidebar is hidden, only icon bar is affected. If sidebar view is
      * visible, this one must be shrink and restored accordingly.
      */
-    bool                          isMinimized;
+    bool                          isMinimized               = false;
 
-    int                           tabs;
-    int                           activeTab;
-    int                           dragSwitchId;
-    int                           restoreSize;
+    int                           tabs                      = 0;
+    int                           activeTab                 = -1;
+    int                           dragSwitchId              = -1;
+    int                           restoreSize               = 0;
 
-    QStackedWidget*               stack;
-    SidebarSplitter*              splitter;
-    QTimer*                       dragSwitchTimer;
+    QStackedWidget*               stack                     = nullptr;
+    SidebarSplitter*              splitter                  = nullptr;
+    QTimer*                       dragSwitchTimer           = nullptr;
 
     QHash<QWidget*, SidebarState> appendedTabsStateCache;
 
-    const QString                 optionActiveTabEntry;
-    const QString                 optionMinimizedEntry;
-    const QString                 optionRestoreSizeEntry;
+    const QString                 optionActiveTabEntry      = QLatin1String("ActiveTab");
+    const QString                 optionMinimizedEntry      = QLatin1String("Minimized");
+    const QString                 optionRestoreSizeEntry    = QLatin1String("RestoreSize");
 };
 
 // -------------------------------------------------------------------------------------
@@ -141,6 +146,8 @@ public:
 class Q_DECL_HIDDEN SidebarSplitter::Private
 {
 public:
+
+    Private() = default;
 
     QList<Sidebar*> sidebars;
 };

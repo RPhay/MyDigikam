@@ -40,7 +40,7 @@ class DIGIKAM_EXPORT DHBox : public QFrame
 public:
 
     explicit DHBox(QWidget* const parent = nullptr);
-    ~DHBox()                          override;
+    ~DHBox()                          override = default;
 
     void setSpacing(int space);
     void setContentsMargins(const QMargins& margins);
@@ -70,7 +70,7 @@ class DIGIKAM_EXPORT DVBox : public DHBox
   public:
 
     explicit DVBox(QWidget* const parent = nullptr);
-    ~DVBox()                          override;
+    ~DVBox()                          override = default;
 };
 
 } // namespace Digikam

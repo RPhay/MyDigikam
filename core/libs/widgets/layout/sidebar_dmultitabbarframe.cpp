@@ -46,6 +46,7 @@ DMultiTabBarFrame::~DMultiTabBarFrame()
 {
     qDeleteAll(d->tabs);
     d->tabs.clear();
+
     delete d;
 }
 

@@ -45,10 +45,6 @@ DHBox::DHBox(bool /*vertical*/, QWidget* const parent)
     setLayout(layout);
 }
 
-DHBox::~DHBox()
-{
-}
-
 void DHBox::childEvent(QChildEvent* e)
 {
     switch (e->type())
@@ -128,10 +124,6 @@ void DHBox::setStretchFactor(QWidget* const widget, int stretch)
 
 DVBox::DVBox(QWidget* const parent)
   : DHBox(true, parent)
-{
-}
-
-DVBox::~DVBox()
 {
 }
 

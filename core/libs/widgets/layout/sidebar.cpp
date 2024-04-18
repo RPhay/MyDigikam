@@ -75,6 +75,7 @@ void Sidebar::doLoadState()
         setTab(d->activeTab, false);
         d->stack->setCurrentIndex(d->activeTab);
         shrink();
+
         Q_EMIT signalChangedTab(d->stack->currentWidget());
 
         return;
@@ -205,6 +206,7 @@ void Sidebar::deleteTab(QWidget* const w)
             if (atab != -1)
             {
                 switchTabAndStackToTab(atab);
+
                 Q_EMIT signalChangedTab(d->stack->currentWidget());
 
                 if (state.size == 0)
@@ -346,6 +348,7 @@ void Sidebar::shrink()
     }
 
     d->stack->hide();
+
     Q_EMIT signalViewChanged();
 }
 

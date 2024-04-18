@@ -74,13 +74,10 @@ class Q_DECL_HIDDEN DAdjustableLabel::Private
 {
 public:
 
-    explicit Private()
-      : emode(Qt::ElideMiddle)
-    {
-    }
+    Private() = default;
 
     QString           ajdText;
-    Qt::TextElideMode emode;
+    Qt::TextElideMode emode = Qt::ElideMiddle;
 };
 
 DAdjustableLabel::DAdjustableLabel(QWidget* const parent)
@@ -104,6 +101,7 @@ QSize DAdjustableLabel::minimumSizeHint() const
 {
     QSize sh = QLabel::minimumSizeHint();
     sh.setWidth(-1);
+
     return sh;
 }
 
@@ -123,7 +121,7 @@ QSize DAdjustableLabel::sizeHint() const
     int maxW     = screen->geometry().width() * 3 / 4;
     int currentW = fm.horizontalAdvance(d->ajdText);
 
-    return (QSize(currentW > maxW ? maxW : currentW, QLabel::sizeHint().height()));
+    return (QSize((currentW > maxW) ? maxW : currentW, QLabel::sizeHint().height()));
 }
 
 void DAdjustableLabel::setAdjustedText(const QString& text)
@@ -230,6 +228,7 @@ void DClickLabel::mouseReleaseEvent(QMouseEvent* event)
     {
         Q_EMIT leftClicked();
         Q_EMIT activated();
+
         event->accept();
     }
 }
@@ -241,11 +240,16 @@ void DClickLabel::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Down:
         case Qt::Key_Right:
         case Qt::Key_Space:
+        {
             Q_EMIT activated();
+
             return;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     QLabel::keyPressEvent(e);
@@ -278,6 +282,7 @@ void DSqueezedClickLabel::mouseReleaseEvent(QMouseEvent* event)
     {
         Q_EMIT leftClicked();
         Q_EMIT activated();
+
         event->accept();
     }
 }
@@ -303,11 +308,16 @@ void DSqueezedClickLabel::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Down:
         case Qt::Key_Right:
         case Qt::Key_Space:
+        {
             Q_EMIT activated();
+
             return;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     QLabel::keyPressEvent(e);
@@ -316,23 +326,16 @@ void DSqueezedClickLabel::keyPressEvent(QKeyEvent* e)
 // ------------------------------------------------------------------------
 
 DArrowClickLabel::DArrowClickLabel(QWidget* const parent)
-    : QWidget(parent),
-      m_arrowType(Qt::DownArrow)
+    : QWidget(parent)
 {
     setCursor(Qt::PointingHandCursor);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    m_size   = 8;
-    m_margin = 2;
 }
 
 void DArrowClickLabel::setArrowType(Qt::ArrowType type)
 {
     m_arrowType = type;
     update();
-}
-
-DArrowClickLabel::~DArrowClickLabel()
-{
 }
 
 Qt::ArrowType DArrowClickLabel::arrowType() const
@@ -379,7 +382,10 @@ void DArrowClickLabel::paintEvent(QPaintEvent*)
         return;
     }
 
-    if ((width() < (m_size + m_margin)) || (height() < (m_size + m_margin)))
+    if (
+        (width()  < (m_size + m_margin)) ||
+        (height() < (m_size + m_margin))
+       )
     {
         return; // don't draw arrows if we are too small
     }
@@ -421,23 +427,33 @@ void DArrowClickLabel::paintEvent(QPaintEvent*)
     switch (m_arrowType)
     {
         case Qt::LeftArrow:
+        {
             e = QStyle::PE_IndicatorArrowLeft;
             break;
+        }
 
         case Qt::RightArrow:
+        {
             e = QStyle::PE_IndicatorArrowRight;
             break;
+        }
 
         case Qt::UpArrow:
+        {
             e = QStyle::PE_IndicatorArrowUp;
             break;
+        }
 
         case Qt::DownArrow:
+        {
             e = QStyle::PE_IndicatorArrowDown;
             break;
+        }
 
         case Qt::NoArrow:
+        {
             break;
+        }
     }
 
     opt.state |= QStyle::State_Enabled;
@@ -458,52 +474,40 @@ class Q_DECL_HIDDEN DLabelExpander::Private
 
 public:
 
-    explicit Private()
-      : expandByDefault (true),
-        checkBox        (nullptr),
-        pixmapLabel     (nullptr),
-        btn             (nullptr),
-        containerWidget (nullptr),
-        grid            (nullptr),
-        line            (nullptr),
-        hbox            (nullptr),
-        arrow           (nullptr),
-        clickLabel      (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool              expandByDefault;
+    bool              expandByDefault   = true;
 
-    QCheckBox*        checkBox;
-    QLabel*           pixmapLabel;
-    QToolButton*      btn;
-    QWidget*          containerWidget;
-    QGridLayout*      grid;
+    QCheckBox*        checkBox          = nullptr;
+    QLabel*           pixmapLabel       = nullptr;
+    QToolButton*      btn               = nullptr;
+    QWidget*          containerWidget   = nullptr;
+    QGridLayout*      grid              = nullptr;
 
-    DLineWidget*      line;
-    QWidget*          hbox;
+    DLineWidget*      line              = nullptr;
+    QWidget*          hbox              = nullptr;
 
     QIcon             icon;
 
-    DArrowClickLabel* arrow;
-    DClickLabel*      clickLabel;
+    DArrowClickLabel* arrow             = nullptr;
+    DClickLabel*      clickLabel        = nullptr;
 };
 
 DLabelExpander::DLabelExpander(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
-    d->grid        = new QGridLayout(this);
-    d->line        = new DLineWidget(Qt::Horizontal, this);
-    d->hbox        = new QWidget(this);
-    d->arrow       = new DArrowClickLabel(d->hbox);
-    d->checkBox    = new QCheckBox(d->hbox);
-    d->pixmapLabel = new QLabel(d->hbox);
-    d->clickLabel  = new DClickLabel(d->hbox);
-    d->btn         = new QToolButton(d->hbox);
+    d->grid                 = new QGridLayout(this);
+    d->line                 = new DLineWidget(Qt::Horizontal, this);
+    d->hbox                 = new QWidget(this);
+    d->arrow                = new DArrowClickLabel(d->hbox);
+    d->checkBox             = new QCheckBox(d->hbox);
+    d->pixmapLabel          = new QLabel(d->hbox);
+    d->clickLabel           = new DClickLabel(d->hbox);
+    d->btn                  = new QToolButton(d->hbox);
 
     QHBoxLayout* const hlay = new QHBoxLayout(d->hbox);
     hlay->addWidget(d->arrow);
@@ -707,8 +711,7 @@ class Q_DECL_HIDDEN DExpanderBox::Private
 public:
 
     explicit Private(DExpanderBox* const box)
-      : vbox  (nullptr),
-        parent(box)
+      : parent(box)
     {
     }
 
@@ -748,9 +751,9 @@ public:
 
     QList<DLabelExpander*> wList;
 
-    QVBoxLayout*           vbox;
+    QVBoxLayout*           vbox     = nullptr;
 
-    DExpanderBox*          parent;
+    DExpanderBox*          parent   = nullptr;
 };
 
 DExpanderBox::DExpanderBox(QWidget* const parent)
@@ -847,6 +850,7 @@ void DExpanderBox::slotItemExpanded(bool b)
     if (exp)
     {
         int index = indexOf(exp);
+
         Q_EMIT signalItemExpanded(index, b);
     }
 }
@@ -858,6 +862,7 @@ void DExpanderBox::slotItemButtonPressed()
     if (exp)
     {
         int index = indexOf(exp);
+
         Q_EMIT signalItemButtonPressed(index);
     }
 }
@@ -869,6 +874,7 @@ void DExpanderBox::slotItemToggled(bool b)
     if (exp)
     {
         int index = indexOf(exp);
+
         Q_EMIT signalItemToggled(index, b);
     }
 }
@@ -1098,11 +1104,6 @@ void DExpanderBox::writeSettings(KConfigGroup& group)
 
 DExpanderBoxExclusive::DExpanderBoxExclusive(QWidget* const parent)
     : DExpanderBox(parent)
-{
-    setIsToolBox(true);
-}
-
-DExpanderBoxExclusive::~DExpanderBoxExclusive()
 {
 }
 
