@@ -18,6 +18,7 @@ RawEngine: Update internal libraw to last 20240330 snapshot. New supported camer
 DNGWriter: Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.
            Add optional libjxl dependency to compile DNG support.
 Bundles:   Update Exiftool to last 12.82.
+Bundles:   AppImage is now based on Qt framework 6.7.0 and KDE framework 6.2.0.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -80,7 +81,7 @@ BUGFIXES:
 056 ==> 485332 - Some images were not correlated even though GPS coordinates were available for the time they were taken.
 057 ==> 485593 - Map view cannot zoom in far enough to be useful.
 058 ==> 485527 - Freeze when trying to import from USB.
-059 ==> 
+059 ==> 261634 - Use Qt framework 6.70 and KDE framework 6.2.0 to compile AppImage bundle.
 060 ==> 
 061 ==> 
 062 ==> 
