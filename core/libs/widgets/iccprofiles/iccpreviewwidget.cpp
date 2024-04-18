@@ -37,10 +37,6 @@ ICCPreviewWidget::ICCPreviewWidget(QWidget* const parent)
     setWidgetResizable(true);
 }
 
-ICCPreviewWidget::~ICCPreviewWidget()
-{
-}
-
 void ICCPreviewWidget::slotShowPreview(const QUrl& url)
 {
     slotClearPreview();

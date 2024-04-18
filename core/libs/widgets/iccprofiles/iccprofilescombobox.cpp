@@ -36,16 +36,14 @@ IccProfilesComboBox::IccProfilesComboBox(QWidget* const parent)
 {
 }
 
-IccProfilesComboBox::~IccProfilesComboBox()
-{
-}
-
 bool iccProfileLessThan(IccProfile a, IccProfile b)
 {
     return (a.description() < b.description());
 }
 
-// if needed outside this class, make it a public static method in a namespace
+/**
+ * NOTE: if needed outside this class, make it a public static method in a namespace.
+ */
 static QString profileUserString(const IccProfile& p)
 {
     IccProfile profile(p);
@@ -69,7 +67,7 @@ static QString profileUserString(const IccProfile& p)
 }
 
 /**
- * NOTE: if needed outside this class, make it a public static method in a namespace
+ * NOTE: if needed outside this class, make it a public static method in a namespace.
  */
 static void formatProfiles(const QList<IccProfile>& givenProfiles, QList<IccProfile>* const returnedProfiles, QStringList* const userText)
 {

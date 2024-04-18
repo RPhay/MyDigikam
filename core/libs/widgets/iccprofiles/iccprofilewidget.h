@@ -37,7 +37,7 @@ class DIGIKAM_EXPORT ICCProfileWidget : public MetadataWidget
 public:
 
     explicit ICCProfileWidget(QWidget* const parent, int w = 256, int h = 256);
-    ~ICCProfileWidget() override;
+    ~ICCProfileWidget()                                   override;
 
     bool    loadFromURL(const QUrl& url)                  override;
     bool    loadFromProfileData(const QString& fileName,

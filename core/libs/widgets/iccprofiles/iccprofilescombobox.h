@@ -40,7 +40,7 @@ public:
      */
 
     explicit IccProfilesComboBox(QWidget* const parent = nullptr);
-    ~IccProfilesComboBox() override;
+    ~IccProfilesComboBox() override = default;
 
     /**
      * Checks the given profiles for validity, creates a suitable description (ICC profile description, file path),
@@ -138,7 +138,7 @@ protected Q_SLOTS:
 
 protected:
 
-    QObject*       m_parent;
+    QObject*       m_parent = nullptr;
 
 private:
 

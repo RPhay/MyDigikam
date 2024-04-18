@@ -67,9 +67,7 @@ class Q_DECL_HIDDEN ICCTagInfo
 
 public:
 
-    ICCTagInfo()
-    {
-    }
+    ICCTagInfo() = default;
 
     ICCTagInfo(const QString& title, const QString& description)
         : m_title      (title),
@@ -102,16 +100,13 @@ class Q_DECL_HIDDEN ICCProfileWidget::Private
 
 public:
 
-    explicit Private()
-      : cieTongue(nullptr)
-    {
-    }
+    Private() = default;
 
     IccProfile       profile;
 
     QStringList      keysFilter;
 
-    CIETongueWidget* cieTongue;
+    CIETongueWidget* cieTongue  = nullptr;
 
     ICCTagInfoMap    iccTagsDescription;
 };

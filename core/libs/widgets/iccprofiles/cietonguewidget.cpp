@@ -147,48 +147,31 @@ class Q_DECL_HIDDEN CIETongueWidget::Private
 {
 public:
 
-    explicit Private()
-      : profileDataAvailable(true),
-        loadingImageMode    (false),
-        loadingImageSucess  (false),
-        needUpdatePixmap    (false),
-        uncalibratedColor   (false),
-        xBias               (0),
-        yBias               (0),
-        pxcols              (0),
-        pxrows              (0),
-        progressCount       (0),
-        gridside            (0),
-        progressTimer       (nullptr),
-        progressPix         (nullptr),
-        hMonitorProfile     (nullptr),
-        hXFORM              (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                         profileDataAvailable;
-    bool                         loadingImageMode;
-    bool                         loadingImageSucess;
-    bool                         needUpdatePixmap;
-    bool                         uncalibratedColor;
+    bool                         profileDataAvailable   = true;
+    bool                         loadingImageMode       = false;
+    bool                         loadingImageSucess     = false;
+    bool                         needUpdatePixmap       = false;
+    bool                         uncalibratedColor      = false;
 
-    int                          xBias;
-    int                          yBias;
-    int                          pxcols;
-    int                          pxrows;
-    int                          progressCount;           ///< Position of animation during loading/calculation.
+    int                          xBias                  = 0;
+    int                          yBias                  = 0;
+    int                          pxcols                 = 0;
+    int                          pxrows                 = 0;
+    int                          progressCount          = 0;      ///< Position of animation during loading/calculation.
 
-    double                       gridside;
+    double                       gridside               = 0.0;
 
     QPainter                     painter;
 
-    QTimer*                      progressTimer;
+    QTimer*                      progressTimer          = nullptr;
 
     QPixmap                      pixmap;
-    DWorkingPixmap*              progressPix;
+    DWorkingPixmap*              progressPix            = nullptr;
 
-    cmsHPROFILE                  hMonitorProfile;
-    cmsHTRANSFORM                hXFORM;
+    cmsHPROFILE                  hMonitorProfile        = nullptr;
+    cmsHTRANSFORM                hXFORM                 = nullptr;
     cmsCIExyYTRIPLE              Primaries;
     cmsCIEXYZ                    MediaWhite;
 };
@@ -239,6 +222,7 @@ CIETongueWidget::~CIETongueWidget()
 {
     dkCmsDeleteTransform(d->hXFORM);
     dkCmsCloseProfile(d->hMonitorProfile);
+
     delete d;
 }
 
@@ -332,9 +316,11 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
 
     memset(&(d->Primaries),0,sizeof(cmsCIExyYTRIPLE));
 
-    if (dkCmsIsTag(hProfile, icSigRedColorantTag)   &&
+    if (
+        dkCmsIsTag(hProfile, icSigRedColorantTag)   &&
         dkCmsIsTag(hProfile, icSigGreenColorantTag) &&
-        dkCmsIsTag(hProfile, icSigBlueColorantTag))
+        dkCmsIsTag(hProfile, icSigBlueColorantTag)
+       )
     {
         MAT3 Mat;
 
@@ -379,7 +365,9 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
                 tmp.Y = Mat.v[1].n[1];
                 tmp.Z = Mat.v[2].n[1];
                 qCDebug(DIGIKAM_WIDGETS_LOG) << "d->Primaries.Green : X=" << tmp.X << " Y=" << tmp.Y << " Z=" << tmp.Z;
-                // ScaleToWhite(&MediaWhite, &tmp);
+/*
+                ScaleToWhite(&MediaWhite, &tmp);
+*/
                 dkCmsXYZ2xyY(&(d->Primaries.Green), &tmp);
 
                 tmp.X = Mat.v[0].n[2];
@@ -469,17 +457,18 @@ QRgb CIETongueWidget::colorByCoord(double x, double y)
 
 void CIETongueWidget::outlineTongue()
 {
-    int lx=0, ly=0;
-    int fx=0, fy=0;
+    int lx = 0, ly = 0;
+    int fx = 0, fy = 0;
 
     for (int x = 380 ; x <= 700 ; x += 5)
     {
         int ix = (x - 380) / 5;
 
-        cmsCIExyY p = {
-                       spectral_chromaticity[ix][0],
-                       spectral_chromaticity[ix][1], 1
-                      };
+        cmsCIExyY p =
+        {
+            spectral_chromaticity[ix][0],
+            spectral_chromaticity[ix][1], 1
+        };
 
         int icx, icy;
         mapPoint(icx, icy, &p);
@@ -611,10 +600,11 @@ void CIETongueWidget::drawLabels()
 
         int ix = (x - 380) / 5;
 
-        cmsCIExyY p = {
-                       spectral_chromaticity[ix][0],
-                       spectral_chromaticity[ix][1], 1
-                      };
+        cmsCIExyY p =
+        {
+            spectral_chromaticity[ix][0],
+            spectral_chromaticity[ix][1], 1
+        };
 
         int icx, icy;
         mapPoint(icx, icy, &p);
@@ -834,6 +824,7 @@ void CIETongueWidget::paintEvent(QPaintEvent*)
 void CIETongueWidget::resizeEvent(QResizeEvent* event)
 {
     Q_UNUSED(event);
+
     setMinimumHeight(width());
     d->needUpdatePixmap = true;
 }
