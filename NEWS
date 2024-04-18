@@ -82,7 +82,7 @@ BUGFIXES:
 057 ==> 485593 - Map view cannot zoom in far enough to be useful.
 058 ==> 485527 - Freeze when trying to import from USB.
 059 ==> 261634 - Use Qt framework 6.70 and KDE framework 6.2.0 to compile AppImage bundle.
-060 ==> 
+060 ==> 484234 - MP3 slider stopped working.
 061 ==> 
 062 ==> 
 063 ==> 
