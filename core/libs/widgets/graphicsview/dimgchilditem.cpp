@@ -51,8 +51,8 @@ class Q_DECL_HIDDEN DImgChildItem::Private
 {
 public:
 
-    explicit Private(DImgChildItem* const q)
-        : q(q)
+    explicit Private(DImgChildItem* const qq)
+        : q(qq)
     {
     }
 
@@ -63,7 +63,7 @@ public:
     QPointF              relativePos;
     QSizeF               relativeSize;
 
-    DImgChildItem* const q;
+    DImgChildItem* const q = nullptr;
 };
 
 void DImgChildItem::Private::connectParent(bool active)

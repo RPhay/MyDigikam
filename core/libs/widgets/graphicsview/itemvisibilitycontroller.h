@@ -239,8 +239,8 @@ Q_SIGNALS:
 
 protected:
 
-    qreal m_opacity;
-    bool  m_visible;
+    qreal m_opacity = 0.0;
+    bool  m_visible = false;
 };
 
 // ------------------------------------------------------------------------------------------
@@ -264,7 +264,7 @@ public:
 
 protected:
 
-    ItemVisibilityController* m_controller;
+    ItemVisibilityController* m_controller = nullptr;
 };
 
 // ------------------------------------------------------------------------------------------
@@ -315,7 +315,7 @@ protected Q_SLOTS:
 
 protected:
 
-    QObject*   m_object;
+    QObject*   m_object     = nullptr;
     QByteArray m_property;
     QVariant   m_value;
 };

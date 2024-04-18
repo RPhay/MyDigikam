@@ -39,7 +39,7 @@ class DIGIKAM_EXPORT GraphicsDImgItem : public QGraphicsObject
 public:
 
     explicit GraphicsDImgItem(QGraphicsItem* const parent = nullptr);
-    ~GraphicsDImgItem() override;
+    ~GraphicsDImgItem()                                               override;
 
     /**
      * Sets the DImg to be drawn by this item.

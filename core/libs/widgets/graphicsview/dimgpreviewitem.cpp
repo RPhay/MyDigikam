@@ -51,15 +51,6 @@ DImgPreviewItem::DImgPreviewItem(DImgPreviewItemPrivate& dd, QGraphicsItem* cons
     d->init(this);
 }
 
-DImgPreviewItem::DImgPreviewItemPrivate::DImgPreviewItemPrivate()
-    : state         (DImgPreviewItem::NoImage),
-      exifRotate    (false),
-      previewSize   (1024),
-      previewThread (nullptr),
-      preloadThread (nullptr)
-{
-}
-
 void DImgPreviewItem::DImgPreviewItemPrivate::init(DImgPreviewItem* const q)
 {
     previewThread = new PreviewLoadThread;
@@ -134,6 +125,7 @@ void DImgPreviewItem::setPath(const QString& path, bool rePreview)
     if (d->path.isNull())
     {
         d->state = NoImage;
+
         Q_EMIT stateChanged(d->state);
     }
     else
@@ -274,6 +266,7 @@ void DImgPreviewItem::slotGotImagePreview(const LoadingDescription& description,
         setImage(DImg());
 
         d->state = ImageLoadingFailed;
+
         Q_EMIT stateChanged(d->state);
         Q_EMIT loadingFailed();
     }
@@ -282,6 +275,7 @@ void DImgPreviewItem::slotGotImagePreview(const LoadingDescription& description,
         setImage(image);
 
         d->state = ImageLoaded;
+
         Q_EMIT stateChanged(d->state);
         Q_EMIT loaded();
     }
@@ -314,9 +308,11 @@ void DImgPreviewItem::slotFileChanged(const QString& path)
 
 void DImgPreviewItem::iccSettingsChanged(const ICCSettingsContainer& current, const ICCSettingsContainer& previous)
 {
-    if ((current.enableCM != previous.enableCM)                     ||
+    if (
+        (current.enableCM           != previous.enableCM)           ||
         (current.useManagedPreviews != previous.useManagedPreviews) ||
-        (current.monitorProfile != previous.monitorProfile))
+        (current.monitorProfile     != previous.monitorProfile)
+       )
     {
         reload();
     }

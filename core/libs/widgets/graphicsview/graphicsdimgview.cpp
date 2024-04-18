@@ -39,33 +39,24 @@ class Q_DECL_HIDDEN GraphicsDImgView::Private
 {
 public:
 
-    explicit Private()
-      : scene           (nullptr),
-        item            (nullptr),
-        layout          (nullptr),
-        cornerButton    (nullptr),
-        panIconPopup    (nullptr),
-        movingInProgress(false),
-        showText        (true)
-    {
-    }
+    Private() = default;
 
-    QGraphicsScene*           scene;
-    GraphicsDImgItem*         item;
-    SinglePhotoPreviewLayout* layout;
+    QGraphicsScene*           scene             = nullptr;
+    GraphicsDImgItem*         item              = nullptr;
+    SinglePhotoPreviewLayout* layout            = nullptr;
 
-    QToolButton*              cornerButton;
-    PanIconFrame*             panIconPopup;
+    QToolButton*              cornerButton      = nullptr;
+    PanIconFrame*             panIconPopup      = nullptr;
 
     QPoint                    mousePressPos;
     QPoint                    panningScrollPos;
-    bool                      movingInProgress;
-    bool                      showText;
+    bool                      movingInProgress  = false;
+    bool                      showText          = true;
 };
 
 GraphicsDImgView::GraphicsDImgView(QWidget* const parent)
     : QGraphicsView(parent),
-      d(new Private)
+      d            (new Private)
 {
     d->scene  = new QGraphicsScene(this);
     d->scene->setItemIndexMethod(QGraphicsScene::NoIndex);
@@ -222,11 +213,17 @@ void GraphicsDImgView::mousePressEvent(QMouseEvent* e)
         Q_EMIT leftButtonClicked();
     }
 
-    if ((e->button() == Qt::LeftButton) || (e->button() == Qt::MiddleButton))
+    if (
+        (e->button() == Qt::LeftButton)   ||
+        (e->button() == Qt::MiddleButton)
+       )
     {
         d->mousePressPos = e->pos();
 
-        if (!qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) || (e->button() == Qt::MiddleButton))
+        if (
+            !qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) ||
+            (e->button() == Qt::MiddleButton)
+           )
         {
             startPanning(e->pos());
         }
@@ -244,7 +241,10 @@ void GraphicsDImgView::mouseMoveEvent(QMouseEvent* e)
 {
     QGraphicsView::mouseMoveEvent(e);
 
-    if (((e->buttons() & Qt::LeftButton) || (e->buttons() & Qt::MiddleButton)) && !d->mousePressPos.isNull())
+    if (
+        ((e->buttons() & Qt::LeftButton) || (e->buttons() & Qt::MiddleButton)) &&
+        !d->mousePressPos.isNull()
+       )
     {
         if (!d->movingInProgress && (e->buttons() & Qt::LeftButton))
         {
@@ -267,7 +267,10 @@ void GraphicsDImgView::mouseReleaseEvent(QMouseEvent* e)
 
     // Do not call acceptsMouseClick() here, only on press. Seems that release event are accepted per default.
 
-    if (((e->button() == Qt::LeftButton) || (e->button() == Qt::MiddleButton)) && !d->mousePressPos.isNull())
+    if (
+        ((e->button() == Qt::LeftButton) || (e->button() == Qt::MiddleButton)) &&
+        !d->mousePressPos.isNull()
+       )
     {
         if (!d->movingInProgress && (e->button() == Qt::LeftButton))
         {
@@ -302,6 +305,7 @@ void GraphicsDImgView::resizeEvent(QResizeEvent* e)
 {
     QGraphicsView::resizeEvent(e);
     d->layout->updateZoomAndSize();
+
     Q_EMIT resized();
     Q_EMIT viewportRectChanged(mapToScene(viewport()->rect()).boundingRect());
 }
@@ -309,6 +313,7 @@ void GraphicsDImgView::resizeEvent(QResizeEvent* e)
 void GraphicsDImgView::scrollContentsBy(int dx, int dy)
 {
     QGraphicsView::scrollContentsBy(dx, dy);
+
     Q_EMIT viewportRectChanged(mapToScene(viewport()->rect()).boundingRect());
 }
 
@@ -329,19 +334,23 @@ void GraphicsDImgView::continuePanning(const QPoint& pos)
     QPoint delta = pos - d->mousePressPos;
     horizontalScrollBar()->setValue(d->panningScrollPos.x() + (isRightToLeft() ? delta.x() : -delta.x()));
     verticalScrollBar()->setValue(d->panningScrollPos.y() - delta.y());
+
     Q_EMIT contentsMoved(false);
+
     viewport()->update();
 }
 
 void GraphicsDImgView::finishPanning()
 {
     Q_EMIT contentsMoved(true);
+
     viewport()->unsetCursor();
 }
 
 void GraphicsDImgView::scrollPointOnPoint(const QPointF& scenePos, const QPoint& viewportPos)
 {
     // This is inspired from QGraphicsView's centerOn()
+
     QPointF viewPoint = transform().map(scenePos);
 
     if (horizontalScrollBar()->maximum())
@@ -372,7 +381,7 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
 {
     int p = this->verticalScrollBar()->sliderPosition();
 
-    if (e->modifiers() & Qt::ShiftModifier)
+    if      (e->modifiers() & Qt::ShiftModifier)
     {
         e->accept();
 
@@ -488,7 +497,8 @@ void GraphicsDImgView::slotPanIconSelectionMoved(const QRect& imageRect, bool b)
 void GraphicsDImgView::slotContentsMoved()
 {
     Q_EMIT contentsMoving(horizontalScrollBar()->value(),
-                        verticalScrollBar()->value());
+                          verticalScrollBar()->value());
+
     viewport()->update();
 }
 

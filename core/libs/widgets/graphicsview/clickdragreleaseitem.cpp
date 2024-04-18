@@ -42,10 +42,7 @@ class Q_DECL_HIDDEN ClickDragReleaseItem::Private
 {
 public:
 
-    explicit Private()
-        : state(HoverState)
-    {
-    }
+    Private() = default;
 
     template <class Event> bool isDrag(Event* e)
     {
@@ -59,7 +56,7 @@ public:
 
 public:
 
-    ClickDragState state;
+    ClickDragState state    = HoverState;
     QPointF        pressPos;
 };
 
@@ -105,6 +102,7 @@ void ClickDragReleaseItem::mousePressEvent(QGraphicsSceneMouseEvent* e)
     if (e->button() != Qt::LeftButton)
     {
         Q_EMIT cancelled();
+
         return;
     }
 
@@ -112,6 +110,7 @@ void ClickDragReleaseItem::mousePressEvent(QGraphicsSceneMouseEvent* e)
     {
         d->pressPos = e->scenePos();
         d->state    = PressedState;
+
         Q_EMIT started(e->scenePos());
     }
 }
@@ -156,6 +155,7 @@ void ClickDragReleaseItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* e)
         d->state = HoverState;
         setCursor(Qt::CrossCursor);
         setAcceptHoverEvents(false);
+
         Q_EMIT finished(d->rect(e));
     }
     else if (d->state == PressDragState)
@@ -188,12 +188,17 @@ void ClickDragReleaseItem::keyPressEvent(QKeyEvent* e)
     {
         case Qt::Key_Backspace:
         case Qt::Key_Escape:
+        {
             Q_EMIT cancelled();
+
             break;
+        }
 
         default:
+        {
             e->ignore();
             break;
+        }
     }
 }
 

@@ -67,7 +67,7 @@ public:
     void addItem(GraphicsDImgItem* const item);
 
     bool   isFitToWindow()  const;
-    double zoomFactor() const;
+    double zoomFactor()     const;
     double realZoomFactor() const;
 
     /**

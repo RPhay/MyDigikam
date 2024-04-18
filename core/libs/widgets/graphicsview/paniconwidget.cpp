@@ -51,20 +51,20 @@ public:
 
 public:
 
-    PanIconFrame*        q;
+    PanIconFrame*        q                      = nullptr;
 
     /**
      * The result. It is returned from exec() when the popup window closes.
      */
-    int                  result;
+    int                  result                 = 0;    // Rejected
 
     /**
      * The only subwidget that uses the whole dialog window.
      */
-    QWidget*             main;
+    QWidget*             main                   = nullptr;
 
     class OutsideClickCatcher;
-    OutsideClickCatcher* outsideClickCatcher;
+    OutsideClickCatcher* outsideClickCatcher    = nullptr;
 };
 
 // -------------------------------------------------------------------
@@ -76,14 +76,11 @@ class Q_DECL_HIDDEN PanIconFrame::Private::OutsideClickCatcher : public QObject
 public:
 
     explicit OutsideClickCatcher(QObject* const parent = nullptr)
-        : QObject(parent),
-          m_popup(nullptr)
+        : QObject(parent)
     {
     }
 
-    ~OutsideClickCatcher() override
-    {
-    }
+    ~OutsideClickCatcher() override = default;
 
     void setPopupFrame(PanIconFrame* const popup)
     {
@@ -111,15 +108,13 @@ public:
 
 public:
 
-    PanIconFrame* m_popup;
+    PanIconFrame* m_popup = nullptr;
 };
 
 // -------------------------------------------------------------------
 
 PanIconFrame::Private::Private(PanIconFrame* const qq)
     : q                  (qq),
-      result             (0), // rejected
-      main               (nullptr),
       outsideClickCatcher(new OutsideClickCatcher)
 {
     outsideClickCatcher->setPopupFrame(q);
@@ -150,6 +145,7 @@ void PanIconFrame::keyPressEvent(QKeyEvent* e)
     if (e->key() == Qt::Key_Escape)
     {
         d->result = 0; // rejected
+
         Q_EMIT leaveModality();
     }
 }
@@ -258,41 +254,27 @@ class Q_DECL_HIDDEN PanIconWidget::Private
 
 public:
 
-    explicit Private()
-      : moveSelection   (false),
-        flicker         (false),
-        width           (0),
-        height          (0),
-        zoomedOrgWidth  (0),
-        zoomedOrgHeight (0),
-        orgWidth        (0),
-        orgHeight       (0),
-        xpos            (0),
-        ypos            (0),
-        zoomFactor      (1.0),
-        timer           (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool    moveSelection;
-    bool    flicker;
+    bool    moveSelection       = false;
+    bool    flicker             = false;
 
-    int     width;
-    int     height;
-    int     zoomedOrgWidth;
-    int     zoomedOrgHeight;
-    int     orgWidth;
-    int     orgHeight;
-    int     xpos;
-    int     ypos;
+    int     width               = 0;
+    int     height              = 0;
+    int     zoomedOrgWidth      = 0;
+    int     zoomedOrgHeight     = 0;
+    int     orgWidth            = 0;
+    int     orgHeight           = 0;
+    int     xpos                = 0;
+    int     ypos                = 0;
 
-    double  zoomFactor;
+    double  zoomFactor          = 1.0;
 
-    QRect   regionSelection;         ///< Original size image selection.
-    QTimer* timer;
+    QRect   regionSelection;                ///< Original size image selection.
+    QTimer* timer               = nullptr;
 
     QRect   rect;
-    QRect   localRegionSelection;    ///< Thumbnail size selection.
+    QRect   localRegionSelection;           ///< Thumbnail size selection.
 
     QPixmap pixmap;
 };
@@ -500,6 +482,7 @@ void PanIconWidget::setMouseFocus()
     d->ypos          = d->localRegionSelection.center().y();
     d->moveSelection = true;
     setCursor(Qt::SizeAllCursor);
+
     Q_EMIT signalSelectionTakeFocus();
 }
 
@@ -556,14 +539,17 @@ void PanIconWidget::mousePressEvent(QMouseEvent* e)
 
         d->moveSelection = true;
         setCursor(Qt::SizeAllCursor);
+
         Q_EMIT signalSelectionTakeFocus();
     }
 }
 
 void PanIconWidget::mouseMoveEvent(QMouseEvent* e)
 {
-    if (d->moveSelection &&
-        ((e->buttons() == Qt::LeftButton) || (e->buttons() == Qt::MiddleButton)))
+    if (
+        d->moveSelection &&
+        ((e->buttons() == Qt::LeftButton) || (e->buttons() == Qt::MiddleButton))
+       )
     {
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -607,6 +593,7 @@ void PanIconWidget::mouseMoveEvent(QMouseEvent* e)
 
         update();
         regionSelectionMoved(false);
+
         return;
     }
     else

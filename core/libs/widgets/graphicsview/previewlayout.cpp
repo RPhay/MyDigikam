@@ -32,17 +32,7 @@ class Q_DECL_HIDDEN SinglePhotoPreviewLayout::Private
 {
 public:
 
-    explicit Private()
-      : view          (nullptr),
-        item          (nullptr),
-        fitToSizeMode (ImageZoomSettings::OnlyScaleDown),
-        isFitToWindow (true),
-        previousZoom  (1.0),
-        zoomMultiplier(1.2),
-        maxZoom       (12.0),
-        minZoom       (0.1)
-    {
-    }
+    Private() = default;
 
     ImageZoomSettings* zoomSettings() const
     {
@@ -56,22 +46,22 @@ public:
 
 public:
 
-    GraphicsDImgView*                view;
-    GraphicsDImgItem*                item;
+    GraphicsDImgView*                view           = nullptr;
+    GraphicsDImgItem*                item           = nullptr;
 
-    ImageZoomSettings::FitToSizeMode fitToSizeMode;
+    ImageZoomSettings::FitToSizeMode fitToSizeMode  = ImageZoomSettings::OnlyScaleDown;
 
-    bool                             isFitToWindow;
-    double                           previousZoom;
+    bool                             isFitToWindow  = true;
+    double                           previousZoom   = 1.0;
 
-    double                           zoomMultiplier;
-    double                           maxZoom;
-    double                           minZoom;
+    double                           zoomMultiplier = 1.2;
+    double                           maxZoom        = 12.0;
+    double                           minZoom        = 0.1;
 };
 
 SinglePhotoPreviewLayout::SinglePhotoPreviewLayout(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 

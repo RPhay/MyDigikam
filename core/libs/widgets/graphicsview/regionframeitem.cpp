@@ -86,7 +86,7 @@ class Q_DECL_HIDDEN RegionFrameItem::Private
 {
 public:
 
-    explicit Private(RegionFrameItem* const q);
+    explicit Private(RegionFrameItem* const qq);
 
     QRectF handleRect(CropHandle handle) const;
     CropHandle handleAt(const QPointF& pos) const;
@@ -97,39 +97,29 @@ public:
 
 public:
 
-    RegionFrameItem* const q;
+    RegionFrameItem* const q                                = nullptr;
 
-    HudSide                hudSide;
+    HudSide                hudSide                          = HS_None;
     QRectF                 viewportRect;
     QList<CropHandle>      cropHandleList;
-    CropHandle             movingHandle;
+    CropHandle             movingHandle                     = CH_None;
     QPointF                lastMouseMovePos;
-    double                 fixedRatio;
-    QGraphicsWidget*       hudWidget;
+    double                 fixedRatio                       = 0.0;
+    QGraphicsWidget*       hudWidget                        = nullptr;
 
-    RegionFrameItem::Flags flags;
+    RegionFrameItem::Flags flags                            = NoFlags;
 
-    AnimatedVisibility*    resizeHandleVisibility;
-    qreal                  hoverAnimationOpacity;
-    QTimer*                hudTimer;
+    AnimatedVisibility*    resizeHandleVisibility           = nullptr;
+    qreal                  hoverAnimationOpacity            = 1.0;
+    QTimer*                hudTimer                         = nullptr;
     QPointF                hudEndPos;
 
-    const int              HUD_TIMER_MAX_PIXELS_PER_UPDATE;
-    const int              HUD_TIMER_ANIMATION_INTERVAL;
+    const int              HUD_TIMER_MAX_PIXELS_PER_UPDATE  = 20;
+    const int              HUD_TIMER_ANIMATION_INTERVAL     = 20;
 };
 
 RegionFrameItem::Private::Private(RegionFrameItem* const qq)
-    : q                                 (qq),
-      hudSide                           (HS_None),
-      movingHandle                      (CH_None),
-      fixedRatio                        (0),
-      hudWidget                         (nullptr),
-      flags                             (NoFlags),
-      resizeHandleVisibility            (nullptr),
-      hoverAnimationOpacity             (1.0),
-      hudTimer                          (nullptr),
-      HUD_TIMER_MAX_PIXELS_PER_UPDATE   (20),
-      HUD_TIMER_ANIMATION_INTERVAL      (20)
+    : q(qq)
 {
 
     cropHandleList << CH_Left       << CH_Right << CH_Top << CH_Bottom
@@ -206,31 +196,43 @@ void RegionFrameItem::Private::updateCursor(CropHandle handle, bool buttonDown)
     {
         case CH_TopLeft:
         case CH_BottomRight:
+        {
             shape = Qt::SizeFDiagCursor;
             break;
+        }
 
         case CH_TopRight:
         case CH_BottomLeft:
+        {
             shape = Qt::SizeBDiagCursor;
             break;
+        }
 
         case CH_Left:
         case CH_Right:
+        {
             shape = Qt::SizeHorCursor;
             break;
+        }
 
         case CH_Top:
         case CH_Bottom:
+        {
             shape = Qt::SizeVerCursor;
             break;
+        }
 
         case CH_Content:
+        {
             shape = buttonDown ? Qt::ClosedHandCursor : Qt::OpenHandCursor;
             break;
+        }
 
         default:
+        {
             shape = Qt::ArrowCursor;
             break;
+        }
     }
 
     q->setCursor(shape);
@@ -295,7 +297,7 @@ OptimalPosition RegionFrameItem::Private::computeOptimalHudWidgetPosition() cons
 
     // Check if a position outside rect fits
 
-    if (hudMaxRect.contains(preferred.first))
+    if      (hudMaxRect.contains(preferred.first))
     {
         ret = preferred;
     }

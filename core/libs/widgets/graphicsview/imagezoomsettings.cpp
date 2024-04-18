@@ -29,17 +29,7 @@
 namespace Digikam
 {
 
-ImageZoomSettings::ImageZoomSettings()
-    : m_zoom         (1.0),
-      m_zoomConst    (1.0),
-      m_displayWidget(nullptr)
-{
-}
-
 ImageZoomSettings::ImageZoomSettings(const QSize& imageSize, const QSize& originalSize)
-    : m_zoom         (1.0),
-      m_zoomConst    (1.0),
-      m_displayWidget(nullptr)
 {
     setImageSize(imageSize, originalSize);
 }
@@ -167,7 +157,7 @@ QPointF ImageZoomSettings::mapImageToZoom(const QPointF& imagePoint) const
 
 inline static bool lessThanLimitedPrecision(double a, double b)
 {
-    return lround(a * 100000) < lround(b * 100000);
+    return (lround(a * 100000) < lround(b * 100000));
 }
 
 double ImageZoomSettings::snappedZoomStep(double nextZoom, const QSizeF& frameSize) const

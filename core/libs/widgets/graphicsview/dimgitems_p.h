@@ -36,6 +36,8 @@ class CachedPixmapKey
 {
 public:
 
+    CachedPixmapKey() = default;
+
     QRect             region;
     QPixmapCache::Key key;
 };
@@ -56,7 +58,7 @@ public:
 
 protected:
 
-    int                     maxCount;
+    int                     maxCount = 2;
     QQueue<CachedPixmapKey> keys;
 };
 
@@ -66,9 +68,7 @@ class DIGIKAM_EXPORT GraphicsDImgItem::GraphicsDImgItemPrivate
 {
 public:
 
-    explicit GraphicsDImgItemPrivate()
-    {
-    }
+    GraphicsDImgItemPrivate() = default;
 
     void init(GraphicsDImgItem* const q);
 
@@ -88,19 +88,19 @@ class DIGIKAM_EXPORT DImgPreviewItem::DImgPreviewItemPrivate : public GraphicsDI
 {
 public:
 
-    explicit DImgPreviewItemPrivate();
+    DImgPreviewItemPrivate() = default;
     void init(DImgPreviewItem* const q);
 
 public:
 
-    DImgPreviewItem::State state;
-    bool                   exifRotate;
-    int                    previewSize;
+    DImgPreviewItem::State state            = DImgPreviewItem::NoImage;
+    bool                   exifRotate       = false;
+    int                    previewSize      = 1024;
 
     QString                path;
     PreviewSettings        previewSettings;
-    PreviewLoadThread*     previewThread;
-    PreviewLoadThread*     preloadThread;
+    PreviewLoadThread*     previewThread    = nullptr;
+    PreviewLoadThread*     preloadThread    = nullptr;
     QStringList            pathsToPreload;
 };
 

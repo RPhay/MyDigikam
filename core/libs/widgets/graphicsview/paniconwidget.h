@@ -51,7 +51,7 @@ class DIGIKAM_EXPORT PanIconFrame : public QFrame
 public:
 
     explicit PanIconFrame(QWidget* const parent = nullptr);
-    ~PanIconFrame() override;
+    ~PanIconFrame()                         override;
 
     /**
      * Set the main widget. You cannot set the main widget from the constructor,

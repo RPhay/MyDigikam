@@ -135,6 +135,7 @@ void GraphicsDImgItem::GraphicsDImgItemPrivate::init(GraphicsDImgItem* const q)
 GraphicsDImgItem::~GraphicsDImgItem()
 {
     Q_D(GraphicsDImgItem);
+
     delete d;
 }
 

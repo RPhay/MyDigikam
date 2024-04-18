@@ -42,7 +42,7 @@ public:
 
 public:
 
-    ImageZoomSettings();
+    ImageZoomSettings() = default;
     explicit ImageZoomSettings(const QSize& imageSize, const QSize& originalSize = QSize());
 
     /**
@@ -154,10 +154,10 @@ private:
 protected:
 
     QSizeF   m_size;
-    double   m_zoom;
-    double   m_zoomConst;
+    double   m_zoom             = 1.0;
+    double   m_zoomConst        = 1.0;
 
-    QWidget* m_displayWidget;
+    QWidget* m_displayWidget    = nullptr;
 };
 
 } // namespace Digikam

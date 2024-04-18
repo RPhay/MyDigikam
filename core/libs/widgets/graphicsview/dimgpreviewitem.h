@@ -50,7 +50,7 @@ public:
 public:
 
     explicit DImgPreviewItem(QGraphicsItem* const parent = nullptr);
-    ~DImgPreviewItem() override;
+    ~DImgPreviewItem()                override;
 
     void setDisplayingWidget(QWidget* const widget);
     void setPreviewSettings(const PreviewSettings& settings);
