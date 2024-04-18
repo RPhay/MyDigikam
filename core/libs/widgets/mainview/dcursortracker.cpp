@@ -35,25 +35,18 @@ class Q_DECL_HIDDEN DCursorTracker::Private
 
 public:
 
-    explicit Private()
-      : alignment    (Qt::AlignCenter),
-        enable       (true),
-        keepOpen     (false),
-        autoHideTimer(nullptr),
-        parent       (nullptr)
-    {
-    }
+    Private() = default;
 
-    Qt::Alignment     alignment;
-    bool              enable;
-    bool              keepOpen;
-    QTimer*           autoHideTimer;
-    QPointer<QWidget> parent;
+    Qt::Alignment     alignment     = Qt::AlignCenter;
+    bool              enable        = true;
+    bool              keepOpen      = false;
+    QTimer*           autoHideTimer = nullptr;
+    QPointer<QWidget> parent        = nullptr;
 };
 
 DCursorTracker::DCursorTracker(const QString& txt, QWidget* const parent, Qt::Alignment align)
     : QLabel(txt, parent, Qt::ToolTip | Qt::BypassGraphicsProxyWidget),
-      d(new Private)
+      d     (new Private)
 {
     setBackgroundRole(QPalette::ToolTipBase);
     setPalette(QToolTip::palette());
@@ -161,7 +154,9 @@ bool DCursorTracker::eventFilter(QObject* object, QEvent* e)
         }
 
         default:
+        {
             break;
+        }
     }
 
     return false;
@@ -181,6 +176,7 @@ void DCursorTracker::moveToParent(QWidget* const parent)
             QPoint p = parent->mapToGlobal(QPoint(0, 0));
             int y    = p.y() - height();
             move(p.x(), (y < 0) ? (p.y() + parent->height()) : y);
+
             break;
         }
 
@@ -189,6 +185,7 @@ void DCursorTracker::moveToParent(QWidget* const parent)
             QPoint p = parent->mapToGlobal(QPoint(parent->width(), 0));
             int y    = p.y() - height();
             move(p.x()-width(), (y < 0) ? (p.y() + parent->height()) : y);
+
             break;
         }
 
@@ -198,6 +195,7 @@ void DCursorTracker::moveToParent(QWidget* const parent)
             QPoint p = parent->mapToGlobal(QPoint(parent->width()/2, 0));
             int y    = p.y() - height();
             move(p.x()-width()/2, (y < 0) ? (p.y() + parent->height()) : y);
+
             break;
         }
     }

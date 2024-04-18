@@ -36,10 +36,6 @@ DAboutData::DAboutData(DXmlGuiWindow* const parent)
 {
 }
 
-DAboutData::~DAboutData()
-{
-}
-
 const QString DAboutData::digiKamSloganFormated()
 {
     return i18nc("This is the slogan formatted string displayed in splashscreen. "

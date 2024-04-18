@@ -43,10 +43,6 @@ DActiveLabel::DActiveLabel(const QUrl& url, const QString& imgPath, QWidget* con
     }
 }
 
-DActiveLabel::~DActiveLabel()
-{
-}
-
 void DActiveLabel::updateData(const QUrl& url, const QImage& img)
 {
     QByteArray byteArray;

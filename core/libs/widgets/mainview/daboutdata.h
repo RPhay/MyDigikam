@@ -39,7 +39,7 @@ class DIGIKAM_EXPORT DAboutData : public QObject
 public:
 
     explicit DAboutData(DXmlGuiWindow* const parent);
-    ~DAboutData() override;
+    ~DAboutData() override = default;
 
     static const QString digiKamSloganFormated();
     static const QString digiKamSlogan();

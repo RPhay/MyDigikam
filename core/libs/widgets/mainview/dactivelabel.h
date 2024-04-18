@@ -42,7 +42,7 @@ public:
     explicit DActiveLabel(const QUrl& url = QUrl(),
                           const QString& imgPath = QString(),
                           QWidget* const parent = nullptr);
-    ~DActiveLabel() override;
+    ~DActiveLabel() override = default;
 
     void updateData(const QUrl& url, const QImage& img);
 };
