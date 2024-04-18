@@ -84,7 +84,7 @@ if [[ $DK_QTVERSION == 5 ]] ; then
 else
 
     DK_KDE_VERSION="master"                                 # Qt6 version use master code for the moment.
-    DK_UPLOADDIR="/srv/archives/files/digikam/unstable"     # Qt6 version is considerated unstable for the moment.
+    DK_UPLOADDIR="/srv/archives/files/digikam/"
 
 fi
 
