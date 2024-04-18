@@ -83,7 +83,7 @@ BUGFIXES:
 058 ==> 485527 - Freeze when trying to import from USB.
 059 ==> 261634 - Use Qt framework 6.70 and KDE framework 6.2.0 to compile AppImage bundle.
 060 ==> 484234 - MP3 slider stopped working.
-061 ==> 
+061 ==> 452567 - Crash with corrupted images after recovered my hard disk.
 062 ==> 
 063 ==> 
 064 ==> 
