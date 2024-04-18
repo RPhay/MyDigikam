@@ -52,19 +52,7 @@ DBinaryIface::DBinaryIface(const QString& binaryName,
       m_binaryArguments     (args),
       m_projectName         (projectName),
       m_url                 (QUrl(url)),
-      m_isFound             (false),
-      m_hasError            (false),
-      m_developmentVersion  (false),
-      m_version             (QLatin1String("")),
-      m_pathDir             (QLatin1String("")),
-      m_description         (desc),
-      m_pathWidget          (nullptr),
-      m_binaryLabel         (nullptr),
-      m_versionLabel        (nullptr),
-      m_pathButton          (nullptr),
-      m_downloadButton      (nullptr),
-      m_lineEdit            (nullptr),
-      m_statusIcon          (nullptr)
+      m_description         (desc)
 {
 }
 
@@ -86,23 +74,7 @@ DBinaryIface::DBinaryIface(const QString& binaryName,
       m_binaryArguments     (args),
       m_projectName         (projectName),
       m_url                 (QUrl(url)),
-      m_isFound             (false),
-      m_hasError            (false),
-      m_developmentVersion  (false),
-      m_version             (QLatin1String("")),
-      m_pathDir             (QLatin1String("")),
-      m_description         (desc),
-      m_pathWidget          (nullptr),
-      m_binaryLabel         (nullptr),
-      m_versionLabel        (nullptr),
-      m_pathButton          (nullptr),
-      m_downloadButton      (nullptr),
-      m_lineEdit            (nullptr),
-      m_statusIcon          (nullptr)
-{
-}
-
-DBinaryIface::~DBinaryIface()
+      m_description         (desc)
 {
 }
 
@@ -121,9 +93,11 @@ bool DBinaryIface::versionIsRight() const
     QRegularExpression verRegExp(QLatin1String("^(\\d*[.]\\d*)"));
     float floatVersion = verRegExp.match(version()).captured(0).toFloat();
 
-    return (!version().isNull() &&
+    return (
+            !version().isNull() &&
             isFound()           &&
-            (floatVersion >= minimalVersion().toFloat()));
+            (floatVersion >= minimalVersion().toFloat())
+           );
 }
 
 bool DBinaryIface::versionIsRight(const float customVersion) const
@@ -141,9 +115,11 @@ bool DBinaryIface::versionIsRight(const float customVersion) const
                                  << "(" << floatVersion
                                  << ")  [" << customVersion << "]";
 
-    return (!version().isNull() &&
+    return (
+            !version().isNull() &&
             isFound()           &&
-            (floatVersion >= customVersion));
+            (floatVersion >= customVersion)
+           );
 }
 
 QString DBinaryIface::findHeader(const QStringList& output, const QString& header) const

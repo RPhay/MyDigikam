@@ -57,7 +57,7 @@ public:
                  const QStringList& args = QStringList(),
                  const QString& desc = QString()
                 );
-    ~DBinaryIface() override;
+    ~DBinaryIface() override = default;
 
 public:
 
@@ -119,21 +119,21 @@ protected:
     const QString       m_projectName;
     const QUrl          m_url;
 
-    bool                m_isFound;
-    bool                m_hasError;
-    bool                m_developmentVersion;
+    bool                m_isFound               = false;
+    bool                m_hasError              = false;
+    bool                m_developmentVersion    = false;
 
-    QString             m_version;
-    QString             m_pathDir;
+    QString             m_version               = QLatin1String("");
+    QString             m_pathDir               = QLatin1String("");
     QString             m_description;
 
-    QFrame*             m_pathWidget;
-    QLabel*             m_binaryLabel;
-    QLabel*             m_versionLabel;
-    QPushButton*        m_pathButton;
-    QLabel*             m_downloadButton;
-    QLineEdit*          m_lineEdit;
-    QLabel*             m_statusIcon;
+    QFrame*             m_pathWidget            = nullptr;
+    QLabel*             m_binaryLabel           = nullptr;
+    QLabel*             m_versionLabel          = nullptr;
+    QPushButton*        m_pathButton            = nullptr;
+    QLabel*             m_downloadButton        = nullptr;
+    QLineEdit*          m_lineEdit              = nullptr;
+    QLabel*             m_statusIcon            = nullptr;
 
     QSet<QString>       m_searchPaths;
 

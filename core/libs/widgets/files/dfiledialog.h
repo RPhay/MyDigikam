@@ -40,7 +40,7 @@ public:
                          const QString& caption = QString(),
                          const QString& directory = QString(),
                          const QString& filter = QString());
-    ~DFileDialog() override;
+    ~DFileDialog() override = default;
 
     bool hasAcceptedUrls() const;
 

@@ -36,22 +36,15 @@ class Q_DECL_HIDDEN FileSaveConflictBox::Private
 {
 public:
 
-    explicit Private()
-      : conflictLabel       (nullptr),
-        conflictButtonGroup (nullptr),
-        storeDiffButton     (nullptr),
-        overwriteButton     (nullptr),
-        skipFileButton      (nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*       conflictLabel;
+    QLabel*       conflictLabel         = nullptr;
 
-    QButtonGroup* conflictButtonGroup;
+    QButtonGroup* conflictButtonGroup   = nullptr;
 
-    QRadioButton* storeDiffButton;
-    QRadioButton* overwriteButton;
-    QRadioButton* skipFileButton;
+    QRadioButton* storeDiffButton       = nullptr;
+    QRadioButton* overwriteButton       = nullptr;
+    QRadioButton* skipFileButton        = nullptr;
 };
 
 FileSaveConflictBox::FileSaveConflictBox(QWidget* const parent, bool addSkip)
@@ -136,7 +129,7 @@ void FileSaveConflictBox::setConflictRule(ConflictRule r)
 void FileSaveConflictBox::readSettings(KConfigGroup& group)
 {
     setConflictRule((FileSaveConflictBox::ConflictRule)group.readEntry("Conflict",
-        (int)(FileSaveConflictBox::DIFFNAME)));
+                    (int)(FileSaveConflictBox::DIFFNAME)));
 }
 
 void FileSaveConflictBox::writeSettings(KConfigGroup& group)

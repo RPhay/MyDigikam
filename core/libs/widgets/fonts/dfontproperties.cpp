@@ -108,23 +108,7 @@ class Q_DECL_HIDDEN DFontProperties::Private
 public:
 
     explicit Private(DFontProperties* const qq)
-        : q                     (qq),
-          sizeOfFont            (nullptr),
-          sampleEdit            (nullptr),
-          familyLabel           (nullptr),
-          styleLabel            (nullptr),
-          familyCheckbox        (nullptr),
-          styleCheckbox         (nullptr),
-          sizeCheckbox          (nullptr),
-          sizeLabel             (nullptr),
-          familyListBox         (nullptr),
-          styleListBox          (nullptr),
-          sizeListBox           (nullptr),
-          sizeIsRelativeCheckBox(nullptr),
-          selectedSize          (-1),
-          customSizeRow         (-1),
-          signalsAllowed        (true),
-          usingFixed            (true)
+        : q(qq)
     {
         palette.setColor(QPalette::Active, QPalette::Text, Qt::black);
         palette.setColor(QPalette::Active, QPalette::Base, Qt::white);
@@ -176,33 +160,33 @@ public:
 
 public:
 
-    DFontProperties*        q;
+    DFontProperties*        q                       = nullptr;
 
     QPalette                palette;
-    QDoubleSpinBox*         sizeOfFont;
-    DTextEdit*              sampleEdit;
+    QDoubleSpinBox*         sizeOfFont              = nullptr;
+    DTextEdit*              sampleEdit              = nullptr;
 
-    QLabel*                 familyLabel;
-    QLabel*                 styleLabel;
-    QCheckBox*              familyCheckbox;
-    QCheckBox*              styleCheckbox;
-    QCheckBox*              sizeCheckbox;
-    QLabel*                 sizeLabel;
-    QListWidget*            familyListBox;
-    QListWidget*            styleListBox;
-    QListWidget*            sizeListBox;
-    QCheckBox*              sizeIsRelativeCheckBox;
+    QLabel*                 familyLabel             = nullptr;
+    QLabel*                 styleLabel              = nullptr;
+    QCheckBox*              familyCheckbox          = nullptr;
+    QCheckBox*              styleCheckbox           = nullptr;
+    QCheckBox*              sizeCheckbox            = nullptr;
+    QLabel*                 sizeLabel               = nullptr;
+    QListWidget*            familyListBox           = nullptr;
+    QListWidget*            styleListBox            = nullptr;
+    QListWidget*            sizeListBox             = nullptr;
+    QCheckBox*              sizeIsRelativeCheckBox  = nullptr;
 
     QFont                   selFont;
 
     QString                 selectedStyle;
-    qreal                   selectedSize;
+    qreal                   selectedSize            = -1.0;
 
     QString                 standardSizeAtCustom;
-    int                     customSizeRow;
+    int                     customSizeRow           = -1;
 
-    bool                    signalsAllowed;
-    bool                    usingFixed;
+    bool                    signalsAllowed          = true;
+    bool                    usingFixed              = true;
 
     /**
      * Mappings of translated to Qt originated family and style strings.
@@ -888,6 +872,7 @@ void DFontProperties::Private::_d_size_chosen_slot(const QString& size)
 
     sizeOfFont->setValue(currentSize);
     selFont.setPointSizeF(currentSize);
+
     Q_EMIT q->fontSelected(selFont);
 
     if (!size.isEmpty())
@@ -959,7 +944,9 @@ void DFontProperties::Private::_d_size_value_slot(double dval)
 
         // Make sure the new row is not out of bounds.
 
-        nrow = nrow < 0 ? 0 : nrow >= nrows ? nrows - 1 : nrow;
+        nrow = (nrow < 0) ? 0
+                          : (nrow >= nrows) ? nrows - 1
+                                            : nrow;
 
         // Get the size from the new row and set the spinbox to that size.
 
@@ -974,6 +961,7 @@ void DFontProperties::Private::_d_size_value_slot(double dval)
 
     selectedSize   = val;
     selFont.setPointSizeF(val);
+
     Q_EMIT q->fontSelected(selFont);
 
     signalsAllowed = true;
@@ -1244,18 +1232,26 @@ void DFontProperties::getFontList(QStringList& list, uint fontListCriteria)
 
         for (QStringList::const_iterator it = lstSys.constBegin() ; it != lstSys.constEnd() ; ++it)
         {
-            if ((fontListCriteria & FixedWidthFonts) > 0 && !dbase.isFixedPitch(*it))
+            if (
+                ((fontListCriteria & FixedWidthFonts) > 0) &&
+                !dbase.isFixedPitch(*it)
+               )
             {
                 continue;
             }
 
-            if (((fontListCriteria & (SmoothScalableFonts | ScalableFonts)) == ScalableFonts) &&
-                 !dbase.isBitmapScalable(*it))
+            if (
+                ((fontListCriteria & (SmoothScalableFonts | ScalableFonts)) == ScalableFonts) &&
+                !dbase.isBitmapScalable(*it)
+               )
             {
                 continue;
             }
 
-            if (((fontListCriteria & SmoothScalableFonts) > 0) && !dbase.isSmoothlyScalable(*it))
+            if (
+                ((fontListCriteria & SmoothScalableFonts) > 0) &&
+                !dbase.isSmoothlyScalable(*it)
+               )
             {
                 continue;
             }

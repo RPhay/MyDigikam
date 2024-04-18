@@ -45,13 +45,21 @@ public:
         JPEG,
         PNG,
         TIFF,
+
 #ifdef HAVE_JASPER
+
         JP2K,
+
 #endif
+
         PGF,
+
 #ifdef HAVE_X265
+
         HEIF,
+
 #endif
+
         JXL,
         WEBP,
         AVIF

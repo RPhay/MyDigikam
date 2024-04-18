@@ -44,59 +44,34 @@ class Q_DECL_HIDDEN FileSaveOptionsBox::Private
 
 public:
 
-    explicit Private()
-      : noneOptions     (nullptr),
-        noneGrid        (nullptr),
-        labelNone       (nullptr),
-        JPEGOptions     (nullptr),
-        PNGOptions      (nullptr),
-        TIFFOptions     (nullptr),
+    Private() = default;
+
+    QWidget*            noneOptions     = nullptr;
+
+    QGridLayout*        noneGrid        = nullptr;
+
+    QLabel*             labelNone       = nullptr;
+
+    DImgLoaderSettings* JPEGOptions     = nullptr;
+    DImgLoaderSettings* PNGOptions      = nullptr;
+    DImgLoaderSettings* TIFFOptions     = nullptr;
 
 #ifdef HAVE_JASPER
 
-        JPEG2000Options (nullptr),
+    DImgLoaderSettings* JPEG2000Options = nullptr;
 
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
 
-        HEIFOptions     (nullptr),
+    DImgLoaderSettings* HEIFOptions     = nullptr;
 
 #endif // HAVE_X265
 
-        PGFOptions      (nullptr),
-        JXLOptions      (nullptr),
-        WEBPOptions     (nullptr),
-        AVIFOptions     (nullptr)
-    {
-    }
-
-    QWidget*            noneOptions;
-
-    QGridLayout*        noneGrid;
-
-    QLabel*             labelNone;
-
-    DImgLoaderSettings* JPEGOptions;
-    DImgLoaderSettings* PNGOptions;
-    DImgLoaderSettings* TIFFOptions;
-
-#ifdef HAVE_JASPER
-
-    DImgLoaderSettings* JPEG2000Options;
-
-#endif // HAVE_JASPER
-
-#ifdef HAVE_X265
-
-    DImgLoaderSettings* HEIFOptions;
-
-#endif // HAVE_X265
-
-    DImgLoaderSettings* PGFOptions;
-    DImgLoaderSettings* JXLOptions;
-    DImgLoaderSettings* WEBPOptions;
-    DImgLoaderSettings* AVIFOptions;
+    DImgLoaderSettings* PGFOptions      = nullptr;
+    DImgLoaderSettings* JXLOptions      = nullptr;
+    DImgLoaderSettings* WEBPOptions     = nullptr;
+    DImgLoaderSettings* AVIFOptions     = nullptr;
 };
 
 FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)

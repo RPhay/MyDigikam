@@ -45,10 +45,6 @@ DFileDialog::DFileDialog(QWidget* const parent, const QString& caption,
     setOption(getNativeFileDialogOption());
 }
 
-DFileDialog::~DFileDialog()
-{
-}
-
 bool DFileDialog::hasAcceptedUrls() const
 {
     return (!selectedUrls().isEmpty()
