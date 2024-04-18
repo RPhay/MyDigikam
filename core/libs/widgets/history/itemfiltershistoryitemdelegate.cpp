@@ -40,10 +40,6 @@ ItemFiltersHistoryItemDelegate::ItemFiltersHistoryItemDelegate(QObject* const pa
 {
 }
 
-ItemFiltersHistoryItemDelegate::~ItemFiltersHistoryItemDelegate()
-{
-}
-
 QSize ItemFiltersHistoryItemDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
     // Add padding of 6px

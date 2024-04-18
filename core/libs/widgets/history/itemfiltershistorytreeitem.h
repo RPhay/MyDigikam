@@ -31,8 +31,10 @@ class ItemFiltersHistoryTreeItem
 {
 public:
 
-    explicit ItemFiltersHistoryTreeItem(const QList<QVariant>& data, ItemFiltersHistoryTreeItem* const parent = nullptr);
-    explicit ItemFiltersHistoryTreeItem(const QString& data, ItemFiltersHistoryTreeItem* const parent = nullptr);
+    explicit ItemFiltersHistoryTreeItem(const QList<QVariant>& data,
+                                        ItemFiltersHistoryTreeItem* const parent = nullptr);
+    explicit ItemFiltersHistoryTreeItem(const QString& data,
+                                        ItemFiltersHistoryTreeItem* const parent = nullptr);
     ~ItemFiltersHistoryTreeItem();
 
     void appendChild(ItemFiltersHistoryTreeItem* const child);

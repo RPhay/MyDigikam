@@ -51,7 +51,9 @@ public:
     VersionsTreeView*        view()     const;
     VersionsDelegate*        delegate() const;
 
-    ActionVersionsOverlay*   addActionOverlay(const QIcon& icon, const QString& text, const QString& tip = QString());
+    ActionVersionsOverlay*   addActionOverlay(const QIcon& icon,
+                                              const QString& text,
+                                              const QString& tip = QString());
     ShowHideVersionsOverlay* addShowHideOverlay();
 
 public Q_SLOTS:

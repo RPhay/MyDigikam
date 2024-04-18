@@ -41,10 +41,6 @@ RemoveFilterAction::RemoveFilterAction(const QString& label, const QModelIndex& 
 {
 }
 
-RemoveFilterAction::~RemoveFilterAction()
-{
-}
-
 void RemoveFilterAction::setIndex(const QModelIndex& index)
 {
     m_index = index;
@@ -61,20 +57,13 @@ class Q_DECL_HIDDEN FiltersHistoryWidget::Private
 {
 public:
 
-    explicit Private()
-      : view       (nullptr),
-        model      (nullptr),
-        layout     (nullptr),
-        delegate   (nullptr),
-        headerLabel(nullptr)
-    {
-    }
+    Private() = default;
 
-    QTreeView*                      view;
-    ItemFiltersHistoryModel*        model;
-    QGridLayout*                    layout;
-    ItemFiltersHistoryItemDelegate* delegate;
-    QLabel*                         headerLabel;
+    QTreeView*                      view        = nullptr;
+    ItemFiltersHistoryModel*        model       = nullptr;
+    QGridLayout*                    layout      = nullptr;
+    ItemFiltersHistoryItemDelegate* delegate    = nullptr;
+    QLabel*                         headerLabel = nullptr;
 };
 
 FiltersHistoryWidget::FiltersHistoryWidget(QWidget* const parent)

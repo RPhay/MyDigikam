@@ -21,26 +21,24 @@ class Q_DECL_HIDDEN ItemFiltersHistoryTreeItem::Private
 {
 public:
 
-    explicit Private()
-      : parentItem(nullptr),
-        disabled  (false)
-    {
-    }
+    Private() = default;
 
     QList<ItemFiltersHistoryTreeItem*> childItems;
     QList<QVariant>                    itemData;
-    ItemFiltersHistoryTreeItem*        parentItem;
-    bool                               disabled;
+    ItemFiltersHistoryTreeItem*        parentItem   = nullptr;
+    bool                               disabled     = false;
 };
 
-ItemFiltersHistoryTreeItem::ItemFiltersHistoryTreeItem(const QList<QVariant>& data, ItemFiltersHistoryTreeItem* const parent)
+ItemFiltersHistoryTreeItem::ItemFiltersHistoryTreeItem(const QList<QVariant>& data,
+                                                       ItemFiltersHistoryTreeItem* const parent)
     : d(new Private)
 {
     d->parentItem = parent;
     d->itemData   = data;
 }
 
-ItemFiltersHistoryTreeItem::ItemFiltersHistoryTreeItem(const QString& data, ItemFiltersHistoryTreeItem* const parent)
+ItemFiltersHistoryTreeItem::ItemFiltersHistoryTreeItem(const QString& data,
+                                                       ItemFiltersHistoryTreeItem* const parent)
     : d(new Private)
 {
     d->parentItem = parent;

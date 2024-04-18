@@ -51,28 +51,18 @@ class Q_DECL_HIDDEN VersionsWidget::Private
 {
 public:
 
-    explicit Private()
-        : view              (nullptr),
-          model             (nullptr),
-          delegate          (nullptr),
-          showHideOverlay   (nullptr),
-          viewButtonGroup   (nullptr),
-          listModeButton    (nullptr),
-          treeModeButton    (nullptr),
-          combinedModeButton(nullptr)
-    {
-    }
+    Private() = default;
 
-    VersionsTreeView*        view;
-    ItemHistoryGraphModel*   model;
-    VersionsDelegate*        delegate;
+    VersionsTreeView*        view               = nullptr;
+    ItemHistoryGraphModel*   model              = nullptr;
+    VersionsDelegate*        delegate           = nullptr;
 
-    ShowHideVersionsOverlay* showHideOverlay;
+    ShowHideVersionsOverlay* showHideOverlay    = nullptr;
 
-    QButtonGroup*            viewButtonGroup;
-    QToolButton*             listModeButton;
-    QToolButton*             treeModeButton;
-    QToolButton*             combinedModeButton;
+    QButtonGroup*            viewButtonGroup    = nullptr;
+    QToolButton*             listModeButton     = nullptr;
+    QToolButton*             treeModeButton     = nullptr;
+    QToolButton*             combinedModeButton = nullptr;
 
     static const QString     configCurrentMode;
 };
@@ -163,17 +153,23 @@ void VersionsWidget::readSettings(const KConfigGroup& group)
     switch (mode)
     {
         case ItemHistoryGraphModel::ImagesListMode:
+        {
             d->listModeButton->setChecked(true);
             break;
+        }
 
         case ItemHistoryGraphModel::ImagesTreeMode:
+        {
             d->treeModeButton->setChecked(true);
             break;
+        }
 
         case ItemHistoryGraphModel::CombinedTreeMode:
         default:
+        {
             d->combinedModeButton->setChecked(true);
             break;
+        }
     }
 
     slotViewModeChanged(mode);
@@ -230,10 +226,12 @@ void VersionsWidget::slotViewCurrentChanged(const QModelIndex& current, const QM
     {
         case ItemHistoryGraphModel::ImagesListMode:
         case ItemHistoryGraphModel::ImagesTreeMode:
+        {
             break;
+        }
 
         case ItemHistoryGraphModel::CombinedTreeMode:
-
+        {
             // toplevel image index
 
             if (!info.isNull() && !current.parent().isValid())
@@ -245,7 +243,9 @@ void VersionsWidget::slotViewCurrentChanged(const QModelIndex& current, const QM
             {
                 d->view->collapse(previous);
             }
+
             break;
+        }
     }
 }
 
@@ -260,15 +260,21 @@ void VersionsWidget::applyViewMode()
     switch (d->model->mode())
     {
         case ItemHistoryGraphModel::ImagesListMode:
+        {
             break;
+        }
 
         case ItemHistoryGraphModel::ImagesTreeMode:
+        {
             d->view->expandAll();
             break;
+        }
 
         case ItemHistoryGraphModel::CombinedTreeMode:
+        {
             d->view->collapseAll();
             break;
+        }
     }
 
     QModelIndex subjectIndex = d->model->indexForInfo(d->model->subject());

@@ -39,7 +39,7 @@ class RemoveFilterAction : public QAction
 public:
 
     explicit RemoveFilterAction(const QString& label, const QModelIndex& index, QObject* const parent = nullptr);
-    ~RemoveFilterAction() override;
+    ~RemoveFilterAction() override = default;
 
     void setIndex(const QModelIndex& index);
 

@@ -35,17 +35,13 @@ class Q_DECL_HIDDEN ItemFiltersHistoryModel::Private
 {
 public:
 
-    explicit Private()
-        : rootItem       (nullptr),
-          disabledEntries(0)
-    {
-    }
+    Private() = default;
 
-    ItemFiltersHistoryTreeItem* rootItem;
+    ItemFiltersHistoryTreeItem* rootItem            = nullptr;
     QList<FilterAction>          filterStack;
     QUrl                         lastUrl;
 
-    int                          disabledEntries;
+    int                          disabledEntries    = 0;
 };
 
 ItemFiltersHistoryModel::ItemFiltersHistoryModel(QObject* const parent, const QUrl& url)
@@ -320,7 +316,7 @@ bool ItemFiltersHistoryModel::removeRows(int row, int /*count*/, const QModelInd
         d->filterStack.removeAt(row);
         endResetModel();
 
-        //TODO: Q_EMIT signal starting FilterManager
+        //TODO: Emit signal starting FilterManager
 
         return true;
     }
@@ -369,7 +365,7 @@ void ItemFiltersHistoryModel::enableEntries(int count)
 
     while (count > 0)
     {
-        d->rootItem->child(rowCount()-d->disabledEntries-1+count)->setDisabled(false);
+        d->rootItem->child(rowCount() - d->disabledEntries - 1 + count)->setDisabled(false);
         --count;
     }
 
