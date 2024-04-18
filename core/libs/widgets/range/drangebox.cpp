@@ -28,21 +28,16 @@ class Q_DECL_HIDDEN DIntRangeBox::Private
 
 public:
 
-    explicit Private()
-      : intervalLabel(nullptr),
-        minValueBox(nullptr),
-        maxValueBox(nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel*   intervalLabel;
-    QSpinBox* minValueBox;
-    QSpinBox* maxValueBox;
+    QLabel*   intervalLabel = nullptr;
+    QSpinBox* minValueBox   = nullptr;
+    QSpinBox* maxValueBox   = nullptr;
 };
 
 DIntRangeBox::DIntRangeBox(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->minValueBox   = new QSpinBox(this);
     d->minValueBox->setRange(0, 100);

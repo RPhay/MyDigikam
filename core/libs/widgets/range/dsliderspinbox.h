@@ -37,7 +37,8 @@ class DAbstractSliderSpinBox : public QWidget
 
 protected:
 
-    explicit DAbstractSliderSpinBox(QWidget* const parent, DAbstractSliderSpinBoxPrivate* const q);
+    explicit DAbstractSliderSpinBox(QWidget* const parent,
+                                    DAbstractSliderSpinBoxPrivate* const q);
 
 public:
 
@@ -58,33 +59,33 @@ public:
      */
     void setBlockUpdateSignalOnDrag(bool block);
 
-    QSize sizeHint() const override;
-    QSize minimumSizeHint() const override;
+    QSize sizeHint()            const override;
+    QSize minimumSizeHint()     const override;
     virtual QSize minimumSize() const;
 
-    bool isDragging() const;
+    bool isDragging()           const;
 
 protected:
 
-    void paintEvent(QPaintEvent* e) override;
-    void mousePressEvent(QMouseEvent* e) override;
-    void mouseReleaseEvent(QMouseEvent* e) override;
-    void mouseMoveEvent(QMouseEvent* e) override;
-    void keyPressEvent(QKeyEvent* e) override;
-    void wheelEvent(QWheelEvent* e) override;
-    void focusInEvent(QFocusEvent* e) override;
-    bool eventFilter(QObject* recv, QEvent* e) override;
+    void paintEvent(QPaintEvent* e)             override;
+    void mousePressEvent(QMouseEvent* e)        override;
+    void mouseReleaseEvent(QMouseEvent* e)      override;
+    void mouseMoveEvent(QMouseEvent* e)         override;
+    void keyPressEvent(QKeyEvent* e)            override;
+    void wheelEvent(QWheelEvent* e)             override;
+    void focusInEvent(QFocusEvent* e)           override;
+    bool eventFilter(QObject* recv, QEvent* e)  override;
 
-    QStyleOptionSpinBox spinBoxOptions() const;
-    QStyleOptionProgressBar progressBarOptions() const;
+    QStyleOptionSpinBox spinBoxOptions()                                    const;
+    QStyleOptionProgressBar progressBarOptions()                            const;
 
-    QRect progressRect(const QStyleOptionSpinBox& spinBoxOptions) const;
-    QRect upButtonRect(const QStyleOptionSpinBox& spinBoxOptions) const;
-    QRect downButtonRect(const QStyleOptionSpinBox& spinBoxOptions) const;
+    QRect progressRect(const QStyleOptionSpinBox& spinBoxOptions)           const;
+    QRect upButtonRect(const QStyleOptionSpinBox& spinBoxOptions)           const;
+    QRect downButtonRect(const QStyleOptionSpinBox& spinBoxOptions)         const;
 
-    int valueForX(int x, Qt::KeyboardModifiers modifiers = Qt::NoModifier) const;
+    int valueForX(int x, Qt::KeyboardModifiers modifiers = Qt::NoModifier)  const;
 
-    virtual QString valueString() const = 0;
+    virtual QString valueString()                                           const = 0;
 
     /**
      * Sets the slider internal value. Inheriting classes should respect blockUpdateSignal
@@ -128,15 +129,15 @@ class DSliderSpinBox : public DAbstractSliderSpinBox
 public:
 
     explicit DSliderSpinBox(QWidget* const parent = nullptr);
-    ~DSliderSpinBox() override;
+    ~DSliderSpinBox()                                                 override;
 
     void setRange(int minimum, int maximum);
 
-    int  minimum() const;
+    int  minimum()                                              const;
     void setMinimum(int minimum);
-    int  maximum() const;
+    int  maximum()                                              const;
     void setMaximum(int maximum);
-    int  fastSliderStep() const;
+    int  fastSliderStep()                                       const;
     void setFastSliderStep(int step);
 
     /// Get the value, don't use value()
@@ -152,8 +153,8 @@ public Q_SLOTS:
 
 protected:
 
-    QString valueString() const override;
-    void setInternalValue(int value, bool blockUpdateSignal) override;
+    QString valueString()                                       const override;
+    void setInternalValue(int value, bool blockUpdateSignal)          override;
 
 Q_SIGNALS:
 
@@ -170,15 +171,15 @@ class DDoubleSliderSpinBox : public DAbstractSliderSpinBox
 public:
 
     explicit DDoubleSliderSpinBox(QWidget* const parent = nullptr);
-    ~DDoubleSliderSpinBox() override;
+    ~DDoubleSliderSpinBox()                                           override;
 
     void   setRange(double minimum, double maximum, int decimals = 0);
 
-    double minimum() const;
+    double minimum()                                            const;
     void   setMinimum(double minimum);
-    double maximum() const;
+    double maximum()                                            const;
     void   setMaximum(double maximum);
-    double fastSliderStep() const;
+    double fastSliderStep()                                     const;
     void   setFastSliderStep(double step);
 
     double value();
@@ -190,8 +191,8 @@ public Q_SLOTS:
 
 protected:
 
-    QString valueString() const override;
-    void setInternalValue(int value, bool blockUpdateSignal) override;
+    QString valueString()                                       const override;
+    void setInternalValue(int value, bool blockUpdateSignal)          override;
 
 Q_SIGNALS:
 

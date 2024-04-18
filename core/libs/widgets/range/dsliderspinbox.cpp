@@ -38,28 +38,6 @@ class Q_DECL_HIDDEN DAbstractSliderSpinBoxPrivate
 {
 public:
 
-    DAbstractSliderSpinBoxPrivate()
-      : edit(nullptr),
-        validator(nullptr),
-        dummySpinBox(nullptr),
-        upButtonDown(false),
-        downButtonDown(false),
-        factor(1.0),
-        fastSliderStep(5),
-        slowFactor(0.1),
-        shiftPercent(0.0),
-        shiftMode(false),
-        exponentRatio(0.0),
-        value(0),
-        maximum(100),
-        minimum(0),
-        singleStep(1),
-        style(STYLE_NOQUIRK),
-        blockUpdateSignalOnDrag(false),
-        isDragging             (false)
-    {
-    }
-
     enum Style
     {
         STYLE_NOQUIRK,
@@ -72,31 +50,37 @@ public:
         STYLE_GTK2
     };
 
-    QLineEdit*        edit;
-    QDoubleValidator* validator;
-    QSpinBox*         dummySpinBox;
-    bool              upButtonDown;
-    bool              downButtonDown;
-    int               factor;
-    int               fastSliderStep;
-    double            slowFactor;
-    double            shiftPercent;
-    bool              shiftMode;
+public:
+
+    DAbstractSliderSpinBoxPrivate() = default;
+
+public:
+
+    QLineEdit*        edit                      = nullptr;
+    QDoubleValidator* validator                 = nullptr;
+    QSpinBox*         dummySpinBox              = nullptr;
+    bool              upButtonDown              = false;
+    bool              downButtonDown            = false;
+    int               factor                    = 1;
+    int               fastSliderStep            = 5;
+    double            slowFactor                = 0.1;
+    double            shiftPercent              = 0.0;
+    bool              shiftMode                 = false;
     QString           prefix;
     QString           suffix;
-    double            exponentRatio;
-    int               value;
-    int               maximum;
-    int               minimum;
-    int               singleStep;
-    Style             style;
-    bool              blockUpdateSignalOnDrag;
-    bool              isDragging;
+    double            exponentRatio             = 0.0;
+    int               value                     = 0;
+    int               maximum                   = 100;
+    int               minimum                   = 0;
+    int               singleStep                = 1;
+    Style             style                     = STYLE_NOQUIRK;
+    bool              blockUpdateSignalOnDrag   = false;
+    bool              isDragging                = false;
 };
 
 DAbstractSliderSpinBox::DAbstractSliderSpinBox(QWidget* const parent, DAbstractSliderSpinBoxPrivate* const q)
     : QWidget(parent),
-      d_ptr(q)
+      d_ptr  (q)
 {
     Q_D(DAbstractSliderSpinBox);
 
@@ -185,20 +169,28 @@ void DAbstractSliderSpinBox::paintEvent(QPaintEvent* e)
     switch (d->style)
     {
         case DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE:
+        {
             paintPlastique(painter);
             break;
+        }
 
         case DAbstractSliderSpinBoxPrivate::STYLE_BREEZE:
+        {
             paintBreeze(painter);
             break;
+        }
 
         case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
+        {
             paintFusion(painter);
             break;
+        }
 
         default:
+        {
             paint(painter);
             break;
+        }
     }
 
     painter.end();
@@ -229,10 +221,12 @@ void DAbstractSliderSpinBox::paint(QPainter& painter)
 
     QStyleOptionProgressBar progressOpts = progressBarOptions();
 
-    if ((d->style == DAbstractSliderSpinBoxPrivate::STYLE_GTK2)    ||
+    if (
+        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_GTK2)    ||
         (d->style == DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN)  ||
         (d->style == DAbstractSliderSpinBoxPrivate::STYLE_WINDOWS) ||
-        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH))
+        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH)
+       )
     {
         progressOpts.state |= QStyle::State_Horizontal;
     }
@@ -492,16 +486,20 @@ void DAbstractSliderSpinBox::mouseReleaseEvent(QMouseEvent* e)
     {
         setInternalValue(d->value - d->singleStep);
     }
-    else if (progressRect(spinOpts).contains(e->pos()) &&
-             !(d->edit->isVisible())                      &&
-             !(d->upButtonDown || d->downButtonDown))
+    else if (
+             progressRect(spinOpts).contains(e->pos()) &&
+             !(d->edit->isVisible())                   &&
+             !(d->upButtonDown || d->downButtonDown)
+            )
     {
         // Snap to percentage for progress area
+
         setInternalValue(valueForX(e->pos().x(),e->modifiers()));
     }
     else
     {
         // Confirm the last known value, since we might be ignoring move events
+
         setInternalValue(d->value);
     }
 
@@ -529,7 +527,10 @@ void DAbstractSliderSpinBox::mouseMoveEvent(QMouseEvent* e)
 
     // Respect emulated mouse grab.
 
-    if (e->buttons() & Qt::LeftButton && !(d->downButtonDown || d->upButtonDown))
+    if (
+        (e->buttons() & Qt::LeftButton) &&
+        !(d->downButtonDown || d->upButtonDown)
+       )
     {
         d->isDragging = true;
         setInternalValue(valueForX(e->pos().x(),e->modifiers()), d->blockUpdateSignalOnDrag);
@@ -545,6 +546,7 @@ void DAbstractSliderSpinBox::keyPressEvent(QKeyEvent* e)
     {
         case Qt::Key_Up:
         case Qt::Key_Right:
+        {
             setInternalValue(d->value + d->singleStep);
 
             if (d->edit->isVisible())
@@ -554,9 +556,11 @@ void DAbstractSliderSpinBox::keyPressEvent(QKeyEvent* e)
 
             update();
             break;
+        }
 
         case Qt::Key_Down:
         case Qt::Key_Left:
+        {
             setInternalValue(d->value - d->singleStep);
 
             if (d->edit->isVisible())
@@ -566,11 +570,14 @@ void DAbstractSliderSpinBox::keyPressEvent(QKeyEvent* e)
 
             update();
             break;
+        }
 
         case Qt::Key_Shift:
+        {
             d->shiftPercent = pow(double(d->value - d->minimum) / double(d->maximum - d->minimum), 1 / double(d->exponentRatio));
             d->shiftMode = true;
             break;
+        }
 
         case Qt::Key_Enter: // Line edit isn't "accepting" key strokes...
         case Qt::Key_Return:
@@ -580,12 +587,16 @@ void DAbstractSliderSpinBox::keyPressEvent(QKeyEvent* e)
         case Qt::Key_AltGr:
         case Qt::Key_Super_L:
         case Qt::Key_Super_R:
+        {
             break;
+        }
 
         default:
+        {
             showEdit();
             d->edit->event(e);
             break;
+        }
     }
 }
 
@@ -628,17 +639,23 @@ bool DAbstractSliderSpinBox::eventFilter(QObject* recv, QEvent* e)
         {
             case Qt::Key_Enter:
             case Qt::Key_Return:
+            {
                 setInternalValue(QLocale::system().toDouble(d->edit->text()) * d->factor);
                 hideEdit();
                 return true;
+            }
 
             case Qt::Key_Escape:
+            {
                 d->edit->setText(valueString());
                 hideEdit();
                 return true;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
     else if (d->edit->isVisible() && e->type() == QEvent::ShortcutOverride)
@@ -651,11 +668,15 @@ bool DAbstractSliderSpinBox::eventFilter(QObject* recv, QEvent* e)
             case Qt::Key_Enter:
             case Qt::Key_Return:
             case Qt::Key_Escape:
+            {
                 e->accept();
                 return true;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -673,6 +694,7 @@ QSize DAbstractSliderSpinBox::sizeHint() const
     {
         // Some styles use bold font in progressbars
         // unfortunately there is no reliable way to check for that
+
         ft.setBold(true);
     }
 
@@ -683,33 +705,44 @@ QSize DAbstractSliderSpinBox::sizeHint() const
     switch (d->style)
     {
         case DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE:
+        {
             hint += QSize(8, 0);
             break;
+        }
 
         case DAbstractSliderSpinBoxPrivate::STYLE_BREEZE:
+        {
             hint += QSize(2, 0);
             break;
+        }
 
         case DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH:
         case DAbstractSliderSpinBoxPrivate::STYLE_WINDOWS:
         case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
         case DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN:
         case DAbstractSliderSpinBoxPrivate::STYLE_GTK2:
+        {
             hint += QSize(8, 8);
             break;
+        }
 
         case DAbstractSliderSpinBoxPrivate::STYLE_NOQUIRK:
+        {
             // almost all "modern" styles have a margin around controls
             hint += QSize(6, 6);
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     // Getting the size of the buttons is a pain as the calcs require a rect
     // that is "big enough". We run the calc twice to get the "smallest" buttons
     // This code was inspired by QAbstractSpinBox
+
     QSize extra(1000, 0);
     spinOpts.rect.setSize(hint + extra);
     extra += hint - style()->subControlRect(QStyle::CC_SpinBox, &spinOpts,
@@ -815,15 +848,21 @@ QRect DAbstractSliderSpinBox::progressRect(const QStyleOptionSpinBox& spinBoxOpt
     switch (d->style)
     {
         case DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE:
+        {
             ret.adjust(-2, 0, 1, 0);
             break;
+        }
 
         case DAbstractSliderSpinBoxPrivate::STYLE_BREEZE:
+        {
             ret.adjust(1, 0, 0, 0);
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     return ret;
@@ -860,14 +899,17 @@ int DAbstractSliderSpinBox::valueForX(int x, Qt::KeyboardModifiers modifiers) co
     else
     {
         // Adjust for magic number in style code (margins)
+
         correctedProgRect = progressRect(spinOpts).adjusted(2, 2, -2, -2);
     }
 
     // Compute the distance of the progress bar, in pixel
+
     double leftDbl  = correctedProgRect.left();
     double xDbl     = x - leftDbl;
 
     // Compute the ration of the progress bar used, linearly (ignoring the exponent)
+
     double rightDbl = correctedProgRect.right();
     double minDbl   = d->minimum;
     double maxDbl   = d->maximum;
@@ -876,14 +918,18 @@ int DAbstractSliderSpinBox::valueForX(int x, Qt::KeyboardModifiers modifiers) co
     double percent  = (xDbl / (rightDbl - leftDbl));
 
     // If SHIFT is pressed, movement should be slowed.
+
     if (modifiers & Qt::ShiftModifier)
     {
         percent = d->shiftPercent + (percent - d->shiftPercent) * d->slowFactor;
     }
 
     // Final value
+
     double realvalue = ((dValues * pow(percent, d->exponentRatio)) + minDbl);
+
     // If key CTRL is pressed, round to the closest step.
+
     if (modifiers & Qt::ControlModifier)
     {
         double fstep = d->fastSliderStep;
@@ -893,7 +939,7 @@ int DAbstractSliderSpinBox::valueForX(int x, Qt::KeyboardModifiers modifiers) co
             fstep *= d->slowFactor;
         }
 
-        realvalue = floor((realvalue+fstep / 2) / fstep) * fstep;
+        realvalue = floor((realvalue + fstep / 2) / fstep) * fstep;
     }
 
     return int(realvalue);
@@ -902,25 +948,30 @@ int DAbstractSliderSpinBox::valueForX(int x, Qt::KeyboardModifiers modifiers) co
 void DAbstractSliderSpinBox::setPrefix(const QString& prefix)
 {
     Q_D(DAbstractSliderSpinBox);
+
     d->prefix = prefix;
 }
 
 void DAbstractSliderSpinBox::setSuffix(const QString& suffix)
 {
     Q_D(DAbstractSliderSpinBox);
+
     d->suffix = suffix;
 }
 
 void DAbstractSliderSpinBox::setExponentRatio(double dbl)
 {
     Q_D(DAbstractSliderSpinBox);
+
     Q_ASSERT(dbl > 0);
+
     d->exponentRatio = dbl;
 }
 
 void DAbstractSliderSpinBox::setBlockUpdateSignalOnDrag(bool blockUpdateSignal)
 {
     Q_D(DAbstractSliderSpinBox);
+
     d->blockUpdateSignalOnDrag = blockUpdateSignal;
 }
 
@@ -952,6 +1003,7 @@ void DAbstractSliderSpinBox::setInternalValue(int value)
 bool DAbstractSliderSpinBox::isDragging() const
 {
     Q_D(const DAbstractSliderSpinBox);
+
     return d->isDragging;
 }
 
@@ -1035,6 +1087,7 @@ int DSliderSpinBox::minimum() const
 void DSliderSpinBox::setMinimum(int minimum)
 {
     Q_D(DSliderSpinBox);
+
     setRange(minimum, d->maximum);
 }
 
@@ -1048,6 +1101,7 @@ int DSliderSpinBox::maximum() const
 void DSliderSpinBox::setMaximum(int maximum)
 {
     Q_D(DSliderSpinBox);
+
     setRange(d->minimum, maximum);
 }
 
@@ -1061,6 +1115,7 @@ int DSliderSpinBox::fastSliderStep() const
 void DSliderSpinBox::setFastSliderStep(int step)
 {
     Q_D(DSliderSpinBox);
+
     d->fastSliderStep = step;
 }
 
@@ -1089,6 +1144,7 @@ QString DSliderSpinBox::valueString() const
 void DSliderSpinBox::setSingleStep(int value)
 {
     Q_D(DSliderSpinBox);
+
     d->singleStep = value;
 }
 
@@ -1139,6 +1195,7 @@ void DDoubleSliderSpinBox::setRange(double minimum, double maximum, int decimals
     if      (((maximum - minimum) >= 2.0) || (decimals <= 0))
     {
         // Quick step on integers
+
         d->fastSliderStep = int(pow(10.0, decimals));
     }
     else if (decimals == 1)
@@ -1165,6 +1222,7 @@ double DDoubleSliderSpinBox::minimum() const
 void DDoubleSliderSpinBox::setMinimum(double minimum)
 {
     Q_D(DAbstractSliderSpinBox);
+
     setRange(minimum, d->maximum);
 }
 
@@ -1178,6 +1236,7 @@ double DDoubleSliderSpinBox::maximum() const
 void DDoubleSliderSpinBox::setMaximum(double maximum)
 {
     Q_D(DAbstractSliderSpinBox);
+
     setRange(d->minimum, maximum);
 }
 
@@ -1191,6 +1250,7 @@ double DDoubleSliderSpinBox::fastSliderStep() const
 void DDoubleSliderSpinBox::setFastSliderStep(double step)
 {
     Q_D(DAbstractSliderSpinBox);
+
     d->fastSliderStep = step;
 }
 
@@ -1212,6 +1272,7 @@ void DDoubleSliderSpinBox::setValue(double value)
 void DDoubleSliderSpinBox::setSingleStep(double value)
 {
     Q_D(DAbstractSliderSpinBox);
+
     d->singleStep = value * d->factor;
 }
 

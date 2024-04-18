@@ -44,23 +44,18 @@ class Q_DECL_HIDDEN DIntNumInput::Private
 
 public:
 
-    explicit Private()
-      : defaultValue(0),
-        resetButton(nullptr),
-        input(nullptr)
-    {
-    }
+    Private() = default;
 
-    int             defaultValue;
+    int             defaultValue    = 0;
 
-    QToolButton*    resetButton;
+    QToolButton*    resetButton     = nullptr;
 
-    DSliderSpinBox* input;
+    DSliderSpinBox* input           = nullptr;
 };
 
 DIntNumInput::DIntNumInput(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QHBoxLayout* const hlay  = new QHBoxLayout(this);
     d->input                 = new DSliderSpinBox(this);
@@ -128,12 +123,14 @@ void DIntNumInput::slotReset()
 {
     d->input->setValue(d->defaultValue);
     d->resetButton->setEnabled(false);
+
     Q_EMIT reset();
 }
 
 void DIntNumInput::slotValueChanged(int v)
 {
     d->resetButton->setEnabled(v != d->defaultValue);
+
     Q_EMIT valueChanged(v);
 }
 
@@ -144,23 +141,18 @@ class Q_DECL_HIDDEN DDoubleNumInput::Private
 
 public:
 
-    explicit Private()
-      : defaultValue(0.0),
-        resetButton(nullptr),
-        input(nullptr)
-    {
-    }
+    Private() = default;
 
-    double                defaultValue;
+    double                defaultValue  = 0.0;
 
-    QToolButton*          resetButton;
+    QToolButton*          resetButton   = nullptr;
 
-    DDoubleSliderSpinBox* input;
+    DDoubleSliderSpinBox* input         = nullptr;
 };
 
 DDoubleNumInput::DDoubleNumInput(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QHBoxLayout* const hlay  = new QHBoxLayout(this);
     d->input                 = new DDoubleSliderSpinBox(this);
@@ -234,12 +226,14 @@ void DDoubleNumInput::slotReset()
 {
     d->input->setValue(d->defaultValue);
     d->resetButton->setEnabled(false);
+
     Q_EMIT reset();
 }
 
 void DDoubleNumInput::slotValueChanged(double v)
 {
     d->resetButton->setEnabled(v != d->defaultValue);
+
     Q_EMIT valueChanged(v);
 }
 
