@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-17 01:44+0000\n"
+"POT-Creation-Date: 2024-04-18 01:35+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -903,9 +903,9 @@ msgstr "Thêm vào Bảng ánh sáng"
 #: core/app/items/utils/itemcategorydrawer.cpp:274
 #: core/app/items/utils/itemcategorydrawer.cpp:359
 #: core/app/items/utils/itemcategorydrawer.cpp:377
-#: core/utilities/import/items/importcategorydrawer.cpp:196
-#: core/utilities/import/items/importcategorydrawer.cpp:217
-#: core/utilities/import/items/importcategorydrawer.cpp:226
+#: core/utilities/import/items/importcategorydrawer.cpp:200
+#: core/utilities/import/items/importcategorydrawer.cpp:221
+#: core/utilities/import/items/importcategorydrawer.cpp:230
 #, fuzzy, kde-format
 msgid "1 Item"
 msgid_plural "%1 Items"
@@ -33403,7 +33403,7 @@ msgid "Thumbnail"
 msgstr "Hiện các ảnh mẫu"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:40
-#: core/utilities/import/dialogs/cameramessagebox.cpp:139
+#: core/utilities/import/dialogs/cameramessagebox.cpp:132
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "File Name"
@@ -56805,7 +56805,7 @@ msgid "Flip Vertically"
 msgstr "Lật dọc"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:543
-#: core/utilities/import/views/importpreviewview.cpp:212
+#: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
 msgctxt "@action"
@@ -56813,7 +56813,7 @@ msgid "Rotate Left"
 msgstr "Xoay trái"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:551
-#: core/utilities/import/views/importpreviewview.cpp:213
+#: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
 msgctxt "@action"
@@ -57686,13 +57686,13 @@ msgstr ""
 "này, hãy liên hệ với nhóm digiKam ở :<br><br>http://www.digikam.org/?"
 "q=contact"
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:66
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, fuzzy, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "%1 - Select Camera Folder"
 msgstr "%1 — Chọn thư mục máy ảnh"
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:85
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:81
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Please select the camera folder where you want to upload the images."
@@ -57723,25 +57723,25 @@ msgctxt "@title"
 msgid "About Driver"
 msgstr "Giới thiệu về trình điều khiển"
 
-#: core/utilities/import/dialogs/cameramessagebox.cpp:139
+#: core/utilities/import/dialogs/cameramessagebox.cpp:132
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Thumb"
 msgstr "Hiện các ảnh mẫu"
 
-#: core/utilities/import/dialogs/capturedlg.cpp:70
+#: core/utilities/import/dialogs/capturedlg.cpp:63
 #, fuzzy, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "Capture from %1"
 msgstr "Tự nhiên"
 
-#: core/utilities/import/dialogs/capturedlg.cpp:75
+#: core/utilities/import/dialogs/capturedlg.cpp:68
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Capture"
 msgstr "Tự nhiên"
 
-#: core/utilities/import/items/importcategorydrawer.cpp:212
+#: core/utilities/import/items/importcategorydrawer.cpp:216
 #, fuzzy, kde-format
 msgid "Unknown Format"
 msgstr "Không rõ"
@@ -58383,7 +58383,7 @@ msgstr "Không tìm thấy tập ảnh qua đường dẫn « %1 »"
 msgid "&Device"
 msgstr "Hạng thiết bị"
 
-#: core/utilities/import/views/camerafolderview.cpp:60
+#: core/utilities/import/views/camerafolderview.cpp:55
 #, kde-format
 msgid "Camera Folders"
 msgstr "Thư mục máy ảnh"
@@ -58395,19 +58395,19 @@ msgctxt "in camera model string"
 msgid "auto-detected"
 msgstr "&Tìm ra tự động"
 
-#: core/utilities/import/views/importpreviewview.cpp:209
+#: core/utilities/import/views/importpreviewview.cpp:185
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Escape preview"
 msgstr "Ô xem thử RAW nhanh"
 
-#: core/utilities/import/views/importpreviewview.cpp:210
+#: core/utilities/import/views/importpreviewview.cpp:186
 #, fuzzy, kde-format
 msgctxt "@action: go to previous image"
 msgid "Back"
 msgstr "Lùi"
 
-#: core/utilities/import/views/importpreviewview.cpp:211
+#: core/utilities/import/views/importpreviewview.cpp:187
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@action: go to next image"
