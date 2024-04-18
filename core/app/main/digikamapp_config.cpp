@@ -107,7 +107,11 @@ void DigikamApp::slotThemeChanged()
 
         const QByteArray xdgCurrentDesktop = qgetenv("XDG_CURRENT_DESKTOP");
 
-        if (!xdgCurrentDesktop.isEmpty() && (xdgCurrentDesktop.toUpper() == "KDE"))
+        if (
+            !isRunningInAppImageBundle()        &&
+            !xdgCurrentDesktop.isEmpty()        &&
+            (xdgCurrentDesktop.toUpper() == "KDE")
+           )
         {
             msgText   = i18n("We now switch to the system icon theme. The icon "
                              "colors are automatically adjusted on a Plasma 6 "
