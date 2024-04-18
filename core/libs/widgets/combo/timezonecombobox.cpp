@@ -47,10 +47,6 @@ TimeZoneComboBox::TimeZoneComboBox(QWidget* const parent)
     addItems(timeZones);
 }
 
-TimeZoneComboBox::~TimeZoneComboBox()
-{
-}
-
 void TimeZoneComboBox::setToUTC()
 {
     setCurrentIndex(findText(QLatin1String("+00:00")));
@@ -66,13 +62,17 @@ void TimeZoneComboBox::setTimeZone(const QString& timeStr)
 
     QString timeZone = timeStr.right(6);
 
-    if (timeZone.endsWith(QLatin1Char('Z')))
+    if      (timeZone.endsWith(QLatin1Char('Z')))
     {
         setToUTC();
     }
-    else if ((timeZone.startsWith(QLatin1Char('+'))  ||
-              timeZone.startsWith(QLatin1Char('-'))) &&
-              (timeZone.mid(3, 1) == QLatin1String(":")))
+    else if (
+              (
+               timeZone.startsWith(QLatin1Char('+'))  ||
+               timeZone.startsWith(QLatin1Char('-'))
+              ) &&
+              (timeZone.mid(3, 1) == QLatin1String(":"))
+            )
     {
         setCurrentIndex(findText(timeZone));
     }

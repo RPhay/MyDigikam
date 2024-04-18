@@ -31,14 +31,11 @@ class Q_DECL_HIDDEN SqueezedComboBox::Private
 {
 public:
 
-    explicit Private()
-      : timer(nullptr)
-    {
-    }
+    Private() = default;
 
     QMap<int, QString> originalItems;
 
-    QTimer*            timer;
+    QTimer*            timer = nullptr;
 };
 
 SqueezedComboBox::SqueezedComboBox(QWidget* const parent, const char* name)
@@ -61,6 +58,7 @@ SqueezedComboBox::SqueezedComboBox(QWidget* const parent, const char* name)
 SqueezedComboBox::~SqueezedComboBox()
 {
     d->originalItems.clear();
+
     delete d->timer;
     delete d;
 }

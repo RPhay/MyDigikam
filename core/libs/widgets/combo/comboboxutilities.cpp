@@ -35,8 +35,7 @@ namespace Digikam
 {
 
 ProxyLineEdit::ProxyLineEdit(QWidget* const parent)
-    : QLineEdit(parent),
-      m_widget (nullptr)
+    : QLineEdit(parent)
 {
     m_layout = new QVBoxLayout;
     m_layout->setSpacing(0);
@@ -190,6 +189,7 @@ void ProxyClickLineEdit::mouseReleaseEvent(QMouseEvent* event)
     if (event->button() == Qt::LeftButton)
     {
         Q_EMIT leftClicked();
+
         event->accept();
     }
 }
@@ -233,7 +233,6 @@ void ModelIndexBasedComboBox::setCurrentIndex(const QModelIndex& index)
 StayPoppedUpComboBox::StayPoppedUpComboBox(QWidget* const parent)
     : ModelIndexBasedComboBox(parent)
 {
-    m_view = nullptr;
 }
 
 void StayPoppedUpComboBox::installView(QAbstractItemView* view)
@@ -318,7 +317,9 @@ bool StayPoppedUpComboBox::eventFilter(QObject* o, QEvent* e)
             }
 
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -444,8 +445,7 @@ public:
     // Readonly; A mouse press shows the popup; Cursor is the pointing hand.
 
     explicit TreeViewComboBoxLineEdit(QComboBox* const box)
-        : QLineEdit(box),
-          m_box    (box)
+        : QLineEdit(box)
     {
         setReadOnly(true);
         setCursor(Qt::PointingHandCursor);
@@ -464,14 +464,13 @@ public:
 
 public:
 
-    QComboBox* m_box;
+    QComboBox* m_box = nullptr;
 };
 
 // -------------------------------------------------------------------------
 
 TreeViewLineEditComboBox::TreeViewLineEditComboBox(QWidget* const parent)
-    : TreeViewComboBox(parent),
-      m_comboLineEdit (nullptr)
+    : TreeViewComboBox(parent)
 {
 }
 

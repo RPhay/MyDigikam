@@ -35,17 +35,12 @@ class Q_DECL_HIDDEN DComboBox::Private
 
 public:
 
-    explicit Private()
-      : defaultIndex(0),
-        resetButton (nullptr),
-        combo       (nullptr)
-    {
-    }
+    Private() = default;
 
-    int          defaultIndex;
+    int          defaultIndex   = 0;
 
-    QToolButton* resetButton;
-    QComboBox*   combo;
+    QToolButton* resetButton    = nullptr;
+    QComboBox*   combo          = nullptr;
 };
 
 DComboBox::DComboBox(QWidget* const parent)
@@ -65,7 +60,7 @@ DComboBox::DComboBox(QWidget* const parent)
     hlay->setStretchFactor(d->combo, 10);
     hlay->setContentsMargins(QMargins());
     hlay->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // -------------------------------------------------------------
 
@@ -126,18 +121,21 @@ void DComboBox::slotReset()
     d->combo->setCurrentIndex(d->defaultIndex);
     d->resetButton->setEnabled(false);
     slotItemActivated(d->defaultIndex);
+
     Q_EMIT reset();
 }
 
 void DComboBox::slotItemActivated(int v)
 {
     d->resetButton->setEnabled(v != d->defaultIndex);
+
     Q_EMIT activated(v);
 }
 
 void DComboBox::slotCurrentIndexChanged(int v)
 {
     d->resetButton->setEnabled(v != d->defaultIndex);
+
     Q_EMIT currentIndexChanged(v);
 }
 

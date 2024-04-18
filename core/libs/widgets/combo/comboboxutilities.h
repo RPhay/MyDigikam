@@ -86,8 +86,8 @@ protected:
 
 protected:
 
-    QWidget*     m_widget;
-    QVBoxLayout* m_layout;
+    QWidget*     m_widget = nullptr;
+    QVBoxLayout* m_layout = nullptr;
 };
 
 // -------------------------------------------------------------------------
@@ -186,7 +186,7 @@ protected:
 
 protected:
 
-    QAbstractItemView* m_view;
+    QAbstractItemView* m_view = nullptr;
 };
 
 // -------------------------------------------------------------------------
@@ -303,7 +303,7 @@ protected:
 
 protected:
 
-    QLineEdit* m_comboLineEdit;
+    QLineEdit* m_comboLineEdit = nullptr;
 };
 
 } // namespace Digikam
