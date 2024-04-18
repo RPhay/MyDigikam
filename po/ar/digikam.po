@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-17 01:44+0000\n"
+"POT-Creation-Date: 2024-04-18 01:35+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -914,9 +914,9 @@ msgstr "أضف إلى الطّابور الموجود"
 #: core/app/items/utils/itemcategorydrawer.cpp:274
 #: core/app/items/utils/itemcategorydrawer.cpp:359
 #: core/app/items/utils/itemcategorydrawer.cpp:377
-#: core/utilities/import/items/importcategorydrawer.cpp:196
-#: core/utilities/import/items/importcategorydrawer.cpp:217
-#: core/utilities/import/items/importcategorydrawer.cpp:226
+#: core/utilities/import/items/importcategorydrawer.cpp:200
+#: core/utilities/import/items/importcategorydrawer.cpp:221
+#: core/utilities/import/items/importcategorydrawer.cpp:230
 #, kde-format
 msgid "1 Item"
 msgid_plural "%1 Items"
@@ -33987,7 +33987,7 @@ msgid "Thumbnail"
 msgstr "المصغّرة"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:40
-#: core/utilities/import/dialogs/cameramessagebox.cpp:139
+#: core/utilities/import/dialogs/cameramessagebox.cpp:132
 #, kde-format
 msgctxt "@title"
 msgid "File Name"
@@ -58388,14 +58388,14 @@ msgid "Flip Vertically"
 msgstr "اعكس رأسيًّا"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:543
-#: core/utilities/import/views/importpreviewview.cpp:212
+#: core/utilities/import/views/importpreviewview.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "دوّر لليسار"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:551
-#: core/utilities/import/views/importpreviewview.cpp:213
+#: core/utilities/import/views/importpreviewview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
@@ -59189,13 +59189,13 @@ msgid ""
 "https://www.digikam.org/?q=contact"
 msgstr ""
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:66
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "%1 - Select Camera Folder"
 msgstr ""
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:85
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:81
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Please select the camera folder where you want to upload the images."
@@ -59228,25 +59228,25 @@ msgctxt "@title"
 msgid "About Driver"
 msgstr "عن المشّغل"
 
-#: core/utilities/import/dialogs/cameramessagebox.cpp:139
+#: core/utilities/import/dialogs/cameramessagebox.cpp:132
 #, kde-format
 msgctxt "@title"
 msgid "Thumb"
 msgstr "المصغّرة"
 
-#: core/utilities/import/dialogs/capturedlg.cpp:70
+#: core/utilities/import/dialogs/capturedlg.cpp:63
 #, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "Capture from %1"
 msgstr "التقط من %1"
 
-#: core/utilities/import/dialogs/capturedlg.cpp:75
+#: core/utilities/import/dialogs/capturedlg.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Capture"
 msgstr "التقط"
 
-#: core/utilities/import/items/importcategorydrawer.cpp:212
+#: core/utilities/import/items/importcategorydrawer.cpp:216
 #, kde-format
 msgid "Unknown Format"
 msgstr "تنسيق مجهول"
@@ -59934,7 +59934,7 @@ msgstr "فشل العثور على ألبوم للمسار <b>%1</b>."
 msgid "&Device"
 msgstr "&جهاز"
 
-#: core/utilities/import/views/camerafolderview.cpp:60
+#: core/utilities/import/views/camerafolderview.cpp:55
 #, kde-format
 msgid "Camera Folders"
 msgstr "مجلّدات الكمرة"
@@ -59945,20 +59945,20 @@ msgctxt "in camera model string"
 msgid "auto-detected"
 msgstr "تلقائي اكتشاف"
 
-#: core/utilities/import/views/importpreviewview.cpp:209
+#: core/utilities/import/views/importpreviewview.cpp:185
 #, fuzzy, kde-format
 #| msgid "Open a preview"
 msgctxt "@action"
 msgid "Escape preview"
 msgstr "افتح معاينة"
 
-#: core/utilities/import/views/importpreviewview.cpp:210
+#: core/utilities/import/views/importpreviewview.cpp:186
 #, kde-format
 msgctxt "@action: go to previous image"
 msgid "Back"
 msgstr "عُد"
 
-#: core/utilities/import/views/importpreviewview.cpp:211
+#: core/utilities/import/views/importpreviewview.cpp:187
 #, kde-format
 msgctxt "@action: go to next image"
 msgid "Forward"

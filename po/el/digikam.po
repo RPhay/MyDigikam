@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-17 01:44+0000\n"
+"POT-Creation-Date: 2024-04-18 01:35+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -940,9 +940,9 @@ msgstr "Προσθήκη σε υπάρχουσα ουρά"
 #: core/app/items/utils/itemcategorydrawer.cpp:274
 #: core/app/items/utils/itemcategorydrawer.cpp:359
 #: core/app/items/utils/itemcategorydrawer.cpp:377
-#: core/utilities/import/items/importcategorydrawer.cpp:196
-#: core/utilities/import/items/importcategorydrawer.cpp:217
-#: core/utilities/import/items/importcategorydrawer.cpp:226
+#: core/utilities/import/items/importcategorydrawer.cpp:200
+#: core/utilities/import/items/importcategorydrawer.cpp:221
+#: core/utilities/import/items/importcategorydrawer.cpp:230
 #, kde-format
 msgid "1 Item"
 msgid_plural "%1 Items"
@@ -36394,7 +36394,7 @@ msgid "Thumbnail"
 msgstr "Εικόνα επισκόπησης"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:40
-#: core/utilities/import/dialogs/cameramessagebox.cpp:139
+#: core/utilities/import/dialogs/cameramessagebox.cpp:132
 #, fuzzy, kde-format
 #| msgid "File Name"
 msgctxt "@title"
@@ -62273,7 +62273,7 @@ msgid "Flip Vertically"
 msgstr "Αναστροφή κατακόρυφα"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:543
-#: core/utilities/import/views/importpreviewview.cpp:212
+#: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
 msgctxt "@action"
@@ -62281,7 +62281,7 @@ msgid "Rotate Left"
 msgstr "Περιστροφή αριστερά"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:551
-#: core/utilities/import/views/importpreviewview.cpp:213
+#: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
 msgctxt "@action"
@@ -63180,13 +63180,13 @@ msgstr ""
 "προβλημάτων με αυτόν τον οδηγό, παρακαλώ επικοινωνήστε με την ομάδα του "
 "digiKam στο:<br/><br/>http://www.digikam.org/?q=contact"
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:66
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:62
 #, fuzzy, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "%1 - Select Camera Folder"
 msgstr "%1 - Επιλογή φακέλου φωτογραφικής"
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:85
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:81
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Please select the camera folder where you want to upload the images.</"
@@ -63224,26 +63224,26 @@ msgctxt "@title"
 msgid "About Driver"
 msgstr "Σχετικά με τον οδηγό"
 
-#: core/utilities/import/dialogs/cameramessagebox.cpp:139
+#: core/utilities/import/dialogs/cameramessagebox.cpp:132
 #, fuzzy, kde-format
 #| msgid "Thumb"
 msgctxt "@title"
 msgid "Thumb"
 msgstr "Επισκόπηση"
 
-#: core/utilities/import/dialogs/capturedlg.cpp:70
+#: core/utilities/import/dialogs/capturedlg.cpp:63
 #, fuzzy, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "Capture from %1"
 msgstr "Σύλληψη από %1"
 
-#: core/utilities/import/dialogs/capturedlg.cpp:75
+#: core/utilities/import/dialogs/capturedlg.cpp:68
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Capture"
 msgstr "Σύλληψη"
 
-#: core/utilities/import/items/importcategorydrawer.cpp:212
+#: core/utilities/import/items/importcategorydrawer.cpp:216
 #, kde-format
 msgid "Unknown Format"
 msgstr "Άγνωστος τύπος αποθήκευσης"
@@ -63929,7 +63929,7 @@ msgstr "Αποτυχία εύρεσης λευκώματος για τη δια�
 msgid "&Device"
 msgstr "&Συσκευή"
 
-#: core/utilities/import/views/camerafolderview.cpp:60
+#: core/utilities/import/views/camerafolderview.cpp:55
 #, kde-format
 msgid "Camera Folders"
 msgstr "Φάκελοι φωτογραφικής"
@@ -63941,14 +63941,14 @@ msgctxt "in camera model string"
 msgid "auto-detected"
 msgstr "εντοπίστηκαν αυτόματα"
 
-#: core/utilities/import/views/importpreviewview.cpp:209
+#: core/utilities/import/views/importpreviewview.cpp:185
 #, fuzzy, kde-format
 #| msgid "Escape preview"
 msgctxt "@action"
 msgid "Escape preview"
 msgstr "Τέλος προεπισκόπησης"
 
-#: core/utilities/import/views/importpreviewview.cpp:210
+#: core/utilities/import/views/importpreviewview.cpp:186
 #, fuzzy, kde-format
 #| msgctxt "go to previous image"
 #| msgid "Back"
@@ -63956,7 +63956,7 @@ msgctxt "@action: go to previous image"
 msgid "Back"
 msgstr "Πίσω"
 
-#: core/utilities/import/views/importpreviewview.cpp:211
+#: core/utilities/import/views/importpreviewview.cpp:187
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@action: go to next image"
