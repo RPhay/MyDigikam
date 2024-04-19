@@ -8,31 +8,41 @@
 #
 
 ########################################################################
-# Function to upload bundle log files
-BundleUploadLogFiles()
+# Function to upload host log files
+HostUploadLogFiles()
 {
 
 if [[ $DK_UPLOAD = 1 ]] ; then
 
-    echo -e "---------- Cleanup older bundle logs from files.kde.org repository \n"
+    if [[ $DK_QTVERSION == 5 ]] ; then
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64 <<< "rm build-digikam.full.log.gz"
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64 <<< "rm build-appimage.full.log.gz"
+        QT_SUF="-Qt5"
 
-    echo -e "---------- Compress bundle log files \n"
+    else
 
-    gzip -k $ORIG_WD/logs/build-digikam.full.log $ORIG_WD/logs/build-digikam.full.log.gz     || true
-    gzip -k $ORIG_WD/logs/build-appimage.full.log $ORIG_WD/logs/build-appimage.full.log.gz || true
+        QT_SUF="-Qt6"
 
-    echo -e "---------- Upload new bundle logs to files.kde.org repository \n"
+    fi
 
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-digikam.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64   || true
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-appimage.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64 || true
+    echo -e "---------- Cleanup older host logs from files.kde.org repository \n"
+
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF <<< "rm build-host.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF <<< "rm build-extralibs.full.log.gz"
+
+    echo -e "---------- Compress host log files \n"
+
+    gzip -k $ORIG_WD/logs/build-host.full.log $ORIG_WD/logs/build-host.full.log.gz           || true
+    gzip -k $ORIG_WD/logs/build-extralibs.full.log $ORIG_WD/logs/build-extralibs.full.log.gz || true
+
+    echo -e "---------- Upload new host logs to files.kde.org repository \n"
+
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-host.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF      || true
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF || true
 
     echo -e "---------- Cleanup local bundle log file archives \n"
 
-    rm -f $ORIG_WD/logs/build-digikam.full.log.gz   || true
-    rm -f $ORIG_WD/logs/build-appimage.full.log.gz || true
+    rm -f $ORIG_WD/logs/build-host.full.log.gz      || true
+    rm -f $ORIG_WD/logs/build-extralibs.full.log.gz || true
 
 fi
 
@@ -51,10 +61,13 @@ ORIG_WD="`pwd`"
 
 . ./common.sh
 . ./config.sh
-StartScript
 ChecksRunAsRoot
 ChecksCPUCores
 HostAdjustments
+
+# ---
+
+StartScript
 
 echo "+++++++++++++++++++++++ Update Linux AppImage bundle ++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"

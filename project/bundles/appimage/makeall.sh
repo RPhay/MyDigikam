@@ -14,10 +14,20 @@ HostUploadLogFiles()
 
 if [[ $DK_UPLOAD = 1 ]] ; then
 
+    if [[ $DK_QTVERSION == 5 ]] ; then
+
+        QT_SUF="-Qt5"
+
+    else
+
+        QT_SUF="-Qt6"
+
+    fi
+
     echo -e "---------- Cleanup older host logs from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64 <<< "rm build-host.full.log.gz"
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64 <<< "rm build-extralibs.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF <<< "rm build-host.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF <<< "rm build-extralibs.full.log.gz"
 
     echo -e "---------- Compress host log files \n"
 
@@ -26,8 +36,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Upload new host logs to files.kde.org repository \n"
 
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-host.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64      || true
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64 || true
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-host.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF      || true
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/lin64$QT_SUF || true
 
     echo -e "---------- Cleanup local bundle log file archives \n"
 
@@ -51,10 +61,13 @@ ORIG_WD="`pwd`"
 
 . ./common.sh
 . ./config.sh
-StartScript
 ChecksRunAsRoot
 ChecksCPUCores
 HostAdjustments
+
+# ---
+
+StartScript
 
 echo "This script will build from scratch the digiKam AppImage bundle for Linux."
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
