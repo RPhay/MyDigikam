@@ -40,7 +40,7 @@ class DIGIKAM_EXPORT ColorLabelWidget : public DVBox
 public:
 
     explicit ColorLabelWidget(QWidget* const parent = nullptr);
-    ~ColorLabelWidget() override;
+    ~ColorLabelWidget()                             override;
 
     /**
      * Show or not on the bottom view the description of label with shortcuts.
@@ -74,7 +74,7 @@ Q_SIGNALS:
 
 protected:
 
-    bool eventFilter(QObject* obj, QEvent* ev) override;
+    bool eventFilter(QObject* obj, QEvent* ev)      override;
 
 private:
 

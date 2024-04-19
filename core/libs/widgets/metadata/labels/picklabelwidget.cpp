@@ -416,10 +416,6 @@ PickLabelMenuAction::PickLabelMenuAction(QMenu* const parent)
             parent, SLOT(close()));
 }
 
-PickLabelMenuAction::~PickLabelMenuAction()
-{
-}
-
 } // namespace Digikam
 
 #include "moc_picklabelwidget.cpp"

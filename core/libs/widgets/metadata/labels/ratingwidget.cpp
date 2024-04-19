@@ -135,6 +135,7 @@ void RatingWidget::setRating(int val)
     }
 
     Q_EMIT signalRatingModified(d->rating);
+
     update();
 }
 
@@ -298,6 +299,7 @@ void RatingWidget::mousePressEvent(QMouseEvent* e)
     }
 
     Q_EMIT signalRatingModified(d->rating);
+
     update();
 }
 
@@ -576,10 +578,6 @@ RatingMenuAction::RatingMenuAction(QMenu* const parent)
 
     connect(rb, SIGNAL(signalRatingChanged(int)),
             parent, SLOT(close()));
-}
-
-RatingMenuAction::~RatingMenuAction()
-{
 }
 
 } // namespace Digikam

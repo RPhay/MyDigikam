@@ -40,7 +40,7 @@ class DIGIKAM_EXPORT RatingWidget : public QWidget
 public:
 
     explicit RatingWidget(QWidget* const parent);
-    ~RatingWidget() override;
+    ~RatingWidget()                                 override;
 
     void setRating(int val);
     int  rating() const;
@@ -81,10 +81,10 @@ protected:
     void setupTimeLine();
     void applyFading(QPixmap& pix);
 
-    void mousePressEvent(QMouseEvent*)      override;
-    void mouseMoveEvent(QMouseEvent*)       override;
-    void mouseReleaseEvent(QMouseEvent*)    override;
-    void paintEvent(QPaintEvent*)           override;
+    void mousePressEvent(QMouseEvent*)              override;
+    void mouseMoveEvent(QMouseEvent*)               override;
+    void mouseReleaseEvent(QMouseEvent*)            override;
+    void paintEvent(QPaintEvent*)                   override;
 
 protected Q_SLOTS:
 
@@ -134,7 +134,7 @@ class DIGIKAM_EXPORT RatingMenuAction : public QMenu
 public:
 
     explicit RatingMenuAction(QMenu* const parent = nullptr);
-    ~RatingMenuAction() override;
+    ~RatingMenuAction() override = default;
 
 Q_SIGNALS:
 

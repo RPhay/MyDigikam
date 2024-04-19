@@ -124,7 +124,7 @@ class DIGIKAM_EXPORT PickLabelMenuAction : public QMenu
 public:
 
     explicit PickLabelMenuAction(QMenu* const parent = nullptr);
-    ~PickLabelMenuAction() override;
+    ~PickLabelMenuAction() override = default;
 
 Q_SIGNALS:
 
