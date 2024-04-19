@@ -32,7 +32,7 @@ public:
 
     ExifToolListViewGroup(QTreeWidget* const parent,
                           const QString& group);
-    ~ExifToolListViewGroup() override;
+    ~ExifToolListViewGroup() override = default;
 
 private:
 

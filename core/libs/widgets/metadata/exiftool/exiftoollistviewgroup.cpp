@@ -449,8 +449,4 @@ ExifToolListViewGroup::ExifToolListViewGroup(QTreeWidget* const parent,
     }
 }
 
-ExifToolListViewGroup::~ExifToolListViewGroup()
-{
-}
-
 } // namespace Digikam

@@ -32,7 +32,7 @@ class DIGIKAM_EXPORT ExifToolBinary : public DBinaryIface
 public:
 
     explicit ExifToolBinary(QObject* const parent = nullptr);
-    ~ExifToolBinary() override;
+    ~ExifToolBinary() override = default;
 };
 
 } // namespace Digikam
