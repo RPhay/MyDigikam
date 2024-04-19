@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-18 01:35+0000\n"
+"POT-Creation-Date: 2024-04-19 01:45+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1554,7 +1554,7 @@ msgstr "Προσθήκη νέων φακέλων στη βιβλιοθήκη τ�
 msgid "Images found in %1"
 msgstr "Βρέθηκαν εικόνες στο %1"
 
-#: core/app/main/digikamapp_config.cpp:112
+#: core/app/main/digikamapp_config.cpp:116
 #, fuzzy, kde-format
 #| msgid ""
 #| "You have chosen a bright color scheme. We switch to a dark icon theme. "
@@ -1567,7 +1567,7 @@ msgstr ""
 "Έχετε επιλέξει αν θέμα φωτεινού Χρώματος.  Αλλάξαμε σε σκοτεινό θέμα. Το "
 "θέμα εικονιδίων είναι διαθέσιμο μετά την επανεκκίνηση του digiKam."
 
-#: core/app/main/digikamapp_config.cpp:128
+#: core/app/main/digikamapp_config.cpp:132
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1577,7 +1577,7 @@ msgstr ""
 "Έχετε επιλέξει αν θέμα φωτεινού Χρώματος.  Αλλάξαμε σε σκοτεινό θέμα. Το "
 "θέμα εικονιδίων είναι διαθέσιμο μετά την επανεκκίνηση του digiKam."
 
-#: core/app/main/digikamapp_config.cpp:136
+#: core/app/main/digikamapp_config.cpp:140
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""
@@ -19288,17 +19288,17 @@ msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
-#: core/libs/widgets/mainview/daboutdata.cpp:111
-#: core/libs/widgets/mainview/daboutdata.cpp:126
-#: core/libs/widgets/mainview/daboutdata.cpp:132
-#: core/libs/widgets/mainview/daboutdata.cpp:294
-#: core/libs/widgets/mainview/daboutdata.cpp:311
-#: core/libs/widgets/mainview/daboutdata.cpp:317
-#: core/libs/widgets/mainview/daboutdata.cpp:323
-#: core/libs/widgets/mainview/daboutdata.cpp:333
-#: core/libs/widgets/mainview/daboutdata.cpp:361
-#: core/libs/widgets/mainview/daboutdata.cpp:367
-#: core/libs/widgets/mainview/daboutdata.cpp:378
+#: core/libs/widgets/mainview/daboutdata.cpp:107
+#: core/libs/widgets/mainview/daboutdata.cpp:122
+#: core/libs/widgets/mainview/daboutdata.cpp:128
+#: core/libs/widgets/mainview/daboutdata.cpp:290
+#: core/libs/widgets/mainview/daboutdata.cpp:307
+#: core/libs/widgets/mainview/daboutdata.cpp:313
+#: core/libs/widgets/mainview/daboutdata.cpp:319
+#: core/libs/widgets/mainview/daboutdata.cpp:329
+#: core/libs/widgets/mainview/daboutdata.cpp:357
+#: core/libs/widgets/mainview/daboutdata.cpp:363
+#: core/libs/widgets/mainview/daboutdata.cpp:374
 #: core/utilities/geolocation/marble/plugins/PluginInterface.h:41
 #, kde-format
 msgid "Developer"
@@ -32826,7 +32826,7 @@ msgid "Cannot save to the Gimp curves text file."
 msgstr "Αδυναμία αποθήκευσης στο αρχείο καμπυλών Gimp."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:173
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:790
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:780
 #, kde-format
 msgid "Loading image..."
 msgstr "Φόρτωση εικόνας..."
@@ -39435,13 +39435,13 @@ msgid "Undefined"
 msgstr "Ακαθόριστο"
 
 #: core/libs/properties/history/itempropertieshistorytab.cpp:85
-#: core/libs/widgets/history/filtershistorywidget.cpp:90
+#: core/libs/widgets/history/filtershistorywidget.cpp:79
 #, kde-format
 msgid "Used filters"
 msgstr "Χρησιμοποιημένα φίλτρα"
 
 #: core/libs/properties/history/itempropertieshistorytab.cpp:121
-#: core/libs/widgets/history/filtershistorywidget.cpp:127
+#: core/libs/widgets/history/filtershistorywidget.cpp:116
 #, kde-format
 msgid "Remove filter"
 msgstr "Αφαίρεση φίλτρου"
@@ -43965,15 +43965,15 @@ msgstr "Συνέβη ένα σφάλμα με τον αναπαραγωγέα μ
 msgid "Toggle playing in a loop"
 msgstr "Προβολή σε βρόγχο"
 
-#: core/libs/widgets/combo/dcombobox.cpp:61
-#: core/libs/widgets/range/dnuminput.cpp:71
-#: core/libs/widgets/range/dnuminput.cpp:171
+#: core/libs/widgets/combo/dcombobox.cpp:56
+#: core/libs/widgets/range/dnuminput.cpp:66
+#: core/libs/widgets/range/dnuminput.cpp:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset to default value"
 msgstr "Επαναφορά στην προκαθορισμένη τιμή"
 
-#: core/libs/widgets/files/dbinaryiface.cpp:217
+#: core/libs/widgets/files/dbinaryiface.cpp:193
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:window"
@@ -44052,57 +44052,57 @@ msgstr ""
 msgid "Browse..."
 msgstr "Περιήγηση..."
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:66
+#: core/libs/widgets/files/filesaveconflictbox.cpp:59
 #, kde-format
 msgid "If Target File Exists:"
 msgstr "Αν το αρχείο προορισμού υπάρχει:"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:70
+#: core/libs/widgets/files/filesaveconflictbox.cpp:63
 #: core/utilities/setup/camera/setupcamera.cpp:333
 #, kde-format
 msgid "Store as a different name"
 msgstr "Αποθήκευση με διαφορετικό όνομα"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:71
+#: core/libs/widgets/files/filesaveconflictbox.cpp:64
 #: core/utilities/setup/camera/setupcamera.cpp:334
 #, kde-format
 msgid "Overwrite automatically"
 msgstr "Αυτόματη αντικατάσταση"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:72
+#: core/libs/widgets/files/filesaveconflictbox.cpp:65
 #: core/utilities/setup/camera/setupcamera.cpp:335
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgid "Skip automatically"
 msgstr "Αυτόματη αντικατάσταση"
 
-#: core/libs/widgets/files/filesaveoptionsbox.cpp:115
+#: core/libs/widgets/files/filesaveoptionsbox.cpp:90
 #, kde-format
 msgid "No options available"
 msgstr "Καμία διαθέσιμη επιλογή"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:228
+#: core/libs/widgets/fonts/dfontproperties.cpp:212
 #, fuzzy, kde-format
 #| msgid "Here you can choose the font to be used."
 msgctxt "@title: font properties"
 msgid "Here you can choose the font to be used."
 msgstr "Καθορίστε εδώ τη γραμματοσειρά που θα χρησιμοποιηθεί."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:255
+#: core/libs/widgets/fonts/dfontproperties.cpp:239
 #, fuzzy, kde-format
 #| msgid "System Font"
 msgctxt "@title: font properties"
 msgid "Requested Font"
 msgstr "Γραμματοσειρά συστήματος"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:275
+#: core/libs/widgets/fonts/dfontproperties.cpp:259
 #, fuzzy, kde-format
 #| msgid "Font:"
 msgctxt "@title: font properties"
 msgid "Font"
 msgstr "Γραμματοσειρά:"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:281
+#: core/libs/widgets/fonts/dfontproperties.cpp:265
 #, fuzzy, kde-format
 #| msgid "Enable this option to show golden spiral sections."
 msgctxt "@info: font properties"
@@ -44110,56 +44110,56 @@ msgid "Enable this checkbox to change the font family settings."
 msgstr ""
 "Ενεργοποιήστε αυτήν την επιλογή για την εμφάνιση χρυσών σπειροειδών τμημάτων."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:282
+#: core/libs/widgets/fonts/dfontproperties.cpp:266
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgctxt "@info: font properties"
 msgid "Change font family?"
 msgstr "Αλλαγή κεφαλαίων-πεζών"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:288
+#: core/libs/widgets/fonts/dfontproperties.cpp:272
 #, fuzzy, kde-format
 #| msgid "Font:"
 msgctxt "@label: font properties"
 msgid "Font:"
 msgstr "Γραμματοσειρά:"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:298
+#: core/libs/widgets/fonts/dfontproperties.cpp:282
 #, fuzzy, kde-format
 #| msgid "Widget style:"
 msgctxt "@title: font properties"
 msgid "Font style"
 msgstr "Στιλ γραφικού συστατικού:"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:304
+#: core/libs/widgets/fonts/dfontproperties.cpp:288
 #, fuzzy, kde-format
 #| msgid "Enable this option to show golden sections."
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font style settings."
 msgstr "Ενεργοποιήστε αυτήν την επιλογή για την εμφάνιση χρυσών τομών."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:305
+#: core/libs/widgets/fonts/dfontproperties.cpp:289
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgctxt "@info: font properties"
 msgid "Change font style?"
 msgstr "Αλλαγή κεφαλαίων-πεζών"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:311
+#: core/libs/widgets/fonts/dfontproperties.cpp:295
 #, fuzzy, kde-format
 #| msgid "Widget style:"
 msgctxt "@label: font properties"
 msgid "Font style:"
 msgstr "Στιλ γραφικού συστατικού:"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:322
+#: core/libs/widgets/fonts/dfontproperties.cpp:306
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@title: font properties"
 msgid "Size"
 msgstr "Μέγεθος"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:328
+#: core/libs/widgets/fonts/dfontproperties.cpp:312
 #, fuzzy, kde-format
 #| msgid "Enable this option to show golden spiral sections."
 msgctxt "@info: font properties"
@@ -44167,35 +44167,35 @@ msgid "Enable this checkbox to change the font size settings."
 msgstr ""
 "Ενεργοποιήστε αυτήν την επιλογή για την εμφάνιση χρυσών σπειροειδών τμημάτων."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:329
+#: core/libs/widgets/fonts/dfontproperties.cpp:313
 #, fuzzy, kde-format
 #| msgid "Change Case"
 msgctxt "@info: font properties"
 msgid "Change font size?"
 msgstr "Αλλαγή κεφαλαίων-πεζών"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:335
+#: core/libs/widgets/fonts/dfontproperties.cpp:319
 #, fuzzy, kde-format
 #| msgid "Size:"
 msgctxt "@label:listbox Font size"
 msgid "Size:"
 msgstr "Μέγεθος:"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:350
+#: core/libs/widgets/fonts/dfontproperties.cpp:334
 #, fuzzy, kde-format
 #| msgid "Here you can choose the font to be used."
 msgctxt "@info: font properties"
 msgid "Here you can choose the font family to be used."
 msgstr "Καθορίστε εδώ τη γραμματοσειρά που θα χρησιμοποιηθεί."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:380
+#: core/libs/widgets/fonts/dfontproperties.cpp:364
 #, fuzzy, kde-format
 #| msgid "Here you can choose the font to be used."
 msgctxt "@info: font properties"
 msgid "Here you can choose the font style to be used."
 msgstr "Καθορίστε εδώ τη γραμματοσειρά που θα χρησιμοποιηθεί."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:394
+#: core/libs/widgets/fonts/dfontproperties.cpp:378
 #, fuzzy, kde-format
 #| msgctxt "normal exif orientation"
 #| msgid "Normal"
@@ -44203,14 +44203,14 @@ msgctxt "@item: font style"
 msgid "Normal"
 msgstr "Κανονικό"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:395
+#: core/libs/widgets/fonts/dfontproperties.cpp:379
 #, fuzzy, kde-format
 #| msgid "Italian"
 msgctxt "@item: font style"
 msgid "Italic"
 msgstr "Ιταλικά"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:396
+#: core/libs/widgets/fonts/dfontproperties.cpp:380
 #, fuzzy, kde-format
 #| msgctxt "unique value for duplicate strings"
 #| msgid "Unique"
@@ -44218,32 +44218,32 @@ msgctxt "@item: font style"
 msgid "Oblique"
 msgstr "Μοναδικό"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:397
+#: core/libs/widgets/fonts/dfontproperties.cpp:381
 #, kde-format
 msgctxt "@item: font style"
 msgid "Bold"
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:398
+#: core/libs/widgets/fonts/dfontproperties.cpp:382
 #, fuzzy, kde-format
 #| msgid "Italian"
 msgctxt "@item: font style"
 msgid "Bold Italic"
 msgstr "Ιταλικά"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:417
+#: core/libs/widgets/fonts/dfontproperties.cpp:401
 #, fuzzy, kde-format
 msgctxt "@item: font size"
 msgid "Relative"
 msgstr "Διακοσμητικό παρκέ"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:419
+#: core/libs/widgets/fonts/dfontproperties.cpp:403
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Font size \"fixed\" or \"relative\" to environment"
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:420
+#: core/libs/widgets/fonts/dfontproperties.cpp:404
 #, kde-format
 msgctxt "@info: font properties"
 msgid ""
@@ -44252,20 +44252,20 @@ msgid ""
 "paper size)."
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:445
+#: core/libs/widgets/fonts/dfontproperties.cpp:429
 #, fuzzy, kde-format
 #| msgid "Here you can choose the font to be used."
 msgctxt "@info: font properties"
 msgid "Here you can choose the font size to be used."
 msgstr "Καθορίστε εδώ τη γραμματοσειρά που θα χρησιμοποιηθεί."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:486
+#: core/libs/widgets/fonts/dfontproperties.cpp:470
 #, kde-format
 msgctxt "@info: font properties"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:488
+#: core/libs/widgets/fonts/dfontproperties.cpp:472
 #, kde-format
 msgctxt "@info: font properties"
 msgid ""
@@ -44273,8 +44273,8 @@ msgid ""
 "special characters."
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:727
-#: core/libs/widgets/fonts/dfontproperties.cpp:767
+#: core/libs/widgets/fonts/dfontproperties.cpp:711
+#: core/libs/widgets/fonts/dfontproperties.cpp:751
 #, fuzzy, kde-format
 #| msgctxt "normal exif orientation"
 #| msgid "Normal"
@@ -44282,14 +44282,14 @@ msgctxt "@info: font style"
 msgid "Normal"
 msgstr "Κανονικό"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:774
+#: core/libs/widgets/fonts/dfontproperties.cpp:758
 #, fuzzy, kde-format
 #| msgid "Italian"
 msgctxt "@info: font style"
 msgid "Italic"
 msgstr "Ιταλικά"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:775
+#: core/libs/widgets/fonts/dfontproperties.cpp:759
 #, fuzzy, kde-format
 #| msgctxt "unique value for duplicate strings"
 #| msgid "Unique"
@@ -44318,90 +44318,90 @@ msgstr "Επιλογή..."
 msgid "Select a Font"
 msgstr "Επιλέξτε μήνα"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:187
 #, kde-format
 msgid "Loading..."
 msgstr "Φορτώνει..."
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:204
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:196
 #, kde-format
 msgid "Embedded JPEG Preview"
 msgstr "Προεπισκόπηση ενσωματωμένης JPEG"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:212
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:204
 #, kde-format
 msgid "Half Size Raw Preview"
 msgstr "Προεπισκόπηση Raw σε μισό μέγεθος"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:224
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:216
 #, kde-format
 msgid "Reduced Size Preview"
 msgstr "Προεπισκόπηση μειωμένου μεγέθους"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:237
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:229
 #, kde-format
 msgid "Failed to load image"
 msgstr "Αποτυχία φόρτωσης της εικόνας"
 
-#: core/libs/widgets/graphicsview/paniconwidget.cpp:325
+#: core/libs/widgets/graphicsview/paniconwidget.cpp:307
 #, kde-format
 msgid "Pan the image to a region"
 msgstr "Πανοραμική κίνηση εικόνας σε μια περιοχή"
 
-#: core/libs/widgets/history/versionswidget.cpp:92
+#: core/libs/widgets/history/versionswidget.cpp:82
 #, kde-format
 msgid "Show available versions in a list"
 msgstr "Εμφάνιση διαθέσιμων εκδόσεων σε λίστα"
 
-#: core/libs/widgets/history/versionswidget.cpp:98
+#: core/libs/widgets/history/versionswidget.cpp:88
 #, kde-format
 msgid "Show available versions as a tree"
 msgstr "Εμφάνιση διαθέσιμων εκδόσεων σε δένδρο"
 
-#: core/libs/widgets/history/versionswidget.cpp:104
+#: core/libs/widgets/history/versionswidget.cpp:94
 #, kde-format
 msgid "Show available versions and the applied filters in a combined list"
 msgstr ""
 "Εμφάνιση διαθέσιμων εκδόσεων και των εφαρμοζόμενων φίλτρων σε μια "
 "συνδυασμένη λίστα"
 
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:810
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:800
 #, kde-format
 msgid "Uncalibrated color space"
 msgstr "Αβαθμονόμητος χρωματικός χώρος"
 
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:816
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:806
 #, kde-format
 msgid "No profile available..."
 msgstr "Δεν υπάρχει διαθέσιμο προφίλ..."
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:59
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:57
 #, kde-format
 msgctxt "<Profile Description> (<File Name>)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:254
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:252
 #, kde-format
 msgid "Perceptual"
 msgstr "Αντιληπτικό"
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:255
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:253
 #, kde-format
 msgid "Relative Colorimetric"
 msgstr "Σχετικό χρωματομετρικό"
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:256
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:254
 #, kde-format
 msgid "Absolute Colorimetric"
 msgstr "Απόλυτο χρωματομετρικό"
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:257
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:255
 #, kde-format
 msgid "Saturation"
 msgstr "Κορεσμός"
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:258
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:256
 #, kde-format
 msgid ""
 "<ul><li><p><b>Perceptual intent</b> causes the full gamut of the image to be "
@@ -44458,189 +44458,189 @@ msgstr ""
 "και με αντίθεση μεταξύ τους και όχι η διατήρηση κάποιου συγκεκριμένου "
 "χρώματος.</p></li></ul>"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:128
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:123
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@item: icc profile properties"
 msgid "Name"
 msgstr "Όνομα"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:129
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:124
 #, fuzzy, kde-format
 #| msgid "The ICC profile product name"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile product name"
 msgstr "Το όνομα του προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:130
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@item: icc profile properties"
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:131
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "The ICC profile product description"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile product description"
 msgstr "Η περιγραφή του ICC προφίλ"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:132
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:127
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@item: icc profile properties"
 msgid "Information"
 msgstr "Πληροφορίες"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:133
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:128
 #, fuzzy, kde-format
 #| msgid "Additional ICC profile information"
 msgctxt "@info: icc profile properties"
 msgid "Additional ICC profile information"
 msgstr "Πρόσθετες πληροφορίες προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:134
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Manufacturer"
 msgctxt "@item: icc profile properties"
 msgid "Manufacturer"
 msgstr "Κατασκευαστής"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:135
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:130
 #, fuzzy, kde-format
 #| msgid "Raw information about the ICC profile manufacturer"
 msgctxt "@info: icc profile properties"
 msgid "Raw information about the ICC profile manufacturer"
 msgstr "Ακατέργαστες πληροφορίες σχετικά με τον κατασκευαστή προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:136
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:131
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@item: icc profile properties"
 msgid "Model"
 msgstr "Μοντέλο"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:137
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "Raw information about the ICC profile model"
 msgctxt "@info: icc profile properties"
 msgid "Raw information about the ICC profile model"
 msgstr "Ακατέργαστες πληροφορίες σχετικά με το μοντέλο του προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:138
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:133
 #, fuzzy, kde-format
 #| msgid "Copyright"
 msgctxt "@item: icc profile properties"
 msgid "Copyright"
 msgstr "Copyright"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:139
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:134
 #, fuzzy, kde-format
 #| msgid "Raw information about the ICC profile copyright"
 msgctxt "@info: icc profile properties"
 msgid "Raw information about the ICC profile copyright"
 msgstr "Ακατέργαστες πληροφορίες σχετικά με το copyright του προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:140
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "Profile ID"
 msgctxt "@item: icc profile properties"
 msgid "Profile ID"
 msgstr "ID του προφίλ"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:141
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "The ICC profile ID number"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile ID number"
 msgstr "Ο αριθμός ID του προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:142
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:137
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@item: icc profile properties"
 msgid "Color Space"
 msgstr "Χρωματικός χώρος"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:143
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:138
 #, fuzzy, kde-format
 #| msgid "The color space used by the ICC profile"
 msgctxt "@info: icc profile properties"
 msgid "The color space used by the ICC profile"
 msgstr "Ο χρωματικός χώρος που χρησιμοποιείται από το προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:144
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:139
 #, fuzzy, kde-format
 #| msgid "Connection Space"
 msgctxt "@item: icc profile properties"
 msgid "Connection Space"
 msgstr "Χώρος σύνδεσης"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:145
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "The connection space used by the ICC profile"
 msgctxt "@info: icc profile properties"
 msgid "The connection space used by the ICC profile"
 msgstr "Ο χώρος σύνδεσης που χρησιμοποιείται από το προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:146
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:141
 #, fuzzy, kde-format
 #| msgid "Device Class"
 msgctxt "@item: icc profile properties"
 msgid "Device Class"
 msgstr "Κατηγορία συσκευής"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:147
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:142
 #, fuzzy, kde-format
 #| msgid "The ICC profile device class"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile device class"
 msgstr "Η κατηγορία της συσκευής του προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:148
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:143
 #, fuzzy, kde-format
 #| msgid "Rendering Intent"
 msgctxt "@item: icc profile properties"
 msgid "Rendering Intent"
 msgstr "Ένταση αποτύπωσης"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:149
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:144
 #, fuzzy, kde-format
 #| msgid "The ICC profile rendering intent"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile rendering intent"
 msgstr "Η ένταση αποτύπωσης του προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:150
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Profile Version"
 msgctxt "@item: icc profile properties"
 msgid "Profile Version"
 msgstr "Έκδοση προφίλ"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:151
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:146
 #, fuzzy, kde-format
 #| msgid "The ICC version used to record the profile"
 msgctxt "@info: icc profile properties"
 msgid "The ICC version used to record the profile"
 msgstr "Η έκδοση ICC για την καταγραφή του προφίλ"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:152
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:147
 #, fuzzy, kde-format
 #| msgid "CMM Flags"
 msgctxt "@item: icc profile properties"
 msgid "CMM Flags"
 msgstr "Σημαίες CMM"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:153
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:148
 #, fuzzy, kde-format
 #| msgid "The ICC profile color management flags"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile color management flags"
 msgstr "Η σημαίες διαχείρισης χρώματος του προφίλ ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:175
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:170
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This area contains a CIE or chromaticity diagram. A CIE diagram is a "
@@ -44682,184 +44682,184 @@ msgstr ""
 "κίτρινη γραμμή αναπαριστά το μέγεθος διόρθωσης που εφαρμόστηκε σε κάθε "
 "σημείο καθώς και την κατεύθυνση της διόρθωσης.</p>"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:248
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "ICC Color Profile Information"
 msgctxt "@title: icc profile properties"
 msgid "ICC Color Profile Information"
 msgstr "Πληροφορίες προφίλ χρώματος ICC"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:352
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:413
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:347
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:408
 #, fuzzy, kde-format
 #| msgid "Lab"
 msgctxt "@info: icc profile color space"
 msgid "Lab"
 msgstr "Lab"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:358
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:419
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:353
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:414
 #, fuzzy, kde-format
 #| msgid "Luv"
 msgctxt "@info: icc profile color space"
 msgid "Luv"
 msgstr "Luv"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:364
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:425
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:359
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:420
 #, fuzzy, kde-format
 #| msgid "RGB"
 msgctxt "@info: icc profile color space"
 msgid "RGB"
 msgstr "RGB"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:370
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:431
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:365
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:426
 #, fuzzy, kde-format
 #| msgid "GRAY"
 msgctxt "@info: icc profile color space"
 msgid "GRAY"
 msgstr "GRAY"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:376
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:437
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:371
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:432
 #, fuzzy, kde-format
 #| msgid "HSV"
 msgctxt "@info: icc profile color space"
 msgid "HSV"
 msgstr "HSV"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:382
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:443
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:377
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:438
 #, fuzzy, kde-format
 #| msgid "HLS"
 msgctxt "@info: icc profile color space"
 msgid "HLS"
 msgstr "HLS"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:388
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:449
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:383
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:444
 #, fuzzy, kde-format
 #| msgid "CMYK"
 msgctxt "@info: icc profile color space"
 msgid "CMYK"
 msgstr "CMYK"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:394
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:455
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:389
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:450
 #, fuzzy, kde-format
 #| msgid "CMY"
 msgctxt "@info: icc profile color space"
 msgid "CMY"
 msgstr "CMY"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:400
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:461
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:395
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:456
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: icc profile color space"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:474
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:469
 #, fuzzy, kde-format
 #| msgid "Input device"
 msgctxt "@info: icc profile class"
 msgid "Input device"
 msgstr "Συσκευή εισόδου"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:480
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:475
 #, fuzzy, kde-format
 #| msgid "Display device"
 msgctxt "@info: icc profile class"
 msgid "Display device"
 msgstr "Συσκευή απεικόνισης"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:486
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:481
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgctxt "@info: icc profile class"
 msgid "Output device"
 msgstr "Συσκευή εξόδου"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:492
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:487
 #, fuzzy, kde-format
 #| msgid "Color space"
 msgctxt "@info: icc profile class"
 msgid "Color space"
 msgstr "Χρωματικός χώρος"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:498
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:493
 #, fuzzy, kde-format
 #| msgid "Link device"
 msgctxt "@info: icc profile class"
 msgid "Link device"
 msgstr "Σύνδεση συσκευής"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:504
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:499
 #, fuzzy, kde-format
 #| msgid "Abstract"
 msgctxt "@info: icc profile class"
 msgid "Abstract"
 msgstr "Αφηρημένο"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:510
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:505
 #, fuzzy, kde-format
 #| msgid "Named color"
 msgctxt "@info: icc profile class"
 msgid "Named color"
 msgstr "Χρώμα με όνομα"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:516
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:511
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: icc profile class"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:529
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:524
 #, fuzzy, kde-format
 #| msgid "Perceptual"
 msgctxt "@info: icc profile redering"
 msgid "Perceptual"
 msgstr "Αντιληπτικό"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:535
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:530
 #, fuzzy, kde-format
 #| msgid "Relative Colorimetric"
 msgctxt "@info: icc profile redering"
 msgid "Relative Colorimetric"
 msgstr "Σχετικό χρωματομετρικό"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:541
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:536
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgctxt "@info: icc profile redering"
 msgid "Saturation"
 msgstr "Κορεσμός"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:547
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:542
 #, fuzzy, kde-format
 #| msgid "Absolute Colorimetric"
 msgctxt "@info: icc profile redering"
 msgid "Absolute Colorimetric"
 msgstr "Απόλυτο χρωματομετρικό"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:553
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:548
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: icc profile redering"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:595
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:590
 #, fuzzy, kde-format
 #| msgid "ICC color profile File to Save"
 msgctxt "@title: file open dialog"
 msgid "ICC color profile File to Save"
 msgstr "Χρωματικό προφίλ ICC για αποθήκευση"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:597
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:592
 #, fuzzy, kde-format
 #| msgid "ICC Files (*.icc; *.icm)"
 msgctxt "@info: file open filters"
@@ -44913,17 +44913,17 @@ msgctxt "unknown image resolution"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/widgets/layout/thumbbardock.cpp:54
+#: core/libs/widgets/layout/thumbbardock.cpp:50
 #, kde-format
 msgid "Drag to reposition"
 msgstr "Προσέλκυση για επανατοποθέτηση"
 
-#: core/libs/widgets/layout/thumbbardock.cpp:174
+#: core/libs/widgets/layout/thumbbardock.cpp:176
 #, kde-format
 msgid "Show Thumbbar"
 msgstr "Εμφάνιση γραμμής επισκόπησης"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:47
+#: core/libs/widgets/mainview/daboutdata.cpp:43
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "This is the slogan formated string displayed in splashscreen. Please "
@@ -44942,125 +44942,125 @@ msgstr ""
 "<qt><font color=\"white\"><b>Επαγγελματική διαχείριση</b> των "
 "<b>φωτογραφιών</b> σας με την ισχύ του <b>ανοιχτού κώδικα</b></font></qt>"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:58
+#: core/libs/widgets/mainview/daboutdata.cpp:54
 #, kde-format
 msgid "Professional Photo Management with the Power of Open Source"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:63
+#: core/libs/widgets/mainview/daboutdata.cpp:59
 #, kde-format
 msgid "A KDE Family Project"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:68
+#: core/libs/widgets/mainview/daboutdata.cpp:64
 #, fuzzy, kde-format
 msgid "(c) 2001-2024, digiKam developers team"
 msgstr "(c) 2002-2013, η ομάδα προγραμματιστών του digiKam"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:80
+#: core/libs/widgets/mainview/daboutdata.cpp:76
 #, kde-format
 msgid "Caulier Gilles"
 msgstr "Caulier Gilles"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:81
+#: core/libs/widgets/mainview/daboutdata.cpp:77
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:86
+#: core/libs/widgets/mainview/daboutdata.cpp:82
 #, kde-format
 msgid "Maik Qualmann"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:87
-#: core/libs/widgets/mainview/daboutdata.cpp:93
-#: core/libs/widgets/mainview/daboutdata.cpp:99
-#: core/libs/widgets/mainview/daboutdata.cpp:105
+#: core/libs/widgets/mainview/daboutdata.cpp:83
+#: core/libs/widgets/mainview/daboutdata.cpp:89
+#: core/libs/widgets/mainview/daboutdata.cpp:95
+#: core/libs/widgets/mainview/daboutdata.cpp:101
 #, fuzzy, kde-format
 msgid "Developer and Mentoring"
 msgstr "Κύριος προγραμματιστής και συντονιστής"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:92
+#: core/libs/widgets/mainview/daboutdata.cpp:88
 #, kde-format
 msgid "Marcel Wiesweg"
 msgstr "Marcel Wiesweg"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:98
+#: core/libs/widgets/mainview/daboutdata.cpp:94
 #, kde-format
 msgid "Mohamed Anwer"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:104
+#: core/libs/widgets/mainview/daboutdata.cpp:100
 #, kde-format
 msgid "Michael G. Hansen"
 msgstr "Michael G. Hansen"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:110
+#: core/libs/widgets/mainview/daboutdata.cpp:106
 #, kde-format
 msgid "Teemu Rytilahti"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:116
+#: core/libs/widgets/mainview/daboutdata.cpp:112
 #, kde-format
 msgid "Thanh Trung Dinh"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:117
+#: core/libs/widgets/mainview/daboutdata.cpp:113
 #, kde-format
 msgid ""
 "Mentoring, Port web-service tools to OAuth, factoring web service tools, and "
 "port faces recognition engine to OpenCV neural network"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:125
+#: core/libs/widgets/mainview/daboutdata.cpp:121
 #, kde-format
 msgid "Matthias Welwarsky"
 msgstr "Matthias Welwarsky"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:131
+#: core/libs/widgets/mainview/daboutdata.cpp:127
 #, kde-format
 msgid "Julien Narboux"
 msgstr "Julien Narboux"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:137
+#: core/libs/widgets/mainview/daboutdata.cpp:133
 #, kde-format
 msgid "Mario Frank"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:138
+#: core/libs/widgets/mainview/daboutdata.cpp:134
 #, fuzzy, kde-format
 #| msgid "Advanced Search - 1 Item"
 #| msgid_plural "Advanced Search - %1 Items"
 msgid "Advanced Searches Tool Improvements"
 msgstr "Προχωρημένη αναζήτηση 1 αντικείμενο"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:142
+#: core/libs/widgets/mainview/daboutdata.cpp:138
 #, kde-format
 msgid "Nicolas Lécureuil"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:143
+#: core/libs/widgets/mainview/daboutdata.cpp:139
 #, fuzzy, kde-format
 msgid "Releases Manager"
 msgstr "Διαχείριση δικαιωμάτων"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:150
+#: core/libs/widgets/mainview/daboutdata.cpp:146
 #, kde-format
 msgid "Anjani Kumar"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:151
+#: core/libs/widgets/mainview/daboutdata.cpp:147
 #, fuzzy, kde-format
 #| msgid "Port to Qt5 and KF5;"
 msgid "Port to Qt6,"
 msgstr "Μεταφορά σε Qt5 και KF5;"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:156
+#: core/libs/widgets/mainview/daboutdata.cpp:152
 #, kde-format
 msgid "Phuoc Khanh LE"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:157
+#: core/libs/widgets/mainview/daboutdata.cpp:153
 #, kde-format
 msgid ""
 "Rewrite Image Quality Sorter algorithms and Photo Focus Information "
@@ -45068,451 +45068,451 @@ msgid ""
 "Slideshow and Presentation tools improvement"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:164
+#: core/libs/widgets/mainview/daboutdata.cpp:160
 #, kde-format
 msgid "Quốc Hưng Trần"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:165
+#: core/libs/widgets/mainview/daboutdata.cpp:161
 #, kde-format
 msgid ""
 "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:170
+#: core/libs/widgets/mainview/daboutdata.cpp:166
 #, kde-format
 msgid "Minh Nghĩa Duong"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:171
+#: core/libs/widgets/mainview/daboutdata.cpp:167
 #, fuzzy, kde-format
 msgid ""
 "Clustering support and improvement for Face Engine, Port Slideshow tool to "
 "plugins interface"
 msgstr "Παρουσίαση διαφανειών"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:177
+#: core/libs/widgets/mainview/daboutdata.cpp:173
 #, kde-format
 msgid "Kartik Ramesh"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:178
+#: core/libs/widgets/mainview/daboutdata.cpp:174
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:183
+#: core/libs/widgets/mainview/daboutdata.cpp:179
 #, kde-format
 msgid "Ahmed Fathi"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:184
+#: core/libs/widgets/mainview/daboutdata.cpp:180
 #, kde-format
 msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:189
+#: core/libs/widgets/mainview/daboutdata.cpp:185
 #, kde-format
 msgid "Veaceslav Munteanu"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:190
+#: core/libs/widgets/mainview/daboutdata.cpp:186
 #, kde-format
 msgid "Tags Manager"
 msgstr "Διαχειριστής ετικετών"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:195
+#: core/libs/widgets/mainview/daboutdata.cpp:191
 #, kde-format
 msgid "Tarek Talaat"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:196
+#: core/libs/widgets/mainview/daboutdata.cpp:192
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:201
+#: core/libs/widgets/mainview/daboutdata.cpp:197
 #, kde-format
 msgid "Yingjie Liu"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:202
+#: core/libs/widgets/mainview/daboutdata.cpp:198
 #, kde-format
 msgid "Face-engine improvements and manual icon-view sort"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:207
+#: core/libs/widgets/mainview/daboutdata.cpp:203
 #, kde-format
 msgid "Yiou Wang"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:208
+#: core/libs/widgets/mainview/daboutdata.cpp:204
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:213
+#: core/libs/widgets/mainview/daboutdata.cpp:209
 #, kde-format
 msgid "Gowtham Ashok"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:214
+#: core/libs/widgets/mainview/daboutdata.cpp:210
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
 #: core/utilities/maintenance/maintenancedlg.cpp:234
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
 msgstr "Επεξεργαστής εικόνας"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:219
+#: core/libs/widgets/mainview/daboutdata.cpp:215
 #, kde-format
 msgid "Aditya Bhatt"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:220
+#: core/libs/widgets/mainview/daboutdata.cpp:216
 #, kde-format
 msgid "Face Detection"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:225
+#: core/libs/widgets/mainview/daboutdata.cpp:221
 #, kde-format
 msgid "Martin Klapetek"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:226
+#: core/libs/widgets/mainview/daboutdata.cpp:222
 #, fuzzy, kde-format
 msgid "Non-destructive image editing"
 msgstr "Ενεργοποίηση αβλαβούς επεξεργασίας και αριθμοδότησης έκδοσης"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:231
+#: core/libs/widgets/mainview/daboutdata.cpp:227
 #, kde-format
 msgid "Gabriel Voicu"
 msgstr "Gabriel Voicu"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:232
+#: core/libs/widgets/mainview/daboutdata.cpp:228
 #, fuzzy, kde-format
 msgid "Reverse Geo-Coding"
 msgstr "Αντίστροφη σειρά"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:237
+#: core/libs/widgets/mainview/daboutdata.cpp:233
 #, kde-format
 msgid "Mahesh Hegde"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:238
+#: core/libs/widgets/mainview/daboutdata.cpp:234
 #, fuzzy, kde-format
 msgid "Face Recognition"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:243
+#: core/libs/widgets/mainview/daboutdata.cpp:239
 #, kde-format
 msgid "Pankaj Kumar"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:244
+#: core/libs/widgets/mainview/daboutdata.cpp:240
 #, fuzzy, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr ""
 "Υποστήριξη πολυπυρηνικής επεξεργασίας στο διαχειριστή ουράς για δέσμες "
 "εργασιών·"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:249
+#: core/libs/widgets/mainview/daboutdata.cpp:245
 #, fuzzy, kde-format
 msgid "Smit Mehta"
 msgstr "Επεξεργασία μεταδεδομένων"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:250
+#: core/libs/widgets/mainview/daboutdata.cpp:246
 #, kde-format
 msgid "UPnP / DLNA Export tool and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:255
+#: core/libs/widgets/mainview/daboutdata.cpp:251
 #, kde-format
 msgid "Islam Wazery"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:256
+#: core/libs/widgets/mainview/daboutdata.cpp:252
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:261
+#: core/libs/widgets/mainview/daboutdata.cpp:257
 #, kde-format
 msgid "Abhinav Badola"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:262
+#: core/libs/widgets/mainview/daboutdata.cpp:258
 #, fuzzy, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "Υποστήριξη μεταδεδομένων βίντεο·"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:267
+#: core/libs/widgets/mainview/daboutdata.cpp:263
 #, kde-format
 msgid "Benjamin Girault"
 msgstr "Benjamin Girault"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:268
+#: core/libs/widgets/mainview/daboutdata.cpp:264
 #, fuzzy, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "Κύριος προγραμματιστής και συντονιστής"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:273
+#: core/libs/widgets/mainview/daboutdata.cpp:269
 #, kde-format
 msgid "Victor Dodon"
 msgstr "Victor Dodon"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:274
+#: core/libs/widgets/mainview/daboutdata.cpp:270
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:279
+#: core/libs/widgets/mainview/daboutdata.cpp:275
 #, kde-format
 msgid "Sayantan Datta"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:280
+#: core/libs/widgets/mainview/daboutdata.cpp:276
 #, fuzzy, kde-format
 msgid "Auto Noise Reduction"
 msgstr "Μείωση θορύβου"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:287
+#: core/libs/widgets/mainview/daboutdata.cpp:283
 #, kde-format
 msgid "Ananta Palani"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:288
+#: core/libs/widgets/mainview/daboutdata.cpp:284
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:293
+#: core/libs/widgets/mainview/daboutdata.cpp:289
 #, kde-format
 msgid "Andi Clemens"
 msgstr "Andi Clemens"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:298
+#: core/libs/widgets/mainview/daboutdata.cpp:294
 #, kde-format
 msgid "Patrick Spendrin"
 msgstr "Patrick Spendrin"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:299
+#: core/libs/widgets/mainview/daboutdata.cpp:295
 #, kde-format
 msgid "Developer and Windows port"
 msgstr "Προγραμματιστής και μεταφορά στα Windows"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:304
+#: core/libs/widgets/mainview/daboutdata.cpp:300
 #, kde-format
 msgid "Francesco Riosa"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:305
+#: core/libs/widgets/mainview/daboutdata.cpp:301
 #, fuzzy, kde-format
 msgid "LCMS2 library port"
 msgstr "Βιβλιοθήκη CImg"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:310
+#: core/libs/widgets/mainview/daboutdata.cpp:306
 #, kde-format
 msgid "Johannes Wienke"
 msgstr "Johannes Wienke"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:316
+#: core/libs/widgets/mainview/daboutdata.cpp:312
 #, kde-format
 msgid "Julien Pontabry"
 msgstr "Julien Pontabry"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:322
+#: core/libs/widgets/mainview/daboutdata.cpp:318
 #, kde-format
 msgid "Arnd Baecker"
 msgstr "Arnd Baecker"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:327
+#: core/libs/widgets/mainview/daboutdata.cpp:323
 #, kde-format
 msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:328
+#: core/libs/widgets/mainview/daboutdata.cpp:324
 #: core/showfoto/setup/showfotosetup.cpp:161
 #, kde-format
 msgid "Color Management"
 msgstr "Διαχείριση χρωμάτων"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:332
+#: core/libs/widgets/mainview/daboutdata.cpp:328
 #, kde-format
 msgid "Pieter Edelman"
 msgstr "Pieter Edelman"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:338
+#: core/libs/widgets/mainview/daboutdata.cpp:334
 #, kde-format
 msgid "Holger Foerster"
 msgstr "Holger Foerster"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:339
+#: core/libs/widgets/mainview/daboutdata.cpp:335
 #, fuzzy, kde-format
 msgid "MySQL interface"
 msgstr "Συντήρηση"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:343
+#: core/libs/widgets/mainview/daboutdata.cpp:339
 #, kde-format
 msgid "Risto Saukonpaa"
 msgstr "Risto Saukonpaa"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:344
+#: core/libs/widgets/mainview/daboutdata.cpp:340
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr ""
 "Σχεδιασμός, εικονίδια, λογότυπο, λεζάντα, προτάσεις περιβάλλοντος, "
 "δοκιμαστής beta"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:348
+#: core/libs/widgets/mainview/daboutdata.cpp:344
 #, kde-format
 msgid "Mikolaj Machowski"
 msgstr "Mikolaj Machowski"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:349
-#: core/libs/widgets/mainview/daboutdata.cpp:355
+#: core/libs/widgets/mainview/daboutdata.cpp:345
+#: core/libs/widgets/mainview/daboutdata.cpp:351
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "Αναφορά σφαλμάτων και διορθώσεις"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:354
+#: core/libs/widgets/mainview/daboutdata.cpp:350
 #, kde-format
 msgid "Achim Bohnet"
 msgstr "Achim Bohnet"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:360
+#: core/libs/widgets/mainview/daboutdata.cpp:356
 #, kde-format
 msgid "Luka Renko"
 msgstr "Luka Renko"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:366
+#: core/libs/widgets/mainview/daboutdata.cpp:362
 #, kde-format
 msgid "Angelo Naselli"
 msgstr "Angelo Naselli"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:372
+#: core/libs/widgets/mainview/daboutdata.cpp:368
 #, kde-format
 msgid "Fabien Salvi"
 msgstr "Fabien Salvi"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:373
+#: core/libs/widgets/mainview/daboutdata.cpp:369
 #, kde-format
 msgid "Webmaster"
 msgstr "Διαχειριστής ιστού"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:377
+#: core/libs/widgets/mainview/daboutdata.cpp:373
 #, kde-format
 msgid "Todd Shoemaker"
 msgstr "Todd Shoemaker"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:382
+#: core/libs/widgets/mainview/daboutdata.cpp:378
 #, kde-format
 msgid "Gerhard Kulzer"
 msgstr "Gerhard Kulzer"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:383
+#: core/libs/widgets/mainview/daboutdata.cpp:379
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "Συγγραφέας εγχειριδίου, δοκιμαστής άλφα, διαχειριστής ιστού"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:388
+#: core/libs/widgets/mainview/daboutdata.cpp:384
 #, kde-format
 msgid "Oliver Doerr"
 msgstr "Oliver Doerr"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:389
-#: core/libs/widgets/mainview/daboutdata.cpp:394
+#: core/libs/widgets/mainview/daboutdata.cpp:385
+#: core/libs/widgets/mainview/daboutdata.cpp:390
 #, kde-format
 msgid "Beta tester"
 msgstr "Δοκιμαστής beta"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:393
+#: core/libs/widgets/mainview/daboutdata.cpp:389
 #, kde-format
 msgid "Charles Bouveyron"
 msgstr "Charles Bouveyron"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:398
+#: core/libs/widgets/mainview/daboutdata.cpp:394
 #, kde-format
 msgid "Richard Taylor"
 msgstr "Richard Taylor"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:399
+#: core/libs/widgets/mainview/daboutdata.cpp:395
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "Σχόλια και διορθώσεις. Συγγραφέας εγχειριδίου"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:403
+#: core/libs/widgets/mainview/daboutdata.cpp:399
 #, kde-format
 msgid "Hans Karlsson"
 msgstr "Hans Karlsson"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:404
+#: core/libs/widgets/mainview/daboutdata.cpp:400
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "Λογότυπο ιστοσελίδας του digiKam και εικονίδια εφαρμογής"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:408
+#: core/libs/widgets/mainview/daboutdata.cpp:404
 #, kde-format
 msgid "Aaron Seigo"
 msgstr "Aaron Seigo"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:409
+#: core/libs/widgets/mainview/daboutdata.cpp:405
 #, kde-format
 msgid "Various usability fixes and general application polishing"
 msgstr "Διάφορες διορθώσεις χρηστικότητας και γενική εκλέπτυνση της εφαρμογής"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:414
+#: core/libs/widgets/mainview/daboutdata.cpp:410
 #, kde-format
 msgid "Yves Chaufour"
 msgstr "Yves Chaufour"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:415
+#: core/libs/widgets/mainview/daboutdata.cpp:411
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "Ιστότοπος digiKam, σχόλια"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:419
+#: core/libs/widgets/mainview/daboutdata.cpp:415
 #, kde-format
 msgid "Tung Nguyen"
 msgstr "Tung Nguyen"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:420
+#: core/libs/widgets/mainview/daboutdata.cpp:416
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "Αναφορά σφαλμάτων, αποστολή εμπειρίας χρήσης και εικονίδια"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:426
+#: core/libs/widgets/mainview/daboutdata.cpp:422
 #, kde-format
 msgid "Renchi Raju"
 msgstr "Renchi Raju"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:427
+#: core/libs/widgets/mainview/daboutdata.cpp:423
 #, fuzzy, kde-format
 #| msgid "Developer (2002-2005)"
 msgid "Developer (2001-2005)"
 msgstr "Προγραμματιστής (2002-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:432
+#: core/libs/widgets/mainview/daboutdata.cpp:428
 #, kde-format
 msgid "Joern Ahrens"
 msgstr "Joern Ahrens"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:433
-#: core/libs/widgets/mainview/daboutdata.cpp:439
+#: core/libs/widgets/mainview/daboutdata.cpp:429
+#: core/libs/widgets/mainview/daboutdata.cpp:435
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "Προγραμματιστής (2004-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:438
+#: core/libs/widgets/mainview/daboutdata.cpp:434
 #, kde-format
 msgid "Tom Albers"
 msgstr "Tom Albers"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:444
+#: core/libs/widgets/mainview/daboutdata.cpp:440
 #, kde-format
 msgid "Ralf Holzer"
 msgstr "Ralf Holzer"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:445
+#: core/libs/widgets/mainview/daboutdata.cpp:441
 #, kde-format
 msgid "Developer (2004)"
 msgstr "Προγραμματιστής (2004)"

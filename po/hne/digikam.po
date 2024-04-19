@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-18 01:35+0000\n"
+"POT-Creation-Date: 2024-04-19 01:45+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -1550,7 +1550,7 @@ msgstr "एलबम लाइब्रेरी मं नवा फोल्�
 msgid "Images found in %1"
 msgstr "%1 मं फोटू मिले"
 
-#: core/app/main/digikamapp_config.cpp:112
+#: core/app/main/digikamapp_config.cpp:116
 #, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
@@ -1558,7 +1558,7 @@ msgid ""
 "of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:128
+#: core/app/main/digikamapp_config.cpp:132
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1566,7 +1566,7 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:136
+#: core/app/main/digikamapp_config.cpp:140
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""
@@ -17752,17 +17752,17 @@ msgstr ""
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
-#: core/libs/widgets/mainview/daboutdata.cpp:111
-#: core/libs/widgets/mainview/daboutdata.cpp:126
-#: core/libs/widgets/mainview/daboutdata.cpp:132
-#: core/libs/widgets/mainview/daboutdata.cpp:294
-#: core/libs/widgets/mainview/daboutdata.cpp:311
-#: core/libs/widgets/mainview/daboutdata.cpp:317
-#: core/libs/widgets/mainview/daboutdata.cpp:323
-#: core/libs/widgets/mainview/daboutdata.cpp:333
-#: core/libs/widgets/mainview/daboutdata.cpp:361
-#: core/libs/widgets/mainview/daboutdata.cpp:367
-#: core/libs/widgets/mainview/daboutdata.cpp:378
+#: core/libs/widgets/mainview/daboutdata.cpp:107
+#: core/libs/widgets/mainview/daboutdata.cpp:122
+#: core/libs/widgets/mainview/daboutdata.cpp:128
+#: core/libs/widgets/mainview/daboutdata.cpp:290
+#: core/libs/widgets/mainview/daboutdata.cpp:307
+#: core/libs/widgets/mainview/daboutdata.cpp:313
+#: core/libs/widgets/mainview/daboutdata.cpp:319
+#: core/libs/widgets/mainview/daboutdata.cpp:329
+#: core/libs/widgets/mainview/daboutdata.cpp:357
+#: core/libs/widgets/mainview/daboutdata.cpp:363
+#: core/libs/widgets/mainview/daboutdata.cpp:374
 #: core/utilities/geolocation/marble/plugins/PluginInterface.h:41
 #, kde-format
 msgid "Developer"
@@ -29998,7 +29998,7 @@ msgid "Cannot save to the Gimp curves text file."
 msgstr "गिम्प कर्व्स पाठ फाइल मं सहेज नइ सकिस."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:173
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:790
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:780
 #, kde-format
 msgid "Loading image..."
 msgstr "फोटू लोड करत हे ..."
@@ -36209,13 +36209,13 @@ msgid "Undefined"
 msgstr "परिभासित नइ"
 
 #: core/libs/properties/history/itempropertieshistorytab.cpp:85
-#: core/libs/widgets/history/filtershistorywidget.cpp:90
+#: core/libs/widgets/history/filtershistorywidget.cpp:79
 #, fuzzy, kde-format
 msgid "Used filters"
 msgstr "फिल्टर उपयोग करव"
 
 #: core/libs/properties/history/itempropertieshistorytab.cpp:121
-#: core/libs/widgets/history/filtershistorywidget.cpp:127
+#: core/libs/widgets/history/filtershistorywidget.cpp:116
 #, fuzzy, kde-format
 msgid "Remove filter"
 msgstr "चीज मेटारव"
@@ -40235,15 +40235,15 @@ msgstr "मीडिया प्लेयर के साथ एक गलत�
 msgid "Toggle playing in a loop"
 msgstr ""
 
-#: core/libs/widgets/combo/dcombobox.cpp:61
-#: core/libs/widgets/range/dnuminput.cpp:71
-#: core/libs/widgets/range/dnuminput.cpp:171
+#: core/libs/widgets/combo/dcombobox.cpp:56
+#: core/libs/widgets/range/dnuminput.cpp:66
+#: core/libs/widgets/range/dnuminput.cpp:163
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset to default value"
 msgstr "सब्बो सेटिंग ल ऊंखर डिफाल्ट मूल्य मं रीसेट करव."
 
-#: core/libs/widgets/files/dbinaryiface.cpp:217
+#: core/libs/widgets/files/dbinaryiface.cpp:193
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
@@ -40314,181 +40314,181 @@ msgstr ""
 msgid "Browse..."
 msgstr "नवा टैग..."
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:66
+#: core/libs/widgets/files/filesaveconflictbox.cpp:59
 #, fuzzy, kde-format
 msgid "If Target File Exists:"
 msgstr "फोटू फाइल मन ल"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:70
+#: core/libs/widgets/files/filesaveconflictbox.cpp:63
 #: core/utilities/setup/camera/setupcamera.cpp:333
 #, kde-format
 msgid "Store as a different name"
 msgstr ""
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:71
+#: core/libs/widgets/files/filesaveconflictbox.cpp:64
 #: core/utilities/setup/camera/setupcamera.cpp:334
 #, fuzzy, kde-format
 msgid "Overwrite automatically"
 msgstr "फाइल ल मेटाय के लिखव?"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:72
+#: core/libs/widgets/files/filesaveconflictbox.cpp:65
 #: core/utilities/setup/camera/setupcamera.cpp:335
 #, fuzzy, kde-format
 msgid "Skip automatically"
 msgstr "फाइल ल मेटाय के लिखव?"
 
-#: core/libs/widgets/files/filesaveoptionsbox.cpp:115
+#: core/libs/widgets/files/filesaveoptionsbox.cpp:90
 #, kde-format
 msgid "No options available"
 msgstr "कोई विकल्प नइ मिलत हे."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:228
+#: core/libs/widgets/fonts/dfontproperties.cpp:212
 #, fuzzy, kde-format
 #| msgid "Here you can choose the font to be used."
 msgctxt "@title: font properties"
 msgid "Here you can choose the font to be used."
 msgstr "इहां आप मन उपयोग मं आए वाले फोंट ल चुन सकथो."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:255
+#: core/libs/widgets/fonts/dfontproperties.cpp:239
 #, fuzzy, kde-format
 msgctxt "@title: font properties"
 msgid "Requested Font"
 msgstr "मनमाफिक"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:275
+#: core/libs/widgets/fonts/dfontproperties.cpp:259
 #, fuzzy, kde-format
 msgctxt "@title: font properties"
 msgid "Font"
 msgstr "गननाः"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:281
+#: core/libs/widgets/fonts/dfontproperties.cpp:265
 #, fuzzy, kde-format
 #| msgid "Enable this option to show golden sections."
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font family settings."
 msgstr "सोना खण्ड प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:282
+#: core/libs/widgets/fonts/dfontproperties.cpp:266
 #, fuzzy, kde-format
 msgctxt "@info: font properties"
 msgid "Change font family?"
 msgstr "केस बदलव:"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:288
+#: core/libs/widgets/fonts/dfontproperties.cpp:272
 #, fuzzy, kde-format
 msgctxt "@label: font properties"
 msgid "Font:"
 msgstr "गननाः"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:298
+#: core/libs/widgets/fonts/dfontproperties.cpp:282
 #, fuzzy, kde-format
 msgctxt "@title: font properties"
 msgid "Font style"
 msgstr "आखरी रंगः"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:304
+#: core/libs/widgets/fonts/dfontproperties.cpp:288
 #, fuzzy, kde-format
 #| msgid "Enable this option to show golden sections."
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font style settings."
 msgstr "सोना खण्ड प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:305
+#: core/libs/widgets/fonts/dfontproperties.cpp:289
 #, fuzzy, kde-format
 msgctxt "@info: font properties"
 msgid "Change font style?"
 msgstr "केस बदलव:"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:311
+#: core/libs/widgets/fonts/dfontproperties.cpp:295
 #, fuzzy, kde-format
 msgctxt "@label: font properties"
 msgid "Font style:"
 msgstr "आखरी रंगः"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:322
+#: core/libs/widgets/fonts/dfontproperties.cpp:306
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@title: font properties"
 msgid "Size"
 msgstr "आकार"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:328
+#: core/libs/widgets/fonts/dfontproperties.cpp:312
 #, fuzzy, kde-format
 #| msgid "Enable this option to show golden sections."
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font size settings."
 msgstr "सोना खण्ड प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:329
+#: core/libs/widgets/fonts/dfontproperties.cpp:313
 #, fuzzy, kde-format
 msgctxt "@info: font properties"
 msgid "Change font size?"
 msgstr "केस बदलव:"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:335
+#: core/libs/widgets/fonts/dfontproperties.cpp:319
 #, fuzzy, kde-format
 #| msgid "Size:"
 msgctxt "@label:listbox Font size"
 msgid "Size:"
 msgstr "आकारः"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:350
+#: core/libs/widgets/fonts/dfontproperties.cpp:334
 #, fuzzy, kde-format
 #| msgid "Here you can choose the font to be used."
 msgctxt "@info: font properties"
 msgid "Here you can choose the font family to be used."
 msgstr "इहां आप मन उपयोग मं आए वाले फोंट ल चुन सकथो."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:380
+#: core/libs/widgets/fonts/dfontproperties.cpp:364
 #, fuzzy, kde-format
 #| msgid "Here you can choose the font to be used."
 msgctxt "@info: font properties"
 msgid "Here you can choose the font style to be used."
 msgstr "इहां आप मन उपयोग मं आए वाले फोंट ल चुन सकथो."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:394
+#: core/libs/widgets/fonts/dfontproperties.cpp:378
 #, fuzzy, kde-format
 msgctxt "@item: font style"
 msgid "Normal"
 msgstr "सामान्य"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:395
+#: core/libs/widgets/fonts/dfontproperties.cpp:379
 #, fuzzy, kde-format
 msgctxt "@item: font style"
 msgid "Italic"
 msgstr "आज"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:396
+#: core/libs/widgets/fonts/dfontproperties.cpp:380
 #, fuzzy, kde-format
 msgctxt "@item: font style"
 msgid "Oblique"
 msgstr "मेंटेनर"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:397
+#: core/libs/widgets/fonts/dfontproperties.cpp:381
 #, kde-format
 msgctxt "@item: font style"
 msgid "Bold"
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:398
+#: core/libs/widgets/fonts/dfontproperties.cpp:382
 #, fuzzy, kde-format
 msgctxt "@item: font style"
 msgid "Bold Italic"
 msgstr "आज"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:417
+#: core/libs/widgets/fonts/dfontproperties.cpp:401
 #, fuzzy, kde-format
 msgctxt "@item: font size"
 msgid "Relative"
 msgstr "सजावटी परक्वेट"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:419
+#: core/libs/widgets/fonts/dfontproperties.cpp:403
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Font size \"fixed\" or \"relative\" to environment"
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:420
+#: core/libs/widgets/fonts/dfontproperties.cpp:404
 #, kde-format
 msgctxt "@info: font properties"
 msgid ""
@@ -40497,20 +40497,20 @@ msgid ""
 "paper size)."
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:445
+#: core/libs/widgets/fonts/dfontproperties.cpp:429
 #, fuzzy, kde-format
 #| msgid "Here you can choose the font to be used."
 msgctxt "@info: font properties"
 msgid "Here you can choose the font size to be used."
 msgstr "इहां आप मन उपयोग मं आए वाले फोंट ल चुन सकथो."
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:486
+#: core/libs/widgets/fonts/dfontproperties.cpp:470
 #, kde-format
 msgctxt "@info: font properties"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:488
+#: core/libs/widgets/fonts/dfontproperties.cpp:472
 #, kde-format
 msgctxt "@info: font properties"
 msgid ""
@@ -40518,20 +40518,20 @@ msgid ""
 "special characters."
 msgstr ""
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:727
-#: core/libs/widgets/fonts/dfontproperties.cpp:767
+#: core/libs/widgets/fonts/dfontproperties.cpp:711
+#: core/libs/widgets/fonts/dfontproperties.cpp:751
 #, fuzzy, kde-format
 msgctxt "@info: font style"
 msgid "Normal"
 msgstr "सामान्य"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:774
+#: core/libs/widgets/fonts/dfontproperties.cpp:758
 #, fuzzy, kde-format
 msgctxt "@info: font style"
 msgid "Italic"
 msgstr "आज"
 
-#: core/libs/widgets/fonts/dfontproperties.cpp:775
+#: core/libs/widgets/fonts/dfontproperties.cpp:759
 #, fuzzy, kde-format
 msgctxt "@info: font style"
 msgid "Oblique"
@@ -40558,88 +40558,88 @@ msgstr ""
 msgid "Select a Font"
 msgstr "कुछ नइ चुनव"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:195
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:187
 #, fuzzy, kde-format
 msgid "Loading..."
 msgstr "लोड करव..."
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:204
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:196
 #, fuzzy, kde-format
 msgid "Embedded JPEG Preview"
 msgstr "भीतर मं बने प्रिव्यू देखाव"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:212
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:204
 #, kde-format
 msgid "Half Size Raw Preview"
 msgstr ""
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:224
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:216
 #, kde-format
 msgid "Reduced Size Preview"
 msgstr ""
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:237
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:229
 #, fuzzy, kde-format
 msgid "Failed to load image"
 msgstr "%1 मं फाइल सूची बनाना फेल"
 
-#: core/libs/widgets/graphicsview/paniconwidget.cpp:325
+#: core/libs/widgets/graphicsview/paniconwidget.cpp:307
 #, kde-format
 msgid "Pan the image to a region"
 msgstr "फोटू ल कोनो छेत्र मं पैनइ करव"
 
-#: core/libs/widgets/history/versionswidget.cpp:92
+#: core/libs/widgets/history/versionswidget.cpp:82
 #, kde-format
 msgid "Show available versions in a list"
 msgstr ""
 
-#: core/libs/widgets/history/versionswidget.cpp:98
+#: core/libs/widgets/history/versionswidget.cpp:88
 #, kde-format
 msgid "Show available versions as a tree"
 msgstr ""
 
-#: core/libs/widgets/history/versionswidget.cpp:104
+#: core/libs/widgets/history/versionswidget.cpp:94
 #, kde-format
 msgid "Show available versions and the applied filters in a combined list"
 msgstr ""
 
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:810
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:800
 #, fuzzy, kde-format
 msgid "Uncalibrated color space"
 msgstr "अनकेलिब्रेटेड"
 
-#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:816
+#: core/libs/widgets/iccprofiles/cietonguewidget.cpp:806
 #, kde-format
 msgid "No profile available..."
 msgstr "कोई प्रोफाइल नइ मिलत..."
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:59
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:57
 #, fuzzy, kde-format
 msgctxt "<Profile Description> (<File Name>)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:254
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:252
 #, kde-format
 msgid "Perceptual"
 msgstr "परपेचुअल"
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:255
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:253
 #, kde-format
 msgid "Relative Colorimetric"
 msgstr "सापेक्छ कलरमेट्रिक"
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:256
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:254
 #, kde-format
 msgid "Absolute Colorimetric"
 msgstr "निरपेक्छ कलरमेट्रिक"
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:257
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:255
 #, kde-format
 msgid "Saturation"
 msgstr "संतृप्ति"
 
-#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:258
+#: core/libs/widgets/iccprofiles/iccprofilescombobox.cpp:256
 #, kde-format
 msgid ""
 "<ul><li><p><b>Perceptual intent</b> causes the full gamut of the image to be "
@@ -40669,189 +40669,189 @@ msgid ""
 "color.</p></li></ul>"
 msgstr ""
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:128
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:123
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@item: icc profile properties"
 msgid "Name"
 msgstr "नाम"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:129
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:124
 #, fuzzy, kde-format
 #| msgid "The ICC profile product name"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile product name"
 msgstr "आईसीसी प्रोफाइल उत्पाद नाम"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:130
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@item: icc profile properties"
 msgid "Description"
 msgstr "वर्नन"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:131
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:126
 #, fuzzy, kde-format
 #| msgid "The ICC profile product description"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile product description"
 msgstr "आईसीसी प्रोफाइल उत्पात वर्नन"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:132
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:127
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@item: icc profile properties"
 msgid "Information"
 msgstr "जानकारी"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:133
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:128
 #, fuzzy, kde-format
 #| msgid "Additional ICC profile information"
 msgctxt "@info: icc profile properties"
 msgid "Additional ICC profile information"
 msgstr "अतिरिक्त आईसीसी प्रोफाइल जानकारी"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:134
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:129
 #, fuzzy, kde-format
 #| msgid "Manufacturer"
 msgctxt "@item: icc profile properties"
 msgid "Manufacturer"
 msgstr "उत्पादक"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:135
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:130
 #, fuzzy, kde-format
 #| msgid "Raw information about the ICC profile manufacturer"
 msgctxt "@info: icc profile properties"
 msgid "Raw information about the ICC profile manufacturer"
 msgstr "आईसीसी प्रोफाइल बनइया परिचय रा जानकारी"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:136
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:131
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@item: icc profile properties"
 msgid "Model"
 msgstr "माडल"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:137
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:132
 #, fuzzy, kde-format
 #| msgid "Raw information about the ICC profile model"
 msgctxt "@info: icc profile properties"
 msgid "Raw information about the ICC profile model"
 msgstr "आईसीसी प्रोफाइल माडल परिचय रा जानकारी"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:138
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:133
 #, fuzzy, kde-format
 #| msgid "Copyright"
 msgctxt "@item: icc profile properties"
 msgid "Copyright"
 msgstr "कापीराइट"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:139
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:134
 #, fuzzy, kde-format
 #| msgid "Raw information about the ICC profile copyright"
 msgctxt "@info: icc profile properties"
 msgid "Raw information about the ICC profile copyright"
 msgstr "आईसीसी प्रोफाइल कापीराइट परिचय रा जानकारी"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:140
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "Profile ID"
 msgctxt "@item: icc profile properties"
 msgid "Profile ID"
 msgstr "प्रोफाइल आईडी"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:141
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "The ICC profile ID number"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile ID number"
 msgstr "आईसीसी प्रोफाइल आईडी संख्या"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:142
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:137
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@item: icc profile properties"
 msgid "Color Space"
 msgstr "रंग जगह"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:143
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:138
 #, fuzzy, kde-format
 #| msgid "The color space used by the ICC profile"
 msgctxt "@info: icc profile properties"
 msgid "The color space used by the ICC profile"
 msgstr "आईसीसी प्रोफाइल से परयोग मं ले गिस रंग जगह"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:144
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:139
 #, fuzzy, kde-format
 #| msgid "Connection Space"
 msgctxt "@item: icc profile properties"
 msgid "Connection Space"
 msgstr "कनेक्सन जगह"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:145
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "The connection space used by the ICC profile"
 msgctxt "@info: icc profile properties"
 msgid "The connection space used by the ICC profile"
 msgstr "आईसीसी प्रोफाइल से परयोग मं ले गिस कनेक्सन जगह"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:146
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:141
 #, fuzzy, kde-format
 #| msgid "Device Class"
 msgctxt "@item: icc profile properties"
 msgid "Device Class"
 msgstr "उपकरन क्लास"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:147
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:142
 #, fuzzy, kde-format
 #| msgid "The ICC profile device class"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile device class"
 msgstr "आईसीसी प्रोफाइल उपकरन क्लास"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:148
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:143
 #, fuzzy, kde-format
 #| msgid "Rendering Intent"
 msgctxt "@item: icc profile properties"
 msgid "Rendering Intent"
 msgstr "रेंडरिंग इंटेंट"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:149
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:144
 #, fuzzy, kde-format
 #| msgid "The ICC profile rendering intent"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile rendering intent"
 msgstr "आईसीसी प्रोफाइल रेंडरिंग इंटेंट"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:150
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Profile Version"
 msgctxt "@item: icc profile properties"
 msgid "Profile Version"
 msgstr "प्रोफाइल संस्करन"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:151
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:146
 #, fuzzy, kde-format
 #| msgid "The ICC version used to record the profile"
 msgctxt "@info: icc profile properties"
 msgid "The ICC version used to record the profile"
 msgstr "प्रोफाइल रेकार्ड करे मं परयोग मं आईसीसी संस्करन"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:152
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:147
 #, fuzzy, kde-format
 #| msgid "CMM Flags"
 msgctxt "@item: icc profile properties"
 msgid "CMM Flags"
 msgstr "सीएमएम फ्लैग"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:153
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:148
 #, fuzzy, kde-format
 #| msgid "The ICC profile color management flags"
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile color management flags"
 msgstr "आईसीसी प्रोफाइल रंग प्रबंधन फ्लैग"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:175
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:170
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid ""
@@ -40870,184 +40870,184 @@ msgid ""
 "direction of this correction."
 msgstr ""
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:248
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "ICC Color Profile Information"
 msgctxt "@title: icc profile properties"
 msgid "ICC Color Profile Information"
 msgstr "आईसीसी रंग प्रोफाइल जानकारी"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:352
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:413
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:347
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:408
 #, fuzzy, kde-format
 #| msgid "Lab"
 msgctxt "@info: icc profile color space"
 msgid "Lab"
 msgstr "लैब"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:358
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:419
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:353
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:414
 #, fuzzy, kde-format
 #| msgid "Luv"
 msgctxt "@info: icc profile color space"
 msgid "Luv"
 msgstr "एलयूवी"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:364
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:425
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:359
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:420
 #, fuzzy, kde-format
 #| msgid "RGB"
 msgctxt "@info: icc profile color space"
 msgid "RGB"
 msgstr "आरजीबी"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:370
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:431
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:365
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:426
 #, fuzzy, kde-format
 #| msgid "GRAY"
 msgctxt "@info: icc profile color space"
 msgid "GRAY"
 msgstr "जीआरएवाई"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:376
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:437
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:371
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:432
 #, fuzzy, kde-format
 #| msgid "HSV"
 msgctxt "@info: icc profile color space"
 msgid "HSV"
 msgstr "एचएसवी"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:382
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:443
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:377
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:438
 #, fuzzy, kde-format
 #| msgid "HLS"
 msgctxt "@info: icc profile color space"
 msgid "HLS"
 msgstr "एचएलएस"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:388
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:449
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:383
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:444
 #, fuzzy, kde-format
 #| msgid "CMYK"
 msgctxt "@info: icc profile color space"
 msgid "CMYK"
 msgstr "सीएमवायके"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:394
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:455
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:389
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:450
 #, fuzzy, kde-format
 #| msgid "CMY"
 msgctxt "@info: icc profile color space"
 msgid "CMY"
 msgstr "सीएमवाई"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:400
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:461
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:395
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:456
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: icc profile color space"
 msgid "Unknown"
 msgstr "अग्यात"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:474
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:469
 #, fuzzy, kde-format
 #| msgid "Input device"
 msgctxt "@info: icc profile class"
 msgid "Input device"
 msgstr "इनपुट उपकरन"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:480
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:475
 #, fuzzy, kde-format
 #| msgid "Display device"
 msgctxt "@info: icc profile class"
 msgid "Display device"
 msgstr "प्रदर्सन उपकरन"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:486
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:481
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgctxt "@info: icc profile class"
 msgid "Output device"
 msgstr "आउटपुट उपकरन"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:492
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:487
 #, fuzzy, kde-format
 #| msgid "Color space"
 msgctxt "@info: icc profile class"
 msgid "Color space"
 msgstr "रंग जगह"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:498
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:493
 #, fuzzy, kde-format
 #| msgid "Link device"
 msgctxt "@info: icc profile class"
 msgid "Link device"
 msgstr "संकली उपकरन"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:504
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:499
 #, fuzzy, kde-format
 #| msgid "Abstract"
 msgctxt "@info: icc profile class"
 msgid "Abstract"
 msgstr "सार"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:510
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:505
 #, fuzzy, kde-format
 #| msgid "Named color"
 msgctxt "@info: icc profile class"
 msgid "Named color"
 msgstr "नामित रंग"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:516
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:511
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: icc profile class"
 msgid "Unknown"
 msgstr "अग्यात"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:529
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:524
 #, fuzzy, kde-format
 #| msgid "Perceptual"
 msgctxt "@info: icc profile redering"
 msgid "Perceptual"
 msgstr "परपेचुअल"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:535
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:530
 #, fuzzy, kde-format
 #| msgid "Relative Colorimetric"
 msgctxt "@info: icc profile redering"
 msgid "Relative Colorimetric"
 msgstr "सापेक्छ कलरमेट्रिक"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:541
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:536
 #, fuzzy, kde-format
 #| msgid "Saturation"
 msgctxt "@info: icc profile redering"
 msgid "Saturation"
 msgstr "संतृप्ति"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:547
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:542
 #, fuzzy, kde-format
 #| msgid "Absolute Colorimetric"
 msgctxt "@info: icc profile redering"
 msgid "Absolute Colorimetric"
 msgstr "निरपेक्छ कलरमेट्रिक"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:553
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:548
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: icc profile redering"
 msgid "Unknown"
 msgstr "अग्यात"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:595
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:590
 #, fuzzy, kde-format
 #| msgid "ICC color profile File to Save"
 msgctxt "@title: file open dialog"
 msgid "ICC color profile File to Save"
 msgstr "सहेजे बर आईसीसी रंग प्रोफाइल"
 
-#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:597
+#: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:592
 #, fuzzy, kde-format
 #| msgid "ICC Files (*.icc; *.icm)"
 msgctxt "@info: file open filters"
@@ -41097,17 +41097,17 @@ msgctxt "unknown image resolution"
 msgid "Unknown"
 msgstr "अग्यात"
 
-#: core/libs/widgets/layout/thumbbardock.cpp:54
+#: core/libs/widgets/layout/thumbbardock.cpp:50
 #, fuzzy, kde-format
 msgid "Drag to reposition"
 msgstr "फोटू सीर्सक"
 
-#: core/libs/widgets/layout/thumbbardock.cpp:174
+#: core/libs/widgets/layout/thumbbardock.cpp:176
 #, fuzzy, kde-format
 msgid "Show Thumbbar"
 msgstr "छोटेफोटू देखाव"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:47
+#: core/libs/widgets/mainview/daboutdata.cpp:43
 #, kde-format
 msgctxt ""
 "This is the slogan formatted string displayed in splashscreen. Please "
@@ -41118,123 +41118,123 @@ msgid ""
 "font></qt>"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:58
+#: core/libs/widgets/mainview/daboutdata.cpp:54
 #, kde-format
 msgid "Professional Photo Management with the Power of Open Source"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:63
+#: core/libs/widgets/mainview/daboutdata.cpp:59
 #, kde-format
 msgid "A KDE Family Project"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:68
+#: core/libs/widgets/mainview/daboutdata.cpp:64
 #, fuzzy, kde-format
 #| msgid "(c) 2002-2007, digiKam developers team"
 msgid "(c) 2001-2024, digiKam developers team"
 msgstr "(c) 2002-2007, डिजीकैम डेवलपर टोली"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:80
+#: core/libs/widgets/mainview/daboutdata.cpp:76
 #, kde-format
 msgid "Caulier Gilles"
 msgstr "काउलियर गिल्स"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:81
+#: core/libs/widgets/mainview/daboutdata.cpp:77
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:86
+#: core/libs/widgets/mainview/daboutdata.cpp:82
 #, kde-format
 msgid "Maik Qualmann"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:87
-#: core/libs/widgets/mainview/daboutdata.cpp:93
-#: core/libs/widgets/mainview/daboutdata.cpp:99
-#: core/libs/widgets/mainview/daboutdata.cpp:105
+#: core/libs/widgets/mainview/daboutdata.cpp:83
+#: core/libs/widgets/mainview/daboutdata.cpp:89
+#: core/libs/widgets/mainview/daboutdata.cpp:95
+#: core/libs/widgets/mainview/daboutdata.cpp:101
 #, fuzzy, kde-format
 msgid "Developer and Mentoring"
 msgstr "मुख्य डेवलपर अउ संयोजक"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:92
+#: core/libs/widgets/mainview/daboutdata.cpp:88
 #, kde-format
 msgid "Marcel Wiesweg"
 msgstr "मार्सल वाइसवेग"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:98
+#: core/libs/widgets/mainview/daboutdata.cpp:94
 #, kde-format
 msgid "Mohamed Anwer"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:104
+#: core/libs/widgets/mainview/daboutdata.cpp:100
 #, kde-format
 msgid "Michael G. Hansen"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:110
+#: core/libs/widgets/mainview/daboutdata.cpp:106
 #, kde-format
 msgid "Teemu Rytilahti"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:116
+#: core/libs/widgets/mainview/daboutdata.cpp:112
 #, kde-format
 msgid "Thanh Trung Dinh"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:117
+#: core/libs/widgets/mainview/daboutdata.cpp:113
 #, kde-format
 msgid ""
 "Mentoring, Port web-service tools to OAuth, factoring web service tools, and "
 "port faces recognition engine to OpenCV neural network"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:125
+#: core/libs/widgets/mainview/daboutdata.cpp:121
 #, kde-format
 msgid "Matthias Welwarsky"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:131
+#: core/libs/widgets/mainview/daboutdata.cpp:127
 #, kde-format
 msgid "Julien Narboux"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:137
+#: core/libs/widgets/mainview/daboutdata.cpp:133
 #, kde-format
 msgid "Mario Frank"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:138
+#: core/libs/widgets/mainview/daboutdata.cpp:134
 #, fuzzy, kde-format
 msgid "Advanced Searches Tool Improvements"
 msgstr "विस्तृत खोज"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:142
+#: core/libs/widgets/mainview/daboutdata.cpp:138
 #, kde-format
 msgid "Nicolas Lécureuil"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:143
+#: core/libs/widgets/mainview/daboutdata.cpp:139
 #, fuzzy, kde-format
 msgid "Releases Manager"
 msgstr "रंग प्रबंधन"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:150
+#: core/libs/widgets/mainview/daboutdata.cpp:146
 #, kde-format
 msgid "Anjani Kumar"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:151
+#: core/libs/widgets/mainview/daboutdata.cpp:147
 #, kde-format
 msgid "Port to Qt6,"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:156
+#: core/libs/widgets/mainview/daboutdata.cpp:152
 #, kde-format
 msgid "Phuoc Khanh LE"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:157
+#: core/libs/widgets/mainview/daboutdata.cpp:153
 #, kde-format
 msgid ""
 "Rewrite Image Quality Sorter algorithms and Photo Focus Information "
@@ -41242,447 +41242,447 @@ msgid ""
 "Slideshow and Presentation tools improvement"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:164
+#: core/libs/widgets/mainview/daboutdata.cpp:160
 #, kde-format
 msgid "Quốc Hưng Trần"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:165
+#: core/libs/widgets/mainview/daboutdata.cpp:161
 #, kde-format
 msgid ""
 "MJPEGStream plugin, OCR text Converter plugin, auto-tags assignment engine"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:170
+#: core/libs/widgets/mainview/daboutdata.cpp:166
 #, kde-format
 msgid "Minh Nghĩa Duong"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:171
+#: core/libs/widgets/mainview/daboutdata.cpp:167
 #, fuzzy, kde-format
 msgid ""
 "Clustering support and improvement for Face Engine, Port Slideshow tool to "
 "plugins interface"
 msgstr "स्लाइड-सो"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:177
+#: core/libs/widgets/mainview/daboutdata.cpp:173
 #, kde-format
 msgid "Kartik Ramesh"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:178
+#: core/libs/widgets/mainview/daboutdata.cpp:174
 #, kde-format
 msgid "Face management workflow improvements"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:183
+#: core/libs/widgets/mainview/daboutdata.cpp:179
 #, kde-format
 msgid "Ahmed Fathi"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:184
+#: core/libs/widgets/mainview/daboutdata.cpp:180
 #, kde-format
 msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:189
+#: core/libs/widgets/mainview/daboutdata.cpp:185
 #, kde-format
 msgid "Veaceslav Munteanu"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:190
+#: core/libs/widgets/mainview/daboutdata.cpp:186
 #, fuzzy, kde-format
 msgid "Tags Manager"
 msgstr "रंग प्रबंधन"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:195
+#: core/libs/widgets/mainview/daboutdata.cpp:191
 #, kde-format
 msgid "Tarek Talaat"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:196
+#: core/libs/widgets/mainview/daboutdata.cpp:192
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:201
+#: core/libs/widgets/mainview/daboutdata.cpp:197
 #, kde-format
 msgid "Yingjie Liu"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:202
+#: core/libs/widgets/mainview/daboutdata.cpp:198
 #, kde-format
 msgid "Face-engine improvements and manual icon-view sort"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:207
+#: core/libs/widgets/mainview/daboutdata.cpp:203
 #, kde-format
 msgid "Yiou Wang"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:208
+#: core/libs/widgets/mainview/daboutdata.cpp:204
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:213
+#: core/libs/widgets/mainview/daboutdata.cpp:209
 #, kde-format
 msgid "Gowtham Ashok"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:214
+#: core/libs/widgets/mainview/daboutdata.cpp:210
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
 #: core/utilities/maintenance/maintenancedlg.cpp:234
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
 msgstr "फोटू संपादक "
 
-#: core/libs/widgets/mainview/daboutdata.cpp:219
+#: core/libs/widgets/mainview/daboutdata.cpp:215
 #, kde-format
 msgid "Aditya Bhatt"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:220
+#: core/libs/widgets/mainview/daboutdata.cpp:216
 #, fuzzy, kde-format
 msgid "Face Detection"
 msgstr "उलटा अनुक्रम"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:225
+#: core/libs/widgets/mainview/daboutdata.cpp:221
 #, kde-format
 msgid "Martin Klapetek"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:226
+#: core/libs/widgets/mainview/daboutdata.cpp:222
 #, kde-format
 msgid "Non-destructive image editing"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:231
+#: core/libs/widgets/mainview/daboutdata.cpp:227
 #, kde-format
 msgid "Gabriel Voicu"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:232
+#: core/libs/widgets/mainview/daboutdata.cpp:228
 #, fuzzy, kde-format
 msgid "Reverse Geo-Coding"
 msgstr "उलटा अनुक्रम"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:237
+#: core/libs/widgets/mainview/daboutdata.cpp:233
 #, kde-format
 msgid "Mahesh Hegde"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:238
+#: core/libs/widgets/mainview/daboutdata.cpp:234
 #, fuzzy, kde-format
 msgid "Face Recognition"
 msgstr "उलटा अनुक्रम"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:243
+#: core/libs/widgets/mainview/daboutdata.cpp:239
 #, kde-format
 msgid "Pankaj Kumar"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:244
+#: core/libs/widgets/mainview/daboutdata.cpp:240
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:249
+#: core/libs/widgets/mainview/daboutdata.cpp:245
 #, fuzzy, kde-format
 msgid "Smit Mehta"
 msgstr "मेटाडाटा"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:250
+#: core/libs/widgets/mainview/daboutdata.cpp:246
 #, kde-format
 msgid "UPnP / DLNA Export tool and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:255
+#: core/libs/widgets/mainview/daboutdata.cpp:251
 #, kde-format
 msgid "Islam Wazery"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:256
+#: core/libs/widgets/mainview/daboutdata.cpp:252
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:261
+#: core/libs/widgets/mainview/daboutdata.cpp:257
 #, kde-format
 msgid "Abhinav Badola"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:262
+#: core/libs/widgets/mainview/daboutdata.cpp:258
 #, fuzzy, kde-format
 msgid "Video Metadata Support and Mentoring"
 msgstr "एक्सएमपी मेटाडाटा समर्थन"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:267
+#: core/libs/widgets/mainview/daboutdata.cpp:263
 #, kde-format
 msgid "Benjamin Girault"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:268
+#: core/libs/widgets/mainview/daboutdata.cpp:264
 #, fuzzy, kde-format
 msgid "Panorama Tool and Mentoring"
 msgstr "मुख्य डेवलपर अउ संयोजक"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:273
+#: core/libs/widgets/mainview/daboutdata.cpp:269
 #, kde-format
 msgid "Victor Dodon"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:274
+#: core/libs/widgets/mainview/daboutdata.cpp:270
 #, kde-format
 msgid "XML based GUI port of tools"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:279
+#: core/libs/widgets/mainview/daboutdata.cpp:275
 #, kde-format
 msgid "Sayantan Datta"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:280
+#: core/libs/widgets/mainview/daboutdata.cpp:276
 #, fuzzy, kde-format
 msgid "Auto Noise Reduction"
 msgstr "सोर कम करे जाना"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:287
+#: core/libs/widgets/mainview/daboutdata.cpp:283
 #, kde-format
 msgid "Ananta Palani"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:288
+#: core/libs/widgets/mainview/daboutdata.cpp:284
 #, kde-format
 msgid "Windows Port and Release Manager"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:293
+#: core/libs/widgets/mainview/daboutdata.cpp:289
 #, kde-format
 msgid "Andi Clemens"
 msgstr "एन्डी क्लीमेंस"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:298
+#: core/libs/widgets/mainview/daboutdata.cpp:294
 #, kde-format
 msgid "Patrick Spendrin"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:299
+#: core/libs/widgets/mainview/daboutdata.cpp:295
 #, fuzzy, kde-format
 msgid "Developer and Windows port"
 msgstr "मुख्य डेवलपर अउ संयोजक"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:304
+#: core/libs/widgets/mainview/daboutdata.cpp:300
 #, kde-format
 msgid "Francesco Riosa"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:305
+#: core/libs/widgets/mainview/daboutdata.cpp:301
 #, fuzzy, kde-format
 msgid "LCMS2 library port"
 msgstr "सीआईएमजी लाइब्रेरी"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:310
+#: core/libs/widgets/mainview/daboutdata.cpp:306
 #, fuzzy, kde-format
 msgid "Johannes Wienke"
 msgstr "जान वाकर"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:316
+#: core/libs/widgets/mainview/daboutdata.cpp:312
 #, kde-format
 msgid "Julien Pontabry"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:322
+#: core/libs/widgets/mainview/daboutdata.cpp:318
 #, kde-format
 msgid "Arnd Baecker"
 msgstr "आर्नद बेकर"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:327
+#: core/libs/widgets/mainview/daboutdata.cpp:323
 #, kde-format
 msgid "Francisco J. Cruz"
 msgstr "फ्रांसिस्को जे. क्रुज"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:328
+#: core/libs/widgets/mainview/daboutdata.cpp:324
 #: core/showfoto/setup/showfotosetup.cpp:161
 #, kde-format
 msgid "Color Management"
 msgstr "रंग प्रबंधन"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:332
+#: core/libs/widgets/mainview/daboutdata.cpp:328
 #, kde-format
 msgid "Pieter Edelman"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:338
+#: core/libs/widgets/mainview/daboutdata.cpp:334
 #, kde-format
 msgid "Holger Foerster"
 msgstr ""
 
-#: core/libs/widgets/mainview/daboutdata.cpp:339
+#: core/libs/widgets/mainview/daboutdata.cpp:335
 #, fuzzy, kde-format
 msgid "MySQL interface"
 msgstr "मुख्य कोन:"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:343
+#: core/libs/widgets/mainview/daboutdata.cpp:339
 #, kde-format
 msgid "Risto Saukonpaa"
 msgstr "रिस्तो साउकोन्पा"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:344
+#: core/libs/widgets/mainview/daboutdata.cpp:340
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
 msgstr "डिजाइन, चिनहा, लोगो, बैनर, माकअप, बीटा जंचइया"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:348
+#: core/libs/widgets/mainview/daboutdata.cpp:344
 #, kde-format
 msgid "Mikolaj Machowski"
 msgstr "मिकोलाज माकोव्स्की"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:349
-#: core/libs/widgets/mainview/daboutdata.cpp:355
+#: core/libs/widgets/mainview/daboutdata.cpp:345
+#: core/libs/widgets/mainview/daboutdata.cpp:351
 #, kde-format
 msgid "Bug reports and patches"
 msgstr "बग रपट अउ पैबंद"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:354
+#: core/libs/widgets/mainview/daboutdata.cpp:350
 #, kde-format
 msgid "Achim Bohnet"
 msgstr "अचिम बोनेट"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:360
+#: core/libs/widgets/mainview/daboutdata.cpp:356
 #, kde-format
 msgid "Luka Renko"
 msgstr "लुका रेन्को"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:366
+#: core/libs/widgets/mainview/daboutdata.cpp:362
 #, kde-format
 msgid "Angelo Naselli"
 msgstr "वजेलो नासेल्ली"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:372
+#: core/libs/widgets/mainview/daboutdata.cpp:368
 #, kde-format
 msgid "Fabien Salvi"
 msgstr "फेबिएन साल्वी"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:373
+#: core/libs/widgets/mainview/daboutdata.cpp:369
 #, kde-format
 msgid "Webmaster"
 msgstr "वेबमास्टर"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:377
+#: core/libs/widgets/mainview/daboutdata.cpp:373
 #, kde-format
 msgid "Todd Shoemaker"
 msgstr "टाड सूमेकर"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:382
+#: core/libs/widgets/mainview/daboutdata.cpp:378
 #, kde-format
 msgid "Gerhard Kulzer"
 msgstr "गेरहार्ड कुल्जर"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:383
+#: core/libs/widgets/mainview/daboutdata.cpp:379
 #, kde-format
 msgid "Handbook writer, alpha tester, webmaster"
 msgstr "हेंडबुक लेखक, अल्फा जंचइया, वेबमास्टर"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:388
+#: core/libs/widgets/mainview/daboutdata.cpp:384
 #, kde-format
 msgid "Oliver Doerr"
 msgstr "ओलिवर दोएर"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:389
-#: core/libs/widgets/mainview/daboutdata.cpp:394
+#: core/libs/widgets/mainview/daboutdata.cpp:385
+#: core/libs/widgets/mainview/daboutdata.cpp:390
 #, kde-format
 msgid "Beta tester"
 msgstr "बीटा परीक्छक"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:393
+#: core/libs/widgets/mainview/daboutdata.cpp:389
 #, kde-format
 msgid "Charles Bouveyron"
 msgstr "चार्ल्स बोउवेयरोन"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:398
+#: core/libs/widgets/mainview/daboutdata.cpp:394
 #, kde-format
 msgid "Richard Taylor"
 msgstr "रिचर्ड टेलर"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:399
+#: core/libs/widgets/mainview/daboutdata.cpp:395
 #, kde-format
 msgid "Feedback and patches. Handbook writer"
 msgstr "फीडबैक अउ पैबंद. हेंडबुक लेखक"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:403
+#: core/libs/widgets/mainview/daboutdata.cpp:399
 #, kde-format
 msgid "Hans Karlsson"
 msgstr " हेस कार्लसन"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:404
+#: core/libs/widgets/mainview/daboutdata.cpp:400
 #, kde-format
 msgid "digiKam website banner and application icons"
 msgstr "डिजीकैम वेबसाइट बैनर अउ अनुपरयोग चिनहा"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:408
+#: core/libs/widgets/mainview/daboutdata.cpp:404
 #, kde-format
 msgid "Aaron Seigo"
 msgstr "एरान सीगो"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:409
+#: core/libs/widgets/mainview/daboutdata.cpp:405
 #, kde-format
 msgid "Various usability fixes and general application polishing"
 msgstr "बहुत से उपयोगी सुधार अउ सामान्य अनुपरयोग पालिसिंग"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:414
+#: core/libs/widgets/mainview/daboutdata.cpp:410
 #, kde-format
 msgid "Yves Chaufour"
 msgstr "येव्स चाओफोर"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:415
+#: core/libs/widgets/mainview/daboutdata.cpp:411
 #, kde-format
 msgid "digiKam website, Feedback"
 msgstr "डिजीकैम वेबसाइट, फीडबैक"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:419
+#: core/libs/widgets/mainview/daboutdata.cpp:415
 #, kde-format
 msgid "Tung Nguyen"
 msgstr "तुंग न्गुयेन"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:420
+#: core/libs/widgets/mainview/daboutdata.cpp:416
 #, kde-format
 msgid "Bug reports, feedback and icons"
 msgstr "बग रपट, फीडबैक अउ चिनहा"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:426
+#: core/libs/widgets/mainview/daboutdata.cpp:422
 #, kde-format
 msgid "Renchi Raju"
 msgstr "रेंची राजू"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:427
+#: core/libs/widgets/mainview/daboutdata.cpp:423
 #, fuzzy, kde-format
 #| msgid "Developer (2002-2005)"
 msgid "Developer (2001-2005)"
 msgstr "डेवलपर (2002-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:432
+#: core/libs/widgets/mainview/daboutdata.cpp:428
 #, kde-format
 msgid "Joern Ahrens"
 msgstr "जोएर्न एहरेन्स"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:433
-#: core/libs/widgets/mainview/daboutdata.cpp:439
+#: core/libs/widgets/mainview/daboutdata.cpp:429
+#: core/libs/widgets/mainview/daboutdata.cpp:435
 #, kde-format
 msgid "Developer (2004-2005)"
 msgstr "डेवलपर (2004-2005)"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:438
+#: core/libs/widgets/mainview/daboutdata.cpp:434
 #, kde-format
 msgid "Tom Albers"
 msgstr "टाम अल्बर्स"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:444
+#: core/libs/widgets/mainview/daboutdata.cpp:440
 #, kde-format
 msgid "Ralf Holzer"
 msgstr "राल्फ होल्जर"
 
-#: core/libs/widgets/mainview/daboutdata.cpp:445
+#: core/libs/widgets/mainview/daboutdata.cpp:441
 #, kde-format
 msgid "Developer (2004)"
 msgstr "डेवलपर (२००४)"
