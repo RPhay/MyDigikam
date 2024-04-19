@@ -116,9 +116,7 @@ class Q_DECL_HIDDEN DOnlineTts::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QList<QUrl>                             media;
     QString                                 errorString;

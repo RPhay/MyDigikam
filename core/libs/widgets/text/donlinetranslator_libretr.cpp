@@ -111,7 +111,7 @@ void DOnlineTranslator::slotParseLibreTranslate()
 
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(d->currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.object();
-    d->translation                    = responseObject.value(QStringLiteral("translatedText")).toString();
+    d->translation                   = responseObject.value(QStringLiteral("translatedText")).toString();
 }
 
 void DOnlineTranslator::buildLibreDetectStateMachine()

@@ -147,7 +147,9 @@ void DOnlineTranslator::slotParseBingTranslate()
         }
 
         if (d->onlyDetectLanguage)
+        {
             return;
+        }
     }
 
     const QJsonObject translationsObject = responseObject.value(QStringLiteral("translations")).toArray().first().toObject();
