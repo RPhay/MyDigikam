@@ -9,7 +9,7 @@
 
 ########################################################################
 # Function to upload host log files
-HostUploadLogFiles()
+BundkeUploadLogFiles()
 {
 
 if [[ $DK_UPLOAD = 1 ]] ; then
