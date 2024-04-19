@@ -112,80 +112,54 @@ class Q_DECL_HIDDEN DXmlGuiWindow::Private
 {
 public:
 
-    explicit Private()
-      : fullScreenHideToolBars  (false),
-        fullScreenHideThumbBar  (true),
-        fullScreenHideSideBars  (false),
-        fullScreenHideStatusBar (false),
-        fsOptions               (FS_NONE),
-        fullScreenAction        (nullptr),
-        fullScreenParent        (nullptr),
-        fullScreenBtn           (nullptr),
-        dirtyMainToolBar        (false),
-        thumbbarVisibility      (true),
-        menubarVisibility       (true),
-        statusbarVisibility     (true),
-        dbStatAction            (nullptr),
-        libsInfoAction          (nullptr),
-        showMenuBarAction       (nullptr),
-        showStatusBarAction     (nullptr),
-        about                   (nullptr),
-
-#if KCONFIGWIDGETS_VERSION > QT_VERSION_CHECK(5, 80, 0)
-
-        hamburgerMenu           (nullptr),
-
-#endif
-        anim                    (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
     /**
      * Settings taken from managed window configuration to handle toolbar visibility in full-screen mode
      */
-    bool                     fullScreenHideToolBars;
+    bool                     fullScreenHideToolBars     = false;
 
     /**
      * Settings taken from managed window configuration to handle thumbbar visibility in full-screen mode
      */
-    bool                     fullScreenHideThumbBar;
+    bool                     fullScreenHideThumbBar     = true;
 
     /**
      * Settings taken from managed window configuration to handle toolbar visibility in full-screen mode
      */
-    bool                     fullScreenHideSideBars;
+    bool                     fullScreenHideSideBars     = false;
 
     /**
      * Settings taken from managed window configuration to handle statusbar visibility in full-screen mode
      */
-    bool                     fullScreenHideStatusBar;
+    bool                     fullScreenHideStatusBar    = false;
 
     /**
      * Full-Screen options. See FullScreenOptions enum and setFullScreenOptions() for details.
      */
-    int                      fsOptions;
+    int                      fsOptions                  = FS_NONE;
 
     /**
      * Action plug in managed window to switch fullscreen state
      */
-    KToggleFullScreenAction* fullScreenAction;
+    KToggleFullScreenAction* fullScreenAction           = nullptr;
 
     /**
      * Used under MacOS only. See bug #414117
      */
-    QWidget*                 fullScreenParent;
+    QWidget*                 fullScreenParent           = nullptr;
 
     /**
      * Show only if toolbar is hidden
      */
-    QToolButton*             fullScreenBtn;
+    QToolButton*             fullScreenBtn              = nullptr;
 
     /**
      * Used by slotToggleFullScreen() to manage state of full-screen button on managed window
      */
-    bool                     dirtyMainToolBar;
+    bool                     dirtyMainToolBar           = false;
 
     /**
      * Store previous visibility of toolbars before ful-screen mode.
@@ -195,32 +169,32 @@ public:
     /**
      * Store previous visibility of thumbbar before ful-screen mode.
      */
-    bool                     thumbbarVisibility;
+    bool                     thumbbarVisibility         = true;
 
     /**
      * Store previous visibility of menubar before ful-screen mode.
      */
-    bool                     menubarVisibility;
+    bool                     menubarVisibility          = true;
 
     /**
      * Store previous visibility of statusbar before ful-screen mode.
      */
-    bool                     statusbarVisibility;
+    bool                     statusbarVisibility        = true;
 
     // Common Help actions
-    QAction*                 dbStatAction;
-    QAction*                 libsInfoAction;
-    QAction*                 showMenuBarAction;
-    QAction*                 showStatusBarAction;
-    DAboutData*              about;
+    QAction*                 dbStatAction               = nullptr;
+    QAction*                 libsInfoAction             = nullptr;
+    QAction*                 showMenuBarAction          = nullptr;
+    QAction*                 showStatusBarAction        = nullptr;
+    DAboutData*              about                      = nullptr;
 
 #if KCONFIGWIDGETS_VERSION > QT_VERSION_CHECK(5, 80, 0)
 
-    KHamburgerMenu*          hamburgerMenu;
+    KHamburgerMenu*          hamburgerMenu              = nullptr;
 
 #endif
 
-    DLogoAction*             anim;
+    DLogoAction*             anim                       = nullptr;
 
     QString                  configGroupName;
 

@@ -47,35 +47,25 @@ class Q_DECL_HIDDEN DZoomBar::Private
 {
 public:
 
-    explicit Private()
-      : zoomToFitButton(nullptr),
-        zoomTo100Button(nullptr),
-        zoomPlusButton (nullptr),
-        zoomMinusButton(nullptr),
-        zoomTimer      (nullptr),
-        zoomSlider     (nullptr),
-        zoomCombo      (nullptr),
-        zoomTracker    (nullptr)
-    {
-    }
+    explicit Private() = default;
 
-    QToolButton*    zoomToFitButton;
-    QToolButton*    zoomTo100Button;
-    QToolButton*    zoomPlusButton;
-    QToolButton*    zoomMinusButton;
+    QToolButton*    zoomToFitButton = nullptr;
+    QToolButton*    zoomTo100Button = nullptr;
+    QToolButton*    zoomPlusButton  = nullptr;
+    QToolButton*    zoomMinusButton = nullptr;
 
-    QTimer*         zoomTimer;
+    QTimer*         zoomTimer       = nullptr;
 
-    QSlider*        zoomSlider;
+    QSlider*        zoomSlider      = nullptr;
 
-    QComboBox*      zoomCombo;
+    QComboBox*      zoomCombo       = nullptr;
 
-    DCursorTracker* zoomTracker;
+    DCursorTracker* zoomTracker     = nullptr;
 };
 
 DZoomBar::DZoomBar(QWidget* const parent)
     : DHBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setFocusPolicy(Qt::NoFocus);

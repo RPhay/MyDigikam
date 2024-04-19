@@ -38,29 +38,22 @@ class Q_DECL_HIDDEN FullScreenSettings::Private
 {
 public:
 
-    explicit Private()
-      : options      (FS_NONE),
-        hideToolBars (nullptr),
-        hideThumbBar (nullptr),
-        hideSideBars (nullptr),
-        hideStatusBar(nullptr)
-    {
-    }
+    Private() = default;
 
-    int        options;
+    int        options          = FS_NONE;
 
-    QCheckBox* hideToolBars;
-    QCheckBox* hideThumbBar;
-    QCheckBox* hideSideBars;
-    QCheckBox* hideStatusBar;
+    QCheckBox* hideToolBars     = nullptr;
+    QCheckBox* hideThumbBar     = nullptr;
+    QCheckBox* hideSideBars     = nullptr;
+    QCheckBox* hideStatusBar    = nullptr;
 };
 
 FullScreenSettings::FullScreenSettings(int options, QWidget* const parent)
     : QGroupBox(i18n("Full-screen Options"), parent),
-      d(new Private)
+      d        (new Private)
 {
     const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->options               = options;
     QVBoxLayout* const vlay  = new QVBoxLayout(this);

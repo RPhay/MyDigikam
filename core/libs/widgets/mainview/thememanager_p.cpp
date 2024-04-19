@@ -508,8 +508,8 @@ private:
 
 private:
 
-    int    _effects[3];
-    double _amount[3];
+    int    _effects[3]  = { 0   };
+    double _amount[3]   = { 0.0 };
     QColor _color;
 };
 
@@ -561,31 +561,43 @@ QBrush StateEffects::brush(const QBrush& background) const
     switch (_effects[Intensity])
     {
         case IntensityShade:
+        {
             color = ColorTools::shade(color, _amount[Intensity]);
             break;
+        }
 
         case IntensityDarken:
+        {
             color = ColorTools::darken(color, _amount[Intensity]);
             break;
+        }
 
         case IntensityLighten:
+        {
             color = ColorTools::lighten(color, _amount[Intensity]);
             break;
+        }
     }
 
     switch (_effects[Color])
     {
         case ColorDesaturate:
+        {
             color = ColorTools::darken(color, 0.0, 1.0 - _amount[Color]);
             break;
+        }
 
         case ColorFade:
+        {
             color = ColorTools::mix(color, _color, _amount[Color]);
             break;
+        }
 
         case ColorTint:
+        {
             color = ColorTools::tint(color, _color, _amount[Color]);
             break;
+        }
     }
 
     return QBrush(color);
@@ -601,12 +613,16 @@ QBrush StateEffects::brush(const QBrush& foreground, const QBrush& background) c
     switch (_effects[Contrast])
     {
         case ContrastFade:
+        {
             color = ColorTools::mix(color, bg, _amount[Contrast]);
             break;
+        }
 
         case ContrastTint:
+        {
             color = ColorTools::tint(color, bg, _amount[Contrast]);
             break;
+        }
     }
 
     // Now apply global effects
@@ -618,22 +634,22 @@ QBrush StateEffects::brush(const QBrush& foreground, const QBrush& background) c
 
 struct SetDefaultColors
 {
-    int NormalBackground[3];
-    int AlternateBackground[3];
-    int NormalText[3];
-    int InactiveText[3];
-    int ActiveText[3];
-    int LinkText[3];
-    int VisitedText[3];
-    int NegativeText[3];
-    int NeutralText[3];
-    int PositiveText[3];
+    int NormalBackground[3]     = { 0 };
+    int AlternateBackground[3]  = { 0 };
+    int NormalText[3]           = { 0 };
+    int InactiveText[3]         = { 0 };
+    int ActiveText[3]           = { 0 };
+    int LinkText[3]             = { 0 };
+    int VisitedText[3]          = { 0 };
+    int NegativeText[3]         = { 0 };
+    int NeutralText[3]          = { 0 };
+    int PositiveText[3]         = { 0 };
 };
 
 struct DecoDefaultColors
 {
-    int Hover[3];
-    int Focus[3];
+    int Hover[3]                = { 0 };
+    int Focus[3]                = { 0 };
 };
 
 // these numbers come from the Breeze color scheme
@@ -761,12 +777,12 @@ private:
 
     struct
     {
-        QBrush fg[8],
-               bg[8],
-               deco[2];
+        QBrush fg[8];
+        QBrush bg[8];
+        QBrush deco[2];
     } _brushes;
 
-    qreal _contrast;
+    qreal _contrast = 0.0;
 };
 
 #define DEFAULT(c)      QColor( c[0], c[1], c[2] )
@@ -867,28 +883,44 @@ QBrush SchemeManagerPrivate::background(SchemeManager::BackgroundRole role) cons
     switch (role)
     {
         case SchemeManager::AlternateBackground:
+        {
             return _brushes.bg[1];
+        }
 
         case SchemeManager::ActiveBackground:
+        {
             return _brushes.bg[2];
+        }
 
         case SchemeManager::LinkBackground:
+        {
             return _brushes.bg[3];
+        }
 
         case SchemeManager::VisitedBackground:
+        {
             return _brushes.bg[4];
+        }
 
         case SchemeManager::NegativeBackground:
+        {
             return _brushes.bg[5];
+        }
 
         case SchemeManager::NeutralBackground:
+        {
             return _brushes.bg[6];
+        }
 
         case SchemeManager::PositiveBackground:
+        {
             return _brushes.bg[7];
+        }
 
         default:
+        {
             return _brushes.bg[0];
+        }
     }
 }
 
@@ -897,28 +929,44 @@ QBrush SchemeManagerPrivate::foreground(SchemeManager::ForegroundRole role) cons
     switch (role)
     {
         case SchemeManager::InactiveText:
+        {
             return _brushes.fg[1];
+        }
 
         case SchemeManager::ActiveText:
+        {
             return _brushes.fg[2];
+        }
 
         case SchemeManager::LinkText:
+        {
             return _brushes.fg[3];
+        }
 
         case SchemeManager::VisitedText:
+        {
             return _brushes.fg[4];
+        }
 
         case SchemeManager::NegativeText:
+        {
             return _brushes.fg[5];
+        }
 
         case SchemeManager::NeutralText:
+        {
             return _brushes.fg[6];
+        }
 
         case SchemeManager::PositiveText:
+        {
             return _brushes.fg[7];
+        }
 
         default:
+        {
             return _brushes.fg[0];
+        }
     }
 }
 
@@ -927,10 +975,14 @@ QBrush SchemeManagerPrivate::decoration(SchemeManager::DecorationRole role) cons
     switch (role)
     {
         case SchemeManager::FocusColor:
+        {
             return _brushes.deco[1];
+        }
 
         default:
+        {
             return _brushes.deco[0];
+        }
     }
 }
 
@@ -1099,16 +1151,24 @@ QColor SchemeManager::shade(const QColor& color,
         switch (role)
         {
             case SchemeManager::LightShade:
+            {
                 return ColorTools::shade(color, 0.05 + 0.95 * contrast, chromaAdjust);
+            }
 
             case SchemeManager::MidShade:
+            {
                 return ColorTools::shade(color, 0.01 + 0.20 * contrast, chromaAdjust);
+            }
 
             case SchemeManager::DarkShade:
+            {
                 return ColorTools::shade(color, 0.02 + 0.40 * contrast, chromaAdjust);
+            }
 
             default:
+            {
                 return ColorTools::shade(color, 0.03 + 0.60 * contrast, chromaAdjust);
+            }
         }
     }
 
@@ -1119,16 +1179,24 @@ QColor SchemeManager::shade(const QColor& color,
         switch (role)
         {
             case SchemeManager::MidlightShade:
+            {
                 return ColorTools::shade(color, -0.02 - 0.20 * contrast, chromaAdjust);
+            }
 
             case SchemeManager::DarkShade:
+            {
                 return ColorTools::shade(color, -0.06 - 0.60 * contrast, chromaAdjust);
+            }
 
             case SchemeManager::ShadowShade:
+            {
                 return ColorTools::shade(color, -0.10 - 0.90 * contrast, chromaAdjust);
+            }
 
             default:
+            {
                 return ColorTools::shade(color, -0.04 - 0.40 * contrast, chromaAdjust);
+            }
         }
     }
 
@@ -1140,19 +1208,29 @@ QColor SchemeManager::shade(const QColor& color,
     switch (role)
     {
         case SchemeManager::LightShade:
+        {
             return ColorTools::shade(color, lightAmount, chromaAdjust);
+        }
 
         case SchemeManager::MidlightShade:
+        {
             return ColorTools::shade(color, (0.15 + 0.35 * yi) * lightAmount, chromaAdjust);
+        }
 
         case SchemeManager::MidShade:
+        {
             return ColorTools::shade(color, (0.35 + 0.15 * y) * darkAmount, chromaAdjust);
+        }
 
         case SchemeManager::DarkShade:
+        {
             return ColorTools::shade(color, darkAmount, chromaAdjust);
+        }
 
         default:
+        {
             return ColorTools::darken(ColorTools::shade(color, darkAmount, chromaAdjust), 0.5 + 0.3 * y);
+        }
     }
 }
 
@@ -1229,9 +1307,7 @@ QPalette SchemeManager::createApplicationPalette(const KSharedConfigPtr& config)
 // ---------------------------------------------------------------
 
 ThemeManager::Private::Private()
-    : defaultThemeName    (i18nc("default theme name", "Default")),
-      themeMenuActionGroup(nullptr),
-      themeMenuAction     (nullptr)
+    : defaultThemeName        (i18nc("default theme name", "Default"))
 {
 }
 

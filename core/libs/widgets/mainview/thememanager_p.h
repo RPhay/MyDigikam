@@ -518,8 +518,8 @@ public:
     const QString          defaultThemeName;
     QMap<QString, QString> themeMap;            ///< map<theme name, theme config path>
 
-    QActionGroup*          themeMenuActionGroup;
-    QMenu*                 themeMenuAction;
+    QActionGroup*          themeMenuActionGroup = nullptr;
+    QMenu*                 themeMenuAction      = nullptr;
 };
 
 } // namespace Digikam

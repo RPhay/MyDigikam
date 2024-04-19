@@ -290,8 +290,8 @@ private:
 
 private:
 
-    bool m_winLoaded;
-    bool m_maximized;
+    bool m_winLoaded = false;
+    bool m_maximized = false;
 
 private:
 

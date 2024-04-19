@@ -86,9 +86,11 @@ void ThemeManager::slotChangePalette()
 
     QString theme(currentThemeName());
 
-    if (theme.isEmpty()                                                                              ||
+    if (
+        theme.isEmpty()                                                                              ||
         (theme == defaultThemeName())                                                                ||
-        (qApp->style()->objectName().compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) == 0))
+        (qApp->style()->objectName().compare(QLatin1String("windowsvista"), Qt::CaseInsensitive) == 0)
+       )
     {
         theme = currentDesktopdefaultTheme();
     }

@@ -19,8 +19,6 @@ namespace Digikam
 
 DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
     : KXmlGuiWindow(parent, f),
-      m_winLoaded  (false),
-      m_maximized  (false),
       d            (new Private)
 {
     m_animLogo = nullptr;
