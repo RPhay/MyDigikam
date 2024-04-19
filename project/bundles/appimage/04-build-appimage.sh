@@ -364,6 +364,12 @@ for FILE in $FILES ; do
     CopyReccursiveDependencies ${FILE} ./usr/lib
 done
 
+FILES=$(ls /usr/plugins/sqldrivers/*.so)
+
+for FILE in $FILES ; do
+    CopyReccursiveDependencies ${FILE} ./usr/lib
+done
+
 FILES=$(find /usr/plugins/digikam -name "*.so")
 
 for FILE in $FILES ; do
