@@ -39,6 +39,7 @@ CheckSystemReleaseID
 #################################################################################################
 
 # Working directory
+
 ORIG_WD="`pwd`"
 
 DK_RELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
@@ -58,9 +59,11 @@ fi
 echo -e "------------- Prepare directories in bundle\n"
 
 # Make sure we build from the /, parts of this script depends on that. We also need to run as root...
+
 cd /
 
 # Prepare the install location
+
 rm -rf $APP_IMG_DIR/ || true
 mkdir -p $APP_IMG_DIR/usr/bin
 mkdir -p $APP_IMG_DIR/usr/etc
@@ -72,6 +75,7 @@ mkdir -p $APP_IMG_DIR/usr/share/dbus-1/interfaces
 mkdir -p $APP_IMG_DIR/usr/share/dbus-1/services
 
 # make sure lib and lib64 are the same thing
+
 mkdir -p $APP_IMG_DIR/usr/lib
 mkdir -p $APP_IMG_DIR/usr/lib/libexec
 mkdir -p $APP_IMG_DIR/usr/lib/libgphoto2
@@ -86,12 +90,14 @@ echo -e "------------- Copy Files in bundle\n"
 cd $APP_IMG_DIR
 
 # FIXME: How to find out which subset of plugins is really needed? I used strace when running the binary
+
 cp -r /usr/plugins ./usr/
 rm -fr ./usr/plugins/ktexteditor
 rm -fr ./usr/plugins/kf5/parts
 rm -fr ./usr/plugins/konsolepart.so
 
 # See bug #476290
+
 rm -fr ./usr/plugins/imageformats/libqjp2.so
 
 echo -e "------------- Copy runtime data files\n"
@@ -122,14 +128,17 @@ else
     cp -r /usr/share/knotifications6                      ./usr/share
 
     # Not avaialble with KF6
+
     cp -r /usr/share/kservices6                           ./usr/share  || true
     cp -r /usr/share/kservicetypes6                       ./usr/share  || true
 
     # KF6 still use kxmlgui5 subdir.
+
     cp -r /usr/share/kxmlgui5                             ./usr/share
     cp -r /usr/share/kf6                                  ./usr/share
 
     # WHY it's necessary, else application menu are broken...
+
     ln -s ./kxmlgui6                                      ./usr/share/kxmlgui5
 
 fi
@@ -139,14 +148,17 @@ cp -r /usr/share/icu                                      ./usr/share
 cp -r /usr/share/mime                                     ./usr/share
 
 # See bug #480134: an up-to-date and clean freedesktop.org database is requires
+
 cp $ORIG_WD/data/freedesktop.org.xml                      ./usr/share/mime/packages
 rm -rf ./usr/share/mime/mime.cache
 
 # depending of OpenCV version installed, data directory is not the same.
+
 cp -r /usr/share/OpenCV                                   ./usr/share  || true
 cp -r /usr/share/opencv4                                  ./usr/share  || true
 
 # TODO check when kf6 prefix will be used here.
+
 cp -r /usr/share/dbus-1/services/*kde*                    ./usr/share/dbus-1/services/
 
 if [[ $DK_QTVERSION == 5 ]] ; then
@@ -218,8 +230,10 @@ echo -e "------------- Copy KDE translations files\n"
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+
     echo $FILE
     cp --parents $FILE ./
+
 done
 
 echo -e "------------- Copy digiKam translations files\n"
@@ -227,8 +241,10 @@ echo -e "------------- Copy digiKam translations files\n"
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+
     echo $FILE
     cp --parents $FILE ./
+
 done
 
 echo -e "------------- Copy digiKam icons files\n"
@@ -236,10 +252,14 @@ echo -e "------------- Copy digiKam icons files\n"
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/icons/ | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+
     if [[ $FILE != "touch:" ]] ; then
+
         echo $FILE
         cp --parents $FILE ./
+
     fi
+
 done
 
 echo -e "------------- Copy Git Revisions Manifest\n"
@@ -249,8 +269,10 @@ touch ./usr/share/digikam/MANIFEST.txt
 FILES=$(ls $ORIG_WD/data/*_manifest.txt)
 
 for FILE in $FILES ; do
+
     echo $FILE
     cat $FILE >> ./usr/share/digikam/MANIFEST.txt
+
 done
 
 ln -s ../digikam/MANIFEST.txt           ./usr/share/showfoto/MANIFEST.txt || true
@@ -270,13 +292,15 @@ cp $(ldconfig -p | grep /${LIBSUFFIX}/libGLU.so.1      | cut -d ">" -f 2 | xargs
 # "Cannot load library /usr/lib64/qt5/plugins/platforms/libqxcb.so: (/lib64/libEGL.so.1: undefined symbol: drmGetNodeTypeFromFd)"
 # Which means that we have to copy libEGL.so.1 in too
 
-# Otherwise F23 cannot load the Qt platform plugin "xcb"
+# Otherwise Fedora 23 cannot load the Qt platform plugin "xcb"
+
 cp $(ldconfig -p | grep /${LIBSUFFIX}/libEGL.so.1      | cut -d ">" -f 2 | xargs) ./usr/lib/
 
 # let's not copy xcb itself, that breaks on dri3 systems https://bugs.kde.org/show_bug.cgi?id=360552
 #cp $(ldconfig -p | grep libxcb.so.1 | cut -d ">" -f 2 | xargs) ./usr/lib/
 
 # For Fedora 20
+
 cp $(ldconfig -p | grep /${LIBSUFFIX}/libfreetype.so.6 | cut -d ">" -f 2 | xargs) ./usr/lib/
 
 echo -e "---------- Copy target binaries\n"
@@ -316,6 +340,7 @@ fi
 echo -e "------------- Copy Solid binary\n"
 
 # For Solid action when camera is connected to computer
+
 cp /usr/bin/qdbus                   ./usr/share/digikam/utils
 sed -i "/Exec=/c\Exec=digikam-camera downloadFromUdi %i" ./usr/share/solid/actions/digikam-opencamera.desktop
 
@@ -346,6 +371,7 @@ for FILE in $FILES ; do
 done
 
 # Copy in the indirect dependencies
+
 FILES=$(find . -type f -executable)
 
 for FILE in $FILES ; do
@@ -410,12 +436,18 @@ libxcb.so.1 \
 "
 
 for FILE in $EXCLUDE_FILES ; do
+
     if [[ -f usr/lib/${FILE} ]] ; then
+
         echo -e "   ==> ${FILE} will be removed from the bundle"
         rm -f usr/lib/${FILE}
+
     else
-        echo -e "   ==> ${FILE} DO OT EXISTS!!!"
+
+        echo -e "   ==> ${FILE} DO NOT EXISTS!!!"
+
     fi
+
 done
 
 # This list is taken from older AppImage build script from krita
@@ -458,12 +490,18 @@ libxcb-dri3.so.0 \
 #libpangoft2-1.0.so.0
 
 for FILE in $EXTRA_EXCLUDE_FILES ; do
+
     if [[ -f usr/lib/${FILE} ]] ; then
+
         echo -e "   ==> ${FILE} will be removed from the bundle"
         rm -f usr/lib/${FILE}
+
     else
+
         echo -e "   ==> ${FILE} DO NOT EXISTS!!!"
+
     fi
+
 done
 
 if [[ -f usr/lib/libssl.so.1.1 ]] ; then
@@ -472,7 +510,8 @@ if [[ -f usr/lib/libssl.so.1.1 ]] ; then
 
 fi
 
-# We don't bundle the developer stuff
+# We don't bundle the developer files
+
 rm -rf usr/include         || true
 rm -rf usr/lib/cmake3      || true
 rm -rf usr/lib/pkgconfig   || true
@@ -500,8 +539,10 @@ else
 fi
 
 for FILE in $FILES ; do
+
     echo -en "Strip symbols in: $FILE\n"
     /usr/bin/strip --strip-all ${FILE} || true
+
 done
 
 #################################################################################################
@@ -510,15 +551,18 @@ echo -e "------------- Strip Configuration Files \n"
 
 # Since we set $APP_IMG_DIR as the prefix, we need to patch it away too (FIXME)
 # Probably it would be better to use /app as a prefix because it has the same length for all apps
+
 cd usr/ ; find . -type f -exec sed -i -e 's|$APP_IMG_DIR/usr/|./././././././././|g' {} \; ; cd  ..
 
 # On openSUSE Qt is picking up the wrong libqxcb.so
 # (the one from the system when in fact it should use the bundled one) - is this a Qt bug?
 # Also, digiKam has a hardcoded /usr which we patch away
+
 cd usr/ ; find . -type f -exec sed -i -e 's|/usr|././|g' {} \; ; cd ..
 
 # We do not bundle this, so let's not search that inside the AppImage.
 # Fixes "Qt: Failed to create XKB context!" and lets us enter text
+
 sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
 
 if [[ $DK_QTVERSION == 6 ]] ; then
@@ -553,17 +597,21 @@ cd /
 APP=digiKam
 
 if [[ $DK_DEBUG = 1 ]] ; then
+
     DEBUG_SUF="-debug"
+
 fi
 
 if [[ $DK_VERSION != v* ]] ; then
 
     # with non-official release version, use build time-stamp as sub-version string.
+
     DK_SUBVER="-`cat $ORIG_WD/data/BUILDDATE.txt`"
 
 else
 
     # with official release version, disable upload to KDE server, as this break check for new version function.
+
     echo -e "Official release version detected, upload is disabled.\n"
     DK_UPLOAD=0
 
@@ -586,13 +634,17 @@ echo -e "------------- Create Bundle with AppImage SDK stage1\n"
 # Source functions
 
 if [[ ! -s ./functions.sh ]] ; then
+
     wget --no-check-certificate https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+
 fi
 
 # Install desktopintegration in usr/bin/digikam.wrapper
+
 cd $APP_IMG_DIR
 
 # We will use a dedicated bash script to run inside the AppImage to be sure that XDG_* variable are set for Qt5
+
 cp ${ORIG_WD}/data/AppRun ./
 
 # desktop integration files
@@ -620,7 +672,9 @@ cd /
 APPIMGBIN=AppImageTool-x86_64.AppImage
 
 if [[ ! -s ./$APPIMGBIN ]] ; then
+
     wget --no-check-certificate https://github.com/AppImage/AppImageKit/releases/download/continuous/$APPIMGBIN -O ./$APPIMGBIN
+
 fi
 
 chmod a+x ./$APPIMGBIN
@@ -639,6 +693,7 @@ echo -n "SHA256 sum : "                                                      >> 
 sha256sum "$ORIG_WD/bundle/$APPIMAGE" | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$APPIMAGE.sum
 
 # Checksums to post on Phabricator at release time.
+
 sha256sum "$ORIG_WD/bundle/$APPIMAGE" > $ORIG_WD/bundle/sha256_release.sum
 
 if [[ $DK_SIGN = 1 ]] ; then
@@ -653,6 +708,7 @@ if [[ $DK_SIGN = 1 ]] ; then
     sha256sum "$ORIG_WD/bundle/$APPIMAGE.sig" | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$APPIMAGE.sum
 
     # Checksums to post on Phabricator at release time.
+
     sha256sum "$ORIG_WD/bundle/$APPIMAGE.sig" >> $ORIG_WD/bundle/sha256_release.sum
 
 fi
@@ -684,9 +740,11 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     rsync -r -v --progress -e ssh $ORIG_WD/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
 
 else
+
     echo -e "\n------------------------------------------------------------------"
     curl https://download.kde.org/README_UPLOAD
     echo -e "------------------------------------------------------------------\n"
+
 fi
 
 #################################################################################################
