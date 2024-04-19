@@ -193,9 +193,11 @@ void MetadataWidget::slotFilterChanged(QAction* action)
     {
         Q_EMIT signalSetupMetadataFilters();
     }
-    else if ((action == d->noneAction)  ||
+    else if (
+             (action == d->noneAction)  ||
              (action == d->photoAction) ||
-             (action == d->customAction))
+             (action == d->customAction)
+            )
     {
         buildView();
     }

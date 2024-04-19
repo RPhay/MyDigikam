@@ -38,7 +38,7 @@ class DIGIKAM_EXPORT MdKeyListViewItem : public QObject,
 public:
 
     MdKeyListViewItem(QTreeWidget* const parent, const QString& key);
-    ~MdKeyListViewItem()              override;
+    ~MdKeyListViewItem()              override = default;
 
     QString getKey()            const;
     QString getDecryptedKey()   const;

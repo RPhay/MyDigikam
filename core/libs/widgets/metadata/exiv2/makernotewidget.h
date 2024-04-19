@@ -32,7 +32,7 @@ public:
 
     explicit MakerNoteWidget(QWidget* const parent,
                              const QString& name = QString());
-    ~MakerNoteWidget()                              override;
+    ~MakerNoteWidget()                              override = default;
 
     bool loadFromURL(const QUrl& url)               override;
 

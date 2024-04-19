@@ -63,10 +63,6 @@ ExifWidget::ExifWidget(QWidget* const parent, const QString& name)
     }
 }
 
-ExifWidget::~ExifWidget()
-{
-}
-
 QString ExifWidget::getMetadataTitle() const
 {
     return i18n("Standard Exif Tags");

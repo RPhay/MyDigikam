@@ -60,10 +60,6 @@ MakerNoteWidget::MakerNoteWidget(QWidget* const parent, const QString& name)
     }
 }
 
-MakerNoteWidget::~MakerNoteWidget()
-{
-}
-
 QString MakerNoteWidget::getMetadataTitle() const
 {
     return i18n("MakerNote Exif Tags");

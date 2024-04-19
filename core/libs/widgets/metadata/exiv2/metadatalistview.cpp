@@ -63,10 +63,6 @@ MetadataListView::MetadataListView(QWidget* const parent)
             this, SLOT(slotSelectionChanged(QTreeWidgetItem*,int)));
 }
 
-MetadataListView::~MetadataListView()
-{
-}
-
 QString MetadataListView::getCurrentItemKey() const
 {
     if (currentItem() && (currentItem()->flags() & Qt::ItemIsSelectable))
@@ -222,9 +218,11 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
 
     // Add not found tags from filter as grey items.
 
-    if (!filters.isEmpty()                       &&
+    if (
+        !filters.isEmpty()                       &&
         (filters.at(0) != QLatin1String("FULL")) &&
-        filters.at(0).contains(QLatin1Char('.')))
+        filters.at(0).contains(QLatin1Char('.'))
+       )
     {
         Q_FOREACH (const QString& key, filters)
         {
@@ -282,7 +280,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
                 {
                     // We ignore all unknown tags if necessary.
 
-                    if (filters.contains(QLatin1String("FULL")))
+                    if      (filters.contains(QLatin1String("FULL")))
                     {
                         // We don't filter the output (Photo Mode)
 
@@ -351,9 +349,11 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
 
     // Add not found tags from filter as grey items.
 
-    if (!filters.isEmpty() &&
+    if (
+        !filters.isEmpty() &&
         (filters.at(0) != QLatin1String("FULL")) &&
-        filters.at(0).contains(QLatin1Char('.')))
+        filters.at(0).contains(QLatin1Char('.'))
+       )
     {
         Q_FOREACH (const QString& key, filters)
         {
@@ -402,8 +402,10 @@ void MetadataListView::slotSearchTextChanged(const SearchTextSettings& settings)
 
         if (item)
         {
-            if (item->text(0).contains(search, settings.caseSensitive) ||
-                item->text(1).contains(search, settings.caseSensitive))
+            if (
+                item->text(0).contains(search, settings.caseSensitive) ||
+                item->text(1).contains(search, settings.caseSensitive)
+               )
             {
                 query = true;
                 item->setHidden(false);

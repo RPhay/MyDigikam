@@ -70,10 +70,6 @@ MetadataListViewItem::MetadataListViewItem(QTreeWidgetItem* const parent, const 
     setFont(1, fnt);
 }
 
-MetadataListViewItem::~MetadataListViewItem()
-{
-}
-
 QString MetadataListViewItem::getKey() const
 {
     return m_key;

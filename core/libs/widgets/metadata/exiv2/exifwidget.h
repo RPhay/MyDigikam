@@ -34,7 +34,7 @@ class DIGIKAM_EXPORT ExifWidget : public MetadataWidget
 public:
 
     explicit ExifWidget(QWidget* const parent, const QString& name = QString());
-    ~ExifWidget()                                   override;
+    ~ExifWidget()                                   override = default;
 
     bool loadFromURL(const QUrl& url)               override;
 

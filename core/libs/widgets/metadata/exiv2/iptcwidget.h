@@ -31,7 +31,7 @@ public:
 
     explicit IptcWidget(QWidget* const parent,
                         const QString& name = QString());
-    ~IptcWidget()                                   override;
+    ~IptcWidget()                                   override = default;
 
     bool loadFromURL(const QUrl& url)               override;
 

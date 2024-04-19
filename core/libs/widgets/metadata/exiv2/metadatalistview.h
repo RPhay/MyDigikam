@@ -41,7 +41,7 @@ class DIGIKAM_EXPORT MetadataListView : public QTreeWidget
 public:
 
     explicit MetadataListView(QWidget* const parent);
-    ~MetadataListView() override;
+    ~MetadataListView() override = default;
 
     QString getCurrentItemKey() const;
     void    setCurrentItemByKey(const QString& itemKey);
@@ -71,7 +71,7 @@ private:
 
     QString         m_selectedItemKey;
 
-    MetadataWidget* m_parent;
+    MetadataWidget* m_parent = nullptr;
 };
 
 } // namespace Digikam

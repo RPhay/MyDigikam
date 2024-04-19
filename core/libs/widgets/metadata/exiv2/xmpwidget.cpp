@@ -80,10 +80,6 @@ XmpWidget::XmpWidget(QWidget* const parent, const QString& name)
     }
 }
 
-XmpWidget::~XmpWidget()
-{
-}
-
 QString XmpWidget::getMetadataTitle() const
 {
     return i18n("XMP Schema");

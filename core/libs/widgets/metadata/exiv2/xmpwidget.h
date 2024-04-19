@@ -31,7 +31,7 @@ public:
 
     explicit XmpWidget(QWidget* const parent,
                        const QString& name = QString());
-    ~XmpWidget()                                    override;
+    ~XmpWidget()                                    override = default;
 
     bool loadFromURL(const QUrl& url)               override;
 

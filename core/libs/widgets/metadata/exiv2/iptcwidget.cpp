@@ -54,10 +54,6 @@ IptcWidget::IptcWidget(QWidget* const parent, const QString& name)
     }
 }
 
-IptcWidget::~IptcWidget()
-{
-}
-
 QString IptcWidget::getMetadataTitle() const
 {
     return i18n("IPTC Records");

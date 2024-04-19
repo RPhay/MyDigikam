@@ -216,10 +216,6 @@ MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& k
             this, SLOT(slotThemeChanged()));
 }
 
-MdKeyListViewItem::~MdKeyListViewItem()
-{
-}
-
 QString MdKeyListViewItem::getKey() const
 {
     return m_key;
