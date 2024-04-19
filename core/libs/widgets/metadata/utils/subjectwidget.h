@@ -40,9 +40,9 @@ class DIGIKAM_EXPORT SubjectData
 public:
 
     SubjectData(const QString& n, const QString& m, const QString& d)
-      : name  (n),
-        matter(m),
-        detail(d)
+        : name  (n),
+          matter(m),
+          detail(d)
     {
     }
 
@@ -86,15 +86,15 @@ protected:
 
 protected:
 
-    QLabel*    m_note;
+    QLabel*    m_note           = nullptr;
 
-    QCheckBox* m_subjectsCheck;
+    QCheckBox* m_subjectsCheck  = nullptr;
 
-    QLineEdit* m_iprEdit;
-    QLineEdit* m_refEdit;
-    DTextEdit* m_nameEdit;
-    DTextEdit* m_matterEdit;
-    DTextEdit* m_detailEdit;
+    QLineEdit* m_iprEdit        = nullptr;
+    QLineEdit* m_refEdit        = nullptr;
+    DTextEdit* m_nameEdit       = nullptr;
+    DTextEdit* m_matterEdit     = nullptr;
+    DTextEdit* m_detailEdit     = nullptr;
 
     QString    m_iprDefault;
 

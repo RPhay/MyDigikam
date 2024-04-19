@@ -33,7 +33,7 @@ class Q_DECL_HIDDEN CountrySelector::Private
 {
 public:
 
-    explicit Private()
+    Private()
     {
         /**
          * NOTE: We cannot use KLocale::allCountriesList() here because KDE only
@@ -328,7 +328,7 @@ void CountrySelector::setCountry(const QString& countryCode)
 {
     // NOTE: if countryCode is empty or do not matches code map, unknow is selected from the list.
 
-    int id = count()-1;
+    int id = count() - 1;
 
     for (int i = 0 ; i < d->countryCodeMap.count() ; ++i)
     {
