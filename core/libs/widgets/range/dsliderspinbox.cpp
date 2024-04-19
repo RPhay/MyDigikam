@@ -87,7 +87,7 @@ DAbstractSliderSpinBox::DAbstractSliderSpinBox(QWidget* const parent, DAbstractS
     QEvent e(QEvent::StyleChange);
     this->changeEvent(&e);
 
-    d->edit = new QLineEdit(this);
+    d->edit     = new QLineEdit(this);
     d->edit->setContentsMargins(QMargins());
     d->edit->setAlignment(Qt::AlignCenter);
     d->edit->installEventFilter(this);
@@ -123,6 +123,7 @@ DAbstractSliderSpinBox::DAbstractSliderSpinBox(QWidget* const parent, DAbstractS
 DAbstractSliderSpinBox::~DAbstractSliderSpinBox()
 {
     Q_D(DAbstractSliderSpinBox);
+
     delete d;
 }
 
@@ -281,7 +282,7 @@ void DAbstractSliderSpinBox::paintFusion(QPainter& painter)
     }
 
     QRegion rightRect = rect;
-    rightRect = rightRect.subtracted(leftRect);
+    rightRect         = rightRect.subtracted(leftRect);
 
     QTextOption textOption(Qt::AlignAbsolute | Qt::AlignHCenter | Qt::AlignVCenter);
     textOption.setWrapMode(QTextOption::NoWrap);
@@ -327,7 +328,7 @@ void DAbstractSliderSpinBox::paintPlastique(QPainter& painter)
 
     painter.save();
 
-    QRect rect = progressOpts.rect.adjusted(2, 0, -2, 0);
+    QRect rect               = progressOpts.rect.adjusted(2, 0, -2, 0);
     QRect leftRect;
 
     int progressIndicatorPos = (progressOpts.progress - double(progressOpts.minimum)) / qMax(double(1.0),
@@ -347,7 +348,7 @@ void DAbstractSliderSpinBox::paintPlastique(QPainter& painter)
     }
 
     QRegion rightRect = rect;
-    rightRect = rightRect.subtracted(leftRect);
+    rightRect         = rightRect.subtracted(leftRect);
 
     QTextOption textOption(Qt::AlignAbsolute | Qt::AlignHCenter | Qt::AlignVCenter);
     textOption.setWrapMode(QTextOption::NoWrap);
@@ -517,7 +518,7 @@ void DAbstractSliderSpinBox::mouseMoveEvent(QMouseEvent* e)
         if (!d->shiftMode)
         {
             d->shiftPercent = pow(double(d->value - d->minimum) / double(d->maximum - d->minimum), 1 / double(d->exponentRatio));
-            d->shiftMode = true;
+            d->shiftMode    = true;
         }
     }
     else
@@ -575,7 +576,7 @@ void DAbstractSliderSpinBox::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Shift:
         {
             d->shiftPercent = pow(double(d->value - d->minimum) / double(d->maximum - d->minimum), 1 / double(d->exponentRatio));
-            d->shiftMode = true;
+            d->shiftMode    = true;
             break;
         }
 
@@ -600,7 +601,7 @@ void DAbstractSliderSpinBox::keyPressEvent(QKeyEvent* e)
     }
 }
 
-void DAbstractSliderSpinBox::wheelEvent(QWheelEvent *e)
+void DAbstractSliderSpinBox::wheelEvent(QWheelEvent* e)
 {
     Q_D(DAbstractSliderSpinBox);
 
@@ -631,7 +632,10 @@ bool DAbstractSliderSpinBox::eventFilter(QObject* recv, QEvent* e)
 {
     Q_D(DAbstractSliderSpinBox);
 
-    if (recv == static_cast<QObject*>(d->edit) && e->type() == QEvent::KeyRelease)
+    if (
+        (recv == static_cast<QObject*>(d->edit)) &&
+        (e->type() == QEvent::KeyRelease)
+       )
     {
         QKeyEvent* keyEvent = static_cast<QKeyEvent*>(e);
 
@@ -1062,10 +1066,6 @@ DSliderSpinBox::DSliderSpinBox(QWidget* const parent)
     setRange(0, 99);
 }
 
-DSliderSpinBox::~DSliderSpinBox()
-{
-}
-
 void DSliderSpinBox::setRange(int minimum, int maximum)
 {
     Q_D(DSliderSpinBox);
@@ -1173,10 +1173,6 @@ class Q_DECL_HIDDEN DDoubleSliderSpinBoxPrivate : public DAbstractSliderSpinBoxP
 
 DDoubleSliderSpinBox::DDoubleSliderSpinBox(QWidget* const parent)
     : DAbstractSliderSpinBox(parent, new DDoubleSliderSpinBoxPrivate)
-{
-}
-
-DDoubleSliderSpinBox::~DDoubleSliderSpinBox()
 {
 }
 
