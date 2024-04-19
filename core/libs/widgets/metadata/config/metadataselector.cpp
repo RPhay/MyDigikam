@@ -64,10 +64,6 @@ MetadataSelectorItem::MetadataSelectorItem(MdKeyListViewItem* const parent,
                ("<qt><p>") + cnt.breakString(descVal) + QLatin1String("</p></qt>"));
 }
 
-MetadataSelectorItem::~MetadataSelectorItem()
-{
-}
-
 QString MetadataSelectorItem::key() const
 {
     return m_key;
@@ -99,10 +95,6 @@ MetadataSelector::MetadataSelector(MetadataSelectorView* const parent)
 
     setSortingEnabled(true);
     sortByColumn(0, Qt::AscendingOrder);
-}
-
-MetadataSelector::~MetadataSelector()
-{
 }
 
 void MetadataSelector::setTagsMap(const DMetadata::TagsMap& map)

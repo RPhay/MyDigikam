@@ -41,7 +41,7 @@ public:
                          const QString& key,
                          const QString& title,
                          const QString& desc);
-    ~MetadataSelectorItem()    override;
+    ~MetadataSelectorItem()    override = default;
 
     QString key()        const;
     QString mdKeyTitle() const;
@@ -49,7 +49,7 @@ public:
 private:
 
     QString            m_key;
-    MdKeyListViewItem* m_parent;
+    MdKeyListViewItem* m_parent = nullptr;
 
 private:
 
@@ -65,7 +65,7 @@ class DIGIKAM_EXPORT MetadataSelector : public QTreeWidget
 public:
 
     explicit MetadataSelector(MetadataSelectorView* const parent);
-    ~MetadataSelector() override;
+    ~MetadataSelector() override = default;
 
     void setTagsMap(const DMetadata::TagsMap& map);
 
@@ -77,7 +77,7 @@ public:
 
 private:
 
-    MetadataSelectorView* m_parent;
+    MetadataSelectorView* m_parent = nullptr;
 };
 
 // ------------------------------------------------------------------------------------

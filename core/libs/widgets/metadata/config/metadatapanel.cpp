@@ -160,7 +160,7 @@ class Q_DECL_HIDDEN MetadataPanel::Private
 {
 public:
 
-    explicit Private()
+    Private()
     {
         setDefaultFilter(ExifHumanList,      defaultExifFilter);
         setDefaultFilter(MakerNoteHumanList, defaultMknoteFilter);
@@ -361,7 +361,7 @@ void MetadataPanel::slotTabChanged(int)
     {
         if (!d->exifToolViewerConfig->itemsCount() && d->parser->exifToolAvailable())
         {
-            if (!d->parserRunning)
+            if      (!d->parserRunning)
             {
                 d->parserRunning = d->parser->tagsDatabase();
 
