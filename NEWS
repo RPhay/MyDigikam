@@ -86,7 +86,7 @@ BUGFIXES:
 061 ==> 452567 - Crash with corrupted images after recovered my hard disk.
 062 ==> 335039 - Photo layout exported from PrintCreator to PDF creates huge file.
 063 ==> 485823 - Sort by name.
-064 ==> 
+064 ==> 485820 - In Time Adjust "Timestamp Updated" is wrongly reported as "TimeStamp Used".
 065 ==> 
 066 ==> 
 067 ==> 
