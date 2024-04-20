@@ -128,7 +128,16 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
     qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Creating DNG file" << outputInfo.fileName();
 
     dng_image_writer writer;
+
+#if defined __MINGW32__ // krazy:exclude=cpp
+
     dng_file_stream filestream(QFile::encodeName(dngFilePath).constData(), true);
+
+#else
+
+    dng_file_stream filestream(dngFilePath.toUtf8().constData(), true);
+
+#endif
 
     writer.WriteDNG(host,
                     filestream,
