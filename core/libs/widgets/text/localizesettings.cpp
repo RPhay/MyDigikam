@@ -34,16 +34,12 @@ class Q_DECL_HIDDEN LocalizeSettings::Private
 {
 public:
 
-    explicit Private ()
-        : mutex      (),
-          configGroup(QLatin1String("Spell Check Settings"))
-    {
-    }
+    Private () = default;
 
     LocalizeContainer settings;
     QMutex            mutex;
 
-    const QString     configGroup;
+    const QString     configGroup = QLatin1String("Spell Check Settings");
 
 public:
 

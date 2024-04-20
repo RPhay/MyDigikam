@@ -55,42 +55,26 @@ class Q_DECL_HIDDEN SpellCheckConfig::Private
 {
 public:
 
-    explicit Private()
-      : activeSpellCheck (nullptr),
-        spellCheckLabel  (nullptr),
-        languageLabel    (nullptr),
-        languageCB       (nullptr),
-        dictGroup        (nullptr),
-        backGroup        (nullptr),
-        ignoreWordsGroup (nullptr),
-        dictList         (nullptr),
-        backList         (nullptr),
-        addWordButton    (nullptr),
-        delWordButton    (nullptr),
-        repWordButton    (nullptr),
-        ignoreWordsBox   (nullptr),
-        ignoreWordEdit   (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*   activeSpellCheck;
-    QLabel*      spellCheckLabel;
-    QLabel*      languageLabel;
-    QComboBox*   languageCB;
+    QCheckBox*   activeSpellCheck   = nullptr;
+    QLabel*      spellCheckLabel    = nullptr;
+    QLabel*      languageLabel      = nullptr;
+    QComboBox*   languageCB         = nullptr;
 
-    QGroupBox*   dictGroup;
-    QGroupBox*   backGroup;
-    QGroupBox*   ignoreWordsGroup;
+    QGroupBox*   dictGroup          = nullptr;
+    QGroupBox*   backGroup          = nullptr;
+    QGroupBox*   ignoreWordsGroup   = nullptr;
 
-    QTreeWidget* dictList;              ///< Dictionaries list
-    QTreeWidget* backList;              ///< Backends list
-    QPushButton* addWordButton;
-    QPushButton* delWordButton;
-    QPushButton* repWordButton;
+    QTreeWidget* dictList           = nullptr;              ///< Dictionaries list
+    QTreeWidget* backList           = nullptr;              ///< Backends list
+    QPushButton* addWordButton      = nullptr;
+    QPushButton* delWordButton      = nullptr;
+    QPushButton* repWordButton      = nullptr;
 
-    QListWidget* ignoreWordsBox;
+    QListWidget* ignoreWordsBox     = nullptr;
 
-    QLineEdit*   ignoreWordEdit;
+    QLineEdit*   ignoreWordEdit     = nullptr;
 };
 
 SpellCheckConfig::SpellCheckConfig(QWidget* const parent)

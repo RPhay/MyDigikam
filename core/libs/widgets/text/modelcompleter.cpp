@@ -33,20 +33,13 @@ class Q_DECL_HIDDEN ModelCompleter::Private
 {
 public:
 
-    explicit Private()
-      : displayRole      (Qt::DisplayRole),
-        uniqueIdRole     (Qt::DisplayRole),
-        delayedModelTimer(nullptr),
-        stringModel      (nullptr),
-        model            (nullptr)
-    {
-    }
+    Private() = default;
 
-    int                          displayRole;
-    int                          uniqueIdRole;
+    int                          displayRole        = Qt::DisplayRole;
+    int                          uniqueIdRole       = Qt::DisplayRole;
 
-    QTimer*                      delayedModelTimer;
-    QStringListModel*            stringModel;
+    QTimer*                      delayedModelTimer  = nullptr;
+    QStringListModel*            stringModel        = nullptr;
     QPointer<QAbstractItemModel> model;
 
     /**

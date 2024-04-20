@@ -35,12 +35,9 @@ class DIGIKAM_EXPORT SearchTextSettings
 
 public:
 
-    SearchTextSettings()
-      : caseSensitive(Qt::CaseInsensitive)
-    {
-    }
+    SearchTextSettings() = default;
 
-    Qt::CaseSensitivity caseSensitive;
+    Qt::CaseSensitivity caseSensitive = Qt::CaseInsensitive;
 
     QString             text;
 };

@@ -37,8 +37,8 @@ class DIGIKAM_EXPORT LocalizeContainer
 {
 public:
 
-    explicit LocalizeContainer();
-    ~LocalizeContainer();
+    LocalizeContainer()  = default;
+    ~LocalizeContainer() = default;
 
 public:
 
@@ -48,14 +48,14 @@ public:
 public:
 
     // SpellCheck settings
-    bool                        enableSpellCheck;       ///< Enable spell-checking feature.
-    QString                     defaultLanguage;        ///> Default language code to use with x-default (empty for auto-detection).
-    QStringList                 ignoredWords;           ///< Words to ignore with spell-checking.
+    bool                        enableSpellCheck = false;                       ///< Enable spell-checking feature.
+    QString                     defaultLanguage;                                ///> Default language code to use with x-default (empty for auto-detection).
+    QStringList                 ignoredWords;                                   ///< Words to ignore with spell-checking.
 
     // Localize settings
-    DOnlineTranslator::Engine   translatorEngine;       ///< Online translator to use.
-    QStringList                 translatorLang;         ///< List of langues to use with Online translator.
-    QStringList                 alternativeLang;        ///< List of langges to use with Alternative Languages Text editor.
+    DOnlineTranslator::Engine   translatorEngine = DOnlineTranslator::Google;   ///< Online translator to use.
+    QStringList                 translatorLang;                                 ///< List of langues to use with Online translator.
+    QStringList                 alternativeLang;                                ///< List of langges to use with Alternative Languages Text editor.
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.

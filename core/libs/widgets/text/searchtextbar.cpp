@@ -46,33 +46,22 @@ class Q_DECL_HIDDEN SearchTextBar::Private
 {
 public:
 
-    explicit Private()
-      : optionAutoCompletionModeEntry(QLatin1String("AutoCompletionMode")),
-        optionCaseSensitiveEntry     (QLatin1String("CaseSensitive")),
-        textQueryCompletion          (false),
-        hasCaseSensitive             (true),
-        highlightOnResult            (true),
-        hasResultColor               (140, 220, 140),
-        hasNoResultColor             (220, 140, 140),
-        completer                    (nullptr),
-        searchTimer                  (nullptr)
-    {
-    }
+    Private() = default;
 
-    QString            optionAutoCompletionModeEntry;
-    QString            optionCaseSensitiveEntry;
+    QString            optionAutoCompletionModeEntry    = QLatin1String("AutoCompletionMode");
+    QString            optionCaseSensitiveEntry         = QLatin1String("CaseSensitive");
 
-    bool               textQueryCompletion;
-    bool               hasCaseSensitive;
-    bool               highlightOnResult;
+    bool               textQueryCompletion              = false;
+    bool               hasCaseSensitive                 = true;
+    bool               highlightOnResult                = true;
 
-    QColor             hasResultColor;
-    QColor             hasNoResultColor;
+    QColor             hasResultColor                   = QColor(140, 220, 140);
+    QColor             hasNoResultColor                 = QColor(220, 140, 140);
 
-    ModelCompleter*    completer;
+    ModelCompleter*    completer                        = nullptr;
 
     SearchTextSettings settings;
-    QTimer*            searchTimer;   ///< Timer to delay search processing and not signals bombarding at each key pressed.
+    QTimer*            searchTimer                      = nullptr;   ///< Timer to delay search processing and not signals bombarding at each key pressed.
 };
 
 SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const QString& msg)
@@ -199,7 +188,7 @@ void SearchTextBar::setCaseSensitive(bool b)
         d->settings.caseSensitive = Qt::CaseInsensitive;
     }
 
-    // Re-Q_EMIT signal with changed settings
+    // Re-emit signal with changed settings
 
     if (!text().isEmpty())
     {
@@ -302,7 +291,7 @@ void SearchTextBar::setIgnoreCase(bool ignore)
         d->settings.caseSensitive = Qt::CaseInsensitive;
     }
 
-    // Re-Q_EMIT signal with changed settings
+    // Re-emit signal with changed settings
 
     if (!text().isEmpty())
     {

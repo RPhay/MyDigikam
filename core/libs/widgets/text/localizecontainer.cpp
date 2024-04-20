@@ -26,16 +26,6 @@
 namespace Digikam
 {
 
-LocalizeContainer::LocalizeContainer()
-    : enableSpellCheck(false),
-      translatorEngine(DOnlineTranslator::Google)
-{
-}
-
-LocalizeContainer::~LocalizeContainer()
-{
-}
-
 void LocalizeContainer::readFromConfig(KConfigGroup& group)
 {
     enableSpellCheck = group.readEntry("EnableSpellCheck", false);

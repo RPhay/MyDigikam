@@ -96,10 +96,7 @@ class Q_DECL_HIDDEN LanguagesView : public QGroupBox
 public:
 
     explicit LanguagesView(QWidget* const parent)
-        : QGroupBox     (parent),
-          m_langList    (nullptr),
-          m_showSelected(nullptr),
-          m_langFilter  (nullptr)
+        : QGroupBox(parent)
     {
         QVBoxLayout* const vlay = new QVBoxLayout();
         setLayout(vlay);
@@ -183,33 +180,25 @@ private Q_SLOTS:
 
 public:
 
-    LanguagesList* m_langList;
-    QCheckBox*     m_showSelected;
-    SearchTextBar* m_langFilter;
+    LanguagesList* m_langList       = nullptr;
+    QCheckBox*     m_showSelected   = nullptr;
+    SearchTextBar* m_langFilter     = nullptr;
 };
 
 class Q_DECL_HIDDEN LocalizeConfig::Private
 {
 public:
 
-    explicit Private()
-      : altLangList     (nullptr),
-        altLangGroup    (nullptr),
-        translatorCB    (nullptr),
-        translatorLabel (nullptr),
-        trLangList      (nullptr),
-        trLangGroup     (nullptr)
-    {
-    }
+    Private() = default;
 
-    LanguagesList*  altLangList;
-    LanguagesView*  altLangGroup;
+    LanguagesList*  altLangList     = nullptr;
+    LanguagesView*  altLangGroup    = nullptr;
 
     QStringList     trLangEnabled;
-    QComboBox*      translatorCB;
-    QLabel*         translatorLabel;
-    LanguagesList*  trLangList;
-    LanguagesView*  trLangGroup;
+    QComboBox*      translatorCB    = nullptr;
+    QLabel*         translatorLabel = nullptr;
+    LanguagesList*  trLangList      = nullptr;
+    LanguagesView*  trLangGroup     = nullptr;
 };
 
 LocalizeConfig::LocalizeConfig(QWidget* const parent)

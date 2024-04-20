@@ -79,19 +79,14 @@ class Q_DECL_HIDDEN LocalizeSelector::Private
 {
 public:
 
-    explicit Private()
-      : translateButton (nullptr),
-        settingsButton  (nullptr),
-        translateAction (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    QToolButton*                   translateButton;
-    QToolButton*                   settingsButton;
+    QToolButton*                   translateButton  = nullptr;
+    QToolButton*                   settingsButton   = nullptr;
 
-    TranslateAction*               translateAction;
+    TranslateAction*               translateAction  = nullptr;
 };
 
 LocalizeSelector::LocalizeSelector(QWidget* const parent)
@@ -180,18 +175,13 @@ class Q_DECL_HIDDEN LocalizeSelectorList::Private
 {
 public:
 
-    explicit Private()
-      : trLabel   (nullptr),
-        trSelector(nullptr),
-        trList    (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    QLabel*           trLabel;
-    LocalizeSelector* trSelector;
-    LanguagesList*    trList;
+    QLabel*           trLabel       = nullptr;
+    LocalizeSelector* trSelector    = nullptr;
+    LanguagesList*    trList        = nullptr;
 };
 
 LocalizeSelectorList::LocalizeSelectorList(QWidget* const parent)
