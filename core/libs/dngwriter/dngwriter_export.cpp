@@ -106,7 +106,7 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
         else
         {
             dng_jpeg_preview* jpegPreview = dynamic_cast<dng_jpeg_preview*>(preview.Get());
-            int32 quality = ((previewIndex == 0) ? 8 : 5);
+            int quality                   = (previewIndex == 0) ? 8 : 5;
             dng_image_writer writer;
             writer.EncodeJPEGPreview(host, *previewImage, *jpegPreview, quality);
         }
