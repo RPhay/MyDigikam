@@ -36,8 +36,10 @@
 
 namespace
 {
+
 static const quint8 INVALID = -1;
 static const QString DUMMY_TEXT(QLatin1String("DUMMY_TEXT_y_fjqp|"));
+
 }
 
 namespace Digikam
@@ -47,21 +49,15 @@ class Q_DECL_HIDDEN AdvancedRenameLineEdit::Private
 {
 public:
 
-    explicit Private()
-      : allowDirectoryCreation(false),
-        verticalSliderPosition(INVALID),
-        parseTimer            (nullptr),
-        parser                (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool    allowDirectoryCreation;
-    int     verticalSliderPosition;
+    bool    allowDirectoryCreation  = false;
+    int     verticalSliderPosition  = INVALID;
 
     QString lastPlainText;
 
-    QTimer* parseTimer;
-    Parser* parser;
+    QTimer* parseTimer              = nullptr;
+    Parser* parser                  = nullptr;
 };
 
 AdvancedRenameLineEdit::AdvancedRenameLineEdit(QWidget* const parent)
@@ -251,24 +247,17 @@ class Q_DECL_HIDDEN AdvancedRenameInput::Private
 {
 public:
 
-    explicit Private()
-      : maxVisibleItems(10),
-        maxHistoryItems(30),
-        lineEdit       (nullptr),
-        proxy          (nullptr),
-        highlighter    (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString    configGroupName;
     static const QString    configPatternHistoryListEntry;
 
-    const int               maxVisibleItems;
-    const int               maxHistoryItems;
+    const int               maxVisibleItems = 10;
+    const int               maxHistoryItems = 30;
 
-    AdvancedRenameLineEdit* lineEdit;
-    ProxyLineEdit*          proxy;
-    Highlighter*            highlighter;
+    AdvancedRenameLineEdit* lineEdit        = nullptr;
+    ProxyLineEdit*          proxy           = nullptr;
+    Highlighter*            highlighter     = nullptr;
 };
 
 const QString AdvancedRenameInput::Private::configGroupName(QLatin1String("AdvancedRename Input"));

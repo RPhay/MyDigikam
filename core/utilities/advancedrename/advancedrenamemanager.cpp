@@ -74,16 +74,7 @@ class Q_DECL_HIDDEN AdvancedRenameManager::Private
 {
 public:
 
-    explicit Private()
-      : parser       (nullptr),
-        widget       (nullptr),
-        parserType   (AdvancedRenameManager::DefaultParser),
-        sortAction   (AdvancedRenameManager::SortCustom),
-        sortDirection(AdvancedRenameManager::SortAscending),
-        startIndex   (1),
-        cutFileName  (0)
-    {
-    }
+    Private() = default;
 
     QStringList                          files;
 
@@ -97,14 +88,14 @@ public:
     QMap<QString, QDateTime>             fileDatesMap;
     QMap<QString, QString>               renamedFiles;
 
-    Parser*                              parser;
-    AdvancedRenameWidget*                widget;
-    AdvancedRenameManager::ParserType    parserType;
-    AdvancedRenameManager::SortAction    sortAction;
-    AdvancedRenameManager::SortDirection sortDirection;
+    Parser*                              parser         = nullptr;
+    AdvancedRenameWidget*                widget         = nullptr;
+    AdvancedRenameManager::ParserType    parserType     = AdvancedRenameManager::DefaultParser;
+    AdvancedRenameManager::SortAction    sortAction     = AdvancedRenameManager::SortCustom;
+    AdvancedRenameManager::SortDirection sortDirection  = AdvancedRenameManager::SortAscending;
 
-    int                                  startIndex;
-    int                                  cutFileName;
+    int                                  startIndex     = 1;
+    int                                  cutFileName    = 0;
 };
 
 AdvancedRenameManager::AdvancedRenameManager()
@@ -359,7 +350,9 @@ void AdvancedRenameManager::initializeFileList()
 
         case SortCustom:
         default:
+        {
             break;
+        }
     }
 
     if ((d->sortAction != SortCustom) && (d->sortDirection == SortDescending))

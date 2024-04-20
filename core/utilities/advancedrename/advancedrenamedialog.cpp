@@ -58,9 +58,7 @@ class Q_DECL_HIDDEN AdvancedRenameListItem::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QUrl    imageUrl;
     QString completeFileName;
@@ -140,22 +138,7 @@ class Q_DECL_HIDDEN AdvancedRenameDialog::Private
 {
 public:
 
-    explicit Private()
-      : singleFileMode       (false),
-        minSizeDialog        (450),
-        sortActionName       (nullptr),
-        sortActionDate       (nullptr),
-        sortActionSize       (nullptr),
-        sortActionAscending  (nullptr),
-        sortActionDescending (nullptr),
-        sortGroupActions     (nullptr),
-        sortGroupDirections  (nullptr),
-        listView             (nullptr),
-        buttons              (nullptr),
-        advancedRenameManager(nullptr),
-        advancedRenameWidget (nullptr)
-    {
-    }
+    Private() = default;
 
     static const QString   configGroupName;
     static const QString   configLastUsedRenamePatternEntry;
@@ -163,24 +146,24 @@ public:
 
     QString                singleFileModeOldFilename;
 
-    bool                   singleFileMode;
-    int                    minSizeDialog;
+    bool                   singleFileMode           = false;
+    int                    minSizeDialog            = 450;
 
-    QAction*               sortActionName;
-    QAction*               sortActionDate;
-    QAction*               sortActionSize;
+    QAction*               sortActionName           = nullptr;
+    QAction*               sortActionDate           = nullptr;
+    QAction*               sortActionSize           = nullptr;
 
-    QAction*               sortActionAscending;
-    QAction*               sortActionDescending;
+    QAction*               sortActionAscending      = nullptr;
+    QAction*               sortActionDescending     = nullptr;
 
-    QActionGroup*          sortGroupActions;
-    QActionGroup*          sortGroupDirections;
+    QActionGroup*          sortGroupActions         = nullptr;
+    QActionGroup*          sortGroupDirections      = nullptr;
 
-    QTreeWidget*           listView;
-    QDialogButtonBox*      buttons;
+    QTreeWidget*           listView                 = nullptr;
+    QDialogButtonBox*      buttons                  = nullptr;
 
-    AdvancedRenameManager* advancedRenameManager;
-    AdvancedRenameWidget*  advancedRenameWidget;
+    AdvancedRenameManager* advancedRenameManager    = nullptr;
+    AdvancedRenameWidget*  advancedRenameWidget     = nullptr;
     NewNamesList           newNamesList;
 };
 
@@ -210,6 +193,7 @@ AdvancedRenameDialog::AdvancedRenameDialog(QWidget* const parent)
 AdvancedRenameDialog::~AdvancedRenameDialog()
 {
     writeSettings();
+
     delete d->advancedRenameManager;
     delete d;
 }
@@ -583,7 +567,9 @@ NewNamesList AdvancedRenameDialog::filterNewNames() const
 
 void AdvancedRenameDialog::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
+    openOnlineDocumentation(QLatin1String("main_window"),
+                            QLatin1String("image_view"),
+                            QLatin1String("renaming-photograph"));
 }
 
 } // namespace Digikam

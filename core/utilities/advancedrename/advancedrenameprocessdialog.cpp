@@ -41,21 +41,16 @@ class Q_DECL_HIDDEN AdvancedRenameProcessDialog::Private
 {
 public:
 
-    explicit Private()
-        : thumbLoadThread(nullptr),
-          overwrite      (false),
-          cancel         (false)
-    {
-    }
+    Private() = default;
 
-    ThumbnailLoadThread* thumbLoadThread;
+    ThumbnailLoadThread* thumbLoadThread    = nullptr;
 
     NewNameInfo          currentInfo;
     NewNamesList         newNameList;
     NewNamesList         failedList;
 
-    bool                 overwrite;
-    bool                 cancel;
+    bool                 overwrite          = false;
+    bool                 cancel             = false;
 
     QPixmap              thumbPixmap;
     QString              thumbPath;
