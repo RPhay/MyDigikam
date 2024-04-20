@@ -84,7 +84,7 @@ BUGFIXES:
 059 ==> 261634 - Use Qt framework 6.70 and KDE framework 6.2.0 to compile AppImage bundle.
 060 ==> 484234 - MP3 slider stopped working.
 061 ==> 452567 - Crash with corrupted images after recovered my hard disk.
-062 ==> 
+062 ==> 335039 - Photo layout exported from PrintCreator to PDF creates huge file.
 063 ==> 
 064 ==> 
 065 ==> 
