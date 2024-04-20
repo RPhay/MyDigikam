@@ -52,45 +52,67 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
     // -----------------------------------------------------------------------------------------
 
     dng_preview_list previewList;
-    dng_render negRender(host, *negative.Get());
 
-    if (previewMode != DNGWriter::NONE)
+    for (int previewIndex = 0 ; previewIndex < 2 ; ++previewIndex)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG preview image creation";
+        if      ((previewIndex == 1) && (previewMode == DNGWriter::NONE))
+        {
+            break;
+        }
+        else if (previewIndex == 0)
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG thumbnail creation";
+        }
+        else
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG preview image creation";
+        }
 
-        dng_jpeg_preview* const jpeg_preview = new dng_jpeg_preview();
-        jpeg_preview->fInfo.fApplicationName.Set_ASCII(QString::fromLatin1("digiKam").toLatin1().constData());
-        jpeg_preview->fInfo.fApplicationVersion.Set_ASCII(digiKamVersion().toLatin1().constData());
-        jpeg_preview->fInfo.fDateTime        = orgDateTimeInfo.Encode_ISO_8601();
-        jpeg_preview->fInfo.fColorSpace      = previewColorSpace_sRGB;
+        if (cancel)
+        {
+            return PROCESS_CANCELED;
+        }
 
-        negRender.SetMaximumSize(previewMode == MEDIUM ? 1280 : width);
-        AutoPtr<dng_image> negImage(negRender.Render());
-        dng_image_writer jpegWriter;
-        jpegWriter.EncodeJPEGPreview(host, *negImage.Get(), *jpeg_preview, 5);
-        AutoPtr<dng_preview> jp(static_cast<dng_preview*>(jpeg_preview));
-        previewList.Append(jp);
+        AutoPtr<dng_image> previewImage;
+        {
+            dng_render render(host, *negative.Get());
+            render.SetFinalSpace(negative->IsMonochrome() ? dng_space_GrayGamma22::Get()
+                                                          : dng_space_sRGB::Get());
+
+            render.SetFinalPixelType (ttByte);
+            render.SetMaximumSize((previewIndex == 0) ? 256
+                                                      : (previewMode == MEDIUM) ? 1280
+                                                                                : width);
+            previewImage.Reset(render.Render());
+        }
+
+        bool useCompressedPreview = ((negative->RawLossyCompressedImage() != NULL) ||
+                                     (previewIndex > 0));
+
+        AutoPtr<dng_preview> preview(useCompressedPreview ? (dng_preview*) new dng_jpeg_preview
+                                                          : (dng_preview*) new dng_image_preview);
+
+        preview->fInfo.fApplicationName.Set_ASCII(QString::fromLatin1("digiKam").toLatin1().constData());
+        preview->fInfo.fApplicationVersion.Set_ASCII(digiKamVersion().toLatin1().constData());
+        preview->fInfo.fDateTime   = orgDateTimeInfo.Encode_ISO_8601();
+        preview->fInfo.fColorSpace = (previewImage->Planes() == 1) ? previewColorSpace_GrayGamma22
+                                                                   : previewColorSpace_sRGB;
+
+        if (!useCompressedPreview)
+        {
+            dng_image_preview* imagePreview = dynamic_cast<dng_image_preview*>(preview.Get());
+            imagePreview->SetImage(host, previewImage.Release());
+        }
+        else
+        {
+            dng_jpeg_preview* jpegPreview = dynamic_cast<dng_jpeg_preview*>(preview.Get());
+            int32 quality = ((previewIndex == 0) ? 8 : 5);
+            dng_image_writer writer;
+            writer.EncodeJPEGPreview(host, *previewImage, *jpegPreview, quality);
+        }
+
+        previewList.Append(preview);
     }
-
-    if (cancel)
-    {
-        return PROCESS_CANCELED;
-    }
-
-    // -----------------------------------------------------------------------------------------
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG thumbnail creation";
-
-    dng_image_preview* const thumbnail = new dng_image_preview();
-    thumbnail->fInfo.fApplicationName.Set_ASCII(QString::fromLatin1("digiKam").toLatin1().constData());
-    thumbnail->fInfo.fApplicationVersion.Set_ASCII(digiKamVersion().toLatin1().constData());
-    thumbnail->fInfo.fDateTime         = orgDateTimeInfo.Encode_ISO_8601();
-    thumbnail->fInfo.fColorSpace       = previewColorSpace_sRGB;
-
-    negRender.SetMaximumSize(256);
-    thumbnail->fImage.reset(negRender.Render());
-    AutoPtr<dng_preview> tn(static_cast<dng_preview*>(thumbnail));
-    previewList.Append(tn);
 
     if (cancel)
     {

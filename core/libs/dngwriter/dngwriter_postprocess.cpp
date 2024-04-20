@@ -45,10 +45,11 @@ int DNGWriter::Private::exifToolPostProcess()
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Post-process markernotes with ExifTool";
 
-        ret     = parser->copyTags(
+        ret      = parser->copyTags(
                                      inputInfo.filePath(),
                                      dngFilePath,
-                                     ExifToolProcess::COPY_MAKERNOTES
+                                     ExifToolProcess::COPY_MAKERNOTES |
+                                     ExifToolProcess::RESTORE_PREVIEW
                                    );
 
         if (!ret)

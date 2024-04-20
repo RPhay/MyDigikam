@@ -66,11 +66,12 @@ public:
     {
         COPY_EXIF           = 0x01,                 ///< Copy all Exif Tags from source file.
         COPY_MAKERNOTES     = 0x02,                 ///< Copy all Makernotes tags from source file.
-        COPY_IPTC           = 0x04,                 ///< Copy all Iptc tags from source file.
-        COPY_XMP            = 0x08,                 ///< Copy all Xmp tags from source file.
-        COPY_ICC            = 0x10,                 ///< Copy ICC profile from source file.
-        COPY_ALL            = 0x20,                 ///< Copy all tags from source file.
-        COPY_NONE           = 0x40                  ///< No copy operation.
+        RESTORE_PREVIEW     = 0x04,                 ///< Restore preview image from source file.
+        COPY_IPTC           = 0x08,                 ///< Copy all Iptc tags from source file.
+        COPY_XMP            = 0x10,                 ///< Copy all Xmp tags from source file.
+        COPY_ICC            = 0x20,                 ///< Copy ICC profile from source file.
+        COPY_ALL            = 0x40,                 ///< Copy all tags from source file.
+        COPY_NONE           = 0x80                  ///< No copy operation.
     };
 
     /**

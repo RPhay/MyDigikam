@@ -508,6 +508,13 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst,
             {
                 copyCmds << QByteArray("--icc_profile");
             }
+
+            if (copyOps & ExifToolProcess::RESTORE_PREVIEW)
+            {
+                copyCmds << QByteArray("-TagsFromFile");
+                copyCmds << QByteArray("@");
+                copyCmds << QByteArray("-PreviewImage");
+            }
         }
     }
 
