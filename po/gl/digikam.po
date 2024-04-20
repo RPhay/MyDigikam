@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-19 01:45+0000\n"
+"POT-Creation-Date: 2024-04-20 01:43+0000\n"
 "PO-Revision-Date: 2024-03-17 12:41+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -46602,13 +46602,13 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Desenvolvedor (2004)."
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
 #, fuzzy, kde-format
 #| msgid "Configure this column"
 msgid "Configure Notifications"
 msgstr "Configurar a columna"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -46693,62 +46693,62 @@ msgstr "Seguinte lapela da barra lateral dereita"
 msgid "Show Statusbar"
 msgstr "Amosar a barra de estado"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:232
+#: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
 msgid "Size: %1"
 msgstr "Tamaño: %1"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:59
+#: core/libs/widgets/mainview/fullscreensettings.cpp:52
 #, kde-format
 msgid "Full-screen Options"
 msgstr "Opcións do modo a pantalla completa"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:67
+#: core/libs/widgets/mainview/fullscreensettings.cpp:60
 #, kde-format
 msgid "H&ide toolbars"
 msgstr "Agochar as barras de &ferramentas."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:68
+#: core/libs/widgets/mainview/fullscreensettings.cpp:61
 #, kde-format
 msgid "Hide all toolbars when window switch in full-screen mode."
 msgstr ""
 "Agochar todas as barras de ferramentas cando a xanela se pon a pantalla "
 "completa."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:70
+#: core/libs/widgets/mainview/fullscreensettings.cpp:63
 #, kde-format
 msgid "Hide &thumbbar"
 msgstr "Agochar a barra de &miniaturas."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:71
+#: core/libs/widgets/mainview/fullscreensettings.cpp:64
 #, kde-format
 msgid "Hide thumbbar view when window switch in full-screen mode."
 msgstr ""
 "Agochar a vista da barras de miniaturas cando a xanela se pon a pantalla "
 "completa."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:73
+#: core/libs/widgets/mainview/fullscreensettings.cpp:66
 #, kde-format
 msgid "Hide &sidebars"
 msgstr "Agochar as barras &laterais"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:74
+#: core/libs/widgets/mainview/fullscreensettings.cpp:67
 #, kde-format
 msgid "Hide all side-bars when window switch in full-screen mode."
 msgstr ""
 "Agochar todas as barras laterais cando a xanela se pon a pantalla completa."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:76
+#: core/libs/widgets/mainview/fullscreensettings.cpp:69
 #, kde-format
 msgid "Hide st&atusbar"
 msgstr "Agochar a barra de est&ado"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:77
+#: core/libs/widgets/mainview/fullscreensettings.cpp:70
 #, kde-format
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "Agochar a barra de estado cando a xanela se pon a pantalla completa."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1232
+#: core/libs/widgets/mainview/thememanager_p.cpp:1310
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -46780,35 +46780,35 @@ msgstr "Visor de XMP"
 msgid "ExifTool viewer"
 msgstr "Ferramenta"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:94
+#: core/libs/widgets/metadata/config/metadataselector.cpp:90
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: metadata properties"
 msgid "Name"
 msgstr "Nome"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:95
+#: core/libs/widgets/metadata/config/metadataselector.cpp:91
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: metadata properties"
 msgid "Description"
 msgstr "Descrición"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:287
+#: core/libs/widgets/metadata/config/metadataselector.cpp:279
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: metadata selector"
 msgid "Select All"
 msgstr "Escoller todo"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:288
+#: core/libs/widgets/metadata/config/metadataselector.cpp:280
 #, fuzzy, kde-format
 #| msgid "Clear"
 msgctxt "@action: metadata selector"
 msgid "Clear"
 msgstr "Limpar"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:289
+#: core/libs/widgets/metadata/config/metadataselector.cpp:281
 #, fuzzy, kde-format
 #| msgid "Default"
 msgctxt "@action: metadata selector"
@@ -46897,7 +46897,7 @@ msgid "Open Setup Dialog..."
 msgstr "Abrindo o diálogo de descarga…"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
-#: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:138
+#: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:134
 #, kde-format
 msgid ""
 "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</p>"
@@ -47607,55 +47607,55 @@ msgctxt "@info: metadata to text"
 msgid "File name: %1 (%2)"
 msgstr "Nome do ficheiro: %1 (%2)"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:381
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:383
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
 msgstr "Información do título"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:72
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:68
 #, fuzzy, kde-format
 #| msgid "Standard EXIF Tags"
 msgid "Standard Exif Tags"
 msgstr "Etiquetas EXIF estándar"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:171
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:160
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:168
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:186
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:167
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:156
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:164
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:182
 #, kde-format
 msgid "No description available"
 msgstr "Non hai ningunha descrición dispoñíbel"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:179
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:176
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:175
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:172
 #, kde-format
 msgid "EXIF File to Save"
 msgstr "Ficheiro EXIF que gardar"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:180
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:177
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:176
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:173
 #, kde-format
 msgid "EXIF binary Files (*.exif)"
 msgstr "Ficheiros EXIF binarios (*.exif)"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:63
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:59
 #, kde-format
 msgid "IPTC Records"
 msgstr "Gravacións IPTC"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:168
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:164
 #, kde-format
 msgid "IPTC File to Save"
 msgstr "Ficheiro IPTC que gardar"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:169
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:165
 #, kde-format
 msgid "IPTC binary Files (*.iptc)"
 msgstr "Ficheiros binarios IPTC (*.iptc)"
 
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:69
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:65
 #, fuzzy, kde-format
 #| msgid "MakerNote EXIF Tags"
 msgid "MakerNote Exif Tags"
@@ -47844,24 +47844,24 @@ msgstr "Cargador de ImageMagick"
 msgid "Image Magick Properties"
 msgstr "Propiedades da imaxe"
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:334
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:336
 #, fuzzy, kde-format
 #| msgid "File name: %1 (%2)"
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"
 msgstr "Nome do ficheiro: %1 (%2)"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:89
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:85
 #, kde-format
 msgid "XMP Schema"
 msgstr "Esquema XMP"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:194
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:190
 #, kde-format
 msgid "XMP File to Save"
 msgstr "Ficheiro XMP que gardar"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:195
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:191
 #, kde-format
 msgid "XMP text Files (*.xmp)"
 msgstr "Ficheiros de texto XMP (*.xmp)"
@@ -47908,7 +47908,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Escolla"
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:568
+#: core/libs/widgets/metadata/labels/ratingwidget.cpp:570
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"

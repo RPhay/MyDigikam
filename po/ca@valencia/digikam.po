@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-19 01:45+0000\n"
-"PO-Revision-Date: 2024-04-06 09:01+0200\n"
+"POT-Creation-Date: 2024-04-20 01:43+0000\n"
+"PO-Revision-Date: 2024-04-16 11:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3228,7 +3228,7 @@ msgstr "Definitivament tots els elements"
 #: core/app/views/stack/trashview.cpp:278
 #, kde-format
 msgid "Confirm Undo"
-msgstr "Confirmació de desfer"
+msgstr "Confirmeu el desfer"
 
 #: core/app/views/stack/trashview.cpp:279
 #: core/app/views/stack/trashview.cpp:304
@@ -3241,7 +3241,7 @@ msgstr[1] "Segur que voleu restaurar %1 elements?"
 #: core/app/views/stack/trashview.cpp:303
 #, kde-format
 msgid "Confirm Restore"
-msgstr "Confirmació de la restauració"
+msgstr "Confirmeu la restauració"
 
 #: core/app/views/stack/trashview.cpp:332
 #: core/app/views/stack/trashview.cpp:382
@@ -5364,8 +5364,8 @@ msgid ""
 "Check this if you want the watermark to use the given size of the font or "
 "the image without any adjustment to the actual image."
 msgstr ""
-"Seleccioneu-la si voleu que la marca d'aigua utilitze la mida indicada del "
-"tipus de lletra o la imatge sense cap ajust en la imatge real."
+"Marqueu-la si voleu que la marca d'aigua utilitze la mida indicada del tipus "
+"de lletra o la imatge sense cap ajust en la imatge real."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:191
 #, kde-format
@@ -5409,7 +5409,7 @@ msgid ""
 "Check this if you want the watermark to ignore its own aspect ratio and use "
 "the image's aspect ratio instead."
 msgstr ""
-"Seleccioneu-la si voleu que la marca d'aigua ignore la seua pròpia relació "
+"Marqueu-la si voleu que la marca d'aigua ignore la seua pròpia relació "
 "d'aspecte, i en el seu lloc utilitze la relació d'aspecte de la imatge."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:239
@@ -5420,7 +5420,7 @@ msgstr "Ignora la relació d'aspecte de la marca d'aigua"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:249
 #, kde-format
 msgid "Check this if you want watermark to be transparent."
-msgstr "Seleccioneu-la si voleu que la marca d'aigua siga transparent."
+msgstr "Marqueu-la si voleu que la marca d'aigua siga transparent."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
 #, kde-format
@@ -5486,7 +5486,7 @@ msgstr ""
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:313
 #, kde-format
 msgid "Check this if you want a background fill behind the text."
-msgstr "Seleccioneu-la si voleu un fons emplenant darrere el text."
+msgstr "Activeu açò si voleu un fons emplenant darrere el text."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, kde-format
@@ -6150,7 +6150,7 @@ msgid ""
 "replaced by the new values,\n"
 "else old values will be merged with new values."
 msgstr ""
-"Si seleccioneu esta opció, els títols i les llegendes es netejaran i se "
+"Si marqueu esta opció, els títols i les llegendes es netejaran i se "
 "substituiran amb els valors nous,\n"
 "altrament, els valors antics es fusionaran amb els valors nous."
 
@@ -6867,9 +6867,9 @@ msgid ""
 "<p>Toggle lossless compression for HEIF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress HEIF pictures.</p>"
 msgstr ""
-"<p>Canvia la compressió sense pèrdua per a les imatges HEIF.</p><p>Si se "
-"selecciona esta opció, s'utilitzarà un mètode sense pèrdua per a comprimir "
-"les imatges HEIF.</p>"
+"<p>Canvia la compressió sense pèrdua per a les imatges HEIF.</p><p>Si està "
+"marcada, s'utilitzarà un mètode sense pèrdua per a comprimir les imatges "
+"HEIF.</p>"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:71
 #, kde-format
@@ -7157,8 +7157,8 @@ msgid ""
 "enabled, a lossless method will be used to compress JPEG 2000 pictures.</p>"
 msgstr ""
 "<p>Canvia la compressió sense pèrdua per a les imatges JPEG 2000.</p><p>Si "
-"se selecciona esta opció, s'utilitzarà un mètode sense pèrdua per a "
-"comprimir les imatges JPEG 2000.</p>"
+"està marcada, s'utilitzarà un mètode sense pèrdua per a comprimir les "
+"imatges JPEG 2000.</p>"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:71
 #, kde-format
@@ -7284,9 +7284,9 @@ msgid ""
 "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress PGF pictures.</p>"
 msgstr ""
-"<p>Canvia la compressió sense pèrdua per a les imatges PGF.</p><p>Si se "
-"selecciona esta opció, s'utilitzarà un mètode sense pèrdua per a comprimir "
-"les imatges PGF.</p>"
+"<p>Canvia la compressió sense pèrdua per a les imatges PGF.</p><p>Si està "
+"marcada, s'utilitzarà un mètode sense pèrdua per a comprimir les imatges PGF."
+"</p>"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:71
 #, kde-format
@@ -7420,9 +7420,9 @@ msgid ""
 "<p>Toggle lossless compression for AVIF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG XL pictures.</p>"
 msgstr ""
-"<p>Canvia la compressió sense pèrdua per a les imatges AVIF.</p><p>Si se "
-"selecciona esta opció, s'utilitzarà un mètode sense pèrdua per a comprimir "
-"les imatges JPEG XL.</p>"
+"<p>Canvia la compressió sense pèrdua per a les imatges AVIF.</p><p>Si està "
+"marcada, s'utilitzarà un mètode sense pèrdua per a comprimir les imatges "
+"JPEG XL.</p>"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:71
 #, kde-format
@@ -7456,9 +7456,9 @@ msgid ""
 "<p>Toggle lossless compression for JPEG XL images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG XL pictures.</p>"
 msgstr ""
-"<p>Canvia la compressió sense pèrdua per a les imatges JPEG XL.</p><p>Si se "
-"selecciona esta opció, s'utilitzarà un mètode sense pèrdua per a comprimir "
-"les imatges JPEG XL.</p>"
+"<p>Canvia la compressió sense pèrdua per a les imatges JPEG XL.</p><p>Si "
+"està marcada, s'utilitzarà un mètode sense pèrdua per a comprimir les "
+"imatges JPEG XL.</p>"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:71
 #, kde-format
@@ -7523,9 +7523,9 @@ msgid ""
 "<p>Toggle lossless compression for WEBP images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress WEBP pictures.</p>"
 msgstr ""
-"<p>Canvia la compressió sense pèrdua per a les imatges WEBP.</p><p>Si se "
-"selecciona esta opció, s'utilitzarà un mètode sense pèrdua per a comprimir "
-"les imatges WEBP.</p>"
+"<p>Canvia la compressió sense pèrdua per a les imatges WEBP.</p><p>Si està "
+"marcada, s'utilitzarà un mètode sense pèrdua per a comprimir les imatges "
+"WEBP.</p>"
 
 #: core/dplugins/dimg/qimage/dimgwebpexportsettings.cpp:71
 #, kde-format
@@ -7608,9 +7608,9 @@ msgid ""
 "final size of the TIFF image is reduced.</p><p>A lossless compression format "
 "(Deflate) is used to save the file.</p>"
 msgstr ""
-"<p>Canvia la compressió d'imatges TIFF.</p><p>Si se selecciona esta opció, "
-"la mida final de la imatge TIFF es reduirà. S'utilitza un format de "
-"compressió sense pèrdua (Deflate) per a guardar el fitxer.</p>"
+"<p>Canvia la compressió d'imatges TIFF.</p><p>Si està marcada, la mida final "
+"de la imatge TIFF es reduirà. S'utilitza un format de compressió sense "
+"pèrdua (Deflate) per a guardar el fitxer.</p>"
 
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:47
 #, kde-format
@@ -8139,8 +8139,8 @@ msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
 "you want to apply color balance yourself."
 msgstr ""
-"Seleccioneu-la per a aplicar l'equilibri de color integrat en el perfil de "
-"la pel·lícula. Desseleccioneu-la si el voleu aplicar vosaltres mateixos."
+"Marqueu-la per a aplicar l'equilibri de color integrat en el perfil de la "
+"pel·lícula. Desmarqueu-la si el voleu aplicar vosaltres mateixos."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:232
 #, kde-format
@@ -17976,7 +17976,7 @@ msgstr "Generació de la «jAlbum»"
 #, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
-msgstr "Compartició de fitxers amb el servidor multimèdia DLNA"
+msgstr "Compartiu els fitxers amb el servidor multimèdia DLNA"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:149
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
@@ -18176,7 +18176,7 @@ msgstr "No s'ha pogut iniciar el servidor de MJPEG!"
 #, kde-format
 msgctxt "@title:window"
 msgid "Share Files With MJPEG Stream Server"
-msgstr "Compartició de fitxers amb el servidor de flux MJPEG"
+msgstr "Compartiu els fitxers amb el servidor de flux MJPEG"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
 #, kde-format
@@ -18877,7 +18877,7 @@ msgstr "Utilitza múltiples nuclis"
 #, kde-format
 msgctxt "@info"
 msgid "If this option is enabled, files will be processed in parallel"
-msgstr "Si se selecciona esta opció, els fitxers es processaran en paral·lel"
+msgstr "Si està marcada, els fitxers es processaran en paral·lel"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:289
 #, kde-format
@@ -19786,8 +19786,7 @@ msgstr ""
 "Podeu escapçar cada imatge per separat o clicar el botó «Següent» per a "
 "utilitzar la configuració predeterminada \n"
 "per a l'escapçat de cada fotografia.\n"
-"Seleccioneu l'opció «No escapces» per a evitar escapçar totes les "
-"fotografies."
+"Marqueu l'opció «No escapces» per a evitar escapçar totes les fotografies."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_disableCrop)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:43
@@ -20616,8 +20615,8 @@ msgid ""
 "If you enable this option, all item properties as Comments, Rating, or Tags, "
 "will be added as an attached file."
 msgstr ""
-"Si seleccioneu esta opció, totes les propietats de l'element com els "
-"comentaris, valoració o etiquetes s'afegiran com un fitxer adjunt."
+"Si marqueu esta opció, totes les propietats de l'element com els comentaris, "
+"valoració o etiquetes s'afegiran com un fitxer adjunt."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
 #: core/utilities/geolocation/marble/settings/MarbleConfigView.cpp:188
@@ -20646,7 +20645,7 @@ msgid ""
 "If you enable this option, all images to be sent can be resized and "
 "recompressed."
 msgstr ""
-"Si seleccioneu esta opció, totes les imatges que s'enviaran es podran "
+"Si marqueu esta opció, totes les imatges que s'enviaran es podran "
 "redimensionar i tornar a comprimir."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
@@ -20721,7 +20720,7 @@ msgid ""
 "If you enable this option, all metadata as Exif, Iptc, and Xmp will be "
 "removed."
 msgstr ""
-"Si seleccioneu esta opció, totes les metadades com l'Exif, IPTC, i XMP "
+"Si marqueu esta opció, totes les metadades com l'Exif, IPTC, i XMP "
 "s'eliminaran."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
@@ -21783,7 +21782,7 @@ msgstr "Indicador de progrés"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:171
 #, kde-format
 msgid "Playback"
-msgstr "Reproducció"
+msgstr "Reproduïu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_shuffleCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:184
@@ -22003,7 +22002,7 @@ msgstr "Retard:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
-msgstr "Supressió d'imatge"
+msgstr "Suprimiu la imatge"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:256
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
@@ -22124,7 +22123,7 @@ msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "image selected in the images list."
 msgstr ""
-"Si seleccioneu esta opció, la presentació de diapositives començarà amb la "
+"Si marqueu esta opció, la presentació de diapositives començarà amb la "
 "imatge de la llista que estiga seleccionada."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
@@ -22146,8 +22145,7 @@ msgstr "Barreja les imatges"
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
-"Si se selecciona esta opció, la presentació de diapositives s'executarà en "
-"ordre aleatori"
+"Si està marcada, la presentació de diapositives s'executarà en ordre aleatori"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, kde-format
@@ -23295,7 +23293,7 @@ msgid ""
 "Check if photo should be publicly visible or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
-"Seleccioneu-la si la fotografia ha de ser visible públicament o utilitzeu la "
+"Marqueu-la si la fotografia ha de ser visible públicament o utilitzeu la "
 "pestanya Opcions de la pujada per a especificar-ho per a totes les imatges"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:508
@@ -23304,8 +23302,8 @@ msgid ""
 "Check if photo should be visible to family or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
-"Seleccioneu-la si la fotografia ha de ser visible per la família o utilitzeu "
-"la pestanya Opcions de la pujada per a especificar-ho per a totes les imatges"
+"Marqueu-la si la fotografia ha de ser visible per la família o utilitzeu la "
+"pestanya Opcions de la pujada per a especificar-ho per a totes les imatges"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:511
 #, kde-format
@@ -23313,7 +23311,7 @@ msgid ""
 "Check if photo should be visible to friends or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
-"Seleccioneu-la si la fotografia ha de ser visible pels amics o utilitzeu la "
+"Marqueu-la si la fotografia ha de ser visible pels amics o utilitzeu la "
 "pestanya Opcions de la pujada per a especificar-ho per a totes les imatges"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:514
@@ -23648,7 +23646,7 @@ msgstr "Afig etiquetes per imatge"
 #, kde-format
 msgid "If checked, you can set extra tags for each image in the File List tab"
 msgstr ""
-"Si se selecciona, podreu establir etiquetes addicionals per a cada imatge en "
+"Si està marcada, podreu establir etiquetes addicionals per a cada imatge en "
 "la pestanya de la llista de fitxers"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:137
@@ -29891,8 +29889,8 @@ msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr ""
-"Si se selecciona, els fitxers s'eliminaran definitivament en lloc de "
-"moure'ls cap a dins de la paperera."
+"Si està marcada, els fitxers s'eliminaran definitivament en lloc de moure'ls "
+"cap a dins de la paperera."
 
 #: core/libs/dialogs/deletedialog.cpp:287
 #, kde-format
@@ -29901,10 +29899,10 @@ msgid ""
 "of being placed in the Trash.</p><p><em>Use this option with caution</em>: "
 "most filesystems are unable to undelete deleted items reliably.</p>"
 msgstr ""
-"<p>Si se selecciona esta casella, els elements s'<b>eliminaran "
-"definitivament</b> en lloc d'ubicar-los a dins de la paperera.</"
-"p><p><em>Utilitzeu esta opció amb compte</em>: la majoria de sistemes de "
-"fitxers no poden recuperar amb fiabilitat els elements suprimits.</p>"
+"<p>Si està marcada, els elements s'<b>eliminaran definitivament</b> en lloc "
+"d'ubicar-los a dins de la paperera.</p><p><em>Utilitzeu esta opció amb "
+"compte</em>: la majoria de sistemes de fitxers no poden recuperar amb "
+"fiabilitat els elements suprimits.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:293
 #, kde-format
@@ -29922,7 +29920,7 @@ msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "and permanently deleted."
 msgstr ""
-"Si se selecciona, no es tornarà a mostrar este diàleg i els elements se "
+"Si està marcada, no es tornarà a mostrar este diàleg i els elements se "
 "suprimiran directament i permanentment."
 
 #: core/libs/dialogs/deletedialog.cpp:361
@@ -29931,8 +29929,8 @@ msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly and permanently deleted."
 msgstr ""
-"Si se selecciona esta casella, no es tornarà a mostrar este diàleg i els "
-"elements se suprimiran directament i permanentment."
+"Si està marcada, no es tornarà a mostrar este diàleg i els elements se "
+"suprimiran directament i permanentment."
 
 #: core/libs/dialogs/deletedialog.cpp:366
 #, kde-format
@@ -29940,7 +29938,7 @@ msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "moved to the Trash."
 msgstr ""
-"Si se selecciona, no es tornarà a mostrar este diàleg i els elements es "
+"Si està marcada, no es tornarà a mostrar este diàleg i els elements es "
 "mouran directament cap a dins de la paperera."
 
 #: core/libs/dialogs/deletedialog.cpp:368
@@ -29949,8 +29947,8 @@ msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly moved to the Trash."
 msgstr ""
-"Si se selecciona esta casella, no es tornarà a mostrar este diàleg i els "
-"elements es mouran directament cap a dins de la paperera."
+"Si està marcada, no es tornarà a mostrar este diàleg i els elements es "
+"mouran directament cap a dins de la paperera."
 
 #: core/libs/dialogs/deletedialog.cpp:380
 #, kde-format
@@ -38493,10 +38491,10 @@ msgid ""
 "and a 99th-percentile white point. This mode is faster than 16-bit decoding."
 "</para>"
 msgstr ""
-"<para>Si se selecciona, tots els fitxers RAW es descodificaran amb una "
+"<para>Si està marcada, tots els fitxers RAW es descodificaran amb una "
 "profunditat de color de 16 bits utilitzant una corba amb interval lineal. "
 "Per a evitar la renderització d'imatges fosques en l'editor, es recomana "
-"utilitzar la gestió del color en este mode.</para><para>Si no se selecciona, "
+"utilitzar la gestió del color en este mode.</para><para>Si no està marcada, "
 "tots els fitxers RAW es descodificaran amb una profunditat de color de 8 "
 "bits utilitzant una corba amb interval BT.709 i un 99% de punt blanc. Este "
 "mode és més ràpid que la descodificació amb 16 bits.</para>"
@@ -38945,7 +38943,7 @@ msgid ""
 "accurately, without 'pink clouds' (and blue highlights under tungsten lamps)."
 "</para>"
 msgstr ""
-"<para>Si se selecciona, les imatges amb canals sobreexposats es processaran "
+"<para>Si està marcada, les imatges amb canals sobreexposats es processaran "
 "amb més precisió, sense «núvols roses» (i llum blava intensa en làmpades de "
 "tungstè).</para>"
 
@@ -38962,7 +38960,7 @@ msgid ""
 "<para>If disable, use a fixed white level and ignore the image histogram to "
 "adjust brightness.</para>"
 msgstr ""
-"<para>Si no se selecciona, s'utilitzarà un nivell de blanc fix i s'ignorarà "
+"<para>Si no està marcada, s'utilitzarà un nivell de blanc fix i s'ignorarà "
 "l'histograma de la imatge per a ajustar la brillantor.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:421
@@ -38997,8 +38995,8 @@ msgid ""
 "automatically computed.</para>"
 msgstr ""
 "<title>Punt negre</title><para>Utilitza un valor de punt negre específic per "
-"a descodificar les imatges RAW. Si heu desseleccionat esta opció, el valor "
-"del punt negre es calcularà automàticament.</para>"
+"a descodificar les imatges RAW. Si heu desmarcat esta opció, el valor del "
+"punt negre es calcularà automàticament.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:444
 #, kde-kuit-format
@@ -39025,8 +39023,8 @@ msgid ""
 "automatically computed.</para>"
 msgstr ""
 "<title>Punt blanc</title><para>Utilitza un valor de punt blanc específic per "
-"a descodificar les imatges RAW. Si heu desseleccionat esta opció, el valor "
-"del punt blanc es calcularà automàticament.</para>"
+"a descodificar les imatges RAW. Si heu desmarcat esta opció, el valor del "
+"punt blanc es calcularà automàticament.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:455
 #, kde-kuit-format
@@ -39616,7 +39614,7 @@ msgstr "Voleu suprimir l'etiqueta «%1»?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
-msgstr "Supressió d'etiqueta"
+msgstr "Suprimiu l'etiqueta"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:383
 #, kde-format
@@ -39896,8 +39894,8 @@ msgstr[1] "Voleu suprimir les etiquetes %2?"
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
-msgstr[0] "Supressió d'etiqueta"
-msgstr[1] "Supressió d'etiquetes"
+msgstr[0] "Suprimiu l'etiqueta"
+msgstr[1] "Suprimiu les etiquetes"
 
 #: core/libs/tags/manager/tagsmanager.cpp:486
 #, kde-format
@@ -41927,7 +41925,7 @@ msgstr "Restablix als valors predeterminats"
 #, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
-msgstr "Navegació a %1"
+msgstr "Navegueu a %1"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:59
 #, kde-format
@@ -42049,8 +42047,8 @@ msgstr "Tipus de lletra"
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font family settings."
 msgstr ""
-"Seleccioneu esta casella per a canviar la configuració de la família del "
-"tipus de lletra."
+"Marqueu esta casella de selecció per a canviar la configuració de la família "
+"del tipus de lletra."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:266
 #, kde-format
@@ -42075,8 +42073,8 @@ msgstr "Estil del tipus de lletra"
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font style settings."
 msgstr ""
-"Seleccioneu esta casella per a canviar la configuració de l'estil del tipus "
-"de lletra."
+"Marqueu esta casella de selecció per a canviar la configuració de l'estil "
+"del tipus de lletra."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:289
 #, kde-format
@@ -42101,8 +42099,8 @@ msgstr "Mida"
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font size settings."
 msgstr ""
-"Seleccioneu esta casella per a canviar la configuració de la mida del tipus "
-"de lletra."
+"Marqueu esta casella de selecció per a canviar la configuració de la mida "
+"del tipus de lletra."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:313
 #, kde-format
@@ -43382,12 +43380,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Desenvolupador (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Configura les notificacions"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -43468,64 +43466,64 @@ msgstr "Pestanya següent de la barra lateral dreta"
 msgid "Show Statusbar"
 msgstr "Mostra la barra d'estat"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:232
+#: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
 msgid "Size: %1"
 msgstr "Mida: %1"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:59
+#: core/libs/widgets/mainview/fullscreensettings.cpp:52
 #, kde-format
 msgid "Full-screen Options"
 msgstr "Opcions de la pantalla completa"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:67
+#: core/libs/widgets/mainview/fullscreensettings.cpp:60
 #, kde-format
 msgid "H&ide toolbars"
 msgstr "&Oculta les barres d'eines"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:68
+#: core/libs/widgets/mainview/fullscreensettings.cpp:61
 #, kde-format
 msgid "Hide all toolbars when window switch in full-screen mode."
 msgstr ""
 "Oculta les barres d'eines quan la finestra canvie al mode de pantalla "
 "completa."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:70
+#: core/libs/widgets/mainview/fullscreensettings.cpp:63
 #, kde-format
 msgid "Hide &thumbbar"
 msgstr "Oculta la barra de &miniatures"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:71
+#: core/libs/widgets/mainview/fullscreensettings.cpp:64
 #, kde-format
 msgid "Hide thumbbar view when window switch in full-screen mode."
 msgstr ""
 "Oculta la barra de miniatures quan la finestra canvie al mode de pantalla "
 "completa."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:73
+#: core/libs/widgets/mainview/fullscreensettings.cpp:66
 #, kde-format
 msgid "Hide &sidebars"
 msgstr "Oculta les barres &laterals"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:74
+#: core/libs/widgets/mainview/fullscreensettings.cpp:67
 #, kde-format
 msgid "Hide all side-bars when window switch in full-screen mode."
 msgstr ""
 "Oculta les barres laterals quan la finestra canvie al mode de pantalla "
 "completa."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:76
+#: core/libs/widgets/mainview/fullscreensettings.cpp:69
 #, kde-format
 msgid "Hide st&atusbar"
 msgstr "Oculta la barra d'est&at"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:77
+#: core/libs/widgets/mainview/fullscreensettings.cpp:70
 #, kde-format
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr ""
 "Oculta la barra d'estat quan la finestra canvie al mode de pantalla completa."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1232
+#: core/libs/widgets/mainview/thememanager_p.cpp:1310
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -43556,31 +43554,31 @@ msgstr "Visor d'XMP"
 msgid "ExifTool viewer"
 msgstr "Visor ExifTool"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:94
+#: core/libs/widgets/metadata/config/metadataselector.cpp:90
 #, kde-format
 msgctxt "@title: metadata properties"
 msgid "Name"
 msgstr "Nom"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:95
+#: core/libs/widgets/metadata/config/metadataselector.cpp:91
 #, kde-format
 msgctxt "@title: metadata properties"
 msgid "Description"
 msgstr "Descripció"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:287
+#: core/libs/widgets/metadata/config/metadataselector.cpp:279
 #, kde-format
 msgctxt "@action: metadata selector"
 msgid "Select All"
 msgstr "Selecciona-ho tot"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:288
+#: core/libs/widgets/metadata/config/metadataselector.cpp:280
 #, kde-format
 msgctxt "@action: metadata selector"
 msgid "Clear"
 msgstr "Neteja"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:289
+#: core/libs/widgets/metadata/config/metadataselector.cpp:281
 #, kde-format
 msgctxt "@action: metadata selector"
 msgid "Default"
@@ -43673,7 +43671,7 @@ msgid "Open Setup Dialog..."
 msgstr "Obri el diàleg de configuració..."
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
-#: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:138
+#: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:134
 #, kde-format
 msgid ""
 "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</p>"
@@ -44305,53 +44303,53 @@ msgctxt "@info: metadata to text"
 msgid "File name: %1 (%2)"
 msgstr "Nom de fitxer: %1 (%2)"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:381
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:383
 #, kde-format
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
 msgstr "Guardeu la informació d'ExifTool"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:72
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:68
 #, kde-format
 msgid "Standard Exif Tags"
 msgstr "Etiquetes Exif estàndard"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:171
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:160
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:168
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:186
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:167
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:156
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:164
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:182
 #, kde-format
 msgid "No description available"
 msgstr "No hi ha disponible cap descripció"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:179
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:176
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:175
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:172
 #, kde-format
 msgid "EXIF File to Save"
 msgstr "Fitxer que es guardarà amb l'Exif"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:180
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:177
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:176
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:173
 #, kde-format
 msgid "EXIF binary Files (*.exif)"
 msgstr "Fitxers binaris Exif (*.exif)"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:63
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:59
 #, kde-format
 msgid "IPTC Records"
 msgstr "Registres IPTC"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:168
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:164
 #, kde-format
 msgid "IPTC File to Save"
 msgstr "Fitxer que es guardarà amb l'IPTC"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:169
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:165
 #, kde-format
 msgid "IPTC binary Files (*.iptc)"
 msgstr "Fitxers binaris IPTC (*.iptc)"
 
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:69
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:65
 #, kde-format
 msgid "MakerNote Exif Tags"
 msgstr "Etiquetes Exif de les notes del fabricant"
@@ -44534,23 +44532,23 @@ msgstr "Atributs d'ImageMagick"
 msgid "Image Magick Properties"
 msgstr "Propietats d'ImageMagick"
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:334
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:336
 #, kde-format
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"
 msgstr "Nom de fitxer: %1 (%2)"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:89
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:85
 #, kde-format
 msgid "XMP Schema"
 msgstr "Esquema XMP"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:194
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:190
 #, kde-format
 msgid "XMP File to Save"
 msgstr "Fitxer que es guardarà amb l'XMP"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:195
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:191
 #, kde-format
 msgid "XMP text Files (*.xmp)"
 msgstr "Fitxers de text amb l'XMP (*.xmp)"
@@ -44591,7 +44589,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Selecció"
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:568
+#: core/libs/widgets/metadata/labels/ratingwidget.cpp:570
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
@@ -49961,7 +49959,7 @@ msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
 "size on disk."
 msgstr ""
-"Seleccioneu ací si les noves imatges carregades s'ordenaran per la seua "
+"Seleccioneu ací si les imatges noves carregades s'ordenaran per la seua "
 "data, nom o mida del fitxer."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
@@ -49975,8 +49973,8 @@ msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
 "order."
 msgstr ""
-"Si se selecciona esta opció, les noves imatges carregades s'ordenaran en "
-"ordre descendent."
+"Si està marcada, les imatges noves carregades s'ordenaran en ordre "
+"descendent."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:173
 #, kde-format
@@ -55570,7 +55568,7 @@ msgstr "Parada d'autobús"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:548
 #, kde-format
 msgid "Car Sharing"
-msgstr "Compartició de cotxes"
+msgstr "Compartiu cotxes"
 
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:549
 #, kde-format
@@ -56924,12 +56922,12 @@ msgstr "&Elimina els punts de mesura"
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:55
 #, kde-format
 msgid "Navigation"
-msgstr "Navegació"
+msgstr "Navegueu"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:60
 #, kde-format
 msgid "&Navigation"
-msgstr "&Navegació"
+msgstr "&Navegueu"
 
 #: core/utilities/geolocation/marble/plugins/render/navigation/NavigationFloatItem.cpp:75
 #, kde-format
@@ -59018,7 +59016,7 @@ msgstr ""
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:108
 #, kde-format
 msgid "If this option is enabled, the original image will be shown."
-msgstr "Si se selecciona esta opció, es mostrarà la imatge original."
+msgstr "Si està marcada, es mostrarà la imatge original."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:109
 #, kde-format
@@ -59032,9 +59030,9 @@ msgid ""
 "contiguous area of the image will be shown, with one half from the original "
 "image, the other half from the target image."
 msgstr ""
-"Si se selecciona esta opció, es dividirà verticalment l'àrea de vista "
-"prèvia. Es mostrarà una àrea contigua de la imatge, amb la imatge original "
-"en una meitat, i la imatge final en l'altra meitat."
+"Si està marcada, l'àrea de vista prèvia es dividirà verticalment. Es "
+"mostrarà una àrea contigua de la imatge, amb la imatge original en una "
+"meitat, i la imatge final en l'altra meitat."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:122
 #, kde-format
@@ -59048,9 +59046,9 @@ msgid ""
 "contiguous area of the image will be shown, with one half from the original "
 "image, the other half from the target image."
 msgstr ""
-"Si se selecciona esta opció, es dividirà horitzontalment l'àrea de vista "
-"prèvia. Es mostrarà una àrea contigua de la imatge, amb la imatge original "
-"en una meitat, i la imatge final en l'altra meitat."
+"Si està marcada, l'àrea de vista prèvia es dividirà horitzontalment. Es "
+"mostrarà una àrea contigua de la imatge, amb la imatge original en una "
+"meitat, i la imatge final en l'altra meitat."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:135
 #, kde-format
@@ -59063,9 +59061,9 @@ msgid ""
 "If this option is enabled, the preview area will split vertically. The same "
 "part of the original and the target image will be shown side by side."
 msgstr ""
-"Si se selecciona esta opció, es dividirà verticalment l'àrea de vista "
-"prèvia. Es mostrarà la mateixa part de la imatge original i de la final, "
-"costat per costat."
+"Si està marcada, l'àrea de vista prèvia es dividirà verticalment. Es "
+"mostrarà la mateixa part de la imatge original i de la final, costat per "
+"costat."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:147
 #, kde-format
@@ -59078,9 +59076,9 @@ msgid ""
 "If this option is enabled, the preview area will split horizontally. The "
 "same part of the original and the target image will be shown side by side."
 msgstr ""
-"Si se selecciona esta opció, es dividirà horitzontalment l'àrea de vista "
-"prèvia. Es mostrarà la mateixa part de la imatge original i de la final, "
-"costat per costat."
+"Si està marcada, l'àrea de vista prèvia es dividirà horitzontalment. Es "
+"mostrarà la mateixa part de la imatge original i de la final, costat per "
+"costat."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:159
 #, kde-format
@@ -59091,7 +59089,7 @@ msgstr ""
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:167
 #, kde-format
 msgid "If this option is enabled, the target image will be shown."
-msgstr "Si se selecciona esta opció, es mostrarà la imatge final."
+msgstr "Si està marcada, es mostrarà la imatge final."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:168
 #, kde-format
@@ -59104,9 +59102,8 @@ msgid ""
 "If this option is enabled, the original image will be shown when the mouse "
 "is over image area; otherwise, the target image will be shown."
 msgstr ""
-"Si se selecciona esta opció, es mostrarà la imatge original quan el ratolí "
-"passe sobre l'àrea de la imatge; en cas contrari, es mostrarà la imatge "
-"final."
+"Si està marcada, es mostrarà la imatge original quan el ratolí passe sobre "
+"l'àrea de la imatge; en cas contrari, es mostrarà la imatge final."
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:179
 #, kde-format
@@ -59292,10 +59289,10 @@ msgid ""
 msgstr ""
 "Miniatures: «%1»\n"
 "Captura d'imatges: «%2»\n"
-"Supressió d'elements: «%3»\n"
+"Suprimiu els elements: «%3»\n"
 "Càrrega d'elements: «%4»\n"
 "Creació de directoris: «%5»\n"
-"Supressió de directoris: «%6»\n"
+"Suprimiu els directoris: «%6»\n"
 "\n"
 
 #: core/utilities/import/backend/gpcamera.cpp:1625
@@ -59364,10 +59361,10 @@ msgid ""
 msgstr ""
 "Miniatures: «%1»\n"
 "Captura d'imatges: «%2»\n"
-"Supressió d'elements: «%3»\n"
+"Suprimiu els elements: «%3»\n"
 "Càrrega d'elements: «%4»\n"
 "Creació de directoris: «%5»\n"
-"Supressió de directoris: «%6»\n"
+"Suprimiu els directoris: «%6»\n"
 "\n"
 
 #: core/utilities/import/backend/umscamera.cpp:587
@@ -61051,7 +61048,7 @@ msgid ""
 "below, the process may take much time and can freeze digiKam temporarily<br/"
 "> in order to make sure that no database corruption occurs.</i></qt>"
 msgstr ""
-"<qt><i>Nota: Si se selecciona, sempre es netejarà la BD del nucli. Podeu "
+"<qt><i>Nota: Si s'activa, la BD del nucli sempre es neteja. Podeu "
 "seleccionar bases de dades addicionals per a netejar-les.<br/> Si "
 "seleccioneu una de les opcions de davall, el procés pot tardar molta estona "
 "i pot congelar digiKam temporalment<br/> per tal d'assegurar que no es "
@@ -63342,9 +63339,9 @@ msgid ""
 msgstr ""
 "Establiu esta opció per a representar la vista d'icona amb una mida gran de "
 "les miniatures en cas que s'utilitze un monitor 4K, per exemple.\n"
-"De manera predeterminada, esta opció està desseleccionada i la mida màxima "
-"de les miniatures estarà limitada a 256x256 píxels. Quan se selecciona esta "
-"opció, la mida de les miniatures es podrà ampliar fins a 512x512 píxels.\n"
+"De manera predeterminada, esta opció està desmarcada i la mida màxima de les "
+"miniatures estarà limitada a 256x256 píxels. Quan es marca esta opció, la "
+"mida de les miniatures es podrà ampliar fins a 512x512 píxels.\n"
 "Esta opció emmagatzemarà més dades en la base de dades de les miniatures i "
 "utilitzarà més memòria del sistema. Cal reiniciar digiKam perquè tinga "
 "efecte, i cal processar l'opció «Reconstruïx les miniatures» del menú "
@@ -63471,8 +63468,8 @@ msgstr ""
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
 msgstr ""
-"Desseleccioneu-la si no voleu convertir la vista prèvia d'imatges de 16 bits "
-"a 8 bits."
+"Desactiveu açò si no voleu convertir la vista prèvia d'imatges de 16 bits a "
+"8 bits."
 
 #: core/utilities/setup/album/setupalbumview.cpp:296
 #, kde-format
@@ -63485,8 +63482,8 @@ msgstr ""
 #, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
-"Desseleccioneu-la si no voleu canviar l'escala de les imatges xicotetes per "
-"a ajustar-les a la finestra."
+"Desmarqueu-la si no voleu canviar l'escala de les imatges xicotetes per a "
+"ajustar-les a la finestra."
 
 #: core/utilities/setup/album/setupalbumview.cpp:299
 #: core/utilities/setup/camera/setupcamera.cpp:505
@@ -63500,7 +63497,7 @@ msgstr "Mostra les icones i el text damunt de la vista prèvia"
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
 msgstr ""
-"Desseleccioneu-la si no voleu veure icones i text en la vista prèvia de la "
+"Desactiveu açò si no voleu veure icones i text en la vista prèvia de la "
 "imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:317
@@ -64774,11 +64771,11 @@ msgid ""
 "components match the condition in the same time. Otherwise, indicators are "
 "turned on when one of the color components matches the condition."
 msgstr ""
-"Si se selecciona esta opció, els indicadors de sobreexposició i subexposició "
-"només es mostraran quan coincidisquen amb el blanc i el negre purs, donat "
-"que tots els components del color coincidiran amb la condició en el mateix "
-"moment. En cas contrari, els indicadors s'activaran quan un dels components "
-"del color coincidisquen amb la condició."
+"Si està marcada, els indicadors de sobreexposició i subexposició només es "
+"mostraran quan coincidisquen amb el blanc i el negre purs, donat que tots "
+"els components del color coincidiran amb la condició en el mateix moment. En "
+"cas contrari, els indicadors s'activaran quan un dels components del color "
+"coincidisquen amb la condició."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:178
 #, kde-format
@@ -64817,9 +64814,9 @@ msgid ""
 "files</li><li>Unchecked: Default settings are used when saving image files</"
 "li></ul>"
 msgstr ""
-"<ul><li>Seleccionada: quan es guarden fitxers d'imatge, apareix un diàleg on "
-"es poden canviar la configuració</li><li>Desseleccionada: quan es guarden "
-"fitxers d'imatge s'utilitza la configuració predeterminada</li></ul>"
+"<ul><li>Marcada: quan es guarden fitxers d'imatge, apareix un diàleg on es "
+"poden canviar la configuració</li><li>Desmarcada: quan es guarden fitxers "
+"d'imatge s'utilitza la configuració predeterminada</li></ul>"
 
 #: core/utilities/setup/editor/setupraw.cpp:91
 #, kde-format
@@ -65443,10 +65440,10 @@ msgid ""
 "no longer be uniquely assigned and will be used for both images, which can "
 "lead to metadata problems."
 msgstr ""
-"Només hauríeu de seleccionar esta opció si esteu intercanviant metadades "
-"d'imatge amb programes que utilitzen el format lateral NOMBASE.xmp. Si teniu "
-"imatges amb el mateix nom base (p. ex., Imatge.CR2 i Imatge.JPG) aleshores "
-"el lateral pot ja no estar assignat de manera única i s'utilitzarà per a les "
+"Només hauríeu de marcar esta opció si esteu intercanviant metadades d'imatge "
+"amb programes que utilitzen el format lateral NOMBASE.xmp. Si teniu imatges "
+"amb el mateix nom base (p. ex., Imatge.CR2 i Imatge.JPG) aleshores el "
+"lateral pot ja no estar assignat de manera única i s'utilitzarà per a les "
 "dues imatges, la qual cosa pot provocar problemes de metadades."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:284
@@ -65476,7 +65473,7 @@ msgstr ""
 "Amb formats RAW diferents, hi ha problemes coneguts que poden comportar la "
 "corrupció dels fitxers RAW.\n"
 "Si decidiu fer-ho, feu una còpia de seguretat dels fitxers RAW. Vos "
-"recomanem fermament no seleccionar esta opció."
+"recomanem fermament no marcar esta opció."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:315
 #, kde-format
@@ -65803,12 +65800,11 @@ msgid ""
 "introduce some dysfunctions with applications which use file timestamps "
 "properties to detect file modifications automatically."
 msgstr ""
-"Desseleccioneu esta opció per a no actualitzar les marques de temps dels "
-"fitxers quan es canvien els fitxers i en actualitzar les metadades o les "
-"dades de la imatge. Nota: En desseleccionar esta opció es poden presentar "
-"algunes disfuncions amb les aplicacions que utilitzen les propietats de les "
-"marques de temps dels fitxers per a detectar automàticament les "
-"modificacions."
+"Desmarqueu esta opció per a no actualitzar les marques de temps dels fitxers "
+"quan es canvien els fitxers i en actualitzar les metadades o les dades de la "
+"imatge. Nota: En desmarcar esta opció es poden presentar algunes disfuncions "
+"amb les aplicacions que utilitzen les propietats de les marques de temps "
+"dels fitxers per a detectar automàticament les modificacions."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:155
 #, kde-format
@@ -65825,10 +65821,10 @@ msgid ""
 "last modified timestamp has changed, a rescan of that file will be performed "
 "when digiKam starts."
 msgstr ""
-"Seleccionant esta opció es forçarà que digiKam torne a explorar els fitxers "
-"que s'han modificat fora de digiKam. Si un fitxer ha canviat la seua mida o "
-"si la marca de temps de l'última modificació ha canviat, s'executarà una "
-"nova exploració d'este fitxer quan s'inicie digiKam."
+"Marcant esta opció es forçarà que digiKam torne a explorar els fitxers que "
+"s'han modificat fora de digiKam. Si un fitxer ha canviat la seua mida o si "
+"la marca de temps de l'última modificació ha canviat, s'executarà una nova "
+"exploració d'este fitxer quan s'inicie digiKam."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
@@ -65977,8 +65973,8 @@ msgid ""
 "not enabled, these files will be rotated by flag."
 msgstr ""
 "Per a alguns formats de fitxer s'aplica la compressió amb pèrdua, es perdran "
-"dades cada vegada que es gire el contingut. Seleccioneu esta opció per a "
-"permetre el gir amb pèrdua. Si no se selecciona, estos fitxers seran girats "
+"dades cada vegada que es gire el contingut. Marqueu esta opció per a "
+"permetre el gir amb pèrdua. Si no està marcada, estos fitxers seran girats "
 "per etiqueta."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:81
@@ -66108,7 +66104,7 @@ msgid ""
 msgstr ""
 "Establiu esta opció per a crear els fitxers laterals XMP en un format de nom "
 "de fitxer compatible (BASENAME.xmp) utilitzat per molts programes "
-"comercials. No seleccioneu esta opció per a Darktable."
+"comercials. No marqueu esta opció per a Darktable."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
 #, kde-format
@@ -66372,7 +66368,7 @@ msgstr ""
 "interfície principal de digiKam. Si l'ordinador és prou ràpid, açò no tindrà "
 "cap efecte en la usabilitat de digiKam mentre estiga explorant. Si les "
 "col·leccions són enormes o si utilitzeu una base de dades remota, açò pot "
-"presentar una latència baixa, i es recomana desseleccionar esta opció i "
+"presentar una latència baixa, i es recomana desmarcar esta opció i "
 "planificar una exploració manual via l'eina de manteniment en el moment "
 "apropiat."
 
@@ -66393,7 +66389,7 @@ msgstr ""
 "Establiu esta opció per a accelerar significativament l'exploració.\n"
 "S'han trobat elements nous, suprimits així com canviats de nom. Per a "
 "trobar\n"
-"els elements que hagen canviat, esta opció haurà d'estar desseleccionada."
+"els elements que hagen canviat, esta opció haurà d'estar desmarcada."
 
 #: core/utilities/setup/misc/setupmisc.cpp:83
 #, kde-format
@@ -66432,7 +66428,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:92
 #, kde-format
 msgid "Initially select the first item in the album"
-msgstr ""
+msgstr "Seleccioneu inicialment el primer element de l'àlbum"
 
 #: core/utilities/setup/misc/setupmisc.cpp:93
 #, kde-format
@@ -67773,15 +67769,3 @@ msgstr "Elements d'àlbum"
 #, kde-format
 msgid "Import Items"
 msgstr "Importa els elements"
-
-#~ msgctxt "@title:menu open with desktop application"
-#~ msgid "Open With"
-#~ msgstr "Obri amb"
-
-#~ msgctxt "@item:inmenu open with other application"
-#~ msgid "Other..."
-#~ msgstr "Altres..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "Open With..."
-#~ msgstr "Obri amb..."

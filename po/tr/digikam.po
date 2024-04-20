@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-19 01:45+0000\n"
+"POT-Creation-Date: 2024-04-20 01:43+0000\n"
 "PO-Revision-Date: 2024-04-16 06:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -42927,12 +42927,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Geliştirici (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
 #, kde-format
 msgid "Configure Notifications"
 msgstr "Bildirimleri Yapılandır"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -43013,57 +43013,57 @@ msgstr "Sonraki Sağ Kenar Çubuğu Sekmesi"
 msgid "Show Statusbar"
 msgstr "Durum Çubuğunu Göster"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:232
+#: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
 msgid "Size: %1"
 msgstr "Boyut: %1"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:59
+#: core/libs/widgets/mainview/fullscreensettings.cpp:52
 #, kde-format
 msgid "Full-screen Options"
 msgstr "Tam Ekran Seçenekleri"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:67
+#: core/libs/widgets/mainview/fullscreensettings.cpp:60
 #, kde-format
 msgid "H&ide toolbars"
 msgstr "Araç çubuklarını g&izle"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:68
+#: core/libs/widgets/mainview/fullscreensettings.cpp:61
 #, kde-format
 msgid "Hide all toolbars when window switch in full-screen mode."
 msgstr "Pencere tam ekran kipine geçtiğinde tüm araç çubuklarını gizleyin."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:70
+#: core/libs/widgets/mainview/fullscreensettings.cpp:63
 #, kde-format
 msgid "Hide &thumbbar"
 msgstr "Küçük görsel çubuğunu &gizle"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:71
+#: core/libs/widgets/mainview/fullscreensettings.cpp:64
 #, kde-format
 msgid "Hide thumbbar view when window switch in full-screen mode."
 msgstr "Pencere tam ekran kipine geçtiğinde küçük görsel görünümünü gizleyin."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:73
+#: core/libs/widgets/mainview/fullscreensettings.cpp:66
 #, kde-format
 msgid "Hide &sidebars"
 msgstr "&Kenar çubuklarını gizle"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:74
+#: core/libs/widgets/mainview/fullscreensettings.cpp:67
 #, kde-format
 msgid "Hide all side-bars when window switch in full-screen mode."
 msgstr "Pencere tam ekran kipine geçtiğinde tüm kenar çubuklarını gizleyin."
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:76
+#: core/libs/widgets/mainview/fullscreensettings.cpp:69
 #, kde-format
 msgid "Hide st&atusbar"
 msgstr "Durum ç&ubuğunu gizle"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:77
+#: core/libs/widgets/mainview/fullscreensettings.cpp:70
 #, kde-format
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "Pencere tam ekran kipine geçtiğinde durum çubuğunu gizleyin."
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1232
+#: core/libs/widgets/mainview/thememanager_p.cpp:1310
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -43094,31 +43094,31 @@ msgstr "XMP Görüntüleyicisi"
 msgid "ExifTool viewer"
 msgstr "ExifTool Görüntüleyicisi"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:94
+#: core/libs/widgets/metadata/config/metadataselector.cpp:90
 #, kde-format
 msgctxt "@title: metadata properties"
 msgid "Name"
 msgstr "Ad"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:95
+#: core/libs/widgets/metadata/config/metadataselector.cpp:91
 #, kde-format
 msgctxt "@title: metadata properties"
 msgid "Description"
 msgstr "Açıklama"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:287
+#: core/libs/widgets/metadata/config/metadataselector.cpp:279
 #, kde-format
 msgctxt "@action: metadata selector"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:288
+#: core/libs/widgets/metadata/config/metadataselector.cpp:280
 #, kde-format
 msgctxt "@action: metadata selector"
 msgid "Clear"
 msgstr "Temizle"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:289
+#: core/libs/widgets/metadata/config/metadataselector.cpp:281
 #, kde-format
 msgctxt "@action: metadata selector"
 msgid "Default"
@@ -43210,7 +43210,7 @@ msgid "Open Setup Dialog..."
 msgstr "Kurulum İletişim Kutusunu Aç..."
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
-#: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:138
+#: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:134
 #, kde-format
 msgid ""
 "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</p>"
@@ -43840,53 +43840,53 @@ msgctxt "@info: metadata to text"
 msgid "File name: %1 (%2)"
 msgstr "Dosya adı: %1 (%2)"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:381
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:383
 #, kde-format
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
 msgstr "ExifTool Bilgisini Kaydet"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:72
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:68
 #, kde-format
 msgid "Standard Exif Tags"
 msgstr "Standart Exif Künyeleri"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:171
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:160
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:168
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:186
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:167
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:156
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:164
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:182
 #, kde-format
 msgid "No description available"
 msgstr "Kullanılabilir açıklama yok"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:179
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:176
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:175
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:172
 #, kde-format
 msgid "EXIF File to Save"
 msgstr "Kaydedilecek EXIF Dosyası"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:180
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:177
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:176
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:173
 #, kde-format
 msgid "EXIF binary Files (*.exif)"
 msgstr "EXIF İkili Dosyaları (*.exif)"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:63
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:59
 #, kde-format
 msgid "IPTC Records"
 msgstr "IPTC Kayıtları"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:168
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:164
 #, kde-format
 msgid "IPTC File to Save"
 msgstr "Kaydedilecek IPTC Dosyası"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:169
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:165
 #, kde-format
 msgid "IPTC binary Files (*.iptc)"
 msgstr "IPTC İkili Dosyaları (*.iptc)"
 
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:69
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:65
 #, kde-format
 msgid "MakerNote Exif Tags"
 msgstr "MakerNote Exif Künyeleri"
@@ -44069,23 +44069,23 @@ msgstr "ImageMagick Öznitelikleri"
 msgid "Image Magick Properties"
 msgstr "ImageMagick Özellikleri"
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:334
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:336
 #, kde-format
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"
 msgstr "Dosya adı: %1 (%2)"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:89
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:85
 #, kde-format
 msgid "XMP Schema"
 msgstr "XMP Şeması"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:194
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:190
 #, kde-format
 msgid "XMP File to Save"
 msgstr "Kaydedilecek XMP Dosyası"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:195
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:191
 #, kde-format
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP Metin Dosyaları (*.xmp)"
@@ -44126,7 +44126,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "Seç"
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:568
+#: core/libs/widgets/metadata/labels/ratingwidget.cpp:570
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"

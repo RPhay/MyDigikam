@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-19 01:45+0000\n"
+"POT-Creation-Date: 2024-04-20 01:43+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -41202,12 +41202,12 @@ msgstr ""
 msgid "Developer (2004)"
 msgstr "विकासकर्ता"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
 #, fuzzy, kde-format
 msgid "Configure Notifications"
 msgstr "संयोजना"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
 #, fuzzy, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -41289,58 +41289,58 @@ msgstr ""
 msgid "Show Statusbar"
 msgstr "प्रमाण पट्टी दर्शवा"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:232
+#: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
 msgid "Size: %1"
 msgstr "आकार : %1"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:59
+#: core/libs/widgets/mainview/fullscreensettings.cpp:52
 #, kde-format
 msgid "Full-screen Options"
 msgstr ""
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:67
+#: core/libs/widgets/mainview/fullscreensettings.cpp:60
 #, fuzzy, kde-format
 msgid "H&ide toolbars"
 msgstr "मुख्य साधनपट्टी"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:68
+#: core/libs/widgets/mainview/fullscreensettings.cpp:61
 #, kde-format
 msgid "Hide all toolbars when window switch in full-screen mode."
 msgstr ""
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:70
+#: core/libs/widgets/mainview/fullscreensettings.cpp:63
 #, kde-format
 msgid "Hide &thumbbar"
 msgstr ""
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:71
+#: core/libs/widgets/mainview/fullscreensettings.cpp:64
 #, kde-format
 msgid "Hide thumbbar view when window switch in full-screen mode."
 msgstr ""
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:73
+#: core/libs/widgets/mainview/fullscreensettings.cpp:66
 #, kde-format
 msgid "Hide &sidebars"
 msgstr ""
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:74
+#: core/libs/widgets/mainview/fullscreensettings.cpp:67
 #, kde-format
 msgid "Hide all side-bars when window switch in full-screen mode."
 msgstr ""
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:76
+#: core/libs/widgets/mainview/fullscreensettings.cpp:69
 #, fuzzy, kde-format
 #| msgid "Show scale bar"
 msgid "Hide st&atusbar"
 msgstr "प्रमाण पट्टी दर्शवा"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:77
+#: core/libs/widgets/mainview/fullscreensettings.cpp:70
 #, fuzzy, kde-format
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "मुख्य साधनपट्टी"
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1232
+#: core/libs/widgets/mainview/thememanager_p.cpp:1310
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -41372,33 +41372,33 @@ msgstr ""
 msgid "ExifTool viewer"
 msgstr "साधने"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:94
+#: core/libs/widgets/metadata/config/metadataselector.cpp:90
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: metadata properties"
 msgid "Name"
 msgstr "नाव"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:95
+#: core/libs/widgets/metadata/config/metadataselector.cpp:91
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: metadata properties"
 msgid "Description"
 msgstr "वर्णन"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:287
+#: core/libs/widgets/metadata/config/metadataselector.cpp:279
 #, fuzzy, kde-format
 msgctxt "@action: metadata selector"
 msgid "Select All"
 msgstr "सर्व निवडा"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:288
+#: core/libs/widgets/metadata/config/metadataselector.cpp:280
 #, fuzzy, kde-format
 msgctxt "@action: metadata selector"
 msgid "Clear"
 msgstr "पुसून टाका"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:289
+#: core/libs/widgets/metadata/config/metadataselector.cpp:281
 #, fuzzy, kde-format
 #| msgid "Default"
 msgctxt "@action: metadata selector"
@@ -41481,7 +41481,7 @@ msgid "Open Setup Dialog..."
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
-#: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:138
+#: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:134
 #, kde-format
 msgid ""
 "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</p>"
@@ -42132,55 +42132,55 @@ msgctxt "@info: metadata to text"
 msgid "File name: %1 (%2)"
 msgstr "फाईल नाव"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:381
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:383
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
 msgstr "माहिती"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:72
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:68
 #, fuzzy, kde-format
 #| msgid "Standard"
 msgid "Standard Exif Tags"
 msgstr "प्रमाणित"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:171
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:160
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:168
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:186
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:167
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:156
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:164
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:182
 #, kde-format
 msgid "No description available"
 msgstr "वर्णन उपलब्ध नाही"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:179
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:176
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:175
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:172
 #, kde-format
 msgid "EXIF File to Save"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:180
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:177
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:176
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:173
 #, kde-format
 msgid "EXIF binary Files (*.exif)"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:63
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:59
 #, kde-format
 msgid "IPTC Records"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:168
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:164
 #, kde-format
 msgid "IPTC File to Save"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:169
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:165
 #, kde-format
 msgid "IPTC binary Files (*.iptc)"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:69
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:65
 #, kde-format
 msgid "MakerNote Exif Tags"
 msgstr ""
@@ -42363,23 +42363,23 @@ msgstr "क्रियाप्राप्तीचे गुणोत्त�
 msgid "Image Magick Properties"
 msgstr "गुणधर्म"
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:334
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:336
 #, fuzzy, kde-format
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"
 msgstr "फाईल नाव"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:89
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:85
 #, kde-format
 msgid "XMP Schema"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:194
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:190
 #, kde-format
 msgid "XMP File to Save"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:195
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:191
 #, kde-format
 msgid "XMP text Files (*.xmp)"
 msgstr ""
@@ -42421,7 +42421,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr ""
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:568
+#: core/libs/widgets/metadata/labels/ratingwidget.cpp:570
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, fuzzy, kde-format
 msgid "Rating"

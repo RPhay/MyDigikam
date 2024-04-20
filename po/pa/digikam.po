@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-19 01:45+0000\n"
+"POT-Creation-Date: 2024-04-20 01:43+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -42678,12 +42678,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "ਡਿਵੈਲਪਰ (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:97
 #, fuzzy, kde-format
 msgid "Configure Notifications"
 msgstr "...ਸੰਰਚਨਾ"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:143
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -42769,58 +42769,58 @@ msgstr ""
 msgid "Show Statusbar"
 msgstr "ਥੰਮਨੇਲਬਾਰ ਵੇਖੋ"
 
-#: core/libs/widgets/mainview/dzoombar.cpp:232
+#: core/libs/widgets/mainview/dzoombar.cpp:222
 #, kde-format
 msgid "Size: %1"
 msgstr "ਸਾਈਜ਼: %1"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:59
+#: core/libs/widgets/mainview/fullscreensettings.cpp:52
 #, fuzzy, kde-format
 msgid "Full-screen Options"
 msgstr "ਫਾਇਲ ਮੁੜ-ਨਾਂ ਚੋਣ"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:67
+#: core/libs/widgets/mainview/fullscreensettings.cpp:60
 #, fuzzy, kde-format
 msgid "H&ide toolbars"
 msgstr "ਮੁੱਖ ਟੂਲਬਾਰ"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:68
+#: core/libs/widgets/mainview/fullscreensettings.cpp:61
 #, fuzzy, kde-format
 msgid "Hide all toolbars when window switch in full-screen mode."
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਢੰਗ 'ਚ ਟੂਲਬਾਰ ਓਹਲੇ(&i)"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:70
+#: core/libs/widgets/mainview/fullscreensettings.cpp:63
 #, kde-format
 msgid "Hide &thumbbar"
 msgstr ""
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:71
+#: core/libs/widgets/mainview/fullscreensettings.cpp:64
 #, fuzzy, kde-format
 msgid "Hide thumbbar view when window switch in full-screen mode."
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਢੰਗ 'ਚ ਥੰਬਰ ਓਹਲੇ(&t)"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:73
+#: core/libs/widgets/mainview/fullscreensettings.cpp:66
 #, kde-format
 msgid "Hide &sidebars"
 msgstr ""
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:74
+#: core/libs/widgets/mainview/fullscreensettings.cpp:67
 #, fuzzy, kde-format
 msgid "Hide all side-bars when window switch in full-screen mode."
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਢੰਗ 'ਚ ਟੂਲਬਾਰ ਓਹਲੇ(&i)"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:76
+#: core/libs/widgets/mainview/fullscreensettings.cpp:69
 #, fuzzy, kde-format
 #| msgid "Show Thumbbar"
 msgid "Hide st&atusbar"
 msgstr "ਥੰਮਨੇਲਬਾਰ ਵੇਖੋ"
 
-#: core/libs/widgets/mainview/fullscreensettings.cpp:77
+#: core/libs/widgets/mainview/fullscreensettings.cpp:70
 #, fuzzy, kde-format
 msgid "Hide statusbar when window switch in full-screen mode."
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਢੰਗ 'ਚ ਟੂਲਬਾਰ ਓਹਲੇ(&i)"
 
-#: core/libs/widgets/mainview/thememanager_p.cpp:1232
+#: core/libs/widgets/mainview/thememanager_p.cpp:1310
 #, kde-format
 msgctxt "default theme name"
 msgid "Default"
@@ -42851,35 +42851,35 @@ msgstr "XMP ਦਰਸ਼ਕ"
 msgid "ExifTool viewer"
 msgstr "ਟੂਲ(&T)"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:94
+#: core/libs/widgets/metadata/config/metadataselector.cpp:90
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: metadata properties"
 msgid "Name"
 msgstr "ਨਾਂ"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:95
+#: core/libs/widgets/metadata/config/metadataselector.cpp:91
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title: metadata properties"
 msgid "Description"
 msgstr "ਵੇਰਵਾ"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:287
+#: core/libs/widgets/metadata/config/metadataselector.cpp:279
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: metadata selector"
 msgid "Select All"
 msgstr "ਸਭ ਚੁਣੋ"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:288
+#: core/libs/widgets/metadata/config/metadataselector.cpp:280
 #, fuzzy, kde-format
 #| msgid "Clear"
 msgctxt "@action: metadata selector"
 msgid "Clear"
 msgstr "ਸਾਫ਼ ਕਰੋ"
 
-#: core/libs/widgets/metadata/config/metadataselector.cpp:289
+#: core/libs/widgets/metadata/config/metadataselector.cpp:281
 #, fuzzy, kde-format
 #| msgid "Default"
 msgctxt "@action: metadata selector"
@@ -42966,7 +42966,7 @@ msgid "Open Setup Dialog..."
 msgstr "...ਡਾਊਨਲੋਡ ਡਾਈਲਾਗ ਖੋਲ੍ਹਿਆ ਜਾਂਦਾ ਹੈ"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistview.cpp:243
-#: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:138
+#: core/libs/widgets/metadata/exiv2/metadatalistview.cpp:134
 #, kde-format
 msgid ""
 "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</p>"
@@ -43646,55 +43646,55 @@ msgctxt "@info: metadata to text"
 msgid "File name: %1 (%2)"
 msgstr "ਫਾਇਲ ਨਾਂ: %1 (%2)"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:381
+#: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:383
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
 msgstr "ਸੁਰਖੀ ਜਾਣਕਾਰੀ"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:72
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:68
 #, fuzzy, kde-format
 #| msgid "Standard EXIF Tags"
 msgid "Standard Exif Tags"
 msgstr "ਸਟੈਂਡਰਡ EXIF ਟੈਗ"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:171
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:160
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:168
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:186
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:167
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:156
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:164
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:182
 #, kde-format
 msgid "No description available"
 msgstr "ਕੋਈ ਵੇਰਵਾ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:179
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:176
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:175
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:172
 #, kde-format
 msgid "EXIF File to Save"
 msgstr "ਸੰਭਾਲਣ ਲਈ EXIF ਫਾਇਲ"
 
-#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:180
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:177
+#: core/libs/widgets/metadata/exiv2/exifwidget.cpp:176
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:173
 #, kde-format
 msgid "EXIF binary Files (*.exif)"
 msgstr "EXIF ਬਾਈਨਰੀ ਫਾਇਲਾਂ (*.exif)"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:63
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:59
 #, kde-format
 msgid "IPTC Records"
 msgstr "IPTC ਰਿਕਾਰਡ"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:168
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:164
 #, kde-format
 msgid "IPTC File to Save"
 msgstr "ਸੰਭਾਲਣ ਲਈ IPTC ਫਾਇਲ"
 
-#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:169
+#: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:165
 #, kde-format
 msgid "IPTC binary Files (*.iptc)"
 msgstr "IPTC ਬਾਈਨਰੀ ਫਾਇਲਾਂ (*.iptc)"
 
-#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:69
+#: core/libs/widgets/metadata/exiv2/makernotewidget.cpp:65
 #, fuzzy, kde-format
 #| msgid "MakerNote EXIF Tags"
 msgid "MakerNote Exif Tags"
@@ -43881,24 +43881,24 @@ msgstr "ਫਲੈਸ਼ ਮਾਰੀ ਗਈ"
 msgid "Image Magick Properties"
 msgstr "ਵਿਸ਼ੇਸ਼ਤਾ"
 
-#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:334
+#: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:336
 #, fuzzy, kde-format
 #| msgid "File name: %1 (%2)"
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"
 msgstr "ਫਾਇਲ ਨਾਂ: %1 (%2)"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:89
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:85
 #, kde-format
 msgid "XMP Schema"
 msgstr "XMP ਸਕੀਮਾ"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:194
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:190
 #, kde-format
 msgid "XMP File to Save"
 msgstr "ਸੰਭਾਲਣ ਲਈ XMP ਫਾਇਲ"
 
-#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:195
+#: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:191
 #, kde-format
 msgid "XMP text Files (*.xmp)"
 msgstr "XMP ਟੈਕਸਟ ਫਾਇਲਾਂ (*.xmp)"
@@ -43943,7 +43943,7 @@ msgctxt "@title: pick label menu"
 msgid "Pick"
 msgstr "ਚੁਣੋ"
 
-#: core/libs/widgets/metadata/labels/ratingwidget.cpp:568
+#: core/libs/widgets/metadata/labels/ratingwidget.cpp:570
 #: core/utilities/searchwindow/searchfields_createfield.cpp:160
 #, kde-format
 msgid "Rating"
