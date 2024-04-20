@@ -161,7 +161,7 @@ void DOnlineTranslator::slotParseYandexTranslate()
     {
         QString sourceCode = jsonData.value(QStringLiteral("lang")).toString();
         sourceCode         = sourceCode.left(sourceCode.indexOf(QLatin1Char('-')));
-        d->sourceLang       = language(Yandex, sourceCode);
+        d->sourceLang      = language(Yandex, sourceCode);
 
         if (d->sourceLang == NoLanguage)
         {
@@ -204,8 +204,10 @@ void DOnlineTranslator::slotRequestYandexDictionary()
 {
     // Check if language is supported (need to check here because language may be autodetected)
 
-    if (!isSupportDictionary(Yandex, d->sourceLang, d->translationLang) &&
-        !d->source.contains(QLatin1Char(' ')))
+    if (
+        !isSupportDictionary(Yandex, d->sourceLang, d->translationLang) &&
+        !d->source.contains(QLatin1Char(' '))
+       )
     {
         auto* state = qobject_cast<QState*>(sender());
         state->addTransition(new QFinalState(state->parentState()));

@@ -63,15 +63,21 @@ void DOnlineTranslator::setEngineUrl(Engine engine, const QString& url)
     switch (engine)
     {
         case LibreTranslate:
+        {
             d->libreUrl  = url;
             break;
-
+        }
+ 
         case Lingva:
+        {
             d->lingvaUrl = url;
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 
@@ -80,11 +86,15 @@ void DOnlineTranslator::setEngineApiKey(Engine engine, const QByteArray& apiKey)
     switch (engine)
     {
         case LibreTranslate:
+        {
             d->libreApiKey = apiKey;
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 
@@ -110,7 +120,7 @@ QJsonDocument DOnlineTranslator::toJson() const
         { QLatin1String("sourceTranscription"),  d->sourceTranscription      },
         { QLatin1String("sourceTranslit"),       d->sourceTranslit           },
         { QLatin1String("translation"),          d->translation              },
-        { QLatin1String("translationOptions"),   qMove(translationOptions)  },
+        { QLatin1String("translationOptions"),   qMove(translationOptions)   },
         { QLatin1String("translationTranslit"),  d->translationTranslit      },
     };
 

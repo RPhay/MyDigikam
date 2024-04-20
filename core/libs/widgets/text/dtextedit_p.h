@@ -79,7 +79,7 @@ class Q_DECL_HIDDEN DTextEdit::Private
 {
 public:
 
-    explicit Private();
+    Private() = default;
 
     /**
      * Init the text widget with the spell-checker engine (optional).
@@ -114,7 +114,7 @@ class Q_DECL_HIDDEN DPlainTextEdit::Private
 {
 public:
 
-    explicit Private();
+    Private() = default;
 
     /**
      * Init the text widget with the spell-checker engine (optional).

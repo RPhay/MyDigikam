@@ -20,7 +20,7 @@ namespace Digikam
 
 DOnlineTts::DOnlineTts(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
@@ -60,7 +60,9 @@ void DOnlineTts::generateUrls(const QString& text,
             const QString langString = languageApiCode(engine, lang);
 
             if (langString.isNull())
+            {
                 return;
+            }
 
             // Google has a limit of characters per tts request. If the query is larger, then it should be splited into several
 
@@ -98,17 +100,23 @@ void DOnlineTts::generateUrls(const QString& text,
             const QString langString = languageApiCode(engine, lang);
 
             if (langString.isNull())
+            {
                 return;
+            }
 
             const QString voiceString = voiceApiCode(engine, voice);
 
             if (voiceString.isNull())
+            {
                 return;
+            }
 
             const QString emotionString = emotionApiCode(engine, emotion);
 
             if (emotionString.isNull())
+            {
                 return;
+            }
 
             // Yandex has a limit of characters per tts request. If the query is larger, then it should be splited into several
 

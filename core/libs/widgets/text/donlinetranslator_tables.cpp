@@ -826,12 +826,16 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
                 case Tongan:
                 case Udmurt:
                 case YucatecMaya:
+                {
                     isSupported = false;
                     break;
+                }
 
                 default:
+                {
                     isSupported = true;
                     break;
+                }
             }
 
             break;
@@ -871,15 +875,19 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
                 case Yoruba:
                 case YucatecMaya:
                 case Zulu:
+                {
                     isSupported = false;
-                    break;
-
-                default:
-                    isSupported = true;
                     break;
                 }
 
-                break;
+                default:
+                {
+                    isSupported = true;
+                    break;
+                }
+            }
+
+            break;
 
         case Bing:
 
@@ -946,15 +954,19 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
                 case Yiddish:
                 case Yoruba:
                 case Zulu:
+                {
                     isSupported = false;
-                    break;
-
-                default:
-                    isSupported = true;
                     break;
                 }
 
-                break;
+                default:
+                {
+                    isSupported = true;
+                    break;
+                }
+            }
+
+            break;
 
         case LibreTranslate:
 
@@ -1069,12 +1081,16 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
                 case Yoruba:
                 case YucatecMaya:
                 case Zulu:
+                {
                     isSupported = false;
                     break;
+                }
 
                 default:
+                {
                     isSupported = true;
                     break;
+                }
             }
 
             break;
@@ -1090,6 +1106,7 @@ bool DOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
         case Google:
         {
             // Google supports transliteration for all supported languages
+
             return isSupportTranslation(Google, lang);
         }
 
@@ -1119,9 +1136,14 @@ bool DOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
                 case Telugu:
                 case Thai:
                 case Yiddish:
+                {
                     return true;
+                }
+
                 default:
+                {
                     return false;
+                }
             }
         }
 
@@ -1146,9 +1168,14 @@ bool DOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
                 case Thai:
                 case SimplifiedChinese:
                 case TraditionalChinese:
+                {
                     return true;
+                }
+
                 default:
+                {
                     return false;
+                }
             }
         }
 
@@ -1169,6 +1196,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
         case Google:
         {
             // Google supports dictionary for all supported languages
+
             return isSupportTranslation(Google, sourceLang) && isSupportTranslation(Google, translationLang);
         }
 
@@ -1182,9 +1210,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     {
                         case Belarusian:
                         case Russian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1193,9 +1226,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     switch (translationLang)
                     {
                         case Russian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1214,9 +1252,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     {
                         case English:
                         case Russian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1228,9 +1271,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         case English:
                         case Russian:
                         case Turkish:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1258,9 +1306,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         case Swedish:
                         case Turkish:
                         case Ukrainian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1271,9 +1324,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         case English:
                         case Spanish:
                         case Russian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1284,9 +1342,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         case English:
                         case Russian:
                         case Finnish:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1297,9 +1360,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         case French:
                         case English:
                         case Russian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1309,9 +1377,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     {
                         case Hungarian:
                         case Russian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1322,9 +1395,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         case English:
                         case Italian:
                         case Russian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1335,9 +1413,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         case English:
                         case Lithuanian:
                         case Russian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1349,9 +1432,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     switch (translationLang)
                     {
                         case Russian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
                 }
 
@@ -1384,9 +1472,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         case Turkish:
                         case Tatar:
                         case Ukrainian:
+                        {
                             return true;
+                        }
+
                         default:
+                        {
                             return false;
+                        }
                     }
 
                     case Turkish:
@@ -1396,9 +1489,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                             case German:
                             case English:
                             case Russian:
+                            {
                                 return true;
+                            }
+
                             default:
+                            {
                                 return false;
+                            }
                         }
                     }
 
@@ -1409,9 +1507,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                             case English:
                             case Russian:
                             case Ukrainian:
+                            {
                                 return true;
+                            }
+
                             default:
+                            {
                                 return false;
+                            }
                         }
                     }
 
@@ -1430,11 +1533,17 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
             Language secondLang;
 
             if      (sourceLang == English)
+            {
                 secondLang = translationLang;
+            }
             else if (translationLang == English)
+            {
                 secondLang = sourceLang;
+            }
             else
+            {
                 return false;
+            }
 
             switch (secondLang)
             {
@@ -1488,9 +1597,14 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                 case Urdu:
                 case Vietnamese:
                 case Welsh:
+                {
                     return true;
+                }
+
                 default:
+                {
                     return false;
+                }
             }
         }
 

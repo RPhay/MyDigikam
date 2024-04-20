@@ -39,10 +39,6 @@ void DTextEditClearButton::mousePressEvent(QMouseEvent* e)
 
 // -------------------------------------------------------------------------------
 
-DTextEdit::Private::Private()
-{
-}
-
 void DTextEdit::Private::init(DTextEdit* const parent)
 {
 
@@ -96,10 +92,6 @@ void DTextEdit::Private::init(DTextEdit* const parent)
 }
 
 // ------------------------------------------------------------------------------------------------
-
-DPlainTextEdit::Private::Private()
-{
-}
 
 void DPlainTextEdit::Private::init(DPlainTextEdit* const parent)
 {
