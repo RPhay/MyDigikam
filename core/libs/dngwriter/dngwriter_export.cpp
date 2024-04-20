@@ -101,7 +101,11 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
         if (!useCompressedPreview)
         {
             dng_image_preview* imagePreview = dynamic_cast<dng_image_preview*>(preview.Get());
-            imagePreview->SetImage(host, previewImage.Release());
+
+            if (imagePreview)
+            {
+                imagePreview->SetImage(host, previewImage.Release());
+            }
         }
         else
         {
