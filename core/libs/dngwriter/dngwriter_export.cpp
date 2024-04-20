@@ -38,7 +38,6 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
 
     // Compute demosaiced image (used by preview and thumbnail)
 
-    negative->SetStage3Gain(0.6);
     negative->BuildStage3Image(host);
 
     negative->SynchronizeMetadata();
