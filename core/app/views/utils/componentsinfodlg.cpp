@@ -19,6 +19,7 @@
 #include <QApplication>
 #include <QString>
 #include <QMap>
+#include <QSqlDatabase>
 
 // KDE includes
 
@@ -188,6 +189,10 @@ public:
         // TODO: add sqlite versions here? Could be useful for debugging sqlite problems..
         // Use this sqlite request; https://www.sqlite.org/lang_corefunc.html#sqlite_version
 
+        new QTreeWidgetItem(m_libraries, QStringList() <<
+                            i18nc("@item: component info", "Qt Sql drivers") <<         QSqlDatabase::drivers().join(QLatin1Char(' ')));
+
+
         QString dbBe = ApplicationSettings::instance()->getDbEngineParameters().databaseType;
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc("@item: component info", "Database backend") <<       dbBe);
@@ -302,9 +307,7 @@ public:
 
     }
 
-    ~ComponentsInfoDlg()
-    {
-    }
+    ~ComponentsInfoDlg() = default;
 };
 
 // --------------------------------------------------------
