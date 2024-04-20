@@ -129,7 +129,7 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
 
     dng_image_writer writer;
 
-#if defined __MINGW32__ // krazy:exclude=cpp
+#ifdef __MINGW32__ // krazy:exclude=cpp
 
     dng_file_stream filestream(QFile::encodeName(dngFilePath).constData(), true);
 
