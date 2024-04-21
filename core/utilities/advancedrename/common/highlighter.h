@@ -18,9 +18,7 @@
 // Qt includes
 
 #include <QSyntaxHighlighter>
-#include <QRegularExpression>
-
-class QTextDocument;
+#include <QTextDocument>
 
 namespace Digikam
 {
@@ -50,33 +48,8 @@ private:
 
 private:
 
-    enum PatternType
-    {
-        OptionPattern = 0,
-        ModifierPattern,
-        QuotedTextPattern,
-        ParameterPattern
-    };
-
-    struct HighlightingRule
-    {
-        PatternType                type;
-        QRegularExpression         pattern;
-        QTextCharFormat            format;
-    };
-
-private:
-
-    QVector<HighlightingRule> highlightingRules;
-    HighlightingRule          quotationRule;
-
-    QTextCharFormat           optionFormat;
-    QTextCharFormat           parameterFormat;
-    QTextCharFormat           modifierFormat;
-    QTextCharFormat           quotationFormat;
-    QTextCharFormat           errorFormat;
-
-    Parser* const             parser;
+    class Private;
+    Private* const d = nullptr;
 };
 
 } // namespace Digikam

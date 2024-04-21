@@ -50,42 +50,28 @@ class Q_DECL_HIDDEN AdvancedRenameWidget::Private
 
 public:
 
-    explicit Private() :
-        configExpandedStateDefault  (true),
-        tooltipToggleButton         (nullptr),
-        modifiersToolButton         (nullptr),
-        optionsButton               (nullptr),
-        modifiersButton             (nullptr),
-        btnContainer                (nullptr),
-        tooltipDialog               (nullptr),
-        renameInput                 (nullptr),
-        parser                      (nullptr),
-        optionsLabel                (nullptr),
-        controlWidgetsMask          (AdvancedRenameWidget::DefaultControls),
-        layoutStyle                 (AdvancedRenameWidget::LayoutNormal)
-    {
-    }
+    Private() = default;
 
     static const QString configGroupName;
     static const QString configExpandedStateEntry;
 
-    bool                 configExpandedStateDefault;
+    bool                 configExpandedStateDefault = true;
 
-    QToolButton*         tooltipToggleButton;
-    QToolButton*         modifiersToolButton;
+    QToolButton*         tooltipToggleButton        = nullptr;
+    QToolButton*         modifiersToolButton        = nullptr;
 
-    QPushButton*         optionsButton;
-    QPushButton*         modifiersButton;
+    QPushButton*         optionsButton              = nullptr;
+    QPushButton*         modifiersButton            = nullptr;
 
-    QWidget*             btnContainer;
+    QWidget*             btnContainer               = nullptr;
 
-    TooltipDialog*       tooltipDialog;
-    AdvancedRenameInput* renameInput;
-    Parser*              parser;
-    DLabelExpander*      optionsLabel;
+    TooltipDialog*       tooltipDialog              = nullptr;
+    AdvancedRenameInput* renameInput                = nullptr;
+    Parser*              parser                     = nullptr;
+    DLabelExpander*      optionsLabel               = nullptr;
 
-    CWMask               controlWidgetsMask;
-    LStyle               layoutStyle;
+    CWMask               controlWidgetsMask         = AdvancedRenameWidget::DefaultControls;
+    LStyle               layoutStyle                = AdvancedRenameWidget::LayoutNormal;
 };
 
 const QString AdvancedRenameWidget::Private::configGroupName(QLatin1String("AdvancedRename Widget"));
@@ -181,11 +167,11 @@ void AdvancedRenameWidget::setControlWidgets(ControlWidgets mask)
     // we need a parser and at least one renaming option to successfully use
     // this widget.
 
-    bool enable       = d->parser && !(d->parser->options().isEmpty());
+    bool enable           = d->parser && !(d->parser->options().isEmpty());
 
     // enable the modifier toolbutton if environment has been set up correctly
 
-    bool enableModBtn = enable && !(d->parser->modifiers().isEmpty());
+    bool enableModBtn     = enable && !(d->parser->modifiers().isEmpty());
 
     d->renameInput->setEnabled(enable);
     d->tooltipToggleButton->setVisible(enable && (mask & ToolTipButton));

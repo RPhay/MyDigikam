@@ -27,8 +27,8 @@ class Q_DECL_HIDDEN DynamicLayout::Private
 public:
 
     explicit Private(int hSpacing, int vSpacing)
-      : hSpace      (hSpacing),
-        vSpace      (vSpacing)
+        : hSpace(hSpacing),
+          vSpace(vSpacing)
     {
     }
 
@@ -198,7 +198,8 @@ int DynamicLayout::reLayout(const QRect& rect, bool testOnly) const
 
     int maxButtonWidth  = d->minItemWidth + ((effectiveRect.width() - (maxButtonsInRow * buttonWidth)) / maxButtonsInRow);
 
-    int currentBtnWidth = (maxButtonsInRow >= d->itemList.count()) ? buttonWidth : maxButtonWidth;
+    int currentBtnWidth = (maxButtonsInRow >= d->itemList.count()) ? buttonWidth
+                                                                   : maxButtonWidth;
 
     // --------------------------------------------------------
 
@@ -207,7 +208,10 @@ int DynamicLayout::reLayout(const QRect& rect, bool testOnly) const
         int nextX = x + currentBtnWidth + d->spaceX;
 
         // cppcheck-suppress knownConditionTrueFalse
-        if (((nextX - d->spaceX) > effectiveRect.right()) && (lineHeight > 0))
+        if (
+            ((nextX - d->spaceX) > effectiveRect.right()) &&
+            (lineHeight > 0)
+           )
         {
             x          = effectiveRect.x();
             y          = y + lineHeight + d->spaceY;

@@ -67,27 +67,18 @@ public:
      * @endcode
      * This id will be emitted as a signal by slotTriggered().
      */
-    QString id()
-    {
-        return m_id;
-    };
+    QString id()            const;
 
     /**
      * @return The description of the token. It can be used for example in the tooltip of the AdvancedRenameWidget.
      */
-    QString description()
-    {
-        return m_description;
-    };
+    QString description()   const;
 
     /**
      * @return The action of the token. This action can be connected to a button or menu item. If triggered, high-level classes
      * like AdvancedRenameWidget can connect to the signal and display the emitted text in the line edit input widget.
      */
-    QAction* action()
-    {
-        return m_action;
-    };
+    QAction* action()       const;
 
 Q_SIGNALS:
 
@@ -112,9 +103,8 @@ private:
 
 private:
 
-    QString  m_id;
-    QString  m_description;
-    QAction* m_action       = nullptr;
+    class Private;
+    Private* const d = nullptr;
 };
 
 typedef QList<Token*> TokenList;

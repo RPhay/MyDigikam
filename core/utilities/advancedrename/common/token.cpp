@@ -21,27 +21,55 @@
 namespace Digikam
 {
 
-Token::Token(const QString& id, const QString& description)
-    : QObject      (nullptr),
-      m_id         (id),
-      m_description(description)
+class Q_DECL_HIDDEN Token::Private
 {
-    m_action = new QAction(this);
-    m_action->setText(id);
-    m_action->setToolTip(description);
+public:
 
-    connect(m_action, SIGNAL(triggered()),
+    Private() = default;
+
+    QString  id;
+    QString  description;
+    QAction* action       = nullptr;
+};
+
+Token::Token(const QString& id, const QString& description)
+    : QObject(nullptr)
+{
+    d->id          = id;
+    d->description = description;
+
+    d->action = new QAction(this);
+    d->action->setText(id);
+    d->action->setToolTip(description);
+
+    connect(d->action, SIGNAL(triggered()),
             this, SLOT(slotTriggered()));
 }
 
 Token::~Token()
 {
-    delete m_action;
+    delete d->action;
+    delete d;
 }
 
 void Token::slotTriggered()
 {
-    Q_EMIT signalTokenTriggered(m_id);
+    Q_EMIT signalTokenTriggered(d->id);
+}
+
+QString Token::id() const
+{
+    return d->id;
+}
+
+QString Token::description() const
+{
+    return d->description;
+}
+
+QAction* Token::action() const
+{
+    return d->action;
 }
 
 } // namespace Digikam

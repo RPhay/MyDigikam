@@ -70,26 +70,26 @@ public:
      * sets the current parse string
      * @param text the new parse string
      */
-    void    setParseString(const QString& text);
+    void setParseString(const QString& text);
 
     void setParseTimerDuration(int milliseconds);
 
     /**
      * resets the current parse string, the LineEdit widget will be empty
      */
-    void    clearParseString();
+    void clearParseString();
 
     /**
      * clears the parse string as well as the history
      */
-    void    clear();
+    void clear();
 
     /**
      * sets the current parser. If a parser has already been assigned, it will
      * be deleted first.
      * @param parser a pointer to the new parser instance
      */
-    void    setParser(Parser* parser);
+    void setParser(Parser* parser);
 
     /**
      * returns a pointer to the currently assigned parser

@@ -232,9 +232,11 @@ void Rule::slotTokenTriggered(const QString& token)
 
 bool Rule::isValid() const
 {
-    return (!d->tokens.isEmpty()           &&
+    return (
+            !d->tokens.isEmpty()           &&
             !d->regExp.pattern().isEmpty() &&
-            d->regExp.isValid());
+            d->regExp.isValid()
+           );
 }
 
 void Rule::reset()

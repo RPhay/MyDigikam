@@ -17,6 +17,7 @@
 // Qt includes
 
 #include <QTextDocument>
+#include <QRegularExpression>
 
 // Local includes
 
@@ -25,21 +26,61 @@
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN Highlighter::Private
+{
+public:
+
+    enum PatternType
+    {
+        OptionPattern = 0,
+        ModifierPattern,
+        QuotedTextPattern,
+        ParameterPattern
+    };
+
+    class Q_DECL_HIDDEN HighlightingRule
+    {
+    public:
+
+        PatternType           type      = OptionPattern;
+        QRegularExpression    pattern;
+        QTextCharFormat       format;
+    };
+
+public:
+
+    Private() = default;
+
+public:
+
+    QVector<HighlightingRule> highlightingRules;
+    HighlightingRule          quotationRule;
+
+    QTextCharFormat           optionFormat;
+    QTextCharFormat           parameterFormat;
+    QTextCharFormat           modifierFormat;
+    QTextCharFormat           quotationFormat;
+    QTextCharFormat           errorFormat;
+
+    Parser*                   parser  = nullptr;
+};
+
 Highlighter::Highlighter(QTextDocument* const document, Parser* const _parser)
     : QSyntaxHighlighter(document),
-      parser            (_parser)
-
+      d                 (new Private)
 {
+    d->parser = _parser;
     setupHighlightingGrammar();
 }
 
 Highlighter::~Highlighter()
 {
+    delete d;
 }
 
 void Highlighter::highlightBlock(const QString& text)
 {
-    Q_FOREACH (const HighlightingRule& rule, highlightingRules)
+    Q_FOREACH (const Private::HighlightingRule& rule, d->highlightingRules)
     {
         QRegularExpression      expression(rule.pattern);
         QRegularExpressionMatch match;
@@ -52,8 +93,8 @@ void Highlighter::highlightBlock(const QString& text)
 
             switch (rule.type)
             {
-                case OptionPattern:
-                case ModifierPattern:
+                case Private::OptionPattern:
+                case Private::ModifierPattern:
                 {
                     // highlight parameters in options and modifiers
 
@@ -73,7 +114,7 @@ void Highlighter::highlightBlock(const QString& text)
                                 while (pindex >= 0)
                                 {
                                     int plength = parameters.length();
-                                    setFormat(index + pindex, plength, parameterFormat);
+                                    setFormat(index + pindex, plength, d->parameterFormat);
                                     pindex      = fullmatched.indexOf(parameters, pindex + plength);
                                 }
                             }
@@ -89,7 +130,7 @@ void Highlighter::highlightBlock(const QString& text)
                 }
             }
 
-            index = text.indexOf(expression, index+length, &match);
+            index = text.indexOf(expression, index + length, &match);
         }
     }
 
@@ -97,17 +138,17 @@ void Highlighter::highlightBlock(const QString& text)
 
     ParseSettings settings;
     settings.parseString = text;
-    ParseResults invalid = parser->invalidModifiers(settings);
+    ParseResults invalid = d->parser->invalidModifiers(settings);
 
     Q_FOREACH (const ParseResults::ResultsKey& key, invalid.keys())
     {
-        setFormat(key.first, key.second, errorFormat);
+        setFormat(key.first, key.second, d->errorFormat);
     }
 
     // highlight quoted text in options and modifiers
 
     {
-        QRegularExpression      expression(quotationRule.pattern);
+        QRegularExpression      expression(d->quotationRule.pattern);
         QRegularExpressionMatch match;
         int index = text.indexOf(expression, 0, &match);
 
@@ -115,7 +156,7 @@ void Highlighter::highlightBlock(const QString& text)
         {
             QString fullmatched = match.captured(0);
             int qlength         = match.capturedLength();
-            setFormat(index, qlength, quotationFormat);
+            setFormat(index, qlength, d->quotationFormat);
             index = text.indexOf(expression, index + qlength, &match);
         }
     }
@@ -123,57 +164,57 @@ void Highlighter::highlightBlock(const QString& text)
 
 void Highlighter::setupHighlightingGrammar()
 {
-    if (!parser)
+    if (!d->parser)
     {
         return;
     }
 
-    HighlightingRule rule;
+    Private::HighlightingRule rule;
 
     // --------------------------------------------------------
 
-    optionFormat.setForeground(Qt::red);
+    d->optionFormat.setForeground(Qt::red);
 
-    Q_FOREACH (Rule* const option, parser->options())
+    Q_FOREACH (Rule* const option, d->parser->options())
     {
         QRegularExpression r    = option->regExp();
-        rule.type               = OptionPattern;
+        rule.type               = Private::OptionPattern;
         rule.pattern            = r;
-        rule.format             = optionFormat;
-        highlightingRules.append(rule);
+        rule.format             = d->optionFormat;
+        d->highlightingRules.append(rule);
     }
 
     // --------------------------------------------------------
 
-    modifierFormat.setForeground(Qt::darkGreen);
+    d->modifierFormat.setForeground(Qt::darkGreen);
 
-    Q_FOREACH (Rule* const modifier, parser->modifiers())
+    Q_FOREACH (Rule* const modifier, d->parser->modifiers())
     {
         QRegularExpression r    = modifier->regExp();
-        rule.type               = ModifierPattern;
+        rule.type               = Private::ModifierPattern;
         rule.pattern            = r;
-        rule.format             = modifierFormat;
-        highlightingRules.append(rule);
+        rule.format             = d->modifierFormat;
+        d->highlightingRules.append(rule);
     }
 
     // --------------------------------------------------------
 
-    quotationFormat.setForeground(QColor(0x50, 0x50, 0xff)); // light blue
-    quotationFormat.setFontItalic(true);
-    quotationRule.pattern = QRegularExpression(QLatin1String("\".*\""));
-    quotationRule.pattern.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
-    quotationRule.format  = quotationFormat;
-    quotationRule.type    = QuotedTextPattern;
+    d->quotationFormat.setForeground(QColor(0x50, 0x50, 0xff)); // light blue
+    d->quotationFormat.setFontItalic(true);
+    d->quotationRule.pattern = QRegularExpression(QLatin1String("\".*\""));
+    d->quotationRule.pattern.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
+    d->quotationRule.format  = d->quotationFormat;
+    d->quotationRule.type    = Private::QuotedTextPattern;
 
     // --------------------------------------------------------
 
-    parameterFormat.setForeground(Qt::darkYellow);
-    parameterFormat.setFontItalic(true);
+    d->parameterFormat.setForeground(Qt::darkYellow);
+    d->parameterFormat.setFontItalic(true);
 
     // --------------------------------------------------------
 
-    errorFormat.setForeground(Qt::white);
-    errorFormat.setBackground(Qt::red);
+    d->errorFormat.setForeground(Qt::white);
+    d->errorFormat.setBackground(Qt::red);
 }
 
 } // namespace Digikam

@@ -122,7 +122,7 @@ ParseResults::ResultsKey ParseResults::keyAtApproximatePosition(int pos) const
         int start  = key.first;
         int length = key.second;
 
-        if ((pos >= start) && (pos <= start + length))
+        if ((pos >= start) && (pos <= (start + length)))
         {
             return key;
         }
