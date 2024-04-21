@@ -595,7 +595,10 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
         QByteArray rawComment(exifDatum.size(), '\0');
         exifDatum.copy((Exiv2::byte*)rawComment.data(), Exiv2::littleEndian);
 
-        if ((rawComment.size() > 8) && rawComment.startsWith("UNICODE\0"))
+        if (
+            (rawComment.size() > 8) &&
+            rawComment.startsWith(QByteArray("UNICODE\0"))
+           )
         {
             rawComment = rawComment.mid(8);
 
