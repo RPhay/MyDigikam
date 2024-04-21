@@ -42,7 +42,7 @@ SearchFieldGroup::SearchFieldGroup(SearchGroup* const parent)
 
 void SearchFieldGroup::addField(SearchField* const field)
 {
-    //FIXME: When all fields added in searchgroup.cpp are implemented, remove
+    // FIXME: When all fields added in searchgroup.cpp are implemented, remove
 
     if (!field)
     {

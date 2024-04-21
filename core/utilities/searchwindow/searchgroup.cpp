@@ -20,11 +20,7 @@ namespace Digikam
 
 SearchGroup::SearchGroup(SearchView* const parent)
     : AbstractSearchGroupContainer(parent),
-      m_view                      (parent),
-      m_layout                    (nullptr),
-      m_label                     (nullptr),
-      m_subgroupLayout            (nullptr),
-      m_groupType                 (FirstGroup)
+      m_view                      (parent)
 {
 }
 

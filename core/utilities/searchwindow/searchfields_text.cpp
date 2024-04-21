@@ -19,8 +19,7 @@ namespace Digikam
 {
 
 SearchFieldText::SearchFieldText(QObject* const parent)
-    : SearchField(parent),
-      m_edit     (nullptr)
+    : SearchField(parent)
 {
 }
 

@@ -161,8 +161,10 @@ void SearchFieldRangeInt::read(SearchXmlCachingReader& reader)
 
 void SearchFieldRangeInt::write(SearchXmlWriter& writer)
 {
-    if ((m_firstBox->value()  != m_firstBox->minimum()) &&
-        (m_secondBox->value() != m_secondBox->minimum()))
+    if (
+        (m_firstBox->value()  != m_firstBox->minimum()) &&
+        (m_secondBox->value() != m_secondBox->minimum())
+       )
     {
         if (m_firstBox->value() != m_secondBox->value())
         {

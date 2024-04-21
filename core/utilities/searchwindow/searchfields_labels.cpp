@@ -19,7 +19,7 @@ namespace Digikam
 {
 
 SearchFieldLabels::SearchFieldLabels(QObject* const parent)
-    : SearchField       (parent)
+    : SearchField(parent)
 {
 }
 

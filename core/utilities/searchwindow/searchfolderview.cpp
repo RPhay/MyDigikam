@@ -38,14 +38,10 @@ class Q_DECL_HIDDEN NormalSearchTreeView::Private
 {
 public:
 
-    explicit Private()
-      : newAction   (nullptr),
-        editAction  (nullptr)
-    {
-    }
+    Private() = default;
 
-    QAction* newAction;
-    QAction* editAction;
+    QAction* newAction  = nullptr;
+    QAction* editAction = nullptr;
 };
 
 NormalSearchTreeView::NormalSearchTreeView(QWidget* const parent,

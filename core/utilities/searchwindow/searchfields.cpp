@@ -146,8 +146,10 @@ void SearchField::setCategoryLabelVisibleFromPreviousField(SearchField* previous
         setCategoryLabelVisible(true);
     }
 
-    if ((previousField->m_name == QLatin1String("filesize")) &&
-        (this->m_name          == QLatin1String("bytesize")))
+    if (
+        (previousField->m_name == QLatin1String("filesize")) &&
+        (this->m_name          == QLatin1String("bytesize"))
+       )
     {
         connect(previousField, &SearchField::signalVisibilityChanged,
                 this, &SearchField::clearButtonClicked);

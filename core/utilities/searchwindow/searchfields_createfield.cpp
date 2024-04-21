@@ -252,6 +252,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
     else if (name == QLatin1String("format"))
     {
         // choice
+
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
         field->setText(i18n("File Format"), i18n("Return items with the file format"));
@@ -853,6 +854,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         // List of most common video codecs supported by FFMpeg (see "ffpmpeg -codecs" for details)
         //
         //       FFMpeg codec name                 FFMpeg codec description
+
         codec << QLatin1String("8bps")          << QLatin1String("QuickTime 8BPS video");
         codec << QLatin1String("amv")           << QLatin1String("AMV Video");
         codec << QLatin1String("avs")           << QLatin1String("AVS (Audio Video Standard) video");
@@ -907,6 +909,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         codec << QLatin1String("wmv3image")     << QLatin1String("Windows Media Video 9 Image");
 
         // TODO: add more possible codec
+
         field->setChoice(codec);
 
         return field;
@@ -958,6 +961,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         // List of most common audio codecs supported by FFMpeg (see "ffpmpeg -codecs" for details)
         //
         //      FFMpeg codec name                      FFMpeg codec description
+
         type << QLatin1String("aac")                << QLatin1String("AAC (Advanced Audio Coding)");
         type << QLatin1String("aac_latm")           << QLatin1String("AAC LATM (Advanced Audio Coding LATM syntax)");
         type << QLatin1String("ac3")                << QLatin1String("ATSC A/52A (AC-3)");

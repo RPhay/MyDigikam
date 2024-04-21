@@ -185,7 +185,10 @@ void SearchFieldRating::secondValueChanged()
         }
     }
 
-    setValidValueState((first != RatingComboBox::Null) || (second != RatingComboBox::Null));
+    setValidValueState(
+                       (first  != RatingComboBox::Null) ||
+                       (second != RatingComboBox::Null)
+                      );
 }
 
 void SearchFieldRating::reset()

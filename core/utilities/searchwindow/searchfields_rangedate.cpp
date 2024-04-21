@@ -406,8 +406,10 @@ QList<QRect> SearchFieldRangeTime::valueWidgetRects() const
 void SearchFieldRangeTime::valueChanged()
 {
     int time       = 0;
-    bool validTime = (m_firstTimeEdit->time().isValid() &&
-                      m_secondTimeEdit->time().isValid());
+    bool validTime = (
+                      m_firstTimeEdit->time().isValid() &&
+                      m_secondTimeEdit->time().isValid()
+                     );
 
     if (validTime)
     {

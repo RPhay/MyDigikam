@@ -73,16 +73,16 @@ protected:
 
 protected:
 
-    SearchView*                   m_view;
+    SearchView*                   m_view            = nullptr;
 
     QList<SearchFieldGroup*>      m_fieldGroups;
     QList<SearchFieldGroupLabel*> m_fieldLabels;
 
-    QVBoxLayout*                  m_layout;
-    SearchGroupLabel*             m_label;
-    QVBoxLayout*                  m_subgroupLayout;
+    QVBoxLayout*                  m_layout          = nullptr;
+    SearchGroupLabel*             m_label           = nullptr;
+    QVBoxLayout*                  m_subgroupLayout  = nullptr;
 
-    Type                          m_groupType;
+    Type                          m_groupType       = FirstGroup;
 };
 
 // -------------------------------------------------------------------------

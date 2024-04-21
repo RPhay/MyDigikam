@@ -58,7 +58,7 @@ class Q_DECL_HIDDEN KeywordLineEdit : public QLineEdit
 public:
 
     explicit KeywordLineEdit(QWidget* const parent = nullptr)
-        : QLineEdit    (parent)
+        : QLineEdit(parent)
     {
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
         KConfigGroup group        = config->group(QLatin1String("KeywordSearchEdit Settings"));

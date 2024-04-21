@@ -22,39 +22,24 @@ class Q_DECL_HIDDEN SearchGroupLabel::Private
 {
 public:
 
-    explicit Private()
-      : extended     (false),
-        groupOp      (SearchXml::And),
-        fieldOp      (SearchXml::And),
-        layout       (nullptr),
-        groupOpLabel (nullptr),
-        allBox       (nullptr),
-        anyBox       (nullptr),
-        noneBox      (nullptr),
-        oneNotBox    (nullptr),
-        optionsLabel (nullptr),
-        removeLabel  (nullptr),
-        stackedLayout(nullptr),
-        themeCache   (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                        extended;
-    SearchXml::Operator         groupOp;
-    SearchXml::Operator         fieldOp;
-    QGridLayout*                layout;
+    bool                        extended        = false;
+    SearchXml::Operator         groupOp         = SearchXml::And;
+    SearchXml::Operator         fieldOp         = SearchXml::And;
+    QGridLayout*                layout          = nullptr;
 /*
-    QComboBox*                  groupOpBox;
+    QComboBox*                  groupOpBox      = nullptr;
 */
-    DClickLabel*                groupOpLabel;
-    QRadioButton*               allBox;
-    QRadioButton*               anyBox;
-    QRadioButton*               noneBox;
-    QRadioButton*               oneNotBox;
-    DClickLabel*                optionsLabel;
-    DClickLabel*                removeLabel;
-    QStackedLayout*             stackedLayout;
-    SearchViewThemedPartsCache* themeCache;
+    DClickLabel*                groupOpLabel    = nullptr;
+    QRadioButton*               allBox          = nullptr;
+    QRadioButton*               anyBox          = nullptr;
+    QRadioButton*               noneBox         = nullptr;
+    QRadioButton*               oneNotBox       = nullptr;
+    DClickLabel*                optionsLabel    = nullptr;
+    DClickLabel*                removeLabel     = nullptr;
+    QStackedLayout*             stackedLayout   = nullptr;
+    SearchViewThemedPartsCache* themeCache      = nullptr;
 };
 
 SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, SearchGroup::Type type, QWidget* const parent)
@@ -62,25 +47,25 @@ SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, Sear
       d      (new Private)
 {
     d->themeCache = cache;
-    d->layout     = new QGridLayout;
+    d->layout                    = new QGridLayout;
 
     // leave styling to style sheet (by object name)
 
-    QLabel* const mainLabel = new QLabel(i18n("Find Items"));
+    QLabel* const mainLabel      = new QLabel(i18n("Find Items"));
     mainLabel->setObjectName(QLatin1String("SearchGroupLabel_MainLabel"));
 
     // Use radio button with a separate label to fix styling problem, see bug 195809
 
-    d->allBox                 = new QRadioButton;
-    QLabel* const allBoxLabel = new QLabel(i18n("Meet All of the following conditions"));
+    d->allBox                    = new QRadioButton;
+    QLabel* const allBoxLabel    = new QLabel(i18n("Meet All of the following conditions"));
     allBoxLabel->setObjectName(QLatin1String("SearchGroupLabel_CheckBox"));
 
-    d->anyBox                 = new QRadioButton;
-    QLabel* const anyBoxLabel = new QLabel(i18n("Meet Any of the following conditions"));
+    d->anyBox                    = new QRadioButton;
+    QLabel* const anyBoxLabel    = new QLabel(i18n("Meet Any of the following conditions"));
     anyBoxLabel->setObjectName(QLatin1String("SearchGroupLabel_CheckBox"));
 
     d->noneBox = new QRadioButton;
-    QLabel* const noneBoxLabel = new QLabel(i18n("None of these conditions are met"));
+    QLabel* const noneBoxLabel   = new QLabel(i18n("None of these conditions are met"));
     noneBoxLabel->setObjectName(QLatin1String("SearchGroupLabel_CheckBox"));
 
     d->oneNotBox                 = new QRadioButton;
@@ -325,7 +310,7 @@ void SearchGroupLabel::adjustOperatorOptions()
     {
         case SearchXml::And:
         case SearchXml::Or:
-
+        {
             if (d->fieldOp == SearchXml::And)
             {
                 d->allBox->setChecked(true);
@@ -336,10 +321,11 @@ void SearchGroupLabel::adjustOperatorOptions()
             }
 
             break;
+        }
 
         case SearchXml::AndNot:
         case SearchXml::OrNot:
-
+        {
             if (d->fieldOp == SearchXml::And)
             {
                 d->oneNotBox->setChecked(true);
@@ -350,6 +336,7 @@ void SearchGroupLabel::adjustOperatorOptions()
             }
 
             break;
+        }
     }
 
     if (!d->allBox->isChecked())
