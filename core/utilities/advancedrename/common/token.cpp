@@ -33,7 +33,8 @@ public:
 };
 
 Token::Token(const QString& id, const QString& description)
-    : QObject(nullptr)
+    : QObject(nullptr),
+      d      (new Private)
 {
     d->id          = id;
     d->description = description;
