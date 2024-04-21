@@ -49,7 +49,6 @@ Token::Token(const QString& id, const QString& description)
 
 Token::~Token()
 {
-    delete d->action;
     delete d;
 }
 
