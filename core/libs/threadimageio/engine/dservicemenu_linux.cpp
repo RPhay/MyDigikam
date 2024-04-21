@@ -358,8 +358,18 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
 
             QStringList mimes = group.readEntry(QLatin1String("MimeType"),        QString()).split(QLatin1Char(';'),
                                                                                                    QT_SKIP_EMPTY_PARTS);
+#ifdef Q_OS_WIN
+
+            QString exec      = group.readEntry(QLatin1String("X-Exec"),          QString());
+            QString icon      = group.readEntry(QLatin1String("X-Icon"),          QString());
+
+#else
+
             QString exec      = group.readEntry(QLatin1String("Exec"),            QString());
             QString icon      = group.readEntry(QLatin1String("Icon"),            QString());
+
+#endif
+
             QString topt      = group.readEntry(QLatin1String("TerminalOptions"), QString());
             bool    term      = group.readEntry(QLatin1String("Terminal"),        false);
 
