@@ -89,7 +89,7 @@ BUGFIXES:
 064 ==> 485820 - In Time Adjust "Timestamp Updated" is wrongly reported as "TimeStamp Used".
 065 ==> 414959 - Send by email with Thunderbird does not work anymore.
 066 ==> 485893 - TreeViewComboBoxLineEdit::mouseReleaseEvent Crash in Advanced Search.
-067 ==> 
+067 ==> 485916 - Taxon suggestion based on computer-vision not working anymore in iNaturalist export.
 068 ==> 
 069 ==> 
 070 ==> 
