@@ -497,18 +497,8 @@ void DOnlineTranslator::addSpaceBetweenParts(QString& text)
         return;
     }
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
-
     if (!text.back().isSpace())
     {
-
-#else
-
-    if (!text.at(text.size() - 1).isSpace())
-    {
-
-#endif
-
         text.append(QLatin1Char(' '));
     }
 }

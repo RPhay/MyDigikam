@@ -157,23 +157,10 @@ FFMpegProperties FFMpegConfigHelper::getExtensionsProperties()
 #endif
 
     {
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-
         if (outfmt->extensions)
         {
             ext << QString::fromUtf8(outfmt->extensions).split(QLatin1Char(','), Qt::SkipEmptyParts);
         }
-
-#else
-
-        if (outfmt->extensions)
-        {
-            ext << QString::fromUtf8(outfmt->extensions).split(QLatin1Char(','), QString::SkipEmptyParts);
-        }
-
-#endif
-
     }
 
     Q_FOREACH (const QString& val, ext)
