@@ -17,8 +17,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older host logs from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-vcpkg.full.log.gz"
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-extralibs.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64-Qt6 <<< "rm build-vcpkg.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64-Qt6 <<< "rm build-extralibs.full.log.gz"
 
     echo -e "---------- Compress host log files \n"
 
