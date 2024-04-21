@@ -28,7 +28,7 @@ class ImportRenameParser : public Parser
 
 public:
 
-    explicit ImportRenameParser();
+    ImportRenameParser();
 
 private:
 

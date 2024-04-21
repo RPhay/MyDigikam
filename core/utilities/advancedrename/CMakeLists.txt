@@ -7,19 +7,59 @@
 
 APPLY_COMMON_POLICIES()
 
-file(GLOB libadvancedrename_SRCS
-          ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
-          ${CMAKE_CURRENT_SOURCE_DIR}/common/*.cpp
-          ${CMAKE_CURRENT_SOURCE_DIR}/parser/*.cpp
-          ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/*.cpp
-          ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/*.cpp
-          ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database/*.cpp
-          ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database/keys/*.cpp
+set(libadvancedrename_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/advancedrenamedialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/advancedrenameinput.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/advancedrenamemanager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/advancedrenameprocessdialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/advancedrenamewidget.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/dynamiclayout.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/highlighter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/modifier.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/option.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/parser.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/parseresults.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/rule.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/ruledialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/token.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/tooltipcreator.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/common/tooltipdialog.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/importrenameparser.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/casemodifier.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/defaultvaluemodifier.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/rangemodifier.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/removedoublesmodifier.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/replacemodifier.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/trimmedmodifier.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/uniquemodifier.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/cameranameoption.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/dateoption.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/directorynameoption.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/filepropertiesoption.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/metadataoption.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/sequencenumberoption.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database/databaseoption.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database/dbheaderlistitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database/dbkeyscollection.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database/dbkeyselector.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database/keys/commonkeys.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database/keys/metadatakeys.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/database/keys/positionkeys.cpp
 )
 
-file(GLOB libadvancedrename_UI
-          ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/*.ui
-          ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/*.ui
+set(libadvancedrename_UI
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/fillmodifierdialogwidget.ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/rangemodifierdialogwidget.ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/modifiers/replacemodifierdialogwidget.ui
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/dateoptiondialogwidget.ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/parser/options/sequencenumberoptiondialogwidget.ui
 )
 
 ki18n_wrap_ui(libadvancedrename_SRCS ${libadvancedrename_UI})

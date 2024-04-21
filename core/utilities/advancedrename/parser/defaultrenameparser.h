@@ -28,7 +28,10 @@ class DefaultRenameParser : public Parser
 
 public:
 
-    explicit DefaultRenameParser();
+    DefaultRenameParser()
+        : Parser()
+    {
+    };
 
 private:
 
