@@ -32,8 +32,7 @@ namespace Digikam
 {
 
 DefaultValueDialog::DefaultValueDialog(Rule* parent)
-    : RuleDialog(parent),
-      valueInput(nullptr)
+    : RuleDialog(parent)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));

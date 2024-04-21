@@ -37,7 +37,7 @@ public:
     explicit RangeDialog(Rule* const parent);
     ~RangeDialog()                                                                        override;
 
-    Ui::RangeModifierDialogWidget* const ui;
+    Ui::RangeModifierDialogWidget* const ui = nullptr;
 
 private Q_SLOTS:
 
@@ -59,7 +59,7 @@ class RangeModifier : public Modifier
 
 public:
 
-    explicit RangeModifier();
+    RangeModifier();
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:

@@ -34,7 +34,9 @@ public:
     explicit DefaultValueDialog(Rule* parent);
     ~DefaultValueDialog()                                                                 override;
 
-    QLineEdit* valueInput;
+public:
+
+    QLineEdit* valueInput = nullptr;
 
 private:
 
@@ -52,7 +54,7 @@ class DefaultValueModifier : public Modifier
 
 public:
 
-    explicit DefaultValueModifier();
+    DefaultValueModifier();
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:

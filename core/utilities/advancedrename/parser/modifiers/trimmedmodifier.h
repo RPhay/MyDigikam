@@ -28,7 +28,7 @@ class TrimmedModifier : public Modifier
 
 public:
 
-    explicit TrimmedModifier();
+    TrimmedModifier();
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private:

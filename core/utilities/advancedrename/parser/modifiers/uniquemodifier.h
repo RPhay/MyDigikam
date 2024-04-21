@@ -34,7 +34,7 @@ class UniqueModifier : public Modifier
 
 public:
 
-    explicit UniqueModifier();
+    UniqueModifier();
     QString  parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
     void     reset()                                                                       override;
 

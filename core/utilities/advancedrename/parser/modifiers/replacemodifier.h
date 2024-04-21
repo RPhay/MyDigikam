@@ -39,7 +39,7 @@ public:
     explicit ReplaceDialog(Rule* const parent);
     ~ReplaceDialog()                                                                      override;
 
-    Ui::ReplaceModifierDialogWidget* const ui;
+    Ui::ReplaceModifierDialogWidget* const ui = nullptr;
 
 private:
 
@@ -57,7 +57,7 @@ class ReplaceModifier : public Modifier
 
 public:
 
-    explicit ReplaceModifier();
+    ReplaceModifier();
     QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:
