@@ -81,7 +81,7 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
                                           "We will use it to load plugin...";
 
         pathList << QString::fromUtf8(dkenv).split(QLatin1Char(';'),
-                                                   QT_SKIP_EMPTY_PARTS);
+                                                   Qt::SkipEmptyParts);
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Parsing plugins from" << pathList;

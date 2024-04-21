@@ -15,11 +15,9 @@
 
 #include "coredbsearchxml.h"
 
+// Qt includes
+
 #include <QRegularExpression>
-
-// Local includes
-
-#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -903,7 +901,7 @@ QStringList KeywordSearch::split(const QString& keywords)
 {
     // get groups with quotation marks
 
-    QStringList quotationMarkList = keywords.split(QLatin1Char('"'), QT_KEEP_EMPTY_PARTS);
+    QStringList quotationMarkList = keywords.split(QLatin1Char('"'), Qt::KeepEmptyParts);
 
     // split down to single words
 
@@ -925,7 +923,7 @@ QStringList KeywordSearch::split(const QString& keywords)
         {
             // not in quotation marks: split by whitespace
 
-            keywordList << group.split(QRegularExpression(QLatin1String("\\s+")), QT_SKIP_EMPTY_PARTS);
+            keywordList << group.split(QRegularExpression(QLatin1String("\\s+")), Qt::SkipEmptyParts);
         }
 
         ++quotationMarkCount;

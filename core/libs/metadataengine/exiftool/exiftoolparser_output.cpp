@@ -14,10 +14,6 @@
 
 #include "exiftoolparser_p.h"
 
-// Local includes
-
-#include "digikam_globals.h"
-
 namespace Digikam
 {
 
@@ -230,7 +226,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
 
             // Get extensions and descriptions as pair of strings
 
-            QStringList lines = out.split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
+            QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
             QStringList lst;
             QString s;
 
@@ -255,7 +251,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
 
             // Get extensions and descriptions as pair of strings
 
-            QStringList lines = out.split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
+            QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
             QStringList lst;
             QString s;
 
@@ -279,7 +275,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
 
             // Get i18n list
 
-            QStringList lines = out.split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
+            QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
             QStringList lst;
 
             Q_FOREACH (const QString& ln, lines)
@@ -385,7 +381,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
         case ExifToolProcess::VERSION_STRING:
         {
             QString out       = QString::fromUtf8(result.output);
-            QStringList lines = out.split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
+            QStringList lines = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
             if (!lines.isEmpty())
             {

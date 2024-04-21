@@ -551,7 +551,7 @@ void FlickrListViewItem::updateItemWidgets()
 
 QStringList FlickrListViewItem::extraTags() const
 {
-    return d->tagLineEdit->text().split(QLatin1Char(','), QT_SKIP_EMPTY_PARTS);
+    return d->tagLineEdit->text().split(QLatin1Char(','), Qt::SkipEmptyParts);
 }
 
 void FlickrListViewItem::toggled()

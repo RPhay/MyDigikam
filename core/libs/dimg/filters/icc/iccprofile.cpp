@@ -28,7 +28,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 #include "dimg.h"
 
 namespace Digikam
@@ -517,7 +516,7 @@ QStringList IccProfile::defaultSearchPaths()
 
     // MacPorts installs for KDE, so we include the XDG data dirs, including /usr/share/color/icc
 
-    QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), QT_SKIP_EMPTY_PARTS);
+    QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), Qt::SkipEmptyParts);
 
     if (!dataDirs.contains(QLatin1String("/opt/local/share")))
     {
@@ -554,7 +553,7 @@ QStringList IccProfile::defaultSearchPaths()
 
     // XDG data dirs, including /usr/share/color/icc
 
-    QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), QT_SKIP_EMPTY_PARTS);
+    QStringList dataDirs = QString::fromLocal8Bit(qgetenv("XDG_DATA_DIRS")).split(QLatin1Char(':'), Qt::SkipEmptyParts);
 
     if (!dataDirs.contains(QLatin1String("/usr/share")))
     {

@@ -454,7 +454,7 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
         else if (action.shallCreateNewTag())
         {
             QStringList faceNames = action.newTagName().split(QLatin1Char('/'),
-                                                              QT_SKIP_EMPTY_PARTS);
+                                                              Qt::SkipEmptyParts);
             if (!faceNames.isEmpty())
             {
                 tagId             = action.parentTagId();

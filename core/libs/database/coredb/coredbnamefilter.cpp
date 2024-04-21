@@ -23,7 +23,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -43,7 +42,7 @@ CoreDbNameFilter::CoreDbNameFilter(const QString& filter)
         sep = QLatin1Char(' ');
     }
 
-    QStringList list               = filter.split(sep, QT_SKIP_EMPTY_PARTS);
+    QStringList list               = filter.split(sep, Qt::SkipEmptyParts);
     QStringList::const_iterator it = list.constBegin();
 
     while (it != list.constEnd())

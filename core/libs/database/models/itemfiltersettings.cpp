@@ -29,8 +29,8 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "coredbfields.h"
 #include "digikam_globals.h"
+#include "coredbfields.h"
 #include "iteminfo.h"
 #include "tagscache.h"
 #include "versionmanagersettings.h"
@@ -742,7 +742,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             if      (m_textFilterSettings.text.contains(expRatio) && m_textFilterSettings.text.contains(QRegularExpression(QLatin1String(":\\d+"))))
             {
                 QString trimmedTextFilterSettingsText = m_textFilterSettings.text;
-                QStringList numberStringList          = trimmedTextFilterSettingsText.split(QLatin1Char(':'), QT_SKIP_EMPTY_PARTS);
+                QStringList numberStringList          = trimmedTextFilterSettingsText.split(QLatin1Char(':'), Qt::SkipEmptyParts);
 
                 if (numberStringList.length() == 2)
                 {

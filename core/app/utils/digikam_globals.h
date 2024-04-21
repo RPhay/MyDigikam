@@ -54,13 +54,6 @@ class QDate;
 #define QT_ENDL Qt::endl
 
 /**
- * Macro for Qt::KeepEmptyParts and Qt::SkipEmptyParts which were introduced in Qt 5.14.0
- * to be used with QString::split()
- */
-#define QT_KEEP_EMPTY_PARTS Qt::KeepEmptyParts
-#define QT_SKIP_EMPTY_PARTS Qt::SkipEmptyParts
-
-/**
  * Macro to use right return type with qHash(), changed with new Qt6 API.
  */
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)

@@ -40,16 +40,16 @@
 
 // Local includes
 
+#include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "album.h"
 #include "syncjob.h"
 #include "searchtextbar.h"
 #include "tagsactionmngr.h"
 #include "coredbconstants.h"
-#include "digikam_debug.h"
 #include "dxmlguiwindow.h"
 #include "dexpanderbox.h"
 #include "dlayoutbox.h"
-#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -398,7 +398,7 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
     // Check if new tags are include in a list of tags hierarchy separated by ','.
     // Ex: /Country/France/people,/City/France/Paris
 
-    const QStringList tagsHierarchies = tagStr.split(QLatin1Char(','), QT_SKIP_EMPTY_PARTS);
+    const QStringList tagsHierarchies = tagStr.split(QLatin1Char(','), Qt::SkipEmptyParts);
 
     if (tagsHierarchies.isEmpty())
     {
@@ -425,7 +425,7 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
                 root = mainRootAlbum;
             }
 
-            QStringList tagsList = hierarchy.split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
+            QStringList tagsList = hierarchy.split(QLatin1Char('/'), Qt::SkipEmptyParts);
             qCDebug(DIGIKAM_GENERAL_LOG) << tagsList;
 
             if (!tagsList.isEmpty())

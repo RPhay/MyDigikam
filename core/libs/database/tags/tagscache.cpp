@@ -28,10 +28,10 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "coredb.h"
 #include "coredbaccess.h"
 #include "coredbwatch.h"
-#include "digikam_globals.h"
 #include "itempropertiestab.h"
 #include "tagproperties.h"
 
@@ -585,7 +585,7 @@ int TagsCache::tagForPath(const QString& path) const
 
     // split the path into its components
 
-    QStringList tagHierarchy = path.split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
+    QStringList tagHierarchy = path.split(QLatin1Char('/'), Qt::SkipEmptyParts);
 
     if (tagHierarchy.isEmpty())
     {
@@ -645,7 +645,7 @@ int TagsCache::createTag(const QString& tagPathToCreate)
 {
     // split full tag "url" into list of single tag names
 
-    QStringList tagHierarchy = tagPathToCreate.split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
+    QStringList tagHierarchy = tagPathToCreate.split(QLatin1Char('/'), Qt::SkipEmptyParts);
 
     if (tagHierarchy.isEmpty())
     {

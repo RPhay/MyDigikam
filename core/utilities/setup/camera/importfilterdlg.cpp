@@ -36,7 +36,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 #include "importfiltercombobox.h"
 #include "dexpanderbox.h"
 #include "dtextedit.h"
@@ -202,7 +201,7 @@ void ImportFilterDlg::mimeCheckBoxClicked()
 void ImportFilterDlg::mimeButtonClicked()
 {
     QString text     = i18n("Select the MimeTypes you want for this filter.");
-    QStringList list = d->mimeLabel->adjustedText().split(QLatin1Char(';'), QT_SKIP_EMPTY_PARTS);
+    QStringList list = d->mimeLabel->adjustedText().split(QLatin1Char(';'), Qt::SkipEmptyParts);
     QPointer<KMimeTypeChooserDialog> dlg = new KMimeTypeChooserDialog(i18n("Select Mime Types"), text,
                                                                       list, QLatin1String("image"), this);
 
@@ -233,8 +232,8 @@ void ImportFilterDlg::getData(Filter* const filter)
 {
     filter->name       = d->filterName->text();
     filter->mimeFilter = d->mimeLabel->adjustedText();
-    filter->fileFilter = d->fileNameEdit->text().split(QLatin1Char(';'), QT_SKIP_EMPTY_PARTS);
-    filter->pathFilter = d->pathEdit->text().split(QLatin1Char(';'), QT_SKIP_EMPTY_PARTS);
+    filter->fileFilter = d->fileNameEdit->text().split(QLatin1Char(';'), Qt::SkipEmptyParts);
+    filter->pathFilter = d->pathEdit->text().split(QLatin1Char(';'), Qt::SkipEmptyParts);
     filter->onlyNew    = d->newFilesCheckBox->isChecked();
 }
 

@@ -252,7 +252,7 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
 void UFRawRawImportPlugin::slotProcessReadyRead()
 {
     QByteArray data   = d->ufraw->readAllStandardError();
-    QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
+    QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
     Q_FOREACH (const QString& one, lines)
     {

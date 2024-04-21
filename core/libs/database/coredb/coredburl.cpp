@@ -21,10 +21,9 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "collectionmanager.h"
 #include "collectionlocation.h"
-#include "digikam_debug.h"
-#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -359,7 +358,7 @@ int CoreDbUrl::tagId() const
 QList<int> CoreDbUrl::tagIds() const
 {
     QList<int>  ids;
-    QStringList stringIds = path().split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
+    QStringList stringIds = path().split(QLatin1Char('/'), Qt::SkipEmptyParts);
 
     for (int i = 0 ; i < stringIds.count() ; ++i)
     {

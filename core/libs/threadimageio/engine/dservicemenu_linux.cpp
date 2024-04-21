@@ -153,7 +153,7 @@ bool DServiceMenu::runFiles(const QString& appCmd,
 
         if (exec.isEmpty() && cmd.contains(QLatin1Char('=')))
         {
-            QStringList envList = cmd.split(QLatin1Char('='), QT_SKIP_EMPTY_PARTS);
+            QStringList envList = cmd.split(QLatin1Char('='), Qt::SkipEmptyParts);
 
             if (envList.count() == 2)
             {
@@ -357,7 +357,7 @@ QList<DServiceInfo> DServiceMenu::servicesForOpen(const QList<QUrl>& urls)
             }
 
             QStringList mimes = group.readEntry(QLatin1String("MimeType"),        QString()).split(QLatin1Char(';'),
-                                                                                                   QT_SKIP_EMPTY_PARTS);
+                                                                                                   Qt::SkipEmptyParts);
 #ifdef Q_OS_WIN
 
             QString exec      = group.readEntry(QLatin1String("X-Exec"),          QString());
@@ -441,7 +441,7 @@ QStringList DServiceMenu::splitStringAtSpaces(const QString& string)
 {
     QRegularExpression split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
 
-    return (string.split(split, QT_SKIP_EMPTY_PARTS));
+    return (string.split(split, Qt::SkipEmptyParts));
 }
 
 //-----------------------------------------------------------------------------

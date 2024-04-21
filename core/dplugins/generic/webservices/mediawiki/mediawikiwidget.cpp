@@ -929,7 +929,7 @@ void MediaWikiWidget::slotApplyTitle()
 
         if (minLength > 0)
         {
-            parts      = imageTitle.split(QLatin1Char('#'), QT_KEEP_EMPTY_PARTS);
+            parts      = imageTitle.split(QLatin1Char('#'), Qt::KeepEmptyParts);
             imageTitle = parts.first().append(QLatin1Char('#')).append(parts.last());
             number     = QString::number(i + 1);
 

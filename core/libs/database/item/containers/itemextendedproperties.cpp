@@ -162,7 +162,7 @@ QStringList ItemExtendedProperties::readFakeListProperty(const QString& property
 {
     QString value = CoreDbAccess().db()->getImageProperty(m_id, property);
 
-    return value.split(QLatin1Char(';'), QT_SKIP_EMPTY_PARTS);
+    return value.split(QLatin1Char(';'), Qt::SkipEmptyParts);
 }
 
 void ItemExtendedProperties::setFakeListProperty(const QString& property, const QStringList& value)

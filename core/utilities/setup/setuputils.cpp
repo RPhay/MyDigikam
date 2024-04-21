@@ -14,10 +14,6 @@
 
 #include "setuputils.h"
 
-// Local includes
-
-#include "digikam_globals.h"
-
 namespace Digikam
 {
 
@@ -49,7 +45,7 @@ QStringList cleanUserFilterString(QString filterString,
 
     QStringList filterList;
 
-    Q_FOREACH (const QString& filter, filterString.split(separator, QT_SKIP_EMPTY_PARTS))
+    Q_FOREACH (const QString& filter, filterString.split(separator, Qt::SkipEmptyParts))
     {
         filterList << filter.trimmed();
     }

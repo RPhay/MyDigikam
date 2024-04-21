@@ -34,12 +34,12 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "gpsundocommand.h"
 #include "gpscommon.h"
 #include "gpsitemcontainer.h"
 #include "lookupfactory.h"
 #include "gpsbookmarkowner.h"
-#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -464,7 +464,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
 
             while (!separators.isEmpty())
             {
-                parts = cordText.split(separators.takeFirst(), QT_SKIP_EMPTY_PARTS);
+                parts = cordText.split(separators.takeFirst(), Qt::SkipEmptyParts);
 
                 if ((parts.size() == 3) || (parts.size() == 2))
                 {

@@ -23,7 +23,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -63,12 +62,12 @@ void Filter::fromString(const QString& filter)
 
     if (!s.value(5).isEmpty())
     {
-        ignoreNames = s.value(5).split(QLatin1Char(' '), QT_SKIP_EMPTY_PARTS);
+        ignoreNames = s.value(5).split(QLatin1Char(' '), Qt::SkipEmptyParts);
     }
 
     if (!s.value(6).isEmpty())
     {
-        ignoreExtensions = s.value(6).split(QLatin1Char(' '), QT_SKIP_EMPTY_PARTS);
+        ignoreExtensions = s.value(6).split(QLatin1Char(' '), Qt::SkipEmptyParts);
     }
 }
 

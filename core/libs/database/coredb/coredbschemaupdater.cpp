@@ -33,6 +33,7 @@
 
 #include "drawdecoder.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "coredbtransaction.h"
 #include "coredbchecker.h"
 #include "collectionmanager.h"
@@ -40,8 +41,6 @@
 #include "collectionscanner.h"
 #include "itemquerybuilder.h"
 #include "collectionscannerobserver.h"
-#include "digikam_config.h"
-#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -914,7 +913,7 @@ static QStringList cleanUserFilterString(const QString& filterString)
         sep = QChar(QLatin1Char(' '));
     }
 
-    QStringList sepList = filterString.split(sep, QT_SKIP_EMPTY_PARTS);
+    QStringList sepList = filterString.split(sep, Qt::SkipEmptyParts);
 
     Q_FOREACH (const QString& f, sepList)
     {

@@ -38,12 +38,12 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "dprogresswdg.h"
 #include "flickrtalker.h"
 #include "flickritem.h"
 #include "flickrlist.h"
 #include "wsselectuserdlg.h"
-#include "digikam_debug.h"
 #include "flickrnewalbumdlg.h"
 #include "previewloadthread.h"
 #include "flickrwidget_p.h"
@@ -675,7 +675,7 @@ void FlickrWindow::slotUser1()
             temp.is_friend             = lvItem->isFriends() ? 1 : 0;
             temp.safety_level          = lvItem->safetyLevel();
             temp.content_type          = lvItem->contentType();
-            QStringList tagsFromDialog = d->tagsLineEdit->text().split(QLatin1Char(','), QT_SKIP_EMPTY_PARTS);
+            QStringList tagsFromDialog = d->tagsLineEdit->text().split(QLatin1Char(','), Qt::SkipEmptyParts);
             QStringList tagsFromList   = lvItem->extraTags();
 
             QStringList           allTags;

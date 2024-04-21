@@ -341,7 +341,7 @@ void AssignNameOverlay::slotAssigned(const TaggingAction& action, const ItemInfo
     else if (action.shallCreateNewTag())
     {
         QStringList faceNames = action.newTagName().split(QLatin1Char('/'),
-                                                          QT_SKIP_EMPTY_PARTS);
+                                                          Qt::SkipEmptyParts);
         if (!faceNames.isEmpty())
         {
             tagId             = -1;

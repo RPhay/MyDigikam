@@ -524,7 +524,7 @@ static QColor stringToColor(const QString& s)
 
     if (match.hasMatch())
     {
-        QStringList colors = match.captured(1).split(QLatin1Char(','), QT_SKIP_EMPTY_PARTS);
+        QStringList colors = match.captured(1).split(QLatin1Char(','), Qt::SkipEmptyParts);
 
         if (colors.size() >= 3)
         {

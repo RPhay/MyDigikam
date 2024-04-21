@@ -38,7 +38,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 
 namespace DigikamGenericMediaWikiPlugin
 {
@@ -235,7 +234,7 @@ QString MediaWikiTalker::buildWikiText(const QMap<QString, QString>& info) const
 
     if (!info[QLatin1String("categories")].isEmpty())
     {
-        categories = info[QLatin1String("categories")].split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
+        categories = info[QLatin1String("categories")].split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
         for (int i = 0 ; i < categories.size() ; ++i)
         {
@@ -245,7 +244,7 @@ QString MediaWikiTalker::buildWikiText(const QMap<QString, QString>& info) const
 
     if (!info[QLatin1String("genCategories")].isEmpty())
     {
-        categories = info[QLatin1String("genCategories")].split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
+        categories = info[QLatin1String("genCategories")].split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
         for (int i = 0 ; i < categories.size() ; ++i)
         {

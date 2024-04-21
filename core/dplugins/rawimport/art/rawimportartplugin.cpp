@@ -247,7 +247,7 @@ void ARTRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus stat
 void ARTRawImportPlugin::slotProcessReadyRead()
 {
     QByteArray data   = d->art->readAllStandardError();
-    QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
+    QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), Qt::SkipEmptyParts);
 
     Q_FOREACH (const QString& one, lines)
     {
