@@ -19,12 +19,6 @@ CheckSystemReleaseID
 DK_VERSION=master
 #DK_VERSION=gsoc21-qt6-port
 
-# Absolute path where are downloaded all tarballs to compile.
-DOWNLOAD_DIR="/mnt/data/d"
-
-# Absolute path where are compiled all tarballs
-BUILDING_DIR="/mnt/data/b/$DK_VERSION"
-
 # Absolute path where are installed all software components
 INSTALL_DIR="/usr"
 
@@ -78,10 +72,22 @@ DK_UPLOADURL="digikam@tinami.kde.org"
 
 if [[ $DK_QTVERSION == 5 ]] ; then
 
+    # Absolute path where are downloaded all tarballs to compile.
+    DOWNLOAD_DIR="/d"
+
+    # Absolute path where are compiled all tarballs
+    BUILDING_DIR="/b/$DK_VERSION"
+
     DK_KDE_VERSION="5.115"
     DK_UPLOADDIR="/srv/archives/files/digikam/legacy"
 
 else
+
+    # Absolute path where are downloaded all tarballs to compile.
+    DOWNLOAD_DIR="/mnt/data/d"
+
+    # Absolute path where are compiled all tarballs
+    BUILDING_DIR="/mnt/data/b/$DK_VERSION"
 
     DK_KDE_VERSION="master"                                 # Qt6 version use master code for the moment.
     DK_UPLOADDIR="/srv/archives/files/digikam/"
