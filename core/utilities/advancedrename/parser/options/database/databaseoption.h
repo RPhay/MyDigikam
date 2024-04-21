@@ -39,10 +39,10 @@ class DatabaseOptionDialog : public RuleDialog
 public:
 
     explicit DatabaseOptionDialog(Rule* const parent);
-    ~DatabaseOptionDialog() override;
+    ~DatabaseOptionDialog() override = default;
 
-    DbKeySelectorView* dbkeySelectorView;
-    QLineEdit*         separatorLineEdit;
+    DbKeySelectorView* dbkeySelectorView    = nullptr;
+    QLineEdit*         separatorLineEdit    = nullptr;
 
 private:
 
@@ -64,7 +64,7 @@ class DatabaseOption : public Option
 
 public:
 
-    explicit DatabaseOption();
+    DatabaseOption();
     ~DatabaseOption()                                            override;
 
 protected:

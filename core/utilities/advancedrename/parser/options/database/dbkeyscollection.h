@@ -44,7 +44,7 @@ public:
      * @param n collection name
      */
     explicit DbKeysCollection(const QString& n);
-    virtual ~DbKeysCollection();
+    virtual ~DbKeysCollection() = default;
 
     /**
      * Get a value from the database.

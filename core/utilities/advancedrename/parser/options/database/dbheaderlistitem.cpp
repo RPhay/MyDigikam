@@ -29,7 +29,7 @@ namespace Digikam
 {
 
 DbHeaderListItem::DbHeaderListItem(QTreeWidget* parent, const QString& key)
-    : QObject(parent),
+    : QObject        (parent),
       QTreeWidgetItem(parent)
 {
     // Reset all item flags: item is not selectable.
@@ -54,10 +54,6 @@ DbHeaderListItem::DbHeaderListItem(QTreeWidget* parent, const QString& key)
 
     connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
             this, SLOT(slotThemeChanged()));
-}
-
-DbHeaderListItem::~DbHeaderListItem()
-{
 }
 
 void DbHeaderListItem::slotThemeChanged()

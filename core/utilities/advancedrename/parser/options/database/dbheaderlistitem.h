@@ -25,14 +25,15 @@
 namespace Digikam
 {
 
-class DbHeaderListItem : public QObject, public QTreeWidgetItem
+class DbHeaderListItem : public QObject,
+                         public QTreeWidgetItem
 {
     Q_OBJECT
 
 public:
 
     explicit DbHeaderListItem(QTreeWidget* parent, const QString& key);
-    ~DbHeaderListItem() override;
+    ~DbHeaderListItem() override = default;
 
 private Q_SLOTS:
 

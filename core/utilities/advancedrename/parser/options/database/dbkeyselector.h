@@ -36,7 +36,7 @@ class DbKeySelectorItem : public QTreeWidgetItem
 public:
 
     explicit DbKeySelectorItem(DbHeaderListItem* const parent, const QString& title, const QString& desc);
-    ~DbKeySelectorItem() override;
+    ~DbKeySelectorItem() override = default;
 
     QString key()         const;
     QString description() const;
@@ -62,7 +62,7 @@ class DbKeySelector : public QTreeWidget
 public:
 
     explicit DbKeySelector(QWidget* const parent);
-    ~DbKeySelector() override;
+    ~DbKeySelector() override = default;
 
     void setKeysMap(const DbOptionKeysMap& map);
     QStringList checkedKeysList();

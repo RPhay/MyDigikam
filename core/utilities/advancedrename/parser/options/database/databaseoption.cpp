@@ -38,9 +38,7 @@ namespace Digikam
 {
 
 DatabaseOptionDialog::DatabaseOptionDialog(Rule* const parent) :
-    RuleDialog(parent),
-    dbkeySelectorView(nullptr),
-    separatorLineEdit(nullptr)
+    RuleDialog(parent)
 {
     QWidget* const mainWidget = new QWidget(this);
     dbkeySelectorView         = new DbKeySelectorView(this);
@@ -60,10 +58,6 @@ DatabaseOptionDialog::DatabaseOptionDialog(Rule* const parent) :
 
     setSettingsWidget(mainWidget);
     resize(450, 450);
-}
-
-DatabaseOptionDialog::~DatabaseOptionDialog()
-{
 }
 
 // --------------------------------------------------------

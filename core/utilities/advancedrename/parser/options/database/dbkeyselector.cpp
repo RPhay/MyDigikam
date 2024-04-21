@@ -62,10 +62,6 @@ DbKeySelectorItem::DbKeySelectorItem(DbHeaderListItem* const parent, const QStri
     setToolTip(1, QLatin1String("<qt><p>") + cnt.breakString(descVal) + QLatin1String("</p></qt>"));
 }
 
-DbKeySelectorItem::~DbKeySelectorItem()
-{
-}
-
 QString DbKeySelectorItem::key() const
 {
     return m_key;
@@ -94,10 +90,6 @@ DbKeySelector::DbKeySelector(QWidget* const parent)
     setHeaderLabels(labels);
     header()->setSectionResizeMode(0, QHeaderView::Stretch);
     header()->setSectionResizeMode(1, QHeaderView::Stretch);
-}
-
-DbKeySelector::~DbKeySelector()
-{
 }
 
 void DbKeySelector::setKeysMap(const DbOptionKeysMap& map)
@@ -149,14 +141,10 @@ class Q_DECL_HIDDEN DbKeySelectorView::Private
 {
 public:
 
-    explicit Private()
-      : selector (nullptr),
-        searchBar(nullptr)
-    {
-    }
+    Private() = default;
 
-    DbKeySelector* selector;
-    SearchTextBar* searchBar;
+    DbKeySelector* selector     = nullptr;
+    SearchTextBar* searchBar    = nullptr;
 };
 
 DbKeySelectorView::DbKeySelectorView(QWidget* const parent)
@@ -164,7 +152,7 @@ DbKeySelectorView::DbKeySelectorView(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(this);
     d->selector             = new DbKeySelector(this);

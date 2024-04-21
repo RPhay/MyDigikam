@@ -22,10 +22,6 @@ DbKeysCollection::DbKeysCollection(const QString& n)
 {
 }
 
-DbKeysCollection::~DbKeysCollection()
-{
-}
-
 QString DbKeysCollection::getValue(const QString& key, ParseSettings& settings)
 {
     return getDbValue(key, settings);
