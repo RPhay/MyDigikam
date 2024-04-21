@@ -445,18 +445,7 @@ void DOnlineTranslator::parseYandexTranslit(QString& text)
     }
 
     const QByteArray reply = d->currentReply->readAll();
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
-
-    text += QString::fromUtf8(reply.mid(1).chopped(1));
-
-#else
-
-    text += QString::fromUtf8(reply.mid(1));
-    text.chop(1);
-
-#endif
-
+    text                  += QString::fromUtf8(reply.mid(1).chopped(1));
 }
 
 } // namespace Digikam
