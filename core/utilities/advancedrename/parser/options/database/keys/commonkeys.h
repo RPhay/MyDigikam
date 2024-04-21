@@ -27,8 +27,8 @@ class CommonKeys : public DbKeysCollection
 {
 public:
 
-    explicit CommonKeys();
-    ~CommonKeys() override {};
+    CommonKeys();
+    ~CommonKeys() override = default;
 
 protected:
 

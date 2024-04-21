@@ -27,6 +27,7 @@
 
 namespace
 {
+
 static const QString KEY_DEFAULTCOMMENT(QLatin1String("DefaultComment"));
 static const QString KEY_DIMENSION(QLatin1String("Dimension"));
 static const QString KEY_FILESIZE(QLatin1String("FileSize"));
@@ -43,6 +44,7 @@ static const QString KEY_AUTHORS(QLatin1String("Authors"));
 static const QString KEY_TITLE(QLatin1String("Title"));
 static const QString KEY_TAGSLIST(QLatin1String("TagsList"));
 static const QString KEY_TAGSPATHLIST(QLatin1String("TagsPathList"));
+
 }
 
 namespace Digikam
@@ -170,25 +172,35 @@ QString CommonKeys::getDbValue(const QString& key, ParseSettings& settings)
         switch (info.category())
         {
             case DatabaseItem::UndefinedCategory:
+            {
                 result = QLatin1String("Undefined");
                 break;
+            }
 
             case DatabaseItem::Image:
+            {
                 result = QLatin1String("Image");
                 break;
+            }
 
             case DatabaseItem::Video:
+            {
                 result = QLatin1String("Video");
                 break;
+            }
 
             case DatabaseItem::Audio:
+            {
                 result = QLatin1String("Audio");
                 break;
+            }
 
             case DatabaseItem::Other:
             default:
+            {
                 result = QLatin1String("Other");
                 break;
+            }
         }
     }
     else if (key == KEY_RATING)

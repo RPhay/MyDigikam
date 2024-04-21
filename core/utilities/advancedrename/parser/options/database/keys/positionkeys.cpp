@@ -26,6 +26,7 @@
 
 namespace
 {
+
 static const QString KEY_LATITUDE(QLatin1String("Latitude"));
 static const QString KEY_LONGITUDE(QLatin1String("Longitude"));
 static const QString KEY_LATTITUDENUMBER(QLatin1String("LatitudeNumber"));
@@ -39,6 +40,7 @@ static const QString KEY_ROLL(QLatin1String("Roll"));
 static const QString KEY_TILT(QLatin1String("Tilt"));
 static const QString KEY_ACCURACY(QLatin1String("Accuracy"));
 static const QString KEY_DESCRIPTION(QLatin1String("Description"));
+
 }
 
 namespace Digikam

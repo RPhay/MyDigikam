@@ -28,8 +28,8 @@ class MetadataKeys : public DbKeysCollection
 
 public:
 
-    explicit MetadataKeys();
-    ~MetadataKeys() override {};
+    MetadataKeys();
+    ~MetadataKeys() override = default;
 
 protected:
 

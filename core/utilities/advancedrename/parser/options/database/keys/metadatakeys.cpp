@@ -25,6 +25,7 @@
 
 namespace
 {
+
 static const QString KEY_MAKE(QLatin1String("CameraMake"));
 static const QString KEY_MODEL(QLatin1String("CameraModel"));
 static const QString KEY_LENS(QLatin1String("CameraLens"));
@@ -49,6 +50,7 @@ static const QString KEY_AUDIOCodec(QLatin1String("AudioCodec"));
 static const QString KEY_DURATION(QLatin1String("Duration"));
 static const QString KEY_FRAMERATE(QLatin1String("FrameRate"));
 static const QString KEY_VIDEOCODEC(QLatin1String("VideoCodec"));
+
 }
 
 namespace Digikam

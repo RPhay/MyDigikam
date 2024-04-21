@@ -28,8 +28,8 @@ class PositionKeys : public DbKeysCollection
 
 public:
 
-    explicit PositionKeys();
-    ~PositionKeys() override {};
+    PositionKeys();
+    ~PositionKeys() override = default;
 
 protected:
 
