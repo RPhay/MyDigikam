@@ -24,7 +24,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 #include "exiftoolparser.h"
 
 using namespace Digikam;
@@ -69,12 +68,12 @@ int main(int argc, char** argv)
     // Header
 
     stream << sep
-           << QT_ENDL
+           << Qt::endl
            << QString::fromLatin1("%1").arg(QLatin1String("ExifTool::group0.name"), section1) << " | "
            << QString::fromLatin1("%1").arg(QLatin1String("String Value"),          section2)
-           << QT_ENDL
+           << Qt::endl
            << sep
-           << QT_ENDL;
+           << Qt::endl;
 
     for (ExifToolParser::ExifToolData::const_iterator it = parsed.constBegin() ;
          it != parsed.constEnd() ; ++it)
@@ -99,10 +98,10 @@ int main(int argc, char** argv)
 
     Q_FOREACH (const QString& tag, tagsLst)
     {
-        stream << tag << QT_ENDL;
+        stream << tag << Qt::endl;
     }
 
-    stream << sep << QT_ENDL;
+    stream << sep << Qt::endl;
 
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << output;
 

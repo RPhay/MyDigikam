@@ -21,7 +21,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 #include "calsystem.h"
 
 
@@ -344,7 +343,7 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
 
         Q_FOREACH (const Event::Ptr event, list)
         {
-            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << event->summary() << QT_ENDL << "--------";
+            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << event->summary() << Qt::endl << "--------";
             counter++;
 
             if (event->recurs())

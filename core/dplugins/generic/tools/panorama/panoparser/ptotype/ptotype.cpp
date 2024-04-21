@@ -28,7 +28,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -50,7 +49,7 @@ bool PTOType::createFile(const QString& filepath)
 
     if (project.previousComments.size() > 0)
     {
-        out << project.previousComments.join(QLatin1Char('\n')) << QT_ENDL;
+        out << project.previousComments.join(QLatin1Char('\n')) << Qt::endl;
     }
 
     out << "p";
@@ -173,13 +172,13 @@ bool PTOType::createFile(const QString& filepath)
     }
 
     out << "\"";
-    out << project.unmatchedParameters.join(QLatin1Char(' ')) << QT_ENDL;
+    out << project.unmatchedParameters.join(QLatin1Char(' ')) << Qt::endl;
 
     // Second, the stitcher line
 
     if (stitcher.previousComments.size() > 0)
     {
-        out << stitcher.previousComments.join(QLatin1Char('\n')) << QT_ENDL;
+        out << stitcher.previousComments.join(QLatin1Char('\n')) << Qt::endl;
     }
 
     out << "m";
@@ -193,7 +192,7 @@ bool PTOType::createFile(const QString& filepath)
 
     out << " m" << stitcher.huberSigma;
     out << " p" << stitcher.photometricHuberSigma;
-    out << stitcher.unmatchedParameters.join(QLatin1Char(' ')) << QT_ENDL;
+    out << stitcher.unmatchedParameters.join(QLatin1Char(' ')) << Qt::endl;
 
     // Third, the images
     // Note: the order is very important here
@@ -204,7 +203,7 @@ bool PTOType::createFile(const QString& filepath)
 
         if (image.previousComments.size() > 0)
         {
-            out << image.previousComments.join(QLatin1Char('\n')) << QT_ENDL;
+            out << image.previousComments.join(QLatin1Char('\n')) << Qt::endl;
         }
 
         out << "i";
@@ -271,7 +270,7 @@ bool PTOType::createFile(const QString& filepath)
         out << " Vm" << image.vignettingMode;
         out << image.unmatchedParameters.join(QLatin1Char(' '));
         out << " n\"" << image.fileName << "\"";
-        out << QT_ENDL;
+        out << Qt::endl;
     }
 
     // Fourth, the variable to optimize
@@ -284,7 +283,7 @@ bool PTOType::createFile(const QString& filepath)
         {
             if (optim.previousComments.size() > 0)
             {
-                out << optim.previousComments.join(QLatin1Char('\n')) << QT_ENDL;
+                out << optim.previousComments.join(QLatin1Char('\n')) << Qt::endl;
             }
 
             out << "v ";
@@ -389,11 +388,11 @@ bool PTOType::createFile(const QString& filepath)
                     return false;
             }
 
-            out << id << QT_ENDL;
+            out << id << Qt::endl;
         }
     }
 
-    out << "v" << QT_ENDL;
+    out << "v" << Qt::endl;
 
     // Fifth, the masks
 
@@ -405,7 +404,7 @@ bool PTOType::createFile(const QString& filepath)
         {
             if (mask.previousComments.size() > 0)
             {
-                out << mask.previousComments.join(QLatin1Char('\n')) << QT_ENDL;
+                out << mask.previousComments.join(QLatin1Char('\n')) << Qt::endl;
             }
 
             out << "k i" << id;
@@ -418,7 +417,7 @@ bool PTOType::createFile(const QString& filepath)
                 out << mask.hull[pid].x() << ' ' << mask.hull[pid].y();
             }
 
-            out << "\"" << QT_ENDL;
+            out << "\"" << Qt::endl;
         }
     }
 
@@ -428,7 +427,7 @@ bool PTOType::createFile(const QString& filepath)
     {
         if (cp.previousComments.size() > 0)
         {
-            out << cp.previousComments.join(QLatin1Char('\n')) << QT_ENDL;
+            out << cp.previousComments.join(QLatin1Char('\n')) << Qt::endl;
         }
 
         out << "c n" << cp.image1Id;
@@ -438,12 +437,12 @@ bool PTOType::createFile(const QString& filepath)
         out << " X" << cp.p2_x;
         out << " Y" << cp.p2_y;
         out << " t" << cp.type;
-        out << QT_ENDL;
+        out << Qt::endl;
     }
 
     // Finally the ending comments
 
-    out << lastComments.join(QLatin1Char('\n')) << QT_ENDL;
+    out << lastComments.join(QLatin1Char('\n')) << Qt::endl;
 
     file.close();
 

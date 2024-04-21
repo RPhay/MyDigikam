@@ -137,7 +137,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
 /*
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "index = " << index
                                          << ", landmarks: (" << landmarks.at<float>(i, 0)
-                                         << ", " << landmarks.at<float>(i, 1) << ")" << QT_ENDL;
+                                         << ", " << landmarks.at<float>(i, 1) << ")" << Qt::endl;
 */
     }
 

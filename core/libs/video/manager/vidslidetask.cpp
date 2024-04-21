@@ -38,9 +38,8 @@
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
-#include "digikam_globals.h"
+#include "digikam_config.h"
 #include "frameutils.h"
 #include "frameosd.h"
 #include "dfileoperations.h"
@@ -143,7 +142,7 @@ void VidSlideTask::run()
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Frame generated:" << framePath;
             }
 
-            out << QString::fromUtf8("file '%1'").arg(QFileInfo(framePath).fileName()) << QT_ENDL;
+            out << QString::fromUtf8("file '%1'").arg(QFileInfo(framePath).fileName()) << Qt::endl;
             ++frameId;
         }
         while ((ttmout != -1) && !m_cancel);
@@ -181,7 +180,7 @@ void VidSlideTask::run()
                     qCDebug(DIGIKAM_GENERAL_LOG) << "Frame generated:" << ":" << framePath;
                 }
 
-                out << QString::fromUtf8("file '%1'").arg(QFileInfo(framePath).fileName()) << QT_ENDL;
+                out << QString::fromUtf8("file '%1'").arg(QFileInfo(framePath).fileName()) << Qt::endl;
                 ++frameId;
                 ++count;
             }

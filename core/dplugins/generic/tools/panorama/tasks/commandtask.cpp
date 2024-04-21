@@ -25,7 +25,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_globals.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
@@ -118,7 +117,7 @@ QString CommandTask::getProcessError()
 void CommandTask::printDebug(const QString& binaryName)
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << binaryName << "command line: " << getCommandLine();
-    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << binaryName << "output:" << QT_ENDL
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << binaryName << "output:" << Qt::endl
                                          << qPrintable(QLatin1String(" >>\t") +
                                             output.replace(QLatin1Char('\n'), QLatin1String("\n >>\t")));
 }

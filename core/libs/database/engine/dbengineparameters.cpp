@@ -33,7 +33,6 @@
 // Local includes
 
 #include "digikam_config.h"
-#include "digikam_globals.h"
 #include "digikam_debug.h"
 #include "o0simplecrypt.h"      // For password encrypt
 
@@ -930,24 +929,24 @@ QString DbEngineParameters::defaultMysqlUpgradeCmd()   // For Linux, Windows and
 
 QDebug operator<<(QDebug dbg, const DbEngineParameters& p)
 {
-    dbg.nospace() << "Database Parameters:"                                                                    << QT_ENDL;
-    dbg.nospace() << "   Type:                        " << p.databaseType                                      << QT_ENDL;
-    dbg.nospace() << "   DB Core Name:                " << p.databaseNameCore                                  << QT_ENDL;
-    dbg.nospace() << "   DB Thumbs Name:              " << p.databaseNameThumbnails                            << QT_ENDL;
-    dbg.nospace() << "   DB Face Name:                " << p.databaseNameFace                                  << QT_ENDL;
-    dbg.nospace() << "   DB Similarity Name:          " << p.databaseNameSimilarity                            << QT_ENDL;
-    dbg.nospace() << "   Connect Options:             " << p.connectOptions                                    << QT_ENDL;
-    dbg.nospace() << "   Host Name:                   " << p.hostName                                          << QT_ENDL;
-    dbg.nospace() << "   Host Port:                   " << p.port                                              << QT_ENDL;
-    dbg.nospace() << "   WAL Mode:                    " << p.walMode                                           << QT_ENDL;
-    dbg.nospace() << "   Internal Server:             " << p.internalServer                                    << QT_ENDL;
-    dbg.nospace() << "   Internal Server Path:        " << p.internalServerDBPath                              << QT_ENDL;
-    dbg.nospace() << "   Internal Server Init Cmd:    " << p.internalServerMysqlInitCmd                        << QT_ENDL;
-    dbg.nospace() << "   Internal Server Admin Cmd:   " << p.internalServerMysqlAdminCmd                       << QT_ENDL;
-    dbg.nospace() << "   Internal Server Program Cmd: " << p.internalServerMysqlServerCmd                      << QT_ENDL;
-    dbg.nospace() << "   Internal Server Upgrade Cmd: " << p.internalServerMysqlUpgradeCmd                     << QT_ENDL;
-    dbg.nospace() << "   Username:                    " << p.userName                                          << QT_ENDL;
-    dbg.nospace() << "   Password:                    " << QString().fill(QLatin1Char('X'), p.password.size()) << QT_ENDL;
+    dbg.nospace() << "Database Parameters:"                                                                    << Qt::endl;
+    dbg.nospace() << "   Type:                        " << p.databaseType                                      << Qt::endl;
+    dbg.nospace() << "   DB Core Name:                " << p.databaseNameCore                                  << Qt::endl;
+    dbg.nospace() << "   DB Thumbs Name:              " << p.databaseNameThumbnails                            << Qt::endl;
+    dbg.nospace() << "   DB Face Name:                " << p.databaseNameFace                                  << Qt::endl;
+    dbg.nospace() << "   DB Similarity Name:          " << p.databaseNameSimilarity                            << Qt::endl;
+    dbg.nospace() << "   Connect Options:             " << p.connectOptions                                    << Qt::endl;
+    dbg.nospace() << "   Host Name:                   " << p.hostName                                          << Qt::endl;
+    dbg.nospace() << "   Host Port:                   " << p.port                                              << Qt::endl;
+    dbg.nospace() << "   WAL Mode:                    " << p.walMode                                           << Qt::endl;
+    dbg.nospace() << "   Internal Server:             " << p.internalServer                                    << Qt::endl;
+    dbg.nospace() << "   Internal Server Path:        " << p.internalServerDBPath                              << Qt::endl;
+    dbg.nospace() << "   Internal Server Init Cmd:    " << p.internalServerMysqlInitCmd                        << Qt::endl;
+    dbg.nospace() << "   Internal Server Admin Cmd:   " << p.internalServerMysqlAdminCmd                       << Qt::endl;
+    dbg.nospace() << "   Internal Server Program Cmd: " << p.internalServerMysqlServerCmd                      << Qt::endl;
+    dbg.nospace() << "   Internal Server Upgrade Cmd: " << p.internalServerMysqlUpgradeCmd                     << Qt::endl;
+    dbg.nospace() << "   Username:                    " << p.userName                                          << Qt::endl;
+    dbg.nospace() << "   Password:                    " << QString().fill(QLatin1Char('X'), p.password.size()) << Qt::endl;
 
     return dbg.space();
 }

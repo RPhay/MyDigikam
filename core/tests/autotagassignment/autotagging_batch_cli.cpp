@@ -107,7 +107,7 @@ int main(int argc, char** argv)
     for (int i = 0 ; i < sizeData ; i++)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "Path:" << filesInfo[i].absoluteFilePath();
-        qCDebug(DIGIKAM_TESTS_LOG) << tags[i] << QT_ENDL;
+        qCDebug(DIGIKAM_TESTS_LOG) << tags[i] << Qt::endl;
     }
 
     return app.exec();

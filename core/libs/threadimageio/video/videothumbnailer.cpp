@@ -28,10 +28,10 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "videothumbdecoder.h"
 #include "videostripfilter.h"
 #include "videothumbwriter.h"
-#include "digikam_debug.h"
 
 using namespace std;
 
@@ -311,7 +311,7 @@ int VideoThumbnailer::Private::getBestThumbnailIndex(vector<VideoFrame>& videoFr
                                  << bestFrame
                                  << "(RMSE: "
                                  << minRMSE
-                                 << ")" << QT_ENDL;
+                                 << ")" << Qt::endl;
 */
     return bestFrame;
 }

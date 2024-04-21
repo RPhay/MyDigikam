@@ -455,7 +455,7 @@ void FbTalker::addPhoto(const QString& imgPath, const QString& albumID, const QS
         form.addPair(it.key(), it.value());
     }
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "FORM:" << QT_ENDL << form.formData();
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "FORM:" << Qt::endl << form.formData();
 
     if (!form.addFile(QUrl::fromLocalFile(imgPath).fileName(), imgPath))
     {

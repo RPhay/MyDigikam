@@ -850,7 +850,7 @@ void SmugTalker::parseResponseLogout(const QByteArray& data)
     if (!doc.setContent(data))
         return;
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Parse Logout response:" << QT_ENDL << data;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Parse Logout response:" << Qt::endl << data;
 
     QDomElement e = doc.documentElement();
 
@@ -1109,7 +1109,7 @@ void SmugTalker::parseResponseListCategories(const QByteArray& data)
         return;
     }
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Parse Categories response:" << QT_ENDL << data;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Parse Categories response:" << Qt::endl << data;
 
     QList <SmugCategory> categoriesList;
     QDomElement e = doc.documentElement();
@@ -1173,7 +1173,7 @@ void SmugTalker::parseResponseListSubCategories(const QByteArray& data)
         return;
     }
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Parse SubCategories response:" << QT_ENDL << data;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Parse SubCategories response:" << Qt::endl << data;
 
     QList <SmugCategory> categoriesList;
     QDomElement e = doc.documentElement();

@@ -21,9 +21,8 @@
 
 // Local includes
 
-#include "dmetadata.h"
 #include "digikam_debug.h"
-#include "digikam_globals.h"
+#include "dmetadata.h"
 
 using namespace Digikam;
 
@@ -31,9 +30,9 @@ void s_printMetadataMap(const DMetadata::MetaDataMap& map)
 {
     QString output;
     QTextStream stream(&output);
-    stream << QT_ENDL;
+    stream << Qt::endl;
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << map.size() << "tags:" << QT_ENDL;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Found" << map.size() << "tags:" << Qt::endl;
 
     for (DMetadata::MetaDataMap::const_iterator it = map.constBegin() ;
          it != map.constEnd() ; ++it)
@@ -52,7 +51,7 @@ void s_printMetadataMap(const DMetadata::MetaDataMap& map)
             tagVal.append(QString::fromLatin1("... (%1 bytes)").arg(value.length()));
         }
 
-        stream << tagName << " : " << tagVal << QT_ENDL;
+        stream << tagName << " : " << tagVal << Qt::endl;
     }
 
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << output;

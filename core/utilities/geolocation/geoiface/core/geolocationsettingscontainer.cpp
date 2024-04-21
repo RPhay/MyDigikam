@@ -21,7 +21,6 @@
 // Local includes
 
 #include "geolocationsettings.h"
-#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -66,35 +65,35 @@ void GeolocationSettingsContainer::writeToConfig(KConfigGroup& group) const
 
 QDebug operator<<(QDebug dbg, const GeolocationSettingsContainer& inf)
 {
-    dbg.nospace() << "[GeolocationSettingsContainer]"       << QT_ENDL;
+    dbg.nospace() << "[GeolocationSettingsContainer]"       << Qt::endl;
     dbg.nospace() << "   distanceUnit("
-                  << inf.distanceUnit << "), "              << QT_ENDL;
+                  << inf.distanceUnit << "), "              << Qt::endl;
     dbg.nospace() << "   angleUnit("
-                  << inf.angleUnit << "), "                 << QT_ENDL;
+                  << inf.angleUnit << "), "                 << Qt::endl;
     dbg.nospace() << "   stillQuality("
-                  << inf.stillQuality << "), "              << QT_ENDL;
+                  << inf.stillQuality << "), "              << Qt::endl;
     dbg.nospace() << "   animationQuality("
-                  << inf.animationQuality << "), "          << QT_ENDL;
+                  << inf.animationQuality << "), "          << Qt::endl;
     dbg.nospace() << "   mapFont("
-                  << inf.mapFont << "), "                   << QT_ENDL;
+                  << inf.mapFont << "), "                   << Qt::endl;
     dbg.nospace() << "   inertialRotation("
-                  << inf.inertialRotation << "), "          << QT_ENDL;
+                  << inf.inertialRotation << "), "          << Qt::endl;
     dbg.nospace() << "   mouseRotation("
-                  << inf.mouseRotation << "), "             << QT_ENDL;
+                  << inf.mouseRotation << "), "             << Qt::endl;
     dbg.nospace() << "   volatileTileCacheLimit("
-                  << inf.volatileTileCacheLimit << "), "    << QT_ENDL;
+                  << inf.volatileTileCacheLimit << "), "    << Qt::endl;
     dbg.nospace() << "   persistentTileCacheLimit("
-                  << inf.persistentTileCacheLimit << "), "  << QT_ENDL;
+                  << inf.persistentTileCacheLimit << "), "  << Qt::endl;
     dbg.nospace() << "   showGrid("
-                  << inf.showGrid << "), "                  << QT_ENDL;
+                  << inf.showGrid << "), "                  << Qt::endl;
     dbg.nospace() << "   showCross("
-                  << inf.showCross << "), "                 << QT_ENDL;
+                  << inf.showCross << "), "                 << Qt::endl;
     dbg.nospace() << "   showAtmosphere("
-                  << inf.showAtmos << "), "                 << QT_ENDL;
+                  << inf.showAtmos << "), "                 << Qt::endl;
     dbg.nospace() << "   showSunShading("
-                  << inf.showSunShading << "), "            << QT_ENDL;
+                  << inf.showSunShading << "), "            << Qt::endl;
     dbg.nospace() << "   showCities("
-                  << inf.showCities << "), "                << QT_ENDL;
+                  << inf.showCities << "), "                << Qt::endl;
     dbg.nospace() << "   showRelief("
                   << inf.showRelief << ")";
 

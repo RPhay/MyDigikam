@@ -134,28 +134,28 @@ void ImageQualityParser::startAnalyse()
     if (filems.open(QIODevice::Append | QIODevice::Text))
     {
         QTextStream oms(&filems);
-        oms << "File:" << d->image.originalFilePath() << QT_ENDL;
+        oms << "File:" << d->image.originalFilePath() << Qt::endl;
 
         if (d->imq.detectBlur)
         {
-            oms << "Blur Present:" << blur << QT_ENDL;
-            oms << "Blur Present(using LoG filter):"<< blur2 << QT_ENDL;
+            oms << "Blur Present:" << blur << Qt::endl;
+            oms << "Blur Present(using LoG filter):"<< blur2 << Qt::endl;
         }
 
         if (d->imq.detectNoise)
         {
-            oms << "Noise Present:" << noise << QT_ENDL;
+            oms << "Noise Present:" << noise << Qt::endl;
         }
 
         if (d->imq.detectCompression)
         {
-            oms << "Compression Present:" << compressionLevel << QT_ENDL;
+            oms << "Compression Present:" << compressionLevel << Qt::endl;
         }
 
         if (d->imq.detectExposure)
         {
-            oms << "Under-exposure Percents:" << underLevel << QT_ENDL;
-            oms << "Over-exposure Percents:"  << overLevel  << QT_ENDL;
+            oms << "Under-exposure Percents:" << underLevel << Qt::endl;
+            oms << "Over-exposure Percents:"  << overLevel  << Qt::endl;
         }
 
         filems.close();

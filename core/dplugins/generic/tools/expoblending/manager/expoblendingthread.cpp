@@ -55,9 +55,8 @@
 
 // Local includes
 
-#include "digikam_version.h"
 #include "digikam_debug.h"
-#include "digikam_globals.h"
+#include "digikam_version.h"
 #include "drawdecoder.h"
 #include "dimg.h"
 #include "dimgloaderobserver.h"
@@ -486,7 +485,7 @@ void ExpoBlendingThread::run()
 
                 default:
                 {
-                    qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action specified" << QT_ENDL;
+                    qCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action specified" << Qt::endl;
                     break;
                 }
             }
