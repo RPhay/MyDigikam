@@ -113,20 +113,13 @@ public:
     {
     public:
 
-        Result()
-          : waitError (false),
-            cmdStatus (ExifToolProcess::COMMAND_RESULT),
-            cmdAction (ExifToolProcess::NO_ACTION),
-            cmdNumber (0),
-            elapsed   (0)
-        {
-        }
+        Result() = default;
 
-        bool       waitError;
-        int        cmdStatus;
-        int        cmdAction;
-        int        cmdNumber;
-        int        elapsed;
+        bool       waitError    = false;
+        int        cmdStatus    = ExifToolProcess::COMMAND_RESULT;
+        int        cmdAction    = ExifToolProcess::NO_ACTION;
+        int        cmdNumber    = 0;
+        int        elapsed      = 0;
         QByteArray output;
     };
 
@@ -135,7 +128,7 @@ public:
     /**
      * Constructs a ExifToolProcess.
      */
-    explicit ExifToolProcess();
+    ExifToolProcess();
 
     /**
      * Destructs the ExifToolProcess object, i.e., killing the process.

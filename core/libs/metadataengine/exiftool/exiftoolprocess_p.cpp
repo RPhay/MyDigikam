@@ -32,8 +32,10 @@ ExifToolProcess::Private::Private(ExifToolProcess* const q)
 
 void ExifToolProcess::Private::slotExecNextCmd()
 {
-    if ((pp->state() != QProcess::Running) ||
-        writeChannelIsClosed)
+    if (
+        (pp->state() != QProcess::Running) ||
+        writeChannelIsClosed
+       )
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::execNextCmd(): ExifTool is not running";
         return;

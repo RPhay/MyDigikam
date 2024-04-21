@@ -469,8 +469,10 @@ void ExifToolProcess::slotChangeProgram(const QString& etExePath)
 
     changeExifToolProgram(etExePath);
 
-    if (exifToolAvailable()        &&
-        (et == getExifToolProgram()))
+    if (
+        exifToolAvailable()        &&
+        (et == getExifToolProgram())
+       )
     {
         return;
     }
