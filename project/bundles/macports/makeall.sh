@@ -17,8 +17,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older host logs from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos <<< "rm build-macports.full.log.gz"
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos <<< "rm build-extralibs.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos-$ARCH_TARGET <<< "rm build-macports.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos-$ARCH_TARGET <<< "rm build-extralibs.full.log.gz"
 
     echo -e "---------- Compress host log files \n"
 
@@ -27,8 +27,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Upload new host logs to files.kde.org repository \n"
 
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-macports.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos  || true
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos || true
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-macports.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos-$ARCH_TARGET  || true
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos-$ARCH_TARGET || true
 
     echo -e "---------- Cleanup local bundle log file archives \n"
 
