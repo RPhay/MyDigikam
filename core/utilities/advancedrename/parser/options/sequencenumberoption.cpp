@@ -75,10 +75,6 @@ SequenceNumberOption::SequenceNumberOption()
     setRegExp(reg);
 }
 
-SequenceNumberOption::~SequenceNumberOption()
-{
-}
-
 void SequenceNumberOption::slotTokenTriggered(const QString& token)
 {
     Q_UNUSED(token)
@@ -127,8 +123,10 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
                 result.append(QLatin1Char('e'));
             }
 
-            if (!randomAware && !counterAware &&
-                ((start  > 1) || ((start == 1) && (step > 1))))
+            if (
+                !randomAware && !counterAware &&
+                ((start  > 1) || ((start == 1) && (step > 1)))
+               )
             {
                 if (extensionAware || folderAware)
                 {

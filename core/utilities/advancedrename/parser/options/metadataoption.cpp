@@ -39,9 +39,7 @@ namespace Digikam
 {
 
 MetadataOptionDialog::MetadataOptionDialog(Rule* const parent)
-    : RuleDialog(parent),
-      metadataPanel(nullptr),
-      separatorLineEdit(nullptr)
+    : RuleDialog(parent)
 {
     QWidget* const mainWidget = new QWidget(this);
     QTabWidget* const tab     = new QTabWidget(this);
@@ -85,10 +83,6 @@ MetadataOptionDialog::MetadataOptionDialog(Rule* const parent)
 
     setSettingsWidget(mainWidget);
     resize(450, 450);
-}
-
-MetadataOptionDialog::~MetadataOptionDialog()
-{
 }
 
 // --------------------------------------------------------
@@ -141,6 +135,7 @@ QString MetadataOption::parseOperation(ParseSettings& settings, const QRegularEx
 {
     QString keyword = match.captured(2);
     QString result  = parseMetadata(keyword, settings);
+
     return result;
 }
 

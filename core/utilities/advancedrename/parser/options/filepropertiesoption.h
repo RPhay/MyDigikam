@@ -33,7 +33,7 @@ class FilePropertiesOption : public Option
 
 public:
 
-    explicit FilePropertiesOption();
+    FilePropertiesOption();
     ~FilePropertiesOption()                                      override = default;
 
 protected:

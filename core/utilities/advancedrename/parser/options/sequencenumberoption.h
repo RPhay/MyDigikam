@@ -37,7 +37,9 @@ public:
     explicit SequenceNumberDialog(Rule* const parent);
     ~SequenceNumberDialog() override;
 
-    Ui::SequenceNumberOptionDialogWidget* const ui;
+public:
+
+    Ui::SequenceNumberOptionDialogWidget* const ui = nullptr;
 
 private:
 
@@ -55,8 +57,8 @@ class SequenceNumberOption : public Option
 
 public:
 
-    explicit SequenceNumberOption();
-    ~SequenceNumberOption()                                      override;
+    SequenceNumberOption();
+    ~SequenceNumberOption()                                      override = default;
 
 protected:
 

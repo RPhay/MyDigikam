@@ -39,6 +39,8 @@ public:
     explicit ReplaceDialog(Rule* const parent);
     ~ReplaceDialog()                                                                      override;
 
+public:
+
     Ui::ReplaceModifierDialogWidget* const ui = nullptr;
 
 private:

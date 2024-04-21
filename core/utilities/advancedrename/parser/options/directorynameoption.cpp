@@ -60,7 +60,7 @@ QString DirectoryNameOption::parseOperation(ParseSettings& settings, const QRegu
     int folderCount     = folders.count();
     int matchedLength   = match.captured(1).length();
 
-    if (matchedLength == 0)
+    if      (matchedLength == 0)
     {
         result = folders.last();
     }

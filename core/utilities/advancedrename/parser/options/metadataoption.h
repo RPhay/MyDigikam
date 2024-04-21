@@ -38,12 +38,12 @@ class MetadataOptionDialog : public RuleDialog
 public:
 
     explicit MetadataOptionDialog(Rule* const parent);
-    ~MetadataOptionDialog() override;
+    ~MetadataOptionDialog() override = default;
 
 public:
 
-    MetadataPanel* metadataPanel;
-    QLineEdit*     separatorLineEdit;
+    MetadataPanel* metadataPanel     = nullptr;
+    QLineEdit*     separatorLineEdit = nullptr;
 
 private:
 
@@ -61,7 +61,7 @@ class MetadataOption : public Option
 
 public:
 
-    explicit MetadataOption();
+    MetadataOption();
     ~MetadataOption()                                            override = default;
 
 protected:

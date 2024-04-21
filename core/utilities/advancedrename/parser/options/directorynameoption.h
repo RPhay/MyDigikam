@@ -34,7 +34,7 @@ class DirectoryNameOption : public Option
 
 public:
 
-    explicit DirectoryNameOption();
+    DirectoryNameOption();
     ~DirectoryNameOption()                                       override = default;
 
 protected:

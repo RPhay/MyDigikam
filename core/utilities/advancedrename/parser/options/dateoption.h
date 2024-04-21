@@ -55,8 +55,8 @@ public:
 
 public:
 
-    explicit DateFormat();
-    ~DateFormat() {};
+    DateFormat();
+    ~DateFormat() = default;
 
     Type     type(const QString& identifier);
 
@@ -100,9 +100,11 @@ public:
     explicit DateOptionDialog(Rule* parent);
     ~DateOptionDialog() override;
 
-    Ui::DateOptionDialogWidget* const ui;
+    DateSource dateSource() const;
 
-    DateSource dateSource();
+public:
+
+    Ui::DateOptionDialogWidget* const ui = nullptr;
 
 private Q_SLOTS:
 
@@ -129,7 +131,7 @@ class DateOption : public Option
 
 public:
 
-    explicit DateOption();
+    DateOption();
     ~DateOption()                                                override = default;
 
 protected:

@@ -33,7 +33,7 @@ class CameraNameOption : public Option
 
 public:
 
-    explicit CameraNameOption();
+    CameraNameOption();
     ~CameraNameOption()                         override = default;
 
 protected:

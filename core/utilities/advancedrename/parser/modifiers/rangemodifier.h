@@ -37,6 +37,8 @@ public:
     explicit RangeDialog(Rule* const parent);
     ~RangeDialog()                                                                        override;
 
+public:
+
     Ui::RangeModifierDialogWidget* const ui = nullptr;
 
 private Q_SLOTS:

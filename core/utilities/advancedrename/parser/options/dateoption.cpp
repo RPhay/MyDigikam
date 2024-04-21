@@ -171,7 +171,7 @@ DateOptionDialog::~DateOptionDialog()
     delete ui;
 }
 
-DateOptionDialog::DateSource DateOptionDialog::dateSource()
+DateOptionDialog::DateSource DateOptionDialog::dateSource() const
 {
     QVariant v = ui->dateSourcePicker->itemData(ui->dateSourcePicker->currentIndex());
     bool ok    = true;
@@ -279,8 +279,10 @@ QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpres
 
     const int MIN_TOKEN_SIZE = 2;
 
-    if ((token.size() > MIN_TOKEN_SIZE) &&
-        (token.startsWith(QLatin1Char('"')) && token.endsWith(QLatin1Char('"'))))
+    if (
+        (token.size() > MIN_TOKEN_SIZE) &&
+        (token.startsWith(QLatin1Char('"')) && token.endsWith(QLatin1Char('"')))
+       )
     {
         token = token.remove(0, 1);
         token.chop(1);
