@@ -397,9 +397,9 @@ else
 
 fi
 
-TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
-PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
-CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
+TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Qt6-Win64$DEBUG_SUF.exe
+PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Qt6-Win64$DEBUG_SUF.tar.xz
+CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Qt6-Win64$DEBUG_SUF.sum
 
 #################################################################################################
 # Build NSIS installer and Portable archive.

@@ -90,7 +90,7 @@ DK_VERSION=master
 #DK_VERSION=qt5-maintenance
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
-DK_SUBVER="-Qt5"
+DK_SUBVER=""
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0

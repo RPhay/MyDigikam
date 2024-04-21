@@ -27,8 +27,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Upload new host logs to files.kde.org repository \n"
 
-    UploadWithRetry $ORIG_WD/logs/build-vcpkg.full.log.gz     $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64 10
-    UploadWithRetry $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64 10
+    UploadWithRetry $ORIG_WD/logs/build-vcpkg.full.log.gz     $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64-Qt6 10
+    UploadWithRetry $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL $DK_UPLOADDIR/build.logs/win64-Qt6 10
 
     echo -e "---------- Cleanup local bundle log file archives \n"
 

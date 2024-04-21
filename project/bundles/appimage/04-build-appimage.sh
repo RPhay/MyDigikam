@@ -633,7 +633,7 @@ else
 
 fi
 
-APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-x86-64$QT_SUF$DEBUG_SUF.appimage"
+APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"$QT_SUF-x86-64$DEBUG_SUF.appimage"
 
 echo -e "------------- Create Bundle with AppImage SDK stage1\n"
 
@@ -725,7 +725,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older bundle AppImage files from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-x86-64$QT_SUF*$DEBUG_SUF.appimage*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *$QT_SUF-x86-64*$DEBUG_SUF.appimage*"
 
     echo -e "---------- Upload new bundle AppImage files to files.kde.org repository \n"
 
