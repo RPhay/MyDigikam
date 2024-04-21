@@ -237,13 +237,13 @@ protected:
      * The equatorial radius.
      * @see getSemiMajorAxis
      */
-    double m_semiMajorAxis;
+    double m_semiMajorAxis      = 0.0;
 
     /**
      * The polar radius.
      * @see getSemiMinorAxis
      */
-    double m_semiMinorAxis;
+    double m_semiMinorAxis      = 0.0;
 
     /**
      * The inverse of the flattening value, or DBL_MAX
@@ -251,16 +251,16 @@ protected:
      *
      * @see getInverseFlattening
      */
-    double m_inverseFlattening;
+    double m_inverseFlattening  = 0.0;
 
     /**
      * Tells if the Inverse Flattening definitive for this ellipsoid.
      *
      * @see isIvfDefinitive
      */
-    bool   m_ivfDefinitive;
+    bool   m_ivfDefinitive      = false;
 
-    bool   m_isSphere;
+    bool   m_isSphere           = false;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -458,12 +458,15 @@ protected:
      * Tolerance factors from the strictest (<code>TOLERANCE_0</CODE>)
      * to the most relax one (<code>TOLERANCE_3</CODE>).
      */
-    double m_TOLERANCE_0, m_TOLERANCE_1, m_TOLERANCE_2, m_TOLERANCE_3;
+    double m_TOLERANCE_0            = 5.0e-15;
+    double m_TOLERANCE_1            = 5.0e-14;
+    double m_TOLERANCE_2            = 5.0e-13;
+    double m_TOLERANCE_3            = 7.0e-3;
 
     /**
      * Tolerance factor for assertions. It has no impact on computed values.
      */
-    double m_TOLERANCE_CHECK;
+    double m_TOLERANCE_CHECK        = 1E-8;
 
     /**
      * The encapsulated ellipsoid.
@@ -473,27 +476,32 @@ protected:
     /**
      * The semi major axis of the referenced ellipsoid.
      */
-    double m_semiMajorAxis;
+    double m_semiMajorAxis          = 0.0;
 
     /**
      * The semi minor axis of the referenced ellipsoid.
      */
-    double m_semiMinorAxis;
+    double m_semiMinorAxis          = 0.0;
 
     /**
      * The eccentricity squared of the referenced ellipsoid.
      */
-    double m_eccentricitySquared;
+    double m_eccentricitySquared    = 0.0;
 
     /**
      * The maximum orthodromic distance that could be calculated onto the referenced ellipsoid.
      */
-    double m_maxOrthodromicDistance;
+    double m_maxOrthodromicDistance = 0.0;
 
     /**
      * GPNARC parameters computed from the ellipsoid.
      */
-    double m_A, m_B, m_C, m_D, m_E, m_F;
+    double m_A                      = 0.0;
+    double m_B                      = 0.0;
+    double m_C                      = 0.0;
+    double m_D                      = 0.0;
+    double m_E                      = 0.0;
+    double m_F                      = 0.0;
 
     /**
      * GPNHRI parameters computed from the ellipsoid.
@@ -502,48 +510,66 @@ protected:
      * @c f3 and @c f4 are <var>f<sup>2</sup></var>,
      * <var>f<sup>3</sup></var> and <var>f<sup>4</sup></var> respectively.
      */
-    double fo, f, f2, f3, f4;
+    double fo                       = 0.0;
+    double f                        = 0.0;
+    double f2                       = 0.0;
+    double f3                       = 0.0;
+    double f4                       = 0.0;
 
     /**
      * Parameters computed from the ellipsoid.
      */
-    double T1, T2, T4, T6;
+    double T1                       = 1.0;
+    double T2                       = 0.0;
+    double T4                       = 0.0;
+    double T6                       = 0.0;
 
     /**
      * Parameters computed from the ellipsoid.
      */
-    double a01, a02, a03, a21, a22, a23, a42, a43, a63;
+    double a01                      = 0.0;
+    double a02                      = 0.0;
+    double a03                      = 0.0;
+    double a21                      = 0.0;
+    double a22                      = 0.0;
+    double a23                      = 0.0;
+    double a42                      = 0.0;
+    double a43                      = 0.0;
+    double a63                      = 0.0;
 
     /**
      * The (<var>latitude</var>, <var>longitude</var>) coordinate of the first point
      * in radians. This point is set by setStartingGeographicPoint.
      */
-    double m_lat1, m_long1;
+    double m_lat1                   = 0.0;
+    double m_long1                  = 0.0;
 
     /**
      * The (<var>latitude</var>, <var>longitude</var>) coordinate of the destination point
      * in radians. This point is set by setDestinationGeographicPoint.
      */
-    double m_lat2, m_long2;
+    double m_lat2                   = 0.0;
+    double m_long2                  = 0.0;
 
     /**
      * The distance and azimuth (in radians) from the starting point
      * (long1, lat1) to the destination point
      * (long2, lat2).
      */
-    double m_distance, m_azimuth;
+    double m_distance               = 0.0;
+    double m_azimuth                = 0.0;
 
     /**
      * Tell if the destination point is valid.
      * @c false if long2 and lat2 need to be computed.
      */
-    bool m_destinationValid;
+    bool m_destinationValid         = false;
 
     /**
      * Tell if the azimuth and the distance are valids.
      * @c false if distance and azimuth need to be computed.
      */
-    bool m_directionValid;
+    bool m_directionValid           = false;
 };
 
 } // namespace Digikam

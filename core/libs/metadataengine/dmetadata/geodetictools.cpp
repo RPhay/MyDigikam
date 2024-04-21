@@ -28,43 +28,27 @@ namespace Digikam
 using namespace Coordinates;
 
 GeodeticCalculator::GeodeticCalculator(const Ellipsoid& e)
-    : m_ellipsoid       (e),
-      m_lat1            (0),
-      m_long1           (0),
-      m_lat2            (0),
-      m_long2           (0),
-      m_distance        (0),
-      m_azimuth         (0),
-      m_destinationValid(false),
-      m_directionValid  (false)
+    : m_ellipsoid(e)
 {
     m_semiMajorAxis       = m_ellipsoid.semiMajorAxis();
     m_semiMinorAxis       = m_ellipsoid.semiMinorAxis();
-
-    // constants
-
-    m_TOLERANCE_0         = 5.0e-15,
-    m_TOLERANCE_1         = 5.0e-14,
-    m_TOLERANCE_2         = 5.0e-13,
-    m_TOLERANCE_3         = 7.0e-3;
-    m_TOLERANCE_CHECK     = 1E-8;
 
     // calculation of GPNHRI parameters
 
     f                     = (m_semiMajorAxis-m_semiMinorAxis) / m_semiMajorAxis;
     fo                    = 1.0 - f;
-    f2                    = f*f;
-    f3                    = f*f2;
-    f4                    = f*f3;
+    f2                    = f * f;
+    f3                    = f * f2;
+    f4                    = f * f3;
     m_eccentricitySquared = f * (2.0-f);
 
     // Calculation of GNPARC parameters
 
     const double E2       = m_eccentricitySquared;
-    const double E4       = E2*E2;
-    const double E6       = E4*E2;
-    const double E8       = E6*E2;
-    const double EX       = E8*E2;
+    const double E4       = E2 * E2;
+    const double E6       = E4 * E2;
+    const double E8       = E6 * E2;
+    const double EX       = E8 * E2;
 
     m_A =  1.0+0.75*E2+0.703125*E4+0.68359375 *E6+0.67291259765625*E8+0.6661834716796875 *EX;
     m_B =      0.75*E2+0.9375  *E4+1.025390625*E6+1.07666015625   *E8+1.1103057861328125 *EX;
@@ -75,7 +59,6 @@ GeodeticCalculator::GeodeticCalculator(const Ellipsoid& e)
 
     m_maxOrthodromicDistance = m_semiMajorAxis * (1.0-E2) * M_PI * m_A - 1.0;
 
-    T1 = 1.0;
     T2 = -0.25*f*(1.0 + f + f2);
     T4 = 0.1875 * f2 * (1.0+2.25*f);
     T6 = 0.1953125 * f3;
@@ -353,11 +336,11 @@ double GeodeticCalculator::meridianArcLengthRadians(double P1, double P2)
      */
     double S1 = fabs(P1);
     double S2 = fabs(P2);
-    double DA = (P2-P1);
+    double DA = (P2 - P1);
 
     // Check for a 90 degree lookup
 
-    if ((S1 > m_TOLERANCE_0) || (S2 <= (M_PI/2-m_TOLERANCE_0)) || (S2 >= (M_PI/2+m_TOLERANCE_0)))
+    if ((S1 > m_TOLERANCE_0) || (S2 <= ((M_PI/ 2) - m_TOLERANCE_0)) || (S2 >= ((M_PI / 2) + m_TOLERANCE_0)))
     {
         const double DB = sin(P2* 2.0) - sin(P1* 2.0);
         const double DC = sin(P2* 4.0) - sin(P1* 4.0);
@@ -438,15 +421,17 @@ bool GeodeticCalculator::computeDirection()
     const double ESQP   = m_eccentricitySquared / (1.0-m_eccentricitySquared);
     const double alimit = M_PI*fo;
 
-    if ((ss >= alimit)        &&
-        (lat1 < m_TOLERANCE_3)  &&
+    if (
+        (ss   >= alimit)        &&
+        (lat1 <  m_TOLERANCE_3) &&
         (lat1 > -m_TOLERANCE_3) &&
-        (lat2 < m_TOLERANCE_3)  &&
-        (lat2 > -m_TOLERANCE_3))
+        (lat2 <  m_TOLERANCE_3) &&
+        (lat2 > -m_TOLERANCE_3)
+       )
     {
         // Computes an approximate AZ
 
-        const double CONS = (M_PI-ss)/(M_PI*f);
+        const double CONS = (M_PI - ss) / (M_PI * f);
         double AZ         = asin(CONS);
         int iter          = 0;
         double AZ_TEMP, S, AO;
@@ -689,8 +674,7 @@ Ellipsoid::Ellipsoid(const QString& name,
       m_semiMajorAxis    (semiMajorAxis),
       m_semiMinorAxis    (semiMinorAxis),
       m_inverseFlattening(inverseFlattening),
-      m_ivfDefinitive    (ivfDefinitive),
-      m_isSphere         (false)
+      m_ivfDefinitive    (ivfDefinitive)
 {
 }
 

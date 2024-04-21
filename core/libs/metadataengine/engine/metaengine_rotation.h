@@ -112,7 +112,7 @@ public:
     /**
      * Returns a QTransform representing this matrix
      */
-    QTransform toTransform()                              const;
+    QTransform toTransform()                        const;
 
     /**
      * Returns a QTransform for the given Exif orientation
