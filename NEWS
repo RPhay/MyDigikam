@@ -87,7 +87,7 @@ BUGFIXES:
 062 ==> 335039 - Photo layout exported from PrintCreator to PDF creates huge file.
 063 ==> 485823 - Sort by name.
 064 ==> 485820 - In Time Adjust "Timestamp Updated" is wrongly reported as "TimeStamp Used".
-065 ==> 
+065 ==> 414959 - Send by email with Thunderbird does not work anymore.
 066 ==> 
 067 ==> 
 068 ==> 
