@@ -923,7 +923,7 @@ public:
 
         if (json.contains(TOTAL_RESULTS))
         {
-            static const double MAX_DISTANGE_KM = EARTH_RADIUS_KM * M_PI;
+            static const double MAX_DISTANGE_KM = (int)EARTH_RADIUS_KM * M_PI;
             int total_results                   = json[TOTAL_RESULTS].toInt();
 
             if (total_results == 0)
