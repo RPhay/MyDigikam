@@ -171,7 +171,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
 
         if (altRef.isEmpty())
         {
-            altRef = "0";
+            altRef = QByteArray("0");
         }
 
         // Altitude decoding from Exif.
