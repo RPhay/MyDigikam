@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-20 01:43+0000\n"
+"POT-Creation-Date: 2024-04-21 01:42+0000\n"
 "PO-Revision-Date: 2024-04-16 07:18+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -4290,119 +4290,119 @@ msgstr "Odstrani ta stolpec"
 msgid "Configure this column"
 msgstr "Nastavi ta stolpec"
 
-#: core/app/views/utils/componentsinfodlg.cpp:79
+#: core/app/views/utils/componentsinfodlg.cpp:80
 #, kde-format
 msgctxt "@item: component info"
 msgid "Unknown"
 msgstr "Neznan"
 
-#: core/app/views/utils/componentsinfodlg.cpp:82
+#: core/app/views/utils/componentsinfodlg.cpp:83
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2"
 msgstr "LibGphoto2"
 
-#: core/app/views/utils/componentsinfodlg.cpp:87
+#: core/app/views/utils/componentsinfodlg.cpp:88
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2 support"
 msgstr "Podpora libGphoto2"
 
-#: core/app/views/utils/componentsinfodlg.cpp:87
-#: core/app/views/utils/componentsinfodlg.cpp:99
-#: core/app/views/utils/componentsinfodlg.cpp:111
-#: core/app/views/utils/componentsinfodlg.cpp:132
-#: core/app/views/utils/componentsinfodlg.cpp:144
-#: core/app/views/utils/componentsinfodlg.cpp:156
-#: core/app/views/utils/componentsinfodlg.cpp:168
-#: core/app/views/utils/componentsinfodlg.cpp:180
-#: core/app/views/utils/componentsinfodlg.cpp:198
+#: core/app/views/utils/componentsinfodlg.cpp:88
+#: core/app/views/utils/componentsinfodlg.cpp:100
+#: core/app/views/utils/componentsinfodlg.cpp:112
+#: core/app/views/utils/componentsinfodlg.cpp:133
+#: core/app/views/utils/componentsinfodlg.cpp:145
+#: core/app/views/utils/componentsinfodlg.cpp:157
+#: core/app/views/utils/componentsinfodlg.cpp:169
+#: core/app/views/utils/componentsinfodlg.cpp:181
+#: core/app/views/utils/componentsinfodlg.cpp:203
 #, kde-format
 msgctxt "@item: component info"
 msgid "No"
 msgstr "Ne"
 
-#: core/app/views/utils/componentsinfodlg.cpp:94
-#: core/app/views/utils/componentsinfodlg.cpp:99
+#: core/app/views/utils/componentsinfodlg.cpp:95
+#: core/app/views/utils/componentsinfodlg.cpp:100
 #, kde-format
 msgctxt "@item: component info"
 msgid "Baloo support"
 msgstr "Podpora za Baloo"
 
-#: core/app/views/utils/componentsinfodlg.cpp:94
-#: core/app/views/utils/componentsinfodlg.cpp:106
-#: core/app/views/utils/componentsinfodlg.cpp:118
-#: core/app/views/utils/componentsinfodlg.cpp:139
-#: core/app/views/utils/componentsinfodlg.cpp:151
-#: core/app/views/utils/componentsinfodlg.cpp:163
-#: core/app/views/utils/componentsinfodlg.cpp:175
-#: core/app/views/utils/componentsinfodlg.cpp:197
+#: core/app/views/utils/componentsinfodlg.cpp:95
+#: core/app/views/utils/componentsinfodlg.cpp:107
+#: core/app/views/utils/componentsinfodlg.cpp:119
+#: core/app/views/utils/componentsinfodlg.cpp:140
+#: core/app/views/utils/componentsinfodlg.cpp:152
+#: core/app/views/utils/componentsinfodlg.cpp:164
+#: core/app/views/utils/componentsinfodlg.cpp:176
+#: core/app/views/utils/componentsinfodlg.cpp:202
 #, kde-format
 msgctxt "@item: component info"
 msgid "Yes"
 msgstr "Da"
 
-#: core/app/views/utils/componentsinfodlg.cpp:106
-#: core/app/views/utils/componentsinfodlg.cpp:111
+#: core/app/views/utils/componentsinfodlg.cpp:107
+#: core/app/views/utils/componentsinfodlg.cpp:112
 #, kde-format
 msgctxt "@item: component info"
 msgid "AddressBook support"
 msgstr "Podpora za AddressBook"
 
-#: core/app/views/utils/componentsinfodlg.cpp:118
-#: core/app/views/utils/componentsinfodlg.cpp:132
+#: core/app/views/utils/componentsinfodlg.cpp:119
+#: core/app/views/utils/componentsinfodlg.cpp:133
 #, kde-format
 msgctxt "@item: component info"
 msgid "Media player support"
 msgstr "Podpora multimedijskem predvajalniku"
 
-#: core/app/views/utils/componentsinfodlg.cpp:121
+#: core/app/views/utils/componentsinfodlg.cpp:122
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVFormat"
 msgstr "LibAVFormat"
 
-#: core/app/views/utils/componentsinfodlg.cpp:124
+#: core/app/views/utils/componentsinfodlg.cpp:125
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVCodec"
 msgstr "LibAVCodec"
 
-#: core/app/views/utils/componentsinfodlg.cpp:127
+#: core/app/views/utils/componentsinfodlg.cpp:128
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVUtil"
 msgstr "LibAVUtil"
 
-#: core/app/views/utils/componentsinfodlg.cpp:139
-#: core/app/views/utils/componentsinfodlg.cpp:144
+#: core/app/views/utils/componentsinfodlg.cpp:140
+#: core/app/views/utils/componentsinfodlg.cpp:145
 #, kde-format
 msgctxt "@item: component info"
 msgid "DBus support"
 msgstr "Podpora za DBus"
 
-#: core/app/views/utils/componentsinfodlg.cpp:151
-#: core/app/views/utils/componentsinfodlg.cpp:156
+#: core/app/views/utils/componentsinfodlg.cpp:152
+#: core/app/views/utils/componentsinfodlg.cpp:157
 #, kde-format
 msgctxt "@item: component info"
 msgid "Panorama support"
 msgstr "Podpora za Panoramo"
 
-#: core/app/views/utils/componentsinfodlg.cpp:163
-#: core/app/views/utils/componentsinfodlg.cpp:168
+#: core/app/views/utils/componentsinfodlg.cpp:164
+#: core/app/views/utils/componentsinfodlg.cpp:169
 #, kde-format
 msgctxt "@item: component info"
 msgid "HTML Gallery support"
 msgstr "Podpora za HTMP Galerije"
 
-#: core/app/views/utils/componentsinfodlg.cpp:175
-#: core/app/views/utils/componentsinfodlg.cpp:180
+#: core/app/views/utils/componentsinfodlg.cpp:176
+#: core/app/views/utils/componentsinfodlg.cpp:181
 #, kde-format
 msgctxt "@item: component info"
 msgid "Calendar support"
 msgstr "Podpora za koledarje"
 
-#: core/app/views/utils/componentsinfodlg.cpp:185
+#: core/app/views/utils/componentsinfodlg.cpp:186
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibOpenCV"
@@ -4411,57 +4411,63 @@ msgstr "LibOpenCV"
 #: core/app/views/utils/componentsinfodlg.cpp:193
 #, kde-format
 msgctxt "@item: component info"
+msgid "Qt Sql drivers"
+msgstr ""
+
+#: core/app/views/utils/componentsinfodlg.cpp:198
+#, kde-format
+msgctxt "@item: component info"
 msgid "Database backend"
 msgstr "Zaledje podatkovne zbirke"
 
-#: core/app/views/utils/componentsinfodlg.cpp:200
+#: core/app/views/utils/componentsinfodlg.cpp:205
 #, kde-format
 msgctxt "@item: component info"
 msgid "Database internal server"
 msgstr "Notranji strežnik podatkovne zbirke"
 
-#: core/app/views/utils/componentsinfodlg.cpp:205
+#: core/app/views/utils/componentsinfodlg.cpp:210
 #, kde-format
 msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
 msgstr "Sestava FFmpeg"
 
-#: core/app/views/utils/componentsinfodlg.cpp:212
+#: core/app/views/utils/componentsinfodlg.cpp:217
 #, kde-format
 msgctxt "@item: component info"
 msgid "Video Decoders"
 msgstr "Video dekoderji"
 
-#: core/app/views/utils/componentsinfodlg.cpp:226
-#: core/app/views/utils/componentsinfodlg.cpp:243
-#: core/app/views/utils/componentsinfodlg.cpp:263
-#: core/app/views/utils/componentsinfodlg.cpp:280
-#: core/app/views/utils/componentsinfodlg.cpp:298
+#: core/app/views/utils/componentsinfodlg.cpp:231
+#: core/app/views/utils/componentsinfodlg.cpp:248
+#: core/app/views/utils/componentsinfodlg.cpp:268
+#: core/app/views/utils/componentsinfodlg.cpp:285
+#: core/app/views/utils/componentsinfodlg.cpp:303
 #: core/libs/dialogs/libsinfodlg.cpp:545 core/libs/dialogs/libsinfodlg.cpp:551
 #: core/libs/dialogs/libsinfodlg.cpp:626
 #, kde-format
 msgid "no entry"
 msgstr "ni vnosa"
 
-#: core/app/views/utils/componentsinfodlg.cpp:229
+#: core/app/views/utils/componentsinfodlg.cpp:234
 #, kde-format
 msgctxt "@item: component info"
 msgid "Video Encoders"
 msgstr "Video enkoderji"
 
-#: core/app/views/utils/componentsinfodlg.cpp:249
+#: core/app/views/utils/componentsinfodlg.cpp:254
 #, kde-format
 msgctxt "@item: component info"
 msgid "Audio Decoders"
 msgstr "Avdio dekoderji"
 
-#: core/app/views/utils/componentsinfodlg.cpp:266
+#: core/app/views/utils/componentsinfodlg.cpp:271
 #, kde-format
 msgctxt "@item: component info"
 msgid "Audio Encoders"
 msgstr "Avdio enkoderji"
 
-#: core/app/views/utils/componentsinfodlg.cpp:286
+#: core/app/views/utils/componentsinfodlg.cpp:291
 #, kde-format
 msgctxt "@item: component info"
 msgid "Supported Extensions"
@@ -48456,25 +48462,25 @@ msgid "Selected engine %1 does not support emotion settings"
 msgstr ""
 "Izbrani jezik uporabniškega vmesnika %1 ne podpisa nastavitev čustvenčkov"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:154
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:162
 #, kde-format
 msgctxt "@info"
 msgid "%1 engine does not support TTS"
 msgstr "%1 zaledje na podpira TTS"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:252
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:260
 #, kde-format
 msgctxt "@info"
 msgid "Selected language %1 is not supported for %2"
 msgstr "Izbrani jezik %1 ni podprt za %2"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:271
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:279
 #, kde-format
 msgctxt "@info"
 msgid "Selected voice %1 is not supported for %2"
 msgstr "Izbrani zvok %1 ni podprt za %2"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:290
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:298
 #, kde-format
 msgctxt "@info"
 msgid "Selected emotion %1 is not supported for %2"
@@ -48502,37 +48508,37 @@ msgctxt "@title: translator language name"
 msgid "Name"
 msgstr "Ime"
 
-#: core/libs/widgets/text/localizeconfig.cpp:111
+#: core/libs/widgets/text/localizeconfig.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
 msgstr "Tu vnesite niz za iskanje v seznamu jezikov..."
 
-#: core/libs/widgets/text/localizeconfig.cpp:146
+#: core/libs/widgets/text/localizeconfig.cpp:143
 #, kde-format
 msgctxt "@info"
 msgid "Show only selected items (%1/%2)"
 msgstr "Pokaži samo izbrane predmete (%1/%2)"
 
-#: core/libs/widgets/text/localizeconfig.cpp:227
+#: core/libs/widgets/text/localizeconfig.cpp:216
 #, kde-format
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
 msgstr "Izberi alternativne jezike za urejanje besedila"
 
-#: core/libs/widgets/text/localizeconfig.cpp:232
+#: core/libs/widgets/text/localizeconfig.cpp:221
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
 msgstr "Spletni prevajalnik:"
 
-#: core/libs/widgets/text/localizeconfig.cpp:234
+#: core/libs/widgets/text/localizeconfig.cpp:223
 #, kde-format
 msgctxt "@option"
 msgid "Select here the online engine to translate text"
 msgstr "Tukaj izberite spletno napravo za prevod besedila"
 
-#: core/libs/widgets/text/localizeconfig.cpp:241
+#: core/libs/widgets/text/localizeconfig.cpp:230
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48552,61 +48558,61 @@ msgstr ""
 "prevajalnik v odvisnosti od želenega ciljnega jezika, saj spletne storitve "
 "ne podpirajo vseh svetovnih jezikov.</p>"
 
-#: core/libs/widgets/text/localizeconfig.cpp:329
+#: core/libs/widgets/text/localizeconfig.cpp:318
 #, kde-format
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
 msgstr "Razpoložljivi jeziki prevajanja (%1/%2)"
 
-#: core/libs/widgets/text/localizeselector.cpp:111
+#: core/libs/widgets/text/localizeselector.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Open localize setup"
 msgstr "Odpri nastavitev lokalizacije"
 
-#: core/libs/widgets/text/localizeselector.cpp:150
+#: core/libs/widgets/text/localizeselector.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
 msgstr "Prevedi v %1"
 
-#: core/libs/widgets/text/localizeselector.cpp:163
+#: core/libs/widgets/text/localizeselector.cpp:158
 #, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "Tu izberite jezik prevoda z %1"
 
-#: core/libs/widgets/text/localizeselector.cpp:268
+#: core/libs/widgets/text/localizeselector.cpp:258
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "Odstrani ta vnos"
 
-#: core/libs/widgets/text/localizeselector.cpp:269
+#: core/libs/widgets/text/localizeselector.cpp:259
 #, kde-format
 msgctxt "@action"
 msgid "Clear List"
 msgstr "Počisti seznam"
 
-#: core/libs/widgets/text/searchtextbar.cpp:86
+#: core/libs/widgets/text/searchtextbar.cpp:75
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search..."
 msgstr "Poišči..."
 
-#: core/libs/widgets/text/searchtextbar.cpp:269
+#: core/libs/widgets/text/searchtextbar.cpp:258
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Ločevanje velikosti črk"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:92
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr "Aktiviraj črkovalnik v ozadju ob vnosu besedila"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:110
+#: core/libs/widgets/text/spellcheckconfig.cpp:94
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48627,13 +48633,13 @@ msgstr ""
 "vključno s potrebnimi slovarji za izvajanje stavčne analize v želenih "
 "jezikih.</p>"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:120
+#: core/libs/widgets/text/spellcheckconfig.cpp:104
 #, kde-format
 msgctxt "@label"
 msgid "Default Language:"
 msgstr "Privzeti jezik:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:124
+#: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
@@ -48643,73 +48649,73 @@ msgstr ""
 "Izberite tukajšnji privzeti jezik za uporabi pri vrednosti \"x-default\" za "
 "alternativne nize jezikov."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:127
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
 #, kde-format
 msgid "Auto-detect"
 msgstr "Samodejno zaznaj"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:128
+#: core/libs/widgets/text/spellcheckconfig.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr "Samodejno zaznaj jezik z razčlenjevanjem komponent nizov"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:139
+#: core/libs/widgets/text/spellcheckconfig.cpp:123
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Razpoložljivi jezikovni slovarji"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:152
+#: core/libs/widgets/text/spellcheckconfig.cpp:136
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Koda"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:153
+#: core/libs/widgets/text/spellcheckconfig.cpp:137
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Ime"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:160
+#: core/libs/widgets/text/spellcheckconfig.cpp:144
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Razpoložljiva zaledja"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Prezrte besede"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:185
+#: core/libs/widgets/text/spellcheckconfig.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "Tu nastavi novo besedo, ki naj bo prezrta pri črkovanju"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:188
+#: core/libs/widgets/text/spellcheckconfig.cpp:172
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 "Lahko dodajate ali odstranjujete besede, ki naj bodo prezrte pri črkovanju."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:193
+#: core/libs/widgets/text/spellcheckconfig.cpp:177
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "Dod&aj..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:194
+#: core/libs/widgets/text/spellcheckconfig.cpp:178
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "Odst&rani"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:195
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
@@ -50535,44 +50541,44 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "ustvarjena: %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:228
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:212
 #, kde-format
 msgid "By Name"
 msgstr "Po imenu"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:229
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:213
 #, kde-format
 msgid "By Date"
 msgstr "Po datumu"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:230
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:214
 #, kde-format
 msgid "By File Size"
 msgstr "Po velikosti datoteke"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:238
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:222
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "Naraščajoče"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:239
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:223
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "Padajoče"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:266
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:250
 #, kde-format
 msgid "Current Name"
 msgstr "Trenutno ime"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:266
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:250
 #, kde-format
 msgid "New Name"
 msgstr "Novo ime"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:270
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:254
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -50583,7 +50589,7 @@ msgstr ""
 "nakazujejo na težave z imenom: ime je enako trenutnemu ali pa je bilo "
 "dodeljeno drugemu predmetu."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:326
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:310
 #, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
@@ -50592,36 +50598,36 @@ msgstr[1] "Preimenuj (%1 sliko)"
 msgstr[2] "Preimenuj (%1 sliki)"
 msgstr[3] "Preimenuj (%1 slike)"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:428
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:412
 #, kde-format
 msgid "Sort Images"
 msgstr "Razvrsti slike"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:71
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:66
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Preimenovanje slik. Počakajte ...</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:80
 #, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "Prekini"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
 msgid "Processing..."
 msgstr "Obdelovanje ..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:155
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Preimenovanje slik"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:156
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -50645,19 +50651,19 @@ msgstr[3] ""
 "Ali želite ponovno preimenovati te slike ali jih preimenovati s "
 "prepisovanjem?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:165
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Spet preimenuj"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Prepiši"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:215
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>Preimenovanje slik. Napake: %1</b>"

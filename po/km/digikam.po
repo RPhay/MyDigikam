@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-20 01:43+0000\n"
+"POT-Creation-Date: 2024-04-21 01:42+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -4428,7 +4428,7 @@ msgstr "យក​ស្លាក​នេះ​ចេញ"
 msgid "Configure this column"
 msgstr "បាន​កំណត់​រចនាសម្ព័ន្ធ​អាល់ប៊ុម​មួយ​ជា root"
 
-#: core/app/views/utils/componentsinfodlg.cpp:79
+#: core/app/views/utils/componentsinfodlg.cpp:80
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -4436,124 +4436,124 @@ msgctxt "@item: component info"
 msgid "Unknown"
 msgstr "មិន​ស្គាល់"
 
-#: core/app/views/utils/componentsinfodlg.cpp:82
+#: core/app/views/utils/componentsinfodlg.cpp:83
 #, fuzzy, kde-format
 #| msgid "LibGphoto2"
 msgctxt "@item: component info"
 msgid "LibGphoto2"
 msgstr "LibGphoto2"
 
-#: core/app/views/utils/componentsinfodlg.cpp:87
+#: core/app/views/utils/componentsinfodlg.cpp:88
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2 support"
 msgstr "LibGphoto2"
 
-#: core/app/views/utils/componentsinfodlg.cpp:87
-#: core/app/views/utils/componentsinfodlg.cpp:99
-#: core/app/views/utils/componentsinfodlg.cpp:111
-#: core/app/views/utils/componentsinfodlg.cpp:132
-#: core/app/views/utils/componentsinfodlg.cpp:144
-#: core/app/views/utils/componentsinfodlg.cpp:156
-#: core/app/views/utils/componentsinfodlg.cpp:168
-#: core/app/views/utils/componentsinfodlg.cpp:180
-#: core/app/views/utils/componentsinfodlg.cpp:198
+#: core/app/views/utils/componentsinfodlg.cpp:88
+#: core/app/views/utils/componentsinfodlg.cpp:100
+#: core/app/views/utils/componentsinfodlg.cpp:112
+#: core/app/views/utils/componentsinfodlg.cpp:133
+#: core/app/views/utils/componentsinfodlg.cpp:145
+#: core/app/views/utils/componentsinfodlg.cpp:157
+#: core/app/views/utils/componentsinfodlg.cpp:169
+#: core/app/views/utils/componentsinfodlg.cpp:181
+#: core/app/views/utils/componentsinfodlg.cpp:203
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component info"
 msgid "No"
 msgstr "ទេ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:94
-#: core/app/views/utils/componentsinfodlg.cpp:99
+#: core/app/views/utils/componentsinfodlg.cpp:95
+#: core/app/views/utils/componentsinfodlg.cpp:100
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@item: component info"
 msgid "Baloo support"
 msgstr "ប្រតិទិន"
 
-#: core/app/views/utils/componentsinfodlg.cpp:94
-#: core/app/views/utils/componentsinfodlg.cpp:106
-#: core/app/views/utils/componentsinfodlg.cpp:118
-#: core/app/views/utils/componentsinfodlg.cpp:139
-#: core/app/views/utils/componentsinfodlg.cpp:151
-#: core/app/views/utils/componentsinfodlg.cpp:163
-#: core/app/views/utils/componentsinfodlg.cpp:175
-#: core/app/views/utils/componentsinfodlg.cpp:197
+#: core/app/views/utils/componentsinfodlg.cpp:95
+#: core/app/views/utils/componentsinfodlg.cpp:107
+#: core/app/views/utils/componentsinfodlg.cpp:119
+#: core/app/views/utils/componentsinfodlg.cpp:140
+#: core/app/views/utils/componentsinfodlg.cpp:152
+#: core/app/views/utils/componentsinfodlg.cpp:164
+#: core/app/views/utils/componentsinfodlg.cpp:176
+#: core/app/views/utils/componentsinfodlg.cpp:202
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component info"
 msgid "Yes"
 msgstr "បាទ/ចាស"
 
-#: core/app/views/utils/componentsinfodlg.cpp:106
-#: core/app/views/utils/componentsinfodlg.cpp:111
+#: core/app/views/utils/componentsinfodlg.cpp:107
+#: core/app/views/utils/componentsinfodlg.cpp:112
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@item: component info"
 msgid "AddressBook support"
 msgstr "ប្រតិទិន"
 
-#: core/app/views/utils/componentsinfodlg.cpp:118
-#: core/app/views/utils/componentsinfodlg.cpp:132
+#: core/app/views/utils/componentsinfodlg.cpp:119
+#: core/app/views/utils/componentsinfodlg.cpp:133
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@item: component info"
 msgid "Media player support"
 msgstr "ប្រតិទិន"
 
-#: core/app/views/utils/componentsinfodlg.cpp:121
+#: core/app/views/utils/componentsinfodlg.cpp:122
 #, fuzzy, kde-format
 #| msgid "Format"
 msgctxt "@item: component info"
 msgid "LibAVFormat"
 msgstr "ទ្រង់ទ្រាយ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:124
+#: core/app/views/utils/componentsinfodlg.cpp:125
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVCodec"
 msgstr ""
 
-#: core/app/views/utils/componentsinfodlg.cpp:127
+#: core/app/views/utils/componentsinfodlg.cpp:128
 #, fuzzy, kde-format
 #| msgid "Format"
 msgctxt "@item: component info"
 msgid "LibAVUtil"
 msgstr "ទ្រង់ទ្រាយ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:139
-#: core/app/views/utils/componentsinfodlg.cpp:144
+#: core/app/views/utils/componentsinfodlg.cpp:140
+#: core/app/views/utils/componentsinfodlg.cpp:145
 #, kde-format
 msgctxt "@item: component info"
 msgid "DBus support"
 msgstr ""
 
-#: core/app/views/utils/componentsinfodlg.cpp:151
-#: core/app/views/utils/componentsinfodlg.cpp:156
+#: core/app/views/utils/componentsinfodlg.cpp:152
+#: core/app/views/utils/componentsinfodlg.cpp:157
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@item: component info"
 msgid "Panorama support"
 msgstr "ប្រតិទិន"
 
-#: core/app/views/utils/componentsinfodlg.cpp:163
-#: core/app/views/utils/componentsinfodlg.cpp:168
+#: core/app/views/utils/componentsinfodlg.cpp:164
+#: core/app/views/utils/componentsinfodlg.cpp:169
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@item: component info"
 msgid "HTML Gallery support"
 msgstr "ប្រតិទិន"
 
-#: core/app/views/utils/componentsinfodlg.cpp:175
-#: core/app/views/utils/componentsinfodlg.cpp:180
+#: core/app/views/utils/componentsinfodlg.cpp:176
+#: core/app/views/utils/componentsinfodlg.cpp:181
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@item: component info"
 msgid "Calendar support"
 msgstr "ប្រតិទិន"
 
-#: core/app/views/utils/componentsinfodlg.cpp:185
+#: core/app/views/utils/componentsinfodlg.cpp:186
 #, fuzzy, kde-format
 #| msgid "LibOpenCV"
 msgctxt "@item: component info"
@@ -4561,37 +4561,43 @@ msgid "LibOpenCV"
 msgstr "LibOpenCV"
 
 #: core/app/views/utils/componentsinfodlg.cpp:193
+#, kde-format
+msgctxt "@item: component info"
+msgid "Qt Sql drivers"
+msgstr ""
+
+#: core/app/views/utils/componentsinfodlg.cpp:198
 #, fuzzy, kde-format
 #| msgid "Database backend"
 msgctxt "@item: component info"
 msgid "Database backend"
 msgstr "កម្មវិធី​ខាងក្រោយ​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:200
+#: core/app/views/utils/componentsinfodlg.cpp:205
 #, fuzzy, kde-format
 #| msgid "Database internal server"
 msgctxt "@item: component info"
 msgid "Database internal server"
 msgstr "ម៉ាស៊ីន​បម្រើ​អ៊ីនធឺណិត​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:205
+#: core/app/views/utils/componentsinfodlg.cpp:210
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
 msgstr "ប្ដូរ​កន្លែង​មូលដ្ឋាន​ទិន្នន័យ..."
 
-#: core/app/views/utils/componentsinfodlg.cpp:212
+#: core/app/views/utils/componentsinfodlg.cpp:217
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Video Decoders"
 msgstr "<i>ម៉ូដែល ៖</i>"
 
-#: core/app/views/utils/componentsinfodlg.cpp:226
-#: core/app/views/utils/componentsinfodlg.cpp:243
-#: core/app/views/utils/componentsinfodlg.cpp:263
-#: core/app/views/utils/componentsinfodlg.cpp:280
-#: core/app/views/utils/componentsinfodlg.cpp:298
+#: core/app/views/utils/componentsinfodlg.cpp:231
+#: core/app/views/utils/componentsinfodlg.cpp:248
+#: core/app/views/utils/componentsinfodlg.cpp:268
+#: core/app/views/utils/componentsinfodlg.cpp:285
+#: core/app/views/utils/componentsinfodlg.cpp:303
 #: core/libs/dialogs/libsinfodlg.cpp:545 core/libs/dialogs/libsinfodlg.cpp:551
 #: core/libs/dialogs/libsinfodlg.cpp:626
 #, fuzzy, kde-format
@@ -4599,27 +4605,27 @@ msgstr "<i>ម៉ូដែល ៖</i>"
 msgid "no entry"
 msgstr "ប្រទេស​ ៖​"
 
-#: core/app/views/utils/componentsinfodlg.cpp:229
+#: core/app/views/utils/componentsinfodlg.cpp:234
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Video Encoders"
 msgstr "<i>ម៉ូដែល ៖</i>"
 
-#: core/app/views/utils/componentsinfodlg.cpp:249
+#: core/app/views/utils/componentsinfodlg.cpp:254
 #, fuzzy, kde-format
 #| msgid "Audio Files"
 msgctxt "@item: component info"
 msgid "Audio Decoders"
 msgstr "ឯកសារ​អូឌីយ៉ូ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:266
+#: core/app/views/utils/componentsinfodlg.cpp:271
 #, fuzzy, kde-format
 #| msgid "Audio Files"
 msgctxt "@item: component info"
 msgid "Audio Encoders"
 msgstr "ឯកសារ​អូឌីយ៉ូ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:286
+#: core/app/views/utils/componentsinfodlg.cpp:291
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Supported Extensions"
@@ -49616,27 +49622,27 @@ msgctxt "@info"
 msgid "Selected engine %1 does not support emotion settings"
 msgstr "ម៉ាស៊ីន​ថត​រូប​ដែល​បាន​បញ្ជាក់ (\"%1\") មិន​ត្រូវ​បាន​គាំទ្រ​ឡើយ ។"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:154
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:162
 #, kde-format
 msgctxt "@info"
 msgid "%1 engine does not support TTS"
 msgstr ""
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:252
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:260
 #, fuzzy, kde-format
 #| msgid "The specified camera (\"%1\") is not supported."
 msgctxt "@info"
 msgid "Selected language %1 is not supported for %2"
 msgstr "ម៉ាស៊ីន​ថត​រូប​ដែល​បាន​បញ្ជាក់ (\"%1\") មិន​ត្រូវ​បាន​គាំទ្រ​ឡើយ ។"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:271
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:279
 #, fuzzy, kde-format
 #| msgid "The specified camera (\"%1\") is not supported."
 msgctxt "@info"
 msgid "Selected voice %1 is not supported for %2"
 msgstr "ម៉ាស៊ីន​ថត​រូប​ដែល​បាន​បញ្ជាក់ (\"%1\") មិន​ត្រូវ​បាន​គាំទ្រ​ឡើយ ។"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:290
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:298
 #, fuzzy, kde-format
 #| msgid "The specified camera (\"%1\") is not supported."
 msgctxt "@info"
@@ -49667,39 +49673,39 @@ msgctxt "@title: translator language name"
 msgid "Name"
 msgstr "ឈ្មោះ ៖"
 
-#: core/libs/widgets/text/localizeconfig.cpp:111
+#: core/libs/widgets/text/localizeconfig.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:146
+#: core/libs/widgets/text/localizeconfig.cpp:143
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Show only selected items (%1/%2)"
 msgstr "តម្រង​ភូមិសាស្ត្រ"
 
-#: core/libs/widgets/text/localizeconfig.cpp:227
+#: core/libs/widgets/text/localizeconfig.cpp:216
 #, fuzzy, kde-format
 #| msgid "Select here the language of content."
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
 msgstr "ជ្រើស​ភាសា​​​របស់​មាតិកា​នៅ​ទី​នេះ​ ។​"
 
-#: core/libs/widgets/text/localizeconfig.cpp:232
+#: core/libs/widgets/text/localizeconfig.cpp:221
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:234
+#: core/libs/widgets/text/localizeconfig.cpp:223
 #, fuzzy, kde-format
 #| msgid "Select here the editorial type of content."
 msgctxt "@option"
 msgid "Select here the online engine to translate text"
 msgstr "ជ្រើស​ប្រភេទ​​​​​មាតិកា​វិចារណកថា​​នៅ​ទី​នេះ​ ។"
 
-#: core/libs/widgets/text/localizeconfig.cpp:241
+#: core/libs/widgets/text/localizeconfig.cpp:230
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -49712,67 +49718,67 @@ msgid ""
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:329
+#: core/libs/widgets/text/localizeconfig.cpp:318
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
 msgstr "MacBinary II"
 
-#: core/libs/widgets/text/localizeselector.cpp:111
+#: core/libs/widgets/text/localizeselector.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Open localize setup"
 msgstr ""
 
-#: core/libs/widgets/text/localizeselector.cpp:150
+#: core/libs/widgets/text/localizeselector.cpp:145
 #, fuzzy, kde-format
 #| msgid "Rating equal to %1."
 msgctxt "@info"
 msgid "Translate to %1"
 msgstr "ការ​វាយតម្លៃ​ស្នើ​នឹង %1 ។"
 
-#: core/libs/widgets/text/localizeselector.cpp:163
+#: core/libs/widgets/text/localizeselector.cpp:158
 #, fuzzy, kde-format
 #| msgid "Select here the language of content."
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "ជ្រើស​ភាសា​​​របស់​មាតិកា​នៅ​ទី​នេះ​ ។​"
 
-#: core/libs/widgets/text/localizeselector.cpp:268
+#: core/libs/widgets/text/localizeselector.cpp:258
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "យក​ស្លាក​នេះ​ចេញ"
 
-#: core/libs/widgets/text/localizeselector.cpp:269
+#: core/libs/widgets/text/localizeselector.cpp:259
 #, fuzzy, kde-format
 #| msgid "Flat List"
 msgctxt "@action"
 msgid "Clear List"
 msgstr "បញ្ជី​គ្មាន​ឋានានុក្រម"
 
-#: core/libs/widgets/text/searchtextbar.cpp:86
+#: core/libs/widgets/text/searchtextbar.cpp:75
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@info: search text bar"
 msgid "Search..."
 msgstr "ស្វែងរក..."
 
-#: core/libs/widgets/text/searchtextbar.cpp:269
+#: core/libs/widgets/text/searchtextbar.cpp:258
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:92
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:110
+#: core/libs/widgets/text/spellcheckconfig.cpp:94
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -49785,14 +49791,14 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:120
+#: core/libs/widgets/text/spellcheckconfig.cpp:104
 #, fuzzy, kde-format
 #| msgid "Default Language"
 msgctxt "@label"
 msgid "Default Language:"
 msgstr "ភាសាលំនាំ​ដើម"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:124
+#: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
@@ -49800,78 +49806,78 @@ msgid ""
 "alternative language strings."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:127
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
 #, fuzzy, kde-format
 #| msgid "Auto Levels"
 msgid "Auto-detect"
 msgstr "កម្រិត​ស្វ័យប្រវត្តិ"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:128
+#: core/libs/widgets/text/spellcheckconfig.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:139
+#: core/libs/widgets/text/spellcheckconfig.cpp:123
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "MacBinary II"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:152
+#: core/libs/widgets/text/spellcheckconfig.cpp:136
 #, fuzzy, kde-format
 #| msgid "Audio Files"
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "ឯកសារ​អូឌីយ៉ូ"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:153
+#: core/libs/widgets/text/spellcheckconfig.cpp:137
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "ឈ្មោះ ៖"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:160
+#: core/libs/widgets/text/spellcheckconfig.cpp:144
 #, fuzzy, kde-format
 #| msgid "Not available"
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "ដែល​មិន​អាច​រក​បាន​"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:163
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "មិន​អើពើ​ស្លាក​នេះ"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:185
+#: core/libs/widgets/text/spellcheckconfig.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:188
+#: core/libs/widgets/text/spellcheckconfig.cpp:172
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:193
+#: core/libs/widgets/text/spellcheckconfig.cpp:177
 #, fuzzy, kde-format
 #| msgid "&Add"
 msgctxt "@action"
 msgid "&Add..."
 msgstr "បន្ថែម​"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:194
+#: core/libs/widgets/text/spellcheckconfig.cpp:178
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "យក​ស្លាក​ចេញ"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:195
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"
@@ -51758,46 +51764,46 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "បាន​បង្កើត ៖"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:228
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:212
 #, kde-format
 msgid "By Name"
 msgstr "តាម​ឈ្មោះ"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:229
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:213
 #, kde-format
 msgid "By Date"
 msgstr "តាម​កាលបរិច្ឆេទ"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:230
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:214
 #, kde-format
 msgid "By File Size"
 msgstr "តាម​ទំហំ​ឯកសារ"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:238
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:222
 #, fuzzy, kde-format
 #| msgid "Ascending"
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "លំដាប់​ឡើង"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:239
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:223
 #, fuzzy, kde-format
 #| msgid "Descending"
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "លំដាប់​ចុះ"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:266
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:250
 #, kde-format
 msgid "Current Name"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:266
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:250
 #, kde-format
 msgid "New Name"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:270
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:254
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -51805,43 +51811,43 @@ msgid ""
 "because the name has already been assigned to another item."
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:326
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:310
 #, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
 msgstr[0] ""
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:428
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:412
 #, kde-format
 msgid "Sort Images"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:71
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:66
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:80
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "បោះបង់​"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
 msgid "Processing..."
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:155
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "មើល​រូបភាព​ជាមុន"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:156
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -51852,20 +51858,20 @@ msgid_plural ""
 "overwriting?"
 msgstr[0] ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:165
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "ឯកសារ Raster"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "សរសេរ​ជាន់​លើ​ឯកសារ ?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:215
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr ""

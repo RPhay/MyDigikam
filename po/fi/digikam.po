@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-20 01:43+0000\n"
+"POT-Creation-Date: 2024-04-21 01:42+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -4353,119 +4353,119 @@ msgstr "Poista tämä sarake"
 msgid "Configure this column"
 msgstr "Tämän sarakkeen asetukset"
 
-#: core/app/views/utils/componentsinfodlg.cpp:79
+#: core/app/views/utils/componentsinfodlg.cpp:80
 #, kde-format
 msgctxt "@item: component info"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/app/views/utils/componentsinfodlg.cpp:82
+#: core/app/views/utils/componentsinfodlg.cpp:83
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2"
 msgstr "LibGphoto2"
 
-#: core/app/views/utils/componentsinfodlg.cpp:87
+#: core/app/views/utils/componentsinfodlg.cpp:88
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2 support"
 msgstr "LibGphoto2-tuki"
 
-#: core/app/views/utils/componentsinfodlg.cpp:87
-#: core/app/views/utils/componentsinfodlg.cpp:99
-#: core/app/views/utils/componentsinfodlg.cpp:111
-#: core/app/views/utils/componentsinfodlg.cpp:132
-#: core/app/views/utils/componentsinfodlg.cpp:144
-#: core/app/views/utils/componentsinfodlg.cpp:156
-#: core/app/views/utils/componentsinfodlg.cpp:168
-#: core/app/views/utils/componentsinfodlg.cpp:180
-#: core/app/views/utils/componentsinfodlg.cpp:198
+#: core/app/views/utils/componentsinfodlg.cpp:88
+#: core/app/views/utils/componentsinfodlg.cpp:100
+#: core/app/views/utils/componentsinfodlg.cpp:112
+#: core/app/views/utils/componentsinfodlg.cpp:133
+#: core/app/views/utils/componentsinfodlg.cpp:145
+#: core/app/views/utils/componentsinfodlg.cpp:157
+#: core/app/views/utils/componentsinfodlg.cpp:169
+#: core/app/views/utils/componentsinfodlg.cpp:181
+#: core/app/views/utils/componentsinfodlg.cpp:203
 #, kde-format
 msgctxt "@item: component info"
 msgid "No"
 msgstr "Ei"
 
-#: core/app/views/utils/componentsinfodlg.cpp:94
-#: core/app/views/utils/componentsinfodlg.cpp:99
+#: core/app/views/utils/componentsinfodlg.cpp:95
+#: core/app/views/utils/componentsinfodlg.cpp:100
 #, kde-format
 msgctxt "@item: component info"
 msgid "Baloo support"
 msgstr "Baloo-tuki"
 
-#: core/app/views/utils/componentsinfodlg.cpp:94
-#: core/app/views/utils/componentsinfodlg.cpp:106
-#: core/app/views/utils/componentsinfodlg.cpp:118
-#: core/app/views/utils/componentsinfodlg.cpp:139
-#: core/app/views/utils/componentsinfodlg.cpp:151
-#: core/app/views/utils/componentsinfodlg.cpp:163
-#: core/app/views/utils/componentsinfodlg.cpp:175
-#: core/app/views/utils/componentsinfodlg.cpp:197
+#: core/app/views/utils/componentsinfodlg.cpp:95
+#: core/app/views/utils/componentsinfodlg.cpp:107
+#: core/app/views/utils/componentsinfodlg.cpp:119
+#: core/app/views/utils/componentsinfodlg.cpp:140
+#: core/app/views/utils/componentsinfodlg.cpp:152
+#: core/app/views/utils/componentsinfodlg.cpp:164
+#: core/app/views/utils/componentsinfodlg.cpp:176
+#: core/app/views/utils/componentsinfodlg.cpp:202
 #, kde-format
 msgctxt "@item: component info"
 msgid "Yes"
 msgstr "Kyllä"
 
-#: core/app/views/utils/componentsinfodlg.cpp:106
-#: core/app/views/utils/componentsinfodlg.cpp:111
+#: core/app/views/utils/componentsinfodlg.cpp:107
+#: core/app/views/utils/componentsinfodlg.cpp:112
 #, kde-format
 msgctxt "@item: component info"
 msgid "AddressBook support"
 msgstr "AddressBook-tuki"
 
-#: core/app/views/utils/componentsinfodlg.cpp:118
-#: core/app/views/utils/componentsinfodlg.cpp:132
+#: core/app/views/utils/componentsinfodlg.cpp:119
+#: core/app/views/utils/componentsinfodlg.cpp:133
 #, kde-format
 msgctxt "@item: component info"
 msgid "Media player support"
 msgstr "Mediasoitintuki"
 
-#: core/app/views/utils/componentsinfodlg.cpp:121
+#: core/app/views/utils/componentsinfodlg.cpp:122
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVFormat"
 msgstr "LibAVFormat"
 
-#: core/app/views/utils/componentsinfodlg.cpp:124
+#: core/app/views/utils/componentsinfodlg.cpp:125
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVCodec"
 msgstr "LibAVCodec"
 
-#: core/app/views/utils/componentsinfodlg.cpp:127
+#: core/app/views/utils/componentsinfodlg.cpp:128
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVUtil"
 msgstr "LibAVUtil"
 
-#: core/app/views/utils/componentsinfodlg.cpp:139
-#: core/app/views/utils/componentsinfodlg.cpp:144
+#: core/app/views/utils/componentsinfodlg.cpp:140
+#: core/app/views/utils/componentsinfodlg.cpp:145
 #, kde-format
 msgctxt "@item: component info"
 msgid "DBus support"
 msgstr "DBus-tuki"
 
-#: core/app/views/utils/componentsinfodlg.cpp:151
-#: core/app/views/utils/componentsinfodlg.cpp:156
+#: core/app/views/utils/componentsinfodlg.cpp:152
+#: core/app/views/utils/componentsinfodlg.cpp:157
 #, kde-format
 msgctxt "@item: component info"
 msgid "Panorama support"
 msgstr "Panorama-tuki"
 
-#: core/app/views/utils/componentsinfodlg.cpp:163
-#: core/app/views/utils/componentsinfodlg.cpp:168
+#: core/app/views/utils/componentsinfodlg.cpp:164
+#: core/app/views/utils/componentsinfodlg.cpp:169
 #, kde-format
 msgctxt "@item: component info"
 msgid "HTML Gallery support"
 msgstr "HTML-galleriatuki"
 
-#: core/app/views/utils/componentsinfodlg.cpp:175
-#: core/app/views/utils/componentsinfodlg.cpp:180
+#: core/app/views/utils/componentsinfodlg.cpp:176
+#: core/app/views/utils/componentsinfodlg.cpp:181
 #, kde-format
 msgctxt "@item: component info"
 msgid "Calendar support"
 msgstr "Kalenterituki"
 
-#: core/app/views/utils/componentsinfodlg.cpp:185
+#: core/app/views/utils/componentsinfodlg.cpp:186
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibOpenCV"
@@ -4474,32 +4474,38 @@ msgstr "LibOpenCV"
 #: core/app/views/utils/componentsinfodlg.cpp:193
 #, kde-format
 msgctxt "@item: component info"
+msgid "Qt Sql drivers"
+msgstr ""
+
+#: core/app/views/utils/componentsinfodlg.cpp:198
+#, kde-format
+msgctxt "@item: component info"
 msgid "Database backend"
 msgstr "Tietokannan taustajärjestelmä"
 
-#: core/app/views/utils/componentsinfodlg.cpp:200
+#: core/app/views/utils/componentsinfodlg.cpp:205
 #, kde-format
 msgctxt "@item: component info"
 msgid "Database internal server"
 msgstr "Sisäinen tietokantapalvelin"
 
-#: core/app/views/utils/componentsinfodlg.cpp:205
+#: core/app/views/utils/componentsinfodlg.cpp:210
 #, kde-format
 msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
 msgstr "FFmpeg-asetukset"
 
-#: core/app/views/utils/componentsinfodlg.cpp:212
+#: core/app/views/utils/componentsinfodlg.cpp:217
 #, kde-format
 msgctxt "@item: component info"
 msgid "Video Decoders"
 msgstr "Videokoodauksen purkajat"
 
-#: core/app/views/utils/componentsinfodlg.cpp:226
-#: core/app/views/utils/componentsinfodlg.cpp:243
-#: core/app/views/utils/componentsinfodlg.cpp:263
-#: core/app/views/utils/componentsinfodlg.cpp:280
-#: core/app/views/utils/componentsinfodlg.cpp:298
+#: core/app/views/utils/componentsinfodlg.cpp:231
+#: core/app/views/utils/componentsinfodlg.cpp:248
+#: core/app/views/utils/componentsinfodlg.cpp:268
+#: core/app/views/utils/componentsinfodlg.cpp:285
+#: core/app/views/utils/componentsinfodlg.cpp:303
 #: core/libs/dialogs/libsinfodlg.cpp:545 core/libs/dialogs/libsinfodlg.cpp:551
 #: core/libs/dialogs/libsinfodlg.cpp:626
 #, fuzzy, kde-format
@@ -4507,25 +4513,25 @@ msgstr "Videokoodauksen purkajat"
 msgid "no entry"
 msgstr "Maa"
 
-#: core/app/views/utils/componentsinfodlg.cpp:229
+#: core/app/views/utils/componentsinfodlg.cpp:234
 #, kde-format
 msgctxt "@item: component info"
 msgid "Video Encoders"
 msgstr "Videokoodaajat"
 
-#: core/app/views/utils/componentsinfodlg.cpp:249
+#: core/app/views/utils/componentsinfodlg.cpp:254
 #, kde-format
 msgctxt "@item: component info"
 msgid "Audio Decoders"
 msgstr "Äänikoodauksen purkajat"
 
-#: core/app/views/utils/componentsinfodlg.cpp:266
+#: core/app/views/utils/componentsinfodlg.cpp:271
 #, kde-format
 msgctxt "@item: component info"
 msgid "Audio Encoders"
 msgstr "Äänikoodaajat"
 
-#: core/app/views/utils/componentsinfodlg.cpp:286
+#: core/app/views/utils/componentsinfodlg.cpp:291
 #, kde-format
 msgctxt "@item: component info"
 msgid "Supported Extensions"
@@ -48617,25 +48623,25 @@ msgctxt "@info"
 msgid "Selected engine %1 does not support emotion settings"
 msgstr "Etätiedostojen käsittelyä ei tueta"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:154
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:162
 #, kde-format
 msgctxt "@info"
 msgid "%1 engine does not support TTS"
 msgstr ""
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:252
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:260
 #, kde-format
 msgctxt "@info"
 msgid "Selected language %1 is not supported for %2"
 msgstr "%2 ei tue valittua kieltä %1"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:271
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:279
 #, kde-format
 msgctxt "@info"
 msgid "Selected voice %1 is not supported for %2"
 msgstr "%2 ei tue valittua ääntä %1"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:290
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:298
 #, kde-format
 msgctxt "@info"
 msgid "Selected emotion %1 is not supported for %2"
@@ -48663,37 +48669,37 @@ msgctxt "@title: translator language name"
 msgid "Name"
 msgstr "Nimi"
 
-#: core/libs/widgets/text/localizeconfig.cpp:111
+#: core/libs/widgets/text/localizeconfig.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:146
+#: core/libs/widgets/text/localizeconfig.cpp:143
 #, kde-format
 msgctxt "@info"
 msgid "Show only selected items (%1/%2)"
 msgstr "Näytä vain valitut kohteet (%1/%2)"
 
-#: core/libs/widgets/text/localizeconfig.cpp:227
+#: core/libs/widgets/text/localizeconfig.cpp:216
 #, kde-format
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
 msgstr "Valitse tekstinmuokkauksen vaihtoehtoiset kielet"
 
-#: core/libs/widgets/text/localizeconfig.cpp:232
+#: core/libs/widgets/text/localizeconfig.cpp:221
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:234
+#: core/libs/widgets/text/localizeconfig.cpp:223
 #, kde-format
 msgctxt "@option"
 msgid "Select here the online engine to translate text"
 msgstr "Valitse tässä kääntämisen verkkomoottori"
 
-#: core/libs/widgets/text/localizeconfig.cpp:241
+#: core/libs/widgets/text/localizeconfig.cpp:230
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48706,7 +48712,7 @@ msgid ""
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:329
+#: core/libs/widgets/text/localizeconfig.cpp:318
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Wiktionary"
@@ -48714,55 +48720,55 @@ msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
 msgstr "Wiktionary"
 
-#: core/libs/widgets/text/localizeselector.cpp:111
+#: core/libs/widgets/text/localizeselector.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Open localize setup"
 msgstr ""
 
-#: core/libs/widgets/text/localizeselector.cpp:150
+#: core/libs/widgets/text/localizeselector.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
 msgstr "Käännä kielelle %1"
 
-#: core/libs/widgets/text/localizeselector.cpp:163
+#: core/libs/widgets/text/localizeselector.cpp:158
 #, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "Valitse kieli, johon %1 kääntää"
 
-#: core/libs/widgets/text/localizeselector.cpp:268
+#: core/libs/widgets/text/localizeselector.cpp:258
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "Poista tämä kohde"
 
-#: core/libs/widgets/text/localizeselector.cpp:269
+#: core/libs/widgets/text/localizeselector.cpp:259
 #, kde-format
 msgctxt "@action"
 msgid "Clear List"
 msgstr "Tyhjennä luettelo"
 
-#: core/libs/widgets/text/searchtextbar.cpp:86
+#: core/libs/widgets/text/searchtextbar.cpp:75
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search..."
 msgstr "Etsi…"
 
-#: core/libs/widgets/text/searchtextbar.cpp:269
+#: core/libs/widgets/text/searchtextbar.cpp:258
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Erota pien- ja suuraakkoset"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:92
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:110
+#: core/libs/widgets/text/spellcheckconfig.cpp:94
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48775,13 +48781,13 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:120
+#: core/libs/widgets/text/spellcheckconfig.cpp:104
 #, kde-format
 msgctxt "@label"
 msgid "Default Language:"
 msgstr "Oletuskieli:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:124
+#: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
@@ -48789,18 +48795,18 @@ msgid ""
 "alternative language strings."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:127
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
 #, kde-format
 msgid "Auto-detect"
 msgstr "Tunnista automaattisesti"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:128
+#: core/libs/widgets/text/spellcheckconfig.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:139
+#: core/libs/widgets/text/spellcheckconfig.cpp:123
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Wiktionary"
@@ -48808,38 +48814,38 @@ msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Wiktionary"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:152
+#: core/libs/widgets/text/spellcheckconfig.cpp:136
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Koodekki"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:153
+#: core/libs/widgets/text/spellcheckconfig.cpp:137
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Nimi"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:160
+#: core/libs/widgets/text/spellcheckconfig.cpp:144
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Käytettävissä olevat taustajärjestelmät"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:163
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Sivuutetut sanat"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:185
+#: core/libs/widgets/text/spellcheckconfig.cpp:169
 #, fuzzy, kde-format
 #| msgid "Set here the number of items to find using sketch."
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "Määritä kuinka monta kohdetta haku palauttaa."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:188
+#: core/libs/widgets/text/spellcheckconfig.cpp:172
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "You can add or remove bookmarked places here."
@@ -48847,19 +48853,19 @@ msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr "Tässä kirjanmerkittyjä sijaintia voi lisätä ja poistaa."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:193
+#: core/libs/widgets/text/spellcheckconfig.cpp:177
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "L&isää…"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:194
+#: core/libs/widgets/text/spellcheckconfig.cpp:178
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Poista"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:195
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
@@ -50663,45 +50669,45 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "luotu: %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:228
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:212
 #, kde-format
 msgid "By Name"
 msgstr "Nimen mukaan"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:229
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:213
 #, kde-format
 msgid "By Date"
 msgstr "Päiväyksen mukaan"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:230
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:214
 #, kde-format
 msgid "By File Size"
 msgstr "Tiedostokoon mukaan"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:238
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:222
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "Nouseva"
 
 # tätä käytetään asetuksissa
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:239
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:223
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "Laskeva"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:266
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:250
 #, kde-format
 msgid "Current Name"
 msgstr "Nykyinen nimi"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:266
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:250
 #, kde-format
 msgid "New Name"
 msgstr "Uusi nimi"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:270
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:254
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -50712,43 +50718,43 @@ msgstr ""
 "nimiristiriidat: uusi nimi on joko sama kuin nykyinen tai sama kuin toisen "
 "kohteen nimi."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:326
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:310
 #, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
 msgstr[0] "Muuta nimeä"
 msgstr[1] "Muuta nimeä (%1 kuvaa)"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:428
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:412
 #, kde-format
 msgid "Sort Images"
 msgstr "Lajittele kuvat"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:71
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:66
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Muutetaan kuvien nimiä. Odota…</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:80
 #, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "K&eskeytä"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
 msgid "Processing..."
 msgstr "Käsitellään…"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:155
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Muutetaan kuvien nimiä"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:156
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -50764,19 +50770,19 @@ msgstr[1] ""
 "%1 kuvan nimeä muutettaessa tapahtui virhe.\n"
 "Haluatko muuttaa kuvan nimeä uudelleen vai korvata nämä tiedostot?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:165
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Muuta nimeä uudelleen"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Korvaa"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:215
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>Muutetaan kuvien nimiä. Virheet: %1</b>"

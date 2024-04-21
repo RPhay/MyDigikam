@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-20 01:43+0000\n"
+"POT-Creation-Date: 2024-04-21 01:42+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -4246,189 +4246,195 @@ msgstr "ये टैग मेटाव"
 msgid "Configure this column"
 msgstr "कैमरा कान्फिगरेसन"
 
-#: core/app/views/utils/componentsinfodlg.cpp:79
+#: core/app/views/utils/componentsinfodlg.cpp:80
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Unknown"
 msgstr "अग्यात"
 
-#: core/app/views/utils/componentsinfodlg.cpp:82
+#: core/app/views/utils/componentsinfodlg.cpp:83
 #, fuzzy, kde-format
 #| msgid "LibGphoto2"
 msgctxt "@item: component info"
 msgid "LibGphoto2"
 msgstr "लिब-जी-फोटो२"
 
-#: core/app/views/utils/componentsinfodlg.cpp:87
+#: core/app/views/utils/componentsinfodlg.cpp:88
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2 support"
 msgstr "लिब-जी-फोटो२"
 
-#: core/app/views/utils/componentsinfodlg.cpp:87
-#: core/app/views/utils/componentsinfodlg.cpp:99
-#: core/app/views/utils/componentsinfodlg.cpp:111
-#: core/app/views/utils/componentsinfodlg.cpp:132
-#: core/app/views/utils/componentsinfodlg.cpp:144
-#: core/app/views/utils/componentsinfodlg.cpp:156
-#: core/app/views/utils/componentsinfodlg.cpp:168
-#: core/app/views/utils/componentsinfodlg.cpp:180
-#: core/app/views/utils/componentsinfodlg.cpp:198
+#: core/app/views/utils/componentsinfodlg.cpp:88
+#: core/app/views/utils/componentsinfodlg.cpp:100
+#: core/app/views/utils/componentsinfodlg.cpp:112
+#: core/app/views/utils/componentsinfodlg.cpp:133
+#: core/app/views/utils/componentsinfodlg.cpp:145
+#: core/app/views/utils/componentsinfodlg.cpp:157
+#: core/app/views/utils/componentsinfodlg.cpp:169
+#: core/app/views/utils/componentsinfodlg.cpp:181
+#: core/app/views/utils/componentsinfodlg.cpp:203
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component info"
 msgid "No"
 msgstr "नइ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:94
-#: core/app/views/utils/componentsinfodlg.cpp:99
+#: core/app/views/utils/componentsinfodlg.cpp:95
+#: core/app/views/utils/componentsinfodlg.cpp:100
 #, fuzzy, kde-format
 #| msgid "LibLCMS"
 msgctxt "@item: component info"
 msgid "Baloo support"
 msgstr "लिबएलसीएमएस"
 
-#: core/app/views/utils/componentsinfodlg.cpp:94
-#: core/app/views/utils/componentsinfodlg.cpp:106
-#: core/app/views/utils/componentsinfodlg.cpp:118
-#: core/app/views/utils/componentsinfodlg.cpp:139
-#: core/app/views/utils/componentsinfodlg.cpp:151
-#: core/app/views/utils/componentsinfodlg.cpp:163
-#: core/app/views/utils/componentsinfodlg.cpp:175
-#: core/app/views/utils/componentsinfodlg.cpp:197
+#: core/app/views/utils/componentsinfodlg.cpp:95
+#: core/app/views/utils/componentsinfodlg.cpp:107
+#: core/app/views/utils/componentsinfodlg.cpp:119
+#: core/app/views/utils/componentsinfodlg.cpp:140
+#: core/app/views/utils/componentsinfodlg.cpp:152
+#: core/app/views/utils/componentsinfodlg.cpp:164
+#: core/app/views/utils/componentsinfodlg.cpp:176
+#: core/app/views/utils/componentsinfodlg.cpp:202
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component info"
 msgid "Yes"
 msgstr "हाँ"
 
-#: core/app/views/utils/componentsinfodlg.cpp:106
-#: core/app/views/utils/componentsinfodlg.cpp:111
+#: core/app/views/utils/componentsinfodlg.cpp:107
+#: core/app/views/utils/componentsinfodlg.cpp:112
 #, fuzzy, kde-format
 #| msgid "LibLCMS"
 msgctxt "@item: component info"
 msgid "AddressBook support"
 msgstr "लिबएलसीएमएस"
 
-#: core/app/views/utils/componentsinfodlg.cpp:118
-#: core/app/views/utils/componentsinfodlg.cpp:132
+#: core/app/views/utils/componentsinfodlg.cpp:119
+#: core/app/views/utils/componentsinfodlg.cpp:133
 #, fuzzy, kde-format
 #| msgid "LibLCMS"
 msgctxt "@item: component info"
 msgid "Media player support"
 msgstr "लिबएलसीएमएस"
 
-#: core/app/views/utils/componentsinfodlg.cpp:121
+#: core/app/views/utils/componentsinfodlg.cpp:122
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "LibAVFormat"
 msgstr "फाइल फार्मेट"
 
-#: core/app/views/utils/componentsinfodlg.cpp:124
+#: core/app/views/utils/componentsinfodlg.cpp:125
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "LibAVCodec"
 msgstr "आडियो फाइल मन ल"
 
-#: core/app/views/utils/componentsinfodlg.cpp:127
+#: core/app/views/utils/componentsinfodlg.cpp:128
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "LibAVUtil"
 msgstr "फाइल फार्मेट"
 
-#: core/app/views/utils/componentsinfodlg.cpp:139
-#: core/app/views/utils/componentsinfodlg.cpp:144
+#: core/app/views/utils/componentsinfodlg.cpp:140
+#: core/app/views/utils/componentsinfodlg.cpp:145
 #, fuzzy, kde-format
 #| msgid "LibLCMS"
 msgctxt "@item: component info"
 msgid "DBus support"
 msgstr "लिबएलसीएमएस"
 
-#: core/app/views/utils/componentsinfodlg.cpp:151
-#: core/app/views/utils/componentsinfodlg.cpp:156
+#: core/app/views/utils/componentsinfodlg.cpp:152
+#: core/app/views/utils/componentsinfodlg.cpp:157
 #, fuzzy, kde-format
 #| msgid "RAW camera supported"
 msgctxt "@item: component info"
 msgid "Panorama support"
 msgstr "रा कैमरा समर्थित"
 
-#: core/app/views/utils/componentsinfodlg.cpp:163
-#: core/app/views/utils/componentsinfodlg.cpp:168
+#: core/app/views/utils/componentsinfodlg.cpp:164
+#: core/app/views/utils/componentsinfodlg.cpp:169
 #, fuzzy, kde-format
 #| msgid "LibLCMS"
 msgctxt "@item: component info"
 msgid "HTML Gallery support"
 msgstr "लिबएलसीएमएस"
 
-#: core/app/views/utils/componentsinfodlg.cpp:175
-#: core/app/views/utils/componentsinfodlg.cpp:180
+#: core/app/views/utils/componentsinfodlg.cpp:176
+#: core/app/views/utils/componentsinfodlg.cpp:181
 #, fuzzy, kde-format
 #| msgid "LibLCMS"
 msgctxt "@item: component info"
 msgid "Calendar support"
 msgstr "लिबएलसीएमएस"
 
-#: core/app/views/utils/componentsinfodlg.cpp:185
+#: core/app/views/utils/componentsinfodlg.cpp:186
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "LibOpenCV"
 msgstr "एखर साथ खोलव"
 
 #: core/app/views/utils/componentsinfodlg.cpp:193
+#, kde-format
+msgctxt "@item: component info"
+msgid "Qt Sql drivers"
+msgstr ""
+
+#: core/app/views/utils/componentsinfodlg.cpp:198
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Database backend"
 msgstr "डाटाबेस फोल्डर बनाव ?"
 
-#: core/app/views/utils/componentsinfodlg.cpp:200
+#: core/app/views/utils/componentsinfodlg.cpp:205
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Database internal server"
 msgstr "इंटीग्रल चरन:"
 
-#: core/app/views/utils/componentsinfodlg.cpp:205
+#: core/app/views/utils/componentsinfodlg.cpp:210
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
 msgstr "कैमरा कान्फिगरेसन"
 
-#: core/app/views/utils/componentsinfodlg.cpp:212
+#: core/app/views/utils/componentsinfodlg.cpp:217
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Video Decoders"
 msgstr "आडियो फाइल मन ल"
 
-#: core/app/views/utils/componentsinfodlg.cpp:226
-#: core/app/views/utils/componentsinfodlg.cpp:243
-#: core/app/views/utils/componentsinfodlg.cpp:263
-#: core/app/views/utils/componentsinfodlg.cpp:280
-#: core/app/views/utils/componentsinfodlg.cpp:298
+#: core/app/views/utils/componentsinfodlg.cpp:231
+#: core/app/views/utils/componentsinfodlg.cpp:248
+#: core/app/views/utils/componentsinfodlg.cpp:268
+#: core/app/views/utils/componentsinfodlg.cpp:285
+#: core/app/views/utils/componentsinfodlg.cpp:303
 #: core/libs/dialogs/libsinfodlg.cpp:545 core/libs/dialogs/libsinfodlg.cpp:551
 #: core/libs/dialogs/libsinfodlg.cpp:626
 #, fuzzy, kde-format
 msgid "no entry"
 msgstr "गननाः"
 
-#: core/app/views/utils/componentsinfodlg.cpp:229
+#: core/app/views/utils/componentsinfodlg.cpp:234
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Video Encoders"
 msgstr "आडियो फाइल मन ल"
 
-#: core/app/views/utils/componentsinfodlg.cpp:249
+#: core/app/views/utils/componentsinfodlg.cpp:254
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Audio Decoders"
 msgstr "आडियो फाइल मन ल"
 
-#: core/app/views/utils/componentsinfodlg.cpp:266
+#: core/app/views/utils/componentsinfodlg.cpp:271
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Audio Encoders"
 msgstr "आडियो फाइल मन ल"
 
-#: core/app/views/utils/componentsinfodlg.cpp:286
+#: core/app/views/utils/componentsinfodlg.cpp:291
 #, fuzzy, kde-format
 msgctxt "@item: component info"
 msgid "Supported Extensions"
@@ -48036,27 +48042,27 @@ msgctxt "@info"
 msgid "Selected engine %1 does not support emotion settings"
 msgstr "तारीक (के-कंट्रोल से समर्थित नइ)"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:154
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:162
 #, kde-format
 msgctxt "@info"
 msgid "%1 engine does not support TTS"
 msgstr ""
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:252
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:260
 #, fuzzy, kde-format
 #| msgid "Date (not supported by KControl)"
 msgctxt "@info"
 msgid "Selected language %1 is not supported for %2"
 msgstr "तारीक (के-कंट्रोल से समर्थित नइ)"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:271
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:279
 #, fuzzy, kde-format
 #| msgid "Date (not supported by KControl)"
 msgctxt "@info"
 msgid "Selected voice %1 is not supported for %2"
 msgstr "तारीक (के-कंट्रोल से समर्थित नइ)"
 
-#: core/libs/widgets/text/donlinetranslator_tts.cpp:290
+#: core/libs/widgets/text/donlinetranslator_tts.cpp:298
 #, fuzzy, kde-format
 #| msgid "Date (not supported by KControl)"
 msgctxt "@info"
@@ -48087,39 +48093,39 @@ msgctxt "@title: translator language name"
 msgid "Name"
 msgstr "नाम"
 
-#: core/libs/widgets/text/localizeconfig.cpp:111
+#: core/libs/widgets/text/localizeconfig.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:146
+#: core/libs/widgets/text/localizeconfig.cpp:143
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Show only selected items (%1/%2)"
 msgstr "डुप्लीकेट खोजव"
 
-#: core/libs/widgets/text/localizeconfig.cpp:227
+#: core/libs/widgets/text/localizeconfig.cpp:216
 #, fuzzy, kde-format
 #| msgid "Select here the language of content."
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
 msgstr "इहां भाखा सामान ल चुनव."
 
-#: core/libs/widgets/text/localizeconfig.cpp:232
+#: core/libs/widgets/text/localizeconfig.cpp:221
 #, fuzzy, kde-format
 #| msgid "Hungarian translations"
 msgctxt "@label"
 msgid "Online Translator:"
 msgstr "हंगरी अनुवाद"
 
-#: core/libs/widgets/text/localizeconfig.cpp:234
+#: core/libs/widgets/text/localizeconfig.cpp:223
 #, fuzzy, kde-format
 msgctxt "@option"
 msgid "Select here the online engine to translate text"
 msgstr "इहां भाखा सामान ल चुनव."
 
-#: core/libs/widgets/text/localizeconfig.cpp:241
+#: core/libs/widgets/text/localizeconfig.cpp:230
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48132,65 +48138,65 @@ msgid ""
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/localizeconfig.cpp:329
+#: core/libs/widgets/text/localizeconfig.cpp:318
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
 msgstr "मैकबाइनरी II"
 
-#: core/libs/widgets/text/localizeselector.cpp:111
+#: core/libs/widgets/text/localizeselector.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Open localize setup"
 msgstr ""
 
-#: core/libs/widgets/text/localizeselector.cpp:150
+#: core/libs/widgets/text/localizeselector.cpp:145
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
 msgstr "दरजा %1 से बराबर हे"
 
-#: core/libs/widgets/text/localizeselector.cpp:163
+#: core/libs/widgets/text/localizeselector.cpp:158
 #, fuzzy, kde-format
 #| msgid "Select here the language of content."
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
 msgstr "इहां भाखा सामान ल चुनव."
 
-#: core/libs/widgets/text/localizeselector.cpp:268
+#: core/libs/widgets/text/localizeselector.cpp:258
 #, fuzzy, kde-format
 #| msgid "Remove this Tag"
 msgctxt "@action"
 msgid "Remove this entry"
 msgstr "ये टैग मेटाव"
 
-#: core/libs/widgets/text/localizeselector.cpp:269
+#: core/libs/widgets/text/localizeselector.cpp:259
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Clear List"
 msgstr "कैमरा सूची"
 
-#: core/libs/widgets/text/searchtextbar.cpp:86
+#: core/libs/widgets/text/searchtextbar.cpp:75
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@info: search text bar"
 msgid "Search..."
 msgstr "खोजव..."
 
-#: core/libs/widgets/text/searchtextbar.cpp:269
+#: core/libs/widgets/text/searchtextbar.cpp:258
 #, fuzzy, kde-format
 msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "संवेदनसीलता"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:92
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:110
+#: core/libs/widgets/text/spellcheckconfig.cpp:94
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48203,13 +48209,13 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:120
+#: core/libs/widgets/text/spellcheckconfig.cpp:104
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Default Language:"
 msgstr "डिफाल्ट"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:124
+#: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, fuzzy, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
@@ -48217,77 +48223,77 @@ msgid ""
 "alternative language strings."
 msgstr "सब्बो सेटिंग ल ऊंखर डिफाल्ट मूल्य मं रीसेट करव."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:127
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
 #, fuzzy, kde-format
 #| msgid "Auto-&Detect"
 msgid "Auto-detect"
 msgstr "अपन आप पता लगाव (&D)"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:128
+#: core/libs/widgets/text/spellcheckconfig.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:139
+#: core/libs/widgets/text/spellcheckconfig.cpp:123
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "मैकबाइनरी II"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:152
+#: core/libs/widgets/text/spellcheckconfig.cpp:136
 #, fuzzy, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "आडियो फाइल मन ल"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:153
+#: core/libs/widgets/text/spellcheckconfig.cpp:137
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "नाम"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:160
+#: core/libs/widgets/text/spellcheckconfig.cpp:144
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "मिलत:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:179
+#: core/libs/widgets/text/spellcheckconfig.cpp:163
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "मानीटर:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:185
+#: core/libs/widgets/text/spellcheckconfig.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:188
+#: core/libs/widgets/text/spellcheckconfig.cpp:172
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:193
+#: core/libs/widgets/text/spellcheckconfig.cpp:177
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "जोड़व...(&A)"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:194
+#: core/libs/widgets/text/spellcheckconfig.cpp:178
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "मेटाव (&R)"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:195
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"
@@ -50093,44 +50099,44 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "निर्मित : %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:228
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:212
 #, kde-format
 msgid "By Name"
 msgstr "नाम से"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:229
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:213
 #, kde-format
 msgid "By Date"
 msgstr "तारीक से"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:230
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:214
 #, kde-format
 msgid "By File Size"
 msgstr "फाइल आकार से"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:238
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:222
 #, fuzzy, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "रा डिकोडिंग"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:239
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:223
 #, fuzzy, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "रा डिकोडिंग"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:266
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:250
 #, fuzzy, kde-format
 msgid "Current Name"
 msgstr "गननाः"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:266
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:250
 #, fuzzy, kde-format
 msgid "New Name"
 msgstr "नवा नाम:"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:270
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:254
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -50138,44 +50144,44 @@ msgid ""
 "because the name has already been assigned to another item."
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:326
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:310
 #, fuzzy, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
 msgstr[0] "नाम बदलव..."
 msgstr[1] "नाम बदलव..."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:428
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:412
 #, fuzzy, kde-format
 msgid "Sort Images"
 msgstr "फोटू छांटव (&S)"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:71
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:66
 #, fuzzy, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "फोटू टैग हटाय जात हे. किरपा करके, अगोरव..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:80
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "छोड़व (&A)"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:81
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
 msgid "Processing..."
 msgstr "प्रोसेसिंग..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:82
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:155
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "फाइल नाम बदले के विकल्प"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:156
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -50187,20 +50193,20 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:165
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "फाइल नाम बदले के विकल्प"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:167
 #, fuzzy, kde-format
 #| msgid "Overwrite"
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "मेटाय के लिखव"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:215
 #, fuzzy, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "फोटू टैग हटाय जात हे. किरपा करके, अगोरव..."
