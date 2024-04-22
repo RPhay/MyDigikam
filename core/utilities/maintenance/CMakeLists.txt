@@ -27,7 +27,6 @@ set(libmaintenance_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/imagequalitysorter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagequalitytask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancedlg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/maintenancedlg_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancedlg_settings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancemngr.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancetool.cpp
