@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-21 01:42+0000\n"
+"POT-Creation-Date: 2024-04-22 01:53+0000\n"
 "PO-Revision-Date: 2024-04-16 11:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -374,13 +374,13 @@ msgstr ""
 "imatges. Açò també inclou la casella de selecció «%1»."
 
 #: core/app/filters/filtersidebarwidget.cpp:187
-#: core/utilities/searchwindow/searchgroup_label.cpp:301
+#: core/utilities/searchwindow/searchgroup_label.cpp:286
 #, kde-format
 msgid "OR"
 msgstr "O"
 
 #: core/app/filters/filtersidebarwidget.cpp:190
-#: core/utilities/searchwindow/searchgroup_label.cpp:297
+#: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "AND"
 msgstr "I"
@@ -1150,7 +1150,7 @@ msgid "White Balance:"
 msgstr "Balanç de blancs:"
 
 #: core/app/items/utils/tooltipfiller.cpp:313
-#: core/utilities/searchwindow/searchgroup.cpp:117
+#: core/utilities/searchwindow/searchgroup.cpp:113
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "Propietats de l'àudio/vídeo"
@@ -3134,7 +3134,7 @@ msgid "Map Search"
 msgstr "Busca per mapa"
 
 #: core/app/views/stack/itemiconview_p.h:138
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1162
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
 msgstr "Última busca"
@@ -3723,7 +3723,7 @@ msgstr "Tipus del canal de l'àudio"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:955
+#: core/utilities/searchwindow/searchfields_createfield.cpp:958
 #: core/utilities/setup/setuptooltip.cpp:262
 #, kde-format
 msgid "Audio Codec"
@@ -3731,7 +3731,7 @@ msgstr "Còdec d'àudio"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:814
+#: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, kde-format
 msgid "Duration"
 msgstr "Duració"
@@ -8350,7 +8350,7 @@ msgstr "S'ha desactivat la gestió del color..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:80
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:207
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:553
 #, kde-format
 msgid "White Balance"
 msgstr "Balanç de blancs"
@@ -11588,7 +11588,7 @@ msgstr "Es guarden els canvis -"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1229
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1246
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:607
-#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
+#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:178
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:401
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:408
@@ -13969,7 +13969,7 @@ msgstr "Introduïu el nom del creador de la llegenda."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
-#: core/libs/template/templatepanel.cpp:129
+#: core/libs/template/templatepanel.cpp:128
 #: core/libs/template/templateviewer.cpp:108
 #, kde-format
 msgid "Copyright:"
@@ -14013,7 +14013,7 @@ msgstr "Establiu ací el títol del creador del contingut."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:99
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
-#: core/libs/template/templatepanel.cpp:115
+#: core/libs/template/templatepanel.cpp:114
 #: core/libs/template/templateviewer.cpp:106
 #, kde-format
 msgid "Credit:"
@@ -14688,8 +14688,8 @@ msgstr "Establiu ací el nom sencer del país referenciat pel contingut."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:151
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:184
-#: core/libs/template/templatepanel.cpp:217
-#: core/libs/template/templatepanel.cpp:281
+#: core/libs/template/templatepanel.cpp:216
+#: core/libs/template/templatepanel.cpp:280
 #: core/libs/template/templateviewer.cpp:132
 #: core/libs/template/templateviewer.cpp:156
 #, kde-format
@@ -14711,7 +14711,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:195
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:191
-#: core/libs/template/templatepanel.cpp:227
+#: core/libs/template/templatepanel.cpp:226
 #: core/libs/template/templateviewer.cpp:134
 #, kde-format
 msgid "Sublocation:"
@@ -14734,7 +14734,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:205
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:156
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:198
-#: core/libs/template/templatepanel.cpp:237
+#: core/libs/template/templatepanel.cpp:236
 #: core/libs/template/templateviewer.cpp:136
 #: core/libs/template/templateviewer.cpp:158
 #, kde-format
@@ -14758,8 +14758,8 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:215
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:161
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:205
-#: core/libs/template/templatepanel.cpp:247
-#: core/libs/template/templatepanel.cpp:291
+#: core/libs/template/templatepanel.cpp:246
+#: core/libs/template/templatepanel.cpp:290
 #: core/libs/template/templateviewer.cpp:138
 #: core/libs/template/templateviewer.cpp:160
 #, kde-format
@@ -15183,7 +15183,7 @@ msgid "Sync Exif Copyright"
 msgstr "Sincronitza els drets d'autoria Exif"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:115
-#: core/libs/template/templatepanel.cpp:152
+#: core/libs/template/templatepanel.cpp:151
 #, kde-format
 msgid "Right Usage Terms:"
 msgstr "Termes del dret d'ús:"
@@ -15211,7 +15211,7 @@ msgid "Creator Title:"
 msgstr "Títol del creador:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:123
-#: core/libs/template/templatepanel.cpp:393
+#: core/libs/template/templatepanel.cpp:392
 #: core/libs/template/templateviewer.cpp:187
 #, kde-format
 msgid "Contact"
@@ -15229,7 +15229,7 @@ msgid "Set here the contact e-mail."
 msgstr "Establiu ací el correu electrònic de contacte."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
-#: core/libs/template/templatepanel.cpp:351
+#: core/libs/template/templatepanel.cpp:350
 #: core/libs/template/templateviewer.cpp:166
 #, kde-format
 msgid "URL:"
@@ -15241,7 +15241,7 @@ msgid "Set here the contact URL."
 msgstr "Establiu ací l'URL de contacte."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:136
-#: core/libs/template/templatepanel.cpp:341
+#: core/libs/template/templatepanel.cpp:340
 #: core/libs/template/templateviewer.cpp:162
 #, kde-format
 msgid "Phone:"
@@ -16557,8 +16557,8 @@ msgstr "Fitxer de destinació"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:338
-#: core/utilities/searchwindow/searchfields_createfield.cpp:369
+#: core/utilities/searchwindow/searchfields_createfield.cpp:339
+#: core/utilities/searchwindow/searchfields_createfield.cpp:370
 #, kde-format
 msgid "Camera"
 msgstr "Càmera"
@@ -17047,13 +17047,13 @@ msgctxt "@action"
 msgid "Blend Stacked Images..."
 msgstr "Fusiona les imatges apilades..."
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:326
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:325
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "desconegut"
 
-#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:921
+#: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:920
 #, kde-format
 msgid ""
 "Cannot run %1:\n"
@@ -17324,235 +17324,235 @@ msgstr "No s'ha pogut obrir el fitxer «%1» per a escriptura"
 msgid "Could not save image to file '%1'"
 msgstr "No s'ha pogut guardar la imatge en el fitxer «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:96
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
 msgstr "No s'ha pogut trobar el tema a «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:108
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "Create directories"
 msgstr "Crea directoris"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:112
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr "No s'ha pogut crear la carpeta «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:121
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "Copying theme"
 msgstr "S'està copiant el tema"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:136
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid "Could not copy theme"
 msgstr "No s'ha pogut copiar el tema"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:145
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
 #, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
 msgstr "Genera imatges i fitxers en XML"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:158
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "No s'ha pogut crear el «gallery.xml»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:282
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "S'estan generant els fitxers per a «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:317
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:316
 #, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "S'estan generant els fitxers HTML"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:324
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "No s'ha pogut carregar el fitxer XSL «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:334
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "No s'ha pogut carregar el fitxer en XML «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:371
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:370
 #, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "S'ha produït un error en processar el fitxer en XML"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:380
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:379
 #, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "No s'ha pogut obrir «%1» per a escriptura"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:407
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:406
 #, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "S'estan baixant els fitxers remots per a «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:424
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:423
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "No s'ha pogut obrir el fitxer temporal"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:439
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:438
 #, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "No s'han pogut baixar «%1»"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Anterior"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "Següent"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Llista d'àlbums"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "Imatge original"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr "Ves amunt"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Fabricant"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Model"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Orientació de la imatge"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Resolució X de la imatge"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Resolució Y de la imatge"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Unitats de la resolució de la imatge"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Data i hora de la imatge"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "Posicionament YCBCR"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Temps d'exposició"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "Nombre f"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Índex d'exposició"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "Classificació de la velocitat ISO"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr "Valor de la velocitat de l'obturador"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Valor d'obertura"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Distància focal"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "Altitud del GPS"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "Latitud del GPS"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
@@ -19657,7 +19657,7 @@ msgstr ""
 "per a processar els fitxers.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:730
+#: core/utilities/searchwindow/searchfields_createfield.cpp:731
 #, kde-format
 msgid "Author"
 msgstr "Autoria"
@@ -21289,13 +21289,13 @@ msgstr ""
 msgid "No OpenGL context has been found"
 msgstr "No s'ha trobat el context d'OpenGL"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:44
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Vista prèvia de la pista de so"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:96
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:95
 #, kde-format
 msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
@@ -21304,42 +21304,42 @@ msgstr ""
 "Si s'ha establit, la pista de so de l'àlbum actual es guardarà i es "
 "restaurarà automàticament en el proper inici."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:116
 #, kde-format
 msgid "Move the selected track up in the playlist."
 msgstr "Mou cap amunt la peça seleccionada en la llista de reproducció."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:117
 #, kde-format
 msgid "Move the selected track down in the playlist."
 msgstr "Mou cap avall la peça seleccionada en la llista de reproducció."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:118
 #, kde-format
 msgid "Add new tracks to the playlist."
 msgstr "Afig peces noves a la llista de reproducció."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:119
 #, kde-format
 msgid "Delete the selected track from the playlist."
 msgstr "Suprimix la peça seleccionada de la llista de reproducció."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:120
 #, kde-format
 msgid "Load playlist from a file."
 msgstr "Carrega la llista de reproducció des d'un fitxer."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:121
 #, kde-format
 msgid "Save playlist to a file."
 msgstr "Guarda la llista de reproducció a un fitxer."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:123
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:122
 #, kde-format
 msgid "Clear the playlist."
 msgstr "Neteja la llista de reproducció."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:256
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:255
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
@@ -21347,7 +21347,7 @@ msgid_plural "%1 tracks [%2]"
 msgstr[0] "1 peça [%2]"
 msgstr[1] "%1 peces [%2]"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:284
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:283
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
@@ -21355,46 +21355,46 @@ msgstr ""
 "La duració de la presentació és més gran que la duració de la pista de so. "
 "Suggeriment: afegiu més fitxers de so."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:354
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:353
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "Seleccioneu els fitxers de so"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:422
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:421
 #, kde-format
 msgid "You can only move image files up one at a time."
 msgstr "Només podeu moure cap amunt un fitxer d'imatge cada vegada."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:460
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:459
 #, kde-format
 msgid "You can only move files down one at a time."
 msgstr "Només podeu moure cap avall un fitxer d'imatge a la vegada."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:481
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:480
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "Càrrega de llista de reproducció"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:482
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:541
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:481
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:540
 #, kde-format
 msgid "Playlist (*.m3u)"
 msgstr "Llista de reproducció (*.m3u)"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:540
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:539
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "Guardeu la llista de reproducció"
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:601
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:600
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr "No es pot accedir al fitxer «%1». Comproveu que el camí siga correcte."
 
-#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:611
+#: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:610
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
 msgstr "No es pot crear una vista prèvia d'una llista de fitxers buida."
@@ -21446,10 +21446,10 @@ msgstr "Vista prèvia..."
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:158
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:126
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:388
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:374
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
-#: core/utilities/searchwindow/searchgroup_label.cpp:214
+#: core/utilities/searchwindow/searchgroup_label.cpp:199
 #, kde-format
 msgid "Options"
 msgstr "Opcions"
@@ -24760,7 +24760,7 @@ msgid "Date"
 msgstr "Data"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:67
-#: core/libs/template/templatepanel.cpp:275
+#: core/libs/template/templatepanel.cpp:274
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
 msgid "Location"
@@ -25010,17 +25010,17 @@ msgctxt "@action"
 msgid "Export to MediaWiki..."
 msgstr "Exporta cap a MediaWiki..."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:116
+#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:115
 #, kde-format
 msgid "Error on file '%1'\n"
 msgstr "S'ha produït un error en el fitxer «%1»\n"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:120
+#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:119
 #, kde-format
 msgid "Error on file '%1': %2\n"
 msgstr "S'ha produït un error en el fitxer «%1»: %2\n"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:158
+#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:157
 #, kde-format
 msgid "Uploaded via digiKam uploader"
 msgstr "Pujat mitjançant el pujador de digiKam"
@@ -26871,9 +26871,9 @@ msgid "Reset curve to linear"
 msgstr "Reinicia la corba a lineal"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:285
-#: core/utilities/searchwindow/searchfields_createfield.cpp:472
-#: core/utilities/searchwindow/searchfields_createfield.cpp:493
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:473
+#: core/utilities/searchwindow/searchfields_createfield.cpp:494
+#: core/utilities/searchwindow/searchfields_createfield.cpp:506
 #, kde-format
 msgid "Exposure"
 msgstr "Exposició"
@@ -28352,7 +28352,7 @@ msgstr ""
 "S'ha produït un error en convertir la base de dades.\n"
 " Detalls: %1"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:199
+#: core/libs/database/coredb/coredbschemaupdater.cpp:198
 #, kde-format
 msgid ""
 "You have insufficient privileges on the database.\n"
@@ -28365,7 +28365,7 @@ msgstr ""
 " %1\n"
 "Verifiqueu els vostres privilegis sobre la base de dades i reinicieu digiKam."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:233
+#: core/libs/database/coredb/coredbschemaupdater.cpp:232
 #, kde-format
 msgid ""
 "The database is not valid: the \"DBVersion\" setting does not exist. The "
@@ -28376,7 +28376,7 @@ msgstr ""
 "pot verificar la versió de l'esquema de la base de dades actual. Proveu "
 "d'iniciar amb una base de dades buida. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:263
+#: core/libs/database/coredb/coredbschemaupdater.cpp:262
 #, kde-format
 msgid ""
 "The database has been used with a more recent version of digiKam and has "
@@ -28390,7 +28390,7 @@ msgstr ""
 "format de la base de dades és massa recent. Utilitzeu la versió més recent "
 "de digiKam que hàgeu utilitzat abans. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:326
+#: core/libs/database/coredb/coredbschemaupdater.cpp:325
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:204
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:200
 #, kde-format
@@ -28401,7 +28401,7 @@ msgstr ""
 "No s'han pogut crear les taules en la base de dades.\n"
 " "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:347
+#: core/libs/database/coredb/coredbschemaupdater.cpp:346
 #, kde-format
 msgid ""
 "Failed to open a database transaction on your database file \"%1\". This is "
@@ -28417,7 +28417,7 @@ msgstr ""
 "(vegeu www.digikam.org/support). També, doneu una ullada als missatges de "
 "digiKam en la consola. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:408
+#: core/libs/database/coredb/coredbschemaupdater.cpp:407
 #, kde-format
 msgid ""
 "The schema updating process from version 4 to 6 failed, caused by an error "
@@ -28435,7 +28435,7 @@ msgstr ""
 "www.digikam.org/support). També, doneu una ullada als missatges de digiKam "
 "en la consola. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:446
+#: core/libs/database/coredb/coredbschemaupdater.cpp:445
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28449,7 +28449,7 @@ msgstr ""
 "versió actual del servidor. Inicieu ara de nou digiKam per a fer una "
 "actualització requerida de la base de dades."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:455
+#: core/libs/database/coredb/coredbschemaupdater.cpp:454
 #, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
@@ -28461,7 +28461,7 @@ msgstr ""
 "Llegiu els missatges d'error que es mostren en la consola i informeu d'este "
 "error en bugs.kde.org."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:675
+#: core/libs/database/coredb/coredbschemaupdater.cpp:674
 #, kde-format
 msgid ""
 "The database update action cannot be found. Please ensure that the dbconfig."
@@ -28472,12 +28472,12 @@ msgstr ""
 "que el fitxer dbconfig.xml de la versió actual de digiKam estiga instal·lat "
 "en el lloc correcte."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:696
+#: core/libs/database/coredb/coredbschemaupdater.cpp:695
 #, kde-format
 msgid "Updated schema to version %1."
 msgstr "L'esquema s'ha actualitzat a la versió %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:843
+#: core/libs/database/coredb/coredbschemaupdater.cpp:842
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28488,12 +28488,12 @@ msgstr ""
 "ubicació nova («%2»). Missatge d'error: «%3». Assegureu-vos que el fitxer es "
 "puga copiar o suprimir."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:865
+#: core/libs/database/coredb/coredbschemaupdater.cpp:864
 #, kde-format
 msgid "Copied database file"
 msgstr "S'ha copiat el fitxer de la base de dades"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:870
+#: core/libs/database/coredb/coredbschemaupdater.cpp:869
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28504,22 +28504,22 @@ msgstr ""
 "(«%2») però no es pot obrir. Suprimiu els dos fitxers i torneu-ho a provar, "
 "iniciant amb una base de dades buida. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:891
+#: core/libs/database/coredb/coredbschemaupdater.cpp:890
 #, kde-format
 msgid "Opened new database file"
 msgstr "S'ha obert un fitxer nou de base de dades"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:990
+#: core/libs/database/coredb/coredbschemaupdater.cpp:989
 #, kde-format
 msgid "Prepared table creation"
 msgstr "S'ha preparat la creació de la taula"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1009
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1008
 #, kde-format
 msgid "Created tables"
 msgstr "S'han creat les taules"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1021
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28530,7 +28530,7 @@ msgstr ""
 "configuració. S'ha renunciat al procés d'actualització de l'esquema. "
 "Intenteu-ho amb una base de dades buida o repareu la configuració."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1044
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1043
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28550,52 +28550,52 @@ msgstr ""
 "s'interromprà perquè no es vol crear una base de dades nova basada en "
 "premisses falses a partir d'una instal·lació defectuosa."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1071
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1070
 #, kde-format
 msgid "Configured one album root"
 msgstr "S'ha configurat un àlbum arrel"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1097
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1096
 #, kde-format
 msgid "Imported albums"
 msgstr "Els àlbums s'han importat"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1134
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1133
 #, kde-format
 msgid "Imported images information"
 msgstr "S'ha importat la informació de les imatges"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1164
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1163
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Última busca (0,9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1225
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1224
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "S'ha inicialitzat i importat el fitxer de filtres de sufixos"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1247
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1246
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "S'ha efectuat l'exploració inicial completa"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1270
 #, kde-format
 msgid "Imported creation dates"
 msgstr "S'han importat les dates de creació"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1302
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1301
 #, kde-format
 msgid "Imported comments"
 msgstr "S'han importat els comentaris"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1329
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1328
 #, kde-format
 msgid "Imported ratings"
 msgstr "S'han importat les valoracions"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1340
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1339
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "S'han suprimit les taules v3"
@@ -36849,7 +36849,7 @@ msgstr "No existix ExifTool o li falta el permís d'execució"
 msgid "Perl does not exists or exec permission is missing"
 msgstr "No existix el Perl o li falta el permís d'execució"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:148
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:150
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr "S'ha produït un error de sincronització entre els canals"
@@ -40315,12 +40315,12 @@ msgctxt "@title: template properties"
 msgid "Authors"
 msgstr "Autoria"
 
-#: core/libs/template/templatepanel.cpp:89
+#: core/libs/template/templatepanel.cpp:88
 #, kde-format
 msgid "Author Names:"
 msgstr "Noms de l'autor:"
 
-#: core/libs/template/templatepanel.cpp:92
+#: core/libs/template/templatepanel.cpp:91
 #, kde-format
 msgid ""
 "Enter the names of the photograph's creators. Use semi-colons as separator "
@@ -40329,7 +40329,7 @@ msgstr ""
 "Introduïu ací els noms dels creadors de la fotografia. Utilitzeu el signe de "
 "punt i coma com a separador."
 
-#: core/libs/template/templatepanel.cpp:94
+#: core/libs/template/templatepanel.cpp:93
 #, kde-format
 msgid ""
 "<p>This field should contain the names of the persons who created the "
@@ -40348,17 +40348,17 @@ msgstr ""
 "i coma com a separador</b>.</p><p>Amb IPTC, este camp està limitat a 32 "
 "caràcters.</p>"
 
-#: core/libs/template/templatepanel.cpp:103
+#: core/libs/template/templatepanel.cpp:102
 #, kde-format
 msgid "Authors' Positions:"
 msgstr "Càrrec de l'autor:"
 
-#: core/libs/template/templatepanel.cpp:105
+#: core/libs/template/templatepanel.cpp:104
 #, kde-format
 msgid "Enter the job titles of the authors here."
 msgstr "Introduïu ací els càrrecs professionals dels autors."
 
-#: core/libs/template/templatepanel.cpp:107
+#: core/libs/template/templatepanel.cpp:106
 #, kde-format
 msgid ""
 "<p>This field should contain the job titles of the authors. Examples might "
@@ -40373,12 +40373,12 @@ msgstr ""
 "qualificador del camp Autoria, este també s'ha d'emplenar.</p><p>Amb IPTC, "
 "este camp està limitat a 32 caràcters.</p>"
 
-#: core/libs/template/templatepanel.cpp:117
+#: core/libs/template/templatepanel.cpp:116
 #, kde-format
 msgid "Enter the photograph credit here."
 msgstr "Introduïu ací l'atribució del fotògraf."
 
-#: core/libs/template/templatepanel.cpp:119
+#: core/libs/template/templatepanel.cpp:118
 #, kde-format
 msgid ""
 "<p>(synonymous to Provider): Use the Provider field to identify who is "
@@ -40398,7 +40398,7 @@ msgstr ""
 "subministrament de la imatge.</p><p>Amb IPTC, este camp està limitat a 32 "
 "caràcters.</p>"
 
-#: core/libs/template/templatepanel.cpp:131
+#: core/libs/template/templatepanel.cpp:130
 #, kde-format
 msgid ""
 "Enter the copyright notice to identify the current owner(s) of the copyright "
@@ -40407,7 +40407,7 @@ msgstr ""
 "Introduïu ací la nota del copyright per a identificar els propietari/s "
 "actuals del copyright."
 
-#: core/libs/template/templatepanel.cpp:132
+#: core/libs/template/templatepanel.cpp:131
 #, kde-format
 msgid ""
 "<p>The Copyright Notice should contain any necessary copyright notice for "
@@ -40456,7 +40456,7 @@ msgstr ""
 "d'una cadena de copyright utilitzant idiomes diferents.</p><p>Amb IPTC, este "
 "camp està limitat a 128 caràcters.</p>"
 
-#: core/libs/template/templatepanel.cpp:154
+#: core/libs/template/templatepanel.cpp:153
 #, kde-format
 msgid ""
 "Enter the list of instructions on how a resource can be legally used here."
@@ -40464,7 +40464,7 @@ msgstr ""
 "Introduïu ací la llista d'instruccions sobre com es pot utilitzar legalment "
 "el recurs."
 
-#: core/libs/template/templatepanel.cpp:155
+#: core/libs/template/templatepanel.cpp:154
 #, kde-format
 msgid ""
 "<p>The Right Usage Terms field should be used to list instructions on how a "
@@ -40477,19 +40477,19 @@ msgstr ""
 "podeu incloure més d'una cadena pels termes del dret d'ús utilitzant "
 "diversos idiomes.</p><p>Este camp no existix amb IPTC.</p>"
 
-#: core/libs/template/templatepanel.cpp:163
+#: core/libs/template/templatepanel.cpp:162
 #: core/libs/template/templateviewer.cpp:112
 #, kde-format
 msgctxt "@label: template properties"
 msgid "Source:"
 msgstr "Origen:"
 
-#: core/libs/template/templatepanel.cpp:165
+#: core/libs/template/templatepanel.cpp:164
 #, kde-format
 msgid "Enter the original owner of the photograph here."
 msgstr "Introduïu ací el propietari original de la fotografia."
 
-#: core/libs/template/templatepanel.cpp:167
+#: core/libs/template/templatepanel.cpp:166
 #, kde-format
 msgid ""
 "<p>The Source field should be used to identify the original owner or "
@@ -40514,18 +40514,18 @@ msgstr ""
 "ser diferent del creador i dels noms indicats a la nota del copyright.</"
 "p><p>Amb IPTC, este camp està limitat a 32 caràcters.</p>"
 
-#: core/libs/template/templatepanel.cpp:179
+#: core/libs/template/templatepanel.cpp:178
 #: core/libs/template/templateviewer.cpp:114
 #, kde-format
 msgid "Instructions:"
 msgstr "Instruccions:"
 
-#: core/libs/template/templatepanel.cpp:181
+#: core/libs/template/templatepanel.cpp:180
 #, kde-format
 msgid "Enter the editorial notice here."
 msgstr "Introduïu ací la nota editorial."
 
-#: core/libs/template/templatepanel.cpp:183
+#: core/libs/template/templatepanel.cpp:182
 #, kde-format
 msgid ""
 "<p>The Instructions field should be used to list editorial instructions "
@@ -40536,18 +40536,18 @@ msgstr ""
 "editorials relacionades amb l'ús de la fotografia.</p><p>Amb IPTC, este camp "
 "està limitat a 256 caràcters.</p>"
 
-#: core/libs/template/templatepanel.cpp:209
+#: core/libs/template/templatepanel.cpp:208
 #: core/libs/template/templateviewer.cpp:127
 #, kde-format
 msgid "Rights"
 msgstr "Drets"
 
-#: core/libs/template/templatepanel.cpp:220
+#: core/libs/template/templatepanel.cpp:219
 #, kde-format
 msgid "Enter the city of contents here."
 msgstr "Introduïu ací la ciutat dels continguts."
 
-#: core/libs/template/templatepanel.cpp:222
+#: core/libs/template/templatepanel.cpp:221
 #, kde-format
 msgid ""
 "<p>This field should contain the name of the city where the photograph was "
@@ -40556,12 +40556,12 @@ msgstr ""
 "<p>Este camp hauria de contindre el nom de la ciutat on es va prendre la "
 "fotografia.</p>"
 
-#: core/libs/template/templatepanel.cpp:230
+#: core/libs/template/templatepanel.cpp:229
 #, kde-format
 msgid "Enter the city sublocation of contents here."
 msgstr "Introduïu ací la sublocalització de la ciutat dels continguts."
 
-#: core/libs/template/templatepanel.cpp:232
+#: core/libs/template/templatepanel.cpp:231
 #, kde-format
 msgid ""
 "<p>This field should contain the sublocation of the city where the "
@@ -40570,12 +40570,12 @@ msgstr ""
 "<p>Este camp hauria de contindre la sublocalització de la ciutat on es va "
 "prendre la fotografia.</p>"
 
-#: core/libs/template/templatepanel.cpp:240
+#: core/libs/template/templatepanel.cpp:239
 #, kde-format
 msgid "Enter the province or state of contents here."
 msgstr "Introduïu ací la província o l'estat dels continguts."
 
-#: core/libs/template/templatepanel.cpp:242
+#: core/libs/template/templatepanel.cpp:241
 #, kde-format
 msgid ""
 "<p>This field should contain the province or state where the photograph was "
@@ -40584,17 +40584,17 @@ msgstr ""
 "<p>Este camp hauria de contindre la província o l'estat on es va prendre la "
 "fotografia.</p>"
 
-#: core/libs/template/templatepanel.cpp:250
+#: core/libs/template/templatepanel.cpp:249
 #, kde-format
 msgid "<p>Select here the country where the photograph was taken.</p>"
 msgstr "<p>Seleccioneu ací el país on es va prendre la fotografia.</p>"
 
-#: core/libs/template/templatepanel.cpp:284
+#: core/libs/template/templatepanel.cpp:283
 #, kde-format
 msgid "Enter the city name of the lead author here."
 msgstr "Introduïu ací la ciutat de l'autor principal."
 
-#: core/libs/template/templatepanel.cpp:286
+#: core/libs/template/templatepanel.cpp:285
 #, kde-format
 msgid ""
 "<p>This field should contain the city name where the lead author lives.</p>"
@@ -40602,12 +40602,12 @@ msgstr ""
 "<p>Este camp hauria de contindre el nom de la ciutat on viu l'autor "
 "principal.</p>"
 
-#: core/libs/template/templatepanel.cpp:294
+#: core/libs/template/templatepanel.cpp:293
 #, kde-format
 msgid "Enter the country name of the lead author here."
 msgstr "Introduïu ací el país de l'autor principal."
 
-#: core/libs/template/templatepanel.cpp:296
+#: core/libs/template/templatepanel.cpp:295
 #, kde-format
 msgid ""
 "<p>This field should contain the country name where the lead author lives.</"
@@ -40616,37 +40616,37 @@ msgstr ""
 "<p>Este camp hauria de contindre el nom del país on viu l'autor principal.</"
 "p>"
 
-#: core/libs/template/templatepanel.cpp:301
+#: core/libs/template/templatepanel.cpp:300
 #: core/libs/template/templateviewer.cpp:152
 #, kde-format
 msgctxt "@label: template properties"
 msgid "Address:"
 msgstr "Adreça:"
 
-#: core/libs/template/templatepanel.cpp:304
+#: core/libs/template/templatepanel.cpp:303
 #, kde-format
 msgid "Enter the address of the lead author here."
 msgstr "Introduïu ací l'adreça de l'autor principal."
 
-#: core/libs/template/templatepanel.cpp:306
+#: core/libs/template/templatepanel.cpp:305
 #, kde-format
 msgid ""
 "<p>This field should contain the address where the lead author lives.</p>"
 msgstr ""
 "<p>Este camp hauria de contindre l'adreça on viu l'autor principal.</p>"
 
-#: core/libs/template/templatepanel.cpp:311
+#: core/libs/template/templatepanel.cpp:310
 #: core/libs/template/templateviewer.cpp:154
 #, kde-format
 msgid "Postal Code:"
 msgstr "Codi postal:"
 
-#: core/libs/template/templatepanel.cpp:314
+#: core/libs/template/templatepanel.cpp:313
 #, kde-format
 msgid "Enter the postal code of the lead author here."
 msgstr "Introduïu ací el codi postal de l'autor principal."
 
-#: core/libs/template/templatepanel.cpp:316
+#: core/libs/template/templatepanel.cpp:315
 #, kde-format
 msgid ""
 "<p>This field should contain the postal code where the lead author lives.</p>"
@@ -40654,67 +40654,67 @@ msgstr ""
 "<p>Este camp hauria de contindre el codi postal d'on viu l'autor principal.</"
 "p>"
 
-#: core/libs/template/templatepanel.cpp:321
+#: core/libs/template/templatepanel.cpp:320
 #, kde-format
 msgid "Province:"
 msgstr "Província:"
 
-#: core/libs/template/templatepanel.cpp:324
+#: core/libs/template/templatepanel.cpp:323
 #, kde-format
 msgid "Enter the province of the lead author here."
 msgstr "Introduïu ací la província de l'autor principal."
 
-#: core/libs/template/templatepanel.cpp:326
+#: core/libs/template/templatepanel.cpp:325
 #, kde-format
 msgid ""
 "<p>This field should contain the province where the lead author lives.</p>"
 msgstr ""
 "<p>Este camp hauria de contindre la província on viu l'autor principal.</p>"
 
-#: core/libs/template/templatepanel.cpp:331
+#: core/libs/template/templatepanel.cpp:330
 #: core/libs/template/templateviewer.cpp:164
 #, kde-format
 msgctxt "@label: template properties"
 msgid "Email:"
 msgstr "Correu-e:"
 
-#: core/libs/template/templatepanel.cpp:334
+#: core/libs/template/templatepanel.cpp:333
 #, kde-format
 msgid "Enter the email of the lead author here."
 msgstr "Introduïu ací el correu-e de l'autor principal."
 
-#: core/libs/template/templatepanel.cpp:336
+#: core/libs/template/templatepanel.cpp:335
 #, kde-format
 msgid "<p>This field should contain the email of the lead author.</p>"
 msgstr ""
 "<p>Este camp hauria de contindre el correu electrònic de l'autor principal.</"
 "p>"
 
-#: core/libs/template/templatepanel.cpp:344
+#: core/libs/template/templatepanel.cpp:343
 #, kde-format
 msgid "Enter the phone number of the lead author here."
 msgstr "Introduïu ací el número de telèfon de l'autor principal."
 
-#: core/libs/template/templatepanel.cpp:346
+#: core/libs/template/templatepanel.cpp:345
 #, kde-format
 msgid "<p>This field should contain the phone number of the lead author.</p>"
 msgstr ""
 "<p>Este camp hauria de contindre el número de telèfon de l'autor principal.</"
 "p>"
 
-#: core/libs/template/templatepanel.cpp:354
+#: core/libs/template/templatepanel.cpp:353
 #, kde-format
 msgid "Enter the web site URL of the lead author here."
 msgstr "Introduïu ací l'URL de la pàgina web de l'autor principal."
 
-#: core/libs/template/templatepanel.cpp:356
+#: core/libs/template/templatepanel.cpp:355
 #, kde-format
 msgid "<p>This field should contain the web site URL of the lead author.</p>"
 msgstr ""
 "<p>Este camp hauria de contindre l'URL de la pàgina web de l'autor principal."
 "</p>"
 
-#: core/libs/template/templatepanel.cpp:407
+#: core/libs/template/templatepanel.cpp:406
 #: core/libs/template/templateviewer.cpp:195
 #, kde-format
 msgid "Subjects"
@@ -41695,7 +41695,7 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Predeterminat de l'escriptori"
 
-#: core/libs/video/manager/vidslidetask.cpp:195
+#: core/libs/video/manager/vidslidetask.cpp:194
 #, kde-format
 msgid "Generating frames from %1 Done"
 msgstr "S'ha fet la generació dels fotogrames a partir de %1"
@@ -44372,7 +44372,7 @@ msgstr "Informació de la imatge"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:139
-#: core/utilities/searchwindow/searchgroup.cpp:156
+#: core/utilities/searchwindow/searchgroup.cpp:152
 #: core/utilities/setup/setuptooltip.cpp:175
 #, kde-format
 msgid "Photograph Information"
@@ -51098,7 +51098,7 @@ msgstr "Sobreescriu"
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>S'estan canviant de nom les imatges. Errors: %1</b>"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:342
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:328
 #, kde-format
 msgid ""
 "<p>Enter your renaming pattern here. Use the access buttons to quickly add "
@@ -51109,19 +51109,19 @@ msgstr ""
 "a afegir ràpidament opcions del canvi de nom i modificadors. Per a més "
 "explicacions, utilitzeu el botó d'informació.</p>"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:349
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:335
 #: core/utilities/import/widgets/scriptingsettings.cpp:79
 #, kde-format
 msgid "Show a list of all available options"
 msgstr "Mostra una llista de totes les opcions disponibles"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:353
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:339
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:110
 #, kde-format
 msgid "Modifiers"
 msgstr "Modificadors"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:355
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:341
 #, kde-format
 msgid ""
 "<p>Add a modifier to a renaming option. To activate this button, place the "
@@ -51131,12 +51131,12 @@ msgstr ""
 "botó, situeu el cursor darrere una opció del canvi de nom o un modificador "
 "que ja estiga assignat.</p>"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:369
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:355
 #, kde-format
 msgid "Renaming Options"
 msgstr "Opcions del canvi de nom"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:390
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:376
 #, kde-format
 msgid "<p>Add renaming options to the parse string.</p>"
 msgstr "<p>Afig opcions del canvi de nom a la cadena d'anàlisi.</p>"
@@ -51227,12 +51227,12 @@ msgstr "Convertix la primera lletra de cada mot a majúscula"
 msgid "First Letter of Each Word Uppercase"
 msgstr "La Primera Lletra de Cada Mot En Majúscula"
 
-#: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:41
+#: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:40
 #, kde-format
 msgid "Default Value"
 msgstr "Valor predeterminat"
 
-#: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:45
+#: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:44
 #, kde-format
 msgid ""
 "<p>Set a default value for empty strings.<br/>When applied to a renaming "
@@ -51242,13 +51242,13 @@ msgstr ""
 "s'aplica a una opció del canvi de nom, les cadenes buides se substituiran "
 "pel valor que especifiqueu ací.</p>"
 
-#: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:70
+#: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:69
 #, kde-format
 msgctxt "default value for empty strings"
 msgid "Default Value..."
 msgstr "Valor predeterminat..."
 
-#: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:71
+#: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:70
 #, kde-format
 msgid "Set a default value for empty strings"
 msgstr "Establix un valor predeterminat per a les cadenes buides"
@@ -51420,320 +51420,320 @@ msgstr "Afig el nom de la càmera"
 msgid "Camera name"
 msgstr "Nom de la càmera"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:47
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:49
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:45
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:47
 #, kde-format
 msgid "Keyword separator:"
 msgstr "Separador de la paraula clau:"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:72
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:66
 #, kde-format
 msgid "Database..."
 msgstr "Base de dades..."
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:73
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:67
 #, kde-format
 msgid "Add information from the database"
 msgstr "Afig informació des de la base de dades"
 
-#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:76
+#: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:70
 #, kde-format
 msgid "Add database information"
 msgstr "Afig informació de la base de dades"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentTagsList)
 #. i18n: ectx: property (text), widget (QTreeWidget, m_recommendedTagsList)
-#: core/utilities/advancedrename/parser/options/database/dbkeyselector.cpp:92
+#: core/utilities/advancedrename/parser/options/database/dbkeyselector.cpp:88
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:33
 #: core/utilities/geolocation/marble/osm/OsmTagEditorWidget.ui:88
 #, kde-format
 msgid "Key"
 msgstr "Tecla"
 
-#: core/utilities/advancedrename/parser/options/database/dbkeyselector.cpp:93
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:62
+#: core/utilities/advancedrename/parser/options/database/dbkeyselector.cpp:89
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:64
 #, kde-format
 msgid "Description"
 msgstr "Descripció"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:52
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:54
 #, kde-format
 msgid "Common File Information"
 msgstr "Informació comuna dels fitxers"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:54
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:56
 #, kde-format
 msgid "Default comment of the image"
 msgstr "Comentari predeterminat de la imatge"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:55
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:57
 #, kde-format
 msgid "Default author of the image"
 msgstr "Autoria predeterminat de la imatge"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:56
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:58
 #, kde-format
 msgid "Image dimension"
 msgstr "Dimensions de la imatge"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:57
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:59
 #, kde-format
 msgid "Image file size"
 msgstr "Mida del fitxer d'imatge"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:58
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:60
 #, kde-format
 msgid "Format of the media file"
 msgstr "Format del fitxer multimèdia"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:59
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:61
 #, kde-format
 msgid "Type of the media file"
 msgstr "Tipus de fitxer multimèdia"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:60
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:62
 #, kde-format
 msgid "Rating of the media file"
 msgstr "Valoració del fitxer multimèdia"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:61
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:63
 #, kde-format
 msgid "Height of the media file"
 msgstr "Alçària del fitxer multimèdia"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:62
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:64
 #, kde-format
 msgid "Width of the media file"
 msgstr "Amplària del fitxer multimèdia"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:63
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:65
 #, kde-format
 msgid "Image orientation"
 msgstr "Orientació de la imatge"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:64
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:66
 #, kde-format
 msgid "Color depth (bits per channel)"
 msgstr "Profunditat de color (bits per canal)"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:65
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:67
 #, kde-format
 msgid "Color model of the image"
 msgstr "Model de color de la imatge"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:66
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:68
 #, kde-format
 msgid "A comma separated list of all authors"
 msgstr "Una llista de tots els autors separats per comes"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:67
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:69
 #, kde-format
 msgid "Title of the image"
 msgstr "Títol de la imatge"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:68
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:70
 #, kde-format
 msgid "A comma separated list of all tags"
 msgstr "Una llista de totes les etiquetes separades per comes"
 
-#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:69
+#: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:71
 #, kde-format
 msgid "A comma separated list of all tags with path"
 msgstr "Una llista de totes les etiquetes separades per comes amb el camí"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:58
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:60
 #, kde-format
 msgid "Metadata Information"
 msgstr "Informació de les metadades"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:60
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:62
 #, kde-format
 msgid "Make of the camera"
 msgstr "Fabricant de la càmera"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:61
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:63
 #, kde-format
 msgid "Model of the camera"
 msgstr "Model de la càmera"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:62
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:64
 #, kde-format
 msgid "Lens of the camera"
 msgstr "Lent de la càmera"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:63
-#: core/utilities/searchwindow/searchfields_createfield.cpp:414
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
+#: core/utilities/searchwindow/searchfields_createfield.cpp:415
 #, kde-format
 msgid "Aperture"
 msgstr "Obertura"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:64
-#: core/utilities/searchwindow/searchfields_createfield.cpp:434
-#: core/utilities/searchwindow/searchfields_createfield.cpp:453
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
+#: core/utilities/searchwindow/searchfields_createfield.cpp:454
 #, kde-format
 msgid "Focal length"
 msgstr "Distància focal"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:67
 #, kde-format
 msgid "Focal length (35mm equivalent)"
 msgstr "Distància focal (equivalent a 35 mm)"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:472
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
+#: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #, kde-format
 msgid "Exposure time"
 msgstr "Temps d'exposició"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:67
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:69
 #, kde-format
 msgid "Exposure program"
 msgstr "Programa d'exposició"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:70
 #, kde-format
 msgid "Exposure mode"
 msgstr "Mode d'exposició"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:69
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
+#: core/utilities/searchwindow/searchfields_createfield.cpp:517
 #, kde-format
 msgid "Sensitivity"
 msgstr "Sensibilitat"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:70
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:72
 #, kde-format
 msgid "Flash mode"
 msgstr "Mode de flaix"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:563
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
+#: core/utilities/searchwindow/searchfields_createfield.cpp:564
 #, kde-format
 msgid "White balance"
 msgstr "Balanç de blancs"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:72
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:74
 #, kde-format
 msgid "White balance (color temperature)"
 msgstr "Balanç de blancs (temperatura de color)"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
 #, kde-format
 msgid "Metering mode"
 msgstr "Mode de mesura"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:74
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:76
 #, kde-format
 msgid "Subject distance"
 msgstr "Distància del motiu"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:77
 #, kde-format
 msgid "Subject distance (category)"
 msgstr "Distància del motiu (categoria)"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:77
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
 #, kde-format
 msgid "Display Aspect Ratio"
 msgstr "Relació d'aspecte de la pantalla"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:918
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
+#: core/utilities/searchwindow/searchfields_createfield.cpp:921
 #: core/utilities/setup/setuptooltip.cpp:256
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Taxa de bits de l'àudio"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #: core/utilities/setup/setuptooltip.cpp:259
 #, kde-format
 msgid "Audio Channel Type"
 msgstr "Tipus de canal d'àudio"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:82
 #, kde-format
 msgid "Audio Codec (Audio Codec)"
 msgstr "Còdec d'àudio (còdec d'àudio)"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:83
 #, kde-format
 msgid "Duration of File"
 msgstr "Duració del fitxer"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:82
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:84
 #, kde-format
 msgid "Frame Rate of Video"
 msgstr "Velocitat dels fotogrames del vídeo"
 
-#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:83
+#: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:85
 #: core/utilities/setup/setuptooltip.cpp:271
 #, kde-format
 msgid "Video Codec"
 msgstr "Còdec de vídeo"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:48
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:50
 #, kde-format
 msgid "Position Information (GPS)"
 msgstr "Informació de posició (GPS)"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:50
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:52
 #, kde-format
 msgid "Latitude in the format as described by the XMP specification"
 msgstr "Latitud en el format descrit per l'especificació XMP"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:51
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:53
 #, kde-format
 msgid "Longitude in the format as described by the XMP specification"
 msgstr "Longitud en el format descrit per l'especificació XMP"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:52
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:54
 #, kde-format
 msgid "Latitude as double value"
 msgstr "Latitud com a valor doble"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:53
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:55
 #, kde-format
 msgid "Longitude as double value"
 msgstr "Longitud com a valor doble"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:54
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:56
 #, kde-format
 msgid "Latitude in a human readable form"
 msgstr "Latitud en forma intel·ligible per les persones"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:55
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:57
 #, kde-format
 msgid "Longitude in a human readable form"
 msgstr "Longitud en forma intel·ligible per les persones"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:56
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:58
 #, kde-format
 msgid "Altitude in meters"
 msgstr "Altitud en metres"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:57
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:59
 #, kde-format
 msgid "Altitude in a human readable form"
 msgstr "Altitud en forma intel·ligible per les persones"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:58
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:60
 #: core/utilities/searchwindow/searchfields_createfield.cpp:248
 #, kde-format
 msgid "Orientation"
 msgstr "Orientació"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:59
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
 #, kde-format
 msgid "Roll"
 msgstr "Rotlle"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:60
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:62
 #, kde-format
 msgid "Tilt"
 msgstr "Inclinació"
 
-#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
+#: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:627
 #, kde-format
 msgid "Accuracy"
@@ -51841,23 +51841,23 @@ msgctxt "the format of the date"
 msgid "Format:"
 msgstr "Format:"
 
-#: core/utilities/advancedrename/parser/options/directorynameoption.cpp:36
+#: core/utilities/advancedrename/parser/options/directorynameoption.cpp:32
 #, kde-format
 msgctxt "renaming option for directory related information"
 msgid "Directory"
 msgstr "Directori"
 
-#: core/utilities/advancedrename/parser/options/directorynameoption.cpp:37
+#: core/utilities/advancedrename/parser/options/directorynameoption.cpp:33
 #, kde-format
 msgid "Add the directory name"
 msgstr "Afig el nom del directori"
 
-#: core/utilities/advancedrename/parser/options/directorynameoption.cpp:40
+#: core/utilities/advancedrename/parser/options/directorynameoption.cpp:36
 #, kde-format
 msgid "Directory name"
 msgstr "Nom del directori"
 
-#: core/utilities/advancedrename/parser/options/directorynameoption.cpp:41
+#: core/utilities/advancedrename/parser/options/directorynameoption.cpp:37
 #, kde-format
 msgid ""
 "Name of the parent directory, additional '.' characters move up in the "
@@ -51919,12 +51919,12 @@ msgctxt "Group of the file"
 msgid "Group"
 msgstr "Grup"
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:97
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:91
 #, kde-format
 msgid "Metadata..."
 msgstr "Metadades..."
 
-#: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
+#: core/utilities/advancedrename/parser/options/metadataoption.cpp:92
 #, kde-format
 msgid "Add metadata information"
 msgstr "Afig informació de les metadades"
@@ -54474,7 +54474,7 @@ msgstr "Capital nacional"
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:332
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:336
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:356
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:685
 #, kde-format
 msgid "City"
 msgstr "Ciutat"
@@ -56187,19 +56187,19 @@ msgctxt "West direction terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:95
+#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:88
 #, kde-format
 msgctxt "Degree symbol terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:98
+#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:91
 #, kde-format
 msgctxt "Minutes symbol terms"
 msgid "*"
 msgstr "*"
 
-#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:101
+#: core/utilities/geolocation/marble/geodata/data/LonLatParser.cpp:94
 #, kde-format
 msgctxt "Seconds symbol terms"
 msgid "*"
@@ -62307,56 +62307,55 @@ msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "Busca els elements amb"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:257
+#: core/utilities/searchwindow/searchfields_createfield.cpp:258
 #, kde-format
 msgid "File Format"
 msgstr "Format de fitxer"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:257
+#: core/utilities/searchwindow/searchfields_createfield.cpp:258
 #, kde-format
 msgid "Return items with the file format"
 msgstr "Retorna els elements amb el format de fitxer d'imatge"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:262
+#: core/utilities/searchwindow/searchfields_createfield.cpp:263
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "%1 [imatge]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:267
+#: core/utilities/searchwindow/searchfields_createfield.cpp:268
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "%1 [vídeo]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:272
+#: core/utilities/searchwindow/searchfields_createfield.cpp:273
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "%1 [àudio]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:297
+#: core/utilities/searchwindow/searchfields_createfield.cpp:298
 #, kde-format
 msgid "Color Depth"
 msgstr "Profunditat de color"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:297
+#: core/utilities/searchwindow/searchfields_createfield.cpp:298
 #, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "Busca els elements amb"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:307
+#: core/utilities/searchwindow/searchfields_createfield.cpp:308
 #, kde-format
 msgid "Color Model"
 msgstr "Model del color"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:307
+#: core/utilities/searchwindow/searchfields_createfield.cpp:308
 #, kde-format
 msgid "Find items with the color model"
 msgstr "Busca els elements amb el model de color"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:312
 #: core/utilities/searchwindow/searchfields_createfield.cpp:313
 #: core/utilities/searchwindow/searchfields_createfield.cpp:314
 #: core/utilities/searchwindow/searchfields_createfield.cpp:315
@@ -62365,482 +62364,483 @@ msgstr "Busca els elements amb el model de color"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:318
 #: core/utilities/searchwindow/searchfields_createfield.cpp:319
 #: core/utilities/searchwindow/searchfields_createfield.cpp:320
+#: core/utilities/searchwindow/searchfields_createfield.cpp:321
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "%1 [imatge]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:324
 #: core/utilities/searchwindow/searchfields_createfield.cpp:325
 #: core/utilities/searchwindow/searchfields_createfield.cpp:326
 #: core/utilities/searchwindow/searchfields_createfield.cpp:327
+#: core/utilities/searchwindow/searchfields_createfield.cpp:328
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "%1 [vídeo]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:338
+#: core/utilities/searchwindow/searchfields_createfield.cpp:339
 #, kde-format
 msgid "The make of the camera"
 msgstr "El fabricant de la càmera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:369
+#: core/utilities/searchwindow/searchfields_createfield.cpp:370
 #, kde-format
 msgid "The model of the camera"
 msgstr "El model de la càmera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:400
+#: core/utilities/searchwindow/searchfields_createfield.cpp:401
 #, kde-format
 msgid "Lens"
 msgstr "Lent"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:400
+#: core/utilities/searchwindow/searchfields_createfield.cpp:401
 #, kde-format
 msgid "The type of the lens"
 msgstr "El tipus de lent"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:414
+#: core/utilities/searchwindow/searchfields_createfield.cpp:415
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Obriu la lent com a nombre f"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:415
+#: core/utilities/searchwindow/searchfields_createfield.cpp:416
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:434
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Distància focal de la lent"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:435
+#: core/utilities/searchwindow/searchfields_createfield.cpp:436
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:453
+#: core/utilities/searchwindow/searchfields_createfield.cpp:454
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "Distància focal equivalent a 35mm"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:454
+#: core/utilities/searchwindow/searchfields_createfield.cpp:455
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:473
+#: core/utilities/searchwindow/searchfields_createfield.cpp:474
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:493
+#: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Programa automàtic d'exposició"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:506
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Exposició automàtica o manual"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
+#: core/utilities/searchwindow/searchfields_createfield.cpp:517
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "Velocitat ISO de la pel·lícula (escala lineal, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:517
+#: core/utilities/searchwindow/searchfields_createfield.cpp:518
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:540
+#: core/utilities/searchwindow/searchfields_createfield.cpp:541
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Flaix"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:540
+#: core/utilities/searchwindow/searchfields_createfield.cpp:541
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Mode de flaix"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:553
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Balanç de blancs automàtic o manual"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:563
+#: core/utilities/searchwindow/searchfields_createfield.cpp:564
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Temperatura de color emprada pel balanç de blancs"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:564
+#: core/utilities/searchwindow/searchfields_createfield.cpp:565
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:576
+#: core/utilities/searchwindow/searchfields_createfield.cpp:577
 #, kde-format
 msgid "Metering Mode"
 msgstr "Mode de mesura"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:576
+#: core/utilities/searchwindow/searchfields_createfield.cpp:577
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Mètode per a determinar l'exposició"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:588
-#: core/utilities/searchwindow/searchfields_createfield.cpp:601
+#: core/utilities/searchwindow/searchfields_createfield.cpp:589
+#: core/utilities/searchwindow/searchfields_createfield.cpp:602
 #, kde-format
 msgid "Subject Distance"
 msgstr "Distància del motiu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:588
+#: core/utilities/searchwindow/searchfields_createfield.cpp:589
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Distància al motiu des de la lent"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:589
+#: core/utilities/searchwindow/searchfields_createfield.cpp:590
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:601
+#: core/utilities/searchwindow/searchfields_createfield.cpp:602
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Macro, a prop o vista distant"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:618
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:618
+#: core/utilities/searchwindow/searchfields_createfield.cpp:619
 #, kde-format
 msgid "Altitude range"
 msgstr "Abast de l'altitud"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:619
+#: core/utilities/searchwindow/searchfields_createfield.cpp:620
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:641
+#: core/utilities/searchwindow/searchfields_createfield.cpp:642
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "L'element no conté informació del GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:642
+#: core/utilities/searchwindow/searchfields_createfield.cpp:643
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Sense geolocalització"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:652
+#: core/utilities/searchwindow/searchfields_createfield.cpp:653
 #, kde-format
 msgid "Country"
 msgstr "País"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:652
+#: core/utilities/searchwindow/searchfields_createfield.cpp:653
 #, kde-format
 msgid "Country shown in the item"
 msgstr "País mostrat en l'element"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, kde-format
 msgid "Province"
 msgstr "Província"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, kde-format
 msgid "Province shown in the item"
 msgstr "Província mostrada en l'element"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:684
+#: core/utilities/searchwindow/searchfields_createfield.cpp:685
 #, kde-format
 msgid "City shown in the item"
 msgstr "Ciutat mostrada en l'element"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:701
 #, kde-format
 msgid "Sublocation"
 msgstr "Sublocalització"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:700
+#: core/utilities/searchwindow/searchfields_createfield.cpp:701
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "Sublocalització mostrada en l'element"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:714
+#: core/utilities/searchwindow/searchfields_createfield.cpp:715
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Creador"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:714
+#: core/utilities/searchwindow/searchfields_createfield.cpp:715
 #, kde-format
 msgid "Return items created by"
 msgstr "Retorna els elements creats per"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:722
+#: core/utilities/searchwindow/searchfields_createfield.cpp:723
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Llegenda"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:722
+#: core/utilities/searchwindow/searchfields_createfield.cpp:723
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Retorna els elements en què el comentari conté"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:730
+#: core/utilities/searchwindow/searchfields_createfield.cpp:731
 #, kde-format
 msgid "Return items commented by"
 msgstr "Retorna els elements comentats per"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:739
 #, kde-format
 msgid "Headline"
 msgstr "Titular"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:739
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Retorna els elements amb el titular IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:746
+#: core/utilities/searchwindow/searchfields_createfield.cpp:747
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Títol"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:746
+#: core/utilities/searchwindow/searchfields_createfield.cpp:747
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Retorna els elements amb el títol IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Busca els elements que tenen associades totes estes paraules:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:762
+#: core/utilities/searchwindow/searchfields_createfield.cpp:763
 #, kde-format
 msgid "Empty Text"
 msgstr "Text buit"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:762
+#: core/utilities/searchwindow/searchfields_createfield.cpp:763
 #, kde-format
 msgid "Return items without text in:"
 msgstr "Retorna els elements sense text a:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:764
+#: core/utilities/searchwindow/searchfields_createfield.cpp:765
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Creador"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:765
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Llegenda"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:766
+#: core/utilities/searchwindow/searchfields_createfield.cpp:767
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Autoria"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:767
+#: core/utilities/searchwindow/searchfields_createfield.cpp:768
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Titular"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:768
+#: core/utilities/searchwindow/searchfields_createfield.cpp:769
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Títol"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:778
-#: core/utilities/searchwindow/searchfields_createfield.cpp:797
+#: core/utilities/searchwindow/searchfields_createfield.cpp:779
+#: core/utilities/searchwindow/searchfields_createfield.cpp:798
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Relació d'aspecte"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:778
+#: core/utilities/searchwindow/searchfields_createfield.cpp:779
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Retorna els elements amb la relació d'aspecte"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, kde-format
 msgid "Pixel Size"
 msgstr "Mida del píxel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:786
+#: core/utilities/searchwindow/searchfields_createfield.cpp:787
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Valor de (amplària * alçària) entre"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:788
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:797
+#: core/utilities/searchwindow/searchfields_createfield.cpp:798
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Retorna els vídeos amb la relació d'aspecte dels fotogrames"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:814
+#: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, kde-format
 msgid "Length of the video"
 msgstr "Duració del vídeo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:815
+#: core/utilities/searchwindow/searchfields_createfield.cpp:816
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:816
+#: core/utilities/searchwindow/searchfields_createfield.cpp:817
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:832
+#: core/utilities/searchwindow/searchfields_createfield.cpp:833
 #, kde-format
 msgid "Frame Rate"
 msgstr "Velocitat dels fotogrames"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:832
+#: core/utilities/searchwindow/searchfields_createfield.cpp:833
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Retorna els vídeos amb la velocitat dels fotogrames"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:833
+#: core/utilities/searchwindow/searchfields_createfield.cpp:834
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:834
+#: core/utilities/searchwindow/searchfields_createfield.cpp:835
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:850
+#: core/utilities/searchwindow/searchfields_createfield.cpp:851
 #, kde-format
 msgid "Codec"
 msgstr "Còdec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:850
+#: core/utilities/searchwindow/searchfields_createfield.cpp:851
 #, kde-format
 msgid "Return video codec"
 msgstr "Retorna els vídeos amb el còdec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:918
+#: core/utilities/searchwindow/searchfields_createfield.cpp:921
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Retorna la taxa de bits de l'àudio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:919
+#: core/utilities/searchwindow/searchfields_createfield.cpp:922
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:920
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:939
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Retorna els tipus de canal d'àudio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:938
+#: core/utilities/searchwindow/searchfields_createfield.cpp:941
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:939
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Estèreo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:940
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "So envoltant 5.1"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:941
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "So envoltant 7.1"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:942
+#: core/utilities/searchwindow/searchfields_createfield.cpp:945
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "Seqüència de 16 canals"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:946
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Altres tipus de canal"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:955
+#: core/utilities/searchwindow/searchfields_createfield.cpp:958
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Retorna el còdec d'àudio"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1057
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1067
 #, kde-format
 msgid "Faces"
 msgstr "Cares"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1057
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Retorna els elements per nombre de regions de cares"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1054
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1058
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1063
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1067
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Retorna els elements sense regions de cares"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1064
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1068
 #, kde-format
 msgid "No Face Regions"
 msgstr "Sense regions de cares"
@@ -62875,64 +62875,64 @@ msgstr "Orientació apaïsada"
 msgid "Portrait orientation"
 msgstr "Orientació vertical"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:58
+#: core/utilities/searchwindow/searchfolderview.cpp:54
 #, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "Nova..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:59
+#: core/utilities/searchwindow/searchfolderview.cpp:55
 #, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."
 msgstr "Edita..."
 
-#: core/utilities/searchwindow/searchgroup.cpp:66
+#: core/utilities/searchwindow/searchgroup.cpp:62
 #, kde-format
 msgid "File, Album, Tags"
 msgstr "Fitxer, àlbum, etiquetes"
 
-#: core/utilities/searchwindow/searchgroup.cpp:86
+#: core/utilities/searchwindow/searchgroup.cpp:82
 #, kde-format
 msgid "Picture Properties"
 msgstr "Propietats de la imatge"
 
-#: core/utilities/searchwindow/searchgroup.cpp:137
+#: core/utilities/searchwindow/searchgroup.cpp:133
 #, kde-format
 msgid "Caption, Comment, Title"
 msgstr "Llegenda, comentari, títol"
 
-#: core/utilities/searchwindow/searchgroup.cpp:186
+#: core/utilities/searchwindow/searchgroup.cpp:182
 #, kde-format
 msgid "Geographic position"
 msgstr "Ubicació geogràfica"
 
-#: core/utilities/searchwindow/searchgroup.cpp:209
+#: core/utilities/searchwindow/searchgroup.cpp:205
 #, kde-format
 msgid "Face regions"
 msgstr "Regions de cares"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:69
+#: core/utilities/searchwindow/searchgroup_label.cpp:54
 #, kde-format
 msgid "Find Items"
 msgstr "Busca els elements"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:75
+#: core/utilities/searchwindow/searchgroup_label.cpp:60
 #, kde-format
 msgid "Meet All of the following conditions"
 msgstr "Aparella amb totes les condicions següents"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:79
+#: core/utilities/searchwindow/searchgroup_label.cpp:64
 #, kde-format
 msgid "Meet Any of the following conditions"
 msgstr "Aparella amb qualsevol de les condicions següents"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:83
+#: core/utilities/searchwindow/searchgroup_label.cpp:68
 #, kde-format
 msgid "None of these conditions are met"
 msgstr "No es complix cap d'estes condicions"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:87
+#: core/utilities/searchwindow/searchgroup_label.cpp:72
 #, kde-format
 msgid "At least one of these conditions is not met"
 msgstr "Com a mínim no es complix una d'estes condicions"
@@ -62940,7 +62940,7 @@ msgstr "Com a mínim no es complix una d'estes condicions"
 #. i18n("Find Pictures meeting all of these conditions"));
 #. simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
 #.
-#: core/utilities/searchwindow/searchgroup_label.cpp:120
+#: core/utilities/searchwindow/searchgroup_label.cpp:105
 #, kde-format
 msgid ""
 "<qt><p>Search your collection<br/>for Items meeting the following "
@@ -62949,12 +62949,12 @@ msgstr ""
 "<qt><p>Busca en la vostra col·lecció<br/>els elements que complisquen les "
 "condicions següents</p></qt>"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:158
+#: core/utilities/searchwindow/searchgroup_label.cpp:143
 #, kde-format
 msgid "Remove Group"
 msgstr "Elimina el grup"
 
-#: core/utilities/searchwindow/searchgroup_label.cpp:202
+#: core/utilities/searchwindow/searchgroup_label.cpp:187
 #, kde-format
 msgid "Hide Options"
 msgstr "Oculta les opcions"
@@ -63925,49 +63925,49 @@ msgstr ""
 "<p>Hi ha una llista completa d'opcions de càmeres<br/>disponibles en <a "
 "href='https://www.figuiere.net/digicam/'>este URL</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:73
+#: core/utilities/setup/camera/importfilterdlg.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Editeu els filtres d'importació"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:90
+#: core/utilities/setup/camera/importfilterdlg.cpp:89
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Nom:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:97
+#: core/utilities/setup/camera/importfilterdlg.cpp:96
 #, kde-format
 msgid "Mime filter:"
 msgstr "Filtre MIME:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:105
+#: core/utilities/setup/camera/importfilterdlg.cpp:104
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Selecciona el tipus MIME..."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:110
+#: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, kde-format
 msgid "File name filter:"
 msgstr "Filtre de noms de fitxer:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:120
+#: core/utilities/setup/camera/importfilterdlg.cpp:119
 #, kde-format
 msgid "Path filter:"
 msgstr "Filtre de camí:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:130
+#: core/utilities/setup/camera/importfilterdlg.cpp:129
 #, kde-format
 msgid "Show only new files"
 msgstr "Mostra només els fitxers nous"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:204
+#: core/utilities/setup/camera/importfilterdlg.cpp:203
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Seleccioneu els tipus MIME que voleu per a este filtre."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:206
+#: core/utilities/setup/camera/importfilterdlg.cpp:205
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Seleccioneu el tipus MIME"
