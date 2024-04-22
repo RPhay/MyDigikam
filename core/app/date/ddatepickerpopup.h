@@ -80,11 +80,13 @@ public:
     void setDate(const QDate& date);
 
 #if 0
+
     /**
      * Set items which should be shown and rebuilds the menu afterwards. Only if the menu is not visible.
      * @param items List of all desirable items, separated with a bitwise OR.
      */
     void setItems(int items = 1);
+
 #endif
 
     /**

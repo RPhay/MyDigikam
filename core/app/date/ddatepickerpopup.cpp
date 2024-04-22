@@ -61,8 +61,8 @@ protected:
 
 private:
 
-    DDatePicker* m_datePicker;
-    QWidget*     m_originalParent;
+    DDatePicker* m_datePicker       = nullptr;
+    QWidget*     m_originalParent   = nullptr;
 };
 
 // ---------------------------------------------------------------------------------------
@@ -71,12 +71,9 @@ class Q_DECL_HIDDEN DDatePickerPopup::Private
 {
 public:
 
-    explicit Private()
-      : datePicker(nullptr)
-    {
-    }
+    Private() = default;
 
-    DDatePicker* datePicker;
+    DDatePicker* datePicker = nullptr;
     Items        items;
 };
 
@@ -173,6 +170,7 @@ int DDatePickerPopup::items() const
 void DDatePickerPopup::slotDateChanged(const QDate& date)
 {
     Q_EMIT dateChanged(date);
+
     hide();
 }
 
@@ -226,6 +224,7 @@ void DDatePickerPopup::slotPrevFriday()
 void DDatePickerPopup::slotPrevMonday()
 {
     QDate date = QDate::currentDate();
+
     Q_EMIT dateChanged(date.addDays(1 - date.dayOfWeek()));
 }
 

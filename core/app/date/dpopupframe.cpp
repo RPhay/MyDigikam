@@ -37,20 +37,20 @@ public:
 
 public:
 
-    DPopupFrame*         q;
+    DPopupFrame*         q                      = nullptr;
 
     /**
      * The result. It is returned from exec() when the popup window closes.
      */
-    int                  result;
+    int                  result                 = 0;    // rejected
 
     /**
      * The only subwidget that uses the whole dialog window.
      */
-    QWidget*             main;
+    QWidget*             main                   = nullptr;
 
     class OutsideClickCatcher;
-    OutsideClickCatcher* outsideClickCatcher;
+    OutsideClickCatcher* outsideClickCatcher    = nullptr;
 };
 
 class Q_DECL_HIDDEN DPopupFrame::Private::OutsideClickCatcher : public QObject
@@ -60,14 +60,11 @@ class Q_DECL_HIDDEN DPopupFrame::Private::OutsideClickCatcher : public QObject
 public:
 
     explicit OutsideClickCatcher(QObject* const parent = nullptr)
-        : QObject(parent),
-          m_popup(nullptr)
+        : QObject(parent)
     {
     }
 
-    ~OutsideClickCatcher() override
-    {
-    }
+    ~OutsideClickCatcher() override = default;
 
     void setPopupFrame(DPopupFrame* const popup)
     {
@@ -96,13 +93,11 @@ public:
 
 public:
 
-    DPopupFrame* m_popup;
+    DPopupFrame* m_popup = nullptr;
 };
 
 DPopupFrame::Private::Private(DPopupFrame* const qq)
     : q                  (qq),
-      result             (0),   // rejected
-      main               (nullptr),
       outsideClickCatcher(new OutsideClickCatcher)
 {
     outsideClickCatcher->setPopupFrame(q);
@@ -115,7 +110,7 @@ DPopupFrame::Private::~Private()
 
 DPopupFrame::DPopupFrame(QWidget* const parent)
     : QFrame(parent, Qt::Popup),
-      d(new Private(this))
+      d     (new Private(this))
 {
     setFrameStyle(QFrame::Box | QFrame::Raised);
     setMidLineWidth(2);
@@ -131,11 +126,12 @@ void DPopupFrame::keyPressEvent(QKeyEvent* e)
     if (e->key() == Qt::Key_Escape)
     {
         d->result = 0; // rejected
+
         Q_EMIT leaveModality();
     }
 }
 
-void DPopupFrame::hideEvent(QHideEvent *e)
+void DPopupFrame::hideEvent(QHideEvent* e)
 {
     QFrame::hideEvent(e);
 }

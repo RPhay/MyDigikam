@@ -62,7 +62,7 @@ public:
 public:
 
     explicit TimeLineWidget(QWidget* const parent = nullptr);
-    ~TimeLineWidget() override;
+    ~TimeLineWidget()                               override;
 
     void      setTimeUnit(TimeUnit timeUnit);
     TimeUnit  timeUnit()                                                        const;
@@ -115,15 +115,15 @@ private:
     int           statForDateTime(const QDateTime& dt, SelectionMode& selected) const;
     void          setRefDateTime(const QDateTime& dateTime);
 
-    void          paintEvent(QPaintEvent*)        override;
-    void          wheelEvent(QWheelEvent*)        override;
+    void          paintEvent(QPaintEvent*)          override;
+    void          wheelEvent(QWheelEvent*)          override;
 
-    void          mousePressEvent(QMouseEvent*)   override;
-    void          mouseMoveEvent(QMouseEvent*)    override;
-    void          mouseReleaseEvent(QMouseEvent*) override;
+    void          mousePressEvent(QMouseEvent*)     override;
+    void          mouseMoveEvent(QMouseEvent*)      override;
+    void          mouseReleaseEvent(QMouseEvent*)   override;
 
-    void          keyPressEvent(QKeyEvent *e)     override;
-    void          keyReleaseEvent(QKeyEvent *)    override;
+    void          keyPressEvent(QKeyEvent *e)       override;
+    void          keyReleaseEvent(QKeyEvent *)      override;
     void          keyScroll(bool isScrollNext);
 
     QDateTime     dateTimeForPoint(const QPoint& pt,

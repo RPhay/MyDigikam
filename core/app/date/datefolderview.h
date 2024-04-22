@@ -47,7 +47,7 @@ class DateFolderView : public DVBox,
 public:
 
     explicit DateFolderView(QWidget* const parent, DateAlbumModel* const dateAlbumModel);
-    ~DateFolderView() override;
+    ~DateFolderView()                               override;
 
     void setItemModel(ItemFilterModel* const model);
 
@@ -59,10 +59,10 @@ public:
 
     AlbumPointer<DAlbum> currentAlbum() const;
 
-    void doLoadState() override;
-    void doSaveState() override;
+    void doLoadState()                              override;
+    void doSaveState()                              override;
 
-    void setConfigGroup(const KConfigGroup& group) override;
+    void setConfigGroup(const KConfigGroup& group)  override;
 
 private Q_SLOTS:
 

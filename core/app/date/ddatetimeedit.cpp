@@ -31,14 +31,10 @@ class Q_DECL_HIDDEN DDateTimeEdit::Private
 {
 public:
 
-    explicit Private()
-      : timePopUp(nullptr),
-        datePopUp(nullptr)
-    {
-    }
+    Private() = default;
 
-    QTimeEdit* timePopUp;
-    DDateEdit* datePopUp;
+    QTimeEdit* timePopUp = nullptr;
+    DDateEdit* datePopUp = nullptr;
 };
 
 DDateTimeEdit::DDateTimeEdit(QWidget* const parent, const QString& name)

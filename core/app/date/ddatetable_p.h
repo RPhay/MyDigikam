@@ -53,7 +53,7 @@ public:
 public:
 
     explicit Private(DDateTable* const qq);
-    ~Private() override;
+    ~Private() override = default;
 
 public Q_SLOTS:
 
@@ -67,7 +67,7 @@ public Q_SLOTS:
 
 public:
 
-    DDateTable*                   q;
+    DDateTable*                   q                     = nullptr;
 
     /**
      * The currently selected date.
@@ -77,12 +77,12 @@ public:
     /**
      * The weekday number of the first day in the month [1..daysInWeek()].
      */
-    int                           weekDayFirstOfMonth;
+    int                           weekDayFirstOfMonth   = 0;
 
     /**
      * The number of days in the current month.
      */
-    int                           numDaysThisMonth;
+    int                           numDaysThisMonth      = 0;
 
     /**
      * Save the size of the largest used cell content.
@@ -92,24 +92,24 @@ public:
     /**
      * How many week rows we are to draw.
      */
-    int                           numWeekRows;
+    int                           numWeekRows           = 0;
 
     /**
      * How many day columns we are to draw, i.e. days in a week.
      */
-    int                           numDayColumns;
+    int                           numDayColumns         = 0;
 
     /**
      * The font size of the displayed text.
      */
-    int                           fontsize;
+    int                           fontsize              = 0;
 
-    bool                          popupMenuEnabled;
-    bool                          useCustomColors;
+    bool                          popupMenuEnabled      = false;
+    bool                          useCustomColors       = false;
 
     QHash <int, DatePaintingMode> customPaintingModes;
 
-    int                           hoveredPos;
+    int                           hoveredPos            = -1;
 };
 
 } // namespace Digikam

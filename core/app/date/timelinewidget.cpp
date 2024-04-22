@@ -52,37 +52,20 @@ public :
 
 public:
 
-    explicit Private()
-      : validMouseEvent     (false),
-        selMouseEvent       (false),
-        maxCountByDay       (1),
-        maxCountByWeek      (1),
-        maxCountByMonth     (1),
-        maxCountByYear      (1),
-        topMargin           (3),
-        bottomMargin        (20),
-        barWidth            (20),
-        nbItems             (10),
-        startPos            (96),
-        slotNextTimer       (nullptr),
-        slotPreviousTimer   (nullptr),
-        timeUnit            (TimeLineWidget::Month),
-        scaleMode           (TimeLineWidget::LinScale)
-    {
-    }
+    Private() = default;
 
-    bool                         validMouseEvent;   ///< Current mouse enter event is valid to set cursor position or selection.
-    bool                         selMouseEvent;     ///< Current mouse enter event is about to make a selection.
+    bool                         validMouseEvent    = false;   ///< Current mouse enter event is valid to set cursor position or selection.
+    bool                         selMouseEvent      = false;   ///< Current mouse enter event is about to make a selection.
 
-    int                          maxCountByDay;
-    int                          maxCountByWeek;
-    int                          maxCountByMonth;
-    int                          maxCountByYear;
-    int                          topMargin;
-    int                          bottomMargin;
-    int                          barWidth;
-    int                          nbItems;
-    int                          startPos;
+    int                          maxCountByDay      = 1;
+    int                          maxCountByWeek     = 1;
+    int                          maxCountByMonth    = 1;
+    int                          maxCountByYear     = 1;
+    int                          topMargin          = 3;
+    int                          bottomMargin       = 20;
+    int                          barWidth           = 20;
+    int                          nbItems            = 10;
+    int                          startPos           = 96;
 
     QDateTime                    refDateTime;       ///< Reference date-time used to draw histogram from middle of widget.
     QDateTime                    cursorDateTime;    ///< Current date-time used to draw focus cursor.
@@ -92,8 +75,8 @@ public:
     QDateTime                    selMinDateTime;    ///< Lower date available on histogram.
     QDateTime                    selMaxDateTime;    ///< Higher date available on histogram.
 
-    QTimer*                      slotNextTimer;
-    QTimer*                      slotPreviousTimer;
+    QTimer*                      slotNextTimer      = nullptr;
+    QTimer*                      slotPreviousTimer  = nullptr;
 
     QPixmap                      pixmap;            ///< Used for widget double buffering.
 
@@ -104,8 +87,8 @@ public:
     QMap<YearRefPair, StatPair>  monthStatMap;      ///< Store Month count statistics.
     QMap<int,         StatPair>  yearStatMap;       ///< Store Years count statistics.
 
-    TimeLineWidget::TimeUnit     timeUnit;
-    TimeLineWidget::ScaleMode    scaleMode;
+    TimeLineWidget::TimeUnit     timeUnit           = TimeLineWidget::Month;
+    TimeLineWidget::ScaleMode    scaleMode          = TimeLineWidget::LinScale;
 };
 
 TimeLineWidget::TimeLineWidget(QWidget* const parent)
@@ -612,11 +595,11 @@ void TimeLineWidget::slotDatesHash(const QHash<QDateTime, int>& datesStatHash)
         int day         = it.key().date().dayOfYear();
         int yearForWeek = year;  // Used with week shared between 2 years decade (Dec/Jan).
 
-        int week  = it.key().date().weekNumber(&yearForWeek);
+        int week        = it.key().date().weekNumber(&yearForWeek);
 
         // Stats Years values.
 
-        it_iP = d->yearStatMap.find(year);
+        it_iP           = d->yearStatMap.find(year);
 
         if (it_iP == d->yearStatMap.end())
         {
@@ -710,6 +693,7 @@ void TimeLineWidget::slotDatesHash(const QHash<QDateTime, int>& datesStatHash)
     }
 
     update();
+
     Q_EMIT signalDateMapChanged();
 }
 
@@ -893,8 +877,10 @@ void TimeLineWidget::paintItem(QPainter& p, const QRect& barRect,
                 p.drawText(barRect.left() - br.width() / 2, barRect.bottom() + d->bottomMargin, txt);
             }
             else if (ref.date().year() % 5 == 0)
+            {
                 p.drawLine(separatorPosition, barRect.bottom(),
                            separatorPosition, barRect.bottom() + d->bottomMargin / 4);
+            }
 
             break;
         }
@@ -973,7 +959,9 @@ void TimeLineWidget::keyPressEvent(QKeyEvent *e)
 void TimeLineWidget::keyReleaseEvent(QKeyEvent *)
 {
     updateAllSelection();
+
     Q_EMIT signalSelectionChanged();
+
     update();
 }
 
@@ -1954,6 +1942,7 @@ void TimeLineWidget::mouseReleaseEvent(QMouseEvent*)
     if (d->selMouseEvent)
     {
         updateAllSelection();
+
         Q_EMIT signalSelectionChanged();
     }
 
@@ -2094,13 +2083,17 @@ void TimeLineWidget::handleSelectionRange(const QDateTime& selEndDateTime)
 
     if (!selEndDateTime.isNull() && !d->selStartDateTime.isNull())
     {
-        if      ((selEndDateTime > d->selStartDateTime) &&
-                 (selEndDateTime > d->selMaxDateTime))
+        if      (
+                 (selEndDateTime > d->selStartDateTime) &&
+                 (selEndDateTime > d->selMaxDateTime)
+                )
         {
             d->selMaxDateTime = selEndDateTime;
         }
-        else if ((selEndDateTime < d->selStartDateTime) &&
-                 (selEndDateTime < d->selMinDateTime))
+        else if (
+                 (selEndDateTime < d->selStartDateTime) &&
+                 (selEndDateTime < d->selMinDateTime)
+                )
         {
             d->selMinDateTime = selEndDateTime;
         }

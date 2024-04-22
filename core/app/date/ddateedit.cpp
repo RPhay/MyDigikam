@@ -93,24 +93,18 @@ class Q_DECL_HIDDEN DDateEdit::Private
 {
 public:
 
-    explicit Private()
-      : readOnly             (false),
-        textChanged          (false),
-        discardNextMousePress(false),
-        popup                (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                readOnly;
-    bool                textChanged;
-    bool                discardNextMousePress;
+    bool                readOnly                = false;
+    bool                textChanged             = false;
+    bool                discardNextMousePress   = false;
 
     QDate               date;
     QString             dateFormat;
 
     QMap<QString, int>  keywordMap;
 
-    DDatePickerPopup*   popup;
+    DDatePickerPopup*   popup                   = nullptr;
 };
 
 DDateEdit::DDateEdit(QWidget* const parent, const QString& name)
@@ -168,6 +162,7 @@ DDateEdit::~DDateEdit()
 {
     delete d->popup;
     d->popup = nullptr;
+
     delete d;
 }
 

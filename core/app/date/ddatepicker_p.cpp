@@ -67,7 +67,6 @@ QValidator::State DatePickerValidator::validate(QString& text, int&) const
 DatePickerYearSelector::DatePickerYearSelector(const QDate& currentDate, QWidget* const parent)
     : QLineEdit(parent),
       val      (new QIntValidator(this)),
-      result   (0),
       oldDate  (currentDate)
 {
     setFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
@@ -105,6 +104,7 @@ void DatePickerYearSelector::yearEnteredSlot()
     if (QDate(newYear, oldDate.month(), oldDate.day()).isValid())
     {
         result = newYear;
+
         Q_EMIT closeMe(1);
     }
     else
@@ -126,21 +126,7 @@ void DatePickerYearSelector::setYear(int year)
 // ------------------------------------------------------------------------------
 
 DDatePicker::Private::Private(DDatePicker* const qq)
-    : q                 (qq),
-      closeButton       (nullptr),
-      selectWeek        (nullptr),
-      todayButton       (nullptr),
-      navigationLayout  (nullptr),
-      yearForward       (nullptr),
-      yearBackward      (nullptr),
-      monthForward      (nullptr),
-      monthBackward     (nullptr),
-      selectMonth       (nullptr),
-      selectYear        (nullptr),
-      line              (nullptr),
-      val               (nullptr),
-      table             (nullptr),
-      fontsize          (0)
+    : q(qq)
 {
 }
 

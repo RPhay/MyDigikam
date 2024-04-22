@@ -502,6 +502,7 @@ void DDateTable::keyPressEvent(QKeyEvent *e)
         case Qt::Key_Enter:
         {
             Q_EMIT tableClicked();
+
             break;
         }
 
@@ -705,6 +706,7 @@ void DDateTable::mousePressEvent(QMouseEvent *e)
     {
         QMenu* const menu = new QMenu();
         menu->addSection(locale().toString(d->date));
+
         Q_EMIT aboutToShowContextMenu(menu, clickedDate);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))

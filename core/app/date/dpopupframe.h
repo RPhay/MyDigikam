@@ -39,7 +39,7 @@ public:
     /**
      * The destructor
      */
-    ~DPopupFrame() override;
+    ~DPopupFrame()                      override;
 
     /**
      * Set the main widget. You cannot set the main widget from the constructor,
@@ -54,7 +54,7 @@ public:
      * The resize event. Simply resizes the main widget to the whole
      * widgets client size.
      */
-    void resizeEvent(QResizeEvent* e) override;
+    void resizeEvent(QResizeEvent* e)   override;
 
     /**
      * Open the popup window at position pos.
@@ -80,12 +80,12 @@ protected:
     /**
      * Catch key press events.
      */
-    void keyPressEvent(QKeyEvent* e) override;
+    void keyPressEvent(QKeyEvent* e)    override;
 
     /**
      * Catch hide events.
      */
-    void hideEvent(QHideEvent* e)    override;
+    void hideEvent(QHideEvent* e)       override;
 
 public Q_SLOTS:
 

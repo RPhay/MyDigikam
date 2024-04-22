@@ -46,47 +46,30 @@ public:
     {
     public:
 
-        Month()
-          : active   (false),
-            selected (false),
-            day      (0),
-            numImages(0)
-        {
-        }
+        Month() = default;
 
-        bool active;
-        bool selected;
+        bool active     = false;
+        bool selected   = false;
 
-        int  day;
-        int  numImages;
+        int  day        = 0;
+        int  numImages  = 0;
     };
 
 public:
 
-    explicit Private()
-      : active(true),
-        model (nullptr),
-        timer (nullptr),
-        year  (0),
-        month (0),
-        width (0),
-        height(0),
-        currw (0),
-        currh (0)
-    {
-    }
+    explicit Private() = default;
 
-    bool             active;
+    bool             active = true;
 
-    ItemFilterModel* model;
-    QTimer*          timer;
+    ItemFilterModel* model  = nullptr;
+    QTimer*          timer  = nullptr;
 
-    int              year;
-    int              month;
-    int              width;
-    int              height;
-    int              currw;
-    int              currh;
+    int              year   = 0;
+    int              month  = 0;
+    int              width  = 0;
+    int              height = 0;
+    int              currw  = 0;
+    int              currh  = 0;
 
     Month            days[42];
 };
@@ -349,7 +332,7 @@ void MonthWidget::mousePressEvent(QMouseEvent* e)
         {
             int endSelection = j*7+i;
 
-            if (endSelection > firstSelected)
+            if      (endSelection > firstSelected)
             {
                 for (int i2 = firstSelected ; i2 <= endSelection ; ++i2)
                 {

@@ -37,17 +37,12 @@ class Q_DECL_HIDDEN DateFolderView::Private
 {
 public:
 
-    explicit Private()
-      : active      (false),
-        dateTreeView(nullptr),
-        monthview   (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool          active;
+    bool          active        = false;
 
-    DateTreeView* dateTreeView;
-    MonthWidget*  monthview;
+    DateTreeView* dateTreeView  = nullptr;
+    MonthWidget*  monthview     = nullptr;
 };
 
 DateFolderView::DateFolderView(QWidget* const parent, DateAlbumModel* const dateAlbumModel)
