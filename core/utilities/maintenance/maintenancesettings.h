@@ -21,6 +21,9 @@
 
 // Local includes
 
+#include "autotagsassign.h"
+#include "autotagsassignment.h"
+#include "imagequalityconfselector.h"
 #include "album.h"
 #include "facescansettings.h"
 #include "haariface.h"
@@ -36,76 +39,92 @@ class MaintenanceSettings
 
 public:
 
-    explicit MaintenanceSettings();
-    ~MaintenanceSettings();
+    MaintenanceSettings()  = default;
+    ~MaintenanceSettings() = default;
 
 public:
 
-    bool                                    wholeAlbums;
-    bool                                    wholeTags;
+    bool                                    wholeAlbums             = true;
+    bool                                    wholeTags               = true;
 
     AlbumList                               albums;
     AlbumList                               tags;
 
+
     /// Use Multi-core CPU to process items.
-    bool                                    useMutiCoreCPU;
+    bool                                    useMutiCoreCPU          = false;
 
     /// Find new items on whole collection.
-    bool                                    newItems;
+    bool                                    newItems                = false;
 
     /// Generate thumbnails
-    bool                                    thumbnails;
+    bool                                    thumbnails              = false;
+
     /// Rebuild all thumbnails or only scan missing items.
-    bool                                    scanThumbs;
+    bool                                    scanThumbs              = false;
 
     /// Generate finger-prints
-    bool                                    fingerPrints;
+    bool                                    fingerPrints            = false;
+
     /// Rebuild all fingerprints or only scan missing items.
-    bool                                    scanFingerPrints;
+    bool                                    scanFingerPrints        = false;
 
     /// Scan for new items
-    bool                                    duplicates;
+    bool                                    duplicates              = false;
+
     /// Minimal similarity between items to compare, in percents.
-    int                                     minSimilarity;
+    int                                     minSimilarity           = 90;
+
     /// Maximal similarity between items to compare, in percents.
-    int                                     maxSimilarity;
+    int                                     maxSimilarity           = 100;
+
     /// The type of restrictions to apply on duplicates search results.
-    HaarIface::DuplicatesSearchRestrictions duplicatesRestriction;
+    HaarIface::DuplicatesSearchRestrictions duplicatesRestriction   = HaarIface::DuplicatesSearchRestrictions::None;
 
     /// Scan for faces.
-    bool                                    faceManagement;
+    bool                                    faceManagement          = false;
+
     /// Face detection settings.
     FaceScanSettings                        faceSettings;
 
     /// Autotags assignment.
-    bool                                    autotagsAssignment;
+    bool                                    autotagsAssignment      = false;
+
     /// autotagging scan mode
-    int                                     autotaggingScanMode;
+    int                                     autotaggingScanMode     = AutotagsAssignment::AllItems;
+
     /// model selection mode
-    int                                     modelSelectionMode;
+    int                                     modelSelectionMode      = DetectorModel::YOLOV5NANO;
     /// Autotags languages
     QStringList                             autotagsLanguages;
 
+
+
     /// Perform Image Quality Sorting.
-    bool                                    qualitySort;
+    bool                                    qualitySort             = false;
+
     /// Mode to assign Pick Labels to items.
-    int                                     qualityScanMode;
+    /// NOTE: turn all items by default to prevent clearing whole Pick Labels from Collection
+    int                                     qualityScanMode         = ImageQualitySorter::AllItems;
+
     /// Type of quality settings selected.
-    int                                     qualitySettingsSelected;
+    int                                     qualitySettingsSelected = ImageQualityConfSelector::GlobalSettings;
+
     /// Image Quality Sorting Settings.
     ImageQualityContainer                   quality;
 
     /// Sync metadata and DB.
-    bool                                    metadataSync;
+    bool                                    metadataSync            = false;
+
     /// Sync direction (image metadata <-> DB).
-    int                                     syncDirection;
+    int                                     syncDirection           = MetadataSynchronizer::WriteFromDatabaseToFile;
 
     /// Perform database cleanup
-    bool                                    databaseCleanup;
-    bool                                    cleanThumbDb;
-    bool                                    cleanFacesDb;
-    bool                                    cleanSimilarityDb;
-    bool                                    shrinkDatabases;
+    bool                                    databaseCleanup         = false;
+    bool                                    cleanThumbDb            = false;
+    bool                                    cleanFacesDb            = false;
+    bool                                    cleanSimilarityDb       = false;
+    bool                                    shrinkDatabases         = false;
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.
