@@ -91,14 +91,10 @@ class Q_DECL_HIDDEN FacesDetector::Private
 {
 public:
 
-    explicit Private()
-      : source   (FacesDetector::Albums),
-        benchmark(false)
-    {
-    }
+    Private() = default;
 
-    FacesDetector::InputSource source;
-    bool                       benchmark;
+    FacesDetector::InputSource source       = FacesDetector::Albums;
+    bool                       benchmark    = false;
 
     AlbumPointerList<>         albumTodoList;
     ItemInfoList               infoTodoList;
@@ -115,6 +111,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     if      (settings.task == FaceScanSettings::RetrainAll)
     {
         // clear all training data in the database
+
         FacialRecognitionWrapper().clearAllTraining(QLatin1String("digikam"));
         d->pipeline.plugRetrainingDatabaseFilter();
         d->pipeline.plugTrainer();
@@ -146,8 +143,10 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         d->pipeline.plugRecognitionBenchmarker();
         d->pipeline.construct();
     }
-    else if ((settings.task == FaceScanSettings::DetectAndRecognize) ||
-             (settings.task == FaceScanSettings::Detect))
+    else if (
+             (settings.task == FaceScanSettings::DetectAndRecognize) ||
+             (settings.task == FaceScanSettings::Detect)
+            )
     {
         FacePipeline::FilterMode filterMode;
         FacePipeline::WriteMode  writeMode;
@@ -188,6 +187,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         if (settings.task == FaceScanSettings::DetectAndRecognize)
         {
             //d->pipeline.plugRerecognizingDatabaseFilter();
+
             d->pipeline.plugFaceRecognizer();
         }
 
@@ -224,8 +224,10 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     connect(this, SIGNAL(progressItemCanceled(ProgressItem*)),
             this, SLOT(slotCancel()));
 
-    if      (settings.wholeAlbums &&
-             (settings.task == FaceScanSettings::RecognizeMarkedFaces))
+    if      (
+             settings.wholeAlbums &&
+             (settings.task == FaceScanSettings::RecognizeMarkedFaces)
+            )
     {
         d->idsTodoList = CoreDbAccess().db()->
             getImagesWithImageTagProperty(FaceTags::unknownPersonTagId(),
@@ -270,7 +272,7 @@ void FacesDetector::slotStart()
 
     // set label depending on settings
 
-    if (d->albumTodoList.size() > 0)
+    if      (d->albumTodoList.size() > 0)
     {
         if (d->albumTodoList.size() == 1)
         {
@@ -309,10 +311,12 @@ void FacesDetector::slotStart()
         if (d->infoTodoList.isEmpty())
         {
             slotDone();
+
             return;
         }
 
         slotItemsInfo(d->infoTodoList);
+
         return;
     }
     else if (d->source == FacesDetector::Ids)
@@ -327,10 +331,12 @@ void FacesDetector::slotStart()
         if (itemInfos.isEmpty())
         {
             slotDone();
+
             return;
         }
 
         slotItemsInfo(itemInfos);
+
         return;
     }
 

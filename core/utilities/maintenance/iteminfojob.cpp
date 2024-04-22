@@ -35,12 +35,9 @@ class Q_DECL_HIDDEN ItemInfoJob::Private
 {
 public:
 
-    explicit Private()
-      : jobThread   (nullptr)
-    {
-    }
+    Private() = default;
 
-    DBJobsThread* jobThread;
+    DBJobsThread* jobThread = nullptr;
 };
 
 ItemInfoJob::ItemInfoJob()

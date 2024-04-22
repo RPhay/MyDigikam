@@ -34,15 +34,11 @@ class Q_DECL_HIDDEN MetadataRemoveTask::Private
 {
 public:
 
-    explicit Private()
-        : removeAction (MetadataRemover::None),
-          data         (nullptr)
-    {
-    }
+    Private() = default;
 
-    MetadataRemover::RemoveAction removeAction;
+    MetadataRemover::RemoveAction removeAction  = MetadataRemover::None;
 
-    MaintenanceData*              data;
+    MaintenanceData*              data          = nullptr;
 };
 
 // -------------------------------------------------------

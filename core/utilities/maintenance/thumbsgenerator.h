@@ -34,11 +34,13 @@ class ThumbsGenerator : public MaintenanceTool
 
 public:
 
-    /** Constructor using Album Id as argument. If Id = -1, whole Albums collection is processed.
+    /**
+     * Constructor using Album Id as argument. If Id = -1, whole Albums collection is processed.
      */
     explicit ThumbsGenerator(const bool rebuildAll, int albumId, ProgressItem* const parent = nullptr);
 
-    /** Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
+    /**
+     * Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
      */
     ThumbsGenerator(const bool rebuildAll, const AlbumList& list, ProgressItem* const parent = nullptr);
     ~ThumbsGenerator() override;

@@ -155,7 +155,7 @@ private:
     int getChunkSize(int elementCount);
 */
 
-    MaintenanceData* const data;
+    MaintenanceData* const data = nullptr;
 };
 
 } // namespace Digikam

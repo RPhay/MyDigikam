@@ -49,13 +49,13 @@ public:
                      const AlbumList& referenceImageAlbum = {},
                      ProgressItem* const parent = nullptr);
 
-    ~DuplicatesFinder() override;
+    ~DuplicatesFinder()     override;
 
 private Q_SLOTS:
 
-    void slotStart() override;
-    void slotDone() override;
-    void slotCancel() override;
+    void slotStart()        override;
+    void slotDone()         override;
+    void slotCancel()       override;
     void slotDuplicatesProgress(int percentage);
 
 private:

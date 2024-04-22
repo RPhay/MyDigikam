@@ -48,34 +48,36 @@ class Q_DECL_HIDDEN ThumbsGenerator::Private
 {
 public:
 
-    explicit Private()
-      : rebuildAll(true),
-        thread(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool               rebuildAll;
+    bool               rebuildAll = true;
 
     AlbumList          albumList;
 
     QStringList        allPicturesPath;
 
-    MaintenanceThread* thread;
+    MaintenanceThread* thread     = nullptr;
 };
 
-ThumbsGenerator::ThumbsGenerator(const bool rebuildAll, const AlbumList& list, ProgressItem* const parent)
+ThumbsGenerator::ThumbsGenerator(const bool rebuildAll,
+                                 const AlbumList& list,
+                                 ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("ThumbsGenerator"), parent),
-      d(new Private)
+      d              (new Private)
 {
     d->albumList = list;
+
     init(rebuildAll);
 }
 
-ThumbsGenerator::ThumbsGenerator(const bool rebuildAll, int albumId, ProgressItem* const parent)
+ThumbsGenerator::ThumbsGenerator(const bool rebuildAll,
+                                 int albumId,
+                                 ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("ThumbsGenerator"), parent),
-      d(new Private)
+      d              (new Private)
 {
     d->albumList.append(AlbumManager::instance()->findPAlbum(albumId));
+
     init(rebuildAll);
 }
 
@@ -130,7 +132,7 @@ void ThumbsGenerator::slotStart()
             continue;
         }
 
-        if ((*it)->type() == Album::PHYSICAL)
+        if      ((*it)->type() == Album::PHYSICAL)
         {
             Q_FOREACH (const QString& path, CoreDbAccess().db()->getItemURLsInAlbum((*it)->id()))
             {
@@ -195,6 +197,7 @@ void ThumbsGenerator::slotStart()
     if (d->allPicturesPath.isEmpty())
     {
         slotDone();
+
         return;
     }
 

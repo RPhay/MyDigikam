@@ -30,9 +30,7 @@ class Q_DECL_HIDDEN ItemInfoAlbumsJob::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     AlbumList           albumsList;
     AlbumList::Iterator albumIt;
@@ -93,7 +91,9 @@ void ItemInfoAlbumsJob::slotComplete()
     if (d->albumIt == d->albumsList.end())
     {
         stop();
+
         Q_EMIT signalCompleted(d->itemsList);
+
         return;
     }
 

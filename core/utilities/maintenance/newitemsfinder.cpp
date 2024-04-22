@@ -37,23 +37,21 @@ class Q_DECL_HIDDEN NewItemsFinder::Private
 {
 public:
 
-    explicit Private()
-        : mode(CompleteCollectionScan),
-          cancel(false)
-    {
-    }
+    Private() = default;
 
-    FinderMode  mode;
+    FinderMode  mode    = CompleteCollectionScan;
 
-    bool        cancel;
+    bool        cancel  = false;
 
     QStringList foldersToScan;
     QStringList foldersScanned;
 };
 
-NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& foldersToScan, ProgressItem* const parent)
+NewItemsFinder::NewItemsFinder(const FinderMode mode,
+                               const QStringList& foldersToScan,
+                               ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("NewItemsFinder"), parent),
-      d(new Private)
+      d              (new Private)
 {
     d->mode          = mode;
     d->foldersToScan = foldersToScan;

@@ -29,18 +29,13 @@ class Q_DECL_HIDDEN MetadataSyncTask::Private
 {
 public:
 
-    explicit Private()
-        : tagsOnly  (false),
-          direction (MetadataSynchronizer::WriteFromDatabaseToFile),
-          data      (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                                tagsOnly;
+    bool                                tagsOnly    = false;
 
-    MetadataSynchronizer::SyncDirection direction;
+    MetadataSynchronizer::SyncDirection direction   = MetadataSynchronizer::WriteFromDatabaseToFile;
 
-    MaintenanceData*                    data;
+    MaintenanceData*                    data        = nullptr;
 };
 
 // -------------------------------------------------------
@@ -54,6 +49,7 @@ MetadataSyncTask::MetadataSyncTask()
 MetadataSyncTask::~MetadataSyncTask()
 {
     cancel();
+
     delete d;
 }
 

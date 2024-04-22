@@ -43,27 +43,18 @@ class Q_DECL_HIDDEN DuplicatesFinder::Private
 {
 public:
 
-    explicit Private()
-      : minSimilarity          (90),
-        maxSimilarity          (100),
-        albumTagRelation       (0),
-        searchResultRestriction(0),
-        refSelMethod           (HaarIface::RefImageSelMethod::OlderOrLarger),
-        isAlbumUpdate          (false),
-        job                    (nullptr)
-    {
-    }
+    Private() = default;
 
-    int                          minSimilarity;
-    int                          maxSimilarity;
-    int                          albumTagRelation;
-    int                          searchResultRestriction;
-    HaarIface::RefImageSelMethod refSelMethod;
-    bool                         isAlbumUpdate;
+    int                          minSimilarity              = 90;
+    int                          maxSimilarity              = 100;
+    int                          albumTagRelation           = 0;
+    int                          searchResultRestriction    = 0;
+    HaarIface::RefImageSelMethod refSelMethod               = HaarIface::RefImageSelMethod::OlderOrLarger;
+    bool                         isAlbumUpdate              = false;
     QList<int>                   albumsIdList;
     QList<int>                   tagsIdList;
     QList<int>                   referenceAlbumsList;
-    SearchesDBJobsThread*        job;
+    SearchesDBJobsThread*        job                        = nullptr;
 };
 
 DuplicatesFinder::DuplicatesFinder(const AlbumList& albums,
@@ -129,6 +120,7 @@ void DuplicatesFinder::slotStart()
             imageIds.unite(referenceImageIds); // All reference images must be also in the search path, otherwise no duplicates are found
             break;
         }
+
         case HaarIface::RefImageSelMethod::NewerCreationDate:
         case HaarIface::RefImageSelMethod::NewerModificationDate:
         case HaarIface::RefImageSelMethod::OlderOrLarger:
@@ -167,11 +159,13 @@ void DuplicatesFinder::slotDone()
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list url: " << d->job->errorsList().first();
 
         // Pop-up a message about the error.
+
         DNotificationWrapper(QString(), d->job->errorsList().first(),
                              DigikamApp::instance(), DigikamApp::instance()->windowTitle());
     }
 
     // save the min and max similarity in the configuration.
+
     ApplicationSettings::instance()->setDuplicatesSearchLastMinSimilarity(d->minSimilarity);
     ApplicationSettings::instance()->setDuplicatesSearchLastMaxSimilarity(d->maxSimilarity);
     ApplicationSettings::instance()->setDuplicatesAlbumTagRelation(d->albumTagRelation);

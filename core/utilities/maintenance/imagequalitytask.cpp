@@ -35,16 +35,12 @@ class Q_DECL_HIDDEN ImageQualityTask::Private
 {
 public:
 
-    explicit Private()
-        : imgqsort(nullptr),
-          data    (nullptr)
-    {
-    }
+    Private() = default;
 
     ImageQualityContainer quality;
-    ImageQualityParser*   imgqsort;
+    ImageQualityParser*   imgqsort  = nullptr;
 
-    MaintenanceData*      data;
+    MaintenanceData*      data      = nullptr;
 };
 
 // -------------------------------------------------------

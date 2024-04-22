@@ -19,9 +19,6 @@
 #include <QRecursiveMutex>
 #include <QMutexLocker>
 
-// Local includes
-
-
 namespace Digikam
 {
 

@@ -165,10 +165,12 @@ void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
     // If we have nothing to do, finish.
     // Signal done if no elements cleanup is necessary
 
-    if (d->imagesToRemove.isEmpty()       &&
+    if (
+        d->imagesToRemove.isEmpty()       &&
         d->staleThumbnails.isEmpty()      &&
         d->staleIdentities.isEmpty()      &&
-        d->staleImageSimilarities.isEmpty())
+        d->staleImageSimilarities.isEmpty()
+       )
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Nothing to do. Databases are clean.";
 
@@ -193,7 +195,8 @@ void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
     }
 
     reset();
-    setTotalItems(d->imagesToRemove.size()       +
+    setTotalItems(
+                  d->imagesToRemove.size()       +
                   d->staleThumbnails.size()      +
                   d->staleIdentities.size()      +
                   d->staleImageSimilarities.size()

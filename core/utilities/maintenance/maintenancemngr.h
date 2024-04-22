@@ -50,6 +50,8 @@ private Q_SLOTS:
 
 private:
 
+    // Chained stages
+
     void stage1();  ///< Find New items
     void stage2();  ///< Database Cleanup
     void stage3();  ///< Update Thumbnails Build

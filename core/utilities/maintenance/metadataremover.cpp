@@ -72,7 +72,7 @@ MetadataRemover::MetadataRemover(const AlbumList& list, RemoveAction action, Pro
 
 MetadataRemover::MetadataRemover(const ItemInfoList& list, RemoveAction action, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("MetadataRemover"), parent),
-      d(new Private)
+      d              (new Private)
 {
     d->imageInfoList = list;
 

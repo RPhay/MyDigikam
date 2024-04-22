@@ -38,30 +38,26 @@ class Q_DECL_HIDDEN MetadataSynchronizer::Private
 {
 public:
 
-    explicit Private()
-      : imageInfoJob(nullptr),
-        thread      (nullptr),
-        direction   (MetadataSynchronizer::WriteFromDatabaseToFile),
-        tagsOnly    (false)
-    {
-    }
+    Private() = default;
 
     AlbumList                           palbumList;
     AlbumList::Iterator                 albumsIt;
 
-    ItemInfoJob*                        imageInfoJob;
+    ItemInfoJob*                        imageInfoJob    = nullptr;
 
     ItemInfoList                        imageInfoList;
 
-    MaintenanceThread*                  thread;
+    MaintenanceThread*                  thread          = nullptr;
 
-    MetadataSynchronizer::SyncDirection direction;
-    bool                                tagsOnly;
+    MetadataSynchronizer::SyncDirection direction       = MetadataSynchronizer::WriteFromDatabaseToFile;
+    bool                                tagsOnly        = false;
 };
 
-MetadataSynchronizer::MetadataSynchronizer(const AlbumList& list, SyncDirection direction, ProgressItem* const parent)
+MetadataSynchronizer::MetadataSynchronizer(const AlbumList& list,
+                                           SyncDirection direction,
+                                           ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("MetadataSynchronizer"), parent),
-      d(new Private)
+      d              (new Private)
 {
     if (list.isEmpty())
     {
@@ -75,11 +71,14 @@ MetadataSynchronizer::MetadataSynchronizer(const AlbumList& list, SyncDirection 
     init(direction);
 }
 
-MetadataSynchronizer::MetadataSynchronizer(const ItemInfoList& list, SyncDirection direction, ProgressItem* const parent)
+MetadataSynchronizer::MetadataSynchronizer(const ItemInfoList& list,
+                                           SyncDirection direction,
+                                           ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("MetadataSynchronizer"), parent),
-      d(new Private)
+      d              (new Private)
 {
     d->imageInfoList = list;
+
     init(direction);
 }
 

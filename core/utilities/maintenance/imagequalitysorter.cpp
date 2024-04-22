@@ -42,13 +42,9 @@ class Q_DECL_HIDDEN ImageQualitySorter::Private
 {
 public:
 
-    explicit Private()
-      : mode  (ImageQualitySorter::NonAssignedItems),
-        thread(nullptr)
-    {
-    }
+    Private() = default;
 
-    QualityScanMode       mode;
+    QualityScanMode       mode      = ImageQualitySorter::NonAssignedItems;
 
     ImageQualityContainer quality;
 
@@ -56,7 +52,7 @@ public:
 
     AlbumList             albumList;
 
-    MaintenanceThread*    thread;
+    MaintenanceThread*    thread    = nullptr;
 };
 
 ImageQualitySorter::ImageQualitySorter(QualityScanMode mode,
@@ -64,7 +60,7 @@ ImageQualitySorter::ImageQualitySorter(QualityScanMode mode,
                                        const ImageQualityContainer& quality,
                                        ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("ImageQualitySorter"), parent),
-      d(new Private)
+      d              (new Private)
 {
     d->mode       = mode;
     d->albumList  = list;

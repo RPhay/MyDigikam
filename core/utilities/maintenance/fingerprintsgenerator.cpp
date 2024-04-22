@@ -43,22 +43,18 @@ class Q_DECL_HIDDEN FingerPrintsGenerator::Private
 {
 public:
 
-    explicit Private()
-      : rebuildAll(true),
-        thread(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool               rebuildAll;
+    bool               rebuildAll   = true;
 
     AlbumList          albumList;
 
-    MaintenanceThread* thread;
+    MaintenanceThread* thread       = nullptr;
 };
 
 FingerPrintsGenerator::FingerPrintsGenerator(const bool rebuildAll, const AlbumList& list, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("FingerPrintsGenerator"), parent),
-      d(new Private)
+      d              (new Private)
 {
     d->albumList  = list;
     d->rebuildAll = rebuildAll;
@@ -109,7 +105,7 @@ void FingerPrintsGenerator::slotStart()
     for (AlbumList::ConstIterator it = d->albumList.constBegin() ;
          !canceled() && (it != d->albumList.constEnd()) ; ++it)
     {
-        if ((*it)->type() == Album::PHYSICAL)
+        if      ((*it)->type() == Album::PHYSICAL)
         {
             Q_FOREACH (const qlonglong& id, CoreDbAccess().db()->getItemIDsInAlbum((*it)->id()))
             {
@@ -136,6 +132,7 @@ void FingerPrintsGenerator::slotStart()
     if (itemIds.isEmpty())
     {
         slotDone();
+
         return;
     }
 
@@ -154,6 +151,7 @@ void FingerPrintsGenerator::slotAdvance(const QImage& img)
 void FingerPrintsGenerator::slotDone()
 {
     // Switch on scanned for finger-prints flag on digiKam config file.
+
     KSharedConfig::openConfig()->group(QLatin1String("General Settings")).writeEntry(QLatin1String("Finger Prints Generator First Run"), true);
 
     MaintenanceTool::slotDone();

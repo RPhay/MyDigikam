@@ -39,18 +39,15 @@ class Q_DECL_HIDDEN MaintenanceTool::Private
 {
 public:
 
-    explicit Private()
-      : notification(true)
-    {
-    }
+    Private() = default;
 
-    bool          notification;
+    bool          notification = true;
     QElapsedTimer duration;
 };
 
 MaintenanceTool::MaintenanceTool(const QString& id, ProgressItem* const parent)
     : ProgressItem(parent, id, QString(), QString(), true, true),
-      d(new Private)
+      d           (new Private)
 {
     // --- NOTE: use dynamic binding as slotCancel() is a virtual method which can be re-implemented in derived classes.
 
@@ -119,6 +116,7 @@ void MaintenanceTool::slotDone()
 void MaintenanceTool::slotCancel()
 {
     setComplete();
+
     Q_EMIT signalCanceled();
 }
 

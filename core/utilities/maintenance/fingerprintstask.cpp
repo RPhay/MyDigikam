@@ -15,6 +15,7 @@
 #include "fingerprintstask.h"
 
 // Qt includes
+
 #include <QQueue>
 #include <QIcon>
 
@@ -48,7 +49,7 @@ public:
 
 FingerprintsTask::FingerprintsTask()
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
     QPixmap okPix = QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(22, 22);
     d->okImage    = okPix.toImage();
@@ -57,6 +58,7 @@ FingerprintsTask::FingerprintsTask()
 FingerprintsTask::~FingerprintsTask()
 {
     cancel();
+
     delete d;
 }
 
@@ -90,12 +92,16 @@ void FingerprintsTask::run()
 
         ItemInfo info(id);
 
-        if (info.isVisible()                                              &&
+        if (
+            info.isVisible()                                              &&
             (info.category() == DatabaseItem::Category::Image)            &&
             !info.filePath().isEmpty()                                    &&
             !m_cancel                                                     &&
-            (d->rebuildAll                                                ||
-             SimilarityDbAccess().db()->hasDirtyOrMissingFingerprint(info)))
+            (
+             d->rebuildAll                                                ||
+             SimilarityDbAccess().db()->hasDirtyOrMissingFingerprint(info)
+            )
+           )
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Updating fingerprints for file:" << info.filePath();
 

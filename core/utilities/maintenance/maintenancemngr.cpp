@@ -74,7 +74,7 @@ public:
 
 MaintenanceMngr::MaintenanceMngr(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     connect(ProgressManager::instance(), SIGNAL(progressItemCompleted(ProgressItem*)),
             this, SLOT(slotToolCompleted(ProgressItem*)));
@@ -170,7 +170,8 @@ void MaintenanceMngr::slotToolCompleted(ProgressItem* tool)
 
 void MaintenanceMngr::slotToolCanceled(ProgressItem* tool)
 {
-    if ((tool == dynamic_cast<ProgressItem*>(d->newItemsFinder))        ||
+    if (
+        (tool == dynamic_cast<ProgressItem*>(d->newItemsFinder))        ||
         (tool == dynamic_cast<ProgressItem*>(d->thumbsGenerator))       ||
         (tool == dynamic_cast<ProgressItem*>(d->fingerPrintsGenerator)) ||
         (tool == dynamic_cast<ProgressItem*>(d->duplicatesFinder))      ||
@@ -178,7 +179,8 @@ void MaintenanceMngr::slotToolCanceled(ProgressItem* tool)
         (tool == dynamic_cast<ProgressItem*>(d->facesDetector))         ||
         (tool == dynamic_cast<ProgressItem*>(d->imageQualitySorter))    ||
         (tool == dynamic_cast<ProgressItem*>(d->metadataSynchronizer))  ||
-        (tool == dynamic_cast<ProgressItem*>(d->autotagsAssignment)))
+        (tool == dynamic_cast<ProgressItem*>(d->autotagsAssignment))
+       )
     {
         cancel();
     }
@@ -308,6 +310,7 @@ void MaintenanceMngr::stage6()
     if (d->settings.faceManagement)
     {
         // NOTE : Use multi-core CPU option is passed through FaceScanSettings
+
         d->settings.faceSettings.wholeAlbums = d->settings.wholeAlbums;
         d->settings.faceSettings.useFullCpu  = d->settings.useMutiCoreCPU;
         d->settings.faceSettings.useYoloV3   = ApplicationSettings::instance()->getFaceDetectionYoloV3();
@@ -376,7 +379,9 @@ void MaintenanceMngr::stage9()
         list << d->settings.tags;
         d->metadataSynchronizer = new MetadataSynchronizer(list, MetadataSynchronizer::SyncDirection(d->settings.syncDirection));
         d->metadataSynchronizer->setNotificationEnabled(false);
+
         // See Bug #329091 : Multicore CPU support with Exiv2 sound problematic, even with 0.25 release.
+
         d->metadataSynchronizer->setUseMultiCoreCPU(false);
         d->metadataSynchronizer->start();
     }
@@ -392,6 +397,7 @@ void MaintenanceMngr::done()
     QTime t    = QTime::fromMSecsSinceStartOfDay(d->duration.elapsed());
 
     // Pop-up a message to bring user when all is done.
+
     DNotificationWrapper(QLatin1String("digiKam Maintenance"), // not i18n
                          i18n("All operations are done.\nDuration: %1", t.toString()),
                          qApp->activeWindow(), i18n("digiKam Maintenance"));
@@ -402,6 +408,7 @@ void MaintenanceMngr::done()
 void MaintenanceMngr::cancel()
 {
     d->running = false;
+
     Q_EMIT signalComplete();
 }
 

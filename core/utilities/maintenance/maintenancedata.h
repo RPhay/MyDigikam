@@ -33,7 +33,7 @@ class MaintenanceData
 {
 public:
 
-    explicit MaintenanceData();
+    MaintenanceData();
     ~MaintenanceData();
 
     void      setImageIds(const QList<qlonglong>& ids);
