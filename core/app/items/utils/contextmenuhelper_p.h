@@ -107,21 +107,14 @@ class Q_DECL_HIDDEN ContextMenuHelper::Private
 {
 public:
 
-    explicit Private(ContextMenuHelper* const q)
-      : gotoAlbumAction     (nullptr),
-        gotoDateAction      (nullptr),
-        setThumbnailAction  (nullptr),
-        imageFilterModel    (nullptr),
-        albumModel          (nullptr),
-        parent              (nullptr),
-        stdActionCollection (nullptr),
-        q                   (q)
+    explicit Private(ContextMenuHelper* const qq)
+        : q(qq)
     {
     }
 
-    QAction*                     gotoAlbumAction;
-    QAction*                     gotoDateAction;
-    QAction*                     setThumbnailAction;
+    QAction*                     gotoAlbumAction        = nullptr;
+    QAction*                     gotoDateAction         = nullptr;
+    QAction*                     setThumbnailAction     = nullptr;
 
     QList<qlonglong>             selectedIds;
     QList<QUrl>                  selectedItems;
@@ -130,14 +123,14 @@ public:
     QMap<QString, KService::Ptr> servicesMap;
     QMap<QString, DServiceInfo>  newServicesMap;
 
-    ItemFilterModel*             imageFilterModel;
-    AbstractCheckableAlbumModel* albumModel;
+    ItemFilterModel*             imageFilterModel       = nullptr;
+    AbstractCheckableAlbumModel* albumModel             = nullptr;
 
-    QMenu*                       parent;
+    QMenu*                       parent                 = nullptr;
 
-    KActionCollection*           stdActionCollection;
+    KActionCollection*           stdActionCollection    = nullptr;
 
-    ContextMenuHelper*           q;
+    ContextMenuHelper*           q                      = nullptr;
 
 public:
 
@@ -179,7 +172,6 @@ public:
 
         return actions;
     }
-
 };
 
 } // namespace Digikam

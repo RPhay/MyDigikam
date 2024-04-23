@@ -59,12 +59,14 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
     // -- File properties ----------------------------------------------
 
-    if (settings->getToolTipsShowFileName()  ||
+    if (
+        settings->getToolTipsShowFileName()  ||
         settings->getToolTipsShowFileDate()  ||
         settings->getToolTipsShowFileSize()  ||
         settings->getToolTipsShowImageType() ||
         settings->getToolTipsShowImageDim()  ||
-        settings->getToolTipsShowImageAR())
+        settings->getToolTipsShowImageAR()
+       )
 
     {
         tip += cnt.headBeg + i18n("File Properties") + cnt.headEnd;
@@ -128,14 +130,16 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
     // -- Photograph Info ----------------------------------------------------
 
-    if (settings->getToolTipsShowPhotoMake()  ||
+    if (
+        settings->getToolTipsShowPhotoMake()  ||
         settings->getToolTipsShowPhotoLens()  ||
         settings->getToolTipsShowPhotoDate()  ||
         settings->getToolTipsShowPhotoFocal() ||
         settings->getToolTipsShowPhotoExpo()  ||
         settings->getToolTipsShowPhotoMode()  ||
         settings->getToolTipsShowPhotoFlash() ||
-        settings->getToolTipsShowPhotoWB())
+        settings->getToolTipsShowPhotoWB()
+       )
     {
         if (!photoInfo.allFieldsNull || commonInfo.creationDate.isValid())
         {
@@ -299,13 +303,15 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
     // -- Video Metadata Info ----------------------------------------------------
 
-    if (settings->getToolTipsShowVideoAspectRatio()        ||
+    if (
+        settings->getToolTipsShowVideoAspectRatio()        ||
         settings->getToolTipsShowVideoDuration()           ||
         settings->getToolTipsShowVideoFrameRate()          ||
         settings->getToolTipsShowVideoVideoCodec()         ||
         settings->getToolTipsShowVideoAudioBitRate()       ||
         settings->getToolTipsShowVideoAudioChannelType()   ||
-        settings->getToolTipsShowVideoAudioCodec())
+        settings->getToolTipsShowVideoAudioCodec()
+       )
     {
         if (!videoInfo.allFieldsNull)
         {
@@ -440,11 +446,13 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
     // -- digiKam properties  ------------------------------------------
 
-    if (settings->getToolTipsShowAlbumName()    ||
+    if (
+        settings->getToolTipsShowAlbumName()    ||
         settings->getToolTipsShowTitles()       ||
         settings->getToolTipsShowComments()     ||
         settings->getToolTipsShowTags()         ||
-        settings->getToolTipsShowLabelRating())
+        settings->getToolTipsShowLabelRating()
+       )
     {
         tip += cnt.headBeg + i18n("digiKam Properties") + cnt.headEnd;
 
@@ -564,11 +572,13 @@ QString ToolTipFiller::albumTipContents(PAlbum* const album, int count)
     DToolTipStyleSheet         cnt(settings->getToolTipsFont());
     QString                    tip      = cnt.tipHeader;
 
-    if (settings->getToolTipsShowAlbumTitle()      ||
+    if (
+        settings->getToolTipsShowAlbumTitle()      ||
         settings->getToolTipsShowAlbumDate()       ||
         settings->getToolTipsShowAlbumCollection() ||
         settings->getToolTipsShowAlbumCategory()   ||
-        settings->getToolTipsShowAlbumCaption())
+        settings->getToolTipsShowAlbumCaption()
+       )
     {
         tip += cnt.headBeg + i18n("Album Properties") + cnt.headEnd;
 
@@ -628,7 +638,9 @@ QString ToolTipFiller::albumTipContents(PAlbum* const album, int count)
         {
             tip += cnt.cellSpecBeg + i18n("Preview:") + cnt.cellSpecMid +
             cnt.imageAsBase64(AlbumThumbnailLoader::instance()->getAlbumThumbnailDirectly(album).toImage()) +
-            //cnt.imageAsBase64(AlbumThumbnailLoader::instance()->getAlbumPreviewDirectly(album, ThumbnailSize::Medium)) +
+/*
+            cnt.imageAsBase64(AlbumThumbnailLoader::instance()->getAlbumPreviewDirectly(album, ThumbnailSize::Medium)) +
+*/
             cnt.cellSpecEnd;
         }
     }

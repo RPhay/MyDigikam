@@ -266,8 +266,8 @@ void ItemViewUtilities::insertToLightTableAuto(const QList<ItemInfo>& all,
 }
 
 void ItemViewUtilities::insertToLightTable(const QList<ItemInfo>& list,
-                                            const ItemInfo& current,
-                                            bool addTo)
+                                           const ItemInfo& current,
+                                           bool addTo)
 {
     LightTableWindow* const ltview = LightTableWindow::lightTableWindow();
 
@@ -336,6 +336,7 @@ void ItemViewUtilities::openInfos(const ItemInfo& info,
         // Openonly the first one from the list.
 
         openInfosWithDefaultApplication(QList<ItemInfo>() << info);
+
         return;
     }
 
@@ -377,6 +378,8 @@ void ItemViewUtilities::openInfosWithDefaultApplication(const QList<ItemInfo>& i
     DFileOperations::openFilesWithDefaultApplication(urls);
 }
 
+// ---
+
 namespace
 {
 
@@ -396,6 +399,8 @@ bool lowerThanBySizeForItemInfo(const ItemInfo& a, const ItemInfo& b)
 }
 
 } // namespace
+
+// ---
 
 void ItemViewUtilities::createGroupByTimeFromInfoList(const ItemInfoList& itemInfoList)
 {
@@ -492,6 +497,8 @@ void ItemViewUtilities::createGroupByFilenameFromInfoList(const ItemInfoList& it
     }
 }
 
+// ---
+
 namespace
 {
 
@@ -499,11 +506,7 @@ class Q_DECL_HIDDEN NumberInFilenameMatch
 {
 public:
 
-    NumberInFilenameMatch()
-        : value(0),
-          containsValue(false)
-    {
-    }
+    NumberInFilenameMatch() = default;
 
     explicit NumberInFilenameMatch(const QString& filename)
         : NumberInFilenameMatch()
@@ -563,10 +566,10 @@ public:
 
 public:
 
-    qulonglong value;
+    qulonglong value            = 0;
     QStringView prefix;
     QStringView suffix;
-    bool       containsValue;
+    bool       containsValue    = false;
 };
 
 bool imageMatchesTimelapseGroup(const ItemInfoList& group, const ItemInfo& itemInfo)
@@ -587,6 +590,8 @@ bool imageMatchesTimelapseGroup(const ItemInfoList& group, const ItemInfo& itemI
 }
 
 } // namespace
+
+// ---
 
 void ItemViewUtilities::createGroupByTimelapseFromInfoList(const ItemInfoList& itemInfoList)
 {

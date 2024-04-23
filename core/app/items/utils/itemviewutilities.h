@@ -79,7 +79,7 @@ Q_SIGNALS:
 
 protected:
 
-    QWidget* m_widget;
+    QWidget* m_widget = nullptr;
 };
 
 } // namespace Digikam

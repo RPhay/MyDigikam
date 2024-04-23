@@ -181,6 +181,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
         if (dlg->exec() != KOpenWithDialog::Accepted)
         {
             delete dlg;
+
             return;
         }
 
@@ -196,6 +197,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
             }
 
             delete dlg;
+
             return;
         }
 

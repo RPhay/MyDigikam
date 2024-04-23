@@ -131,8 +131,10 @@ void ContextMenuHelper::addQueueManagerMenu()
 
     // if queue list is empty, do not display the queue submenu
 
-    if (QueueMgrWindow::queueManagerWindowCreated() &&
-        !QueueMgrWindow::queueManagerWindow()->queuesMap().isEmpty())
+    if (
+        QueueMgrWindow::queueManagerWindowCreated() &&
+        !QueueMgrWindow::queueManagerWindow()->queuesMap().isEmpty()
+       )
     {
         QueueMgrWindow* const qmw = QueueMgrWindow::queueManagerWindow();
         QMenu* const queueMenu    = new QMenu(i18nc("@action: context menu", "Add to Existing Queue"), bqmMenu);

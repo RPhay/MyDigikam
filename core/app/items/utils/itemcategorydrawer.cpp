@@ -45,17 +45,13 @@ class Q_DECL_HIDDEN ItemCategoryDrawer::Private
 {
 public:
 
-    explicit Private()
-      : lowerSpacing(0),
-        view        (nullptr)
-    {
-    }
+    Private() = default;
 
     QFont                font;
     QRect                rect;
     QPixmap              pixmap;
-    int                  lowerSpacing;
-    ItemCategorizedView* view;
+    int                  lowerSpacing   = 0;
+    ItemCategorizedView* view           = nullptr;
 };
 
 ItemCategoryDrawer::ItemCategoryDrawer(ItemCategorizedView* const parent)
@@ -142,27 +138,39 @@ void ItemCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole*/
     switch (mode)
     {
         case ItemSortSettings::NoCategories:
+        {
             break;
+        }
 
         case ItemSortSettings::OneCategory:
+        {
             viewHeaderText(index, &header, &subLine);
             break;
+        }
 
         case ItemSortSettings::CategoryByAlbum:
+        {
             textForAlbum(index, &header, &subLine);
             break;
+        }
 
         case ItemSortSettings::CategoryByFormat:
+        {
             textForFormat(index, &header, &subLine);
             break;
+        }
 
         case ItemSortSettings::CategoryByMonth:
+        {
             textForMonth(index, &header, &subLine);
             break;
+        }
 
         case ItemSortSettings::CategoryByFaces:
+        {
             textForFace(index, &header, &subLine);
             break;
+        }
     }
 
     p->setPen(qApp->palette().color(QPalette::HighlightedText));
@@ -220,24 +228,34 @@ void ItemCategoryDrawer::viewHeaderText(const QModelIndex& index, QString* heade
         switch (album->type())
         {
             case Album::PHYSICAL:
+            {
                 textForPAlbum(static_cast<PAlbum*>(album), albumModel->isRecursingAlbums(), count, header, subLine);
                 break;
+            }
 
             case Album::TAG:
+            {
                 textForTAlbum(static_cast<TAlbum*>(album), albumModel->isRecursingTags(), count, header, subLine);
                 break;
+            }
 
             case Album::DATE:
+            {
                 textForDAlbum(static_cast<DAlbum*>(album), count, header, subLine);
                 break;
+            }
 
             case Album::SEARCH:
+            {
                 textForSAlbum(static_cast<SAlbum*>(album), count, header, subLine);
                 break;
+            }
 
             case Album::FACE:
             default:
+            {
                 break;
+            }
         }
     }
 }
@@ -319,7 +337,7 @@ void ItemCategoryDrawer::textForTAlbum(TAlbum* talbum, bool recursive, int count
 
     if (recursive && talbum->firstChild())
     {
-        int n=0;
+        int n = 0;
 
         for (AlbumIterator it(talbum) ; it.current() ; ++it)
         {

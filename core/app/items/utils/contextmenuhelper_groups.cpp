@@ -90,7 +90,7 @@ QList<QAction*> ContextMenuHelper::groupMenuActions(const imageIds& ids)
 
     if (ids.size() == 1)
     {
-        if (info.hasGroupedImages())
+        if      (info.hasGroupedImages())
         {
             if (d->imageFilterModel)
             {
