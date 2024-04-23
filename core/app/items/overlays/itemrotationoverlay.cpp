@@ -120,8 +120,10 @@ bool ItemRotateOverlay::checkIndex(const QModelIndex& index) const
 {
     ItemInfo info = ItemModel::retrieveItemInfo(index);
 
-    return ((info.category() == DatabaseItem::Image) ||
-            (info.category() == DatabaseItem::Video));
+    return (
+            (info.category() == DatabaseItem::Image) ||
+            (info.category() == DatabaseItem::Video)
+           );
 }
 
 void ItemRotateOverlay::widgetEnterEvent()
@@ -132,6 +134,31 @@ void ItemRotateOverlay::widgetEnterEvent()
 void ItemRotateOverlay::widgetLeaveEvent()
 {
     widgetLeaveNotifyMultiple();
+}
+
+ItemRotateOverlayDirection ItemRotateOverlay::direction() const
+{
+    return m_direction;
+}
+
+bool ItemRotateOverlay::isLeft() const
+{
+    return (m_direction == ItemRotateOverlayLeft);
+}
+
+bool ItemRotateOverlay::isRight() const
+{
+    return (m_direction == ItemRotateOverlayRight);
+}
+
+ItemRotateOverlay* ItemRotateOverlay::left(QObject* const parent)
+{
+    return new ItemRotateOverlay(ItemRotateOverlayLeft, parent);
+}
+
+ItemRotateOverlay* ItemRotateOverlay::right(QObject* const parent)
+{
+    return new ItemRotateOverlay(ItemRotateOverlayRight, parent);
 }
 
 } // namespace Digikam

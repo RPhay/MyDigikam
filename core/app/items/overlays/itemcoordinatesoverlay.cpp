@@ -51,7 +51,9 @@ CoordinatesOverlayWidget* ItemCoordinatesOverlay::buttonWidget() const
 QWidget* ItemCoordinatesOverlay::createWidget()
 {
     QAbstractButton* const button = new CoordinatesOverlayWidget(parentWidget());
-    //button->setCursor(Qt::PointingHandCursor);
+/*
+    button->setCursor(Qt::PointingHandCursor);
+*/
     return button;
 }
 

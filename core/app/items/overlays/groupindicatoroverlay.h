@@ -75,11 +75,11 @@ protected:
     void updatePosition();
     void updateRating();
 
-    QWidget* createWidget() override;
-    void setActive(bool) override;
-    void visualChange() override;
-    void slotEntered(const QModelIndex& index) override;
-    bool checkIndex(const QModelIndex& index) const override;
+    QWidget* createWidget()                           override;
+    void setActive(bool)                              override;
+    void visualChange()                               override;
+    void slotEntered(const QModelIndex& index)        override;
+    bool checkIndex(const QModelIndex& index)   const override;
 
 protected:
 

@@ -48,11 +48,7 @@ class Q_DECL_HIDDEN AssignNameOverlay::Private
 {
 public:
 
-    explicit Private()
-        : tagModel        (AbstractAlbumModel::IgnoreRootAlbum),
-          assignNameWidget(nullptr)
-    {
-    }
+    Private() = default;
 
     bool isChildWidget(QWidget* widget, const QWidget* const parent) const
     {
@@ -78,11 +74,11 @@ public:
 
 public:
 
-    TagModel                  tagModel;
+    TagModel                  tagModel          = TagModel(AbstractAlbumModel::IgnoreRootAlbum);
     CheckableAlbumFilterModel filterModel;
     TagPropertiesFilterModel  filteredModel;
 
-    AssignNameWidget*         assignNameWidget;
+    AssignNameWidget*         assignNameWidget  = nullptr;
 };
 
 AssignNameOverlay::AssignNameOverlay(QObject* const parent)
@@ -367,6 +363,7 @@ void AssignNameOverlay::slotRejected(const ItemInfo& info, const QVariant& faceI
     Q_UNUSED(faceIdentifier);
 
     Q_EMIT removeFaces(affectedIndexes(index()));
+
     hide();
 }
 
@@ -376,6 +373,7 @@ void AssignNameOverlay::slotIgnored(const ItemInfo& info, const QVariant& faceId
     Q_UNUSED(faceIdentifier);
 
     Q_EMIT ignoreFaces(affectedIndexes(index()));
+
     hide();
 }
 
@@ -385,6 +383,7 @@ void AssignNameOverlay::slotUnknown(const ItemInfo& info, const QVariant& faceId
     Q_UNUSED(faceIdentifier);
 
     Q_EMIT unknownFaces(affectedIndexes(index()));
+
     hide();
 }
 
@@ -427,7 +426,9 @@ bool AssignNameOverlay::eventFilter(QObject* o, QEvent* e)
         }
 
         default:
+        {
             break;
+        }
     }
 
     return PersistentWidgetDelegateOverlay::eventFilter(o, e);

@@ -40,12 +40,12 @@ class ItemRotateOverlayButton : public ItemViewHoverButton
 public:
 
     ItemRotateOverlayButton(ItemRotateOverlayDirection dir, QAbstractItemView* const parentView);
-    QSize sizeHint() const  override;
+    QSize sizeHint()    const override;
 
 protected:
 
-    QIcon icon()            override;
-    void updateToolTip()    override;
+    QIcon icon()              override;
+    void updateToolTip()      override;
 
 protected:
 
@@ -61,14 +61,15 @@ class ItemRotateOverlay : public HoverButtonDelegateOverlay
 public:
 
     ItemRotateOverlay(ItemRotateOverlayDirection dir, QObject* const parent);
-    void setActive(bool active)                     override;
+    void setActive(bool active)                       override;
 
-    ItemRotateOverlayDirection direction() const { return m_direction; }
-    bool isLeft() const  { return m_direction  == ItemRotateOverlayLeft; }
-    bool isRight() const { return m_direction == ItemRotateOverlayRight; }
+    ItemRotateOverlayDirection direction()      const;
 
-    static ItemRotateOverlay* left(QObject* const parent)  { return new ItemRotateOverlay(ItemRotateOverlayLeft, parent);  }
-    static ItemRotateOverlay* right(QObject* const parent) { return new ItemRotateOverlay(ItemRotateOverlayRight, parent); }
+    bool isLeft()                               const;
+    bool isRight()                              const;
+
+    static ItemRotateOverlay* left(QObject* const parent);
+    static ItemRotateOverlay* right(QObject* const parent);
 
 Q_SIGNALS:
 
@@ -76,11 +77,11 @@ Q_SIGNALS:
 
 protected:
 
-    ItemViewHoverButton* createButton()             override;
-    void updateButton(const QModelIndex& index)     override;
-    bool checkIndex(const QModelIndex& index) const override;
-    void widgetEnterEvent()                         override;
-    void widgetLeaveEvent()                         override;
+    ItemViewHoverButton* createButton()               override;
+    void updateButton(const QModelIndex& index)       override;
+    bool checkIndex(const QModelIndex& index)   const override;
+    void widgetEnterEvent()                           override;
+    void widgetLeaveEvent()                           override;
 
 private Q_SLOTS:
 

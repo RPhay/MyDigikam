@@ -73,8 +73,10 @@ void ItemRatingOverlay::setActive(bool active)
 
 void ItemRatingOverlay::visualChange()
 {
-    if (m_widget &&
-        m_widget->isVisible())
+    if (
+        m_widget &&
+        m_widget->isVisible()
+       )
     {
         updatePosition();
     }
@@ -131,9 +133,11 @@ void ItemRatingOverlay::updateRating()
 
 void ItemRatingOverlay::slotRatingChanged(int rating)
 {
-    if (m_widget              &&
+    if (
+        m_widget              &&
         m_widget->isVisible() &&
-        m_index.isValid())
+        m_index.isValid()
+       )
     {
         Q_EMIT ratingEdited(affectedIndexes(m_index), rating);
     }
@@ -144,10 +148,13 @@ void ItemRatingOverlay::slotEntered(const QModelIndex& index)
     AbstractWidgetDelegateOverlay::slotEntered(index);
 
     // See bug 228810, this is a small workaround
-    if (m_widget              &&
+
+    if (
+        m_widget              &&
         m_widget->isVisible() &&
         m_index.isValid()     &&
-        index == m_index)
+        index == m_index
+       )
     {
         ratingWidget()->setVisibleImmediately();
     }
@@ -163,9 +170,11 @@ void ItemRatingOverlay::slotEntered(const QModelIndex& index)
 
 void ItemRatingOverlay::slotDataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)
 {
-    if (m_widget              &&
+    if (
+        m_widget              &&
         m_widget->isVisible() &&
-        QItemSelectionRange(topLeft, bottomRight).contains(m_index))
+        QItemSelectionRange(topLeft, bottomRight).contains(m_index)
+       )
     {
         updateRating();
     }

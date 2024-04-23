@@ -61,6 +61,7 @@ QWidget* GroupIndicatorOverlay::createWidget()
 {
     QAbstractButton* const button = new GroupIndicatorOverlayWidget(parentWidget());
     button->setCursor(Qt::PointingHandCursor);
+
     return button;
 }
 
