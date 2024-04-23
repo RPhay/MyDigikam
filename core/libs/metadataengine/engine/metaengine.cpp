@@ -317,11 +317,12 @@ bool MetaEngine::loadFromDataAndMerge(const QByteArray& imgData, const QStringLi
         Q_FOREACH (const QString& exTag, exclude)
         {
             Exiv2::ExifKey exifKey(exTag.toLatin1().constData());
-            Exiv2::ExifData::iterator it = image->exifData().findKey(exifKey);
+            Exiv2::ExifData::iterator it1 = image->exifData().findKey(exifKey);
+            Exiv2::ExifData::iterator it2 = d->exifMetadata().findKey(exifKey);
 
-            if (it != image->exifData().end())
+            if ((it1 != image->exifData().end()) && (it2 != d->exifMetadata().end()))
             {
-                image->exifData().erase(it);
+                image->exifData().erase(it1);
             }
         }
 
