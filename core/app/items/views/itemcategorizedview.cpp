@@ -75,27 +75,19 @@ class Q_DECL_HIDDEN ItemCategorizedView::Private
 {
 public:
 
-    explicit Private()
-      : model            (nullptr),
-        filterModel      (nullptr),
-        delegate         (nullptr),
-        showToolTip      (false),
-        scrollToItemId   (0),
-        delayedEnterTimer(nullptr)
-    {
-    }
+    Private() = default;
 
-    ItemModel*            model;
-    ImageSortFilterModel* filterModel;
+    ItemModel*            model             = nullptr;
+    ImageSortFilterModel* filterModel       = nullptr;
 
-    ItemDelegate*         delegate;
-    bool                  showToolTip;
+    ItemDelegate*         delegate          = nullptr;
+    bool                  showToolTip       = false;
 
-    qlonglong             scrollToItemId;
+    qlonglong             scrollToItemId    = 0;
 
     QUrl                  unknownCurrentUrl;
 
-    QTimer*               delayedEnterTimer;
+    QTimer*               delayedEnterTimer = nullptr;
 };
 
 // -------------------------------------------------------------------------------
@@ -123,6 +115,7 @@ ItemCategorizedView::ItemCategorizedView(QWidget* const parent)
 ItemCategorizedView::~ItemCategorizedView()
 {
     d->delegate->removeAllOverlays();
+
     delete d;
 }
 
@@ -457,6 +450,7 @@ void ItemCategorizedView::setCurrentUrlWhenAvailable(const QUrl& url)
     {
         clearSelection();
         setCurrentIndex(QModelIndex());
+
         return;
     }
 
@@ -466,6 +460,7 @@ void ItemCategorizedView::setCurrentUrlWhenAvailable(const QUrl& url)
     if (!index.isValid())
     {
         d->unknownCurrentUrl = url;
+
         return;
     }
 
@@ -480,6 +475,7 @@ void ItemCategorizedView::setCurrentUrl(const QUrl& url)
     {
         clearSelection();
         setCurrentIndex(QModelIndex());
+
         return;
     }
 
@@ -594,7 +590,7 @@ void ItemCategorizedView::updateGeometries()
 
 void ItemCategorizedView::slotDelayedEnter()
 {
-    // re-Q_EMIT entered() for index under mouse (after layout).
+    // re-emit entered() for index under mouse (after layout).
 
     QModelIndex mouseIndex = indexAt(mapFromGlobal(QCursor::pos()));
 
@@ -658,6 +654,7 @@ void ItemCategorizedView::indexActivated(const QModelIndex& index, Qt::KeyboardM
     if (!info.isNull())
     {
         activated(info, modifiers);
+
         Q_EMIT imageActivated(info);
     }
 }

@@ -45,32 +45,32 @@ class Q_DECL_HIDDEN DigikamItemView::Private : public QObject
 public:
 
     explicit Private(DigikamItemView* const qq);
-    ~Private() override;
+    ~Private() override = default;
 
     void updateOverlays();
     void triggerRotateAction(const char* actionName);
 
 public:
 
-    ItemViewUtilities*       utilities;
+    ItemViewUtilities*       utilities          = nullptr;
 
     FacePipeline             editPipeline;
 
-    DigikamItemDelegate*     normalDelegate;
-    ItemFaceDelegate*        faceDelegate;
+    DigikamItemDelegate*     normalDelegate     = nullptr;
+    ItemFaceDelegate*        faceDelegate       = nullptr;
 
-    bool                     overlaysActive;
-    bool                     fullscreenActive;
+    bool                     overlaysActive     = false;
+    bool                     fullscreenActive   = false;
 
-    ItemRotateOverlay*       rotateLeftOverlay;
-    ItemRotateOverlay*       rotateRightOverlay;
-    ItemFullScreenOverlay*   fullscreenOverlay;
+    ItemRotateOverlay*       rotateLeftOverlay  = nullptr;
+    ItemRotateOverlay*       rotateRightOverlay = nullptr;
+    ItemFullScreenOverlay*   fullscreenOverlay  = nullptr;
 
-    bool                     faceMode;
+    bool                     faceMode           = false;
 
 private:
 
-    DigikamItemView*         q_ptr;
+    DigikamItemView*         q_ptr              = nullptr;
 
 private:
 

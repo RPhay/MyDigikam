@@ -24,20 +24,7 @@ namespace Digikam
 {
 
 DigikamItemView::Private::Private(DigikamItemView* const qq)
-    : utilities          (nullptr),
-      normalDelegate     (nullptr),
-      faceDelegate       (nullptr),
-      overlaysActive     (false),
-      fullscreenActive   (false),
-      rotateLeftOverlay  (nullptr),
-      rotateRightOverlay (nullptr),
-      fullscreenOverlay  (nullptr),
-      faceMode           (false),
-      q_ptr              (qq)
-{
-}
-
-DigikamItemView::Private::~Private()
+    : q_ptr(qq)
 {
 }
 

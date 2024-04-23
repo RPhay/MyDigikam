@@ -604,6 +604,7 @@ void DigikamItemView::showContextMenuOnInfo(QContextMenuEvent* event, const Item
 void DigikamItemView::showGroupContextMenu(const QModelIndex& index, QContextMenuEvent* event)
 {
     Q_UNUSED(index);
+
     Q_EMIT signalShowGroupContextMenu(event, selectedItemInfosCurrentFirst(), imageFilterModel());
 }
 
@@ -733,8 +734,8 @@ void DigikamItemView::slotFullscreen(const QList<QModelIndex>& indexes)
    const ItemInfo& info = infos.at(0);
 
    QList<DPluginAction*> actions = DPluginLoader::instance()->
-                                      pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"),
-                                      DigikamApp::instance());
+                                   pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"),
+                                   DigikamApp::instance());
 
    if (actions.isEmpty())
    {
