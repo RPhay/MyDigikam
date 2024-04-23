@@ -81,8 +81,10 @@ ItemDelegate::ItemDelegate(ItemDelegate::ItemDelegatePrivate& dd, QWidget* const
 ItemDelegate::~ItemDelegate()
 {
     Q_D(ItemDelegate);
+
     // crashes for a lot of people, see bug 230515. Cause unknown.
     //delete d->categoryDrawer;
+
     Q_UNUSED(d); // To please compiler about warnings.
 }
 
@@ -161,54 +163,68 @@ void ItemDelegate::setSpacing(int spacing)
 ItemCategoryDrawer* ItemDelegate::categoryDrawer() const
 {
     Q_D(const ItemDelegate);
+
     return d->categoryDrawer;
 }
 
 QRect ItemDelegate::commentsRect() const
 {
     Q_D(const ItemDelegate);
+
     return d->commentsRect;
 }
 
 QRect ItemDelegate::tagsRect() const
 {
     Q_D(const ItemDelegate);
+
     return d->tagRect;
 }
 
 QRect ItemDelegate::pixmapRect() const
 {
     Q_D(const ItemDelegate);
+
     return d->pixmapRect;
 }
 
 QRect ItemDelegate::imageInformationRect() const
 {
     Q_D(const ItemDelegate);
+
     return d->imageInformationRect;
 }
 
 QRect ItemDelegate::groupIndicatorRect() const
 {
     Q_D(const ItemDelegate);
+
     return d->groupRect;
 }
 
 QRect ItemDelegate::coordinatesIndicatorRect() const
 {
     Q_D(const ItemDelegate);
+
     return d->coordinatesRect;
 }
 
 QPixmap ItemDelegate::retrieveThumbnailPixmap(const QModelIndex& index, int thumbnailSize)
 {
     // work around constness
+
     QAbstractItemModel* const model = const_cast<QAbstractItemModel*>(index.model());
+
     // set requested thumbnail size
+
     model->setData(index, thumbnailSize, ItemModel::ThumbnailRole);
+
     // get data from model
+
     QVariant thumbData              = index.data(ItemModel::ThumbnailRole);
+
     // reset to default thumbnail size
+
     model->setData(index, QVariant(), ItemModel::ThumbnailRole);
 
     return thumbData.value<QPixmap>();
@@ -217,12 +233,14 @@ QPixmap ItemDelegate::retrieveThumbnailPixmap(const QModelIndex& index, int thum
 QPixmap ItemDelegate::thumbnailPixmap(const QModelIndex& index) const
 {
     Q_D(const ItemDelegate);
+
     return retrieveThumbnailPixmap(index, d->thumbSize.size());
 }
 
 void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
     Q_D(const ItemDelegate);
+
     ItemInfo info = ItemModel::retrieveItemInfo(index);
 
     if (info.isNull())
@@ -231,12 +249,14 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
     }
 
     // state of painter must not be changed
+
     p->save();
     p->translate(option.rect.topLeft());
 
     bool isSelected = (option.state & QStyle::State_Selected);
 
     // Thumbnail
+
     QPixmap pix;
 
     if (isSelected)
@@ -267,6 +287,7 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
     }
 
     // Draw Color Label rectangle
+
     if (ApplicationSettings::instance()->getIconShowColorLabel())
     {
         drawColorLabelRect(p, option, isSelected, info.colorLabel());
@@ -277,6 +298,7 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
 
 /*
     // If there is ImageHistory present, paint a small icon over the thumbnail to indicate that this is derived image
+
     if (info.hasImageHistory())
     {
         p->drawPixmap(d->pixmapRect.right()-24, d->pixmapRect.bottom()-24, QIcon::fromTheme(QLatin1String("svn_switch")).pixmap(22, 22));
@@ -352,7 +374,9 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
         QString frm  = info.format();
 
         if (frm.contains(QLatin1Char('-')))
+        {
             frm = frm.section(QLatin1Char('-'), -1);   // For RAW format annotated as "RAW-xxx" => "xxx"
+        }
 
         drawImageFormat(p, actualPixmapRect, frm, d->drawImageFormatTop);
     }
@@ -453,6 +477,7 @@ void ItemDelegate::invalidatePaintingCache()
 void ItemDelegate::updateContentWidth()
 {
     Q_D(ItemDelegate);
+
     d->contentWidth = d->thumbSize.size() + 2*d->radius;
 }
 
@@ -493,6 +518,7 @@ void ItemDelegate::updateSizeRectsAndPixmaps()
 void ItemDelegate::clearCaches()
 {
     Q_D(ItemDelegate);
+
     ItemViewDelegate::clearCaches();
     d->actualPixmapRectCache.clear();
 }
@@ -500,12 +526,14 @@ void ItemDelegate::clearCaches()
 void ItemDelegate::clearModelDataCaches()
 {
     Q_D(ItemDelegate);
+
     d->actualPixmapRectCache.clear();
 }
 
 void ItemDelegate::modelChanged()
 {
     Q_D(ItemDelegate);
+
     clearModelDataCaches();
     setModel(d->currentView ? d->currentView->model() : nullptr);
 }
@@ -518,8 +546,10 @@ void ItemDelegate::modelContentsChanged()
 QRect ItemDelegate::actualPixmapRect(const QModelIndex& index) const
 {
     Q_D(const ItemDelegate);
+
     // We do not recompute if not found. Assumption is cache is always properly updated.
-    QRect* rect = d->actualPixmapRectCache.object(index.row());
+
+    QRect* const rect = d->actualPixmapRectCache.object(index.row());
 
     if (rect)
     {
@@ -534,9 +564,10 @@ QRect ItemDelegate::actualPixmapRect(const QModelIndex& index) const
 void ItemDelegate::updateActualPixmapRect(const QModelIndex& index, const QRect& rect)
 {
     Q_D(ItemDelegate);
+
     QRect* const old = d->actualPixmapRectCache.object(index.row());
 
-    if (!old || *old != rect)
+    if (!old || (*old != rect))
     {
         d->actualPixmapRectCache.insert(index.row(), new QRect(rect));
     }
@@ -552,8 +583,11 @@ int ItemDelegate::calculatethumbSizeToFit(int ws)
     ws         = ws - 2*sp;
 
     // Thumbnails size loop to check (upper/lower)
+
     int ts1, ts2;
+
     // New grid size used in loop
+
     int ngs;
 
     double rs1 = fmod((double)ws, (double)gs);

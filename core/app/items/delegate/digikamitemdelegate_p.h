@@ -33,10 +33,7 @@ class Q_DECL_HIDDEN DigikamItemDelegatePrivate : public ItemDelegate::ItemDelega
 {
 public:
 
-    explicit DigikamItemDelegatePrivate()
-    {
-    }
-
+    explicit DigikamItemDelegatePrivate() = default;
     ~DigikamItemDelegatePrivate() override;
 
     void init(DigikamItemDelegate* const q, ItemCategorizedView* const parent);
@@ -48,9 +45,7 @@ class Q_DECL_HIDDEN ItemFaceDelegatePrivate : public DigikamItemDelegatePrivate
 {
 public:
 
-    explicit ItemFaceDelegatePrivate()
-    {
-    }
+    explicit ItemFaceDelegatePrivate() = default;
 };
 
 } // namespace Digikam

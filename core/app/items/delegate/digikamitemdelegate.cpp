@@ -46,10 +46,11 @@ DigikamItemDelegatePrivate::~DigikamItemDelegatePrivate()
 
 // ------------------------------------------------------------------------------------------------
 
-DigikamItemDelegate::DigikamItemDelegate(ItemCategorizedView* parent)
+DigikamItemDelegate::DigikamItemDelegate(ItemCategorizedView* const parent)
     : ItemDelegate(*new DigikamItemDelegatePrivate, parent)
 {
     Q_D(DigikamItemDelegate);
+
     d->init(this, parent);
 }
 
@@ -57,11 +58,8 @@ DigikamItemDelegate::DigikamItemDelegate(DigikamItemDelegatePrivate& dd, ItemCat
     : ItemDelegate(dd, parent)
 {
     Q_D(DigikamItemDelegate);
-    d->init(this, parent);
-}
 
-DigikamItemDelegate::~DigikamItemDelegate()
-{
+    d->init(this, parent);
 }
 
 void DigikamItemDelegate::updateRects()
@@ -81,6 +79,7 @@ void DigikamItemDelegate::updateRects()
     {
         d->pickLabelRect                     = QRect(d->margin, y - d->margin, iconSize, iconSize);
     }
+
     d->coordinatesRect                       = QRect(d->contentWidth - iconSize+2, d->pixmapRect.top(), iconSize, iconSize);
     d->groupRect                             = QRect(d->contentWidth - iconSize + d->margin, y - d->margin, iconSize, iconSize);
     const bool showInfos                     = ((d->contentWidth - 2*d->radius) > ThumbnailSize::Small);

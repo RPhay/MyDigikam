@@ -36,10 +36,6 @@ ItemFaceDelegate::ItemFaceDelegate(ItemCategorizedView* const parent)
 {
 }
 
-ItemFaceDelegate::~ItemFaceDelegate()
-{
-}
-
 QPixmap ItemFaceDelegate::thumbnailPixmap(const QModelIndex& index) const
 {
     QRect rect = largerFaceRect(index);
@@ -103,6 +99,7 @@ FaceTagsIface ItemFaceDelegate::face(const QModelIndex& index)
 void ItemFaceDelegate::updateRects()
 {
     Q_D(ItemFaceDelegate);
+
     DigikamItemDelegate::updateRects();
     d->groupRect = QRect();
 }

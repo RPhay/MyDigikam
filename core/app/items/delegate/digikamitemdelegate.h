@@ -31,8 +31,8 @@ class DigikamItemDelegate : public ItemDelegate
 
 public:
 
-    explicit DigikamItemDelegate(ItemCategorizedView* parent);
-    ~DigikamItemDelegate() override;
+    explicit DigikamItemDelegate(ItemCategorizedView* const parent);
+    ~DigikamItemDelegate() override = default;
 
 protected:
 

@@ -78,31 +78,34 @@ public:
 
 protected:
 
-    /** Reimplement this to set contentWidth. This is the maximum width of all
-     *  content rectangles, typically excluding margins on both sides.
+    /**
+     * Reimplement this to set contentWidth. This is the maximum width of all
+     * content rectangles, typically excluding margins on both sides.
      */
     virtual void updateContentWidth();
 
-    /** In a subclass, you need to implement this method to set up the rects
-     *  for drawing. The paint() method operates depending on these rects.
+    /**
+     * In a subclass, you need to implement this method to set up the rects
+     * for drawing. The paint() method operates depending on these rects.
      */
     virtual void updateRects() = 0;
 
     void clearCaches() override;
 
-    /** Reimplement to clear caches based on model indexes (hash on row number etc.)
-     *  Change signals are listened to this is called whenever such properties become invalid.
+    /**
+     * Reimplement to clear caches based on model indexes (hash on row number etc.)
+     * Change signals are listened to this is called whenever such properties become invalid.
      */
     virtual void clearModelDataCaches();
 
-    virtual QPixmap thumbnailPixmap(const QModelIndex& index)               const;
+    virtual QPixmap thumbnailPixmap(const QModelIndex& index)                                    const;
 
     bool onActualPixmapRect(const QPoint& pos, const QRect& visualRect,
-                            const QModelIndex& index, QRect* actualRect)    const;
+                            const QModelIndex& index, QRect* actualRect)                         const;
     void updateActualPixmapRect(const QModelIndex& index, const QRect& rect);
 
-    void invalidatePaintingCache() override;
-    void updateSizeRectsAndPixmaps() override;
+    void invalidatePaintingCache()                                                                      override;
+    void updateSizeRectsAndPixmaps()                                                                    override;
 
     void setModel(QAbstractItemModel* model);
 

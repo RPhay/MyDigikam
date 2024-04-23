@@ -33,7 +33,7 @@ class ItemFaceDelegate : public DigikamItemDelegate
 public:
 
     explicit ItemFaceDelegate(ItemCategorizedView* const parent);
-    ~ItemFaceDelegate()                                       override;
+    ~ItemFaceDelegate()                                       override = default;
 
     QRect faceRect(const QModelIndex& index)            const;
     QRect largerFaceRect(const QModelIndex& index)      const;
