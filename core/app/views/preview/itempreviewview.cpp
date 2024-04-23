@@ -77,6 +77,7 @@
 #include "albummanager.h"
 #include "facegroup.h"
 #include "focuspointgroup.h"
+#include "faceutils.h"
 
 namespace Digikam
 {
@@ -626,6 +627,10 @@ void ItemPreviewView::slotRotateLeft()
     d->faceGroup->aboutToSetInfo(ItemInfo());
 
     FileActionMngr::instance()->transform(QList<ItemInfo>() << d->item->imageInfo(), MetaEngineRotation::Rotate270);
+
+    // Set the newly rotated image as not processed by the face recognition pipeline
+    FaceUtils utils;
+    utils.markAsScanned(d->item->imageInfo(), false);
 }
 
 void ItemPreviewView::slotRotateRight()
@@ -648,6 +653,10 @@ void ItemPreviewView::slotRotateRight()
     d->faceGroup->aboutToSetInfo(ItemInfo());
 
     FileActionMngr::instance()->transform(QList<ItemInfo>() << d->item->imageInfo(), MetaEngineRotation::Rotate90);
+
+    // Set the newly rotated image as not processed by the face recognition pipeline
+    FaceUtils utils;
+    utils.markAsScanned(d->item->imageInfo(), false);
 }
 
 void ItemPreviewView::slotDeleteItem()
