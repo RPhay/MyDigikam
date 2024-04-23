@@ -32,12 +32,9 @@ class Q_DECL_HIDDEN ItemPreviewCanvas::Private
 {
 public:
 
-    explicit Private()
-      : group(nullptr)
-    {
-    }
+    Private() = default;
 
-    FaceGroup* group;
+    FaceGroup* group = nullptr;
     ItemInfo   info;
 };
 

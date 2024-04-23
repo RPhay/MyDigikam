@@ -85,60 +85,37 @@ class Q_DECL_HIDDEN ItemPreviewView::Private
 {
 public:
 
-    explicit Private()
-      : fullSize            (false),
-        scale               (1.0),
-        isValid             (false),
-        rotationLock        (false),
-        mode                (ItemPreviewView::IconViewPreview),
-        item                (nullptr),
-        prevAction          (nullptr),
-        nextAction          (nullptr),
-        rotLeftAction       (nullptr),
-        rotRightAction      (nullptr),
-        toolBar             (nullptr),
-        faceGroup           (nullptr),
-        peopleToggleAction  (nullptr),
-        addPersonAction     (nullptr),
-        forgetFacesAction   (nullptr),
-        markAsIgnoredAction (nullptr),
-        focusPointGroup     (nullptr),
-        addFocusPointAction (nullptr),
-        showFocusPointAction(nullptr),
-        fullscreenAction    (nullptr),
-        currAlbum           (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                   fullSize;
-    double                 scale;
-    bool                   isValid;
-    bool                   rotationLock;
+    bool                   fullSize             = false;
+    double                 scale                = 1.0;
+    bool                   isValid              = false;
+    bool                   rotationLock         = false;
 
-    ItemPreviewView::Mode  mode;
+    ItemPreviewView::Mode  mode                 = ItemPreviewView::IconViewPreview;
 
-    ItemPreviewCanvas*     item;
+    ItemPreviewCanvas*     item                 = nullptr;
 
-    QAction*               prevAction;
-    QAction*               nextAction;
-    QAction*               rotLeftAction;
-    QAction*               rotRightAction;
+    QAction*               prevAction           = nullptr;
+    QAction*               nextAction           = nullptr;
+    QAction*               rotLeftAction        = nullptr;
+    QAction*               rotRightAction       = nullptr;
 
-    QToolBar*              toolBar;
+    QToolBar*              toolBar              = nullptr;
 
-    FaceGroup*             faceGroup;
-    QAction*               peopleToggleAction;
-    QAction*               addPersonAction;
-    QAction*               forgetFacesAction;
-    QAction*               markAsIgnoredAction;
+    FaceGroup*             faceGroup            = nullptr;
+    QAction*               peopleToggleAction   = nullptr;
+    QAction*               addPersonAction      = nullptr;
+    QAction*               forgetFacesAction    = nullptr;
+    QAction*               markAsIgnoredAction  = nullptr;
 
-    FocusPointGroup*       focusPointGroup;
-    QAction*               addFocusPointAction;
-    QAction*               showFocusPointAction;
+    FocusPointGroup*       focusPointGroup      = nullptr;
+    QAction*               addFocusPointAction  = nullptr;
+    QAction*               showFocusPointAction = nullptr;
 
-    QAction*               fullscreenAction;
+    QAction*               fullscreenAction     = nullptr;
 
-    Album*                 currAlbum;
+    Album*                 currAlbum            = nullptr;
 };
 
 ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const currAlbum)
@@ -169,6 +146,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
             this, SLOT(slotShowContextMenu(QGraphicsSceneContextMenuEvent*)));
 
     // set default zoom
+
     layout()->fitToWindow();
 
     // ------------------------------------------------------------
@@ -332,6 +310,7 @@ void ItemPreviewView::reload()
 void ItemPreviewView::imageLoaded()
 {
     Q_EMIT signalPreviewLoaded(true);
+
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
 
@@ -355,6 +334,7 @@ void ItemPreviewView::imageLoaded()
 void ItemPreviewView::imageLoadingFailed()
 {
     Q_EMIT signalPreviewLoaded(false);
+
     d->rotLeftAction->setEnabled(false);
     d->rotRightAction->setEnabled(false);
     d->addFocusPointAction->setEnabled(false);
@@ -467,17 +447,22 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
     cmHelper.addAction(d->addPersonAction,     true);
 
     // if there is a face in the image, give the option to remove all faces
+
     if (d->faceGroup->items().length() > 0)
     {
         cmHelper.addAction(d->forgetFacesAction,   true);
     }
 
     // if there is at least one unconfirmed face
+
     if (d->faceGroup->hasUnconfirmed())
     {
         // give the option to ignore unconfirmed faces
+
         cmHelper.addAction(d->markAsIgnoredAction, true);
+
         // give the option to recognize faces
+
         cmHelper.addAction(QLatin1String("image_recognize_faces"));
     }
     cmHelper.addSeparator();
@@ -570,6 +555,7 @@ void ItemPreviewView::slotSlideShowCurrent()
     }
 
     //Trigger SlideShow manual
+
     actions[0]->setData(getItemInfo().fileUrl());
 
     actions[0]->trigger();
@@ -671,7 +657,9 @@ void ItemPreviewView::slotDeleteItem()
 
 void Digikam::ItemPreviewView::slotUpdateFaces()
 {
-    //d->faceGroup->aboutToSetInfo(ItemInfo());
+/*
+    d->faceGroup->aboutToSetInfo(ItemInfo());
+*/
     d->faceGroup->aboutToSetInfoAfterRotate(ItemInfo());
     d->item->setAcceptHoverEvents(true);
 
@@ -737,6 +725,7 @@ void ItemPreviewView::dropEvent(QDropEvent* e)
     }
 
     e->accept();
+
     return;
 }
 
