@@ -687,7 +687,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older bundle Package files from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-MacOS-x86-64$DEBUG_SUF.pkg*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-MacOS*$DEBUG_SUF.pkg*"
 
     echo -e "---------- Upload new bundle Package files to files.kde.org repository \n"
 
