@@ -55,74 +55,43 @@ class Q_DECL_HIDDEN FilterSideBarWidget::Private
 {
 public:
 
-    explicit Private()
-      : space               (nullptr),
-        expanderVlay        (nullptr),
-        tagFilterView       (nullptr),
-        tagFilterSearchBar  (nullptr),
-        tagOptionsBtn       (nullptr),
-        tagOptionsMenu      (nullptr),
-        tagFilterModel      (nullptr),
-        tagOrCondAction     (nullptr),
-        tagAndCondAction    (nullptr),
-        tagMatchCond        (ItemFilterSettings::OrCondition),
-        faceFilterView      (nullptr),
-        faceFilterSearchBar (nullptr),
-        faceOptionsBtn      (nullptr),
-        faceOptionsMenu     (nullptr),
-        faceFilterModel     (nullptr),
-        colorLabelFilter    (nullptr),
-        geolocationFilter   (nullptr),
-        pickLabelFilter     (nullptr),
-        ratingFilter        (nullptr),
-        mimeFilter          (nullptr),
-        textFilter          (nullptr),
-        withoutTagCheckBox  (nullptr),
-        withoutFaceCheckBox (nullptr),
-        expbox              (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString                   configSearchTextFilterFieldsEntry;
-    static const QString                   configLastShowUntaggedEntry;
-    static const QString                   configLastShowWithoutFaceEntry;
-    static const QString                   configMatchingConditionEntry;
+    const QString                          configSearchTextFilterFieldsEntry    = QLatin1String("Search Text Filter Fields");
+    const QString                          configLastShowUntaggedEntry          = QLatin1String("Show Untagged");
+    const QString                          configLastShowWithoutFaceEntry       = QLatin1String("Show Without Face");
+    const QString                          configMatchingConditionEntry         = QLatin1String("Matching Condition");
 
-    QWidget*                               space;
-    QVBoxLayout*                           expanderVlay;
+    QWidget*                               space                                = nullptr;
+    QVBoxLayout*                           expanderVlay                         = nullptr;
 
-    TagFilterView*                         tagFilterView;
-    SearchTextBarDb*                       tagFilterSearchBar;
-    QToolButton*                           tagOptionsBtn;
-    QMenu*                                 tagOptionsMenu;
-    TagModel*                              tagFilterModel;
-    QAction*                               tagOrCondAction;
-    QAction*                               tagAndCondAction;
-    ItemFilterSettings::MatchingCondition  tagMatchCond;
+    TagFilterView*                         tagFilterView                        = nullptr;
+    SearchTextBarDb*                       tagFilterSearchBar                   = nullptr;
+    QToolButton*                           tagOptionsBtn                        = nullptr;
+    QMenu*                                 tagOptionsMenu                       = nullptr;
+    TagModel*                              tagFilterModel                       = nullptr;
+    QAction*                               tagOrCondAction                      = nullptr;
+    QAction*                               tagAndCondAction                     = nullptr;
+    ItemFilterSettings::MatchingCondition  tagMatchCond                         = ItemFilterSettings::OrCondition;
 
-    TagFilterView*                         faceFilterView;
-    SearchTextBarDb*                       faceFilterSearchBar;
-    QToolButton*                           faceOptionsBtn;
-    QMenu*                                 faceOptionsMenu;
-    TagModel*                              faceFilterModel;
+    TagFilterView*                         faceFilterView                       = nullptr;
+    SearchTextBarDb*                       faceFilterSearchBar                  = nullptr;
+    QToolButton*                           faceOptionsBtn                       = nullptr;
+    QMenu*                                 faceOptionsMenu                      = nullptr;
+    TagModel*                              faceFilterModel                      = nullptr;
 
-    ColorLabelFilter*                      colorLabelFilter;
-    GeolocationFilter*                     geolocationFilter;
-    PickLabelFilter*                       pickLabelFilter;
-    RatingFilter*                          ratingFilter;
-    MimeFilter*                            mimeFilter;
-    TextFilter*                            textFilter;
+    ColorLabelFilter*                      colorLabelFilter                     = nullptr;
+    GeolocationFilter*                     geolocationFilter                    = nullptr;
+    PickLabelFilter*                       pickLabelFilter                      = nullptr;
+    RatingFilter*                          ratingFilter                         = nullptr;
+    MimeFilter*                            mimeFilter                           = nullptr;
+    TextFilter*                            textFilter                           = nullptr;
 
-    QCheckBox*                             withoutTagCheckBox;
-    QCheckBox*                             withoutFaceCheckBox;
+    QCheckBox*                             withoutTagCheckBox                   = nullptr;
+    QCheckBox*                             withoutFaceCheckBox                  = nullptr;
 
-    DExpanderBox*                          expbox;
+    DExpanderBox*                          expbox                               = nullptr;
 };
-
-const QString FilterSideBarWidget::Private::configSearchTextFilterFieldsEntry(QLatin1String("Search Text Filter Fields"));
-const QString FilterSideBarWidget::Private::configLastShowUntaggedEntry(QLatin1String("Show Untagged"));
-const QString FilterSideBarWidget::Private::configLastShowWithoutFaceEntry(QLatin1String("Show Without Face"));
-const QString FilterSideBarWidget::Private::configMatchingConditionEntry(QLatin1String("Matching Condition"));
 
 // ---------------------------------------------------------------------------------------------------
 
@@ -160,10 +129,10 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     d->tagFilterModel   = tagFilterModel;
     d->tagFilterView    = new TagFilterView(box3, tagFilterModel);
     d->tagFilterView->setObjectName(QLatin1String("ItemIconViewTagFilterView"));
-
-    //d->tagFilterView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
-    //d->tagFilterView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
-
+/*
+    d->tagFilterView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
+    d->tagFilterView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
+*/
     d->tagFilterSearchBar = new SearchTextBarDb(box3, QLatin1String("ItemIconViewTagFilterSearchBar"));
     d->tagFilterSearchBar->setModel(d->tagFilterView->filteredModel(),
                                     AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
@@ -328,12 +297,16 @@ void FilterSideBarWidget::slotTagOptionsMenu()
     switch (d->tagMatchCond)
     {
         case ItemFilterSettings::OrCondition:
+        {
             d->tagOrCondAction->setChecked(true);
             break;
+        }
 
         case ItemFilterSettings::AndCondition:
+        {
             d->tagAndCondAction->setChecked(true);
             break;
+        }
     }
 }
 
@@ -391,24 +364,28 @@ void FilterSideBarWidget::slotCheckedTagsChanged(const QList<TAlbum*>& includedT
 {
     Q_UNUSED(includedTags);
     Q_UNUSED(excludedTags);
+
     checkFilterChanges();
 }
 
 void FilterSideBarWidget::slotColorLabelFilterChanged(const QList<ColorLabel>& list)
 {
     Q_UNUSED(list);
+
     checkFilterChanges();
 }
 
 void FilterSideBarWidget::slotPickLabelFilterChanged(const QList<PickLabel>& list)
 {
     Q_UNUSED(list);
+
     checkFilterChanges();
 }
 
 void FilterSideBarWidget::slotWithoutTagChanged(int newState)
 {
     Q_UNUSED(newState);
+
     checkFilterChanges();
 }
 

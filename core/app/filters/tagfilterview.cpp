@@ -39,28 +39,18 @@ class Q_DECL_HIDDEN TagFilterView::Private
 {
 public:
 
-    explicit Private()
-      : onRestoreTagFiltersAction (nullptr),
-        offRestoreTagFiltersAction(nullptr),
-        ignoreTagAction           (nullptr),
-        includeTagAction          (nullptr),
-        excludeTagAction          (nullptr),
-        restoreTagFiltersAction   (nullptr),
-        tagFilterModeAction       (nullptr),
-        tagFilterModel            (nullptr)
-    {
-    }
+    Private() = default;
 
-    QAction*       onRestoreTagFiltersAction;
-    QAction*       offRestoreTagFiltersAction;
-    QAction*       ignoreTagAction;
-    QAction*       includeTagAction;
-    QAction*       excludeTagAction;
+    QAction*       onRestoreTagFiltersAction    = nullptr;
+    QAction*       offRestoreTagFiltersAction   = nullptr;
+    QAction*       ignoreTagAction              = nullptr;
+    QAction*       includeTagAction             = nullptr;
+    QAction*       excludeTagAction             = nullptr;
 
-    KSelectAction* restoreTagFiltersAction;
-    KSelectAction* tagFilterModeAction;
+    KSelectAction* restoreTagFiltersAction      = nullptr;
+    KSelectAction* tagFilterModeAction          = nullptr;
 
-    TagModel*      tagFilterModel;
+    TagModel*      tagFilterModel               = nullptr;
 };
 
 TagFilterView::TagFilterView(QWidget* const parent, TagModel* const tagFilterModel)
@@ -80,7 +70,6 @@ TagFilterView::TagFilterView(QWidget* const parent, TagModel* const tagFilterMod
 
     connect(tagModificationHelper(), SIGNAL(aboutToDeleteTag(TAlbum*)),
             this, SLOT(slotDeleteTagByContextMenu(TAlbum*)));
-
 }
 
 TagFilterView::~TagFilterView()
@@ -101,16 +90,22 @@ void TagFilterView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     switch (state)
     {
         case Qt::Unchecked:
+        {
             d->tagFilterModeAction->setCurrentAction(d->ignoreTagAction);
             break;
+        }
 
         case Qt::PartiallyChecked:
+        {
             d->tagFilterModeAction->setCurrentAction(d->excludeTagAction);
             break;
+        }
 
         case Qt::Checked:
+        {
             d->tagFilterModeAction->setCurrentAction(d->includeTagAction);
             break;
+        }
     }
 
     cmh.addAction(d->tagFilterModeAction);
