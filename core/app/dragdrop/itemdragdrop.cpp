@@ -225,8 +225,11 @@ static DropAction s_groupAction(const QDropEvent* const, QWidget* const view)
     QAction* sortAction                = nullptr;
 
     if (imgView &&
-        ((sortOrder == ItemSortSettings::SortByManualOrderAndName) ||
-         (sortOrder == ItemSortSettings::SortByManualOrderAndDate)))
+        (
+         (sortOrder == ItemSortSettings::SortByManualOrderAndName) ||
+         (sortOrder == ItemSortSettings::SortByManualOrderAndDate)
+        )
+       )
     {
         sortAction = addSortAction(&popMenu);
         popMenu.addSeparator();
@@ -254,8 +257,7 @@ static DropAction s_groupAction(const QDropEvent* const, QWidget* const view)
 // -------------------------------------------------------------------------------------
 
 ItemDragDropHandler::ItemDragDropHandler(ItemModel* const model)
-    : AbstractItemDragDropHandler(model),
-      m_readOnly(false)
+    : AbstractItemDragDropHandler(model)
 {
 }
 
@@ -424,24 +426,28 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
             // Check for drop of image on itself
 
-            if ((intImages.size()  == 1) &&
-                (intImages.first() == droppedOnInfo))
+            if (
+                (intImages.size()  == 1) &&
+                (intImages.first() == droppedOnInfo)
+               )
             {
                 return false;
             }
 
-            if (onlyInternal        &&
+            if (
+                onlyInternal        &&
                 droppedOn.isValid() &&
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                (e->modifiers() == Qt::NoModifier))
+                (e->modifiers() == Qt::NoModifier)
 
 #else
 
-                (e->keyboardModifiers() == Qt::NoModifier))
+                (e->keyboardModifiers() == Qt::NoModifier)
 
 #endif
+               )
 
             {
                 action = s_groupAction(e, view);
@@ -621,9 +627,11 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         if (talbum && talbum->hasProperty(TagPropertyName::person()))
         {
-            if ((tagIDs.first() == FaceTags::unconfirmedPersonTagId()) ||
+            if (
+                (tagIDs.first() == FaceTags::unconfirmedPersonTagId()) ||
                 (tagIDs.first() == FaceTags::unknownPersonTagId())     ||
-                !FaceTags::isPerson(tagIDs.first()))
+                !FaceTags::isPerson(tagIDs.first())
+               )
             {
                 return false;
             }
@@ -836,9 +844,11 @@ Qt::DropAction ItemDragDropHandler::accepts(const QDropEvent* e, const QModelInd
         return Qt::MoveAction;
     }
 
-    if (DTagListDrag::canDecode(e->mimeData())        ||
+    if (
+        DTagListDrag::canDecode(e->mimeData())        ||
         DCameraItemListDrag::canDecode(e->mimeData()) ||
-        DCameraDragObject::canDecode(e->mimeData()))
+        DCameraDragObject::canDecode(e->mimeData())
+       )
     {
         return Qt::MoveAction;
     }

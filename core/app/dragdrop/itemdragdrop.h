@@ -67,7 +67,7 @@ Q_SIGNALS:
 
 protected:
 
-    bool m_readOnly;
+    bool m_readOnly = false;
 };
 
 } // namespace Digikam
