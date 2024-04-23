@@ -37,7 +37,7 @@ class ItemThumbnailDelegate : public ItemDelegate
 public:
 
     explicit ItemThumbnailDelegate(ItemCategorizedView* const parent);
-    ~ItemThumbnailDelegate()                            override;
+    ~ItemThumbnailDelegate()                            override = default;
 
     void setFlow(QListView::Flow flow);
 

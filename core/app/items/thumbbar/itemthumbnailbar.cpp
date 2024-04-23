@@ -38,14 +38,10 @@ class Q_DECL_HIDDEN ItemThumbnailBar::Private
 {
 public:
 
-    explicit Private()
-      : scrollPolicy    (Qt::ScrollBarAlwaysOn),
-        duplicatesFilter(nullptr)
-    {
-    }
+    Private() = default;
 
-    Qt::ScrollBarPolicy          scrollPolicy;
-    NoDuplicatesItemFilterModel* duplicatesFilter;
+    Qt::ScrollBarPolicy          scrollPolicy       = Qt::ScrollBarAlwaysOn;
+    NoDuplicatesItemFilterModel* duplicatesFilter   = nullptr;
 };
 
 ItemThumbnailBar::ItemThumbnailBar(QWidget* const parent)
@@ -71,10 +67,12 @@ ItemThumbnailBar::ItemThumbnailBar(QWidget* const parent)
     setToolTipEnabled(ApplicationSettings::instance()->showToolTipsIsValid());
 
     // --- NOTE: use dynamic binding as slotSetupChanged() is a virtual slot which can be re-implemented in derived classes.
+
     connect(ApplicationSettings::instance(), &ApplicationSettings::setupChanged,
             this, &ItemThumbnailBar::slotSetupChanged);
 
     this->slotSetupChanged();
+
     // ---
 
     setFlow(LeftToRight);
@@ -109,7 +107,7 @@ void ItemThumbnailBar::installOverlays()
 
 void ItemThumbnailBar::slotDockLocationChanged(Qt::DockWidgetArea area)
 {
-    if (area == Qt::LeftDockWidgetArea || area == Qt::RightDockWidgetArea)
+    if ((area == Qt::LeftDockWidgetArea) || (area == Qt::RightDockWidgetArea))
     {
         setFlow(TopToBottom);
     }
@@ -126,6 +124,7 @@ void ItemThumbnailBar::setScrollBarPolicy(Qt::ScrollBarPolicy policy)
     if (policy == Qt::ScrollBarAsNeeded)
     {
         // Delegate resizing will cause endless relayouting, see bug #228807
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "The Qt::ScrollBarAsNeeded policy is not supported by ItemThumbnailBar";
     }
 
@@ -153,10 +152,12 @@ void ItemThumbnailBar::setFlow(QListView::Flow flow)
     del->setFlow(flow);
 
     // Reset the minimum and maximum sizes.
+
     setMinimumSize(QSize(0, 0));
     setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
 
     // Adjust minimum and maximum width to thumbnail sizes.
+
     if (flow == TopToBottom)
     {
         int viewportFullWidgetOffset = size().width() - viewport()->size().width();
@@ -197,7 +198,8 @@ void ItemThumbnailBar::assignRating(const QList<QModelIndex>& indexes, int ratin
 bool ItemThumbnailBar::event(QEvent* e)
 {
     // reset widget max/min sizes
-    if (e->type() == QEvent::StyleChange || e->type() == QEvent::Show)
+
+    if ((e->type() == QEvent::StyleChange) || (e->type() == QEvent::Show))
     {
         setFlow(flow());
     }
@@ -227,9 +229,11 @@ QModelIndex ItemThumbnailBar::lastIndex() const
 
 bool ItemThumbnailBar::hasHiddenGroupedImages(const ItemInfo& info) const
 {
-    return (info.hasGroupedImages()                &&
+    return (
+            info.hasGroupedImages()                &&
             !imageFilterModel()->isAllGroupsOpen() &&
-            !imageFilterModel()->isGroupOpen(info.id()));
+            !imageFilterModel()->isGroupOpen(info.id())
+           );
 }
 
 } // namespace Digikam

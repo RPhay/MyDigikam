@@ -41,16 +41,14 @@ ItemThumbnailDelegate::ItemThumbnailDelegate(ItemCategorizedView* parent)
     : ItemDelegate(*new ItemThumbnailDelegatePrivate, parent)
 {
     Q_D(ItemThumbnailDelegate);
-    d->init(this);
-}
 
-ItemThumbnailDelegate::~ItemThumbnailDelegate()
-{
+    d->init(this);
 }
 
 void ItemThumbnailDelegate::setFlow(QListView::Flow flow)
 {
     Q_D(ItemThumbnailDelegate);
+
     d->flow = flow;
 }
 
@@ -79,7 +77,7 @@ int ItemThumbnailDelegate::minimumSize() const
 }
 
 bool ItemThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect& visualRect,
-        const QModelIndex& index, QRect* activationRect) const
+                                              const QModelIndex& index, QRect* activationRect) const
 {
     // reuse implementation from grandparent
 
@@ -89,6 +87,7 @@ bool ItemThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect& vi
 void ItemThumbnailDelegate::updateContentWidth()
 {
     Q_D(ItemThumbnailDelegate);
+
     int maxSize;
 
     if (d->flow == QListView::LeftToRight)

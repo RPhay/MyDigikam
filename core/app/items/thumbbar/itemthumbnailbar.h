@@ -34,7 +34,9 @@ public:
     explicit ItemThumbnailBar(QWidget* const parent = nullptr);
     ~ItemThumbnailBar() override;
 
-    /// Sets the policy always for the one scroll bar which is relevant, depending on orientation
+    /**
+     * Sets the policy always for the one scroll bar which is relevant, depending on orientation.
+     */
     void setScrollBarPolicy(Qt::ScrollBarPolicy policy);
     void setFlow(QListView::Flow newFlow);
 
