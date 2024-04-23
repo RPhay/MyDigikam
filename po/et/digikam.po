@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 01:53+0000\n"
+"POT-Creation-Date: 2024-04-23 01:53+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -47,21 +47,21 @@ msgstr ""
 "X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: core/app/date/ddateedit.cpp:497
+#: core/app/date/ddateedit.cpp:492
 #, fuzzy, kde-format
 #| msgid "tomorrow"
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "homme"
 
-#: core/app/date/ddateedit.cpp:498
+#: core/app/date/ddateedit.cpp:493
 #, fuzzy, kde-format
 #| msgid "today"
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "täna"
 
-#: core/app/date/ddateedit.cpp:499
+#: core/app/date/ddateedit.cpp:494
 #, fuzzy, kde-format
 #| msgid "yesterday"
 msgctxt "@item: date keyword"
@@ -114,82 +114,82 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Sulge"
 
-#: core/app/date/ddatepicker_p.cpp:173
+#: core/app/date/ddatepicker_p.cpp:159
 #, kde-format
 msgid "Week %1"
 msgstr "%1. nädal"
 
-#: core/app/date/ddatepickerpopup.cpp:128
+#: core/app/date/ddatepickerpopup.cpp:125
 #, fuzzy, kde-format
 #| msgid "&Today"
 msgctxt "@item: date menu"
 msgid "&Today"
 msgstr "&Täna"
 
-#: core/app/date/ddatepickerpopup.cpp:129
+#: core/app/date/ddatepickerpopup.cpp:126
 #, fuzzy, kde-format
 #| msgid "To&morrow"
 msgctxt "@item: date menu"
 msgid "To&morrow"
 msgstr "Ho&mme"
 
-#: core/app/date/ddatepickerpopup.cpp:130
+#: core/app/date/ddatepickerpopup.cpp:127
 #, fuzzy, kde-format
 #| msgid "Next &Week"
 msgctxt "@item: date menu"
 msgid "Next &Week"
 msgstr "Järgmine &nädal"
 
-#: core/app/date/ddatepickerpopup.cpp:131
+#: core/app/date/ddatepickerpopup.cpp:128
 #, fuzzy, kde-format
 #| msgid "Next M&onth"
 msgctxt "@item: date menu"
 msgid "Next M&onth"
 msgstr "Järgmine k&uu"
 
-#: core/app/date/ddatepickerpopup.cpp:132
+#: core/app/date/ddatepickerpopup.cpp:129
 #, fuzzy, kde-format
 #| msgid "Y&esterday"
 msgctxt "@item: date menu"
 msgid "Y&esterday"
 msgstr "&Eile"
 
-#: core/app/date/ddatepickerpopup.cpp:133
+#: core/app/date/ddatepickerpopup.cpp:130
 #, fuzzy, kde-format
 #| msgid "Last &Monday"
 msgctxt "@item: date menu"
 msgid "Last &Monday"
 msgstr "Eel&mine esmaspäev"
 
-#: core/app/date/ddatepickerpopup.cpp:134
+#: core/app/date/ddatepickerpopup.cpp:131
 #, fuzzy, kde-format
 #| msgid "Last &Friday"
 msgctxt "@item: date menu"
 msgid "Last &Friday"
 msgstr "Eelmine ree&de"
 
-#: core/app/date/ddatepickerpopup.cpp:135
+#: core/app/date/ddatepickerpopup.cpp:132
 #, fuzzy, kde-format
 #| msgid "Last &Week"
 msgctxt "@item: date menu"
 msgid "Last &Week"
 msgstr "Eelmine &nädal"
 
-#: core/app/date/ddatepickerpopup.cpp:136
+#: core/app/date/ddatepickerpopup.cpp:133
 #, fuzzy, kde-format
 #| msgid "Last M&onth"
 msgctxt "@item: date menu"
 msgid "Last M&onth"
 msgstr "Eelmine k&uu"
 
-#: core/app/date/ddatepickerpopup.cpp:146
+#: core/app/date/ddatepickerpopup.cpp:143
 #, fuzzy, kde-format
 #| msgid "No Date"
 msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "Kuupäev puudub"
 
-#: core/app/date/timelinewidget.cpp:314
+#: core/app/date/timelinewidget.cpp:297
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Week #weeknumber - month name - year string\n"
@@ -207,21 +207,21 @@ msgstr ""
 "%1. nädal - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:318
+#: core/app/date/timelinewidget.cpp:301
 #, fuzzy, kde-format
 #| msgid "Start: "
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "Algus:"
 
-#: core/app/date/timelinewidget.cpp:319
+#: core/app/date/timelinewidget.cpp:302
 #, fuzzy, kde-format
 #| msgid "End: "
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "Lõpp:"
 
-#: core/app/date/timelinewidget.cpp:326
+#: core/app/date/timelinewidget.cpp:309
 #, fuzzy, kde-format
 #| msgctxt "month-name year-string"
 #| msgid "%1 %2"
@@ -45302,7 +45302,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
-#: core/utilities/maintenance/imagequalitysorter.cpp:101
+#: core/utilities/maintenance/imagequalitysorter.cpp:97
 #: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid "Image Quality Sorter"
@@ -64948,11 +64948,11 @@ msgid "Autotags Assignment"
 msgstr "Automaatne kohandamine"
 
 #: core/utilities/maintenance/dbcleaner.cpp:120
-#: core/utilities/maintenance/dbcleaner.cpp:220
-#: core/utilities/maintenance/dbcleaner.cpp:249
-#: core/utilities/maintenance/dbcleaner.cpp:280
-#: core/utilities/maintenance/dbcleaner.cpp:319
-#: core/utilities/maintenance/dbcleaner.cpp:364
+#: core/utilities/maintenance/dbcleaner.cpp:223
+#: core/utilities/maintenance/dbcleaner.cpp:252
+#: core/utilities/maintenance/dbcleaner.cpp:283
+#: core/utilities/maintenance/dbcleaner.cpp:322
+#: core/utilities/maintenance/dbcleaner.cpp:367
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Andmebaaside puhastamine: "
@@ -64962,32 +64962,32 @@ msgstr "Andmebaaside puhastamine: "
 msgid "analysing databases"
 msgstr "andmebaaside analüüsimine"
 
-#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:223
 #, kde-format
 msgid "cleaning core db"
 msgstr "põhiandmebaasi puhastamine"
 
-#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:252
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "pisipildiandmebaasi puhastamine"
 
-#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:283
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "näotuvastusandmebaasi puhastamine"
 
-#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:322
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "sarnasusandmebaasi puhastamine"
 
-#: core/utilities/maintenance/dbcleaner.cpp:364
+#: core/utilities/maintenance/dbcleaner.cpp:367
 #, kde-format
 msgid "shrinking databases"
 msgstr "andmebaaside kokkusurumine"
 
-#: core/utilities/maintenance/dbcleaner.cpp:483
+#: core/utilities/maintenance/dbcleaner.cpp:486
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -65002,64 +65002,64 @@ msgstr ""
 "töö. See infokast kaob niipea, kui kokkusurumine on lõpetatud.</p>Praegune "
 "olek:"
 
-#: core/utilities/maintenance/dbcleaner.cpp:496
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, kde-format
 msgid "Core DB"
 msgstr "Põhiandmebaas"
 
-#: core/utilities/maintenance/dbcleaner.cpp:497
+#: core/utilities/maintenance/dbcleaner.cpp:500
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "Pisipildiandmebaas"
 
-#: core/utilities/maintenance/dbcleaner.cpp:498
+#: core/utilities/maintenance/dbcleaner.cpp:501
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "Näotuvastusandmebaas"
 
-#: core/utilities/maintenance/dbcleaner.cpp:499
+#: core/utilities/maintenance/dbcleaner.cpp:502
 #, kde-format
 msgid "Similarity DB"
 msgstr "Sarnasusandmebaas"
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:112
+#: core/utilities/maintenance/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Topeltelementide otsimine"
 
-#: core/utilities/maintenance/facesdetector.cpp:277
+#: core/utilities/maintenance/facesdetector.cpp:279
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in album: %1"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/facesdetector.cpp:281
+#: core/utilities/maintenance/facesdetector.cpp:283
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in %1 albums"
 msgstr "Otsing albumites:"
 
-#: core/utilities/maintenance/facesdetector.cpp:288
+#: core/utilities/maintenance/facesdetector.cpp:290
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in image: %1"
 msgstr "Uuri nägusid"
 
-#: core/utilities/maintenance/facesdetector.cpp:292
+#: core/utilities/maintenance/facesdetector.cpp:294
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in %1 images"
 msgstr "Uuri nägusid"
 
-#: core/utilities/maintenance/facesdetector.cpp:297
+#: core/utilities/maintenance/facesdetector.cpp:299
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Nägude andmebaasi uuendamine."
 
-#: core/utilities/maintenance/fingerprintsgenerator.cpp:94
+#: core/utilities/maintenance/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr "Sõrmejäljed"
@@ -65341,7 +65341,7 @@ msgid "Sync Metadata and Database"
 msgstr "Metaandmete ja andmebaasi sünkroonimine"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:396
+#: core/utilities/maintenance/maintenancemngr.cpp:402
 #, kde-format
 msgid ""
 "All operations are done.\n"
@@ -65350,12 +65350,12 @@ msgstr ""
 "Kõik toimingud on tehtud.\n"
 "Kestus: %1"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:397
+#: core/utilities/maintenance/maintenancemngr.cpp:403
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr "digiKami hooldus"
 
-#: core/utilities/maintenance/maintenancetool.cpp:110
+#: core/utilities/maintenance/maintenancetool.cpp:107
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -65400,22 +65400,22 @@ msgstr ""
 "Pildi %1 üleslaadimine nurjus\n"
 "Kas jätkata?"
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:187
+#: core/utilities/maintenance/metadatasynchronizer.cpp:186
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Piltide metaandmete sünkroonimine andmebaasiga"
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:192
+#: core/utilities/maintenance/metadatasynchronizer.cpp:191
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Andmebaasi uuendamine piltide metaandmete põhjal"
 
-#: core/utilities/maintenance/newitemsfinder.cpp:73
+#: core/utilities/maintenance/newitemsfinder.cpp:71
 #, kde-format
 msgid "Find new items"
 msgstr "Uute elementide otsimine"
 
-#: core/utilities/maintenance/thumbsgenerator.cpp:114
+#: core/utilities/maintenance/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr "Pisipildid"

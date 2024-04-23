@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 01:53+0000\n"
+"POT-Creation-Date: 2024-04-23 01:53+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -59,21 +59,21 @@ msgstr ""
 "X-Generator: WordForge 0.8 RC1\n"
 "X-Language: km-KH\n"
 
-#: core/app/date/ddateedit.cpp:497
+#: core/app/date/ddateedit.cpp:492
 #, fuzzy, kde-format
 #| msgid "tomorrow"
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "ថ្ងៃស្អែក"
 
-#: core/app/date/ddateedit.cpp:498
+#: core/app/date/ddateedit.cpp:493
 #, fuzzy, kde-format
 #| msgid "today"
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "ថ្ងៃនេះ"
 
-#: core/app/date/ddateedit.cpp:499
+#: core/app/date/ddateedit.cpp:494
 #, fuzzy, kde-format
 #| msgid "yesterday"
 msgctxt "@item: date keyword"
@@ -131,83 +131,83 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "បិទ​"
 
-#: core/app/date/ddatepicker_p.cpp:173
+#: core/app/date/ddatepicker_p.cpp:159
 #, fuzzy, kde-format
 #| msgid "Week"
 msgid "Week %1"
 msgstr "សប្ដាហ៍"
 
-#: core/app/date/ddatepickerpopup.cpp:128
+#: core/app/date/ddatepickerpopup.cpp:125
 #, fuzzy, kde-format
 #| msgid "&Today"
 msgctxt "@item: date menu"
 msgid "&Today"
 msgstr "ថ្ងៃនេះ"
 
-#: core/app/date/ddatepickerpopup.cpp:129
+#: core/app/date/ddatepickerpopup.cpp:126
 #, fuzzy, kde-format
 #| msgid "To&morrow"
 msgctxt "@item: date menu"
 msgid "To&morrow"
 msgstr "ថ្ងៃស្អែក"
 
-#: core/app/date/ddatepickerpopup.cpp:130
+#: core/app/date/ddatepickerpopup.cpp:127
 #, fuzzy, kde-format
 #| msgid "Next &Week"
 msgctxt "@item: date menu"
 msgid "Next &Week"
 msgstr "សប្ដាហ៍​​ក្រោយ"
 
-#: core/app/date/ddatepickerpopup.cpp:131
+#: core/app/date/ddatepickerpopup.cpp:128
 #, fuzzy, kde-format
 #| msgid "Next M&onth"
 msgctxt "@item: date menu"
 msgid "Next M&onth"
 msgstr "ខែ​ក្រោយ"
 
-#: core/app/date/ddatepickerpopup.cpp:132
+#: core/app/date/ddatepickerpopup.cpp:129
 #, fuzzy, kde-format
 #| msgid "Y&esterday"
 msgctxt "@item: date menu"
 msgid "Y&esterday"
 msgstr "ម្សិលមិញ"
 
-#: core/app/date/ddatepickerpopup.cpp:133
+#: core/app/date/ddatepickerpopup.cpp:130
 #, fuzzy, kde-format
 #| msgid "Last &Monday"
 msgctxt "@item: date menu"
 msgid "Last &Monday"
 msgstr "ថ្ងៃច័ន្ទ​មុន"
 
-#: core/app/date/ddatepickerpopup.cpp:134
+#: core/app/date/ddatepickerpopup.cpp:131
 #, fuzzy, kde-format
 #| msgid "Last &Friday"
 msgctxt "@item: date menu"
 msgid "Last &Friday"
 msgstr "ថ្ងៃសុក្រ​មុន"
 
-#: core/app/date/ddatepickerpopup.cpp:135
+#: core/app/date/ddatepickerpopup.cpp:132
 #, fuzzy, kde-format
 #| msgid "Last &Week"
 msgctxt "@item: date menu"
 msgid "Last &Week"
 msgstr "សប្ដាហ៍​មុន"
 
-#: core/app/date/ddatepickerpopup.cpp:136
+#: core/app/date/ddatepickerpopup.cpp:133
 #, fuzzy, kde-format
 #| msgid "Last M&onth"
 msgctxt "@item: date menu"
 msgid "Last M&onth"
 msgstr "ខែមុន"
 
-#: core/app/date/ddatepickerpopup.cpp:146
+#: core/app/date/ddatepickerpopup.cpp:143
 #, fuzzy, kde-format
 #| msgid "No Date"
 msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "គ្មាន​កាលបរិច្ឆេទ"
 
-#: core/app/date/timelinewidget.cpp:314
+#: core/app/date/timelinewidget.cpp:297
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Week #weeknumber - month name - year string\n"
@@ -225,19 +225,19 @@ msgstr ""
 "សប្ដាណ៍ #%1 - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:318
+#: core/app/date/timelinewidget.cpp:301
 #, fuzzy, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "ជ្រើស​រូបភាព"
 
-#: core/app/date/timelinewidget.cpp:319
+#: core/app/date/timelinewidget.cpp:302
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr ""
 
-#: core/app/date/timelinewidget.cpp:326
+#: core/app/date/timelinewidget.cpp:309
 #, fuzzy, kde-format
 #| msgctxt "month-name year-string"
 #| msgid "%1 %2"
@@ -42770,7 +42770,7 @@ msgid "Gowtham Ashok"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
-#: core/utilities/maintenance/imagequalitysorter.cpp:101
+#: core/utilities/maintenance/imagequalitysorter.cpp:97
 #: core/utilities/maintenance/maintenancedlg.cpp:234
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
@@ -61597,11 +61597,11 @@ msgid "Autotags Assignment"
 msgstr "ការ​លៃ​តម្រូវ​ស្វ័យប្រវត្តិ"
 
 #: core/utilities/maintenance/dbcleaner.cpp:120
-#: core/utilities/maintenance/dbcleaner.cpp:220
-#: core/utilities/maintenance/dbcleaner.cpp:249
-#: core/utilities/maintenance/dbcleaner.cpp:280
-#: core/utilities/maintenance/dbcleaner.cpp:319
-#: core/utilities/maintenance/dbcleaner.cpp:364
+#: core/utilities/maintenance/dbcleaner.cpp:223
+#: core/utilities/maintenance/dbcleaner.cpp:252
+#: core/utilities/maintenance/dbcleaner.cpp:283
+#: core/utilities/maintenance/dbcleaner.cpp:322
+#: core/utilities/maintenance/dbcleaner.cpp:367
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
@@ -61612,33 +61612,33 @@ msgstr ""
 msgid "analysing databases"
 msgstr "កំពុង​រៀបចំ​មូលដ្ឋាន​ទិន្នន័យ..."
 
-#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:223
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:252
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:283
 #, fuzzy, kde-format
 msgid "cleaning recognition db"
 msgstr "ការ​បង្វិល​សេរី"
 
-#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:322
 #, fuzzy, kde-format
 msgid "cleaning similarity db"
 msgstr "ការ​បង្វិល​សេរី"
 
-#: core/utilities/maintenance/dbcleaner.cpp:364
+#: core/utilities/maintenance/dbcleaner.cpp:367
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgid "shrinking databases"
 msgstr "កំពុង​រៀបចំ​មូលដ្ឋាន​ទិន្នន័យ..."
 
-#: core/utilities/maintenance/dbcleaner.cpp:483
+#: core/utilities/maintenance/dbcleaner.cpp:486
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -61648,66 +61648,66 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:496
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, fuzzy, kde-format
 #| msgctxt "NAME OF TRANSLATORS"
 #| msgid "Your names"
 msgid "Core DB"
 msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា, អេង វណ្ណៈ, អោក ពិសិដ្ឋ"
 
-#: core/utilities/maintenance/dbcleaner.cpp:497
+#: core/utilities/maintenance/dbcleaner.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "@action Go to thumbnails (icon) view"
 #| msgid "Thumbnails"
 msgid "Thumbnails DB"
 msgstr "រូបភាព​តូច"
 
-#: core/utilities/maintenance/dbcleaner.cpp:498
+#: core/utilities/maintenance/dbcleaner.cpp:501
 #, fuzzy, kde-format
 msgid "Face Recognition DB"
 msgstr "ការ​បង្វិល​សេរី"
 
-#: core/utilities/maintenance/dbcleaner.cpp:499
+#: core/utilities/maintenance/dbcleaner.cpp:502
 #, kde-format
 msgid "Similarity DB"
 msgstr ""
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:112
+#: core/utilities/maintenance/duplicatesfinder.cpp:103
 #, kde-format
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:277
+#: core/utilities/maintenance/facesdetector.cpp:279
 #, fuzzy, kde-format
 #| msgid "Create new album"
 msgid "Scan for faces in album: %1"
 msgstr "បង្កើត​អាល់ប៊ុម​ថ្មី"
 
-#: core/utilities/maintenance/facesdetector.cpp:281
+#: core/utilities/maintenance/facesdetector.cpp:283
 #, fuzzy, kde-format
 #| msgid "Create new album"
 msgid "Scan for faces in %1 albums"
 msgstr "បង្កើត​អាល់ប៊ុម​ថ្មី"
 
-#: core/utilities/maintenance/facesdetector.cpp:288
+#: core/utilities/maintenance/facesdetector.cpp:290
 #, fuzzy, kde-format
 #| msgid "Scan collection for faces"
 msgid "Scan for faces in image: %1"
 msgstr "វិភាគ​រក​សម្រាំង​សម្រាប់​មុខ"
 
-#: core/utilities/maintenance/facesdetector.cpp:292
+#: core/utilities/maintenance/facesdetector.cpp:294
 #, fuzzy, kde-format
 #| msgid "Scan collection for faces"
 msgid "Scan for faces in %1 images"
 msgstr "វិភាគ​រក​សម្រាំង​សម្រាប់​មុខ"
 
-#: core/utilities/maintenance/facesdetector.cpp:297
+#: core/utilities/maintenance/facesdetector.cpp:299
 #, fuzzy, kde-format
 #| msgid "Updating orientation in database"
 msgid "Updating faces database"
 msgstr "ធ្វើ​បច្ចុប្បន្នភាព​ទិស​នៅ​ក្នុង​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/utilities/maintenance/fingerprintsgenerator.cpp:94
+#: core/utilities/maintenance/fingerprintsgenerator.cpp:90
 #, kde-format
 msgid "Finger-prints"
 msgstr ""
@@ -61980,19 +61980,19 @@ msgid "Sync Metadata and Database"
 msgstr ""
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:396
+#: core/utilities/maintenance/maintenancemngr.cpp:402
 #, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancemngr.cpp:397
+#: core/utilities/maintenance/maintenancemngr.cpp:403
 #, kde-format
 msgid "digiKam Maintenance"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancetool.cpp:110
+#: core/utilities/maintenance/maintenancetool.cpp:107
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -62023,22 +62023,22 @@ msgid ""
 "Do you want to continue?"
 msgstr "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:187
+#: core/utilities/maintenance/metadatasynchronizer.cpp:186
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr ""
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:192
+#: core/utilities/maintenance/metadatasynchronizer.cpp:191
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr ""
 
-#: core/utilities/maintenance/newitemsfinder.cpp:73
+#: core/utilities/maintenance/newitemsfinder.cpp:71
 #, kde-format
 msgid "Find new items"
 msgstr ""
 
-#: core/utilities/maintenance/thumbsgenerator.cpp:114
+#: core/utilities/maintenance/thumbsgenerator.cpp:116
 #, kde-format
 msgid "Thumbs"
 msgstr ""

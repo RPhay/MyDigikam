@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 01:53+0000\n"
+"POT-Creation-Date: 2024-04-23 01:53+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -49,19 +49,19 @@ msgstr ""
 "X-Generator: Lokalize 23.04.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/app/date/ddateedit.cpp:497
+#: core/app/date/ddateedit.cpp:492
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "bihar"
 
-#: core/app/date/ddateedit.cpp:498
+#: core/app/date/ddateedit.cpp:493
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "gaur"
 
-#: core/app/date/ddateedit.cpp:499
+#: core/app/date/ddateedit.cpp:494
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "yesterday"
@@ -113,72 +113,72 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Itxi"
 
-#: core/app/date/ddatepicker_p.cpp:173
+#: core/app/date/ddatepicker_p.cpp:159
 #, kde-format
 msgid "Week %1"
 msgstr "%1. astea"
 
-#: core/app/date/ddatepickerpopup.cpp:128
+#: core/app/date/ddatepickerpopup.cpp:125
 #, kde-format
 msgctxt "@item: date menu"
 msgid "&Today"
 msgstr "&Gaur"
 
-#: core/app/date/ddatepickerpopup.cpp:129
+#: core/app/date/ddatepickerpopup.cpp:126
 #, kde-format
 msgctxt "@item: date menu"
 msgid "To&morrow"
 msgstr "&Bihar"
 
-#: core/app/date/ddatepickerpopup.cpp:130
+#: core/app/date/ddatepickerpopup.cpp:127
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Next &Week"
 msgstr "Datorren &astea"
 
-#: core/app/date/ddatepickerpopup.cpp:131
+#: core/app/date/ddatepickerpopup.cpp:128
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Next M&onth"
 msgstr "Datorren &hilabetea"
 
-#: core/app/date/ddatepickerpopup.cpp:132
+#: core/app/date/ddatepickerpopup.cpp:129
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Y&esterday"
 msgstr "A&tzo"
 
-#: core/app/date/ddatepickerpopup.cpp:133
+#: core/app/date/ddatepickerpopup.cpp:130
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Last &Monday"
 msgstr "Iragan astele&hena"
 
-#: core/app/date/ddatepickerpopup.cpp:134
+#: core/app/date/ddatepickerpopup.cpp:131
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Last &Friday"
 msgstr "Iragan ost&irala"
 
-#: core/app/date/ddatepickerpopup.cpp:135
+#: core/app/date/ddatepickerpopup.cpp:132
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Last &Week"
 msgstr "Iragan a&stea"
 
-#: core/app/date/ddatepickerpopup.cpp:136
+#: core/app/date/ddatepickerpopup.cpp:133
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Last M&onth"
 msgstr "Iragan hi&labetea"
 
-#: core/app/date/ddatepickerpopup.cpp:146
+#: core/app/date/ddatepickerpopup.cpp:143
 #, kde-format
 msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "Datarik gabe"
 
-#: core/app/date/timelinewidget.cpp:314
+#: core/app/date/timelinewidget.cpp:297
 #, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -190,19 +190,19 @@ msgstr ""
 "%1. astea - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:318
+#: core/app/date/timelinewidget.cpp:301
 #, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "Hasi: "
 
-#: core/app/date/timelinewidget.cpp:319
+#: core/app/date/timelinewidget.cpp:302
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "Bukatu: "
 
-#: core/app/date/timelinewidget.cpp:326
+#: core/app/date/timelinewidget.cpp:309
 #, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
@@ -43970,7 +43970,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
-#: core/utilities/maintenance/imagequalitysorter.cpp:101
+#: core/utilities/maintenance/imagequalitysorter.cpp:97
 #: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid "Image Quality Sorter"
@@ -63051,11 +63051,11 @@ msgid "Autotags Assignment"
 msgstr "Doitze automatikoa"
 
 #: core/utilities/maintenance/dbcleaner.cpp:120
-#: core/utilities/maintenance/dbcleaner.cpp:220
-#: core/utilities/maintenance/dbcleaner.cpp:249
-#: core/utilities/maintenance/dbcleaner.cpp:280
-#: core/utilities/maintenance/dbcleaner.cpp:319
-#: core/utilities/maintenance/dbcleaner.cpp:364
+#: core/utilities/maintenance/dbcleaner.cpp:223
+#: core/utilities/maintenance/dbcleaner.cpp:252
+#: core/utilities/maintenance/dbcleaner.cpp:283
+#: core/utilities/maintenance/dbcleaner.cpp:322
+#: core/utilities/maintenance/dbcleaner.cpp:367
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
@@ -63065,34 +63065,34 @@ msgstr ""
 msgid "analysing databases"
 msgstr "Datu-basea hasieratzea"
 
-#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:223
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:252
 #, fuzzy, kde-format
 #| msgid "Build Missing Thumbnails"
 msgid "cleaning thumbnails db"
 msgstr "Eraiki falta diren koadro txikiak"
 
-#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:283
 #, fuzzy, kde-format
 msgid "cleaning recognition db"
 msgstr "Alderantzizko ordenan"
 
-#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:322
 #, fuzzy, kde-format
 #| msgid "Build Missing Thumbnails"
 msgid "cleaning similarity db"
 msgstr "Eraiki falta diren koadro txikiak"
 
-#: core/utilities/maintenance/dbcleaner.cpp:364
+#: core/utilities/maintenance/dbcleaner.cpp:367
 #, fuzzy, kde-format
 msgid "shrinking databases"
 msgstr "Datu-basea hasieratzea"
 
-#: core/utilities/maintenance/dbcleaner.cpp:483
+#: core/utilities/maintenance/dbcleaner.cpp:486
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -63102,65 +63102,65 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:496
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, fuzzy, kde-format
 #| msgid "Schema Name"
 msgid "Core DB"
 msgstr "Eskemaren izena"
 
-#: core/utilities/maintenance/dbcleaner.cpp:497
+#: core/utilities/maintenance/dbcleaner.cpp:500
 #, fuzzy, kde-format
 msgid "Thumbnails DB"
 msgstr "Koadro txikiak"
 
-#: core/utilities/maintenance/dbcleaner.cpp:498
+#: core/utilities/maintenance/dbcleaner.cpp:501
 #, fuzzy, kde-format
 msgid "Face Recognition DB"
 msgstr "Alderantzizko ordenan"
 
-#: core/utilities/maintenance/dbcleaner.cpp:499
+#: core/utilities/maintenance/dbcleaner.cpp:502
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Similarity DB"
 msgstr "Antzekotasuna:"
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:112
+#: core/utilities/maintenance/duplicatesfinder.cpp:103
 #, fuzzy, kde-format
 msgid "Find duplicates items"
 msgstr "Bilatu bikoiztutakoak"
 
-#: core/utilities/maintenance/facesdetector.cpp:277
+#: core/utilities/maintenance/facesdetector.cpp:279
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in album: %1"
 msgstr "Bilatu albumetan:"
 
-#: core/utilities/maintenance/facesdetector.cpp:281
+#: core/utilities/maintenance/facesdetector.cpp:283
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in %1 albums"
 msgstr "Bilatu albumetan:"
 
-#: core/utilities/maintenance/facesdetector.cpp:288
+#: core/utilities/maintenance/facesdetector.cpp:290
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in image: %1"
 msgstr "Aztertu irudien bila"
 
-#: core/utilities/maintenance/facesdetector.cpp:292
+#: core/utilities/maintenance/facesdetector.cpp:294
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in %1 images"
 msgstr "Aztertu irudien bila"
 
-#: core/utilities/maintenance/facesdetector.cpp:297
+#: core/utilities/maintenance/facesdetector.cpp:299
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>Hatz-marken datu-basea eguneratzen. Itxaron...</b>"
 
-#: core/utilities/maintenance/fingerprintsgenerator.cpp:94
+#: core/utilities/maintenance/fingerprintsgenerator.cpp:90
 #, fuzzy, kde-format
 msgid "Finger-prints"
 msgstr "Hatz-markarik ez"
@@ -63429,19 +63429,19 @@ msgid "Sync Metadata and Database"
 msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen. Itxaron..."
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:396
+#: core/utilities/maintenance/maintenancemngr.cpp:402
 #, fuzzy, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr "Alderantzizko ordenan"
 
-#: core/utilities/maintenance/maintenancemngr.cpp:397
+#: core/utilities/maintenance/maintenancemngr.cpp:403
 #, fuzzy, kde-format
 msgid "digiKam Maintenance"
 msgstr "Angelu nagusia:"
 
-#: core/utilities/maintenance/maintenancetool.cpp:110
+#: core/utilities/maintenance/maintenancetool.cpp:107
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -63482,22 +63482,22 @@ msgstr ""
 "Huts egin du %1 irudia zama-igotzea\n"
 "Jarraitu nahi duzu?"
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:187
+#: core/utilities/maintenance/metadatasynchronizer.cpp:186
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen. Itxaron..."
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:192
+#: core/utilities/maintenance/metadatasynchronizer.cpp:191
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "Datu-basea irudiaren metadatuetatik eguneratzen. Itxaron..."
 
-#: core/utilities/maintenance/newitemsfinder.cpp:73
+#: core/utilities/maintenance/newitemsfinder.cpp:71
 #, fuzzy, kde-format
 msgid "Find new items"
 msgstr "Bildumaren arabera"
 
-#: core/utilities/maintenance/thumbsgenerator.cpp:114
+#: core/utilities/maintenance/thumbsgenerator.cpp:116
 #, fuzzy, kde-format
 msgid "Thumbs"
 msgstr "Koadro txikiak"

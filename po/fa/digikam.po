@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-22 01:53+0000\n"
+"POT-Creation-Date: 2024-04-23 01:53+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -384,21 +384,21 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: core/app/date/ddateedit.cpp:497
+#: core/app/date/ddateedit.cpp:492
 #, fuzzy, kde-format
 #| msgid "tomorrow"
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "فردا"
 
-#: core/app/date/ddateedit.cpp:498
+#: core/app/date/ddateedit.cpp:493
 #, fuzzy, kde-format
 #| msgid "today"
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "امروز"
 
-#: core/app/date/ddateedit.cpp:499
+#: core/app/date/ddateedit.cpp:494
 #, fuzzy, kde-format
 #| msgid "yesterday"
 msgctxt "@item: date keyword"
@@ -455,82 +455,82 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "&بستن‌"
 
-#: core/app/date/ddatepicker_p.cpp:173
+#: core/app/date/ddatepicker_p.cpp:159
 #, fuzzy, kde-format
 msgid "Week %1"
 msgstr "&هفته‌"
 
-#: core/app/date/ddatepickerpopup.cpp:128
+#: core/app/date/ddatepickerpopup.cpp:125
 #, fuzzy, kde-format
 #| msgid "&Today"
 msgctxt "@item: date menu"
 msgid "&Today"
 msgstr "&امروز‌"
 
-#: core/app/date/ddatepickerpopup.cpp:129
+#: core/app/date/ddatepickerpopup.cpp:126
 #, fuzzy, kde-format
 #| msgid "To&morrow"
 msgctxt "@item: date menu"
 msgid "To&morrow"
 msgstr "&فردا‌"
 
-#: core/app/date/ddatepickerpopup.cpp:130
+#: core/app/date/ddatepickerpopup.cpp:127
 #, fuzzy, kde-format
 #| msgid "Next &Week"
 msgctxt "@item: date menu"
 msgid "Next &Week"
 msgstr "&هفته بعدی‌"
 
-#: core/app/date/ddatepickerpopup.cpp:131
+#: core/app/date/ddatepickerpopup.cpp:128
 #, fuzzy, kde-format
 #| msgid "Next M&onth"
 msgctxt "@item: date menu"
 msgid "Next M&onth"
 msgstr "&ماه بعدی‌"
 
-#: core/app/date/ddatepickerpopup.cpp:132
+#: core/app/date/ddatepickerpopup.cpp:129
 #, fuzzy, kde-format
 #| msgid "Y&esterday"
 msgctxt "@item: date menu"
 msgid "Y&esterday"
 msgstr "&دیروز‌"
 
-#: core/app/date/ddatepickerpopup.cpp:133
+#: core/app/date/ddatepickerpopup.cpp:130
 #, fuzzy, kde-format
 #| msgid "Last &Monday"
 msgctxt "@item: date menu"
 msgid "Last &Monday"
 msgstr "آخرین &دوشنبه‌"
 
-#: core/app/date/ddatepickerpopup.cpp:134
+#: core/app/date/ddatepickerpopup.cpp:131
 #, fuzzy, kde-format
 #| msgid "Last &Friday"
 msgctxt "@item: date menu"
 msgid "Last &Friday"
 msgstr "آخرین &جمعه‌"
 
-#: core/app/date/ddatepickerpopup.cpp:135
+#: core/app/date/ddatepickerpopup.cpp:132
 #, fuzzy, kde-format
 #| msgid "Last &Week"
 msgctxt "@item: date menu"
 msgid "Last &Week"
 msgstr "آخرین &هفته‌"
 
-#: core/app/date/ddatepickerpopup.cpp:136
+#: core/app/date/ddatepickerpopup.cpp:133
 #, fuzzy, kde-format
 #| msgid "Last M&onth"
 msgctxt "@item: date menu"
 msgid "Last M&onth"
 msgstr "آخرین &ماه‌"
 
-#: core/app/date/ddatepickerpopup.cpp:146
+#: core/app/date/ddatepickerpopup.cpp:143
 #, fuzzy, kde-format
 #| msgid "No Date"
 msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "بدون تاریخ"
 
-#: core/app/date/timelinewidget.cpp:314
+#: core/app/date/timelinewidget.cpp:297
 #, fuzzy, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -540,19 +540,19 @@ msgid ""
 "%4\t%5"
 msgstr "&هفته‌"
 
-#: core/app/date/timelinewidget.cpp:318
+#: core/app/date/timelinewidget.cpp:301
 #, fuzzy, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "آغاز"
 
-#: core/app/date/timelinewidget.cpp:319
+#: core/app/date/timelinewidget.cpp:302
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr ""
 
-#: core/app/date/timelinewidget.cpp:326
+#: core/app/date/timelinewidget.cpp:309
 #, fuzzy, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
@@ -41920,7 +41920,7 @@ msgid "Gowtham Ashok"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:210
-#: core/utilities/maintenance/imagequalitysorter.cpp:101
+#: core/utilities/maintenance/imagequalitysorter.cpp:97
 #: core/utilities/maintenance/maintenancedlg.cpp:234
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
@@ -59797,11 +59797,11 @@ msgid "Autotags Assignment"
 msgstr "تنظیم:"
 
 #: core/utilities/maintenance/dbcleaner.cpp:120
-#: core/utilities/maintenance/dbcleaner.cpp:220
-#: core/utilities/maintenance/dbcleaner.cpp:249
-#: core/utilities/maintenance/dbcleaner.cpp:280
-#: core/utilities/maintenance/dbcleaner.cpp:319
-#: core/utilities/maintenance/dbcleaner.cpp:364
+#: core/utilities/maintenance/dbcleaner.cpp:223
+#: core/utilities/maintenance/dbcleaner.cpp:252
+#: core/utilities/maintenance/dbcleaner.cpp:283
+#: core/utilities/maintenance/dbcleaner.cpp:322
+#: core/utilities/maintenance/dbcleaner.cpp:367
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
@@ -59811,34 +59811,34 @@ msgstr ""
 msgid "analysing databases"
 msgstr "خواندن دادگان"
 
-#: core/utilities/maintenance/dbcleaner.cpp:220
+#: core/utilities/maintenance/dbcleaner.cpp:223
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:249
+#: core/utilities/maintenance/dbcleaner.cpp:252
 #, fuzzy, kde-format
 #| msgid "Rebuild all Thumbnails..."
 msgid "cleaning thumbnails db"
 msgstr "ساخت مجدد همه ریزنقشها..."
 
-#: core/utilities/maintenance/dbcleaner.cpp:280
+#: core/utilities/maintenance/dbcleaner.cpp:283
 #, fuzzy, kde-format
 msgid "cleaning recognition db"
 msgstr "بدون گزینش"
 
-#: core/utilities/maintenance/dbcleaner.cpp:319
+#: core/utilities/maintenance/dbcleaner.cpp:322
 #, fuzzy, kde-format
 #| msgid "Rebuild all Thumbnails..."
 msgid "cleaning similarity db"
 msgstr "ساخت مجدد همه ریزنقشها..."
 
-#: core/utilities/maintenance/dbcleaner.cpp:364
+#: core/utilities/maintenance/dbcleaner.cpp:367
 #, fuzzy, kde-format
 msgid "shrinking databases"
 msgstr "خواندن دادگان"
 
-#: core/utilities/maintenance/dbcleaner.cpp:483
+#: core/utilities/maintenance/dbcleaner.cpp:486
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -59848,65 +59848,65 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:496
+#: core/utilities/maintenance/dbcleaner.cpp:499
 #, fuzzy, kde-format
 msgid "Core DB"
 msgstr "نام تصویر"
 
-#: core/utilities/maintenance/dbcleaner.cpp:497
+#: core/utilities/maintenance/dbcleaner.cpp:500
 #, fuzzy, kde-format
 #| msgctxt "@action Go to thumbnails (icon) view"
 #| msgid "Thumbnails"
 msgid "Thumbnails DB"
 msgstr "ریزنقش"
 
-#: core/utilities/maintenance/dbcleaner.cpp:498
+#: core/utilities/maintenance/dbcleaner.cpp:501
 #, fuzzy, kde-format
 msgid "Face Recognition DB"
 msgstr "بدون گزینش"
 
-#: core/utilities/maintenance/dbcleaner.cpp:499
+#: core/utilities/maintenance/dbcleaner.cpp:502
 #, fuzzy, kde-format
 msgid "Similarity DB"
 msgstr "نظم:"
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:112
+#: core/utilities/maintenance/duplicatesfinder.cpp:103
 #, fuzzy, kde-format
 msgid "Find duplicates items"
 msgstr "عکس اصلی:"
 
-#: core/utilities/maintenance/facesdetector.cpp:277
+#: core/utilities/maintenance/facesdetector.cpp:279
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for faces in album: %1"
 msgstr "جستجو در:"
 
-#: core/utilities/maintenance/facesdetector.cpp:281
+#: core/utilities/maintenance/facesdetector.cpp:283
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
 msgid "Scan for faces in %1 albums"
 msgstr "جستجو در:"
 
-#: core/utilities/maintenance/facesdetector.cpp:288
+#: core/utilities/maintenance/facesdetector.cpp:290
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in image: %1"
 msgstr "پویش برای تصاویر جدید"
 
-#: core/utilities/maintenance/facesdetector.cpp:292
+#: core/utilities/maintenance/facesdetector.cpp:294
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for faces in %1 images"
 msgstr "پویش برای تصاویر جدید"
 
-#: core/utilities/maintenance/facesdetector.cpp:297
+#: core/utilities/maintenance/facesdetector.cpp:299
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "<b>به‌روزرسانی دادگان ریزنقشها در حال اجراست. لطفاً، منتظر بمانید...</b>"
 
-#: core/utilities/maintenance/fingerprintsgenerator.cpp:94
+#: core/utilities/maintenance/fingerprintsgenerator.cpp:90
 #, fuzzy, kde-format
 msgid "Finger-prints"
 msgstr "<b>به‌روزرسانی دادگان ریزنقشها انجام شده است </b>"
@@ -60172,19 +60172,19 @@ msgid "Sync Metadata and Database"
 msgstr "همگام‌سازی تصاویر با دادگان"
 
 #. i18n
-#: core/utilities/maintenance/maintenancemngr.cpp:396
+#: core/utilities/maintenance/maintenancemngr.cpp:402
 #, fuzzy, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
 msgstr "خرابی در باربینی جهت Exif برای پرونده %1."
 
-#: core/utilities/maintenance/maintenancemngr.cpp:397
+#: core/utilities/maintenance/maintenancemngr.cpp:403
 #, fuzzy, kde-format
 msgid "digiKam Maintenance"
 msgstr "زاویه اصلی:"
 
-#: core/utilities/maintenance/maintenancetool.cpp:110
+#: core/utilities/maintenance/maintenancetool.cpp:107
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -60219,22 +60219,22 @@ msgstr ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:187
+#: core/utilities/maintenance/metadatasynchronizer.cpp:186
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "همگام‌سازی تصاویر با دادگان"
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:192
+#: core/utilities/maintenance/metadatasynchronizer.cpp:191
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "<b>به‌روزرسانی دادگان ریزنقشها در حال اجراست. لطفاً، منتظر بمانید...</b>"
 
-#: core/utilities/maintenance/newitemsfinder.cpp:73
+#: core/utilities/maintenance/newitemsfinder.cpp:71
 #, fuzzy, kde-format
 msgid "Find new items"
 msgstr "بر اساس مجموعه"
 
-#: core/utilities/maintenance/thumbsgenerator.cpp:114
+#: core/utilities/maintenance/thumbsgenerator.cpp:116
 #, fuzzy, kde-format
 msgid "Thumbs"
 msgstr "نمایش ریزنقشها"
