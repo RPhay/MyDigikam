@@ -80,8 +80,8 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool videoAll, bool m
     {
         QStringList exclude;
 
-        // Remove orientation and dates from the ExifTool container,
-        // we already got the correct values with the FFmpeg backend.
+        // Remove orientation and dates from the ExifTool container
+        // if the FFmpeg backend has already found this metadata.
 
         exclude << QLatin1String("Exif.Image.DateTime");
         exclude << QLatin1String("Exif.Image.Orientation");
