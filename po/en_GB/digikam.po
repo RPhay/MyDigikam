@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 01:53+0000\n"
+"POT-Creation-Date: 2024-04-24 01:54+0000\n"
 "PO-Revision-Date: 2023-05-21 15:02+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -230,7 +230,7 @@ msgstr "&Copy Here"
 #: core/app/dragdrop/albumdragdrop.cpp:356
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
-#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:767
+#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
 #: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
 #: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:396
 #, kde-format
@@ -244,13 +244,13 @@ msgid "Set as Album Thumbnail"
 msgstr "Set as Album Thumbnail"
 
 #: core/app/dragdrop/albumdragdrop.cpp:288
-#: core/app/dragdrop/itemdragdrop.cpp:763
+#: core/app/dragdrop/itemdragdrop.cpp:771
 #, kde-format
 msgid "Download From Camera"
 msgstr "Download From Camera"
 
 #: core/app/dragdrop/albumdragdrop.cpp:289
-#: core/app/dragdrop/itemdragdrop.cpp:765
+#: core/app/dragdrop/itemdragdrop.cpp:773
 #, kde-format
 msgid "Download && Delete From Camera"
 msgstr "Download && Delete From Camera"
@@ -295,40 +295,40 @@ msgstr "Group here and move to album"
 msgid "Assign Tag to Dropped Items"
 msgstr "Assign Tag to Dropped Items"
 
-#: core/app/dragdrop/itemdragdrop.cpp:645
+#: core/app/dragdrop/itemdragdrop.cpp:653
 #, kde-format
 msgid "Change Face Tags"
 msgstr "Change Face Tags"
 
-#: core/app/dragdrop/itemdragdrop.cpp:649
+#: core/app/dragdrop/itemdragdrop.cpp:657
 #, kde-format
 msgid "Change Face Tag"
 msgstr "Change Face Tag"
 
-#: core/app/dragdrop/itemdragdrop.cpp:653
-#: core/app/dragdrop/itemdragdrop.cpp:706
-#: core/app/views/preview/itempreviewview.cpp:720
+#: core/app/dragdrop/itemdragdrop.cpp:661
+#: core/app/dragdrop/itemdragdrop.cpp:714
+#: core/app/views/preview/itempreviewview.cpp:708
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cancel"
 
-#: core/app/dragdrop/itemdragdrop.cpp:691
+#: core/app/dragdrop/itemdragdrop.cpp:699
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "Assign Tags to &Selected Items"
 
-#: core/app/dragdrop/itemdragdrop.cpp:699
-#: core/app/views/preview/itempreviewview.cpp:718
+#: core/app/dragdrop/itemdragdrop.cpp:707
+#: core/app/views/preview/itempreviewview.cpp:706
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Assign Tags to &This Item"
 
-#: core/app/dragdrop/itemdragdrop.cpp:703
+#: core/app/dragdrop/itemdragdrop.cpp:711
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "Assign Tags to &All Items"
 
-#: core/app/dragdrop/itemdragdrop.cpp:761
+#: core/app/dragdrop/itemdragdrop.cpp:769
 #, kde-format
 msgid "Importing"
 msgstr "Importing"
@@ -355,38 +355,38 @@ msgstr[1] "Change face names from '%2' to '%3'"
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Assign Tag(s) '%1' to Items"
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:112
 #, kde-format
 msgid "Text Filter"
 msgstr "Text Filter"
 
-#: core/app/filters/filtersidebarwidget.cpp:149
+#: core/app/filters/filtersidebarwidget.cpp:118
 #, kde-format
 msgid "MIME Type Filter"
 msgstr "MIME Type Filter"
 
-#: core/app/filters/filtersidebarwidget.cpp:155
+#: core/app/filters/filtersidebarwidget.cpp:124
 #, kde-format
 msgid "Geolocation Filter"
 msgstr "Geolocation Filter"
 
-#: core/app/filters/filtersidebarwidget.cpp:172
+#: core/app/filters/filtersidebarwidget.cpp:141
 #, kde-format
 msgid "Images Without Tags"
 msgstr "Images Without Tags"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/app/filters/filtersidebarwidget.cpp:143
 #, kde-format
 msgid "Show images without a tag."
 msgstr "Show images without a tag."
 
-#: core/app/filters/filtersidebarwidget.cpp:177
+#: core/app/filters/filtersidebarwidget.cpp:146
 #, kde-format
 msgid "Tags Matching Condition"
 msgstr "Tags Matching Condition"
 
-#: core/app/filters/filtersidebarwidget.cpp:180
-#: core/app/filters/filtersidebarwidget.cpp:230
+#: core/app/filters/filtersidebarwidget.cpp:149
+#: core/app/filters/filtersidebarwidget.cpp:199
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
@@ -395,91 +395,91 @@ msgstr ""
 "Defines in which way the selected tags are combined to filter the images. "
 "This also includes the '%1' tick box."
 
-#: core/app/filters/filtersidebarwidget.cpp:187
+#: core/app/filters/filtersidebarwidget.cpp:156
 #: core/utilities/searchwindow/searchgroup_label.cpp:286
 #, kde-format
 msgid "OR"
 msgstr "OR"
 
-#: core/app/filters/filtersidebarwidget.cpp:190
+#: core/app/filters/filtersidebarwidget.cpp:159
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "AND"
 msgstr "AND"
 
-#: core/app/filters/filtersidebarwidget.cpp:205
+#: core/app/filters/filtersidebarwidget.cpp:174
 #, kde-format
 msgid "Tags Filter"
 msgstr "Tags Filter"
 
-#: core/app/filters/filtersidebarwidget.cpp:222
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, kde-format
 msgid "Images Without Face tags"
 msgstr "Images Without Face tags"
 
-#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, kde-format
 msgid "Show images without a face tag."
 msgstr "Show images without a face tag."
 
-#: core/app/filters/filtersidebarwidget.cpp:227
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, kde-format
 msgid "Face tags Matching Condition"
 msgstr "Face tags Matching Condition"
 
-#: core/app/filters/filtersidebarwidget.cpp:249
+#: core/app/filters/filtersidebarwidget.cpp:218
 #, kde-format
 msgid "Face Tags Filter"
 msgstr "Face Tags Filter"
 
-#: core/app/filters/filtersidebarwidget.cpp:267
+#: core/app/filters/filtersidebarwidget.cpp:236
 #, kde-format
 msgid "Labels Filter"
 msgstr "Labels Filter"
 
-#: core/app/filters/tagfilterview.cpp:72
+#: core/app/filters/tagfilterview.cpp:62
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "Restore Tag Filters"
 
-#: core/app/filters/tagfilterview.cpp:73
+#: core/app/filters/tagfilterview.cpp:63
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "On"
 
-#: core/app/filters/tagfilterview.cpp:74
+#: core/app/filters/tagfilterview.cpp:64
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr "Off"
 
-#: core/app/filters/tagfilterview.cpp:76
+#: core/app/filters/tagfilterview.cpp:66
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "Tag Filter Mode"
 
-#: core/app/filters/tagfilterview.cpp:77
+#: core/app/filters/tagfilterview.cpp:67
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "Ignore This Tag"
 
-#: core/app/filters/tagfilterview.cpp:78
+#: core/app/filters/tagfilterview.cpp:68
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "Must Have This Tag"
 
-#: core/app/filters/tagfilterview.cpp:79
+#: core/app/filters/tagfilterview.cpp:69
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
 msgstr "Must Not Have This Tag"
 
-#: core/app/items/delegate/itemdelegate.cpp:362
+#: core/app/items/delegate/itemdelegate.cpp:386
 #, kde-format
 msgid "Reference Image"
 msgstr "Reference Image"
@@ -490,7 +490,7 @@ msgctxt "@info:tooltip"
 msgid "If this is not a face, click to delete it."
 msgstr "If this is not a face, click to delete it."
 
-#: core/app/items/overlays/groupindicatoroverlay.cpp:116
+#: core/app/items/overlays/groupindicatoroverlay.cpp:117
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "1 grouped item.\n"
@@ -498,19 +498,19 @@ msgid_plural "%1 grouped items.\n"
 msgstr[0] "1 grouped item.\n"
 msgstr[1] "%1 grouped items.\n"
 
-#: core/app/items/overlays/groupindicatoroverlay.cpp:122
+#: core/app/items/overlays/groupindicatoroverlay.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group is open."
 msgstr "Group is open."
 
-#: core/app/items/overlays/groupindicatoroverlay.cpp:126
+#: core/app/items/overlays/groupindicatoroverlay.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr "Group is closed."
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:93
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, kde-format
@@ -525,7 +525,7 @@ msgid "Show Fullscreen"
 msgstr "Show Fullscreen"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:189
+#: core/app/views/preview/itempreviewview.cpp:167
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -533,7 +533,7 @@ msgid "Rotate Left"
 msgstr "Rotate Left"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:191
+#: core/app/views/preview/itempreviewview.cpp:169
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -902,17 +902,17 @@ msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "Batch Queue Manager"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:138
+#: core/app/items/utils/contextmenuhelper_tools.cpp:140
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
 msgstr "Add to Existing Queue"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:259
-#: core/app/items/utils/itemcategorydrawer.cpp:267
-#: core/app/items/utils/itemcategorydrawer.cpp:274
-#: core/app/items/utils/itemcategorydrawer.cpp:359
+#: core/app/items/utils/itemcategorydrawer.cpp:277
+#: core/app/items/utils/itemcategorydrawer.cpp:285
+#: core/app/items/utils/itemcategorydrawer.cpp:292
 #: core/app/items/utils/itemcategorydrawer.cpp:377
+#: core/app/items/utils/itemcategorydrawer.cpp:395
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -922,7 +922,7 @@ msgid_plural "%1 Items"
 msgstr[0] "1 Item"
 msgstr[1] "%1 Items"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:303
+#: core/app/items/utils/itemcategorydrawer.cpp:321
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
@@ -930,7 +930,7 @@ msgid_plural "Album Date: %2 %3 %4 - %1 Items"
 msgstr[0] "Album Date: %2 %3 %4 - 1 Item"
 msgstr[1] "Album Date: %2 %3 %4 - %1 Items"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:330
+#: core/app/items/utils/itemcategorydrawer.cpp:348
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
@@ -938,7 +938,7 @@ msgid_plural "%2 including %1 subtags"
 msgstr[0] "%2 including 1 subtag"
 msgstr[1] "%2 including %1 subtags"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:334
+#: core/app/items/utils/itemcategorydrawer.cpp:352
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -948,28 +948,28 @@ msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - 1 Item"
 msgstr[1] "%2 - %1 Items"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:339
+#: core/app/items/utils/itemcategorydrawer.cpp:357
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - 1 Item"
 msgstr[1] "%2 - %1 Items"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:351
+#: core/app/items/utils/itemcategorydrawer.cpp:369
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
 msgstr[0] "Keyword Search - 1 Item"
 msgstr[1] "Keyword Search - %1 Items"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:355
+#: core/app/items/utils/itemcategorydrawer.cpp:373
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
 msgstr[0] "Advanced Search - 1 Item"
 msgstr[1] "Advanced Search - %1 Items"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:369
+#: core/app/items/utils/itemcategorydrawer.cpp:387
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
@@ -990,7 +990,7 @@ msgstr ""
 "<p>Please select the destination album from the digiKam library to move the "
 "selected images into.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:352
+#: core/app/items/utils/itemviewutilities.cpp:353
 #: core/utilities/imageeditor/main/imagewindow.cpp:1102
 #: core/utilities/imageeditor/main/imagewindow.cpp:1127
 #: core/utilities/imageeditor/main/imagewindow.cpp:1159
@@ -998,14 +998,14 @@ msgstr ""
 msgid "Album \"%1\""
 msgstr "Album \"%1\""
 
-#: core/app/items/utils/tooltipfiller.cpp:70
+#: core/app/items/utils/tooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:58
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "File Properties"
 
-#: core/app/items/utils/tooltipfiller.cpp:75
+#: core/app/items/utils/tooltipfiller.cpp:77
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:62
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, kde-format
@@ -1013,8 +1013,8 @@ msgctxt "filename"
 msgid "Name:"
 msgstr "Name:"
 
-#: core/app/items/utils/tooltipfiller.cpp:83
-#: core/app/items/utils/tooltipfiller.cpp:598
+#: core/app/items/utils/tooltipfiller.cpp:85
+#: core/app/items/utils/tooltipfiller.cpp:608
 #: core/app/views/stack/welcomepageview.cpp:273
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
@@ -1023,7 +1023,7 @@ msgstr "Name:"
 msgid "Date:"
 msgstr "Date:"
 
-#: core/app/items/utils/tooltipfiller.cpp:88
+#: core/app/items/utils/tooltipfiller.cpp:90
 #: core/dplugins/bqm/transform/crop/crop.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:195
@@ -1033,8 +1033,8 @@ msgstr "Date:"
 msgid "Size:"
 msgstr "Size:"
 
-#: core/app/items/utils/tooltipfiller.cpp:90
-#: core/app/items/utils/tooltipfiller.cpp:220
+#: core/app/items/utils/tooltipfiller.cpp:92
+#: core/app/items/utils/tooltipfiller.cpp:224
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:189
 #: core/utilities/import/items/importtooltipfiller.cpp:75
@@ -1043,7 +1043,7 @@ msgstr "Size:"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/app/items/utils/tooltipfiller.cpp:96
+#: core/app/items/utils/tooltipfiller.cpp:98
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
@@ -1057,7 +1057,7 @@ msgstr "%1 (%2)"
 msgid "Type:"
 msgstr "Type:"
 
-#: core/app/items/utils/tooltipfiller.cpp:104
+#: core/app/items/utils/tooltipfiller.cpp:106
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:91
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, kde-format
@@ -1065,7 +1065,7 @@ msgctxt "unknown / invalid image dimension"
 msgid "Unknown"
 msgstr "Unknown"
 
-#: core/app/items/utils/tooltipfiller.cpp:109
+#: core/app/items/utils/tooltipfiller.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1092
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:96
 #: core/utilities/import/items/importtooltipfiller.cpp:94
@@ -1074,33 +1074,33 @@ msgctxt "width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/app/items/utils/tooltipfiller.cpp:113
+#: core/app/items/utils/tooltipfiller.cpp:115
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:100
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
 msgstr "Dimensions:"
 
-#: core/app/items/utils/tooltipfiller.cpp:121
+#: core/app/items/utils/tooltipfiller.cpp:123
 #, kde-format
 msgctxt "unknown / invalid image aspect ratio"
 msgid "Unknown"
 msgstr "Unknown"
 
-#: core/app/items/utils/tooltipfiller.cpp:124
-#: core/app/items/utils/tooltipfiller.cpp:324
+#: core/app/items/utils/tooltipfiller.cpp:126
+#: core/app/items/utils/tooltipfiller.cpp:330
 #, kde-format
 msgid "Aspect Ratio:"
 msgstr "Aspect Ratio:"
 
-#: core/app/items/utils/tooltipfiller.cpp:143
+#: core/app/items/utils/tooltipfiller.cpp:147
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:118
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
 msgstr "Photograph Properties"
 
-#: core/app/items/utils/tooltipfiller.cpp:158
+#: core/app/items/utils/tooltipfiller.cpp:162
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:133
 #: core/utilities/import/items/importtooltipfiller.cpp:131
@@ -1108,7 +1108,7 @@ msgstr "Photograph Properties"
 msgid "Make/Model:"
 msgstr "Make/Model:"
 
-#: core/app/items/utils/tooltipfiller.cpp:164
+#: core/app/items/utils/tooltipfiller.cpp:168
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:136
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:139
 #: core/utilities/import/items/importtooltipfiller.cpp:137
@@ -1117,22 +1117,22 @@ msgctxt "camera lens"
 msgid "Lens:"
 msgstr "Lens:"
 
-#: core/app/items/utils/tooltipfiller.cpp:201
-#: core/app/items/utils/tooltipfiller.cpp:206
+#: core/app/items/utils/tooltipfiller.cpp:205
+#: core/app/items/utils/tooltipfiller.cpp:210
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:175
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "Created:"
 
-#: core/app/items/utils/tooltipfiller.cpp:228
+#: core/app/items/utils/tooltipfiller.cpp:232
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:197
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
 msgstr "Aperture/Focal:"
 
-#: core/app/items/utils/tooltipfiller.cpp:234
+#: core/app/items/utils/tooltipfiller.cpp:238
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/libs/video/osd/frameosd.cpp:207
@@ -1142,20 +1142,20 @@ msgstr "Aperture/Focal:"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/app/items/utils/tooltipfiller.cpp:241
+#: core/app/items/utils/tooltipfiller.cpp:245
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:210
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "Exposure/Sensitivity:"
 
-#: core/app/items/utils/tooltipfiller.cpp:268
+#: core/app/items/utils/tooltipfiller.cpp:272
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:237
 #, kde-format
 msgid "Mode/Program:"
 msgstr "Mode/Program:"
 
-#: core/app/items/utils/tooltipfiller.cpp:281
+#: core/app/items/utils/tooltipfiller.cpp:285
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:250
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
@@ -1163,172 +1163,172 @@ msgctxt "camera flash settings"
 msgid "Flash:"
 msgstr "Flash:"
 
-#: core/app/items/utils/tooltipfiller.cpp:293
+#: core/app/items/utils/tooltipfiller.cpp:297
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:262
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
 msgstr "White Balance:"
 
-#: core/app/items/utils/tooltipfiller.cpp:313
+#: core/app/items/utils/tooltipfiller.cpp:319
 #: core/utilities/searchwindow/searchgroup.cpp:113
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "Audio/Video Properties"
 
-#: core/app/items/utils/tooltipfiller.cpp:356
+#: core/app/items/utils/tooltipfiller.cpp:362
 #, kde-format
 msgid "Duration:"
 msgstr "Duration:"
 
-#: core/app/items/utils/tooltipfiller.cpp:377
+#: core/app/items/utils/tooltipfiller.cpp:383
 #, kde-format
 msgid "Frame Rate:"
 msgstr "Frame Rate:"
 
-#: core/app/items/utils/tooltipfiller.cpp:377
+#: core/app/items/utils/tooltipfiller.cpp:383
 #, kde-format
 msgid " fps"
 msgstr " fps"
 
-#: core/app/items/utils/tooltipfiller.cpp:389
+#: core/app/items/utils/tooltipfiller.cpp:395
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:157
 #, kde-format
 msgid "Video Codec:"
 msgstr "Video Codec:"
 
-#: core/app/items/utils/tooltipfiller.cpp:410
+#: core/app/items/utils/tooltipfiller.cpp:416
 #, kde-format
 msgid "Audio Bit Rate:"
 msgstr "Audio Bit Rate:"
 
-#: core/app/items/utils/tooltipfiller.cpp:422
+#: core/app/items/utils/tooltipfiller.cpp:428
 #, kde-format
 msgid "Audio Channel Type:"
 msgstr "Audio Channel Type:"
 
-#: core/app/items/utils/tooltipfiller.cpp:434
+#: core/app/items/utils/tooltipfiller.cpp:440
 #, kde-format
 msgid "Audio Codec:"
 msgstr "Audio Codec:"
 
-#: core/app/items/utils/tooltipfiller.cpp:449
+#: core/app/items/utils/tooltipfiller.cpp:457
 #, kde-format
 msgid "digiKam Properties"
 msgstr "digiKam Properties"
 
-#: core/app/items/utils/tooltipfiller.cpp:460
+#: core/app/items/utils/tooltipfiller.cpp:468
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "Album:"
 
-#: core/app/items/utils/tooltipfiller.cpp:474
+#: core/app/items/utils/tooltipfiller.cpp:482
 #, kde-format
 msgctxt "title of the file"
 msgid "Title:"
 msgstr "Title:"
 
-#: core/app/items/utils/tooltipfiller.cpp:488
+#: core/app/items/utils/tooltipfiller.cpp:496
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
 msgstr "Caption:"
 
-#: core/app/items/utils/tooltipfiller.cpp:497
+#: core/app/items/utils/tooltipfiller.cpp:505
 #, kde-format
 msgid "Tags:"
 msgstr "Tags:"
 
-#: core/app/items/utils/tooltipfiller.cpp:546
+#: core/app/items/utils/tooltipfiller.cpp:554
 #, kde-format
 msgid "Labels:"
 msgstr "Labels:"
 
-#: core/app/items/utils/tooltipfiller.cpp:573
+#: core/app/items/utils/tooltipfiller.cpp:583
 #, kde-format
 msgid "Album Properties"
 msgstr "Album Properties"
 
-#: core/app/items/utils/tooltipfiller.cpp:577
-#: core/app/items/utils/tooltipfiller.cpp:656
+#: core/app/items/utils/tooltipfiller.cpp:587
+#: core/app/items/utils/tooltipfiller.cpp:668
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "Name:"
 
-#: core/app/items/utils/tooltipfiller.cpp:583
+#: core/app/items/utils/tooltipfiller.cpp:593
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:72
 #, kde-format
 msgid "Items:"
 msgstr "Items:"
 
-#: core/app/items/utils/tooltipfiller.cpp:589
+#: core/app/items/utils/tooltipfiller.cpp:599
 #, kde-format
 msgid "Collection:"
 msgstr "Collection:"
 
-#: core/app/items/utils/tooltipfiller.cpp:610
+#: core/app/items/utils/tooltipfiller.cpp:620
 #, kde-format
 msgid "Category:"
 msgstr "Category:"
 
-#: core/app/items/utils/tooltipfiller.cpp:623
+#: core/app/items/utils/tooltipfiller.cpp:633
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Caption:"
 msgstr "Caption:"
 
-#: core/app/items/utils/tooltipfiller.cpp:629
+#: core/app/items/utils/tooltipfiller.cpp:639
 #, kde-format
 msgid "Preview:"
 msgstr "Preview:"
 
-#: core/app/items/utils/tooltipfiller.cpp:652
+#: core/app/items/utils/tooltipfiller.cpp:664
 #, kde-format
 msgid "Filter"
 msgstr "Filter"
 
-#: core/app/items/utils/tooltipfiller.cpp:667
+#: core/app/items/utils/tooltipfiller.cpp:679
 #, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "Yes"
 
-#: core/app/items/utils/tooltipfiller.cpp:673
+#: core/app/items/utils/tooltipfiller.cpp:685
 #, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
 msgstr "Partially"
 
-#: core/app/items/utils/tooltipfiller.cpp:679
+#: core/app/items/utils/tooltipfiller.cpp:691
 #, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "No"
 
-#: core/app/items/utils/tooltipfiller.cpp:689
+#: core/app/items/utils/tooltipfiller.cpp:701
 #, kde-format
 msgid "Reproducible:"
 msgstr "Reproducible:"
 
-#: core/app/items/utils/tooltipfiller.cpp:701
+#: core/app/items/utils/tooltipfiller.cpp:713
 #, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
 msgstr "Description:"
 
-#: core/app/items/utils/tooltipfiller.cpp:706
+#: core/app/items/utils/tooltipfiller.cpp:718
 #, kde-format
 msgid "Identifier:"
 msgstr "Identifier:"
 
-#: core/app/items/utils/tooltipfiller.cpp:711
+#: core/app/items/utils/tooltipfiller.cpp:723
 #, kde-format
 msgid "Technical Parameters"
 msgstr "Technical Parameters"
 
-#: core/app/items/utils/tooltipfiller.cpp:730
+#: core/app/items/utils/tooltipfiller.cpp:742
 #, kde-format
 msgid "<i>Binary Data</i>"
 msgstr "<i>Binary Data</i>"
@@ -2823,7 +2823,7 @@ msgstr ""
 "Revision: %6\n"
 "Branch: %7"
 
-#: core/app/views/preview/itempreviewview.cpp:185
+#: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, kde-format
@@ -2831,7 +2831,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "Back"
 
-#: core/app/views/preview/itempreviewview.cpp:187
+#: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:268
 #, kde-format
@@ -2839,37 +2839,37 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "Forwards"
 
-#: core/app/views/preview/itempreviewview.cpp:198
+#: core/app/views/preview/itempreviewview.cpp:176
 #, kde-format
 msgid "Add a Face Tag"
 msgstr "Add a Face Tag"
 
-#: core/app/views/preview/itempreviewview.cpp:203
+#: core/app/views/preview/itempreviewview.cpp:181
 #, kde-format
 msgid "Clear all faces on this image"
 msgstr "Clear all faces on this image"
 
-#: core/app/views/preview/itempreviewview.cpp:206
+#: core/app/views/preview/itempreviewview.cpp:184
 #, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Mark all unconfirmed faces as ignored"
 
-#: core/app/views/preview/itempreviewview.cpp:213
+#: core/app/views/preview/itempreviewview.cpp:191
 #, kde-format
 msgid "Show Face Tags"
 msgstr "Show Face Tags"
 
-#: core/app/views/preview/itempreviewview.cpp:218
+#: core/app/views/preview/itempreviewview.cpp:196
 #, kde-format
 msgid "Add a focus point"
 msgstr "Add a focus point"
 
-#: core/app/views/preview/itempreviewview.cpp:220
+#: core/app/views/preview/itempreviewview.cpp:198
 #, kde-format
 msgid "Show focus points"
 msgstr "Show focus points"
 
-#: core/app/views/preview/itempreviewview.cpp:226
+#: core/app/views/preview/itempreviewview.cpp:204
 #, kde-format
 msgid "Show Fullscreen"
 msgstr "Show Fullscreen"

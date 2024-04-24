@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 01:53+0000\n"
+"POT-Creation-Date: 2024-04-24 01:54+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -242,7 +242,7 @@ msgstr "इहां नकल करव (&C)"
 #: core/app/dragdrop/albumdragdrop.cpp:356
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:184
-#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:767
+#: core/app/dragdrop/itemdragdrop.cpp:83 core/app/dragdrop/itemdragdrop.cpp:775
 #: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
 #: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:396
 #, kde-format
@@ -256,13 +256,13 @@ msgid "Set as Album Thumbnail"
 msgstr "एलबम छोटेफोटू के रूप मं सेट करव"
 
 #: core/app/dragdrop/albumdragdrop.cpp:288
-#: core/app/dragdrop/itemdragdrop.cpp:763
+#: core/app/dragdrop/itemdragdrop.cpp:771
 #, fuzzy, kde-format
 msgid "Download From Camera"
 msgstr "कैमरा से डाउनलोड करव"
 
 #: core/app/dragdrop/albumdragdrop.cpp:289
-#: core/app/dragdrop/itemdragdrop.cpp:765
+#: core/app/dragdrop/itemdragdrop.cpp:773
 #, fuzzy, kde-format
 msgid "Download && Delete From Camera"
 msgstr "कैमरा डाउनलोड करव अउ मेटाव (&&)"
@@ -307,40 +307,40 @@ msgstr ""
 msgid "Assign Tag to Dropped Items"
 msgstr "चुने गे चीज मन मटैग आबंटित करव (&S)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:645
+#: core/app/dragdrop/itemdragdrop.cpp:653
 #, fuzzy, kde-format
 msgid "Change Face Tags"
 msgstr "फोटू टैग देखाव"
 
-#: core/app/dragdrop/itemdragdrop.cpp:649
+#: core/app/dragdrop/itemdragdrop.cpp:657
 #, fuzzy, kde-format
 msgid "Change Face Tag"
 msgstr "केस बदलव:"
 
-#: core/app/dragdrop/itemdragdrop.cpp:653
-#: core/app/dragdrop/itemdragdrop.cpp:706
-#: core/app/views/preview/itempreviewview.cpp:720
+#: core/app/dragdrop/itemdragdrop.cpp:661
+#: core/app/dragdrop/itemdragdrop.cpp:714
+#: core/app/views/preview/itempreviewview.cpp:708
 #, kde-format
 msgid "&Cancel"
 msgstr "खारिज करव (&C)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:691
+#: core/app/dragdrop/itemdragdrop.cpp:699
 #, kde-format
 msgid "Assign Tags to &Selected Items"
 msgstr "चुने गे चीज मन मटैग आबंटित करव (&S)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:699
-#: core/app/views/preview/itempreviewview.cpp:718
+#: core/app/dragdrop/itemdragdrop.cpp:707
+#: core/app/views/preview/itempreviewview.cpp:706
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "ये चीज मं टैग आबंटित करव (&T)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:703
+#: core/app/dragdrop/itemdragdrop.cpp:711
 #, kde-format
 msgid "Assign Tags to &All Items"
 msgstr "सब्बो चीज मन मटैग आबंटित करव (&A)"
 
-#: core/app/dragdrop/itemdragdrop.cpp:761
+#: core/app/dragdrop/itemdragdrop.cpp:769
 #, fuzzy, kde-format
 msgid "Importing"
 msgstr "आयात"
@@ -368,130 +368,130 @@ msgstr[1] ""
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "टैग '%1' ए चीज मन मआबंटित करव"
 
-#: core/app/filters/filtersidebarwidget.cpp:143
+#: core/app/filters/filtersidebarwidget.cpp:112
 #, fuzzy, kde-format
 msgid "Text Filter"
 msgstr "लाल फिल्टर"
 
-#: core/app/filters/filtersidebarwidget.cpp:149
+#: core/app/filters/filtersidebarwidget.cpp:118
 #, fuzzy, kde-format
 msgid "MIME Type Filter"
 msgstr "लाल फिल्टर"
 
-#: core/app/filters/filtersidebarwidget.cpp:155
+#: core/app/filters/filtersidebarwidget.cpp:124
 #, fuzzy, kde-format
 msgid "Geolocation Filter"
 msgstr "हरियर फिल्टर"
 
-#: core/app/filters/filtersidebarwidget.cpp:172
+#: core/app/filters/filtersidebarwidget.cpp:141
 #, fuzzy, kde-format
 msgid "Images Without Tags"
 msgstr "%1 मं फोटू मिले"
 
-#: core/app/filters/filtersidebarwidget.cpp:174
+#: core/app/filters/filtersidebarwidget.cpp:143
 #, fuzzy, kde-format
 msgid "Show images without a tag."
 msgstr "फोटू टैग देखाव"
 
-#: core/app/filters/filtersidebarwidget.cpp:177
+#: core/app/filters/filtersidebarwidget.cpp:146
 #, fuzzy, kde-format
 msgid "Tags Matching Condition"
 msgstr "मिलिस मापदन्ड"
 
-#: core/app/filters/filtersidebarwidget.cpp:180
-#: core/app/filters/filtersidebarwidget.cpp:230
+#: core/app/filters/filtersidebarwidget.cpp:149
+#: core/app/filters/filtersidebarwidget.cpp:199
 #, kde-format
 msgid ""
 "Defines in which way the selected tags are combined to filter the images. "
 "This also includes the '%1' check box."
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:187
+#: core/app/filters/filtersidebarwidget.cpp:156
 #: core/utilities/searchwindow/searchgroup_label.cpp:286
 #, kde-format
 msgid "OR"
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:190
+#: core/app/filters/filtersidebarwidget.cpp:159
 #: core/utilities/searchwindow/searchgroup_label.cpp:282
 #, kde-format
 msgid "AND"
 msgstr ""
 
-#: core/app/filters/filtersidebarwidget.cpp:205
+#: core/app/filters/filtersidebarwidget.cpp:174
 #, fuzzy, kde-format
 msgid "Tags Filter"
 msgstr "टैग फिल्टर्स"
 
-#: core/app/filters/filtersidebarwidget.cpp:222
+#: core/app/filters/filtersidebarwidget.cpp:191
 #, fuzzy, kde-format
 msgid "Images Without Face tags"
 msgstr "%1 मं फोटू मिले"
 
-#: core/app/filters/filtersidebarwidget.cpp:224
+#: core/app/filters/filtersidebarwidget.cpp:193
 #, fuzzy, kde-format
 msgid "Show images without a face tag."
 msgstr "फोटू टैग देखाव"
 
-#: core/app/filters/filtersidebarwidget.cpp:227
+#: core/app/filters/filtersidebarwidget.cpp:196
 #, fuzzy, kde-format
 msgid "Face tags Matching Condition"
 msgstr "मिलिस मापदन्ड"
 
-#: core/app/filters/filtersidebarwidget.cpp:249
+#: core/app/filters/filtersidebarwidget.cpp:218
 #, fuzzy, kde-format
 msgid "Face Tags Filter"
 msgstr "टैग फिल्टर्स"
 
-#: core/app/filters/filtersidebarwidget.cpp:267
+#: core/app/filters/filtersidebarwidget.cpp:236
 #, fuzzy, kde-format
 msgid "Labels Filter"
 msgstr "लेंस फिल्टर"
 
-#: core/app/filters/tagfilterview.cpp:72
+#: core/app/filters/tagfilterview.cpp:62
 #, fuzzy, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
 msgstr "टैग फिल्टर्स"
 
-#: core/app/filters/tagfilterview.cpp:73
+#: core/app/filters/tagfilterview.cpp:63
 #, fuzzy, kde-format
 #| msgid "Oman"
 msgctxt "@action: tag filter"
 msgid "On"
 msgstr "ओमन"
 
-#: core/app/filters/tagfilterview.cpp:74
+#: core/app/filters/tagfilterview.cpp:64
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Off"
 msgstr ""
 
-#: core/app/filters/tagfilterview.cpp:76
+#: core/app/filters/tagfilterview.cpp:66
 #, fuzzy, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
 msgstr "टैग फिल्टर्स"
 
-#: core/app/filters/tagfilterview.cpp:77
+#: core/app/filters/tagfilterview.cpp:67
 #, fuzzy, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
 msgstr "ये टैग आबंटित करव"
 
-#: core/app/filters/tagfilterview.cpp:78
+#: core/app/filters/tagfilterview.cpp:68
 #, fuzzy, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
 msgstr "ये टैग मेटाव"
 
-#: core/app/filters/tagfilterview.cpp:79
+#: core/app/filters/tagfilterview.cpp:69
 #, fuzzy, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
 msgstr "ये टैग मेटाव"
 
-#: core/app/items/delegate/itemdelegate.cpp:362
+#: core/app/items/delegate/itemdelegate.cpp:386
 #, fuzzy, kde-format
 #| msgid "Resize Image"
 msgid "Reference Image"
@@ -503,7 +503,7 @@ msgctxt "@info:tooltip"
 msgid "If this is not a face, click to delete it."
 msgstr ""
 
-#: core/app/items/overlays/groupindicatoroverlay.cpp:116
+#: core/app/items/overlays/groupindicatoroverlay.cpp:117
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "1 grouped item.\n"
@@ -511,19 +511,19 @@ msgid_plural "%1 grouped items.\n"
 msgstr[0] "फोटू छांटव (&S)"
 msgstr[1] "फोटू छांटव (&S)"
 
-#: core/app/items/overlays/groupindicatoroverlay.cpp:122
+#: core/app/items/overlays/groupindicatoroverlay.cpp:123
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Group is open."
 msgstr "समूह (&G)"
 
-#: core/app/items/overlays/groupindicatoroverlay.cpp:126
+#: core/app/items/overlays/groupindicatoroverlay.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Group is closed."
 msgstr ""
 
-#: core/app/items/overlays/itemcoordinatesoverlay.cpp:93
+#: core/app/items/overlays/itemcoordinatesoverlay.cpp:95
 #: core/showfoto/thumbbar/showfotocoordinatesoverlay.cpp:96
 #: core/utilities/import/items/importoverlays.cpp:96
 #, fuzzy, kde-format
@@ -538,7 +538,7 @@ msgid "Show Fullscreen"
 msgstr "पूरा स्क्रीन मोड से बाहिर हों"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:189
+#: core/app/views/preview/itempreviewview.cpp:167
 #: core/utilities/import/items/importoverlays.cpp:434
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
@@ -546,7 +546,7 @@ msgid "Rotate Left"
 msgstr "डेरी मुड़ें"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:191
+#: core/app/views/preview/itempreviewview.cpp:169
 #: core/utilities/import/items/importoverlays.cpp:438
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
@@ -932,17 +932,17 @@ msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
 msgstr "रंग प्रबंधन"
 
-#: core/app/items/utils/contextmenuhelper_tools.cpp:138
+#: core/app/items/utils/contextmenuhelper_tools.cpp:140
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
 msgstr "लाइट टेबल मं जोड़व"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:259
-#: core/app/items/utils/itemcategorydrawer.cpp:267
-#: core/app/items/utils/itemcategorydrawer.cpp:274
-#: core/app/items/utils/itemcategorydrawer.cpp:359
+#: core/app/items/utils/itemcategorydrawer.cpp:277
+#: core/app/items/utils/itemcategorydrawer.cpp:285
+#: core/app/items/utils/itemcategorydrawer.cpp:292
 #: core/app/items/utils/itemcategorydrawer.cpp:377
+#: core/app/items/utils/itemcategorydrawer.cpp:395
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -952,7 +952,7 @@ msgid_plural "%1 Items"
 msgstr[0] "16 बिट्स"
 msgstr[1] "16 बिट्स"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:303
+#: core/app/items/utils/itemcategorydrawer.cpp:321
 #, fuzzy, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
@@ -960,7 +960,7 @@ msgid_plural "Album Date: %2 %3 %4 - %1 Items"
 msgstr[0] "%1 %2 - 1 वस्तु"
 msgstr[1] "%1 %2 - %3 वस्तु"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:330
+#: core/app/items/utils/itemcategorydrawer.cpp:348
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
@@ -968,7 +968,7 @@ msgid_plural "%2 including %1 subtags"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/items/utils/itemcategorydrawer.cpp:334
+#: core/app/items/utils/itemcategorydrawer.cpp:352
 #, fuzzy, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -978,28 +978,28 @@ msgid_plural "%2 - %1 Items"
 msgstr[0] "जुलाई 2007 - 10 चीज मन ल"
 msgstr[1] "जुलाई 2007 - 10 चीज मन ल"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:339
+#: core/app/items/utils/itemcategorydrawer.cpp:357
 #, fuzzy, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "जुलाई 2007 - 10 चीज मन ल"
 msgstr[1] "जुलाई 2007 - 10 चीज मन ल"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:351
+#: core/app/items/utils/itemcategorydrawer.cpp:369
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/items/utils/itemcategorydrawer.cpp:355
+#: core/app/items/utils/itemcategorydrawer.cpp:373
 #, fuzzy, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
 msgstr[0] "विस्तृत खोज"
 msgstr[1] "विस्तृत खोज"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:369
+#: core/app/items/utils/itemcategorydrawer.cpp:387
 #, fuzzy, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
@@ -1019,7 +1019,7 @@ msgid ""
 "selected images into.</p>"
 msgstr ""
 
-#: core/app/items/utils/itemviewutilities.cpp:352
+#: core/app/items/utils/itemviewutilities.cpp:353
 #: core/utilities/imageeditor/main/imagewindow.cpp:1102
 #: core/utilities/imageeditor/main/imagewindow.cpp:1127
 #: core/utilities/imageeditor/main/imagewindow.cpp:1159
@@ -1027,14 +1027,14 @@ msgstr ""
 msgid "Album \"%1\""
 msgstr "एल्बम \"%1\""
 
-#: core/app/items/utils/tooltipfiller.cpp:70
+#: core/app/items/utils/tooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:58
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "फाइल गुन"
 
-#: core/app/items/utils/tooltipfiller.cpp:75
+#: core/app/items/utils/tooltipfiller.cpp:77
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:62
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, fuzzy, kde-format
@@ -1042,8 +1042,8 @@ msgctxt "filename"
 msgid "Name:"
 msgstr "नाम:"
 
-#: core/app/items/utils/tooltipfiller.cpp:83
-#: core/app/items/utils/tooltipfiller.cpp:598
+#: core/app/items/utils/tooltipfiller.cpp:85
+#: core/app/items/utils/tooltipfiller.cpp:608
 #: core/app/views/stack/welcomepageview.cpp:273
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
@@ -1052,7 +1052,7 @@ msgstr "नाम:"
 msgid "Date:"
 msgstr "तारीकः"
 
-#: core/app/items/utils/tooltipfiller.cpp:88
+#: core/app/items/utils/tooltipfiller.cpp:90
 #: core/dplugins/bqm/transform/crop/crop.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:195
@@ -1062,8 +1062,8 @@ msgstr "तारीकः"
 msgid "Size:"
 msgstr "आकारः"
 
-#: core/app/items/utils/tooltipfiller.cpp:90
-#: core/app/items/utils/tooltipfiller.cpp:220
+#: core/app/items/utils/tooltipfiller.cpp:92
+#: core/app/items/utils/tooltipfiller.cpp:224
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:189
 #: core/utilities/import/items/importtooltipfiller.cpp:75
@@ -1072,7 +1072,7 @@ msgstr "आकारः"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/app/items/utils/tooltipfiller.cpp:96
+#: core/app/items/utils/tooltipfiller.cpp:98
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:107
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:220
@@ -1086,7 +1086,7 @@ msgstr "%1 (%2)"
 msgid "Type:"
 msgstr "किसिमः"
 
-#: core/app/items/utils/tooltipfiller.cpp:104
+#: core/app/items/utils/tooltipfiller.cpp:106
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:91
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, fuzzy, kde-format
@@ -1094,7 +1094,7 @@ msgctxt "unknown / invalid image dimension"
 msgid "Unknown"
 msgstr "अग्यात"
 
-#: core/app/items/utils/tooltipfiller.cpp:109
+#: core/app/items/utils/tooltipfiller.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1092
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:96
 #: core/utilities/import/items/importtooltipfiller.cpp:94
@@ -1103,33 +1103,33 @@ msgctxt "width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/app/items/utils/tooltipfiller.cpp:113
+#: core/app/items/utils/tooltipfiller.cpp:115
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:100
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
 msgstr "आयाम:"
 
-#: core/app/items/utils/tooltipfiller.cpp:121
+#: core/app/items/utils/tooltipfiller.cpp:123
 #, fuzzy, kde-format
 msgctxt "unknown / invalid image aspect ratio"
 msgid "Unknown"
 msgstr "अग्यात"
 
-#: core/app/items/utils/tooltipfiller.cpp:124
-#: core/app/items/utils/tooltipfiller.cpp:324
+#: core/app/items/utils/tooltipfiller.cpp:126
+#: core/app/items/utils/tooltipfiller.cpp:330
 #, fuzzy, kde-format
 msgid "Aspect Ratio:"
 msgstr "आस्पेक्ट रेसो:"
 
-#: core/app/items/utils/tooltipfiller.cpp:143
+#: core/app/items/utils/tooltipfiller.cpp:147
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:118
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
 msgstr "फोटोग्राफ गुन"
 
-#: core/app/items/utils/tooltipfiller.cpp:158
+#: core/app/items/utils/tooltipfiller.cpp:162
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:133
 #: core/utilities/import/items/importtooltipfiller.cpp:131
@@ -1137,7 +1137,7 @@ msgstr "फोटोग्राफ गुन"
 msgid "Make/Model:"
 msgstr "मेक/माडल:"
 
-#: core/app/items/utils/tooltipfiller.cpp:164
+#: core/app/items/utils/tooltipfiller.cpp:168
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:136
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:139
 #: core/utilities/import/items/importtooltipfiller.cpp:137
@@ -1146,22 +1146,22 @@ msgctxt "camera lens"
 msgid "Lens:"
 msgstr "लेंस:"
 
-#: core/app/items/utils/tooltipfiller.cpp:201
-#: core/app/items/utils/tooltipfiller.cpp:206
+#: core/app/items/utils/tooltipfiller.cpp:205
+#: core/app/items/utils/tooltipfiller.cpp:210
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:175
 #, fuzzy, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "सृजितः"
 
-#: core/app/items/utils/tooltipfiller.cpp:228
+#: core/app/items/utils/tooltipfiller.cpp:232
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:197
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
 msgstr "एपर्चर/फोकल:"
 
-#: core/app/items/utils/tooltipfiller.cpp:234
+#: core/app/items/utils/tooltipfiller.cpp:238
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/libs/video/osd/frameosd.cpp:207
@@ -1171,20 +1171,20 @@ msgstr "एपर्चर/फोकल:"
 msgid "%1 ISO"
 msgstr "%1 आईएसओ"
 
-#: core/app/items/utils/tooltipfiller.cpp:241
+#: core/app/items/utils/tooltipfiller.cpp:245
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:210
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "एक्सपोजर/अतिसंवेदनसीलता:"
 
-#: core/app/items/utils/tooltipfiller.cpp:268
+#: core/app/items/utils/tooltipfiller.cpp:272
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:237
 #, kde-format
 msgid "Mode/Program:"
 msgstr "मोड/प्रोग्राम:"
 
-#: core/app/items/utils/tooltipfiller.cpp:281
+#: core/app/items/utils/tooltipfiller.cpp:285
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:250
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, fuzzy, kde-format
@@ -1192,174 +1192,174 @@ msgctxt "camera flash settings"
 msgid "Flash:"
 msgstr "फ्लैस:"
 
-#: core/app/items/utils/tooltipfiller.cpp:293
+#: core/app/items/utils/tooltipfiller.cpp:297
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:262
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
 msgstr "सफेद संतुलन:"
 
-#: core/app/items/utils/tooltipfiller.cpp:313
+#: core/app/items/utils/tooltipfiller.cpp:319
 #: core/utilities/searchwindow/searchgroup.cpp:113
 #, fuzzy, kde-format
 msgid "Audio/Video Properties"
 msgstr "फाइल गुन"
 
-#: core/app/items/utils/tooltipfiller.cpp:356
+#: core/app/items/utils/tooltipfiller.cpp:362
 #, fuzzy, kde-format
 msgid "Duration:"
 msgstr "अवधिः %1"
 
-#: core/app/items/utils/tooltipfiller.cpp:377
+#: core/app/items/utils/tooltipfiller.cpp:383
 #, kde-format
 msgid "Frame Rate:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:377
+#: core/app/items/utils/tooltipfiller.cpp:383
 #, kde-format
 msgid " fps"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:389
+#: core/app/items/utils/tooltipfiller.cpp:395
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:157
 #, fuzzy, kde-format
 msgid "Video Codec:"
 msgstr "आडियो फाइल मन ल"
 
-#: core/app/items/utils/tooltipfiller.cpp:410
+#: core/app/items/utils/tooltipfiller.cpp:416
 #, fuzzy, kde-format
 msgid "Audio Bit Rate:"
 msgstr "आडियो फाइल मन ल"
 
-#: core/app/items/utils/tooltipfiller.cpp:422
+#: core/app/items/utils/tooltipfiller.cpp:428
 #, kde-format
 msgid "Audio Channel Type:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:434
+#: core/app/items/utils/tooltipfiller.cpp:440
 #, fuzzy, kde-format
 msgid "Audio Codec:"
 msgstr "आडियो फाइल मन ल"
 
-#: core/app/items/utils/tooltipfiller.cpp:449
+#: core/app/items/utils/tooltipfiller.cpp:457
 #, kde-format
 msgid "digiKam Properties"
 msgstr "डिजीकैम गुन"
 
-#: core/app/items/utils/tooltipfiller.cpp:460
+#: core/app/items/utils/tooltipfiller.cpp:468
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:199
 #, kde-format
 msgid "Album:"
 msgstr "एल्बमः"
 
-#: core/app/items/utils/tooltipfiller.cpp:474
+#: core/app/items/utils/tooltipfiller.cpp:482
 #, fuzzy, kde-format
 msgctxt "title of the file"
 msgid "Title:"
 msgstr "सीर्सकः (&T)"
 
-#: core/app/items/utils/tooltipfiller.cpp:488
+#: core/app/items/utils/tooltipfiller.cpp:496
 #, fuzzy, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
 msgstr "सीर्सक:"
 
-#: core/app/items/utils/tooltipfiller.cpp:497
+#: core/app/items/utils/tooltipfiller.cpp:505
 #, kde-format
 msgid "Tags:"
 msgstr "टैग्स:"
 
-#: core/app/items/utils/tooltipfiller.cpp:546
+#: core/app/items/utils/tooltipfiller.cpp:554
 #, fuzzy, kde-format
 msgid "Labels:"
 msgstr "लेंस:"
 
-#: core/app/items/utils/tooltipfiller.cpp:573
+#: core/app/items/utils/tooltipfiller.cpp:583
 #, fuzzy, kde-format
 msgid "Album Properties"
 msgstr "एलबम गुन..."
 
-#: core/app/items/utils/tooltipfiller.cpp:577
-#: core/app/items/utils/tooltipfiller.cpp:656
+#: core/app/items/utils/tooltipfiller.cpp:587
+#: core/app/items/utils/tooltipfiller.cpp:668
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@info: item properties"
 msgid "Name:"
 msgstr "नाम:"
 
-#: core/app/items/utils/tooltipfiller.cpp:583
+#: core/app/items/utils/tooltipfiller.cpp:593
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:72
 #, kde-format
 msgid "Items:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:589
+#: core/app/items/utils/tooltipfiller.cpp:599
 #, fuzzy, kde-format
 msgid "Collection:"
 msgstr "संग्रह: (&l)"
 
-#: core/app/items/utils/tooltipfiller.cpp:610
+#: core/app/items/utils/tooltipfiller.cpp:620
 #, kde-format
 msgid "Category:"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:623
+#: core/app/items/utils/tooltipfiller.cpp:633
 #, fuzzy, kde-format
 #| msgid "Caption:"
 msgctxt "@info: item properties"
 msgid "Caption:"
 msgstr "सीर्सक:"
 
-#: core/app/items/utils/tooltipfiller.cpp:629
+#: core/app/items/utils/tooltipfiller.cpp:639
 #, fuzzy, kde-format
 msgid "Preview:"
 msgstr "प्रिव्यू"
 
-#: core/app/items/utils/tooltipfiller.cpp:652
+#: core/app/items/utils/tooltipfiller.cpp:664
 #, fuzzy, kde-format
 msgid "Filter"
 msgstr "फिल्टर:"
 
-#: core/app/items/utils/tooltipfiller.cpp:667
+#: core/app/items/utils/tooltipfiller.cpp:679
 #, fuzzy, kde-format
 msgctxt "Image filter reproducible: Yes"
 msgid "Yes"
 msgstr "हाँ"
 
-#: core/app/items/utils/tooltipfiller.cpp:673
+#: core/app/items/utils/tooltipfiller.cpp:685
 #, fuzzy, kde-format
 msgctxt "Image filter reproducible: Partially"
 msgid "Partially"
 msgstr "पार्टी"
 
-#: core/app/items/utils/tooltipfiller.cpp:679
+#: core/app/items/utils/tooltipfiller.cpp:691
 #, fuzzy, kde-format
 msgctxt "Image filter reproducible: No"
 msgid "No"
 msgstr "नइ"
 
-#: core/app/items/utils/tooltipfiller.cpp:689
+#: core/app/items/utils/tooltipfiller.cpp:701
 #, fuzzy, kde-format
 msgid "Reproducible:"
 msgstr "पढ़े जा सके:"
 
-#: core/app/items/utils/tooltipfiller.cpp:701
+#: core/app/items/utils/tooltipfiller.cpp:713
 #, fuzzy, kde-format
 msgctxt "Image filter description"
 msgid "Description:"
 msgstr "वर्नन"
 
-#: core/app/items/utils/tooltipfiller.cpp:706
+#: core/app/items/utils/tooltipfiller.cpp:718
 #, fuzzy, kde-format
 msgid "Identifier:"
 msgstr "कमइया"
 
-#: core/app/items/utils/tooltipfiller.cpp:711
+#: core/app/items/utils/tooltipfiller.cpp:723
 #, kde-format
 msgid "Technical Parameters"
 msgstr ""
 
-#: core/app/items/utils/tooltipfiller.cpp:730
+#: core/app/items/utils/tooltipfiller.cpp:742
 #, fuzzy, kde-format
 msgid "<i>Binary Data</i>"
 msgstr "<i>नइ मिलत</i>"
@@ -2882,7 +2882,7 @@ msgid ""
 "Branch: %7"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:185
+#: core/app/views/preview/itempreviewview.cpp:163
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:182
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:266
 #, fuzzy, kde-format
@@ -2890,7 +2890,7 @@ msgctxt "go to previous image"
 msgid "Back"
 msgstr "पीछू"
 
-#: core/app/views/preview/itempreviewview.cpp:187
+#: core/app/views/preview/itempreviewview.cpp:165
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:184
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:268
 #, fuzzy, kde-format
@@ -2898,38 +2898,38 @@ msgctxt "go to next image"
 msgid "Forward"
 msgstr "आगू"
 
-#: core/app/views/preview/itempreviewview.cpp:198
+#: core/app/views/preview/itempreviewview.cpp:176
 #, fuzzy, kde-format
 msgid "Add a Face Tag"
 msgstr "नवा टैग जोड़व..."
 
-#: core/app/views/preview/itempreviewview.cpp:203
+#: core/app/views/preview/itempreviewview.cpp:181
 #, fuzzy, kde-format
 msgid "Clear all faces on this image"
 msgstr "सब्बो बदलाव मन ल फोटू मन मं लगाव"
 
-#: core/app/views/preview/itempreviewview.cpp:206
+#: core/app/views/preview/itempreviewview.cpp:184
 #, fuzzy, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "नवा टैग जोड़व..."
 
-#: core/app/views/preview/itempreviewview.cpp:213
+#: core/app/views/preview/itempreviewview.cpp:191
 #, fuzzy, kde-format
 msgid "Show Face Tags"
 msgstr "फोटू टैग देखाव"
 
-#: core/app/views/preview/itempreviewview.cpp:218
+#: core/app/views/preview/itempreviewview.cpp:196
 #, kde-format
 msgid "Add a focus point"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:220
+#: core/app/views/preview/itempreviewview.cpp:198
 #, fuzzy, kde-format
 #| msgid "Show image rating"
 msgid "Show focus points"
 msgstr "फोटू दरजा देखाव"
 
-#: core/app/views/preview/itempreviewview.cpp:226
+#: core/app/views/preview/itempreviewview.cpp:204
 #, fuzzy, kde-format
 msgid "Show Fullscreen"
 msgstr "पूरा स्क्रीन मोड से बाहिर हों"
