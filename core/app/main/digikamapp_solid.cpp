@@ -112,8 +112,10 @@ QString s_labelForSolidCamera(const Solid::Device& cameraDevice)
     QString vendor  = cameraDevice.vendor();
     QString product = cameraDevice.product();
 
-    if (product == QLatin1String("USB Imaging Interface") ||
-        product == QLatin1String("USB Vendor Specific Interface"))
+    if (
+        product == QLatin1String("USB Imaging Interface") ||
+        product == QLatin1String("USB Vendor Specific Interface")
+       )
     {
         Solid::Device parentUsbDevice = cameraDevice.parent();
 
@@ -124,7 +126,7 @@ QString s_labelForSolidCamera(const Solid::Device& cameraDevice)
 
             if (!vendor.isEmpty() && !product.isEmpty())
             {
-                if (vendor == QLatin1String("Canon, Inc."))
+                if      (vendor == QLatin1String("Canon, Inc."))
                 {
                     vendor = QLatin1String("Canon");
 
@@ -272,32 +274,44 @@ void DigikamApp::fillSolidMenus()
             case Solid::StorageDrive::Floppy:
             case Solid::StorageDrive::Tape:
             default:
+            {
                 continue;
+            }
 
             // accept card readers
 
             case Solid::StorageDrive::CompactFlash:
+            {
                 driveType = i18n("CompactFlash Card Reader");
                 break;
+            }
 
             case Solid::StorageDrive::MemoryStick:
+            {
                 driveType = i18n("Memory Stick Reader");
                 break;
+            }
 
             case Solid::StorageDrive::SmartMedia:
+            {
                 driveType = i18n("SmartMedia Card Reader");
                 break;
+            }
 
             case Solid::StorageDrive::SdMmc:
+            {
                 driveType = i18n("SD / MMC Card Reader");
                 break;
+            }
 
             case Solid::StorageDrive::Xd:
+            {
                 driveType = i18n("xD Card Reader");
                 break;
+            }
 
             case Solid::StorageDrive::HardDisk:
-
+            {
                 // We don't want to list HardDisk partitions, but USB Mass Storage devices.
                 // Don't know what is the exact difference between removable and hotpluggable.
 
@@ -320,6 +334,7 @@ void DigikamApp::fillSolidMenus()
                 {
                     continue;
                 }
+            }
         }
 
         // check for StorageVolume

@@ -35,6 +35,7 @@ void DigikamApp::slotSetup()
 void DigikamApp::slotSetupChanged()
 {
     // raw loading options might have changed
+
     LoadingCacheInterface::cleanCache();
 
     // TODO: clear history when location changed
@@ -92,9 +93,11 @@ void DigikamApp::slotThemeChanged()
     if (
         qApp->activeWindow()                                      &&
         (settings->getCurrentTheme() != theme)                    &&
-        ((settings->getIconTheme() == QLatin1String(""))          ||
+        (
+         (settings->getIconTheme() == QLatin1String(""))          ||
          (settings->getIconTheme() == QLatin1String("breeze"))    ||
-         (settings->getIconTheme() == QLatin1String("breeze-dark")))
+         (settings->getIconTheme() == QLatin1String("breeze-dark"))
+        )
        )
     {
         qApp->processEvents();
@@ -107,11 +110,11 @@ void DigikamApp::slotThemeChanged()
 
         const QByteArray xdgCurrentDesktop = qgetenv("XDG_CURRENT_DESKTOP");
 
-        if (
-            !isRunningInAppImageBundle()        &&
-            !xdgCurrentDesktop.isEmpty()        &&
-            (xdgCurrentDesktop.toUpper() == "KDE")
-           )
+        if      (
+                 !isRunningInAppImageBundle()        &&
+                 !xdgCurrentDesktop.isEmpty()        &&
+                 (xdgCurrentDesktop.toUpper() == "KDE")
+                )
         {
             msgText   = i18n("We now switch to the system icon theme. The icon "
                              "colors are automatically adjusted on a Plasma 6 "

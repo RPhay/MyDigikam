@@ -52,8 +52,10 @@ DigikamApp::DigikamApp()
         ScanController::instance()->completeCollectionScanDeferFiles();
     }
 
-    if (ApplicationSettings::instance()->getShowSplashScreen() &&
-        !qApp->isSessionRestored())
+    if (
+        ApplicationSettings::instance()->getShowSplashScreen() &&
+        !qApp->isSessionRestored()
+       )
     {
         d->splashScreen = new DSplashScreen();
         d->splashScreen->show();
@@ -175,8 +177,10 @@ DigikamApp::DigikamApp()
 
     // Clean up database if enabled in the settings
 
-    if (ApplicationSettings::instance()->getCleanAtStart() &&
-        CollectionScanner::databaseInitialScanDone())
+    if (
+        ApplicationSettings::instance()->getCleanAtStart() &&
+        CollectionScanner::databaseInitialScanDone()
+       )
     {
         if (d->splashScreen)
         {
@@ -225,6 +229,7 @@ DigikamApp::DigikamApp()
 
     // Create BalooWrap object, because it need to register a listener
     // to update digiKam data when changes in Baloo occur
+
     BalooWrap* const baloo = BalooWrap::instance();
     Q_UNUSED(baloo);
 
@@ -378,8 +383,10 @@ void DigikamApp::show()
 
     // Enable finished the collection scan as deferred process
 
-    if (settings->getScanAtStart()                  ||
-        !CollectionScanner::databaseInitialScanDone())
+    if (
+        settings->getScanAtStart()                  ||
+        !CollectionScanner::databaseInitialScanDone()
+       )
     {
         NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles);
 
@@ -978,40 +985,58 @@ void DigikamApp::slotSetCheckedExifOrientationAction(const ItemInfo& info)
     switch (orientation)
     {
         case 1:
+        {
             d->imageSetExifOrientation1Action->setChecked(true);
             break;
+        }
 
         case 2:
+        {
             d->imageSetExifOrientation2Action->setChecked(true);
             break;
+        }
 
         case 3:
+        {
             d->imageSetExifOrientation3Action->setChecked(true);
             break;
+        }
 
         case 4:
+        {
             d->imageSetExifOrientation4Action->setChecked(true);
             break;
+        }
 
         case 5:
+        {
             d->imageSetExifOrientation5Action->setChecked(true);
             break;
+        }
 
         case 6:
+        {
             d->imageSetExifOrientation6Action->setChecked(true);
             break;
+        }
 
         case 7:
+        {
             d->imageSetExifOrientation7Action->setChecked(true);
             break;
+        }
 
         case 8:
+        {
             d->imageSetExifOrientation8Action->setChecked(true);
             break;
+        }
 
         default:
+        {
             slotResetExifOrientationActions();
             break;
+        }
     }
 }
 
@@ -1159,12 +1184,16 @@ void DigikamApp::toggleShowBar()
     {
         case StackedView::PreviewImageMode:
         case StackedView::MediaPlayerMode:
+        {
             d->showBarAction->setEnabled(true);
             break;
+        }
 
         default:
+        {
             d->showBarAction->setEnabled(false);
             break;
+        }
     }
 }
 
@@ -1209,23 +1238,33 @@ DInfoInterface* DigikamApp::infoIface(DPluginAction* const ac)
     {
         case DPluginAction::GenericExport:
         case DPluginAction::GenericImport:
+        {
             aset = ApplicationSettings::ImportExport;
             break;
+        }
 
         case DPluginAction::GenericMetadata:
+        {
             aset = ApplicationSettings::Metadata;
             break;
+        }
 
         case DPluginAction::GenericTool:
+        {
             aset = ApplicationSettings::Tools;
             break;
+        }
 
         case DPluginAction::GenericView:
+        {
             aset = ApplicationSettings::Slideshow;
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     DBInfoIface* const iface = new DBInfoIface(this, QList<QUrl>(), aset);

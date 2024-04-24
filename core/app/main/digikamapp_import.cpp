@@ -47,7 +47,8 @@ void DigikamApp::updateQuickImportAction()
     }
     else
     {
-        disconnect(d->quickImportMenu->menuAction(), SIGNAL(triggered()), nullptr, nullptr);
+        disconnect(d->quickImportMenu->menuAction(), SIGNAL(triggered()),
+                   nullptr, nullptr);
 
         QAction*  primaryAction = nullptr;
         QDateTime latest;
@@ -163,8 +164,10 @@ void DigikamApp::slotImportAddFolders()
     {
         QString destPath = url.toLocalFile() + QLatin1Char('/');
 
-        if (albumRootPath.contains(destPath) ||
-            destPath.contains(albumRootPath))
+        if (
+            albumRootPath.contains(destPath) ||
+            destPath.contains(albumRootPath)
+           )
         {   // cppcheck-suppress useStlAlgorithm
             QMessageBox::warning(this, qApp->applicationName(),
                                  i18n("The folder %1 is part of the album "

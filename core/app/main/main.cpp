@@ -336,8 +336,12 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
         QString configFilename = parser.value(QLatin1String("config"));
         QFileInfo configFile(configFilename);
 
-        if (configFile.isDir()       || !configFile.dir().exists() ||
-            !configFile.isReadable() || !configFile.isWritable())
+        if (
+            configFile.isDir()         ||
+            !configFile.dir().exists() ||
+            !configFile.isReadable()   ||
+            !configFile.isWritable()
+           )
         {
             QMessageBox::critical(qApp->activeWindow(),
                                   qApp->applicationName(),

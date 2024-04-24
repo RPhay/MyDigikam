@@ -171,15 +171,11 @@ class Q_DECL_HIDDEN ProgressEntry
 {
 public:
 
-    explicit ProgressEntry()
-      : progress (0),
-        canCancel(false)
-    {
-    }
+    ProgressEntry() = default;
 
     QString message;
-    float   progress;
-    bool    canCancel;
+    float   progress  = 0.0;
+    bool    canCancel = false;
 };
 
 // ------------------------------------------------------------------------------
@@ -188,257 +184,144 @@ class Q_DECL_HIDDEN DigikamApp::Private
 {
 public:
 
-    explicit Private()
-      : autoShowZoomToolTip                 (false),
-        validIccPath                        (true),
-        cameraMenu                          (nullptr),
-        usbMediaMenu                        (nullptr),
-        cardReaderMenu                      (nullptr),
-        quickImportMenu                     (nullptr),
-        config                              (nullptr),
-        newAction                           (nullptr),
-        moveSelectionToAlbumAction          (nullptr),
-        copySelectionToAction               (nullptr),
-        deleteAction                        (nullptr),
-        renameAction                        (nullptr),
-        imageDeletePermanentlyAction        (nullptr),
-        imageDeletePermanentlyDirectlyAction(nullptr),
-        imageTrashDirectlyAction            (nullptr),
-        backwardActionMenu                  (nullptr),
-        forwardActionMenu                   (nullptr),
-        addImagesAction                     (nullptr),
-        propsEditAction                     (nullptr),
-        addFoldersAction                    (nullptr),
-        openInFileManagerAction             (nullptr),
-        refreshAction                       (nullptr),
-        writeAlbumMetadataAction            (nullptr),
-        readAlbumMetadataAction             (nullptr),
-        browseTagsAction                    (nullptr),
-        openTagMngrAction                   (nullptr),
-        newTagAction                        (nullptr),
-        deleteTagAction                     (nullptr),
-        editTagAction                       (nullptr),
-        assignTagAction                     (nullptr),
-        imageViewSelectionAction            (nullptr),
-        imagePreviewAction                  (nullptr),
+    Private() = default;
 
-#ifdef HAVE_GEOLOCATION
+    bool                                autoShowZoomToolTip                     = false;
+    bool                                validIccPath                            = true;
 
-        imageMapViewAction                  (nullptr),
-
-#endif // HAVE_GEOLOCATION
-
-        imageTableViewAction                (nullptr),
-        imageIconViewAction                 (nullptr),
-        imageLightTableAction               (nullptr),
-        imageAddLightTableAction            (nullptr),
-        imageAddCurrentQueueAction          (nullptr),
-        imageAddNewQueueAction              (nullptr),
-        imageViewAction                     (nullptr),
-        imageWriteMetadataAction            (nullptr),
-        imageReadMetadataAction             (nullptr),
-        imageScanForFacesAction             (nullptr),
-        imageRecognizeFacesAction           (nullptr),
-        imageRemoveAllFacesAction           (nullptr),
-        imageFindSimilarAction              (nullptr),
-        imageSetExifOrientation1Action      (nullptr),
-        imageSetExifOrientation2Action      (nullptr),
-        imageSetExifOrientation3Action      (nullptr),
-        imageSetExifOrientation4Action      (nullptr),
-        imageSetExifOrientation5Action      (nullptr),
-        imageSetExifOrientation6Action      (nullptr),
-        imageSetExifOrientation7Action      (nullptr),
-        imageSetExifOrientation8Action      (nullptr),
-        imageRenameAction                   (nullptr),
-        imageRotateActionMenu               (nullptr),
-        imageFlipActionMenu                 (nullptr),
-        imageAutoExifActionMenu             (nullptr),
-        imageDeleteAction                   (nullptr),
-        imageExifOrientationActionMenu      (nullptr),
-        openWithAction                      (nullptr),
-        ieAction                            (nullptr),
-        ltAction                            (nullptr),
-        cutItemsAction                      (nullptr),
-        copyItemsAction                     (nullptr),
-        pasteItemsAction                    (nullptr),
-        selectAllAction                     (nullptr),
-        selectNoneAction                    (nullptr),
-        selectInvertAction                  (nullptr),
-        zoomPlusAction                      (nullptr),
-        zoomMinusAction                     (nullptr),
-        zoomFitToWindowAction               (nullptr),
-        zoomTo100percents                   (nullptr),
-        imageSortAction                     (nullptr),
-        imageSortOrderAction                (nullptr),
-        imageSeparationAction               (nullptr),
-        imageSeparationSortOrderAction      (nullptr),
-        albumSortAction                     (nullptr),
-        allGroupsOpenAction                 (nullptr),
-        recurseAlbumsAction                 (nullptr),
-        recurseTagsAction                   (nullptr),
-        showBarAction                       (nullptr),
-        viewCMViewAction                    (nullptr),
-        bqmAction                           (nullptr),
-        maintenanceAction                   (nullptr),
-        scanNewItemsAction                  (nullptr),
-        qualityAction                       (nullptr),
-        advSearchAction                     (nullptr),
-        addCameraSeparatorAction            (nullptr),
-        quitAction                          (nullptr),
-        tipAction                           (nullptr),
-        manualCameraActionGroup             (nullptr),
-        solidCameraActionGroup              (nullptr),
-        solidUsmActionGroup                 (nullptr),
-        exifOrientationActionGroup          (nullptr),
-        eventLoop                           (nullptr),
-        metadataStatusBar                   (nullptr),
-        filterStatusBar                     (nullptr),
-        splashScreen                        (nullptr),
-        view                                (nullptr),
-        cameraList                          (nullptr),
-        tagsActionManager                   (nullptr),
-        zoomBar                             (nullptr),
-        statusLabel                         (nullptr),
-        modelCollection                     (nullptr)
-    {
-    }
-
-    bool                                autoShowZoomToolTip;
-    bool                                validIccPath;
-
-    QMenu*                              cameraMenu;
-    QMenu*                              usbMediaMenu;
-    QMenu*                              cardReaderMenu;
-    QMenu*                              quickImportMenu;
+    QMenu*                              cameraMenu                              = nullptr;
+    QMenu*                              usbMediaMenu                            = nullptr;
+    QMenu*                              cardReaderMenu                          = nullptr;
+    QMenu*                              quickImportMenu                         = nullptr;
     QHash<QString, QDateTime>           cameraAppearanceTimes;
 
     KSharedConfig::Ptr                  config;
 
     /// Album Actions
-    QAction*                            newAction;
-    QAction*                            moveSelectionToAlbumAction;
-    QAction*                            copySelectionToAction;
-    QAction*                            deleteAction;
-    QAction*                            renameAction;
-    QAction*                            imageDeletePermanentlyAction;
-    QAction*                            imageDeletePermanentlyDirectlyAction;
-    QAction*                            imageTrashDirectlyAction;
-    KToolBarPopupAction*                backwardActionMenu;
-    KToolBarPopupAction*                forwardActionMenu;
+    QAction*                            newAction                               = nullptr;
+    QAction*                            moveSelectionToAlbumAction              = nullptr;
+    QAction*                            copySelectionToAction                   = nullptr;
+    QAction*                            deleteAction                            = nullptr;
+    QAction*                            renameAction                            = nullptr;
+    QAction*                            imageDeletePermanentlyAction            = nullptr;
+    QAction*                            imageDeletePermanentlyDirectlyAction    = nullptr;
+    QAction*                            imageTrashDirectlyAction                = nullptr;
+    KToolBarPopupAction*                backwardActionMenu                      = nullptr;
+    KToolBarPopupAction*                forwardActionMenu                       = nullptr;
 
-    QAction*                            addImagesAction;
-    QAction*                            propsEditAction;
-    QAction*                            addFoldersAction;
-    QAction*                            openInFileManagerAction;
-    QAction*                            refreshAction;
-    QAction*                            writeAlbumMetadataAction;
-    QAction*                            readAlbumMetadataAction;
+    QAction*                            addImagesAction                         = nullptr;
+    QAction*                            propsEditAction                         = nullptr;
+    QAction*                            addFoldersAction                        = nullptr;
+    QAction*                            openInFileManagerAction                 = nullptr;
+    QAction*                            refreshAction                           = nullptr;
+    QAction*                            writeAlbumMetadataAction                = nullptr;
+    QAction*                            readAlbumMetadataAction                 = nullptr;
 
     /// Tag Actions
-    QAction*                            browseTagsAction;
-    QAction*                            openTagMngrAction;
-    QAction*                            newTagAction;
-    QAction*                            deleteTagAction;
-    QAction*                            editTagAction;
-    QAction*                            assignTagAction;
+    QAction*                            browseTagsAction                        = nullptr;
+    QAction*                            openTagMngrAction                       = nullptr;
+    QAction*                            newTagAction                            = nullptr;
+    QAction*                            deleteTagAction                         = nullptr;
+    QAction*                            editTagAction                           = nullptr;
+    QAction*                            assignTagAction                         = nullptr;
 
     /// Image Actions
-    KSelectAction*                      imageViewSelectionAction;
-    QAction*                            imagePreviewAction;
+    KSelectAction*                      imageViewSelectionAction                = nullptr;
+    QAction*                            imagePreviewAction                      = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
-    QAction*                            imageMapViewAction;
+    QAction*                            imageMapViewAction                      = nullptr;
 
 #endif // HAVE_GEOLOCATION
 
-    QAction*                            imageTableViewAction;
-    QAction*                            imageIconViewAction;
-    QAction*                            imageLightTableAction;
-    QAction*                            imageAddLightTableAction;
-    QAction*                            imageAddCurrentQueueAction;
-    QAction*                            imageAddNewQueueAction;
-    QAction*                            imageViewAction;
-    QAction*                            imageWriteMetadataAction;
-    QAction*                            imageReadMetadataAction;
-    QAction*                            imageScanForFacesAction;
-    QAction*                            imageRecognizeFacesAction;
-    QAction*                            imageRemoveAllFacesAction;
-    QAction*                            imageFindSimilarAction;
-    QAction*                            imageSetExifOrientation1Action;
-    QAction*                            imageSetExifOrientation2Action;
-    QAction*                            imageSetExifOrientation3Action;
-    QAction*                            imageSetExifOrientation4Action;
-    QAction*                            imageSetExifOrientation5Action;
-    QAction*                            imageSetExifOrientation6Action;
-    QAction*                            imageSetExifOrientation7Action;
-    QAction*                            imageSetExifOrientation8Action;
-    QAction*                            imageRenameAction;
-    QMenu*                              imageRotateActionMenu;
-    QMenu*                              imageFlipActionMenu;
-    QAction*                            imageAutoExifActionMenu;
-    QAction*                            imageDeleteAction;
-    QMenu*                              imageExifOrientationActionMenu;
-    QAction*                            openWithAction;
-    QAction*                            ieAction;
-    QAction*                            ltAction;
+    QAction*                            imageTableViewAction                    = nullptr;
+    QAction*                            imageIconViewAction                     = nullptr;
+    QAction*                            imageLightTableAction                   = nullptr;
+    QAction*                            imageAddLightTableAction                = nullptr;
+    QAction*                            imageAddCurrentQueueAction              = nullptr;
+    QAction*                            imageAddNewQueueAction                  = nullptr;
+    QAction*                            imageViewAction                         = nullptr;
+    QAction*                            imageWriteMetadataAction                = nullptr;
+    QAction*                            imageReadMetadataAction                 = nullptr;
+    QAction*                            imageScanForFacesAction                 = nullptr;
+    QAction*                            imageRecognizeFacesAction               = nullptr;
+    QAction*                            imageRemoveAllFacesAction               = nullptr;
+    QAction*                            imageFindSimilarAction                  = nullptr;
+    QAction*                            imageSetExifOrientation1Action          = nullptr;
+    QAction*                            imageSetExifOrientation2Action          = nullptr;
+    QAction*                            imageSetExifOrientation3Action          = nullptr;
+    QAction*                            imageSetExifOrientation4Action          = nullptr;
+    QAction*                            imageSetExifOrientation5Action          = nullptr;
+    QAction*                            imageSetExifOrientation6Action          = nullptr;
+    QAction*                            imageSetExifOrientation7Action          = nullptr;
+    QAction*                            imageSetExifOrientation8Action          = nullptr;
+    QAction*                            imageRenameAction                       = nullptr;
+    QMenu*                              imageRotateActionMenu                   = nullptr;
+    QMenu*                              imageFlipActionMenu                     = nullptr;
+    QAction*                            imageAutoExifActionMenu                 = nullptr;
+    QAction*                            imageDeleteAction                       = nullptr;
+    QMenu*                              imageExifOrientationActionMenu          = nullptr;
+    QAction*                            openWithAction                          = nullptr;
+    QAction*                            ieAction                                = nullptr;
+    QAction*                            ltAction                                = nullptr;
 
     /// Edit Actions
-    QAction*                            cutItemsAction;
-    QAction*                            copyItemsAction;
-    QAction*                            pasteItemsAction;
-    QAction*                            selectAllAction;
-    QAction*                            selectNoneAction;
-    QAction*                            selectInvertAction;
+    QAction*                            cutItemsAction                          = nullptr;
+    QAction*                            copyItemsAction                         = nullptr;
+    QAction*                            pasteItemsAction                        = nullptr;
+    QAction*                            selectAllAction                         = nullptr;
+    QAction*                            selectNoneAction                        = nullptr;
+    QAction*                            selectInvertAction                      = nullptr;
 
     /// View Actions
-    QAction*                            zoomPlusAction;
-    QAction*                            zoomMinusAction;
-    QAction*                            zoomFitToWindowAction;
-    QAction*                            zoomTo100percents;
-    KSelectAction*                      imageSortAction;
-    KSelectAction*                      imageSortOrderAction;
-    KSelectAction*                      imageSeparationAction;
-    KSelectAction*                      imageSeparationSortOrderAction;
-    KSelectAction*                      albumSortAction;
-    QAction*                            allGroupsOpenAction;
-    QAction*                            recurseAlbumsAction;
-    QAction*                            recurseTagsAction;
-    QAction*                            showBarAction;
-    QAction*                            viewCMViewAction;
+    QAction*                            zoomPlusAction                          = nullptr;
+    QAction*                            zoomMinusAction                         = nullptr;
+    QAction*                            zoomFitToWindowAction                   = nullptr;
+    QAction*                            zoomTo100percents                       = nullptr;
+    KSelectAction*                      imageSortAction                         = nullptr;
+    KSelectAction*                      imageSortOrderAction                    = nullptr;
+    KSelectAction*                      imageSeparationAction                   = nullptr;
+    KSelectAction*                      imageSeparationSortOrderAction          = nullptr;
+    KSelectAction*                      albumSortAction                         = nullptr;
+    QAction*                            allGroupsOpenAction                     = nullptr;
+    QAction*                            recurseAlbumsAction                     = nullptr;
+    QAction*                            recurseTagsAction                       = nullptr;
+    QAction*                            showBarAction                           = nullptr;
+    QAction*                            viewCMViewAction                        = nullptr;
 
     /// Tools Actions
-    QAction*                            bqmAction;
-    QAction*                            maintenanceAction;
-    QAction*                            scanNewItemsAction;
-    QAction*                            qualityAction;
-    QAction*                            advSearchAction;
+    QAction*                            bqmAction                               = nullptr;
+    QAction*                            maintenanceAction                       = nullptr;
+    QAction*                            scanNewItemsAction                      = nullptr;
+    QAction*                            qualityAction                           = nullptr;
+    QAction*                            advSearchAction                         = nullptr;
 
     /// Application Actions
-    QAction*                            addCameraSeparatorAction;
-    QAction*                            quitAction;
-    QAction*                            tipAction;
+    QAction*                            addCameraSeparatorAction                = nullptr;
+    QAction*                            quitAction                              = nullptr;
+    QAction*                            tipAction                               = nullptr;
 
-    QActionGroup*                       manualCameraActionGroup;
-    QActionGroup*                       solidCameraActionGroup;
-    QActionGroup*                       solidUsmActionGroup;
-    QActionGroup*                       exifOrientationActionGroup;
+    QActionGroup*                       manualCameraActionGroup                 = nullptr;
+    QActionGroup*                       solidCameraActionGroup                  = nullptr;
+    QActionGroup*                       solidUsmActionGroup                     = nullptr;
+    QActionGroup*                       exifOrientationActionGroup              = nullptr;
 
     QMap<QString, QPointer<ImportUI> >  cameraUIMap;
 
-    QEventLoop*                         eventLoop;
+    QEventLoop*                         eventLoop                               = nullptr;
     QString                             solidErrorMessage;
 
-    MetadataStatusBar*                  metadataStatusBar;
-    FilterStatusBar*                    filterStatusBar;
-    DSplashScreen*                      splashScreen;
-    ItemIconView*                       view;
-    CameraList*                         cameraList;
-    TagsActionMngr*                     tagsActionManager;
-    DZoomBar*                           zoomBar;
-    DAdjustableLabel*                   statusLabel;
+    MetadataStatusBar*                  metadataStatusBar                       = nullptr;
+    FilterStatusBar*                    filterStatusBar                         = nullptr;
+    DSplashScreen*                      splashScreen                            = nullptr;
+    ItemIconView*                       view                                    = nullptr;
+    CameraList*                         cameraList                              = nullptr;
+    TagsActionMngr*                     tagsActionManager                       = nullptr;
+    DZoomBar*                           zoomBar                                 = nullptr;
+    DAdjustableLabel*                   statusLabel                             = nullptr;
 
-    DModelFactory*                      modelCollection;
+    DModelFactory*                      modelCollection                         = nullptr;
 };
 
 } // namespace Digikam
