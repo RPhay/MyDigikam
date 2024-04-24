@@ -45,10 +45,6 @@ ColumnItemProperties::ColumnItemProperties(TableViewShared* const tableViewShare
 {
 }
 
-ColumnItemProperties::~ColumnItemProperties()
-{
-}
-
 QStringList ColumnItemProperties::getSubColumns()
 {
     QStringList columns;

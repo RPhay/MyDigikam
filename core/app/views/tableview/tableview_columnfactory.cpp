@@ -38,10 +38,6 @@ TableViewColumn::TableViewColumn(TableViewShared* const tableViewShared,
 {
 }
 
-TableViewColumn::~TableViewColumn()
-{
-}
-
 // ---------------------------------------------------------------------------------------------
 
 TableViewColumnFactory::TableViewColumnFactory(TableViewShared* const tableViewShared,
@@ -111,7 +107,9 @@ QList<TableViewColumnDescription> TableViewColumnFactory::getColumnDescriptionLi
 
 // ---------------------------------------------------------------------------------------------
 
-bool TableViewColumn::paint(QPainter* const painter, const QStyleOptionViewItem& option, TableViewModel::Item* const item) const
+bool TableViewColumn::paint(QPainter* const painter,
+                            const QStyleOptionViewItem& option,
+                            TableViewModel::Item* const item) const
 {
     Q_UNUSED(painter)
     Q_UNUSED(option)
@@ -208,14 +206,6 @@ bool TableViewColumn::columnAffectedByChangeset(const ImageChangeset& /*imageCha
 }
 
 // ---------------------------------------------------------------------------------------------
-
-TableViewColumnProfile::TableViewColumnProfile()
-{
-}
-
-TableViewColumnProfile::~TableViewColumnProfile()
-{
-}
 
 void TableViewColumnProfile::loadSettings(const KConfigGroup& configGroup)
 {
@@ -338,13 +328,9 @@ void TableViewColumnConfiguration::saveSettings(KConfigGroup& configGroup) const
 TableViewColumnConfigurationWidget::TableViewColumnConfigurationWidget(TableViewShared* const sharedObject,
                                                                        const TableViewColumnConfiguration& currentConfiguration,
                                                                        QWidget* const parent)
-    : QWidget(parent),
-      s(sharedObject),
+    : QWidget      (parent),
+      s            (sharedObject),
       configuration(currentConfiguration)
-{
-}
-
-TableViewColumnConfigurationWidget::~TableViewColumnConfigurationWidget()
 {
 }
 

@@ -53,7 +53,7 @@ public:
             const TableViewColumnConfiguration& pConfiguration,
             const SubColumn pSubColumn,
             QObject* const parent = nullptr);
-    ~ColumnDigikamProperties() override;
+    ~ColumnDigikamProperties()                                                                              override = default;
 
     QString getTitle()                                                                                const override;
     ColumnFlags getColumnFlags()                                                                      const override;
@@ -66,7 +66,7 @@ public:
 
 private:
 
-    SubColumn subColumn;
+    SubColumn subColumn = SubColumnRating;
 };
 
 } // namespace TableViewColumns

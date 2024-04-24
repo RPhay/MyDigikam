@@ -44,7 +44,8 @@ class ItemFilterModel;
 class ThumbnailSize;
 class TableViewShared;
 
-class TableView : public QWidget, public StateSavingObject
+class TableView : public QWidget,
+                  public StateSavingObject
 {
     Q_OBJECT
 

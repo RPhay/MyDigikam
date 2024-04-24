@@ -57,7 +57,7 @@ public:
                                   const TableViewColumnConfiguration& pConfiguration,
                                   const SubColumn pSubColumn,
                                   QObject* const parent = nullptr);
-    ~ColumnItemProperties() override;
+    ~ColumnItemProperties()                                                                                 override = default;
 
     QString getTitle()                                                                                const override;
     ColumnFlags getColumnFlags()                                                                      const override;
@@ -69,7 +69,7 @@ public:
 
 private:
 
-    SubColumn subColumn;
+    SubColumn subColumn = SubColumnCreationDateTime;
 };
 
 } // namespace TableViewColumns

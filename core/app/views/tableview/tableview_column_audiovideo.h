@@ -52,7 +52,7 @@ public:
                                         const TableViewColumnConfiguration& pConfiguration,
                                         const SubColumn pSubColumn,
                                         QObject* const parent = nullptr);
-    ~ColumnAudioVideoProperties() override;
+    ~ColumnAudioVideoProperties()                                                                           override = default;
 
     QString getTitle()                                                                                const override;
     ColumnFlags getColumnFlags()                                                                      const override;
@@ -65,7 +65,7 @@ public:
 
 private:
 
-    SubColumn subColumn;
+    SubColumn subColumn = SubColumnDuration;
 };
 
 } // namespace TableViewColumns

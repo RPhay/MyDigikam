@@ -67,10 +67,6 @@ ColumnGeoProperties::ColumnGeoProperties(TableViewShared* const tableViewShared,
 {
 }
 
-ColumnGeoProperties::~ColumnGeoProperties()
-{
-}
-
 QStringList ColumnGeoProperties::getSubColumns()
 {
     QStringList columns;
@@ -244,9 +240,7 @@ TableViewColumnConfigurationWidget* ColumnGeoProperties::getConfigurationWidget(
 ColumnGeoConfigurationWidget::ColumnGeoConfigurationWidget(TableViewShared* const sharedObject,
                                                            const TableViewColumnConfiguration& columnConfiguration,
                                                            QWidget* const parentWidget)
-    : TableViewColumnConfigurationWidget(sharedObject, columnConfiguration, parentWidget),
-      subColumn(ColumnGeoProperties::SubColumnHasCoordinates),
-      selectorAltitudeUnit(nullptr)
+    : TableViewColumnConfigurationWidget(sharedObject, columnConfiguration, parentWidget)
 {
     ColumnGeoProperties::getSubColumnIndex<ColumnGeoProperties>(configuration.columnId, &subColumn);
 
@@ -272,10 +266,6 @@ ColumnGeoConfigurationWidget::ColumnGeoConfigurationWidget(TableViewShared* cons
             break;
         }
     }
-}
-
-ColumnGeoConfigurationWidget::~ColumnGeoConfigurationWidget()
-{
 }
 
 TableViewColumnConfiguration ColumnGeoConfigurationWidget::getNewConfiguration()

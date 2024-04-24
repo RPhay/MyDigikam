@@ -51,7 +51,7 @@ public:
                                  const TableViewColumnConfiguration& pConfiguration,
                                  const SubColumn pSubColumn,
                                  QObject* const parent = nullptr);
-    ~ColumnGeoProperties() override;
+    ~ColumnGeoProperties()                                                                                  override = default;
 
     QString getTitle()                                                                                const override;
     ColumnFlags getColumnFlags()                                                                      const override;
@@ -74,14 +74,14 @@ public:
     explicit ColumnGeoConfigurationWidget(TableViewShared* const sharedObject,
                                           const TableViewColumnConfiguration& columnConfiguration,
                                           QWidget* const parentWidget);
-    ~ColumnGeoConfigurationWidget() override;
+    ~ColumnGeoConfigurationWidget()                     override = default;
 
-    TableViewColumnConfiguration getNewConfiguration() override;
+    TableViewColumnConfiguration getNewConfiguration()  override;
 
 private:
 
-    ColumnGeoProperties::SubColumn subColumn;
-    QComboBox*                     selectorAltitudeUnit;
+    ColumnGeoProperties::SubColumn subColumn            = ColumnGeoProperties::SubColumnHasCoordinates;
+    QComboBox*                     selectorAltitudeUnit = nullptr;
 };
 
 } // namespace TableViewColumns

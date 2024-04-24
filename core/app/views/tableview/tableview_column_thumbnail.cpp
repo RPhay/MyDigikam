@@ -54,10 +54,6 @@ ColumnThumbnail::ColumnThumbnail(TableViewShared* const tableViewShared,
             this, SLOT(slotThumbnailLoaded(LoadingDescription,QPixmap)));
 }
 
-ColumnThumbnail::~ColumnThumbnail()
-{
-}
-
 bool ColumnThumbnail::CreateFromConfiguration(TableViewShared* const tableViewShared,
                                               const TableViewColumnConfiguration& pConfiguration,
                                               TableViewColumn** const pNewColumn,

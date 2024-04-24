@@ -42,20 +42,14 @@ class Q_DECL_HIDDEN TableViewConfigurationDialog::Private
 {
 public:
 
-    explicit Private()
-      : columnIndex              (0),
-        buttons                  (nullptr),
-        columnObject             (nullptr),
-        columnConfigurationWidget(nullptr)
-    {
-    }
+    Private() = default;
 
-    int                                 columnIndex;
+    int                                 columnIndex                 = 0;
 
-    QDialogButtonBox*                   buttons;
+    QDialogButtonBox*                   buttons                     = nullptr;
 
-    TableViewColumn*                    columnObject;
-    TableViewColumnConfigurationWidget* columnConfigurationWidget;
+    TableViewColumn*                    columnObject                = nullptr;
+    TableViewColumnConfigurationWidget* columnConfigurationWidget   = nullptr;
 };
 
 TableViewConfigurationDialog::TableViewConfigurationDialog(TableViewShared* const sharedObject,

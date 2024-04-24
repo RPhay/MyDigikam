@@ -57,16 +57,11 @@ class Q_DECL_HIDDEN TableView::Private
 {
 public:
 
-    explicit Private()
-      : columnProfiles    (),
-        thumbnailSize     (),
-        imageViewUtilities(nullptr)
-    {
-    }
+    Private() = default;
 
     QList<TableViewColumnProfile> columnProfiles;
     ThumbnailSize                 thumbnailSize;
-    ItemViewUtilities*            imageViewUtilities;
+    ItemViewUtilities*            imageViewUtilities = nullptr;
 };
 
 TableView::TableView(QItemSelectionModel* const selectionModel,

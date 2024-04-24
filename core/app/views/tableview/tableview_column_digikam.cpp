@@ -46,10 +46,6 @@ ColumnDigikamProperties::ColumnDigikamProperties(TableViewShared* const tableVie
 {
 }
 
-ColumnDigikamProperties::~ColumnDigikamProperties()
-{
-}
-
 QStringList ColumnDigikamProperties::getSubColumns()
 {
     QStringList columns;

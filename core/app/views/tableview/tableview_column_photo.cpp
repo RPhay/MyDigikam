@@ -48,10 +48,6 @@ ColumnPhotoProperties::ColumnPhotoProperties(TableViewShared* const tableViewSha
 {
 }
 
-ColumnPhotoProperties::~ColumnPhotoProperties()
-{
-}
-
 QStringList ColumnPhotoProperties::getSubColumns()
 {
     QStringList columns;
@@ -428,10 +424,7 @@ TableViewColumnConfigurationWidget* ColumnPhotoProperties::getConfigurationWidge
 ColumnPhotoConfigurationWidget::ColumnPhotoConfigurationWidget(TableViewShared* const sharedObject,
                                                                const TableViewColumnConfiguration& columnConfiguration,
                                                                QWidget* const parentWidget)
-    : TableViewColumnConfigurationWidget(sharedObject, columnConfiguration, parentWidget),
-      subColumn                         (ColumnPhotoProperties::SubColumnExposure),
-      selectorExposureTimeFormat        (nullptr),
-      selectorExposureTimeUnit          (nullptr)
+    : TableViewColumnConfigurationWidget(sharedObject, columnConfiguration, parentWidget)
 {
     ColumnPhotoProperties::getSubColumnIndex<ColumnPhotoProperties>(configuration.columnId, &subColumn);
 
@@ -470,10 +463,6 @@ ColumnPhotoConfigurationWidget::ColumnPhotoConfigurationWidget(TableViewShared* 
             break;
         }
     }
-}
-
-ColumnPhotoConfigurationWidget::~ColumnPhotoConfigurationWidget()
-{
 }
 
 TableViewColumnConfiguration ColumnPhotoConfigurationWidget::getNewConfiguration()

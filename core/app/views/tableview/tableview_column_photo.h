@@ -52,17 +52,13 @@ public:
         SubColumnWhiteBalance = 9
     };
 
-private:
-
-    SubColumn subColumn;
-
 public:
 
     explicit ColumnPhotoProperties(TableViewShared* const tableViewShared,
                                    const TableViewColumnConfiguration& pConfiguration,
                                    const SubColumn pSubColumn,
                                    QObject* const parent = nullptr);
-    ~ColumnPhotoProperties() override;
+    ~ColumnPhotoProperties()                                                                                override = default;
 
     QString getTitle()                                                                                const override;
     ColumnFlags getColumnFlags()                                                                      const override;
@@ -73,6 +69,10 @@ public:
 
     static TableViewColumnDescription getDescription();
     static QStringList getSubColumns();
+
+private:
+
+    SubColumn subColumn = SubColumnExposure;
 };
 
 // ----------------------------------------------------------------------------------------------------------------------
@@ -86,9 +86,9 @@ public:
     explicit ColumnPhotoConfigurationWidget(TableViewShared* const sharedObject,
                                             const TableViewColumnConfiguration& columnConfiguration,
                                             QWidget* const parentWidget);
-    ~ColumnPhotoConfigurationWidget() override;
+    ~ColumnPhotoConfigurationWidget()                   override = default;
 
-    TableViewColumnConfiguration getNewConfiguration() override;
+    TableViewColumnConfiguration getNewConfiguration()  override;
 
 private Q_SLOTS:
 
@@ -96,9 +96,9 @@ private Q_SLOTS:
 
 private:
 
-    ColumnPhotoProperties::SubColumn subColumn;
-    QComboBox*                       selectorExposureTimeFormat;
-    QComboBox*                       selectorExposureTimeUnit;
+    ColumnPhotoProperties::SubColumn subColumn                  = ColumnPhotoProperties::SubColumnExposure;
+    QComboBox*                       selectorExposureTimeFormat = nullptr;
+    QComboBox*                       selectorExposureTimeUnit   = nullptr;
 };
 
 } // namespace TableViewColumns

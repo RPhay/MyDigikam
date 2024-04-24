@@ -52,7 +52,7 @@ public:
                                   const TableViewColumnConfiguration& pConfiguration,
                                   const SubColumn pSubColumn,
                                   QObject* const parent = nullptr);
-    ~ColumnFileProperties() override {};
+    ~ColumnFileProperties()                                                                                 override = default;
 
     TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget)           const override;
     void setConfiguration(const TableViewColumnConfiguration& newConfiguration) override;
@@ -68,7 +68,7 @@ public:
 
 private:
 
-    SubColumn subColumn;
+    SubColumn subColumn = SubColumnName;
 };
 
 // ---------------------------------------------------------------------------------------
@@ -82,14 +82,14 @@ public:
     explicit ColumnFileConfigurationWidget(TableViewShared* const sharedObject,
                                            const TableViewColumnConfiguration& columnConfiguration,
                                            QWidget* const parentWidget);
-    ~ColumnFileConfigurationWidget() override;
+    ~ColumnFileConfigurationWidget()                    override = default;
 
-    TableViewColumnConfiguration getNewConfiguration() override;
+    TableViewColumnConfiguration getNewConfiguration()  override;
 
 private:
 
-    ColumnFileProperties::SubColumn subColumn;
-    QComboBox*                      selectorSizeType;
+    ColumnFileProperties::SubColumn subColumn        = ColumnFileProperties::SubColumnName;
+    QComboBox*                      selectorSizeType = nullptr;
 };
 
 } // namespace TableViewColumns

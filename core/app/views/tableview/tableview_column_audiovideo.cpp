@@ -45,10 +45,6 @@ ColumnAudioVideoProperties::ColumnAudioVideoProperties(TableViewShared* const ta
 {
 }
 
-ColumnAudioVideoProperties::~ColumnAudioVideoProperties()
-{
-}
-
 QStringList ColumnAudioVideoProperties::getSubColumns()
 {
     QStringList columns;

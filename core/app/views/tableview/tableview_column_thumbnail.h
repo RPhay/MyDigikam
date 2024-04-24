@@ -37,7 +37,7 @@ private:
     explicit ColumnThumbnail(TableViewShared* const tableViewShared,
                              const TableViewColumnConfiguration& pConfiguration,
                              QWidget* const parent);
-    ~ColumnThumbnail() override;
+    ~ColumnThumbnail()                                                                                              override = default;
 
 public:
 
@@ -46,7 +46,7 @@ public:
     QVariant data(TableViewModel::Item* const item, const int role)                                           const override;
     bool paint(QPainter* const painter, const QStyleOptionViewItem& option, TableViewModel::Item* const item) const override;
     QSize sizeHint(const QStyleOptionViewItem& option, TableViewModel::Item* const item)                      const override;
-    void updateThumbnailSize() override;
+    void updateThumbnailSize()                                                                                      override;
 
     static bool CreateFromConfiguration(TableViewShared* const tableViewShared,
                                         const TableViewColumnConfiguration& pConfiguration,
@@ -61,8 +61,8 @@ private Q_SLOTS:
 
 private:
 
-    int      m_thumbnailSize;
-    QWidget* m_displayWidget;
+    int      m_thumbnailSize = 64;
+    QWidget* m_displayWidget = nullptr;
 };
 
 } // namespace TableViewColumns

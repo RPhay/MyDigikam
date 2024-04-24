@@ -40,7 +40,7 @@ public:
     explicit TableViewConfigurationDialog(TableViewShared* const sharedObject,
                                           const int columnIndex,
                                           QWidget* const parentWidget);
-    ~TableViewConfigurationDialog() override;
+    ~TableViewConfigurationDialog()                          override;
 
     TableViewColumnConfiguration getNewConfiguration() const;
 
@@ -49,7 +49,7 @@ private:
     class Private;
 
     const QScopedPointer<Private> d;
-    TableViewShared* const        s;
+    TableViewShared* const        s = nullptr;
 };
 
 } // namespace Digikam

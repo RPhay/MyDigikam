@@ -221,9 +221,7 @@ TableViewColumn::ColumnCompareResult ColumnFileProperties::compare(TableViewMode
 ColumnFileConfigurationWidget::ColumnFileConfigurationWidget(TableViewShared* const sharedObject,
                                                              const TableViewColumnConfiguration& columnConfiguration,
                                                              QWidget* const parentWidget)
-    : TableViewColumnConfigurationWidget(sharedObject, columnConfiguration, parentWidget),
-      subColumn(ColumnFileProperties::SubColumnName),
-      selectorSizeType(nullptr)
+    : TableViewColumnConfigurationWidget(sharedObject, columnConfiguration, parentWidget)
 {
     ColumnFileProperties::getSubColumnIndex<ColumnFileProperties>(configuration.columnId, &subColumn);
 
@@ -249,10 +247,6 @@ ColumnFileConfigurationWidget::ColumnFileConfigurationWidget(TableViewShared* co
             break;
         }
     }
-}
-
-ColumnFileConfigurationWidget::~ColumnFileConfigurationWidget()
-{
 }
 
 TableViewColumnConfiguration ColumnFileConfigurationWidget::getNewConfiguration()

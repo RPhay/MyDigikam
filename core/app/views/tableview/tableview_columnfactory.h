@@ -172,13 +172,13 @@ public:
     explicit TableViewColumnConfigurationWidget(TableViewShared* const sharedObject,
                                                 const TableViewColumnConfiguration& currentConfiguration,
                                                 QWidget* const parent = nullptr);
-    ~TableViewColumnConfigurationWidget() override;
+    ~TableViewColumnConfigurationWidget() override = default;
 
     virtual TableViewColumnConfiguration getNewConfiguration() = 0;
 
 public:
 
-    TableViewShared* const       s;
+    TableViewShared* const       s = nullptr;
     TableViewColumnConfiguration configuration;
 };
 
@@ -190,7 +190,7 @@ class TableViewColumn : public QObject
 
 protected:
 
-    TableViewShared* const       s;
+    TableViewShared* const       s = nullptr;
     TableViewColumnConfiguration configuration;
 
 public:
@@ -216,7 +216,7 @@ public:
     explicit TableViewColumn(TableViewShared* const tableViewShared,
                              const TableViewColumnConfiguration& pConfiguration,
                              QObject* const parent = nullptr);
-    ~TableViewColumn() override;
+    ~TableViewColumn() override = default;
 
 public:
 
@@ -307,8 +307,8 @@ public:
 
 private:
 
-    QWidget*         m_displayWidget;
-    TableViewShared* const s;
+    QWidget*         m_displayWidget = nullptr;
+    TableViewShared* const s         = nullptr;
 };
 
 // ----------------------------------------------------------------------------
@@ -317,8 +317,8 @@ class TableViewColumnProfile
 {
 public:
 
-    TableViewColumnProfile();
-    ~TableViewColumnProfile();
+    TableViewColumnProfile()  = default;
+    ~TableViewColumnProfile() = default;
 
     void loadSettings(const KConfigGroup& configGroup);
     void saveSettings(KConfigGroup& configGroup);
