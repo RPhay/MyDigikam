@@ -196,168 +196,169 @@ public:
 public:
 
     /// start up setting
-    bool                                         showSplash;
+    bool                                         showSplash                                         = false;
     /// file ops settings
-    bool                                         useTrash;
-    bool                                         showTrashDeleteDialog;
-    bool                                         showPermanentDeleteDialog;
+    bool                                         useTrash                                           = false;
+    bool                                         showTrashDeleteDialog                              = false;
+    bool                                         showPermanentDeleteDialog                          = false;
     /// metadata setting
-    bool                                         sidebarApplyDirectly;
+    bool                                         sidebarApplyDirectly                               = false;
     /// file dialog setting
-    bool                                         useNativeFileDialog;
+    bool                                         useNativeFileDialog                                = false;
     /// grouped item draw setting
-    bool                                         drawFramesToGrouped;
+    bool                                         drawFramesToGrouped                                = true;
     /// select first item setting
-    bool                                         selectFirstAlbumItem;
+    bool                                         selectFirstAlbumItem                               = true;
     /// expand item setting
-    bool                                         expandNewCurrentItem;
+    bool                                         expandNewCurrentItem                               = true;
     /// item center setting
-    bool                                         scrollItemToCenter;
+    bool                                         scrollItemToCenter                                 = false;
     /// tag filter setting
-    bool                                         showOnlyPersonTagsInPeopleSidebar;
+    bool                                         showOnlyPersonTagsInPeopleSidebar                  = false;
 
-    bool                                         detectFacesInNewImages;
+    bool                                         detectFacesInNewImages                             = false;
 
     /// icon view settings
-    bool                                         iconShowName;
-    bool                                         iconShowSize;
-    bool                                         iconShowDate;
-    bool                                         iconShowModDate;
-    bool                                         iconShowTitle;
-    bool                                         iconShowComments;
-    bool                                         iconShowResolution;
-    bool                                         iconShowTags;
-    bool                                         iconShowOverlays;
-    bool                                         iconShowFullscreen;
-    bool                                         iconShowRating;
-    bool                                         iconShowPickLabel;
-    bool                                         iconShowColorLabel;
-    bool                                         iconShowImageFormat;
-    bool                                         iconShowCoordinates;
-    bool                                         iconShowAspectRatio;
+    bool                                         iconShowName                                       = false;
+    bool                                         iconShowSize                                       = false;
+    bool                                         iconShowDate                                       = false;
+    bool                                         iconShowModDate                                    = false;
+    bool                                         iconShowTitle                                      = false;
+    bool                                         iconShowComments                                   = false;
+    bool                                         iconShowResolution                                 = false;
+    bool                                         iconShowTags                                       = false;
+    bool                                         iconShowOverlays                                   = false;
+    bool                                         iconShowFullscreen                                 = false;
+    bool                                         iconShowRating                                     = false;
+    bool                                         iconShowPickLabel                                  = false;
+    bool                                         iconShowColorLabel                                 = false;
+    bool                                         iconShowImageFormat                                = false;
+    bool                                         iconShowCoordinates                                = false;
+    bool                                         iconShowAspectRatio                                = false;
     QFont                                        iconviewFont;
 
     /// Icon-view tooltip settings
-    bool                                         showToolTips;
-    bool                                         tooltipShowFileName;
-    bool                                         tooltipShowFileDate;
-    bool                                         tooltipShowFileSize;
-    bool                                         tooltipShowImageType;
-    bool                                         tooltipShowImageDim;
-    bool                                         tooltipShowImageAR;
-    bool                                         tooltipShowPhotoMake;
-    bool                                         tooltipShowPhotoLens;
-    bool                                         tooltipShowPhotoDate;
-    bool                                         tooltipShowPhotoFocal;
-    bool                                         tooltipShowPhotoExpo;
-    bool                                         tooltipShowPhotoMode;
-    bool                                         tooltipShowPhotoFlash;
-    bool                                         tooltipShowPhotoWb;
-    bool                                         tooltipShowAlbumName;
-    bool                                         tooltipShowTitles;
-    bool                                         tooltipShowComments;
-    bool                                         tooltipShowTags;
-    bool                                         tooltipShowLabelRating;
-    bool                                         tooltipShowVideoAspectRatio;
-    bool                                         tooltipShowVideoAudioBitRate;
-    bool                                         tooltipShowVideoAudioChannelType;
-    bool                                         tooltipShowVideoAudioCodec;
-    bool                                         tooltipShowVideoDuration;
-    bool                                         tooltipShowVideoFrameRate;
-    bool                                         tooltipShowVideoVideoCodec;
+    bool                                         showToolTips                                       = false;
+    bool                                         tooltipShowFileName                                = false;
+    bool                                         tooltipShowFileDate                                = false;
+    bool                                         tooltipShowFileSize                                = false;
+    bool                                         tooltipShowImageType                               = false;
+    bool                                         tooltipShowImageDim                                = false;
+    bool                                         tooltipShowImageAR                                 = false;
+    bool                                         tooltipShowPhotoMake                               = false;
+    bool                                         tooltipShowPhotoLens                               = false;
+    bool                                         tooltipShowPhotoDate                               = false;
+    bool                                         tooltipShowPhotoFocal                              = false;
+    bool                                         tooltipShowPhotoExpo                               = false;
+    bool                                         tooltipShowPhotoMode                               = false;
+    bool                                         tooltipShowPhotoFlash                              = false;
+    bool                                         tooltipShowPhotoWb                                 = false;
+    bool                                         tooltipShowAlbumName                               = false;
+    bool                                         tooltipShowTitles                                  = false;
+    bool                                         tooltipShowComments                                = false;
+    bool                                         tooltipShowTags                                    = false;
+    bool                                         tooltipShowLabelRating                             = false;
+    bool                                         tooltipShowVideoAspectRatio                        = false;
+    bool                                         tooltipShowVideoAudioBitRate                       = false;
+    bool                                         tooltipShowVideoAudioChannelType                   = false;
+    bool                                         tooltipShowVideoAudioCodec                         = false;
+    bool                                         tooltipShowVideoDuration                           = false;
+    bool                                         tooltipShowVideoFrameRate                          = false;
+    bool                                         tooltipShowVideoVideoCodec                         = false;
 
     QFont                                        toolTipsFont;
 
     /// Folder-view tooltip settings
-    bool                                         showAlbumToolTips;
-    bool                                         tooltipShowAlbumTitle;
-    bool                                         tooltipShowAlbumDate;
-    bool                                         tooltipShowAlbumCollection;
-    bool                                         tooltipShowAlbumCategory;
-    bool                                         tooltipShowAlbumCaption;
-    bool                                         tooltipShowAlbumPreview;
+    bool                                         showAlbumToolTips                                  = false;
+    bool                                         tooltipShowAlbumTitle                              = false;
+    bool                                         tooltipShowAlbumDate                               = false;
+    bool                                         tooltipShowAlbumCollection                         = false;
+    bool                                         tooltipShowAlbumCategory                           = false;
+    bool                                         tooltipShowAlbumCaption                            = false;
+    bool                                         tooltipShowAlbumPreview                            = false;
 
     /// preview settings
     PreviewSettings                              previewSettings;
-    bool                                         scaleFitToWindow;
-    bool                                         previewShowIcons;
-    bool                                         showThumbbar;
+    bool                                         scaleFitToWindow                                   = false;
+    bool                                         previewShowIcons                                   = true;
+    bool                                         showThumbbar                                       = false;
 
-    bool                                         showFolderTreeViewItemsCount;
+    bool                                         showFolderTreeViewItemsCount                       = false;
 
     /// tree-view settings
-    int                                          treeThumbnailSize;
-    int                                          treeThumbFaceSize;
+    int                                          treeThumbnailSize                                  = 0;
+    int                                          treeThumbFaceSize                                  = 0;
     QFont                                        treeviewFont;
 
     /// icon view settings
-    int                                          thumbnailSize;
-    int                                          ratingFilterCond;
-    bool                                         recursiveAlbums;
-    bool                                         recursiveTags;
-    bool                                         allGroupsOpen;
+    int                                          thumbnailSize                                      = 0;
+    int                                          ratingFilterCond                                   = 0;
+    bool                                         recursiveAlbums                                    = false;
+    bool                                         recursiveTags                                      = false;
+    bool                                         allGroupsOpen                                      = false;
 
     /// theme settings
     QString                                      currentTheme;
 
     /// database settings
     DbEngineParameters                           databaseParams;
-    bool                                         scanAtStart;
-    bool                                         cleanAtStart;
-    bool                                         databaseDirSetAtCmd;
+    bool                                         scanAtStart                                        = true;
+    bool                                         cleanAtStart                                       = true;
+    bool                                         databaseDirSetAtCmd                                = false;
 
     /// album settings
-    bool                                         albumMonitoring;
+    bool                                         albumMonitoring                                    = false;
 
     QStringList                                  albumCategoryNames;
 
     KSharedConfigPtr                             config;
 
-    int                                          updateType;
-    bool                                         updateWithDebug;
-    DMultiTabBar::TextStyle                      sidebarTitleStyle;
+    int                                          updateType                                         = 0;
+    bool                                         updateWithDebug                                    = false;
+    DMultiTabBar::TextStyle                      sidebarTitleStyle                                  = DMultiTabBar::AllIconsText;
 
     /// album view settings
-    ApplicationSettings::AlbumSortRole           albumSortRole;
+    ApplicationSettings::AlbumSortRole           albumSortRole                                      = ApplicationSettings::ByFolder;
 
     /// icon view settings
-    int                                          imageSortOrder;
-    int                                          imageSorting;
-    int                                          imageSeparationMode;
-    int                                          imageSeparationSortOrder;
-    int                                          itemLeftClickAction;
+    int                                          imageSortOrder                                     = 0;
+    int                                          imageSorting                                       = 0;
+    int                                          imageSeparationMode                                = 0;
+    int                                          imageSeparationSortOrder                           = 0;;
+    int                                          itemLeftClickAction                                = ApplicationSettings::ShowPreview;
 
     /// Baloo settings
-    bool                                         syncToDigikam;
-    bool                                         syncToBaloo;
+    bool                                         syncToDigikam                                      = false;
+    bool                                         syncToBaloo                                        = false;
 
     /// versioning settings
 
     VersionManagerSettings                       versionSettings;
 
     /// face detection settings
-    double                                       faceDetectionAccuracy;
-    bool                                         faceDetectionYoloV3;
+    double                                       faceDetectionAccuracy                              = 0.7;
+    bool                                         faceDetectionYoloV3                                = false;
 
     /// misc
-    ApplicationSettings::StringComparisonType    stringComparisonType;
+    ApplicationSettings::StringComparisonType    stringComparisonType                               = ApplicationSettings::Natural;
     QString                                      applicationStyle;
     QString                                      applicationIcon;
     QFont                                        applicationFont;
 
-    int                                          minimumSimilarityBound;
-    int                                          duplicatesSearchLastMinSimilarity;
-    int                                          duplicatesSearchLastMaxSimilarity;
-    int                                          duplicatesSearchLastAlbumTagRelation;
-    int                                          duplicatesSearchLastRestrictions;
-    HaarIface::RefImageSelMethod                 duplicatesSearchLastReferenceImageSelectionMethod;
+    int                                          minimumSimilarityBound                             = 40;
+    int                                          duplicatesSearchLastMinSimilarity                  = 90;
+    int                                          duplicatesSearchLastMaxSimilarity                  = 100;
+    int                                          duplicatesSearchLastAlbumTagRelation               = 0;
+    int                                          duplicatesSearchLastRestrictions                   = 0;
+    HaarIface::RefImageSelMethod                 duplicatesSearchLastReferenceImageSelectionMethod  = HaarIface::RefImageSelMethod::OlderOrLarger;
 
     /// Grouping operation settings
-    ApplicationSettings::OperationModes          groupingOperateOnAll;
+    ApplicationSettings::OperationModes          groupingOperateOnAll                               = ApplicationSettings::OperationModes();
+
 
 private:
 
-    ApplicationSettings*                         q;
+    ApplicationSettings*                         q                                                  = nullptr;
 
 private:
 
