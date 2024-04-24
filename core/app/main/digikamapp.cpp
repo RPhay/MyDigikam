@@ -319,6 +319,11 @@ DigikamApp::~DigikamApp()
 
     DatabaseServerStarter::instance()->stopServerManagerProcess();
 
+    if (ExifToolProcess::isCreated())
+    {
+        delete ExifToolProcess::instance()->thread();
+    }
+
     delete d->modelCollection;
 
     m_instance = nullptr;
