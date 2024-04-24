@@ -47,16 +47,11 @@ class Q_DECL_HIDDEN SearchSideBarWidget::Private
 {
 public:
 
-    explicit Private()
-      : searchSearchBar(nullptr),
-        searchTreeView (nullptr),
-        searchTabHeader(nullptr)
-    {
-    }
+    Private() = default;
 
-    SearchTextBarDb*      searchSearchBar;
-    NormalSearchTreeView* searchTreeView;
-    SearchTabHeader*      searchTabHeader;
+    SearchTextBarDb*      searchSearchBar = nullptr;
+    NormalSearchTreeView* searchTreeView  = nullptr;
+    SearchTabHeader*      searchTabHeader = nullptr;
 };
 
 SearchSideBarWidget::SearchSideBarWidget(QWidget* const parent,

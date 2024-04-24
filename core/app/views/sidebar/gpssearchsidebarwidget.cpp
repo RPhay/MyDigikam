@@ -48,12 +48,9 @@ class Q_DECL_HIDDEN GPSSearchSideBarWidget::Private
 {
 public:
 
-    explicit Private()
-      : gpsSearchView(nullptr)
-    {
-    }
+    Private() = default;
 
-    GPSSearchView* gpsSearchView;
+    GPSSearchView* gpsSearchView = nullptr;
 };
 
 GPSSearchSideBarWidget::GPSSearchSideBarWidget(QWidget* const parent,

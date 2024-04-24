@@ -57,36 +57,24 @@ public:
 
 public:
 
-    explicit Private()
-      : openTagMngr             (nullptr),
-        tagSearchBar            (nullptr),
-        tagFolderView           (nullptr),
-        btnGroup                (nullptr),
-        noTagsBtn               (nullptr),
-        tagsBtn                 (nullptr),
-        noTagsWasChecked        (false),
-        ExistingTagsWasChecked  (false)
-    {
-    }
+    Private() = default;
 
 public:
 
-    QPushButton*         openTagMngr;
-    SearchTextBarDb*     tagSearchBar;
-    TagFolderView*       tagFolderView;
-    QButtonGroup*        btnGroup;
-    QRadioButton*        noTagsBtn;
-    QRadioButton*        tagsBtn;
+    QPushButton*         openTagMngr            = nullptr;
+    SearchTextBarDb*     tagSearchBar           = nullptr;
+    TagFolderView*       tagFolderView          = nullptr;
+    QButtonGroup*        btnGroup               = nullptr;
+    QRadioButton*        noTagsBtn              = nullptr;
+    QRadioButton*        tagsBtn                = nullptr;
 
-    bool                 noTagsWasChecked;
-    bool                 ExistingTagsWasChecked;
+    bool                 noTagsWasChecked       = false;
+    bool                 ExistingTagsWasChecked = false;
 
     QString              noTagsSearchXml;
 
-    static const QString configTagsSourceEntry;
+    const QString configTagsSourceEntry         = QLatin1String("TagsSource");
 };
-
-const QString TagViewSideBarWidget::Private::configTagsSourceEntry(QLatin1String("TagsSource"));
 
 TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* const model)
     : SidebarWidget(parent),

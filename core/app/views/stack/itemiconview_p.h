@@ -132,8 +132,10 @@ public:
         {
             return i18n("Map Search");
         }
-        else if ((title == SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch)) ||
-                 (title == SAlbum::getTemporaryTitle(DatabaseSearch::KeywordSearch)))
+        else if (
+                 (title == SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch)) ||
+                 (title == SAlbum::getTemporaryTitle(DatabaseSearch::KeywordSearch))
+                )
         {
             return i18n("Last Search");
         }

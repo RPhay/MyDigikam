@@ -60,60 +60,35 @@ class Q_DECL_HIDDEN StackedView::Private
 {
 public:
 
-    explicit Private()
-      : needUpdateBar   (false),
-        syncingSelection(false),
-        dockArea        (nullptr),
-        imageIconView   (nullptr),
-        thumbBar        (nullptr),
-        imagePreviewView(nullptr),
-        thumbBarDock    (nullptr),
-        welcomePageView (nullptr),
+    Private() = default;
 
-#ifdef HAVE_MEDIAPLAYER
+    bool              needUpdateBar     = false;
+    bool              syncingSelection  = false;
 
-        mediaPlayerView (nullptr),
+    QMainWindow*      dockArea          = nullptr;
 
-#endif // HAVE_MEDIAPLAYER
-
-#ifdef HAVE_GEOLOCATION
-
-        mapWidgetView   (nullptr),
-
-#endif // HAVE_GEOLOCATION
-
-        tableView       (nullptr),
-        trashView       (nullptr)
-    {
-    }
-
-    bool              needUpdateBar;
-    bool              syncingSelection;
-
-    QMainWindow*      dockArea;
-
-    DigikamItemView*  imageIconView;
-    ItemThumbnailBar* thumbBar;
-    ItemPreviewView*  imagePreviewView;
-    ThumbBarDock*     thumbBarDock;
-    WelcomePageView*  welcomePageView;
+    DigikamItemView*  imageIconView     = nullptr;
+    ItemThumbnailBar* thumbBar          = nullptr;
+    ItemPreviewView*  imagePreviewView  = nullptr;
+    ThumbBarDock*     thumbBarDock      = nullptr;
+    WelcomePageView*  welcomePageView   = nullptr;
 
     QMap<int, int>    stackMap;
 
 #ifdef HAVE_MEDIAPLAYER
 
-    MediaPlayerView*  mediaPlayerView;
+    MediaPlayerView*  mediaPlayerView   = nullptr;
 
 #endif // HAVE_MEDIAPLAYER
 
 #ifdef HAVE_GEOLOCATION
 
-    MapWidgetView*    mapWidgetView;
+    MapWidgetView*    mapWidgetView     = nullptr;
 
 #endif // HAVE_GEOLOCATION
 
-    TableView*        tableView;
-    TrashView*        trashView;
+    TableView*        tableView         = nullptr;
+    TrashView*        trashView         = nullptr;
 };
 
 StackedView::StackedView(QWidget* const parent)
@@ -310,15 +285,19 @@ MediaPlayerView* StackedView::mediaPlayerView() const
 
 bool StackedView::isInSingleFileMode() const
 {
-    return ((viewMode() == PreviewImageMode) ||
-            (viewMode() == MediaPlayerMode));
+    return (
+            (viewMode() == PreviewImageMode) ||
+            (viewMode() == MediaPlayerMode)
+           );
 }
 
 bool StackedView::isInMultipleFileMode() const
 {
-    return ((viewMode() == IconViewMode)  ||
+    return (
+            (viewMode() == IconViewMode)  ||
             (viewMode() == MapWidgetMode) ||
-            (viewMode() == TableViewMode));
+            (viewMode() == TableViewMode)
+           );
 }
 
 bool StackedView::isInAbstractMode() const
@@ -330,7 +309,7 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
 {
     if (info.isNull())
     {
-        if (viewMode() == MediaPlayerMode)
+        if      (viewMode() == MediaPlayerMode)
         {
 
 #ifdef HAVE_MEDIAPLAYER
@@ -347,9 +326,13 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
     }
     else
     {
-        if ((info.category() == DatabaseItem::Audio)      ||
+        // Special case for animated image as GIF or NMG
+
+        if (
+            (info.category() == DatabaseItem::Audio)      ||
             (info.category() == DatabaseItem::Video)      ||
-            DImg::isAnimatedImage(info.fileUrl().toLocalFile()))    // Special case for animated image as GIF or NMG
+            DImg::isAnimatedImage(info.fileUrl().toLocalFile())
+           )
         {
             // Stop image viewer
 
@@ -433,10 +416,12 @@ void StackedView::setViewMode(const StackedViewMode mode)
         d->thumbBarDock->hide();
     }
 
-    if ((mode == IconViewMode)    ||
+    if (
+        (mode == IconViewMode)    ||
         (mode == WelcomePageMode) ||
         (mode == MapWidgetMode)   ||
-        (mode == TableViewMode))
+        (mode == TableViewMode)
+       )
     {
         setPreviewItem();
         setCurrentIndex(d->stackMap.key(mode));
@@ -454,7 +439,7 @@ void StackedView::setViewMode(const StackedViewMode mode)
 
     d->tableView->slotSetActive(mode == TableViewMode);
 
-    if (mode == IconViewMode)
+    if      (mode == IconViewMode)
     {
         d->imageIconView->setFocus();
     }

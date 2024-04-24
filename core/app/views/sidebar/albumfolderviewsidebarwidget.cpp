@@ -45,16 +45,11 @@ class Q_DECL_HIDDEN AlbumFolderViewSideBarWidget::Private
 {
 public:
 
-    explicit Private()
-      : albumModificationHelper(nullptr),
-        albumFolderView        (nullptr),
-        searchTextBar          (nullptr)
-    {
-    }
+    Private() = default;
 
-    AlbumModificationHelper* albumModificationHelper;
-    AlbumSelectionTreeView*  albumFolderView;
-    SearchTextBarDb*         searchTextBar;
+    AlbumModificationHelper* albumModificationHelper = nullptr;
+    AlbumSelectionTreeView*  albumFolderView         = nullptr;
+    SearchTextBarDb*         searchTextBar           = nullptr;
 };
 
 AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent,
@@ -85,6 +80,7 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
     layout->setContentsMargins(0, 0, spacing, 0);
 
     // setup connection
+
     connect(d->albumFolderView, SIGNAL(signalFindDuplicates(QList<PAlbum*>)),
             this, SIGNAL(signalFindDuplicates(QList<PAlbum*>)));
 }
@@ -138,6 +134,7 @@ AlbumPointer<PAlbum> AlbumFolderViewSideBarWidget::currentAlbum() const
 void AlbumFolderViewSideBarWidget::setCurrentAlbum(PAlbum* album)
 {
     // Change the current album in list view.
+
     d->albumFolderView->setCurrentAlbums(QList<Album*>() << album);
 }
 

@@ -62,8 +62,10 @@ void ItemIconView::toggleZoomActions()
             d->parent->enableZoomMinusAction(false);
         }
     }
-    else if ((viewMode() == StackedView::IconViewMode) ||
-             (viewMode() == StackedView::TableViewMode))
+    else if (
+             (viewMode() == StackedView::IconViewMode) ||
+             (viewMode() == StackedView::TableViewMode)
+            )
     {
         d->parent->enableZoomMinusAction(true);
         d->parent->enableZoomPlusAction(true);
@@ -87,11 +89,14 @@ void ItemIconView::toggleZoomActions()
 
 void ItemIconView::slotZoomIn()
 {
-    if      ((viewMode() == StackedView::IconViewMode) ||
-             (viewMode() == StackedView::TableViewMode))
+    if      (
+             (viewMode() == StackedView::IconViewMode) ||
+             (viewMode() == StackedView::TableViewMode)
+            )
     {
         setThumbSize(d->thumbSize + ThumbnailSize::Step);
         toggleZoomActions();
+
         Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (viewMode() == StackedView::PreviewImageMode)
@@ -102,11 +107,14 @@ void ItemIconView::slotZoomIn()
 
 void ItemIconView::slotZoomOut()
 {
-    if      ((viewMode() == StackedView::IconViewMode) ||
-             (viewMode() == StackedView::TableViewMode))
+    if      (
+             (viewMode() == StackedView::IconViewMode) ||
+             (viewMode() == StackedView::TableViewMode)
+            )
     {
         setThumbSize(d->thumbSize - ThumbnailSize::Step);
         toggleZoomActions();
+
         Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (viewMode() == StackedView::PreviewImageMode)
@@ -135,6 +143,7 @@ void ItemIconView::slotFitToWindow()
         qCDebug(DIGIKAM_GENERAL_LOG) << "new thumb size = " << nts;
         setThumbSize(nts);
         toggleZoomActions();
+
         Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (viewMode() == StackedView::PreviewImageMode)
@@ -150,9 +159,11 @@ void ItemIconView::setThumbSize(int size)
         double z = DZoomBar::zoomFromSize(size, zoomMin(), zoomMax());
         setZoomFactor(z);
     }
-    else if ((viewMode() == StackedView::IconViewMode)  ||
+    else if (
+             (viewMode() == StackedView::IconViewMode)  ||
              (viewMode() == StackedView::TableViewMode) ||
-             (viewMode() == StackedView::TrashViewMode))
+             (viewMode() == StackedView::TrashViewMode)
+            )
     {
         if      (size > ThumbnailSize::maxThumbsSize())
         {

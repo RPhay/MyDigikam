@@ -45,14 +45,18 @@ void ItemIconView::slotFirstItem()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotGoToRow(0, false);
             break;
+        }
 
         default:
+        {
             // all other views are tied to IconView's selection model
 
             d->iconView->toFirstIndex();
             break;
+        }
     }
 }
 
@@ -61,14 +65,18 @@ void ItemIconView::slotPrevItem()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotGoToRow(-1, true);
             break;
+        }
 
         default:
+        {
             // all other views are tied to IconView's selection model
 
             d->iconView->toPreviousIndex();
             break;
+        }
     }
 }
 
@@ -77,14 +85,18 @@ void ItemIconView::slotNextItem()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotGoToRow(1, true);
             break;
+        }
 
         default:
+        {
             // all other views are tied to IconView's selection model
 
             d->iconView->toNextIndex();
             break;
+        }
     }
 }
 
@@ -93,14 +105,18 @@ void ItemIconView::slotLastItem()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotGoToRow(-1, false);
             break;
+        }
 
         default:
+        {
             // all other views are tied to IconView's selection model
 
             d->iconView->toLastIndex();
             break;
+        }
     }
 }
 
@@ -121,16 +137,25 @@ void ItemIconView::slotImageSelected()
     switch (viewMode())
     {
         case StackedView::TrashViewMode:
+        {
             Q_EMIT signalTrashSelectionChanged(d->trashView->statusBarText());
+
             break;
+        }
 
         case StackedView::TableViewMode:
+        {
             Q_EMIT signalSelectionChanged(d->tableView->numberOfSelectedItems());
+
             break;
+        }
 
         default:
+        {
             Q_EMIT signalSelectionChanged(d->iconView->numberOfSelectedIndexes());
+
             break;
+        }
     }
 }
 
@@ -153,8 +178,10 @@ void ItemIconView::slotDispatchImageSelected()
     }
 
     // the list of ItemInfos of currently selected items, currentItem first
+
     ApplicationSettings::ApplyToEntireGroup applyAll =
         ApplicationSettings::instance()->getGroupingOperateOnAll(ApplicationSettings::Metadata);
+
     const ItemInfoList& list      = selectedInfoList(true, (applyAll == ApplicationSettings::Yes));
     const ItemInfoList& allImages = allInfo(true);
 
@@ -224,12 +251,16 @@ void ItemIconView::slotImageRename()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->rename();
             break;
+        }
 
         default:
+        {
             d->iconView->rename();
             break;
+        }
     }
 }
 
@@ -238,8 +269,10 @@ void ItemIconView::slotImageDelete()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotDeleteSelected(ItemViewUtilities::DeleteUseTrash);
             break;
+        }
 
         default:
         {
@@ -264,8 +297,10 @@ void ItemIconView::slotImageDeletePermanently()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotDeleteSelected(ItemViewUtilities::DeletePermanently);
             break;
+        }
 
         default:
         {
@@ -290,12 +325,16 @@ void ItemIconView::slotImageDeletePermanentlyDirectly()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotDeleteSelectedWithoutConfirmation(ItemViewUtilities::DeletePermanently);
             break;
+        }
 
         default:
+        {
             d->iconView->deleteSelectedDirectly(ItemViewUtilities::DeletePermanently);
             break;
+        }
     }
 }
 
@@ -304,12 +343,16 @@ void ItemIconView::slotImageTrashDirectly()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotDeleteSelectedWithoutConfirmation(ItemViewUtilities::DeleteUseTrash);
             break;
+        }
 
         default:
+        {
             d->iconView->deleteSelectedDirectly(ItemViewUtilities::DeleteUseTrash);
             break;
+        }
     }
 }
 
@@ -318,12 +361,16 @@ void ItemIconView::slotSelectAll()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->selectAll();
             break;
+        }
 
         default:
+        {
             d->iconView->selectAll();
             break;
+        }
     }
 }
 
@@ -332,12 +379,16 @@ void ItemIconView::slotSelectNone()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->clearSelection();
             break;
+        }
 
         default:
+        {
             d->iconView->clearSelection();
             break;
+        }
     }
 }
 
@@ -346,12 +397,16 @@ void ItemIconView::slotSelectInvert()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->invertSelection();
             break;
+        }
 
         default:
+        {
             d->iconView->invertSelection();
             break;
+        }
     }
 }
 
@@ -414,12 +469,16 @@ void ItemIconView::slotImagePaste()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotPaste();
             break;
+        }
 
         default:
+        {
             d->iconView->paste();
             break;
+        }
     }
 }
 
@@ -470,24 +529,32 @@ ItemInfo ItemIconView::currentInfo() const
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             return d->tableView->currentInfo();
+        }
 
 #ifdef HAVE_GEOLOCATION
 
         case StackedView::MapWidgetMode:
+        {
             return d->mapView->currentItemInfo();
+        }
 
 #endif // HAVE_GEOLOCATION
 
         case StackedView::MediaPlayerMode:
         case StackedView::PreviewImageMode:
         case StackedView::IconViewMode:
+        {
             // all of these modes use the same selection model and data as the IconViewMode
 
             return d->iconView->currentInfo();
+        }
 
         default:
+        {
             return ItemInfo();
+        }
     }
 }
 
@@ -497,6 +564,7 @@ ItemInfoList ItemIconView::selectedInfoList(const bool currentFirst,
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
 
             if (currentFirst)
             {
@@ -504,11 +572,13 @@ ItemInfoList ItemIconView::selectedInfoList(const bool currentFirst,
             }
 
             return d->tableView->selectedItemInfos(grouping);
+        }
 
         case StackedView::PreviewImageMode:
         case StackedView::MediaPlayerMode:
         case StackedView::MapWidgetMode:
         case StackedView::IconViewMode:
+        {
 
             // all of these modes use the same selection model and data as the IconViewMode
 
@@ -518,10 +588,12 @@ ItemInfoList ItemIconView::selectedInfoList(const bool currentFirst,
             }
 
             return d->iconView->selectedItemInfos(grouping);
+        }
 
         default:
-
+        {
             return ItemInfoList();
+        }
     }
 }
 
@@ -536,18 +608,24 @@ ItemInfoList ItemIconView::allInfo(const bool grouping) const
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             return d->tableView->allItemInfos(grouping);
+        }
 
         case StackedView::MapWidgetMode:
         case StackedView::PreviewImageMode:
         case StackedView::MediaPlayerMode:
         case StackedView::IconViewMode:
+        {
             // all of these modes use the same selection model and data as the IconViewMode
 
             return d->iconView->allItemInfos(grouping);
+        }
 
         default:
+        {
             return ItemInfoList();
+        }
     }
 }
 
@@ -573,12 +651,16 @@ void ItemIconView::slotSetCurrentUrlWhenAvailable(const QUrl& url)
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotSetCurrentUrlWhenAvailable(url);
             break;
+        }
 
         default:
+        {
             d->iconView->setCurrentUrlWhenAvailable(url);
             break;
+        }
     }
 }
 
@@ -587,12 +669,16 @@ void ItemIconView::slotSetCurrentWhenAvailable(const qlonglong id)
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotSetCurrentWhenAvailable(id);
             break;
+        }
 
         default:
+        {
             d->iconView->setCurrentWhenAvailable(id);
             break;
+        }
     }
 }
 
@@ -601,12 +687,16 @@ void ItemIconView::slotAwayFromSelection()
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             d->tableView->slotAwayFromSelection();
             break;
+        }
 
         default:
+        {
             d->iconView->awayFromSelection();
             break;
+        }
     }
 }
 

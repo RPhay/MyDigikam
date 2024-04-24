@@ -250,7 +250,9 @@ void ItemIconView::applySettings()
         sidebarWidget->applySettings();
     }
 
-    d->iconView->imageFilterModel()->setVersionItemFilterSettings(VersionItemFilterSettings(ApplicationSettings::instance()->getVersionManagerSettings()));
+    d->iconView->imageFilterModel()->setVersionItemFilterSettings(
+        VersionItemFilterSettings(
+            ApplicationSettings::instance()->getVersionManagerSettings()));
 
     refreshView();
 }

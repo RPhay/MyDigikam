@@ -37,7 +37,7 @@ public:
     explicit FuzzySearchSideBarWidget(QWidget* const parent,
                                       SearchModel* const searchModel,
                                       SearchModificationHelper* const searchModificationHelper);
-    ~FuzzySearchSideBarWidget() override;
+    ~FuzzySearchSideBarWidget()                                      override;
 
     void          setActive(bool active)                             override;
     void          doLoadState()                                      override;

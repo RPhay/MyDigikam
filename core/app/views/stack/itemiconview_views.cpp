@@ -94,9 +94,14 @@ void ItemIconView::slotImagePreview()
  */
 void ItemIconView::slotTogglePreviewMode(const ItemInfo& info)
 {
-    if (((viewMode() == StackedView::IconViewMode)   ||
+    if (
+        (
+         (viewMode() == StackedView::IconViewMode)   ||
          (viewMode() == StackedView::TableViewMode)  ||
-         (viewMode() == StackedView::MapWidgetMode)) && !info.isNull())
+         (viewMode() == StackedView::MapWidgetMode)
+        ) &&
+        !info.isNull()
+       )
     {
         if (info.isLocationAvailable())
         {
@@ -140,32 +145,39 @@ void ItemIconView::slotViewModeChanged()
         {
             Q_EMIT signalSwitchedToIconView();
             Q_EMIT signalThumbSizeChanged(d->thumbSize);
+
             break;
         }
 
         case StackedView::PreviewImageMode:
         {
             Q_EMIT signalSwitchedToPreview();
+
             slotZoomFactorChanged(d->stackedView->zoomFactor());
+
             break;
         }
 
         case StackedView::WelcomePageMode:
         {
             Q_EMIT signalSwitchedToIconView();
+
             break;
         }
 
         case StackedView::MediaPlayerMode:
         {
             Q_EMIT signalSwitchedToPreview();
+
             break;
         }
 
         case StackedView::MapWidgetMode:
         {
             Q_EMIT signalSwitchedToMapView();
+
             // TODO: connect map view's zoom buttons to main status bar zoom buttons
+
             break;
         }
 
@@ -173,6 +185,7 @@ void ItemIconView::slotViewModeChanged()
         {
             Q_EMIT signalSwitchedToTableView();
             Q_EMIT signalThumbSizeChanged(d->thumbSize);
+
             break;
         }
 
@@ -182,6 +195,7 @@ void ItemIconView::slotViewModeChanged()
             d->errorWidget->animatedHide();
 
             Q_EMIT signalSwitchedToTrashView();
+
             break;
         }
     }
@@ -233,9 +247,14 @@ void ItemIconView::slotShowContextMenu(QContextMenuEvent* event,
 {
     Album* const album = currentAlbum();
 
-    if (!album          ||
+    if (
+        !album          ||
         album->isRoot() ||
-        ((album->type() != Album::PHYSICAL) && (album->type() != Album::TAG)))
+        (
+         (album->type() != Album::PHYSICAL) &&
+         (album->type() != Album::TAG)
+        )
+       )
     {
         return;
     }

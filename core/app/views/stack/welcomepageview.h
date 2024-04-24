@@ -78,7 +78,7 @@ class WelcomePageView : public QWebView
 public:
 
     explicit WelcomePageView(QWidget* const parent);
-    ~WelcomePageView()                                       override;
+    ~WelcomePageView()                                       override = default;
 
 private:
 

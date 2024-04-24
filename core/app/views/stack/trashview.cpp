@@ -49,33 +49,20 @@ class Q_DECL_HIDDEN TrashView::Private
 
 public:
 
-    explicit Private()
-        : model             (nullptr),
-          thumbDelegate     (nullptr),
-          mainLayout        (nullptr),
-          btnsLayout        (nullptr),
-          tableView         (nullptr),
-          undoButton        (nullptr),
-          deleteButton      (nullptr),
-          restoreAction     (nullptr),
-          deleteAction      (nullptr),
-          deleteAllAction   (nullptr),
-          thumbSize         (ThumbnailSize::Large)
-    {
-    }
+    Private() = default;
 
 public:
 
-    DTrashItemModel*               model;
-    ThumbnailAligningDelegate*     thumbDelegate;
-    QVBoxLayout*                   mainLayout;
-    QHBoxLayout*                   btnsLayout;
-    QTableView*                    tableView;
-    QPushButton*                   undoButton;
-    QPushButton*                   deleteButton;
-    QAction*                       restoreAction;
-    QAction*                       deleteAction;
-    QAction*                       deleteAllAction;
+    DTrashItemModel*               model                    = nullptr;
+    ThumbnailAligningDelegate*     thumbDelegate            = nullptr;
+    QVBoxLayout*                   mainLayout               = nullptr;
+    QHBoxLayout*                   btnsLayout               = nullptr;
+    QTableView*                    tableView                = nullptr;
+    QPushButton*                   undoButton               = nullptr;
+    QPushButton*                   deleteButton             = nullptr;
+    QAction*                       restoreAction            = nullptr;
+    QAction*                       deleteAction             = nullptr;
+    QAction*                       deleteAllAction          = nullptr;
 
     QModelIndex                    lastSelectedIndex;
 
@@ -83,7 +70,7 @@ public:
 
     DTrashItemInfo                 lastSelectedItem;
     QModelIndexList                selectedIndexesToRemove;
-    ThumbnailSize                  thumbSize;
+    ThumbnailSize                  thumbSize                = ThumbnailSize(ThumbnailSize::Large);
 };
 
 TrashView::TrashView(QWidget* const parent)

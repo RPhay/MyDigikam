@@ -38,17 +38,17 @@ class TagViewSideBarWidget : public SidebarWidget
 public:
 
     explicit TagViewSideBarWidget(QWidget* const parent, TagModel* const model);
-    ~TagViewSideBarWidget() override;
+    ~TagViewSideBarWidget()                                           override;
 
-    void          setActive(bool active)                             override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
+    void          setActive(bool active)                              override;
+    void          doLoadState()                                       override;
+    void          doSaveState()                                       override;
+    void          applySettings()                                     override;
+    void          changeAlbumFromHistory(const QList<Album*>& album)  override;
+    const QIcon   getIcon()                                           override;
+    const QString getCaption()                                        override;
 
-    AlbumPointer<TAlbum> currentAlbum() const;
+    AlbumPointer<TAlbum> currentAlbum()                         const;
 
 private:
 

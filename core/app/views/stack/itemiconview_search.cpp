@@ -104,7 +104,6 @@ void ItemIconView::slotImageScanForFaces()
 
 void ItemIconView::slotImageRecognizeFaces()
 {
-
     if (ProgressManager::instance()->findItembyId(i18n("FacesDetector")))
     {
         QString message = i18n("A face recognition task is already running. "

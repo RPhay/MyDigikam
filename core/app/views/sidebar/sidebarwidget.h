@@ -49,7 +49,7 @@ public:
     /**
      * Destructor.
      */
-    ~SidebarWidget() override;
+    ~SidebarWidget() override = default;
 
     /**
      * This method is called if the visible sidebar widget is changed.

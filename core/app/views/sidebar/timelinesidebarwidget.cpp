@@ -62,50 +62,31 @@ class Q_DECL_HIDDEN TimelineSideBarWidget::Private
 {
 public:
 
-    explicit Private()
-      : scaleBG                 (nullptr),
-        cursorCountLabel        (nullptr),
-        scrollBar               (nullptr),
-        timer                   (nullptr),
-        resetButton             (nullptr),
-        saveButton              (nullptr),
-        timeUnitCB              (nullptr),
-        nameEdit                (nullptr),
-        cursorDateLabel         (nullptr),
-        searchDateBar           (nullptr),
-        timeLineFolderView      (nullptr),
-        timeLineWidget          (nullptr),
-        searchModificationHelper(nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString      configHistogramTimeUnitEntry;
-    static const QString      configHistogramScaleEntry;
-    static const QString      configCursorPositionEntry;
+    const QString             configHistogramTimeUnitEntry  = QLatin1String("Histogram TimeUnit");
+    const QString             configHistogramScaleEntry     = QLatin1String("Histogram Scale");
+    const QString             configCursorPositionEntry     = QLatin1String("Cursor Position");
 
-    QButtonGroup*             scaleBG;
-    QLabel*                   cursorCountLabel;
-    QScrollBar*               scrollBar;
-    QTimer*                   timer;
-    QToolButton*              resetButton;
-    QToolButton*              saveButton;
+    QButtonGroup*             scaleBG                       = nullptr;
+    QLabel*                   cursorCountLabel              = nullptr;
+    QScrollBar*               scrollBar                     = nullptr;
+    QTimer*                   timer                         = nullptr;
+    QToolButton*              resetButton                   = nullptr;
+    QToolButton*              saveButton                    = nullptr;
 
-    QComboBox*                timeUnitCB;
-    DTextEdit*                nameEdit;
-    DAdjustableLabel*         cursorDateLabel;
+    QComboBox*                timeUnitCB                    = nullptr;
+    DTextEdit*                nameEdit                      = nullptr;
+    DAdjustableLabel*         cursorDateLabel               = nullptr;
 
-    SearchTextBarDb*          searchDateBar;
-    EditableSearchTreeView*   timeLineFolderView;
-    TimeLineWidget*           timeLineWidget;
+    SearchTextBarDb*          searchDateBar                 = nullptr;
+    EditableSearchTreeView*   timeLineFolderView            = nullptr;
+    TimeLineWidget*           timeLineWidget                = nullptr;
 
-    SearchModificationHelper* searchModificationHelper;
+    SearchModificationHelper* searchModificationHelper      = nullptr;
 
     AlbumPointer<SAlbum>      currentTimelineSearch;
 };
-
-const QString TimelineSideBarWidget::Private::configHistogramTimeUnitEntry(QLatin1String("Histogram TimeUnit"));
-const QString TimelineSideBarWidget::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
-const QString TimelineSideBarWidget::Private::configCursorPositionEntry(QLatin1String("Cursor Position"));
 
 // --------------------------------------------------------
 
@@ -449,6 +430,7 @@ void TimelineSideBarWidget::slotUpdateCurrentDateSearchAlbum()
         slotCreateTimeLineSearch(SAlbum::getTemporaryTitle(DatabaseSearch::TimeLineSearch), dateRanges, true);
 
     // NOTE: "temporary" search is not listed in view
+
     d->timeLineFolderView->setCurrentAlbum(0);
 }
 
@@ -480,11 +462,13 @@ void TimelineSideBarWidget::slotAlbumSelected(Album* album)
     SearchXmlReader reader(salbum->query());
 
     // The timeline query consists of groups, with two date time fields each
+
     DateRangeList list;
 
     while (!reader.atEnd())
     {
         // read groups
+
         if (reader.readNext() == SearchXml::Group)
         {
             QDateTime start, end;
@@ -493,6 +477,7 @@ void TimelineSideBarWidget::slotAlbumSelected(Album* album)
             while (!reader.atEnd())
             {
                 // read fields
+
                 reader.readNext();
 
                 if (reader.isEndElement())

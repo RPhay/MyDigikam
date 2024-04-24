@@ -39,19 +39,19 @@ public:
     explicit AlbumFolderViewSideBarWidget(QWidget* const parent,
                                           AlbumModel* const model,
                                           AlbumModificationHelper* const albumModificationHelper);
-    ~AlbumFolderViewSideBarWidget() override;
+    ~AlbumFolderViewSideBarWidget()                                   override;
 
-    void          setActive(bool active)                             override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
+    void          setActive(bool active)                              override;
+    void          doLoadState()                                       override;
+    void          doSaveState()                                       override;
+    void          applySettings()                                     override;
+    void          changeAlbumFromHistory(const QList<Album*>& album)  override;
+    const QIcon   getIcon()                                           override;
+    const QString getCaption()                                        override;
 
     void          applyResorting();
 
-    AlbumPointer<PAlbum> currentAlbum() const;
+    AlbumPointer<PAlbum> currentAlbum()                         const;
 
 public Q_SLOTS:
 

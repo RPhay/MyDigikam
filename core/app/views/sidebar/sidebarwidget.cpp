@@ -24,10 +24,6 @@ SidebarWidget::SidebarWidget(QWidget* const parent)
 {
 }
 
-SidebarWidget::~SidebarWidget()
-{
-}
-
 } // namespace Digikam
 
 #include "moc_sidebarwidget.cpp"

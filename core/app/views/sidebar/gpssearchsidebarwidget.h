@@ -41,7 +41,7 @@ public:
                                     SearchModificationHelper* const searchModificationHelper,
                                     ItemFilterModel* const imageFilterModel,
                                     QItemSelectionModel* const itemSelectionModel);
-    ~GPSSearchSideBarWidget() override;
+    ~GPSSearchSideBarWidget()                                        override;
 
     void          setActive(bool active)                             override;
     void          doLoadState()                                      override;

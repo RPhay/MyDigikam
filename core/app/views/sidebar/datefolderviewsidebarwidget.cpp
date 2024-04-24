@@ -43,12 +43,9 @@ class Q_DECL_HIDDEN DateFolderViewSideBarWidget::Private
 {
 public:
 
-    explicit Private()
-      : dateFolderView(nullptr)
-    {
-    }
+    Private() = default;
 
-    DateFolderView* dateFolderView;
+    DateFolderView* dateFolderView = nullptr;
 };
 
 DateFolderViewSideBarWidget::DateFolderViewSideBarWidget(QWidget* const parent,

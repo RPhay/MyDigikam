@@ -64,39 +64,25 @@ class Q_DECL_HIDDEN MapWidgetView::Private
 {
 public:
 
-    explicit Private()
-       : mapWidget                  (nullptr),
-         imageModel                 (nullptr),
-         imageFilterModel           (nullptr),
-         importModel                (nullptr),
-         importFilterModel          (nullptr),
-         selectionModel             (nullptr),
-         mapViewModelHelper         (nullptr),
-         gpsItemInfoSorter          (nullptr),
-         trackManager               (nullptr),
-         modelTimer                 (nullptr),
-         application                (MapWidgetView::ApplicationDigikam),
-         boundariesShouldBeAdjusted (false)
-    {
-    }
+    Private() = default;
 
-    MapWidget*                 mapWidget;
+    MapWidget*                 mapWidget                    = nullptr;
 
-    ItemAlbumModel*            imageModel;
-    ItemFilterModel*           imageFilterModel;
-    ImportItemModel*           importModel;
-    ImportFilterModel*         importFilterModel;
-    QItemSelectionModel*       selectionModel;
+    ItemAlbumModel*            imageModel                   = nullptr;
+    ItemFilterModel*           imageFilterModel             = nullptr;
+    ImportItemModel*           importModel                  = nullptr;
+    ImportFilterModel*         importFilterModel            = nullptr;
+    QItemSelectionModel*       selectionModel               = nullptr;
 
-    MapViewModelHelper*        mapViewModelHelper;
-    GPSItemInfoSorter*         gpsItemInfoSorter;
-    TrackManager*              trackManager;
+    MapViewModelHelper*        mapViewModelHelper           = nullptr;
+    GPSItemInfoSorter*         gpsItemInfoSorter            = nullptr;
+    TrackManager*              trackManager                 = nullptr;
 
-    QTimer*                    modelTimer;
+    QTimer*                    modelTimer                   = nullptr;
 
-    MapWidgetView::Application application;
+    MapWidgetView::Application application                  = MapWidgetView::ApplicationDigikam;
 
-    bool                       boundariesShouldBeAdjusted;
+    bool                       boundariesShouldBeAdjusted   = false;
 };
 
 /**
@@ -319,8 +305,10 @@ void MapWidgetView::slotModelChanged()
                 QScopedPointer<DMetadata> meta(new DMetadata(info.url().toLocalFile()));
                 double lat, lng;
 
-                if (meta->getGPSLatitudeNumber(&lat) &&
-                    meta->getGPSLongitudeNumber(&lng))
+                if (
+                    meta->getGPSLatitudeNumber(&lat) &&
+                    meta->getGPSLongitudeNumber(&lng)
+                   )
                 {
                     hasCoordinates = true;
                     break;
@@ -420,20 +408,13 @@ class Q_DECL_HIDDEN MapViewModelHelper::Private
 {
 public:
 
-    explicit Private()
-        : model              (nullptr),
-          importModel        (nullptr),
-          selectionModel     (nullptr),
-          thumbnailLoadThread(nullptr),
-          application        (MapWidgetView::ApplicationDigikam)
-    {
-    }
+    Private() = default;
 
-    ItemFilterModel*            model;
-    ImportFilterModel*          importModel;
-    QItemSelectionModel*        selectionModel;
-    ThumbnailLoadThread*        thumbnailLoadThread;
-    MapWidgetView::Application  application;
+    ItemFilterModel*            model               = nullptr;
+    ImportFilterModel*          importModel         = nullptr;
+    QItemSelectionModel*        selectionModel      = nullptr;
+    ThumbnailLoadThread*        thumbnailLoadThread = nullptr;
+    MapWidgetView::Application  application         = MapWidgetView::ApplicationDigikam;
 };
 
 MapViewModelHelper::MapViewModelHelper(QItemSelectionModel* const selection,
@@ -441,7 +422,7 @@ MapViewModelHelper::MapViewModelHelper(QItemSelectionModel* const selection,
                                        QObject* const parent,
                                        const MapWidgetView::Application application)
     : GeoModelHelper(parent),
-      d(new Private())
+      d             (new Private())
 {
     d->selectionModel = selection;
     d->application    = application;
@@ -781,6 +762,7 @@ void MapViewModelHelper::slotThumbnailLoaded(const LoadingDescription& loadingDe
     if (currentIndex.isValid())
     {
         QPersistentModelIndex goodIndex(currentIndex);
+
         Q_EMIT signalThumbnailAvailableForIndex(goodIndex, thumb.copy(1, 1, thumb.size().width()-2, thumb.size().height()-2));
     }
 }
@@ -808,6 +790,7 @@ void MapViewModelHelper::slotThumbnailLoaded(const CamItemInfo& info)
     if (currentIndex.isValid())
     {
         QPersistentModelIndex goodIndex(currentIndex);
+
         Q_EMIT signalThumbnailAvailableForIndex(goodIndex, pix.copy(1, 1, pix.size().width()-2, pix.size().height()-2));
     }
 }
@@ -852,13 +835,16 @@ void MapViewModelHelper::onIndicesClicked(const QList<QPersistentModelIndex>& cl
 void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
 {
     const DatabaseFields::Set changes = changeset.changes();
-//    const DatabaseFields::ItemPositions imagePositionChanges = changes;
-
+/*
+    const DatabaseFields::ItemPositions imagePositionChanges = changes;
+*/
     /// @todo More detailed check
 
-    if ((changes & DatabaseFields::LatitudeNumber)  ||
+    if (
+        (changes & DatabaseFields::LatitudeNumber)  ||
         (changes & DatabaseFields::LongitudeNumber) ||
-        (changes & DatabaseFields::Altitude))
+        (changes & DatabaseFields::Altitude)
+       )
     {
         Q_FOREACH (const qlonglong& id, changeset.ids())
         {
@@ -867,6 +853,7 @@ void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
             if (index.isValid())
             {
                 Q_EMIT signalModelChangedDrastically();
+
                 break;
             }
         }

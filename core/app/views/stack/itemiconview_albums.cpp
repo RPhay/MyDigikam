@@ -194,11 +194,15 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
             case StackedView::MediaPlayerMode:
             case StackedView::WelcomePageMode:
             case StackedView::TrashViewMode:
+            {
                 slotTogglePreviewMode(ItemInfo());
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         d->filterWidget->setEnabled(true);
@@ -373,18 +377,24 @@ Album* ItemIconView::currentAlbum() const
     switch (viewMode())
     {
         case StackedView::TableViewMode:
+        {
             return d->tableView->currentAlbum();
+        }
 
         case StackedView::PreviewImageMode:
         case StackedView::MediaPlayerMode:
         case StackedView::MapWidgetMode:
         case StackedView::IconViewMode:
+        {
             // all of these modes use the same selection model and data as the IconViewMode
 
             return d->iconView->currentAlbum();
+        }
 
         default:
+        {
             return nullptr;
+        }
     }
 }
 
@@ -404,18 +414,23 @@ void ItemIconView::slotRefresh()
     switch (viewMode())
     {
         case StackedView::PreviewImageMode:
+        {
             d->stackedView->imagePreviewView()->reload();
             break;
+        }
 
 #ifdef HAVE_MEDIAPLAYER
 
         case StackedView::MediaPlayerMode:
+        {
             d->stackedView->mediaPlayerView()->reload();
             break;
+        }
 
 #endif // HAVE_MEDIAPLAYER
 
         default:
+        {
             Album* const album = currentAlbum();
 
             if (!album)
@@ -447,6 +462,7 @@ void ItemIconView::slotRefresh()
             }
 
             break;
+        }
     }
 }
 

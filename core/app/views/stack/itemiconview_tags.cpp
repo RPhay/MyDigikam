@@ -121,7 +121,8 @@ void ItemIconView::slotRemoveTag(int tagID)
      */
     if (!FaceTags::isSystemPersonTagId(tagID))
     {
-        QTimer::singleShot(200, this, [this, tagID]()
+        QTimer::singleShot(200, this,
+                           [this, tagID]()
             {
                 int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagID,
                                                                                   ImageTagPropertyName::tagRegion());
@@ -141,7 +142,7 @@ void ItemIconView::slotRemoveTag(int tagID)
                         if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
                                                                         0, err))
                         {
-                            qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                            qCDebug(DIGIKAM_GENERAL_LOG) << err;
                         }
                     }
                 }

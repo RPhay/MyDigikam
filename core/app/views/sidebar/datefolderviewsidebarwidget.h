@@ -39,17 +39,17 @@ public:
     explicit DateFolderViewSideBarWidget(QWidget* const parent,
                                          DateAlbumModel* const model,
                                          ItemAlbumFilterModel* const imageFilterModel);
-    ~DateFolderViewSideBarWidget() override;
+    ~DateFolderViewSideBarWidget()                                    override;
 
-    void          setActive(bool active)                             override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
+    void          setActive(bool active)                              override;
+    void          doLoadState()                                       override;
+    void          doSaveState()                                       override;
+    void          applySettings()                                     override;
+    void          changeAlbumFromHistory(const QList<Album*>& album)  override;
+    const QIcon   getIcon()                                           override;
+    const QString getCaption()                                        override;
 
-    AlbumPointer<DAlbum> currentAlbum() const;
+    AlbumPointer<DAlbum> currentAlbum()                         const;
 
     void gotoDate(const QDate& date);
 

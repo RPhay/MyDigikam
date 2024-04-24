@@ -52,20 +52,13 @@ class Q_DECL_HIDDEN PeopleSideBarWidget::Private
 {
 public:
 
-    explicit Private()
-      : rescanButton            (nullptr),
-        searchModificationHelper(nullptr),
-        settingsWdg             (nullptr),
-        tagFolderView           (nullptr),
-        tagSearchBar            (nullptr)
-    {
-    }
+    Private() = default;
 
-    QPushButton*              rescanButton;
-    SearchModificationHelper* searchModificationHelper;
-    FaceScanWidget*           settingsWdg;
-    TagFolderView*            tagFolderView;
-    SearchTextBarDb*          tagSearchBar;
+    QPushButton*              rescanButton              = nullptr;
+    SearchModificationHelper* searchModificationHelper  = nullptr;
+    FaceScanWidget*           settingsWdg               = nullptr;
+    TagFolderView*            tagFolderView             = nullptr;
+    SearchTextBarDb*          tagSearchBar              = nullptr;
 };
 
 PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
@@ -150,7 +143,9 @@ void PeopleSideBarWidget::setActive(bool active)
             QString msg = i18n("Welcome to Face Management in digiKam. "
                                "If this is your first time using this feature, please consider "
                                "using the Help Box in the Bottom Left Side Panel.");
+
             Q_EMIT signalNotificationError(msg, DNotificationWidget::Information);
+
             ApplicationSettings::instance()->setHelpBoxNotificationSeen(true);
         }
     }
@@ -202,7 +197,7 @@ void PeopleSideBarWidget::slotScanForFaces()
         Q_EMIT signalNotificationError(i18n("Face recognition is aborted, because "
                                           "there are no identities to recognize. "
                                           "Please add new identities."),
-                                     DNotificationWidget::Information);
+                                       DNotificationWidget::Information);
     }
 }
 

@@ -44,12 +44,9 @@ class Q_DECL_HIDDEN LabelsSideBarWidget::Private
 
 public:
 
-    explicit Private()
-      : labelsTree(nullptr)
-    {
-    }
+    Private() = default;
 
-    LabelsTreeView* labelsTree;
+    LabelsTreeView* labelsTree = nullptr;
 };
 
 LabelsSideBarWidget::LabelsSideBarWidget(QWidget* const parent)

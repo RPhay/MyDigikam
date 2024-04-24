@@ -43,14 +43,10 @@ class Q_DECL_HIDDEN FuzzySearchSideBarWidget::Private
 {
 public:
 
-    explicit Private()
-      : fuzzySearchView         (nullptr),
-        searchModificationHelper(nullptr)
-    {
-    }
+    Private() = default;
 
-    FuzzySearchView*          fuzzySearchView;
-    SearchModificationHelper* searchModificationHelper;
+    FuzzySearchView*          fuzzySearchView           = nullptr;
+    SearchModificationHelper* searchModificationHelper  = nullptr;
 };
 
 FuzzySearchSideBarWidget::FuzzySearchSideBarWidget(QWidget* const parent,
