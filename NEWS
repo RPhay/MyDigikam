@@ -90,7 +90,7 @@ BUGFIXES:
 065 ==> 414959 - Send by email with Thunderbird does not work anymore.
 066 ==> 485893 - TreeViewComboBoxLineEdit::mouseReleaseEvent Crash in Advanced Search.
 067 ==> 485916 - Taxon suggestion based on computer-vision not working anymore in iNaturalist export.
-068 ==> 
+068 ==> 486088 - Crash while viewing video.
 069 ==> 
 070 ==> 
 071 ==> 
