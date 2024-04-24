@@ -36,26 +36,26 @@ class TableViewShared
 {
 public:
 
-    explicit TableViewShared();
-    ~TableViewShared();
+    TableViewShared()  = default;
+    ~TableViewShared() = default;
 
 public:
 
-    ItemModel*                     imageModel;
-    ItemFilterModel*               imageFilterModel;
-    QItemSelectionModel*           imageFilterSelectionModel;
-    ThumbnailLoadThread*           thumbnailLoadThread;
+    ItemModel*                     imageModel                       = nullptr;
+    ItemFilterModel*               imageFilterModel                 = nullptr;
+    QItemSelectionModel*           imageFilterSelectionModel        = nullptr;
+    ThumbnailLoadThread*           thumbnailLoadThread              = nullptr;
 
-    TableView*                     tableView;
-    TableViewTreeView*             treeView;
-    TableViewModel*                tableViewModel;
-    QItemSelectionModel*           tableViewSelectionModel;
+    TableView*                     tableView                        = nullptr;
+    TableViewTreeView*             treeView                         = nullptr;
+    TableViewModel*                tableViewModel                   = nullptr;
+    QItemSelectionModel*           tableViewSelectionModel          = nullptr;
 
-    TableViewSelectionModelSyncer* tableViewSelectionModelSyncer;
-    TableViewColumnFactory*        columnFactory;
-    TableViewItemDelegate*         itemDelegate;
+    TableViewSelectionModelSyncer* tableViewSelectionModelSyncer    = nullptr;
+    TableViewColumnFactory*        columnFactory                    = nullptr;
+    TableViewItemDelegate*         itemDelegate                     = nullptr;
 
-    bool                           isActive;
+    bool                           isActive                         = false;
 };
 
 } // namespace Digikam

@@ -33,7 +33,7 @@ class TableViewSelectionModelSyncer : public QObject
 public:
 
     explicit TableViewSelectionModelSyncer(TableViewShared* const sharedObject, QObject* const parent = nullptr);
-    ~TableViewSelectionModelSyncer() override;
+    ~TableViewSelectionModelSyncer()                                                   override;
 
     QModelIndex toSource(const QModelIndex& targetIndex)                         const;
     QModelIndex toTarget(const QModelIndex& sourceIndex)                         const;
@@ -69,9 +69,9 @@ public Q_SLOTS:
 private:
 
     class Private;
-
     const QScopedPointer<Private> d;
-    TableViewShared* const        s;
+
+    TableViewShared* const        s = nullptr;
 };
 
 } // namespace Digikam

@@ -44,10 +44,6 @@ TableViewItemDelegate::TableViewItemDelegate(TableViewShared* const tableViewSha
 {
 }
 
-TableViewItemDelegate::~TableViewItemDelegate()
-{
-}
-
 void TableViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& tableViewModelIndex) const
 {
     const int columnIndex               = tableViewModelIndex.column();

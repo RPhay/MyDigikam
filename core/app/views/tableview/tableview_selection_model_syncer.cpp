@@ -33,12 +33,9 @@ class Q_DECL_HIDDEN TableViewSelectionModelSyncer::Private
 {
 public:
 
-    explicit Private()
-      : syncing(false)
-    {
-    }
+    Private() = default;
 
-    bool syncing;
+    bool syncing = false;
 };
 
 TableViewSelectionModelSyncer::TableViewSelectionModelSyncer(TableViewShared* const sharedObject, QObject* const parent)

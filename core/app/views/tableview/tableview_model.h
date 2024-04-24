@@ -63,7 +63,7 @@ public:
     {
     public:
 
-        explicit Item();
+        Item() = default;
         ~Item();
 
         void  addChild(Item* const newChild);
@@ -73,8 +73,8 @@ public:
 
     public:
 
-        qlonglong    imageId;
-        Item*        parent;
+        qlonglong    imageId    = 0;
+        Item*        parent     = nullptr;
         QList<Item*> children;
     };
 
@@ -195,7 +195,8 @@ private:
 
 private:
 
-    TableViewShared* const s;
+    TableViewShared* const s = nullptr;
+
     class Private;
     const QScopedPointer<Private> d;
 };

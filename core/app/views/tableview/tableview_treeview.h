@@ -91,9 +91,9 @@ Q_SIGNALS:
 private:
 
     class Private;
-
     const QScopedPointer<Private> d;
-    TableViewShared* const        s;
+
+    TableViewShared* const        s = nullptr;
 };
 
 } // namespace Digikam

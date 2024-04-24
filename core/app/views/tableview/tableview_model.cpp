@@ -47,13 +47,6 @@
 namespace Digikam
 {
 
-TableViewModel::Item::Item()
-  : imageId (0),
-    parent  (nullptr),
-    children()
-{
-}
-
 TableViewModel::Item::~Item()
 {
     qDeleteAll(children);
@@ -104,26 +97,16 @@ class Q_DECL_HIDDEN TableViewModel::Private
 {
 public:
 
-    explicit Private()
-      : columnObjects      (),
-        rootItem           (nullptr),
-        imageFilterSettings(),
-        sortColumn         (0),
-        sortOrder          (Qt::AscendingOrder),
-        sortRequired       (false),
-        groupingMode       (GroupingShowSubItems),
-        outdated           (true)
-    {
-    }
+    Private() = default;
 
     QList<TableViewColumn*>     columnObjects;
-    TableViewModel::Item*       rootItem;
+    TableViewModel::Item*       rootItem            = nullptr;
     ItemFilterSettings          imageFilterSettings;
-    int                         sortColumn;
-    Qt::SortOrder               sortOrder;
-    bool                        sortRequired;
-    GroupingMode                groupingMode;
-    bool                        outdated;
+    int                         sortColumn          = 0;
+    Qt::SortOrder               sortOrder           = Qt::AscendingOrder;
+    bool                        sortRequired        = false;
+    GroupingMode                groupingMode        = GroupingShowSubItems;
+    bool                        outdated            = true;
 };
 
 TableViewModel::TableViewModel(TableViewShared* const sharedObject, QObject* const parent)
@@ -517,6 +500,7 @@ void TableViewModel::slotSourceRowsInserted(const QModelIndex& parent, int start
     if (!s->isActive)
     {
         slotClearModel(true);
+
         return;
     }
 
@@ -533,6 +517,7 @@ void TableViewModel::slotSourceRowsAboutToBeRemoved(const QModelIndex& parent, i
     if (!s->isActive)
     {
         slotClearModel(true);
+
         return;
     }
 
@@ -656,6 +641,7 @@ void TableViewModel::slotDatabaseImageChanged(const ImageChangeset& imageChanges
     if (!s->isActive)
     {
         slotClearModel(true);
+
         return;
     }
 /*
@@ -810,6 +796,7 @@ void TableViewModel::slotPopulateModel(const bool sendNotifications)
     if (!s->isActive)
     {
         slotClearModel(sendNotifications);
+
         return;
     }
 
@@ -877,22 +864,25 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
         switch (d->groupingMode)
         {
             case GroupingHideGrouped:
-
+            {
                 // we do not show grouped items at all
 
                 return;
+            }
 
             case GroupingIgnoreGrouping:
-
+            {
                 // nothing to do, we just add it to the root item
 
                 break;
+            }
 
             case GroupingShowSubItems:
-
+            {
                 // we do not add this subitem, because it has been automatically added to the group leader
 
                 return;
+            }
         }
     }
 
@@ -1178,7 +1168,7 @@ public:
 
 public:
 
-    TableViewModel* m;
+    TableViewModel* m = nullptr;
 };
 
 QList<TableViewModel::Item*> TableViewModel::sortItems(const QList<TableViewModel::Item*>& itemList)
@@ -1660,6 +1650,7 @@ int TableViewModel::findChildSortedPosition(TableViewModel::Item* const parentIt
         }
 
         // can we go lower?
+
         const bool lowerThere = (pos > 0);
 
         if (!lowerThere)

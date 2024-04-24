@@ -44,14 +44,14 @@ class TableViewItemDelegate : public QItemDelegate
 public:
 
     explicit TableViewItemDelegate(TableViewShared* const tableViewShared, QObject* const parent = nullptr);
-    ~TableViewItemDelegate() override;
+    ~TableViewItemDelegate()                                                                                        override = default;
 
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& tableViewModelIndex) const override;
     QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& tableViewModelIndex)                const override;
 
 private:
 
-    TableViewShared* const s;
+    TableViewShared* const s = nullptr;
 };
 
 } // namespace Digikam

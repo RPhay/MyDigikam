@@ -45,19 +45,13 @@ class Q_DECL_HIDDEN TableViewTreeView::Private
 {
 public:
 
-    explicit Private()
-      : headerContextMenuActiveColumn         (-1),
-        actionHeaderContextMenuRemoveColumn   (nullptr),
-        actionHeaderContextMenuConfigureColumn(nullptr),
-        dragDropThumbnailSize                 ()
-    {
-    }
+    Private() = default;
 
 public:
 
-    int           headerContextMenuActiveColumn;
-    QAction*      actionHeaderContextMenuRemoveColumn;
-    QAction*      actionHeaderContextMenuConfigureColumn;
+    int           headerContextMenuActiveColumn             = -1;
+    QAction*      actionHeaderContextMenuRemoveColumn       = nullptr;
+    QAction*      actionHeaderContextMenuConfigureColumn    = nullptr;
     ThumbnailSize dragDropThumbnailSize;
 };
 
@@ -349,8 +343,9 @@ bool TableViewTreeView::hasHiddenGroupedImages(const ItemInfo& info) const
                 info.hasGroupedImages() &&
                 (
                  (s->tableViewModel->groupingMode() == s->tableViewModel->GroupingMode::GroupingHideGrouped)    ||
-                  ((s->tableViewModel->groupingMode() == s->tableViewModel->GroupingMode::GroupingShowSubItems) &&
-                   (!s->treeView->isExpanded(s->tableViewModel->indexFromImageId(info.id(), 0)))
+                 (
+                  (s->tableViewModel->groupingMode() == s->tableViewModel->GroupingMode::GroupingShowSubItems) &&
+                  (!s->treeView->isExpanded(s->tableViewModel->indexFromImageId(info.id(), 0)))
                  )
                 )
                );

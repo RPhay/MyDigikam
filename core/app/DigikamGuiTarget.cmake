@@ -74,7 +74,6 @@ set(libdigikamgui_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/views/tableview/tableview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/tableview/tableview_model.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/views/tableview/tableview_shared.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/tableview/tableview_treeview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/tableview/tableview_treeview_delegate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/tableview/tableview_column_configuration_dialog.cpp
