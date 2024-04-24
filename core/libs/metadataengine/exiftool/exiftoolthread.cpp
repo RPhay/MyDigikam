@@ -44,7 +44,10 @@ void ExifToolThread::run()
 
     exec();
 
-    if (ExifToolProcess::isCreated())
+    if (
+        ExifToolProcess::isCreated()                 &&
+        (ExifToolProcess::instance()->thread() == this)
+       )
     {
         delete ExifToolProcess::internalPtr;
     }
