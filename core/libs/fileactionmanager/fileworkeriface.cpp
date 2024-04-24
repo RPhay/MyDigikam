@@ -35,6 +35,7 @@
 #include "facetagseditor.h"
 #include "jpegutils.h"
 #include "dimg.h"
+#include "faceutils.h"
 
 namespace Digikam
 {
@@ -341,6 +342,10 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
         }
 
         infos.writtenToOne();
+
+        // Set the newly rotated image as not processed by the face recognition pipeline
+        FaceUtils utils;
+        utils.markAsScanned(info, false);
     }
 
     if (!failedItems.isEmpty())

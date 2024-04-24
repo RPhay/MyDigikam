@@ -60,7 +60,6 @@
 #include "addtagslineedit.h"
 #include "facerejectionoverlay.h"
 #include "facetagsiface.h"
-#include "faceutils.h"
 
 namespace Digikam
 {
@@ -713,28 +712,12 @@ void DigikamItemView::slotRotateLeft(const QList<QModelIndex>& indexes)
 {
     ItemInfoList infos = imageInfos(indexes, ApplicationSettings::Metadata);
     FileActionMngr::instance()->transform(infos, MetaEngineRotation::Rotate270);
-
-    // Set the newly rotated images as not processed by the face recognition pipeline
-    Q_FOREACH (const QModelIndex& index, indexes)
-    {
-        ItemInfo info = ItemModel::retrieveItemInfo(index);
-        FaceUtils utils;
-        utils.markAsScanned(info, false);
-    }
 }
 
 void DigikamItemView::slotRotateRight(const QList<QModelIndex>& indexes)
 {
     ItemInfoList infos = imageInfos(indexes, ApplicationSettings::Metadata);
     FileActionMngr::instance()->transform(infos, MetaEngineRotation::Rotate90);
-
-    // Set the newly rotated images as not processed by the face recognition pipeline
-    Q_FOREACH (const QModelIndex& index, indexes)
-    {
-        ItemInfo info = ItemModel::retrieveItemInfo(index);
-        FaceUtils utils;
-        utils.markAsScanned(info, false);
-    }
 }
 
 void DigikamItemView::slotFullscreen(const QList<QModelIndex>& indexes)
