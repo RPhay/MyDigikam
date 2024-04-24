@@ -373,6 +373,7 @@ void ApplicationSettings::setGroupingOperateOnAll(ApplicationSettings::Operation
     }
 
     d->groupingOperateOnAll[type] = applyAll;
+
     return;
 }
 
@@ -438,28 +439,45 @@ QString ApplicationSettings::operationTypeTitle(ApplicationSettings::OperationTy
     switch (type)
     {
         case ApplicationSettings::Metadata:
+        {
             return i18n("Metadata");
+        }
 
         case ApplicationSettings::LightTable:
+        {
             return i18n("Light Table");
+        }
 
         case ApplicationSettings::BQM:
+        {
             return i18n("Batch Queue Manager");
+        }
 
         case ApplicationSettings::Slideshow:
+        {
             return i18n("Slideshow");
+        }
 
         case ApplicationSettings::Rename:
+        {
             return i18n("Renaming");
+        }
 
         case ApplicationSettings::ImportExport:
+        {
             return i18n("Import/Export tools");
+        }
 
         case ApplicationSettings::Tools:
+        {
             return i18n("Tools (editor, panorama, stack blending, calendar, "
                         "external program)");
+        }
+
         default:
+        {
             throw std::invalid_argument("ApplicationSettings::operationTypeTitle: Invalid operation type.");
+        }
     }
 }
 
@@ -468,28 +486,45 @@ QString ApplicationSettings::operationTypeExplanation(ApplicationSettings::Opera
     switch (type)
     {
         case ApplicationSettings::Metadata:
+        {
             return i18n("Operations related to metadata, labels, ratings, tags, geolocation and rotation");
+        }
 
         case ApplicationSettings::LightTable:
+        {
             return i18n("Adding items to the Light Table");
+        }
 
         case ApplicationSettings::BQM:
+        {
             return i18n("Adding items to the Batch Queue Manager");
+        }
 
         case ApplicationSettings::Slideshow:
+        {
             return i18n("Opening items in the Slideshow");
+        }
 
         case ApplicationSettings::Rename:
+        {
             return i18n("Renaming items");
+        }
 
         case ApplicationSettings::ImportExport:
+        {
             return i18n("Passing items to import/export tools");
+        }
 
         case ApplicationSettings::Tools:
+        {
             return i18n("Several tools including the editor, panorama, stack blending, "
                         "calendar, html gallery and opening with external programs");
+        }
+
         default:
+        {
             return QString();
+        }
     }
 }
 

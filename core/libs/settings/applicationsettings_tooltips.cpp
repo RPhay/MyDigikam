@@ -375,7 +375,8 @@ bool ApplicationSettings::showToolTipsIsValid() const
 {
     if (d->showToolTips)
     {
-        if (d->tooltipShowFileName   ||
+        if (
+            d->tooltipShowFileName   ||
             d->tooltipShowFileDate   ||
             d->tooltipShowFileSize   ||
             d->tooltipShowImageType  ||
