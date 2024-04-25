@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 01:54+0000\n"
+"POT-Creation-Date: 2024-04-25 01:38+0000\n"
 "PO-Revision-Date: 2024-02-14 19:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1059,7 +1059,7 @@ msgstr "Nimi:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:273
+#: core/app/views/stack/welcomepageview.cpp:274
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -1377,34 +1377,34 @@ msgstr "Tekniset parametrit"
 msgid "<i>Binary Data</i>"
 msgstr "<i>Binaaridataa</i>"
 
-#: core/app/main/digikamapp.cpp:68
+#: core/app/main/digikamapp.cpp:70
 #, kde-format
 msgid "Initializing..."
 msgstr "Alustetaan…"
 
-#: core/app/main/digikamapp.cpp:146 core/showfoto/main/showfoto.cpp:106
+#: core/app/main/digikamapp.cpp:148 core/showfoto/main/showfoto.cpp:106
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Ladataan liitännäisiä…"
 
-#: core/app/main/digikamapp.cpp:171 core/showfoto/main/showfoto.cpp:88
+#: core/app/main/digikamapp.cpp:173 core/showfoto/main/showfoto.cpp:88
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Tarkistetaan ICC-kantaa…"
 
-#: core/app/main/digikamapp.cpp:183
+#: core/app/main/digikamapp.cpp:187
 #, fuzzy, kde-format
 #| msgid "Reading database..."
 msgid "Clean up Database..."
 msgstr "Luetaan tietokantaa…"
 
-#: core/app/main/digikamapp.cpp:205
+#: core/app/main/digikamapp.cpp:209
 #, fuzzy, kde-format
 #| msgid "Loading albums %v%"
 msgid "Loading albums..."
 msgstr "Luetaan albumeja %v %"
 
-#: core/app/main/digikamapp.cpp:351
+#: core/app/main/digikamapp.cpp:356
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1415,7 +1415,7 @@ msgstr ""
 "valitse ”Kyllä”, muuten valitse ”Ei”. Värinhallinta -ominaisuus on poissa "
 "käytöstä kunnes tämä ongelma on ratkaistu.</p>"
 
-#: core/app/main/digikamapp.cpp:405
+#: core/app/main/digikamapp.cpp:412
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1423,21 +1423,21 @@ msgid ""
 "ExifTool binary file in the metadata section."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:690 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:697 core/app/views/stack/trashview.cpp:501
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ei valittua kohdetta (%1 kohde)"
 msgstr[1] "Ei valittua kohdetta (%1 kohdetta)"
 
-#: core/app/main/digikamapp.cpp:696
+#: core/app/main/digikamapp.cpp:703
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Ei valittuja kohteita (%1 [%2] kohde)"
 msgstr[1] "Ei valittuja kohteita (%1 [%2] kohdetta)"
 
-#: core/app/main/digikamapp.cpp:701
+#: core/app/main/digikamapp.cpp:708
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1446,71 +1446,71 @@ msgstr[0] ""
 msgstr[1] ""
 "Ei valittuja kohteita (%1 kohdetta. Ryhmiteltyjen kohteiden kanssa: %2)"
 
-#: core/app/main/digikamapp.cpp:712
+#: core/app/main/digikamapp.cpp:719
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 kohde valittu (%3/%4)"
 msgstr[1] "%1/%2 kohdetta valittu (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:732
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 [%3] kohde valittu (%4/%5)"
 msgstr[1] "%1/%2 [%3] kohdetta valittu (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:733
+#: core/app/main/digikamapp.cpp:740
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "%1/%2 kohde valittu. Ryhmiteltyjen kohteiden kanssa yhteensä: %3"
 msgstr[1] "%1/%2 kohdetta valittu. Ryhmiteltyjen kohteiden kanssa yhteensä: %3"
 
-#: core/app/main/digikamapp.cpp:741
+#: core/app/main/digikamapp.cpp:748
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 [%3/%4] kohde valittu (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] kohdetta valittu (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:750
+#: core/app/main/digikamapp.cpp:757
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 kohde valittu. Ryhmiteltyjen kohteiden kanssa: %3/%4"
 msgstr[1] "%1/%2 kohdetta valittu. Ryhmiteltyjen kohteiden kanssa: %3/%4"
 
-#: core/app/main/digikamapp.cpp:781
+#: core/app/main/digikamapp.cpp:788
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 / %2)"
 
-#: core/app/main/digikamapp.cpp:795
+#: core/app/main/digikamapp.cpp:802
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr "(%1/%2 [%3])"
 
-#: core/app/main/digikamapp.cpp:799
+#: core/app/main/digikamapp.cpp:806
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1/%2. Ryhmiteltyjen kohteiden kanssa yhteensä: %3)"
 
-#: core/app/main/digikamapp.cpp:810
+#: core/app/main/digikamapp.cpp:817
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "Yksi piilotettu kohde"
 msgstr[1] "%1 piilotettua kohdetta"
 
-#: core/app/main/digikamapp.cpp:861
+#: core/app/main/digikamapp.cpp:868
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Kirjoita metatiedot tiedostoon"
 msgstr[1] "Kirjoita metatiedot valittuihin tiedostoihin"
 
-#: core/app/main/digikamapp.cpp:863
+#: core/app/main/digikamapp.cpp:870
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1568,7 +1568,7 @@ msgstr "Lisää uusia kansioita albumikirjastoon."
 msgid "Images found in %1"
 msgstr "Kuvia löytyi %1:sta"
 
-#: core/app/main/digikamapp_config.cpp:116
+#: core/app/main/digikamapp_config.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "You have chosen a bright color scheme. We switch to a dark icon theme. "
@@ -1583,7 +1583,7 @@ msgstr ""
 "kirkkaan väriteeman. Vaihdetaan tummaan kuvaketeemaan. Se tulee käyttöön "
 "digiKamin uudelleenkäynnistyksen jälkeen."
 
-#: core/app/main/digikamapp_config.cpp:132
+#: core/app/main/digikamapp_config.cpp:135
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1595,7 +1595,7 @@ msgstr ""
 "kirkkaan väriteeman. Vaihdetaan tummaan kuvaketeemaan. Se tulee käyttöön "
 "digiKamin uudelleenkäynnistyksen jälkeen."
 
-#: core/app/main/digikamapp_config.cpp:140
+#: core/app/main/digikamapp_config.cpp:143
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""
@@ -1607,19 +1607,19 @@ msgstr ""
 "väriteeman. Vaihdetaan kirkkaaseen kuvaketeemaan. Se tulee käyttöön "
 "digiKamin uudelleenkäynnistyksen jälkeen."
 
-#: core/app/main/digikamapp_import.cpp:81
+#: core/app/main/digikamapp_import.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "Valitse jäsennettävä kansio"
 
-#: core/app/main/digikamapp_import.cpp:101
+#: core/app/main/digikamapp_import.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "Valitse albumiin tuotavat kansiot"
 
-#: core/app/main/digikamapp_import.cpp:143
+#: core/app/main/digikamapp_import.cpp:144
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to import "
@@ -1627,7 +1627,7 @@ msgid ""
 msgstr ""
 "<p>Valitse digiKamin kirjastosta kohdealbumi, jonne kansiot tuodaan.</p>"
 
-#: core/app/main/digikamapp_import.cpp:170
+#: core/app/main/digikamapp_import.cpp:173
 #, kde-format
 msgid ""
 "The folder %1 is part of the album path and cannot be imported recursively!"
@@ -1817,7 +1817,7 @@ msgid "Thumbnails"
 msgstr "Pienoiskuvat"
 
 #: core/app/main/digikamapp_setup.cpp:334
-#: core/app/views/stack/itemiconview_views.cpp:278
+#: core/app/views/stack/itemiconview_views.cpp:297
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -2518,82 +2518,82 @@ msgctxt "@info: setup"
 msgid "Loading tools..."
 msgstr "Ladataan työkaluja…"
 
-#: core/app/main/digikamapp_solid.cpp:280
+#: core/app/main/digikamapp_solid.cpp:285
 #, kde-format
 msgid "CompactFlash Card Reader"
 msgstr "CompactFlash-kortinlukija"
 
-#: core/app/main/digikamapp_solid.cpp:284
+#: core/app/main/digikamapp_solid.cpp:291
 #, kde-format
 msgid "Memory Stick Reader"
 msgstr "Memory Stick-lukija"
 
-#: core/app/main/digikamapp_solid.cpp:288
+#: core/app/main/digikamapp_solid.cpp:297
 #, kde-format
 msgid "SmartMedia Card Reader"
 msgstr "SmartMedia-kortinlukija"
 
-#: core/app/main/digikamapp_solid.cpp:292
+#: core/app/main/digikamapp_solid.cpp:303
 #, kde-format
 msgid "SD / MMC Card Reader"
 msgstr "SD / MMC-kortinlukija"
 
-#: core/app/main/digikamapp_solid.cpp:296
+#: core/app/main/digikamapp_solid.cpp:309
 #, kde-format
 msgid "xD Card Reader"
 msgstr "xD-kortinlukija"
 
-#: core/app/main/digikamapp_solid.cpp:310
+#: core/app/main/digikamapp_solid.cpp:324
 #, kde-format
 msgid "USB Disk"
 msgstr "USB-levy"
 
-#: core/app/main/digikamapp_solid.cpp:314
+#: core/app/main/digikamapp_solid.cpp:328
 #, kde-format
 msgctxt "non-USB removable storage device"
 msgid "Disk"
 msgstr "Levy"
 
-#: core/app/main/digikamapp_solid.cpp:386
+#: core/app/main/digikamapp_solid.cpp:401
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\" at <mount path>"
 msgid "%1 \"%2\" at %3"
 msgstr "%1 ”%2” %3"
 
-#: core/app/main/digikamapp_solid.cpp:392
+#: core/app/main/digikamapp_solid.cpp:407
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\""
 msgid "%1 \"%2\""
 msgstr "%1 ”%2”"
 
-#: core/app/main/digikamapp_solid.cpp:400
+#: core/app/main/digikamapp_solid.cpp:415
 #, kde-format
 msgctxt "<drive type> at <mount path>"
 msgid "%1 at %2"
 msgstr "%1 %2"
 
-#: core/app/main/digikamapp_solid.cpp:412
+#: core/app/main/digikamapp_solid.cpp:427
 #, kde-format
 msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr " (%1)"
 
-#: core/app/main/digikamapp_solid.cpp:647
+#: core/app/main/digikamapp_solid.cpp:662
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr "Tallennuslaitteeseen ei saada yhteyttä.\n"
 
-#: core/app/main/digikamapp_solid.cpp:678
+#: core/app/main/digikamapp_solid.cpp:693
 #, kde-format
 msgid "Images on %1"
 msgstr "Kuvia %1:lla"
 
-#: core/app/main/digikamapp_solid.cpp:711
+#: core/app/main/digikamapp_solid.cpp:726
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr "Laite ”%1” ei ole kelvollinen."
 
-#: core/app/main/digikamapp_solid.cpp:724
+#: core/app/main/digikamapp_solid.cpp:739
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "Kamera ”%1” ei ole tuettu."
@@ -2724,7 +2724,7 @@ msgstr "Päätyökalurivi"
 
 # pmap: =:gen=digiKamin:
 # pmap: =:elat=digiKamista:
-#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:257
+#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2806,7 +2806,7 @@ msgstr ""
 "se.\n"
 "Järjestelmään asennetut tietokantaliitännäiset löytyvät alta."
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:350
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2958,7 +2958,7 @@ msgstr "Näytä uusin ensin"
 msgid "Show Fullscreen"
 msgstr "Näytä koko näytöllä"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -2974,26 +2974,26 @@ msgstr "Näytä koko näytöllä"
 msgid "Albums"
 msgstr "Albumit"
 
-#: core/app/views/sidebar/datefolderviewsidebarwidget.cpp:122
+#: core/app/views/sidebar/datefolderviewsidebarwidget.cpp:119
 #: core/libs/models/albummodel_date.cpp:25
 #, kde-format
 msgid "Dates"
 msgstr "Kalenteri"
 
-#: core/app/views/sidebar/fuzzysearchsidebarwidget.cpp:124
+#: core/app/views/sidebar/fuzzysearchsidebarwidget.cpp:120
 #, kde-format
 msgctxt "Fuzzy Search images, as duplicates, sketch, searches by similarities"
 msgid "Similarity"
 msgstr "Samankaltaisuus"
 
-#: core/app/views/sidebar/gpssearchsidebarwidget.cpp:124
+#: core/app/views/sidebar/gpssearchsidebarwidget.cpp:121
 #, kde-format
 msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Kartta"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:118
+#: core/app/views/sidebar/labelssidebarwidget.cpp:115
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -3002,12 +3002,12 @@ msgstr "Kartta"
 msgid "Labels"
 msgstr "Merkit"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:106
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Hae kasvoja kokoelmasta"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:150
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:143
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -3016,7 +3016,7 @@ msgstr ""
 "Tervetuloa digiKamin kasvojenhallintaan. Jos käytät ominaisuutta ensi "
 "kertaa, harkitse ohjekentän käyttöä paneelista alavasemmalta."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:197
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -3026,39 +3026,39 @@ msgstr ""
 "Lisää uusia henkilöitä.Kasvontunnistus on keskeytetty, koska tunnistettavia "
 "henkilöitä ei ole. Lisää uusia henkilöitä."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:217
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "Ihmiset"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:146
+#: core/app/views/sidebar/searchsidebarwidget.cpp:141
 #, kde-format
 msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Etsi"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:91
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Avaa tunnisteiden hallinta"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:92
 #, kde-format
 msgid "No Tags"
 msgstr "Ei tunnisteita"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:93
 #, kde-format
 msgid "Existing Tags"
 msgstr "Olemassa olevat tunnisteet"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:261
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:249
 #, kde-format
 msgid "No Tags Album"
 msgstr "Luokittelematon albumi"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
 #: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3072,32 +3072,32 @@ msgstr "Luokittelematon albumi"
 msgid "Tags"
 msgstr "Tunnisteet"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:140
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:121
 #, kde-format
 msgid "Time Unit:"
 msgstr "Aikayksikkö:"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:142
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:123
 #, kde-format
 msgid "Day"
 msgstr "Päivä"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:124
 #, kde-format
 msgid "Week"
 msgstr "Viikko"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:144
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:125
 #, kde-format
 msgid "Month"
 msgstr "Kuukausi"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:145
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:126
 #, kde-format
 msgid "Year"
 msgstr "Vuosi"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:148
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:129
 #, kde-format
 msgid ""
 "<p>Select the histogram time unit.</p><p>You can change the graph decade to "
@@ -3106,7 +3106,7 @@ msgstr ""
 "<p>Valitse histogrammin aikayksikkö.</p><p>Aikaikkuna muuttuu kuvaimen "
 "mittakaavaa muuttamalla.</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:155
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:136
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the date's maximal counts are small, "
@@ -3119,24 +3119,24 @@ msgstr ""
 "arvot havainnollisemmin, mikäli kuvapisteillä on sekä suuria että pieniä "
 "arvoja.</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:162
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Linear"
 msgstr "Lineaarinen"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:168
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:149
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Logarithmic"
 msgstr "Logaritminen"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:205
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:186
 #, kde-format
 msgid "Clear current selection"
 msgstr "Tyhjennä nykyinen valinta"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:206
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:187
 #, kde-format
 msgid ""
 "If you press this button, the current date selection on the time-line will "
@@ -3146,7 +3146,7 @@ msgstr ""
 "tyhjennetään.Jos napsautat tätä painiketta, nykyinen päivävalinta "
 "aikajanalta tyhjennetään."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:209
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:190
 #, kde-format
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
@@ -3154,12 +3154,12 @@ msgstr ""
 "Syötä nimi päiväyshaulle, jotta voit käyttää samaa hakua myöhemmin ”Haut”-"
 "näkymän kautta."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:215
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:196
 #, kde-format
 msgid "Save current selection to a new virtual Album"
 msgstr "Tallenna valinta"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:216
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:197
 #, kde-format
 msgid ""
 "If you press this button, the dates selected on the time-line will be saved "
@@ -3170,18 +3170,18 @@ msgstr ""
 "painiketta, aikajanalta valitut päiväykset tallennetaan uudeksi "
 "virtuaalialbumiksi vasemmalla asetetulla nimellä."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:142
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:380
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Aikajana"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:430
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:411
 #, kde-format
 msgid "no item"
 msgstr "ei kohteita"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:431
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:412
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #, kde-format
@@ -3196,12 +3196,12 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Suodattimet"
 
-#: core/app/views/stack/itemiconview_albums.cpp:299
+#: core/app/views/stack/itemiconview_albums.cpp:303
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Juurialbumin avaaminen ei onnistu. Se ei ole fyysinen sijainti."
 
-#: core/app/views/stack/itemiconview_items.cpp:638
+#: core/app/views/stack/itemiconview_items.cpp:728
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3225,21 +3225,21 @@ msgstr "Sumea kuvahaku"
 msgid "Map Search"
 msgstr "Karttahaku"
 
-#: core/app/views/stack/itemiconview_p.h:138
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
 msgstr "Viimeisin haku"
 
 #: core/app/views/stack/itemiconview_search.cpp:66
-#: core/app/views/stack/itemiconview_search.cpp:108
+#: core/app/views/stack/itemiconview_search.cpp:107
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "FacesDetector"
 msgstr "Kasvontunnistus"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
-#: core/app/views/stack/itemiconview_search.cpp:110
+#: core/app/views/stack/itemiconview_search.cpp:109
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -3248,7 +3248,7 @@ msgstr ""
 "Kasvontunnistustehtävä on jo käynnissä, ja vain yksi voidaan suorittaa "
 "kerrallaan. Odota, kunnes se on valmis."
 
-#: core/app/views/stack/itemiconview_views.cpp:118
+#: core/app/views/stack/itemiconview_views.cpp:123
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -3259,13 +3259,13 @@ msgid ""
 "is currently not available"
 msgstr "<i>Tämän kuvan talletuspaikka<br/> ei juuri nyt ole käytettävissä</i>"
 
-#: core/app/views/stack/itemiconview_views.cpp:223
+#: core/app/views/stack/itemiconview_views.cpp:237
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Työkalut"
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:107
 #: core/libs/tags/manager/tagsmanager.cpp:833
 #, fuzzy, kde-format
 #| msgctxt "@info"
@@ -3273,96 +3273,96 @@ msgstr "Työkalut"
 msgid "Help"
 msgstr "Ohje"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr "Roskakorin verkko-ohje"
 
-#: core/app/views/stack/trashview.cpp:130
+#: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Undo"
 msgstr "Kumoa"
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Palauta roskakorista vain viimeisin tietue."
 
-#: core/app/views/stack/trashview.cpp:136
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore"
 msgstr "Palauta"
 
-#: core/app/views/stack/trashview.cpp:137
+#: core/app/views/stack/trashview.cpp:124
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Remove selected images from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "Poista luettelosta valitut kuvat"
 
-#: core/app/views/stack/trashview.cpp:143
+#: core/app/views/stack/trashview.cpp:130
 #, kde-format
 msgid "Delete..."
 msgstr "Poista…"
 
-#: core/app/views/stack/trashview.cpp:144
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr "Poista roskakorista pysyvästi valinta tai kaikki tietueet."
 
-#: core/app/views/stack/trashview.cpp:148
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Valitut kohteet pysyvästi"
 
-#: core/app/views/stack/trashview.cpp:151
+#: core/app/views/stack/trashview.cpp:138
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Kaikki kohteet pysyvästi"
 
-#: core/app/views/stack/trashview.cpp:278
+#: core/app/views/stack/trashview.cpp:265
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Vahvista kumoaminen"
 
-#: core/app/views/stack/trashview.cpp:279
-#: core/app/views/stack/trashview.cpp:304
+#: core/app/views/stack/trashview.cpp:266
+#: core/app/views/stack/trashview.cpp:291
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Haluatko varmasti palauttaa %1 kohteen?"
 msgstr[1] "Haluatko varmasti palauttaa %1 kohdetta?"
 
-#: core/app/views/stack/trashview.cpp:303
+#: core/app/views/stack/trashview.cpp:290
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Vahvista palauttaminen"
 
-#: core/app/views/stack/trashview.cpp:332
-#: core/app/views/stack/trashview.cpp:382
+#: core/app/views/stack/trashview.cpp:319
+#: core/app/views/stack/trashview.cpp:369
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Vahvista poisto"
 
-#: core/app/views/stack/trashview.cpp:333
+#: core/app/views/stack/trashview.cpp:320
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Haluatko varmasti poistaa %1 kohteen pysyvästi?"
 msgstr[1] "Haluatko varmasti poistaa %1 kohdetta pysyvästi?"
 
-#: core/app/views/stack/trashview.cpp:383
+#: core/app/views/stack/trashview.cpp:370
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Haluatko varmasti poistaa KAIKKI kohteet pysyvästi?"
 
-#: core/app/views/stack/trashview.cpp:452
+#: core/app/views/stack/trashview.cpp:439
 #, kde-format
 msgid "Selection"
 msgstr "Valinta"
 
-#: core/app/views/stack/trashview.cpp:454
+#: core/app/views/stack/trashview.cpp:441
 #: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
@@ -3370,23 +3370,23 @@ msgstr "Valinta"
 msgid "Delete"
 msgstr "Poista"
 
-#: core/app/views/stack/trashview.cpp:521
+#: core/app/views/stack/trashview.cpp:508
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 kohdetta valittu"
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:134
 #, fuzzy, kde-format
 #| msgid "More than 1300 user-reports closed on bugzilla."
 msgid "More than 650 user-reports closed on bugzilla."
 msgstr "Yli 1 300 vikailmoitusta hoidettu Bugzillasta."
 
-#: core/app/views/stack/welcomepageview.cpp:139
+#: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr "Koodin siirros Qt6-alustalle (koodi on yhä Qt5 API -yhteensopivaa)."
 
-#: core/app/views/stack/welcomepageview.cpp:140
+#: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
@@ -3395,24 +3395,24 @@ msgstr ""
 "Windows-asennin koostetaan nyt natiivisti Microsoftin VCPKG-työkaluketjulla, "
 "ja se käyttää Qt6- ja KF6-ohjelmointikehyksiä."
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr "Lisää JPEG-XL-, WebP- ja AVIF-vientiasetukset kaikkialle."
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
 "Lisää kameratuontiin muunnos häviöttömään JPEG-XL:ään, WebP:hen ja AVIF:ään."
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:139
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "Lisää eräajohallintaan JPEG-XL-, WebP- ja AVIF-muunnokset."
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:140
 #, fuzzy, kde-format
 #| msgid ""
 #| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
@@ -3424,13 +3424,13 @@ msgstr ""
 "Tue JPEG-XL:ää, WebP:tä ja AVIF:ää häviöttöminä kuvamuotoina kuvien "
 "versioituun tallentamiseen muokkaimessa."
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:141
 #, fuzzy, kde-format
 #| msgid "Add hamburger menu to tool-bar if main menu is hidden."
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr "Lisää työkaluriville hampurilaisvalikko, jos päävalikko on piilotettu."
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:142
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid "Turn on this option to write metadata into DNG files."
@@ -3438,7 +3438,7 @@ msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr "Valitse tämä, niin DNG-tiedostoihin tallennetaan metatiedot."
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:143
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid ""
@@ -3451,14 +3451,14 @@ msgstr ""
 "Valitse tämä, niin metatiedot kirjoitetaan RAW-tiedostoihin. Piirre käyttää "
 "ExifTool-taustajärjestelmää ja on oletuksena poissa käytöstä."
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:144
 #, fuzzy, kde-format
 #| msgid "Optimize layout of Metadata Edit plugin for a better usability."
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr "Optimoi metatietomuokkausliitännäisen asettelu käytettävyyssyistä."
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
@@ -3467,7 +3467,7 @@ msgstr ""
 "Metatiedot: lisää uudet valinnat asetusprofiilien tallentamiseen ja "
 "lataamiseen metatietojen lisäasetuspaneeliin."
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:146
 #, fuzzy, kde-format
 #| msgid ""
 #| "Add increment file counter to sequence numbering with option [c] or [c,"
@@ -3479,7 +3479,7 @@ msgstr ""
 "Lisää tiedostolaskuri sekventiaaliseen numerointiin valinnalla [c] tai [c,"
 "askel]."
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:147
 #, fuzzy, kde-format
 #| msgid ""
 #| "Add increment file counter to sequence numbering with option [c] or [c,"
@@ -3489,7 +3489,7 @@ msgstr ""
 "Lisää tiedostolaskuri sekventiaaliseen numerointiin valinnalla [c] tai [c,"
 "askel]."
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
@@ -3498,36 +3498,36 @@ msgstr ""
 "Edistynyt nimen muuttaminen: lisää mukautettava ensimmäinen kirjain unique-"
 "määritteelle: {unique:n,m}."
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:149
 #, fuzzy, kde-format
 #| msgid "Return items by number of face regions"
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr "Etsi kohteita kasvojen alueiden määrän mukaan"
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:150
 #, fuzzy, kde-format
 #| msgid "Return items without face regions"
 msgid "Advanced Search: add search for items without face regions."
 msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr "Kokoelmat: lisää tuki monialustaisille verkkosijainneille."
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr "Tietokanta: lisää tuki SQLiten WAL-tilalle (Write-Ahead-Logging)."
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr "Lisää oikolukutuki KF5::Sonnet-osaa käyttävään kuvatekstisovelmaan."
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
@@ -3536,42 +3536,42 @@ msgstr ""
 "Lisää digiKamiin ja Showfotoon oikoluvun asetuspaneeli asetusten kohtaan "
 "Sekalaista."
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr "Lisää verkkokäännöstuki vaihtoehtoisen kielen tekstimuokkainsovelmaan."
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:165
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3579,14 +3579,14 @@ msgid ""
 "images using deep learning model</a>."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:163
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enable this option to assign automatically Pick Labels based on image "
@@ -3598,7 +3598,7 @@ msgstr ""
 "Mäöäritä poimintamerkit automaattisesti kuvan laadun mukaan valitsemalla "
 "tämä asetus."
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enable this option to assign automatically Pick Labels based on image "
@@ -3610,7 +3610,7 @@ msgstr ""
 "Mäöäritä poimintamerkit automaattisesti kuvan laadun mukaan valitsemalla "
 "tämä asetus."
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:165
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enable this option to assign automatically Pick Labels based on image "
@@ -3620,21 +3620,21 @@ msgstr ""
 "Mäöäritä poimintamerkit automaattisesti kuvan laadun mukaan valitsemalla "
 "tämä asetus."
 
-#: core/app/views/stack/welcomepageview.cpp:170
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:171
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:168
 #, fuzzy, kde-format
 #| msgid ""
 #| "Update internal RAW engine to last Libraw 0.20.0 release including Canon "
@@ -3644,7 +3644,7 @@ msgstr ""
 "Päivittää sisäisen RAW-moottorin viimeisimpään Libraw 0.20.0 -julkaisuun, "
 "joka sisältää Canon CR3- ja Sony A7R4 -tuet."
 
-#: core/app/views/stack/welcomepageview.cpp:173
+#: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
 "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
@@ -3654,27 +3654,27 @@ msgid ""
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:188
+#: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
 msgid "...and much more."
 msgstr "…sekä paljon muuta."
 
-#: core/app/views/stack/welcomepageview.cpp:194
+#: core/app/views/stack/welcomepageview.cpp:190
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:197
+#: core/app/views/stack/welcomepageview.cpp:193
 #, kde-format
 msgid "New Features"
 msgstr "Uusia ominaisuuksia"
 
-#: core/app/views/stack/welcomepageview.cpp:199
+#: core/app/views/stack/welcomepageview.cpp:195
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:200
+#: core/app/views/stack/welcomepageview.cpp:196
 #, fuzzy, kde-format
 #| msgid ""
 #| "Some of the new features in this release of digiKam include (compared to "
@@ -3685,18 +3685,18 @@ msgid ""
 msgstr ""
 "Tämän digiKam-julkaisun uusia ominaisuuksia (digiKam 5.x:ään verrattuna):"
 
-#: core/app/views/stack/welcomepageview.cpp:208
+#: core/app/views/stack/welcomepageview.cpp:204
 #: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:350
 #, kde-format
 msgid "About"
 msgstr "Tietoa"
 
-#: core/app/views/stack/welcomepageview.cpp:210
+#: core/app/views/stack/welcomepageview.cpp:206
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:207
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3706,7 +3706,7 @@ msgstr ""
 "digiKam on avoimen lähdekoodin valokuvahallintaohjelma, joka on suunniteltu "
 "digikuvien tuontiin, järjestämiseen, ehostamiseen, etsimiseen ja vientiin."
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:208
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3716,12 +3716,12 @@ msgstr ""
 "Olet nyt digiKamin albuminäkymässä. Albumeihin tiedostosi tallennetaan, ja "
 "ne vastaavat kiintolevyn kansioita."
 
-#: core/app/views/stack/welcomepageview.cpp:213
+#: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "digiKam has many powerful features which are described in the <a href="
@@ -3735,7 +3735,7 @@ msgstr ""
 "href=\"https://docs.kde.org/trunk5/en/extragear-graphics/digikam/index.html"
 "\">ohjeista</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:211
 #, fuzzy, kde-format
 #| msgid ""
 #| "The <a href=\"http://www.digikam.org\">digiKam homepage</a> provides "
@@ -3747,258 +3747,258 @@ msgstr ""
 "<a href=\"http://www.digikam.org\">digiKamin kotisivulta</a> löytyy tietoa "
 "digiKamin uusista versioista."
 
-#: core/app/views/stack/welcomepageview.cpp:265
+#: core/app/views/stack/welcomepageview.cpp:266
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Tervetuloa käyttämään digiKamia (versio %1)."
 
-#: core/app/views/stack/welcomepageview.cpp:268
+#: core/app/views/stack/welcomepageview.cpp:269
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Kiitokset taustakuvasta"
 
-#: core/app/views/stack/welcomepageview.cpp:271
+#: core/app/views/stack/welcomepageview.cpp:272
 #, kde-format
 msgid "Author:"
 msgstr "Tekijä:"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:273
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "Sijainti:"
 
-#: core/app/views/stack/welcomepageview.cpp:274
+#: core/app/views/stack/welcomepageview.cpp:275
 #, kde-format
 msgid "Camera:"
 msgstr "Kamera:"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:276
 #, kde-format
 msgid "Lens:"
 msgstr "Linssi:"
 
-#: core/app/views/tableview/tableview.cpp:327
+#: core/app/views/tableview/tableview.cpp:322
 #, kde-format
 msgid "Hide grouped items"
 msgstr "Piilota ryhmitetyt kuvat"
 
-#: core/app/views/tableview/tableview.cpp:337
+#: core/app/views/tableview/tableview.cpp:332
 #, kde-format
 msgid "Ignore grouping"
 msgstr "Ohita ryhmittely"
 
-#: core/app/views/tableview/tableview.cpp:347
+#: core/app/views/tableview/tableview.cpp:342
 #, kde-format
 msgid "Show grouping in tree"
 msgstr "Näytä ryhmitys puussa"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:67
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:63
 #, kde-format
 msgid "Audio/video properties"
 msgstr "Ääni/video-ominaisuudet"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:70
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:86
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:66
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:82
 #, kde-format
 msgid "Audio bitrate"
 msgstr "Äänen bittinopeus"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:71
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:91
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:67
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:87
 #, kde-format
 msgid "Audio channel type"
 msgstr "Äänen kanavatyyppi"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:72
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:96
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:68
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:958
 #: core/utilities/setup/setuptooltip.cpp:262
 #, kde-format
 msgid "Audio Codec"
 msgstr "Äänikoodekki"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:73
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:101
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:69
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:97
 #: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, kde-format
 msgid "Duration"
 msgstr "Kesto"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:74
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:106
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:70
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:102
 #, kde-format
 msgid "Frame rate"
 msgstr "Kuvataajuus"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:75
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:111
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:71
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:107
 #, kde-format
 msgid "Video codec"
 msgstr "Videokoodekki"
 
-#: core/app/views/tableview/tableview_column_configuration_dialog.cpp:74
+#: core/app/views/tableview/tableview_column_configuration_dialog.cpp:68
 #, kde-format
 msgid "Configure column \"%1\""
 msgstr "Sarakkeen ”%1” asetukset"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:68
+#: core/app/views/tableview/tableview_column_digikam.cpp:64
 #, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
 msgstr "digiKam-ominaisuudet"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:71
+#: core/app/views/tableview/tableview_column_digikam.cpp:67
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Rating"
 msgstr "Arvio"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:72
+#: core/app/views/tableview/tableview_column_digikam.cpp:68
 #, fuzzy, kde-format
 #| msgid "Pick label"
 msgctxt "@title: tableview"
 msgid "Pick label"
 msgstr "Poimintamerkki"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:73
+#: core/app/views/tableview/tableview_column_digikam.cpp:69
 #, fuzzy, kde-format
 #| msgid "Color label"
 msgctxt "@title: tableview"
 msgid "Color label"
 msgstr "Värimerkki"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:77
+#: core/app/views/tableview/tableview_column_digikam.cpp:73
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Title"
 msgstr "Otsikko"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:81
+#: core/app/views/tableview/tableview_column_digikam.cpp:77
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Caption"
 msgstr "Kuvateksti"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:83
+#: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Tags"
 msgstr "Luokitukset"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:94
+#: core/app/views/tableview/tableview_column_digikam.cpp:90
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rating"
 msgstr "Arvio"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:99
+#: core/app/views/tableview/tableview_column_digikam.cpp:95
 #, fuzzy, kde-format
 #| msgid "Pick label"
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr "Poimintamerkki"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:104
+#: core/app/views/tableview/tableview_column_digikam.cpp:100
 #, fuzzy, kde-format
 #| msgid "Color label"
 msgctxt "@info: tableview"
 msgid "Color label"
 msgstr "Värimerkki"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:109
+#: core/app/views/tableview/tableview_column_digikam.cpp:105
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Title"
 msgstr "Nimi"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:114
+#: core/app/views/tableview/tableview_column_digikam.cpp:110
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
 msgstr "Kuvateksti"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:119
+#: core/app/views/tableview/tableview_column_digikam.cpp:115
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Tags"
 msgstr "Luokitukset"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:338
-#: core/app/views/tableview/tableview_column_digikam.cpp:378
+#: core/app/views/tableview/tableview_column_digikam.cpp:334
+#: core/app/views/tableview/tableview_column_digikam.cpp:374
 #, kde-format
 msgctxt "@info: tableview"
 msgid "None"
 msgstr "Ei mikään"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:344
+#: core/app/views/tableview/tableview_column_digikam.cpp:340
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
 msgstr "Hylätty"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:350
+#: core/app/views/tableview/tableview_column_digikam.cpp:346
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pending"
 msgstr "Odottaa"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:356
+#: core/app/views/tableview/tableview_column_digikam.cpp:352
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Accepted"
 msgstr "Hyväksytty"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:384
+#: core/app/views/tableview/tableview_column_digikam.cpp:380
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Red"
 msgstr "Punainen"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:390
+#: core/app/views/tableview/tableview_column_digikam.cpp:386
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Orange"
 msgstr "Oranssi"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:396
+#: core/app/views/tableview/tableview_column_digikam.cpp:392
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Yellow"
 msgstr "Keltainen"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:402
+#: core/app/views/tableview/tableview_column_digikam.cpp:398
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Green"
 msgstr "Vihreä"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:408
+#: core/app/views/tableview/tableview_column_digikam.cpp:404
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Blue"
 msgstr "Sininen"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:414
+#: core/app/views/tableview/tableview_column_digikam.cpp:410
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Magenta"
 msgstr "Magenta"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:420
+#: core/app/views/tableview/tableview_column_digikam.cpp:416
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Gray"
 msgstr "Harmaa"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:426
+#: core/app/views/tableview/tableview_column_digikam.cpp:422
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Black"
 msgstr "Musta"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:432
+#: core/app/views/tableview/tableview_column_digikam.cpp:428
 #, kde-format
 msgctxt "@info: tableview"
 msgid "White"
@@ -4040,301 +4040,301 @@ msgstr "Koko"
 msgid "Last modified"
 msgstr "Viimeksi muutettu"
 
-#: core/app/views/tableview/tableview_column_file.cpp:236
+#: core/app/views/tableview/tableview_column_file.cpp:234
 #, kde-format
 msgctxt "@item: tableview"
 msgid "Human readable"
 msgstr "Ihmisen luettavissa oleva"
 
-#: core/app/views/tableview/tableview_column_file.cpp:237
+#: core/app/views/tableview/tableview_column_file.cpp:235
 #, kde-format
 msgctxt "@item: tableview"
 msgid "Plain"
 msgstr "Yksinkertainen"
 
-#: core/app/views/tableview/tableview_column_file.cpp:238
-#: core/app/views/tableview/tableview_column_geo.cpp:261
+#: core/app/views/tableview/tableview_column_file.cpp:236
+#: core/app/views/tableview/tableview_column_geo.cpp:255
 #, kde-format
 msgid "Display format"
 msgstr "Näyttämismuoto"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:86
+#: core/app/views/tableview/tableview_column_geo.cpp:82
 #, kde-format
 msgid "Geo properties"
 msgstr "Geo-ominaisuudet"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:88
-#: core/app/views/tableview/tableview_column_geo.cpp:101
+#: core/app/views/tableview/tableview_column_geo.cpp:84
+#: core/app/views/tableview/tableview_column_geo.cpp:97
 #, kde-format
 msgid "Geotagged"
 msgstr "Geomerkitty"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:89
-#: core/app/views/tableview/tableview_column_geo.cpp:106
+#: core/app/views/tableview/tableview_column_geo.cpp:85
+#: core/app/views/tableview/tableview_column_geo.cpp:102
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:118
 #, kde-format
 msgid "Coordinates"
 msgstr "Koordinaatit"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:90
-#: core/app/views/tableview/tableview_column_geo.cpp:111
+#: core/app/views/tableview/tableview_column_geo.cpp:86
+#: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
 #, kde-format
 msgid "Altitude"
 msgstr "Korkeus"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:162
+#: core/app/views/tableview/tableview_column_geo.cpp:158
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Yes"
 msgstr "Kyllä"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:162
+#: core/app/views/tableview/tableview_column_geo.cpp:158
 #, kde-format
 msgctxt "@info: tableview"
 msgid "No"
 msgstr "Ei"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:259
+#: core/app/views/tableview/tableview_column_geo.cpp:253
 #, kde-format
 msgid "Metric units"
 msgstr "Metriset yksiköt"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:260
+#: core/app/views/tableview/tableview_column_geo.cpp:254
 #, kde-format
 msgid "Imperial units"
 msgstr "Anglosaksiset yksiköt"
 
-#: core/app/views/tableview/tableview_column_item.cpp:72
+#: core/app/views/tableview/tableview_column_item.cpp:68
 #, kde-format
 msgid "Item properties"
 msgstr "Kohteen ominaisuudet"
 
-#: core/app/views/tableview/tableview_column_item.cpp:75
-#: core/app/views/tableview/tableview_column_item.cpp:96
+#: core/app/views/tableview/tableview_column_item.cpp:71
+#: core/app/views/tableview/tableview_column_item.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Width"
 msgstr "Leveys"
 
-#: core/app/views/tableview/tableview_column_item.cpp:76
-#: core/app/views/tableview/tableview_column_item.cpp:101
+#: core/app/views/tableview/tableview_column_item.cpp:72
+#: core/app/views/tableview/tableview_column_item.cpp:97
 #: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Height"
 msgstr "Korkeus"
 
-#: core/app/views/tableview/tableview_column_item.cpp:77
-#: core/app/views/tableview/tableview_column_item.cpp:106
+#: core/app/views/tableview/tableview_column_item.cpp:73
+#: core/app/views/tableview/tableview_column_item.cpp:102
 #, kde-format
 msgid "Dimensions"
 msgstr "Mitat"
 
-#: core/app/views/tableview/tableview_column_item.cpp:78
-#: core/app/views/tableview/tableview_column_item.cpp:111
+#: core/app/views/tableview/tableview_column_item.cpp:74
+#: core/app/views/tableview/tableview_column_item.cpp:107
 #, kde-format
 msgid "Pixel count"
 msgstr "Kuvapistemäärä"
 
-#: core/app/views/tableview/tableview_column_item.cpp:79
-#: core/app/views/tableview/tableview_column_item.cpp:116
+#: core/app/views/tableview/tableview_column_item.cpp:75
+#: core/app/views/tableview/tableview_column_item.cpp:112
 #, kde-format
 msgid "Bit depth"
 msgstr "Värisyvyys"
 
-#: core/app/views/tableview/tableview_column_item.cpp:80
-#: core/app/views/tableview/tableview_column_item.cpp:121
+#: core/app/views/tableview/tableview_column_item.cpp:76
+#: core/app/views/tableview/tableview_column_item.cpp:117
 #, kde-format
 msgid "Color mode"
 msgstr "Väritila"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/app/views/tableview/tableview_column_item.cpp:81
-#: core/app/views/tableview/tableview_column_item.cpp:126
+#: core/app/views/tableview/tableview_column_item.cpp:77
+#: core/app/views/tableview/tableview_column_item.cpp:122
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:186
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
 msgstr "Tyyppi"
 
-#: core/app/views/tableview/tableview_column_item.cpp:82
-#: core/app/views/tableview/tableview_column_item.cpp:131
+#: core/app/views/tableview/tableview_column_item.cpp:78
+#: core/app/views/tableview/tableview_column_item.cpp:127
 #, kde-format
 msgid "Creation date/time"
 msgstr "Luontipäivä ja -aika"
 
-#: core/app/views/tableview/tableview_column_item.cpp:83
-#: core/app/views/tableview/tableview_column_item.cpp:136
+#: core/app/views/tableview/tableview_column_item.cpp:79
+#: core/app/views/tableview/tableview_column_item.cpp:132
 #, kde-format
 msgid "Digitization date/time"
 msgstr "Digitoinnin päiväys/aika"
 
-#: core/app/views/tableview/tableview_column_item.cpp:84
-#: core/app/views/tableview/tableview_column_item.cpp:141
+#: core/app/views/tableview/tableview_column_item.cpp:80
+#: core/app/views/tableview/tableview_column_item.cpp:137
 #, kde-format
 msgid "Aspect ratio"
 msgstr "Kuvasuhde"
 
-#: core/app/views/tableview/tableview_column_item.cpp:85
-#: core/app/views/tableview/tableview_column_item.cpp:146
+#: core/app/views/tableview/tableview_column_item.cpp:81
+#: core/app/views/tableview/tableview_column_item.cpp:142
 #, kde-format
 msgid "Similarity"
 msgstr "Samankaltaisuus"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:74
+#: core/app/views/tableview/tableview_column_photo.cpp:70
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Photo properties"
 msgstr "Valokuvan ominaisuudet"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:77
-#: core/app/views/tableview/tableview_column_photo.cpp:97
+#: core/app/views/tableview/tableview_column_photo.cpp:73
+#: core/app/views/tableview/tableview_column_photo.cpp:93
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Camera maker"
 msgstr "Kameran valmistaja"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:78
-#: core/app/views/tableview/tableview_column_photo.cpp:102
+#: core/app/views/tableview/tableview_column_photo.cpp:74
+#: core/app/views/tableview/tableview_column_photo.cpp:98
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Camera model"
 msgstr "Kameran malli"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:79
-#: core/app/views/tableview/tableview_column_photo.cpp:107
+#: core/app/views/tableview/tableview_column_photo.cpp:75
+#: core/app/views/tableview/tableview_column_photo.cpp:103
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Lens"
 msgstr "Linssi"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:80
-#: core/app/views/tableview/tableview_column_photo.cpp:112
+#: core/app/views/tableview/tableview_column_photo.cpp:76
+#: core/app/views/tableview/tableview_column_photo.cpp:108
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Aperture"
 msgstr "Aukko"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:81
-#: core/app/views/tableview/tableview_column_photo.cpp:117
+#: core/app/views/tableview/tableview_column_photo.cpp:77
+#: core/app/views/tableview/tableview_column_photo.cpp:113
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Focal length"
 msgstr "Polttoväli"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:82
-#: core/app/views/tableview/tableview_column_photo.cpp:122
+#: core/app/views/tableview/tableview_column_photo.cpp:78
+#: core/app/views/tableview/tableview_column_photo.cpp:118
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Exposure"
 msgstr "Valotus"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:83
-#: core/app/views/tableview/tableview_column_photo.cpp:127
+#: core/app/views/tableview/tableview_column_photo.cpp:79
+#: core/app/views/tableview/tableview_column_photo.cpp:123
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Sensitivity"
 msgstr "Herkkyys"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:84
-#: core/app/views/tableview/tableview_column_photo.cpp:132
+#: core/app/views/tableview/tableview_column_photo.cpp:80
+#: core/app/views/tableview/tableview_column_photo.cpp:128
 #, fuzzy, kde-format
 #| msgid "Mode/program"
 msgctxt "@title: tableview"
 msgid "Mode/program"
 msgstr "Kuvaustila/esiasetukset"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:85
-#: core/app/views/tableview/tableview_column_photo.cpp:137
+#: core/app/views/tableview/tableview_column_photo.cpp:81
+#: core/app/views/tableview/tableview_column_photo.cpp:133
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Flash"
 msgstr "Salama"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:86
-#: core/app/views/tableview/tableview_column_photo.cpp:142
+#: core/app/views/tableview/tableview_column_photo.cpp:82
+#: core/app/views/tableview/tableview_column_photo.cpp:138
 #, kde-format
 msgctxt "@title: tableview"
 msgid "White balance"
 msgstr "Valkotasapaino"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:238
+#: core/app/views/tableview/tableview_column_photo.cpp:234
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:262
+#: core/app/views/tableview/tableview_column_photo.cpp:258
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 s"
 msgstr "%1 s"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:267
+#: core/app/views/tableview/tableview_column_photo.cpp:263
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 ms"
 msgstr "%1 ms"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:272
+#: core/app/views/tableview/tableview_column_photo.cpp:268
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 µs"
 msgstr "%1 µs"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:303
+#: core/app/views/tableview/tableview_column_photo.cpp:299
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:444
+#: core/app/views/tableview/tableview_column_photo.cpp:437
 #, fuzzy, kde-format
 #| msgid "Fraction"
 msgctxt "@info: tableview"
 msgid "Fraction"
 msgstr "Murtoluvut"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:445
+#: core/app/views/tableview/tableview_column_photo.cpp:438
 #, fuzzy, kde-format
 #| msgid "Rational"
 msgctxt "@info: tableview"
 msgid "Rational"
 msgstr "Rationaaliluvut"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:446
+#: core/app/views/tableview/tableview_column_photo.cpp:439
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Format"
 msgstr "Muoto"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:449
+#: core/app/views/tableview/tableview_column_photo.cpp:442
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Seconds"
 msgstr "Sekunnit"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:450
+#: core/app/views/tableview/tableview_column_photo.cpp:443
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Milliseconds"
 msgstr "Millisekunnit"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:451
+#: core/app/views/tableview/tableview_column_photo.cpp:444
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Microseconds"
 msgstr "Mikrosekunnit"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:452
+#: core/app/views/tableview/tableview_column_photo.cpp:445
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Unit"
 msgstr "Yksikkö"
 
-#: core/app/views/tableview/tableview_column_thumbnail.cpp:78
-#: core/app/views/tableview/tableview_column_thumbnail.cpp:88
+#: core/app/views/tableview/tableview_column_thumbnail.cpp:74
+#: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:261
@@ -4343,12 +4343,12 @@ msgstr "Yksikkö"
 msgid "Thumbnail"
 msgstr "Pienoiskuva"
 
-#: core/app/views/tableview/tableview_treeview.cpp:85
+#: core/app/views/tableview/tableview_treeview.cpp:79
 #, kde-format
 msgid "Remove this column"
 msgstr "Poista tämä sarake"
 
-#: core/app/views/tableview/tableview_treeview.cpp:90
+#: core/app/views/tableview/tableview_treeview.cpp:84
 #, kde-format
 msgid "Configure this column"
 msgstr "Tämän sarakkeen asetukset"
@@ -22612,7 +22612,7 @@ msgid "Slideshow"
 msgstr "Kuvaesitys"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:450
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "Kuvaesitys"
@@ -37672,7 +37672,7 @@ msgid "Properties"
 msgstr "Ominaisuudet"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:441
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
@@ -39323,46 +39323,46 @@ msgstr "Pentaxin digikameran RAW-kuvamuoto"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Fujin digikameran RAW-kuvamuoto"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:411
+#: core/libs/settings/applicationsettings_miscs.cpp:412
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Haluatko tehdä tämän toimenpiteen ryhmän kaikille kohteille?"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:413
+#: core/libs/settings/applicationsettings_miscs.cpp:414
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Muista valinta tälle toimenpiteelle"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:444
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #: core/utilities/lighttable/lighttablewindow.cpp:48
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Valopöytä"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:447
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Eräajojen hallinta"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:453
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
 msgid "Renaming"
 msgstr "Nimien muuttaminen"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:456
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Tuonti- ja vientityökalut"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:459
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:471
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -39371,81 +39371,81 @@ msgstr ""
 "Metatietoihin, nimiöihin, arvosteluihin, luokituksiin, sijaintitietoon ja "
 "kääntämiseen liittyvät toiminnot"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:474
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Lisätään kohteita valopöydälle"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:477
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Lisätään kohteita eräajohallintaan"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:480
+#: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Kohteiden avaus diaesitykseksi"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:483
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, kde-format
 msgid "Renaming items"
 msgstr "Muutetaan kohteiden nimiä"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:486
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:489
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:49
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Luokka"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:50
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Matka"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:51
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Loma"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:52
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Ystävät"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:53
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Luonto"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:54
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Juhla"
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:55
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Tehtävä"
 
-#: core/libs/settings/applicationsettings_p.cpp:277
+#: core/libs/settings/applicationsettings_p.cpp:56
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"

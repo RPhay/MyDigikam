@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 01:54+0000\n"
+"POT-Creation-Date: 2024-04-25 01:38+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1001,7 +1001,7 @@ msgstr "名前:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:273
+#: core/app/views/stack/welcomepageview.cpp:274
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -1319,32 +1319,32 @@ msgstr "技術的パラメータ"
 msgid "<i>Binary Data</i>"
 msgstr "<i>バイナリデータ</i>"
 
-#: core/app/main/digikamapp.cpp:68
+#: core/app/main/digikamapp.cpp:70
 #, kde-format
 msgid "Initializing..."
 msgstr "初期化中..."
 
-#: core/app/main/digikamapp.cpp:146 core/showfoto/main/showfoto.cpp:106
+#: core/app/main/digikamapp.cpp:148 core/showfoto/main/showfoto.cpp:106
 #, kde-format
 msgid "Load Plugins..."
 msgstr "プラグインを読み込み中..."
 
-#: core/app/main/digikamapp.cpp:171 core/showfoto/main/showfoto.cpp:88
+#: core/app/main/digikamapp.cpp:173 core/showfoto/main/showfoto.cpp:88
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "ICC リポジトリをチェック中..."
 
-#: core/app/main/digikamapp.cpp:183
+#: core/app/main/digikamapp.cpp:187
 #, kde-format
 msgid "Clean up Database..."
 msgstr "データベースをクリーンアップ中..."
 
-#: core/app/main/digikamapp.cpp:205
+#: core/app/main/digikamapp.cpp:209
 #, kde-format
 msgid "Loading albums..."
 msgstr "アルバムを読み込み中..."
 
-#: core/app/main/digikamapp.cpp:351
+#: core/app/main/digikamapp.cpp:356
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1355,7 +1355,7 @@ msgstr ""
 "は「はい」を、そうでない場合は「いいえ」を選んでください。後者の場合は、この"
 "問題が解決されるまでカラーマネージメント機能は使えません。</p>"
 
-#: core/app/main/digikamapp.cpp:405
+#: core/app/main/digikamapp.cpp:412
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1363,83 +1363,83 @@ msgid ""
 "ExifTool binary file in the metadata section."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:690 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:697 core/app/views/stack/trashview.cpp:501
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "アイテムが選択されていません (%1 個のアイテム)"
 
-#: core/app/main/digikamapp.cpp:696
+#: core/app/main/digikamapp.cpp:703
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "アイテムが選択されていません (%1 [%2] 個のアイテム)"
 
-#: core/app/main/digikamapp.cpp:701
+#: core/app/main/digikamapp.cpp:708
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] ""
 "アイテムが選択されていません (%1 個のアイテム、グループ化されたアイテム: %2)"
 
-#: core/app/main/digikamapp.cpp:712
+#: core/app/main/digikamapp.cpp:719
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 アイテム選択済み (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:732
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 [%3] アイテム選択済み (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:733
+#: core/app/main/digikamapp.cpp:740
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "%1/%2 アイテム選択済み。グループ化された全アイテム: %3"
 
-#: core/app/main/digikamapp.cpp:741
+#: core/app/main/digikamapp.cpp:748
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 [%3/%4] アイテム選択済み (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:750
+#: core/app/main/digikamapp.cpp:757
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 アイテム選択済み。グループ化されたアイテム: %3/%4"
 
-#: core/app/main/digikamapp.cpp:781
+#: core/app/main/digikamapp.cpp:788
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 / %2)"
 
-#: core/app/main/digikamapp.cpp:795
+#: core/app/main/digikamapp.cpp:802
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 / %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:799
+#: core/app/main/digikamapp.cpp:806
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 / %2 グループ化された全アイテム: %3"
 
-#: core/app/main/digikamapp.cpp:810
+#: core/app/main/digikamapp.cpp:817
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 隠しアイテム"
 
-#: core/app/main/digikamapp.cpp:861
+#: core/app/main/digikamapp.cpp:868
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "選択されたファイルにメタデータを書き込み"
 
-#: core/app/main/digikamapp.cpp:863
+#: core/app/main/digikamapp.cpp:870
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1496,7 +1496,7 @@ msgstr "アルバムライブラリに新しいフォルダを追加します。
 msgid "Images found in %1"
 msgstr "%1 内で検出された画像"
 
-#: core/app/main/digikamapp_config.cpp:116
+#: core/app/main/digikamapp_config.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "You have chosen a bright color scheme. We switch to a dark icon theme. "
@@ -1509,7 +1509,7 @@ msgstr ""
 "明るいカラーテーマに切り替えたため、ダークアイコンテーマに切り替えられまし"
 "た。アイコンテーマは digiKam の再起動後に表示されます。"
 
-#: core/app/main/digikamapp_config.cpp:132
+#: core/app/main/digikamapp_config.cpp:135
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1519,7 +1519,7 @@ msgstr ""
 "明るいカラーテーマに切り替えたため、ダークアイコンテーマに切り替えられまし"
 "た。アイコンテーマは digiKam の再起動後に表示されます。"
 
-#: core/app/main/digikamapp_config.cpp:140
+#: core/app/main/digikamapp_config.cpp:143
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""
@@ -1529,19 +1529,19 @@ msgstr ""
 "ダークカラーテーマに切り替えたため、明るいアイコンテーマに切り替えられまし"
 "た。アイコンテーマは digiKam の再起動後に表示されます。"
 
-#: core/app/main/digikamapp_import.cpp:81
+#: core/app/main/digikamapp_import.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "解析するフォルダを選択"
 
-#: core/app/main/digikamapp_import.cpp:101
+#: core/app/main/digikamapp_import.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "アルバムにインポートするフォルダを選択"
 
-#: core/app/main/digikamapp_import.cpp:143
+#: core/app/main/digikamapp_import.cpp:144
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to import "
@@ -1550,7 +1550,7 @@ msgstr ""
 "<p>フォルダをインポートする digiKam ライブラリの行き先アルバムを選んでくださ"
 "い。</p>"
 
-#: core/app/main/digikamapp_import.cpp:170
+#: core/app/main/digikamapp_import.cpp:173
 #, kde-format
 msgid ""
 "The folder %1 is part of the album path and cannot be imported recursively!"
@@ -1727,7 +1727,7 @@ msgid "Thumbnails"
 msgstr "サムネイル"
 
 #: core/app/main/digikamapp_setup.cpp:334
-#: core/app/views/stack/itemiconview_views.cpp:278
+#: core/app/views/stack/itemiconview_views.cpp:297
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -2425,82 +2425,82 @@ msgctxt "@info: setup"
 msgid "Loading tools..."
 msgstr "ツールを読み込み中..."
 
-#: core/app/main/digikamapp_solid.cpp:280
+#: core/app/main/digikamapp_solid.cpp:285
 #, kde-format
 msgid "CompactFlash Card Reader"
 msgstr "CompactFlash カードリーダー"
 
-#: core/app/main/digikamapp_solid.cpp:284
+#: core/app/main/digikamapp_solid.cpp:291
 #, kde-format
 msgid "Memory Stick Reader"
 msgstr "メモリスティックリーダー"
 
-#: core/app/main/digikamapp_solid.cpp:288
+#: core/app/main/digikamapp_solid.cpp:297
 #, kde-format
 msgid "SmartMedia Card Reader"
 msgstr "SmartMedia カードリーダー"
 
-#: core/app/main/digikamapp_solid.cpp:292
+#: core/app/main/digikamapp_solid.cpp:303
 #, kde-format
 msgid "SD / MMC Card Reader"
 msgstr "SD / MMC カードリーダー"
 
-#: core/app/main/digikamapp_solid.cpp:296
+#: core/app/main/digikamapp_solid.cpp:309
 #, kde-format
 msgid "xD Card Reader"
 msgstr "xD カードリーダー"
 
-#: core/app/main/digikamapp_solid.cpp:310
+#: core/app/main/digikamapp_solid.cpp:324
 #, kde-format
 msgid "USB Disk"
 msgstr "USB ディスク"
 
-#: core/app/main/digikamapp_solid.cpp:314
+#: core/app/main/digikamapp_solid.cpp:328
 #, kde-format
 msgctxt "non-USB removable storage device"
 msgid "Disk"
 msgstr "ディスク"
 
-#: core/app/main/digikamapp_solid.cpp:386
+#: core/app/main/digikamapp_solid.cpp:401
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\" at <mount path>"
 msgid "%1 \"%2\" at %3"
 msgstr "%1 \"%2\" を %3 にマウント"
 
-#: core/app/main/digikamapp_solid.cpp:392
+#: core/app/main/digikamapp_solid.cpp:407
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\""
 msgid "%1 \"%2\""
 msgstr "%1 \"%2\""
 
-#: core/app/main/digikamapp_solid.cpp:400
+#: core/app/main/digikamapp_solid.cpp:415
 #, kde-format
 msgctxt "<drive type> at <mount path>"
 msgid "%1 at %2"
 msgstr "%1 を %2 にマウント"
 
-#: core/app/main/digikamapp_solid.cpp:412
+#: core/app/main/digikamapp_solid.cpp:427
 #, kde-format
 msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr " (%1)"
 
-#: core/app/main/digikamapp_solid.cpp:647
+#: core/app/main/digikamapp_solid.cpp:662
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr "ストレージデバイスにアクセスできません。\n"
 
-#: core/app/main/digikamapp_solid.cpp:678
+#: core/app/main/digikamapp_solid.cpp:693
 #, kde-format
 msgid "Images on %1"
 msgstr "%1 の画像"
 
-#: core/app/main/digikamapp_solid.cpp:711
+#: core/app/main/digikamapp_solid.cpp:726
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr "指定されたデバイス (%1) は有効ではありません。"
 
-#: core/app/main/digikamapp_solid.cpp:724
+#: core/app/main/digikamapp_solid.cpp:739
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "指定されたカメラ (%1) はサポートしていません。"
@@ -2631,7 +2631,7 @@ msgstr "ヘルプ(&H)"
 msgid "Main Toolbar"
 msgstr "メインツールバー"
 
-#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:257
+#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2713,7 +2713,7 @@ msgstr ""
 "コンピュータにインストールされているデータベースプラグインは以下のとおりで"
 "す。"
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:350
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2855,7 +2855,7 @@ msgstr "フォーカスポイントを表示"
 msgid "Show Fullscreen"
 msgstr "フルスクリーンで表示"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -2871,26 +2871,26 @@ msgstr "フルスクリーンで表示"
 msgid "Albums"
 msgstr "アルバム"
 
-#: core/app/views/sidebar/datefolderviewsidebarwidget.cpp:122
+#: core/app/views/sidebar/datefolderviewsidebarwidget.cpp:119
 #: core/libs/models/albummodel_date.cpp:25
 #, kde-format
 msgid "Dates"
 msgstr "日付"
 
-#: core/app/views/sidebar/fuzzysearchsidebarwidget.cpp:124
+#: core/app/views/sidebar/fuzzysearchsidebarwidget.cpp:120
 #, kde-format
 msgctxt "Fuzzy Search images, as duplicates, sketch, searches by similarities"
 msgid "Similarity"
 msgstr "類似度"
 
-#: core/app/views/sidebar/gpssearchsidebarwidget.cpp:124
+#: core/app/views/sidebar/gpssearchsidebarwidget.cpp:121
 #, kde-format
 msgctxt "Search images on a map"
 msgid "Map"
 msgstr "地図"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:118
+#: core/app/views/sidebar/labelssidebarwidget.cpp:115
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -2899,12 +2899,12 @@ msgstr "地図"
 msgid "Labels"
 msgstr "ラベル"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:106
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "コレクションから顔をスキャン"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:150
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:143
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2913,7 +2913,7 @@ msgstr ""
 "digiKam の顔マネジメントへようこそ。初めて使用するなら、下の左サイドパネル内"
 "のヘルプボックスを使用してみてください。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:197
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2922,39 +2922,39 @@ msgstr ""
 "識別対象がないため、顔認識はキャンセルされました。識別するものを追加してくだ"
 "さい。"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:217
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "人"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:146
+#: core/app/views/sidebar/searchsidebarwidget.cpp:141
 #, kde-format
 msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "検索"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:91
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "タグマネージャを開く"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:92
 #, kde-format
 msgid "No Tags"
 msgstr "タグなし"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:93
 #, kde-format
 msgid "Existing Tags"
 msgstr "既存のタグ"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:261
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:249
 #, kde-format
 msgid "No Tags Album"
 msgstr "タグのないアルバム"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
 #: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2968,32 +2968,32 @@ msgstr "タグのないアルバム"
 msgid "Tags"
 msgstr "タグ"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:140
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:121
 #, kde-format
 msgid "Time Unit:"
 msgstr "時間の単位:"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:142
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:123
 #, kde-format
 msgid "Day"
 msgstr "日"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:124
 #, kde-format
 msgid "Week"
 msgstr "週"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:144
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:125
 #, kde-format
 msgid "Month"
 msgstr "月"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:145
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:126
 #, kde-format
 msgid "Year"
 msgstr "年"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:148
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:129
 #, kde-format
 msgid ""
 "<p>Select the histogram time unit.</p><p>You can change the graph decade to "
@@ -3002,7 +3002,7 @@ msgstr ""
 "<p>ヒストグラムの時間の単位を選択します。</p><p>グラフの 1 目盛りが表す時間を"
 "変更することで、時間軸を拡大/縮小できます。</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:155
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:136
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the date's maximal counts are small, "
@@ -3014,24 +3014,24 @@ msgstr ""
 "きは「線形」が使えます。</p><p>最大カウント値が大きいときは、「対数」を使うと"
 "小さい値から大きい値までのすべてがグラフで見えるようになります。</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:162
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Linear"
 msgstr "線形"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:168
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:149
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Logarithmic"
 msgstr "対数"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:205
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:186
 #, kde-format
 msgid "Clear current selection"
 msgstr "現在の選択をクリア"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:206
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:187
 #, kde-format
 msgid ""
 "If you press this button, the current date selection on the time-line will "
@@ -3039,18 +3039,18 @@ msgid ""
 msgstr "このボタンを押すと、時間軸から選択した日付がクリアされます。"
 
 # well-spelled: マイ
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:209
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:190
 #, kde-format
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
 msgstr "現在の日付検索の名前を入力して、「検索」ビューに保存します"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:215
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:196
 #, kde-format
 msgid "Save current selection to a new virtual Album"
 msgstr "現在の選択を新しい仮想アルバムに保存します"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:216
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:197
 #, kde-format
 msgid ""
 "If you press this button, the dates selected on the time-line will be saved "
@@ -3059,18 +3059,18 @@ msgstr ""
 "このボタンを押すと、時間軸から選択した日付が、左側に設定した名前で新しい検索"
 "仮想アルバムに保存されます。"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:142
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:380
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "時間軸"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:430
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:411
 #, kde-format
 msgid "no item"
 msgstr "アイテムなし"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:431
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:412
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #, kde-format
@@ -3084,12 +3084,12 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "フィルタ"
 
-#: core/app/views/stack/itemiconview_albums.cpp:299
+#: core/app/views/stack/itemiconview_albums.cpp:303
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "ルートアルバムを開けません。物理的な場所ではありません。"
 
-#: core/app/views/stack/itemiconview_items.cpp:638
+#: core/app/views/stack/itemiconview_items.cpp:728
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3113,20 +3113,20 @@ msgstr "画像によるファジー検索"
 msgid "Map Search"
 msgstr "地図検索"
 
-#: core/app/views/stack/itemiconview_p.h:138
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
 msgstr "前回の検索"
 
 #: core/app/views/stack/itemiconview_search.cpp:66
-#: core/app/views/stack/itemiconview_search.cpp:108
+#: core/app/views/stack/itemiconview_search.cpp:107
 #, kde-format
 msgid "FacesDetector"
 msgstr "顔検出"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
-#: core/app/views/stack/itemiconview_search.cpp:110
+#: core/app/views/stack/itemiconview_search.cpp:109
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -3135,7 +3135,7 @@ msgstr ""
 "顔認識タスクが既に実行中です。同時に実行できるタスクは 1 つだけです。終了する"
 "までお待ちください。"
 
-#: core/app/views/stack/itemiconview_views.cpp:118
+#: core/app/views/stack/itemiconview_views.cpp:123
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3143,104 +3143,104 @@ msgid ""
 "is currently not available"
 msgstr "指定されたコレクションの場所は、無効か現在利用できません。"
 
-#: core/app/views/stack/itemiconview_views.cpp:223
+#: core/app/views/stack/itemiconview_views.cpp:237
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "ツール"
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:107
 #: core/libs/tags/manager/tagsmanager.cpp:833
 #, kde-format
 msgid "Help"
 msgstr "ヘルプ"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr "ごみ箱についてのオンラインヘルプ"
 
-#: core/app/views/stack/trashview.cpp:130
+#: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Undo"
 msgstr "元に戻す"
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "ごみ箱にある最新のエントリのみを復元します。"
 
-#: core/app/views/stack/trashview.cpp:136
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore"
 msgstr "復元"
 
-#: core/app/views/stack/trashview.cpp:137
+#: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "選択したファイルをごみ箱から復元します。"
 
-#: core/app/views/stack/trashview.cpp:143
+#: core/app/views/stack/trashview.cpp:130
 #, kde-format
 msgid "Delete..."
 msgstr "削除..."
 
-#: core/app/views/stack/trashview.cpp:144
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr "選択したアイテムまたはすべてのアイテムをごみ箱から完全に削除します。"
 
-#: core/app/views/stack/trashview.cpp:148
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "ファイルを完全に削除"
 
-#: core/app/views/stack/trashview.cpp:151
+#: core/app/views/stack/trashview.cpp:138
 #, kde-format
 msgid "All Items Permanently"
 msgstr "すべてのアイテムを恒久的に"
 
-#: core/app/views/stack/trashview.cpp:278
+#: core/app/views/stack/trashview.cpp:265
 #, kde-format
 msgid "Confirm Undo"
 msgstr "アンドゥ確認"
 
-#: core/app/views/stack/trashview.cpp:279
-#: core/app/views/stack/trashview.cpp:304
+#: core/app/views/stack/trashview.cpp:266
+#: core/app/views/stack/trashview.cpp:291
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "本当に %1 を復元しますか？"
 
-#: core/app/views/stack/trashview.cpp:303
+#: core/app/views/stack/trashview.cpp:290
 #, kde-format
 msgid "Confirm Restore"
 msgstr "復元確認"
 
-#: core/app/views/stack/trashview.cpp:332
-#: core/app/views/stack/trashview.cpp:382
+#: core/app/views/stack/trashview.cpp:319
+#: core/app/views/stack/trashview.cpp:369
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "削除確認"
 
-#: core/app/views/stack/trashview.cpp:333
+#: core/app/views/stack/trashview.cpp:320
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "本当に %1 を完全に削除しますか？"
 
-#: core/app/views/stack/trashview.cpp:383
+#: core/app/views/stack/trashview.cpp:370
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "本当にすべてのアイテムを完全に削除しますか？"
 
-#: core/app/views/stack/trashview.cpp:452
+#: core/app/views/stack/trashview.cpp:439
 #, kde-format
 msgid "Selection"
 msgstr "選択|/|$[~setProps ~full 'スライドショー: 選択した画像']"
 
-#: core/app/views/stack/trashview.cpp:454
+#: core/app/views/stack/trashview.cpp:441
 #: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
@@ -3248,24 +3248,24 @@ msgstr "選択|/|$[~setProps ~full 'スライドショー: 選択した画像']"
 msgid "Delete"
 msgstr "削除"
 
-#: core/app/views/stack/trashview.cpp:521
+#: core/app/views/stack/trashview.cpp:508
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 アイテム選択済み"
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid "More than 650 user-reports closed on bugzilla."
 msgstr "Bugzilla で 650 件以上のユーザレポートがクローズされました。"
 
-#: core/app/views/stack/welcomepageview.cpp:139
+#: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
 "コードを Qt6 フレームワークに移植しました (コードは Qt5 API と互換性がありま"
 "す)。"
 
-#: core/app/views/stack/welcomepageview.cpp:140
+#: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
@@ -3274,12 +3274,12 @@ msgstr ""
 "Windows インストーラは、Microsoft VCPKG ツールチェーンでネイティブにコンパイ"
 "ルされ、Qt6 と KF6 フレームワークを使用しています。"
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr "JPEG-XL、WEBP、AVIF のエクスポート設定をすべての場所に追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
@@ -3287,13 +3287,13 @@ msgstr ""
 "カメラからのインポート時に、Lossless JPEG-XL、WEBP、AVIF への変換を追加しまし"
 "た。"
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:139
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
 "バッチキューマネージャに JPEG-XL、WEBP、AVIF コンバータを追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
@@ -3302,14 +3302,14 @@ msgstr ""
 "バージョニング: JPEG-XL、HEIF、WEBP、AVIF を可逆画像フォーマットとしてサポー"
 "トし、エディタでバージョン管理された画像を保存できるようにしました。"
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 "使いやすさ: メインメニューが非表示の場合、ハンバーガーメニューをツールバーに"
 "追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
@@ -3317,7 +3317,7 @@ msgstr ""
 "メタデータ: ExifTool バックエンドを使ってファイルにメタデータを書き込む新しい"
 "オプションを追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
@@ -3326,7 +3326,7 @@ msgstr ""
 "メタデータ: DNG と RAW ファイルへのメタデータ書き込み操作は、常に ExifTool "
 "バックエンドを使用するようになりました。"
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
@@ -3334,7 +3334,7 @@ msgstr ""
 "メタデータ: メタデータ編集プラグインのレイアウトを最適化し、使いやすくしまし"
 "た。"
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
@@ -3343,7 +3343,7 @@ msgstr ""
 "メタデータ: 詳細なメタデータ設定パネルで、設定プロファイルを保存/読み込みする"
 "新しいオプションを追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
@@ -3352,14 +3352,14 @@ msgstr ""
 "高度な名前変更: オプション [c] または [c,step] で、シーケンス番号にファイルカ"
 "ウンタを追加するようにしました。"
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
 "高度な名前変更: オプション [r] で、ランダムテキストシーケンス番号を追加するよ"
 "うにしました。"
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
@@ -3368,30 +3368,30 @@ msgstr ""
 "高度な名前変更: {unique:n,c} で、ユニーク修飾子の最初の文字を設定できるように"
 "しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr "高度な検索: 顔領域の数でアイテムを検索できるようにしました。"
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid "Advanced Search: add search for items without face regions."
 msgstr "高度な検索: 顔領域のないアイテムを検索できるようにしました。"
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr ""
 "コレクション: クロスプラットフォームなネットワークパスをサポートしました。"
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
 "データベース: SQLite WAL (Write-Ahead-Logging, ログ先行書き込み) モードをサ"
 "ポートしました。"
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
@@ -3400,7 +3400,7 @@ msgstr ""
 "KF5::Sonnet コンポーネントを使用することで、キャプションテキストウィジェット"
 "でスペルチェックをサポートしました。"
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
@@ -3408,7 +3408,7 @@ msgid ""
 msgstr ""
 "digiKam と Showfoto の設定/その他にスペルチェックの設定パネルを追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
@@ -3416,14 +3416,14 @@ msgstr ""
 "代替言語テキストエディタウィジェットにオンライン翻訳のサポートを追加しまし"
 "た。"
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 "digiKam と Showfoto の設定/その他にローカライズの設定パネルを追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
@@ -3432,7 +3432,7 @@ msgstr ""
 "テキストエディットウィジェットで、優先する代替言語/翻訳言語をリストする設定を"
 "追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
@@ -3440,19 +3440,19 @@ msgstr ""
 "画質による並べ替えの設定をすべての場所でグローバルまたはカスタマイズできるよ"
 "うにしました。"
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 "サムネイル上のラベルの表示をカスタマイズするアイコンビューの設定を追加しまし"
 "た。"
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr "TIFF ローダーで float16 (half float) 画像をサポートしました。"
 
-#: core/app/views/stack/welcomepageview.cpp:165
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3463,7 +3463,7 @@ msgstr ""
 "kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">深層学習モデルを使って画像を分"
 "類するための美的検出</a>を実行します。"
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
@@ -3473,7 +3473,7 @@ msgstr ""
 "GSoC/2022/StatusReports/QuocHungTran\">スキャンされたテキストに OCR を実行す"
 "る</a>ものです。"
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
@@ -3482,7 +3482,7 @@ msgstr ""
 "キューマネージャー: 画質を解析して選抜ラベルを自動的に割り当てる新しいツール"
 "を追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
@@ -3491,14 +3491,14 @@ msgstr ""
 "キューマネージャー: 評価、選抜、色のラベルをバッチで割り当てる新しいツールを"
 "追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
 "キューマネージャー: タイトルとキャプションをバッチで割り当てる新しいツールを"
 "追加しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:170
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
@@ -3508,7 +3508,7 @@ msgstr ""
 "クを DocBook から Sphinx/ReStructuredText フレームワークに書き直しました。</"
 "a>"
 
-#: core/app/views/stack/welcomepageview.cpp:171
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
@@ -3517,13 +3517,13 @@ msgstr ""
 "G'MIC-Qt ツールを最新バージョンである 3.2.2 に更新し、MacOS ポートを完成さ"
 "せ、プラグインの安定性を向上させました。"
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgstr ""
 "内部 RAW エンジンを最新の Libraw スナップショット 2023-11-21 に更新しました。"
 
-#: core/app/views/stack/welcomepageview.cpp:173
+#: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
 "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
@@ -3538,45 +3538,45 @@ msgstr ""
 "イル、キャノン EOS R3、R7、R10、富士フイルム X-H2S、X-T30 II、OM System "
 "OM-1、ライカ M11、ソニー A7-IV (ILCE-7M4)、DJI Mavic 3"
 
-#: core/app/views/stack/welcomepageview.cpp:188
+#: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
 msgid "...and much more."
 msgstr "...他にもたくさん"
 
-#: core/app/views/stack/welcomepageview.cpp:194
+#: core/app/views/stack/welcomepageview.cpp:190
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:197
+#: core/app/views/stack/welcomepageview.cpp:193
 #, kde-format
 msgid "New Features"
 msgstr "新機能"
 
-#: core/app/views/stack/welcomepageview.cpp:199
+#: core/app/views/stack/welcomepageview.cpp:195
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:200
+#: core/app/views/stack/welcomepageview.cpp:196
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:208
+#: core/app/views/stack/welcomepageview.cpp:204
 #: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:350
 #, kde-format
 msgid "About"
 msgstr "概要"
 
-#: core/app/views/stack/welcomepageview.cpp:210
+#: core/app/views/stack/welcomepageview.cpp:206
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:207
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3584,7 +3584,7 @@ msgid ""
 "computer."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:208
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3592,12 +3592,12 @@ msgid ""
 "disk."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:213
+#: core/app/views/stack/welcomepageview.cpp:209
 #, fuzzy, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "digiKam has many powerful features which are described in the <a href="
@@ -3610,7 +3610,7 @@ msgstr ""
 "digiKam にはたくさんの強力な機能があります。<a href=\"https://docs.kde.org/?"
 "application=digikam&branch=trunk5\">ここ</a>で詳しく説明されています。"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3619,258 +3619,258 @@ msgstr ""
 "<a href=\"https://www.digikam.org\">digiKam のホームページ</a>で新しいバー"
 "ジョンの digiKam の情報を提供しています。"
 
-#: core/app/views/stack/welcomepageview.cpp:265
+#: core/app/views/stack/welcomepageview.cpp:266
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "digiKam %1 へようこそ"
 
-#: core/app/views/stack/welcomepageview.cpp:268
+#: core/app/views/stack/welcomepageview.cpp:269
 #, kde-format
 msgid "Background Image Credits"
 msgstr "背景画像クレジット"
 
-#: core/app/views/stack/welcomepageview.cpp:271
+#: core/app/views/stack/welcomepageview.cpp:272
 #, fuzzy, kde-format
 #| msgid "Author"
 msgid "Author:"
 msgstr "作者"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:273
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "場所:"
 
-#: core/app/views/stack/welcomepageview.cpp:274
+#: core/app/views/stack/welcomepageview.cpp:275
 #, fuzzy, kde-format
 #| msgid "Camera"
 msgid "Camera:"
 msgstr "カメラ"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "camera lens"
 #| msgid "Lens:"
 msgid "Lens:"
 msgstr "レンズ:"
 
-#: core/app/views/tableview/tableview.cpp:327
+#: core/app/views/tableview/tableview.cpp:322
 #, kde-format
 msgid "Hide grouped items"
 msgstr "グループ化したアイテムを隠す"
 
-#: core/app/views/tableview/tableview.cpp:337
+#: core/app/views/tableview/tableview.cpp:332
 #, kde-format
 msgid "Ignore grouping"
 msgstr "グルーピングを無視"
 
-#: core/app/views/tableview/tableview.cpp:347
+#: core/app/views/tableview/tableview.cpp:342
 #, kde-format
 msgid "Show grouping in tree"
 msgstr "グルーピングをツリー表示"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:67
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:63
 #, kde-format
 msgid "Audio/video properties"
 msgstr "音声/動画のプロパティ"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:70
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:86
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:66
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:82
 #, kde-format
 msgid "Audio bitrate"
 msgstr "音声ビットレート"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:71
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:91
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:67
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:87
 #, kde-format
 msgid "Audio channel type"
 msgstr "音声チャンネルタイプ"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:72
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:96
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:68
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:958
 #: core/utilities/setup/setuptooltip.cpp:262
 #, kde-format
 msgid "Audio Codec"
 msgstr "音声コーデック"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:73
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:101
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:69
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:97
 #: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, kde-format
 msgid "Duration"
 msgstr "長さ"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:74
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:106
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:70
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:102
 #, kde-format
 msgid "Frame rate"
 msgstr "フレームレート"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:75
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:111
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:71
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:107
 #, kde-format
 msgid "Video codec"
 msgstr "動画コーデック"
 
-#: core/app/views/tableview/tableview_column_configuration_dialog.cpp:74
+#: core/app/views/tableview/tableview_column_configuration_dialog.cpp:68
 #, kde-format
 msgid "Configure column \"%1\""
 msgstr "コラム \"%1\" を設定"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:68
+#: core/app/views/tableview/tableview_column_digikam.cpp:64
 #, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
 msgstr "digiKam のプロパティ"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:71
+#: core/app/views/tableview/tableview_column_digikam.cpp:67
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Rating"
 msgstr "評価"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:72
+#: core/app/views/tableview/tableview_column_digikam.cpp:68
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
 msgstr "ラベル選択"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:69
+#, kde-format
+msgctxt "@title: tableview"
+msgid "Color label"
+msgstr "色ラベル"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:73
 #, kde-format
 msgctxt "@title: tableview"
-msgid "Color label"
-msgstr "色ラベル"
-
-#: core/app/views/tableview/tableview_column_digikam.cpp:77
-#, kde-format
-msgctxt "@title: tableview"
 msgid "Title"
 msgstr "タイトル"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:81
+#: core/app/views/tableview/tableview_column_digikam.cpp:77
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Caption"
 msgstr "キャプション"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:83
+#: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Tags"
 msgstr "タグ"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:94
+#: core/app/views/tableview/tableview_column_digikam.cpp:90
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rating"
 msgstr "評価"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:99
+#: core/app/views/tableview/tableview_column_digikam.cpp:95
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr "ラベル選択"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:104
+#: core/app/views/tableview/tableview_column_digikam.cpp:100
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
 msgstr "色ラベル"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:109
+#: core/app/views/tableview/tableview_column_digikam.cpp:105
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Title"
 msgstr "タイトル"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:114
+#: core/app/views/tableview/tableview_column_digikam.cpp:110
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
 msgstr "キャプション"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:119
+#: core/app/views/tableview/tableview_column_digikam.cpp:115
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Tags"
 msgstr "タグ"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:338
-#: core/app/views/tableview/tableview_column_digikam.cpp:378
+#: core/app/views/tableview/tableview_column_digikam.cpp:334
+#: core/app/views/tableview/tableview_column_digikam.cpp:374
 #, kde-format
 msgctxt "@info: tableview"
 msgid "None"
 msgstr "なし"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:344
+#: core/app/views/tableview/tableview_column_digikam.cpp:340
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
 msgstr "却下"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:350
+#: core/app/views/tableview/tableview_column_digikam.cpp:346
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pending"
 msgstr "保留"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:356
+#: core/app/views/tableview/tableview_column_digikam.cpp:352
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Accepted"
 msgstr "採用"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:384
+#: core/app/views/tableview/tableview_column_digikam.cpp:380
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Red"
 msgstr "赤"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:390
+#: core/app/views/tableview/tableview_column_digikam.cpp:386
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Orange"
 msgstr "オレンジ"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:396
+#: core/app/views/tableview/tableview_column_digikam.cpp:392
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Yellow"
 msgstr "黃"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:402
+#: core/app/views/tableview/tableview_column_digikam.cpp:398
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Green"
 msgstr "緑"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:408
+#: core/app/views/tableview/tableview_column_digikam.cpp:404
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Blue"
 msgstr "青"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:414
+#: core/app/views/tableview/tableview_column_digikam.cpp:410
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Magenta"
 msgstr "マゼンタ"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:420
+#: core/app/views/tableview/tableview_column_digikam.cpp:416
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Gray"
 msgstr "グレー"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:426
+#: core/app/views/tableview/tableview_column_digikam.cpp:422
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Black"
 msgstr "黒"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:432
+#: core/app/views/tableview/tableview_column_digikam.cpp:428
 #, kde-format
 msgctxt "@info: tableview"
 msgid "White"
@@ -3912,298 +3912,298 @@ msgstr "サイズ"
 msgid "Last modified"
 msgstr "最終変更日時"
 
-#: core/app/views/tableview/tableview_column_file.cpp:236
+#: core/app/views/tableview/tableview_column_file.cpp:234
 #, kde-format
 msgctxt "@item: tableview"
 msgid "Human readable"
 msgstr ""
 
-#: core/app/views/tableview/tableview_column_file.cpp:237
+#: core/app/views/tableview/tableview_column_file.cpp:235
 #, kde-format
 msgctxt "@item: tableview"
 msgid "Plain"
 msgstr "プレーン"
 
-#: core/app/views/tableview/tableview_column_file.cpp:238
-#: core/app/views/tableview/tableview_column_geo.cpp:261
+#: core/app/views/tableview/tableview_column_file.cpp:236
+#: core/app/views/tableview/tableview_column_geo.cpp:255
 #, kde-format
 msgid "Display format"
 msgstr "表示形式"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:86
+#: core/app/views/tableview/tableview_column_geo.cpp:82
 #, kde-format
 msgid "Geo properties"
 msgstr "位置情報プロパティ"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:88
-#: core/app/views/tableview/tableview_column_geo.cpp:101
+#: core/app/views/tableview/tableview_column_geo.cpp:84
+#: core/app/views/tableview/tableview_column_geo.cpp:97
 #, kde-format
 msgid "Geotagged"
 msgstr "位置情報あり"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:89
-#: core/app/views/tableview/tableview_column_geo.cpp:106
+#: core/app/views/tableview/tableview_column_geo.cpp:85
+#: core/app/views/tableview/tableview_column_geo.cpp:102
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:118
 #, kde-format
 msgid "Coordinates"
 msgstr "座標"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:90
-#: core/app/views/tableview/tableview_column_geo.cpp:111
+#: core/app/views/tableview/tableview_column_geo.cpp:86
+#: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
 #, kde-format
 msgid "Altitude"
 msgstr "高度"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:162
+#: core/app/views/tableview/tableview_column_geo.cpp:158
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Yes"
 msgstr "はい"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:162
+#: core/app/views/tableview/tableview_column_geo.cpp:158
 #, kde-format
 msgctxt "@info: tableview"
 msgid "No"
 msgstr "いいえ"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:259
+#: core/app/views/tableview/tableview_column_geo.cpp:253
 #, kde-format
 msgid "Metric units"
 msgstr "メートル法"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:260
+#: core/app/views/tableview/tableview_column_geo.cpp:254
 #, kde-format
 msgid "Imperial units"
 msgstr "ヤードポンド法"
 
-#: core/app/views/tableview/tableview_column_item.cpp:72
+#: core/app/views/tableview/tableview_column_item.cpp:68
 #, kde-format
 msgid "Item properties"
 msgstr "アイテムのプロパティ"
 
-#: core/app/views/tableview/tableview_column_item.cpp:75
-#: core/app/views/tableview/tableview_column_item.cpp:96
+#: core/app/views/tableview/tableview_column_item.cpp:71
+#: core/app/views/tableview/tableview_column_item.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Width"
 msgstr "幅"
 
-#: core/app/views/tableview/tableview_column_item.cpp:76
-#: core/app/views/tableview/tableview_column_item.cpp:101
+#: core/app/views/tableview/tableview_column_item.cpp:72
+#: core/app/views/tableview/tableview_column_item.cpp:97
 #: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Height"
 msgstr "高さ"
 
-#: core/app/views/tableview/tableview_column_item.cpp:77
-#: core/app/views/tableview/tableview_column_item.cpp:106
+#: core/app/views/tableview/tableview_column_item.cpp:73
+#: core/app/views/tableview/tableview_column_item.cpp:102
 #, kde-format
 msgid "Dimensions"
 msgstr "寸法"
 
-#: core/app/views/tableview/tableview_column_item.cpp:78
-#: core/app/views/tableview/tableview_column_item.cpp:111
+#: core/app/views/tableview/tableview_column_item.cpp:74
+#: core/app/views/tableview/tableview_column_item.cpp:107
 #, kde-format
 msgid "Pixel count"
 msgstr "ピクセル数"
 
-#: core/app/views/tableview/tableview_column_item.cpp:79
-#: core/app/views/tableview/tableview_column_item.cpp:116
+#: core/app/views/tableview/tableview_column_item.cpp:75
+#: core/app/views/tableview/tableview_column_item.cpp:112
 #, kde-format
 msgid "Bit depth"
 msgstr "ビット深度"
 
-#: core/app/views/tableview/tableview_column_item.cpp:80
-#: core/app/views/tableview/tableview_column_item.cpp:121
+#: core/app/views/tableview/tableview_column_item.cpp:76
+#: core/app/views/tableview/tableview_column_item.cpp:117
 #, kde-format
 msgid "Color mode"
 msgstr "カラーモード"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/app/views/tableview/tableview_column_item.cpp:81
-#: core/app/views/tableview/tableview_column_item.cpp:126
+#: core/app/views/tableview/tableview_column_item.cpp:77
+#: core/app/views/tableview/tableview_column_item.cpp:122
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:186
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
 msgstr "種類"
 
-#: core/app/views/tableview/tableview_column_item.cpp:82
-#: core/app/views/tableview/tableview_column_item.cpp:131
+#: core/app/views/tableview/tableview_column_item.cpp:78
+#: core/app/views/tableview/tableview_column_item.cpp:127
 #, kde-format
 msgid "Creation date/time"
 msgstr "作成日/時間"
 
-#: core/app/views/tableview/tableview_column_item.cpp:83
-#: core/app/views/tableview/tableview_column_item.cpp:136
+#: core/app/views/tableview/tableview_column_item.cpp:79
+#: core/app/views/tableview/tableview_column_item.cpp:132
 #, fuzzy, kde-format
 msgid "Digitization date/time"
 msgstr "キャプション、コメント、タイトル"
 
-#: core/app/views/tableview/tableview_column_item.cpp:84
-#: core/app/views/tableview/tableview_column_item.cpp:141
+#: core/app/views/tableview/tableview_column_item.cpp:80
+#: core/app/views/tableview/tableview_column_item.cpp:137
 #, kde-format
 msgid "Aspect ratio"
 msgstr "アスペクト比"
 
-#: core/app/views/tableview/tableview_column_item.cpp:85
-#: core/app/views/tableview/tableview_column_item.cpp:146
+#: core/app/views/tableview/tableview_column_item.cpp:81
+#: core/app/views/tableview/tableview_column_item.cpp:142
 #, kde-format
 msgid "Similarity"
 msgstr "類似度"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:74
+#: core/app/views/tableview/tableview_column_photo.cpp:70
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Photo properties"
 msgstr "写真のプロパティ"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:77
-#: core/app/views/tableview/tableview_column_photo.cpp:97
+#: core/app/views/tableview/tableview_column_photo.cpp:73
+#: core/app/views/tableview/tableview_column_photo.cpp:93
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Camera maker"
 msgstr "カメラメーカー"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:78
-#: core/app/views/tableview/tableview_column_photo.cpp:102
+#: core/app/views/tableview/tableview_column_photo.cpp:74
+#: core/app/views/tableview/tableview_column_photo.cpp:98
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Camera model"
 msgstr "カメラのモデル"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:79
-#: core/app/views/tableview/tableview_column_photo.cpp:107
+#: core/app/views/tableview/tableview_column_photo.cpp:75
+#: core/app/views/tableview/tableview_column_photo.cpp:103
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Lens"
 msgstr "レンズ"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:80
-#: core/app/views/tableview/tableview_column_photo.cpp:112
+#: core/app/views/tableview/tableview_column_photo.cpp:76
+#: core/app/views/tableview/tableview_column_photo.cpp:108
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Aperture"
 msgstr "絞り"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:81
-#: core/app/views/tableview/tableview_column_photo.cpp:117
+#: core/app/views/tableview/tableview_column_photo.cpp:77
+#: core/app/views/tableview/tableview_column_photo.cpp:113
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Focal length"
 msgstr "焦点距離"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:82
-#: core/app/views/tableview/tableview_column_photo.cpp:122
+#: core/app/views/tableview/tableview_column_photo.cpp:78
+#: core/app/views/tableview/tableview_column_photo.cpp:118
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Exposure"
 msgstr "露出"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:83
-#: core/app/views/tableview/tableview_column_photo.cpp:127
+#: core/app/views/tableview/tableview_column_photo.cpp:79
+#: core/app/views/tableview/tableview_column_photo.cpp:123
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Sensitivity"
 msgstr "フィルム感度"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:84
-#: core/app/views/tableview/tableview_column_photo.cpp:132
+#: core/app/views/tableview/tableview_column_photo.cpp:80
+#: core/app/views/tableview/tableview_column_photo.cpp:128
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Mode/program"
 msgstr "モード/プログラム"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:85
-#: core/app/views/tableview/tableview_column_photo.cpp:137
+#: core/app/views/tableview/tableview_column_photo.cpp:81
+#: core/app/views/tableview/tableview_column_photo.cpp:133
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Flash"
 msgstr "フラッシュ"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:86
-#: core/app/views/tableview/tableview_column_photo.cpp:142
+#: core/app/views/tableview/tableview_column_photo.cpp:82
+#: core/app/views/tableview/tableview_column_photo.cpp:138
 #, kde-format
 msgctxt "@title: tableview"
 msgid "White balance"
 msgstr "ホワイトバランス"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:238
+#: core/app/views/tableview/tableview_column_photo.cpp:234
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:262
+#: core/app/views/tableview/tableview_column_photo.cpp:258
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 s"
 msgstr "%1 秒"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:267
+#: core/app/views/tableview/tableview_column_photo.cpp:263
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 ms"
 msgstr "%1 ミリ秒"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:272
+#: core/app/views/tableview/tableview_column_photo.cpp:268
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 µs"
 msgstr "%1 マイクロ秒"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:303
+#: core/app/views/tableview/tableview_column_photo.cpp:299
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:444
+#: core/app/views/tableview/tableview_column_photo.cpp:437
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Fraction"
 msgstr "ジオロケーション"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:445
+#: core/app/views/tableview/tableview_column_photo.cpp:438
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Rational"
 msgstr "回転:"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:446
+#: core/app/views/tableview/tableview_column_photo.cpp:439
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Format"
 msgstr "フォーマット"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:449
+#: core/app/views/tableview/tableview_column_photo.cpp:442
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Seconds"
 msgstr "秒"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:450
+#: core/app/views/tableview/tableview_column_photo.cpp:443
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Milliseconds"
 msgstr "ミリ秒"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:451
+#: core/app/views/tableview/tableview_column_photo.cpp:444
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Microseconds"
 msgstr "マイクロ秒"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:452
+#: core/app/views/tableview/tableview_column_photo.cpp:445
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Unit"
 msgstr "単位"
 
-#: core/app/views/tableview/tableview_column_thumbnail.cpp:78
-#: core/app/views/tableview/tableview_column_thumbnail.cpp:88
+#: core/app/views/tableview/tableview_column_thumbnail.cpp:74
+#: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:261
@@ -4212,12 +4212,12 @@ msgstr "単位"
 msgid "Thumbnail"
 msgstr "サムネイル"
 
-#: core/app/views/tableview/tableview_treeview.cpp:85
+#: core/app/views/tableview/tableview_treeview.cpp:79
 #, kde-format
 msgid "Remove this column"
 msgstr "このコラムを削除"
 
-#: core/app/views/tableview/tableview_treeview.cpp:90
+#: core/app/views/tableview/tableview_treeview.cpp:84
 #, kde-format
 msgid "Configure this column"
 msgstr "このコラムを設定"
@@ -22528,7 +22528,7 @@ msgid "Slideshow"
 msgstr "スライドショー"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:450
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "スライドショー"
@@ -38105,7 +38105,7 @@ msgid "Properties"
 msgstr "プロパティ"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:441
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
@@ -39772,138 +39772,138 @@ msgstr "Tagged Image File Format (version 5.0)"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Tagged Image File Format (version 5.0)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:411
+#: core/libs/settings/applicationsettings_miscs.cpp:412
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:413
+#: core/libs/settings/applicationsettings_miscs.cpp:414
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:444
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #: core/utilities/lighttable/lighttablewindow.cpp:48
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "ライトテーブル"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:447
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "一括処理マネージャ"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:453
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, fuzzy, kde-format
 #| msgid "File Renaming"
 msgid "Renaming"
 msgstr "ファイル名変更"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:456
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, fuzzy, kde-format
 msgid "Import/Export tools"
 msgstr "エクスポート"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:459
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:471
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:474
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgid "Adding items to the Light Table"
 msgstr "ライトテーブルに追加"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:477
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgid "Adding items to the Batch Queue Manager"
 msgstr "一括処理マネージャ"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:480
+#: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:483
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, fuzzy, kde-format
 #| msgid "Renaming images"
 msgid "Renaming items"
 msgstr "画像の名前を変更しています"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:486
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:489
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:49
 #, fuzzy, kde-format
 #| msgid "Category"
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "カテゴリ"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:50
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "旅行"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:51
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "休日"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:52
 #, fuzzy, kde-format
 #| msgid "Friends"
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "友人"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:53
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "自然"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:54
 #, fuzzy, kde-format
 #| msgid "Party"
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "パーティー"
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:55
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "To-Do"
 
-#: core/libs/settings/applicationsettings_p.cpp:277
+#: core/libs/settings/applicationsettings_p.cpp:56
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@item: album categories"

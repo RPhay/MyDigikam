@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 01:54+0000\n"
+"POT-Creation-Date: 2024-04-25 01:38+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -1044,7 +1044,7 @@ msgstr "الاسم:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:273
+#: core/app/views/stack/welcomepageview.cpp:274
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -1362,33 +1362,33 @@ msgstr "المعاملات التّقنيّة"
 msgid "<i>Binary Data</i>"
 msgstr "<i>البيانات الثّنائيّة</i>"
 
-#: core/app/main/digikamapp.cpp:68
+#: core/app/main/digikamapp.cpp:70
 #, kde-format
 msgid "Initializing..."
 msgstr "يمهّد..."
 
-#: core/app/main/digikamapp.cpp:146 core/showfoto/main/showfoto.cpp:106
+#: core/app/main/digikamapp.cpp:148 core/showfoto/main/showfoto.cpp:106
 #, kde-format
 msgid "Load Plugins..."
 msgstr "يحمّل الملحقات..."
 
-#: core/app/main/digikamapp.cpp:171 core/showfoto/main/showfoto.cpp:88
+#: core/app/main/digikamapp.cpp:173 core/showfoto/main/showfoto.cpp:88
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "يفحص مستودع ICC..."
 
-#: core/app/main/digikamapp.cpp:183
+#: core/app/main/digikamapp.cpp:187
 #, fuzzy, kde-format
 #| msgid "Reading database..."
 msgid "Clean up Database..."
 msgstr "يقرأ قاعدة البيانات..."
 
-#: core/app/main/digikamapp.cpp:205
+#: core/app/main/digikamapp.cpp:209
 #, fuzzy, kde-format
 msgid "Loading albums..."
 msgstr "الإعراب الكل"
 
-#: core/app/main/digikamapp.cpp:351
+#: core/app/main/digikamapp.cpp:356
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1398,7 +1398,7 @@ msgstr ""
 "<p>يبدو مجلّد لاحات ICC غير صالحًا.</p><p>إن أردت تجريب ضبطه مجدّدًا، فاختر "
 "”نعم“، وإلّا فاختر ”لا“، وستُعطّل ميزة ”إدارة الألوان“ حتّى تحلّ هذه المشكلة.</p>"
 
-#: core/app/main/digikamapp.cpp:405
+#: core/app/main/digikamapp.cpp:412
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1406,7 +1406,7 @@ msgid ""
 "ExifTool binary file in the metadata section."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:690 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:697 core/app/views/stack/trashview.cpp:501
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1417,7 +1417,7 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/app/main/digikamapp.cpp:696
+#: core/app/main/digikamapp.cpp:703
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1430,7 +1430,7 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/app/main/digikamapp.cpp:701
+#: core/app/main/digikamapp.cpp:708
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1443,7 +1443,7 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/app/main/digikamapp.cpp:712
+#: core/app/main/digikamapp.cpp:719
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1456,7 +1456,7 @@ msgstr[3] "<b>%1</b> عناصر محدّدة."
 msgstr[4] "%2/%1 عنصرًا محدّدًا"
 msgstr[5] "<b>%1</b> عنصر محدّد."
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:732
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1469,7 +1469,7 @@ msgstr[3] "<b>%1</b> عناصر محدّدة."
 msgstr[4] "%2/%1 عنصرًا محدّدًا"
 msgstr[5] "<b>%1</b> عنصر محدّد."
 
-#: core/app/main/digikamapp.cpp:733
+#: core/app/main/digikamapp.cpp:740
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1482,7 +1482,7 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/app/main/digikamapp.cpp:741
+#: core/app/main/digikamapp.cpp:748
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1495,7 +1495,7 @@ msgstr[3] "%2/%1 عناصر محدّدة"
 msgstr[4] "%2/%1 عنصرًا محدّدًا"
 msgstr[5] "%2/%1 عنصر محدّد"
 
-#: core/app/main/digikamapp.cpp:750
+#: core/app/main/digikamapp.cpp:757
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1508,23 +1508,23 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/app/main/digikamapp.cpp:781
+#: core/app/main/digikamapp.cpp:788
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 من %2)"
 
-#: core/app/main/digikamapp.cpp:795
+#: core/app/main/digikamapp.cpp:802
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr "%1 من %2"
 
-#: core/app/main/digikamapp.cpp:799
+#: core/app/main/digikamapp.cpp:806
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:810
+#: core/app/main/digikamapp.cpp:817
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1537,7 +1537,7 @@ msgstr[3] "%1 عناصر"
 msgstr[4] "%1 عنصرًا"
 msgstr[5] "%1 عنصر"
 
-#: core/app/main/digikamapp.cpp:861
+#: core/app/main/digikamapp.cpp:868
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1548,7 +1548,7 @@ msgstr[3] "اكتب البيانات الوصفيّة في الملفات الم
 msgstr[4] "اكتب البيانات الوصفيّة في الملفات المحددة"
 msgstr[5] "اكتب البيانات الوصفيّة في الملفات المحددة"
 
-#: core/app/main/digikamapp.cpp:863
+#: core/app/main/digikamapp.cpp:870
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1610,7 +1610,7 @@ msgstr "يضيف مجلّدات جديدة إلى مكتبة الألبومات.
 msgid "Images found in %1"
 msgstr "الصّور الذي عُثر عليها في %1"
 
-#: core/app/main/digikamapp_config.cpp:116
+#: core/app/main/digikamapp_config.cpp:119
 #, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
@@ -1618,7 +1618,7 @@ msgid ""
 "of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:132
+#: core/app/main/digikamapp_config.cpp:135
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1626,7 +1626,7 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_config.cpp:140
+#: core/app/main/digikamapp_config.cpp:143
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""
@@ -1634,21 +1634,21 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 
-#: core/app/main/digikamapp_import.cpp:81
+#: core/app/main/digikamapp_import.cpp:82
 #, fuzzy, kde-format
 #| msgid "Select folder to parse"
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "اختر مجلّدًا لتحليله"
 
-#: core/app/main/digikamapp_import.cpp:101
+#: core/app/main/digikamapp_import.cpp:102
 #, fuzzy, kde-format
 #| msgid "Select folders to import into album"
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "اختر مجلّدات لاستيرادها إلى الألبوم"
 
-#: core/app/main/digikamapp_import.cpp:143
+#: core/app/main/digikamapp_import.cpp:144
 #, fuzzy, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to import "
@@ -1656,7 +1656,7 @@ msgid ""
 msgstr ""
 "<p>رجاء اختر الألبوم المقصد من مكتبة «دِجي‌كام» لاستيراد المجلّدات إليه.</p>"
 
-#: core/app/main/digikamapp_import.cpp:170
+#: core/app/main/digikamapp_import.cpp:173
 #, fuzzy, kde-format
 #| msgid "There is already a collection containing the folder \"%1\""
 msgid ""
@@ -1833,7 +1833,7 @@ msgid "Thumbnails"
 msgstr "المصغّرات"
 
 #: core/app/main/digikamapp_setup.cpp:334
-#: core/app/views/stack/itemiconview_views.cpp:278
+#: core/app/views/stack/itemiconview_views.cpp:297
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -2540,82 +2540,82 @@ msgctxt "@info: setup"
 msgid "Loading tools..."
 msgstr "يحمّل الأدوات..."
 
-#: core/app/main/digikamapp_solid.cpp:280
+#: core/app/main/digikamapp_solid.cpp:285
 #, kde-format
 msgid "CompactFlash Card Reader"
 msgstr "قارئ بطاقات CompactFlash"
 
-#: core/app/main/digikamapp_solid.cpp:284
+#: core/app/main/digikamapp_solid.cpp:291
 #, kde-format
 msgid "Memory Stick Reader"
 msgstr "قارئ أصابع الذّاكرة"
 
-#: core/app/main/digikamapp_solid.cpp:288
+#: core/app/main/digikamapp_solid.cpp:297
 #, kde-format
 msgid "SmartMedia Card Reader"
 msgstr "قارئ بطاقات SmartMedia"
 
-#: core/app/main/digikamapp_solid.cpp:292
+#: core/app/main/digikamapp_solid.cpp:303
 #, kde-format
 msgid "SD / MMC Card Reader"
 msgstr "قارئ بطاقات SD/MMC"
 
-#: core/app/main/digikamapp_solid.cpp:296
+#: core/app/main/digikamapp_solid.cpp:309
 #, kde-format
 msgid "xD Card Reader"
 msgstr "قارئ بطاقات xD"
 
-#: core/app/main/digikamapp_solid.cpp:310
+#: core/app/main/digikamapp_solid.cpp:324
 #, kde-format
 msgid "USB Disk"
 msgstr "قرص USB"
 
-#: core/app/main/digikamapp_solid.cpp:314
+#: core/app/main/digikamapp_solid.cpp:328
 #, kde-format
 msgctxt "non-USB removable storage device"
 msgid "Disk"
 msgstr "قرص"
 
-#: core/app/main/digikamapp_solid.cpp:386
+#: core/app/main/digikamapp_solid.cpp:401
 #, fuzzy, kde-format
 msgctxt "<drive type> \"<device name or label>\" at <mount path>"
 msgid "%1 \"%2\" at %3"
 msgstr "%1 عند %2"
 
-#: core/app/main/digikamapp_solid.cpp:392
+#: core/app/main/digikamapp_solid.cpp:407
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\""
 msgid "%1 \"%2\""
 msgstr ""
 
-#: core/app/main/digikamapp_solid.cpp:400
+#: core/app/main/digikamapp_solid.cpp:415
 #, kde-format
 msgctxt "<drive type> at <mount path>"
 msgid "%1 at %2"
 msgstr "%1 عند %2"
 
-#: core/app/main/digikamapp_solid.cpp:412
+#: core/app/main/digikamapp_solid.cpp:427
 #, kde-format
 msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr " (%1)"
 
-#: core/app/main/digikamapp_solid.cpp:647
+#: core/app/main/digikamapp_solid.cpp:662
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr "تعذّر الوصول إلى جهاز التّخزين.\n"
 
-#: core/app/main/digikamapp_solid.cpp:678
+#: core/app/main/digikamapp_solid.cpp:693
 #, kde-format
 msgid "Images on %1"
 msgstr "الصّور في %1"
 
-#: core/app/main/digikamapp_solid.cpp:711
+#: core/app/main/digikamapp_solid.cpp:726
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr "الجهاز المحدّد (”%1“) غير صالح."
 
-#: core/app/main/digikamapp_solid.cpp:724
+#: core/app/main/digikamapp_solid.cpp:739
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "الكمرة المحدّدة (”%1“) غير مدعومة."
@@ -2744,7 +2744,7 @@ msgstr "مساع&دة"
 msgid "Main Toolbar"
 msgstr "شريط الأدوات الرّئيسيّ"
 
-#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:257
+#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2816,7 +2816,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:350
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2943,7 +2943,7 @@ msgstr "أظهر الأقدم أوّلًا"
 msgid "Show Fullscreen"
 msgstr "اعرض بملء الشّاشة"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -2959,26 +2959,26 @@ msgstr "اعرض بملء الشّاشة"
 msgid "Albums"
 msgstr "الألبومات"
 
-#: core/app/views/sidebar/datefolderviewsidebarwidget.cpp:122
+#: core/app/views/sidebar/datefolderviewsidebarwidget.cpp:119
 #: core/libs/models/albummodel_date.cpp:25
 #, kde-format
 msgid "Dates"
 msgstr "التّواريخ"
 
-#: core/app/views/sidebar/fuzzysearchsidebarwidget.cpp:124
+#: core/app/views/sidebar/fuzzysearchsidebarwidget.cpp:120
 #, kde-format
 msgctxt "Fuzzy Search images, as duplicates, sketch, searches by similarities"
 msgid "Similarity"
 msgstr "التّشابه"
 
-#: core/app/views/sidebar/gpssearchsidebarwidget.cpp:124
+#: core/app/views/sidebar/gpssearchsidebarwidget.cpp:121
 #, kde-format
 msgctxt "Search images on a map"
 msgid "Map"
 msgstr "الخريطة"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:118
+#: core/app/views/sidebar/labelssidebarwidget.cpp:115
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -2987,58 +2987,58 @@ msgstr "الخريطة"
 msgid "Labels"
 msgstr "اللصاقات"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:106
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "افحص التّجميعات بحثًا عن وجوه"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:150
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:143
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:197
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:217
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "الأشخاص"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:146
+#: core/app/views/sidebar/searchsidebarwidget.cpp:141
 #, kde-format
 msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "ابحث"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:91
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "افتح مدير الوسوم"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:92
 #, kde-format
 msgid "No Tags"
 msgstr "لا وسوم"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:93
 #, kde-format
 msgid "Existing Tags"
 msgstr "الوسوم الموجودة"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:261
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:249
 #, kde-format
 msgid "No Tags Album"
 msgstr ""
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
 #: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3052,32 +3052,32 @@ msgstr ""
 msgid "Tags"
 msgstr "الوسوم"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:140
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:121
 #, kde-format
 msgid "Time Unit:"
 msgstr "وحدة الزّمن:"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:142
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:123
 #, kde-format
 msgid "Day"
 msgstr "يوم"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:124
 #, kde-format
 msgid "Week"
 msgstr "أسبوع"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:144
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:125
 #, kde-format
 msgid "Month"
 msgstr "شهر"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:145
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:126
 #, kde-format
 msgid "Year"
 msgstr "سنة"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:148
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:129
 #, fuzzy, kde-format
 msgid ""
 "<p>Select the histogram time unit.</p><p>You can change the graph decade to "
@@ -3086,7 +3086,7 @@ msgstr ""
 "<p>اختر وحدة الزّمن للمدرّج الدّرجيّ.</p><p>يمكنك تغيير العقد في المخطّط بالتّقريب "
 "أو التّبعيد.</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:155
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:136
 #, fuzzy, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the date's maximal counts are small, "
@@ -3097,42 +3097,42 @@ msgstr ""
 "<p> انتقِ مقياس<p> إذا صورة s صغير استخدام مقياس<p> لوغاريتمي مقياس مُستخدَم IF "
 "الإيطالية هو مُستخدَم الكل صغير و عريض مرئي يعمل مبيان."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:162
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Linear"
 msgstr "خطّي"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:168
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:149
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Logarithmic"
 msgstr "لوغارتميّ"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:205
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:186
 #, kde-format
 msgid "Clear current selection"
 msgstr "امسح التّحديد الحاليّ"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:206
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:187
 #, kde-format
 msgid ""
 "If you press this button, the current date selection on the time-line will "
 "be cleared."
 msgstr "إن نقرت هذا الزّرّ فسيُمسح تحديد التّاريخ الحاليّ في الخطّ الزمنيّ."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:209
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:190
 #, kde-format
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
 msgstr "أدخل اسم بحث التّواريخ الحاليّ لحفظه في منظور ”البحوث“"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:215
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:196
 #, kde-format
 msgid "Save current selection to a new virtual Album"
 msgstr "احفظ التّحديد الحاليّ في ألبوم وهميّ جديد"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:216
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:197
 #, fuzzy, kde-format
 msgid ""
 "If you press this button, the dates selected on the time-line will be saved "
@@ -3141,18 +3141,18 @@ msgstr ""
 "إن نقرت هذا الزرّ فستُحفظ التّواريخ المحدّدة في الخطّ الزّمنيّ إلى ألبوم بحث وهميّ "
 "جديد باستخدام الاسم المحدّد على اليمين."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:142
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:380
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "الخطّ الزّمنيّ"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:430
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:411
 #, kde-format
 msgid "no item"
 msgstr "لا عناصر"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:431
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:412
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #, kde-format
@@ -3171,12 +3171,12 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "المرشّحات"
 
-#: core/app/views/stack/itemiconview_albums.cpp:299
+#: core/app/views/stack/itemiconview_albums.cpp:303
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "تعذّر فتح الألبوم الجذر، فهو ليس مكانًا فيزيائيًّا."
 
-#: core/app/views/stack/itemiconview_items.cpp:638
+#: core/app/views/stack/itemiconview_items.cpp:728
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3198,28 +3198,28 @@ msgstr ""
 msgid "Map Search"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_p.h:138
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
 msgstr "البحث الأخير"
 
 #: core/app/views/stack/itemiconview_search.cpp:66
-#: core/app/views/stack/itemiconview_search.cpp:108
+#: core/app/views/stack/itemiconview_search.cpp:107
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "FacesDetector"
 msgstr "اكتشاف الوجوه"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
-#: core/app/views/stack/itemiconview_search.cpp:110
+#: core/app/views/stack/itemiconview_search.cpp:109
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:118
+#: core/app/views/stack/itemiconview_views.cpp:123
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -3230,13 +3230,13 @@ msgid ""
 "is currently not available"
 msgstr "<i>مكان تخزين هذه الصّور<br/>غير متوفّر حاليًّا</i>"
 
-#: core/app/views/stack/itemiconview_views.cpp:223
+#: core/app/views/stack/itemiconview_views.cpp:237
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "أدوات"
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:107
 #: core/libs/tags/manager/tagsmanager.cpp:833
 #, fuzzy, kde-format
 #| msgctxt "@title"
@@ -3244,65 +3244,65 @@ msgstr "أدوات"
 msgid "Help"
 msgstr "مساعدة"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:130
+#: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Undo"
 msgstr "تراجع"
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:136
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore"
 msgstr "استعد"
 
-#: core/app/views/stack/trashview.cpp:137
+#: core/app/views/stack/trashview.cpp:124
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Remove selected images from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "أزل الصّور المحدّدة من القائمة"
 
-#: core/app/views/stack/trashview.cpp:143
+#: core/app/views/stack/trashview.cpp:130
 #, kde-format
 msgid "Delete..."
 msgstr "احذف..."
 
-#: core/app/views/stack/trashview.cpp:144
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:148
+#: core/app/views/stack/trashview.cpp:135
 #, fuzzy, kde-format
 #| msgid "Delete File Permanently"
 msgid "Selected Items Permanently"
 msgstr "احذف الملفّ نهائيًّا"
 
-#: core/app/views/stack/trashview.cpp:151
+#: core/app/views/stack/trashview.cpp:138
 #, fuzzy, kde-format
 #| msgid "Delete Permanently"
 msgid "All Items Permanently"
 msgstr "احذف نهائيًّا"
 
-#: core/app/views/stack/trashview.cpp:278
+#: core/app/views/stack/trashview.cpp:265
 #, fuzzy, kde-format
 #| msgid "Confirm"
 msgid "Confirm Undo"
 msgstr "أكّد"
 
 # تجربة لاستخدام تنسيق الثخين بدل الأحرف الكبيرة
-#: core/app/views/stack/trashview.cpp:279
-#: core/app/views/stack/trashview.cpp:304
+#: core/app/views/stack/trashview.cpp:266
+#: core/app/views/stack/trashview.cpp:291
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to delete ALL items permanently?"
 msgid "Are you sure you want to restore %1 item?"
@@ -3314,20 +3314,20 @@ msgstr[3] "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيّ�
 msgstr[4] "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيًّا؟"
 msgstr[5] "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيًّا؟"
 
-#: core/app/views/stack/trashview.cpp:303
+#: core/app/views/stack/trashview.cpp:290
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
 msgid "Confirm Restore"
 msgstr "أكّد الحذف"
 
-#: core/app/views/stack/trashview.cpp:332
-#: core/app/views/stack/trashview.cpp:382
+#: core/app/views/stack/trashview.cpp:319
+#: core/app/views/stack/trashview.cpp:369
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "أكّد الحذف"
 
 # تجربة لاستخدام تنسيق الثخين بدل الأحرف الكبيرة
-#: core/app/views/stack/trashview.cpp:333
+#: core/app/views/stack/trashview.cpp:320
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to delete ALL items permanently?"
 msgid "Are you sure you want to delete %1 item permanently?"
@@ -3340,17 +3340,17 @@ msgstr[4] "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيّ�
 msgstr[5] "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيًّا؟"
 
 # تجربة لاستخدام تنسيق الثخين بدل الأحرف الكبيرة
-#: core/app/views/stack/trashview.cpp:383
+#: core/app/views/stack/trashview.cpp:370
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيًّا؟"
 
-#: core/app/views/stack/trashview.cpp:452
+#: core/app/views/stack/trashview.cpp:439
 #, kde-format
 msgid "Selection"
 msgstr "التّحديد"
 
-#: core/app/views/stack/trashview.cpp:454
+#: core/app/views/stack/trashview.cpp:441
 #: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
@@ -3358,175 +3358,175 @@ msgstr "التّحديد"
 msgid "Delete"
 msgstr "احذف"
 
-#: core/app/views/stack/trashview.cpp:521
+#: core/app/views/stack/trashview.cpp:508
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
 msgid "%1/%2 items selected"
 msgstr "%2/عنصران محدّدان"
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid "More than 650 user-reports closed on bugzilla."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:139
+#: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:140
+#: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
 "and use Qt6 and KF6 frameworks."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:139
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:142
 #, fuzzy, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr "<p> الدور خيار يعمل إلى تخزين صورة بوصة و IPTC."
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:149
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr "أرجع الصّور التي يحتوي اسم ملفّها"
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:150
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Advanced Search: add search for items without face regions."
 msgstr "أرجع الصّور الموسومة ب‍"
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:165
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3534,52 +3534,52 @@ msgid ""
 "images using deep learning model</a>."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:163
 #, fuzzy, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr "فعّل هذا الخيار لإسناد "
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:164
 #, fuzzy, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr "فعّل هذا الخيار لإسناد "
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:165
 #, fuzzy, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr "فعّل هذا الخيار لإسناد "
 
-#: core/app/views/stack/welcomepageview.cpp:170
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:171
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:173
+#: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
 "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
@@ -3589,27 +3589,27 @@ msgid ""
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:188
+#: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
 msgid "...and much more."
 msgstr "... وغيرها الكثير."
 
-#: core/app/views/stack/welcomepageview.cpp:194
+#: core/app/views/stack/welcomepageview.cpp:190
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:197
+#: core/app/views/stack/welcomepageview.cpp:193
 #, kde-format
 msgid "New Features"
 msgstr "المزايا الجديدة"
 
-#: core/app/views/stack/welcomepageview.cpp:199
+#: core/app/views/stack/welcomepageview.cpp:195
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:200
+#: core/app/views/stack/welcomepageview.cpp:196
 #, fuzzy, kde-format
 #| msgid ""
 #| "Some of the new features in this release of digiKam include (compared to "
@@ -3621,18 +3621,18 @@ msgstr ""
 "بعض من المزايا الجديدة المضمّنة في إصدارة «دِجي‌كام» هذه (مقارنة مع إصدارات "
 "«دِجي‌كام» الرّابعة):"
 
-#: core/app/views/stack/welcomepageview.cpp:208
+#: core/app/views/stack/welcomepageview.cpp:204
 #: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:350
 #, kde-format
 msgid "About"
 msgstr "عن «دِجي‌كام»"
 
-#: core/app/views/stack/welcomepageview.cpp:210
+#: core/app/views/stack/welcomepageview.cpp:206
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:207
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3642,7 +3642,7 @@ msgstr ""
 "«‍دِجي‌كام» هو برنامج مفتوح المصدر لإدارة الصّور صُمّم لاستيراد الصّور الرّقميّة، "
 "وتنظيمها، وتحسينها، والبحث فيها واستخراجها من وإلى الحاسوب."
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:208
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3652,12 +3652,12 @@ msgstr ""
 "أنت الآن في وضع منظور الألبومات ل‍«دِجي‌كام». الألبومات هي المكان الذي تُخزّن فيه "
 "ملفّاتك، وهي مماثلة للمجلّدات في القرص الصّلب."
 
-#: core/app/views/stack/welcomepageview.cpp:213
+#: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "digiKam has many powerful features which are described in the <a href="
@@ -3669,7 +3669,7 @@ msgstr ""
 "ل‍«دِجي‌كام» العديد من المزايا القوّية والمشروحة في <a href=\"help:/digikam/"
 "index.html\">التّوثيق</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:211
 #, fuzzy, kde-format
 #| msgid ""
 #| "The <a href=\"http://www.digikam.org\">digiKam homepage</a> provides "
@@ -3681,255 +3681,255 @@ msgstr ""
 "تقدّم <a href=\"http://www.digikam.org\">رئيسيّة «دِجي‌كام»</a> معلومات عن "
 "إصدارات «دِجي‌كام» الجديدة."
 
-#: core/app/views/stack/welcomepageview.cpp:265
+#: core/app/views/stack/welcomepageview.cpp:266
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "مرحبًا بك في «دِجي‌كام %1»"
 
-#: core/app/views/stack/welcomepageview.cpp:268
+#: core/app/views/stack/welcomepageview.cpp:269
 #, fuzzy, kde-format
 #| msgid "Background opacity:"
 msgid "Background Image Credits"
 msgstr "شفافيّة الخلفيّة:"
 
-#: core/app/views/stack/welcomepageview.cpp:271
+#: core/app/views/stack/welcomepageview.cpp:272
 #, kde-format
 msgid "Author:"
 msgstr "المؤلّف:"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:273
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "المكان:"
 
-#: core/app/views/stack/welcomepageview.cpp:274
+#: core/app/views/stack/welcomepageview.cpp:275
 #, kde-format
 msgid "Camera:"
 msgstr "الكاميرا:"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:276
 #, kde-format
 msgid "Lens:"
 msgstr "العدسة:"
 
-#: core/app/views/tableview/tableview.cpp:327
+#: core/app/views/tableview/tableview.cpp:322
 #, kde-format
 msgid "Hide grouped items"
 msgstr "أخفِ العناصر المجمّعة"
 
-#: core/app/views/tableview/tableview.cpp:337
+#: core/app/views/tableview/tableview.cpp:332
 #, kde-format
 msgid "Ignore grouping"
 msgstr "تجاهل التّجميع"
 
-#: core/app/views/tableview/tableview.cpp:347
+#: core/app/views/tableview/tableview.cpp:342
 #, kde-format
 msgid "Show grouping in tree"
 msgstr "أظهر التّجميع في شجرة"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:67
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:63
 #, kde-format
 msgid "Audio/video properties"
 msgstr "خصائص الصّوت/الفيديو"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:70
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:86
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:66
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:82
 #, kde-format
 msgid "Audio bitrate"
 msgstr "معدّل بتّات الصّوت"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:71
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:91
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:67
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:87
 #, kde-format
 msgid "Audio channel type"
 msgstr "نوع قناة الصّوت"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:72
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:96
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:68
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:958
 #: core/utilities/setup/setuptooltip.cpp:262
 #, kde-format
 msgid "Audio Codec"
 msgstr "مرماز الصّوت"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:73
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:101
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:69
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:97
 #: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, kde-format
 msgid "Duration"
 msgstr "المدّة"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:74
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:106
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:70
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:102
 #, kde-format
 msgid "Frame rate"
 msgstr "معدّل الإطارات"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:75
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:111
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:71
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:107
 #, kde-format
 msgid "Video codec"
 msgstr "مرماز الفيديو"
 
-#: core/app/views/tableview/tableview_column_configuration_dialog.cpp:74
+#: core/app/views/tableview/tableview_column_configuration_dialog.cpp:68
 #, kde-format
 msgid "Configure column \"%1\""
 msgstr "اضبط العمود ”%1“"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:68
+#: core/app/views/tableview/tableview_column_digikam.cpp:64
 #, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
 msgstr "خصائص «دِجي‌كام»"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:71
+#: core/app/views/tableview/tableview_column_digikam.cpp:67
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Rating"
 msgstr "التّقييم"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:72
+#: core/app/views/tableview/tableview_column_digikam.cpp:68
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
 msgstr "اختر لصيقة"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:69
+#, kde-format
+msgctxt "@title: tableview"
+msgid "Color label"
+msgstr "اللصيقة اللونيّة"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:73
 #, kde-format
 msgctxt "@title: tableview"
-msgid "Color label"
-msgstr "اللصيقة اللونيّة"
-
-#: core/app/views/tableview/tableview_column_digikam.cpp:77
-#, kde-format
-msgctxt "@title: tableview"
 msgid "Title"
 msgstr "العنوان"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:81
+#: core/app/views/tableview/tableview_column_digikam.cpp:77
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Caption"
 msgstr "الوصف"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:83
+#: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Tags"
 msgstr "الوسوم"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:94
+#: core/app/views/tableview/tableview_column_digikam.cpp:90
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rating"
 msgstr "التّقييم"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:99
+#: core/app/views/tableview/tableview_column_digikam.cpp:95
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr "اختر لصيقة"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:104
+#: core/app/views/tableview/tableview_column_digikam.cpp:100
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
 msgstr "اللصيقة اللونيّة"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:109
+#: core/app/views/tableview/tableview_column_digikam.cpp:105
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Title"
 msgstr "العنوان"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:114
+#: core/app/views/tableview/tableview_column_digikam.cpp:110
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
 msgstr "الوصف"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:119
+#: core/app/views/tableview/tableview_column_digikam.cpp:115
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Tags"
 msgstr "الوسوم"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:338
-#: core/app/views/tableview/tableview_column_digikam.cpp:378
+#: core/app/views/tableview/tableview_column_digikam.cpp:334
+#: core/app/views/tableview/tableview_column_digikam.cpp:374
 #, kde-format
 msgctxt "@info: tableview"
 msgid "None"
 msgstr "بلا"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:344
+#: core/app/views/tableview/tableview_column_digikam.cpp:340
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
 msgstr "رفض"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:350
+#: core/app/views/tableview/tableview_column_digikam.cpp:346
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pending"
 msgstr "ينتظر"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:356
+#: core/app/views/tableview/tableview_column_digikam.cpp:352
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Accepted"
 msgstr "قُبلت"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:384
+#: core/app/views/tableview/tableview_column_digikam.cpp:380
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Red"
 msgstr "أحمر"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:390
+#: core/app/views/tableview/tableview_column_digikam.cpp:386
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Orange"
 msgstr "برتقالي"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:396
+#: core/app/views/tableview/tableview_column_digikam.cpp:392
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Yellow"
 msgstr "أصفر"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:402
+#: core/app/views/tableview/tableview_column_digikam.cpp:398
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Green"
 msgstr "أخضر"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:408
+#: core/app/views/tableview/tableview_column_digikam.cpp:404
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Blue"
 msgstr "أزرق"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:414
+#: core/app/views/tableview/tableview_column_digikam.cpp:410
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Magenta"
 msgstr "أرجواني"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:420
+#: core/app/views/tableview/tableview_column_digikam.cpp:416
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Gray"
 msgstr "رصاصيّ"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:426
+#: core/app/views/tableview/tableview_column_digikam.cpp:422
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Black"
 msgstr "أسود"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:432
+#: core/app/views/tableview/tableview_column_digikam.cpp:428
 #, kde-format
 msgctxt "@info: tableview"
 msgid "White"
@@ -3971,300 +3971,300 @@ msgstr "الحجم"
 msgid "Last modified"
 msgstr "آخر تعديل"
 
-#: core/app/views/tableview/tableview_column_file.cpp:236
+#: core/app/views/tableview/tableview_column_file.cpp:234
 #, kde-format
 msgctxt "@item: tableview"
 msgid "Human readable"
 msgstr "مقروء للإنسان"
 
-#: core/app/views/tableview/tableview_column_file.cpp:237
+#: core/app/views/tableview/tableview_column_file.cpp:235
 #, kde-format
 msgctxt "@item: tableview"
 msgid "Plain"
 msgstr "خالِص"
 
-#: core/app/views/tableview/tableview_column_file.cpp:238
-#: core/app/views/tableview/tableview_column_geo.cpp:261
+#: core/app/views/tableview/tableview_column_file.cpp:236
+#: core/app/views/tableview/tableview_column_geo.cpp:255
 #, kde-format
 msgid "Display format"
 msgstr "تنسيق العرض"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:86
+#: core/app/views/tableview/tableview_column_geo.cpp:82
 #, kde-format
 msgid "Geo properties"
 msgstr "خصائص الموقع"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:88
-#: core/app/views/tableview/tableview_column_geo.cpp:101
+#: core/app/views/tableview/tableview_column_geo.cpp:84
+#: core/app/views/tableview/tableview_column_geo.cpp:97
 #, kde-format
 msgid "Geotagged"
 msgstr "موسوم جغرافياً"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:89
-#: core/app/views/tableview/tableview_column_geo.cpp:106
+#: core/app/views/tableview/tableview_column_geo.cpp:85
+#: core/app/views/tableview/tableview_column_geo.cpp:102
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:118
 #, kde-format
 msgid "Coordinates"
 msgstr "الإحداثيّات"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:90
-#: core/app/views/tableview/tableview_column_geo.cpp:111
+#: core/app/views/tableview/tableview_column_geo.cpp:86
+#: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
 #, kde-format
 msgid "Altitude"
 msgstr "الارتفاع الرّأسيّ"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:162
+#: core/app/views/tableview/tableview_column_geo.cpp:158
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Yes"
 msgstr "نعم"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:162
+#: core/app/views/tableview/tableview_column_geo.cpp:158
 #, kde-format
 msgctxt "@info: tableview"
 msgid "No"
 msgstr "لا"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:259
+#: core/app/views/tableview/tableview_column_geo.cpp:253
 #, kde-format
 msgid "Metric units"
 msgstr "الوحدات المتريّة"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:260
+#: core/app/views/tableview/tableview_column_geo.cpp:254
 #, kde-format
 msgid "Imperial units"
 msgstr "الوحدات الإمبراطوريّة"
 
-#: core/app/views/tableview/tableview_column_item.cpp:72
+#: core/app/views/tableview/tableview_column_item.cpp:68
 #, kde-format
 msgid "Item properties"
 msgstr "خصائص العنصر"
 
-#: core/app/views/tableview/tableview_column_item.cpp:75
-#: core/app/views/tableview/tableview_column_item.cpp:96
+#: core/app/views/tableview/tableview_column_item.cpp:71
+#: core/app/views/tableview/tableview_column_item.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Width"
 msgstr "العرض"
 
-#: core/app/views/tableview/tableview_column_item.cpp:76
-#: core/app/views/tableview/tableview_column_item.cpp:101
+#: core/app/views/tableview/tableview_column_item.cpp:72
+#: core/app/views/tableview/tableview_column_item.cpp:97
 #: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Height"
 msgstr "الارتفاع"
 
-#: core/app/views/tableview/tableview_column_item.cpp:77
-#: core/app/views/tableview/tableview_column_item.cpp:106
+#: core/app/views/tableview/tableview_column_item.cpp:73
+#: core/app/views/tableview/tableview_column_item.cpp:102
 #, kde-format
 msgid "Dimensions"
 msgstr "الأبعاد"
 
-#: core/app/views/tableview/tableview_column_item.cpp:78
-#: core/app/views/tableview/tableview_column_item.cpp:111
+#: core/app/views/tableview/tableview_column_item.cpp:74
+#: core/app/views/tableview/tableview_column_item.cpp:107
 #, kde-format
 msgid "Pixel count"
 msgstr "عدد البكسلات"
 
-#: core/app/views/tableview/tableview_column_item.cpp:79
-#: core/app/views/tableview/tableview_column_item.cpp:116
+#: core/app/views/tableview/tableview_column_item.cpp:75
+#: core/app/views/tableview/tableview_column_item.cpp:112
 #, kde-format
 msgid "Bit depth"
 msgstr "عمق البت"
 
-#: core/app/views/tableview/tableview_column_item.cpp:80
-#: core/app/views/tableview/tableview_column_item.cpp:121
+#: core/app/views/tableview/tableview_column_item.cpp:76
+#: core/app/views/tableview/tableview_column_item.cpp:117
 #, kde-format
 msgid "Color mode"
 msgstr "وضع الألوان"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/app/views/tableview/tableview_column_item.cpp:81
-#: core/app/views/tableview/tableview_column_item.cpp:126
+#: core/app/views/tableview/tableview_column_item.cpp:77
+#: core/app/views/tableview/tableview_column_item.cpp:122
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:186
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
 msgstr "النّوع"
 
-#: core/app/views/tableview/tableview_column_item.cpp:82
-#: core/app/views/tableview/tableview_column_item.cpp:131
+#: core/app/views/tableview/tableview_column_item.cpp:78
+#: core/app/views/tableview/tableview_column_item.cpp:127
 #, kde-format
 msgid "Creation date/time"
 msgstr "تاريخ/وقت الإنشاء"
 
-#: core/app/views/tableview/tableview_column_item.cpp:83
-#: core/app/views/tableview/tableview_column_item.cpp:136
+#: core/app/views/tableview/tableview_column_item.cpp:79
+#: core/app/views/tableview/tableview_column_item.cpp:132
 #, kde-format
 msgid "Digitization date/time"
 msgstr "تاريخ/وقت الرّقمنة"
 
-#: core/app/views/tableview/tableview_column_item.cpp:84
-#: core/app/views/tableview/tableview_column_item.cpp:141
+#: core/app/views/tableview/tableview_column_item.cpp:80
+#: core/app/views/tableview/tableview_column_item.cpp:137
 #, kde-format
 msgid "Aspect ratio"
 msgstr "النّسبة الباعيّة"
 
-#: core/app/views/tableview/tableview_column_item.cpp:85
-#: core/app/views/tableview/tableview_column_item.cpp:146
+#: core/app/views/tableview/tableview_column_item.cpp:81
+#: core/app/views/tableview/tableview_column_item.cpp:142
 #, kde-format
 msgid "Similarity"
 msgstr "التّشابه"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:74
+#: core/app/views/tableview/tableview_column_photo.cpp:70
 #, fuzzy, kde-format
 #| msgid "Photo properties"
 msgctxt "@info: tableview"
 msgid "Photo properties"
 msgstr "خصائص الصّورة"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:77
-#: core/app/views/tableview/tableview_column_photo.cpp:97
+#: core/app/views/tableview/tableview_column_photo.cpp:73
+#: core/app/views/tableview/tableview_column_photo.cpp:93
 #, fuzzy, kde-format
 #| msgid "Camera maker"
 msgctxt "@title: tableview"
 msgid "Camera maker"
 msgstr "صانع الكمرة"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:78
-#: core/app/views/tableview/tableview_column_photo.cpp:102
+#: core/app/views/tableview/tableview_column_photo.cpp:74
+#: core/app/views/tableview/tableview_column_photo.cpp:98
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Camera model"
 msgstr "طراز الكاميرا"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:79
-#: core/app/views/tableview/tableview_column_photo.cpp:107
+#: core/app/views/tableview/tableview_column_photo.cpp:75
+#: core/app/views/tableview/tableview_column_photo.cpp:103
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Lens"
 msgstr "العدسة"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:80
-#: core/app/views/tableview/tableview_column_photo.cpp:112
+#: core/app/views/tableview/tableview_column_photo.cpp:76
+#: core/app/views/tableview/tableview_column_photo.cpp:108
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Aperture"
 msgstr "الحدقة"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:81
-#: core/app/views/tableview/tableview_column_photo.cpp:117
+#: core/app/views/tableview/tableview_column_photo.cpp:77
+#: core/app/views/tableview/tableview_column_photo.cpp:113
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Focal length"
 msgstr "الطّول البؤريّ"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:82
-#: core/app/views/tableview/tableview_column_photo.cpp:122
+#: core/app/views/tableview/tableview_column_photo.cpp:78
+#: core/app/views/tableview/tableview_column_photo.cpp:118
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Exposure"
 msgstr "التّعريض"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:83
-#: core/app/views/tableview/tableview_column_photo.cpp:127
+#: core/app/views/tableview/tableview_column_photo.cpp:79
+#: core/app/views/tableview/tableview_column_photo.cpp:123
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Sensitivity"
 msgstr "الحساسيّة"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:84
-#: core/app/views/tableview/tableview_column_photo.cpp:132
+#: core/app/views/tableview/tableview_column_photo.cpp:80
+#: core/app/views/tableview/tableview_column_photo.cpp:128
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Mode/program"
 msgstr "الوضع/البرنامج"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:85
-#: core/app/views/tableview/tableview_column_photo.cpp:137
+#: core/app/views/tableview/tableview_column_photo.cpp:81
+#: core/app/views/tableview/tableview_column_photo.cpp:133
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Flash"
 msgstr "فلاش"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:86
-#: core/app/views/tableview/tableview_column_photo.cpp:142
+#: core/app/views/tableview/tableview_column_photo.cpp:82
+#: core/app/views/tableview/tableview_column_photo.cpp:138
 #, kde-format
 msgctxt "@title: tableview"
 msgid "White balance"
 msgstr "توازن الأبيض"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:238
+#: core/app/views/tableview/tableview_column_photo.cpp:234
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "%1 (%2)"
 msgstr "ال&صورة"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:262
+#: core/app/views/tableview/tableview_column_photo.cpp:258
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 s"
 msgstr "%1 ثانية"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:267
+#: core/app/views/tableview/tableview_column_photo.cpp:263
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 ms"
 msgstr "%1 مث"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:272
+#: core/app/views/tableview/tableview_column_photo.cpp:268
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 µs"
 msgstr "%1 ميكرو.ث"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:303
+#: core/app/views/tableview/tableview_column_photo.cpp:299
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 ISO"
 msgstr "%1 آيزو"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:444
+#: core/app/views/tableview/tableview_column_photo.cpp:437
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Fraction"
 msgstr "كسر"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:445
+#: core/app/views/tableview/tableview_column_photo.cpp:438
 #, fuzzy, kde-format
 msgctxt "@info: tableview"
 msgid "Rational"
 msgstr "نسبيّ"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:446
+#: core/app/views/tableview/tableview_column_photo.cpp:439
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Format"
 msgstr "التّنسيق"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:449
+#: core/app/views/tableview/tableview_column_photo.cpp:442
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Seconds"
 msgstr "ثوان"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:450
+#: core/app/views/tableview/tableview_column_photo.cpp:443
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Milliseconds"
 msgstr "ميلي ثانية"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:451
+#: core/app/views/tableview/tableview_column_photo.cpp:444
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Microseconds"
 msgstr "مايكرو ثانية"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:452
+#: core/app/views/tableview/tableview_column_photo.cpp:445
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Unit"
 msgstr "الوحدة"
 
-#: core/app/views/tableview/tableview_column_thumbnail.cpp:78
-#: core/app/views/tableview/tableview_column_thumbnail.cpp:88
+#: core/app/views/tableview/tableview_column_thumbnail.cpp:74
+#: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:261
@@ -4273,12 +4273,12 @@ msgstr "الوحدة"
 msgid "Thumbnail"
 msgstr "المصغّرة"
 
-#: core/app/views/tableview/tableview_treeview.cpp:85
+#: core/app/views/tableview/tableview_treeview.cpp:79
 #, kde-format
 msgid "Remove this column"
 msgstr "أزل هذا العمود"
 
-#: core/app/views/tableview/tableview_treeview.cpp:90
+#: core/app/views/tableview/tableview_treeview.cpp:84
 #, kde-format
 msgid "Configure this column"
 msgstr "اضبط هذا العمود"
@@ -21963,7 +21963,7 @@ msgid "Slideshow"
 msgstr "عرض الشّرائح"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:450
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "عرض الشّرائح"
@@ -37019,7 +37019,7 @@ msgid "Properties"
 msgstr "الخصائص"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:441
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
@@ -38591,131 +38591,131 @@ msgstr "أظهر نسق الصّورة"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "أظهر نسق الصّورة"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:411
+#: core/libs/settings/applicationsettings_miscs.cpp:412
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:413
+#: core/libs/settings/applicationsettings_miscs.cpp:414
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
 msgid "Remember choice for this operation"
 msgstr "ألغِ العمليّة."
 
-#: core/libs/settings/applicationsettings_miscs.cpp:444
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #: core/utilities/lighttable/lighttablewindow.cpp:48
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "الطّاولة الضّوئيّة"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:447
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "مدير الطّوابير بدفعات"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:453
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
 msgid "Renaming"
 msgstr "إعادة تسمية"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:456
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, fuzzy, kde-format
 msgid "Import/Export tools"
 msgstr "زخرفي الصنوبر"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:459
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:471
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:474
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgid "Adding items to the Light Table"
 msgstr "أضف إلى الطّاولة الضّوئيّة"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:477
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgid "Adding items to the Batch Queue Manager"
 msgstr "مدير الطّوابير بدفعات"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:480
+#: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:483
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, fuzzy, kde-format
 #| msgid "Renaming images"
 msgid "Renaming items"
 msgstr "يعيد تسمية الصّور"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:486
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:489
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:49
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "الفئة"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:50
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "سفر"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:51
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "عُطل"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:52
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "أصدقاء"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:53
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "طبيعة"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:54
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "حفلة"
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:55
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "مهمّة"
 
-#: core/libs/settings/applicationsettings_p.cpp:277
+#: core/libs/settings/applicationsettings_p.cpp:56
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"

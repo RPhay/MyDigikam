@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-24 01:54+0000\n"
+"POT-Creation-Date: 2024-04-25 01:38+0000\n"
 "PO-Revision-Date: 2024-04-21 08:28+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -994,7 +994,7 @@ msgstr "Nom:"
 
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
-#: core/app/views/stack/welcomepageview.cpp:273
+#: core/app/views/stack/welcomepageview.cpp:274
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -1312,32 +1312,32 @@ msgstr "Paràmetres tècnics"
 msgid "<i>Binary Data</i>"
 msgstr "<i>Dades binàries</i>"
 
-#: core/app/main/digikamapp.cpp:68
+#: core/app/main/digikamapp.cpp:70
 #, kde-format
 msgid "Initializing..."
 msgstr "S'està inicialitzant..."
 
-#: core/app/main/digikamapp.cpp:146 core/showfoto/main/showfoto.cpp:106
+#: core/app/main/digikamapp.cpp:148 core/showfoto/main/showfoto.cpp:106
 #, kde-format
 msgid "Load Plugins..."
 msgstr "S'estan carregant els connectors..."
 
-#: core/app/main/digikamapp.cpp:171 core/showfoto/main/showfoto.cpp:88
+#: core/app/main/digikamapp.cpp:173 core/showfoto/main/showfoto.cpp:88
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "S'està comprovant el repositori ICC..."
 
-#: core/app/main/digikamapp.cpp:183
+#: core/app/main/digikamapp.cpp:187
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Neteja la base de dades..."
 
-#: core/app/main/digikamapp.cpp:205
+#: core/app/main/digikamapp.cpp:209
 #, kde-format
 msgid "Loading albums..."
 msgstr "S'estan carregant els àlbums..."
 
-#: core/app/main/digikamapp.cpp:351
+#: core/app/main/digikamapp.cpp:356
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1349,7 +1349,7 @@ msgstr ""
 "cas, la característica de «Gestió del color» quedarà desactivada fins que "
 "resoleu esta qüestió.</p>"
 
-#: core/app/main/digikamapp.cpp:405
+#: core/app/main/digikamapp.cpp:412
 #, kde-format
 msgid ""
 "ExifTool is not available in your digiKam installation or is not working "
@@ -1360,92 +1360,92 @@ msgstr ""
 "correctament. Aneu fins a la configuració de digiKam i comproveu la "
 "disponibilitat del fitxer executable d'ExifTool a la secció metadades."
 
-#: core/app/main/digikamapp.cpp:690 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:697 core/app/views/stack/trashview.cpp:501
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Cap element seleccionat (%1 element)"
 msgstr[1] "Cap element seleccionat (%1 elements)"
 
-#: core/app/main/digikamapp.cpp:696
+#: core/app/main/digikamapp.cpp:703
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Cap element seleccionat (%1 [%2] element)"
 msgstr[1] "Cap element seleccionat (%1 [%2] elements)"
 
-#: core/app/main/digikamapp.cpp:701
+#: core/app/main/digikamapp.cpp:708
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Cap element seleccionat (%1 element. Amb elements agrupats: %2)"
 msgstr[1] "Cap element seleccionat (%1 elements. Amb elements agrupats: %2)"
 
-#: core/app/main/digikamapp.cpp:712
+#: core/app/main/digikamapp.cpp:719
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 element seleccionat (%3/%4)"
 msgstr[1] "%1/%2 elements seleccionats (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:732
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] element seleccionat (%4/%5)"
 msgstr[1] "%1/%2 [%3] elements seleccionats (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:733
+#: core/app/main/digikamapp.cpp:740
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 element seleccionat. Total amb elements agrupats: %3"
 msgstr[1] "%1/%2 elements seleccionats. Total amb elements agrupats: %3"
 
-#: core/app/main/digikamapp.cpp:741
+#: core/app/main/digikamapp.cpp:748
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] element seleccionat (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elements seleccionats (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:750
+#: core/app/main/digikamapp.cpp:757
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 element seleccionat. Amb elements agrupats: %3/%4"
 msgstr[1] "%1/%2 elements seleccionats. Amb elements agrupats: %3/%4"
 
-#: core/app/main/digikamapp.cpp:781
+#: core/app/main/digikamapp.cpp:788
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 de %2)"
 
-#: core/app/main/digikamapp.cpp:795
+#: core/app/main/digikamapp.cpp:802
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 de %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:799
+#: core/app/main/digikamapp.cpp:806
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 de %2. Total amb elements agrupats: %3)"
 
-#: core/app/main/digikamapp.cpp:810
+#: core/app/main/digikamapp.cpp:817
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 element ocult"
 msgstr[1] "%1 elements ocults"
 
-#: core/app/main/digikamapp.cpp:861
+#: core/app/main/digikamapp.cpp:868
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Escriu les metadades en el fitxer"
 msgstr[1] "Escriu les metadades en els fitxers seleccionats"
 
-#: core/app/main/digikamapp.cpp:863
+#: core/app/main/digikamapp.cpp:870
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1503,7 +1503,7 @@ msgstr "Afig les carpetes noves a la biblioteca d'àlbums."
 msgid "Images found in %1"
 msgstr "S'ha trobat imatges a %1"
 
-#: core/app/main/digikamapp_config.cpp:116
+#: core/app/main/digikamapp_config.cpp:119
 #, kde-format
 msgid ""
 "We now switch to the system icon theme. The icon colors are automatically "
@@ -1514,7 +1514,7 @@ msgstr ""
 "automàticament en un escriptori Plasma 6. El tema d'icones estarà disponible "
 "després de reiniciar digiKam."
 
-#: core/app/main/digikamapp_config.cpp:132
+#: core/app/main/digikamapp_config.cpp:135
 #: core/showfoto/main/showfoto_config.cpp:183
 #, kde-format
 msgid ""
@@ -1524,7 +1524,7 @@ msgstr ""
 "Heu triat un esquema de color brillant. Es canvia a un tema d'icones fosc. "
 "El tema d'icones serà disponible després de reiniciar digiKam."
 
-#: core/app/main/digikamapp_config.cpp:140
+#: core/app/main/digikamapp_config.cpp:143
 #: core/showfoto/main/showfoto_config.cpp:191
 #, kde-format
 msgid ""
@@ -1534,19 +1534,19 @@ msgstr ""
 "Heu triat un esquema de color fosc. Es canvia a un tema d'icones brillant. "
 "El tema d'icones serà disponible després de reiniciar digiKam."
 
-#: core/app/main/digikamapp_import.cpp:81
+#: core/app/main/digikamapp_import.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "Seleccioneu la carpeta que s'ha d'analitzar"
 
-#: core/app/main/digikamapp_import.cpp:101
+#: core/app/main/digikamapp_import.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "Seleccioneu les carpetes que s'han d'importar cap a dins de l'àlbum"
 
-#: core/app/main/digikamapp_import.cpp:143
+#: core/app/main/digikamapp_import.cpp:144
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to import "
@@ -1555,7 +1555,7 @@ msgstr ""
 "<p>Seleccioneu l'àlbum de destinació des de la biblioteca de digiKam al que "
 "s'importaran les carpetes.</p>"
 
-#: core/app/main/digikamapp_import.cpp:170
+#: core/app/main/digikamapp_import.cpp:173
 #, kde-format
 msgid ""
 "The folder %1 is part of the album path and cannot be imported recursively!"
@@ -1735,7 +1735,7 @@ msgid "Thumbnails"
 msgstr "Miniatures"
 
 #: core/app/main/digikamapp_setup.cpp:334
-#: core/app/views/stack/itemiconview_views.cpp:278
+#: core/app/views/stack/itemiconview_views.cpp:297
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -2438,82 +2438,82 @@ msgctxt "@info: setup"
 msgid "Loading tools..."
 msgstr "S'estan carregant les eines..."
 
-#: core/app/main/digikamapp_solid.cpp:280
+#: core/app/main/digikamapp_solid.cpp:285
 #, kde-format
 msgid "CompactFlash Card Reader"
 msgstr "Lector de targetes CompactFlash"
 
-#: core/app/main/digikamapp_solid.cpp:284
+#: core/app/main/digikamapp_solid.cpp:291
 #, kde-format
 msgid "Memory Stick Reader"
 msgstr "Lector de Memory Stick"
 
-#: core/app/main/digikamapp_solid.cpp:288
+#: core/app/main/digikamapp_solid.cpp:297
 #, kde-format
 msgid "SmartMedia Card Reader"
 msgstr "Lector de targetes SmartMedia"
 
-#: core/app/main/digikamapp_solid.cpp:292
+#: core/app/main/digikamapp_solid.cpp:303
 #, kde-format
 msgid "SD / MMC Card Reader"
 msgstr "Lector de targetes SD / MMC"
 
-#: core/app/main/digikamapp_solid.cpp:296
+#: core/app/main/digikamapp_solid.cpp:309
 #, kde-format
 msgid "xD Card Reader"
 msgstr "Lector de targetes xD"
 
-#: core/app/main/digikamapp_solid.cpp:310
+#: core/app/main/digikamapp_solid.cpp:324
 #, kde-format
 msgid "USB Disk"
 msgstr "Disc USB"
 
-#: core/app/main/digikamapp_solid.cpp:314
+#: core/app/main/digikamapp_solid.cpp:328
 #, kde-format
 msgctxt "non-USB removable storage device"
 msgid "Disk"
 msgstr "Disc"
 
-#: core/app/main/digikamapp_solid.cpp:386
+#: core/app/main/digikamapp_solid.cpp:401
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\" at <mount path>"
 msgid "%1 \"%2\" at %3"
 msgstr "%1 «%2» a %3"
 
-#: core/app/main/digikamapp_solid.cpp:392
+#: core/app/main/digikamapp_solid.cpp:407
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\""
 msgid "%1 \"%2\""
 msgstr "%1 «%2»"
 
-#: core/app/main/digikamapp_solid.cpp:400
+#: core/app/main/digikamapp_solid.cpp:415
 #, kde-format
 msgctxt "<drive type> at <mount path>"
 msgid "%1 at %2"
 msgstr "%1 a %2"
 
-#: core/app/main/digikamapp_solid.cpp:412
+#: core/app/main/digikamapp_solid.cpp:427
 #, kde-format
 msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr " (%1)"
 
-#: core/app/main/digikamapp_solid.cpp:647
+#: core/app/main/digikamapp_solid.cpp:662
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr "No es pot accedir al dispositiu d'emmagatzematge.\n"
 
-#: core/app/main/digikamapp_solid.cpp:678
+#: core/app/main/digikamapp_solid.cpp:693
 #, kde-format
 msgid "Images on %1"
 msgstr "Imatges a %1"
 
-#: core/app/main/digikamapp_solid.cpp:711
+#: core/app/main/digikamapp_solid.cpp:726
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr "El dispositiu especificat («%1») no és vàlid."
 
-#: core/app/main/digikamapp_solid.cpp:724
+#: core/app/main/digikamapp_solid.cpp:739
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "La càmera especificada («%1») no està admesa."
@@ -2642,7 +2642,7 @@ msgstr "A&juda"
 msgid "Main Toolbar"
 msgstr "Barra d'eines principal"
 
-#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:257
+#: core/app/main/main.cpp:201 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:68
@@ -2726,7 +2726,7 @@ msgstr ""
 "Els connectors de base de dades instal·lats en el vostre ordinador es "
 "llisten a continuació."
 
-#: core/app/main/main.cpp:346
+#: core/app/main/main.cpp:350
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2868,7 +2868,7 @@ msgstr "Mostra els punts d'enfocament"
 msgid "Show Fullscreen"
 msgstr "Mostra a pantalla completa"
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:151
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
@@ -2884,26 +2884,26 @@ msgstr "Mostra a pantalla completa"
 msgid "Albums"
 msgstr "Àlbums"
 
-#: core/app/views/sidebar/datefolderviewsidebarwidget.cpp:122
+#: core/app/views/sidebar/datefolderviewsidebarwidget.cpp:119
 #: core/libs/models/albummodel_date.cpp:25
 #, kde-format
 msgid "Dates"
 msgstr "Dates"
 
-#: core/app/views/sidebar/fuzzysearchsidebarwidget.cpp:124
+#: core/app/views/sidebar/fuzzysearchsidebarwidget.cpp:120
 #, kde-format
 msgctxt "Fuzzy Search images, as duplicates, sketch, searches by similarities"
 msgid "Similarity"
 msgstr "Similitud"
 
-#: core/app/views/sidebar/gpssearchsidebarwidget.cpp:124
+#: core/app/views/sidebar/gpssearchsidebarwidget.cpp:121
 #, kde-format
 msgctxt "Search images on a map"
 msgid "Map"
 msgstr "Mapa"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:118
+#: core/app/views/sidebar/labelssidebarwidget.cpp:115
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/utilities/geolocation/marble/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/marble/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -2912,12 +2912,12 @@ msgstr "Mapa"
 msgid "Labels"
 msgstr "Rètols"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:113
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:106
 #, kde-format
 msgid "Scan collection for faces"
 msgstr "Explora la col·lecció buscant cares"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:150
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:143
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -2927,7 +2927,7 @@ msgstr ""
 "vegada que utilitzeu esta característica, considereu utilitzar el quadro "
 "d'ajuda en el quadro lateral esquerre inferior."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:197
 #, kde-format
 msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
@@ -2936,39 +2936,39 @@ msgstr ""
 "S'ha interromput el reconeixement de les cares, perquè no hi ha identitats "
 "per a reconéixer. Per favor, afegiu-hi identitats noves."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:222
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:217
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
 msgstr "Persones"
 
-#: core/app/views/sidebar/searchsidebarwidget.cpp:146
+#: core/app/views/sidebar/searchsidebarwidget.cpp:141
 #, kde-format
 msgctxt "Advanced search images, access stored searches"
 msgid "Search"
 msgstr "Busca"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:103
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:91
 #, kde-format
 msgid "Open Tag Manager"
 msgstr "Obri el gestor d'etiquetes"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:104
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:92
 #, kde-format
 msgid "No Tags"
 msgstr "Sense etiquetes"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:93
 #, kde-format
 msgid "Existing Tags"
 msgstr "Etiquetes existents"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:261
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:249
 #, kde-format
 msgid "No Tags Album"
 msgstr "Sense etiquetes d'àlbum"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:264
 #: core/libs/album/engine/album.cpp:562
 #: core/libs/album/manager/albummanager.cpp:176
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -2982,32 +2982,32 @@ msgstr "Sense etiquetes d'àlbum"
 msgid "Tags"
 msgstr "Etiquetes"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:140
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:121
 #, kde-format
 msgid "Time Unit:"
 msgstr "Unitat de temps:"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:142
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:123
 #, kde-format
 msgid "Day"
 msgstr "Dia"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:124
 #, kde-format
 msgid "Week"
 msgstr "Setmana"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:144
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:125
 #, kde-format
 msgid "Month"
 msgstr "Mes"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:145
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:126
 #, kde-format
 msgid "Year"
 msgstr "Any"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:148
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:129
 #, kde-format
 msgid ""
 "<p>Select the histogram time unit.</p><p>You can change the graph decade to "
@@ -3016,7 +3016,7 @@ msgstr ""
 "<p>Seleccioneu la unitat de temps de l'histograma.</p><p>Podeu canviar "
 "l'ordre de magnitud del gràfic per a acostar o allunyar en el temps.</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:155
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:136
 #, kde-format
 msgid ""
 "<p>Select the histogram scale.</p><p>If the date's maximal counts are small, "
@@ -3029,24 +3029,24 @@ msgstr ""
 "s'utilitza quan els valors màxims són alts; si la utilitzeu, la gràfica "
 "mostrarà tots els valors, els baixos i els alts.</p>"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:162
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:143
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Linear"
 msgstr "Lineal"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:168
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:149
 #, kde-format
 msgctxt "@info: timeline sidebar"
 msgid "Logarithmic"
 msgstr "Logarítmica"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:205
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:186
 #, kde-format
 msgid "Clear current selection"
 msgstr "Neteja la selecció actual"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:206
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:187
 #, kde-format
 msgid ""
 "If you press this button, the current date selection on the time-line will "
@@ -3055,7 +3055,7 @@ msgstr ""
 "Si premeu este botó, es netejarà la selecció actual de la data en la línia "
 "de temps."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:209
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:190
 #, kde-format
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
@@ -3063,12 +3063,12 @@ msgstr ""
 "Introduïu el nom de la busca actual per dates per a guardar-la en la vista "
 "de «Busques»"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:215
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:196
 #, kde-format
 msgid "Save current selection to a new virtual Album"
 msgstr "Guarda la selecció actual a un àlbum virtual nou"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:216
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:197
 #, kde-format
 msgid ""
 "If you press this button, the dates selected on the time-line will be saved "
@@ -3078,18 +3078,18 @@ msgstr ""
 "guardaran en un àlbum virtual de busca nou utilitzant el nom establit a "
 "l'esquerra."
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:142
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:380
+#: core/app/views/stack/itemiconview_p.h:144
 #, kde-format
 msgid "Timeline"
 msgstr "Línia de temps"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:430
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:411
 #, kde-format
 msgid "no item"
 msgstr "Sense element"
 
-#: core/app/views/sidebar/timelinesidebarwidget.cpp:431
+#: core/app/views/sidebar/timelinesidebarwidget.cpp:412
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #, kde-format
@@ -3104,12 +3104,12 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Filtres"
 
-#: core/app/views/stack/itemiconview_albums.cpp:299
+#: core/app/views/stack/itemiconview_albums.cpp:303
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "No s'ha pogut obrir l'àlbum principal. No és cap ubicació física."
 
-#: core/app/views/stack/itemiconview_items.cpp:638
+#: core/app/views/stack/itemiconview_items.cpp:728
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3133,20 +3133,20 @@ msgstr "Busca aproximada d'imatge"
 msgid "Map Search"
 msgstr "Busca per mapa"
 
-#: core/app/views/stack/itemiconview_p.h:138
+#: core/app/views/stack/itemiconview_p.h:140
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1161
 #, kde-format
 msgid "Last Search"
 msgstr "Última busca"
 
 #: core/app/views/stack/itemiconview_search.cpp:66
-#: core/app/views/stack/itemiconview_search.cpp:108
+#: core/app/views/stack/itemiconview_search.cpp:107
 #, kde-format
 msgid "FacesDetector"
 msgstr "Detector de cares"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
-#: core/app/views/stack/itemiconview_search.cpp:110
+#: core/app/views/stack/itemiconview_search.cpp:109
 #, kde-format
 msgid ""
 "A face recognition task is already running. Only one task can be running at "
@@ -3155,7 +3155,7 @@ msgstr ""
 "Ja s'està executant una tasca de reconeixement de cares. Només es pot "
 "executar una tasca a la vegada. Espereu fins que acabe."
 
-#: core/app/views/stack/itemiconview_views.cpp:118
+#: core/app/views/stack/itemiconview_views.cpp:123
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3165,108 +3165,108 @@ msgstr ""
 "Actualment no està disponible la ubicació\n"
 "d'emmagatzematge d'esta imatge"
 
-#: core/app/views/stack/itemiconview_views.cpp:223
+#: core/app/views/stack/itemiconview_views.cpp:237
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Eines"
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:107
 #: core/libs/tags/manager/tagsmanager.cpp:833
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr "Ajuda en línia quant a la paperera"
 
-#: core/app/views/stack/trashview.cpp:130
+#: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Undo"
 msgstr "Desfés"
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Restaura només l'última entrada en la paperera."
 
-#: core/app/views/stack/trashview.cpp:136
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore"
 msgstr "Restaura"
 
-#: core/app/views/stack/trashview.cpp:137
+#: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "Restaura la selecció de fitxers des de la paperera."
 
-#: core/app/views/stack/trashview.cpp:143
+#: core/app/views/stack/trashview.cpp:130
 #, kde-format
 msgid "Delete..."
 msgstr "Suprimix..."
 
-#: core/app/views/stack/trashview.cpp:144
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 "Elimina permanentment la selecció d'elements o tots els elements de la "
 "paperera."
 
-#: core/app/views/stack/trashview.cpp:148
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Definitivament els elements seleccionats"
 
-#: core/app/views/stack/trashview.cpp:151
+#: core/app/views/stack/trashview.cpp:138
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Definitivament tots els elements"
 
-#: core/app/views/stack/trashview.cpp:278
+#: core/app/views/stack/trashview.cpp:265
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Confirmeu el desfer"
 
-#: core/app/views/stack/trashview.cpp:279
-#: core/app/views/stack/trashview.cpp:304
+#: core/app/views/stack/trashview.cpp:266
+#: core/app/views/stack/trashview.cpp:291
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Segur que voleu restaurar %1 element?"
 msgstr[1] "Segur que voleu restaurar %1 elements?"
 
-#: core/app/views/stack/trashview.cpp:303
+#: core/app/views/stack/trashview.cpp:290
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Confirmeu la restauració"
 
-#: core/app/views/stack/trashview.cpp:332
-#: core/app/views/stack/trashview.cpp:382
+#: core/app/views/stack/trashview.cpp:319
+#: core/app/views/stack/trashview.cpp:369
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Confirmeu la supressió"
 
-#: core/app/views/stack/trashview.cpp:333
+#: core/app/views/stack/trashview.cpp:320
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Segur que voleu suprimir %1 element permanentment?"
 msgstr[1] "Segur que voleu suprimir %1 elements permanentment?"
 
-#: core/app/views/stack/trashview.cpp:383
+#: core/app/views/stack/trashview.cpp:370
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Segur que voleu suprimir TOTS els elements permanentment?"
 
-#: core/app/views/stack/trashview.cpp:452
+#: core/app/views/stack/trashview.cpp:439
 #, kde-format
 msgid "Selection"
 msgstr "Selecció"
 
-#: core/app/views/stack/trashview.cpp:454
+#: core/app/views/stack/trashview.cpp:441
 #: core/libs/database/utils/ifaces/dio.cpp:886
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:58
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:429
@@ -3274,24 +3274,24 @@ msgstr "Selecció"
 msgid "Delete"
 msgstr "Suprimix"
 
-#: core/app/views/stack/trashview.cpp:521
+#: core/app/views/stack/trashview.cpp:508
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 elements seleccionats"
 
-#: core/app/views/stack/welcomepageview.cpp:138
+#: core/app/views/stack/welcomepageview.cpp:134
 #, kde-format
 msgid "More than 650 user-reports closed on bugzilla."
 msgstr "Més de 650 informes d'usuari tancats en Bugzilla."
 
-#: core/app/views/stack/welcomepageview.cpp:139
+#: core/app/views/stack/welcomepageview.cpp:135
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
 "Adaptar el codi a l'entorn de treball de les Qt6 (codi encara compatible amb "
 "l'API de les Qt5)."
 
-#: core/app/views/stack/welcomepageview.cpp:140
+#: core/app/views/stack/welcomepageview.cpp:136
 #, kde-format
 msgid ""
 "Windows Installer is now compiled natively with Microsoft VCPKG tool-chain "
@@ -3300,13 +3300,13 @@ msgstr ""
 "L'instal·lador de Windows ara està compilat nativament amb la cadena d'eines "
 "VCPKG de Microsoft i utilitza les Qt6 i els Frameworks KF6."
 
-#: core/app/views/stack/welcomepageview.cpp:141
+#: core/app/views/stack/welcomepageview.cpp:137
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr ""
 "Afegir la configuració d'exportació cap a JPEG-XL, WEBP i AVIF per tot arreu."
 
-#: core/app/views/stack/welcomepageview.cpp:142
+#: core/app/views/stack/welcomepageview.cpp:138
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
@@ -3314,13 +3314,13 @@ msgstr ""
 "Afegir la conversió a JPEG-XL, WEBP i AVIF sense pèrdua en importar des de "
 "la càmera."
 
-#: core/app/views/stack/welcomepageview.cpp:143
+#: core/app/views/stack/welcomepageview.cpp:139
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
 "Afegir els convertidors JPEG-XL, WEBP i AVIF al gestor de la cua per lots."
 
-#: core/app/views/stack/welcomepageview.cpp:144
+#: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
@@ -3329,14 +3329,14 @@ msgstr ""
 "Versionat: implementar els JPEG-XL, HEIF, WEBP i AVIF com a formats d'imatge "
 "sense pèrdua per a emmagatzemar imatges versionades a l'editor."
 
-#: core/app/views/stack/welcomepageview.cpp:145
+#: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 "Usabilitat: afegir el menú d'hamburguesa a la barra d'eines si el menú "
 "principal està ocult."
 
-#: core/app/views/stack/welcomepageview.cpp:146
+#: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
@@ -3344,7 +3344,7 @@ msgstr ""
 "Metadades: afegir una opció nova per a escriure les metadades en els fitxers "
 "amb el dorsal ExifTool."
 
-#: core/app/views/stack/welcomepageview.cpp:147
+#: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
@@ -3353,7 +3353,7 @@ msgstr ""
 "Metadades: l'escriptura opcional d'operacions de metadades a fitxers DNG i "
 "RAW ara sempre està delegada en el dorsal d'ExifTool."
 
-#: core/app/views/stack/welcomepageview.cpp:148
+#: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
@@ -3361,7 +3361,7 @@ msgstr ""
 "Metadades: optimitzar la disposició del connector d'edició de metadades per "
 "a millorar la usabilitat."
 
-#: core/app/views/stack/welcomepageview.cpp:149
+#: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
@@ -3370,7 +3370,7 @@ msgstr ""
 "Metadades: afegir opcions noves per a guardar i carregar perfils de "
 "configuració en el quadro de configuració avançada de Metadades."
 
-#: core/app/views/stack/welcomepageview.cpp:150
+#: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
@@ -3379,14 +3379,14 @@ msgstr ""
 "Canvi de nom avançat: afegir un comptador d'increment de fitxer a la "
 "numeració seqüencial amb l'opció [c] o [c,pas]."
 
-#: core/app/views/stack/welcomepageview.cpp:151
+#: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
 "Canvi de nom avançat: afegir un text aleatori de numeració seqüencial amb "
 "l'opció [r]."
 
-#: core/app/views/stack/welcomepageview.cpp:152
+#: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
@@ -3395,32 +3395,32 @@ msgstr ""
 "Canvi de nom avançat: afegir un primer caràcter configurable per al "
 "modificador únic amb {unique:n,c}."
 
-#: core/app/views/stack/welcomepageview.cpp:153
+#: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
 msgstr ""
 "Busca avançada: afegir una busca d'elements per nombre de regions de cares."
 
-#: core/app/views/stack/welcomepageview.cpp:154
+#: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid "Advanced Search: add search for items without face regions."
 msgstr "Busca avançada: afegir una busca d'elements sense regions de cares."
 
-#: core/app/views/stack/welcomepageview.cpp:155
+#: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
 msgstr ""
 "Col·leccions: afegir la implementació per als camins de xarxa "
 "multiplataforma."
 
-#: core/app/views/stack/welcomepageview.cpp:156
+#: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
 "Base de dades: afegir la implementació per al mode WAL (Write-Ahead-Logging) "
 "de SQLite."
 
-#: core/app/views/stack/welcomepageview.cpp:157
+#: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
@@ -3429,7 +3429,7 @@ msgstr ""
 "Afegir la implementació de verificació ortogràfica en el giny de text de "
 "llegenda utilitzant el component KF5::Sonnet."
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
@@ -3438,7 +3438,7 @@ msgstr ""
 "Afegir un quadro de configuració de la verificació ortogràfica a "
 "Configuració/Miscel·lània en digiKam i Showfoto."
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
@@ -3446,7 +3446,7 @@ msgstr ""
 "Afegir la implementació per a les traduccions en línia en el giny de "
 "l'editor de text d'Idioma alternatiu."
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
@@ -3454,7 +3454,7 @@ msgstr ""
 "Afegir un quadro de configuració de la localitzacio a Configuració/"
 "Miscel·lània en digiKam i Showfoto."
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
@@ -3463,7 +3463,7 @@ msgstr ""
 "Afegir opcions de configuració per a llistar els idiomes alternatius/"
 "traduïts preferits en el giny d'edició de text."
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
@@ -3471,21 +3471,21 @@ msgstr ""
 "Permetre utilitzar les opcions de configuració d'ordenació de les imatges "
 "segons la qualitat de forma global o personalitzada per tot arreu."
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
 "Afegir la configuració de la vista d'icones per a personalitzar la "
 "visibilitat de les etiquetes sobre les miniatures."
 
-#: core/app/views/stack/welcomepageview.cpp:164
+#: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 "Afig la implementació per a les imatges «float16» (mig flotant) al "
 "carregador de TIFF."
 
-#: core/app/views/stack/welcomepageview.cpp:165
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
@@ -3497,7 +3497,7 @@ msgstr ""
 "estètica per a classificar imatges utilitzant un model d'aprenentatge "
 "profund</a>."
 
-#: core/app/views/stack/welcomepageview.cpp:166
+#: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
@@ -3506,7 +3506,7 @@ msgstr ""
 "Afegir una eina nova <a href=\"https://community.kde.org/GSoC/2022/"
 "StatusReports/QuocHungTran\">per a portar a treme OCR de text escanejat</a>."
 
-#: core/app/views/stack/welcomepageview.cpp:167
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
@@ -3515,7 +3515,7 @@ msgstr ""
 "Gestor de cues: afegir una eina nova per a assignar automàticament rètols de "
 "selecció analitzant la qualitat de les imatges."
 
-#: core/app/views/stack/welcomepageview.cpp:168
+#: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
@@ -3524,13 +3524,13 @@ msgstr ""
 "Gestor de cues: afegir una eina nova per a assignar valoracions, i etiquetes "
 "de selecció i color per lots."
 
-#: core/app/views/stack/welcomepageview.cpp:169
+#: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
 "Gestor de cues: una eina nova per a assignar títols i llegendes per lots."
 
-#: core/app/views/stack/welcomepageview.cpp:170
+#: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
@@ -3540,7 +3540,7 @@ msgstr ""
 "\">Reescriptura del manual</a> des de DocBook a l'entorn de treball Sphinx/"
 "ReStructuredText."
 
-#: core/app/views/stack/welcomepageview.cpp:171
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
@@ -3550,14 +3550,14 @@ msgstr ""
 "a MacOS i millorar l'estabilitat del connector."
 
 # skip-rule: kct-snapshot
-#: core/app/views/stack/welcomepageview.cpp:172
+#: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
 msgstr ""
 "Actualitzar el motor RAW intern a l'última instantània de la Libraw "
 "2023-11-21."
 
-#: core/app/views/stack/welcomepageview.cpp:173
+#: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid ""
 "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
@@ -3572,27 +3572,27 @@ msgstr ""
 "permeten fitxers DNG comprimits «deflate» Canon EOS R3, R7 i R10 Fujifilm X-"
 "H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
 
-#: core/app/views/stack/welcomepageview.cpp:188
+#: core/app/views/stack/welcomepageview.cpp:184
 #, kde-format
 msgid "...and much more."
 msgstr "... i molt més."
 
-#: core/app/views/stack/welcomepageview.cpp:194
+#: core/app/views/stack/welcomepageview.cpp:190
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:197
+#: core/app/views/stack/welcomepageview.cpp:193
 #, kde-format
 msgid "New Features"
 msgstr "Característiques noves"
 
-#: core/app/views/stack/welcomepageview.cpp:199
+#: core/app/views/stack/welcomepageview.cpp:195
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:200
+#: core/app/views/stack/welcomepageview.cpp:196
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
@@ -3601,18 +3601,18 @@ msgstr ""
 "Algunes de les noves característiques d'este llançament de digiKam inclouen "
 "(comparades amb digiKam 7):"
 
-#: core/app/views/stack/welcomepageview.cpp:208
+#: core/app/views/stack/welcomepageview.cpp:204
 #: core/utilities/geolocation/marble/plugins/PluginItemDelegate.cpp:350
 #, kde-format
 msgid "About"
 msgstr "Quant a"
 
-#: core/app/views/stack/welcomepageview.cpp:210
+#: core/app/views/stack/welcomepageview.cpp:206
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:207
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3623,7 +3623,7 @@ msgstr ""
 "dissenyat per a importar, organitzar, millorar, buscar i exportar les "
 "vostres imatges digitals des d'i cap al vostre ordinador."
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:208
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3634,12 +3634,12 @@ msgstr ""
 "on s'emmagatzemen els vostres fitxers, i són idèntics a les carpetes en el "
 "vostre disc dur."
 
-#: core/app/views/stack/welcomepageview.cpp:213
+#: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:210
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3648,7 +3648,7 @@ msgstr ""
 "digiKam disposa de moltes característiques de gran abast que es descriuen en "
 "la <a href=\"https://docs.digikam.org/en/index.html\">documentació</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3657,254 +3657,254 @@ msgstr ""
 "La <a href=\"https://www.digikam.org\">pàgina web de digiKam</a> proporciona "
 "informació sobre les noves versions."
 
-#: core/app/views/stack/welcomepageview.cpp:265
+#: core/app/views/stack/welcomepageview.cpp:266
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Us donem la benvinguda a digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:268
+#: core/app/views/stack/welcomepageview.cpp:269
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Atribució de la imatge de fons"
 
-#: core/app/views/stack/welcomepageview.cpp:271
+#: core/app/views/stack/welcomepageview.cpp:272
 #, kde-format
 msgid "Author:"
 msgstr "Autoria:"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:273
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "Ubicació:"
 
-#: core/app/views/stack/welcomepageview.cpp:274
+#: core/app/views/stack/welcomepageview.cpp:275
 #, kde-format
 msgid "Camera:"
 msgstr "Càmera:"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:276
 #, kde-format
 msgid "Lens:"
 msgstr "Lent:"
 
-#: core/app/views/tableview/tableview.cpp:327
+#: core/app/views/tableview/tableview.cpp:322
 #, kde-format
 msgid "Hide grouped items"
 msgstr "Oculta els elements agrupats"
 
-#: core/app/views/tableview/tableview.cpp:337
+#: core/app/views/tableview/tableview.cpp:332
 #, kde-format
 msgid "Ignore grouping"
 msgstr "Ignora l'agrupament"
 
-#: core/app/views/tableview/tableview.cpp:347
+#: core/app/views/tableview/tableview.cpp:342
 #, kde-format
 msgid "Show grouping in tree"
 msgstr "Mostra l'agrupament en un arbre"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:67
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:63
 #, kde-format
 msgid "Audio/video properties"
 msgstr "Propietats de l'àudio/vídeo"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:70
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:86
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:66
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:82
 #, kde-format
 msgid "Audio bitrate"
 msgstr "Taxa de bits de l'àudio"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:71
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:91
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:67
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:87
 #, kde-format
 msgid "Audio channel type"
 msgstr "Tipus del canal de l'àudio"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:72
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:96
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:68
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:958
 #: core/utilities/setup/setuptooltip.cpp:262
 #, kde-format
 msgid "Audio Codec"
 msgstr "Còdec d'àudio"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:73
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:101
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:69
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:97
 #: core/utilities/searchwindow/searchfields_createfield.cpp:815
 #, kde-format
 msgid "Duration"
 msgstr "Duració"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:74
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:106
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:70
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:102
 #, kde-format
 msgid "Frame rate"
 msgstr "Velocitat dels fotogrames"
 
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:75
-#: core/app/views/tableview/tableview_column_audiovideo.cpp:111
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:71
+#: core/app/views/tableview/tableview_column_audiovideo.cpp:107
 #, kde-format
 msgid "Video codec"
 msgstr "Còdec de vídeo"
 
-#: core/app/views/tableview/tableview_column_configuration_dialog.cpp:74
+#: core/app/views/tableview/tableview_column_configuration_dialog.cpp:68
 #, kde-format
 msgid "Configure column \"%1\""
 msgstr "Configura la columna «%1»"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:68
+#: core/app/views/tableview/tableview_column_digikam.cpp:64
 #, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
 msgstr "Propietats de digiKam"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:71
+#: core/app/views/tableview/tableview_column_digikam.cpp:67
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Rating"
 msgstr "Valoració"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:72
+#: core/app/views/tableview/tableview_column_digikam.cpp:68
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
 msgstr "Rètol de selecció"
+
+#: core/app/views/tableview/tableview_column_digikam.cpp:69
+#, kde-format
+msgctxt "@title: tableview"
+msgid "Color label"
+msgstr "Rètol de color"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:73
 #, kde-format
 msgctxt "@title: tableview"
-msgid "Color label"
-msgstr "Rètol de color"
-
-#: core/app/views/tableview/tableview_column_digikam.cpp:77
-#, kde-format
-msgctxt "@title: tableview"
 msgid "Title"
 msgstr "Títol"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:81
+#: core/app/views/tableview/tableview_column_digikam.cpp:77
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Caption"
 msgstr "Llegenda"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:83
+#: core/app/views/tableview/tableview_column_digikam.cpp:79
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Tags"
 msgstr "Etiquetes"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:94
+#: core/app/views/tableview/tableview_column_digikam.cpp:90
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rating"
 msgstr "Valoració"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:99
+#: core/app/views/tableview/tableview_column_digikam.cpp:95
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
 msgstr "Rètol de selecció"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:104
+#: core/app/views/tableview/tableview_column_digikam.cpp:100
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
 msgstr "Rètol de color"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:109
+#: core/app/views/tableview/tableview_column_digikam.cpp:105
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Title"
 msgstr "Títol"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:114
+#: core/app/views/tableview/tableview_column_digikam.cpp:110
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
 msgstr "Llegenda"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:119
+#: core/app/views/tableview/tableview_column_digikam.cpp:115
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Tags"
 msgstr "Etiquetes"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:338
-#: core/app/views/tableview/tableview_column_digikam.cpp:378
+#: core/app/views/tableview/tableview_column_digikam.cpp:334
+#: core/app/views/tableview/tableview_column_digikam.cpp:374
 #, kde-format
 msgctxt "@info: tableview"
 msgid "None"
 msgstr "Cap"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:344
+#: core/app/views/tableview/tableview_column_digikam.cpp:340
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
 msgstr "Rebutjada"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:350
+#: core/app/views/tableview/tableview_column_digikam.cpp:346
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pending"
 msgstr "Pendent"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:356
+#: core/app/views/tableview/tableview_column_digikam.cpp:352
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Accepted"
 msgstr "Acceptada"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:384
+#: core/app/views/tableview/tableview_column_digikam.cpp:380
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Red"
 msgstr "Roig"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:390
+#: core/app/views/tableview/tableview_column_digikam.cpp:386
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Orange"
 msgstr "Taronja"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:396
+#: core/app/views/tableview/tableview_column_digikam.cpp:392
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Yellow"
 msgstr "Groc"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:402
+#: core/app/views/tableview/tableview_column_digikam.cpp:398
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Green"
 msgstr "Verd"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:408
+#: core/app/views/tableview/tableview_column_digikam.cpp:404
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Blue"
 msgstr "Blau"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:414
+#: core/app/views/tableview/tableview_column_digikam.cpp:410
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Magenta"
 msgstr "Magenta"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:420
+#: core/app/views/tableview/tableview_column_digikam.cpp:416
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Gray"
 msgstr "Gris"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:426
+#: core/app/views/tableview/tableview_column_digikam.cpp:422
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Black"
 msgstr "Negre"
 
-#: core/app/views/tableview/tableview_column_digikam.cpp:432
+#: core/app/views/tableview/tableview_column_digikam.cpp:428
 #, kde-format
 msgctxt "@info: tableview"
 msgid "White"
@@ -3946,298 +3946,298 @@ msgstr "Mida"
 msgid "Last modified"
 msgstr "Última modificació"
 
-#: core/app/views/tableview/tableview_column_file.cpp:236
+#: core/app/views/tableview/tableview_column_file.cpp:234
 #, kde-format
 msgctxt "@item: tableview"
 msgid "Human readable"
 msgstr "Forma intel·ligible"
 
-#: core/app/views/tableview/tableview_column_file.cpp:237
+#: core/app/views/tableview/tableview_column_file.cpp:235
 #, kde-format
 msgctxt "@item: tableview"
 msgid "Plain"
 msgstr "Normal"
 
-#: core/app/views/tableview/tableview_column_file.cpp:238
-#: core/app/views/tableview/tableview_column_geo.cpp:261
+#: core/app/views/tableview/tableview_column_file.cpp:236
+#: core/app/views/tableview/tableview_column_geo.cpp:255
 #, kde-format
 msgid "Display format"
 msgstr "Format de visualització"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:86
+#: core/app/views/tableview/tableview_column_geo.cpp:82
 #, kde-format
 msgid "Geo properties"
 msgstr "Propietats de la geolocalització"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:88
-#: core/app/views/tableview/tableview_column_geo.cpp:101
+#: core/app/views/tableview/tableview_column_geo.cpp:84
+#: core/app/views/tableview/tableview_column_geo.cpp:97
 #, kde-format
 msgid "Geotagged"
 msgstr "Geoetiquetatge"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:89
-#: core/app/views/tableview/tableview_column_geo.cpp:106
+#: core/app/views/tableview/tableview_column_geo.cpp:85
+#: core/app/views/tableview/tableview_column_geo.cpp:102
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:118
 #, kde-format
 msgid "Coordinates"
 msgstr "Coordenades"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:90
-#: core/app/views/tableview/tableview_column_geo.cpp:111
+#: core/app/views/tableview/tableview_column_geo.cpp:86
+#: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
 #, kde-format
 msgid "Altitude"
 msgstr "Altitud"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:162
+#: core/app/views/tableview/tableview_column_geo.cpp:158
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:162
+#: core/app/views/tableview/tableview_column_geo.cpp:158
 #, kde-format
 msgctxt "@info: tableview"
 msgid "No"
 msgstr "No"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:259
+#: core/app/views/tableview/tableview_column_geo.cpp:253
 #, kde-format
 msgid "Metric units"
 msgstr "Unitats mètriques"
 
-#: core/app/views/tableview/tableview_column_geo.cpp:260
+#: core/app/views/tableview/tableview_column_geo.cpp:254
 #, kde-format
 msgid "Imperial units"
 msgstr "Unitats imperials"
 
-#: core/app/views/tableview/tableview_column_item.cpp:72
+#: core/app/views/tableview/tableview_column_item.cpp:68
 #, kde-format
 msgid "Item properties"
 msgstr "Propietats de l'element"
 
-#: core/app/views/tableview/tableview_column_item.cpp:75
-#: core/app/views/tableview/tableview_column_item.cpp:96
+#: core/app/views/tableview/tableview_column_item.cpp:71
+#: core/app/views/tableview/tableview_column_item.cpp:92
 #: core/utilities/searchwindow/searchfields_createfield.cpp:212
 #, kde-format
 msgid "Width"
 msgstr "Amplària"
 
-#: core/app/views/tableview/tableview_column_item.cpp:76
-#: core/app/views/tableview/tableview_column_item.cpp:101
+#: core/app/views/tableview/tableview_column_item.cpp:72
+#: core/app/views/tableview/tableview_column_item.cpp:97
 #: core/utilities/searchwindow/searchfields_createfield.cpp:230
 #, kde-format
 msgid "Height"
 msgstr "Alçària"
 
-#: core/app/views/tableview/tableview_column_item.cpp:77
-#: core/app/views/tableview/tableview_column_item.cpp:106
+#: core/app/views/tableview/tableview_column_item.cpp:73
+#: core/app/views/tableview/tableview_column_item.cpp:102
 #, kde-format
 msgid "Dimensions"
 msgstr "Dimensions"
 
-#: core/app/views/tableview/tableview_column_item.cpp:78
-#: core/app/views/tableview/tableview_column_item.cpp:111
+#: core/app/views/tableview/tableview_column_item.cpp:74
+#: core/app/views/tableview/tableview_column_item.cpp:107
 #, kde-format
 msgid "Pixel count"
 msgstr "Nombre de píxels"
 
-#: core/app/views/tableview/tableview_column_item.cpp:79
-#: core/app/views/tableview/tableview_column_item.cpp:116
+#: core/app/views/tableview/tableview_column_item.cpp:75
+#: core/app/views/tableview/tableview_column_item.cpp:112
 #, kde-format
 msgid "Bit depth"
 msgstr "Bits de profunditat"
 
-#: core/app/views/tableview/tableview_column_item.cpp:80
-#: core/app/views/tableview/tableview_column_item.cpp:121
+#: core/app/views/tableview/tableview_column_item.cpp:76
+#: core/app/views/tableview/tableview_column_item.cpp:117
 #, kde-format
 msgid "Color mode"
 msgstr "Mode del color"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/app/views/tableview/tableview_column_item.cpp:81
-#: core/app/views/tableview/tableview_column_item.cpp:126
+#: core/app/views/tableview/tableview_column_item.cpp:77
+#: core/app/views/tableview/tableview_column_item.cpp:122
 #: core/utilities/geolocation/marble/models/GeoDataTreeModel.cpp:186
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
 msgstr "Tipus"
 
-#: core/app/views/tableview/tableview_column_item.cpp:82
-#: core/app/views/tableview/tableview_column_item.cpp:131
+#: core/app/views/tableview/tableview_column_item.cpp:78
+#: core/app/views/tableview/tableview_column_item.cpp:127
 #, kde-format
 msgid "Creation date/time"
 msgstr "Data i hora de creació"
 
-#: core/app/views/tableview/tableview_column_item.cpp:83
-#: core/app/views/tableview/tableview_column_item.cpp:136
+#: core/app/views/tableview/tableview_column_item.cpp:79
+#: core/app/views/tableview/tableview_column_item.cpp:132
 #, kde-format
 msgid "Digitization date/time"
 msgstr "Data i hora de digitalització"
 
-#: core/app/views/tableview/tableview_column_item.cpp:84
-#: core/app/views/tableview/tableview_column_item.cpp:141
+#: core/app/views/tableview/tableview_column_item.cpp:80
+#: core/app/views/tableview/tableview_column_item.cpp:137
 #, kde-format
 msgid "Aspect ratio"
 msgstr "Relació d'aspecte"
 
-#: core/app/views/tableview/tableview_column_item.cpp:85
-#: core/app/views/tableview/tableview_column_item.cpp:146
+#: core/app/views/tableview/tableview_column_item.cpp:81
+#: core/app/views/tableview/tableview_column_item.cpp:142
 #, kde-format
 msgid "Similarity"
 msgstr "Similitud"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:74
+#: core/app/views/tableview/tableview_column_photo.cpp:70
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Photo properties"
 msgstr "Propietats de la fotografia"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:77
-#: core/app/views/tableview/tableview_column_photo.cpp:97
+#: core/app/views/tableview/tableview_column_photo.cpp:73
+#: core/app/views/tableview/tableview_column_photo.cpp:93
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Camera maker"
 msgstr "Fabricant de la càmera"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:78
-#: core/app/views/tableview/tableview_column_photo.cpp:102
+#: core/app/views/tableview/tableview_column_photo.cpp:74
+#: core/app/views/tableview/tableview_column_photo.cpp:98
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Camera model"
 msgstr "Model de la càmera"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:79
-#: core/app/views/tableview/tableview_column_photo.cpp:107
+#: core/app/views/tableview/tableview_column_photo.cpp:75
+#: core/app/views/tableview/tableview_column_photo.cpp:103
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Lens"
 msgstr "Lent"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:80
-#: core/app/views/tableview/tableview_column_photo.cpp:112
+#: core/app/views/tableview/tableview_column_photo.cpp:76
+#: core/app/views/tableview/tableview_column_photo.cpp:108
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Aperture"
 msgstr "Obertura"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:81
-#: core/app/views/tableview/tableview_column_photo.cpp:117
+#: core/app/views/tableview/tableview_column_photo.cpp:77
+#: core/app/views/tableview/tableview_column_photo.cpp:113
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Focal length"
 msgstr "Distància focal"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:82
-#: core/app/views/tableview/tableview_column_photo.cpp:122
+#: core/app/views/tableview/tableview_column_photo.cpp:78
+#: core/app/views/tableview/tableview_column_photo.cpp:118
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Exposure"
 msgstr "Exposició"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:83
-#: core/app/views/tableview/tableview_column_photo.cpp:127
+#: core/app/views/tableview/tableview_column_photo.cpp:79
+#: core/app/views/tableview/tableview_column_photo.cpp:123
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Sensitivity"
 msgstr "Sensibilitat"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:84
-#: core/app/views/tableview/tableview_column_photo.cpp:132
+#: core/app/views/tableview/tableview_column_photo.cpp:80
+#: core/app/views/tableview/tableview_column_photo.cpp:128
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Mode/program"
 msgstr "Mode/programa"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:85
-#: core/app/views/tableview/tableview_column_photo.cpp:137
+#: core/app/views/tableview/tableview_column_photo.cpp:81
+#: core/app/views/tableview/tableview_column_photo.cpp:133
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Flash"
 msgstr "Flaix"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:86
-#: core/app/views/tableview/tableview_column_photo.cpp:142
+#: core/app/views/tableview/tableview_column_photo.cpp:82
+#: core/app/views/tableview/tableview_column_photo.cpp:138
 #, kde-format
 msgctxt "@title: tableview"
 msgid "White balance"
 msgstr "Balanç de blancs"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:238
+#: core/app/views/tableview/tableview_column_photo.cpp:234
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:262
+#: core/app/views/tableview/tableview_column_photo.cpp:258
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 s"
 msgstr "%1 s"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:267
+#: core/app/views/tableview/tableview_column_photo.cpp:263
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 ms"
 msgstr "%1 ms"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:272
+#: core/app/views/tableview/tableview_column_photo.cpp:268
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 µs"
 msgstr "%1 µs"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:303
+#: core/app/views/tableview/tableview_column_photo.cpp:299
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:444
+#: core/app/views/tableview/tableview_column_photo.cpp:437
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Fraction"
 msgstr "Fracció"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:445
+#: core/app/views/tableview/tableview_column_photo.cpp:438
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rational"
 msgstr "Racional"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:446
+#: core/app/views/tableview/tableview_column_photo.cpp:439
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Format"
 msgstr "Format"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:449
+#: core/app/views/tableview/tableview_column_photo.cpp:442
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Seconds"
 msgstr "Segons"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:450
+#: core/app/views/tableview/tableview_column_photo.cpp:443
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Milliseconds"
 msgstr "Mil·lisegons"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:451
+#: core/app/views/tableview/tableview_column_photo.cpp:444
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Microseconds"
 msgstr "Microsegons"
 
-#: core/app/views/tableview/tableview_column_photo.cpp:452
+#: core/app/views/tableview/tableview_column_photo.cpp:445
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Unit"
 msgstr "Unitat"
 
-#: core/app/views/tableview/tableview_column_thumbnail.cpp:78
-#: core/app/views/tableview/tableview_column_thumbnail.cpp:88
+#: core/app/views/tableview/tableview_column_thumbnail.cpp:74
+#: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:261
@@ -4246,12 +4246,12 @@ msgstr "Unitat"
 msgid "Thumbnail"
 msgstr "Miniatura"
 
-#: core/app/views/tableview/tableview_treeview.cpp:85
+#: core/app/views/tableview/tableview_treeview.cpp:79
 #, kde-format
 msgid "Remove this column"
 msgstr "Elimina esta columna"
 
-#: core/app/views/tableview/tableview_treeview.cpp:90
+#: core/app/views/tableview/tableview_treeview.cpp:84
 #, kde-format
 msgid "Configure this column"
 msgstr "Configura esta columna"
@@ -22431,7 +22431,7 @@ msgid "Slideshow"
 msgstr "Presentació de diapositives"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:450
+#: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "Presentació de diapositives"
@@ -37741,7 +37741,7 @@ msgid "Properties"
 msgstr "Propietats"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
-#: core/libs/settings/applicationsettings_miscs.cpp:441
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid "Metadata"
@@ -39439,46 +39439,46 @@ msgstr "Format d'imatge RAW de càmeres digitals Phase One"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Format d'imatge RAW de càmeres digitals Arriflex"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:411
+#: core/libs/settings/applicationsettings_miscs.cpp:412
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Voleu fer esta operació per a tots els elements del grup?"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:413
+#: core/libs/settings/applicationsettings_miscs.cpp:414
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Recorda la tria per a esta operació"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:444
+#: core/libs/settings/applicationsettings_miscs.cpp:448
 #: core/utilities/lighttable/lighttablewindow.cpp:48
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Taula de llum"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:447
+#: core/libs/settings/applicationsettings_miscs.cpp:453
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Gestor de la cua per lots"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:453
+#: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
 msgid "Renaming"
 msgstr "Canvi de nom"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:456
+#: core/libs/settings/applicationsettings_miscs.cpp:468
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Eines d'importació/exportació"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:459
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr "Eines (editor, panorama, barreja apilada, calendari, programa extern)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:471
+#: core/libs/settings/applicationsettings_miscs.cpp:490
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -39487,32 +39487,32 @@ msgstr ""
 "Operacions relacionades amb metadades, rètols, valoracions, etiquetes, "
 "geolocalització i gir"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:474
+#: core/libs/settings/applicationsettings_miscs.cpp:495
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Afegir elements a la taula de llum"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:477
+#: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Afegir elements al gestor de la cua per lots"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:480
+#: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Obrir elements en la presentació de diapositives"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:483
+#: core/libs/settings/applicationsettings_miscs.cpp:510
 #, kde-format
 msgid "Renaming items"
 msgstr "Canvi de nom d'elements"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:486
+#: core/libs/settings/applicationsettings_miscs.cpp:515
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr "Passar elements a les eines d'importació/exportació"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:489
+#: core/libs/settings/applicationsettings_miscs.cpp:520
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -39521,49 +39521,49 @@ msgstr ""
 "Eines diverses incloent l'editor, panorama, barreja apilada, calendari, "
 "galeria HTML i obertura amb programes externs"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:49
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Categoria"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:50
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Viatges"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:51
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Vacances"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:52
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Amics"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:53
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Natura"
 
-#: core/libs/settings/applicationsettings_p.cpp:275
+#: core/libs/settings/applicationsettings_p.cpp:54
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Festa"
 
-#: core/libs/settings/applicationsettings_p.cpp:276
+#: core/libs/settings/applicationsettings_p.cpp:55
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Per fer"
 
-#: core/libs/settings/applicationsettings_p.cpp:277
+#: core/libs/settings/applicationsettings_p.cpp:56
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
