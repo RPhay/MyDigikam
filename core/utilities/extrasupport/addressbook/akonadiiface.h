@@ -51,8 +51,8 @@ private Q_SLOTS:
 
 private:
 
-    QMenu* m_parent;
-    QMenu* m_ABCmenu;
+    QMenu* m_parent  = nullptr;
+    QMenu* m_ABCmenu = nullptr;
 };
 
 } // namespace Digikam

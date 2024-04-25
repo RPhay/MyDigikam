@@ -34,14 +34,10 @@ class Q_DECL_HIDDEN BalooWrap::Private
 {
 public:
 
-    explicit Private()
-      : syncFromDigikamToBaloo(false),
-        syncFromBalooToDigikam(false)
-    {
-    }
+    Private() = default;
 
-    bool syncFromDigikamToBaloo;
-    bool syncFromBalooToDigikam;
+    bool syncFromDigikamToBaloo = false;
+    bool syncFromBalooToDigikam = false;
 };
 
 QPointer<BalooWrap> BalooWrap::internalPtr = QPointer<BalooWrap>();

@@ -36,14 +36,11 @@ class BalooInfo
 {
 public:
 
-    BalooInfo()
-      : rating(-1)
-    {
-    }
+    BalooInfo() = default;
 
     QStringList tags;
     QString     comment;
-    int         rating;
+    int         rating = -1;
 };
 
 /**

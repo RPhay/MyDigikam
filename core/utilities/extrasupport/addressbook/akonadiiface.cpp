@@ -59,7 +59,7 @@ namespace Digikam
 // See techbase.kde.org/Development/AkonadiPorting/AddressBook
 
 AkonadiIface::AkonadiIface(QMenu* const parent)
-    : QObject(parent),
+    : QObject (parent),
       m_parent(parent)
 {
     m_ABCmenu                   = new QMenu(m_parent);
