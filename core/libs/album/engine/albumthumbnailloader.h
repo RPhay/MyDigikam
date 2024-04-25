@@ -141,6 +141,7 @@ public:
     QPixmap getStandardEmptyTrashIcon(RelativeSize size = NormalSize);
     QPixmap getStandardFullTrashIcon(RelativeSize size = NormalSize);
     QPixmap getStandardAlbumRootIcon(RelativeSize size = NormalSize);
+    QPixmap getStandardOfflineIcon(RelativeSize size = NormalSize);
     QPixmap getStandardAlbumIcon(RelativeSize size = NormalSize);
 
     /**

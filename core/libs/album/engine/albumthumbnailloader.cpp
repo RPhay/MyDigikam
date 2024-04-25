@@ -33,6 +33,8 @@
 #include "albummanager.h"
 #include "thememanager.h"
 #include "applicationsettings.h"
+#include "collectionlocation.h"
+#include "collectionmanager.h"
 #include "coredb.h"
 #include "coredbaccess.h"
 #include "iteminfo.h"
@@ -220,6 +222,11 @@ QPixmap AlbumThumbnailLoader::getStandardAlbumRootIcon(RelativeSize relativeSize
     return loadIcon(QLatin1String("folder-pictures"), computeIconSize(relativeSize));
 }
 
+QPixmap AlbumThumbnailLoader::getStandardOfflineIcon(RelativeSize relativeSize)
+{
+    return loadIcon(QLatin1String("data-error"), computeIconSize(relativeSize));
+}
+
 QPixmap AlbumThumbnailLoader::getStandardAlbumIcon(RelativeSize relativeSize)
 {
     return loadIcon(QLatin1String("folder"), computeIconSize(relativeSize));
@@ -392,6 +399,16 @@ bool AlbumThumbnailLoader::getAlbumThumbnail(PAlbum* const album)
 
 QPixmap AlbumThumbnailLoader::getAlbumThumbnailDirectly(PAlbum* const album)
 {
+    if (album->isAlbumRoot())
+    {
+        CollectionLocation location = CollectionManager::instance()->locationForAlbumRootId(album->albumRootId());
+
+        if (location.isNull() || !location.isAvailable())
+        {
+            return getStandardOfflineIcon();
+        }
+    }
+
     if (album->iconId() && !album->isTrashAlbum() && (d->iconSize > d->minBlendSize))
     {
         // icon cached?
