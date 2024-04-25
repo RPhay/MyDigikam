@@ -33,13 +33,6 @@ RGBackend::RGBackend(QObject* const parent)
 {
 }
 
-/**
- * Destructor
- */
-RGBackend::~RGBackend()
-{
-}
-
 QString RGBackend::getErrorMessage()
 {
     return QString();

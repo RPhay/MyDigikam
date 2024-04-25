@@ -35,10 +35,7 @@ class Q_DECL_HIDDEN OsmInternalJobs
 {
 public:
 
-    OsmInternalJobs()
-      : netReply(nullptr)
-    {
-    }
+    OsmInternalJobs() = default;
 
     ~OsmInternalJobs()
     {
@@ -52,22 +49,19 @@ public:
     QList<RGInfo>      request;
     QByteArray         data;
 
-    QNetworkReply*     netReply;
+    QNetworkReply*     netReply = nullptr;
 };
 
 class Q_DECL_HIDDEN BackendOsmRG::Private
 {
 public:
 
-    explicit Private()
-      : mngr(nullptr)
-    {
-    }
+    Private() = default;
 
     QList<OsmInternalJobs> jobs;
     QString                errorMessage;
 
-    QNetworkAccessManager* mngr;
+    QNetworkAccessManager* mngr = nullptr;
 };
 
 /**
@@ -185,7 +179,8 @@ QMap<QString, QString> BackendOsmRG::makeQMapFromXML(const QString& xmlData)
 
         if (!e.isNull())
         {
-            if ((e.tagName() == QLatin1String("country"))         ||
+            if (
+                (e.tagName() == QLatin1String("country"))         ||
                 (e.tagName() == QLatin1String("country_code"))    ||
                 (e.tagName() == QLatin1String("state"))           ||
                 (e.tagName() == QLatin1String("state_district"))  ||
@@ -198,7 +193,8 @@ QMap<QString, QString> BackendOsmRG::makeQMapFromXML(const QString& xmlData)
                 (e.tagName() == QLatin1String("hamlet"))          ||
                 (e.tagName() == QLatin1String("place"))           ||
                 (e.tagName() == QLatin1String("road"))            ||
-                (e.tagName() == QLatin1String("house_number")))
+                (e.tagName() == QLatin1String("house_number"))
+               )
             {
                 mappedData.insert(e.tagName(), e.text());
                 resultString.append(e.tagName() + QLatin1Char(':') + e.text() + QLatin1Char('\n'));
@@ -236,7 +232,9 @@ void BackendOsmRG::slotFinished(QNetworkReply* reply)
             if (reply->error() != QNetworkReply::NoError)
             {
                 d->errorMessage = reply->errorString();
+
                 Q_EMIT signalRGReady(d->jobs.first().request);
+
                 reply->deleteLater();
                 d->jobs.clear();
 

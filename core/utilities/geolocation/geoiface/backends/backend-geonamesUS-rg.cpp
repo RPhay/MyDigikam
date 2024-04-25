@@ -41,10 +41,7 @@ class Q_DECL_HIDDEN GeonamesUSInternalJobs
 
 public:
 
-    GeonamesUSInternalJobs()
-      : netReply(nullptr)
-    {
-    }
+    GeonamesUSInternalJobs() = default;
 
     ~GeonamesUSInternalJobs()
     {
@@ -58,7 +55,7 @@ public:
     QList<RGInfo>      request;
     QByteArray         data;
 
-    QNetworkReply*     netReply;
+    QNetworkReply*     netReply = nullptr;
 };
 
 class Q_DECL_HIDDEN BackendGeonamesUSRG::Private
@@ -66,19 +63,14 @@ class Q_DECL_HIDDEN BackendGeonamesUSRG::Private
 
 public:
 
-    explicit Private()
-      : itemCounter (0),
-        itemCount   (0),
-        mngr        (nullptr)
-    {
-    }
+    Private() = default;
 
-    int                           itemCounter;
-    int                           itemCount;
+    int                           itemCounter   = 0;
+    int                           itemCount     = 0;
     QList<GeonamesUSInternalJobs> jobs;
     QString                       errorMessage;
 
-    QNetworkAccessManager*        mngr;
+    QNetworkAccessManager*        mngr          = nullptr;
 };
 
 /**
@@ -228,7 +220,9 @@ void BackendGeonamesUSRG::slotFinished(QNetworkReply* reply)
             if (reply->error() != QNetworkReply::NoError)
             {
                 d->errorMessage = reply->errorString();
+
                 Q_EMIT signalRGReady(d->jobs.first().request);
+
                 reply->deleteLater();
                 d->jobs.clear();
 
