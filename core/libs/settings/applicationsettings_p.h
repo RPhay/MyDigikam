@@ -239,49 +239,49 @@ public:
 
     /// Icon-view tooltip settings
     bool                                         showToolTips                                       = false;
-    bool                                         tooltipShowFileName                                = false;
+    bool                                         tooltipShowFileName                                = true;
     bool                                         tooltipShowFileDate                                = false;
     bool                                         tooltipShowFileSize                                = false;
     bool                                         tooltipShowImageType                               = false;
-    bool                                         tooltipShowImageDim                                = false;
-    bool                                         tooltipShowImageAR                                 = false;
-    bool                                         tooltipShowPhotoMake                               = false;
-    bool                                         tooltipShowPhotoLens                               = false;
-    bool                                         tooltipShowPhotoDate                               = false;
-    bool                                         tooltipShowPhotoFocal                              = false;
-    bool                                         tooltipShowPhotoExpo                               = false;
-    bool                                         tooltipShowPhotoMode                               = false;
+    bool                                         tooltipShowImageDim                                = true;
+    bool                                         tooltipShowImageAR                                 = true;
+    bool                                         tooltipShowPhotoMake                               = true;
+    bool                                         tooltipShowPhotoLens                               = true;
+    bool                                         tooltipShowPhotoDate                               = true;
+    bool                                         tooltipShowPhotoFocal                              = true;
+    bool                                         tooltipShowPhotoExpo                               = true;
+    bool                                         tooltipShowPhotoMode                               = true;
     bool                                         tooltipShowPhotoFlash                              = false;
     bool                                         tooltipShowPhotoWb                                 = false;
     bool                                         tooltipShowAlbumName                               = false;
     bool                                         tooltipShowTitles                                  = false;
-    bool                                         tooltipShowComments                                = false;
-    bool                                         tooltipShowTags                                    = false;
-    bool                                         tooltipShowLabelRating                             = false;
-    bool                                         tooltipShowVideoAspectRatio                        = false;
-    bool                                         tooltipShowVideoAudioBitRate                       = false;
-    bool                                         tooltipShowVideoAudioChannelType                   = false;
-    bool                                         tooltipShowVideoAudioCodec                         = false;
-    bool                                         tooltipShowVideoDuration                           = false;
-    bool                                         tooltipShowVideoFrameRate                          = false;
-    bool                                         tooltipShowVideoVideoCodec                         = false;
+    bool                                         tooltipShowComments                                = true;
+    bool                                         tooltipShowTags                                    = true;
+    bool                                         tooltipShowLabelRating                             = true;
+    bool                                         tooltipShowVideoAspectRatio                        = true;
+    bool                                         tooltipShowVideoAudioBitRate                       = true;
+    bool                                         tooltipShowVideoAudioChannelType                   = true;
+    bool                                         tooltipShowVideoAudioCodec                         = true;
+    bool                                         tooltipShowVideoDuration                           = true;
+    bool                                         tooltipShowVideoFrameRate                          = true;
+    bool                                         tooltipShowVideoVideoCodec                         = true;
 
-    QFont                                        toolTipsFont;
+    QFont                                        toolTipsFont                                       = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     /// Folder-view tooltip settings
     bool                                         showAlbumToolTips                                  = false;
-    bool                                         tooltipShowAlbumTitle                              = false;
-    bool                                         tooltipShowAlbumDate                               = false;
-    bool                                         tooltipShowAlbumCollection                         = false;
-    bool                                         tooltipShowAlbumCategory                           = false;
-    bool                                         tooltipShowAlbumCaption                            = false;
+    bool                                         tooltipShowAlbumTitle                              = true;
+    bool                                         tooltipShowAlbumDate                               = true;
+    bool                                         tooltipShowAlbumCollection                         = true;
+    bool                                         tooltipShowAlbumCategory                           = true;
+    bool                                         tooltipShowAlbumCaption                            = true;
     bool                                         tooltipShowAlbumPreview                            = false;
 
     /// preview settings
     PreviewSettings                              previewSettings;
     bool                                         scaleFitToWindow                                   = false;
     bool                                         previewShowIcons                                   = true;
-    bool                                         showThumbbar                                       = false;
+    bool                                         showThumbbar                                       = true;
 
     bool                                         showFolderTreeViewItemsCount                       = false;
 
@@ -294,7 +294,7 @@ public:
     int                                          thumbnailSize                                      = ThumbnailSize::Medium;
     int                                          ratingFilterCond                                   = ItemFilterSettings::GreaterEqualCondition;
     bool                                         recursiveAlbums                                    = false;
-    bool                                         recursiveTags                                      = false;
+    bool                                         recursiveTags                                      = true;
     bool                                         allGroupsOpen                                      = false;
 
     /// theme settings
@@ -341,9 +341,9 @@ public:
 
     /// misc
     ApplicationSettings::StringComparisonType    stringComparisonType                               = ApplicationSettings::Natural;
-    QString                                      applicationStyle;
-    QString                                      applicationIcon;
-    QFont                                        applicationFont;
+    QString                                      applicationStyle                                   = qApp->style()->objectName();
+    QString                                      applicationIcon                                    = QString();
+    QFont                                        applicationFont                                    = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     int                                          minimumSimilarityBound                             = 40;
     int                                          duplicatesSearchLastMinSimilarity                  = 90;
