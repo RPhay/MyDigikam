@@ -34,7 +34,7 @@ ImportUI::ImportUI(const QString& cameraTitle, const QString& model,
     setFullScreenOptions(FS_IMPORTUI);
     setWindowFlags(Qt::Window);
 
-    m_instance = this;
+    m_instance     = this;
 
     // --------------------------------------------------------
 
@@ -61,15 +61,15 @@ ImportUI::ImportUI(const QString& cameraTitle, const QString& model,
     setAutoSaveSettings(configGroupName(), true);
 
     // -------------------------------------------------------------------
+/*
+    d->historyUpdater = new CameraHistoryUpdater(this);
 
-    //d->historyUpdater = new CameraHistoryUpdater(this);
+    connect(d->historyUpdater, SIGNAL(signalHistoryMap(CHUpdateItemMap)),
+            this, SLOT(slotRefreshIconView(CHUpdateItemMap)));
 
-    //connect (d->historyUpdater, SIGNAL(signalHistoryMap(CHUpdateItemMap)),
-    //this, SLOT(slotRefreshIconView(CHUpdateItemMap)));
-
-    //connect(d->historyUpdater, SIGNAL(signalBusy(bool)),
-    //        this, SLOT(slotBusy(bool)));
-
+    connect(d->historyUpdater, SIGNAL(signalBusy(bool)),
+            this, SLOT(slotBusy(bool)));
+*/
     // --------------------------------------------------------
 
     d->progressTimer = new QTimer(this);
@@ -88,6 +88,7 @@ ImportUI::ImportUI(const QString& cameraTitle, const QString& model,
     slotZoomSliderChanged(ImportSettings::instance()->getDefaultIconSize());
 
     // try to connect in the end, this allows us not to block the UI to show up..
+
     QTimer::singleShot(0, d->controller, SLOT(slotConnect()));
 }
 
@@ -378,12 +379,14 @@ void ImportUI::setupActions()
     d->imageViewSelectionAction->addAction(d->camItemPreviewAction);
 
 #ifdef HAVE_GEOLOCATION
+
     d->mapViewAction = new QAction(QIcon::fromTheme(QLatin1String("globe")),
                                    i18nc("@action Switch to map view", "Map"), this);
     d->mapViewAction->setCheckable(true);
     ac->addAction(QLatin1String("importui_map_view"), d->mapViewAction);
     connect(d->mapViewAction, SIGNAL(triggered()), d->view, SLOT(slotMapWidgetView()));
     d->imageViewSelectionAction->addAction(d->mapViewAction);
+
 #endif // HAVE_GEOLOCATION
 
     /// @todo Add table view stuff here
@@ -395,6 +398,7 @@ void ImportUI::setupActions()
     ac->addAction(QLatin1String("item_sort"), d->itemSortAction);
 
     // map to CamItemSortSettings enum
+
     QAction* const sortByNameAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Name"));
     QAction* const sortByPathAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Path"));
     QAction* const sortByDateAction     = d->itemSortAction->addAction(i18nc("@item:inmenu Sort by", "By Date"));
@@ -448,6 +452,7 @@ void ImportUI::setupActions()
     ac->addAction(QLatin1String("item_group"), d->itemsGroupAction);
 
     // map to CamItemSortSettings enum
+
     QAction* const noCategoriesAction  = d->itemsGroupAction->addAction(i18nc("@item:inmenu Group Items", "Flat List"));
     QAction* const groupByFolderAction = d->itemsGroupAction->addAction(i18nc("@item:inmenu Group Items", "By Folder"));
     QAction* const groupByFormatAction = d->itemsGroupAction->addAction(i18nc("@item:inmenu Group Items", "By Format"));
@@ -521,12 +526,15 @@ void ImportUI::setupActions()
     createHelpActions(QLatin1String("camera_import"));
 
     // Provides a menu entry that allows showing/hiding the toolbar(s)
+
     setStandardToolBarMenuEnabled(true);
 
     // Provides a menu entry that allows showing/hiding the statusbar
+
     createStandardStatusBarAction();
 
     // Standard 'Configure' menu actions
+
     createSettingsActions();
 
     // -- Keyboard-only actions added to <MainWindow> ----------------------------------
@@ -562,6 +570,7 @@ void ImportUI::updateActions()
     {
         // only enable "Mark as downloaded" if at least one
         // selected image has not been downloaded
+
         bool haveNotDownloadedItem = false;
 
         Q_FOREACH (const CamItemInfo& info, list)
@@ -584,7 +593,8 @@ void ImportUI::updateActions()
 
 void ImportUI::setupConnections()
 {
-    //TODO: Needs testing.
+    // TODO: Needs testing.
+
     connect(d->advancedSettings, SIGNAL(signalDownloadNameChanged()),
             this, SLOT(slotUpdateRenamePreview()));
 
@@ -921,6 +931,7 @@ void ImportUI::closeEvent(QCloseEvent* e)
 void ImportUI::moveEvent(QMoveEvent* e)
 {
     Q_UNUSED(e)
+
     Q_EMIT signalWindowHasMoved();
 }
 
@@ -1101,7 +1112,7 @@ void ImportUI::slotConnected(bool val)
         d->errorWidget->hide();
         refreshFreeSpace();
 
-        // FIXME ugly c&p from slotFolderList
+        // FIXME: ugly c&p from slotFolderList
 
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
         KConfigGroup group        = config->group(d->configGroupName);
@@ -1331,9 +1342,11 @@ void ImportUI::slotDownloadAndDeleteAll()
 
 void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
 {
-    if (d->albumCustomizer->autoAlbumDateEnabled()                                    &&
+    if (
+        d->albumCustomizer->autoAlbumDateEnabled()                                    &&
         (d->albumCustomizer->folderDateFormat() == AlbumCustomizer::CustomDateFormat) &&
-        !d->albumCustomizer->customDateFormatIsValid())
+        !d->albumCustomizer->customDateFormatIsValid()
+       )
     {
         QMessageBox::information(this, qApp->applicationName(),
                                  i18nc("@info", "Your custom target album date format is not valid. Please check your settings..."));
@@ -1348,6 +1361,7 @@ void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
     }
 
     // Update the download names.
+
     slotNewSelection(d->view->selectedUrls().count() > 0);
 
     // -- Get the destination album from digiKam library ---------------
@@ -1515,8 +1529,10 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, const 
         }
     }
 
-    if ((status == CamItemInfo::DownloadedYes) ||
-        (status == CamItemInfo::DownloadFailed))
+    if (
+        (status == CamItemInfo::DownloadedYes) ||
+        (status == CamItemInfo::DownloadFailed)
+       )
     {
         int curr = d->statusProgressBar->progressValue();
         d->statusProgressBar->setProgressValue(curr + 1);
@@ -1651,7 +1667,7 @@ void ImportUI::slotUpdateRenamePreview()
 
     QString newName = info.name;
 
-    if (d->renameCustomizer->useDefault())
+    if      (d->renameCustomizer->useDefault())
     {
         newName = d->renameCustomizer->newName(info.name);
     }
@@ -1667,7 +1683,7 @@ void ImportUI::slotUpdateRenamePreview()
 
         if (!ext.isEmpty())
         {
-            if (ext[0].isUpper() && ext[ext.length()-1].isUpper())
+            if      (ext[0].isUpper() && ext[ext.length()-1].isUpper())
             {
                 ext = settings.losslessFormat.toUpper();
             }
@@ -1698,7 +1714,7 @@ void ImportUI::slotUpdateRenamePreview()
 
         if (!ext.isEmpty())
         {
-            if (ext[0].isUpper() && (ext[ext.length()-1].isUpper() || ext[ext.length()-1].isDigit()))
+            if      (ext[0].isUpper() && (ext[ext.length()-1].isUpper() || ext[ext.length()-1].isDigit()))
             {
                 ext = QLatin1String("DNG");
             }
@@ -1852,7 +1868,7 @@ void ImportUI::itemsSelectionSizeInfo(qint64& fSizeBytes, qint64& dSizeBytes)
 
             if (info.mime == QLatin1String("image/jpeg"))
             {
-                if (settings.convertJpeg)
+                if      (settings.convertJpeg)
                 {
                     // Estimated size is around 5 x original size when JPEG=>PNG.
 
@@ -2121,20 +2137,28 @@ bool ImportUI::createDateBasedSubAlbum(QUrl& downloadUrl, const QDateTime& dateT
     switch (d->albumCustomizer->folderDateFormat())
     {
         case AlbumCustomizer::TextDateFormat:
+        {
             dirName = dateTime.date().toString(Qt::TextDate);
             break;
+        }
 
         case AlbumCustomizer::LocalDateFormat:
+        {
             dirName = QLocale().toString(dateTime, QLocale::ShortFormat);
             break;
+        }
 
         case AlbumCustomizer::IsoDateFormat:
+        {
             dirName = dateTime.date().toString(Qt::ISODate);
             break;
+        }
 
         default:        // Custom
+        {
             dirName = dateTime.date().toString(d->albumCustomizer->customDateFormat());
             break;
+        }
     }
 
     return createSubAlbum(downloadUrl, dirName, dateTime.date());
@@ -2768,12 +2792,16 @@ void ImportUI::toogleShowBar()
     {
         case ImportStackedView::PreviewImageMode:
         case ImportStackedView::MediaPlayerMode:
+        {
             d->showBarAction->setEnabled(true);
             break;
+        }
 
         default:
+        {
             d->showBarAction->setEnabled(false);
             break;
+        }
     }
 }
 

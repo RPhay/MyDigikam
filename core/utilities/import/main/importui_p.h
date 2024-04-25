@@ -153,106 +153,12 @@ class Q_DECL_HIDDEN ImportUI::Private
 {
 public:
 
-    Private()
-      : waitAutoRotate                  (false),
-        deleteAfter                     (false),
-        busy                            (false),
-        closed                          (false),
-        downloadMenu                    (nullptr),
-        deleteMenu                      (nullptr),
-        imageMenu                       (nullptr),
-        cameraCancelAction              (nullptr),
-        cameraCaptureAction             (nullptr),
-        cameraInfoAction                (nullptr),
-        increaseThumbsAction            (nullptr),
-        decreaseThumbsAction            (nullptr),
-        zoomFitToWindowAction           (nullptr),
-        zoomTo100percents               (nullptr),
-        deleteAction                    (nullptr),
-        deleteNewAction                 (nullptr),
-        deleteAllAction                 (nullptr),
-        deleteSelectedAction            (nullptr),
-        downloadAction                  (nullptr),
-        downloadNewAction               (nullptr),
-        downloadAllAction               (nullptr),
-        downloadSelectedAction          (nullptr),
-        downloadDelNewAction            (nullptr),
-        downloadDelAllAction            (nullptr),
-        downloadDelSelectedAction       (nullptr),
-        lockAction                      (nullptr),
-        selectAllAction                 (nullptr),
-        selectInvertAction              (nullptr),
-        selectLockedItemsAction         (nullptr),
-        selectNewItemsAction            (nullptr),
-        selectNoneAction                (nullptr),
-        uploadAction                    (nullptr),
-        markAsDownloadedAction          (nullptr),
-        resumeAction                    (nullptr),
-        pauseAction                     (nullptr),
-        connectAction                   (nullptr),
-        itemSortAction                  (nullptr),
-        itemSortOrderAction             (nullptr),
-        itemsGroupAction                (nullptr),
-        showPreferencesAction           (nullptr),
-        showLogAction                   (nullptr),
-        showBarAction                   (nullptr),
-        imageViewSelectionAction        (nullptr),
-        iconViewAction                  (nullptr),
-        camItemPreviewAction            (nullptr),
+    Private() = default;
 
-#ifdef HAVE_GEOLOCATION
-
-        mapViewAction                   (nullptr),
-
-#endif // HAVE_GEOLOCATION
-
-        viewCMViewAction                (nullptr),
-        cameraActions                   (nullptr),
-        advBox                          (nullptr),
-        splitter                        (nullptr),
-        camThumbsCtrl                   (nullptr),
-        controller                      (nullptr),
-/*
-        //historyUpdater                (0),
-*/
-        view                            (nullptr),
-        renameCustomizer                (nullptr),
-        albumCustomizer                 (nullptr),
-        advancedSettings                (nullptr),
-
-#ifdef HAVE_JXL
-
-        dngConvertSettings              (nullptr),
-
-#endif
-
-        scriptingSettings               (nullptr),
-        filterStatusBar                 (nullptr),
-        rightSideBar                    (nullptr),
-        zoomBar                         (nullptr),
-        statusProgressBar               (nullptr),
-        albumLibraryFreeSpace           (nullptr),
-        cameraFreeSpace                 (nullptr),
-        progressTimer                   (nullptr),
-        progressValue                   (0),
-        historyView                     (nullptr),
-        filterComboBox                  (nullptr),
-        errorWidget                     (nullptr)
-    {
-    }
-
-    static const QString                     configGroupName;
-    static const QString                     configUseFileMetadata;
-    static const QString                     configUseDefaultTargetAlbum;
-    static const QString                     configLastTargetAlbum;
-    static const QString                     configDefaultTargetAlbumId;
-    static const QString                     configFileSaveConflictRule;
-    static const QString                     importFiltersConfigGroupName;
-
-    bool                                     waitAutoRotate;
-    bool                                     deleteAfter;
-    bool                                     busy;
-    bool                                     closed;
+    bool                                     waitAutoRotate                 = false;
+    bool                                     deleteAfter                    = false;
+    bool                                     busy                           = false;
+    bool                                     closed                         = false;
 
     QString                                  cameraTitle;
 
@@ -262,112 +168,112 @@ public:
     QStringList                              currentlyDeleting;
     QStringList                              foldersToScan;
 
-    QMenu*                                   downloadMenu;
-    QMenu*                                   deleteMenu;
-    QMenu*                                   imageMenu;
+    QMenu*                                   downloadMenu                   = nullptr;
+    QMenu*                                   deleteMenu                     = nullptr;
+    QMenu*                                   imageMenu                      = nullptr;
 
-    QAction*                                 cameraCancelAction;
-    QAction*                                 cameraCaptureAction;
-    QAction*                                 cameraInfoAction;
-    QAction*                                 increaseThumbsAction;
-    QAction*                                 decreaseThumbsAction;
-    QAction*                                 zoomFitToWindowAction;
-    QAction*                                 zoomTo100percents;
-    QMenu*                                   deleteAction;
-    QAction*                                 deleteNewAction;
-    QAction*                                 deleteAllAction;
-    QAction*                                 deleteSelectedAction;
-    QMenu*                                   downloadAction;
-    QAction*                                 downloadNewAction;
-    QAction*                                 downloadAllAction;
-    QAction*                                 downloadSelectedAction;
-    QAction*                                 downloadDelNewAction;
-    QAction*                                 downloadDelAllAction;
-    QAction*                                 downloadDelSelectedAction;
-    QAction*                                 lockAction;
-    QAction*                                 selectAllAction;
-    QAction*                                 selectInvertAction;
-    QAction*                                 selectLockedItemsAction;
-    QAction*                                 selectNewItemsAction;
-    QAction*                                 selectNoneAction;
-    QAction*                                 uploadAction;
-    QAction*                                 markAsDownloadedAction;
-    QAction*                                 resumeAction;
-    QAction*                                 pauseAction;
-    QAction*                                 connectAction;
-    KSelectAction*                           itemSortAction;
-    KSelectAction*                           itemSortOrderAction;
-    KSelectAction*                           itemsGroupAction;
-    QAction*                                 showPreferencesAction;
-    QAction*                                 showLogAction;
-    QAction*                                 showBarAction;
-    KSelectAction*                           imageViewSelectionAction;
-    QAction*                                 iconViewAction;
-    QAction*                                 camItemPreviewAction;
+    QAction*                                 cameraCancelAction             = nullptr;
+    QAction*                                 cameraCaptureAction            = nullptr;
+    QAction*                                 cameraInfoAction               = nullptr;
+    QAction*                                 increaseThumbsAction           = nullptr;
+    QAction*                                 decreaseThumbsAction           = nullptr;
+    QAction*                                 zoomFitToWindowAction          = nullptr;
+    QAction*                                 zoomTo100percents              = nullptr;
+    QMenu*                                   deleteAction                   = nullptr;
+    QAction*                                 deleteNewAction                = nullptr;
+    QAction*                                 deleteAllAction                = nullptr;
+    QAction*                                 deleteSelectedAction           = nullptr;
+    QMenu*                                   downloadAction                 = nullptr;
+    QAction*                                 downloadNewAction              = nullptr;
+    QAction*                                 downloadAllAction              = nullptr;
+    QAction*                                 downloadSelectedAction         = nullptr;
+    QAction*                                 downloadDelNewAction           = nullptr;
+    QAction*                                 downloadDelAllAction           = nullptr;
+    QAction*                                 downloadDelSelectedAction      = nullptr;
+    QAction*                                 lockAction                     = nullptr;
+    QAction*                                 selectAllAction                = nullptr;
+    QAction*                                 selectInvertAction             = nullptr;
+    QAction*                                 selectLockedItemsAction        = nullptr;
+    QAction*                                 selectNewItemsAction           = nullptr;
+    QAction*                                 selectNoneAction               = nullptr;
+    QAction*                                 uploadAction                   = nullptr;
+    QAction*                                 markAsDownloadedAction         = nullptr;
+    QAction*                                 resumeAction                   = nullptr;
+    QAction*                                 pauseAction                    = nullptr;
+    QAction*                                 connectAction                  = nullptr;
+    KSelectAction*                           itemSortAction                 = nullptr;
+    KSelectAction*                           itemSortOrderAction            = nullptr;
+    KSelectAction*                           itemsGroupAction               = nullptr;
+    QAction*                                 showPreferencesAction          = nullptr;
+    QAction*                                 showLogAction                  = nullptr;
+    QAction*                                 showBarAction                  = nullptr;
+    KSelectAction*                           imageViewSelectionAction       = nullptr;
+    QAction*                                 iconViewAction                 = nullptr;
+    QAction*                                 camItemPreviewAction           = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
-    QAction*                                 mapViewAction;
+    QAction*                                 mapViewAction                  = nullptr;
 
 #endif // HAVE_GEOLOCATION
 
-    QAction*                                 viewCMViewAction;
+    QAction*                                 viewCMViewAction               = nullptr;
 
-    QActionGroup*                            cameraActions;
+    QActionGroup*                            cameraActions                  = nullptr;
 
     QUrl                                     lastDestURL;
 
-    DExpanderBox*                            advBox;
+    DExpanderBox*                            advBox                         = nullptr;
 
-    SidebarSplitter*                         splitter;
+    SidebarSplitter*                         splitter                       = nullptr;
 
-    CameraThumbsCtrl*                        camThumbsCtrl;
-    CameraController*                        controller;
+    CameraThumbsCtrl*                        camThumbsCtrl                  = nullptr;
+    CameraController*                        controller                     = nullptr;
 /*
-    CameraHistoryUpdater*                    historyUpdater;
+    CameraHistoryUpdater*                    historyUpdater                 = nullptr;
 */
-    ImportView*                              view;
+    ImportView*                              view                           = nullptr;
 
-    RenameCustomizer*                        renameCustomizer;
-    AlbumCustomizer*                         albumCustomizer;
-    AdvancedSettings*                        advancedSettings;
+    RenameCustomizer*                        renameCustomizer               = nullptr;
+    AlbumCustomizer*                         albumCustomizer                = nullptr;
+    AdvancedSettings*                        advancedSettings               = nullptr;
 
 #ifdef HAVE_JXL
 
-    DNGConvertSettings*                      dngConvertSettings;
+    DNGConvertSettings*                      dngConvertSettings             = nullptr;
 
 #endif
 
-    ScriptingSettings*                       scriptingSettings;
+    ScriptingSettings*                       scriptingSettings              = nullptr;
 
-    FilterStatusBar*                         filterStatusBar;
-    ImportItemPropertiesSideBarImport*       rightSideBar;
+    FilterStatusBar*                         filterStatusBar                = nullptr;
+    ImportItemPropertiesSideBarImport*       rightSideBar                   = nullptr;
 
-    DZoomBar*                                zoomBar;
-    StatusProgressBar*                       statusProgressBar;
+    DZoomBar*                                zoomBar                        = nullptr;
+    StatusProgressBar*                       statusProgressBar              = nullptr;
 
-    FreeSpaceWidget*                         albumLibraryFreeSpace;
-    FreeSpaceWidget*                         cameraFreeSpace;
+    FreeSpaceWidget*                         albumLibraryFreeSpace          = nullptr;
+    FreeSpaceWidget*                         cameraFreeSpace                = nullptr;
 
-    QTimer*                                  progressTimer;
+    QTimer*                                  progressTimer                  = nullptr;
 
-    float                                    progressValue;
+    float                                    progressValue                  = 0.0F;
 
-    DHistoryView*                            historyView;
-    ImportFilterComboBox*                    filterComboBox;
+    DHistoryView*                            historyView                    = nullptr;
+    ImportFilterComboBox*                    filterComboBox                 = nullptr;
 /*
     CHUpdateItemMap                          map;
 */
-    DNotificationWidget*                     errorWidget;
-};
+    DNotificationWidget*                     errorWidget                    = nullptr;
 
-const QString ImportUI::Private::configGroupName(QLatin1String("Camera Settings"));
-const QString ImportUI::Private::configUseFileMetadata(QLatin1String("UseFileMetadata"));
-const QString ImportUI::Private::configUseDefaultTargetAlbum(QLatin1String("UseDefaultTargetAlbum"));
-const QString ImportUI::Private::configLastTargetAlbum(QLatin1String("LastTargetAlbum"));
-const QString ImportUI::Private::configDefaultTargetAlbumId(QLatin1String("DefaultTargetAlbumId"));
-const QString ImportUI::Private::configFileSaveConflictRule(QLatin1String("FileSaveConflictRule"));
-const QString ImportUI::Private::importFiltersConfigGroupName(QLatin1String("Import Filters"));
+    const QString                            configGroupName                = QLatin1String("Camera Settings");
+    const QString                            configUseFileMetadata          = QLatin1String("UseFileMetadata");
+    const QString                            configUseDefaultTargetAlbum    = QLatin1String("UseDefaultTargetAlbum");
+    const QString                            configLastTargetAlbum          = QLatin1String("LastTargetAlbum");
+    const QString                            configDefaultTargetAlbumId     = QLatin1String("DefaultTargetAlbumId");
+    const QString                            configFileSaveConflictRule     = QLatin1String("FileSaveConflictRule");
+    const QString                            importFiltersConfigGroupName   = QLatin1String("Import Filters");
+};
 
 } // namespace Digikam
 

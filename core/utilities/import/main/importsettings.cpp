@@ -36,173 +36,100 @@ class Q_DECL_HIDDEN ImportSettings::Private
 {
 public:
 
-    explicit Private()
-      : iconShowName                (true),
-        iconShowSize                (false),
-        iconShowDate                (true),
-        iconShowTitle               (false),
-        iconShowResolution          (false),
-        iconShowTags                (false),
-        iconShowOverlays            (false),
-        iconShowRating              (false),
-        iconShowImageFormat         (false),
-        iconShowCoordinates         (false),
-        thumbnailSize               (0),
-        imageSortOrder              (0),
-        imageSortBy                 (0),
-        imageSeparationMode         (0),
-        itemLeftClickAction         (ImportSettings::ShowPreview),
-        showToolTips                (false),
-        tooltipShowFileName         (false),
-        tooltipShowFileDate         (false),
-        tooltipShowFileSize         (false),
-        tooltipShowImageType        (false),
-        tooltipShowImageDim         (true),
-        tooltipShowPhotoMake        (false),
-        tooltipShowPhotoLens        (false),
-        tooltipShowPhotoFocal       (false),
-        tooltipShowPhotoExpo        (false),
-        tooltipShowPhotoFlash       (false),
-        tooltipShowPhotoWb          (false),
-        tooltipShowFolderName       (false),
-        tooltipShowTags             (false),
-        tooltipShowLabelRating      (false),
-        previewLoadFullImageSize    (false),
-        previewItemsWhileDownload   (false),
-        previewShowIcons            (true),
-/*
-        ratingFilterCond            (0),
-*/
-        showThumbbar                (false)
-    {
-    }
-
-    static const QString                configGroupDefault;
-    static const QString                configImageSortOrderEntry;
-    static const QString                configImageSortByEntry;
-    static const QString                configImageSeparationModeEntry;
-    static const QString                configItemLeftClickActionEntry;
-    static const QString                configDefaultIconSizeEntry;
-    static const QString                configIconShowNameEntry;
-    static const QString                configIconShowResolutionEntry;
-    static const QString                configIconShowSizeEntry;
-    static const QString                configIconShowDateEntry;
-    static const QString                configIconShowTitleEntry;
-    static const QString                configIconShowTagsEntry;
-    static const QString                configIconShowOverlaysEntry;
-    static const QString                configIconShowRatingEntry;
-    static const QString                configIconShowImageFormatEntry;
-    static const QString                configIconShowCoordinatesEntry;
-    static const QString                configIconViewFontEntry;
-    static const QString                configToolTipsFontEntry;
-    static const QString                configShowToolTipsEntry;
-    static const QString                configToolTipsShowFileNameEntry;
-    static const QString                configToolTipsShowFileDateEntry;
-    static const QString                configToolTipsShowFileSizeEntry;
-    static const QString                configToolTipsShowImageTypeEntry;
-    static const QString                configToolTipsShowImageDimEntry;
-    static const QString                configToolTipsShowPhotoMakeEntry;
-    static const QString                configToolTipsShowPhotoLensEntry;
-    static const QString                configToolTipsShowPhotoDateEntry;
-    static const QString                configToolTipsShowPhotoFocalEntry;
-    static const QString                configToolTipsShowPhotoExpoEntry;
-    static const QString                configToolTipsShowPhotoFlashEntry;
-    static const QString                configToolTipsShowPhotoWBEntry;
-    static const QString                configToolTipsShowFolderNameEntry;
-    static const QString                configToolTipsShowTagsEntry;
-    static const QString                configToolTipsShowLabelRatingEntry;
-    static const QString                configPreviewLoadFullImageSizeEntry;
-    static const QString                configPreviewItemsWhileDownloadEntry;
-    static const QString                configPreviewShowIconsEntry;
-    static const QString                configShowThumbbarEntry;
+    Private() = default;
 
     // Import icon-view settings
-    bool                                iconShowName;
-    bool                                iconShowSize;
-    bool                                iconShowDate;
-    bool                                iconShowTitle;
-    bool                                iconShowResolution;
-    bool                                iconShowTags;
-    bool                                iconShowOverlays;
-    bool                                iconShowRating;
-    bool                                iconShowImageFormat;
-    bool                                iconShowCoordinates;
+    bool                                iconShowName                         = true;
+    bool                                iconShowSize                         = false;
+    bool                                iconShowDate                         = true;
+    bool                                iconShowTitle                        = false;
+    bool                                iconShowResolution                   = false;
+    bool                                iconShowTags                         = false;
+    bool                                iconShowOverlays                     = false;
+    bool                                iconShowRating                       = false;
+    bool                                iconShowImageFormat                  = false;
+    bool                                iconShowCoordinates                  = false;
 
     QFont                               iconviewFont;
 
-    int                                 thumbnailSize;
-    int                                 imageSortOrder;
-    int                                 imageSortBy;
-    int                                 imageSeparationMode;
-    int                                 itemLeftClickAction;
+    int                                 thumbnailSize                        = 0;
+    int                                 imageSortOrder                       = 0;
+    int                                 imageSortBy                          = 0;
+    int                                 imageSeparationMode                  = 0;
+    int                                 itemLeftClickAction                  = ImportSettings::ShowPreview;
 
     // Import icon-view tooltip settings
-    bool                                showToolTips;
-    bool                                tooltipShowFileName;
-    bool                                tooltipShowFileDate;
-    bool                                tooltipShowFileSize;
-    bool                                tooltipShowImageType;
-    bool                                tooltipShowImageDim;
-    bool                                tooltipShowPhotoMake;
-    bool                                tooltipShowPhotoLens;
-    bool                                tooltipShowPhotoFocal;
-    bool                                tooltipShowPhotoExpo;
-    bool                                tooltipShowPhotoFlash;
-    bool                                tooltipShowPhotoWb;
-    bool                                tooltipShowFolderName;
-    bool                                tooltipShowTags;
-    bool                                tooltipShowLabelRating;
+    bool                                showToolTips                         = false;
+    bool                                tooltipShowFileName                  = false;
+    bool                                tooltipShowFileDate                  = false;
+    bool                                tooltipShowFileSize                  = false;
+    bool                                tooltipShowImageType                 = false;
+    bool                                tooltipShowImageDim                  = true;
+    bool                                tooltipShowPhotoMake                 = false;
+    bool                                tooltipShowPhotoLens                 = false;
+    bool                                tooltipShowPhotoFocal                = false;
+    bool                                tooltipShowPhotoExpo                 = false;
+    bool                                tooltipShowPhotoFlash                = false;
+    bool                                tooltipShowPhotoWb                   = false;
+    bool                                tooltipShowFolderName                = false;
+    bool                                tooltipShowTags                      = false;
+    bool                                tooltipShowLabelRating               = false;
 
     QFont                               toolTipsFont;
 
     // preview settings
-    bool                                previewLoadFullImageSize;
-    bool                                previewItemsWhileDownload;
-    bool                                previewShowIcons;
-    bool                                showThumbbar;
+    bool                                previewLoadFullImageSize             = false;
+    bool                                previewItemsWhileDownload            = false;
+    bool                                previewShowIcons                     = true;
+    bool                                showThumbbar                         = false;
 
     KSharedConfigPtr                    config;
+
+    const QString                       configGroupDefault                   = QLatin1String("Import Settings");
+    const QString                       configImageSortOrderEntry            = QLatin1String("Image Sort Order");
+    const QString                       configImageSortByEntry               = QLatin1String("Image Sorting"); // TODO not changed due to backwards compatibility
+    const QString                       configImageSeparationModeEntry       = QLatin1String("Image Separation Mode");
+    const QString                       configItemLeftClickActionEntry       = QLatin1String("Item Left Click Action");
+    const QString                       configDefaultIconSizeEntry           = QLatin1String("Default Icon Size");
+/*
+    const QString                       configRatingFilterConditionEntry     = QLatin1String("Rating Filter Condition");
+*/
+    const QString                       configIconShowNameEntry              = QLatin1String("Icon Show Name");
+/*
+    const QString                       configIconShowResolutionEntry        = QLatin1String("Icon Show Resolution");
+*/
+    const QString                       configIconShowSizeEntry              = QLatin1String("Icon Show Size");
+    const QString                       configIconShowDateEntry              = QLatin1String("Icon Show Date");
+    const QString                       configIconShowTitleEntry             = QLatin1String("Icon Show Title");
+    const QString                       configIconShowTagsEntry              = QLatin1String("Icon Show Tags");
+    const QString                       configIconShowRatingEntry            = QLatin1String("Icon Show Rating");
+    const QString                       configIconShowImageFormatEntry       = QLatin1String("Icon Show Image Format");
+    const QString                       configIconShowCoordinatesEntry       = QLatin1String("Icon Show Coordinates");
+    const QString                       configIconShowOverlaysEntry          = QLatin1String("Icon Show Overlays");
+    const QString                       configIconViewFontEntry              = QLatin1String("IconView Font");
+    const QString                       configToolTipsFontEntry              = QLatin1String("ToolTips Font");
+    const QString                       configShowToolTipsEntry              = QLatin1String("Show ToolTips");
+    const QString                       configToolTipsShowFileNameEntry      = QLatin1String("ToolTips Show File Name");
+    const QString                       configToolTipsShowFileDateEntry      = QLatin1String("ToolTips Show File Date");
+    const QString                       configToolTipsShowFileSizeEntry      = QLatin1String("ToolTips Show File Size");
+    const QString                       configToolTipsShowImageTypeEntry     = QLatin1String("ToolTips Show Image Type");
+    const QString                       configToolTipsShowImageDimEntry      = QLatin1String("ToolTips Show Image Dim");
+    const QString                       configToolTipsShowPhotoMakeEntry     = QLatin1String("ToolTips Show Photo Make");
+    const QString                       configToolTipsShowPhotoLensEntry     = QLatin1String("ToolTips Show Photo Lens");
+    const QString                       configToolTipsShowPhotoDateEntry     = QLatin1String("ToolTips Show Photo Date");
+    const QString                       configToolTipsShowPhotoFocalEntry    = QLatin1String("ToolTips Show Photo Focal");
+    const QString                       configToolTipsShowPhotoExpoEntry     = QLatin1String("ToolTips Show Photo Expo");
+    const QString                       configToolTipsShowPhotoFlashEntry    = QLatin1String("ToolTips Show Photo Flash");
+    const QString                       configToolTipsShowPhotoWBEntry       = QLatin1String("ToolTips Show Photo WB");
+    const QString                       configToolTipsShowFolderNameEntry    = QLatin1String("ToolTips Show Folder Name");
+    const QString                       configToolTipsShowTagsEntry          = QLatin1String("ToolTips Show Tags");
+    const QString                       configToolTipsShowLabelRatingEntry   = QLatin1String("ToolTips Show Label Rating");
+    const QString                       configPreviewLoadFullImageSizeEntry  = QLatin1String("Preview Load Full Image Size");
+    const QString                       configPreviewItemsWhileDownloadEntry = QLatin1String("Preview Each Item While Downloading it");
+    const QString                       configPreviewShowIconsEntry          = QLatin1String("Preview Show Icons");
+    const QString                       configShowThumbbarEntry              = QLatin1String("Show Thumbbar");
  };
 
-const QString ImportSettings::Private::configGroupDefault(QLatin1String("Import Settings"));
-const QString ImportSettings::Private::configImageSortOrderEntry(QLatin1String("Image Sort Order"));
-const QString ImportSettings::Private::configImageSortByEntry(QLatin1String("Image Sorting")); // TODO not changed due to backwards compatibility
-const QString ImportSettings::Private::configImageSeparationModeEntry(QLatin1String("Image Separation Mode"));
-const QString ImportSettings::Private::configItemLeftClickActionEntry(QLatin1String("Item Left Click Action"));
-const QString ImportSettings::Private::configDefaultIconSizeEntry(QLatin1String("Default Icon Size"));
-//const QString ImportSettings::Private::configRatingFilterConditionEntry(QLatin1String("Rating Filter Condition"));
-const QString ImportSettings::Private::configIconShowNameEntry(QLatin1String("Icon Show Name"));
-//const QString ImportSettings::Private::configIconShowResolutionEntry(QLatin1String("Icon Show Resolution"));
-const QString ImportSettings::Private::configIconShowSizeEntry(QLatin1String("Icon Show Size"));
-const QString ImportSettings::Private::configIconShowDateEntry(QLatin1String("Icon Show Date"));
-const QString ImportSettings::Private::configIconShowTitleEntry(QLatin1String("Icon Show Title"));
-const QString ImportSettings::Private::configIconShowTagsEntry(QLatin1String("Icon Show Tags"));
-const QString ImportSettings::Private::configIconShowRatingEntry(QLatin1String("Icon Show Rating"));
-const QString ImportSettings::Private::configIconShowImageFormatEntry(QLatin1String("Icon Show Image Format"));
-const QString ImportSettings::Private::configIconShowCoordinatesEntry(QLatin1String("Icon Show Coordinates"));
-const QString ImportSettings::Private::configIconShowOverlaysEntry(QLatin1String("Icon Show Overlays"));
-const QString ImportSettings::Private::configIconViewFontEntry(QLatin1String("IconView Font"));
-const QString ImportSettings::Private::configToolTipsFontEntry(QLatin1String("ToolTips Font"));
-const QString ImportSettings::Private::configShowToolTipsEntry(QLatin1String("Show ToolTips"));
-const QString ImportSettings::Private::configToolTipsShowFileNameEntry(QLatin1String("ToolTips Show File Name"));
-const QString ImportSettings::Private::configToolTipsShowFileDateEntry(QLatin1String("ToolTips Show File Date"));
-const QString ImportSettings::Private::configToolTipsShowFileSizeEntry(QLatin1String("ToolTips Show File Size"));
-const QString ImportSettings::Private::configToolTipsShowImageTypeEntry(QLatin1String("ToolTips Show Image Type"));
-const QString ImportSettings::Private::configToolTipsShowImageDimEntry(QLatin1String("ToolTips Show Image Dim"));
-const QString ImportSettings::Private::configToolTipsShowPhotoMakeEntry(QLatin1String("ToolTips Show Photo Make"));
-const QString ImportSettings::Private::configToolTipsShowPhotoLensEntry(QLatin1String("ToolTips Show Photo Lens"));
-const QString ImportSettings::Private::configToolTipsShowPhotoDateEntry(QLatin1String("ToolTips Show Photo Date"));
-const QString ImportSettings::Private::configToolTipsShowPhotoFocalEntry(QLatin1String("ToolTips Show Photo Focal"));
-const QString ImportSettings::Private::configToolTipsShowPhotoExpoEntry(QLatin1String("ToolTips Show Photo Expo"));
-const QString ImportSettings::Private::configToolTipsShowPhotoFlashEntry(QLatin1String("ToolTips Show Photo Flash"));
-const QString ImportSettings::Private::configToolTipsShowPhotoWBEntry(QLatin1String("ToolTips Show Photo WB"));
-const QString ImportSettings::Private::configToolTipsShowFolderNameEntry(QLatin1String("ToolTips Show Folder Name"));
-const QString ImportSettings::Private::configToolTipsShowTagsEntry(QLatin1String("ToolTips Show Tags"));
-const QString ImportSettings::Private::configToolTipsShowLabelRatingEntry(QLatin1String("ToolTips Show Label Rating"));
-const QString ImportSettings::Private::configPreviewLoadFullImageSizeEntry(QLatin1String("Preview Load Full Image Size"));
-const QString ImportSettings::Private::configPreviewItemsWhileDownloadEntry(QLatin1String("Preview Each Item While Downloading it"));
-const QString ImportSettings::Private::configPreviewShowIconsEntry(QLatin1String("Preview Show Icons"));
-const QString ImportSettings::Private::configShowThumbbarEntry(QLatin1String("Show Thumbbar"));
 
 // -------------------------------------------------------------------------------------------------
 
@@ -293,7 +220,9 @@ void ImportSettings::readSettings()
     d->thumbnailSize                = group.readEntry(d->configDefaultIconSizeEntry,              (int)ThumbnailSize::Medium);
 
     d->iconShowName                 = group.readEntry(d->configIconShowNameEntry,                 true);
-//  d->iconShowResolution           = group.readEntry(d->configIconShowResolutionEntry,           false);
+/*
+    d->iconShowResolution           = group.readEntry(d->configIconShowResolutionEntry,           false);
+*/
     d->iconShowSize                 = group.readEntry(d->configIconShowSizeEntry,                 false);
     d->iconShowDate                 = group.readEntry(d->configIconShowDateEntry,                 true);
     d->iconShowTitle                = group.readEntry(d->configIconShowTitleEntry,                true);
@@ -315,7 +244,9 @@ void ImportSettings::readSettings()
     d->tooltipShowPhotoLens         = group.readEntry(d->configToolTipsShowPhotoLensEntry,        true);
     d->tooltipShowPhotoFocal        = group.readEntry(d->configToolTipsShowPhotoFocalEntry,       true);
     d->tooltipShowPhotoExpo         = group.readEntry(d->configToolTipsShowPhotoExpoEntry,        true);
-//  d->tooltipShowPhotoMode         = group.readEntry(d->configToolTipsShowPhotoModeEntry,        true);
+/*
+    d->tooltipShowPhotoMode         = group.readEntry(d->configToolTipsShowPhotoModeEntry,        true);
+*/
     d->tooltipShowPhotoFlash        = group.readEntry(d->configToolTipsShowPhotoFlashEntry,       false);
     d->tooltipShowPhotoWb           = group.readEntry(d->configToolTipsShowPhotoWBEntry,          false);
     d->tooltipShowFolderName         = group.readEntry(d->configToolTipsShowFolderNameEntry,      false);
@@ -681,7 +612,8 @@ bool ImportSettings::showToolTipsIsValid() const
 {
     if (d->showToolTips)
     {
-        if (d->tooltipShowFileName   ||
+        if (
+            d->tooltipShowFileName   ||
             d->tooltipShowFileDate   ||
             d->tooltipShowFileSize   ||
             d->tooltipShowImageType  ||
@@ -693,8 +625,11 @@ bool ImportSettings::showToolTipsIsValid() const
             d->tooltipShowPhotoFlash ||
             d->tooltipShowPhotoWb    ||
             d->tooltipShowFolderName ||
-            d->tooltipShowLabelRating) /*||
-            d->tooltipShowTags)*/
+            d->tooltipShowLabelRating
+/*
+            || d->tooltipShowTags
+*/
+           )
         {
             return true;
         }

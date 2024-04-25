@@ -33,11 +33,14 @@
 #include "camiteminfo.h"
 #include "dhistoryview.h"
 #include "dmetadata.h"
-//#include "camerahistoryupdater.h"
 #include "downloadsettings.h"
 #include "importiconview.h"
 #include "dxmlguiwindow.h"
 #include "digikam_export.h"
+
+/*
+#include "camerahistoryupdater.h"
+*/
 
 namespace Digikam
 {
@@ -60,31 +63,31 @@ public:
                       const QString& port,
                       const QString& path,
                       int startIndex);
-    ~ImportUI() override;
+    ~ImportUI()                                           override;
 
     static ImportUI* instance();
 
-    bool isBusy()   const;
-    bool isClosed() const;
+    bool isBusy()                                   const;
+    bool isClosed()                                 const;
 
-    bool    cameraDeleteSupport()   const;
-    bool    cameraUploadSupport()   const;
-    bool    cameraMkDirSupport()    const;
-    bool    cameraDelDirSupport()   const;
-    bool    cameraUseUMSDriver()    const;
-    bool    cameraUseGPhotoDriver() const;
-    QString cameraTitle()           const;
+    bool    cameraDeleteSupport()                   const;
+    bool    cameraUploadSupport()                   const;
+    bool    cameraMkDirSupport()                    const;
+    bool    cameraDelDirSupport()                   const;
+    bool    cameraUseUMSDriver()                    const;
+    bool    cameraUseGPhotoDriver()                 const;
+    QString cameraTitle()                           const;
 
     void enableZoomPlusAction(bool val);
     void enableZoomMinusAction(bool val);
 
-    DownloadSettings downloadSettings()     const;
+    DownloadSettings downloadSettings()             const;
 
-    CameraThumbsCtrl* getCameraThumbsCtrl() const;
+    CameraThumbsCtrl* getCameraThumbsCtrl()         const;
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const) override
+    DInfoInterface* infoIface(DPluginAction* const)       override
     {
         return nullptr;
     };
@@ -104,8 +107,8 @@ public Q_SLOTS:
 
 protected:
 
-    void closeEvent(QCloseEvent* e) override;
-    void moveEvent(QMoveEvent* e)   override;
+    void closeEvent(QCloseEvent* e)                       override;
+    void moveEvent(QMoveEvent* e)                         override;
 
 private:
 
@@ -145,10 +148,10 @@ private:
     void postProcessAfterDownload();
 
 
-    void showThumbBar(bool visible)         override;
-    void showSideBars(bool visible)         override;
-    bool thumbbarVisibility() const         override;
-    void customizedFullScreenMode(bool set) override;
+    void showThumbBar(bool visible)                       override;
+    void showSideBars(bool visible)                       override;
+    bool thumbbarVisibility() const                       override;
+    void customizedFullScreenMode(bool set)               override;
     void toogleShowBar();
     void setInitialSorting();
     void sidebarTabTitleStyleChanged();
@@ -219,13 +222,13 @@ private Q_SLOTS:
     void slotToggleShowBar();
     void slotColorManagementOptionsChanged();
     void slotToggleColorManagedView();
-    void slotSetup()                   override;
-    void slotComponentsInfo()          override;
-    void slotDBStat()                  override;
-    void slotOnlineVersionCheck()      override;
-    void slotToggleRightSideBar()      override;
-    void slotPreviousRightSideBarTab() override;
-    void slotNextRightSideBarTab()     override;
+    void slotSetup()                                      override;
+    void slotComponentsInfo()                             override;
+    void slotDBStat()                                     override;
+    void slotOnlineVersionCheck()                         override;
+    void slotToggleRightSideBar()                         override;
+    void slotPreviousRightSideBarTab()                    override;
+    void slotNextRightSideBarTab()                        override;
 
     void slotSetupChanged();
 
@@ -237,7 +240,7 @@ private:
 private:
 
     class Private;
-    Private* const   d;
+    Private* const   d = nullptr;
 
     static ImportUI* m_instance;
 };
