@@ -196,11 +196,11 @@ public:
 public:
 
     /// start up setting
-    bool                                         showSplash                                         = false;
+    bool                                         showSplash                                         = true;
     /// file ops settings
-    bool                                         useTrash                                           = false;
-    bool                                         showTrashDeleteDialog                              = false;
-    bool                                         showPermanentDeleteDialog                          = false;
+    bool                                         useTrash                                           = true;
+    bool                                         showTrashDeleteDialog                              = true;
+    bool                                         showPermanentDeleteDialog                          = true;
     /// metadata setting
     bool                                         sidebarApplyDirectly                               = false;
     /// file dialog setting
@@ -219,23 +219,23 @@ public:
     bool                                         detectFacesInNewImages                             = false;
 
     /// icon view settings
-    bool                                         iconShowName                                       = false;
+    bool                                         iconShowName                                       = true;
     bool                                         iconShowSize                                       = false;
-    bool                                         iconShowDate                                       = false;
+    bool                                         iconShowDate                                       = true;
     bool                                         iconShowModDate                                    = false;
-    bool                                         iconShowTitle                                      = false;
-    bool                                         iconShowComments                                   = false;
+    bool                                         iconShowTitle                                      = true;
+    bool                                         iconShowComments                                   = true;
     bool                                         iconShowResolution                                 = false;
-    bool                                         iconShowTags                                       = false;
-    bool                                         iconShowOverlays                                   = false;
-    bool                                         iconShowFullscreen                                 = false;
-    bool                                         iconShowRating                                     = false;
-    bool                                         iconShowPickLabel                                  = false;
-    bool                                         iconShowColorLabel                                 = false;
-    bool                                         iconShowImageFormat                                = false;
-    bool                                         iconShowCoordinates                                = false;
     bool                                         iconShowAspectRatio                                = false;
-    QFont                                        iconviewFont;
+    bool                                         iconShowTags                                       = true;
+    bool                                         iconShowOverlays                                   = true;
+    bool                                         iconShowFullscreen                                 = true;
+    bool                                         iconShowRating                                     = true;
+    bool                                         iconShowPickLabel                                  = false;
+    bool                                         iconShowColorLabel                                 = true;
+    bool                                         iconShowImageFormat                                = true;
+    bool                                         iconShowCoordinates                                = true;
+    QFont                                        iconviewFont                                       = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     /// Icon-view tooltip settings
     bool                                         showToolTips                                       = false;
@@ -286,13 +286,13 @@ public:
     bool                                         showFolderTreeViewItemsCount                       = false;
 
     /// tree-view settings
-    int                                          treeThumbnailSize                                  = 0;
-    int                                          treeThumbFaceSize                                  = 0;
-    QFont                                        treeviewFont;
+    int                                          treeThumbnailSize                                  = 22;
+    int                                          treeThumbFaceSize                                  = 48;
+    QFont                                        treeviewFont                                       = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     /// icon view settings
-    int                                          thumbnailSize                                      = 0;
-    int                                          ratingFilterCond                                   = 0;
+    int                                          thumbnailSize                                      = ThumbnailSize::Medium;
+    int                                          ratingFilterCond                                   = ItemFilterSettings::GreaterEqualCondition;
     bool                                         recursiveAlbums                                    = false;
     bool                                         recursiveTags                                      = false;
     bool                                         allGroupsOpen                                      = false;
@@ -321,10 +321,10 @@ public:
     ApplicationSettings::AlbumSortRole           albumSortRole                                      = ApplicationSettings::ByFolder;
 
     /// icon view settings
-    int                                          imageSortOrder                                     = 0;
-    int                                          imageSorting                                       = 0;
-    int                                          imageSeparationMode                                = 0;
-    int                                          imageSeparationSortOrder                           = 0;;
+    int                                          imageSortOrder                                     = ItemSortSettings::SortByFileName;
+    int                                          imageSorting                                       = ItemSortSettings::AscendingOrder;
+    int                                          imageSeparationMode                                = ItemSortSettings::CategoryByAlbum;
+    int                                          imageSeparationSortOrder                           = ItemSortSettings::AscendingOrder;
     int                                          itemLeftClickAction                                = ApplicationSettings::ShowPreview;
 
     /// Baloo settings
@@ -354,7 +354,6 @@ public:
 
     /// Grouping operation settings
     ApplicationSettings::OperationModes          groupingOperateOnAll                               = ApplicationSettings::OperationModes();
-
 
 private:
 

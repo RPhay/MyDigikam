@@ -56,55 +56,6 @@ void ApplicationSettings::Private::init()
     albumCategoryNames.append(i18nc("@item: album categories", "Miscellaneous"));
     albumCategoryNames.sort();
 
-    albumSortRole                                     = ApplicationSettings::ByFolder;
-    imageSortOrder                                    = ItemSortSettings::SortByFileName;
-    imageSorting                                      = ItemSortSettings::AscendingOrder;
-    imageSeparationMode                               = ItemSortSettings::CategoryByAlbum;
-    imageSeparationSortOrder                          = ItemSortSettings::AscendingOrder;
-
-    itemLeftClickAction                               = ApplicationSettings::ShowPreview;
-
-    thumbnailSize                                     = ThumbnailSize::Medium;
-    treeThumbnailSize                                 = 22;
-    treeThumbFaceSize                                 = 48;
-    treeviewFont                                      = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
-
-    updateType                                        = 0;
-    updateWithDebug                                   = false;
-    sidebarTitleStyle                                 = DMultiTabBar::AllIconsText;
-
-    ratingFilterCond                                  = ItemFilterSettings::GreaterEqualCondition;
-
-    showSplash                                        = true;
-    useTrash                                          = true;
-    showTrashDeleteDialog                             = true;
-    showPermanentDeleteDialog                         = true;
-    sidebarApplyDirectly                              = false;
-    useNativeFileDialog                               = false;
-    drawFramesToGrouped                               = true;
-    selectFirstAlbumItem                              = true;
-    expandNewCurrentItem                              = true;
-    scrollItemToCenter                                = false;
-    showOnlyPersonTagsInPeopleSidebar                 = false;
-    detectFacesInNewImages                            = false;
-
-    iconShowName                                      = true;
-    iconShowSize                                      = false;
-    iconShowDate                                      = true;
-    iconShowModDate                                   = false;
-    iconShowTitle                                     = true;
-    iconShowComments                                  = true;
-    iconShowResolution                                = false;
-    iconShowAspectRatio                               = false;
-    iconShowTags                                      = true;
-    iconShowOverlays                                  = true;
-    iconShowFullscreen                                = true;
-    iconShowRating                                    = true;
-    iconShowPickLabel                                 = false;
-    iconShowColorLabel                                = true;
-    iconShowImageFormat                               = true;
-    iconShowCoordinates                               = true;
-    iconviewFont                                      = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     toolTipsFont                                      = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     showToolTips                                      = false;
     tooltipShowFileName                               = true;
