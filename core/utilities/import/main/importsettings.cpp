@@ -42,46 +42,46 @@ public:
     bool                                iconShowName                         = true;
     bool                                iconShowSize                         = false;
     bool                                iconShowDate                         = true;
-    bool                                iconShowTitle                        = false;
+    bool                                iconShowTitle                        = true;
     bool                                iconShowResolution                   = false;
-    bool                                iconShowTags                         = false;
-    bool                                iconShowOverlays                     = false;
-    bool                                iconShowRating                       = false;
+    bool                                iconShowTags                         = true;
+    bool                                iconShowOverlays                     = true;
+    bool                                iconShowRating                       = true;
     bool                                iconShowImageFormat                  = false;
     bool                                iconShowCoordinates                  = false;
 
-    QFont                               iconviewFont;
+    QFont                               iconviewFont                         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
-    int                                 thumbnailSize                        = 0;
-    int                                 imageSortOrder                       = 0;
-    int                                 imageSortBy                          = 0;
-    int                                 imageSeparationMode                  = 0;
+    int                                 thumbnailSize                        = ThumbnailSize::Medium;
+    int                                 imageSortOrder                       = CamItemSortSettings::AscendingOrder;
+    int                                 imageSortBy                          = CamItemSortSettings::SortByFileName;
+    int                                 imageSeparationMode                  = CamItemSortSettings::CategoryByFolder;
     int                                 itemLeftClickAction                  = ImportSettings::ShowPreview;
 
     // Import icon-view tooltip settings
     bool                                showToolTips                         = false;
-    bool                                tooltipShowFileName                  = false;
+    bool                                tooltipShowFileName                  = true;
     bool                                tooltipShowFileDate                  = false;
     bool                                tooltipShowFileSize                  = false;
     bool                                tooltipShowImageType                 = false;
     bool                                tooltipShowImageDim                  = true;
-    bool                                tooltipShowPhotoMake                 = false;
-    bool                                tooltipShowPhotoLens                 = false;
-    bool                                tooltipShowPhotoFocal                = false;
-    bool                                tooltipShowPhotoExpo                 = false;
+    bool                                tooltipShowPhotoMake                 = true;
+    bool                                tooltipShowPhotoLens                 = true;
+    bool                                tooltipShowPhotoFocal                = true;
+    bool                                tooltipShowPhotoExpo                 = true;
     bool                                tooltipShowPhotoFlash                = false;
     bool                                tooltipShowPhotoWb                   = false;
     bool                                tooltipShowFolderName                = false;
-    bool                                tooltipShowTags                      = false;
-    bool                                tooltipShowLabelRating               = false;
+    bool                                tooltipShowTags                      = true;
+    bool                                tooltipShowLabelRating               = true;
 
-    QFont                               toolTipsFont;
+    QFont                               toolTipsFont                         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     // preview settings
     bool                                previewLoadFullImageSize             = false;
     bool                                previewItemsWhileDownload            = false;
     bool                                previewShowIcons                     = true;
-    bool                                showThumbbar                         = false;
+    bool                                showThumbbar                         = true;
 
     KSharedConfigPtr                    config;
 
@@ -154,54 +154,12 @@ ImportSettings::ImportSettings()
       d      (new Private)
 {
     d->config = KSharedConfig::openConfig();
-    init();
     readSettings();
 }
 
 ImportSettings::~ImportSettings()
 {
     delete d;
-}
-
-void ImportSettings::init()
-{
-    d->imageSortBy                  = CamItemSortSettings::SortByFileName;
-    d->imageSortOrder               = CamItemSortSettings::AscendingOrder;
-    d->imageSeparationMode          = CamItemSortSettings::CategoryByFolder;
-    d->itemLeftClickAction          = ImportSettings::ShowPreview;
-
-    d->thumbnailSize                = ThumbnailSize::Medium;
-
-    d->iconShowName                 = true;
-    d->iconShowSize                 = false;
-    d->iconShowDate                 = true;
-    d->iconShowTitle                = true;
-    d->iconShowImageFormat          = false;
-    d->iconShowOverlays             = true;
-    d->iconShowRating               = true;
-    d->iconShowTags                 = true;
-    d->iconviewFont                 = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
-
-    d->toolTipsFont                 = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
-    d->showToolTips                 = false;
-    d->tooltipShowFileName          = true;
-    d->tooltipShowFileDate          = false;
-    d->tooltipShowFileSize          = false;
-    d->tooltipShowImageType         = false;
-    d->tooltipShowImageDim          = true;
-    d->tooltipShowPhotoMake         = true;
-    d->tooltipShowPhotoLens         = true;
-    d->tooltipShowPhotoFocal        = true;
-    d->tooltipShowPhotoExpo         = true;
-    d->tooltipShowPhotoFlash        = false;
-    d->tooltipShowPhotoWb           = false;
-    d->tooltipShowTags              = true;
-    d->tooltipShowLabelRating       = true;
-
-    d->previewLoadFullImageSize     = false;
-    d->previewItemsWhileDownload    = false;
-    d->previewShowIcons             = true;
-    d->showThumbbar                 = true;
 }
 
 void ImportSettings::readSettings()
