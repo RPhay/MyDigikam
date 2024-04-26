@@ -173,7 +173,7 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
                                             (const wchar_t*)xmpFile.utf16());
 
-#elif defined Q_OS_WIN
+#elif defined __MINGW32__ // krazy:exclude=cpp
 
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
                                             QFile::encodeName(xmpFile).constData());
