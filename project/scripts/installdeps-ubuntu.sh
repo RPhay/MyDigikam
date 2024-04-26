@@ -268,7 +268,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libxslt-dev"                        # >= 1.1.0
                    "libxml2-dev"                        # >= 2.7.0
                    "libtiff-dev"                        # >= 4.0
-                   "liblqr-dev"                         # >= 0.4.2
                    "libfftw3-dev"                       # For GMic-Qt compilation
                    "libx265-dev"                        # >= 2.2
                    "libmagick++-dev"                    # >= 6.7.0
