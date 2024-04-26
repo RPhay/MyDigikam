@@ -235,7 +235,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libjson-perl"                       # For static analysis
                    "llvm"                               # For static analysis
                    "libomp-dev"                         # For static analysis
-                   "clazy"                              # For static analysis
                    "libclang-dev"                       # For static analysis
                    "doxygen"                            # For API doc
                    "graphviz"                           # For API doc
@@ -291,6 +290,8 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libinih-dev"                        # For Exiv2
                    "libbrotli-dev"                      # For Exiv2
                     #TODO add new optional packages
+
+                   #"clazy"                              # For static analysis : disabled as it depend of older clang/llvm
                     )
 
 for pkg in ${optional_packages[@]}; do
