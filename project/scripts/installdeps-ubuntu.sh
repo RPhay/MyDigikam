@@ -336,6 +336,7 @@ Pin: release o=Ubuntu*
 Pin-Priority: -1
 EOF
 
+sudo apt install software-properties-common
 sudo add-apt-repository ppa:mozillateam/ppa
 
 sudo apt install firefox
