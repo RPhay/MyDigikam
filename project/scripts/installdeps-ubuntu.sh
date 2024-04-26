@@ -306,11 +306,13 @@ sudo ln -sf /usr/share/java/Saxon-HE.jar /usr/share/java/saxon9he.jar
 echo "Remove SNAP and install Native Firefox package"
 echo "-------------------------------------------------------------------"
 
+sudo snap list
 sudo systemctl disable snapd.service
 sudo systemctl disable snapd.socket
 sudo systemctl disable snapd.seeded.service
 
 sudo snap remove firefox
+sudo snap remove thunderbird
 sudo snap remove snap-store
 sudo snap remove gtk-common-themes
 
