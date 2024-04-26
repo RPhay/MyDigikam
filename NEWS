@@ -91,7 +91,7 @@ BUGFIXES:
 066 ==> 485893 - TreeViewComboBoxLineEdit::mouseReleaseEvent Crash in Advanced Search.
 067 ==> 485916 - Taxon suggestion based on computer-vision not working anymore in iNaturalist export.
 068 ==> 486088 - Crash while viewing video.
-069 ==> 
+069 ==> 481888 - Album on Network-Disks (NAS).
 070 ==> 
 071 ==> 
 072 ==> 
