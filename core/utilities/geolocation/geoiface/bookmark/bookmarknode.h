@@ -85,7 +85,7 @@ class XbelReader : public QXmlStreamReader
 {
 public:
 
-    explicit XbelReader();
+    XbelReader() = default;
 
     BookmarkNode* read(const QString& fileName);
     BookmarkNode* read(QIODevice* const device, bool addRootFolder = false);
@@ -106,7 +106,7 @@ class XbelWriter : public QXmlStreamWriter
 {
 public:
 
-    explicit XbelWriter();
+    XbelWriter();
 
     bool write(const QString& fileName, const BookmarkNode* const root);
     bool write(QIODevice* const device, const BookmarkNode* const root);

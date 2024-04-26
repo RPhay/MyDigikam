@@ -34,14 +34,10 @@ class Q_DECL_HIDDEN BookmarkNode::Private
 {
 public:
 
-    explicit Private()
-      : parent(nullptr),
-        type  (BookmarkNode::Root)
-    {
-    }
+    Private() = default;
 
-    BookmarkNode*        parent;
-    Type                 type;
+    BookmarkNode*        parent     = nullptr;
+    Type                 type       = BookmarkNode::Root;
     QList<BookmarkNode*> children;
 };
 
@@ -76,13 +72,15 @@ BookmarkNode::~BookmarkNode()
 
 bool BookmarkNode::operator==(const BookmarkNode& other) const
 {
-    if ((url                 != other.url)           ||
+    if (
+        (url                 != other.url)           ||
         (title               != other.title)         ||
         (desc                != other.desc)          ||
         (expanded            != other.expanded)      ||
         (dateAdded           != other.dateAdded)     ||
         (d->type             != other.d->type)       ||
-        (d->children.count() != other.d->children.count()))
+        (d->children.count() != other.d->children.count())
+       )
     {
         return false;
     }
@@ -145,10 +143,6 @@ void BookmarkNode::remove(BookmarkNode* const child)
 
 // -------------------------------------------------------
 
-XbelReader::XbelReader()
-{
-}
-
 BookmarkNode* XbelReader::read(const QString& fileName)
 {
     QFile file(fileName);
@@ -174,8 +168,10 @@ BookmarkNode* XbelReader::read(QIODevice* const device, bool addRootFolder)
     {
         QString version = attributes().value(QLatin1String("version")).toString();
 
-        if ((name() == QLatin1String("xbel")) &&
-            (version.isEmpty() || (version == QLatin1String("1.0"))))
+        if (
+            (name() == QLatin1String("xbel")) &&
+            (version.isEmpty() || (version == QLatin1String("1.0")))
+           )
         {
             if (addRootFolder)
             {
@@ -364,6 +360,7 @@ void XbelWriter::writeItem(const BookmarkNode* const parent)
     switch (parent->type())
     {
         case BookmarkNode::Folder:
+        {
             writeStartElement(QLatin1String("folder"));
             writeAttribute(QLatin1String("folded"), parent->expanded ? QLatin1String("no") : QLatin1String("yes"));
             writeTextElement(QLatin1String("title"), parent->title);
@@ -375,8 +372,10 @@ void XbelWriter::writeItem(const BookmarkNode* const parent)
 
             writeEndElement();
             break;
+        }
 
         case BookmarkNode::Bookmark:
+        {
             writeStartElement(QLatin1String("bookmark"));
 
             if (!parent->url.isEmpty())
@@ -398,13 +397,18 @@ void XbelWriter::writeItem(const BookmarkNode* const parent)
 
             writeEndElement();
             break;
+        }
 
         case BookmarkNode::Separator:
+        {
             writeEmptyElement(QLatin1String("separator"));
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 

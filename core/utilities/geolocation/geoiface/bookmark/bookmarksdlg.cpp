@@ -57,21 +57,14 @@ class Q_DECL_HIDDEN AddBookmarkDialog::Private
 {
 public:
 
-    explicit Private()
-      : manager     (nullptr),
-        proxyModel  (nullptr),
-        location    (nullptr),
-        title       (nullptr),
-        desc        (nullptr)
-    {
-    }
+    Private() = default;
 
     QString                url;
-    BookmarksManager*      manager;
-    AddBookmarkProxyModel* proxyModel;
-    QComboBox*             location;
-    DTextEdit*             title;
-    DTextEdit*             desc;
+    BookmarksManager*      manager      = nullptr;
+    AddBookmarkProxyModel* proxyModel   = nullptr;
+    QComboBox*             location     = nullptr;
+    DTextEdit*             title        = nullptr;
+    DTextEdit*             desc         = nullptr;
 };
 
 AddBookmarkDialog::AddBookmarkDialog(const QString& url,
@@ -180,22 +173,14 @@ class Q_DECL_HIDDEN BookmarksDialog::Private
 {
 public:
 
-    explicit Private()
-      : manager         (nullptr),
-        bookmarksModel  (nullptr),
-        proxyModel      (nullptr),
-        search          (nullptr),
-        tree            (nullptr),
-        mapView         (nullptr)
-    {
-    }
+    Private() = default;
 
-    BookmarksManager*      manager;
-    BookmarksModel*        bookmarksModel;
-    TreeProxyModel*        proxyModel;
-    SearchTextBar*         search;
-    QTreeView*             tree;
-    ItemPropertiesGPSTab*  mapView;
+    BookmarksManager*      manager          = nullptr;
+    BookmarksModel*        bookmarksModel   = nullptr;
+    TreeProxyModel*        proxyModel       = nullptr;
+    SearchTextBar*         search           = nullptr;
+    QTreeView*             tree             = nullptr;
+    ItemPropertiesGPSTab*  mapView          = nullptr;
 };
 
 BookmarksDialog::BookmarksDialog(QWidget* const parent, BookmarksManager* const mngr)
