@@ -43,10 +43,6 @@ MapBackend::MapBackend(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& s
 {
 }
 
-MapBackend::~MapBackend()
-{
-}
-
 void MapBackend::slotThumbnailAvailableForIndex(const QVariant& index, const QPixmap& pixmap)
 {
     Q_UNUSED(index)

@@ -51,7 +51,7 @@ Q_OBJECT
 public:
 
     explicit MapBackend(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData, QObject* const parent);
-    ~MapBackend() override;
+    ~MapBackend() override = default;
 
     virtual QString backendName()                                           const = 0;
     virtual QString backendHumanName()                                      const = 0;

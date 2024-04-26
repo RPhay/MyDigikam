@@ -31,10 +31,6 @@ BackendMarbleLayer::BackendMarbleLayer(BackendMarble* const pMarbleBackend)
 {
 }
 
-BackendMarbleLayer::~BackendMarbleLayer()
-{
-}
-
 bool BackendMarbleLayer::render(Marble::GeoPainter* painter,
                                 Marble::ViewportParams* /*viewport*/,
                                 const QString& renderPos,

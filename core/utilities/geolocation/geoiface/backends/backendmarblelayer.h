@@ -47,7 +47,7 @@ class DIGIKAM_EXPORT BackendMarbleLayer : public Marble::LayerInterface
 public:
 
     explicit BackendMarbleLayer(BackendMarble* const pMarbleBackend);
-    ~BackendMarbleLayer()                                       override;
+    ~BackendMarbleLayer()                                       override = default;
 
     bool render(Marble::GeoPainter* painter,
                         Marble::ViewportParams* viewport,
