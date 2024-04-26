@@ -93,7 +93,7 @@ BUGFIXES:
 068 ==> 486088 - Crash while viewing video.
 069 ==> 481888 - Album on Network-Disks (NAS).
 070 ==> 486132 - XMP file is not created if directory contains non-ascii UTF-8 chars.
-071 ==> 
+071 ==> 485973 - Metadata (DateTimeOriginal) not read from MTS video files.
 072 ==> 
 073 ==> 
 074 ==> 
