@@ -92,7 +92,7 @@ BUGFIXES:
 067 ==> 485916 - Taxon suggestion based on computer-vision not working anymore in iNaturalist export.
 068 ==> 486088 - Crash while viewing video.
 069 ==> 481888 - Album on Network-Disks (NAS).
-070 ==> 
+070 ==> 486132 - XMP file is not created if directory contains non-ascii UTF-8 chars.
 071 ==> 
 072 ==> 
 073 ==> 
