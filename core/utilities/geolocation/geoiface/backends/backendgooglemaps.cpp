@@ -66,12 +66,9 @@ class Q_DECL_HIDDEN GMInternalWidgetInfo
 {
 public:
 
-    GMInternalWidgetInfo()
-      : htmlWidget(nullptr)
-    {
-    }
+    GMInternalWidgetInfo() = default;
 
-    HTMLWidget* htmlWidget;
+    HTMLWidget* htmlWidget = nullptr;
 };
 
 } // namespace Digikam
@@ -85,51 +82,28 @@ class Q_DECL_HIDDEN BackendGoogleMaps::Private
 {
 public:
 
-    explicit Private()
-      : htmlWidget                  (nullptr),
-        htmlWidgetWrapper           (nullptr),
-        isReady                     (false),
-        mapTypeActionGroup          (nullptr),
-        floatItemsActionGroup       (nullptr),
-        showMapTypeControlAction    (nullptr),
-        showNavigationControlAction (nullptr),
-        showScaleControlAction      (nullptr),
-        htmlFileName                (QLatin1String("backend-googlemaps.html")),
-        cacheMapType                (QLatin1String("ROADMAP")),
-        cacheShowMapTypeControl     (true),
-        cacheShowNavigationControl  (true),
-        cacheShowScaleControl       (true),
-        cacheZoom                   (8),
-        cacheMaxZoom                (0),
-        cacheMinZoom                (0),
-        cacheCenter                 (52.0, 6.0),
-        cacheBounds                 (),
-        activeState                 (false),
-        widgetIsDocked              (false),
-        trackChangeTracker          ()
-    {
-    }
+    Private() = default;
 
-    QPointer<HTMLWidget>                      htmlWidget;
-    QPointer<QWidget>                         htmlWidgetWrapper;
-    bool                                      isReady;
-    QActionGroup*                             mapTypeActionGroup;
-    QActionGroup*                             floatItemsActionGroup;
-    QAction*                                  showMapTypeControlAction;
-    QAction*                                  showNavigationControlAction;
-    QAction*                                  showScaleControlAction;
-    QString                                   htmlFileName;
-    QString                                   cacheMapType;
-    bool                                      cacheShowMapTypeControl;
-    bool                                      cacheShowNavigationControl;
-    bool                                      cacheShowScaleControl;
-    int                                       cacheZoom;
-    int                                       cacheMaxZoom;
-    int                                       cacheMinZoom;
-    GeoCoordinates                            cacheCenter;
+    QPointer<HTMLWidget>                      htmlWidget                    = nullptr;
+    QPointer<QWidget>                         htmlWidgetWrapper             = nullptr;
+    bool                                      isReady                       = false;
+    QActionGroup*                             mapTypeActionGroup            = nullptr;
+    QActionGroup*                             floatItemsActionGroup         = nullptr;
+    QAction*                                  showMapTypeControlAction      = nullptr;
+    QAction*                                  showNavigationControlAction   = nullptr;
+    QAction*                                  showScaleControlAction        = nullptr;
+    QString                                   htmlFileName                  = QLatin1String("backend-googlemaps.html");
+    QString                                   cacheMapType                  = QLatin1String("ROADMAP");
+    bool                                      cacheShowMapTypeControl       = true;
+    bool                                      cacheShowNavigationControl    = true;
+    bool                                      cacheShowScaleControl         = true;
+    int                                       cacheZoom                     = 8;
+    int                                       cacheMaxZoom                  = 0;
+    int                                       cacheMinZoom                  = 0;
+    GeoCoordinates                            cacheCenter                   = GeoCoordinates(52.0, 6.0);
     QPair<GeoCoordinates, GeoCoordinates>     cacheBounds;
-    bool                                      activeState;
-    bool                                      widgetIsDocked;
+    bool                                      activeState                   = false;
+    bool                                      widgetIsDocked                = false;
     QList<TrackManager::TrackChanges>         trackChangeTracker;
 };
 
@@ -596,6 +570,7 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
 
             bool okay              = false;
             const int clusterIndex = eventParameter.toInt(&okay);
+
             GEOIFACE_ASSERT(okay);
 
             if (!okay)
@@ -639,6 +614,7 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
 
             bool okay              = false;
             const int clusterIndex = eventParameters.first().toInt(&okay);
+
             GEOIFACE_ASSERT(okay);
 
             if (!okay)
@@ -658,6 +634,7 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
 
             okay                  = false;
             const int snapModelId = eventParameters.at(1).toInt(&okay);
+
             GEOIFACE_ASSERT(okay);
 
             if (!okay)
@@ -667,6 +644,7 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
 
             okay                   = false;
             const int snapMarkerId = eventParameters.at(2).toInt(&okay);
+
             GEOIFACE_ASSERT(okay);
 
             if (!okay)
@@ -679,6 +657,7 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
             GeoModelHelper* const modelHelper  = s->ungroupedModels.at(snapModelId);
             QAbstractItemModel* const model    = modelHelper->model();
             QPair<int, QModelIndex> snapTargetIndex(snapModelId, model->index(snapMarkerId, 0));
+
             Q_EMIT signalClustersMoved(QIntList() << clusterIndex, snapTargetIndex);
         }
         else if (eventCode == QLatin1String("cc"))
@@ -688,6 +667,7 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
 
             bool okay              = false;
             const int clusterIndex = eventParameter.toInt(&okay);
+
             GEOIFACE_ASSERT(okay);
 
             if (!okay)
@@ -985,7 +965,8 @@ void BackendGoogleMaps::setShowNavigationControl(const bool state)
         return;
     }
 
-    d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetShowNavigationControl(%1);")
+    d->htmlWidget->runScript(
+                             QString::fromLatin1("kgeomapSetShowNavigationControl(%1);")
                                  .arg(state ? QLatin1String("true")
                                             : QLatin1String("false"))
                             );
@@ -1005,7 +986,8 @@ void BackendGoogleMaps::setShowMapTypeControl(const bool state)
         return;
     }
 
-    d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetShowMapTypeControl(%1);")
+    d->htmlWidget->runScript(
+                             QString::fromLatin1("kgeomapSetShowMapTypeControl(%1);")
                                  .arg(state ? QLatin1String("true")
                                             : QLatin1String("false"))
                             );
@@ -1214,7 +1196,8 @@ void BackendGoogleMaps::setClusterPixmap(const int clusterId, const QPoint& cent
     // www.faqs.org/rfcs/rfc2397.html
 
     const QString imageData = QString::fromLatin1("data:image/png;base64,%1").arg(QString::fromLatin1(bytes.toBase64()));
-    d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetClusterPixmap(%1,%5,%6,%2,%3,'%4');")
+    d->htmlWidget->runScript(
+                             QString::fromLatin1("kgeomapSetClusterPixmap(%1,%5,%6,%2,%3,'%4');")
                                  .arg(clusterId)
                                  .arg(centerPoint.x())
                                  .arg(centerPoint.y())
@@ -1236,7 +1219,8 @@ void BackendGoogleMaps::setMarkerPixmap(const int modelId, const int markerId,
     // www.faqs.org/rfcs/rfc2397.html
 
     const QString imageData = QString::fromLatin1("data:image/png;base64,%1").arg(QString::fromLatin1(bytes.toBase64()));
-    d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetMarkerPixmap(%7,%1,%5,%6,%2,%3,'%4');")
+    d->htmlWidget->runScript(
+                             QString::fromLatin1("kgeomapSetMarkerPixmap(%7,%1,%5,%6,%2,%3,'%4');")
                                  .arg(markerId)
                                  .arg(centerPoint.x())
                                  .arg(centerPoint.y())
@@ -1253,7 +1237,8 @@ void BackendGoogleMaps::setMarkerPixmap(const int modelId, const int markerId,
 {
     /// @todo Sort the parameters
 
-    d->htmlWidget->runScript(QString::fromLatin1("kgeomapSetMarkerPixmap(%7,%1,%5,%6,%2,%3,'%4');")
+    d->htmlWidget->runScript(
+                             QString::fromLatin1("kgeomapSetMarkerPixmap(%7,%1,%5,%6,%2,%3,'%4');")
                                  .arg(markerId)
                                  .arg(centerPoint.x())
                                  .arg(centerPoint.y())
@@ -1279,7 +1264,8 @@ bool BackendGoogleMaps::eventFilter(QObject* object, QEvent* event)
 
                 if (d->isReady)
                 {
-                    d->htmlWidget->runScript(QString::fromLatin1("kgeomapWidgetResized(%1, %2)")
+                    d->htmlWidget->runScript(
+                                             QString::fromLatin1("kgeomapWidgetResized(%1, %2)")
                                                  .arg(d->htmlWidgetWrapper->width())
                                                  .arg(d->htmlWidgetWrapper->height())
                                             );

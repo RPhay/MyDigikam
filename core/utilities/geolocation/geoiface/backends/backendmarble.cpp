@@ -75,71 +75,34 @@ class Q_DECL_HIDDEN BackendMarble::Private
 {
 public:
 
-    explicit Private()
-      : marbleWidget                    (nullptr),
-        actionGroupMapTheme             (nullptr),
-        actionGroupProjection           (nullptr),
-        actionGroupFloatItems           (nullptr),
-        actionShowCompass               (nullptr),
-        actionShowScaleBar              (nullptr),
-        actionShowNavigation            (nullptr),
-        actionShowOverviewMap           (nullptr),
-        cacheMapTheme                   (QLatin1String("earth/openstreetmap/openstreetmap.dgml")),
-        cacheProjection                 (QLatin1String("spherical")),
-        cacheShowCompass                (false),
-        cacheShowScaleBar               (false),
-        cacheShowNavigation             (true),
-        cacheShowOverviewMap            (false),
-        cacheZoom                       (900),
-        havePotentiallyMouseMovingObject(false),
-        haveMouseMovingObject           (false),
-        mouseMoveClusterIndex           (-1),
-        mouseMoveMarkerIndex            (),
-        mouseMoveObjectCoordinates      (),
-        mouseMoveCenterOffset           (0, 0),
-        dragDropMarkerCount             (0),
-        dragDropMarkerPos               (),
-        clustersDirtyCacheProjection    (),
-        clustersDirtyCacheLat           (),
-        clustersDirtyCacheLon           (),
-        displayedRectangle              (),
-        firstSelectionScreenPoint       (),
-        firstSelectionPoint             (),
-        activeState                     (false),
-        widgetIsDocked                  (false),
-        blockingZoomWhileChangingTheme  (false),
-        trackCache                      (),
-        bmLayer                         (nullptr),
-        marbleMapThemeManager           (nullptr)
-    {
-    }
+    Private() = default;
 
-    QPointer<Marble::MarbleWidget>            marbleWidget;
+    QPointer<Marble::MarbleWidget>            marbleWidget                      = nullptr;
 
-    QActionGroup*                             actionGroupMapTheme;
-    QActionGroup*                             actionGroupProjection;
-    QActionGroup*                             actionGroupFloatItems;
-    QAction*                                  actionShowCompass;
-    QAction*                                  actionShowScaleBar;
-    QAction*                                  actionShowNavigation;
-    QAction*                                  actionShowOverviewMap;
+    QActionGroup*                             actionGroupMapTheme               = nullptr;
+    QActionGroup*                             actionGroupProjection             = nullptr;
+    QActionGroup*                             actionGroupFloatItems             = nullptr;
+    QAction*                                  actionShowCompass                 = nullptr;
+    QAction*                                  actionShowScaleBar                = nullptr;
+    QAction*                                  actionShowNavigation              = nullptr;
+    QAction*                                  actionShowOverviewMap             = nullptr;
 
-    QString                                   cacheMapTheme;
-    QString                                   cacheProjection;
-    bool                                      cacheShowCompass;
-    bool                                      cacheShowScaleBar;
-    bool                                      cacheShowNavigation;
-    bool                                      cacheShowOverviewMap;
-    int                                       cacheZoom;
-    bool                                      havePotentiallyMouseMovingObject;
-    bool                                      haveMouseMovingObject;
-    int                                       mouseMoveClusterIndex;
+    QString                                   cacheMapTheme                     = QLatin1String("earth/openstreetmap/openstreetmap.dgml");
+    QString                                   cacheProjection                   = QLatin1String("spherical");
+    bool                                      cacheShowCompass                  = false;
+    bool                                      cacheShowScaleBar                 = false;
+    bool                                      cacheShowNavigation               = true;
+    bool                                      cacheShowOverviewMap              = false;
+    int                                       cacheZoom                         = 900;
+    bool                                      havePotentiallyMouseMovingObject  = false;
+    bool                                      haveMouseMovingObject             = false;
+    int                                       mouseMoveClusterIndex             = -1;
     QPersistentModelIndex                     mouseMoveMarkerIndex;
     GeoCoordinates                            mouseMoveObjectCoordinates;
-    QPoint                                    mouseMoveCenterOffset;
-    int                                       dragDropMarkerCount;
+    QPoint                                    mouseMoveCenterOffset             = QPoint(0, 0);
+    int                                       dragDropMarkerCount               = 0;
     QPoint                                    dragDropMarkerPos;
-    int                                       clustersDirtyCacheProjection;
+    int                                       clustersDirtyCacheProjection      = 0;
     qreal                                     clustersDirtyCacheLat;
     qreal                                     clustersDirtyCacheLon;
     QStringList                               mainMarbleThemes;
@@ -149,14 +112,14 @@ public:
     QPoint                                    intermediateSelectionScreenPoint;
     GeoCoordinates                            firstSelectionPoint;
     GeoCoordinates                            intermediateSelectionPoint;
-    bool                                      activeState;
-    bool                                      widgetIsDocked;
-    bool                                      blockingZoomWhileChangingTheme;
+    bool                                      activeState                       = false;
+    bool                                      widgetIsDocked                    = false;
+    bool                                      blockingZoomWhileChangingTheme    = false;
 
     QHash<quint64, Marble::GeoDataLineString> trackCache;
 
-    BackendMarbleLayer*                       bmLayer;
-    Marble::MapThemeManager*                  marbleMapThemeManager;
+    BackendMarbleLayer*                       bmLayer                           = nullptr;
+    Marble::MapThemeManager*                  marbleMapThemeManager             = nullptr;
 };
 
 BackendMarble::BackendMarble(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
