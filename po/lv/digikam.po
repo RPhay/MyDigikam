@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-25 01:38+0000\n"
+"POT-Creation-Date: 2024-04-26 01:36+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -36715,7 +36715,7 @@ msgid "Description"
 msgstr "Apraksts"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1942
+#: core/utilities/import/main/importui.cpp:1958
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -58521,7 +58521,7 @@ msgstr ""
 "izvairīties no attēla pārāk lielas izgaismošanas."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:494
-#: core/utilities/import/main/importui.cpp:492
+#: core/utilities/import/main/importui.cpp:497
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action"
@@ -58585,8 +58585,8 @@ msgid "Rotate Right"
 msgstr "Griezt pa labi"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:583
-#: core/utilities/import/main/importui.cpp:534
-#: core/utilities/import/main/importui.cpp:775
+#: core/utilities/import/main/importui.cpp:542
+#: core/utilities/import/main/importui.cpp:785
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -59181,7 +59181,7 @@ msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
 #: core/utilities/import/backend/cameracontroller.cpp:632
 #: core/utilities/import/backend/cameracontroller.cpp:1003
-#: core/utilities/import/main/importui.cpp:2457
+#: core/utilities/import/main/importui.cpp:2481
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -59513,395 +59513,395 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:146
+#: core/utilities/import/main/importui.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr "Iestatīt, kā digiKam pārdēvēs failus, tos lejupielādējot."
 
-#: core/utilities/import/main/importui.cpp:147
+#: core/utilities/import/main/importui.cpp:148
 #, fuzzy, kde-format
 #| msgid "File Renaming Options"
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "Failu pārdēvēšanas iestatījumi"
 
-#: core/utilities/import/main/importui.cpp:153
+#: core/utilities/import/main/importui.cpp:154
 #, fuzzy, kde-format
 #| msgid "Auto-creation of Albums"
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "Automātiska albumu izveide"
 
-#: core/utilities/import/main/importui.cpp:159
+#: core/utilities/import/main/importui.cpp:160
 #, fuzzy, kde-format
 #| msgid "On the Fly Operations (JPEG only)"
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "Ielādes laikā veicamās darbības (tikai JPEG)"
 
-#: core/utilities/import/main/importui.cpp:167
+#: core/utilities/import/main/importui.cpp:168
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "Apciršanas iestatījumi"
 
-#: core/utilities/import/main/importui.cpp:175
+#: core/utilities/import/main/importui.cpp:176
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Scripting"
 msgstr "Gludināšana:"
 
-#: core/utilities/import/main/importui.cpp:179
+#: core/utilities/import/main/importui.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid "Settings"
 msgstr "Iestatījumi"
 
-#: core/utilities/import/main/importui.cpp:194
+#: core/utilities/import/main/importui.cpp:195
 #, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "Atcelt"
 
-#: core/utilities/import/main/importui.cpp:201
+#: core/utilities/import/main/importui.cpp:202
 #, fuzzy, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "Informācija"
 
-#: core/utilities/import/main/importui.cpp:208
+#: core/utilities/import/main/importui.cpp:209
 #, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "Tvert"
 
-#: core/utilities/import/main/importui.cpp:220
+#: core/utilities/import/main/importui.cpp:221
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "Atlasīt visus"
 
-#: core/utilities/import/main/importui.cpp:228
+#: core/utilities/import/main/importui.cpp:229
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "Notīrīt atlasi"
 
-#: core/utilities/import/main/importui.cpp:236
+#: core/utilities/import/main/importui.cpp:237
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "Atlasīt pretēji"
 
-#: core/utilities/import/main/importui.cpp:244
+#: core/utilities/import/main/importui.cpp:245
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "Izvēlēties jaunos attēlus"
 
-#: core/utilities/import/main/importui.cpp:251
+#: core/utilities/import/main/importui.cpp:252
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "Izvēlēties slēgtos attēlus"
 
-#: core/utilities/import/main/importui.cpp:259
+#: core/utilities/import/main/importui.cpp:260
 #, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "Lejupielādēt"
 
-#: core/utilities/import/main/importui.cpp:264
+#: core/utilities/import/main/importui.cpp:265
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "Lejupielādēt"
 
-#: core/utilities/import/main/importui.cpp:274
+#: core/utilities/import/main/importui.cpp:275
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "Lejupielādēt izvēlētos"
 
-#: core/utilities/import/main/importui.cpp:281
+#: core/utilities/import/main/importui.cpp:282
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "Lejupielādēt visus"
 
-#: core/utilities/import/main/importui.cpp:289
+#: core/utilities/import/main/importui.cpp:290
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "Lejupielādēt/Dzēst visu"
 
-#: core/utilities/import/main/importui.cpp:297
+#: core/utilities/import/main/importui.cpp:298
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "Lejupielādēt no fotoaparāta un izdzēst no tā"
 
-#: core/utilities/import/main/importui.cpp:305
+#: core/utilities/import/main/importui.cpp:306
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "Lejupielādēt un visu dzēst"
 
-#: core/utilities/import/main/importui.cpp:312
+#: core/utilities/import/main/importui.cpp:313
 #, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "Augšupielādēt..."
 
-#: core/utilities/import/main/importui.cpp:320
+#: core/utilities/import/main/importui.cpp:321
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "Pārslēgt slēgu"
 
-#: core/utilities/import/main/importui.cpp:328
+#: core/utilities/import/main/importui.cpp:329
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "Atzīmēt kā lejupielādētu"
 
-#: core/utilities/import/main/importui.cpp:335
+#: core/utilities/import/main/importui.cpp:336
 #, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "Dzēst"
 
-#: core/utilities/import/main/importui.cpp:340
+#: core/utilities/import/main/importui.cpp:341
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "Dzēst atlasītos"
 
-#: core/utilities/import/main/importui.cpp:348
+#: core/utilities/import/main/importui.cpp:349
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "Dzēst visus"
 
-#: core/utilities/import/main/importui.cpp:354
+#: core/utilities/import/main/importui.cpp:355
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "Dzēst failu"
 
-#: core/utilities/import/main/importui.cpp:362
+#: core/utilities/import/main/importui.cpp:363
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "Skats"
 
-#: core/utilities/import/main/importui.cpp:366
+#: core/utilities/import/main/importui.cpp:367
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Sīktēli"
 
-#: core/utilities/import/main/importui.cpp:373
+#: core/utilities/import/main/importui.cpp:374
 #, fuzzy, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "Iepriekšējais attēls"
 
-#: core/utilities/import/main/importui.cpp:382
+#: core/utilities/import/main/importui.cpp:384
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "Karte"
 
-#: core/utilities/import/main/importui.cpp:393
+#: core/utilities/import/main/importui.cpp:396
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "&Kārtot attēlus"
 
-#: core/utilities/import/main/importui.cpp:394
+#: core/utilities/import/main/importui.cpp:397
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr ""
 "Vērtība, pēc kuras vienā albumā esošie attēli tiek kārtoti sīktēlu skatā"
 
-#: core/utilities/import/main/importui.cpp:398
+#: core/utilities/import/main/importui.cpp:402
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "Pēc nosaukuma"
 
-#: core/utilities/import/main/importui.cpp:399
+#: core/utilities/import/main/importui.cpp:403
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "Pēc faila ceļa"
 
-#: core/utilities/import/main/importui.cpp:400
+#: core/utilities/import/main/importui.cpp:404
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "Pēc datuma"
 
-#: core/utilities/import/main/importui.cpp:401
+#: core/utilities/import/main/importui.cpp:405
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "Pēc faila izmēra"
 
-#: core/utilities/import/main/importui.cpp:402
+#: core/utilities/import/main/importui.cpp:406
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "Pēc vērtējuma"
 
-#: core/utilities/import/main/importui.cpp:403
+#: core/utilities/import/main/importui.cpp:407
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "Lejupielādēt izvēlētos"
 
-#: core/utilities/import/main/importui.cpp:427
+#: core/utilities/import/main/importui.cpp:431
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "Attēla kārt&ošanas secība"
 
-#: core/utilities/import/main/importui.cpp:428
+#: core/utilities/import/main/importui.cpp:432
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr "Nosaka, vai attēli tiek kārtoti augošā vai dilstošā secībā."
 
-#: core/utilities/import/main/importui.cpp:432
+#: core/utilities/import/main/importui.cpp:436
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "Augoši"
 
-#: core/utilities/import/main/importui.cpp:434
+#: core/utilities/import/main/importui.cpp:438
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Dilstoši"
 
-#: core/utilities/import/main/importui.cpp:446
+#: core/utilities/import/main/importui.cpp:450
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "&Grupēt attēlus"
 
-#: core/utilities/import/main/importui.cpp:447
+#: core/utilities/import/main/importui.cpp:451
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr "Kategorijas, kādās tiek rādīti attēli sīktēlu skatā"
 
-#: core/utilities/import/main/importui.cpp:451
+#: core/utilities/import/main/importui.cpp:456
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Plakans saraksts"
 
-#: core/utilities/import/main/importui.cpp:452
+#: core/utilities/import/main/importui.cpp:457
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "Pēc mapes"
 
-#: core/utilities/import/main/importui.cpp:453
+#: core/utilities/import/main/importui.cpp:458
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "Pēc formāta"
 
-#: core/utilities/import/main/importui.cpp:454
+#: core/utilities/import/main/importui.cpp:459
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "Pēc datuma"
 
-#: core/utilities/import/main/importui.cpp:480
+#: core/utilities/import/main/importui.cpp:485
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "Ietilpināt &logā"
 
-#: core/utilities/import/main/importui.cpp:485
+#: core/utilities/import/main/importui.cpp:490
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Tālummainīt uz 100%"
 
-#: core/utilities/import/main/importui.cpp:503
+#: core/utilities/import/main/importui.cpp:508
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Rādīt vēsturi"
 
-#: core/utilities/import/main/importui.cpp:509
+#: core/utilities/import/main/importui.cpp:514
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Rādīt sīktēlu joslu"
 
-#: core/utilities/import/main/importui.cpp:541
+#: core/utilities/import/main/importui.cpp:549
 #, fuzzy, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "Mēģināt vēlreiz"
 
-#: core/utilities/import/main/importui.cpp:764
+#: core/utilities/import/main/importui.cpp:774
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "Iziet no priekšapskates režīma"
 
-#: core/utilities/import/main/importui.cpp:769
+#: core/utilities/import/main/importui.cpp:779
 #, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "Nākamais attēls"
 
-#: core/utilities/import/main/importui.cpp:781
+#: core/utilities/import/main/importui.cpp:791
 #, fuzzy, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "Pirmais attēls"
 
-#: core/utilities/import/main/importui.cpp:786
+#: core/utilities/import/main/importui.cpp:796
 #, fuzzy, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "Pēdējais attēls"
 
-#: core/utilities/import/main/importui.cpp:887
+#: core/utilities/import/main/importui.cpp:897
 #, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Atceļ pašreizējo darbību, lūdzu, uzgaidiet..."
 
-#: core/utilities/import/main/importui.cpp:942
+#: core/utilities/import/main/importui.cpp:953
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "Vai vēlaties aizvērt šo logu un atcelt darbību?"
 
-#: core/utilities/import/main/importui.cpp:952
+#: core/utilities/import/main/importui.cpp:963
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Atvienojas no fotoaparāta, lūdzu, uzgaidiet..."
 
-#: core/utilities/import/main/importui.cpp:1027
+#: core/utilities/import/main/importui.cpp:1038
 #, fuzzy, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Gatavs"
 
-#: core/utilities/import/main/importui.cpp:1084
+#: core/utilities/import/main/importui.cpp:1095
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59911,13 +59911,13 @@ msgstr ""
 "Neizdevās pieslēgties fotoaparātam. Lūdzu, pārliecinieties, ka tas ir "
 "korekti pieslēgts un ir ieslēgts. Vai mēģināt vēlreiz?"
 
-#: core/utilities/import/main/importui.cpp:1178
+#: core/utilities/import/main/importui.cpp:1189
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Izvēlieties augšupielādējamo attēlu"
 
-#: core/utilities/import/main/importui.cpp:1213
+#: core/utilities/import/main/importui.cpp:1224
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59931,7 +59931,7 @@ msgstr ""
 "Nepieciešama: %1\n"
 "Pieejama: %2"
 
-#: core/utilities/import/main/importui.cpp:1268
+#: core/utilities/import/main/importui.cpp:1279
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59941,7 +59941,7 @@ msgstr ""
 "Fotoaparāta mape <b>%1</b> jau satur šādu attēlu <b>%2</b>.<br/>Lūdzu, "
 "ievadiet jaunu faila nosaukumu (bez paplašinājuma):"
 
-#: core/utilities/import/main/importui.cpp:1272
+#: core/utilities/import/main/importui.cpp:1283
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "File already exists"
@@ -59949,7 +59949,7 @@ msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Fails jau pastāv"
 
-#: core/utilities/import/main/importui.cpp:1339
+#: core/utilities/import/main/importui.cpp:1352
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59957,7 +59957,7 @@ msgid ""
 "settings..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1378
+#: core/utilities/import/main/importui.cpp:1392
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59966,7 +59966,7 @@ msgid ""
 "configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1387
+#: core/utilities/import/main/importui.cpp:1401
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59974,7 +59974,7 @@ msgid ""
 "available. Please select another one from camera configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1412
+#: core/utilities/import/main/importui.cpp:1426
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59984,7 +59984,7 @@ msgstr ""
 "<p>Lūdzu, izvēlieties mērķa albumu no digiKam bibliotēkas, kurā importēt "
 "fotoaparāta attēlus.</p>"
 
-#: core/utilities/import/main/importui.cpp:1443
+#: core/utilities/import/main/importui.cpp:1457
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59992,19 +59992,19 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1497
+#: core/utilities/import/main/importui.cpp:1511
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:1504
+#: core/utilities/import/main/importui.cpp:1518
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:1939
+#: core/utilities/import/main/importui.cpp:1955
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60016,7 +60016,7 @@ msgstr ""
 "izdzēsti. Ja tiešām vēlaties tos dzēst, lūdzu, atslēdziet tos un mēģiniet "
 "vēlreiz."
 
-#: core/utilities/import/main/importui.cpp:1950
+#: core/utilities/import/main/importui.cpp:1966
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60033,19 +60033,19 @@ msgstr[1] ""
 msgstr[2] ""
 "Grasās dzēst šos %1 failus. Tos vairs nevarēs atgūt. Vai tiešām dzēst?"
 
-#: core/utilities/import/main/importui.cpp:1960
+#: core/utilities/import/main/importui.cpp:1976
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Brīdinājums"
 
-#: core/utilities/import/main/importui.cpp:2004
+#: core/utilities/import/main/importui.cpp:2020
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Nepietiek diska vietas"
 
-#: core/utilities/import/main/importui.cpp:2005
+#: core/utilities/import/main/importui.cpp:2021
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60063,8 +60063,8 @@ msgstr ""
 "Nepieciešama apmēram: %1\n"
 "Pieejama: %2"
 
-#: core/utilities/import/main/importui.cpp:2270
-#: core/utilities/import/main/importui.cpp:2298
+#: core/utilities/import/main/importui.cpp:2294
+#: core/utilities/import/main/importui.cpp:2322
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -60073,13 +60073,13 @@ msgstr[0] "Nekas nav atlasīts (no %1)"
 msgstr[1] "Nekas nav atlasīts (no %1)"
 msgstr[2] "Nekas nav atlasīts (no %1)"
 
-#: core/utilities/import/main/importui.cpp:2290
+#: core/utilities/import/main/importui.cpp:2314
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "\"%1\" (%2. no %3)"
 
-#: core/utilities/import/main/importui.cpp:2309
+#: core/utilities/import/main/importui.cpp:2333
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -60088,24 +60088,24 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēti %1/%2"
 msgstr[2] "izvēlēti %1/%2"
 
-#: core/utilities/import/main/importui.cpp:2392
+#: core/utilities/import/main/importui.cpp:2416
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:2414
+#: core/utilities/import/main/importui.cpp:2438
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Pārdēvēt failu par <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2437
+#: core/utilities/import/main/importui.cpp:2461
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:2514
+#: core/utilities/import/main/importui.cpp:2538
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -60113,19 +60113,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2522
+#: core/utilities/import/main/importui.cpp:2546
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Atzīmēt kā lejupielādētu"
 
-#: core/utilities/import/main/importui.cpp:2548
+#: core/utilities/import/main/importui.cpp:2572
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Fails ar tādu pašu nosaukumu (%1) jau pastāv mapē %2."
 
-#: core/utilities/import/main/importui.cpp:2561
+#: core/utilities/import/main/importui.cpp:2585
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
