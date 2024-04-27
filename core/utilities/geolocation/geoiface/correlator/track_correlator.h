@@ -43,18 +43,7 @@ public:
     {
     public:
 
-        explicit Correlation()
-          : dateTime   (),
-            userData   (),
-            nSatellites(-1),
-            hDop       (-1),
-            pDop       (-1),
-            fixType    (-1),
-            speed      (-1),
-            flags      (),
-            coordinates()
-        {
-        }
+        Correlation() = default;
 
     public:
 
@@ -62,11 +51,11 @@ public:
 
         QDateTime                     dateTime;
         QVariant                      userData;
-        int                           nSatellites;
-        qreal                         hDop;
-        qreal                         pDop;
-        int                           fixType;
-        qreal                         speed;
+        int                           nSatellites   = -1;
+        qreal                         hDop          = -1.0;
+        qreal                         pDop          = -1.0;
+        int                           fixType       = -1;
+        qreal                         speed         = -1.0;
         CorrelationFlags              flags;
         GeoCoordinates                coordinates;
     };
@@ -77,22 +66,15 @@ public:
     {
     public:
 
-        explicit CorrelationOptions()
-          : interpolate         (false),
-            interpolationDstTime(0),
-            maxGapTime          (0),
-            secondsOffset       (0),
-            timeZoneOffset      (0)
-        {
-        }
+        CorrelationOptions() = default;
 
     public:
 
-        bool interpolate;
-        int  interpolationDstTime;
-        int  maxGapTime;
-        int  secondsOffset;
-        int  timeZoneOffset;
+        bool interpolate            = false;
+        int  interpolationDstTime   = 0;
+        int  maxGapTime             = 0;
+        int  secondsOffset          = 0;
+        int  timeZoneOffset         = 0;
     };
 
 public:

@@ -82,8 +82,10 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
     const int rowNumber    = index.row();
     const int columnNumber = index.column();
 
-    if ( (columnNumber < 0) || (columnNumber >= ColumnCount) ||
-         (rowNumber < 0)    || (rowNumber >= d->trackManager->trackCount()) )
+    if (
+        (columnNumber < 0) || (columnNumber >= ColumnCount) ||
+        (rowNumber < 0)    || (rowNumber >= d->trackManager->trackCount())
+       )
     {
         return QVariant();
     }
@@ -149,8 +151,10 @@ QModelIndex TrackListModel::index(int row, int column, const QModelIndex& parent
         return QModelIndex();
     }
 
-    if ( (column < 0) || (column >= ColumnCount) ||
-         (row < 0)    || (row >= d->trackManager->trackCount()) )
+    if (
+        (column < 0) || (column >= ColumnCount) ||
+        (row < 0)    || (row >= d->trackManager->trackCount())
+       )
     {
         return QModelIndex();
     }

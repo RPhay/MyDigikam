@@ -64,67 +64,40 @@ class Q_DECL_HIDDEN GPSCorrelatorWidget::Private
 {
 public:
 
-    explicit Private()
-      : gpxLoadFilesButton          (nullptr),
-        gpxFileList                 (nullptr),
-        timeZoneCB                  (nullptr),
-        offsetSign                  (nullptr),
-        offsetTime                  (nullptr),
-        interpolateButton           (nullptr),
-        interpolateLimitLabel       (nullptr),
-        interpolateLimitInput       (nullptr),
-        directMatchButton           (nullptr),
-        directMatchLimitLabel       (nullptr),
-        directMatchLimitInput       (nullptr),
-        showTracksOnMap             (nullptr),
-        selectedImages              (nullptr),
-        correlateButton             (nullptr),
-        trackManager                (nullptr),
-        trackCorrelator             (nullptr),
-        trackListModel              (nullptr),
-        uiEnabledInternal           (true),
-        uiEnabledExternal           (true),
-        imageModel                  (nullptr),
-        selectionModel              (nullptr),
-        correlationTotalCount       (0),
-        correlationCorrelatedCount  (0),
-        correlationTriedCount       (0),
-        correlationUndoCommand      (nullptr)
-    {
-    }
+    Private() = default;
 
     QString                 gpxFileOpenLastDirectory;
-    QPushButton*            gpxLoadFilesButton;
-    QTreeView*              gpxFileList;
+    QPushButton*            gpxLoadFilesButton          = nullptr;
+    QTreeView*              gpxFileList                 = nullptr;
 
-    TimeZoneComboBox*       timeZoneCB;
+    TimeZoneComboBox*       timeZoneCB                  = nullptr;
 
-    QComboBox*              offsetSign;
-    QTimeEdit*              offsetTime;
+    QComboBox*              offsetSign                  = nullptr;
+    QTimeEdit*              offsetTime                  = nullptr;
 
-    QRadioButton*           interpolateButton;
-    QLabel*                 interpolateLimitLabel;
-    QTimeEdit*              interpolateLimitInput;
-    QRadioButton*           directMatchButton;
-    QLabel*                 directMatchLimitLabel;
-    QTimeEdit*              directMatchLimitInput;
-    QCheckBox*              showTracksOnMap;
-    QCheckBox*              selectedImages;
+    QRadioButton*           interpolateButton           = nullptr;
+    QLabel*                 interpolateLimitLabel       = nullptr;
+    QTimeEdit*              interpolateLimitInput       = nullptr;
+    QRadioButton*           directMatchButton           = nullptr;
+    QLabel*                 directMatchLimitLabel       = nullptr;
+    QTimeEdit*              directMatchLimitInput       = nullptr;
+    QCheckBox*              showTracksOnMap             = nullptr;
+    QCheckBox*              selectedImages              = nullptr;
 
-    QPushButton*            correlateButton;
+    QPushButton*            correlateButton             = nullptr;
 
-    TrackManager*           trackManager;
-    TrackCorrelator*        trackCorrelator;
-    TrackListModel*         trackListModel;
-    bool                    uiEnabledInternal;
-    bool                    uiEnabledExternal;
-    GPSItemModel*           imageModel;
-    QItemSelectionModel*    selectionModel;
+    TrackManager*           trackManager                = nullptr;
+    TrackCorrelator*        trackCorrelator             = nullptr;
+    TrackListModel*         trackListModel              = nullptr;
+    bool                    uiEnabledInternal           = true;
+    bool                    uiEnabledExternal           = true;
+    GPSItemModel*           imageModel                  = nullptr;
+    QItemSelectionModel*    selectionModel              = nullptr;
 
-    int                     correlationTotalCount;
-    int                     correlationCorrelatedCount;
-    int                     correlationTriedCount;
-    GPSUndoCommand*         correlationUndoCommand;
+    int                     correlationTotalCount       = 0;
+    int                     correlationCorrelatedCount  = 0;
+    int                     correlationTriedCount       = 0;
+    GPSUndoCommand*         correlationUndoCommand      = nullptr;
 };
 
 GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,

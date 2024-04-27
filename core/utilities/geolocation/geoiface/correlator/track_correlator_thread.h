@@ -34,19 +34,19 @@ class TrackCorrelatorThread : public QThread
 public:
 
     explicit TrackCorrelatorThread(QObject* const parent = nullptr);
-    ~TrackCorrelatorThread() override;
+    ~TrackCorrelatorThread()    override = default;
 
 public:
 
     TrackCorrelator::Correlation::List  itemsToCorrelate;
     TrackCorrelator::CorrelationOptions options;
     TrackManager::Track::List           fileList;
-    bool                                doCancel;
-    bool                                canceled;
+    bool                                doCancel    = false;
+    bool                                canceled    = false;
 
 protected:
 
-    void run() override;
+    void run()                  override;
 
 Q_SIGNALS:
 
