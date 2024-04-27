@@ -34,21 +34,12 @@ class Q_DECL_HIDDEN HTMLWidget::Private
 {
 public:
 
-    explicit Private()
-      : parent                          (nullptr),
-        isReady                         (false),
-        selectionStatus                 (false),
-        firstSelectionPoint             (),
-        intermediateSelectionPoint      (),
-        firstSelectionScreenPoint       (),
-        intermediateSelectionScreenPoint()
-    {
-    }
+    Private() = default;
 
-    QWidget*       parent;
-    bool           isReady;
+    QWidget*       parent           = nullptr;
+    bool           isReady          = false;
 
-    bool           selectionStatus;
+    bool           selectionStatus  = false;
     GeoCoordinates firstSelectionPoint;
     GeoCoordinates intermediateSelectionPoint;
     QPoint         firstSelectionScreenPoint;
@@ -57,8 +48,7 @@ public:
 
 HTMLWidget::HTMLWidget(QWidget* const parent)
     : QWebView(parent),
-      d       (new Private()),
-      s       (nullptr)
+      d       (new Private)
 {
     d->parent = parent;
     setAcceptDrops(false);
@@ -182,8 +172,10 @@ void HTMLWidget::mouseReleaseEvent(QMouseEvent* e)
 
 void HTMLWidget::mouseMoveEvent(QMouseEvent *e)
 {
-    if ((s->currentMouseMode == MouseModeRegionSelection) &&
-        d->firstSelectionPoint.hasCoordinates())
+    if (
+        (s->currentMouseMode == MouseModeRegionSelection) &&
+        d->firstSelectionPoint.hasCoordinates()
+       )
     {
         runScript2Coordinates(QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")
                               .arg(e->x())

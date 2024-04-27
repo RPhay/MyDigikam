@@ -70,8 +70,10 @@ QDateTime TrackReader::ParseTime(const QString& tstring)
     const int timeZonePlusPosition  = timeString.lastIndexOf(QLatin1Char('+'));
     const int timeZoneMinusPosition = timeString.lastIndexOf(QLatin1Char('-'));
 
-    if ((timeZonePlusPosition  == timeZoneSignPosition)   ||
-        (timeZoneMinusPosition == timeZoneSignPosition))
+    if (
+        (timeZonePlusPosition  == timeZoneSignPosition)   ||
+        (timeZoneMinusPosition == timeZoneSignPosition)
+       )
     {
         const int timeZoneSign       = (timeZonePlusPosition == timeZoneSignPosition) ? +1 : -1;
 
@@ -105,8 +107,10 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 {
     // check that really getting a track.
 
-    if ((xml.tokenType() != QXmlStreamReader::StartElement) &&
-        (xml.name()      == QLatin1String("trkpt")))
+    if (
+        (xml.tokenType() != QXmlStreamReader::StartElement) &&
+        (xml.name()      == QLatin1String("trkpt"))
+       )
     {
         return;
     }
@@ -119,8 +123,10 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
     // check that track has lat or lon attribute.
 
-    if (attributes.hasAttribute(QLatin1String("lat")) &&
-        attributes.hasAttribute(QLatin1String("lon")))
+    if (
+        attributes.hasAttribute(QLatin1String("lat")) &&
+        attributes.hasAttribute(QLatin1String("lon"))
+       )
     {
         currentDataPoint.coordinates.setLatLon(attributes.value(QLatin1String("lat")).toDouble(),
                                                attributes.value(QLatin1String("lon")).toDouble());
@@ -130,8 +136,13 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
     xml.readNext();
 
-    while (!((xml.tokenType() == QXmlStreamReader::EndElement) &&
-             (xml.name()      == QLatin1String("trkpt")))      && !xml.hasError())
+    while (
+           !(
+             (xml.tokenType() == QXmlStreamReader::EndElement) &&
+             (xml.name()      == QLatin1String("trkpt"))
+            )      &&
+           !xml.hasError()
+          )
     {
         if (xml.tokenType() == QXmlStreamReader::StartElement)
         {

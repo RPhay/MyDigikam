@@ -41,7 +41,7 @@ class HTMLWidgetPage : public QWebEnginePage
 public:
 
     explicit HTMLWidgetPage(HTMLWidget* const parent = nullptr);
-    ~HTMLWidgetPage() override;
+    ~HTMLWidgetPage() override = default;
 
 Q_SIGNALS:
 
@@ -60,7 +60,7 @@ private:
 
     QStringList m_events;
     QString     m_message;
-    QTimer*     m_timer;
+    QTimer*     m_timer = nullptr;
 };
 
 // -------------------------------------------------------------------
@@ -103,9 +103,9 @@ protected Q_SLOTS:
 private:
 
     class Private;
-    Private* const      d;
+    Private* const      d = nullptr;
 
-    GeoIfaceSharedData* s;
+    GeoIfaceSharedData* s = nullptr;
 };
 
 } // namespace Digikam

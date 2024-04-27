@@ -43,10 +43,6 @@ HTMLWidgetPage::HTMLWidgetPage(HTMLWidget* const parent)
             Qt::QueuedConnection);
 }
 
-HTMLWidgetPage::~HTMLWidgetPage()
-{
-}
-
 void HTMLWidgetPage::javaScriptConsoleMessage(JavaScriptConsoleMessageLevel /*level*/,
                                               const QString& message,
                                               int /*lineNumber*/,
@@ -96,25 +92,14 @@ class Q_DECL_HIDDEN HTMLWidget::Private
 {
 public:
 
-    explicit Private()
-      : parent                          (nullptr),
-        child                           (nullptr),
-        hpage                           (nullptr),
-        isReady                         (false),
-        selectionStatus                 (false),
-        firstSelectionPoint             (),
-        intermediateSelectionPoint      (),
-        firstSelectionScreenPoint       (),
-        intermediateSelectionScreenPoint()
-    {
-    }
+    Private() = default;
 
-    QWidget*        parent;
-    QWidget*        child;
-    HTMLWidgetPage* hpage;
+    QWidget*        parent              = nullptr;
+    QWidget*        child               = nullptr;
+    HTMLWidgetPage* hpage               = nullptr;
 
-    bool            isReady;
-    bool            selectionStatus;
+    bool            isReady             = false;
+    bool            selectionStatus     = false;
 
     GeoCoordinates  firstSelectionPoint;
     GeoCoordinates  intermediateSelectionPoint;
@@ -125,8 +110,7 @@ public:
 
 HTMLWidget::HTMLWidget(QWidget* const parent)
     : QWebEngineView(parent),
-      d             (new Private()),
-      s             (nullptr)
+      d             (new Private)
 {
     d->parent = parent;
     setAcceptDrops(false);
@@ -190,9 +174,9 @@ QVariant HTMLWidget::runScript(const QString& scriptCode, bool async)
     {
         return QVariant();
     }
-
-    //qCDebug(DIGIKAM_GEOIFACE_LOG) << scriptCode;
-
+/*
+    qCDebug(DIGIKAM_GEOIFACE_LOG) << scriptCode;
+*/
     if (async)
     {
         page()->runJavaScript(scriptCode);
@@ -202,16 +186,16 @@ QVariant HTMLWidget::runScript(const QString& scriptCode, bool async)
         QVariant   ret;
         QEventLoop loop;
 
-        // Lambda c++11 function capturing value returned by java script code which is not synchro with QWebEngineView.
+        // Lambda C++11 function capturing value returned by java script code which is not synchro with QWebEngineView.
         // See https://wiki.qt.io/Porting_from_QtWebKit_to_QtWebEngine.
 
         page()->runJavaScript(scriptCode,
                               [&ret, &loop](const QVariant& result)
-                                {
-                                    ret.setValue(result);
-                                    loop.quit();
-                                }
-                             );
+            {
+                ret.setValue(result);
+                loop.quit();
+            }
+        );
 
         loop.exec();
 
