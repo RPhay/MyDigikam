@@ -345,3 +345,4 @@ sudo apt install firefox
 
 sudo apt install plasma-discover snapd-
 sudo apt --fix-broken install
+sudo apt install plasma-discover-notifier
