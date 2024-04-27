@@ -86,10 +86,11 @@ QModelIndex GPSItemModel::index(int row, int column, const QModelIndex& parent) 
         return QModelIndex();
     }
 
-    if ( (column < 0)               ||
-         (column >= d->columnCount) ||
-         (row < 0)                  ||
-         (row >= d->items.count())
+    if (
+        (column < 0)               ||
+        (column >= d->columnCount) ||
+        (row < 0)                  ||
+        (row >= d->items.count())
        )
     {
         return QModelIndex();

@@ -40,7 +40,7 @@ public:
 
 GPSItemDelegate::GPSItemDelegate(GPSItemList* const imageList, QObject* const parent)
     : QItemDelegate(parent),
-      d            (new Private())
+      d            (new Private)
 {
     d->imageList = imageList;
 }

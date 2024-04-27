@@ -41,7 +41,7 @@ class DIGIKAM_EXPORT GPSItemList : public QTreeView
 public:
 
     explicit GPSItemList(QWidget* const parent = nullptr);
-    ~GPSItemList() override;
+    ~GPSItemList()                                    override;
 
     void setModelAndSelectionModel(GPSItemModel* const model, QItemSelectionModel* const selectionModel);
     GPSItemModel* getModel()                    const;

@@ -53,7 +53,7 @@ public:
 
 GPSItemList::GPSItemList(QWidget* const parent)
     : QTreeView(parent),
-      d        (new Private())
+      d        (new Private)
 {
     header()->setSectionsMovable(true);
     setAlternatingRowColors(true);
@@ -167,6 +167,7 @@ void GPSItemList::wheelEvent(QWheelEvent* we)
     if ((we->modifiers() & Qt::ControlModifier) == 0)
     {
         QTreeView::wheelEvent(we);
+ 
         return;
     }
 

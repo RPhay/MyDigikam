@@ -42,14 +42,11 @@ enum Type
 
 typedef struct TagData
 {
-    TagData()
-        : tagType(TypeChild)
-    {
-    }
+    TagData() = default;
 
     QString tagName;
     QString tipName;
-    Type    tagType;
+    Type    tagType = TypeChild;
 
 } TagData;
 
@@ -59,24 +56,15 @@ class SaveProperties
 {
 public:
 
-    explicit SaveProperties()
-      : shouldRemoveCoordinates (false),
-        shouldRemoveAltitude    (false),
-        shouldWriteCoordinates  (false),
-        shouldWriteAltitude     (false),
-        altitude                (0.0),
-        latitude                (0.0),
-        longitude               (0.0)
-    {
-    }
+    SaveProperties() = default;
 
-    bool  shouldRemoveCoordinates;
-    bool  shouldRemoveAltitude;
-    bool  shouldWriteCoordinates;
-    bool  shouldWriteAltitude;
-    qreal altitude;
-    qreal latitude;
-    qreal longitude;
+    bool  shouldRemoveCoordinates   = false;
+    bool  shouldRemoveAltitude      = false;
+    bool  shouldWriteCoordinates    = false;
+    bool  shouldWriteAltitude       = false;
+    qreal altitude                  = 0.0;
+    qreal latitude                  = 0.0;
+    qreal longitude                 = 0.0;
 };
 
 // --------------------------------------------------------------------------
@@ -109,7 +97,7 @@ public:
 public:
 
     explicit GPSItemContainer(const QUrl& url);
-    virtual ~GPSItemContainer();
+    virtual ~GPSItemContainer() = default;
 
     /// @name Loading and saving
     //@{
@@ -185,20 +173,20 @@ protected:
 
 protected:
 
-    GPSItemModel*          m_model;
+    GPSItemModel*          m_model          = nullptr;
 
     QUrl                   m_url;
     QDateTime              m_dateTime;
 
-    bool                   m_dirty;
+    bool                   m_dirty          = false;
     GPSDataContainer       m_gpsData;
     GPSDataContainer       m_savedState;
 
-    bool                   m_tagListDirty;
+    bool                   m_tagListDirty   = false;
     QList<QList<TagData> > m_tagList;
     QList<QList<TagData> > m_savedTagList;
-    bool                   m_writeXmpTags;
-    bool                   m_writeMetaLoc;
+    bool                   m_writeXmpTags   = true;
+    bool                   m_writeMetaLoc   = true;
 
     friend class GPSItemModel;
 

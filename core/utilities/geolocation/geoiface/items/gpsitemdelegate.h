@@ -34,7 +34,7 @@ class GPSItemDelegate : public QItemDelegate
 public:
 
     explicit GPSItemDelegate(GPSItemList* const imageList, QObject* const parent = nullptr);
-    ~GPSItemDelegate() override;
+    ~GPSItemDelegate()                                                                                          override;
 
     void setThumbnailSize(const int size);
     int  getThumbnailSize()                                                                               const;

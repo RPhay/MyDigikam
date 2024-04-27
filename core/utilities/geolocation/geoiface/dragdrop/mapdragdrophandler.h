@@ -61,7 +61,7 @@ public:
 
     explicit MapDragDropHandler(QAbstractItemModel* const /*pModel*/,
                                 GPSGeoIfaceModelHelper* const parent);
-    ~MapDragDropHandler()                                                       override;
+    ~MapDragDropHandler()                                                       override = default;
 
     Qt::DropAction accepts(const QDropEvent* e)                                 override;
     bool dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates)  override;
@@ -69,7 +69,7 @@ public:
 
 private:
 
-    GPSGeoIfaceModelHelper* const gpsGeoIfaceModelHelper;
+    GPSGeoIfaceModelHelper* const gpsGeoIfaceModelHelper = nullptr;
 };
 
 } // namespace Digikam

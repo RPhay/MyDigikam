@@ -146,21 +146,12 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
 }
 
 GPSItemContainer::GPSItemContainer(const QUrl& url)
-    : m_model       (nullptr),
-      m_url         (url),
+    : m_url         (url),
       m_dateTime    (),
-      m_dirty       (false),
       m_gpsData     (),
       m_savedState  (),
-      m_tagListDirty(false),
       m_tagList     (),
-      m_savedTagList(),
-      m_writeXmpTags(true),
-      m_writeMetaLoc(true)
-{
-}
-
-GPSItemContainer::~GPSItemContainer()
+      m_savedTagList()
 {
 }
 

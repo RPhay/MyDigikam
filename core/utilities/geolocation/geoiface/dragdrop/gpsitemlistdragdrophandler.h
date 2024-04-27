@@ -35,7 +35,7 @@ class DIGIKAM_EXPORT ItemListDragDropHandler : public QObject
 public:
 
     explicit ItemListDragDropHandler(QObject* const parent = nullptr);
-    ~ItemListDragDropHandler() override;
+    ~ItemListDragDropHandler() override = default;
 
     virtual QMimeData* createMimeData(const QList<QPersistentModelIndex>& modelIndices) = 0;
 };
@@ -49,7 +49,7 @@ class DIGIKAM_EXPORT GPSItemListDragDropHandler : public ItemListDragDropHandler
 public:
 
     explicit GPSItemListDragDropHandler(QObject* const parent = nullptr);
-    ~GPSItemListDragDropHandler() override;
+    ~GPSItemListDragDropHandler() override = default;
 
     QMimeData* createMimeData(const QList<QPersistentModelIndex>& modelIndices) override;
 };

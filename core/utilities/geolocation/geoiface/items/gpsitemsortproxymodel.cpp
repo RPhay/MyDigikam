@@ -40,7 +40,7 @@ public:
 GPSItemSortProxyModel::GPSItemSortProxyModel(GPSItemModel* const imageModel,
                                              QItemSelectionModel* const sourceSelectionModel)
     : QSortFilterProxyModel(imageModel),
-      d                    (new Private())
+      d                    (new Private)
 {
     d->imageModel             = imageModel;
     d->sourceSelectionModel   = sourceSelectionModel;
@@ -55,7 +55,7 @@ GPSItemSortProxyModel::~GPSItemSortProxyModel()
 
 bool GPSItemSortProxyModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
 {
-    if ((!left.isValid())||(!right.isValid()))
+    if ((!left.isValid()) || (!right.isValid()))
     {
 /*
         qCDebug(DIGIKAM_GENERAL_LOG) << "INVALID INDICES" << left << right;
@@ -84,10 +84,7 @@ class Q_DECL_HIDDEN GPSLinkItemSelectionModelPrivate
 public:
 
     explicit GPSLinkItemSelectionModelPrivate(GPSLinkItemSelectionModel* const proxySelectionModel)
-        : q_ptr                     (proxySelectionModel),
-          m_linkedItemSelectionModel(nullptr),
-          m_ignoreCurrentChanged    (false),
-          m_indexMapper             (nullptr)
+        : q_ptr(proxySelectionModel)
     {
         QObject::connect(q_ptr, &QItemSelectionModel::currentChanged, q_ptr,
                          [this](const QModelIndex& idx)
@@ -107,7 +104,7 @@ public:
 public:
 
     Q_DECLARE_PUBLIC(GPSLinkItemSelectionModel)
-    GPSLinkItemSelectionModel* const q_ptr;
+    GPSLinkItemSelectionModel* const q_ptr = nullptr;
 
 public:
 
@@ -147,9 +144,9 @@ public:
 
 public:
 
-    QItemSelectionModel*      m_linkedItemSelectionModel;
-    bool                      m_ignoreCurrentChanged;
-    GPSModelIndexProxyMapper* m_indexMapper;
+    QItemSelectionModel*      m_linkedItemSelectionModel    = nullptr;
+    bool                      m_ignoreCurrentChanged        = false;
+    GPSModelIndexProxyMapper* m_indexMapper                 = nullptr;
 };
 
 GPSLinkItemSelectionModel::GPSLinkItemSelectionModel(QAbstractItemModel* const model,
@@ -163,7 +160,7 @@ GPSLinkItemSelectionModel::GPSLinkItemSelectionModel(QAbstractItemModel* const m
 
 GPSLinkItemSelectionModel::GPSLinkItemSelectionModel(QObject* const parent)
     : QItemSelectionModel(nullptr, parent),
-      d_ptr(new GPSLinkItemSelectionModelPrivate(this))
+      d_ptr              (new GPSLinkItemSelectionModelPrivate(this))
 {
 }
 
@@ -319,10 +316,9 @@ public:
     explicit GPSModelIndexProxyMapperPrivate(const QAbstractItemModel* const leftModel,
                                              const QAbstractItemModel* const rightModel,
                                              GPSModelIndexProxyMapper* const qq)
-        : q_ptr         (qq),
-          m_leftModel   (leftModel),
-          m_rightModel  (rightModel),
-          mConnected    (false)
+        : q_ptr       (qq),
+          m_leftModel (leftModel),
+          m_rightModel(rightModel)
     {
         createProxyChain();
     }
@@ -350,7 +346,7 @@ public:
 public:
 
     Q_DECLARE_PUBLIC(GPSModelIndexProxyMapper)
-    GPSModelIndexProxyMapper* const             q_ptr;
+    GPSModelIndexProxyMapper* const             q_ptr       = nullptr;
 
     QList<QPointer<const QAbstractProxyModel> > m_proxyChainUp;
     QList<QPointer<const QAbstractProxyModel> > m_proxyChainDown;
@@ -358,7 +354,7 @@ public:
     QPointer<const QAbstractItemModel>          m_leftModel;
     QPointer<const QAbstractItemModel>          m_rightModel;
 
-    bool                                        mConnected;
+    bool                                        mConnected  = false;
 };
 
 /**
@@ -393,10 +389,10 @@ void GPSModelIndexProxyMapperPrivate::createProxyChain()
 
         QObject::connect(selectionTargetProxyModel.data(), &QAbstractProxyModel::sourceModelChanged,
                          q_ptr, [this]
-                         {
-                             createProxyChain();
-                         }
-                        );
+            {
+                createProxyChain();
+            }
+        );
 
         selectionTargetProxyModel = qobject_cast<const QAbstractProxyModel*>(selectionTargetProxyModel->sourceModel());
 
@@ -418,10 +414,10 @@ void GPSModelIndexProxyMapperPrivate::createProxyChain()
 
         QObject::connect(sourceProxyModel.data(), &QAbstractProxyModel::sourceModelChanged,
                          q_ptr, [this]
-                         {
-                             createProxyChain();
-                         }
-                        );
+            {
+                createProxyChain();
+            }
+        );
 
         sourceProxyModel      = qobject_cast<const QAbstractProxyModel *>(sourceProxyModel->sourceModel());
         const int targetIndex = proxyChainDown.indexOf(sourceProxyModel);

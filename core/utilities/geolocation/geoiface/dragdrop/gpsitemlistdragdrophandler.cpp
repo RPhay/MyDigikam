@@ -23,18 +23,10 @@ ItemListDragDropHandler::ItemListDragDropHandler(QObject* const parent)
 {
 }
 
-ItemListDragDropHandler::~ItemListDragDropHandler()
-{
-}
-
 // ------------------------------------------------------------------------------------------------
 
 GPSItemListDragDropHandler::GPSItemListDragDropHandler(QObject* const parent)
     : ItemListDragDropHandler(parent)
-{
-}
-
-GPSItemListDragDropHandler::~GPSItemListDragDropHandler()
 {
 }
 

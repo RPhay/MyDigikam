@@ -76,7 +76,7 @@ public:
 GPSItemListContextMenu::GPSItemListContextMenu(GPSItemList* const imagesList,
                                                GPSBookmarkOwner* const bookmarkOwner)
     : QObject(imagesList),
-      d(new Private)
+      d      (new Private)
 {
     d->imagesList                   = imagesList;
 
@@ -656,6 +656,7 @@ void GPSItemListContextMenu::removeInformationFromSelectedImages(const GPSDataCo
     if (undoCommand->affectedItemCount() > 0)
     {
         undoCommand->setText(undoDescription);
+
         Q_EMIT signalUndoCommand(undoCommand);
     }
     else
