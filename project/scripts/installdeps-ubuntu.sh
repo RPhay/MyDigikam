@@ -340,3 +340,8 @@ sudo apt install software-properties-common
 sudo add-apt-repository ppa:mozillateam/ppa
 
 sudo apt install firefox
+
+# Reinstall Plasma Discover without snapd dependency for the system update notifications.
+
+sudo apt install plasma-discover snapd-
+sudo apt --fix-broken install
