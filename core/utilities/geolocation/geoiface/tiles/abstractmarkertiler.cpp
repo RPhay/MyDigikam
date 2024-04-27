@@ -34,13 +34,13 @@ public:
 
     explicit Private() = default;
 
-    QScopedPointer<AbstractMarkerTiler::Tile>  rootTile;
-    bool                                       isDirty = true;
+    QScopedPointer<AbstractMarkerTiler::Tile> rootTile;
+    bool                                      isDirty = true;
 };
 
 AbstractMarkerTiler::AbstractMarkerTiler(QObject* const parent)
     : QObject(parent),
-      d(new Private())
+      d      (new Private)
 {
 }
 
@@ -69,6 +69,7 @@ void AbstractMarkerTiler::setDirty(const bool state)
     if (state && !d->isDirty)
     {
         d->isDirty = true;
+
         Q_EMIT signalTilesOrSelectionChanged();
     }
     else
@@ -107,18 +108,10 @@ class Q_DECL_HIDDEN AbstractMarkerTiler::NonEmptyIterator::Private
 {
 public:
 
-    explicit Private()
-        : model(nullptr),
-          level(0),
-          startIndex(),
-          endIndex(),
-          currentIndex(),
-          atEnd(false)
-    {
-    }
+    Private() = default;
 
-    AbstractMarkerTiler*                model;
-    int                                 level;
+    AbstractMarkerTiler*                model   = nullptr;
+    int                                 level   = 0;
 
     QList<QPair<TileIndex, TileIndex> > boundsList;
 
@@ -126,7 +119,7 @@ public:
     TileIndex                           endIndex;
     TileIndex                           currentIndex;
 
-    bool                                atEnd;
+    bool                                atEnd   = false;
 };
 
 AbstractMarkerTiler::NonEmptyIterator::~NonEmptyIterator()
@@ -139,7 +132,9 @@ AbstractMarkerTiler::NonEmptyIterator::NonEmptyIterator(AbstractMarkerTiler* con
     : d(new Private())
 {
     d->model = model;
+
     GEOIFACE_ASSERT(level <= TileIndex::MaxLevel);
+
     d->level = level;
 
     TileIndex startIndex;
@@ -165,11 +160,14 @@ AbstractMarkerTiler::NonEmptyIterator::NonEmptyIterator(AbstractMarkerTiler* con
     : d(new Private())
 {
     d->model = model;
+
     GEOIFACE_ASSERT(level <= TileIndex::MaxLevel);
+
     d->level = level;
 
     GEOIFACE_ASSERT(startIndex.level() == level);
     GEOIFACE_ASSERT(endIndex.level()   == level);
+
     d->boundsList << QPair<TileIndex, TileIndex>(startIndex, endIndex);
 
     initializeNextBounds();
@@ -178,10 +176,12 @@ AbstractMarkerTiler::NonEmptyIterator::NonEmptyIterator(AbstractMarkerTiler* con
 AbstractMarkerTiler::NonEmptyIterator::NonEmptyIterator(AbstractMarkerTiler* const model,
                                                         const int level,
                                                         const GeoCoordinates::PairList& normalizedMapBounds)
-    : d(new Private())
+    : d(new Private)
 {
     d->model = model;
+
     GEOIFACE_ASSERT(level <= TileIndex::MaxLevel);
+
     d->level = level;
 
     // store the coordinates of the bounds as indices:
@@ -189,16 +189,17 @@ AbstractMarkerTiler::NonEmptyIterator::NonEmptyIterator(AbstractMarkerTiler* con
     for (int i = 0 ; i < normalizedMapBounds.count() ; ++i)
     {
         GeoCoordinates::Pair currentBounds = normalizedMapBounds.at(i);
+
         GEOIFACE_ASSERT(currentBounds.first.lat() < currentBounds.second.lat());
         GEOIFACE_ASSERT(currentBounds.first.lon() < currentBounds.second.lon());
 
         const TileIndex startIndex = TileIndex::fromCoordinates(currentBounds.first,  d->level);
         const TileIndex endIndex   = TileIndex::fromCoordinates(currentBounds.second, d->level);
 /*
-         qCDebug(DIGIKAM_GEOIFACE_LOG) << currentBounds.first.geoUrl()
-                                       << startIndex
-                                       << currentBounds.second.geoUrl()
-                                       << endIndex;
+        qCDebug(DIGIKAM_GEOIFACE_LOG) << currentBounds.first.geoUrl()
+                                      << startIndex
+                                      << currentBounds.second.geoUrl()
+                                      << endIndex;
 */
         d->boundsList << QPair<TileIndex, TileIndex>(startIndex, endIndex);
     }
@@ -227,6 +228,7 @@ bool AbstractMarkerTiler::NonEmptyIterator::initializeNextBounds()
 
     // make sure the root tile is split, using linear index -1 is ok here as
     // this is handled in Tile::getChild
+
     d->model->getTile(d->currentIndex, true);
 
     nextIndex();
@@ -250,14 +252,15 @@ TileIndex AbstractMarkerTiler::NonEmptyIterator::nextIndex()
                                       << d->currentIndex;
 */
         // determine the limits in the current level:
+
         int limitLatBL   = 0;
         int limitLonBL   = 0;
         int limitLatTR   = TileIndex::Tiling-1;
         int limitLonTR   = TileIndex::Tiling-1;
 
         {
-
             int compareLevel = currentLevel - 1;
+
             // check limit on the left side:
 
             bool onLimit = true;
@@ -321,7 +324,7 @@ TileIndex AbstractMarkerTiler::NonEmptyIterator::nextIndex()
 
         d->currentIndex.oneUp();
 
-        Tile* tile           = d->model->getTile(d->currentIndex, true);
+        Tile* const tile     = d->model->getTile(d->currentIndex, true);
 
         if (!tile)
         {
@@ -344,10 +347,10 @@ TileIndex AbstractMarkerTiler::NonEmptyIterator::nextIndex()
                             int currentLon = idx % TileIndex::Tiling;
 
                             return (
-                                    currentLat >= limitLatBL &&
-                                    currentLat <= limitLatTR &&
-                                    currentLon >= limitLonBL &&
-                                    currentLon <= limitLonTR
+                                    (currentLat >= limitLatBL) &&
+                                    (currentLat <= limitLatTR) &&
+                                    (currentLon >= limitLonBL) &&
+                                    (currentLon <= limitLonTR)
                                    );
                         };
 
@@ -359,7 +362,6 @@ TileIndex AbstractMarkerTiler::NonEmptyIterator::nextIndex()
         {
             levelLinearIndex = tile->nextNonEmptyIndex(levelLinearIndex);
         }
-
 
         if (levelLinearIndex == -1)
         {
@@ -426,11 +428,9 @@ AbstractMarkerTiler* AbstractMarkerTiler::NonEmptyIterator::model() const
 
 // -------------------------------------------------------------------------
 
-AbstractMarkerTiler::Tile::Tile() = default;
-
 AbstractMarkerTiler::Tile::~Tile()
 {
-    for (auto* tile : children)
+    for (auto* const tile : children)
     {
         if (tile)
         {
@@ -480,7 +480,6 @@ AbstractMarkerTiler::Tile* AbstractMarkerTiler::Tile::addChild(const int linearI
     return tilePointer;
 }
 
-
 void AbstractMarkerTiler::Tile::deleteChild(Tile* const childTile,
                                             const int knownLinearIndex)
 {
@@ -529,7 +528,7 @@ int AbstractMarkerTiler::Tile::nextNonEmptyIndex(int linearIndex) const
         return *it;
     }
 
-    return -1;
+    return (-1);
 }
 
 } // namespace Digikam

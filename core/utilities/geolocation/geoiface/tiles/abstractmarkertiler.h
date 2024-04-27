@@ -52,6 +52,8 @@ public:
     {
     public:
 
+        ClickInfo() = default;
+
         TileIndex::List tileIndicesList;
         QVariant        representativeIndex;
         GeoGroupState   groupSelectionState;
@@ -64,7 +66,7 @@ public:
     {
     public:
 
-        explicit Tile();
+        Tile() = default;
         ~Tile();
 
     public:

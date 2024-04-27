@@ -35,19 +35,6 @@ namespace
 namespace Digikam
 {
 
-TileIndex::TileIndex()
-    : m_indicesCount(0)
-{
-    for (int i = 0 ; i < MaxIndexCount ; ++i)
-    {
-        m_indices[i] = 0;
-    }
-}
-
-TileIndex::~TileIndex()
-{
-}
-
 int TileIndex::indexCount() const
 {
     return m_indicesCount;
@@ -165,7 +152,7 @@ bool TileIndex::indicesEqual(const TileIndex& a, const TileIndex& b, const int u
 
 TileIndex TileIndex::mid(const int first, const int len) const
 {
-    GEOIFACE_ASSERT(first+(len-1) <= m_indicesCount);
+    GEOIFACE_ASSERT(first + (len - 1) <= m_indicesCount);
 
     TileIndex result;
 
@@ -260,16 +247,24 @@ GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
             tileLon += indexLon(l);
         }
 
-        if ((l + 1 == m_indicesCount)               &&
-            ((ofCorner == CornerPosition::CornerNE) ||
-             (ofCorner == CornerPosition::CornerNW)))
+        if (
+            (l + 1 == m_indicesCount)               &&
+            (
+             (ofCorner == CornerPosition::CornerNE) ||
+             (ofCorner == CornerPosition::CornerNW)
+            )
+           )
         {
             tileLat += 1;
         }
 
-        if ((l + 1 == m_indicesCount)               &&
-            ((ofCorner == CornerPosition::CornerNE) ||
-             (ofCorner == CornerPosition::CornerSE)))
+        if (
+            (l + 1 == m_indicesCount)               &&
+            (
+             (ofCorner == CornerPosition::CornerNE) ||
+             (ofCorner == CornerPosition::CornerSE)
+            )
+           )
         {
             tileLon += 1;
         }

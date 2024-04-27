@@ -54,8 +54,8 @@ public:
 
 public:
 
-    explicit TileIndex();
-    ~TileIndex();
+    TileIndex()  = default;
+    ~TileIndex() = default;
 
     int indexCount()                                                                const;
     int level()                                                                     const;
@@ -95,8 +95,8 @@ public:
 
 private:
 
-    int m_indicesCount;
-    int m_indices[MaxIndexCount];
+    int m_indicesCount           = 0;
+    int m_indices[MaxIndexCount] = { 0 };
 };
 
 } // namespace Digikam

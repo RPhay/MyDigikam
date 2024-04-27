@@ -36,21 +36,17 @@ class Q_DECL_HIDDEN TileGrouper::Private
 {
 public:
 
-    explicit Private()
-        : clustersDirty(true),
-          currentBackend(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool        clustersDirty;
-    MapBackend* currentBackend;
+    bool        clustersDirty   = true;
+    MapBackend* currentBackend  = nullptr;
 };
 
 TileGrouper::TileGrouper(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
                          QObject* const parent)
     : QObject(parent),
-      d(new Private),
-      s(sharedData)
+      d      (new Private),
+      s      (sharedData)
 {
     qRegisterMetaType<QVector<int>>("QVector<int>");
 }
@@ -187,7 +183,12 @@ void TileGrouper::updateClusters()
 
         // make sure we are in the grid (in case there are rounding errors somewhere in the backend
 
-        if ((tilePoint.x() < 0) || (tilePoint.y() < 0) || (tilePoint.x() >= gridWidth) || (tilePoint.y() >= gridHeight))
+        if (
+            (tilePoint.x() < 0)          ||
+            (tilePoint.y() < 0)          ||
+            (tilePoint.x() >= gridWidth) ||
+            (tilePoint.y() >= gridHeight)
+           )
         {
             continue;
         }
@@ -255,7 +256,7 @@ void TileGrouper::updateClusters()
                 // calculate x,y from the linear index:
 
                 const int x = index % gridWidth;
-                const int y = (index-x)/gridWidth;
+                const int y = (index - x) / gridWidth;
                 const QPoint markerPosition(x, y);
 
                 // only use this as a candidate for a cluster if it is not too close to another cluster:
@@ -321,16 +322,16 @@ void TileGrouper::updateClusters()
 
         // mark the pixel as done:
 
-        pixelCountGrid[markerX+markerY*gridWidth]   = 0;
-        pixelNonEmptyTileIndexGrid[markerX+markerY*gridWidth].clear();
-        nonEmptyPixelIndices[pixelGridMetaIndexMax] = -1;
+        pixelCountGrid[markerX + markerY * gridWidth] = 0;
+        pixelNonEmptyTileIndexGrid[markerX + markerY * gridWidth].clear();
+        nonEmptyPixelIndices[pixelGridMetaIndexMax]   = -1;
 
         // absorb all markers around it:
         // Now we only remove the markers from the pixelgrid. They will be cleared from the
         // pixelGridIndices in the loop above
         // make sure we do not go over the grid boundaries:
 
-        const int eatRadius = gridSize/4;
+        const int eatRadius = gridSize / 4;
         const int xStart    = qMax( (markerX-eatRadius), 0);
         const int yStart    = qMax( (markerY-eatRadius), 0);
         const int xEnd      = qMin( (markerX+eatRadius), gridWidth-1);
@@ -340,7 +341,7 @@ void TileGrouper::updateClusters()
         {
             for (int indexY = yStart ; indexY <= yEnd ; ++indexY)
             {
-                const int index       = indexX + indexY*gridWidth;
+                const int index       = indexX + indexY * gridWidth;
                 cluster.tileIndicesList << pixelNonEmptyTileIndexGrid.at(index);
                 pixelNonEmptyTileIndexGrid[index].clear();
                 cluster.markerCount  += pixelCountGrid.at(index);

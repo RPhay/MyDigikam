@@ -90,7 +90,7 @@ public:
 
 ItemMarkerTiler::ItemMarkerTiler(GeoModelHelper* const modelHelper, QObject* const parent)
     : AbstractMarkerTiler(parent),
-      d                  (new Private())
+      d                  (new Private)
 {
     resetRootTile();
     setMarkerGeoModelHelper(modelHelper);
@@ -387,6 +387,7 @@ void ItemMarkerTiler::removeMarkerIndexFromGrid(const QModelIndex& markerIndex, 
         if (markerIsSelected&&!ignoreSelection)
         {
             currentTile->selectedCount--;
+
             GEOIFACE_ASSERT(currentTile->selectedCount >= 0);
         }
     }
@@ -595,6 +596,7 @@ void ItemMarkerTiler::addMarkerIndexToGrid(const QPersistentModelIndex& markerIn
     }
 
     TileIndex tileIndex = TileIndex::fromCoordinates(markerCoordinates, TileIndex::MaxLevel);
+
     GEOIFACE_ASSERT(tileIndex.level() == TileIndex::MaxLevel);
 
     bool markerIsSelected = false;
