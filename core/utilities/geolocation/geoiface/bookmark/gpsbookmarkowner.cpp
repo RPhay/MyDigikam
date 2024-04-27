@@ -41,28 +41,21 @@ class Q_DECL_HIDDEN GPSBookmarkOwner::Private
 {
 public:
 
-    explicit Private()
-      : parent             (nullptr),
-        bookmarkManager    (nullptr),
-        bookmarkMenu       (nullptr),
-        addBookmarkEnabled (true),
-        bookmarkModelHelper(nullptr)
-    {
-    }
+    Private() = default;
 
-    QWidget*                  parent;
-    BookmarksManager*         bookmarkManager;
-    BookmarksMenu*            bookmarkMenu;
+    QWidget*                  parent                = nullptr;
+    BookmarksManager*         bookmarkManager       = nullptr;
+    BookmarksMenu*            bookmarkMenu          = nullptr;
     QPointer<BookmarksDialog> bookmarksDialog;
-    bool                      addBookmarkEnabled;
-    GPSBookmarkModelHelper*   bookmarkModelHelper;
+    bool                      addBookmarkEnabled    = true;
+    GPSBookmarkModelHelper*   bookmarkModelHelper   = nullptr;
     GeoCoordinates            lastCoordinates;
     QString                   lastTitle;
 };
 
 GPSBookmarkOwner::GPSBookmarkOwner(GPSItemModel* const gpsItemModel, QWidget* const parent)
     : QObject(parent),
-      d(new Private())
+      d      (new Private())
 {
     d->parent = parent;
 
@@ -114,14 +107,17 @@ void GPSBookmarkOwner::slotOpenBookmark(const QUrl& url)
     {
         GPSDataContainer position;
         position.setCoordinates(coordinate);
+
         Q_EMIT positionSelected(position);
     }
 }
 
 void GPSBookmarkOwner::slotShowBookmarksDialog()
 {
-    if (d->bookmarksDialog &&
-        (d->bookmarksDialog->isMinimized() || !d->bookmarksDialog->isHidden()))
+    if (
+        d->bookmarksDialog &&
+        (d->bookmarksDialog->isMinimized() || !d->bookmarksDialog->isHidden())
+       )
     {
         d->bookmarksDialog->showNormal();       // krazy:exclude=qmethods
         d->bookmarksDialog->activateWindow();

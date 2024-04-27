@@ -39,24 +39,18 @@ class Q_DECL_HIDDEN GPSBookmarkModelHelper::Private
 {
 public:
 
-    explicit Private()
-      : model          (nullptr),
-        bookmarkManager(nullptr),
-        imageModel     (nullptr),
-        visible        (false)
-    {
-    }
+    Private() = default;
 
     void addBookmarkGroupToModel(BookmarkNode* const);
 
 public:
 
-    QStandardItemModel* model;
-    BookmarksManager*   bookmarkManager;
-    GPSItemModel*       imageModel;
+    QStandardItemModel* model           = nullptr;
+    BookmarksManager*   bookmarkManager = nullptr;
+    GPSItemModel*       imageModel      = nullptr;
     QPixmap             pixmap;
     QUrl                bookmarkIconUrl;
-    bool                visible;
+    bool                visible         = false;
 };
 
 void GPSBookmarkModelHelper::Private::addBookmarkGroupToModel(BookmarkNode* const node)
@@ -102,7 +96,7 @@ GPSBookmarkModelHelper::GPSBookmarkModelHelper(BookmarksManager* const bookmarkM
                                                GPSItemModel* const imageModel,
                                                QObject* const parent)
     : GeoModelHelper(parent),
-      d(new Private())
+      d             (new Private())
 {
     d->model           = new QStandardItemModel(this);
     d->bookmarkManager = bookmarkManager;
