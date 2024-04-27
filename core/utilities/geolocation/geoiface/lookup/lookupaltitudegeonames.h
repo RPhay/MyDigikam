@@ -35,7 +35,7 @@ class DIGIKAM_EXPORT LookupAltitudeGeonames : public LookupAltitude
 public:
 
     explicit LookupAltitudeGeonames(QObject* const parent);
-    ~LookupAltitudeGeonames() override;
+    ~LookupAltitudeGeonames()                             override;
 
     QString backendName()                           const override;
     QString backendHumanName()                      const override;

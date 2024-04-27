@@ -37,12 +37,7 @@ public:
     {
     public:
 
-        explicit Item()
-          : dataColumns(),
-            parent     (nullptr),
-            children   ()
-        {
-        }
+        Item() = default;
 
         ~Item()
         {
@@ -56,7 +51,7 @@ public:
     private:
 
         QList<QMap<int, QVariant> > dataColumns;
-        Item*                       parent;
+        Item*                       parent  = nullptr;
         QList<Item*>                children;
 
         friend class SimpleTreeModel;

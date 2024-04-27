@@ -73,103 +73,58 @@ class Q_DECL_HIDDEN RGWidget::Private
 {
 public:
 
-    explicit Private()
-        : currentlyAskingCancelQuestion     (false),
-          hideOptions                       (true),
-          UIEnabled                         (true),
-          label                             (nullptr),
-          imageModel                        (nullptr),
-          selectionModel                    (nullptr),
-          buttonRGSelected                  (nullptr),
-          undoCommand                       (nullptr),
-          serviceComboBox                   (nullptr),
-          languageEdit                      (nullptr),
-          currentBackend                    (nullptr),
-          requestedRGCount                  (0),
-          receivedRGCount                   (0),
-          buttonHideOptions                 (nullptr),
-          tagsLoc                           (nullptr),
-          metaLoc                           (nullptr),
-          UGridContainer                    (nullptr),
-          LGridContainer                    (nullptr),
-          serviceLabel                      (nullptr),
-          languageLabel                     (nullptr),
-          separator                         (nullptr),
-          tagModel                          (nullptr),
-          tagTreeView                       (nullptr),
-          tagSelectionModel                 (nullptr),
-          actionAddCountry                  (nullptr),
-          actionAddState                    (nullptr),
-          actionAddStateDistrict            (nullptr),
-          actionAddCounty                   (nullptr),
-          actionAddCity                     (nullptr),
-          actionAddCityDistrict             (nullptr),
-          actionAddSuburb                   (nullptr),
-          actionAddTown                     (nullptr),
-          actionAddVillage                  (nullptr),
-          actionAddHamlet                   (nullptr),
-          actionAddStreet                   (nullptr),
-          actionAddHouseNumber              (nullptr),
-          actionAddPlace                    (nullptr),
-          actionAddLAU2                     (nullptr),
-          actionAddLAU1                     (nullptr),
-          actionAddCustomizedSpacer         (nullptr),
-          actionRemoveTag                   (nullptr),
-          actionRemoveAllSpacers            (nullptr),
-          actionAddAllAddressElementsToTag  (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                   currentlyAskingCancelQuestion;
-    bool                   hideOptions;
-    bool                   UIEnabled;
-    QLabel*                label;
-    GPSItemModel*          imageModel;
-    QItemSelectionModel*   selectionModel;
-    QPushButton*           buttonRGSelected;
+    bool                   currentlyAskingCancelQuestion    = false;
+    bool                   hideOptions                      = true;
+    bool                   UIEnabled                        = true;
+    QLabel*                label                            = nullptr;
+    GPSItemModel*          imageModel                       = nullptr;
+    QItemSelectionModel*   selectionModel                   = nullptr;
+    QPushButton*           buttonRGSelected                 = nullptr;
 
-    GPSUndoCommand*        undoCommand;
+    GPSUndoCommand*        undoCommand                      = nullptr;
     QModelIndex            currentTagTreeIndex;
 
-    QComboBox*             serviceComboBox;
-    QComboBox*             languageEdit;
+    QComboBox*             serviceComboBox                  = nullptr;
+    QComboBox*             languageEdit                     = nullptr;
     QList<RGInfo>          photoList;
     QList<RGBackend*>      backendRGList;
-    RGBackend*             currentBackend;
-    int                    requestedRGCount;
-    int                    receivedRGCount;
-    QPushButton*           buttonHideOptions;
-    QCheckBox*             tagsLoc;
-    QCheckBox*             metaLoc;
-    QWidget*               UGridContainer;
-    QWidget*               LGridContainer;
-    QLabel*                serviceLabel;
-    QLabel*                languageLabel;
-    DLineWidget*           separator;
+    RGBackend*             currentBackend                   = nullptr;
+    int                    requestedRGCount                 = 0;
+    int                    receivedRGCount                  = 0;
+    QPushButton*           buttonHideOptions                = nullptr;
+    QCheckBox*             tagsLoc                          = nullptr;
+    QCheckBox*             metaLoc                          = nullptr;
+    QWidget*               UGridContainer                   = nullptr;
+    QWidget*               LGridContainer                   = nullptr;
+    QLabel*                serviceLabel                     = nullptr;
+    QLabel*                languageLabel                    = nullptr;
+    DLineWidget*           separator                        = nullptr;
 
-    RGTagModel*            tagModel;
-    QTreeView*             tagTreeView;
+    RGTagModel*            tagModel                         = nullptr;
+    QTreeView*             tagTreeView                      = nullptr;
 
-    QItemSelectionModel*   tagSelectionModel;
-    QAction*               actionAddCountry;
-    QAction*               actionAddState;
-    QAction*               actionAddStateDistrict;
-    QAction*               actionAddCounty;
-    QAction*               actionAddCity;
-    QAction*               actionAddCityDistrict;
-    QAction*               actionAddSuburb;
-    QAction*               actionAddTown;
-    QAction*               actionAddVillage;
-    QAction*               actionAddHamlet;
-    QAction*               actionAddStreet;
-    QAction*               actionAddHouseNumber;
-    QAction*               actionAddPlace;
-    QAction*               actionAddLAU2;
-    QAction*               actionAddLAU1;
-    QAction*               actionAddCustomizedSpacer;
-    QAction*               actionRemoveTag;
-    QAction*               actionRemoveAllSpacers;
-    QAction*               actionAddAllAddressElementsToTag;
+    QItemSelectionModel*   tagSelectionModel                = nullptr;
+    QAction*               actionAddCountry                 = nullptr;
+    QAction*               actionAddState                   = nullptr;
+    QAction*               actionAddStateDistrict           = nullptr;
+    QAction*               actionAddCounty                  = nullptr;
+    QAction*               actionAddCity                    = nullptr;
+    QAction*               actionAddCityDistrict            = nullptr;
+    QAction*               actionAddSuburb                  = nullptr;
+    QAction*               actionAddTown                    = nullptr;
+    QAction*               actionAddVillage                 = nullptr;
+    QAction*               actionAddHamlet                  = nullptr;
+    QAction*               actionAddStreet                  = nullptr;
+    QAction*               actionAddHouseNumber             = nullptr;
+    QAction*               actionAddPlace                   = nullptr;
+    QAction*               actionAddLAU2                    = nullptr;
+    QAction*               actionAddLAU1                    = nullptr;
+    QAction*               actionAddCustomizedSpacer        = nullptr;
+    QAction*               actionRemoveTag                  = nullptr;
+    QAction*               actionRemoveAllSpacers           = nullptr;
+    QAction*               actionAddAllAddressElementsToTag = nullptr;
 
     QMap<QString, QString> countryCode;
 };
@@ -183,7 +138,7 @@ public:
 RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const selectionModel,
                    QAbstractItemModel* externTagModel, QWidget* const parent)
     : QWidget(parent),
-      d      (new Private())
+      d      (new Private)
 {
     d->imageModel     = imageModel;
     d->selectionModel = selectionModel;
@@ -1037,6 +992,7 @@ void RGWidget::slotRGCanceled()
             if (d->undoCommand)
             {
                 Q_EMIT signalUndoCommand(d->undoCommand);
+
                 d->undoCommand = nullptr;
             }
         }

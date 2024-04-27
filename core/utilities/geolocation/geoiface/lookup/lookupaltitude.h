@@ -50,17 +50,12 @@ public:
     {
     public:
 
-        explicit Request()
-          : coordinates(),
-            success    (false),
-            data       ()
-        {
-        }
+        Request() = default;
 
     public:
 
         GeoCoordinates         coordinates;
-        bool                   success;
+        bool                   success  = false;
         QVariant               data;
 
         typedef QList<Request> List;
@@ -69,7 +64,7 @@ public:
 public:
 
     explicit LookupAltitude(QObject* const parent);
-    ~LookupAltitude() override;
+    ~LookupAltitude() override = default;
 
     virtual QString backendName()                           const = 0;
     virtual QString backendHumanName()                      const = 0;

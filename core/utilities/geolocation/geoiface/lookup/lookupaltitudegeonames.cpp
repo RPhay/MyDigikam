@@ -48,6 +48,7 @@ public:
             if (groupedRequestIndices.at(i).first.sameLonLatAs(request.coordinates))
             {
                 groupedRequestIndices[i].second << requestIndex;
+
                 return true;
             }
         }
@@ -62,33 +63,26 @@ class Q_DECL_HIDDEN LookupAltitudeGeonames::Private
 {
 public:
 
-    explicit Private()
-      : status                   (StatusSuccess),
-        currentMergedRequestIndex(0),
-        netReply                 (nullptr),
-        mngr                     (nullptr)
-
-    {
-    }
+    Private() = default;
 
 public:
 
     Request::List          requests;
     MergedRequests::List   mergedRequests;
-    StatusAltitude         status;
+    StatusAltitude         status                       = StatusSuccess;
     QString                errorMessage;
 
-    int                    currentMergedRequestIndex;
+    int                    currentMergedRequestIndex    = 0;
 
-    QNetworkReply*         netReply;
-    QNetworkAccessManager* mngr;
+    QNetworkReply*         netReply                     = nullptr;
+    QNetworkAccessManager* mngr                         = nullptr;
 };
 
 // ------------------------------------------------------------
 
 LookupAltitudeGeonames::LookupAltitudeGeonames(QObject* const parent)
     : LookupAltitude(parent),
-      d(new Private)
+      d             (new Private)
 {
     d->mngr = NetworkManager::instance()->getNetworkManager(this);
 

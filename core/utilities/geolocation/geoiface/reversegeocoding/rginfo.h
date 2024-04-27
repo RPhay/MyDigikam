@@ -42,12 +42,12 @@ public:
     /**
      * Constructor
      */
-    explicit RGInfo();
+    RGInfo()  = default;
 
     /**
      * Destructor
      */
-    ~RGInfo();
+    ~RGInfo() = default;
 
 public:
 

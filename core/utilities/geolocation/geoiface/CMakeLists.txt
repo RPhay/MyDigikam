@@ -36,7 +36,6 @@ set(libgeoiface_SRCS
                      ${CMAKE_CURRENT_SOURCE_DIR}/correlator/track_listmodel.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/correlator/gpscorrelatorwidget.cpp
 
-                     ${CMAKE_CURRENT_SOURCE_DIR}/reversegeocoding/rginfo.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/reversegeocoding/rgtagmodel.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/reversegeocoding/rgwidget.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/reversegeocoding/simpletreemodel.cpp

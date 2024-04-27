@@ -23,10 +23,6 @@ LookupAltitude::LookupAltitude(QObject* const parent)
 {
 }
 
-LookupAltitude::~LookupAltitude()
-{
-}
-
 } // namespace Digikam
 
 #include "moc_lookupaltitude.cpp"
