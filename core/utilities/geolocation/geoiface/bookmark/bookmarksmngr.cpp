@@ -47,8 +47,7 @@ RemoveBookmarksCommand::RemoveBookmarksCommand(BookmarksManager* const mngr,
       m_row            (row),
       m_bookmarkManager(mngr),
       m_node           (parent->children().value(row)),
-      m_parent         (parent),
-      m_done           (false)
+      m_parent         (parent)
 {
 }
 
@@ -63,14 +62,18 @@ RemoveBookmarksCommand::~RemoveBookmarksCommand()
 void RemoveBookmarksCommand::undo()
 {
     m_parent->add(m_node, m_row);
+
     Q_EMIT m_bookmarkManager->entryAdded(m_node);
+
     m_done = false;
 }
 
 void RemoveBookmarksCommand::redo()
 {
     m_parent->remove(m_node);
+
     Q_EMIT m_bookmarkManager->entryRemoved(m_parent, m_row, m_node);
+
     m_done = true;
 }
 
@@ -102,18 +105,13 @@ class Q_DECL_HIDDEN ChangeBookmarkCommand::Private
 {
 public:
 
-    explicit Private()
-      : manager (nullptr),
-        type    (Url),
-        node    (nullptr)
-    {
-    }
+    Private() = default;
 
-    BookmarksManager* manager;
-    BookmarkData      type;
+    BookmarksManager* manager   = nullptr;
+    BookmarkData      type      = Url;
     QString           oldValue;
     QString           newValue;
-    BookmarkNode*     node;
+    BookmarkNode*     node      = nullptr;
 };
 
 ChangeBookmarkCommand::ChangeBookmarkCommand(BookmarksManager* const mngr,
@@ -216,14 +214,10 @@ class Q_DECL_HIDDEN BookmarksModel::Private
 {
 public:
 
-    explicit Private()
-      : manager (nullptr),
-        endMacro(false)
-    {
-    }
+    Private() = default;
 
-    BookmarksManager* manager;
-    bool              endMacro;
+    BookmarksManager* manager   = nullptr;
+    bool              endMacro  = false;
 };
 
 BookmarksModel::BookmarksModel(BookmarksManager* const mngr, QObject* const parent)
@@ -292,6 +286,7 @@ void BookmarksModel::entryRemoved(BookmarkNode* parent, int row, BookmarkNode* i
 void BookmarksModel::entryChanged(BookmarkNode* item)
 {
     QModelIndex idx = index(item);
+
     Q_EMIT dataChanged(idx, idx);
 }
 
@@ -321,7 +316,7 @@ bool BookmarksModel::removeRows(int row, int count, const QModelIndex& parent)
 
 QVariant BookmarksModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-    if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
+    if ((orientation == Qt::Horizontal) && (role == Qt::DisplayRole))
     {
         switch (section)
         {
@@ -500,8 +495,10 @@ bool BookmarksModel::hasChildren(const QModelIndex& parent) const
 
     const BookmarkNode* const parentNode = node(parent);
 
-    return ((parentNode->type() == BookmarkNode::Folder) ||
-            (parentNode->type() == BookmarkNode::RootFolder));
+    return (
+            (parentNode->type() == BookmarkNode::Folder) ||
+            (parentNode->type() == BookmarkNode::RootFolder)
+           );
 }
 
 Qt::ItemFlags BookmarksModel::flags(const QModelIndex& index) const
@@ -519,8 +516,10 @@ Qt::ItemFlags BookmarksModel::flags(const QModelIndex& index) const
         flags |= Qt::ItemIsDragEnabled;
     }
 
-    if ((bookmarkNode->type() != BookmarkNode::Separator) &&
-        (bookmarkNode->type() != BookmarkNode::RootFolder))
+    if (
+        (bookmarkNode->type() != BookmarkNode::Separator) &&
+        (bookmarkNode->type() != BookmarkNode::RootFolder)
+       )
     {
         flags |= Qt::ItemIsEditable;
     }
@@ -768,16 +767,11 @@ class Q_DECL_HIDDEN BookmarksManager::Private
 {
 public:
 
-    explicit Private()
-      : loaded          (false),
-        bookmarkRootNode(nullptr),
-        bookmarkModel   (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool            loaded;
-    BookmarkNode*   bookmarkRootNode;
-    BookmarksModel* bookmarkModel;
+    bool            loaded              = false;
+    BookmarkNode*   bookmarkRootNode    = nullptr;
+    BookmarksModel* bookmarkModel       = nullptr;
     QUndoStack      commands;
     QString         bookmarksFile;
 };

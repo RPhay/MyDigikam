@@ -32,22 +32,14 @@ class Q_DECL_HIDDEN ModelMenu::Private
 {
 public:
 
-    explicit Private()
-      : maxRows         (7),
-        firstSeparator  (-1),
-        maxWidth        (-1),
-        hoverRole       (0),
-        separatorRole   (0),
-        model           (nullptr)
-    {
-    }
+    Private() = default;
 
-    int                   maxRows;
-    int                   firstSeparator;
-    int                   maxWidth;
-    int                   hoverRole;
-    int                   separatorRole;
-    QAbstractItemModel*   model;
+    int                   maxRows           = 7;
+    int                   firstSeparator    = -1;
+    int                   maxWidth          = -1;
+    int                   hoverRole         = 0;
+    int                   separatorRole     = 0;
+    QAbstractItemModel*   model             = nullptr;
     QPersistentModelIndex root;
 };
 
@@ -264,6 +256,7 @@ void ModelMenu::slotTriggered(QAction* action)
     if (v.canConvert<QModelIndex>())
     {
         QModelIndex idx = qvariant_cast<QModelIndex>(v);
+
         Q_EMIT activated(idx);
     }
 }
@@ -290,12 +283,9 @@ class Q_DECL_HIDDEN BookmarksMenu::Private
 {
 public:
 
-    explicit Private()
-      : manager(nullptr)
-    {
-    }
+    Private() = default;
 
-    BookmarksManager* manager;
+    BookmarksManager* manager = nullptr;
     QList<QAction*>   initActions;
 };
 

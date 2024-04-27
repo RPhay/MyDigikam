@@ -46,11 +46,11 @@ public:
 
 protected:
 
-    int               m_row;
-    BookmarksManager* m_bookmarkManager;
-    BookmarkNode*     m_node;
-    BookmarkNode*     m_parent;
-    bool              m_done;
+    int               m_row             = 0;
+    BookmarksManager* m_bookmarkManager = nullptr;
+    BookmarkNode*     m_node            = nullptr;
+    BookmarkNode*     m_parent          = nullptr;
+    bool              m_done            = false;
 };
 
 //---------------------------------------------------------------------------------
@@ -119,7 +119,7 @@ public:
 public:
 
     explicit BookmarksModel(BookmarksManager* const mngr, QObject* const parent = nullptr);
-    ~BookmarksModel()                                                                              override;
+    ~BookmarksModel()                                                                               override;
 
     BookmarksManager* bookmarksManager()                                                      const;
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
