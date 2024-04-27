@@ -136,10 +136,6 @@ GeoPluginAboutDlg::GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const
     resize(400, 500);
 }
 
-GeoPluginAboutDlg::~GeoPluginAboutDlg()
-{
-}
-
 void GeoPluginAboutDlg::slotOnlineHandbook()
 {
     openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("geolocation_settings"));

@@ -26,19 +26,10 @@
 namespace Digikam
 {
 
-GeoCoordinates::GeoCoordinates()
-    : m_lat     (0.0),
-      m_lon     (0.0),
-      m_alt     (0.0),
-      m_hasFlags(HasNothing)
-{
-}
-
 GeoCoordinates::GeoCoordinates(const double inLat,
                                const double inLon)
     : m_lat     (inLat),
       m_lon     (inLon),
-      m_alt     (0.0),
       m_hasFlags(HasCoordinates)
 {
 }
@@ -53,19 +44,15 @@ GeoCoordinates::GeoCoordinates(const double inLat,
 {
 }
 
-GeoCoordinates::~GeoCoordinates()
-{
-}
-
 bool GeoCoordinates::operator==(const GeoCoordinates& other) const
 {
     return (
-            (hasCoordinates() == other.hasCoordinates()) &&
-            (hasCoordinates() ? ( ( lat() == other.lat()) && ( lon() == other.lon() ))
-                              : true)                    &&
-            (hasAltitude() == other.hasAltitude())       &&
-            (hasAltitude() ? ( alt() == other.alt())
-                            : true)
+            (hasCoordinates() == other.hasCoordinates())  &&
+            (hasCoordinates() ? ((lat() == other.lat()) && (lon() == other.lon()))
+                              : true)                     &&
+            (hasAltitude()    == other.hasAltitude())     &&
+            (hasAltitude()    ? (alt() == other.alt())
+                              : true)
            );
 }
 
@@ -170,10 +157,12 @@ QString GeoCoordinates::geoUrl() const
 
 bool GeoCoordinates::sameLonLatAs(const GeoCoordinates& other) const
 {
-    return m_hasFlags.testFlag(HasCoordinates)       &&
-           other.m_hasFlags.testFlag(HasCoordinates) &&
-           (m_lat == other.m_lat)                    &&
-           (m_lon == other.m_lon);
+    return (
+            m_hasFlags.testFlag(HasCoordinates)       &&
+            other.m_hasFlags.testFlag(HasCoordinates) &&
+            (m_lat == other.m_lat)                    &&
+            (m_lon == other.m_lon)
+           );
 }
 
 GeoCoordinates GeoCoordinates::fromGeoUrl(const QString& url,

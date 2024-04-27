@@ -26,14 +26,10 @@ class Q_DECL_HIDDEN GroupStateComputer::Private
 {
 public:
 
-    explicit Private()
-      : state(SelectedNone),
-        stateMask(SelectedNone)
-    {
-    }
+    Private() = default;
 
-    GeoGroupState state;
-    GeoGroupState stateMask;
+    GeoGroupState state     = SelectedNone;
+    GeoGroupState stateMask = SelectedNone;
 };
 
 GroupStateComputer::GroupStateComputer()

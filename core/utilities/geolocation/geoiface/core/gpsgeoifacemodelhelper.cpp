@@ -48,14 +48,10 @@ class Q_DECL_HIDDEN GPSGeoIfaceModelHelper::Private
 {
 public:
 
-    explicit Private()
-      : model         (nullptr),
-        selectionModel(nullptr)
-    {
-    }
+    Private() = default;
 
-    GPSItemModel*          model;
-    QItemSelectionModel*   selectionModel;
+    GPSItemModel*          model            = nullptr;
+    QItemSelectionModel*   selectionModel   = nullptr;
     QList<GeoModelHelper*> ungroupedModelHelpers;
 };
 
@@ -73,6 +69,11 @@ GPSGeoIfaceModelHelper::GPSGeoIfaceModelHelper(GPSItemModel* const model,
 
     connect(d->model, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SIGNAL(signalModelChangedDrastically()));
+}
+
+GPSGeoIfaceModelHelper::~GPSGeoIfaceModelHelper()
+{
+    delete d;
 }
 
 QAbstractItemModel* GPSGeoIfaceModelHelper::model() const
@@ -108,11 +109,6 @@ bool GPSGeoIfaceModelHelper::itemCoordinates(const QModelIndex& index,
     return true;
 }
 
-GPSGeoIfaceModelHelper::~GPSGeoIfaceModelHelper()
-{
-    delete d;
-}
-
 QPixmap GPSGeoIfaceModelHelper::pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
                                                               const QSize& size)
 {
@@ -122,7 +118,7 @@ QPixmap GPSGeoIfaceModelHelper::pixmapFromRepresentativeIndex(const QPersistentM
 QPersistentModelIndex GPSGeoIfaceModelHelper::bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
                                                                               const int sortKey)
 {
-    const bool oldestFirst = sortKey & 1;
+    const bool oldestFirst = (sortKey & 1);
     QPersistentModelIndex bestIndex;
     QDateTime             bestTime;
 

@@ -47,10 +47,6 @@ GeoModelHelper::GeoModelHelper(QObject* const parent)
 {
 }
 
-GeoModelHelper::~GeoModelHelper()
-{
-}
-
 void GeoModelHelper::snapItemsTo(const QModelIndex& targetIndex,
                                  const QList<QPersistentModelIndex>& snappedIndices)
 {

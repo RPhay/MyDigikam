@@ -44,16 +44,12 @@ class Q_DECL_HIDDEN GeolocationSettings::Private
 {
 public:
 
-    explicit Private ()
-        : mutex      (),
-          configGroup(QLatin1String("Marble Settings"))
-    {
-    }
+    Private() = default;
 
     GeolocationSettingsContainer settings;
     QMutex                       mutex;
 
-    const QString                configGroup;
+    const QString                configGroup = QLatin1String("Marble Settings");
 
     QList<MapWidget*>            widgets;
 

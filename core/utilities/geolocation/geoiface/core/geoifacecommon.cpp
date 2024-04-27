@@ -43,7 +43,7 @@ class Q_DECL_HIDDEN GeoIfaceGlobalObject::Private
 {
 public:
 
-    explicit Private()
+    Private()
         : internalMapWidgetsPool(),
           markerPixmaps()
     {
@@ -90,7 +90,7 @@ public:
 
 GeoIfaceGlobalObject::GeoIfaceGlobalObject()
     : QObject(),
-      d(new Private())
+      d      (new Private())
 {
 }
 
@@ -124,6 +124,7 @@ QUrl GeoIfaceGlobalObject::locateDataFile(const QString& filename)
     const QUrl dataFile = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                                      QLatin1String("digikam/geoiface/") + filename));
     qCDebug(DIGIKAM_GEOIFACE_LOG) << "located data:" << dataFile;
+
     return dataFile;
 }
 

@@ -62,54 +62,54 @@ public:
 
 public:
 
-    GeoCoordinates();
+    GeoCoordinates()  = default;
     GeoCoordinates(const double inLat, const double inLon);
     GeoCoordinates(const double inLat, const double inLon, const double inAlt);
-    ~GeoCoordinates();
+    ~GeoCoordinates() = default;
 
-    bool operator==(const GeoCoordinates& other) const;
+    bool operator==(const GeoCoordinates& other)        const;
 
-    double lat() const;
-    double lon() const ;
-    double alt() const;
+    double lat()                                        const;
+    double lon()                                        const;
+    double alt()                                        const;
 
-    bool hasCoordinates() const;
-    bool hasLatitude()    const;
-    bool hasLongitude()   const;
+    bool hasCoordinates()                               const;
+    bool hasLatitude()                                  const;
+    bool hasLongitude()                                 const;
 
     void setLatLon(const double inLat, const double inLon);
 
-    bool hasAltitude()  const;
-    HasFlags hasFlags() const;
+    bool hasAltitude()                                  const;
+    HasFlags hasFlags()                                 const;
 
     void setAlt(const double inAlt);
 
     void clearAlt();
     void clear();
 
-    QString altString() const;
-    QString latString() const;
-    QString lonString() const;
-    QString geoUrl()    const;
+    QString altString()                                 const;
+    QString latString()                                 const;
+    QString lonString()                                 const;
+    QString geoUrl()                                    const;
 
-    bool sameLonLatAs(const GeoCoordinates& other)   const;
+    bool sameLonLatAs(const GeoCoordinates& other)      const;
 
     static GeoCoordinates fromGeoUrl(const QString& url, bool* const parsedOkay = nullptr);
     static Pair makePair(const qreal lat1, const qreal lon1, const qreal lat2, const qreal lon2);
 
 #ifdef HAVE_GEOLOCATION
 
-    Marble::GeoDataCoordinates toMarbleCoordinates() const;
+    Marble::GeoDataCoordinates toMarbleCoordinates()    const;
     static GeoCoordinates fromMarbleCoordinates(const Marble::GeoDataCoordinates& marbleCoordinates);
 
 #endif // HAVE_GEOLOCATION
 
 private:
 
-    double   m_lat;
-    double   m_lon;
-    double   m_alt;
-    HasFlags m_hasFlags;
+    double   m_lat      = 0.0;
+    double   m_lon      = 0.0;
+    double   m_alt      = 0.0;
+    HasFlags m_hasFlags = HasNothing;
 };
 
 } // namespace Digikam

@@ -38,6 +38,8 @@ namespace Digikam
 
 QString getUserAgentName()
 {
+    // Legacy user agent name. Do not change it.
+
     return QLatin1String("KIPI-Plugins GPSSync - kde-imaging@kde.org");
 }
 
@@ -103,8 +105,10 @@ void coordinatesToClipboard(const GeoCoordinates& coordinates,
 
 bool checkSidecarSettings()
 {
-    if ( (MetaEngineSettings::instance()->settings().metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY) &&
-         (!MetaEngineSettings::instance()->settings().useXMPSidecar4Reading) )
+    if (
+        (MetaEngineSettings::instance()->settings().metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY) &&
+        (!MetaEngineSettings::instance()->settings().useXMPSidecar4Reading)
+       )
     {
         const int result = DMessageBox::showContinueCancel(QMessageBox::Warning,
                                                            QApplication::activeWindow(),

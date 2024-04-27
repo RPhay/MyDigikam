@@ -36,7 +36,7 @@ class DIGIKAM_EXPORT GeoPluginAboutDlg : public QDialog
 public:
 
     explicit GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const parent = nullptr);
-    ~GeoPluginAboutDlg() override;
+    ~GeoPluginAboutDlg() override = default;
 
 private Q_SLOTS:
 
