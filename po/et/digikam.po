@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 01:36+0000\n"
+"POT-Creation-Date: 2024-04-27 01:36+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -9871,7 +9871,7 @@ msgstr "Värvihalduse kasutamine trükkimisel"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:85
 #: core/libs/imgqsort/imagequalityconfselector.cpp:70
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:62
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:58
 #: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Settings..."
@@ -12065,7 +12065,7 @@ msgid "Scan Images"
 msgstr "Piltide skannimine"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:104
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1855
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
@@ -12074,7 +12074,7 @@ msgid "New Image File Name"
 msgstr "Uue pildi failinimi"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:152
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, fuzzy, kde-format
 #| msgid "Unsupported Format"
 msgctxt "@title:window"
@@ -12082,13 +12082,13 @@ msgid "Unsupported Format"
 msgstr "Toetamata vorming"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:153
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Sihtpildi failivorming \"%1\" ei ole toetatud."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:165
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, fuzzy, kde-format
 #| msgid "Cannot Save File"
 msgctxt "@title:window"
@@ -12096,7 +12096,7 @@ msgid "Cannot Save File"
 msgstr "Faili salvestamine nurjus"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:166
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
 "Failed to save file\n"
@@ -12108,7 +12108,7 @@ msgstr ""
 "\"%2\" nurjus."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:181
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2329
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2348
 #, fuzzy, kde-format
@@ -12118,7 +12118,7 @@ msgid "Overwrite File?"
 msgstr "Kas kirjutada fail üle?"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:245
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:182
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -21547,7 +21547,7 @@ msgid "Add again"
 msgstr "Lisa uuesti"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:515
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:367
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:352
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:143
 #: core/utilities/geolocation/marble/osm/OsmRelationManagerWidget.cpp:151
 #, kde-format
@@ -56681,182 +56681,182 @@ msgstr ""
 "Sarnasusotsinguks\n"
 "joonista siia visand"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:179
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:153
 #, kde-format
 msgid "Roadmap"
 msgstr "Teekaart"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:180
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:154
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:353
 #, kde-format
 msgid "Satellite"
 msgstr "Satelliit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:181
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:155
 #, kde-format
 msgid "Hybrid"
 msgstr "Hübriid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:182
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:156
 #: core/utilities/geolocation/marble/geodata/data/GeoDataPlacemark.cpp:316
 #, kde-format
 msgid "Terrain"
 msgstr "Maastik"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:174
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Kaarditüübi valikute näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:179
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Liikumisvalikute näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Skaleerimisvalikute näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #: core/utilities/setup/setupgeolocation.cpp:131
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:472
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:375
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
 #, kde-format
 msgid "Float items"
 msgstr "Hõljuvad elemendid"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:195
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:158
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr "Marble virtuaalgloobus"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:326
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:289
 #, kde-format
 msgid "Atlas map"
 msgstr "Atlase kaart"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:327
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:290
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Satelliit"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:328
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:291
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:329
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:292
 #, fuzzy, kde-format
 #| msgid "OpenStreetMap"
 msgid "OpenStreetMap (Vector)"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:387
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:350
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Sfääriline"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:392
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:355
 #: core/utilities/geolocation/marble/projections/MercatorProjection.cpp:41
 #, kde-format
 msgid "Mercator"
 msgstr "Mercatori"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:397
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:360
 #, kde-format
 msgid "Equirectangular"
 msgstr "Ekvidistantne silindriline projektsioon"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:408
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:371
 #, kde-format
 msgid "Show compass"
 msgstr "Kompassi näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:413
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:376
 #, kde-format
 msgid "Show scale bar"
 msgstr "Skaalariba näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:418
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:381
 #, kde-format
 msgid "Show navigation"
 msgstr "Liikumise näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:423
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:386
 #, kde-format
 msgid "Show overview map"
 msgstr "Ülevaatekaardi näitamine"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:436
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:399
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:463
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:426
 #, kde-format
 msgid "Projection"
 msgstr "Projektsioon"
 
-#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:72
+#: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:68
 #, fuzzy, kde-format
 #| msgid "Edit Bookmarks"
 msgid "Export as..."
 msgstr "Muuda järjehoidjaid"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:160
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:183
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:154
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:179
 #, kde-format
 msgid "Bookmark folder"
 msgstr "Järjehoidjate kataloog"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:193
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:189
 #, kde-format
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "See ei ole XBEL versiooni 1.0 fail."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:311
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:307
 #, kde-format
 msgid "Unknown title"
 msgstr "Tundmatu nimi"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:88
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:81
 #, fuzzy, kde-format
 #| msgid "Add Bookmark"
 msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "Järjehoidja lisamine"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:93
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:86
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
 msgstr "Kirjuta järjehoidja nimi ja kommentaar ning vali, kus seda hoida."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:100
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:93
 #, kde-format
 msgid "Bookmark title"
 msgstr "Järjehoidja nimi"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:105
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:98
 #, kde-format
 msgid "Bookmark comment"
 msgstr "Järjehoidja kommentaar"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:195
 #, fuzzy, kde-format
 #| msgid "Edit Geolocation Bookmarks"
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Geolokatsiooni järjehoidjate muutmine"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:232
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:217
 #: core/utilities/setup/album/setupcategory.cpp:92
 #: core/utilities/setup/camera/setupcamera.cpp:277
 #: core/utilities/setup/camera/setupcamera.cpp:399
@@ -56865,24 +56865,24 @@ msgstr "Geolokatsiooni järjehoidjate muutmine"
 msgid "&Remove"
 msgstr "&Eemalda"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:235
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:220
 #, kde-format
 msgid "Add Folder"
 msgstr "Lisa kataloog "
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:426
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:411
 #, kde-format
 msgid "New Folder"
 msgstr "Uus kataloog"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:444
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "Värvihaldus"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:445
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:430
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
