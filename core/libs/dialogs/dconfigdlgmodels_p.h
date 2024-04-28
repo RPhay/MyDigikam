@@ -48,15 +48,15 @@ public:
     explicit PageItem(DConfigDlgWdgItem* const pageItem, PageItem* const parent = nullptr);
     ~PageItem();
 
-    void appendChild(PageItem* child);
-    void insertChild(int row, PageItem* child);
+    void appendChild(PageItem* const child);
+    void insertChild(int row, PageItem* const child);
     void removeChild(int row);
 
     PageItem* child(int row);
     int childCount()                    const;
     int columnCount()                   const;
     int row()                           const;
-    PageItem* parent();
+    PageItem* parent()                  const;
 
     DConfigDlgWdgItem* pageWidgetItem() const;
 
@@ -68,7 +68,7 @@ private:
 
     DConfigDlgWdgItem* mPageWidgetItem;
     QList<PageItem*>   mChildItems;
-    PageItem*          mParentItem;
+    PageItem*          mParentItem = nullptr;
 };
 
 // ----------------------------------------------------------------------------

@@ -207,12 +207,12 @@ PageItem::~PageItem()
     qDeleteAll(mChildItems);
 }
 
-void PageItem::appendChild(PageItem* item)
+void PageItem::appendChild(PageItem* const item)
 {
     mChildItems.append(item);
 }
 
-void PageItem::insertChild(int row, PageItem* item)
+void PageItem::insertChild(int row, PageItem* const item)
 {
     mChildItems.insert(row, item);
 }
@@ -237,7 +237,7 @@ int PageItem::columnCount() const
     return 1;
 }
 
-PageItem* PageItem::parent()
+PageItem* PageItem::parent() const
 {
     return mParentItem;
 }
