@@ -1938,7 +1938,10 @@ void BdEngineBackend::rollbackTransaction()
 
     // we leave that out for transaction counting. It's an exceptional condition.
 
-    d->databaseForThread().rollback();
+    if (!d->databaseForThread().rollback())
+    {
+        qCDebug(DIGIKAM_DBENGINE_LOG) << "Failed to run database backend rollback transaction.";
+    }
 }
 
 QStringList BdEngineBackend::tables()
