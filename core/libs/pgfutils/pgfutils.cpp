@@ -62,6 +62,7 @@ namespace PGFUtils
 {
 
 // Private method
+
 bool writePGFImageDataToStream(const QImage& image,
                                CPGFStream& stream,
                                int quality,
@@ -433,7 +434,7 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
         return false;
     }
 
-    unsigned char pgfID[3] = { 0x50, 0x47, 0x46 };
+    const unsigned char pgfID[3] = { 0x50, 0x47, 0x46 };
 
     if (memcmp(&header[0], &pgfID, 3) != 0)
     {
@@ -482,7 +483,7 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
 
         if (pgf.Levels() > 0)
         {
-            for (i = pgf.Levels()-1 ; i >= 0 ; --i)
+            for (i = pgf.Levels() - 1 ; i >= 0 ; --i)
             {
                 if (qMin((int)pgf.Width(i), (int)pgf.Height(i)) >= maximumSize)
                 {
