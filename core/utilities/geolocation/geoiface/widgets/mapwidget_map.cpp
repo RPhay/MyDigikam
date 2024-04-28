@@ -79,7 +79,6 @@ bool MapWidget::setBackend(const QString& backendName)
 
         disconnect(d->currentBackend, SIGNAL(signalSelectionHasBeenMade(Digikam::GeoCoordinates::Pair)),
                    this, SLOT(slotNewSelectionFromMap(Digikam::GeoCoordinates::Pair)));
-
     }
 
     Q_FOREACH (MapBackend* const backend, d->loadedBackends)
@@ -227,7 +226,8 @@ void MapWidget::slotBackendReadyChanged(const QString& backendName)
     markClustersAsDirty();
     rebuildConfigurationMenu();
 
-    if (dynamic_cast<BackendMarble*>(sender()) ||
+    if (
+        dynamic_cast<BackendMarble*>(sender()) ||
         (dynamic_cast<QActionGroup*>(sender()) &&
         (backendName == QLatin1String("marble")))
        )
@@ -528,8 +528,8 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
 
                 const int width  = resultPixmap.size().width();
                 const int height = resultPixmap.size().height();
-                painter.drawLine(0, 0, width-1, height-1);
-                painter.drawLine(width-1, 0, 0, height-1);
+                painter.drawLine(0, 0, width - 1, height - 1);
+                painter.drawLine(width - 1, 0, 0, height - 1);
             }
 
             if (strokeStyle != Qt::SolidLine)
@@ -538,9 +538,9 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
 
                 borderPen.setColor(Qt::white);
                 painter.setPen(borderPen);
-                painter.drawRect(borderWidth-1, borderWidth-1,
-                                 resultPixmap.size().width()-borderWidth,
-                                 resultPixmap.size().height()-borderWidth);
+                painter.drawRect(borderWidth - 1, borderWidth - 1,
+                                 resultPixmap.size().width() - borderWidth,
+                                 resultPixmap.size().height() - borderWidth);
             }
 
             // now draw the selection border
@@ -548,9 +548,9 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
             borderPen.setColor(strokeColor);
             borderPen.setStyle(strokeStyle);
             painter.setPen(borderPen);
-            painter.drawRect(borderWidth-1, borderWidth-1,
-                             resultPixmap.size().width()-borderWidth,
-                             resultPixmap.size().height()-borderWidth);
+            painter.drawRect(borderWidth - 1, borderWidth - 1,
+                             resultPixmap.size().width() - borderWidth,
+                             resultPixmap.size().height() - borderWidth);
 
             if (s->showNumbersOnItems)
             {
@@ -581,7 +581,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
             // update the display information stored in the cluster:
 
             cluster.pixmapType   = GeoIfaceCluster::PixmapImage;
-            cluster.pixmapOffset = QPoint(resultPixmap.width()/2, resultPixmap.height()/2);
+            cluster.pixmapOffset = QPoint(resultPixmap.width() / 2, resultPixmap.height() / 2);
             cluster.pixmapSize   = resultPixmap.size();
 
             if (centerPoint)
@@ -603,9 +603,9 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
     QBrush circleBrush(fillColor);
     QPen labelPen;
     labelPen.setColor(labelColor);
-    const QRect circleRect(0, 0, 2*circleRadius, 2*circleRadius);
+    const QRect circleRect(0, 0, 2 * circleRadius, 2 * circleRadius);
 
-    const int pixmapDiameter = 2*(circleRadius+1);
+    const int pixmapDiameter = 2 * (circleRadius + 1);
     QPixmap circlePixmap(pixmapDiameter, pixmapDiameter);
 
     /// @todo cache this somehow
@@ -788,8 +788,10 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
 {
     qCDebug(DIGIKAM_GEOIFACE_LOG) << clusterIndices;
 
-    if ((s->currentMouseMode == MouseModeZoomIntoGroup) ||
-        (s->currentMouseMode == MouseModeRegionSelectionFromIcon))
+    if (
+        (s->currentMouseMode == MouseModeZoomIntoGroup) ||
+        (s->currentMouseMode == MouseModeRegionSelectionFromIcon)
+       )
     {
 
 #ifdef HAVE_GEOLOCATION
@@ -891,8 +893,13 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
 #endif
 
     }
-    else if (((s->currentMouseMode == MouseModeFilter) && s->selectionRectangle.first.hasCoordinates()) ||
-             (s->currentMouseMode == MouseModeSelectThumbnail))
+    else if (
+             (
+              (s->currentMouseMode == MouseModeFilter) &&
+              s->selectionRectangle.first.hasCoordinates()
+             ) ||
+             (s->currentMouseMode == MouseModeSelectThumbnail)
+            )
     {
         // update the selection and filtering state of the clusters
 
@@ -939,6 +946,7 @@ void MapWidget::slotRequestLazyReclustering()
     if (s->activeState)
     {
         d->lazyReclusteringRequested = true;
+
         QTimer::singleShot(0, this, SLOT(slotLazyReclusteringRequestCallBack()));
     }
 }

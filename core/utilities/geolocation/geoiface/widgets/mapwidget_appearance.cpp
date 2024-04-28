@@ -68,7 +68,7 @@ void MapWidget::getColorInfos(const int clusterIndex,
 
     const int nMarkers             = overrideCount ? *overrideCount : cluster.markerCount;
 
-    getColorInfos(overrideSelection ? *overrideSelection : cluster.groupState,
+    getColorInfos((overrideSelection ? *overrideSelection : cluster.groupState),
                   nMarkers,
                   fillColor, strokeColor, strokeStyle, labelText, labelColor);
 }
@@ -85,22 +85,22 @@ void MapWidget::getColorInfos(const GeoGroupState groupState,
     }
     else if ((nMarkers >= 1000) && (nMarkers <= 1950))      // cppcheck-suppress knownConditionTrueFalse
     {
-        *labelText = QString::fromLatin1("%L1k").arg(qreal(nMarkers)/1000.0, 0, 'f', 1);
+        *labelText = QString::fromLatin1("%L1k").arg(qreal(nMarkers) / 1000.0, 0, 'f', 1);
     }
     else if ((nMarkers >= 1951) && (nMarkers < 19500))      // cppcheck-suppress knownConditionTrueFalse
     {
-        *labelText = QString::fromLatin1("%L1k").arg(qreal(nMarkers)/1000.0, 0, 'f', 0);
+        *labelText = QString::fromLatin1("%L1k").arg(qreal(nMarkers) / 1000.0, 0, 'f', 0);
     }
     else
     {
         // convert to "1E5" notation for numbers >=20k:
 
-        qreal exponent           = floor(log((qreal)nMarkers)/log((qreal)10));
-        qreal nMarkersFirstDigit = round(qreal(nMarkers)/pow(10, exponent));
+        qreal exponent           = floor(log((qreal)nMarkers) / log((qreal)10));
+        qreal nMarkersFirstDigit = round(qreal(nMarkers) / pow(10, exponent));
 
         if (nMarkersFirstDigit >= 10)
         {
-            nMarkersFirstDigit=round(nMarkersFirstDigit/10.0);
+            nMarkersFirstDigit = round(nMarkersFirstDigit / 10.0);
             exponent++;
         }
 
@@ -210,7 +210,9 @@ QString MapWidget::convertZoomToBackendZoom(const QString& someZoom,
                                             const QString& targetBackend) const
 {
     const QStringList zoomParts = someZoom.split(QLatin1Char(':'));
+
     GEOIFACE_ASSERT(zoomParts.count() == 2);
+
     const QString sourceBackend = zoomParts.first();
 
     if (sourceBackend == targetBackend)
@@ -334,7 +336,7 @@ void MapWidget::setThumbnailGroupingRadius(const int newGroupingRadius)
 
     // make sure the thumbnails are smaller than the grouping radius
 
-    if (2*s->thumbnailGroupingRadius < s->thumbnailSize)
+    if ((2 * s->thumbnailGroupingRadius) < s->thumbnailSize)
     {
         s->thumbnailSize = 2 * newGroupingRadius;
     }
@@ -368,7 +370,7 @@ void MapWidget::slotDecreaseThumbnailSize()
 
     if (s->thumbnailSize > GeoIfaceMinThumbnailSize)
     {
-        const int newThumbnailSize = qMax(GeoIfaceMinThumbnailSize, s->thumbnailSize-5);
+        const int newThumbnailSize = qMax(GeoIfaceMinThumbnailSize, s->thumbnailSize - 5);
 
         // make sure the grouping radius is also decreased
         // this will automatically decrease the thumbnail size as well
@@ -394,7 +396,7 @@ int MapWidget::getThumbnailSize() const
 
 int MapWidget::getUndecoratedThumbnailSize() const
 {
-    return s->thumbnailSize-2;
+    return (s->thumbnailSize - 2);
 }
 
 } // namespace Digikam

@@ -31,12 +31,9 @@ class Q_DECL_HIDDEN PlaceholderWidget::Private
 {
 public:
 
-    explicit Private()
-      : messageLabel(nullptr)
-    {
-    }
+    Private() = default;
 
-    QLabel* messageLabel;
+    QLabel* messageLabel = nullptr;
 };
 
 PlaceholderWidget::PlaceholderWidget(QWidget* const parent)

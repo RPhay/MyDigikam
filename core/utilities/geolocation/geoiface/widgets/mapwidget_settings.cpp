@@ -76,8 +76,8 @@ void MapWidget::readSettingsFromGroup(const KConfigGroup* const group)
     d->actionPreviewGroupedItems->setChecked(group->readEntry("Preview Grouped Items", true));
     d->actionShowNumbersOnItems->setChecked(group->readEntry("Show numbers on items",  true));
 
-    setThumnailSize(group->readEntry("Thumbnail Size",                       2*GeoIfaceMinThumbnailSize));
-    setThumbnailGroupingRadius(group->readEntry("Thumbnail Grouping Radius", 2*GeoIfaceMinThumbnailGroupingRadius));
+    setThumnailSize(group->readEntry("Thumbnail Size",                       2 * GeoIfaceMinThumbnailSize));
+    setThumbnailGroupingRadius(group->readEntry("Thumbnail Grouping Radius", 2 * GeoIfaceMinThumbnailGroupingRadius));
     setMarkerGroupingRadius(group->readEntry("Edit Grouping Radius",         GeoIfaceMinMarkerGroupingRadius));
     s->showThumbnails = group->readEntry("Show Thumbnails",                  s->showThumbnails);
     d->actionShowThumbnails->setChecked(s->showThumbnails);
@@ -125,4 +125,3 @@ void MapWidget::slotApplySettings()
 }
 
 } // namespace Digikam
-

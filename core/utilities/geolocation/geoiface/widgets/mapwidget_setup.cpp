@@ -418,6 +418,7 @@ void MapWidget::slotUpdateActionsEnabled()
         if (action->data().value<GeoMouseModes>() == s->currentMouseMode)
         {   // cppcheck-suppress useStlAlgorithm
             action->setChecked(true);
+
             break;
         }
     }
@@ -662,7 +663,7 @@ void MapWidget::dragLeaveEvent(QDragLeaveEvent* event)
 {
     Q_UNUSED(event);
 
-    // remove the marker:
+    // remove the marker
 /*
     d->currentBackend->updateDragDropMarker(QPoint(), 0);
 */

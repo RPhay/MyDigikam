@@ -133,7 +133,6 @@ void MapWidget::setTrackManager(TrackManager* const trackManager)
     }
 }
 
-
 void MapWidget::slotUngroupedModelChanged()
 {
     // determine the index under which we handle this model

@@ -81,69 +81,72 @@ class Q_DECL_HIDDEN MapWidget::Private
 {
 public:
 
-    explicit Private();
+    Private() = default;
 
     QList<MapBackend*>      loadedBackends;
-    MapBackend*             currentBackend;
+    MapBackend*             currentBackend                          = nullptr;
     QString                 currentBackendName;
-    QStackedLayout*         stackedLayout;
+    QStackedLayout*         stackedLayout                           = nullptr;
 
     /// NOTE: these values are cached in case the backend is not ready:
-    GeoCoordinates          cacheCenterCoordinate;
-    QString                 cacheZoom;
+
+    GeoCoordinates          cacheCenterCoordinate                   = GeoCoordinates(52.0, 6.0);
+    QString                 cacheZoom                               = QLatin1String("marble:900");
 
     /// actions for controlling the widget
-    QMenu*                  configurationMenu;
-    QActionGroup*           actionGroupBackendSelection;
-    QAction*                actionZoomIn;
-    QAction*                actionZoomOut;
-    QAction*                actionShowThumbnails;
-    QWidget*                mouseModesHolder;
+
+    QMenu*                  configurationMenu                       = nullptr;
+    QActionGroup*           actionGroupBackendSelection             = nullptr;
+    QAction*                actionZoomIn                            = nullptr;
+    QAction*                actionZoomOut                           = nullptr;
+    QAction*                actionShowThumbnails                    = nullptr;
+    QWidget*                mouseModesHolder                        = nullptr;
     QPointer<QWidget>       controlWidget;
-    QAction*                actionPreviewSingleItems;
-    QAction*                actionPreviewGroupedItems;
-    QAction*                actionShowNumbersOnItems;
+    QAction*                actionPreviewSingleItems                = nullptr;
+    QAction*                actionPreviewGroupedItems               = nullptr;
+    QAction*                actionShowNumbersOnItems                = nullptr;
 
-    bool                    lazyReclusteringRequested;
+    bool                    lazyReclusteringRequested               = false;
 
-    GeoDragDropHandler*     dragDropHandler;
+    GeoDragDropHandler*     dragDropHandler                         = nullptr;
 
-    QMenu*                  sortMenu;
-    QAction*                actionIncreaseThumbnailSize;
-    QAction*                actionDecreaseThumbnailSize;
-    QWidget*                hBoxForAdditionalControlWidgetItems;
+    QMenu*                  sortMenu                                = nullptr;
+    QAction*                actionIncreaseThumbnailSize             = nullptr;
+    QAction*                actionDecreaseThumbnailSize             = nullptr;
+    QWidget*                hBoxForAdditionalControlWidgetItems     = nullptr;
 
-    QActionGroup*           mouseModeActionGroup;
-    QAction*                actionRemoveCurrentRegionSelection;
-    QAction*                actionSetRegionSelectionMode;
-    QAction*                actionSetPanMode;
-    QAction*                actionSetZoomIntoGroupMode;
-    QAction*                actionSetRegionSelectionFromIconMode;
-    QAction*                actionSetFilterMode;
-    QAction*                actionRemoveFilter;
-    QAction*                actionSetSelectThumbnailMode;
-    QAction*                actionLoadTracksFromAlbums;
-    QToolButton*            setPanModeButton;
-    QToolButton*            setSelectionModeButton;
-    QToolButton*            removeCurrentSelectionButton;
-    QToolButton*            setZoomModeButton;
-    QToolButton*            setRegionSelectionFromIconModeButton;
-    QToolButton*            setFilterModeButton;
-    QToolButton*            removeFilterModeButton;
-    QToolButton*            setSelectThumbnailMode;
-    QToolButton*            loadTracksFromAlbums;
+    QActionGroup*           mouseModeActionGroup                    = nullptr;
+    QAction*                actionRemoveCurrentRegionSelection      = nullptr;
+    QAction*                actionSetRegionSelectionMode            = nullptr;
+    QAction*                actionSetPanMode                        = nullptr;
+    QAction*                actionSetZoomIntoGroupMode              = nullptr;
+    QAction*                actionSetRegionSelectionFromIconMode    = nullptr;
+    QAction*                actionSetFilterMode                     = nullptr;
+    QAction*                actionRemoveFilter                      = nullptr;
+    QAction*                actionSetSelectThumbnailMode            = nullptr;
+    QAction*                actionLoadTracksFromAlbums              = nullptr;
+    QToolButton*            setPanModeButton                        = nullptr;
+    QToolButton*            setSelectionModeButton                  = nullptr;
+    QToolButton*            removeCurrentSelectionButton            = nullptr;
+    QToolButton*            setZoomModeButton                       = nullptr;
+    QToolButton*            setRegionSelectionFromIconModeButton    = nullptr;
+    QToolButton*            setFilterModeButton                     = nullptr;
+    QToolButton*            removeFilterModeButton                  = nullptr;
+    QToolButton*            setSelectThumbnailMode                  = nullptr;
+    QToolButton*            loadTracksFromAlbums                    = nullptr;
 
-    QTimer*                 thumbnailTimer;
-    int                     thumbnailTimerCount;
-    bool                    thumbnailsHaveBeenLoaded;
+    QTimer*                 thumbnailTimer                          = nullptr;
+    int                     thumbnailTimerCount                     = 0;
+    bool                    thumbnailsHaveBeenLoaded                = false;
 
     GeoExtraActions         availableExtraActions;
     GeoExtraActions         visibleExtraActions;
-    QAction*                actionStickyMode;
-    QToolButton*            buttonStickyMode;
+    QAction*                actionStickyMode                        = nullptr;
+    QToolButton*            buttonStickyMode                        = nullptr;
 
     /// NOTE: to be sorted later
-    PlaceholderWidget*      placeholderWidget;
+
+    PlaceholderWidget*      placeholderWidget                       = nullptr;
 };
 
 } // namespace Digikam

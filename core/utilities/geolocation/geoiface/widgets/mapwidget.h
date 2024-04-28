@@ -273,8 +273,8 @@ public:
     void setThumnailSize(const int newThumbnailSize);
     void setThumbnailGroupingRadius(const int newGroupingRadius);
     void setMarkerGroupingRadius(const int newGroupingRadius);
-    int  getThumbnailSize() const;
-    int  getUndecoratedThumbnailSize() const;
+    int  getThumbnailSize()                                                                 const;
+    int  getUndecoratedThumbnailSize()                                                      const;
     void setShowThumbnails(const bool state);
 
     QString convertZoomToBackendZoom(const QString& someZoom, const QString& targetBackend) const;
@@ -293,12 +293,12 @@ public:
     void getColorInfos(const int clusterIndex, QColor* fillColor, QColor* strokeColor,
                        Qt::PenStyle* strokeStyle, QString* labelText, QColor* labelColor,
                        const GeoGroupState* const overrideSelection = nullptr,
-                       const int* const overrideCount = nullptr) const;
+                       const int* const overrideCount = nullptr)                            const;
 
     void getColorInfos(const GeoGroupState groupState,
                        const int nMarkers,
                        QColor* fillColor, QColor* strokeColor,
-                       Qt::PenStyle* strokeStyle, QString* labelText, QColor* labelColor) const;
+                       Qt::PenStyle* strokeStyle, QString* labelText, QColor* labelColor)   const;
 
 public Q_SLOTS:
 
@@ -325,7 +325,7 @@ private:
     const QExplicitlySharedDataPointer<GeoIfaceSharedData> s;
 
     class Private;
-    Private* const                                         d;
+    Private* const                                         d = nullptr;
 
     Q_DISABLE_COPY(MapWidget)
 };
