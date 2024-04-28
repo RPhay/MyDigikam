@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-27 01:36+0000\n"
+"POT-Creation-Date: 2024-04-28 01:37+0000\n"
 "PO-Revision-Date: 2023-11-21 15:39+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2951,7 +2951,7 @@ msgstr "Album bez značek"
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:100
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:633
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3817,7 +3817,7 @@ msgstr "Vlastnosti souboru"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:613
 #: core/utilities/geolocation/marble/plugins/render/overviewmap/OverviewMapConfigWidget.ui:183
 #, kde-format
 msgid "Filename"
@@ -3883,7 +3883,7 @@ msgstr "Souřadnice"
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:626
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:617
 #, kde-format
 msgid "Altitude"
 msgstr "Výška"
@@ -4139,7 +4139,7 @@ msgstr "Jednotka"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:261
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:612
 #, kde-format
 msgid "Thumbnail"
 msgstr "Náhled"
@@ -10809,7 +10809,7 @@ msgstr "Nelze uložit soubor \"%1\""
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:419
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:520
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:798
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:799
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
@@ -11000,31 +11000,31 @@ msgid "Edit Geolocation"
 msgstr "Upravit geolokaci"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:624
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:615
 #, kde-format
 msgid "Latitude"
 msgstr "Zem. šířka"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:625
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:616
 #, kde-format
 msgid "Longitude"
 msgstr "Zem. délka"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:631
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
 #, kde-format
 msgid "Speed"
 msgstr "Rychlost"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:630
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "# satellites"
 msgstr "# družic"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:629
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:620
 #, kde-format
 msgid "Fix type"
 msgstr "Typ fixace"
@@ -11040,7 +11040,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:628
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:619
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -11323,13 +11323,13 @@ msgid "GPX file:"
 msgstr "Soubor GPX:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:161
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:286
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:259
 #, kde-format
 msgid "GPS Exchange Format (*.gpx)"
 msgstr "Výměnný formát GPS (*.gpx)"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:162
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:257
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
@@ -11538,7 +11538,7 @@ msgid "OSM"
 msgstr "OSM"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultmodelhelper.cpp:152
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkmodelhelper.cpp:242
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkmodelhelper.cpp:236
 #, kde-format
 msgid "1 image snapped to '%2'"
 msgid_plural "%1 images snapped to '%2'"
@@ -15309,7 +15309,7 @@ msgstr "Časové razítko bylo aktualizováno"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:632
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
 #, kde-format
 msgid "Status"
 msgstr "Stav"
@@ -23589,7 +23589,7 @@ msgstr "Místo:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:536
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:480
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:435
 #, kde-format
 msgid "More options"
 msgstr "Více možností"
@@ -49769,7 +49769,7 @@ msgid "Tilt"
 msgstr "Náklon"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:63
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:627
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:618
 #, kde-format
 msgid "Accuracy"
 msgstr "Přesnost"
@@ -51307,47 +51307,47 @@ msgstr "Přejete si odstranit \"%1\" ze sbírky záložek?"
 msgid "Remove Bookmark"
 msgstr "Smazat záložku"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:85
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:88
 #, kde-format
 msgid "Insert Bookmark"
 msgstr "Vložit záložku"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:136
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:134
 #, kde-format
 msgid "Title Change"
 msgstr "Změna titulku"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:143
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:141
 #, kde-format
 msgid "Comment Change"
 msgstr "Změna komentáře"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:150
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:148
 #, kde-format
 msgid "Address Change"
 msgstr "Změna adresy"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:330
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:325
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Title"
 msgstr "Název"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:335
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:330
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Comment"
 msgstr "Komentář"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:818
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:953
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:812
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:947
 #, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "Načítání záložky"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:819
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:954
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:813
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:948
 #, kde-format
 msgid ""
 "Error when loading bookmarks on line %1, column %2:\n"
@@ -51356,51 +51356,51 @@ msgstr ""
 "Chyba při čtení záložek na řádku %1, sloupec %2:\n"
 "%3"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:940
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:934
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Otevřít soubor"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:942
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:969
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:936
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:963
 #, kde-format
 msgid "XBEL (*.xbel *.xml)"
 msgstr "XBEL (*.xbel *.xml)"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:955
 #, kde-format
 msgid "Imported %1"
 msgstr "Importováno: %1"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:967
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Uložit soubor"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:968
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:962
 #, kde-format
 msgid "%1 Bookmarks.xbel"
 msgstr "%1 Záložky.xbel"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
 #, kde-format
 msgid "Error saving bookmarks"
 msgstr "chyba při ukládání záložek"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:157
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:153
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Upravit záložky"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:163
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:159
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Přidat záložku..."
@@ -51410,12 +51410,12 @@ msgstr "Přidat záložku..."
 msgid "<p>Copyright %1</p>"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
+#: core/utilities/geolocation/geoiface/core/gpscommon.cpp:115
 #, kde-format
 msgid "Warning: Sidecar settings"
 msgstr "Varování - Nastavení pomocných souborů"
 
-#: core/utilities/geolocation/geoiface/core/gpscommon.cpp:112
+#: core/utilities/geolocation/geoiface/core/gpscommon.cpp:116
 #, kde-format
 msgid ""
 "You have enabled writing to sidecar files for metadata storage in the host "
@@ -51430,7 +51430,7 @@ msgstr ""
 "Prosím, povolte čtení pomocných souborů v hostitelské aplikaci nebo "
 "pokračujte na vlastní riziko."
 
-#: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:210
+#: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:206
 #, kde-format
 msgid "1 image moved"
 msgid_plural "%1 images moved"
@@ -51438,37 +51438,37 @@ msgstr[0] "Přesunut 1 obrázek"
 msgstr[1] "Přesunuty %1 obrázky"
 msgstr[2] "Přesunuto %1 obrázků"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:157
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:130
 #, kde-format
 msgid "Load GPX files..."
 msgstr "Načíst soubory GPX..."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:164
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:137
 #, kde-format
 msgid "Show tracks on Map"
 msgstr "Zobrazit trasy na mapě"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:138
 #, kde-format
 msgid "Set this option to show tracks on the Map"
 msgstr "Použijte tuto volbu pro zobrazení tras na mapě"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:140
 #, kde-format
 msgid "Only use selected images"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:141
 #, kde-format
 msgid "Set this option to correlate selected images only"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:151
 #, kde-format
 msgid "Camera time zone:"
 msgstr "Časové pásmo fotoaparátu:"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:181
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:154
 #, kde-format
 msgid ""
 "<p>Sets the time zone the camera was set to during photo shooting, so that "
@@ -51481,35 +51481,35 @@ msgstr ""
 "časovým posunem GPS.</p><p>Pozn.: kladný posun znamená východně od nulové "
 "zeměpisné délky (GMT), kde jsou 's časem vpředu'.</p>"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:188
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:161
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:163
 #, kde-format
 msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
 "camera clock or different time zone."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:197
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:170
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:216
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:189
 #, kde-format
 msgid "Interpolate"
 msgstr "Interpolovat"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:217
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:228
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:201
 #, kde-format
 msgid "Max. time gap (hh:mm:ss):"
 msgstr "Max. časová prodleva (hh:mm:ss):"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:221
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:194
 #, kde-format
 msgid ""
 "Sets the maximum time difference to interpolate GPX file points to image "
@@ -51519,12 +51519,12 @@ msgstr ""
 "Nastaví maximální rozdíl pro interpolaci mezi body souboru GPX a časovými "
 "údaji obrázku. Pokud rozdíl přesáhne tuto hodnotu, nebude shoda uznána."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:227
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:200
 #, kde-format
 msgid "Match directly"
 msgstr "Přímo porovnat"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:232
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:205
 #, kde-format
 msgid ""
 "Sets the maximum time difference from a GPS track point to the image time to "
@@ -51534,12 +51534,12 @@ msgstr ""
 "Nastaví maximální časový rozdíl mezi sledovaným bodem GPS a odpovídajícím "
 "časem obrázku. Pokud rozdíl přesáhne tuto hodnotu, nebude shoda uznána."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:251
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:224
 #, kde-format
 msgid "Correlate"
 msgstr "Korelovat"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:326
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:299
 #, kde-format
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
@@ -51547,7 +51547,7 @@ msgstr[0] "Následující soubor GPX nemůže být načten:"
 msgstr[1] "Následující %1 soubory GPX nemohou být načteny:"
 msgstr[2] "Následujících %1 souborů GPX nemůže být načteno:"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:303
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
@@ -51556,31 +51556,31 @@ msgstr[0] "Chyba při načítání souboru GPX"
 msgstr[1] "Chyba při načítání souborů GPX"
 msgstr[2] "Chyba při načítání souborů GPX"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:408
 #, kde-format
 msgid "Correlating images -"
 msgstr "Korelace obrázků - "
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:490
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
 msgstr "Korelace selhala"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:491
 #, kde-format
 msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
 "are correct."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:496
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
 msgstr "Korelace byla úspěšná"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:497
 #, kde-format
 msgid ""
 "All images have been correlated. You can now check their position on the map."
@@ -51590,13 +51590,13 @@ msgstr ""
 
 #. i18np.
 #. See bug #376438 for details.
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:505
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
 msgstr "Korelace byla dokončena"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:507
 #, kde-format
 msgid ""
 "One image out of %2 images have been correlated. Please check the offset and "
@@ -51608,7 +51608,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:551
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
 #, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"
@@ -51616,82 +51616,82 @@ msgstr[0] "byl korelován 1 obrázek"
 msgstr[1] "byly korelovány %1 obrázky"
 msgstr[2] "bylo korelováno %1 obrázků"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:218
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:222
 #, kde-format
 msgctxt "@title: track list header"
 msgid "Color"
 msgstr "Barva"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:223
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:227
 #, kde-format
 msgctxt "@title: track list header"
 msgid "Filename"
 msgstr "Název souboru"
 
-#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:228
+#: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:232
 #, kde-format
 msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#body"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:428
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:419
 #, kde-format
 msgid "Not available"
 msgstr "Není k dispozici"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:467
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:472
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Fix: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:477
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:468
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#Sat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:530
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:554
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:545
 #, kde-format
 msgid "Modified"
 msgstr "Změněno"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:623
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:614
 #, kde-format
 msgid "Date and time"
 msgstr "Datum a čas"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:876
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:867
 #, kde-format
 msgid "Failed to open file."
 msgstr "Nelze otevřít soubor."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:948
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:939
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Ukládání informací GPS do obrázku selhalo."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:960
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Odstranění informací GPS z obrázku selhalo"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1003
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1027
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:986
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1018
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Ukládání značek do souboru selhalo."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1039
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1030
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Nelze uložit změny do souboru"
@@ -51722,7 +51722,7 @@ msgid "Remove uncertainty"
 msgstr "Odstranit nepřesnost"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:92
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:690
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:691
 #, kde-format
 msgid "Remove speed"
 msgstr "Odstranit rychlost"
@@ -51756,27 +51756,27 @@ msgstr "Vloženy souřadnice"
 msgid "Bookmark selected"
 msgstr "Vybrána záložka"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:669
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:670
 #, kde-format
 msgid "Remove coordinates information"
 msgstr "Odstranit informaci o souřadnicích"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:674
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:675
 #, kde-format
 msgid "Remove altitude information"
 msgstr "Odstranit informaci o nadmořské výšce"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:680
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:681
 #, kde-format
 msgid "Remove uncertainty information"
 msgstr "Odstranit informaci o nepřesnosti polohy"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:746
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:747
 #, kde-format
 msgid "Looking up altitudes"
 msgstr "Vyhledávám nadmořské výšky"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:797
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:798
 #, kde-format
 msgid ""
 "Altitude lookup failed:\n"
@@ -51785,12 +51785,12 @@ msgstr ""
 "Vyhledávání nadmořské výšky selhalo:\n"
 "%1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:805
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:806
 #, kde-format
 msgid "Altitude looked up"
 msgstr "Nadmořské výšky vyhledány"
 
-#: core/utilities/geolocation/geoiface/lookup/lookupaltitudegeonames.cpp:110
+#: core/utilities/geolocation/geoiface/lookup/lookupaltitudegeonames.cpp:104
 #, kde-format
 msgid "geonames.org"
 msgstr "geonames.org"
@@ -51873,210 +51873,210 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:221
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:176
 #, kde-format
 msgid "Add country tag"
 msgstr "Přidat značku země"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:223
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:178
 #, kde-format
 msgid "Add state tag"
 msgstr "Přidat značku státu"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:225
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:180
 #, kde-format
 msgid "Add state district tag"
 msgstr "Přidat značku okresu"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:227
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:182
 #, kde-format
 msgid "Add county tag"
 msgstr "Přidat značku okresu"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:229
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:184
 #, kde-format
 msgid "Add city tag"
 msgstr "Přidat značku města"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:231
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:186
 #, kde-format
 msgid "Add city district tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:233
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:188
 #, kde-format
 msgid "Add suburb tag"
 msgstr "Přidat značku předměstí"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:235
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:190
 #, kde-format
 msgid "Add town tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:237
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:192
 #, kde-format
 msgid "Add village tag"
 msgstr "Přidat značku vesnice"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:239
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:194
 #, kde-format
 msgid "Add hamlet tag"
 msgstr "Přidat značku usedlosti"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:241
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:196
 #, kde-format
 msgid "Add street"
 msgstr "Přidat ulici"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:243
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:198
 #, kde-format
 msgid "Add house number tag"
 msgstr "Přidat značku domovního čísla"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:245
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:200
 #, kde-format
 msgid "Add place"
 msgstr "Přidat místo"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:247
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:202
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:249
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:204
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:251
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:206
 #, kde-format
 msgid "Add new tag"
 msgstr "Přidat novou značku"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:207
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Odstranit vybranou značku"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:208
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:211
 #, kde-format
 msgid "Add all address elements"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:214
 #, kde-format
 msgid "Select language:"
 msgstr "Zvolit jazyk:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:269
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, kde-format
 msgid "Select service:"
 msgstr "Vybrat službu:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:227
 #, kde-format
 msgid "Open Street Map"
 msgstr "Open Street Map"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr "Název místa geonames.org (mimo USA)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:274
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:229
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr "Plná adresa geonames.org (pouze USA)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:286
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:486
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:241
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:441
 #, kde-format
 msgid "Less options"
 msgstr "Méně možností"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:293
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, kde-format
 msgid "Write locations as tags"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:249
 #, kde-format
 msgid "Write locations metadata"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:301
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
 #, kde-format
 msgid "Process reverse geocoding"
 msgstr "Zpracovat reverzní geolokaci"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:429
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:384
 #, kde-format
 msgid "Image tags are changed."
 msgstr "Značky obrázku jsou změněny."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:465
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:420
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr "Získávání informací RG -"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:502
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:457
 #, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:797
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
 msgstr "Přidat novou značku"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:843
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:798
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Vyberte název nové značky:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:986
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:941
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
 "tags which were already obtained?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:993
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:948
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
 "were already obtained?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:999
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:954
 #, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:231
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:242
 #, kde-format
 msgid "Could not open: %1"
 msgstr "Nelze otevřít %1"
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:238
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:249
 #, kde-format
 msgid "File is empty."
 msgstr "Soubor je prázdný."
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:270
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:281
 #, kde-format
 msgid "Probably not a GPX file."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:282
+#: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:293
 #, kde-format
 msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
