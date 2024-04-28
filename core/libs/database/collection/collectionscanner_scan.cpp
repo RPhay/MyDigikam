@@ -394,7 +394,9 @@ void CollectionScanner::scanFile(const ItemInfo& info, FileScanMode mode)
     }
 
     QFileInfo fi(info.filePath());
-    scanFile(fi, info.albumId(), info.id(), mode);
+    qlonglong id = scanFile(fi, info.albumId(), info.id(), mode);
+    qCDebug(DIGIKAM_DATABASE_LOG) << "ScanFile test:" << fi.filePath() << fi.exists() << fi.isReadable()
+                                  << fi.isWritable() << id << info.id();
 }
 
 qlonglong CollectionScanner::scanFile(const QFileInfo& fi, int albumId, qlonglong imageId, FileScanMode mode)
