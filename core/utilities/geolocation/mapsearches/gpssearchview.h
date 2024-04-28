@@ -37,17 +37,18 @@ class SAlbum;
 class SearchModel;
 class SearchModificationHelper;
 
-class GPSSearchView : public QWidget, public StateSavingObject
+class GPSSearchView : public QWidget,
+                      public StateSavingObject
 {
     Q_OBJECT
 
 public:
 
     explicit GPSSearchView(QWidget* const parent,
-                  SearchModel* const searchModel,
-                  SearchModificationHelper* const searchModificationHelper,
-                  ItemFilterModel* const imageFilterModel,
-                  QItemSelectionModel* const itemSelectionModel);
+                           SearchModel* const searchModel,
+                           SearchModificationHelper* const searchModificationHelper,
+                           ItemFilterModel* const imageFilterModel,
+                           QItemSelectionModel* const itemSelectionModel);
     ~GPSSearchView()                                override;
 
     void setActive(bool state);

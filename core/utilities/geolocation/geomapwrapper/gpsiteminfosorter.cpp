@@ -49,7 +49,7 @@ public:
 
 GPSItemInfoSorter::GPSItemInfoSorter(QObject* const parent)
     : QObject(parent),
-      d      (new Private())
+      d      (new Private)
 {
 }
 
@@ -116,9 +116,11 @@ bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo,
             return newHasRating;
         }
 
-        if (oldHasRating &&
+        if (
+            oldHasRating &&
             newHasRating &&                         // cppcheck-suppress knownConditionTrueFalse
-            (oldInfo.rating != newInfo.rating))
+            (oldInfo.rating != newInfo.rating)
+           )
         {
             return oldInfo.rating < newInfo.rating;
         }
@@ -156,7 +158,7 @@ bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo,
 
     if (oldInfo.url.isValid() && newInfo.url.isValid())
     {
-        return oldInfo.url.url() > newInfo.url.url();
+        return (oldInfo.url.url() > newInfo.url.url());
     }
 
     // last resort: use the image id for reproducibility

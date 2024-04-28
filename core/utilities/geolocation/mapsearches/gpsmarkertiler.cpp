@@ -67,44 +67,28 @@ public:
     {
     public:
 
-        InternalJobs()
-            : level           (0),
-              jobThread       (nullptr),
-              dataFromDatabase()
-        {
-        }
+        InternalJobs() = default;
 
-        int                level;
-        GPSDBJobsThread*   jobThread;
+        int                level        = 0;
+        GPSDBJobsThread*   jobThread    = nullptr;
         QList<GPSItemInfo> dataFromDatabase;
     };
 
-    explicit Private()
-        : jobs                  (),
-          thumbnailLoadThread   (nullptr),
-          thumbnailMap          (),
-          rectList              (),
-          activeState           (true),
-          imagesHash            (),
-          imageFilterModel      (),
-          imageAlbumModel       (),
-          selectionModel        (),
-          currentRegionSelection(),
-          mapGlobalGroupState   ()
-    {
-    }
+public:
+
+    Private() = default;
 
     QList<InternalJobs>           jobs;
-    ThumbnailLoadThread*          thumbnailLoadThread;
+    ThumbnailLoadThread*          thumbnailLoadThread       = nullptr;
     QHash<qlonglong, QVariant>    thumbnailMap;
     QList<QRectF>                 rectList;
-    bool                          activeState;
+    bool                          activeState               = true;
     QHash<qlonglong, GPSItemInfo> imagesHash;
-    ItemFilterModel*              imageFilterModel;
-    ItemAlbumModel*               imageAlbumModel;
-    QItemSelectionModel*          selectionModel;
+    ItemFilterModel*              imageFilterModel          = nullptr;
+    ItemAlbumModel*               imageAlbumModel           = nullptr;
+    QItemSelectionModel*          selectionModel            = nullptr;
     GeoCoordinates::Pair          currentRegionSelection;
-    GeoGroupState                 mapGlobalGroupState;
+    GeoGroupState                 mapGlobalGroupState       = SelectedNone;
 };
 
 /**
@@ -115,7 +99,7 @@ GPSMarkerTiler::GPSMarkerTiler(QObject* const parent,
                                ItemFilterModel* const imageFilterModel,
                                QItemSelectionModel* const selectionModel)
     : AbstractMarkerTiler(parent),
-      d                  (new Private())
+      d                  (new Private)
 {
     resetRootTile();
 
@@ -162,7 +146,7 @@ void GPSMarkerTiler::regenerateTiles()
  */
 void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level)
 {
-    const QRectF worldRect(-90,-180,180,360);
+    const QRectF worldRect(-90, -180, 180, 360);
 
     qreal lat1         = upperLeft.lat();
     qreal lng1         = upperLeft.lon();
@@ -173,6 +157,7 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
     for (int i = 0 ; i < d->rectList.count() ; ++i)
     {
         // is there a rect that contains the requested one?
+
         const QRectF& currentRect = d->rectList.at(i);
 
         if (currentRect.contains(requestedRect))
@@ -186,13 +171,16 @@ void GPSMarkerTiler::prepareTiles(const GeoCoordinates& upperLeft, const GeoCoor
         {
             std::swap(d->rectList[i], d->rectList.back());
             d->rectList.removeLast();
+
             // we removed one entry. we have to subtract one from the index
+
             --i;
         }
     }
 
     // grow the rect a bit such that we don't have to request many small ones while panning
-    qreal marginW = requestedRect.width() * 0.05;
+
+    qreal marginW = requestedRect.width()  * 0.05;
     qreal marginH = requestedRect.height() * 0.05;
     requestedRect = requestedRect.marginsAdded(QMarginsF(marginW, marginH, marginW, marginH));
     requestedRect = worldRect.intersected(requestedRect);
@@ -673,9 +661,13 @@ void GPSMarkerTiler::slotImageChange(const ImageChangeset& changeset)
 {
     const DatabaseFields::Set changes = changeset.changes();
 
-    if (!((changes & DatabaseFields::LatitudeNumber)  ||
+    if (
+        !(
+          (changes & DatabaseFields::LatitudeNumber)  ||
           (changes & DatabaseFields::LongitudeNumber) ||
-          (changes & DatabaseFields::Altitude)))
+          (changes & DatabaseFields::Altitude)
+         )
+       )
     {
         return;
     }
@@ -728,8 +720,11 @@ void GPSMarkerTiler::slotImageChange(const ImageChangeset& changeset)
             const TileIndex newTileIndex        = TileIndex::fromCoordinates(newCoordinates, TileIndex::MaxLevel);
 
             // remove from old position
+
             removeMarkerFromTileAndChildren(id, oldTileIndex);
+
             // add at new position
+
             addMarkerToTileAndChildren(id, newTileIndex);
 
         }
@@ -760,6 +755,7 @@ void GPSMarkerTiler::slotNewModelData(const QList<ItemInfo>& infoList)
 {
     // We do not actually store the data from the model, we just want
     // to know that something was changed.
+
     /// @todo Also monitor removed, reset, etc. signals
 
     Q_UNUSED(infoList);
@@ -819,8 +815,8 @@ void GPSMarkerTiler::onIndicesClicked(const ClickInfo& clickInfo)
         const bool doSelect = (clickInfo.groupSelectionState & SelectedMask) != SelectedAll;
 
         const QItemSelectionModel::SelectionFlags selectionFlags =
-                    (doSelect ? QItemSelectionModel::Select : QItemSelectionModel::Deselect)
-                    | QItemSelectionModel::Rows;
+                    (doSelect ? QItemSelectionModel::Select
+                              : QItemSelectionModel::Deselect) | QItemSelectionModel::Rows;
 
         for (int i = 0 ; i < clickedImagesId.count() ; ++i)
         {
@@ -845,6 +841,7 @@ void GPSMarkerTiler::onIndicesClicked(const ClickInfo& clickInfo)
     else if (clickInfo.currentMouseMode == MouseModeFilter)
     {
         setPositiveFilterIsActive(true);
+
         Q_EMIT signalModelFilteredImages(clickedImagesId);
     }
 }

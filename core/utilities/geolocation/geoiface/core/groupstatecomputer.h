@@ -16,8 +16,6 @@
 #ifndef DIGIKAM_GROUP_STATE_COMPUTER_H
 #define DIGIKAM_GROUP_STATE_COMPUTER_H
 
-#include "geogroupstate.h"
-
 // Qt includes
 
 #include <QScopedPointer>
@@ -25,6 +23,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "geogroupstate.h"
 
 namespace Digikam
 {
@@ -33,7 +32,7 @@ class DIGIKAM_EXPORT GroupStateComputer
 {
 public:
 
-    explicit GroupStateComputer();
+    GroupStateComputer();
     virtual ~GroupStateComputer();
 
     GeoGroupState getState() const;

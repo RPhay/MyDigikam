@@ -59,41 +59,25 @@ class Q_DECL_HIDDEN GPSSearchView::Private
 
 public:
 
-    explicit Private()
-      : saveBtn                 (nullptr),
-        nameEdit                (nullptr),
-        imageInfoJob            (),
-        searchGPSBar            (nullptr),
-        searchTreeView          (nullptr),
-        splitter                (nullptr),
-        mapSearchWidget         (nullptr),
-        gpsMarkerTiler          (nullptr),
-        imageAlbumModel         (nullptr),
-        imageFilterModel        (nullptr),
-        selectionModel          (nullptr),
-        searchModel             (nullptr),
-        sortOrderOptionsHelper  (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString    configSplitterStateEntry;
-    QToolButton*            saveBtn;
-    DTextEdit*              nameEdit;
+    const QString           configSplitterStateEntry    = QLatin1String("SplitterState");
+
+    QToolButton*            saveBtn                     = nullptr;
+    DTextEdit*              nameEdit                    = nullptr;
     ItemInfoJob             imageInfoJob;
-    SearchTextBarDb*        searchGPSBar;
-    EditableSearchTreeView* searchTreeView;
-    QSplitter*              splitter;
-    MapWidget*              mapSearchWidget;
-    GPSMarkerTiler*         gpsMarkerTiler;
-    ItemAlbumModel*         imageAlbumModel;
-    ItemFilterModel*        imageFilterModel;
-    QItemSelectionModel*    selectionModel;
-    SearchModel*            searchModel;
-    GPSItemInfoSorter*      sortOrderOptionsHelper;
+    SearchTextBarDb*        searchGPSBar                = nullptr;
+    EditableSearchTreeView* searchTreeView              = nullptr;
+    QSplitter*              splitter                    = nullptr;
+    MapWidget*              mapSearchWidget             = nullptr;
+    GPSMarkerTiler*         gpsMarkerTiler              = nullptr;
+    ItemAlbumModel*         imageAlbumModel             = nullptr;
+    ItemFilterModel*        imageFilterModel            = nullptr;
+    QItemSelectionModel*    selectionModel              = nullptr;
+    SearchModel*            searchModel                 = nullptr;
+    GPSItemInfoSorter*      sortOrderOptionsHelper      = nullptr;
     QString                 nonGeonlocatedItemsXml;
 };
-
-const QString GPSSearchView::Private::configSplitterStateEntry(QLatin1String("SplitterState"));
 
 /**
  * @brief Constructor
@@ -365,6 +349,7 @@ void GPSSearchView::setActive(bool state)
         // make sure we reset the custom filters set by the map:
 
         Q_EMIT signalMapSoloItems(QList<qlonglong>(), QLatin1String("gpssearch"));
+
         d->mapSearchWidget->setActive(false);
     }
     else
@@ -442,7 +427,7 @@ void GPSSearchView::createNewGPSSearchAlbum(const QString& name)
     // We query the database here
 
     const GeoCoordinates::Pair coordinates = d->mapSearchWidget->getRegionSelection();
-    const bool haveCoordinates                       = coordinates.first.hasCoordinates();
+    const bool haveCoordinates             = coordinates.first.hasCoordinates();
 
     if (haveCoordinates)
     {
@@ -452,9 +437,10 @@ void GPSSearchView::createNewGPSSearchAlbum(const QString& name)
     // NOTE: coordinates as lon1, lat1, lon2, lat2 (or West, North, East, South)
     // as left/top, right/bottom rectangle.
 
-    QList<qreal> coordinatesList = QList<qreal>() <<
-                                   coordinates.first.lon() << coordinates.first.lat() <<
-                                   coordinates.second.lon() << coordinates.second.lat();
+    QList<qreal> coordinatesList = QList<qreal>() << coordinates.first.lon()
+                                                  << coordinates.first.lat()
+                                                  << coordinates.second.lon()
+                                                  << coordinates.second.lat();
 
     if (!haveCoordinates)
     {
@@ -588,7 +574,9 @@ void GPSSearchView::slotRemoveCurrentFilter()
 {
     d->gpsMarkerTiler->setPositiveFilterIsActive(false);
     const QList<qlonglong> emptyIdList;
+
     Q_EMIT signalMapSoloItems(emptyIdList, QLatin1String("gpssearch"));
+
     slotRefreshMap();
     d->mapSearchWidget->slotUpdateActionsEnabled();
 }
@@ -621,6 +609,7 @@ void GPSSearchView::slotCheckNameEditGPSConditions()
 void GPSSearchView::slotMapSoloItems(const QList<qlonglong>& idList)
 {
     Q_EMIT signalMapSoloItems(idList, QLatin1String("gpssearch"));
+
     d->mapSearchWidget->slotUpdateActionsEnabled();
 }
 

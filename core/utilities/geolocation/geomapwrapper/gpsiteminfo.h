@@ -34,8 +34,8 @@ class DIGIKAM_EXPORT GPSItemInfo
 {
 public:
 
-    explicit GPSItemInfo();
-    ~GPSItemInfo();
+    GPSItemInfo()  = default;
+    ~GPSItemInfo() = default;
 
 public:
 
@@ -46,9 +46,9 @@ public:
 
 public:
 
-    qlonglong                  id;
+    qlonglong                  id           = -2;
     GeoCoordinates             coordinates;
-    int                        rating;
+    int                        rating       = -1;
     QDateTime                  dateTime;
     QUrl                       url;
 

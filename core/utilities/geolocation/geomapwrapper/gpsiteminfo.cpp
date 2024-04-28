@@ -18,19 +18,6 @@
 namespace Digikam
 {
 
-GPSItemInfo::GPSItemInfo()
-    : id            (-2),
-      coordinates   (),
-      rating        (-1),
-      dateTime      (),
-      url           ()
-{
-}
-
-GPSItemInfo::~GPSItemInfo()
-{
-}
-
 GPSItemInfo GPSItemInfo::fromIdCoordinatesRatingDateTime(const qlonglong p_id,
                                                          const GeoCoordinates& p_coordinates,
                                                          const int p_rating,
