@@ -825,7 +825,7 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
                     {
                         currentTileCoordinate = currentTileIndex.toCoordinates(TileIndex::CornerNE);
                     }
-                    else if (corner == 4)
+                    else // corner == 4
                     {
                         currentTileCoordinate = currentTileIndex.toCoordinates(TileIndex::CornerSE);
                     }
