@@ -661,7 +661,7 @@ void ItemComments::apply(CoreDbAccess& access)
     Q_FOREACH (int index, d->dirtyIndices)
     {
         QVariantList values;
-        CommentInfo& info = d->infos[index];
+        const CommentInfo& info = d->infos[index];
         values << (int)info.type << info.language << info.author << info.date << info.comment;
         access.db()->changeImageComment(info.id, d->id, values);
     }

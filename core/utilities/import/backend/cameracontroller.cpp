@@ -512,11 +512,12 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             for (CamItemInfoList::iterator it = itemsList.begin() ; it != itemsList.end() ; )
             {
-                CamItemInfo &info = (*it);
+                const CamItemInfo& info = (*it);
 
                 if (info.mime.isEmpty())
                 {
                     it = itemsList.erase(it);
+
                     continue;
                 }
 
