@@ -238,6 +238,7 @@ echo -e "---------- Clean-up Old Packages\n"
 sudo apt remove -y libqt5core5a  || true
 sudo apt remove -y libavfilter6  || true
 sudo apt remove -y libjasper-dev || true
+sudo apt remove -y libexiv2*     || true
 
 echo -e "---------- Install more recent version of compiler\n"
 
