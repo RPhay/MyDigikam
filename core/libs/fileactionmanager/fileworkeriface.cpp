@@ -32,10 +32,9 @@
 #include "iteminfotasksplitter.h"
 #include "filereadwritelock.h"
 #include "scancontroller.h"
-#include "facetagseditor.h"
+#include "faceutils.h"
 #include "jpegutils.h"
 #include "dimg.h"
-#include "faceutils.h"
 
 namespace Digikam
 {
@@ -320,8 +319,10 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
         // Adjust faces in the DB
 
-        bool confirmed = FaceTagsEditor().rotateFaces(info.id(), originalSize,
-                                                      currentOrientation, finalOrientation);
+        FaceUtils utils;
+
+        bool confirmed = utils.rotateFaces(info.id(), originalSize,
+                                           currentOrientation, finalOrientation);
 
         // Write faces to metadata when confirmed names exists
 
@@ -333,6 +334,12 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             ScanController::FileMetadataWrite writeScope(info);
             writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS, true));
         }
+        else
+        {
+            // Set the newly rotated image as not processed by the face recognition pipeline
+
+            utils.markAsScanned(info, false);
+        }
 
         if (!failedItems.contains(info.name()))
         {
@@ -342,10 +349,6 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
         }
 
         infos.writtenToOne();
-
-        // Set the newly rotated image as not processed by the face recognition pipeline
-        FaceUtils utils;
-        utils.markAsScanned(info, false);
     }
 
     if (!failedItems.isEmpty())
