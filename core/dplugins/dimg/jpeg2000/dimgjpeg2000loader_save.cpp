@@ -227,7 +227,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
 
     for (y = 0 ; y < (long)imageHeight() ; ++y)
     {
-        if (observer && y == (long)checkpoint)
+        if (observer && (y == (long)checkpoint))
         {
             checkpoint += granularity(observer, imageHeight(), 0.8F);
 

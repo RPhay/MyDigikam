@@ -308,13 +308,19 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
     for (i = 0 ; i < (long)number_components ; ++i)
     {
-        if ((((jas_image_cmptwidth(jp2_image, components[i])*
-               jas_image_cmpthstep(jp2_image, components[i])) != (long)imageWidth()))  ||
-            (((jas_image_cmptheight(jp2_image, components[i])*
-               jas_image_cmptvstep(jp2_image, components[i])) != (long)imageHeight())) ||
+        if (
+            (
+             ((jas_image_cmptwidth(jp2_image, components[i])*
+               jas_image_cmpthstep(jp2_image, components[i])) != (long)imageWidth())
+            )  ||
+            (
+             ((jas_image_cmptheight(jp2_image, components[i])*
+               jas_image_cmptvstep(jp2_image, components[i])) != (long)imageHeight())
+            ) ||
             (jas_image_cmpttlx(jp2_image, components[i])  != 0)                        ||
             (jas_image_cmpttly(jp2_image, components[i])  != 0)                        ||
-            (jas_image_cmptsgnd(jp2_image, components[i]) != false))
+            (jas_image_cmptsgnd(jp2_image, components[i]) != false)
+           )
         {
             qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JPEG2000 image : Irregular Channel Geometry Not Supported";
             jas_image_destroy(jp2_image);
@@ -379,7 +385,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         scale[i] = 1;
         int prec = jas_image_cmptprec(jp2_image, components[i]);
 
-        if (m_sixteenBit && prec < 16)
+        if (m_sixteenBit && (prec < 16))
         {
             scale[i] = (1 << (16 - jas_image_cmptprec(jp2_image, components[i])));
         }

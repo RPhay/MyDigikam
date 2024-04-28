@@ -59,10 +59,6 @@ DImgJPEG2000Loader::DImgJPEG2000Loader(DImg* const image)
 {
 }
 
-DImgJPEG2000Loader::~DImgJPEG2000Loader()
-{
-}
-
 bool DImgJPEG2000Loader::hasAlpha() const
 {
     return m_hasAlpha;

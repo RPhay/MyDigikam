@@ -37,7 +37,7 @@ class DImgJPEG2000Loader : public DImgLoader
 public:
 
     explicit DImgJPEG2000Loader(DImg* const image);
-    ~DImgJPEG2000Loader()                                                  override;
+    ~DImgJPEG2000Loader()                                                  override = default;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;

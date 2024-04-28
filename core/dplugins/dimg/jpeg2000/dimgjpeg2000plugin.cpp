@@ -224,7 +224,7 @@ int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     if (!magic)
     {
-        return (!format.isEmpty() && typeMimes().contains(format)) ? 10 : 0;
+        return ((!format.isEmpty() && typeMimes().contains(format)) ? 10 : 0);
     }
 
     // In second, we trying to parse file header.
@@ -249,11 +249,13 @@ int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
         return 0;
     }
 
-    uchar jp2ID[5] = { 0x6A, 0x50, 0x20, 0x20, 0x0D, };
-    uchar jpcID[2] = { 0xFF, 0x4F };
+    const uchar jp2ID[5] = { 0x6A, 0x50, 0x20, 0x20, 0x0D, };
+    const uchar jpcID[2] = { 0xFF, 0x4F };
 
-    if (memcmp(&header.data()[4], &jp2ID, 5) == 0 ||
-        memcmp(header.data(),     &jpcID, 2) == 0)
+    if (
+        (memcmp(&header.data()[4], &jp2ID, 5) == 0) ||
+        (memcmp(header.data(),     &jpcID, 2) == 0)
+       )
     {
         return 10;
     }
