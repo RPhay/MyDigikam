@@ -24,7 +24,7 @@ namespace Digikam
 
 ItemQueryPostHooks::~ItemQueryPostHooks()
 {
-    Q_FOREACH (ItemQueryPostHook* const hook, m_postHooks)
+    Q_FOREACH (const ItemQueryPostHook* const hook, m_postHooks)
     {
         delete hook;
     }
