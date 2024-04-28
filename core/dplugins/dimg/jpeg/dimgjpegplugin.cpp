@@ -38,10 +38,6 @@ DImgJPEGPlugin::DImgJPEGPlugin(QObject* const parent)
 {
 }
 
-DImgJPEGPlugin::~DImgJPEGPlugin()
-{
-}
-
 QString DImgJPEGPlugin::name() const
 {
     return i18nc("@title", "JPEG loader");
@@ -172,7 +168,7 @@ int DImgJPEGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
         return 0;
     }
 
-    uchar jpegID[2] = { 0xFF, 0xD8 };
+    const uchar jpegID[2] = { 0xFF, 0xD8 };
 
     if (memcmp(header.data(), &jpegID, 2) == 0)
     {

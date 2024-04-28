@@ -42,7 +42,7 @@ class DImgJPEGPlugin : public DPluginDImg
 public:
 
     explicit DImgJPEGPlugin(QObject* const parent = nullptr);
-    ~DImgJPEGPlugin()                                                                             override;
+    ~DImgJPEGPlugin()                                                                             override = default;
 
     QString name()                                                                          const override;
     QString iid()                                                                           const override;

@@ -48,7 +48,7 @@ class DImgJPEGLoader : public DImgLoader
 public:
 
     explicit DImgJPEGLoader(DImg* const image);
-    ~DImgJPEGLoader()                                                      override;
+    ~DImgJPEGLoader()                                                      override = default;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;

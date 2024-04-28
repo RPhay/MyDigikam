@@ -75,10 +75,6 @@ DImgJPEGLoader::DImgJPEGLoader(DImg* const image)
 {
 }
 
-DImgJPEGLoader::~DImgJPEGLoader()
-{
-}
-
 bool DImgJPEGLoader::hasAlpha() const
 {
     return false;
