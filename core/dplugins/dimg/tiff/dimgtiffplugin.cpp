@@ -38,10 +38,6 @@ DImgTIFFPlugin::DImgTIFFPlugin(QObject* const parent)
 {
 }
 
-DImgTIFFPlugin::~DImgTIFFPlugin()
-{
-}
-
 QString DImgTIFFPlugin::name() const
 {
     return i18nc("@title", "TIFF loader");
@@ -166,11 +162,13 @@ int DImgTIFFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
         return 0;
     }
 
-    uchar tiffBigID[4] = { 0x4D, 0x4D, 0x00, 0x2A };
-    uchar tiffLilID[4] = { 0x49, 0x49, 0x2A, 0x00 };
+    const uchar tiffBigID[4] = { 0x4D, 0x4D, 0x00, 0x2A };
+    const uchar tiffLilID[4] = { 0x49, 0x49, 0x2A, 0x00 };
 
-    if (memcmp(header.data(), &tiffBigID, 4) == 0 ||
-        memcmp(header.data(), &tiffLilID, 4) == 0)
+    if (
+        (memcmp(header.data(), &tiffBigID, 4) == 0) ||
+        (memcmp(header.data(), &tiffLilID, 4) == 0)
+       )
     {
         return 10;
     }

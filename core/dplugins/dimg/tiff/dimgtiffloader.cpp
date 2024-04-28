@@ -65,10 +65,6 @@ DImgTIFFLoader::DImgTIFFLoader(DImg* const image)
 {
 }
 
-DImgTIFFLoader::~DImgTIFFLoader()
-{
-}
-
 bool DImgTIFFLoader::hasAlpha() const
 {
     return m_hasAlpha;

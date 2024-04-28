@@ -57,7 +57,7 @@ class DImgTIFFLoader : public DImgLoader
 public:
 
     explicit DImgTIFFLoader(DImg* const image);
-    ~DImgTIFFLoader()                                                      override;
+    ~DImgTIFFLoader()                                                      override = default;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;

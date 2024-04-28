@@ -212,13 +212,14 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     uint16  a16          = 0;
     int     i            = 0;
 
-    uint8* buf    = (uint8*)_TIFFmalloc(TIFFScanlineSize(tif));
-    uint16* buf16 = nullptr;
+    uint8* buf           = (uint8*)_TIFFmalloc(TIFFScanlineSize(tif));
+    uint16* buf16        = nullptr;
 
     if (!buf)
     {
         qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Cannot allocate memory buffer for main image.";
         TIFFClose(tif);
+
         return false;
     }
 
@@ -227,7 +228,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     for (y = 0 ; y < h ; ++y)
     {
 
-        if (observer && y == checkpoint)
+        if (observer && (y == checkpoint))
         {
             checkpoint += granularity(observer, h, 0.8F);
 
@@ -235,6 +236,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             {
                 _TIFFfree(buf);
                 TIFFClose(tif);
+
                 return false;
             }
 
@@ -314,6 +316,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Cannot write main image to target file.";
             _TIFFfree(buf);
             TIFFClose(tif);
+
             return false;
         }
     }
@@ -357,6 +360,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             pixelThumb    = &dataThumb[((y * thumb.width()) + x) * 4];
 
             // This might be endian dependent
+
             bufThumb[i++] = (uint8)pixelThumb[2];
             bufThumb[i++] = (uint8)pixelThumb[1];
             bufThumb[i++] = (uint8)pixelThumb[0];
@@ -367,6 +371,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Cannot write thumbnail to target file.";
             _TIFFfree(bufThumb);
             TIFFClose(tif);
+
             return false;
         }
     }
