@@ -56,7 +56,7 @@ public:
         qreal                         pDop          = -1.0;
         int                           fixType       = -1;
         qreal                         speed         = -1.0;
-        CorrelationFlags              flags;
+        CorrelationFlags              flags         = CorrelationFlagCoordinates;
         GeoCoordinates                coordinates;
     };
 
