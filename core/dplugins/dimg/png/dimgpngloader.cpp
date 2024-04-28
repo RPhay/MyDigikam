@@ -61,10 +61,6 @@ DImgPNGLoader::DImgPNGLoader(DImg* const image)
 {
 }
 
-DImgPNGLoader::~DImgPNGLoader()
-{
-}
-
 bool DImgPNGLoader::hasAlpha() const
 {
     return m_hasAlpha;

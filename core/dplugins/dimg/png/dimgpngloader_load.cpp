@@ -170,6 +170,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     // will jump here
 
     // setjmp-save cleanup
+
     class Q_DECL_HIDDEN CleanupData
     {
 
@@ -254,8 +255,10 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     {
         png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) nullptr);
 
-        if (!cleanupData->data ||
-            !cleanupData->size.isValid())
+        if (
+            !cleanupData->data ||
+            !cleanupData->size.isValid()
+           )
         {
             qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Internal libPNG error during reading file. Process aborted!";
             delete cleanupData;

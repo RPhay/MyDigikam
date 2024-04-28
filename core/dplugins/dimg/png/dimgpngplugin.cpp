@@ -38,10 +38,6 @@ DImgPNGPlugin::DImgPNGPlugin(QObject* const parent)
 {
 }
 
-DImgPNGPlugin::~DImgPNGPlugin()
-{
-}
-
 QString DImgPNGPlugin::name() const
 {
     return i18nc("@title", "PNG loader");
@@ -157,7 +153,7 @@ int DImgPNGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
         return 0;
     }
 
-    uchar pngID[8] = { 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A };
+    const uchar pngID[8] = { 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A };
 
     if (memcmp(header.data(), &pngID, 8) == 0)
     {
@@ -169,7 +165,7 @@ int DImgPNGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgPNGPlugin::canWrite(const QString& format) const
 {
-    return typeMimes().contains(format.toUpper()) ? 10 : 0;
+    return (typeMimes().contains(format.toUpper()) ? 10 : 0);
 }
 
 DImgLoader* DImgPNGPlugin::loader(DImg* const image, const DRawDecoding&) const

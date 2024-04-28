@@ -368,7 +368,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         if (QSysInfo::ByteOrder == QSysInfo::LittleEndian)
         {
-            for (x = 0 ; x < imageWidth()*imageBytesDepth() ; x += imageBytesDepth())
+            for (x = 0 ; x < imageWidth() * imageBytesDepth() ; x += imageBytesDepth())
             {
                 if (imageSixteenBit())
                 {
@@ -415,7 +415,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         {
             int bytes = (imageSixteenBit() ? 2 : 1) * (imageHasAlpha() ? 4 : 3);
 
-            for (x = 0 ; x < imageWidth()*imageBytesDepth() ; x += imageBytesDepth())
+            for (x = 0 ; x < imageWidth() * imageBytesDepth() ; x += imageBytesDepth())
             {
                 memcpy(data + j, ptr + x, bytes);
                 j += bytes;
