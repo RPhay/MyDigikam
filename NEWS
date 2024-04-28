@@ -18,6 +18,7 @@ RawEngine: Update internal libraw to last 20240421 upstream. New supported camer
 DNGWriter: Update Adobe DNG SDK to last 1.7.1 with JPEG-XL compression support.
            Add optional libjxl dependency to compile DNG support.
 Bundles:   Update Exiftool to last 12.84.
+Bundles:   AppImage is now based on last Exiv2 0.28.2.
 Bundles:   AppImage is now based on Qt framework 6.7.0 and KDE framework 6.2.0.
 
 *****************************************************************************************************
