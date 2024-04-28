@@ -121,8 +121,8 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         jpeg_create_compress(&cinfo);
         jpeg_stdio_dest(&cinfo, file);
 
-        uint&              w   = imageWidth();
-        uint&              h   = imageHeight();
+        const uint&        w   = imageWidth();
+        const uint&        h   = imageHeight();
         unsigned char*& data   = imageData();
 
         // Size of image.
