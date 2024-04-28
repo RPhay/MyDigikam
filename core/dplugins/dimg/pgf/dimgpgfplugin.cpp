@@ -38,10 +38,6 @@ DImgPGFPlugin::DImgPGFPlugin(QObject* const parent)
 {
 }
 
-DImgPGFPlugin::~DImgPGFPlugin()
-{
-}
-
 QString DImgPGFPlugin::name() const
 {
     return i18nc("@title", "PGF loader");
@@ -159,7 +155,7 @@ int DImgPGFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
         return 0;
     }
 
-    uchar pgfID[3] = { 0x50, 0x47, 0x46 };
+    const uchar pgfID[3] = { 0x50, 0x47, 0x46 };
 
     if (memcmp(header.data(), &pgfID, 3) == 0)
     {

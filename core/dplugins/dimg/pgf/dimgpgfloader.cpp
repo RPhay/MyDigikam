@@ -87,10 +87,6 @@ DImgPGFLoader::DImgPGFLoader(DImg* const image)
 {
 }
 
-DImgPGFLoader::~DImgPGFLoader()
-{
-}
-
 bool DImgPGFLoader::hasAlpha() const
 {
     return m_hasAlpha;

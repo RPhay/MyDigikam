@@ -22,6 +22,7 @@ extern "C"
 #ifndef Q_CC_MSVC
 #   include <unistd.h>
 #endif
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -117,7 +118,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         return false;
     }
 
-    unsigned char pgfID[3] = { 0x50, 0x47, 0x46 };
+    const unsigned char pgfID[3] = { 0x50, 0x47, 0x46 };
 
     if (memcmp(&header[0], &pgfID, 3) != 0)
     {

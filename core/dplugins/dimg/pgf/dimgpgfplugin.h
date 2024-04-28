@@ -42,7 +42,7 @@ class DImgPGFPlugin : public DPluginDImg
 public:
 
     explicit DImgPGFPlugin(QObject* const parent = nullptr);
-    ~DImgPGFPlugin()                                                                              override;
+    ~DImgPGFPlugin()                                                                              override = default;
 
     QString name()                                                                          const override;
     QString iid()                                                                           const override;
