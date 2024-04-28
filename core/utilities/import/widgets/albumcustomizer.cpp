@@ -161,7 +161,7 @@ AlbumCustomizer::~AlbumCustomizer()
     delete d;
 }
 
-void AlbumCustomizer::readSettings(KConfigGroup& group)
+void AlbumCustomizer::readSettings(const KConfigGroup& group)
 {
     d->autoAlbumDateCheck->setChecked(group.readEntry("AutoAlbumDate",       false));
     d->autoAlbumExtCheck->setChecked(group.readEntry("AutoAlbumExt",         false));

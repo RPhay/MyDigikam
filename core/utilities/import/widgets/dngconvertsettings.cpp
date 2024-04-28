@@ -102,7 +102,7 @@ DNGConvertSettings::~DNGConvertSettings()
     delete d;
 }
 
-void DNGConvertSettings::readSettings(KConfigGroup& group)
+void DNGConvertSettings::readSettings(const KConfigGroup& group)
 {
     d->dngSettings->setBackupOriginalRawFile(group.readEntry(QLatin1String("BackupOriginalRawFile"), false));
     d->dngSettings->setCompressLossLess(group.readEntry(QLatin1String("CompressLossLess"),           true));

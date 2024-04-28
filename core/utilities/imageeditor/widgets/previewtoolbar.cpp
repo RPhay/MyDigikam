@@ -60,37 +60,25 @@ class Q_DECL_HIDDEN PreviewToolBar::Private
 {
 public:
 
-    explicit Private()
-      : previewOriginalButton(nullptr),
-        previewBothButtonVert(nullptr),
-        previewBothButtonHorz(nullptr),
-        previewDuplicateBothButtonVert(nullptr),
-        previewDupplicateBothButtonHorz(nullptr),
-        previewtargetButton(nullptr),
-        previewToggleMouseOverButton(nullptr),
-        previewButtons(nullptr),
-        actionsGroup(nullptr),
-        actionsMenu(nullptr)
-    {
-    }
+    Private() = default;
 
-    QToolButton*  previewOriginalButton;
-    QToolButton*  previewBothButtonVert;
-    QToolButton*  previewBothButtonHorz;
-    QToolButton*  previewDuplicateBothButtonVert;
-    QToolButton*  previewDupplicateBothButtonHorz;
-    QToolButton*  previewtargetButton;
-    QToolButton*  previewToggleMouseOverButton;
+    QToolButton*  previewOriginalButton             = nullptr;
+    QToolButton*  previewBothButtonVert             = nullptr;
+    QToolButton*  previewBothButtonHorz             = nullptr;
+    QToolButton*  previewDuplicateBothButtonVert    = nullptr;
+    QToolButton*  previewDupplicateBothButtonHorz   = nullptr;
+    QToolButton*  previewtargetButton               = nullptr;
+    QToolButton*  previewToggleMouseOverButton      = nullptr;
 
-    QButtonGroup* previewButtons;
-    QActionGroup* actionsGroup;
+    QButtonGroup* previewButtons                    = nullptr;
+    QActionGroup* actionsGroup                      = nullptr;
 
-    QMenu*        actionsMenu;
+    QMenu*        actionsMenu                       = nullptr;
 };
 
 PreviewToolBar::PreviewToolBar(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -328,7 +316,7 @@ PreviewToolBar::PreviewMode PreviewToolBar::previewMode() const
     return ((PreviewMode)d->previewButtons->checkedId());
 }
 
-void PreviewToolBar::readSettings(KConfigGroup& group)
+void PreviewToolBar::readSettings(const KConfigGroup& group)
 {
     int mode = group.readEntry("PreviewMode", (int)PreviewBothImagesVertCont);
     mode     = qMax((int)PreviewOriginalImage, mode);

@@ -59,14 +59,14 @@ public:
 public:
 
     explicit PreviewToolBar(QWidget* const parent = nullptr);
-    ~PreviewToolBar() override;
+    ~PreviewToolBar()               override;
 
     void setPreviewModeMask(int mask);
 
     void setPreviewMode(PreviewMode mode);
     PreviewMode previewMode() const;
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
     void registerMenuActionGroup(EditorWindow* const editor);

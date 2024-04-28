@@ -38,7 +38,7 @@ public:
     explicit DNGConvertSettings(QWidget* const parent = nullptr);
     ~DNGConvertSettings() override;
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void saveSettings(KConfigGroup& group);
 
     void settings(DownloadSettings* const settings);

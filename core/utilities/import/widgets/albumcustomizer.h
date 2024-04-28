@@ -46,9 +46,9 @@ public:
 public:
 
     explicit AlbumCustomizer(QWidget* const parent = nullptr);
-    ~AlbumCustomizer() override;
+    ~AlbumCustomizer()                      override;
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void saveSettings(KConfigGroup& group);
 
     bool    autoAlbumDateEnabled()    const;
