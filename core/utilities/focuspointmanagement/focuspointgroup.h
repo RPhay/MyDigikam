@@ -27,7 +27,6 @@
 
 #include "assignnamewidget.h"
 #include "regionframeitem.h"
-
 #include "addtagscombobox.h"
 #include "albummodel.h"
 #include "albumfiltermodel.h"

@@ -36,10 +36,10 @@ class FocusPointItem : public RegionFrameItem       // clazy:exclude=ctor-missin
 public:
 
     explicit FocusPointItem(QGraphicsItem* const parent);
-    ~FocusPointItem()                                      override;
+    ~FocusPointItem()                                                         override;
 
     void setPoint(const FocusPoint& point);
-    FocusPoint point()                               const;
+    FocusPoint point()                                                  const;
     void setEditable(bool allowEdit);
 
 private:
@@ -49,7 +49,7 @@ private:
     FocusPointItem(const FocusPointItem&)            = delete;
     FocusPointItem& operator=(const FocusPointItem&) = delete;
 
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)  override;
 
 private:
 

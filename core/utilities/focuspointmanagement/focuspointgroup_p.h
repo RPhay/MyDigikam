@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN FocusPointGroup::Private
 
 public:
 
-    explicit Private(FocusPointGroup* const q);
+    explicit Private(FocusPointGroup* const qq);
 
     FocusPointItem* createItem(const FocusPoint& point) const;
     FocusPointItem* addItem(const FocusPoint& point);
