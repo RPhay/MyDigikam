@@ -43,25 +43,18 @@ class Q_DECL_HIDDEN ImageRegionItem::Private
 {
 public:
 
-    explicit Private()
-      : paintExtras              (true),
-        onMouseMovePreviewToggled(true),
-        renderingPreviewMode     (PreviewToolBar::PreviewBothImagesVertCont),
-        view                     (nullptr),
-        iface                    (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool               paintExtras;
-    bool               onMouseMovePreviewToggled;
-    int                renderingPreviewMode;
+    bool               paintExtras                  = true;
+    bool               onMouseMovePreviewToggled    = true;
+    int                renderingPreviewMode         = PreviewToolBar::PreviewBothImagesVertCont;
 
     QPixmap            targetPix;    ///< Pixmap of target region to render for paint method.
     QRect              drawRect;
     QPolygon           hightlightPoints;
 
-    ImageRegionWidget* view;
-    ImageIface*        iface;
+    ImageRegionWidget* view                         = nullptr;
+    ImageIface*        iface                        = nullptr;
 };
 
 ImageRegionItem::ImageRegionItem(ImageRegionWidget* const widget, bool paintExtras)

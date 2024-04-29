@@ -37,11 +37,8 @@ namespace Digikam
 ImagePreviewItem::ImagePreviewItem()
 {
     Q_D(GraphicsDImgItem);
-    d->init(this);
-}
 
-ImagePreviewItem::~ImagePreviewItem()
-{
+    d->init(this);
 }
 
 void ImagePreviewItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)

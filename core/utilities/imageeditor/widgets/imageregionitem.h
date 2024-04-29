@@ -53,7 +53,7 @@ public:
 private:
 
     class Private;
-    Private* const dd;
+    Private* const dd = nullptr;
 };
 
 } // namespace Digikam

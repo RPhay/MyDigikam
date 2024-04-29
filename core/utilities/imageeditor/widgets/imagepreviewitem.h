@@ -33,8 +33,8 @@ class DIGIKAM_EXPORT ImagePreviewItem : public GraphicsDImgItem
 
 public:
 
-    explicit ImagePreviewItem();
-    ~ImagePreviewItem()         override;
+    ImagePreviewItem();
+    ~ImagePreviewItem()         override = default;
 
     void paint(QPainter* painter,
                const QStyleOptionGraphicsItem* option,
