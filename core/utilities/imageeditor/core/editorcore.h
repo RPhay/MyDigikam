@@ -57,18 +57,18 @@ public:
 public:
 
     explicit EditorCore();
-    ~EditorCore() override;
+    ~EditorCore()                                                                                         override;
 
     void    load(const QString& filename, IOFileSettings* const iofileSettings);
     void    applyTransform(const IccTransform& transform);
     void    setSoftProofingEnabled(bool enabled);
-    bool    softProofingEnabled() const;
+    bool    softProofingEnabled()                                                                   const;
 
     void                 setICCSettings(const ICCSettingsContainer& cmSettings);
-    ICCSettingsContainer getICCSettings() const;
+    ICCSettingsContainer getICCSettings()                                                           const;
 
     void                       setExposureSettings(ExposureSettingsContainer* const expoSettings);
-    ExposureSettingsContainer* getExposureSettings() const;
+    ExposureSettingsContainer* getExposureSettings()                                                const;
 
     void    setExifOrient(bool exifOrient);
     void    setDisplayingWidget(QWidget* const widget);
@@ -96,7 +96,7 @@ public:
     void    setUndoManagerOrigin();
     void    resetImage();
 
-    QString ensureHasCurrentUuid() const;
+    QString ensureHasCurrentUuid()                                                                  const;
     void    provideCurrentUuid(const QString& uuid);
 
     void    zoom(double val);
@@ -104,18 +104,18 @@ public:
     /**
      * Image properties
      */
-    DImg    getImgSelection() const;
-    DImg*   getImg()          const;
-    bool    isValid()         const;
-    bool    isReadOnly()      const;
-    bool    hasAlpha()        const;
-    bool    sixteenBit()      const;
-    bool    exifRotated()     const;
-    int     width()           const;
-    int     height()          const;
-    int     origWidth()       const;
-    int     origHeight()      const;
-    int     bytesDepth()      const;
+    DImg    getImgSelection()                                                                       const;
+    DImg*   getImg()                                                                                const;
+    bool    isValid()                                                                               const;
+    bool    isReadOnly()                                                                            const;
+    bool    hasAlpha()                                                                              const;
+    bool    sixteenBit()                                                                            const;
+    bool    exifRotated()                                                                           const;
+    int     width()                                                                                 const;
+    int     height()                                                                                const;
+    int     origWidth()                                                                             const;
+    int     origHeight()                                                                            const;
+    int     bytesDepth()                                                                            const;
 
     /**
      * Image transforms
@@ -129,7 +129,7 @@ public:
     void    crop(const QRect& rect);
 
     void    setSelectedArea(const QRect& rect);
-    QRect   getSelectedArea() const;
+    QRect   getSelectedArea()                                                                       const;
 
     void    putIccProfile(const IccProfile& profile);
     void    putImgSelection(const QString& caller, const FilterAction& action, const DImg& img);
@@ -147,22 +147,22 @@ public:
      * Convert a DImg image to a pixmap for screen using color
      * managed view if necessary.
      */
-    QPixmap               convertToPixmap(const DImg& img)  const;
+    QPixmap               convertToPixmap(const DImg& img)                                          const;
 
-    QString               getImageFileName()                const;
-    QString               getImageFilePath()                const;
-    QString               getImageFormat()                  const;
-    QStringList           getUndoHistory()                  const;
-    QStringList           getRedoHistory()                  const;
-    UndoState             undoState()                       const;
-    int                   availableUndoSteps()              const;
-    int                   availableRedoSteps()              const;
-    IccProfile            getEmbeddedICC()                  const;
-    MetaEngineData        getMetadata()                     const;
-    DImageHistory         getItemHistory()                  const;
-    DImageHistory         getInitialImageHistory()          const;
-    DImageHistory         getImageHistoryOfFullRedo()       const;
-    DImageHistory         getResolvedInitialHistory()       const;
+    QString               getImageFileName()                                                        const;
+    QString               getImageFilePath()                                                        const;
+    QString               getImageFormat()                                                          const;
+    QStringList           getUndoHistory()                                                          const;
+    QStringList           getRedoHistory()                                                          const;
+    UndoState             undoState()                                                               const;
+    int                   availableUndoSteps()                                                      const;
+    int                   availableRedoSteps()                                                      const;
+    IccProfile            getEmbeddedICC()                                                          const;
+    MetaEngineData        getMetadata()                                                             const;
+    DImageHistory         getItemHistory()                                                          const;
+    DImageHistory         getInitialImageHistory()                                                  const;
+    DImageHistory         getImageHistoryOfFullRedo()                                               const;
+    DImageHistory         getResolvedInitialHistory()                                               const;
     void                  setResolvedInitialHistory(const DImageHistory& history);
 
 protected Q_SLOTS:
@@ -200,7 +200,7 @@ private:
     static EditorCore* m_defaultInstance;
 
     class Private;
-    Private* const     d;
+    Private* const     d = nullptr;
 };
 
 } // namespace Digikam

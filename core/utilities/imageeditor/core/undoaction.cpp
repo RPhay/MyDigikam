@@ -96,7 +96,7 @@ UndoMetadataContainer UndoAction::getMetadata() const
 
 bool UndoAction::hasFileOriginData() const
 {
-    return !d->fileOrigin.isNull();
+    return (!d->fileOrigin.isNull());
 }
 
 void UndoAction::setFileOriginData(const QVariant& data,
@@ -144,10 +144,6 @@ UndoActionIrreversible::UndoActionIrreversible(const EditorCore* const core,
 {
     setTitle(title.isNull() ? i18nc("@title: menu entry to undo unknown previous action", "Unknown")
                             : title);
-}
-
-UndoActionIrreversible::~UndoActionIrreversible()
-{
 }
 
 } // namespace Digikam

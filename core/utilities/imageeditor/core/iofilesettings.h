@@ -28,86 +28,63 @@ class DIGIKAM_EXPORT IOFileSettings
 
 public:
 
-    IOFileSettings()
-      : JPEGCompression    (75),
-        JPEGSubSampling    (1),    ///< Medium sub-sampling
-        PNGCompression     (9),
-        TIFFCompression    (false),
-        JPEG2000Compression(75),
-        JPEG2000LossLess   (true),
-        PGFCompression     (3),
-        PGFLossLess        (true),
-        HEIFCompression    (75),
-        HEIFLossLess       (true),
-        JXLCompression     (75),
-        JXLLossLess        (true),
-        WEBPCompression    (75),
-        WEBPLossLess       (true),
-        AVIFCompression    (75),
-        AVIFLossLess       (true),
-        useRAWImport       (true),
-        rawImportToolIid   (QLatin1String("org.kde.digikam.plugin.rawimport.Native"))
-    {
-    };
-
-    ~IOFileSettings()
-    {
-    };
+    IOFileSettings()  = default;
+    ~IOFileSettings() = default;
 
 public:
 
     /// JPEG quality value.
-    int          JPEGCompression;
+    int          JPEGCompression        = 75;
 
     /// JPEG chroma sub-sampling value.
-    int          JPEGSubSampling;
+    int          JPEGSubSampling        = 1;     ///< Medium sub-sampling
 
     /// PNG compression value.
-    int          PNGCompression;
+    int          PNGCompression         = 9;
 
     /// TIFF deflate compression.
-    bool         TIFFCompression;
+    bool         TIFFCompression        = false;
 
     /// JPEG2000 quality value.
-    int          JPEG2000Compression;
+    int          JPEG2000Compression    = 75;
 
     /// JPEG2000 lossless compression.
-    bool         JPEG2000LossLess;
+    bool         JPEG2000LossLess       = true;
 
     /// PGF quality value.
-    int          PGFCompression;
+    int          PGFCompression         = 3;
 
     /// PGF lossless compression.
-    bool         PGFLossLess;
+    bool         PGFLossLess            = true;
 
     /// HEIF quality value.
-    int          HEIFCompression;
+    int          HEIFCompression        = 75;
 
     /// HEIF lossless compression.
-    bool         HEIFLossLess;
+    bool         HEIFLossLess           = true;
 
     /// JXL quality value.
-    int          JXLCompression;
+    int          JXLCompression         = 75;
 
     /// JXL lossless compression.
-    bool         JXLLossLess;
+    bool         JXLLossLess            = true;
 
     /// WEBP quality value.
-    int          WEBPCompression;
+    int          WEBPCompression        = 75;
 
     /// WEBP lossless compression.
-    bool         WEBPLossLess;
+    bool         WEBPLossLess           = true;
 
     /// AVIF quality value.
-    int          AVIFCompression;
+    int          AVIFCompression        = 75;
 
     /// AVIF lossless compression.
-    bool         AVIFLossLess;
+    bool         AVIFLossLess           = true;
 
     /// Use Raw Import tool to load a RAW picture.
-    bool         useRAWImport;
+    bool         useRAWImport           = true;
 
-    QString      rawImportToolIid;
+    QString rawImportToolIid            = QLatin1String("org.kde.digikam.plugin.rawimport.Native");
 
     /// RAW File decoding options.
     DRawDecoding rawDecodingSettings;

@@ -56,8 +56,8 @@ public:
     {
     public:
 
-        bool                    setExifOrientationTag;
-        int                     historyStep;
+        bool                    setExifOrientationTag   = false;
+        int                     historyStep             = -1;
 
         QString                 fileName;
         QString                 filePath;
@@ -69,28 +69,7 @@ public:
 
 public:
 
-    Private()
-      : valid            (false),
-        rotatedOrFlipped (false),
-        exifOrient       (false),
-        doSoftProofing   (false),
-        width            (0),
-        height           (0),
-        origWidth        (0),
-        origHeight       (0),
-        selX             (0),
-        selY             (0),
-        selW             (0),
-        selH             (0),
-        zoom             (1.0),
-        displayingWidget (nullptr),
-        currentFileToSave(0),
-        undoMan          (nullptr),
-        expoSettings     (nullptr),
-        thread           (nullptr),
-        rawPlugin        (nullptr)
-    {
-    }
+    Private() = default;
 
     QMap<QString, QVariant> ioAttributes(IOFileSettings* const iofileSettings, const QString& givenMimeType) const;
 
@@ -107,38 +86,38 @@ public:
 
 public:
 
-    bool                       valid;
-    bool                       rotatedOrFlipped;
-    bool                       exifOrient;
-    bool                       doSoftProofing;
+    bool                       valid                    = false;
+    bool                       rotatedOrFlipped         = false;
+    bool                       exifOrient               = false;
+    bool                       doSoftProofing           = false;
 
-    int                        width;
-    int                        height;
-    int                        origWidth;
-    int                        origHeight;
-    int                        selX;
-    int                        selY;
-    int                        selW;
-    int                        selH;
+    int                        width                    = 0;
+    int                        height                   = 0;
+    int                        origWidth                = 0;
+    int                        origHeight               = 0;
+    int                        selX                     = 0;
+    int                        selY                     = 0;
+    int                        selW                     = 0;
+    int                        selH                     = 0;
 
-    double                     zoom;
+    double                     zoom                     = 1.0;
 
-    QWidget*                   displayingWidget;
+    QWidget*                   displayingWidget         = nullptr;
 
     QList<FileToSave>          filesToSave;
-    int                        currentFileToSave;
+    int                        currentFileToSave        = 0;
 
     DImg                       image;
     DImageHistory              resolvedInitialHistory;
-    UndoManager*               undoMan;
+    UndoManager*               undoMan                  = nullptr;
 
     ICCSettingsContainer       cmSettings;
 
-    ExposureSettingsContainer* expoSettings;
+    ExposureSettingsContainer* expoSettings             = nullptr;
 
-    SharedLoadSaveThread*      thread;
+    SharedLoadSaveThread*      thread                   = nullptr;
 
-    DPluginRawImport*          rawPlugin;
+    DPluginRawImport*          rawPlugin                = nullptr;
 
     LoadingDescription         currentDescription;
 };
@@ -221,10 +200,10 @@ void EditorCore::Private::saveNext()
     }
 
     file.image.prepareMetadataToSave(file.intendedFilePath, file.mimeType, file.setExifOrientationTag);
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Adjusting image" << file.mimeType << file.fileName << file.setExifOrientationTag << file.ioAttributes
-    //                             << "image:" << file.image.size() << file.image.isNull();
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Adjusting image" << file.mimeType << file.fileName << file.setExifOrientationTag << file.ioAttributes
+                                 << "image:" << file.image.size() << file.image.isNull();
+*/
     thread->save(file.image, file.filePath, file.mimeType);
 }
 
@@ -258,9 +237,11 @@ QMap<QString, QVariant> EditorCore::Private::ioAttributes(IOFileSettings* const 
 
     // JPEG file format.
 
-    if ((mimeType.toUpper() == QLatin1String("JPG"))  ||
+    if (
+        (mimeType.toUpper() == QLatin1String("JPG"))  ||
         (mimeType.toUpper() == QLatin1String("JPEG")) ||
-        (mimeType.toUpper() == QLatin1String("JPE")))
+        (mimeType.toUpper() == QLatin1String("JPE"))
+       )
     {
         attributes.insert(QLatin1String("quality"),     iofileSettings->JPEGCompression);
         attributes.insert(QLatin1String("subsampling"), iofileSettings->JPEGSubSampling);
@@ -275,8 +256,10 @@ QMap<QString, QVariant> EditorCore::Private::ioAttributes(IOFileSettings* const 
 
     // TIFF file format.
 
-    if ((mimeType.toUpper() == QLatin1String("TIFF")) ||
-        (mimeType.toUpper() == QLatin1String("TIF")))
+    if (
+        (mimeType.toUpper() == QLatin1String("TIFF")) ||
+        (mimeType.toUpper() == QLatin1String("TIF"))
+       )
     {
         attributes.insert(QLatin1String("compress"), iofileSettings->TIFFCompression);
     }
@@ -285,11 +268,13 @@ QMap<QString, QVariant> EditorCore::Private::ioAttributes(IOFileSettings* const 
 
 #ifdef HAVE_JASPER
 
-    if ((mimeType.toUpper() == QLatin1String("JP2")) ||
+    if (
+        (mimeType.toUpper() == QLatin1String("JP2")) ||
         (mimeType.toUpper() == QLatin1String("JPX")) ||
         (mimeType.toUpper() == QLatin1String("JPC")) ||
         (mimeType.toUpper() == QLatin1String("PGX")) ||
-        (mimeType.toUpper() == QLatin1String("J2K")))
+        (mimeType.toUpper() == QLatin1String("J2K"))
+       )
     {
         if (iofileSettings->JPEG2000LossLess)
         {
@@ -307,9 +292,11 @@ QMap<QString, QVariant> EditorCore::Private::ioAttributes(IOFileSettings* const 
 
 #ifdef HAVE_X265
 
-    if ((mimeType.toUpper() == QLatin1String("HEIC")) ||
+    if (
+        (mimeType.toUpper() == QLatin1String("HEIC")) ||
         (mimeType.toUpper() == QLatin1String("HEIF")) ||
-        (mimeType.toUpper() == QLatin1String("HIF")))
+        (mimeType.toUpper() == QLatin1String("HIF"))
+       )
     {
         if (iofileSettings->HEIFLossLess)
         {
@@ -403,8 +390,10 @@ void EditorCore::Private::saveAs(const QString& filePath, IOFileSettings* const 
         mimeType = EditorCore::defaultInstance()->getImageFormat();
     }
 
-    if ((op.tasks & VersionFileOperation::MoveToIntermediate) ||
-        (op.tasks & VersionFileOperation::SaveAndDelete))
+    if (
+        (op.tasks & VersionFileOperation::MoveToIntermediate) ||
+        (op.tasks & VersionFileOperation::SaveAndDelete)
+       )
     {
         // The current file will stored away at a different name. Adjust history.
 

@@ -50,25 +50,16 @@ public:
 
 public:
 
-    explicit SavingContext()
-      : savingState            (SavingStateNone),
-        synchronizingState     (NormalSaving),
-        synchronousSavingResult(false),
-        destinationExisted     (false),
-        abortingSaving         (false),
-        executedOperation      (SavingStateNone),
-        saveTempFile           (nullptr)
-    {
-    }
+    SavingContext() = default;
 
 public:
 
-    SavingState          savingState;
-    SynchronizingState   synchronizingState;
-    bool                 synchronousSavingResult;
-    bool                 destinationExisted;
-    bool                 abortingSaving;
-    SavingState          executedOperation;
+    SavingState          savingState                = SavingStateNone;
+    SynchronizingState   synchronizingState         = NormalSaving;
+    bool                 synchronousSavingResult    = false;
+    bool                 destinationExisted         = false;
+    bool                 abortingSaving             = false;
+    SavingState          executedOperation          = SavingStateNone;
 
     QString              originalFormat;
     QString              format;
@@ -77,7 +68,7 @@ public:
     QUrl                 destinationURL;
     QUrl                 moveSrcURL;
 
-    SafeTemporaryFile*   saveTempFile;
+    SafeTemporaryFile*   saveTempFile               = nullptr;
     QString              saveTempFileName;
 
     VersionFileOperation versionFileOperation;

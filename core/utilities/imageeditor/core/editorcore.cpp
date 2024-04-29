@@ -156,6 +156,7 @@ void EditorCore::slotLoadRawFromTool(const LoadingDescription& props, const DImg
     d->currentDescription = props;
 
     Q_EMIT signalLoadingStarted(d->currentDescription.filePath);
+
     slotImageLoaded(d->currentDescription, img);
     EditorToolIface::editorToolIface()->unLoadTool();
 /*
@@ -288,6 +289,7 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
     }
 
     Q_EMIT signalImageLoaded(d->currentDescription.filePath, valRet);
+
     setModified();
 }
 
@@ -324,10 +326,12 @@ void EditorCore::undo()
     if (!d->undoMan->anyMoreUndo())
     {
         Q_EMIT signalUndoStateChanged();
+
         return;
     }
 
     d->undoMan->undo();
+
     Q_EMIT signalUndoStateChanged();
 }
 
@@ -336,16 +340,19 @@ void EditorCore::redo()
     if (!d->undoMan->anyMoreRedo())
     {
         Q_EMIT signalUndoStateChanged();
+
         return;
     }
 
     d->undoMan->redo();
+
     Q_EMIT signalUndoStateChanged();
 }
 
 void EditorCore::rollbackToOrigin()
 {
     d->undoMan->rollbackToOrigin();
+
     Q_EMIT signalUndoStateChanged();
 }
 
@@ -366,7 +373,7 @@ void EditorCore::saveAs(const QString& filePath, IOFileSettings* const iofileSet
 
 void EditorCore::slotImageSaved(const QString& filePath, bool success)
 {
-    if (d->filesToSave.isEmpty() || d->filesToSave[d->currentFileToSave].filePath != filePath)
+    if (d->filesToSave.isEmpty() || (d->filesToSave[d->currentFileToSave].filePath != filePath))
     {
         return;
     }
@@ -405,6 +412,7 @@ void EditorCore::slotImageSaved(const QString& filePath, bool success)
     if (d->currentFileToSave == d->filesToSave.size())
     {
         d->filesToSave.clear();
+
         Q_EMIT signalImageSaved(filePath, success);
     }
     else
@@ -540,12 +548,14 @@ void EditorCore::clearUndoManager()
 {
     d->undoMan->clear();
     d->undoMan->setOrigin();
+
     Q_EMIT signalUndoStateChanged();
 }
 
 void EditorCore::setUndoManagerOrigin()
 {
     d->undoMan->setOrigin();
+
     Q_EMIT signalUndoStateChanged();
     Q_EMIT signalFileOriginChanged(getImageFilePath());
 }
@@ -724,6 +734,7 @@ void EditorCore::imageUndoChanged(const UndoMetadataContainer& c)
 void EditorCore::setFileOriginData(const QVariant& data)
 {
     d->image.setFileOriginData(data);
+
     Q_EMIT signalFileOriginChanged(getImageFilePath());
 }
 
