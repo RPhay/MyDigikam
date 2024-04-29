@@ -70,8 +70,8 @@ void FFmpegLauncher::encodeFrames()
 
     if (!m_settings->audioTrack.isEmpty())
     {
-        args << QLatin1String("-stream_loop")
-             << QLatin1String("-1")
+        args //<< QLatin1String("-stream_loop")
+             //<< QLatin1String("-1")
              << QLatin1String("-i")
              << QDir::toNativeSeparators(m_settings->audioTrack)  // Audio file to use as soundtrack.
              << QLatin1String("-c:a")
@@ -188,7 +188,7 @@ QTime FFmpegLauncher::soundTrackLength(const QString& audioPath)
     setConsoleTraces(false);
     setProgram(m_settings->ffmpegPath);
     setArguments(QStringList() << QLatin1String("-i")
-                               << audioPath);
+                               << QDir::toNativeSeparators(audioPath));
 
     QEventLoop loop;
 
