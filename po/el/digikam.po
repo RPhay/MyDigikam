@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-28 01:37+0000\n"
+"POT-Creation-Date: 2024-04-29 01:42+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -7157,20 +7157,20 @@ msgstr "Εμφάνιση τύπου αρχειοθέτησης εικόνας"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:119
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:115
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:128
 #: core/libs/dplugins/core/dplugindimg.cpp:58
 #: core/libs/dplugins/core/dplugindimg.cpp:70
 #, fuzzy, kde-format
@@ -7181,19 +7181,19 @@ msgstr "ναι"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:120
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:116
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:129
 #: core/libs/dplugins/core/dplugindimg.cpp:61
 #: core/libs/dplugins/core/dplugindimg.cpp:73
 #, fuzzy, kde-format
@@ -7297,20 +7297,20 @@ msgstr ""
 "στο τέταρτο σε 4x1 μπλοκ, υψηλή συμπίεση , χαμηλή ποιότητα.</"
 "p><p><b>Σημείωση: το JPEG χρσηιμοποιεί πάντα συμπίεση με απώλειες.</b></p>"
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:47
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:43
 #, fuzzy, kde-format
 #| msgid "JPEG Files"
 msgctxt "@title"
 msgid "JPEG loader"
 msgstr "Αρχεία JPEG"
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:62
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjpeg codec"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:67
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7323,9 +7323,9 @@ msgid ""
 "Photographic Experts Group documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:122
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:127
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:132
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:118
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
@@ -7487,20 +7487,20 @@ msgstr ""
 "χρησιμοποιηθεί αυτή η τιμή, η PGF είναι τύπος συμπίεσης εικόνας χωρίς "
 "απώλειες.</b></p>"
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:47
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:43
 #, fuzzy, kde-format
 #| msgid "PNG Files"
 msgctxt "@title"
 msgid "PGF loader"
 msgstr "Αρχεία PNG"
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:62
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libpgf codec"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:82
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7514,7 +7514,7 @@ msgid ""
 "a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:110
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:106
 #, fuzzy, kde-format
 #| msgid "*.pgf|Progressive Graphics file"
 msgctxt "@title"
@@ -7541,20 +7541,20 @@ msgstr ""
 "μεγάλη διάρκεια συμπίεσης)</p><p><b>Σημείωση: Η PNG είναι πάντα ένας τύπος "
 "συμπίεσης εικόνας χωρίς απώλειες.</b></p>"
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:47
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:43
 #, fuzzy, kde-format
 #| msgid "PNG Files"
 msgctxt "@title"
 msgid "PNG loader"
 msgstr "Αρχεία PNG"
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:62
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libpng codec"
 msgstr ""
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:67
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7566,7 +7566,7 @@ msgid ""
 "Network Graphics documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:118
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:114
 #, fuzzy, kde-format
 #| msgid "Raster Files"
 msgctxt "@title"
@@ -7794,20 +7794,20 @@ msgstr ""
 "</p><p>Ένας τύπος συμπίεσης χωρίς απώλειες (Deflate) χρησιμοποιείται για την "
 "αποθήκευση του αρχείου.</p>"
 
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:47
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:43
 #, fuzzy, kde-format
 #| msgid "TIFF Files"
 msgctxt "@title"
 msgid "TIFF loader"
 msgstr "Αρχεία TIFF"
 
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:62
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libtiff codec"
 msgstr ""
 
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:67
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7821,8 +7821,8 @@ msgid ""
 "TIFF'>Tagged Image File Format documentation</a> for details.</para>"
 msgstr ""
 
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:119
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:123
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:127
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
 #| msgid "Workspace File Format"
@@ -36676,7 +36676,7 @@ msgstr "Επεξεργασία αντικειμένων"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Αποτυχία διόρθωσης του προσανατολισμού Exif στα αρχεία:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:348
+#: core/libs/fileactionmanager/fileworkeriface.cpp:356
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Αποτυχία στο μετασχηματισμό αυτών των αρχείων:"
@@ -57538,124 +57538,124 @@ msgstr "Το αρχείο είναι GPX, αλλά δεν βρέθηκαν ση�
 msgid "Map settings"
 msgstr "Ρυθμίσεις"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:469
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:470
 #, kde-format
 msgid "Zoom in"
 msgstr "Μεγέθυνση"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:476
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:477
 #, kde-format
 msgid "Zoom out"
 msgstr "Σμίκρυνση"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:482
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:483
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Αλλαγή ανάμεσα σε "
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:500
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:501
 #, kde-format
 msgid "Preview single items"
 msgstr "Προεπισκόπηση μεμονωμένων αντικειμένων"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:503
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:504
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Προεπισκόπηση ομάδων αντικειμένων"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:506
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:507
 #, fuzzy, kde-format
 msgid "Show numbers"
 msgstr "Εμφάνιση εικόνων επισκόπησης"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:512
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:513
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Αύξηση μεγέθους των εικόνων προεπισκόπησης πάνω στο χάρτη"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:515
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:516
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Μείωση μεγέθους των εικόνων προεπισκόπησης πάνω στο χάρτη"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:522
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:523
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Αφαίρεση της τρέχουσας επιλεγμένης περιοχής"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:530
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:531
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Επιλογή εικόνων με σχεδιασμό ορθογώνιου παραλληλογράμμου"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:535
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:536
 #, fuzzy, kde-format
 msgid "Pan mode"
 msgstr "Λειτουργία φλας"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:542
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:543
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Ζουμ σε ομάδα"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:548
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:549
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Δημιουργία επιλεγμένης περιοχής από εικόνα προεπισκόπησης"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:554
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:555
 #, fuzzy, kde-format
 msgid "Filter images"
 msgstr "Πρώτη εικόνα"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:559
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:560
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Αφαίρεση του τρέχοντος φίλτρου"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:564
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:565
 #, kde-format
 msgid "Select images"
 msgstr "Επιλογή εικόνων"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:570
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:571
 #, kde-format
 msgid "Lock the map position"
 msgstr "Κλείδωμα της θέσης στο χάρτη"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:573
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:574
 #, fuzzy, kde-format
 #| msgid "Load playlist from a file."
 msgid "Load tracks from albums"
 msgstr "Φόρτωση λίστας αναπαραγωγής από αρχείο."
 
-#: core/utilities/geolocation/geoiface/widgets/placeholderwidget.cpp:49
+#: core/utilities/geolocation/geoiface/widgets/placeholderwidget.cpp:46
 #, fuzzy, kde-format
 #| msgid "Geolocation Filter"
 msgid "Geolocation Interface"
 msgstr "Φίλτρο γεωτοποθέτησης"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:183
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:185
 #, kde-format
 msgid "Sorting"
 msgstr "Ταξινόμηση"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:190
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:192
 #, kde-format
 msgid "Show oldest first"
 msgstr "Εμφάνιση παλαιότερου πρώτα"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:194
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:196
 #, kde-format
 msgid "Show youngest first"
 msgstr "Εμφάνιση νεότερου πρώτα"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:198
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:200
 #, kde-format
 msgid "Sort by rating"
 msgstr "Ταξινόμηση με αξιολόγηση"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:159
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
 #, fuzzy, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
@@ -57664,12 +57664,12 @@ msgstr ""
 "Εισαγάγετε εδώ το όνομα της τρέχουσας αναζήτησης χάρτη για αποθήκευση στην "
 "προβολή \"Οι αναζητήσεις του χάρτη μου\"."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:165
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
 #, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr "Αποθήκευση της τρέχουσας αναζήτησης χάρτη σε νέο εικονικό λεύκωμα."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:166
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
@@ -57678,17 +57678,17 @@ msgstr ""
 "Αν πιέσετε αυτό το κουμπί, η τρέχουσα αναζήτηση χάρτη θα αποθηκευτεί σε ένα "
 "νέο εικονικό λεύκωμα χρησιμοποιώντας το όνομα στην αριστερή πλευρά."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:211
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
 #, kde-format
 msgid "Search by area:"
 msgstr "Αναζήτηση με περιοχή:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:239
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
 #, fuzzy, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr "Εύρεση διπλών αντικειμένων"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:541
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:561
 #, kde-format
@@ -57699,7 +57699,7 @@ msgstr ""
 "Υπάρχει μια άλλη αναζήτηση με το ίδιο όνομα.\n"
 "Παρακαλώ εισαγάγετε νέο όνομα:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:565
 #, fuzzy, kde-format
@@ -57708,7 +57708,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Το όνομα υπάρχει"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:660
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
 #, fuzzy, kde-format
 msgid "Non Geo-located Items"
 msgstr "Εύρεση διπλών αντικειμένων"
@@ -62767,19 +62767,19 @@ msgstr ""
 "για τον υπολογισμό προεπισκόπησης.</p><p>Κάνετε κλικ και σύρετε το ποντίκι "
 "στην εικόνα για αλλαγή του εστιασμένου τμήματος.</p>"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:108
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:96
 #, kde-format
 msgid "If this option is enabled, the original image will be shown."
 msgstr ""
 "Αν αυτή η επιλογή είναι ενεργοποιημένη, θα γίνει εμφάνιση της αρχικής "
 "εικόνας."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:109
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:97
 #, fuzzy, kde-format
 msgid "Preview original image"
 msgstr "Αρχική εικόνα"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:117
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:105
 #, kde-format
 msgid ""
 "If this option is enabled, the preview area will split vertically. A "
@@ -62790,12 +62790,12 @@ msgstr ""
 "κατακόρυφα. Θα εμφανιστεί μια συνεχής περιοχή της εικόνας με το μισό της από "
 "την αρχική και το άλλο μισό από την εικόνα προορισμού."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:122
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:110
 #, fuzzy, kde-format
 msgid "Preview vertical split with contiguous image"
 msgstr "Κατακόρυφος διαχωρισμός με συνεχόμενη εικόνα"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:130
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:118
 #, kde-format
 msgid ""
 "If this option is enabled, the preview area will split horizontally. A "
@@ -62806,12 +62806,12 @@ msgstr ""
 "οριζόντια. Θα εμφανιστεί μια συνεχής περιοχή της εικόνας με το μισό της από "
 "την αρχική και το άλλο μισό από την εικόνα προορισμού."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:135
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:123
 #, fuzzy, kde-format
 msgid "Preview horizontal split with contiguous image"
 msgstr "Οριζόντιος διαχωρισμός με συνεχόμενη εικόνα"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:143
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:131
 #, kde-format
 msgid ""
 "If this option is enabled, the preview area will split vertically. The same "
@@ -62821,12 +62821,12 @@ msgstr ""
 "κατακόρυφα. Το ίδιο τμήμα της αρχικής εικόνας και της εικόνας προορισμού θα "
 "εμφανιστούν δίπλα δίπλα."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:147
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:135
 #, fuzzy, kde-format
 msgid "Preview vertical split with same image region"
 msgstr "Κατακόρυφος διαχωρισμός με περιοχή από την ίδια εικόνα"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:155
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:143
 #, kde-format
 msgid ""
 "If this option is enabled, the preview area will split horizontally. The "
@@ -62836,23 +62836,23 @@ msgstr ""
 "οριζόντια. Το ίδιο τμήμα της αρχικής εικόνας και της εικόνας προορισμού θα "
 "εμφανιστούν δίπλα δίπλα."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:159
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:147
 #, fuzzy, kde-format
 msgid "Preview horizontal split with same image region"
 msgstr "Οριζόντιος διαχωρισμός με περιοχή από την ίδια εικόνα"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:167
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:155
 #, kde-format
 msgid "If this option is enabled, the target image will be shown."
 msgstr ""
 "Αν αυτή η επιλογή είναι ενεργοποιημένη, η εικόνα προορισμού θα εμφανιστεί."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:168
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:156
 #, fuzzy, kde-format
 msgid "Preview target image"
 msgstr "Προηγούμενη εικόνα"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:176
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:164
 #, kde-format
 msgid ""
 "If this option is enabled, the original image will be shown when the mouse "
@@ -62861,12 +62861,12 @@ msgstr ""
 "Αν ενεργοποιήσετε αυτή την επιλογή, θα εμφανίζεται η αρχική εικόνα όταν το "
 "ποντίκι είναι πάνω της· διαφορετικά θα εμφανίζεται η τελική εικόνα."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:179
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:167
 #, fuzzy, kde-format
 msgid "Preview on mouse-over"
 msgstr "Επιλογές προεπισκόπησης"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:203
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:191
 #, fuzzy, kde-format
 msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
@@ -62914,118 +62914,118 @@ msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:559
+#: core/utilities/import/backend/cameracontroller.cpp:560
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:577
+#: core/utilities/import/backend/cameracontroller.cpp:578
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:632
-#: core/utilities/import/backend/cameracontroller.cpp:1003
+#: core/utilities/import/backend/cameracontroller.cpp:633
+#: core/utilities/import/backend/cameracontroller.cpp:1004
 #: core/utilities/import/main/importui.cpp:2481
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:730
+#: core/utilities/import/backend/cameracontroller.cpp:731
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:778
+#: core/utilities/import/backend/cameracontroller.cpp:779
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:795
+#: core/utilities/import/backend/cameracontroller.cpp:796
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:815
+#: core/utilities/import/backend/cameracontroller.cpp:816
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:889
+#: core/utilities/import/backend/cameracontroller.cpp:890
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:896
+#: core/utilities/import/backend/cameracontroller.cpp:897
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1011
+#: core/utilities/import/backend/cameracontroller.cpp:1012
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Αποτυχία λήψης του αρχείου \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1015
+#: core/utilities/import/backend/cameracontroller.cpp:1016
 #, fuzzy, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "Η ετικέτα '%2' έχει οριστεί σε ένα αντικείμενο. Θέλετε να συνεχίσετε;"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1032
+#: core/utilities/import/backend/cameracontroller.cpp:1033
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1040
+#: core/utilities/import/backend/cameracontroller.cpp:1041
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Αποτυχία αποστολής του αρχείου \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1044
+#: core/utilities/import/backend/cameracontroller.cpp:1045
 #, fuzzy, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "Η ετικέτα '%2' έχει οριστεί σε ένα αντικείμενο. Θέλετε να συνεχίσετε;"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1059
+#: core/utilities/import/backend/cameracontroller.cpp:1060
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1067
+#: core/utilities/import/backend/cameracontroller.cpp:1068
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Αποτυχία διαγραφής του αρχείου \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1071
+#: core/utilities/import/backend/cameracontroller.cpp:1072
 #, fuzzy, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr ""
 "Το αρχικό αρχείο (<filename>%1</filename>) δεν είναι αυτήν τη στιγμή "
 "διαθέσιμο"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1087
+#: core/utilities/import/backend/cameracontroller.cpp:1088
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1095
+#: core/utilities/import/backend/cameracontroller.cpp:1096
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Αποτυχία εναλλαγής κλειδώματος του αρχείου \"%1\"."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1099
+#: core/utilities/import/backend/cameracontroller.cpp:1100
 #, fuzzy, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Η ετικέτα '%2' έχει οριστεί σε ένα αντικείμενο. Θέλετε να συνεχίσετε;"

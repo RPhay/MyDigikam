@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-28 01:37+0000\n"
+"POT-Creation-Date: 2024-04-29 01:42+0000\n"
 "PO-Revision-Date: 2024-04-21 08:28+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -6978,20 +6978,20 @@ msgstr "Codificació d'imatge d'alta eficiència"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:119
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:115
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:128
 #: core/libs/dplugins/core/dplugindimg.cpp:58
 #: core/libs/dplugins/core/dplugindimg.cpp:70
 #, kde-format
@@ -7001,19 +7001,19 @@ msgstr "sí"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:185
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:120
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:116
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:129
 #: core/libs/dplugins/core/dplugindimg.cpp:61
 #: core/libs/dplugins/core/dplugindimg.cpp:73
 #, kde-format
@@ -7112,19 +7112,19 @@ msgstr ""
 "alta compressió però baixa qualitat.</p><p><b>Nota: El JPEG sempre usa "
 "compressió amb pèrdua.</b></p>"
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:47
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "JPEG loader"
 msgstr "Carregador de JPEG"
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:62
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjpeg codec"
 msgstr "Un carregador d'imatges basat en el còdec Libjpeg"
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:67
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7145,9 +7145,9 @@ msgstr ""
 "</para><para>Per als detalls, vegeu la <a href='https://en.wikipedia.org/"
 "wiki/JPEG'>documentació del Joint Photographic Experts Group</a>.</para>"
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:122
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:127
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:132
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:118
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #, kde-format
 msgctxt "@title"
 msgid "JPEG image"
@@ -7317,19 +7317,19 @@ msgstr ""
 "format de compressió d'imatges sense pèrdua quan empreu aquesta opció.</b></"
 "p>"
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:47
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "PGF loader"
 msgstr "Carregador de PGF"
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:62
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libpgf codec"
 msgstr "Un carregador d'imatges basat en el còdec Libpgf"
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:82
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:78
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7352,7 +7352,7 @@ msgstr ""
 "wikipedia.org/wiki/Progressive_Graphics_File'>documentació del Progressive "
 "Graphics File</a>.</para>"
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:110
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:106
 #, kde-format
 msgctxt "@title"
 msgid "Progressive Graphics File"
@@ -7378,19 +7378,19 @@ msgstr ""
 "fitxer, més temps per a comprimir)</p><p><b>Nota: El PNG sempre és un format "
 "de compressió d'imatge sense pèrdua.</b></p>"
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:47
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "PNG loader"
 msgstr "Carregador de PNG"
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:62
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libpng codec"
 msgstr "Un carregador d'imatges basat en el còdec Libpng"
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:67
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7410,7 +7410,7 @@ msgstr ""
 "Portable_Network_Graphics'>documentació del Portable Network Graphics</a>.</"
 "para>"
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:118
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:114
 #, kde-format
 msgctxt "@title"
 msgid "Portable Network Graphic"
@@ -7619,19 +7619,19 @@ msgstr ""
 "activada, la mida final de la imatge TIFF es reduirà. S'empra un format de "
 "compressió sense pèrdua (Deflate) per a desar el fitxer.</p>"
 
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:47
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "TIFF loader"
 msgstr "Carregador de TIFF"
 
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:62
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libtiff codec"
 msgstr "Un carregador d'imatges basat en el còdec Libtiff"
 
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:67
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7654,8 +7654,8 @@ msgstr ""
 "als detalls, vegeu la <a href='https://en.wikipedia.org/wiki/"
 "TIFF'>documentació del Tagged Image File Format</a>.</para>"
 
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:119
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:123
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:127
 #, kde-format
 msgctxt "@title"
 msgid "Tagged Image Format"
@@ -34984,7 +34984,7 @@ msgstr "Elements processats"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Ha fallat en revisar l'orientació Exif d'aquests fitxers:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:348
+#: core/libs/fileactionmanager/fileworkeriface.cpp:356
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Ha fallat en transformar aquests fitxers:"
@@ -54113,122 +54113,122 @@ msgstr ""
 msgid "Map settings"
 msgstr "Configuració del mapa"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:469
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:470
 #, kde-format
 msgid "Zoom in"
 msgstr "Amplia"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:476
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:477
 #, kde-format
 msgid "Zoom out"
 msgstr "Allunya"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:482
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:483
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Alterna entre marcadors i miniatures."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:500
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:501
 #, kde-format
 msgid "Preview single items"
 msgstr "Vista prèvia dels elements individuals"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:503
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:504
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Vista prèvia dels elements per grups"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:506
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:507
 #, kde-format
 msgid "Show numbers"
 msgstr "Mostra els números"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:512
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:513
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Incrementa la mida de les miniatures al mapa"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:515
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:516
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Disminueix la mida de les miniatures al mapa"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:522
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:523
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Elimina la selecció de la regió actual"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:530
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:531
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Seleccioneu les imatges dibuixant un rectangle"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:535
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:536
 #, kde-format
 msgid "Pan mode"
 msgstr "Mode panoràmic"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:542
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:543
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Apropa a un grup"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:548
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:549
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Crea una selecció de regió a partir d'una miniatura"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:554
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:555
 #, kde-format
 msgid "Filter images"
 msgstr "Filtra les imatges"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:559
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:560
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Elimina el filtre actual"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:564
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:565
 #, kde-format
 msgid "Select images"
 msgstr "Selecció d'imatges"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:570
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:571
 #, kde-format
 msgid "Lock the map position"
 msgstr "Bloqueja la posició en el mapa"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:573
+#: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:574
 #, kde-format
 msgid "Load tracks from albums"
 msgstr "Carrega trajectes a partir d'àlbums"
 
-#: core/utilities/geolocation/geoiface/widgets/placeholderwidget.cpp:49
+#: core/utilities/geolocation/geoiface/widgets/placeholderwidget.cpp:46
 #, kde-format
 msgid "Geolocation Interface"
 msgstr "Interfície de geolocalització"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:183
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:185
 #, kde-format
 msgid "Sorting"
 msgstr "Ordenació"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:190
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:192
 #, kde-format
 msgid "Show oldest first"
 msgstr "Mostra primer la més antiga"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:194
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:196
 #, kde-format
 msgid "Show youngest first"
 msgstr "Mostra primer la més recent"
 
-#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:198
+#: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:200
 #, kde-format
 msgid "Sort by rating"
 msgstr "Ordena per valoració"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:159
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:143
 #, kde-format
 msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
@@ -54237,12 +54237,12 @@ msgstr ""
 "Introduïu aquí el nom de la cerca actual per mapa per a desar-la a la vista "
 "de «Cerques per mapa»."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:165
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:149
 #, kde-format
 msgid "Save current map search to a new virtual album."
 msgstr "Desa la cerca actual per mapa a un àlbum virtual nou."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:166
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:150
 #, kde-format
 msgid ""
 "If this button is pressed, the current map search will be saved to a new "
@@ -54251,17 +54251,17 @@ msgstr ""
 "Si es prem aquest botó, la cerca actual per mapa es desarà a un àlbum "
 "virtual nou de cerques usant el nom establert a l'esquerra."
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:211
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:195
 #, kde-format
 msgid "Search by area:"
 msgstr "Cerca per àrea:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:239
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:223
 #, kde-format
 msgid "Show Non-Geolocated Items"
 msgstr "Mostra els elements sense geolocalització"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:541
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:527
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
 #: core/utilities/searchwindow/searchtabheader.cpp:561
 #, kde-format
@@ -54272,7 +54272,7 @@ msgstr ""
 "Ja hi ha una cerca amb el nom.\n"
 "Si us plau, introduïu-ne un de nou:"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:531
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:113
 #: core/utilities/searchwindow/searchtabheader.cpp:565
 #, kde-format
@@ -54280,7 +54280,7 @@ msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Aquest nom ja existeix"
 
-#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:660
+#: core/utilities/geolocation/mapsearches/gpssearchview.cpp:649
 #, kde-format
 msgid "Non Geo-located Items"
 msgstr "Elements sense geolocalització"
@@ -59016,17 +59016,17 @@ msgstr ""
 "vista prèvia.</p><p>Feu clic i arrossegueu el cursor del ratolí sobre la "
 "imatge per a canviar el focus del tros.</p>"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:108
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:96
 #, kde-format
 msgid "If this option is enabled, the original image will be shown."
 msgstr "Si aquesta opció està activada, es mostrarà la imatge original."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:109
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:97
 #, kde-format
 msgid "Preview original image"
 msgstr "Vista prèvia de la imatge original"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:117
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:105
 #, kde-format
 msgid ""
 "If this option is enabled, the preview area will split vertically. A "
@@ -59037,12 +59037,12 @@ msgstr ""
 "verticalment. Es mostrarà una àrea contigua de la imatge, amb la imatge "
 "original a una meitat, i la imatge final a l'altra meitat."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:122
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:110
 #, kde-format
 msgid "Preview vertical split with contiguous image"
 msgstr "Divisió vertical de la vista prèvia amb la imatge contigua"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:130
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:118
 #, kde-format
 msgid ""
 "If this option is enabled, the preview area will split horizontally. A "
@@ -59053,12 +59053,12 @@ msgstr ""
 "horitzontalment. Es mostrarà una àrea contigua de la imatge, amb la imatge "
 "original a una meitat, i la imatge final a l'altra meitat."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:135
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:123
 #, kde-format
 msgid "Preview horizontal split with contiguous image"
 msgstr "Divisió horitzontal de la vista prèvia amb la imatge contigua"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:143
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:131
 #, kde-format
 msgid ""
 "If this option is enabled, the preview area will split vertically. The same "
@@ -59068,12 +59068,12 @@ msgstr ""
 "verticalment. Es mostrarà la mateixa part de la imatge original i de la "
 "final, costat per costat."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:147
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:135
 #, kde-format
 msgid "Preview vertical split with same image region"
 msgstr "Divisió vertical de la vista prèvia amb la mateixa regió de la imatge"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:155
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:143
 #, kde-format
 msgid ""
 "If this option is enabled, the preview area will split horizontally. The "
@@ -59083,23 +59083,23 @@ msgstr ""
 "horitzontalment. Es mostrarà la mateixa part de la imatge original i de la "
 "final, costat per costat."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:159
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:147
 #, kde-format
 msgid "Preview horizontal split with same image region"
 msgstr ""
 "Divisió horitzontal de la vista prèvia amb la mateixa regió de la imatge"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:167
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:155
 #, kde-format
 msgid "If this option is enabled, the target image will be shown."
 msgstr "Si aquesta opció està activada, es mostrarà la imatge final."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:168
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:156
 #, kde-format
 msgid "Preview target image"
 msgstr "Vista prèvia de la imatge final"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:176
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:164
 #, kde-format
 msgid ""
 "If this option is enabled, the original image will be shown when the mouse "
@@ -59109,12 +59109,12 @@ msgstr ""
 "ratolí passi sobre l'àrea de la imatge; en cas contrari, es mostrarà la "
 "imatge final."
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:179
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:167
 #, kde-format
 msgid "Preview on mouse-over"
 msgstr "Vista prèvia per on passa el ratolí"
 
-#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:203
+#: core/utilities/imageeditor/widgets/previewtoolbar.cpp:191
 #, kde-format
 msgctxt "@action Select image editor preview mode"
 msgid "Preview Mode"
@@ -59160,104 +59160,104 @@ msgstr "Ha fallat en llistar els fitxers de <filename>%1</filename>"
 msgid "Failed to list files in <filename>%1</filename>"
 msgstr "Ha fallat en llistar els fitxers de <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:559
+#: core/utilities/import/backend/cameracontroller.cpp:560
 #, kde-kuit-format
 msgid "Failed to get thumbnail for <filename>%1</filename>"
 msgstr "Ha fallat en obtenir la miniatura de <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:577
+#: core/utilities/import/backend/cameracontroller.cpp:578
 #, kde-kuit-format
 msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Ha fallat en obtenir les metadades de <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:632
-#: core/utilities/import/backend/cameracontroller.cpp:1003
+#: core/utilities/import/backend/cameracontroller.cpp:633
+#: core/utilities/import/backend/cameracontroller.cpp:1004
 #: core/utilities/import/main/importui.cpp:2481
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Ha fallat en descarregar <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:730
+#: core/utilities/import/backend/cameracontroller.cpp:731
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
 msgstr "Ha fallat en convertir el fitxer <filename>%1</filename> a JPEG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:778
+#: core/utilities/import/backend/cameracontroller.cpp:779
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
 msgstr "Ha fallat en convertir el fitxer <filename>%1</filename> a DNG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:795
+#: core/utilities/import/backend/cameracontroller.cpp:796
 #, kde-kuit-format
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "S'ha saltat per a convertir el fitxer <filename>%1</filename> a DNG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:815
+#: core/utilities/import/backend/cameracontroller.cpp:816
 #, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
 msgstr "Ha fallat en obrir l'script de <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:889
+#: core/utilities/import/backend/cameracontroller.cpp:890
 #, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Temps d'espera exhaurit des de l'script de <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:896
+#: core/utilities/import/backend/cameracontroller.cpp:897
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Ha fallat en executar l'script de <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1011
+#: core/utilities/import/backend/cameracontroller.cpp:1012
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Ha fallat en baixar el fitxer <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1015
+#: core/utilities/import/backend/cameracontroller.cpp:1016
 #, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "Ha fallat en baixar el fitxer <b>%1</b>. Voleu continuar?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1032
+#: core/utilities/import/backend/cameracontroller.cpp:1033
 #, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Ha fallat en carregar <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1040
+#: core/utilities/import/backend/cameracontroller.cpp:1041
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Ha fallat en pujar el fitxer <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1044
+#: core/utilities/import/backend/cameracontroller.cpp:1045
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "Ha fallat en pujar el fitxer <b>%1</b>. Voleu continuar?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1059
+#: core/utilities/import/backend/cameracontroller.cpp:1060
 #, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Ha fallat en suprimir <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1067
+#: core/utilities/import/backend/cameracontroller.cpp:1068
 #, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Ha fallat en suprimir el fitxer <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1071
+#: core/utilities/import/backend/cameracontroller.cpp:1072
 #, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "Ha fallat en suprimir el fitxer <b>%1</b>. Voleu continuar?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1087
+#: core/utilities/import/backend/cameracontroller.cpp:1088
 #, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Ha fallat en bloquejar <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1095
+#: core/utilities/import/backend/cameracontroller.cpp:1096
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Ha fallat en commutar el fitxer de bloqueig <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1099
+#: core/utilities/import/backend/cameracontroller.cpp:1100
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
