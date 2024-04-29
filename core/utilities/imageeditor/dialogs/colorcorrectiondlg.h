@@ -53,7 +53,7 @@ public:
                                 const DImg& preview,
                                 const QString& file,
                                 QWidget* const parent = nullptr);
-    ~ColorCorrectionDlg() override;
+    ~ColorCorrectionDlg()                                 override;
 
     ICCSettingsContainer::Behavior behavior()        const;
     IccProfile specifiedProfile()                    const;

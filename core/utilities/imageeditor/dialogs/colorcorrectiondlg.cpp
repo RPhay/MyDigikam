@@ -54,46 +54,30 @@ class Q_DECL_HIDDEN ColorCorrectionDlg::Private
 {
 public:
 
-    explicit Private()
-      : imageProfileTitle    (nullptr),
-        imageProfileDesc     (nullptr),
-        previewTarget        (nullptr),
-        keepProfile          (nullptr),
-        convertToWorkingSpace(nullptr),
-        thirdOption          (nullptr),
-        thirdCheckBox        (nullptr),
-        imageSRGB            (nullptr),
-        imageWorkingSpace    (nullptr),
-        imageOtherSpace      (nullptr),
-        buttons              (nullptr),
-        otherProfileBox      (nullptr),
-        imageProfileBox      (nullptr),
-        mode                 (ColorCorrectionDlg::ProfileMismatch)
-    {
-    }
+    Private() = default;
 
     DImg                     preview;
     QString                  filePath;
 
-    QLabel*                  imageProfileTitle;
-    QLabel*                  imageProfileDesc;
-    QLabel*                  previewTarget;
+    QLabel*                  imageProfileTitle      = nullptr;
+    QLabel*                  imageProfileDesc       = nullptr;
+    QLabel*                  previewTarget          = nullptr;
 
-    QRadioButton*            keepProfile;
-    QRadioButton*            convertToWorkingSpace;
-    QRadioButton*            thirdOption;
-    QCheckBox*               thirdCheckBox;
+    QRadioButton*            keepProfile            = nullptr;
+    QRadioButton*            convertToWorkingSpace  = nullptr;
+    QRadioButton*            thirdOption            = nullptr;
+    QCheckBox*               thirdCheckBox          = nullptr;
 
-    QRadioButton*            imageSRGB;
-    QRadioButton*            imageWorkingSpace;
-    QRadioButton*            imageOtherSpace;
+    QRadioButton*            imageSRGB              = nullptr;
+    QRadioButton*            imageWorkingSpace      = nullptr;
+    QRadioButton*            imageOtherSpace        = nullptr;
 
-    QDialogButtonBox*        buttons;
+    QDialogButtonBox*        buttons                = nullptr;
 
-    IccProfilesComboBox*     otherProfileBox;
-    IccProfilesComboBox*     imageProfileBox;
+    IccProfilesComboBox*     otherProfileBox        = nullptr;
+    IccProfilesComboBox*     imageProfileBox        = nullptr;
 
-    ColorCorrectionDlg::Mode mode;
+    ColorCorrectionDlg::Mode mode                   = ColorCorrectionDlg::ProfileMismatch;
 
     IccProfile               workspaceProfile;
     IccProfile               imageProfile;
@@ -823,8 +807,10 @@ void ColorCorrectionDlg::readSettings()
                 d->imageWorkingSpace->setChecked(true);
             }
 
-            if ((settings.lastMissingProfileBehavior & ICCSettingsContainer::UseSpecifiedProfile) &&
-                (d->imageProfileBox->count() > 0))
+            if (
+                (settings.lastMissingProfileBehavior & ICCSettingsContainer::UseSpecifiedProfile) &&
+                (d->imageProfileBox->count() > 0)
+               )
             {
                 d->imageOtherSpace->setChecked(true);
             }

@@ -34,9 +34,9 @@ public:
     explicit VersioningPromptUserSaveDialog(QWidget* const parent);
     ~VersioningPromptUserSaveDialog() override;
 
-    bool shallSave()    const;
-    bool newVersion()   const;
-    bool shallDiscard() const;
+    bool shallSave()            const;
+    bool newVersion()           const;
+    bool shallDiscard()         const;
 
 private Q_SLOTS:
 

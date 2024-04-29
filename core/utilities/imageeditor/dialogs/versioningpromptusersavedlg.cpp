@@ -43,16 +43,10 @@ class Q_DECL_HIDDEN VersioningPromptUserSaveDialog::Private
 {
 public:
 
-    explicit Private()
-        : clicked(QDialogButtonBox::NoButton),
-          buttons(nullptr)
-    {
-    }
+    Private() = default;
 
-public:
-
-    QDialogButtonBox::StandardButton clicked;
-    QDialogButtonBox*                buttons;
+    QDialogButtonBox::StandardButton clicked = QDialogButtonBox::NoButton;
+    QDialogButtonBox*                buttons = nullptr;
 };
 
 VersioningPromptUserSaveDialog::VersioningPromptUserSaveDialog(QWidget* const parent)

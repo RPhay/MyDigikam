@@ -48,28 +48,18 @@ class Q_DECL_HIDDEN SoftProofDialog::Private
 {
 public:
 
-    explicit Private()
-      : switchOn         (false),
-        deviceProfileBox (nullptr),
-        infoProofProfiles(nullptr),
-        buttons          (nullptr),
-        gamutCheckBox    (nullptr),
-        maskColorLabel   (nullptr),
-        maskColorBtn     (nullptr),
-        proofingIntentBox(nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                        switchOn;
+    bool                        switchOn            = false;
 
-    IccProfilesComboBox*        deviceProfileBox;
-    QPushButton*                infoProofProfiles;
-    QDialogButtonBox*           buttons;
-    QCheckBox*                  gamutCheckBox;
-    QLabel*                     maskColorLabel;
-    DColorSelector*             maskColorBtn;
+    IccProfilesComboBox*        deviceProfileBox    = nullptr;
+    QPushButton*                infoProofProfiles   = nullptr;
+    QDialogButtonBox*           buttons             = nullptr;
+    QCheckBox*                  gamutCheckBox       = nullptr;
+    QLabel*                     maskColorLabel      = nullptr;
+    DColorSelector*             maskColorBtn        = nullptr;
 
-    IccRenderingIntentComboBox* proofingIntentBox;
+    IccRenderingIntentComboBox* proofingIntentBox   = nullptr;
 };
 
 SoftProofDialog::SoftProofDialog(QWidget* const parent)
@@ -106,7 +96,7 @@ SoftProofDialog::SoftProofDialog(QWidget* const parent)
                                            "(usually, your printer). This profile will be used to do a soft proof, so you will "
                                            "be able to preview how an image will be rendered via an output device.</p>"));
 
-    d->infoProofProfiles      = new QPushButton;
+    d->infoProofProfiles           = new QPushButton;
     d->infoProofProfiles->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
     d->infoProofProfiles->setWhatsThis(i18n("<p>Press this button to get detailed "
                                             "information about the selected proofing profile.</p>"));
