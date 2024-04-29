@@ -21,17 +21,14 @@ class Q_DECL_HIDDEN RubberItem::Private
 {
 public:
 
-    explicit Private()
-      : canvas(nullptr)
-    {
-    }
+    Private() = default;
 
-    Canvas* canvas;
+    Canvas* canvas = nullptr;
 };
 
 RubberItem::RubberItem(ImagePreviewItem* const parent)
     : RegionFrameItem(parent),
-      d(new Private)
+      d              (new Private)
 {
 }
 

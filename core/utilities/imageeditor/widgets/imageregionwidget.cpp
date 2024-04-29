@@ -45,32 +45,25 @@ class Q_DECL_HIDDEN ImageRegionWidget::Private
 
 public:
 
-    explicit Private()
-      : capturePtMode(false),
-        renderingPreviewMode(PreviewToolBar::PreviewBothImagesVertCont),
-        oldRenderingPreviewMode(PreviewToolBar::PreviewBothImagesVertCont),
-        delay(nullptr),
-        item(nullptr)
-    {
-    }
+    Private() = default;
 
     DImg             targetImage;
 
-    bool             capturePtMode;
+    bool             capturePtMode              = false;
 
-    int              renderingPreviewMode;
-    int              oldRenderingPreviewMode;
+    int              renderingPreviewMode       = PreviewToolBar::PreviewBothImagesVertCont;
+    int              oldRenderingPreviewMode    = PreviewToolBar::PreviewBothImagesVertCont;
 
     QPolygon         hightlightPoints;
 
-    QTimer*          delay;
+    QTimer*          delay                      = nullptr;
 
-    ImageRegionItem* item;
+    ImageRegionItem* item                       = nullptr;
 };
 
 ImageRegionWidget::ImageRegionWidget(QWidget* const parent, bool paintExtras)
     : GraphicsDImgView(parent),
-      d_ptr(new Private)
+      d_ptr           (new Private)
 {
     d_ptr->item = new ImageRegionItem(this, paintExtras);
     setItem(d_ptr->item);
@@ -235,6 +228,7 @@ void ImageRegionWidget::mouseReleaseEvent(QMouseEvent* e)
     {
         setCapturePointMode(false);
         QGraphicsView::mouseReleaseEvent(e);
+
         return;
     }
 
@@ -247,7 +241,9 @@ void ImageRegionWidget::emitCapturedPointFromOriginal(const QPointF& pt)
     int y        = (int)(pt.y() / layout()->realZoomFactor());
     QPoint imgPt(x, y);
     DColor color = d_ptr->item->image().getPixelColor(x, y);
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "Captured point from image : " << imgPt;
+
     Q_EMIT signalCapturedPointFromOriginal(color, imgPt);
 }
 

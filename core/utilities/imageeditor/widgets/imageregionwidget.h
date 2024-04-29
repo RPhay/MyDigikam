@@ -44,12 +44,12 @@ class DIGIKAM_EXPORT ImageRegionWidget : public GraphicsDImgView
 public:
 
     explicit ImageRegionWidget(QWidget* const parent = nullptr, bool paintExtras = true);
-    ~ImageRegionWidget() override;
+    ~ImageRegionWidget()                                                  override;
 
     /**
      * To get target image region area to render.
      */
-    QRect  getOriginalImageRegionToRender() const;
+    QRect  getOriginalImageRegionToRender()                         const;
 
     /**
      * To get target image region image to use for render operations
@@ -58,15 +58,15 @@ public:
      * Should be use to increase preview speed for the effects whose
      * behaviour is a function of each pixel.
      */
-    DImg   getOriginalRegionImage(bool useDownscaledImage = false) const;
+    DImg   getOriginalRegionImage(bool useDownscaledImage = false)  const;
 
-    DImg   getOriginalImage() const;
+    DImg   getOriginalImage()                                       const;
 
     void   setPreviewImage(const DImg& img);
     void   updateImage(const DImg& img);
 
     void   setCapturePointMode(bool b);
-    bool   capturePointMode() const;
+    bool   capturePointMode()                                       const;
 
     void   setHighLightPoints(const QPolygon& pointsList);
 
@@ -85,8 +85,8 @@ public Q_SLOTS:
 
 protected:
 
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
+    void mousePressEvent(QMouseEvent*)                                    override;
+    void mouseReleaseEvent(QMouseEvent*)                                  override;
 
 private:
 
@@ -99,7 +99,7 @@ private Q_SLOTS:
 private:
 
     class Private;
-    Private* const d_ptr;
+    Private* const d_ptr = nullptr;
 };
 
 } // namespace Digikam

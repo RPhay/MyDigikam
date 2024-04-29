@@ -190,17 +190,21 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
     p->setRenderHint(QPainter::Antialiasing, true);
     p->setBackgroundMode(Qt::TransparentMode);
 
-    if      ((dd->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage) ||
-             ((dd->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && !dd->onMouseMovePreviewToggled))
+    if      (
+             (dd->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage) ||
+             ((dd->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && !dd->onMouseMovePreviewToggled)
+            )
     {
         dd->view->drawText(p, QRectF(QPointF(dd->drawRect.topLeft().x() + 20,
                                              dd->drawRect.topLeft().y() + 20),
                                              fontRectBefore.size()), i18n("Before"));
     }
 
-    else if ((dd->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
+    else if (
+             (dd->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
              (dd->renderingPreviewMode == PreviewToolBar::NoPreviewMode)      ||
-             ((dd->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && dd->onMouseMovePreviewToggled))
+             ((dd->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && dd->onMouseMovePreviewToggled)
+            )
     {
         p->drawPixmap(dd->drawRect.x(), dd->drawRect.y(), dd->targetPix,
                       0, 0, dd->drawRect.width(), dd->drawRect.height());
@@ -214,8 +218,10 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
         }
     }
 
-    else if ((dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert) ||
-             (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont))
+    else if (
+             (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert) ||
+             (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont)
+            )
     {
         if (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert)
         {
@@ -243,8 +249,10 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
                                              fontRectAfter.size()),  i18n("After"));
     }
 
-    else if ((dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz) ||
-             (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont))
+    else if (
+             (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz) ||
+             (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont)
+            )
     {
         if (dd->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz)
         {

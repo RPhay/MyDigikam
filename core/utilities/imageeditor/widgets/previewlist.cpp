@@ -42,9 +42,7 @@ class Q_DECL_HIDDEN PreviewThreadWrapper::Private
 
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QMap<int, DImgThreadedFilter*> map;
 };
@@ -107,6 +105,7 @@ void PreviewThreadWrapper::slotFilterFinished(bool success)
     {
         int key     = d->map.key(filter);
         QPixmap pix = filter->getTargetImage().smoothScale(128, 128, Qt::KeepAspectRatio).convertToPixmap();
+
         Q_EMIT signalFilterFinished(key, pix);
     }
 }
@@ -147,14 +146,10 @@ class Q_DECL_HIDDEN PreviewListItem::Private
 {
 public:
 
-    explicit Private()
-      : busy(false),
-        id  (0)
-    {
-    }
+    Private() = default;
 
-    bool busy;
-    int  id;
+    bool busy = false;
+    int  id   = 0;
 };
 
 PreviewListItem::PreviewListItem(QListWidget* const parent)
@@ -210,21 +205,15 @@ class Q_DECL_HIDDEN PreviewList::Private
 
 public:
 
-    explicit Private()
-      : progressCount(0),
-        progressTimer(nullptr),
-        progressPix  (nullptr),
-        wrapper      (nullptr)
-    {
-    }
+    Private() = default;
 
-    int                   progressCount;
+    int                   progressCount = 0;
 
-    QTimer*               progressTimer;
+    QTimer*               progressTimer = nullptr;
 
-    DWorkingPixmap*       progressPix;
+    DWorkingPixmap*       progressPix   = nullptr;
 
-    PreviewThreadWrapper* wrapper;
+    PreviewThreadWrapper* wrapper       = nullptr;
 };
 
 PreviewList::PreviewList(QWidget* const parent)
