@@ -209,7 +209,7 @@ private:
     static ImageWindow* m_instance;
 
     class Private;
-    Private* const      d;
+    Private* const      d = nullptr;
 };
 
 } // namespace Digikam

@@ -167,22 +167,7 @@ class Q_DECL_HIDDEN ImageWindow::Private
 
 public:
 
-    Private()
-      : configShowThumbbarEntry             (QLatin1String("Show Thumbbar")),
-        configHorizontalThumbbarEntry       (QLatin1String("HorizontalThumbbar")),
-        viewContainer                       (nullptr),
-        toMainWindowAction                  (nullptr),
-        fileDeletePermanentlyAction         (nullptr),
-        fileDeletePermanentlyDirectlyAction (nullptr),
-        fileTrashDirectlyAction             (nullptr),
-        imageInfoModel                      (nullptr),
-        imageFilterModel                    (nullptr),
-        dragDropHandler                     (nullptr),
-        thumbBar                            (nullptr),
-        thumbBarDock                        (nullptr),
-        rightSideBar                        (nullptr)
-    {
-    }
+    Private() = default;
 
     QModelIndex currentIndex() const
     {
@@ -254,27 +239,27 @@ public:
 
 public:
 
-    const QString                configShowThumbbarEntry;
-    const QString                configHorizontalThumbbarEntry;
+    const QString                configShowThumbbarEntry                = QLatin1String("Show Thumbbar");
+    const QString                configHorizontalThumbbarEntry          = QLatin1String("HorizontalThumbbar");
 
-    KMainWindow*                 viewContainer;
+    KMainWindow*                 viewContainer                          = nullptr;
 
-    QAction*                     toMainWindowAction;
+    QAction*                     toMainWindowAction                     = nullptr;
 
     /// Delete actions
-    QAction*                     fileDeletePermanentlyAction;
-    QAction*                     fileDeletePermanentlyDirectlyAction;
-    QAction*                     fileTrashDirectlyAction;
+    QAction*                     fileDeletePermanentlyAction            = nullptr;
+    QAction*                     fileDeletePermanentlyDirectlyAction    = nullptr;
+    QAction*                     fileTrashDirectlyAction                = nullptr;
 
     ItemInfo                     currentItemInfo;
-    ItemListModel*               imageInfoModel;
-    ItemFilterModel*             imageFilterModel;
-    ItemDragDropHandler*         dragDropHandler;
+    ItemListModel*               imageInfoModel                         = nullptr;
+    ItemFilterModel*             imageFilterModel                       = nullptr;
+    ItemDragDropHandler*         dragDropHandler                        = nullptr;
 
-    ItemThumbnailBar*            thumbBar;
-    ThumbBarDock*                thumbBarDock;
+    ItemThumbnailBar*            thumbBar                               = nullptr;
+    ThumbBarDock*                thumbBarDock                           = nullptr;
 
-    ItemPropertiesSideBarDB*     rightSideBar;
+    ItemPropertiesSideBarDB*     rightSideBar                           = nullptr;
 
     DatabaseVersionManager       versionManager;
 

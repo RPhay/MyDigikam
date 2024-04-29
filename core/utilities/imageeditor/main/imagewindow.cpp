@@ -728,7 +728,7 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
 
             // Start transform each face rect
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << ">>>>>>>>>face rect before:"
+            qCDebug(DIGIKAM_GENERAL_LOG) << ">>>>>>>>> Face rect before:"
                                          << faceRect.x()     << faceRect.y()
                                          << faceRect.width() << faceRect.height();
 
@@ -739,26 +739,36 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
                 switch (type)
                 {
                     case EditorWindow::TransformType::RotateLeft:
+                    {
                         tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_ROT_270, tempSize);
                         break;
+                    }
 
                     case EditorWindow::TransformType::RotateRight:
+                    {
                         tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_ROT_90,  tempSize);
                         break;
+                    }
 
                     case EditorWindow::TransformType::FlipHorizontal:
+                    {
                         tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_HFLIP,   tempSize);
                         break;
+                    }
 
                     case EditorWindow::TransformType::FlipVertical:
+                    {
                         tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_VFLIP,   tempSize);
                         break;
+                    }
 
                     default:
+                    {
                         break;
+                    }
                 }
 
-                qCDebug(DIGIKAM_GENERAL_LOG) << ">>>>>>>>>face rect transform:"
+                qCDebug(DIGIKAM_GENERAL_LOG) << ">>>>>>>>> Face rect transform:"
                                              << faceRect.x()     << faceRect.y()
                                              << faceRect.width() << faceRect.height();
             }
@@ -1060,9 +1070,11 @@ void ImageWindow::dragMoveEvent(QDragMoveEvent* e)
     QList<qlonglong> imageIDs;
     QList<QUrl>      urls;
 
-    if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
+    if (
+        DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
         DAlbumDrag::decode(e->mimeData(), urls, albumID)           ||
-        DTagListDrag::canDecode(e->mimeData()))
+        DTagListDrag::canDecode(e->mimeData())
+       )
     {
         e->accept();
         return;
@@ -1337,23 +1349,33 @@ DInfoInterface* ImageWindow::infoIface(DPluginAction* const ac)
     {
         case DPluginAction::GenericExport:
         case DPluginAction::GenericImport:
+        {
             aset = ApplicationSettings::ImportExport;
             break;
+        }
 
         case DPluginAction::GenericMetadata:
+        {
             aset = ApplicationSettings::Metadata;
             break;
+        }
 
         case DPluginAction::GenericTool:
+        {
             aset = ApplicationSettings::Tools;
             break;
+        }
 
         case DPluginAction::GenericView:
+        {
             aset = ApplicationSettings::Slideshow;
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     DBInfoIface* const iface = new DBInfoIface(this, d->thumbBar->allUrls(), aset);

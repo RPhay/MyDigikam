@@ -51,26 +51,20 @@ class Q_DECL_HIDDEN Canvas::Private
 
 public:
 
-    explicit Private()
-      : canvasItem(nullptr),
-        rubber(nullptr),
-        wrapItem(nullptr),
-        core(nullptr)
-    {
-    }
+    Private() = default;
 
     QString               errorMessage;
 
-    ImagePreviewItem*     canvasItem;
+    ImagePreviewItem*     canvasItem    = nullptr;
 
-    RubberItem*           rubber;
-    ClickDragReleaseItem* wrapItem;
-    EditorCore*           core;
+    RubberItem*           rubber        = nullptr;
+    ClickDragReleaseItem* wrapItem      = nullptr;
+    EditorCore*           core          = nullptr;
 };
 
 Canvas::Canvas(QWidget* const parent)
     : GraphicsDImgView(parent),
-      d(new Private)
+      d               (new Private)
 {
     d->core       = new EditorCore();
     d->canvasItem = new ImagePreviewItem;
@@ -349,6 +343,7 @@ void Canvas::slotCrop()
     }
 
     Q_EMIT signalSelected(false);
+
     addRubber();
 }
 
@@ -448,6 +443,7 @@ void Canvas::slotSelected()
     }
 
     d->core->setSelectedArea(sel);
+
     Q_EMIT signalSelectionChanged(sel);
 }
 
@@ -670,6 +666,7 @@ void Canvas::mousePressEvent(QMouseEvent* event)
                 }
 
                 Q_EMIT signalSelected(false);
+
                 addRubber();
             }
         }
@@ -699,6 +696,7 @@ void Canvas::dragMoveEvent(QDragMoveEvent* e)
 void Canvas::dropEvent(QDropEvent* e)
 {
     QGraphicsView::dropEvent(e);
+
     Q_EMIT signalAddedDropedItems(e);
 }
 

@@ -48,7 +48,7 @@ class DIGIKAM_EXPORT Canvas : public GraphicsDImgView
 public:
 
     explicit Canvas(QWidget* const parent = nullptr);
-    ~Canvas() override;
+    ~Canvas()                                 override;
 
     void load(const QString& filename, IOFileSettings* const IOFileSettings);
     void preload(const QString& filename);
@@ -181,13 +181,13 @@ public Q_SLOTS:
 
 protected:
 
-    void keyPressEvent(QKeyEvent*) override;
-    void mousePressEvent(QMouseEvent*) override;
+    void keyPressEvent(QKeyEvent*)              override;
+    void mousePressEvent(QMouseEvent*)          override;
     void addRubber();
 
-    void dragMoveEvent(QDragMoveEvent*) override;
-    void dragEnterEvent(QDragEnterEvent*) override;
-    void dropEvent(QDropEvent*) override;
+    void dragMoveEvent(QDragMoveEvent*)         override;
+    void dragEnterEvent(QDragEnterEvent*)       override;
+    void dropEvent(QDropEvent*)                 override;
 
 private:
 
