@@ -47,45 +47,35 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBar::Private
 
 public:
 
-    explicit Private()
-      : pluginFingerPrint  (QLatin1String("DPlugin::Generic::View")),
-        previousBtn        (nullptr),
-        nextBtn            (nullptr),
-        upBtn              (nullptr),
-        homeBtn            (nullptr),
-        iconSizeSlider     (nullptr),
-        optionsBtn         (nullptr),
-        optionsMenu        (nullptr),
-        runBtn             (nullptr),
-        runMenu            (nullptr),
-        shortAction        (nullptr),
-        detailedAction     (nullptr),
-        showBookmarksAction(nullptr),
-        moreSettingsAction (nullptr),
-        pathEdit           (nullptr),
-        sidebar            (nullptr),
-        typeMimesCombo     (nullptr)
-    {
-    }
+    Private() = default;
 
-    const QString              pluginFingerPrint;           ///< Identify plugins category to host in folder-view.
-    QToolButton*               previousBtn;
-    QToolButton*               nextBtn;
-    QToolButton*               upBtn;
-    QToolButton*               homeBtn;
-    QSlider*                   iconSizeSlider;
-    QToolButton*               optionsBtn;
-    QMenu*                     optionsMenu;
-    QToolButton*               runBtn;
-    QMenu*                     runMenu;
-    QAction*                   shortAction;
-    QAction*                   detailedAction;
-    QAction*                   showBookmarksAction;
-    QAction*                   moreSettingsAction;
-    QComboBox*                 pathEdit;
-    QList<QAction*>            actionsList;                 ///< used to shared actions with list-view context menu.
-    ShowfotoFolderViewSideBar* sidebar;
-    QComboBox*                 typeMimesCombo;
+    /**
+     * Identify plugins category to host in folder-view.
+     */
+    const QString              pluginFingerPrint    = QLatin1String("DPlugin::Generic::View");
+
+    QToolButton*               previousBtn          = nullptr;
+    QToolButton*               nextBtn              = nullptr;
+    QToolButton*               upBtn                = nullptr;
+    QToolButton*               homeBtn              = nullptr;
+    QSlider*                   iconSizeSlider       = nullptr;
+    QToolButton*               optionsBtn           = nullptr;
+    QMenu*                     optionsMenu          = nullptr;
+    QToolButton*               runBtn               = nullptr;
+    QMenu*                     runMenu              = nullptr;
+    QAction*                   shortAction          = nullptr;
+    QAction*                   detailedAction       = nullptr;
+    QAction*                   showBookmarksAction  = nullptr;
+    QAction*                   moreSettingsAction   = nullptr;
+    QComboBox*                 pathEdit             = nullptr;
+
+    /**
+     * Used to shared actions with list-view context menu.
+     */
+    QList<QAction*>            actionsList;
+
+    ShowfotoFolderViewSideBar* sidebar              = nullptr;
+    QComboBox*                 typeMimesCombo       = nullptr;
 };
 
 ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const sidebar)
@@ -388,6 +378,7 @@ int ShowfotoFolderViewBar::folderViewMode() const
 void ShowfotoFolderViewBar::setBookmarksVisible(bool b)
 {
     d->showBookmarksAction->setChecked(b);
+
     Q_EMIT signalShowBookmarks(b);
 }
 

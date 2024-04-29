@@ -55,33 +55,22 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBookmarkDlg::Private
 {
 public:
 
-    explicit Private()
-      : create         (false),
-        topLabel       (nullptr),
-        icon           (QLatin1String("folder")),
-        iconButton     (nullptr),
-        resetIconButton(nullptr),
-        buttons        (nullptr),
-        titleEdit      (nullptr),
-        pathEdit       (nullptr),
-        list           (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                            create;
+    bool                            create          = false;
 
-    QLabel*                         topLabel;
+    QLabel*                         topLabel        = nullptr;
 
-    QString                         icon;
+    QString                         icon            = QLatin1String("folder");
 
-    QPushButton*                    iconButton;
-    QPushButton*                    resetIconButton;
+    QPushButton*                    iconButton      = nullptr;
+    QPushButton*                    resetIconButton = nullptr;
 
-    QDialogButtonBox*               buttons;
+    QDialogButtonBox*               buttons         = nullptr;
 
-    DTextEdit*                      titleEdit;
-    DFileSelector*                  pathEdit;
-    ShowfotoFolderViewBookmarkList* list;
+    DTextEdit*                      titleEdit       = nullptr;
+    DFileSelector*                  pathEdit        = nullptr;
+    ShowfotoFolderViewBookmarkList* list            = nullptr;
 };
 
 ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewBookmarkList* const parent,
