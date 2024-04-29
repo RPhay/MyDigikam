@@ -104,51 +104,51 @@ Q_SIGNALS:
 
 protected:
 
-    bool                      m_nonDestructive;
-    bool                      m_setExifOrientationTag;
-    bool                      m_editingOriginalImage;
-    bool                      m_actionEnabledState;
+    bool                      m_nonDestructive                  = true;
+    bool                      m_setExifOrientationTag           = true;
+    bool                      m_editingOriginalImage            = true;
+    bool                      m_actionEnabledState              = false;
 
-    DAdjustableLabel*         m_resLabel;
+    DAdjustableLabel*         m_resLabel                        = nullptr;
 
     QColor                    m_bgColor;
 
-    SidebarSplitter*          m_splitter;
+    SidebarSplitter*          m_splitter                        = nullptr;
 
-    QAction*                  m_openVersionAction;
-    QAction*                  m_saveAction;
-    QAction*                  m_saveAsAction;
-    KToolBarPopupAction*      m_saveNewVersionAction;
-    QAction*                  m_saveCurrentVersionAction;
-    QAction*                  m_saveNewVersionAsAction;
-    QMenu*                    m_saveNewVersionInFormatAction;
-    QAction*                  m_exportAction;
-    QAction*                  m_revertAction;
-    QAction*                  m_discardChangesAction;
-    QAction*                  m_fileDeleteAction;
-    QAction*                  m_forwardAction;
-    QAction*                  m_backwardAction;
+    QAction*                  m_openVersionAction               = nullptr;
+    QAction*                  m_saveAction                      = nullptr;
+    QAction*                  m_saveAsAction                    = nullptr;
+    KToolBarPopupAction*      m_saveNewVersionAction            = nullptr;
+    QAction*                  m_saveCurrentVersionAction        = nullptr;
+    QAction*                  m_saveNewVersionAsAction          = nullptr;
+    QMenu*                    m_saveNewVersionInFormatAction    = nullptr;
+    QAction*                  m_exportAction                    = nullptr;
+    QAction*                  m_revertAction                    = nullptr;
+    QAction*                  m_discardChangesAction            = nullptr;
+    QAction*                  m_fileDeleteAction                = nullptr;
+    QAction*                  m_forwardAction                   = nullptr;
+    QAction*                  m_backwardAction                  = nullptr;
 
-    QAction*                  m_lastAction;
-    QAction*                  m_firstAction;
+    QAction*                  m_lastAction                      = nullptr;
+    QAction*                  m_firstAction                     = nullptr;
 
-    QAction*                  m_applyToolAction;
-    QAction*                  m_closeToolAction;
+    QAction*                  m_applyToolAction                 = nullptr;
+    QAction*                  m_closeToolAction                 = nullptr;
 
-    QAction*                  m_showBarAction;
+    QAction*                  m_showBarAction                   = nullptr;
 
-    KToolBarPopupAction*      m_undoAction;
-    KToolBarPopupAction*      m_redoAction;
+    KToolBarPopupAction*      m_undoAction                      = nullptr;
+    KToolBarPopupAction*      m_redoAction                      = nullptr;
 
-    QMenu*                    m_contextMenu;
-    QMenu*                    m_servicesMenu;
-    QAction*                  m_serviceAction;
+    QMenu*                    m_contextMenu                     = nullptr;
+    QMenu*                    m_servicesMenu                    = nullptr;
+    QAction*                  m_serviceAction                   = nullptr;
 
-    EditorStackView*          m_stackView;
-    Canvas*                   m_canvas;
-    StatusProgressBar*        m_nameLabel;
-    IOFileSettings*           m_IOFileSettings;
-    QPointer<QProgressDialog> m_savingProgressDialog;
+    EditorStackView*          m_stackView                       = nullptr;
+    Canvas*                   m_canvas                          = nullptr;
+    StatusProgressBar*        m_nameLabel                       = nullptr;
+    IOFileSettings*           m_IOFileSettings                  = nullptr;
+    QPointer<QProgressDialog> m_savingProgressDialog            = nullptr;
 
     SavingContext             m_savingContext;
 

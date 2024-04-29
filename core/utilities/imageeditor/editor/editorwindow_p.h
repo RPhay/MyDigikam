@@ -150,44 +150,8 @@ class Q_DECL_HIDDEN EditorWindow::Private
 {
 public:
 
-    Private()
-      : cmViewIndicator             (nullptr),
-        underExposureIndicator      (nullptr),
-        overExposureIndicator       (nullptr),
-        infoLabel                   (nullptr),
-        copyAction                  (nullptr),
-        cropAction                  (nullptr),
-        flipHorizAction             (nullptr),
-        flipVertAction              (nullptr),
-        rotateLeftAction            (nullptr),
-        rotateRightAction           (nullptr),
-        selectAllAction             (nullptr),
-        selectNoneAction            (nullptr),
-        softProofOptionsAction      (nullptr),
-        zoomFitToSelectAction       (nullptr),
-        zoomMinusAction             (nullptr),
-        zoomPlusAction              (nullptr),
-        zoomTo100percents           (nullptr),
-        openWithAction              (nullptr),
-        waitingLoop                 (nullptr),
-        currentWindowModalDialog    (nullptr),
-        zoomFitToWindowAction       (nullptr),
-        viewCMViewAction            (nullptr),
-        viewSoftProofAction         (nullptr),
-        viewUnderExpoAction         (nullptr),
-        viewOverExpoAction          (nullptr),
-        selectToolsActionView       (nullptr),
-        ICCSettings                 (nullptr),
-        zoomBar                     (nullptr),
-        previewToolBar              (nullptr),
-        exposureSettings            (nullptr),
-        toolIface                   (nullptr)
-    {
-    }
-
-    ~Private()
-    {
-    }
+    Private()  = default;
+    ~Private() = default;
 
     void legacyUpdateSplitterState(KConfigGroup& group);
     void plugNewVersionInFormatAction(EditorWindow* const q,
@@ -197,77 +161,77 @@ public:
 
 public:
 
-    static const QString         configAutoZoomEntry;
-    static const QString         configBackgroundColorEntry;
-    static const QString         configJpegCompressionEntry;
-    static const QString         configJpegSubSamplingEntry;
-    static const QString         configPngCompressionEntry;
-    static const QString         configTiffCompressionEntry;
-    static const QString         configJpeg2000CompressionEntry;
-    static const QString         configJpeg2000LossLessEntry;
-    static const QString         configPgfCompressionEntry;
-    static const QString         configPgfLossLessEntry;
-    static const QString         configHeifCompressionEntry;
-    static const QString         configHeifLossLessEntry;
-    static const QString         configJxlCompressionEntry;
-    static const QString         configJxlLossLessEntry;
-    static const QString         configWebpCompressionEntry;
-    static const QString         configWebpLossLessEntry;
-    static const QString         configAvifCompressionEntry;
-    static const QString         configAvifLossLessEntry;
-    static const QString         configSplitterStateEntry;
-    static const QString         configUnderExposureColorEntry;
-    static const QString         configUnderExposureIndicatorEntry;
-    static const QString         configUnderExposurePercentsEntry;
-    static const QString         configOverExposureColorEntry;
-    static const QString         configOverExposureIndicatorEntry;
-    static const QString         configOverExposurePercentsEntry;
-    static const QString         configExpoIndicatorModeEntry;
-    static const QString         configUseRawImportToolEntry;
-    static const QString         configRawImportToolIidEntry;
-    static const QString         configUseThemeBackgroundColorEntry;
-    static const QString         configVerticalSplitterStateEntry;
+    const QString                configAutoZoomEntry                = QLatin1String("AutoZoom");
+    const QString                configBackgroundColorEntry         = QLatin1String("BackgroundColor");
+    const QString                configJpegCompressionEntry         = QLatin1String("JPEGCompression");
+    const QString                configJpegSubSamplingEntry         = QLatin1String("JPEGSubSampling");
+    const QString                configPngCompressionEntry          = QLatin1String("PNGCompression");
+    const QString                configTiffCompressionEntry         = QLatin1String("TIFFCompression");
+    const QString                configJpeg2000CompressionEntry     = QLatin1String("JPEG2000Compression");
+    const QString                configJpeg2000LossLessEntry        = QLatin1String("JPEG2000LossLess");
+    const QString                configPgfCompressionEntry          = QLatin1String("PGFCompression");
+    const QString                configPgfLossLessEntry             = QLatin1String("PGFLossLess");
+    const QString                configHeifCompressionEntry         = QLatin1String("HEIFCompression");
+    const QString                configHeifLossLessEntry            = QLatin1String("HEIFLossLess");
+    const QString                configJxlCompressionEntry          = QLatin1String("JXLCompression");
+    const QString                configJxlLossLessEntry             = QLatin1String("JXLLossLess");
+    const QString                configWebpCompressionEntry         = QLatin1String("WEBPCompression");
+    const QString                configWebpLossLessEntry            = QLatin1String("WEBPLossLess");
+    const QString                configAvifCompressionEntry         = QLatin1String("AVIFCompression");
+    const QString                configAvifLossLessEntry            = QLatin1String("AVIFLossLess");
+    const QString                configSplitterStateEntry           = QLatin1String("SplitterState");
+    const QString                configUnderExposureColorEntry      = QLatin1String("UnderExposureColor");
+    const QString                configUnderExposureIndicatorEntry  = QLatin1String("UnderExposureIndicator");
+    const QString                configUnderExposurePercentsEntry   = QLatin1String("UnderExposurePercentsEntry");
+    const QString                configOverExposureColorEntry       = QLatin1String("OverExposureColor");
+    const QString                configOverExposureIndicatorEntry   = QLatin1String("OverExposureIndicator");
+    const QString                configOverExposurePercentsEntry    = QLatin1String("OverExposurePercentsEntry");
+    const QString                configExpoIndicatorModeEntry       = QLatin1String("ExpoIndicatorMode");
+    const QString                configUseRawImportToolEntry        = QLatin1String("UseRawImportTool");
+    const QString                configRawImportToolIidEntry        = QLatin1String("RawImportToolIid");
+    const QString                configUseThemeBackgroundColorEntry = QLatin1String("UseThemeBackgroundColor");
+    const QString                configVerticalSplitterStateEntry   = QLatin1String("Vertical Splitter State");
 
-    QToolButton*                 cmViewIndicator;
-    QToolButton*                 underExposureIndicator;
-    QToolButton*                 overExposureIndicator;
+    QToolButton*                 cmViewIndicator                    = nullptr;
+    QToolButton*                 underExposureIndicator             = nullptr;
+    QToolButton*                 overExposureIndicator              = nullptr;
 
-    DAdjustableLabel*            infoLabel;
+    DAdjustableLabel*            infoLabel                          = nullptr;
 
-    QAction*                     copyAction;
-    QAction*                     cropAction;
-    QAction*                     flipHorizAction;
-    QAction*                     flipVertAction;
-    QAction*                     rotateLeftAction;
-    QAction*                     rotateRightAction;
-    QAction*                     selectAllAction;
-    QAction*                     selectNoneAction;
-    QAction*                     softProofOptionsAction;
-    QAction*                     zoomFitToSelectAction;
-    QAction*                     zoomMinusAction;
-    QAction*                     zoomPlusAction;
-    QAction*                     zoomTo100percents;
-    QAction*                     openWithAction;
+    QAction*                     copyAction                         = nullptr;
+    QAction*                     cropAction                         = nullptr;
+    QAction*                     flipHorizAction                    = nullptr;
+    QAction*                     flipVertAction                     = nullptr;
+    QAction*                     rotateLeftAction                   = nullptr;
+    QAction*                     rotateRightAction                  = nullptr;
+    QAction*                     selectAllAction                    = nullptr;
+    QAction*                     selectNoneAction                   = nullptr;
+    QAction*                     softProofOptionsAction             = nullptr;
+    QAction*                     zoomFitToSelectAction              = nullptr;
+    QAction*                     zoomMinusAction                    = nullptr;
+    QAction*                     zoomPlusAction                     = nullptr;
+    QAction*                     zoomTo100percents                  = nullptr;
+    QAction*                     openWithAction                     = nullptr;
 
-    QEventLoop*                  waitingLoop;
-    QDialog*                     currentWindowModalDialog;
+    QEventLoop*                  waitingLoop                        = nullptr;
+    QDialog*                     currentWindowModalDialog           = nullptr;
 
-    QAction*                     zoomFitToWindowAction;
-    QAction*                     viewCMViewAction;
-    QAction*                     viewSoftProofAction;
-    QAction*                     viewUnderExpoAction;
-    QAction*                     viewOverExpoAction;
+    QAction*                     zoomFitToWindowAction              = nullptr;
+    QAction*                     viewCMViewAction                   = nullptr;
+    QAction*                     viewSoftProofAction                = nullptr;
+    QAction*                     viewUnderExpoAction                = nullptr;
+    QAction*                     viewOverExpoAction                 = nullptr;
 
-    ActionCategorizedView*       selectToolsActionView;
+    ActionCategorizedView*       selectToolsActionView              = nullptr;
 
-    ICCSettingsContainer*        ICCSettings;
+    ICCSettingsContainer*        ICCSettings                        = nullptr;
 
-    DZoomBar*                    zoomBar;
-    PreviewToolBar*              previewToolBar;
+    DZoomBar*                    zoomBar                            = nullptr;
+    PreviewToolBar*              previewToolBar                     = nullptr;
 
-    ExposureSettingsContainer*   exposureSettings;
+    ExposureSettingsContainer*   exposureSettings                   = nullptr;
 
-    EditorToolIface*             toolIface;
+    EditorToolIface*             toolIface                          = nullptr;
 
     VersionManager               defaultVersionManager;
 
@@ -277,36 +241,6 @@ public:
     QMap<QString, DServiceInfo>  newServicesMap;
 };
 
-const QString EditorWindow::Private::configAutoZoomEntry(QLatin1String("AutoZoom"));
-const QString EditorWindow::Private::configBackgroundColorEntry(QLatin1String("BackgroundColor"));
-const QString EditorWindow::Private::configJpegCompressionEntry(QLatin1String("JPEGCompression"));
-const QString EditorWindow::Private::configJpegSubSamplingEntry(QLatin1String("JPEGSubSampling"));
-const QString EditorWindow::Private::configPngCompressionEntry(QLatin1String("PNGCompression"));
-const QString EditorWindow::Private::configTiffCompressionEntry(QLatin1String("TIFFCompression"));
-const QString EditorWindow::Private::configJpeg2000CompressionEntry(QLatin1String("JPEG2000Compression"));
-const QString EditorWindow::Private::configJpeg2000LossLessEntry(QLatin1String("JPEG2000LossLess"));
-const QString EditorWindow::Private::configPgfCompressionEntry(QLatin1String("PGFCompression"));
-const QString EditorWindow::Private::configPgfLossLessEntry(QLatin1String("PGFLossLess"));
-const QString EditorWindow::Private::configHeifCompressionEntry(QLatin1String("HEIFCompression"));
-const QString EditorWindow::Private::configHeifLossLessEntry(QLatin1String("HEIFLossLess"));
-const QString EditorWindow::Private::configJxlCompressionEntry(QLatin1String("JXLCompression"));
-const QString EditorWindow::Private::configJxlLossLessEntry(QLatin1String("JXLLossLess"));
-const QString EditorWindow::Private::configWebpCompressionEntry(QLatin1String("WEBPCompression"));
-const QString EditorWindow::Private::configWebpLossLessEntry(QLatin1String("WEBPLossLess"));
-const QString EditorWindow::Private::configAvifCompressionEntry(QLatin1String("AVIFCompression"));
-const QString EditorWindow::Private::configAvifLossLessEntry(QLatin1String("AVIFLossLess"));
-const QString EditorWindow::Private::configSplitterStateEntry(QLatin1String("SplitterState"));
-const QString EditorWindow::Private::configUnderExposureColorEntry(QLatin1String("UnderExposureColor"));
-const QString EditorWindow::Private::configUnderExposureIndicatorEntry(QLatin1String("UnderExposureIndicator"));
-const QString EditorWindow::Private::configUnderExposurePercentsEntry(QLatin1String("UnderExposurePercentsEntry"));
-const QString EditorWindow::Private::configOverExposureColorEntry(QLatin1String("OverExposureColor"));
-const QString EditorWindow::Private::configOverExposureIndicatorEntry(QLatin1String("OverExposureIndicator"));
-const QString EditorWindow::Private::configOverExposurePercentsEntry(QLatin1String("OverExposurePercentsEntry"));
-const QString EditorWindow::Private::configExpoIndicatorModeEntry(QLatin1String("ExpoIndicatorMode"));
-const QString EditorWindow::Private::configUseRawImportToolEntry(QLatin1String("UseRawImportTool"));
-const QString EditorWindow::Private::configRawImportToolIidEntry(QLatin1String("RawImportToolIid"));
-const QString EditorWindow::Private::configUseThemeBackgroundColorEntry(QLatin1String("UseThemeBackgroundColor"));
-const QString EditorWindow::Private::configVerticalSplitterStateEntry(QLatin1String("Vertical Splitter State"));
 
 void EditorWindow::Private::legacyUpdateSplitterState(KConfigGroup& group)
 {
@@ -375,9 +309,9 @@ void EditorWindow::Private::plugNewVersionInFormatAction(EditorWindow* const q,
 
     connect(action, &QAction::triggered,
             q, [q, format]()
-            {
-                 q->saveNewVersionInFormat(format);
-            }
+        {
+                q->saveNewVersionInFormat(format);
+        }
     );
 
     menuAction->addAction(action);

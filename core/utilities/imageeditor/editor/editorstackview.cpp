@@ -30,14 +30,10 @@ class Q_DECL_HIDDEN EditorStackView::Private
 
 public:
 
-    explicit Private()
-      : toolView(nullptr),
-        canvas  (nullptr)
-    {
-    }
+    Private() = default;
 
-    QWidget* toolView;
-    Canvas*  canvas;
+    QWidget* toolView   = nullptr;
+    Canvas*  canvas     = nullptr;
 };
 
 EditorStackView::EditorStackView(QWidget* const parent)

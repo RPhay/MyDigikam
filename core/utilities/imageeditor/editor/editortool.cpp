@@ -47,38 +47,26 @@ class Q_DECL_HIDDEN EditorTool::Private
 
 public:
 
-    explicit Private()
-      : initPreview (false),
-        version     (0),
-        view        (nullptr),
-        timer       (nullptr),
-        settings    (nullptr),
-        category    (FilterAction::ReproducibleFilter),
-        plugin      (nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString   configGroupName;
-    static const QString   configRestoreSettingsEntry;
+    const QString configGroupName            = QLatin1String("ImageViewer Settings");
+    const QString configRestoreSettingsEntry = QLatin1String("RestoreToolSettings");
 
-    bool                   initPreview;
+    bool                   initPreview       = false;
     QString                helpAnchor;
     QString                name;
-    int                    version;
+    int                    version           = 0;
 
-    QWidget*               view;
+    QWidget*               view              = nullptr;
     QIcon                  icon;
-    QTimer*                timer;
+    QTimer*                timer             = nullptr;
 
-    EditorToolSettings*    settings;
+    EditorToolSettings*    settings          = nullptr;
 
-    FilterAction::Category category;
+    FilterAction::Category category          = FilterAction::ReproducibleFilter;
 
-    DPlugin*               plugin;
+    DPlugin*               plugin            = nullptr;
 };
-
-const QString EditorTool::Private::configGroupName(QLatin1String("ImageViewer Settings"));
-const QString EditorTool::Private::configRestoreSettingsEntry(QLatin1String("RestoreToolSettings"));
 
 // --------------------------------------------------------
 
@@ -410,22 +398,16 @@ class Q_DECL_HIDDEN EditorToolThreaded::Private
 
 public:
 
-    explicit Private()
-      : delFilter           (true),
-        currentRenderingMode(EditorToolThreaded::NoneRendering),
-        threadedFilter      (nullptr),
-        threadedAnalyser    (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                              delFilter;
+    bool                              delFilter             = true;
 
-    EditorToolThreaded::RenderingMode currentRenderingMode;
+    EditorToolThreaded::RenderingMode currentRenderingMode  = EditorToolThreaded::NoneRendering;
 
     QString                           progressMess;
 
-    DImgThreadedFilter*               threadedFilter;
-    DImgThreadedAnalyser*             threadedAnalyser;
+    DImgThreadedFilter*               threadedFilter        = nullptr;
+    DImgThreadedAnalyser*             threadedAnalyser      = nullptr;
 };
 
 EditorToolThreaded::EditorToolThreaded(QObject* const parent)
@@ -638,12 +620,12 @@ void EditorToolThreaded::slotAnalyserFinished(bool success)
 {
     if (success)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Analys " << toolName() << " completed...";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Analysis " << toolName() << " completed...";
         analyserCompleted();
     }
     else
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Analys " << toolName() << " failed...";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Analysis " << toolName() << " failed...";
         slotAbort();
     }
 }
@@ -718,6 +700,7 @@ void EditorToolThreaded::slotCancel()
 {
     writeSettings();
     slotAbort();
+
     Q_EMIT cancelClicked();
 }
 

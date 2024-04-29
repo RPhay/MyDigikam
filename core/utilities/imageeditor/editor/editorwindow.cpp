@@ -28,45 +28,14 @@ EditorWindow::EditorWindow(const QString& name, QWidget* const parent)
     setWindowFlags(Qt::Window);
     setFullScreenOptions(FS_EDITOR);
 
-    m_nonDestructive               = true;
-    m_contextMenu                  = nullptr;
-    m_servicesMenu                 = nullptr;
-    m_serviceAction                = nullptr;
-    m_canvas                       = nullptr;
-    m_openVersionAction            = nullptr;
-    m_saveAction                   = nullptr;
-    m_saveAsAction                 = nullptr;
-    m_saveCurrentVersionAction     = nullptr;
-    m_saveNewVersionAction         = nullptr;
-    m_saveNewVersionAsAction       = nullptr;
-    m_saveNewVersionInFormatAction = nullptr;
-    m_resLabel                     = nullptr;
-    m_nameLabel                    = nullptr;
-    m_exportAction                 = nullptr;
-    m_revertAction                 = nullptr;
-    m_discardChangesAction         = nullptr;
-    m_fileDeleteAction             = nullptr;
-    m_forwardAction                = nullptr;
-    m_backwardAction               = nullptr;
-    m_firstAction                  = nullptr;
-    m_lastAction                   = nullptr;
-    m_applyToolAction              = nullptr;
-    m_closeToolAction              = nullptr;
-    m_undoAction                   = nullptr;
-    m_redoAction                   = nullptr;
-    m_showBarAction                = nullptr;
-    m_splitter                     = nullptr;
-    m_stackView                    = nullptr;
-    m_setExifOrientationTag        = true;
-    m_editingOriginalImage         = true;
-    m_actionEnabledState           = false;
-
     // Settings containers instance.
 
     d->exposureSettings            = new ExposureSettingsContainer();
     d->toolIface                   = new EditorToolIface(this);
     m_IOFileSettings               = new IOFileSettings();
-    //d->waitingLoop                 = new QEventLoop(this);
+/*
+    d->waitingLoop                 = new QEventLoop(this);
+*/
 }
 
 EditorWindow::~EditorWindow()

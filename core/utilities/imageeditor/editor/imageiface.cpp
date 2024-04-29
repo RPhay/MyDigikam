@@ -40,18 +40,7 @@ class Q_DECL_HIDDEN ImageIface::Private
 {
 public:
 
-    explicit Private()
-      : previewType         (FullImage),
-        originalWidth       (0),
-        originalHeight      (0),
-        originalBytesDepth  (0),
-        constrainWidth      (0),
-        constrainHeight     (0),
-        previewWidth        (0),
-        previewHeight       (0),
-        core                (EditorCore::defaultInstance())
-    {
-    }
+    Private() = default;
 
     QPixmap checkPixmap();
 
@@ -59,23 +48,23 @@ public:
 
 public:
 
-    ImageIface::PreviewType previewType;
+    ImageIface::PreviewType previewType         = FullImage;
 
-    int                     originalWidth;
-    int                     originalHeight;
-    int                     originalBytesDepth;
+    int                     originalWidth       = 0;
+    int                     originalHeight      = 0;
+    int                     originalBytesDepth  = 0;
 
-    int                     constrainWidth;
-    int                     constrainHeight;
+    int                     constrainWidth      = 0;
+    int                     constrainHeight     = 0;
 
-    int                     previewWidth;
-    int                     previewHeight;
+    int                     previewWidth        = 0;
+    int                     previewHeight       = 0;
 
     QPixmap                 qcheck;
 
     DImg                    previewImage;
     DImg                    targetPreviewImage;
-    EditorCore* const       core;
+    EditorCore* const       core                = EditorCore::defaultInstance();
 };
 
 QPixmap ImageIface::Private::checkPixmap()
@@ -368,8 +357,8 @@ void ImageIface::paint(QPaintDevice* const device, const QRect& rect, QPainter* 
         p->begin(device);
     }
 
-    int width  = w > 0 ? qMin(d->previewWidth,  w) : d->previewWidth;
-    int height = h > 0 ? qMin(d->previewHeight, h) : d->previewHeight;
+    int width  = (w > 0) ? qMin(d->previewWidth,  w) : d->previewWidth;
+    int height = (h > 0) ? qMin(d->previewHeight, h) : d->previewHeight;
 
     if (!d->targetPreviewImage.isNull())
     {
@@ -425,7 +414,8 @@ void ImageIface::paint(QPaintDevice* const device, const QRect& rect, QPainter* 
 
 void ImageIface::setSelection(const QString& caller, const FilterAction& action, const DImg& img)
 {
-    if ((img.hasAlpha()   != originalHasAlpha())     ||
+    if (
+        (img.hasAlpha()   != originalHasAlpha())     ||
         (img.sixteenBit() != originalSixteenBit())   ||
         (img.size()       != selectionRect().size())
        )
@@ -445,7 +435,8 @@ void ImageIface::setSelection(const QString& caller, const FilterAction& action,
 
 void ImageIface::setPreview(const DImg& img)
 {
-    if ((img.hasAlpha()   != previewHasAlpha())   ||
+    if (
+        (img.hasAlpha()   != previewHasAlpha())   ||
         (img.sixteenBit() != previewSixteenBit())
        )
     {

@@ -44,21 +44,14 @@ class Q_DECL_HIDDEN EditorToolIface::Private
 
 public:
 
-    explicit Private()
-      : toolsIconView(nullptr),
-        lastActiveTab(nullptr),
-        tool         (nullptr),
-        editor       (nullptr),
-        splitterSize (0)
-    {
-    }
+    Private() = default;
 
-    DCategorizedView* toolsIconView;
-    QWidget*          lastActiveTab;
-    EditorTool*       tool;
-    EditorWindow*     editor;
+    DCategorizedView* toolsIconView = nullptr;
+    QWidget*          lastActiveTab = nullptr;
+    EditorTool*       tool          = nullptr;
+    EditorWindow*     editor        = nullptr;
 
-    int               splitterSize;
+    int               splitterSize  = 0;
 };
 
 EditorToolIface* EditorToolIface::m_iface = nullptr;

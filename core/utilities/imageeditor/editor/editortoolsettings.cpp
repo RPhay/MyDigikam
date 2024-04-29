@@ -57,62 +57,39 @@ class Q_DECL_HIDDEN EditorToolSettings::Private
 
 public:
 
-    explicit Private()
-      : scaleBG         (nullptr),
-        linHistoButton  (nullptr),
-        logHistoButton  (nullptr),
-        settingsArea    (nullptr),
-        plainPage       (nullptr),
-        toolName        (nullptr),
-        toolIcon        (nullptr),
-        toolHelp        (nullptr),
-        toolAbout       (nullptr),
-        guideBox        (nullptr),
-        okBtn           (nullptr),
-        cancelBtn       (nullptr),
-        tryBtn          (nullptr),
-        defaultBtn      (nullptr),
-        saveAsBtn       (nullptr),
-        loadBtn         (nullptr),
-        guideColorBt    (nullptr),
-        hGradient       (nullptr),
-        histogramBox    (nullptr),
-        guideSize       (nullptr),
-        tool            (nullptr)
-    {
-    }
+    Private() = default;
 
-    QButtonGroup*        scaleBG;
+    QButtonGroup*        scaleBG            = nullptr;
 
-    QToolButton*         linHistoButton;
-    QToolButton*         logHistoButton;
+    QToolButton*         linHistoButton     = nullptr;
+    QToolButton*         logHistoButton     = nullptr;
 
-    QWidget*             settingsArea;
-    QWidget*             plainPage;
+    QWidget*             settingsArea       = nullptr;
+    QWidget*             plainPage          = nullptr;
 
-    QLabel*              toolName;
-    QLabel*              toolIcon;
-    QPushButton*         toolHelp;
-    QPushButton*         toolAbout;
+    QLabel*              toolName           = nullptr;
+    QLabel*              toolIcon           = nullptr;
+    QPushButton*         toolHelp           = nullptr;
+    QPushButton*         toolAbout          = nullptr;
 
-    DHBox*               guideBox;
+    DHBox*               guideBox           = nullptr;
 
-    QPushButton*         okBtn;
-    QPushButton*         cancelBtn;
-    QPushButton*         tryBtn;
-    QPushButton*         defaultBtn;
-    QPushButton*         saveAsBtn;
-    QPushButton*         loadBtn;
+    QPushButton*         okBtn              = nullptr;
+    QPushButton*         cancelBtn          = nullptr;
+    QPushButton*         tryBtn             = nullptr;
+    QPushButton*         defaultBtn         = nullptr;
+    QPushButton*         saveAsBtn          = nullptr;
+    QPushButton*         loadBtn            = nullptr;
 
-    DColorSelector*      guideColorBt;
+    DColorSelector*      guideColorBt       = nullptr;
 
-    ColorGradientWidget* hGradient;
+    ColorGradientWidget* hGradient          = nullptr;
 
-    HistogramBox*        histogramBox;
+    HistogramBox*        histogramBox       = nullptr;
 
-    DIntNumInput*        guideSize;
+    DIntNumInput*        guideSize          = nullptr;
 
-    EditorTool*          tool;
+    EditorTool*          tool               = nullptr;
 };
 
 EditorToolSettings::EditorToolSettings(QWidget* const parent)
@@ -199,11 +176,11 @@ EditorToolSettings::EditorToolSettings(QWidget* const parent)
     d->defaultBtn->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
     d->defaultBtn->setToolTip(i18n("Reset all settings to their default values."));
 
-    d->okBtn = new QPushButton(i18n("OK"));
+    d->okBtn      = new QPushButton(i18n("OK"));
     d->okBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
     d->okBtn->setDefault(true);
 
-    d->cancelBtn = new QPushButton(i18n("Cancel"));
+    d->cancelBtn  = new QPushButton(i18n("Cancel"));
     d->cancelBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-cancel")));
 
     QHBoxLayout* const hbox1 = new QHBoxLayout;
@@ -470,8 +447,8 @@ void EditorToolSettings::slotHelpPlugin()
         if (d->tool->plugin())
         {
             openOnlineDocumentation(d->tool->plugin()->handbookSection(),
-                                        d->tool->plugin()->handbookChapter(),
-                                        d->tool->plugin()->handbookReference());
+                                    d->tool->plugin()->handbookChapter(),
+                                    d->tool->plugin()->handbookReference());
         }
     }
 }

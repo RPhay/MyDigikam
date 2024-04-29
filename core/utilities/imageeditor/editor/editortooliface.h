@@ -84,7 +84,7 @@ private:
     static EditorToolIface* m_iface;
 
     class Private;
-    Private* const          d;
+    Private* const          d = nullptr;
 };
 
 } // namespace Digikam
