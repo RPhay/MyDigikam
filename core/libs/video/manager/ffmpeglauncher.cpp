@@ -73,7 +73,7 @@ void FFmpegLauncher::encodeFrames()
         args << QLatin1String("-stream_loop")
              << QLatin1String("-1")
              << QLatin1String("-i")
-             << m_settings->audioTrack                            // Audio file to use as soundtrack.
+             << QDir::toNativeSeparators(m_settings->audioTrack)  // Audio file to use as soundtrack.
              << QLatin1String("-c:a")
              << QLatin1String("copy")                             // Do not reencode
              << QLatin1String("-shortest");
