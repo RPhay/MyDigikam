@@ -49,18 +49,12 @@ class Q_DECL_HIDDEN ShowfotoFolderViewList::Private
 
 public:
 
-    explicit Private()
-      : view        (nullptr),
-        bar         (nullptr),
-        toolTipTimer(nullptr),
-        toolTip     (nullptr)
-    {
-    }
+    Private() = default;
 
-    ShowfotoFolderViewSideBar* view;
-    ShowfotoFolderViewBar*     bar;
-    QTimer*                    toolTipTimer;
-    ShowfotoFolderViewToolTip* toolTip;
+    ShowfotoFolderViewSideBar* view         = nullptr;
+    ShowfotoFolderViewBar*     bar          = nullptr;
+    QTimer*                    toolTipTimer = nullptr;
+    ShowfotoFolderViewToolTip* toolTip      = nullptr;
     QModelIndex                toolTipIndex;
 };
 

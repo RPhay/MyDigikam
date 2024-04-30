@@ -47,7 +47,7 @@ public:
     /**
      * List all file paths from the current model root index selected in the view.
      */
-    QStringList currentFilesPath() const;
+    QStringList currentFilesPath()                    const;
 
 private Q_SLOTS:
 

@@ -28,10 +28,6 @@ ShowfotoFolderViewBookmarkItem::ShowfotoFolderViewBookmarkItem(QTreeWidgetItem* 
     setSelected(false);
 }
 
-ShowfotoFolderViewBookmarkItem::~ShowfotoFolderViewBookmarkItem()
-{
-}
-
 void ShowfotoFolderViewBookmarkItem::setPath(const QString& path)
 {
     m_path = path;

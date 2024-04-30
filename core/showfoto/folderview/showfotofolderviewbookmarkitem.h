@@ -30,10 +30,10 @@ class ShowfotoFolderViewBookmarkItem : public QTreeWidgetItem
 public:
 
     explicit ShowfotoFolderViewBookmarkItem(QTreeWidgetItem* const parent);
-    ~ShowfotoFolderViewBookmarkItem()    override;
+    ~ShowfotoFolderViewBookmarkItem() override = default;
 
     void setPath(const QString&);
-    QString path()      const;
+    QString path()               const;
 
 private:
 

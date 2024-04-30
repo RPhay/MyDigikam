@@ -48,42 +48,27 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBookmarks::Private
 {
 public:
 
-    explicit Private()
-      : addBtn        (nullptr),
-        delBtn        (nullptr),
-        edtBtn        (nullptr),
-        bookmarksList (nullptr),
-        topBookmarks  (nullptr),
-        topUsualPlaces(nullptr),
-        sidebar       (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    static const QString            configBookmarkItemsEntry;
-    static const QString            configBookmarkPathPrefixEntry;
-    static const QString            configBookmarkTitlePrefixEntry;
-    static const QString            configBookmarkIconPrefixEntry;
-    static const QString            configBookmarkTopItemExpandedEntry;
-    static const QString            configBookmarkTopUsualExpandedEntry;
+    const QString configBookmarkItemsEntry              = QLatin1String("BookmarkItems");
+    const QString configBookmarkPathPrefixEntry         = QLatin1String("BookmarkPath");
+    const QString configBookmarkTitlePrefixEntry        = QLatin1String("BookmarkTitle");
+    const QString configBookmarkIconPrefixEntry         = QLatin1String("BookmarkIcon");
+    const QString configBookmarkTopItemExpandedEntry    = QLatin1String("BookmarkTopItemExpanded");
+    const QString configBookmarkTopUsualExpandedEntry   = QLatin1String("BookmarkTopUsualExpanded");
 
-    QList<QAction*>                 actionsList;                    ///< used to shared actions with list-view context menu.
-    QToolButton*                    addBtn;
-    QToolButton*                    delBtn;
-    QToolButton*                    edtBtn;
-    ShowfotoFolderViewBookmarkList* bookmarksList;
-    QTreeWidgetItem*                topBookmarks;
-    QTreeWidgetItem*                topUsualPlaces;
-    ShowfotoFolderViewSideBar*      sidebar;
+    QList<QAction*>                 actionsList;        ///< used to shared actions with list-view context menu.
+    QToolButton*                    addBtn              = nullptr;
+    QToolButton*                    delBtn              = nullptr;
+    QToolButton*                    edtBtn              = nullptr;
+    ShowfotoFolderViewBookmarkList* bookmarksList       = nullptr;
+    QTreeWidgetItem*                topBookmarks        = nullptr;
+    QTreeWidgetItem*                topUsualPlaces      = nullptr;
+    ShowfotoFolderViewSideBar*      sidebar             = nullptr;
 };
 
-const QString ShowfotoFolderViewBookmarks::Private::configBookmarkItemsEntry(QLatin1String("BookmarkItems"));
-const QString ShowfotoFolderViewBookmarks::Private::configBookmarkPathPrefixEntry(QLatin1String("BookmarkPath"));
-const QString ShowfotoFolderViewBookmarks::Private::configBookmarkTitlePrefixEntry(QLatin1String("BookmarkTitle"));
-const QString ShowfotoFolderViewBookmarks::Private::configBookmarkIconPrefixEntry(QLatin1String("BookmarkIcon"));
-const QString ShowfotoFolderViewBookmarks::Private::configBookmarkTopItemExpandedEntry(QLatin1String("BookmarkTopItemExpanded"));
-const QString ShowfotoFolderViewBookmarks::Private::configBookmarkTopUsualExpandedEntry(QLatin1String("BookmarkTopUsualExpanded"));
 
 ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideBar* const sidebar)
     : QWidget(sidebar),
@@ -317,6 +302,7 @@ void ShowfotoFolderViewBookmarks::slotBookmarkDoubleClicked(QTreeWidgetItem* ite
 void ShowfotoFolderViewBookmarks::slotLoadContents(const QString& path)
 {
     d->sidebar->setCurrentPath(path);
+
     Q_EMIT signalLoadContents();
 }
 

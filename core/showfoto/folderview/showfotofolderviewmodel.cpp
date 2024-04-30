@@ -40,16 +40,12 @@ class Q_DECL_HIDDEN ShowfotoFolderViewModel::Private
 
 public:
 
-    explicit Private()
-        : thumbnailThread (nullptr),
-          view            (nullptr)
-    {
-    }
+    Private() = default;
 
-    ThumbnailLoadThread*    thumbnailThread;
-    ShowfotoFolderViewList* view;
+    ThumbnailLoadThread*    thumbnailThread = nullptr;
+    ShowfotoFolderViewList* view            = nullptr;
 
-    static const int        s_maxSize;         ///< Max icon size.
+    static const int        s_maxSize;      ///< Max icon size.
 };
 
 const int ShowfotoFolderViewModel::Private::s_maxSize = 256;

@@ -27,12 +27,9 @@ class Q_DECL_HIDDEN ShowfotoFolderViewUndo::Private
 
 public:
 
-    explicit Private()
-      : view(nullptr)
-    {
-    }
+    Private() = default;
 
-    ShowfotoFolderViewSideBar* view;
+    ShowfotoFolderViewSideBar* view     = nullptr;
     QString                    oldPath;
     QString                    newPath;
 };

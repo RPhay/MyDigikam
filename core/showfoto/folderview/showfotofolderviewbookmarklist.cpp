@@ -45,14 +45,11 @@ class Q_DECL_HIDDEN ShowfotoFolderViewBookmarkList::Private
 {
 public:
 
-    explicit Private()
-        : parent (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    ShowfotoFolderViewBookmarks* parent;
+    ShowfotoFolderViewBookmarks* parent = nullptr;
 };
 
 ShowfotoFolderViewBookmarkList::ShowfotoFolderViewBookmarkList(ShowfotoFolderViewBookmarks* const parent)

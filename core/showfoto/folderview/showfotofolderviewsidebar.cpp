@@ -50,44 +50,26 @@ class Q_DECL_HIDDEN ShowfotoFolderViewSideBar::Private
 
 public:
 
-    explicit Private()
-      : fsmodel     (nullptr),
-        fsview      (nullptr),
-        fsbar       (nullptr),
-        fsmarks     (nullptr),
-        fsstack     (nullptr),
-        splitter    (nullptr),
-        parent      (nullptr),
-        fsSortOrder (Qt::AscendingOrder),
-        fsRole      (ShowfotoFolderViewList::FileName)
-    {
-    }
+    Private() = default;
 
-    static const QString                   configIconSizeEntry;
-    static const QString                   configLastFolderEntry;
-    static const QString                   configFolderViewModeEntry;
-    static const QString                   configFolderViewTypeMimeEntry;
-    static const QString                   configBookmarksVisibleEntry;
-    static const QString                   configSplitterStateEntry;
+    const QString configIconSizeEntry                       = QLatin1String("Icon Size");
+    const QString configLastFolderEntry                     = QLatin1String("Last Folder");
+    const QString configFolderViewModeEntry                 = QLatin1String("Folder View Mode");
+    const QString configFolderViewTypeMimeEntry             = QLatin1String("Folder View Type Mime");
+    const QString configBookmarksVisibleEntry               = QLatin1String("Bookmarks Visible");
+    const QString configSplitterStateEntry                  = QLatin1String("Splitter State");
 
-    ShowfotoFolderViewModel*               fsmodel;
-    ShowfotoFolderViewList*                fsview;
-    ShowfotoFolderViewBar*                 fsbar;
-    ShowfotoFolderViewBookmarks*           fsmarks;
-    QUndoStack*                            fsstack;
-    QSplitter*                             splitter;
-    Showfoto*                              parent;
+    ShowfotoFolderViewModel*               fsmodel          = nullptr;
+    ShowfotoFolderViewList*                fsview           = nullptr;
+    ShowfotoFolderViewBar*                 fsbar            = nullptr;
+    ShowfotoFolderViewBookmarks*           fsmarks          = nullptr;
+    QUndoStack*                            fsstack          = nullptr;
+    QSplitter*                             splitter         = nullptr;
+    Showfoto*                              parent           = nullptr;
     QList<DPluginAction*>                  pluginActions;
-    Qt::SortOrder                          fsSortOrder;
-    ShowfotoFolderViewList::FolderViewRole fsRole;
+    Qt::SortOrder                          fsSortOrder      = Qt::AscendingOrder;
+    ShowfotoFolderViewList::FolderViewRole fsRole           = ShowfotoFolderViewList::FileName;
 };
-
-const QString ShowfotoFolderViewSideBar::Private::configIconSizeEntry(QLatin1String("Icon Size"));
-const QString ShowfotoFolderViewSideBar::Private::configLastFolderEntry(QLatin1String("Last Folder"));
-const QString ShowfotoFolderViewSideBar::Private::configFolderViewModeEntry(QLatin1String("Folder View Mode"));
-const QString ShowfotoFolderViewSideBar::Private::configFolderViewTypeMimeEntry(QLatin1String("Folder View Type Mime"));
-const QString ShowfotoFolderViewSideBar::Private::configBookmarksVisibleEntry(QLatin1String("Bookmarks Visible"));
-const QString ShowfotoFolderViewSideBar::Private::configSplitterStateEntry(QLatin1String("Splitter State"));
 
 ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(Showfoto* const parent)
     : QWidget          (parent),
@@ -479,6 +461,7 @@ void ShowfotoFolderViewSideBar::slotPluginActionTriggered(QAction* act)
         {
             slotLoadContents();
             QTimer::singleShot(1000, dpact, SLOT(trigger()));
+
             return;
         }
     }

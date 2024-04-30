@@ -40,12 +40,9 @@ class Q_DECL_HIDDEN ShowfotoFolderViewToolTip::Private
 {
 public:
 
-    explicit Private()
-      : view        (nullptr)
-    {
-    }
+    Private() = default;
 
-    ShowfotoFolderViewList* view;
+    ShowfotoFolderViewList* view = nullptr;
     QModelIndex             index;
 };
 
