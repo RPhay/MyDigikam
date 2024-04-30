@@ -29,6 +29,14 @@
 namespace Digikam
 {
 
+FaceTagsIface::FaceTagsIface(const FaceTagsIface& other)
+    : m_type   (other.type()),
+      m_imageId(other.imageId()),
+      m_tagId  (other.tagId()),
+      m_region (other.region())
+{
+}
+
 FaceTagsIface::FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region)
     : m_type   (type),
       m_imageId(imageId),
@@ -43,6 +51,16 @@ FaceTagsIface::FaceTagsIface(const QString& attribute, qlonglong imageId, int ta
       m_region (region)
 {
     m_type = typeForAttribute(attribute, tagId);
+}
+
+FaceTagsIface& FaceTagsIface::operator=(const FaceTagsIface& other)
+{
+    m_type    = other.type();
+    m_imageId = other.imageId();
+    m_tagId   = other.tagId();
+    m_region  = other.region();
+
+    return *this;
 }
 
 bool FaceTagsIface::isNull() const

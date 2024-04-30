@@ -55,8 +55,11 @@ public:
 public:
 
     FaceTagsIface() = default;
+    FaceTagsIface(const FaceTagsIface& other);
     FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region);
     FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId, const TagRegion& region);
+
+    FaceTagsIface& operator=(const FaceTagsIface& other);
 
     bool      isNull()                          const;
 
