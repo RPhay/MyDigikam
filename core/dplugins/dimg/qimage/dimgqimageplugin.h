@@ -41,7 +41,7 @@ class DImgQImagePlugin : public DPluginDImg
 public:
 
     explicit DImgQImagePlugin(QObject* const parent = nullptr);
-    ~DImgQImagePlugin()                                                                           override;
+    ~DImgQImagePlugin()                                                                           override = default;
 
     QString name()                                                                          const override;
     QString iid()                                                                           const override;

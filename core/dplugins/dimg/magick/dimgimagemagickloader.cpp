@@ -57,10 +57,6 @@ DImgImageMagickLoader::DImgImageMagickLoader(DImg* const image)
 {
 }
 
-DImgImageMagickLoader::~DImgImageMagickLoader()
-{
-}
-
 bool DImgImageMagickLoader::hasAlpha() const
 {
     return m_hasAlpha;

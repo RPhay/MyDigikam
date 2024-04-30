@@ -18,6 +18,7 @@
 // ImageMagick includes
 
 // Pragma directives to reduce warnings from ImageMagick header files.
+
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #   pragma GCC diagnostic push
 #   pragma GCC diagnostic ignored "-Wignored-qualifiers"

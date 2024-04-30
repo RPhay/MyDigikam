@@ -38,10 +38,6 @@ DImgRAWPlugin::DImgRAWPlugin(QObject* const parent)
 {
 }
 
-DImgRAWPlugin::~DImgRAWPlugin()
-{
-}
-
 QString DImgRAWPlugin::name() const
 {
     return i18nc("@title", "RAW loader");

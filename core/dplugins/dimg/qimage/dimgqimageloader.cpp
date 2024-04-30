@@ -35,10 +35,6 @@ DImgQImageLoader::DImgQImageLoader(DImg* const image)
 {
 }
 
-DImgQImageLoader::~DImgQImageLoader()
-{
-}
-
 bool DImgQImageLoader::hasAlpha() const
 {
     return m_hasAlpha;

@@ -38,7 +38,7 @@ class DImgRAWLoader : public DRawDecoder,
 public:
 
     explicit DImgRAWLoader(DImg* const image, const DRawDecoding& rawDecodingSettings = DRawDecoding());
-    ~DImgRAWLoader()                                                                 override;
+    ~DImgRAWLoader()                                                                 override = default;
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer = nullptr) override;
     bool save(const QString&, DImgLoaderObserver* const)                             override;

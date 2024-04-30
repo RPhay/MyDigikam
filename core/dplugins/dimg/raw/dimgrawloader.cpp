@@ -41,10 +41,6 @@ DImgRAWLoader::DImgRAWLoader(DImg* const image, const DRawDecoding& rawDecodingS
     m_filter->setSettings(rawDecodingSettings);
 }
 
-DImgRAWLoader::~DImgRAWLoader()
-{
-}
-
 bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
     m_observer = observer;

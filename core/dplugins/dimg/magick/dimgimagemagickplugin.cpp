@@ -72,10 +72,6 @@ DImgImageMagickPlugin::DImgImageMagickPlugin(QObject* const parent)
     m_writeFormats = encoderFormats();
 }
 
-DImgImageMagickPlugin::~DImgImageMagickPlugin()
-{
-}
-
 void DImgImageMagickPlugin::cleanUp()
 {
     MagickCoreTerminus();

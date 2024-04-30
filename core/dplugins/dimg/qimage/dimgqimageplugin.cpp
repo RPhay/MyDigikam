@@ -41,10 +41,6 @@ DImgQImagePlugin::DImgQImagePlugin(QObject* const parent)
 {
 }
 
-DImgQImagePlugin::~DImgQImagePlugin()
-{
-}
-
 QString DImgQImagePlugin::name() const
 {
     return i18nc("@title", "QImage loader");
