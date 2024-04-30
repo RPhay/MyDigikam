@@ -33,7 +33,7 @@ public:
 
     explicit ShowfotoInfoIface(QObject* const parent,
                                const QList<QUrl>& lst);
-    ~ShowfotoInfoIface()               override;
+    ~ShowfotoInfoIface()               override = default;;
 
     void openSetupPage(SetupPage page) override;
 };

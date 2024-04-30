@@ -114,56 +114,34 @@ class Q_DECL_HIDDEN Showfoto::Private
 {
 public:
 
-    explicit Private()
-      : validIccPath            (true),
-        itemsNb                 (0),
-        vSplitter               (nullptr),
-        fileOpenAction          (nullptr),
-        openFilesInFolderAction (nullptr),
-        mediaServerAction       (nullptr),
-        first                   (nullptr),
-        model                   (nullptr),
-        dDHandler               (nullptr),
-        filterModel             (nullptr),
-        thumbLoadThread         (nullptr),
-        thumbBar                (nullptr),
-        thumbBarDock            (nullptr),
-        normalDelegate          (nullptr),
-        leftSideBar             (nullptr),
-        rightSideBar            (nullptr),
-        splash                  (nullptr),
-        settings                (nullptr),
-        folderView              (nullptr),
-        stackView               (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                              validIccPath;
+    bool                              validIccPath              = true;
 
-    int                               itemsNb;
+    int                               itemsNb                   = 0;
 
-    QSplitter*                        vSplitter;
-    QAction*                          fileOpenAction;
+    QSplitter*                        vSplitter                 = nullptr;
+    QAction*                          fileOpenAction            = nullptr;
     QUrl                              currentLoadedUrl;
     QUrl                              lastOpenedDirectory;
-    QAction*                          openFilesInFolderAction;
-    QAction*                          mediaServerAction;
-    QAction*                          first;
+    QAction*                          openFilesInFolderAction   = nullptr;
+    QAction*                          mediaServerAction         = nullptr;
+    QAction*                          first                     = nullptr;
 
     ShowfotoItemInfoList              infoList;
-    ShowfotoThumbnailModel*           model;
-    ShowfotoDragDropHandler*          dDHandler;
-    ShowfotoFilterModel*              filterModel;
-    Digikam::ThumbnailLoadThread*     thumbLoadThread;
-    ShowfotoThumbnailBar*             thumbBar;
-    Digikam::ThumbBarDock*            thumbBarDock;
-    ShowfotoNormalDelegate*           normalDelegate;
-    Digikam::Sidebar*                 leftSideBar;
-    Digikam::ItemPropertiesSideBar*   rightSideBar;
-    Digikam::DSplashScreen*           splash;
-    ShowfotoSettings*                 settings;
-    ShowfotoFolderViewSideBar*        folderView;
-    ShowfotoStackViewSideBar*         stackView;
+    ShowfotoThumbnailModel*           model                     = nullptr;
+    ShowfotoDragDropHandler*          dDHandler                 = nullptr;
+    ShowfotoFilterModel*              filterModel               = nullptr;
+    Digikam::ThumbnailLoadThread*     thumbLoadThread           = nullptr;
+    ShowfotoThumbnailBar*             thumbBar                  = nullptr;
+    Digikam::ThumbBarDock*            thumbBarDock              = nullptr;
+    ShowfotoNormalDelegate*           normalDelegate            = nullptr;
+    Digikam::Sidebar*                 leftSideBar               = nullptr;
+    Digikam::ItemPropertiesSideBar*   rightSideBar              = nullptr;
+    Digikam::DSplashScreen*           splash                    = nullptr;
+    ShowfotoSettings*                 settings                  = nullptr;
+    ShowfotoFolderViewSideBar*        folderView                = nullptr;
+    ShowfotoStackViewSideBar*         stackView                 = nullptr;
 };
 
 } // namespace ShowFoto

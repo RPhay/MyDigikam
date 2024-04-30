@@ -165,7 +165,7 @@ bool ShowfotoKineticScroller::eventFilter(QObject* object, QEvent* event)
 
         case QEvent::MouseMove:
         {
-            if (!d->isMoving && d->isPressed)
+            if      (!d->isMoving && d->isPressed)
             {
                 // A few move events are ignored as "click jitter", but after that we
                 // assume that the user is doing a click & drag
@@ -250,7 +250,7 @@ bool ShowfotoKineticScroller::eventFilter(QObject* object, QEvent* event)
 
 void ShowfotoKineticScroller::onKineticTimerElapsed()
 {
-    if (d->isPressed && d->isMoving)
+    if      (d->isPressed && d->isMoving)
     {
         if (d->scrollFlow == QListView::TopToBottom)
         {

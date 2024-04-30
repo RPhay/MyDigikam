@@ -41,160 +41,93 @@ class Q_DECL_HIDDEN ShowfotoSettings::Private
 
 public:
 
-    explicit Private()
-      : deleteItem2Trash        (true),
-        showFormatOverThumbnail (false),
-        showCoordinates         (false),
-        showSplash              (true),
-        nativeFileDialog        (false),
-        itemCenter              (false),
-        reverseSort             (false),
-        showToolTip             (true),
-        showFileName            (true),
-        showFileDate            (false),
-        showFileSize            (false),
-        showFileType            (false),
-        showFileDim             (true),
-        showPhotoMake           (true),
-        showPhotoLens           (true),
-        showPhotoFocal          (true),
-        showPhotoExpo           (true),
-        showPhotoFlash          (false),
-        showPhotoWB             (false),
-        showPhotoDate           (true),
-        showPhotoMode           (false),
-        updateType              (0),
-        updateWithDebug         (false),
-        rightSideBarStyle       (0),
-        sortOrder               (0)
-    {
-    }
+    Private() = default;
 
-    static const QString configGroupDefault;
+    bool             deleteItem2Trash           = true;
+    bool             showFormatOverThumbnail    = false;
+    bool             showCoordinates            = false;
+    bool             showSplash                 = true;
+    bool             nativeFileDialog           = false;
+    bool             itemCenter                 = false;
+    bool             reverseSort                = false;
 
-    static const QString configLastOpenedDir;
-    static const QString configDeleteItem2Trash;
-    static const QString configCurrentTheme;
-    static const QString configRightSideBarStyle;
-    static const QString configUpdateType;
-    static const QString configUpdateWithDebug;
-    static const QString configApplicationStyle;
-    static const QString configIconTheme;
-    static const QString configApplicationFont;
-    static const QString configShowFormatOverThumbnail;
-    static const QString configShowCoordinates;
-    static const QString configShowSplash;
-    static const QString configNativeFileDialog;
-    static const QString configItemCenter;
-    static const QString configSortOrder;
-    static const QString configReverseSort;
+    bool             showToolTip                = true;
 
-    static const QString configShowToolTip;
+    bool             showFileName               = true;
+    bool             showFileDate               = false;
+    bool             showFileSize               = false;
+    bool             showFileType               = false;
+    bool             showFileDim                = true;
 
-    static const QString configShowFileName;
-    static const QString configShowFileDate;
-    static const QString configShowFileSize;
-    static const QString configShowFileType;
-    static const QString configShowFileDim;
+    bool             showPhotoMake              = true;
+    bool             showPhotoLens              = true;
+    bool             showPhotoFocal             = true;
+    bool             showPhotoExpo              = true;
+    bool             showPhotoFlash             = false;
+    bool             showPhotoWB                = false;
+    bool             showPhotoDate              = true;
+    bool             showPhotoMode              = true;
 
-    static const QString configShowPhotoMake;
-    static const QString configShowPhotoLens;
-    static const QString configShowPhotoFocal;
-    static const QString configShowPhotoExpo;
-    static const QString configShowPhotoFlash;
-    static const QString configShowPhotoWB;
-    static const QString configShowPhotoDate;
-    static const QString configShowPhotoMode;
+    int              updateType                 = 0;
+    bool             updateWithDebug            = false;
+    int              rightSideBarStyle          = 0;
+    int              sortOrder                  = 0;
 
-    static const QString configToolTipsFont;
+    QFont            toolTipsFont;
 
-    bool                 deleteItem2Trash;
-    bool                 showFormatOverThumbnail;
-    bool                 showCoordinates;
-    bool                 showSplash;
-    bool                 nativeFileDialog;
-    bool                 itemCenter;
-    bool                 reverseSort;
+    QString          lastOpenedDir;
+    QString          theme;
+    QString          applicationStyle           = qApp->style()->objectName();
+    QString          applicationIcon;
+    QFont            applicationFont            = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
-    bool                 showToolTip;
+    KSharedConfigPtr config;
+    KConfigGroup     group;
 
-    bool                 showFileName;
-    bool                 showFileDate;
-    bool                 showFileSize;
-    bool                 showFileType;
-    bool                 showFileDim;
+    /// Configuration Group
+    const QString configGroupDefault            = QLatin1String("ImageViewer Settings");
 
-    bool                 showPhotoMake;
-    bool                 showPhotoLens;
-    bool                 showPhotoFocal;
-    bool                 showPhotoExpo;
-    bool                 showPhotoFlash;
-    bool                 showPhotoWB;
-    bool                 showPhotoDate;
-    bool                 showPhotoMode;
+    /// Misc. & Showfoto Generals Settings
+    const QString configLastOpenedDir           = QLatin1String("Last Opened Directory");
+    const QString configDeleteItem2Trash        = QLatin1String("DeleteItem2Trash");
+    const QString configCurrentTheme            = QLatin1String("Theme");
+    const QString configUpdateType              = QLatin1String("Update Type");
+    const QString configUpdateWithDebug         = QLatin1String("Update With Debug");
+    const QString configRightSideBarStyle       = QLatin1String("Sidebar Title Style");
+    const QString configApplicationStyle        = QLatin1String("Application Style");
+    const QString configIconTheme               = QLatin1String("Icon Theme");
+    const QString configApplicationFont         = QLatin1String("Application Font");
+    const QString configShowFormatOverThumbnail = QLatin1String("ShowMimeOverImage");
+    const QString configShowCoordinates         = QLatin1String("Show Coordinates");
+    const QString configShowSplash              = QLatin1String("ShowSplash");
+    const QString configNativeFileDialog        = QLatin1String("Use Native File Dialog");
+    const QString configItemCenter              = QLatin1String("Item To Center");
+    const QString configSortOrder               = QLatin1String("SortOrder");
+    const QString configReverseSort             = QLatin1String("ReverseSort");
 
-    int                  updateType;
-    bool                 updateWithDebug;
-    int                  rightSideBarStyle;
-    int                  sortOrder;
+    /// Tool Tip Enable/Disable
+    const QString configShowToolTip             = QLatin1String("Show ToolTips");
 
-    QFont                toolTipsFont;
+    /// Tool Tip File Properties
+    const QString configShowFileName            = QLatin1String("ToolTips Show File Name");
+    const QString configShowFileDate            = QLatin1String("ToolTips Show File Date");
+    const QString configShowFileSize            = QLatin1String("ToolTips Show File Size");
+    const QString configShowFileType            = QLatin1String("ToolTips Show Image Type");
+    const QString configShowFileDim             = QLatin1String("ToolTips Show Image Dim");
 
-    QString              lastOpenedDir;
-    QString              theme;
-    QString              applicationStyle;
-    QString              applicationIcon;
-    QFont                applicationFont;
+    /// Tool Tip Photograph Info
+    const QString configShowPhotoMake           = QLatin1String("ToolTips Show Photo Make");
+    const QString configShowPhotoLens           = QLatin1String("ToolTips Show Photo Lens");
+    const QString configShowPhotoFocal          = QLatin1String("ToolTips Show Photo Focal");
+    const QString configShowPhotoExpo           = QLatin1String("ToolTips Show Photo Expo");
+    const QString configShowPhotoFlash          = QLatin1String("ToolTips Show Photo Flash");
+    const QString configShowPhotoWB             = QLatin1String("ToolTips Show Photo WB");
+    const QString configShowPhotoDate           = QLatin1String("ToolTips Show Photo Date");
+    const QString configShowPhotoMode           = QLatin1String("ToolTips Show Photo Mode");
 
-    KSharedConfigPtr     config;
-    KConfigGroup         group;
+    /// Tool Tips Font
+    const QString configToolTipsFont            = QLatin1String("ToolTips Font");
 };
-
-/// Configuration Group
-const QString ShowfotoSettings::Private::configGroupDefault(QLatin1String("ImageViewer Settings"));
-
-/// Misc. & Showfoto Generals Settings
-const QString ShowfotoSettings::Private::configLastOpenedDir(QLatin1String("Last Opened Directory"));
-const QString ShowfotoSettings::Private::configDeleteItem2Trash(QLatin1String("DeleteItem2Trash"));
-const QString ShowfotoSettings::Private::configCurrentTheme(QLatin1String("Theme"));
-const QString ShowfotoSettings::Private::configUpdateType(QLatin1String("Update Type"));
-const QString ShowfotoSettings::Private::configUpdateWithDebug(QLatin1String("Update With Debug"));
-const QString ShowfotoSettings::Private::configRightSideBarStyle(QLatin1String("Sidebar Title Style"));
-const QString ShowfotoSettings::Private::configApplicationStyle(QLatin1String("Application Style"));
-const QString ShowfotoSettings::Private::configIconTheme(QLatin1String("Icon Theme"));
-const QString ShowfotoSettings::Private::configApplicationFont(QLatin1String("Application Font"));
-const QString ShowfotoSettings::Private::configShowFormatOverThumbnail(QLatin1String("ShowMimeOverImage"));
-const QString ShowfotoSettings::Private::configShowCoordinates(QLatin1String("Show Coordinates"));
-const QString ShowfotoSettings::Private::configShowSplash(QLatin1String("ShowSplash"));
-const QString ShowfotoSettings::Private::configNativeFileDialog(QLatin1String("Use Native File Dialog"));
-const QString ShowfotoSettings::Private::configItemCenter(QLatin1String("Item To Center"));
-const QString ShowfotoSettings::Private::configSortOrder(QLatin1String("SortOrder"));
-const QString ShowfotoSettings::Private::configReverseSort(QLatin1String("ReverseSort"));
-
-/// Tool Tip Enable/Disable
-const QString ShowfotoSettings::Private::configShowToolTip(QLatin1String("Show ToolTips"));
-
-/// Tool Tip File Properties
-const QString ShowfotoSettings::Private::configShowFileName(QLatin1String("ToolTips Show File Name"));
-const QString ShowfotoSettings::Private::configShowFileDate(QLatin1String("ToolTips Show File Date"));
-const QString ShowfotoSettings::Private::configShowFileSize(QLatin1String("ToolTips Show File Size"));
-const QString ShowfotoSettings::Private::configShowFileType(QLatin1String("ToolTips Show Image Type"));
-const QString ShowfotoSettings::Private::configShowFileDim(QLatin1String("ToolTips Show Image Dim"));
-
-/// Tool Tip Photograph Info
-const QString ShowfotoSettings::Private::configShowPhotoMake(QLatin1String("ToolTips Show Photo Make"));
-const QString ShowfotoSettings::Private::configShowPhotoLens(QLatin1String("ToolTips Show Photo Lens"));
-const QString ShowfotoSettings::Private::configShowPhotoFocal(QLatin1String("ToolTips Show Photo Focal"));
-const QString ShowfotoSettings::Private::configShowPhotoExpo(QLatin1String("ToolTips Show Photo Expo"));
-const QString ShowfotoSettings::Private::configShowPhotoFlash(QLatin1String("ToolTips Show Photo Flash"));
-const QString ShowfotoSettings::Private::configShowPhotoWB(QLatin1String("ToolTips Show Photo WB"));
-const QString ShowfotoSettings::Private::configShowPhotoDate(QLatin1String("ToolTips Show Photo Date"));
-const QString ShowfotoSettings::Private::configShowPhotoMode(QLatin1String("ToolTips Show Photo Mode"));
-
-/// Tool Tips Font
-const QString ShowfotoSettings::Private::configToolTipsFont(QLatin1String("ToolTips Font"));
-
-// -------------------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN ShowfotoSettingsCreator
 {
@@ -218,50 +151,12 @@ ShowfotoSettings::ShowfotoSettings()
 {
     d->config = KSharedConfig::openConfig();
     d->group  = d->config->group(d->configGroupDefault);
-    init();
     readSettings();
 }
 
 ShowfotoSettings::~ShowfotoSettings()
 {
     delete d;
-}
-
-void ShowfotoSettings::init()
-{
-    d->updateType              = 0;
-    d->updateWithDebug         = false;
-    d->rightSideBarStyle       = 0;
-    d->sortOrder               = 0;
-    d->deleteItem2Trash        = true;
-    d->showSplash              = true;
-    d->reverseSort             = false;
-
-    d->showFormatOverThumbnail = false;
-    d->showCoordinates         = false;
-    d->nativeFileDialog        = false;
-    d->itemCenter              = false;
-
-    d->showToolTip             = true;
-
-    d->showFileName            = true;
-    d->showFileDate            = false;
-    d->showFileSize            = false;
-    d->showFileType            = false;
-    d->showFileDim             = true;
-
-    d->showPhotoMake           = true;
-    d->showPhotoLens           = true;
-    d->showPhotoFocal          = true;
-    d->showPhotoExpo           = true;
-    d->showPhotoFlash          = false;
-    d->showPhotoWB             = false;
-    d->showPhotoDate           = true;
-    d->showPhotoMode           = true;
-
-    d->applicationStyle        = qApp->style()->objectName();
-    d->applicationIcon         = QString();
-    d->applicationFont         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 }
 
 void ShowfotoSettings::readSettings()

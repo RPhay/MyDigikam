@@ -49,11 +49,13 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
 
     // -- File properties ----------------------------------------------
 
-    if (settings->getShowFileName()  ||
+    if (
+        settings->getShowFileName()  ||
         settings->getShowFileDate()  ||
         settings->getShowFileSize()  ||
         settings->getShowFileType()  ||
-        settings->getShowFileDim() )
+        settings->getShowFileDim()
+       )
     {
         tip += cnt.headBeg + i18n("File Properties") + cnt.headEnd;
 
@@ -103,14 +105,16 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
 
     // -- Photograph Info -----------------------------------------------------------------------
 
-    if (settings->getShowPhotoMake()  ||
+    if (
+        settings->getShowPhotoMake()  ||
         settings->getShowPhotoLens()  ||
         settings->getShowPhotoFocal() ||
         settings->getShowPhotoExpo()  ||
         settings->getShowPhotoFlash() ||
         settings->getShowPhotoWB()    ||
         settings->getShowPhotoDate()  ||
-        settings->getShowPhotoMode())
+        settings->getShowPhotoMode()
+       )
     {
         if (!photoInfo.isNull())
         {

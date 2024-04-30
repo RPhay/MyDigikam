@@ -142,10 +142,6 @@ private:
 
 private:
 
-    void init();
-
-private:
-
     class Private;
     Private* const d = nullptr;
 

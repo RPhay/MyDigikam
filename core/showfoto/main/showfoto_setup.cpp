@@ -119,7 +119,7 @@ void Showfoto::setupUserArea()
     m_splitter                       = new Digikam::SidebarSplitter(widget);
 
     const int spacing                = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                            QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     d->leftSideBar                   = new Digikam::Sidebar(widget, m_splitter, Qt::LeftEdge);
     d->leftSideBar->setObjectName(QLatin1String("ShowFoto Sidebar Left"));
     d->leftSideBar->setContentsMargins(0, 0, spacing, 0);

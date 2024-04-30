@@ -31,6 +31,7 @@ void Showfoto::slotOpenFile()
         slotClearThumbBar();
 
         openUrls(urls);
+
         Q_EMIT signalInfoList(d->infoList);
 
         slotOpenUrl(d->thumbBar->currentInfo());
@@ -41,6 +42,7 @@ void Showfoto::slotOpenFile()
         slotClearThumbBar();
 
         openFolder(urls.first().adjusted(QUrl::RemoveFilename));
+
         Q_EMIT signalInfoList(d->infoList);
 
         slotOpenUrl(d->thumbBar->findItemByUrl(urls.first()));
@@ -62,6 +64,7 @@ void Showfoto::slotOpenFolder()
         slotClearThumbBar();
 
         openFolder(url);
+
         Q_EMIT signalInfoList(d->infoList);
 
         slotOpenUrl(d->thumbBar->currentInfo());
@@ -279,6 +282,7 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, con
         {
             openFolder(imagesUrls.first().adjusted(QUrl::RemoveFilename));
             d->model->clearShowfotoItemInfos();
+
             Q_EMIT signalInfoList(d->infoList);
 
             slotOpenUrl(d->thumbBar->findItemByUrl(current.isValid() ? current : imagesUrls.first()));

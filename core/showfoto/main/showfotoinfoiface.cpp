@@ -32,10 +32,6 @@ ShowfotoInfoIface::ShowfotoInfoIface(QObject* const parent, const QList<QUrl>& l
 {
 }
 
-ShowfotoInfoIface::~ShowfotoInfoIface()
-{
-}
-
 void ShowfotoInfoIface::openSetupPage(SetupPage page)
 {
     switch (page)
