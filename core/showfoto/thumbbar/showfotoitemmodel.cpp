@@ -159,15 +159,15 @@ ShowfotoItemInfo ShowfotoItemModel::retrieveShowfotoItemInfo(const QModelIndex& 
 
 QModelIndex ShowfotoItemModel::indexForUrl(const QUrl& fileUrl) const
 {
-        const int size = d->infos.size();
+    const int size = d->infos.size();
 
-        for (int i = 0 ; i < size ; ++i)
+    for (int i = 0 ; i < size ; ++i)
+    {
+        if (d->infos.at(i).url == fileUrl)
         {
-            if (d->infos.at(i).url == fileUrl)
-            {
-                return createIndex(i, 0);
-            }
+            return createIndex(i, 0);
         }
+    }
 
     return QModelIndex();
 }
@@ -299,6 +299,7 @@ void ShowfotoItemModel::emitDataChangedForAll()
 
     QModelIndex first = createIndex(0, 0);
     QModelIndex last  = createIndex(d->infos.size() - 1, 0);
+
     Q_EMIT dataChanged(first, last);
 }
 
@@ -378,6 +379,7 @@ void ShowfotoItemModel::publiciseInfos(const QList<ShowfotoItemInfo>& infos)
     }
 
     endInsertRows();
+
     Q_EMIT itemInfosAdded(infos);
 }
 /*
@@ -390,7 +392,7 @@ static bool pairsContain(const List& list, T value)
     int n                               = int(end - begin);
     int half;
 
-    while(n > 0)
+    while (n > 0)
     {
         half   = n >> 1;
         middle = begin + half;
@@ -489,6 +491,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         {
             // cppcheck-suppress knownEmptyContainer
             std::copy(d->infos.begin() + begin, d->infos.begin() + end, removedInfos.begin());
+
             Q_EMIT itemInfosAboutToBeRemoved(removedInfos);
         }
 

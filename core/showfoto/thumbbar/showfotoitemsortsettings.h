@@ -54,7 +54,7 @@ public:
 public:
 
     ShowfotoItemSortSettings();
-    ~ShowfotoItemSortSettings();
+    ~ShowfotoItemSortSettings() = default;
 
     bool operator==(const ShowfotoItemSortSettings& other) const;
 
@@ -183,7 +183,9 @@ public:
     CategorizationMode   categorizationMode;
     SortOrder            categorizationSortOrder;
 
-    /// Only Ascending or Descending, never be DefaultOrder
+    /**
+     * Only Ascending or Descending, never be DefaultOrder
+     */
     Qt::SortOrder        currentCategorizationSortOrder;
     Qt::CaseSensitivity  categorizationCaseSensitivity;
 

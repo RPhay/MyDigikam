@@ -33,10 +33,6 @@ ShowfotoItemSortSettings::ShowfotoItemSortSettings()
 {
 }
 
-ShowfotoItemSortSettings::~ShowfotoItemSortSettings()
-{
-}
-
 bool ShowfotoItemSortSettings::operator ==(const ShowfotoItemSortSettings& other) const
 {
     return (
