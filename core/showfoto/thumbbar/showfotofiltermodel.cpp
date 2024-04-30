@@ -22,8 +22,7 @@ namespace ShowFoto
 {
 
 ShowfotoSortFilterModel::ShowfotoSortFilterModel(QObject* const parent)
-    : DCategorizedSortFilterProxyModel(parent),
-      m_chainedModel                  (nullptr)
+    : DCategorizedSortFilterProxyModel(parent)
 {
 }
 
@@ -252,6 +251,7 @@ ShowfotoFilterModel::ShowfotoFilterModel(QObject* const parent)
 ShowfotoFilterModel::~ShowfotoFilterModel()
 {
     Q_D(ShowfotoFilterModel);
+
     delete d;
 }
 
@@ -305,6 +305,7 @@ ShowfotoFilterModel* ShowfotoFilterModel::showfotoFilterModel() const
 void ShowfotoFilterModel::setShowfotoItemSortSettings(const ShowfotoItemSortSettings& sorter)
 {
     Q_D(ShowfotoFilterModel);
+
     d->sorter = sorter;
     setCategorizedModel(d->sorter.categorizationMode != ShowfotoItemSortSettings::NoCategories);
     invalidate();
@@ -313,6 +314,7 @@ void ShowfotoFilterModel::setShowfotoItemSortSettings(const ShowfotoItemSortSett
 void ShowfotoFilterModel::setCategorizationMode(ShowfotoItemSortSettings::CategorizationMode mode)
 {
     Q_D(ShowfotoFilterModel);
+
     d->sorter.setCategorizationMode(mode);
     setShowfotoItemSortSettings(d->sorter);
 }
@@ -320,6 +322,7 @@ void ShowfotoFilterModel::setCategorizationMode(ShowfotoItemSortSettings::Catego
 void ShowfotoFilterModel::setSortRole(ShowfotoItemSortSettings::SortRole role)
 {
     Q_D(ShowfotoFilterModel);
+
     d->sorter.setSortRole(role);
     setShowfotoItemSortSettings(d->sorter);
 }
@@ -327,6 +330,7 @@ void ShowfotoFilterModel::setSortRole(ShowfotoItemSortSettings::SortRole role)
 void ShowfotoFilterModel::setSortOrder(ShowfotoItemSortSettings::SortOrder order)
 {
     Q_D(ShowfotoFilterModel);
+
     d->sorter.setSortOrder(order);
     setShowfotoItemSortSettings(d->sorter);
 }

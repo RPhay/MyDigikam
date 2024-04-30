@@ -27,18 +27,6 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
-ShowfotoItemInfo::ShowfotoItemInfo()
-    : size  (-1),
-      id    (-1),
-      width (0),
-      height(0)
-{
-}
-
-ShowfotoItemInfo::~ShowfotoItemInfo()
-{
-}
-
 bool ShowfotoItemInfo::isNull() const
 {
     return (

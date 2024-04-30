@@ -39,8 +39,8 @@ class ShowfotoItemInfo
 {
 public:
 
-    explicit ShowfotoItemInfo();
-    ~ShowfotoItemInfo();
+    ShowfotoItemInfo()  = default;
+    ~ShowfotoItemInfo() = default;
 
     /**
      * Return true if all member in this container are null.
@@ -58,7 +58,7 @@ public:
 public:
 
     /// Static values.
-    qint64             size;                 ///< file size in bytes.
+    qint64             size     = -1;        ///< file size in bytes.
     QUrl               url;                  ///< file Url
 
     QString            name;                 ///< File name in file-system
@@ -66,14 +66,14 @@ public:
     QString            mime;                 ///< Type mime of file
 
     /// Unique image id
-    qlonglong          id;
+    qlonglong          id       = -1;
 
     PhotoInfoContainer photoInfo;
 
     QDateTime          dtime;                ///< creation time on disk
     QDateTime          ctime;                ///< camera date stamp
-    int                width;                ///< Image width in pixels
-    int                height;               ///< Image height in pixels
+    int                width    = 0;         ///< Image width in pixels
+    int                height   = 0;         ///< Image height in pixels
 };
 
 QDataStream& operator<<(QDataStream&, const ShowfotoItemInfo&);

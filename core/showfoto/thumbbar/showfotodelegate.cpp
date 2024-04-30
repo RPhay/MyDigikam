@@ -49,6 +49,7 @@ ShowfotoDelegate::~ShowfotoDelegate()
 void ShowfotoDelegate::setView(ShowfotoThumbnailBar* view)
 {
     Q_D(ShowfotoDelegate);
+
     setViewOnAllOverlays(view);
 
     if (d->currentView)
@@ -166,6 +167,7 @@ QPixmap ShowfotoDelegate::thumbnailPixmap(const QModelIndex& index) const
 void ShowfotoDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
     Q_D(const ShowfotoDelegate);
+
     ShowfotoItemInfo info     = ShowfotoItemModel::retrieveShowfotoItemInfo(index);
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
@@ -305,6 +307,7 @@ void ShowfotoDelegate::invalidatePaintingCache()
 void ShowfotoDelegate::updateContentWidth()
 {
     Q_D(ShowfotoDelegate);
+
     d->contentWidth = d->thumbSize.size() + 2*d->radius;
 }
 
@@ -338,6 +341,7 @@ void ShowfotoDelegate::updateSizeRectsAndPixmaps()
 void ShowfotoDelegate::clearCaches()
 {
     Q_D(ShowfotoDelegate);
+
     ShowfotoItemViewDelegate::clearCaches();
     d->actualPixmapRectCache.clear();
 }
@@ -345,6 +349,7 @@ void ShowfotoDelegate::clearCaches()
 void ShowfotoDelegate::clearModelDataCaches()
 {
     Q_D(ShowfotoDelegate);
+
     d->actualPixmapRectCache.clear();
 }
 
@@ -381,6 +386,7 @@ QRect ShowfotoDelegate::actualPixmapRect(const QModelIndex& index) const
 void ShowfotoDelegate::updateActualPixmapRect(const QModelIndex& index, const QRect& rect)
 {
     Q_D(ShowfotoDelegate);
+
     QRect* const old = d->actualPixmapRectCache.object(index.row());
 
     if (!old || (*old != rect))
@@ -462,6 +468,7 @@ ShowfotoThumbnailDelegate::ShowfotoThumbnailDelegate(ShowfotoThumbnailBar* const
     : ShowfotoDelegate(*new ShowfotoThumbnailDelegatePrivate, parent)
 {
     Q_D(ShowfotoThumbnailDelegate);
+
     d->init(this);
 }
 

@@ -47,10 +47,14 @@ public:
 
     QItemSelectionModel*        getSelectionModel()                     const;
 
-    /// Returns any ShowfotoFilterModel in chain. May not be sourceModel()
+    /**
+     * Returns any ShowfotoFilterModel in chain. May not be sourceModel()
+     */
     ShowfotoFilterModel*        showfotoFilterModel()                   const;
 
-    /// Returns 0 if the ShowfotoItemModel is not an ShowfotoThumbnailModel
+    /**
+     * Returns 0 if the ShowfotoItemModel is not an ShowfotoThumbnailModel
+     */
     ShowfotoThumbnailModel*     showfotoThumbnailModel()                const;
 
     ShowfotoDelegate*           delegate()                              const;
@@ -93,7 +97,7 @@ public:
 /*
     void addSelectionOverlay(ShowfotoDelegate* delegate = 0);
 */
-    ThumbnailSize thumbnailSize() const;
+    ThumbnailSize thumbnailSize()                                       const;
 
     virtual void setThumbnailSize(const ThumbnailSize& size);
 

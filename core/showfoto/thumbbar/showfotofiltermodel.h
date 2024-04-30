@@ -84,7 +84,7 @@ protected:
 
 protected:
 
-    ShowfotoSortFilterModel* m_chainedModel;
+    ShowfotoSortFilterModel* m_chainedModel = nullptr;
 };
 
 // ------------------------------------------------------------------------------------------
@@ -171,7 +171,7 @@ public:
 
 protected:
 
-    ShowfotoFilterModelPrivate* const d_ptr;
+    ShowfotoFilterModelPrivate* const d_ptr = nullptr;
 
 protected:
 
