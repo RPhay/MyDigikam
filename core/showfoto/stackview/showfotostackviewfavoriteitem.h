@@ -86,12 +86,8 @@ private:
 
 private:
 
-    int         m_favoriteType;
-    QString     m_hierarchy;
-    QList<QUrl> m_urls;
-    QString     m_desc;
-    QDate       m_date;
-    QUrl        m_current;
+    class Private;
+    Private* const d = nullptr;
 };
 
 } // namespace ShowFoto

@@ -40,7 +40,7 @@ class ShowfotoStackViewToolTip : public DItemToolTip
 public:
 
     explicit ShowfotoStackViewToolTip(ShowfotoStackViewList* const view);
-    ~ShowfotoStackViewToolTip()          override;
+    ~ShowfotoStackViewToolTip()           override;
 
     void setIndex(const QModelIndex& index);
 

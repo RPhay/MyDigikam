@@ -33,8 +33,23 @@ using namespace Digikam;
 namespace ShowFoto
 {
 
+class Q_DECL_HIDDEN ShowfotoStackViewFavoriteItem::Private
+{
+public:
+
+    Private() = default;
+
+    int         favoriteType = ShowfotoStackViewFavoriteItem::FavoriteRoot;
+    QString     hierarchy;
+    QList<QUrl> urls;
+    QString     desc;
+    QDate       date;
+    QUrl        current;
+};
+
 ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidget* const parent)
-    : QTreeWidgetItem(parent)
+    : QTreeWidgetItem(parent),
+      d              (new Private)
 {
     setDisabled(false);
     setSelected(false);
@@ -42,7 +57,8 @@ ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidget* const 
 }
 
 ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent, int favType)
-    : QTreeWidgetItem(parent)
+    : QTreeWidgetItem(parent),
+      d              (new Private)
 {
     setDisabled(false);
     setSelected(false);
@@ -51,6 +67,7 @@ ShowfotoStackViewFavoriteItem::ShowfotoStackViewFavoriteItem(QTreeWidgetItem* co
 
 ShowfotoStackViewFavoriteItem::~ShowfotoStackViewFavoriteItem()
 {
+    delete d;
 }
 
 void ShowfotoStackViewFavoriteItem::setName(const QString& name)
@@ -79,19 +96,19 @@ QString ShowfotoStackViewFavoriteItem::name() const
 
 void ShowfotoStackViewFavoriteItem::setHierarchy(const QString& hierarchy)
 {
-    m_hierarchy = hierarchy;
+    d->hierarchy = hierarchy;
 }
 
 QString ShowfotoStackViewFavoriteItem::hierarchy() const
 {
-    return m_hierarchy;
+    return d->hierarchy;
 }
 
 void ShowfotoStackViewFavoriteItem::setFavoriteType(int favoriteType)
 {
-    m_favoriteType = favoriteType;
+    d->favoriteType = favoriteType;
 
-    switch (m_favoriteType)
+    switch (d->favoriteType)
     {
         case FavoriteRoot:
         {
@@ -125,58 +142,58 @@ void ShowfotoStackViewFavoriteItem::setFavoriteType(int favoriteType)
 
 int ShowfotoStackViewFavoriteItem::favoriteType() const
 {
-    return m_favoriteType;
+    return d->favoriteType;
 }
 
 void ShowfotoStackViewFavoriteItem::setDescription(const QString& desc)
 {
-    m_desc = desc;
+    d->desc = desc;
 
     updateToolTip();
 }
 
 QString ShowfotoStackViewFavoriteItem::description() const
 {
-    return m_desc;
+    return d->desc;
 }
 
 void ShowfotoStackViewFavoriteItem::setDate(const QDate& date)
 {
-    m_date = date;
+    d->date = date;
 
     updateToolTip();
 }
 
 QDate ShowfotoStackViewFavoriteItem::date() const
 {
-    return m_date;
+    return d->date;
 }
 
 void ShowfotoStackViewFavoriteItem::setUrls(const QList<QUrl>& urls)
 {
-    m_urls = urls;
+    d->urls = urls;
 
     updateToolTip();
 }
 
 QList<QUrl> ShowfotoStackViewFavoriteItem::urls() const
 {
-    return m_urls;
+    return d->urls;
 }
 
 void ShowfotoStackViewFavoriteItem::setCurrentUrl(const QUrl& url)
 {
-    m_current = url;
+    d->current = url;
 }
 
 QUrl ShowfotoStackViewFavoriteItem::currentUrl() const
 {
-    if (!m_current.isValid() && !urls().isEmpty())
+    if (!d->current.isValid() && !urls().isEmpty())
     {
         return urls().first();
     }
 
-    return m_current;
+    return d->current;
 }
 
 QStringList ShowfotoStackViewFavoriteItem::urlsToPaths() const
@@ -198,7 +215,7 @@ void ShowfotoStackViewFavoriteItem::updateToolTip()
         return;
     }
 
-    switch (m_favoriteType)
+    switch (d->favoriteType)
     {
         case FavoriteRoot:
         {

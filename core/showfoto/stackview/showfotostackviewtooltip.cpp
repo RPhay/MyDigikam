@@ -30,12 +30,9 @@ class Q_DECL_HIDDEN ShowfotoStackViewToolTip::Private
 {
 public:
 
-    explicit Private()
-      : view        (nullptr)
-    {
-    }
+    Private() = default;
 
-    ShowfotoStackViewList* view;
+    ShowfotoStackViewList* view     = nullptr;
     QModelIndex            index;
 };
 

@@ -47,10 +47,6 @@ ShowfotoStackViewItem::ShowfotoStackViewItem(ShowfotoStackViewList* const parent
     setSelected(false);
 }
 
-ShowfotoStackViewItem::~ShowfotoStackViewItem()
-{
-}
-
 void ShowfotoStackViewItem::setInfo(const ShowfotoItemInfo& info)
 {
     m_info                 = info;

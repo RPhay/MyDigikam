@@ -47,16 +47,12 @@ class Q_DECL_HIDDEN ShowfotoStackViewFavoriteList::Private
 {
 public:
 
-    explicit Private()
-        : parent     (nullptr),
-          draggedItem(nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    ShowfotoStackViewFavorites* parent;
-    QTreeWidgetItem*            draggedItem;
+    ShowfotoStackViewFavorites* parent      = nullptr;
+    QTreeWidgetItem*            draggedItem = nullptr;
     QString                     filter;
 };
 
@@ -315,6 +311,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
 QMimeData* ShowfotoStackViewFavoriteList::mimeData(const QList<QTreeWidgetItem*>& items) const
 
 #else
+
 // cppcheck-suppress passedByValue
 QMimeData* ShowfotoStackViewFavoriteList::mimeData(const QList<QTreeWidgetItem*> items) const     // clazy:exclude=function-args-by-ref
 

@@ -48,32 +48,25 @@ class Q_DECL_HIDDEN ShowfotoStackViewSideBar::Private
 
 public:
 
-    explicit Private()
-      : pluginFingerPrint(QLatin1String("DPlugin::Generic::View")),
-        view             (nullptr),
-        favts            (nullptr),
-        splitter         (nullptr),
-        sortOrder        (Qt::AscendingOrder),
-        role             (ShowfotoStackViewList::FileName)
-    {
-    }
+    Private() = default;
 
-    const QString                        pluginFingerPrint;         ///< Identify plugins category to host in stack-view
-    static const QString                 configIconSizeEntry;
-    static const QString                 configSplitterStateEntry;
+    /**
+     * Identify plugins category to host in stack-view
+     */
+    const QString                        pluginFingerPrint          = QLatin1String("DPlugin::Generic::View");
+    const QString                        configIconSizeEntry        = QLatin1String("Icon Size");
+    const QString                        configSplitterStateEntry   = QLatin1String("Splitter State");
 
-    ShowfotoStackViewList*               view;
-    ShowfotoStackViewFavorites*          favts;
-    QSplitter*                           splitter;
+    ShowfotoStackViewList*               view                       = nullptr;
+    ShowfotoStackViewFavorites*          favts                      = nullptr;
+    QSplitter*                           splitter                   = nullptr;
 
     QList<DPluginAction*>                dpluginActions;            ///< List of identified DPlugins actions.
     QList<QAction*>                      pluginActions;             ///< List of Qt actions from identified Dplugins.
-    Qt::SortOrder                        sortOrder;
-    ShowfotoStackViewList::StackViewRole role;
-};
 
-const QString ShowfotoStackViewSideBar::Private::configIconSizeEntry(QLatin1String("Icon Size"));
-const QString ShowfotoStackViewSideBar::Private::configSplitterStateEntry(QLatin1String("Splitter State"));
+    Qt::SortOrder                        sortOrder                  = Qt::AscendingOrder;
+    ShowfotoStackViewList::StackViewRole role                       = ShowfotoStackViewList::FileName;
+};
 
 ShowfotoStackViewSideBar::ShowfotoStackViewSideBar(Showfoto* const parent)
     : QWidget          (parent),

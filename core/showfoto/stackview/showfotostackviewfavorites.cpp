@@ -54,31 +54,25 @@ class Q_DECL_HIDDEN ShowfotoStackViewFavorites::Private
 {
 public:
 
-    explicit Private()
-      : addBtn         (nullptr),
-        fldBtn         (nullptr),
-        delBtn         (nullptr),
-        edtBtn         (nullptr),
-        favoritesList  (nullptr),
-        topFavorites   (nullptr),
-        sidebar        (nullptr),
-        favoritesFilter(nullptr)
-    {
-        file = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/favorites.xml");
-    }
+    Private() = default;
 
 public:
 
     QList<QAction*>                 actionsList;                    ///< Used to shared actions with list-view context menu.
-    QToolButton*                    addBtn;                         ///< Add favorite button.
-    QToolButton*                    fldBtn;                         ///< Add sub-folder button.
-    QToolButton*                    delBtn;                         ///< Delete item button.
-    QToolButton*                    edtBtn;                         ///< Edit item button.
-    ShowfotoStackViewFavoriteList*  favoritesList;
-    ShowfotoStackViewFavoriteItem*  topFavorites;                   ///< Top-level parent of all favorite items.
-    ShowfotoStackViewSideBar*       sidebar;
-    QString                         file;                           ///< Path to store favorites XML data file.
-    SearchTextBar*                  favoritesFilter;
+    QToolButton*                    addBtn          = nullptr;      ///< Add favorite button.
+    QToolButton*                    fldBtn          = nullptr;      ///< Add sub-folder button.
+    QToolButton*                    delBtn          = nullptr;      ///< Delete item button.
+    QToolButton*                    edtBtn          = nullptr;      ///< Edit item button.
+    ShowfotoStackViewFavoriteList*  favoritesList   = nullptr;
+    ShowfotoStackViewFavoriteItem*  topFavorites    = nullptr;      ///< Top-level parent of all favorite items.
+    ShowfotoStackViewSideBar*       sidebar         = nullptr;
+    SearchTextBar*                  favoritesFilter = nullptr;
+
+    /**
+     * Path to store favorites XML data file.
+     */
+    QString                         file            = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
+                                                      QLatin1String("/favorites.xml");
 };
 
 ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar* const sidebar)

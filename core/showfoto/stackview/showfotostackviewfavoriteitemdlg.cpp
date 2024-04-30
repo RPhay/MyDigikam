@@ -65,64 +65,40 @@ class Q_DECL_HIDDEN ShowfotoStackViewFavoriteItemDlg::Private
 {
 public:
 
-    explicit Private()
-      : create         (false),
-        hierarchyLabel (nullptr),
-        icon           (QLatin1String("folder-favorites")),
-        iconButton     (nullptr),
-        resetIconButton(nullptr),
-        dateLowButton  (nullptr),
-        dateAvgButton  (nullptr),
-        dateHighButton (nullptr),
-        buttons        (nullptr),
-        nameEdit       (nullptr),
-        descEdit       (nullptr),
-        favoriteTypeBox(nullptr),
-        dateEdit       (nullptr),
-        urlsEdit       (nullptr),
-        descLabel      (nullptr),
-        nbImagesLabel  (nullptr),
-        dateLabel      (nullptr),
-        iconTextLabel  (nullptr),
-        urlsLabel      (nullptr),
-        helpLabel      (nullptr),
-        list           (nullptr),
-        pitem          (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                           create;
+    bool                           create           = false;
 
-    DAdjustableLabel*              hierarchyLabel;
+    DAdjustableLabel*              hierarchyLabel   = nullptr;
 
-    QString                        icon;
+    QString                        icon             = QLatin1String("folder-favorites");
     QString                        originalName;
 
-    QPushButton*                   iconButton;
-    QPushButton*                   resetIconButton;
-    QPushButton*                   dateLowButton;
-    QPushButton*                   dateAvgButton;
-    QPushButton*                   dateHighButton;
+    QPushButton*                   iconButton       = nullptr;
+    QPushButton*                   resetIconButton  = nullptr;
+    QPushButton*                   dateLowButton    = nullptr;
+    QPushButton*                   dateAvgButton    = nullptr;
+    QPushButton*                   dateHighButton   = nullptr;
 
-    QDialogButtonBox*              buttons;
+    QDialogButtonBox*              buttons          = nullptr;
 
-    DTextEdit*                     nameEdit;
-    DTextEdit*                     descEdit;
-    QComboBox*                     favoriteTypeBox;
-    QDateTimeEdit*                 dateEdit;
-    DItemsList*                    urlsEdit;
-    QLabel*                        descLabel;
-    QLabel*                        nbImagesLabel;
-    QLabel*                        dateLabel;
-    QLabel*                        iconTextLabel;
-    QLabel*                        urlsLabel;
-    DAdjustableLabel*              helpLabel;
-    ShowfotoStackViewFavoriteList* list;
-    ShowfotoStackViewFavoriteItem* pitem;
+    DTextEdit*                     nameEdit         = nullptr;
+    DTextEdit*                     descEdit         = nullptr;
+    QComboBox*                     favoriteTypeBox  = nullptr;
+    QDateTimeEdit*                 dateEdit         = nullptr;
+    DItemsList*                    urlsEdit         = nullptr;
+    QLabel*                        descLabel        = nullptr;
+    QLabel*                        nbImagesLabel    = nullptr;
+    QLabel*                        dateLabel        = nullptr;
+    QLabel*                        iconTextLabel    = nullptr;
+    QLabel*                        urlsLabel        = nullptr;
+    DAdjustableLabel*              helpLabel        = nullptr;
+    ShowfotoStackViewFavoriteList* list             = nullptr;
+    ShowfotoStackViewFavoriteItem* pitem            = nullptr;
 };
 
-static Qt::SortOrder                        s_sortOrder(Qt::AscendingOrder);
-static ShowfotoStackViewList::StackViewRole s_sortRole(ShowfotoStackViewList::FileName);
+static Qt::SortOrder                        s_sortOrder = Qt::AscendingOrder;
+static ShowfotoStackViewList::StackViewRole s_sortRole  = ShowfotoStackViewList::FileName;
 
 ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStackViewFavoriteList* const list,
                                                                    bool create)

@@ -51,18 +51,12 @@ class Q_DECL_HIDDEN ShowfotoStackViewList::Private
 
 public:
 
-    explicit Private()
-      : view        (nullptr),
-        thumbbar    (nullptr),
-        toolTipTimer(nullptr),
-        toolTip     (nullptr)
-    {
-    }
+    Private() = default;
 
-    ShowfotoStackViewSideBar* view;
-    ShowfotoThumbnailBar*     thumbbar;
-    QTimer*                   toolTipTimer;
-    ShowfotoStackViewToolTip* toolTip;
+    ShowfotoStackViewSideBar* view          = nullptr;
+    ShowfotoThumbnailBar*     thumbbar      = nullptr;
+    QTimer*                   toolTipTimer  = nullptr;
+    ShowfotoStackViewToolTip* toolTip       = nullptr;
     QModelIndex               toolTipIndex;
 };
 

@@ -36,7 +36,7 @@ class ShowfotoStackViewItem : public QTreeWidgetItem
 public:
 
     explicit ShowfotoStackViewItem(ShowfotoStackViewList* const parent);
-    ~ShowfotoStackViewItem()                           override;
+    ~ShowfotoStackViewItem()                           override = default;
 
     void setInfo(const ShowfotoItemInfo&);
     ShowfotoItemInfo info()                      const;
