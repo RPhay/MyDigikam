@@ -31,14 +31,10 @@ class Q_DECL_HIDDEN ShowfotoSetupRaw::Private
 {
 public:
 
-    explicit Private()
-      : tab(nullptr),
-        raw(nullptr)
-    {
-    }
+    Private() = default;
 
-    QTabWidget* tab;
-    SetupRaw*   raw;
+    QTabWidget* tab = nullptr;
+    SetupRaw*   raw = nullptr;
 };
 
 ShowfotoSetupRaw::ShowfotoSetupRaw(QWidget* const parent)

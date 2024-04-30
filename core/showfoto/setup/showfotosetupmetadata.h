@@ -41,7 +41,7 @@ public:
 public:
 
     explicit ShowfotoSetupMetadata(QWidget* const parent = nullptr);
-    ~ShowfotoSetupMetadata() override;
+    ~ShowfotoSetupMetadata()      override;
 
     void applySettings();
 

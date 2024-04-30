@@ -37,7 +37,7 @@ public:
 public:
 
     explicit ShowfotoSetupRaw(QWidget* const parent = nullptr);
-    ~ShowfotoSetupRaw() override;
+    ~ShowfotoSetupRaw()      override;
 
     void setActiveTab(RAWTab tab);
     RAWTab activeTab() const;

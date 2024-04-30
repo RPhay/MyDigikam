@@ -41,48 +41,28 @@ class Q_DECL_HIDDEN ShowfotoSetupToolTip::Private
 {
 public:
 
-    explicit Private()
-      : showFileDateBox  (nullptr),
-        showFileNameBox  (nullptr),
-        showFileSizeBox  (nullptr),
-        showImageDimBox  (nullptr),
-        showImageTypeBox (nullptr),
-        showPhotoDateBox (nullptr),
-        showPhotoExpoBox (nullptr),
-        showPhotoFlashBox(nullptr),
-        showPhotoFocalBox(nullptr),
-        showPhotoMakeBox (nullptr),
-        showPhotoLensBox (nullptr),
-        showPhotoModeBox (nullptr),
-        showPhotoWbBox   (nullptr),
-        showToolTipsBox  (nullptr),
-        fileSettingBox   (nullptr),
-        photoSettingBox  (nullptr),
-        fontSelect       (nullptr),
-        settings         (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*            showFileDateBox;
-    QCheckBox*            showFileNameBox;
-    QCheckBox*            showFileSizeBox;
-    QCheckBox*            showImageDimBox;
-    QCheckBox*            showImageTypeBox;
-    QCheckBox*            showPhotoDateBox;
-    QCheckBox*            showPhotoExpoBox;
-    QCheckBox*            showPhotoFlashBox;
-    QCheckBox*            showPhotoFocalBox;
-    QCheckBox*            showPhotoMakeBox;
-    QCheckBox*            showPhotoLensBox;
-    QCheckBox*            showPhotoModeBox;
-    QCheckBox*            showPhotoWbBox;
-    QCheckBox*            showToolTipsBox;
+    QCheckBox*            showFileDateBox   = nullptr;
+    QCheckBox*            showFileNameBox   = nullptr;
+    QCheckBox*            showFileSizeBox   = nullptr;
+    QCheckBox*            showImageDimBox   = nullptr;
+    QCheckBox*            showImageTypeBox  = nullptr;
+    QCheckBox*            showPhotoDateBox  = nullptr;
+    QCheckBox*            showPhotoExpoBox  = nullptr;
+    QCheckBox*            showPhotoFlashBox = nullptr;
+    QCheckBox*            showPhotoFocalBox = nullptr;
+    QCheckBox*            showPhotoMakeBox  = nullptr;
+    QCheckBox*            showPhotoLensBox  = nullptr;
+    QCheckBox*            showPhotoModeBox  = nullptr;
+    QCheckBox*            showPhotoWbBox    = nullptr;
+    QCheckBox*            showToolTipsBox   = nullptr;
 
-    QGroupBox*            fileSettingBox;
-    QGroupBox*            photoSettingBox;
+    QGroupBox*            fileSettingBox    = nullptr;
+    QGroupBox*            photoSettingBox   = nullptr;
 
-    DFontSelect*          fontSelect;
-    ShowfotoSettings*     settings;
+    DFontSelect*          fontSelect        = nullptr;
+    ShowfotoSettings*     settings          = nullptr;
 };
 
 // --------------------------------------------------------

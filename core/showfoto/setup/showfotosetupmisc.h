@@ -47,7 +47,7 @@ public:
 public:
 
     explicit ShowfotoSetupMisc(QWidget* const parent = nullptr);
-    ~ShowfotoSetupMisc() override;
+    ~ShowfotoSetupMisc()      override;
 
     void setActiveTab(MiscTab tab);
     MiscTab activeTab() const;

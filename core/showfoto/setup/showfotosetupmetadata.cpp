@@ -51,22 +51,15 @@ class Q_DECL_HIDDEN ShowfotoSetupMetadata::Private
 {
 public:
 
-    explicit Private()
-      : exifRotateBox        (nullptr),
-        exifSetOrientationBox(nullptr),
-        tab                  (nullptr),
-        tagsCfgPanel         (nullptr),
-        exifToolView         (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*         exifRotateBox;
-    QCheckBox*         exifSetOrientationBox;
+    QCheckBox*         exifRotateBox            = nullptr;
+    QCheckBox*         exifSetOrientationBox    = nullptr;
 
-    QTabWidget*        tab;
+    QTabWidget*        tab                      = nullptr;
 
-    MetadataPanel*     tagsCfgPanel;
-    ExifToolConfPanel* exifToolView;
+    MetadataPanel*     tagsCfgPanel             = nullptr;
+    ExifToolConfPanel* exifToolView             = nullptr;
 };
 
 ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)

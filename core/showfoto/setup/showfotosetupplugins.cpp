@@ -38,19 +38,13 @@ class Q_DECL_HIDDEN ShowfotoSetupPlugins::Private
 {
 public:
 
-    explicit Private()
-      : tab         (nullptr),
-        setupGeneric(nullptr),
-        setupEditor (nullptr),
-        setupDImg   (nullptr)
-    {
-    }
+    Private() = default;
 
-    QTabWidget*   tab;
+    QTabWidget*   tab           = nullptr;
 
-    DPluginSetup* setupGeneric;
-    DPluginSetup* setupEditor;
-    DPluginSetup* setupDImg;
+    DPluginSetup* setupGeneric  = nullptr;
+    DPluginSetup* setupEditor   = nullptr;
+    DPluginSetup* setupDImg     = nullptr;
 };
 
 ShowfotoSetupPlugins::ShowfotoSetupPlugins(QWidget* const parent)

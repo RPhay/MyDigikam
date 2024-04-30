@@ -52,71 +52,39 @@ class Q_DECL_HIDDEN ShowfotoSetup::Private
 {
 public:
 
-    explicit Private()
-      : page_editorIface(nullptr),
-        page_metadata   (nullptr),
-        page_tooltip    (nullptr),
-        page_raw        (nullptr),
-        page_iofiles    (nullptr),
-        page_icc        (nullptr),
+    Private() = default;
+
+    DConfigDlgWdgItem*            page_editorIface  = nullptr;
+    DConfigDlgWdgItem*            page_metadata     = nullptr;
+    DConfigDlgWdgItem*            page_tooltip      = nullptr;
+    DConfigDlgWdgItem*            page_raw          = nullptr;
+    DConfigDlgWdgItem*            page_iofiles      = nullptr;
+    DConfigDlgWdgItem*            page_icc          = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
-        page_geolocation(nullptr),
+    DConfigDlgWdgItem*            page_geolocation  = nullptr;
 
 #endif
 
-        page_plugins    (nullptr),
-        page_misc       (nullptr),
-        metadataPage    (nullptr),
-        toolTipPage     (nullptr),
-        miscPage        (nullptr),
-        rawPage         (nullptr),
-        pluginsPage     (nullptr),
+    DConfigDlgWdgItem*            page_plugins      = nullptr;
+    DConfigDlgWdgItem*            page_misc         = nullptr;
+
+    ShowfotoSetupMetadata*        metadataPage      = nullptr;
+    ShowfotoSetupToolTip*         toolTipPage       = nullptr;
+    ShowfotoSetupMisc*            miscPage          = nullptr;
+    ShowfotoSetupRaw*             rawPage           = nullptr;
+    ShowfotoSetupPlugins*         pluginsPage       = nullptr;
 
 #ifdef HAVE_GEOLOCATION
 
-        geolocationPage (nullptr),
+    Digikam::SetupGeolocation*    geolocationPage   = nullptr;
 
 #endif
 
-        editorIfacePage (nullptr),
-        iofilesPage     (nullptr),
-        iccPage         (nullptr)
-    {
-    }
-
-    DConfigDlgWdgItem*            page_editorIface;
-    DConfigDlgWdgItem*            page_metadata;
-    DConfigDlgWdgItem*            page_tooltip;
-    DConfigDlgWdgItem*            page_raw;
-    DConfigDlgWdgItem*            page_iofiles;
-    DConfigDlgWdgItem*            page_icc;
-
-#ifdef HAVE_GEOLOCATION
-
-    DConfigDlgWdgItem*            page_geolocation;
-
-#endif
-
-    DConfigDlgWdgItem*            page_plugins;
-    DConfigDlgWdgItem*            page_misc;
-
-    ShowfotoSetupMetadata*        metadataPage;
-    ShowfotoSetupToolTip*         toolTipPage;
-    ShowfotoSetupMisc*            miscPage;
-    ShowfotoSetupRaw*             rawPage;
-    ShowfotoSetupPlugins*         pluginsPage;
-
-#ifdef HAVE_GEOLOCATION
-
-    Digikam::SetupGeolocation*    geolocationPage;
-
-#endif
-
-    Digikam::SetupEditorIface*    editorIfacePage;
-    Digikam::SetupIOFiles*        iofilesPage;
-    Digikam::SetupICC*            iccPage;
+    Digikam::SetupEditorIface*    editorIfacePage   = nullptr;
+    Digikam::SetupIOFiles*        iofilesPage       = nullptr;
+    Digikam::SetupICC*            iccPage           = nullptr;
 
 public:
 

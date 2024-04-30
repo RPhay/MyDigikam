@@ -61,71 +61,41 @@ class Q_DECL_HIDDEN ShowfotoSetupMisc::Private
 {
 public:
 
-    explicit Private()
-      : tab                     (nullptr),
-        updateTypeLabel         (nullptr),
-        sidebarTypeLabel        (nullptr),
-        applicationStyleLabel   (nullptr),
-        applicationIconLabel    (nullptr),
-        showSplash              (nullptr),
-        nativeFileDialog        (nullptr),
-        itemCenter              (nullptr),
-        showMimeOverImage       (nullptr),
-        showCoordinates         (nullptr),
-        sortReverse             (nullptr),
-        updateType              (nullptr),
-        updateWithDebug         (nullptr),
-        sidebarType             (nullptr),
-        sortOrderComboBox       (nullptr),
-        applicationStyle        (nullptr),
-        applicationIcon         (nullptr),
-        applicationFont         (nullptr),
-        systemSettingsWidget    (nullptr),
+    Private() = default;
+
+    QTabWidget*           tab                   = nullptr;
+
+    QLabel*               updateTypeLabel       = nullptr;
+    QLabel*               sidebarTypeLabel      = nullptr;
+    QLabel*               applicationStyleLabel = nullptr;
+    QLabel*               applicationIconLabel  = nullptr;
+
+    QCheckBox*            showSplash            = nullptr;
+    QCheckBox*            nativeFileDialog      = nullptr;
+    QCheckBox*            itemCenter            = nullptr;
+    QCheckBox*            showMimeOverImage     = nullptr;
+    QCheckBox*            showCoordinates       = nullptr;
+    QCheckBox*            sortReverse           = nullptr;
+
+    QComboBox*            updateType            = nullptr;
+    QCheckBox*            updateWithDebug       = nullptr;
+
+    QComboBox*            sidebarType           = nullptr;
+    QComboBox*            sortOrderComboBox     = nullptr;
+    QComboBox*            applicationStyle      = nullptr;
+    QComboBox*            applicationIcon       = nullptr;
+    DFontSelect*          applicationFont       = nullptr;
+
+    SystemSettingsWidget* systemSettingsWidget  = nullptr;
 
 #ifdef HAVE_SONNET
 
-        spellCheckWidget        (nullptr),
+    SpellCheckConfig*     spellCheckWidget      = nullptr;
 
 #endif
 
-        localizeWidget          (nullptr),
-        settings                (ShowfotoSettings::instance())
-    {
-    }
-
-    QTabWidget*           tab;
-
-    QLabel*               updateTypeLabel;
-    QLabel*               sidebarTypeLabel;
-    QLabel*               applicationStyleLabel;
-    QLabel*               applicationIconLabel;
-
-    QCheckBox*            showSplash;
-    QCheckBox*            nativeFileDialog;
-    QCheckBox*            itemCenter;
-    QCheckBox*            showMimeOverImage;
-    QCheckBox*            showCoordinates;
-    QCheckBox*            sortReverse;
-
-    QComboBox*            updateType;
-    QCheckBox*            updateWithDebug;
-
-    QComboBox*            sidebarType;
-    QComboBox*            sortOrderComboBox;
-    QComboBox*            applicationStyle;
-    QComboBox*            applicationIcon;
-    DFontSelect*          applicationFont;
-
-    SystemSettingsWidget* systemSettingsWidget;
-
-#ifdef HAVE_SONNET
-
-    SpellCheckConfig*     spellCheckWidget;
-
-#endif
-
-    LocalizeConfig*       localizeWidget;
-    ShowfotoSettings*     settings;
+    LocalizeConfig*       localizeWidget        = nullptr;
+    ShowfotoSettings*     settings              = ShowfotoSettings::instance();
 };
 
 // --------------------------------------------------------
@@ -379,8 +349,10 @@ bool ShowfotoSetupMisc::checkSettings()
 {
     // If check for new version use weekly pre-releases, warn end-user.
 
-    if ((d->updateType->currentIndex()                    == 1) &&
-        (ShowfotoSettings::instance()->getUpdateType() == 0))
+    if (
+        (d->updateType->currentIndex()                 == 1) &&
+        (ShowfotoSettings::instance()->getUpdateType() == 0)
+       )
     {
         d->tab->setCurrentIndex(0);
 
