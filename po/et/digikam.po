@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 01:42+0000\n"
+"POT-Creation-Date: 2024-04-30 01:42+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1072,9 +1072,9 @@ msgstr ""
 "p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1102
-#: core/utilities/imageeditor/main/imagewindow.cpp:1127
-#: core/utilities/imageeditor/main/imagewindow.cpp:1159
+#: core/utilities/imageeditor/main/imagewindow.cpp:1114
+#: core/utilities/imageeditor/main/imagewindow.cpp:1139
+#: core/utilities/imageeditor/main/imagewindow.cpp:1171
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Album \"%1\""
@@ -2080,7 +2080,7 @@ msgid "Change the filename of the currently selected item."
 msgstr "Sellega saab muuta parajasti valitud pildi failinime."
 
 #: core/app/main/digikamapp_setup.cpp:492
-#: core/utilities/imageeditor/editor/editorwindow.cpp:343
+#: core/utilities/imageeditor/editor/editorwindow.cpp:312
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
 #| msgid "Move to Trash"
@@ -2783,21 +2783,21 @@ msgid "Main Tools"
 msgstr "Põhitööriistad"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2649
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2618
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Järeltöötlus"
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2666
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Eksport"
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2673
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2642
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -8980,9 +8980,9 @@ msgstr "Vaheta"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:118
 #: core/libs/dimg/filters/icc/iccprofilesettings.cpp:71
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:262
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:278
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:294
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:484
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:468
 #, kde-format
 msgid "Info..."
 msgstr "Info..."
@@ -12066,7 +12066,7 @@ msgstr "Piltide skannimine"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1855
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1824
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "@title:window"
@@ -12109,8 +12109,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2329
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2348
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2298
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2317
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
@@ -12190,7 +12190,7 @@ msgstr "Kaks kaarti kõrvuti"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
 #: core/utilities/maintenance/facesdetector.cpp:66
 #: core/utilities/searchwindow/searchutilities.cpp:637
 #, kde-format
@@ -17035,7 +17035,7 @@ msgstr "Kuupäeva ja kellaaja kohendamine"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:392
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
-#: core/utilities/imageeditor/editor/editorwindow.cpp:597
+#: core/utilities/imageeditor/editor/editorwindow.cpp:566
 #, fuzzy, kde-format
 #| msgid "Cancel"
 msgctxt "@action"
@@ -30743,7 +30743,7 @@ msgstr "Migreeri ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:125
 #: core/libs/dplugins/webservices/wstooldialog.cpp:105
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:206
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Cancel"
 msgstr "Loobu"
@@ -52534,317 +52534,317 @@ msgctxt "@action"
 msgid "&Replace"
 msgstr "A&senda"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:106
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:96
 #, fuzzy, kde-format
 #| msgid "Previous"
 msgctxt "@action"
 msgid "Go to Previous"
 msgstr "Eelmine"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:107
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Go to previous place in folder-view hierarchy"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:113
 #, fuzzy, kde-format
 #| msgid "Go to the next item"
 msgctxt "@action"
 msgid "Go to Next"
 msgstr "Mine järgmisele elemendile"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:124
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Go to next place in folder-view hierarchy"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:140
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:130
 #, fuzzy, kde-format
 #| msgid "Go Up"
 msgctxt "@action"
 msgid "Go Up"
 msgstr "Üles"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:141
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:131
 #, kde-format
 msgctxt "@info"
 msgid "Go up in folder-view hierarchy"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:157
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:147
 #, fuzzy, kde-format
 #| msgid "Home"
 msgctxt "@action"
 msgid "Go Home"
 msgstr "Kodu"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:158
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:148
 #, fuzzy, kde-format
 #| msgid "Add the directory name"
 msgctxt "@info"
 msgid "Go to home directory"
 msgstr "Lisa kataloogi nimi"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:186
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:176
 #, fuzzy, kde-format
 #| msgid "Hide Options <<"
 msgctxt "@info: folder-view"
 msgid "View Options"
 msgstr "Peida valikud <<"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:189
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:179
 #, kde-format
 msgctxt "@info: folder-view"
 msgid "Selection options to render folder-view."
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:194
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:184
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Short View"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:197
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:187
 #, kde-format
 msgctxt "@info"
 msgid "Switch Folder-View to Short Mode"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:203
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:193
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Detailed View"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:206
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:196
 #, kde-format
 msgctxt "@info"
 msgid "Switch Folder-View to Detailed Mode"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:214
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:204
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@action:inmenu"
 msgid "Show Bookmarks"
 msgstr "Järjehoidjad"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:217
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:207
 #, kde-format
 msgctxt "@info"
 msgid "Show or Hide the Bookmarked places"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:222
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:212
 #, fuzzy, kde-format
 #| msgid "Settings..."
 msgctxt "@action:inmenu"
 msgid "More Settings..."
 msgstr "Seadistused ..."
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:225
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:215
 #, kde-format
 msgctxt "@info"
 msgid "Open configure dialog with more settings options"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:237
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:227
 #, fuzzy, kde-format
 #| msgid "Icon-View Options"
 msgctxt "@info: folder-view"
 msgid "Stack Options"
 msgstr "Ikoonivaate valikud"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:240
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:230
 #, kde-format
 msgctxt "@info: folder-view"
 msgid "Stack options to handle folder-view contents."
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:244
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:234
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@action:inmenu"
 msgid "Load Contents"
 msgstr "Sisu"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:247
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:237
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@action"
 msgid "Load Contents"
 msgstr "Sisu"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:248
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:238
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@info"
 msgid "Load contents to editor stack"
 msgstr "Sisu"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:255
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:245
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@action:inmenu"
 msgid "Append Contents"
 msgstr "Sisu"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:258
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:248
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@action"
 msgid "Append Contents"
 msgstr "Sisu"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:259
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:249
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@info"
 msgid "Append contents to editor stack"
 msgstr "Sisu"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:273
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:263
 #, fuzzy, kde-format
 #| msgid "Enter custom format"
 msgctxt "@info"
 msgid "Enter the customized folder-view path or select from history"
 msgstr "Kirjuta kohandatud vorming"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:274
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:264
 #, fuzzy, kde-format
 #| msgid "Enter album caption here..."
 msgctxt "@info: folder-view path edit"
 msgid "Enter local path here..."
 msgstr "Kirjuta siia albumi allkiri ..."
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:286
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:276
 #, fuzzy, kde-format
 #| msgid "JPEG-2000 image"
 msgctxt "@item: filter type mime"
 msgid "JPEG images"
 msgstr "JPEG 2000 pilt"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:287
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:277
 #, fuzzy, kde-format
 #| msgid "TIFF Files"
 msgctxt "@item: filter type mime"
 msgid "TIFF images"
 msgstr "TIFF-failid"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:288
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:278
 #, fuzzy, kde-format
 #| msgid "PNG Files"
 msgctxt "@item: filter type mime"
 msgid "PNG images"
 msgstr "PNG-failid"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:289
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:279
 #, fuzzy, kde-format
 #| msgid "PNG Files"
 msgctxt "@item: filter type mime"
 msgid "PGF images"
 msgstr "PNG-failid"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:290
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:280
 #, fuzzy, kde-format
 #| msgid "TIFF Files"
 msgctxt "@item: filter type mime"
 msgid "HEIF images"
 msgstr "TIFF-failid"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:291
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:281
 #, fuzzy, kde-format
 #| msgid "TIFF Files"
 msgctxt "@item: filter type mime"
 msgid "AVIF images"
 msgstr "TIFF-failid"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:292
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:282
 #, fuzzy, kde-format
 #| msgid "JPEG-2000 image"
 msgctxt "@item: filter type mime"
 msgid "JPEG-XL images"
 msgstr "JPEG 2000 pilt"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:293
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:283
 #, fuzzy, kde-format
 #| msgid "PNG Files"
 msgctxt "@item: filter type mime"
 msgid "WEBP images"
 msgstr "PNG-failid"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:294
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:284
 #, fuzzy, kde-format
 #| msgid "PNG Files"
 msgctxt "@item: filter type mime"
 msgid "DNG images"
 msgstr "PNG-failid"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:295
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:285
 #, fuzzy, kde-format
 #| msgid "RAW Image"
 msgctxt "@item: filter type mime"
 msgid "RAW images"
 msgstr "Toorpilt (RAW)"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:304
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:294
 #, fuzzy, kde-format
 #| msgid "RAW Image"
 msgctxt "@item: filter type mime"
 msgid "No RAW images"
 msgstr "Toorpilt (RAW)"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:311
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:301
 #, fuzzy, kde-format
 #| msgid "All supported files (%1)"
 msgctxt "@item: filter type mime"
 msgid "All supported files"
 msgstr "Kõik toetatud failid (%1)"
 
-#: core/showfoto/folderview/showfotofolderviewbar.cpp:451
+#: core/showfoto/folderview/showfotofolderviewbar.cpp:442
 #, fuzzy, kde-format
 #| msgid "Icon Size:"
 msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "Ikooni suurus:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:101
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:90
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Järjehoidjad"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:105
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:94
 #, fuzzy, kde-format
 #| msgid "Edit Bookmarks"
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Muuda järjehoidjaid"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:110
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&Pealkiri:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:114
 #, fuzzy, kde-format
 #| msgid "Enter tag name here..."
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "Kirjuta siia sildi nimi..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:126
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:115
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:132
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
 #, fuzzy, kde-format
 #| msgid "&Icon:"
@@ -52852,7 +52852,7 @@ msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Ikoon:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:140
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
 #, fuzzy, kde-format
 #| msgid "Reset"
@@ -52860,14 +52860,14 @@ msgctxt "@action:button"
 msgid "Reset"
 msgstr "Lähtesta"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:153
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:142
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "Asukoht"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:158
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:147
 #, fuzzy, kde-format
 #| msgid "Enter album caption here..."
 msgctxt "@info"
@@ -53076,7 +53076,7 @@ msgid "Delete File"
 msgstr "Kustuta fail"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2375
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2344
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title:window"
@@ -55600,7 +55600,7 @@ msgstr "Näomuudatuste rakendamine"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:164
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:194
-#: core/utilities/imageeditor/editor/editorwindow.cpp:591
+#: core/utilities/imageeditor/editor/editorwindow.cpp:560
 #, fuzzy, kde-format
 #| msgid "OK"
 msgctxt "@action"
@@ -61738,38 +61738,38 @@ msgstr ""
 "Vaba kettaruum asukohas \"%1\" tagasivõtmiste puhverfailile on < 2 GiB! "
 "Tagasivõtmiste puhver praegu keelatakse!"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:114
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:98
 #, kde-format
 msgid "Do not know"
 msgstr "Ei tea"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:115
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:99
 #, kde-format
 msgid "Take the safest and most appropriate action"
 msgstr "Vali kõige turvalisem ja sobivam toiming"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:127
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:111
 #, kde-format
 msgid "Color Profile Mismatch"
 msgstr "Värviprofiili sobimatus"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:131
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:115
 #, kde-format
 msgid "Missing Color Profile"
 msgstr "Puuduv värviprofiil"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:135
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:119
 #, kde-format
 msgid "Image with Uncalibrated Color"
 msgstr "Kalibreerimata värviga pilt"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:141
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:125
 #, kde-format
 msgctxt "<Problem> - <b>"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:220
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:204
 #, kde-format
 msgid ""
 "<p>This image has an <b>embedded color profile</b><br/> which does not match "
@@ -61778,7 +61778,7 @@ msgstr ""
 "<p>Sellel pildil on <b>põimitud värviprofiil</b><br/>, mis ei kattu sinu "
 "tööruumi värviprofiiliga.<br/>Mida ette võtta?</p>"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:226
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:210
 #, kde-format
 msgid ""
 "<p>This image has <b>no information about the color space</b><br/>that was "
@@ -61787,182 +61787,182 @@ msgstr ""
 "<p>Sellel pildil <b>puudub teave värviruumi kohta</b>,<br/>mida kasutati "
 "pildi loomisel.<br/>Mida ette võtta?</p>"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:233
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:217
 #, kde-format
 msgid ""
 "<p>The color information of this image is uncalibrated.<br/>How do you want "
 "to proceed?</p>"
 msgstr "<p>Selle pildi värviteave on kalibreerimata.<br/>Mida ette võtta?</p>"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:264
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:632
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:248
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:616
 #, kde-format
 msgid "Embedded Color Profile:"
 msgstr "Põimitud värviprofiil:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:274
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:258
 #, kde-format
 msgid "Input Color Profile:"
 msgstr "Sisend-värviprofiil:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:292
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:276
 #, kde-format
 msgid "Working Color Space:"
 msgstr "Töö-värviruum:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:317
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:301
 #, kde-format
 msgid "Original Colors:"
 msgstr "Originaalvärvid:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:321
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:305
 #, kde-format
 msgid "Uncorrected Colors:"
 msgstr "Korrigeerimata värvid:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:325
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:309
 #, kde-format
 msgid "Raw Colors:"
 msgstr "Toorvärvid:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:340
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:324
 #, kde-format
 msgid "Resulting Colors:"
 msgstr "Tulemusvärvid:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:344
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:328
 #, kde-format
 msgid "Correction Applied:"
 msgstr "Korrektsiooni rakendamine:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:348
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:332
 #, kde-format
 msgid "Corrected Colors:"
 msgstr "Korrigeeritud värvid:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:380
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:364
 #, kde-format
 msgid "Keep the embedded profile, do not convert"
 msgstr "Põimitud profiil säilitatakse, ei teisendata"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:381
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:365
 #, kde-format
 msgid "Convert to working color space"
 msgstr "Teisendatakse töö-värviruumi"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:382
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:366
 #, kde-format
 msgid "Ignore embedded profile, assign this profile:"
 msgstr "Eiratakse põimitud profiili, omistatakse profiil:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:385
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:369
 #, kde-format
 msgid "and then convert to working space"
 msgstr "ja teisendatakse tööruumi"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:389
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:488
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:373
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:472
 #: core/utilities/setup/setupicc.cpp:712
 #, kde-format
 msgid "No Profile Available"
 msgstr "Profiil puudub"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:426
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:410
 #, kde-format
 msgid "Assign profile and convert to working color space"
 msgstr "Omistatakse profiil ja teisendatakse töö-värviruumi"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:427
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:411
 #, kde-format
 msgid "Assign and keep color profile"
 msgstr "Omistatakse ja säilitatakse värviprofiil"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:428
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:412
 #, kde-format
 msgid "Leave the file untagged, do not color manage"
 msgstr "Fail jäetakse sildistamata, ei rakendata värvihaldust"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:475
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:459
 #, kde-format
 msgid "Which color space shall be used to interpret the colors of this image?"
 msgstr "Millist värviruumi kasutada selle pildi värvide tõlgendamiseks?"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:478
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:462
 #, kde-format
 msgid "sRGB (Internet standard)"
 msgstr "sRGB (internetistandard)"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:479
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:463
 #, kde-format
 msgid "Current working color space"
 msgstr "Aktiivne töö-värviruum"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:480
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:464
 #, kde-format
 msgid "This profile:"
 msgstr "Järgmine profiil:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:523
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:507
 #, kde-format
 msgid ""
 "Please select the input color profile of the device (camera) used to create "
 "this image:"
 msgstr "Pildi loomiseks kasutatud seadme (kaamera) sisend-värviprofiil:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:530
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:514
 #: core/utilities/setup/setupicc.cpp:714
 #, kde-format
 msgid "No Input Profile Available"
 msgstr "Sisendprofiil puudub"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:628
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:612
 #, kde-format
 msgid "Assigned Color Profile:"
 msgstr "Omistatud värviprofiil:"
 
-#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:642
+#: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:626
 #, kde-format
 msgid "<b>No Profile</b>"
 msgstr "<b>Profiil puudub</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:70
 #, fuzzy, kde-format
 #| msgid "Soft Proofing Options"
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Väljundvaate valikud"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:74
 #, kde-format
 msgid "Soft Proofing On"
 msgstr "Väljundvaate lubamine"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:75
 #, kde-format
 msgid "Enable soft-proofing color managed view"
 msgstr "Värvihalduse väljundvaate lubamine"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:76
 #, kde-format
 msgid "Soft Proofing Off"
 msgstr "Väljundvaate keelamine"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:77
 #, kde-format
 msgid "Disable soft-proofing color managed view"
 msgstr "Värvihalduse väljundvaate keelamine"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:94
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
 #, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
 msgstr "<b>Väljundvaate seadistamine</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:102
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:92
 #, kde-format
 msgid "Profile of the output device to simulate:"
 msgstr "Matkitava väljundseadme profiil"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:105
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
 #: core/utilities/setup/setupicc.cpp:387
 #, kde-format
 msgid ""
@@ -61974,7 +61974,7 @@ msgstr ""
 "kasutatakse väljundvaate loomisel, mille abil näeb, kuidas pilt hakkab välja "
 "nägema väljundseadmes.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:111
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:101
 #, kde-format
 msgid ""
 "<p>Press this button to get detailed information about the selected proofing "
@@ -61983,22 +61983,22 @@ msgstr ""
 "<p>Sellele nupule klõpsates näeb valitud väljundvaate profiili põhjalikumat "
 "infot.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:127
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:117
 #, kde-format
 msgid "Rendering intent:"
 msgstr "Renderdamisviis:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:132
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:122
 #, kde-format
 msgid "Highlight out-of-gamut colors"
 msgstr "Vahemikust väljas värvide esiletõstmine"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:123
 #, kde-format
 msgid "Highlighting color:"
 msgstr "Esiletõstmise värv:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:228
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
 #: core/utilities/setup/setupicc.cpp:824
 #, fuzzy, kde-format
 #| msgid "Profile Error"
@@ -62006,25 +62006,25 @@ msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Profiili viga"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:228
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:218
 #: core/utilities/setup/setupicc.cpp:824
 #, kde-format
 msgid "No profile is selected."
 msgstr "Profiili pole valitud."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:62
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:56
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
 msgstr "Kas salvestada?"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:73
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Salvesta muudatused"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:76
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:70
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -62032,13 +62032,13 @@ msgid ""
 msgstr ""
 "Aktiivsete muudatuste salvestamine. Märkus: originaalpilti üle ei kirjutata."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
 msgstr "Salvesta muudatused uue versioonina"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -62048,19 +62048,19 @@ msgstr ""
 "Aktiivsete muudatuste salvestamine uue versioonina. Laaditud faili ei "
 "muudeta, luuakse uus fail."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:84
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
 msgstr "Unusta muudatused"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:87
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
 msgstr "Pildile redigeerimise ajal rakendatud muudatuste unustamine."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:101
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:95
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid ""
@@ -62072,136 +62072,136 @@ msgid ""
 "Do you wish to save your changes?"
 msgstr "<qt>Aktiivset pilti on muudetud.<br/>Kas salvestada muudatused?</qt>"
 
-#: core/utilities/imageeditor/editor/editortool.cpp:400
+#: core/utilities/imageeditor/editor/editortool.cpp:388
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
 msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
 
-#: core/utilities/imageeditor/editor/editortooliface.cpp:95
-#: core/utilities/imageeditor/editor/editortooliface.cpp:211
+#: core/utilities/imageeditor/editor/editortooliface.cpp:88
+#: core/utilities/imageeditor/editor/editortooliface.cpp:204
 #, kde-format
 msgid "Tools"
 msgstr "Tööriistad"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:145
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:122
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:106
 #, kde-format
 msgid "About this tool..."
 msgstr "Tööriista teave ..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:149
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:126
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:102
 #, fuzzy, kde-format
 #| msgid "Online Handbook..."
 msgid "Tool online handbook..."
 msgstr "Võrgukäsiraamat ..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:181
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:158
 #, kde-format
 msgid "Guide:"
 msgstr "Juhtjoon:"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:185
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:162
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
 msgstr "Määra siin juhtjoonte värv."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:190
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:167
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr "Määra siin juhtjoonte laius pikslites."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:198
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:175
 #, kde-format
 msgid "Defaults"
 msgstr "Vaikeväärtused"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:177
 #, kde-format
 msgid "Reset all settings to their default values."
 msgstr "Lähtestab kõik seadistused vaikeväärtustele."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:217
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:194
 #, fuzzy, kde-format
 #| msgid "Load..."
 msgctxt "@action: load previously saved filter settings"
 msgid "Load..."
 msgstr "Laadi..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:219
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:196
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr "Laadib kõik parameetrid seadistustefailist."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:221
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:198
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgctxt "@action: save current filter settings"
 msgid "Save As..."
 msgstr "Salvesta kui ..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:223
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
 #, kde-format
 msgid "Save all parameters to settings text file."
 msgstr "Salvestab kõik parameetrid seadistustefaili."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:225
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #, fuzzy, kde-format
 #| msgid "Try"
 msgctxt "@action: try current filter settings"
 msgid "Try"
 msgstr "Proovi"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:227
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
 #, kde-format
 msgid "Try all settings."
 msgstr "Võimaldab proovida kõiki seadistusi."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:217
+#: core/utilities/imageeditor/editor/editorwindow.cpp:186
 #, fuzzy, kde-format
 #| msgid "&First"
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "&Esimene"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:224
+#: core/utilities/imageeditor/editor/editorwindow.cpp:193
 #, fuzzy, kde-format
 #| msgid "&Last"
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "&Viimane"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:231
+#: core/utilities/imageeditor/editor/editorwindow.cpp:200
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr "Ava originaal"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:243
+#: core/utilities/imageeditor/editor/editorwindow.cpp:212
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "Salvesta muudatused"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:244
+#: core/utilities/imageeditor/editor/editorwindow.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr "Muudatuste salvestamine faili aktiivsesse versiooni"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:249
+#: core/utilities/imageeditor/editor/editorwindow.cpp:218
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr "Salvesta uue versioonina"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:250
+#: core/utilities/imageeditor/editor/editorwindow.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr "Aktiivsete muudatuste salvestamine faili uude versiooni"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:256
+#: core/utilities/imageeditor/editor/editorwindow.cpp:225
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -62209,7 +62209,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr "Salvesta uus versioon kui..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:257
+#: core/utilities/imageeditor/editor/editorwindow.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -62219,154 +62219,154 @@ msgstr ""
 "Aktiivsete muudatuste salvestamine faili uude versiooni, määrates failinime "
 "ja vormingu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:262
+#: core/utilities/imageeditor/editor/editorwindow.cpp:231
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr "Salvesta vormingus"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:264
+#: core/utilities/imageeditor/editor/editorwindow.cpp:233
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:265
+#: core/utilities/imageeditor/editor/editorwindow.cpp:234
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:266
+#: core/utilities/imageeditor/editor/editorwindow.cpp:235
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:267
+#: core/utilities/imageeditor/editor/editorwindow.cpp:236
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr "PGF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:271
+#: core/utilities/imageeditor/editor/editorwindow.cpp:240
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:277
+#: core/utilities/imageeditor/editor/editorwindow.cpp:246
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:283
+#: core/utilities/imageeditor/editor/editorwindow.cpp:252
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:288
+#: core/utilities/imageeditor/editor/editorwindow.cpp:257
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:293
+#: core/utilities/imageeditor/editor/editorwindow.cpp:262
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:311
+#: core/utilities/imageeditor/editor/editorwindow.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "Ekspordi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:312
+#: core/utilities/imageeditor/editor/editorwindow.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr "Faili salvestamine kataloogi väljaspool kogu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:321
+#: core/utilities/imageeditor/editor/editorwindow.cpp:290
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr "Unusta muudatused"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:322
+#: core/utilities/imageeditor/editor/editorwindow.cpp:291
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr "Kõigi faili aktiivsete muudatuste unustamine"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:335
+#: core/utilities/imageeditor/editor/editorwindow.cpp:304
 #, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr "Ava vaikerakendusega"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:305
 #, fuzzy, kde-format
 #| msgid "Open the item with default assigned application."
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr "See avab valitud elemendi vaikimisi omistatud rakendusega."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:359
+#: core/utilities/imageeditor/editor/editorwindow.cpp:328
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@action"
 msgid "Undo"
 msgstr "Võta tagasi"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:386
+#: core/utilities/imageeditor/editor/editorwindow.cpp:355
 #, fuzzy, kde-format
 #| msgid "Redo"
 msgctxt "@action"
 msgid "Redo"
 msgstr "Tee uuesti"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:412
+#: core/utilities/imageeditor/editor/editorwindow.cpp:381
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "Vali kõik"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:417
+#: core/utilities/imageeditor/editor/editorwindow.cpp:386
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@action"
 msgid "Select None"
 msgstr "Tühista kõik valikud"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:431
+#: core/utilities/imageeditor/editor/editorwindow.cpp:400
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "Suurendus 100%"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:437
+#: core/utilities/imageeditor/editor/editorwindow.cpp:406
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "So&bita aknasse"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:444
+#: core/utilities/imageeditor/editor/editorwindow.cpp:413
 #, fuzzy, kde-format
 #| msgid "Fit to &Selection"
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "&Sobita valikuga"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:449
+#: core/utilities/imageeditor/editor/editorwindow.cpp:418
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option can be used to zoom the image to the current selection area."
@@ -62375,14 +62375,14 @@ msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr "See võimaldab pilti suurendada valitud ala suuruseks."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:474
+#: core/utilities/imageeditor/editor/editorwindow.cpp:443
 #, fuzzy, kde-format
 #| msgid "Under-Exposure Indicator"
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Alasärituse indikaator"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:476
+#: core/utilities/imageeditor/editor/editorwindow.cpp:445
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to display black overlaid on the image. This will help "
@@ -62394,14 +62394,14 @@ msgid ""
 msgstr ""
 "Selle valimisel tähistatakse sihtpildi eelvaatlusel alasäritusega pikslid."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:484
+#: core/utilities/imageeditor/editor/editorwindow.cpp:453
 #, fuzzy, kde-format
 #| msgid "Over-Exposure Indicator"
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Ülesärituse indikaator"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:486
+#: core/utilities/imageeditor/editor/editorwindow.cpp:455
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to display white overlaid on the image. This will help "
@@ -62413,7 +62413,7 @@ msgid ""
 msgstr ""
 "Selle valimisel tähistatakse sihtpildi eelvaatlusel ülesäritusega pikslid."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:463
 #: core/utilities/import/main/importui.cpp:497
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
@@ -62421,27 +62421,27 @@ msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Värvihalduse vaade"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:501
+#: core/utilities/imageeditor/editor/editorwindow.cpp:470
 #, fuzzy, kde-format
 #| msgid "Soft Proofing Options..."
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Väljundvaate valikud..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:506
+#: core/utilities/imageeditor/editor/editorwindow.cpp:475
 #, fuzzy, kde-format
 #| msgid "Soft Proofing View"
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Väljundvaade"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:514
+#: core/utilities/imageeditor/editor/editorwindow.cpp:483
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "Kärbi valikuni"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:517
+#: core/utilities/imageeditor/editor/editorwindow.cpp:486
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option can be used to crop the image. Select a region of the image "
@@ -62452,21 +62452,21 @@ msgid ""
 "enable this action."
 msgstr "See võimaldab pilti kärpida. Selleks tuleb valida vajalik piirkond."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:525
+#: core/utilities/imageeditor/editor/editorwindow.cpp:494
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Peegeldamine horisontaalselt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:533
+#: core/utilities/imageeditor/editor/editorwindow.cpp:502
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Peegeldamine vertikaalselt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:543
+#: core/utilities/imageeditor/editor/editorwindow.cpp:512
 #: core/utilities/import/views/importpreviewview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
@@ -62474,7 +62474,7 @@ msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Pööramine vasakule"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:551
+#: core/utilities/imageeditor/editor/editorwindow.cpp:520
 #: core/utilities/import/views/importpreviewview.cpp:189
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
@@ -62482,7 +62482,7 @@ msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Pööramine paremale"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:583
+#: core/utilities/imageeditor/editor/editorwindow.cpp:552
 #: core/utilities/import/main/importui.cpp:542
 #: core/utilities/import/main/importui.cpp:785
 #, kde-format
@@ -62490,42 +62490,42 @@ msgctxt "@action"
 msgid "Previous Image"
 msgstr "Eelmine pilt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:613
+#: core/utilities/imageeditor/editor/editorwindow.cpp:582
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@label"
 msgid "No selection"
 msgstr "Valik puudub"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:616
+#: core/utilities/imageeditor/editor/editorwindow.cpp:585
 #, fuzzy, kde-format
 #| msgid "Information about current image selection"
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Teave praegu valitud piltide kohta"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:621
+#: core/utilities/imageeditor/editor/editorwindow.cpp:590
 #, fuzzy, kde-format
 #| msgid "Information about image size"
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Teave pildi suuruse kohta"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1137
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1106
 #, fuzzy, kde-format
 #| msgid "Saving image..."
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Pildi salvestamine..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1138
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1107
 #, fuzzy, kde-format
 #| msgid "Please wait for the image to be saved..."
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Palun oota, kuni pilti salvestatakse..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1159
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1128
 #, fuzzy, kde-format
 #| msgid ""
 #| "About to overwrite file \"%1\"\n"
@@ -62538,14 +62538,14 @@ msgstr ""
 "Kavatsed kirjutada üle faili \"%1\"\n"
 "Kas oled kindel?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1164
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1133
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Hoiatus"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1274
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1243
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -62557,7 +62557,7 @@ msgid ""
 "Do you want to save it?"
 msgstr "<qt>Pilti <b>%1</b> on muudetud.<br/>Kas salvestada see?</qt>"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1425
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1394
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "The image <b>%1</b> has been modified.<br/>All changes will be lost."
@@ -62567,28 +62567,28 @@ msgid ""
 "All changes will be lost."
 msgstr "Pilti <b>%1</b> on muudetud.<br/>Kõik muudatused lähevad kaotsi."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1503
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1472
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@info"
 msgid "No selection"
 msgstr "Valik puudub"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1523
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1492
 #, fuzzy, kde-format
 #| msgid "Loading:"
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Laadimine:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1551
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1520
 #, fuzzy, kde-format
 #| msgid "Cannot load \"%1\""
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "\"%1\" laadimine nurjus"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1593
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1562
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot open the specified working space profile (\"%1\"). No color "
@@ -62603,14 +62603,14 @@ msgstr ""
 "Määratud tööruumi profiili (\"%1\") avamine nurjus. Värviteisendust ei "
 "kasutata. Palun kontrolli digiKami seadistustedialoogis värvihalduse osa."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1650
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1619
 #, fuzzy, kde-format
 #| msgid "Saving:"
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Salvestamine:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1672
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1641
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save file\n"
@@ -62629,28 +62629,28 @@ msgstr ""
 "salvestamine asukohta\n"
 "\"%2\" nurjus."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1805
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1774
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Ajutise faili avamine kataloogis \"%1\" nurjus: %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2001
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1970
 #, fuzzy, kde-format
 #| msgid "Unable to determine the format to save the target image with."
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "Vormingu tuvastamine, millesse sihtpilt salvestada, nurjus."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2008
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1977
 #, fuzzy, kde-format
 #| msgid "Cannot Save: Found file path <b>%1</b> is invalid."
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr "Salvestamine nurjus: faili asukoht <b>%1</b> on vigane."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2255
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2224
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -62660,7 +62660,7 @@ msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 "Faili <b>%1</b> salvestamine pakutud versiooni failinimega <b>%2</b> nurjus"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2299
 #, fuzzy, kde-format
 #| msgid ""
 #| "You do not have write permissions for the file named \"%1\". Are you sure "
@@ -62672,7 +62672,7 @@ msgid ""
 msgstr ""
 "Sul puudub faili nimega \"%1\" kirjutamisõigus. Kas tõesti see üle kirjutada?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2349
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2318
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -62681,28 +62681,28 @@ msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Fail nimega \"%1\" on juba olemas. Kas tõesti see üle kirjutada?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2376
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2345
 #, fuzzy, kde-format
 #| msgid "Failed to overwrite original file"
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Algse faili ülekirjutamine nurjus"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2455
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2424
 #, fuzzy, kde-format
 #| msgid "Color-Managed View is enabled."
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Värvihalduse vaade on lubatud."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2459
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2428
 #, fuzzy, kde-format
 #| msgid "Color-Managed View is disabled."
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Värvihalduse vaade on keelatud."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2433
 #, fuzzy, kde-format
 #| msgid ""
 #| "Color Management is not configured, so the Color-Managed View is not "
@@ -62714,80 +62714,80 @@ msgid ""
 msgstr ""
 "Värvihaldust pole seadistatud, seepärast ei saa kasutada värvihalduse vaadet."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2500
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2469
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Alasärituse indikaator lubatud"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2501
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2470
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Alasärituse indikaator keelatud"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2515
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2484
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Ülesärituse indikaator lubatud"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2516
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2485
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Ülesärituse indikaator keelatud"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2607
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2576
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Teisendamine"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2590
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Dekoor"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2628
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2597
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Efektid"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2635
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2604
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Värvid"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2642
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2611
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Parandamine"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2808
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2859
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2777
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2828
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "Ava rakendusega"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2820
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2789
 #, fuzzy, kde-format
 #| msgid "Other..."
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Muu..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2829
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2798
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: open with desktop application"
@@ -62816,14 +62816,14 @@ msgstr "Tundmatu"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:932
+#: core/utilities/imageeditor/main/imagewindow.cpp:942
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Aktiivses albumis pole pilte"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:933
+#: core/utilities/imageeditor/main/imagewindow.cpp:943
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -62832,7 +62832,7 @@ msgstr ""
 "Aktiivses albumis pole ühtki pilti näidata.\n"
 "Pildiredaktor pannakse kinni."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1204
+#: core/utilities/imageeditor/main/imagewindow.cpp:1216
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "File Not Available"
@@ -62840,7 +62840,7 @@ msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Fail pole kättesaadav"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1205
+#: core/utilities/imageeditor/main/imagewindow.cpp:1217
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -62897,7 +62897,7 @@ msgstr "Eemalda silt"
 msgid "Assign Labels"
 msgstr "Siltide omistamine"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:168
+#: core/utilities/imageeditor/widgets/canvas.cpp:162
 #, kde-format
 msgid ""
 "Failed to load image\n"
@@ -62916,23 +62916,23 @@ msgctxt "Preview image (after filter has been applied)"
 msgid "After"
 msgstr "Pärast"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:194
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:205
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:247
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:277
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:187
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:200
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:246
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:278
 #, kde-format
 msgid "Before"
 msgstr "Enne"
 
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:195
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:220
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:250
-#: core/utilities/imageeditor/widgets/imageregionitem.cpp:280
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:188
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:217
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:249
+#: core/utilities/imageeditor/widgets/imageregionitem.cpp:281
 #, kde-format
 msgid "After"
 msgstr "Pärast"
 
-#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:81
+#: core/utilities/imageeditor/widgets/imageregionwidget.cpp:74
 #, kde-format
 msgid ""
 "<p>Here you can see the original clip image which will be used for the "
