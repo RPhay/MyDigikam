@@ -113,7 +113,7 @@ protected:
 
 protected:
 
-    ShowfotoItemViewDelegatePrivate* const d_ptr;
+    ShowfotoItemViewDelegatePrivate* const d_ptr = nullptr;
 
 protected:
 

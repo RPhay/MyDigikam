@@ -17,16 +17,6 @@
 namespace ShowFoto
 {
 
-ShowfotoItemViewDelegatePrivate::ShowfotoItemViewDelegatePrivate()
-    : spacing      (0),
-      thumbSize    (ThumbnailSize(0)),
-      q            (nullptr),
-      displayWidget(nullptr),
-      radius       (3),                ///< painting constants
-      margin       (5)
-{
-}
-
 void ShowfotoItemViewDelegatePrivate::init(ShowfotoItemViewDelegate* const _q, QWidget* const _widget)
 {
     q             = _q;

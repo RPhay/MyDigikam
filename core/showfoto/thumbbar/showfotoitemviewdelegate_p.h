@@ -49,7 +49,7 @@ class Q_DECL_HIDDEN ShowfotoItemViewDelegatePrivate
 {
 public:
 
-    ShowfotoItemViewDelegatePrivate();
+    ShowfotoItemViewDelegatePrivate()          = default;
     virtual ~ShowfotoItemViewDelegatePrivate() = default;
 
     void init(ShowfotoItemViewDelegate* const _q, QWidget* const _widget);
@@ -59,7 +59,7 @@ public:
 
 public:
 
-    int                       spacing;
+    int                       spacing           = 0;
     QSize                     gridSize;
 
     QRect                     rect;
@@ -73,19 +73,19 @@ public:
     QFont                     fontCom;
     QFont                     fontXtra;
 
-    ThumbnailSize             thumbSize;
+    ThumbnailSize             thumbSize         = ThumbnailSize(0);
 
-    ShowfotoItemViewDelegate* q;
+    ShowfotoItemViewDelegate* q                 = nullptr;
 
-    QWidget*                  displayWidget;
+    QWidget*                  displayWidget     = nullptr;
 
     QRect                     oneRowRegRect;
     QRect                     oneRowComRect;
     QRect                     oneRowXtraRect;
 
     /// constant values for drawing
-    int                       radius;
-    int                       margin;
+    int                       radius            = 3;
+    int                       margin            = 5;
 
 private:
 

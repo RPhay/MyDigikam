@@ -53,7 +53,7 @@ public:
 
 public:
 
-    ShowfotoItemSortSettings();
+    ShowfotoItemSortSettings()  = default;
     ~ShowfotoItemSortSettings() = default;
 
     bool operator==(const ShowfotoItemSortSettings& other) const;
@@ -180,20 +180,20 @@ public:
 
 public:
 
-    CategorizationMode   categorizationMode;
-    SortOrder            categorizationSortOrder;
+    CategorizationMode   categorizationMode                 = NoCategories;
+    SortOrder            categorizationSortOrder            = DefaultOrder;
 
     /**
      * Only Ascending or Descending, never be DefaultOrder
      */
-    Qt::SortOrder        currentCategorizationSortOrder;
-    Qt::CaseSensitivity  categorizationCaseSensitivity;
+    Qt::SortOrder        currentCategorizationSortOrder     = Qt::AscendingOrder;
+    Qt::CaseSensitivity  categorizationCaseSensitivity      = Qt::CaseSensitive;
 
-    SortOrder            sortOrder;
-    SortRole             sortRole;
+    SortOrder            sortOrder                          = DefaultOrder;
+    SortRole             sortRole                           = SortByFileName;
 
-    Qt::SortOrder        currentSortOrder;
-    Qt::CaseSensitivity  sortCaseSensitivity;
+    Qt::SortOrder        currentSortOrder                   = Qt::AscendingOrder;
+    Qt::CaseSensitivity  sortCaseSensitivity                = Qt::CaseSensitive;
 };
 
 } // namespace ShowFoto

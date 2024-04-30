@@ -21,18 +21,6 @@
 namespace ShowFoto
 {
 
-ShowfotoItemSortSettings::ShowfotoItemSortSettings()
-    : categorizationMode            (NoCategories),
-      categorizationSortOrder       (DefaultOrder),
-      currentCategorizationSortOrder(Qt::AscendingOrder),
-      categorizationCaseSensitivity (Qt::CaseSensitive),
-      sortOrder                     (DefaultOrder),
-      sortRole                      (SortByFileName),
-      currentSortOrder              (Qt::AscendingOrder),
-      sortCaseSensitivity           (Qt::CaseSensitive)
-{
-}
-
 bool ShowfotoItemSortSettings::operator ==(const ShowfotoItemSortSettings& other) const
 {
     return (
