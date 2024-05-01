@@ -292,7 +292,7 @@ if(WIN32)
 
 endif()
 
-if(MSVC)
+if(WIN32)
 
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/showfoto.exe.manifest.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/showfoto.exe.manifest)
 
