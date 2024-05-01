@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 01:42+0000\n"
+"POT-Creation-Date: 2024-05-01 01:40+0000\n"
 "PO-Revision-Date: 2024-04-17 09:27+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -900,10 +900,10 @@ msgid "Open..."
 msgstr "Ouvrir…"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:47
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:136
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:162
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:150
-#: core/showfoto/stackview/showfotostackviewlist.cpp:409
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
+#: core/showfoto/stackview/showfotostackviewlist.cpp:403
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -1036,14 +1036,14 @@ msgid "Album \"%1\""
 msgstr "Album « %1 »"
 
 #: core/app/items/utils/tooltipfiller.cpp:72
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:58
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "Propriétés du fichier"
 
 #: core/app/items/utils/tooltipfiller.cpp:77
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:62
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, kde-format
 msgctxt "filename"
@@ -1053,8 +1053,8 @@ msgstr "Nom :"
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
 #: core/app/views/stack/welcomepageview.cpp:274
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
 #, kde-format
 msgid "Date:"
@@ -1064,7 +1064,7 @@ msgstr "Date :"
 #: core/dplugins/bqm/transform/crop/crop.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:195
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:75
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
 msgid "Size:"
@@ -1072,8 +1072,8 @@ msgstr "Taille :"
 
 #: core/app/items/utils/tooltipfiller.cpp:92
 #: core/app/items/utils/tooltipfiller.cpp:224
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:189
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
 #: core/utilities/import/items/importtooltipfiller.cpp:75
 #: core/utilities/import/items/importtooltipfiller.cpp:170
 #, kde-format
@@ -1088,14 +1088,14 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:110
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
 #, kde-format
 msgid "Type:"
 msgstr "Type :"
 
 #: core/app/items/utils/tooltipfiller.cpp:106
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:91
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:93
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, kde-format
 msgctxt "unknown / invalid image dimension"
@@ -1104,7 +1104,7 @@ msgstr "Inconnue"
 
 #: core/app/items/utils/tooltipfiller.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1092
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:96
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
 #, kde-format
 msgctxt "width x height (megapixels Mpx)"
@@ -1112,7 +1112,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/app/items/utils/tooltipfiller.cpp:115
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:100
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
@@ -1131,7 +1131,7 @@ msgid "Aspect Ratio:"
 msgstr "Rapport hauteur / largeur :"
 
 #: core/app/items/utils/tooltipfiller.cpp:147
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:118
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
@@ -1139,7 +1139,7 @@ msgstr "Propriétés de la photographie"
 
 #: core/app/items/utils/tooltipfiller.cpp:162
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:133
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
 msgid "Make/Model:"
@@ -1147,7 +1147,7 @@ msgstr "Marque / Modèle :"
 
 #: core/app/items/utils/tooltipfiller.cpp:168
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:136
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:139
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
 #, kde-format
 msgctxt "camera lens"
@@ -1156,14 +1156,14 @@ msgstr "Objectif :"
 
 #: core/app/items/utils/tooltipfiller.cpp:205
 #: core/app/items/utils/tooltipfiller.cpp:210
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:175
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "Créée le :"
 
 #: core/app/items/utils/tooltipfiller.cpp:232
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:197
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
@@ -1173,27 +1173,27 @@ msgstr "Ouverture / Focale :"
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/libs/video/osd/frameosd.cpp:207
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
 #: core/utilities/import/items/importtooltipfiller.cpp:184
 #, kde-format
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
 #: core/app/items/utils/tooltipfiller.cpp:245
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:210
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "Exposition / Sensibilité :"
 
 #: core/app/items/utils/tooltipfiller.cpp:272
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:237
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
 #, kde-format
 msgid "Mode/Program:"
 msgstr "Mode / Programme :"
 
 #: core/app/items/utils/tooltipfiller.cpp:285
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:250
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
 msgctxt "camera flash settings"
@@ -1201,7 +1201,7 @@ msgid "Flash:"
 msgstr "Flash :"
 
 #: core/app/items/utils/tooltipfiller.cpp:297
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:262
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
@@ -7098,10 +7098,10 @@ msgstr "High Efficiency Image Coding"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:182
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:115
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
 #: core/libs/dplugins/core/dplugindimg.cpp:58
@@ -7121,7 +7121,7 @@ msgstr "oui"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
@@ -7135,7 +7135,7 @@ msgstr "oui"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:190
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
@@ -7361,19 +7361,19 @@ msgctxt "@title"
 msgid "JPEG-2000 verification model"
 msgstr "Modèle de vérification « JPEG-2000 »"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:86
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:82
 #, kde-format
 msgctxt "@title"
 msgid "ImageMagick loader"
 msgstr "Chargeur « ImageMagick »"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:101
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr "Un chargeur d'images reposant sur les encodeurs « ImageMagick »."
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:106
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:102
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7391,7 +7391,7 @@ msgstr ""
 "para><para>Veuillez consulter la documentation <a href='https://fr.wikipedia."
 "org/wiki/ImageMagick'>ImageMagick</a> pour plus de détails.</para>"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, kde-format
@@ -7610,19 +7610,19 @@ msgstr ""
 "p><p><b>Remarque : « JPEG 2000 » est un format de compression d'images avec "
 "perte lorsque ce paramètre est utilisé.</b></p>"
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:50
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "QImage loader"
 msgstr "Chargeur « QImage »"
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:65
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on QImage plugins"
 msgstr "Un chargeur d'images reposant sur les modules externes « QImage »."
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:70
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:66
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7679,19 +7679,19 @@ msgstr ""
 "p><p><b>Remarque : « WebP » est un format de compression d'images sans perte "
 "lors de l'utilisation de ce paramètre.</b></p>"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:47
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "RAW loader"
 msgstr "Chargeur « RAW »"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:62
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libraw codec"
 msgstr "Un chargeur d'images reposant sur le codec « Libraw »."
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:67
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7722,7 +7722,7 @@ msgstr ""
 "consulter la documentation sur le <a href='https://en.wikipedia.org/wiki/"
 "Raw_image_format'> format brut d'images</a> pour plus de détails.</para>"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:121
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:117
 #, kde-format
 msgctxt "@info: can write file format"
 msgid "no"
@@ -16482,7 +16482,7 @@ msgstr "Proportions de l'image par rapport au texte :"
 
 #. i18n: ectx: property (text), widget (QLabel, fontLabel)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:192
-#: core/showfoto/setup/showfotosetuptooltip.cpp:106
+#: core/showfoto/setup/showfotosetuptooltip.cpp:86
 #, kde-format
 msgid "Font:"
 msgstr "Police :"
@@ -22401,7 +22401,7 @@ msgid "Show the image creation time/date at the bottom of the screen."
 msgstr "Affiche l'heure et la date de création de l'image au bas de l'écran."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
-#: core/showfoto/setup/showfotosetuptooltip.cpp:153
+#: core/showfoto/setup/showfotosetuptooltip.cpp:133
 #, kde-format
 msgid "Show camera aperture and focal length"
 msgstr "Afficher l'ouverture et la longueur focale de l'appareil photo"
@@ -22414,7 +22414,7 @@ msgstr ""
 "l'écran."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
-#: core/showfoto/setup/showfotosetuptooltip.cpp:157
+#: core/showfoto/setup/showfotosetuptooltip.cpp:137
 #, kde-format
 msgid "Show camera exposure and sensitivity"
 msgstr "Afficher l'exposition et la sensibilité de l'appareil photo"
@@ -22426,7 +22426,7 @@ msgstr ""
 "Affiche l'exposition et la sensibilité de l'appareil photo au bas de l'écran."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
-#: core/showfoto/setup/showfotosetuptooltip.cpp:142
+#: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
 msgstr "Afficher la marque et le modèle de l'appareil photo"
@@ -28150,7 +28150,7 @@ msgid "Album &date:"
 msgstr "&Date de l'album :"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:171
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:177
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
@@ -28165,7 +28165,7 @@ msgstr ""
 "l'album."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:173
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
@@ -28179,7 +28179,7 @@ msgstr ""
 "Utiliser ce bouton pour calculer la date moyenne des images de l'album."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:175
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
@@ -38019,7 +38019,7 @@ msgstr "Propriétés"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:443
-#: core/showfoto/setup/showfotosetup.cpp:143
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
 msgstr "Métadonnées"
@@ -38505,8 +38505,8 @@ msgid "Map"
 msgstr "Carte"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
-#: core/showfoto/stackview/showfotostackviewitem.cpp:70
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:585
+#: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
 msgctxt "@info: item properties"
 msgid "RAW Image"
@@ -43060,7 +43060,7 @@ msgstr "Mod. : %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:427
 #: core/showfoto/main/showfoto.cpp:256
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:325
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
@@ -43069,7 +43069,7 @@ msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:432
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:452
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:330
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
 #: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format
 msgctxt "unknown image resolution"
@@ -43505,7 +43505,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:324
-#: core/showfoto/setup/showfotosetup.cpp:161
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "Gestion de la couleur"
@@ -44673,7 +44673,7 @@ msgid "Image Information"
 msgstr "Informations sur l'image"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
-#: core/showfoto/setup/showfotosetuptooltip.cpp:139
+#: core/showfoto/setup/showfotosetuptooltip.cpp:119
 #: core/utilities/searchwindow/searchgroup.cpp:152
 #: core/utilities/setup/setuptooltip.cpp:175
 #, kde-format
@@ -49715,14 +49715,14 @@ msgid "The bookmark title which must be unique and not empty"
 msgstr "Le titre du signet devant être unique et non vide."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Icône :"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:196
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
@@ -49740,76 +49740,76 @@ msgctxt "@info"
 msgid "Enter bookmark path here..."
 msgstr "Saisissez ici l'emplacement du signet…"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:63
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove bookmarked places here."
 msgstr ""
 "Vous pouvez ajouter ou supprimer les emplacements marqués par des signets."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:120
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:117
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "Signets"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:143
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:126
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:139
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Load Contents"
 msgstr "Charger des contenus"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:96
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:81
 #, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Emplacements"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:105
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Add Bookmark"
 msgstr "Ajouter un signet"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:106
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:102
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:91
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Add new bookmark to the list"
 msgstr "Ajouter un nouveau signet à la liste"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:122
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Del Bookmark"
 msgstr "Supprimer un signet"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected bookmark from the list"
 msgstr "Supprimer le signet sélectionné dans la liste"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:140
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Edit Bookmark"
 msgstr "Modifier un signet"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:141
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Edit current bookmark from the list"
 msgstr "Modifier le signet courant depuis la liste"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:230
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "Ajouter un nouveau signet"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:246
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:231
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49821,49 +49821,49 @@ msgstr ""
 "%1\n"
 "existe déjà dans la liste avec le nom « %2 »."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:244
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "Confirmer la suppression du signet"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:260
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to remove the bookmark \"%1\"?"
 msgstr "Voulez-vous vraiment supprimer le signet « %1 » ?"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:357
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:343
 #, kde-format
 msgctxt "@title"
 msgid "My Bookmarks"
 msgstr "Mes signets"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:388
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:374
 #, kde-format
 msgctxt "@title"
 msgid "Usual Places"
 msgstr "Emplacements habituels"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:136
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:130
 #, kde-format
 msgctxt "@title"
 msgid "Folder-View"
 msgstr "Vue en dossiers"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:147
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:141
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
 msgstr "Pile"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:155
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:149
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add Bookmark"
 msgstr "Ajouter un signet"
 
-#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:384
+#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:366
 #, kde-format
 msgctxt "@title: file system tree"
 msgid "Folders"
@@ -49966,24 +49966,24 @@ msgstr ""
 msgid "Cannot delete \"%1\""
 msgstr "Impossible de supprimer « %1 »"
 
-#: core/showfoto/main/showfoto_open.cpp:58
+#: core/showfoto/main/showfoto_open.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
 msgstr "Ouvrir les images à partir d'un dossier"
 
-#: core/showfoto/main/showfoto_open.cpp:299
+#: core/showfoto/main/showfoto_open.cpp:303
 #, kde-format
 msgid "There is no item to process."
 msgstr "Il n'y a aucun élément à traiter."
 
-#: core/showfoto/main/showfoto_open.cpp:321
+#: core/showfoto/main/showfoto_open.cpp:325
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "Erreur lors du chargement du fichier"
 
-#: core/showfoto/main/showfoto_open.cpp:322
+#: core/showfoto/main/showfoto_open.cpp:326
 #, kde-format
 msgid ""
 "Failed to load file: \"%1\"\n"
@@ -50045,18 +50045,18 @@ msgstr "&Décoration"
 msgid "Effec&ts"
 msgstr "Effe&ts"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Configurer"
 
-#: core/showfoto/setup/showfotosetup.cpp:137
+#: core/showfoto/setup/showfotosetup.cpp:105
 #, kde-format
 msgid "Editor Window"
 msgstr "Fenêtre de l'éditeur"
 
-#: core/showfoto/setup/showfotosetup.cpp:138
+#: core/showfoto/setup/showfotosetup.cpp:106
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
@@ -50064,7 +50064,7 @@ msgstr ""
 "<qt>Paramètres de la fenêtre de l'éditeur<br/><i>Personnalisez le "
 "comportement de la fenêtre de l'éditeur</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:144
+#: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -50073,12 +50073,12 @@ msgstr ""
 "<qt>Gestionnaire intégré d'informations sur les images<br/><i>Configurez les "
 "relations entre les images et les métadonnées</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:149
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid "Tool Tip"
 msgstr "Infobulle"
 
-#: core/showfoto/setup/showfotosetup.cpp:150
+#: core/showfoto/setup/showfotosetup.cpp:118
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
@@ -50088,12 +50088,12 @@ msgstr ""
 "et en dossiers.<br/><i>Personnalisez les informations dans les infobulles "
 "d'outils.</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:155
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
 msgid "RAW Decoding"
 msgstr "Décodage RAW"
 
-#: core/showfoto/setup/showfotosetup.cpp:156
+#: core/showfoto/setup/showfotosetup.cpp:124
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -50102,7 +50102,7 @@ msgstr ""
 "<qt>Paramètres de décodage des fichiers RAW<br/><i>Personnalisez les "
 "paramètres de décodage des fichiers RAW par défaut</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:130
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -50111,12 +50111,12 @@ msgstr ""
 "<qt>Paramètres de gestion de la couleur<br/><i>Personnalisez les paramètres "
 "de gestion de la couleur</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:167
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid "Save Images"
 msgstr "Enregistrement des images"
 
-#: core/showfoto/setup/showfotosetup.cpp:168
+#: core/showfoto/setup/showfotosetup.cpp:136
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -50125,13 +50125,13 @@ msgstr ""
 "<qt>Paramètres d'enregistrement des fichiers image<br/><i>Définissez les "
 "paramètres par défaut utilisés pour enregistrer les images</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:174
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Géolocalisation"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -50141,12 +50141,12 @@ msgstr ""
 "Configuration de la géolocalisation\n"
 "Personnalisez l'apparence pour la géolocalisation des éléments"
 
-#: core/showfoto/setup/showfotosetup.cpp:182
+#: core/showfoto/setup/showfotosetup.cpp:150
 #, kde-format
 msgid "Plugins"
 msgstr "Modules externes"
 
-#: core/showfoto/setup/showfotosetup.cpp:183
+#: core/showfoto/setup/showfotosetup.cpp:151
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -50156,13 +50156,13 @@ msgstr ""
 "><i>Indiquez quels modules externes seront accessibles depuis l'application</"
 "i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:188
+#: core/showfoto/setup/showfotosetup.cpp:156
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Divers"
 
-#: core/showfoto/setup/showfotosetup.cpp:189
+#: core/showfoto/setup/showfotosetup.cpp:157
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -50171,14 +50171,14 @@ msgstr ""
 "<qt>Paramètres divers<br/><i>Personnalisez le comportement des autres "
 "composants de Showfoto</i></qt>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:91
+#: core/showfoto/setup/showfotosetupmetadata.cpp:84
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
 msgstr "Actions de rotation"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:96
+#: core/showfoto/setup/showfotosetupmetadata.cpp:89
 #, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
@@ -50186,7 +50186,7 @@ msgstr ""
 "Affiche&r les images / vignettes retournées en fonction de l'étiquette "
 "d'orientation."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:98
+#: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
@@ -50194,7 +50194,7 @@ msgstr ""
 "Définit l'étiquette d'orientation au paramètre « normal » après "
 "rotation / retournement."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:119
+#: core/showfoto/setup/showfotosetupmetadata.cpp:112
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, kde-format
 msgctxt "@info"
@@ -50206,7 +50206,7 @@ msgstr ""
 "numériques pour enregistrer des informations techniques (comme l'ouverture "
 "et la vitesse d'obturation) à propos d'une image."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:123
+#: core/showfoto/setup/showfotosetupmetadata.cpp:116
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, kde-format
 msgctxt "@info"
@@ -50217,7 +50217,7 @@ msgstr ""
 "un standard plus ancien utilisé en photographie numérique pour enregistrer "
 "des informations relatives à un photographe dans des images."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:122
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
@@ -50226,51 +50226,51 @@ msgstr ""
 "un nouveau standard utilisé en photographie numérique, conçu pour remplacer "
 "« IPTC »."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "Comportement"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:159
+#: core/showfoto/setup/showfotosetupmetadata.cpp:152
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, kde-format
 msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "ExifTool"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:151
+#: core/showfoto/setup/showfotosetupmisc.cpp:121
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
 "Ordre de tri pour les éléments des vues en barre de vignettes, en dossiers "
 "et en pile"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:155
+#: core/showfoto/setup/showfotosetupmisc.cpp:125
 #, kde-format
 msgid "Sort images by:"
 msgstr "Trier les images par :"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:157
+#: core/showfoto/setup/showfotosetupmisc.cpp:127
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "Date"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:158
+#: core/showfoto/setup/showfotosetupmisc.cpp:128
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "Nom"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:159
+#: core/showfoto/setup/showfotosetupmisc.cpp:129
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "Taille de fichier"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:160
+#: core/showfoto/setup/showfotosetupmisc.cpp:130
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
@@ -50279,12 +50279,12 @@ msgstr ""
 "Décidez ici si les images récemment chargées doivent ou non être triées par "
 "date, par nom ou par taille sur le disque."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:163
+#: core/showfoto/setup/showfotosetupmisc.cpp:133
 #, kde-format
 msgid "Reverse ordering"
 msgstr "Ordre inverse"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:164
+#: core/showfoto/setup/showfotosetupmisc.cpp:134
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
@@ -50293,17 +50293,17 @@ msgstr ""
 "Si cette option est cochée, les images récemment chargées seront triées dans "
 "l'ordre inverse."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:173
+#: core/showfoto/setup/showfotosetupmisc.cpp:143
 #, kde-format
 msgid "Thumbbar Items"
 msgstr "Éléments de la barre de vignettes"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:176
+#: core/showfoto/setup/showfotosetupmisc.cpp:146
 #, kde-format
 msgid "&Show image Format"
 msgstr "&Afficher le format de l'image"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:177
+#: core/showfoto/setup/showfotosetupmisc.cpp:147
 #: core/utilities/setup/camera/setupcamera.cpp:444
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
@@ -50311,12 +50311,12 @@ msgstr ""
 "Cochez cette option pour afficher le format de l'image sur la vignette de "
 "l'image."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:178
+#: core/showfoto/setup/showfotosetupmisc.cpp:148
 #, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "&Afficher l'indicateur de géolocalisation"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:179
+#: core/showfoto/setup/showfotosetupmisc.cpp:149
 #: core/utilities/setup/camera/setupcamera.cpp:447
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
@@ -50324,37 +50324,37 @@ msgstr ""
 "Cocher cette option pour indiquer que l'image contient des informations de "
 "géolocalisation."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:180
+#: core/showfoto/setup/showfotosetupmisc.cpp:150
 #: core/utilities/setup/misc/setupmisc.cpp:94
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Déplacer l'élément courant vers le centre de la barre des vignettes"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:189
+#: core/showfoto/setup/showfotosetupmisc.cpp:159
 #: core/utilities/setup/misc/setupmisc.cpp:116
 #, kde-format
 msgid "Updates"
 msgstr "Mises à jour"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:193
+#: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:120
 #, kde-format
 msgid "Check for new version:"
 msgstr "Vérification pour une nouvelle version :"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:195
+#: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:122
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Uniquement pour les versions stables"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:196
+#: core/showfoto/setup/showfotosetupmisc.cpp:166
 #: core/utilities/setup/misc/setupmisc.cpp:123
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Préversions hebdomadaires"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:197
+#: core/showfoto/setup/showfotosetupmisc.cpp:167
 #: core/utilities/setup/misc/setupmisc.cpp:124
 #, kde-format
 msgid ""
@@ -50373,13 +50373,13 @@ msgstr ""
 "Il est déconseillé d'utiliser les préversions dans un environnement de "
 "production, puisque vous pouvez être confronté à des bogues."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:202
+#: core/showfoto/setup/showfotosetupmisc.cpp:172
 #: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Utiliser une version avec les symboles de débogage"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:203
+#: core/showfoto/setup/showfotosetupmisc.cpp:173
 #: core/utilities/setup/misc/setupmisc.cpp:130
 #, kde-format
 msgid ""
@@ -50393,68 +50393,68 @@ msgstr ""
 "Ce type de version est plus volumineuse mais peut aider les développeurs "
 "pour tracer des dysfonctionnements dans le débogueur."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:208
+#: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc.cpp:135
 #, kde-format
 msgid "Last check: %1"
 msgstr "Dernière vérification : %1"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:209
+#: core/showfoto/setup/showfotosetupmisc.cpp:179
 #: core/utilities/setup/misc/setupmisc.cpp:136
 #, kde-format
 msgid "Check now..."
 msgstr "Vérifier maintenant…"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:237
+#: core/showfoto/setup/showfotosetupmisc.cpp:207
 #: core/utilities/setup/misc/setupmisc.cpp:192
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "Comportement"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:244
+#: core/showfoto/setup/showfotosetupmisc.cpp:214
 #: core/utilities/setup/misc/setupmisc.cpp:199
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "&Afficher l'écran d'accueil au démarrage"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:245
+#: core/showfoto/setup/showfotosetupmisc.cpp:215
 #, kde-format
 msgid "Use native file dialogs from the system"
 msgstr "Utiliser les boîtes de dialogue natives du système"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:248
+#: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/misc/setupmisc.cpp:204
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Titre de l'onglet de la barre latérale :"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:250
+#: core/showfoto/setup/showfotosetupmisc.cpp:220
 #: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Seulement pour l'onglet actif"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:251
+#: core/showfoto/setup/showfotosetupmisc.cpp:221
 #: core/utilities/setup/misc/setupmisc.cpp:207
 #, kde-format
 msgid "For All Tabs"
 msgstr "Pour tous les onglets"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:252
+#: core/showfoto/setup/showfotosetupmisc.cpp:222
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 "Cochez cette option pour configurer la visibilité du titre des onglets des "
 "barres latérales."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:255
+#: core/showfoto/setup/showfotosetupmisc.cpp:225
 #: core/utilities/setup/misc/setupmisc.cpp:212
 #, kde-format
 msgid "Widget style:"
 msgstr "Style des composants graphiques :"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
+#: core/showfoto/setup/showfotosetupmisc.cpp:227
 #: core/utilities/setup/misc/setupmisc.cpp:214
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
@@ -50462,115 +50462,115 @@ msgstr ""
 "Cochez cette option pour choisir la décoration et l'apparence des fenêtres "
 "par défaut."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:279
+#: core/showfoto/setup/showfotosetupmisc.cpp:249
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Thème d'icônes (redémarrage nécessaire) :"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:281
+#: core/showfoto/setup/showfotosetupmisc.cpp:251
 #: core/utilities/setup/misc/setupmisc.cpp:238
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Cochez cette option pour choisir le thème d'icônes par défaut."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:285
+#: core/showfoto/setup/showfotosetupmisc.cpp:255
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:286
+#: core/showfoto/setup/showfotosetupmisc.cpp:256
 #: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:287
+#: core/showfoto/setup/showfotosetupmisc.cpp:257
 #: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze Dark"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:258
 #: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:289
+#: core/showfoto/setup/showfotosetupmisc.cpp:259
 #: core/utilities/setup/misc/setupmisc.cpp:246
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:290
+#: core/showfoto/setup/showfotosetupmisc.cpp:260
 #: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Humanité"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:291
+#: core/showfoto/setup/showfotosetupmisc.cpp:261
 #: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/showfoto/setup/showfotosetupmisc.cpp:284
 #: core/utilities/setup/misc/setupmisc.cpp:271
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Utiliser le thème d'icônes du système"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:321
+#: core/showfoto/setup/showfotosetupmisc.cpp:291
 #: core/utilities/setup/misc/setupmisc.cpp:278
 #, kde-format
 msgid "Application font:"
 msgstr "Police de l'application :"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:322
+#: core/showfoto/setup/showfotosetupmisc.cpp:292
 #: core/utilities/setup/misc/setupmisc.cpp:279
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
 "Définissez ici la police utilisée pour afficher du texte dans l'application."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/showfoto/setup/showfotosetupmisc.cpp:306
 #: core/utilities/setup/misc/setupmisc.cpp:294
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Apparence"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:344
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc.cpp:361
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Vérification orthographique"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:350
+#: core/showfoto/setup/showfotosetupmisc.cpp:320
 #: core/utilities/setup/misc/setupmisc.cpp:367
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Internationaliser"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:356
+#: core/showfoto/setup/showfotosetupmisc.cpp:326
 #: core/utilities/setup/misc/setupmisc.cpp:373
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Système"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:388
+#: core/showfoto/setup/showfotosetupmisc.cpp:360
 #: core/utilities/setup/misc/setupmisc.cpp:406
 #, kde-format
 msgid ""
@@ -50589,32 +50589,32 @@ msgstr ""
 "savez ce que vous faites.\n"
 "Voulez-vous vraiment continuer ?"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:68
+#: core/showfoto/setup/showfotosetupplugins.cpp:62
 #, kde-format
 msgctxt "@title:tab generic plugins list"
 msgid "Generic"
 msgstr "Générique"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:74
+#: core/showfoto/setup/showfotosetupplugins.cpp:68
 #, kde-format
 msgctxt "@title:tab editor plugins list"
 msgid "Image Editor"
 msgstr "Éditeur d'images"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:80
+#: core/showfoto/setup/showfotosetupplugins.cpp:74
 #, kde-format
 msgctxt "@title:tab loader plugins list"
 msgid "Image Loaders"
 msgstr "Chargeurs d'images"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:102
+#: core/showfoto/setup/showfotosetuptooltip.cpp:82
 #, kde-format
 msgid "Show Items' Toolti&ps With Thumbbar and Folder-View"
 msgstr ""
 "Afficher les astuces des éléments dans les vues en barre de vignettes et en "
 "dossiers"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:103
+#: core/showfoto/setup/showfotosetuptooltip.cpp:83
 #, kde-format
 msgid ""
 "Set this option to display the image information when the mouse hovers over "
@@ -50624,73 +50624,73 @@ msgstr ""
 "d'un survol de souris au dessus d'une barre de vignettes ou d'un élément de "
 "la vue en dossiers."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:107
+#: core/showfoto/setup/showfotosetuptooltip.cpp:87
 #, kde-format
 msgid "Select here the font used to display text in tooltips."
 msgstr ""
 "Définissez ici la police utilisée pour afficher du texte dans les infobulles."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:111
+#: core/showfoto/setup/showfotosetuptooltip.cpp:91
 #, kde-format
 msgid "File/Image Information"
 msgstr "Informations sur le fichier / l'image"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:114
+#: core/showfoto/setup/showfotosetuptooltip.cpp:94
 #, kde-format
 msgid "Show file name"
 msgstr "Afficher le nom du fichier"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:115
+#: core/showfoto/setup/showfotosetuptooltip.cpp:95
 #: core/utilities/setup/setuptooltip.cpp:147
 #, kde-format
 msgid "Set this option to display the image file name."
 msgstr "Cochez cette option pour afficher le nom du fichier image."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:117
+#: core/showfoto/setup/showfotosetuptooltip.cpp:97
 #, kde-format
 msgid "Show file date"
 msgstr "Afficher la date du fichier"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:118
+#: core/showfoto/setup/showfotosetuptooltip.cpp:98
 #: core/utilities/setup/setuptooltip.cpp:150
 #, kde-format
 msgid "Set this option to display the image file date."
 msgstr "Cochez cette option pour afficher la date du fichier image."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:120
+#: core/showfoto/setup/showfotosetuptooltip.cpp:100
 #, kde-format
 msgid "Show file size"
 msgstr "Afficher la taille du fichier"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:121
+#: core/showfoto/setup/showfotosetuptooltip.cpp:101
 #: core/utilities/setup/setuptooltip.cpp:153
 #, kde-format
 msgid "Set this option to display the image file size."
 msgstr "Cochez cette option pour afficher la taille du fichier image."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:123
+#: core/showfoto/setup/showfotosetuptooltip.cpp:103
 #, kde-format
 msgid "Show image type"
 msgstr "Afficher le type de l'image"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:124
+#: core/showfoto/setup/showfotosetuptooltip.cpp:104
 #: core/utilities/setup/setuptooltip.cpp:156
 #, kde-format
 msgid "Set this option to display the image type."
 msgstr "Cochez cette option pour afficher le type de l'image."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:126
+#: core/showfoto/setup/showfotosetuptooltip.cpp:106
 #, kde-format
 msgid "Show image dimensions"
 msgstr "Afficher les dimensions de l'image"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:127
+#: core/showfoto/setup/showfotosetuptooltip.cpp:107
 #: core/utilities/setup/setuptooltip.cpp:159
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr "Cochez cette option pour afficher les dimensions de l'image en pixels."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:143
+#: core/showfoto/setup/showfotosetuptooltip.cpp:123
 #: core/utilities/setup/setuptooltip.cpp:179
 #: core/utilities/setup/setuptooltip.cpp:359
 #, kde-format
@@ -50701,14 +50701,14 @@ msgstr ""
 "Cochez cette option pour afficher la marque et le modèle de l'appareil avec "
 "lequel la photo a été prise."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:146
+#: core/showfoto/setup/showfotosetuptooltip.cpp:126
 #: core/utilities/setup/setuptooltip.cpp:182
 #: core/utilities/setup/setuptooltip.cpp:362
 #, kde-format
 msgid "Camera lens model"
 msgstr "Modèle de l'objectif"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:147
+#: core/showfoto/setup/showfotosetuptooltip.cpp:127
 #: core/utilities/setup/setuptooltip.cpp:183
 #: core/utilities/setup/setuptooltip.cpp:363
 #, kde-format
@@ -50718,19 +50718,19 @@ msgstr ""
 "Cochez cette option pour afficher le modèle d'objectif avec lequel la photo "
 "a été prise."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:150
+#: core/showfoto/setup/showfotosetuptooltip.cpp:130
 #, kde-format
 msgid "Show camera date"
 msgstr "Afficher la date de l'appareil photo"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:151
+#: core/showfoto/setup/showfotosetuptooltip.cpp:131
 #: core/utilities/setup/setuptooltip.cpp:187
 #, kde-format
 msgid "Set this option to display the date when the image was taken."
 msgstr ""
 "Cochez cette option pour afficher la date à laquelle la photo a été prise."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:154
+#: core/showfoto/setup/showfotosetuptooltip.cpp:134
 #: core/utilities/setup/setuptooltip.cpp:190
 #: core/utilities/setup/setuptooltip.cpp:367
 #, kde-format
@@ -50741,7 +50741,7 @@ msgstr ""
 "Cochez cette option pour afficher les paramètres d'ouverture et de focale de "
 "l'appareil photo utilisé pour prendre le cliché."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:158
+#: core/showfoto/setup/showfotosetuptooltip.cpp:138
 #: core/utilities/setup/setuptooltip.cpp:194
 #: core/utilities/setup/setuptooltip.cpp:371
 #, kde-format
@@ -50752,12 +50752,12 @@ msgstr ""
 "Cochez cette option pour afficher l'exposition et la sensibilité de "
 "l'appareil photo utilisé pour prendre le cliché."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:161
+#: core/showfoto/setup/showfotosetuptooltip.cpp:141
 #, kde-format
 msgid "Show camera mode and program"
 msgstr "Afficher le mode et le programme de l'appareil photo"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:162
+#: core/showfoto/setup/showfotosetuptooltip.cpp:142
 #: core/utilities/setup/setuptooltip.cpp:198
 #, kde-format
 msgid ""
@@ -50767,12 +50767,12 @@ msgstr ""
 "Cochez cette option pour afficher le mode et le programme de l'appareil "
 "photo utilisé pour prendre le cliché."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:165
+#: core/showfoto/setup/showfotosetuptooltip.cpp:145
 #, kde-format
 msgid "Show camera flash settings"
 msgstr "Afficher les paramètres de flash de l'appareil photo"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:166
+#: core/showfoto/setup/showfotosetuptooltip.cpp:146
 #: core/utilities/setup/setuptooltip.cpp:202
 #: core/utilities/setup/setuptooltip.cpp:375
 #, kde-format
@@ -50782,12 +50782,12 @@ msgstr ""
 "Cochez cette option pour afficher les paramètres de flash de l'appareil "
 "photo utilisé pour prendre le cliché."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:169
+#: core/showfoto/setup/showfotosetuptooltip.cpp:149
 #, kde-format
 msgid "Show camera white balance settings"
 msgstr "Afficher les paramètres de balance des blancs"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:170
+#: core/showfoto/setup/showfotosetuptooltip.cpp:150
 #: core/utilities/setup/setuptooltip.cpp:206
 #: core/utilities/setup/setuptooltip.cpp:379
 #, kde-format
@@ -50798,91 +50798,91 @@ msgstr ""
 "Cochez cette option pour afficher les paramètres de balance des blancs de "
 "l'appareil photo utilisé pour prendre le cliché."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:98
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
 msgstr "Mes favoris"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:213
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "Propriétés du dossier de favoris"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Nom :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:218
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Hiérarchie :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:251
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "Propriétés de l'élément de favori"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Nom :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:256
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Créée le :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:242
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:259
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Hiérarchie :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:245
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:262
 #, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Éléments :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:248
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:265
 #, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
 msgstr "Description :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:147
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:123
 #, kde-format
 msgctxt "@label: favorite item title properties"
 msgid "&Name:"
 msgstr "&Nom :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:151
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
 msgstr "Saisissez ici le nom de l'entrée de favori..."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:152
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "The favorite item name which must be unique and not empty"
 msgstr "Le nom de l'élément de favori devant être unique et non vide."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:134
 #, kde-format
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
 msgstr "Hiérarchie :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:161
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
@@ -50890,25 +50890,25 @@ msgstr ""
 "La hiérarchie des entrées de favoris devant être unique dans l'affichage en "
 "arborescence."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:142
 #, kde-format
 msgctxt "@label: favorite entry type properties"
 msgid "Type:"
 msgstr "Type :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:169
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:145
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Folder"
 msgstr "Dossier de favoris"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:170
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:146
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Item"
 msgstr "Élément de favori"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:172
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50921,25 +50921,25 @@ msgstr ""
 "Un « Dossier favori » est une simple entrée dans la hiérarchie sans "
 "propriété supplémentaire."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:156
 #, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
 msgstr "&Description :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:184
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
 msgstr "Saisissez ici la description de l'élément de favori…"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:190
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
 #, kde-format
 msgctxt "@label: favorite item date properties"
 msgid "&Created:"
 msgstr "&Créé le :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50948,7 +50948,7 @@ msgstr ""
 "Sélectionnez la date de l'élément préféré. Par défaut, le jour de la "
 "création de l'élément est attribué."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:202
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from the list."
@@ -50956,14 +50956,14 @@ msgstr ""
 "Utiliser ce bouton pour sélectionner la date de l'image la plus ancienne de "
 "la liste."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:204
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from the list."
 msgstr ""
 "Utiliser ce bouton pour sélectionner la date moyenne des images de la liste."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:206
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from the list."
@@ -50971,7 +50971,7 @@ msgstr ""
 "Utiliser ce bouton pour sélectionner la date de l'image la plus récente de "
 "la liste."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:216
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid "Select here the icon to use for this favorite item in tree-view."
@@ -50979,7 +50979,7 @@ msgstr ""
 "Sélectionnez ici l'icône à utiliser pour cet élément de favori dans la vue "
 "en arborescence."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:221
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "Assign favorite item icon to default in tree-view."
@@ -50987,43 +50987,43 @@ msgstr ""
 "Assignez une icône d'un élément de favori par défaut dans l'affichage en "
 "arborescence."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:210
 #, kde-format
 msgctxt "@label: favorites item file properties"
 msgid "&Items:"
 msgstr "Élém&ents :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:248
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:224
 #, kde-format
 msgctxt "@title:column file name"
 msgid "Name"
 msgstr "Nom"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:249
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:225
 #, kde-format
 msgctxt "@title:column file size"
 msgid "Size"
 msgstr "Taille"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:250
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
 #, kde-format
 msgctxt "@title:column file type-mime"
 msgid "Type"
 msgstr "Type"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:251
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
 #, kde-format
 msgctxt "@title:column file date"
 msgid "Date"
 msgstr "Date"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:252
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
 #, kde-format
 msgctxt "@title:column file path"
 msgid "Path"
 msgstr "Emplacement"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:254
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51036,39 +51036,39 @@ msgstr ""
 "l'éditeur lors de l'ouverture du favori. Si aucun n'est sélectionné, le "
 "premier de la liste sera affiché."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "Remarque : le nom de l'élément favori ne peut être vide !"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:358
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr ""
 "Remarque : la liste des fichiers pour l'élément favori ne peut être vide !"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:362
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr ""
 "Remarque : le nom de l'élément favori existe déjà dans l'arborescence !"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:392
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "Remarque : le nom du dossier du favori ne peut être vide !"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:396
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Remarque : un nom de dossier favori existe déjà dans l'arborescence !"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:412
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -51076,110 +51076,110 @@ msgid_plural "%1 files"
 msgstr[0] "Fichier %1 :"
 msgstr[1] "%1 fichiers :"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:671
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Nouveau élément de favori"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Modifier un élément de favori"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:682
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Nouveau dossier de favoris"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:686
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Modifier le dossier préféré"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:743
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Impossible de calculer une moyenne"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:744
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
 msgstr "Impossible de calculer la date moyenne pour cet élément de favori."
 
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:69
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove favorite stacks here."
 msgstr "Vous pouvez ici, ajouter ou supprimer les ensembles de favoris."
 
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:92
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:117
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:86
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Favoris"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:101
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Add Favorite"
 msgstr "Ajouter un favori"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:119
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
 msgstr "Ajouter un sous-dossier"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:120
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
 msgstr "Ajouter un nouveau sous-dossier à la liste"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:137
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "Delete Item"
 msgstr "Supprimer un élément"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:138
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
 msgstr "Supprimer les éléments sélectionnés de la liste"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:155
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Edit Item"
 msgstr "Modifier un élément"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
 #, kde-format
 msgctxt "@info"
 msgid "Edit current item from the list"
 msgstr "Modifier l'élément courant de la liste"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:173
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:167
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
 msgstr "Rechercher dans les favoris…"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:359
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:353
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "Confirmer la suppression de l'élément"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:360
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51189,91 +51189,91 @@ msgstr ""
 "Voulez-vous vraiment supprimer l'élément « %1 », \n"
 "et les éventuels éléments qu'il contient ?"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:672
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:666
 #, kde-format
 msgctxt "@title"
 msgid "Unnamed"
 msgstr "Non nommé"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:89
+#: core/showfoto/stackview/showfotostackviewlist.cpp:83
 #, kde-format
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Nom"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:90
+#: core/showfoto/stackview/showfotostackviewlist.cpp:84
 #, kde-format
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Taille"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:91
+#: core/showfoto/stackview/showfotostackviewlist.cpp:85
 #, kde-format
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Type"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:92
+#: core/showfoto/stackview/showfotostackviewlist.cpp:86
 #, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Date"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:344
+#: core/showfoto/stackview/showfotostackviewlist.cpp:338
 #, kde-format
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Vue en empilage"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:346
+#: core/showfoto/stackview/showfotostackviewlist.cpp:340
 #, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Taille d'icône"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:351
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Petit (%1 x %2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:355
+#: core/showfoto/stackview/showfotostackviewlist.cpp:349
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Moyen (%1 x %2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:359
+#: core/showfoto/stackview/showfotostackviewlist.cpp:353
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Grand (%1 x %2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:363
+#: core/showfoto/stackview/showfotostackviewlist.cpp:357
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "Très grand (%1 par %2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:402
+#: core/showfoto/stackview/showfotostackviewlist.cpp:396
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Ajouter comme favori"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:416
+#: core/showfoto/stackview/showfotostackviewlist.cpp:410
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Effacer tous les éléments"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:424
+#: core/showfoto/stackview/showfotostackviewlist.cpp:418
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "Supprimer des éléments"
 
-#: core/showfoto/stackview/showfotostackviewsidebar.cpp:219
+#: core/showfoto/stackview/showfotostackviewsidebar.cpp:212
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
@@ -51285,7 +51285,7 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "&Annuler"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:263
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
 #: core/utilities/import/items/itemviewimportdelegate.cpp:320
 #, kde-format
 msgctxt "date of image creation"

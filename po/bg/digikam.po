@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 01:42+0000\n"
+"POT-Creation-Date: 2024-05-01 01:40+0000\n"
 "PO-Revision-Date: 2024-04-22 09:32+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -862,10 +862,10 @@ msgid "Open..."
 msgstr "Отваряне..."
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:47
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:136
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:162
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:150
-#: core/showfoto/stackview/showfotostackviewlist.cpp:409
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
+#: core/showfoto/stackview/showfotostackviewlist.cpp:403
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -998,14 +998,14 @@ msgid "Album \"%1\""
 msgstr "Албум \"%1\""
 
 #: core/app/items/utils/tooltipfiller.cpp:72
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:58
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "Информация за файла"
 
 #: core/app/items/utils/tooltipfiller.cpp:77
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:62
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, kde-format
 msgctxt "filename"
@@ -1015,8 +1015,8 @@ msgstr "Име:"
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
 #: core/app/views/stack/welcomepageview.cpp:274
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
 #, kde-format
 msgid "Date:"
@@ -1026,7 +1026,7 @@ msgstr "Дата:"
 #: core/dplugins/bqm/transform/crop/crop.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:195
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:75
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
 msgid "Size:"
@@ -1034,8 +1034,8 @@ msgstr "Големина:"
 
 #: core/app/items/utils/tooltipfiller.cpp:92
 #: core/app/items/utils/tooltipfiller.cpp:224
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:189
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
 #: core/utilities/import/items/importtooltipfiller.cpp:75
 #: core/utilities/import/items/importtooltipfiller.cpp:170
 #, kde-format
@@ -1050,14 +1050,14 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:110
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
 #, kde-format
 msgid "Type:"
 msgstr "Вид:"
 
 #: core/app/items/utils/tooltipfiller.cpp:106
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:91
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:93
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, kde-format
 msgctxt "unknown / invalid image dimension"
@@ -1066,7 +1066,7 @@ msgstr "Непознат"
 
 #: core/app/items/utils/tooltipfiller.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1092
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:96
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
 #, kde-format
 msgctxt "width x height (megapixels Mpx)"
@@ -1074,7 +1074,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1 на %2 (%3 Мп)"
 
 #: core/app/items/utils/tooltipfiller.cpp:115
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:100
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
@@ -1093,7 +1093,7 @@ msgid "Aspect Ratio:"
 msgstr "Съотношение:"
 
 #: core/app/items/utils/tooltipfiller.cpp:147
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:118
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
@@ -1101,7 +1101,7 @@ msgstr "Данни за снимката"
 
 #: core/app/items/utils/tooltipfiller.cpp:162
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:133
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
 msgid "Make/Model:"
@@ -1109,7 +1109,7 @@ msgstr "Марка и модел:"
 
 #: core/app/items/utils/tooltipfiller.cpp:168
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:136
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:139
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
 #, kde-format
 msgctxt "camera lens"
@@ -1118,14 +1118,14 @@ msgstr "Обектив:"
 
 #: core/app/items/utils/tooltipfiller.cpp:205
 #: core/app/items/utils/tooltipfiller.cpp:210
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:175
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "Създадено на:"
 
 #: core/app/items/utils/tooltipfiller.cpp:232
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:197
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
@@ -1135,27 +1135,27 @@ msgstr "Бленда и фокусно разстояние:"
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/libs/video/osd/frameosd.cpp:207
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
 #: core/utilities/import/items/importtooltipfiller.cpp:184
 #, kde-format
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
 #: core/app/items/utils/tooltipfiller.cpp:245
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:210
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "Експозиция/Чувствителност:"
 
 #: core/app/items/utils/tooltipfiller.cpp:272
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:237
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
 #, kde-format
 msgid "Mode/Program:"
 msgstr "Режим или програма:"
 
 #: core/app/items/utils/tooltipfiller.cpp:285
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:250
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
 msgctxt "camera flash settings"
@@ -1163,7 +1163,7 @@ msgid "Flash:"
 msgstr "Светкавица:"
 
 #: core/app/items/utils/tooltipfiller.cpp:297
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:262
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
@@ -6992,10 +6992,10 @@ msgstr "Високоефективно кодиране на изображен�
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:182
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:115
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
 #: core/libs/dplugins/core/dplugindimg.cpp:58
@@ -7015,7 +7015,7 @@ msgstr "да"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
@@ -7029,7 +7029,7 @@ msgstr "да"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:190
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
@@ -7251,19 +7251,19 @@ msgctxt "@title"
 msgid "JPEG-2000 verification model"
 msgstr "Модел за проверка на JPEG-2000"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:86
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:82
 #, kde-format
 msgctxt "@title"
 msgid "ImageMagick loader"
 msgstr "Зареждане на ImageMagick"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:101
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr "Програма за зареждане на изображения, базирана на ImageMagick"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:106
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:102
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7281,7 +7281,7 @@ msgstr ""
 "org/wiki/imagemagick'> документация на ImageMagick</a> за подробности.</"
 "para> "
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, kde-format
@@ -7495,19 +7495,19 @@ msgstr ""
 "Забележка: JPEG XL не е формат на компресия на изображение без загуба, "
 "когато използвате тази настройка. </b></p> "
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:50
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "QImage loader"
 msgstr "Зареждане на QImage"
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:65
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on QImage plugins"
 msgstr "Програма за зареждане на изображения, базирана на приставки QImage"
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:70
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:66
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7562,19 +7562,19 @@ msgstr ""
 "Забележка: WebP не е формат на компресия на изображение без загуба, когато "
 "използвате тази настройка. </b></p>"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:47
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "RAW loader"
 msgstr "Зареждане на RAW"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:62
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libraw codec"
 msgstr "Програма за зареждане на изображения, базирана на кодека Libraw"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:67
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7604,7 +7604,7 @@ msgstr ""
 "Raw_image_format '> Документация на файл с RAW изображения </a> за "
 "подробности. </para>"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:121
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:117
 #, kde-format
 msgctxt "@info: can write file format"
 msgid "no"
@@ -16358,7 +16358,7 @@ msgstr "Съотношение на изображението към текст
 
 #. i18n: ectx: property (text), widget (QLabel, fontLabel)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:192
-#: core/showfoto/setup/showfotosetuptooltip.cpp:106
+#: core/showfoto/setup/showfotosetuptooltip.cpp:86
 #, kde-format
 msgid "Font:"
 msgstr "Шрифт:"
@@ -22236,7 +22236,7 @@ msgstr ""
 "екрана."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
-#: core/showfoto/setup/showfotosetuptooltip.cpp:153
+#: core/showfoto/setup/showfotosetuptooltip.cpp:133
 #, kde-format
 msgid "Show camera aperture and focal length"
 msgstr "Показване на блендата и фокусното разстояние на камерата"
@@ -22249,7 +22249,7 @@ msgstr ""
 "екрана."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
-#: core/showfoto/setup/showfotosetuptooltip.cpp:157
+#: core/showfoto/setup/showfotosetuptooltip.cpp:137
 #, kde-format
 msgid "Show camera exposure and sensitivity"
 msgstr "Показване на експозицията и чувствителността"
@@ -22262,7 +22262,7 @@ msgstr ""
 "екрана."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
-#: core/showfoto/setup/showfotosetuptooltip.cpp:142
+#: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
 msgstr "Показване марката и модела на апарата"
@@ -27949,7 +27949,7 @@ msgid "Album &date:"
 msgstr "Дата на &албум:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:171
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:177
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
@@ -27964,7 +27964,7 @@ msgstr ""
 "албума."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:173
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
@@ -27979,7 +27979,7 @@ msgstr ""
 "албума."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:175
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
@@ -37732,7 +37732,7 @@ msgstr "Настройки"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:443
-#: core/showfoto/setup/showfotosetup.cpp:143
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
 msgstr "Метаданни"
@@ -38215,8 +38215,8 @@ msgid "Map"
 msgstr "Карта"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
-#: core/showfoto/stackview/showfotostackviewitem.cpp:70
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:585
+#: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
 msgctxt "@info: item properties"
 msgid "RAW Image"
@@ -42738,7 +42738,7 @@ msgstr "Мод.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:427
 #: core/showfoto/main/showfoto.cpp:256
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:325
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
@@ -42747,7 +42747,7 @@ msgstr "%1 на %2 (%3 Мп)"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:432
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:452
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:330
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
 #: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format
 msgctxt "unknown image resolution"
@@ -43177,7 +43177,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:324
-#: core/showfoto/setup/showfotosetup.cpp:161
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "Управление на цветовете"
@@ -44346,7 +44346,7 @@ msgid "Image Information"
 msgstr "Данни на изображението"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
-#: core/showfoto/setup/showfotosetuptooltip.cpp:139
+#: core/showfoto/setup/showfotosetuptooltip.cpp:119
 #: core/utilities/searchwindow/searchgroup.cpp:152
 #: core/utilities/setup/setuptooltip.cpp:175
 #, kde-format
@@ -49371,14 +49371,14 @@ msgid "The bookmark title which must be unique and not empty"
 msgstr "Заглавието на отметката, което трябва да е уникално и да не е празно"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Икона:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:196
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
@@ -49396,75 +49396,75 @@ msgctxt "@info"
 msgid "Enter bookmark path here..."
 msgstr "Въведете пътя на отметките тук..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:63
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove bookmarked places here."
 msgstr "Тук можете да добавяте или премахвате места с отметки."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:120
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:117
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "Отметки"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:143
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:126
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:139
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Load Contents"
 msgstr "Зареждане на съдържанието"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:96
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:81
 #, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Места"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:105
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Add Bookmark"
 msgstr "Добавяне на отметка"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:106
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:102
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:91
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Add new bookmark to the list"
 msgstr "Добавяне на нов маркер в списъка"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:122
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Del Bookmark"
 msgstr "Изтриване на отметка"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected bookmark from the list"
 msgstr "Премахване на избрана отметка от списъка"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:140
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Edit Bookmark"
 msgstr "Редактиране на отметки"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:141
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Edit current bookmark from the list"
 msgstr "Редактиране на текущата отметка от списъка"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:230
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "Добавяне на нова отметка"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:246
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:231
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49476,49 +49476,49 @@ msgstr ""
 "%1\n"
 "вече съществува в списъка с име \"%2\"."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:244
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "Потвърждаване на изтриването на отметките"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:260
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to remove the bookmark \"%1\"?"
 msgstr "Сигурни ли сте, че искате да премахнете отметката \"%1\"?"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:357
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:343
 #, kde-format
 msgctxt "@title"
 msgid "My Bookmarks"
 msgstr "Моите отметки"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:388
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:374
 #, kde-format
 msgctxt "@title"
 msgid "Usual Places"
 msgstr "Обичайни места"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:136
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:130
 #, kde-format
 msgctxt "@title"
 msgid "Folder-View"
 msgstr "Изглед папка"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:147
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:141
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
 msgstr "Стек"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:155
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:149
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add Bookmark"
 msgstr "Добавяне на отметка"
 
-#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:384
+#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:366
 #, kde-format
 msgctxt "@title: file system tree"
 msgid "Folders"
@@ -49621,24 +49621,24 @@ msgstr ""
 msgid "Cannot delete \"%1\""
 msgstr "Не може да се изтрие \"%1\""
 
-#: core/showfoto/main/showfoto_open.cpp:58
+#: core/showfoto/main/showfoto_open.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
 msgstr "Отваряне на снимки от директория"
 
-#: core/showfoto/main/showfoto_open.cpp:299
+#: core/showfoto/main/showfoto_open.cpp:303
 #, kde-format
 msgid "There is no item to process."
 msgstr "Няма елемент за обработка."
 
-#: core/showfoto/main/showfoto_open.cpp:321
+#: core/showfoto/main/showfoto_open.cpp:325
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "Грешка при зареждане на файл"
 
-#: core/showfoto/main/showfoto_open.cpp:322
+#: core/showfoto/main/showfoto_open.cpp:326
 #, kde-format
 msgid ""
 "Failed to load file: \"%1\"\n"
@@ -49700,18 +49700,18 @@ msgstr "&Декориране"
 msgid "Effec&ts"
 msgstr "Е&фекти"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Настройки"
 
-#: core/showfoto/setup/showfotosetup.cpp:137
+#: core/showfoto/setup/showfotosetup.cpp:105
 #, kde-format
 msgid "Editor Window"
 msgstr "Прозорец на редактора"
 
-#: core/showfoto/setup/showfotosetup.cpp:138
+#: core/showfoto/setup/showfotosetup.cpp:106
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
@@ -49719,7 +49719,7 @@ msgstr ""
 "<qt>Настройки на прозорците на редактора<br/><i>Персонализирайте поведението "
 "на прозореца на редактора</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:144
+#: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -49728,12 +49728,12 @@ msgstr ""
 "<qt>Вградено управление на информацията за изображението<br/><i>Настройване "
 "на връзки между изображения и метаданни</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:149
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid "Tool Tip"
 msgstr "Подсказка"
 
-#: core/showfoto/setup/showfotosetup.cpp:150
+#: core/showfoto/setup/showfotosetup.cpp:118
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
@@ -49742,12 +49742,12 @@ msgstr ""
 "<qt>Настройки на подсказки на елементи в изгледа на миниатюри и папки<br/"
 "><i>Персонализиране на информацията в подсказките за инструменти</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:155
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW декодиране"
 
-#: core/showfoto/setup/showfotosetup.cpp:156
+#: core/showfoto/setup/showfotosetup.cpp:124
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -49756,7 +49756,7 @@ msgstr ""
 "<qt>Настройки за декодиране на RAW файлове<br/><i>Персонализиране на "
 "настройките по подразбиране за декодиране на RAW файлове</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:130
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -49765,12 +49765,12 @@ msgstr ""
 "<qt>Настройки за управление на цветовете<br/><i>Персонализиране на "
 "настройките за управление на цветовете</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:167
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid "Save Images"
 msgstr "Запазване на снимките"
 
-#: core/showfoto/setup/showfotosetup.cpp:168
+#: core/showfoto/setup/showfotosetup.cpp:136
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -49779,13 +49779,13 @@ msgstr ""
 "<qt>Настройки за запазване на файлове с изображения<br/><i>Задайте "
 "конфигурация по подразбиране, използвана за запазване на изображения</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:174
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Геолокация"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -49795,12 +49795,12 @@ msgstr ""
 "Настройки за геолокация\n"
 "Персонализиране на изгледа за геолокализиране на елементи"
 
-#: core/showfoto/setup/showfotosetup.cpp:182
+#: core/showfoto/setup/showfotosetup.cpp:150
 #, kde-format
 msgid "Plugins"
 msgstr "Приставки"
 
-#: core/showfoto/setup/showfotosetup.cpp:183
+#: core/showfoto/setup/showfotosetup.cpp:151
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -49809,13 +49809,13 @@ msgstr ""
 "<qt>Настройки за пристваки на основния интерфейс<br/><i>Задайте кои  "
 "приставки да  бъдат достъпни от приложението</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:188
+#: core/showfoto/setup/showfotosetup.cpp:156
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Разни"
 
-#: core/showfoto/setup/showfotosetup.cpp:189
+#: core/showfoto/setup/showfotosetup.cpp:157
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -49824,27 +49824,27 @@ msgstr ""
 "<qt>Различни настройки<br/><i>Персонализирайте поведението на други функции "
 "на Showfoto</i></qt>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:91
+#: core/showfoto/setup/showfotosetupmetadata.cpp:84
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
 msgstr "Действия за завъртане"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:96
+#: core/showfoto/setup/showfotosetupmetadata.cpp:89
 #, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr ""
 "Показване на изображения/тумбнайли &ротирани според етикета за ориентация."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:98
+#: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Задайте нормална ориентация на тага след завъртане/обръщане."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:119
+#: core/showfoto/setup/showfotosetupmetadata.cpp:112
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, kde-format
 msgctxt "@info"
@@ -49855,7 +49855,7 @@ msgstr ""
 "стандарт, използван днес от повечето цифрови фотоапарати за съхраняване на "
 "техническа информация (като бленда и скорост на затвора) за изображението."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:123
+#: core/showfoto/setup/showfotosetupmetadata.cpp:116
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, kde-format
 msgctxt "@info"
@@ -49866,7 +49866,7 @@ msgstr ""
 "по-стар стандарт, използван в цифровата фотография за съхраняване на "
 "фотографска информация в изображенията."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:122
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
@@ -49874,49 +49874,49 @@ msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr ""
 "нов стандарт, използван в цифровата фотография, предназначен да замени IPTC."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "Поведение"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:159
+#: core/showfoto/setup/showfotosetupmetadata.cpp:152
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, kde-format
 msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "ExifTool"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:151
+#: core/showfoto/setup/showfotosetupmisc.cpp:121
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr "Ред на подреждане на елементите в изглед миниатюри, папки и стекове"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:155
+#: core/showfoto/setup/showfotosetupmisc.cpp:125
 #, kde-format
 msgid "Sort images by:"
 msgstr "Сортиране на изображенията по:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:157
+#: core/showfoto/setup/showfotosetupmisc.cpp:127
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "Data"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:158
+#: core/showfoto/setup/showfotosetupmisc.cpp:128
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "Име"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:159
+#: core/showfoto/setup/showfotosetupmisc.cpp:129
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "Големина на файл"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:160
+#: core/showfoto/setup/showfotosetupmisc.cpp:130
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
@@ -49925,12 +49925,12 @@ msgstr ""
 "Тук изберете дали новозаредените изображения да се сортират по дата, име или "
 "размер на диска."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:163
+#: core/showfoto/setup/showfotosetupmisc.cpp:133
 #, kde-format
 msgid "Reverse ordering"
 msgstr "Обратно подреждане"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:164
+#: core/showfoto/setup/showfotosetupmisc.cpp:134
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
@@ -49939,17 +49939,17 @@ msgstr ""
 "Ако тази опция е разрешена, новозаредените изображения ще бъдат подредени в "
 "низходящ ред."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:173
+#: core/showfoto/setup/showfotosetupmisc.cpp:143
 #, kde-format
 msgid "Thumbbar Items"
 msgstr "Елементи на слотовете"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:176
+#: core/showfoto/setup/showfotosetupmisc.cpp:146
 #, kde-format
 msgid "&Show image Format"
 msgstr "&Показване на формата на изображението"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:177
+#: core/showfoto/setup/showfotosetupmisc.cpp:147
 #: core/utilities/setup/camera/setupcamera.cpp:444
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
@@ -49957,12 +49957,12 @@ msgstr ""
 "Задайте тази опция, за да показвате формата на изображението над миниатюрата "
 "на изображението."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:178
+#: core/showfoto/setup/showfotosetupmisc.cpp:148
 #, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "&Показване на индикатор на геолокация"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:179
+#: core/showfoto/setup/showfotosetupmisc.cpp:149
 #: core/utilities/setup/camera/setupcamera.cpp:447
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
@@ -49970,37 +49970,37 @@ msgstr ""
 "Задайте тази опция, за да посочите дали изображението има информация за "
 "геолокацията."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:180
+#: core/showfoto/setup/showfotosetupmisc.cpp:150
 #: core/utilities/setup/misc/setupmisc.cpp:94
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "Превъртете текущия елемент до центъра на лентата със слотове"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:189
+#: core/showfoto/setup/showfotosetupmisc.cpp:159
 #: core/utilities/setup/misc/setupmisc.cpp:116
 #, kde-format
 msgid "Updates"
 msgstr "Актуализации"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:193
+#: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:120
 #, kde-format
 msgid "Check for new version:"
 msgstr "Проверка за нова версия:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:195
+#: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:122
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "Само за стабилни версии"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:196
+#: core/showfoto/setup/showfotosetupmisc.cpp:166
 #: core/utilities/setup/misc/setupmisc.cpp:123
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "Седмични предварителни издания"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:197
+#: core/showfoto/setup/showfotosetupmisc.cpp:167
 #: core/utilities/setup/misc/setupmisc.cpp:124
 #, kde-format
 msgid ""
@@ -50019,13 +50019,13 @@ msgstr ""
 " и не се препоръчва да се използват в производството, тъй като могат да "
 "останат грешки."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:202
+#: core/showfoto/setup/showfotosetupmisc.cpp:172
 #: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "Използване на версия със символи за отстраняване на грешки"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:203
+#: core/showfoto/setup/showfotosetupmisc.cpp:173
 #: core/utilities/setup/misc/setupmisc.cpp:130
 #, kde-format
 msgid ""
@@ -50039,68 +50039,68 @@ msgstr ""
 "Тази версия е по-тежка, но може да помогне на разработчиците да проследят "
 "неизправностите в дебъгъра."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:208
+#: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc.cpp:135
 #, kde-format
 msgid "Last check: %1"
 msgstr "Последна проверка: %1"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:209
+#: core/showfoto/setup/showfotosetupmisc.cpp:179
 #: core/utilities/setup/misc/setupmisc.cpp:136
 #, kde-format
 msgid "Check now..."
 msgstr "Проверяване сега..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:237
+#: core/showfoto/setup/showfotosetupmisc.cpp:207
 #: core/utilities/setup/misc/setupmisc.cpp:192
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "Поведение"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:244
+#: core/showfoto/setup/showfotosetupmisc.cpp:214
 #: core/utilities/setup/misc/setupmisc.cpp:199
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "Показване на екран за &начално зареждане"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:245
+#: core/showfoto/setup/showfotosetupmisc.cpp:215
 #, kde-format
 msgid "Use native file dialogs from the system"
 msgstr "Използване на системните диалогови прозорци за файлови операции"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:248
+#: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/misc/setupmisc.cpp:204
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "Заглавие на раздела в страничната лента:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:250
+#: core/showfoto/setup/showfotosetupmisc.cpp:220
 #: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "Само за активен раздел"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:251
+#: core/showfoto/setup/showfotosetupmisc.cpp:221
 #: core/utilities/setup/misc/setupmisc.cpp:207
 #, kde-format
 msgid "For All Tabs"
 msgstr "За всички раздели"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:252
+#: core/showfoto/setup/showfotosetupmisc.cpp:222
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 "Задайте тази опция, за да конфигурирате как да се виждат заглавията на "
 "страничните ленти на разделите."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:255
+#: core/showfoto/setup/showfotosetupmisc.cpp:225
 #: core/utilities/setup/misc/setupmisc.cpp:212
 #, kde-format
 msgid "Widget style:"
 msgstr "Стил на уиджета:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
+#: core/showfoto/setup/showfotosetupmisc.cpp:227
 #: core/utilities/setup/misc/setupmisc.cpp:214
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
@@ -50108,115 +50108,115 @@ msgstr ""
 "Задайте тази опция, за да изберете декорацията и външния вид на прозореца по "
 "подразбиране."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:279
+#: core/showfoto/setup/showfotosetupmisc.cpp:249
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Темата на икони (променя се след рестартиране)"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:281
+#: core/showfoto/setup/showfotosetupmisc.cpp:251
 #: core/utilities/setup/misc/setupmisc.cpp:238
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Задайте тази опция, за да изберете стандартната тема на иконата."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:285
+#: core/showfoto/setup/showfotosetupmisc.cpp:255
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:286
+#: core/showfoto/setup/showfotosetupmisc.cpp:256
 #: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:287
+#: core/showfoto/setup/showfotosetupmisc.cpp:257
 #: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze Тъмен"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:258
 #: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:289
+#: core/showfoto/setup/showfotosetupmisc.cpp:259
 #: core/utilities/setup/misc/setupmisc.cpp:246
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Атмосфера"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:290
+#: core/showfoto/setup/showfotosetupmisc.cpp:260
 #: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Човечество"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:291
+#: core/showfoto/setup/showfotosetupmisc.cpp:261
 #: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/showfoto/setup/showfotosetupmisc.cpp:284
 #: core/utilities/setup/misc/setupmisc.cpp:271
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Използване на системната тема за икони"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:321
+#: core/showfoto/setup/showfotosetupmisc.cpp:291
 #: core/utilities/setup/misc/setupmisc.cpp:278
 #, kde-format
 msgid "Application font:"
 msgstr "Шрифт на приложението:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:322
+#: core/showfoto/setup/showfotosetupmisc.cpp:292
 #: core/utilities/setup/misc/setupmisc.cpp:279
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
 "Изберете тук шрифта, използван за показване на текста в цялото приложение."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/showfoto/setup/showfotosetupmisc.cpp:306
 #: core/utilities/setup/misc/setupmisc.cpp:294
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Външен вид"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:344
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc.cpp:361
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Проверка на правописа"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:350
+#: core/showfoto/setup/showfotosetupmisc.cpp:320
 #: core/utilities/setup/misc/setupmisc.cpp:367
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Локализация"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:356
+#: core/showfoto/setup/showfotosetupmisc.cpp:326
 #: core/utilities/setup/misc/setupmisc.cpp:373
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Система"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:388
+#: core/showfoto/setup/showfotosetupmisc.cpp:360
 #: core/utilities/setup/misc/setupmisc.cpp:406
 #, kde-format
 msgid ""
@@ -50234,30 +50234,30 @@ msgstr ""
 "освен ако знаете какво правите.\n"
 "Искате ли да продължите?"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:68
+#: core/showfoto/setup/showfotosetupplugins.cpp:62
 #, kde-format
 msgctxt "@title:tab generic plugins list"
 msgid "Generic"
 msgstr "Основни"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:74
+#: core/showfoto/setup/showfotosetupplugins.cpp:68
 #, kde-format
 msgctxt "@title:tab editor plugins list"
 msgid "Image Editor"
 msgstr "Редактор на изображения"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:80
+#: core/showfoto/setup/showfotosetupplugins.cpp:74
 #, kde-format
 msgctxt "@title:tab loader plugins list"
 msgid "Image Loaders"
 msgstr "Зареждане на изображения"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:102
+#: core/showfoto/setup/showfotosetuptooltip.cpp:82
 #, kde-format
 msgid "Show Items' Toolti&ps With Thumbbar and Folder-View"
 msgstr "Показване на подсказки на елементи в изглед миниатюри и папки"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:103
+#: core/showfoto/setup/showfotosetuptooltip.cpp:83
 #, kde-format
 msgid ""
 "Set this option to display the image information when the mouse hovers over "
@@ -50266,76 +50266,76 @@ msgstr ""
 "Задайте тази опция, за да показвате информацията за изображението, когато "
 "мишката се придвижва над елемент от лентата с палци или изгледа на папки."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:107
+#: core/showfoto/setup/showfotosetuptooltip.cpp:87
 #, kde-format
 msgid "Select here the font used to display text in tooltips."
 msgstr ""
 "Изберете тук шрифта, използван за показване на текста в подсказките за "
 "инструменти."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:111
+#: core/showfoto/setup/showfotosetuptooltip.cpp:91
 #, kde-format
 msgid "File/Image Information"
 msgstr "Данни на файла и изображението"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:114
+#: core/showfoto/setup/showfotosetuptooltip.cpp:94
 #, kde-format
 msgid "Show file name"
 msgstr "Показване името на файла"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:115
+#: core/showfoto/setup/showfotosetuptooltip.cpp:95
 #: core/utilities/setup/setuptooltip.cpp:147
 #, kde-format
 msgid "Set this option to display the image file name."
 msgstr "Задайте тази опция, за показване на името на файла с изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:117
+#: core/showfoto/setup/showfotosetuptooltip.cpp:97
 #, kde-format
 msgid "Show file date"
 msgstr "Показване датата на файла"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:118
+#: core/showfoto/setup/showfotosetuptooltip.cpp:98
 #: core/utilities/setup/setuptooltip.cpp:150
 #, kde-format
 msgid "Set this option to display the image file date."
 msgstr "Задайте тази опция, за показване на датата на файла с изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:120
+#: core/showfoto/setup/showfotosetuptooltip.cpp:100
 #, kde-format
 msgid "Show file size"
 msgstr "Показване големината на файла"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:121
+#: core/showfoto/setup/showfotosetuptooltip.cpp:101
 #: core/utilities/setup/setuptooltip.cpp:153
 #, kde-format
 msgid "Set this option to display the image file size."
 msgstr ""
 "Включете тази настройка за показване големината на файла с изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:123
+#: core/showfoto/setup/showfotosetuptooltip.cpp:103
 #, kde-format
 msgid "Show image type"
 msgstr "Показване типа файлове"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:124
+#: core/showfoto/setup/showfotosetuptooltip.cpp:104
 #: core/utilities/setup/setuptooltip.cpp:156
 #, kde-format
 msgid "Set this option to display the image type."
 msgstr "Задайте тази опция за показване на типа на изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:126
+#: core/showfoto/setup/showfotosetuptooltip.cpp:106
 #, kde-format
 msgid "Show image dimensions"
 msgstr "Показване размерите на снимката"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:127
+#: core/showfoto/setup/showfotosetuptooltip.cpp:107
 #: core/utilities/setup/setuptooltip.cpp:159
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr ""
 "Включете тази настройка за показване големината на изображението в точки."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:143
+#: core/showfoto/setup/showfotosetuptooltip.cpp:123
 #: core/utilities/setup/setuptooltip.cpp:179
 #: core/utilities/setup/setuptooltip.cpp:359
 #, kde-format
@@ -50346,14 +50346,14 @@ msgstr ""
 "Задайте тази опция, за да покажете марката и модела на фотоапарата, с който "
 "е направено изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:146
+#: core/showfoto/setup/showfotosetuptooltip.cpp:126
 #: core/utilities/setup/setuptooltip.cpp:182
 #: core/utilities/setup/setuptooltip.cpp:362
 #, kde-format
 msgid "Camera lens model"
 msgstr "Модел на обектива на камерата"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:147
+#: core/showfoto/setup/showfotosetuptooltip.cpp:127
 #: core/utilities/setup/setuptooltip.cpp:183
 #: core/utilities/setup/setuptooltip.cpp:363
 #, kde-format
@@ -50363,12 +50363,12 @@ msgstr ""
 "Задайте тази опция, за да се покаже моделът на обектива, с който е направено "
 "изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:150
+#: core/showfoto/setup/showfotosetuptooltip.cpp:130
 #, kde-format
 msgid "Show camera date"
 msgstr "Показване датата от фотоапарата"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:151
+#: core/showfoto/setup/showfotosetuptooltip.cpp:131
 #: core/utilities/setup/setuptooltip.cpp:187
 #, kde-format
 msgid "Set this option to display the date when the image was taken."
@@ -50376,7 +50376,7 @@ msgstr ""
 "Задайте тази опция, за да покажете датата, на която е направено "
 "изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:154
+#: core/showfoto/setup/showfotosetuptooltip.cpp:134
 #: core/utilities/setup/setuptooltip.cpp:190
 #: core/utilities/setup/setuptooltip.cpp:367
 #, kde-format
@@ -50387,7 +50387,7 @@ msgstr ""
 "Задайте тази опция, за да покажете настройките на блендата и фокуса на "
 "камерата, използвани за заснемане на изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:158
+#: core/showfoto/setup/showfotosetuptooltip.cpp:138
 #: core/utilities/setup/setuptooltip.cpp:194
 #: core/utilities/setup/setuptooltip.cpp:371
 #, kde-format
@@ -50398,12 +50398,12 @@ msgstr ""
 "Задайте тази опция, за да покажете експозицията и чувствителността на "
 "камерата, използвани за заснемане на изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:161
+#: core/showfoto/setup/showfotosetuptooltip.cpp:141
 #, kde-format
 msgid "Show camera mode and program"
 msgstr "Показване режима и програмата на апарата"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:162
+#: core/showfoto/setup/showfotosetuptooltip.cpp:142
 #: core/utilities/setup/setuptooltip.cpp:198
 #, kde-format
 msgid ""
@@ -50413,12 +50413,12 @@ msgstr ""
 "Задайте тази опция, за да покажете режима и програмата на фотоапарата, "
 "използвани за заснемане на изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:165
+#: core/showfoto/setup/showfotosetuptooltip.cpp:145
 #, kde-format
 msgid "Show camera flash settings"
 msgstr "Показване настройките на светкавицата"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:166
+#: core/showfoto/setup/showfotosetuptooltip.cpp:146
 #: core/utilities/setup/setuptooltip.cpp:202
 #: core/utilities/setup/setuptooltip.cpp:375
 #, kde-format
@@ -50428,12 +50428,12 @@ msgstr ""
 "Задайте тази опция, за да покажете настройките на светкавицата на "
 "фотоапарата, използвани за заснемане на изображението."
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:169
+#: core/showfoto/setup/showfotosetuptooltip.cpp:149
 #, kde-format
 msgid "Show camera white balance settings"
 msgstr "Показване настройката на белия баланс на апарата"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:170
+#: core/showfoto/setup/showfotosetuptooltip.cpp:150
 #: core/utilities/setup/setuptooltip.cpp:206
 #: core/utilities/setup/setuptooltip.cpp:379
 #, kde-format
@@ -50444,91 +50444,91 @@ msgstr ""
 "Задайте тази опция, за да покажете настройките на баланса на бялото на "
 "фотоапарата, използвани за заснемане на изображението."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:98
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
 msgstr "Предпочитани"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:213
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "Свойства на папка Предпочитани"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "Име:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:218
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "Йерархия:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:251
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "Свойства на Предпочитан елемент"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "Име:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:256
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "Създаден:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:242
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:259
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "Йерархия:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:245
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:262
 #, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "Елементи:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:248
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:265
 #, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
 msgstr "Описание:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:147
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:123
 #, kde-format
 msgctxt "@label: favorite item title properties"
 msgid "&Name:"
 msgstr "Им&е:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:151
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
 msgstr "Въведете името на любимата папка тук..."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:152
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "The favorite item name which must be unique and not empty"
 msgstr "Името на любимото име, което трябва да е уникално и да не е празно"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:134
 #, kde-format
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
 msgstr "Йерархия:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:161
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
@@ -50536,25 +50536,25 @@ msgstr ""
 "Любимата йерархия на влизане, която трябва да бъде уникална в оглед на "
 "дърветата"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:142
 #, kde-format
 msgctxt "@label: favorite entry type properties"
 msgid "Type:"
 msgstr "Вид:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:169
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:145
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Folder"
 msgstr "Папка Предпочитани"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:170
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:146
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Item"
 msgstr "Предпочитан елемент"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:172
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50566,25 +50566,25 @@ msgstr ""
 "свойства като дата, икона, описание и списък с изображения. А \"Предпочитана "
 "папка\" е обикновен запис в йерархията без допълнителни свойства."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:156
 #, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
 msgstr "&Описание:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:184
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
 msgstr "Въведете описание на любимия елемент тук..."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:190
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
 #, kde-format
 msgctxt "@label: favorite item date properties"
 msgid "&Created:"
 msgstr "&Създаден:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50593,7 +50593,7 @@ msgstr ""
 "Изберете дата на любимия елемент. По подразбиране се задава денят на "
 "създаване на елемента."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:202
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from the list."
@@ -50601,7 +50601,7 @@ msgstr ""
 "Използвайте този бутон, за да изберете датата на най-старото изображение от "
 "списъка."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:204
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from the list."
@@ -50609,7 +50609,7 @@ msgstr ""
 "Използвайте този бутон, за да изчислите средната дата на изображенията от "
 "списъка."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:206
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from the list."
@@ -50617,7 +50617,7 @@ msgstr ""
 "Използвайте този бутон, за да изберете датата на най-новото изображение от "
 "списъка."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:216
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid "Select here the icon to use for this favorite item in tree-view."
@@ -50625,50 +50625,50 @@ msgstr ""
 "Изберете тук иконата, която да се използва за този любим елемент в "
 "дървовидния изглед."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:221
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "Assign favorite item icon to default in tree-view."
 msgstr ""
 "Присвояване на икона на любим елемент по подразбиране в дървовидния изглед."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:210
 #, kde-format
 msgctxt "@label: favorites item file properties"
 msgid "&Items:"
 msgstr "&Елементи:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:248
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:224
 #, kde-format
 msgctxt "@title:column file name"
 msgid "Name"
 msgstr "Име"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:249
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:225
 #, kde-format
 msgctxt "@title:column file size"
 msgid "Size"
 msgstr "Размер"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:250
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
 #, kde-format
 msgctxt "@title:column file type-mime"
 msgid "Type"
 msgstr "Вид"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:251
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
 #, kde-format
 msgctxt "@title:column file date"
 msgid "Date"
 msgstr "Data"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:252
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
 #, kde-format
 msgctxt "@title:column file path"
 msgid "Path"
 msgstr "Път"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:254
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50681,13 +50681,13 @@ msgstr ""
 "когато предпочитаната папка е отворена. Ако не е избран нито един, ще се "
 "покаже първият от списъка."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "Забележка: името на предпочитания елемент не може да бъде празно!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:358
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
@@ -50695,25 +50695,25 @@ msgstr ""
 "Забележка: списъкът с предпочитания на любимия елемент не може да бъде "
 "празен!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:362
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "Забележка: името на любимия елемент вече съществува в йерархията!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:392
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "Забележка: името на любимата папка не може да бъде празно!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:396
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Забележка: името на любимата папка вече съществува в йерархията!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:412
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -50721,111 +50721,111 @@ msgid_plural "%1 files"
 msgstr[0] "%1 файл"
 msgstr[1] "%1 файлa"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:671
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Нов предпочитан елемент"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Редактиране на Предпочитани елементи"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:682
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Нова папка Предпочитани"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:686
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Редактиране на папка Предпочитани"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:743
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Не може да се изчисли средната стойност"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:744
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
 msgstr ""
 "Не може да се изчисли средната стойност на датата за този любим елемент."
 
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:69
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove favorite stacks here."
 msgstr "Тук можете да добавяте или премахвате любими стекове."
 
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:92
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:117
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:86
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Предпочитани"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:101
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Add Favorite"
 msgstr "Добавяне на фаворит"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:119
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
 msgstr "Добавяне на подпапка"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:120
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
 msgstr "Добавяне на нова подпапка в списъка"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:137
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "Delete Item"
 msgstr "Изтриване на елемент"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:138
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
 msgstr "Премахване на избран елемент от списъка"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:155
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Edit Item"
 msgstr "Редактиране на елемент"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
 #, kde-format
 msgctxt "@info"
 msgid "Edit current item from the list"
 msgstr "Редактиране на текущия елемент от списъка"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:173
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:167
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
 msgstr "Търсене в Предпочитани..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:359
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:353
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "Потвърждение на изтриването на елемента"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:360
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50835,91 +50835,91 @@ msgstr ""
 "Сигурни ли сте, че искате да премахнете елемента \"%1\"\n"
 "и всички вложени елементи, ако има такива?"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:672
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:666
 #, kde-format
 msgctxt "@title"
 msgid "Unnamed"
 msgstr "Неозаглавен"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:89
+#: core/showfoto/stackview/showfotostackviewlist.cpp:83
 #, kde-format
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "Име"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:90
+#: core/showfoto/stackview/showfotostackviewlist.cpp:84
 #, kde-format
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "Размер"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:91
+#: core/showfoto/stackview/showfotostackviewlist.cpp:85
 #, kde-format
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "Вид"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:92
+#: core/showfoto/stackview/showfotostackviewlist.cpp:86
 #, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "Data"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:344
+#: core/showfoto/stackview/showfotostackviewlist.cpp:338
 #, kde-format
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "Изглед стек"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:346
+#: core/showfoto/stackview/showfotostackviewlist.cpp:340
 #, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "Размер на икона"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:351
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "Малки (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:355
+#: core/showfoto/stackview/showfotostackviewlist.cpp:349
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "Средни (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:359
+#: core/showfoto/stackview/showfotostackviewlist.cpp:353
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "Големи (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:363
+#: core/showfoto/stackview/showfotostackviewlist.cpp:357
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "Много голяма (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:402
+#: core/showfoto/stackview/showfotostackviewlist.cpp:396
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "Добавяне като Предпочитани"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:416
+#: core/showfoto/stackview/showfotostackviewlist.cpp:410
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "Изчистване на всички елементи"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:424
+#: core/showfoto/stackview/showfotostackviewlist.cpp:418
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "Премахване на елементи"
 
-#: core/showfoto/stackview/showfotostackviewsidebar.cpp:219
+#: core/showfoto/stackview/showfotostackviewsidebar.cpp:212
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
@@ -50931,7 +50931,7 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "О&тказ"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:263
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
 #: core/utilities/import/items/itemviewimportdelegate.cpp:320
 #, kde-format
 msgctxt "date of image creation"

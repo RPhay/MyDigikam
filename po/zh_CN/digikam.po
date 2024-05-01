@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 01:42+0000\n"
+"POT-Creation-Date: 2024-05-01 01:40+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -827,10 +827,10 @@ msgid "Open..."
 msgstr "打开..."
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:47
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:136
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:162
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:150
-#: core/showfoto/stackview/showfotostackviewlist.cpp:409
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
+#: core/showfoto/stackview/showfotostackviewlist.cpp:403
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Open in File Manager"
@@ -954,14 +954,14 @@ msgid "Album \"%1\""
 msgstr "相册“%1”"
 
 #: core/app/items/utils/tooltipfiller.cpp:72
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:58
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "文件属性"
 
 #: core/app/items/utils/tooltipfiller.cpp:77
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:62
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, kde-format
 msgctxt "filename"
@@ -971,8 +971,8 @@ msgstr "名称："
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
 #: core/app/views/stack/welcomepageview.cpp:274
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
 #, kde-format
 msgid "Date:"
@@ -982,7 +982,7 @@ msgstr "日期："
 #: core/dplugins/bqm/transform/crop/crop.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:195
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:75
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
 msgid "Size:"
@@ -990,8 +990,8 @@ msgstr "大小："
 
 #: core/app/items/utils/tooltipfiller.cpp:92
 #: core/app/items/utils/tooltipfiller.cpp:224
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:189
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
 #: core/utilities/import/items/importtooltipfiller.cpp:75
 #: core/utilities/import/items/importtooltipfiller.cpp:170
 #, kde-format
@@ -1006,14 +1006,14 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:110
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
 #, kde-format
 msgid "Type:"
 msgstr "类型："
 
 #: core/app/items/utils/tooltipfiller.cpp:106
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:91
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:93
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, kde-format
 msgctxt "unknown / invalid image dimension"
@@ -1022,7 +1022,7 @@ msgstr "未知"
 
 #: core/app/items/utils/tooltipfiller.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1092
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:96
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
 #, kde-format
 msgctxt "width x height (megapixels Mpx)"
@@ -1030,7 +1030,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
 #: core/app/items/utils/tooltipfiller.cpp:115
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:100
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
@@ -1049,7 +1049,7 @@ msgid "Aspect Ratio:"
 msgstr "宽高比："
 
 #: core/app/items/utils/tooltipfiller.cpp:147
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:118
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
@@ -1057,7 +1057,7 @@ msgstr "照片属性"
 
 #: core/app/items/utils/tooltipfiller.cpp:162
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:133
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
 msgid "Make/Model:"
@@ -1065,7 +1065,7 @@ msgstr "制造商/型号："
 
 #: core/app/items/utils/tooltipfiller.cpp:168
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:136
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:139
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
 #, kde-format
 msgctxt "camera lens"
@@ -1074,14 +1074,14 @@ msgstr "镜头："
 
 #: core/app/items/utils/tooltipfiller.cpp:205
 #: core/app/items/utils/tooltipfiller.cpp:210
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:175
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
 #, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "创建日期："
 
 #: core/app/items/utils/tooltipfiller.cpp:232
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:197
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
@@ -1091,27 +1091,27 @@ msgstr "光圈/焦距："
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/libs/video/osd/frameosd.cpp:207
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
 #: core/utilities/import/items/importtooltipfiller.cpp:184
 #, kde-format
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
 #: core/app/items/utils/tooltipfiller.cpp:245
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:210
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "曝光时间/感光度："
 
 #: core/app/items/utils/tooltipfiller.cpp:272
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:237
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
 #, kde-format
 msgid "Mode/Program:"
 msgstr "模式/程序："
 
 #: core/app/items/utils/tooltipfiller.cpp:285
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:250
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, kde-format
 msgctxt "camera flash settings"
@@ -1119,7 +1119,7 @@ msgid "Flash:"
 msgstr "闪光灯："
 
 #: core/app/items/utils/tooltipfiller.cpp:297
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:262
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
@@ -6681,10 +6681,10 @@ msgstr "HEIC 高效率图像编码"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:182
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:115
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
 #: core/libs/dplugins/core/dplugindimg.cpp:58
@@ -6704,7 +6704,7 @@ msgstr "是"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
@@ -6718,7 +6718,7 @@ msgstr "是"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:190
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
@@ -6923,19 +6923,19 @@ msgctxt "@title"
 msgid "JPEG-2000 verification model"
 msgstr "JPEG-2000 验证模型"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:86
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:82
 #, kde-format
 msgctxt "@title"
 msgid "ImageMagick loader"
 msgstr "ImageMagick 加载程序"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:101
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr "基于 ImageMagick 编解码器的图像加载程序"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:106
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:102
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6951,7 +6951,7 @@ msgstr ""
 "href='https://en.wikipedia.org/wiki/ImageMagick'>ImageMagick 介绍页面</a>。</"
 "para>"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, kde-format
@@ -7148,19 +7148,19 @@ msgstr ""
 "(无压缩和大文件体积)</p><p><b>提示：在使用此选项时，JPEG XL 格式并非使用无损"
 "方式压缩图像。</b></p>"
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:50
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "QImage loader"
 msgstr "QImage 加载程序"
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:65
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on QImage plugins"
 msgstr "基于 QImage 插件的图像加载程序"
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:70
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:66
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7210,19 +7210,19 @@ msgstr ""
 "质 (无压缩和大文件体积)</p><p><b>提示：在使用此选项时，WEBP 格式并非使用无损"
 "方式压缩图像。</b></p>"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:47
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "RAW loader"
 msgstr "RAW 加载程序"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:62
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libraw codec"
 msgstr "基于 Libraw 编解码器的图像加载程序"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:67
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7247,7 +7247,7 @@ msgstr ""
 "href='https://baike.baidu.com/item/RAW/218261'>RAW 图像文件介绍页面</a>。</"
 "para>"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:121
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:117
 #, kde-format
 msgctxt "@info: can write file format"
 msgid "no"
@@ -15579,7 +15579,7 @@ msgstr "图像/文本尺寸比率："
 
 #. i18n: ectx: property (text), widget (QLabel, fontLabel)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:192
-#: core/showfoto/setup/showfotosetuptooltip.cpp:106
+#: core/showfoto/setup/showfotosetuptooltip.cpp:86
 #, kde-format
 msgid "Font:"
 msgstr "字体："
@@ -21204,7 +21204,7 @@ msgid "Show the image creation time/date at the bottom of the screen."
 msgstr "显示图像创建时间/日期到屏幕底部。"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
-#: core/showfoto/setup/showfotosetuptooltip.cpp:153
+#: core/showfoto/setup/showfotosetuptooltip.cpp:133
 #, kde-format
 msgid "Show camera aperture and focal length"
 msgstr "显示相机的光圈和焦距"
@@ -21215,7 +21215,7 @@ msgid "Show the camera aperture and focal length at the bottom of the screen."
 msgstr "显示相机的光圈和焦距到屏幕底部。"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
-#: core/showfoto/setup/showfotosetuptooltip.cpp:157
+#: core/showfoto/setup/showfotosetuptooltip.cpp:137
 #, kde-format
 msgid "Show camera exposure and sensitivity"
 msgstr "显示相机的曝光时间和感光度"
@@ -21227,7 +21227,7 @@ msgstr ""
 "在屏幕下方显示相机曝光量和感光度。显示相机的曝光时间和感光度到屏幕底部。"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
-#: core/showfoto/setup/showfotosetuptooltip.cpp:142
+#: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
 msgstr "显示相机的制造商和型号"
@@ -26751,7 +26751,7 @@ msgid "Album &date:"
 msgstr "相册日期(&D)："
 
 #: core/libs/album/widgets/albumpropsedit.cpp:171
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:177
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
@@ -26764,7 +26764,7 @@ msgid "Use this button to select the date of the oldest image from album."
 msgstr "使用此按钮从相册中选择最旧的图像日期。"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:173
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
@@ -26777,7 +26777,7 @@ msgid "Use this button to calculate the average date of images from album."
 msgstr "使用此按钮来计算相册图像的平均日期。"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:175
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
@@ -36133,7 +36133,7 @@ msgstr "属性"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:443
-#: core/showfoto/setup/showfotosetup.cpp:143
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
 msgstr "元数据"
@@ -36612,8 +36612,8 @@ msgid "Map"
 msgstr "地图"
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
-#: core/showfoto/stackview/showfotostackviewitem.cpp:70
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:585
+#: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, kde-format
 msgctxt "@info: item properties"
 msgid "RAW Image"
@@ -40908,7 +40908,7 @@ msgstr "修改于：%1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:427
 #: core/showfoto/main/showfoto.cpp:256
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:325
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
@@ -40917,7 +40917,7 @@ msgstr "%1x%2 (%3M 像素)"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:432
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:452
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:330
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
 #: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, kde-format
 msgctxt "unknown image resolution"
@@ -41335,7 +41335,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:324
-#: core/showfoto/setup/showfotosetup.cpp:161
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "色彩管理"
@@ -42487,7 +42487,7 @@ msgid "Image Information"
 msgstr "图像信息"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
-#: core/showfoto/setup/showfotosetuptooltip.cpp:139
+#: core/showfoto/setup/showfotosetuptooltip.cpp:119
 #: core/utilities/searchwindow/searchgroup.cpp:152
 #: core/utilities/setup/setuptooltip.cpp:175
 #, kde-format
@@ -47491,14 +47491,14 @@ msgid "The bookmark title which must be unique and not empty"
 msgstr "书签标题必须使用唯一名称且不能为空"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:187
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "图标(&I)："
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:196
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
@@ -47516,75 +47516,75 @@ msgctxt "@info"
 msgid "Enter bookmark path here..."
 msgstr "在此输入书签路径..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:63
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove bookmarked places here."
 msgstr "您可以在此添加或移除书签位置。"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:120
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:117
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "书签"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:143
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:126
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:139
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Load Contents"
 msgstr "加载内容"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:96
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:81
 #, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "常用位置"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:105
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "Add Bookmark"
 msgstr "添加书签"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:106
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:102
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:91
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Add new bookmark to the list"
 msgstr "添加新书签到列表"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:122
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:107
 #, kde-format
 msgctxt "@action"
 msgid "Del Bookmark"
 msgstr "移除书签"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected bookmark from the list"
 msgstr "移除列表中的所选书签"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:140
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:125
 #, kde-format
 msgctxt "@action"
 msgid "Edit Bookmark"
 msgstr "编辑书签"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:141
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Edit current bookmark from the list"
 msgstr "编辑列表中的当前书签"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:230
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "添加新书签"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:246
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:231
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -47596,49 +47596,49 @@ msgstr ""
 "%1\n"
 "已经存在于书签列表中的“%2”。"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:244
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "确认删除书签"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:260
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to remove the bookmark \"%1\"?"
 msgstr "您确定要移除书签“%1”吗？"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:357
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:343
 #, kde-format
 msgctxt "@title"
 msgid "My Bookmarks"
 msgstr "我的书签"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:388
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:374
 #, kde-format
 msgctxt "@title"
 msgid "Usual Places"
 msgstr "常用位置"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:136
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:130
 #, kde-format
 msgctxt "@title"
 msgid "Folder-View"
 msgstr "文件夹视图"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:147
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:141
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
 msgstr "图集"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:155
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:149
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add Bookmark"
 msgstr "添加书签"
 
-#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:384
+#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:366
 #, kde-format
 msgctxt "@title: file system tree"
 msgid "Folders"
@@ -47738,24 +47738,24 @@ msgstr ""
 msgid "Cannot delete \"%1\""
 msgstr "无法删除“%1”"
 
-#: core/showfoto/main/showfoto_open.cpp:58
+#: core/showfoto/main/showfoto_open.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
 msgstr "从文件夹打开图像"
 
-#: core/showfoto/main/showfoto_open.cpp:299
+#: core/showfoto/main/showfoto_open.cpp:303
 #, kde-format
 msgid "There is no item to process."
 msgstr "没有要处理的项目。"
 
-#: core/showfoto/main/showfoto_open.cpp:321
+#: core/showfoto/main/showfoto_open.cpp:325
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "加载文件时出错"
 
-#: core/showfoto/main/showfoto_open.cpp:322
+#: core/showfoto/main/showfoto_open.cpp:326
 #, kde-format
 msgid ""
 "Failed to load file: \"%1\"\n"
@@ -47817,80 +47817,80 @@ msgstr "装饰(&D)"
 msgid "Effec&ts"
 msgstr "特效(&T)"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "配置"
 
-#: core/showfoto/setup/showfotosetup.cpp:137
+#: core/showfoto/setup/showfotosetup.cpp:105
 #, kde-format
 msgid "Editor Window"
 msgstr "编辑器窗口"
 
-#: core/showfoto/setup/showfotosetup.cpp:138
+#: core/showfoto/setup/showfotosetup.cpp:106
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
 msgstr "<qt>编辑器窗口设置</qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:144
+#: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr "<qt>图像元数据管理设置</qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:149
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid "Tool Tip"
 msgstr "悬停信息框"
 
-#: core/showfoto/setup/showfotosetup.cpp:150
+#: core/showfoto/setup/showfotosetup.cpp:118
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr "<qt>缩略图栏和文件夹视图项目悬停信息框设置</qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:155
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW 解码"
 
-#: core/showfoto/setup/showfotosetup.cpp:156
+#: core/showfoto/setup/showfotosetup.cpp:124
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr "<qt>RAW 图像解码设置</qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:130
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
 "settings</i></qt>"
 msgstr "<qt>色彩管理设置</qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:167
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid "Save Images"
 msgstr "保存图像"
 
-#: core/showfoto/setup/showfotosetup.cpp:168
+#: core/showfoto/setup/showfotosetup.cpp:136
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr "<qt>图像文件的保存方式设置<br/></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:174
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "地理位置"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -47898,51 +47898,51 @@ msgid ""
 "Customize view to geolocalize items"
 msgstr "地理位置设置"
 
-#: core/showfoto/setup/showfotosetup.cpp:182
+#: core/showfoto/setup/showfotosetup.cpp:150
 #, kde-format
 msgid "Plugins"
 msgstr "插件"
 
-#: core/showfoto/setup/showfotosetup.cpp:183
+#: core/showfoto/setup/showfotosetup.cpp:151
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr "<qt>插件设置</qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:188
+#: core/showfoto/setup/showfotosetup.cpp:156
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/showfoto/setup/showfotosetup.cpp:189
+#: core/showfoto/setup/showfotosetup.cpp:157
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
 msgstr "<qt>其他设置</qt>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:91
+#: core/showfoto/setup/showfotosetupmetadata.cpp:84
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
 msgstr "旋转操作"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:96
+#: core/showfoto/setup/showfotosetupmetadata.cpp:89
 #, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr "根据画面方向标签旋转图像/缩略图(&R)。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:98
+#: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "旋转/翻转后将画面方向标签设为正常。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:119
+#: core/showfoto/setup/showfotosetupmetadata.cpp:112
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, kde-format
 msgctxt "@info"
@@ -47953,7 +47953,7 @@ msgstr ""
 "这是一套用于在图像中存储技术性信息 (如光圈大小和快门速度) 的元数据规范。绝大"
 "部分现代数码相机均采用此规范。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:123
+#: core/showfoto/setup/showfotosetupmetadata.cpp:116
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, kde-format
 msgctxt "@info"
@@ -47962,133 +47962,133 @@ msgid ""
 "information in images."
 msgstr "一套形成较早的数字摄影规范，用于将摄影师信息存储到图像。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:122
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr "一套较新的数字摄影规范，它被设计来取代 IPTC。"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "行为"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:159
+#: core/showfoto/setup/showfotosetupmetadata.cpp:152
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, kde-format
 msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "ExifTool"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:151
+#: core/showfoto/setup/showfotosetupmisc.cpp:121
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr "缩略图栏、文件夹视图和图集视图项目排序顺序"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:155
+#: core/showfoto/setup/showfotosetupmisc.cpp:125
 #, kde-format
 msgid "Sort images by:"
 msgstr "图像排序条件："
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:157
+#: core/showfoto/setup/showfotosetupmisc.cpp:127
 #, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "日期"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:158
+#: core/showfoto/setup/showfotosetupmisc.cpp:128
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "名称"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:159
+#: core/showfoto/setup/showfotosetupmisc.cpp:129
 #, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "文件体积"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:160
+#: core/showfoto/setup/showfotosetupmisc.cpp:130
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
 "size on disk."
 msgstr "请选择新加载的图像按照文件日期、文件名称还是文件大小排序。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:163
+#: core/showfoto/setup/showfotosetupmisc.cpp:133
 #, kde-format
 msgid "Reverse ordering"
 msgstr "降序排列"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:164
+#: core/showfoto/setup/showfotosetupmisc.cpp:134
 #, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
 "order."
 msgstr "勾选此项后，新加载的图像将以降序排列。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:173
+#: core/showfoto/setup/showfotosetupmisc.cpp:143
 #, kde-format
 msgid "Thumbbar Items"
 msgstr "缩略图栏项目"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:176
+#: core/showfoto/setup/showfotosetupmisc.cpp:146
 #, kde-format
 msgid "&Show image Format"
 msgstr "显示图像格式(&S)"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:177
+#: core/showfoto/setup/showfotosetupmisc.cpp:147
 #: core/utilities/setup/camera/setupcamera.cpp:444
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "勾选此项以在图像缩略图上显示图像格式。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:178
+#: core/showfoto/setup/showfotosetupmisc.cpp:148
 #, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "显示地理位置指示图标(&S)"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:179
+#: core/showfoto/setup/showfotosetupmisc.cpp:149
 #: core/utilities/setup/camera/setupcamera.cpp:447
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr ""
 "勾选此项以在图像缩略图上方显示地理位置信息图标 (图像含有地理位置信息时显示)。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:180
+#: core/showfoto/setup/showfotosetupmisc.cpp:150
 #: core/utilities/setup/misc/setupmisc.cpp:94
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr "当前项目在缩略图栏居中显示"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:189
+#: core/showfoto/setup/showfotosetupmisc.cpp:159
 #: core/utilities/setup/misc/setupmisc.cpp:116
 #, kde-format
 msgid "Updates"
 msgstr "更新"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:193
+#: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:120
 #, kde-format
 msgid "Check for new version:"
 msgstr "检查新版软件："
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:195
+#: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:122
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr "仅检查稳定版本"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:196
+#: core/showfoto/setup/showfotosetupmisc.cpp:166
 #: core/utilities/setup/misc/setupmisc.cpp:123
 #, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "检查每周测试版本"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:197
+#: core/showfoto/setup/showfotosetupmisc.cpp:167
 #: core/utilities/setup/misc/setupmisc.cpp:124
 #, kde-format
 msgid ""
@@ -48102,13 +48102,13 @@ msgstr ""
 "\"稳定版本\"是正式发布的版本，可以比较安全地用于生产环境。\n"
 "\"测试版本\"是每周发布的版本，仅用于测试新功能，不建议用于生产环境。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:202
+#: core/showfoto/setup/showfotosetupmisc.cpp:172
 #: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr "使用含调试符号包的版本"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:203
+#: core/showfoto/setup/showfotosetupmisc.cpp:173
 #: core/utilities/setup/misc/setupmisc.cpp:130
 #, kde-format
 msgid ""
@@ -48120,181 +48120,181 @@ msgstr ""
 "勾选此项后，更新时将使用带有调试符号软件包的版本。\n"
 "该版本体积更大，但可用于协助开发人员在调试器中跟踪程序问题。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:208
+#: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc.cpp:135
 #, kde-format
 msgid "Last check: %1"
 msgstr "上次检查时间：%1"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:209
+#: core/showfoto/setup/showfotosetupmisc.cpp:179
 #: core/utilities/setup/misc/setupmisc.cpp:136
 #, kde-format
 msgid "Check now..."
 msgstr "立即检查..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:237
+#: core/showfoto/setup/showfotosetupmisc.cpp:207
 #: core/utilities/setup/misc/setupmisc.cpp:192
 #, kde-format
 msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "行为"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:244
+#: core/showfoto/setup/showfotosetupmisc.cpp:214
 #: core/utilities/setup/misc/setupmisc.cpp:199
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "启动时显示启动画面(&S)"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:245
+#: core/showfoto/setup/showfotosetupmisc.cpp:215
 #, kde-format
 msgid "Use native file dialogs from the system"
 msgstr "使用系统内建的文件对话框"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:248
+#: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/misc/setupmisc.cpp:204
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr "侧边栏标签页标题："
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:250
+#: core/showfoto/setup/showfotosetupmisc.cpp:220
 #: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "Only For Active Tab"
 msgstr "仅在活动标签页显示"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:251
+#: core/showfoto/setup/showfotosetupmisc.cpp:221
 #: core/utilities/setup/misc/setupmisc.cpp:207
 #, kde-format
 msgid "For All Tabs"
 msgstr "全部显示"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:252
+#: core/showfoto/setup/showfotosetupmisc.cpp:222
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
 "选择侧边栏标签页标题文字的显示方式。如果您的屏幕分辨率很低，可以选择“仅在活动"
 "标签页显示”。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:255
+#: core/showfoto/setup/showfotosetupmisc.cpp:225
 #: core/utilities/setup/misc/setupmisc.cpp:212
 #, kde-format
 msgid "Widget style:"
 msgstr "窗口部件视觉风格："
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
+#: core/showfoto/setup/showfotosetupmisc.cpp:227
 #: core/utilities/setup/misc/setupmisc.cpp:214
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "选择默认窗口装饰和外观风格。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:279
+#: core/showfoto/setup/showfotosetupmisc.cpp:249
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "图标主题 (重启程序生效)："
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:281
+#: core/showfoto/setup/showfotosetupmisc.cpp:251
 #: core/utilities/setup/misc/setupmisc.cpp:238
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "选择默认图标主题。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:285
+#: core/showfoto/setup/showfotosetupmisc.cpp:255
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Adwaita 古龟"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:286
+#: core/showfoto/setup/showfotosetupmisc.cpp:256
 #: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Breeze 微风"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:287
+#: core/showfoto/setup/showfotosetupmisc.cpp:257
 #: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Breeze 微风深色"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:258
 #: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza 法恩扎"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:289
+#: core/showfoto/setup/showfotosetupmisc.cpp:259
 #: core/utilities/setup/misc/setupmisc.cpp:246
 #, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Ambiance 意境"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:290
+#: core/showfoto/setup/showfotosetupmisc.cpp:260
 #: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Humanity 仁心"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:291
+#: core/showfoto/setup/showfotosetupmisc.cpp:261
 #: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen 轻氧"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/showfoto/setup/showfotosetupmisc.cpp:284
 #: core/utilities/setup/misc/setupmisc.cpp:271
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "使用系统图标主题"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:321
+#: core/showfoto/setup/showfotosetupmisc.cpp:291
 #: core/utilities/setup/misc/setupmisc.cpp:278
 #, kde-format
 msgid "Application font:"
 msgstr "界面字体："
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:322
+#: core/showfoto/setup/showfotosetupmisc.cpp:292
 #: core/utilities/setup/misc/setupmisc.cpp:279
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr "选择整个应用程序的文字信息使用的字体。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/showfoto/setup/showfotosetupmisc.cpp:306
 #: core/utilities/setup/misc/setupmisc.cpp:294
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "外观"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:344
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc.cpp:361
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "拼写检查"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:350
+#: core/showfoto/setup/showfotosetupmisc.cpp:320
 #: core/utilities/setup/misc/setupmisc.cpp:367
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "本地化"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:356
+#: core/showfoto/setup/showfotosetupmisc.cpp:326
 #: core/utilities/setup/misc/setupmisc.cpp:373
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "系统"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:388
+#: core/showfoto/setup/showfotosetupmisc.cpp:360
 #: core/utilities/setup/misc/setupmisc.cpp:406
 #, kde-format
 msgid ""
@@ -48311,102 +48311,102 @@ msgstr ""
 "\n"
 "您想要继续更新吗？"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:68
+#: core/showfoto/setup/showfotosetupplugins.cpp:62
 #, kde-format
 msgctxt "@title:tab generic plugins list"
 msgid "Generic"
 msgstr "常规"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:74
+#: core/showfoto/setup/showfotosetupplugins.cpp:68
 #, kde-format
 msgctxt "@title:tab editor plugins list"
 msgid "Image Editor"
 msgstr "图像编辑器"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:80
+#: core/showfoto/setup/showfotosetupplugins.cpp:74
 #, kde-format
 msgctxt "@title:tab loader plugins list"
 msgid "Image Loaders"
 msgstr "图像加载程序"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:102
+#: core/showfoto/setup/showfotosetuptooltip.cpp:82
 #, kde-format
 msgid "Show Items' Toolti&ps With Thumbbar and Folder-View"
 msgstr "显示缩略图栏和文件夹视图项目的悬停信息框(&P)"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:103
+#: core/showfoto/setup/showfotosetuptooltip.cpp:83
 #, kde-format
 msgid ""
 "Set this option to display the image information when the mouse hovers over "
 "a thumbbar or folder-view item."
 msgstr "勾选此项后，鼠标悬停于缩略图栏或文件夹视图项目时将显示图像信息框。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:107
+#: core/showfoto/setup/showfotosetuptooltip.cpp:87
 #, kde-format
 msgid "Select here the font used to display text in tooltips."
 msgstr "选择悬停信息框的文字信息使用的字体。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:111
+#: core/showfoto/setup/showfotosetuptooltip.cpp:91
 #, kde-format
 msgid "File/Image Information"
 msgstr "文件/图像信息"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:114
+#: core/showfoto/setup/showfotosetuptooltip.cpp:94
 #, kde-format
 msgid "Show file name"
 msgstr "显示文件名称"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:115
+#: core/showfoto/setup/showfotosetuptooltip.cpp:95
 #: core/utilities/setup/setuptooltip.cpp:147
 #, kde-format
 msgid "Set this option to display the image file name."
 msgstr "勾选此项以显示图像文件名。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:117
+#: core/showfoto/setup/showfotosetuptooltip.cpp:97
 #, kde-format
 msgid "Show file date"
 msgstr "显示文件日期"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:118
+#: core/showfoto/setup/showfotosetuptooltip.cpp:98
 #: core/utilities/setup/setuptooltip.cpp:150
 #, kde-format
 msgid "Set this option to display the image file date."
 msgstr "勾选此项以显示图像文件日期。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:120
+#: core/showfoto/setup/showfotosetuptooltip.cpp:100
 #, kde-format
 msgid "Show file size"
 msgstr "显示文件体积"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:121
+#: core/showfoto/setup/showfotosetuptooltip.cpp:101
 #: core/utilities/setup/setuptooltip.cpp:153
 #, kde-format
 msgid "Set this option to display the image file size."
 msgstr "勾选此项以显示图像文件体积。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:123
+#: core/showfoto/setup/showfotosetuptooltip.cpp:103
 #, kde-format
 msgid "Show image type"
 msgstr "显示图像类型"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:124
+#: core/showfoto/setup/showfotosetuptooltip.cpp:104
 #: core/utilities/setup/setuptooltip.cpp:156
 #, kde-format
 msgid "Set this option to display the image type."
 msgstr "勾选此项以显示图像文件类型。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:126
+#: core/showfoto/setup/showfotosetuptooltip.cpp:106
 #, kde-format
 msgid "Show image dimensions"
 msgstr "显示图像尺寸"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:127
+#: core/showfoto/setup/showfotosetuptooltip.cpp:107
 #: core/utilities/setup/setuptooltip.cpp:159
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr "勾选此项以显示图像尺寸，单位为像素。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:143
+#: core/showfoto/setup/showfotosetuptooltip.cpp:123
 #: core/utilities/setup/setuptooltip.cpp:179
 #: core/utilities/setup/setuptooltip.cpp:359
 #, kde-format
@@ -48415,14 +48415,14 @@ msgid ""
 "image has been taken."
 msgstr "勾选此项以显示拍摄图像所用相机的制造商和型号。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:146
+#: core/showfoto/setup/showfotosetuptooltip.cpp:126
 #: core/utilities/setup/setuptooltip.cpp:182
 #: core/utilities/setup/setuptooltip.cpp:362
 #, kde-format
 msgid "Camera lens model"
 msgstr "相机镜头型号"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:147
+#: core/showfoto/setup/showfotosetuptooltip.cpp:127
 #: core/utilities/setup/setuptooltip.cpp:183
 #: core/utilities/setup/setuptooltip.cpp:363
 #, kde-format
@@ -48430,18 +48430,18 @@ msgid ""
 "Set this option to display the lens model with which the image was taken."
 msgstr "勾选此项以显示拍摄图像所用的镜头型号。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:150
+#: core/showfoto/setup/showfotosetuptooltip.cpp:130
 #, kde-format
 msgid "Show camera date"
 msgstr "显示拍摄日期"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:151
+#: core/showfoto/setup/showfotosetuptooltip.cpp:131
 #: core/utilities/setup/setuptooltip.cpp:187
 #, kde-format
 msgid "Set this option to display the date when the image was taken."
 msgstr "勾选此项以显示图像拍摄的日期。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:154
+#: core/showfoto/setup/showfotosetuptooltip.cpp:134
 #: core/utilities/setup/setuptooltip.cpp:190
 #: core/utilities/setup/setuptooltip.cpp:367
 #, kde-format
@@ -48450,7 +48450,7 @@ msgid ""
 "take the image."
 msgstr "勾选此项以显示图像拍摄所用的相机光圈和焦距。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:158
+#: core/showfoto/setup/showfotosetuptooltip.cpp:138
 #: core/utilities/setup/setuptooltip.cpp:194
 #: core/utilities/setup/setuptooltip.cpp:371
 #, kde-format
@@ -48459,12 +48459,12 @@ msgid ""
 "the image."
 msgstr "勾选此项以显示图像拍摄所用的相机曝光时间和感光度。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:161
+#: core/showfoto/setup/showfotosetuptooltip.cpp:141
 #, kde-format
 msgid "Show camera mode and program"
 msgstr "显示拍摄模式和程序"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:162
+#: core/showfoto/setup/showfotosetuptooltip.cpp:142
 #: core/utilities/setup/setuptooltip.cpp:198
 #, kde-format
 msgid ""
@@ -48472,12 +48472,12 @@ msgid ""
 "image."
 msgstr "勾选此项以显示图像拍摄所用的相机拍摄模式和程序。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:165
+#: core/showfoto/setup/showfotosetuptooltip.cpp:145
 #, kde-format
 msgid "Show camera flash settings"
 msgstr "显示相机闪光灯设置"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:166
+#: core/showfoto/setup/showfotosetuptooltip.cpp:146
 #: core/utilities/setup/setuptooltip.cpp:202
 #: core/utilities/setup/setuptooltip.cpp:375
 #, kde-format
@@ -48485,12 +48485,12 @@ msgid ""
 "Set this option to display the camera flash settings used to take the image."
 msgstr "勾选此项以显示图像拍摄所用的相机闪光灯设置。"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:169
+#: core/showfoto/setup/showfotosetuptooltip.cpp:149
 #, kde-format
 msgid "Show camera white balance settings"
 msgstr "显示相机白平衡设置"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:170
+#: core/showfoto/setup/showfotosetuptooltip.cpp:150
 #: core/utilities/setup/setuptooltip.cpp:206
 #: core/utilities/setup/setuptooltip.cpp:379
 #, kde-format
@@ -48499,115 +48499,115 @@ msgid ""
 "the image."
 msgstr "勾选此项以显示图像拍摄所用的相机白平衡设置。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:98
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
 msgstr "我的收藏图集"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:213
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "收藏图集文件夹属性"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
 #, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "名称："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:218
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "层级："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:251
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "收藏图集项目属性"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
 #, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "名称："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:256
 #, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "创建日期："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:242
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:259
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "层级："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:245
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:262
 #, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "项目："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:248
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:265
 #, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
 msgstr "描述："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:147
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:123
 #, kde-format
 msgctxt "@label: favorite item title properties"
 msgid "&Name:"
 msgstr "名称(&N)："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:151
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
 msgstr "在此输入收藏图集项目名称..."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:152
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "The favorite item name which must be unique and not empty"
 msgstr "收藏图集项目必须使用唯一名称且不能为空"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:134
 #, kde-format
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
 msgstr "层级："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:161
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
 msgstr "树形视图中的收藏图集项目层级必须唯一"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:142
 #, kde-format
 msgctxt "@label: favorite entry type properties"
 msgid "Type:"
 msgstr "类型："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:169
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:145
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Folder"
 msgstr "收藏图集文件夹"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:170
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:146
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Item"
 msgstr "收藏图集项目"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:172
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -48619,98 +48619,98 @@ msgstr ""
 "目。\n"
 "一个“收藏图集文件夹”是一个不包含额外属性的简单层级项目。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:156
 #, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
 msgstr "描述(&D)："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:184
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
 msgstr "在此输入收藏图集项目描述..."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:190
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
 #, kde-format
 msgctxt "@label: favorite item date properties"
 msgid "&Created:"
 msgstr "创建日期(&C)："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Select favorite item date. By default, day of item creation is assigned."
 msgstr "选择收藏图集的项目日期。默认指定项目的创建日期。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:202
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from the list."
 msgstr "使用此按钮从列表中选择最旧的图像日期。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:204
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from the list."
 msgstr "使用此按钮来计算列表图像的平均日期。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:206
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from the list."
 msgstr "使用此按钮从列表中选择最新的图像日期。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:216
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid "Select here the icon to use for this favorite item in tree-view."
 msgstr "在此选择此收藏图集项目在树状视图中使用的图标。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:221
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "Assign favorite item icon to default in tree-view."
 msgstr "将树状视图中的收藏图集项目图标设为默认。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:210
 #, kde-format
 msgctxt "@label: favorites item file properties"
 msgid "&Items:"
 msgstr "项目(&I)："
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:248
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:224
 #, kde-format
 msgctxt "@title:column file name"
 msgid "Name"
 msgstr "名称"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:249
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:225
 #, kde-format
 msgctxt "@title:column file size"
 msgid "Size"
 msgstr "大小"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:250
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
 #, kde-format
 msgctxt "@title:column file type-mime"
 msgid "Type"
 msgstr "类型"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:251
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
 #, kde-format
 msgctxt "@title:column file date"
 msgid "Date"
 msgstr "日期"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:252
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
 #, kde-format
 msgctxt "@title:column file path"
 msgid "Path"
 msgstr "路径"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:254
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -48723,147 +48723,147 @@ msgstr ""
 "将自动显示在编辑器中。如果没有选中的文件，\n"
 "将自动显示列表中的第一个文件。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "提示：收藏图集项目名称不能为空。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:358
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "提示：收藏图集项目文件列表不能为空。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:362
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "提示：收藏图集项目名称已存在于层级结构中。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:392
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "提示：收藏图集文件夹名称不能为空。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:396
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "提示：收藏图集文件夹名称已存在于层级结构中。"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:412
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
 msgid_plural "%1 files"
 msgstr[0] "%1 个文件"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:671
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "新建收藏图集项目"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "编辑收藏图集项目"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:682
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "新建收藏图集文件夹"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:686
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "编辑收藏图集文件夹"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:743
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "无法计算平均日期"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:744
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
 msgstr "无法计算此收藏图集项目的平均日期。"
 
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:69
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove favorite stacks here."
 msgstr "您可以在此添加或移除收藏图集。"
 
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:92
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:117
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:86
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "收藏图集"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:101
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Add Favorite"
 msgstr "添加收藏图集"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:119
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
 msgstr "添加子文件夹"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:120
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
 msgstr "添加子文件夹到列表"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:137
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "Delete Item"
 msgstr "移除项目"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:138
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
 msgstr "移除列表中的所选项目"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:155
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Edit Item"
 msgstr "编辑项目"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
 #, kde-format
 msgctxt "@info"
 msgid "Edit current item from the list"
 msgstr "编辑列表中的当前项目"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:173
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:167
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
 msgstr "搜索收藏图集..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:359
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:353
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "移除项目前确认"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:360
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -48873,91 +48873,91 @@ msgstr ""
 "您确定要移除项目“%1”\n"
 "和它包含的所有项目吗？"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:672
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:666
 #, kde-format
 msgctxt "@title"
 msgid "Unnamed"
 msgstr "未命名"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:89
+#: core/showfoto/stackview/showfotostackviewlist.cpp:83
 #, kde-format
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "名称"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:90
+#: core/showfoto/stackview/showfotostackviewlist.cpp:84
 #, kde-format
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "体积"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:91
+#: core/showfoto/stackview/showfotostackviewlist.cpp:85
 #, kde-format
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "类型"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:92
+#: core/showfoto/stackview/showfotostackviewlist.cpp:86
 #, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "日期"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:344
+#: core/showfoto/stackview/showfotostackviewlist.cpp:338
 #, kde-format
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "图集视图"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:346
+#: core/showfoto/stackview/showfotostackviewlist.cpp:340
 #, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "图标大小"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:351
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "小 (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:355
+#: core/showfoto/stackview/showfotostackviewlist.cpp:349
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "中 (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:359
+#: core/showfoto/stackview/showfotostackviewlist.cpp:353
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "大 (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:363
+#: core/showfoto/stackview/showfotostackviewlist.cpp:357
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "特大 (%1x%2)"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:402
+#: core/showfoto/stackview/showfotostackviewlist.cpp:396
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "添加为收藏图集"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:416
+#: core/showfoto/stackview/showfotostackviewlist.cpp:410
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "清除所有项目"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:424
+#: core/showfoto/stackview/showfotostackviewlist.cpp:418
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "移除项目"
 
-#: core/showfoto/stackview/showfotostackviewsidebar.cpp:219
+#: core/showfoto/stackview/showfotostackviewsidebar.cpp:212
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
@@ -48969,7 +48969,7 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "取消(&A)"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:263
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
 #: core/utilities/import/items/itemviewimportdelegate.cpp:320
 #, kde-format
 msgctxt "date of image creation"

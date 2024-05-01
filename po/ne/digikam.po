@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-30 01:42+0000\n"
+"POT-Creation-Date: 2024-05-01 01:40+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -856,10 +856,10 @@ msgid "Open..."
 msgstr "यससँग खोल्नुहोस्"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:47
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:136
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:162
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:150
-#: core/showfoto/stackview/showfotostackviewlist.cpp:409
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:133
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:146
+#: core/showfoto/stackview/showfotostackviewlist.cpp:403
 #, fuzzy, kde-format
 #| msgid "Open folder"
 msgctxt "@action: context menu"
@@ -993,14 +993,14 @@ msgid "Album \"%1\""
 msgstr "एल्बम \"%1\""
 
 #: core/app/items/utils/tooltipfiller.cpp:72
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:58
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:60
 #: core/utilities/import/items/importtooltipfiller.cpp:55
 #, kde-format
 msgid "File Properties"
 msgstr "फाइल गुण"
 
 #: core/app/items/utils/tooltipfiller.cpp:77
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:62
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:64
 #: core/utilities/import/items/importtooltipfiller.cpp:60
 #, fuzzy, kde-format
 msgctxt "filename"
@@ -1010,8 +1010,8 @@ msgstr "नाम:"
 #: core/app/items/utils/tooltipfiller.cpp:85
 #: core/app/items/utils/tooltipfiller.cpp:608
 #: core/app/views/stack/welcomepageview.cpp:274
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:174
 #: core/utilities/import/items/importtooltipfiller.cpp:68
 #, kde-format
 msgid "Date:"
@@ -1021,7 +1021,7 @@ msgstr "मिति:"
 #: core/dplugins/bqm/transform/crop/crop.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:195
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:75
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
 msgid "Size:"
@@ -1029,8 +1029,8 @@ msgstr "साइज:"
 
 #: core/app/items/utils/tooltipfiller.cpp:92
 #: core/app/items/utils/tooltipfiller.cpp:224
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:189
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:79
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:193
 #: core/utilities/import/items/importtooltipfiller.cpp:75
 #: core/utilities/import/items/importtooltipfiller.cpp:170
 #, kde-format
@@ -1045,14 +1045,14 @@ msgstr "%1 (%2)"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:204
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:110
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:83
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
 #, kde-format
 msgid "Type:"
 msgstr "प्रकार:"
 
 #: core/app/items/utils/tooltipfiller.cpp:106
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:91
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:93
 #: core/utilities/import/items/importtooltipfiller.cpp:89
 #, fuzzy, kde-format
 msgctxt "unknown / invalid image dimension"
@@ -1061,7 +1061,7 @@ msgstr "अज्ञात"
 
 #: core/app/items/utils/tooltipfiller.cpp:111
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1092
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:96
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
 #, fuzzy, kde-format
 msgctxt "width x height (megapixels Mpx)"
@@ -1069,7 +1069,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/app/items/utils/tooltipfiller.cpp:115
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:100
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:102
 #: core/utilities/import/items/importtooltipfiller.cpp:98
 #, kde-format
 msgid "Dimensions:"
@@ -1088,7 +1088,7 @@ msgid "Aspect Ratio:"
 msgstr "आकार अनुपात:"
 
 #: core/app/items/utils/tooltipfiller.cpp:147
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:118
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:122
 #: core/utilities/import/items/importtooltipfiller.cpp:116
 #, kde-format
 msgid "Photograph Properties"
@@ -1096,7 +1096,7 @@ msgstr "फोटो गुण"
 
 #: core/app/items/utils/tooltipfiller.cpp:162
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:179
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:133
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:137
 #: core/utilities/import/items/importtooltipfiller.cpp:131
 #, kde-format
 msgid "Make/Model:"
@@ -1104,7 +1104,7 @@ msgstr "निर्माण/नमुना:"
 
 #: core/app/items/utils/tooltipfiller.cpp:168
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:136
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:139
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:143
 #: core/utilities/import/items/importtooltipfiller.cpp:137
 #, fuzzy, kde-format
 msgctxt "camera lens"
@@ -1113,14 +1113,14 @@ msgstr "आयाम:"
 
 #: core/app/items/utils/tooltipfiller.cpp:205
 #: core/app/items/utils/tooltipfiller.cpp:210
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:175
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:179
 #, fuzzy, kde-format
 msgctxt "creation date of the image"
 msgid "Created:"
 msgstr "सिर्जना:"
 
 #: core/app/items/utils/tooltipfiller.cpp:232
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:197
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:201
 #: core/utilities/import/items/importtooltipfiller.cpp:178
 #, kde-format
 msgid "Aperture/Focal:"
@@ -1130,27 +1130,27 @@ msgstr "प्वाल/फोकल:"
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:203
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/libs/video/osd/frameosd.cpp:207
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:207
 #: core/utilities/import/items/importtooltipfiller.cpp:184
 #, kde-format
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
 #: core/app/items/utils/tooltipfiller.cpp:245
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:210
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:214
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
 msgstr "प्रर्दशन/संवेदनशीलता:"
 
 #: core/app/items/utils/tooltipfiller.cpp:272
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:237
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:241
 #, kde-format
 msgid "Mode/Program:"
 msgstr "मोड/कार्यक्रम:"
 
 #: core/app/items/utils/tooltipfiller.cpp:285
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:250
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:254
 #: core/utilities/import/items/importtooltipfiller.cpp:204
 #, fuzzy, kde-format
 msgctxt "camera flash settings"
@@ -1158,7 +1158,7 @@ msgid "Flash:"
 msgstr "फ्ल्यास:"
 
 #: core/app/items/utils/tooltipfiller.cpp:297
-#: core/showfoto/thumbbar/showfototooltipfiller.cpp:262
+#: core/showfoto/thumbbar/showfototooltipfiller.cpp:266
 #: core/utilities/import/items/importtooltipfiller.cpp:216
 #, kde-format
 msgid "White Balance:"
@@ -6699,10 +6699,10 @@ msgstr "तस्विर दर देखाउनुहोस्"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:182
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:115
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
 #: core/libs/dplugins/core/dplugindimg.cpp:58
@@ -6723,7 +6723,7 @@ msgstr "हो"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:189
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:193
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:197
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:121
@@ -6738,7 +6738,7 @@ msgstr "हो"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:190
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
@@ -6934,19 +6934,19 @@ msgctxt "@title"
 msgid "JPEG-2000 verification model"
 msgstr "जेपीईजी २००० गुणस्तर:"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:86
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:82
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "ImageMagick loader"
 msgstr "%1 मा छवि फेला पर्यो"
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:101
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr ""
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:106
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:102
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6957,7 +6957,7 @@ msgid ""
 "wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:183
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, fuzzy, kde-format
@@ -7153,20 +7153,20 @@ msgstr ""
 "साइज)<p><b>द्रष्टव्य: तपाईँले यो सेटिङ प्रयोग गर्दा जेपीईजी २००० नोक्सान रहित छवि "
 "सङ्कुचन ढाँचा होइन ।</b>"
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:50
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:46
 #, fuzzy, kde-format
 #| msgid "Image Files"
 msgctxt "@title"
 msgid "QImage loader"
 msgstr "छवि फाइल"
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:65
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on QImage plugins"
 msgstr ""
 
-#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:70
+#: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:66
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7213,20 +7213,20 @@ msgstr ""
 "साइज)<p><b>द्रष्टव्य: तपाईँले यो सेटिङ प्रयोग गर्दा जेपीईजी २००० नोक्सान रहित छवि "
 "सङ्कुचन ढाँचा होइन ।</b>"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:47
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:43
 #, fuzzy, kde-format
 #| msgid "RAW Files"
 msgctxt "@title"
 msgid "RAW loader"
 msgstr "कच्चा फाइल"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:62
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libraw codec"
 msgstr ""
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:67
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:63
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7243,7 +7243,7 @@ msgid ""
 "details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:121
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:117
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: can write file format"
@@ -15546,7 +15546,7 @@ msgstr "छवि स्थान:"
 
 #. i18n: ectx: property (text), widget (QLabel, fontLabel)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:192
-#: core/showfoto/setup/showfotosetuptooltip.cpp:106
+#: core/showfoto/setup/showfotosetuptooltip.cpp:86
 #, fuzzy, kde-format
 msgid "Font:"
 msgstr "गणना:"
@@ -21108,7 +21108,7 @@ msgid "Show the image creation time/date at the bottom of the screen."
 msgstr "<p>स्क्रिनको तल छवि टिप्पणी मुद्रण गर्नुहोस्"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:145
-#: core/showfoto/setup/showfotosetuptooltip.cpp:153
+#: core/showfoto/setup/showfotosetuptooltip.cpp:133
 #, fuzzy, kde-format
 msgid "Show camera aperture and focal length"
 msgstr "क्यामेरा एपर्चर र फोकल देखाउनुहोस्"
@@ -21119,7 +21119,7 @@ msgid "Show the camera aperture and focal length at the bottom of the screen."
 msgstr "<p>स्क्रिनको तल क्यामेरा एपर्चर र फोकल मुद्रण गर्नुहोस् ।"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
-#: core/showfoto/setup/showfotosetuptooltip.cpp:157
+#: core/showfoto/setup/showfotosetuptooltip.cpp:137
 #, kde-format
 msgid "Show camera exposure and sensitivity"
 msgstr "क्यामेरा प्रर्दशन र संवेदनशीलता देखाउनुहोस्"
@@ -21130,7 +21130,7 @@ msgid "Show the camera exposure and sensitivity at the bottom of the screen."
 msgstr "<p>स्क्रिनको तल क्यामेरा प्रर्दशन र संवेदनशीलता मुद्रण गर्नुहोस् ।"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
-#: core/showfoto/setup/showfotosetuptooltip.cpp:142
+#: core/showfoto/setup/showfotosetuptooltip.cpp:122
 #, kde-format
 msgid "Show camera make and model"
 msgstr "क्यामेरा निर्माण र नमुना देखाउनुहोस्"
@@ -26636,7 +26636,7 @@ msgid "Album &date:"
 msgstr "एल्बम मिति:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:171
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:177
 #, fuzzy, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
@@ -26649,7 +26649,7 @@ msgid "Use this button to select the date of the oldest image from album."
 msgstr "<p>छवि प्रकार प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:173
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
@@ -26662,7 +26662,7 @@ msgid "Use this button to calculate the average date of images from album."
 msgstr "<p>छवि प्रकार प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:175
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
@@ -35885,7 +35885,7 @@ msgstr "फाइल गुण"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:443
-#: core/showfoto/setup/showfotosetup.cpp:143
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
 msgstr "मेटाडेटा"
@@ -36383,8 +36383,8 @@ msgid "Map"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:232
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
-#: core/showfoto/stackview/showfotostackviewitem.cpp:70
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:585
+#: core/showfoto/stackview/showfotostackviewitem.cpp:66
 #, fuzzy, kde-format
 #| msgid "RAW Image"
 msgctxt "@info: item properties"
@@ -40688,7 +40688,7 @@ msgstr "नमुना:"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:427
 #: core/showfoto/main/showfoto.cpp:256
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:325
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:315
 #: core/utilities/import/items/itemviewimportdelegate.cpp:367
 #, fuzzy, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
@@ -40697,7 +40697,7 @@ msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:432
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:452
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:330
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:320
 #: core/utilities/import/items/itemviewimportdelegate.cpp:372
 #, fuzzy, kde-format
 msgctxt "unknown image resolution"
@@ -41110,7 +41110,7 @@ msgid "Francisco J. Cruz"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:324
-#: core/showfoto/setup/showfotosetup.cpp:161
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "रङ व्यवस्थापन"
@@ -42271,7 +42271,7 @@ msgid "Image Information"
 msgstr "छवि सूचना"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
-#: core/showfoto/setup/showfotosetuptooltip.cpp:139
+#: core/showfoto/setup/showfotosetuptooltip.cpp:119
 #: core/utilities/searchwindow/searchgroup.cpp:152
 #: core/utilities/setup/setuptooltip.cpp:175
 #, kde-format
@@ -47504,7 +47504,7 @@ msgid "The bookmark title which must be unique and not empty"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:187
 #, fuzzy, kde-format
 #| msgid "&Icon:"
 msgctxt "@label"
@@ -47512,7 +47512,7 @@ msgid "&Icon:"
 msgstr "प्रतिमा:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:196
 #, fuzzy, kde-format
 #| msgid "Reset"
 msgctxt "@action:button"
@@ -47532,75 +47532,75 @@ msgctxt "@info"
 msgid "Enter bookmark path here..."
 msgstr "नयाँ एल्बमको नाम यहाँ प्रविष्ट गर्नुहोस्:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:63
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove bookmarked places here."
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:120
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:117
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "क्यामेरा थप्नुहोस्..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:129
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:143
+#: core/showfoto/folderview/showfotofolderviewbookmarklist.cpp:126
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:139
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Load Contents"
 msgstr "व्यतिरेक:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:96
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:81
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "पुन: नामकरण गर्नुहोस्..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:105
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:90
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Add Bookmark"
 msgstr "क्यामेरा थप्नुहोस्..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:106
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:102
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:91
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Add new bookmark to the list"
 msgstr "यो विकल्पले हालको एल्बममा नयाँ वस्तु थप्दछ ।"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:122
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:107
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Del Bookmark"
 msgstr "क्यामेरा थप्नुहोस्..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:108
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Remove selected bookmark from the list"
 msgstr "यो विकल्पले हालको एल्बममा नयाँ वस्तु थप्दछ ।"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:140
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:125
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit Bookmark"
 msgstr "क्यामेरा थप्नुहोस्..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:141
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:126
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Edit current bookmark from the list"
 msgstr "चयन गरेको मेट्नुहोस्"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:230
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "क्यामेरा थप्नुहोस्..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:246
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:231
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -47609,49 +47609,49 @@ msgid ""
 "already exists in the list with name \"%2\"."
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:244
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "सङ्कलन:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:260
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to remove the bookmark \"%1\"?"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:357
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:343
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "My Bookmarks"
 msgstr "क्यामेरा थप्नुहोस्..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:388
+#: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:374
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Usual Places"
 msgstr "पुन: नामकरण गर्नुहोस्..."
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:136
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:130
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Folder-View"
 msgstr "इन्टरफेस विकल्प"
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:147
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:141
 #, kde-format
 msgctxt "@title"
 msgid "Stack"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewlist.cpp:155
+#: core/showfoto/folderview/showfotofolderviewlist.cpp:149
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Add Bookmark"
 msgstr "क्यामेरा थप्नुहोस्..."
 
-#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:384
+#: core/showfoto/folderview/showfotofolderviewsidebar.cpp:366
 #, fuzzy, kde-format
 msgctxt "@title: file system tree"
 msgid "Folders"
@@ -47752,26 +47752,26 @@ msgstr ""
 msgid "Cannot delete \"%1\""
 msgstr "रूट ट्याग मेट्न सकिदैन"
 
-#: core/showfoto/main/showfoto_open.cpp:58
+#: core/showfoto/main/showfoto_open.cpp:60
 #, fuzzy, kde-format
 #| msgid "Open Images From Folder"
 msgctxt "@title:window"
 msgid "Open Images from Folder"
 msgstr "फोल्डरबाट छवि खोल्नुहोस्"
 
-#: core/showfoto/main/showfoto_open.cpp:299
+#: core/showfoto/main/showfoto_open.cpp:303
 #, fuzzy, kde-format
 msgid "There is no item to process."
 msgstr "यो फोल्डरमा तस्विर छैन"
 
-#: core/showfoto/main/showfoto_open.cpp:321
+#: core/showfoto/main/showfoto_open.cpp:325
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "फाइल बचत गर्दा त्रुटि"
 
-#: core/showfoto/main/showfoto_open.cpp:322
+#: core/showfoto/main/showfoto_open.cpp:326
 #, fuzzy, kde-format
 msgid ""
 "Failed to load file: \"%1\"\n"
@@ -47831,80 +47831,80 @@ msgstr "घुमाउनुहोस्"
 msgid "Effec&ts"
 msgstr "रङ गहिराइ:"
 
-#: core/showfoto/setup/showfotosetup.cpp:130 core/utilities/setup/setup.cpp:120
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:120
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "क्यामेरा कन्फिगरेसन"
 
-#: core/showfoto/setup/showfotosetup.cpp:137
+#: core/showfoto/setup/showfotosetup.cpp:105
 #, kde-format
 msgid "Editor Window"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:138
+#: core/showfoto/setup/showfotosetup.cpp:106
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:144
+#: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:149
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid "Tool Tip"
 msgstr "उपकरण टिप"
 
-#: core/showfoto/setup/showfotosetup.cpp:150
+#: core/showfoto/setup/showfotosetup.cpp:118
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:155
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, fuzzy, kde-format
 msgid "RAW Decoding"
 msgstr "कच्चा असङ्केतन"
 
-#: core/showfoto/setup/showfotosetup.cpp:156
+#: core/showfoto/setup/showfotosetup.cpp:124
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:130
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
 "settings</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:167
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid "Save Images"
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/showfoto/setup/showfotosetup.cpp:168
+#: core/showfoto/setup/showfotosetup.cpp:136
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:175 core/utilities/setup/setup.cpp:174
+#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:174
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "चयन"
 
-#: core/showfoto/setup/showfotosetup.cpp:176 core/utilities/setup/setup.cpp:175
+#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -47912,51 +47912,51 @@ msgid ""
 "Customize view to geolocalize items"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:182
+#: core/showfoto/setup/showfotosetup.cpp:150
 #, fuzzy, kde-format
 msgid "Plugins"
 msgstr "किपि प्लगइन"
 
-#: core/showfoto/setup/showfotosetup.cpp:183
+#: core/showfoto/setup/showfotosetup.cpp:151
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:188
+#: core/showfoto/setup/showfotosetup.cpp:156
 #, fuzzy, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "विविध सेटिङ"
 
-#: core/showfoto/setup/showfotosetup.cpp:189
+#: core/showfoto/setup/showfotosetup.cpp:157
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:91
+#: core/showfoto/setup/showfotosetupmetadata.cpp:84
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
 msgstr "दर:"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:96
+#: core/showfoto/setup/showfotosetupmetadata.cpp:89
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr "अभिमुखीकरण ट्याग अनुसार छवि/थम्ब परिक्रमण देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:98
+#: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "परिक्रमण/घुमाएपछि अभिमुखीकरण ट्यागलाई साधारणमा सेट गर्नुहोस्"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:119
+#: core/showfoto/setup/showfotosetupmetadata.cpp:112
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:187
 #, fuzzy, kde-format
 msgctxt "@info"
@@ -47971,7 +47971,7 @@ msgstr ""
 "। तपाईँले <a href='http://www.iptc.org/IIM'>www.iptc.org</a> मा IPTC का बारेमा "
 "सिक्न सक्नुहुन्छ ।</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:123
+#: core/showfoto/setup/showfotosetupmetadata.cpp:116
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:191
 #, fuzzy, kde-format
 msgctxt "@info"
@@ -47986,7 +47986,7 @@ msgstr ""
 "। तपाईँले <a href='http://www.iptc.org/IIM'>www.iptc.org</a> मा IPTC का बारेमा "
 "सिक्न सक्नुहुन्छ ।</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:129
+#: core/showfoto/setup/showfotosetupmetadata.cpp:122
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, fuzzy, kde-format
 msgctxt "@info"
@@ -47999,61 +47999,61 @@ msgstr ""
 "। तपाईँले <a href='http://www.iptc.org/IIM'>www.iptc.org</a> मा IPTC का बारेमा "
 "सिक्न सक्नुहुन्छ ।</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:150
+#: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:218
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "व्यवहार"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:159
+#: core/showfoto/setup/showfotosetupmetadata.cpp:152
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "ExifTool"
 msgstr "रङ"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:151
+#: core/showfoto/setup/showfotosetupmisc.cpp:121
 #, kde-format
 msgid "Thumbbar, Folder-View, and Stack-View Items Sort Order"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:155
+#: core/showfoto/setup/showfotosetupmisc.cpp:125
 #, fuzzy, kde-format
 msgid "Sort images by:"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:157
+#: core/showfoto/setup/showfotosetupmisc.cpp:127
 #, fuzzy, kde-format
 msgctxt "sort images by date"
 msgid "Date"
 msgstr "मिति:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:158
+#: core/showfoto/setup/showfotosetupmisc.cpp:128
 #, fuzzy, kde-format
 msgctxt "sort images by name"
 msgid "Name"
 msgstr "नाम"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:159
+#: core/showfoto/setup/showfotosetupmisc.cpp:129
 #, fuzzy, kde-format
 msgctxt "sort images by size"
 msgid "File Size"
 msgstr "फाइल साइज देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:160
+#: core/showfoto/setup/showfotosetupmisc.cpp:130
 #, kde-format
 msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
 "size on disk."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:163
+#: core/showfoto/setup/showfotosetupmisc.cpp:133
 #, kde-format
 msgid "Reverse ordering"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:164
+#: core/showfoto/setup/showfotosetupmisc.cpp:134
 #, fuzzy, kde-format
 msgid ""
 "If this option is enabled, newly-loaded images will be sorted in descending "
@@ -48062,64 +48062,64 @@ msgstr ""
 "<p>यो विकल्प सक्षम पारिएमा, छवि सूचीबाट चयन गरेको हालको छविसँग स्लाइड प्रर्दशन सुरु "
 "हुन्छ ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:173
+#: core/showfoto/setup/showfotosetupmisc.cpp:143
 #, fuzzy, kde-format
 msgid "Thumbbar Items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:176
+#: core/showfoto/setup/showfotosetupmisc.cpp:146
 #, fuzzy, kde-format
 msgid "&Show image Format"
 msgstr "तस्विर दर देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:177
+#: core/showfoto/setup/showfotosetupmisc.cpp:147
 #: core/utilities/setup/camera/setupcamera.cpp:444
 #, fuzzy, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr "<p>छवि थम्बनेल तल फाइल नाम देखाउन यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:178
+#: core/showfoto/setup/showfotosetupmisc.cpp:148
 #, fuzzy, kde-format
 msgid "&Show Geolocation Indicator"
 msgstr "हरियो फिल्टर"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:179
+#: core/showfoto/setup/showfotosetupmisc.cpp:149
 #: core/utilities/setup/camera/setupcamera.cpp:447
 #, fuzzy, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr "<p>तस्विर टिप्पणी प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:180
+#: core/showfoto/setup/showfotosetupmisc.cpp:150
 #: core/utilities/setup/misc/setupmisc.cpp:94
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:189
+#: core/showfoto/setup/showfotosetupmisc.cpp:159
 #: core/utilities/setup/misc/setupmisc.cpp:116
 #, fuzzy, kde-format
 msgid "Updates"
 msgstr "मिति:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:193
+#: core/showfoto/setup/showfotosetupmisc.cpp:163
 #: core/utilities/setup/misc/setupmisc.cpp:120
 #, fuzzy, kde-format
 msgid "Check for new version:"
 msgstr "यस रूपमा बचत गर्नुहोस्..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:195
+#: core/showfoto/setup/showfotosetupmisc.cpp:165
 #: core/utilities/setup/misc/setupmisc.cpp:122
 #, kde-format
 msgid "Only For Stable Releases"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:196
+#: core/showfoto/setup/showfotosetupmisc.cpp:166
 #: core/utilities/setup/misc/setupmisc.cpp:123
 #, fuzzy, kde-format
 msgid "Weekly Pre-Releases"
 msgstr "सानो थम्ब प्रक्रिया"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:197
+#: core/showfoto/setup/showfotosetupmisc.cpp:167
 #: core/utilities/setup/misc/setupmisc.cpp:124
 #, kde-format
 msgid ""
@@ -48130,13 +48130,13 @@ msgid ""
 "and are not recommended to use in production as bugs can remain."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:202
+#: core/showfoto/setup/showfotosetupmisc.cpp:172
 #: core/utilities/setup/misc/setupmisc.cpp:129
 #, kde-format
 msgid "Use Version With Debug Symbols"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:203
+#: core/showfoto/setup/showfotosetupmisc.cpp:173
 #: core/utilities/setup/misc/setupmisc.cpp:130
 #, kde-format
 msgid ""
@@ -48146,166 +48146,166 @@ msgid ""
 "debugger."
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:208
+#: core/showfoto/setup/showfotosetupmisc.cpp:178
 #: core/utilities/setup/misc/setupmisc.cpp:135
 #, kde-format
 msgid "Last check: %1"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:209
+#: core/showfoto/setup/showfotosetupmisc.cpp:179
 #: core/utilities/setup/misc/setupmisc.cpp:136
 #, fuzzy, kde-format
 msgid "Check now..."
 msgstr "यस रूपमा बचत गर्नुहोस्..."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:237
+#: core/showfoto/setup/showfotosetupmisc.cpp:207
 #: core/utilities/setup/misc/setupmisc.cpp:192
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Behaviour"
 msgstr "व्यवहार"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:244
+#: core/showfoto/setup/showfotosetupmisc.cpp:214
 #: core/utilities/setup/misc/setupmisc.cpp:199
 #, kde-format
 msgid "&Show splash screen at startup"
 msgstr "सुरुआतमा स्प्लास स्क्रिन देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:245
+#: core/showfoto/setup/showfotosetupmisc.cpp:215
 #, fuzzy, kde-format
 msgid "Use native file dialogs from the system"
 msgstr "यो विकल्पले हालको एल्बममा नयाँ वस्तु थप्दछ ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:248
+#: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/misc/setupmisc.cpp:204
 #, kde-format
 msgid "Sidebar tab title:"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:250
+#: core/showfoto/setup/showfotosetupmisc.cpp:220
 #: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format
 msgid "Only For Active Tab"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:251
+#: core/showfoto/setup/showfotosetupmisc.cpp:221
 #: core/utilities/setup/misc/setupmisc.cpp:207
 #, fuzzy, kde-format
 msgid "For All Tabs"
 msgstr "सबै ट्याग"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:252
+#: core/showfoto/setup/showfotosetupmisc.cpp:222
 #, fuzzy, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr "<p>छवि फाइल साइज प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:255
+#: core/showfoto/setup/showfotosetupmisc.cpp:225
 #: core/utilities/setup/misc/setupmisc.cpp:212
 #, kde-format
 msgid "Widget style:"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:257
+#: core/showfoto/setup/showfotosetupmisc.cpp:227
 #: core/utilities/setup/misc/setupmisc.cpp:214
 #, fuzzy, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "<p>एल्बम नाम प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:279
+#: core/showfoto/setup/showfotosetupmisc.cpp:249
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:281
+#: core/showfoto/setup/showfotosetupmisc.cpp:251
 #: core/utilities/setup/misc/setupmisc.cpp:238
 #, fuzzy, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "<p>एल्बम नाम प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:285
+#: core/showfoto/setup/showfotosetupmisc.cpp:255
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:286
+#: core/showfoto/setup/showfotosetupmisc.cpp:256
 #: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:287
+#: core/showfoto/setup/showfotosetupmisc.cpp:257
 #: core/utilities/setup/misc/setupmisc.cpp:244
 #, kde-format
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:258
 #: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:289
+#: core/showfoto/setup/showfotosetupmisc.cpp:259
 #: core/utilities/setup/misc/setupmisc.cpp:246
 #, fuzzy, kde-format
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "सेतो सन्तुलन:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:290
+#: core/showfoto/setup/showfotosetupmisc.cpp:260
 #: core/utilities/setup/misc/setupmisc.cpp:247
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:291
+#: core/showfoto/setup/showfotosetupmisc.cpp:261
 #: core/utilities/setup/misc/setupmisc.cpp:248
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/showfoto/setup/showfotosetupmisc.cpp:284
 #: core/utilities/setup/misc/setupmisc.cpp:271
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:321
+#: core/showfoto/setup/showfotosetupmisc.cpp:291
 #: core/utilities/setup/misc/setupmisc.cpp:278
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Application font:"
 msgstr "चयन"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:322
+#: core/showfoto/setup/showfotosetupmisc.cpp:292
 #: core/utilities/setup/misc/setupmisc.cpp:279
 #, fuzzy, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr "<p>संयोजन मार्गदर्शन कोर्न प्रयोग गरिने रङ यहाँ सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/showfoto/setup/showfotosetupmisc.cpp:306
 #: core/utilities/setup/misc/setupmisc.cpp:294
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "रद्द गर्नुहोस्"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:344
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc.cpp:361
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:350
+#: core/showfoto/setup/showfotosetupmisc.cpp:320
 #: core/utilities/setup/misc/setupmisc.cpp:367
 #, fuzzy, kde-format
 #| msgid "Normalize"
@@ -48313,14 +48313,14 @@ msgctxt "@title:tab"
 msgid "Localize"
 msgstr "सामान्यीकरण"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:356
+#: core/showfoto/setup/showfotosetupmisc.cpp:326
 #: core/utilities/setup/misc/setupmisc.cpp:373
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:388
+#: core/showfoto/setup/showfotosetupmisc.cpp:360
 #: core/utilities/setup/misc/setupmisc.cpp:406
 #, kde-format
 msgid ""
@@ -48331,104 +48331,104 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:68
+#: core/showfoto/setup/showfotosetupplugins.cpp:62
 #, fuzzy, kde-format
 msgctxt "@title:tab generic plugins list"
 msgid "Generic"
 msgstr "साधारण"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:74
+#: core/showfoto/setup/showfotosetupplugins.cpp:68
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title:tab editor plugins list"
 msgid "Image Editor"
 msgstr "छवि सम्पादक"
 
-#: core/showfoto/setup/showfotosetupplugins.cpp:80
+#: core/showfoto/setup/showfotosetupplugins.cpp:74
 #, fuzzy, kde-format
 #| msgid "Image Files"
 msgctxt "@title:tab loader plugins list"
 msgid "Image Loaders"
 msgstr "छवि फाइल"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:102
+#: core/showfoto/setup/showfotosetuptooltip.cpp:82
 #, kde-format
 msgid "Show Items' Toolti&ps With Thumbbar and Folder-View"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:103
+#: core/showfoto/setup/showfotosetuptooltip.cpp:83
 #, fuzzy, kde-format
 msgid ""
 "Set this option to display the image information when the mouse hovers over "
 "a thumbbar or folder-view item."
 msgstr "<p>एल्बम वस्तु माथि माउस हुँदा छवि सूचना प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:107
+#: core/showfoto/setup/showfotosetuptooltip.cpp:87
 #, fuzzy, kde-format
 msgid "Select here the font used to display text in tooltips."
 msgstr "<p>संयोजन मार्गदर्शन कोर्न प्रयोग गरिने रङ यहाँ सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:111
+#: core/showfoto/setup/showfotosetuptooltip.cpp:91
 #, kde-format
 msgid "File/Image Information"
 msgstr "फाइल/छवि सूचना"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:114
+#: core/showfoto/setup/showfotosetuptooltip.cpp:94
 #, kde-format
 msgid "Show file name"
 msgstr "फाइल नाम देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:115
+#: core/showfoto/setup/showfotosetuptooltip.cpp:95
 #: core/utilities/setup/setuptooltip.cpp:147
 #, fuzzy, kde-format
 msgid "Set this option to display the image file name."
 msgstr "<p>छवि फाइल नाम प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:117
+#: core/showfoto/setup/showfotosetuptooltip.cpp:97
 #, kde-format
 msgid "Show file date"
 msgstr "फाइल मिति देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:118
+#: core/showfoto/setup/showfotosetuptooltip.cpp:98
 #: core/utilities/setup/setuptooltip.cpp:150
 #, fuzzy, kde-format
 msgid "Set this option to display the image file date."
 msgstr "<p>छवि फाइल मिति प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:120
+#: core/showfoto/setup/showfotosetuptooltip.cpp:100
 #, kde-format
 msgid "Show file size"
 msgstr "फाइल साइज देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:121
+#: core/showfoto/setup/showfotosetuptooltip.cpp:101
 #: core/utilities/setup/setuptooltip.cpp:153
 #, fuzzy, kde-format
 msgid "Set this option to display the image file size."
 msgstr "<p>छवि फाइल साइज प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:123
+#: core/showfoto/setup/showfotosetuptooltip.cpp:103
 #, kde-format
 msgid "Show image type"
 msgstr "छवि प्रकार देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:124
+#: core/showfoto/setup/showfotosetuptooltip.cpp:104
 #: core/utilities/setup/setuptooltip.cpp:156
 #, fuzzy, kde-format
 msgid "Set this option to display the image type."
 msgstr "<p>छवि प्रकार प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:126
+#: core/showfoto/setup/showfotosetuptooltip.cpp:106
 #, kde-format
 msgid "Show image dimensions"
 msgstr "छवि आयाम देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:127
+#: core/showfoto/setup/showfotosetuptooltip.cpp:107
 #: core/utilities/setup/setuptooltip.cpp:159
 #, fuzzy, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr "<p>छवि आयामलाई पिक्सेलमा प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:143
+#: core/showfoto/setup/showfotosetuptooltip.cpp:123
 #: core/utilities/setup/setuptooltip.cpp:179
 #: core/utilities/setup/setuptooltip.cpp:359
 #, fuzzy, kde-format
@@ -48437,14 +48437,14 @@ msgid ""
 "image has been taken."
 msgstr "<p>लिएको तस्विरसँग क्यामेरा निर्माण र नमुना प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:146
+#: core/showfoto/setup/showfotosetuptooltip.cpp:126
 #: core/utilities/setup/setuptooltip.cpp:182
 #: core/utilities/setup/setuptooltip.cpp:362
 #, fuzzy, kde-format
 msgid "Camera lens model"
 msgstr "क्यामेरा नाम थप्नुहोस्"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:147
+#: core/showfoto/setup/showfotosetuptooltip.cpp:127
 #: core/utilities/setup/setuptooltip.cpp:183
 #: core/utilities/setup/setuptooltip.cpp:363
 #, fuzzy, kde-format
@@ -48452,18 +48452,18 @@ msgid ""
 "Set this option to display the lens model with which the image was taken."
 msgstr "<p>तस्विर लिएको मिति प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:150
+#: core/showfoto/setup/showfotosetuptooltip.cpp:130
 #, kde-format
 msgid "Show camera date"
 msgstr "क्यामेरा मिति देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:151
+#: core/showfoto/setup/showfotosetuptooltip.cpp:131
 #: core/utilities/setup/setuptooltip.cpp:187
 #, fuzzy, kde-format
 msgid "Set this option to display the date when the image was taken."
 msgstr "<p>तस्विर लिएको मिति प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:154
+#: core/showfoto/setup/showfotosetuptooltip.cpp:134
 #: core/utilities/setup/setuptooltip.cpp:190
 #: core/utilities/setup/setuptooltip.cpp:367
 #, fuzzy, kde-format
@@ -48474,7 +48474,7 @@ msgstr ""
 "<p>तस्विर लिदा प्रयोग गरिने क्यामेरा एपर्चर र फोकल सेटिङ प्रर्दशन गर्न यो विकल्प सेट "
 "गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:158
+#: core/showfoto/setup/showfotosetuptooltip.cpp:138
 #: core/utilities/setup/setuptooltip.cpp:194
 #: core/utilities/setup/setuptooltip.cpp:371
 #, fuzzy, kde-format
@@ -48485,12 +48485,12 @@ msgstr ""
 "<p>तस्विर लिन प्रयोग गरिने क्यामेरा प्रर्दशन र संवेदनशीलता प्रर्दशन गर्न यो विकल्प सेट "
 "गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:161
+#: core/showfoto/setup/showfotosetuptooltip.cpp:141
 #, kde-format
 msgid "Show camera mode and program"
 msgstr "क्यामेरा मोड र कार्यक्रम देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:162
+#: core/showfoto/setup/showfotosetuptooltip.cpp:142
 #: core/utilities/setup/setuptooltip.cpp:198
 #, fuzzy, kde-format
 msgid ""
@@ -48499,12 +48499,12 @@ msgid ""
 msgstr ""
 "<p>तस्विर लिन प्रयोग गरिने क्यामेरा मोड र कार्यक्रम प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:165
+#: core/showfoto/setup/showfotosetuptooltip.cpp:145
 #, kde-format
 msgid "Show camera flash settings"
 msgstr "क्यामेरा फ्ल्यास सेटिङ देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:166
+#: core/showfoto/setup/showfotosetuptooltip.cpp:146
 #: core/utilities/setup/setuptooltip.cpp:202
 #: core/utilities/setup/setuptooltip.cpp:375
 #, fuzzy, kde-format
@@ -48513,12 +48513,12 @@ msgid ""
 msgstr ""
 "<p>तस्विर लिन प्रयोग गरिने क्यामेरा फ्ल्यास सेटिङ प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:169
+#: core/showfoto/setup/showfotosetuptooltip.cpp:149
 #, kde-format
 msgid "Show camera white balance settings"
 msgstr "क्यामेरा सेतो सन्तुलन सेटिङ देखाउनुहोस्"
 
-#: core/showfoto/setup/showfotosetuptooltip.cpp:170
+#: core/showfoto/setup/showfotosetuptooltip.cpp:150
 #: core/utilities/setup/setuptooltip.cpp:206
 #: core/utilities/setup/setuptooltip.cpp:379
 #, fuzzy, kde-format
@@ -48528,121 +48528,121 @@ msgid ""
 msgstr ""
 "<p>तस्विर लिन प्रयोग गरिने क्यामेरा सेतो सन्तुलन सेटिङ प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:98
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "My Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:213
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title"
 msgid "Favorite Folder Properties"
 msgstr "फाइल गुण"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
 #, fuzzy, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
 msgstr "नाम:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:218
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
 msgstr "खोजी:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:251
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title"
 msgid "Favorite Item Properties"
 msgstr "फाइल गुण"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:236
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:253
 #, fuzzy, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
 msgstr "नाम:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:239
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:256
 #, fuzzy, kde-format
 msgctxt "@info: favorite item date property"
 msgid "Created:"
 msgstr "सिर्जना:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:242
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:259
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
 msgstr "खोजी:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:245
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:262
 #, fuzzy, kde-format
 msgctxt "@info; favorite item count elements property"
 msgid "Items:"
 msgstr "१६ बिट"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:248
+#: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:265
 #, fuzzy, kde-format
 msgctxt "@info: favorite item caption property"
 msgid "Description:"
 msgstr "वर्णन"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:147
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:123
 #, fuzzy, kde-format
 msgctxt "@label: favorite item title properties"
 msgid "&Name:"
 msgstr "नाम:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:151
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:127
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
 msgstr "नयाँ एल्बमको नाम यहाँ प्रविष्ट गर्नुहोस्:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:152
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "The favorite item name which must be unique and not empty"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:134
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
 msgstr "खोजी:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:161
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:142
 #, fuzzy, kde-format
 #| msgid "Type:"
 msgctxt "@label: favorite entry type properties"
 msgid "Type:"
 msgstr "प्रकार:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:169
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:145
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Folder"
 msgstr "प्रकृति"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:170
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:146
 #, fuzzy, kde-format
 msgctxt "@item:inlistbox"
 msgid "Favorite Item"
 msgstr "प्रकृति"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:172
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:148
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -48651,100 +48651,100 @@ msgid ""
 "entry in the hierarchy without extra property."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:156
 #, fuzzy, kde-format
 msgctxt "@label: favorite item caption properties"
 msgid "&Description:"
 msgstr "वर्णन"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:184
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:160
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
 msgstr "नयाँ एल्बमको नाम यहाँ प्रविष्ट गर्नुहोस्:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:190
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
 #, fuzzy, kde-format
 msgctxt "@label: favorite item date properties"
 msgid "&Created:"
 msgstr "सिर्जना:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Select favorite item date. By default, day of item creation is assigned."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:202
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:178
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from the list."
 msgstr "<p>छवि प्रकार प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:204
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from the list."
 msgstr "<p>छवि प्रकार प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:206
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:182
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from the list."
 msgstr "<p>छवि प्रकार प्रर्दशन गर्न यो विकल्प सेट गर्नुहोस् ।"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:216
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:192
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Select here the icon to use for this favorite item in tree-view."
 msgstr "<p>मार्गदर्शन ड्यास-रेखा कोर्न प्रयोग गरिने रङ यहाँ सेट गर्नुहोस् ।"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:221
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:197
 #, kde-format
 msgctxt "@info"
 msgid "Assign favorite item icon to default in tree-view."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:234
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:210
 #, fuzzy, kde-format
 msgctxt "@label: favorites item file properties"
 msgid "&Items:"
 msgstr "१६ बिट"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:248
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:224
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title:column file name"
 msgid "Name"
 msgstr "नाम"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:249
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:225
 #, fuzzy, kde-format
 msgctxt "@title:column file size"
 msgid "Size"
 msgstr "साइज:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:250
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:226
 #, fuzzy, kde-format
 msgctxt "@title:column file type-mime"
 msgid "Type"
 msgstr "प्रकार:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:251
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:227
 #, fuzzy, kde-format
 msgctxt "@title:column file date"
 msgid "Date"
 msgstr "मिति:"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:252
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:228
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "@title:column file path"
 msgid "Path"
 msgstr "मार्ग"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:254
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -48753,40 +48753,40 @@ msgid ""
 "open. If none is selected, first one from the list will be displayed."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:354
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "ट्याग नाम खाली हुन सक्दैन"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:358
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "ट्याग नाम खाली हुन सक्दैन"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:362
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "सो नामको अर्को फाइल वा फोल्डर अवस्थित छ"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:392
 #, fuzzy, kde-format
 #| msgid "Tag name cannot be empty"
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "ट्याग नाम खाली हुन सक्दैन"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:396
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "सो नामको अर्को फाइल वा फोल्डर अवस्थित छ"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:412
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -48794,111 +48794,111 @@ msgid_plural "%1 files"
 msgstr[0] "टोन फिल्टर होइन"
 msgstr[1] "टोन फिल्टर होइन"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:671
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "प्रकृति"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:675
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "छवि फाइल"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:682
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "प्रकृति"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:686
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "छवि फाइल"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:743
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "औसत गणना गर्न सकेन"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:744
 #, fuzzy, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
 msgstr "औसत गणना गर्न सकेन"
 
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:69
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove favorite stacks here."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:92
+#: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:117
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:86
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:101
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Add Favorite"
 msgstr "क्यामेरा थप्नुहोस्..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:119
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
 msgstr "क्यामेरा थप्नुहोस्..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:120
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
 msgstr "यो विकल्पले हालको एल्बममा नयाँ वस्तु थप्दछ ।"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:137
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Delete Item"
 msgstr "चयन हटाउनुहोस्"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:138
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
 msgstr "यो विकल्पले हालको एल्बममा नयाँ वस्तु थप्दछ ।"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:155
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit Item"
 msgstr "छवि फाइल"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:156
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Edit current item from the list"
 msgstr "चयन गरेको मेट्नुहोस्"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:173
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:167
 #, fuzzy, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
 msgstr "नयाँ छविका लागि स्क्यान गर्नुहोस्"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:359
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:353
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "सङ्कलन:"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:360
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -48906,92 +48906,92 @@ msgid ""
 "and all nested items if any?"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:672
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:666
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Unnamed"
 msgstr "पुन: नामकरण गर्नुहोस्..."
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:89
+#: core/showfoto/stackview/showfotostackviewlist.cpp:83
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: item file name"
 msgid "Name"
 msgstr "नाम"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:90
+#: core/showfoto/stackview/showfotostackviewlist.cpp:84
 #, fuzzy, kde-format
 msgctxt "@title: item file size"
 msgid "Size"
 msgstr "साइज:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:91
+#: core/showfoto/stackview/showfotostackviewlist.cpp:85
 #, fuzzy, kde-format
 msgctxt "@title: item file type"
 msgid "Type"
 msgstr "प्रकार:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:92
+#: core/showfoto/stackview/showfotostackviewlist.cpp:86
 #, fuzzy, kde-format
 msgctxt "@title: item date from metadata"
 msgid "Date"
 msgstr "मिति:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:344
+#: core/showfoto/stackview/showfotostackviewlist.cpp:338
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Stack-View"
 msgstr "इन्टरफेस विकल्प"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:346
+#: core/showfoto/stackview/showfotostackviewlist.cpp:340
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
 msgstr "साइज:"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:351
+#: core/showfoto/stackview/showfotostackviewlist.cpp:345
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Small (%1x%2)"
 msgstr "चौडाइ (%):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:355
+#: core/showfoto/stackview/showfotostackviewlist.cpp:349
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Medium (%1x%2)"
 msgstr "चौडाइ (%):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:359
+#: core/showfoto/stackview/showfotostackviewlist.cpp:353
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Large (%1x%2)"
 msgstr "चौडाइ (%):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:363
+#: core/showfoto/stackview/showfotostackviewlist.cpp:357
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Huge (%1x%2)"
 msgstr "चौडाइ (%):"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:402
+#: core/showfoto/stackview/showfotostackviewlist.cpp:396
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
 msgstr "नयाँ ट्याग थप्नुहोस्..."
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:416
+#: core/showfoto/stackview/showfotostackviewlist.cpp:410
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Clear All Items"
 msgstr "केन्द्र"
 
-#: core/showfoto/stackview/showfotostackviewlist.cpp:424
+#: core/showfoto/stackview/showfotostackviewlist.cpp:418
 #, fuzzy, kde-format
 msgctxt "@action: context menu"
 msgid "Remove Items"
 msgstr "ट्याग हटाउनुहोस्"
 
-#: core/showfoto/stackview/showfotostackviewsidebar.cpp:219
+#: core/showfoto/stackview/showfotostackviewsidebar.cpp:212
 #, kde-format
 msgctxt "@title: stack-view list on items"
 msgid "Stack"
@@ -49004,7 +49004,7 @@ msgctxt "@action"
 msgid "C&ancel"
 msgstr "रद्द गर्नुहोस्"
 
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:263
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:253
 #: core/utilities/import/items/itemviewimportdelegate.cpp:320
 #, fuzzy, kde-format
 msgctxt "date of image creation"
