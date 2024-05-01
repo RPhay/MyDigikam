@@ -34,10 +34,6 @@ TimeAdjustPlugin::TimeAdjustPlugin(QObject* const parent)
 {
 }
 
-TimeAdjustPlugin::~TimeAdjustPlugin()
-{
-}
-
 QString TimeAdjustPlugin::name() const
 {
     return i18nc("@title", "Time Adjust");

@@ -38,10 +38,6 @@ DigitalScannerPlugin::DigitalScannerPlugin(QObject* const parent)
 {
 }
 
-DigitalScannerPlugin::~DigitalScannerPlugin()
-{
-}
-
 void DigitalScannerPlugin::cleanUp()
 {
     if (m_saneWidget)

@@ -39,9 +39,7 @@ class Q_DECL_HIDDEN SaveImgThread::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 

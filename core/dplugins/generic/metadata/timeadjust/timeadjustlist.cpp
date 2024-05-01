@@ -48,10 +48,6 @@ TimeAdjustList::TimeAdjustList(QWidget* const parent)
     listView()->setUniformRowHeights(true);
 }
 
-TimeAdjustList::~TimeAdjustList()
-{
-}
-
 void TimeAdjustList::setStatus(const QUrl& url,
                                const QDateTime& org,
                                const QDateTime& adj, int status)

@@ -59,7 +59,7 @@ public:
 public:
 
     explicit TimeAdjustList(QWidget* const parent);
-    ~TimeAdjustList() override;
+    ~TimeAdjustList() override = default;
 
     void setStatus(const QUrl& url,
                    const QDateTime&,

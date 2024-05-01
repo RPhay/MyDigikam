@@ -35,7 +35,7 @@ class TimeAdjustPlugin : public DPluginGeneric
 public:
 
     explicit TimeAdjustPlugin(QObject* const parent = nullptr);
-    ~TimeAdjustPlugin()                  override;
+    ~TimeAdjustPlugin()                  override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

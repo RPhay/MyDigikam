@@ -39,7 +39,7 @@ class TimeAdjustTask : public ActionJob
 public:
 
     explicit TimeAdjustTask(const QUrl& url, TimeAdjustThread* const thread);
-    ~TimeAdjustTask() override;
+    ~TimeAdjustTask()   override;
 
     void setSettings(const TimeAdjustContainer& settings);
 
@@ -51,7 +51,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run() override;
+    void run()          override;
 
 private:
 
@@ -73,7 +73,7 @@ class TimePreviewTask : public ActionJob
 public:
 
     explicit TimePreviewTask(const QUrl& url, TimeAdjustThread* const thread);
-    ~TimePreviewTask() override;
+    ~TimePreviewTask()  override;
 
     void setSettings(const TimeAdjustContainer& settings);
 
@@ -83,7 +83,7 @@ Q_SIGNALS:
 
 protected:
 
-    void run() override;
+    void run()          override;
 
 private:
 

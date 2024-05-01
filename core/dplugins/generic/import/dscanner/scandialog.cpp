@@ -46,15 +46,11 @@ class Q_DECL_HIDDEN ScanDialog::Private
 {
 public:
 
-    explicit Private()
-      : progress  (nullptr),
-        saneWidget(nullptr)
-    {
-    }
+    Private() = default;
 
     QString            targetDir;
-    StatusProgressBar* progress;
-    KSaneWidget*       saneWidget;
+    StatusProgressBar* progress     = nullptr;
+    KSaneWidget*       saneWidget   = nullptr;
 };
 
 ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)

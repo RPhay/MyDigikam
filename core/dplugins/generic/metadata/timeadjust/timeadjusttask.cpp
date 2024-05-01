@@ -60,6 +60,7 @@ TimeAdjustTask::TimeAdjustTask(const QUrl& url, TimeAdjustThread* const thread)
 TimeAdjustTask::~TimeAdjustTask()
 {
     cancel();
+
     delete d;
 }
 
@@ -88,6 +89,7 @@ void TimeAdjustTask::run()
     {
         Q_EMIT signalProcessEnded(d->url, org, adj, TimeAdjustList::META_TIME_ERROR);
         Q_EMIT signalDone();
+
         return;
     }
 
@@ -148,14 +150,17 @@ void TimeAdjustTask::run()
 
                 bool ret = true;
 
-                if      (it.key().startsWith(QLatin1String("Exif.")) &&
+                if      (
+                         it.key().startsWith(QLatin1String("Exif.")) &&
                          (meta->canWriteExif(d->url.toLocalFile())   ||
                           writeWithExifTool                          ||
                           writeToSidecar)
                         )
                 {
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getExifTagString(it.key().toLatin1().constData()).isEmpty())
+                    if (
+                        !d->settings.updIfAvailable ||
+                        !meta->getExifTagString(it.key().toLatin1().constData()).isEmpty()
+                       )
                     {
                         ret &= meta->setExifTagString(it.key().toLatin1().constData(),
                                                       adj.toString(exifDateTimeFormat));
@@ -163,14 +168,19 @@ void TimeAdjustTask::run()
                         metadataChanged = true;
                     }
                 }
-                else if (it.key().startsWith(QLatin1String("Iptc.")) &&
-                         (meta->canWriteIptc(d->url.toLocalFile())   ||
+                else if (
+                         it.key().startsWith(QLatin1String("Iptc.")) &&
+                         (
+                          meta->canWriteIptc(d->url.toLocalFile())   ||
                           writeWithExifTool                          ||
-                          writeToSidecar)
+                          writeToSidecar
+                         )
                         )
                 {
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getIptcTagString(it.key().toLatin1().constData()).isEmpty())
+                    if (
+                        !d->settings.updIfAvailable ||
+                        !meta->getIptcTagString(it.key().toLatin1().constData()).isEmpty()
+                       )
                     {
                         if      (it.key().contains(QLatin1String("Date")))
                         {
@@ -188,14 +198,19 @@ void TimeAdjustTask::run()
                         }
                     }
                 }
-                else if (it.key().startsWith(QLatin1String("Xmp.")) &&
-                         (meta->canWriteXmp(d->url.toLocalFile())   ||
+                else if (
+                         it.key().startsWith(QLatin1String("Xmp.")) &&
+                         (
+                          meta->canWriteXmp(d->url.toLocalFile())   ||
                           writeWithExifTool                         ||
-                          writeToSidecar)
+                          writeToSidecar
                          )
+                        )
                 {
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString(it.key().toLatin1().constData()).isEmpty())
+                    if (
+                        !d->settings.updIfAvailable ||
+                        !meta->getXmpTagString(it.key().toLatin1().constData()).isEmpty()
+                       )
                     {
                         ret &= meta->setXmpTagString(it.key().toLatin1().constData(),
                                                      adj.toString(xmpDateTimeFormat));
