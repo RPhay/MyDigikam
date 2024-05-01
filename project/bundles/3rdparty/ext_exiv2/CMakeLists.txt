@@ -53,9 +53,9 @@ if(MINGW)
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
-#        GIT_TAG v0.28.0
+        GIT_TAG v0.28.2
         # See the bug https://github.com/Exiv2/exiv2/issues/2637
-        GIT_TAG 0.27-maintenance
+#        GIT_TAG 0.27-maintenance
 
 #        PATCH_COMMAND git reset --hard &&
 #                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-mxe-mmap.patch
