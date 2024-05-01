@@ -57,8 +57,8 @@ if(MINGW)
         # See the bug https://github.com/Exiv2/exiv2/issues/2637
 #        GIT_TAG 0.27-maintenance
 
-#        PATCH_COMMAND git reset --hard &&
-#                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-mxe-mmap.patch
+        PATCH_COMMAND git reset --hard &&
+                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-mxe-mmap.patch
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
