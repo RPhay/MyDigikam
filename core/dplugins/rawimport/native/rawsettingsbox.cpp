@@ -64,84 +64,50 @@ public:
 
 public:
 
-    explicit Private()
-      : optionGroupName                 (QLatin1String("RAW Import Settings")),
-        optionHistogramChannelEntry     (QLatin1String("Histogram Channel")),
-        optionHistogramScaleEntry       (QLatin1String("Histogram Scale")),
-        optionBrightnessEntry           (QLatin1String("Brightness")),
-        optionContrastEntry             (QLatin1String("Contrast")),
-        optionGammaEntry                (QLatin1String("Gamma")),
-        optionSaturationEntry           (QLatin1String("Saturation")),
-        optionMainExposureEntry         (QLatin1String("MainExposure")),
-        optionCurvePrefix               (QLatin1String("RawCurve")),
-        optionSettingsPageEntry         (QLatin1String("Settings Page")),
-        optionDecodingSettingsTabEntry  (QLatin1String("Decoding Settings Tab"))
-    {
-        infoBox                = nullptr;
-        advExposureBox         = nullptr;
-        gammaLabel             = nullptr;
-        gammaInput             = nullptr;
-        saturationLabel        = nullptr;
-        saturationInput        = nullptr;
-        fineExposureLabel      = nullptr;
-        mainExposureInput      = nullptr;
-        contrastInput          = nullptr;
-        contrastLabel          = nullptr;
-        curveBox               = nullptr;
-        curveWidget            = nullptr;
-        resetCurveBtn          = nullptr;
-        decodingSettingsBox    = nullptr;
-        postProcessSettingsBox = nullptr;
-        tabView                = nullptr;
-        abortBtn               = nullptr;
-        updateBtn              = nullptr;
-        rawdecodingBox         = nullptr;
-        brightnessLabel        = nullptr;
-        brightnessInput        = nullptr;
-    }
+    Private() = default;
 
-    const QString        optionGroupName;
-    const QString        optionHistogramChannelEntry;
-    const QString        optionHistogramScaleEntry;
-    const QString        optionBrightnessEntry;
-    const QString        optionContrastEntry;
-    const QString        optionGammaEntry;
-    const QString        optionSaturationEntry;
-    const QString        optionMainExposureEntry;
-    const QString        optionCurvePrefix;
-    const QString        optionSettingsPageEntry;
-    const QString        optionDecodingSettingsTabEntry;
+    const QString        optionGroupName                    = QLatin1String("RAW Import Settings");
+    const QString        optionHistogramChannelEntry        = QLatin1String("Histogram Channel");
+    const QString        optionHistogramScaleEntry          = QLatin1String("Histogram Scale");
+    const QString        optionBrightnessEntry              = QLatin1String("Brightness");
+    const QString        optionContrastEntry                = QLatin1String("Contrast");
+    const QString        optionGammaEntry                   = QLatin1String("Gamma");
+    const QString        optionSaturationEntry              = QLatin1String("Saturation");
+    const QString        optionMainExposureEntry            = QLatin1String("MainExposure");
+    const QString        optionCurvePrefix                  = QLatin1String("RawCurve");
+    const QString        optionSettingsPageEntry            = QLatin1String("Settings Page");
+    const QString        optionDecodingSettingsTabEntry     = QLatin1String("Decoding Settings Tab");
 
-    QWidget*             advExposureBox;
-    QWidget*             curveBox;
-    QWidget*             rawdecodingBox;
+    QWidget*             advExposureBox                     = nullptr;
+    QWidget*             curveBox                           = nullptr;
+    QWidget*             rawdecodingBox                     = nullptr;
 
-    QLabel*              brightnessLabel;
-    QLabel*              contrastLabel;
-    QLabel*              gammaLabel;
-    QLabel*              saturationLabel;
-    QLabel*              fineExposureLabel;
+    QLabel*              brightnessLabel                    = nullptr;
+    QLabel*              contrastLabel                      = nullptr;
+    QLabel*              gammaLabel                         = nullptr;
+    QLabel*              saturationLabel                    = nullptr;
+    QLabel*              fineExposureLabel                  = nullptr;
 
-    QPushButton*         abortBtn;
-    QPushButton*         updateBtn;
-    QPushButton*         resetCurveBtn;
+    QPushButton*         abortBtn                           = nullptr;
+    QPushButton*         updateBtn                          = nullptr;
+    QPushButton*         resetCurveBtn                      = nullptr;
 
-    QTabWidget*          tabView;
+    QTabWidget*          tabView                            = nullptr;
 
-    CurvesWidget*        curveWidget;
+    CurvesWidget*        curveWidget                        = nullptr;
 
-    ImageDialogPreview*  infoBox;
+    ImageDialogPreview*  infoBox                            = nullptr;
 
-    DExpanderBox*        postProcessSettingsBox;
+    DExpanderBox*        postProcessSettingsBox             = nullptr;
 
-    DIntNumInput*        contrastInput;
-    DIntNumInput*        brightnessInput;
+    DIntNumInput*        contrastInput                      = nullptr;
+    DIntNumInput*        brightnessInput                    = nullptr;
 
-    DDoubleNumInput*     gammaInput;
-    DDoubleNumInput*     saturationInput;
-    DDoubleNumInput*     mainExposureInput;
+    DDoubleNumInput*     gammaInput                         = nullptr;
+    DDoubleNumInput*     saturationInput                    = nullptr;
+    DDoubleNumInput*     mainExposureInput                  = nullptr;
 
-    DRawDecoderWidget*   decodingSettingsBox;
+    DRawDecoderWidget*   decodingSettingsBox                = nullptr;
 };
 
 RawSettingsBox::RawSettingsBox(const QUrl& url, QWidget* const parent)
@@ -422,6 +388,7 @@ void RawSettingsBox::resetSettings()
 void RawSettingsBox::slotResetCurve()
 {
     d->curveWidget->reset();
+
     Q_EMIT signalPostProcessingChanged();
 }
 

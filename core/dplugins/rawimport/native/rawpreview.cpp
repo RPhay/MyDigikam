@@ -41,23 +41,18 @@ class Q_DECL_HIDDEN RawPreview::Private
 {
 public:
 
-    explicit Private()
-      : currentFitWindowZoom(0.0),
-        thread              (nullptr),
-        item                (nullptr)
-    {
-    }
+    Private() = default;
 
-    double                 currentFitWindowZoom;
+    double                 currentFitWindowZoom = 0.0;
 
     QUrl                   url;
 
     DImg                   demosaicedImg;
 
     DRawDecoding           settings;
-    ManagedLoadSaveThread* thread;
+    ManagedLoadSaveThread* thread               = nullptr;
     LoadingDescription     loadingDesc;
-    ImagePreviewItem*      item;
+    ImagePreviewItem*      item                 = nullptr;
 };
 
 RawPreview::RawPreview(const QUrl& url, QWidget* const parent)
@@ -130,6 +125,7 @@ void RawPreview::setDecodingSettings(const DRawDecoding& settings)
 
     d->loadingDesc                  = LoadingDescription(d->url.toLocalFile(), demosaisedSettings);
     d->thread->load(d->loadingDesc, ManagedLoadSaveThread::LoadingPolicyFirstRemovePrevious);
+
     Q_EMIT signalLoadingStarted();
 }
 
@@ -186,6 +182,7 @@ void RawPreview::slotImageLoaded(const LoadingDescription& description, const DI
     else
     {
         d->demosaicedImg = image;
+
         Q_EMIT signalDemosaicedImage();
 
         // NOTE: we will apply all Raw post processing corrections in RawImport class.

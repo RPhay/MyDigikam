@@ -43,14 +43,10 @@ class Q_DECL_HIDDEN RawImport::Private
 {
 public:
 
-    explicit Private()
-      : settingsBox  (nullptr),
-        previewWidget(nullptr)
-    {
-    }
+    Private() = default;
 
-    RawSettingsBox* settingsBox;
-    RawPreview*     previewWidget;
+    RawSettingsBox* settingsBox     = nullptr;
+    RawPreview*     previewWidget   = nullptr;
 
     DImg            postProcessedImage;
 };

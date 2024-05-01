@@ -44,12 +44,9 @@ class Q_DECL_HIDDEN RawTherapeeRawImportPlugin::Private
 {
 public:
 
-    explicit Private()
-      : rawtherapee(nullptr)
-    {
-    }
+    Private() = default;
 
-    QProcess*          rawtherapee;
+    QProcess*          rawtherapee = nullptr;
     DImg               decoded;
     LoadingDescription props;
     QString            tempName;
@@ -113,7 +110,7 @@ QList<DPluginAuthor> RawTherapeeRawImportPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2022"))
+                             QString::fromUtf8("(C) 2019-2024"))
             ;
 }
 

@@ -28,10 +28,6 @@ DImgHEIFLoader::DImgHEIFLoader(DImg* const image)
 {
 }
 
-DImgHEIFLoader::~DImgHEIFLoader()
-{
-}
-
 bool DImgHEIFLoader::hasAlpha() const
 {
     return m_hasAlpha;

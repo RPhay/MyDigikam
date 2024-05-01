@@ -41,7 +41,7 @@ class DImgHEIFPlugin : public DPluginDImg
 public:
 
     explicit DImgHEIFPlugin(QObject* const parent = nullptr);
-    ~DImgHEIFPlugin()                                                                             override;
+    ~DImgHEIFPlugin()                                                                             override = default;
 
     QString name()                                                                          const override;
     QString iid()                                                                           const override;

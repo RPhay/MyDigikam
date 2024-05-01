@@ -44,12 +44,9 @@ class Q_DECL_HIDDEN UFRawRawImportPlugin::Private
 {
 public:
 
-    explicit Private()
-      : ufraw(nullptr)
-    {
-    }
+    Private() = default;
 
-    QProcess*          ufraw;
+    QProcess*          ufraw    = nullptr;
     DImg               decoded;
     LoadingDescription props;
     QFileInfo          fileInfo;
@@ -114,7 +111,7 @@ QList<DPluginAuthor> UFRawRawImportPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2022"))
+                             QString::fromUtf8("(C) 2019-2024"))
             ;
 }
 

@@ -47,62 +47,59 @@ class Q_DECL_HIDDEN DarkTableRawImportPlugin::Private
 {
 public:
 
-    explicit Private()
-      : darktable(nullptr)
-    {
-    }
+    Private() = default;
 
-    static const QString luaScriptData;
 
-    QProcess*            darktable;
+    QProcess*            darktable  = nullptr;
     DImg                 decoded;
     LoadingDescription   props;
     QString              tempName;
     QTemporaryFile       luaFile;
-};
 
-const QString DarkTableRawImportPlugin::Private::luaScriptData = QLatin1String(
-    "\n"                                                                                                    \
-    "local dt = require \"darktable\"\n"                                                                    \
-    "\n"                                                                                                    \
-    "local min_api_version = \"2.1.0\"\n"                                                                   \
-    "if dt.configuration.api_version_string < min_api_version then\n"                                       \
-    "  dt.print(\"the exit export script requires at least darktable version 1.7.0\")\n"                    \
-    "  dt.print_error(\"the exit export script requires at least darktable version 1.7.0\")\n"              \
-    "  return\n"                                                                                            \
-    "else\n"                                                                                                \
-    "  dt.print(\"closing darktable will export the image and make image editor load it\")\n"               \
-    "end\n"                                                                                                 \
-    "\n"                                                                                                    \
-    "local export_filename = dt.preferences.read(\"export_on_exit\", \"export_filename\", \"string\")\n"    \
-    "\n"                                                                                                    \
-    "function exit_function()\n"                                                                            \
-    "  -- safegurad against someone using this with their library containing 50k images\n"                  \
-    "  if #dt.database > 1 then\n"                                                                          \
-    "    dt.print_error(\"too many images, only exporting the first\")\n"                                   \
-    "  -- return\n"                                                                                         \
-    "  end\n"                                                                                               \
-    "\n"                                                                                                    \
-    "  -- change the view first to force writing of the history stack\n"                                    \
-    "  dt.gui.current_view(dt.gui.views.lighttable)\n"                                                      \
-    "  -- now export\n"                                                                                     \
-    "  local format = dt.new_format(\"png\")\n"                                                             \
-    "  format.max_width = 0\n"                                                                              \
-    "  format.max_height = 0\n"                                                                             \
-    "  -- lets have the export in a loop so we could easily support > 1 images\n"                           \
-    "  for _, image in ipairs(dt.database) do\n"                                                            \
-    "    dt.print_error(\"exporting `\"..tostring(image)..\"' to `\"..export_filename..\"'\")\n"            \
-    "    format:write_image(image, export_filename)\n"                                                      \
-    "    break -- only export one image. see above for the reason\n"                                        \
-    "  end\n"                                                                                               \
-    "end\n"                                                                                                 \
-    "\n"                                                                                                    \
-    "if dt.configuration.api_version_string >= \"6.2.1\" then\n"                                            \
-    "dt.register_event(\"fileraw\", \"exit\", exit_function)\n"                                             \
-    "else\n"                                                                                                \
-    "dt.register_event(\"exit\", exit_function)\n"                                                          \
-    "end\n"                                                                                                 \
-);
+    const QString luaScriptData     = QLatin1String
+    (
+        "\n"                                                                                                    \
+        "local dt = require \"darktable\"\n"                                                                    \
+        "\n"                                                                                                    \
+        "local min_api_version = \"2.1.0\"\n"                                                                   \
+        "if dt.configuration.api_version_string < min_api_version then\n"                                       \
+        "  dt.print(\"the exit export script requires at least darktable version 1.7.0\")\n"                    \
+        "  dt.print_error(\"the exit export script requires at least darktable version 1.7.0\")\n"              \
+        "  return\n"                                                                                            \
+        "else\n"                                                                                                \
+        "  dt.print(\"closing darktable will export the image and make image editor load it\")\n"               \
+        "end\n"                                                                                                 \
+        "\n"                                                                                                    \
+        "local export_filename = dt.preferences.read(\"export_on_exit\", \"export_filename\", \"string\")\n"    \
+        "\n"                                                                                                    \
+        "function exit_function()\n"                                                                            \
+        "  -- safegurad against someone using this with their library containing 50k images\n"                  \
+        "  if #dt.database > 1 then\n"                                                                          \
+        "    dt.print_error(\"too many images, only exporting the first\")\n"                                   \
+        "  -- return\n"                                                                                         \
+        "  end\n"                                                                                               \
+        "\n"                                                                                                    \
+        "  -- change the view first to force writing of the history stack\n"                                    \
+        "  dt.gui.current_view(dt.gui.views.lighttable)\n"                                                      \
+        "  -- now export\n"                                                                                     \
+        "  local format = dt.new_format(\"png\")\n"                                                             \
+        "  format.max_width = 0\n"                                                                              \
+        "  format.max_height = 0\n"                                                                             \
+        "  -- lets have the export in a loop so we could easily support > 1 images\n"                           \
+        "  for _, image in ipairs(dt.database) do\n"                                                            \
+        "    dt.print_error(\"exporting `\"..tostring(image)..\"' to `\"..export_filename..\"'\")\n"            \
+        "    format:write_image(image, export_filename)\n"                                                      \
+        "    break -- only export one image. see above for the reason\n"                                        \
+        "  end\n"                                                                                               \
+        "end\n"                                                                                                 \
+        "\n"                                                                                                    \
+        "if dt.configuration.api_version_string >= \"6.2.1\" then\n"                                            \
+        "dt.register_event(\"fileraw\", \"exit\", exit_function)\n"                                             \
+        "else\n"                                                                                                \
+        "dt.register_event(\"exit\", exit_function)\n"                                                          \
+        "end\n"                                                                                                 \
+    );
+};
 
 DarkTableRawImportPlugin::DarkTableRawImportPlugin(QObject* const parent)
     : DPluginRawImport(parent),
@@ -166,7 +163,7 @@ QList<DPluginAuthor> DarkTableRawImportPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2022"))
+                             QString::fromUtf8("(C) 2019-2024"))
             ;
 }
 

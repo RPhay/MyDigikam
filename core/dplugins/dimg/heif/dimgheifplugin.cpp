@@ -38,10 +38,6 @@ DImgHEIFPlugin::DImgHEIFPlugin(QObject* const parent)
 {
 }
 
-DImgHEIFPlugin::~DImgHEIFPlugin()
-{
-}
-
 QString DImgHEIFPlugin::name() const
 {
     return i18nc("@title", "HEIF loader");

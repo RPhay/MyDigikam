@@ -39,10 +39,6 @@ RawImportNativePlugin::RawImportNativePlugin(QObject* const parent)
 {
 }
 
-RawImportNativePlugin::~RawImportNativePlugin()
-{
-}
-
 QString RawImportNativePlugin::name() const
 {
     return i18n("Import Raw Using Libraw");
@@ -91,7 +87,7 @@ QList<DPluginAuthor> RawImportNativePlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2022"))
+                             QString::fromUtf8("(C) 2008-2024"))
             ;
 }
 
@@ -125,7 +121,9 @@ void RawImportNativePlugin::slotLoadRawFromTool()
     RawImport* const rawImport = dynamic_cast<RawImport*>(EditorToolIface::editorToolIface()->currentTool());
 
     if (!rawImport)
+    {
         return;
+    }
 
     LoadingDescription props(m_filePath, LoadingDescription::ConvertForEditor);
     props.rawDecodingSettings = rawImport->rawDecodingSettings();
@@ -134,11 +132,13 @@ void RawImportNativePlugin::slotLoadRawFromTool()
     if (rawImport->hasPostProcessedImage())
     {
         // Image was previously decoded in Import tool: load pre-decoded image as well in editor.
+
         Q_EMIT signalDecodedImage(props, rawImport->postProcessedImage());
     }
     else
     {
         // Image was not previously decoded in Import tool: as to editor to post-process image and load it.
+
         Q_EMIT signalLoadRaw(props);
     }
 }
@@ -146,6 +146,7 @@ void RawImportNativePlugin::slotLoadRawFromTool()
 void RawImportNativePlugin::slotLoadRaw()
 {
     // Cancel pressed: we load Raw with image editor default Raw decoding settings.
+
     Q_EMIT signalLoadRaw(LoadingDescription(m_filePath,
                                           m_defaultSettings,
                                           LoadingDescription::RawDecodingGlobalSettings,
