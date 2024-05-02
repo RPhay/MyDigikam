@@ -342,7 +342,7 @@ public:
     /// misc
     ApplicationSettings::StringComparisonType    stringComparisonType                               = ApplicationSettings::Natural;
     QString                                      applicationStyle                                   = qApp->style()->objectName();
-    QString                                      applicationIcon                                    = QString();
+    QString                                      applicationIcon;
     QFont                                        applicationFont                                    = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     int                                          minimumSimilarityBound                             = 40;
