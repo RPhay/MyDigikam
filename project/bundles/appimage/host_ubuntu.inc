@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Rules to prepare Ubuntu 18.04 and later Linux host.
+# Rules to prepare Ubuntu 22.04 and later Linux host.
 #
 # Copyright (c) 2015-2024 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
