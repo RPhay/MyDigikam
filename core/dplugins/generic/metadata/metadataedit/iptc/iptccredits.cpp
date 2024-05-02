@@ -41,30 +41,19 @@ class Q_DECL_HIDDEN IPTCCredits::Private
 {
 public:
 
-    explicit Private()
-      : copyrightCheck   (nullptr),
-        creditCheck      (nullptr),
-        sourceCheck      (nullptr),
-        copyrightEdit    (nullptr),
-        creditEdit       (nullptr),
-        sourceEdit       (nullptr),
-        bylineEdit       (nullptr),
-        bylineTitleEdit  (nullptr),
-        contactEdit      (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*        copyrightCheck;
-    QCheckBox*        creditCheck;
-    QCheckBox*        sourceCheck;
+    QCheckBox*        copyrightCheck    = nullptr;
+    QCheckBox*        creditCheck       = nullptr;
+    QCheckBox*        sourceCheck       = nullptr;
 
-    DPlainTextEdit*  copyrightEdit;
-    DPlainTextEdit*  creditEdit;
-    DPlainTextEdit*  sourceEdit;
+    DPlainTextEdit*  copyrightEdit      = nullptr;
+    DPlainTextEdit*  creditEdit         = nullptr;
+    DPlainTextEdit*  sourceEdit         = nullptr;
 
-    MultiStringsEdit* bylineEdit;
-    MultiStringsEdit* bylineTitleEdit;
-    MultiStringsEdit* contactEdit;
+    MultiStringsEdit* bylineEdit        = nullptr;
+    MultiStringsEdit* bylineTitleEdit   = nullptr;
+    MultiStringsEdit* contactEdit       = nullptr;
 };
 
 IPTCCredits::IPTCCredits(QWidget* const parent)
@@ -258,34 +247,58 @@ void IPTCCredits::applyMetadata(const DMetadata& meta)
     QStringList oldList, newList;
 
     if (d->copyrightCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.Copyright", d->copyrightEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.Copyright");
+    }
 
     if (d->bylineEdit->getValues(oldList, newList))
+    {
         meta.setIptcTagsStringList("Iptc.Application2.Byline", 32, oldList, newList);
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.Byline");
+    }
 
     if (d->bylineTitleEdit->getValues(oldList, newList))
+    {
         meta.setIptcTagsStringList("Iptc.Application2.BylineTitle", 32, oldList, newList);
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.BylineTitle");
+    }
 
     if (d->creditCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.Credit", d->creditEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.Credit");
+    }
 
     if (d->sourceCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.Source", d->sourceEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.Source");
+    }
 
     if (d->contactEdit->getValues(oldList, newList))
+    {
         meta.setIptcTagsStringList("Iptc.Application2.Contact", 128, oldList, newList);
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.Contact");
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

@@ -40,27 +40,19 @@ class Q_DECL_HIDDEN IPTCKeywords::Private
 {
 public:
 
-    explicit Private()
-      : addKeywordButton(nullptr),
-        delKeywordButton(nullptr),
-        repKeywordButton(nullptr),
-        keywordsCheck   (nullptr),
-        keywordsEdit    (nullptr),
-        keywordsBox     (nullptr)
-    {
-    }
+    Private() = default;
 
     QStringList      oldKeywords;
 
-    QPushButton*     addKeywordButton;
-    QPushButton*     delKeywordButton;
-    QPushButton*     repKeywordButton;
+    QPushButton*     addKeywordButton   = nullptr;
+    QPushButton*     delKeywordButton   = nullptr;
+    QPushButton*     repKeywordButton   = nullptr;
 
-    QCheckBox*       keywordsCheck;
+    QCheckBox*       keywordsCheck      = nullptr;
 
-    DPlainTextEdit* keywordsEdit;
+    DPlainTextEdit* keywordsEdit        = nullptr;
 
-    QListWidget*     keywordsBox;
+    QListWidget*     keywordsBox        = nullptr;
 };
 
 IPTCKeywords::IPTCKeywords(QWidget* const parent)
@@ -184,6 +176,7 @@ void IPTCKeywords::slotDelKeyword()
     }
 
     d->keywordsBox->takeItem(d->keywordsBox->row(item));
+
     delete item;
 }
 
@@ -229,7 +222,7 @@ void IPTCKeywords::slotAddKeyword()
 
     bool found = false;
 
-    for (int i = 0 ; i < d->keywordsBox->count(); ++i)
+    for (int i = 0 ; i < d->keywordsBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->keywordsBox->item(i);
 
@@ -274,16 +267,20 @@ void IPTCKeywords::applyMetadata(const DMetadata& meta)
 {
     QStringList newKeywords;
 
-    for (int i = 0 ; i < d->keywordsBox->count(); ++i)
+    for (int i = 0 ; i < d->keywordsBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->keywordsBox->item(i);
         newKeywords.append(item->text());
     }
 
     if (d->keywordsCheck->isChecked())
+    {
         meta.setIptcKeywords(d->oldKeywords, newKeywords);
+    }
     else
+    {
         meta.setIptcKeywords(d->oldKeywords, QStringList());
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

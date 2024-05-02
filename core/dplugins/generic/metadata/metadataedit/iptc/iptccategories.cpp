@@ -42,31 +42,21 @@ class Q_DECL_HIDDEN IPTCCategories::Private
 {
 public:
 
-    explicit Private()
-      : addSubCategoryButton(nullptr),
-        delSubCategoryButton(nullptr),
-        repSubCategoryButton(nullptr),
-        subCategoriesCheck  (nullptr),
-        categoryCheck       (nullptr),
-        categoryEdit        (nullptr),
-        subCategoryEdit     (nullptr),
-        subCategoriesBox    (nullptr)
-    {
-    }
+    Private() = default;
 
     QStringList      oldSubCategories;
 
-    QPushButton*     addSubCategoryButton;
-    QPushButton*     delSubCategoryButton;
-    QPushButton*     repSubCategoryButton;
+    QPushButton*     addSubCategoryButton   = nullptr;
+    QPushButton*     delSubCategoryButton   = nullptr;
+    QPushButton*     repSubCategoryButton   = nullptr;
 
-    QCheckBox*       subCategoriesCheck;
-    QCheckBox*       categoryCheck;
+    QCheckBox*       subCategoriesCheck     = nullptr;
+    QCheckBox*       categoryCheck          = nullptr;
 
-    QLineEdit*       categoryEdit;
-    DPlainTextEdit*  subCategoryEdit;
+    QLineEdit*       categoryEdit           = nullptr;
+    DPlainTextEdit*  subCategoryEdit        = nullptr;
 
-    QListWidget*     subCategoriesBox;
+    QListWidget*     subCategoriesBox       = nullptr;
 };
 
 IPTCCategories::IPTCCategories(QWidget* const parent)
@@ -198,16 +188,25 @@ IPTCCategories::~IPTCCategories()
 void IPTCCategories::slotDelCategory()
 {
     QListWidgetItem* const item = d->subCategoriesBox->currentItem();
-    if (!item) return;
+
+    if (!item)
+    {
+        return;
+    }
 
     d->subCategoriesBox->takeItem(d->subCategoriesBox->row(item));
+
     delete item;
 }
 
 void IPTCCategories::slotRepCategory()
 {
     QString newCategory = d->subCategoryEdit->text();
-    if (newCategory.isEmpty()) return;
+
+    if (newCategory.isEmpty())
+    {
+        return;
+    }
 
     if (!d->subCategoriesBox->selectedItems().isEmpty())
     {
@@ -234,7 +233,11 @@ void IPTCCategories::slotCategorySelectionChanged()
 void IPTCCategories::slotAddCategory()
 {
     QString newCategory = d->subCategoryEdit->text();
-    if (newCategory.isEmpty()) return;
+
+    if (newCategory.isEmpty())
+    {
+        return;
+    }
 
     bool found = false;
 
@@ -316,9 +319,13 @@ void IPTCCategories::applyMetadata(const DMetadata& meta)
     QStringList newCategories;
 
     if (d->categoryCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.Category", d->categoryEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.Category");
+    }
 
     for (int i = 0 ; i < d->subCategoriesBox->count(); ++i)
     {
@@ -327,9 +334,13 @@ void IPTCCategories::applyMetadata(const DMetadata& meta)
     }
 
     if (d->categoryCheck->isChecked() && d->subCategoriesCheck->isChecked())
+    {
         meta.setIptcSubCategories(d->oldSubCategories, newCategories);
+    }
     else
+    {
         meta.setIptcSubCategories(d->oldSubCategories, QStringList());
+    }
 }
 
 void IPTCCategories::slotCheckCategoryToggled(bool checked)

@@ -47,30 +47,8 @@ class Q_DECL_HIDDEN IPTCEnvelope::Private
 {
 public:
 
-    explicit Private()
+    Private()
     {
-        unoIDCheck       = nullptr;
-        unoIDEdit        = nullptr;
-        destinationNote  = nullptr;
-        destinationCheck = nullptr;
-        destinationEdit  = nullptr;
-        serviceIDCheck   = nullptr;
-        serviceIDEdit    = nullptr;
-        productIDCheck   = nullptr;
-        productIDEdit    = nullptr;
-        envelopeIDCheck  = nullptr;
-        envelopeIDEdit   = nullptr;
-        priorityCB       = nullptr;
-        priorityCheck    = nullptr;
-        dateSentSel      = nullptr;
-        timeSentSel      = nullptr;
-        zoneSentSel      = nullptr;
-        dateSentCheck    = nullptr;
-        timeSentCheck    = nullptr;
-        setTodaySentBtn  = nullptr;
-        formatCB         = nullptr;
-        formatCheck      = nullptr;
-
         // Map : "file format - version"  ==> description
 
         fileFormatMap.insert( QLatin1String("00-00"), i18n("No ObjectData") );
@@ -116,36 +94,36 @@ public:
 
     FileFormatMap                  fileFormatMap;
 
-    QTimeEdit*                     timeSentSel;
+    QTimeEdit*                     timeSentSel      = nullptr;
 
-    TimeZoneComboBox*              zoneSentSel;
+    TimeZoneComboBox*              zoneSentSel      = nullptr;
 
-    QComboBox*                     priorityCB;
+    QComboBox*                     priorityCB       = nullptr;
 
-    QCheckBox*                     unoIDCheck;
-    QCheckBox*                     destinationCheck;
-    QCheckBox*                     serviceIDCheck;
-    QCheckBox*                     productIDCheck;
-    QCheckBox*                     envelopeIDCheck;
-    QCheckBox*                     dateSentCheck;
-    QCheckBox*                     timeSentCheck;
+    QCheckBox*                     unoIDCheck       = nullptr;
+    QCheckBox*                     destinationCheck = nullptr;
+    QCheckBox*                     serviceIDCheck   = nullptr;
+    QCheckBox*                     productIDCheck   = nullptr;
+    QCheckBox*                     envelopeIDCheck  = nullptr;
+    QCheckBox*                     dateSentCheck    = nullptr;
+    QCheckBox*                     timeSentCheck    = nullptr;
 
-    QPushButton*                   setTodaySentBtn;
+    QPushButton*                   setTodaySentBtn  = nullptr;
 
-    QLineEdit*                     unoIDEdit;
-    QLineEdit*                     envelopeIDEdit;
-    QLineEdit*                     serviceIDEdit;
-    QLineEdit*                     productIDEdit;
+    QLineEdit*                     unoIDEdit        = nullptr;
+    QLineEdit*                     envelopeIDEdit   = nullptr;
+    QLineEdit*                     serviceIDEdit    = nullptr;
+    QLineEdit*                     productIDEdit    = nullptr;
 
-    QDateEdit*                     dateSentSel;
+    QDateEdit*                     dateSentSel      = nullptr;
 
-    QLabel*                        destinationNote;
-    DPlainTextEdit*                destinationEdit;
+    QLabel*                        destinationNote  = nullptr;
+    DPlainTextEdit*                destinationEdit  = nullptr;
 
-    MetadataCheckBox*              priorityCheck;
-    MetadataCheckBox*              formatCheck;
+    MetadataCheckBox*              priorityCheck    = nullptr;
+    MetadataCheckBox*              formatCheck      = nullptr;
 
-    SqueezedComboBox*              formatCB;
+    SqueezedComboBox*              formatCB         = nullptr;
 };
 
 IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
@@ -529,13 +507,15 @@ void IPTCEnvelope::readMetadata(const DMetadata& meta)
     {
         const int val = data.toInt();
 
-        if (val >= 0 && val <= 9)
+        if ((val >= 0) && (val <= 9))
         {
             d->priorityCB->setCurrentIndex(val);
             d->priorityCheck->setChecked(true);
         }
         else
+        {
             d->priorityCheck->setValid(false);
+        }
     }
 
     d->priorityCB->setEnabled(d->priorityCheck->isChecked());
@@ -549,16 +529,27 @@ void IPTCEnvelope::readMetadata(const DMetadata& meta)
     {
         if (!version.isNull())
         {
-            if (format.size() == 1) format.prepend(QLatin1String("0"));
-            if (version.size() == 1) version.prepend(QLatin1String("0"));
+            if (format.size() == 1)
+            {
+                format.prepend(QLatin1String("0"));
+            }
+
+            if (version.size() == 1)
+            {
+                version.prepend(QLatin1String("0"));
+            }
 
             QString key = QString::fromUtf8("%1-%2").arg(format).arg(version);
-            int index = -1, i = 0;
+            int index   = -1, i = 0;
 
             for (Private::FileFormatMap::Iterator it = d->fileFormatMap.begin();
                  it != d->fileFormatMap.end(); ++it)
             {
-                if (it.key() == key) index = i;
+                if (it.key() == key)
+                {
+                    index = i;
+                }
+
                 i++;
             }
 
@@ -568,10 +559,14 @@ void IPTCEnvelope::readMetadata(const DMetadata& meta)
                 d->formatCheck->setChecked(true);
             }
             else
+            {
                 d->formatCheck->setValid(false);
+            }
         }
         else
+        {
             d->formatCheck->setValid(false);
+        }
     }
 
     d->formatCB->setEnabled(d->formatCheck->isChecked());
@@ -585,6 +580,7 @@ void IPTCEnvelope::readMetadata(const DMetadata& meta)
     if (!dateStr.isEmpty())
     {
         date = QDate::fromString(dateStr, Qt::ISODate);
+
         if (date.isValid())
         {
             d->dateSentSel->setDate(date);
@@ -601,6 +597,7 @@ void IPTCEnvelope::readMetadata(const DMetadata& meta)
     if (!timeStr.isEmpty())
     {
         time = QTime::fromString(timeStr, Qt::ISODate);
+
         if (time.isValid())
         {
             d->timeSentSel->setTime(time);
@@ -662,7 +659,7 @@ void IPTCEnvelope::applyMetadata(const DMetadata& meta)
         meta.removeIptcTag("Iptc.Envelope.ProductId");
     }
 
-    if (d->priorityCheck->isChecked())
+    if      (d->priorityCheck->isChecked())
     {
         meta.setIptcTagString("Iptc.Envelope.EnvelopePriority", QString::number(d->priorityCB->currentIndex()));
     }
@@ -671,7 +668,7 @@ void IPTCEnvelope::applyMetadata(const DMetadata& meta)
         meta.removeIptcTag("Iptc.Envelope.EnvelopePriority");
     }
 
-    if (d->formatCheck->isChecked())
+    if      (d->formatCheck->isChecked())
     {
         QString key;
         int i = 0;
@@ -679,7 +676,11 @@ void IPTCEnvelope::applyMetadata(const DMetadata& meta)
         for (Private::FileFormatMap::Iterator it = d->fileFormatMap.begin() ;
              it != d->fileFormatMap.end() ; ++it)
         {
-            if (i == d->formatCB->currentIndex()) key = it.key();
+            if (i == d->formatCB->currentIndex())
+            {
+                key = it.key();
+            }
+
             i++;
         }
 
@@ -697,7 +698,7 @@ void IPTCEnvelope::applyMetadata(const DMetadata& meta)
     if (d->dateSentCheck->isChecked())
     {
         meta.setIptcTagString("Iptc.Envelope.DateSent",
-                                    d->dateSentSel->date().toString(Qt::ISODate));
+                              d->dateSentSel->date().toString(Qt::ISODate));
     }
     else
     {
@@ -707,8 +708,8 @@ void IPTCEnvelope::applyMetadata(const DMetadata& meta)
     if (d->timeSentCheck->isChecked())
     {
         meta.setIptcTagString("Iptc.Envelope.TimeSent",
-                                    d->timeSentSel->time().toString(Qt::ISODate) +
-                                    d->zoneSentSel->getTimeZone());
+                              d->timeSentSel->time().toString(Qt::ISODate) +
+                              d->zoneSentSel->getTimeZone());
     }
     else
     {

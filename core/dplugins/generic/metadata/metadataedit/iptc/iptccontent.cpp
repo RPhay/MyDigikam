@@ -42,29 +42,19 @@ class Q_DECL_HIDDEN IPTCContent::Private
 {
 public:
 
-    explicit Private()
-      : captionCheck         (nullptr),
-        headlineCheck        (nullptr),
-        syncJFIFCommentCheck (nullptr),
-        syncEXIFCommentCheck (nullptr),
-        captionNote          (nullptr),
-        captionEdit          (nullptr),
-        headlineEdit         (nullptr),
-        writerEdit           (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*        captionCheck;
-    QCheckBox*        headlineCheck;
-    QCheckBox*        syncJFIFCommentCheck;
-    QCheckBox*        syncEXIFCommentCheck;
+    QCheckBox*        captionCheck          = nullptr;
+    QCheckBox*        headlineCheck         = nullptr;
+    QCheckBox*        syncJFIFCommentCheck  = nullptr;
+    QCheckBox*        syncEXIFCommentCheck  = nullptr;
 
-    QLabel*           captionNote;
-    DPlainTextEdit*   captionEdit;
+    QLabel*           captionNote           = nullptr;
+    DPlainTextEdit*   captionEdit           = nullptr;
 
-    DPlainTextEdit*   headlineEdit;
+    DPlainTextEdit*   headlineEdit          = nullptr;
 
-    MultiStringsEdit* writerEdit;
+    MultiStringsEdit* writerEdit            = nullptr;
 };
 
 IPTCContent::IPTCContent(QWidget* const parent)
@@ -209,11 +199,13 @@ void IPTCContent::readMetadata(const DMetadata& meta)
     d->captionEdit->clear();
     d->captionCheck->setChecked(false);
     data = meta.getIptcTagString("Iptc.Application2.Caption", false);
+
     if (!data.isNull())
     {
         d->captionEdit->setPlainText(data);
         d->captionCheck->setChecked(true);
     }
+
     d->captionEdit->setEnabled(d->captionCheck->isChecked());
     d->syncJFIFCommentCheck->setEnabled(d->captionCheck->isChecked());
     d->syncEXIFCommentCheck->setEnabled(d->captionCheck->isChecked());
@@ -224,11 +216,13 @@ void IPTCContent::readMetadata(const DMetadata& meta)
     d->headlineEdit->clear();
     d->headlineCheck->setChecked(false);
     data = meta.getIptcTagString("Iptc.Application2.Headline", false);
+
     if (!data.isNull())
     {
         d->headlineEdit->setPlainText(data);
         d->headlineCheck->setChecked(true);
     }
+
     d->headlineEdit->setEnabled(d->headlineCheck->isChecked());
 
     blockSignals(false);
@@ -241,25 +235,39 @@ void IPTCContent::applyMetadata(const DMetadata& meta)
         meta.setIptcTagString("Iptc.Application2.Caption", d->captionEdit->toPlainText());
 
         if (syncEXIFCommentIsChecked())
+        {
             meta.setExifComment(getIPTCCaption());
+        }
 
         if (syncJFIFCommentIsChecked())
+        {
             meta.setComments(getIPTCCaption().toUtf8());
+        }
     }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.Caption");
+    }
 
     QStringList oldList, newList;
 
     if (d->writerEdit->getValues(oldList, newList))
+    {
         meta.setIptcTagsStringList("Iptc.Application2.Writer", 32, oldList, newList);
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.Writer");
+    }
 
     if (d->headlineCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.Headline", d->headlineEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.Headline");
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
