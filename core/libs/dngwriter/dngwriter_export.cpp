@@ -100,17 +100,25 @@ int DNGWriter::Private::exportTarget(DNGWriterHost& host,
 
         if (!useCompressedPreview)
         {
-            dng_image_preview* imagePreview = dynamic_cast<dng_image_preview*>(preview.Get());
+            dng_image_preview* const imagePreview = dynamic_cast<dng_image_preview*>(preview.Get());
 
-            if (imagePreview)
+            if (!imagePreview)
             {
-                imagePreview->SetImage(host, previewImage.Release());
+                continue;
             }
+
+            imagePreview->SetImage(host, previewImage.Release());
         }
         else
         {
-            dng_jpeg_preview* jpegPreview = dynamic_cast<dng_jpeg_preview*>(preview.Get());
-            int quality                   = (previewIndex == 0) ? 8 : 5;
+            dng_jpeg_preview* const jpegPreview = dynamic_cast<dng_jpeg_preview*>(preview.Get());
+
+            if (!jpegPreview)
+            {
+                continue;
+            }
+
+            int quality = (previewIndex == 0) ? 8 : 5;
             dng_image_writer writer;
             writer.EncodeJPEGPreview(host, *previewImage, *jpegPreview, quality);
         }
