@@ -58,7 +58,7 @@ public:
     FaceTagsIface(const FaceTagsIface& other);
     FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region);
     FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId, const TagRegion& region);
-    ~FaceTagsIface() = default;
+    virtual ~FaceTagsIface() = default;
 
     FaceTagsIface& operator=(const FaceTagsIface& other);
 
