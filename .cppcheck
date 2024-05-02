@@ -94,7 +94,7 @@ CPPCHECK_SUPPRESSIONS="\
 --suppress=unusedStructMember \
 --suppress=unusedPrivateFunction \
 --suppress=unknownMacro \
---suppress=unmatchedSuppression:* \
+--suppress=unmatchedSuppression \
 --suppress=unassignedVariable \
 --suppress=class_X_Y \
 --suppress=ConfigurationNotChecked \
@@ -102,4 +102,5 @@ CPPCHECK_SUPPRESSIONS="\
 --suppress=cstyleCast \
 --suppress=constVariablePointer \
 --suppress=shadowFunction \
+--suppress=checkersReport \
 "
