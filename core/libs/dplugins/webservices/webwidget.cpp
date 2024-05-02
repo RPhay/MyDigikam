@@ -35,7 +35,7 @@ public:
 
 WebWidget::WebWidget(QWidget* const parent)
     : QWebView(parent),
-      d       (new Private())
+      d       (new Private)
 {
     d->parent = parent;
 }

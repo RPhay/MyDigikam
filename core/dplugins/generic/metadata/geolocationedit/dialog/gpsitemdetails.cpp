@@ -81,7 +81,7 @@ public:
 
 GPSItemDetails::GPSItemDetails(QWidget* const parent, GPSItemModel* const imageModel)
     : QWidget(parent),
-      d      (new Private())
+      d      (new Private)
 {
     d->imageModel = imageModel;
 

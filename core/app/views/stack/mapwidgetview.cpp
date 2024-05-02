@@ -97,7 +97,7 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
                              const MapWidgetView::Application application)
     : QWidget          (parent),
       StateSavingObject(this),
-      d                (new Private())
+      d                (new Private)
 {
     d->application    = application;
     d->selectionModel = selectionModel;
@@ -422,7 +422,7 @@ MapViewModelHelper::MapViewModelHelper(QItemSelectionModel* const selection,
                                        QObject* const parent,
                                        const MapWidgetView::Application application)
     : GeoModelHelper(parent),
-      d             (new Private())
+      d             (new Private)
 {
     d->selectionModel = selection;
     d->application    = application;

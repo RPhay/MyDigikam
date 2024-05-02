@@ -31,7 +31,7 @@ public:
 
 SimpleTreeModel::SimpleTreeModel(const int columnCount, QObject* const parent)
     : QAbstractItemModel(parent),
-      d                 (new Private())
+      d                 (new Private)
 {
     d->columnCount = columnCount;
     d->rootItem    = new Item();

@@ -56,7 +56,7 @@ TableViewConfigurationDialog::TableViewConfigurationDialog(TableViewShared* cons
                                                            const int columnIndex,
                                                            QWidget* const parentWidget)
     : QDialog(parentWidget),
-      d      (new Private()),
+      d      (new Private),
       s      (sharedObject)
 {
     d->columnIndex               = columnIndex;

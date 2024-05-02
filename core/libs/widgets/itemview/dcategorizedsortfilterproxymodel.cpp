@@ -34,7 +34,7 @@ namespace Digikam
 
 DCategorizedSortFilterProxyModel::DCategorizedSortFilterProxyModel(QObject* const parent)
     : QSortFilterProxyModel(parent),
-      d                    (new Private())
+      d                    (new Private)
 {
     setDynamicSortFilter(false);
 }

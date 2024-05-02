@@ -89,7 +89,7 @@ public:
 
 SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const parent)
     : QWidget(parent),
-      d      (new Private())
+      d      (new Private)
 {
     Qt::WindowFlags flags = Qt::FramelessWindowHint  |
                             Qt::WindowStaysOnTopHint |

@@ -29,7 +29,7 @@ namespace Digikam
 {
 
 HaarIface::HaarIface()
-    : d(new Private())
+    : d(new Private)
 {
     qRegisterMetaType<DuplicatesResultsMap>("HaarIface::DuplicatesResultsMap");
 }

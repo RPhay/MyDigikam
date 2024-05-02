@@ -72,7 +72,7 @@ public:
 
 TagPropWidget::TagPropWidget(QWidget* const parent)
     : QWidget(parent),
-      d      (new Private())
+      d      (new Private)
 {
     const int spacing = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                                    style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));

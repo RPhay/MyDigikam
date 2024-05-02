@@ -39,7 +39,7 @@ public:
 
 ImportThumbnailBar::ImportThumbnailBar(QWidget* const parent)
     : ImportCategorizedView(parent),
-      d                    (new Private())
+      d                    (new Private)
 {
     setItemDelegate(new ImportThumbnailDelegate(this));
     setSpacing(3);

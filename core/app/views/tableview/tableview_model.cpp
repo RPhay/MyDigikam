@@ -112,7 +112,7 @@ public:
 TableViewModel::TableViewModel(TableViewShared* const sharedObject, QObject* const parent)
     : QAbstractItemModel(parent),
       s                 (sharedObject),
-      d                 (new Private())
+      d                 (new Private)
 {
     d->rootItem            = new Item();
     d->imageFilterSettings = s->imageFilterModel->imageFilterSettings();

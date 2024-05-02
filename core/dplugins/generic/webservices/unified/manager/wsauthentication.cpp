@@ -83,7 +83,7 @@ public:
 };
 
 WSAuthentication::WSAuthentication(QWidget* const parent, DInfoInterface* const iface)
-    : d(new Private())
+    : d(new Private)
 {
     d->wizard = dynamic_cast<WSWizard*>(parent);
 

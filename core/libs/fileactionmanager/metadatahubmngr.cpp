@@ -47,7 +47,7 @@ public:
 };
 
 MetadataHubMngr::MetadataHubMngr()
-    : d(new Private())
+    : d(new Private)
 {
 }
 

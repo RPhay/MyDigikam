@@ -46,7 +46,7 @@ public:
 
 ItemThumbnailBar::ItemThumbnailBar(QWidget* const parent)
     : ItemCategorizedView(parent),
-      d                  (new Private())
+      d                  (new Private)
 {
     setItemDelegate(new ItemThumbnailDelegate(this));
     setSpacing(3);

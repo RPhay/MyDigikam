@@ -233,7 +233,7 @@ MarbleDefaultInputHandler::Private::~Private()
 
 MarbleDefaultInputHandler::MarbleDefaultInputHandler(MarbleAbstractPresenter *marblePresenter)
     : MarbleInputHandler(marblePresenter),
-      d(new Private())
+      d(new Private)
 {
     d->m_toolTipTimer.setSingleShot(true);
     d->m_toolTipTimer.setInterval(TOOLTIP_START_INTERVAL);

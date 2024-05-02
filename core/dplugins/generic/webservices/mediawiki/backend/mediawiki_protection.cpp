@@ -33,7 +33,7 @@ public:
 };
 
 Protection::Protection()
-    : d(new Private())
+    : d(new Private)
 {
 }
 

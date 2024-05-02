@@ -47,7 +47,7 @@ public:
 
 ShowfotoThumbnailBar::ShowfotoThumbnailBar(QWidget* const parent)
     : ShowfotoCategorizedView(parent),
-      d                      (new Private())
+      d                      (new Private)
 {
     setItemDelegate(new ShowfotoThumbnailDelegate(this));
     setSpacing(3);

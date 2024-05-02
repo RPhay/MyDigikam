@@ -125,7 +125,7 @@ public:
 BackendMarble::BackendMarble(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
                              QObject* const parent)
     : MapBackend(sharedData, parent),
-      d         (new Private())
+      d         (new Private)
 {
     d->marbleMapThemeManager = new Marble::MapThemeManager(this);
     this->createActions();

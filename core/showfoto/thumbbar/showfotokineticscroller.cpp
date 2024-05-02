@@ -82,7 +82,7 @@ public:
 
 ShowfotoKineticScroller::ShowfotoKineticScroller(QObject* const parent)
     : QObject(parent),
-      d      (new Private())
+      d      (new Private)
 {
     connect(&d->kineticTimer, &QTimer::timeout,
             this, &ShowfotoKineticScroller::onKineticTimerElapsed);

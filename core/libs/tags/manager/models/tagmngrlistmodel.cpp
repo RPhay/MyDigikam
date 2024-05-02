@@ -46,7 +46,7 @@ public:
 
 TagMngrListModel::TagMngrListModel(QObject* const parent)
     : QAbstractItemModel(parent),
-      d                 (new Private())
+      d                 (new Private)
 {
     QList<QVariant> rootData;
     rootData << QLatin1String("Quick List");

@@ -69,7 +69,7 @@ TableView::TableView(QItemSelectionModel* const selectionModel,
                      QWidget* const parent)
     : QWidget(parent),
       StateSavingObject(this),
-      d                (new Private()),
+      d                (new Private),
       s                (new TableViewShared())
 {
     s->isActive                      = false;

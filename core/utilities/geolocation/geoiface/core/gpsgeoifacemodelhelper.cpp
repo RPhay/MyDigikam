@@ -59,7 +59,7 @@ GPSGeoIfaceModelHelper::GPSGeoIfaceModelHelper(GPSItemModel* const model,
                                                QItemSelectionModel* const selectionModel,
                                                QObject* const parent)
     : GeoModelHelper(parent),
-      d             (new Private())
+      d             (new Private)
 {
     d->model          = model;
     d->selectionModel = selectionModel;

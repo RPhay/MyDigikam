@@ -30,7 +30,7 @@ FacialRecognitionWrapper::FacialRecognitionWrapper()
 {
     if (!d)
     {
-        d = new Private();
+        d = new Private;
     }
     else
     {

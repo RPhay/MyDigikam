@@ -31,7 +31,7 @@ public:
 
 ItemGPSModelHelper::ItemGPSModelHelper(QStandardItemModel* const itemModel, QObject* const parent)
     : GeoModelHelper(parent),
-      d             (new Private())
+      d             (new Private)
 {
 
     d->itemModel           = itemModel;

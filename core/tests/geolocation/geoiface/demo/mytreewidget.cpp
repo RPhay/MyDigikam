@@ -42,7 +42,7 @@ public:
 
 MyTreeWidget::MyTreeWidget(QWidget* const parent)
     : QTreeWidget(parent),
-      d          (new Private())
+      d          (new Private)
 {
     setDragEnabled(true);
     setUniformRowHeights(true);

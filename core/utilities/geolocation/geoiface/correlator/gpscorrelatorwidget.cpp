@@ -105,7 +105,7 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
                                          QItemSelectionModel* const selectionModel,
                                          TrackManager* const trackManager)
     : QWidget(parent),
-      d      (new Private())
+      d      (new Private)
 {
     d->imageModel      = imageModel;
     d->selectionModel  = selectionModel;

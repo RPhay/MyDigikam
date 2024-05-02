@@ -96,7 +96,7 @@ GPSBookmarkModelHelper::GPSBookmarkModelHelper(BookmarksManager* const bookmarkM
                                                GPSItemModel* const imageModel,
                                                QObject* const parent)
     : GeoModelHelper(parent),
-      d             (new Private())
+      d             (new Private)
 {
     d->model           = new QStandardItemModel(this);
     d->bookmarkManager = bookmarkManager;

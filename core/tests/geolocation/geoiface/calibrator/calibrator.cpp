@@ -60,7 +60,7 @@ public:
 CalibratorModelHelper::CalibratorModelHelper(QStandardItemModel* const model,
                                              QObject* const parent)
     : GeoModelHelper(parent),
-      d             (new Private())
+      d             (new Private)
 {
     d->model = model;
 }
@@ -141,7 +141,7 @@ public:
 
 Calibrator::Calibrator(QWidget* const parent)
     : QMainWindow(parent),
-      d          (new Private())
+      d          (new Private)
 {
     d->model       = new QStandardItemModel(this);
     d->modelHelper = new CalibratorModelHelper(d->model, this);

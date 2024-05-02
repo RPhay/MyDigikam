@@ -34,7 +34,7 @@ public:
 };
 
 UserGroup::UserGroup()
-    : d(new Private())
+    : d(new Private)
 {
     d->number = -1;
 }

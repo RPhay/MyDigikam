@@ -110,7 +110,7 @@ public:
 BackendGoogleMaps::BackendGoogleMaps(const QExplicitlySharedDataPointer<GeoIfaceSharedData>& sharedData,
                                      QObject* const parent)
     : MapBackend(sharedData, parent),
-      d         (new Private())
+      d         (new Private)
 {
     createActions();
 }

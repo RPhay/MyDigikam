@@ -44,7 +44,7 @@ public:
 
 TrackListModel::TrackListModel(TrackManager* const trackManager, QObject* const parent)
     : QAbstractItemModel(parent),
-      d                 (new Private())
+      d                 (new Private)
 {
     d->trackManager = trackManager;
 

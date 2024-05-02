@@ -138,7 +138,7 @@ public:
 // -----------------------------------------------------------------------------
 
 FbTalker::FbTalker(QWidget* const parent)
-    : d(new Private())
+    : d(new Private)
 {
     d->parent   = parent;
     d->netMngr  = NetworkManager::instance()->getNetworkManager(this);

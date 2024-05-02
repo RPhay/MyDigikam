@@ -120,7 +120,7 @@ public:
 
 ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const currAlbum)
     : GraphicsDImgView(parent),
-      d               (new Private())
+      d               (new Private)
 {
     d->mode      = mode;
     d->item      = new ItemPreviewCanvas();

@@ -41,7 +41,7 @@ public:
 };
 
 ListItem::ListItem(QList<QVariant>& data, ListItem* const parent)
-    : d(new Private())
+    : d(new Private)
 {
     d->parentItem = parent;
     d->itemData.append(data);

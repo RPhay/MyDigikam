@@ -95,7 +95,7 @@ NamespaceEditDlg::NamespaceEditDlg(bool create,
                                    NamespaceEntry& entry,
                                    QWidget* const parent)
     : QDialog(parent),
-      d      (new Private())
+      d      (new Private)
 {
     setModal(true);
 

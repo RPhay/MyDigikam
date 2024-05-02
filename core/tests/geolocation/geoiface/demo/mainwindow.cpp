@@ -223,7 +223,7 @@ public:
 
 MainWindow::MainWindow(QCommandLineParser* const cmdLineArgs, QWidget* const parent)
     : QMainWindow(parent),
-      d          (new Private())
+      d          (new Private)
 {
     // initialize Exiv2 before doing any multitasking
 

@@ -90,7 +90,7 @@ public:
 
 GeoIfaceGlobalObject::GeoIfaceGlobalObject()
     : QObject(),
-      d      (new Private())
+      d      (new Private)
 {
 }
 

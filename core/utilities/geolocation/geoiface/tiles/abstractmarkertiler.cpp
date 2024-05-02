@@ -129,7 +129,7 @@ AbstractMarkerTiler::NonEmptyIterator::~NonEmptyIterator()
 
 AbstractMarkerTiler::NonEmptyIterator::NonEmptyIterator(AbstractMarkerTiler* const model,
                                                         const int level)
-    : d(new Private())
+    : d(new Private)
 {
     d->model = model;
 
@@ -157,7 +157,7 @@ AbstractMarkerTiler::NonEmptyIterator::NonEmptyIterator(AbstractMarkerTiler* con
                                                         const int level,
                                                         const TileIndex& startIndex,
                                                         const TileIndex& endIndex)
-    : d(new Private())
+    : d(new Private)
 {
     d->model = model;
 

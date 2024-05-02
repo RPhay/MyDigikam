@@ -39,7 +39,7 @@ public:
 };
 
 Revision::Revision()
-    : d(new Private())
+    : d(new Private)
 {
     d->minorRevision = false;
     d->revId         = -1;

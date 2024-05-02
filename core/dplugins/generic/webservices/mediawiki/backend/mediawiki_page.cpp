@@ -46,7 +46,7 @@ public:
 };
 
 Page::Page()
-    : d(new Private())
+    : d(new Private)
 {
 }
 

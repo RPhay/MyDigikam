@@ -58,7 +58,7 @@ public:
 };
 
 Generalinfo::Generalinfo()
-    : d(new Private())
+    : d(new Private)
 {
 }
 

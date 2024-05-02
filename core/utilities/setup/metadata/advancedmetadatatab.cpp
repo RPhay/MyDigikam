@@ -76,7 +76,7 @@ public:
 
 AdvancedMetadataTab::AdvancedMetadataTab(QWidget* const parent)
     : QWidget(parent),
-      d      (new Private())
+      d      (new Private)
 {
     // ---------- Advanced Configuration Panel -----------------------------
 

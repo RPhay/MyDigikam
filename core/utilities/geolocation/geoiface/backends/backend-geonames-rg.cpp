@@ -78,7 +78,7 @@ public:
  */
 BackendGeonamesRG::BackendGeonamesRG(QObject* const parent)
     : RGBackend(parent),
-      d        (new Private())
+      d        (new Private)
 {
     d->mngr = NetworkManager::instance()->getNetworkManager(this);
 

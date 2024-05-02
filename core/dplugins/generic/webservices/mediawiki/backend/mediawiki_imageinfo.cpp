@@ -43,7 +43,7 @@ public:
 };
 
 Imageinfo::Imageinfo()
-    : d(new Private())
+    : d(new Private)
 {
     d->thumbWidth  = -1;
     d->thumbHeight = -1;

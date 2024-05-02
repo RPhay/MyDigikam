@@ -115,7 +115,7 @@ public:
 TagsManager::TagsManager()
     : QMainWindow      (nullptr),
       StateSavingObject(this),
-      d                (new Private())
+      d                (new Private)
 {
     setObjectName(QLatin1String("Tags Manager"));
     d->tagModel = new TagModel(AbstractAlbumModel::IncludeRootAlbum, this);

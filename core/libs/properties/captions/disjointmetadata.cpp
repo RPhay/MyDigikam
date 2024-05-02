@@ -19,7 +19,7 @@ namespace Digikam
 
 DisjointMetadata::DisjointMetadata()
     : QObject(),
-      d      (new Private())
+      d      (new Private)
 {
     d->makeConnections(this);
 }
@@ -50,7 +50,7 @@ DisjointMetadata& DisjointMetadata::operator=(const DisjointMetadata& other)
 void DisjointMetadata::reset()
 {
     delete d;
-    d = new Private();
+    d = new Private;
 }
 
 void DisjointMetadata::load(const ItemInfo& info)

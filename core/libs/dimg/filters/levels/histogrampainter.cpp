@@ -541,7 +541,7 @@ public:
 
 HistogramPainter::HistogramPainter(QObject* const parent)
     : QObject(parent),
-      d      (new Private())
+      d      (new Private)
 {
 }
 

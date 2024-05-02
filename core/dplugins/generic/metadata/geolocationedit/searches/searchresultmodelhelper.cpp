@@ -63,7 +63,7 @@ SearchResultModelHelper::SearchResultModelHelper(SearchResultModel* const result
                                                  GPSItemModel* const imageModel,
                                                  QObject* const parent)
     : GeoModelHelper(parent),
-      d             (new Private())
+      d             (new Private)
 {
     d->model          = resultModel;
     d->selectionModel = selectionModel;

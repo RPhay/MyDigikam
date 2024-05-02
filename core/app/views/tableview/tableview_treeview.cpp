@@ -57,7 +57,7 @@ public:
 
 TableViewTreeView::TableViewTreeView(TableViewShared* const tableViewShared, QWidget* const parent)
     : QTreeView(parent),
-      d        (new Private()),
+      d        (new Private),
       s        (tableViewShared)
 {
     setModel(s->tableViewModel);

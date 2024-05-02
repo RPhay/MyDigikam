@@ -40,7 +40,7 @@ public:
 
 TableViewSelectionModelSyncer::TableViewSelectionModelSyncer(TableViewShared* const sharedObject, QObject* const parent)
     : QObject(parent),
-      d      (new Private()),
+      d      (new Private),
       s      (sharedObject)
 {
     connect(s->imageFilterSelectionModel, SIGNAL(currentChanged(QModelIndex,QModelIndex)),

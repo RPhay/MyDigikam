@@ -37,7 +37,7 @@ public:
 };
 
 Image::Image()
-    : d(new Private())
+    : d(new Private)
 {
 }
 
