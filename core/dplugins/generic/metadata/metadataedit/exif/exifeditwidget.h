@@ -34,9 +34,9 @@ class EXIFEditWidget : public DConfigDlgWdg
 public:
 
     explicit EXIFEditWidget(MetadataEditDialog* const parent);
-    ~EXIFEditWidget() override;
+    ~EXIFEditWidget()             override;
 
-    bool isModified() const;
+    bool isModified()       const;
     void saveSettings();
     void apply();
 
@@ -54,7 +54,7 @@ private:
 
     void readSettings();
 
-    int  activePageIndex() const;
+    int  activePageIndex()  const;
     void showPage(int page);
 
 private:

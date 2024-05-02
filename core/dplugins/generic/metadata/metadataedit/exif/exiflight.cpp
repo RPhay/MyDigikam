@@ -42,17 +42,15 @@ class Q_DECL_HIDDEN FlashMode
 {
 public:
 
-    FlashMode()
-      : m_id(0)
-    {
-    }
+    FlashMode() = default;
+
     FlashMode(int id, const QString& desc)
       : m_id  (id),
         m_desc(desc)
     {
     }
 
-    int     id()   const
+    int id()       const
     {
         return m_id;
     }
@@ -64,7 +62,7 @@ public:
 
 private:
 
-    int     m_id;
+    int     m_id    = 0;
     QString m_desc;
 };
 
@@ -74,17 +72,8 @@ class Q_DECL_HIDDEN EXIFLight::Private
 {
 public:
 
-    explicit Private()
+    Private()
     {
-        lightSourceCheck     = nullptr;
-        flashModeCheck       = nullptr;
-        flashEnergyCheck     = nullptr;
-        whiteBalanceCheck    = nullptr;
-        lightSourceCB        = nullptr;
-        flashEnergyEdit      = nullptr;
-        flashModeCB          = nullptr;
-        whiteBalanceCB       = nullptr;
-
         flashModeMap.insert(0,  FlashMode( 0x00, i18n("No flash") ));
         flashModeMap.insert(1,  FlashMode( 0x01, i18n("Fired") ));
         flashModeMap.insert(2,  FlashMode( 0x05, i18n("Fired, no strobe return light") ));
@@ -113,17 +102,17 @@ public:
 
     FlashModeMap      flashModeMap;
 
-    QCheckBox*        flashEnergyCheck;
+    QCheckBox*        flashEnergyCheck  = nullptr;
 
-    QComboBox*        lightSourceCB;
-    QComboBox*        flashModeCB;
-    QComboBox*        whiteBalanceCB;
+    QComboBox*        lightSourceCB     = nullptr;
+    QComboBox*        flashModeCB       = nullptr;
+    QComboBox*        whiteBalanceCB    = nullptr;
 
-    QDoubleSpinBox*   flashEnergyEdit;
+    QDoubleSpinBox*   flashEnergyEdit   = nullptr;
 
-    MetadataCheckBox* lightSourceCheck;
-    MetadataCheckBox* flashModeCheck;
-    MetadataCheckBox* whiteBalanceCheck;
+    MetadataCheckBox* lightSourceCheck  = nullptr;
+    MetadataCheckBox* flashModeCheck    = nullptr;
+    MetadataCheckBox* whiteBalanceCheck = nullptr;
 };
 
 // --------------------------------------------------------------------------
@@ -167,8 +156,10 @@ EXIFLight::EXIFLight(QWidget* const parent)
     d->flashModeCheck = new MetadataCheckBox(i18n("Flash mode:"), this);
     d->flashModeCB    = new QComboBox(this);
 
-    for (Private::FlashModeMap::Iterator it = d->flashModeMap.begin(); it != d->flashModeMap.end(); ++it )
+    for (Private::FlashModeMap::Iterator it = d->flashModeMap.begin(); it != d->flashModeMap.end(); ++it)
+    {
        d->flashModeCB->addItem(it.value().desc());
+    }
 
     d->flashModeCB->setWhatsThis(i18n("Select here the flash program mode used by the camera "
                                       "to take the picture."));
@@ -267,22 +258,28 @@ void EXIFLight::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
-    long int num=1, den=1;
-    long     val=0;
+    long int num = 1, den = 1;
+    long     val = 0;
 
     d->lightSourceCB->setCurrentIndex(0);
     d->lightSourceCheck->setChecked(false);
 
     if (meta.getExifTagLong("Exif.Photo.LightSource", val))
     {
-        if ((val>=0 && val <=4) || (val> 8 && val <16) || (val> 16 && val <25) || val == 255)
+        if (((val >= 0) && (val <= 4)) || ((val > 8) && (val < 16)) || ((val > 16) && (val < 25)) || (val == 255))
         {
-            if (val > 8 && val < 16)
+            if      ((val > 8) && (val < 16))
+            {
                 val = val - 4;
-            else if (val > 16 && val < 25)
+            }
+            else if ((val > 16) && (val < 25))
+            {
                 val = val - 5;
+            }
             else if (val == 255)
+            {
                 val = 20;
+            }
 
             d->lightSourceCB->setCurrentIndex(val);
             d->lightSourceCheck->setChecked(true);
@@ -306,7 +303,9 @@ void EXIFLight::readMetadata(const DMetadata& meta)
             it != d->flashModeMap.end(); ++it )
         {
             if (it.value().id() == val)
+            {
                 item = it.key();
+            }
         }
 
         if (item != -1)
@@ -338,7 +337,7 @@ void EXIFLight::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.WhiteBalance", val))
     {
-        if (val>=0 && val<=1)
+        if ((val >= 0) && (val <= 1))
         {
             d->whiteBalanceCB->setCurrentIndex(val);
             d->whiteBalanceCheck->setChecked(true);
@@ -356,18 +355,24 @@ void EXIFLight::readMetadata(const DMetadata& meta)
 
 void EXIFLight::applyMetadata(const DMetadata& meta)
 {
-    long int num=1, den=1;
+    long int num = 1, den = 1;
 
-    if (d->lightSourceCheck->isChecked())
+    if      (d->lightSourceCheck->isChecked())
     {
         long val = d->lightSourceCB->currentIndex();
 
-        if (val > 4 && val < 12)
+        if      ((val > 4) && (val < 12))
+        {
             val = val + 4;
-        else if (val > 11 && val < 20)
+        }
+        else if ((val > 11) && (val < 20))
+        {
             val = val + 5;
+        }
         else if (val == 20)
+        {
             val = 255;
+        }
 
         meta.setExifTagUShort("Exif.Photo.LightSource", val);
     }
@@ -376,7 +381,7 @@ void EXIFLight::applyMetadata(const DMetadata& meta)
         meta.removeExifTag("Exif.Photo.LightSource");
     }
 
-    if (d->flashModeCheck->isChecked())
+    if      (d->flashModeCheck->isChecked())
     {
         long val = d->flashModeCB->currentIndex();
         meta.setExifTagUShort("Exif.Photo.Flash", d->flashModeMap[val].id());
@@ -396,10 +401,14 @@ void EXIFLight::applyMetadata(const DMetadata& meta)
         meta.removeExifTag("Exif.Photo.FlashEnergy");
     }
 
-    if (d->whiteBalanceCheck->isChecked())
+    if      (d->whiteBalanceCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.WhiteBalance", d->whiteBalanceCB->currentIndex());
+    }
     else if (d->whiteBalanceCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.WhiteBalance");
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

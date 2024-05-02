@@ -51,43 +51,26 @@ class Q_DECL_HIDDEN EXIFEditWidget::Private
 
 public:
 
-    explicit Private()
-    {
-        modified      = false;
-        isReadOnly    = false;
-        page_caption  = nullptr;
-        page_datetime = nullptr;
-        page_lens     = nullptr;
-        page_device   = nullptr;
-        page_light    = nullptr;
-        page_adjust   = nullptr;
-        captionPage   = nullptr;
-        datetimePage  = nullptr;
-        lensPage      = nullptr;
-        devicePage    = nullptr;
-        lightPage     = nullptr;
-        adjustPage    = nullptr;
-        dlg           = nullptr;
-    }
+    Private() = default;
 
-    bool                modified;
-    bool                isReadOnly;
+    bool                modified        = false;
+    bool                isReadOnly      = false;
 
-    DConfigDlgWdgItem*  page_caption;
-    DConfigDlgWdgItem*  page_datetime;
-    DConfigDlgWdgItem*  page_lens;
-    DConfigDlgWdgItem*  page_device;
-    DConfigDlgWdgItem*  page_light;
-    DConfigDlgWdgItem*  page_adjust;
+    DConfigDlgWdgItem*  page_caption    = nullptr;
+    DConfigDlgWdgItem*  page_datetime   = nullptr;
+    DConfigDlgWdgItem*  page_lens       = nullptr;
+    DConfigDlgWdgItem*  page_device     = nullptr;
+    DConfigDlgWdgItem*  page_light      = nullptr;
+    DConfigDlgWdgItem*  page_adjust     = nullptr;
 
-    EXIFCaption*        captionPage;
-    EXIFDateTime*       datetimePage;
-    EXIFLens*           lensPage;
-    EXIFDevice*         devicePage;
-    EXIFLight*          lightPage;
-    EXIFAdjust*         adjustPage;
+    EXIFCaption*        captionPage     = nullptr;
+    EXIFDateTime*       datetimePage    = nullptr;
+    EXIFLens*           lensPage        = nullptr;
+    EXIFDevice*         devicePage      = nullptr;
+    EXIFLight*          lightPage       = nullptr;
+    EXIFAdjust*         adjustPage      = nullptr;
 
-    MetadataEditDialog* dlg;
+    MetadataEditDialog* dlg             = nullptr;
 };
 
 EXIFEditWidget::EXIFEditWidget(MetadataEditDialog* const parent)
@@ -258,6 +241,7 @@ void EXIFEditWidget::slotModified()
     if (!d->isReadOnly)
     {
         d->modified = true;
+
         Q_EMIT signalModified();
     }
 }
@@ -267,26 +251,46 @@ void EXIFEditWidget::showPage(int page)
     switch (page)
     {
         case 0:
+        {
             setCurrentPage(d->page_caption);
             break;
+        }
+
         case 1:
+        {
             setCurrentPage(d->page_datetime);
             break;
+        }
+
         case 2:
+        {
             setCurrentPage(d->page_lens);
             break;
+        }
+
         case 3:
+        {
             setCurrentPage(d->page_device);
             break;
+        }
+
         case 4:
+        {
             setCurrentPage(d->page_light);
             break;
+        }
+
         case 5:
+        {
             setCurrentPage(d->page_adjust);
             break;
+        }
+
         default:
+        {
             setCurrentPage(d->page_caption);
             break;
+        }
     }
 }
 

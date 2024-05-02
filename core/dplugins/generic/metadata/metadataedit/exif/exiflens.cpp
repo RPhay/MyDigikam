@@ -41,19 +41,8 @@ class Q_DECL_HIDDEN EXIFLens::Private
 {
 public:
 
-    explicit Private()
+    Private()
     {
-        apertureCheck         = nullptr;
-        maxApertureCheck      = nullptr;
-        focalLength35mmCheck  = nullptr;
-        focalLengthCheck      = nullptr;
-        digitalZoomRatioCheck = nullptr;
-        apertureCB            = nullptr;
-        maxApertureCB         = nullptr;
-        focalLength35mmEdit   = nullptr;
-        focalLengthEdit       = nullptr;
-        digitalZoomRatioEdit  = nullptr;
-
         apertureValues.append(QLatin1String("f/1.0"));
         apertureValues.append(QLatin1String("f/1.1"));
         apertureValues.append(QLatin1String("f/1.2"));
@@ -116,20 +105,20 @@ public:
 
     QStringList       apertureValues;
 
-    QCheckBox*        focalLength35mmCheck;
-    QCheckBox*        focalLengthCheck;
-    QCheckBox*        digitalZoomRatioCheck;
+    QCheckBox*        focalLength35mmCheck  = nullptr;
+    QCheckBox*        focalLengthCheck      = nullptr;
+    QCheckBox*        digitalZoomRatioCheck = nullptr;
 
-    QComboBox*        apertureCB;
-    QComboBox*        maxApertureCB;
+    QComboBox*        apertureCB            = nullptr;
+    QComboBox*        maxApertureCB         = nullptr;
 
-    QSpinBox*         focalLength35mmEdit;
+    QSpinBox*         focalLength35mmEdit   = nullptr;
 
-    QDoubleSpinBox*   focalLengthEdit;
-    QDoubleSpinBox*   digitalZoomRatioEdit;
+    QDoubleSpinBox*   focalLengthEdit       = nullptr;
+    QDoubleSpinBox*   digitalZoomRatioEdit  = nullptr;
 
-    MetadataCheckBox* apertureCheck;
-    MetadataCheckBox* maxApertureCheck;
+    MetadataCheckBox* apertureCheck         = nullptr;
+    MetadataCheckBox* maxApertureCheck      = nullptr;
 };
 
 EXIFLens::EXIFLens(QWidget* const parent)
@@ -268,8 +257,8 @@ void EXIFLens::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
-    long int num=1, den=1;
-    long     val=0;
+    long int num = 1, den = 1;
+    long     val = 0;
 
     d->focalLengthEdit->setValue(50.0);
     d->focalLengthCheck->setChecked(false);
@@ -307,15 +296,17 @@ void EXIFLens::readMetadata(const DMetadata& meta)
     d->apertureCB->setCurrentIndex(0);
     d->apertureCheck->setChecked(false);
 
-    if (meta.getExifTagRational("Exif.Photo.FNumber", num, den))
+    if      (meta.getExifTagRational("Exif.Photo.FNumber", num, den))
     {
-        QString fnumber = QString::number((double)(num)/(double)(den), 'f', 1);
+        QString fnumber = QString::number((double)(num) / (double)(den), 'f', 1);
         int item        = -1;
 
         for (int i = 0 ; i < d->apertureCB->count() ; ++i)
         {
             if (d->apertureCB->itemText(i).remove(0, 2) == fnumber)
+            {
                 item = i;
+            }
         }
 
         if (item != -1)
@@ -326,14 +317,16 @@ void EXIFLens::readMetadata(const DMetadata& meta)
     }
     else if (meta.getExifTagRational("Exif.Photo.ApertureValue", num, den))
     {
-        double aperture = std::pow(2.0, ((double)(num)/(double)(den))/2.0);
+        double aperture = std::pow(2.0, ((double)(num) / (double)(den)) / 2.0);
         QString fnumber = QString::number(aperture, 'f', 1);
         int item        = -1;
 
         for (int i = 0 ; i < d->apertureCB->count() ; ++i)
         {
             if (d->apertureCB->itemText(i).remove(0, 2) == fnumber)
+            {
                 item = i;
+            }
         }
 
         if (item != -1)
@@ -342,8 +335,11 @@ void EXIFLens::readMetadata(const DMetadata& meta)
             d->apertureCheck->setChecked(true);
         }
         else
+        {
             d->apertureCheck->setValid(false);
+        }
     }
+
     d->apertureCB->setEnabled(d->apertureCheck->isChecked());
 
     d->maxApertureCB->setCurrentIndex(0);
@@ -351,14 +347,16 @@ void EXIFLens::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagRational("Exif.Photo.MaxApertureValue", num, den))
     {
-        double maxAperture = std::pow(2.0, ((double)(num)/(double)(den))/2.0);
+        double maxAperture = std::pow(2.0, ((double)(num) / (double)(den)) / 2.0);
         QString fnumber    = QString::number(maxAperture, 'f', 1);
         int item           = -1;
 
         for (int i = 0 ; i < d->apertureCB->count() ; ++i)
         {
             if (d->maxApertureCB->itemText(i).remove(0, 2) == fnumber)
+            {
                 item = i;
+            }
         }
 
         if (item != -1)
@@ -379,7 +377,7 @@ void EXIFLens::readMetadata(const DMetadata& meta)
 
 void EXIFLens::applyMetadata(const DMetadata& meta)
 {
-    long int num=1, den=1;
+    long int num = 1, den = 1;
 
     if (d->focalLengthCheck->isChecked())
     {
@@ -387,12 +385,18 @@ void EXIFLens::applyMetadata(const DMetadata& meta)
         meta.setExifTagURational("Exif.Photo.FocalLength", num, den);
     }
     else
+    {
         meta.removeExifTag("Exif.Photo.FocalLength");
+    }
 
     if (d->focalLength35mmCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.FocalLengthIn35mmFilm", d->focalLength35mmEdit->value());
+    }
     else
+    {
         meta.removeExifTag("Exif.Photo.FocalLengthIn35mmFilm");
+    }
 
     if (d->digitalZoomRatioCheck->isChecked())
     {
@@ -400,9 +404,11 @@ void EXIFLens::applyMetadata(const DMetadata& meta)
         meta.setExifTagURational("Exif.Photo.DigitalZoomRatio", num, den);
     }
     else
+    {
         meta.removeExifTag("Exif.Photo.DigitalZoomRatio");
+    }
 
-    if (d->apertureCheck->isChecked())
+    if      (d->apertureCheck->isChecked())
     {
         meta.convertToRational(d->apertureCB->currentText().remove(0, 2).toDouble(), &num, &den, 1);
         meta.setExifTagURational("Exif.Photo.FNumber", num, den);
@@ -418,7 +424,7 @@ void EXIFLens::applyMetadata(const DMetadata& meta)
         meta.removeExifTag("Exif.Photo.ApertureValue");
     }
 
-    if (d->maxApertureCheck->isChecked())
+    if      (d->maxApertureCheck->isChecked())
     {
         double fnumber  = d->maxApertureCB->currentText().remove(0, 2).toDouble();
         double aperture = 2.0*(std::log(fnumber)/std::log(2.0));
@@ -426,7 +432,9 @@ void EXIFLens::applyMetadata(const DMetadata& meta)
         meta.setExifTagURational("Exif.Photo.MaxApertureValue", num, den);
     }
     else if (d->maxApertureCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.MaxApertureValue");
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
