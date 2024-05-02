@@ -26,10 +26,6 @@ MetadataEditPage::MetadataEditPage(QWidget* const parent)
     setWidgetResizable(true);
 }
 
-MetadataEditPage::~MetadataEditPage()
-{
-}
-
 } // namespace DigikamGenericMetadataEditPlugin
 
 #include "moc_metadataeditpage.cpp"

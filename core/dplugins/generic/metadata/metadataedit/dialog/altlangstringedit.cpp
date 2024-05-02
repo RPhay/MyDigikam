@@ -33,18 +33,15 @@ class Q_DECL_HIDDEN AltLangStringsEdit::Private
 {
 public:
 
-    explicit Private()
-      : valueCheck(nullptr)
-    {
-    }
+    Private() = default;
 
     DMetadata::AltLangMap oldValues;
-    MetadataCheckBox*     valueCheck;
+    MetadataCheckBox*     valueCheck = nullptr;
 };
 
 AltLangStringsEdit::AltLangStringsEdit(QWidget* const parent, const QString& title, const QString& desc)
     : AltLangStrEdit(parent),
-      d      (new Private)
+      d             (new Private)
 {
     d->valueCheck = new MetadataCheckBox(title, parent);
     setLinesVisible(4);

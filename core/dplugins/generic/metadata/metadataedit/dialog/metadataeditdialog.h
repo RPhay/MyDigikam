@@ -38,7 +38,7 @@ class MetadataEditDialog : public DPluginDialog
 public:
 
     explicit MetadataEditDialog(QWidget* const parent, DInfoInterface* const iface);
-    ~MetadataEditDialog() override;
+    ~MetadataEditDialog()                                      override;
 
     QList<QUrl>::iterator currentItem()                  const;
     QString currentItemTitleHeader(const QString& title) const;
@@ -63,8 +63,8 @@ private Q_SLOTS:
 
 protected:
 
-    void closeEvent(QCloseEvent*)       override;
-    bool eventFilter(QObject*, QEvent*) override;
+    void closeEvent(QCloseEvent*)                              override;
+    bool eventFilter(QObject*, QEvent*)                        override;
 
 private:
 

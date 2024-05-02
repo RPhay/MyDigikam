@@ -32,7 +32,7 @@ class MetadataCheckBox : public QCheckBox
 public:
 
     explicit MetadataCheckBox(const QString& text, QWidget* const parent);
-    ~MetadataCheckBox() override;
+    ~MetadataCheckBox() override = default;
 
     void setValid(bool v);
     bool isValid() const;
@@ -43,7 +43,7 @@ private Q_SLOTS:
 
 private:
 
-    bool m_valid;
+    bool m_valid = true;
 };
 
 } // namespace DigikamGenericMetadataEditPlugin

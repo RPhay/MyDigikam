@@ -21,15 +21,10 @@ namespace DigikamGenericMetadataEditPlugin
 {
 
 MetadataCheckBox::MetadataCheckBox(const QString& text, QWidget* const parent)
-    : QCheckBox(text, parent),
-      m_valid  (true)
+    : QCheckBox(text, parent)
 {
     connect(this, SIGNAL(toggled(bool)),
             this, SLOT(slotValid()));
-}
-
-MetadataCheckBox::~MetadataCheckBox()
-{
 }
 
 void MetadataCheckBox::setValid(bool v)

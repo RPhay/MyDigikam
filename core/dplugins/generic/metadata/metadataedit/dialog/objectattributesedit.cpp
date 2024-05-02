@@ -44,30 +44,21 @@ class Q_DECL_HIDDEN ObjectAttributesEdit::Private
 {
 public:
 
-    explicit Private()
-      : addValueButton(nullptr),
-        delValueButton(nullptr),
-        repValueButton(nullptr),
-        valueEdit     (nullptr),
-        valueBox      (nullptr),
-        valueCheck    (nullptr),
-        dataList      (nullptr)
-    {
-    }
+    Private() = default;
 
     QStringList       oldValues;
 
-    QPushButton*      addValueButton;
-    QPushButton*      delValueButton;
-    QPushButton*      repValueButton;
+    QPushButton*      addValueButton    = nullptr;
+    QPushButton*      delValueButton    = nullptr;
+    QPushButton*      repValueButton    = nullptr;
 
-    DPlainTextEdit*   valueEdit;
+    DPlainTextEdit*   valueEdit         = nullptr;
 
-    QListWidget*      valueBox;
+    QListWidget*      valueBox          = nullptr;
 
-    MetadataCheckBox* valueCheck;
+    MetadataCheckBox* valueCheck        = nullptr;
 
-    SqueezedComboBox* dataList;
+    SqueezedComboBox* dataList          = nullptr;
 };
 
 ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)

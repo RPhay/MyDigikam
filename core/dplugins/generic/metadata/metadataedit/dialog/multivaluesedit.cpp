@@ -41,27 +41,19 @@ class Q_DECL_HIDDEN MultiValuesEdit::Private
 {
 public:
 
-    explicit Private()
-      : addValueButton(nullptr),
-        delValueButton(nullptr),
-        repValueButton(nullptr),
-        valueBox      (nullptr),
-        valueCheck    (nullptr),
-        dataList      (nullptr)
-    {
-    }
+    Private() = default;
 
     QStringList       oldValues;
 
-    QPushButton*      addValueButton;
-    QPushButton*      delValueButton;
-    QPushButton*      repValueButton;
+    QPushButton*      addValueButton    = nullptr;
+    QPushButton*      delValueButton    = nullptr;
+    QPushButton*      repValueButton    = nullptr;
 
-    QListWidget*      valueBox;
+    QListWidget*      valueBox          = nullptr;
 
-    MetadataCheckBox* valueCheck;
+    MetadataCheckBox* valueCheck        = nullptr;
 
-    SqueezedComboBox* dataList;
+    SqueezedComboBox* dataList          = nullptr;
 };
 
 MultiValuesEdit::MultiValuesEdit(QWidget* const parent, const QString& title, const QString& desc)

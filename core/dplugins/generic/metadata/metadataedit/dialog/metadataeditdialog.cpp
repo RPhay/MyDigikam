@@ -53,40 +53,31 @@ class Q_DECL_HIDDEN MetadataEditDialog::Private
 {
 public:
 
-    explicit Private()
-      : isReadOnly  (false),
-        tabWidget   (nullptr),
-        tabExif     (nullptr),
-        tabIptc     (nullptr),
-        tabXmp      (nullptr),
-        catcher     (nullptr),
-        iface   (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                   isReadOnly;
+    bool                   isReadOnly   = false;
 
     QString                preview;
 
     QList<QUrl>            urls;
     QList<QUrl>::iterator  currItem;
 
-    QTabWidget*            tabWidget;
+    QTabWidget*            tabWidget    = nullptr;
 
-    EXIFEditWidget*        tabExif;
-    IPTCEditWidget*        tabIptc;
-    XMPEditWidget*         tabXmp;
+    EXIFEditWidget*        tabExif      = nullptr;
+    IPTCEditWidget*        tabIptc      = nullptr;
+    XMPEditWidget*         tabXmp       = nullptr;
 
-    ThumbnailImageCatcher* catcher;
+    ThumbnailImageCatcher* catcher      = nullptr;
 
-    DInfoInterface*        iface;
+    DInfoInterface*        iface        = nullptr;
 };
 
 MetadataEditDialog::MetadataEditDialog(QWidget* const parent, DInfoInterface* const iface)
     : DPluginDialog(parent, QLatin1String("Metadata Edit Dialog")),
       d            (new Private)
 {
-    d->iface = iface;
+    d->iface                          = iface;
 
     setWindowTitle(i18nc("@title:window", "Metadata Editor"));
     setModal(true);
@@ -231,16 +222,22 @@ void MetadataEditDialog::slotModified()
     switch (d->tabWidget->currentIndex())
     {
         case 0:
+        {
             modified = d->tabExif->isModified();
             break;
+        }
 
         case 1:
+        {
             modified = d->tabIptc->isModified();
             break;
+        }
 
         case 2:
+        {
             modified = d->tabXmp->isModified();
             break;
+        }
     }
 
     m_buttons->button(QDialogButtonBox::Apply)->setEnabled(modified);
@@ -264,7 +261,9 @@ void MetadataEditDialog::slotApply()
     d->tabExif->apply();
     d->tabIptc->apply();
     d->tabXmp->apply();
+
     Q_EMIT signalMetadataChangedForUrl(*d->currItem);
+
     slotItemChanged();
 }
 
@@ -323,8 +322,10 @@ bool MetadataEditDialog::eventFilter(QObject*, QEvent* e)
     {
         QKeyEvent* const k = (QKeyEvent*)e;
 
-        if      ((k->modifiers() == Qt::ControlModifier) &&
-                 ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return)))
+        if      (
+                 (k->modifiers() == Qt::ControlModifier) &&
+                 ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
+                )
         {
             slotApply();
 
@@ -335,8 +336,10 @@ bool MetadataEditDialog::eventFilter(QObject*, QEvent* e)
 
             return true;
         }
-        else if ((k->modifiers() == Qt::ShiftModifier) &&
-                 ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return)))
+        else if (
+                 (k->modifiers() == Qt::ShiftModifier) &&
+                 ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
+                )
         {
             slotApply();
 

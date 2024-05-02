@@ -30,10 +30,10 @@ class ObjectAttributesEdit : public QWidget
 public:
 
     explicit ObjectAttributesEdit(QWidget* const parent, int size=-1);
-    ~ObjectAttributesEdit() override;
+    ~ObjectAttributesEdit()       override;
 
     void setValid(bool v);
-    bool isValid() const;
+    bool isValid()          const;
 
     void setValues(const QStringList& values);
     bool getValues(QStringList& oldValues, QStringList& newValues);

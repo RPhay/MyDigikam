@@ -34,10 +34,6 @@ MetadataEditPlugin::MetadataEditPlugin(QObject* const parent)
 {
 }
 
-MetadataEditPlugin::~MetadataEditPlugin()
-{
-}
-
 QString MetadataEditPlugin::name() const
 {
     return i18nc("@title", "Metadata Edit");
@@ -83,7 +79,7 @@ QList<DPluginAuthor> MetadataEditPlugin::authors() const
                              QString::fromUtf8("(C) 2010-2012"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2022"))
+                             QString::fromUtf8("(C) 2006-2024"))
             << DPluginAuthor(QString::fromUtf8("Alan Pater"),
                              QString::fromUtf8("alan dot pater at gmail dot com"),
                              QString::fromUtf8("(C) 2014"))

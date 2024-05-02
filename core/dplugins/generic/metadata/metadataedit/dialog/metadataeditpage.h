@@ -30,7 +30,7 @@ class MetadataEditPage : public QScrollArea
 public:
 
     explicit MetadataEditPage(QWidget* const parent);
-    ~MetadataEditPage() override;
+    ~MetadataEditPage() override = default;
 };
 
 } // namespace DigikamGenericMetadataEditPlugin

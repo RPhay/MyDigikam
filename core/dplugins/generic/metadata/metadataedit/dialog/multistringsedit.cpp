@@ -40,27 +40,19 @@ class Q_DECL_HIDDEN MultiStringsEdit::Private
 {
 public:
 
-    explicit Private()
-      : addValueButton(nullptr),
-        delValueButton(nullptr),
-        repValueButton(nullptr),
-        valueCheck    (nullptr),
-        valueEdit     (nullptr),
-        valueBox      (nullptr)
-    {
-    }
+    Private() = default;
 
     QStringList      oldValues;
 
-    QPushButton*     addValueButton;
-    QPushButton*     delValueButton;
-    QPushButton*     repValueButton;
+    QPushButton*     addValueButton = nullptr;
+    QPushButton*     delValueButton = nullptr;
+    QPushButton*     repValueButton = nullptr;
 
-    QCheckBox*       valueCheck;
+    QCheckBox*       valueCheck     = nullptr;
 
-    DPlainTextEdit*  valueEdit;
+    DPlainTextEdit*  valueEdit      = nullptr;
 
-    QListWidget*     valueBox;
+    QListWidget*     valueBox       = nullptr;
 };
 
 MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
