@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 01:40+0000\n"
+"POT-Creation-Date: 2024-05-02 01:39+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -6522,7 +6522,7 @@ msgid ""
 msgstr "เครื่องมือสำหรับเปลี่ยนแปลงเป็นภาพขาวดำ"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:43
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:39
 #, fuzzy, kde-format
 #| msgctxt "Automatic Adjustment"
 #| msgid "Adjust"
@@ -6904,27 +6904,27 @@ msgstr ""
 "p><p><b>ข้อควรจำ: หากคุณใช้การตั้งค่านี้ แฟ้มแบบ JPEG 2000 "
 "จะไม่ใช่แฟ้มภาพที่ไม่มีการสูญเสียข้อมูลเมื่อบีบข้อมูลอีกต่อไป</b></p>"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:47
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:43
 #, fuzzy, kde-format
 #| msgid "TIFF Files"
 msgctxt "@title"
 msgid "HEIF loader"
 msgstr "แฟ้มภาพประเภท TIFF"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:62
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libheif codec"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:67
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:63
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgctxt "@info"
 msgid "This library is not present on your system."
 msgstr "ขออภัย ระบบของคุณไม่รองรับ OpenGL"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:76
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:72
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6932,7 +6932,7 @@ msgid ""
 "of %1 bits."
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:81
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6940,7 +6940,7 @@ msgid ""
 "with a suitable color depth."
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:88
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6957,15 +6957,15 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:129
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "แสดงระดับความชื่นชอบของภาพ"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:130
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:146
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
@@ -6988,8 +6988,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "ใช่"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
@@ -7011,8 +7011,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "ใช่"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -11161,18 +11161,18 @@ msgctxt "@action"
 msgid "&Shear..."
 msgstr "ปรับเบนภาพ..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:55
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:51
 #, fuzzy, kde-format
 #| msgid "Digital Cameras"
 msgid "Digital Scanner"
 msgstr "กล้องดิจิตัล"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:70
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:66
 #, kde-format
 msgid "A tool to acquire images with a digital scanner"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:75
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:71
 #, kde-format
 msgid ""
 "<p>This tool allows users to acquire new images from a digital scanner.</"
@@ -11180,41 +11180,41 @@ msgid ""
 "p><p>Target image can be post processed as crop and rotate.</p>"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:105
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@action"
 msgid "Import from Scanner..."
 msgstr "นำเข้าภาพจากเครื่องสแกนภาพ..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:132
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:128
 #, kde-format
 msgid ""
 "There is no scanner device available.\n"
 "Please check your configuration"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:141
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:137
 #, kde-format
 msgid ""
 "Cannot open scanner device \"%1\".\n"
 "Please check your configuration"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:64
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:60
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "สแกนภาพ"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:72
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:68
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgid "Scan Images"
 msgstr "สแกนภาพ"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:167
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1824
 #, fuzzy, kde-format
@@ -11223,27 +11223,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "ชื่อใหม่ของแฟ้มภาพ"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:215
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "ไม่ทราบ"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:216
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "ไม่รองรับประเภทแฟ้ม \"%1\" ของแฟ้มเป้าหมาย"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:228
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "ไม่สามารถบันทึกแฟ้ม \"%1\" ได้"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:229
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11255,7 +11255,7 @@ msgstr ""
 "\"%1\" ไปยัง\n"
 "\"%2\""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:244
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2298
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2317
@@ -11265,7 +11265,7 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "จะให้เขียนทับแฟ้มหรือไม่ ?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:245
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
@@ -11274,18 +11274,18 @@ msgstr ""
 "มีแฟ้มชื่อ \"%1\" อยู่ก่อนแล้ว\n"
 "คุณต้องการที่จะเขียนทับมันหรือไม่ ?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:296
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
 #, fuzzy, kde-format
 msgid "Saving file %1 -"
 msgstr "แฟ้มภาพยนตร์"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:304
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "แฟ้มข้อมูล XMP ที่จะบันทึก"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:304
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "ไม่สามารถบันทึกแฟ้ม \"%1\" ได้"
@@ -12424,7 +12424,7 @@ msgid ""
 msgstr "ตั้งค่าทางยาวโฟกัสของเลนส์ (หน่วยเป็น ม.ม.) ที่ถูกใช้เมื่อภาพถูกถ่าย"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
 #, kde-format
@@ -12457,7 +12457,7 @@ msgid ""
 msgstr "ตั้งค่าการประมวลผลความเปรียบต่างที่ถูกใช้โดยกล้องดิจิทัลเมื่อใช้ถ่ายภาพได้ที่นี่"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:219
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:185
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:94
 #, kde-format
 msgid "Saturation:"
@@ -16060,49 +16060,49 @@ msgstr ""
 msgid "Status"
 msgstr "สถานะ"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
 #, kde-format
 msgid "Failed to update metadata timestamp"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Failed to update file timestamp"
 msgstr "ลัมเหลวในการบันทึกแฟ้ม: %1"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:87
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:83
 #, fuzzy, kde-format
 #| msgid "Apply Metadata Template"
 msgid "ExifTool reported an error"
 msgstr "ปรับใช้แม่แบบข้อมูลกำกับภาพ"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:93
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
 #, fuzzy, kde-format
 msgid "Success"
 msgstr "ค้นหาด่วน"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:119
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:106
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:115
 #, kde-format
 msgid "not valid"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:134
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:130
 #, fuzzy, kde-format
 #| msgid "Removing image tags. Please wait..."
 msgid "Please wait ..."
 msgstr "กำลังเอาป้ายกำกับออกจากภาพ โปรดรอ..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:58
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:54
 #, fuzzy, kde-format
 #| msgid "A tool to add film grain"
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "เครื่องมือเพิ่มเกรนของฟิล์ม"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:63
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16115,7 +16115,7 @@ msgid ""
 "can be an offset of time or a specific date."
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:103
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:99
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -26660,59 +26660,59 @@ msgstr "การตั้งค่าอุปกรณ์จับภาพ"
 msgid "Export by Web Service"
 msgstr "นำเข้าระดับความชื่นชอบแล้ว"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:217
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
 #, fuzzy, kde-format
 msgid "ART Raw Conversion"
 msgstr "การแปลงขอบเขตสี"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:277
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:292
 #, fuzzy, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "การแปลงขอบเขตสี"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:65
+#: core/dplugins/rawimport/native/rawimport.cpp:61
 #, kde-format
 msgid "Raw Import"
 msgstr "นำเข้า Raw"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:67
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:309
+#: core/dplugins/rawimport/native/rawimport.cpp:63
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:275
 #, kde-format
 msgid "Post Processing"
 msgstr "กำลังประมวลผลหลังการกระทำ"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:176
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:308
+#: core/dplugins/rawimport/native/rawimport.cpp:172
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:274
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:221
 #, kde-format
 msgid "Raw Decoding"
 msgstr "กำลังถอดรหัสแฟ้ม RAW"
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:48
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:44
 #, kde-format
 msgid "Import Raw Using Libraw"
 msgstr ""
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:63
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:59
 #, fuzzy, kde-format
 msgid "A tool to import Raw images using Libraw engine"
 msgstr "เครื่องมือปรับขนาดภาพต่าง ๆ ด้วยการกำหนดค่าความยาวเอง"
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:68
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This Image Editor tool import Raw images using Libraw engine as decoder.</"
@@ -26722,7 +26722,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/dplugins/rawimport/native/rawpreview.cpp:170
+#: core/dplugins/rawimport/native/rawpreview.cpp:166
 #, fuzzy, kde-format
 msgid ""
 "Cannot decode RAW image\n"
@@ -26731,69 +26731,69 @@ msgstr ""
 "ไม่สามารถถอดรหัสภาพแบบ RAW ของ\n"
 "\"%1\" ได้"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:138
 #, kde-format
 msgid "Abort"
 msgstr "ยุติ"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:175
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:141
 #, kde-format
 msgid "Abort the current Raw image preview."
 msgstr "ยุติการแสดงภาพตัวอย่างของภาพแบบ Raw ตัวปัจจุบัน"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:178
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:144
 #, fuzzy, kde-format
 #| msgid "Update"
 msgctxt "@action: refresh RAW preview"
 msgid "Update"
 msgstr "ปรับปรุง"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:181
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:147
 #, kde-format
 msgid "Generate a Raw image preview using current settings."
 msgstr "สร้างการแสดงภาพตัวอย่างของภาพแบบ Raw โดยใช้การตั้งค่าปัจจุบัน"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:200
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:166
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
 #, kde-format
 msgid "Brightness:"
 msgstr "ค่าความสว่าง:"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:204
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:170
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
 #, kde-format
 msgid "Set here the brightness adjustment of the image."
 msgstr "ปรับตั้งค่าความสว่างของภาพได้ที่นี่"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:176
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:347
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "ปรับแก้ค่าความเข้มแสดงของภาพได้ที่นี่"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:212
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:178
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:86
 #, kde-format
 msgid "Gamma:"
 msgstr "ค่าแกมม่า:"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:217
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:183
 #, kde-format
 msgid "Set here the gamma adjustment of the image"
 msgstr "ปรับแก้ค่าแกมม่าของภาพได้ที่นี่"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:224
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:190
 #, kde-format
 msgid "Set here the color saturation correction."
 msgstr "ปรับตั้งค่าความอิ่มตัวของสีได้ที่นี่"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:192
 #, kde-format
 msgid "Exposure (E.V):"
 msgstr "ค่าแสง (E.V):"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:231
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:197
 #, kde-format
 msgid ""
 "This value in E.V will be used to perform an exposure compensation of the "
@@ -26802,26 +26802,26 @@ msgstr ""
 "ค่านี้มีหน่วยเป็น E.V  "
 "โดยจะถูกเพิ่มเข้ากับค่าชดเชยแสงหลักเพื่อใช้ในการปรับแก้การชดเชยแสงที่ละเอียดมากขึ้น"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:260
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:336
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "นี่เป็นเส้นโค้งที่ใช้ในการปรับแก้ค่าการกระจายของแสงบนภาพ"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
 msgstr "ตั้งค่าใหม่"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:264
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:230
 #, kde-format
 msgid "Reset curve to linear"
 msgstr "ปรับเส้นโค้งกลับเป็นเส้นตรง"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:285
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
 #: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #: core/utilities/searchwindow/searchfields_createfield.cpp:506
@@ -26829,61 +26829,61 @@ msgstr "ปรับเส้นโค้งกลับเป็นเส้น
 msgid "Exposure"
 msgstr "รูรับแสง/ความไวชัตเตอร์"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:252
 #, kde-format
 msgid "Luminosity Curve"
 msgstr "เส้นโค้งการกระจายของแสง"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:310
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:276
 #, kde-format
 msgid "Info"
 msgstr "ข้อมูล"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:316
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:282
 #, kde-format
 msgid "Reset all settings to default values."
 msgstr "ปรับการตั้งค่าทั้งหมดกลับไปใช้ค่าปริยาย"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:318
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:284
 #, kde-format
 msgid "Import"
 msgstr "นำเข้า"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:320
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
 #, kde-format
 msgid "Import image to editor using current settings."
 msgstr "นำเข้าภาพไปยังเครื่องมือแก้ไขภาพโดยใช้การตั้งค่าปัจจุบัน"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:322
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:288
 #, kde-format
 msgid "Use Default"
 msgstr "ใช้ค่าปริยาย"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:324
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:290
 #, kde-format
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr "ใช้การตั้งค่าปริยายของการถอดรหัสข้อมูล Raw เพื่อโหลดภาพนี้ไปยังเครื่องมือแก้ไขภาพ"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:216
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
 #, fuzzy, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "การแปลงขอบเขตสี"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:222
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:237
 #, fuzzy, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "การแปลงขอบเขตสี"

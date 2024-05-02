@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 01:40+0000\n"
+"POT-Creation-Date: 2024-05-02 01:39+0000\n"
 "PO-Revision-Date: 2024-04-21 14:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -6576,7 +6576,7 @@ msgstr ""
 "of Xmp uit afbeeldingen verwijderen.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:43
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -6935,25 +6935,25 @@ msgstr ""
 "compressie, groot bestand)</p><p><b>Opmerking: bij het gebruik van deze "
 "instelling is HEIF geen verliesloos compressieformaat.</b></p>"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:47
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "HEIF loader"
 msgstr "HEIF-lader"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:62
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libheif codec"
 msgstr "Een afbeeldingslader gebaseerd op de Libheif-codec"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:67
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:63
 #, kde-format
 msgctxt "@info"
 msgid "This library is not present on your system."
 msgstr "Deze bibliotheek is niet aanwezig op uw systeem."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:76
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:72
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6963,7 +6963,7 @@ msgstr ""
 "Deze bibliotheek is beschikbaar op uw systeem met ondersteuning voor een "
 "maximale kleurdiepte van %1 bits."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:81
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6973,7 +6973,7 @@ msgstr ""
 "Deze bibliotheek is beschikbaar op uw systeem maar is niet in staat "
 "afbeeldingen te coderen met een geschikte kleurdiepte."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:88
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7003,15 +7003,15 @@ msgstr ""
 "High_Efficiency_Image_File_Format'>High Efficiency Image bestandsformaat</a>."
 "</para>"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:129
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "High efficiency image coding"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:130
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:146
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
@@ -7033,8 +7033,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "ja"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
@@ -7055,8 +7055,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "ja"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -11346,17 +11346,17 @@ msgctxt "@action"
 msgid "&Shear..."
 msgstr "&Schuintrekken..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:55
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:51
 #, kde-format
 msgid "Digital Scanner"
 msgstr "Digitale scanner"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:70
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:66
 #, kde-format
 msgid "A tool to acquire images with a digital scanner"
 msgstr "Een hulpmiddel om afbeeldingen met een digitale scanner te verkrijgen"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:75
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:71
 #, kde-format
 msgid ""
 "<p>This tool allows users to acquire new images from a digital scanner.</"
@@ -11368,13 +11368,13 @@ msgstr ""
 "bibliotheek Sane.</p><p>Doelafbeelding kan daarna bewerkt worden met "
 "bijsnijden en draaien.</p>"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Import from Scanner..."
 msgstr "Vanaf scanner importeren..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:132
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:128
 #, kde-format
 msgid ""
 "There is no scanner device available.\n"
@@ -11383,7 +11383,7 @@ msgstr ""
 "Er is geen scannerapparaat beschikbaar.\n"
 "Controleer uw configuratie"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:141
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:137
 #, kde-format
 msgid ""
 "Cannot open scanner device \"%1\".\n"
@@ -11392,18 +11392,18 @@ msgstr ""
 "Kan scannerapparaat \"%1\" niet openen.\n"
 "Controleer uw configuratie"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:64
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "Afbeeldingen scannen"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:72
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:68
 #, kde-format
 msgid "Scan Images"
 msgstr "Afbeeldingen scannen"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:167
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1824
 #, kde-format
@@ -11411,27 +11411,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Nieuwe bestandsnaam voor afbeelding"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:215
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Niet-ondersteund formaat"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:216
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "De bestandsformaat \"%1\" wordt niet ondersteund."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:228
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Kan bestand niet opslaan"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:229
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11443,7 +11443,7 @@ msgstr ""
 "\"%1\" niet opslaan naar\n"
 "\"%2\""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:244
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2298
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2317
@@ -11452,25 +11452,25 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Bestand overschrijven?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:245
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Een bestand met de naam \"%1\" bestaat al. Wilt u het overschrijven?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:296
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
 #, kde-format
 msgid "Saving file %1 -"
 msgstr "Bestand %1 wordt opgeslagen -"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:304
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Bestand niet opgeslagen"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:304
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "Kan \"%1\"-bestand niet opslaan"
@@ -12614,7 +12614,7 @@ msgstr ""
 "die door de camera wordt toegepast bij het nemen van de foto."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
 #, kde-format
@@ -12649,7 +12649,7 @@ msgstr ""
 "toegepast bij het nemen van de foto."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:219
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:185
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:94
 #, kde-format
 msgid "Saturation:"
@@ -16069,45 +16069,45 @@ msgstr "Bijgewerkte tijdstempel"
 msgid "Status"
 msgstr "Status"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
 #, kde-format
 msgid "Failed to update metadata timestamp"
 msgstr "Bijwerken van metagegeven tijdstip is mislukt"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
 #, kde-format
 msgid "Failed to update file timestamp"
 msgstr "Bijwerken van tijdstip van bestand is mislukt"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:87
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:83
 #, kde-format
 msgid "ExifTool reported an error"
 msgstr "Metagegevens toepassen: ExifTool rapporteerde een fout"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:93
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
 #, kde-format
 msgid "Success"
 msgstr "Succes"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:119
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:106
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:115
 #, kde-format
 msgid "not valid"
 msgstr "ongeldig"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:134
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:130
 #, kde-format
 msgid "Please wait ..."
 msgstr "Een ogenblik geduld ..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:58
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:54
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "Een hulpmiddel om items datum-tijd te bewerken"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:63
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16129,7 +16129,7 @@ msgstr ""
 "gelaten. De aanpassing kan een offset van de tijd zijn of een specifieke "
 "datum."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:103
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -26729,7 +26729,7 @@ msgstr "Instellingen van de webservice"
 msgid "Export by Web Service"
 msgstr "Exporteren door webservice"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:217
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26738,12 +26738,12 @@ msgstr ""
 "Fout bij importeren van RAW-afbeelding met ART\n"
 "Deze dialoog sluiten om RAW-afbeelding met inheems importhulpmiddel te laden"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "ART Raw-conversie"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:277
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26752,40 +26752,40 @@ msgstr ""
 "Fout bij importeren van RAW-afbeelding met DarkTable\n"
 "Deze dialoog sluiten om RAW-afbeelding met inheems importhulpmiddel te laden"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:292
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "Rawconversie Darktable"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:65
+#: core/dplugins/rawimport/native/rawimport.cpp:61
 #, kde-format
 msgid "Raw Import"
 msgstr "Raw-importeren"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:67
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:309
+#: core/dplugins/rawimport/native/rawimport.cpp:63
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:275
 #, kde-format
 msgid "Post Processing"
 msgstr "Nabewerking"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:176
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:308
+#: core/dplugins/rawimport/native/rawimport.cpp:172
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:274
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:221
 #, kde-format
 msgid "Raw Decoding"
 msgstr "Raw-decodering"
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:48
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:44
 #, kde-format
 msgid "Import Raw Using Libraw"
 msgstr "Raw importeren met libraw"
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:63
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:59
 #, kde-format
 msgid "A tool to import Raw images using Libraw engine"
 msgstr "Een hulpmiddel om raw-afbeeldingen te importeren met de libraw-engine"
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:68
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This Image Editor tool import Raw images using Libraw engine as decoder.</"
@@ -26800,7 +26800,7 @@ msgstr ""
 "te werken.</p><p>Zie website van Libraw voor details: <a href='https://www."
 "libraw.org/'>https://www.libraw.org/</a></p>"
 
-#: core/dplugins/rawimport/native/rawpreview.cpp:170
+#: core/dplugins/rawimport/native/rawpreview.cpp:166
 #, kde-format
 msgid ""
 "Cannot decode RAW image\n"
@@ -26809,69 +26809,69 @@ msgstr ""
 "Kan RAW-afbeelding niet decoderen\n"
 "\"%1\""
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:138
 #, kde-format
 msgid "Abort"
 msgstr "Afbreken"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:175
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:141
 #, kde-format
 msgid "Abort the current Raw image preview."
 msgstr "Stop het weergeven van de RAW-afbeelding."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:178
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:144
 #, kde-format
 msgctxt "@action: refresh RAW preview"
 msgid "Update"
 msgstr "Bijwerken"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:181
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:147
 #, kde-format
 msgid "Generate a Raw image preview using current settings."
 msgstr ""
 "Genereer een voorbeeld van de RAW-afbeelding met de huidige instellingen."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:200
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:166
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
 #, kde-format
 msgid "Brightness:"
 msgstr "Helderheid:"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:204
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:170
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
 #, kde-format
 msgid "Set here the brightness adjustment of the image."
 msgstr "Stel hier de helderheidsaanpassing van de afbeelding in."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:176
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:347
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "Stel hier de contrastaanpassing van de afbeelding in."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:212
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:178
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:86
 #, kde-format
 msgid "Gamma:"
 msgstr "Gamma:"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:217
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:183
 #, kde-format
 msgid "Set here the gamma adjustment of the image"
 msgstr "Stel hier de gamma-aanpassing van de afbeelding in"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:224
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:190
 #, kde-format
 msgid "Set here the color saturation correction."
 msgstr "Stel hier de waarde in voor de correctie van de kleurverzadiging."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:192
 #, kde-format
 msgid "Exposure (E.V):"
 msgstr "Belichting (E.V.):"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:231
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:197
 #, kde-format
 msgid ""
 "This value in E.V will be used to perform an exposure compensation of the "
@@ -26880,27 +26880,27 @@ msgstr ""
 "Deze waarde in E.V. zal worden gebruikt bij de belichtingscompensatie van de "
 "afbeelding."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:260
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:336
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr ""
 "Stel hier de aanpassing van de kromme voor de helderheid van de afbeelding in"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
 msgstr "Opnieuw instellen"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:264
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:230
 #, kde-format
 msgid "Reset curve to linear"
 msgstr "Opnieuw instellen van de kromme tot een rechte lijn"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:285
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
 #: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #: core/utilities/searchwindow/searchfields_createfield.cpp:506
@@ -26908,44 +26908,44 @@ msgstr "Opnieuw instellen van de kromme tot een rechte lijn"
 msgid "Exposure"
 msgstr "Belichting"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:252
 #, kde-format
 msgid "Luminosity Curve"
 msgstr "Lichtkracht-kromme"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:310
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:276
 #, kde-format
 msgid "Info"
 msgstr "Info"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:316
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:282
 #, kde-format
 msgid "Reset all settings to default values."
 msgstr "Zet alle instellingen terug naar hun standaardwaarden."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:318
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:284
 #, kde-format
 msgid "Import"
 msgstr "Importeren"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:320
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
 #, kde-format
 msgid "Import image to editor using current settings."
 msgstr "Importeer de afbeelding naar de bewerker met de huidige instellingen."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:322
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:288
 #, kde-format
 msgid "Use Default"
 msgstr "Standaard gebruiken"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:324
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:290
 #, kde-format
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr ""
 "Gebruiken algemene RAW-decodeerinstellingen om de afbeelding in de bewerker "
 "te laden."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:216
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26954,12 +26954,12 @@ msgstr ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "Rawconversie RawTherapee"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:222
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26968,7 +26968,7 @@ msgstr ""
 "Fout bij importeren van RAW-afbeelding met UFRaw\n"
 "Deze dialoog sluiten om RAW-afbeelding met inheems importhulpmiddel te laden"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:237
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "Rawconversie UFRaw"

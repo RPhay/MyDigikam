@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 01:40+0000\n"
+"POT-Creation-Date: 2024-05-02 01:39+0000\n"
 "PO-Revision-Date: 2024-03-29 21:26+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -6406,7 +6406,7 @@ msgid ""
 msgstr "Toto je zoznam položiek, ktoré majú byť zmazané."
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:43
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -6782,27 +6782,27 @@ msgstr ""
 "(bez kompresie a veľká veľkosť súborov)</p><p><b>Pozor: JPEG 2000 nie je "
 "bezstratový kompresný formát, keď použijete toto nastavenie.</b></p>"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:47
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:43
 #, fuzzy, kde-format
 #| msgid "TIFF Files"
 msgctxt "@title"
 msgid "HEIF loader"
 msgstr "TIFF súbory"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:62
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libheif codec"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:67
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:63
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgctxt "@info"
 msgid "This library is not present on your system."
 msgstr "Na Vašom systéme nie je dostupný OpenGL."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:76
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:72
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6810,7 +6810,7 @@ msgid ""
 "of %1 bits."
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:81
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6818,7 +6818,7 @@ msgid ""
 "with a suitable color depth."
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:88
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6835,15 +6835,15 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:129
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "Nový formát obrázka"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:130
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:146
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
@@ -6867,8 +6867,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "áno"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
@@ -6891,8 +6891,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "áno"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -11021,17 +11021,17 @@ msgctxt "@action"
 msgid "&Shear..."
 msgstr "S&kosiť..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:55
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:51
 #, fuzzy, kde-format
 msgid "Digital Scanner"
 msgstr "RAW súbory z digitálneho fotoaparátu"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:70
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:66
 #, kde-format
 msgid "A tool to acquire images with a digital scanner"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:75
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:71
 #, kde-format
 msgid ""
 "<p>This tool allows users to acquire new images from a digital scanner.</"
@@ -11039,38 +11039,38 @@ msgid ""
 "p><p>Target image can be post processed as crop and rotate.</p>"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Import from Scanner..."
 msgstr "Importovať zo skenera..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:132
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:128
 #, kde-format
 msgid ""
 "There is no scanner device available.\n"
 "Please check your configuration"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:141
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:137
 #, kde-format
 msgid ""
 "Cannot open scanner device \"%1\".\n"
 "Please check your configuration"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:64
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "Skenovať obrázok"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:72
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:68
 #, kde-format
 msgid "Scan Images"
 msgstr "Skenovať obrázky"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:167
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1824
 #, fuzzy, kde-format
@@ -11079,7 +11079,7 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Nový súbor s obrázkom"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:215
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, fuzzy, kde-format
 #| msgid "Unsupported Format"
@@ -11087,13 +11087,13 @@ msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Nepodporovaný formát"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:216
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Formát súboru \"%1\" cieľového obrázku nie je podporovaný."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:228
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, fuzzy, kde-format
 #| msgid "Cannot Save File"
@@ -11101,7 +11101,7 @@ msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Súbor sa nedá uložiť"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:229
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11113,7 +11113,7 @@ msgstr ""
 "\"%1\" do\n"
 "\"%2\"."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:244
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2298
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2317
@@ -11123,26 +11123,26 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Prepísať súbor?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:245
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Súbor s názvom „%1“ už existuje. Ste si istý, že ho chcete prepísať?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:296
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
 #, kde-format
 msgid "Saving file %1 -"
 msgstr "Ukladá sa súbor %1 -"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:304
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, fuzzy, kde-format
 #| msgid "File Not Saved"
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Súbor nebol uložený"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:304
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "Súbor \"%1\" sa nedá uložiť"
@@ -12296,7 +12296,7 @@ msgstr ""
 "pri vytvorení snímky."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
 #, kde-format
@@ -12330,7 +12330,7 @@ msgstr ""
 "Zadajte smer spracovania kontrastu použitý fotoaparátom pri vytvorení snímky."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:219
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:185
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:94
 #, kde-format
 msgid "Saturation:"
@@ -15782,7 +15782,7 @@ msgstr "Aktualizovaný časový údaj"
 msgid "Status"
 msgstr "Stav"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
 #, fuzzy, kde-format
 msgid "Failed to update metadata timestamp"
 msgstr ""
@@ -15791,43 +15791,43 @@ msgstr ""
 "do\n"
 "„%2“."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
 #, kde-format
 msgid "Failed to update file timestamp"
 msgstr "Nepodarilo sa aktualizovať časový údaj súboru"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:87
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Apply Metadata Template"
 msgid "ExifTool reported an error"
 msgstr "Použiť šablónu metadát"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:93
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
 #, fuzzy, kde-format
 #| msgid "Public access"
 msgid "Success"
 msgstr "Verejný prístup"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:119
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:106
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:115
 #, kde-format
 msgid "not valid"
 msgstr "neplatné"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:134
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:130
 #, kde-format
 msgid "Please wait ..."
 msgstr "Čakajte, prosím..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:58
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:54
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "Zobrazovať vyváženie bielej fotoaparátu"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:63
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -15840,7 +15840,7 @@ msgid ""
 "can be an offset of time or a specific date."
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:103
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -26320,61 +26320,61 @@ msgstr "Štandardné nastavenie archívu"
 msgid "Export by Web Service"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:217
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "ART Raw Conversion"
 msgstr "Prevod do RAW"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:277
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:292
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "DarkTable Raw Conversion"
 msgstr "Prevod do RAW"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:65
+#: core/dplugins/rawimport/native/rawimport.cpp:61
 #, kde-format
 msgid "Raw Import"
 msgstr "Import RAW"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:67
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:309
+#: core/dplugins/rawimport/native/rawimport.cpp:63
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:275
 #, kde-format
 msgid "Post Processing"
 msgstr "Postprocessing"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:176
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:308
+#: core/dplugins/rawimport/native/rawimport.cpp:172
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:274
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:221
 #, kde-format
 msgid "Raw Decoding"
 msgstr "Dekódovanie RAW"
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:48
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:44
 #, kde-format
 msgid "Import Raw Using Libraw"
 msgstr ""
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:63
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:59
 #, fuzzy, kde-format
 msgid "A tool to import Raw images using Libraw engine"
 msgstr "Nástroj na zmenu veľkosti obrázkov s prispôsobenou šírkou."
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:68
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This Image Editor tool import Raw images using Libraw engine as decoder.</"
@@ -26384,77 +26384,77 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/dplugins/rawimport/native/rawpreview.cpp:170
+#: core/dplugins/rawimport/native/rawpreview.cpp:166
 #, fuzzy, kde-format
 msgid ""
 "Cannot decode RAW image\n"
 "\"%1\""
 msgstr "Raw obraz zvukového CD"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:138
 #, kde-format
 msgid "Abort"
 msgstr "Prerušiť"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:175
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:141
 #, kde-format
 msgid "Abort the current Raw image preview."
 msgstr "Prerušiť prebiehajúci náhľad RAW obrázka."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:178
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:144
 #, kde-format
 msgctxt "@action: refresh RAW preview"
 msgid "Update"
 msgstr "Aktualizovať"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:181
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:147
 #, fuzzy, kde-format
 msgid "Generate a Raw image preview using current settings."
 msgstr ""
 "<p>Tu môžete vidieť položky nájdené v knižnici albumov použitím aktuálneho "
 "nastavenia vyhľadávania."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:200
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:166
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
 #, kde-format
 msgid "Brightness:"
 msgstr "Jas:"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:204
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:170
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
 #, fuzzy, kde-format
 msgid "Set here the brightness adjustment of the image."
 msgstr "Tu môžete nastaviť odtieň obrázka."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:176
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:347
 #, fuzzy, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "Tu môžete nastaviť odtieň obrázka."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:212
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:178
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:86
 #, kde-format
 msgid "Gamma:"
 msgstr "Gama:"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:217
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:183
 #, fuzzy, kde-format
 msgid "Set here the gamma adjustment of the image"
 msgstr "Tu môžete nastaviť odtieň obrázka."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:224
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:190
 #, fuzzy, kde-format
 msgid "Set here the color saturation correction."
 msgstr "Tu môžete nastaviť nasýtenie obrázka."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:192
 #, kde-format
 msgid "Exposure (E.V):"
 msgstr "Expozícia (E.V):"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:231
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:197
 #, kde-format
 msgid ""
 "This value in E.V will be used to perform an exposure compensation of the "
@@ -26463,26 +26463,26 @@ msgstr ""
 "Táto hodnota v elektrónvoltoch sa použije na vykonanie korekcie expozície "
 "obrázka."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:260
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:336
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Toto je nastavenie krivky svietivosti obrázka"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
 msgstr "Nastaviť na pôvodné"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:264
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:230
 #, kde-format
 msgid "Reset curve to linear"
 msgstr "Obnoviť krivku na lineárnu"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:285
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
 #: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #: core/utilities/searchwindow/searchfields_createfield.cpp:506
@@ -26490,66 +26490,66 @@ msgstr "Obnoviť krivku na lineárnu"
 msgid "Exposure"
 msgstr "Expozícia"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:252
 #, kde-format
 msgid "Luminosity Curve"
 msgstr "Krivka jasu"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:310
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:276
 #, kde-format
 msgid "Info"
 msgstr "Informácie"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:316
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:282
 #, fuzzy, kde-format
 msgid "Reset all settings to default values."
 msgstr "Obnoviť vetky nastavenia na predvolené hodnoty."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:318
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:284
 #, kde-format
 msgid "Import"
 msgstr "Importovať"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:320
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
 #, fuzzy, kde-format
 msgid "Import image to editor using current settings."
 msgstr ""
 "<p>Tu môžete vidieť položky nájdené v knižnici albumov použitím aktuálneho "
 "nastavenia vyhľadávania."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:322
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:288
 #, kde-format
 msgid "Use Default"
 msgstr "Použiť predvolené"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:324
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:290
 #, kde-format
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr ""
 "Použiť všeobecné nastavenia dekódovania RAW na načítanie tohto obrázka v "
 "editore."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:216
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "RawTherapee Raw Conversion"
 msgstr "Prevod do RAW"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:222
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:237
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "UFRaw Raw Conversion"

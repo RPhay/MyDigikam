@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-01 01:40+0000\n"
+"POT-Creation-Date: 2024-05-02 01:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:16+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -6624,7 +6624,7 @@ msgstr ""
 "снимков метаданных EXIF, IPTC, или XMP.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:43
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
@@ -6993,25 +6993,25 @@ msgstr ""
 "(без сжатия и большой размер файла)</p><p><b>Примечание: HEIF — формат "
 "сжатия с потерями (при использовании этого параметра).</b></p>"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:47
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "HEIF loader"
 msgstr "Загрузчик HEIF"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:62
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libheif codec"
 msgstr "Загрузчик изображений, основанный на кодеке Libheif"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:67
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:63
 #, kde-format
 msgctxt "@info"
 msgid "This library is not present on your system."
 msgstr "Эта библиотека не присутствует в вашей системе."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:76
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:72
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -7021,7 +7021,7 @@ msgstr ""
 "Эта библиотека доступна в вашей системе. Максимальная поддерживаемая глубина "
 "цвета — %1 бит."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:81
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -7031,7 +7031,7 @@ msgstr ""
 "Эта библиотека доступна в вашей системе, но не поддерживает кодирование "
 "изображения с подходящей глубиной цвета."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:88
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7061,15 +7061,15 @@ msgstr ""
 "подробная информация содержится в статье о формате <a href='https://ru."
 "wikipedia.org/wiki/HEIF'>High Efficiency Image File</a>.</para>"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:149
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:129
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "Высокоэффективное кодирование изображений"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:130
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:146
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
@@ -7091,8 +7091,8 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "да"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:134
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:150
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
@@ -7113,8 +7113,8 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "да"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:158
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:138
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:154
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
@@ -11367,17 +11367,17 @@ msgctxt "@action"
 msgid "&Shear..."
 msgstr "С&двиг..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:55
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:51
 #, kde-format
 msgid "Digital Scanner"
 msgstr "Сканер"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:70
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:66
 #, kde-format
 msgid "A tool to acquire images with a digital scanner"
 msgstr "Инструмент для получения изображений со сканера"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:75
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:71
 #, kde-format
 msgid ""
 "<p>This tool allows users to acquire new images from a digital scanner.</"
@@ -11389,13 +11389,13 @@ msgstr ""
 "сканеров.</p><p>Поддерживается последующая обработка целевого изображения "
 "(кадрирование и поворот).</p>"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Import from Scanner..."
 msgstr "Импорт со сканера..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:132
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:128
 #, kde-format
 msgid ""
 "There is no scanner device available.\n"
@@ -11404,7 +11404,7 @@ msgstr ""
 "Сканирующие устройства отсутствуют.\n"
 "Проверьте параметры конфигурации"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:141
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:137
 #, kde-format
 msgid ""
 "Cannot open scanner device \"%1\".\n"
@@ -11413,18 +11413,18 @@ msgstr ""
 "Невозможно открыть сканер «%1».\n"
 "Проверьте параметры конфигурации"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:64
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "Сканирование изображений"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:72
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:68
 #, kde-format
 msgid "Scan Images"
 msgstr "Сканирование изображений"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:167
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:163
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:100
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1824
 #, kde-format
@@ -11432,27 +11432,27 @@ msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Новое имя файла изображения"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:215
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:211
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Неподдерживаемый формат"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:216
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:212
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:149
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
 msgstr "Формат целевого изображения «%1» не поддерживается."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:228
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:224
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:161
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Ошибка сохранения файла"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:229
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:225
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:162
 #, kde-format
 msgid ""
@@ -11464,7 +11464,7 @@ msgstr ""
 "«%1» в \n"
 "«%2»."
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:244
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:240
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2298
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2317
@@ -11473,25 +11473,25 @@ msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Заменить файл?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:245
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:241
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:178
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Файл с именем «%1» уже существует. Заменить его?"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:296
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:292
 #, kde-format
 msgid "Saving file %1 -"
 msgstr "Сохранение файла %1 —"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:304
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Файл не сохранён"
 
-#: core/dplugins/generic/import/dscanner/scandialog.cpp:304
+#: core/dplugins/generic/import/dscanner/scandialog.cpp:300
 #, kde-format
 msgid "Cannot save \"%1\" file"
 msgstr "Не удалось сохранить файл «%1»"
@@ -12648,7 +12648,7 @@ msgstr ""
 "Укажите уровень корректировки усиления, используемый при создании снимка."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:206
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
 #, kde-format
@@ -12683,7 +12683,7 @@ msgstr ""
 "создании снимка."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:219
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:185
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:94
 #, kde-format
 msgid "Saturation:"
@@ -16076,46 +16076,46 @@ msgstr "Новая метка времени"
 msgid "Status"
 msgstr "Состояние"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
 #, kde-format
 msgid "Failed to update metadata timestamp"
 msgstr "Не удалось обновить метку времени в метаданных"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
 #, kde-format
 msgid "Failed to update file timestamp"
 msgstr "Не удалось обновить метку времени файла"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:87
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:83
 #, fuzzy, kde-format
 #| msgid "Apply Metadata Template"
 msgid "ExifTool reported an error"
 msgstr "Применить шаблон метаданных"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:97
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:93
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:472
 #, kde-format
 msgid "Success"
 msgstr "Готово"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:119
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:106
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:115
 #, kde-format
 msgid "not valid"
 msgstr "неверные данные"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:134
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:130
 #, kde-format
 msgid "Please wait ..."
 msgstr "Подождите..."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:58
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:54
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
 msgstr "Инструмент для изменения даты и времени"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:63
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16136,7 +16136,7 @@ msgstr ""
 "Метки времени в метаданных возможно изменить или оставить без изменения. "
 "Изменение выполняется путём сдвига времени или назначения конкретной даты."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:103
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -26730,7 +26730,7 @@ msgstr "Параметры веб-служб"
 msgid "Export by Web Service"
 msgstr "Экспорт в веб-службу"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:217
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26740,12 +26740,12 @@ msgstr ""
 "Закройте это диалоговое окно, чтобы выполнить загрузку цифрового негатива с "
 "помощью собственного инструмента импорта."
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:232
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "Преобразование цифрового негатива ART"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:277
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26755,41 +26755,41 @@ msgstr ""
 "Закройте это диалоговое окно, чтобы выполнить загрузку цифрового негатива с "
 "помощью собственного инструмента импорта"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:292
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "Преобразование «цифрового негатива» DarkTable"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:65
+#: core/dplugins/rawimport/native/rawimport.cpp:61
 #, kde-format
 msgid "Raw Import"
 msgstr "Импорт цифровых негативов"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:67
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:309
+#: core/dplugins/rawimport/native/rawimport.cpp:63
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:275
 #, kde-format
 msgid "Post Processing"
 msgstr "Постобработка"
 
-#: core/dplugins/rawimport/native/rawimport.cpp:176
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:308
+#: core/dplugins/rawimport/native/rawimport.cpp:172
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:274
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:221
 #, kde-format
 msgid "Raw Decoding"
 msgstr "Декодирование цифрового негатива"
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:48
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:44
 #, kde-format
 msgid "Import Raw Using Libraw"
 msgstr "Импорт цифровых негативов с помощью Libraw"
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:63
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:59
 #, kde-format
 msgid "A tool to import Raw images using Libraw engine"
 msgstr ""
 "Инструмент для импорта цифровых негативов (RAW) с помощью движка Libraw"
 
-#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:68
+#: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:64
 #, kde-format
 msgid ""
 "<p>This Image Editor tool import Raw images using Libraw engine as decoder.</"
@@ -26805,7 +26805,7 @@ msgstr ""
 "p><p>Подробные сведения доступны на веб-сайте Libraw: <a href='https://www."
 "libraw.org/'>https://www.libraw.org/</a></p>"
 
-#: core/dplugins/rawimport/native/rawpreview.cpp:170
+#: core/dplugins/rawimport/native/rawpreview.cpp:166
 #, kde-format
 msgid ""
 "Cannot decode RAW image\n"
@@ -26814,70 +26814,70 @@ msgstr ""
 "Не удалось декодировать «цифровой негатив»\n"
 "«%1»"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:138
 #, kde-format
 msgid "Abort"
 msgstr "Отмена"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:175
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:141
 #, kde-format
 msgid "Abort the current Raw image preview."
 msgstr "Отмена предварительного просмотра текущего «цифрового негатива»."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:178
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:144
 #, kde-format
 msgctxt "@action: refresh RAW preview"
 msgid "Update"
 msgstr "Обновить"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:181
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:147
 #, kde-format
 msgid "Generate a Raw image preview using current settings."
 msgstr ""
 "Создать предварительный просмотр «цифрового негатива», используя текущие "
 "параметры."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:200
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:166
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:74
 #, kde-format
 msgid "Brightness:"
 msgstr "Яркость:"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:204
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:170
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:78
 #, kde-format
 msgid "Set here the brightness adjustment of the image."
 msgstr "Корректирующее значение для яркости изображения."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:210
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:176
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:84
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:347
 #, kde-format
 msgid "Set here the contrast adjustment of the image."
 msgstr "Корректирующее значение для контрастности изображения."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:212
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:178
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:86
 #, kde-format
 msgid "Gamma:"
 msgstr "Гамма:"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:217
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:183
 #, kde-format
 msgid "Set here the gamma adjustment of the image"
 msgstr "Корректирующее значение для гаммы изображения."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:224
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:190
 #, kde-format
 msgid "Set here the color saturation correction."
 msgstr "Корректирующее значение для цветовой насыщенности."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:192
 #, kde-format
 msgid "Exposure (E.V):"
 msgstr "Экспозиция (экспозиционное число):"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:231
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:197
 #, kde-format
 msgid ""
 "This value in E.V will be used to perform an exposure compensation of the "
@@ -26886,26 +26886,26 @@ msgstr ""
 "Это значение в виде экспозиционного числа будет использоваться для "
 "осуществления компенсации экспозиции изображения."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:260
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:226
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:336
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Кривая для настройки общей яркости изображения."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:262
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:314
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:183
 #: core/utilities/searchwindow/searchview.cpp:503
 #, kde-format
 msgid "Reset"
 msgstr "Сбросить"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:264
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:230
 #, kde-format
 msgid "Reset curve to linear"
 msgstr "Возврат к линейному виду"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:285
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
 #: core/utilities/searchwindow/searchfields_createfield.cpp:473
 #: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #: core/utilities/searchwindow/searchfields_createfield.cpp:506
@@ -26913,44 +26913,44 @@ msgstr "Возврат к линейному виду"
 msgid "Exposure"
 msgstr "Экспозиция"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:252
 #, kde-format
 msgid "Luminosity Curve"
 msgstr "Кривая яркости"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:310
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:276
 #, kde-format
 msgid "Info"
 msgstr "Сведения"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:316
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:282
 #, kde-format
 msgid "Reset all settings to default values."
 msgstr "Установить все параметры на значения по умолчанию."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:318
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:284
 #, kde-format
 msgid "Import"
 msgstr "Импорт"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:320
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
 #, kde-format
 msgid "Import image to editor using current settings."
 msgstr "Импорт изображения в редактор с использованием текущих параметров."
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:322
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:288
 #, kde-format
 msgid "Use Default"
 msgstr "Использовать параметры по умолчанию"
 
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:324
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:290
 #, kde-format
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr ""
 "Использовать общие параметры декодирования «цифровых негативов» для загрузки "
 "этого изображения в редактор."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:216
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26960,12 +26960,12 @@ msgstr ""
 "Закройте это диалоговое окно, чтобы выполнить загрузку цифрового негатива с "
 "помощью встроенного инструмента импорта."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:231
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "Преобразование «цифрового негатива» RawTherapee"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:222
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26975,7 +26975,7 @@ msgstr ""
 "Закройте это диалоговое окно, чтобы выполнить загрузку цифрового негатива с "
 "помощью собственного инструмента импорта."
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:237
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "Преобразование «цифрового негатива» UFRaw"
