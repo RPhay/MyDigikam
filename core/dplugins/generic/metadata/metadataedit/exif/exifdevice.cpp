@@ -46,65 +46,38 @@ class Q_DECL_HIDDEN EXIFDevice::Private
 {
 public:
 
-    explicit Private()
-    {
-        makeCheck                = nullptr;
-        modelCheck               = nullptr;
-        deviceTypeCheck          = nullptr;
-        exposureTimeCheck        = nullptr;
-        exposureProgramCheck     = nullptr;
-        exposureModeCheck        = nullptr;
-        exposureBiasCheck        = nullptr;
-        ISOSpeedCheck            = nullptr;
-        meteringModeCheck        = nullptr;
-        sensingMethodCheck       = nullptr;
-        sceneTypeCheck           = nullptr;
-        subjectDistanceTypeCheck = nullptr;
-        exposureProgramCB        = nullptr;
-        exposureModeCB           = nullptr;
-        ISOSpeedCB               = nullptr;
-        meteringModeCB           = nullptr;
-        sensingMethodCB          = nullptr;
-        sceneTypeCB              = nullptr;
-        subjectDistanceTypeCB    = nullptr;
-        exposureTimeNumEdit      = nullptr;
-        exposureTimeDenEdit      = nullptr;
-        exposureBiasEdit         = nullptr;
-        makeEdit                 = nullptr;
-        modelEdit                = nullptr;
-        deviceTypeCB             = nullptr;
-    }
+    Private() = default;
 
-    QCheckBox*        makeCheck;
-    QCheckBox*        modelCheck;
-    QCheckBox*        exposureTimeCheck;
-    QCheckBox*        exposureBiasCheck;
+    QCheckBox*        makeCheck                 = nullptr;
+    QCheckBox*        modelCheck                = nullptr;
+    QCheckBox*        exposureTimeCheck         = nullptr;
+    QCheckBox*        exposureBiasCheck         = nullptr;
 
-    QComboBox*        deviceTypeCB;
-    QComboBox*        exposureProgramCB;
-    QComboBox*        exposureModeCB;
-    QComboBox*        ISOSpeedCB;
-    QComboBox*        meteringModeCB;
-    QComboBox*        sensingMethodCB;
-    QComboBox*        sceneTypeCB;
-    QComboBox*        subjectDistanceTypeCB;
+    QComboBox*        deviceTypeCB              = nullptr;
+    QComboBox*        exposureProgramCB         = nullptr;
+    QComboBox*        exposureModeCB            = nullptr;
+    QComboBox*        ISOSpeedCB                = nullptr;
+    QComboBox*        meteringModeCB            = nullptr;
+    QComboBox*        sensingMethodCB           = nullptr;
+    QComboBox*        sceneTypeCB               = nullptr;
+    QComboBox*        subjectDistanceTypeCB     = nullptr;
 
-    QLineEdit*        makeEdit;
-    QLineEdit*        modelEdit;
+    QLineEdit*        makeEdit                  = nullptr;
+    QLineEdit*        modelEdit                 = nullptr;
 
-    QSpinBox*         exposureTimeNumEdit;
-    QSpinBox*         exposureTimeDenEdit;
+    QSpinBox*         exposureTimeNumEdit       = nullptr;
+    QSpinBox*         exposureTimeDenEdit       = nullptr;
 
-    QDoubleSpinBox*   exposureBiasEdit;
+    QDoubleSpinBox*   exposureBiasEdit          = nullptr;
 
-    MetadataCheckBox* deviceTypeCheck;
-    MetadataCheckBox* exposureProgramCheck;
-    MetadataCheckBox* exposureModeCheck;
-    MetadataCheckBox* meteringModeCheck;
-    MetadataCheckBox* ISOSpeedCheck;
-    MetadataCheckBox* sensingMethodCheck;
-    MetadataCheckBox* sceneTypeCheck;
-    MetadataCheckBox* subjectDistanceTypeCheck;
+    MetadataCheckBox* deviceTypeCheck           = nullptr;
+    MetadataCheckBox* exposureProgramCheck      = nullptr;
+    MetadataCheckBox* exposureModeCheck         = nullptr;
+    MetadataCheckBox* meteringModeCheck         = nullptr;
+    MetadataCheckBox* ISOSpeedCheck             = nullptr;
+    MetadataCheckBox* sensingMethodCheck        = nullptr;
+    MetadataCheckBox* sceneTypeCheck            = nullptr;
+    MetadataCheckBox* subjectDistanceTypeCheck  = nullptr;
 };
 
 EXIFDevice::EXIFDevice(QWidget* const parent)
@@ -544,7 +517,7 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
     d->exposureTimeDenEdit->setValue(1);
     d->exposureTimeCheck->setChecked(false);
 
-    if (meta.getExifTagRational("Exif.Photo.ExposureTime", num, den))
+    if      (meta.getExifTagRational("Exif.Photo.ExposureTime", num, den))
     {
         d->exposureTimeNumEdit->setValue(num);
         d->exposureTimeDenEdit->setValue(den);
@@ -555,9 +528,13 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
         double tmp = std::exp(std::log(2.0) * (double)(num) / (double)(den));
 
         if (tmp > 1.0)
+        {
             num = (long int)(tmp + 0.5);
+        }
         else
+        {
             den = (long int)(1.0 / tmp + 0.5);
+        }
 
         d->exposureTimeNumEdit->setValue(num);
         d->exposureTimeDenEdit->setValue(den);
@@ -635,7 +612,7 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
     d->ISOSpeedCB->setCurrentIndex(10);       // 100 ISO
     d->ISOSpeedCheck->setChecked(false);
 
-    if (meta.getExifTagLong("Exif.Photo.ISOSpeedRatings", val))
+    if      (meta.getExifTagLong("Exif.Photo.ISOSpeedRatings", val))
     {
         int item = -1;
 
@@ -745,19 +722,31 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
     long int num = 1, den = 1;
 
     if (d->makeCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Image.Make", d->makeEdit->text());
+    }
     else
+    {
         meta.removeExifTag("Exif.Image.Make");
+    }
 
     if (d->modelCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Image.Model", d->modelEdit->text());
+    }
     else
+    {
         meta.removeExifTag("Exif.Image.Model");
+    }
 
-    if (d->deviceTypeCheck->isChecked())
+    if      (d->deviceTypeCheck->isChecked())
+    {
         meta.setExifTagLong("Exif.Photo.FileSource", d->deviceTypeCB->currentIndex()+1);
+    }
     else if (d->deviceTypeCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.FileSource");
+    }
 
     if (d->exposureTimeCheck->isChecked())
     {
@@ -777,14 +766,22 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
     }
 
     if      (d->exposureProgramCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.ExposureProgram", d->exposureProgramCB->currentIndex());
+    }
     else if (d->exposureProgramCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.ExposureProgram");
+    }
 
     if      (d->exposureModeCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.ExposureMode", d->exposureModeCB->currentIndex());
+    }
     else if (d->exposureModeCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.ExposureMode");
+    }
 
     if (d->exposureBiasCheck->isChecked())
     {
@@ -802,7 +799,9 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
         meta.setExifTagUShort("Exif.Photo.MeteringMode", (met > 6) ? 255 : met);
     }
     else if (d->meteringModeCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.MeteringMode");
+    }
 
     if      (d->ISOSpeedCheck->isChecked())
     {
@@ -828,14 +827,22 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
     }
 
     if      (d->sceneTypeCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.SceneCaptureType", d->sceneTypeCB->currentIndex());
+    }
     else if (d->sceneTypeCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.SceneCaptureType");
+    }
 
     if      (d->subjectDistanceTypeCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.SubjectDistanceRange", d->subjectDistanceTypeCB->currentIndex());
+    }
     else if (d->subjectDistanceTypeCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.SubjectDistanceRange");
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

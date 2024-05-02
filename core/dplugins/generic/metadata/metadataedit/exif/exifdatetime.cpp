@@ -40,49 +40,28 @@ class Q_DECL_HIDDEN EXIFDateTime::Private
 {
 public:
 
-    explicit Private()
-    {
-        dateCreatedSel             = nullptr;
-        dateOriginalSel            = nullptr;
-        dateDigitalizedSel         = nullptr;
-        dateCreatedSubSecEdit      = nullptr;
-        dateOriginalSubSecEdit     = nullptr;
-        dateDigitalizedSubSecEdit  = nullptr;
+    Private() = default;
 
-        dateCreatedCheck           = nullptr;
-        dateOriginalCheck          = nullptr;
-        dateDigitalizedCheck       = nullptr;
-        dateCreatedSubSecCheck     = nullptr;
-        dateOriginalSubSecCheck    = nullptr;
-        dateDigitalizedSubSecCheck = nullptr;
-        syncXMPDateCheck           = nullptr;
-        syncIPTCDateCheck          = nullptr;
+    QCheckBox*       dateCreatedCheck           = nullptr;
+    QCheckBox*       dateOriginalCheck          = nullptr;
+    QCheckBox*       dateDigitalizedCheck       = nullptr;
+    QCheckBox*       dateCreatedSubSecCheck     = nullptr;
+    QCheckBox*       dateOriginalSubSecCheck    = nullptr;
+    QCheckBox*       dateDigitalizedSubSecCheck = nullptr;
+    QCheckBox*       syncXMPDateCheck           = nullptr;
+    QCheckBox*       syncIPTCDateCheck          = nullptr;
 
-        setTodayCreatedBtn         = nullptr;
-        setTodayOriginalBtn        = nullptr;
-        setTodayDigitalizedBtn     = nullptr;
-    }
+    QPushButton*     setTodayCreatedBtn         = nullptr;
+    QPushButton*     setTodayOriginalBtn        = nullptr;
+    QPushButton*     setTodayDigitalizedBtn     = nullptr;
 
-    QCheckBox*       dateCreatedCheck;
-    QCheckBox*       dateOriginalCheck;
-    QCheckBox*       dateDigitalizedCheck;
-    QCheckBox*       dateCreatedSubSecCheck;
-    QCheckBox*       dateOriginalSubSecCheck;
-    QCheckBox*       dateDigitalizedSubSecCheck;
-    QCheckBox*       syncXMPDateCheck;
-    QCheckBox*       syncIPTCDateCheck;
+    QSpinBox*        dateCreatedSubSecEdit      = nullptr;
+    QSpinBox*        dateOriginalSubSecEdit     = nullptr;
+    QSpinBox*        dateDigitalizedSubSecEdit  = nullptr;
 
-    QPushButton*     setTodayCreatedBtn;
-    QPushButton*     setTodayOriginalBtn;
-    QPushButton*     setTodayDigitalizedBtn;
-
-    QSpinBox*        dateCreatedSubSecEdit;
-    QSpinBox*        dateOriginalSubSecEdit;
-    QSpinBox*        dateDigitalizedSubSecEdit;
-
-    QDateTimeEdit*   dateCreatedSel;
-    QDateTimeEdit*   dateOriginalSel;
-    QDateTimeEdit*   dateDigitalizedSel;
+    QDateTimeEdit*   dateCreatedSel             = nullptr;
+    QDateTimeEdit*   dateOriginalSel            = nullptr;
+    QDateTimeEdit*   dateDigitalizedSel         = nullptr;
 };
 
 EXIFDateTime::EXIFDateTime(QWidget* const parent)
@@ -127,7 +106,9 @@ EXIFDateTime::EXIFDateTime(QWidget* const parent)
     d->setTodayCreatedBtn->setWhatsThis(i18n("Set creation date to today"));
 
     if (!DMetadata::supportXmp())
+    {
         d->syncXMPDateCheck->setEnabled(false);
+    }
 
     d->dateCreatedSel->setWhatsThis(i18n("Set here the date and time of image creation. "
                                        "In this standard it is the date and time the file was changed."));
@@ -498,37 +479,59 @@ void EXIFDateTime::applyMetadata(const DMetadata& meta)
         }
     }
     else
+    {
         meta.removeExifTag("Exif.Image.DateTime");
+    }
 
     if (d->dateCreatedSubSecCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Photo.SubSecTime",
                    QString::number(d->dateCreatedSubSecEdit->value()));
+    }
     else
+    {
         meta.removeExifTag("Exif.Photo.SubSecTime");
+    }
 
     if (d->dateOriginalCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Photo.DateTimeOriginal",
                    d->dateOriginalSel->dateTime().toString(exifDateTimeFormat));
+    }
     else
+    {
         meta.removeExifTag("Exif.Photo.DateTimeOriginal");
+    }
 
     if (d->dateOriginalSubSecCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Photo.SubSecTimeOriginal",
                    QString::number(d->dateOriginalSubSecEdit->value()));
+    }
     else
+    {
         meta.removeExifTag("Exif.Photo.SubSecTimeOriginal");
+    }
 
     if (d->dateDigitalizedCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Photo.DateTimeDigitized",
                    d->dateDigitalizedSel->dateTime().toString(exifDateTimeFormat));
+    }
     else
+    {
         meta.removeExifTag("Exif.Photo.DateTimeDigitized");
+    }
 
     if (d->dateDigitalizedSubSecCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Photo.SubSecTimeDigitized",
                    QString::number(d->dateDigitalizedSubSecEdit->value()));
+    }
     else
+    {
         meta.removeExifTag("Exif.Photo.SubSecTimeDigitized");
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

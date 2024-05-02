@@ -37,47 +37,28 @@ class Q_DECL_HIDDEN EXIFCaption::Private
 {
 public:
 
-    explicit Private()
-      : documentNameCheck    (nullptr),
-        imageDescCheck       (nullptr),
-        artistCheck          (nullptr),
-        copyrightCheck       (nullptr),
-        userCommentCheck     (nullptr),
-        syncJFIFCommentCheck (nullptr),
-        syncXMPCaptionCheck  (nullptr),
-        syncIPTCCaptionCheck (nullptr),
-        userCommentEdit      (nullptr),
-        documentNameEdit     (nullptr),
-        imageDescEdit        (nullptr),
-        artistEdit           (nullptr),
-        copyrightEdit        (nullptr),
-        documentNameIcon     (nullptr),
-        imageDescIcon        (nullptr),
-        artistIcon           (nullptr),
-        copyrightIcon        (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*            documentNameCheck;
-    QCheckBox*            imageDescCheck;
-    QCheckBox*            artistCheck;
-    QCheckBox*            copyrightCheck;
-    QCheckBox*            userCommentCheck;
-    QCheckBox*            syncJFIFCommentCheck;
-    QCheckBox*            syncXMPCaptionCheck;
-    QCheckBox*            syncIPTCCaptionCheck;
+    QCheckBox*            documentNameCheck     = nullptr;
+    QCheckBox*            imageDescCheck        = nullptr;
+    QCheckBox*            artistCheck           = nullptr;
+    QCheckBox*            copyrightCheck        = nullptr;
+    QCheckBox*            userCommentCheck      = nullptr;
+    QCheckBox*            syncJFIFCommentCheck  = nullptr;
+    QCheckBox*            syncXMPCaptionCheck   = nullptr;
+    QCheckBox*            syncIPTCCaptionCheck  = nullptr;
 
-    DPlainTextEdit*       userCommentEdit;
+    DPlainTextEdit*       userCommentEdit       = nullptr;
 
-    DTextEdit*            documentNameEdit;
-    DTextEdit*            imageDescEdit;
-    DTextEdit*            artistEdit;
-    DTextEdit*            copyrightEdit;
+    DTextEdit*            documentNameEdit      = nullptr;
+    DTextEdit*            imageDescEdit         = nullptr;
+    DTextEdit*            artistEdit            = nullptr;
+    DTextEdit*            copyrightEdit         = nullptr;
 
-    QLabel*               documentNameIcon;
-    QLabel*               imageDescIcon;
-    QLabel*               artistIcon;
-    QLabel*               copyrightIcon;
+    QLabel*               documentNameIcon      = nullptr;
+    QLabel*               imageDescIcon         = nullptr;
+    QLabel*               artistIcon            = nullptr;
+    QLabel*               copyrightIcon         = nullptr;
 };
 
 EXIFCaption::EXIFCaption(QWidget* const parent)
@@ -359,31 +340,49 @@ void EXIFCaption::readMetadata(const DMetadata& meta)
 void EXIFCaption::applyMetadata(const DMetadata& meta)
 {
     if (d->documentNameCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Image.DocumentName", d->documentNameEdit->text());
+    }
     else
+    {
         meta.removeExifTag("Exif.Image.DocumentName");
+    }
 
     if (d->imageDescCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Image.ImageDescription", d->imageDescEdit->text());
+    }
     else
+    {
         meta.removeExifTag("Exif.Image.ImageDescription");
+    }
 
     if (d->artistCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Image.Artist", d->artistEdit->text());
+    }
     else
+    {
         meta.removeExifTag("Exif.Image.Artist");
+    }
 
     if (d->copyrightCheck->isChecked())
+    {
         meta.setExifTagString("Exif.Image.Copyright", d->copyrightEdit->text());
+    }
     else
+    {
         meta.removeExifTag("Exif.Image.Copyright");
+    }
 
     if (d->userCommentCheck->isChecked())
     {
         meta.setExifComment(d->userCommentEdit->toPlainText(), false);
 
         if (syncJFIFCommentIsChecked())
+        {
             meta.setComments(d->userCommentEdit->toPlainText().toUtf8());
+        }
 
         if (meta.supportXmp() && syncXMPCaptionIsChecked())
         {
@@ -397,10 +396,14 @@ void EXIFCaption::applyMetadata(const DMetadata& meta)
         }
 
         if (syncIPTCCaptionIsChecked())
+        {
             meta.setIptcTagString("Iptc.Application2.Caption", d->userCommentEdit->toPlainText());
+        }
     }
     else
+    {
         meta.removeExifTag("Exif.Photo.UserComment");
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
