@@ -33,17 +33,17 @@ Note: the bundle is rellocable.
     │   └── plugins                                 Marble plugins
     ├── lib                                         All Shared libraries, including 64 bits
     ├── lib64 -> lib                                Symbolic link, for compatibility
-    ├── plugins                                     Qt5 based plugins
+    ├── plugins                                     Qt based plugins
     │   ├── bearer
     │   ├── designer
     │   ├── generic
     │   ├── geoservices
     │   ├── iconengines
     │   ├── imageformats
-    │   ├── kauth                                   KF5 authentication
-    │   ├── kf5                                     Generic KF5 plugins
+    │   ├── kauth                                   KDE authentication
+    │   ├── kf5                                     Generic KDE plugins
     │   ├── mediaservice
-    │   ├── org.kde.kglobalaccel5.platforms         KF5 global accelerators
+    │   ├── org.kde.kglobalaccel5.platforms         KDE global accelerators
     │   ├── platforminputcontexts
     │   ├── platforms
     │   ├── playlistformats
@@ -55,27 +55,27 @@ Note: the bundle is rellocable.
     │   └── xcbglintegrations
     ├── share                                       Shared data files
     │   ├── digikam                                 digiKam
-    │   ├── knotifications5                         KF5
-    │   ├── kservices5                              KF5
-    │   ├── kservicetypes5                          KF5
-    │   ├── kxmlgui5                                KF5
+    │   ├── knotifications5                         KDE
+    │   ├── kservices5                              KDE
+    │   ├── kservicetypes5                          KDE
+    │   ├── kxmlgui5                                KDE
     │   ├── lensfun                                 Lens database for Lensfun
-    │   ├── locale                                  KF5 i18n
+    │   ├── locale                                  KDE i18n
     │   ├── metainfo                                Application metadata
     │   ├── OpenCV                                  OpenCv shared lib data
-    │   └── solid                                   KF5 Solid
-    └── translations                                Qt5 i18n
+    │   └── solid                                   KDE Solid
+    └── translations                                Qt i18n
 
 
 REQUIREMENTS
 ------------
 
-- For technical reasons about compatibility with libc, Ubuntu 18.04 is used to be compatible
+- For technical reasons about compatibility with libc, Ubuntu 22.04 is used to be compatible
   at run-time under other Linux distributions. NOTE: we have tested Centos in the pass but
   this distribution is really a puzzle to group all required multimedia packages.
 
-- Create a fresh XUbuntu 18.04 environment in a Virtual Machine:
-  Install the distribution using official ISO from http://ftp.free.fr/mirrors/ftp.xubuntu.com/releases/18.04.5/release/
+- Create a fresh XUbuntu 22.04 environment in a Virtual Machine:
+  Install the distribution using official ISO from http://ftp.free.fr/mirrors/ftp.xubuntu.com/releases/22.04.3/release/
   or another mirror.
   Use a static 80Gb virtual disk with separated partitions as 50Gb for /, 8Gb for swap, and 23Gb for /home.
 - Using XUbuntu allow to not use Plasma or Gnome desktop. Light XFCE desktop is not Qt5 based desktop.
@@ -93,7 +93,7 @@ REQUIREMENTS
 COMPONENTS
 ----------
 There are 4 scripts to be run by the user. 2 first ones installs
-components on Mageia 7 and all dependencies, next one digiKam, and last one makes a
+components on XUbuntu and all dependencies, next one digiKam, and last one makes a
 binary AppImage bundle for Linux.
 
 
@@ -103,13 +103,13 @@ All scripts should be run from within this directory.
 
 * 01-build-host.sh:
 
-This script downloads and configures all packages for Mageia 7 to compile digiKam, KF5, Qt5,
+This script downloads and configures all packages for XUbuntu to compile digiKam, KDE, Qt,
 and all other important low level libraries. When the system is ready, this script compile
-and install low level and Qt5 libraries.
+and install low level and Qt libraries.
 
 * 02-build-extralibs.sh:
 
-This script configures, compile, and install KF5 frameworks and Marble.
+This script configures, compile, and install KDE frameworks.
 
 * 03-build-digikam.sh:
 
@@ -118,7 +118,7 @@ This script configures, and compile digiKam.
 * 04-build-installer.sh:
 
 Once you've successfully built digiKam, this script create the AppImage bundle.
-This include applications documentations and translations.
+This include applications translations.
 Depending of configuration done in config.sh, this script is able to upload automatically
 the bundle file on files.kde.org digiKam area through ssh. A valid ssh key configured
 with remote KDE server need to be set previously with the account. You can load ssh key
@@ -153,9 +153,9 @@ This script re-build only digiKam and Linux bundle.
 
 AT RUN-TIME ON TARGET COMPUTER
 ------------------------------
-- Make AppImage file executable (CentOS : chmod +x _bundle_file_).
-- Add Fuse on on computer       (CentOS : yum install fuse).
-- Add user right to use Fuse    (CentOS : usermod -a -G fuse _user_name_).
+- Make AppImage file executable (Ubuntu : chmod +x _bundle_file_).
+- Add Fuse on on computer       (Ubuntu : sudo apt install fuse).
+- Add user right to use Fuse    (Ubuntu : sudo usermod -a -G fuse _user_name_).
 
 
 LICENSES
