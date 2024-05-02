@@ -38,10 +38,10 @@ FacePipelineFaceTagsIface::FacePipelineFaceTagsIface(const FaceTagsIface& face)
 
 FacePipelineFaceTagsIface& FacePipelineFaceTagsIface::operator=(const FacePipelineFaceTagsIface& other)
 {
-    m_type         = other.type();
-    m_imageId      = other.imageId();
-    m_tagId        = other.tagId();
-    m_region       = other.region();
+    m_type         = other.m_type;
+    m_imageId      = other.m_imageId;
+    m_tagId        = other.m_tagId;
+    m_region       = other.m_region;
 
     roles          = other.roles;
     assignedTagId  = other.assignedTagId;
