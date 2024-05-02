@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN SearchResultModel::Private
 {
 public:
 
-    explicit Private()
+    Private()
     {
         markerNormalUrl   = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                 QLatin1String("digikam/geolocationedit/searchmarker-normal.png")));
@@ -61,7 +61,7 @@ public:
 
 SearchResultModel::SearchResultModel(QObject* const parent)
     : QAbstractItemModel(parent),
-      d                 (new Private())
+      d                 (new Private)
 {
 }
 
@@ -348,7 +348,7 @@ void SearchResultModel::removeRowsBySelection(const QItemSelection& selectionLis
 
     // now delete the rows, starting with the last row:
 
-    for (int i = rowRanges.count()-1 ; i >= 0 ; --i)
+    for (int i = rowRanges.count() - 1 ; i >= 0 ; --i)
     {
         const QPair<int, int> currentRange = rowRanges.at(i);
 

@@ -62,48 +62,48 @@ public:
 
 public:
 
-    QLabel*           ImageSizeLabel;
-    QLabel*           IconSizeLabel;
-    QLabel*           destinationDirectoryLabel_;
-    QLabel*           FileNameLabel_;
-    QLabel*           DestinationUrlLabel_;
-    QLabel*           GPXFileLabel_;
-    QLabel*           timeZoneLabel_;
-    QLabel*           GPXLineWidthLabel_;
-    QLabel*           GPXColorLabel_;
-    QLabel*           GPXAltitudeLabel_;
-    QLabel*           GPXTracksOpacityLabel_;
+    QLabel*           ImageSizeLabel                = nullptr;
+    QLabel*           IconSizeLabel                 = nullptr;
+    QLabel*           destinationDirectoryLabel_    = nullptr;
+    QLabel*           FileNameLabel_                = nullptr;
+    QLabel*           DestinationUrlLabel_          = nullptr;
+    QLabel*           GPXFileLabel_                 = nullptr;
+    QLabel*           timeZoneLabel_                = nullptr;
+    QLabel*           GPXLineWidthLabel_            = nullptr;
+    QLabel*           GPXColorLabel_                = nullptr;
+    QLabel*           GPXAltitudeLabel_             = nullptr;
+    QLabel*           GPXTracksOpacityLabel_        = nullptr;
 
-    QGroupBox*        TargetPreferenceGroupBox;
-    QGroupBox*        TargetTypeGroupBox;
+    QGroupBox*        TargetPreferenceGroupBox      = nullptr;
+    QGroupBox*        TargetTypeGroupBox            = nullptr;
 
-    QButtonGroup*     buttonGroupTargetType;
+    QButtonGroup*     buttonGroupTargetType         = nullptr;
 
-    QRadioButton*     LocalTargetRadioButton_;
-    QRadioButton*     GoogleMapTargetRadioButton_;
+    QRadioButton*     LocalTargetRadioButton_       = nullptr;
+    QRadioButton*     GoogleMapTargetRadioButton_   = nullptr;
 
-    QLineEdit*        DestinationUrl_;
-    QLineEdit*        FileName_;
+    QLineEdit*        DestinationUrl_               = nullptr;
+    QLineEdit*        FileName_                     = nullptr;
 
-    QCheckBox*        GPXTracksCheckBox_;
+    QCheckBox*        GPXTracksCheckBox_            = nullptr;
 
-    QComboBox*        AltitudeCB_;
-    QComboBox*        timeZoneCB;
-    QComboBox*        GPXAltitudeCB_;
+    QComboBox*        AltitudeCB_                   = nullptr;
+    QComboBox*        timeZoneCB                    = nullptr;
+    QComboBox*        GPXAltitudeCB_                = nullptr;
 
-    DColorSelector*   GPXTrackColor_;
+    DColorSelector*   GPXTrackColor_                = nullptr;
 
-    DFileSelector*    DestinationDirectory_;
-    DFileSelector*    GPXFileUrlRequester_;
-    QPushButton*      m_geneBtn;
+    DFileSelector*    DestinationDirectory_         = nullptr;
+    DFileSelector*    GPXFileUrlRequester_          = nullptr;
+    QPushButton*      m_geneBtn                     = nullptr;
 
-    QSpinBox*         ImageSizeInput_;
-    QSpinBox*         IconSizeInput_;
-    QSpinBox*         GPXTracksOpacityInput_;
-    QSpinBox*         GPXLineWidthInput_;
+    QSpinBox*         ImageSizeInput_               = nullptr;
+    QSpinBox*         IconSizeInput_                = nullptr;
+    QSpinBox*         GPXTracksOpacityInput_        = nullptr;
+    QSpinBox*         GPXLineWidthInput_            = nullptr;
 
-    GPSItemModel*     m_model;
-    GeolocationEdit*  m_dlg;
+    GPSItemModel*     m_model                       = nullptr;
+    GeolocationEdit*  m_dlg                         = nullptr;
 
 Q_SIGNALS:
 
@@ -126,10 +126,10 @@ protected Q_SLOTS:
 
 protected:
 
-    QGridLayout* KMLExportConfigLayout;
-    QGridLayout* SizeGroupBoxLayout;
-    QGridLayout* TargetPreferenceGroupBoxLayout;
-    QGridLayout* buttonGroupTargetTypeLayout;
+    QGridLayout* KMLExportConfigLayout              = nullptr;
+    QGridLayout* SizeGroupBoxLayout                 = nullptr;
+    QGridLayout* TargetPreferenceGroupBoxLayout     = nullptr;
+    QGridLayout* buttonGroupTargetTypeLayout        = nullptr;
 
     KmlExport    m_kmlExport;
 };

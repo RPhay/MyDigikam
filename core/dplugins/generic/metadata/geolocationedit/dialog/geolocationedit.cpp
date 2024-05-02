@@ -87,7 +87,7 @@ using namespace Digikam;
 namespace DigikamGenericGeolocationEditPlugin
 {
 
-struct SaveChangedImagesHelper
+class SaveChangedImagesHelper
 {
 public:
 
@@ -111,12 +111,12 @@ public:
 public:
 
     typedef QPair<QUrl, QString> result_type;
-    GPSItemModel* const          imageModel;
+    GPSItemModel* const          imageModel = nullptr;
 };
 
 // ---------------------------------------------------------------------------------
 
-struct LoadFileMetadataHelper
+class LoadFileMetadataHelper
 {
 public:
 
@@ -142,7 +142,7 @@ public:
 public:
 
     typedef QPair<QUrl, QString> result_type;
-    GPSItemModel* const          imageModel;
+    GPSItemModel* const          imageModel = nullptr;
 };
 
 // ---------------------------------------------------------------------------------
@@ -151,109 +151,67 @@ class Q_DECL_HIDDEN GeolocationEdit::Private
 {
 public:
 
-    explicit Private()
-      : imageModel               (nullptr),
-        selectionModel           (nullptr),
-        uiEnabled                (true),
-        listViewContextMenu      (nullptr),
-        trackManager             (nullptr),
-        fileIOFutureWatcher      (nullptr),
-        fileIOCountDone          (0),
-        fileIOCountTotal         (0),
-        fileIOCloseAfterSaving   (false),
-        buttonBox                (nullptr),
-        VSplitter                (nullptr),
-        HSplitter                (nullptr),
-        treeView                 (nullptr),
-        stackedWidget            (nullptr),
-        tabBar                   (nullptr),
-        splitterSize             (0),
-        undoStack                (nullptr),
-        undoView                 (nullptr),
-        progressBar              (nullptr),
-        progressCancelButton     (nullptr),
-        progressCancelObject     (nullptr),
-        detailsWidget            (nullptr),
-        correlatorWidget         (nullptr),
-        rgWidget                 (nullptr),
-        searchWidget             (nullptr),
-        kmlWidget                (nullptr),
-        mapLayout                (MapLayoutOne),
-        mapSplitter              (nullptr),
-        mapWidget                (nullptr),
-        mapWidget2               (nullptr),
-        mapDragDropHandler       (nullptr),
-        mapModelHelper           (nullptr),
-        geoifaceMarkerModel      (nullptr),
-        sortActionOldestFirst    (nullptr),
-        sortActionYoungestFirst  (nullptr),
-        sortMenu                 (nullptr),
-        cbMapLayout              (nullptr),
-        bookmarkOwner            (nullptr),
-        actionBookmarkVisibility (nullptr),
-        iface                    (nullptr)
-    {
-    }
+    Private() = default;
 
     // General things
-    GPSItemModel*                            imageModel;
-    QItemSelectionModel*                     selectionModel;
-    bool                                     uiEnabled;
-    GPSItemListContextMenu*                  listViewContextMenu;
-    TrackManager*                            trackManager;
+    GPSItemModel*                            imageModel             = nullptr;
+    QItemSelectionModel*                     selectionModel         = nullptr;
+    bool                                     uiEnabled              = true;
+    GPSItemListContextMenu*                  listViewContextMenu    = nullptr;
+    TrackManager*                            trackManager           = nullptr;
 
     // Loading and saving
     QFuture<QPair<QUrl,QString> >            fileIOFuture;
     QFutureWatcher<QPair<QUrl,QString> >*    fileIOFutureWatcher;
-    int                                      fileIOCountDone;
-    int                                      fileIOCountTotal;
-    bool                                     fileIOCloseAfterSaving;
+    int                                      fileIOCountDone        = 0;
+    int                                      fileIOCountTotal       = 0;
+    bool                                     fileIOCloseAfterSaving = false;
 
     // UI
-    QDialogButtonBox*                        buttonBox;
-    QSplitter*                               VSplitter;
-    QSplitter*                               HSplitter;
-    GPSItemList*                             treeView;
-    QStackedWidget*                          stackedWidget;
-    QTabBar*                                 tabBar;
-    int                                      splitterSize;
-    QUndoStack*                              undoStack;
-    QUndoView*                               undoView;
+    QDialogButtonBox*                        buttonBox                  = nullptr;
+    QSplitter*                               VSplitter                  = nullptr;
+    QSplitter*                               HSplitter                  = nullptr;
+    GPSItemList*                             treeView                   = nullptr;
+    QStackedWidget*                          stackedWidget              = nullptr;
+    QTabBar*                                 tabBar                     = nullptr;
+    int                                      splitterSize               = 0;
+    QUndoStack*                              undoStack                  = nullptr;
+    QUndoView*                               undoView                   = nullptr;
 
     // UI: progress
-    StatusProgressBar*                       progressBar;
-    QPushButton*                             progressCancelButton;
-    QObject*                                 progressCancelObject;
+    StatusProgressBar*                       progressBar                = nullptr;
+    QPushButton*                             progressCancelButton       = nullptr;
+    QObject*                                 progressCancelObject       = nullptr;
     QString                                  progressCancelSlot;
 
     // UI: tab widgets
-    GPSItemDetails*                          detailsWidget;
-    GPSCorrelatorWidget*                     correlatorWidget;
-    RGWidget*                                rgWidget;
-    SearchResultWidget*                      searchWidget;
-    KmlWidget*                               kmlWidget;
+    GPSItemDetails*                          detailsWidget              = nullptr;
+    GPSCorrelatorWidget*                     correlatorWidget           = nullptr;
+    RGWidget*                                rgWidget                   = nullptr;
+    SearchResultWidget*                      searchWidget               = nullptr;
+    KmlWidget*                               kmlWidget                  = nullptr;
 
     // map: UI
-    MapLayout                                mapLayout;
-    QSplitter*                               mapSplitter;
-    MapWidget*                               mapWidget;
-    MapWidget*                               mapWidget2;
+    MapLayout                                mapLayout                  = MapLayoutOne;
+    QSplitter*                               mapSplitter                = nullptr;
+    MapWidget*                               mapWidget                  = nullptr;
+    MapWidget*                               mapWidget2                 = nullptr;
 
     // map: helpers
-    MapDragDropHandler*                      mapDragDropHandler;
-    GPSGeoIfaceModelHelper*                  mapModelHelper;
-    ItemMarkerTiler*                         geoifaceMarkerModel;
+    MapDragDropHandler*                      mapDragDropHandler         = nullptr;
+    GPSGeoIfaceModelHelper*                  mapModelHelper             = nullptr;
+    ItemMarkerTiler*                         geoifaceMarkerModel        = nullptr;
 
     // map: actions
-    QAction*                                 sortActionOldestFirst;
-    QAction*                                 sortActionYoungestFirst;
-    QMenu*                                   sortMenu;
-    QComboBox*                               cbMapLayout;
+    QAction*                                 sortActionOldestFirst      = nullptr;
+    QAction*                                 sortActionYoungestFirst    = nullptr;
+    QMenu*                                   sortMenu                   = nullptr;
+    QComboBox*                               cbMapLayout                = nullptr;
 
-    GPSBookmarkOwner*                        bookmarkOwner;
-    QAction*                                 actionBookmarkVisibility;
+    GPSBookmarkOwner*                        bookmarkOwner              = nullptr;
+    QAction*                                 actionBookmarkVisibility   = nullptr;
 
-    DInfoInterface*                          iface;
+    DInfoInterface*                          iface                      = nullptr;
 };
 
 GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const iface)

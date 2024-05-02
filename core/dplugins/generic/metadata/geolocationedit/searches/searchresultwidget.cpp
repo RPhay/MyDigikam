@@ -69,61 +69,36 @@ class Q_DECL_HIDDEN SearchResultWidget::Private
 {
 public:
 
-    explicit Private()
-    {
-        gpsBookmarkOwner                              = nullptr;
-        actionBookmark                                = nullptr;
-        mapWidget                                     = nullptr;
-        gpsItemModel                                  = nullptr;
-        gosImageSelectionModel                        = nullptr;
-        searchTermLineEdit                            = nullptr;
-        searchButton                                  = nullptr;
-        searchBackend                                 = nullptr;
-        searchResultsModel                            = nullptr;
-        searchResultsSelectionModel                   = nullptr;
-        searchResultModelHelper                       = nullptr;
-        treeView                                      = nullptr;
-        mainVBox                                      = nullptr;
-        backendSelectionBox                           = nullptr;
-        actionClearResultsList                        = nullptr;
-        actionKeepOldResults                          = nullptr;
-        actionToggleAllResultsVisibility              = nullptr;
-        actionCopyCoordinates                         = nullptr;
-        actionMoveImagesToThisResult                  = nullptr;
-        actionRemovedSelectedSearchResultsFromList    = nullptr;
-        searchInProgress                              = false;
-        actionToggleAllResultsVisibilityIconUnchecked = QIcon::fromTheme(QLatin1String("layer-visible-off"));
-        actionToggleAllResultsVisibilityIconChecked   = QIcon::fromTheme(QLatin1String("layer-visible-on"));
-    }
+    Private() = default;
 
     // Map
-    MapWidget*               mapWidget;
-    GPSItemModel*            gpsItemModel;
-    QItemSelectionModel*     gosImageSelectionModel;
-    QLineEdit*               searchTermLineEdit;
-    QPushButton*             searchButton;
-    GPSBookmarkOwner*        gpsBookmarkOwner;
-    QAction*                 actionBookmark;
+    MapWidget*               mapWidget                                      = nullptr;
+    GPSItemModel*            gpsItemModel                                   = nullptr;
+    QItemSelectionModel*     gosImageSelectionModel                         = nullptr;
+    QLineEdit*               searchTermLineEdit                             = nullptr;
+    QPushButton*             searchButton                                   = nullptr;
+    GPSBookmarkOwner*        gpsBookmarkOwner                               = nullptr;
+    QAction*                 actionBookmark                                 = nullptr;
 
     // Search: backend
-    SearchResultBackend*     searchBackend;
-    SearchResultModel*       searchResultsModel;
-    QItemSelectionModel*     searchResultsSelectionModel;
-    SearchResultModelHelper* searchResultModelHelper;
+    SearchResultBackend*     searchBackend                                  = nullptr;
+    SearchResultModel*       searchResultsModel                             = nullptr;
+    QItemSelectionModel*     searchResultsSelectionModel                    = nullptr;
+    SearchResultModelHelper* searchResultModelHelper                        = nullptr;
 
     // Search: UI
-    QTreeView*               treeView;
-    QVBoxLayout*             mainVBox;
-    QComboBox*               backendSelectionBox;
-    QAction*                 actionClearResultsList;
-    QAction*                 actionKeepOldResults;
-    QAction*                 actionToggleAllResultsVisibility;
-    QAction*                 actionCopyCoordinates;
-    QAction*                 actionMoveImagesToThisResult;
-    QAction*                 actionRemovedSelectedSearchResultsFromList;
-    bool                     searchInProgress;
-    QIcon                    actionToggleAllResultsVisibilityIconUnchecked;
-    QIcon                    actionToggleAllResultsVisibilityIconChecked;
+    QTreeView*               treeView                                       = nullptr;
+    QVBoxLayout*             mainVBox                                       = nullptr;
+    QComboBox*               backendSelectionBox                            = nullptr;
+    QAction*                 actionClearResultsList                         = nullptr;
+    QAction*                 actionKeepOldResults                           = nullptr;
+    QAction*                 actionToggleAllResultsVisibility               = nullptr;
+    QAction*                 actionCopyCoordinates                          = nullptr;
+    QAction*                 actionMoveImagesToThisResult                   = nullptr;
+    QAction*                 actionRemovedSelectedSearchResultsFromList     = nullptr;
+    bool                     searchInProgress                               = false;
+    QIcon                    actionToggleAllResultsVisibilityIconUnchecked  = QIcon::fromTheme(QLatin1String("layer-visible-off"));;
+    QIcon                    actionToggleAllResultsVisibilityIconChecked    = QIcon::fromTheme(QLatin1String("layer-visible-on"));
 };
 
 SearchResultWidget::SearchResultWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
@@ -131,7 +106,7 @@ SearchResultWidget::SearchResultWidget(GPSBookmarkOwner* const gpsBookmarkOwner,
                            QItemSelectionModel* const gosImageSelectionModel,
                            QWidget* const parent)
     : QWidget(parent),
-      d      (new Private())
+      d      (new Private)
 {
     d->gpsBookmarkOwner       = gpsBookmarkOwner;
     d->gpsItemModel           = gpsItemModel;

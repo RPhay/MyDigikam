@@ -41,20 +41,8 @@ namespace DigikamGenericGeolocationEditPlugin
 {
 
 KmlExport::KmlExport(DInfoInterface* const iface)
-    : m_localTarget       (true),
-      m_optimize_googlemap(false),
-      m_GPXtracks         (false),
-      m_iconSize          (33),
-      m_googlemapSize     (32),
-      m_size              (320),
-      m_altitudeMode      (0),
-      m_TimeZone          (12),
-      m_LineWidth         (4),
-      m_GPXOpacity        (64),
-      m_GPXAltitudeMode   (0),
-      m_iface             (iface),
-      m_meta              (new DMetadata),
-      m_kmlDocument       (nullptr)
+    : m_iface(iface),
+      m_meta (new DMetadata)
 {
 }
 
@@ -115,13 +103,13 @@ QImage KmlExport::generateBorderedThumbnail(const QImage& fullImage, int size) c
 
     // getting an image minus the border
 
-    QImage image     = fullImage.scaled(size -(2*image_border), size - (2*image_border), Qt::KeepAspectRatioByExpanding);
+    QImage image     = fullImage.scaled(size -(2 * image_border), size - (2 * image_border), Qt::KeepAspectRatioByExpanding);
 
-    QPixmap croppedPix(image.width() + (2*image_border), image.height() + (2*image_border));
+    QPixmap croppedPix(image.width() + (2 * image_border), image.height() + (2 * image_border));
     QPainter painter(&croppedPix);
 
     QColor BrushColor(255, 255, 255);
-    painter.fillRect(0, 0, image.width() + (2*image_border),image.height() + (2*image_border), BrushColor);
+    painter.fillRect(0, 0, image.width() + (2 * image_border),image.height() + (2 * image_border), BrushColor);
 
     /*! @todo add a corner to the thumbnail and a hotspot to the kml element */
 

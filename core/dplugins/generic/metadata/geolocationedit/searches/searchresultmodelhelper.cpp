@@ -50,18 +50,12 @@ class Q_DECL_HIDDEN SearchResultModelHelper::Private
 {
 public:
 
-    explicit Private()
-      : model         (nullptr),
-        selectionModel(nullptr),
-        imageModel    (nullptr),
-        visible       (true)
-    {
-    }
+    Private() = default;
 
-    SearchResultModel*   model;
-    QItemSelectionModel* selectionModel;
-    GPSItemModel*        imageModel;
-    bool                 visible;
+    SearchResultModel*   model          = nullptr;
+    QItemSelectionModel* selectionModel = nullptr;
+    GPSItemModel*        imageModel     = nullptr;
+    bool                 visible        = true;
 };
 
 SearchResultModelHelper::SearchResultModelHelper(SearchResultModel* const resultModel,
@@ -103,6 +97,7 @@ bool SearchResultModelHelper::itemCoordinates(const QModelIndex& index,
 void SearchResultModelHelper::setVisibility(const bool state)
 {
     d->visible = state;
+
     Q_EMIT signalVisibilityChanged();
 }
 

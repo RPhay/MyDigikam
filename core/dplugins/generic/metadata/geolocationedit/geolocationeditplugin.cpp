@@ -34,10 +34,6 @@ GeolocationEditPlugin::GeolocationEditPlugin(QObject* const parent)
 {
 }
 
-GeolocationEditPlugin::~GeolocationEditPlugin()
-{
-}
-
 QString GeolocationEditPlugin::name() const
 {
     return i18nc("@title", "Geolocation Edit");
@@ -90,7 +86,7 @@ QList<DPluginAuthor> GeolocationEditPlugin::authors() const
                              QString::fromUtf8("(C) 2014"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2023"))
+                             QString::fromUtf8("(C) 2006-2024"))
             ;
 }
 

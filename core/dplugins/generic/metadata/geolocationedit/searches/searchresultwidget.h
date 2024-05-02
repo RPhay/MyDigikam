@@ -49,7 +49,7 @@ public:
                           GPSItemModel* const gpsItemModel,
                           QItemSelectionModel* const gpsImageSelectionModel,
                           QWidget* const parent);
-    ~SearchResultWidget()                                                               override;
+    ~SearchResultWidget()                                                         override;
 
     GeoModelHelper* getModelHelper()                                        const;
 

@@ -51,53 +51,32 @@ class Q_DECL_HIDDEN GPSItemDetails::Private
 {
 public:
 
-    explicit Private()
-        : imageModel            (nullptr),
-          previewManager        (nullptr),
-          cbCoordinates         (nullptr),
-          leLatitude            (nullptr),
-          leLongitude           (nullptr),
-          cbAltitude            (nullptr),
-          leAltitude            (nullptr),
-          cbSpeed               (nullptr),
-          leSpeed               (nullptr),
-          cbNSatellites         (nullptr),
-          leNSatellites         (nullptr),
-          cbFixType             (nullptr),
-          comboFixType          (nullptr),
-          cbDop                 (nullptr),
-          leDop                 (nullptr),
-          pbApply               (nullptr),
-          externalEnabledState  (true),
-          activeState           (false),
-          haveDelayedState      (false)
-    {
-    }
+    Private() = default;
 
-    GPSItemModel*                imageModel;
-    GraphicsDImgView*            previewManager;
+    GPSItemModel*                imageModel             = nullptr;
+    GraphicsDImgView*            previewManager         = nullptr;
 
-    QCheckBox*                   cbCoordinates;
-    QLineEdit*                   leLatitude;
-    QLineEdit*                   leLongitude;
-    QCheckBox*                   cbAltitude;
-    QLineEdit*                   leAltitude;
-    QCheckBox*                   cbSpeed;
-    QLineEdit*                   leSpeed;
-    QCheckBox*                   cbNSatellites;
-    QLineEdit*                   leNSatellites;
-    QCheckBox*                   cbFixType;
-    QComboBox*                   comboFixType;
-    QCheckBox*                   cbDop;
-    QLineEdit*                   leDop;
+    QCheckBox*                   cbCoordinates          = nullptr;
+    QLineEdit*                   leLatitude             = nullptr;
+    QLineEdit*                   leLongitude            = nullptr;
+    QCheckBox*                   cbAltitude             = nullptr;
+    QLineEdit*                   leAltitude             = nullptr;
+    QCheckBox*                   cbSpeed                = nullptr;
+    QLineEdit*                   leSpeed                = nullptr;
+    QCheckBox*                   cbNSatellites          = nullptr;
+    QLineEdit*                   leNSatellites          = nullptr;
+    QCheckBox*                   cbFixType              = nullptr;
+    QComboBox*                   comboFixType           = nullptr;
+    QCheckBox*                   cbDop                  = nullptr;
+    QLineEdit*                   leDop                  = nullptr;
 
-    QPushButton*                 pbApply;
+    QPushButton*                 pbApply                = nullptr;
 
     QPersistentModelIndex        imageIndex;
     GPSDataContainer             infoOld;
-    bool                         externalEnabledState;
-    bool                         activeState;
-    bool                         haveDelayedState;
+    bool                         externalEnabledState   = true;
+    bool                         activeState            = false;
+    bool                         haveDelayedState       = false;
 };
 
 GPSItemDetails::GPSItemDetails(QWidget* const parent, GPSItemModel* const imageModel)
@@ -228,27 +207,33 @@ void GPSItemDetails::updateUIState()
     d->leLongitude->setEnabled(haveCoordinates && externalEnabled);
 
     /* altitude */
+
     d->cbAltitude->setEnabled(haveCoordinates && externalEnabled);
     const bool haveAltitude = d->cbAltitude->isChecked();
     d->leAltitude->setEnabled(haveAltitude && haveCoordinates && externalEnabled);
 
     /* speed */
+
     d->cbSpeed->setEnabled(haveCoordinates && externalEnabled);
     d->leSpeed->setEnabled(d->cbSpeed->isChecked() && haveCoordinates && externalEnabled);
 
     /* NSatellites */
+
     d->cbNSatellites->setEnabled(haveCoordinates && externalEnabled);
     d->leNSatellites->setEnabled(d->cbNSatellites->isChecked() && haveCoordinates && externalEnabled);
 
     /* fix type */
+
     d->cbFixType->setEnabled(haveCoordinates && externalEnabled);
     d->comboFixType->setEnabled(d->cbFixType->isChecked() && haveCoordinates && externalEnabled);
 
     /* dop */
+
     d->cbDop->setEnabled(haveCoordinates && externalEnabled);
     d->leDop->setEnabled(d->cbDop->isChecked() && haveCoordinates && externalEnabled);
 
     /* apply */
+
     d->pbApply->setEnabled(externalEnabled);
 }
 
@@ -291,6 +276,7 @@ void GPSItemDetails::displayGPSDataContainer(const GPSDataContainer* const gpsDa
         if (haveNSatellites)
         {
             /// @todo Is this enough for simple integers or do we have to use QLocale?
+
             d->leNSatellites->setText(QString::number(gpsData->getNSatellites()));
         }
 
@@ -328,6 +314,7 @@ void GPSItemDetails::slotSetCurrentImage(const QModelIndex& index)
 {
     // TODO: slotSetActive may call this function with d->imageIndex as a parameter
     // since we get the index as a reference, we overwrite index when changing d->imageIndex
+
     QModelIndex indexCopy = index;
     d->imageIndex         = indexCopy;
 
@@ -364,8 +351,10 @@ void GPSItemDetails::slotModelDataChanged(const QModelIndex& topLeft, const QMod
         return;
     }
 
-    if (((topLeft.row()    <= d->imageIndex.row())    && (bottomRight.row()    >= d->imageIndex.row())) &&
-        ((topLeft.column() <= d->imageIndex.column()) && (bottomRight.column() >= d->imageIndex.column())))
+    if (
+        ((topLeft.row()    <= d->imageIndex.row()   ) && (bottomRight.row()    >= d->imageIndex.row())   ) &&
+        ((topLeft.column() <= d->imageIndex.column()) && (bottomRight.column() >= d->imageIndex.column()))
+       )
     {
         if (!d->activeState)
         {

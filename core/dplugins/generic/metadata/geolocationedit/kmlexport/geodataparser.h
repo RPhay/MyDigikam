@@ -34,7 +34,7 @@ class GeoDataParser
 
 public:
 
-    explicit GeoDataParser();
+    GeoDataParser();
     ~GeoDataParser() = default;
 
     bool loadGPXFile(const QUrl& url);
@@ -49,6 +49,7 @@ public:
 private:
 
     /// Methods used to perform interpolation.
+
     QDateTime findNextDate(const QDateTime& dateTime, int secs);
     QDateTime findPrevDate(const QDateTime& dateTime, int secs);
 

@@ -27,10 +27,6 @@ KMLGeoDataParser::KMLGeoDataParser()
 {
 }
 
-KMLGeoDataParser::~KMLGeoDataParser()
-{
-}
-
 QString KMLGeoDataParser::lineString()
 {
     QString line = QLatin1String("");

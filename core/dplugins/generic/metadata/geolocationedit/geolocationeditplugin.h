@@ -35,7 +35,7 @@ class GeolocationEditPlugin : public DPluginGeneric
 public:
 
     explicit GeolocationEditPlugin(QObject* const parent = nullptr);
-    ~GeolocationEditPlugin()             override;
+    ~GeolocationEditPlugin()             override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

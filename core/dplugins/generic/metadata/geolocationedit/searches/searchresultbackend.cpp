@@ -37,24 +37,20 @@ class Q_DECL_HIDDEN SearchResultBackend::Private
 {
 public:
 
-    explicit Private()
-      : netReply(nullptr),
-        mngr    (nullptr)
-    {
-    }
+    Private() = default;
 
     SearchResultBackend::SearchResult::List results;
     QString                                 runningBackend;
     QByteArray                              searchData;
     QString                                 errorMessage;
 
-    QNetworkReply*                          netReply;
-    QNetworkAccessManager*                  mngr;
+    QNetworkReply*                          netReply    = nullptr;
+    QNetworkAccessManager*                  mngr        = nullptr;
 };
 
 SearchResultBackend::SearchResultBackend(QObject* const parent)
     : QObject(parent),
-      d      (new Private())
+      d      (new Private)
 {
     d->mngr = NetworkManager::instance()->getNetworkManager(this);
 
@@ -136,7 +132,7 @@ void SearchResultBackend::slotFinished(QNetworkReply* reply)
 
     const QString resultString = QString::fromUtf8(d->searchData.constData(), d->searchData.count());
 
-    if (d->runningBackend == QLatin1String("osm"))
+    if      (d->runningBackend == QLatin1String("osm"))
     {
         QDomDocument doc;
         doc.setContent(resultString); // error-handling

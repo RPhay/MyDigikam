@@ -41,9 +41,7 @@ public:
     {
     public:
 
-        explicit SearchResult()
-        {
-        }
+        SearchResult() = default;
 
         typedef QList<SearchResult> List;
         GeoCoordinates              coordinates;
@@ -55,12 +53,12 @@ public:
 public:
 
     explicit SearchResultBackend(QObject* const parent);
-    ~SearchResultBackend()                                      override;
+    ~SearchResultBackend()                                        override;
 
     bool search(const QString& backendName, const QString& searchTerm);
-    SearchResult::List getResults()                 const;
-    QString getErrorMessage()                       const;
-    QList<QPair<QString, QString> >  getBackends()  const;
+    SearchResult::List getResults()                         const;
+    QString getErrorMessage()                               const;
+    QList<QPair<QString, QString> >  getBackends()          const;
 
 Q_SIGNALS:
 

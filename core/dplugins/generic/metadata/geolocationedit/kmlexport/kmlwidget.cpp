@@ -51,7 +51,7 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     KMLExportConfigLayout = new QGridLayout(this);
 
     const int spacing     = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                 QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     // --------------------------------------------------------------
     // Target preferences
@@ -289,7 +289,9 @@ KmlWidget::~KmlWidget()
 void KmlWidget::slotKMLGenerate()
 {
     Q_EMIT signalSetUIEnabled(false);
+
     m_geneBtn->setEnabled(false);
+
     Q_EMIT signalProgressSetup(m_model->rowCount(), i18n("Generate KML file"));
 
     saveSettings();
@@ -310,6 +312,7 @@ void KmlWidget::slotKMLGenerate()
     m_kmlExport.generate();
 
     m_geneBtn->setEnabled(true);
+
     Q_EMIT signalSetUIEnabled(true);
 }
 

@@ -45,8 +45,7 @@ class KmlExport : public QObject
 public:
 
     explicit KmlExport(DInfoInterface* const iface);
-
-    ~KmlExport() override;
+    ~KmlExport()                                                              override;
 
     void setUrls(const QList<QUrl>& urls);
 
@@ -62,14 +61,14 @@ public:
      *  @param the filename
      *  @return the webifyed filename
      */
-    QString webifyFileName(const QString& fileName) const;
+    QString webifyFileName(const QString& fileName)                     const;
 
     /*! Generate a square thumbnail from @fullImage of @size x @size pixels
      *  @param fullImage the original image
      *  @param size the size of the thumbnail
      *  @return the thumbnail
      */
-    QImage generateSquareThumbnail(const QImage& fullImage, int size) const;
+    QImage generateSquareThumbnail(const QImage& fullImage, int size)   const;
 
     /*! Generate a square thumbnail from @fullImage of @size x @size pixels
      *  with a white border
@@ -101,8 +100,7 @@ private:
      *  @param tag the new element name
      *  @return the New element
      */
-    QDomElement addKmlElement(QDomElement& target,
-                              const QString& tag) const;
+    QDomElement addKmlElement(QDomElement& target, const QString& tag)  const;
 
     /*!
      *  \fn KmlExport::addKmlTextElement(QDomElement target, QString tag, QString text)
@@ -114,7 +112,7 @@ private:
      */
     QDomElement addKmlTextElement(QDomElement& target,
                                   const QString& tag,
-                                  const QString& text) const;
+                                  const QString& text)                  const;
 
     /*!
      *  \fn KmlExport::addKmlHtmlElement(QDomElement target, QString tag, QString text)
@@ -126,22 +124,22 @@ private:
      */
     QDomElement addKmlHtmlElement(QDomElement& target,
                                   const QString& tag,
-                                  const QString& text) const;
+                                  const QString& text)                  const;
 
 private:
 
-    bool                        m_localTarget;
-    bool                        m_optimize_googlemap;
-    bool                        m_GPXtracks;
+    bool                        m_localTarget           = true;
+    bool                        m_optimize_googlemap    = false;
+    bool                        m_GPXtracks             = false;
 
-    int                         m_iconSize;
-    int                         m_googlemapSize;
-    int                         m_size;
-    int                         m_altitudeMode;
-    int                         m_TimeZone;
-    int                         m_LineWidth;
-    int                         m_GPXOpacity;
-    int                         m_GPXAltitudeMode;
+    int                         m_iconSize              = 33;
+    int                         m_googlemapSize         = 32;
+    int                         m_size                  = 320;
+    int                         m_altitudeMode          = 0;
+    int                         m_TimeZone              = 12;
+    int                         m_LineWidth             = 4;
+    int                         m_GPXOpacity            = 64;
+    int                         m_GPXAltitudeMode       = 0;
 
     /// directory used in kmldocument structure
     QString                     m_imageDirBasename;
@@ -164,11 +162,11 @@ private:
     QColor                      m_GPXColor;
 
     QList<QUrl>                 m_urls;
-    DInfoInterface*             m_iface;
-    DMetadata*                  m_meta;
+    DInfoInterface*             m_iface                 = nullptr;
+    DMetadata*                  m_meta                  = nullptr;
 
     /// the root document, used to create all QDomElements
-    QDomDocument*               m_kmlDocument;
+    QDomDocument*               m_kmlDocument           = nullptr;
 
     /// the GPS parsed data
     KMLGeoDataParser            m_gpxParser;

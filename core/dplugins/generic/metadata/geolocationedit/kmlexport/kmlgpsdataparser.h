@@ -35,8 +35,8 @@ class KMLGeoDataParser : public GeoDataParser
 
 public:
 
-    explicit KMLGeoDataParser();
-    ~KMLGeoDataParser();
+    KMLGeoDataParser();
+    ~KMLGeoDataParser() = default;
 
     /*! KMLGeoDataParser::KMLGeoDataParser::lineString()
      *  @return the string containing the time ordered point (lon,lat,alt)
@@ -68,8 +68,8 @@ private:
      */
     QDomElement addKmlElement(QDomElement& target, const QString& tag)
     {
-        QDomElement kmlElement = kmlDocument->createElement( tag );
-        target.appendChild( kmlElement );
+        QDomElement kmlElement = kmlDocument->createElement(tag);
+        target.appendChild(kmlElement);
 
         return kmlElement;
     }
@@ -83,10 +83,10 @@ private:
      */
     QDomElement addKmlTextElement(QDomElement& target, const QString& tag, const QString& text)
     {
-        QDomElement kmlElement  = kmlDocument->createElement( tag );
-        target.appendChild( kmlElement );
-        QDomText kmlTextElement = kmlDocument->createTextNode( text );
-        kmlElement.appendChild( kmlTextElement );
+        QDomElement kmlElement  = kmlDocument->createElement(tag);
+        target.appendChild(kmlElement);
+        QDomText kmlTextElement = kmlDocument->createTextNode(text);
+        kmlElement.appendChild(kmlTextElement);
 
         return kmlElement;
     }
