@@ -41,37 +41,23 @@ class Q_DECL_HIDDEN EXIFAdjust::Private
 {
 public:
 
-    explicit Private()
-    {
-        brightnessCheck     = nullptr;
-        gainControlCheck    = nullptr;
-        contrastCheck       = nullptr;
-        saturationCheck     = nullptr;
-        sharpnessCheck      = nullptr;
-        customRenderedCheck = nullptr;
-        brightnessEdit      = nullptr;
-        gainControlCB       = nullptr;
-        contrastCB          = nullptr;
-        saturationCB        = nullptr;
-        sharpnessCB         = nullptr;
-        customRenderedCB    = nullptr;
-    }
+    Private() = default;
 
-    QCheckBox*        brightnessCheck;
+    QCheckBox*        brightnessCheck       = nullptr;
 
-    QComboBox*        gainControlCB;
-    QComboBox*        contrastCB;
-    QComboBox*        saturationCB;
-    QComboBox*        sharpnessCB;
-    QComboBox*        customRenderedCB;
+    QComboBox*        gainControlCB         = nullptr;
+    QComboBox*        contrastCB            = nullptr;
+    QComboBox*        saturationCB          = nullptr;
+    QComboBox*        sharpnessCB           = nullptr;
+    QComboBox*        customRenderedCB      = nullptr;
 
-    QDoubleSpinBox*   brightnessEdit;
+    QDoubleSpinBox*   brightnessEdit        = nullptr;
 
-    MetadataCheckBox* gainControlCheck;
-    MetadataCheckBox* contrastCheck;
-    MetadataCheckBox* saturationCheck;
-    MetadataCheckBox* sharpnessCheck;
-    MetadataCheckBox* customRenderedCheck;
+    MetadataCheckBox* gainControlCheck      = nullptr;
+    MetadataCheckBox* contrastCheck         = nullptr;
+    MetadataCheckBox* saturationCheck       = nullptr;
+    MetadataCheckBox* sharpnessCheck        = nullptr;
+    MetadataCheckBox* customRenderedCheck   = nullptr;
 };
 
 EXIFAdjust::EXIFAdjust(QWidget* const parent)
@@ -232,8 +218,8 @@ void EXIFAdjust::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
-    long int num=1, den=1;
-    long     val=0;
+    long int num = 1, den = 1;
+    long     val = 0;
 
     d->brightnessEdit->setValue(0.0);
     d->brightnessCheck->setChecked(false);
@@ -251,13 +237,15 @@ void EXIFAdjust::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.GainControl", val))
     {
-        if (val >= 0 && val <= 4)
+        if ((val >= 0) && (val <= 4))
         {
             d->gainControlCB->setCurrentIndex(val);
             d->gainControlCheck->setChecked(true);
         }
         else
+        {
             d->gainControlCheck->setValid(false);
+        }
     }
 
     d->gainControlCB->setEnabled(d->gainControlCheck->isChecked());
@@ -267,13 +255,15 @@ void EXIFAdjust::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.Contrast", val))
     {
-        if (val >= 0 && val <= 2)
+        if ((val >= 0) && (val <= 2))
         {
             d->contrastCB->setCurrentIndex(val);
             d->contrastCheck->setChecked(true);
         }
         else
+        {
             d->contrastCheck->setValid(false);
+        }
     }
 
     d->contrastCB->setEnabled(d->contrastCheck->isChecked());
@@ -283,13 +273,15 @@ void EXIFAdjust::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.Saturation", val))
     {
-        if (val >= 0 && val <= 2)
+        if ((val >= 0) && (val <= 2))
         {
             d->saturationCB->setCurrentIndex(val);
             d->saturationCheck->setChecked(true);
         }
         else
+        {
             d->saturationCheck->setValid(false);
+        }
     }
 
     d->saturationCB->setEnabled(d->saturationCheck->isChecked());
@@ -299,13 +291,15 @@ void EXIFAdjust::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.Sharpness", val))
     {
-        if (val >= 0 && val <= 2)
+        if ((val >= 0) && (val <= 2))
         {
             d->sharpnessCB->setCurrentIndex(val);
             d->sharpnessCheck->setChecked(true);
         }
         else
+        {
             d->sharpnessCheck->setValid(false);
+        }
     }
 
     d->sharpnessCB->setEnabled(d->sharpnessCheck->isChecked());
@@ -315,13 +309,15 @@ void EXIFAdjust::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.CustomRendered", val))
     {
-        if (val >= 0 && val <= 1)
+        if ((val >= 0) && (val <= 1))
         {
             d->customRenderedCB->setCurrentIndex(val);
             d->customRenderedCheck->setChecked(true);
         }
         else
+        {
             d->customRenderedCheck->setValid(false);
+        }
     }
 
     d->customRenderedCB->setEnabled(d->customRenderedCheck->isChecked());
@@ -331,7 +327,7 @@ void EXIFAdjust::readMetadata(const DMetadata& meta)
 
 void EXIFAdjust::applyMetadata(const DMetadata& meta)
 {
-    long int num=1, den=1;
+    long int num = 1, den = 1;
 
     if (d->brightnessCheck->isChecked())
     {
@@ -339,32 +335,54 @@ void EXIFAdjust::applyMetadata(const DMetadata& meta)
         meta.setExifTagRational("Exif.Photo.BrightnessValue", num, den);
     }
     else
+    {
         meta.removeExifTag("Exif.Photo.BrightnessValue");
+    }
 
-    if (d->gainControlCheck->isChecked())
+    if      (d->gainControlCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.GainControl", d->gainControlCB->currentIndex());
+    }
     else if (d->gainControlCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.GainControl");
+    }
 
-    if (d->contrastCheck->isChecked())
+    if      (d->contrastCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.Contrast", d->contrastCB->currentIndex());
+    }
     else if (d->contrastCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.Contrast");
+    }
 
-    if (d->saturationCheck->isChecked())
+    if      (d->saturationCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.Saturation", d->saturationCB->currentIndex());
+    }
     else if (d->saturationCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.Saturation");
+    }
 
-    if (d->sharpnessCheck->isChecked())
+    if      (d->sharpnessCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.Sharpness", d->sharpnessCB->currentIndex());
+    }
     else if (d->sharpnessCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.Sharpness");
+    }
 
-    if (d->customRenderedCheck->isChecked())
+    if      (d->customRenderedCheck->isChecked())
+    {
         meta.setExifTagUShort("Exif.Photo.CustomRendered", d->customRenderedCB->currentIndex());
+    }
     else if (d->customRenderedCheck->isValid())
+    {
         meta.removeExifTag("Exif.Photo.CustomRendered");
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
