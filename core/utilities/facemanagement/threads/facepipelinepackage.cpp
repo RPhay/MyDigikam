@@ -36,6 +36,20 @@ FacePipelineFaceTagsIface::FacePipelineFaceTagsIface(const FaceTagsIface& face)
 {
 }
 
+FacePipelineFaceTagsIface& FacePipelineFaceTagsIface::operator=(const FacePipelineFaceTagsIface& other)
+{
+    m_type         = other.type();
+    m_imageId      = other.imageId();
+    m_tagId        = other.tagId();
+    m_region       = other.region();
+
+    roles          = other.roles;
+    assignedTagId  = other.assignedTagId;
+    assignedRegion = other.assignedRegion;
+
+    return *this;
+}
+
 // ----------------------------------------------------------------------------------------
 
 bool FacePipelineExtendedPackage::operator==(const LoadingDescription& description) const

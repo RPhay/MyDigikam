@@ -77,6 +77,8 @@ public:
     explicit FacePipelineFaceTagsIface(const FaceTagsIface& face);
     ~FacePipelineFaceTagsIface() = default;
 
+    FacePipelineFaceTagsIface& operator=(const FacePipelineFaceTagsIface& other);
+
 public:
 
     Roles     roles             = NoRole;
