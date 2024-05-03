@@ -155,8 +155,10 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
     reply->deleteLater();
     d->reply = nullptr;
 
-    if ((reply->error() != QNetworkReply::NoError)             &&
-        (reply->error() != QNetworkReply::InsecureRedirectError))
+    if (
+        (reply->error() != QNetworkReply::NoError)             &&
+        (reply->error() != QNetworkReply::InsecureRedirectError)
+       )
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << reply->errorString();
         Q_EMIT signalNewVersionCheckError(reply->errorString());
@@ -166,9 +168,11 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
     QUrl redirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
 
-    if (redirectUrl.isValid()         &&
+    if (
+        redirectUrl.isValid()         &&
         (reply->url() != redirectUrl) &&
-        (d->redirects < 10))
+        (d->redirects < 10)
+       )
     {
         download(redirectUrl);
 
@@ -180,6 +184,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
     if (data.isEmpty())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "No data returned from the remote connection.";
+
         Q_EMIT signalNewVersionCheckError(i18n("No data returned from the remote connection."));
 
         return;
@@ -222,12 +227,13 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         if (sections.size() < 4)
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid file name format returned from the remote connection.";
+
             Q_EMIT signalNewVersionCheckError(i18n("Invalid file name format returned from the remote connection."));
 
             return;
         }
 
-        // Tow possibles places exists where to find the date in file name.
+        // Two possibles places exists where to find the date in file name.
 
         // Check 1 - the fila name include a pre release suffix as -beta or -rc
 
@@ -245,6 +251,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         if (!onlineDt.isValid())
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid pre-release date from the remote list.";
+
             Q_EMIT signalNewVersionCheckError(i18n("Invalid pre-release date from the remote list."));
 
             return;
@@ -277,6 +284,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         if (onlineVals.size() != 3)
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid format returned from the remote connection.";
+
             Q_EMIT signalNewVersionCheckError(i18n("Invalid format returned from the remote connection."));
 
             return;
@@ -286,12 +294,10 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Online Version:" << onlineVer;
 
-        if (digiKamMakeIntegerVersion(onlineVals[0].toInt(),
-                                      onlineVals[1].toInt(),
-                                      onlineVals[2].toInt()) >
-            digiKamMakeIntegerVersion(currVals[0].toInt(),
-                                      currVals[1].toInt(),
-                                      currVals[2].toInt()))
+        if (
+            digiKamMakeIntegerVersion(onlineVals[0].toInt(), onlineVals[1].toInt(), onlineVals[2].toInt()) >
+            digiKamMakeIntegerVersion(currVals[0].toInt(),   currVals[1].toInt(),   currVals[2].toInt())
+           )
         {
             Q_EMIT signalNewVersionAvailable(onlineVer);
         }
