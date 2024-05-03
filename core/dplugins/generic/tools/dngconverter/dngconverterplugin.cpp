@@ -34,10 +34,6 @@ DNGConverterPlugin::DNGConverterPlugin(QObject* const parent)
 {
 }
 
-DNGConverterPlugin::~DNGConverterPlugin()
-{
-}
-
 QString DNGConverterPlugin::name() const
 {
     return i18nc("@title", "DNG Converter");

@@ -40,10 +40,6 @@ DNGConverterList::DNGConverterList(QWidget* const parent)
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(STATUS),         i18n("Status"),      true);
 }
 
-DNGConverterList::~DNGConverterList()
-{
-}
-
 void DNGConverterList::slotAddImages(const QList<QUrl>& list)
 {
     /**
@@ -72,9 +68,11 @@ void DNGConverterList::slotAddImages(const QList<QUrl>& list)
             }
         }
 
-        if (!found                                                                       &&
+        if (
+            !found                                                                       &&
             (DRawDecoder::isRawFile(imageUrl))                                           &&
-            (QFileInfo(imageUrl.toLocalFile()).suffix().toUpper() != QLatin1String("DNG")))
+            (QFileInfo(imageUrl.toLocalFile()).suffix().toUpper() != QLatin1String("DNG"))
+           )
         {
             new DNGConverterListViewItem(listView(), imageUrl);
         }
