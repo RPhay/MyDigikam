@@ -1035,7 +1035,9 @@ void ImportUI::slotBusy(bool val)
 
         m_animLogo->stop();
         d->statusProgressBar->setProgressValue(0);
-        d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode, i18nc("@info:status busy state", "Ready"));
+        d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode, d->statusBarText     +
+                                                                              QLatin1String(" - ") +
+                                                                              i18nc("@info:status busy state", "Ready"));
 
         // like WDestructiveClose, but after camera controller operation has safely finished
 
@@ -2286,11 +2288,10 @@ void ImportUI::slotImageSelected(const CamItemInfoList& selection, const CamItem
     {
         case 0:
         {
-            d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
-                                                     i18ncp("@info:status",
-                                                            "No item selected (%1 item)",
-                                                            "No item selected (%1 items)",
-                                                            num_images));
+            d->statusBarText = i18ncp("@info:status",
+                                      "No item selected (%1 item)",
+                                      "No item selected (%1 items)",
+                                      num_images);
 
             d->rightSideBar->slotNoCurrentItem();
             break;
@@ -2306,19 +2307,17 @@ void ImportUI::slotImageSelected(const CamItemInfoList& selection, const CamItem
 
                 int index = listAll.indexOf(selection.first()) + 1;
 
-                d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
-                                                         i18nc("@info:status Filename of first selected item of number of items",
-                                                               "\"%1\" (%2 of %3)",
-                                                               selection.first().url().fileName(), index, num_images));
+                d->statusBarText = i18nc("@info:status Filename of first selected item of number of items",
+                                         "\"%1\" (%2 of %3)",
+                                         selection.first().url().fileName(), index, num_images);
             }
             else
             {
                 d->rightSideBar->slotNoCurrentItem();
-                d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
-                                                         i18ncp("@info:status",
-                                                                "No item selected (%1 item)",
-                                                                "No item selected (%1 items)",
-                                                                num_images));
+                d->statusBarText = i18ncp("@info:status",
+                                          "No item selected (%1 item)",
+                                          "No item selected (%1 items)",
+                                          num_images);
             }
 
             break;
@@ -2326,13 +2325,14 @@ void ImportUI::slotImageSelected(const CamItemInfoList& selection, const CamItem
 
         default:
         {
-            d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
-                                                     i18ncp("@info:status", "%2/%1 item selected",
-                                                            "%2/%1 items selected",
-                                                            num_images, selection.count()));
+            d->statusBarText = i18ncp("@info:status", "%2/%1 item selected",
+                                      "%2/%1 items selected",
+                                      num_images, selection.count());
             break;
         }
     }
+
+    d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode, d->statusBarText);
 }
 
 void ImportUI::updateRightSideBar(const CamItemInfo& info)

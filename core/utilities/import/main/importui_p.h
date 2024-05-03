@@ -161,6 +161,7 @@ public:
     bool                                     closed                         = false;
 
     QString                                  cameraTitle;
+    QString                                  statusBarText;
 
     QHash<QString, QPair<QString, QString> > downloadedInfoHash;
     QHash<QString, QDateTime>                downloadedDateHash;

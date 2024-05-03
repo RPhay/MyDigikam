@@ -369,19 +369,23 @@ void CameraController::run()
         {
             QMutexLocker lock(&d->mutex);
 
-            if      (!d->commands.isEmpty())
+            if (!d->commands.isEmpty())
             {
                 command = d->commands.takeFirst();
                 Q_EMIT signalBusy(true);
             }
-            else if (!d->cmdThumbs.isEmpty())
-            {
-                command = d->cmdThumbs.takeFirst();
-                Q_EMIT signalBusy(false);
-            }
             else
             {
                 Q_EMIT signalBusy(false);
+            }
+
+            if (!command && !d->cmdThumbs.isEmpty())
+            {
+                command = d->cmdThumbs.takeFirst();
+            }
+
+            if (!command)
+            {
                 d->condVar.wait(&d->mutex);
                 continue;
             }
