@@ -76,45 +76,31 @@ class Q_DECL_HIDDEN ExpoBlendingDlg::Private
 {
 public:
 
-    explicit Private()
-      : templateFileName    (nullptr),
-        previewWidget       (nullptr),
-        enfuseSettingsBox   (nullptr),
-        saveSettingsBox     (nullptr),
-        bracketStack        (nullptr),
-        enfuseStack         (nullptr),
-        mngr                (nullptr),
-        firstImageDisplayed (false),
-        buttonBox           (nullptr),
-        previewButton       (nullptr),
-        startButton         (nullptr),
-        propagateReject     (true)
-    {
-    }
+    Private() = default;
 
     QString               inputFileName;
     QString               output;
 
-    QLineEdit*            templateFileName;
+    QLineEdit*            templateFileName      = nullptr;
 
-    DPreviewManager*      previewWidget;
+    DPreviewManager*      previewWidget         = nullptr;
 
-    EnfuseSettingsWidget* enfuseSettingsBox;
+    EnfuseSettingsWidget* enfuseSettingsBox     = nullptr;
 
-    DSaveSettingsWidget*  saveSettingsBox;
+    DSaveSettingsWidget*  saveSettingsBox       = nullptr;
 
-    BracketStackList*     bracketStack;
-    EnfuseStackList*      enfuseStack;
+    BracketStackList*     bracketStack          = nullptr;
+    EnfuseStackList*      enfuseStack           = nullptr;
 
-    ExpoBlendingManager*  mngr;
+    ExpoBlendingManager*  mngr                  = nullptr;
 
-    bool                  firstImageDisplayed;
+    bool                  firstImageDisplayed   = false;
 
-    QDialogButtonBox*     buttonBox;
-    QPushButton*          previewButton;
-    QPushButton*          startButton;
+    QDialogButtonBox*     buttonBox             = nullptr;
+    QPushButton*          previewButton         = nullptr;
+    QPushButton*          startButton           = nullptr;
 
-    bool                  propagateReject;
+    bool                  propagateReject       = true;
 };
 
 ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const parent)
