@@ -2038,20 +2038,16 @@ bool ImportUI::checkDiskSpace(PAlbum *pAlbum)
 
 bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool deleteAfter)
 {
-    const QList<QUrl>& selected   = d->view->selectedUrls();
-    DownloadSettings settings     = downloadSettings();
-    QUrl url                      = pAlbum->fileUrl();
+    const QList<CamItemInfo>& selected = onlySelected ? d->view->selectedCamItemInfos()
+                                                      : d->view->allItems();
+    DownloadSettings settings          = downloadSettings();
+    QUrl url                           = pAlbum->fileUrl();
     DownloadSettingsList allItems;
 
     // -- Download camera items -------------------------------
 
-    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
+    Q_FOREACH (const CamItemInfo& info, selected)
     {
-        if (onlySelected && !selected.contains(info.url()))
-        {
-            continue;
-        }
-
         settings.folder     = info.folder;
         settings.file       = info.name;
         settings.mime       = info.mime;
