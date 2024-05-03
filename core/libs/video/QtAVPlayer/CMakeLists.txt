@@ -19,6 +19,7 @@ set(libqtavplayer_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/qavaudioframe.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavaudioinputfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavaudiooutput.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/qavaudiooutputdevice.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavaudiooutputfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavcodec.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qavdemuxer.cpp
