@@ -429,12 +429,12 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
         }
     }
 
-    imageAlbumModel()->removeIndexes(sourceIndexes);
-
     for (int i = 0 ; i < infos.size() ; ++i)
     {
         d->editPipeline.confirm(infos[i], faces[i], tagId);
     }
+
+    imageAlbumModel()->removeIndexes(sourceIndexes);
 
     clearSelection();
 }
@@ -452,12 +452,12 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
         sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
     }
 
-    imageAlbumModel()->removeIndexes(sourceIndexes);
-
     for (int i = 0 ; i < infos.size() ; ++i)
     {
         d->editPipeline.remove(infos[i], faces[i]);
     }
+
+    imageAlbumModel()->removeIndexes(sourceIndexes);
 
     clearSelection();
 }
@@ -475,13 +475,13 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
         sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
     }
 
-    imageAlbumModel()->removeIndexes(sourceIndexes);
-
     for (int i = 0 ; i < infos.size() ; ++i)
     {
         d->editPipeline.editTag(infos[i], faces[i],
                                 FaceTags::unknownPersonTagId());
     }
+
+    imageAlbumModel()->removeIndexes(sourceIndexes);
 
     clearSelection();
 }
@@ -498,8 +498,6 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
         infos         << ItemModel::retrieveItemInfo(index);
         sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
     }
-
-    imageAlbumModel()->removeIndexes(sourceIndexes);
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
@@ -523,6 +521,8 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
         }
     }
 
+    imageAlbumModel()->removeIndexes(sourceIndexes);
+
     clearSelection();
 }
 
@@ -539,13 +539,13 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
         sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
     }
 
-    imageAlbumModel()->removeIndexes(sourceIndexes);
-
     for (int i = 0 ; i < infos.size() ; ++i)
     {
         d->editPipeline.editTag(infos[i], faces[i],
                                 FaceTags::ignoredPersonTagId());
     }
+
+    imageAlbumModel()->removeIndexes(sourceIndexes);
 
     clearSelection();
 }
