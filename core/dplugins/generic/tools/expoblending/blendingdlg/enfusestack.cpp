@@ -42,12 +42,9 @@ class Q_DECL_HIDDEN EnfuseStackItem::Private
 {
 public:
 
-    explicit Private()
-      : asValidThumb(false)
-    {
-    }
+    Private() = default;
 
-    bool           asValidThumb;
+    bool           asValidThumb = false;
     QPixmap        thumb;
     EnfuseSettings settings;
 };
@@ -136,23 +133,16 @@ class Q_DECL_HIDDEN EnfuseStackList::Private
 {
 public:
 
-    explicit Private()
-      : outputFormat (DSaveSettingsWidget::OUTPUT_PNG),
-        progressCount(0),
-        progressTimer(nullptr),
-        progressPix  (nullptr),
-        processItem  (nullptr)
-    {
-    }
+    Private() = default;
 
-    DSaveSettingsWidget::OutputFormat outputFormat;
+    DSaveSettingsWidget::OutputFormat outputFormat      = DSaveSettingsWidget::OUTPUT_PNG;
 
     QString                           templateFileName;
 
-    int                               progressCount;
-    QTimer*                           progressTimer;
-    DWorkingPixmap*                   progressPix;
-    EnfuseStackItem*                  processItem;
+    int                               progressCount     = 0;
+    QTimer*                           progressTimer     = nullptr;
+    DWorkingPixmap*                   progressPix       = nullptr;
+    EnfuseStackItem*                  processItem       = nullptr;
 };
 
 EnfuseStackList::EnfuseStackList(QWidget* const parent)

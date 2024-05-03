@@ -34,10 +34,6 @@ ExpoBlendingPlugin::ExpoBlendingPlugin(QObject* const parent)
 {
 }
 
-ExpoBlendingPlugin::~ExpoBlendingPlugin()
-{
-}
-
 void ExpoBlendingPlugin::cleanUp()
 {
     if (ExpoBlendingManager::isCreated())

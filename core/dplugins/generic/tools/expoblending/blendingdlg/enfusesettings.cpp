@@ -70,37 +70,24 @@ class Q_DECL_HIDDEN EnfuseSettingsWidget::Private
 {
 public:
 
-    explicit Private()
-      : autoLevelsCB    (nullptr),
-        hardMaskCB      (nullptr),
-        ciecam02CB      (nullptr),
-        levelsLabel     (nullptr),
-        exposureLabel   (nullptr),
-        saturationLabel (nullptr),
-        contrastLabel   (nullptr),
-        levelsInput     (nullptr),
-        exposureInput   (nullptr),
-        saturationInput (nullptr),
-        contrastInput   (nullptr)
-    {
-    }
+    Private() = default;
 
 public:
 
-    QCheckBox*       autoLevelsCB;
-    QCheckBox*       hardMaskCB;
-    QCheckBox*       ciecam02CB;
+    QCheckBox*       autoLevelsCB       = nullptr;
+    QCheckBox*       hardMaskCB         = nullptr;
+    QCheckBox*       ciecam02CB         = nullptr;
 
-    QLabel*          levelsLabel;
-    QLabel*          exposureLabel;
-    QLabel*          saturationLabel;
-    QLabel*          contrastLabel;
+    QLabel*          levelsLabel        = nullptr;
+    QLabel*          exposureLabel      = nullptr;
+    QLabel*          saturationLabel    = nullptr;
+    QLabel*          contrastLabel      = nullptr;
 
-    QSpinBox*        levelsInput;
+    QSpinBox*        levelsInput        = nullptr;
 
-    QDoubleSpinBox*  exposureInput;
-    QDoubleSpinBox*  saturationInput;
-    QDoubleSpinBox*  contrastInput;
+    QDoubleSpinBox*  exposureInput      = nullptr;
+    QDoubleSpinBox*  saturationInput    = nullptr;
+    QDoubleSpinBox*  contrastInput      = nullptr;
 };
 
 EnfuseSettingsWidget::EnfuseSettingsWidget(QWidget* const parent)
@@ -110,7 +97,7 @@ EnfuseSettingsWidget::EnfuseSettingsWidget(QWidget* const parent)
     setAttribute(Qt::WA_DeleteOnClose);
 
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(this);
 

@@ -36,21 +36,8 @@ class EnfuseSettings
 {
 public:
 
-    EnfuseSettings()
-        : autoLevels  (true),
-          hardMask    (false),
-          ciecam02    (false),
-          levels      (20),
-          exposure    (1.0),
-          saturation  (0.2),
-          contrast    (0.0),
-          outputFormat(DSaveSettingsWidget::OUTPUT_PNG)
-    {
-    }
-
-    ~EnfuseSettings()
-    {
-    }
+    EnfuseSettings()  = default;
+    ~EnfuseSettings() = default;
 
     QString asCommentString() const;
 
@@ -58,22 +45,22 @@ public:
 
 public:
 
-    bool                              autoLevels;
-    bool                              hardMask;
-    bool                              ciecam02;
+    bool                              autoLevels    = true;
+    bool                              hardMask      = false;
+    bool                              ciecam02      = false;
 
-    int                               levels;
+    int                               levels        = 20;
 
-    double                            exposure;
-    double                            saturation;
-    double                            contrast;
+    double                            exposure      = 1.0;
+    double                            saturation    = 0.2;
+    double                            contrast      = 0.0;
 
     QString                           targetFileName;
 
     QList<QUrl>                       inputUrls;
     QUrl                              previewUrl;
 
-    DSaveSettingsWidget::OutputFormat outputFormat;
+    DSaveSettingsWidget::OutputFormat outputFormat  = DSaveSettingsWidget::OUTPUT_PNG;
 };
 
 // ------------------------------------------------------------------------
