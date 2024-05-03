@@ -21,7 +21,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "calsystem.h"
 
 
 #ifdef HAVE_KCALENDAR
@@ -71,11 +70,7 @@ CalSettings::CalSettings(QObject* const parent)
     : QObject(parent),
       d      (new Private)
 {
-    params.drawLines = false;
-    params.year      = CalSystem().earliestValidDate().year() + 1;
-    setPaperSize(QLatin1String("A4"));
-    setResolution(QLatin1String("High"));
-    setImagePos(0);
+    setImagePos(CalParams::Top);
 }
 
 CalSettings::~CalSettings()
@@ -215,6 +210,7 @@ void CalSettings::setFont(const QString& font)
     if (params.baseFont.family() != font)
     {
         params.baseFont = QFont(font);
+
         Q_EMIT settingsChanged();
     }
 }
@@ -350,8 +346,8 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
             {
                 Recurrence* const recur = event->recurrence();
 
-                for (dtCurrent = recur->getNextDateTime(dtFirst.addDays(-1));
-                     (dtCurrent <= dtLast) && dtCurrent.isValid();
+                for (dtCurrent = recur->getNextDateTime(dtFirst.addDays(-1)) ;
+                     (dtCurrent <= dtLast) && dtCurrent.isValid() ;
                      dtCurrent = recur->getNextDateTime(dtCurrent))
                 {
                     addSpecial(dtCurrent.date(), Day(color, event->summary()));

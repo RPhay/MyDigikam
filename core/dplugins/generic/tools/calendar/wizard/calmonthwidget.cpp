@@ -45,23 +45,18 @@ class Q_DECL_HIDDEN CalMonthWidget::Private
 {
 public:
 
-    explicit Private()
-      : thumbSize      (QSize(64, 64)),
-        month          (0),
-        thumbLoadThread(ThumbnailLoadThread::defaultThread())
-    {
-    }
+    Private() = default;
 
-    const QSize          thumbSize;
+    const QSize          thumbSize          = QSize(64, 64);
     QPixmap              thumb;
-    int                  month;
+    int                  month              = 0;
     QUrl                 imagePath;
-    ThumbnailLoadThread* thumbLoadThread;
+    ThumbnailLoadThread* thumbLoadThread    = ThumbnailLoadThread::defaultThread();
 };
 
 CalMonthWidget::CalMonthWidget(QWidget* const parent, int month)
     : QPushButton(parent),
-      d(new Private)
+      d          (new Private)
 {
     setAcceptDrops(true);
     setFixedSize(QSize(74, 94));

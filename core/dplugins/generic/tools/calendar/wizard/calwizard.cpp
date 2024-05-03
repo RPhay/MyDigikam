@@ -53,60 +53,39 @@ class Q_DECL_HIDDEN CalWizard::Private
 {
 public:
 
-    explicit Private()
-      : iface         (nullptr),
-        introPage     (nullptr),
-        cSettings     (nullptr),
-        wTemplate     (nullptr),
-        wPrintLabel   (nullptr),
-        wFinish       (nullptr),
-        wTemplatePage (nullptr),
-        wPrintPage    (nullptr),
-        wFinishPage   (nullptr),
+    Private() = default;
 
-#ifdef HAVE_KCALENDAR
-
-        wEvents       (nullptr),
-        wEventsPage   (nullptr),
-
-#endif
-
-        printer       (nullptr),
-        printThread   (nullptr)
-    {
-    }
-
-    DInfoInterface*  iface;
-    CalIntroPage*    introPage;
-    CalSettings*     cSettings;
-    CalTemplate*     wTemplate;
+    DInfoInterface*  iface          = nullptr;
+    CalIntroPage*    introPage      = nullptr;
+    CalSettings*     cSettings      = nullptr;
+    CalTemplate*     wTemplate      = nullptr;
     Ui::CalEvents    calEventsUI;
     Ui::CalProgress  calProgressUI;
 
-    QLabel*          wPrintLabel;
-    QWidget*         wFinish;
+    QLabel*          wPrintLabel    = nullptr;
+    QWidget*         wFinish        = nullptr;
 
-    DWizardPage*     wTemplatePage;
-    DWizardPage*     wPrintPage;
-    DWizardPage*     wFinishPage;
+    DWizardPage*     wTemplatePage  = nullptr;
+    DWizardPage*     wPrintPage     = nullptr;
+    DWizardPage*     wFinishPage    = nullptr;
 
 #ifdef HAVE_KCALENDAR
 
-    QWidget*         wEvents;
-    DWizardPage*     wEventsPage;
+    QWidget*         wEvents        = nullptr;
+    DWizardPage*     wEventsPage    = nullptr;
 
 #endif
 
-    QPrinter*        printer;
+    QPrinter*        printer        = nullptr;
 
-    CalPrinter*      printThread;
+    CalPrinter*      printThread    = nullptr;
 
     QMap<int, QUrl>  months;
 };
 
 CalWizard::CalWizard(QWidget* const parent, DInfoInterface* const iface)
     : DWizardDlg(parent, QLatin1String("Calendar Dialog")),
-      d(new Private)
+      d         (new Private)
 {
     setWindowTitle(i18nc("@title:window", "Create Calendar"));
     d->iface         = iface;
@@ -178,6 +157,7 @@ CalWizard::~CalWizard()
     {
         d->printThread->cancel();
         d->printThread->wait();
+
         delete d->printThread;
     }
 
@@ -217,8 +197,8 @@ void CalWizard::slotPageSelected(int curr)
         if (d->months.isEmpty())
         {
             d->wPrintLabel->setText(QLatin1String("<qt>") +
-                                  i18n("No valid images selected for months<br/>"
-                                       "Click Back to select images") + QLatin1String("</qt>"));
+                                    i18n("No valid images selected for months<br/>"
+                                         "Click Back to select images") + QLatin1String("</qt>"));
             d->wFinishPage->setComplete(false);
         }
         else
@@ -240,7 +220,7 @@ void CalWizard::slotPageSelected(int curr)
             QString year_locale = QLocale().toString(date, QLatin1String("yyyy"));
 
             d->wPrintLabel->setText(i18n("Click Next to start Printing<br/><br/>"
-                                       "Following months will be printed for year %1:<br/>", year_locale)
+                                         "Following months will be printed for year %1:<br/>", year_locale)
                                     + printList.join(QLatin1String(" - ")) + extra);
             d->wPrintLabel->setTextFormat(Qt::RichText);
 
@@ -271,12 +251,16 @@ void CalWizard::slotPageSelected(int curr)
         switch (params.imgPos)
         {
             case (CalParams::Top):
+            {
                 d->printer->setPageOrientation(QPageLayout::Portrait);
                 break;
+            }
 
             default:
+            {
                 d->printer->setPageOrientation(QPageLayout::Landscape);
                 break;
+            }
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "printing...";

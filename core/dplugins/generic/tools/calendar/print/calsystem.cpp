@@ -749,7 +749,7 @@ qint64 CalSystemPrivate::julianDayFromDate(int yr, int mth, int dy) const
     qint64 month = mth;
     qint64 day   = dy;
 
-    if (year < 1 && !hasYearZero())
+    if ((year < 1) && !hasYearZero())
     {
         year = year + 1;
     }
@@ -1119,7 +1119,7 @@ int CalSystem::dayOfYear(int year, int month, int day) const
 
 int CalSystem::dayOfWeek(const QDate& date) const
 {
-    //jd 0 = Monday = weekday 1.  We've never skipped weekdays.
+    // jd 0 = Monday = weekday 1. We've never skipped weekdays.
 
     if (isValid(date))
     {
@@ -1144,6 +1144,7 @@ int CalSystem::dayOfWeek(int year, int month, int day) const
 }
 
 // TODO: These are ISO weeks, may need to localise
+
 int CalSystem::weekNumber(const QDate& date, int* yearNum) const
 {
     if (isValid(date))
@@ -1560,7 +1561,7 @@ bool CalSystem::dateDifference(const QDate& fromDate, const QDate& toDate,
     int dd  = 0;
     int dir = 1;
 
-    if (isValid(fromDate) && isValid(toDate) && fromDate != toDate)
+    if (isValid(fromDate) && isValid(toDate) && (fromDate != toDate))
     {
         if (toDate < fromDate)
         {
@@ -1607,12 +1608,12 @@ bool CalSystem::dateDifference(const QDate& fromDate, const QDate& toDate,
                     return false;
                 }
 
-                if      (d1 == dim1 && d2 == d->daysInMonth(y2, m2))
+                if      ((d1 == dim1) && (d2 == d->daysInMonth(y2, m2)))
                 {
                     dm = (miy0 + m2 - m1) % miy0;
                     dd = 0;
                 }
-                else if (month(addMonths(toDate, -1)) == m1 && dim0 < dim1)
+                else if ((month(addMonths(toDate, -1)) == m1) && (dim0 < dim1))
                 {
                     // Special case where fromDate = leap day and toDate in month following but non-leap year
                     // e.g. 2000-02-29 to 2001-03-01 needs to use 29 to calculate day number not 28

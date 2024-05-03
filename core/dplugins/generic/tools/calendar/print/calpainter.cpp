@@ -360,6 +360,7 @@ void CalPainter::paint(int month)
 
             drawImage(x, y + block, d->image, 0, block, d->image.width(), blockSize);
             block += blockSize;
+
             Q_EMIT signalProgress(block);
         }
 

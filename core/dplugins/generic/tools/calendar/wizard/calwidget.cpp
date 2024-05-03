@@ -27,15 +27,10 @@ namespace DigikamGenericCalendarPlugin
 {
 
 CalWidget::CalWidget(QWidget* const parent)
-    : QWidget  (parent),
-      m_current(1)
+    : QWidget(parent)
 {
     setAttribute(Qt::WA_OpaquePaintEvent);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-}
-
-CalWidget::~CalWidget()
-{
 }
 
 void CalWidget::setCurrent(int curr)

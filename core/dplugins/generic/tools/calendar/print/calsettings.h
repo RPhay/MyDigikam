@@ -35,6 +35,7 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "calsystem.h"
 
 namespace DigikamGenericCalendarPlugin
 {
@@ -54,17 +55,17 @@ public:
 
 public:
 
-    QPageSize::PageSizeId pageSize;
-    QPrinter::PrinterMode printResolution;
-    int                   paperWidth;
-    int                   paperHeight;
-    int                   width;
-    int                   height;
-    bool                  drawLines;
-    float                 ratio;
-    ItemPosition          imgPos;
     QFont                 baseFont;
-    int                   year;
+    QPageSize::PageSizeId pageSize          = QPageSize::A4;
+    QPrinter::PrinterMode printResolution   = QPrinter::HighResolution;
+    int                   paperWidth        = 210;
+    int                   paperHeight       = 297;
+    int                   width             = 0;
+    int                   height            = 0;
+    float                 ratio             = 0.0;
+    bool                  drawLines         = false;
+    ItemPosition          imgPos            = CalParams::Top;
+    int                   year              = CalSystem().earliestValidDate().year() + 1;
 };
 
 // ---------------------------------------------------------------------------
@@ -75,7 +76,7 @@ class CalSettings : public QObject
 
 public:
 
-    ~CalSettings() override;
+    ~CalSettings()                                            override;
 
     void setYear(int year);
     int  year() const;
@@ -83,11 +84,11 @@ public:
     QUrl image(int month) const;
     void clearSpecial();
     void addSpecial(const QDate& date, const Day& info);
-    bool isSpecial(int month, int day) const;
+    bool isSpecial(int month, int day)                  const;
 
-    QColor getDayColor(int month, int day) const;
-    QString getDayDescr(int month, int day) const;
-    QPrinter::PrinterMode resolution() const;
+    QColor getDayColor(int month, int day)              const;
+    QString getDayDescr(int month, int day)             const;
+    QPrinter::PrinterMode resolution()                  const;
 
 #ifdef HAVE_KCALENDAR
 

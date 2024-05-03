@@ -37,19 +37,16 @@ class Q_DECL_HIDDEN CalTemplate::Private
 {
 public:
 
-    explicit Private()
-      : MAX_MONTHS(13)
-    {
-    }
+    Private() = default;
 
-    const int                MAX_MONTHS;
+    const int                MAX_MONTHS = 13;
     Ui::CalTemplate          ui;
     QVector<CalMonthWidget*> wVector;
 };
 
 CalTemplate::CalTemplate(const QList<QUrl>& urlList, QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->ui.setupUi(this);
 

@@ -33,10 +33,10 @@ class CalWidget : public QWidget
 public:
 
     explicit CalWidget(QWidget* const parent);
-    ~CalWidget()                    override;
+    ~CalWidget()                          override = default;
 
     void setCurrent(int curr);
-    int current() const;
+    int current()                   const;
 
 public Q_SLOTS:
 
@@ -48,7 +48,7 @@ protected:
 
 protected:
 
-    int m_current;
+    int m_current = 1;
 };
 
 } // Namespace Digikam

@@ -65,10 +65,6 @@ CalIntroPage::CalIntroPage(QWizard* const dialog, const QString& title)
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("office-calendar")));
 }
 
-CalIntroPage::~CalIntroPage()
-{
-}
-
 } // namespace DigikamGenericCalendarPlugin
 
 #include "moc_calintropage.cpp"
