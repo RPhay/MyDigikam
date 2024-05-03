@@ -36,10 +36,6 @@ WallpaperPlugin::WallpaperPlugin(QObject* const parent)
 {
 }
 
-WallpaperPlugin::~WallpaperPlugin()
-{
-}
-
 QString WallpaperPlugin::name() const
 {
     return i18n("Export as wallpaper");
@@ -85,7 +81,7 @@ QList<DPluginAuthor> WallpaperPlugin::authors() const
                              QString::fromUtf8("(C) 2019"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2021"),
+                             QString::fromUtf8("(C) 2019-2024"),
                              i18n("Author and Maintainer"));
 }
 

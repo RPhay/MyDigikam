@@ -34,7 +34,7 @@ public:
 
     explicit WallpaperPluginDlg(DPlugin* const plugin,
                                 QWidget* const parent = nullptr);
-    ~WallpaperPluginDlg() override;
+    ~WallpaperPluginDlg()       override;
 
     int wallpaperLayout() const;
 

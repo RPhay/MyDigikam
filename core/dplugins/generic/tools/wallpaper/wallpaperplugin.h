@@ -56,7 +56,7 @@ public:
 public:
 
     explicit WallpaperPlugin(QObject* const parent = nullptr);
-    ~WallpaperPlugin()                   override;
+    ~WallpaperPlugin()                   override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

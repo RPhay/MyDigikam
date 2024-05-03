@@ -40,14 +40,10 @@ class Q_DECL_HIDDEN WallpaperPluginDlg::Private
 {
 public:
 
-    explicit Private()
-      : layoutCB(nullptr),
-        page    (nullptr)
-    {
-    }
+    Private() = default;
 
-    QComboBox* layoutCB;
-    QWidget*   page;
+    QComboBox* layoutCB = nullptr;
+    QWidget*   page     = nullptr;
 };
 
 WallpaperPluginDlg::WallpaperPluginDlg(DPlugin* const plugin, QWidget* const parent)

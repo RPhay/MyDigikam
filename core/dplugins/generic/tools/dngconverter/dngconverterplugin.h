@@ -35,7 +35,7 @@ class DNGConverterPlugin : public DPluginGeneric
 public:
 
     explicit DNGConverterPlugin(QObject* const parent = nullptr);
-    ~DNGConverterPlugin()                override;
+    ~DNGConverterPlugin()                override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

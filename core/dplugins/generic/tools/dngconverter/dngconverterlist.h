@@ -47,7 +47,7 @@ public:
 public:
 
     explicit DNGConverterList(QWidget* const parent = nullptr);
-    ~DNGConverterList();
+    ~DNGConverterList() = default;
 
 public Q_SLOTS:
 
