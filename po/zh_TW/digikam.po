@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-02 01:39+0000\n"
+"POT-Creation-Date: 2024-05-03 01:41+0000\n"
 "PO-Revision-Date: 2024-04-22 17:37+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3869,14 +3869,14 @@ msgstr "地理標籤"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:85
 #: core/app/views/tableview/tableview_column_geo.cpp:102
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:118
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:97
 #, kde-format
 msgid "Coordinates"
 msgstr "座標"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:617
 #, kde-format
 msgid "Altitude"
@@ -10998,7 +10998,7 @@ msgstr "檔案未儲存"
 msgid "Cannot save \"%1\" file"
 msgstr "無法儲存「%1」檔案"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:222
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:419
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:520
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:799
@@ -11007,38 +11007,38 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "地理位置編輯器"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "在地圖上顯示已存入書籤的位置。"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:315
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:273
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "佈局："
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:317
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "一張地圖"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "兩張地圖 - 左右"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "兩張地圖 - 上下"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
@@ -11048,92 +11048,92 @@ msgstr "兩張地圖 - 上下"
 msgid "OK"
 msgstr "確定"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "排序"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:327
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "先顯示最舊的"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "先顯示最新的"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:371
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "詳細資料"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS 相關器"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "復原/重做"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "反向地理定位"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "搜尋"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML 匯出"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:594
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "載入中繼資料中 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:787
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
 msgstr[0] "您有 %1 個已變更的影像。"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:794
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "未儲存的變更"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:837
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 您要儲存您所做的變更嗎？"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:953
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "儲存變更中 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1012
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11177,87 +11177,87 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "錯誤"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1013
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "儲存某些資訊時失敗："
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1051
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
 msgstr "編輯地理位置"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:615
 #, kde-format
 msgid "Latitude"
 msgstr "緯度"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:616
 #, kde-format
 msgid "Longitude"
 msgstr "經度"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
 #, kde-format
 msgid "Speed"
 msgstr "速度"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "# satellites"
 msgstr "衛星數"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:620
 #, kde-format
 msgid "Fix type"
 msgstr "固定型態"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:150
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:129
 #, kde-format
 msgid "2-d"
 msgstr "二維"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:151
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #, kde-format
 msgid "3-d"
 msgstr "三維"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:619
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:139
 #, kde-format
 msgid "Apply"
 msgstr "套用"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:428
 #, kde-format
 msgid "Details changed"
 msgstr "詳細資料已變更"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:43
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "地理位置編輯"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:58
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:54
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "編輯項目地理位置用的工具"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:63
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -11273,121 +11273,121 @@ msgid ""
 "geo-location of items if you camera do not have an embedded GPS device."
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:101
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
 msgstr "編輯地理位置..."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:145
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:162
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:117
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "無法讀取影像 '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:154
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:126
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "影像 '%1' 的格式未知"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:172
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "載入影像 '%1' 時發生錯誤"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:215
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:189
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "無法儲存影像「%1」到「%2」"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:219
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:207
 #, kde-format
 msgid "Creation of picture '%1'"
 msgstr "圖片 '%1' 的建立"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:235
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:223
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgid "Cannot get GPS Information from %1 file."
 msgstr "儲存某些資訊時失敗："
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:324
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:312
 #, kde-format
 msgid "Creation of placemark '%1'"
 msgstr "地點標記 '%1' 的建立"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:333
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:321
 #, kde-format
 msgid "Could not save icon for image '%1' to '%2'"
 msgstr "無法儲存影像「%1」的圖示到「%2」"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:337
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:325
 #, kde-format
 msgid "Creation of icon '%1'"
 msgstr "圖示 '%1' 的建立"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:352
 #, kde-format
 msgid "No GPX file chosen."
 msgstr "未選取 GPX 檔。"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:361
 #, kde-format
 msgid "Cannot parse %1 GPX file."
 msgstr "無法剖析 %1 GPX 檔。"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:379
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:367
 #, kde-format
 msgid "The %1 GPX file do not have a date-time track to use."
 msgstr "%1 GPX 檔沒有可用的日期-時間軌跡。"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:387
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:375
 #, kde-format
 msgid "Tracks"
 msgstr "軌跡"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:491
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:479
 #, kde-format
 msgid "No position data for '%1'"
 msgstr "沒有 '%1' 的位置資料"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:506
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:494
 #, kde-format
 msgid "Cannot open file for writing"
 msgstr "無法開啟檔案供寫入"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:519
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:507
 #, kde-format
 msgid "Move %1 to final directory %2"
 msgstr "將 %1 移動到最終目錄 %2"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:523
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:511
 #, kde-format
 msgid "Cannot move data to destination directory"
 msgstr "無法移動資料至目的地目錄"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:533
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:521
 #, kde-format
 msgid "Report below have been generated while KML file processing:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:57
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:53
 #, kde-format
 msgctxt "@item: linetrack over the map"
 msgid "Track"
 msgstr "軌跡"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:83
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:79
 #, kde-format
 msgctxt "@item: points over the map"
 msgid "Points"
 msgstr "點"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:96
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:92
 #, kde-format
 msgctxt "@item: point coordinates"
 msgid "Point"
@@ -11699,83 +11699,83 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:249
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:293
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:295
 #, kde-format
 msgid "Generate KML file"
 msgstr "產生 KML 檔案"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:308
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:304
 #, kde-format
 msgid "GeoNames"
 msgstr "GeoNames"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:309
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:305
 #, kde-format
 msgid "OSM"
 msgstr "OSM"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultmodelhelper.cpp:152
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultmodelhelper.cpp:147
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkmodelhelper.cpp:236
 #, kde-format
 msgid "1 image snapped to '%2'"
 msgid_plural "%1 images snapped to '%2'"
 msgstr[0] "%1 張影像貼齊到 '%2'"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:159
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:134
 #, kde-format
 msgctxt "Start the search"
 msgid "Search"
 msgstr "搜尋"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:166
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:141
 #, kde-format
 msgid "Clear the search results."
 msgstr "清除搜尋結果。"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:174
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:149
 #, kde-format
 msgid "Keep the results of old searches when doing a new search."
 msgstr "開始新的搜尋時，保存舊的搜尋結果。"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:181
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:156
 #, kde-format
 msgid "Toggle the visibility of the search results on the map."
 msgstr "在地圖上切換是否可見搜尋結果。"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:185
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:160
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:83
 #, kde-format
 msgid "Copy coordinates"
 msgstr "複製座標"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:188
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:163
 #, kde-format
 msgid "Move selected images to this position"
 msgstr "將選取的影像移到此位置"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:190
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:165
 #, kde-format
 msgid "Remove from results list"
 msgstr "從結果清單中移除"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:194
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:169
 #, kde-format
 msgid "Select which service you would like to use."
 msgstr "選擇您要使用的服務。"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:218
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:193
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:122
 #, kde-format
 msgid "Bookmarks"
 msgstr "書籤"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:271
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:246
 #, kde-format
 msgctxt "@title:window"
 msgid "Search Failed"
 msgstr "搜尋失敗"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:271
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:246
 #, kde-format
 msgid ""
 "Your search failed:\n"
@@ -11784,90 +11784,90 @@ msgstr ""
 "您的搜尋失敗：\n"
 "%1"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:455
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:430
 #, kde-format
 msgid "1 image moved to '%2'"
 msgid_plural "%1 images moved to '%2'"
 msgstr[0] "%1 張影像移動到 '%2'"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "中繼資料編輯器"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:103
 #, kde-format
 msgctxt "@action: button"
 msgid "Next"
 msgstr "下一步"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:105
 #, kde-format
 msgctxt "@action: button"
 msgid "Previous"
 msgstr "上一步"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:118
 #, kde-format
 msgctxt "@item"
 msgid "Edit EXIF"
 msgstr "編輯 EXIF"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:119
 #, kde-format
 msgctxt "@item"
 msgid "Edit IPTC"
 msgstr "編輯 IPTC"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
 #, kde-format
 msgctxt "@item"
 msgid "Edit XMP"
 msgstr "編輯 XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:310
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:309
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
 msgstr "%1（%2/%3）- 編輯中繼資料"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:83
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:75
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:80
 #, kde-format
 msgid "Add a new value to the list"
 msgstr "加入新數值到清單中"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:86
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:84
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
 #, kde-format
 msgid "Remove the current selected value from the list"
 msgstr "從清單中移除目前選擇的數值"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:87
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:82
 #, kde-format
 msgid "Replace the current selected value from the list"
 msgstr "從清單中取代目前選擇的數值"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:93
 #, kde-format
 msgid " This field is limited to:"
 msgstr "這個欄位的限制："
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:95
 #, kde-format
 msgid "<p>1 character.</p>"
 msgid_plural "<p>%1 characters.</p>"
 msgstr[0] "<p>%1 個字元。</p>"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:291
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:346
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:269
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:428
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
 #: core/libs/widgets/text/dplaintextedit.cpp:400
@@ -11877,226 +11877,226 @@ msgid "%1 character left"
 msgid_plural "%1 characters left"
 msgstr[0] "剩餘 %1 個字元"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:72
 #, kde-format
 msgid "Attribute:"
 msgstr "屬性："
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:94
 #, kde-format
 msgid "Select here the editorial attribute of content."
 msgstr "在這裡選擇內容的編輯屬性。"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:95
 #, kde-format
 msgctxt "Content type"
 msgid "Current"
 msgstr "目前"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:96
 #, kde-format
 msgctxt "Content type"
 msgid "Analysis"
 msgstr "分析"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:97
 #, kde-format
 msgctxt "Content type"
 msgid "Archive material"
 msgstr "檔案材料"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:98
 #, kde-format
 msgctxt "Content type"
 msgid "Background"
 msgstr "背景"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:99
 #, kde-format
 msgctxt "Content type"
 msgid "Feature"
 msgstr "專題"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:100
 #, kde-format
 msgctxt "Content type"
 msgid "Forecast"
 msgstr "預報"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:101
 #, kde-format
 msgctxt "Content type"
 msgid "History"
 msgstr "歷史"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:102
 #, kde-format
 msgctxt "Content type"
 msgid "Obituary"
 msgstr "訃聞"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
 #, kde-format
 msgctxt "Content type"
 msgid "Opinion"
 msgstr "意見"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
 #, kde-format
 msgctxt "Content type"
 msgid "Polls & Surveys"
 msgstr "投票和調查"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
 #, kde-format
 msgctxt "Content type"
 msgid "Profile"
 msgstr "簡介"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
 #, kde-format
 msgctxt "Content type"
 msgid "Results Listings & Table"
 msgstr "結果表格"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
 #, kde-format
 msgctxt "Content type"
 msgid "Side bar & Supporting information"
 msgstr "側邊欄和支援資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, kde-format
 msgctxt "Content type"
 msgid "Summary"
 msgstr "摘要"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
 #, kde-format
 msgctxt "Content type"
 msgid "Transcript & Verbatim"
 msgstr "謄本和逐字稿"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
 #, kde-format
 msgctxt "Content type"
 msgid "Interview"
 msgstr "訪談"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
 #, kde-format
 msgctxt "Content type"
 msgid "From the Scene"
 msgstr "現場"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
 #, kde-format
 msgctxt "Content type"
 msgid "Retrospective"
 msgstr "回顧"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
 #, kde-format
 msgctxt "Content type"
 msgid "Statistics"
 msgstr "統計"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
 #, kde-format
 msgctxt "Content type"
 msgid "Update"
 msgstr "更新"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
 #, kde-format
 msgctxt "Content type"
 msgid "Wrap-up"
 msgstr "特寫鏡頭"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:125
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
 #, kde-format
 msgctxt "Content type"
 msgid "Press Release"
 msgstr "新聞稿"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:122
 #, fuzzy, kde-format
 #| msgid "Set here the editorial attribute description of the content."
 msgid "Set here the editorial attribute description of content."
 msgstr "在這裡設定內容的編輯屬性描述。"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:127
 #, kde-format
 msgid " This field is limited to "
 msgstr "這個欄位的限制："
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:129
 #, kde-format
 msgid "%1 character."
 msgid_plural "%1 characters."
 msgstr[0] "%1 個字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
 #, fuzzy, kde-format
 #| msgid "Set here the editorial attribute description of the content."
 msgid "Set here the editorial description"
 msgstr "在這裡設定內容的編輯屬性描述。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:71
 #, kde-format
 msgid "Brightness (APEX):"
 msgstr "亮度 (APEX)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:76
 #, kde-format
 msgid ""
 "Set here the brightness adjustment value in APEX unit used by camera to take "
 "the picture."
 msgstr "在這裡設定圖片拍攝時相機使用的亮度調整值，單位為 APEX。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:81
 #, kde-format
 msgid "Gain Control:"
 msgstr "增益控制："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:83
 #, kde-format
 msgctxt "gain control"
 msgid "None"
 msgstr "無"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:84
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain up"
 msgstr "中低增益"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:85
 #, kde-format
 msgctxt "gain control"
 msgid "High gain up"
 msgstr "高增益"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:86
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain down"
 msgstr "低增益"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:87
 #, kde-format
 msgctxt "gain control"
 msgid "High gain down"
 msgstr "中高增益"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:88
 #, kde-format
 msgid ""
 "Set here the degree of overall image gain adjustment used by camera to take "
 "the picture."
 msgstr "在這裡設定相機拍攝圖片時使用的整體影像增益調整度數。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:93
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
@@ -12104,164 +12104,164 @@ msgstr "在這裡設定相機拍攝圖片時使用的整體影像增益調整度
 msgid "Contrast:"
 msgstr "對比："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:95
 #, kde-format
 msgctxt "contrast mode"
 msgid "Normal"
 msgstr "普通"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:96
 #, kde-format
 msgctxt "contrast mode"
 msgid "Soft"
 msgstr "軟"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:97
 #, kde-format
 msgctxt "contrast mode"
 msgid "Hard"
 msgstr "硬"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
 #, kde-format
 msgid ""
 "Set here the direction of contrast processing applied by the camera to take "
 "the picture."
 msgstr "在這裡設定相機拍攝圖片時套用的對比處理方向。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:103
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:185
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:94
 #, kde-format
 msgid "Saturation:"
 msgstr "飽和度："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:105
 #, kde-format
 msgctxt "saturation mode"
 msgid "Normal"
 msgstr "普通"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:106
 #, kde-format
 msgctxt "saturation mode"
 msgid "Low"
 msgstr "低"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #, kde-format
 msgctxt "saturation mode"
 msgid "High"
 msgstr "高"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:108
 #, kde-format
 msgid ""
 "Set here the direction of saturation processing applied by the camera to "
 "take the picture."
 msgstr "在這裡設定相機拍攝圖片時套用的飽和度處理方向。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:113
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:152
 #, kde-format
 msgid "Sharpness:"
 msgstr "銳利度："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:115
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Normal"
 msgstr "普通"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:116
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Soft"
 msgstr "軟"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Hard"
 msgstr "硬"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:118
 #, kde-format
 msgid ""
 "Set here the direction of sharpness processing applied by the camera to take "
 "the picture."
 msgstr "在這裡設定相機拍攝圖片時套用的銳利化處理方向。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:123
 #, kde-format
 msgid "Custom rendered:"
 msgstr "自訂演算方式："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:125
 #, kde-format
 msgid "Normal process"
 msgstr "普通處理"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:140
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:126
 #, kde-format
 msgid "Custom process"
 msgstr "自訂處理"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
 #, kde-format
 msgid ""
 "Set here the use of special processing on image data, such as rendering "
 "geared to output."
 msgstr "在這裡設定影像資料上特殊處理的使用，例如適合輸出的演算方式。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:79
 #, kde-format
 msgctxt "name of the document this image has been scanned from"
 msgid "Name (*):"
 msgstr "名稱 (*)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:82
 #, fuzzy, kde-format
 #| msgid "Set here the original owner of content."
 msgid "Set here the original document name."
 msgstr "在這裡設定內容的原擁有者。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:83
 #, kde-format
 msgid ""
 "Enter the name of the document from which this image was been scanned. This "
 "field is limited to ASCII characters."
 msgstr "輸入已掃描影像的文件名稱。這個欄位限制為 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:89
 #, kde-format
 msgctxt "image description"
 msgid "Description (*):"
 msgstr "描述 (*)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:92
 #, fuzzy, kde-format
 #| msgid "Enter the content description."
 msgid "Set here the image description."
 msgstr "在這裡輸入內容描述。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:93
 #, kde-format
 msgid "Enter the image description. This field is limited to ASCII characters."
 msgstr "輸入影像描述。這個欄位限制為 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:98
 #, kde-format
 msgid "Artist (*):"
 msgstr "藝術家 (*)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
 #, fuzzy, kde-format
 #| msgid "Set here the saturation value."
 msgid "Set here the author's name."
 msgstr "在這裡設定飽和度值。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the image author's name. This field is limited to ASCII characters."
@@ -12270,65 +12270,65 @@ msgid ""
 "limited to ASCII characters."
 msgstr "輸入影像作者的姓名。這個欄位限制為 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:107
 #, kde-format
 msgid "Copyright (*):"
 msgstr "著作權 (*)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:110
 #, fuzzy, kde-format
 #| msgid "Set here the contact country."
 msgid "Set here the copyright owner."
 msgstr "在這裡設定連絡的國家。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
 #, kde-format
 msgid ""
 "Enter the copyright owner of the image. This field is limited to ASCII "
 "characters."
 msgstr "輸入影像的著作權擁有人。這個欄位限制為 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:116
 #, kde-format
 msgctxt "image caption"
 msgid "Caption:"
 msgstr "標題描述："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:119
 #, fuzzy, kde-format
 #| msgid "You have edited the image caption. "
 #| msgid_plural "You have edited the captions of %1 images. "
 msgid "Set here the image's caption."
 msgstr "您已經修改了 %1 張影像的標題描述。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
 #, kde-format
 msgid ""
 "Enter the image's caption. This field is not limited. UTF8 encoding will be "
 "used to save the text."
 msgstr "輸入影像的標題。這個欄位沒有限制。文字會用 UTF8 編碼儲存。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:143
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:84
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, kde-format
 msgid "Sync JFIF Comment section"
 msgstr "同步 JFIF 註解部份"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:125
 #, kde-format
 msgid "Sync XMP caption"
 msgstr "同步 XMP 標題"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sync IPTC caption (warning: limited to 2000 printable Ascii characters)"
 msgid "Sync IPTC caption (warning: limited to 2000 characters)"
 msgstr "同步 IPTC 標題 (警告：限制 2000 個可列印 ASCII 字元)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:152
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:316
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:289
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Note: <b><a href='http://en.wikipedia.org/wiki/EXIF'>EXIF</a></b> text "
@@ -12343,62 +12343,62 @@ msgstr ""
 "的特點是 (*) 只支援可列印的 <b><a href='http://en.wikipedia.org/wiki/"
 "Ascii'>ASCII</a></b> 字元。</b>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:89
 #, kde-format
 msgid "Creation date and time"
 msgstr "建立日期和時間"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:90
 #, kde-format
 msgid "Creation sub-second"
 msgstr "建立次秒"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:101
 #, kde-format
 msgid "Sync XMP creation date"
 msgstr "同步 XMP 建立日期"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:102
 #, kde-format
 msgid "Sync IPTC creation date"
 msgstr "同步 IPTC 建立日期"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:106
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
 #, kde-format
 msgid "Set creation date to today"
 msgstr "將建立日期設為今天"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:113
 #, kde-format
 msgid ""
 "Set here the date and time of image creation. In this standard it is the "
 "date and time the file was changed."
 msgstr "在這裡設定影像建立的日期和時間。使用這項標準會改變日期和時間檔案。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:115
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time of image creation."
 msgstr "在這裡設定影像建立日期和時間的秒數分數。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:122
 #, kde-format
 msgid "Original date and time"
 msgstr "原始日期和時間"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
 #, kde-format
 msgid "Original sub-second"
 msgstr "原始次秒"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:136
 #, kde-format
 msgid "Set original date to today"
 msgstr "將原始日期設為今天"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:138
 #, kde-format
 msgid ""
 "Set here the date and time when the original image data was generated. For a "
@@ -12407,31 +12407,31 @@ msgstr ""
 "在這裡設定原始影像生成時的日期和時間。數位靜態相機的日期和時間是圖片拍攝時所"
 "記錄。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:141
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the original "
 "image data was generated."
 msgstr "在這裡設定原始影像生成的日期和時間的秒數分數。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:148
 #, kde-format
 msgid "Digitization date and time"
 msgstr "數位化日期和時間"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:168
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:149
 #, kde-format
 msgid "Digitization sub-second"
 msgstr "數位化次秒"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:162
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
 #, kde-format
 msgid "Set digitization date to today"
 msgstr "將數位化日期設為今天"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:164
 #, kde-format
 msgid ""
 "Set here the date and time when the image was stored as digital data. If, "
@@ -12442,75 +12442,75 @@ msgstr ""
 "在這裡設定影像儲存為數位資料時的日期和時間。例如用數位靜態相機擷取影像的同時"
 "記錄檔案，那麼原始和數位化日期、時間就會相同。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:169
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the image was "
 "stored as digital data."
 msgstr "在這裡設定影像儲存為數位資料的日期和時間的秒數分數。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:96
 #, kde-format
 msgid "Device manufacturer (*):"
 msgstr "裝置製造廠商 (*)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:100
 #, fuzzy, kde-format
 #| msgid "Device manufacturer (*):"
 msgid "Set here the manufacturer name"
 msgstr "裝置製造廠商 (*)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:101
 #, kde-format
 msgid ""
 "Set here the manufacturer of image input equipment used to take the picture. "
 "This field is limited to ASCII characters."
 msgstr "在這裡設定影像輸入設備的製造廠商。這個欄位限制為 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:106
 #, kde-format
 msgid "Device model (*):"
 msgstr "裝置型號 (*)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:110
 #, fuzzy, kde-format
 #| msgid "Set here the contact e-mail."
 msgid "Set here the model name"
 msgstr "在這裡設定連絡的電子信箱。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:111
 #, kde-format
 msgid ""
 "Set here the model of image input equipment used to take the picture. This "
 "field is limited to ASCII characters."
 msgstr "在這裡設定影像輸入設備的型號。這個欄位限制為 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:116
 #, kde-format
 msgid "Device type:"
 msgstr "裝置類型："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:118
 #, kde-format
 msgid "Film scanner"
 msgstr "底片掃描器"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:119
 #, kde-format
 msgid "Reflection print scanner"
 msgstr "反射列印掃描器"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:120
 #, kde-format
 msgid "Digital still camera"
 msgstr "數位靜態相機"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:121
 #, kde-format
 msgid "Select here the image input equipment type used to take the picture."
 msgstr "在這裡選擇影像輸入設備的類型。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:151
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:124
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Warning: EXIF <b><a href='http://en.wikipedia.org/wiki/"
@@ -12526,107 +12526,107 @@ msgstr ""
 "Exchangeable_image_file_format#MakerNote_data'>Makernotes</a></b> 會無法讀"
 "取。</b>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:163
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:136
 #, kde-format
 msgid "Exposure time (seconds):"
 msgstr "曝光時間 (秒)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:149
 #, kde-format
 msgid ""
 "Set on this option to set the exposure time of picture, given in seconds."
 msgstr "設定這個選項以設定圖片的曝光時間，單位為秒。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:154
 #, kde-format
 msgid "Exposure program:"
 msgstr "曝光程式："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:156
 #, kde-format
 msgctxt "exposure program"
 msgid "Not defined"
 msgstr "未定義"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:157
 #, kde-format
 msgctxt "exposure program"
 msgid "Manual"
 msgstr "手動"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:158
 #, kde-format
 msgctxt "exposure program"
 msgid "Auto"
 msgstr "自動"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:159
 #, kde-format
 msgctxt "exposure program"
 msgid "Aperture priority"
 msgstr "光圈先決"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:160
 #, kde-format
 msgctxt "exposure program"
 msgid "Shutter priority"
 msgstr "快門先決"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:161
 #, kde-format
 msgctxt "exposure program"
 msgid "Creative program"
 msgstr "創意程式"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:162
 #, kde-format
 msgctxt "exposure program"
 msgid "Action program"
 msgstr "動作程式"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:163
 #, kde-format
 msgctxt "exposure program"
 msgid "Portrait mode"
 msgstr "縱向模式"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:164
 #, kde-format
 msgctxt "exposure program"
 msgid "Landscape mode"
 msgstr "橫向模式"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:165
 #, kde-format
 msgid ""
 "Select here the program used by the camera to set exposure when the picture "
 "was taken."
 msgstr "在這裡選擇圖片拍攝時相機設定曝光使用的程式。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:170
 #, kde-format
 msgid "Exposure mode:"
 msgstr "曝光模式："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:172
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto"
 msgstr "自動"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:173
 #, kde-format
 msgctxt "exposure mode"
 msgid "Manual"
 msgstr "手動"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:174
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto bracket"
 msgstr "自動包圍"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:175
 #, kde-format
 msgid ""
 "Select here the mode used by the camera to set exposure when the picture was "
@@ -12636,170 +12636,170 @@ msgstr ""
 "在這裡選擇圖片拍攝時相機設定曝光使用的模式。在自動包圍模式，相機會用不同曝光"
 "設定值拍攝一系列同場景的對照圖。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:183
 #, kde-format
 msgid "Exposure bias (APEX):"
 msgstr "曝光補償 (APEX)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:188
 #, kde-format
 msgid ""
 "Set here the exposure bias value (in APEX units) used by camera to take the "
 "picture."
 msgstr "在這裡設定圖片拍攝時相機使用的曝光補償 (單位為 APEX)。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:222
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:195
 #, kde-format
 msgid "Metering mode:"
 msgstr "測光模式："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:197
 #, kde-format
 msgctxt "metering mode"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:198
 #, kde-format
 msgctxt "metering mode"
 msgid "Average"
 msgstr "平均測光"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:199
 #, kde-format
 msgctxt "metering mode"
 msgid "Center weighted average"
 msgstr "中央重點平均測光"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:200
 #, kde-format
 msgctxt "metering mode"
 msgid "Spot"
 msgstr "點測光"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:201
 #, kde-format
 msgctxt "metering mode"
 msgid "Multi-spot"
 msgstr "多點測光"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:202
 #, kde-format
 msgctxt "metering mode"
 msgid "Multi-segment"
 msgstr "矩陣測光"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:203
 #, kde-format
 msgctxt "metering mode"
 msgid "Partial"
 msgstr "局部測光"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:204
 #, kde-format
 msgctxt "metering mode"
 msgid "Other"
 msgstr "其他"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:205
 #, kde-format
 msgid ""
 "Select here the metering mode used by the camera to set exposure when the "
 "picture was taken."
 msgstr "在這裡選擇圖片拍攝時相機設定曝光使用的測光模式。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:237
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
 #, kde-format
 msgid "Sensitivity (ISO):"
 msgstr "靈敏度 (ISO):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:275
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:248
 #, kde-format
 msgid "Select here the ISO Speed of the camera which took the picture."
 msgstr "在這裡選擇圖片拍攝時相機的 ISO 速度。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:280
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:253
 #, kde-format
 msgid "Sensing method:"
 msgstr "連續彩色線性傳感器："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:282
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:255
 #, kde-format
 msgid "Not defined"
 msgstr "未定義"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:283
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:256
 #, kde-format
 msgid "One-chip color area"
 msgstr "單晶片彩色區域"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:284
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:257
 #, kde-format
 msgid "Two-chip color area"
 msgstr "雙晶片彩色區域"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:285
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:258
 #, kde-format
 msgid "Three-chip color area"
 msgstr "三晶片彩色區域"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:286
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:259
 #, kde-format
 msgid "Color sequential area"
 msgstr "色序區域"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:287
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:260
 #, kde-format
 msgid "Trilinear sensor"
 msgstr "三線性感測器"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:288
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:261
 #, kde-format
 msgid "Color sequential linear"
 msgstr "色序線性"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:289
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:262
 #, kde-format
 msgid ""
 "Select here the image sensor type used by the camera to take the picture."
 msgstr "在這裡選擇圖片拍攝時相機使用的影像感測器。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:294
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:267
 #, fuzzy, kde-format
 #| msgid "Scene capture type:"
 msgctxt "@option"
 msgid "Scene capture type:"
 msgstr "場景拍攝模式："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:296
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:269
 #, fuzzy, kde-format
 #| msgid "Standard"
 msgctxt "@item: scene type"
 msgid "Standard"
 msgstr "標準"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:297
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:270
 #, fuzzy, kde-format
 #| msgid "Landscape"
 msgctxt "@item: scene type"
 msgid "Landscape"
 msgstr "橫向"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:298
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:271
 #, fuzzy, kde-format
 #| msgid "Portrait"
 msgctxt "@item: scene type"
 msgid "Portrait"
 msgstr "縱向"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:299
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:272
 #, fuzzy, kde-format
 #| msgid "Night scene"
 msgctxt "@item: scene type"
 msgid "Night scene"
 msgstr "夜景"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:300
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:273
 #, fuzzy, kde-format
 #| msgid ""
 #| "Select here the type of scene used by the camera to take the picture."
@@ -12807,42 +12807,42 @@ msgctxt "@info"
 msgid "Select here the type of scene used by the camera to take the picture."
 msgstr "在這裡選擇圖片拍攝時相機使用的場景類型。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:305
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:278
 #, fuzzy, kde-format
 #| msgid "Subject distance type:"
 msgctxt "@option"
 msgid "Subject distance type:"
 msgstr "拍攝主體距離類型："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:307
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:280
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@item: subject distance"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:308
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:281
 #, fuzzy, kde-format
 #| msgid "Macro"
 msgctxt "@item: subject distance"
 msgid "Macro"
 msgstr "微距攝影"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:309
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:282
 #, fuzzy, kde-format
 #| msgid "Close view"
 msgctxt "@item: subject distance"
 msgid "Close view"
 msgstr "特寫攝影"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:310
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:283
 #, fuzzy, kde-format
 #| msgid "Distant view"
 msgctxt "@item: subject distance"
 msgid "Distant view"
 msgstr "遠景攝影"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:311
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:284
 #, fuzzy, kde-format
 #| msgid ""
 #| "Select here the type of distance between the subject and the image input "
@@ -12853,39 +12853,39 @@ msgid ""
 "equipment."
 msgstr "在這裡選擇影像輸入設備和拍攝主體之間的距離類型。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:83
 #, kde-format
 msgctxt "@item: image caption"
 msgid "Caption"
 msgstr "標題描述"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:87
 #, kde-format
 msgctxt "@item: date properties"
 msgid "Date & Time"
 msgstr "日期與時間"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:91
 #, kde-format
 msgctxt "@item: lens properties"
 msgid "Lens"
 msgstr "鏡頭"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:95
 #, fuzzy, kde-format
 #| msgid "Device"
 msgctxt "@item: device properties"
 msgid "Device"
 msgstr "裝置"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:99
 #, fuzzy, kde-format
 #| msgid "Light"
 msgctxt "@item; light properties"
 msgid "Light"
 msgstr "燈光"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:103
 #, fuzzy, kde-format
 #| msgctxt "Picture adjustments"
 #| msgid "Adjustments"
@@ -12893,51 +12893,51 @@ msgctxt "@item: picture adjustments"
 msgid "Adjustments"
 msgstr "調整"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid "Caption Information"
 msgstr "標題描述資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
 #, fuzzy, kde-format
 #| msgid "Russian Federation"
 msgctxt "@title"
 msgid "Record technical descriptions"
 msgstr "俄羅斯"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:171
 #, kde-format
 msgctxt "@title"
 msgid "Date and Time Information"
 msgstr "日期與時間資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:172
 #, fuzzy, kde-format
 #| msgid "Camera File Properties"
 msgctxt "@title"
 msgid "Record camera time-stamp properties"
 msgstr "相機檔案屬性"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid "Lens Settings"
 msgstr "鏡頭設定"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:177
 #, kde-format
 msgctxt "@title"
 msgid "Record lens details used with camera"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Capture Device Settings"
 msgstr "擷取裝置設定"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:182
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Window Settings<br/><i>Customize the image editor "
@@ -12946,14 +12946,14 @@ msgctxt "@title"
 msgid "Record shot conditions used by camera"
 msgstr "<qt>影像編輯器視窗設定值<br/><i>自訂影像編輯器視窗</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:186
 #, fuzzy, kde-format
 #| msgid "Light Source Information"
 msgctxt "@title"
 msgid "Light Source Information"
 msgstr "光源資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Subject Information<br/><i>Use this panel to record subject "
@@ -12962,37 +12962,37 @@ msgctxt "@title"
 msgid "Record ambient condition captured by camera"
 msgstr "<qt>主題資訊<br/><i>使用這個面板來記錄此影像的主題資訊</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:208
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:191
 #, fuzzy, kde-format
 #| msgid "Pictures Adjustments"
 msgctxt "@title"
 msgid "Pictures Adjustments"
 msgstr "圖片調整"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid "Record technical details used by camera"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:132
 #, kde-format
 msgid "Focal length (mm):"
 msgstr "焦距 (mm)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:138
 #, kde-format
 msgid ""
 "Set here the lens focal length in millimeters used by camera to take the "
 "picture."
 msgstr "在這裡設定圖片拍攝時相機使用的焦距，單位為公釐。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
 #, kde-format
 msgid "Focal length in 35mm film (mm):"
 msgstr "35 mm 底片的焦距 (mm)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:149
 #, kde-format
 msgid ""
 "Set here equivalent focal length assuming a 35mm film camera, in mm. A value "
@@ -13000,301 +13000,301 @@ msgid ""
 msgstr ""
 "在這裡設定假設為 35 mm 底片相機的等效焦距，單位為公釐。數值為 0 未知的焦距。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:155
 #, kde-format
 msgid "Digital zoom ratio:"
 msgstr "數位變焦比率："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:161
 #, kde-format
 msgid "Set here the digital zoom ratio used by camera to take the picture."
 msgstr "在這裡設定圖片拍攝時相機使用的數位變焦比率。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:166
 #, kde-format
 msgid "Lens aperture (f-number):"
 msgstr "鏡頭光圈 (光圈值)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:169
 #, kde-format
 msgid "Select here the lens aperture used by camera to take the picture."
 msgstr "在這裡選擇圖片拍攝時相機使用的鏡頭光圈。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:174
 #, kde-format
 msgid "Max. lens aperture (f-number):"
 msgstr "最大鏡頭光圈 (光圈數)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
 #, kde-format
 msgid ""
 "Select here the smallest aperture of the lens used by camera to take the "
 "picture."
 msgstr "在這裡選擇圖片拍攝時相機使用的鏡頭最小光圈。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:77
 #, kde-format
 msgid "No flash"
 msgstr "無閃光"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:78
 #, kde-format
 msgid "Fired"
 msgstr "開啟"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:79
 #, kde-format
 msgid "Fired, no strobe return light"
 msgstr "開啟，無閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:80
 #, kde-format
 msgid "Fired, strobe return light"
 msgstr "開啟，閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:81
 #, kde-format
 msgid "Yes, compulsory"
 msgstr "是，強制"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:82
 #, kde-format
 msgid "Yes, compulsory, no return light"
 msgstr "是，強制，無閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:83
 #, kde-format
 msgid "Yes, compulsory, return light"
 msgstr "是，強制，閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:84
 #, kde-format
 msgid "No, compulsory"
 msgstr "否，強制"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:85
 #, kde-format
 msgid "No, auto"
 msgstr "否，自動"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:86
 #, kde-format
 msgid "Yes, auto"
 msgstr "是，自動"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:87
 #, kde-format
 msgid "Yes, auto, no return light"
 msgstr "是，自動，無閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:88
 #, kde-format
 msgid "Yes, auto, return light"
 msgstr "是，自動，閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:89
 #, kde-format
 msgid "No flash function"
 msgstr "無閃光功能"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
 #, kde-format
 msgid "Yes, red-eye"
 msgstr "是，紅眼"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:91
 #, kde-format
 msgid "Yes, red-eye, no return light"
 msgstr "是，紅眼，無閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
 #, kde-format
 msgid "Yes, red-eye, return light"
 msgstr "是，紅眼，閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:93
 #, kde-format
 msgid "Yes, compulsory, red-eye"
 msgstr "是，強制，紅眼"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:94
 #, kde-format
 msgid "Yes, compulsory, red-eye, no return light"
 msgstr "是，強制，紅眼，無閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:95
 #, kde-format
 msgid "Yes, compulsory, red-eye, return light"
 msgstr "是，強制，紅眼，閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:96
 #, kde-format
 msgid "Yes, auto, red-eye"
 msgstr "是，自動，紅眼"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:97
 #, kde-format
 msgid "Yes, auto, red-eye, no return light"
 msgstr "是，自動，紅眼，無閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:98
 #, kde-format
 msgid "Yes, auto, red-eye, return light"
 msgstr "是，自動，紅眼，閃光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:128
 #, kde-format
 msgid "Light source:"
 msgstr "光源："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:130
 #, kde-format
 msgctxt "light source"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:131
 #, kde-format
 msgctxt "light source"
 msgid "Daylight"
 msgstr "晝光"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:132
 #, kde-format
 msgctxt "light source"
 msgid "Fluorescent"
 msgstr "螢光燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:133
 #, kde-format
 msgctxt "light source"
 msgid "Tungsten (incandescent light)"
 msgstr "鎢絲燈 (白熾燈)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:134
 #, kde-format
 msgctxt "light source"
 msgid "Flash"
 msgstr "閃光"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:135
 #, kde-format
 msgctxt "light source"
 msgid "Fine weather"
 msgstr "晴天"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:136
 #, kde-format
 msgctxt "light source"
 msgid "Cloudy weather"
 msgstr "陰天"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:137
 #, kde-format
 msgctxt "light source"
 msgid "Shade"
 msgstr "陰暗"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:138
 #, kde-format
 msgctxt "light source"
 msgid "Daylight fluorescent (D 5700 - 7100K)"
 msgstr "晝光螢光燈 (D 5700 - 7100K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
 #, kde-format
 msgctxt "light source"
 msgid "Day white fluorescent (N 4600 - 5400K)"
 msgstr "白晝螢光燈 (N 4600 - 5400K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:151
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:140
 #, kde-format
 msgctxt "light source"
 msgid "Cool white fluorescent (W 3900 - 4500K)"
 msgstr "亮白螢光燈 (W 3900 - 4500K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:152
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
 #, kde-format
 msgctxt "light source"
 msgid "White fluorescent (WW 3200 - 3700K)"
 msgstr "白螢光燈 (WW 3200 - 3700K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:153
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
 #, kde-format
 msgctxt "light source"
 msgid "Standard light A"
 msgstr "標準光線 A"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
 #, kde-format
 msgctxt "light source"
 msgid "Standard light B"
 msgstr "標準光線 B"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:144
 #, kde-format
 msgctxt "light source"
 msgid "Standard light C"
 msgstr "標準光線 C"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:145
 #, kde-format
 msgctxt "light source"
 msgid "D55"
 msgstr "D55"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:146
 #, kde-format
 msgctxt "light source"
 msgid "D65"
 msgstr "D65"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:147
 #, kde-format
 msgctxt "light source"
 msgid "D75"
 msgstr "D75"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:159
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:148
 #, kde-format
 msgctxt "light source"
 msgid "D50"
 msgstr "D50"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:149
 #, kde-format
 msgctxt "light source"
 msgid "ISO studio tungsten"
 msgstr "ISO 攝影棚燈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:161
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:150
 #, kde-format
 msgctxt "light source"
 msgid "Other light source"
 msgstr "其他光源"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:151
 #, kde-format
 msgid "Select here the kind of light source used to take the picture."
 msgstr "在這裡選擇圖片拍攝時使用的光源種類。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:156
 #, kde-format
 msgid "Flash mode:"
 msgstr "閃光模式："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:173
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:164
 #, kde-format
 msgid ""
 "Select here the flash program mode used by the camera to take the picture."
 msgstr "在這裡選擇圖片拍攝時相機使用的閃光程式模式。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:178
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:169
 #, kde-format
 msgid "Flash energy (BCPS):"
 msgstr "閃光能量 (BCPS)："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:175
 #, kde-format
 msgid ""
 "Set here the flash energy used to take the picture in BCPS units. Beam "
@@ -13306,26 +13306,26 @@ msgstr ""
 "Seconds) 是當光源藉由反射鏡或透鏡集中成一束時所測量到的有效光強度。這項數值是"
 "一秒鐘期間內的有效光強度。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:183
 #, kde-format
 msgid "White balance:"
 msgstr "白平衡："
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:185
 #, fuzzy, kde-format
 #| msgid "Auto"
 msgctxt "@item: white balance"
 msgid "Auto"
 msgstr "自動"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:186
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgctxt "@item: white balance"
 msgid "Manual"
 msgstr "手動"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
 #| "Select here the white balance mode set by the camera when the picture was "
@@ -13336,40 +13336,40 @@ msgid ""
 "taken."
 msgstr "在這裡選擇圖片拍攝時相機使用的白平衡模式設定。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:70
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:78
 #, kde-format
 msgid "Identify subject of content (3 chars max):"
 msgstr "內容的識別主題 (最多 3 個字元)："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:74
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:82
 #, fuzzy, kde-format
 #| msgid "Set here the contact country."
 msgid "Set here the category ID"
 msgstr "在這裡設定連絡的國家。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:75
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:83
 #, kde-format
 msgid ""
 "Set here the category of content. This field is limited to 3 characters."
 msgstr "在這裡設定內容的類別。這個欄位限制為 3 個字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:86
 #, kde-format
 msgid "Supplemental categories:"
 msgstr "參考分類："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:83
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:90
 #, fuzzy, kde-format
 #| msgid "Set here the contact city."
 msgid "Set here the extra category"
 msgstr "在這裡設定連絡的城市。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter here a new supplemental category of content. This field is limited "
@@ -13379,16 +13379,16 @@ msgid ""
 "32 characters."
 msgstr "在這裡輸入內容的參考分類。這個欄位限制為 32 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:100
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:96
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:82
 #, kde-format
 msgid "&Add"
 msgstr "新增(&A)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:101
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
 #: core/libs/dialogs/deletedialog.cpp:574
@@ -13396,8 +13396,8 @@ msgstr "新增(&A)"
 msgid "&Delete"
 msgstr "刪除(&D)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:102
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:98
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:84
 #: core/utilities/setup/album/setupcategory.cpp:93
@@ -13405,11 +13405,11 @@ msgstr "刪除(&D)"
 msgid "&Replace"
 msgstr "取代(&R)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:111
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:109
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:123
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:276
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:89
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:235
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:249
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:110
@@ -13431,19 +13431,19 @@ msgstr ""
 "<b><a href='http://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> 字元並且有限制"
 "字串大小。使用內容說明來取得詳細資訊。</b>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:68
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
 #, kde-format
 msgid "Headline:"
 msgstr "大標題："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:71
 #, fuzzy, kde-format
 #| msgid "Enter here the content synopsis."
 msgid "Set here the content synopsis"
 msgstr "在這裡輸入內容的簡單介紹。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:72
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter here the content synopsis. This field is limited to 256 ASCII "
@@ -13452,26 +13452,26 @@ msgid ""
 "Enter here the content synopsis. This field is limited to 256 characters."
 msgstr "在這裡輸入內容簡介。這個欄位限制為 256 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
 #, kde-format
 msgctxt "content description"
 msgid "Caption:"
 msgstr "標題描述："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:85
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:95
 #, fuzzy, kde-format
 #| msgid "Sync EXIF Comment"
 msgid "Sync Exif Comment"
 msgstr "同步 EXIF 註解"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:87
 #, fuzzy, kde-format
 #| msgid "Enter the content description."
 msgid "Set here the content description"
 msgstr "在這裡輸入內容描述。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the content description. This field is limited to 2000 ASCII "
@@ -13480,18 +13480,18 @@ msgid ""
 "Enter the content description. This field is limited to 2000 characters."
 msgstr "輸入內容描述。這個欄位限制為 2000 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:93
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
 #, kde-format
 msgid "Caption Writer:"
 msgstr "標題作者："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
 #, kde-format
 msgid "Enter the name of the caption author."
 msgstr "輸入標題作者的姓名。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:67
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
 #: core/libs/template/templatepanel.cpp:128
 #: core/libs/template/templateviewer.cpp:108
@@ -13499,13 +13499,13 @@ msgstr "輸入標題作者的姓名。"
 msgid "Copyright:"
 msgstr "著作權："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:70
 #, fuzzy, kde-format
 #| msgid "Enter the necessary copyright notice."
 msgid "Set here the copyright notice."
 msgstr "輸入必要的著作權聲明。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:71
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the necessary copyright notice. This field is limited to 128 "
@@ -13515,29 +13515,29 @@ msgid ""
 "characters."
 msgstr "在這裡設定必要的著作權聲明。這個欄位限制為 128 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:76
 #, kde-format
 msgid "Byline:"
 msgstr "姓名標示："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:77
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
 #, kde-format
 msgid "Set here the name of content creator."
 msgstr "在這裡設定內容創作者的姓名。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:82
 #, kde-format
 msgid "Byline Title:"
 msgstr "職稱標示："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:83
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
 #, kde-format
 msgid "Set here the title of content creator."
 msgstr "在這裡設定內容創作者的職稱。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
 #: core/libs/template/templatepanel.cpp:114
 #: core/libs/template/templateviewer.cpp:106
@@ -13545,13 +13545,13 @@ msgstr "在這裡設定內容創作者的職稱。"
 msgid "Credit:"
 msgstr "授權："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:91
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:194
 #, kde-format
 msgid "Set here the content provider."
 msgstr "在這裡設定內容提供者。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:92
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the content provider. This field is limited to 32 ASCII "
@@ -13559,20 +13559,20 @@ msgstr "在這裡設定內容提供者。"
 msgid "Set here the content provider. This field is limited to 32 characters."
 msgstr "在這裡設定提供者。這個欄位限制為 32 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:198
 #, kde-format
 msgctxt "original owner of content"
 msgid "Source:"
 msgstr "來源："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:100
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content owner."
 msgstr "在這裡設定內容提供者。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:101
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the original owner of content. This field is limited to 32 ASCII "
@@ -13582,80 +13582,80 @@ msgid ""
 "characters."
 msgstr "在這裡設定內容的原擁有者。這個欄位限制為 32 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:106
 #, kde-format
 msgid "Contact:"
 msgstr "連絡："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:107
 #, fuzzy, kde-format
 #| msgid "Set here the person or organisation to contact."
 msgid "Set here the person or organization to contact."
 msgstr "在這裡設定個人或機構的連絡資料。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:92
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@item: iptc"
 msgid "Content"
 msgstr "連絡資料"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:96
 #, fuzzy, kde-format
 #| msgid "Origin"
 msgctxt "@item: iptc"
 msgid "Origin"
 msgstr "來源"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:100
 #, fuzzy, kde-format
 #| msgid "Credits"
 msgctxt "@item: iptc"
 msgid "Credits"
 msgstr "授權"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:104
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgctxt "@item: iptc"
 msgid "Subjects"
 msgstr "主題"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:108
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@item: iptc"
 msgid "Keywords"
 msgstr "關鍵字"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@item: iptc"
 msgid "Categories"
 msgstr "類別"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:116
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item: iptc"
 msgid "Status"
 msgstr "狀態"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:120
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Properties"
 msgstr "屬性"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:124
 #, fuzzy, kde-format
 #| msgid "Envelope"
 msgctxt "@item: iptc"
 msgid "Envelope"
 msgstr "封裝"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:192
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
 #, fuzzy, kde-format
 #| msgid "Components Information"
@@ -13663,7 +13663,7 @@ msgctxt "@title"
 msgid "Content Information"
 msgstr "組成元件資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
 #, fuzzy, kde-format
 #| msgid ""
@@ -13673,7 +13673,7 @@ msgctxt "@title"
 msgid "Describe the visual content of the item"
 msgstr "<qt>內容資訊<br/><i>使用這個面板來描述此影像的視覺內容</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:197
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
 #, fuzzy, kde-format
 #| msgid "Crop Information"
@@ -13681,7 +13681,7 @@ msgctxt "@title"
 msgid "Origin Information"
 msgstr "剪裁資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
 #, fuzzy, kde-format
 #| msgid ""
@@ -13691,7 +13691,7 @@ msgctxt "@title"
 msgid "Formal descriptive information about the item"
 msgstr "<qt>來源資訊<br/><i>使用這個面板來取得此影像正式的描述資訊</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:202
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Crop Information"
@@ -13699,7 +13699,7 @@ msgctxt "@title"
 msgid "Credit Information"
 msgstr "剪裁資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
 #, fuzzy, kde-format
 #| msgid ""
@@ -13709,7 +13709,7 @@ msgctxt "@title"
 msgid "Record copyright information about the item"
 msgstr "<qt>授權資訊<br/><i>使用這個面板來記錄此影像的著作權資訊</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:207
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
@@ -13717,7 +13717,7 @@ msgctxt "@title"
 msgid "Subject Information"
 msgstr "中繼資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
 #, fuzzy, kde-format
 #| msgid ""
@@ -13727,7 +13727,7 @@ msgctxt "@title"
 msgid "Record subject information about the item"
 msgstr "<qt>主題資訊<br/><i>使用這個面板來記錄此影像的主題資訊</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:235
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:212
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
 #, fuzzy, kde-format
 #| msgid "Import Information"
@@ -13735,7 +13735,7 @@ msgctxt "@title"
 msgid "Keyword Information"
 msgstr "匯入資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:236
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:234
 #, fuzzy, kde-format
 #| msgid ""
@@ -13745,7 +13745,7 @@ msgctxt "@title"
 msgid "Record keywords relevant to the item"
 msgstr "<qt>關鍵字資訊<br/><i>使用這個面板來記錄與此影像相關的關鍵字</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:240
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:217
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:238
 #, fuzzy, kde-format
 #| msgid "Caption Information"
@@ -13753,7 +13753,7 @@ msgctxt "@title"
 msgid "Category Information"
 msgstr "標題資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:241
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:239
 #, fuzzy, kde-format
 #| msgid ""
@@ -13763,7 +13763,7 @@ msgctxt "@title"
 msgid "Record categories relevant to the item"
 msgstr "<qt>類別資訊<br/><i>使用這個面板來記錄與此影像相關的類別</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:245
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:222
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
@@ -13771,7 +13771,7 @@ msgctxt "@title"
 msgid "Status Information"
 msgstr "中繼資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:246
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:244
 #, fuzzy, kde-format
 #| msgid "Video Information"
@@ -13779,7 +13779,7 @@ msgctxt "@title"
 msgid "Record workflow information"
 msgstr "影像資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:227
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:248
 #, fuzzy, kde-format
 #| msgid "Item Properties"
@@ -13787,7 +13787,7 @@ msgctxt "@title"
 msgid "Status Properties"
 msgstr "項目屬性"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:251
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:249
 #, fuzzy, kde-format
 #| msgid "Add file properties"
@@ -13795,217 +13795,217 @@ msgctxt "@title"
 msgid "Record workflow properties"
 msgstr "加入檔案屬性"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:255
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:232
 #, fuzzy, kde-format
 #| msgid "Crop Information"
 msgctxt "@title"
 msgid "Envelope Information"
 msgstr "剪裁資訊"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:256
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:233
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@title"
 msgid "Record editorial details"
 msgstr "視訊編碼器"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:54
 #, kde-format
 msgid "No ObjectData"
 msgstr "無物件資料"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:55
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 1)"
 msgstr "IPTC-NAA 數位新聞照片參數記錄 (版本 1)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:56
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 2)"
 msgstr "IPTC-NAA 數位新聞照片參數記錄 (版本 2)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:57
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 3)"
 msgstr "IPTC-NAA 數位新聞照片參數記錄 (版本 3)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:58
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 4)"
 msgstr "IPTC-NAA 數位新聞照片參數記錄 (版本 4)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:59
 #, kde-format
 msgid "IPTC7901 Recommended Message Format"
 msgstr "IPTC7901 推薦訊息格式"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:60
 #, kde-format
 msgid "Tagged Image File Format (version 5.0)"
 msgstr "編籤圖像檔案格式 (版本 5.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:61
 #, kde-format
 msgid "Tagged Image File Format (version 6.0)"
 msgstr "編籤圖像檔案格式 (版本 6.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:62
 #, kde-format
 msgid "Illustrator"
 msgstr "Illustrator"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:63
 #, kde-format
 msgid "AppleSingle"
 msgstr "AppleSingle"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:64
 #, kde-format
 msgid "NAA 89-3 (ANPA 1312)"
 msgstr "NAA 89-3 (ANPA 1312)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:65
 #, kde-format
 msgid "MacBinary II"
 msgstr "MacBinary II"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:66
 #, kde-format
 msgid "IPTC Unstructured Character Oriented File Format"
 msgstr "IPTC 非結構化字元導向檔案格式"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:67
 #, kde-format
 msgid "United Press International ANPA 1312 variant"
 msgstr "合眾國際社 ANPA 1312 變異類型"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:68
 #, kde-format
 msgid "United Press International Down-Load Message"
 msgstr "合眾國際社下載訊息"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:69
 #, kde-format
 msgid "JPEG File Interchange"
 msgstr "JPEG 檔案交換格式"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:70
 #, kde-format
 msgid "Photo-CD Image-Pac"
 msgstr "Photo-CD Image-Pac"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:71
 #, kde-format
 msgid "Microsoft Bit Mapped Graphics File [*.BMP]"
 msgstr "微軟位元對應圖形檔 [*.BMP]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:72
 #, kde-format
 msgid "Digital Audio File [*.WAV]"
 msgstr "數位音訊檔 [*.WAV]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:73
 #, kde-format
 msgid "Audio plus Moving Video [*.AVI]"
 msgstr "音訊加上移動視訊 [*.AVI]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:74
 #, kde-format
 msgid "PC DOS/Windows Executable Files [*.COM][*.EXE]"
 msgstr "PC DOS/Windows 可執行檔 [*.COM][*.EXE]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:75
 #, kde-format
 msgid "Compressed Binary File [*.ZIP]"
 msgstr "壓縮的二進位檔 [*.ZIP]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
 #, kde-format
 msgid "Audio Interchange File Format AIFF"
 msgstr "音訊交換檔案格式 AIFF"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:77
 #, kde-format
 msgid "RIFF Wave (Microsoft Corporation)"
 msgstr "RIFF Wave (微軟公司)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:78
 #, kde-format
 msgid "Freehand (version 3.1)"
 msgstr "Freehand (版本 3.1)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:79
 #, kde-format
 msgid "Freehand (version 4.0)"
 msgstr "Freehand (版本 4.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:80
 #, kde-format
 msgid "Freehand (version 5.0)"
 msgstr "Freehand (版本 5.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
 #, kde-format
 msgid "Freehand (version 5.5)"
 msgstr "Freehand (版本 5.5)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
 #, kde-format
 msgid "Hypertext Markup Language \"HTML\""
 msgstr "超文件標示語言 「HTML」"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
 #, kde-format
 msgid "MPEG 2 Audio Layer 2 (Musicom), ISO/IEC"
 msgstr "MPEG 2 Audio Layer 2 (Musicom), ISO/IEC"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
 #, kde-format
 msgid "MPEG 2 Audio Layer 3, ISO/IEC"
 msgstr "MPEG 2 Audio Layer 3, ISO/IEC"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:85
 #, kde-format
 msgid "Portable Document File [*.PDF] Adobe"
 msgstr "可攜式文件檔案 [*.PDF] Adobe"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:86
 #, kde-format
 msgid "News Industry Text Format"
 msgstr "新聞業文件格式 (NITF)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:87
 #, kde-format
 msgid "Tape Archive [*.TAR]"
 msgstr "磁帶存檔 [*.TAR]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:88
 #, kde-format
 msgid "Tidningarnas Telegrambyra NITF version (TTNITF DTD)"
 msgstr "瑞典通訊社 NITF 版本 (TTNITF DTD)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
 #, kde-format
 msgid "Ritzaus Bureau NITF version (RBNITF DTD)"
 msgstr "丹麥通訊社 NITF 版本 (RBNITF DTD)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
 #, kde-format
 msgid "Corel Draw [*.CDR]"
 msgstr "Corel Draw [*.CDR]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:147
 #, kde-format
 msgid "Destination:"
 msgstr "目的地："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:153
 #, fuzzy, kde-format
 #| msgid "Select here the envelope priority."
 msgid "Set here the envelope destination"
 msgstr "在這裡選擇封裝優先順序。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:154
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the envelope destination. This field is limited to 1024 ASCII "
@@ -14014,12 +14014,12 @@ msgid ""
 "Enter the envelope destination. This field is limited to 1024 characters."
 msgstr "輸入封裝目的地。這個欄位限制為 1024 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:159
 #, kde-format
 msgid "U.N.O ID:"
 msgstr "U.N.O ID："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:163
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Unique Name of Object identifier. This field is limited to "
@@ -14027,7 +14027,7 @@ msgstr "U.N.O ID："
 msgid "Set here the Unique Name of Object identifier"
 msgstr "在這裡設定物件識別碼的唯一名稱。這個欄位限制為 80 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Unique Name of Object identifier. This field is limited to "
@@ -14037,18 +14037,18 @@ msgid ""
 "characters."
 msgstr "在這裡設定物件識別碼的唯一名稱。這個欄位限制為 80 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
 #, kde-format
 msgid "Product ID:"
 msgstr "產品 ID："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:173
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the product identifier"
 msgstr "在這裡設定內容提供者。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:174
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the product identifier. This field is limited to 32 ASCII "
@@ -14057,18 +14057,18 @@ msgid ""
 "Set here the product identifier. This field is limited to 32 characters."
 msgstr "在這裡設定產品識別碼。這個欄位限制為 32 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:179
 #, kde-format
 msgid "Service ID:"
 msgstr "服務 ID："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:183
 #, fuzzy, kde-format
 #| msgid "Set here the new image width in pixels."
 msgid "Set here the service identifier"
 msgstr "在這裡設定新影像的寬度。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:184
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the service identifier. This field is limited to 10 ASCII "
@@ -14077,18 +14077,18 @@ msgid ""
 "Set here the service identifier. This field is limited to 10 characters."
 msgstr "在這裡設定服務識別碼。這個欄位限制為 10 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:189
 #, kde-format
 msgid "Envelope ID:"
 msgstr "封裝 ID："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:193
 #, fuzzy, kde-format
 #| msgid "Select here the envelope priority."
 msgid "Set here the envelope identifier"
 msgstr "在這裡選擇封裝優先順序。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:194
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the envelope identifier. This field is limited to 8 ASCII "
@@ -14097,103 +14097,103 @@ msgid ""
 "Set here the envelope identifier. This field is limited to 8 characters."
 msgstr "在這裡設定封裝識別碼。這個欄位限制為 8 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:199
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #, kde-format
 msgid "Priority:"
 msgstr "優先順序："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "0: None"
 msgstr "0：無"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "1: High"
 msgstr "1：高"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "5: Normal"
 msgstr "5：普通"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:209
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "8: Low"
 msgstr "8：低"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:210
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:206
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
 msgstr "9: 使用者定義"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
 #, kde-format
 msgid "Select here the envelope priority."
 msgstr "在這裡選擇封裝優先順序。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:237
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:85
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:166
 #, kde-format
 msgid "Format:"
 msgstr "格式："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
 #, kde-format
 msgid "Select here envelope file format."
 msgstr "在這裡選擇封裝的檔案格式。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:232
 #, kde-format
 msgid "Sent date:"
 msgstr "寄出日期："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:255
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
 #, kde-format
 msgid "Sent time:"
 msgstr "寄出時間："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:266
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:244
 #, kde-format
 msgid "Set envelope sent date to today"
 msgstr "將封裝寄出日期設為今天"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:268
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:246
 #, kde-format
 msgid "Set here the date when the service sent the material."
 msgstr "在這裡設定服務寄出材料的日期。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:269
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:247
 #, kde-format
 msgid "Set here the time when the service sent the material."
 msgstr "在這裡設定服務寄出材料的時間。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:270
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:248
 #, fuzzy, kde-format
 msgid "Set here the time zone when the service sent the material."
 msgstr "在這裡設定服務寄出材料的時間。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:66
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
 #, kde-format
 msgid "Use information retrieval words:"
 msgstr "使用資訊檢索詞："
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:71
 #, fuzzy, kde-format
 #| msgid "Enter here a new keyword."
 msgid "Set here a keyword"
 msgstr "在這裡輸入新的關鍵字。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:72
 #, kde-format
 msgid "Enter here a new keyword. This field is limited to 64 characters."
 msgstr "在這裡輸入新的關鍵字。這個欄位最多只能有 64 個字元。"
@@ -14716,20 +14716,20 @@ msgstr ""
 "在這裡輸入主題詳細名稱。如果您選擇標準 IPTC/NAA 參考代碼請使用英文。這個欄位"
 "限制為 64 個 ASCII 字元。"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:43
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Metadata Edit"
 msgstr "中繼資料編輯"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:58
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:54
 #, fuzzy, kde-format
 #| msgid "Apply template metadata"
 msgctxt "@info"
 msgid "A tool to edit items metadata"
 msgstr "套用範本中繼資料"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:63
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -14742,7 +14742,7 @@ msgid ""
 "items contents based on Iptc reference codes."
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."

@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-02 01:39+0000\n"
+"POT-Creation-Date: 2024-05-03 01:41+0000\n"
 "PO-Revision-Date: 2024-03-29 21:26+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -3949,14 +3949,14 @@ msgstr "S geografickou polohou"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:85
 #: core/app/views/tableview/tableview_column_geo.cpp:102
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:118
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:97
 #, kde-format
 msgid "Coordinates"
 msgstr "Súradnice"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:617
 #, kde-format
 msgid "Altitude"
@@ -11147,7 +11147,7 @@ msgstr "Súbor nebol uložený"
 msgid "Cannot save \"%1\" file"
 msgstr "Súbor \"%1\" sa nedá uložiť"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:222
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:419
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:520
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:799
@@ -11156,25 +11156,25 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Editor geolokácie"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:255
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Zobraziť pozíciu ďalekohľadu na mape oblohy"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:315
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:273
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Rozloženie:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:317
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "Jedna mapa"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Two maps - vertical"
@@ -11182,7 +11182,7 @@ msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "Dve mapy - zvislé"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Two maps - horizontal"
@@ -11191,7 +11191,7 @@ msgid "Two maps - top and bottom"
 msgstr "Dve mapy - vodorovné"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
@@ -11201,67 +11201,67 @@ msgstr "Dve mapy - vodorovné"
 msgid "OK"
 msgstr "OK"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Triedenie"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:327
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Najprv zobrazovať najstaršie"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Najprv zobrazovať najnovšie"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:371
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS korelátor"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Naspäť/Dopredu"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Reverzná geolokácia"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Hľadať"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML Export"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:594
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Metadáta sa nacítavajú -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:787
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11270,7 +11270,7 @@ msgstr[0] "Zmenili ste jeden obrázok."
 msgstr[1] "Zmenili ste %1 obrázky."
 msgstr[2] "Zmenili ste %1 obrázkov."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:794
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Unsaved changes"
@@ -11278,19 +11278,19 @@ msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Neuložené zmeny"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:837
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Chcete uložiť zmeny, ktoré ste v nich vykonali?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:953
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Zmeny sa ukladajú -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1012
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11334,87 +11334,87 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Chyba"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1013
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Niektoré informácie sa nepodarilo uložiť:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1051
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
 msgstr "Upraviť geolokáciu"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:615
 #, kde-format
 msgid "Latitude"
 msgstr "Zemepisná šírka"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:616
 #, kde-format
 msgid "Longitude"
 msgstr "Zemepisná dĺžka"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
 #, kde-format
 msgid "Speed"
 msgstr "Rýchlosť"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "# satellites"
 msgstr "Počet satelitov"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:620
 #, kde-format
 msgid "Fix type"
 msgstr "Typ fixu"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:150
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:129
 #, kde-format
 msgid "2-d"
 msgstr "2-d"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:151
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #, kde-format
 msgid "3-d"
 msgstr "3-d"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:619
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:139
 #, kde-format
 msgid "Apply"
 msgstr "Použiť"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:428
 #, fuzzy, kde-format
 msgid "Details changed"
 msgstr "Zmenená prezývka"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:43
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "Editor geolokácie"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:58
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:54
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "Filtrovať podľa názvu"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:63
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -11430,32 +11430,32 @@ msgid ""
 "geo-location of items if you camera do not have an embedded GPS device."
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:101
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
 msgstr "Upraviť geolokáciu..."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:145
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:162
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:117
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "Nemôžem otvoriť obrázok '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:154
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:126
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "Nerozpoznaný formát obrázka '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:172
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "Chyba pri čítaní obrázka '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:215
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:189
 #, fuzzy, kde-format
 msgid "Could not save image '%1' to '%2'"
@@ -11465,22 +11465,22 @@ msgstr ""
 "do\n"
 "„%2“."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:219
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:207
 #, fuzzy, kde-format
 msgid "Creation of picture '%1'"
 msgstr "Automatická tvorba albumov"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:235
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:223
 #, fuzzy, kde-format
 msgid "Cannot get GPS Information from %1 file."
 msgstr "Informácie o dokumente sa nedajú uložiť."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:324
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:312
 #, kde-format
 msgid "Creation of placemark '%1'"
 msgstr "Vytváranie značky miesta '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:333
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:321
 #, fuzzy, kde-format
 msgid "Could not save icon for image '%1' to '%2'"
 msgstr ""
@@ -11489,72 +11489,72 @@ msgstr ""
 "do\n"
 "„%2“."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:337
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:325
 #, fuzzy, kde-format
 msgid "Creation of icon '%1'"
 msgstr "Druhá funkcia tlačidla"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:352
 #, fuzzy, kde-format
 msgid "No GPX file chosen."
 msgstr "Súbory na načítanie"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:361
 #, fuzzy, kde-format
 #| msgid "Cannot save \"%1\" file"
 msgid "Cannot parse %1 GPX file."
 msgstr "Súbor \"%1\" sa nedá uložiť"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:379
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:367
 #, kde-format
 msgid "The %1 GPX file do not have a date-time track to use."
 msgstr "GPX súbor %1 neobsahuje použiteľnú stopu s dátumom a časom."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:387
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:375
 #, kde-format
 msgid "Tracks"
 msgstr "Stopy"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:491
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:479
 #, fuzzy, kde-format
 msgid "No position data for '%1'"
 msgstr "Nemôžem otvoriť: %1"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:506
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:494
 #, fuzzy, kde-format
 msgid "Cannot open file for writing"
 msgstr "Nemôžem otvoriť: %1"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:519
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:507
 #, fuzzy, kde-format
 #| msgid "Failed to create directory '%1'"
 msgid "Move %1 to final directory %2"
 msgstr "Nepodarilo sa vytvoriť priečinok '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:523
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:511
 #, fuzzy, kde-format
 #| msgid "Cannot create directory %1"
 msgid "Cannot move data to destination directory"
 msgstr "Nie je možné vytvoriť adresár %1"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:533
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:521
 #, kde-format
 msgid "Report below have been generated while KML file processing:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:57
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:53
 #, kde-format
 msgctxt "@item: linetrack over the map"
 msgid "Track"
 msgstr "Stopa"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:83
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:79
 #, kde-format
 msgctxt "@item: points over the map"
 msgid "Points"
 msgstr "Body"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:96
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:92
 #, kde-format
 msgctxt "@item: point coordinates"
 msgid "Point"
@@ -11881,22 +11881,22 @@ msgstr ""
 "ohľadu na aktuálne vyvýšenie terénu pod prvkom.</dd></dl></p>"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:249
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:293
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:295
 #, kde-format
 msgid "Generate KML file"
 msgstr "Vytvoriť súbor KML"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:308
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:304
 #, kde-format
 msgid "GeoNames"
 msgstr "GeoNames"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:309
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:305
 #, kde-format
 msgid "OSM"
 msgstr "OSM"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultmodelhelper.cpp:152
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultmodelhelper.cpp:147
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkmodelhelper.cpp:236
 #, fuzzy, kde-format
 msgid "1 image snapped to '%2'"
@@ -11905,69 +11905,69 @@ msgstr[0] "Obraz na napálenie"
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:159
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:134
 #, kde-format
 msgctxt "Start the search"
 msgid "Search"
 msgstr "Hľadať"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:166
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:141
 #, kde-format
 msgid "Clear the search results."
 msgstr "Vyčistiť výsledky hľadania."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:174
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:149
 #, kde-format
 msgid "Keep the results of old searches when doing a new search."
 msgstr "Výsledky hľadaní ponechať pre nové hľadania."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:181
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:156
 #, kde-format
 msgid "Toggle the visibility of the search results on the map."
 msgstr "Prepnút viditeľnosť výsledkov vyhľadávania na mape."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:185
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:160
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:83
 #, kde-format
 msgid "Copy coordinates"
 msgstr "Skopírovať súradnice"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:188
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:163
 #, kde-format
 msgid "Move selected images to this position"
 msgstr "Presunúť vybrané obrázky na toto miesto"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:190
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:165
 #, kde-format
 msgid "Remove from results list"
 msgstr "Odstrániť zo zoznamu výsledkov"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:194
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:169
 #, kde-format
 msgid "Select which service you would like to use."
 msgstr "Vyberte službu, ktorú chcete použiť."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:218
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:193
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:122
 #, kde-format
 msgid "Bookmarks"
 msgstr "Záložky"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:271
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "Search failed"
 msgctxt "@title:window"
 msgid "Search Failed"
 msgstr "Hľadanie zlyhalo"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:271
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:246
 #, fuzzy, kde-format
 msgid ""
 "Your search failed:\n"
 "%1"
 msgstr "Definujte kritériá hľadania"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:455
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:430
 #, fuzzy, kde-format
 msgid "1 image moved to '%2'"
 msgid_plural "%1 images moved to '%2'"
@@ -11975,43 +11975,43 @@ msgstr[0] "Obraz na napálenie"
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "Dynamický editor dialógov"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:103
 #, kde-format
 msgctxt "@action: button"
 msgid "Next"
 msgstr "Nasledujúci"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:105
 #, kde-format
 msgctxt "@action: button"
 msgid "Previous"
 msgstr "Predchádzajúci"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:118
 #, kde-format
 msgctxt "@item"
 msgid "Edit EXIF"
 msgstr "Upraviť EXIF"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:119
 #, kde-format
 msgctxt "@item"
 msgid "Edit IPTC"
 msgstr "Upraviť IPTC"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
 #, kde-format
 msgctxt "@item"
 msgid "Edit XMP"
 msgstr "Upraviť XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:310
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:309
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "%1 (%2/%3) - Edit Metadata"
@@ -12019,33 +12019,33 @@ msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
 msgstr "%1 (%2/%3) - upraviť metadáta"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:83
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:75
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:80
 #, fuzzy, kde-format
 msgid "Add a new value to the list"
 msgstr "Pridať novú úlohu do zoznamu."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:86
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:84
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
 #, kde-format
 msgid "Remove the current selected value from the list"
 msgstr "Odstrániť aktuálne označenú hodnotu zo zoznamu"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:87
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:82
 #, kde-format
 msgid "Replace the current selected value from the list"
 msgstr "Nahradiť aktuálne označenú hodnotu zo zoznamu"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:93
 #, fuzzy, kde-format
 msgid " This field is limited to:"
 msgstr "Toto je názov súboru, ktorý bude otvorený."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:95
 #, kde-format
 msgid "<p>1 character.</p>"
 msgid_plural "<p>%1 characters.</p>"
@@ -12053,10 +12053,10 @@ msgstr[0] "<p>1 znak.</p>"
 msgstr[1] "<p>%1 znaky.</p>"
 msgstr[2] "<p>%1 znakov.</p>"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:291
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:346
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:269
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:428
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
 #: core/libs/widgets/text/dplaintextedit.cpp:400
@@ -12070,159 +12070,159 @@ msgstr[0] "<p>1 znak.</p>"
 msgstr[1] "<p>%1 znaky.</p>"
 msgstr[2] "<p>%1 znakov.</p>"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:72
 #, kde-format
 msgid "Attribute:"
 msgstr "Atribút:"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:94
 #, kde-format
 msgid "Select here the editorial attribute of content."
 msgstr "Vyberte redakčné atribúty obsahu."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:95
 #, kde-format
 msgctxt "Content type"
 msgid "Current"
 msgstr "Aktuálne"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:96
 #, kde-format
 msgctxt "Content type"
 msgid "Analysis"
 msgstr "Rozbor"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:97
 #, kde-format
 msgctxt "Content type"
 msgid "Archive material"
 msgstr "Archívny material"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:98
 #, kde-format
 msgctxt "Content type"
 msgid "Background"
 msgstr "Pozadie"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:99
 #, kde-format
 msgctxt "Content type"
 msgid "Feature"
 msgstr "Funkcia"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:100
 #, kde-format
 msgctxt "Content type"
 msgid "Forecast"
 msgstr "Predpoveď"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:101
 #, kde-format
 msgctxt "Content type"
 msgid "History"
 msgstr "História"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:102
 #, kde-format
 msgctxt "Content type"
 msgid "Obituary"
 msgstr "Nekrológ"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
 #, kde-format
 msgctxt "Content type"
 msgid "Opinion"
 msgstr "Stanovisko"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
 #, kde-format
 msgctxt "Content type"
 msgid "Polls & Surveys"
 msgstr "Hlasovanie a prieskum"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
 #, kde-format
 msgctxt "Content type"
 msgid "Profile"
 msgstr "Profil"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Results Listings & Table"
 msgstr "Zobraziť tabuľku najlepších výsledkov"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
 #, kde-format
 msgctxt "Content type"
 msgid "Side bar & Supporting information"
 msgstr "Postranný panel a informácie o podpore"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, kde-format
 msgctxt "Content type"
 msgid "Summary"
 msgstr "Súhrn"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
 #, kde-format
 msgctxt "Content type"
 msgid "Transcript & Verbatim"
 msgstr "Prepis a doslovne"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
 #, kde-format
 msgctxt "Content type"
 msgid "Interview"
 msgstr "Interview"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
 #, kde-format
 msgctxt "Content type"
 msgid "From the Scene"
 msgstr "Zo scény"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
 #, kde-format
 msgctxt "Content type"
 msgid "Retrospective"
 msgstr "Rekapitulácia"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
 #, kde-format
 msgctxt "Content type"
 msgid "Statistics"
 msgstr "Štatistika"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
 #, kde-format
 msgctxt "Content type"
 msgid "Update"
 msgstr "Aktualizovať"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
 #, fuzzy, kde-format
 msgctxt "Content type"
 msgid "Wrap-up"
 msgstr "Hore&Dole"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:125
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
 #, kde-format
 msgctxt "Content type"
 msgid "Press Release"
 msgstr "Tlačová správa"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:122
 #, fuzzy, kde-format
 msgid "Set here the editorial attribute description of content."
 msgstr "Tu môžete nastaviť nasýtenie obrázka."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:127
 #, fuzzy, kde-format
 msgid " This field is limited to "
 msgstr "Toto je názov súboru, ktorý bude otvorený."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:129
 #, fuzzy, kde-format
 #| msgid "<p>1 character.</p>"
 #| msgid_plural "<p>%1 characters.</p>"
@@ -12232,17 +12232,17 @@ msgstr[0] "<p>1 znak.</p>"
 msgstr[1] "<p>%1 znaky.</p>"
 msgstr[2] "<p>%1 znakov.</p>"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
 #, fuzzy, kde-format
 msgid "Set here the editorial description"
 msgstr "Tu môžete nastaviť nasýtenie obrázka."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:71
 #, fuzzy, kde-format
 msgid "Brightness (APEX):"
 msgstr "Jas obrazovky"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:76
 #, kde-format
 msgid ""
 "Set here the brightness adjustment value in APEX unit used by camera to take "
@@ -12251,42 +12251,42 @@ msgstr ""
 "Zadajte hodnotu úpravy jasu v jednotkách APEX použitej fotoaparátom pri "
 "vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:81
 #, kde-format
 msgid "Gain Control:"
 msgstr "Riadenie zosilnenia:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:83
 #, kde-format
 msgctxt "gain control"
 msgid "None"
 msgstr "Žiadne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:84
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain up"
 msgstr "Slabé zosilnenie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:85
 #, kde-format
 msgctxt "gain control"
 msgid "High gain up"
 msgstr "Vysoké zosilnenie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:86
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain down"
 msgstr "Nízke zoslabenie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:87
 #, kde-format
 msgctxt "gain control"
 msgid "High gain down"
 msgstr "Vysoké zoslabenie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:88
 #, kde-format
 msgid ""
 "Set here the degree of overall image gain adjustment used by camera to take "
@@ -12295,7 +12295,7 @@ msgstr ""
 "Zadajte stupeň celkového prispôsobenia zisku obrázka použitý fotoaparátom "
 "pri vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:93
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
@@ -12303,25 +12303,25 @@ msgstr ""
 msgid "Contrast:"
 msgstr "Kontrast:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:95
 #, kde-format
 msgctxt "contrast mode"
 msgid "Normal"
 msgstr "Normálne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:96
 #, kde-format
 msgctxt "contrast mode"
 msgid "Soft"
 msgstr "Mäkké"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:97
 #, kde-format
 msgctxt "contrast mode"
 msgid "Hard"
 msgstr "Ťažká"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
 #, kde-format
 msgid ""
 "Set here the direction of contrast processing applied by the camera to take "
@@ -12329,32 +12329,32 @@ msgid ""
 msgstr ""
 "Zadajte smer spracovania kontrastu použitý fotoaparátom pri vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:103
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:185
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:94
 #, kde-format
 msgid "Saturation:"
 msgstr "Sýtosť:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:105
 #, kde-format
 msgctxt "saturation mode"
 msgid "Normal"
 msgstr "Normálne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:106
 #, kde-format
 msgctxt "saturation mode"
 msgid "Low"
 msgstr "Nízke"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #, kde-format
 msgctxt "saturation mode"
 msgid "High"
 msgstr "Vysoké"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:108
 #, kde-format
 msgid ""
 "Set here the direction of saturation processing applied by the camera to "
@@ -12362,31 +12362,31 @@ msgid ""
 msgstr ""
 "Zadajte smer spracovania sýtosti použitý fotoaparátom pri vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:113
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:152
 #, kde-format
 msgid "Sharpness:"
 msgstr "Zaostrenie:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:115
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Normal"
 msgstr "Normálne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:116
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Soft"
 msgstr "Mäkké"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Hard"
 msgstr "Ťažká"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:118
 #, kde-format
 msgid ""
 "Set here the direction of sharpness processing applied by the camera to take "
@@ -12394,22 +12394,22 @@ msgid ""
 msgstr ""
 "Zadajte smer spracovania ostrosti použitý fotoaparátom pri vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:123
 #, fuzzy, kde-format
 msgid "Custom rendered:"
 msgstr "Renderované objekty"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:125
 #, fuzzy, kde-format
 msgid "Normal process"
 msgstr "Úspešný proces"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:140
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:126
 #, fuzzy, kde-format
 msgid "Custom process"
 msgstr "Úspešný proces"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
 #, kde-format
 msgid ""
 "Set here the use of special processing on image data, such as rendering "
@@ -12418,19 +12418,19 @@ msgstr ""
 "Nastavte použitie špeciálneho spracovania dát obrázka, ako napr. "
 "vykresľovanie prispôsobené výstupu."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:79
 #, kde-format
 msgctxt "name of the document this image has been scanned from"
 msgid "Name (*):"
 msgstr "Názov (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:82
 #, fuzzy, kde-format
 #| msgid "Set here the original owner of content."
 msgid "Set here the original document name."
 msgstr "Zadajte pôvodného vlastníka obsahu obrázka."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:83
 #, kde-format
 msgid ""
 "Enter the name of the document from which this image was been scanned. This "
@@ -12439,54 +12439,54 @@ msgstr ""
 "Zadajte názov dokumentu, z ktorého bol tento obrazok naskenovaný. Toto pole "
 "je obmedzené na použitie znakov ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:89
 #, kde-format
 msgctxt "image description"
 msgid "Description (*):"
 msgstr "Popis (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:92
 #, fuzzy, kde-format
 #| msgid "Enter the content description."
 msgid "Set here the image description."
 msgstr "Vložte popis obsahu."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:93
 #, kde-format
 msgid "Enter the image description. This field is limited to ASCII characters."
 msgstr ""
 "Zadajte popis obrázka. Toto pole je obmedzené na použitie znakov ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:98
 #, kde-format
 msgid "Artist (*):"
 msgstr "Interpret (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "@info: WB settings"
 #| msgid "Set here the saturation value."
 msgid "Set here the author's name."
 msgstr "Tu môžete nastaviť nasýtenie obrázka."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
 #, fuzzy, kde-format
 msgid ""
 "Enter the image author's name separated by semi-colons. This field is "
 "limited to ASCII characters."
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:107
 #, kde-format
 msgid "Copyright (*):"
 msgstr "Copyright (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:110
 #, fuzzy, kde-format
 msgid "Set here the copyright owner."
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
 #, kde-format
 msgid ""
 "Enter the copyright owner of the image. This field is limited to ASCII "
@@ -12495,20 +12495,20 @@ msgstr ""
 "Zadajte autorské práva vlastníka obrázka. Toto pole je obmedzené na použitie "
 "znakov ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:116
 #, kde-format
 msgctxt "image caption"
 msgid "Caption:"
 msgstr "Titulok:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:119
 #, fuzzy, kde-format
 #| msgid "You have edited the image caption. "
 #| msgid_plural "You have edited the captions of %1 images. "
 msgid "Set here the image's caption."
 msgstr "Upravili ste nadpis obrázka. "
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
 #, kde-format
 msgid ""
 "Enter the image's caption. This field is not limited. UTF8 encoding will be "
@@ -12517,25 +12517,25 @@ msgstr ""
 "Zadajte titulok obrázka. Toto pole nemá obmedzenie. Na uloženie textu sa "
 "použije kódovanie UTF-8."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:143
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:84
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, kde-format
 msgid "Sync JFIF Comment section"
 msgstr "Synchronizovať sekciu komentára JFIF"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:125
 #, kde-format
 msgid "Sync XMP caption"
 msgstr "Synchronizovať XMP titulok"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
 #, kde-format
 msgid "Sync IPTC caption (warning: limited to 2000 characters)"
 msgstr "Synchronizovať titulok IPTC (varovanie: obmedzené na 2000 znakov)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:152
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:316
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:289
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><a href='http://en.wikipedia.org/wiki/"
@@ -12550,34 +12550,34 @@ msgstr ""
 "IPTC_Information_Interchange_Model'>IPTC</a> je starší štandard používaný v "
 "digitálnej fotografii na vkladanie informácií do obrázkov.</p>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:89
 #, kde-format
 msgid "Creation date and time"
 msgstr "Dátum a čas vytvorenia"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:90
 #, fuzzy, kde-format
 msgid "Creation sub-second"
 msgstr "Druhá funkcia tlačidla"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:101
 #, kde-format
 msgid "Sync XMP creation date"
 msgstr "Synchronizovať dátum vytvorenia XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:102
 #, kde-format
 msgid "Sync IPTC creation date"
 msgstr "Synchronizovať dátum vytvorenia IPTC"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:106
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
 #, kde-format
 msgid "Set creation date to today"
 msgstr "Nastavit dátum vytvorenia na dnešok"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:113
 #, kde-format
 msgid ""
 "Set here the date and time of image creation. In this standard it is the "
@@ -12586,28 +12586,28 @@ msgstr ""
 "Zadajte dátum a čas vytvorenia obrázka. V tomto štandarde sa jedná o dátum a "
 "čas zmeny súboru."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:115
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time of image creation."
 msgstr "Zadajte sekundy pre dátum a čas, kedy bol obrázo vytvorený."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:122
 #, kde-format
 msgid "Original date and time"
 msgstr "Pôvodný dátum a čas"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
 #, fuzzy, kde-format
 msgid "Original sub-second"
 msgstr "Druhá funkcia tlačidla"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:136
 #, kde-format
 msgid "Set original date to today"
 msgstr "Nastaviť pôvodný dátum na dnešok"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:138
 #, kde-format
 msgid ""
 "Set here the date and time when the original image data was generated. For a "
@@ -12617,7 +12617,7 @@ msgstr ""
 "použití digitálneho fotoaparátu bol dátum a čas vytvorenia snímky "
 "zaznamenaný."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:141
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the original "
@@ -12625,24 +12625,24 @@ msgid ""
 msgstr ""
 "Zadajte sekundy pre dátum a čas, kedy boli vytvorené dáta pôvodného obrázka."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:148
 #, fuzzy, kde-format
 msgid "Digitization date and time"
 msgstr "Nastavenia dátumu a času"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:168
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:149
 #, fuzzy, kde-format
 msgid "Digitization sub-second"
 msgstr "Druhá funkcia tlačidla"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:162
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
 #, kde-format
 msgid "Set digitization date to today"
 msgstr "Nastaviť dátum digitalizácie na dnešok"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:164
 #, kde-format
 msgid ""
 "Set here the date and time when the image was stored as digital data. If, "
@@ -12655,7 +12655,7 @@ msgstr ""
 "uložený do súboru, dátum a čas pôvodného obrázka a digitalizácie budú "
 "rovnaké."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:169
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the image was "
@@ -12663,18 +12663,18 @@ msgid ""
 msgstr ""
 "Zadajte sekundy pre dátum a čas, kedy bol obrázok uložený ako digitálne dáta."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:96
 #, kde-format
 msgid "Device manufacturer (*):"
 msgstr "Výrobca zariadenia (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:100
 #, fuzzy, kde-format
 #| msgid "Device manufacturer (*):"
 msgid "Set here the manufacturer name"
 msgstr "Výrobca zariadenia (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:101
 #, kde-format
 msgid ""
 "Set here the manufacturer of image input equipment used to take the picture. "
@@ -12683,17 +12683,17 @@ msgstr ""
 "Vyberte výrobcu vstupného zariadenia použitého pri vytvorení snímky. Toto "
 "pole je obmedzené na použitie znakov ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:106
 #, kde-format
 msgid "Device model (*):"
 msgstr "Model zariadenia (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:110
 #, fuzzy, kde-format
 msgid "Set here the model name"
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:111
 #, kde-format
 msgid ""
 "Set here the model of image input equipment used to take the picture. This "
@@ -12702,32 +12702,32 @@ msgstr ""
 "Vyberte model vstupného zariadenia použitého pri vytvorení snímky. Toto pole "
 "je obmedzené na použitie znakov ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:116
 #, kde-format
 msgid "Device type:"
 msgstr "Typ zariadenia:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:118
 #, fuzzy, kde-format
 msgid "Film scanner"
 msgstr "Radič skenera"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:119
 #, fuzzy, kde-format
 msgid "Reflection print scanner"
 msgstr "Možnosti závislé na skeneri"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:120
 #, fuzzy, kde-format
 msgid "Digital still camera"
 msgstr "RAW súbory z digitálneho fotoaparátu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:121
 #, kde-format
 msgid "Select here the image input equipment type used to take the picture."
 msgstr "Tu vyberte vstupné zariadenie použité na vytvorenie snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:151
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:124
 #, kde-format
 msgid ""
 "<b>Warning:</b> Exif<b><a href='https://en.wikipedia.org/wiki/"
@@ -12738,12 +12738,12 @@ msgstr ""
 "Exchangeable_image_file_format#MakerNote_data'>Makernotes</a></b>nemusia byť "
 "čitateľné, ak nastavíte chybný popis výrobcu/modelu prístroja."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:163
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:136
 #, kde-format
 msgid "Exposure time (seconds):"
 msgstr "Čas expozície (sekundy):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:149
 #, kde-format
 msgid ""
 "Set on this option to set the exposure time of picture, given in seconds."
@@ -12751,66 +12751,66 @@ msgstr ""
 "Zapnite toto nastavenie, aby bolo možné nastaviť čas expozície snímky v "
 "sekundách."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:154
 #, kde-format
 msgid "Exposure program:"
 msgstr "Program expozície:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:156
 #, kde-format
 msgctxt "exposure program"
 msgid "Not defined"
 msgstr "Nie je definované"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:157
 #, kde-format
 msgctxt "exposure program"
 msgid "Manual"
 msgstr "Ručne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:158
 #, kde-format
 msgctxt "exposure program"
 msgid "Auto"
 msgstr "Auto"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:159
 #, kde-format
 msgctxt "exposure program"
 msgid "Aperture priority"
 msgstr "Priorita clony"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:160
 #, kde-format
 msgctxt "exposure program"
 msgid "Shutter priority"
 msgstr "Priorita uzávierky"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:161
 #, kde-format
 msgctxt "exposure program"
 msgid "Creative program"
 msgstr "Tvorivý program"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:162
 #, kde-format
 msgctxt "exposure program"
 msgid "Action program"
 msgstr "Akčný program"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:163
 #, kde-format
 msgctxt "exposure program"
 msgid "Portrait mode"
 msgstr "Režim na výšku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:164
 #, kde-format
 msgctxt "exposure program"
 msgid "Landscape mode"
 msgstr "Režim na šírku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:165
 #, kde-format
 msgid ""
 "Select here the program used by the camera to set exposure when the picture "
@@ -12819,30 +12819,30 @@ msgstr ""
 "Vyberte, aký program bol použitý fotoaparátom na nastavenie expozície pri "
 "vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:170
 #, kde-format
 msgid "Exposure mode:"
 msgstr "Režim expozície:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:172
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto"
 msgstr "Auto"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:173
 #, kde-format
 msgctxt "exposure mode"
 msgid "Manual"
 msgstr "Ručne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:174
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto bracket"
 msgstr "Automatický bracketing"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:175
 #, kde-format
 msgid ""
 "Select here the mode used by the camera to set exposure when the picture was "
@@ -12853,12 +12853,12 @@ msgstr ""
 "snímky. V režime automatický bracketing vyfotí fotoaparát sériu snímok "
 "rovnakej scény s rôznym nastavením expozície."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:183
 #, fuzzy, kde-format
 msgid "Exposure bias (APEX):"
 msgstr "Kompenzácia expozície"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:188
 #, kde-format
 msgid ""
 "Set here the exposure bias value (in APEX units) used by camera to take the "
@@ -12867,60 +12867,60 @@ msgstr ""
 "Zadajte hodnotu expozície (v jednotkách APEX) použitej fotoaparátom pri "
 "vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:222
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:195
 #, kde-format
 msgid "Metering mode:"
 msgstr "Režim merania:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:197
 #, kde-format
 msgctxt "metering mode"
 msgid "Unknown"
 msgstr "Neznáme"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:198
 #, kde-format
 msgctxt "metering mode"
 msgid "Average"
 msgstr "Priemer"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:199
 #, kde-format
 msgctxt "metering mode"
 msgid "Center weighted average"
 msgstr "Stredovo vážený priemer"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:200
 #, kde-format
 msgctxt "metering mode"
 msgid "Spot"
 msgstr "Bodový"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:201
 #, kde-format
 msgctxt "metering mode"
 msgid "Multi-spot"
 msgstr "Viacbodový"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:202
 #, fuzzy, kde-format
 msgctxt "metering mode"
 msgid "Multi-segment"
 msgstr "Multi segmentové KIO"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:203
 #, kde-format
 msgctxt "metering mode"
 msgid "Partial"
 msgstr "Čiastočné"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:204
 #, kde-format
 msgctxt "metering mode"
 msgid "Other"
 msgstr "Iné"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:205
 #, kde-format
 msgid ""
 "Select here the metering mode used by the camera to set exposure when the "
@@ -12929,129 +12929,129 @@ msgstr ""
 "Vyberte, aký režim merania bol použitý fotoaparátom na nastavenie expozície "
 "pri vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:237
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
 #, kde-format
 msgid "Sensitivity (ISO):"
 msgstr "Citlivosť (ISO):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:275
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:248
 #, kde-format
 msgid "Select here the ISO Speed of the camera which took the picture."
 msgstr "Vyberte citlivosť fotoaparátu ISO nastavenú pri vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:280
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:253
 #, fuzzy, kde-format
 msgid "Sensing method:"
 msgstr "Typ senzorovej metódy:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:282
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:255
 #, kde-format
 msgid "Not defined"
 msgstr "Nie je definované"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:283
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:256
 #, fuzzy, kde-format
 msgid "One-chip color area"
 msgstr "Jednočipový farebný snímač oblasti"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:284
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:257
 #, fuzzy, kde-format
 msgid "Two-chip color area"
 msgstr "Dvojčipový farebný snímač oblasti"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:285
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:258
 #, fuzzy, kde-format
 msgid "Three-chip color area"
 msgstr "Trojčipový farebný snímač oblasti"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:286
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:259
 #, fuzzy, kde-format
 msgid "Color sequential area"
 msgstr "Sekvenčný farebný snímač oblasti"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:287
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:260
 #, kde-format
 msgid "Trilinear sensor"
 msgstr "Trilineárny snímač"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:288
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:261
 #, fuzzy, kde-format
 msgid "Color sequential linear"
 msgstr "Sekvenčný farebný snímač oblasti"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:289
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:262
 #, kde-format
 msgid ""
 "Select here the image sensor type used by the camera to take the picture."
 msgstr "Vyberte typ senzora obrazu použitý fotoaparátom pri vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:294
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:267
 #, kde-format
 msgctxt "@option"
 msgid "Scene capture type:"
 msgstr "Typ zachytenia scény:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:296
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:269
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Standard"
 msgstr "Štandardné"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:297
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:270
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Landscape"
 msgstr "Na šírku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:298
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:271
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Portrait"
 msgstr "Na výšku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:299
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:272
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Night scene"
 msgstr "Nočná scéna"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:300
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "Select here the type of scene used by the camera to take the picture."
 msgstr "Vyberte typ scény použitý fotoaparátom pri vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:305
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:278
 #, kde-format
 msgctxt "@option"
 msgid "Subject distance type:"
 msgstr "Typ vzdialenosti subjektu:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:307
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:280
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Unknown"
 msgstr "Neznáme"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:308
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:281
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Macro"
 msgstr "Makro"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:309
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:282
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Close view"
 msgstr "Zavrieť pohľad"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:310
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:283
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Distant view"
 msgstr "Vzdialený pohľad"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:311
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:284
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -13059,61 +13059,61 @@ msgid ""
 "equipment."
 msgstr "Vyberte typ vzdialenosti medzi subjektom a prístrojom."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:83
 #, kde-format
 msgctxt "@item: image caption"
 msgid "Caption"
 msgstr "Titulok"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:87
 #, kde-format
 msgctxt "@item: date properties"
 msgid "Date & Time"
 msgstr "Dátum a čas"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:91
 #, kde-format
 msgctxt "@item: lens properties"
 msgid "Lens"
 msgstr "Objektív"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:95
 #, kde-format
 msgctxt "@item: device properties"
 msgid "Device"
 msgstr "Zariadenie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:99
 #, kde-format
 msgctxt "@item; light properties"
 msgid "Light"
 msgstr "Svetlo"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:103
 #, kde-format
 msgctxt "@item: picture adjustments"
 msgid "Adjustments"
 msgstr "Úpravy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:166
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Caption Information"
 msgstr "Informácie o module"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record technical descriptions"
 msgstr "Ruská federácia"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:171
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Date and Time Information"
 msgstr "Nastavenia dátumu a času"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:172
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Camera File Properties"
@@ -13121,7 +13121,7 @@ msgctxt "@title"
 msgid "Record camera time-stamp properties"
 msgstr "Vlastnosti súboru z fotoaparátu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:176
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Lens Settings"
@@ -13129,19 +13129,19 @@ msgctxt "@title"
 msgid "Lens Settings"
 msgstr "Nastavenia objektívu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:177
 #, kde-format
 msgctxt "@title"
 msgid "Record lens details used with camera"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:181
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Capture Device Settings"
 msgstr "Štandardné nastavenie archívu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:182
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record shot conditions used by camera"
@@ -13149,13 +13149,13 @@ msgstr ""
 "<qt>Nastavenie dekódovania RAW súborov<br/><i>Prispôsobiť predvolené "
 "nastavenie dekódovania RAW</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:186
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Light Source Information"
 msgstr "Zobraziť informačný panel"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Subject Information<br/><i>Use this panel to record subject "
@@ -13166,7 +13166,7 @@ msgstr ""
 "<qt>Informácie o objektoch<br/><i>Tento panel použite na záznam informácií o "
 "objektoch na obrázku</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:208
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:191
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Pictures Adjustments"
@@ -13174,18 +13174,18 @@ msgctxt "@title"
 msgid "Pictures Adjustments"
 msgstr "Úpravy obrázka"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid "Record technical details used by camera"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:132
 #, kde-format
 msgid "Focal length (mm):"
 msgstr "Ohnisková vzdialenosť (mm):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:138
 #, kde-format
 msgid ""
 "Set here the lens focal length in millimeters used by camera to take the "
@@ -13194,12 +13194,12 @@ msgstr ""
 "Zadajte ohniskovú vzdialenosť šošovky použitú fotoaparátom pri vytvorení "
 "snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
 #, kde-format
 msgid "Focal length in 35mm film (mm):"
 msgstr "Ohnisková vzdialenosť 35mm filmu (mm):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:149
 #, kde-format
 msgid ""
 "Set here equivalent focal length assuming a 35mm film camera, in mm. A value "
@@ -13208,33 +13208,33 @@ msgstr ""
 "Nastavte ekvivalent ohniskovej vzdialenosti v mm zodpovedajúcej fotoaparátu "
 "na 35mm film. Hodnota 0 znamená, že ohnisková vzdialenosť je neznáma."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:155
 #, fuzzy, kde-format
 msgid "Digital zoom ratio:"
 msgstr "Zachovať pomer strán"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:161
 #, kde-format
 msgid "Set here the digital zoom ratio used by camera to take the picture."
 msgstr "Zadajte hodnotu digitálneho zoomu fotoaparátu pri vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:166
 #, kde-format
 msgid "Lens aperture (f-number):"
 msgstr "Clona ako číslo f:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:169
 #, kde-format
 msgid "Select here the lens aperture used by camera to take the picture."
 msgstr ""
 "Tu vyberte hodnotu clony šošovky použitej fotoaparátom pri vytvorení snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:174
 #, fuzzy, kde-format
 msgid "Max. lens aperture (f-number):"
 msgstr "Clona šošoviek ako číslo f"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
 #, kde-format
 msgid ""
 "Select here the smallest aperture of the lens used by camera to take the "
@@ -13243,271 +13243,271 @@ msgstr ""
 "Tu vyberte najmenšiu clonu šošovky použitej fotoaparátom pri vytvorení "
 "snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:77
 #, fuzzy, kde-format
 msgid "No flash"
 msgstr "Pamäť Flash"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:78
 #, kde-format
 msgid "Fired"
 msgstr "Spustil sa"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:79
 #, fuzzy, kde-format
 msgid "Fired, no strobe return light"
 msgstr "Nebol zistený návrat blesku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:80
 #, fuzzy, kde-format
 msgid "Fired, strobe return light"
 msgstr "Zistený návrat blesku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:81
 #, fuzzy, kde-format
 msgid "Yes, compulsory"
 msgstr "Áno/nie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:82
 #, fuzzy, kde-format
 msgid "Yes, compulsory, no return light"
 msgstr "Nebol zistený návrat blesku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:83
 #, fuzzy, kde-format
 msgid "Yes, compulsory, return light"
 msgstr "Zistený návrat blesku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:84
 #, fuzzy, kde-format
 msgid "No, compulsory"
 msgstr "<žiadny email>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:85
 #, fuzzy, kde-format
 msgid "No, auto"
 msgstr "Žiadne automatické ukladanie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:86
 #, kde-format
 msgid "Yes, auto"
 msgstr "Áno, automaticky"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:87
 #, fuzzy, kde-format
 msgid "Yes, auto, no return light"
 msgstr "Nebol zistený návrat blesku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:88
 #, fuzzy, kde-format
 msgid "Yes, auto, return light"
 msgstr "Zistený návrat blesku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:89
 #, fuzzy, kde-format
 msgid "No flash function"
 msgstr "(Žiadna ďalšia funkcia)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
 #, kde-format
 msgid "Yes, red-eye"
 msgstr "Áno, červené oči"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:91
 #, kde-format
 msgid "Yes, red-eye, no return light"
 msgstr "Áno, červené oči, bez protisvetla"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
 #, kde-format
 msgid "Yes, red-eye, return light"
 msgstr "Áno, červené oči, protisvetlo"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:93
 #, fuzzy, kde-format
 msgid "Yes, compulsory, red-eye"
 msgstr "Nástroj korekcie červených očí"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:94
 #, kde-format
 msgid "Yes, compulsory, red-eye, no return light"
 msgstr "Áno, vynútený, červené oči, bez protisvetla"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:95
 #, kde-format
 msgid "Yes, compulsory, red-eye, return light"
 msgstr "Áno, vynútený, červené oči, protisvetlo"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:96
 #, fuzzy, kde-format
 msgid "Yes, auto, red-eye"
 msgstr "Nástroj korekcie červených očí"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:97
 #, kde-format
 msgid "Yes, auto, red-eye, no return light"
 msgstr "Áno, automaticky, červené oči, bez protisvetla"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:98
 #, kde-format
 msgid "Yes, auto, red-eye, return light"
 msgstr "Áno, automaticky, červené oči, protisvetlo"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:128
 #, kde-format
 msgid "Light source:"
 msgstr "Zdroj svetla:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:130
 #, kde-format
 msgctxt "light source"
 msgid "Unknown"
 msgstr "Neznáme"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:131
 #, kde-format
 msgctxt "light source"
 msgid "Daylight"
 msgstr "Denné svetlo"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:132
 #, kde-format
 msgctxt "light source"
 msgid "Fluorescent"
 msgstr "Fluorescentný"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:133
 #, fuzzy, kde-format
 msgctxt "light source"
 msgid "Tungsten (incandescent light)"
 msgstr "Rozpáľ ma"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:134
 #, kde-format
 msgctxt "light source"
 msgid "Flash"
 msgstr "Blesk"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:135
 #, kde-format
 msgctxt "light source"
 msgid "Fine weather"
 msgstr "Pekné počasie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:136
 #, kde-format
 msgctxt "light source"
 msgid "Cloudy weather"
 msgstr "Oblačné počasie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:137
 #, kde-format
 msgctxt "light source"
 msgid "Shade"
 msgstr "Tieňovať"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:138
 #, kde-format
 msgctxt "light source"
 msgid "Daylight fluorescent (D 5700 - 7100K)"
 msgstr "Denné svetlo fluorescenčné (D 5700 - 7100K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
 #, kde-format
 msgctxt "light source"
 msgid "Day white fluorescent (N 4600 - 5400K)"
 msgstr "Biely deň, fluorescenčné (N 4600 - 5400K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:151
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:140
 #, kde-format
 msgctxt "light source"
 msgid "Cool white fluorescent (W 3900 - 4500K)"
 msgstr "Chladné biele fluorescenčné (W 3900 - 4500K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:152
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
 #, kde-format
 msgctxt "light source"
 msgid "White fluorescent (WW 3200 - 3700K)"
 msgstr "Biele fluorescenčné (WW 3200 - 3700K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:153
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
 #, kde-format
 msgctxt "light source"
 msgid "Standard light A"
 msgstr "Štandardné svetlo A"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
 #, kde-format
 msgctxt "light source"
 msgid "Standard light B"
 msgstr "Štandardné svetlo B"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:144
 #, kde-format
 msgctxt "light source"
 msgid "Standard light C"
 msgstr "Štandardné svetlo C"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:145
 #, kde-format
 msgctxt "light source"
 msgid "D55"
 msgstr "D55"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:146
 #, kde-format
 msgctxt "light source"
 msgid "D65"
 msgstr "D65"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:147
 #, kde-format
 msgctxt "light source"
 msgid "D75"
 msgstr "D75"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:159
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:148
 #, kde-format
 msgctxt "light source"
 msgid "D50"
 msgstr "D50"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:149
 #, kde-format
 msgctxt "light source"
 msgid "ISO studio tungsten"
 msgstr "ISO štúdiový volfrám"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:161
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:150
 #, kde-format
 msgctxt "light source"
 msgid "Other light source"
 msgstr "Iný zdroj svetla"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:151
 #, kde-format
 msgid "Select here the kind of light source used to take the picture."
 msgstr ""
 "Ty vyberte druh zdroja svetla použitého fotoaparátom pri vytvaráraní snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:156
 #, kde-format
 msgid "Flash mode:"
 msgstr "Režim blesku:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:173
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:164
 #, kde-format
 msgid ""
 "Select here the flash program mode used by the camera to take the picture."
 msgstr ""
 "Tu vyberte program režimu blesku použitý fotoaparátom pri vytváraní snímky."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:178
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:169
 #, fuzzy, kde-format
 msgid "Flash energy (BCPS):"
 msgstr "Šetrenie energie obrazovky"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:175
 #, kde-format
 msgid ""
 "Set here the flash energy used to take the picture in BCPS units. Beam "
@@ -13520,24 +13520,24 @@ msgstr ""
 "je zaostrený do lúča reflektorom alebo šošovkou. Táto hodnota znamená "
 "efektívnu intenzitu počas jednej sekundy."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:183
 #, kde-format
 msgid "White balance:"
 msgstr "Vyváženie bielej:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:185
 #, kde-format
 msgctxt "@item: white balance"
 msgid "Auto"
 msgstr "Auto"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:186
 #, kde-format
 msgctxt "@item: white balance"
 msgid "Manual"
 msgstr "Ručne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:187
 #, fuzzy, kde-format
 #| msgid "Set here the white balance color temperature in Kelvin."
 msgctxt "@info"
@@ -13546,38 +13546,38 @@ msgid ""
 "taken."
 msgstr "Tu musíte nastaviť vyváženie bielej/teplotu farieb v Kelvinoch."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:70
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:78
 #, kde-format
 msgid "Identify subject of content (3 chars max):"
 msgstr "Určenie témy obsahu (max. 3 ASCII znaky):"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:74
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:82
 #, fuzzy, kde-format
 msgid "Set here the category ID"
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:75
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:83
 #, kde-format
 msgid ""
 "Set here the category of content. This field is limited to 3 characters."
 msgstr "Nastavte kategóriu obsahu. Toto pole je obmedzené na 3 znaky."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:86
 #, kde-format
 msgid "Supplemental categories:"
 msgstr "Doplnkové kategórie:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:83
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:90
 #, fuzzy, kde-format
 msgid "Set here the extra category"
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
 #, kde-format
 msgid ""
 "Enter here a new supplemental category of content. This field is limited to "
@@ -13585,16 +13585,16 @@ msgid ""
 msgstr ""
 "Zadajte novú doplnkovú kategóriu obsahu. Toto pole je obmedzené na 32 znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:100
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:96
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:82
 #, kde-format
 msgid "&Add"
 msgstr "&Pridať"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:101
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
 #: core/libs/dialogs/deletedialog.cpp:574
@@ -13602,8 +13602,8 @@ msgstr "&Pridať"
 msgid "&Delete"
 msgstr "O&dstrániť"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:102
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:98
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:84
 #: core/utilities/setup/album/setupcategory.cpp:93
@@ -13611,11 +13611,11 @@ msgstr "O&dstrániť"
 msgid "&Replace"
 msgstr "&Nahradiť"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:111
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:109
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:123
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:276
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:89
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:235
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:249
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:110
@@ -13635,59 +13635,59 @@ msgstr ""
 "IPTC_Information_Interchange_Model'>IPTC</a> je starší štandard používaný v "
 "digitálnej fotografii na vkladanie informácií do obrázkov.</p>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:68
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
 #, kde-format
 msgid "Headline:"
 msgstr "Titulok:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:71
 #, fuzzy, kde-format
 msgid "Set here the content synopsis"
 msgstr "Sem zadajte hľadaný výraz"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:72
 #, fuzzy, kde-format
 msgid ""
 "Enter here the content synopsis. This field is limited to 256 characters."
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
 #, kde-format
 msgctxt "content description"
 msgid "Caption:"
 msgstr "Nadpis:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:85
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:95
 #, fuzzy, kde-format
 msgid "Sync Exif Comment"
 msgstr "Použiť súbor s &komentárom"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:87
 #, fuzzy, kde-format
 #| msgid "Enter the content description."
 msgid "Set here the content description"
 msgstr "Vložte popis obsahu."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
 #, kde-format
 msgid ""
 "Enter the content description. This field is limited to 2000 characters."
 msgstr "Vložte popis obsahu. Toto pole je obmedzené na 2000 znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:93
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
 #, fuzzy, kde-format
 msgid "Caption Writer:"
 msgstr "Mechaniky pre zápis"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
 #, fuzzy, kde-format
 msgid "Enter the name of the caption author."
 msgstr "Zadajte meno autora svojej vlastnej témy."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:67
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
 #: core/libs/template/templatepanel.cpp:128
 #: core/libs/template/templateviewer.cpp:108
@@ -13695,13 +13695,13 @@ msgstr "Zadajte meno autora svojej vlastnej témy."
 msgid "Copyright:"
 msgstr "Autorské práva:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:70
 #, fuzzy, kde-format
 #| msgid "Enter the necessary copyright notice."
 msgid "Set here the copyright notice."
 msgstr "Zadajte potrebné informácie o autorských právach."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:71
 #, kde-format
 msgid ""
 "Set here the necessary copyright notice. This field is limited to 128 "
@@ -13710,29 +13710,29 @@ msgstr ""
 "Zadajte potrebný odkaz na autorské práva. Toto pole je obmedzené na 128 "
 "znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:76
 #, kde-format
 msgid "Byline:"
 msgstr "Meno fotografa:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:77
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
 #, kde-format
 msgid "Set here the name of content creator."
 msgstr "Zadajte meno tvorcu obsahu."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:82
 #, fuzzy, kde-format
 msgid "Byline Title:"
 msgstr "Titulok na výšku"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:83
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
 #, kde-format
 msgid "Set here the title of content creator."
 msgstr "Nastavte titul tvorcu obsahu."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
 #: core/libs/template/templatepanel.cpp:114
 #: core/libs/template/templateviewer.cpp:106
@@ -13740,30 +13740,30 @@ msgstr "Nastavte titul tvorcu obsahu."
 msgid "Credit:"
 msgstr "Pôvodca:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:91
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:194
 #, fuzzy, kde-format
 msgid "Set here the content provider."
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:92
 #, fuzzy, kde-format
 msgid "Set here the content provider. This field is limited to 32 characters."
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:198
 #, kde-format
 msgctxt "original owner of content"
 msgid "Source:"
 msgstr "Zdroj:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:100
 #, fuzzy, kde-format
 msgid "Set here the content owner."
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:101
 #, kde-format
 msgid ""
 "Set here the original owner of content. This field is limited to 32 "
@@ -13772,71 +13772,71 @@ msgstr ""
 "Nastavte pôvodného vlastníka obsahu obrázku. Toto pole je obmedzené na 32 "
 "znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:106
 #, kde-format
 msgid "Contact:"
 msgstr "Kontakt:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:107
 #, fuzzy, kde-format
 msgid "Set here the person or organization to contact."
 msgstr "Tu môžete nastaviť nasýtenie obrázka."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:92
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Content"
 msgstr "Obsah"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:96
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Origin"
 msgstr "Pôvod"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:100
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Credits"
 msgstr "Zásluhy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:104
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Subjects"
 msgstr "Témy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:108
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Keywords"
 msgstr "Kľúčové slová"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:112
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Categories"
 msgstr "Kategórie"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:116
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Status"
 msgstr "Stav"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:120
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:124
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Envelope"
 msgstr "Obálka"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:192
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
 #, fuzzy, kde-format
 #| msgid "Components Information"
@@ -13844,7 +13844,7 @@ msgctxt "@title"
 msgid "Content Information"
 msgstr "Informácie o komponentoch"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
 #, fuzzy, kde-format
 #| msgid ""
@@ -13856,14 +13856,14 @@ msgstr ""
 "<qt>Informácie o obsahu<br/><i>Tento panel použite na popisu vzhľadu obsahu "
 "obrázka</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:197
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Origin Information"
 msgstr "Informácie o module"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
 #, fuzzy, kde-format
 #| msgid ""
@@ -13875,14 +13875,14 @@ msgstr ""
 "<qt>Informácie o pôvode<br/><i>Tento panel použite na popis formálnych "
 "informácií o obrázku</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:202
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Credit Information"
 msgstr "Informácie o module"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
 #, fuzzy, kde-format
 #| msgid ""
@@ -13894,14 +13894,14 @@ msgstr ""
 "<qt>Informácie o zásluhách<br/><i>Tento panel použite na záznam informacií o "
 "autorských právach k obrázku</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:207
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Subject Information"
 msgstr "Informácie o module"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
 #, fuzzy, kde-format
 #| msgid ""
@@ -13913,14 +13913,14 @@ msgstr ""
 "<qt>Informácie o objektoch<br/><i>Tento panel použite na záznam informácií o "
 "objektoch na obrázku</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:235
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:212
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Keyword Information"
 msgstr "Informácie o komponentoch"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:236
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:234
 #, fuzzy, kde-format
 #| msgid ""
@@ -13932,14 +13932,14 @@ msgstr ""
 "<qt>Informácie o kľúčových slovech<br/><i>Tento panel použite na záznam "
 "kľúčových slov súvisiacich s obrázkom</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:240
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:217
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:238
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Category Information"
 msgstr "Informácie o module"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:241
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:239
 #, fuzzy, kde-format
 #| msgid ""
@@ -13951,14 +13951,14 @@ msgstr ""
 "<qt>Informace o kategóriach<br/><i>Tento panel použite na záznam kategórií "
 "súvisiacich s obrázkom</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:245
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:222
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:243
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Status Information"
 msgstr "Informácie o module"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:246
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:244
 #, fuzzy, kde-format
 #| msgid "Video Information"
@@ -13966,7 +13966,7 @@ msgctxt "@title"
 msgid "Record workflow information"
 msgstr "Informácie o videu"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:227
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:248
 #, fuzzy, kde-format
 #| msgctxt "@item"
@@ -13975,233 +13975,233 @@ msgctxt "@title"
 msgid "Status Properties"
 msgstr "Vlastnosti položky"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:251
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:249
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record workflow properties"
 msgstr "Vlastnosti súboru s prílohou"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:255
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:232
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Envelope Information"
 msgstr "Informácie o module"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:256
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:233
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@title"
 msgid "Record editorial details"
 msgstr "Video kodek"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:54
 #, fuzzy, kde-format
 msgid "No ObjectData"
 msgstr "<žiadny email>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:55
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 1)"
 msgstr "IPTC-NAA Digital Newsphoto Parameter Record (verzia 1)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:56
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 2)"
 msgstr "IPTC-NAA Digital Newsphoto Parameter Record (verzia 2)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:57
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 3)"
 msgstr "IPTC-NAA Digital Newsphoto Parameter Record (verzia 3)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:58
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 4)"
 msgstr "IPTC-NAA Digital Newsphoto Parameter Record (verzia 4)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:59
 #, fuzzy, kde-format
 msgid "IPTC7901 Recommended Message Format"
 msgstr "Vybrať kryptografický formát pre túto správu"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:60
 #, fuzzy, kde-format
 msgid "Tagged Image File Format (version 5.0)"
 msgstr "Vrátiť obrázky s formátom súboru"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:61
 #, fuzzy, kde-format
 msgid "Tagged Image File Format (version 6.0)"
 msgstr "Vrátiť obrázky s formátom súboru"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:62
 #, kde-format
 msgid "Illustrator"
 msgstr "Ilustrátor"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:63
 #, kde-format
 msgid "AppleSingle"
 msgstr "AppleSingle"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:64
 #, kde-format
 msgid "NAA 89-3 (ANPA 1312)"
 msgstr "NAA 89-3 (ANPA 1312)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:65
 #, fuzzy, kde-format
 msgid "MacBinary II"
 msgstr "Správca záložiek II"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:66
 #, kde-format
 msgid "IPTC Unstructured Character Oriented File Format"
 msgstr "IPTC Neštruktúrovaný znakovo orientovaný formát súboru"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:67
 #, kde-format
 msgid "United Press International ANPA 1312 variant"
 msgstr "United Press International ANPA 1312 variant"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:68
 #, kde-format
 msgid "United Press International Down-Load Message"
 msgstr "United Press International Down-Load Message"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:69
 #, fuzzy, kde-format
 msgid "JPEG File Interchange"
 msgstr "Rozbaľuje sa jeden súbor"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:70
 #, fuzzy, kde-format
 msgid "Photo-CD Image-Pac"
 msgstr "Raw obraz zvukového CD"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:71
 #, kde-format
 msgid "Microsoft Bit Mapped Graphics File [*.BMP]"
 msgstr "Microsoft Bit Mapped Graphics File [*.BMP]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:72
 #, fuzzy, kde-format
 msgid "Digital Audio File [*.WAV]"
 msgstr "Skvelý interpret - ukážkový zvukový súbor.wav"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:73
 #, kde-format
 msgid "Audio plus Moving Video [*.AVI]"
 msgstr "Audio plus Moving Video [*.AVI]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:74
 #, kde-format
 msgid "PC DOS/Windows Executable Files [*.COM][*.EXE]"
 msgstr "Spustiteľné súbory PC DOS/Windows [*.COM][*.EXE]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:75
 #, fuzzy, kde-format
 msgid "Compressed Binary File [*.ZIP]"
 msgstr "Nie je možné otvoriť zip súbor %1."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
 #, kde-format
 msgid "Audio Interchange File Format AIFF"
 msgstr "Audio Interchange File Format AIFF"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:77
 #, kde-format
 msgid "RIFF Wave (Microsoft Corporation)"
 msgstr "RIFF Wave (Microsoft Corporation)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:78
 #, fuzzy, kde-format
 msgid "Freehand (version 3.1)"
 msgstr "Verzia frameworku"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:79
 #, fuzzy, kde-format
 msgid "Freehand (version 4.0)"
 msgstr "Verzia frameworku"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:80
 #, fuzzy, kde-format
 msgid "Freehand (version 5.0)"
 msgstr "Verzia frameworku"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
 #, fuzzy, kde-format
 msgid "Freehand (version 5.5)"
 msgstr "Verzia frameworku"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
 #, fuzzy, kde-format
 msgid "Hypertext Markup Language \"HTML\""
 msgstr "Súbor značkovacieho jazyka Qt"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
 #, kde-format
 msgid "MPEG 2 Audio Layer 2 (Musicom), ISO/IEC"
 msgstr "MPEG 2 Audio Layer 2 (Musicom), ISO/IEC"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
 #, kde-format
 msgid "MPEG 2 Audio Layer 3, ISO/IEC"
 msgstr "MPEG 2 Audio Layer 3, ISO/IEC"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:85
 #, kde-format
 msgid "Portable Document File [*.PDF] Adobe"
 msgstr "Portable Document File [*.PDF] Adobe"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:86
 #, fuzzy, kde-format
 msgid "News Industry Text Format"
 msgstr "Nahradiť text s formátom"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:87
 #, fuzzy, kde-format
 msgid "Tape Archive [*.TAR]"
 msgstr "Nekomprimovaný archív (.tar)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:88
 #, kde-format
 msgid "Tidningarnas Telegrambyra NITF version (TTNITF DTD)"
 msgstr "Tidningarnas Telegrambyra NITF verzia (TTNITF DTD)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
 #, kde-format
 msgid "Ritzaus Bureau NITF version (RBNITF DTD)"
 msgstr "Ritzaus Bureau NITF verzia (RBNITF DTD)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
 #, fuzzy, kde-format
 msgid "Corel Draw [*.CDR]"
 msgstr "Kresliť projektívny tieň"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:147
 #, kde-format
 msgid "Destination:"
 msgstr "Cieľ:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:153
 #, fuzzy, kde-format
 msgid "Set here the envelope destination"
 msgstr "Tu si vyberte počet dní"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:154
 #, kde-format
 msgid ""
 "Enter the envelope destination. This field is limited to 1024 characters."
 msgstr "Zadajte cieľ obálky. Toto pole je obmedzené na 1024 znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:159
 #, kde-format
 msgid "U.N.O ID:"
 msgstr "U.N.O ID:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:163
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Unique Name of Object identifier. This field is limited to "
@@ -14211,7 +14211,7 @@ msgstr ""
 "Zadajte jedinečný názov identifikátoru objektu. Toto pole je obmedzené na 80 "
 "znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:164
 #, kde-format
 msgid ""
 "Set here the Unique Name of Object identifier. This field is limited to 80 "
@@ -14220,151 +14220,151 @@ msgstr ""
 "Zadajte jedinečný názov identifikátoru objektu. Toto pole je obmedzené na 80 "
 "znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
 #, kde-format
 msgid "Product ID:"
 msgstr "ID produktu:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:173
 #, fuzzy, kde-format
 msgid "Set here the product identifier"
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:174
 #, kde-format
 msgid ""
 "Set here the product identifier. This field is limited to 32 characters."
 msgstr "Zadajte identifikátor produktu. Toto pole je obmedzené na 32 znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:179
 #, kde-format
 msgid "Service ID:"
 msgstr "ID Služby:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:183
 #, fuzzy, kde-format
 msgid "Set here the service identifier"
 msgstr "<p>Tu môžete nastaviť šírku orezu."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:184
 #, kde-format
 msgid ""
 "Set here the service identifier. This field is limited to 10 characters."
 msgstr "Zadajte identifikátor služby. Toto pole je obmedzené na 10 znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:189
 #, fuzzy, kde-format
 msgid "Envelope ID:"
 msgstr "ID chyby"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:193
 #, fuzzy, kde-format
 msgid "Set here the envelope identifier"
 msgstr "Tu si vyberte počet dní"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:194
 #, kde-format
 msgid ""
 "Set here the envelope identifier. This field is limited to 8 characters."
 msgstr "Zadajte identifikátor obálky. Toto pole je obmedzené na 8 znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:199
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #, kde-format
 msgid "Priority:"
 msgstr "Priorita:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "0: None"
 msgstr "0: Žiadne"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "1: High"
 msgstr "1: Vysoké"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "5: Normal"
 msgstr "5: Normálne"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:209
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "8: Low"
 msgstr "8: Nízke"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:210
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:206
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
 msgstr "9: Definované používateľom"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
 #, fuzzy, kde-format
 msgid "Select here the envelope priority."
 msgstr "Tu si vyberte počet dní"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:237
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:85
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:166
 #, kde-format
 msgid "Format:"
 msgstr "Formát:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
 #, kde-format
 msgid "Select here envelope file format."
 msgstr "Vyberte formát súboru obálky."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:232
 #, fuzzy, kde-format
 msgid "Sent date:"
 msgstr "dátum: %1; autor: %2"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:255
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
 #, fuzzy, kde-format
 msgid "Sent time:"
 msgstr "Čas 3D"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:266
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:244
 #, kde-format
 msgid "Set envelope sent date to today"
 msgstr "Nastaviť dátum odoslania obálky na dnešok"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:268
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:246
 #, kde-format
 msgid "Set here the date when the service sent the material."
 msgstr "Nastaviť dátum odoslania materiálu službou."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:269
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:247
 #, kde-format
 msgid "Set here the time when the service sent the material."
 msgstr "Nastaviť čas odoslania materiálu službou."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:270
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:248
 #, kde-format
 msgid "Set here the time zone when the service sent the material."
 msgstr "Nastaviť časové pásmo odoslania materiálu službou."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:66
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
 #, fuzzy, kde-format
 msgid "Use information retrieval words:"
 msgstr "Použiť túto informáciu o prihlásení"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:71
 #, fuzzy, kde-format
 #| msgid "Enter here a new keyword."
 msgid "Set here a keyword"
 msgstr "Sem zadajte nové kľúčové slovo."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:72
 #, kde-format
 msgid "Enter here a new keyword. This field is limited to 64 characters."
 msgstr "Zadajte nové kľúčové slovo. Toto pole je obmedzené na 64 znakov."
@@ -14846,19 +14846,19 @@ msgstr ""
 "Zadajte podrobný názov subjektu. Ak ste vybrali referenčný kód štandardu "
 "IPTC/NAA, použite angličtinu. Pole je obmedzené na 64 znakov."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:43
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:39
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Metadata Edit"
 msgstr "Dynamický editor dialógov"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:58
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:54
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A tool to edit items metadata"
 msgstr "Otvoriť editor šablón metadát"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:63
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -14871,7 +14871,7 @@ msgid ""
 "items contents based on Iptc reference codes."
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."
