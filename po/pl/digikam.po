@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-02 01:39+0000\n"
+"POT-Creation-Date: 2024-05-03 01:41+0000\n"
 "PO-Revision-Date: 2024-01-02 20:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -4020,14 +4020,14 @@ msgstr "Oznaczony geograficznie"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:85
 #: core/app/views/tableview/tableview_column_geo.cpp:102
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:118
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:97
 #, kde-format
 msgid "Coordinates"
 msgstr "Współrzędne"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:617
 #, kde-format
 msgid "Altitude"
@@ -11402,7 +11402,7 @@ msgstr "Nie zapisano pliku"
 msgid "Cannot save \"%1\" file"
 msgstr "Nie można zapisać pliku \"%1\""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:222
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:419
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:520
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:799
@@ -11411,38 +11411,38 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Edytor geopołożenia"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Wyświetl na mapie pozycje z przypisanymi zakładkami"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:315
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:273
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Układ:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:317
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "Jedna mapa"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "Dwie mapy - po lewej i prawej"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
 msgstr "Dwie mapy - na górze i dole"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
@@ -11452,67 +11452,67 @@ msgstr "Dwie mapy - na górze i dole"
 msgid "OK"
 msgstr "OK"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Szeregowanie"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:327
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Najpierw pokaż najstarsze"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Najpierw pokaż najmłodsze"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:371
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Szczegóły"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Korelator GPS"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Cofnij/Powtórz"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Odwrotne geo-kodowanie"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Poszukaj"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Eksport KML"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:594
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Wczytywanie meta-danych -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:787
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11521,25 +11521,25 @@ msgstr[0] "Posiadasz 1 zmieniony obraz."
 msgstr[1] "Posiadasz %1 zmienione obrazy."
 msgstr[2] "Posiadasz %1 zmienionych obrazów."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:794
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Niezapisane zmiany"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:837
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Czy chcesz zapisać zmiany, które w nich dokonano?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:953
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Zapisywanie zmian -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1012
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11583,87 +11583,87 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Błąd"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1013
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Nieudane zapisanie pewnych informacji:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1051
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
 msgstr "Edytuj geo-położenie"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:615
 #, kde-format
 msgid "Latitude"
 msgstr "Szerokość geograficzna"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:616
 #, kde-format
 msgid "Longitude"
 msgstr "Długość geograficzna"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
 #, kde-format
 msgid "Speed"
 msgstr "Szybkość"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "# satellites"
 msgstr "# satelity"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:620
 #, kde-format
 msgid "Fix type"
 msgstr "Typ utwierdzenia"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:150
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:129
 #, kde-format
 msgid "2-d"
 msgstr "2-d"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:151
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #, kde-format
 msgid "3-d"
 msgstr "3-d"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:619
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:139
 #, kde-format
 msgid "Apply"
 msgstr "Zastosuj"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:428
 #, kde-format
 msgid "Details changed"
 msgstr "Zmieniono szczegóły"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:43
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "Edytuj geo-położenie"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:58
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:54
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "Narzędzie do edytowania rzeczy geo-położenia"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:63
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -11690,121 +11690,121 @@ msgstr ""
 "synchronizacji geopołożenia rzeczy, jeśli aparat nie ma wbudowanego "
 "urządzenia GPS."
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:101
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
 msgstr "Edytuj geo-położenie..."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:145
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:162
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:117
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "Nie można odczytać obrazu '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:154
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:126
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "Nieznany format obrazu '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:172
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "Błąd wczytywania obrazu '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:215
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:189
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "Nie można zapisać obrazu '%1' w '%2'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:219
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:207
 #, kde-format
 msgid "Creation of picture '%1'"
 msgstr "Tworzenie obrazu '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:235
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:223
 #, fuzzy, kde-format
 #| msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgid "Cannot get GPS Information from %1 file."
 msgstr "Nie można pobrać informacji ze zbioru zdjęć %1. %2\n"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:324
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:312
 #, kde-format
 msgid "Creation of placemark '%1'"
 msgstr "Tworzenie znacznika miejsca '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:333
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:321
 #, kde-format
 msgid "Could not save icon for image '%1' to '%2'"
 msgstr "Nie można zapisać ikony dla obrazu '%1' w '%2'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:337
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:325
 #, kde-format
 msgid "Creation of icon '%1'"
 msgstr "Tworzenie ikony '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:352
 #, kde-format
 msgid "No GPX file chosen."
 msgstr "Nie wybrano pliku GPX."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:361
 #, kde-format
 msgid "Cannot parse %1 GPX file."
 msgstr "Nie można przetworzyć pliku %1 GPX."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:379
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:367
 #, kde-format
 msgid "The %1 GPX file do not have a date-time track to use."
 msgstr "Plik %1 GPX nie ma do użycia trasy data-czas."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:387
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:375
 #, kde-format
 msgid "Tracks"
 msgstr "Ścieżki"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:491
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:479
 #, kde-format
 msgid "No position data for '%1'"
 msgstr "Brak danych położenia dla '%1'"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:506
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:494
 #, kde-format
 msgid "Cannot open file for writing"
 msgstr "Nie można otworzyć pliku do zapisu"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:519
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:507
 #, kde-format
 msgid "Move %1 to final directory %2"
 msgstr "Przenieś %1 do końcowego katalogu %2"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:523
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:511
 #, kde-format
 msgid "Cannot move data to destination directory"
 msgstr "Nie można przenieść danych do katalogu docelowego"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:533
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:521
 #, kde-format
 msgid "Report below have been generated while KML file processing:"
 msgstr "Stworzono sprawozdanie poniżej podczas przetwarzania pliku KML:"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:57
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:53
 #, kde-format
 msgctxt "@item: linetrack over the map"
 msgid "Track"
 msgstr "Ścieżka"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:83
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:79
 #, kde-format
 msgctxt "@item: points over the map"
 msgid "Points"
 msgstr "Punkty"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:96
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:92
 #, kde-format
 msgctxt "@item: point coordinates"
 msgid "Point"
@@ -12132,22 +12132,22 @@ msgstr ""
 "pod rzeczą.</dd></dl></p>"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:249
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:293
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:295
 #, kde-format
 msgid "Generate KML file"
 msgstr "Tworzenie pliku KML"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:308
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:304
 #, kde-format
 msgid "GeoNames"
 msgstr "Geo-nazwy"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:309
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:305
 #, kde-format
 msgid "OSM"
 msgstr "OSM"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultmodelhelper.cpp:152
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultmodelhelper.cpp:147
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkmodelhelper.cpp:236
 #, kde-format
 msgid "1 image snapped to '%2'"
@@ -12156,61 +12156,61 @@ msgstr[0] "1 obraz przyciągnięty do '%2'"
 msgstr[1] "%1 obrazy przyciągnięte do '%2'"
 msgstr[2] "%1 obrazów przyciągniętych do '%2'"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:159
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:134
 #, kde-format
 msgctxt "Start the search"
 msgid "Search"
 msgstr "Znajdź"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:166
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:141
 #, kde-format
 msgid "Clear the search results."
 msgstr "Wyczyść wyniki wyszukiwania."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:174
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:149
 #, kde-format
 msgid "Keep the results of old searches when doing a new search."
 msgstr "Zachowaj wyniki starych wyszukiwań, podczas robienia nowych."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:181
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:156
 #, kde-format
 msgid "Toggle the visibility of the search results on the map."
 msgstr "Przełącz widoczność wyników wyszukiwań na mapie."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:185
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:160
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:83
 #, kde-format
 msgid "Copy coordinates"
 msgstr "Skopiuj współrzędne"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:188
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:163
 #, kde-format
 msgid "Move selected images to this position"
 msgstr "Przenieś wybrane obrazy do tej pozycji"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:190
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:165
 #, kde-format
 msgid "Remove from results list"
 msgstr "Usuń z listy wyników"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:194
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:169
 #, kde-format
 msgid "Select which service you would like to use."
 msgstr "Wybierz usługę, z której chcesz skorzystać."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:218
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:193
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:122
 #, kde-format
 msgid "Bookmarks"
 msgstr "Zakładki"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:271
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:246
 #, kde-format
 msgctxt "@title:window"
 msgid "Search Failed"
 msgstr "Nie udało się wyszukać"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:271
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:246
 #, kde-format
 msgid ""
 "Your search failed:\n"
@@ -12219,7 +12219,7 @@ msgstr ""
 "Twoje wyszukiwanie zawiodło:\n"
 "%1"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:455
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:430
 #, kde-format
 msgid "1 image moved to '%2'"
 msgid_plural "%1 images moved to '%2'"
@@ -12227,75 +12227,75 @@ msgstr[0] "1 obraz przeniesiono do '%2'"
 msgstr[1] "%1 obrazy przeniesiono do '%2'"
 msgstr[2] "%1 obrazów przeniesiono do '%2'"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "Edytor metadanych"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:103
 #, kde-format
 msgctxt "@action: button"
 msgid "Next"
 msgstr "Następny"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:105
 #, kde-format
 msgctxt "@action: button"
 msgid "Previous"
 msgstr "Poprzedni"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:118
 #, kde-format
 msgctxt "@item"
 msgid "Edit EXIF"
 msgstr "Edytuj EXIF"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:119
 #, kde-format
 msgctxt "@item"
 msgid "Edit IPTC"
 msgstr "Edytuj IPTC"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
 #, kde-format
 msgctxt "@item"
 msgid "Edit XMP"
 msgstr "Edytuj XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:310
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:309
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
 msgstr "%1 (%2/%3) - Edytuj metadane"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:83
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:75
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:80
 #, kde-format
 msgid "Add a new value to the list"
 msgstr "Dodaj nową wartość do listy"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:86
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:84
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
 #, kde-format
 msgid "Remove the current selected value from the list"
 msgstr "Usuń obecnie wybraną wartość z listy"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:87
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:82
 #, kde-format
 msgid "Replace the current selected value from the list"
 msgstr "Zamień obecnie wybraną wartość z listy"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:93
 #, kde-format
 msgid " This field is limited to:"
 msgstr " To pole jest ograniczone do:"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:95
 #, kde-format
 msgid "<p>1 character.</p>"
 msgid_plural "<p>%1 characters.</p>"
@@ -12303,10 +12303,10 @@ msgstr[0] "<p>1 znak.</p>"
 msgstr[1] "<p>%1 znaki.</p>"
 msgstr[2] "<p>%1 znaków.</p>"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:291
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:346
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:269
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:428
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
 #: core/libs/widgets/text/dplaintextedit.cpp:400
@@ -12318,159 +12318,159 @@ msgstr[0] "%1 znak został"
 msgstr[1] "%1 znaki zostały"
 msgstr[2] "%1 znaków zostało"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:72
 #, kde-format
 msgid "Attribute:"
 msgstr "Atrybut:"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:94
 #, kde-format
 msgid "Select here the editorial attribute of content."
 msgstr "Tutaj wybierz atrybut redakcyjny treści."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:95
 #, kde-format
 msgctxt "Content type"
 msgid "Current"
 msgstr "Bieżący"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:96
 #, kde-format
 msgctxt "Content type"
 msgid "Analysis"
 msgstr "Analiza"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:97
 #, kde-format
 msgctxt "Content type"
 msgid "Archive material"
 msgstr "Materiał archiwalny"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:98
 #, kde-format
 msgctxt "Content type"
 msgid "Background"
 msgstr "Tło"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:99
 #, kde-format
 msgctxt "Content type"
 msgid "Feature"
 msgstr "Funkcja"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:100
 #, kde-format
 msgctxt "Content type"
 msgid "Forecast"
 msgstr "Prognoza"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:101
 #, kde-format
 msgctxt "Content type"
 msgid "History"
 msgstr "Historia"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:102
 #, kde-format
 msgctxt "Content type"
 msgid "Obituary"
 msgstr "Nekrolog"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
 #, kde-format
 msgctxt "Content type"
 msgid "Opinion"
 msgstr "Opinia"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
 #, kde-format
 msgctxt "Content type"
 msgid "Polls & Surveys"
 msgstr "Sondaże i ankiety"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
 #, kde-format
 msgctxt "Content type"
 msgid "Profile"
 msgstr "Profil"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
 #, kde-format
 msgctxt "Content type"
 msgid "Results Listings & Table"
 msgstr "Tabele i listy wyników"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
 #, kde-format
 msgctxt "Content type"
 msgid "Side bar & Supporting information"
 msgstr "Pasek oraz informacje poboczne"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, kde-format
 msgctxt "Content type"
 msgid "Summary"
 msgstr "Podsumowanie"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
 #, kde-format
 msgctxt "Content type"
 msgid "Transcript & Verbatim"
 msgstr "Transkrypcja i cytowanie"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
 #, kde-format
 msgctxt "Content type"
 msgid "Interview"
 msgstr "Wywiad"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
 #, kde-format
 msgctxt "Content type"
 msgid "From the Scene"
 msgstr "Ze sceny"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
 #, kde-format
 msgctxt "Content type"
 msgid "Retrospective"
 msgstr "Retrospekcja"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
 #, kde-format
 msgctxt "Content type"
 msgid "Statistics"
 msgstr "Statystyki"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
 #, kde-format
 msgctxt "Content type"
 msgid "Update"
 msgstr "Uaktualnij"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
 #, kde-format
 msgctxt "Content type"
 msgid "Wrap-up"
 msgstr "W skrócie"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:125
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
 #, kde-format
 msgctxt "Content type"
 msgid "Press Release"
 msgstr "Komunikat prasowy"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:122
 #, kde-format
 msgid "Set here the editorial attribute description of content."
 msgstr "Tutaj ustaw redakcyjny opis atrybutu treści."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:127
 #, kde-format
 msgid " This field is limited to "
 msgstr " To pole jest ograniczone do "
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:129
 #, kde-format
 msgid "%1 character."
 msgid_plural "%1 characters."
@@ -12478,17 +12478,17 @@ msgstr[0] "%1 znak."
 msgstr[1] "%1 znaki."
 msgstr[2] "%1 znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
 #, kde-format
 msgid "Set here the editorial description"
 msgstr "Tutaj umieść opis wydawcy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:71
 #, kde-format
 msgid "Brightness (APEX):"
 msgstr "Jasność (APEX):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:76
 #, kde-format
 msgid ""
 "Set here the brightness adjustment value in APEX unit used by camera to take "
@@ -12497,42 +12497,42 @@ msgstr ""
 "Tutaj ustaw jasności wybraną w aparacie, w jednostkach APEX, której użyto "
 "przy robieniu zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:81
 #, kde-format
 msgid "Gain Control:"
 msgstr "Sterowanie wzmocnieniem:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:83
 #, kde-format
 msgctxt "gain control"
 msgid "None"
 msgstr "Brak"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:84
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain up"
 msgstr "Niskie wzmocnienie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:85
 #, kde-format
 msgctxt "gain control"
 msgid "High gain up"
 msgstr "Wysokie wzmocnienie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:86
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain down"
 msgstr "Niskie osłabienie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:87
 #, kde-format
 msgctxt "gain control"
 msgid "High gain down"
 msgstr "Wysokie osłabienie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:88
 #, kde-format
 msgid ""
 "Set here the degree of overall image gain adjustment used by camera to take "
@@ -12541,7 +12541,7 @@ msgstr ""
 "Tutaj ustaw ogólny poziom wzmocnienia zdjęcia użyty przez aparat przy "
 "robieniu zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:93
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
@@ -12549,25 +12549,25 @@ msgstr ""
 msgid "Contrast:"
 msgstr "Kontrast:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:95
 #, kde-format
 msgctxt "contrast mode"
 msgid "Normal"
 msgstr "Normalny"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:96
 #, kde-format
 msgctxt "contrast mode"
 msgid "Soft"
 msgstr "Miękki"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:97
 #, kde-format
 msgctxt "contrast mode"
 msgid "Hard"
 msgstr "Twardy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
 #, kde-format
 msgid ""
 "Set here the direction of contrast processing applied by the camera to take "
@@ -12576,32 +12576,32 @@ msgstr ""
 "Tutaj ustaw rodzaj przetwarzania kontrastu użyty przez aparat przy robieniu "
 "zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:103
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:185
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:94
 #, kde-format
 msgid "Saturation:"
 msgstr "Nasycenie:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:105
 #, kde-format
 msgctxt "saturation mode"
 msgid "Normal"
 msgstr "Normalne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:106
 #, kde-format
 msgctxt "saturation mode"
 msgid "Low"
 msgstr "Niskie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #, kde-format
 msgctxt "saturation mode"
 msgid "High"
 msgstr "Wysokie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:108
 #, kde-format
 msgid ""
 "Set here the direction of saturation processing applied by the camera to "
@@ -12610,31 +12610,31 @@ msgstr ""
 "Tutaj ustaw rodzaj przetwarzania nasycenia użyty przez aparat przy robieniu "
 "zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:113
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:152
 #, kde-format
 msgid "Sharpness:"
 msgstr "Ostrość:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:115
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Normal"
 msgstr "Normalna"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:116
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Soft"
 msgstr "Miękka"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Hard"
 msgstr "Twarda"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:118
 #, kde-format
 msgid ""
 "Set here the direction of sharpness processing applied by the camera to take "
@@ -12643,22 +12643,22 @@ msgstr ""
 "Tutaj ustaw rodzaj przetwarzania ostrości użyty przez aparat przy robieniu "
 "zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:123
 #, kde-format
 msgid "Custom rendered:"
 msgstr "Rodzaj przetwarzania:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:125
 #, kde-format
 msgid "Normal process"
 msgstr "Normalne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:140
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:126
 #, kde-format
 msgid "Custom process"
 msgstr "Użytkownika"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
 #, kde-format
 msgid ""
 "Set here the use of special processing on image data, such as rendering "
@@ -12667,18 +12667,18 @@ msgstr ""
 "Tutaj ustaw użycie specjalnego przetwarzania obrazu, na przykład, poprzez "
 "zastosowanie efektu specjalnego na wyjściu."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:79
 #, kde-format
 msgctxt "name of the document this image has been scanned from"
 msgid "Name (*):"
 msgstr "Nazwa (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:82
 #, kde-format
 msgid "Set here the original document name."
 msgstr "Tutaj umieść pierwotną nazwę dokumentu."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:83
 #, kde-format
 msgid ""
 "Enter the name of the document from which this image was been scanned. This "
@@ -12687,33 +12687,33 @@ msgstr ""
 "Wpisz tutaj nazwę dokumentu, z którego to zdjęcie zostało zeskanowane. To "
 "pole jest ograniczone do znaków ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:89
 #, kde-format
 msgctxt "image description"
 msgid "Description (*):"
 msgstr "Opis (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:92
 #, kde-format
 msgid "Set here the image description."
 msgstr "Tutaj umieść opis obrazu."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:93
 #, kde-format
 msgid "Enter the image description. This field is limited to ASCII characters."
 msgstr "Tutaj wpisz opis obrazu. Pole to jest ograniczone do znaków ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:98
 #, kde-format
 msgid "Artist (*):"
 msgstr "Artysta (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
 #, kde-format
 msgid "Set here the author's name."
 msgstr "Tutaj umieść nazwę autora."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
 #, kde-format
 msgid ""
 "Enter the image author's name separated by semi-colons. This field is "
@@ -12722,17 +12722,17 @@ msgstr ""
 "Wpisz tutaj nazwiska autorów oddzielone średnikami. To pole jest ograniczone "
 "do znaków ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:107
 #, kde-format
 msgid "Copyright (*):"
 msgstr "Prawa autorskie (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:110
 #, kde-format
 msgid "Set here the copyright owner."
 msgstr "Tutaj umieść właściciela praw autorskich."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
 #, kde-format
 msgid ""
 "Enter the copyright owner of the image. This field is limited to ASCII "
@@ -12741,18 +12741,18 @@ msgstr ""
 "Wpisz tutaj właściciela praw autorskich do tego zdjęcia. To pole jest "
 "ograniczone do znaków ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:116
 #, kde-format
 msgctxt "image caption"
 msgid "Caption:"
 msgstr "Podpis:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:119
 #, kde-format
 msgid "Set here the image's caption."
 msgstr "Tutaj umieść podpis obrazu."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
 #, kde-format
 msgid ""
 "Enter the image's caption. This field is not limited. UTF8 encoding will be "
@@ -12761,25 +12761,25 @@ msgstr ""
 "Podaj podpis obrazu. Pole to jest nieograniczone. Do zapisania tekstu "
 "zostanie użyte kodowanie UTF-8."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:143
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:84
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, kde-format
 msgid "Sync JFIF Comment section"
 msgstr "Synchronizuj sekcję komentarza JFIF"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:125
 #, kde-format
 msgid "Sync XMP caption"
 msgstr "Synchronizuj podpis XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
 #, kde-format
 msgid "Sync IPTC caption (warning: limited to 2000 characters)"
 msgstr "Synchronizuj podpisy IPTC (uwaga: ograniczone do 2000 znaków)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:152
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:316
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:289
 #, kde-format
 msgid ""
 "<b>Note:</b> <b><a href='https://en.wikipedia.org/wiki/EXIF'>Exif</a></b> "
@@ -12790,34 +12790,34 @@ msgstr ""
 "oznaczone (*), obsługują jedynie drukowalne znaki <b><a href='http://en."
 "wikipedia.org/wiki/Ascii'>ASCII</a></b>.</b>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:89
 #, kde-format
 msgid "Creation date and time"
 msgstr "Data i czas utworzenia"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:90
 #, kde-format
 msgid "Creation sub-second"
 msgstr "Pod-sekunda utworzenia"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:101
 #, kde-format
 msgid "Sync XMP creation date"
 msgstr "Synchronizuj datę utworzenia XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:102
 #, kde-format
 msgid "Sync IPTC creation date"
 msgstr "Synchronizuj datę utworzenia IPTC"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:106
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
 #, kde-format
 msgid "Set creation date to today"
 msgstr "Ustaw datę utworzenia na dziś"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:113
 #, kde-format
 msgid ""
 "Set here the date and time of image creation. In this standard it is the "
@@ -12826,29 +12826,29 @@ msgstr ""
 "Tutaj ustaw datę i czas utworzenia zdjęcia. W tym standardzie jest to data i "
 "czas ostatniej modyfikacji pliku."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:115
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time of image creation."
 msgstr ""
 "Tutaj ustaw tysiączną część sekundy dla czasu i daty utworzenia zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:122
 #, kde-format
 msgid "Original date and time"
 msgstr "Data i czas początku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
 #, kde-format
 msgid "Original sub-second"
 msgstr "Pod-sekunda początku"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:136
 #, kde-format
 msgid "Set original date to today"
 msgstr "Ustaw datę początkową na dziś"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:138
 #, kde-format
 msgid ""
 "Set here the date and time when the original image data was generated. For a "
@@ -12857,7 +12857,7 @@ msgstr ""
 "Tutaj ustaw datę i czas utworzenia zdjęcia źródłowego. Dla aparatu "
 "cyfrowego, data i czas zrobienia zdjęcia zapisywana jest tutaj."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:141
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the original "
@@ -12866,24 +12866,24 @@ msgstr ""
 "Tutaj ustaw tysiączną część sekundy dla daty i czasu utworzenia zdjęcia "
 "źródłowego."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:148
 #, kde-format
 msgid "Digitization date and time"
 msgstr "Data i czas cyfrowej postaci"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:168
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:149
 #, kde-format
 msgid "Digitization sub-second"
 msgstr "Pod-sekunda cyfrowej postaci"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:162
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
 #, kde-format
 msgid "Set digitization date to today"
 msgstr "Ustaw datę cyfryzacji na dziś"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:164
 #, kde-format
 msgid ""
 "Set here the date and time when the image was stored as digital data. If, "
@@ -12896,7 +12896,7 @@ msgstr ""
 "zapisany plik, data i czas obrazu źródłowego i postaci cyfrowej będą takie "
 "same."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:169
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the image was "
@@ -12905,17 +12905,17 @@ msgstr ""
 "Tutaj ustaw tysiączną część sekundy dla daty i czasu zapisania obrazu w "
 "postaci cyfrowej."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:96
 #, kde-format
 msgid "Device manufacturer (*):"
 msgstr "Wytwórca urządzenia (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:100
 #, kde-format
 msgid "Set here the manufacturer name"
 msgstr "Tutaj umieść nazwę wytwórcy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:101
 #, kde-format
 msgid ""
 "Set here the manufacturer of image input equipment used to take the picture. "
@@ -12924,17 +12924,17 @@ msgstr ""
 "Tutaj ustaw wytwórcę urządzenia służącego do stworzenia obrazu. To pole jest "
 "ograniczone do znaków ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:106
 #, kde-format
 msgid "Device model (*):"
 msgstr "Model urządzenia (*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:110
 #, kde-format
 msgid "Set here the model name"
 msgstr "Tutaj umieść nazwę modelu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:111
 #, kde-format
 msgid ""
 "Set here the model of image input equipment used to take the picture. This "
@@ -12943,32 +12943,32 @@ msgstr ""
 "Tutaj ustaw model urządzenia użytego do stworzenia obrazu. To pole jest "
 "ograniczone do znaków ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:116
 #, kde-format
 msgid "Device type:"
 msgstr "Typ urządzenia:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:118
 #, kde-format
 msgid "Film scanner"
 msgstr "Skaner kliszy fotograficznej"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:119
 #, kde-format
 msgid "Reflection print scanner"
 msgstr "Skaner druku odblaskowego"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:120
 #, kde-format
 msgid "Digital still camera"
 msgstr "Aparat cyfrowy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:121
 #, kde-format
 msgid "Select here the image input equipment type used to take the picture."
 msgstr "Tutaj wybierz sprzęt robiący obrazy użyty do zrobienia zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:151
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:124
 #, kde-format
 msgid ""
 "<b>Warning:</b> Exif<b><a href='https://en.wikipedia.org/wiki/"
@@ -12980,77 +12980,77 @@ msgstr ""
 "mogą stać się niemożliwe do odczytu, jeśli zostanie wybrany zły wytwórca "
 "urządzenia/opis modelu.</b>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:163
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:136
 #, kde-format
 msgid "Exposure time (seconds):"
 msgstr "Czas naświetlenia (w sekundach):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:149
 #, kde-format
 msgid ""
 "Set on this option to set the exposure time of picture, given in seconds."
 msgstr "Wybierz tę opcję, aby ustawić czas naświetlenia zdjęcia, w sekundach."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:154
 #, kde-format
 msgid "Exposure program:"
 msgstr "Program naświetlenia:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:156
 #, kde-format
 msgctxt "exposure program"
 msgid "Not defined"
 msgstr "Nieokreślony"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:157
 #, kde-format
 msgctxt "exposure program"
 msgid "Manual"
 msgstr "Ręczny"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:158
 #, kde-format
 msgctxt "exposure program"
 msgid "Auto"
 msgstr "Automatyczny"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:159
 #, kde-format
 msgctxt "exposure program"
 msgid "Aperture priority"
 msgstr "Priorytet przysłony"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:160
 #, kde-format
 msgctxt "exposure program"
 msgid "Shutter priority"
 msgstr "Priorytet migawki"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:161
 #, kde-format
 msgctxt "exposure program"
 msgid "Creative program"
 msgstr "Kreatywny program"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:162
 #, kde-format
 msgctxt "exposure program"
 msgid "Action program"
 msgstr "Program działania"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:163
 #, kde-format
 msgctxt "exposure program"
 msgid "Portrait mode"
 msgstr "Tryb portretu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:164
 #, kde-format
 msgctxt "exposure program"
 msgid "Landscape mode"
 msgstr "Tryb pejzażu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:165
 #, kde-format
 msgid ""
 "Select here the program used by the camera to set exposure when the picture "
@@ -13059,30 +13059,30 @@ msgstr ""
 "Tutaj wybierz program, użyty przez aparat, do ustawienia naświetlenia, "
 "podczas robienia zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:170
 #, kde-format
 msgid "Exposure mode:"
 msgstr "Tryb naświetlenia:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:172
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto"
 msgstr "Automatyczny"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:173
 #, kde-format
 msgctxt "exposure mode"
 msgid "Manual"
 msgstr "Ręczny"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:174
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto bracket"
 msgstr "Auto naświetlanie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:175
 #, kde-format
 msgid ""
 "Select here the mode used by the camera to set exposure when the picture was "
@@ -13093,12 +13093,12 @@ msgstr ""
 "robienia zdjęcia. W trybie szeregu naświetleń, aparat robi szereg zdjęć tej "
 "samej sceny przy różnych ustawieniach naświetlenia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:183
 #, kde-format
 msgid "Exposure bias (APEX):"
 msgstr "Poprawka naświetlenia (APEX):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:188
 #, kde-format
 msgid ""
 "Set here the exposure bias value (in APEX units) used by camera to take the "
@@ -13107,60 +13107,60 @@ msgstr ""
 "Tutaj ustaw wartość skłonności naświetlenia (w jednostkach APEX) użytą przez "
 "aparat do zrobienia zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:222
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:195
 #, kde-format
 msgid "Metering mode:"
 msgstr "Tryb pomiaru:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:197
 #, kde-format
 msgctxt "metering mode"
 msgid "Unknown"
 msgstr "Nieznany"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:198
 #, kde-format
 msgctxt "metering mode"
 msgid "Average"
 msgstr "Średnia"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:199
 #, kde-format
 msgctxt "metering mode"
 msgid "Center weighted average"
 msgstr "Wyśrodkowana średnia ważona"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:200
 #, kde-format
 msgctxt "metering mode"
 msgid "Spot"
 msgstr "Punktowy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:201
 #, kde-format
 msgctxt "metering mode"
 msgid "Multi-spot"
 msgstr "Wielo-punktowy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:202
 #, kde-format
 msgctxt "metering mode"
 msgid "Multi-segment"
 msgstr "Wielo-odcinkowy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:203
 #, kde-format
 msgctxt "metering mode"
 msgid "Partial"
 msgstr "Częściowy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:204
 #, kde-format
 msgctxt "metering mode"
 msgid "Other"
 msgstr "Inny"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:205
 #, kde-format
 msgid ""
 "Select here the metering mode used by the camera to set exposure when the "
@@ -13169,130 +13169,130 @@ msgstr ""
 "Tutaj wybierz tryb mierzenia, użyty przez aparat, do ustawienia "
 "naświetlenia, podczas robienia zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:237
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
 #, kde-format
 msgid "Sensitivity (ISO):"
 msgstr "Czułość (ISO):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:275
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:248
 #, kde-format
 msgid "Select here the ISO Speed of the camera which took the picture."
 msgstr "Tutaj wybierz czułość ISO aparatu, którym zrobił zdjęcie."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:280
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:253
 #, kde-format
 msgid "Sensing method:"
 msgstr "Metoda wykrywania:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:282
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:255
 #, kde-format
 msgid "Not defined"
 msgstr "Nieokreślona"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:283
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:256
 #, kde-format
 msgid "One-chip color area"
 msgstr "Pojedynczy obszar koloru"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:284
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:257
 #, kde-format
 msgid "Two-chip color area"
 msgstr "Podwójny obszar koloru"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:285
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:258
 #, kde-format
 msgid "Three-chip color area"
 msgstr "Potrójny obszar koloru"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:286
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:259
 #, kde-format
 msgid "Color sequential area"
 msgstr "Sekwencyjny obszar koloru"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:287
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:260
 #, kde-format
 msgid "Trilinear sensor"
 msgstr "Czujnik trójliniowy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:288
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:261
 #, kde-format
 msgid "Color sequential linear"
 msgstr "Liniowa sekwencja koloru"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:289
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:262
 #, kde-format
 msgid ""
 "Select here the image sensor type used by the camera to take the picture."
 msgstr ""
 "Tutaj wybierz czujnik obrazu użyty przez aparat podczas robienia zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:294
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:267
 #, kde-format
 msgctxt "@option"
 msgid "Scene capture type:"
 msgstr "Typ zapisu sceny:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:296
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:269
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Standard"
 msgstr "Standardowy"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:297
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:270
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Landscape"
 msgstr "W poziomie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:298
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:271
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Portrait"
 msgstr "Portret"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:299
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:272
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Night scene"
 msgstr "Scena nocna"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:300
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "Select here the type of scene used by the camera to take the picture."
 msgstr "Tutaj wybierz typ sceny użyty przez aparat podczas robienia zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:305
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:278
 #, kde-format
 msgctxt "@option"
 msgid "Subject distance type:"
 msgstr "Typ odległości od obiektu:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:307
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:280
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Unknown"
 msgstr "Nieznany"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:308
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:281
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Macro"
 msgstr "Makro"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:309
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:282
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Close view"
 msgstr "Bliski widok"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:310
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:283
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Distant view"
 msgstr "Daleki widok"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:311
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:284
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -13302,120 +13302,120 @@ msgstr ""
 "Tutaj wybierz typ odległości między obiektem a urządzeniem do "
 "przechwytywania obrazów."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:83
 #, kde-format
 msgctxt "@item: image caption"
 msgid "Caption"
 msgstr "Podpis"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:87
 #, kde-format
 msgctxt "@item: date properties"
 msgid "Date & Time"
 msgstr "Data i czas"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:91
 #, kde-format
 msgctxt "@item: lens properties"
 msgid "Lens"
 msgstr "Soczewki"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:95
 #, kde-format
 msgctxt "@item: device properties"
 msgid "Device"
 msgstr "Urządzenie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:99
 #, kde-format
 msgctxt "@item; light properties"
 msgid "Light"
 msgstr "Światło"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:103
 #, kde-format
 msgctxt "@item: picture adjustments"
 msgid "Adjustments"
 msgstr "Dostosowania"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid "Caption Information"
 msgstr "Szczegóły o podpisie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
 #, kde-format
 msgctxt "@title"
 msgid "Record technical descriptions"
 msgstr "Przechowaj opisy techniczne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:171
 #, kde-format
 msgctxt "@title"
 msgid "Date and Time Information"
 msgstr "Szczegóły o dacie i czasie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:172
 #, kde-format
 msgctxt "@title"
 msgid "Record camera time-stamp properties"
 msgstr "Przechowaj właściwości znacznika czasu aparatu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid "Lens Settings"
 msgstr "Ustawienia obiektywu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:177
 #, kde-format
 msgctxt "@title"
 msgid "Record lens details used with camera"
 msgstr "Zapisz szczegóły obiektywu używanego przez aparat"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid "Capture Device Settings"
 msgstr "Ustawienia urządzenie przechwytującego"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid "Record shot conditions used by camera"
 msgstr "Przechowaj warunki, w których wykonano zdjęcie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:186
 #, kde-format
 msgctxt "@title"
 msgid "Light Source Information"
 msgstr "Szczegóły o źródle światła"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:187
 #, kde-format
 msgctxt "@title"
 msgid "Record ambient condition captured by camera"
 msgstr "Przechowaj dane o warunkach otoczenia z aparatu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:208
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:191
 #, kde-format
 msgctxt "@title"
 msgid "Pictures Adjustments"
 msgstr "Nastawienia zdjęć"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid "Record technical details used by camera"
 msgstr "Zapisz szczegóły techniczne używane przez aparat"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:132
 #, kde-format
 msgid "Focal length (mm):"
 msgstr "Ogniskowa (mm):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:138
 #, kde-format
 msgid ""
 "Set here the lens focal length in millimeters used by camera to take the "
@@ -13424,12 +13424,12 @@ msgstr ""
 "Tutaj ustaw odległość ogniskową soczewek (w milimetrach) użytą przez aparat "
 "podczas robienia zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
 #, kde-format
 msgid "Focal length in 35mm film (mm):"
 msgstr "Ekwiwalent ogniskowej dla filmu 35 mm (mm):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:149
 #, kde-format
 msgid ""
 "Set here equivalent focal length assuming a 35mm film camera, in mm. A value "
@@ -13438,34 +13438,34 @@ msgstr ""
 "Tutaj ustaw ekwiwalent ogniskowej dla filmu 35 mm, w milimetrach. Wartość 0 "
 "oznacza, że długość ogniskowej jest nieznana."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:155
 #, kde-format
 msgid "Digital zoom ratio:"
 msgstr "Współczynnik cyfrowego zoomu:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:161
 #, kde-format
 msgid "Set here the digital zoom ratio used by camera to take the picture."
 msgstr ""
 "Tutaj ustaw współczynnik cyfrowego zoomu użyty przez aparat podczas robienia "
 "zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:166
 #, kde-format
 msgid "Lens aperture (f-number):"
 msgstr "Przysłona (f-liczba):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:169
 #, kde-format
 msgid "Select here the lens aperture used by camera to take the picture."
 msgstr "Tutaj wybierz przysłonę użytą przez aparat podczas robienia zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:174
 #, kde-format
 msgid "Max. lens aperture (f-number):"
 msgstr "Maksymalna przysłona (f-liczba):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
 #, kde-format
 msgid ""
 "Select here the smallest aperture of the lens used by camera to take the "
@@ -13474,258 +13474,258 @@ msgstr ""
 "Tutaj wybierz najmniejszą przysłonę użytą przez aparat podczas robienia "
 "zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:77
 #, kde-format
 msgid "No flash"
 msgstr "Bez lampy błyskowej"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:78
 #, kde-format
 msgid "Fired"
 msgstr "Z lampą"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:79
 #, kde-format
 msgid "Fired, no strobe return light"
 msgstr "Z lampą, bez powrotnego światła stroboskopowego"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:80
 #, kde-format
 msgid "Fired, strobe return light"
 msgstr "Z lampą, z powrotnym światłem stroboskopowym"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:81
 #, kde-format
 msgid "Yes, compulsory"
 msgstr "Tak, wymuszone"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:82
 #, kde-format
 msgid "Yes, compulsory, no return light"
 msgstr "Tak, wymuszone, bez światła powrotnego"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:83
 #, kde-format
 msgid "Yes, compulsory, return light"
 msgstr "Tak, wymuszone, ze światłem powrotnym"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:84
 #, kde-format
 msgid "No, compulsory"
 msgstr "Nie, wymuszone"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:85
 #, kde-format
 msgid "No, auto"
 msgstr "Nie, automatycznie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:86
 #, kde-format
 msgid "Yes, auto"
 msgstr "Tak, automatycznie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:87
 #, kde-format
 msgid "Yes, auto, no return light"
 msgstr "Tak, automatycznie, bez światła powrotnego"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:88
 #, kde-format
 msgid "Yes, auto, return light"
 msgstr "Tak, automatycznie, ze światłem powrotnym"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:89
 #, kde-format
 msgid "No flash function"
 msgstr "Brak lampy błyskowej"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
 #, kde-format
 msgid "Yes, red-eye"
 msgstr "Tak, usuwanie czerwonych oczu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:91
 #, kde-format
 msgid "Yes, red-eye, no return light"
 msgstr "Tak, usuwanie czerwonych oczu, bez światła powrotnego"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
 #, kde-format
 msgid "Yes, red-eye, return light"
 msgstr "Tak, usuwanie czerwonych oczu, ze światłem powrotnym"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:93
 #, kde-format
 msgid "Yes, compulsory, red-eye"
 msgstr "Tak, wymuszone, usuwanie czerwonych oczu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:94
 #, kde-format
 msgid "Yes, compulsory, red-eye, no return light"
 msgstr "Tak, wymuszone, usuwanie czerwonych oczu, bez światła powrotnego"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:95
 #, kde-format
 msgid "Yes, compulsory, red-eye, return light"
 msgstr "Tak, wymuszone, usuwanie czerwonych oczu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:96
 #, kde-format
 msgid "Yes, auto, red-eye"
 msgstr "Tak, automatycznie, usuwanie czerwonych oczu"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:97
 #, kde-format
 msgid "Yes, auto, red-eye, no return light"
 msgstr "Tak, automatycznie, usuwanie czerwonych oczu, bez światła powrotnego"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:98
 #, kde-format
 msgid "Yes, auto, red-eye, return light"
 msgstr "Tak, automatycznie, usuwanie czerwonych oczu, ze światłem powrotnym"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:128
 #, kde-format
 msgid "Light source:"
 msgstr "Źródło światła:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:130
 #, kde-format
 msgctxt "light source"
 msgid "Unknown"
 msgstr "Nieznane"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:131
 #, kde-format
 msgctxt "light source"
 msgid "Daylight"
 msgstr "Światło dzienne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:132
 #, kde-format
 msgctxt "light source"
 msgid "Fluorescent"
 msgstr "Fluorescencyjne"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:133
 #, kde-format
 msgctxt "light source"
 msgid "Tungsten (incandescent light)"
 msgstr "Światło żarowe"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:134
 #, kde-format
 msgctxt "light source"
 msgid "Flash"
 msgstr "Lampa błyskowa"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:135
 #, kde-format
 msgctxt "light source"
 msgid "Fine weather"
 msgstr "Dobra pogoda"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:136
 #, kde-format
 msgctxt "light source"
 msgid "Cloudy weather"
 msgstr "Zachmurzenie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:137
 #, kde-format
 msgctxt "light source"
 msgid "Shade"
 msgstr "Cień"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:138
 #, kde-format
 msgctxt "light source"
 msgid "Daylight fluorescent (D 5700 - 7100K)"
 msgstr "Światło dzienne fluorescencyjne (D5700 - 7100K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
 #, kde-format
 msgctxt "light source"
 msgid "Day white fluorescent (N 4600 - 5400K)"
 msgstr "Światło dzienne, białe, fluorescencyjne (N 4600 - 5400K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:151
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:140
 #, kde-format
 msgctxt "light source"
 msgid "Cool white fluorescent (W 3900 - 4500K)"
 msgstr "Zimne białe fluorescencyjne (W 3900 - 4500K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:152
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
 #, kde-format
 msgctxt "light source"
 msgid "White fluorescent (WW 3200 - 3700K)"
 msgstr "Białe fluorescencyjne (WW 3200 - 3700K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:153
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
 #, kde-format
 msgctxt "light source"
 msgid "Standard light A"
 msgstr "Standardowe światło A"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
 #, kde-format
 msgctxt "light source"
 msgid "Standard light B"
 msgstr "Standardowe światło B"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:144
 #, kde-format
 msgctxt "light source"
 msgid "Standard light C"
 msgstr "Standardowe światło C"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:145
 #, kde-format
 msgctxt "light source"
 msgid "D55"
 msgstr "D55"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:146
 #, kde-format
 msgctxt "light source"
 msgid "D65"
 msgstr "D65"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:147
 #, kde-format
 msgctxt "light source"
 msgid "D75"
 msgstr "D75"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:159
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:148
 #, kde-format
 msgctxt "light source"
 msgid "D50"
 msgstr "D50"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:149
 #, kde-format
 msgctxt "light source"
 msgid "ISO studio tungsten"
 msgstr "ISO studio wolfram"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:161
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:150
 #, kde-format
 msgctxt "light source"
 msgid "Other light source"
 msgstr "Inne źródło światła"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:151
 #, kde-format
 msgid "Select here the kind of light source used to take the picture."
 msgstr "Tutaj wybierz rodzaj źródła światła użytego przy robieniu zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:156
 #, kde-format
 msgid "Flash mode:"
 msgstr "Tryb lampy błyskowej:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:173
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:164
 #, kde-format
 msgid ""
 "Select here the flash program mode used by the camera to take the picture."
@@ -13733,12 +13733,12 @@ msgstr ""
 "Tutaj wybierz tryb programu lampy błyskowej, użyty przez aparat, podczas "
 "robienia zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:178
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:169
 #, kde-format
 msgid "Flash energy (BCPS):"
 msgstr "Energia lampy błyskowej (BCPS):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:175
 #, kde-format
 msgid ""
 "Set here the flash energy used to take the picture in BCPS units. Beam "
@@ -13751,24 +13751,24 @@ msgstr ""
 "gdy zostanie ono skupione w wiązkę przez reflektor lub obiektyw. Wartość ta "
 "to efektywne natężenie dla okresu jednej sekundy."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:183
 #, kde-format
 msgid "White balance:"
 msgstr "Stosunek bieli:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:185
 #, kde-format
 msgctxt "@item: white balance"
 msgid "Auto"
 msgstr "Auto"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:186
 #, kde-format
 msgctxt "@item: white balance"
 msgid "Manual"
 msgstr "Ręcznie"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:187
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -13778,19 +13778,19 @@ msgstr ""
 "Tutaj wybierz tryb równowagi bieli, ustawiony przez aparat, podczas robienia "
 "zdjęcia."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:70
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:78
 #, kde-format
 msgid "Identify subject of content (3 chars max):"
 msgstr "Identyfikacja kategorii treści (maks. 3 znaki):"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:74
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:82
 #, kde-format
 msgid "Set here the category ID"
 msgstr "Tutaj umieść ID kategorii"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:75
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:83
 #, kde-format
 msgid ""
@@ -13798,19 +13798,19 @@ msgid ""
 msgstr ""
 "Tutaj ustaw kategorię treści. To pole jest ograniczone do 3 znaków ASCII."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:86
 #, kde-format
 msgid "Supplemental categories:"
 msgstr "Dodatkowe kategorie:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:83
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:90
 #, kde-format
 msgid "Set here the extra category"
 msgstr "Tutaj umieść dodatkową kategorię"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
 #, kde-format
 msgid ""
 "Enter here a new supplemental category of content. This field is limited to "
@@ -13819,16 +13819,16 @@ msgstr ""
 "Tutaj wpisz nową dodatkową kategorię treści. To pole jest ograniczone do 32 "
 "znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:100
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:96
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:82
 #, kde-format
 msgid "&Add"
 msgstr "&Dodaj"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:101
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
 #: core/libs/dialogs/deletedialog.cpp:574
@@ -13836,8 +13836,8 @@ msgstr "&Dodaj"
 msgid "&Delete"
 msgstr "&Usuń"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:102
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:98
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:84
 #: core/utilities/setup/album/setupcategory.cpp:93
@@ -13845,11 +13845,11 @@ msgstr "&Usuń"
 msgid "&Replace"
 msgstr "&Zamień"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:111
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:109
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:123
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:276
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:89
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:235
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:249
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:110
@@ -13867,59 +13867,59 @@ msgstr ""
 "szczegółowe informacje. Rozważ użycie <a href='https://en.wikipedia.org/wiki/"
 "Extensible_Metadata_Platform'>XMP</a> zamiast tego.</b>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:68
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
 #, kde-format
 msgid "Headline:"
 msgstr "Nagłówek:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:71
 #, kde-format
 msgid "Set here the content synopsis"
 msgstr "Tutaj umieść streszczenie treści"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:72
 #, kde-format
 msgid ""
 "Enter here the content synopsis. This field is limited to 256 characters."
 msgstr ""
 "Tutaj wpisz streszczenie treści. To pole jest ograniczone do 256 znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
 #, kde-format
 msgctxt "content description"
 msgid "Caption:"
 msgstr "Podpis:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:85
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:95
 #, kde-format
 msgid "Sync Exif Comment"
 msgstr "Synchronizuj komentarz Exif"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:87
 #, kde-format
 msgid "Set here the content description"
 msgstr "Tutaj umieść opis treści"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
 #, kde-format
 msgid ""
 "Enter the content description. This field is limited to 2000 characters."
 msgstr "Wpisz tutaj opis treści. To pole jest ograniczone do 2000 znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:93
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
 #, kde-format
 msgid "Caption Writer:"
 msgstr "Autor podpisu:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
 #, kde-format
 msgid "Enter the name of the caption author."
 msgstr "Podaj nazwę autora podpisu."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:67
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
 #: core/libs/template/templatepanel.cpp:128
 #: core/libs/template/templateviewer.cpp:108
@@ -13927,12 +13927,12 @@ msgstr "Podaj nazwę autora podpisu."
 msgid "Copyright:"
 msgstr "Prawa:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:70
 #, kde-format
 msgid "Set here the copyright notice."
 msgstr "Tutaj umieść wspomnienie o prawach autorskich"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:71
 #, kde-format
 msgid ""
 "Set here the necessary copyright notice. This field is limited to 128 "
@@ -13941,29 +13941,29 @@ msgstr ""
 "Tutaj ustaw niezbędne informacje dotyczące praw autorskich. To pole jest "
 "ograniczone do 128 znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:76
 #, kde-format
 msgid "Byline:"
 msgstr "Twórca:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:77
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
 #, kde-format
 msgid "Set here the name of content creator."
 msgstr "Tutaj ustaw nazwę twórcy treści."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:82
 #, kde-format
 msgid "Byline Title:"
 msgstr "Tytuł twórcy:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:83
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
 #, kde-format
 msgid "Set here the title of content creator."
 msgstr "Tutaj ustaw tytuł twórcy treści."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
 #: core/libs/template/templatepanel.cpp:114
 #: core/libs/template/templateviewer.cpp:106
@@ -13971,32 +13971,32 @@ msgstr "Tutaj ustaw tytuł twórcy treści."
 msgid "Credit:"
 msgstr "Wyraz uznania:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:91
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:194
 #, kde-format
 msgid "Set here the content provider."
 msgstr "Tutaj ustaw wytwórcę treści."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:92
 #, kde-format
 msgid "Set here the content provider. This field is limited to 32 characters."
 msgstr ""
 "Tutaj ustaw osobę, która dostarczyła treść. To pole jest ograniczone do 32 "
 "znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:198
 #, kde-format
 msgctxt "original owner of content"
 msgid "Source:"
 msgstr "Źródło:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:100
 #, kde-format
 msgid "Set here the content owner."
 msgstr "Tutaj umieść właściciela treści."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:101
 #, kde-format
 msgid ""
 "Set here the original owner of content. This field is limited to 32 "
@@ -14005,406 +14005,406 @@ msgstr ""
 "Tutaj ustaw właściciela źródłowego treści. To pole jest ograniczone do 32 "
 "znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:106
 #, kde-format
 msgid "Contact:"
 msgstr "Kontakt:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:107
 #, kde-format
 msgid "Set here the person or organization to contact."
 msgstr "Tutaj wpisz dane kontaktowe osoby lub organizacji."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:92
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Content"
 msgstr "Treść"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:96
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Origin"
 msgstr "Miejsce utworzenia"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:100
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Credits"
 msgstr "Zasługi"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:104
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Subjects"
 msgstr "Przedmioty"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:108
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Keywords"
 msgstr "Słowa kluczowe"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:112
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Categories"
 msgstr "Kategorie"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:116
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Status"
 msgstr "Stan"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:120
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Properties"
 msgstr "Właściwości"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:124
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Envelope"
 msgstr "Koperta"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:192
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid "Content Information"
 msgstr "Szczegóły o treści"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid "Describe the visual content of the item"
 msgstr "Opisz co przedstawia obraz"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:197
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
 #, kde-format
 msgctxt "@title"
 msgid "Origin Information"
 msgstr "Szczegóły o pochodzeniu"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid "Formal descriptive information about the item"
 msgstr "Formalny opisu rzeczy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:202
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
 #, kde-format
 msgctxt "@title"
 msgid "Credit Information"
 msgstr "Szczegóły o autorstwie"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid "Record copyright information about the item"
 msgstr "Przechowaj szczegóły o prawach autorskich do rzeczy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:207
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
 #, kde-format
 msgctxt "@title"
 msgid "Subject Information"
 msgstr "Szczegóły o podmiocie"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid "Record subject information about the item"
 msgstr "Przechowaj szczegóły o przedmiocie rzeczy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:235
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:212
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
 #, kde-format
 msgctxt "@title"
 msgid "Keyword Information"
 msgstr "Szczegóły o słowach kluczowych"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:236
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Record keywords relevant to the item"
 msgstr "Przechowaj słowa kluczowe właściwe rzeczy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:240
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:217
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:238
 #, kde-format
 msgctxt "@title"
 msgid "Category Information"
 msgstr "Szczegóły o kategorii"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:241
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:239
 #, kde-format
 msgctxt "@title"
 msgid "Record categories relevant to the item"
 msgstr "Przechowaj kategorie właściwe rzeczy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:245
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:222
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:243
 #, kde-format
 msgctxt "@title"
 msgid "Status Information"
 msgstr "Szczegóły o stanie"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:246
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:244
 #, kde-format
 msgctxt "@title"
 msgid "Record workflow information"
 msgstr "Przechowaj szczegóły przebiegu pracy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:227
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:248
 #, kde-format
 msgctxt "@title"
 msgid "Status Properties"
 msgstr "Właściwości stanu"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:251
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:249
 #, kde-format
 msgctxt "@title"
 msgid "Record workflow properties"
 msgstr "Przechowaj właściwości przebiegu pracy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:255
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:232
 #, kde-format
 msgctxt "@title"
 msgid "Envelope Information"
 msgstr "Szczegóły o kopercie"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:256
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:233
 #, kde-format
 msgctxt "@title"
 msgid "Record editorial details"
 msgstr "Przechowaj szczegóły wydawcy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:54
 #, kde-format
 msgid "No ObjectData"
 msgstr "Brak ObjectData"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:55
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 1)"
 msgstr "IPTC-NAA Digital Newsphoto Parameter Record (wersja 2)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:56
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 2)"
 msgstr "IPTC-NAA Digital Newsphoto Parameter Record (wersja 2)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:57
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 3)"
 msgstr "IPTC-NAA Digital Newsphoto Parameter Record (wersja 3)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:58
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 4)"
 msgstr "IPTC-NAA Digital Newsphoto Parameter Record (wersja 4)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:59
 #, kde-format
 msgid "IPTC7901 Recommended Message Format"
 msgstr "IPTC7901 Recommended Message Format"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:60
 #, kde-format
 msgid "Tagged Image File Format (version 5.0)"
 msgstr "Tagged Image File Format (TIFF, wersja 5.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:61
 #, kde-format
 msgid "Tagged Image File Format (version 6.0)"
 msgstr "Tagged Image File Format (TIFF, wersja 6.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:62
 #, kde-format
 msgid "Illustrator"
 msgstr "Illustrator"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:63
 #, kde-format
 msgid "AppleSingle"
 msgstr "AppleSingle"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:64
 #, kde-format
 msgid "NAA 89-3 (ANPA 1312)"
 msgstr "NAA 89-3 (ANPA 1312)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:65
 #, kde-format
 msgid "MacBinary II"
 msgstr "MacBinary II"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:66
 #, kde-format
 msgid "IPTC Unstructured Character Oriented File Format"
 msgstr "IPTC Unstructured Character Oriented File Format"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:67
 #, kde-format
 msgid "United Press International ANPA 1312 variant"
 msgstr "United Press International ANPA 1312 variant"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:68
 #, kde-format
 msgid "United Press International Down-Load Message"
 msgstr "United Press International Down-Load Message"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:69
 #, kde-format
 msgid "JPEG File Interchange"
 msgstr "JPEG File Interchange"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:70
 #, kde-format
 msgid "Photo-CD Image-Pac"
 msgstr "Photo-CD Image-Pac"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:71
 #, kde-format
 msgid "Microsoft Bit Mapped Graphics File [*.BMP]"
 msgstr "Microsoft Bit Mapped Graphics File [*.BMP]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:72
 #, kde-format
 msgid "Digital Audio File [*.WAV]"
 msgstr "Digital Audio File [*.WAV]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:73
 #, kde-format
 msgid "Audio plus Moving Video [*.AVI]"
 msgstr "Audio plus Moving Video [*.AVI]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:74
 #, kde-format
 msgid "PC DOS/Windows Executable Files [*.COM][*.EXE]"
 msgstr "PC DOS/Windows Executable Files [*.COM][*.EXE]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:75
 #, kde-format
 msgid "Compressed Binary File [*.ZIP]"
 msgstr "Compressed Binary File [*.ZIP]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
 #, kde-format
 msgid "Audio Interchange File Format AIFF"
 msgstr "Audio Interchange File Format AIFF"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:77
 #, kde-format
 msgid "RIFF Wave (Microsoft Corporation)"
 msgstr "RIFF Wave (Microsoft Corporation)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:78
 #, kde-format
 msgid "Freehand (version 3.1)"
 msgstr "Freehand (wersja 3.1)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:79
 #, kde-format
 msgid "Freehand (version 4.0)"
 msgstr "Freehand (wersja 4.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:80
 #, kde-format
 msgid "Freehand (version 5.0)"
 msgstr "Freehand (wersja 5.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
 #, kde-format
 msgid "Freehand (version 5.5)"
 msgstr "Freehand (wersja 5.5)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
 #, kde-format
 msgid "Hypertext Markup Language \"HTML\""
 msgstr "Hypertext Markup Language \"HTML\""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
 #, kde-format
 msgid "MPEG 2 Audio Layer 2 (Musicom), ISO/IEC"
 msgstr "MPEG 2 Audio Layer 2 (Musicom), ISO/IEC"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
 #, kde-format
 msgid "MPEG 2 Audio Layer 3, ISO/IEC"
 msgstr "MPEG 2 Audio Layer 3, ISO/IEC"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:85
 #, kde-format
 msgid "Portable Document File [*.PDF] Adobe"
 msgstr "Portable Document File [*.PDF] Adobe"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:86
 #, kde-format
 msgid "News Industry Text Format"
 msgstr "News Industry Text Format"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:87
 #, kde-format
 msgid "Tape Archive [*.TAR]"
 msgstr "Tape Archive [*.TAR]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:88
 #, kde-format
 msgid "Tidningarnas Telegrambyra NITF version (TTNITF DTD)"
 msgstr "Tidningarnas Telegrambyra NITF version (TTNITF DTD)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
 #, kde-format
 msgid "Ritzaus Bureau NITF version (RBNITF DTD)"
 msgstr "Ritzaus Bureau NITF version (RBNITF DTD)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
 #, kde-format
 msgid "Corel Draw [*.CDR]"
 msgstr "Corel Draw [*.CDR]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:147
 #, kde-format
 msgid "Destination:"
 msgstr "Przeznaczenie:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:153
 #, kde-format
 msgid "Set here the envelope destination"
 msgstr "Tutaj umieść przeznaczenie koperty"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:154
 #, kde-format
 msgid ""
 "Enter the envelope destination. This field is limited to 1024 characters."
 msgstr "Podaj przeznaczenie koperty. Pole jest ograniczone do 1024 znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:159
 #, kde-format
 msgid "U.N.O ID:"
 msgstr "ID U.N.O.:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:163
 #, kde-format
 msgid "Set here the Unique Name of Object identifier"
 msgstr "Ustaw niepowtarzalną nazwę identyfikatora obiektu"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:164
 #, kde-format
 msgid ""
 "Set here the Unique Name of Object identifier. This field is limited to 80 "
@@ -14413,152 +14413,152 @@ msgstr ""
 "Tutaj ustaw Unikalną Nazwę Identyfikatora Obiektu. Pole jest ograniczone do "
 "80 znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
 #, kde-format
 msgid "Product ID:"
 msgstr "ID produktu:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:173
 #, kde-format
 msgid "Set here the product identifier"
 msgstr "Tutaj umieść identyfikator wytwórcy"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:174
 #, kde-format
 msgid ""
 "Set here the product identifier. This field is limited to 32 characters."
 msgstr ""
 "Tutaj ustaw identyfikator produktu. To pole jest ograniczone do 32 znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:179
 #, kde-format
 msgid "Service ID:"
 msgstr "ID usługi:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:183
 #, kde-format
 msgid "Set here the service identifier"
 msgstr "Tutaj umieść identyfikator usługi"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:184
 #, kde-format
 msgid ""
 "Set here the service identifier. This field is limited to 10 characters."
 msgstr ""
 "Tutaj ustaw identyfikator usługi. To pole jest ograniczone do 10 znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:189
 #, kde-format
 msgid "Envelope ID:"
 msgstr "ID koperty:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:193
 #, kde-format
 msgid "Set here the envelope identifier"
 msgstr "Tutaj umieść identyfikator koperty"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:194
 #, kde-format
 msgid ""
 "Set here the envelope identifier. This field is limited to 8 characters."
 msgstr "Tutaj ustaw identyfikator koperty. Pole jest ograniczone do 8 znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:199
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #, kde-format
 msgid "Priority:"
 msgstr "Priorytet:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "0: None"
 msgstr "0: Żaden"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "1: High"
 msgstr "1: Wysoki"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "5: Normal"
 msgstr "5: Normalny"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:209
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "8: Low"
 msgstr "8: Niski"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:210
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:206
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
 msgstr "9: Określony przez użytkownika"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
 #, kde-format
 msgid "Select here the envelope priority."
 msgstr "Tutaj wybierz priorytet koperty."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:237
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:85
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:166
 #, kde-format
 msgid "Format:"
 msgstr "Format:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
 #, kde-format
 msgid "Select here envelope file format."
 msgstr "Tutaj wybierz format koperty."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:232
 #, kde-format
 msgid "Sent date:"
 msgstr "Data wysłania:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:255
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
 #, kde-format
 msgid "Sent time:"
 msgstr "Czas wysłania:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:266
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:244
 #, kde-format
 msgid "Set envelope sent date to today"
 msgstr "Ustaw datę wysłania koperty na dzisiaj"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:268
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:246
 #, kde-format
 msgid "Set here the date when the service sent the material."
 msgstr "Tutaj ustaw datę kiedy wysłano ten materiał."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:269
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:247
 #, kde-format
 msgid "Set here the time when the service sent the material."
 msgstr "Tutaj ustaw czas kiedy wysłano ten materiał."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:270
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:248
 #, kde-format
 msgid "Set here the time zone when the service sent the material."
 msgstr "Tutaj ustaw strefę czasową, gdy usługa wysłała materiał."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:66
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
 #, kde-format
 msgid "Use information retrieval words:"
 msgstr "Użyj słów kluczowych wspomagających wyszukiwanie:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:71
 #, kde-format
 msgid "Set here a keyword"
 msgstr "Tutaj umieść słowo kluczowe"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:72
 #, kde-format
 msgid "Enter here a new keyword. This field is limited to 64 characters."
 msgstr ""
@@ -15042,19 +15042,19 @@ msgstr ""
 "jeśli wybrałeś standardową sygnaturę IPTC/NAA. To pole jest ograniczone do "
 "64 znaków."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:43
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Metadata Edit"
 msgstr "Edycja metadanych"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:58
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:54
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items metadata"
 msgstr "Narzędzie do edytowania metadanych rzeczy"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:63
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -15074,7 +15074,7 @@ msgstr ""
 "Dla agencji fotograficznych, można stosować uprzednio ustawione tematy, tak "
 "aby opisać zawartość rzeczy w oparciu o kody odniesienia Iptc."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."

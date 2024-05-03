@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-02 01:39+0000\n"
+"POT-Creation-Date: 2024-05-03 01:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3892,14 +3892,14 @@ msgstr "지리적 위치 기록됨"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:85
 #: core/app/views/tableview/tableview_column_geo.cpp:102
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:118
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:97
 #, kde-format
 msgid "Coordinates"
 msgstr "좌표"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:617
 #, kde-format
 msgid "Altitude"
@@ -11496,7 +11496,7 @@ msgid "Cannot save \"%1\" file"
 msgstr ""
 "파일 \"%1\"을(를) 저장할 수 없음|/|파일 \"%1\"$[을를 %1] 저장할 수 없음"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:222
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:419
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:520
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:799
@@ -11506,25 +11506,25 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "지리적 위치 편집기"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "책갈피에 등록된 위치를 지도에 표시합니다."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:315
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:273
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "레이아웃:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:317
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:275
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "지도 하나"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Two maps - vertical"
@@ -11532,7 +11532,7 @@ msgctxt "@item"
 msgid "Two maps - left and right"
 msgstr "지도 두 개 - 수직"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:277
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Two maps - horizontal"
@@ -11541,7 +11541,7 @@ msgid "Two maps - top and bottom"
 msgstr "지도 두 개 - 수평"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:338
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:296
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:104
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:179
@@ -11551,77 +11551,77 @@ msgstr "지도 두 개 - 수평"
 msgid "OK"
 msgstr "확인"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "정렬"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:327
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "오래된 항목 먼저"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "새로운 항목 먼저"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:371
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "자세히"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:372
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS 연관 도구"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, fuzzy, kde-format
 #| msgid "Undo/Redo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "실행 취소 및 재실행"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:374
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "역 지오코딩"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "검색"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:376
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML 내보내기"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:594
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "메타데이터 불러오는 중 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:787
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
 msgstr[0] "그림 %1개를 수정했습니다."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:794
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Unsaved changes"
@@ -11629,19 +11629,19 @@ msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "저장하지 않은 변경 사항"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:837
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:795
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 변경 사항을 저장하시겠습니까?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:953
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:911
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "변경 사항 저장 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1012
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:970
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:383
@@ -11685,89 +11685,89 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "오류"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1013
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:971
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "일부 정보를 저장할 수 없습니다:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1051
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1009
 #, fuzzy, kde-format
 #| msgid "Edit Geolocation"
 msgctxt "@title"
 msgid "Edit Geolocation"
 msgstr "지리적 위치 편집"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:615
 #, kde-format
 msgid "Latitude"
 msgstr "위도"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:616
 #, kde-format
 msgid "Longitude"
 msgstr "경도"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:622
 #, kde-format
 msgid "Speed"
 msgstr "속도"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:621
 #, kde-format
 msgid "# satellites"
 msgstr "인공위성 개수"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:620
 #, kde-format
 msgid "Fix type"
 msgstr "고정 형식"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:150
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:129
 #, kde-format
 msgid "2-d"
 msgstr "2D"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:151
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
 #, kde-format
 msgid "3-d"
 msgstr "3D"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:619
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:139
 #, kde-format
 msgid "Apply"
 msgstr "적용"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:428
 #, kde-format
 msgid "Details changed"
 msgstr "자세한 정보 변경됨"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:43
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:39
 #, fuzzy, kde-format
 #| msgid "Geolocation Edit"
 msgctxt "@title"
 msgid "Geolocation Edit"
 msgstr "지리적 위치 편집"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:58
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:54
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
 msgstr "항목의 지리적 위치를 편집하는 도구"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:63
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This tool permit to changes geolocation information from items.</"
@@ -11797,123 +11797,123 @@ msgstr ""
 "장되어 있지 않으면 외부 GPS 장치의 위치 기록과 사진의 지리적 위치 정보를 동기"
 "화할 수 있습니다.</p>"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:101
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
 msgstr "지리적 위치 편집..."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:145
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:162
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:117
 #, kde-format
 msgid "Could not read image '%1'"
 msgstr "사진 '%1'을(를) 불러올 수 없음"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:154
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:142
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:126
 #, kde-format
 msgid "Format of image '%1' is unknown"
 msgstr "사진 '%1'의 형식을 알 수 없음"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:172
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:160
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:137
 #, kde-format
 msgid "Error loading image '%1'"
 msgstr "사진 '%1'을(를) 불러올 수 없음"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:215
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:203
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:189
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
 msgstr "사진 '%1'을(를) '%2'(으)로 저장할 수 없음"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:219
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:207
 #, kde-format
 msgid "Creation of picture '%1'"
 msgstr "'%1' 그림 생성"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:235
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:223
 #, fuzzy, kde-format
 #| msgid "Failed to Fetch Photoset information from %1. %2\n"
 msgid "Cannot get GPS Information from %1 file."
 msgstr "%1에서 앨범 정보를 가져오지 못했습니다. %2\n"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:324
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:312
 #, kde-format
 msgid "Creation of placemark '%1'"
 msgstr "'%1' 위치 표시기 생성"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:333
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:321
 #, kde-format
 msgid "Could not save icon for image '%1' to '%2'"
 msgstr "사진 '%1'의 아이콘을 '%2'(으)로 저장할 수 없음"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:337
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:325
 #, kde-format
 msgid "Creation of icon '%1'"
 msgstr "아이콘 '%1' 생성"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:352
 #, kde-format
 msgid "No GPX file chosen."
 msgstr "GPX 파일을 선택하지 않았습니다."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:373
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:361
 #, kde-format
 msgid "Cannot parse %1 GPX file."
 msgstr "%1 GPX 파일을 해석할 수 없습니다."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:379
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:367
 #, kde-format
 msgid "The %1 GPX file do not have a date-time track to use."
 msgstr "%1 GPX 파일에 사용할 수 있는 날짜와 시간 기록이 없습니다."
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:387
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:375
 #, kde-format
 msgid "Tracks"
 msgstr "경로"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:491
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:479
 #, kde-format
 msgid "No position data for '%1'"
 msgstr "'%1'의 위치 데이터 없음"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:506
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:494
 #, kde-format
 msgid "Cannot open file for writing"
 msgstr "파일에 쓰려고 열 수 없음"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:519
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:507
 #, kde-format
 msgid "Move %1 to final directory %2"
 msgstr "%1을(를) 최종 디렉터리 %2(으)로 이동"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:523
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:511
 #, kde-format
 msgid "Cannot move data to destination directory"
 msgstr "대상 디렉터리로 데이터를 이동할 수 없음"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:533
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:521
 #, kde-format
 msgid "Report below have been generated while KML file processing:"
 msgstr "KML 파일을 처리하는 중 아래 보고서가 생성되었습니다:"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:57
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:53
 #, fuzzy, kde-format
 #| msgid "Track"
 msgctxt "@item: linetrack over the map"
 msgid "Track"
 msgstr "경로"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:83
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:79
 #, fuzzy, kde-format
 #| msgid "Points"
 msgctxt "@item: points over the map"
 msgid "Points"
 msgstr "지점"
 
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:96
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:92
 #, fuzzy, kde-format
 #| msgid "Point"
 msgctxt "@item: point coordinates"
@@ -12245,84 +12245,84 @@ msgstr ""
 "과 상관 없이 해발 고도로 해석합니다.</dd> </dl>"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:249
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:293
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:295
 #, kde-format
 msgid "Generate KML file"
 msgstr "KML 파일 생성"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:308
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:304
 #, kde-format
 msgid "GeoNames"
 msgstr "GeoNames"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:309
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultbackend.cpp:305
 #, kde-format
 msgid "OSM"
 msgstr "OSM"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultmodelhelper.cpp:152
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultmodelhelper.cpp:147
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkmodelhelper.cpp:236
 #, kde-format
 msgid "1 image snapped to '%2'"
 msgid_plural "%1 images snapped to '%2'"
 msgstr[0] "이미지 %1개를 '%2'에 고정함"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:159
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:134
 #, kde-format
 msgctxt "Start the search"
 msgid "Search"
 msgstr "검색"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:166
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:141
 #, kde-format
 msgid "Clear the search results."
 msgstr "검색 결과를 지웁니다."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:174
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:149
 #, kde-format
 msgid "Keep the results of old searches when doing a new search."
 msgstr "새 검색을 하기 전 이전 검색 결과를 유지합니다."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:181
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:156
 #, kde-format
 msgid "Toggle the visibility of the search results on the map."
 msgstr "검색 결과를 지도에 표시할지 여부를 전환합니다."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:185
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:160
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:83
 #, kde-format
 msgid "Copy coordinates"
 msgstr "좌표 복사"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:188
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:163
 #, kde-format
 msgid "Move selected images to this position"
 msgstr "선택한 이미지를 이 위치로 이동"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:190
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:165
 #, kde-format
 msgid "Remove from results list"
 msgstr "결과 목록에서 삭제"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:194
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:169
 #, kde-format
 msgid "Select which service you would like to use."
 msgstr "사용할 서비스를 선택하십시오."
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:218
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:193
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:122
 #, kde-format
 msgid "Bookmarks"
 msgstr "책갈피"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:271
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "Search failed"
 msgctxt "@title:window"
 msgid "Search Failed"
 msgstr "검색 실패함"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:271
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:246
 #, kde-format
 msgid ""
 "Your search failed:\n"
@@ -12331,97 +12331,97 @@ msgstr ""
 "검색이 실패했습니다:\n"
 "%1"
 
-#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:455
+#: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:430
 #, kde-format
 msgid "1 image moved to '%2'"
 msgid_plural "%1 images moved to '%2'"
 msgstr[0] "이미지 %1개를 '%2'(으)로 이동함"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Metadata Editor"
 msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "메타데이터 편집기"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:103
 #, fuzzy, kde-format
 #| msgid "Next"
 msgctxt "@action: button"
 msgid "Next"
 msgstr "다음"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:105
 #, fuzzy, kde-format
 #| msgid "Previous"
 msgctxt "@action: button"
 msgid "Previous"
 msgstr "이전"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:118
 #, fuzzy, kde-format
 #| msgid "Edit EXIF"
 msgctxt "@item"
 msgid "Edit EXIF"
 msgstr "Exif 편집"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:119
 #, fuzzy, kde-format
 #| msgid "Edit IPTC"
 msgctxt "@item"
 msgid "Edit IPTC"
 msgstr "IPTC 편집"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:120
 #, fuzzy, kde-format
 #| msgid "Edit XMP"
 msgctxt "@item"
 msgid "Edit XMP"
 msgstr "XMP 편집"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:310
+#: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:309
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3) - Edit Metadata"
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
 msgstr "%1 (%2/%3) - 메타데이터 편집"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:83
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:75
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:80
 #, kde-format
 msgid "Add a new value to the list"
 msgstr "목록에 새 값 추가"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:86
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:84
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
 #, kde-format
 msgid "Remove the current selected value from the list"
 msgstr "목록에서 현재 선택한 값 삭제"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:87
-#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:85
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:82
 #, kde-format
 msgid "Replace the current selected value from the list"
 msgstr "목록에서 현재 선택한 값 대체"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:93
 #, kde-format
 msgid " This field is limited to:"
 msgstr " 이 필드는 다음으로 제한됨:"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:95
 #, kde-format
 msgid "<p>1 character.</p>"
 msgid_plural "<p>%1 characters.</p>"
 msgstr[0] "<p>%1글자.</p>"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:291
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:346
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:269
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
+#: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:337
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:428
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
 #: core/libs/widgets/text/dplaintextedit.cpp:400
@@ -12431,225 +12431,225 @@ msgid "%1 character left"
 msgid_plural "%1 characters left"
 msgstr[0] "%1글자 남음"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:72
 #, kde-format
 msgid "Attribute:"
 msgstr "속성:"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:94
 #, kde-format
 msgid "Select here the editorial attribute of content."
 msgstr "콘텐츠 편집 속성을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:95
 #, kde-format
 msgctxt "Content type"
 msgid "Current"
 msgstr "현재"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:96
 #, kde-format
 msgctxt "Content type"
 msgid "Analysis"
 msgstr "분석"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:97
 #, kde-format
 msgctxt "Content type"
 msgid "Archive material"
 msgstr "보관 자료"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:98
 #, kde-format
 msgctxt "Content type"
 msgid "Background"
 msgstr "배경"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:99
 #, kde-format
 msgctxt "Content type"
 msgid "Feature"
 msgstr "특집 기사"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:100
 #, kde-format
 msgctxt "Content type"
 msgid "Forecast"
 msgstr "예보"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:101
 #, kde-format
 msgctxt "Content type"
 msgid "History"
 msgstr "역사"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:102
 #, kde-format
 msgctxt "Content type"
 msgid "Obituary"
 msgstr "부고"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
 #, kde-format
 msgctxt "Content type"
 msgid "Opinion"
 msgstr "견해"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
 #, kde-format
 msgctxt "Content type"
 msgid "Polls & Surveys"
 msgstr "여론 조사 및 설문 조사"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:105
 #, kde-format
 msgctxt "Content type"
 msgid "Profile"
 msgstr "프로필"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
 #, kde-format
 msgctxt "Content type"
 msgid "Results Listings & Table"
 msgstr "결과 목록 및 표"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
 #, kde-format
 msgctxt "Content type"
 msgid "Side bar & Supporting information"
 msgstr "사이드 바 및 지원 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, kde-format
 msgctxt "Content type"
 msgid "Summary"
 msgstr "요약"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:109
 #, kde-format
 msgctxt "Content type"
 msgid "Transcript & Verbatim"
 msgstr "녹취록 및 약어"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:110
 #, kde-format
 msgctxt "Content type"
 msgid "Interview"
 msgstr "인터뷰"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:111
 #, kde-format
 msgctxt "Content type"
 msgid "From the Scene"
 msgstr "장면에서"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
 #, kde-format
 msgctxt "Content type"
 msgid "Retrospective"
 msgstr "회고"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:113
 #, kde-format
 msgctxt "Content type"
 msgid "Statistics"
 msgstr "통계"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
 #, kde-format
 msgctxt "Content type"
 msgid "Update"
 msgstr "업데이트"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:115
 #, kde-format
 msgctxt "Content type"
 msgid "Wrap-up"
 msgstr "간추린 뉴스"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:125
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
 #, kde-format
 msgctxt "Content type"
 msgid "Press Release"
 msgstr "보도 자료"
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:122
 #, kde-format
 msgid "Set here the editorial attribute description of content."
 msgstr "내용의 게시 속성 설명을 여기에서 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:127
 #, kde-format
 msgid " This field is limited to "
 msgstr " 이 필드는 다음으로 제한됨 "
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:129
 #, kde-format
 msgid "%1 character."
 msgid_plural "%1 characters."
 msgstr[0] "%1글자."
 
-#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
 #, fuzzy, kde-format
 #| msgid "Set here the editorial attribute description of content."
 msgid "Set here the editorial description"
 msgstr "내용의 게시 속성 설명을 여기에서 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:71
 #, kde-format
 msgid "Brightness (APEX):"
 msgstr "밝기(APEX):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:76
 #, kde-format
 msgid ""
 "Set here the brightness adjustment value in APEX unit used by camera to take "
 "the picture."
 msgstr "밝기 조정 값을 카메라에서 사용하는 APEX 단위로 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:81
 #, kde-format
 msgid "Gain Control:"
 msgstr "게인 제어:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:83
 #, kde-format
 msgctxt "gain control"
 msgid "None"
 msgstr "없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:84
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain up"
 msgstr "낮은 게인 위로"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:85
 #, kde-format
 msgctxt "gain control"
 msgid "High gain up"
 msgstr "높은 게인 위로"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:86
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain down"
 msgstr "낮은 게인 아래로"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:87
 #, kde-format
 msgctxt "gain control"
 msgid "High gain down"
 msgstr "높은 게인 아래로"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:88
 #, kde-format
 msgid ""
 "Set here the degree of overall image gain adjustment used by camera to take "
 "the picture."
 msgstr "카메라에서 사용하는 전체적 이미지 게인 조정 정도를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:93
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:172
 #: core/libs/dimg/filters/bcg/bcgsettings.cpp:80
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:341
@@ -12657,110 +12657,110 @@ msgstr "카메라에서 사용하는 전체적 이미지 게인 조정 정도를
 msgid "Contrast:"
 msgstr "명암:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:95
 #, kde-format
 msgctxt "contrast mode"
 msgid "Normal"
 msgstr "일반"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:96
 #, kde-format
 msgctxt "contrast mode"
 msgid "Soft"
 msgstr "부드러움"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:97
 #, kde-format
 msgctxt "contrast mode"
 msgid "Hard"
 msgstr "거친"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
 #, kde-format
 msgid ""
 "Set here the direction of contrast processing applied by the camera to take "
 "the picture."
 msgstr "사진을 찍을 때 카메라가 적용하는 명암 처리 방향을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:103
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:185
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:94
 #, kde-format
 msgid "Saturation:"
 msgstr "채도:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:105
 #, kde-format
 msgctxt "saturation mode"
 msgid "Normal"
 msgstr "일반"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:106
 #, kde-format
 msgctxt "saturation mode"
 msgid "Low"
 msgstr "낮음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #, kde-format
 msgctxt "saturation mode"
 msgid "High"
 msgstr "높음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:108
 #, kde-format
 msgid ""
 "Set here the direction of saturation processing applied by the camera to "
 "take the picture."
 msgstr "사진을 찍을 때 카메라가 적용하는 채도 처리 방향을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:113
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:152
 #, kde-format
 msgid "Sharpness:"
 msgstr "선명도:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:115
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Normal"
 msgstr "일반"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:116
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Soft"
 msgstr "부드러움"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
 #, kde-format
 msgctxt "sharpness mode"
 msgid "Hard"
 msgstr "거친"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:118
 #, kde-format
 msgid ""
 "Set here the direction of sharpness processing applied by the camera to take "
 "the picture."
 msgstr "사진을 찍을 때 카메라가 적용하는 선명도 처리 방향을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:123
 #, kde-format
 msgid "Custom rendered:"
 msgstr "사용자 정의 렌더링:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:125
 #, kde-format
 msgid "Normal process"
 msgstr "일반 프로세스"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:140
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:126
 #, kde-format
 msgid "Custom process"
 msgstr "사용자 정의 프로세스"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
 #, kde-format
 msgid ""
 "Set here the use of special processing on image data, such as rendering "
@@ -12769,19 +12769,19 @@ msgstr ""
 "출력에 맞게 설정된 렌더링과 같은 이미지 데이터에 대한 특수 처리를 설정하십시"
 "오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:79
 #, kde-format
 msgctxt "name of the document this image has been scanned from"
 msgid "Name (*):"
 msgstr "이름(*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:82
 #, fuzzy, kde-format
 #| msgid "Set here the original owner of content."
 msgid "Set here the original document name."
 msgstr "콘텐츠의 원래 소유자를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:83
 #, kde-format
 msgid ""
 "Enter the name of the document from which this image was been scanned. This "
@@ -12790,35 +12790,35 @@ msgstr ""
 "이 이미지를 스캔한 문서의 이름을 입력하십시오. 이 필드는 ASCII 문자로 제한됩"
 "니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:89
 #, kde-format
 msgctxt "image description"
 msgid "Description (*):"
 msgstr "설명(*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:92
 #, fuzzy, kde-format
 #| msgid "Enter the content description."
 msgid "Set here the image description."
 msgstr "콘텐츠 설명을 입력하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:93
 #, kde-format
 msgid "Enter the image description. This field is limited to ASCII characters."
 msgstr "이미지 설명을 입력하십시오. 이 필드는 ASCII 문자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:98
 #, kde-format
 msgid "Artist (*):"
 msgstr "아티스트(*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
 #, fuzzy, kde-format
 #| msgid "Set here the gamma correction value."
 msgid "Set here the author's name."
 msgstr "감마 보정 값을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
 #, kde-format
 msgid ""
 "Enter the image author's name separated by semi-colons. This field is "
@@ -12827,18 +12827,18 @@ msgstr ""
 "이미지 작성자의 이름을 입력하십시오. 여러 사람의 이름은 쌍반점(;)으로 구분합"
 "니다. 이 필드는 ASCII 문자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:107
 #, kde-format
 msgid "Copyright (*):"
 msgstr "저작권(*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:129
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:110
 #, fuzzy, kde-format
 #| msgid "Set here the contact country."
 msgid "Set here the copyright owner."
 msgstr "연락처의 국가를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
 #, kde-format
 msgid ""
 "Enter the copyright owner of the image. This field is limited to ASCII "
@@ -12846,20 +12846,20 @@ msgid ""
 msgstr ""
 "이미지의 저작권 소유자를 입력하십시오. 이 필드는 ASCII 문자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:116
 #, kde-format
 msgctxt "image caption"
 msgid "Caption:"
 msgstr "캡션:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:119
 #, fuzzy, kde-format
 #| msgid "You have edited the image caption. "
 #| msgid_plural "You have edited the captions of %1 images. "
 msgid "Set here the image's caption."
 msgstr "이미지 %1개의 캡션을 편집했습니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
 #, kde-format
 msgid ""
 "Enter the image's caption. This field is not limited. UTF8 encoding will be "
@@ -12868,25 +12868,25 @@ msgstr ""
 "이미지의 캡션을 입력하십시오. 이 필드는 제한되지 않습니다. 텍스트는 UTF-8 인"
 "코딩으로 저장됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:143
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:84
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, kde-format
 msgid "Sync JFIF Comment section"
 msgstr "JFIF 주석 섹션 동기화"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:125
 #, kde-format
 msgid "Sync XMP caption"
 msgstr "XMP 캡션 동기화"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
 #, kde-format
 msgid "Sync IPTC caption (warning: limited to 2000 characters)"
 msgstr "IPTC 캡션 동기화(경고: 최대 2000자로 제한됨)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:152
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:316
+#: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:289
 #, kde-format
 msgid ""
 "<b>Note:</b> <b><a href='https://en.wikipedia.org/wiki/EXIF'>Exif</a></b> "
@@ -12897,34 +12897,34 @@ msgstr ""
 "미지_파일_형식'>Exif</a></b> 텍스트 태그는 표시 가능한 <b><a href='https://"
 "ko.wikipedia.org/wiki/ASCII'>ASCII</a></b> 문자로 제한됩니다.</b>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:89
 #, kde-format
 msgid "Creation date and time"
 msgstr "생성 날짜 및 시간"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:90
 #, kde-format
 msgid "Creation sub-second"
 msgstr "생성 1초 미만"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:101
 #, kde-format
 msgid "Sync XMP creation date"
 msgstr "XMP 생성 날짜 동기화"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:102
 #, kde-format
 msgid "Sync IPTC creation date"
 msgstr "IPTC 생성 날짜 동기화"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:106
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
 #, kde-format
 msgid "Set creation date to today"
 msgstr "생성 날짜를 오늘로 설정"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:113
 #, kde-format
 msgid ""
 "Set here the date and time of image creation. In this standard it is the "
@@ -12933,28 +12933,28 @@ msgstr ""
 "이미지 생성 날짜 및 시간을 여기에서 설정하십시오. 이 표준에서는 파일이 변경"
 "된 날짜 및 시간입니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:115
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time of image creation."
 msgstr "이미지 생성 날짜 및 시간의 초 단위를 여기에서 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:122
 #, kde-format
 msgid "Original date and time"
 msgstr "원본 날짜 및 시간"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
 #, kde-format
 msgid "Original sub-second"
 msgstr "원본 1초 미만"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:136
 #, kde-format
 msgid "Set original date to today"
 msgstr "원본 날짜를 오늘로 설정"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:138
 #, kde-format
 msgid ""
 "Set here the date and time when the original image data was generated. For a "
@@ -12963,31 +12963,31 @@ msgstr ""
 "원본 이미지 데이터가 생성된 날짜와 시간을 설정하십시오. 디지털 카메라의 경우 "
 "사진을 찍은 날짜와 시간이 기록됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:141
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the original "
 "image data was generated."
 msgstr "원본 이미지 데이터가 생성된 날짜 및 시간의 초 단위를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:148
 #, kde-format
 msgid "Digitization date and time"
 msgstr "디지털화 날짜 및 시간"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:168
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:149
 #, kde-format
 msgid "Digitization sub-second"
 msgstr "디지털화 1초 미만"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:162
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
 #, kde-format
 msgid "Set digitization date to today"
 msgstr "디지털화 날짜를 오늘로 설정"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:164
 #, kde-format
 msgid ""
 "Set here the date and time when the image was stored as digital data. If, "
@@ -12999,25 +12999,25 @@ msgstr ""
 "를 디지털 카메라로 촬영함과 동시에 파일이 생성되었다면 원본 및 디지털화 날짜"
 "와 시간은 동일합니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:169
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the image was "
 "stored as digital data."
 msgstr "이미지가 디지털 데이터로 저장된 날짜 및 시간의 초 단위를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:96
 #, kde-format
 msgid "Device manufacturer (*):"
 msgstr "장치 제조사(*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:100
 #, fuzzy, kde-format
 #| msgid "Device manufacturer (*):"
 msgid "Set here the manufacturer name"
 msgstr "장치 제조사(*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:128
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:101
 #, kde-format
 msgid ""
 "Set here the manufacturer of image input equipment used to take the picture. "
@@ -13026,18 +13026,18 @@ msgstr ""
 "사진을 찍는 데 사용한 이미징 장치의 제조사를 설정하십시오. 이 필드는 ASCII 문"
 "자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:106
 #, kde-format
 msgid "Device model (*):"
 msgstr "장치 모델(*):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:110
 #, fuzzy, kde-format
 #| msgid "Set here the contact e-mail."
 msgid "Set here the model name"
 msgstr "연락처의 이메일 주소를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:138
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:111
 #, kde-format
 msgid ""
 "Set here the model of image input equipment used to take the picture. This "
@@ -13046,32 +13046,32 @@ msgstr ""
 "사진을 찍는 데 사용한 이미징 장치의 모델을 설정하십시오. 이 필드는 ASCII 문자"
 "로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:116
 #, kde-format
 msgid "Device type:"
 msgstr "장치 종류:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:118
 #, kde-format
 msgid "Film scanner"
 msgstr "필름 스캐너"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:119
 #, kde-format
 msgid "Reflection print scanner"
 msgstr "반사 인쇄 스캐너"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:120
 #, kde-format
 msgid "Digital still camera"
 msgstr "디지털 카메라"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:121
 #, kde-format
 msgid "Select here the image input equipment type used to take the picture."
 msgstr "사진을 찍는 데 사용한 이미징 장치 형식을 선택하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:151
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:124
 #, fuzzy, kde-format
 #| msgid ""
 #| "<b>Warning: Exif <b><a href='https://en.wikipedia.org/wiki/"
@@ -13086,77 +13086,77 @@ msgstr ""
 "wikipedia.org/wiki/교환_이미지_파일_형식'>메이커노트 정보</a></b>를 읽지 못"
 "할 수도 있습니다.</b>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:163
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:136
 #, kde-format
 msgid "Exposure time (seconds):"
 msgstr "노출 시간(초):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:149
 #, kde-format
 msgid ""
 "Set on this option to set the exposure time of picture, given in seconds."
 msgstr "사진의 노출 시간을 초 단위로 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:154
 #, kde-format
 msgid "Exposure program:"
 msgstr "노출 프로그램:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:156
 #, kde-format
 msgctxt "exposure program"
 msgid "Not defined"
 msgstr "정의되지 않음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:157
 #, kde-format
 msgctxt "exposure program"
 msgid "Manual"
 msgstr "수동"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:158
 #, kde-format
 msgctxt "exposure program"
 msgid "Auto"
 msgstr "자동"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:159
 #, kde-format
 msgctxt "exposure program"
 msgid "Aperture priority"
 msgstr "조리개 우선"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:160
 #, kde-format
 msgctxt "exposure program"
 msgid "Shutter priority"
 msgstr "셔터 우선"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:161
 #, kde-format
 msgctxt "exposure program"
 msgid "Creative program"
 msgstr "크리에이티브 프로그램"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:162
 #, kde-format
 msgctxt "exposure program"
 msgid "Action program"
 msgstr "동작 프로그램"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:163
 #, kde-format
 msgctxt "exposure program"
 msgid "Portrait mode"
 msgstr "세로 모드"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:164
 #, kde-format
 msgctxt "exposure program"
 msgid "Landscape mode"
 msgstr "가로 모드"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:165
 #, kde-format
 msgid ""
 "Select here the program used by the camera to set exposure when the picture "
@@ -13165,30 +13165,30 @@ msgstr ""
 "사진을 찍을 때 노출을 설정하기 위해 카메라에서 사용한 프로그램을 선택하십시"
 "오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:170
 #, kde-format
 msgid "Exposure mode:"
 msgstr "노출 모드:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:172
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto"
 msgstr "자동"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:200
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:173
 #, kde-format
 msgctxt "exposure mode"
 msgid "Manual"
 msgstr "수동"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:174
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto bracket"
 msgstr "자동 브래킷"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:175
 #, kde-format
 msgid ""
 "Select here the mode used by the camera to set exposure when the picture was "
@@ -13198,12 +13198,12 @@ msgstr ""
 "사진을 찍을 때 카메라에서 노출을 설정하는 모드를 선택하십시오. 자동 브라케팅 "
 "모드에서는 카메라가 같은 장면을 서로 다른 노출 설정으로 여러 장 촬영합니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:183
 #, kde-format
 msgid "Exposure bias (APEX):"
 msgstr "노출 바이어스(APEX):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:188
 #, kde-format
 msgid ""
 "Set here the exposure bias value (in APEX units) used by camera to take the "
@@ -13211,60 +13211,60 @@ msgid ""
 msgstr ""
 "카메라에서 사진을 찍을 때 사용한 노출 바이어스 값(APEX 단위)을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:222
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:195
 #, kde-format
 msgid "Metering mode:"
 msgstr "측광 모드:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:197
 #, kde-format
 msgctxt "metering mode"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:198
 #, kde-format
 msgctxt "metering mode"
 msgid "Average"
 msgstr "평균"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:199
 #, kde-format
 msgctxt "metering mode"
 msgid "Center weighted average"
 msgstr "중앙 중점 평균"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:200
 #, kde-format
 msgctxt "metering mode"
 msgid "Spot"
 msgstr "스폿"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:201
 #, kde-format
 msgctxt "metering mode"
 msgid "Multi-spot"
 msgstr "다중 스폿"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:202
 #, kde-format
 msgctxt "metering mode"
 msgid "Multi-segment"
 msgstr "다중 세그먼트"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:203
 #, kde-format
 msgctxt "metering mode"
 msgid "Partial"
 msgstr "부분 측광"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:204
 #, kde-format
 msgctxt "metering mode"
 msgid "Other"
 msgstr "기타"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:205
 #, kde-format
 msgid ""
 "Select here the metering mode used by the camera to set exposure when the "
@@ -13273,134 +13273,134 @@ msgstr ""
 "사진을 찍을 때 노출을 설정하기 위해 카메라에서 사용한 측광 모드를 선택하십시"
 "오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:237
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
 #, kde-format
 msgid "Sensitivity (ISO):"
 msgstr "감도(ISO):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:275
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:248
 #, kde-format
 msgid "Select here the ISO Speed of the camera which took the picture."
 msgstr "사진을 찍은 카메라의 ISO 감도를 선택하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:280
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:253
 #, kde-format
 msgid "Sensing method:"
 msgstr "감지 방법:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:282
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:255
 #, kde-format
 msgid "Not defined"
 msgstr "정의되지 않음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:283
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:256
 #, kde-format
 msgid "One-chip color area"
 msgstr "단일 칩 색상 영역"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:284
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:257
 #, kde-format
 msgid "Two-chip color area"
 msgstr "이중 칩 색상 영역"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:285
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:258
 #, kde-format
 msgid "Three-chip color area"
 msgstr "삼중 칩 색상 영역"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:286
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:259
 #, kde-format
 msgid "Color sequential area"
 msgstr "색상 순차 영역"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:287
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:260
 #, kde-format
 msgid "Trilinear sensor"
 msgstr "삼선형 센서"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:288
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:261
 #, kde-format
 msgid "Color sequential linear"
 msgstr "색상 순차 선형"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:289
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:262
 #, kde-format
 msgid ""
 "Select here the image sensor type used by the camera to take the picture."
 msgstr "사진을 찍는 데 사용한 카메라의 이미지 센서 형식을 선택하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:294
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:267
 #, kde-format
 msgctxt "@option"
 msgid "Scene capture type:"
 msgstr "장면 캡처 종류:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:296
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:269
 #, fuzzy, kde-format
 #| msgid "Standard"
 msgctxt "@item: scene type"
 msgid "Standard"
 msgstr "표준"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:297
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:270
 #, fuzzy, kde-format
 #| msgid "Landscape"
 msgctxt "@item: scene type"
 msgid "Landscape"
 msgstr "가로"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:298
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:271
 #, fuzzy, kde-format
 #| msgid "Portrait"
 msgctxt "@item: scene type"
 msgid "Portrait"
 msgstr "세로"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:299
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:272
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Night scene"
 msgstr "야경"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:300
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:273
 #, kde-format
 msgctxt "@info"
 msgid "Select here the type of scene used by the camera to take the picture."
 msgstr "사진을 찍는 데 사용한 카메라의 장면 종류를 선택하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:305
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:278
 #, kde-format
 msgctxt "@option"
 msgid "Subject distance type:"
 msgstr "피사체 거리 종류:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:307
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:280
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@item: subject distance"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:308
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:281
 #, fuzzy, kde-format
 #| msgid "Macro"
 msgctxt "@item: subject distance"
 msgid "Macro"
 msgstr "접사"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:309
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:282
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Close view"
 msgstr "근거리"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:310
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:283
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Distant view"
 msgstr "망원"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:311
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:284
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -13408,59 +13408,59 @@ msgid ""
 "equipment."
 msgstr "피사체와 이미징 장치 사이의 거리 종류를 선택하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:83
 #, kde-format
 msgctxt "@item: image caption"
 msgid "Caption"
 msgstr "캡션"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:87
 #, kde-format
 msgctxt "@item: date properties"
 msgid "Date & Time"
 msgstr "날짜와 시간"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:91
 #, kde-format
 msgctxt "@item: lens properties"
 msgid "Lens"
 msgstr "렌즈"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:95
 #, fuzzy, kde-format
 #| msgid "Device"
 msgctxt "@item: device properties"
 msgid "Device"
 msgstr "장치"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:99
 #, fuzzy, kde-format
 #| msgid "Light"
 msgctxt "@item; light properties"
 msgid "Light"
 msgstr "가벼움"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:103
 #, kde-format
 msgctxt "@item: picture adjustments"
 msgid "Adjustments"
 msgstr "조정"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:183
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:166
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgctxt "@title"
 msgid "Caption Information"
 msgstr "캡션 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
 #, fuzzy, kde-format
 #| msgid "Russian Federation"
 msgctxt "@title"
 msgid "Record technical descriptions"
 msgstr "러시아"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:171
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Date and Time Information"
@@ -13468,7 +13468,7 @@ msgctxt "@title"
 msgid "Date and Time Information"
 msgstr "날짜와 시간 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:172
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Camera File Properties"
@@ -13476,7 +13476,7 @@ msgctxt "@title"
 msgid "Record camera time-stamp properties"
 msgstr "카메라 파일 속성"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:176
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Lens Settings"
@@ -13484,13 +13484,13 @@ msgctxt "@title"
 msgid "Lens Settings"
 msgstr "렌즈 설정"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:177
 #, kde-format
 msgctxt "@title"
 msgid "Record lens details used with camera"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:181
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Capture Device Settings"
@@ -13498,13 +13498,13 @@ msgctxt "@title"
 msgid "Capture Device Settings"
 msgstr "캡처 장치 설정"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid "Record shot conditions used by camera"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:186
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Light Source Information"
@@ -13512,7 +13512,7 @@ msgctxt "@title"
 msgid "Light Source Information"
 msgstr "광원 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Subject Information<br/><i>Use this panel to record subject "
@@ -13523,7 +13523,7 @@ msgstr ""
 "<qt>주제 정보<br/><i>이미지에 대한 주제 정보를 기록하려면 이 패널을 사용하십"
 "시오</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:208
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:191
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Pictures Adjustments"
@@ -13531,18 +13531,18 @@ msgctxt "@title"
 msgid "Pictures Adjustments"
 msgstr "그림 조정"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid "Record technical details used by camera"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:132
 #, kde-format
 msgid "Focal length (mm):"
 msgstr "초점 거리(mm):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:138
 #, kde-format
 msgid ""
 "Set here the lens focal length in millimeters used by camera to take the "
@@ -13551,12 +13551,12 @@ msgstr ""
 "카메라에서 사진을 찍을 때 사용한 렌즈 초점 길이(밀리미터 단위)를 설정하십시"
 "오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
 #, kde-format
 msgid "Focal length in 35mm film (mm):"
 msgstr "35mm 필름 환산 초점 거리(mm):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:149
 #, kde-format
 msgid ""
 "Set here equivalent focal length assuming a 35mm film camera, in mm. A value "
@@ -13565,301 +13565,301 @@ msgstr ""
 "35mm 필름 카메라 기준으로 환산한 초점 거리(밀리미터 단위)를 설정하십시오. 값"
 "이 0이면 초점 길이를 알 수 없다는 뜻입니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:155
 #, kde-format
 msgid "Digital zoom ratio:"
 msgstr "디지털 줌 배율:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:161
 #, kde-format
 msgid "Set here the digital zoom ratio used by camera to take the picture."
 msgstr "카메라에서 사진을 찍을 때 사용한 디지털 줌 배율을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:166
 #, kde-format
 msgid "Lens aperture (f-number):"
 msgstr "조리개 구경(F 번호):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:169
 #, kde-format
 msgid "Select here the lens aperture used by camera to take the picture."
 msgstr "사진을 찍는 데 사용한 카메라의 조리개 구경을 선택하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:174
 #, kde-format
 msgid "Max. lens aperture (f-number):"
 msgstr "최대 조리개 구경(F 번호):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
 #, kde-format
 msgid ""
 "Select here the smallest aperture of the lens used by camera to take the "
 "picture."
 msgstr "사진을 찍는 데 사용한 카메라의 가장 작은 조리개 구경을 선택하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:77
 #, kde-format
 msgid "No flash"
 msgstr "플래시 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:78
 #, kde-format
 msgid "Fired"
 msgstr "발광"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:79
 #, kde-format
 msgid "Fired, no strobe return light"
 msgstr "발광, 스트로브 반사광 조명 감지되지 않음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:80
 #, kde-format
 msgid "Fired, strobe return light"
 msgstr "발광, 스트로브 반사광 조명 감지됨"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:81
 #, kde-format
 msgid "Yes, compulsory"
 msgstr "예, 강제 발광"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:82
 #, kde-format
 msgid "Yes, compulsory, no return light"
 msgstr "예, 강제 발광, 반사광 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:83
 #, kde-format
 msgid "Yes, compulsory, return light"
 msgstr "예, 강제 발광, 반사광 있음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:84
 #, kde-format
 msgid "No, compulsory"
 msgstr "아니요, 강제 발광"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:85
 #, kde-format
 msgid "No, auto"
 msgstr "아니요, 자동"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:86
 #, kde-format
 msgid "Yes, auto"
 msgstr "예, 자동"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:87
 #, kde-format
 msgid "Yes, auto, no return light"
 msgstr "예, 자동, 반사광 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:88
 #, kde-format
 msgid "Yes, auto, return light"
 msgstr "예, 자동, 반사광 있음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:89
 #, kde-format
 msgid "No flash function"
 msgstr "플래시 기능 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
 #, kde-format
 msgid "Yes, red-eye"
 msgstr "예, 적목"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:91
 #, kde-format
 msgid "Yes, red-eye, no return light"
 msgstr "예, 적목, 반사광 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
 #, kde-format
 msgid "Yes, red-eye, return light"
 msgstr "예, 적목, 반사광 있음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:93
 #, kde-format
 msgid "Yes, compulsory, red-eye"
 msgstr "예, 강제 발광, 적목"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:94
 #, kde-format
 msgid "Yes, compulsory, red-eye, no return light"
 msgstr "예, 강제 발광, 적목, 반사광 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:95
 #, kde-format
 msgid "Yes, compulsory, red-eye, return light"
 msgstr "예, 강제 발광, 적목, 반사광 있음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:96
 #, kde-format
 msgid "Yes, auto, red-eye"
 msgstr "예, 자동, 적목"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:97
 #, kde-format
 msgid "Yes, auto, red-eye, no return light"
 msgstr "예, 자동, 적목, 반사광 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:98
 #, kde-format
 msgid "Yes, auto, red-eye, return light"
 msgstr "예, 자동, 적목, 반사광 있음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:128
 #, kde-format
 msgid "Light source:"
 msgstr "광원:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:130
 #, kde-format
 msgctxt "light source"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:131
 #, kde-format
 msgctxt "light source"
 msgid "Daylight"
 msgstr "주광"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:132
 #, kde-format
 msgctxt "light source"
 msgid "Fluorescent"
 msgstr "형광등"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:144
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:133
 #, kde-format
 msgctxt "light source"
 msgid "Tungsten (incandescent light)"
 msgstr "텅스텐(백열등)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:134
 #, kde-format
 msgctxt "light source"
 msgid "Flash"
 msgstr "플래시"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:146
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:135
 #, kde-format
 msgctxt "light source"
 msgid "Fine weather"
 msgstr "좋은 날씨"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:136
 #, kde-format
 msgctxt "light source"
 msgid "Cloudy weather"
 msgstr "흐린 날씨"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:137
 #, kde-format
 msgctxt "light source"
 msgid "Shade"
 msgstr "그늘"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:138
 #, kde-format
 msgctxt "light source"
 msgid "Daylight fluorescent (D 5700 - 7100K)"
 msgstr "주광색 형광등(D 5700 - 7100K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
 #, kde-format
 msgctxt "light source"
 msgid "Day white fluorescent (N 4600 - 5400K)"
 msgstr "주백색 형광등(N 4600 - 5400K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:151
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:140
 #, kde-format
 msgctxt "light source"
 msgid "Cool white fluorescent (W 3900 - 4500K)"
 msgstr "시원한 백색 형광등(W 3900 - 4500K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:152
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
 #, kde-format
 msgctxt "light source"
 msgid "White fluorescent (WW 3200 - 3700K)"
 msgstr "백색 형광등(WW 3200 - 3700K)"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:153
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
 #, kde-format
 msgctxt "light source"
 msgid "Standard light A"
 msgstr "표준 조명 A"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:154
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
 #, kde-format
 msgctxt "light source"
 msgid "Standard light B"
 msgstr "표준 조명 B"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:144
 #, kde-format
 msgctxt "light source"
 msgid "Standard light C"
 msgstr "표준 조명 C"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:145
 #, kde-format
 msgctxt "light source"
 msgid "D55"
 msgstr "D55"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:146
 #, kde-format
 msgctxt "light source"
 msgid "D65"
 msgstr "D65"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:147
 #, kde-format
 msgctxt "light source"
 msgid "D75"
 msgstr "D75"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:159
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:148
 #, kde-format
 msgctxt "light source"
 msgid "D50"
 msgstr "D50"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:160
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:149
 #, kde-format
 msgctxt "light source"
 msgid "ISO studio tungsten"
 msgstr "ISO 스튜디오 텅스텐"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:161
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:150
 #, kde-format
 msgctxt "light source"
 msgid "Other light source"
 msgstr "다른 광원"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:151
 #, kde-format
 msgid "Select here the kind of light source used to take the picture."
 msgstr "사진을 찍는 데 사용한 광원 종류를 선택하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:156
 #, kde-format
 msgid "Flash mode:"
 msgstr "플래시 모드:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:173
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:164
 #, kde-format
 msgid ""
 "Select here the flash program mode used by the camera to take the picture."
 msgstr "사진을 찍는 데 사용한 카메라의 플래시 프로그램 모드를 선택하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:178
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:169
 #, kde-format
 msgid "Flash energy (BCPS):"
 msgstr "플래시 에너지(BCPS):"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:184
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:175
 #, kde-format
 msgid ""
 "Set here the flash energy used to take the picture in BCPS units. Beam "
@@ -13871,25 +13871,25 @@ msgstr ""
 "Candle Power Seconds)는 반사판이나 렌즈에 의해 빔에 초점을 맞출 때 광원의 유"
 "효 강도를 측정한 값입니다. 이 값은 1초 동안의 유효 강도입니다."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:183
 #, kde-format
 msgid "White balance:"
 msgstr "화이트 밸런스:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:185
 #, kde-format
 msgctxt "@item: white balance"
 msgid "Auto"
 msgstr "자동"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:186
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgctxt "@item: white balance"
 msgid "Manual"
 msgstr "수동"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:187
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -13897,40 +13897,40 @@ msgid ""
 "taken."
 msgstr "사진을 찍을 때 카메라가 설정한 화이트 밸런스 모드를 선택하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:70
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:78
 #, kde-format
 msgid "Identify subject of content (3 chars max):"
 msgstr "콘텐츠의 식별 대상(최대 3글자):"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:74
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:82
 #, fuzzy, kde-format
 #| msgid "Set here the contact country."
 msgid "Set here the category ID"
 msgstr "연락처의 국가를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:75
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:83
 #, kde-format
 msgid ""
 "Set here the category of content. This field is limited to 3 characters."
 msgstr "콘텐츠 분류를 설정하십시오. 이 필드는 최대 3글자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:86
 #, kde-format
 msgid "Supplemental categories:"
 msgstr "추가 분류:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:83
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:90
 #, fuzzy, kde-format
 #| msgid "Set here the contact city."
 msgid "Set here the extra category"
 msgstr "연락처의 도시를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
 #, kde-format
 msgid ""
 "Enter here a new supplemental category of content. This field is limited to "
@@ -13938,16 +13938,16 @@ msgid ""
 msgstr ""
 "콘텐츠의 새로운 추가 분류를 입력하십시오. 이 필드는 최대 32자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:100
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:96
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:82
 #, kde-format
 msgid "&Add"
 msgstr "추가(&A)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:101
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
 #: core/libs/dialogs/deletedialog.cpp:574
@@ -13955,8 +13955,8 @@ msgstr "추가(&A)"
 msgid "&Delete"
 msgstr "삭제(&D)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:102
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:98
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:84
 #: core/utilities/setup/album/setupcategory.cpp:93
@@ -13964,11 +13964,11 @@ msgstr "삭제(&D)"
 msgid "&Replace"
 msgstr "바꾸기(&R)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:111
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:109
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:123
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:276
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:89
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:235
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:249
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:110
@@ -13985,60 +13985,60 @@ msgstr ""
 "이 있습니다. <a href='https://en.wikipedia.org/wiki/"
 "Extensible_Metadata_Platform'>XMP</a>를 사용해 보십시오.</b>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:68
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
 #, kde-format
 msgid "Headline:"
 msgstr "주제:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:71
 #, fuzzy, kde-format
 #| msgid "Enter here the content synopsis."
 msgid "Set here the content synopsis"
 msgstr "콘텐츠 시놉시스를 입력하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:72
 #, kde-format
 msgid ""
 "Enter here the content synopsis. This field is limited to 256 characters."
 msgstr "콘텐츠 시놉시스를 입력하십시오. 이 필드는 최대 256자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
 #, kde-format
 msgctxt "content description"
 msgid "Caption:"
 msgstr "캡션:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:85
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:95
 #, kde-format
 msgid "Sync Exif Comment"
 msgstr "Exif 설명과 동기화"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:87
 #, fuzzy, kde-format
 #| msgid "Enter the content description."
 msgid "Set here the content description"
 msgstr "콘텐츠 설명을 입력하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
 #, kde-format
 msgid ""
 "Enter the content description. This field is limited to 2000 characters."
 msgstr "콘텐츠 설명을 입력하십시오. 이 필드는 최대 2000자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:93
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
 #, kde-format
 msgid "Caption Writer:"
 msgstr "캡션 작성자:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
 #, kde-format
 msgid "Enter the name of the caption author."
 msgstr "캡션 작성자의 이름을 입력하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:67
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
 #: core/libs/template/templatepanel.cpp:128
 #: core/libs/template/templateviewer.cpp:108
@@ -14046,42 +14046,42 @@ msgstr "캡션 작성자의 이름을 입력하십시오."
 msgid "Copyright:"
 msgstr "저작권:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:70
 #, fuzzy, kde-format
 #| msgid "Enter the necessary copyright notice."
 msgid "Set here the copyright notice."
 msgstr "필요한 저작권 공지를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:71
 #, kde-format
 msgid ""
 "Set here the necessary copyright notice. This field is limited to 128 "
 "characters."
 msgstr "필요한 저작권 공지를 설정하십시오. 이 필드는 최대 128자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:76
 #, kde-format
 msgid "Byline:"
 msgstr "바이라인:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:77
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
 #, kde-format
 msgid "Set here the name of content creator."
 msgstr "콘텐츠 작성자의 이름을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:82
 #, kde-format
 msgid "Byline Title:"
 msgstr "바이라인 제목:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:83
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
 #, kde-format
 msgid "Set here the title of content creator."
 msgstr "콘텐츠 작성자의 제목을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
 #: core/libs/template/templatepanel.cpp:114
 #: core/libs/template/templateviewer.cpp:106
@@ -14089,106 +14089,106 @@ msgstr "콘텐츠 작성자의 제목을 설정하십시오."
 msgid "Credit:"
 msgstr "만든 사람:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:91
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:194
 #, kde-format
 msgid "Set here the content provider."
 msgstr "콘텐츠 공급자를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:92
 #, kde-format
 msgid "Set here the content provider. This field is limited to 32 characters."
 msgstr "콘텐츠 공급자를 설정하십시오. 이 필드는 최대 32자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:198
 #, kde-format
 msgctxt "original owner of content"
 msgid "Source:"
 msgstr "원본:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:100
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content owner."
 msgstr "콘텐츠 공급자를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:101
 #, kde-format
 msgid ""
 "Set here the original owner of content. This field is limited to 32 "
 "characters."
 msgstr "콘텐츠의 원래 소유자를 설정하십시오. 이 필드는 최대 32자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:106
 #, kde-format
 msgid "Contact:"
 msgstr "연락처:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:107
 #, kde-format
 msgid "Set here the person or organization to contact."
 msgstr "연락할 사용자 또는 조직을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:92
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Content"
 msgstr "내용"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:119
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:96
 #, fuzzy, kde-format
 #| msgid "Origin"
 msgctxt "@item: iptc"
 msgid "Origin"
 msgstr "출처"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:100
 #, fuzzy, kde-format
 #| msgid "Credits"
 msgctxt "@item: iptc"
 msgid "Credits"
 msgstr "제작진"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:104
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Subjects"
 msgstr "주제"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:108
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Keywords"
 msgstr "키워드"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:135
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:112
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Categories"
 msgstr "분류"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:116
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item: iptc"
 msgid "Status"
 msgstr "상태"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:120
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@item: iptc"
 msgid "Properties"
 msgstr "속성"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:124
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Envelope"
 msgstr "편지봉투"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:192
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
 #, fuzzy, kde-format
 #| msgid "Components Information"
@@ -14196,7 +14196,7 @@ msgctxt "@title"
 msgid "Content Information"
 msgstr "구성 요소 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
 #, fuzzy, kde-format
 #| msgid ""
@@ -14208,7 +14208,7 @@ msgstr ""
 "<qt>콘텐츠 정보<br/><i>이미지의 시각적 내용을 설명하려면 이 패널을 사용하십시"
 "오</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:220
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:197
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
 #, fuzzy, kde-format
 #| msgctxt "@option"
@@ -14217,7 +14217,7 @@ msgctxt "@title"
 msgid "Origin Information"
 msgstr "로그인 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
 #, fuzzy, kde-format
 #| msgid ""
@@ -14229,7 +14229,7 @@ msgstr ""
 "<qt>출처 정보<br/><i>이미지에 대한 공식적인 설명 정보를 추가하려면 이 패널을 "
 "사용하십시오</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:225
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:202
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Crop Information"
@@ -14237,7 +14237,7 @@ msgctxt "@title"
 msgid "Credit Information"
 msgstr "자르기 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:226
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
 #, fuzzy, kde-format
 #| msgid ""
@@ -14249,7 +14249,7 @@ msgstr ""
 "<qt>제작진 정보<br/><i>이미지에 대한 저작권 정보를 기록하려면 이 패널을 사용"
 "하십시오</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:230
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:207
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
 #, fuzzy, kde-format
 #| msgid "Meta Information"
@@ -14257,7 +14257,7 @@ msgctxt "@title"
 msgid "Subject Information"
 msgstr "메타 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
 #, fuzzy, kde-format
 #| msgid ""
@@ -14269,7 +14269,7 @@ msgstr ""
 "<qt>주제 정보<br/><i>이미지에 대한 주제 정보를 기록하려면 이 패널을 사용하십"
 "시오</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:235
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:212
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
 #, fuzzy, kde-format
 #| msgid "Import Information"
@@ -14277,7 +14277,7 @@ msgctxt "@title"
 msgid "Keyword Information"
 msgstr "정보 가져오기"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:236
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:234
 #, fuzzy, kde-format
 #| msgid ""
@@ -14289,7 +14289,7 @@ msgstr ""
 "<qt>키워드 정보<br/><i>이미지와 관련된 키워드를 기록하려면 이 패널을 사용하십"
 "시오</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:240
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:217
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:238
 #, fuzzy, kde-format
 #| msgid "Caption Information"
@@ -14297,7 +14297,7 @@ msgctxt "@title"
 msgid "Category Information"
 msgstr "캡션 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:241
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:239
 #, fuzzy, kde-format
 #| msgid ""
@@ -14309,7 +14309,7 @@ msgstr ""
 "<qt>분류 정보<br/><i>이미지와 관련된 분류를 기록하려면 이 패널을 사용하십시오"
 "</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:245
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:222
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:243
 #, fuzzy, kde-format
 #| msgid "Meta Information"
@@ -14317,14 +14317,14 @@ msgctxt "@title"
 msgid "Status Information"
 msgstr "메타 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:246
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:244
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record workflow information"
 msgstr "속성"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:227
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:248
 #, fuzzy, kde-format
 #| msgctxt "@item"
@@ -14333,7 +14333,7 @@ msgctxt "@title"
 msgid "Status Properties"
 msgstr "항목 속성"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:251
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:249
 #, fuzzy, kde-format
 #| msgid "Add file properties"
@@ -14341,228 +14341,228 @@ msgctxt "@title"
 msgid "Record workflow properties"
 msgstr "파일 속성 추가"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:255
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:232
 #, fuzzy, kde-format
 #| msgid "Crop Information"
 msgctxt "@title"
 msgid "Envelope Information"
 msgstr "자르기 정보"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:256
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:233
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@title"
 msgid "Record editorial details"
 msgstr "비디오 코덱"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:54
 #, kde-format
 msgid "No ObjectData"
 msgstr "객체데이터 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:77
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:55
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 1)"
 msgstr "IPTC-NAA 디지털 뉴스 사진 인자 기록(버전 1)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:78
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:56
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 2)"
 msgstr "IPTC-NAA 디지털 뉴스 사진 인자 기록(버전 2)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:57
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 3)"
 msgstr "IPTC-NAA 디지털 뉴스 사진 인자 기록(버전 3)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:58
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 4)"
 msgstr "IPTC-NAA 디지털 뉴스 사진 인자 기록(버전 4)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:59
 #, kde-format
 msgid "IPTC7901 Recommended Message Format"
 msgstr "IPTC7901 권장 메시지 형식"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:60
 #, kde-format
 msgid "Tagged Image File Format (version 5.0)"
 msgstr "TIFF(태그된 이미지 파일 형식, 버전 5.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:61
 #, kde-format
 msgid "Tagged Image File Format (version 6.0)"
 msgstr "TIFF(태그된 이미지 파일 형식, 버전 6.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:62
 #, kde-format
 msgid "Illustrator"
 msgstr "Illustrator"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:85
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:63
 #, kde-format
 msgid "AppleSingle"
 msgstr "AppleSingle"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:86
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:64
 #, kde-format
 msgid "NAA 89-3 (ANPA 1312)"
 msgstr "NAA 89-3(ANPA 1312)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:65
 #, kde-format
 msgid "MacBinary II"
 msgstr "MacBinary II"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:88
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:66
 #, kde-format
 msgid "IPTC Unstructured Character Oriented File Format"
 msgstr "IPTC 비구조적 문자 지향 파일 형식"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:67
 #, kde-format
 msgid "United Press International ANPA 1312 variant"
 msgstr "United Press International ANPA 1312 파생형"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:68
 #, kde-format
 msgid "United Press International Down-Load Message"
 msgstr "United Press International 다운로드 메시지"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:69
 #, kde-format
 msgid "JPEG File Interchange"
 msgstr "JPEG 파일 교환"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:70
 #, kde-format
 msgid "Photo-CD Image-Pac"
 msgstr "Photo-CD Image-Pac"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:71
 #, kde-format
 msgid "Microsoft Bit Mapped Graphics File [*.BMP]"
 msgstr "Microsoft 비트맵 그래픽 파일 [*.BMP]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:94
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:72
 #, kde-format
 msgid "Digital Audio File [*.WAV]"
 msgstr "디지털 오디오 파일 [*.WAV]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:73
 #, kde-format
 msgid "Audio plus Moving Video [*.AVI]"
 msgstr "오디오와 비디오 [*.AVI]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:74
 #, kde-format
 msgid "PC DOS/Windows Executable Files [*.COM][*.EXE]"
 msgstr "PC DOS/Windows 실행 파일 [*.COM][*.EXE]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:75
 #, kde-format
 msgid "Compressed Binary File [*.ZIP]"
 msgstr "압축된 이진 파일 [*.ZIP]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
 #, kde-format
 msgid "Audio Interchange File Format AIFF"
 msgstr "AIFF(오디오 교환 파일 형식)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:77
 #, kde-format
 msgid "RIFF Wave (Microsoft Corporation)"
 msgstr "RIFF 웨이브(Microsoft Corporation)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:78
 #, kde-format
 msgid "Freehand (version 3.1)"
 msgstr "Freehand(버전 3.1)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:79
 #, kde-format
 msgid "Freehand (version 4.0)"
 msgstr "Freehand(버전 4.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:80
 #, kde-format
 msgid "Freehand (version 5.0)"
 msgstr "Freehand(버전 5.0)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
 #, kde-format
 msgid "Freehand (version 5.5)"
 msgstr "Freehand(버전 5.5)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
 #, kde-format
 msgid "Hypertext Markup Language \"HTML\""
 msgstr "HTML(하이퍼텍스트 마크업 언어)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
 #, kde-format
 msgid "MPEG 2 Audio Layer 2 (Musicom), ISO/IEC"
 msgstr "MPEG 2 오디오 레이어 2(Musicom), ISO/IEC"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
 #, kde-format
 msgid "MPEG 2 Audio Layer 3, ISO/IEC"
 msgstr "MPEG 2 오디오 레이어 3, ISO/IEC"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:85
 #, kde-format
 msgid "Portable Document File [*.PDF] Adobe"
 msgstr "Portable Document File [*.PDF] Adobe"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:86
 #, kde-format
 msgid "News Industry Text Format"
 msgstr "NIFF(뉴스 텍스트 형식)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:87
 #, kde-format
 msgid "Tape Archive [*.TAR]"
 msgstr "TAR 보관 파일 [*.TAR]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:88
 #, kde-format
 msgid "Tidningarnas Telegrambyra NITF version (TTNITF DTD)"
 msgstr "Tidningarnas Telegrambyra NITF 버전(TTNITF DTD)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:111
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
 #, kde-format
 msgid "Ritzaus Bureau NITF version (RBNITF DTD)"
 msgstr "Ritzaus Bureau NITF 버전(RBNITF DTD)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
 #, kde-format
 msgid "Corel Draw [*.CDR]"
 msgstr "Corel Draw [*.CDR]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:147
 #, kde-format
 msgid "Destination:"
 msgstr "대상:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:153
 #, fuzzy, kde-format
 #| msgid "Select here the envelope priority."
 msgid "Set here the envelope destination"
 msgstr "엔빌로프 우선 순위를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:154
 #, kde-format
 msgid ""
 "Enter the envelope destination. This field is limited to 1024 characters."
 msgstr "엔빌로프 대상을 입력하십시오. 이 필드는 최대 1024자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:159
 #, kde-format
 msgid "U.N.O ID:"
 msgstr "U.N.O ID:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:163
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Unique Name of Object identifier. This field is limited to "
@@ -14572,7 +14572,7 @@ msgstr ""
 "UNO ID(객체의 유일한 이름 식별자)를 입력하십시오. 이 필드는 최대 80자로 제한"
 "됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:164
 #, kde-format
 msgid ""
 "Set here the Unique Name of Object identifier. This field is limited to 80 "
@@ -14581,154 +14581,154 @@ msgstr ""
 "UNO ID(객체의 유일한 이름 식별자)를 입력하십시오. 이 필드는 최대 80자로 제한"
 "됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
 #, kde-format
 msgid "Product ID:"
 msgstr "제품 ID:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:173
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the product identifier"
 msgstr "콘텐츠 공급자를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:174
 #, kde-format
 msgid ""
 "Set here the product identifier. This field is limited to 32 characters."
 msgstr "제품 ID를 설정하십시오. 이 필드는 최대 32자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:179
 #, kde-format
 msgid "Service ID:"
 msgstr "서비스 ID:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:183
 #, fuzzy, kde-format
 #| msgid "Set here the new image width in pixels."
 msgid "Set here the service identifier"
 msgstr "픽셀 단위의 이미지 새 너비를 지정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:184
 #, kde-format
 msgid ""
 "Set here the service identifier. This field is limited to 10 characters."
 msgstr "서비스 ID를 설정하십시오. 이 필드는 최대 10자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:189
 #, kde-format
 msgid "Envelope ID:"
 msgstr "엔빌로프 ID:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:193
 #, fuzzy, kde-format
 #| msgid "Select here the envelope priority."
 msgid "Set here the envelope identifier"
 msgstr "엔빌로프 우선 순위를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:216
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:194
 #, kde-format
 msgid ""
 "Set here the envelope identifier. This field is limited to 8 characters."
 msgstr "엔빌로프 ID를 설정하십시오. 이 필드는 최대 8자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:221
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:199
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #, kde-format
 msgid "Priority:"
 msgstr "우선 순위:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "0: None"
 msgstr "0: 없음"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "1: High"
 msgstr "1: 높음"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "5: Normal"
 msgstr "5: 보통"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:209
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "8: Low"
 msgstr "8: 낮음"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:210
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:206
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
 msgstr "9: 사용자 정의"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
 #, kde-format
 msgid "Select here the envelope priority."
 msgstr "엔빌로프 우선 순위를 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:237
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:85
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:166
 #, kde-format
 msgid "Format:"
 msgstr "형식:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
 #, kde-format
 msgid "Select here envelope file format."
 msgstr "엔빌로프 파일 형식을 설정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:232
 #, kde-format
 msgid "Sent date:"
 msgstr "보낸 날짜:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:255
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
 #, kde-format
 msgid "Sent time:"
 msgstr "보낸 시간:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:266
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:244
 #, kde-format
 msgid "Set envelope sent date to today"
 msgstr "엔빌로프 보낸 날짜를 오늘로 설정"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:268
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:246
 #, kde-format
 msgid "Set here the date when the service sent the material."
 msgstr "서비스에서 자료를 보낸 날짜를 지정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:269
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:247
 #, kde-format
 msgid "Set here the time when the service sent the material."
 msgstr "서비스에서 자료를 보낸 시간을 지정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:270
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:248
 #, kde-format
 msgid "Set here the time zone when the service sent the material."
 msgstr "서비스에서 자료를 보낸 시간대를 지정하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:74
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:66
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
 #, kde-format
 msgid "Use information retrieval words:"
 msgstr "정보 가져오기 단어 사용:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:71
 #, fuzzy, kde-format
 #| msgid "Enter here a new keyword."
 msgid "Set here a keyword"
 msgstr "새로운 키워드를 입력하십시오."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:72
 #, kde-format
 msgid "Enter here a new keyword. This field is limited to 64 characters."
 msgstr "새로운 키워드를 입력하십시오. 이 필드는 최대 64자로 제한됩니다."
@@ -15202,19 +15202,19 @@ msgstr ""
 "주제 자세한 이름을 입력하십시오. 표준 IPTC/NAA 참조 코드를 사용했다면 영어로 "
 "입력하십시오. 이 필드는 최대 64자로 제한됩니다."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:43
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Metadata Edit"
 msgstr "메타데이터 편집"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:58
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:54
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items metadata"
 msgstr "항목의 메타데이터를 편집하는 도구"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:63
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:59
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This tool permit to changes plenty of metadata from items.</p><p>Most "
@@ -15237,7 +15237,7 @@ msgstr ""
 "다.</p><p>사진 에이전시에서는 사전 설정된 주제를 사용하여 IPTC 참조 코드에 따"
 "라서 항목의 내용을 설명할 수 있습니다.</p>"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."
