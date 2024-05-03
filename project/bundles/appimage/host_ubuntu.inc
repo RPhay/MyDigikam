@@ -202,7 +202,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "flite1-dev"
                    "libxshmfence-dev"
                    "libcanberra-dev"
-                   "libgcrypt11-dev"
                    "libasound2-dev"
                   )
 
@@ -217,6 +216,7 @@ if [[ $DK_QTVERSION == 5 ]] ; then
     optional_packages_qt5=(
                            "python2"
                            "python-is-python2"
+                           "libgcrypt11-dev"
                           )
 
     for pkg in ${optional_packages_qt5[@]}; do
@@ -224,9 +224,20 @@ if [[ $DK_QTVERSION == 5 ]] ; then
         echo "-------------------------------------------------------------------"
     done
 
+else
+
+    optional_packages_qt6=(
+                           "libgcrypt20-dev"
+                          )
+
+    for pkg in ${optional_packages_qt6[@]}; do
+        sudo apt-get install -y ${pkg}
+        echo "-------------------------------------------------------------------"
+    done
+
 fi
 
-# Install more recent version of NodeJs for QtWebEngine.
+# Install more recent version of NodeJS for QtWebEngine.
 # https://learnubuntu.com/update-node-js/
 
 curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
