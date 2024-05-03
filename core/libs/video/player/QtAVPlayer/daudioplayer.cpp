@@ -42,7 +42,7 @@ DAudioPlayer::DAudioPlayer(QObject* const parent)
 {
     d->player      = new QAVPlayer(this);
 
-    d->audioOutput = new QAVAudioOutput(this);
+    d->audioOutput = new QAVAudioOutput;
 
     connect(d->player, &QAVPlayer::audioFrame,
             this, &DAudioPlayer::slotAudioFrame,
@@ -67,7 +67,9 @@ QAVAudioOutput* DAudioPlayer::audioOutput() const
 void DAudioPlayer::slotAudioFrame(const QAVAudioFrame& frame)
 {
     d->audioOutput->play(frame);
-//    qCDebug(DIGIKAM_GENERAL_LOG) << "Audio position:" << d->player->position();
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Audio position:" << d->player->position();
+*/
     qCDebug(DIGIKAM_GENERAL_LOG) << "Frame position:" << frame.pts();
 
     Q_EMIT positionChanged((qint64)(frame.pts() * 1000));

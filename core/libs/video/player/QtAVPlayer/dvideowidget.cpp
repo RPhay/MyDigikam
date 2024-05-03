@@ -78,7 +78,7 @@ DVideoWidget::DVideoWidget(QWidget* const parent)
 
     d->player      = new QAVPlayer(this);
 
-    d->audioOutput = new QAVAudioOutput(this);
+    d->audioOutput = new QAVAudioOutput;
 
     connect(d->player, &QAVPlayer::audioFrame,
             this, &DVideoWidget::slotAudioFrame,
