@@ -40,32 +40,20 @@ class Q_DECL_HIDDEN XMPContent::Private
 {
 public:
 
-    explicit Private()
-      : headlineCheck         (nullptr),
-        syncJFIFCommentCheck  (nullptr),
-        syncEXIFCommentCheck  (nullptr),
-        syncEXIFCopyrightCheck(nullptr),
-        writerCheck           (nullptr),
-        headlineEdit          (nullptr),
-        writerEdit            (nullptr),
-        captionEdit           (nullptr),
-        copyrightEdit         (nullptr),
-        usageTermsEdit        (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*          headlineCheck;
-    QCheckBox*          syncJFIFCommentCheck;
-    QCheckBox*          syncEXIFCommentCheck;
-    QCheckBox*          syncEXIFCopyrightCheck;
-    QCheckBox*          writerCheck;
+    QCheckBox*          headlineCheck           = nullptr;
+    QCheckBox*          syncJFIFCommentCheck    = nullptr;
+    QCheckBox*          syncEXIFCommentCheck    = nullptr;
+    QCheckBox*          syncEXIFCopyrightCheck  = nullptr;
+    QCheckBox*          writerCheck             = nullptr;
 
-    DTextEdit*          headlineEdit;
-    DTextEdit*          writerEdit;
+    DTextEdit*          headlineEdit            = nullptr;
+    DTextEdit*          writerEdit              = nullptr;
 
-    AltLangStringsEdit* captionEdit;
-    AltLangStringsEdit* copyrightEdit;
-    AltLangStringsEdit* usageTermsEdit;
+    AltLangStringsEdit* captionEdit             = nullptr;
+    AltLangStringsEdit* copyrightEdit           = nullptr;
+    AltLangStringsEdit* usageTermsEdit          = nullptr;
 };
 
 XMPContent::XMPContent(QWidget* const parent)
@@ -349,7 +337,7 @@ void XMPContent::applyMetadata(const DMetadata& meta)
         meta.removeXmpTag("Xmp.dc.rights");
     }
 
-    if (d->usageTermsEdit->getValues(oldAltLangMap, newAltLangMap))
+    if      (d->usageTermsEdit->getValues(oldAltLangMap, newAltLangMap))
     {
         meta.setXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", newAltLangMap);
     }

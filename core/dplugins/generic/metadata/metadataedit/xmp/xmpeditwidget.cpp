@@ -53,55 +53,34 @@ class Q_DECL_HIDDEN XMPEditWidget::Private
 
 public:
 
-    explicit Private()
-      : modified       (false),
-        isReadOnly     (false),
-        page_content   (nullptr),
-        page_origin    (nullptr),
-        page_subjects  (nullptr),
-        page_keywords  (nullptr),
-        page_categories(nullptr),
-        page_credits   (nullptr),
-        page_status    (nullptr),
-        page_properties(nullptr),
-        contentPage    (nullptr),
-        keywordsPage   (nullptr),
-        categoriesPage (nullptr),
-        subjectsPage   (nullptr),
-        originPage     (nullptr),
-        creditsPage    (nullptr),
-        statusPage     (nullptr),
-        propertiesPage (nullptr),
-        dlg            (nullptr)
-    {
-    }
+    Private() = default;
 
-    bool                  modified;
-    bool                  isReadOnly;
+    bool                  modified          = false;
+    bool                  isReadOnly        = false;
 
-    DConfigDlgWdgItem*    page_content;
-    DConfigDlgWdgItem*    page_origin;
-    DConfigDlgWdgItem*    page_subjects;
-    DConfigDlgWdgItem*    page_keywords;
-    DConfigDlgWdgItem*    page_categories;
-    DConfigDlgWdgItem*    page_credits;
-    DConfigDlgWdgItem*    page_status;
-    DConfigDlgWdgItem*    page_properties;
+    DConfigDlgWdgItem*    page_content      = nullptr;
+    DConfigDlgWdgItem*    page_origin       = nullptr;
+    DConfigDlgWdgItem*    page_subjects     = nullptr;
+    DConfigDlgWdgItem*    page_keywords     = nullptr;
+    DConfigDlgWdgItem*    page_categories   = nullptr;
+    DConfigDlgWdgItem*    page_credits      = nullptr;
+    DConfigDlgWdgItem*    page_status       = nullptr;
+    DConfigDlgWdgItem*    page_properties   = nullptr;
 
     QList<QUrl>           urls;
 
     QList<QUrl>::iterator currItem;
 
-    XMPContent*           contentPage;
-    XMPKeywords*          keywordsPage;
-    XMPCategories*        categoriesPage;
-    XMPSubjects*          subjectsPage;
-    XMPOrigin*            originPage;
-    XMPCredits*           creditsPage;
-    XMPStatus*            statusPage;
-    XMPProperties*        propertiesPage;
+    XMPContent*           contentPage       = nullptr;
+    XMPKeywords*          keywordsPage      = nullptr;
+    XMPCategories*        categoriesPage    = nullptr;
+    XMPSubjects*          subjectsPage      = nullptr;
+    XMPOrigin*            originPage        = nullptr;
+    XMPCredits*           creditsPage       = nullptr;
+    XMPStatus*            statusPage        = nullptr;
+    XMPProperties*        propertiesPage    = nullptr;
 
-    MetadataEditDialog*   dlg;
+    MetadataEditDialog*   dlg               = nullptr;
 };
 
 XMPEditWidget::XMPEditWidget(MetadataEditDialog* const parent)
@@ -304,6 +283,7 @@ void XMPEditWidget::slotModified()
     if (!d->isReadOnly)
     {
         d->modified = true;
+
         Q_EMIT signalModified();
     }
 }
@@ -313,32 +293,58 @@ void XMPEditWidget::showPage(int page)
     switch (page)
     {
         case 0:
+        {
             setCurrentPage(d->page_content);
             break;
+        }
+
         case 1:
+        {
             setCurrentPage(d->page_origin);
             break;
+        }
+
         case 2:
+        {
             setCurrentPage(d->page_credits);
             break;
+        }
+
         case 3:
+        {
             setCurrentPage(d->page_subjects);
             break;
+        }
+
         case 4:
+        {
             setCurrentPage(d->page_keywords);
             break;
+        }
+
         case 5:
+        {
             setCurrentPage(d->page_categories);
             break;
+        }
+
         case 6:
+        {
             setCurrentPage(d->page_status);
             break;
+        }
+
         case 7:
+        {
             setCurrentPage(d->page_properties);
             break;
+        }
+
         default:
+        {
             setCurrentPage(d->page_content);
             break;
+        }
     }
 }
 

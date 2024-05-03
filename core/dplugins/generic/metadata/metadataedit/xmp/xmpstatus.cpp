@@ -39,26 +39,18 @@ class Q_DECL_HIDDEN XMPStatus::Private
 {
 public:
 
-    explicit Private()
-      : nicknameCheck          (nullptr),
-        specialInstructionCheck(nullptr),
-        nicknameEdit           (nullptr),
-        specialInstructionEdit (nullptr),
-        identifiersEdit        (nullptr),
-        objectNameEdit         (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*           nicknameCheck;
-    QCheckBox*           specialInstructionCheck;
+    QCheckBox*           nicknameCheck              = nullptr;
+    QCheckBox*           specialInstructionCheck    = nullptr;
 
-    DTextEdit*           nicknameEdit;
+    DTextEdit*           nicknameEdit               = nullptr;
 
-    DPlainTextEdit*      specialInstructionEdit;
+    DPlainTextEdit*      specialInstructionEdit     = nullptr;
 
-    MultiStringsEdit*    identifiersEdit;
+    MultiStringsEdit*    identifiersEdit            = nullptr;
 
-    AltLangStringsEdit*  objectNameEdit;
+    AltLangStringsEdit*  objectNameEdit             = nullptr;
 };
 
 XMPStatus::XMPStatus(QWidget* const parent)

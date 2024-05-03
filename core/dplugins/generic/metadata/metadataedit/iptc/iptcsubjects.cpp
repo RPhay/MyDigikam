@@ -96,10 +96,6 @@ IPTCSubjects::IPTCSubjects(QWidget* const parent)
             this, SLOT(slotLineEditModified()));
 }
 
-IPTCSubjects::~IPTCSubjects()
-{
-}
-
 void IPTCSubjects::readMetadata(const DMetadata& meta)
 {
     setSubjectsList(meta.getIptcSubjects());

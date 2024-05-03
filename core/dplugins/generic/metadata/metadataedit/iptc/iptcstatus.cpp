@@ -40,27 +40,17 @@ class Q_DECL_HIDDEN IPTCStatus::Private
 {
 public:
 
-    explicit Private()
-      : statusCheck             (nullptr),
-        jobIDCheck              (nullptr),
-        specialInstructionCheck (nullptr),
-        objectNameCheck         (nullptr),
-        objectNameEdit          (nullptr),
-        statusEdit              (nullptr),
-        jobIDEdit               (nullptr),
-        specialInstructionEdit  (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*       statusCheck;
-    QCheckBox*       jobIDCheck;
-    QCheckBox*       specialInstructionCheck;
-    QCheckBox*       objectNameCheck;
+    QCheckBox*       statusCheck                = nullptr;
+    QCheckBox*       jobIDCheck                 = nullptr;
+    QCheckBox*       specialInstructionCheck    = nullptr;
+    QCheckBox*       objectNameCheck            = nullptr;
 
-    DPlainTextEdit* objectNameEdit;
-    DPlainTextEdit* statusEdit;
-    DPlainTextEdit* jobIDEdit;
-    DPlainTextEdit* specialInstructionEdit;
+    DPlainTextEdit* objectNameEdit              = nullptr;
+    DPlainTextEdit* statusEdit                  = nullptr;
+    DPlainTextEdit* jobIDEdit                   = nullptr;
+    DPlainTextEdit* specialInstructionEdit      = nullptr;
 };
 
 IPTCStatus::IPTCStatus(QWidget* const parent)
@@ -245,24 +235,40 @@ void IPTCStatus::readMetadata(const DMetadata& meta)
 void IPTCStatus::applyMetadata(const DMetadata& meta)
 {
     if (d->objectNameCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.ObjectName", d->objectNameEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.ObjectName");
+    }
 
     if (d->statusCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.EditStatus", d->statusEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.EditStatus");
+    }
 
     if (d->jobIDCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.FixtureId", d->jobIDEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.FixtureId");
+    }
 
     if (d->specialInstructionCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.SpecialInstructions", d->specialInstructionEdit->toPlainText());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.SpecialInstructions");
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

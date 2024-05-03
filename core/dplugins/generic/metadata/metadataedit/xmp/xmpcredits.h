@@ -36,15 +36,15 @@ class XMPCredits : public MetadataEditPage
 public:
 
     explicit XMPCredits(QWidget* const parent);
-    ~XMPCredits() override;
+    ~XMPCredits()                                 override;
 
     void applyMetadata(const DMetadata& meta);
     void readMetadata(const DMetadata& meta);
 
-    bool syncEXIFArtistIsChecked() const;
+    bool syncEXIFArtistIsChecked()          const;
     void setCheckedSyncEXIFArtist(bool c);
 
-    QString getXMPByLine()         const;
+    QString getXMPByLine()                  const;
 
 Q_SIGNALS:
 

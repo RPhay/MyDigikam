@@ -81,10 +81,6 @@ XMPSubjects::XMPSubjects(QWidget* const parent)
     m_subjectsCheck->setEnabled(true);
 }
 
-XMPSubjects::~XMPSubjects()
-{
-}
-
 void XMPSubjects::readMetadata(const DMetadata& meta)
 {
     setSubjectsList(meta.getXmpSubjects());

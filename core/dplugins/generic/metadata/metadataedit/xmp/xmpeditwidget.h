@@ -34,9 +34,9 @@ class XMPEditWidget : public DConfigDlgWdg
 public:
 
     explicit XMPEditWidget(MetadataEditDialog* const parent);
-    ~XMPEditWidget() override;
+    ~XMPEditWidget()                      override;
 
-    bool isModified() const;
+    bool isModified()               const;
     void saveSettings();
     void apply();
 
@@ -54,7 +54,7 @@ private:
 
     void readSettings();
 
-    int  activePageIndex() const;
+    int  activePageIndex()          const;
     void showPage(int page);
 
 private:

@@ -46,18 +46,7 @@ class Q_DECL_HIDDEN XMPProperties::Private
 {
 public:
 
-    explicit Private()
-      : originalTransCheck  (nullptr),
-        priorityCB          (nullptr),
-        objectTypeCB        (nullptr),
-        objectAttributeEdit (nullptr),
-        originalTransEdit   (nullptr),
-        priorityCheck       (nullptr),
-        objectAttributeCheck(nullptr),
-        sceneEdit           (nullptr),
-        objectTypeEdit      (nullptr),
-        languageEdit        (nullptr),
-        objectAttributeCB   (nullptr)
+    Private()
     {
         sceneCodeMap.insert( QLatin1String("010100"), i18nc("@item: scene code", "Headshot") );
         sceneCodeMap.insert( QLatin1String("010200"), i18nc("@item: scene code", "Half-length") );
@@ -114,22 +103,22 @@ public:
     TypeCodeMap                     typeCodeMap;
     LanguageCodeMap                 languageCodeMap;
 
-    QCheckBox*                      originalTransCheck;
+    QCheckBox*                      originalTransCheck      = nullptr;
 
-    QComboBox*                      priorityCB;
-    QComboBox*                      objectTypeCB;
+    QComboBox*                      priorityCB              = nullptr;
+    QComboBox*                      objectTypeCB            = nullptr;
 
-    DTextEdit*                      objectAttributeEdit;
-    DTextEdit*                      originalTransEdit;
+    DTextEdit*                      objectAttributeEdit     = nullptr;
+    DTextEdit*                      originalTransEdit       = nullptr;
 
-    MetadataCheckBox*               priorityCheck;
-    MetadataCheckBox*               objectAttributeCheck;
+    MetadataCheckBox*               priorityCheck           = nullptr;
+    MetadataCheckBox*               objectAttributeCheck    = nullptr;
 
-    MultiValuesEdit*                sceneEdit;
-    MultiValuesEdit*                objectTypeEdit;
-    MultiValuesEdit*                languageEdit;
+    MultiValuesEdit*                sceneEdit               = nullptr;
+    MultiValuesEdit*                objectTypeEdit          = nullptr;
+    MultiValuesEdit*                languageEdit            = nullptr;
 
-    SqueezedComboBox*               objectAttributeCB;
+    SqueezedComboBox*               objectAttributeCB       = nullptr;
 };
 
 XMPProperties::XMPProperties(QWidget* const parent)
@@ -370,7 +359,9 @@ void XMPProperties::readMetadata(const DMetadata& meta)
             d->priorityCheck->setChecked(true);
         }
         else
+        {
             d->priorityCheck->setValid(false);
+        }
     }
 
     d->priorityCB->setEnabled(d->priorityCheck->isChecked());

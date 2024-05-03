@@ -36,21 +36,21 @@ class XMPContent : public MetadataEditPage
 public:
 
     explicit XMPContent(QWidget* const parent);
-    ~XMPContent() override;
+    ~XMPContent()                                 override;
 
     void applyMetadata(const DMetadata& meta);
     void readMetadata(const DMetadata& meta);
 
-    bool syncJFIFCommentIsChecked()   const;
-    bool syncEXIFCommentIsChecked()   const;
-    bool syncEXIFCopyrightIsChecked() const;
+    bool syncJFIFCommentIsChecked()         const;
+    bool syncEXIFCommentIsChecked()         const;
+    bool syncEXIFCopyrightIsChecked()       const;
 
     void setCheckedSyncJFIFComment(bool c);
     void setCheckedSyncEXIFComment(bool c);
     void setCheckedSyncEXIFCopyright(bool c);
 
-    QString getXMPCaption()           const;
-    QString getXMPCopyright()         const;
+    QString getXMPCaption()                 const;
+    QString getXMPCopyright()               const;
 
 Q_SIGNALS:
 

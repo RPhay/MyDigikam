@@ -37,16 +37,16 @@ class XMPOrigin : public MetadataEditPage
 public:
 
     explicit XMPOrigin(QWidget* const parent);
-    ~XMPOrigin() override;
+    ~XMPOrigin()                                  override;
 
     void applyMetadata(const DMetadata& meta);
     void readMetadata(const DMetadata& meta);
 
-    bool syncEXIFDateIsChecked() const;
+    bool syncEXIFDateIsChecked()            const;
 
     void setCheckedSyncEXIFDate(bool c);
 
-    QDateTime getXMPCreationDate() const;
+    QDateTime getXMPCreationDate()          const;
 
 Q_SIGNALS:
 

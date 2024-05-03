@@ -37,7 +37,7 @@ class XMPSubjects : public SubjectWidget
 public:
 
     explicit XMPSubjects(QWidget* const parent);
-    ~XMPSubjects() override;
+    ~XMPSubjects() override = default;
 
     void applyMetadata(const DMetadata& meta);
     void readMetadata(const DMetadata& meta);

@@ -41,63 +41,36 @@ class Q_DECL_HIDDEN XMPCredits::Private
 {
 public:
 
-    explicit Private()
-      : syncEXIFArtistCheck(nullptr),
-        creatorTitleCheck  (nullptr),
-        creditCheck        (nullptr),
-        sourceCheck        (nullptr),
-        contactCheck       (nullptr),
-        emailCheck         (nullptr),
-        urlCheck           (nullptr),
-        phoneCheck         (nullptr),
-        addressCheck       (nullptr),
-        postalCodeCheck    (nullptr),
-        cityCheck          (nullptr),
-        regionCheck        (nullptr),
-        countryCheck       (nullptr),
-        creatorTitleEdit   (nullptr),
-        creditEdit         (nullptr),
-        sourceEdit         (nullptr),
-        emailEdit          (nullptr),
-        urlEdit            (nullptr),
-        phoneEdit          (nullptr),
-        addressEdit        (nullptr),
-        postalCodeEdit     (nullptr),
-        cityEdit           (nullptr),
-        regionEdit         (nullptr),
-        countryEdit        (nullptr),
-        creatorEdit        (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*        syncEXIFArtistCheck;
-    QCheckBox*        creatorTitleCheck;
-    QCheckBox*        creditCheck;
-    QCheckBox*        sourceCheck;
-    QCheckBox*        contactCheck;
-    QCheckBox*        emailCheck;
-    QCheckBox*        urlCheck;
-    QCheckBox*        phoneCheck;
-    QCheckBox*        addressCheck;
-    QCheckBox*        postalCodeCheck;
-    QCheckBox*        cityCheck;
-    QCheckBox*        regionCheck;
-    QCheckBox*        countryCheck;
+    QCheckBox*        syncEXIFArtistCheck   = nullptr;
+    QCheckBox*        creatorTitleCheck     = nullptr;
+    QCheckBox*        creditCheck           = nullptr;
+    QCheckBox*        sourceCheck           = nullptr;
+    QCheckBox*        contactCheck          = nullptr;
+    QCheckBox*        emailCheck            = nullptr;
+    QCheckBox*        urlCheck              = nullptr;
+    QCheckBox*        phoneCheck            = nullptr;
+    QCheckBox*        addressCheck          = nullptr;
+    QCheckBox*        postalCodeCheck       = nullptr;
+    QCheckBox*        cityCheck             = nullptr;
+    QCheckBox*        regionCheck           = nullptr;
+    QCheckBox*        countryCheck          = nullptr;
 
-    DTextEdit*        creatorTitleEdit;
-    DTextEdit*        creditEdit;
-    DTextEdit*        sourceEdit;
+    DTextEdit*        creatorTitleEdit      = nullptr;
+    DTextEdit*        creditEdit            = nullptr;
+    DTextEdit*        sourceEdit            = nullptr;
 
-    QLineEdit*        emailEdit;
-    QLineEdit*        urlEdit;
-    QLineEdit*        phoneEdit;
-    QLineEdit*        addressEdit;
-    QLineEdit*        postalCodeEdit;
-    QLineEdit*        cityEdit;
-    QLineEdit*        regionEdit;
-    QLineEdit*        countryEdit;
+    QLineEdit*        emailEdit             = nullptr;
+    QLineEdit*        urlEdit               = nullptr;
+    QLineEdit*        phoneEdit             = nullptr;
+    QLineEdit*        addressEdit           = nullptr;
+    QLineEdit*        postalCodeEdit        = nullptr;
+    QLineEdit*        cityEdit              = nullptr;
+    QLineEdit*        regionEdit            = nullptr;
+    QLineEdit*        countryEdit           = nullptr;
 
-    MultiStringsEdit* creatorEdit;
+    MultiStringsEdit* creatorEdit           = nullptr;
 };
 
 XMPCredits::XMPCredits(QWidget* const parent)
@@ -377,7 +350,9 @@ void XMPCredits::readMetadata(const DMetadata& meta)
     data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork", false);
 
     if (data.isNull())
+    {
         data = meta.getXmpTagString("Xmp.iptc.CiEmailWork", false);
+    }
 
     if (!data.isNull())
     {
@@ -394,7 +369,9 @@ void XMPCredits::readMetadata(const DMetadata& meta)
     data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork", false);
 
     if (data.isNull())
+    {
         data = meta.getXmpTagString("Xmp.iptc.CiUrlWork", false);
+    }
 
     if (!data.isNull())
     {
@@ -411,7 +388,9 @@ void XMPCredits::readMetadata(const DMetadata& meta)
     data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork", false);
 
     if (data.isNull())
+    {
         data = meta.getXmpTagString("Xmp.iptc.CiTelWork", false);
+    }
 
     if (!data.isNull())
     {
@@ -428,7 +407,9 @@ void XMPCredits::readMetadata(const DMetadata& meta)
     data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr", false);
 
     if (data.isNull())
+    {
         data = meta.getXmpTagString("Xmp.iptc.CiAdrExtadr", false);
+    }
 
     if (!data.isNull())
     {
@@ -445,7 +426,9 @@ void XMPCredits::readMetadata(const DMetadata& meta)
     data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode", false);
 
     if (data.isNull())
+    {
         data = meta.getXmpTagString("Xmp.iptc.CiAdrPcode", false);
+    }
 
     if (!data.isNull())
     {
@@ -462,7 +445,9 @@ void XMPCredits::readMetadata(const DMetadata& meta)
     data = meta.getXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity", false);
 
     if (data.isNull())
+    {
         data = meta.getXmpTagString("Xmp.iptc.CiAdrCity", false);
+    }
 
     if (!data.isNull())
     {

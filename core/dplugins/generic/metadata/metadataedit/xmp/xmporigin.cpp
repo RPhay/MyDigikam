@@ -46,58 +46,35 @@ class Q_DECL_HIDDEN XMPOrigin::Private
 {
 public:
 
-    explicit Private()
-      : dateCreatedCheck      (nullptr),
-        dateDigitalizedCheck  (nullptr),
-        dateVideoCheck        (nullptr),
-        syncEXIFDateCheck     (nullptr),
-        cityCheck             (nullptr),
-        sublocationCheck      (nullptr),
-        provinceCheck         (nullptr),
-        setTodayCreatedBtn    (nullptr),
-        setTodayDigitalizedBtn(nullptr),
-        setTodayVideoBtn      (nullptr),
-        dateCreatedSel        (nullptr),
-        dateDigitalizedSel    (nullptr),
-        dateVideoSel          (nullptr),
-        zoneCreatedSel        (nullptr),
-        zoneDigitalizedSel    (nullptr),
-        zoneVideoSel          (nullptr),
-        cityEdit              (nullptr),
-        sublocationEdit       (nullptr),
-        provinceEdit          (nullptr),
-        countryCheck          (nullptr),
-        countryCB             (nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*                     dateCreatedCheck;
-    QCheckBox*                     dateDigitalizedCheck;
-    QCheckBox*                     dateVideoCheck;
-    QCheckBox*                     syncEXIFDateCheck;
-    QCheckBox*                     cityCheck;
-    QCheckBox*                     sublocationCheck;
-    QCheckBox*                     provinceCheck;
+    QCheckBox*                     dateCreatedCheck         = nullptr;
+    QCheckBox*                     dateDigitalizedCheck     = nullptr;
+    QCheckBox*                     dateVideoCheck           = nullptr;
+    QCheckBox*                     syncEXIFDateCheck        = nullptr;
+    QCheckBox*                     cityCheck                = nullptr;
+    QCheckBox*                     sublocationCheck         = nullptr;
+    QCheckBox*                     provinceCheck            = nullptr;
 
-    QPushButton*                   setTodayCreatedBtn;
-    QPushButton*                   setTodayDigitalizedBtn;
-    QPushButton*                   setTodayVideoBtn;
+    QPushButton*                   setTodayCreatedBtn       = nullptr;
+    QPushButton*                   setTodayDigitalizedBtn   = nullptr;
+    QPushButton*                   setTodayVideoBtn         = nullptr;
 
-    QDateTimeEdit*                 dateCreatedSel;
-    QDateTimeEdit*                 dateDigitalizedSel;
-    QDateTimeEdit*                 dateVideoSel;
+    QDateTimeEdit*                 dateCreatedSel           = nullptr;
+    QDateTimeEdit*                 dateDigitalizedSel       = nullptr;
+    QDateTimeEdit*                 dateVideoSel             = nullptr;
 
-    TimeZoneComboBox*              zoneCreatedSel;
-    TimeZoneComboBox*              zoneDigitalizedSel;
-    TimeZoneComboBox*              zoneVideoSel;
+    TimeZoneComboBox*              zoneCreatedSel           = nullptr;
+    TimeZoneComboBox*              zoneDigitalizedSel       = nullptr;
+    TimeZoneComboBox*              zoneVideoSel             = nullptr;
 
-    QLineEdit*                     cityEdit;
-    QLineEdit*                     sublocationEdit;
-    QLineEdit*                     provinceEdit;
+    QLineEdit*                     cityEdit                 = nullptr;
+    QLineEdit*                     sublocationEdit          = nullptr;
+    QLineEdit*                     provinceEdit             = nullptr;
 
-    MetadataCheckBox*              countryCheck;
+    MetadataCheckBox*              countryCheck             = nullptr;
 
-    CountrySelector*               countryCB;
+    CountrySelector*               countryCB                = nullptr;
 };
 
 XMPOrigin::XMPOrigin(QWidget* const parent)
@@ -208,8 +185,8 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
 
     // Remove 2 last items for the list (separator + Unknown item)
 
-    d->countryCB->removeItem(d->countryCB->count()-1);
-    d->countryCB->removeItem(d->countryCB->count()-1);
+    d->countryCB->removeItem(d->countryCB->count() - 1);
+    d->countryCB->removeItem(d->countryCB->count() - 1);
 
     // --------------------------------------------------------
 
@@ -552,7 +529,9 @@ void XMPOrigin::readMetadata(const DMetadata& meta)
         for (int i = 0 ; i < d->countryCB->count() ; ++i)
         {
             if (d->countryCB->itemText(i).left(3) == data)
+            {
                 item = i;
+            }
         }
 
         if (item != -1)
@@ -673,7 +652,7 @@ void XMPOrigin::applyMetadata(const DMetadata& meta)
         meta.removeXmpTag("Xmp.photoshop.State");
     }
 
-    if (d->countryCheck->isChecked())
+    if      (d->countryCheck->isChecked())
     {
         QString countryName = d->countryCB->currentText().mid(6);
         QString countryCode = d->countryCB->currentText().left(3);

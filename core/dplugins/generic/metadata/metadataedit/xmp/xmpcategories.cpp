@@ -40,36 +40,26 @@ class Q_DECL_HIDDEN XMPCategories::Private
 {
 public:
 
-    explicit Private()
-      : addSubCategoryButton(nullptr),
-        delSubCategoryButton(nullptr),
-        repSubCategoryButton(nullptr),
-        subCategoriesCheck  (nullptr),
-        categoryCheck       (nullptr),
-        categoryEdit        (nullptr),
-        subCategoryEdit     (nullptr),
-        subCategoriesBox    (nullptr)
-    {
-    }
+    Private() = default;
 
     QStringList  oldSubCategories;
 
-    QPushButton* addSubCategoryButton;
-    QPushButton* delSubCategoryButton;
-    QPushButton* repSubCategoryButton;
+    QPushButton* addSubCategoryButton   = nullptr;
+    QPushButton* delSubCategoryButton   = nullptr;
+    QPushButton* repSubCategoryButton   = nullptr;
 
-    QCheckBox*   subCategoriesCheck;
-    QCheckBox*   categoryCheck;
+    QCheckBox*   subCategoriesCheck     = nullptr;
+    QCheckBox*   categoryCheck          = nullptr;
 
-    QLineEdit*   categoryEdit;
-    DTextEdit*   subCategoryEdit;
+    QLineEdit*   categoryEdit           = nullptr;
+    DTextEdit*   subCategoryEdit        = nullptr;
 
-    QListWidget* subCategoriesBox;
+    QListWidget* subCategoriesBox       = nullptr;
 };
 
 XMPCategories::XMPCategories(QWidget* const parent)
     :  MetadataEditPage(parent),
-      d                (new Private)
+       d               (new Private)
 {
     QGridLayout* const grid = new QGridLayout(widget());
 

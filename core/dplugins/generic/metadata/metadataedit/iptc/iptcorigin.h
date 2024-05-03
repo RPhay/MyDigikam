@@ -37,7 +37,7 @@ class IPTCOrigin : public MetadataEditPage
 public:
 
     explicit IPTCOrigin(QWidget* const parent);
-    ~IPTCOrigin() override;
+    ~IPTCOrigin()                                 override;
 
     void applyMetadata(const DMetadata& meta);
     void readMetadata(const DMetadata& meta);

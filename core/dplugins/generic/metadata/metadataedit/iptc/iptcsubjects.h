@@ -38,7 +38,7 @@ class IPTCSubjects : public SubjectWidget
 public:
 
     explicit IPTCSubjects(QWidget* const parent);
-    ~IPTCSubjects() override;
+    ~IPTCSubjects() override = default;
 
     void applyMetadata(const DMetadata& meta);
     void readMetadata(const DMetadata& meta);

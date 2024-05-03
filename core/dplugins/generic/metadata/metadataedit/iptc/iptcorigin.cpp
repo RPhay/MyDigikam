@@ -50,62 +50,38 @@ class Q_DECL_HIDDEN IPTCOrigin::Private
 {
 public:
 
-    explicit Private()
-      : dateCreatedCheck(nullptr),
-        dateDigitalizedCheck(nullptr),
-        timeCreatedCheck(nullptr),
-        timeDigitalizedCheck(nullptr),
-        syncEXIFDateCheck(nullptr),
-        cityCheck(nullptr),
-        sublocationCheck(nullptr),
-        provinceCheck(nullptr),
-        timeCreatedSel(nullptr),
-        timeDigitalizedSel(nullptr),
-        zoneCreatedSel(nullptr),
-        zoneDigitalizedSel(nullptr),
-        setTodayCreatedBtn(nullptr),
-        setTodayDigitalizedBtn(nullptr),
-        dateCreatedSel(nullptr),
-        dateDigitalizedSel(nullptr),
-        cityEdit(nullptr),
-        sublocationEdit(nullptr),
-        provinceEdit(nullptr),
-        locationEdit(nullptr),
-        countryCheck(nullptr),
-        countryCB(nullptr)
-    {
-    }
+    Private() = default;
 
-    QCheckBox*                     dateCreatedCheck;
-    QCheckBox*                     dateDigitalizedCheck;
-    QCheckBox*                     timeCreatedCheck;
-    QCheckBox*                     timeDigitalizedCheck;
-    QCheckBox*                     syncEXIFDateCheck;
-    QCheckBox*                     cityCheck;
-    QCheckBox*                     sublocationCheck;
-    QCheckBox*                     provinceCheck;
+    QCheckBox*                     dateCreatedCheck         = nullptr;
+    QCheckBox*                     dateDigitalizedCheck     = nullptr;
+    QCheckBox*                     timeCreatedCheck         = nullptr;
+    QCheckBox*                     timeDigitalizedCheck     = nullptr;
+    QCheckBox*                     syncEXIFDateCheck        = nullptr;
+    QCheckBox*                     cityCheck                = nullptr;
+    QCheckBox*                     sublocationCheck         = nullptr;
+    QCheckBox*                     provinceCheck            = nullptr;
 
-    QTimeEdit*                     timeCreatedSel;
-    QTimeEdit*                     timeDigitalizedSel;
+    QTimeEdit*                     timeCreatedSel           = nullptr;
+    QTimeEdit*                     timeDigitalizedSel       = nullptr;
 
-    TimeZoneComboBox*              zoneCreatedSel;
-    TimeZoneComboBox*              zoneDigitalizedSel;
+    TimeZoneComboBox*              zoneCreatedSel           = nullptr;
+    TimeZoneComboBox*              zoneDigitalizedSel       = nullptr;
 
-    QPushButton*                   setTodayCreatedBtn;
-    QPushButton*                   setTodayDigitalizedBtn;
+    QPushButton*                   setTodayCreatedBtn       = nullptr;
+    QPushButton*                   setTodayDigitalizedBtn   = nullptr;
 
-    QDateEdit*                     dateCreatedSel;
-    QDateEdit*                     dateDigitalizedSel;
+    QDateEdit*                     dateCreatedSel           = nullptr;
+    QDateEdit*                     dateDigitalizedSel       = nullptr;
 
-    QLineEdit*                     cityEdit;
-    QLineEdit*                     sublocationEdit;
-    QLineEdit*                     provinceEdit;
+    QLineEdit*                     cityEdit                 = nullptr;
+    QLineEdit*                     sublocationEdit          = nullptr;
+    QLineEdit*                     provinceEdit             = nullptr;
 
-    MultiValuesEdit*               locationEdit;
+    MultiValuesEdit*               locationEdit             = nullptr;
 
-    MetadataCheckBox*              countryCheck;
+    MetadataCheckBox*              countryCheck             = nullptr;
 
-    CountrySelector*               countryCB;
+    CountrySelector*               countryCB                = nullptr;
 };
 
 IPTCOrigin::IPTCOrigin(QWidget* const parent)
@@ -218,8 +194,8 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
 
     // Remove 2 last items for the list (separator + Unknown item)
 
-    d->countryCB->removeItem(d->countryCB->count()-1);
-    d->countryCB->removeItem(d->countryCB->count()-1);
+    d->countryCB->removeItem(d->countryCB->count() - 1);
+    d->countryCB->removeItem(d->countryCB->count() - 1);
 
     QStringList list;
 
@@ -529,7 +505,7 @@ void IPTCOrigin::readMetadata(const DMetadata& meta)
 
     code = meta.getIptcTagsStringList("Iptc.Application2.LocationCode", false);
 
-    for (QStringList::Iterator it = code.begin(); it != code.end(); ++it)
+    for (QStringList::Iterator it = code.begin() ; it != code.end() ; ++it)
     {
         QStringList lst = d->locationEdit->getData();
         QStringList::Iterator it2;

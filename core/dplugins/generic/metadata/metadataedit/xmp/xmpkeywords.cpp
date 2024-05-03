@@ -39,27 +39,19 @@ class Q_DECL_HIDDEN XMPKeywords::Private
 {
 public:
 
-    explicit Private()
-      : addKeywordButton(nullptr),
-        delKeywordButton(nullptr),
-        repKeywordButton(nullptr),
-        keywordsCheck   (nullptr),
-        keywordEdit     (nullptr),
-        keywordsBox     (nullptr)
-    {
-    }
+    Private() = default;
 
     QStringList  oldKeywords;
 
-    QPushButton* addKeywordButton;
-    QPushButton* delKeywordButton;
-    QPushButton* repKeywordButton;
+    QPushButton* addKeywordButton   = nullptr;
+    QPushButton* delKeywordButton   = nullptr;
+    QPushButton* repKeywordButton   = nullptr;
 
-    QCheckBox*   keywordsCheck;
+    QCheckBox*   keywordsCheck      = nullptr;
 
-    DTextEdit*   keywordEdit;
+    DTextEdit*   keywordEdit        = nullptr;
 
-    QListWidget* keywordsBox;
+    QListWidget* keywordsBox        = nullptr;
 };
 
 XMPKeywords::XMPKeywords(QWidget* const parent)
