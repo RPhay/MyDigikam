@@ -43,7 +43,7 @@ public:
     explicit GalleryElementFunctor(GalleryGenerator* const generator,
                                    GalleryInfo* const info,
                                    const QString& destDir);
-    ~GalleryElementFunctor();
+    ~GalleryElementFunctor() = default;
 
     void operator()(GalleryElement& element);
 

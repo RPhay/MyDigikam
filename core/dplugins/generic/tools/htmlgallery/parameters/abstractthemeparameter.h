@@ -36,7 +36,7 @@ class AbstractThemeParameter
 {
 public:
 
-    explicit AbstractThemeParameter();
+    AbstractThemeParameter();
     virtual ~AbstractThemeParameter();
 
     /**

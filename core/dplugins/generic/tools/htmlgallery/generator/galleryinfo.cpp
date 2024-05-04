@@ -29,10 +29,6 @@ GalleryInfo::GalleryInfo(DInfoInterface* const iface)
 {
 }
 
-GalleryInfo::~GalleryInfo()
-{
-}
-
 QString GalleryInfo::fullFormatString() const
 {
     return getEnumString(QLatin1String("fullFormat"));

@@ -84,10 +84,6 @@ GalleryElementFunctor::GalleryElementFunctor(GalleryGenerator* const generator,
 {
 }
 
-GalleryElementFunctor::~GalleryElementFunctor()
-{
-}
-
 void GalleryElementFunctor::operator()(GalleryElement& element)
 {
     // Load image

@@ -168,7 +168,7 @@ public:
             DInfoInterface::DAlbumIDs::ConstIterator albumIt  = info->m_albumList.constBegin();
             DInfoInterface::DAlbumIDs::ConstIterator albumEnd = info->m_albumList.constEnd();
 
-            for (; albumIt != albumEnd ; ++albumIt)
+            for ( ; albumIt != albumEnd ; ++albumIt)
             {
                 int id = *albumIt;
                 DInfoInterface::DInfoMap inf;
@@ -187,7 +187,7 @@ public:
             QMultiMap<QString, QPair<int, QString> >::const_iterator mapIt  = albumMap.constBegin();
             QMultiMap<QString, QPair<int, QString> >::const_iterator mapEnd = albumMap.constEnd();
 
-            for (; mapIt != mapEnd ; ++mapIt)
+            for ( ; mapIt != mapEnd ; ++mapIt)
             {
                 int id                     = mapIt.value().first;
                 QString title              = mapIt.key();
@@ -388,6 +388,7 @@ public:
                             RemoteUrlHash* const hash)
     {
         Q_ASSERT(hash);
+
         QList<QUrl> list;
 
         Q_FOREACH (const QUrl& url, _list)

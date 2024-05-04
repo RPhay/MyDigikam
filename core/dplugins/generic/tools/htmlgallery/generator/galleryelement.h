@@ -42,8 +42,8 @@ class GalleryElement
 public:
 
     explicit GalleryElement(const DInfoInterface::DInfoMap& info);
-    GalleryElement();
-    ~GalleryElement();
+    GalleryElement()  = default;
+    ~GalleryElement() = default;
 
     void appendToXML(XMLWriter& xmlWriter, bool copyOriginalImage) const;
 

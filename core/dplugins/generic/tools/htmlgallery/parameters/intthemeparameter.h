@@ -30,7 +30,7 @@ class IntThemeParameter : public AbstractThemeParameter
 {
 public:
 
-    explicit IntThemeParameter();
+    IntThemeParameter();
     ~IntThemeParameter()                                                       override;
 
     void init(const QByteArray& internalName, const KConfigGroup* configGroup) override;

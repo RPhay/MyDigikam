@@ -69,7 +69,7 @@ public:
 public:
 
     explicit GalleryConfig(QObject* const parent = nullptr);
-    ~GalleryConfig() override;
+    ~GalleryConfig() override = default;
 
     void setTheme(const QString&);
     QString theme() const;
@@ -116,19 +116,19 @@ public:
 protected:
 
     QString    m_theme;
-    bool       m_useOriginalImageAsFullImage;
-    bool       m_fullResize;
-    int        m_fullSize;
-    int        m_fullFormat;
-    int        m_fullQuality;
-    bool       m_copyOriginalImage;
-    int        m_thumbnailSize;
-    int        m_thumbnailFormat;
-    int        m_thumbnailQuality;
-    bool       m_thumbnailSquare;
+    bool       m_useOriginalImageAsFullImage    = false;
+    bool       m_fullResize                     = true;
+    int        m_fullSize                       = 1024;
+    int        m_fullFormat                     = EnumFullFormat::JPEG;
+    int        m_fullQuality                    = 80;
+    bool       m_copyOriginalImage              = false;
+    int        m_thumbnailSize                  = 120;
+    int        m_thumbnailFormat                = EnumThumbnailFormat::JPEG;
+    int        m_thumbnailQuality               = 80;
+    bool       m_thumbnailSquare                = true;
     QUrl       m_destUrl;
-    int        m_openInBrowser;
-    QString    m_imageSelectionTitle; ///< Gallery title to use for GalleryInfo::ImageGetOption::IMAGES selection.
+    int        m_openInBrowser                  = EnumWebBrowser::INTERNAL;
+    QString    m_imageSelectionTitle;           ///< Gallery title to use for GalleryInfo::ImageGetOption::IMAGES selection.
 };
 
 } // namespace DigikamGenericHtmlGalleryPlugin

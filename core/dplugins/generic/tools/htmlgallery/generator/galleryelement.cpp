@@ -31,14 +31,6 @@ GalleryElement::GalleryElement(const DInfoInterface::DInfoMap& info)
     m_time        = item.dateTime();
 }
 
-GalleryElement::GalleryElement()
-{
-}
-
-GalleryElement::~GalleryElement()
-{
-}
-
 void GalleryElement::appendToXML(XMLWriter& xmlWriter, bool copyOriginalImage) const
 {
     if (!m_valid)

@@ -35,6 +35,7 @@ QWidget* CaptionThemeParameter::createWidget(QWidget* parent, const QString& val
 QString CaptionThemeParameter::valueFromWidget(QWidget* widget) const
 {
     Q_ASSERT(widget);
+
     DTextEdit* const edit = static_cast<DTextEdit*>(widget);
 
     return edit->text();

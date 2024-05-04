@@ -34,10 +34,6 @@ HtmlGalleryPlugin::HtmlGalleryPlugin(QObject* const parent)
 {
 }
 
-HtmlGalleryPlugin::~HtmlGalleryPlugin()
-{
-}
-
 QString HtmlGalleryPlugin::name() const
 {
     return i18n("Html Gallery");
@@ -87,7 +83,7 @@ QList<DPluginAuthor> HtmlGalleryPlugin::authors() const
                              QString::fromUtf8("(C) 2010"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2020"),
+                             QString::fromUtf8("(C) 2006-2024"),
                              i18n("Developer and Maintainer"))
             ;
 }

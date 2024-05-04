@@ -35,7 +35,7 @@ class HtmlGalleryPlugin : public DPluginGeneric
 public:
 
     explicit HtmlGalleryPlugin(QObject* const parent = nullptr);
-    ~HtmlGalleryPlugin()                 override;
+    ~HtmlGalleryPlugin()                 override = default;
 
     QString name()                 const override;
     QString iid()                  const override;

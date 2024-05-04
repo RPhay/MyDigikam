@@ -33,14 +33,10 @@ class Q_DECL_HIDDEN IntThemeParameter::Private
 {
 public:
 
-    explicit Private()
-      : minValue(0),
-        maxValue(99999)
-    {
-    }
+    Private() = default;
 
-    int minValue;
-    int maxValue;
+    int minValue = 0;
+    int maxValue = 99999;
 };
 
 IntThemeParameter::IntThemeParameter()

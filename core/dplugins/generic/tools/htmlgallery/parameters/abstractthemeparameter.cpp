@@ -29,9 +29,7 @@ class Q_DECL_HIDDEN AbstractThemeParameter::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QByteArray internalName;
     QString    name;

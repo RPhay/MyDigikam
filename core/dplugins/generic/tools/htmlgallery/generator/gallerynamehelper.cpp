@@ -18,14 +18,6 @@
 namespace DigikamGenericHtmlGalleryPlugin
 {
 
-GalleryNameHelper::GalleryNameHelper()
-{
-}
-
-GalleryNameHelper::~GalleryNameHelper()
-{
-}
-
 QString GalleryNameHelper::makeNameUnique(const QString& name)
 {
     QString uname    = name;

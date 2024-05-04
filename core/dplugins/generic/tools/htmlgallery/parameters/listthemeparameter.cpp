@@ -33,9 +33,7 @@ class Q_DECL_HIDDEN ListThemeParameter::Private
 {
 public:
 
-    explicit Private()
-    {
-    }
+    Private() = default;
 
     QStringList            mOrderedValueList;
     QMap<QString, QString> mContentMap;
@@ -97,6 +95,7 @@ QWidget* ListThemeParameter::createWidget(QWidget* parent, const QString& widget
 QString ListThemeParameter::valueFromWidget(QWidget* widget) const
 {
     Q_ASSERT(widget);
+
     QComboBox* const comboBox = static_cast<QComboBox*>(widget);
 
     return d->mOrderedValueList[comboBox->currentIndex()];

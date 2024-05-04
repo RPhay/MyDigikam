@@ -30,7 +30,7 @@ class ListThemeParameter : public AbstractThemeParameter
 {
 public:
 
-    explicit ListThemeParameter();
+    ListThemeParameter();
     ~ListThemeParameter()                                                          override;
 
     void     init(const QByteArray& internalName, const KConfigGroup* configGroup) override;

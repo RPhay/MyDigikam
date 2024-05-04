@@ -161,10 +161,6 @@ GalleryConfig::GalleryConfig(QObject* const)
     addItem(itemimageSelectionTitle, QLatin1String("imageSelectionTitle"));
 }
 
-GalleryConfig::~GalleryConfig()
-{
-}
-
 void GalleryConfig::setTheme(const QString& v)
 {
     if (!isImmutable(QLatin1String("theme")))

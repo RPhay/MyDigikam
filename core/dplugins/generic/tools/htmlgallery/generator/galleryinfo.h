@@ -51,7 +51,7 @@ public:
 public:
 
     explicit GalleryInfo(DInfoInterface* const iface = nullptr);
-    ~GalleryInfo() override;
+    ~GalleryInfo() override = default;
 
     QString fullFormatString()                                  const;
 

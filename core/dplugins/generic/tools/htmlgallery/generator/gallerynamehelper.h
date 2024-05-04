@@ -30,8 +30,8 @@ class GalleryNameHelper
 {
 public:
 
-    explicit GalleryNameHelper();
-    ~GalleryNameHelper();
+    GalleryNameHelper()  = default;
+    ~GalleryNameHelper() = default;
 
     QString makeNameUnique(const QString& name);
 
