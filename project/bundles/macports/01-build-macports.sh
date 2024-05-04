@@ -323,8 +323,8 @@ cmake $ORIG_WD/../3rdparty \
        -DARCH_TARGET=$ARCH_TARGET \
        -Wno-dev
 
-cmake --build . --config RelWithDebInfo --target ext_heif      -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_ffmpeg    -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_heif                   -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ffmpeg +glp3 +nonfree  -- -j$CPU_CORES
 
 if [[ $DK_QTVERSION = 5 ]] ; then
 
