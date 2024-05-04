@@ -34,24 +34,16 @@ class Q_DECL_HIDDEN ExpoBlendingWizard::Private
 {
 public:
 
-    explicit Private()
-      : mngr             (nullptr),
-        introPage        (nullptr),
-        itemsPage        (nullptr),
-        preProcessingPage(nullptr),
-        lastPage         (nullptr),
-        preProcessed     (false)
-    {
-    }
+    Private() = default;
 
-    ExpoBlendingManager*        mngr;
+    ExpoBlendingManager*        mngr                = nullptr;
 
-    ExpoBlendingIntroPage*      introPage;
-    ItemsPage*                  itemsPage;
-    ExpoBlendingPreProcessPage* preProcessingPage;
-    ExpoBlendingLastPage*       lastPage;
+    ExpoBlendingIntroPage*      introPage           = nullptr;
+    ItemsPage*                  itemsPage           = nullptr;
+    ExpoBlendingPreProcessPage* preProcessingPage   = nullptr;
+    ExpoBlendingLastPage*       lastPage            = nullptr;
 
-    bool                        preProcessed;
+    bool                        preProcessed        = false;
 };
 
 ExpoBlendingWizard::ExpoBlendingWizard(ExpoBlendingManager* const mngr, QWidget* const parent)

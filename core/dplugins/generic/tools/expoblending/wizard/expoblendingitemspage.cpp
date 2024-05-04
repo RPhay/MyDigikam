@@ -42,14 +42,10 @@ class Q_DECL_HIDDEN ItemsPage::Private
 {
 public:
 
-    explicit Private()
-      : list(nullptr),
-        mngr(nullptr)
-    {
-    }
+    Private() = default;
 
-    DItemsList*         list;
-    ExpoBlendingManager* mngr;
+    DItemsList*          list = nullptr;
+    ExpoBlendingManager* mngr = nullptr;
 };
 
 ItemsPage::ItemsPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
@@ -150,7 +146,7 @@ void ItemsPage::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlugin::E
     {
         switch (ad.action)
         {
-            case(EXPOBLENDING_IDENTIFY):
+            case EXPOBLENDING_IDENTIFY:
             {
                 setIdentity(ad.inUrls[0], ad.message);
                 break;

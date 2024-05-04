@@ -31,8 +31,8 @@ class AlignBinary : public DBinaryIface
 
 public:
 
-    explicit AlignBinary();
-    ~AlignBinary() override;
+    AlignBinary();
+    ~AlignBinary() override = default;
 
 private:
 

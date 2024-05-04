@@ -43,7 +43,7 @@ class ExpoBlendingThread : public QThread
 public:
 
     explicit ExpoBlendingThread(QObject* const parent);
-    ~ExpoBlendingThread() override;
+    ~ExpoBlendingThread()                             override;
 
     void setEnfuseVersion(const double version);
     void setPreProcessingSettings(bool align);
@@ -70,7 +70,7 @@ Q_SIGNALS:
 
 private:
 
-    void    run() override;
+    void    run()                                     override;
 
     bool    preProcessingMultithreaded(const QUrl& url);
     bool    startPreProcessing(const QList<QUrl>& inUrls, bool  align, const QString& alignPath, QString& errors);
@@ -81,7 +81,7 @@ private:
                         const EnfuseSettings& settings,
                         const QString& enfusePath, QString& errors);
 
-    QString getProcessError(QProcess& proc) const;
+    QString getProcessError(QProcess& proc)     const;
 
     float   getAverageSceneLuminance(const QUrl& url);
     bool    getXmpRational(const char* xmpTagName, long& num, long& den, MetaEngine* const meta);

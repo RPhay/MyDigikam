@@ -31,7 +31,7 @@ class EnfuseBinary : public DBinaryIface
 
 public:
 
-    explicit EnfuseBinary()
+    EnfuseBinary()
         : DBinaryIface(QLatin1String("enfuse"),
                        QLatin1String("3.2"),
                        QLatin1String("enfuse "),
@@ -45,9 +45,7 @@ public:
         setup();
     }
 
-    ~EnfuseBinary() override
-    {
-    }
+    ~EnfuseBinary() override = default;
 
     double getVersion() const;
 

@@ -50,31 +50,21 @@ class Q_DECL_HIDDEN ExpoBlendingPreProcessPage::Private
 {
 public:
 
-    explicit Private()
-     :  progressCount (0),
-        progressLabel (nullptr),
-        progressTimer (nullptr),
-        title         (nullptr),
-        alignCheckBox (nullptr),
-        detailsText   (nullptr),
-        progressPix   (nullptr),
-        mngr          (nullptr)
-    {
-    }
+    Private() = default;
 
-    int                  progressCount;
-    QLabel*              progressLabel;
-    QTimer*              progressTimer;
+    int                  progressCount  = 0;
+    QLabel*              progressLabel  = nullptr;
+    QTimer*              progressTimer  = nullptr;
 
-    QLabel*              title;
+    QLabel*              title          = nullptr;
 
-    QCheckBox*           alignCheckBox;
+    QCheckBox*           alignCheckBox  = nullptr;
 
-    QTextBrowser*        detailsText;
+    QTextBrowser*        detailsText    = nullptr;
 
-    DWorkingPixmap*      progressPix;
+    DWorkingPixmap*      progressPix    = nullptr;
 
-    ExpoBlendingManager* mngr;
+    ExpoBlendingManager* mngr           = nullptr;
 };
 
 ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
@@ -206,7 +196,7 @@ void ExpoBlendingPreProcessPage::slotExpoBlendingAction(const DigikamGenericExpo
         {
             switch (ad.action)
             {
-                case(EXPOBLENDING_PREPROCESSING):
+                case EXPOBLENDING_PREPROCESSING:
                 {
                     d->title->setText(QString::fromUtf8("<qt>"
                                                         "<p>%1</p>"
@@ -222,7 +212,9 @@ void ExpoBlendingPreProcessPage::slotExpoBlendingAction(const DigikamGenericExpo
                     d->detailsText->show();
                     d->progressLabel->clear();
                     d->detailsText->setText(ad.message);
+
                     Q_EMIT signalPreProcessed(ExpoBlendingItemUrlsMap());
+
                     break;
                 }
 
@@ -237,11 +229,13 @@ void ExpoBlendingPreProcessPage::slotExpoBlendingAction(const DigikamGenericExpo
         {
             switch (ad.action)
             {
-                case(EXPOBLENDING_PREPROCESSING):
+                case EXPOBLENDING_PREPROCESSING:
                 {
                     d->progressTimer->stop();
                     d->progressLabel->clear();
+
                     Q_EMIT signalPreProcessed(ad.preProcessedUrlsMap);
+
                     break;
                 }
 

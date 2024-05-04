@@ -39,12 +39,9 @@ class Q_DECL_HIDDEN ExpoBlendingLastPage::Private
 {
 public:
 
-    explicit Private()
-        : mngr(nullptr)
-    {
-    }
+    Private() = default;
 
-    ExpoBlendingManager* mngr;
+    ExpoBlendingManager* mngr = nullptr;
 };
 
 ExpoBlendingLastPage::ExpoBlendingLastPage(ExpoBlendingManager* const mngr, QWizard* const dlg)

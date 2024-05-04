@@ -51,7 +51,7 @@ QPointer<ExpoBlendingManager> ExpoBlendingManager::internalPtr = QPointer<ExpoBl
 
 ExpoBlendingManager::ExpoBlendingManager(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
     d->thread = new ExpoBlendingThread(this);
 
@@ -154,7 +154,7 @@ void ExpoBlendingManager::cleanUp()
 
 void ExpoBlendingManager::startWizard()
 {
-    if (d->wizard && (d->wizard->isMinimized() || !d->wizard->isHidden()))
+    if      (d->wizard && (d->wizard->isMinimized() || !d->wizard->isHidden()))
     {
         d->wizard->showNormal();       // krazy:exclude=qmethods
         d->wizard->activateWindow();

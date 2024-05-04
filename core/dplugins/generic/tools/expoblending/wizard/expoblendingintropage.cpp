@@ -44,14 +44,13 @@ class Q_DECL_HIDDEN ExpoBlendingIntroPage::Private
 {
 public:
 
-    explicit Private(ExpoBlendingManager* const m)
-      : mngr          (m),
-        binariesWidget(nullptr)
+    Private(ExpoBlendingManager* const m)
+        : mngr(m)
     {
     }
 
-    ExpoBlendingManager* mngr;
-    DBinarySearch*       binariesWidget;
+    ExpoBlendingManager* mngr           = nullptr;
+    DBinarySearch*       binariesWidget = nullptr;
 };
 
 ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QWizard* const dlg)

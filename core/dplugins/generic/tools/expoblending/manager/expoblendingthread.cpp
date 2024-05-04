@@ -72,9 +72,11 @@ class Q_DECL_HIDDEN ExpoBlendingThread::Private
 {
 public:
 
-    struct Task
+    class Task
     {
-        bool                        align;
+    public:
+
+        bool                        align           = false;
         QList<QUrl>                 urls;
         QUrl                        outputUrl;
         QString                     binaryPath;
@@ -119,6 +121,8 @@ public:
     MetaEngine                      meta;
 };
 
+// -------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN RawObserver : public DImgLoaderObserver
 {
 public:
@@ -129,9 +133,7 @@ public:
     {
     }
 
-    ~RawObserver() override
-    {
-    }
+    ~RawObserver() override = default;
 
     bool continueQuery() override
     {
@@ -142,6 +144,8 @@ private:
 
     ExpoBlendingThread::Private* const d = nullptr;
 };
+
+// -------------------------------------------------------------------------
 
 ExpoBlendingThread::ExpoBlendingThread(QObject* const parent)
     : QThread(parent),
@@ -294,9 +298,14 @@ void ExpoBlendingThread::run()
             QMutexLocker lock(&d->mutex);
 
             if (!d->todo.isEmpty())
+            {
+
                 t = d->todo.takeFirst();
+            }
             else
+            {
                 d->condVar.wait(&d->mutex);
+            }
         }
 
         if (t)
@@ -324,7 +333,9 @@ void ExpoBlendingThread::run()
                     ad.inUrls  = t->urls;
                     ad.message = avLum.isEmpty() ? i18nc("average scene luminance value unknown", "unknown") : avLum;
                     ad.success = avLum.isEmpty();
+
                     Q_EMIT finished(ad);
+
                     break;
                 }
 
@@ -334,6 +345,7 @@ void ExpoBlendingThread::run()
                     ad1.action   = EXPOBLENDING_PREPROCESSING;
                     ad1.inUrls   = t->urls;
                     ad1.starting = true;
+
                     Q_EMIT starting(ad1);
 
                     QString errors;
@@ -346,7 +358,9 @@ void ExpoBlendingThread::run()
                     ad2.preProcessedUrlsMap = d->preProcessedUrlsMap;
                     ad2.success             = result;
                     ad2.message             = errors;
+
                     Q_EMIT finished(ad2);
+
                     break;
                 }
 
@@ -356,6 +370,7 @@ void ExpoBlendingThread::run()
                     ad1.action   = EXPOBLENDING_LOAD;
                     ad1.inUrls   = t->urls;
                     ad1.starting = true;
+
                     Q_EMIT starting(ad1);
 
                     QImage image;
@@ -366,7 +381,9 @@ void ExpoBlendingThread::run()
                     if (result)
                     {
                         if (d->meta.load(t->urls[0].toLocalFile()))
+                        {
                             d->meta.rotateExifQImage(image, d->meta.getItemOrientation());
+                        }
                     }
 
                     ExpoBlendingActionData ad2;
@@ -374,7 +391,9 @@ void ExpoBlendingThread::run()
                     ad2.inUrls         = t->urls;
                     ad2.success        = result;
                     ad2.image          = image;
+
                     Q_EMIT finished(ad2);
+
                     break;
                 }
 
@@ -385,6 +404,7 @@ void ExpoBlendingThread::run()
                     ad1.inUrls         = t->urls;
                     ad1.starting       = true;
                     ad1.enfuseSettings = t->enfuseSettings;
+
                     Q_EMIT starting(ad1);
 
                     QString errors;
@@ -423,7 +443,9 @@ void ExpoBlendingThread::run()
                     ad2.success        = result;
                     ad2.message        = errors;
                     ad2.enfuseSettings = t->enfuseSettings;
+
                     Q_EMIT finished(ad2);
+
                     break;
                 }
 
@@ -434,6 +456,7 @@ void ExpoBlendingThread::run()
                     ad1.inUrls         = t->urls;
                     ad1.starting       = true;
                     ad1.enfuseSettings = t->enfuseSettings;
+
                     Q_EMIT starting(ad1);
 
                     QString errors;
@@ -479,7 +502,9 @@ void ExpoBlendingThread::run()
                     ad2.success        = result;
                     ad2.message        = errors;
                     ad2.enfuseSettings = t->enfuseSettings;
+
                     Q_EMIT finished(ad2);
+
                     break;
                 }
 
@@ -655,6 +680,7 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
         {
             errors = getProcessError(*(d->alignProcess));
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "align_image_stack error:" << errors;
+
             return false;
         }
 
@@ -669,6 +695,7 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
         if (d->alignProcess->exitCode() != 0)
         {
             errors = getProcessError(*(d->alignProcess));
+
             return false;
         }
 
@@ -715,6 +742,7 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Alignment not performed.";
+
         return true;
     }
 }
@@ -751,6 +779,7 @@ bool ExpoBlendingThread::computePreview(const QUrl& inUrl, QUrl& outUrl)
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Preview Image url:" << outUrl << ", saved:" << saved;
+
         return saved;
     }
 

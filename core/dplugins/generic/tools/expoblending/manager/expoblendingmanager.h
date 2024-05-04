@@ -43,7 +43,7 @@ class ExpoBlendingManager : public QObject
 public:
 
     explicit ExpoBlendingManager(QObject* const parent = nullptr);
-    ~ExpoBlendingManager() override;
+    ~ExpoBlendingManager()                            override;
 
     static QPointer<ExpoBlendingManager> internalPtr;
     static ExpoBlendingManager*          instance();
@@ -52,16 +52,16 @@ public:
     bool checkBinaries();
 
     void setItemsList(const QList<QUrl>& urls);
-    QList<QUrl>& itemsList() const;
+    QList<QUrl>& itemsList()                    const;
 
     void setPlugin(DPlugin* const plugin);
 
     void setPreProcessedMap(const ExpoBlendingItemUrlsMap& urls);
-    ExpoBlendingItemUrlsMap& preProcessedMap() const;
+    ExpoBlendingItemUrlsMap& preProcessedMap()  const;
 
-    ExpoBlendingThread* thread() const;
-    AlignBinary&  alignBinary()  const;
-    EnfuseBinary& enfuseBinary() const;
+    ExpoBlendingThread* thread()                const;
+    AlignBinary&  alignBinary()                 const;
+    EnfuseBinary& enfuseBinary()                const;
 
     void run();
 
