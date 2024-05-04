@@ -102,6 +102,7 @@ libexec/qt5/plugins/iconengines/*.dylib \
 libexec/qt5/plugins/generic/*.dylib \
 libexec/qt5/plugins/styles/*.dylib \
 libexec/qt5/plugins/bearer/*.dylib \
+libexec/qt5/plugins/audio/*.dylib \
 "
 
 #lib/sane/*.so \
